@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Ad Orientem · Sacred Art · Review 01 (1–50)</title>
+<style>
+:root { color-scheme:dark; --bg:#080c12;--surface:#121923;--raise:#1b2430;--edge:#313944;--cream:#eae2d6;--muted:#a8a39a;--gold:#bba57e;--pass:#93b49c;--warn:#dbb27b;--danger:#d19b96; }
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 65% -25%,#28303c,#080c12 67%);font:15px/1.55 Georgia,"Palatino Linotype",serif;color:var(--cream)}
+button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #d6bb85;outline-offset:3px}
+a{color:#e1c597;text-underline-offset:3px}a:hover{color:#fff1d9}
+header{border-bottom:1px solid var(--edge);position:sticky;top:0;z-index:4;background:#0c1119f2;backdrop-filter:blur(14px)}
+.head,.content{max-width:1510px;margin:auto;padding:0 30px}
+.head{padding-top:20px;padding-bottom:18px}
+.smallcap{font:600 10px/1.5 system-ui,sans-serif;letter-spacing:.19em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(24px,3.2vw,40px);font-weight:normal;line-height:1.15;letter-spacing:.015em;margin:7px 0}
+.subtitle{font-size:12px;font-family:system-ui,sans-serif;color:var(--muted);margin:5px 0}
+.metrics{display:flex;gap:20px;flex-wrap:wrap;margin:14px 0 0;font:12px system-ui,sans-serif;color:#c7c1b7}.metrics strong{color:#f6e9d2;font-weight:650}
+.progress{height:6px;background:#303139;border-radius:6px;overflow:hidden;margin:14px 0 0}.progress>div{height:100%;width:0;background:var(--gold);transition:width .2s}
+.toolbar{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin:23px 0 14px}
+.search{border:1px solid var(--edge);border-radius:5px;background:#121a24;color:var(--cream);height:40px;min-width:210px;flex:1 1 260px;padding:0 12px;font:13px system-ui,sans-serif}
+.filter{display:flex;gap:5px;flex-wrap:wrap}
+.filter button,.tools button,.note-buttons button{border:1px solid #45505a;background:#171f2b;color:#e3d9c9;border-radius:5px;min-height:39px;padding:7px 10px;font:12px system-ui,sans-serif}
+.filter button[aria-pressed=true]{background:#3c372d;border-color:var(--gold);color:#ffefce}
+.tools{display:flex;gap:7px;flex-wrap:wrap}
+.notice{font:12px/1.7 system-ui,sans-serif;color:#c5b9a8;border-left:2px solid var(--gold);background:#141b23;margin:17px 0 22px;padding:10px 14px}
+.gallery{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:17px;margin-bottom:42px}
+.art{min-width:0;border:1px solid #303944;background:#121923;border-radius:5px;overflow:hidden;position:relative;cursor:pointer;transition:border-color .1s ease}
+.art:hover{border-color:#8b795c}.art .painting{position:relative;display:flex;align-items:center;justify-content:center;background:#0a0e14;aspect-ratio:4/4.8;padding:8px}
+.art img{display:block;max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain}
+.art .number{position:absolute;top:10px;left:10px;background:#080c12d9;border:1px solid #393c3e;padding:4px 7px;font:11px system-ui,sans-serif}
+.art .caption{padding:12px 14px 15px}
+.art .artist{font:11px/1.3 system-ui,sans-serif;color:var(--gold);min-height:1.5em}
+.art h2{font:normal 18px/1.25 Georgia,serif;margin:5px 0 10px;min-height:2.5em}
+.status{display:inline-block;font:600 10px/1.5 system-ui,sans-serif;letter-spacing:.025em;border:1px solid #49515b;border-radius:3px;color:#bab6ae;padding:4px 7px}
+.status.keep_image{border-color:#597560;color:#a5c6af}
+.status.replace_image{border-color:#876a42;color:#e0be91}
+.status.reject_artwork{border-color:#814c4c;color:#dfaca9}
+.status.hold{border-color:#666278;color:#bcb6cb}
+.art[hidden]{display:none!important}
+.empty{padding:50px 20px;text-align:center;color:var(--muted);font:14px system-ui,sans-serif}
+.dialog{padding:0;border:1px solid #51545d;background:#0d131b;color:var(--cream);width:min(1160px,97vw);max-height:97vh;border-radius:8px;box-shadow:0 25px 100px #000b}
+.dialog::backdrop{background:#030509dc;backdrop-filter:blur(5px)}
+.modal{display:grid;grid-template-columns:minmax(0,1.26fr) minmax(285px,.74fr);max-height:94vh}
+.modal-image{background:#070a0f;display:flex;align-items:center;justify-content:center;min-height:0;padding:13px;position:relative;overflow:hidden}
+.modal-image img{max-width:100%;max-height:85vh;object-fit:contain}
+.modal-side{border-left:1px solid var(--edge);padding:25px;overflow-y:auto;max-height:94vh}
+.modal-side h2{font:normal 29px/1.1 Georgia,serif;margin:10px 0}
+.modal-side .author{font-size:16px;color:var(--gold)}
+.meta{color:#b5b0a6;font:11px/1.65 system-ui,sans-serif;overflow-wrap:anywhere}
+.disclosure{border-top:1px solid #3a404a;margin-top:15px;padding-top:10px;font:11px/1.7 system-ui,sans-serif}
+.disclosure summary{cursor:pointer;color:#cbb695}
+.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:20px 0 14px}
+.actions button{border:1px solid #444b55;border-radius:5px;background:#19212c;color:#e4e1da;padding:12px 8px;font:12px/1.4 system-ui,sans-serif;min-height:46px}
+.actions button[aria-pressed=true]{border-color:#debe81;background:#373326;color:#ffe3aa}
+.note-label{display:block;color:#d5ccbe;font:12px system-ui,sans-serif;margin:16px 0 7px}
+textarea{resize:vertical;background:#0a1018;border:1px solid #4a505b;color:var(--cream);border-radius:5px;width:100%;min-height:90px;padding:10px 12px;font:13px/1.5 system-ui,sans-serif}
+.modal-controls{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-top:17px}
+.modal-controls button,.close{padding:9px 15px;min-height:39px;color:var(--cream);background:#1c2733;border:1px solid #3c4550;border-radius:5px;font:12px system-ui,sans-serif}
+.close{position:absolute;right:11px;top:12px;z-index:3}
+.counter{font:12px system-ui,sans-serif;color:var(--muted)}
+footer{border-top:1px solid var(--edge);padding:20px 0 35px;color:var(--muted);font:11px/1.75 system-ui,sans-serif}
+#file-in{display:none}
+@media(max-width:1250px){.gallery{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:940px){.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:680px){.head,.content{padding-left:14px;padding-right:14px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.art h2{font-size:15px}.modal{grid-template-columns:1fr;max-height:95vh}.modal-image{min-height:160px;max-height:46vh}.modal-image img{max-height:43vh}.modal-side{padding:17px;max-height:48vh;border-left:0;border-top:1px solid var(--edge)}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="head">
+<div class="smallcap">Ad Orientem · Sacred Art · Editorial review</div>
+<h1>Review batch 01 <span style="color:#8e918e">/ 50 artworks</span></h1>
+<div class="subtitle">Previously selected artworks · Original images verified against the private research archive · Offline review</div>
+<div class="metrics">
+<span><strong id="count-done">0/50</strong> reviewed</span>
+<span><strong id="count-keep">0</strong> keep</span>
+<span><strong id="count-change">0</strong> change image</span>
+<span><strong id="count-reject">0</strong> reject artwork</span>
+<span><strong id="count-hold">0</strong> hold</span>
+</div>
+<div class="progress" aria-label="Review progress"><div id="bar"></div></div>
+</div></header>
+<div class="content">
+<div class="notice"><strong>How to review:</strong> Select a painting, inspect it at a larger size, then choose a decision and add an optional note. <strong>Keep</strong> means the image is visually suitable; it does not certify copyright or publish anything. Use <strong>Export decisions</strong> to save your work, then upload that JSON to ChatGPT for reconciliation. Your decisions remain editable and the frozen artwork catalogue is unchanged.</div>
+<div class="toolbar">
+<input id="search" class="search" type="search" placeholder="Search title, artist or artwork ID" aria-label="Find an artwork">
+<div class="filter" aria-label="Filter artworks">
+<button data-filter="all" aria-pressed="true">All 50</button>
+<button data-filter="unreviewed" aria-pressed="false">Unreviewed</button>
+<button data-filter="reviewed" aria-pressed="false">Reviewed</button>
+<button data-filter="action" aria-pressed="false">Needs action</button>
+</div>
+<div class="tools"><button id="export">Export decisions ↓</button><button id="import">Import previous review ↑</button><input id="file-in" type="file" accept="application/json,.json" aria-label="Import saved review"></div>
+</div>
+<main id="gallery" class="gallery" aria-label="Fifty sacred artworks"></main>
+<div id="empty" class="empty" hidden>No artworks match this search and filter.</div>
+<footer>Batch 01 comprises artworks 1–50 from the 95-piece previously approved review queue. All 50 thumbnails are embedded in this HTML: they display without internet access. Each original was independently SHA-256-verified from an unpublished archival copy. This gallery is a review tool, not the final artwork publication catalogue. Images and notes do not leave your device until you explicitly export a file. Local browser caching is best-effort; use Export decisions as the reliable checkpoint.</footer>
+</div>
+<dialog class="dialog" id="dialog" aria-label="Artwork inspection"><button class="close" id="close" aria-label="Close artwork review">Close ×</button>
+<div class="modal">
+<div class="modal-image"><img id="large" alt=""/></div>
+<div class="modal-side">
+<div id="art-number" class="smallcap"></div>
+<h2 id="art-title"></h2>
+<div id="art-author" class="author"></div>
+<p id="art-meta" class="meta"></p>
+<div class="disclosure"><details><summary>Original image and provenance</summary>
+<p class="meta">Original source SHA-256: <code id="art-sha"></code></p>
+<p class="meta">Source archive: <code id="art-archive"></code></p>
+<p class="meta">Reported licence: <span id="art-license"></span></p>
+<p class="meta"><a id="art-source" target="_blank" rel="noreferrer noopener">Open original source page ↗</a></p>
+<p class="meta">Source-link permission and editorial photo version are NOT automatically cleared.</p>
+</details></div>
+<div class="note-label">Your visual assessment</div>
+<div class="actions">
+<button data-decision="keep_image" aria-pressed="false">1 · Keep image</button>
+<button data-decision="replace_image" aria-pressed="false">2 · Change image</button>
+<button data-decision="reject_artwork" aria-pressed="false">3 · Reject artwork</button>
+<button data-decision="hold" aria-pressed="false">4 · Hold / unsure</button>
+</div>
+<label for="note" class="note-label">Notes (optional)</label>
+<textarea id="note" placeholder="Composition, image quality, iconography, preferred replacement…"></textarea>
+<div class="modal-controls"><button id="previous">← Previous</button><span class="counter" id="counter">1 / 50</span><button id="next">Next →</button></div>
+<p class="meta">Keyboard: ← → navigate · 1–4 decide · Esc close</p>
+</div></div>
+</dialog>
+<script>
+"use strict";
+const artworks=__B51_ARTWORK_DATA__;
+const KEY="ao-b51-sacred-art-batch01-v1";
+const VALID=new Set(["keep_image","replace_image","reject_artwork","hold"]);
+const ids=new Set(artworks.map(x=>x.id));
+const $=id=>document.getElementById(id);
+let reviews={};let current=0;let filter="all";let query="";
+function sanitize(value){
+  const out={};
+  if(!value || typeof value!=="object" || Array.isArray(value))return out;
+  for(const [id,record] of Object.entries(value)){
+    if(!ids.has(id)||!record||typeof record!=="object")continue;
+    const decision=VALID.has(record.decision)?record.decision:null;
+    const note=typeof record.note==="string"?record.note.slice(0,4000):"";
+    if(decision||note)out[id]={decision,note};
+  }
+  return out;
+}
+try{reviews=sanitize(JSON.parse(localStorage.getItem(KEY)||"{}"));}catch(_){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(reviews));}catch(_){}}
+function label(v){return {keep_image:"Keep image",replace_image:"Change image",reject_artwork:"Reject artwork",hold:"Hold",unreviewed:"Not reviewed"}[v]||"Not reviewed";}
+function state(id){return reviews[id]||{decision:null,note:""}}
+function stats(){
+ const n=Object.values(reviews).filter(x=>VALID.has(x.decision)).length;
+ const count=k=>Object.values(reviews).filter(x=>x.decision===k).length;
+ $("count-done").textContent=n+"/50";$("count-keep").textContent=count("keep_image");
+ $("count-change").textContent=count("replace_image");$("count-reject").textContent=count("reject_artwork");
+ $("count-hold").textContent=count("hold");$("bar").style.width=(n/50*100).toFixed(1)+"%";
+}
+function visible(a){
+ const s=state(a.id).decision;
+ if(filter==="unreviewed"&&s)return false;
+ if(filter==="reviewed"&&!s)return false;
+ if(filter==="action"&&!["replace_image","reject_artwork","hold"].includes(s))return false;
+ return !query || (a.title+" "+a.artist+" "+a.id).toLowerCase().includes(query);
+}
+const elements=new Map();
+function makeCard(a){
+ const card=document.createElement("article");card.className="art";card.tabIndex=0;
+ card.setAttribute("aria-label","Inspect "+a.title+", "+a.artist);
+ const fig=document.createElement("div");fig.className="painting";
+ const img=document.createElement("img");img.src=a.image;img.alt=a.imageAlt;img.loading="lazy";img.decoding="async";
+ const count=document.createElement("span");count.className="number";count.textContent=String(a.number).padStart(2,"0");
+ fig.append(img,count);
+ const info=document.createElement("div");info.className="caption";
+ const artist=document.createElement("div");artist.className="artist";artist.textContent=a.artist;
+ const title=document.createElement("h2");title.textContent=a.title;
+ const status=document.createElement("span");status.className="status";status.textContent="Not reviewed";
+ info.append(artist,title,status);card.append(fig,info);
+ card.addEventListener("click",()=>open(a.number-1));
+ card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open(a.number-1)}});
+ $("gallery").append(card);elements.set(a.id,{card,status});
+}
+for(const a of artworks)makeCard(a);
+function refresh(){
+ let n=0;
+ for(const a of artworks){const el=elements.get(a.id),decision=state(a.id).decision;
+   el.card.hidden=!visible(a);if(!el.card.hidden)n++;
+   el.status.textContent=label(decision);el.status.className="status "+(decision||"");
+ }
+ $("empty").hidden=n!==0;stats();
+}
+function open(index){
+ current=Math.max(0,Math.min(49,index));const a=artworks[current],d=state(a.id);
+ $("large").src=a.image;$("large").alt=a.imageAlt;
+ $("art-number").textContent="Artwork "+String(a.number).padStart(2,"0")+" / 50";
+ $("art-title").textContent=a.title;$("art-author").textContent=a.artist;
+ $("art-meta").textContent="Historical artwork selection retained · Original long edge "+a.originalLongEdge+" px · "+(a.sourcePhotoHistoricalMatch?"Historical selected image hash matched":"Photograph version pending final selection");
+ $("art-sha").textContent=a.sourceHash;$("art-archive").textContent=a.sourceArchive;
+ $("art-license").textContent=a.licenseClaim;
+ $("art-source").href=/^https:\/\//.test(a.sourcePage)?a.sourcePage:"#";
+ $("art-source").hidden=!/^https:\/\//.test(a.sourcePage);
+ $("note").value=d.note||"";
+ for(const b of document.querySelectorAll("[data-decision]"))b.setAttribute("aria-pressed",String(b.dataset.decision===d.decision));
+ $("counter").textContent=(current+1)+" / 50";
+ $("previous").disabled=current===0;$("next").disabled=current===49;
+ if(!$("dialog").open)$("dialog").showModal();
+}
+function pick(choice){const a=artworks[current],d=state(a.id);reviews[a.id]={decision:choice,note:d.note||""};save();refresh();open(current);}
+document.querySelectorAll("[data-decision]").forEach(b=>b.addEventListener("click",()=>pick(b.dataset.decision)));
+$("note").addEventListener("input",()=>{const id=artworks[current].id,d=state(id);reviews[id]={decision:d.decision||null,note:$("note").value.slice(0,4000)};save();});
+$("previous").addEventListener("click",()=>open(current-1));$("next").addEventListener("click",()=>open(current+1));
+$("close").addEventListener("click",()=>$("dialog").close());
+$("dialog").addEventListener("click",e=>{if(e.target===$("dialog"))$("dialog").close()});
+document.addEventListener("keydown",e=>{
+ if(!$("dialog").open||e.target.tagName==="TEXTAREA")return;
+ if(e.key==="ArrowRight"){e.preventDefault();open(Math.min(current+1,49));}
+ if(e.key==="ArrowLeft"){e.preventDefault();open(Math.max(current-1,0));}
+ if(["1","2","3","4"].includes(e.key))pick(["keep_image","replace_image","reject_artwork","hold"][Number(e.key)-1]);
+});
+$("search").addEventListener("input",e=>{query=e.target.value.trim().toLowerCase();refresh()});
+document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click",()=>{
+ filter=b.dataset.filter;document.querySelectorAll("[data-filter]").forEach(z=>z.setAttribute("aria-pressed",String(z===b)));refresh();
+}));
+function exportJSON(){
+ const value={schema:"AO_SACRED_ART_USER_VISUAL_REVIEW_BATCH_V1",
+    project:"ad-orientem",batch:1,total_in_batch:50,
+    reviewed_count:Object.values(reviews).filter(x=>VALID.has(x.decision)).length,
+    source:"sacred-art-b51-review-batch-01-of-50-offline.html",
+    decisions:artworks.map(a=>({index:a.number,artwork_id:a.id,source_sha256:a.sourceHash,
+       title:a.title,artist:a.artist,decision:state(a.id).decision||"unreviewed",
+       note:state(a.id).note||""}))
+ };
+ const data=new Blob([JSON.stringify(value,null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(data),a=document.createElement("a");
+ a.href=url;a.download="ad-orientem-sacred-art-review-batch-01.json";a.click();
+ setTimeout(()=>URL.revokeObjectURL(url),3000);
+}
+$("export").addEventListener("click",exportJSON);
+$("import").addEventListener("click",()=>$("file-in").click());
+$("file-in").addEventListener("change",async e=>{
+ const file=e.target.files?.[0];if(!file)return;
+ try{
+   if(file.size>3000000)throw Error("Review file is too large.");
+   const obj=JSON.parse(await file.text());
+   if(obj.schema!=="AO_SACRED_ART_USER_VISUAL_REVIEW_BATCH_V1"||obj.batch!==1||!Array.isArray(obj.decisions))throw Error("Not a Batch 01 review file.");
+   if(obj.decisions.length!==50||new Set(obj.decisions.map(x=>x.artwork_id)).size!==50)throw Error("Expected 50 review entries.");
+   const v={};
+   for(const d of obj.decisions){
+      const canonical=artworks.find(x=>x.id===d.artwork_id);
+      if(!canonical||d.source_sha256!==canonical.sourceHash)throw Error("Review source image does not match this Batch 01 version.");
+      if(VALID.has(d.decision)||d.note)v[d.artwork_id]={decision:VALID.has(d.decision)?d.decision:null,note:typeof d.note==="string"?d.note.slice(0,4000):""};
+   }
+   if(!confirm("Import these decisions, replacing the current local review?"))return;
+   reviews=sanitize(v);save();refresh();alert("Review imported.");
+ }catch(err){alert("Could not import review: "+err.message)}
+ finally{e.target.value=""}
+});
+refresh();
+</script></body></html>
