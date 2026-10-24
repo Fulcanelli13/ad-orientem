@@ -17,18 +17,19 @@
     "Prior reviewed canonical exact matches outrank plausible aliases; no title-only promotion.",
     "Legacy country codes DY (Benin) and HV (Burkina Faso) normalized for source routing without mutating original record IDs.",
     "A cited URL was inspected through retrieved web text excerpts, not asserted to be a completed building-footprint and access review.",
-    "September 2026 church sources show distinct old and new Peñafrancia buildings (Naga) and newly dedicated Balasar sanctuary church (Portugal); historical title alone must never geocode the wrong one."
+    "September 2026 church sources show distinct old and new Peñafrancia buildings (Naga) and newly dedicated Balasar sanctuary church (Portugal); historical title alone must never geocode the wrong one.",
+    "For Balasar, September 2026 diocesan publications announce the October dedication; do not convert a planned event into an independently verified completed event."
   ],
   "counts": {
     "priority_ids": 200,
-    "source_snippets_reviewed": 44,
-    "remaining_without_new_source_review": 156,
+    "source_snippets_reviewed": 49,
+    "remaining_without_new_source_review": 151,
     "source_gates": {
       "MULTIPLE_CATHOLIC_SAME_TITLE_SITES_UNRESOLVED": 1,
-      "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT": 9,
-      "CATHOLIC_SITE_SOURCE_SUPPORTED": 21,
+      "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT": 12,
+      "CATHOLIC_SITE_SOURCE_SUPPORTED": 23,
       "EASTERN_CATHOLIC_COMPLEX_SOURCE_SUPPORTED": 1,
-      "PRIMARY_SOURCE_NOT_YET_REVIEWED": 142,
+      "PRIMARY_SOURCE_NOT_YET_REVIEWED": 137,
       "CATHOLIC_SITE_SOURCE_SUPPORTED_WITH_COORDINATE_LEAD": 1,
       "INHERITED_SOURCE_NOT_SITE_SPECIFIC_REPLACE_REQUIRED": 2,
       "CULTURAL_MONUMENT_NOT_ACTIVE_CATHOLIC_SITE": 1,
@@ -2030,7 +2031,7 @@
       "primary_or_institutional_evidence": {
         "url": "https://arquidiocese-braga.pt/noticia/2026-09-15-santuario-eucaristico-de-balasar-abre-nova-etapa-centrada-na-eucaristia-acolhimento-e-legado-da-beata-alexandrina-6aa97630e5529",
         "issuer": "Archdiocese of Braga",
-        "scope_note": "New Eucharistic Sanctuary at Balasar dedicated in October 2026; distinguish new sanctuary from older parish church and earlier tomb location. Verify the new building geometry, not historical parish centroid."
+        "scope_note": "Archdiocese in September 2026 announced dedication of a newly constructed Eucharistic Sanctuary at Balasar for October 11, 2026. Distinguish its new building from older parish church and original tomb; this research pass has not independently confirmed dedication occurred."
       }
     },
     {
@@ -2054,12 +2055,17 @@
       "country_original": "BR",
       "country_iso_alpha2": "BR",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://whc.unesco.org/en/list/334/",
+        "issuer": "UNESCO World Heritage Centre",
+        "scope_note": "Congonhas UNESCO complex includes main Church of Bom Jesus, monumental stairway and seven distinct Stations chapels; one whole-complex title must not create duplicate chapel pins."
+      }
     },
     {
       "order": 122,
@@ -2163,12 +2169,17 @@
       "country_original": "IL",
       "country_iso_alpha2": "IL",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://www.custodia.org/en/sanctuaries/gethsemane-basilica-agony/",
+        "issuer": "Franciscan Custody of Holy Land",
+        "scope_note": "Catholic Church of All Nations/Basilica of Agony in Gethsemane, independently distinguished from nearby Franciscan Grotto of Prayer and Garden."
+      }
     },
     {
       "order": 129,
@@ -2177,12 +2188,17 @@
       "country_original": "ES",
       "country_iso_alpha2": "ES",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_SITE_SOURCE_SUPPORTED",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://diocesisdehuelva.es/parroquia/santuario-de-nuestra-senora-del-rocio-el-rocio-almonte/",
+        "issuer": "Diocese of Huelva",
+        "scope_note": "Sanctuary of Our Lady of El Rocío, Calle Ermita s/n, El Rocío is distinct from Almonte's Assumption parish church and sisterhood house."
+      }
     },
     {
       "order": 130,
@@ -3134,12 +3150,17 @@
       "country_original": "CA",
       "country_iso_alpha2": "CA",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://st-antoine.org/fr/sanctuaire/",
+        "issuer": "Ermitage Saint-Antoine custodians / Capuchins",
+        "scope_note": "Operating Catholic pilgrimage complex at 250 Route de l'Ermitage, Lac-Bouchette; multiple chapels and grounds features, not one presumed building."
+      }
     },
     {
       "order": 195,
@@ -3223,12 +3244,17 @@
       "country_original": "DE",
       "country_iso_alpha2": "DE",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_SITE_SOURCE_SUPPORTED",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://www.maria-laach.de/",
+        "issuer": "Benedictine Abbey of Maria Laach",
+        "scope_note": "Operating Benedictine abbey at Maria Laach with its own abbey church. Abbey campus and abbatial church require precision on final map pin."
+      }
     }
   ]
 }
