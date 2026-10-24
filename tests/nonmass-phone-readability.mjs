@@ -123,8 +123,6 @@ try{
    console.log("PASS "+width+"px: "+formation.cards+" formation subjects, "+
      prayer.tiles+" Prayer features, "+prayer.familyDoors+" retained families, no viewport overflow");
    assert.equal(errors.length,0,"Browser errors at "+width+"px: "+errors.slice(0,3).join("; "));
-   console.log("PASS "+width+"px: "+formation.cards+" formation subjects, "+
-     prayer.kind.length+" Prayer family kinds, no viewport overflow");
   }finally{await context.close();}
  }
 }finally{
