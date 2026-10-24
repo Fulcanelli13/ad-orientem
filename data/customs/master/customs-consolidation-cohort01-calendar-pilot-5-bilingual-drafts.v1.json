@@ -17,7 +17,10 @@
     "verified_official_locality_witness": 1,
     "proposed_existing_card_enrichments": 1,
     "approved_new_ids": 0,
-    "calendar_publications": 0
+    "calendar_publications": 0,
+    "additional_external_source_links": 8,
+    "same_institution_multi_feast_identity_links": 1,
+    "full_action_independent_corroboration_claims_held": 1
   },
   "records": [
     {
@@ -40,7 +43,22 @@
       "canonical_id": null,
       "record_status": "EDITORIAL_DRAFT_UNAPPROVED",
       "calendar_link_approved": false,
-      "public_article_approved": false
+      "public_article_approved": false,
+      "identity_boundary": "Compare as a localized image-visitation variant of CUST-ADVT-HERBERGSUCHE; the Austrian parish/archdiocesan witnesses describe circulating a Marian or Holy Family image, not necessarily the Joseph-only image claimed by the Weiser excerpt. Therefore do not award a separate Joseph-specific verified identity.",
+      "exact_action_attestation": "WEISER_PRIMARY_ONLY",
+      "additional_sources": [
+        {
+          "url": "https://www.kath-kirche-kaernten.at/pfarren/detail/C2920/herbergsuche-wer-klopfet-an-marijo-nositi-kdo-trka-she",
+          "kind": "AUSTRIAN_PARISH_LOCAL_CONTINUITY_PARALLEL",
+          "note": "House-to-house Marian image and family prayer, not independent attestation of St Joseph-alone object identity"
+        },
+        {
+          "url": "https://www.erzdioezese-wien.at/unit/feiertagsgruesse/kalender/kalendertexte/article/134703.html",
+          "kind": "AUSTRIAN_DIOCESAN_RELATED_FAMILY",
+          "note": "Austrian Advent Herbergsuche/Frauentragen with Mary/Holy Family images; regional context"
+        }
+      ],
+      "recommended_identity_disposition": "VARIANT_OF_EXISTING_MASTER_RESEARCH_SUBJECT_REQUIRES_ACTION_CONFIRMATION"
     },
     {
       "group_id": "CAT-WEISER-B-083",
@@ -66,7 +84,28 @@
       "canonical_id": null,
       "record_status": "EDITORIAL_DRAFT_UNAPPROVED",
       "calendar_link_approved": false,
-      "public_article_approved": false
+      "public_article_approved": false,
+      "identity_boundary": "One existing local institution: the Seises dance at Seville Cathedral, performed at Corpus Christi and the Immaculate Conception (and other specified cathedral occasions). The Corpus and Immaculate labels are one continuing custom with multiple Calendar anchors, not two new custom identities.",
+      "multi_feast_same_identity_research_lead": "CAT-WEISER-B-109",
+      "provisional_calendar_subject_key": "RESEARCH-SEVILLE-SEISES",
+      "calendar_contexts_to_check": [
+        "CORPUS_CHRISTI_SEVILLE",
+        "IMMACULATE_CONCEPTION_DEC_8_SEVILLE"
+      ],
+      "exact_action_attestation": "WEISER_PRIMARY_PLUS_OFFICIAL_SEVILLE_CATHEDRAL",
+      "additional_sources": [
+        {
+          "url": "https://www.catedraldesevilla.es/la-danza-de-los-seises-un-tesoro-vivo-en-la-catedral-de-sevilla/",
+          "kind": "OFFICIAL_CATHEDRAL_INSTITUTIONAL",
+          "note": "Cathedral expressly mentions Corpus and Immaculate; establishes a single continuing dance custom"
+        },
+        {
+          "url": "https://www.catedraldesevilla.es/actos-en-la-catedral-por-la-festividad-de-la-inmaculada-concepcion/",
+          "kind": "OFFICIAL_CATHEDRAL_2021",
+          "note": "Immaculate Octave includes Seises dance"
+        }
+      ],
+      "recommended_identity_disposition": "SINGLE_LOCAL_IDENTITY_MULTI_OCCASION"
     },
     {
       "group_id": "CAT-WEISER-B-113",
@@ -87,7 +126,11 @@
       "canonical_id": null,
       "record_status": "EDITORIAL_DRAFT_UNAPPROVED",
       "calendar_link_approved": false,
-      "public_article_approved": false
+      "public_article_approved": false,
+      "identity_boundary": "Already-published DOM-011 owns keeping blessed candles at home, while decoration before Candlemas and liturgical candle blessing are separate stages. Keep as an optional scoped variant/extension; no new duplicate Candlemas card.",
+      "exact_action_attestation": "WEISER_PRIMARY_ONLY",
+      "additional_sources": [],
+      "recommended_identity_disposition": "CONTEXTUAL_COMPONENT_LINK_EXISTING_DOM_011_NO_AUTO_MERGE"
     },
     {
       "group_id": "CAT-WEISER-B-116",
@@ -106,7 +149,22 @@
       "canonical_id": null,
       "record_status": "EDITORIAL_DRAFT_UNAPPROVED",
       "calendar_link_approved": false,
-      "public_article_approved": false
+      "public_article_approved": false,
+      "identity_boundary": "Candlemas crib removal belongs to popular household custom, not the 1962 liturgical determination of Christmas season. Catholic Diocese of Providence (Feb 2026) explicitly notes retaining the crib to Candlemas; EWTN likewise distinguishes local practice from regulation.",
+      "exact_action_attestation": "WEISER_PRIMARY_PLUS_CATHOLIC_DIOCESAN_CONFIRMATION",
+      "additional_sources": [
+        {
+          "url": "https://www.dioceseofprovidence.org/news/0202-feast-of-the-presentation-of-the-lord",
+          "kind": "DIOCESAN_2026",
+          "note": "Many Catholics retain the Nativity scene until February 2"
+        },
+        {
+          "url": "https://www.ewtn.com/catholicism/library/when-to-remove-the-christmas-crib-4793",
+          "kind": "CATHOLIC_LITURGICAL_QA",
+          "note": "Existing local customs vary; Candlemas removal historically attested; not a legal deadline"
+        }
+      ],
+      "recommended_identity_disposition": "SOURCE_SUPPORTED_HOUSEHOLD_CALENDAR_CANDIDATE_UNAPPROVED"
     },
     {
       "group_id": "CAT-WEISER-B-108",
@@ -125,7 +183,27 @@
       "canonical_id": null,
       "record_status": "EDITORIAL_DRAFT_UNAPPROVED",
       "calendar_link_approved": false,
-      "public_article_approved": false
+      "public_article_approved": false,
+      "identity_boundary": "The Weiser regional Spanish report concerns Immaculate Eve balcony candles and flowers. The Jarandilla de la Vera Escobazos source attests lighting homes and balconies along the local Immaculate procession; this is locality corroboration, not a national Spanish norm. Colombian Noche de Velitas is a distinct local tradition and must not be merged solely because it uses candles.",
+      "exact_action_attestation": "WEISER_PRIMARY_PLUS_JARANDILLA_LOCAL_WITNESS",
+      "additional_sources": [
+        {
+          "url": "https://losescobazos.com/fiesta-de-los-escobazos/curiosidades/",
+          "kind": "LOCAL_FESTIVAL_JARANDILLA_DE_LA_VERA",
+          "note": "Historical candles or lamps in windows and balconies to illuminate Immaculate procession, with local folk symbolism"
+        },
+        {
+          "url": "https://www.cec.org.co/node/9161",
+          "kind": "DIFFERENT_COUNTRY_CONTEXT_NOT_SAME_IDENTITY",
+          "note": "Colombian Noche de Velitas must not be used as proof of Spanish regional balcony practice"
+        }
+      ],
+      "recommended_identity_disposition": "SOURCE_SUPPORTED_REGIONAL_VARIANT_IDENTITY_REVIEW"
     }
-  ]
+  ],
+  "source_reconciliation": {
+    "as_of": "2026-10-24",
+    "method": "Official diocese/cathedral/local cultural sources cross-checked; label/source semantics and date boundaries preserved, no automatic master merge",
+    "primary_publication_limit": "All editorial text remains draft; supporting URLs do not replace canonical approval or rite authority."
+  }
 }
