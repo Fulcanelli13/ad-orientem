@@ -1,0 +1,38 @@
+name: B53 fast all383 placement mapping preflight (no archive downloads)
+on:
+  push:
+    branches: [research/sacred-art-b53-all383-single-review-20261024]
+    paths: [.github/workflows/ao-art-b53-383-placement-preflight.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify383-module-suggestions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b53-all383-single-review-20261024
+      - name: Test placement engine for all 383 records before another 4GB original-source reread
+        run: |
+          python tests/sacred-art-b53-placement-scenarios.py
+          python - <<'PY'
+          import csv,sys,collections
+          sys.path.insert(0,"scripts/research")
+          from sacred_art_b53_placements import propose_all
+          with open("data/research/sacred-art-catalogue451-after-b25.csv",newline="",encoding="utf-8") as f:
+              rows=[x for x in csv.DictReader(f) if x["frozen_decision"]!="PERMANENTLY_REJECTED"]
+          assert len(rows)==383
+          total=0
+          examples=[]
+          for i,r in enumerate(rows,1):
+              choices=propose_all(r["title"],r["artist"],r["artwork_id"])
+              keys=[x["slot_id"] for x in choices]
+              if not choices or len(keys)!=len(set(keys)):
+                  raise RuntimeError(f"Failed work {i} {r['artwork_id']} {r['title']}: {keys}")
+              total+=len(keys)
+              if not any(v["slot_id"].startswith("art/library/") for v in choices):examples.append(r["artwork_id"])
+          assert total>800, f"Not enough relevant placement options: {total}"
+          print("B53_383_SUBJECTS_PASS",len(rows),"artworks,",total,"distinct, unselected subject-provenance placement propositions")
+          PY

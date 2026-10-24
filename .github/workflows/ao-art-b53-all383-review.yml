@@ -1,0 +1,56 @@
+name: B53 all 383 archived Sacred Art images — single private offline placement review
+on:
+  push:
+    branches: [research/sacred-art-b53-all383-single-review-20261024]
+    paths: [.github/workflows/ao-art-b53-all383-review.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-b53-383-original-sha-review
+  cancel-in-progress: false
+jobs:
+  original-sha-verified-383-artwork-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b53-all383-single-review-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check no public HTML image artifact is in Git tree; validate scripts
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python -m py_compile scripts/research/sacred_art_b53_all383_placement_review.py scripts/research/sacred_art_b53_publish_private_all383_review.py scripts/research/sacred_art_b52_placement_proposals.py scripts/research/sacred_art_b53_placements.py
+          python tests/sacred-art-b53-placement-scenarios.py
+          test -f tests/sacred-art-b53-all383-placement-review-integrity.mjs
+          test -f previews/sacred-art-b53-review-all383-template.html
+          test ! -e previews/sacred-art-b53-review-all383-placement-offline.html
+          node tests/sacred-art-b50-95-full-source-rights-closeout.mjs
+      - name: Reverify every available photo against SHA-linked unpublished original Releases for all 383
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_b53_all383_placement_review.py
+      - name: Independently verify every one of 383 frozen art IDs, images, placement prompts and export controls
+        run: node tests/sacred-art-b53-all383-placement-review-integrity.mjs
+      - name: Preserve reviewer HTML only as an unpublished draft Release, then re-download and verify SHA
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_b53_publish_private_all383_review.py
+      - name: Commit source audit only, never embed private review images in public git
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b53-383-review-image-audit.json data/research/sacred-art-b53-all383-placement-index.json
+          git commit -m 'research: B53 preserve verified source SHA and placement audit for all 383 art review candidates'
+          for n in 1 2 3; do
+            git fetch origin research/sacred-art-b53-all383-single-review-20261024
+            git rebase origin/research/sacred-art-b53-all383-single-review-20261024
+            git push origin HEAD:research/sacred-art-b53-all383-single-review-20261024 && exit 0
+            sleep 3
+          done
+          exit 1
