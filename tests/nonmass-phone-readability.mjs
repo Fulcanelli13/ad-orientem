@@ -151,6 +151,21 @@ try{
      assert.equal(settings.header,settings.bg,"Settings header drifted from quiet-frame palette");
      assert.ok(settings.rowHeight>=64&&settings.rowFont>=16,"Settings touch rows or labels are undersized: "+JSON.stringify(settings));
      assert.ok(settings.scroll<=settings.viewport+1,"Settings horizontal overflow: "+JSON.stringify(settings));
+     const closeLayers=await page.evaluate(()=>{
+       const near=[];
+       for(const el of document.querySelectorAll("button,[role=button]")){
+         const rect=el.getBoundingClientRect();
+         if(rect.width<=0||rect.height<=0||rect.top>86||rect.right<innerWidth-67)continue;
+         const a=(el.getAttribute("aria-label")||"").toLowerCase();
+         if(!/close|fermer|dismiss|exit/.test(a)&&!el.hasAttribute("data-settings-close"))continue;
+         near.push({selector:el.outerHTML.slice(0,450),root:el.closest("#ao-settings-modular-root")?"settings":"external",
+           box:{x:Math.round(rect.x),y:Math.round(rect.y),w:Math.round(rect.width),h:Math.round(rect.height)},
+           display:getComputedStyle(el).display,visibility:getComputedStyle(el).visibility,
+           z:getComputedStyle(el).zIndex});
+       }
+       return near;
+     });
+     console.log("QUIET_SETTINGS_CLOSE_LAYERS "+width+"px "+JSON.stringify(closeLayers));
      await page.screenshot({path:resolve(out,"settings-"+width+".png"),fullPage:false,animations:"disabled"});
 
      const openedExplore=await page.evaluate(async()=>await window.AO_APP_SHELL_V1.navigate("find"));
