@@ -1,0 +1,80 @@
+#!/usr/bin/env node
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import crypto from "node:crypto";
+const p="data/research/";
+const s=JSON.parse(fs.readFileSync(p+"sacred-art-b54-383-aesthetic-biblical-review-summary.json","utf8"));
+const old=JSON.parse(fs.readFileSync(p+"sacred-art-b53-383-review-image-audit.json","utf8"));
+const html=fs.readFileSync("previews/sacred-art-b54-all383-biblical-baroque-offline.html","utf8");
+const csv=fs.readFileSync(p+"sacred-art-b54-383-aesthetic-biblical-review-ledger.csv","utf8");
+assert.equal(s.schema,"AO_B54_383_BIBLICAL_AESTHETIC_REVIEW_V1");
+assert.equal(s.frozen_artwork_count,383);
+assert.equal(s.photos_exactly_preserved_from_B53_rehash,360);
+assert.equal(s.missing_source_photos,23);
+assert.equal(s.previous_placement_count,old.total_placement_proposals);
+assert.equal(s.all_383_unreviewed_aesthetic_user_verdict,true);
+assert.equal(s.zero_automated_aesthetic_rejections,true);
+assert.equal(s.zero_copyright_photo_reuse_clearances,true);
+assert.equal(s.zero_canonical_selection_changes,true);
+assert.equal(s.all_383_previous_placement_options_retained,true);
+assert.equal(s.subject_and_affinity_are_title_artist_triage_only,true);
+assert.equal(s.review_opens_on_biblical_episodes,true);
+assert.equal(s.can_filter_biblical_and_historical_style,true);
+assert.equal(s.export_schema,"AO_SACRED_ART_USER_REVIEW_PLACEMENTS_V4");
+assert.equal(s.prior_V3_and_V2_reviews_importable,true);
+assert.equal(s.no_public_git_html_asset,true);
+assert.equal(s.free_eur,0);
+assert.equal(s.biblical_candidate_original_ids.length,s.biblical_episode_candidates_by_title);
+assert.equal(new Set(s.biblical_candidate_original_ids).size,s.biblical_episode_candidates_by_title);
+assert.equal(Object.values(s.primary_subject_counts).reduce((a,b)=>a+b,0),383);
+assert.equal(Object.values(s.artist_historical_affinity_triage_counts).reduce((a,b)=>a+b,0),383);
+assert.equal(Buffer.byteLength(html),s.new_offline_review_HTML_bytes);
+assert.ok(s.new_offline_review_HTML_bytes>25_000_000 && s.new_offline_review_HTML_bytes<60_000_000);
+assert.match(html,/id="subject"/);assert.match(html,/value="biblical"/);assert.match(html,/value="old_testament"/);
+assert.match(html,/value="gospel_life"/);assert.match(html,/value="passion"/);assert.match(html,/value="resurrection_acts"/);
+assert.match(html,/id="aesthetic-filter"/);
+assert.match(html,/data-aesthetic="fit"/);assert.match(html,/data-aesthetic="borderline"/);
+assert.match(html,/data-aesthetic="off_brief"/);
+assert.match(html,/subject="biblical"/);assert.match(html,/AO_SACRED_ART_USER_REVIEW_PLACEMENTS_V4/);
+assert.match(html,/AO_SACRED_ART_USER_REVIEW_PLACEMENTS_V3/);
+assert.match(html,/AO_SACRED_ART_USER_REVIEW_PLACEMENTS_V2/);
+assert.match(html,/Your placement suggestion/);
+assert.doesNotMatch(html,/fetch\s*\(|XMLHttpRequest|navigator\.sendBeacon|<script[^>]*src=/i);
+assert.equal(csv.trim().split(/\r?\n/).length,384);
+const match=html.match(/const artworks=(\[[^\n]+\]);\s*const key=/);
+assert.ok(match,"Embedded 383 image JSON missing");
+const cards=JSON.parse(match[1]);
+assert.equal(cards.length,383);
+assert.deepEqual(cards.map(x=>x.id),old.ordered_ids);
+const evidence=new Map(old.images.map(x=>[x.artwork_id,x]));
+let total=0,bib=0,decoded=0;
+for(const a of cards){
+ const before=evidence.get(a.id);
+ assert.ok(before);
+ assert.equal(a.n,before.review_number);
+ assert.equal(a.originalSHA,before.source_original_sha256||"");
+ assert.equal(a.places.length,before.placement_suggestions.length);
+ assert.deepEqual(a.places.map(x=>x.slot_id),before.placement_suggestions.map(x=>x.slot_id));
+ assert.equal(a.photoCommercialRightsCleared,false);
+ assert.equal(a.aestheticMachineApproved,false);
+ assert.equal(a.artQualityVisuallyCertified,false);
+ assert.equal(a.subjectClassificationIsTitleOnly,true);
+ assert.equal(a.userPlacementDecision,null);
+ assert.ok(a.subjects.length>=1);
+ assert.ok(["baroque_reference_circle","related_classical_tradition","historically_different_style","requires_visual_assessment"].includes(a.aestheticAffinity));
+ total+=a.places.length;if(a.biblicalEpisodeCandidate)bib++;
+ if(a.image){
+  decoded++;
+  assert.equal(a.sourceSHAReverified,true);
+  const b=Buffer.from(a.image.slice("data:image/webp;base64,".length),"base64");
+  assert.equal(crypto.createHash("sha256").update(b).digest("hex"),before.preview_sha256);
+  assert.equal(b.byteLength,before.preview_bytes);
+ }
+}
+assert.equal(decoded,360);
+assert.equal(bib,s.biblical_episode_candidates_by_title);
+assert.equal(total,s.previous_placement_count);
+for(const required of ["old_testament","gospel_life","passion","resurrection_acts"]){
+ assert.ok(s.subject_tag_counts[required]>0,required);
+}
+console.log("B54_PASS: all 383 SHA-matched original previews and "+bib+" biblical subject candidates; 360 images, 23 missing, "+total+" unchanged placement choices, 383 human aesthetic votes unreviewed and 0 approvals, €0");
