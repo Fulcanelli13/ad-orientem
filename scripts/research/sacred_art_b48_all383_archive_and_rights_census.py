@@ -117,7 +117,7 @@ def main():
     assert len(legacy_yes)==35
     assert B27.isdisjoint(P0_yes) and B27.isdisjoint(legacy_yes)
     assert len(B27|P0_yes|legacy_yes)==343
-    if {r["artwork_id"] for r in p0_by if r not in P0_yes} != {"G25-003"}:
+    if {id_ for id_ in p0_by if id_ not in P0_yes} != {"G25-003"}:
         raise RuntimeError("Unexpected B33 non-P0 present ids")
     outstanding={r["artwork_id"] for r in b42["cases"]}
     assert len(outstanding)==25 and outstanding.issubset(cohort_by)
