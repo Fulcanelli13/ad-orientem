@@ -34,7 +34,8 @@ FIELDNAMES=["artwork_id","title","selected_preview_sha256","expected_source_file
 "source_page","source_file_url","license_claim","metadata_license_short_name",
 "metadata_license_url","metadata_file_page","identity_basis","status","failure",
 "downloaded_sha256","acquired_bytes","width","height","resolution_gate",
-"publication_allowed","verified_at_utc"]
+"publication_allowed","verified_at_utc","preview_dhash64","downloaded_dhash64",
+"preview_dhash_distance","historical_sha256_match","recorded_dimensions_match"]
 
 
 def get(url,limit=6_000_000):
@@ -98,6 +99,15 @@ def retrieve(url,path,max_bytes):
     return digest.hexdigest(),size
 
 
+def fingerprint(im):
+    pix=list(im.convert("L").resize((9,8),Image.Resampling.LANCZOS).getdata())
+    bits=0
+    for y in range(8):
+        for x in range(8):
+            bits=(bits<<1)|(pix[y*9+x]>pix[y*9+x+1])
+    return bits
+
+
 def main():
     manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
     records=manifest["records"]
@@ -122,6 +132,7 @@ def main():
             "source_file_url":rec["source_file_url"],
             "license_claim":rec["license_claim"],
             "identity_basis":rec["source_identity_basis"],
+            "preview_dhash64":rec["selected_preview_dhash64"],
             "publication_allowed":"NO",
             "verified_at_utc":__import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
         })
@@ -137,24 +148,29 @@ def main():
             if max(int(rec["expected_width"]),int(rec["expected_height"]))<500:
                 raise ValueError("Only low-resolution proxy available")
             # Use a unique, non-approving filename. Never overwrite existing binaries.
-            destination=OUT/"originals"/(id+"-"+rec["expected_source_file_sha256"][:12]+".image")
+            destination=OUT/"originals"/(id+"-"+rec["expected_source_file_sha256"][:12]+".jpg")
             try:
                 digest,size=retrieve(rec["source_file_url"],destination,MAX_TOTAL_IMAGE-acquired_bytes)
-                if digest!=rec["expected_source_file_sha256"]:
-                    raise ValueError("Downloaded image differs from recorded selected source SHA256")
                 Image.MAX_IMAGE_PIXELS=250_000_000
                 with Image.open(destination) as im:
                     im.verify()
                 with Image.open(destination) as im:
                     width,height=im.size
-                    if (width,height)!=(int(rec["expected_width"]),int(rec["expected_height"])):
-                        raise ValueError("Downloaded image dimensions differ from recorded selected source")
+                    fp=fingerprint(im)
+                hash_equal=digest==rec["expected_source_file_sha256"]
+                dim_equal=(width,height)==(int(rec["expected_width"]),int(rec["expected_height"]))
+                distance=(fp^int(rec["selected_preview_dhash64"],16)).bit_count()
                 acquired_bytes+=size
-                item.update(status="SOURCE_BYTES_HASH_VERIFIED",downloaded_sha256=digest,
-                    acquired_bytes=size,width=width,height=height,
+                exact=hash_equal and dim_equal
+                item.update(status=("HISTORICAL_SELECTED_BYTES_VERIFIED" if exact else "CURRENT_SOURCE_RENDITION_QUARANTINED"),
+                    failure=("" if exact else "Historical source SHA and/or dimensions differ; preserve for visual and source-version review, never promote"),
+                    downloaded_sha256=digest,acquired_bytes=size,width=width,height=height,
+                    downloaded_dhash64=f"{fp:016x}",preview_dhash_distance=distance,
+                    historical_sha256_match=("YES" if hash_equal else "NO"),
+                    recorded_dimensions_match=("YES" if dim_equal else "NO"),
                     resolution_gate=("LONG_EDGE_2400_PASS" if max(width,height)>=2400 else "RESOLUTION_REVIEW"))
             finally:
-                if item["status"]!="SOURCE_BYTES_HASH_VERIFIED":
+                if item["status"] not in ("HISTORICAL_SELECTED_BYTES_VERIFIED","CURRENT_SOURCE_RENDITION_QUARANTINED"):
                     destination.unlink(missing_ok=True)
         except Exception as ex:
             item["status"]="SOURCE_HOLD"
@@ -168,9 +184,11 @@ def main():
         wr.writerows(decisions)
     summary={"schema":"AO_B29_P0_EXACT_SELECTED_ACQUISITION_V1",
         "target_artworks":len(records),
-        "source_file_bytes_verified":sum(x["status"]=="SOURCE_BYTES_HASH_VERIFIED" for x in decisions),
+        "historical_selected_byte_matches":sum(x["status"]=="HISTORICAL_SELECTED_BYTES_VERIFIED" for x in decisions),
+        "current_source_renditions_quarantined":sum(x["status"]=="CURRENT_SOURCE_RENDITION_QUARANTINED" for x in decisions),
         "source_hold":sum(x["status"]=="SOURCE_HOLD" for x in decisions),
-        "verified_original_bytes":acquired_bytes,
+        "downloaded_current_source_bytes_held_or_verified":acquired_bytes,
+        "current_source_preview_dhash_close_10":sum(x["preview_dhash_distance"]!="" and int(x["preview_dhash_distance"])<=10 for x in decisions),
         "image_publication_approvals_created":0,"editorial_approvals_created":0,
         "identity_promotion_created":0,"source_archive_required":True,
         "rights_publication_cleared":False,"research_only":True}
