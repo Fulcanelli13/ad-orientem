@@ -2,7 +2,9 @@ name: B30 close 64 P0 artwork recovery and classify remaining 51 without promoti
 on:
   push:
     branches: [research/sacred-art-b30-selected-six-20261024]
-    paths: [.github/workflows/ao-art-b30-p0-closeout.yml]
+    paths:
+      - .github/workflows/ao-art-b30-p0-closeout.yml
+      - scripts/research/sacred_art_b30_p0_closeout.py
   workflow_dispatch:
 permissions:
   contents: write
