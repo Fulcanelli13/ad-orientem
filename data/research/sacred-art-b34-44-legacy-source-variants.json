@@ -1,0 +1,1253 @@
+{
+  "schema": "AO_B34_NONP0_44_OCT17_PHOTO_SOURCE_VARIANTS_V1",
+  "source_library_file": "Ad_Orientem_Sacred_Art_Final_Selection_Catalogue_2026-10-17.json",
+  "gallery_451_count": 451,
+  "scope": "44 remaining P1/P2 legacy-only artworks; historical source claims, not approval",
+  "stats": {
+    "legacy_artworks": 44,
+    "p1": 4,
+    "p2": 40,
+    "photo_variants": 50,
+    "with_selected_original_sha": 4,
+    "with_selected_photo_key_matched": 4,
+    "without_photos": [],
+    "identity_basis": [
+      [
+        "EXISTING_OBJECT_LINKED_FILE",
+        40
+      ],
+      [
+        "PROVISIONAL_REAL_PHYSICAL_WORK_NOT_CERTIFIED_AS_OCT12_SELECTED_ORIGINAL",
+        1
+      ],
+      [
+        "UNVERIFIED_W78_ORIGINAL_PAINTING_CROSSWALK",
+        3
+      ],
+      [
+        "IN_SITU_CONTEXT_ONLY_NOT_USABLE_ICON_MASTER",
+        2
+      ],
+      [
+        "MUSEUM_EXACT_OBJECT",
+        3
+      ],
+      [
+        "EXACT_ORIGINAL_FULL_ASPECT_NATIVE_IMAGE_ACQUIRED",
+        1
+      ]
+    ],
+    "license_claim": [
+      [
+        "CC BY-SA 4.0",
+        4
+      ],
+      [
+        "Public domain",
+        31
+      ],
+      [
+        "CC BY 3.0",
+        2
+      ],
+      [
+        "CC0",
+        9
+      ],
+      [
+        "NGA_OPENACCESS_1",
+        1
+      ],
+      [
+        "PUBLIC_DOMAIN_ART_KRESS_IMAGE_REUSE_PENDING",
+        2
+      ],
+      [
+        "INSTITUTIONAL_PHOTOGRAPH_RESEARCH_ONLY_REUSE_PERMISSION_NOT_CLEARED",
+        1
+      ]
+    ]
+  },
+  "publication_approvals_created": 0,
+  "frozen_editorial_states_unchanged": true,
+  "rows": [
+    {
+      "artwork_id": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
+      "title": "Martyrdom of Saint Andrew",
+      "artist": "Peter Paul Rubens",
+      "frozen_decision": "ACCEPTABLE_UNFINALIZED",
+      "priority": "P1",
+      "selected_historical_byte_sha256": "563629f653191d45d566126198161ac5ee70f068f90adf115b16eb4ed148888c",
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": "https://www.fcamberes.org/en/-the-martyrdom-of-saint-andrew",
+      "photos": [
+        {
+          "historical_photo_key": "2|ART-eter-aul-ubens-artyrdom-of-aint-ndrew|4df863a7d09803f8257de4d4dd692849508005ef9c90095d681cc006e4535517|ART-eter-aul-ubens-artyrdom-of-aint-ndrew-258ca8ca30974b76.webp",
+          "photo_file_sha256_from_key": "4df863a7d09803f8257de4d4dd692849508005ef9c90095d681cc006e4535517",
+          "source_page": "https://commons.wikimedia.org/wiki/File:The_Martyrdom_of_Saint_Andrew._P.P._Rubens.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/The_Martyrdom_of_Saint_Andrew._P.P._Rubens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC BY-SA 4.0",
+          "photo_credit": "Nicobo49",
+          "width": 4720,
+          "height": 5901,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "a79b8b4e580e6598ad11bfcbebfdd4a560bc828bf0e6145762caa27a906c3c52"
+        },
+        {
+          "historical_photo_key": "2|ART-eter-aul-ubens-artyrdom-of-aint-ndrew|563629f653191d45d566126198161ac5ee70f068f90adf115b16eb4ed148888c|ART-eter-aul-ubens-artyrdom-of-aint-ndrew-80eecdb33fae7d3e.webp",
+          "photo_file_sha256_from_key": "563629f653191d45d566126198161ac5ee70f068f90adf115b16eb4ed148888c",
+          "source_page": "https://commons.wikimedia.org/wiki/File:El_Martirio_del_ap%C3%B3stol_San_Andr%C3%A9s%2C_PPRubens%2C_Fundaci%C3%B3n_Carlos_de_Amberes.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/El_Martirio_del_ap%C3%B3stol_San_Andr%C3%A9s%2C_PPRubens%2C_Fundaci%C3%B3n_Carlos_de_Amberes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Peter Paul Rubens",
+          "width": 2026,
+          "height": 2711,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": true,
+          "original_gallery_auxiliary_sha": "a6add76e4cef2b7f2c995b22be782ac1064e2ba61cf7a1e50fc2288efd87c71e"
+        }
+      ]
+    },
+    {
+      "artwork_id": "W02-017",
+      "title": "St Ambrose barring Theodosius from Milan Cathedral",
+      "artist": "Anthony van Dyck",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": "b7dcde9d1bdd85d0085bae1cb5859f59598062230664a24613eb41209cb976a7",
+      "identity_holds": null,
+      "source_url": "https://www.nationalgallery.org.uk/paintings/anthony-van-dyck-st-ambrose-barring-theodosius-from-milan-cathedral",
+      "photos": [
+        {
+          "historical_photo_key": "16|W02-017|f9c23e6a46d2c716d48d1046a3d78613e1b0ef9150b57ddbebcbaa79272bb8fe|W02-017-54e3b4d5332d86e5.webp",
+          "photo_file_sha256_from_key": "f9c23e6a46d2c716d48d1046a3d78613e1b0ef9150b57ddbebcbaa79272bb8fe",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Antoon_van_dyck%2C_sant%27ambrogio_impedisce_a_teodosio_di_entrare_nella_cattedrale_di_milano%2C_1619-20_ca.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Antoon_van_dyck%2C_sant%27ambrogio_impedisce_a_teodosio_di_entrare_nella_cattedrale_di_milano%2C_1619-20_ca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC BY 3.0",
+          "photo_credit": "",
+          "width": 3144,
+          "height": 3876,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "4eb0e5a6527e30071de01ac474190c4936483ca26810584976202c2dde4bcb1d"
+        },
+        {
+          "historical_photo_key": "16|W02-017|b7dcde9d1bdd85d0085bae1cb5859f59598062230664a24613eb41209cb976a7|W02-017-4d47fd645f0e4834.webp",
+          "photo_file_sha256_from_key": "b7dcde9d1bdd85d0085bae1cb5859f59598062230664a24613eb41209cb976a7",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Anthonis_van_Dyck_005.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Anthonis_van_Dyck_005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Anthony van Dyck",
+          "width": 3189,
+          "height": 4226,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": true,
+          "original_gallery_auxiliary_sha": "104a6703633add7535965e1e49e112870c516beaa0664c9c5dfcdd3dadcff7aa"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon",
+      "title": "Saint Bonaventure at Council of Lyon",
+      "artist": "Francisco de Zurbarán",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20MI%20204",
+      "photos": [
+        {
+          "historical_photo_key": "21|ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon|d2c981a50c8aed789a7899e89ec23a6c0c8eb546d52cd516b76f1c8137d79118|ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon-820092bf5201ffa5.webp",
+          "photo_file_sha256_from_key": "d2c981a50c8aed789a7899e89ec23a6c0c8eb546d52cd516b76f1c8137d79118",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Saint_Bonaventure_au_concile_de_Lyon%2C_par_Francisco_de_Zurbar%C3%A1n.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Saint_Bonaventure_au_concile_de_Lyon%2C_par_Francisco_de_Zurbar%C3%A1n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Francisco de Zurbarán",
+          "width": 1378,
+          "height": 1500,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "1d1d7996487924816142a72ac68140c933f2437f9e3887473f36352ebfc302b4"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-iambattista-iepolo-aint-atherine-of-iena",
+      "title": "Saint Catherine of Siena",
+      "artist": "Giambattista Tiepolo",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": null,
+      "photos": [
+        {
+          "historical_photo_key": "24|ART-iambattista-iepolo-aint-atherine-of-iena|b26150d466ab57b6516752bd4a341ccaebd82ac33050baef10b63085cbc0714d|ART-iambattista-iepolo-aint-atherine-of-iena-a044f222fa7f732f.webp",
+          "photo_file_sha256_from_key": "b26150d466ab57b6516752bd4a341ccaebd82ac33050baef10b63085cbc0714d",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Giovanni Battista Tiepolo",
+          "width": 1239,
+          "height": 1573,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "7cdd8192cb08a570b6a943cf2fbe53e4ca3f0e1edf4f5855f25970ef52825f02"
+        }
+      ]
+    },
+    {
+      "artwork_id": "paris-pm75001042-halle-sales",
+      "title": "Saint François de Sales donnant la règle de la Visitation à sainte Jeanne de Chantal",
+      "artist": "Noël Hallé",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://pop.culture.gouv.fr/notice/palissy/PM75001042",
+      "photos": [
+        {
+          "historical_photo_key": "27|paris-pm75001042-halle-sales|ad33a47406de55fb3eb8f1a6e0944401bc28e8a19b563b331ac069f5040451c2|paris-pm75001042-halle-sales-8a6888bc8983ffaf.webp",
+          "photo_file_sha256_from_key": "ad33a47406de55fb3eb8f1a6e0944401bc28e8a19b563b331ac069f5040451c2",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois_de_Sales_donnant_%C3%A0_sainte_Jeanne_de_Chantal_la_r%C3%A8gle_de_l%27ordre_de_la_Visitation_No%C3%ABl_Hall%C3%A9.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Saint_Fran%C3%A7ois_de_Sales_donnant_%C3%A0_sainte_Jeanne_de_Chantal_la_r%C3%A8gle_de_l%27ordre_de_la_Visitation_No%C3%ABl_Hall%C3%A9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Noël Hallé",
+          "width": 1772,
+          "height": 2468,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "eeea2e5e14b570907f636565ce094658dda44058211a95359975afa49b79b8b4"
+        }
+      ]
+    },
+    {
+      "artwork_id": "G17-003",
+      "title": "Saint John Chrysostom",
+      "artist": "Pedro de Orrente",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-chrysostom/62f4944d-87c7-463d-855d-82333eac6316",
+      "photos": [
+        {
+          "historical_photo_key": "31|G17-003|8559dc24586619ac89f8e6161bb1d17a5ebc7e6b0bd79f89b080450d4098b3f4|G17-003-6f596546a9f333f6.webp",
+          "photo_file_sha256_from_key": "8559dc24586619ac89f8e6161bb1d17a5ebc7e6b0bd79f89b080450d4098b3f4",
+          "source_page": "https://commons.wikimedia.org/wiki/File:San_Juan_Cris%C3%B3stomo%2C_de_Pedro_de_Orrente_(Museo_del_Prado).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/San_Juan_Cris%C3%B3stomo%2C_de_Pedro_de_Orrente_%28Museo_del_Prado%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Pedro Orrente",
+          "width": 2850,
+          "height": 2362,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "296318ed192fc4bcedfc1e713240641dcbdb81a54b6841db047369dccbf6fab7"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-artolom-steban-urillo-aint-sidore-of-eville",
+      "title": "Saint Isidore of Seville",
+      "artist": "Bartolomé Esteban Murillo",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": null,
+      "photos": [
+        {
+          "historical_photo_key": "32|ART-artolom-steban-urillo-aint-sidore-of-eville|b22a94eb95e231db4d0585a6051ebe48c07399ca115b1d77c4b4ec143eb01697|ART-artolom-steban-urillo-aint-sidore-of-eville-c7f7432813e7d4b3.webp",
+          "photo_file_sha256_from_key": "b22a94eb95e231db4d0585a6051ebe48c07399ca115b1d77c4b4ec143eb01697",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Isidor_von_Sevilla.jpeg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Isidor_von_Sevilla.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Bartolomé Esteban Murillo",
+          "width": 2705,
+          "height": 3009,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "76e749aee9abe9470b31e8a8fe664a0faa1bd7bf88e8a78900cf4a3ddbbd6cbd"
+        }
+      ]
+    },
+    {
+      "artwork_id": "G32-001",
+      "title": "The Last Chapter: Bede on his deathbed completing his translation of St John's Gospel",
+      "artist": "James Doyle Penrose",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://wwwe.lib.cam.ac.uk/CUL/exhibitions/KJV/lastcharpter.html",
+      "photos": [
+        {
+          "historical_photo_key": "33|G32-001|ae6bfd4045853817117098672149ae2258b893fbafd1876d587891c3a4b38921|G32-001-575388561d2b0043.webp",
+          "photo_file_sha256_from_key": "ae6bfd4045853817117098672149ae2258b893fbafd1876d587891c3a4b38921",
+          "source_page": "https://commons.wikimedia.org/wiki/File:James_Doyle_Penrose_-_The_last_chapter_(Bonhams_2010).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/James_Doyle_Penrose_-_The_last_chapter_%28Bonhams_2010%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "James Doyle Penrose",
+          "width": 2700,
+          "height": 2163,
+          "identity_basis": "PROVISIONAL_REAL_PHYSICAL_WORK_NOT_CERTIFIED_AS_OCT12_SELECTED_ORIGINAL",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "1691aa0f9d9e16b91b44cbc0647a7e266abd2d8862ad9388cdd5d28fe140fbde"
+        }
+      ]
+    },
+    {
+      "artwork_id": "louvre-crespi-inv259",
+      "title": "L'Immaculée Conception avec saint Anselme et saint Martin",
+      "artist": "Giuseppe Maria Crespi",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://collections.louvre.fr/ark:/53355/cl010064462",
+      "photos": [
+        {
+          "historical_photo_key": "34|louvre-crespi-inv259|c1505f421bc97267ec2fb2ee16675425c188a4729d6768cf02f9f136c281c106|louvre-crespi-inv259-6271b284663d23df.webp",
+          "photo_file_sha256_from_key": "c1505f421bc97267ec2fb2ee16675425c188a4729d6768cf02f9f136c281c106",
+          "source_page": "https://commons.wikimedia.org/wiki/File:The_Immaculate_Conception_with_St._Anselm_and_St._Martin_-_Giuseppe_Maria_Crespi_-_Louvre_INV_259.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/The_Immaculate_Conception_with_St._Anselm_and_St._Martin_-_Giuseppe_Maria_Crespi_-_Louvre_INV_259.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC BY-SA 4.0",
+          "photo_credit": "Poulpy",
+          "width": 1961,
+          "height": 3446,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "46bff753fb99ec67cf1d7c74d1455dcefb1006fa14c047dd826c626cf12b1ed0"
+        }
+      ]
+    },
+    {
+      "artwork_id": "G31-001",
+      "title": "Petrus Canisius (1521–97), portrait miniature",
+      "artist": "Anonymous Northern Netherlands",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.rijksmuseum.nl/en/collection/object/Petrus-Canisius-1521-97-Geestelijke-en-schrijver-te-Nijmegen--62669513b330202b4091495bd20e3939",
+      "photos": [
+        {
+          "historical_photo_key": "38|G31-001|9ffc0db045d9a217a95f68783c9bbd9fd500e8bc331ea019333b29057ee9c5f8|G31-001-24186901d45b294a.webp",
+          "photo_file_sha256_from_key": "9ffc0db045d9a217a95f68783c9bbd9fd500e8bc331ea019333b29057ee9c5f8",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Saint_Petrus_Canisius.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Saint_Petrus_Canisius.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "AnonymousUnknown author",
+          "width": 936,
+          "height": 1500,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "9a02e3d2508c5b35798e6db3affd8d724237395624af6715742966686a2b1566"
+        }
+      ]
+    },
+    {
+      "artwork_id": "G20-004",
+      "title": "Portrait de saint Laurent de Brindisi",
+      "artist": "Anonymous 17th century (?)",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM68006112",
+      "photos": [
+        {
+          "historical_photo_key": "39|G20-004|132d33c2748f5b5904ea06637c2dc8c515e62e9a0dd418b2200cf56e35f07202|G20-004-957e93f3e2158260.webp",
+          "photo_file_sha256_from_key": "132d33c2748f5b5904ea06637c2dc8c515e62e9a0dd418b2200cf56e35f07202",
+          "source_page": "https://commons.wikimedia.org/wiki/File:LABRUZZI_san_lorenzo_da_brindisi.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/LABRUZZI_san_lorenzo_da_brindisi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC0",
+          "photo_credit": "Berengallio",
+          "width": 2219,
+          "height": 2953,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "699485130ade3135704378b2f35d4a4df581979e64b3b5e9d2eb72d4439d859e"
+        }
+      ]
+    },
+    {
+      "artwork_id": "G26-005",
+      "title": "Saint Michael Vanquishing Satan (Grand Saint Michel)",
+      "artist": "Raphael",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://collections.louvre.fr/ark:/53355/cl010060771",
+      "photos": [
+        {
+          "historical_photo_key": "45|G26-005|43a270a07bb03aa4344b15ea74a6d615e9b4c1f36d77efb5342213e4f083e706|G26-005-b98c26b640656744.webp",
+          "photo_file_sha256_from_key": "43a270a07bb03aa4344b15ea74a6d615e9b4c1f36d77efb5342213e4f083e706",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Le_Grand_Saint_Michel%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg",
+          "original_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Le_Grand_Saint_Michel%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg/3840px-Le_Grand_Saint_Michel%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Raphael",
+          "width": 3840,
+          "height": 6491,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "083da34be485e0510e6872d30858b35214e9bd1da373b3d2e989f1aca248abe6"
+        }
+      ]
+    },
+    {
+      "artwork_id": "W08-009",
+      "title": "Saint John the Baptist in the Wilderness",
+      "artist": "Caravaggio",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://customprints.nelson-atkins.org/detail/510324/caravaggio-saint-john-the-baptist-in-the-wilderness-1604",
+      "photos": [
+        {
+          "historical_photo_key": "47|W08-009|edf00d58cc3757b4939f2f99e8293b9748e74b50bff8cb8f0ae4227d01ecd9ac|W08-009-818cf9bdb02c940b.webp",
+          "photo_file_sha256_from_key": "edf00d58cc3757b4939f2f99e8293b9748e74b50bff8cb8f0ae4227d01ecd9ac",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Michelangelo_Merisi%2C_called_Caravaggio_-_Saint_John_the_Baptist_in_the_Wilderness_-_Google_Art_Project.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Michelangelo_Merisi%2C_called_Caravaggio_-_Saint_John_the_Baptist_in_the_Wilderness_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Caravaggio",
+          "width": 3034,
+          "height": 4001,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "20d07fe1ea0498c42d87383e6a5d99a7ac7b75ce365ab7561fc2bd257424ab2b"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-ierre-ignard-aint-ohn-the-aptist",
+      "title": "Saint John the Baptist",
+      "artist": "Pierre Mignard",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": null,
+      "photos": [
+        {
+          "historical_photo_key": "47|ART-ierre-ignard-aint-ohn-the-aptist|07046582da6046290ee0ad1105a0b75e8ebbcb54fa01de1070c979bdfad90494|ART-ierre-ignard-aint-ohn-the-aptist-46998f663b83ecf1.webp",
+          "photo_file_sha256_from_key": "07046582da6046290ee0ad1105a0b75e8ebbcb54fa01de1070c979bdfad90494",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Saint_Jean_Baptiste_Mignard.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Saint_Jean_Baptiste_Mignard.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Pierre Mignard I",
+          "width": 2130,
+          "height": 2952,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "35adc6e47ed01ab2ee9c7a2451c9194e222a276ceb70af80f5afcf3fcb1c9953"
+        }
+      ]
+    },
+    {
+      "artwork_id": "W38-009",
+      "title": "Saint Anthony of Padua",
+      "artist": "Claudio Coello",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.museodelprado.es/en/the-collection/art-work/saint-anthony-of-padua/94869cf9-4d95-443f-9372-4ad05440f8da",
+      "photos": [
+        {
+          "historical_photo_key": "49|W38-009|16ccb6745bcb3646e06642725f910905828100c12177833a4d2c61aac9428295|W38-009-32aba677d1f7ead3.webp",
+          "photo_file_sha256_from_key": "16ccb6745bcb3646e06642725f910905828100c12177833a4d2c61aac9428295",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Claudio_coello-san_antonio_de_padua.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Claudio_coello-san_antonio_de_padua.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "",
+          "width": 1082,
+          "height": 1920,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "6725c4fcae733254b6f74134381b5ab3449e523f737e28bcc2cb4c102aa6d6ae"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence",
+      "title": "Martyrdom of Saint Lawrence",
+      "artist": "Jean-Baptiste de Champaigne",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": "https://www.nga.gov/artworks/103596-martyrdom-saint-lawrence",
+      "photos": [
+        {
+          "historical_photo_key": "54|ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence|92515b974f3b81335b659c4f2d488e97c8c62d00141e387ce6a063a431809015|ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence-43361c189382f4d1.webp",
+          "photo_file_sha256_from_key": "92515b974f3b81335b659c4f2d488e97c8c62d00141e387ce6a063a431809015",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Jean-Baptiste_de_Champaigne%2C_The_Martyrdom_of_Saint_Lawrence%2C_c._1660%2C_NGA_106362.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Jean-Baptiste_de_Champaigne%2C_The_Martyrdom_of_Saint_Lawrence%2C_c._1660%2C_NGA_106362.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC0",
+          "photo_credit": "\nJean-Baptiste de Champaigne",
+          "width": 3351,
+          "height": 4000,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "4f8ef6d8cd2cecb4e97d3c6db708b85415bc9e75e4cb1719e80963c25aff420c"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+      "title": "Saint Francis in Ecstasy",
+      "artist": "Anthony van Dyck",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P001478",
+      "photos": [
+        {
+          "historical_photo_key": "55|ART-nthony-van-yck-aint-rancis-in-cstasy|65c7e2fdf15f19d353635137c273fdc2cf329fdb0ba8c66672a54ca08b2363d0|ART-nthony-van-yck-aint-rancis-in-cstasy-126319c1511505ff.webp",
+          "photo_file_sha256_from_key": "65c7e2fdf15f19d353635137c273fdc2cf329fdb0ba8c66672a54ca08b2363d0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Anton_van_Dyck_-_Saint_Francis_of_Assisi_in_Ecstasy.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Anton_van_Dyck_-_Saint_Francis_of_Assisi_in_Ecstasy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Anthony van Dyck",
+          "width": 2549,
+          "height": 3051,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "07592c4cdb32bac79179463586504d1f655c1b934eee4c51352fd65e4fa91171"
+        }
+      ]
+    },
+    {
+      "artwork_id": "W02-015",
+      "title": "Saint Francis in Meditation (1639)",
+      "artist": "Francisco de Zurbarán",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": "93519dbae8a83d8d00c27495575b23239491e7dfce81527658bb967d1e19afad",
+      "identity_holds": "CARAVAGGIO_FRANCIS_IMAGE_ON_ZURBARAN_RECORD",
+      "source_url": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-francis-in-meditation",
+      "photos": [
+        {
+          "historical_photo_key": "55|W02-015|93519dbae8a83d8d00c27495575b23239491e7dfce81527658bb967d1e19afad|W02-015-20240a8bfddd0c38.webp",
+          "photo_file_sha256_from_key": "93519dbae8a83d8d00c27495575b23239491e7dfce81527658bb967d1e19afad",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_009.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Francisco_de_Zurbar%C3%A1n_009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Francisco de Zurbarán",
+          "width": 1237,
+          "height": 1484,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": true,
+          "original_gallery_auxiliary_sha": "915ab36b99da065b0b4d519d291ff7209713bcba7f27376d6a13fb762b95da1f"
+        },
+        {
+          "historical_photo_key": "55|W02-015|93519dbae8a83d8d00c27495575b23239491e7dfce81527658bb967d1e19afad|W02-015-d98e47086d47d7c5.webp",
+          "photo_file_sha256_from_key": "93519dbae8a83d8d00c27495575b23239491e7dfce81527658bb967d1e19afad",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_009.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Francisco_de_Zurbar%C3%A1n_009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Francisco de Zurbarán",
+          "width": 1237,
+          "height": 1484,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": true,
+          "original_gallery_auxiliary_sha": "915ab36b99da065b0b4d519d291ff7209713bcba7f27376d6a13fb762b95da1f"
+        }
+      ]
+    },
+    {
+      "artwork_id": "W14-006",
+      "title": "The Miracles of Saint Francis Xavier (oil modello)",
+      "artist": "Peter Paul Rubens",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://artsandculture.google.com/asset/the-miracles-of-st-francis-xavier-modello-peter-paul-rubens/DQFycgfK_1VBHg",
+      "photos": [
+        {
+          "historical_photo_key": "58|W14-006|b2d561176887c8723e5ce3aa495eee78dbd559ba1d332fe8dc1ada048ffe87ff|W14-006-a73019115d44a9b9.webp",
+          "photo_file_sha256_from_key": "b2d561176887c8723e5ce3aa495eee78dbd559ba1d332fe8dc1ada048ffe87ff",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_miracles_of_St._Francis_Xavier_-_Google_Art_Project.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Peter_Paul_Rubens_-_The_miracles_of_St._Francis_Xavier_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Peter Paul Rubens",
+          "width": 4749,
+          "height": 6373,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "d819cab0eebbf54231ec4a64657a192f2b63c7f0f7e9a168ddb383b9fc9089ae"
+        }
+      ]
+    },
+    {
+      "artwork_id": "W14-004",
+      "title": "The Miracles of Saint Ignatius of Loyola (oil modello)",
+      "artist": "Peter Paul Rubens",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.khm.at/fileadmin/pdf_KHM/online-publikationen/2025/ansichtssache_28/KHM_PointOfView_28.pdf",
+      "photos": [
+        {
+          "historical_photo_key": "59|W14-004|2f4a667512623c9b4aa71b8b3c6495668a7e0b37a435980eb2227c91e5b18a39|W14-004-4bd76742c2f1a3e4.webp",
+          "photo_file_sha256_from_key": "2f4a667512623c9b4aa71b8b3c6495668a7e0b37a435980eb2227c91e5b18a39",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens%2C_%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Wunder_des_Hl._Ignatius_von_Loyola_-_GG_517_-_Kunsthistorisches_Museum.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Peter_Paul_Rubens%2C_%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Wunder_des_Hl._Ignatius_von_Loyola_-_GG_517_-_Kunsthistorisches_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Peter Paul Rubens",
+          "width": 1139,
+          "height": 1539,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "72b004353cc08e579c41386ef2eaca383d43c26e75feccac13ea3bbd046dbd81"
+        }
+      ]
+    },
+    {
+      "artwork_id": "france-PM01002671-vianney",
+      "title": "Guérison de saint Jean-Marie Vianney, curé d'Ars",
+      "artist": "Unidentified 19th-century painter",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://pop.culture.gouv.fr/notice/palissy/PM01002671",
+      "photos": [
+        {
+          "historical_photo_key": "61|france-PM01002671-vianney|8ced67a6f1237c15392499b0a7e3792514feeeab3cf4ebc5a672d31001924d28|france-PM01002671-vianney-bbeeeaeae10b1c6d.webp",
+          "photo_file_sha256_from_key": "8ced67a6f1237c15392499b0a7e3792514feeeab3cf4ebc5a672d31001924d28",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Tableau_Gu%C3%A9rison_de_saint_Jean-Marie_Vianney_cur%C3%A9_d%27Ars_(basilique_d%27Ars).JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Tableau_Gu%C3%A9rison_de_saint_Jean-Marie_Vianney_cur%C3%A9_d%27Ars_%28basilique_d%27Ars%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC0",
+          "photo_credit": "\nUnknown authorUnknown author ",
+          "width": 2624,
+          "height": 3064,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "43d44b4c31000e137f94643dcae0cb38c7832f558dd4a667d7e9105e7b123b2c"
+        }
+      ]
+    },
+    {
+      "artwork_id": "G17-010",
+      "title": "The Martyrdom and Last Communion of Saint Lucy",
+      "artist": "Paolo Veronese",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.nga.gov/artworks/63264-martyrdom-and-last-communion-saint-lucy",
+      "photos": [
+        {
+          "historical_photo_key": "64|G17-010|56c50f9cb8378504ec7ffa8e8ba11639d9c2bb18cef980a010eb7b9949d65d43|G17-010-a2ccf17ffd7a88fa.webp",
+          "photo_file_sha256_from_key": "56c50f9cb8378504ec7ffa8e8ba11639d9c2bb18cef980a010eb7b9949d65d43",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Veronese%2C_The_Martyrdom_and_Last_Communion_of_Saint_Lucy%2C_c._1585-1586%2C_NGA_63264.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Veronese%2C_The_Martyrdom_and_Last_Communion_of_Saint_Lucy%2C_c._1585-1586%2C_NGA_63264.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC0",
+          "photo_credit": "\nVeronese",
+          "width": 4000,
+          "height": 3227,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "3ec8d5ac45d0d59aec4f69108ff41c39691fc1d83f68c0df388743e14e794743"
+        }
+      ]
+    },
+    {
+      "artwork_id": "W38-001",
+      "title": "Saint Agnes",
+      "artist": "Massimo Stanzione",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.museunacional.cat/en/colleccio/saint-agnes/massimo-stanzione/065579-000",
+      "photos": [
+        {
+          "historical_photo_key": "65|W38-001|85fc874d3accdbac51ab998991cccfde24d5ca30c889aa43a351c1a1308d3aec|W38-001-87801a2fd040f267.webp",
+          "photo_file_sha256_from_key": "85fc874d3accdbac51ab998991cccfde24d5ca30c889aa43a351c1a1308d3aec",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Massimo_Stanzione_-_Saint_Agnes_-_Google_Art_Project.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Massimo_Stanzione_-_Saint_Agnes_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Massimo Stanzione",
+          "width": 4414,
+          "height": 4568,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "87fe8a15476f515c70dd65fec87cbb0e391c7df564fcfab3fcc32a2a60361ea2"
+        },
+        {
+          "historical_photo_key": "65|W38-001|940a54b7679c1665803eccb320e13b05ad287ec8eeac07ab32f46b5ef816bf87|W38-001-4244bde0e2d483f2.webp",
+          "photo_file_sha256_from_key": "940a54b7679c1665803eccb320e13b05ad287ec8eeac07ab32f46b5ef816bf87",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Saint_Agnes.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Saint_Agnes.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Massimo Stanzione",
+          "width": 3000,
+          "height": 4000,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "91d67d6560f300c02dfdf6fe598a51e7c571900e449cd9427da256a3f25d4ae3"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-aravaggio-aint-atherine-of-lexandria",
+      "title": "Saint Catherine of Alexandria",
+      "artist": "Caravaggio",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": null,
+      "photos": [
+        {
+          "historical_photo_key": "67|ART-aravaggio-aint-atherine-of-lexandria|de2be3f75a101cbd8ab9cbdb9f26b2b95e4aac4de05452e542f383f28545aa91|ART-aravaggio-aint-atherine-of-lexandria-7449bb0c04f1dcaf.webp",
+          "photo_file_sha256_from_key": "de2be3f75a101cbd8ab9cbdb9f26b2b95e4aac4de05452e542f383f28545aa91",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Caravaggio_-_Saint_Catherine_of_Alexandria_(post-restoration_image).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Caravaggio_-_Saint_Catherine_of_Alexandria_%28post-restoration_image%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC0",
+          "photo_credit": "Caravaggio",
+          "width": 2134,
+          "height": 2750,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "1a233696b463dce6c76e15d55f959f3bad51e9125bbe2cc17f074ba1fd9d016b"
+        }
+      ]
+    },
+    {
+      "artwork_id": "W40-012",
+      "title": "Saint Mary Magdalene",
+      "artist": "Guido Reni",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.nationalgallery.org.uk/paintings/guido-reni-saint-mary-magdalene",
+      "photos": [
+        {
+          "historical_photo_key": "68|W40-012|3f4a572b580d828e84f5a38b110ce81d8f644533480a1b53808dd0aa74cfa942|W40-012-60777283170d26c6.webp",
+          "photo_file_sha256_from_key": "3f4a572b580d828e84f5a38b110ce81d8f644533480a1b53808dd0aa74cfa942",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_The_Penitent_Magdalene_-_Google_Art_ProjectFXD.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Guido_Reni_-_The_Penitent_Magdalene_-_Google_Art_ProjectFXD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Guido Reni",
+          "width": 5886,
+          "height": 7242,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "94f3e1072240b42a7f52a205cad3da5d057cca09b776bc4a64684eff8327451d"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
+      "title": "Miracle des Ardents",
+      "artist": "Gabriel-François Doyen",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": null,
+      "photos": [
+        {
+          "historical_photo_key": "69|ART-abriel-ran-ois-oyen-iracle-des-rdents|e492fa3445da05c4001186f7b034e150ec99910fceb622d8fc49f51ce3325f5a|ART-abriel-ran-ois-oyen-iracle-des-rdents-3ff7a9dfc966b364.webp",
+          "photo_file_sha256_from_key": "e492fa3445da05c4001186f7b034e150ec99910fceb622d8fc49f51ce3325f5a",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Doyen_-_Le_Miracle_des_Ardents.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Doyen_-_Le_Miracle_des_Ardents.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Gabriel François Doyen",
+          "width": 1794,
+          "height": 3026,
+          "identity_basis": "UNVERIFIED_W78_ORIGINAL_PAINTING_CROSSWALK",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "980db7f5cc95976290ab27556b8a75466d8233947bc3b2f030a834d1c5de766a"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+      "title": "Saint Martin Dividing His Cloak",
+      "artist": "Anthony van Dyck",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.wga.hu/html/d/dyck_van/3other/s_martin.html",
+      "photos": [
+        {
+          "historical_photo_key": "72|ART-nthony-van-yck-aint-artin-ividing-is-loak|1ef10618b2dc908afcc81e42772833682f921f21105d2bed634ae53d86833e5e|ART-nthony-van-yck-aint-artin-ividing-is-loak-733f880233155f80.webp",
+          "photo_file_sha256_from_key": "1ef10618b2dc908afcc81e42772833682f921f21105d2bed634ae53d86833e5e",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Van_Dyck_-_St_Martin_Dividing_his_Cloak_c.1620.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Van_Dyck_-_St_Martin_Dividing_his_Cloak_c.1620.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Anthony van Dyck",
+          "width": 1853,
+          "height": 2000,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "140e4c13e90fa1bcf3875c3c31a10f2cff22dc7376908a4ecdcab07564fefbd6"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
+      "title": "Miracles of Saint Francis of Paola",
+      "artist": "Peter Paul Rubens",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": null,
+      "photos": [
+        {
+          "historical_photo_key": "75|ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola|8588f8eb1b4147e5c760dc42a1113b9001095b464757dbad9e8960e9fcfb53a6|ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola-8b4cf84ab4bdc923.webp",
+          "photo_file_sha256_from_key": "8588f8eb1b4147e5c760dc42a1113b9001095b464757dbad9e8960e9fcfb53a6",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Peter Paul Rubens",
+          "width": 3140,
+          "height": 4390,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "40a6ef69ebc885d5a971c865bbe8f9597d5887c0f81369a5cac32e1a3353182d"
+        }
+      ]
+    },
+    {
+      "artwork_id": "B02-HELP-ICON-BYZ",
+      "title": "Our Lady of Perpetual Help — traditional Roman icon",
+      "artist": "Byzantine iconographer (unknown)",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": "032ba665576430f87f355bdb056cf397eca190bced3ebed7e9d14fed13832aad",
+      "identity_holds": "DEVOTIONAL_ICON_NOT_OIL_PAINTING_SOURCE_MASTER_NEEDED",
+      "source_url": "https://en.wikipedia.org/wiki/Our_Lady_of_Perpetual_Help",
+      "photos": [
+        {
+          "historical_photo_key": "81|B02-HELP-ICON-BYZ|032ba665576430f87f355bdb056cf397eca190bced3ebed7e9d14fed13832aad|B02-HELP-ICON-BYZ-61f231173444b15b.webp",
+          "photo_file_sha256_from_key": "032ba665576430f87f355bdb056cf397eca190bced3ebed7e9d14fed13832aad",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Saint_Alphonsus_de_Liguori_-_Rome_-_Our_lady_of_perpetual_help.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Saint_Alphonsus_de_Liguori_-_Rome_-_Our_lady_of_perpetual_help.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC0",
+          "photo_credit": "Luc.",
+          "width": 3648,
+          "height": 2736,
+          "identity_basis": "IN_SITU_CONTEXT_ONLY_NOT_USABLE_ICON_MASTER",
+          "selected_original_sha_match": true,
+          "original_gallery_auxiliary_sha": "e2742773896421533868ba6cfc40336e6ff5af021a87ddadf2c2cedd6cb4f456"
+        },
+        {
+          "historical_photo_key": "81|B02-HELP-ICON-BYZ|de31809d6d8821443cc3cfb7bd583bfbdd9351206018c3816b35e83a00ca4118|B02-HELP-ICON-BYZ-36c6be15091986f9.webp",
+          "photo_file_sha256_from_key": "de31809d6d8821443cc3cfb7bd583bfbdd9351206018c3816b35e83a00ca4118",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Sant%27Alfonso_all%27Esquilino_-Roma_fc06.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Sant%27Alfonso_all%27Esquilino_-Roma_fc06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC BY-SA 4.0",
+          "photo_credit": "Fczarnowski",
+          "width": 4000,
+          "height": 3000,
+          "identity_basis": "IN_SITU_CONTEXT_ONLY_NOT_USABLE_ICON_MASTER",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "924c41b52c5b7099a5765df97235fc73385d5d190468015bf83ae7dca38dddac"
+        }
+      ]
+    },
+    {
+      "artwork_id": "nga-50726",
+      "title": "The Temptation of Christ",
+      "artist": "Juan de Flandes",
+      "frozen_decision": "PREVIOUSLY_RATED_ACCEPTABLE",
+      "priority": "P1",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.nga.gov/artworks/50726-temptation-christ",
+      "photos": [
+        {
+          "historical_photo_key": "88|nga-50726|b5268b2daf515be852df5fdc02f08b35cd54f1e0e0007dad08ffa50bbc28bb2c|nga-50726-ea440cf441bcea4d.webp",
+          "photo_file_sha256_from_key": "b5268b2daf515be852df5fdc02f08b35cd54f1e0e0007dad08ffa50bbc28bb2c",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Juan_de_Flandes%2C_The_Temptation_of_Christ%2C_c._1500-1504%2C_NGA_50726.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Juan_de_Flandes%2C_The_Temptation_of_Christ%2C_c._1500-1504%2C_NGA_50726.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC0",
+          "photo_credit": "\nJuan de Flandes",
+          "width": 3014,
+          "height": 4000,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "bc2d972c3ad2250be6190ecfe93da662cda1fe78b471be3c80d725ad51ecbbf4"
+        }
+      ]
+    },
+    {
+      "artwork_id": "nga-96688",
+      "title": "The Miraculous Draught of Fishes",
+      "artist": "Jacopo Bassano",
+      "frozen_decision": "PREVIOUSLY_RATED_ACCEPTABLE",
+      "priority": "P1",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.nga.gov/artworks/96688-miraculous-draught-of-fishes",
+      "photos": [
+        {
+          "historical_photo_key": "89|nga-96688|33a71aea55a154469b961e128b5a766510d08693fdc41724547ccf256cd18248|nga-96688-33a71aea55a15446.webp",
+          "photo_file_sha256_from_key": "33a71aea55a154469b961e128b5a766510d08693fdc41724547ccf256cd18248",
+          "source_page": "https://www.nga.gov/artworks/96688-miraculous-draught-of-fishes",
+          "original_url": "https://api.nga.gov/iiif/f090d0ad-5d3d-4faf-a63c-8fddd765fb23/full/full/0/default.jpg",
+          "photo_license_claim": "NGA_OPENACCESS_1",
+          "photo_credit": "",
+          "width": 4096,
+          "height": 2395,
+          "identity_basis": "MUSEUM_EXACT_OBJECT",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "de77a3c3f1919e05e37041d1bf9800cf86c8508e5ffbc7b379c4457b00732a98"
+        }
+      ]
+    },
+    {
+      "artwork_id": "nga-12205",
+      "title": "The Healing of the Paralytic",
+      "artist": "Netherlandish 16th Century",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.nga.gov/artworks/12205-healing-of-the-paralytic",
+      "photos": [
+        {
+          "historical_photo_key": "92|nga-12205|b6535741ae84590c959c3b7b78bc5b97ae3aa39eccf1d6f5fcdf33d9881e5225|nga-12205-832550072b386c92.webp",
+          "photo_file_sha256_from_key": "b6535741ae84590c959c3b7b78bc5b97ae3aa39eccf1d6f5fcdf33d9881e5225",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Netherlandish_16th_Century%2C_The_Healing_of_the_Paralytic%2C_c._1560-1590%2C_NGA_12205.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Netherlandish_16th_Century%2C_The_Healing_of_the_Paralytic%2C_c._1560-1590%2C_NGA_12205.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC0",
+          "photo_credit": "\nNetherlandish 16th Century",
+          "width": 2222,
+          "height": 3147,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "034c246fbd79f7731274b47b0cf07f8fc05fb1ae7b2c7cb021e8f365570d38e1"
+        }
+      ]
+    },
+    {
+      "artwork_id": "kress-k2016",
+      "title": "The Transfiguration",
+      "artist": "Maestro Bartolomé",
+      "frozen_decision": "PREVIOUSLY_RATED_ACCEPTABLE",
+      "priority": "P1",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd",
+      "photos": [
+        {
+          "historical_photo_key": "93|kress-k2016|977f1dabcfa0adbcb21c9386fdf40f3eaf06754f348f1ba1d592c70146b13882|kress-k2016-977f1dabcfa0adbc.webp",
+          "photo_file_sha256_from_key": "977f1dabcfa0adbcb21c9386fdf40f3eaf06754f348f1ba1d592c70146b13882",
+          "source_page": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd",
+          "original_url": "https://bmmweb.blob.core.windows.net/kress/k2016_3222_001.jpg",
+          "photo_license_claim": "PUBLIC_DOMAIN_ART_KRESS_IMAGE_REUSE_PENDING",
+          "photo_credit": "",
+          "width": 5448,
+          "height": 7584,
+          "identity_basis": "MUSEUM_EXACT_OBJECT",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "3cbefa32efb40019f4bdda62899df9553f17db49f81b3f25e0116848bd16702e"
+        }
+      ]
+    },
+    {
+      "artwork_id": "nga-34956",
+      "title": "The Return of the Prodigal Son",
+      "artist": "Bartolomé Esteban Murillo",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "photos": [
+        {
+          "historical_photo_key": "95|nga-34956|71b30dda1ce9aaba5e05499b15ecb842078975d1d512090988c40ad07add0d1a|nga-34956-ff9b80a62dbfa73b.webp",
+          "photo_file_sha256_from_key": "71b30dda1ce9aaba5e05499b15ecb842078975d1d512090988c40ad07add0d1a",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo%2C_The_Return_of_the_Prodigal_Son%2C_1667-1670%2C_NGA_34956.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Bartolom%C3%A9_Esteban_Murillo%2C_The_Return_of_the_Prodigal_Son%2C_1667-1670%2C_NGA_34956.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC0",
+          "photo_credit": "Bartolomé Esteban Murillo",
+          "width": 4000,
+          "height": 3658,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "4785d56c07f2c9b8c9dcd0b7f2ba7b9244cd1f3826cc610ce5b5b6b2a7e9ee51"
+        },
+        {
+          "historical_photo_key": "95|nga-34956|cc82605457d4a4c2298410d5f6ef193965f2d030efa21d5b3e1af1c87af8d18b|nga-34956-0ff0720dee61ca39.webp",
+          "photo_file_sha256_from_key": "cc82605457d4a4c2298410d5f6ef193965f2d030efa21d5b3e1af1c87af8d18b",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Bartolomé Esteban Murillo",
+          "width": 4000,
+          "height": 3611,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "bb78d613ee2a11a80f3a6f9aa3065f239d0ca1e38c7084a7fee039c25acd3ea9"
+        }
+      ]
+    },
+    {
+      "artwork_id": "B02-MARTHA-VERMEER",
+      "title": "Christ in the House of Martha and Mary",
+      "artist": "Johannes Vermeer",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.nationalgalleries.org/art-and-artists/5573/christ-house-martha-and-mary",
+      "photos": [
+        {
+          "historical_photo_key": "96|B02-MARTHA-VERMEER|34715f615d4193545ae83b485c0b6cdd2f4b1184c4e1fe7cefe5a91ce0a87d86|B02-MARTHA-VERMEER-8b584538503a4db6.webp",
+          "photo_file_sha256_from_key": "34715f615d4193545ae83b485c0b6cdd2f4b1184c4e1fe7cefe5a91ce0a87d86",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Christ_in_the_House_of_Martha_and_Mary_attributed_to_Vermeer.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Christ_in_the_House_of_Martha_and_Mary_attributed_to_Vermeer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC BY-SA 4.0",
+          "photo_credit": "Yair Haklai",
+          "width": 1840,
+          "height": 1999,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "cf3c73bbceaac9cf6e3b30e1a8fbc5a31ea69b05964fe5d283d7ba9331d1b238"
+        }
+      ]
+    },
+    {
+      "artwork_id": "kress-k2017",
+      "title": "The Entry into Jerusalem",
+      "artist": "Maestro Bartolomé",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+      "photos": [
+        {
+          "historical_photo_key": "99|kress-k2017|f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff|kress-k2017-f3922cf491cb80e6.webp",
+          "photo_file_sha256_from_key": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff",
+          "source_page": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+          "original_url": "https://bmmweb.blob.core.windows.net/kress/k2017_3223_001.jpg",
+          "photo_license_claim": "PUBLIC_DOMAIN_ART_KRESS_IMAGE_REUSE_PENDING",
+          "photo_credit": "",
+          "width": 5510,
+          "height": 7700,
+          "identity_basis": "MUSEUM_EXACT_OBJECT",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "0a15cc263fb6e70a71c6478aaa6b66b74be4331345beff869d90a2d36be81507"
+        }
+      ]
+    },
+    {
+      "artwork_id": "B02-FOOTWASH-TINTORETTO",
+      "title": "Christ Washing the Disciples' Feet",
+      "artist": "Jacopo Tintoretto",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": null,
+      "source_url": "https://www.nationalgallery.org.uk/paintings/jacopo-tintoretto-christ-washing-the-disciples-feet",
+      "photos": [
+        {
+          "historical_photo_key": "100|B02-FOOTWASH-TINTORETTO|b0634f50569254f7da123dd212878e4d8d13524333254c0ae5913ae4c11d2c8d|B02-FOOTWASH-TINTORETTO-9bd4fef37feff4b2.webp",
+          "photo_file_sha256_from_key": "b0634f50569254f7da123dd212878e4d8d13524333254c0ae5913ae4c11d2c8d",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Tintoretto%2C_Jacopo_-_Christ_washing_the_Feet_of_the_Disciples_-_National_Gallery_London.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Tintoretto%2C_Jacopo_-_Christ_washing_the_Feet_of_the_Disciples_-_National_Gallery_London.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Jacopo Tintoretto",
+          "width": 6935,
+          "height": 3404,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "e5a64d04a5eae939ca28ead05222745bb0bb34b24ac6d06a09ff0dd134282b37"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-udovico-azzolino-hrist-isputing-with-the-octors",
+      "title": "Christ Disputing with the Doctors",
+      "artist": "Ludovico Mazzolino",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": "https://www.nationalgallery.org.uk/paintings/ludovico-mazzolino-christ-disputing-with-the-doctors",
+      "photos": [
+        {
+          "historical_photo_key": "105|ART-udovico-azzolino-hrist-isputing-with-the-octors|f5735166631271a96c5a8a82580031155654798c056b2d41f7d281a4dd4826f5|w89-105-f5735166631271.webp",
+          "photo_file_sha256_from_key": "f5735166631271a96c5a8a82580031155654798c056b2d41f7d281a4dd4826f5",
+          "source_page": "https://www.nationalgallery.org.uk/paintings/ludovico-mazzolino-christ-disputing-with-the-doctors-in-the-temple",
+          "original_url": "https://www.nationalgallery.org.uk/media/0xhkcrwq/n-1495-00-000016-fs-hd.jpg?width=2400",
+          "photo_license_claim": "INSTITUTIONAL_PHOTOGRAPH_RESEARCH_ONLY_REUSE_PERMISSION_NOT_CLEARED",
+          "photo_credit": "",
+          "width": 2400,
+          "height": 3335,
+          "identity_basis": "EXACT_ORIGINAL_FULL_ASPECT_NATIVE_IMAGE_ACQUIRED",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "ca36924c3e14c3a47d7180d1e7b7fa945e8795019edf0ba5f00287a232a6bb75"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-nthony-van-yck-rowning-with-horns",
+      "title": "Crowning with Thorns",
+      "artist": "Anthony van Dyck",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P001474",
+      "photos": [
+        {
+          "historical_photo_key": "108|ART-nthony-van-yck-rowning-with-horns|e18deb35649a8a83d6a1dc3ca3f9175ad09e717527858fa516cf5412dafb4d3f|ART-nthony-van-yck-rowning-with-horns-a58549b49305c2c9.webp",
+          "photo_file_sha256_from_key": "e18deb35649a8a83d6a1dc3ca3f9175ad09e717527858fa516cf5412dafb4d3f",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Anthonis_van_Dyck_004.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Anthonis_van_Dyck_004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Anthony van Dyck",
+          "width": 2362,
+          "height": 2705,
+          "identity_basis": "UNVERIFIED_W78_ORIGINAL_PAINTING_CROSSWALK",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "4ef78d1a231b076afeed74b847e935073c0c10ba74e8b93eba7317f62d66a0bf"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-esurrection-of-hrist",
+      "title": "Resurrection of Christ",
+      "artist": "Peter Paul Rubens",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": null,
+      "photos": [
+        {
+          "historical_photo_key": "111|ART-eter-aul-ubens-esurrection-of-hrist|ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178|ART-eter-aul-ubens-esurrection-of-hrist-1c4b1a84b905b5c6.webp",
+          "photo_file_sha256_from_key": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_%28central_panel%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Peter Paul Rubens",
+          "width": 2144,
+          "height": 3000,
+          "identity_basis": "UNVERIFIED_W78_ORIGINAL_PAINTING_CROSSWALK",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "835385fddb7fd2c19fe10b8c46282452b93289f5ea12d5607fb64e344630e2f3"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-omenico-etti-oses-before-the-urning-ush",
+      "title": "Moses before the Burning Bush",
+      "artist": "Domenico Fetti",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": null,
+      "photos": [
+        {
+          "historical_photo_key": "150|ART-omenico-etti-oses-before-the-urning-ush|81978c31990db7e015608b75e9c2c36cb4db8120c9ead38fda55226b8f94ab64|ART-omenico-etti-oses-before-the-urning-ush-58bfa7679748e737.webp",
+          "photo_file_sha256_from_key": "81978c31990db7e015608b75e9c2c36cb4db8120c9ead38fda55226b8f94ab64",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Domenico_Fetti_-_Moses_before_the_burning_bush_-_M.Ob.769_MNW_-_National_Museum_in_Warsaw.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Domenico_Fetti_-_Moses_before_the_burning_bush_-_M.Ob.769_MNW_-_National_Museum_in_Warsaw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Domenico Fetti",
+          "width": 3480,
+          "height": 4000,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "c21233138e35697f1421de3ab9f2ee661e6980f3f13623cf20982d58f5326496"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-ebastiano-icci-sther-before-hasuerus",
+      "title": "Esther before Ahasuerus",
+      "artist": "Sebastiano Ricci",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": "https://www.nationalgallery.org.uk/paintings/sebastiano-ricci-esther-before-ahasuerus",
+      "photos": [
+        {
+          "historical_photo_key": "156|ART-ebastiano-icci-sther-before-hasuerus|0b3d394ffdf428fbbeca0aac06efc4a1676c033682594ed3bc627773f4f2d8d1|ART-ebastiano-icci-sther-before-hasuerus-6aa18398085b1a72.webp",
+          "photo_file_sha256_from_key": "0b3d394ffdf428fbbeca0aac06efc4a1676c033682594ed3bc627773f4f2d8d1",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Sebastiano_Ricci_025.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Sebastiano_Ricci_025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Sebastiano Ricci",
+          "width": 2024,
+          "height": 2845,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "f58d490844e8736b287e03e589cef44381dd9274ec4055156546a4f899f1cfe5"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-hilippe-de-hampaigne-a-etite-ne",
+      "title": "La Petite Cène",
+      "artist": "Philippe de Champaigne",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": null,
+      "photos": [
+        {
+          "historical_photo_key": "163|ART-hilippe-de-hampaigne-a-etite-ne|3fce64afc767c16b803fd250e685f3a64caedb7e474380d3afeca68d84331942|ART-hilippe-de-hampaigne-a-etite-ne-e93d1147db7d4db3.webp",
+          "photo_file_sha256_from_key": "3fce64afc767c16b803fd250e685f3a64caedb7e474380d3afeca68d84331942",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre%2C_INV_1125).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_%28Louvre%2C_INV_1125%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "Public domain",
+          "photo_credit": "Philippe de Champaigne",
+          "width": 2816,
+          "height": 2112,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "a6e013af5858f4dbcc322fd477157168b27e8bcb9d8b759292a0b91070dba13c"
+        }
+      ]
+    },
+    {
+      "artwork_id": "ART-uccio-di-uoninsegna-ealing-of-the-an-orn-lind",
+      "title": "Healing of the Man Born Blind",
+      "artist": "Duccio di Buoninsegna",
+      "frozen_decision": "UNREVIEWED",
+      "priority": "P2",
+      "selected_historical_byte_sha256": null,
+      "identity_holds": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "source_url": "https://www.nationalgallery.org.uk/paintings/catalogues/gordon-2011/the-healing-of-the-man-born-blind",
+      "photos": [
+        {
+          "historical_photo_key": "168|ART-uccio-di-uoninsegna-ealing-of-the-an-orn-lind|a638784b0a10ae6a96ba22affbcd041672d8de07202416972275159a6c246020|ART-uccio-di-uoninsegna-ealing-of-the-an-orn-lind-5cc63b1c917674e7.webp",
+          "photo_file_sha256_from_key": "a638784b0a10ae6a96ba22affbcd041672d8de07202416972275159a6c246020",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Duccio_di_buoninsegna%2C_ges%C3%B9_apre_gli_occhi_dell%27uomo_cieco%2C_1311.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Duccio_di_buoninsegna%2C_ges%C3%B9_apre_gli_occhi_dell%27uomo_cieco%2C_1311.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "photo_license_claim": "CC BY 3.0",
+          "photo_credit": "Sailko",
+          "width": 3402,
+          "height": 3270,
+          "identity_basis": "EXISTING_OBJECT_LINKED_FILE",
+          "selected_original_sha_match": false,
+          "original_gallery_auxiliary_sha": "fd2754e9468f747f3355d12522ab359d82063a2d97a88e3a446b61f5f03306be"
+        }
+      ]
+    }
+  ]
+}

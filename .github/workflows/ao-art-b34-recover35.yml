@@ -1,0 +1,69 @@
+name: B34 research-only acquisition of 35 unique lower-priority Sacred Art source files
+on:
+  push:
+    branches: [research/sacred-art-b34-74-bulk-source-triage-20261024]
+    paths: [.github/workflows/ao-art-b34-recover35.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-b34-recover35-research-only
+  cancel-in-progress: false
+jobs:
+  source-bytes-and-draft-archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 85
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b34-74-bulk-source-triage-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install decoder and verify fixed scope
+        run: |
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python -m py_compile scripts/research/sacred_art_b34_recover35.py scripts/research/sacred_art_release_archive_gate.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('data/research/sacred-art-b34-74-bulk-source-gates.json').read_text())
+          assert j['summary']['artworks']==74
+          assert j['summary']['research_eligible_new_source_files']==36
+          assert len({p['expected_original_sha256'] for p in j['legacy_photo_gates'] if p['status']=='SOURCE_RESEARCH_ELIGIBLE'})==35
+          assert j['summary']['new_release_approvals']==0
+          PY
+      - name: Recheck Commons licences and recover only exact historical gallery original hashes
+        run: python scripts/research/sacred_art_b34_recover35.py
+      - name: Archive full binary source package in unpublished Release and download to SHA verify
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py \
+            --wave b34-legacy35 --source-dir artifacts/sacred-art-b34-source35
+      - name: Commit compact audit, keep original binaries away from production Git tree
+        run: |
+          set -euo pipefail
+          cp artifacts/sacred-art-b34-source35/source-results.csv data/research/sacred-art-b34-35-source-results.csv
+          cp artifacts/sacred-art-b34-source35/source-summary.json data/research/sacred-art-b34-35-source-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b34-35-source-*
+          git commit -m 'research: B34 35 existing exact source files checksum and unpublished archive audit'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b34-74-bulk-source-triage-20261024
+            git rebase origin/research/sacred-art-b34-74-bulk-source-triage-20261024
+            git push origin HEAD:research/sacred-art-b34-74-bulk-source-triage-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Short-lived audit summary only; not primary image archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-b34-35-exact-source-audit
+          path: |
+            artifacts/sacred-art-b34-source35/source-results.csv
+            artifacts/sacred-art-b34-source35/source-summary.json
+          retention-days: 30
+          if-no-files-found: error

@@ -1,0 +1,47 @@
+{
+  "schema": "AO_B34_383_ACTIVE_SACRED_ART_PHYSICAL_SOURCE_COVERAGE_V1",
+  "as_of": "2026-10-24",
+  "catalogue451_total": 451,
+  "active_nonrejected": 383,
+  "permanently_rejected_unchanged": 68,
+  "partition": {
+    "B27_original_sha_linked_active": 245,
+    "B29_B33_P0_total": 64,
+    "B34_remaining_legacy44_and_image_less30": 74
+  },
+  "active_with_some_evidenced_physical_source": 343,
+  "active_without_evidenced_physical_source": 40,
+  "source_coverage_percent": 89.6,
+  "composition": {
+    "B27_sha_linked": 245,
+    "B29_B33_P0_source_present": 63,
+    "B34_legacy_physical_source_present": 35,
+    "remaining_P0": 1,
+    "remaining_legacy44": 9,
+    "remaining_image_less": 30
+  },
+  "newly_acquired_images_B29_B34": 96,
+  "new_image_bytes_B29_B34": 560927219,
+  "preexisting_B27_alias_identity_conflicts_not_promoted": 5,
+  "newly_acquired_B34_photo_selected_approval_count": 0,
+  "publication_approvals_created": 0,
+  "canonical_master_modified": false,
+  "budget_paid_services": 0,
+  "critical_caveats": [
+    "Some files are alternate photos, not the frozen selected reproduction.",
+    "Five physical source leads are aliases or duplicate-byte links under different canonical IDs and remain held for identity review.",
+    "Commons file metadata, preservation byte checksums and source-object identity do not certify app publication rights.",
+    "B34 original source images are archived in an unpublished draft GitHub Release; no independent-copy archival SLA is guaranteed."
+  ],
+  "all74_statuses": {
+    "NEW_RESEARCH_SOURCE_PHOTO_ARCHIVED": 32,
+    "PREEXISTING_ARCHIVE_SOURCE_ALIAS": 3,
+    "IDENTITY_HOLD": 4,
+    "CONTEXT_NOT_MASTER": 1,
+    "RIGHTS_HOLD": 4,
+    "COPYRIGHT_PERMISSION_HOLD": 2,
+    "NO_VERIFIED_SOURCE_PHOTO": 20,
+    "IMAGE_LEAD_WITH_UNCLEARED_RIGHTS": 5,
+    "IDENTITY_CORRECTION_REQUIRED": 3
+  }
+}
