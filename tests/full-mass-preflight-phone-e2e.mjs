@@ -128,8 +128,10 @@ try{
    await page.locator("[data-folio-overview-button]").click();
  assert.equal(await page.locator(".aoGuidedMassFolio").getAttribute("data-ao-folio-view"),"overview");
  assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioQuickRow").count(),3);
- assert.deepEqual(await page.locator(".aoMassFolioQuickChoices .aoMassFolioChoiceIndex").allInnerTexts(),
-  ["I","II","III"],"The real three selectors must have visible editorial sequence markers");
+ assert.deepEqual(await page.locator(".aoMassFolioQuickChoices .aoMassFolioChoiceIcon").evaluateAll(nodes=>
+  nodes.map(x=>x.getAttribute("data-ao-asset-id"))),
+  ["ao-module-before-mass","ao-rich-eucharistic-life","ao-live-hear"],
+  "The three source-owned choices must use exact canonical bank icons");
  const firstFold=await page.evaluate(()=>{
   const shell=document.querySelector(".aoGuidedMassFolio[data-ao-folio-view='overview']");
   const header=shell?.querySelector(".aoMassFolioIdentity");
