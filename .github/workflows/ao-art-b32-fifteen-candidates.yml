@@ -2,7 +2,9 @@ name: B32 archive 15 institution-corroborated research photo candidates without 
 on:
   push:
     branches: [research/sacred-art-b32-p0-22-identity-rights-20261024]
-    paths: [.github/workflows/ao-art-b32-fifteen-candidates.yml]
+    paths:
+      - .github/workflows/ao-art-b32-fifteen-candidates.yml
+      - scripts/research/sacred_art_b32_acquire15.py
   workflow_dispatch:
 permissions:
   contents: write
