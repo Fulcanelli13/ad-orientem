@@ -1,0 +1,444 @@
+{
+  "schema": "AO_B44_383_MET_CC0_ALTERNATIVE_PAINTINGS_CLOSEOUT_V1",
+  "date": "2026-10-24",
+  "baseline_B43_frozen_active": 383,
+  "baseline_B43_any_source": 360,
+  "baseline_B43_complete_object": 358,
+  "baseline_B43_full_object_source_gaps": 25,
+  "B44_source_original_gap_closures": 0,
+  "B44_new_frozen_catalogue_entries": 0,
+  "B44_editorial_approvals": 0,
+  "B44_app_publication_decisions": 0,
+  "B44_any_source": 360,
+  "B44_complete_object": 358,
+  "B44_gaps_remaining": 25,
+  "Met_searches_requested": 40,
+  "Met_searches_succeeded": 21,
+  "Met_searches_blocked": 19,
+  "Met_object_detail_records_inspected": 68,
+  "Met_unique_object_details_called": 59,
+  "Met_qualified_case_object_pairs": 3,
+  "Met_CC0_painted_alternatives_archived": 2,
+  "Met_new_research_image_bytes": 11150143,
+  "Met_403_blocked_search_queries": [
+    {
+      "frozen_artwork_id": "celine-1894-john-cross",
+      "query": "Saint John of the Cross",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "W04-009",
+      "query": "Dream of Saint Joseph",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "W04-009",
+      "query": "Saint Joseph",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "query": "Holy Family Saint Anne",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "query": "Holy Family St Anne",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "ART-eter-aul-ubens-he-oly-rinity",
+      "query": "Holy Trinity",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "query": "Saint Anthony of Padua",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "query": "Anthony Padua Christ Child",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "query": "Burial of Christ",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "query": "Entombment",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "G27-002",
+      "query": "Saint Patrick",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "W10-009",
+      "query": "Apotheosis of Saint Louis",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "W10-009",
+      "query": "Saint Louis",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "G20-002",
+      "query": "Anselm Canterbury",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "G17-006",
+      "query": "Saint Francis Sales",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "G30-006",
+      "query": "San Pier Damiano",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "G30-010",
+      "query": "Robert Bellarmino",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "G17-009",
+      "query": "Martyrdom of Saint Denis",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "frozen_artwork_id": "G29-001",
+      "query": "Bishop Saint Hilary",
+      "status": "API_RESEARCH_ACCESS_HOLD",
+      "source_error": "SEARCH: HTTPError: HTTP Error 403: Forbidden"
+    }
+  ],
+  "Met_circuit_breaker": "19 Met official search HTTP 403 responses are restricted research access, NOT no matches. Do not retry identical endpoint from same workflow host until access policy changes; switch to cached official open records or provider-approved alternatives.",
+  "B43_research_file_count": 120,
+  "B43_research_image_bytes": 699623038,
+  "B44_cumulative_research_original_image_files": 122,
+  "B44_cumulative_research_original_bytes": 710773181,
+  "B44_GitHub_remote_sha_workflow_run": 40090336600,
+  "B44_unpublished_draft_archive": "ao-art-originals-40090336600-1",
+  "catalogue_editorial_holds_retained": true,
+  "two_Celine_underlying_artist_rights_holds": true,
+  "stricte_zero_euro": true,
+  "production_branch_unchanged": true,
+  "new_alternative_paintings": [
+    {
+      "museum_object_id": 471903,
+      "frozen_target": "G25-003",
+      "museum_accession": "61.199",
+      "name": "Scenes from the Life of Saint Augustine of Hippo",
+      "artist": "Master of Saint Augustine",
+      "year": "c. 1490",
+      "style": "Late-medieval Catholic Flemish oil and precious metals on wood panel",
+      "original_image_sha256": "8b8b5e5f5ce9a363f7c89e7ca769704b0e743671cd2117226668f14f26f06578",
+      "original_image_bytes": 5292738,
+      "width": 4000,
+      "height": 3711,
+      "official_url": "https://www.metmuseum.org/art/collection/search/471903",
+      "editorial_gate": "POSSIBLE_ALT_SAINT_AUGUSTINE_CATHOLIC_ICONOGRAPHY; different panel/artist from Prado P001314",
+      "photo_open_access_status": "MET_PRIMARY_IMAGE_IS_PUBLIC_DOMAIN_TRUE",
+      "separate_artwork_original": true,
+      "canonical_original_identity_match": false,
+      "new_app_publication_approval": false,
+      "new_editorial_selection": false
+    },
+    {
+      "museum_object_id": 435621,
+      "frozen_target": "G26-007",
+      "museum_accession": "89.21.1",
+      "name": "Joan of Arc",
+      "artist": "Jules Bastien-Lepage",
+      "year": "1879",
+      "style": "French nineteenth-century Catholic visionary historical oil on canvas",
+      "original_image_sha256": "f3449f53ed30246749d4cd59495747631ffe34de7eb17d43db67e87f53d52304",
+      "original_image_bytes": 5857405,
+      "width": 4000,
+      "height": 3622,
+      "official_url": "https://www.metmuseum.org/art/collection/search/435621",
+      "editorial_gate": "POSSIBLE_ALT_JOAN_VOICES_HISTORICAL_SCENE; different painter and original object from Eugène Carrière Orsay RF3946",
+      "photo_open_access_status": "MET_PRIMARY_IMAGE_IS_PUBLIC_DOMAIN_TRUE",
+      "separate_artwork_original": true,
+      "canonical_original_identity_match": false,
+      "new_app_publication_approval": false,
+      "new_editorial_selection": false
+    }
+  ],
+  "frozen_cases": [
+    {
+      "artwork_id": "G25-003",
+      "category": "SPECIFIC_EXACT_PHOTO_REUSE_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": true,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "celine-1894-john-cross",
+      "category": "UNDERLYING_ARTWORK_RIGHTS_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "italy-0900119548",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "G28-003",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "G17-006",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "G30-004",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "G20-002",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "G30-007",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "zeri-45874-peter-damian",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "G30-006",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "G30-010",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "italy-banchero-0700031704",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "G32-002",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+      "category": "MULTI_FACE_OBJECT_INCOMPLETE",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "G29-001",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "QCP-HILARY-LEDUC-1896-1900",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "carmel-lisieux-1925-therese-aux-roses",
+      "category": "UNDERLYING_ARTWORK_RIGHTS_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "G26-007",
+      "category": "SPECIFIC_EXACT_PHOTO_REUSE_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": true,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "W10-009",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "G27-002",
+      "category": "SPECIFIC_EXACT_PHOTO_REUSE_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "G17-009",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": true,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "category": "FROZEN_OBJECT_IDENTITY_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": true,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "category": "SPECIFIC_EXACT_PHOTO_REUSE_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "category": "FROZEN_OBJECT_IDENTITY_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-he-oly-rinity",
+      "category": "FROZEN_OBJECT_IDENTITY_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": true,
+      "B43_app_published": false,
+      "B44_new_original_source_promoted": false,
+      "B44_alternative_offered": false,
+      "B44_no_unauthorized_publication": true
+    }
+  ]
+}
