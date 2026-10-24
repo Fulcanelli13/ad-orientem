@@ -178,7 +178,7 @@ for(const r of upstream.answerEvidence){
   originalOwnerPath:r.originalAnswerOwner.path,
   sourceWitnessUrl:r.originalSource.sourceWitnessUrl,
   source1905QuestionIds:qids,source1905QuestionNumberIsEditorial:true,
-  1905CrosswalkStatus:'339_SOURCE_QUESTIONS_INDEXED_BUT_ANSWER_NOT_CERTIFIED',
+  crosswalk1905Status:'339_SOURCE_QUESTIONS_INDEXED_BUT_ANSWER_NOT_CERTIFIED',
   upstreamEarlierPilotLinks:seedLinks,
   originalP6SourceLocatorLeads:sameSourceNumber,
   originalP6LexicalReviewLeads:lexical,
