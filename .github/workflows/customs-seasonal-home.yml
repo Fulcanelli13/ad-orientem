@@ -1,0 +1,32 @@
+name: Customs seasonal Home editorial integrity
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "src/customs/seasonal-home-spotlight.js"
+      - "src/home/today-v2-sections.js"
+      - "src/home/today-v2-styles.js"
+      - "src/home/presentation.js"
+      - "tests/customs-seasonal-home-year.mjs"
+      - ".github/workflows/customs-seasonal-home.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  year-led-spotlight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify sourced approved-only year-led Home Customs spotlight
+        run: |
+          node --check src/customs/seasonal-home-spotlight.js
+          node --check src/home/today-v2-sections.js
+          node --check src/home/presentation.js
+          node --check tests/customs-seasonal-home-year.mjs
+          node tests/customs-seasonal-home-year.mjs
+          node tests/calendar-customs-context.mjs
+          node tests/calendar-customs-search.mjs
