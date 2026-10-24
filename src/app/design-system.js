@@ -355,7 +355,8 @@ const CSS=`
 }
 #ao-learn-modular-root .aoLearnModTop,
 #ao-settings-modular-root .aoSetTop,
-#ao-find-modular-root .aoExploreSurface>.aoFindHeader{
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader,
+#ao-find-modular-root .aoHeritageSurface>.aoFindHeader{
  background:var(--ao-frame-bg,#0B0F13)!important;
  color:var(--ao-frame-text,#ECE8DF)!important;
  border-bottom:1px solid var(--ao-frame-rule,rgba(255,255,255,.08))!important;
@@ -363,7 +364,8 @@ const CSS=`
 }
 #ao-learn-modular-root .aoLearnModTop button,
 #ao-settings-modular-root .aoSetTop button,
-#ao-find-modular-root .aoExploreSurface>.aoFindHeader>button{
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader>button,
+#ao-find-modular-root .aoHeritageSurface>.aoFindHeader>button{
  min-width:44px!important;min-height:44px!important;
  background:transparent!important;
  border:0!important;
@@ -372,12 +374,14 @@ const CSS=`
 }
 #ao-learn-modular-root .aoLearnModTopTitle small,
 #ao-settings-modular-root .aoSetTitle small,
-#ao-find-modular-root .aoExploreSurface>.aoFindHeader>div>small{
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader>div>small,
+#ao-find-modular-root .aoHeritageSurface>.aoFindHeader>div>small{
  display:none!important;
 }
 #ao-learn-modular-root .aoLearnModTopTitle strong,
 #ao-settings-modular-root .aoSetTitle strong,
-#ao-find-modular-root .aoExploreSurface>.aoFindHeader h1{
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader h1,
+#ao-find-modular-root .aoHeritageSurface>.aoFindHeader h1{
  font:400 19px/1.3 var(--ao-font-display,"EB Garamond",Georgia,serif)!important;
  letter-spacing:0!important;
  text-transform:none!important;
