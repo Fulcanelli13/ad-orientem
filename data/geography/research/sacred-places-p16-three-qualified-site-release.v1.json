@@ -1,0 +1,237 @@
+{
+  "schema": "AO_SACRED_PLACES_P16_THREE_QUALIFIED_RELEASES_V1",
+  "date": "2026-10-24",
+  "status": "PROPOSED_VIA_PULL_REQUEST",
+  "owners": [
+    "data/geography/seed-registry.v1.json",
+    "data/shrines/source-registry.v1.json",
+    "data/explore/heritage-place-reconciliation.review.v1.json"
+  ],
+  "baseline": {
+    "places": 350,
+    "source_registry": 630,
+    "heritage_crosswalk": 350,
+    "areas": 141,
+    "directory_place_links": 9,
+    "source_identity_title_holds_from_p15": 19
+  },
+  "proposed": {
+    "places": 353,
+    "source_registry": 639,
+    "heritage_crosswalk": 353,
+    "places_without_direct_claim": 94,
+    "new_places": 3,
+    "new_site_pins": 3,
+    "new_country_areas": 0,
+    "new_directory_place_links": 0,
+    "new_approved_images": 0,
+    "remaining_original_source_or_title_holds": 16
+  },
+  "published_new": [
+    {
+      "id": "place:MY:st-jude-church-rawang",
+      "candidate": "candidate:SG-INV-0676",
+      "note": "Officially parish church at Rawang, not a national shrine or church in central Kuala Lumpur.",
+      "identity": [
+        "AO-P16-RAWANG-ARCHDIOCESE",
+        "AO-P16-RAWANG-PARISH"
+      ],
+      "geo_source": "AO-P16-RAWANG-GEO",
+      "name": "Church of St. Jude, Rawang",
+      "lat": 3.3170625,
+      "lng": 101.5771875,
+      "olc": "6PM38H8G+RV"
+    },
+    {
+      "id": "place:PE:santuario-san-martin-de-porres-jicamarca",
+      "candidate": "candidate:SG-INV-0525",
+      "note": "Chosica vicariate shrine at Jicamarca Anexo 22, distinct from the Dominican convent/church of St Martin in central Lima.",
+      "identity": [
+        "AO-P16-JICAMARCA-EPISCOPATE",
+        "AO-P16-JICAMARCA-CUSTODIAN"
+      ],
+      "geo_source": "AO-P16-JICAMARCA-GEO",
+      "name": "Centro de Espiritualidad y Santuario San Martín de Porres, Jicamarca",
+      "lat": -11.9004375,
+      "lng": -76.9439375,
+      "olc": "57W533X4+RC"
+    },
+    {
+      "id": "place:UY:santuario-nuestra-senora-del-carmen-carmelo",
+      "candidate": "candidate:SG-INV-0534",
+      "note": "Carmelo sanctuary ~430m from separately documented Our Lady of Mount Carmel parish church; not Colonia del Sacramento.",
+      "identity": [
+        "AO-P16-CARMELO-EPISCOPATE",
+        "AO-P16-CARMELO-GEO"
+      ],
+      "geo_source": "AO-P16-CARMELO-GEO",
+      "name": "Santuario Nuestra Señora del Carmen, Carmelo",
+      "lat": -33.9995625,
+      "lng": -58.2879375,
+      "olc": "48R32P26+5R"
+    }
+  ],
+  "original_candidate_ids_preserved": [
+    "candidate:SG-INV-0676",
+    "candidate:SG-INV-0525",
+    "candidate:SG-INV-0534"
+  ],
+  "held_exceptions": [
+    {
+      "candidate_id": "candidate:SG-INV-0702",
+      "original_name": "Our Lady of Assiut shrine (Coptic Orthodox)",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "EXCLUDE_CATHOLIC_SITE_CLASS",
+      "url": "https://stmarydurunka.org/",
+      "evidence": "Original identifiable Durunka monastery is Coptic Orthodox, not an actively Catholic shrine; 'Assiut shrine' remains ambiguous across Marian sites.",
+      "next": "Do not create Catholic place; optionally inventory as explicitly Coptic heritage with precise separate identity."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0587",
+      "original_name": "Sanctuary of Our Lady of Perpetual Help, Goa",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "SHRINE_TITLE_NOT_EVIDENCED",
+      "url": "https://dip.goa.gov.in/religion-of-goa/",
+      "evidence": "Goa government discusses Our Lady of Perpetual Succour devotion in Tivim; no diocesan named Goa sanctuary tied to the generic original title.",
+      "next": "Require church custodian and exact physical sanctuary title."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0071",
+      "original_name": "Sanctuary of Our Lady of the Snow, Santa Maria Maggiore (Bergamo)",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "CONFLATED_BERGAMO_SANCTUARIES",
+      "url": "https://diocesibg.it/wp-content/uploads/sites/2/2023/02/Santuari2023.pdf",
+      "evidence": "Bergamo Diocese separately lists Santuario Santa Maria Maggiore in Città Alta and Madonna della Neve in Bergamo S. Anna, plus Foppolo. Original merged title is not one physical site.",
+      "next": "Keep all named diocesan sanctuaries distinct; source-owner must select one original identity."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0735",
+      "original_name": "Shrine of Our Lady of Itasy, Ampefy",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "CATHOLIC_CUSTODY_IDENTIFIED_SITE_MAPPING_HELD",
+      "url": "https://aea.cef.fr/micro-projets-2024-finances/",
+      "evidence": "French Catholic bishops' aid organisation (2024) records a grant to the Diocese of Miarinarivo for solar panels for a spiritual centre on the islet of the Virgin Mary in Lake Itasy, a pilgrim destination. Original Ampefy shrine name not established as formal ecclesiastical title.",
+      "next": "Find precise islet/chapel geocode and current site official name; retain diocese ownership evidence."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0475",
+      "original_name": "Shrine of Our Lady of the Angels, Kingston",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "UNATTESTED_JAMAICA_SHRINE",
+      "url": null,
+      "evidence": "No identified Archdiocese of Kingston named 'Our Lady of the Angels' shrine supported by available authoritative sources; do not substitute Holy Trinity Cathedral.",
+      "next": "Require archdiocesan identity or original name/identity provenance."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0230",
+      "original_name": "Chapel of Our Lady, Echt",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "GENERIC_ECHT_MARIAN_CHAPEL",
+      "url": "https://bedevaart.meertens.knaw.nl/plaats/186",
+      "evidence": "National pilgrimage inventory documents Edith Stein's Carmelite context in Echt, not any exact Marian 'Chapel of Our Lady' as original named.",
+      "next": "Obtain owner of exact patronage and building before location promotion."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0229",
+      "original_name": "Chapel of Our Lady, Sittard",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "SITTARD_MARIAN_CHAPEL_COLLISION",
+      "url": "https://mariakamer.nl/sittard-kloosterkapel/",
+      "evidence": "Sittard has Maria devotional facilities in Regina Carmeli monastery (including Lourdes chapel) as well as separate chapels on Kollenberg; no unique generic 'Chapel of Our Lady' match.",
+      "next": "Recover original church title from historical inventory; never map Saint Rosa chapel as Marian chapel."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0402",
+      "original_name": "National Shrine of the Sacred Heart, Milwaukee",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "OFFICIAL_HALES_CORNERS_OPEN_AIR_SHRINE",
+      "url": "https://www.archmil.org/shrines",
+      "evidence": "Archdiocese records 7335 S Highway 100, Hales Corners outdoor Shrine of the Sacred Heart (dedicated 1989); not a 'National Shrine' and not in Milwaukee city proper. Statue, fountain and gardens; no dedicated church footprint established.",
+      "next": "Find monument/pavilion site marker; do not infer church or National Shrine status."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0747",
+      "original_name": "Sanctuary of Blessed Peter To Rot, Rakunai",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "RELIC_SHRINE_AT_RAKUNAI_CONFIRMED_GEO_HELD",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/ocea.70018",
+      "evidence": "2026 peer-reviewed academic research documents Peter To Rot relics enshrined next to Rakunai basilica in 1995; Holy See confirms he was canonized Oct 19 2025. Original 'Blessed' title is outdated; exact 2026 chapel/rakunaï locator not yet proved.",
+      "supporting_url": "https://www.causesanti.va/it/santi-e-beati/pietro-to-rot.html",
+      "next": "Verify exact relic-shrine physical component and church custody; differentiate basilica vs relic shrine and historic 1995 vs 2026 state."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0530",
+      "original_name": "Shrine of Our Lady of the Assumption, Asunción",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "ASUNCION_CATHEDRAL_ORATORY_NOT_SHRINE",
+      "url": "https://arzobispado.org.py/la-arquidiocesis/parroquias/decanato-1/",
+      "evidence": "Asunción Archdiocese lists separately Catedral Metropolitana Nuestra Señora de la Asunción and Oratorio Nuestra Señora de la Asunción y Panteón Nacional de los Héroes; no distinct named shrine under original title. 2026 patronal procession travels from Oratory to Cathedral.",
+      "supporting_url": "https://arzobispado.org.py/presentacion-del-programa-oficial-de-la-fiesta-patronal-de-nuestra-senora-de-la-asuncion-2026/",
+      "next": "Reject fictitious shrine label; if publishing either original building obtain exact site identity and geocode separately."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0612",
+      "original_name": "Our Lady of Lourdes Shrine, Tianjin",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "TIANJIN_SHRINE_NAME_NOT_VERIFIED",
+      "url": null,
+      "evidence": "Our Lady of Lourdes shrine in Tianjin not independently identified with a building-specific current Catholic source; generic Marian wording insufficient.",
+      "next": "Retrieve original Chinese-language catholic owner source and building location."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0456",
+      "original_name": "Shrine of Our Lady of Guadalupe, Matagalpa",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "MATAGALPA_GUADALUPE_MULTIPLE_SITES",
+      "url": "https://mapanicaragua.com/en/religious-festivities-of-matagalpa/",
+      "evidence": "Matagalpa city Guadalupe hermitage is a procession site; separate Apante/Montaña de la Paz Marian image and Franciscan project cannot be collapsed into city hermitage.",
+      "supporting_url": "https://www.heartstouchinghearts.org/es/mountain-of-the-peace-2/",
+      "next": "Require actual sanctuary custodian and exact target from original research candidate."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0683",
+      "original_name": "Shrine of Our Lady of Fátima, Dili",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "DILI_FATIMA_DEVOTION_NOT_CITY_SHRINE",
+      "url": "https://arqddili.tl/igreja-particular/",
+      "evidence": "Dili archdiocesan list includes Fátima parishes in Railaco and Atauro; separate original 2002 pilgrim statue visit and maternity-school in Dili are not a designated Dili shrine.",
+      "supporting_url": "https://www.santuario-fatima.pt/en/locations/maternidade-escola-nossa-senhora-fatima",
+      "next": "Demand named diocesan shrine located within Dili city and mappable building."
+    },
+    {
+      "candidate_id": "UNMAPPED-1",
+      "original_name": "Unreconciled historical record",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "HISTORICAL_SOURCE_OWNER_MISSING",
+      "url": null,
+      "evidence": "Legacy exception record not assigned a provable original source-owner ID; inventing one would corrupt original 845-row trace.",
+      "next": "Locate originating W1-W3 historical ledger row before any count correction."
+    },
+    {
+      "candidate_id": "UNMAPPED-2",
+      "original_name": "Unreconciled historical record",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "HISTORICAL_SOURCE_OWNER_MISSING",
+      "url": null,
+      "evidence": "No identified original candidate ID in historical W1-W3 source ownership; preserved as exception slot, not converted to fabricated place.",
+      "next": "Locate source owner and stable original ID."
+    },
+    {
+      "candidate_id": "UNMAPPED-3",
+      "original_name": "Unreconciled historical record",
+      "publication_state": "HOLD_NO_NEW_PIN",
+      "status": "HISTORICAL_SOURCE_OWNER_MISSING",
+      "url": null,
+      "evidence": "Unidentified historical slot remains separate from verified candidate IDs.",
+      "next": "Locate original frozen register row and evidence owner."
+    }
+  ],
+  "limits": [
+    "Full ten-character OLC site grid points, not surveyed building footprint, mapped church door or navigation entrance; all three coded as complex_anchor and OTHER.",
+    "No inference of 1962-Missal services, daily visiting hours, photographs, relic authentication, or pilgrimage route.",
+    "Rawang's original 'shrine Kuala Lumpur' title corrected to operating church in Rawang; no new shrine-category claim.",
+    "Carmelo sanctuary distinct from parish church 430m distant; no use of parish street coordinates.",
+    "All 16 original research/title holds retained with explicit unknown historical slots; statuses remain separate from published map releases.",
+    "Existing canonical Places and nine Directory–Place links left unchanged."
+  ]
+}
