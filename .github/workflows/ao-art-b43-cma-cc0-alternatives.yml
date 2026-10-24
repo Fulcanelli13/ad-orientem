@@ -1,0 +1,60 @@
+name: B43 CMA CC0 alternatives - 19 Catholic themes and verified original research archive
+on:
+  push:
+    branches: [research/sacred-art-b43-cc0-object-candidates-and-identity-lock-20261024]
+    paths: [.github/workflows/ao-art-b43-cma-cc0-alternatives.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b43-cc0-alternate-paintings-once
+  cancel-in-progress: false
+jobs:
+  investigate-open-artwork-alternatives:
+    runs-on: ubuntu-latest
+    timeout-minutes: 42
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b43-cc0-object-candidates-and-identity-lock-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Predecessor source and licence hold verification
+        run: |
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          node tests/sacred-art-b42-research-closeout-integrity.mjs
+          python -m py_compile scripts/research/sacred_art_b43_cma_cc0_alternatives.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('data/research/sacred-art-b43-cma-19-open-painting-subject-queries.json').read_text())
+          assert len(a['queries'])==19
+          assert a['publication_approvals']==a['editorial_selections']==0
+          assert a['zero_euro']
+          PY
+      - name: Find source-level CC0 artwork alternatives, dedup against frozen 451 and preserve research bytes
+        run: python scripts/research/sacred_art_b43_cma_cc0_alternatives.py
+      - name: Mandatory unpublished GitHub Release and remote SHA checks
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py --wave b43-cma-cc0-alt --source-dir artifacts/b43-cleveland-cc0-alternative-paintings
+      - name: Commit only CC0 source evidence and editorial-decision holds
+        run: |
+          set -euo pipefail
+          cp artifacts/b43-cleveland-cc0-alternative-paintings/source-results.csv data/research/sacred-art-b43-cma-cc0-alternative-results.csv
+          cp artifacts/b43-cleveland-cc0-alternative-paintings/source-summary.json data/research/sacred-art-b43-cma-cc0-alternative-summary.json
+          cp artifacts/b43-cleveland-cc0-alternative-paintings/discovery-evidence.json data/research/sacred-art-b43-cma-19-query-discovery-evidence.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b43-cma-cc0-alternative-* data/research/sacred-art-b43-cma-19-query-discovery-evidence.json
+          git commit -m 'research: B43 19-topic CMA CC0 alternative image candidates; SHA-verified, never replace frozen art'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b43-cc0-object-candidates-and-identity-lock-20261024
+            git rebase origin/research/sacred-art-b43-cc0-object-candidates-and-identity-lock-20261024
+            git push origin HEAD:research/sacred-art-b43-cc0-object-candidates-and-identity-lock-20261024 && exit 0
+            sleep 3
+          done
+          exit 1
