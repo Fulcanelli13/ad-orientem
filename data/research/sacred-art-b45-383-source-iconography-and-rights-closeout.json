@@ -1,0 +1,132 @@
+{
+  "schema": "AO_B45_383_FROZEN_SACRED_ART_EXACT_SOURCE_CLOSEOUT_V1",
+  "date": "2026-10-24",
+  "predecessor_draft_pr": 1608,
+  "catalogue_frozen_active": 383,
+  "previous_any_source": 360,
+  "previous_complete_object_source": 358,
+  "previous_complete_gaps": 25,
+  "B45_any_source": 360,
+  "B45_complete_object_source": 358,
+  "B45_complete_object_gaps": 25,
+  "B45_new_source_images": 0,
+  "B45_new_source_bytes": 0,
+  "B45_cumulative_research_files": 122,
+  "B45_cumulative_research_image_bytes": 710773181,
+  "French_scope_exact_artwork_records": 4,
+  "French_openapi_discovery_requests": 2,
+  "French_openapi_discovery_requests_access_blocked": 2,
+  "French_datasets_retrieved": 0,
+  "French_record_photos_newly_matched": 0,
+  "French_photo_objects_disproved_nonexistent": 0,
+  "confirmed_new_identity_evidence": [
+    {
+      "artwork_id": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+      "source_work": "Museo Nacional del Prado Guisando Annunciation altarpiece 1559",
+      "source_page": "https://content.cdnprado.net/doclinks/pdf/una-obra-un-artista/uoua-ago17.pdf",
+      "precise_source_location": "Prado Educational Department 'Una Obra. Un Artista' August 2017, printed one-page document, paragraph beginning 'El conjunto se cerraba', plus the related Museo del Prado object P001300",
+      "canonical_front": "Saint Lawrence",
+      "canonical_reverse": "San Hilario Abad, a monastic abbot/eremitic Saint Hilary, NOT St Hilary of Poitiers",
+      "monastic_context": "Guisando Jerónimos processional altarpiece; Saint Stephen and Saint Lawrence depicted on inner wings; Saint Hilary Abbot and Imposition of chasuble on Saint Ildephonsus on outer wing faces",
+      "exact_reverse_photo_sha_present": false,
+      "photo_reuse_approved": false,
+      "classification": "ICONOGRAPHY_SUBJECT_RESOLVED_PHYSICAL_REVERSE_IMAGE_UNRESOLVED"
+    },
+    {
+      "artwork_id": "G28-003",
+      "source_work": "Michele Lenzi 1851 Saint Alphonsus Liguori national ICCD 1500005082",
+      "official_meta_page": "https://dati.cultura.gov.it/lodview-arco/resource/HistoricOrArtisticProperty/1500005082",
+      "already_preserved_binary_sha": "da7915c7059b2e6d4794d44301963de8f33924222a2de43168adb6102f77cfea",
+      "app_reuse_policy": "https://www.iccd.beniculturali.it/it/consultazione-riproduzione-immagini",
+      "photo_copyright_status": "HELD_NO_FREE_COMMERCIAL_PUBLICATION_GRANT",
+      "image_composition_exact_complete_certified": false,
+      "classification": "KNOWN_IMAGE_RESEARCH_ONLY_NO_UNFUNDED_RIGHTS_CLEARANCE"
+    }
+  ],
+  "French_access_restriction": {
+    "source": "Official French Ministry of Culture Opendatasoft v2.1 dataset catalog",
+    "access_attempts": [
+      {
+        "term": "mémoire",
+        "status": "OFFICIAL_API_ACCESS_BLOCKED",
+        "error": "RuntimeError: Bad official API redirect or HTTP status"
+      },
+      {
+        "term": "palissy",
+        "status": "OFFICIAL_API_ACCESS_BLOCKED",
+        "error": "RuntimeError: Bad official API redirect or HTTP status"
+      }
+    ],
+    "result": "2 provider redirects/HTTP access restrictions, no dataset catalog selected, zero Palissy specific image documents consulted",
+    "no_image_nonexistence_claim": true,
+    "avoid_repeat_without_changed_access_path": true,
+    "open_data_meta_not_equal_photographic_reuse": "https://pop.culture.gouv.fr/aide",
+    "cases": [
+      {
+        "artwork_id": "G20-002",
+        "source_id": "PM67000164",
+        "known_photo_inventory": "CRMH 6774C1240",
+        "exact_photo_found_this_wave": false,
+        "reason": "Provider metadata endpoint inaccessible; do not infer absence",
+        "source_url": "https://pop.culture.gouv.fr/notice/palissy/PM67000164"
+      },
+      {
+        "artwork_id": "G17-006",
+        "source_id": "PM75000591",
+        "known_photo_inventory": null,
+        "exact_photo_found_this_wave": false,
+        "reason": "Provider metadata endpoint inaccessible; do not infer absence",
+        "source_url": "https://pop.culture.gouv.fr/notice/palissy/PM75000591"
+      },
+      {
+        "artwork_id": "G17-009",
+        "source_id": "PM01002382",
+        "known_photo_inventory": "CAOA 2016; AD Ain 8V23",
+        "exact_photo_found_this_wave": false,
+        "reason": "Provider metadata endpoint inaccessible; do not infer absence",
+        "source_url": "https://pop.culture.gouv.fr/notice/palissy/PM01002382"
+      },
+      {
+        "artwork_id": "G29-001",
+        "source_id": "IM33002267",
+        "known_photo_inventory": "Dossier Inventaire Nouvelle-Aquitaine; signature 1823 DE TRINITATE",
+        "exact_photo_found_this_wave": false,
+        "reason": "Provider metadata endpoint inaccessible; do not infer absence",
+        "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM33002267"
+      }
+    ]
+  },
+  "remaining_25_ids": [
+    "G25-003",
+    "celine-1894-john-cross",
+    "italy-0900119548",
+    "G28-003",
+    "G17-006",
+    "G30-004",
+    "G20-002",
+    "G30-007",
+    "zeri-45874-peter-damian",
+    "G30-006",
+    "G30-010",
+    "italy-banchero-0700031704",
+    "G32-002",
+    "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+    "G29-001",
+    "QCP-HILARY-LEDUC-1896-1900",
+    "carmel-lisieux-1925-therese-aux-roses",
+    "G26-007",
+    "W10-009",
+    "G27-002",
+    "G17-009",
+    "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+    "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+    "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+    "ART-eter-aul-ubens-he-oly-rinity"
+  ],
+  "underlying_Celine_copyright_hold_count": 2,
+  "zero_euro": true,
+  "app_published_images": 0,
+  "editorial_approvals": 0,
+  "production_unchanged": true,
+  "next_direction": "Stop re-running blocked French/Italian institutional APIs until a legitimate access change; prioritize review/selection of already owner-CC0 originals, while preserving frozen records, then exact-object imagery only from verified unrestricted original photo providers."
+}
