@@ -17,3 +17,23 @@
 .spxm-source-label{font:11px system-ui,sans-serif;color:#b7a284}
 .spxm-entry a{display:block;margin:8px 0;color:#d8bd8b;font:11px/1.45 system-ui,sans-serif;overflow-wrap:anywhere}
 @media(max-width:600px){#spxc-model-review{padding:14px}.spxm-row{flex-direction:column}#spxm-send{min-height:42px}}
+
+/* P2.48: an optional register and only original source-owned continuation questions. */
+#spxm-voice-mode{display:block;margin:10px 0 16px;min-height:42px;
+ padding:10px 13px;border:1px solid #a68b61;background:#181e27;color:#dac297;
+ font:12px/1.5 system-ui,sans-serif;cursor:pointer}
+#spxm-voice-mode:hover,#spxm-voice-mode:focus-visible{
+ border-color:#e3c68d;background:#28241f;outline-offset:2px}
+#spxm-voice-mode:disabled{opacity:.5;cursor:default}
+.spxm-voice-disclaimer{margin:11px 0;padding:8px 10px;
+ border-left:2px solid #b69b65;background:#251e1a;color:#e0c599;
+ font:12px/1.55 system-ui,sans-serif}
+.spxm-next-source{margin:18px 0 12px;padding:13px 0 2px;border-top:1px solid #74604385}
+.spxm-next-caption{color:#c7b18c;font:12px/1.55 system-ui,sans-serif;letter-spacing:.025em}
+.spxm-next-option{display:block;width:100%;margin:7px 0;min-height:44px;
+ border:1px solid #9e835c88;background:#151c26;color:#e5d5b8;text-align:left;
+ padding:10px 13px;font:15px/1.4 Palatino,Georgia,serif;cursor:pointer}
+.spxm-next-option:hover,.spxm-next-option:focus-visible{
+ border-color:#d4b77f;background:#262a2e;outline-offset:2px}
+@media(max-width:600px){#spxm-voice-mode{width:100%}
+ .spxm-next-option{font-size:15px;min-height:48px}}
