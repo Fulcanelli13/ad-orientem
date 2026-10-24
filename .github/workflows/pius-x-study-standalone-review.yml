@@ -17,6 +17,9 @@ on:
       - 'tools/pius-x-p34-bilingual-claim-comparison.mjs'
       - 'tools/pius-x-p35-substantive-35-editorial-review.mjs'
       - 'tools/pius-x-p36-corrected-bilingual-35-review.mjs'
+      - 'tools/pius-x-p37-second-pass-eleven.mjs'
+      - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
       - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p36-eleven-bilingual-rewrite-proposals-20261024.v1.json'
       - 'tests/pius-x-p35-substantive-35-editorial-review-e2e.mjs'
@@ -86,6 +89,9 @@ on:
       - 'tools/pius-x-p34-bilingual-claim-comparison.mjs'
       - 'tools/pius-x-p35-substantive-35-editorial-review.mjs'
       - 'tools/pius-x-p36-corrected-bilingual-35-review.mjs'
+      - 'tools/pius-x-p37-second-pass-eleven.mjs'
+      - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
       - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p36-eleven-bilingual-rewrite-proposals-20261024.v1.json'
       - 'tests/pius-x-p35-substantive-35-editorial-review-e2e.mjs'
@@ -190,6 +196,10 @@ jobs:
         run: node tools/pius-x-p36-corrected-bilingual-35-review.mjs
       - name: Browser-test 35-case review including 11 proposed corrections and 24 held originals
         run: node tests/pius-x-p36-bilingual-corrections-e2e.mjs
+      - name: Build second-pass Italian-to-bilingual review with 25 original-language anchors
+        run: node tools/pius-x-p37-second-pass-eleven.mjs
+      - name: Browser-test 11 evidence cases and 3 additive EN/FR refinements with no publication or remote calls
+        run: node tests/pius-x-p37-second-pass-eleven-e2e.mjs
       - name: Build free one-file offline Pius X source-dialogue trial with preserved sprites
         run: node tools/build-pius-x-p26-offline-replay.mjs
       - name: Browser-test offline source dialogue, French/English and original Vatican witnesses
