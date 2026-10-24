@@ -89,8 +89,8 @@ def build(html):
         source = fam["source"]
         if source["questionId"] != triage["id"]:
             raise ValueError("Original editorial question ID mismatch: " + turn_id)
-        if row["source1905QuestionIds"][0] != source["questionId"]:
-            raise ValueError("Reconciliation source ID differs from owner")
+        if source["questionId"] not in row["source1905QuestionIds"]:
+            raise ValueError("Owner source ID absent from composite citation set: "+turn_id)
         original_question = source["originalQuestionItalian"]
         qid = source["questionId"]
         original = witness[qid]
@@ -106,6 +106,22 @@ def build(html):
                              "score":round(score, 4), "status":status})
         if original["answer"].strip() == "":
             raise ValueError("Empty original Italian answer in " + qid)
+        # Several source-owned replies are legitimate editorial syntheses
+        # spanning two to four separate original Catechism Q&As. Do not pick
+        # the *first* cited QID as if it were automatically the primary one.
+        supplementary = []
+        for related_qid in row["source1905QuestionIds"]:
+            if related_qid == qid:
+                continue
+            other = witness[related_qid]
+            assert other["question"] and other["answer"]
+            supplementary.append({
+              "sourceQid":related_qid,
+              "italianQuestion":other["question"],
+              "italianAnswer":other["answer"],
+              "answerFingerprintSha256":fingerprint(other["answer"]),
+              "role":"ADDITIONAL_SOURCE_FOR_COMPOSITE_EN_FR_DRAFT_CLAIM_NOT_CERTIFIED"
+            })
         if triage["originalDraftEN"].strip() == "" or triage["originalDraftFR"].strip() == "":
             raise ValueError("Missing editorial bilingual specimen: " + turn_id)
         lanes[triage["lane"]] = lanes.get(triage["lane"], 0) + 1
@@ -119,6 +135,9 @@ def build(html):
           "italianQuestionFromOwner":original_question,
           "italianQuestionFromWitness":original["question"],
           "italianAnswerFromWitness":original["answer"],
+          "allOriginalSourceQuestionIds":row["source1905QuestionIds"],
+          "supplementarySourceWitnesses":supplementary,
+          "multiSourceEditorialAnswerHold":len(supplementary)>0,
           "witnessQuestionFingerprintSha256":fingerprint(original["question"]),
           "witnessAnswerFingerprintSha256":fingerprint(original["answer"]),
           "ownerToWitnessQuestionSimilarity":round(score, 4),
@@ -158,6 +177,8 @@ def build(html):
       "counts":{
         "openingQuestionsAudited":len(records),
         "originalItalianAnswersLocated":sum(r["italianAnswerLocated"] for r in records),
+        "multipleSourceReferenceOpeningHolds":sum(r["multiSourceEditorialAnswerHold"] for r in records),
+        "additionalItalianSupportPassages":sum(len(r["supplementarySourceWitnesses"]) for r in records),
         "normalizedExactQuestionIdentities":sum(
          r["ownerQuestionIdentityStatus"]=="QUESTION_TRANSCRIPTION_NORMALIZED_EXACT"
          for r in records),
