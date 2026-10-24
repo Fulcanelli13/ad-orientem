@@ -287,3 +287,37 @@ assert.deepEqual(epiphany.source_group_ids,['CAT-WEISER-A-089','CAT-WEISER-A-090
 const wreaths=newSubjects.records.find(x=>x.research_subject_key==='RESEARCH-POLAND-CORPUS-WREATHS');
 assert.deepEqual(wreaths.source_group_ids,['CAT-WEISER-B-085','CAT-WEISER-B-086']);
 console.log('PASS customs cohort02 context drafts: two scoped EN/FR subjects, four prior source groups, zero unapproved routes to the app.');
+
+
+// Calendar release-unit accounting: count subjects, not every nested historical action as a custom.
+const gates=load('customs-consolidation-first-calendar-release-gate-board.v1.json');
+assert.equal(gates.schema,'AO_CUSTOMS_CONSOLIDATION_FIRST_CALENDAR_RELEASE_GATE_BOARD_V1');
+assert.equal(gates.records.length,8);
+assert.equal(gates.summary.total_draft_dossiers,9);
+assert.equal(gates.records.reduce((n,x)=>n+x.editorial_dossier_count,0),9);
+assert.equal(gates.summary.unique_provisional_calendar_subjects,8);
+assert.equal(gates.summary.source_bounded_editorial_review_subjects,5);
+assert.equal(gates.summary.partial_geographic_scope_hold_subjects,1);
+assert.equal(gates.summary.existing_owner_component_review_subjects,1);
+assert.equal(gates.summary.existing_research_owner_variant_review_subjects,1);
+assert.equal(gates.summary.distinct_new_customs_approved,0);
+assert.equal(gates.summary.new_calendar_items_published,0);
+const draftOrigins=new Set([
+ ...actionDossiers.records.map(x=>x.provisional_group_id),
+ ...pilot.records.map(x=>x.group_id),
+ ...newSubjects.records.flatMap(x=>x.source_group_ids)
+]);
+assert.ok(draftOrigins.size>=10);  // Multiple source groups are not equivalent to release units.
+for(const unit of gates.records){
+ assert.equal(unit.canonical_identity_approved,false);
+ assert.equal(unit.calendar_release_approved,false);
+ assert.equal(unit.reader_copy_approved,false);
+ assert.ok(unit.release_unit.startsWith('CU-REVIEW-'));
+ assert.ok(unit.source_links.every(s=>s.startsWith('https://')));
+ assert.ok(unit.draft_source_groups.every(s=>allIds.has(s)));
+ assert.ok(unit.next_blocking_gate.length>30);
+}
+const allDossierTitles=gates.records.map(x=>x.title);
+assert.equal(new Set(allDossierTitles).size,8);
+assert.ok(gates.records.find(x=>x.release_unit==='CU-REVIEW-003').draft_source_groups.includes('CAT-WEISER-B-109'));
+console.log('PASS customs editorial gate board: 9 draft dossiers -> 8 provisional Calendar subjects, 5 source-bounded editorial review, 0 approved new entries.');
