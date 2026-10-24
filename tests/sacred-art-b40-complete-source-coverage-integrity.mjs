@@ -1,0 +1,66 @@
+#!/usr/bin/env node
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const root='data/research/';
+const j=JSON.parse(fs.readFileSync(root+'sacred-art-b40-383-research-source-coverage-closeout.json','utf8'));
+const m=JSON.parse(fs.readFileSync(root+'sacred-art-b40-27-commons-file-metadata-screen.json','utf8'));
+const b39=JSON.parse(fs.readFileSync(root+'sacred-art-b39-27-gap-object-photo-rights-casebook.json','utf8'));
+const im=JSON.parse(fs.readFileSync(root+'sacred-art-b40-wuilleret-source-summary.json','utf8'));
+const ic=JSON.parse(fs.readFileSync(root+'sacred-art-b40-wuilleret-commons-crossmatch-summary.json','utf8'));
+const csv=fs.readFileSync(root+'sacred-art-b40-wuilleret-commons-crossmatch-results.csv','utf8');
+assert.equal(j.schema,'AO_B40_383_RESEARCH_SOURCE_COVERAGE_27_CASE_CLOSEOUT_V1');
+assert.equal(j.active_artworks,383);
+assert.equal(j.canonical_artwork_count_unchanged,true);
+assert.equal(j.baseline_B39_some_physical_image,357);
+assert.equal(j.baseline_B39_complete_object_research_photo,356);
+assert.equal(j.B40_some_physical_image,358);
+assert.equal(j.B40_complete_object_research_photo,357);
+assert.equal(j.B40_no_physical_image,25);
+assert.equal(j.B40_remaining_complete_object_gaps,26);
+assert.equal(j.B40_new_research_original_files,2);
+assert.equal(j.B40_new_research_original_bytes,1686864);
+assert.equal(j.B40_new_research_original_bytes,im.extracted_original_image_bytes+ic.original_bytes);
+assert.equal(j.cumulative_B29_B40_distinct_new_research_files,115);
+assert.equal(j.cumulative_B29_B40_distinct_new_research_bytes,686886337);
+assert.equal(j.cumulative_B29_B40_distinct_new_research_bytes,
+ j.historical_B29_B37_distinct_image_bytes+j.B38_distinct_image_bytes+
+ j.B39_distinct_image_bytes+j.B40_distinct_image_bytes);
+assert.equal(j.B40_photo_publication_approvals,0);
+assert.equal(j.B40_editorial_approvals,0);
+assert.equal(j.zero_euro_spend,true);
+assert.equal(j.production_unchanged,true);
+assert.equal(m.Wikimedia_queries_failed,undefined);
+assert.equal(j.Wikimedia_search_queries,49);
+assert.equal(j.Wikimedia_queries_succeeded,49);
+assert.equal(j.Wikimedia_queries_failed,0);
+assert.equal(j.Wikimedia_raw_distinct_case_file_leads,47);
+assert.equal(j.cases.length,27);
+assert.deepEqual(new Set(j.cases.map(r=>r.artwork_id)),new Set(b39.cases.map(r=>r.artwork_id)));
+assert.equal(new Set(j.cases.map(r=>r.artwork_id)).size,27);
+assert.equal(j.cases.filter(r=>r.B40_complete_object_source_established).length,1);
+assert.equal(j.cases.filter(r=>r.B40_remaining_complete_object_gap).length,26);
+const wu=j.cases.find(r=>r.artwork_id==='G30-012');
+assert.equal(wu.B40_complete_object_source_established,true);
+assert.equal(wu.B40_archive_sha_proven,true);
+assert.equal(wu.B40_image_files_new,2);
+assert.equal(wu.B40_metadata_queries,2);
+assert.equal(wu.B40_raw_file_hits,1);
+assert.equal(j.two_research_renditions_dhash_distance,2);
+assert.equal(ic.dhash_distance,2);
+assert.equal(im.page_index,5);
+assert.equal(im.printed_page,6);
+assert.equal(im.image_sha256,'5338862ba1a5b66a58cce77124b5f15ff7d2c5803f4bf9a7b42d1a7800ad808a');
+assert.equal(ic.source_original_sha256,'0ac15d7b684eed7b74dccb6927a1dd2ab92980b8dbf5a7e761657a2f393d3c64');
+assert.ok(csv.includes(ic.source_original_sha256));
+assert.equal(j.cases.filter(r=>r.B40_hit_interpretation==='COPYRIGHT_HOLD').length,2);
+assert.equal(j.cases.reduce((s,r)=>s+r.B40_raw_file_hits,0),47);
+for(const r of j.cases){
+ assert.equal(r.B40_editorial_approved,false);
+ assert.equal(r.B40_photo_app_rights_approved,false);
+ if(r.artwork_id!=='G30-012') assert.equal(r.B40_image_files_new,0);
+}
+const c=j.cases.find(r=>r.artwork_id.startsWith('ART-uan-orrea'));
+assert.equal(c.B40_remaining_complete_object_gap,true);
+const a=j.cases.find(r=>r.artwork_id==='G25-003');
+assert.equal(a.B40_remaining_complete_object_gap,true);
+console.log('B40_FULL_COVERAGE_PASS: 27 frozen cases, 49 metadata queries, 47 raw hits, two museum/Commons matching originals (dHash=2), ONE new exact complete-work source, 358/383 some, 357/383 complete, 26 gaps, 0 public rights approvals, strict €0');
