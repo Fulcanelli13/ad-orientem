@@ -94,11 +94,11 @@ assert.equal(catalogue.summary.source_review.pitre_1900_unchecked_record_pages_r
 assert.equal(catalogue.summary.source_review.pitre_1900_full_422_unique_pdf_pages_checked,144);
 assert.equal(catalogue.summary.source_review.pitre_1900_new_remaining_page_checks,105);
 assert.equal(catalogue.summary.source_review.pitre_1900_2026_folio_verification_completed,false);
-assert.equal(catalogue.summary.source_observations.total_source_detail_rows_including_external,3652);
+assert.equal(catalogue.summary.source_observations.total_source_detail_rows_including_external,3703);
 assert.equal(catalogue.summary.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(catalogue.summary.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(catalogue.summary.no_new_app_publications,true);
 assert.equal(closed.summary.authenticated_1962_ritual_approvals,0);
 assert.equal(closed.summary.new_unique_customs_certified,0);
 assert.equal(closed.summary.new_app_publications,0);
-console.log('Pitrè 1900 original edition complete: the PRE-WAVE04 422/422 source-detail folios; 105 new image checks pending, 144 distinct scan pages, 0 further page queue, 3652 nonunique research rows, 408 groups and no rite/identity/publication promotions — PASS');
+console.log('Pitrè 1900 original edition complete: the PRE-WAVE04 422/422 source-detail folios; 105 new image checks pending, 144 distinct scan pages, 0 further page queue, 3703 nonunique research rows, 408 groups and no rite/identity/publication promotions — PASS');
