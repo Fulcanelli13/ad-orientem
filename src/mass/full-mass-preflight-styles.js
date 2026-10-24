@@ -164,7 +164,7 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   "#ao-mass-flow-v1 .aoMassFolioQuickRow:focus-visible{outline:2px solid var(--liturgical,#C9AD78);outline-offset:-3px}",
   "#ao-mass-flow-v1 .aoGuidedMassFolio[data-ao-folio-view='overview'] [data-folio-calendar-details]{margin:0!important;background:var(--ao-frame-card,#141A20)!important;border:0!important;border-radius:12px!important}",
   "#ao-mass-flow-v1 .aoGuidedMassFolio[data-ao-folio-view='overview'] [data-folio-calendar-details]>summary{min-height:48px;padding:12px 16px;font:400 16px/1.4 var(--ao-font-ui,'EB Garamond',Georgia,serif);color:var(--ao-frame-muted,#A3ABB4)}",
-  "#ao-mass-flow-v1 .aoGuidedMassFolio[data-ao-folio-view='overview'] .aoMassFolioChange{border:0!important;background:transparent!important;color:var(--liturgical,#C9AD78)!important;font-size:15px!important;margin-top:8px!important}",
+  "#ao-mass-flow-v1 .aoGuidedMassFolio[data-ao-folio-view='overview'] .aoMassFolioChange{display:none!important}",
   "#ao-mass-flow-v1 [data-folio-host-actions]{background:var(--ao-frame-bg,#0B0F13)!important;border-top-color:var(--ao-frame-rule,rgba(255,255,255,.08))!important}",
   "#ao-mass-flow-v1 [data-folio-host-actions] [data-ao-start-live]{border-radius:12px!important;min-height:52px!important;font-variant-caps:normal!important;letter-spacing:0!important;background:#BDA477!important;border:1px solid #D4BD93!important;color:#10151A!important;box-shadow:none!important;text-shadow:none!important}",
   "#ao-mass-flow-v1 [data-folio-host-actions] [data-ao-start-live]:focus-visible{outline:2px solid #EED9B4!important;outline-offset:3px!important}",
