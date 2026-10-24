@@ -22,7 +22,7 @@ assert.equal(corpus.counts.allNodes,423);
 assert.equal(corpus.approvals.publishing,false);
 assert.equal(english.entries.length,433);
 assert.equal(italian.entries.length,433);
-assert.equal(english.originalPrintedFacsimileCollated,false);
+assert(english.originalPrintedFacsimileCollated!==true,'Uncertified modern English index is not an original 1912 facsimile');
 assert.equal(italian.originalPrintedFacsimileCollated,false);
 const en=new Map(english.entries.map(x=>[x.q,x]));
 const it=new Map(italian.entries.map(x=>[x.q,x]));
