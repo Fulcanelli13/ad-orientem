@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 359,
+    "places": 361,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 100,
+    "places_without_direct_claim": 102,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -64,6 +64,7 @@
       "place:IN:st-thomas-mount-shrine-chennai",
       "place:IS:christ-king-cathedral-reykjavik",
       "place:IT:basilica-santa-maria-maggiore-bergamo",
+      "place:IT:madonna-neve-rocchetta-bergamo",
       "place:IT:santuario-beata-vergine-neve-foppolo",
       "place:IT:santuario-san-paolo-della-croce-ovada",
       "place:JM:holy-trinity-cathedral-kingston",
@@ -82,6 +83,7 @@
       "place:LC:immaculate-conception-cathedral-basilica-castries",
       "place:LK:st-lucia-cathedral-colombo",
       "place:LS:our-lady-victories-cathedral-maseru",
+      "place:MG:ilot-de-la-vierge-ampefy",
       "place:MG:immaculate-conception-cathedral-andohalo",
       "place:MH:cathedral-assumption-majuro",
       "place:MM:st-mary-cathedral-yangon",
@@ -2744,6 +2746,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IT:madonna-neve-rocchetta-bergamo",
+      "display_name": "Santuario della Madonna della Neve in Rocchetta, Bergamo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IT:maria-ausiliatrice-torino",
       "display_name": "Basilica Maria Ausiliatrice, Turin",
       "record_ids": {
@@ -3404,6 +3412,12 @@
           "shrine:MA:eglise-notre-dame-de-lourdes-casablanca"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MG:ilot-de-la-vierge-ampefy",
+      "display_name": "Ilot de la sainte vierge, Ampefy",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -5018,5 +5032,18 @@
       "candidate:SG-INV-0071"
     ],
     "rule": "Catholic archdiocese/diocese or original national governmental identity and independently sourced Plus Code/OSM site. The original three unverified shrine title conflations remain separate research holds. Explicit no unsupported Mass, image, relic, shrine-owner or door implications."
+  },
+  "georeference_tranche_20261024_p19": {
+    "release": "P19",
+    "release_manifest": "data/geography/research/sacred-places-p19-two-catholic-site-release.v1.json",
+    "new_sites": [
+      "place:IT:madonna-neve-rocchetta-bergamo",
+      "place:MG:ilot-de-la-vierge-ampefy"
+    ],
+    "research_context": [
+      "candidate:SG-INV-0071",
+      "candidate:SG-INV-0735"
+    ],
+    "rule": "Two separately attested Catholic physical churches matched to named OSM building ways; original conflated Bergamo title remains distinct and Itasy formal shrine title is not inferred. No TLM, image rights, door, relic or Mass-schedule inference."
   }
 }
