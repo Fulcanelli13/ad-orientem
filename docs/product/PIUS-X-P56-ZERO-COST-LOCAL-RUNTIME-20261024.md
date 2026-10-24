@@ -8,6 +8,23 @@ Qwen2.5 7B (Q4_K_M) is a **candidate for a self-owned desktop GPU**, not the pro
 
 The tested `Qwen2.5-7B-Instruct-Q4_K_M` quantized model file is approximately **4.7 GB**, with **more memory required during inference**. As a planning estimate, GPU with **~8 GB VRAM** is an appropriate first target, but actual availability, model offloading and response speed MUST be measured on the user's existing device. A 4–6 GB GPU, integrated graphics or CPU-only setup may be slow or fail to load. No purchases should be made for this pilot.
 
+## P2.57 — hardware check before downloading any 7B weights
+
+On the existing Windows PC, open PowerShell in the Ad Orientem repository checkout and run:
+
+```powershell
+node tools/pius-x-p56-local-pilot.mjs --hardware
+```
+
+**No opt-in, running model, cloud API, internet access or subscription is required.**
+This reads operating-system RAM and available NVIDIA-SMI device information locally, prints the installed VRAM and applies a **nonbinding readiness classification**. The results are not uploaded. An NVIDIA GPU with **at least 8 GB VRAM** and **12 GB system RAM** is a first **candidate for benchmarking, not a guarantee of acceptable performance**. Older or weaker hardware could still work with partial GPU offload, but its actual speed must be measured.
+
+AMD/Intel graphics do not usually appear in NVIDIA-SMI, so **“GPU not detected” does not mean the PC lacks graphics acceleration**. Such devices may support Vulkan or other backends, but require separate testing.
+
+The operator does not have to buy a GPU. If the existing hardware is insufficient, use the €0 offline visual-novel demonstration instead of purchasing hardware or activating a remote API.
+
+The subsequent `--benchmark` command now records **separate composer and verifier timings**, alongside each EN/FR total. Only an actual run with a local inference server constitutes a real latency result; CI's local-model fixture is not that result.
+
 ## How to run on an existing Windows PC, with €0 new spending
 
 1. Have a free, GPU-capable build of **llama.cpp** with `llama-server` on the PC. Follow [llama.cpp's official local server documentation](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md) for an appropriate CUDA/Vulkan/Metal build. Merely using a binary without your GPU backend will not accelerate inference.
@@ -20,6 +37,7 @@ The tested `Qwen2.5-7B-Instruct-Q4_K_M` quantized model file is approximately **
 4. In the existing Ad Orientem GitHub checkout, another **PowerShell** window:
    ```powershell
    $env:AO_SPX_LOCAL_PILOT_MODE="I_AM_RUNNING_A_PRIVATE_LOCAL_MODEL"
+   node tools/pius-x-p56-local-pilot.mjs --hardware
    node tools/pius-x-p56-local-pilot.mjs --prepare
    node tools/pius-x-p56-local-pilot.mjs --diagnose
    node tools/pius-x-p56-local-pilot.mjs --benchmark
