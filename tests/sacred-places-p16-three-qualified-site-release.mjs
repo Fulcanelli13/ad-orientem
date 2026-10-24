@@ -1,3 +1,4 @@
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
@@ -32,14 +33,14 @@ for(const x of release.held_exceptions){
  assert.ok(x.next);
  if(x.url)assert.match(x.url,/^https:\/\//);
 }
-assert.equal(geo.places.length,371);
-assert.equal(sources.sources.length,669);
+assert.equal(geo.places.length,LIVE.places);
+assert.equal(sources.sources.length,LIVE.sources);
 assert.equal(geo.geoAreas.length,141);
 assert.equal(geo.directoryPlaceLinks.length,9);
-assert.equal(cross.place_crosswalk.length,371);
-assert.equal(cross.counts.places,371);
-assert.equal(cross.counts.places_without_direct_claim,112);
-assert.equal(cross.exception_queues.places_without_direct_claim.length,112);
+assert.equal(cross.place_crosswalk.length,LIVE.places);
+assert.equal(cross.counts.places,LIVE.places);
+assert.equal(cross.counts.places_without_direct_claim,LIVE.unlinked);
+assert.equal(cross.exception_queues.places_without_direct_claim.length,LIVE.unlinked);
 assert.equal(new Set(geo.places.map(p=>p.place_id)).size,geo.places.length);
 assert.equal(new Set(sources.sources.map(s=>s.id)).size,sources.sources.length);
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
