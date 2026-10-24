@@ -1,0 +1,115 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {chromium} from '@playwright/test';
+const root='artifacts/pius-x-study-expanded/';
+const p34=JSON.parse(readFileSync(root+'SPX_P34_Italian_EN_FR_100_Claim_Review.json','utf8'));
+const p35=JSON.parse(readFileSync(root+'SPX_P35_35_Provisional_Source_Findings.json','utf8'));
+const p37=JSON.parse(readFileSync(root+'SPX_P37_Eleven_Italian_Bilingual_Second_Pass.json','utf8'));
+const new65=JSON.parse(readFileSync('previews/pius-x-study/evidence/pius-x-p38-sixtyfive-new-italian-source-assessments-20261024.v1.json','utf8'));
+const report=JSON.parse(readFileSync(root+'SPX_P38_89_Remaining_Italian_English_French_Audit.json','utf8'));
+assert.equal(report.schema,'AO_SPX_P38_BULK89_REMAINING_ORIGINAL_ITALIAN_EDITORIAL_REVIEW_V1');
+assert.equal(report.status,'89_RESEARCH_SCREENINGS_NOT_CERTIFIED_BILINGUAL_ANSWERS');
+assert.equal(report.counts.originalOpeningQuestions,100);
+assert.equal(report.counts.excludedPreviouslyRevisedCases,11);
+assert.equal(report.counts.inspectedRemainingCases,89);
+assert.equal(report.counts.carriedExistingP35Cases,24);
+assert.equal(report.counts.newlyScreenedOpeningQuestions,65);
+assert.equal(report.counts.newCasesWithSpecificScopeOrTranslationConcerns,29);
+assert.equal(report.counts.newCasesWithoutMaterialIssueIdentifiedOnFirstRead,36);
+assert.equal(report.counts.originalItalianQAWitnessesIn89Cases,96);
+assert.equal(report.counts.extractedItalianAnswerContainingFollowingHeading,8);
+assert.equal(report.counts.translationClaimsIndependentlyCertified,0);
+assert.equal(report.counts.humanExpertApprovals,0);
+assert.equal(report.counts.publishedAnswers,0);
+assert.equal(report.protections.prior11P37CandidatesUnchanged,true);
+assert.equal(report.records.length,89);
+const old=new Map(p34.records.map(x=>[x.sourceQid,x]));
+const carried=new Map(p35.records.map(x=>[x.sourceQid,x]));
+const excluded=new Set(p37.records.map(x=>x.sourceQid));
+const newSource=new Map(new65.assessments.map(x=>[x.sourceQid,x]));
+assert.equal(excluded.size,11);
+assert.equal(newSource.size,65);
+let from35=0,from38=0,noIssue=0,issues=0,passages=0;
+const normalize=t=>String(t).normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+ .toLowerCase().replace(/[^a-z0-9]+/g,' ').trim().replace(/\s+/g,' ');
+const ids=new Set();
+for(const r of report.records){
+ assert(!ids.has(r.sourceQid));ids.add(r.sourceQid);
+ assert(!excluded.has(r.sourceQid));
+ const origin=old.get(r.sourceQid);
+ assert(origin);
+ assert.equal(r.enDraft,origin.enDraft);
+ assert.equal(r.frDraft,origin.frDraft);
+ assert.deepEqual(r.question,origin.question);
+ assert.deepEqual(r.italianSourceWitnesses,origin.italianSourceWitnesses);
+ assert.equal(r.publicationApproved,false);
+ assert.equal(r.expertTranslationApproved,false);
+ assert.equal(r.humanDoctrinalCertified,false);
+ assert.equal(r.semanticSupportIndependentlyVerified,false);
+ assert.equal(r.originalSourceAndEnglishFrenchDraftsUnchanged,true);
+ passages+=r.italianSourceWitnesses.length;
+ const finding=r.sourceAssessment;
+ assert.equal(finding.sourceCertified,false);
+ assert.equal(finding.translationCertified,false);
+ assert.equal(finding.humanReviewSigned,false);
+ assert(finding.finding.length>=35);
+ assert(finding.action.length>=15);
+ const source=r.italianSourceWitnesses.find(x=>x.qid===finding.anchorQid);
+ assert(source&&normalize(source.italianAnswer).includes(normalize(finding.originalItalianAnchor)));
+ if(finding.reviewOrigin==='P35_PRIOR_EDITORIAL_FINDING_CARRIED'){
+  from35++;
+  assert.equal(finding.finding,carried.get(r.sourceQid).sourceComparison.reasonedItalianToENFRAnalysis);
+ }else{
+  from38++;
+  assert.equal(finding.reviewOrigin,'P38_NEW_65_EDITORIAL_SOURCE_SCREEN');
+  const evaluation=newSource.get(r.sourceQid);
+  assert(evaluation);
+  assert.equal(finding.finding,evaluation.sourceToDraftFinding);
+  assert.equal(finding.action,evaluation.nextEvidenceOrCorrectionAction);
+  if(evaluation.classification==='SOURCE_CORE_PLAUSIBLE')noIssue++;
+  else issues++;
+ }
+}
+assert.equal(ids.size,89);
+assert.equal(from35,24);assert.equal(from38,65);
+assert.equal(issues,29);assert.equal(noIssue,36);assert.equal(passages,96);
+const file=resolve(root+'SPX_P38_89_Original_Italian_Review.html');
+const html=readFileSync(file,'utf8');
+assert(html.includes('Eighty-nine opening answers'));
+assert(!html.includes('__DOCUMENTARY_REVIEW_DATA__'));
+const browser=await chromium.launch({headless:true});
+const errors=[],requests=[];
+for(const width of [1280,390]){
+ const context=await browser.newContext({viewport:{width,height:820},acceptDownloads:true});
+ const page=await context.newPage();
+ page.on('pageerror',e=>errors.push(String(e)));
+ page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});
+ await page.goto(pathToFileURL(file).href);
+ assert.equal(await page.locator('#items button').count(),89);
+ assert.match(await page.locator('#detail').innerText(),/P1.38 · substantive source-to-draft assessment/);
+ await page.locator('#query').fill('PX1905-Q568');
+ assert.equal(await page.locator('#items button').count(),1);
+ await page.locator('#items button').first().click();
+ assert.match(await page.locator('#detail').innerText(),/obligation/);
+ await page.locator('#query').fill('PX1905-Q567');
+ await page.locator('#items button').first().click();
+ assert.match(await page.locator('#detail').innerText(),/P35 PRIOR EDITORIAL FINDING CARRIED/);
+ await page.locator('#query').fill('');
+ await page.locator('#lane').selectOption('HISTORICAL_PASTORAL_HOLD');
+ assert.equal(await page.locator('#items button').count(),21);
+ await page.locator('#lane').selectOption('');
+ await page.locator('#flag').selectOption('COMPOSITE_SOURCE_ARGUMENT');
+ assert((await page.locator('#items button').count())>=2);
+ const download=page.waitForEvent('download');
+ await page.locator('#download').click();
+ assert.equal((await download).suggestedFilename(),'SPX_P38_Provisional_Annotations.json');
+ await context.close();
+}
+await browser.close();
+assert.deepEqual(errors,[]);
+assert.deepEqual(requests,[]);
+console.log('PASS SPX_P38_BULK89 '+JSON.stringify({openingCases:89,newlyReviewed:65,
+ sourceScopeConcerns:29,previousFindingsRetained:24,originalItalianPassages:96,
+ bothViewports:true,networkCalls:0,humanApprovals:0,published:0}));
