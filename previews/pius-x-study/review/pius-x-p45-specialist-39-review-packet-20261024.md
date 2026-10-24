@@ -60,7 +60,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Mi sapreste dire perché tanto nell’ostia, quanto nel calice, vi è tutto Gesù Cristo?  
 **Original 1905 print:** [printed p.205](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/217) · priority passage checked by assistant; no independent sign-off  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json` / `SPX-1905-S-613-T1`  
-**Why review:** Restore both directions of the source explanation, not only the Body-to-Blood side.
+**Why review:** The answer calls Christ living and immortal in heaven; 'risen Christ' is true theology but is not the wording of this specific answer. Second pass refinement: Restore both directions of the source explanation, not only the Body-to-Blood side.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -90,7 +90,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Quali persone si debbono eleggere per padrini e madrine?  
 **Original 1905 print:** [printed p.197](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/209) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json` / `SPX-1905-S-574-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** Catholicity, good conduct and obedience to Church laws are direct; the note on present-day eligibility comes from later editorial context.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -104,7 +104,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Che cosa è il sacramento della Cresima?  
 **Original 1905 print:** [printed p.198](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/210) · priority passage checked by assistant; no independent sign-off  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-b-20261020.v1.json` / `SPX-1905-S-577-T1`  
-**Why review:** Move historical-register disclaimer to narrator; do not append it to the source-attributed answer.
+**Why review:** The Italian says Confirmation gives the Holy Ghost, marks the soul with the character of a soldier of Christ, and makes 'perfect Christians'; 'greater maturity' is a modern interpretive gloss. Second pass refinement: Move historical-register disclaimer to narrator; do not append it to the source-attributed answer.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -118,7 +118,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Chi è il ministro del sacramento della Cresima?  
 **Original 1905 print:** [printed p.199](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/211) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-b-20261020.v1.json` / `SPX-1905-S-584-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The bishop is named as ordinary minister; discussion of later faculties and contemporary discipline is not present in this answer.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -132,7 +132,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Quali condizioni si richiedono nel padrino?  
 **Original 1905 print:** [printed p.201](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/213) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-c-20261020.v1.json` / `SPX-1905-S-594-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** Suitability of age, Catholicity, Confirmation, religion and conduct are direct; present eligibility rules require independent current law.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -148,7 +148,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Chi riceve il Battesimo a che cosa resta obbligato?  
 **Original 1905 print:** [printed p.196](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/208) · priority passage checked by assistant; no independent sign-off  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json` / `SPX-1905-S-568-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The Italian obliges baptized Christians always to profess the faith and observe Christ's and the Church's law; English 'is called to' softens the explicit obligation.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -176,7 +176,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Che cosa s’intende per le opere o per le pompe del demonio?  
 **Original 1905 print:** [printed p.196](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/208) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json` / `SPX-1905-S-570-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** Sins and worldly maxims contrary to the Gospel are direct; the draft adds ritual-context commentary and the raw Italian answer includes the next section heading.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -190,7 +190,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Chi sono i padrini e le madrine del Battesimo?  
 **Original 1905 print:** [printed p.197](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/209) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json` / `SPX-1905-S-572-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** Godparents answer at the font and guarantee Christian education particularly if parents fail; 'if necessary' weakens that condition.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -204,7 +204,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Siamo noi obbligati a stare a quelle promesse e rinunzie che hanno fatto per noi i nostri padrini?  
 **Original 1905 print:** [printed p.197](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/209) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json` / `SPX-1905-S-573-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The binding character of sponsors' promises is direct; 'not merely formal words' adds a reasonable explanatory contrast not written here.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -218,7 +218,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Quali sono le obbligazioni dei padrini e delle madrine?  
 **Original 1905 print:** [printed p.197](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/209) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-a-20261020.v1.json` / `SPX-1905-S-575-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The source joins catechetical instruction, Christian life and exemplary conduct; 'above all by example' adds an unexpressed hierarchy.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -232,7 +232,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** In qual maniera il sacramento della Cresima ci fa perfetti cristiani?  
 **Original 1905 print:** [printed p.198](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/210) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-b-20261020.v1.json` / `SPX-1905-S-578-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** Strengthening in faith and perfecting virtues and gifts of Baptism are explicit; 'not an absence of faults' is a useful distinction but editorial.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -302,7 +302,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Qual’è la materia del sacramento dell’Eucaristia?  
 **Original 1905 print:** [printed p.202](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/214) · [printed p.203](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/215) · priority passage checked by assistant; no independent sign-off  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json` / `SPX-1905-S-599-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** Wheat bread and vine wine are named; the draft's 'at the Last Supper' belongs to a different locus on institution, not to Q599 itself.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -316,7 +316,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Qual’è la forma del sacramento dell’Eucaristia?  
 **Original 1905 print:** [printed p.203](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/215) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json` / `SPX-1905-S-600-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The two words 'This is my Body' and 'This is my Blood' are direct; discussion of the entire Roman Canon belongs to an editorial liturgical note.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -330,7 +330,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Che cosa é dunque l’ostia prima della consacrazione?  
 **Original 1905 print:** [printed p.203](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/215) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json` / `SPX-1905-S-601-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The source answers simply that the unconsecrated host is bread; the appended conversion comment is inferred from surrounding questions.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -344,7 +344,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Quando si fa la conversione del pane nel Corpo, e del vino nel Sangue di Gesù Cristo?  
 **Original 1905 print:** [printed p.203](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/215) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json` / `SPX-1905-S-605-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The moment of conversion when the priest pronounces words of consecration at Mass is direct; calling them 'Christ's words' uses the immediately related Q600.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -358,7 +358,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Che cosa è la consacrazione?  
 **Original 1905 print:** [printed p.203](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/215) · [printed p.204](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/216) · priority passage checked by assistant; no independent sign-off  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-d-20261020.v1.json` / `SPX-1905-S-606-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The original calls consecration a renewal through the priest of Christ's Last Supper miracle; 'in continuation of the mystery' is a less exact formulation.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -372,7 +372,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Dopo la consacrazione non resta niente del pane e del vino?  
 **Original 1905 print:** [printed p.204](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/216) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json` / `SPX-1905-S-609-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** Only species remain is directly stated; 'not in substance' is context from adjacent conversion teaching.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -386,7 +386,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Che cosa sono le specie del pane e del vino?  
 **Original 1905 print:** [printed p.204](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/216) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json` / `SPX-1905-S-610-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** Quantity, figure, colour and taste define species in the Italian; the claim that they remain after conversion comes from Q609.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -400,7 +400,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Per qual motivo si conserva nelle chiese la santissima Eucaristia?  
 **Original 1905 print:** [printed p.206](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/218) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json` / `SPX-1905-E-620-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** Adoration and carrying the sacrament to the sick are Q620's two reasons; 'Christ truly present' is supported by neighboring Q621/Q596.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -414,7 +414,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Si deve adorare l’Eucaristia?  
 **Original 1905 print:** [printed p.206](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/218) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json` / `SPX-1905-E-621-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The Italian grounds adoration in real and substantial presence; divine adoration is a correct doctrinal inference but not Q621's full wording, and raw extraction carries a following section heading.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -428,7 +428,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Quali effetti produce in noi la santissima Eucaristia?  
 **Original 1905 print:** [printed p.207](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/219) · priority passage checked by assistant; no independent sign-off  
 **Source owner:** `data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json` / `SPX-1905-E-625-T1`  
-**Why review:** Restore the source's analogy between spiritual grace and bodily nourishment.
+**Why review:** The original says the life of the soul is grace; the draft specifies 'sanctifying grace', an interpretive doctrinal specialization not quoted here. Second pass refinement: Restore the source's analogy between spiritual grace and bodily nourishment.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -442,7 +442,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** La santissima Eucaristia non produce in noi altri effetti?  
 **Original 1905 print:** [printed p.207](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/219) · priority passage checked by assistant; no independent sign-off  
 **Source owner:** `data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json` / `SPX-1905-E-626-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The original says passions, especially concupiscence; 'disordered passions' is interpretive shorthand and the raw extract carries the next disposition section heading.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -456,7 +456,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Che cosa vuol dire comunicarsi con divozione?  
 **Original 1905 print:** [printed p.210](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/222) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json` / `SPX-1905-E-637-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The source explicitly specifies modesty in the person and clothing in addition to preparation before and thanksgiving after Communion.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -484,7 +484,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** In che consiste il ringraziamento dopo la Comunione?  
 **Original 1905 print:** [printed p.210](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/222) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json` / `SPX-1905-E-639-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** Acts of offering, thanksgiving and petition are direct, but the source emphasizes petitions for those for whom one is obliged to pray.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -498,7 +498,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Dopo la santa Comunione quanto tempo resta in noi Gesù Cristo?  
 **Original 1905 print:** [printed p.211](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/223) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch10-eucharist-c-20261020.v1.json` / `SPX-1905-E-641-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The distinction between sacramental Real Presence and grace is direct; the raw digital extraction includes the following section heading.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -512,7 +512,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** In che consiste, in generale, il sacrificio?  
 **Original 1905 print:** [printed p.213](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/225) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json` / `SPX-1905-E-652-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The Italian defines sacrifice as offering a sensible thing to God and destroying it in some way; 'sacrificial change or destruction' may dilute the particular historical wording.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -526,7 +526,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Quale differenza dunque e relazione vi è tra il sacrificio della Messa e quello della Croce?  
 **Original 1905 print:** [printed p.214](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/226) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json` / `SPX-1905-E-656-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The distinction between bloody offering on the Cross and bloodless Mass is direct; 'without a new shedding' adds the word new, which is editorial.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -540,7 +540,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Non è forse il sacrificio della Croce l’unico sacrificio della nuova legge?  
 **Original 1905 print:** [printed p.215](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/227) · question page located; answer not fully collated  
 **Source owner:** `data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json` / `SPX-1905-E-658-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** Calvary's unique redemptive merits and the Mass applying them are direct; 'does not add a second independent redemption' is an explanatory inference.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
@@ -568,7 +568,7 @@ Date, contact/reference URL, and permission to retain the decision:
 **Italian question:** Chi è partecipe dei frutti della Messa?  
 **Original 1905 print:** [printed p.216](https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/228) · priority passage checked by assistant; no independent sign-off  
 **Source owner:** `data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json` / `SPX-1905-E-664-T1`  
-**Why review:** Source-question propositions and scope were rechecked against the 1905 Italian digital transcription; this provisional review identified no additional material issue beyond the P1.38 finding.
+**Why review:** The source particularly names priest, Mass-attenders united to the priest, and living/dead intentions; the union of assistants with priest is omitted.
 
 | Language | Existing, unchanged text | Proposed candidate (NOT approved) |
 |---|---|---|
