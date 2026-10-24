@@ -75,5 +75,6 @@ assert.match(prayHome,/myCustomsDoor\(\)\.replace/);
 assert.match(prayStyles,/QUIET_PRAY_HOME_CSS=String\.raw`/);
 assert.match(prayStyles,/ao-pray-quiet-home-style/);
 assert.match(prayStyles,/aoP435930QuietLibraryRow/);
+assert.match(prayStyles,/aoP435930Mount:has\(\.aoP435930QuietHome\)/);
 
 console.log("AO quiet-frame visual baseline / Today / Pray contracts: OK");
