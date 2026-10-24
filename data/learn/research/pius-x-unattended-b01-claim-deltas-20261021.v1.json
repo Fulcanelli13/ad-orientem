@@ -1,0 +1,629 @@
+{
+  "schema": "AO_BOUNDED_RESEARCH_REVIEW_PACKET_V1",
+  "date": "2026-10-21",
+  "status": "LOCAL_REVIEW_PROPOSALS_ONLY_NOT_A_COMPETING_DATABASE",
+  "scope": {
+    "selectedFamilies": 4,
+    "spx": 4,
+    "chanoine": 0,
+    "answerUnits": 8,
+    "deeplyExaminedFamilies": 4,
+    "additionalMirrorFamiliesInspected": 3,
+    "totalFamiliesExamined": 7,
+    "improvedInReviewPacket": 4,
+    "canonicalRecordsModified": 0,
+    "blockedFullFamily": 0,
+    "readyForHumanCertificationReview": 4,
+    "certified": 0,
+    "published": 0
+  },
+  "ownership": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "mainCommit": "825bd8db85f558dfa6237708f3ad6cf519dcc039",
+    "spxBranch": "formation/1457-pius-x-conversation-evidence",
+    "spxCommit": "5e7b163612b6241300e373ff9bbe0686c6fb8472",
+    "chanoineBranch": "research/chanoine-cse-source-dialogue-20261019",
+    "chanoineCommit": "2950192b62842680f16088c4807c55e78a68f62a",
+    "voiceBranch": "feature/pius-x-documentary-voice-style-20261018",
+    "voiceCommit": "b99bedc27b194c7391375911c01b283fd88e9702",
+    "canonicalChangePolicy": "Apply reviewed deltas only to existing owners after human certification. No remote edits, branch creation, merge, deployment, routing or pipeline changes performed."
+  },
+  "sources": [
+    {
+      "id": 596,
+      "work": "Compendio della dottrina cristiana, Roma, Tipografia Vaticana, 1905; Catechismo maggiore, Parte IV",
+      "printedPage": 202,
+      "editorialLocator": "PX1905-Q596",
+      "printedQuestionNumber": null,
+      "questionIncipitItalian": "Che cosa è il sacramento dell’Eucaristia?",
+      "exactItalianExcerpt": "conversione di tutta la sostanza del pane",
+      "url": "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/214",
+      "witness": "Wikisource page transcription read this run; no new photographic collation",
+      "museumUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/"
+    },
+    {
+      "id": 607,
+      "work": "Compendio della dottrina cristiana, Roma, Tipografia Vaticana, 1905; Catechismo maggiore, Parte IV",
+      "printedPage": 204,
+      "editorialLocator": "PX1905-Q607",
+      "printedQuestionNumber": null,
+      "questionIncipitItalian": "Come è chiamata dalla Chiesa la miracolosa conversione",
+      "exactItalianExcerpt": "è chiamata dalla Chiesa transustanziazione.",
+      "url": "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/216",
+      "witness": "Wikisource page transcription read this run; no new photographic collation",
+      "museumUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/"
+    },
+    {
+      "id": 608,
+      "work": "Compendio della dottrina cristiana, Roma, Tipografia Vaticana, 1905; Catechismo maggiore, Parte IV",
+      "printedPage": 204,
+      "editorialLocator": "PX1905-Q608",
+      "printedQuestionNumber": null,
+      "questionIncipitItalian": "Chi ha dato tanta virtù alle parole della consacrazione?",
+      "exactItalianExcerpt": "lo stesso Signor nostro Gesù Cristo, il quale è Dio onnipotente.",
+      "url": "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/216",
+      "witness": "Wikisource page transcription read this run; no new photographic collation",
+      "museumUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/"
+    },
+    {
+      "id": 609,
+      "work": "Compendio della dottrina cristiana, Roma, Tipografia Vaticana, 1905; Catechismo maggiore, Parte IV",
+      "printedPage": 204,
+      "editorialLocator": "PX1905-Q609",
+      "printedQuestionNumber": null,
+      "questionIncipitItalian": "Dopo la consacrazione non resta niente del pane e del vino?",
+      "exactItalianExcerpt": "restano soltanto le specie del pane e del vino.",
+      "url": "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/216",
+      "witness": "Wikisource page transcription read this run; no new photographic collation",
+      "museumUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/"
+    },
+    {
+      "id": 610,
+      "work": "Compendio della dottrina cristiana, Roma, Tipografia Vaticana, 1905; Catechismo maggiore, Parte IV",
+      "printedPage": 204,
+      "editorialLocator": "PX1905-Q610",
+      "printedQuestionNumber": null,
+      "questionIncipitItalian": "Che cosa sono le specie del pane e del vino?",
+      "exactItalianExcerpt": "la quantità e le qualità sensibili del pane e del vino",
+      "url": "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/216",
+      "witness": "Wikisource page transcription read this run; no new photographic collation",
+      "museumUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/"
+    },
+    {
+      "id": 619,
+      "work": "Compendio della dottrina cristiana, Roma, Tipografia Vaticana, 1905; Catechismo maggiore, Parte IV",
+      "printedPage": 206,
+      "editorialLocator": "PX1905-Q619",
+      "printedQuestionNumber": null,
+      "questionIncipitItalian": "Gesù Cristo è tanto in un’ostia grande, quanto nella particella di un’ostia?",
+      "exactItalianExcerpt": "vi è il medesimo Gesù Cristo.",
+      "url": "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/218",
+      "witness": "Wikisource page transcription read this run; no new photographic collation",
+      "museumUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/"
+    },
+    {
+      "id": 620,
+      "work": "Compendio della dottrina cristiana, Roma, Tipografia Vaticana, 1905; Catechismo maggiore, Parte IV",
+      "printedPage": 206,
+      "editorialLocator": "PX1905-Q620",
+      "printedQuestionNumber": null,
+      "questionIncipitItalian": "Per qual motivo si conserva nelle chiese la santissima Eucaristia?",
+      "exactItalianExcerpt": "affinchè sia adorata dai fedeli, e portata agli infermi secondo il bisogno.",
+      "url": "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/218",
+      "witness": "Wikisource page transcription read this run; no new photographic collation",
+      "museumUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/"
+    },
+    {
+      "id": 641,
+      "work": "Compendio della dottrina cristiana, Roma, Tipografia Vaticana, 1905; Catechismo maggiore, Parte IV",
+      "printedPage": 211,
+      "editorialLocator": "PX1905-Q641",
+      "printedQuestionNumber": null,
+      "questionIncipitItalian": "Dopo la santa Comunione quanto tempo resta in noi Gesù Cristo?",
+      "exactItalianExcerpt": "con la sua reale presenza resta in noi finchè non si sono consumate le specie sacramentali.",
+      "url": "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/223",
+      "witness": "Wikisource page transcription read this run; no new photographic collation",
+      "museumUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/"
+    },
+    {
+      "id": 655,
+      "work": "Compendio della dottrina cristiana, Roma, Tipografia Vaticana, 1905; Catechismo maggiore, Parte IV",
+      "printedPage": 214,
+      "editorialLocator": "PX1905-Q655",
+      "printedQuestionNumber": null,
+      "questionIncipitItalian": "Il sacrificio della Messa è il medesimo della Croce?",
+      "exactItalianExcerpt": "è sostanzialmente il medesimo della Croce",
+      "url": "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/226",
+      "witness": "Wikisource page transcription read this run; no new photographic collation",
+      "museumUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/"
+    },
+    {
+      "id": 656,
+      "work": "Compendio della dottrina cristiana, Roma, Tipografia Vaticana, 1905; Catechismo maggiore, Parte IV",
+      "printedPage": 214,
+      "editorialLocator": "PX1905-Q656",
+      "printedQuestionNumber": null,
+      "questionIncipitItalian": "Quale differenza dunque e relazione vi è tra il sacrificio della Messa e quello della Croce?",
+      "exactItalianExcerpt": "ci applica i frutti della sua Passione e Morte.",
+      "url": "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/226",
+      "witness": "Wikisource page transcription read this run; no new photographic collation",
+      "museumUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/"
+    },
+    {
+      "id": 657,
+      "work": "Same 1905 Catechism; Parte IV, Capo V, §1",
+      "editorialLocator": "PX1905-Q657",
+      "printedQuestionNumber": null,
+      "questionIncipitItalian": "Quale altra relazione ha il sacrificio della Messa con quello della Croce?",
+      "exactItalianExcerpt": "per naturale concomitanza e per l’unione ipostatica",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "printedPages": [
+        214,
+        215
+      ],
+      "printEvidenceReused": "Prior ten-corrections record; page 215 could not be retrieved this run",
+      "witness": "Museum digital Italian passage read this run; prior photographic claim not independently repeated"
+    },
+    {
+      "id": 658,
+      "work": "Same Catechism; Parte IV, Capo V, §1",
+      "editorialLocator": "PX1905-Q658",
+      "printedQuestionNumber": null,
+      "questionIncipitItalian": "Non è forse il sacrificio della Croce l’unico sacrificio della nuova legge?",
+      "exactItalianExcerpt": "tra i quali è il santo sacrificio della Messa.",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "witness": "Museum digital Italian passage read this run"
+    },
+    {
+      "id": "CCC1441-1448",
+      "url": "https://www.vatican.va/archive/ENG0015/__P4C.HTM",
+      "work": "Catechism of the Catholic Church, Vatican English edition, §§1441–1442,1448",
+      "exactExcerpt": "Only God forgives sins.",
+      "language": "English published translation; Latin original not collated"
+    },
+    {
+      "id": "CCC1451-1456",
+      "url": "https://www.vatican.va/archive/ENG0015/__P4D.HTM",
+      "work": "Catechism of the Catholic Church, Vatican English edition, §§1451–1452,1456",
+      "exactExcerpt": "Confession to a priest is an essential part",
+      "language": "English published translation; Latin original not collated"
+    }
+  ],
+  "records": [
+    {
+      "familyId": "SPX-1905-S-607",
+      "kb": "SPX",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "sourceOwnerBlob": "a7ef0d56f757da85aacd14657049177750df7be4",
+      "priority": "WAVE_1_FIRST_40",
+      "originalTurns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What does the Church call the change of bread and wine into Christ's Body and Blood?",
+            "fr": "Comment l'Église appelle-t-elle le changement du pain et du vin au Corps et au Sang du Christ ?"
+          },
+          "response": {
+            "en": "Transubstantiation: the conversion of the substance of bread and wine into Christ's Body and Blood while the sensible appearances remain.",
+            "fr": "La transsubstantiation : conversion de la substance du pain et du vin au Corps et au Sang du Christ, tandis que demeurent les apparences sensibles."
+          },
+          "supports": [
+            "PX1905-Q607"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Whence do the words of consecration draw their power?",
+            "fr": "D'où les paroles de la consécration tirent-elles leur puissance ?"
+          },
+          "response": {
+            "en": "From Jesus Christ, the almighty God who instituted the sacrament.",
+            "fr": "De Jésus-Christ, Dieu tout-puissant qui a institué le sacrement."
+          },
+          "supports": [
+            "PX1905-Q608"
+          ]
+        }
+      ],
+      "priorOpeningProposal": {
+        "en": "The Catechism calls this conversion transubstantiation: the substance of bread and wine is changed into Christ's Body and Blood, while the species—the perceptible appearances—remain.",
+        "fr": "Le Catéchisme appelle ce changement la transsubstantiation : la substance du pain et du vin est changée au Corps et au Sang du Christ, tandis que les espèces, c'est-à-dire les apparences sensibles, demeurent."
+      },
+      "reviewDisposition": "READY_FOR_HUMAN_CERTIFICATION_REVIEW_NOT_CERTIFIED",
+      "improvement": "Claim-to-passage mapping and synchronized-turn proposal; prior opening audit reused rather than credited as new",
+      "turns": [
+        {
+          "turn": 1,
+          "question": {
+            "en": "What does the Church call the change of bread and wine into Christ's Body and Blood?",
+            "fr": "Comment l'Église appelle-t-elle le changement du pain et du vin au Corps et au Sang du Christ ?"
+          },
+          "en": "The Church calls this conversion transubstantiation. The whole substance of bread and wine is changed into Christ’s Body and Blood; their sensible appearances remain.",
+          "fr": "L’Église appelle cette conversion la transsubstantiation. Toute la substance du pain et du vin est changée au Corps et au Sang du Christ ; leurs apparences sensibles demeurent.",
+          "claims": [
+            {
+              "segment": "Name",
+              "sources": [
+                607
+              ]
+            },
+            {
+              "segment": "Whole substance converted",
+              "sources": [
+                596
+              ]
+            },
+            {
+              "segment": "Sensible appearances remain",
+              "sources": [
+                609,
+                610
+              ]
+            }
+          ],
+          "classification": "FAITHFUL_PARAPHRASE_NOT_AUTHENTIC_PAPAL_QUOTATION",
+          "historicalReconstruction": false,
+          "unsupportedInference": false
+        },
+        {
+          "turn": 2,
+          "question": {
+            "en": "Whence do the words of consecration draw their power?",
+            "fr": "D'où les paroles de la consécration tirent-elles leur puissance ?"
+          },
+          "en": "Our Lord Jesus Christ, who is almighty God, gave this power to the words of consecration.",
+          "fr": "Notre-Seigneur Jésus-Christ, qui est Dieu tout-puissant, a donné cette puissance aux paroles de la consécration.",
+          "claims": [
+            {
+              "segment": "Entire answer",
+              "sources": [
+                608
+              ]
+            }
+          ],
+          "classification": "FAITHFUL_PARAPHRASE_NOT_AUTHENTIC_PAPAL_QUOTATION",
+          "historicalReconstruction": false,
+          "unsupportedInference": false
+        }
+      ],
+      "approval": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "historicalVoice": false,
+        "publication": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-619",
+      "kb": "SPX",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-a-20261020.v1.json",
+      "sourceOwnerBlob": "9179d3e7e66e15de879472a7068154475521e8b8",
+      "priority": "WAVE_1_FIRST_40",
+      "originalTurns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Is the whole Christ present even in a small particle of a host?",
+            "fr": "Le Christ est-il présent tout entier même dans une petite parcelle d'hostie ?"
+          },
+          "response": {
+            "en": "The same Jesus Christ is present under a large host and under a particle of it, while the Eucharistic species remain.",
+            "fr": "Le même Jésus-Christ est présent sous une grande hostie et sous une parcelle de celle-ci, tant que subsistent les espèces eucharistiques."
+          },
+          "supports": [
+            "PX1905-Q619"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Why is the Blessed Eucharist reserved in churches?",
+            "fr": "Pourquoi conserve-t-on la sainte Eucharistie dans les églises ?"
+          },
+          "response": {
+            "en": "So the faithful may adore Christ truly present there and so Holy Communion may be brought to the sick as needed.",
+            "fr": "Pour que les fidèles puissent adorer le Christ réellement présent et pour porter la sainte Communion aux malades selon leurs besoins."
+          },
+          "supports": [
+            "PX1905-Q620"
+          ]
+        }
+      ],
+      "priorOpeningProposal": {
+        "en": "The whole Christ is present under a consecrated host and under each of its particles, for as long as the sacramental species endure.",
+        "fr": "Le Christ tout entier est présent sous l'hostie consacrée et sous chacune de ses parcelles, tant que subsistent les espèces sacramentelles."
+      },
+      "reviewDisposition": "READY_FOR_HUMAN_CERTIFICATION_REVIEW_NOT_CERTIFIED",
+      "improvement": "Claim-to-passage mapping and synchronized-turn proposal; prior opening audit reused rather than credited as new",
+      "turns": [
+        {
+          "turn": 1,
+          "question": {
+            "en": "Is the whole Christ present even in a small particle of a host?",
+            "fr": "Le Christ est-il présent tout entier même dans une petite parcelle d'hostie ?"
+          },
+          "en": "The same Jesus Christ is present under a large host and under its smallest particle, so long as the sacramental species remain.",
+          "fr": "Le même Jésus-Christ est présent sous une grande hostie et sous sa plus petite parcelle, tant que demeurent les espèces sacramentelles.",
+          "claims": [
+            {
+              "segment": "Same Christ under host and particle",
+              "sources": [
+                619
+              ]
+            },
+            {
+              "segment": "Duration qualification",
+              "sources": [
+                641
+              ]
+            }
+          ],
+          "classification": "FAITHFUL_PARAPHRASE_NOT_AUTHENTIC_PAPAL_QUOTATION",
+          "historicalReconstruction": false,
+          "unsupportedInference": false
+        },
+        {
+          "turn": 2,
+          "question": {
+            "en": "Why is the Blessed Eucharist reserved in churches?",
+            "fr": "Pourquoi conserve-t-on la sainte Eucharistie dans les églises ?"
+          },
+          "en": "The Blessed Eucharist is reserved that the faithful may adore Our Lord and that it may be brought to the sick as needed.",
+          "fr": "La sainte Eucharistie est conservée afin que les fidèles adorent Notre-Seigneur et qu’elle soit portée aux malades selon leurs besoins.",
+          "claims": [
+            {
+              "segment": "Both purposes",
+              "sources": [
+                620
+              ]
+            }
+          ],
+          "classification": "FAITHFUL_PARAPHRASE_NOT_AUTHENTIC_PAPAL_QUOTATION",
+          "historicalReconstruction": false,
+          "unsupportedInference": false
+        }
+      ],
+      "approval": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "historicalVoice": false,
+        "publication": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-655",
+      "kb": "SPX",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "sourceOwnerBlob": "ac0fed4b369277ed51d2a0491e046843e71e486d",
+      "priority": "WAVE_1_FIRST_40",
+      "originalTurns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Is the Sacrifice of the Mass the same sacrifice as Calvary?",
+            "fr": "Le sacrifice de la Messe est-il le même que celui du Calvaire ?"
+          },
+          "response": {
+            "en": "Substantially yes: Jesus Christ is the same Priest and Victim; the mode of offering differs. The Catechism insists on their intimate and essential relation.",
+            "fr": "Substantiellement oui : Jésus-Christ est le même Prêtre et la même Victime ; le mode d'offrande diffère. Le Catéchisme insiste sur leur relation intime et essentielle."
+          },
+          "supports": [
+            "PX1905-Q655"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "How does the offering of Mass differ from Christ's sacrifice on the Cross?",
+            "fr": "En quoi l'offrande de la Messe diffère-t-elle du sacrifice du Christ sur la Croix ?"
+          },
+          "response": {
+            "en": "On Calvary Christ offered Himself with the shedding of His Blood and merited redemption; in the Mass He is offered without a new shedding of blood and applies the fruits of that one Passion.",
+            "fr": "Au Calvaire le Christ s'est offert dans l'effusion de son Sang et a mérité la rédemption ; à la Messe Il est offert sans nouvelle effusion de sang et applique les fruits de cette unique Passion."
+          },
+          "supports": [
+            "PX1905-Q656"
+          ]
+        }
+      ],
+      "priorOpeningProposal": {
+        "en": "Yes, substantially. The same Jesus Christ who offered Himself on the Cross is offered upon the altar through priests, His ministers; the manner of offering differs. Christ remains the first and principal offerer.",
+        "fr": "Oui, substantiellement. Le même Jésus-Christ qui s'est offert sur la Croix est offert sur l'autel par le ministère des prêtres ; le mode d'offrande diffère. Le Christ demeure le premier et principal offrant."
+      },
+      "reviewDisposition": "READY_FOR_HUMAN_CERTIFICATION_REVIEW_NOT_CERTIFIED",
+      "improvement": "Claim-to-passage mapping and synchronized-turn proposal; prior opening audit reused rather than credited as new",
+      "turns": [
+        {
+          "turn": 1,
+          "question": {
+            "en": "Is the Sacrifice of the Mass the same sacrifice as Calvary?",
+            "fr": "Le sacrifice de la Messe est-il le même que celui du Calvaire ?"
+          },
+          "en": "The Mass is substantially the same sacrifice as the Cross: the same Christ is offered through His priests, though the manner of offering differs.",
+          "fr": "La Messe est substantiellement le même sacrifice que la Croix : le même Christ est offert par ses prêtres, bien que le mode d’offrande diffère.",
+          "claims": [
+            {
+              "segment": "Entire answer; deliberately omits separate principal-offerer claim",
+              "sources": [
+                655
+              ]
+            }
+          ],
+          "classification": "FAITHFUL_PARAPHRASE_NOT_AUTHENTIC_PAPAL_QUOTATION",
+          "historicalReconstruction": false,
+          "unsupportedInference": false
+        },
+        {
+          "turn": 2,
+          "question": {
+            "en": "How does the offering of Mass differ from Christ's sacrifice on the Cross?",
+            "fr": "En quoi l'offrande de la Messe diffère-t-elle du sacrifice du Christ sur la Croix ?"
+          },
+          "en": "On the Cross Christ offered Himself with the shedding of His Blood; upon the altar He is offered without bloodshed and applies the fruits of His Passion and Death.",
+          "fr": "Sur la Croix, le Christ s’est offert dans l’effusion de son Sang ; sur l’autel, Il est offert sans effusion de sang et applique les fruits de sa Passion et de sa Mort.",
+          "claims": [
+            {
+              "segment": "Entire answer",
+              "sources": [
+                656
+              ]
+            }
+          ],
+          "classification": "FAITHFUL_PARAPHRASE_NOT_AUTHENTIC_PAPAL_QUOTATION",
+          "historicalReconstruction": false,
+          "unsupportedInference": false
+        }
+      ],
+      "approval": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "historicalVoice": false,
+        "publication": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-657",
+      "kb": "SPX",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "sourceOwnerBlob": "a60016742debf486a2059407a3d0107bd1c37164",
+      "priority": "WAVE_1_FIRST_40",
+      "originalTurns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How does the Mass visibly represent Christ's sacrifice on the Cross?",
+            "fr": "Comment la Messe représente-t-elle visiblement le sacrifice du Christ sur la Croix ?"
+          },
+          "response": {
+            "en": "The separate consecration under the appearances of bread and wine signifies the separation of Christ's Body and Blood on the Cross, while the whole living Christ is present under both species.",
+            "fr": "La consécration séparée sous les espèces du pain et du vin signifie la séparation du Corps et du Sang du Christ sur la Croix, tandis que le Christ vivant tout entier est présent sous les deux espèces."
+          },
+          "supports": [
+            "PX1905-Q657"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "If Calvary is the one sacrifice, why do Catholics also speak of the Sacrifice of the Mass?",
+            "fr": "Si le Calvaire est l'unique sacrifice, pourquoi parler aussi du Sacrifice de la Messe ?"
+          },
+          "response": {
+            "en": "Christ's single sacrifice on Calvary accomplished redemption and won its merits; the Mass is among the means He instituted for applying those merits. It does not add a second, independent redemption.",
+            "fr": "L'unique sacrifice du Christ au Calvaire a accompli la rédemption et mérité ses fruits ; la Messe est l'un des moyens qu'Il a institués pour nous appliquer ces mérites. Elle n'ajoute pas une seconde rédemption indépendante."
+          },
+          "supports": [
+            "PX1905-Q658"
+          ]
+        }
+      ],
+      "priorOpeningProposal": {
+        "en": "The Mass represents the shedding of Christ's Blood on the Cross: by the words of Consecration His Body is made present under the species of bread and His Blood under the species of wine. Yet, by concomitance and the hypostatic union, the whole living Christ is present under each species.",
+        "fr": "La Messe représente l'effusion du Sang du Christ sur la Croix : par les paroles de la consécration, son Corps est rendu présent sous l'espèce du pain et son Sang sous celle du vin. Pourtant, par concomitance et en raison de l'union hypostatique, le Christ vivant tout entier est présent sous chacune des espèces."
+      },
+      "reviewDisposition": "READY_FOR_HUMAN_CERTIFICATION_REVIEW_NOT_CERTIFIED",
+      "improvement": "Claim-to-passage mapping and synchronized-turn proposal; prior opening audit reused rather than credited as new",
+      "turns": [
+        {
+          "turn": 1,
+          "question": {
+            "en": "How does the Mass visibly represent Christ's sacrifice on the Cross?",
+            "fr": "Comment la Messe représente-t-elle visiblement le sacrifice du Christ sur la Croix ?"
+          },
+          "en": "The Mass sensibly represents the shedding of Christ’s Blood on the Cross. The consecratory words make His Body present under bread’s species and His Blood under wine’s. Yet the living Christ is present under each by natural concomitance and the hypostatic union.",
+          "fr": "La Messe représente sensiblement l’effusion du Sang du Christ sur la Croix. Les paroles consécratoires rendent présent son Corps sous l’espèce du pain et son Sang sous celle du vin. Pourtant, le Christ vivant est présent sous chacune par concomitance naturelle et union hypostatique.",
+          "claims": [
+            {
+              "segment": "Entire answer",
+              "sources": [
+                657
+              ]
+            }
+          ],
+          "classification": "FAITHFUL_PARAPHRASE_NOT_AUTHENTIC_PAPAL_QUOTATION",
+          "historicalReconstruction": false,
+          "unsupportedInference": false
+        },
+        {
+          "turn": 2,
+          "question": {
+            "en": "If Calvary is the one sacrifice, why do Catholics also speak of the Sacrifice of the Mass?",
+            "fr": "Si le Calvaire est l'unique sacrifice, pourquoi parler aussi du Sacrifice de la Messe ?"
+          },
+          "en": "The Cross accomplished our redemption; the Mass applies its merits. It is no independent redemption.",
+          "fr": "La Croix a accompli notre rédemption ; la Messe en applique les mérites. Elle n’est pas une rédemption indépendante.",
+          "claims": [
+            {
+              "segment": "Accomplishment and application",
+              "sources": [
+                658
+              ]
+            },
+            {
+              "segment": "No independent redemption",
+              "sources": [
+                658
+              ],
+              "classification": "Faithful explanatory paraphrase, not a separate source quotation"
+            }
+          ],
+          "classification": "FAITHFUL_PARAPHRASE_NOT_AUTHENTIC_PAPAL_QUOTATION",
+          "historicalReconstruction": false,
+          "unsupportedInference": false
+        }
+      ],
+      "approval": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "historicalVoice": false,
+        "publication": false
+      }
+    }
+  ],
+  "duplicates": [
+    {
+      "from": "SPX-1905-E-618-T2",
+      "to": "SPX-1905-E-619-T1",
+      "type": "Exact EN/FR answer reuse; source set also needs Q641",
+      "action": "Flag shared answer variant, retain both conversational contexts; do not delete family"
+    },
+    {
+      "from": "SPX-1905-E-654-T2",
+      "to": "SPX-1905-E-655-T1",
+      "type": "Exact EN/FR answer reuse",
+      "action": "Propagate same approved variant/source map when approved"
+    },
+    {
+      "from": "SPX-1905-E-656-T2",
+      "to": "SPX-1905-E-657-T1",
+      "type": "Exact EN/FR answer reuse",
+      "action": "Preserve each-species/concomitance qualification in both contexts"
+    }
+  ],
+  "editorialDecisions": [
+    "SPX: educational character paraphrase of a papally prescribed catechism, never authenticated personal speech or invented memory.",
+    "Q607: cite Q596/609/610 for expanded definition; Q607 alone names the conversion.",
+    "Q619: Q641 is an explicit supporting duration passage; retain host/particle and duration distinctions.",
+    "Q655: short proposed answer stays within Q655; if restoring same principal Priest claim, add Q660.",
+    "Q657: qualified reviewer should approve the distinction between the force of consecratory words, natural concomitance and hypostatic union; avoid suggesting a divided living Christ.",
+    "Chanoine: approve explanatory voice and French terminology; full EN/FR parity cannot be certified until original English file is supplied.",
+    "Readiness means sufficient bounded research for a human to review, not an approval or assurance of publication readiness."
+  ],
+  "gaps": {
+    "newSubstantiveSourceOmissions": [],
+    "accessAndEvidenceLimits": [
+      "Original Chanoine_Unified_Conversation_Index_360_2026-10-19(1).json is a user-library asset, not in GitHub. Snapshot supplies IDs/questions only; no original English answers were reconstructed.",
+      "130 balanced SPX shortlist is generated by existing tool into artifacts/, not a committed JSON in the inspected branch; selected four are confirmed first-40 candidates, not asserted members of the generated 130.",
+      "No fresh whole-corpus counts claimed. 2221/810/1317/182/174/30 baselines not independently recounted.",
+      "Original print pages 215/216 inaccessible through web reader this run; prior print audit retained as prior evidence. Digital source supports Q657/658.",
+      "Latin original of CCC not collated; official Vatican English used only for Chanoine, never attributed to SPX."
+    ]
+  },
+  "stopCondition": "Selected batch complete; no second batch begun.",
+  "denzingerMandatory": false
+}

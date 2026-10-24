@@ -1,0 +1,89 @@
+{
+  "schema": "AO_PIUS_X_PR1443_184_TOPIC_ROUTER_BRIDGE_OBSERVED_V1",
+  "date": "2026-10-19",
+  "status": "EXECUTED_48_UTTERANCE_DIAGNOSTIC_NOT_GENERAL_ACCURACY",
+  "routerOriginalCommit": "b4dd46743d641bfaa6076c6bb2fd8641c47077b6",
+  "routerBridgeCommit": "854325df75671882d378b510fcc1af33fc30ba65",
+  "originalCatalogTopics": 172,
+  "expandedCatalogTopics": 184,
+  "addedSourceNavigablePassageTopics": 10,
+  "addedUnsupportedSourceGapTopics": 2,
+  "authorizingEvidenceOwner": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json (PR #1458)",
+  "readOnlyExternalBridgeOwner": "data/learn/living-church-pius-x-historical-passage-pointers.v1.json (PR #1443)",
+  "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39267811444",
+  "artifact": "pius-x-pr1443-184topic-heldout-48-results",
+  "conditions": "36 previously written English alternative visitor utterances, 12 previously written contextual follow-ups; bridge question examples authored independently of these evaluation strings. No independent real-visitor statistical validity.",
+  "original": {
+    "shared": {
+      "safeAbstention": 45,
+      "wrongSpecificSource": 3,
+      "correctSpecificSource": 0
+    },
+    "hybrid": {
+      "safeAbstention": 48,
+      "wrongSpecificSource": 0,
+      "correctSpecificSource": 0
+    }
+  },
+  "bridged": {
+    "shared": {
+      "total": 48,
+      "correctSpecificSource": 9,
+      "safeUnresolved": 27,
+      "safeHeld": 8,
+      "wrongSpecificSource": 4,
+      "clarificationContainingExpected": 0,
+      "generatedAnswers": 0
+    },
+    "hybrid": {
+      "total": 48,
+      "correctSpecificSource": 1,
+      "safeUnresolved": 39,
+      "safeHeld": 8,
+      "wrongSpecificSource": 0,
+      "clarificationContainingExpected": 0,
+      "generatedAnswers": 0
+    }
+  },
+  "errorExamples": [
+    {
+      "id": "SPX-PILOT-01-F1",
+      "expected": "SPX-PILOT-01 · E supremi §§1–4",
+      "observed": "SPX-PILOT-07 · Pascendi",
+      "class": "CONTEXTUAL_FOLLOWUP_TOPIC_LEAKAGE"
+    },
+    {
+      "id": "SPX-PILOT-02-V3",
+      "expected": "SPX-PILOT-02 · 1905 Q667–669",
+      "observed": "PX1912-Q418 generic prayer",
+      "class": "FALSE_MATCH_TO_BROADER_TOPIC"
+    },
+    {
+      "id": "SPX-PILOT-03-V2",
+      "expected": "SPX-PILOT-03 · Salzano Q541–543",
+      "observed": "PX1912-Q135 generic sin",
+      "class": "FALSE_MATCH_TO_BROADER_TOPIC"
+    },
+    {
+      "id": "SPX-PILOT-04-V2",
+      "expected": "SPX-PILOT-04 · Salzano Q506–508",
+      "observed": "PX1912-Q325/Q329 Real Presence",
+      "class": "WRONG_EUCHARISTIC_SCOPE"
+    }
+  ],
+  "conclusions": [
+    "The 184-topic registry now exposes precise original historical document locators, not approval to answer.",
+    "The shared lexical router gains nine exact source navigations but still produces four incorrect proposed sources (all need confirmation).",
+    "The hybrid router safely refuses most of these unanticipated rephrasings, reaching the intended source only once; this is not user-level semantic retrieval.",
+    "All eight held-personal-answer-case utterances are refused by both routes; zero invented answers.",
+    "The testing set is assistant-authored and not representative. An independent set should precede performance claims.",
+    "Do not add 48 evaluation variants to the topic catalog as a shortcut, because that would invalidate held-out testing.",
+    "A future owner-authorized retrieval improvement should use source-aware rank/intent gates and adversarial cross-topic tests, followed by a new untouched test sample."
+  ],
+  "pendingAcceptance": {
+    "correctSourceNavigationForBothRouters": false,
+    "wrongSpecificMatchesResolved": false,
+    "doctrinalAnswerPublication": false,
+    "voiceApproval": false
+  }
+}

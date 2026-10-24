@@ -1,0 +1,303 @@
+{
+  "schema": "AO_SPX_THREE_SOURCE_TETHERED_BILINGUAL_VOICE_REVIEW_V2",
+  "date": "2026-10-21",
+  "description": "Nine EN/FR staged dialogue turns with individual source-locus claims, separate from existing source-owner Q&A and old three-voice review V1.",
+  "publication": "NOT_APPROVED_NOT_PUBLISHED",
+  "styleOwner": "PR#1419",
+  "sourceOwner": "PR#1458",
+  "stageOwner": "PR#1402",
+  "sourceEvidenceScope": {
+    "Salzano": "Museo San Pio X transcription, editorial numbering; source text at Q198–200 and Q476–481 checked",
+    "eSupremi": "Vatican English translation §13 checked, original Latin not collated",
+    "exactQuotationCount": 0,
+    "newSourceFamilies": 0
+  },
+  "reviewState": {
+    "claimMappingEditoriallyChecked": true,
+    "independentHistoricalReviewerApproved": false,
+    "independentTheologicalReviewerApproved": false,
+    "englishStyleApproved": false,
+    "frenchStyleApproved": false,
+    "runtimeImportAllowed": false
+  },
+  "counts": {
+    "scenes": 3,
+    "segments": 9,
+    "localizedSegments": 18,
+    "originalRecordsReplaced": 0
+  },
+  "candidates": [
+    {
+      "chapterId": "SPX-010",
+      "routeIndex": 1,
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "work": "Catechismo di don Giuseppe Sarto (Salzano)",
+        "witness": "MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+        "locus": "Q198–200",
+        "originalLanguage": "it",
+        "numberingIsEditorial": true,
+        "sourceVerifiedToDisplayedText": true
+      },
+      "opening": {
+        "q": {
+          "en": "Why did Peter repent while Judas despaired?",
+          "fr": "Pourquoi saint Pierre s'est-il repenti tandis que Judas a désespéré ?"
+        },
+        "a": {
+          "en": "Peter denied that he knew Our Lord. Judas despaired of divine mercy; Peter wept for his sin and obtained pardon.",
+          "fr": "Pierre nia connaître Notre-Seigneur. Judas désespéra de la miséricorde divine ; Pierre pleura son péché et en obtint le pardon."
+        }
+      },
+      "follow": {
+        "q": {
+          "en": "But did Judas not acknowledge his fault?",
+          "fr": "Mais Judas n'a-t-il pas reconnu sa faute ?"
+        },
+        "a": {
+          "en": "He did. He returned the money and confessed that he had betrayed an innocent man; yet he despaired of divine mercy.",
+          "fr": "Il la reconnut. Il rendit l'argent et confessa avoir livré un innocent ; néanmoins, il désespéra de la miséricorde divine."
+        }
+      },
+      "deep": {
+        "q": {
+          "en": "And what did Peter do after his denial?",
+          "fr": "Et que fit Pierre après son reniement ?"
+        },
+        "a": {
+          "en": "He remembered Christ's words, wept for his sin and received pardon. Here is the distinction the account draws: Peter did not despair.",
+          "fr": "Il se souvint des paroles du Christ, pleura son péché et reçut le pardon. Voilà la distinction donnée par ce récit : Pierre ne désespéra point."
+        }
+      },
+      "evidence": [
+        {
+          "segment": "opening",
+          "claimIds": [
+            "PETER_DENIED_CHRIST",
+            "JUDAS_DESPAIRED",
+            "PETER_WEPT_AND_OBTAINED_PARDON"
+          ],
+          "sourceLocators": [
+            "Q198",
+            "Q199",
+            "Q200"
+          ],
+          "review": "SOURCE_TEXT_LOCATED_CONTENT_PARAPHRASE_CHECKED"
+        },
+        {
+          "segment": "follow",
+          "claimIds": [
+            "JUDAS_RETURNED_MONEY",
+            "JUDAS_CONFESSED_BETRAYAL_OF_INNOCENT",
+            "JUDAS_DESPAIRED"
+          ],
+          "sourceLocators": [
+            "Q199"
+          ],
+          "review": "SOURCE_TEXT_LOCATED_CONTENT_PARAPHRASE_CHECKED"
+        },
+        {
+          "segment": "deep",
+          "claimIds": [
+            "PETER_REMEMBERED_CHRISTS_WORDS",
+            "PETER_WEPT_AND_OBTAINED_PARDON",
+            "PETER_DID_NOT_DESPAIR"
+          ],
+          "sourceLocators": [
+            "Q200"
+          ],
+          "review": "SOURCE_TEXT_LOCATED_CONTENT_PARAPHRASE_CHECKED"
+        }
+      ],
+      "speakerPolicy": {
+        "opening": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS",
+        "follow": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS",
+        "deep": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS"
+      },
+      "pose": [
+        "thoughtful",
+        "explaining",
+        "thoughtful"
+      ],
+      "historicalQuote": false
+    },
+    {
+      "chapterId": "SPX-023",
+      "routeIndex": 2,
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "work": "Catechismo di don Giuseppe Sarto (Salzano)",
+        "witness": "MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+        "locus": "Q476–481",
+        "originalLanguage": "it",
+        "numberingIsEditorial": true,
+        "sourceVerifiedToDisplayedText": true
+      },
+      "opening": {
+        "q": {
+          "en": "What is spiritual Communion?",
+          "fr": "Qu'est-ce que la communion spirituelle ?"
+        },
+        "a": {
+          "en": "In spiritual Communion, one desires to receive Christ without actually receiving Him in the sacrament. Desire and sacramental reception are not the same act.",
+          "fr": "Dans la communion spirituelle, on désire recevoir le Christ sans Le recevoir réellement dans le sacrement. Le désir et la réception sacramentelle ne sont pas le même acte."
+        }
+      },
+      "follow": {
+        "q": {
+          "en": "If I do not receive the sacrament, is spiritual Communion without grace?",
+          "fr": "Sans recevoir le sacrement, la communion spirituelle est-elle privée de grâce ?"
+        },
+        "a": {
+          "en": "No. The teaching expressly says that in spiritual Communion one does not receive the sacrament, but does receive grace.",
+          "fr": "Non. L'enseignement dit expressément que, dans la communion spirituelle, on ne reçoit pas le sacrement, mais que l'on reçoit la grâce."
+        }
+      },
+      "deep": {
+        "q": {
+          "en": "Can you decide whether I should receive Holy Communion today?",
+          "fr": "Pouvez-vous décider si je dois communier aujourd'hui ?"
+        },
+        "a": {
+          "en": "This historical teaching distinguishes kinds of Communion; it cannot judge your personal dispositions or the facts of your case. Please take a concrete difficulty to a confessor.",
+          "fr": "Cet enseignement historique distingue les formes de communion ; il ne permet pas de juger vos dispositions personnelles ni votre situation concrète. Pour une difficulté particulière, adressez-vous à un confesseur."
+        }
+      },
+      "evidence": [
+        {
+          "segment": "opening",
+          "claimIds": [
+            "DESIRE_NOT_ACTUAL_SACRAMENTAL_RECEPTION"
+          ],
+          "sourceLocators": [
+            "Q477",
+            "Q478",
+            "Q479"
+          ],
+          "review": "SOURCE_TEXT_LOCATED_CONTENT_PARAPHRASE_CHECKED"
+        },
+        {
+          "segment": "follow",
+          "claimIds": [
+            "SPIRITUAL_COMMUNION_NOT_SACRAMENTAL_RECEPTION",
+            "SPIRITUAL_COMMUNION_RECEIVES_GRACE"
+          ],
+          "sourceLocators": [
+            "Q478",
+            "Q479"
+          ],
+          "review": "SOURCE_TEXT_LOCATED_CONTENT_PARAPHRASE_CHECKED"
+        },
+        {
+          "segment": "deep",
+          "claimIds": [
+            "PERSONAL_DISPOSITION_CANNOT_BE_DECIDED_BY_HISTORICAL_SOURCE",
+            "REFER_CASE_TO_CONFESSOR"
+          ],
+          "sourceLocators": [],
+          "review": "OUT_OF_CHARACTER_EDITORIAL_SAFETY_BOUNDARY_NOT_ATTRIBUTE_TO_HISTORICAL_AUTHOR"
+        }
+      ],
+      "speakerPolicy": {
+        "opening": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS",
+        "follow": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS",
+        "deep": "OUT_OF_CHARACTER_EDITORIAL_BOUNDARY_NOT_PIUS_SPEECH"
+      },
+      "pose": [
+        "explaining",
+        "welcoming",
+        null
+      ],
+      "historicalQuote": false
+    },
+    {
+      "chapterId": "SPX-032",
+      "routeIndex": 0,
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "work": "E supremi",
+        "witness": "AUTHORED_PAPAL_TEXT_IN_TRANSLATION",
+        "locus": "§13",
+        "originalLanguage": "la",
+        "numberingIsEditorial": false,
+        "sourceVerifiedToDisplayedText": true,
+        "editionCaveat": "Checked the Vatican English translation of §13, not a collation of its original Latin"
+      },
+      "opening": {
+        "q": {
+          "en": "How should I correct someone without bitterness?",
+          "fr": "Comment corriger une personne sans amertume ?"
+        },
+        "a": {
+          "en": "Correction is not served by bitterness. The Apostle calls for rebuke with patience; harsh reproach often does more harm than good.",
+          "fr": "L'amertume ne sert point la correction. L'Apôtre exhorte à reprendre avec patience ; les reproches âpres font souvent plus de mal que de bien."
+        }
+      },
+      "follow": {
+        "q": {
+          "en": "Does patience require me to leave a fault uncorrected?",
+          "fr": "La patience exige-t-elle que je laisse une faute sans correction ?"
+        },
+        "a": {
+          "en": "No. The duty to correct is not set aside; it must be exercised with patience, not with needless harshness.",
+          "fr": "Non. Le devoir de corriger n'est pas supprimé ; il doit s'exercer avec patience et sans dureté inutile."
+        }
+      },
+      "deep": {
+        "q": {
+          "en": "What should guide the way I speak?",
+          "fr": "Qu'est-ce qui doit guider ma manière de parler ?"
+        },
+        "a": {
+          "en": "Charity, patient and kind. It may have to wait for its fruit; bitterness does not make the work of teaching more fruitful.",
+          "fr": "La charité, patiente et bienveillante. Il faut parfois attendre ses fruits ; l'amertume ne rend pas l'enseignement plus fécond."
+        }
+      },
+      "evidence": [
+        {
+          "segment": "opening",
+          "claimIds": [
+            "REBUKE_WITH_PATIENCE",
+            "HARSH_REPROACH_HARMFUL"
+          ],
+          "sourceLocators": [
+            "§13"
+          ],
+          "review": "SOURCE_TRANSLATION_LOCATED_CONTENT_PARAPHRASE_CHECKED"
+        },
+        {
+          "segment": "follow",
+          "claimIds": [
+            "CORRECTION_WITH_PATIENCE_NOT_HARSHNESS"
+          ],
+          "sourceLocators": [
+            "§13"
+          ],
+          "review": "SOURCE_TRANSLATION_LOCATED_CONTENT_PARAPHRASE_CHECKED"
+        },
+        {
+          "segment": "deep",
+          "claimIds": [
+            "CHARITY_PATIENT_KIND",
+            "CHARITY_WAITS_FOR_FRUIT"
+          ],
+          "sourceLocators": [
+            "§13"
+          ],
+          "review": "SOURCE_TRANSLATION_LOCATED_CONTENT_PARAPHRASE_CHECKED"
+        }
+      ],
+      "speakerPolicy": {
+        "opening": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS",
+        "follow": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS",
+        "deep": "SOURCE_BOUNDED_CHARACTER_STYLE_HYPOTHESIS"
+      },
+      "pose": [
+        "explaining",
+        "thoughtful",
+        "welcoming"
+      ],
+      "historicalQuote": false
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "schema": "AO_SPX_DEPENDENT_CONTINUATIONS_DEPTH12_PART_A_V1",
+  "date": "2026-10-21",
+  "stage": "BILINGUAL_EDITORIAL_AUTHORING_ONLY",
+  "sourceSchema": "AO_SPX_82_CHAPTER_CONVERSATION_AUTHORING_GRAPH_V1",
+  "chapters": [
+    {
+      "chapterId": "SPX-009",
+      "parents": [
+        {
+          "parentChoiceSlot": "F1",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-009.F1.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "If outward obedience is not everything, how can one recognise its purpose?",
+              "fr": "Si l'obéissance extérieure ne fait pas tout, comment en reconnaître le but ?"
+            },
+            "a": {
+              "en": "The duties remain real. The point made in the Salzano discussion is that their fulfilment should express a living friendship with God, not merely preserve a respectable appearance.",
+              "fr": "Les devoirs demeurent réels. Le propos de l'exposé de Salzano est que leur accomplissement doit manifester une amitié vivante avec Dieu, non seulement préserver une apparence respectable."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-043"
+        },
+        {
+          "parentChoiceSlot": "F2",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-009.F2.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Would it be better, then, to neglect the commandments and think only of love?",
+              "fr": "Vaudrait-il donc mieux négliger les commandements et ne penser qu'à l'amour ?"
+            },
+            "a": {
+              "en": "No. That would set apart what the teaching joins together. Love gives obedience its proper intention; it does not dispense a Christian from the good that ought to be done.",
+              "fr": "Non. Ce serait séparer ce que l'enseignement unit. L'amour donne à l'obéissance son intention juste ; il ne dispense pas le chrétien du bien qu'il doit accomplir."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-007"
+        },
+        {
+          "parentChoiceSlot": "F3",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-009.F3.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Then can you judge whether I personally have that friendship?",
+              "fr": "Pouvez-vous alors juger si je possède personnellement cette amitié ?"
+            },
+            "a": {
+              "en": "A catechetical distinction cannot disclose the state of another soul. It can direct attention to charity and grace, but the judgment of one's particular conscience calls for more than an outward observation.",
+              "fr": "Une distinction catéchétique ne révèle pas l'état d'une âme. Elle peut orienter l'attention vers la charité et la grâce, mais le jugement sur une conscience particulière demande davantage que l'observation extérieure."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-043"
+        }
+      ],
+      "authoringNote": "Only offer a deeper visitor choice after that specific first-level followup was selected; preserve prior path and source attribution."
+    },
+    {
+      "chapterId": "SPX-010",
+      "parents": [
+        {
+          "parentChoiceSlot": "F1",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-010.F1.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Does Peter's repentance mean the betrayal itself was unimportant?",
+              "fr": "Le repentir de Pierre signifie-t-il que sa trahison importait peu ?"
+            },
+            "a": {
+              "en": "It was precisely a grievous failure. The contrast drawn in the Salzano account concerns what followed: Peter's tears turned toward repentance, whereas Judas's response is presented as despair.",
+              "fr": "C'était précisément une faute grave. Le contraste établi dans le récit de Salzano concerne la suite : les larmes de Pierre se tournent vers le repentir, tandis que la réaction de Judas est présentée comme le désespoir."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-007"
+        },
+        {
+          "parentChoiceSlot": "F2",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-010.F2.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "What keeps sorrow for sin from becoming despair?",
+              "fr": "Qu'est-ce qui empêche la douleur du péché de devenir désespoir ?"
+            },
+            "a": {
+              "en": "The example directs sorrow toward repentance rather than treating mercy as closed. It does not abolish the seriousness of sin; it warns against turning that seriousness into a refusal to return to God.",
+              "fr": "L'exemple oriente cette douleur vers le repentir au lieu de tenir la miséricorde pour inaccessible. Il n'efface pas la gravité du péché ; il met en garde contre la tentation d'en faire une raison de ne plus revenir à Dieu."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-017"
+        },
+        {
+          "parentChoiceSlot": "F3",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-010.F3.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Can the contrast tell us whether someone else repented before dying?",
+              "fr": "Cette comparaison révèle-t-elle si quelqu'un d'autre s'est repenti avant de mourir ?"
+            },
+            "a": {
+              "en": "No. The comparison gives a moral lesson about repentance and despair. It supplies no evidence of the final dispositions of an individual whose last interior acts are unknown.",
+              "fr": "Non. Elle enseigne une leçon morale sur le repentir et le désespoir. Elle ne fournit aucune preuve des dernières dispositions d'une personne dont les actes intérieurs nous sont inconnus."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-007"
+        }
+      ],
+      "authoringNote": "Only offer a deeper visitor choice after that specific first-level followup was selected; preserve prior path and source attribution."
+    },
+    {
+      "chapterId": "SPX-015",
+      "parents": [
+        {
+          "parentChoiceSlot": "F1",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-015.F1.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "If sorrow is necessary, why does the priest's absolution matter?",
+              "fr": "Si la douleur est nécessaire, pourquoi l'absolution du prêtre importe-t-elle ?"
+            },
+            "a": {
+              "en": "Sorrow and absolution do not compete. In the catechetical account, contrition belongs to the penitent while the sacramental ministry exercises the forgiveness entrusted by Christ to His Church.",
+              "fr": "La douleur et l'absolution ne s'opposent pas. Dans l'exposé catéchétique, la contrition appartient au pénitent et le ministère sacramentel exerce le pouvoir de remettre les péchés confié par le Christ à son Église."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-016"
+        },
+        {
+          "parentChoiceSlot": "F2",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-015.F2.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Would telling a friend my sins be equivalent to sacramental confession?",
+              "fr": "Dire mes péchés à un ami équivaut-il à la confession sacramentelle ?"
+            },
+            "a": {
+              "en": "No. Speaking honestly to a friend may be a human act of confidence, but it is not the same as confession within the sacrament and the absolution exercised by the Church's minister.",
+              "fr": "Non. Parler sincèrement à un ami peut être un acte humain de confiance ; cela ne se confond pas avec la confession dans le sacrement et l'absolution donnée par le ministre de l'Église."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-017"
+        },
+        {
+          "parentChoiceSlot": "F3",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-015.F3.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "If I fear having confessed badly, will this conversation pronounce a verdict?",
+              "fr": "Si je crains de m'être mal confessé, cette conversation tranchera-t-elle ?"
+            },
+            "a": {
+              "en": "No. It can explain what contrition and confession mean, but cannot verify the facts of a particular confession. A concern about its validity belongs with a confessor, not with an invented papal judgment.",
+              "fr": "Non. Elle peut expliquer la contrition et la confession, mais non vérifier les faits d'une confession particulière. Une inquiétude sur sa validité relève d'un confesseur, non d'un jugement pontifical inventé."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-016"
+        }
+      ],
+      "authoringNote": "Only offer a deeper visitor choice after that specific first-level followup was selected; preserve prior path and source attribution."
+    },
+    {
+      "chapterId": "SPX-016",
+      "parents": [
+        {
+          "parentChoiceSlot": "F1",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-016.F1.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "How can I distinguish an actual fault from a general bad feeling?",
+              "fr": "Comment distinguer une faute réelle d'un vague mauvais sentiment ?"
+            },
+            "a": {
+              "en": "The catechetical examination turns to duties and to things said, done, omitted or deliberately entertained. This is more definite than treating the day's uneasiness as proof that a sin occurred.",
+              "fr": "L'examen catéchétique considère les devoirs et ce qu'on a dit, fait, omis ou volontairement entretenu. C'est plus précis que de prendre le malaise d'une journée pour la preuve d'un péché."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-036"
+        },
+        {
+          "parentChoiceSlot": "F2",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-016.F2.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Must I make an endless inventory of every thought?",
+              "fr": "Dois-je faire un inventaire interminable de toutes mes pensées ?"
+            },
+            "a": {
+              "en": "The instruction points toward a truthful and concrete examination, not an endless search through passing impressions. An involuntary thought and a deliberate choice are not identical.",
+              "fr": "L'instruction vise un examen sincère et concret, non une recherche sans fin parmi les impressions passagères. Une pensée involontaire et un choix délibéré ne sont pas identiques."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-015"
+        },
+        {
+          "parentChoiceSlot": "F3",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-016.F3.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Could you decide from my description whether I fully consented?",
+              "fr": "Pourriez-vous décider d'après mon récit si j'ai pleinement consenti ?"
+            },
+            "a": {
+              "en": "The principle can be taught, but a short account does not establish the movements of a particular conscience. If the doubt concerns confession, a confessor is the proper person to help with it.",
+              "fr": "Le principe peut être enseigné, mais un bref récit n'établit pas les mouvements d'une conscience particulière. Si le doute concerne la confession, un confesseur est la personne indiquée pour aider."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-015"
+        }
+      ],
+      "authoringNote": "Only offer a deeper visitor choice after that specific first-level followup was selected; preserve prior path and source attribution."
+    },
+    {
+      "chapterId": "SPX-023",
+      "parents": [
+        {
+          "parentChoiceSlot": "F1",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-023.F1.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Then what makes spiritual Communion a distinct act?",
+              "fr": "Qu'est-ce qui fait alors de la communion spirituelle un acte distinct ?"
+            },
+            "a": {
+              "en": "It is made through desire directed to Christ, without actually receiving the sacrament. That distinction should be retained: it honours the place of prayer without pretending that the sacramental act has taken place.",
+              "fr": "Elle se fait par le désir tourné vers le Christ, sans réception effective du sacrement. Il faut garder cette distinction : elle reconnaît la place de la prière sans prétendre que l'acte sacramentel a eu lieu."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-EXP-041"
+        },
+        {
+          "parentChoiceSlot": "F2",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-023.F2.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Does this mean sacramental Communion is unimportant?",
+              "fr": "Cela signifie-t-il que la communion sacramentelle importe peu ?"
+            },
+            "a": {
+              "en": "No. The Salzano teaching takes care to distinguish desire from actual reception because the Eucharistic sacrament is not replaceable by a mere change of language. One should not turn the value of spiritual desire into an equivalence between the two.",
+              "fr": "Non. L'enseignement de Salzano distingue soigneusement le désir de la réception réelle parce que le sacrement eucharistique ne se remplace pas par un changement de mots. La valeur du désir spirituel ne rend pas les deux actes identiques."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-EXP-041"
+        },
+        {
+          "parentChoiceSlot": "F3",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-023.F3.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Can the avatar decide that I ought to receive Communion today?",
+              "fr": "L'avatar peut-il décider si je dois communier aujourd'hui ?"
+            },
+            "a": {
+              "en": "No. The source explains spiritual and sacramental Communion generally; it cannot verify a person's sacramental dispositions. A concrete difficulty about approaching Communion calls for pastoral counsel.",
+              "fr": "Non. La source explique généralement la communion spirituelle et sacramentelle ; elle ne peut vérifier les dispositions d'une personne. Une difficulté concrète avant de communier relève du conseil pastoral."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-015"
+        }
+      ],
+      "authoringNote": "Only offer a deeper visitor choice after that specific first-level followup was selected; preserve prior path and source attribution."
+    },
+    {
+      "chapterId": "SPX-024",
+      "parents": [
+        {
+          "parentChoiceSlot": "F1",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-024.F1.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "Why does this final passage have a particular Eucharistic significance?",
+              "fr": "Pourquoi ce dernier passage possède-t-il une signification eucharistique particulière ?"
+            },
+            "a": {
+              "en": "The name Viaticum expresses the Eucharist received as spiritual provision when earthly life draws to its close. The catechetical emphasis falls on the sacrament and its purpose, not on predicting the hour of death.",
+              "fr": "Le nom de viatique désigne l'Eucharistie reçue comme provision spirituelle lorsque la vie terrestre approche de sa fin. L'accent catéchétique porte sur le sacrement et sa fin, non sur la prédiction de l'heure de la mort."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-060"
+        },
+        {
+          "parentChoiceSlot": "F2",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-024.F2.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "May an ordinary Communion be called Viaticum in precisely the same sense?",
+              "fr": "Peut-on appeler toute communion viatique exactement au même titre ?"
+            },
+            "a": {
+              "en": "The term has a particular use for Communion in the setting of the final passage. The Eucharist remains the same sacrament; the name identifies its special pastoral occasion.",
+              "fr": "Le terme s'emploie spécialement pour la communion dans la perspective du dernier passage. L'Eucharistie demeure le même sacrement ; le nom désigne une occasion pastorale particulière."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-023"
+        },
+        {
+          "parentChoiceSlot": "F3",
+          "followup": {
+            "id": "SPX.DEPTH12.SPX-024.F3.D1",
+            "kind": "DEPENDS_ON_SELECTED_PARENT_FOLLOWUP",
+            "q": {
+              "en": "What if the family is unsure how to arrange Communion for a seriously ill person?",
+              "fr": "Que faire si la famille ignore comment organiser la communion d'un grand malade ?"
+            },
+            "a": {
+              "en": "The historical text gives the religious meaning of Viaticum, not today's local procedure. Arranging the sacraments for a sick person calls for direct contact with the parish or a priest, alongside ordinary care.",
+              "fr": "Le texte historique donne le sens religieux du viatique, non la procédure locale d'aujourd'hui. Pour organiser les sacrements d'un malade, il convient de contacter directement la paroisse ou un prêtre, en poursuivant les soins ordinaires."
+            },
+            "approved": false
+          },
+          "suggestedNextTopic": "SPX-027"
+        }
+      ],
+      "authoringNote": "Only offer a deeper visitor choice after that specific first-level followup was selected; preserve prior path and source attribution."
+    }
+  ],
+  "globalRelease": {
+    "approved": false,
+    "production": false,
+    "claimsNotVerbatim": true
+  }
+}

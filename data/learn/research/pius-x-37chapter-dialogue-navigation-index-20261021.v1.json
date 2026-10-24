@@ -1,0 +1,999 @@
+{
+  "schema": "AO_SPX_37_CHAPTER_AUTHORING_NAVIGATION_INDEX_V1",
+  "created": "2026-10-21",
+  "status": "SOURCE_OWNED_EDITORIAL_CONVERSATION_GRAPH_NOT_LIVE_RUNTIME",
+  "owners": {
+    "previous17": "data/learn/research/pius-x-first17-branching-dialogue-graph-20261021.v1.json",
+    "next20PartA": "data/learn/research/pius-x-dialogue-authoring-next20-part-a-20261021.v1.json",
+    "next20PartB": "data/learn/research/pius-x-dialogue-authoring-next20-part-b-20261021.v1.json",
+    "periodVoicePr": 1419,
+    "sourceOwnerPr": 1458,
+    "chanoineRouterPr": 1443,
+    "existingVisualNovelPr": 1402
+  },
+  "counts": {
+    "priorEpisodes": 17,
+    "addedEpisodes": 20,
+    "combinedChapters": 37,
+    "priorGraphQATurnNodes": 51,
+    "newGraphQATurnNodes": 60,
+    "combinedGraphQATurnNodes": 111,
+    "newEnglishFrenchAnswerDrafts": 120,
+    "sourcePartialNewChapters": 6,
+    "sourceDirectNewChapters": 14,
+    "newOverwrittenOriginalAnswers": 0,
+    "certifiedHistoricalAvatarSpeech": 0,
+    "published": 0
+  },
+  "interfaceContract": {
+    "entry": "VISITOR_SELECTED_QUESTION",
+    "turnProgression": "DIALOGUE_CHOICES_NOT_AUTOPLAY",
+    "answerKind": "HISTORICALLY_SOURCE_BOUND_BILINGUAL_EDUCATIONAL_RECONSTRUCTION_NEVER_CLAIM_VERBATIM",
+    "sources": "SHOW_DOCUMENT_TITLE_EXACT_LOCUS_AND_LINK_PER_TURN",
+    "frEnglish": "ONE_LOCALE_AT_A_TIME_WITH_OPTIONAL_TOGGLE",
+    "chanoine": "OPT_IN_AND_ROUTER_OWNED_ONLY",
+    "periodVoice": "SEPARATE_PR1419_MUST_REVIEW",
+    "safety": "NO_INDIVIDUAL_GUILT_GRACE_OR_CURRENT_DISCIPLINE_VERDICTS",
+    "production": "DISABLED_UNTIL_APPROVAL",
+    "existingMassReader": "UNTOUCHED"
+  },
+  "newChapters": [
+    {
+      "id": "SPX-EXP-012",
+      "titleEN": "Can reason discover anything certain about God?",
+      "titleFR": "La raison peut-elle connaître quelque chose de certain sur Dieu ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourceLocus": "§6",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-a-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_012.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_012.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_012.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-013",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-015",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "explaining",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-013",
+      "titleEN": "Is a sincere religious experience enough to establish revealed truth?",
+      "titleFR": "Une expérience religieuse sincère suffit-elle à établir la vérité révélée ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourceLocus": "§§7–8",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-a-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_013.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_013.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_013.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-017",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-032",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "explaining",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-014",
+      "titleEN": "Can a revealed dogma become false when religious opinions change?",
+      "titleFR": "Un dogme révélé peut-il devenir faux lorsque les opinions religieuses changent ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourceLocus": "§§11–13",
+      "evidenceTier": "PRIMARY_PARTIAL",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-a-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_014.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_014.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_014.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-013",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-015",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "thoughtful",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-015",
+      "titleEN": "Were you opposed to scientific research?",
+      "titleFR": "Étiez-vous opposé à la recherche scientifique ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourceLocus": "§§17, 45–47",
+      "evidenceTier": "PRIMARY_PARTIAL",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-a-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_015.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_015.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_015.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-012",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-016",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "thoughtful",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-016",
+      "titleEN": "Why did you challenge certain forms of biblical criticism?",
+      "titleFR": "Pourquoi avez-vous contesté certaines formes de critique biblique ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourceLocus": "§§29–33",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-a-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_016.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_016.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_016.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-015",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-032",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "thoughtful",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-017",
+      "titleEN": "Why did you criticise the Modernists' way of defending Christianity?",
+      "titleFR": "Pourquoi avez-vous critiqué l'apologétique des modernistes ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourceLocus": "§§35–37",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-a-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_017.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_017.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_017.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-013",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-012",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "thoughtful",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-019",
+      "titleEN": "Why did you ask bishops to take special care over seminaries and books?",
+      "titleFR": "Pourquoi avez-vous demandé aux évêques de veiller aux séminaires et aux livres ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourceLocus": "§§44–56",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-a-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_019.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_019.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_019.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-023",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-020",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "grave",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-020",
+      "titleEN": "Why did you establish the anti-Modernist oath?",
+      "titleFR": "Pourquoi avez-vous institué le serment antimoderniste ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/la/motu_proprio/documents/hf_p-x_motu-proprio_19100901_sacrorum-antistitum.html",
+      "sourceLocus": "Iusiurandi formula, oath provisions before formula",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-a-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_020.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_020.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_020.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-019",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-023",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "grave",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-022",
+      "titleEN": "What can Catholics learn from your warnings about doctrinal error among clergy?",
+      "titleFR": "Que doivent retenir les catholiques de vos avertissements sur les erreurs doctrinales du clergé ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourceLocus": "§§44–56",
+      "evidenceTier": "PRIMARY_PARTIAL",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-a-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_022.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_022.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_022.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-023",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-019",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "grave",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-023",
+      "titleEN": "What duty does a bishop have when doctrine is endangered?",
+      "titleFR": "Quel devoir incombe à l'évêque lorsque la doctrine est menacée ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourceLocus": "§§44–56",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-a-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_023.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_023.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_023.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-019",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-022",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "explaining",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-024",
+      "titleEN": "Why did you oppose the French separation law?",
+      "titleFR": "Pourquoi vous êtes-vous opposé à la loi française de séparation ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11021906_vehementer-nos.html",
+      "sourceLocus": "§§1–12",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-b-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_024.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_024.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_024.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-028",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-025",
+          "status": "EXTERNAL_EXISTING_SOURCE_OR_CANDIDATE_CHECK_ROUTER_BEFORE_OFFER"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "grave",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-028",
+      "titleEN": "How can Christians avoid discouragement when society loses faith?",
+      "titleFR": "Comment les chrétiens peuvent-ils éviter le découragement lorsque la société perd la foi ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "sourceLocus": "§§5–9",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-b-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_028.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_028.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_028.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-048",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-021",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "explaining",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-032",
+      "titleEN": "Are miracles and prophecies merely symbols of religious experience?",
+      "titleFR": "Les miracles et les prophéties ne sont-ils que des symboles de l'expérience religieuse ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourceLocus": "§§6–10",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-b-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_032.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_032.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_032.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-016",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-013",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "thoughtful",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-037",
+      "titleEN": "What makes music truly suitable for the liturgy?",
+      "titleFR": "Qu'est-ce qui rend une musique véritablement convenable à la liturgie ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "sourceLocus": "general instruction §§1–6",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-b-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_037.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_037.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_037.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-038",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-039",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "explaining",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-038",
+      "titleEN": "Why did the dignity of church music concern you so deeply?",
+      "titleFR": "Pourquoi la dignité de la musique d'église vous préoccupait-elle autant ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "sourceLocus": "introduction and instruction §§1–3",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-b-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_038.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_038.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_038.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-037",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-039",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "explaining",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-039",
+      "titleEN": "What did you mean by participation in the Church's public prayer?",
+      "titleFR": "Qu'entendiez-vous par la participation à la prière publique de l'Église ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "sourceLocus": "introduction and §§1–3",
+      "evidenceTier": "PRIMARY_PARTIAL",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-b-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_039.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_039.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_039.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-038",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-PILOT-02",
+          "status": "EXTERNAL_EXISTING_SOURCE_OR_CANDIDATE_CHECK_ROUTER_BEFORE_OFFER"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "explaining",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-042",
+      "titleEN": "How should children be prepared for Holy Communion?",
+      "titleFR": "Comment préparer les enfants à la sainte communion ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "sourceLocus": "§§19–23",
+      "evidenceTier": "PRIMARY_PARTIAL",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-b-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_042.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_042.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_042.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-PILOT-10",
+          "status": "EXTERNAL_EXISTING_SOURCE_OR_CANDIDATE_CHECK_ROUTER_BEFORE_OFFER"
+        },
+        {
+          "targetId": "SPX-EXP-043",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "explaining",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      },
+      "supplementarySourceReferences": [
+        {
+          "name": "Quam singulari (1910)",
+          "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5170",
+          "sourceScope": "disciplinary rules 1–4 and papal approval at close",
+          "sourceClass": "PAPALLY_APPROVED_DICASTERY_DECREE_REPRINT_NOT_PERSONAL_ENCYCLICAL",
+          "ownedBy": "SPX-PILOT-10",
+          "note": "Used solely to distinguish first Communion admission requirements from catechetical guidance in Acerbo nimis; no novel attribution or edition certification."
+        }
+      ]
+    },
+    {
+      "id": "SPX-EXP-044",
+      "titleEN": "What provision did you urge for children in secular schools?",
+      "titleFR": "Que demandiez-vous pour les enfants fréquentant les écoles sans enseignement religieux ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "sourceLocus": "§23",
+      "evidenceTier": "PRIMARY_PARTIAL",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-b-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_044.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_044.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_044.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-043",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-042",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "explaining",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-046",
+      "titleEN": "Why should a priest's example matter as much as his preaching?",
+      "titleFR": "Pourquoi l'exemple d'un prêtre importe-t-il autant que sa prédication ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "sourceLocus": "§§2–4",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-b-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_046.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_046.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_046.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-PILOT-09",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-043",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "thoughtful",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-EXP-048",
+      "titleEN": "How can a Catholic defend doctrine firmly without treating opponents harshly?",
+      "titleFR": "Comment un catholique peut-il défendre fermement la doctrine sans maltraiter ses contradicteurs ?",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "sourceLocus": "§§12–13",
+      "evidenceTier": "PRIMARY_DIRECT",
+      "owner": "data/learn/research/pius-x-dialogue-authoring-next20-part-b-20261021.v1.json",
+      "turns": [
+        "AO.SPX.DIALOGUE.SPX_EXP_048.OPEN",
+        "AO.SPX.DIALOGUE.SPX_EXP_048.F1",
+        "AO.SPX.DIALOGUE.SPX_EXP_048.F2"
+      ],
+      "nextChoices": [
+        {
+          "targetId": "SPX-EXP-028",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        },
+        {
+          "targetId": "SPX-EXP-022",
+          "status": "IN_37_CHAPTER_LIBRARY"
+        }
+      ],
+      "presentation": {
+        "style": "APPROVED_FIVE_SPRITE_BANK_REFERENCE_ONLY",
+        "provisionalPose": "explaining",
+        "periodVoiceApproved": false
+      },
+      "chanoine": {
+        "optIn": true,
+        "preserveLanguageSourceAndTrail": true,
+        "sourceOwnerRouter": "PR#1443",
+        "approvedAnswerRequired": true
+      },
+      "release": {
+        "english": false,
+        "french": false,
+        "claim": false,
+        "theology": false,
+        "voice": false,
+        "production": false
+      }
+    }
+  ],
+  "priorChapterIds": [
+    "SPX-EXP-001",
+    "SPX-EXP-002",
+    "SPX-EXP-003",
+    "SPX-EXP-004",
+    "SPX-EXP-005",
+    "SPX-EXP-006",
+    "SPX-EXP-007",
+    "SPX-EXP-008",
+    "SPX-EXP-009",
+    "SPX-PILOT-01",
+    "SPX-PILOT-07",
+    "SPX-PILOT-08",
+    "SPX-PILOT-09",
+    "SPX-EXP-021",
+    "SPX-EXP-026",
+    "SPX-EXP-027",
+    "SPX-EXP-043"
+  ],
+  "pendingCandidateDedup": [
+    {
+      "visitorSeed": "SPX-EXP-011",
+      "possibleOwner": "SPX-PILOT-07",
+      "relationship": "COMMON_MODERNISM_OVERVIEW",
+      "redirectApproved": false
+    },
+    {
+      "visitorSeed": "SPX-EXP-018",
+      "possibleOwner": "SPX-PILOT-07",
+      "relationship": "SYNTHESIS_OF_HERESIES_FOLLOWUP",
+      "redirectApproved": false
+    },
+    {
+      "visitorSeed": "SPX-EXP-025",
+      "possibleOwner": "SPX-EXP-024",
+      "relationship": "HISTORICAL_LAW_APPLICATION_FOLLOWUP",
+      "redirectApproved": false
+    },
+    {
+      "visitorSeed": "SPX-EXP-030",
+      "possibleOwner": "SPX-EXP-013",
+      "relationship": "REVELATION_VS_SUBJECTIVE_FEELING",
+      "redirectApproved": false
+    },
+    {
+      "visitorSeed": "SPX-EXP-033",
+      "possibleOwner": "SPX-EXP-016",
+      "relationship": "BIBLICAL_CRITICISM_FOLLOWUP",
+      "redirectApproved": false
+    },
+    {
+      "visitorSeed": "SPX-EXP-034",
+      "possibleOwner": "SPX-EXP-014",
+      "relationship": "DOCTRINAL_DEVELOPMENT_FOLLOWUP",
+      "redirectApproved": false
+    },
+    {
+      "visitorSeed": "SPX-EXP-040",
+      "possibleOwner": "SPX-EXP-037",
+      "relationship": "GREGORIAN_CHANT_FOLLOWUP",
+      "redirectApproved": false
+    },
+    {
+      "visitorSeed": "SPX-EXP-047",
+      "possibleOwner": "SPX-EXP-026",
+      "relationship": "LAY_APOSTOLATE_FOLLOWUP",
+      "redirectApproved": false
+    }
+  ],
+  "offGraphChoices": [
+    {
+      "from": "SPX-EXP-024",
+      "to": "SPX-EXP-025"
+    },
+    {
+      "from": "SPX-EXP-039",
+      "to": "SPX-PILOT-02"
+    },
+    {
+      "from": "SPX-EXP-042",
+      "to": "SPX-PILOT-10"
+    }
+  ],
+  "sourceTierCount": {
+    "PRIMARY_DIRECT": 14,
+    "PRIMARY_PARTIAL": 6
+  }
+}

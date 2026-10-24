@@ -1,0 +1,519 @@
+{
+  "schema": "AO_SPX_1905_BATCH11_PART_V1",
+  "part": "C",
+  "created": "2026-10-20",
+  "status": "BILINGUAL_DOCUMENTARY_DRAFT_NOT_APPROVED",
+  "followupPolicy": "SOURCE_SAME_QUESTION_DISTINCT_PASTORAL_INTENT",
+  "records": [
+    {
+      "id": "SPX-1905-P-687",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q687",
+        "originalQuestionItalian": "Che cosa è la soddisfazione o penitenza?",
+        "relatedQuestionId": "PX1905-Q688",
+        "section": "PENANCE_SATISFACTION_ABSOLUTION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What is the satisfaction or penance assigned in confession?",
+            "fr": "Qu'est-ce que la satisfaction ou pénitence imposée en confession ?"
+          },
+          "response": {
+            "en": "It is a prayer or another good work that the confessor assigns to the penitent in expiation of sin.",
+            "fr": "C'est une prière ou une autre bonne œuvre que le confesseur impose au pénitent en expiation de ses péchés."
+          },
+          "supports": [
+            "PX1905-Q687"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Could the assigned penance be something other than a prayer?",
+            "fr": "La pénitence imposée peut-elle être autre chose qu'une prière ?"
+          },
+          "response": {
+            "en": "Yes. The Catechism explicitly allows another good work, as the confessor directs.",
+            "fr": "Oui. Le Catéchisme mentionne expressément une autre bonne œuvre, selon ce que prescrit le confesseur."
+          },
+          "supports": [
+            "PX1905-Q687"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-688",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q688",
+        "originalQuestionItalian": "Che cosa è l’assoluzione?",
+        "relatedQuestionId": "PX1905-Q689",
+        "section": "PENANCE_SATISFACTION_ABSOLUTION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What is sacramental absolution?",
+            "fr": "Qu'est-ce que l'absolution sacramentelle ?"
+          },
+          "response": {
+            "en": "It is the sentence pronounced by the priest in the name of Jesus Christ to forgive the penitent's sins.",
+            "fr": "C'est la sentence que le prêtre prononce au nom de Jésus-Christ pour remettre les péchés du pénitent."
+          },
+          "supports": [
+            "PX1905-Q688"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does the priest forgive through merely personal authority?",
+            "fr": "Le prêtre pardonne-t-il par sa seule autorité personnelle ?"
+          },
+          "response": {
+            "en": "No. The Catechism specifies that absolution is pronounced in the name of Jesus Christ.",
+            "fr": "Non. Le Catéchisme précise que l'absolution est prononcée au nom de Jésus-Christ."
+          },
+          "supports": [
+            "PX1905-Q688"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-689",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q689",
+        "originalQuestionItalian": "Delle parli del sacramento della Penitenza qual’è la più necessaria?",
+        "relatedQuestionId": "PX1905-Q690",
+        "section": "PENANCE_SATISFACTION_ABSOLUTION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Which part of Penance does the Catechism call most necessary?",
+            "fr": "Quelle partie de la Pénitence le Catéchisme juge-t-il la plus nécessaire ?"
+          },
+          "response": {
+            "en": "Contrition: without real sorrow for sin there is no forgiveness. Perfect contrition can reconcile a person with God when joined to the intention, at least implicit, to confess.",
+            "fr": "La contrition : sans vrai regret du péché, il n'y a pas de pardon. La contrition parfaite peut réconcilier une personne avec Dieu lorsqu'elle est unie au désir, au moins implicite, de se confesser."
+          },
+          "supports": [
+            "PX1905-Q689"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does perfect contrition mean confession is no longer necessary?",
+            "fr": "La contrition parfaite rend-elle la confession inutile ?"
+          },
+          "response": {
+            "en": "No. The Catechism explicitly includes the desire to confess among its conditions.",
+            "fr": "Non. Le Catéchisme inclut expressément le désir de se confesser parmi ses conditions."
+          },
+          "supports": [
+            "PX1905-Q689"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-690",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q690",
+        "originalQuestionItalian": "Quanti sono gli effetti del sacramento della Penitenza?",
+        "relatedQuestionId": "PX1905-Q691",
+        "section": "PENANCE_EFFECTS_AND_PREPARATION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What effects does the Sacrament of Penance have?",
+            "fr": "Quels sont les effets du sacrement de Pénitence ?"
+          },
+          "response": {
+            "en": "The Catechism lists the restoration of sanctifying grace and forgiveness, remission of punishment according to disposition, restored merits, help against future sin, and peace of conscience.",
+            "fr": "Le Catéchisme énumère le rétablissement de la grâce sanctifiante et le pardon, la remise de peines selon les dispositions, le retour des mérites, une aide contre le péché futur et la paix de conscience."
+          },
+          "supports": [
+            "PX1905-Q690"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is forgiveness its only effect?",
+            "fr": "Le pardon est-il son seul effet ?"
+          },
+          "response": {
+            "en": "No. The source also speaks of spiritual help for future fidelity and renewed peace of conscience.",
+            "fr": "Non. La source parle aussi d'un secours spirituel pour la fidélité future et d'une paix de conscience retrouvée."
+          },
+          "supports": [
+            "PX1905-Q690"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-691",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q691",
+        "originalQuestionItalian": "Il sacramento della Penitenza è necessario a tutti per salvarsi?",
+        "relatedQuestionId": "PX1905-Q692",
+        "section": "PENANCE_EFFECTS_AND_PREPARATION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "For whom is the Sacrament of Penance necessary, according to the Catechism?",
+            "fr": "Pour qui le sacrement de Pénitence est-il nécessaire, selon le Catéchisme ?"
+          },
+          "response": {
+            "en": "It teaches that Penance is necessary for those who have committed mortal sin after Baptism. This general doctrine cannot determine a particular person's guilt.",
+            "fr": "Il enseigne que la Pénitence est nécessaire à ceux qui ont commis un péché mortel après le Baptême. Cette doctrine générale ne détermine pas la culpabilité d'une personne particulière."
+          },
+          "supports": [
+            "PX1905-Q691"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does that mean every anxious thought proves I need confession?",
+            "fr": "Cela signifie-t-il que toute pensée anxieuse prouve que je dois me confesser ?"
+          },
+          "response": {
+            "en": "No. The statement concerns mortal sin; assessing a particular situation depends on circumstances and knowledgeable pastoral counsel.",
+            "fr": "Non. L'énoncé concerne le péché mortel ; apprécier une situation particulière demande de considérer les circonstances et de recevoir un conseil pastoral éclairé."
+          },
+          "supports": [
+            "PX1905-Q691"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-692",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q692",
+        "originalQuestionItalian": "E cosa buona confessarsi spesso?",
+        "relatedQuestionId": "PX1905-Q693",
+        "section": "PENANCE_EFFECTS_AND_PREPARATION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Does the Catechism recommend frequent confession?",
+            "fr": "Le Catéchisme recommande-t-il la confession fréquente ?"
+          },
+          "response": {
+            "en": "Yes. It praises frequent confession not only for forgiveness but also for the graces that help a person avoid sin in the future.",
+            "fr": "Oui. Il loue la confession fréquente, non seulement pour le pardon mais aussi pour les grâces qui aident à éviter le péché à l'avenir."
+          },
+          "supports": [
+            "PX1905-Q692"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is the purpose merely to revisit past faults repeatedly?",
+            "fr": "Le but est-il seulement de revenir sans cesse sur des fautes passées ?"
+          },
+          "response": {
+            "en": "No. The text specifically emphasizes receiving help to live better going forward.",
+            "fr": "Non. Le texte insiste précisément sur le secours reçu pour mieux vivre à l'avenir."
+          },
+          "supports": [
+            "PX1905-Q692"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-693",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q693",
+        "originalQuestionItalian": "Il sacramento della Penitenza ha virtù di rimettere tutti i peccati per molti e grandi che siano?",
+        "relatedQuestionId": "PX1905-Q694",
+        "section": "PENANCE_EFFECTS_AND_PREPARATION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Can Penance forgive even numerous or grave sins?",
+            "fr": "La Pénitence peut-elle pardonner des péchés nombreux ou graves ?"
+          },
+          "response": {
+            "en": "Yes. The Catechism says the sacrament can forgive all sins, however many or grave, when received with the proper dispositions.",
+            "fr": "Oui. Le Catéchisme dit que ce sacrement peut remettre tous les péchés, aussi nombreux ou graves soient-ils, lorsqu'il est reçu avec les dispositions requises."
+          },
+          "supports": [
+            "PX1905-Q693"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Can I conclude that a particular person is beyond forgiveness?",
+            "fr": "Puis-je conclure qu'une personne est au-delà de tout pardon ?"
+          },
+          "response": {
+            "en": "No. The instruction expressly stresses the breadth of forgiveness offered through the sacrament.",
+            "fr": "Non. L'instruction souligne expressément l'étendue du pardon offert par le sacrement."
+          },
+          "supports": [
+            "PX1905-Q693"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-694",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q694",
+        "originalQuestionItalian": "Quante cose si richiedono per fare una buona confessione?",
+        "relatedQuestionId": "PX1905-Q695",
+        "section": "PENANCE_EFFECTS_AND_PREPARATION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What are the five elements of a good confession?",
+            "fr": "Quels sont les cinq éléments d'une bonne confession ?"
+          },
+          "response": {
+            "en": "Examination of conscience, sorrow for offending God, firm purpose of amendment, confession of one's sins, and performing the assigned penance.",
+            "fr": "L'examen de conscience, le regret d'avoir offensé Dieu, le ferme propos de s'amender, l'aveu de ses péchés et l'accomplissement de la pénitence imposée."
+          },
+          "supports": [
+            "PX1905-Q694"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is confession just an accurate inventory of faults?",
+            "fr": "La confession est-elle seulement un inventaire exact des fautes ?"
+          },
+          "response": {
+            "en": "No. The Catechism also requires contrition, a resolve to change and satisfaction.",
+            "fr": "Non. Le Catéchisme demande aussi la contrition, la résolution de changer et la satisfaction."
+          },
+          "supports": [
+            "PX1905-Q694"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-695",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q695",
+        "originalQuestionItalian": "Che cosa dobbiamo noi fare prima di tutto per confessarci bene?",
+        "relatedQuestionId": "PX1905-Q696",
+        "section": "PENANCE_EFFECTS_AND_PREPARATION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What should I do first to prepare for confession?",
+            "fr": "Que devrais-je faire d'abord pour préparer une confession ?"
+          },
+          "response": {
+            "en": "Pray sincerely that the Lord give light to recognize sins and strength to reject them.",
+            "fr": "Priez sincèrement pour que le Seigneur donne la lumière afin de reconnaître les péchés et la force de les rejeter."
+          },
+          "supports": [
+            "PX1905-Q695"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Why begin with prayer rather than just a checklist?",
+            "fr": "Pourquoi commencer par la prière plutôt que par une simple liste ?"
+          },
+          "response": {
+            "en": "The source treats a good confession as a work of grace, asking for both understanding and the will to turn from sin.",
+            "fr": "La source présente une bonne confession comme une œuvre de grâce, demandant à la fois l'intelligence et la volonté de se détourner du péché."
+          },
+          "supports": [
+            "PX1905-Q695"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-696",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q696",
+        "originalQuestionItalian": "Che cos’è l’ esame di coscienza?",
+        "relatedQuestionId": "PX1905-Q697",
+        "section": "PENANCE_EFFECTS_AND_PREPARATION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What is an examination of conscience?",
+            "fr": "Qu'est-ce qu'un examen de conscience ?"
+          },
+          "response": {
+            "en": "It is a diligent review of sins committed since one's last good confession.",
+            "fr": "C'est une recherche attentive des péchés commis depuis la dernière bonne confession."
+          },
+          "supports": [
+            "PX1905-Q696"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is the aim to search endlessly for uncertain faults?",
+            "fr": "Le but est-il de rechercher indéfiniment des fautes incertaines ?"
+          },
+          "response": {
+            "en": "No. The source calls for a diligent review, not an endless or compulsive inquiry. A person troubled by scruples should follow reliable confessional guidance.",
+            "fr": "Non. La source demande un examen attentif, non une enquête sans fin ni compulsive. Une personne troublée de scrupules devrait suivre le conseil fiable de son confesseur."
+          },
+          "supports": [
+            "PX1905-Q696"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    }
+  ]
+}

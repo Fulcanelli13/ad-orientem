@@ -1,0 +1,649 @@
+{
+  "schema": "AO_SPX_AQ04_AQ05_CANON_SOURCE_ELIGIBILITY_REVIEW_V1",
+  "asOf": "2026-10-20",
+  "state": "EVIDENCE_BASED_REVIEW_ONLY_NARROW_SOURCE_ANSWER_NOT_NATIVE_CHANOINE_REPLY",
+  "ownerReferences": {
+    "apostolatePR": "https://github.com/Fulcanelli13/ad-orientem/pull/1402",
+    "sourceFile": "src/apostolate/corpus.js",
+    "digest": "src/learn/ask-church-source-digest.js",
+    "routerPR": "https://github.com/Fulcanelli13/ad-orientem/pull/1443"
+  },
+  "observation": "Apostolate AQ04/AQ05 have publication READY in source-owner corpus and readAskChurchDigest returns these READY texts in EN/FR. Router's broad APOL-030/031 topics remain SOURCE_GAP and have approvedReply false. Source-owner answer is not an invented new Monsieur le Chanoine quotation.",
+  "counts": {
+    "reviewedAnswerTurnCandidates": 22,
+    "byStatus": {
+      "BLOCK_UNRELATED_TRANSITION": 1,
+      "PARTIAL_RELEVANT_BUT_NOT_EXACT": 5,
+      "MATCHED_NARROW_CONTENT_SUBJECT": 10,
+      "BLOCK_DOES_NOT_ANSWER_THE_SPECIFIC_QUESTION": 6
+    },
+    "routerHandoffApproved": 0,
+    "canonAvatarResponseApproved": 0,
+    "automaticContextlessRepliesAuthorized": 0
+  },
+  "acceptanceRule": "Only MATCHED_NARROW_CONTENT_SUBJECT is a reasonable content-owner source-answer eligibility lead; even these are not activated, because native source-aware Chanoine transfer/scene rendering must first be integrated and separately tested. PARTIAL must ask a narrower question or offer related study, BLOCK cannot show AQ answer as though responsive.",
+  "records": [
+    {
+      "answerTurnId": "SPX-1905-S-595-T2",
+      "sourceQuestionEN": "Which sacrament does the Catechism consider next?",
+      "sourceQuestionFR": "Quel sacrement le Catéchisme examine-t-il ensuite ?",
+      "sourceCitedIds": [
+        "PX1905-Q596"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ05",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XIII Real Presence, substantial conversion of bread/wine",
+      "status": "BLOCK_UNRELATED_TRANSITION",
+      "reason": "The question merely asks which sacrament comes next, not why the Eucharist changes.",
+      "topicInSharedRouter": "canon.apologetics_apol_030",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-S-596-T1",
+      "sourceQuestionEN": "What is the Eucharist according to the 1905 Catechism?",
+      "sourceQuestionFR": "Qu'est-ce que l'Eucharistie selon le Catéchisme de 1905 ?",
+      "sourceCitedIds": [
+        "PX1905-Q596"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ05",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XIII Real Presence, substantial conversion of bread/wine",
+      "status": "PARTIAL_RELEVANT_BUT_NOT_EXACT",
+      "reason": "Owner answer provides adjacent doctrinal context, not complete response to the visitor question.",
+      "topicInSharedRouter": "canon.apologetics_apol_030",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-S-606-T2",
+      "sourceQuestionEN": "What name is given to this conversion?",
+      "sourceQuestionFR": "Quel nom donne-t-on à cette conversion ?",
+      "sourceCitedIds": [
+        "PX1905-Q607"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ05",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XIII Real Presence, substantial conversion of bread/wine",
+      "status": "MATCHED_NARROW_CONTENT_SUBJECT",
+      "reason": "Exact visitor question overlaps the deterministic source-owner answer's stated doctrine, although no SPX→Canon runtime route or historical character voice is approved.",
+      "topicInSharedRouter": "canon.apologetics_apol_030",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-S-607-T1",
+      "sourceQuestionEN": "What does the Church call the change of bread and wine into Christ's Body and Blood?",
+      "sourceQuestionFR": "Comment l'Église appelle-t-elle le changement du pain et du vin au Corps et au Sang du Christ ?",
+      "sourceCitedIds": [
+        "PX1905-Q596",
+        "PX1905-Q607",
+        "PX1905-Q609",
+        "PX1905-Q610"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ05",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XIII Real Presence, substantial conversion of bread/wine",
+      "status": "MATCHED_NARROW_CONTENT_SUBJECT",
+      "reason": "Exact visitor question overlaps the deterministic source-owner answer's stated doctrine, although no SPX→Canon runtime route or historical character voice is approved.",
+      "topicInSharedRouter": "canon.apologetics_apol_030",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-S-608-T2",
+      "sourceQuestionEN": "Does any bread or wine remain in substance after consecration?",
+      "sourceQuestionFR": "Reste-t-il du pain ou du vin quant à leur substance après la consécration ?",
+      "sourceCitedIds": [
+        "PX1905-Q609"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ05",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XIII Real Presence, substantial conversion of bread/wine",
+      "status": "MATCHED_NARROW_CONTENT_SUBJECT",
+      "reason": "Exact visitor question overlaps the deterministic source-owner answer's stated doctrine, although no SPX→Canon runtime route or historical character voice is approved.",
+      "topicInSharedRouter": "canon.apologetics_apol_030",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-S-609-T1",
+      "sourceQuestionEN": "Does bread or wine remain after consecration?",
+      "sourceQuestionFR": "Reste-t-il du pain ou du vin après la consécration ?",
+      "sourceCitedIds": [
+        "PX1905-Q609"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ05",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XIII Real Presence, substantial conversion of bread/wine",
+      "status": "MATCHED_NARROW_CONTENT_SUBJECT",
+      "reason": "Exact visitor question overlaps the deterministic source-owner answer's stated doctrine, although no SPX→Canon runtime route or historical character voice is approved.",
+      "topicInSharedRouter": "canon.apologetics_apol_030",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-650-T2",
+      "sourceQuestionEN": "Is the Eucharist only a sacrament, or also a sacrifice?",
+      "sourceQuestionFR": "L'Eucharistie est-elle seulement un sacrement, ou également un sacrifice ?",
+      "sourceCitedIds": [
+        "PX1905-Q651"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "PARTIAL_RELEVANT_BUT_NOT_EXACT",
+      "reason": "Owner answer provides adjacent doctrinal context, not complete response to the visitor question.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-651-T1",
+      "sourceQuestionEN": "Is the Eucharist only a sacrament, or also a sacrifice?",
+      "sourceQuestionFR": "L'Eucharistie est-elle seulement un sacrement, ou également un sacrifice ?",
+      "sourceCitedIds": [
+        "PX1905-Q596",
+        "PX1905-Q651"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ05",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XIII Real Presence, substantial conversion of bread/wine",
+      "status": "PARTIAL_RELEVANT_BUT_NOT_EXACT",
+      "reason": "Owner answer provides adjacent doctrinal context, not complete response to the visitor question.",
+      "topicInSharedRouter": "canon.apologetics_apol_030",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-651-T2",
+      "sourceQuestionEN": "How does this Catechism define sacrifice in general?",
+      "sourceQuestionFR": "Comment ce Catéchisme définit-il le sacrifice en général ?",
+      "sourceCitedIds": [
+        "PX1905-Q652"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "BLOCK_DOES_NOT_ANSWER_THE_SPECIFIC_QUESTION",
+      "reason": "Owner answer does not define sacrifice generally, name the new-law sacrifice explicitly in context, or explain the separate consecrations.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-652-T1",
+      "sourceQuestionEN": "How does this Catechism define sacrifice in general?",
+      "sourceQuestionFR": "Comment ce Catéchisme définit-il le sacrifice en général ?",
+      "sourceCitedIds": [
+        "PX1905-Q652"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "BLOCK_DOES_NOT_ANSWER_THE_SPECIFIC_QUESTION",
+      "reason": "Owner answer does not define sacrifice generally, name the new-law sacrifice explicitly in context, or explain the separate consecrations.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-652-T2",
+      "sourceQuestionEN": "What is the sacrifice of the New Law called?",
+      "sourceQuestionFR": "Comment appelle-t-on le sacrifice de la Nouvelle Loi ?",
+      "sourceCitedIds": [
+        "PX1905-Q653"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "BLOCK_DOES_NOT_ANSWER_THE_SPECIFIC_QUESTION",
+      "reason": "Owner answer does not define sacrifice generally, name the new-law sacrifice explicitly in context, or explain the separate consecrations.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-653-T1",
+      "sourceQuestionEN": "What is the sacrifice of the New Law called?",
+      "sourceQuestionFR": "Comment appelle-t-on le sacrifice de la Nouvelle Loi ?",
+      "sourceCitedIds": [
+        "PX1905-Q653"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "BLOCK_DOES_NOT_ANSWER_THE_SPECIFIC_QUESTION",
+      "reason": "Owner answer does not define sacrifice generally, name the new-law sacrifice explicitly in context, or explain the separate consecrations.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-653-T2",
+      "sourceQuestionEN": "What is the Holy Mass according to the longer Catechism?",
+      "sourceQuestionFR": "Qu'est-ce que la sainte Messe selon le grand Catéchisme ?",
+      "sourceCitedIds": [
+        "PX1905-Q654"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "PARTIAL_RELEVANT_BUT_NOT_EXACT",
+      "reason": "Owner answer provides adjacent doctrinal context, not complete response to the visitor question.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-654-T1",
+      "sourceQuestionEN": "What is the Holy Mass according to the longer Catechism?",
+      "sourceQuestionFR": "Qu'est-ce que la sainte Messe selon le grand Catéchisme ?",
+      "sourceCitedIds": [
+        "PX1905-Q654"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "PARTIAL_RELEVANT_BUT_NOT_EXACT",
+      "reason": "Owner answer provides adjacent doctrinal context, not complete response to the visitor question.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-654-T2",
+      "sourceQuestionEN": "Is the Sacrifice of the Mass the same sacrifice as Calvary?",
+      "sourceQuestionFR": "Le sacrifice de la Messe est-il le même que celui du Calvaire ?",
+      "sourceCitedIds": [
+        "PX1905-Q655",
+        "PX1905-Q660"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "MATCHED_NARROW_CONTENT_SUBJECT",
+      "reason": "Exact visitor question overlaps the deterministic source-owner answer's stated doctrine, although no SPX→Canon runtime route or historical character voice is approved.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-655-T1",
+      "sourceQuestionEN": "Is the Sacrifice of the Mass the same sacrifice as Calvary?",
+      "sourceQuestionFR": "Le sacrifice de la Messe est-il le même que celui du Calvaire ?",
+      "sourceCitedIds": [
+        "PX1905-Q655",
+        "PX1905-Q660"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "MATCHED_NARROW_CONTENT_SUBJECT",
+      "reason": "Exact visitor question overlaps the deterministic source-owner answer's stated doctrine, although no SPX→Canon runtime route or historical character voice is approved.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-655-T2",
+      "sourceQuestionEN": "How does the offering of Mass differ from Christ's sacrifice on the Cross?",
+      "sourceQuestionFR": "En quoi l'offrande de la Messe diffère-t-elle du sacrifice du Christ sur la Croix ?",
+      "sourceCitedIds": [
+        "PX1905-Q656"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "MATCHED_NARROW_CONTENT_SUBJECT",
+      "reason": "Exact visitor question overlaps the deterministic source-owner answer's stated doctrine, although no SPX→Canon runtime route or historical character voice is approved.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-656-T1",
+      "sourceQuestionEN": "How does the offering of Mass differ from Christ's sacrifice on the Cross?",
+      "sourceQuestionFR": "En quoi l'offrande de la Messe diffère-t-elle du sacrifice du Christ sur la Croix ?",
+      "sourceCitedIds": [
+        "PX1905-Q656"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "MATCHED_NARROW_CONTENT_SUBJECT",
+      "reason": "Exact visitor question overlaps the deterministic source-owner answer's stated doctrine, although no SPX→Canon runtime route or historical character voice is approved.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-656-T2",
+      "sourceQuestionEN": "How does the Mass visibly represent Christ's sacrifice on the Cross?",
+      "sourceQuestionFR": "Comment la Messe représente-t-elle visiblement le sacrifice du Christ sur la Croix ?",
+      "sourceCitedIds": [
+        "PX1905-Q657"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "BLOCK_DOES_NOT_ANSWER_THE_SPECIFIC_QUESTION",
+      "reason": "Owner answer does not define sacrifice generally, name the new-law sacrifice explicitly in context, or explain the separate consecrations.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-657-T1",
+      "sourceQuestionEN": "How does the Mass visibly represent Christ's sacrifice on the Cross?",
+      "sourceQuestionFR": "Comment la Messe représente-t-elle visiblement le sacrifice du Christ sur la Croix ?",
+      "sourceCitedIds": [
+        "PX1905-Q657"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "BLOCK_DOES_NOT_ANSWER_THE_SPECIFIC_QUESTION",
+      "reason": "Owner answer does not define sacrifice generally, name the new-law sacrifice explicitly in context, or explain the separate consecrations.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-657-T2",
+      "sourceQuestionEN": "If Calvary is the one sacrifice, why do Catholics also speak of the Sacrifice of the Mass?",
+      "sourceQuestionFR": "Si le Calvaire est l'unique sacrifice, pourquoi parler aussi du Sacrifice de la Messe ?",
+      "sourceCitedIds": [
+        "PX1905-Q658"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "MATCHED_NARROW_CONTENT_SUBJECT",
+      "reason": "Exact visitor question overlaps the deterministic source-owner answer's stated doctrine, although no SPX→Canon runtime route or historical character voice is approved.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    },
+    {
+      "answerTurnId": "SPX-1905-E-658-T1",
+      "sourceQuestionEN": "If Calvary is the one sacrifice, why do Catholics also speak of the Sacrifice of the Mass?",
+      "sourceQuestionFR": "Si le Calvaire est l'unique sacrifice, pourquoi parler aussi du Sacrifice de la Messe ?",
+      "sourceCitedIds": [
+        "PX1905-Q658"
+      ],
+      "availableOwnerAnswerId": "apostolate:AQ04",
+      "sourceOwner": "src/apostolate/corpus.js",
+      "ownerSourceRegistry": "src/apostolate/source-registry.js",
+      "pinnedOwnerRef": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "ownerClaimStatus": "READY_IN_APOSTOLATE_OWNER_ONLY",
+      "sourceOwnerClaimScope": "Trent XXII ch II, same sacrifice as Calvary, not another death",
+      "status": "MATCHED_NARROW_CONTENT_SUBJECT",
+      "reason": "Exact visitor question overlaps the deterministic source-owner answer's stated doctrine, although no SPX→Canon runtime route or historical character voice is approved.",
+      "topicInSharedRouter": "canon.apologetics_apol_031",
+      "routerCoverage": "SOURCE_GAP",
+      "routerApprovedReply": false,
+      "handoffTransport": {
+        "canSwitchCharacterWithConsent": true,
+        "canPassQuestionAndEvidence": true,
+        "canDisplayAQ04AQ05OnlyAfterNarrowEligibilityAndSceneSourceOwnerIntegration": false,
+        "currentRuntimeWired": false
+      },
+      "historicalSpeechAuthorized": false,
+      "actualCanonAnswerVerifiedForSpecificQuestion": false,
+      "releaseApproved": false
+    }
+  ]
+}

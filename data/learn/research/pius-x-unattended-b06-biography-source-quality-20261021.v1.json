@@ -1,0 +1,465 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B06_BIOGRAPHY_SOURCE_QUALITY_DELTA_V1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_ONLY_HISTORICAL_REVIEW",
+  "ownerBranch": "formation/1457-pius-x-conversation-evidence",
+  "increment": "Resolve source-quality and attribution issues left by existing first20 review, not a repeated twenty-family audit",
+  "counts": {
+    "families": 3,
+    "answerUnits": 6,
+    "familyCountDiscrepanciesStillHeld": 1,
+    "electionDateSourceErrorsFlagged": 1,
+    "sourceReliabilityContextWarnings": 1,
+    "certified": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "familyId": "SPX-EXP-001",
+      "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "originalOwnerBlob": "8c90c5aae8b31cbf756b38c2848e332a78f7e9e1",
+      "originalRecord": {
+        "id": "SPX-EXP-001",
+        "opening": {
+          "question": {
+            "en": "What was your family life in Riese like?",
+            "fr": "Que sait-on de la vie familiale de Giuseppe Sarto à Riese ?"
+          },
+          "response": {
+            "en": "The Museo San Pio X family history describes Giuseppe Sarto's household, parents and siblings in Riese. It establishes family circumstances but does not preserve a first-person account of his private childhood thoughts.",
+            "fr": "L'histoire familiale publiée par le Museo San Pio X décrit les parents, la fratrie et le foyer de Giuseppe Sarto à Riese. Ces informations établissent le cadre de son enfance, mais non un récit authentique à la première personne de ses pensées privées."
+          }
+        },
+        "followup": {
+          "question": {
+            "en": "Can we reconstruct his private feelings toward every family member?",
+            "fr": "Peut-on reconstituer ses sentiments envers chaque membre de sa famille ?"
+          },
+          "response": {
+            "en": "Not from that witness. The available biographical account reports family relationships and circumstances, without authenticating intimate statements made in the boy's own voice.",
+            "fr": "Pas à partir de ce témoignage. La notice biographique rapporte des liens et des circonstances familiales, sans authentifier des confidences intimes prononcées par le jeune garçon."
+          }
+        },
+        "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+        "historicalSourceClass": "SECONDARY_BIOGRAPHY",
+        "firstPersonMemoryAllowed": false,
+        "published": false,
+        "approved": false
+      },
+      "priorEditorialOverlay": {
+        "id": "SPX-EXP-001",
+        "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+        "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+        "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+        "proposedDisplayRole": "EDITORIAL_BIOGRAPHY_PANEL",
+        "factualSourceClass": "LATER_HISTORICAL_BIOGRAPHY",
+        "witness": {
+          "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+          "passage": "Parents and childhood; family setting",
+          "editorialComparisonDate": "2026-10-20",
+          "checkedInAccessiblePublicSource": true,
+          "originalLanguageBilingualLineSignoff": false,
+          "noVerbatimPapalQuoteAsserted": true
+        },
+        "proposedDraft": {
+          "en": "Giuseppe Sarto grew up in Riese in a large Catholic household. His father, Giovanni Battista, was a municipal messenger; his mother, Margherita Sanson, worked as a seamstress. Later biographies describe a family closely involved in the religious life of the parish, but they cannot tell us his private childhood thoughts.",
+          "fr": "Giuseppe Sarto grandit à Riese, dans une famille catholique nombreuse. Son père, Giovanni Battista, était employé comme messager communal ; sa mère, Margherita Sanson, était couturière. Les biographies évoquent une famille très liée à la vie religieuse de la paroisse, sans pouvoir restituer ses pensées intimes d'enfant."
+        },
+        "boundaries": [
+          "DO_NOT_INVENT_CHILDHOOD_MEMORIES",
+          "BIOGRAPHY_FAMILY_COUNT_SOURCE_DIFFERENCE"
+        ],
+        "sameVisitorIntentFamily": null,
+        "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+        "approval": {
+          "italianOrLatinFullWitnessCollated": false,
+          "humanTheology": false,
+          "english": false,
+          "french": false,
+          "historicalVoice": false,
+          "production": false
+        },
+        "noCurrentDisciplineInstruction": true,
+        "noNewPrivatePapalAnecdotes": true,
+        "intentTreatment": {
+          "status": "STANDALONE_REVIEW_ENTRY",
+          "primaryFamilyId": "SPX-EXP-001",
+          "userNavigation": "TOPIC_CHOICE",
+          "productionReady": false
+        }
+      },
+      "proposed": {
+        "question": {
+          "en": "What is known about Giuseppe Sarto’s family in Riese?",
+          "fr": "Que sait-on de la famille de Giuseppe Sarto à Riese ?"
+        },
+        "main": {
+          "en": "Giuseppe Sarto grew up in a large Catholic household in Riese. His father, Giovanni Battista, was a municipal messenger; his mother, Margherita Sanson, was a seamstress.",
+          "fr": "Giuseppe Sarto grandit dans une famille catholique nombreuse à Riese. Son père, Giovanni Battista, était messager communal ; sa mère, Margherita Sanson, était couturière."
+        },
+        "claims": [
+          {
+            "claim": "Parents and occupations",
+            "refs": [
+              "MUSEUM-PARENTS",
+              "CASA-PARENTS"
+            ]
+          },
+          {
+            "claim": "Large Catholic household",
+            "refs": [
+              "MUSEUM-FAMILY"
+            ]
+          }
+        ],
+        "followup": {
+          "en": "The cited biographies describe family circumstances, not a complete record of his private feelings. They cannot justify invented childhood confidences.",
+          "fr": "Les biographies citées décrivent des circonstances familiales, non un récit complet de ses sentiments intimes. Elles ne justifient pas des confidences d’enfance inventées."
+        },
+        "followupRefs": [
+          "SOURCE_SCOPE"
+        ]
+      },
+      "displayRole": "NAMED_EDITORIAL_BIOGRAPHY_NARRATOR_NOT_SPX_FIRST_PERSON",
+      "changes": "Make EN/FR questions equally third-person and retain fact/attributed-report distinction",
+      "authenticPapalQuotation": false,
+      "firstPersonPapalMemory": false,
+      "humanHistoricalApproval": false,
+      "humanLanguageApproval": false,
+      "publication": false
+    },
+    {
+      "familyId": "SPX-EXP-002",
+      "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "originalOwnerBlob": "8c90c5aae8b31cbf756b38c2848e332a78f7e9e1",
+      "originalRecord": {
+        "id": "SPX-EXP-002",
+        "opening": {
+          "question": {
+            "en": "How did your parents influence your early faith?",
+            "fr": "Comment sa famille a-t-elle contribué à sa première éducation religieuse ?"
+          },
+          "response": {
+            "en": "The museum's historical account documents a religious family and parish environment during Sarto's childhood. It supports the existence of this setting, but not a precise private explanation of each parent's influence on his vocation.",
+            "fr": "Le musée documente un milieu familial et paroissial religieux pendant l'enfance de Sarto. Le témoignage soutient l'existence de ce cadre, mais ne précise pas l'influence intérieure exacte de chacun de ses parents sur sa vocation."
+          }
+        },
+        "followup": {
+          "question": {
+            "en": "Did Sarto himself credit one parent in these surviving lines?",
+            "fr": "Sarto attribue-t-il lui-même le mérite à l'un de ses parents dans ces lignes ?"
+          },
+          "response": {
+            "en": "No such first-person attribution has been established in the cited passage. The account should remain biographical rather than be turned into a recollection placed in his mouth.",
+            "fr": "Aucune attribution personnelle de cette sorte n'est établie dans le passage cité. Il faut conserver la forme biographique sans transformer le récit en souvenir mis dans sa bouche."
+          }
+        },
+        "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+        "historicalSourceClass": "SECONDARY_BIOGRAPHY",
+        "firstPersonMemoryAllowed": false,
+        "published": false,
+        "approved": false
+      },
+      "priorEditorialOverlay": {
+        "id": "SPX-EXP-002",
+        "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+        "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+        "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+        "proposedDisplayRole": "EDITORIAL_BIOGRAPHY_PANEL",
+        "factualSourceClass": "LATER_HISTORICAL_BIOGRAPHY",
+        "witness": {
+          "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+          "passage": "Infanzia e giovinezza; death of father 1852",
+          "editorialComparisonDate": "2026-10-20",
+          "checkedInAccessiblePublicSource": true,
+          "originalLanguageBilingualLineSignoff": false,
+          "noVerbatimPapalQuoteAsserted": true,
+          "additionalBiographicalWitnessUrl": "https://www.papapiox.it/biografia/"
+        },
+        "proposedDraft": {
+          "en": "After his father's death in 1852, the young Giuseppe's family faced a difficult choice. The later biographical account says his mother supported his continuation toward the priesthood rather than his taking his father's municipal position. It illustrates family support for his vocation, not a recorded private conversation with his parents.",
+          "fr": "Après la mort de son père en 1852, la famille du jeune Giuseppe dut faire un choix difficile. Selon un récit biographique postérieur, sa mère soutint la poursuite de sa vocation sacerdotale plutôt que sa reprise de l'emploi communal de son père. Ce témoignage montre un soutien familial, non une conversation privée authentifiée avec ses parents."
+        },
+        "boundaries": [
+          "LATER_SECONDARY_ACCOUNT_NOT_DIRECT_PAPAL_TESTIMONY"
+        ],
+        "sameVisitorIntentFamily": null,
+        "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+        "approval": {
+          "italianOrLatinFullWitnessCollated": false,
+          "humanTheology": false,
+          "english": false,
+          "french": false,
+          "historicalVoice": false,
+          "production": false
+        },
+        "noCurrentDisciplineInstruction": true,
+        "noNewPrivatePapalAnecdotes": true,
+        "intentTreatment": {
+          "status": "STANDALONE_REVIEW_ENTRY",
+          "primaryFamilyId": "SPX-EXP-002",
+          "userNavigation": "TOPIC_CHOICE",
+          "productionReady": false
+        }
+      },
+      "proposed": {
+        "question": {
+          "en": "How did Sarto’s family and parish shape his early religious setting?",
+          "fr": "Quel cadre religieux la famille et la paroisse offrirent-elles au jeune Sarto ?"
+        },
+        "main": {
+          "en": "The museum history describes a Catholic family closely connected with parish worship and instruction. A later Casa Museo account also says his mother supported his priestly studies after his father’s death in 1852.",
+          "fr": "L’histoire du musée décrit une famille catholique liée au culte et à l’instruction paroissiale. Un récit postérieur de la Casa Museo rapporte aussi que sa mère soutint ses études sacerdotales après la mort de son père en 1852."
+        },
+        "claims": [
+          {
+            "claim": "Religious setting",
+            "refs": [
+              "MUSEUM-FAMILY"
+            ]
+          },
+          {
+            "claim": "Father died 1852",
+            "refs": [
+              "MUSEUM-1852",
+              "CASA-MOTHER"
+            ]
+          },
+          {
+            "claim": "Mother and employment offer narrative",
+            "refs": [
+              "CASA-MOTHER"
+            ],
+            "classification": "NAMED_SECONDARY_BIOGRAPHICAL_REPORT"
+          }
+        ],
+        "followup": {
+          "en": "That account is a later biographical report. It is not an authenticated statement by Sarto assigning a precise inner influence to either parent.",
+          "fr": "Il s’agit d’un récit biographique postérieur, non d’une déclaration authentifiée de Sarto attribuant à l’un de ses parents une influence intérieure précise."
+        },
+        "followupRefs": [
+          "CASA-MOTHER",
+          "SOURCE_SCOPE"
+        ]
+      },
+      "displayRole": "NAMED_EDITORIAL_BIOGRAPHY_NARRATOR_NOT_SPX_FIRST_PERSON",
+      "changes": "Make EN/FR questions equally third-person and retain fact/attributed-report distinction",
+      "authenticPapalQuotation": false,
+      "firstPersonPapalMemory": false,
+      "humanHistoricalApproval": false,
+      "humanLanguageApproval": false,
+      "publication": false
+    },
+    {
+      "familyId": "SPX-EXP-009",
+      "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "originalOwnerBlob": "8c90c5aae8b31cbf756b38c2848e332a78f7e9e1",
+      "originalRecord": {
+        "id": "SPX-EXP-009",
+        "opening": {
+          "question": {
+            "en": "What did you seek to accomplish as Patriarch of Venice?",
+            "fr": "Que réalisa-t-il comme patriarche de Venise ?"
+          },
+          "response": {
+            "en": "The biographical record documents Sarto's appointment as Patriarch of Venice and describes pastoral and social initiatives during his tenure. It does not itself authenticate a detailed first-person manifesto of his private intentions.",
+            "fr": "La biographie documente la nomination de Sarto comme patriarche de Venise et mentionne plusieurs initiatives pastorales et sociales. Elle n'authentifie pas, à elle seule, un programme détaillé écrit à la première personne sur ses intentions privées."
+          }
+        },
+        "followup": {
+          "question": {
+            "en": "Can we distinguish documented action from attributed intention?",
+            "fr": "Peut-on distinguer l'action documentée de l'intention attribuée ?"
+          },
+          "response": {
+            "en": "Yes. An appointment or initiative may be a historical fact, while claiming that Sarto privately intended a particular future policy requires a separate source.",
+            "fr": "Oui. Une nomination ou une initiative peut être un fait historique, tandis qu'attribuer à Sarto une intention privée précise concernant une politique future demande une autre source."
+          }
+        },
+        "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+        "historicalSourceClass": "SECONDARY_BIOGRAPHY",
+        "firstPersonMemoryAllowed": false,
+        "published": false,
+        "approved": false
+      },
+      "priorEditorialOverlay": {
+        "id": "SPX-EXP-009",
+        "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+        "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+        "originalOwner": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+        "proposedDisplayRole": "EDITORIAL_BIOGRAPHY_PANEL",
+        "factualSourceClass": "LATER_HISTORICAL_BIOGRAPHY",
+        "witness": {
+          "url": "https://www.papapiox.it/biografia/",
+          "passage": "Cardinal and Patriarch of Venice, 1893–1894",
+          "editorialComparisonDate": "2026-10-20",
+          "checkedInAccessiblePublicSource": true,
+          "originalLanguageBilingualLineSignoff": false,
+          "noVerbatimPapalQuoteAsserted": true
+        },
+        "proposedDraft": {
+          "en": "In 1893 Sarto was created cardinal and appointed Patriarch of Venice. A delay over governmental authorization meant that he could not formally enter his new see until late 1894. His pastoral work there is documented, but an alleged private manifesto of his intentions would need a distinct primary source.",
+          "fr": "En 1893, Sarto fut créé cardinal et nommé patriarche de Venise. Des difficultés liées à l'autorisation gouvernementale retardèrent son entrée dans le diocèse jusqu'à la fin de 1894. Son activité pastorale est connue, mais un prétendu programme intime de ses intentions devrait reposer sur une source primaire distincte."
+        },
+        "boundaries": [
+          "DATED_GOVERNMENTAL_ENTRY_DELAY_NOT_PSYCHOLOGICAL_MOTIVE"
+        ],
+        "sameVisitorIntentFamily": null,
+        "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+        "approval": {
+          "italianOrLatinFullWitnessCollated": false,
+          "humanTheology": false,
+          "english": false,
+          "french": false,
+          "historicalVoice": false,
+          "production": false
+        },
+        "noCurrentDisciplineInstruction": true,
+        "noNewPrivatePapalAnecdotes": true,
+        "intentTreatment": {
+          "status": "STANDALONE_REVIEW_ENTRY",
+          "primaryFamilyId": "SPX-EXP-009",
+          "userNavigation": "TOPIC_CHOICE",
+          "productionReady": false
+        }
+      },
+      "proposed": {
+        "question": {
+          "en": "What is documented about Sarto’s appointment and entry into Venice?",
+          "fr": "Que sait-on de la nomination de Sarto à Venise et de son entrée dans la ville ?"
+        },
+        "main": {
+          "en": "Sarto was created cardinal and appointed Patriarch of Venice in 1893. Governmental authorization delayed his entry into the city until 24 November 1894, according to the Casa Museo biography.",
+          "fr": "Sarto fut créé cardinal et nommé patriarche de Venise en 1893. Selon la biographie de la Casa Museo, l’autorisation gouvernementale retarda son entrée dans la ville jusqu’au 24 novembre 1894."
+        },
+        "claims": [
+          {
+            "claim": "1893 appointments and 1894 entry",
+            "refs": [
+              "CASA-VENICE"
+            ],
+            "classification": "SECONDARY_REPORT_YEAR_SUPPORTED_DAY_REQUIRES_ARCHIVAL_SIGNOFF"
+          }
+        ],
+        "followup": {
+          "en": "Appointments and public actions can be reported as historical claims. A private intention or a personal manifesto needs its own documentary witness.",
+          "fr": "Les nominations et les actes publics peuvent être rapportés comme des faits historiques. Une intention privée ou un programme personnel exige son propre témoin documentaire."
+        },
+        "followupRefs": [
+          "SOURCE_SCOPE"
+        ]
+      },
+      "displayRole": "NAMED_EDITORIAL_BIOGRAPHY_NARRATOR_NOT_SPX_FIRST_PERSON",
+      "changes": "Make EN/FR questions equally third-person and retain fact/attributed-report distinction",
+      "authenticPapalQuotation": false,
+      "firstPersonPapalMemory": false,
+      "humanHistoricalApproval": false,
+      "humanLanguageApproval": false,
+      "publication": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "MUSEUM-PARENTS",
+      "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+      "locator": "I Sarto..., paragraphs on marriage/occupations before L’infanzia",
+      "exactItalianExcerpt": "possidente e cursore comunale",
+      "supports": "Father occupation and mother seamstress; named historical account"
+    },
+    {
+      "id": "MUSEUM-FAMILY",
+      "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+      "locator": "L’infanzia e l’adolescenza, household/parish paragraphs",
+      "exactItalianExcerpt": "famiglia unita, patriarcale",
+      "supports": "Large Catholic household/parish setting"
+    },
+    {
+      "id": "MUSEUM-1852",
+      "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+      "locator": "Nel seminario di Padova; father's death paragraph",
+      "supports": "Father died 4 May 1852; year used in draft"
+    },
+    {
+      "id": "CASA-PARENTS",
+      "url": "https://www.papapiox.it/biografia/",
+      "locator": "Opening biography and Infanzia e giovinezza",
+      "supports": "Parents' occupations"
+    },
+    {
+      "id": "CASA-MOTHER",
+      "url": "https://www.papapiox.it/biografia/",
+      "locator": "Infanzia e giovinezza, father death/job offer/mother paragraphs",
+      "supports": "Later account of mother supporting vocation; not contemporaneous dialogue"
+    },
+    {
+      "id": "CASA-VENICE",
+      "url": "https://www.papapiox.it/biografia/",
+      "locator": "Patriarca di Venezia, first two paragraphs",
+      "supports": "1893 appointments and 24 November 1894 entry; use attributed report"
+    },
+    {
+      "id": "ELECTION-PRIMARY",
+      "url": "https://www.vatican.va/content/pius-xii/it/speeches/1951/documents/hf_p-xii_spe_19510603_pio-x.html",
+      "work": "Pius XII, Discorso in onore di Papa Pio X, 3 June 1951",
+      "locator": "Paragraph beginning Quanto a Noi; print Discorsi e Radiomessaggi XIII (1951–1952), pp.127–136",
+      "exactItalianExcerpt": "nel meriggio di quel 4 agosto 1903",
+      "classification": "PUBLISHED_RETROSPECTIVE_FIRST_PERSON_WITNESS_BY_PIUS_XII_NOT_PIUS_X"
+    },
+    {
+      "id": "ELECTION-OFFICIAL",
+      "url": "https://www.vatican.va/content/vatican/it/holy-father/pio-x.html",
+      "locator": "Inizio pontificato",
+      "supports": "4,9.VIII.1903 official chronology; speech establishes election-day interpretation"
+    },
+    {
+      "id": "SOURCE_SCOPE",
+      "classification": "LIMIT_OF_THE_INSPECTED_WITNESSES_NOT_A_POSITIVE_HISTORICAL_ASSERTION"
+    }
+  ],
+  "sourceQualityFindings": [
+    {
+      "id": "SARTO_FAMILY_COUNT",
+      "sources": [
+        "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "https://www.papapiox.it/biografia/"
+      ],
+      "status": "UNRESOLVED_DO_NOT_STATE_EXACT_COUNT",
+      "finding": "Museo page says eleven births and lists eleven names/dates, while noting most biographies cite ten; Casa Museo says second of ten. The prior suggestion that a counting convention explains the discrepancy is not established by these passages.",
+      "safeWording": "Large household",
+      "requiredFurtherEvidence": "Contemporaneous Riese baptism/birth register or an existing scholarly genealogical transcription. No speculative harmonization."
+    },
+    {
+      "id": "PAPAPIOX_ELECTION_DATE",
+      "source": "https://www.papapiox.it/biografia/",
+      "locator": "Opening summary and L’elezione al Soglio Pontificio",
+      "sourceSays": "3 August 1903",
+      "supportedCorrection": "4 August 1903",
+      "supportingEvidence": [
+        "ELECTION-PRIMARY",
+        "ELECTION-OFFICIAL"
+      ],
+      "action": "Do not propagate the source's date; flag source as mixed-reliability and verify each chronology claim."
+    },
+    {
+      "id": "PAPAPIOX_CARDINAL_MONTH",
+      "source": "https://www.papapiox.it/biografia/",
+      "finding": "Opening summary says September 1893; Patriarca di Venezia body says 12 June 1893 and appointment 15 June. Keep year-only unless day/month corroborated independently.",
+      "status": "INTERNAL_SOURCE_INCONSISTENCY_FLAGGED"
+    }
+  ],
+  "newSubstantiveSourceGaps": [
+    {
+      "id": "SARTO_FAMILY_COUNT",
+      "kind": "PRIMARY_GENEALOGICAL_WITNESS_REQUIRED_ONLY_IF_EXACT_NUMBER_RETAINED",
+      "blocked": false,
+      "action": "Skip numeric claim and continue; do not make entire programme wait"
+    }
+  ],
+  "humanDecisions": [
+    "Review attributed secondary maternal-vocation story; do not turn it into invented private papal testimony",
+    "Confirm whether Venice exact day should remain attributed or wait for contemporary appointment/entry evidence",
+    "Historical editor resolves genealogy only if exact count needed"
+  ],
+  "denzingerRequired": false,
+  "continue": true
+}

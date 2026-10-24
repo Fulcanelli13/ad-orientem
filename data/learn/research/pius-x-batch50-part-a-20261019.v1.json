@@ -1,0 +1,730 @@
+{
+  "schema": "AO_SPX_BATCH50_CONTENT_PART_V1",
+  "date": "2026-10-19",
+  "part": "A",
+  "status": "EDITORIAL_TWO_TURN_BILINGUAL_DRAFT_NOT_CERTIFIED",
+  "sourceOwner": "data/learn/research/pius-x-expansion-48-passage-review-20261019.v1.json",
+  "totalFamilies": 16,
+  "records": [
+    {
+      "id": "SPX-EXP-010",
+      "domain": "PERSONAL_LIFE",
+      "question": {
+        "en": "Why did you approach the papacy with such reluctance?",
+        "fr": "Pourquoi avez-vous hésité à accepter la papauté ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "locus": "opening §§1–2",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Pius X himself discusses grief, resistance and acceptance of the pontificate; first-person papal document."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why did you approach the papacy with such reluctance?",
+            "fr": "Pourquoi avez-vous hésité à accepter la papauté ?"
+          },
+          "response": {
+            "en": "In E supremi, the acceptance of the pontificate is described as a grave burden met with distress and a sense of unworthiness. The account ends with submission to God's will.",
+            "fr": "Dans E supremi, l'acceptation du pontificat apparaît comme une lourde charge accueillie dans la douleur et le sentiment d'indignité. Le récit se conclut par la soumission à la volonté de Dieu."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does that document record every detail of the conclave?",
+            "fr": "Ce texte rapporte-t-il tous les détails du conclave ?"
+          },
+          "response": {
+            "en": "No. Its opening establishes the Pope's publicly expressed disposition, not a transcript of private proceedings or unrecorded conversations.",
+            "fr": "Non. Son ouverture atteste les sentiments publiquement exprimés par le pape, non un procès-verbal des délibérations privées ni des conversations non rapportées."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-011",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question": {
+        "en": "What exactly did you mean by Modernism?",
+        "fr": "Que faut-il entendre par le modernisme condamné dans Pascendi ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§4–5, synthesis of positions",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Organizes the Modernist system as philosopher, believer, historian, critic, apologist and reformer."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What exactly did you mean by Modernism?",
+            "fr": "Que faut-il entendre par le modernisme condamné dans Pascendi ?"
+          },
+          "response": {
+            "en": "Pascendi treats Modernism as an interconnected system, examining the positions of philosopher, believer, historian, critic, apologist and reformer. Its criticism concerns the relationships between those claims, not simply a taste for recent ideas.",
+            "fr": "Pascendi étudie le modernisme comme un système de thèses liées, en considérant le philosophe, le croyant, l'historien, le critique, l'apologiste et le réformateur. La critique vise les rapports entre ces doctrines, non un simple goût des idées récentes."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is every modern scholar therefore a Modernist?",
+            "fr": "Tout savant contemporain est-il donc moderniste ?"
+          },
+          "response": {
+            "en": "No such judgment follows. The encyclical analyses doctrinal positions; an individual's actual assertions must be established separately.",
+            "fr": "Une telle conclusion ne suit pas. L'encyclique analyse des positions doctrinales ; les affirmations réelles d'une personne doivent être établies à part."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-012",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question": {
+        "en": "Why did you consider philosophical agnosticism dangerous to faith?",
+        "fr": "Pourquoi l'agnosticisme philosophique met-il la foi en danger ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§6",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Critiques agnostic denial that reason can attain certain natural knowledge of God."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why did you consider philosophical agnosticism dangerous to faith?",
+            "fr": "Pourquoi l'agnosticisme philosophique met-il la foi en danger ?"
+          },
+          "response": {
+            "en": "The agnosticism criticised in Pascendi denies that reason can reach certain natural knowledge of God. The encyclical sees that denial as weakening the foundations for rational religious knowledge.",
+            "fr": "L'agnosticisme critiqué dans Pascendi nie que la raison puisse parvenir à une connaissance naturelle certaine de Dieu. L'encyclique y voit un affaiblissement des fondements de la connaissance religieuse rationnelle."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is the criticism directed against every use of human reason?",
+            "fr": "La critique vise-t-elle tout usage de la raison humaine ?"
+          },
+          "response": {
+            "en": "Quite the contrary: the disputed claim is that reason is incapable of this knowledge. The passage defends, rather than discards, reason's proper reach.",
+            "fr": "Tout au contraire : la thèse contestée est l'incapacité prétendue de la raison à cette connaissance. Le passage défend la portée légitime de la raison au lieu de l'écarter."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-013",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question": {
+        "en": "Can religious feeling alone establish revealed truth?",
+        "fr": "Le sentiment religieux suffit-il à établir une vérité révélée ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§7–8",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Describes and rejects a religious-sentiment basis for faith and revelation."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Can religious feeling alone establish revealed truth?",
+            "fr": "Le sentiment religieux suffit-il à établir une vérité révélée ?"
+          },
+          "response": {
+            "en": "Religious sentiment alone cannot establish the truth of revelation. Pascendi criticises the attempt to make the subjective movement of consciousness the very source of faith.",
+            "fr": "Le sentiment religieux ne suffit pas, à lui seul, à établir la vérité de la Révélation. Pascendi critique la tentative de faire du mouvement subjectif de la conscience la source même de la foi."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is the existence of religious feeling itself rejected?",
+            "fr": "L'existence du sentiment religieux est-elle rejetée en elle-même ?"
+          },
+          "response": {
+            "en": "The target here is its elevation into the foundation and measure of revealed truth, not the mere existence of feeling in a believer.",
+            "fr": "Ce qui est visé, c'est son élévation au rang de fondement et de mesure de la vérité révélée, non la simple existence du sentiment chez le croyant."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-016",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question": {
+        "en": "What concerns did you raise about methods of historical biblical criticism?",
+        "fr": "Quels dangers voyez-vous dans certaines méthodes de critique biblique ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§29–33",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Explicitly examines modernist historico-critical rules and their effects on the historical Christ."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What concerns did you raise about methods of historical biblical criticism?",
+            "fr": "Quels dangers voyez-vous dans certaines méthodes de critique biblique ?"
+          },
+          "response": {
+            "en": "Pascendi objects to methods that begin with philosophical assumptions excluding the supernatural, then reconstruct the history of Christ to fit those assumptions. The reasoning is criticised at the level of its starting premises.",
+            "fr": "Pascendi s'oppose aux méthodes qui partent de présupposés philosophiques excluant le surnaturel, puis reconstruisent l'histoire du Christ selon ces présupposés. La critique porte sur les prémisses mêmes du raisonnement."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does this passage examine every historical study of Scripture?",
+            "fr": "Ce passage condamne-t-il toute étude historique de l'Écriture ?"
+          },
+          "response": {
+            "en": "No. It treats the particular Modernist method it describes; it does not supply a judgment on every individual historical investigation.",
+            "fr": "Non. Il traite de la méthode moderniste qu'il décrit ; il ne prononce pas un jugement sur toute recherche historique particulière."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-017",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question": {
+        "en": "Why did you criticise the Modernists' new apologetics?",
+        "fr": "Pourquoi critiquez-vous l'apologétique moderniste ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§35–37",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Detailed critique of modernist apologetics based on philosophical premises and religious experience."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why did you criticise the Modernists' new apologetics?",
+            "fr": "Pourquoi critiquez-vous l'apologétique moderniste ?"
+          },
+          "response": {
+            "en": "In Pascendi, the criticised apologetic relies on philosophical assumptions and appeals to religious experience that cannot by themselves establish the objective truth of revelation. The encyclical examines the consequences of that method.",
+            "fr": "Dans Pascendi, l'apologétique critiquée repose sur des présupposés philosophiques et sur l'expérience religieuse qui ne peuvent établir à eux seuls la vérité objective de la Révélation. L'encyclique examine les conséquences de cette méthode."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does a sincere experience prove a doctrine true?",
+            "fr": "Une expérience sincère prouve-t-elle une doctrine vraie ?"
+          },
+          "response": {
+            "en": "Sincerity of experience and the truth of the claim are distinct questions. The passage does not allow the second to be inferred merely from the first.",
+            "fr": "La sincérité de l'expérience et la vérité de la doctrine sont deux questions distinctes. Le passage ne permet pas d'inférer la seconde de la première."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-018",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question": {
+        "en": "Why did you call Modernism a synthesis of heresies?",
+        "fr": "Pourquoi le modernisme est-il appelé une synthèse des hérésies ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§39",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Explicitly calls the Modernist system a synthesis of heresies."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why did you call Modernism a synthesis of heresies?",
+            "fr": "Pourquoi le modernisme est-il appelé une synthèse des hérésies ?"
+          },
+          "response": {
+            "en": "Pascendi calls Modernism a synthesis of heresies because its doctrines form a connected system whose errors affect knowledge of God, revelation, faith and dogma together.",
+            "fr": "Pascendi appelle le modernisme une synthèse des hérésies parce que ses doctrines composent un système lié dont les erreurs touchent ensemble la connaissance de Dieu, la Révélation, la foi et le dogme."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does this mean a single mistaken expression proves adherence to the whole system?",
+            "fr": "Une expression erronée suffit-elle à prouver l'adhésion à tout ce système ?"
+          },
+          "response": {
+            "en": "No. The passage characterises a doctrinal system. The beliefs of a particular person cannot be established from an isolated phrase without further evidence.",
+            "fr": "Non. Le passage caractérise un système doctrinal. Les convictions d'une personne ne peuvent être établies par une formule isolée sans autre preuve."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-019",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question": {
+        "en": "What precautions did you require bishops and seminaries to take against Modernism?",
+        "fr": "Quelles précautions les évêques devaient-ils prendre contre le modernisme ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§44–56",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Prescribes scholastic formation, oversight of teachers and books, censorship and episcopal vigilance."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What precautions did you require bishops and seminaries to take against Modernism?",
+            "fr": "Quelles précautions les évêques devaient-ils prendre contre le modernisme ?"
+          },
+          "response": {
+            "en": "Pascendi prescribed measures involving formation in sound philosophy, vigilance over teaching and publications, and responsibility exercised by bishops. These are the specific ecclesiastical measures of its historical setting.",
+            "fr": "Pascendi prescrivait des mesures touchant la formation philosophique, la vigilance sur l'enseignement et les publications, ainsi que la responsabilité des évêques. Il s'agit de dispositions ecclésiastiques propres à son époque."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Can these provisions be applied automatically as today's law?",
+            "fr": "Ces prescriptions constituent-elles automatiquement le droit actuel ?"
+          },
+          "response": {
+            "en": "No. The document establishes what was prescribed then. Current legal force requires checking the applicable law and competent authority today.",
+            "fr": "Non. Le document établit ce qui était prescrit alors. La force juridique actuelle exige l'examen du droit applicable et de l'autorité compétente aujourd'hui."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-020",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question": {
+        "en": "Why did you introduce the anti-Modernist oath?",
+        "fr": "À quoi servait le serment antimoderniste ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/la/motu_proprio/documents/hf_p-x_motu-proprio_19100901_sacrorum-antistitum.html",
+        "locus": "Iusiurandi formula, oath provisions before formula",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Explains and prescribes sworn doctrinal profession to specified clergy in response to Modernism."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why did you introduce the anti-Modernist oath?",
+            "fr": "À quoi servait le serment antimoderniste ?"
+          },
+          "response": {
+            "en": "Sacrorum antistitum prescribed a defined doctrinal oath for specified clergy in response to Modernist errors. Its wording sought a clear public profession of positions the Holy See regarded as essential.",
+            "fr": "Sacrorum antistitum prescrivait à certains clercs un serment doctrinal déterminé face aux erreurs modernistes. Sa formule visait une profession publique et explicite des positions tenues pour essentielles par le Saint-Siège."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Did every lay Catholic have to swear it?",
+            "fr": "Tous les fidèles laïcs devaient-ils le prononcer ?"
+          },
+          "response": {
+            "en": "The historical prescriptions addressed defined categories of churchmen, not an indiscriminate obligation upon every Catholic.",
+            "fr": "Les prescriptions historiques s'adressaient à des catégories déterminées d'ecclésiastiques, et non indistinctement à tous les catholiques."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-021",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question": {
+        "en": "How can the Church be renewed without breaking with her received faith?",
+        "fr": "Comment renouveler l'Église sans abandonner sa foi reçue ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "locus": "§§8–10",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Develops restoration in Christ, spiritual renewal, mission and formation of souls."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How can the Church be renewed without breaking with her received faith?",
+            "fr": "Comment renouveler l'Église sans abandonner sa foi reçue ?"
+          },
+          "response": {
+            "en": "E supremi places renewal under the purpose of restoring all things in Christ. Its emphasis falls upon conversion, the formation of souls and the Church's mission, not abandoning revealed teaching.",
+            "fr": "E supremi place le renouvellement sous le dessein de tout restaurer dans le Christ. Il insiste sur la conversion, la formation des âmes et la mission de l'Église, non sur l'abandon de l'enseignement révélé."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is renewal there reduced to changing institutions?",
+            "fr": "Le renouvellement s'y réduit-il à modifier des institutions ?"
+          },
+          "response": {
+            "en": "No. Its primary end is spiritual and Christ-centred; practical means are judged by the service they render to that end.",
+            "fr": "Non. Sa fin première est spirituelle et centrée sur le Christ ; les moyens pratiques sont considérés selon le service qu'ils rendent à cette fin."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-023",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question": {
+        "en": "How should bishops exercise responsibility for guarding doctrine?",
+        "fr": "Comment les évêques doivent-ils garder la doctrine ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§44–56",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Detailed responsibilities for bishops and seminaries to protect doctrine."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How should bishops exercise responsibility for guarding doctrine?",
+            "fr": "Comment les évêques doivent-ils garder la doctrine ?"
+          },
+          "response": {
+            "en": "In Pascendi, bishops bear responsibility for protecting doctrinal formation and for oversight of teaching and published material. The measures described are a historical exercise of that pastoral office.",
+            "fr": "Dans Pascendi, les évêques portent la responsabilité de protéger la formation doctrinale et de veiller sur l'enseignement comme sur les publications. Les mesures décrites sont un exercice historique de cette charge pastorale."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does that text empower any lay reader to condemn particular teachers?",
+            "fr": "Ce texte autorise-t-il chaque fidèle à condamner personnellement un professeur ?"
+          },
+          "response": {
+            "en": "No. The provisions assign duties to the competent ecclesiastical authorities; they do not establish facts about the conduct of any named individual.",
+            "fr": "Non. Ces dispositions attribuent des devoirs aux autorités ecclésiastiques compétentes ; elles n'établissent aucun fait sur la conduite d'une personne déterminée."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-024",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question": {
+        "en": "How did you respond to the separation of Church and State in France?",
+        "fr": "Quelle fut la réponse de Pie X à la séparation de l'Église et de l'État en France ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11021906_vehementer-nos.html",
+        "locus": "§§1–12",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Papal account of 1905 French separation legislation, its consequences and response."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How did you respond to the separation of Church and State in France?",
+            "fr": "Quelle fut la réponse de Pie X à la séparation de l'Église et de l'État en France ?"
+          },
+          "response": {
+            "en": "Vehementer nos gives the papal assessment of the French separation legislation and explains the Church's objections to its treatment of religious authority and institutions.",
+            "fr": "Vehementer nos présente l'appréciation pontificale de la législation française de séparation et expose les objections de l'Église à la manière dont étaient traitées l'autorité et les institutions religieuses."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is this a universal ruling about every country in the present day?",
+            "fr": "S'agit-il d'une décision applicable telle quelle à tous les pays aujourd'hui ?"
+          },
+          "response": {
+            "en": "No. The document responds to a particular French law and its historical circumstances. A different jurisdiction requires its own sources and legal context.",
+            "fr": "Non. Le document répond à une loi française particulière et à ses circonstances historiques. Un autre pays exige ses propres sources et son contexte juridique."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-026",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question": {
+        "en": "How should Catholic lay associations relate to their bishops?",
+        "fr": "Quel rapport une association catholique doit-elle entretenir avec l'évêque ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+        "locus": "§§18–22",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Association and pastoral works subordinated to local bishop and Church authority."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How should Catholic lay associations relate to their bishops?",
+            "fr": "Quel rapport une association catholique doit-elle entretenir avec l'évêque ?"
+          },
+          "response": {
+            "en": "Il fermo proposito situates Catholic associations and apostolic works under the guidance of Church authority, with pastoral responsibility belonging to the bishops.",
+            "fr": "Il fermo proposito situe les associations et œuvres apostoliques catholiques sous la conduite de l'autorité de l'Église, la responsabilité pastorale appartenant aux évêques."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does organized lay action replace the pastor's mission?",
+            "fr": "L'action organisée des laïcs remplace-t-elle la mission des pasteurs ?"
+          },
+          "response": {
+            "en": "No. The document speaks of lay cooperation in the Church's work, not the abolition of pastoral oversight.",
+            "fr": "Non. Le document traite de la coopération des laïcs à l'œuvre de l'Église, non de la suppression de la conduite pastorale."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-027",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question": {
+        "en": "What can ordinary Catholics do for the Church's public mission?",
+        "fr": "Que peuvent faire les simples fidèles pour la mission publique de l'Église ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+        "locus": "§§4–13",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Describes organized lay apostolate, charity, formation and Catholic social action."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What can ordinary Catholics do for the Church's public mission?",
+            "fr": "Que peuvent faire les simples fidèles pour la mission publique de l'Église ?"
+          },
+          "response": {
+            "en": "Il fermo proposito presents organised lay action as including works of charity, Christian formation and Catholic social endeavour. The faithful are not confined to passive spectatorship.",
+            "fr": "Il fermo proposito présente l'action organisée des laïcs comme comprenant les œuvres de charité, la formation chrétienne et l'activité sociale catholique. Les fidèles ne sont pas réduits au rôle de spectateurs."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Must charity be separated from Christian formation?",
+            "fr": "La charité doit-elle être séparée de la formation chrétienne ?"
+          },
+          "response": {
+            "en": "The document places both within a coherent apostolic undertaking: practical help and religious formation serve the same Christian mission.",
+            "fr": "Le document les place ensemble dans une œuvre apostolique cohérente : l'aide pratique et la formation religieuse servent la même mission chrétienne."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-028",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question": {
+        "en": "How can Catholics retain hope when society grows less religious?",
+        "fr": "Comment garder l'espérance devant l'irréligion croissante ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "locus": "§§5–9",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Advocates steady hope and work for Christian renewal despite conflict and unbelief."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How can Catholics retain hope when society grows less religious?",
+            "fr": "Comment garder l'espérance devant l'irréligion croissante ?"
+          },
+          "response": {
+            "en": "E supremi calls for hope and steady labour for Christian renewal even when opposition or unbelief appears strong. Its response is directed to the mission of restoring all things in Christ.",
+            "fr": "E supremi appelle à l'espérance et à un travail persévérant pour le renouvellement chrétien, même lorsque l'opposition ou l'incrédulité semblent fortes. Sa réponse demeure orientée vers la restauration de toutes choses dans le Christ."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does opposition justify abandoning the work of teaching?",
+            "fr": "L'opposition justifie-t-elle l'abandon de l'enseignement ?"
+          },
+          "response": {
+            "en": "The programme instead joins perseverance with the Church's mission of forming souls. It does not present discouragement as a reason to cease that work.",
+            "fr": "Ce programme unit au contraire la persévérance à la mission de former les âmes. Il ne présente pas le découragement comme une raison d'interrompre cette œuvre."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-EXP-029",
+      "domain": "APOLOGETICS_AND_FAITH_REASON",
+      "question": {
+        "en": "Can human reason know that God exists?",
+        "fr": "La raison humaine peut-elle connaître l'existence de Dieu ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "locus": "Q23",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "screen": "PRIMARY_DIRECT",
+        "summary": "Longer Catechism directly says reason demonstrates God's existence and faith confirms it."
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Can human reason know that God exists?",
+            "fr": "La raison humaine peut-elle connaître l'existence de Dieu ?"
+          },
+          "response": {
+            "en": "The longer Catechism teaches that human reason can know God's existence from creation, while divine faith confirms and elevates that knowledge.",
+            "fr": "Le grand Catéchisme enseigne que la raison humaine peut connaître l'existence de Dieu à partir de la création, tandis que la foi divine confirme et élève cette connaissance."
+          }
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does knowing God by reason make revelation unnecessary?",
+            "fr": "Connaître Dieu par la raison rend-il la Révélation inutile ?"
+          },
+          "response": {
+            "en": "No. Natural knowledge by reason and supernatural knowledge received through revelation are not identical kinds of knowledge.",
+            "fr": "Non. La connaissance naturelle par la raison et la connaissance surnaturelle reçue par la Révélation ne sont pas de même ordre."
+          }
+        }
+      ],
+      "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+      "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+      "independentHistoricalApproval": false,
+      "independentVoiceApproval": false,
+      "independentTranslationApproval": false,
+      "published": false
+    }
+  ]
+}

@@ -1,0 +1,566 @@
+name: Pius X source-to-question evidence bridge
+on:
+  pull_request:
+    paths:
+      - 'data/learn/research/pius-x-p0-p1-intent-evidence-bridge-20261019.v1.json'
+      - 'data/learn/research/pius-x-64-family-evidence-screen-20261019.v1.json'
+      - 'data/learn/research/pius-x-26-exact-pairs-reviewed-20261019.v1.json'
+      - 'data/learn/research/pius-x-conversation-expansion-48-20261019.v1.json'
+      - 'data/learn/research/pius-x-expansion-48-passage-review-20261019.v1.json'
+      - 'data/learn/research/pius-x-112-cohort-coverage-baseline-20261019.v1.json'
+      - 'data/learn/research/pius-x-two-cross-family-intent-joins-20261019.v1.json'
+      - 'data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json'
+      - 'data/learn/research/pius-x-ten-conversation-content-pilot-20261019.v1.json'
+      - 'data/learn/research/pius-x-batch50-part-*.v1.json'
+      - 'data/learn/research/pius-x-batch50-production-manifest-20261019.v1.json'
+      - 'data/learn/research/pius-x-batch2-*.v1.json'
+      - 'data/learn/research/pius-x-batch3-1905-prayer-*.v1.json'
+      - 'data/learn/research/pius-x-batch3-1905-production-manifest-20261019.v1.json'
+      - 'data/learn/research/pius-x-batch4-commandments-*.v1.json'
+      - 'data/learn/research/pius-x-batch4-1905-production-manifest-20261019.v1.json'
+      - 'docs/research/PIUS-X-BATCH-4-CONVERSATIONS-20261019.md'
+      - 'docs/research/PIUS-X-BATCH-3-CONVERSATIONS-20261019.md'
+      - 'docs/research/PIUS-X-BATCH-2-CONVERSATIONS-20261019.md'
+      - 'docs/research/PIUS-X-TEN-CONVERSATION-PILOT-20261019.md'
+      - 'data/learn/research/pius-x-12case-paraphrases-followups-20261019.v1.json'
+      - 'data/learn/research/pius-x-pr1443-184topic-bridge-measured-outcome-20261019.v1.json'
+      - 'data/learn/research/pius-x-source-aware-router-48-regression-result-20261019.v1.json'
+      - 'data/learn/research/pius-x-p1-short-catechism-topical-review-20261019.v1.json'
+      - 'data/learn/research/pius-x-p1-first24-italian-text-review-20261019.v1.json'
+      - 'data/learn/research/pius-x-p1-next40-italian-text-review-20261019.v1.json'
+      - 'data/learn/research/pius-x-1912-catechism-edition-discrepancy-hold-20261019.v1.json'
+      - 'data/learn/research/pius-x-p1-original-source-support-wave1-20261019.v1.json'
+      - 'data/learn/research/pius-x-salzano-editorial-numbering-hold-20261019.v1.json'
+      - 'data/learn/research/pius-x-source-question-census-20261019.v1.json'
+      - 'data/learn/research/pius-x-1912-digital-question-fingerprints-part1-20261019.v1.json'
+      - 'data/learn/research/pius-x-1912-digital-question-fingerprints-part2-20261019.v1.json'
+      - 'data/learn/research/pius-x-1905-1912-calibration-crosswalk-20261019.v1.json'
+      - 'data/learn/ltfaith-pius-x-it-witness-index.v1.json'
+      - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
+      - 'data/learn/research/pius-x-triad-audit-*.v1.json'
+      - 'data/learn/research/pius-x-mass-eucharist-penance-26turn-evidence-20261020.v1.json'
+      - 'data/learn/research/pius-x-sacraments-100family-200turn-source-screen-20261020.v1.json'
+      - 'data/learn/research/pius-x-100questions-20-conversation-paths-20261020.v1.json'
+      - 'data/learn/research/pius-x-31family-62turn-italian-review-20261020.v1.json'
+      - 'data/learn/research/pius-x-20path-bilingual-choice-navigation-20261020.v1.json'
+      - 'data/learn/research/pius-x-23more-46turn-italian-review-20261020.v1.json'
+      - 'data/learn/research/pius-x-46final-92turn-italian-review-20261020.v1.json'
+      - 'data/learn/research/pius-x-source-bounded-bilingual-corrections-20261020.v1.json'
+      - 'data/learn/research/pius-x-200answer-spx-chanoine-denzinger-crosswalk-20261020.v1.json'
+      - 'data/learn/research/pius-x-original-1905-print-page-ten-corrections-20261020.v1.json'
+      - 'data/learn/research/pius-x-chanoine-22-answer-aq04-aq05-eligibility-20261020.v1.json'
+      - 'data/learn/research/pius-x-eight-old-dz-number-print-facsimile-queue-20261020.v1.json'
+      - 'data/learn/research/pius-x-denzinger-optional-release-policy-20261020.v1.json'
+      - 'data/learn/research/pius-x-historical-visual-novel-stage-20261020.v1.json'
+      - 'data/learn/research/pius-x-six-period-voice-candidates-20261020.v1.json'
+      - 'previews/visible-mass-3d/pius-x-20path-editorial-review.mjs'
+      - 'previews/visible-mass-3d/pius-x-conversation-paths-review.html'
+      - 'tests/pius-x-20path-editorial-review.mjs'
+      - 'tests/pius-x-20path-visual-novel-browser.mjs'
+      - 'data/learn/research/pius-x-100answer-editorial-release-triage-20261020.v1.json'
+      - 'data/learn/research/pius-x-first40-claim-italian-witness-review-20261020.v1.json'
+      - 'tests/pius-x-first40-italian-claim-review.mjs'
+      - 'tools/formation/build-pius-x-810-corpus-release-selection.mjs'
+      - 'tests/pius-x-full810-balanced130-corpus.mjs'
+      - 'data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json'
+      - 'data/learn/research/pius-x-first17-branching-dialogue-graph-20261021.v1.json'
+      - 'docs/research/PIUS-X-17-BILINGUAL-DIALOGUES-20261021.md'
+      - 'tests/pius-x-first17-dialogue-graph.mjs'
+      - 'data/learn/research/pius-x-dialogue-authoring-next20-part-a-20261021.v1.json'
+      - 'data/learn/research/pius-x-dialogue-authoring-next20-part-b-20261021.v1.json'
+      - 'data/learn/research/pius-x-37chapter-dialogue-navigation-index-20261021.v1.json'
+      - 'docs/research/PIUS-X-NEXT-20-EN-FR-DIALOGUES-20261021.md'
+      - 'tests/pius-x-next20-dialogue-content.mjs'
+      - 'data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json'
+      - 'data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json'
+      - 'data/learn/research/pius-x-62chapter-dialogue-graph-20261021.v1.json'
+      - 'docs/research/PIUS-X-25-FURTHER-BILINGUAL-DIALOGUES-20261021.md'
+      - 'tests/pius-x-next25-dialogue-graph.mjs'
+      - 'data/learn/research/pius-x-dialogue-next20-pastoral-a-20261021.v1.json'
+      - 'data/learn/research/pius-x-dialogue-next20-pastoral-b-20261021.v1.json'
+      - 'data/learn/research/pius-x-82chapter-dialogue-authoring-index-20261021.v1.json'
+      - 'docs/research/PIUS-X-NEXT-20-PASTORAL-BILINGUAL-CONVERSATIONS-20261021.md'
+      - 'tests/pius-x-next20-pastoral-dialogue-graph.mjs'
+      - 'data/learn/research/pius-x-conversation-depth12-part-a-20261021.v1.json'
+      - 'data/learn/research/pius-x-conversation-depth12-part-b-20261021.v1.json'
+      - 'data/learn/research/pius-x-12chapter-dependent-dialogue-flow-20261021.v1.json'
+      - 'docs/research/PIUS-X-12-DEEP-CONVERSATION-TRANSCRIPTS-20261021.md'
+      - 'tests/pius-x-12chapter-dependent-dialogue-flow.mjs'
+      - 'previews/pius-x-depth12-source-owned-review-fixture-20261021.json'
+      - 'previews/pius-x-three-voice-pacing-review-candidates-20261021.json'
+      - 'previews/pius-x-12scene-visual-novel-editorial-review-20261021.html'
+      - 'docs/research/PIUS-X-SCENE-PACING-VOICE-ACCEPTANCE-20261021.md'
+      - 'tests/pius-x-depth12-visual-review.mjs'
+      - 'previews/pius-x-three-voice-source-tethered-v2-20261021.json'
+      - 'docs/research/PIUS-X-FIRST3-SOURCE-TETHERED-VOICE-20261021.md'
+      - 'tests/pius-x-three-voice-source-tethered-v2.mjs'
+      - 'tools/formation/build-pius-x-first-release-dialogue-review-queue.mjs'
+      - 'data/learn/research/pius-x-first-release-source-locked-eight-20261021.v1.json'
+      - 'docs/research/PIUS-X-FIRST-RELEASE-EIGHT-SOURCE-LOCKED-TRANSCRIPTS-20261021.md'
+      - 'previews/pius-x-eight-first-release-source-locked-20261021.html'
+      - 'tests/pius-x-first-release-eight-static.mjs'
+      - 'tests/pius-x-first-release-eight-browser.mjs'
+      - 'data/learn/research/pius-x-first-release-second-eight-source-locked-20261021.v1.json'
+      - 'docs/research/PIUS-X-SECOND-EIGHT-FIRST-RELEASE-TRANSCRIPTS-20261021.md'
+      - 'previews/pius-x-second-eight-first-release-source-locked-20261021.html'
+      - 'tests/pius-x-first-release-second-eight-static.mjs'
+      - 'tests/pius-x-first-release-second-eight-browser.mjs'
+      - 'data/learn/research/pius-x-document-first-three-benchmark-source-map-20261021.v1.json'
+      - 'docs/research/PIUS-X-DOCUMENT-FIRST-CONVERSATION-EDITORIAL-STANDARD-20261021.md'
+      - 'tests/pius-x-document-first-three-benchmark-source-map.mjs'
+      - 'data/learn/research/pius-x-document-first-remaining-acerbo-esupremi-20261021.v1.json'
+      - 'data/learn/research/pius-x-document-first-remaining-haerent-20261021.v1.json'
+      - 'data/learn/research/pius-x-document-first-34-editorial-corrections-20261021.v1.json'
+      - 'data/learn/research/pius-x-document-first-unscripted-bilingual-probes-20261021.v1.json'
+      - 'data/learn/research/pius-x-document-first-router-to-claims-20261021.v1.json'
+      - 'tools/formation/pius-x-document-first-answer-selector.mjs'
+      - 'tests/pius-x-document-first-answer-selection.mjs'
+      - 'tests/pius-x-document-first-answer-expansion-next11.mjs'
+      - 'data/learn/research/pius-x-next11-frozen-english-french-question-probes-20261021.v1.json'
+      - 'data/learn/research/pius-x-next11-pre-evaluation-paraphrase-pairs-20261021.v1.json'
+      - 'tests/pius-x-document-first-unscripted-router-6.mjs'
+      - 'tools/formation/build-pius-x-three-document-full-benchmark.mjs'
+      - 'tests/pius-x-document-first-full-34-source-map.mjs'
+      - 'tests/pius-x-depth12-visual-novel-browser.mjs'
+      - 'tests/pius-x-first20-personal-and-papal-source-edits.mjs'
+      - 'previews/visible-mass-3d/pius-x-batch-release-editorial-review.html'
+      - 'tools/formation/build-pius-x-release-review.mjs'
+      - 'tests/pius-x-100answer-editorial-release-triage.mjs'
+      - 'tests/pius-x-40batch-editorial-browser.mjs'
+      - 'tools/formation/build-pius-x-visual-novel-offline.mjs'
+      - 'tests/pius-x-visual-novel-standalone-html.mjs'
+      - 'tests/pius-x-print-canon-denzinger-release-gate.mjs'
+      - 'tests/pius-x-200turn-three-way-crosswalk.mjs'
+      - 'tests/pius-x-bilingual-dialogue-choices.mjs'
+      - 'tests/pius-x-20path-consolidation.mjs'
+      - 'tests/pius-x-sacraments-100family-source-screen.mjs'
+      - 'tests/pius-x-26turn-source-evidence.mjs'
+      - 'tests/pius-x-triad-links.mjs'
+      - 'tests/pius-x-conversation-intent-bridge.mjs'
+      - 'tests/pius-x-ten-conversation-content-pilot.mjs'
+      - 'tests/pius-x-batch50-content-acceptance.mjs'
+      - 'tests/pius-x-batch2-production-acceptance.mjs'
+      - 'tests/pius-x-1905-batch3-content-acceptance.mjs'
+      - 'tests/pius-x-1905-batch4-content-acceptance.mjs'
+      - 'tests/pius-x-pr1443-router-integration-diagnostic.mjs'
+      - 'tests/pius-x-pr1443-184topic-bridge-acceptance.mjs'
+      - 'tests/pius-x-pr1443-source-aware-48-regression.mjs'
+      - 'tools/formation/extract-pius-x-1905-crosswalk.py'
+      - 'tools/formation/extract-pius-x-feasts-salzano.py'
+      - '.github/workflows/pius-x-conversation-evidence-bridge.yml'
+  workflow_dispatch:
+jobs:
+  research-bridge-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/pius-x-conversation-intent-bridge.mjs
+      - run: node tests/pius-x-triad-links.mjs
+      - run: node tests/pius-x-26turn-source-evidence.mjs
+      - run: node tests/pius-x-sacraments-100family-source-screen.mjs
+      - run: node tests/pius-x-20path-consolidation.mjs
+      - run: node tests/pius-x-bilingual-dialogue-choices.mjs
+      - run: node tests/pius-x-200turn-three-way-crosswalk.mjs
+      - name: Stage exact P2 Apostolate owner for AQ04 and AQ05 (read-only)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin '0a920793bcdf40cc053ad0aff31132ade8185a33'
+          test "$(git rev-parse FETCH_HEAD)" = '0a920793bcdf40cc053ad0aff31132ade8185a33' || {
+            echo 'P2 source-owner changed: reconcile and repin before the SPX Canon gate' >&2
+            exit 1
+          }
+          for file in \
+            src/apostolate/corpus.js \
+            src/apostolate/contracts.js \
+            src/apostolate/source-registry.js \
+            src/learn/ask-church-source-digest.js
+          do
+            dest="research-out/pr1402-spx-owner/$file"
+            mkdir -p "$(dirname "$dest")"
+            git show "FETCH_HEAD:$file" > "$dest"
+          done
+      - run: node tests/pius-x-print-canon-denzinger-release-gate.mjs
+      - run: node tests/pius-x-20path-editorial-review.mjs
+      - run: node tests/pius-x-100answer-editorial-release-triage.mjs
+      - run: node tests/pius-x-first40-italian-claim-review.mjs
+      - run: node tests/pius-x-ten-conversation-content-pilot.mjs
+      - run: node tests/pius-x-batch50-content-acceptance.mjs
+      - run: node tests/pius-x-batch2-production-acceptance.mjs
+      - run: node tests/pius-x-1905-batch3-content-acceptance.mjs
+      - run: node tests/pius-x-1905-batch4-content-acceptance.mjs
+
+  long-1905-index-extraction:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Parser self-test
+        run: python tools/formation/extract-pius-x-1905-crosswalk.py --selftest
+      - name: Fetch and extract 993 historical source question witnesses
+        run: python tools/formation/extract-pius-x-1905-crosswalk.py --out research-out/pius-x-1905-to-1912-lexical-candidates.v1.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-1905-to-1912-research-candidates
+          path: research-out/*.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  feast-and-salzano-locator-census:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Parser self-test
+        run: python tools/formation/extract-pius-x-feasts-salzano.py --selftest
+      - name: Index feast chapters and editor-numbered Salzano witnesses
+        run: python tools/formation/extract-pius-x-feasts-salzano.py --out research-out/pius-x-feasts-salzano-locators.v1.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-feasts-salzano-source-locators
+          path: research-out/pius-x-feasts-salzano-locators.v1.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  shared-router-pr1443-integration-diagnostic:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Stage exact pinned PR 1443 router (read-only; no duplicate catalog)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin 'b4dd46743d641bfaa6076c6bb2fd8641c47077b6'
+          test "$(git rev-parse FETCH_HEAD)" = "b4dd46743d641bfaa6076c6bb2fd8641c47077b6" || {
+            echo 'PR #1443 moved; reconcile and repin its reviewed router before rerunning' >&2
+            exit 1
+          }
+          for file in \
+            src/learn/living-church-shared-question-router.js \
+            src/learn/living-church-hybrid-question-router.js \
+            data/learn/living-church-shared-question-routing-pilot.v1.json \
+            data/learn/living-church-symbolic-concepts.v1.json
+          do
+            dest="research-out/pr1443-router/$file"
+            mkdir -p "$(dirname "$dest")"
+            git show "FETCH_HEAD:$file" > "$dest"
+          done
+      - name: Execute 48 authored SPX utterances against both real router implementations
+        run: node tests/pius-x-pr1443-router-integration-diagnostic.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-pr1443-48-router-diagnostic
+          path: research-out/pius-x-pr1443-48-router-diagnostic.v1.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  shared-router-pr1443-historical-bridge-acceptance:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Stage approved research-only historical navigation bridge from router owner
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin '854325df75671882d378b510fcc1af33fc30ba65'
+          test "$(git rev-parse FETCH_HEAD)" = "854325df75671882d378b510fcc1af33fc30ba65" || {
+            echo 'PR #1443 changed; reconcile and repin this acceptance test' >&2
+            exit 1
+          }
+          for file in \
+            src/learn/living-church-shared-question-router.js \
+            src/learn/living-church-hybrid-question-router.js \
+            data/learn/living-church-shared-question-routing-pilot.v1.json \
+            data/learn/living-church-symbolic-concepts.v1.json \
+            data/learn/living-church-pius-x-historical-passage-pointers.v1.json
+          do
+            dest="research-out/pr1443-router-new/$file"
+            mkdir -p "$(dirname "$dest")"
+            git show "FETCH_HEAD:$file" > "$dest"
+          done
+      - name: Measure held-out question routing and source-identity safety
+        run: node tests/pius-x-pr1443-184topic-bridge-acceptance.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-pr1443-184topic-heldout-48-results
+          path: research-out/pius-x-pr1443-184topic-heldout-48.v1.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  shared-router-source-aware-48-regression:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Pin exact router-owner source-aware branch commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin '66a0dbd041e7f3f8c8b57f317c5c21286fa8287d'
+          test "$(git rev-parse FETCH_HEAD)" = "66a0dbd041e7f3f8c8b57f317c5c21286fa8287d" || exit 1
+          for file in \
+            src/learn/living-church-shared-question-router.js \
+            src/learn/living-church-hybrid-question-router.js \
+            src/learn/living-church-historical-focus.js \
+            data/learn/living-church-shared-question-routing-pilot.v1.json \
+            data/learn/living-church-symbolic-concepts.v1.json \
+            data/learn/living-church-pius-x-historical-passage-pointers.v1.json
+          do
+            dest="research-out/pr1443-router-source-aware/$file"
+            mkdir -p "$(dirname "$dest")"
+            git show "FETCH_HEAD:$file" > "$dest"
+          done
+      - name: Regress 48 original questions against source-aware retrieval
+        run: node tests/pius-x-pr1443-source-aware-48-regression.mjs
+      - name: Probe three new document-first questions in English and French
+        run: node tests/pius-x-document-first-unscripted-router-6.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-source-aware-48-regression
+          path: |
+            research-out/pius-x-pr1443-source-aware-heldout-48.v1.json
+            research-out/pius-x-document-first-unscripted-router-6.v1.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  pius-x-visual-novel-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund --ignore-scripts --package-lock=false
+      - run: npx playwright install --with-deps chromium
+      - name: Validate actual St Pius X visual-novel on phone and desktop
+        run: node tests/pius-x-20path-visual-novel-browser.mjs
+      - name: Stage exact five approved St Pius X sprites for deep dialogue browser review
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin '2245d762237ef36fc778200ab2b3d536c342d2d4'
+          test "$(git rev-parse FETCH_HEAD)" = '2245d762237ef36fc778200ab2b3d536c342d2d4' || exit 1
+          mkdir -p research-out/pius-x-depth12-review-sprites
+          git show 'FETCH_HEAD:previews/visible-mass-3d/assets/living-church/manifest.json' > research-out/pius-x-depth12-review-sprites/manifest.json
+          for pose in neutral welcoming explaining thoughtful grave; do
+            git show "FETCH_HEAD:previews/visible-mass-3d/assets/living-church/pius_${pose}.webp" > "research-out/pius-x-depth12-review-sprites/pius_${pose}.webp"
+          done
+      - name: Exercise twelve deep dialogue scenes in Chromium with authentic approved sprite bytes
+        run: node tests/pius-x-depth12-visual-novel-browser.mjs
+      - name: Exercise eight source-locked first-release scenes in Chromium
+        run: node tests/pius-x-first-release-eight-browser.mjs
+      - name: Exercise second eight first-release source-locked scenes in Chromium
+        run: node tests/pius-x-first-release-second-eight-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-depth12-phone-desktop-visual-review
+          path: artifacts/pius-x-depth12-visual-review/
+          if-no-files-found: warn
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-first-release-eight-phone-desktop-review
+          path: artifacts/pius-x-first-release-eight-browser/
+          if-no-files-found: warn
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-second-eight-phone-desktop-review
+          path: artifacts/pius-x-second-eight-browser/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Build portable 40-answer editorial review batch
+        run: node tools/formation/build-pius-x-release-review.mjs
+      - name: Exercise batch review in actual mobile and desktop browser
+        run: node tests/pius-x-40batch-editorial-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-20path-visual-novel-review
+          path: artifacts/pius-x-20path-visual-novel/
+          if-no-files-found: warn
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: spx-batch-review-browser-check
+          path: artifacts/pius-x-release-review/
+          if-no-files-found: warn
+          retention-days: 14
+
+  pius-x-offline-html-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Pin exact five approved St Pius X portrait sprites
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin '0a920793bcdf40cc053ad0aff31132ade8185a33'
+          test "$(git rev-parse FETCH_HEAD)" = '0a920793bcdf40cc053ad0aff31132ade8185a33' || exit 1
+          mkdir -p research-out/pius-x-approved-sprites
+          for file in manifest.json pius_neutral.webp pius_welcoming.webp pius_explaining.webp pius_thoughtful.webp pius_grave.webp
+          do
+            git show "FETCH_HEAD:previews/visible-mass-3d/assets/living-church/$file" > "research-out/pius-x-approved-sprites/$file"
+          done
+      - name: Produce original-source-owned offline HTML
+        run: node tools/formation/build-pius-x-visual-novel-offline.mjs
+      - name: Verify bundled questions, editorial guards, image hashes and module syntax
+        run: node tests/pius-x-visual-novel-standalone-html.mjs
+      - name: Build source-owned 40-answer offline editorial review
+        run: node tools/formation/build-pius-x-release-review.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: St-Pius-X-Visual-Novel-Offline-Review
+          path: artifacts/pius-x-20path-visual-novel/St_Pius_X_Conversation_Review_Offline.html
+          if-no-files-found: warn
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: SPX-40-Answer-Bilingual-Editorial-Batch
+          path: artifacts/pius-x-release-review/SPX_40_Answer_Editorial_Batch_Review.html
+          if-no-files-found: warn
+          retention-days: 30
+
+  pius-x-document-first-answer-selection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reuse exact approved research-only shared router owner, not a new matcher
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin '433e0b515b4800593a18b1d8594efec3f9936eaa'
+          test "$(git rev-parse FETCH_HEAD)" = '433e0b515b4800593a18b1d8594efec3f9936eaa'
+          for file in \
+            src/learn/living-church-shared-question-router.js \
+            src/learn/living-church-hybrid-question-router.js \
+            src/learn/living-church-historical-focus.js \
+            src/learn/living-church-personal-verdict-gate.js \
+            src/learn/living-church-liturgical-source-scope.js \
+            src/learn/living-church-pius-x-source-concepts.js \
+            src/learn/living-church-contemporary-discipline-scope.js \
+            data/learn/living-church-shared-question-routing-pilot.v1.json \
+            data/learn/living-church-symbolic-concepts.v1.json \
+            data/learn/living-church-pius-x-source-concept-facets.v1.json \
+            data/learn/living-church-pius-x-historical-passage-pointers.v1.json
+          do
+            dest="research-out/pr1443-pius-x-document-first-router/$file"
+            mkdir -p "$(dirname "$dest")"
+            git show "FETCH_HEAD:$file" > "$dest"
+          done
+      - name: Build unchanged source-owner 12 plus 22 bilingual corpus derivative
+        run: node tools/formation/build-pius-x-three-document-full-benchmark.mjs
+      - name: Verify exact source-to-claim selection, bilingual parity and negative cases
+        run: node tests/pius-x-document-first-answer-selection.mjs
+      - name: Verify 11 further source-first topics and safe off-catalog refusal
+        run: node tests/pius-x-document-first-answer-expansion-next11.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: SPX-Three-Document-Review-Only-Answer-Selection
+          path: |
+            research-out/pius-x-document-first-answer-selection.v1.json
+            research-out/pius-x-document-first-next11-claim-selection.v1.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  pius-x-full-corpus-candidate-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reconcile all 810 original St Pius X draft families
+        run: node tools/formation/build-pius-x-810-corpus-release-selection.mjs
+      - name: Reconcile first-release 130 with existing 82 authored dialogue chapters
+        run: node tools/formation/build-pius-x-first-release-dialogue-review-queue.mjs
+      - name: Validate eight new source-tethered first-release conversations against 130-owner shortlist
+        run: node tests/pius-x-first-release-eight-static.mjs
+      - name: Validate second eight source-tethered first-release conversations
+        run: node tests/pius-x-first-release-second-eight-static.mjs
+      - name: Validate source-first three-document bilingual benchmark and papal-context safeguards
+        run: node tests/pius-x-document-first-three-benchmark-source-map.mjs
+      - name: Generate full source-first 34-turn three-document benchmark
+        run: node tools/formation/build-pius-x-three-document-full-benchmark.mjs
+      - name: Validate all 34 claim-mapped bilingual exchanges and contextual repairs
+        run: node tests/pius-x-document-first-full-34-source-map.mjs
+      - name: Verify corpus ownership and the 130-candidate first-release shortlist
+        run: node tests/pius-x-full810-balanced130-corpus.mjs
+      - name: Test first twenty revised papal teaching and biography replies against original owners
+        run: node tests/pius-x-first20-personal-and-papal-source-edits.mjs
+      - run: node tests/pius-x-first17-dialogue-graph.mjs
+      - run: node tests/pius-x-next20-dialogue-content.mjs
+      - run: node tests/pius-x-next25-dialogue-graph.mjs
+      - run: node tests/pius-x-next20-pastoral-dialogue-graph.mjs
+      - run: node tests/pius-x-12chapter-dependent-dialogue-flow.mjs
+      - run: node tests/pius-x-depth12-visual-review.mjs
+      - run: node tests/pius-x-three-voice-source-tethered-v2.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: SPX-Complete-810-Corpus-And-Balanced-First-Release
+          path: artifacts/pius-x-complete-corpus/
+          if-no-files-found: warn
+          retention-days: 30

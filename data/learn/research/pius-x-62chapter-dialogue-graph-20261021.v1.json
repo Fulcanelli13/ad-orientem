@@ -1,0 +1,2590 @@
+{
+  "schema": "AO_SPX_NEXT25_DIALOGUE_GRAPH_V1",
+  "date": "2026-10-21",
+  "status": "BILINGUAL_DIALOGUE_DATABASE_EDITION_NOT_PUBLISHED",
+  "owners": {
+    "previous37": "data/learn/research/pius-x-37chapter-dialogue-navigation-index-20261021.v1.json",
+    "originalBatch2": "data/learn/research/pius-x-batch2-production-index-20261019.v1.json",
+    "addedPartA": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+    "addedPartB": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+    "voicePr": 1419,
+    "routingPr": 1443,
+    "contentPr": 1458
+  },
+  "counts": {
+    "previousChapterCount": 37,
+    "newChapterCount": 25,
+    "totalGraphChapterCount": 62,
+    "previousQATurns": 111,
+    "newReferencesToExistingQATurns": 50,
+    "newAuthoredQATurns": 50,
+    "newQATurns": 100,
+    "totalGraphQATurns": 211,
+    "newBilingualAnswerVersions": 100,
+    "fullyIndependentlyApproved": 0,
+    "published": 0,
+    "overlapsHeldForEditorialReview": 4
+  },
+  "contentContract": [
+    "Original Q&A content owner is referenced and retained, never overwritten or treated as personally spoken words of Pius X.",
+    "Each opening exposes 3 selectable follow-up responses; visitors do not have to listen to all 3 sequentially.",
+    "Every newly authored answer exists in English and French in its owning part and links to an inherited exact source locator.",
+    "Catechism is approved or prescribed under Pius X, not authenticated personal papal speech.",
+    "Cross-chapter links only open a record actually present, or are routed to the independent source-owning module; no invented response to unmapped questions.",
+    "Chanoine transition is strictly optional, preserves dialogue trail and passes only source-eligible questions.",
+    "Never use historical discipline as a binding current rule; never adjudicate an individual soul, confession, marriage, or priest's guilt.",
+    "Presentation owner may choose historically grounded avatar voice after independent voice review; no claim of direct quotation."
+  ],
+  "chapters": [
+    {
+      "id": "SPX-001",
+      "title": {
+        "fr": "Pourquoi la messe est-elle un sacrifice ?",
+        "en": "Why is the Mass a sacrifice?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q652–664",
+        "witness": "1905_LONGER_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_001.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-001",
+            "field": "opening"
+          },
+          "queryEn": "Why is the Mass a sacrifice?",
+          "queryFr": "Pourquoi la messe est-elle un sacrifice ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_001.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-001",
+            "field": "followup"
+          },
+          "queryEn": "Does Christ have to die again?",
+          "queryFr": "Le Christ doit-il mourir de nouveau ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_001.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-001",
+            "followupIndex": 0
+          },
+          "queryEn": "If Calvary is complete, what is offered at the altar?",
+          "queryFr": "Si le Calvaire est achevé, qu'offre-t-on à l'autel ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_001.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-001",
+            "followupIndex": 1
+          },
+          "queryEn": "Why call the Mass more than an act of remembrance?",
+          "queryFr": "Pourquoi dire que la messe est plus qu'un souvenir ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_001.F1",
+        "AO.SPX.DIALOGUE.SPX_001.F2",
+        "AO.SPX.DIALOGUE.SPX_001.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-005",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-EXP-039",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-PILOT-02",
+          "status": "EXTERNAL_OR_CROSS_OWNER_REQUIRE_ROUTER_ELIGIBILITY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-005",
+      "title": {
+        "fr": "Que se passe-t-il à la consécration ?",
+        "en": "What happens at the Consecration?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q605–613",
+        "witness": "1905_LONGER_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_005.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-005",
+            "field": "opening"
+          },
+          "queryEn": "What happens at the Consecration?",
+          "queryFr": "Que se passe-t-il à la consécration ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_005.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-005",
+            "field": "followup"
+          },
+          "queryEn": "Is this merely a symbol of Christ's presence?",
+          "queryFr": "Est-ce simplement un symbole de la présence du Christ ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_005.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-005",
+            "followupIndex": 0
+          },
+          "queryEn": "If the appearances remain, why say the change is real?",
+          "queryFr": "Si les apparences demeurent, pourquoi dire que le changement est réel ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_005.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-005",
+            "followupIndex": 1
+          },
+          "queryEn": "Does the priest perform this by his own independent power?",
+          "queryFr": "Le prêtre accomplit-il cela par un pouvoir qui lui serait propre ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_005.F1",
+        "AO.SPX.DIALOGUE.SPX_005.F2",
+        "AO.SPX.DIALOGUE.SPX_005.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-001",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-058",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-013",
+      "title": {
+        "fr": "Pourquoi demander l'intercession de Marie auprès du Christ ?",
+        "en": "Why ask Our Lady to intercede with Christ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+        "locus": "Ad diem illum 1904 §§7–14",
+        "witness": "PIUS_X_ENCYCLICAL_TEXT",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_013.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-013",
+            "field": "opening"
+          },
+          "queryEn": "Why ask Our Lady to intercede with Christ?",
+          "queryFr": "Pourquoi demander l'intercession de Marie auprès du Christ ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_013.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-013",
+            "field": "followup"
+          },
+          "queryEn": "Does Marian intercession replace the Saviour?",
+          "queryFr": "L'intercession mariale remplace-t-elle le Sauveur ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_013.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-013",
+            "followupIndex": 0
+          },
+          "queryEn": "Why turn to Mary if Christ alone saves us?",
+          "queryFr": "Pourquoi s'adresser à Marie si le Christ seul nous sauve ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_013.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-013",
+            "followupIndex": 1
+          },
+          "queryEn": "What should true Marian devotion change in someone's life?",
+          "queryFr": "Que devrait changer la vraie dévotion mariale dans une vie ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_013.F1",
+        "AO.SPX.DIALOGUE.SPX_013.F2",
+        "AO.SPX.DIALOGUE.SPX_013.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-041",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-EXP-021",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-015",
+      "title": {
+        "fr": "Pourquoi confesser ses péchés à un prêtre ?",
+        "en": "Why must I confess my sins to a priest?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q509–519",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_015.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-015",
+            "field": "opening"
+          },
+          "queryEn": "Why must I confess my sins to a priest?",
+          "queryFr": "Pourquoi confesser ses péchés à un prêtre ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_015.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-015",
+            "field": "followup"
+          },
+          "queryEn": "Is personal sorrow then unnecessary?",
+          "queryFr": "La douleur personnelle devient-elle inutile ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_015.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-015",
+            "followupIndex": 0
+          },
+          "queryEn": "Why does repentance involve speaking to a minister of the Church?",
+          "queryFr": "Pourquoi le repentir suppose-t-il de parler à un ministre de l'Église ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_015.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-015",
+            "followupIndex": 1
+          },
+          "queryEn": "Can an avatar tell me that my personal confession was valid?",
+          "queryFr": "Un avatar peut-il me dire si ma confession particulière était valide ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_015.F1",
+        "AO.SPX.DIALOGUE.SPX_015.F2",
+        "AO.SPX.DIALOGUE.SPX_015.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "thoughtful",
+      "relatedChapters": [
+        {
+          "id": "SPX-016",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-017",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-016",
+      "title": {
+        "fr": "Comment examiner sa conscience avant la confession ?",
+        "en": "How should I examine my conscience?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q523–549",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_016.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-016",
+            "field": "opening"
+          },
+          "queryEn": "How should I examine my conscience?",
+          "queryFr": "Comment examiner sa conscience avant la confession ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_016.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-016",
+            "field": "followup"
+          },
+          "queryEn": "Should feelings alone determine what I confess?",
+          "queryFr": "Les sentiments suffisent-ils à déterminer ce que l'on confesse ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_016.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-016",
+            "followupIndex": 0
+          },
+          "queryEn": "What should I actually recall before confessing?",
+          "queryFr": "Que dois-je réellement me rappeler avant de me confesser ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_016.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-016",
+            "followupIndex": 1
+          },
+          "queryEn": "What if I am uncertain whether I consented to a thought?",
+          "queryFr": "Et si je ne sais pas si j'ai consenti à une pensée ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_016.F1",
+        "AO.SPX.DIALOGUE.SPX_016.F2",
+        "AO.SPX.DIALOGUE.SPX_016.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-015",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-017",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-017",
+      "title": {
+        "fr": "La peur de l'enfer peut-elle susciter le repentir ?",
+        "en": "Is fear of Hell a genuine motive for repentance?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q550–569",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_017.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-017",
+            "field": "opening"
+          },
+          "queryEn": "Is fear of Hell a genuine motive for repentance?",
+          "queryFr": "La peur de l'enfer peut-elle susciter le repentir ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_017.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-017",
+            "field": "followup"
+          },
+          "queryEn": "Is sorrow from fear identical to sorrow from love?",
+          "queryFr": "La douleur née de la crainte est-elle identique à celle née de l'amour ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_017.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-017",
+            "followupIndex": 0
+          },
+          "queryEn": "Can fear of punishment move someone toward God?",
+          "queryFr": "La crainte du châtiment peut-elle conduire quelqu'un vers Dieu ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_017.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-017",
+            "followupIndex": 1
+          },
+          "queryEn": "Does this teaching prove that my own sorrow was sufficient?",
+          "queryFr": "Cet enseignement prouve-t-il que ma douleur personnelle était suffisante ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_017.F1",
+        "AO.SPX.DIALOGUE.SPX_017.F2",
+        "AO.SPX.DIALOGUE.SPX_017.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "thoughtful",
+      "relatedChapters": [
+        {
+          "id": "SPX-015",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-016",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-018",
+      "title": {
+        "fr": "Doit-on restituer ce qui a été volé ?",
+        "en": "Does forgiveness remove the obligation to restore stolen property?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q353–357",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_018.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-018",
+            "field": "opening"
+          },
+          "queryEn": "Does forgiveness remove the obligation to restore stolen property?",
+          "queryFr": "Doit-on restituer ce qui a été volé ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_018.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-018",
+            "field": "followup"
+          },
+          "queryEn": "Does forgiveness excuse refusing restitution when possible?",
+          "queryFr": "Le pardon dispense-t-il de restituer quand on le peut ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_018.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-018",
+            "followupIndex": 0
+          },
+          "queryEn": "What if the owner of what I took is still known?",
+          "queryFr": "Et si je connais encore le propriétaire de ce que j'ai pris ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_018.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-018",
+            "followupIndex": 1
+          },
+          "queryEn": "Can the database decide exactly how I should make restitution?",
+          "queryFr": "La base de dialogues peut-elle décider exactement comment je dois restituer ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_018.F1",
+        "AO.SPX.DIALOGUE.SPX_018.F2",
+        "AO.SPX.DIALOGUE.SPX_018.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-015",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-017",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-021",
+      "title": {
+        "fr": "Que produit le baptême dans l'âme ?",
+        "en": "What does Baptism change in the soul?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q417–439",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_021.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-021",
+            "field": "opening"
+          },
+          "queryEn": "What does Baptism change in the soul?",
+          "queryFr": "Que produit le baptême dans l'âme ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_021.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+            "recordId": "SPX-021",
+            "field": "followup"
+          },
+          "queryEn": "Is Baptism only a symbolic welcome?",
+          "queryFr": "Le baptême n'est-il qu'un accueil symbolique ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_021.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-021",
+            "followupIndex": 0
+          },
+          "queryEn": "Does the grace of Baptism depend only on being welcomed by a congregation?",
+          "queryFr": "La grâce du baptême dépend-elle seulement de l'accueil d'une communauté ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_021.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-021",
+            "followupIndex": 1
+          },
+          "queryEn": "Why does Baptism bring duties as well as gifts?",
+          "queryFr": "Pourquoi le baptême apporte-t-il des devoirs autant que des dons ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_021.F1",
+        "AO.SPX.DIALOGUE.SPX_021.F2",
+        "AO.SPX.DIALOGUE.SPX_021.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-022",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-058",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-022",
+      "title": {
+        "en": "What does Confirmation add to Baptism?",
+        "fr": "Que donne la confirmation après le baptême ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q440–450",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_022.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-022",
+            "field": "opening"
+          },
+          "queryEn": "What does Confirmation add to Baptism?",
+          "queryFr": "Que donne la confirmation après le baptême ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_022.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-022",
+            "field": "followup"
+          },
+          "queryEn": "Does that mean Baptism failed to give grace?",
+          "queryFr": "Le baptême aurait-il donc manqué de donner la grâce ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_022.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-022",
+            "followupIndex": 0
+          },
+          "queryEn": "Why is Confirmation called a strengthening?",
+          "queryFr": "Pourquoi appelle-t-on la confirmation un affermissement ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_022.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-022",
+            "followupIndex": 1
+          },
+          "queryEn": "Does receiving Confirmation guarantee courage in every future difficulty?",
+          "queryFr": "Recevoir la confirmation garantit-il le courage dans toute difficulté future ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_022.F1",
+        "AO.SPX.DIALOGUE.SPX_022.F2",
+        "AO.SPX.DIALOGUE.SPX_022.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-021",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-058",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-026",
+      "title": {
+        "en": "How should a Christian keep Sunday holy?",
+        "fr": "Comment un chrétien doit-il sanctifier le dimanche ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q334–336",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_026.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-026",
+            "field": "opening"
+          },
+          "queryEn": "How should a Christian keep Sunday holy?",
+          "queryFr": "Comment un chrétien doit-il sanctifier le dimanche ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_026.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-026",
+            "field": "followup"
+          },
+          "queryEn": "Does observing Sunday mean resting alone?",
+          "queryFr": "Observer le dimanche signifie-t-il seulement se reposer ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_026.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-026",
+            "followupIndex": 0
+          },
+          "queryEn": "How can Sunday rest be more than doing nothing?",
+          "queryFr": "Comment le repos dominical peut-il être autre chose que l'inaction ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_026.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-026",
+            "followupIndex": 1
+          },
+          "queryEn": "Can this nineteenth-century counsel settle every present work schedule?",
+          "queryFr": "Ce conseil ancien peut-il régler tous les horaires de travail actuels ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_026.F1",
+        "AO.SPX.DIALOGUE.SPX_026.F2",
+        "AO.SPX.DIALOGUE.SPX_026.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-EXP-039",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-PILOT-02",
+          "status": "EXTERNAL_OR_CROSS_OWNER_REQUIRE_ROUTER_ELIGIBILITY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-028",
+      "title": {
+        "en": "What graces and duties belong to Christian marriage?",
+        "fr": "Quels dons et quels devoirs comporte le mariage chrétien ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q830–841",
+        "witness": "1905_LONGER_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_028.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-028",
+            "field": "opening"
+          },
+          "queryEn": "What graces and duties belong to Christian marriage?",
+          "queryFr": "Quels dons et quels devoirs comporte le mariage chrétien ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_028.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-028",
+            "field": "followup"
+          },
+          "queryEn": "Is Christian marriage only a civil contract?",
+          "queryFr": "Le mariage chrétien n'est-il qu'un contrat civil ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_028.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-028",
+            "followupIndex": 0
+          },
+          "queryEn": "How does the sacrament assist spouses in their common duties?",
+          "queryFr": "Comment le sacrement soutient-il les époux dans leurs devoirs communs ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_028.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-028",
+            "followupIndex": 1
+          },
+          "queryEn": "Is every difficult marriage automatically an invalid one?",
+          "queryFr": "Un mariage difficile est-il nécessairement invalide ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_028.F1",
+        "AO.SPX.DIALOGUE.SPX_028.F2",
+        "AO.SPX.DIALOGUE.SPX_028.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-EXP-026",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-EXP-027",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-041",
+      "title": {
+        "en": "Why does Christ call those who suffer blessed?",
+        "fr": "Pourquoi le Christ proclame-t-il bienheureux ceux qui souffrent ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "locus": "1905 Catechismo maggiore Q926–940",
+        "witness": "1905_LONGER_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_041.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-041",
+            "field": "opening"
+          },
+          "queryEn": "Why does Christ call those who suffer blessed?",
+          "queryFr": "Pourquoi le Christ proclame-t-il bienheureux ceux qui souffrent ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_041.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-041",
+            "field": "followup"
+          },
+          "queryEn": "Does this teaching say pain is pleasant?",
+          "queryFr": "Cet enseignement dit-il que la souffrance est agréable ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_041.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-041",
+            "followupIndex": 0
+          },
+          "queryEn": "Does the Gospel call someone to seek suffering for its own sake?",
+          "queryFr": "L'Évangile appelle-t-il à rechercher la souffrance pour elle-même ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_041.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-041",
+            "followupIndex": 1
+          },
+          "queryEn": "How can a person be sorrowful and still called blessed?",
+          "queryFr": "Comment une personne peut-elle être triste et néanmoins dite bienheureuse ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_041.F1",
+        "AO.SPX.DIALOGUE.SPX_041.F2",
+        "AO.SPX.DIALOGUE.SPX_041.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-063",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-064",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-048",
+      "title": {
+        "en": "How can God be three Persons and one God?",
+        "fr": "Comment Dieu peut-il être trois Personnes et un seul Dieu ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q68–79",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_048.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-048",
+            "field": "opening"
+          },
+          "queryEn": "How can God be three Persons and one God?",
+          "queryFr": "Comment Dieu peut-il être trois Personnes et un seul Dieu ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_048.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-048",
+            "field": "followup"
+          },
+          "queryEn": "Does each Person possess only one third of divinity?",
+          "queryFr": "Chaque Personne possède-t-elle seulement un tiers de la divinité ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_048.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-048",
+            "followupIndex": 0
+          },
+          "queryEn": "Do the three divine Persons share a single divinity?",
+          "queryFr": "Les trois Personnes divines possèdent-elles une seule divinité ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_048.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-a-20261021.v1.json",
+            "recordId": "SPX-048",
+            "followupIndex": 1
+          },
+          "queryEn": "Can the Trinity be reduced to three names for one Person?",
+          "queryFr": "Peut-on réduire la Trinité à trois noms d'une seule Personne ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_048.F1",
+        "AO.SPX.DIALOGUE.SPX_048.F2",
+        "AO.SPX.DIALOGUE.SPX_048.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-049",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-051",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-049",
+      "title": {
+        "en": "How can Jesus Christ be God and man?",
+        "fr": "Comment Jésus-Christ est-il à la fois Dieu et homme ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q85–105",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_049.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-049",
+            "field": "opening"
+          },
+          "queryEn": "How can Jesus Christ be God and man?",
+          "queryFr": "Comment Jésus-Christ est-il à la fois Dieu et homme ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_049.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-049",
+            "field": "followup"
+          },
+          "queryEn": "Did the Word cease to be God when He became man?",
+          "queryFr": "Le Verbe a-t-il cessé d'être Dieu en devenant homme ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_049.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-049",
+            "followupIndex": 0
+          },
+          "queryEn": "Did the Son of God assume a complete human nature?",
+          "queryFr": "Le Fils de Dieu a-t-il assumé une nature humaine complète ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_049.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-049",
+            "followupIndex": 1
+          },
+          "queryEn": "Why does this matter for the work of redemption?",
+          "queryFr": "Pourquoi cela importe-t-il pour la Rédemption ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_049.F1",
+        "AO.SPX.DIALOGUE.SPX_049.F2",
+        "AO.SPX.DIALOGUE.SPX_049.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-048",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-001",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-051",
+      "title": {
+        "en": "Why are Scripture and Apostolic Tradition both necessary?",
+        "fr": "Pourquoi l'Écriture et la Tradition apostolique sont-elles nécessaires ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "locus": "1905 Catechismo maggiore Q874–891",
+        "witness": "1905_LONGER_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_051.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-051",
+            "field": "opening"
+          },
+          "queryEn": "Why are Scripture and Apostolic Tradition both necessary?",
+          "queryFr": "Pourquoi l'Écriture et la Tradition apostolique sont-elles nécessaires ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_051.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-051",
+            "field": "followup"
+          },
+          "queryEn": "Is authentic interpretation merely a private choice?",
+          "queryFr": "L'interprétation authentique est-elle un simple choix privé ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_051.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-051",
+            "followupIndex": 0
+          },
+          "queryEn": "Is Apostolic Tradition merely a collection of human customs?",
+          "queryFr": "La Tradition apostolique n'est-elle qu'un ensemble de coutumes humaines ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_051.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-051",
+            "followupIndex": 1
+          },
+          "queryEn": "Can a private reading of Scripture settle every disputed doctrine?",
+          "queryFr": "Une lecture privée de l'Écriture peut-elle trancher toute controverse doctrinale ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_051.F1",
+        "AO.SPX.DIALOGUE.SPX_051.F2",
+        "AO.SPX.DIALOGUE.SPX_051.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-053",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-EXP-014",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-053",
+      "title": {
+        "en": "How do we recognise the Church founded by Christ?",
+        "fr": "Comment reconnaît-on l'Église fondée par le Christ ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q263–271",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_053.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-053",
+            "field": "opening"
+          },
+          "queryEn": "How do we recognise the Church founded by Christ?",
+          "queryFr": "Comment reconnaît-on l'Église fondée par le Christ ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_053.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+            "recordId": "SPX-053",
+            "field": "followup"
+          },
+          "queryEn": "Are those four marks decorative titles?",
+          "queryFr": "Ces quatre notes ne sont-elles que des titres décoratifs ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_053.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-053",
+            "followupIndex": 0
+          },
+          "queryEn": "What makes the Church apostolic?",
+          "queryFr": "Qu'est-ce qui rend l'Église apostolique ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_053.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-053",
+            "followupIndex": 1
+          },
+          "queryEn": "Does the mark of holiness mean that every Catholic is personally sinless?",
+          "queryFr": "La note de sainteté signifie-t-elle que chaque catholique est sans péché ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_053.F1",
+        "AO.SPX.DIALOGUE.SPX_053.F2",
+        "AO.SPX.DIALOGUE.SPX_053.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-054",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-EXP-021",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-054",
+      "title": {
+        "en": "Why does the Church need Pope and bishops?",
+        "fr": "Pourquoi l'Église a-t-elle besoin du pape et des évêques ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q256–262; 1905 Catechismo maggiore Q192–209",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_054.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-054",
+            "field": "opening"
+          },
+          "queryEn": "Why does the Church need Pope and bishops?",
+          "queryFr": "Pourquoi l'Église a-t-elle besoin du pape et des évêques ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_054.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-054",
+            "field": "followup"
+          },
+          "queryEn": "Does this mean the Church is merely a human association?",
+          "queryFr": "Cela signifie-t-il que l'Église n'est qu'une association humaine ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_054.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-054",
+            "followupIndex": 0
+          },
+          "queryEn": "Why does unity require more than private agreement between believers?",
+          "queryFr": "Pourquoi l'unité exige-t-elle davantage qu'un accord privé entre croyants ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_054.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-054",
+            "followupIndex": 1
+          },
+          "queryEn": "Does this make bishops a substitute for Christ?",
+          "queryFr": "Cela fait-il des évêques des remplaçants du Christ ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_054.F1",
+        "AO.SPX.DIALOGUE.SPX_054.F2",
+        "AO.SPX.DIALOGUE.SPX_054.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-055",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-053",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-055",
+      "title": {
+        "en": "Does papal infallibility mean the Pope cannot err?",
+        "fr": "L'infaillibilité pontificale signifie-t-elle que le pape ne se trompe jamais ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "locus": "1905 Catechismo maggiore Q197–203",
+        "witness": "1905_LONGER_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_055.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-055",
+            "field": "opening"
+          },
+          "queryEn": "Does papal infallibility mean the Pope cannot err?",
+          "queryFr": "L'infaillibilité pontificale signifie-t-elle que le pape ne se trompe jamais ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_055.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-055",
+            "field": "followup"
+          },
+          "queryEn": "Does it guarantee correctness in every historical or scientific remark?",
+          "queryFr": "Garantit-elle la justesse de toute remarque historique ou scientifique ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_055.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-055",
+            "followupIndex": 0
+          },
+          "queryEn": "What sort of teaching is protected by papal infallibility?",
+          "queryFr": "Quel genre d'enseignement est protégé par l'infaillibilité pontificale ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_055.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-055",
+            "followupIndex": 1
+          },
+          "queryEn": "Can the avatar use infallibility to authenticate an invented papal quotation?",
+          "queryFr": "L'avatar peut-il invoquer l'infaillibilité pour authentifier une citation pontificale inventée ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_055.F1",
+        "AO.SPX.DIALOGUE.SPX_055.F2",
+        "AO.SPX.DIALOGUE.SPX_055.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "thoughtful",
+      "relatedChapters": [
+        {
+          "id": "SPX-054",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-EXP-021",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-056",
+      "title": {
+        "en": "Can someone outside visible Catholic communion be saved?",
+        "fr": "Une personne hors de la communion catholique visible peut-elle être sauvée ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "locus": "1905 Catechismo maggiore Q163–172",
+        "witness": "1905_LONGER_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_056.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-056",
+            "field": "opening"
+          },
+          "queryEn": "Can someone outside visible Catholic communion be saved?",
+          "queryFr": "Une personne hors de la communion catholique visible peut-elle être sauvée ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_056.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-056",
+            "field": "followup"
+          },
+          "queryEn": "Can this teaching tell me whether a named person is damned?",
+          "queryFr": "Cet enseignement permet-il de dire qu'une personne nommée est damnée ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_056.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-056",
+            "followupIndex": 0
+          },
+          "queryEn": "Does the Catechism identify who is personally culpable for separation?",
+          "queryFr": "Le Catéchisme désigne-t-il les personnes coupables de leur séparation ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_056.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-056",
+            "followupIndex": 1
+          },
+          "queryEn": "Can I ask the avatar for the eternal fate of a deceased relative?",
+          "queryFr": "Puis-je demander à l'avatar le sort éternel d'un parent défunt ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_056.F1",
+        "AO.SPX.DIALOGUE.SPX_056.F2",
+        "AO.SPX.DIALOGUE.SPX_056.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "thoughtful",
+      "relatedChapters": [
+        {
+          "id": "SPX-053",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-064",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-058",
+      "title": {
+        "en": "Do the sacraments confer grace or merely symbolize it?",
+        "fr": "Les sacrements donnent-ils la grâce ou la représentent-ils seulement ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q519–549",
+        "witness": "1905_LONGER_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_058.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-058",
+            "field": "opening"
+          },
+          "queryEn": "Do the sacraments confer grace or merely symbolize it?",
+          "queryFr": "Les sacrements donnent-ils la grâce ou la représentent-ils seulement ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_058.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-058",
+            "field": "followup"
+          },
+          "queryEn": "Does the sign itself have a religious purpose?",
+          "queryFr": "Le signe visible a-t-il lui-même une fonction religieuse ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_058.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-058",
+            "followupIndex": 0
+          },
+          "queryEn": "Why call a sacrament an efficacious sign?",
+          "queryFr": "Pourquoi appeler le sacrement un signe efficace ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_058.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-058",
+            "followupIndex": 1
+          },
+          "queryEn": "Does receiving a sacrament make our dispositions irrelevant?",
+          "queryFr": "La réception d'un sacrement rend-elle nos dispositions indifférentes ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_058.F1",
+        "AO.SPX.DIALOGUE.SPX_058.F2",
+        "AO.SPX.DIALOGUE.SPX_058.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-021",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-022",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-059",
+      "title": {
+        "en": "What happens through Holy Orders?",
+        "fr": "Que se passe-t-il dans le sacrement de l'ordre ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q814–822",
+        "witness": "1905_LONGER_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_059.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-059",
+            "field": "opening"
+          },
+          "queryEn": "What happens through Holy Orders?",
+          "queryFr": "Que se passe-t-il dans le sacrement de l'ordre ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_059.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-059",
+            "field": "followup"
+          },
+          "queryEn": "Is ordination simply assigning a community job?",
+          "queryFr": "L'ordination est-elle simplement l'attribution d'une fonction communautaire ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_059.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-059",
+            "followupIndex": 0
+          },
+          "queryEn": "What is meant by the sacramental character of Orders?",
+          "queryFr": "Que signifie le caractère sacramentel de l'ordre ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_059.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-059",
+            "followupIndex": 1
+          },
+          "queryEn": "Does every ordained person exercise exactly the same ministry?",
+          "queryFr": "Toute personne ordonnée exerce-t-elle exactement le même ministère ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_059.F1",
+        "AO.SPX.DIALOGUE.SPX_059.F2",
+        "AO.SPX.DIALOGUE.SPX_059.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-PILOT-09",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-EXP-046",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-060",
+      "title": {
+        "en": "Why receive Extreme Unction before death is imminent?",
+        "fr": "Pourquoi ne pas attendre la dernière minute pour recevoir l'extrême-onction ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q808–813",
+        "witness": "1905_LONGER_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_060.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-060",
+            "field": "opening"
+          },
+          "queryEn": "Why receive Extreme Unction before death is imminent?",
+          "queryFr": "Pourquoi ne pas attendre la dernière minute pour recevoir l'extrême-onction ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_060.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-060",
+            "field": "followup"
+          },
+          "queryEn": "Is it only a sign that death is certain?",
+          "queryFr": "N'est-elle que le signe d'une mort certaine ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_060.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-060",
+            "followupIndex": 0
+          },
+          "queryEn": "Why should the sick receive spiritual help before losing consciousness?",
+          "queryFr": "Pourquoi donner ce secours spirituel avant la perte de conscience ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_060.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-060",
+            "followupIndex": 1
+          },
+          "queryEn": "Can an avatar tell whether someone's illness qualifies under current Church law?",
+          "queryFr": "L'avatar peut-il décider si une maladie remplit les conditions du droit ecclésiastique actuel ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_060.F1",
+        "AO.SPX.DIALOGUE.SPX_060.F2",
+        "AO.SPX.DIALOGUE.SPX_060.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "thoughtful",
+      "relatedChapters": [
+        {
+          "id": "SPX-015",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-063",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-062",
+      "title": {
+        "en": "Will our bodies rise again?",
+        "fr": "Nos corps ressusciteront-ils vraiment ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q299; 1905 Catechismo maggiore Q239–245",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_062.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-062",
+            "field": "opening"
+          },
+          "queryEn": "Will our bodies rise again?",
+          "queryFr": "Nos corps ressusciteront-ils vraiment ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_062.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-062",
+            "field": "followup"
+          },
+          "queryEn": "Is the resurrection only a metaphor for remembering the dead?",
+          "queryFr": "La résurrection n'est-elle qu'une métaphore du souvenir des morts ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_062.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-062",
+            "followupIndex": 0
+          },
+          "queryEn": "How does the resurrection differ from the soul's survival after death?",
+          "queryFr": "En quoi la résurrection diffère-t-elle de la survie de l'âme après la mort ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_062.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-062",
+            "followupIndex": 1
+          },
+          "queryEn": "Is the doctrine about the same ordinary life simply continuing indefinitely?",
+          "queryFr": "S'agit-il de la même vie terrestre prolongée indéfiniment ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_062.F1",
+        "AO.SPX.DIALOGUE.SPX_062.F2",
+        "AO.SPX.DIALOGUE.SPX_062.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-063",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-064",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-063",
+      "title": {
+        "en": "What is the happiness of Heaven?",
+        "fr": "En quoi consiste le bonheur du Ciel ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "locus": "1905 Catechismo maggiore Q246–251",
+        "witness": "1905_LONGER_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_063.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-063",
+            "field": "opening"
+          },
+          "queryEn": "What is the happiness of Heaven?",
+          "queryFr": "En quoi consiste le bonheur du Ciel ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_063.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-063",
+            "field": "followup"
+          },
+          "queryEn": "Is Heaven simply comfort without troubles?",
+          "queryFr": "Le Ciel est-il simplement le confort sans soucis ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_063.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-063",
+            "followupIndex": 0
+          },
+          "queryEn": "What makes the vision of God the centre of heavenly happiness?",
+          "queryFr": "Pourquoi la vision de Dieu est-elle au centre du bonheur céleste ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_063.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-063",
+            "followupIndex": 1
+          },
+          "queryEn": "May I say with certainty that a particular deceased person is in Heaven?",
+          "queryFr": "Puis-je affirmer avec certitude qu'un défunt particulier est au Ciel ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_063.F1",
+        "AO.SPX.DIALOGUE.SPX_063.F2",
+        "AO.SPX.DIALOGUE.SPX_063.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "explaining",
+      "relatedChapters": [
+        {
+          "id": "SPX-062",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-064",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    },
+    {
+      "id": "SPX-064",
+      "title": {
+        "en": "Why is Purgatory needed after forgiveness?",
+        "fr": "Pourquoi le purgatoire après le pardon des péchés ?"
+      },
+      "ownerPart": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "researchSource": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q272–293; 1905 Catechismo maggiore Q776–790",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+        "wordingStatus": "LOCATOR_AS_IN_PREVIOUS_RESEARCH_NOT_VERBATIM_PAPAL_SPEECH"
+      },
+      "stage": "UNAPPROVED_CONTENT_AUTHORING",
+      "nodeRefs": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_064.OPEN",
+          "kind": "opening",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-064",
+            "field": "opening"
+          },
+          "queryEn": "Why is Purgatory needed after forgiveness?",
+          "queryFr": "Pourquoi le purgatoire après le pardon des péchés ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_064.F1",
+          "kind": "source_owner_preexisting_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+            "recordId": "SPX-064",
+            "field": "followup"
+          },
+          "queryEn": "Is Purgatory a second chance after final rejection of God?",
+          "queryFr": "Le purgatoire est-il une seconde chance après le rejet définitif de Dieu ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_064.F2",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-064",
+            "followupIndex": 0
+          },
+          "queryEn": "If a sin has been pardoned, what could remain to be purified?",
+          "queryFr": "Si le péché est pardonné, que reste-t-il à purifier ?"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_064.F3",
+          "kind": "new_dialogue_followup",
+          "lookup": {
+            "file": "data/learn/research/pius-x-dialogue-authoring-next25-part-b-20261021.v1.json",
+            "recordId": "SPX-064",
+            "followupIndex": 1
+          },
+          "queryEn": "What can the living do for the souls in Purgatory?",
+          "queryFr": "Que peuvent faire les vivants pour les âmes du purgatoire ?"
+        }
+      ],
+      "onOpeningChoiceIds": [
+        "AO.SPX.DIALOGUE.SPX_064.F1",
+        "AO.SPX.DIALOGUE.SPX_064.F2",
+        "AO.SPX.DIALOGUE.SPX_064.F3"
+      ],
+      "allAnswersBilingual": true,
+      "style": "TRADITIONAL_CATHOLIC_RESTRAINED_SOURCE_BOUNDED_NEVER_CLAIM_VERBATIM",
+      "speakerClass": "PAPALLY_APPROVED_CATECHISM_EDUCATIONAL_RECONSTRUCTION",
+      "supportedSpritePose": "thoughtful",
+      "relatedChapters": [
+        {
+          "id": "SPX-063",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        },
+        {
+          "id": "SPX-062",
+          "status": "IN_62_AUTHORING_LIBRARY"
+        }
+      ],
+      "handoff": {
+        "character": "Chanoine",
+        "optInOnly": true,
+        "passQAndASourceLanguageHistory": true,
+        "requiredRouterOwner": "PR#1443",
+        "noCoverage": "DO_NOT_FABRICATE_HISTORICAL_REPLY"
+      },
+      "denzinger": {
+        "optional": true,
+        "display": false,
+        "verifiedCitationAvailable": false,
+        "allowOnlyAfterClaimAndEditionVerification": true
+      },
+      "visibility": {
+        "sourcePanel": "AVAILABLE_ON_EVERY_TURN",
+        "production": false,
+        "approvalPending": true
+      }
+    }
+  ],
+  "overlapCandidatesNotMerged": [
+    {
+      "id": "SPX-002",
+      "target": "SPX-PILOT-02",
+      "reason": "Already drafted how-to-follow-Mass in Rosary/participation pilot",
+      "originalStillPreserved": true,
+      "approved": false
+    },
+    {
+      "id": "SPX-003",
+      "target": "SPX-PILOT-02",
+      "reason": "Rosary during Mass is the same primary visitor opening in existing pilot",
+      "originalStillPreserved": true,
+      "approved": false
+    },
+    {
+      "id": "SPX-044",
+      "target": "SPX-028",
+      "reason": "Marriage indissolubility better exposed as subtopic of grace and duties of Matrimony",
+      "originalStillPreserved": true,
+      "approved": false
+    },
+    {
+      "id": "SPX-052",
+      "target": "SPX-053",
+      "reason": "Visible Church and marks of the Church tightly related, retained as candidate branch",
+      "originalStillPreserved": true,
+      "approved": false
+    }
+  ],
+  "priorChapterIds": [
+    "SPX-EXP-001",
+    "SPX-EXP-002",
+    "SPX-EXP-003",
+    "SPX-EXP-004",
+    "SPX-EXP-005",
+    "SPX-EXP-006",
+    "SPX-EXP-007",
+    "SPX-EXP-008",
+    "SPX-EXP-009",
+    "SPX-PILOT-01",
+    "SPX-PILOT-07",
+    "SPX-PILOT-08",
+    "SPX-PILOT-09",
+    "SPX-EXP-021",
+    "SPX-EXP-026",
+    "SPX-EXP-027",
+    "SPX-EXP-043",
+    "SPX-EXP-012",
+    "SPX-EXP-013",
+    "SPX-EXP-014",
+    "SPX-EXP-015",
+    "SPX-EXP-016",
+    "SPX-EXP-017",
+    "SPX-EXP-019",
+    "SPX-EXP-020",
+    "SPX-EXP-022",
+    "SPX-EXP-023",
+    "SPX-EXP-024",
+    "SPX-EXP-028",
+    "SPX-EXP-032",
+    "SPX-EXP-037",
+    "SPX-EXP-038",
+    "SPX-EXP-039",
+    "SPX-EXP-042",
+    "SPX-EXP-044",
+    "SPX-EXP-046",
+    "SPX-EXP-048"
+  ],
+  "nonCurrentUI": true,
+  "approved": false
+}

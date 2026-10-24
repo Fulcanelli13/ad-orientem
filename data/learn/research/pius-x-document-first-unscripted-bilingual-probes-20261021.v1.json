@@ -1,0 +1,81 @@
+{
+  "schema": "AO_SPX_DOCUMENT_FIRST_THREE_UNSCRIPTED_BILINGUAL_ROUTER_PROBES_V1",
+  "date": "2026-10-21",
+  "status": "FROZEN_EDITORIAL_PROBES_BEFORE_ROUTER_EXECUTION_NOT_INDEPENDENT_HOLDOUT",
+  "provenance": "Three questions proposed at the 34-exchange acceptance gate, with newly supplied French paraphrases; these are not sampled user questions.",
+  "ownership": {
+    "historicalAnswerOwner": "PR #1458 / derivative 34-turn document-first benchmark",
+    "historicalNavigationOwner": "PR #1443 / existing shared source-only question router",
+    "duplicateRouterIntroduced": false
+  },
+  "policy": {
+    "expected": "Exact source-locus navigation or safe abstention; never consider navigation to a different section of the same document to be a correct passage answer.",
+    "canGeneratePapalAnswer": false,
+    "canAssertHumanApproval": false
+  },
+  "cases": [
+    {
+      "id": "SPX.UNSCRIPTED.ACERBO.01",
+      "questions": {
+        "en": "Can an excellent preacher neglect the catechism?",
+        "fr": "Un excellent prédicateur peut-il négliger le catéchisme ?"
+      },
+      "expectedDocument": "ACERBO",
+      "expectedUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "expectedSections": [
+        12,
+        13,
+        14
+      ],
+      "expectedDialogues": [
+        "SPX.BENCH.ACERBO.T3",
+        "SPX.BENCH.ACERBO.T7"
+      ],
+      "knownCurrentPointer": "SPX-PILOT-08",
+      "knownCurrentPointerLocus": "§§15, 24–25",
+      "sourceLimit": "The currently indexed pointer skips the sermon/catechism distinction in §§12–14. Same-document navigation is insufficient."
+    },
+    {
+      "id": "SPX.UNSCRIPTED.ESUPREMI.01",
+      "questions": {
+        "en": "Should I be charitable even when someone mocks the Church?",
+        "fr": "Dois-je rester charitable même lorsqu’on se moque de l’Église ?"
+      },
+      "expectedDocument": "ESUPREMI",
+      "expectedUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "expectedSections": [
+        13
+      ],
+      "expectedDialogues": [
+        "SPX.BENCH.E_SUPREMI.T2",
+        "SPX.BENCH.E_SUPREMI.T3",
+        "SPX.BENCH.E_SUPREMI.T7"
+      ],
+      "knownCurrentPointer": "SPX-PILOT-01",
+      "knownCurrentPointerLocus": "§§1–4",
+      "sourceLimit": "The currently indexed E supremi source pointer treats papal office/election, not charity towards adversaries in §13."
+    },
+    {
+      "id": "SPX.UNSCRIPTED.HAERENT.01",
+      "questions": {
+        "en": "Does a busy parish priest really need daily meditation?",
+        "fr": "Un curé débordé doit-il vraiment méditer chaque jour ?"
+      },
+      "expectedDocument": "HAERENT",
+      "expectedUrl": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "expectedSections": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "expectedDialogues": [
+        "SPX.BENCH.HAERENT.T7",
+        "SPX.BENCH.HAERENT.T12"
+      ],
+      "knownCurrentPointer": "SPX-PILOT-09",
+      "knownCurrentPointerLocus": "§§15–20",
+      "sourceLimit": "Historically addressed to clergy; must not generalize to lay meditation duties."
+    }
+  ]
+}

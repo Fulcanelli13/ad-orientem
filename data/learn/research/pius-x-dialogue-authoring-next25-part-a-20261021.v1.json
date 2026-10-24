@@ -1,0 +1,899 @@
+{
+  "schema": "AO_SPX_BATCH3_PRACTICAL_DIALOGUES_PART_A_V1",
+  "created": "2026-10-21",
+  "status": "EDITORIAL_BILINGUAL_AUTHORING_UNAPPROVED",
+  "purpose": "Build on 13 existing original two-turn Q&A drafts by adding two contextual visitor branches each; no source mining and no original content replacement",
+  "records": [
+    {
+      "id": "SPX-001",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "originalDraftId": "SPX-001",
+      "originalOpeningQuestion": {
+        "fr": "Pourquoi la messe est-elle un sacrifice ?",
+        "en": "Why is the Mass a sacrifice?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Does Christ have to die again?",
+        "fr": "Le Christ doit-il mourir de nouveau ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q652–664",
+        "witness": "1905_LONGER_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+        "recordId": "SPX-001",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_001.F2",
+          "q": {
+            "en": "If Calvary is complete, what is offered at the altar?",
+            "fr": "Si le Calvaire est achevé, qu'offre-t-on à l'autel ?"
+          },
+          "a": {
+            "en": "The Catechism distinguishes the one sacrifice of the Cross from its sacramental offering in the Mass. Christ is not sacrificed again by another bloody death; the sacred action makes present the same offering under the signs instituted by Him.",
+            "fr": "Le Catéchisme distingue l'unique sacrifice de la Croix de son offrande sacramentelle à la messe. Le Christ ne meurt pas une seconde fois : l'action sacrée rend présente la même offrande sous les signes qu'Il a institués."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_001.F3",
+          "q": {
+            "en": "Why call the Mass more than an act of remembrance?",
+            "fr": "Pourquoi dire que la messe est plus qu'un souvenir ?"
+          },
+          "a": {
+            "en": "Remembrance is not denied, but it is insufficient by itself to express the catechetical doctrine. The altar is the place of a true sacrificial offering, united to the one sacrifice of Christ, not merely a lesson about something past.",
+            "fr": "La mémoire n'est pas exclue, mais elle ne suffit pas à exprimer la doctrine du Catéchisme. À l'autel s'accomplit une véritable offrande sacrificielle, unie au sacrifice unique du Christ, et non une simple leçon sur le passé."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-005",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "originalDraftId": "SPX-005",
+      "originalOpeningQuestion": {
+        "fr": "Que se passe-t-il à la consécration ?",
+        "en": "What happens at the Consecration?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Is this merely a symbol of Christ's presence?",
+        "fr": "Est-ce simplement un symbole de la présence du Christ ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q605–613",
+        "witness": "1905_LONGER_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+        "recordId": "SPX-005",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_005.F2",
+          "q": {
+            "en": "If the appearances remain, why say the change is real?",
+            "fr": "Si les apparences demeurent, pourquoi dire que le changement est réel ?"
+          },
+          "a": {
+            "en": "The sensible qualities remain those of bread and wine, while the catechetical teaching concerns the substance. The change is therefore not judged by sight or taste, but confessed through the words of institution and the Church's faith.",
+            "fr": "Les qualités sensibles demeurent celles du pain et du vin, tandis que l'enseignement catéchétique concerne la substance. Ce changement ne se juge donc ni par la vue ni par le goût : il est confessé selon les paroles de l'institution et la foi de l'Église."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_005.F3",
+          "q": {
+            "en": "Does the priest perform this by his own independent power?",
+            "fr": "Le prêtre accomplit-il cela par un pouvoir qui lui serait propre ?"
+          },
+          "a": {
+            "en": "The priest speaks the words of Christ in the sacramental rite; he does not independently create a power belonging to himself. The efficacy and the meaning of the Consecration are received from Christ and His institution.",
+            "fr": "Le prêtre prononce les paroles du Christ dans le rite sacramentel ; il ne produit pas un pouvoir indépendant qui lui appartiendrait. L'efficacité et le sens de la consécration viennent du Christ et de son institution."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-013",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "originalDraftId": "SPX-013",
+      "originalOpeningQuestion": {
+        "fr": "Pourquoi demander l'intercession de Marie auprès du Christ ?",
+        "en": "Why ask Our Lady to intercede with Christ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Does Marian intercession replace the Saviour?",
+        "fr": "L'intercession mariale remplace-t-elle le Sauveur ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+        "locus": "Ad diem illum 1904 §§7–14",
+        "witness": "PIUS_X_ENCYCLICAL_TEXT",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+        "recordId": "SPX-013",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_013.F2",
+          "q": {
+            "en": "Why turn to Mary if Christ alone saves us?",
+            "fr": "Pourquoi s'adresser à Marie si le Christ seul nous sauve ?"
+          },
+          "a": {
+            "en": "The encyclical directs Marian devotion toward Christ. To ask the Mother of the Lord for her prayers is not to posit another Redeemer; the whole value of her intercession depends upon the saving work of her Son.",
+            "fr": "L'encyclique ordonne la dévotion mariale au Christ. Demander les prières de la Mère du Seigneur n'est pas poser un autre Rédempteur ; toute la valeur de son intercession dépend de l'œuvre salvatrice de son Fils."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_013.F3",
+          "q": {
+            "en": "What should true Marian devotion change in someone's life?",
+            "fr": "Que devrait changer la vraie dévotion mariale dans une vie ?"
+          },
+          "a": {
+            "en": "Ad diem illum treats devotion as more than an outward honour. It must lead the faithful toward Christ and toward obedience to His teaching. The source does not authorise judging another person's interior devotion from external appearances.",
+            "fr": "Ad diem illum ne réduit pas la dévotion à un hommage extérieur. Elle doit conduire les fidèles au Christ et à l'obéissance à son enseignement. La source n'autorise pas à juger la dévotion intérieure d'autrui d'après les seules apparences."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-015",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "originalDraftId": "SPX-015",
+      "originalOpeningQuestion": {
+        "fr": "Pourquoi confesser ses péchés à un prêtre ?",
+        "en": "Why must I confess my sins to a priest?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Is personal sorrow then unnecessary?",
+        "fr": "La douleur personnelle devient-elle inutile ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q509–519",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+        "recordId": "SPX-015",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_015.F2",
+          "q": {
+            "en": "Why does repentance involve speaking to a minister of the Church?",
+            "fr": "Pourquoi le repentir suppose-t-il de parler à un ministre de l'Église ?"
+          },
+          "a": {
+            "en": "The catechetical account connects confession to the power of forgiving and retaining sins entrusted by Christ to His ministers. It is a sacramental reconciliation, not merely the psychological relief of confiding in a trusted person.",
+            "fr": "L'exposé catéchétique rattache la confession au pouvoir de remettre et de retenir les péchés confié par le Christ à ses ministres. C'est une réconciliation sacramentelle, non le seul soulagement psychologique d'une confidence."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_015.F3",
+          "q": {
+            "en": "Can an avatar tell me that my personal confession was valid?",
+            "fr": "Un avatar peut-il me dire si ma confession particulière était valide ?"
+          },
+          "a": {
+            "en": "No. The historical teaching explains the sacrament generally; it cannot examine the facts of a particular confession or replace a priest's pastoral judgement. A concrete difficulty should be brought to a confessor.",
+            "fr": "Non. L'enseignement historique expose le sacrement en général ; il ne peut examiner les faits d'une confession particulière ni remplacer le discernement pastoral d'un prêtre. Une difficulté concrète doit être exposée à un confesseur."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-016",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "originalDraftId": "SPX-016",
+      "originalOpeningQuestion": {
+        "fr": "Comment examiner sa conscience avant la confession ?",
+        "en": "How should I examine my conscience?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Should feelings alone determine what I confess?",
+        "fr": "Les sentiments suffisent-ils à déterminer ce que l'on confesse ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q523–549",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+        "recordId": "SPX-016",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_016.F2",
+          "q": {
+            "en": "What should I actually recall before confessing?",
+            "fr": "Que dois-je réellement me rappeler avant de me confesser ?"
+          },
+          "a": {
+            "en": "The catechetical method asks one to consider one's duties and recall deliberate faults in thought, word, deed and omission. Its purpose is a truthful account of conduct, rather than endless speculation about every passing impression.",
+            "fr": "La méthode catéchétique invite à considérer ses devoirs et à se rappeler les fautes volontaires de pensée, de parole, d'action et d'omission. Il s'agit de rendre compte sincèrement de sa conduite, non de spéculer sans fin sur toute impression passagère."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_016.F3",
+          "q": {
+            "en": "What if I am uncertain whether I consented to a thought?",
+            "fr": "Et si je ne sais pas si j'ai consenti à une pensée ?"
+          },
+          "a": {
+            "en": "The distinction between a thought occurring and the will consenting to it is important. A general catechism can explain that difference but cannot decide your actual culpability from a few words; a confessor can help with the concrete case.",
+            "fr": "La distinction entre la survenue d'une pensée et le consentement de la volonté est importante. Un catéchisme peut l'expliquer, mais non trancher votre culpabilité en quelques mots ; un confesseur peut vous aider dans votre cas concret."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-017",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "originalDraftId": "SPX-017",
+      "originalOpeningQuestion": {
+        "fr": "La peur de l'enfer peut-elle susciter le repentir ?",
+        "en": "Is fear of Hell a genuine motive for repentance?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Is sorrow from fear identical to sorrow from love?",
+        "fr": "La douleur née de la crainte est-elle identique à celle née de l'amour ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q550–569",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+        "recordId": "SPX-017",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_017.F2",
+          "q": {
+            "en": "Can fear of punishment move someone toward God?",
+            "fr": "La crainte du châtiment peut-elle conduire quelqu'un vers Dieu ?"
+          },
+          "a": {
+            "en": "The catechetical distinction recognises that fear may give rise to imperfect contrition. Such sorrow is not the same as love-based contrition, yet it can dispose a penitent toward reconciliation when accompanied by the conditions the sacrament requires.",
+            "fr": "La distinction catéchétique reconnaît que la crainte peut susciter une contrition imparfaite. Cette douleur n'est pas la contrition née de l'amour ; elle peut pourtant disposer le pénitent à la réconciliation, avec les conditions requises pour le sacrement."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_017.F3",
+          "q": {
+            "en": "Does this teaching prove that my own sorrow was sufficient?",
+            "fr": "Cet enseignement prouve-t-il que ma douleur personnelle était suffisante ?"
+          },
+          "a": {
+            "en": "No. The difference between motives can be taught, but judging a particular person's dispositions requires attention to circumstances and pastoral guidance. The historical answer must not be presented as a private absolution.",
+            "fr": "Non. On peut expliquer les différences entre les motifs, mais le discernement des dispositions d'une personne demande l'examen des circonstances et un accompagnement pastoral. Une réponse historique ne saurait tenir lieu d'absolution privée."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-018",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "originalDraftId": "SPX-018",
+      "originalOpeningQuestion": {
+        "fr": "Doit-on restituer ce qui a été volé ?",
+        "en": "Does forgiveness remove the obligation to restore stolen property?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Does forgiveness excuse refusing restitution when possible?",
+        "fr": "Le pardon dispense-t-il de restituer quand on le peut ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q353–357",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+        "recordId": "SPX-018",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_018.F2",
+          "q": {
+            "en": "What if the owner of what I took is still known?",
+            "fr": "Et si je connais encore le propriétaire de ce que j'ai pris ?"
+          },
+          "a": {
+            "en": "The catechetical principle is to restore what has been unjustly taken when that is possible. It treats restitution as part of repairing injustice, rather than considering words of regret sufficient while the loss continues.",
+            "fr": "Le principe catéchétique est de restituer ce qui a été injustement pris lorsque cela est possible. La restitution participe à la réparation de l'injustice ; les paroles de regret ne suffisent pas si le dommage se poursuit."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_018.F3",
+          "q": {
+            "en": "Can the database decide exactly how I should make restitution?",
+            "fr": "La base de dialogues peut-elle décider exactement comment je dois restituer ?"
+          },
+          "a": {
+            "en": "It can explain the general obligation, but the proper way to repair a particular loss depends on facts it cannot verify. A confessor or qualified adviser may be needed, especially where restitution affects others or involves legal issues.",
+            "fr": "Elle peut exposer l'obligation générale, mais les modalités de réparation dépendent de faits qu'elle ne peut vérifier. Un confesseur ou un conseiller compétent peut être nécessaire, notamment si d'autres personnes ou des questions juridiques sont concernées."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-021",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "originalDraftId": "SPX-021",
+      "originalOpeningQuestion": {
+        "fr": "Que produit le baptême dans l'âme ?",
+        "en": "What does Baptism change in the soul?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Is Baptism only a symbolic welcome?",
+        "fr": "Le baptême n'est-il qu'un accueil symbolique ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q417–439",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+        "recordId": "SPX-021",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_021.F2",
+          "q": {
+            "en": "Does the grace of Baptism depend only on being welcomed by a congregation?",
+            "fr": "La grâce du baptême dépend-elle seulement de l'accueil d'une communauté ?"
+          },
+          "a": {
+            "en": "No. The Catechism teaches that Baptism truly remits sin and communicates grace. The visible welcome into the Christian community does not exhaust the sacrament's meaning or supernatural effect.",
+            "fr": "Non. Le Catéchisme enseigne que le baptême remet réellement le péché et communique la grâce. L'accueil visible dans la communauté chrétienne n'épuise ni le sens du sacrement ni son effet surnaturel."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_021.F3",
+          "q": {
+            "en": "Why does Baptism bring duties as well as gifts?",
+            "fr": "Pourquoi le baptême apporte-t-il des devoirs autant que des dons ?"
+          },
+          "a": {
+            "en": "The sacrament incorporates the Christian into the life of Christ and His Church. Receiving grace is therefore joined to the obligation to live as a Christian; the doctrinal distinction does not settle the subjective state of any particular soul.",
+            "fr": "Le sacrement incorpore le chrétien à la vie du Christ et de son Église. Recevoir la grâce engage donc à vivre chrétiennement ; cette distinction doctrinale ne détermine pas l'état intérieur d'une âme particulière."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-022",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "originalDraftId": "SPX-022",
+      "originalOpeningQuestion": {
+        "en": "What does Confirmation add to Baptism?",
+        "fr": "Que donne la confirmation après le baptême ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Does that mean Baptism failed to give grace?",
+        "fr": "Le baptême aurait-il donc manqué de donner la grâce ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q440–450",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+        "recordId": "SPX-022",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_022.F2",
+          "q": {
+            "en": "Why is Confirmation called a strengthening?",
+            "fr": "Pourquoi appelle-t-on la confirmation un affermissement ?"
+          },
+          "a": {
+            "en": "The catechetical explanation associates Confirmation especially with the gift of strength to profess and defend the faith. It does not repeat Baptism as though its grace had never been given.",
+            "fr": "L'explication catéchétique rattache particulièrement la confirmation à la force de professer et de défendre la foi. Elle ne répète pas le baptême comme si sa grâce n'avait jamais été donnée."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_022.F3",
+          "q": {
+            "en": "Does receiving Confirmation guarantee courage in every future difficulty?",
+            "fr": "Recevoir la confirmation garantit-il le courage dans toute difficulté future ?"
+          },
+          "a": {
+            "en": "The sacrament gives its grace; it does not erase freedom or remove the need for fidelity. A historical catechism teaches the gift and its purpose, not a prediction of how an individual will act.",
+            "fr": "Le sacrement donne sa grâce ; il ne supprime ni la liberté ni la nécessité d'y demeurer fidèle. Le catéchisme historique enseigne le don et sa fin, non la manière dont chacun agira."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-026",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "originalDraftId": "SPX-026",
+      "originalOpeningQuestion": {
+        "en": "How should a Christian keep Sunday holy?",
+        "fr": "Comment un chrétien doit-il sanctifier le dimanche ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Does observing Sunday mean resting alone?",
+        "fr": "Observer le dimanche signifie-t-il seulement se reposer ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q334–336",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+        "recordId": "SPX-026",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_026.F2",
+          "q": {
+            "en": "How can Sunday rest be more than doing nothing?",
+            "fr": "Comment le repos dominical peut-il être autre chose que l'inaction ?"
+          },
+          "a": {
+            "en": "The Catechism joins the Lord's Day to worship, prayer and works befitting Christian life. Rest is intended to make room for these duties, not to reduce Sunday to an empty interval without purpose.",
+            "fr": "Le Catéchisme unit le jour du Seigneur au culte, à la prière et aux œuvres conformes à la vie chrétienne. Le repos doit ménager la place de ces devoirs, non réduire le dimanche à un temps vide de sens."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_026.F3",
+          "q": {
+            "en": "Can this nineteenth-century counsel settle every present work schedule?",
+            "fr": "Ce conseil ancien peut-il régler tous les horaires de travail actuels ?"
+          },
+          "a": {
+            "en": "No. The catechetical principles concern worship and unnecessary work in their historical setting. Cases of necessity, local law and present ecclesiastical discipline require their own facts; a prewritten avatar answer cannot adjudicate them all.",
+            "fr": "Non. Ces principes concernent le culte et le travail non nécessaire dans leur contexte historique. Les cas de nécessité, le droit local et la discipline ecclésiastique actuelle doivent être examinés selon leurs faits propres ; l'avatar ne peut les trancher tous."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-028",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "originalDraftId": "SPX-028",
+      "originalOpeningQuestion": {
+        "en": "What graces and duties belong to Christian marriage?",
+        "fr": "Quels dons et quels devoirs comporte le mariage chrétien ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Is Christian marriage only a civil contract?",
+        "fr": "Le mariage chrétien n'est-il qu'un contrat civil ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q830–841",
+        "witness": "1905_LONGER_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+        "recordId": "SPX-028",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_028.F2",
+          "q": {
+            "en": "How does the sacrament assist spouses in their common duties?",
+            "fr": "Comment le sacrement soutient-il les époux dans leurs devoirs communs ?"
+          },
+          "a": {
+            "en": "The Catechism joins the grace of Matrimony to the responsibilities of married life, especially fidelity and mutual help. Its purpose is not to turn marriage into a merely private arrangement resting only upon passing affection.",
+            "fr": "Le Catéchisme rattache la grâce du mariage aux responsabilités de la vie conjugale, particulièrement à la fidélité et à l'aide mutuelle. Le mariage n'est pas ainsi réduit à un arrangement privé fondé sur une affection passagère."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_028.F3",
+          "q": {
+            "en": "Is every difficult marriage automatically an invalid one?",
+            "fr": "Un mariage difficile est-il nécessairement invalide ?"
+          },
+          "a": {
+            "en": "No. Difficulty in living a marriage does not, by itself, resolve the separate question of the matrimonial bond's validity. The general catechetical teaching cannot pronounce a canonical judgement about an individual couple.",
+            "fr": "Non. Les difficultés conjugales ne résolvent pas à elles seules la question distincte de la validité du lien. L'enseignement général du Catéchisme ne peut prononcer un jugement canonique sur un couple particulier."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-041",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "originalDraftId": "SPX-041",
+      "originalOpeningQuestion": {
+        "en": "Why does Christ call those who suffer blessed?",
+        "fr": "Pourquoi le Christ proclame-t-il bienheureux ceux qui souffrent ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Does this teaching say pain is pleasant?",
+        "fr": "Cet enseignement dit-il que la souffrance est agréable ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "locus": "1905 Catechismo maggiore Q926–940",
+        "witness": "1905_LONGER_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+        "recordId": "SPX-041",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_041.F2",
+          "q": {
+            "en": "Does the Gospel call someone to seek suffering for its own sake?",
+            "fr": "L'Évangile appelle-t-il à rechercher la souffrance pour elle-même ?"
+          },
+          "a": {
+            "en": "The Beatitudes do not make pain an end to be pursued. They proclaim the blessedness promised by God even amid affliction, contradicting the notion that comfort and prosperity are the measure of a good life.",
+            "fr": "Les Béatitudes ne font pas de la douleur une fin à poursuivre. Elles annoncent la béatitude promise par Dieu même dans l'épreuve, contre l'idée que le confort et la prospérité mesurent à eux seuls une bonne vie."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_041.F3",
+          "q": {
+            "en": "How can a person be sorrowful and still called blessed?",
+            "fr": "Comment une personne peut-elle être triste et néanmoins dite bienheureuse ?"
+          },
+          "a": {
+            "en": "The two words refer to different things: an actual trial may cause real grief, while blessedness concerns the person's relation to God and His promise. The doctrine does not ask anyone to pretend that suffering is pleasant.",
+            "fr": "Les deux expressions concernent des réalités distinctes : l'épreuve peut causer une peine réelle, tandis que la béatitude touche au rapport avec Dieu et à sa promesse. La doctrine ne demande pas de feindre que la souffrance soit agréable."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-048",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "originalDraftId": "SPX-048",
+      "originalOpeningQuestion": {
+        "en": "How can God be three Persons and one God?",
+        "fr": "Comment Dieu peut-il être trois Personnes et un seul Dieu ?"
+      },
+      "originalFirstFollowupQuestion": {
+        "en": "Does each Person possess only one third of divinity?",
+        "fr": "Chaque Personne possède-t-elle seulement un tiers de la divinité ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q68–79",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "evidenceTier": "DIRECT_PASSAGE_ANCHOR"
+      },
+      "openingAndFirstFollowup": {
+        "mode": "RESOLVE_FROM_EXISTING_BATCH2_CONTENT_OWNER",
+        "sourcePath": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+        "recordId": "SPX-048",
+        "fields": [
+          "opening.question",
+          "opening.response",
+          "followup.question",
+          "followup.response"
+        ],
+        "count": 2
+      },
+      "newFollowupChoices": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_048.F2",
+          "q": {
+            "en": "Do the three divine Persons share a single divinity?",
+            "fr": "Les trois Personnes divines possèdent-elles une seule divinité ?"
+          },
+          "a": {
+            "en": "Yes. The catechetical doctrine confesses one undivided divine nature wholly possessed by the Father, the Son and the Holy Ghost. Their distinction is personal, not a division into three gods or three portions of God.",
+            "fr": "Oui. La doctrine catéchétique confesse une nature divine indivise, possédée tout entière par le Père, le Fils et le Saint-Esprit. Leur distinction est personnelle, non une division en trois dieux ou en trois parties de Dieu."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_048.F3",
+          "q": {
+            "en": "Can the Trinity be reduced to three names for one Person?",
+            "fr": "Peut-on réduire la Trinité à trois noms d'une seule Personne ?"
+          },
+          "a": {
+            "en": "No. That would lose the real distinction between Father, Son and Holy Ghost taught by the Church. The mystery affirms both one God and three distinct Persons, without pretending to render the divine life exhaustively comprehensible.",
+            "fr": "Non. On perdrait alors la distinction réelle du Père, du Fils et du Saint-Esprit enseignée par l'Église. Le mystère affirme à la fois un seul Dieu et trois Personnes distinctes, sans prétendre épuiser la compréhension de la vie divine."
+          },
+          "state": "UNAPPROVED_HISTORICALLY_BOUNDED_EDITORIAL_RECONSTRUCTION"
+        }
+      ],
+      "speakerPolicy": "PAPALLY_APPROVED_CATECHISM_NOT_AUTHENTIC_PERSONAL_PAPAL_SPEECH",
+      "branchPolicy": "CHOOSE_ONE_OF_THREE_FOLLOWUPS_AFTER_OPENING",
+      "sourcePanel": true,
+      "release": {
+        "claim": false,
+        "english": false,
+        "french": false,
+        "voice": false,
+        "theology": false,
+        "production": false
+      }
+    }
+  ],
+  "counts": {
+    "chapters": 13,
+    "existingReferencedQATurns": 26,
+    "newQATurns": 26,
+    "combinedQATurns": 52,
+    "newLocalizedAnswers": 52
+  }
+}

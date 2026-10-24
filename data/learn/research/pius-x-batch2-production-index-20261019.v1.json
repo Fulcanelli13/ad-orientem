@@ -1,0 +1,1929 @@
+{
+  "schema": "AO_SPX_BATCH2_FIFTY_PRODUCTION_INDEX_V1",
+  "created": "2026-10-19",
+  "status": "FIFTY_DRAFTS_PRODUCED_ZERO_CERTIFIED",
+  "files": [
+    "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+    "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+    "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+    "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+    "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+    "data/learn/research/pius-x-batch2-b3-20261019.v1.json"
+  ],
+  "scope": "No first-person biographical memories; no unreviewed third-party/canonical rulings. All newly written EN/FR responses are unapproved editorial paraphrases, not papal quotations.",
+  "counts": {
+    "families": 50,
+    "turns": 100,
+    "localisedDraftResponses": 200,
+    "sourceTier": {
+      "DIRECT_PASSAGE_ANCHOR": 29,
+      "BIOGRAPHY_FACTS_ONLY": 9,
+      "PRIMARY_PARTIAL": 8,
+      "PARTIAL_PASSAGE_ANCHOR": 4
+    },
+    "sameIDasBatch1": 0,
+    "knownPotentialOverlaps": 10,
+    "uniquenessCertified": 0,
+    "approvedHistorical": 0,
+    "approvedTranslation": 0,
+    "approvedVoice": 0,
+    "published": 0
+  },
+  "entries": [
+    {
+      "id": "SPX-001",
+      "title": {
+        "en": "Why is the Mass a sacrifice?",
+        "fr": "Pourquoi la messe est-elle un sacrifice ?"
+      },
+      "part": "A1",
+      "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q652–664",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "1912 Q349 expressly asks whether the Mass is the sacrifice of the Cross; Q347–351 elaborate distinct parts of the answer.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q349",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-002",
+      "title": {
+        "en": "How should I pray and follow Mass?",
+        "fr": "Comment assister pieusement à la messe ?"
+      },
+      "part": "A1",
+      "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q665–671",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "1912 Q354 expressly asks the most fitting way to attend Mass; Q353 concerns the obligation rather than the manner.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q354",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-003",
+      "title": {
+        "en": "May I pray the Rosary during Mass?",
+        "fr": "Le chapelet est-il permis pendant la messe ?"
+      },
+      "part": "A1",
+      "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q667–669",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Rosary during Mass is not established by the abbreviated English index match; consult separate 1905 Catechism source directly.",
+        "crossWitness": {
+          "classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+          "candidateRefs": []
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-005",
+      "title": {
+        "en": "What happens at the Consecration?",
+        "fr": "Que se passe-t-il à la consécration ?"
+      },
+      "part": "A1",
+      "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q605–613",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q328 asks when bread and wine become Christ's Body and Blood; Q325, Q329 and Q330 give complementary distinctions.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q328",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-013",
+      "title": {
+        "en": "Why ask Our Lady to intercede with Christ?",
+        "fr": "Pourquoi demander l'intercession de Marie auprès du Christ ?"
+      },
+      "part": "A1",
+      "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+        "locus": "Ad diem illum 1904 §§7–14",
+        "witness": "PIUS_X_ENCYCLICAL_TEXT",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q433 directly asks whether invoking Mary and saints distrusts Christ's sole mediation; Q430 supports Mary's intercession.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q433",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-015",
+      "title": {
+        "en": "Why must I confess my sins to a priest?",
+        "fr": "Pourquoi confesser ses péchés à un prêtre ?"
+      },
+      "part": "A1",
+      "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q509–519",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Christ institutes Penance and authorizes priestly ministry (Q356–357); Q380 concerns absolution.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q356",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            },
+            {
+              "qid": "PX1912-Q357",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            },
+            {
+              "qid": "PX1912-Q380",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-016",
+      "title": {
+        "en": "How should I examine my conscience?",
+        "fr": "Comment examiner sa conscience avant la confession ?"
+      },
+      "part": "A1",
+      "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q523–549",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q359 directly explains how to examine conscience; Q358–360 specify preparation and assessment.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q359",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-017",
+      "title": {
+        "en": "Is fear of Hell a genuine motive for repentance?",
+        "fr": "La peur de l'enfer peut-elle susciter le repentir ?"
+      },
+      "part": "A1",
+      "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q550–569",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q365 explicitly describes imperfect sorrow motivated by fear of penalties; Q361–366 provide distinctions.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q365",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-018",
+      "title": {
+        "en": "Does forgiveness remove the obligation to restore stolen property?",
+        "fr": "Doit-on restituer ce qui a été volé ?"
+      },
+      "part": "A1",
+      "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q353–357",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q205 explicitly asks whether a person can be forgiven while capable but unwilling to make restitution.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q205",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-021",
+      "title": {
+        "en": "What does Baptism change in the soul?",
+        "fr": "Que produit le baptême dans l'âme ?"
+      },
+      "part": "A1",
+      "file": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q417–439",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q295–296 explicitly ask effects of Baptism and whether it transforms the person.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q295",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-battesimo.md"
+            },
+            {
+              "qid": "PX1912-Q296",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-battesimo.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-022",
+      "title": {
+        "en": "What does Confirmation add to Baptism?",
+        "fr": "Que donne la confirmation après le baptême ?"
+      },
+      "part": "A2",
+      "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q440–450",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q309 expressly asks how Confirmation makes a Christian strong in faith and virtue.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q309",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-cresima.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-026",
+      "title": {
+        "en": "How should a Christian keep Sunday holy?",
+        "fr": "Comment un chrétien doit-il sanctifier le dimanche ?"
+      },
+      "part": "A2",
+      "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q334–336",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q189 directly describes a feast day's religious instruction, good works and rest beyond Mass.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q189",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-028",
+      "title": {
+        "en": "What graces and duties belong to Christian marriage?",
+        "fr": "Quels dons et quels devoirs comporte le mariage chrétien ?"
+      },
+      "part": "A2",
+      "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q830–841",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q406 describes matrimonial sacramental grace and Q413 mutual duties; exclude suspect anachronistic civil-effect questions 409–410.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q406",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-matrimonio.md"
+            },
+            {
+              "qid": "PX1912-Q413",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-matrimonio.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-041",
+      "title": {
+        "en": "Why does Christ call those who suffer blessed?",
+        "fr": "Pourquoi le Christ proclame-t-il bienheureux ceux qui souffrent ?"
+      },
+      "part": "A2",
+      "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "locus": "1905 Catechismo maggiore Q926–940",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q265 directly asks why the afflicted can be called blessed contrary to worldly opinion.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q265",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-044",
+      "title": {
+        "en": "Why is Christian marriage indissoluble?",
+        "fr": "Pourquoi le mariage chrétien est-il indissoluble ?"
+      },
+      "part": "A2",
+      "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q830–835 and Q851",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q406 explicitly teaches the indissoluble matrimonial union; Q409 is a historically contaminated civil-law witness not used here.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q406",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-matrimonio.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-048",
+      "title": {
+        "en": "How can God be three Persons and one God?",
+        "fr": "Comment Dieu peut-il être trois Personnes et un seul Dieu ?"
+      },
+      "part": "A2",
+      "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q68–79",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q38–40 and 48 explicitly address three distinct Persons in the one divine substance and why this exceeds understanding.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q038",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md"
+            },
+            {
+              "qid": "PX1912-Q039",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md"
+            },
+            {
+              "qid": "PX1912-Q040",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md"
+            },
+            {
+              "qid": "PX1912-Q048",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-049",
+      "title": {
+        "en": "How can Jesus Christ be God and man?",
+        "fr": "Comment Jésus-Christ est-il à la fois Dieu et homme ?"
+      },
+      "part": "A2",
+      "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q85–105",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q78–79 explicitly address two natures in the one divine Person of Christ.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q078",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md"
+            },
+            {
+              "qid": "PX1912-Q079",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-051",
+      "title": {
+        "en": "Why are Scripture and Apostolic Tradition both necessary?",
+        "fr": "Pourquoi l'Écriture et la Tradition apostolique sont-elles nécessaires ?"
+      },
+      "part": "A2",
+      "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "locus": "1905 Catechismo maggiore Q874–891",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q233–236 explicitly teach that revelation is preserved in Scripture and Tradition and interpreted authoritatively.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q233",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            },
+            {
+              "qid": "PX1912-Q234",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            },
+            {
+              "qid": "PX1912-Q235",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            },
+            {
+              "qid": "PX1912-Q236",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-052",
+      "title": {
+        "en": "Why did Christ establish a visible Church?",
+        "fr": "Pourquoi le Christ a-t-il fondé une Église visible ?"
+      },
+      "part": "A2",
+      "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q255–262; 1905 Catechismo maggiore Q143–153",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q105–106 define visible membership and Christ's foundation of the Church.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q105",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+            },
+            {
+              "qid": "PX1912-Q106",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-053",
+      "title": {
+        "en": "How do we recognise the Church founded by Christ?",
+        "fr": "Comment reconnaît-on l'Église fondée par le Christ ?"
+      },
+      "part": "A2",
+      "file": "data/learn/research/pius-x-batch2-a2-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q263–271",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q107–111 articulate the four marks used to identify the Church.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q107",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+            },
+            {
+              "qid": "PX1912-Q108",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+            },
+            {
+              "qid": "PX1912-Q109",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+            },
+            {
+              "qid": "PX1912-Q110",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+            },
+            {
+              "qid": "PX1912-Q111",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-054",
+      "title": {
+        "en": "Why does the Church need Pope and bishops?",
+        "fr": "Pourquoi l'Église a-t-elle besoin du pape et des évêques ?"
+      },
+      "part": "A3",
+      "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q256–262; 1905 Catechismo maggiore Q192–209",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q112–114 describe pope, bishops and visible teaching authority.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q112",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+            },
+            {
+              "qid": "PX1912-Q113",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+            },
+            {
+              "qid": "PX1912-Q114",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-055",
+      "title": {
+        "en": "Does papal infallibility mean the Pope cannot err?",
+        "fr": "L'infaillibilité pontificale signifie-t-elle que le pape ne se trompe jamais ?"
+      },
+      "part": "A3",
+      "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "locus": "1905 Catechismo maggiore Q197–203",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q116 directly restricts papal infallibility to defining faith or moral teaching as pastor and teacher of all Christians.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q116",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-056",
+      "title": {
+        "en": "Can someone outside visible Catholic communion be saved?",
+        "fr": "Une personne hors de la communion catholique visible peut-elle être sauvée ?"
+      },
+      "part": "A3",
+      "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "locus": "1905 Catechismo maggiore Q163–172",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q132 explicitly addresses people outside visible communion without personal fault; Q117 handles a separate question about church identity.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q132",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-058",
+      "title": {
+        "en": "Do the sacraments confer grace or merely symbolize it?",
+        "fr": "Les sacrements donnent-ils la grâce ou la représentent-ils seulement ?"
+      },
+      "part": "A3",
+      "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q519–549",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q268 directly says sacraments both signify and actually confer grace.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q267",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+            },
+            {
+              "qid": "PX1912-Q268",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-059",
+      "title": {
+        "en": "What happens through Holy Orders?",
+        "fr": "Que se passe-t-il dans le sacrement de l'ordre ?"
+      },
+      "part": "A3",
+      "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q814–822",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q397 directly states the sacred power and indelible character conferred by Holy Orders; historical rite particulars in Q398 require separate dating.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q397",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-ordine.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-060",
+      "title": {
+        "en": "Why receive Extreme Unction before death is imminent?",
+        "fr": "Pourquoi ne pas attendre la dernière minute pour recevoir l'extrême-onction ?"
+      },
+      "part": "A3",
+      "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "locus": "1905 Catechismo maggiore Q808–813",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q396 explicitly recommends administering Extreme Unction while the sick person remains conscious in dangerous illness.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q396",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-estrema-unzione.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-062",
+      "title": {
+        "en": "Will our bodies rise again?",
+        "fr": "Nos corps ressusciteront-ils vraiment ?"
+      },
+      "part": "A3",
+      "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q299; 1905 Catechismo maggiore Q239–245",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q157–158 directly describe bodily resurrection and reuniting body and soul.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q157",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-risurrezione.md"
+            },
+            {
+              "qid": "PX1912-Q158",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-risurrezione.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-063",
+      "title": {
+        "en": "What is the happiness of Heaven?",
+        "fr": "En quoi consiste le bonheur du Ciel ?"
+      },
+      "part": "A3",
+      "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "locus": "1905 Catechismo maggiore Q246–251",
+        "witness": "1905_LONGER_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q14 and Q159 identify eternal enjoyment and vision of God as Heaven's happiness.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q014",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md"
+            },
+            {
+              "qid": "PX1912-Q159",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-risurrezione.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-064",
+      "title": {
+        "en": "Why is Purgatory needed after forgiveness?",
+        "fr": "Pourquoi le purgatoire après le pardon des péchés ?"
+      },
+      "part": "A3",
+      "file": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "speaker": "SOURCE_BOUND_EDUCATIONAL_RECONSTRUCTION",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q272–293; 1905 Catechismo maggiore Q776–790",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "DIRECT_PASSAGE_ANCHOR",
+        "studyProposition": "Q99 distinguishes remaining debts of punishment and Q101 explains purification before seeing God.",
+        "crossWitness": {
+          "classification": "DIRECT_CATECHISM_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q099",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md"
+            },
+            {
+              "qid": "PX1912-Q101",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "DIRECT_PASSAGE_ANCHOR",
+      "scope": "DIRECT_CATECHETICAL_TOPIC_ANCHOR_NOT_CERTIFIED_QUOTATION",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-001",
+      "title": {
+        "en": "What was your family life in Riese like?",
+        "fr": "Que sait-on de la vie familiale de Giuseppe Sarto à Riese ?"
+      },
+      "part": "B1",
+      "file": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "source": {
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "locus": "I Sarto family, childhood §§ family/infancy",
+        "witness": "SECONDARY_BIOGRAPHY",
+        "documentSupport": "BIOGRAPHY_FACTS_ONLY",
+        "studyProposition": "Parents, siblings and household context documented; source does not supply Sarto's first-person memories."
+      },
+      "sourceTier": "BIOGRAPHY_FACTS_ONLY",
+      "scope": "BIOGRAPHICAL_NARRATION_NO_PAPAL_INTERIOR_MEMORY",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-002",
+      "title": {
+        "en": "How did your parents influence your early faith?",
+        "fr": "Comment sa famille a-t-elle contribué à sa première éducation religieuse ?"
+      },
+      "part": "B1",
+      "file": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "source": {
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "locus": "L’infanzia e l’adolescenza; family paragraph",
+        "witness": "SECONDARY_BIOGRAPHY",
+        "documentSupport": "BIOGRAPHY_FACTS_ONLY",
+        "studyProposition": "Religious household and parish observance documented; degree of each parent's personal influence not independently attested as his testimony."
+      },
+      "sourceTier": "BIOGRAPHY_FACTS_ONLY",
+      "scope": "BIOGRAPHICAL_NARRATION_NO_PAPAL_INTERIOR_MEMORY",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-003",
+      "title": {
+        "en": "What drew you toward the priesthood as a boy?",
+        "fr": "Que sait-on des premiers signes de sa vocation sacerdotale ?"
+      },
+      "part": "B1",
+      "file": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "source": {
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "locus": "L’infanzia e l’adolescenza; vocation paragraph",
+        "witness": "SECONDARY_BIOGRAPHY",
+        "documentSupport": "BIOGRAPHY_FACTS_ONLY",
+        "studyProposition": "Childhood prayer at Cendrole and early vocation reported; specific internal motive is not authorial testimony."
+      },
+      "sourceTier": "BIOGRAPHY_FACTS_ONLY",
+      "scope": "BIOGRAPHICAL_NARRATION_NO_PAPAL_INTERIOR_MEMORY",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-004",
+      "title": {
+        "en": "What did you learn during your seminary years?",
+        "fr": "Que fit Giuseppe Sarto au séminaire de Padoue ?"
+      },
+      "part": "B1",
+      "file": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "source": {
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "locus": "Nel seminario di Padova (1850–1858)",
+        "witness": "SECONDARY_BIOGRAPHY",
+        "documentSupport": "BIOGRAPHY_FACTS_ONLY",
+        "studyProposition": "Courses, musical activity, leadership and grades documented; not a firsthand reflection on what he learnt."
+      },
+      "sourceTier": "BIOGRAPHY_FACTS_ONLY",
+      "scope": "BIOGRAPHICAL_NARRATION_NO_PAPAL_INTERIOR_MEMORY",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-005",
+      "title": {
+        "en": "What did serving in Tombolo teach you about souls?",
+        "fr": "Quel fut son premier ministère à Tombolo ?"
+      },
+      "part": "B1",
+      "file": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "source": {
+        "url": "https://www.papapiox.it/biografia/",
+        "locus": "I primi incarichi; Tombolo (1858–1867)",
+        "witness": "SECONDARY_BIOGRAPHY",
+        "documentSupport": "BIOGRAPHY_FACTS_ONLY",
+        "studyProposition": "Pastoral service documented; supposed lessons inferred from this period would be invented in first person."
+      },
+      "sourceTier": "BIOGRAPHY_FACTS_ONLY",
+      "scope": "BIOGRAPHICAL_NARRATION_NO_PAPAL_INTERIOR_MEMORY",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-006",
+      "title": {
+        "en": "What was your work as parish priest in Salzano?",
+        "fr": "Que faisait-il comme curé de Salzano ?"
+      },
+      "part": "B1",
+      "file": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "source": {
+        "url": "https://www.papapiox.it/biografia/",
+        "locus": "I primi incarichi; Salzano (1867–1875)",
+        "witness": "SECONDARY_BIOGRAPHY",
+        "documentSupport": "BIOGRAPHY_FACTS_ONLY",
+        "studyProposition": "Parish appointment, intensive pastoral work and service documented; specific daily duties require fuller biography."
+      },
+      "sourceTier": "BIOGRAPHY_FACTS_ONLY",
+      "scope": "BIOGRAPHICAL_NARRATION_NO_PAPAL_INTERIOR_MEMORY",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-007",
+      "title": {
+        "en": "How did serving in the diocesan curia shape your ministry?",
+        "fr": "Quelles charges occupa-t-il à la curie de Trévise ?"
+      },
+      "part": "B1",
+      "file": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "source": {
+        "url": "https://www.papapiox.it/biografia/",
+        "locus": "Biografia; Treviso curia (1875 onward)",
+        "witness": "SECONDARY_BIOGRAPHY",
+        "documentSupport": "BIOGRAPHY_FACTS_ONLY",
+        "studyProposition": "Chancellor, seminary director and canon roles attested; personal formative impact not quoted."
+      },
+      "sourceTier": "BIOGRAPHY_FACTS_ONLY",
+      "scope": "BIOGRAPHICAL_NARRATION_NO_PAPAL_INTERIOR_MEMORY",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-008",
+      "title": {
+        "en": "What challenges awaited you as Bishop of Mantua?",
+        "fr": "Quels défis rencontra-t-il comme évêque de Mantoue ?"
+      },
+      "part": "B1",
+      "file": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "source": {
+        "url": "https://www.papapiox.it/biografia/",
+        "locus": "Vescovo di Mantova",
+        "witness": "SECONDARY_BIOGRAPHY",
+        "documentSupport": "BIOGRAPHY_FACTS_ONLY",
+        "studyProposition": "Difficult diocesan and state relations, Christian renewal, and social initiatives described as later biography."
+      },
+      "sourceTier": "BIOGRAPHY_FACTS_ONLY",
+      "scope": "BIOGRAPHICAL_NARRATION_NO_PAPAL_INTERIOR_MEMORY",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-009",
+      "title": {
+        "en": "What did you seek to accomplish as Patriarch of Venice?",
+        "fr": "Que réalisa-t-il comme patriarche de Venise ?"
+      },
+      "part": "B1",
+      "file": "data/learn/research/pius-x-batch2-b1-20261019.v1.json",
+      "speaker": "THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X",
+      "source": {
+        "url": "https://www.papapiox.it/biografia/",
+        "locus": "Patriarca di Venezia",
+        "witness": "SECONDARY_BIOGRAPHY",
+        "documentSupport": "BIOGRAPHY_FACTS_ONLY",
+        "studyProposition": "Patriarchal appointment and social initiatives documented; precise first-person intention awaits primary letters."
+      },
+      "sourceTier": "BIOGRAPHY_FACTS_ONLY",
+      "scope": "BIOGRAPHICAL_NARRATION_NO_PAPAL_INTERIOR_MEMORY",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-014",
+      "title": {
+        "en": "What distinguishes authentic doctrinal development from changing dogma?",
+        "fr": "Comment distinguer le développement de la doctrine d'un changement de la vérité révélée ?"
+      },
+      "part": "B2",
+      "file": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "speaker": "SOURCE_SCOPE_EDITORIAL_EXPLANATION_NOT_AUTHENTIC_PIUS_X_SPEECH",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§11–13",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "documentSupport": "PRIMARY_PARTIAL",
+        "studyProposition": "Rejects changeable dogmatic formulae in Modernist account; positive rules for legitimate doctrinal development need other sources."
+      },
+      "sourceTier": "PRIMARY_PARTIAL",
+      "scope": "PARTIAL_PRIMARY_TEXT_NARROW_SCOPE_NOT_CONTEMPORARY_ADVICE",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-015",
+      "title": {
+        "en": "How should faith and scientific inquiry be reconciled?",
+        "fr": "Comment la foi et la recherche scientifique doivent-elles se rencontrer ?"
+      },
+      "part": "B2",
+      "file": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "speaker": "SOURCE_SCOPE_EDITORIAL_EXPLANATION_NOT_AUTHENTIC_PIUS_X_SPEECH",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§17, 45–47",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "documentSupport": "PRIMARY_PARTIAL",
+        "studyProposition": "Critiques subordination of faith to science and discusses sacred/profane study; general reconciliation requires a second constructive locus."
+      },
+      "sourceTier": "PRIMARY_PARTIAL",
+      "scope": "PARTIAL_PRIMARY_TEXT_NARROW_SCOPE_NOT_CONTEMPORARY_ADVICE",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-022",
+      "title": {
+        "en": "What should Catholics do when false teaching spreads among clergy?",
+        "fr": "Que faire lorsque des erreurs doctrinales se répandent parmi les clercs ?"
+      },
+      "part": "B2",
+      "file": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "speaker": "SOURCE_SCOPE_EDITORIAL_EXPLANATION_NOT_AUTHENTIC_PIUS_X_SPEECH",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§44–56",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "documentSupport": "PRIMARY_PARTIAL",
+        "studyProposition": "Direct prescriptions primarily address bishops and clergy, not every action lay Catholics should take in allegations against clergy."
+      },
+      "sourceTier": "PRIMARY_PARTIAL",
+      "scope": "PARTIAL_PRIMARY_TEXT_NARROW_SCOPE_NOT_CONTEMPORARY_ADVICE",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-025",
+      "title": {
+        "en": "What principles should guide Catholics facing hostile state legislation?",
+        "fr": "Quels principes retenir face à une loi d'État hostile à l'Église ?"
+      },
+      "part": "B2",
+      "file": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "speaker": "SOURCE_SCOPE_EDITORIAL_EXPLANATION_NOT_AUTHENTIC_PIUS_X_SPEECH",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11021906_vehementer-nos.html",
+        "locus": "§§7–13",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "documentSupport": "PRIMARY_PARTIAL",
+        "studyProposition": "Historically specific Catholic response to French law; not a timeless rule for all contemporary jurisdictions."
+      },
+      "sourceTier": "PRIMARY_PARTIAL",
+      "scope": "PARTIAL_PRIMARY_TEXT_NARROW_SCOPE_NOT_CONTEMPORARY_ADVICE",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-034",
+      "title": {
+        "en": "Can the Church teach ancient dogmas in genuinely new circumstances?",
+        "fr": "L'Église peut-elle enseigner les anciens dogmes dans des circonstances nouvelles ?"
+      },
+      "part": "B2",
+      "file": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "speaker": "SOURCE_SCOPE_EDITORIAL_EXPLANATION_NOT_AUTHENTIC_PIUS_X_SPEECH",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§11–13",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "documentSupport": "PRIMARY_PARTIAL",
+        "studyProposition": "Rejects dogma's variable truth; does not exhaust legitimate applications to new circumstances."
+      },
+      "sourceTier": "PRIMARY_PARTIAL",
+      "scope": "PARTIAL_PRIMARY_TEXT_NARROW_SCOPE_NOT_CONTEMPORARY_ADVICE",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-039",
+      "title": {
+        "en": "What does participation in the Church's common prayer require?",
+        "fr": "En quoi consiste la participation à la prière publique de l'Église ?"
+      },
+      "part": "B2",
+      "file": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "speaker": "SOURCE_SCOPE_EDITORIAL_EXPLANATION_NOT_AUTHENTIC_PIUS_X_SPEECH",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+        "locus": "introduction and §§1–3",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "documentSupport": "PRIMARY_PARTIAL",
+        "studyProposition": "Active participation in liturgy and public prayer is named, but exact practical behaviors require further sources."
+      },
+      "sourceTier": "PRIMARY_PARTIAL",
+      "scope": "PARTIAL_PRIMARY_TEXT_NARROW_SCOPE_NOT_CONTEMPORARY_ADVICE",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-042",
+      "title": {
+        "en": "How should children be prepared for their first Holy Communion?",
+        "fr": "Comment préparer les enfants à leur première communion ?"
+      },
+      "part": "B2",
+      "file": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "speaker": "SOURCE_SCOPE_EDITORIAL_EXPLANATION_NOT_AUTHENTIC_PIUS_X_SPEECH",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "locus": "§§19–23",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "documentSupport": "PRIMARY_PARTIAL",
+        "studyProposition": "Calls for apt illustrations and instruction before First Communion; sacramental age/precise readiness also requires Quam singulari (1910)."
+      },
+      "sourceTier": "PRIMARY_PARTIAL",
+      "scope": "PARTIAL_PRIMARY_TEXT_NARROW_SCOPE_NOT_CONTEMPORARY_ADVICE",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-EXP-044",
+      "title": {
+        "en": "How should Catholic parents respond when public schools provide no religious instruction?",
+        "fr": "Que faire si l'école publique n'enseigne pas la religion ?"
+      },
+      "part": "B2",
+      "file": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "speaker": "SOURCE_SCOPE_EDITORIAL_EXPLANATION_NOT_AUTHENTIC_PIUS_X_SPEECH",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "locus": "§23",
+        "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+        "documentSupport": "PRIMARY_PARTIAL",
+        "studyProposition": "Proposes religious classes for pupils in secular schools, not a full parent-specific course of action."
+      },
+      "sourceTier": "PRIMARY_PARTIAL",
+      "scope": "PARTIAL_PRIMARY_TEXT_NARROW_SCOPE_NOT_CONTEMPORARY_ADVICE",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-007",
+      "title": {
+        "en": "Can repentance be genuine when I repeatedly fall?",
+        "fr": "Le repentir peut-il être sincère quand on retombe dans ses fautes ?"
+      },
+      "part": "B3",
+      "file": "data/learn/research/pius-x-batch2-b3-20261019.v1.json",
+      "speaker": "SOURCE_SCOPE_EDITORIAL_EXPLANATION_NOT_AUTHENTIC_PIUS_X_SPEECH",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q550–577",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "PARTIAL_PASSAGE_ANCHOR",
+        "studyProposition": "Sorrow, purpose of amendment and occasions are present, but repeated falls as such are a distinct pastoral question.",
+        "crossWitness": {
+          "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q361",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            },
+            {
+              "qid": "PX1912-Q369",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            },
+            {
+              "qid": "PX1912-Q370",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            },
+            {
+              "qid": "PX1912-Q371",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "PARTIAL_PASSAGE_ANCHOR",
+      "scope": "PARTIAL_PRINCIPLE_ONLY_NO_PERSONAL_VERDICT",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-019",
+      "title": {
+        "en": "Can truthfully revealing a fault harm reputation?",
+        "fr": "Une révélation véridique peut-elle léser injustement la réputation ?"
+      },
+      "part": "B3",
+      "file": "data/learn/research/pius-x-batch2-b3-20261019.v1.json",
+      "speaker": "SOURCE_SCOPE_EDITORIAL_EXPLANATION_NOT_AUTHENTIC_PIUS_X_SPEECH",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q358–364",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "PARTIAL_PASSAGE_ANCHOR",
+        "studyProposition": "Q206 mentions detraction and unjust injury to reputation, Q208 reparation; justified disclosure requires more detail than these answers alone.",
+        "crossWitness": {
+          "classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q206",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            },
+            {
+              "qid": "PX1912-Q208",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "PARTIAL_PASSAGE_ANCHOR",
+      "scope": "PARTIAL_PRINCIPLE_ONLY_NO_PERSONAL_VERDICT",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-020",
+      "title": {
+        "en": "Why are hatred and bad example serious sins?",
+        "fr": "Pourquoi la haine et le mauvais exemple sont-ils de graves fautes ?"
+      },
+      "part": "B3",
+      "file": "data/learn/research/pius-x-batch2-b3-20261019.v1.json",
+      "speaker": "SOURCE_SCOPE_EDITORIAL_EXPLANATION_NOT_AUTHENTIC_PIUS_X_SPEECH",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q342–348",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "PARTIAL_PASSAGE_ANCHOR",
+        "studyProposition": "Q198–199 address bad example/scandal and Q200 enemies; the exact distinction between emotions of anger and deliberate hatred is not fully answered.",
+        "crossWitness": {
+          "classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q193",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            },
+            {
+              "qid": "PX1912-Q198",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            },
+            {
+              "qid": "PX1912-Q199",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            },
+            {
+              "qid": "PX1912-Q200",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "PARTIAL_PASSAGE_ANCHOR",
+      "scope": "PARTIAL_PRINCIPLE_ONLY_NO_PERSONAL_VERDICT",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-025",
+      "title": {
+        "en": "What do children owe parents and where does obedience end?",
+        "fr": "Quels devoirs les enfants ont-ils envers leurs parents ?"
+      },
+      "part": "B3",
+      "file": "data/learn/research/pius-x-batch2-b3-20261019.v1.json",
+      "speaker": "SOURCE_SCOPE_EDITORIAL_EXPLANATION_NOT_AUTHENTIC_PIUS_X_SPEECH",
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano manuscript Q337–341",
+        "witness": "SALZANO_EDITORIAL_NUMBERED_CATECHISM",
+        "documentSupport": "PARTIAL_PASSAGE_ANCHOR",
+        "studyProposition": "The full Italian answers prescribe obedience to parents and superiors, but do not expressly state the limit for immoral orders; obtain Salzano's explicit qualification.",
+        "crossWitness": {
+          "classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+          "candidateRefs": [
+            {
+              "qid": "PX1912-Q190",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            },
+            {
+              "qid": "PX1912-Q191",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            },
+            {
+              "qid": "PX1912-Q192",
+              "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            }
+          ]
+        }
+      },
+      "sourceTier": "PARTIAL_PASSAGE_ANCHOR",
+      "scope": "PARTIAL_PRINCIPLE_ONLY_NO_PERSONAL_VERDICT",
+      "editorial": "DRAFT_NOT_APPROVED",
+      "approval": {
+        "historical": false,
+        "theological": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "runtime": false
+      }
+    }
+  ],
+  "potentialOverlaps": [
+    {
+      "id": "SPX-003",
+      "other": "SPX-PILOT-02",
+      "relation": "Rosary permitted at Mass",
+      "approvedMerge": false,
+      "review": "SEMANTIC_DECISION_REQUIRED"
+    },
+    {
+      "id": "SPX-053",
+      "other": "SPX-EXP-035",
+      "relation": "Four marks of Church",
+      "approvedMerge": false,
+      "review": "SEMANTIC_DECISION_REQUIRED"
+    },
+    {
+      "id": "SPX-054",
+      "other": "SPX-EXP-036",
+      "relation": "Communion with Roman Pontiff",
+      "approvedMerge": false,
+      "review": "SEMANTIC_DECISION_REQUIRED"
+    },
+    {
+      "id": "SPX-EXP-014",
+      "other": "SPX-EXP-034",
+      "relation": "Dogma and development both in batch2",
+      "approvedMerge": false,
+      "review": "SEMANTIC_DECISION_REQUIRED"
+    },
+    {
+      "id": "SPX-EXP-022",
+      "other": "SPX-EXP-019",
+      "relation": "Episcopal policing of modernism",
+      "approvedMerge": false,
+      "review": "SEMANTIC_DECISION_REQUIRED"
+    },
+    {
+      "id": "SPX-EXP-025",
+      "other": "SPX-EXP-024",
+      "relation": "Vehementer nos historic French legislation",
+      "approvedMerge": false,
+      "review": "SEMANTIC_DECISION_REQUIRED"
+    },
+    {
+      "id": "SPX-EXP-039",
+      "other": "SPX-002",
+      "relation": "Participation in Mass and common prayer",
+      "approvedMerge": false,
+      "review": "SEMANTIC_DECISION_REQUIRED"
+    },
+    {
+      "id": "SPX-EXP-042",
+      "other": "SPX-PILOT-10",
+      "relation": "Preparation for First Communion",
+      "approvedMerge": false,
+      "review": "SEMANTIC_DECISION_REQUIRED"
+    },
+    {
+      "id": "SPX-EXP-044",
+      "other": "SPX-EXP-043",
+      "relation": "Religious teaching for children in public schools",
+      "approvedMerge": false,
+      "review": "SEMANTIC_DECISION_REQUIRED"
+    },
+    {
+      "id": "SPX-001",
+      "other": "SPX-PILOT-02",
+      "relation": "Mass theology adjacent to participation, not necessarily duplicate",
+      "approvedMerge": false,
+      "review": "SEMANTIC_DECISION_REQUIRED"
+    }
+  ],
+  "owner": "PR #1458",
+  "routerOwner": "PR #1443",
+  "voiceOwner": "PR #1419",
+  "previewOwner": "PR #1402",
+  "firstWave": "data/learn/research/pius-x-batch50-production-manifest-20261019.v1.json",
+  "editorialRule": "Partial witnesses only support the narrow proposition. Biography is third-person narrator text; app must not display it as simulated Pius X speech.",
+  "witnessCaution": "Original 1905 longer Catechism and Salzano passages are research-located; cross-links to the online 1912 transcription are independent digital witnesses and remain uncollated against historic print."
+}

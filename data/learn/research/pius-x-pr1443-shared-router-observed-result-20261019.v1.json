@@ -1,0 +1,84 @@
+{
+  "schema": "AO_PIUS_X_PR1443_SHARED_ROUTER_OBSERVED_RESULT_V1",
+  "observed_on": "2026-10-19",
+  "status": "ACTUAL_PINNED_ROUTER_EXECUTION_DIAGNOSTIC_NOT_ANSWER_PUBLICATION",
+  "test_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39264387257",
+  "diagnostic_artifact_name": "pius-x-pr1443-48-router-diagnostic",
+  "source_fixture": "data/learn/research/pius-x-12case-paraphrases-followups-20261019.v1.json",
+  "source_fixture_owner": "PR #1458",
+  "source_router_owner": "PR #1443",
+  "source_router_pinned_head": "b4dd46743d641bfaa6076c6bb2fd8641c47077b6",
+  "measured_case_count": 48,
+  "catalog_topic_count": 172,
+  "catalog_pius_topics": 21,
+  "precise_new_family_topics_source_navigable": 0,
+  "sample_composition": {
+    "alternate_user_phrasings": 36,
+    "contextual_followups": 12,
+    "specific_case_families": 12
+  },
+  "observed": {
+    "shared_router": {
+      "no_coverage": 45,
+      "clarify": 0,
+      "unconfirmed_unsupported_navigation": 3,
+      "unsupported_handoff": 0,
+      "answers_generated": 0,
+      "silent_handoffs": 0
+    },
+    "hybrid_router": {
+      "no_coverage": 48,
+      "clarify": 0,
+      "unconfirmed_unsupported_navigation": 0,
+      "unsupported_handoff": 0,
+      "answers_generated": 0,
+      "silent_handoffs": 0
+    }
+  },
+  "shared_router_false_positives": [
+    {
+      "utterance_id": "SPX-PILOT-02-V3",
+      "user_question": "Does Pius X say I must never pray the Rosary during Mass?",
+      "source_research_owner": "SPX-003",
+      "selected_topic_id": "pius.catechism_q418",
+      "selected_witness": "PX1912-Q418",
+      "reason": "Generic prayer guidance does not answer the historically disputed permission for the Rosary during Mass; answer locus is 1905 longer Q667–669.",
+      "requires_question_confirmation": true
+    },
+    {
+      "utterance_id": "SPX-PILOT-03-V2",
+      "user_question": "Is a temptation itself already a sin?",
+      "source_research_owner": "SPX-008",
+      "selected_topic_id": "pius.catechism_q135",
+      "selected_witness": "PX1912-Q135",
+      "reason": "Generic definition of sin does not establish the involuntary thought versus consent distinction; source locus is Salzano editorial Q541–543.",
+      "requires_question_confirmation": true
+    },
+    {
+      "utterance_id": "SPX-PILOT-04-V2",
+      "user_question": "What prayers and recollection are recommended after the Host?",
+      "source_research_owner": "SPX-006",
+      "selected_topic_id": "faith.real_presence",
+      "selected_witness": "PX1912-Q325, PX1912-Q329",
+      "reason": "Eucharistic Real Presence doctrine is not the precise post-Communion thanksgiving guidance located in Salzano Q506–508.",
+      "requires_question_confirmation": true
+    }
+  ],
+  "limitations": [
+    "This is an assistant-authored diagnostic sample, not independent visitor traffic and not general router accuracy.",
+    "Every relevant precise new family is absent from the source-navigable PR #1443 catalog; the 48 probes measure false positive coverage and safe abstention, not successful answer retrieval.",
+    "No passage-level source material was automatically imported into PR #1443; its router remains owner.",
+    "Both code variants required question confirmation for inferred incorrect source navigation and produced no answer text.",
+    "Future router changes require a new pinned runtime evaluation; metrics must not be assumed to carry over."
+  ],
+  "next_acceptance_gate": [
+    "Have PR #1443 owner integrate an exact source-navigation bridge referencing original 1905, Salzano, papal and dicastery witness records without copying answers or overriding original Catechism owner.",
+    "Re-run the same 48 probes against new pinned PR #1443 head and add controlled source-specific routing success scores only after relevant sources exist.",
+    "Keep historical voice, doctrinal fidelity, and completeness as separate release gates; a route is never proof of an answer."
+  ],
+  "approval": {
+    "doctrinal_answers_certified": 0,
+    "visitor_replies_published": 0,
+    "original_source_owners_replaced": false
+  }
+}

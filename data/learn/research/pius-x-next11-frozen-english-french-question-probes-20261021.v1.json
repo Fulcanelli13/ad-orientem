@@ -1,0 +1,398 @@
+{
+  "schema": "AO_SPX_11_ADDITIONAL_DOCUMENTARY_INTENTS_FROZEN_BEFORE_ROUTER_EXTENSION_V1",
+  "date": "2026-10-21",
+  "status": "EDITOR_AUTHORED_NOT_INDEPENDENT_VISITOR_HOLDOUT",
+  "source": "34-turn completed source-first benchmark, existing claims, original Vatican editions; all proposals unapproved",
+  "questionsPerTopic": 4,
+  "records": [
+    {
+      "sourceId": "SPX-PILOT-15",
+      "document": "ACERBO",
+      "locator": "Acerbo nimis §§1–2",
+      "title": {
+        "en": "Religious ignorance and Christian life",
+        "fr": "Ignorance religieuse et vie chrétienne"
+      },
+      "questions": [
+        {
+          "id": "P15-1",
+          "en": "Why did Pius X think ignorance weakened Christian life?",
+          "fr": "Pourquoi Pie X voyait-il dans l'ignorance religieuse une cause de déclin ?"
+        },
+        {
+          "id": "P15-2",
+          "en": "Were well-educated people also ignorant of the faith?",
+          "fr": "Des personnes cultivées pouvaient-elles ignorer la foi ?"
+        }
+      ],
+      "selectionPlans": [
+        {
+          "name": "A_IGNORANCE",
+          "turn": "SPX.BENCH.ACERBO.T1",
+          "segmentSuffixes": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "A_EDUCATED",
+          "turn": "SPX.BENCH.ACERBO.T2",
+          "segmentSuffixes": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "SPX-PILOT-16",
+      "document": "ACERBO",
+      "locator": "Acerbo nimis §§7–9",
+      "title": {
+        "en": "Pastors' duty to teach Christian doctrine",
+        "fr": "Le devoir des pasteurs d'enseigner la doctrine"
+      },
+      "questions": [
+        {
+          "id": "P16-1",
+          "en": "Must pastors teach the faith and not only preach?",
+          "fr": "Les pasteurs doivent-ils enseigner la foi, et pas seulement prêcher ?"
+        },
+        {
+          "id": "P16-2",
+          "en": "Why is instruction a duty of a parish priest?",
+          "fr": "Pourquoi un prêtre de paroisse doit-il instruire ses fidèles ?"
+        }
+      ],
+      "selectionPlans": [
+        {
+          "name": "A_PASTORS",
+          "turn": "SPX.BENCH.ACERBO.T6",
+          "segmentSuffixes": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "SPX-PILOT-17",
+      "document": "ACERBO",
+      "locator": "Acerbo nimis §§25–26",
+      "title": {
+        "en": "Preparation for simple catechetical instruction",
+        "fr": "La préparation d'une catéchèse simple"
+      },
+      "questions": [
+        {
+          "id": "P17-1",
+          "en": "Why is explaining the catechism simply harder than a learned sermon?",
+          "fr": "Pourquoi enseigner simplement le catéchisme est-il plus difficile qu'un grand sermon ?"
+        },
+        {
+          "id": "P17-2",
+          "en": "Does a catechist need to prepare even for uneducated hearers?",
+          "fr": "Un catéchiste doit-il se préparer pour instruire des personnes peu instruites ?"
+        }
+      ],
+      "selectionPlans": [
+        {
+          "name": "A_CATECHIST_PREPARATION",
+          "turn": "SPX.BENCH.ACERBO.T9",
+          "segmentSuffixes": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "SPX-PILOT-18",
+      "document": "ACERBO",
+      "locator": "Acerbo nimis §16",
+      "title": {
+        "en": "Baptismal faith and continuing instruction",
+        "fr": "Foi baptismale et instruction continue"
+      },
+      "questions": [
+        {
+          "id": "P18-1",
+          "en": "Is faith received at Baptism enough without learning doctrine?",
+          "fr": "La foi reçue au baptême suffit-elle sans instruction doctrinale ?"
+        },
+        {
+          "id": "P18-2",
+          "en": "Why must baptismal faith be nourished by catechesis?",
+          "fr": "Pourquoi la foi du baptême doit-elle être nourrie par le catéchisme ?"
+        }
+      ],
+      "selectionPlans": [
+        {
+          "name": "A_BAPTISM_FAITH",
+          "turn": "SPX.BENCH.ACERBO.T11",
+          "segmentSuffixes": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "SPX-PILOT-19",
+      "document": "ESUPREMI",
+      "locator": "E supremi §12",
+      "title": {
+        "en": "Religious instruction as apostolic renewal",
+        "fr": "L'instruction religieuse dans le renouveau apostolique"
+      },
+      "questions": [
+        {
+          "id": "P19-1",
+          "en": "How could teaching religion bring people back to Christ?",
+          "fr": "Comment l'enseignement religieux peut-il ramener les âmes au Christ ?"
+        },
+        {
+          "id": "P19-2",
+          "en": "Did Pius X believe educated people still needed instruction in the faith?",
+          "fr": "Pie X pensait-il que même les gens instruits avaient besoin de doctrine religieuse ?"
+        }
+      ],
+      "selectionPlans": [
+        {
+          "name": "E_INSTRUCTION",
+          "turn": "SPX.BENCH.ESUPREMI.T5",
+          "segmentSuffixes": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "SPX-PILOT-20",
+      "document": "ESUPREMI",
+      "locator": "E supremi §14",
+      "title": {
+        "en": "Lay apostolate and concrete Christian action",
+        "fr": "Apostolat des fidèles et action chrétienne"
+      },
+      "questions": [
+        {
+          "id": "P20-1",
+          "en": "Were lay Catholics also expected to work for Christ?",
+          "fr": "Les fidèles laïcs devaient-ils aussi travailler pour le Christ ?"
+        },
+        {
+          "id": "P20-2",
+          "en": "Why are Christian works more important than talking about duties?",
+          "fr": "Pourquoi agir chrétiennement plutôt que seulement parler de ses devoirs ?"
+        }
+      ],
+      "selectionPlans": [
+        {
+          "name": "E_LAY_APOSTOLATE",
+          "turn": "SPX.BENCH.ESUPREMI.T8",
+          "segmentSuffixes": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "E_PRACTICAL_WORKS",
+          "turn": "SPX.BENCH.ESUPREMI.T9",
+          "segmentSuffixes": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "SPX-PILOT-21",
+      "document": "HAERENT",
+      "locator": "Haerent animo §§8–10",
+      "title": {
+        "en": "Priestly holiness and active ministry",
+        "fr": "Sainteté sacerdotale et ministère actif"
+      },
+      "questions": [
+        {
+          "id": "P21-1",
+          "en": "Does a priest become holy through parish work alone?",
+          "fr": "Le travail pastoral suffit-il à sanctifier un prêtre ?"
+        },
+        {
+          "id": "P21-2",
+          "en": "Should a priest abandon his parish duties to pursue holiness?",
+          "fr": "Un prêtre devrait-il abandonner sa paroisse pour devenir saint ?"
+        }
+      ],
+      "selectionPlans": [
+        {
+          "name": "H_SERVICE_HOLINESS",
+          "turn": "SPX.BENCH.HAERENT.T2",
+          "segmentSuffixes": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "H_MINISTRY_BALANCE",
+          "turn": "SPX.BENCH.HAERENT.T3",
+          "segmentSuffixes": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "SPX-PILOT-22",
+      "document": "HAERENT",
+      "locator": "Haerent animo §§22–23",
+      "title": {
+        "en": "Priestly spiritual reading",
+        "fr": "Lecture spirituelle des prêtres"
+      },
+      "questions": [
+        {
+          "id": "P22-1",
+          "en": "Why should a priest read Scripture and spiritual books?",
+          "fr": "Pourquoi un prêtre devrait-il lire l'Écriture et des livres spirituels ?"
+        },
+        {
+          "id": "P22-2",
+          "en": "Can spiritual reading help a priest who already prays?",
+          "fr": "La lecture spirituelle aide-t-elle un prêtre qui prie déjà ?"
+        }
+      ],
+      "selectionPlans": [
+        {
+          "name": "H_SPIRITUAL_READING",
+          "turn": "SPX.BENCH.HAERENT.T9",
+          "segmentSuffixes": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "SPX-PILOT-23",
+      "document": "HAERENT",
+      "locator": "Haerent animo §§25–27",
+      "title": {
+        "en": "Priestly examination of conscience",
+        "fr": "Examen de conscience du prêtre"
+      },
+      "questions": [
+        {
+          "id": "P23-1",
+          "en": "Why did Pius X recommend daily examination of conscience to priests?",
+          "fr": "Pourquoi Pie X recommandait-il aux prêtres l'examen de conscience quotidien ?"
+        },
+        {
+          "id": "P23-2",
+          "en": "Should a priest review his own words and actions each day?",
+          "fr": "Un prêtre devrait-il examiner chaque jour ses paroles et ses actions ?"
+        }
+      ],
+      "selectionPlans": [
+        {
+          "name": "H_EXAMINATION",
+          "turn": "SPX.BENCH.HAERENT.T10",
+          "segmentSuffixes": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "SPX-PILOT-24",
+      "document": "HAERENT",
+      "locator": "Haerent animo §§34–36",
+      "title": {
+        "en": "Priestly retreats and mutual support",
+        "fr": "Retraites sacerdotales et soutien mutuel"
+      },
+      "questions": [
+        {
+          "id": "P24-1",
+          "en": "Did Pius X recommend spiritual retreats for priests?",
+          "fr": "Pie X recommandait-il des retraites spirituelles aux prêtres ?"
+        },
+        {
+          "id": "P24-2",
+          "en": "Why did he encourage associations among priests?",
+          "fr": "Pourquoi encourageait-il les associations entre prêtres ?"
+        }
+      ],
+      "selectionPlans": [
+        {
+          "name": "H_RETREATS",
+          "turn": "SPX.BENCH.HAERENT.T13",
+          "segmentSuffixes": [
+            1
+          ]
+        },
+        {
+          "name": "H_PRIESTLY_ASSOCIATIONS",
+          "turn": "SPX.BENCH.HAERENT.T13",
+          "segmentSuffixes": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "sourceId": "SPX-PILOT-25",
+      "document": "HAERENT",
+      "locator": "Haerent animo §37",
+      "title": {
+        "en": "Pius X's concluding prayer for clergy",
+        "fr": "La prière finale de Pie X pour le clergé"
+      },
+      "questions": [
+        {
+          "id": "P25-1",
+          "en": "What did Pius X ask of the Sacred Heart for priests?",
+          "fr": "Que demandait Pie X au Sacré-Cœur pour les prêtres ?"
+        },
+        {
+          "id": "P25-2",
+          "en": "How did he conclude his prayer for the clergy?",
+          "fr": "Comment terminait-il sa prière pour le clergé ?"
+        }
+      ],
+      "selectionPlans": [
+        {
+          "name": "H_PRAYER_CLERGY",
+          "turn": "SPX.BENCH.HAERENT.T11",
+          "segmentSuffixes": [
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "negativeContrasts": [
+    {
+      "en": "Is my private distraction during Mass a mortal sin?",
+      "fr": "Mes distractions à la messe sont-elles un péché mortel ?"
+    },
+    {
+      "en": "Should a layperson make an annual priestly retreat?",
+      "fr": "Un laïc est-il obligé de faire la retraite annuelle des prêtres ?"
+    },
+    {
+      "en": "What is the present legal requirement for parish catechism instruction?",
+      "fr": "Quelle règle actuelle impose le catéchisme en paroisse ?"
+    },
+    {
+      "en": "What should I do about my own unforgiven sins?",
+      "fr": "Que dois-je faire pour mes propres péchés non pardonnés ?"
+    }
+  ]
+}

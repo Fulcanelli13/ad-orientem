@@ -1,0 +1,952 @@
+{
+  "schema": "AO_PIUS_X_P1_NEXT40_FULL_PASSAGE_WITNESS_REVIEW_V1",
+  "date": "2026-10-19",
+  "issue": "https://github.com/Fulcanelli13/ad-orientem/issues/1457",
+  "scope": "SPX-025..SPX-064",
+  "status": "RESEARCH_ONLY_PINNED_ITALIAN_DIGITAL_WITNESS_NOT_1912_FACSIMILE",
+  "historical_edition_warning": "PX1912 Q409–410 online source contains marriage civil-effects provisions that are legally post-1929, so this transcription cannot uncritically be represented as an unchanged Pius X-era 1912 printing. See separately recorded edition discrepancy hold.",
+  "counts": {
+    "PARTIAL_ANSWER_TO_BROADER_QUESTION": 6,
+    "DIRECT_CATECHISM_QUESTION": 19,
+    "RELATED_DOCTRINE_NOT_SAME_QUESTION": 11,
+    "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES": 3,
+    "MISMATCHED_DOCTRINAL_DISTINCTION": 1
+  },
+  "records": [
+    {
+      "id": "SPX-025",
+      "classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "qids": [
+        "PX1912-Q190",
+        "PX1912-Q191",
+        "PX1912-Q192"
+      ],
+      "rationale": "The full Italian answers prescribe obedience to parents and superiors, but do not expressly state the limit for immoral orders; obtain Salzano's explicit qualification.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q190",
+          "section": "legge-comandamenti.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+        },
+        {
+          "qid": "PX1912-Q191",
+          "section": "legge-comandamenti.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+        },
+        {
+          "qid": "PX1912-Q192",
+          "section": "legge-comandamenti.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-026",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q189"
+      ],
+      "rationale": "Q189 directly describes a feast day's religious instruction, good works and rest beyond Mass.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q189",
+          "section": "legge-comandamenti.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-027",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q102",
+        "PX1912-Q123"
+      ],
+      "rationale": "Q102 expressly discusses suffrages for Purgatory; Q123 connects them to the communion of saints.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q102",
+          "section": "credo-venuta.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md"
+        },
+        {
+          "qid": "PX1912-Q123",
+          "section": "credo-chiesa.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-028",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q406",
+        "PX1912-Q413"
+      ],
+      "rationale": "Q406 describes matrimonial sacramental grace and Q413 mutual duties; exclude suspect anachronistic civil-effect questions 409–410.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q406",
+          "section": "sacramento-matrimonio.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-matrimonio.md"
+        },
+        {
+          "qid": "PX1912-Q413",
+          "section": "sacramento-matrimonio.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-matrimonio.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-029",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "qids": [
+        "PX1912-Q242"
+      ],
+      "rationale": "Q242 grounds neighbourly love in God's image but does not enumerate spiritual and corporal works of mercy.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q242",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-030",
+      "classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "qids": [],
+      "rationale": "Church-crisis response belongs to Iucunda sane; no direct 1912 QID in the screened set.",
+      "review_basis": "NO_RELEVANT_CANDIDATE_LOCATED_FROM_BOUNDED_SCREENING",
+      "candidate_references": [],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-031",
+      "classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "qids": [
+        "PX1912-Q243"
+      ],
+      "rationale": "Q243 expressly prescribes love of enemies and forgiveness, but does not give situational counsel for serious abuse or reconciliation.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q243",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-032",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "qids": [
+        "PX1912-Q243"
+      ],
+      "rationale": "Forgiveness of enemies is not the same specific intention as choosing the manner of fraternal correction.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q243",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-033",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "qids": [
+        "PX1912-Q418"
+      ],
+      "rationale": "Q418 calls for attentiveness and devotion but does not analyse reasons prayer becomes mechanical.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q418",
+          "section": "orazione.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-034",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "qids": [
+        "PX1912-Q416"
+      ],
+      "rationale": "Q416 defines mental prayer/meditation but does not lay out meditation upon Christ's life.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q416",
+          "section": "orazione.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-035",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "qids": [
+        "PX1912-Q234"
+      ],
+      "rationale": "Q234 defines Scripture; spiritual-reading benefits and daily practice are not supplied here.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q234",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-036",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "qids": [
+        "PX1912-Q359"
+      ],
+      "rationale": "Q359 describes conscience examination before Confession, not the distinct evening daily examen.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q359",
+          "section": "sacramento-penitenza.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-037",
+      "classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "qids": [
+        "PX1912-Q238",
+        "PX1912-Q239"
+      ],
+      "rationale": "Q238–239 define hope and warn against despair, but do not make a full distinction from presumption.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q238",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        },
+        {
+          "qid": "PX1912-Q239",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-038",
+      "classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "qids": [],
+      "rationale": "Fear of the Lord / gifts of the Spirit absent from directly screened short-question candidates; check distinct long 1905 witness.",
+      "review_basis": "NO_RELEVANT_CANDIDATE_LOCATED_FROM_BOUNDED_SCREENING",
+      "candidate_references": [],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-039",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "qids": [
+        "PX1912-Q255"
+      ],
+      "rationale": "Q255 defines prudence only; it does not explain gift of counsel or promise personal directional guidance.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q255",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-040",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "qids": [
+        "PX1912-Q264"
+      ],
+      "rationale": "Q264 lists meekness among Beatitudes but does not distinguish meekness from weakness.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q264",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-041",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q265"
+      ],
+      "rationale": "Q265 directly asks why the afflicted can be called blessed contrary to worldly opinion.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q265",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-042",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "qids": [
+        "PX1912-Q264"
+      ],
+      "rationale": "Q264 lists peacemakers but does not explain how to practise peacemaking.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q264",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-043",
+      "classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "qids": [
+        "PX1912-Q240",
+        "PX1912-Q241",
+        "PX1912-Q242"
+      ],
+      "rationale": "Q240–242 define charity and duties; the ordering of love before the commandments is a separate developed Salzano argument.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q240",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        },
+        {
+          "qid": "PX1912-Q241",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        },
+        {
+          "qid": "PX1912-Q242",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-044",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q406"
+      ],
+      "rationale": "Q406 explicitly teaches the indissoluble matrimonial union; Q409 is a historically contaminated civil-law witness not used here.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q406",
+          "section": "sacramento-matrimonio.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-matrimonio.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-045",
+      "classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "qids": [],
+      "rationale": "Mary's disposition at Calvary is sourced to Ad diem illum, outside short Catechism candidates.",
+      "review_basis": "NO_RELEVANT_CANDIDATE_LOCATED_FROM_BOUNDED_SCREENING",
+      "candidate_references": [],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-046",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "qids": [
+        "PX1912-Q264",
+        "PX1912-Q265"
+      ],
+      "rationale": "Q264 names poor in spirit and Q265 comments on Beatitudes generally; no specific definition of poverty of spirit.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q264",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        },
+        {
+          "qid": "PX1912-Q265",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-047",
+      "classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "qids": [
+        "PX1912-Q043",
+        "PX1912-Q046",
+        "PX1912-Q304"
+      ],
+      "rationale": "Q43–46 establish the Holy Spirit as divine Person, while Q304 covers Confirmation; the full action in Church and soul requires additional evidence.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q043",
+          "section": "credo-unita-trinita.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md"
+        },
+        {
+          "qid": "PX1912-Q046",
+          "section": "credo-unita-trinita.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md"
+        },
+        {
+          "qid": "PX1912-Q304",
+          "section": "sacramento-cresima.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-cresima.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-048",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q038",
+        "PX1912-Q039",
+        "PX1912-Q040",
+        "PX1912-Q048"
+      ],
+      "rationale": "Q38–40 and 48 explicitly address three distinct Persons in the one divine substance and why this exceeds understanding.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q038",
+          "section": "credo-unita-trinita.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md"
+        },
+        {
+          "qid": "PX1912-Q039",
+          "section": "credo-unita-trinita.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md"
+        },
+        {
+          "qid": "PX1912-Q040",
+          "section": "credo-unita-trinita.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md"
+        },
+        {
+          "qid": "PX1912-Q048",
+          "section": "credo-unita-trinita.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-unita-trinita.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-049",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q078",
+        "PX1912-Q079"
+      ],
+      "rationale": "Q78–79 explicitly address two natures in the one divine Person of Christ.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q078",
+          "section": "credo-incarnazione.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md"
+        },
+        {
+          "qid": "PX1912-Q079",
+          "section": "credo-incarnazione.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-050",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "qids": [
+        "PX1912-Q090",
+        "PX1912-Q091",
+        "PX1912-Q092"
+      ],
+      "rationale": "Q90–92 narrate the Resurrection but do not describe the Apostles' initial hesitation or evidential reaction.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q090",
+          "section": "credo-incarnazione.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md"
+        },
+        {
+          "qid": "PX1912-Q091",
+          "section": "credo-incarnazione.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md"
+        },
+        {
+          "qid": "PX1912-Q092",
+          "section": "credo-venuta.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-051",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q233",
+        "PX1912-Q234",
+        "PX1912-Q235",
+        "PX1912-Q236"
+      ],
+      "rationale": "Q233–236 explicitly teach that revelation is preserved in Scripture and Tradition and interpreted authoritatively.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q233",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        },
+        {
+          "qid": "PX1912-Q234",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        },
+        {
+          "qid": "PX1912-Q235",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        },
+        {
+          "qid": "PX1912-Q236",
+          "section": "legge-virtu.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-052",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q105",
+        "PX1912-Q106"
+      ],
+      "rationale": "Q105–106 define visible membership and Christ's foundation of the Church.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q105",
+          "section": "credo-chiesa.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+        },
+        {
+          "qid": "PX1912-Q106",
+          "section": "credo-chiesa.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-053",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q107",
+        "PX1912-Q108",
+        "PX1912-Q109",
+        "PX1912-Q110",
+        "PX1912-Q111"
+      ],
+      "rationale": "Q107–111 articulate the four marks used to identify the Church.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q107",
+          "section": "credo-chiesa.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+        },
+        {
+          "qid": "PX1912-Q108",
+          "section": "credo-chiesa.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+        },
+        {
+          "qid": "PX1912-Q109",
+          "section": "credo-chiesa.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+        },
+        {
+          "qid": "PX1912-Q110",
+          "section": "credo-chiesa.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+        },
+        {
+          "qid": "PX1912-Q111",
+          "section": "credo-chiesa.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-054",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q112",
+        "PX1912-Q113",
+        "PX1912-Q114"
+      ],
+      "rationale": "Q112–114 describe pope, bishops and visible teaching authority.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q112",
+          "section": "credo-chiesa.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+        },
+        {
+          "qid": "PX1912-Q113",
+          "section": "credo-chiesa.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+        },
+        {
+          "qid": "PX1912-Q114",
+          "section": "credo-chiesa.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-055",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q116"
+      ],
+      "rationale": "Q116 directly restricts papal infallibility to defining faith or moral teaching as pastor and teacher of all Christians.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q116",
+          "section": "credo-chiesa.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-056",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q132"
+      ],
+      "rationale": "Q132 explicitly addresses people outside visible communion without personal fault; Q117 handles a separate question about church identity.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q132",
+          "section": "credo-remissione-peccati.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-057",
+      "classification": "MISMATCHED_DOCTRINAL_DISTINCTION",
+      "qids": [
+        "PX1912-Q269",
+        "PX1912-Q270",
+        "PX1912-Q271"
+      ],
+      "rationale": "CRITICAL: Q269–271 distinguish sanctifying and sacramental grace, not sanctifying and ACTUAL grace. Do not reuse them as if they answer SPX-057.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q269",
+          "section": "sacramenti-in-generale.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+        },
+        {
+          "qid": "PX1912-Q270",
+          "section": "sacramenti-in-generale.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+        },
+        {
+          "qid": "PX1912-Q271",
+          "section": "sacramenti-in-generale.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-058",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q267",
+        "PX1912-Q268"
+      ],
+      "rationale": "Q268 directly says sacraments both signify and actually confer grace.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q267",
+          "section": "sacramenti-in-generale.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+        },
+        {
+          "qid": "PX1912-Q268",
+          "section": "sacramenti-in-generale.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-059",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q397"
+      ],
+      "rationale": "Q397 directly states the sacred power and indelible character conferred by Holy Orders; historical rite particulars in Q398 require separate dating.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q397",
+          "section": "sacramento-ordine.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-ordine.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-060",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q396"
+      ],
+      "rationale": "Q396 explicitly recommends administering Extreme Unction while the sick person remains conscious in dangerous illness.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q396",
+          "section": "sacramento-estrema-unzione.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-estrema-unzione.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-061",
+      "classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "qids": [
+        "PX1912-Q097",
+        "PX1912-Q098"
+      ],
+      "rationale": "Q97 confirms particular and general judgments, but not the rationale for the public last judgment.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q097",
+          "section": "credo-venuta.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md"
+        },
+        {
+          "qid": "PX1912-Q098",
+          "section": "credo-venuta.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-062",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q157",
+        "PX1912-Q158"
+      ],
+      "rationale": "Q157–158 directly describe bodily resurrection and reuniting body and soul.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q157",
+          "section": "credo-risurrezione.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-risurrezione.md"
+        },
+        {
+          "qid": "PX1912-Q158",
+          "section": "credo-risurrezione.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-risurrezione.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-063",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q014",
+        "PX1912-Q159"
+      ],
+      "rationale": "Q14 and Q159 identify eternal enjoyment and vision of God as Heaven's happiness.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q014",
+          "section": "lezione-preliminare.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md"
+        },
+        {
+          "qid": "PX1912-Q159",
+          "section": "credo-risurrezione.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-risurrezione.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    },
+    {
+      "id": "SPX-064",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "qids": [
+        "PX1912-Q099",
+        "PX1912-Q101"
+      ],
+      "rationale": "Q99 distinguishes remaining debts of punishment and Q101 explains purification before seeing God.",
+      "review_basis": "PINNED_ITALIAN_DIGITAL_FULL_QA_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q099",
+          "section": "credo-venuta.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md"
+        },
+        {
+          "qid": "PX1912-Q101",
+          "section": "credo-venuta.md",
+          "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md"
+        }
+      ],
+      "provisional": true,
+      "facsimile_1912_verified": false,
+      "answered_for_visitors": false
+    }
+  ],
+  "classification_review_note": "Direct Catechism question indicates the identified historical digital question closely addresses the family title; not an authenticated Pius X quote, doctrinal certification or an approved merge of visitor intents."
+}

@@ -1,0 +1,427 @@
+{
+  "schema": "AO_UNATTENDED_RESEARCH_COORDINATION_LEDGER_V1",
+  "updated": "2026-10-21",
+  "repository": "Fulcanelli13/ad-orientem",
+  "role": "Progress and resume pointers only; original answer registries remain canonical",
+  "instruction": "SAVE_SELECT_RESEARCH_SAVE_CONTINUE; internal batch sizes do not stop execution",
+  "completionCriteria": "All eligible existing family answer claims source-collated or explicitly blocked/deferred; human certification remains separate",
+  "owners": {
+    "spx": {
+      "branch": "formation/1457-pius-x-conversation-evidence",
+      "path": "data/learn/research/"
+    },
+    "chanoine": {
+      "branch": "research/chanoine-cse-source-dialogue-20261019",
+      "path": "research/chanoine/"
+    }
+  },
+  "completed": [
+    {
+      "batch": "B01",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b01-claim-deltas-20261021.v1.json",
+      "commit": "238bb4635bce666cedc591ef80452a38b8be8f3c",
+      "families": 4,
+      "status": "HUMAN_CERTIFICATION_REVIEW_PENDING",
+      "mirrorsFlagged": 3
+    },
+    {
+      "batch": "B01",
+      "kb": "CHANOINE",
+      "path": "research/chanoine/chanoine-unattended-b01-aq02-claim-delta-20261021.v1.json",
+      "commit": "bb02e2f710a1b823788fc730bec7d3fd4586818e",
+      "families": 1,
+      "status": "FR_DELTA_PREPARED_EN_ORIGINAL_INACCESSIBLE"
+    },
+    {
+      "batch": "B02",
+      "kb": "CHANOINE",
+      "path": "research/chanoine/chanoine-unattended-b02-confession-source-deltas-20261021.v1.json",
+      "commit": "58293038fb07ec8c77b160207e2ed560cd606e86",
+      "families": 7,
+      "answerUnits": 14,
+      "wordingDeltaFamilies": 5,
+      "status": "SOURCE_MAPPED_HUMAN_REVIEW_PENDING",
+      "ids": [
+        "CHA-CSE-CSE131",
+        "CHA-CSE-CSE132",
+        "CHA-CSE-CSE133",
+        "CHA-CSE-CSE134",
+        "CHA-CSE-CSE135",
+        "CHA-CSE-CSE138",
+        "CHA-CSE-CSE139"
+      ]
+    },
+    {
+      "batch": "B03",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b03-confession-claim-review-20261021.v1.json",
+      "commit": "ed0d7554ead955a3217132c5d7999756a0cc16f5",
+      "families": 8,
+      "answerUnits": 16,
+      "ids": [
+        "SPX-1905-P-731",
+        "SPX-1905-P-734",
+        "SPX-1905-P-737",
+        "SPX-1905-P-746",
+        "SPX-1905-P-751",
+        "SPX-1905-P-752",
+        "SPX-1905-P-758",
+        "SPX-1905-P-759"
+      ],
+      "status": "PASSAGE_MAPS_AND_INFERENCE_FLAGS_READY_FOR_HUMAN_REVIEW"
+    },
+    {
+      "batch": "B04",
+      "kb": "CHANOINE",
+      "path": "research/chanoine/chanoine-unattended-b04-thoughts-source-boundaries-20261021.v1.json",
+      "commit": "dcc16428056a7c309d7bda4d98a3e4cc3dd422ff",
+      "families": 2,
+      "answerUnits": 4,
+      "ids": [
+        "CHA-CSE-CSE136",
+        "CHA-CSE-CSE137"
+      ],
+      "status": "UNSUPPORTED_CLINICAL_CLAIMS_REMOVED_IN_PROPOSALS"
+    },
+    {
+      "batch": "B05",
+      "kb": "CHANOINE",
+      "path": "research/chanoine/chanoine-unattended-b05-authority-conscience-20261021.v1.json",
+      "commit": "34d30f3d2cf7b9a39866bfea783b128952b26a33",
+      "families": 4,
+      "answerUnits": 8,
+      "ids": [
+        "CHA-CSE-CSE016",
+        "CHA-CSE-CSE017",
+        "CHA-CSE-CSE018",
+        "CHA-CSE-CSE019"
+      ],
+      "status": "SOURCE_AUTHORITY_AND_CONSCIENCE_DISTINCTIONS_PREPARED",
+      "latestCorrectionCommit": "f25f0a2234d5c338232d313957f4dfcf108ed37c"
+    },
+    {
+      "batch": "B06",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b06-biography-source-quality-20261021.v1.json",
+      "commit": "e0275c2c2313568aa0713512b94671ed3475562e",
+      "families": 3,
+      "answerUnits": 6,
+      "ids": [
+        "SPX-EXP-001",
+        "SPX-EXP-002",
+        "SPX-EXP-009"
+      ],
+      "status": "NARRATOR_SOURCE_QUALITY_DELTAS_AND_DATE_CORRECTION_FLAG"
+    },
+    {
+      "batch": "B07",
+      "kb": "CHANOINE",
+      "path": "research/chanoine/chanoine-unattended-b07-marriage-source-precision-20261021.v1.json",
+      "commit": "d25668b039c1b543f36dd9e8c84c97b633a3fa14",
+      "families": 4,
+      "answerUnits": 8,
+      "ids": [
+        "CHA-CSE-CSE045",
+        "CHA-CSE-CSE049",
+        "CHA-CSE-CSE050",
+        "CHA-CSE-CSE054"
+      ],
+      "status": "SPECIALIST_SOURCE_BOUNDARIES_PREPARED"
+    },
+    {
+      "batch": "B08",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b08-papal-language-locator-deltas-20261021.v1.json",
+      "commit": "cae0a95da93df2dae18b90ade38215f59bd360c9",
+      "families": 5,
+      "answerUnits": 10,
+      "ids": [
+        "SPX-PILOT-08",
+        "SPX-012",
+        "SPX-EXP-043",
+        "SPX-PILOT-09",
+        "SPX-EXP-045"
+      ],
+      "status": "LANGUAGE_SPECIFIC_LOCATORS_AND_PAPAL_SCOPE_REVIEW",
+      "aliasFamilies": 2,
+      "latestCorrectionCommit": "dd90cd83bb5e3429f888f05a97d62343c5570563"
+    },
+    {
+      "batch": "B09",
+      "kb": "CHANOINE",
+      "path": "research/chanoine/chanoine-unattended-b09-moral-object-source-deltas-20261021.v1.json",
+      "commit": "c8e73bf7ec12c52f4841a39488c1a18a3b8630b9",
+      "families": 3,
+      "answerUnits": 6,
+      "ids": [
+        "CHA-CSE-CSE008",
+        "CHA-CSE-CSE009",
+        "CHA-CSE-CSE010"
+      ],
+      "status": "MORAL_OBJECT_AND_CIRCUMSTANCE_MAPS_PREPARED"
+    },
+    {
+      "batch": "B10",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b10-e-supremi-attribution-20261021.v1.json",
+      "commit": "d1b6752a1aab98321e400b2b6714b8c08847a9a8",
+      "families": 3,
+      "answerUnits": 6,
+      "ids": [
+        "SPX-PILOT-01",
+        "SPX-EXP-010",
+        "SPX-EXP-021"
+      ],
+      "status": "ANSELM_QUOTE_BOUNDARY_AND_LATIN_PASSAGE_MAPS"
+    },
+    {
+      "batch": "B11",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b11-reproductive-ethics-20261021.v1.json",
+      "commit": "e4ac80ebacd760701f1dcde84b26b8df66cd5e80",
+      "families": 3,
+      "answerUnits": 6,
+      "ids": [
+        "CHA-CSE-CSE101",
+        "CHA-CSE-CSE104",
+        "CHA-CSE-CSE110"
+      ],
+      "status": "SOURCE_MATCHED_PENDING_BIOETHICAL_AND_BILINGUAL_CERTIFICATION"
+    },
+    {
+      "batch": "B12",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b12-il-fermo-source-deltas-20261021.v1.json",
+      "commit": "b8ecfa040fb8693703779e0141e8587670f17ae5",
+      "families": 2,
+      "answerUnits": 4,
+      "ids": [
+        "SPX-EXP-026",
+        "SPX-EXP-027"
+      ],
+      "status": "SOURCE_MATCHED_HISTORICAL_AND_BILINGUAL_REVIEW_PENDING"
+    },
+    {
+      "batch": "B13",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b13-pascendi-attribution-20261021.v1.json",
+      "commit": "0588d91d68a966296143716989d843fd58300543",
+      "families": 1,
+      "answerUnits": 2,
+      "ids": [
+        "SPX-PILOT-07"
+      ],
+      "status": "SOURCE_MATCHED_THEOLOGICAL_VOICE_AND_BILINGUAL_REVIEW_PENDING"
+    },
+    {
+      "batch": "B14",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b14-biography-provenance-20261021.v1.json",
+      "commit": "52bb3d2ef6922d65ad018ccd8280e9e35cabeaa8",
+      "families": 6,
+      "answerUnits": 12,
+      "ids": [
+        "SPX-EXP-003",
+        "SPX-EXP-004",
+        "SPX-EXP-005",
+        "SPX-EXP-006",
+        "SPX-EXP-007",
+        "SPX-EXP-008"
+      ],
+      "status": "SECONDARY_BIOGRAPHY_MATCHED_HISTORY_AND_TRANSLATION_REVIEW_PENDING"
+    },
+    {
+      "batch": "B15",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b15-voluntariness-20261021.v1.json",
+      "commit": "6790fb360fd2eee621c5e79a9a50ba1e8964c9a9",
+      "families": 5,
+      "answerUnits": 10,
+      "ids": [
+        "CHA-CSE-CSE023",
+        "CHA-CSE-CSE024",
+        "CHA-CSE-CSE025",
+        "CHA-CSE-CSE026",
+        "CHA-CSE-CSE027"
+      ],
+      "status": "SOURCE_MATCHED_MORAL_THEOLOGY_AND_PASTORAL_REVIEW_PENDING"
+    },
+    {
+      "batch": "B16",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b16-premarital-source-precision-20261021.v1.json",
+      "commit": "5afeb66cb1de337d4d24d8a2ce258b1e7e3d8929",
+      "families": 4,
+      "answerUnits": 8,
+      "ids": [
+        "CHA-CSE-CSE031",
+        "CHA-CSE-CSE032",
+        "CHA-CSE-CSE033",
+        "CHA-CSE-CSE034"
+      ],
+      "status": "SOURCE_MATCHED_MORAL_THEOLOGY_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "batch": "B17",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b17-chastity-vocation-20261021.v1.json",
+      "commit": "8cc66a49628a23b681f4a437d4a0bfc53061b6bc",
+      "families": 5,
+      "answerUnits": 10,
+      "ids": [
+        "CHA-CSE-CSE020",
+        "CHA-CSE-CSE021",
+        "CHA-CSE-CSE022",
+        "CHA-CSE-CSE028",
+        "CHA-CSE-CSE029"
+      ],
+      "status": "SOURCE_MATCHED_THEOLOGY_AND_EMPIRICAL_SCOPE_REVIEW_PENDING",
+      "latestCorrectionCommit": "b573adb4a6b1b711b8ea0ef879fbb9d34efbc6a3"
+    },
+    {
+      "batch": "B18",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b18-communion-chronology-20261021.v1.json",
+      "commit": "6d98029e9659cbb777f6602ed8663c92055fc3bd",
+      "families": 2,
+      "answerUnits": 4,
+      "ids": [
+        "SPX-1905-E-649",
+        "SPX-1905-E-650"
+      ],
+      "status": "LATER_DECREE_CONTEXT_AND_MIRROR_ALIGNMENT_HUMAN_REVIEW_PENDING"
+    },
+    {
+      "batch": "B19",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b19-communion-knowledge-20261021.v1.json",
+      "commit": "0b59562423359c4dc39f41a3988cc93d6ab25bfc",
+      "families": 2,
+      "answerUnits": 4,
+      "ids": [
+        "SPX-1905-E-636",
+        "SPX-1905-E-637"
+      ],
+      "status": "CHILD_PREPARATION_CONTEXT_AND_SOURCE_ATTRIBUTION_REVIEW_PENDING"
+    },
+    {
+      "batch": "B20",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b20-modesty-occasions-20261021.v1.json",
+      "commit": "f50fde8a4e89d89d2cba9b8b0b20ffdb4570fddf",
+      "families": 4,
+      "answerUnits": 8,
+      "ids": [
+        "CHA-CSE-CSE030",
+        "CHA-CSE-CSE035",
+        "CHA-CSE-CSE036",
+        "CHA-CSE-CSE037"
+      ],
+      "status": "SOURCE_PRECISION_AND_PASTORAL_APPLICATION_REVIEW_PENDING"
+    },
+    {
+      "batch": "B21",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b21-marriage-definition-20261021.v1.json",
+      "commit": "a3921ca9a90b739002afb5b97d0d5afe8214dc78",
+      "families": 4,
+      "answerUnits": 8,
+      "ids": [
+        "CHA-CSE-CSE041",
+        "CHA-CSE-CSE042",
+        "CHA-CSE-CSE043",
+        "CHA-CSE-CSE044"
+      ],
+      "status": "SOURCE_MATCHED_CANONICAL_AND_BILINGUAL_REVIEW_PENDING"
+    },
+    {
+      "batch": "B22",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b22-looking-fidelity-20261021.v1.json",
+      "commit": "945ca9cd6f528fd009f0d31bb8f5f3e7e2264ba2",
+      "families": 3,
+      "answerUnits": 6,
+      "ids": [
+        "CHA-CSE-CSE038",
+        "CHA-CSE-CSE039",
+        "CHA-CSE-CSE040"
+      ],
+      "status": "SOURCE_COLLATED_MORAL_AND_PASTORAL_REVIEW_PENDING"
+    },
+    {
+      "batch": "B23",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b23-marital-goods-duties-20261021.v1.json",
+      "commit": "ccd02a942c4e33d20738d0a7c2fb7ddbeed9918c",
+      "families": 6,
+      "answerUnits": 12,
+      "ids": [
+        "CHA-CSE-CSE046",
+        "CHA-CSE-CSE047",
+        "CHA-CSE-CSE048",
+        "CHA-CSE-CSE051",
+        "CHA-CSE-CSE052",
+        "CHA-CSE-CSE053"
+      ],
+      "status": "SOURCE_COLLATED_THEOLOGICAL_PASTORAL_AND_LANGUAGE_REVIEW_PENDING"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "CHA-MAIN-AQ02-English-parity",
+      "reason": "Original 360 English-answer library file inaccessible; do not reconstruct",
+      "retryWhen": "Original asset available with expected SHA256"
+    },
+    {
+      "id": "NIGHTLY_CLOUD_SCHEDULE",
+      "reason": "automation_update cloud creation rejected: executionEnvironment expected local. No schedule exists.",
+      "requestedTime": "01:00 Indian/Mauritius (UTC+4), default chosen because user specified nightly without hour",
+      "retryWhen": "Cloud scheduling capability becomes available; do not silently substitute local execution"
+    },
+    {
+      "id": "SARTO_FAMILY_COUNT",
+      "reason": "Museum genealogical page eleven births/list versus Casa Museo ten; archival count not verified",
+      "retryWhen": "Contemporaneous register or authoritative genealogical transcription available; nonnumeric answer may proceed"
+    }
+  ],
+  "active": {
+    "batch": "B24",
+    "state": "SELECTING_EXISTING_UNRESOLVED_SOURCE_HOLDS",
+    "candidateIds": [
+      "SPX-1905-E-624",
+      "SPX-1905-E-627",
+      "SPX-1905-E-639",
+      "SPX-1905-E-641"
+    ]
+  },
+  "next": [
+    {
+      "priority": 2,
+      "scope": "SPX first-balanced-release beyond existing first20",
+      "action": "Read generator/committed first40 membership first; no assumption missing130 artifact is canonical. Exclude all completed IDs/alias groups; prioritize unresolved original-language locators."
+    }
+  ],
+  "deduplication": "(kb, canonical familyId, turn, claim, source locator); retain duplicated conversation contexts, synchronize approved answer variants",
+  "approvalsChanged": 0,
+  "publication": false,
+  "denzingerMandatory": false,
+  "progress": {
+    "conversationFamilyIdsWithResearchDeltas": 91,
+    "additionalMirrorFamilyIdsExamined": 3,
+    "totalDistinctFamilyIdsExaminedInSelectedResearch": 94,
+    "answerUnitsReviewed": 182,
+    "fullFamilyPacketsForHumanReview": 90,
+    "partialFamilyPackets": 1,
+    "humanCertified": 0,
+    "published": 0,
+    "meaning": "90 complete research packets available for human review, not certification or publication approval."
+  },
+  "scheduling": {
+    "created": false,
+    "requested": "Nightly cloud Work task, Mauritius UTC+4",
+    "attempt": "automation_update executionEnvironment cloud rejected; tool accepts local only",
+    "fallbackCreated": false,
+    "resumptionPromise": false
+  }
+}

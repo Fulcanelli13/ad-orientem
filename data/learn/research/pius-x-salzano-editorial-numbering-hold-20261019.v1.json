@@ -1,0 +1,27 @@
+{
+  "schema": "AO_PIUS_X_SALZANO_EDITORIAL_LOCATOR_ERRATA_V1",
+  "date": "2026-10-19",
+  "state": "LOCATOR_CROSSCHECK_REQUIRED_BEFORE_MACHINE_IMPORT",
+  "source_url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+  "source_kind": "EDITORIAL_TRANSCRIPTION_OF_AUTOGRAPH_NOTEBOOKS",
+  "provenance": "Museum preface says Sarto did not number his manuscript questions; editors replaced D./R. labels with sequential question numbers. Number labels are not authorial.",
+  "observed_anomalies": [
+    {
+      "sequence": "After question 321 and before 323",
+      "observed_label": "321 – E’ sempre permesso nominare il nome di Dio semplicemente?",
+      "likely_intended": "322",
+      "certainty": "HIGH_SEQUENCE_INFERENCE_NOT_ORIGINAL_FACSIMILE",
+      "risk": "Do not treat repeated 321 as a second distinct original authored numeric ID."
+    },
+    {
+      "sequence": "After 445 and before 447 in Confirmation",
+      "observed_label": "406 – Qual’è la forma di questo Sacramento?",
+      "likely_intended": "446",
+      "certainty": "HIGH_SEQUENCE_INFERENCE_NOT_ORIGINAL_FACSIMILE",
+      "risk": "Could silently collide with actual prior question 406 if parsed by heading-number regex."
+    }
+  ],
+  "editorial_not_primary_text": "The museum page interleaves manuscript answers with editorial commentary, later comparisons and facsimile captions; distinguish paragraphs authored by Sarto from editor's notes.",
+  "scope": "No correction to museum or existing canonical source owners. The 577-question editorial run remains a useful navigation corpus but is not a verified set of original Sarto numbered IDs.",
+  "next_action": "Retain sequential locators with positional context, never blindly key solely by printed label; corroborate anomalies against notebook facsimiles before normalization."
+}

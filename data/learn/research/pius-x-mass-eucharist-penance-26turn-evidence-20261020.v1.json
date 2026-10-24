@@ -1,0 +1,1466 @@
+{
+  "schema": "AO_SPX_FIRST_26_TURN_EVIDENCE_REVIEW_V1",
+  "reviewDate": "2026-10-20",
+  "state": "RESEARCH_SOURCE_INSPECTION_NO_INDEPENDENT_THEOLOGY_OR_PRINT_EDITION_APPROVAL",
+  "records": [
+    {
+      "draftFamilyId": "SPX-001",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a1-20261019.v1.json",
+      "conversationConcept": "MASS_SACRIFICE_CORE",
+      "sourceWitness": {
+        "witnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "italianQuestionAnswerNumbers": [
+          "PX1905-Q651",
+          "PX1905-Q654",
+          "PX1905-Q655",
+          "PX1905-Q656",
+          "PX1905-Q658"
+        ],
+        "digitalItalianQAInspected": "MUSEO_HTML_READ_IN_CONTEXT_2026_10_20",
+        "original1905PrintedFacsimileCollated": false,
+        "authorshipClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PIUS_X_AUTHORSHIP"
+      },
+      "turns": [
+        {
+          "turnIndex": 1,
+          "kind": "opening",
+          "questionEN": "Why is the Mass a sacrifice?",
+          "questionFR": "Pourquoi la messe est-elle un sacrifice ?",
+          "responseEN": "The Mass is truly a sacrifice because the sacrifice of Christ upon Calvary is made present sacramentally. It is the same victim, Christ Himself, offered in an unbloody manner.",
+          "responseFR": "La messe est un véritable sacrifice parce qu'elle rend présent sacramentellement l'unique sacrifice du Christ au Calvaire. La victime est le Christ lui-même, offert d'une manière non sanglante.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q651",
+            "PX1905-Q654",
+            "PX1905-Q655",
+            "PX1905-Q656"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII chapter II",
+            "Session XXII canon I",
+            "Session XXII canon III"
+          ],
+          "denzingerRefsForThisTurn": [
+            {
+              "passageId": "MG-P005",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+              "originalDocumentUnit": "Session XXII chapter II",
+              "legacyNumber": 940,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            },
+            {
+              "passageId": "MG-P018",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+              "originalDocumentUnit": "Session XXII canon I",
+              "legacyNumber": 948,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            },
+            {
+              "passageId": "MG-P019",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+              "originalDocumentUnit": "Session XXII canon III",
+              "legacyNumber": 950,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            }
+          ],
+          "denzingerTurnStatus": "FIRST_TURN_TOPIC_CANDIDATE_NEEDS_CLAIM_LEVEL_SCOPE_REVIEW",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ04",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        },
+        {
+          "turnIndex": 2,
+          "kind": "followup",
+          "questionEN": "Does Christ have to die again?",
+          "questionFR": "Le Christ doit-il mourir de nouveau ?",
+          "responseEN": "No. The Mass is not another death of Christ but the sacramental offering of the one sacrifice by which He redeemed mankind.",
+          "responseFR": "Non. La messe n'est pas une nouvelle mort du Christ, mais l'offrande sacramentelle de l'unique sacrifice par lequel il a racheté les hommes.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q655",
+            "PX1905-Q656",
+            "PX1905-Q658"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII chapter II",
+            "Session XXII canon I",
+            "Session XXII canon III"
+          ],
+          "denzingerRefsForThisTurn": [],
+          "denzingerTurnStatus": "TURN_SPECIFIC_APPLICABILITY_UNASSESSED",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ04",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        }
+      ],
+      "denzingerCandidateWitnesses": [
+        {
+          "passageId": "MG-P005",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "originalDocumentUnit": "Session XXII chapter II",
+          "legacyNumber": 940,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        },
+        {
+          "passageId": "MG-P018",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "originalDocumentUnit": "Session XXII canon I",
+          "legacyNumber": 948,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        },
+        {
+          "passageId": "MG-P019",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "originalDocumentUnit": "Session XXII canon III",
+          "legacyNumber": 950,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        }
+      ],
+      "potentialDuplicateCluster": "MASS_SACRIFICE_CORE",
+      "independentSemanticMergeApproved": false,
+      "editorialWarnings": [
+        "The sacramental-making-present formulation and Priest/Victim terminology need paragraph-scoped theological editorial review; they are not verbatim Catechism phrases"
+      ],
+      "approval": {
+        "sourceSentence": false,
+        "magisteriumMatch": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "theology": false,
+        "publication": false
+      }
+    },
+    {
+      "draftFamilyId": "SPX-055",
+      "originalDraftPath": "data/learn/research/pius-x-batch2-a3-20261019.v1.json",
+      "conversationConcept": "PAPAL_INFALLIBILITY",
+      "sourceWitness": {
+        "witnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "italianQuestionAnswerNumbers": [
+          "PX1905-Q197",
+          "PX1905-Q199"
+        ],
+        "digitalItalianQAInspected": "MUSEO_HTML_READ_IN_CONTEXT_2026_10_20",
+        "original1905PrintedFacsimileCollated": false,
+        "authorshipClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PIUS_X_AUTHORSHIP"
+      },
+      "turns": [
+        {
+          "turnIndex": 1,
+          "kind": "opening",
+          "questionEN": "Does papal infallibility mean the Pope cannot err?",
+          "questionFR": "L'infaillibilité pontificale signifie-t-elle que le pape ne se trompe jamais ?",
+          "responseEN": "Papal infallibility has a defined scope. The Catechism speaks of the Pope teaching the whole Church definitively on faith or morals, not of personal freedom from every mistake in ordinary life.",
+          "responseFR": "L'infaillibilité du pape a un domaine précis. Le Catéchisme la rapporte à l'enseignement définitif donné à toute l'Église en matière de foi ou de mœurs, et non à l'absence de toute erreur personnelle en chaque circonstance.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q197",
+            "PX1905-Q199"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+          "additionalMagisteriumUnitCandidates": [
+            "Chapter IV, ex cathedra definition"
+          ],
+          "denzingerRefsForThisTurn": [
+            {
+              "passageId": "MG-P006",
+              "originalDocumentUrl": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+              "originalDocumentUnit": "Chapter IV, ex cathedra definition",
+              "legacyNumber": 1839,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            }
+          ],
+          "denzingerTurnStatus": "FIRST_TURN_TOPIC_CANDIDATE_NEEDS_CLAIM_LEVEL_SCOPE_REVIEW",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": null,
+            "sourceOwnerStatus": "NO_SPECIFIC_RELEVANT_APPROVED_ANSWER_IDENTIFIED",
+            "exactReplyCertified": false
+          }
+        },
+        {
+          "turnIndex": 2,
+          "kind": "followup",
+          "questionEN": "Does it guarantee correctness in every historical or scientific remark?",
+          "questionFR": "Garantit-elle la justesse de toute remarque historique ou scientifique ?",
+          "responseEN": "No. That conclusion would extend the teaching beyond the faith-and-morals conditions specified in the Catechism.",
+          "responseFR": "Non. Cette conclusion étendrait l'enseignement au-delà des conditions de foi et de mœurs précisées par le Catéchisme.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q199"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+          "additionalMagisteriumUnitCandidates": [
+            "Chapter IV, ex cathedra definition"
+          ],
+          "denzingerRefsForThisTurn": [],
+          "denzingerTurnStatus": "TURN_SPECIFIC_APPLICABILITY_UNASSESSED",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": null,
+            "sourceOwnerStatus": "NO_SPECIFIC_RELEVANT_APPROVED_ANSWER_IDENTIFIED",
+            "exactReplyCertified": false
+          }
+        }
+      ],
+      "denzingerCandidateWitnesses": [
+        {
+          "passageId": "MG-P006",
+          "originalDocumentUrl": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+          "originalDocumentUnit": "Chapter IV, ex cathedra definition",
+          "legacyNumber": 1839,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        }
+      ],
+      "potentialDuplicateCluster": "PAPAL_INFALLIBILITY",
+      "independentSemanticMergeApproved": false,
+      "editorialWarnings": [
+        "Follow-up exclusion of scientific/historical remarks is a principled inference from the defined scope, not an enumerated list in Q199"
+      ],
+      "approval": {
+        "sourceSentence": false,
+        "magisteriumMatch": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "theology": false,
+        "publication": false
+      }
+    },
+    {
+      "draftFamilyId": "SPX-1905-S-607",
+      "originalDraftPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "conversationConcept": "TRANSUBSTANTIATION",
+      "sourceWitness": {
+        "witnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "italianQuestionAnswerNumbers": [
+          "PX1905-Q596",
+          "PX1905-Q607",
+          "PX1905-Q609",
+          "PX1905-Q610",
+          "PX1905-Q608"
+        ],
+        "digitalItalianQAInspected": "MUSEO_HTML_READ_IN_CONTEXT_2026_10_20",
+        "original1905PrintedFacsimileCollated": false,
+        "authorshipClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PIUS_X_AUTHORSHIP"
+      },
+      "turns": [
+        {
+          "turnIndex": 1,
+          "kind": "opening",
+          "questionEN": "What does the Church call the change of bread and wine into Christ's Body and Blood?",
+          "questionFR": "Comment l'Église appelle-t-elle le changement du pain et du vin au Corps et au Sang du Christ ?",
+          "responseEN": "Transubstantiation: the conversion of the substance of bread and wine into Christ's Body and Blood while the sensible appearances remain.",
+          "responseFR": "La transsubstantiation : conversion de la substance du pain et du vin au Corps et au Sang du Christ, tandis que demeurent les apparences sensibles.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q596",
+            "PX1905-Q607",
+            "PX1905-Q609",
+            "PX1905-Q610"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XIII canon II"
+          ],
+          "denzingerRefsForThisTurn": [
+            {
+              "passageId": "MG-P013",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XIII/Sacrament_of_the_Eucharist",
+              "originalDocumentUnit": "Session XIII canon II",
+              "legacyNumber": 884,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            }
+          ],
+          "denzingerTurnStatus": "FIRST_TURN_TOPIC_CANDIDATE_NEEDS_CLAIM_LEVEL_SCOPE_REVIEW",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ05",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        },
+        {
+          "turnIndex": 2,
+          "kind": "followup",
+          "questionEN": "Whence do the words of consecration draw their power?",
+          "questionFR": "D'où les paroles de la consécration tirent-elles leur puissance ?",
+          "responseEN": "From Jesus Christ, the almighty God who instituted the sacrament.",
+          "responseFR": "De Jésus-Christ, Dieu tout-puissant qui a institué le sacrement.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q608"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XIII canon II"
+          ],
+          "denzingerRefsForThisTurn": [],
+          "denzingerTurnStatus": "TURN_SPECIFIC_APPLICABILITY_UNASSESSED",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ05",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        }
+      ],
+      "denzingerCandidateWitnesses": [
+        {
+          "passageId": "MG-P013",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XIII/Sacrament_of_the_Eucharist",
+          "originalDocumentUnit": "Session XIII canon II",
+          "legacyNumber": 884,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        }
+      ],
+      "potentialDuplicateCluster": "TRANSUBSTANTIATION",
+      "independentSemanticMergeApproved": false,
+      "editorialWarnings": [
+        "Draft opening is NOT fully supported by Q607 alone; add Q596 and Q609-610 for substance/species and Trent XIII canon II. Museum transcription spells term 'transustanziazione', preserve witness spelling separately from normalized editorial term."
+      ],
+      "approval": {
+        "sourceSentence": false,
+        "magisteriumMatch": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "theology": false,
+        "publication": false
+      }
+    },
+    {
+      "draftFamilyId": "SPX-1905-S-612",
+      "originalDraftPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "conversationConcept": "WHOLE_CHRIST_EACH_SPECIES",
+      "sourceWitness": {
+        "witnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "italianQuestionAnswerNumbers": [
+          "PX1905-Q612",
+          "PX1905-Q613"
+        ],
+        "digitalItalianQAInspected": "MUSEO_HTML_READ_IN_CONTEXT_2026_10_20",
+        "original1905PrintedFacsimileCollated": false,
+        "authorshipClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PIUS_X_AUTHORSHIP"
+      },
+      "turns": [
+        {
+          "turnIndex": 1,
+          "kind": "opening",
+          "questionEN": "Is Christ's Body alone under the host and His Blood alone under the wine?",
+          "questionFR": "N'y a-t-il que le Corps du Christ sous l'hostie et que son Sang sous l'espèce du vin ?",
+          "responseEN": "No. Under each species the whole living Jesus Christ is present: Body, Blood, Soul and Divinity.",
+          "responseFR": "Non. Sous chaque espèce est présent Jésus-Christ vivant tout entier : Corps, Sang, Âme et Divinité.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q612"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XIII canon III"
+          ],
+          "denzingerRefsForThisTurn": [
+            {
+              "passageId": "MG-P014",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XIII/Sacrament_of_the_Eucharist",
+              "originalDocumentUnit": "Session XIII canon III",
+              "legacyNumber": 885,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            }
+          ],
+          "denzingerTurnStatus": "FIRST_TURN_TOPIC_CANDIDATE_NEEDS_CLAIM_LEVEL_SCOPE_REVIEW",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": null,
+            "sourceOwnerStatus": "NO_SPECIFIC_RELEVANT_APPROVED_ANSWER_IDENTIFIED",
+            "exactReplyCertified": false
+          }
+        },
+        {
+          "turnIndex": 2,
+          "kind": "followup",
+          "questionEN": "Why is the whole Christ present under both species?",
+          "questionFR": "Pourquoi le Christ tout entier est-il présent sous les deux espèces ?",
+          "responseEN": "Because His Body, Blood, Soul and Divinity are inseparable in the living, immortal Christ.",
+          "responseFR": "Parce que son Corps, son Sang, son Âme et sa Divinité sont inséparables dans le Christ vivant et immortel.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q613"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XIII canon III"
+          ],
+          "denzingerRefsForThisTurn": [],
+          "denzingerTurnStatus": "TURN_SPECIFIC_APPLICABILITY_UNASSESSED",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": null,
+            "sourceOwnerStatus": "NO_SPECIFIC_RELEVANT_APPROVED_ANSWER_IDENTIFIED",
+            "exactReplyCertified": false
+          }
+        }
+      ],
+      "denzingerCandidateWitnesses": [
+        {
+          "passageId": "MG-P014",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XIII/Sacrament_of_the_Eucharist",
+          "originalDocumentUnit": "Session XIII canon III",
+          "legacyNumber": 885,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        }
+      ],
+      "potentialDuplicateCluster": "WHOLE_CHRIST_EACH_SPECIES",
+      "independentSemanticMergeApproved": false,
+      "editorialWarnings": [
+        "Q613 supports living and immortal inseparability; keep whole Christ under each species distinct from manner of sacramental signification"
+      ],
+      "approval": {
+        "sourceSentence": false,
+        "magisteriumMatch": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "theology": false,
+        "publication": false
+      }
+    },
+    {
+      "draftFamilyId": "SPX-1905-S-613",
+      "originalDraftPath": "data/learn/research/pius-x-batch9-sacraments-e-20261020.v1.json",
+      "conversationConcept": "WHOLE_CHRIST_EACH_SPECIES",
+      "sourceWitness": {
+        "witnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "italianQuestionAnswerNumbers": [
+          "PX1905-Q613",
+          "PX1905-Q614"
+        ],
+        "digitalItalianQAInspected": "MUSEO_HTML_READ_IN_CONTEXT_2026_10_20",
+        "original1905PrintedFacsimileCollated": false,
+        "authorshipClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PIUS_X_AUTHORSHIP"
+      },
+      "turns": [
+        {
+          "turnIndex": 1,
+          "kind": "opening",
+          "questionEN": "Why is the whole Christ present in both host and chalice?",
+          "questionFR": "Pourquoi le Christ tout entier est-il présent dans l'hostie et le calice ?",
+          "responseEN": "Because the risen Christ is living and immortal: where His Body is present, His Blood, Soul and Divinity are united to it, and likewise where His Blood is present.",
+          "responseFR": "Parce que le Christ ressuscité est vivant et immortel : là où son Corps est présent, son Sang, son Âme et sa Divinité lui sont unis, et de même là où son Sang est présent.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q613"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XIII canon III"
+          ],
+          "denzingerRefsForThisTurn": [
+            {
+              "passageId": "MG-P014",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XIII/Sacrament_of_the_Eucharist",
+              "originalDocumentUnit": "Session XIII canon III",
+              "legacyNumber": 885,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            }
+          ],
+          "denzingerTurnStatus": "FIRST_TURN_TOPIC_CANDIDATE_NEEDS_CLAIM_LEVEL_SCOPE_REVIEW",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": null,
+            "sourceOwnerStatus": "NO_SPECIFIC_RELEVANT_APPROVED_ANSWER_IDENTIFIED",
+            "exactReplyCertified": false
+          }
+        },
+        {
+          "turnIndex": 2,
+          "kind": "followup",
+          "questionEN": "Does Christ cease to be in heaven when present in the Eucharist?",
+          "questionFR": "Le Christ cesse-t-Il d'être au ciel lorsqu'Il est présent dans l'Eucharistie ?",
+          "responseEN": "No. The Catechism affirms that He is in heaven and in the Blessed Sacrament.",
+          "responseFR": "Non. Le Catéchisme affirme qu'Il est au ciel et dans le Saint-Sacrement.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q614"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XIII canon III"
+          ],
+          "denzingerRefsForThisTurn": [],
+          "denzingerTurnStatus": "TURN_SPECIFIC_APPLICABILITY_UNASSESSED",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": null,
+            "sourceOwnerStatus": "NO_SPECIFIC_RELEVANT_APPROVED_ANSWER_IDENTIFIED",
+            "exactReplyCertified": false
+          }
+        }
+      ],
+      "denzingerCandidateWitnesses": [
+        {
+          "passageId": "MG-P014",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XIII/Sacrament_of_the_Eucharist",
+          "originalDocumentUnit": "Session XIII canon III",
+          "legacyNumber": 885,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        }
+      ],
+      "potentialDuplicateCluster": "WHOLE_CHRIST_EACH_SPECIES",
+      "independentSemanticMergeApproved": false,
+      "editorialWarnings": [
+        "Whole Christ and continued heavenly presence are separate propositions; Denzinger old 885 specifically concerns presence under species, not presence in heaven"
+      ],
+      "approval": {
+        "sourceSentence": false,
+        "magisteriumMatch": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "theology": false,
+        "publication": false
+      }
+    },
+    {
+      "draftFamilyId": "SPX-1905-E-651",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "conversationConcept": "MASS_SACRIFICE_DEFINITION",
+      "sourceWitness": {
+        "witnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "italianQuestionAnswerNumbers": [
+          "PX1905-Q596",
+          "PX1905-Q651",
+          "PX1905-Q652"
+        ],
+        "digitalItalianQAInspected": "MUSEO_HTML_READ_IN_CONTEXT_2026_10_20",
+        "original1905PrintedFacsimileCollated": false,
+        "authorshipClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PIUS_X_AUTHORSHIP"
+      },
+      "turns": [
+        {
+          "turnIndex": 1,
+          "kind": "opening",
+          "questionEN": "Is the Eucharist only a sacrament, or also a sacrifice?",
+          "questionFR": "L'Eucharistie est-elle seulement un sacrement, ou également un sacrifice ?",
+          "responseEN": "It is both: the sacrament of Christ's Body and Blood and the enduring sacrifice of the New Law, entrusted by Him to the Church for offering through priests.",
+          "responseFR": "Elle est les deux : le sacrement du Corps et du Sang du Christ et le sacrifice permanent de la Nouvelle Loi, confié par Lui à l'Église pour être offert par les prêtres.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q596",
+            "PX1905-Q651"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII canon I"
+          ],
+          "denzingerRefsForThisTurn": [
+            {
+              "passageId": "MG-P018",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+              "originalDocumentUnit": "Session XXII canon I",
+              "legacyNumber": 948,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            }
+          ],
+          "denzingerTurnStatus": "FIRST_TURN_TOPIC_CANDIDATE_NEEDS_CLAIM_LEVEL_SCOPE_REVIEW",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": null,
+            "sourceOwnerStatus": "NO_SPECIFIC_RELEVANT_APPROVED_ANSWER_IDENTIFIED",
+            "exactReplyCertified": false
+          }
+        },
+        {
+          "turnIndex": 2,
+          "kind": "followup",
+          "questionEN": "How does this Catechism define sacrifice in general?",
+          "questionFR": "Comment ce Catéchisme définit-il le sacrifice en général ?",
+          "responseEN": "It defines it as offering a visible thing to God, with a sacrificial change or destruction, to acknowledge His supreme dominion over us and all creation. This is a historical catechetical definition.",
+          "responseFR": "Il le définit comme l'offrande à Dieu d'une réalité visible, avec une transformation ou destruction sacrificielle, pour reconnaître son souverain domaine sur nous et la création. C'est une définition catéchétique historique.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q652"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII canon I"
+          ],
+          "denzingerRefsForThisTurn": [],
+          "denzingerTurnStatus": "TURN_SPECIFIC_APPLICABILITY_UNASSESSED",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": null,
+            "sourceOwnerStatus": "NO_SPECIFIC_RELEVANT_APPROVED_ANSWER_IDENTIFIED",
+            "exactReplyCertified": false
+          }
+        }
+      ],
+      "denzingerCandidateWitnesses": [
+        {
+          "passageId": "MG-P018",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "originalDocumentUnit": "Session XXII canon I",
+          "legacyNumber": 948,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        }
+      ],
+      "potentialDuplicateCluster": "MASS_SACRIFICE_DEFINITION",
+      "independentSemanticMergeApproved": false,
+      "editorialWarnings": [
+        "Definition in Q652 uses 'destroy in some manner'; draft's transformation wording is an editorial generalization, not a direct phrase"
+      ],
+      "approval": {
+        "sourceSentence": false,
+        "magisteriumMatch": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "theology": false,
+        "publication": false
+      }
+    },
+    {
+      "draftFamilyId": "SPX-1905-E-654",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "conversationConcept": "MASS_SACRIFICE_CORE",
+      "sourceWitness": {
+        "witnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "italianQuestionAnswerNumbers": [
+          "PX1905-Q654",
+          "PX1905-Q655"
+        ],
+        "digitalItalianQAInspected": "MUSEO_HTML_READ_IN_CONTEXT_2026_10_20",
+        "original1905PrintedFacsimileCollated": false,
+        "authorshipClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PIUS_X_AUTHORSHIP"
+      },
+      "turns": [
+        {
+          "turnIndex": 1,
+          "kind": "opening",
+          "questionEN": "What is the Holy Mass according to the longer Catechism?",
+          "questionFR": "Qu'est-ce que la sainte Messe selon le grand Catéchisme ?",
+          "responseEN": "The sacrifice of the Body and Blood of Jesus Christ, offered upon the altar under the appearances of bread and wine in memorial of His sacrifice on the Cross.",
+          "responseFR": "Le sacrifice du Corps et du Sang de Jésus-Christ, offert sur l'autel sous les espèces du pain et du vin en mémoire de son sacrifice sur la Croix.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q654"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII canon I"
+          ],
+          "denzingerRefsForThisTurn": [
+            {
+              "passageId": "MG-P018",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+              "originalDocumentUnit": "Session XXII canon I",
+              "legacyNumber": 948,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            }
+          ],
+          "denzingerTurnStatus": "FIRST_TURN_TOPIC_CANDIDATE_NEEDS_CLAIM_LEVEL_SCOPE_REVIEW",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ04",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        },
+        {
+          "turnIndex": 2,
+          "kind": "followup",
+          "questionEN": "Is the Sacrifice of the Mass the same sacrifice as Calvary?",
+          "questionFR": "Le sacrifice de la Messe est-il le même que celui du Calvaire ?",
+          "responseEN": "Substantially yes: Jesus Christ is the same Priest and Victim; the mode of offering differs. The Catechism insists on their intimate and essential relation.",
+          "responseFR": "Substantiellement oui : Jésus-Christ est le même Prêtre et la même Victime ; le mode d'offrande diffère. Le Catéchisme insiste sur leur relation intime et essentielle.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q655"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII canon I"
+          ],
+          "denzingerRefsForThisTurn": [],
+          "denzingerTurnStatus": "TURN_SPECIFIC_APPLICABILITY_UNASSESSED",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ04",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        }
+      ],
+      "denzingerCandidateWitnesses": [
+        {
+          "passageId": "MG-P018",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "originalDocumentUnit": "Session XXII canon I",
+          "legacyNumber": 948,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        }
+      ],
+      "potentialDuplicateCluster": "MASS_SACRIFICE_CORE",
+      "independentSemanticMergeApproved": false,
+      "editorialWarnings": [
+        "Same Priest/Victim follow-up wording is explained explicitly by Trent XXII ch II and 1905 Q660; Q655 alone speaks of same Christ offered by priests"
+      ],
+      "approval": {
+        "sourceSentence": false,
+        "magisteriumMatch": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "theology": false,
+        "publication": false
+      }
+    },
+    {
+      "draftFamilyId": "SPX-1905-E-655",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "conversationConcept": "MASS_SACRIFICE_CORE",
+      "sourceWitness": {
+        "witnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "italianQuestionAnswerNumbers": [
+          "PX1905-Q655",
+          "PX1905-Q660",
+          "PX1905-Q656"
+        ],
+        "digitalItalianQAInspected": "MUSEO_HTML_READ_IN_CONTEXT_2026_10_20",
+        "original1905PrintedFacsimileCollated": false,
+        "authorshipClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PIUS_X_AUTHORSHIP"
+      },
+      "turns": [
+        {
+          "turnIndex": 1,
+          "kind": "opening",
+          "questionEN": "Is the Sacrifice of the Mass the same sacrifice as Calvary?",
+          "questionFR": "Le sacrifice de la Messe est-il le même que celui du Calvaire ?",
+          "responseEN": "Substantially yes: Jesus Christ is the same Priest and Victim; the mode of offering differs. The Catechism insists on their intimate and essential relation.",
+          "responseFR": "Substantiellement oui : Jésus-Christ est le même Prêtre et la même Victime ; le mode d'offrande diffère. Le Catéchisme insiste sur leur relation intime et essentielle.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q655",
+            "PX1905-Q660"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII chapter II"
+          ],
+          "denzingerRefsForThisTurn": [
+            {
+              "passageId": "MG-P005",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+              "originalDocumentUnit": "Session XXII chapter II",
+              "legacyNumber": 940,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            }
+          ],
+          "denzingerTurnStatus": "FIRST_TURN_TOPIC_CANDIDATE_NEEDS_CLAIM_LEVEL_SCOPE_REVIEW",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ04",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        },
+        {
+          "turnIndex": 2,
+          "kind": "followup",
+          "questionEN": "How does the offering of Mass differ from Christ's sacrifice on the Cross?",
+          "questionFR": "En quoi l'offrande de la Messe diffère-t-elle du sacrifice du Christ sur la Croix ?",
+          "responseEN": "On Calvary Christ offered Himself with the shedding of His Blood and merited redemption; in the Mass He is offered without a new shedding of blood and applies the fruits of that one Passion.",
+          "responseFR": "Au Calvaire le Christ s'est offert dans l'effusion de son Sang et a mérité la rédemption ; à la Messe Il est offert sans nouvelle effusion de sang et applique les fruits de cette unique Passion.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q656"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII chapter II"
+          ],
+          "denzingerRefsForThisTurn": [],
+          "denzingerTurnStatus": "TURN_SPECIFIC_APPLICABILITY_UNASSESSED",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ04",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        }
+      ],
+      "denzingerCandidateWitnesses": [
+        {
+          "passageId": "MG-P005",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "originalDocumentUnit": "Session XXII chapter II",
+          "legacyNumber": 940,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        }
+      ],
+      "potentialDuplicateCluster": "MASS_SACRIFICE_CORE",
+      "independentSemanticMergeApproved": false,
+      "editorialWarnings": [
+        "Avoid implying repetition of Calvary; ch II distinguishes same victim and different manner"
+      ],
+      "approval": {
+        "sourceSentence": false,
+        "magisteriumMatch": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "theology": false,
+        "publication": false
+      }
+    },
+    {
+      "draftFamilyId": "SPX-1905-E-656",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-d-20261020.v1.json",
+      "conversationConcept": "MASS_SACRIFICE_MODE",
+      "sourceWitness": {
+        "witnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "italianQuestionAnswerNumbers": [
+          "PX1905-Q656",
+          "PX1905-Q657"
+        ],
+        "digitalItalianQAInspected": "MUSEO_HTML_READ_IN_CONTEXT_2026_10_20",
+        "original1905PrintedFacsimileCollated": false,
+        "authorshipClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PIUS_X_AUTHORSHIP"
+      },
+      "turns": [
+        {
+          "turnIndex": 1,
+          "kind": "opening",
+          "questionEN": "How does the offering of Mass differ from Christ's sacrifice on the Cross?",
+          "questionFR": "En quoi l'offrande de la Messe diffère-t-elle du sacrifice du Christ sur la Croix ?",
+          "responseEN": "On Calvary Christ offered Himself with the shedding of His Blood and merited redemption; in the Mass He is offered without a new shedding of blood and applies the fruits of that one Passion.",
+          "responseFR": "Au Calvaire le Christ s'est offert dans l'effusion de son Sang et a mérité la rédemption ; à la Messe Il est offert sans nouvelle effusion de sang et applique les fruits de cette unique Passion.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q656"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII chapter II"
+          ],
+          "denzingerRefsForThisTurn": [
+            {
+              "passageId": "MG-P005",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+              "originalDocumentUnit": "Session XXII chapter II",
+              "legacyNumber": 940,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            }
+          ],
+          "denzingerTurnStatus": "FIRST_TURN_TOPIC_CANDIDATE_NEEDS_CLAIM_LEVEL_SCOPE_REVIEW",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ04",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        },
+        {
+          "turnIndex": 2,
+          "kind": "followup",
+          "questionEN": "How does the Mass visibly represent Christ's sacrifice on the Cross?",
+          "questionFR": "Comment la Messe représente-t-elle visiblement le sacrifice du Christ sur la Croix ?",
+          "responseEN": "The separate consecration under the appearances of bread and wine signifies the separation of Christ's Body and Blood on the Cross, while the whole living Christ is present under both species.",
+          "responseFR": "La consécration séparée sous les espèces du pain et du vin signifie la séparation du Corps et du Sang du Christ sur la Croix, tandis que le Christ vivant tout entier est présent sous les deux espèces.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q657"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII chapter II"
+          ],
+          "denzingerRefsForThisTurn": [],
+          "denzingerTurnStatus": "TURN_SPECIFIC_APPLICABILITY_UNASSESSED",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ04",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        }
+      ],
+      "denzingerCandidateWitnesses": [
+        {
+          "passageId": "MG-P005",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "originalDocumentUnit": "Session XXII chapter II",
+          "legacyNumber": 940,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        }
+      ],
+      "potentialDuplicateCluster": "MASS_SACRIFICE_MODE",
+      "independentSemanticMergeApproved": false,
+      "editorialWarnings": [
+        "Separate consecration and concomitance are explained in Q657 and Trent XIII ch III; cannot mean only body without blood is present in host"
+      ],
+      "approval": {
+        "sourceSentence": false,
+        "magisteriumMatch": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "theology": false,
+        "publication": false
+      }
+    },
+    {
+      "draftFamilyId": "SPX-1905-E-657",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "conversationConcept": "MASS_SACRIFICE_MODE",
+      "sourceWitness": {
+        "witnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "italianQuestionAnswerNumbers": [
+          "PX1905-Q657",
+          "PX1905-Q658"
+        ],
+        "digitalItalianQAInspected": "MUSEO_HTML_READ_IN_CONTEXT_2026_10_20",
+        "original1905PrintedFacsimileCollated": false,
+        "authorshipClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PIUS_X_AUTHORSHIP"
+      },
+      "turns": [
+        {
+          "turnIndex": 1,
+          "kind": "opening",
+          "questionEN": "How does the Mass visibly represent Christ's sacrifice on the Cross?",
+          "questionFR": "Comment la Messe représente-t-elle visiblement le sacrifice du Christ sur la Croix ?",
+          "responseEN": "The separate consecration under the appearances of bread and wine signifies the separation of Christ's Body and Blood on the Cross, while the whole living Christ is present under both species.",
+          "responseFR": "La consécration séparée sous les espèces du pain et du vin signifie la séparation du Corps et du Sang du Christ sur la Croix, tandis que le Christ vivant tout entier est présent sous les deux espèces.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q657"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII chapter II"
+          ],
+          "denzingerRefsForThisTurn": [
+            {
+              "passageId": "MG-P005",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+              "originalDocumentUnit": "Session XXII chapter II",
+              "legacyNumber": 940,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            }
+          ],
+          "denzingerTurnStatus": "FIRST_TURN_TOPIC_CANDIDATE_NEEDS_CLAIM_LEVEL_SCOPE_REVIEW",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ04",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        },
+        {
+          "turnIndex": 2,
+          "kind": "followup",
+          "questionEN": "If Calvary is the one sacrifice, why do Catholics also speak of the Sacrifice of the Mass?",
+          "questionFR": "Si le Calvaire est l'unique sacrifice, pourquoi parler aussi du Sacrifice de la Messe ?",
+          "responseEN": "Christ's single sacrifice on Calvary accomplished redemption and won its merits; the Mass is among the means He instituted for applying those merits. It does not add a second, independent redemption.",
+          "responseFR": "L'unique sacrifice du Christ au Calvaire a accompli la rédemption et mérité ses fruits ; la Messe est l'un des moyens qu'Il a institués pour nous appliquer ces mérites. Elle n'ajoute pas une seconde rédemption indépendante.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q658"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII chapter II"
+          ],
+          "denzingerRefsForThisTurn": [],
+          "denzingerTurnStatus": "TURN_SPECIFIC_APPLICABILITY_UNASSESSED",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ04",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        }
+      ],
+      "denzingerCandidateWitnesses": [
+        {
+          "passageId": "MG-P005",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "originalDocumentUnit": "Session XXII chapter II",
+          "legacyNumber": 940,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        }
+      ],
+      "potentialDuplicateCluster": "MASS_SACRIFICE_MODE",
+      "independentSemanticMergeApproved": false,
+      "editorialWarnings": [
+        "Original Q657 explicitly distinguishes effect of words and concomitance; draft simplifies to separate consecration; preserve doctrinal nuance"
+      ],
+      "approval": {
+        "sourceSentence": false,
+        "magisteriumMatch": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "theology": false,
+        "publication": false
+      }
+    },
+    {
+      "draftFamilyId": "SPX-1905-E-658",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "conversationConcept": "MASS_SACRIFICE_REDEMPTION",
+      "sourceWitness": {
+        "witnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "italianQuestionAnswerNumbers": [
+          "PX1905-Q658",
+          "PX1905-Q659"
+        ],
+        "digitalItalianQAInspected": "MUSEO_HTML_READ_IN_CONTEXT_2026_10_20",
+        "original1905PrintedFacsimileCollated": false,
+        "authorshipClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PIUS_X_AUTHORSHIP"
+      },
+      "turns": [
+        {
+          "turnIndex": 1,
+          "kind": "opening",
+          "questionEN": "If Calvary is the one sacrifice, why do Catholics also speak of the Sacrifice of the Mass?",
+          "questionFR": "Si le Calvaire est l'unique sacrifice, pourquoi parler aussi du Sacrifice de la Messe ?",
+          "responseEN": "Christ's single sacrifice on Calvary accomplished redemption and won its merits; the Mass is among the means He instituted for applying those merits. It does not add a second, independent redemption.",
+          "responseFR": "L'unique sacrifice du Christ au Calvaire a accompli la rédemption et mérité ses fruits ; la Messe est l'un des moyens qu'Il a institués pour nous appliquer ces mérites. Elle n'ajoute pas une seconde rédemption indépendante.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q658"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII chapter II"
+          ],
+          "denzingerRefsForThisTurn": [
+            {
+              "passageId": "MG-P005",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+              "originalDocumentUnit": "Session XXII chapter II",
+              "legacyNumber": 940,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            }
+          ],
+          "denzingerTurnStatus": "FIRST_TURN_TOPIC_CANDIDATE_NEEDS_CLAIM_LEVEL_SCOPE_REVIEW",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ04",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        },
+        {
+          "turnIndex": 2,
+          "kind": "followup",
+          "questionEN": "What are the four ends of the Sacrifice of the Mass?",
+          "questionFR": "Quelles sont les quatre fins du Sacrifice de la Messe ?",
+          "responseEN": "Adoration of God (latreutic), thanksgiving (Eucharistic), propitiation for sin and suffrage for the departed (propitiatory), and petition for needed graces (impetratory).",
+          "responseFR": "L'adoration de Dieu (latreutique), l'action de grâce (eucharistique), la propitiation pour les péchés et le suffrage des défunts (propitiatoire), et la demande des grâces nécessaires (impétratoire).",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q659"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII chapter II"
+          ],
+          "denzingerRefsForThisTurn": [],
+          "denzingerTurnStatus": "TURN_SPECIFIC_APPLICABILITY_UNASSESSED",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": "apostolate:AQ04",
+            "sourceOwnerStatus": "SOURCE_EXTRACTIVE_PILOT_EXISTS_BUT_ROUTER_TOPIC_HELD",
+            "exactReplyCertified": false
+          }
+        }
+      ],
+      "denzingerCandidateWitnesses": [
+        {
+          "passageId": "MG-P005",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "originalDocumentUnit": "Session XXII chapter II",
+          "legacyNumber": 940,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        }
+      ],
+      "potentialDuplicateCluster": "MASS_SACRIFICE_REDEMPTION",
+      "independentSemanticMergeApproved": false,
+      "editorialWarnings": [
+        "Four ends listed at Q659; Dz 940 supports propitiation but cannot serve as sole citation for all four ends"
+      ],
+      "approval": {
+        "sourceSentence": false,
+        "magisteriumMatch": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "theology": false,
+        "publication": false
+      }
+    },
+    {
+      "draftFamilyId": "SPX-1905-E-663",
+      "originalDraftPath": "data/learn/research/pius-x-batch10-eucharist-e-20261020.v1.json",
+      "conversationConcept": "MASS_SAINTS_AND_FRUITS",
+      "sourceWitness": {
+        "witnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "italianQuestionAnswerNumbers": [
+          "PX1905-Q662",
+          "PX1905-Q663",
+          "PX1905-Q664"
+        ],
+        "digitalItalianQAInspected": "MUSEO_HTML_READ_IN_CONTEXT_2026_10_20",
+        "original1905PrintedFacsimileCollated": false,
+        "authorshipClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PIUS_X_AUTHORSHIP"
+      },
+      "turns": [
+        {
+          "turnIndex": 1,
+          "kind": "opening",
+          "questionEN": "If Mass is offered to God alone, how can a Mass honour the Virgin Mary or a saint?",
+          "questionFR": "Si la Messe est offerte à Dieu seul, comment peut-elle honorer la Vierge Marie ou un saint ?",
+          "responseEN": "A Mass in honour of Mary or the saints remains a sacrifice offered to God alone. We thank God for His gifts to them and seek His graces through their intercession.",
+          "responseFR": "Une Messe en l'honneur de Marie ou des saints demeure un sacrifice offert à Dieu seul. Nous remercions Dieu des dons qu'Il leur a faits et demandons ses grâces par leur intercession.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q662",
+            "PX1905-Q663"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII chapter III"
+          ],
+          "denzingerRefsForThisTurn": [
+            {
+              "passageId": "MG-P046",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+              "originalDocumentUnit": "Session XXII chapter III",
+              "legacyNumber": 941,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            }
+          ],
+          "denzingerTurnStatus": "FIRST_TURN_TOPIC_CANDIDATE_NEEDS_CLAIM_LEVEL_SCOPE_REVIEW",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": null,
+            "sourceOwnerStatus": "NO_SPECIFIC_RELEVANT_APPROVED_ANSWER_IDENTIFIED",
+            "exactReplyCertified": false
+          }
+        },
+        {
+          "turnIndex": 2,
+          "kind": "followup",
+          "questionEN": "Who shares in the fruits of the Mass?",
+          "questionFR": "Qui participe aux fruits de la Messe ?",
+          "responseEN": "The whole Church shares in them, and in a particular way the priest, those assisting at Mass and those for whom it is applied, whether living or deceased.",
+          "responseFR": "Toute l'Église y participe, et d'une manière particulière le prêtre, ceux qui assistent à la Messe et ceux pour qui elle est appliquée, vivants ou défunts.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q664"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XXII chapter III"
+          ],
+          "denzingerRefsForThisTurn": [],
+          "denzingerTurnStatus": "TURN_SPECIFIC_APPLICABILITY_UNASSESSED",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": null,
+            "sourceOwnerStatus": "NO_SPECIFIC_RELEVANT_APPROVED_ANSWER_IDENTIFIED",
+            "exactReplyCertified": false
+          }
+        }
+      ],
+      "denzingerCandidateWitnesses": [
+        {
+          "passageId": "MG-P046",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "originalDocumentUnit": "Session XXII chapter III",
+          "legacyNumber": 941,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        }
+      ],
+      "potentialDuplicateCluster": "MASS_SAINTS_AND_FRUITS",
+      "independentSemanticMergeApproved": false,
+      "editorialWarnings": [
+        "Mass honouring saints is still offered to God; do not confuse honour/intercession with recipient of sacrifice"
+      ],
+      "approval": {
+        "sourceSentence": false,
+        "magisteriumMatch": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "theology": false,
+        "publication": false
+      }
+    },
+    {
+      "draftFamilyId": "SPX-1905-P-688",
+      "originalDraftPath": "data/learn/research/pius-x-batch11-penance-c-20261020.v1.json",
+      "conversationConcept": "PENANCE_ABSOLUTION",
+      "sourceWitness": {
+        "witnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "italianQuestionAnswerNumbers": [
+          "PX1905-Q688"
+        ],
+        "digitalItalianQAInspected": "MUSEO_HTML_READ_IN_CONTEXT_2026_10_20",
+        "original1905PrintedFacsimileCollated": false,
+        "authorshipClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_PERSONAL_PIUS_X_AUTHORSHIP"
+      },
+      "turns": [
+        {
+          "turnIndex": 1,
+          "kind": "opening",
+          "questionEN": "What is sacramental absolution?",
+          "questionFR": "Qu'est-ce que l'absolution sacramentelle ?",
+          "responseEN": "It is the sentence pronounced by the priest in the name of Jesus Christ to forgive the penitent's sins.",
+          "responseFR": "C'est la sentence que le prêtre prononce au nom de Jésus-Christ pour remettre les péchés du pénitent.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q688"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XIV canon IX"
+          ],
+          "denzingerRefsForThisTurn": [
+            {
+              "passageId": "MG-P023",
+              "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XIV/Sacraments_of_Penance_and_Extreme_Unction",
+              "originalDocumentUnit": "Session XIV canon IX",
+              "legacyNumber": 919,
+              "edition": "DZ11_BANNWART_1911",
+              "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+              "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+            }
+          ],
+          "denzingerTurnStatus": "FIRST_TURN_TOPIC_CANDIDATE_NEEDS_CLAIM_LEVEL_SCOPE_REVIEW",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": null,
+            "sourceOwnerStatus": "NO_SPECIFIC_RELEVANT_APPROVED_ANSWER_IDENTIFIED",
+            "exactReplyCertified": false
+          }
+        },
+        {
+          "turnIndex": 2,
+          "kind": "followup",
+          "questionEN": "Does the priest forgive through merely personal authority?",
+          "questionFR": "Le prêtre pardonne-t-il par sa seule autorité personnelle ?",
+          "responseEN": "No. The Catechism specifies that absolution is pronounced in the name of Jesus Christ.",
+          "responseFR": "Non. Le Catéchisme précise que l'absolution est prononcée au nom de Jésus-Christ.",
+          "sourceSupportQuestionIds": [
+            "PX1905-Q688"
+          ],
+          "supportAssessment": "DIGITAL_ITALIAN_TEXT_MEANING_SCREENED_NOT_INDEPENDENTLY_CERTIFIED",
+          "allStatementsIndependentlyCertified": false,
+          "englishCheckedByIndependentReviewer": false,
+          "frenchCheckedByIndependentReviewer": false,
+          "originalWitnessUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "additionalMagisteriumUnitCandidates": [
+            "Session XIV canon IX"
+          ],
+          "denzingerRefsForThisTurn": [],
+          "denzingerTurnStatus": "TURN_SPECIFIC_APPLICABILITY_UNASSESSED",
+          "chanoine": {
+            "visitorConsentRequired": true,
+            "sourceOwnerCandidate": null,
+            "sourceOwnerStatus": "NO_SPECIFIC_RELEVANT_APPROVED_ANSWER_IDENTIFIED",
+            "exactReplyCertified": false
+          }
+        }
+      ],
+      "denzingerCandidateWitnesses": [
+        {
+          "passageId": "MG-P023",
+          "originalDocumentUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XIV/Sacraments_of_Penance_and_Extreme_Unction",
+          "originalDocumentUnit": "Session XIV canon IX",
+          "legacyNumber": 919,
+          "edition": "DZ11_BANNWART_1911",
+          "denzingerStatus": "NUMBER_AND_UNIT_FOUND_IN_NAMED_1911_OCR_BUT_PAGE_FACSIMILE_NOT_COLLATED",
+          "relationReview": "DOC_UNIT_TOPIC_APPROPRIATENESS_SCREENED_NOT_CLAIM_APPROVED"
+        }
+      ],
+      "potentialDuplicateCluster": "PENANCE_ABSOLUTION",
+      "independentSemanticMergeApproved": false,
+      "editorialWarnings": [
+        "Follow-up is exact one-question implication; distinction sacramental sentence versus merely declaring forgiveness is set out in Trent XIV ch VI/canon IX"
+      ],
+      "approval": {
+        "sourceSentence": false,
+        "magisteriumMatch": false,
+        "translationEN": false,
+        "translationFR": false,
+        "voice": false,
+        "theology": false,
+        "publication": false
+      }
+    }
+  ],
+  "counts": {
+    "familiesReviewedAgainstDigitalItalian": 13,
+    "turnsInspected": 26,
+    "turnsIndependentlyCertified": 0,
+    "sourcePrintedEditionVerified": 0,
+    "magisteriumOriginalDocumentUnitsConsulted": 8,
+    "denzingerCandidateFamilies": 13,
+    "oldDzFacsimileCertified": 0,
+    "denzingerModernConcordanceCertified": 0,
+    "chanoinePilotTopicCandidates": 7,
+    "approvedUniqueIntents": 0,
+    "productionApproved": 0
+  },
+  "sourceTextNoVerbatimCopyrightCopies": true,
+  "openDecisions": [
+    "Resolve semantic overlap among Mass sacrifice Q651 and Q654-658 records without losing original question anchors",
+    "Verify print facsimile of 1905 Catechism and old Dz 1911 against photographed pages",
+    "Review nuanced wording in Q607, Q652, Q655, Q657",
+    "Qualify Chanoine source-only topic referral as unapproved while topic remains held in routing PR",
+    "Independent historical voice, theological and EN/FR editorial signoff before app publication"
+  ]
+}

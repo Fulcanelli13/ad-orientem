@@ -1,0 +1,375 @@
+{
+  "schema": "AO_PIUS_X_PROOF_OF_ANSWERABILITY_PILOT_V1",
+  "date": "2026-10-19",
+  "status": "RESEARCH_ONLY_EDITORIAL_CANDIDATE_NOT_APP_CONTENT",
+  "goal": "Test realistic complete question-answer turn against original sources and attribution controls, before any visitor release. Evidence-close nuclei are authored working paraphrases, not quotes from Pope Pius X.",
+  "sampling_policy": "Purposive 12-case stress sample across authored personal account, papally approved catechism, Sarto manuscript/editorial transcript, papal encyclicals, dicastery decree, third-party biography, and pastoral diagnosis. NOT random or representative; no population percentage extrapolation.",
+  "counts": {
+    "sample_cases": 12,
+    "PASS_CONSTRAINED": 10,
+    "HOLD_FIRST_PERSON_TESTIMONY": 1,
+    "HOLD_INDIVIDUAL_DIAGNOSIS": 1,
+    "certified_visitor_answers": 0,
+    "global_distinct_answerable_questions_estimate": null
+  },
+  "record_owner": "Existing SPX-001–064 / SPX-EXP-001–048 remain canonical research seed owners. This file is a read-only audit of case pointers, not a new source owner.",
+  "source_note": "Source passages cross-checked against official Vatican texts and Museo San Pio X; Quam singulari consulted in an attributed decree reprint. Edition-specific print facsimile collation is not claimed. Passage verification includes secondary scholarly biography and a decree reprint, not exclusively primary papal texts.",
+  "render_guidance": {
+    "historical_persona": "Any future visitor answer may sound appropriately early twentieth-century Catholic, but must be transparent paraphrase: do not invent quoted sentences or internal memories.",
+    "papal_text": "Primary papal authored documents support his documented teaching; stylized first-person not necessarily faithful verbatim.",
+    "catechism": "Do not assert Pope personally penned every catechism answer.",
+    "salzano": "Manuscript page transcript includes editor numbers and marginal commentary, not a uniform verbatim author speech.",
+    "biography": "Use third person or clearly documentary introduction where there is no authorial testimony.",
+    "pastoral": "No personal moral guilt determinations, diagnosis, or application of clergy-directed rebukes to laity."
+  },
+  "records": [
+    {
+      "case_id": "SPX-PILOT-01",
+      "requested_family_id": "SPX-EXP-010",
+      "visitor_question": "Why did you resist becoming Pope?",
+      "domain": "PERSONAL_HISTORY",
+      "source_evidence": [
+        {
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+          "section_or_question": "E supremi §§1–4",
+          "witness_type": "AUTHORED_PAPAL_FIRST_PERSON",
+          "passage_verified_in_identified_witness": true
+        }
+      ],
+      "screen_disposition": "PASS_CONSTRAINED",
+      "source_close_answer_nucleus_for_editorial_review": "The opening of E supremi recounts his resistance to the election. He speaks of tears, a sense of unworthiness, the weight of succeeding Leo XIII and fear at the condition of society. He finally accepts the burden as God's will and sets restoration of all things in Christ as the purpose of his pontificate.",
+      "prohibited_inference_or_discipline": "A first-person paraphrase is possible, but the cited letter cannot substantiate every anecdote from the conclave.",
+      "plausible_followup": "What program did he set for his pontificate?",
+      "avatar_rendering_constraint": "FIRST_PERSON_PARAPHHRASE_WITH_SOURCE_LABEL",
+      "release_checklist": {
+        "historical_claims_located": true,
+        "question_scope_supported": true,
+        "human_theological_approval": false,
+        "period_voice_approval": false,
+        "original_edition_facsimile_checked": false,
+        "visitor_runtime_enabled": false
+      },
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
+    },
+    {
+      "case_id": "SPX-PILOT-02",
+      "requested_family_id": "SPX-003",
+      "visitor_question": "May I pray the Rosary during Mass?",
+      "domain": "LITURGY",
+      "source_evidence": [
+        {
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "section_or_question": "1905 Catechismo maggiore Q667–669",
+          "witness_type": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+          "passage_verified_in_identified_witness": true
+        }
+      ],
+      "screen_disposition": "PASS_CONSTRAINED",
+      "source_close_answer_nucleus_for_editorial_review": "The Catechism allows the Rosary or other prayers during Mass when a person endeavours, as far as possible, to follow the action of the Holy Sacrifice. It also recommends uniting one's intentions with the priest, following his prayers and actions, and meditating on Christ's Passion.",
+      "prohibited_inference_or_discipline": "Do not misrepresent this text as forbidding the Rosary, or insist that everyone must use the same form of participation.",
+      "plausible_followup": "What is the most fruitful way to unite myself to the sacrifice?",
+      "avatar_rendering_constraint": "CATECHISM_EXPLANATION_NOT_AUTOBIOGRAPHICAL_QUOTE",
+      "release_checklist": {
+        "historical_claims_located": true,
+        "question_scope_supported": true,
+        "human_theological_approval": false,
+        "period_voice_approval": false,
+        "original_edition_facsimile_checked": false,
+        "visitor_runtime_enabled": false
+      },
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
+    },
+    {
+      "case_id": "SPX-PILOT-03",
+      "requested_family_id": "SPX-008",
+      "visitor_question": "Is an unwanted bad thought already a sin?",
+      "domain": "CONFESSION_PASTORAL",
+      "source_evidence": [
+        {
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+          "section_or_question": "Salzano manuscript/editorial Q541–543; museum transcription f.12",
+          "witness_type": "SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+          "passage_verified_in_identified_witness": true
+        }
+      ],
+      "screen_disposition": "PASS_CONSTRAINED",
+      "source_close_answer_nucleus_for_editorial_review": "A thought entering the mind without one's choice is not, by that fact alone, a sinful act. The Salzano catechism distinguishes the occurrence of the thought from taking pleasure in it and consenting to it with the will. One should reject the thought without confusing temptation with consent.",
+      "prohibited_inference_or_discipline": "Do not adjudicate an individual's guilt, scrupulosity, intent, or gravity from a single prompt.",
+      "plausible_followup": "How do I distinguish temptation from deliberate consent?",
+      "avatar_rendering_constraint": "DOCUMENT_GROUNDED_PASTORAL_EXPLANATION",
+      "release_checklist": {
+        "historical_claims_located": true,
+        "question_scope_supported": true,
+        "human_theological_approval": false,
+        "period_voice_approval": false,
+        "original_edition_facsimile_checked": false,
+        "visitor_runtime_enabled": false
+      },
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
+    },
+    {
+      "case_id": "SPX-PILOT-04",
+      "requested_family_id": "SPX-006",
+      "visitor_question": "What should I do after Holy Communion?",
+      "domain": "EUCHARISTIC_PRACTICE",
+      "source_evidence": [
+        {
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+          "section_or_question": "Salzano manuscript/editorial Q506–508; museum transcription f.9",
+          "witness_type": "SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+          "passage_verified_in_identified_witness": true
+        }
+      ],
+      "screen_disposition": "PASS_CONSTRAINED",
+      "source_close_answer_nucleus_for_editorial_review": "Sarto's Salzano instructions commend quiet recollection after Communion, adoration, thanksgiving, an offering of oneself to God, renewed resolutions and prayers for spiritual and bodily needs. The passage also urges good works and avoidance of distraction afterward.",
+      "prohibited_inference_or_discipline": "Its mention of a half-hour in church is period advice in this manuscript; do not turn it into a universal binding modern rule.",
+      "plausible_followup": "Could you suggest a short act of thanksgiving?",
+      "avatar_rendering_constraint": "DOCUMENT_GROUNDED_PASTORAL_EXPLANATION",
+      "release_checklist": {
+        "historical_claims_located": true,
+        "question_scope_supported": true,
+        "human_theological_approval": false,
+        "period_voice_approval": false,
+        "original_edition_facsimile_checked": false,
+        "visitor_runtime_enabled": false
+      },
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
+    },
+    {
+      "case_id": "SPX-PILOT-05",
+      "requested_family_id": "SPX-057",
+      "visitor_question": "How do actual grace and sanctifying grace differ?",
+      "domain": "DOGMATIC_CATECHESIS",
+      "source_evidence": [
+        {
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "section_or_question": "1905 Catechismo maggiore Q527–533, especially Q528 and Q532",
+          "witness_type": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+          "passage_verified_in_identified_witness": true
+        }
+      ],
+      "screen_disposition": "PASS_CONSTRAINED",
+      "source_close_answer_nucleus_for_editorial_review": "Sanctifying or habitual grace is a supernatural gift abiding in the soul, making us just and adopted children of God. Actual grace is divine assistance that enlightens the mind and moves and strengthens the will toward good and away from evil. The Catechism also affirms that grace does not abolish human freedom.",
+      "prohibited_inference_or_discipline": "Do not conflate this distinction with sacramental grace in 1912 Q269–271.",
+      "plausible_followup": "Can a person resist actual grace?",
+      "avatar_rendering_constraint": "CATECHISM_EXPLANATION_NOT_AUTOBIOGRAPHICAL_QUOTE",
+      "release_checklist": {
+        "historical_claims_located": true,
+        "question_scope_supported": true,
+        "human_theological_approval": false,
+        "period_voice_approval": false,
+        "original_edition_facsimile_checked": false,
+        "visitor_runtime_enabled": false
+      },
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
+    },
+    {
+      "case_id": "SPX-PILOT-06",
+      "requested_family_id": "SPX-004",
+      "visitor_question": "Why is Gregorian chant especially fitting for Mass?",
+      "domain": "LITURGICAL_THEOLOGY",
+      "source_evidence": [
+        {
+          "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+          "section_or_question": "Tra le sollecitudini, Instruction §§1–5, especially §3",
+          "witness_type": "AUTHORED_PAPAL_MOTU_PROPRIO",
+          "passage_verified_in_identified_witness": true
+        }
+      ],
+      "screen_disposition": "PASS_CONSTRAINED",
+      "source_close_answer_nucleus_for_editorial_review": "Sacred music serves God's glory and the faithful's sanctification; it must possess holiness, sound artistry and universality. The motu proprio presents Gregorian chant as the Roman Church's own inherited music and supreme liturgical model, while accepting worthy classical polyphony rather than excluding all other music.",
+      "prohibited_inference_or_discipline": "Distinguish 1903 liturgical disciplinary claims from current rules; never state that all non-chant is forbidden.",
+      "plausible_followup": "Is Palestrina-style polyphony also suitable?",
+      "avatar_rendering_constraint": "AUTHORED_DOCUMENT_DOCTRINAL_PARAPHRASE",
+      "release_checklist": {
+        "historical_claims_located": true,
+        "question_scope_supported": true,
+        "human_theological_approval": false,
+        "period_voice_approval": false,
+        "original_edition_facsimile_checked": false,
+        "visitor_runtime_enabled": false
+      },
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
+    },
+    {
+      "case_id": "SPX-PILOT-07",
+      "requested_family_id": "SPX-EXP-018",
+      "visitor_question": "Why did you describe Modernism as a synthesis of heresies?",
+      "domain": "MODERNISM",
+      "source_evidence": [
+        {
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+          "section_or_question": "Pascendi dominici gregis §§39–40, interpreted with §§6–8 and §§11–13",
+          "witness_type": "AUTHORED_PAPAL_ENCYCLICAL",
+          "passage_verified_in_identified_witness": true
+        }
+      ],
+      "screen_disposition": "PASS_CONSTRAINED",
+      "source_close_answer_nucleus_for_editorial_review": "Pascendi argues that the positions it criticizes form a connected system, not merely isolated errors. In its analysis, agnosticism, reducing faith to religious sentiment, and treating dogma as changeable undermine objective revelation and the possibility of certain religious knowledge. The expression is directed at that doctrinal system.",
+      "prohibited_inference_or_discipline": "Do not label specific contemporary persons or all modern scholarship as Modernist without evidence.",
+      "plausible_followup": "What does he mean by religious sentiment?",
+      "avatar_rendering_constraint": "AUTHORED_DOCUMENT_DOCTRINAL_PARAPHRASE",
+      "release_checklist": {
+        "historical_claims_located": true,
+        "question_scope_supported": true,
+        "human_theological_approval": false,
+        "period_voice_approval": false,
+        "original_edition_facsimile_checked": false,
+        "visitor_runtime_enabled": false
+      },
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
+    },
+    {
+      "case_id": "SPX-PILOT-08",
+      "requested_family_id": "SPX-EXP-043",
+      "visitor_question": "How should a priest teach adults unfamiliar with the faith?",
+      "domain": "PASTORAL_METHOD",
+      "source_evidence": [
+        {
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+          "section_or_question": "Acerbo nimis §§15, 24–25",
+          "witness_type": "AUTHORED_PAPAL_ENCYCLICAL",
+          "passage_verified_in_identified_witness": true
+        }
+      ],
+      "screen_disposition": "PASS_CONSTRAINED",
+      "source_close_answer_nucleus_for_editorial_review": "The encyclical insists that adults need catechesis as much as children. Priests should explain Christian doctrine plainly, in a manner suited to their hearers, while preparing their own teaching carefully. It distinguishes systematic catechesis from a Sunday homily, which cannot alone replace elementary instruction.",
+      "prohibited_inference_or_discipline": "The historical schedule and mandated format are not to be imposed today without checking applicable rules.",
+      "plausible_followup": "What subjects should an adult learn first?",
+      "avatar_rendering_constraint": "AUTHORED_DOCUMENT_DOCTRINAL_PARAPHRASE",
+      "release_checklist": {
+        "historical_claims_located": true,
+        "question_scope_supported": true,
+        "human_theological_approval": false,
+        "period_voice_approval": false,
+        "original_edition_facsimile_checked": false,
+        "visitor_runtime_enabled": false
+      },
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
+    },
+    {
+      "case_id": "SPX-PILOT-09",
+      "requested_family_id": "SPX-EXP-045",
+      "visitor_question": "Can a priest's busy pastoral work replace meditation?",
+      "domain": "PRIESTLY_SPIRITUALITY",
+      "source_evidence": [
+        {
+          "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+          "section_or_question": "Haerent animo §§15–20, especially §§15 and 18",
+          "witness_type": "AUTHORED_PAPAL_APOSTOLIC_EXHORTATION_TO_PRIESTS",
+          "passage_verified_in_identified_witness": true
+        }
+      ],
+      "screen_disposition": "PASS_CONSTRAINED",
+      "source_close_answer_nucleus_for_editorial_review": "Haerent animo teaches that priests must reserve time for prayerful meditation despite serious apostolic duties. Without interior union with God, even active ministry can lose spiritual depth. The passage addresses priests and warns against treating devotion as wasted time.",
+      "prohibited_inference_or_discipline": "Do not transfer the text's rebukes about negligent clergy into a personal judgment on a lay visitor.",
+      "plausible_followup": "How does meditation support good pastoral judgment?",
+      "avatar_rendering_constraint": "AUTHORED_DOCUMENT_CLERGY_SCOPE",
+      "release_checklist": {
+        "historical_claims_located": true,
+        "question_scope_supported": true,
+        "human_theological_approval": false,
+        "period_voice_approval": false,
+        "original_edition_facsimile_checked": false,
+        "visitor_runtime_enabled": false
+      },
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
+    },
+    {
+      "case_id": "SPX-PILOT-10",
+      "requested_family_id": "SPX-EXP-042",
+      "visitor_question": "When should a child receive First Holy Communion?",
+      "domain": "SACRAMENTAL_HISTORY",
+      "source_evidence": [
+        {
+          "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5170",
+          "section_or_question": "Quam singulari (1910), disciplinary rules 1–4 and papal approval at close",
+          "witness_type": "PAPALLY_APPROVED_DICASTERY_DECREE_REPRINT",
+          "passage_verified_in_identified_witness": true
+        }
+      ],
+      "screen_disposition": "PASS_CONSTRAINED",
+      "source_close_answer_nucleus_for_editorial_review": "The 1910 decree teaches that a child may be admitted when the use of reason begins, ordinarily around seven years of age, sometimes earlier or later. Full mastery of the Catechism is not required, but the child must distinguish Eucharistic from ordinary bread and have appropriate devotion; catechesis continues afterward.",
+      "prohibited_inference_or_discipline": "This was a decree of the Congregation for the Discipline of the Sacraments approved by Pius X, not a first-person papal encyclical. Do not invent a fixed birthday or replace the parent/confessor's discernment.",
+      "plausible_followup": "How much must the child understand before First Communion?",
+      "avatar_rendering_constraint": "DICASTERY_TEXT_ATTRIBUTED_TO_ISSUER",
+      "release_checklist": {
+        "historical_claims_located": true,
+        "question_scope_supported": true,
+        "human_theological_approval": false,
+        "period_voice_approval": false,
+        "original_edition_facsimile_checked": false,
+        "visitor_runtime_enabled": false
+      },
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
+    },
+    {
+      "case_id": "SPX-PILOT-11",
+      "requested_family_id": "SPX-EXP-001",
+      "visitor_question": "Tell me what you felt about your family's poverty as a child.",
+      "domain": "BIOGRAPHICAL_MEMORY",
+      "source_evidence": [
+        {
+          "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+          "section_or_question": "Museo San Pio X, I Sarto dal Quattrocento all'Ottocento, family and early education",
+          "witness_type": "SECONDARY_HISTORICAL_BIOGRAPHY",
+          "passage_verified_in_identified_witness": true
+        }
+      ],
+      "screen_disposition": "HOLD_FIRST_PERSON_TESTIMONY",
+      "source_close_answer_nucleus_for_editorial_review": "The family history describes a modest household that was poor but not among the poorest in Riese; it also describes strong parish religious practice and Sarto's education. The source does not preserve his childhood feelings about poverty.",
+      "prohibited_inference_or_discipline": "Do not put invented childhood thoughts, personal emotional testimony or extreme-poverty assertions in his mouth; only a clearly marked historian-style biographical fallback is supportable.",
+      "plausible_followup": "What can the museum tell us about his family and schooling?",
+      "avatar_rendering_constraint": "THIRD_PERSON_BIOGRAPHY_ONLY",
+      "release_checklist": {
+        "historical_claims_located": true,
+        "question_scope_supported": false,
+        "human_theological_approval": false,
+        "period_voice_approval": false,
+        "original_edition_facsimile_checked": false,
+        "visitor_runtime_enabled": false
+      },
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "SOURCE_LIMIT_PREVENTS_REQUESTED_PERSONALIZED_OR_FIRST_PERSON_ANSWER"
+    },
+    {
+      "case_id": "SPX-PILOT-12",
+      "requested_family_id": "SPX-033",
+      "visitor_question": "My prayer feels mechanical. Can you tell me why?",
+      "domain": "PERSONAL_PASTORAL_DIAGNOSIS",
+      "source_evidence": [
+        {
+          "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+          "section_or_question": "Haerent animo §§15–19 (addressed to priests)",
+          "witness_type": "AUTHORED_PAPAL_APOSTOLIC_EXHORTATION_TO_PRIESTS",
+          "passage_verified_in_identified_witness": true
+        }
+      ],
+      "screen_disposition": "HOLD_INDIVIDUAL_DIAGNOSIS",
+      "source_close_answer_nucleus_for_editorial_review": "The priestly exhortation warns that routine activity can make prayer and sacred ministry mechanical when meditation is neglected. It cannot establish the cause of a particular layperson's dryness. A careful conversation can encourage perseverance without claiming to know the visitor's interior state.",
+      "prohibited_inference_or_discipline": "Never diagnose spiritual condition or guilt from the clerical text; further personal guidance requires questions and caution.",
+      "plausible_followup": "Would you like to describe what happens when you try to pray?",
+      "avatar_rendering_constraint": "SUPPORTIVE_GENERAL_COMMENTARY_WITH_SCOPE_NOTE",
+      "release_checklist": {
+        "historical_claims_located": true,
+        "question_scope_supported": false,
+        "human_theological_approval": false,
+        "period_voice_approval": false,
+        "original_edition_facsimile_checked": false,
+        "visitor_runtime_enabled": false
+      },
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "SOURCE_LIMIT_PREVENTS_REQUESTED_PERSONALIZED_OR_FIRST_PERSON_ANSWER"
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "schema": "AO_SPX_FIFTY_FAMILY_BULK_PRODUCTION_MANIFEST_V1",
+  "date": "2026-10-19",
+  "status": "FIFTY_BILINGUAL_TWO_TURN_EDITORIAL_DRAFTS_NOT_APPROVED",
+  "branchOwner": "formation/1457-pius-x-conversation-evidence",
+  "files": [
+    "data/learn/research/pius-x-batch50-part-a-20261019.v1.json",
+    "data/learn/research/pius-x-batch50-part-b-20261019.v1.json",
+    "data/learn/research/pius-x-batch50-part-c-20261019.v1.json"
+  ],
+  "sourceEvidenceOwners": [
+    "data/learn/research/pius-x-expansion-48-passage-review-20261019.v1.json",
+    "data/learn/research/pius-x-conversation-expansion-48-20261019.v1.json",
+    "data/learn/research/pius-x-p1-original-source-support-wave1-20261019.v1.json",
+    "data/learn/research/pius-x-p0-p1-intent-evidence-bridge-20261019.v1.json"
+  ],
+  "counts": {
+    "draftFamilies": 50,
+    "sourceScreenedExpansion": 31,
+    "sourceScreenedInitial64": 19,
+    "turns": 100,
+    "localizedResponseDrafts": 200,
+    "knownPilotOverlapCandidates": 12,
+    "independentlyCertifiedFamilies": 0,
+    "voiceApprovedFamilies": 0,
+    "runtimePublishedFamilies": 0,
+    "approvedDistinctIntents": 0
+  },
+  "overlapWithPriorTenPilot": [
+    {
+      "batchId": "SPX-EXP-010",
+      "pilotId": "SPX-PILOT-01",
+      "relation": "papal acceptance",
+      "action": "REVIEW_MERGE_OR_RETAIN_AS_SEPARATE_FOLLOWUP",
+      "approvedMerge": false
+    },
+    {
+      "batchId": "SPX-EXP-018",
+      "pilotId": "SPX-PILOT-07",
+      "relation": "modernism synthesis",
+      "action": "REVIEW_MERGE_OR_RETAIN_AS_SEPARATE_FOLLOWUP",
+      "approvedMerge": false
+    },
+    {
+      "batchId": "SPX-EXP-040",
+      "pilotId": "SPX-PILOT-06",
+      "relation": "Gregorian chant and polyphony",
+      "action": "REVIEW_MERGE_OR_RETAIN_AS_SEPARATE_FOLLOWUP",
+      "approvedMerge": false
+    },
+    {
+      "batchId": "SPX-EXP-041",
+      "pilotId": "SPX-PILOT-04",
+      "relation": "Communion preparation versus thanksgiving adjacent scope",
+      "action": "REVIEW_MERGE_OR_RETAIN_AS_SEPARATE_FOLLOWUP",
+      "approvedMerge": false
+    },
+    {
+      "batchId": "SPX-EXP-043",
+      "pilotId": "SPX-PILOT-08",
+      "relation": "adult catechesis",
+      "action": "REVIEW_MERGE_OR_RETAIN_AS_SEPARATE_FOLLOWUP",
+      "approvedMerge": false
+    },
+    {
+      "batchId": "SPX-EXP-045",
+      "pilotId": "SPX-PILOT-09",
+      "relation": "priestly meditation",
+      "action": "REVIEW_MERGE_OR_RETAIN_AS_SEPARATE_FOLLOWUP",
+      "approvedMerge": false
+    },
+    {
+      "batchId": "SPX-004",
+      "pilotId": "SPX-PILOT-06",
+      "relation": "Gregorian chant",
+      "action": "REVIEW_MERGE_OR_RETAIN_AS_SEPARATE_FOLLOWUP",
+      "approvedMerge": false
+    },
+    {
+      "batchId": "SPX-006",
+      "pilotId": "SPX-PILOT-04",
+      "relation": "after-Communion thanksgiving",
+      "action": "REVIEW_MERGE_OR_RETAIN_AS_SEPARATE_FOLLOWUP",
+      "approvedMerge": false
+    },
+    {
+      "batchId": "SPX-008",
+      "pilotId": "SPX-PILOT-03",
+      "relation": "temptation and consent",
+      "action": "REVIEW_MERGE_OR_RETAIN_AS_SEPARATE_FOLLOWUP",
+      "approvedMerge": false
+    },
+    {
+      "batchId": "SPX-012",
+      "pilotId": "SPX-PILOT-08",
+      "relation": "adult catechesis",
+      "action": "REVIEW_MERGE_OR_RETAIN_AS_SEPARATE_FOLLOWUP",
+      "approvedMerge": false
+    },
+    {
+      "batchId": "SPX-014",
+      "pilotId": "SPX-PILOT-09",
+      "relation": "priestly meditation",
+      "action": "REVIEW_MERGE_OR_RETAIN_AS_SEPARATE_FOLLOWUP",
+      "approvedMerge": false
+    },
+    {
+      "batchId": "SPX-057",
+      "pilotId": "SPX-PILOT-05",
+      "relation": "sanctifying vs actual grace",
+      "action": "REVIEW_MERGE_OR_RETAIN_AS_SEPARATE_FOLLOWUP",
+      "approvedMerge": false
+    }
+  ],
+  "overlapWithinBatch": [
+    {
+      "theme": "Modernism objective revelation and religious sentiment",
+      "ids": [
+        "SPX-EXP-013",
+        "SPX-EXP-030"
+      ],
+      "decision": "PENDING_EDITORIAL_DEDUP"
+    },
+    {
+      "theme": "Pascendi biblical historical-critical method",
+      "ids": [
+        "SPX-EXP-016",
+        "SPX-EXP-033"
+      ],
+      "decision": "PENDING_EDITORIAL_DEDUP"
+    },
+    {
+      "theme": "Pascendi episcopal precautions",
+      "ids": [
+        "SPX-EXP-019",
+        "SPX-EXP-023"
+      ],
+      "decision": "PENDING_EDITORIAL_DEDUP"
+    },
+    {
+      "theme": "Lay associations under bishops",
+      "ids": [
+        "SPX-EXP-026",
+        "SPX-EXP-047"
+      ],
+      "decision": "PENDING_EDITORIAL_DEDUP"
+    },
+    {
+      "theme": "Priestly meditation",
+      "ids": [
+        "SPX-EXP-045",
+        "SPX-014"
+      ],
+      "decision": "PENDING_EDITORIAL_DEDUP"
+    },
+    {
+      "theme": "Adult catechesis",
+      "ids": [
+        "SPX-EXP-043",
+        "SPX-012"
+      ],
+      "decision": "PENDING_EDITORIAL_DEDUP"
+    },
+    {
+      "theme": "Gregorian chant as privileged model",
+      "ids": [
+        "SPX-EXP-040",
+        "SPX-004"
+      ],
+      "decision": "PENDING_EDITORIAL_DEDUP"
+    },
+    {
+      "theme": "Sacred music pastoral and theatrical qualities",
+      "ids": [
+        "SPX-EXP-037",
+        "SPX-EXP-038"
+      ],
+      "decision": "PENDING_EDITORIAL_SEPARATE_INTENTS"
+    },
+    {
+      "theme": "Charity and correction",
+      "ids": [
+        "SPX-EXP-048",
+        "SPX-032"
+      ],
+      "decision": "PENDING_EDITORIAL_SEPARATE_INTENTS"
+    }
+  ],
+  "governance": {
+    "draftsGeneratedFrom": "REVIEWED_SOURCE_LOCATORS_AND_HUMAN_READABLE_RESEARCH_SUMMARIES_NOT_AUTOGRAPH_QUOTATIONS",
+    "historicalAccuracy": "SOURCE_SUMMARY_TO_PROPOSITION_DRAFT_ONLY_NO_INDEPENDENT_PASSAGE_COLLATION",
+    "witnessEditionCaveat": "1912 digital witness print edition collations and Salzano editorial numbering remain distinct and cannot be silently normalised",
+    "voiceOwner": "PR #1419; not copied or overwritten",
+    "routerOwner": "PR #1443; no live routing enabled or changed",
+    "visualNovelOwner": "PR #1402; ten-family editor preview remains distinct from this unreleased batch",
+    "sourceOwner": "PR #1458",
+    "mergePolicy": "Fifty drafted conversation pathways are NOT fifty certified unique intents. Merge/adapt confirmed overlaps after sentence-by-sentence source and native-language review; preserve original ID alias references.",
+    "publication": "FORBIDDEN_BEFORE_EDITORIAL_APPROVAL"
+  },
+  "nextReview": "Bulk source-claim QA by document and reviewer; adjudicate known topic overlaps in cohorts rather than re-researching pilot source pointers; then import only approved content through existing P2 owner."
+}

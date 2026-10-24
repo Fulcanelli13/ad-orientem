@@ -1,0 +1,66 @@
+{
+  "schema": "AO_PIUS_X_SOURCE_AWARE_48_ROUTER_REGRESSION_RECORDED_V1",
+  "date": "2026-10-19",
+  "status": "EXECUTED_SOURCE_ONLY_REGRESSION_NOT_INDEPENDENT_ACCURACY",
+  "sourceAwareRouterOwner": "PR #1443",
+  "historicalResearchOwner": "PR #1458",
+  "sourceAwareRouterHead": "66a0dbd041e7f3f8c8b57f317c5c21286fa8287d",
+  "compareRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39270927468",
+  "fixture": "data/learn/research/pius-x-12case-paraphrases-followups-20261019.v1.json",
+  "priorScoring": {
+    "shared": {
+      "correctHistoricalDocument": 9,
+      "safeUnresolved": 27,
+      "safeHeld": 8,
+      "wrongSpecific": 4
+    },
+    "hybrid": {
+      "correctHistoricalDocument": 1,
+      "safeUnresolved": 39,
+      "safeHeld": 8,
+      "wrongSpecific": 0
+    }
+  },
+  "observed": {
+    "shared": {
+      "total": 48,
+      "correctHistoricalDocument": 25,
+      "safeUnresolved": 15,
+      "safeHeld": 8,
+      "wrongSpecific": 0,
+      "generatedReplies": 0
+    },
+    "hybrid": {
+      "total": 48,
+      "correctHistoricalDocument": 26,
+      "safeUnresolved": 14,
+      "safeHeld": 8,
+      "wrongSpecific": 0,
+      "generatedReplies": 0
+    }
+  },
+  "methodologicalChange": "The previous router check did not have user-confirmation continuation and did not return canonical external URL payloads. The regression simulates confirmation ONLY after the initial question resolves to its exact historical source. Therefore before/after routing success counts are not strictly like-for-like independent accuracy estimates; compare rather as engineering acceptance progress.",
+  "codeChanges": [
+    "Bilingual two-facet documentary intent gate using original source subject and action categories, not raw evaluation utterance strings.",
+    "Explicitly confirmed historical context may continue to same source when the follow-up has an appropriate source-specific cue.",
+    "Generic lexical hits to historical topics fail closed unless a two-facet source match or an exact catalog-authored variant.",
+    "Priest meditation requires interior/mental-prayer scope, not merely an incidental mention of priest plus lay private prayer.",
+    "Original source navigation gives actual HTTPS URL plus narrow section locator and witness classification; no generic Catechism fallback if the pointer registry is absent.",
+    "Cross-character handoff rejects changed documentary URLs, requires explicit acceptance and confirmation.",
+    "The hybrid router honors authoritative historical-source gates and source gaps, without adding generated answer content."
+  ],
+  "remaining": [
+    "These 48 cases were editor-authored, repeatedly inspected and thus NOT a fresh or representative holdout.",
+    "Neither 25 nor 26 correct source routes means a certified answer: human doctrinal and documentary-voice reviews remain undone.",
+    "Unknown compound queries, novel expressions and French visitor utterances require new blind evaluation.",
+    "The bridge still needs a consumer UI and exact source-opening workflow; validated URLs are returned but no user-facing avatar change was made."
+  ],
+  "gates": {
+    "noWrongSpecificSourceOnInspectedRegression": true,
+    "contextRequiresConfirmedSource": true,
+    "sourceLinkResolvedToOriginalDocument": true,
+    "independentRetrievalAcceptance": false,
+    "certifiedAnswers": 0,
+    "liveAvatarPublished": false
+  }
+}
