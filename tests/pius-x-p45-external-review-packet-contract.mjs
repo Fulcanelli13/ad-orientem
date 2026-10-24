@@ -13,6 +13,7 @@ const p44=read(root+'evidence/pius-x-p44-39-print-scan-page-index-20261024.v1.js
 const triage=read('data/learn/research/pius-x-100answer-editorial-release-triage-20261020.v1.json');
 const packet=readFileSync(root+'review/pius-x-p45-specialist-39-review-packet-20261024.md','utf8');
 const outreach=readFileSync(root+'review/pius-x-p45-unsent-expert-outreach-drafts-20261024.md','utf8');
+const sample=readFileSync(root+'review/pius-x-p45-three-case-review-sample-20261024.md','utf8');
 const records=[
  ...p40.p39SecondPass29.map(z=>({sourceQid:z.sourceQid,en:z.finalResearchCandidateEN,fr:z.finalResearchCandidateFR})),
  ...p40.newlyFlaggedFromPreviouslyAligned36.map(z=>({sourceQid:z.sourceQid,en:z.finalResearchCandidateEN,fr:z.finalResearchCandidateFR}))
@@ -50,4 +51,15 @@ assert(packet.includes('**0** publication approvals'));
 assert(packet.includes('423 established avatar dialogues'));
 assert(outreach.includes('**Status:** Three optional messages drafted, **none sent**.'));
 assert(outreach.includes('no paid work is authorized by this inquiry'));
+for(const sourceQid of ['PX1905-Q568','PX1905-Q611','PX1905-Q657']){
+ const t=old.get(sourceQid),p=pages.get(sourceQid);
+ const c=records.find(r=>r.sourceQid===sourceQid);
+ assert(t&&p&&c);
+ assert(sample.includes('## '+sourceQid+' — '+t.questionEN));
+ for(const wording of [t.originalDraftEN,t.originalDraftFR,c.en,c.fr])assert(sample.includes(escaped(wording)));
+ for(const link of p.pageLinks)assert(sample.includes(link));
+}
+assert.equal((sample.match(/^## PX1905-Q\d+/gm)||[]).length,3);
+assert(sample.includes('**not be staged as authenticated personal speech of the pope**'));
+
 console.log('PASS P45_REVIEW_HANDOFF_LOCK '+JSON.stringify({cases:39,technical:t,historical:h,bilingual:l,approved:0,contacted:0,changed:0}));
