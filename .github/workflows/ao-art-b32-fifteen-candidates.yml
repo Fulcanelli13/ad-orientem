@@ -1,0 +1,74 @@
+name: B32 archive 15 institution-corroborated research photo candidates without editorial promotion
+on:
+  push:
+    branches: [research/sacred-art-b32-p0-22-identity-rights-20261024]
+    paths:
+      - .github/workflows/ao-art-b32-fifteen-candidates.yml
+      - scripts/research/sacred_art_b32_acquire15.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-b32-fifteen-once
+  cancel-in-progress: false
+jobs:
+  research-only-source-files:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b32-p0-22-identity-rights-20261024
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install only image decoder, verify item-level source gates
+        run: |
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python -m py_compile scripts/research/sacred_art_b32_acquire15.py scripts/research/sacred_art_release_archive_gate.py
+          python - <<'PY'
+          from pathlib import Path
+          import csv,json
+          root=Path('data/research')
+          with (root/'sacred-art-b32-fifteen-provisional-source-queue.csv').open(newline='',encoding='utf-8') as f:
+            s=list(csv.DictReader(f))
+          assert len(s)==15
+          assert len({r['artwork_id'] for r in s})==15
+          assert all(r['publication_reuse_approved']=='NO' and r['automatic_editorial_promotion']=='NO' and r['photographic_object_identity_certified']=='NO' for r in s)
+          assert all(r['B32_evidence_disposition'] in {'OBJECT_CORROBORATED_PHOTO_HOLD','SERIES_CORROBORATED_PHOTO_HOLD'} for r in s)
+          PY
+      - name: Technical source capture - exact saved photo-key bytes and current file licence metadata
+        run: python scripts/research/sacred_art_b32_acquire15.py
+      - name: Mandatory unpublished zero-euro archive; upload, download, verify SHA-256 for all acquired files
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py \
+            --wave b32-fifteen-research --source-dir artifacts/b32-fifteen-provisional-research-files
+      - name: Commit compact source-file audit; never commit originals or promote app images
+        run: |
+          set -euo pipefail
+          cp artifacts/b32-fifteen-provisional-research-files/acquisition-results.csv data/research/sacred-art-b32-15-source-file-results.csv
+          cp artifacts/b32-fifteen-provisional-research-files/acquisition-summary.json data/research/sacred-art-b32-15-source-file-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b32-15-source-file-results.csv data/research/sacred-art-b32-15-source-file-summary.json
+          git commit -m 'research: B32 fifteen institutional source photo hashes and draft-only archive'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b32-p0-22-identity-rights-20261024
+            git rebase origin/research/sacred-art-b32-p0-22-identity-rights-20261024
+            git push origin HEAD:research/sacred-art-b32-p0-22-identity-rights-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Short-lived convenience report only - not originals
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-b32-fifteen-research-audit
+          path: |
+            artifacts/b32-fifteen-provisional-research-files/acquisition-results.csv
+            artifacts/b32-fifteen-provisional-research-files/acquisition-summary.json
+          retention-days: 30
+          if-no-files-found: error
