@@ -713,13 +713,13 @@ function calendarCustomArticleMarkup(article){
   const sources=article.sources||[],historySources=article.history_sources||[],supportingSources=article.supporting_sources||[];
   const draft=article.editorialPreview===true;
   return `<details class="aoCalCustomArticle" data-cal-custom-id="${esc(article.id)}"${draft?' data-cal-custom-editorial-review="true"':""}>
-    <summary><span><strong>${esc(article.title[lang])}</strong><small>${esc(article.occasion[lang]||"")}</small></span><span aria-hidden="true">›</span></summary>
+    <summary><span><strong>${esc(article.title[lang])}</strong><small>${esc(article.occasion[lang]||"")}${draft?" · "+esc(Lcopy("DRAFT","BROUILLON")):""}</small></span><span aria-hidden="true">›</span></summary>
     <div class="aoCalCustomArticleContent">
       ${draft?`<p role="status" class="aoCalCustomReviewStatus">${esc(Lcopy("Editorial review · draft, not published","Relecture éditoriale · brouillon, non publié"))}</p>`:""}
       <p>${esc(article.description[lang])}</p>
       ${article.history[lang]!==article.description[lang]?`<h5>${esc(Lcopy("Historical context","Contexte historique"))}</h5><p>${esc(article.history[lang])}</p>`:""}
       <h5>${esc(Lcopy("Spiritual meaning","Sens spirituel"))}</h5><p>${esc(article.meaning[lang])}</p>
-      <h5>${esc(Lcopy("Traditional household practice","Pratique traditionnelle"))}</h5><p>${esc(article.practice[lang])}</p>
+      <h5>${esc(draft?Lcopy("How this custom is observed","Comment cette coutume est observée"):Lcopy("Traditional household practice","Pratique traditionnelle"))}</h5><p>${esc(article.practice[lang])}</p>
       <h5>${esc(Lcopy("Scope and cautions","Portée et précautions"))}</h5><p>${esc(article.scope[lang])}</p><p>${esc(article.caution[lang])}</p>
       ${sources.length?`<h5>${esc(Lcopy("Sources","Sources"))}</h5><ul>${sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join("")}</ul>`:""}
       ${historySources.length?`<h5>${esc(Lcopy("Historical sources","Sources historiques"))}</h5><ul>${historySources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join("")}</ul>`:""}
