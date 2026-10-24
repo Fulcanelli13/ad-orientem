@@ -6,6 +6,7 @@ import {loadSourceOnlyGate,sourceOnlyEvidence} from './pius-x-source-only-gate.m
 import {routePilotQuestion} from './pius-x-pilot-question-router.mjs';
 import {auditDraftSurface} from './pius-x-draft-surface-gate.mjs';
 import {makeP52ComposerContext,SPX_P52_PROFILE} from './pius-x-p52-bilingual-composer-context.mjs';
+import {makeP53AtomicComposerContext,SPX_P53_PROFILE} from './pius-x-p53-atomic-claim-composer.mjs';
 
 // Small, explicitly sourced evidence annex for one pilot subject only. The original
 // 106/423 source-owner corpus and public reader remain untouched.
@@ -194,8 +195,8 @@ export async function composeDraft(store,input,model){
  const sourceInput=route?.status==='matched'?{...input,nodeId:route.nodeId}:input;
  const chosen=selectEvidence(store,sourceInput);if(chosen.status!=='eligible')return chosen;
  const voiceMode=input?.voiceMode==='historical'?'historical':'documentary';
- const profile=input?.experimentalComposerProfile===SPX_P52_PROFILE?
-   SPX_P52_PROFILE:null;
+ const profile=[SPX_P52_PROFILE,SPX_P53_PROFILE].includes(input?.experimentalComposerProfile)?
+   input.experimentalComposerProfile:null;
  if(profile&&chosen.chapterId!=='SPX-PILOT-01')
   return held('experimental_language_aid_unavailable_for_subject');
  if(typeof model!=='function')return held('no_private_model_configured');
@@ -203,8 +204,10 @@ export async function composeDraft(store,input,model){
   // Source-owned evidence and the verifier input are ALWAYS the same untouched
   // selectEvidence() result. Only the research composer can receive a
   // differentiated output-language aid. No bilingual gloss is source truth.
-  const composeInput=profile?makeP52ComposerContext(chosen,voiceMode):
-   {...chosen,voiceMode};
+  const composeInput=profile===SPX_P52_PROFILE?
+   makeP52ComposerContext(chosen,voiceMode):
+   profile===SPX_P53_PROFILE?
+    makeP53AtomicComposerContext(chosen,voiceMode):{...chosen,voiceMode};
   const proposal=parse(await model('compose',[
    {role:'system',content:composerRules},
    {role:'user',content:JSON.stringify(composeInput)}
