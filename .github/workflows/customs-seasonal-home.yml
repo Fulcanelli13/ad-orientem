@@ -4,6 +4,8 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "src/customs/seasonal-home-spotlight.js"
+      - "src/customs/year-led-library.js"
+      - "src/calendar/calendar-runtime.js"
       - "src/home/today-v2-sections.js"
       - "src/home/today-v2-styles.js"
       - "src/home/presentation.js"
@@ -24,6 +26,8 @@ jobs:
       - name: Verify sourced approved-only year-led Home Customs spotlight
         run: |
           node --check src/customs/seasonal-home-spotlight.js
+          node --check src/customs/year-led-library.js
+          node --check src/calendar/calendar-runtime.js
           node --check src/home/today-v2-sections.js
           node --check src/home/presentation.js
           node --check tests/customs-seasonal-home-year.mjs
