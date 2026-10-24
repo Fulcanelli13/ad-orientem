@@ -2326,22 +2326,6 @@
       "codes": {
         "iso_alpha2": "PG"
       }
-    },
-    {
-      "geo_area_id": "geo:country:PA",
-      "name": {
-        "official": "Panama",
-        "aliases": []
-      },
-      "area_system": "CIVIL",
-      "area_type": "country",
-      "parent_geo_area_ids": [
-        "geo:world"
-      ],
-      "mappable": true,
-      "codes": {
-        "iso_alpha2": "PA"
-      }
     }
   ],
   "places": [
@@ -17328,42 +17312,6 @@
       },
       "source_ids": [
         "AO-P28-SITE-SG-INV-0334"
-      ]
-    },
-    {
-      "place_id": "place:PA:basilica-jesus-nazareno-atalaya",
-      "name": {
-        "official": "Basílica Menor Jesús Nazareno de Atalaya",
-        "aliases": []
-      },
-      "place_type": "basilica",
-      "geo_area_ids": [
-        "geo:country:PA"
-      ],
-      "mappable": true,
-      "geo": {
-        "lat": 8.04326,
-        "lng": -80.92447,
-        "precision": "site",
-        "geocoding_source": "OSM",
-        "source_url": "https://www.openstreetmap.org/way/396944583",
-        "source_ref": "osm:way:396944583",
-        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
-        "matched_country_code": "PA",
-        "verified_at": "2026-10-24"
-      },
-      "address": {
-        "line1": null,
-        "line2": null,
-        "postal_code": null,
-        "city": "Atalaya",
-        "region": null,
-        "country_code": "PA",
-        "country": "Panama",
-        "formatted": "Basílica Menor Jesús Nazareno de Atalaya, Atalaya, Panama"
-      },
-      "source_ids": [
-        "AO-P28-SITE-SG-INV-0460"
       ]
     },
     {
