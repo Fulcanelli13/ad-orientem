@@ -63,7 +63,7 @@ try{
   await nav.locator('summary').click();
   assert.equal(await page.locator('.spxm-document-choice').count(),4);
   assert.equal(await page.locator('.spxm-document-choice:disabled').count(),1);
-  assert.equal(await page.locator('.spxm-document-choice:disabled strong').innerText(),'E supremi');
+  assert.equal(await page.locator('.spxm-document-choice:disabled strong').textContent(),'E supremi');
   assert.deepEqual(await page.locator('.spxm-document-choice strong').allInnerTexts(),
    docs.map(d=>d.title));
   // First: free choice yields ORIGINAL answer and suggested exact-source
@@ -88,7 +88,7 @@ try{
   // Move into the SECOND canonical document using actual P6 navigation.
   await page.locator('.spxm-document-choice[data-document-chapter="SPX-PILOT-09"]').click();
   assert(await panel.isVisible(),'P6 navigation activates destination chapter');
-  assert.equal(await page.locator('.spxm-document-choice:disabled strong').innerText(),'Haerent animo');
+  assert.equal(await page.locator('.spxm-document-choice:disabled strong').textContent(),'Haerent animo');
   assert.equal(await page.locator('#spxm-offline-replies .spxm-entry').count(),0);
   assert.equal(await page.locator('.spxm-offline-choice').count(),3);
   await page.locator('.spxm-offline-choice').first().click();
@@ -99,7 +99,7 @@ try{
   // Native source switching must also allow the fourth two-question doc.
   await nav.locator('summary').click();
   await page.locator('.spxm-document-choice[data-document-chapter="SPX-NEW-012"]').click();
-  assert.equal(await page.locator('.spxm-document-choice:disabled strong').innerText(),'Tribus circiter');
+  assert.equal(await page.locator('.spxm-document-choice:disabled strong').textContent(),'Tribus circiter');
   assert.equal(await page.locator('.spxm-offline-choice').count(),2);
   await page.locator('#spxm-guided-start').click();
   assert.equal(await page.locator('.spxm-draft').count(),1);
@@ -110,7 +110,7 @@ try{
   await page.locator('.spxm-guided-other-document').click();
   assert.notEqual(await nav.getAttribute('open'),null);
   await page.locator('.spxm-document-choice[data-document-chapter="SPX-029"]').click();
-  assert.equal(await page.locator('.spxm-document-choice:disabled strong').innerText(),'Il fermo proposito');
+  assert.equal(await page.locator('.spxm-document-choice:disabled strong').textContent(),'Il fermo proposito');
   assert.equal(await page.locator('#spxm-offline-replies .spxm-entry').count(),0);
   assert.equal(await page.locator('.spxm-offline-choice').count(),3);
   // Locale reset and original witnesses are still coupled to the source owner.
