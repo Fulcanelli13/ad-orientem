@@ -138,7 +138,7 @@ const change=(a,b)=>{
 };
 change('One hundred openings — Italian sources and bilingual editorial drafts',
  'Eighty-nine opening answers — bulk source comparison');
-change('100 source-owned opening questions','89 source-owned opening questions');
+change('St Pius X · Source & translation review · 100 openings','St Pius X · Source & translation review · 89 openings');
 change('data.schema!=="AO_SPX_P34_ITALIAN_EN_FR_CLAIM_REVIEW_PACKET_V1"',
  'data.schema!=="AO_SPX_P38_BULK89_REMAINING_ORIGINAL_ITALIAN_EDITORIAL_REVIEW_V1"');
 change('data.counts.openingCases!==100','data.counts.inspectedRemainingCases!==89');
