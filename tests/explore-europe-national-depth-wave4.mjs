@@ -1,3 +1,4 @@
+import {CURRENT_RELEASE_PLACE_IDS} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 const read=p=>JSON.parse(readFileSync(p,"utf8"));
@@ -26,7 +27,7 @@ for(const row of read("data/geography/research/sacred-places-p17-separated-berga
 // Later P18 publications must not change frozen original European discovery denominators.
 for(const row of read("data/geography/research/sacred-places-p18-three-site-release.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
 for(const row of JSON.parse(readFileSync("data/geography/research/sacred-places-p19-two-catholic-site-release.v1.json","utf8")).published_new)publishedAfterFreeze.add(row.place_id);
-for(const row of JSON.parse(readFileSync("data/geography/research/sacred-places-p22-map-first-ten-sites.v1.json","utf8")).published_new)publishedAfterFreeze.add(row.place_id);
+for(const placeId of CURRENT_RELEASE_PLACE_IDS)publishedAfterFreeze.add(placeId);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 const W1=read("data/explore/europe-acquisition.wave1.research.v1.json");
 const W2=read("data/explore/europe-acquisition.wave2.research.v1.json");
