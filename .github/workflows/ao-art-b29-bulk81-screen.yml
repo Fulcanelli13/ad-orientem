@@ -1,0 +1,41 @@
+name: B29 metadata-screen all 81 legacy P0 source photo variants in one bulk pass
+on:
+  push:
+    branches: [research/sacred-art-b29-p0-selected-originals-20261024]
+    paths: [.github/workflows/ao-art-b29-bulk81-screen.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  screen-81:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b29-p0-selected-originals-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Pillow dependency for shared source metadata module
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Bulk metadata-only evidence pass, no image downloads
+        run: |
+          python -m py_compile scripts/research/sacred_art_b29_bulk81_source_screen.py
+          python scripts/research/sacred_art_b29_bulk81_source_screen.py
+      - name: Persist all 81 source checks and exact rights/identity exception reasons
+        run: |
+          set -euo pipefail
+          cp artifacts/sacred-art-b29-bulk81-source-screen/sacred-art-b29-81-live-source-screener.csv data/research/
+          cp artifacts/sacred-art-b29-bulk81-source-screen/sacred-art-b29-81-live-source-screener.summary.json data/research/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b29-81-live-source-screener.*
+          git commit -m 'research: bulk screen all 81 priority artwork source variants without downloads'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b29-p0-selected-originals-20261024
+            git rebase origin/research/sacred-art-b29-p0-selected-originals-20261024
+            git push origin HEAD:research/sacred-art-b29-p0-selected-originals-20261024 && exit 0
+            sleep 4
+          done
+          exit 1

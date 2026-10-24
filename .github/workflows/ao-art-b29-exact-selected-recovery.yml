@@ -1,0 +1,69 @@
+name: B29 recover seven exact-selected P0 originals with draft-only hash-verified archive
+on:
+  push:
+    branches: [research/sacred-art-b29-p0-selected-originals-20261024]
+    paths: [.github/workflows/ao-art-b29-exact-selected-recovery.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b29-original-research-seven-no-duplicate
+  cancel-in-progress: false
+jobs:
+  b29-exact-selected:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b29-p0-selected-originals-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image decoder (research only)
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Validate exactly seven frozen selected original hashes and ownership
+        run: |
+          python -m py_compile scripts/research/sacred_art_b29_exact_selected.py scripts/research/sacred_art_release_archive_gate.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('data/research/sacred-art-b29-seven-exact-selected-source-records.json').read_text())
+          assert len(x['records']) == 7 and len({r['artwork_id'] for r in x['records']}) == 7
+          assert x['publication_allowed'] is False and x['source_license_approval'] is False
+          assert all(r['publication_allowed'] is False for r in x['records'])
+          assert all(r['source_file_url'].startswith('https://') for r in x['records'])
+          PY
+      - name: Recheck live Commons rights, save current bytes on historical SHA drift with explicit quarantine
+        run: python scripts/research/sacred_art_b29_exact_selected.py
+      - name: Required €0 storage gate - copy bytes to unpublished draft GitHub Release and re-verify
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py \
+            --wave b29-seven-selected --source-dir artifacts/b29-seven-exact-selected
+      - name: Commit compact results and explicit outstanding holds
+        run: |
+          set -euo pipefail
+          cp artifacts/b29-seven-exact-selected/Acquisition_results.csv data/research/sacred-art-b29-seven-exact-acquisition-results.csv
+          cp artifacts/b29-seven-exact-selected/Acquisition_summary.json data/research/sacred-art-b29-seven-exact-acquisition-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b29-seven-exact-acquisition-*.json data/research/sacred-art-b29-seven-exact-acquisition-*.csv
+          git commit -m 'research: B29 seven selected P0 source hash and license audit, no approval'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b29-p0-selected-originals-20261024
+            git rebase origin/research/sacred-art-b29-p0-selected-originals-20261024
+            git push origin HEAD:research/sacred-art-b29-p0-selected-originals-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Supplemental audit download - never production assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: b29-seven-selected-source-audit-only
+          path: |
+            artifacts/b29-seven-exact-selected/Acquisition_results.csv
+            artifacts/b29-seven-exact-selected/Acquisition_summary.json
+          retention-days: 30
+          if-no-files-found: error

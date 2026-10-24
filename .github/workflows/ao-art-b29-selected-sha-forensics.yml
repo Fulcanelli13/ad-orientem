@@ -1,0 +1,50 @@
+name: B29 forensic close historical selected-file SHA discrepancy without redownload
+on:
+  push:
+    branches: [research/sacred-art-b29-p0-selected-originals-20261024]
+    paths: [.github/workflows/ao-art-b29-selected-sha-forensics.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  forensic-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b29-p0-selected-originals-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Require unpublished release and exact research transfer file
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tag=ao-art-originals-40071629985-1
+          test "$(gh release view "$tag" -R "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
+          mkdir -p artifacts/b29-historical-archive
+          gh release download "$tag" -R "$GITHUB_REPOSITORY" \
+            --pattern 'ao-originals-b29-seven-selected-40071629985-1.tar' \
+            --dir artifacts/b29-historical-archive
+      - name: Byte-verify all seven historic selected originals against archive and workbook
+        run: |
+          python -m py_compile scripts/research/sacred_art_b29_selected_sha_forensics.py
+          python scripts/research/sacred_art_b29_selected_sha_forensics.py
+      - name: Preserve corrected evidence in research registry, keep earlier audit unchanged
+        run: |
+          set -euo pipefail
+          cp artifacts/b29-historical-sha-forensics/sacred-art-b29-selected-exact7-corrected.csv data/research/
+          cp artifacts/b29-historical-sha-forensics/sacred-art-b29-selected-exact7-corrected.summary.json data/research/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b29-selected-exact7-corrected.*
+          git commit -m 'research: byte-prove seven historical selected originals in B29 draft archive'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b29-p0-selected-originals-20261024
+            git rebase origin/research/sacred-art-b29-p0-selected-originals-20261024
+            git push origin HEAD:research/sacred-art-b29-p0-selected-originals-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
