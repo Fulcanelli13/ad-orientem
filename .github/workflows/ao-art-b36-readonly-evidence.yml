@@ -1,0 +1,57 @@
+name: B36 read-only full 87 media leads and deduped 383-artwork source gate
+on:
+  push:
+    branches: [research/sacred-art-b36-87-lead-object-verification-20261024]
+    paths: [.github/workflows/ao-art-b36-readonly-evidence.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  immutable-research-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b36-87-lead-object-verification-20261024
+          persist-credentials: false
+      - name: Verify complete source and no-promotion accounting
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          root=Path('data/research')
+          def js(name):return json.loads((root/name).read_text())
+          def table(name):
+            with (root/name).open(newline='',encoding='utf-8') as stream:return list(csv.DictReader(stream))
+          b35=js('sacred-art-b35-383-active-40-gaps-closeout.json')
+          b36=js('sacred-art-b36-383-active-source-coverage-closeout.json')
+          screen=js('sacred-art-b36-87-media-object-screen.json')
+          source=table('sacred-art-b36-four-file-results.csv')
+          physical=table('sacred-art-b27-physical-image-inventory.csv')
+          assert len(screen['records'])==87 and len(source)==4 and len(physical)==290
+          assert screen['source_identity_correlations_detected']==4
+          assert b35['active_with_some_research_image_source']==349
+          assert b36['source_artworks_covered_now']==353
+          assert b36['source_artwork_gaps_remaining']==30
+          assert len(b36['entire_original_gap_cohort_of_40'])==40
+          assert len({x['artwork_id'] for x in b36['entire_original_gap_cohort_of_40']})==40
+          assert len([x for x in b36['entire_original_gap_cohort_of_40'] if x['research_source_present']])==10
+          assert len(b36['remaining_by_category']['P0_institution_photo_rights_hold'])==1
+          assert len(b36['remaining_by_category']['P1P2_legacy_other_holds'])==2
+          assert len(b36['remaining_by_category']['P2_initially_image_less'])==27
+          assert b36['b36_net_new_distinct_image_files']==3
+          assert b36['b36_net_new_distinct_image_bytes']==23031696
+          assert b36['b36_gross_archived_file_bytes']==27296586
+          assert b36['new_distinct_image_files_across_B29_B36']==106
+          assert b36['new_source_bytes_B29_B36_deduplicated']==625874928
+          alias=b36['b36_original_sha_already_preserved_B27']
+          assert len(alias)==1 and alias[0]['preexisting_catalogue_id']=='BERLIN-RUBENS-798H'
+          assert sum(x['sha256']==alias[0]['sha256'] for x in physical)==1
+          assert sum(int(x['bytes']) for x in source)==b36['b36_gross_archived_file_bytes']
+          assert all(x['status']=='MUSEUM_OBJECT_SOURCE_HASHED_RESEARCH_ONLY' and
+                     x['editorial_selected']=='NO' and x['publication_approved']=='NO' for x in source)
+          assert not b36['editorial_approvals_created'] and not b36['publication_rights_approvals_created']
+          assert b36['canonical_451_unchanged'] is True
+          print('PASS B36: 87 screened, 4 object sources, 3 net-new files, 353/383 source coverage, 30 gaps, no approvals')
+          PY
