@@ -52,7 +52,7 @@ def metadata_for(page_url):
         raise ValueError("Expected exact Commons File page URL")
     filename=unquote(parsed.path[len("/wiki/File:"):]).replace("_"," ")
     api="https://commons.wikimedia.org/w/api.php?"+urlencode({
-        "action":"query","format":"json","prop":"imageinfo","iiprop":"extmetadata|url|size",
+        "action":"query","format":"json","prop":"imageinfo","iiprop":"extmetadata|url|size|mime",
         "titles":"File:"+filename,"formatversion":2})
     payload=json.loads(get(api))
     pages=payload.get("query",{}).get("pages",[])
