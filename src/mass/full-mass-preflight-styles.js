@@ -149,7 +149,7 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   "#ao-mass-flow-v1 .aoGuidedMassFolio[data-ao-folio-view='overview']{grid-template-columns:minmax(0,1fr)!important;gap:12px!important}",
   "#ao-mass-flow-v1 .aoGuidedMassFolio[data-ao-folio-view='overview']>.aoMassFolioGuide{grid-row:1!important;padding:20px 16px 12px!important;background:var(--ao-frame-bg,#0B0F13)!important}",
   "#ao-mass-flow-v1 .aoGuidedMassFolio[data-ao-folio-view='overview']>.aoMassFolioIdentity{grid-row:2!important;position:static!important;min-height:0!important;display:block!important;padding:0 16px 10px!important;background:transparent!important;border:0!important}",
-  "#ao-mass-flow-v1 .aoGuidedMassFolio[data-ao-folio-view='overview']>.aoMassFolioIdentity>:not([data-folio-calendar-details]){display:none!important}",
+  "/* Show source-owned feast/date in the editorial overview; suppress only redundant selections. */",
   "#ao-mass-flow-v1 .aoGuidedMassFolio[data-ao-folio-view='overview'] .aoMassFolioStepNav,#ao-mass-flow-v1 .aoGuidedMassFolio[data-ao-folio-view='overview'] .aoMassFolioGuideTop{display:none!important}",
   "#ao-mass-flow-v1 .aoGuidedMassFolio[data-ao-folio-view='overview'] .aoMassFolioReadyLine{display:none!important}",
   "#ao-mass-flow-v1 .aoGuidedMassFolio[data-ao-folio-view='overview'] [data-folio-panel='overview']>h3{font:400 28px/1.15 var(--ao-font-display,'EB Garamond',Georgia,serif)!important;color:var(--ao-frame-text,#ECE8DF)!important;margin:0 0 8px!important}",
