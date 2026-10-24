@@ -150,7 +150,8 @@ def main():
             hold=("Incomplete two-sided or unresolved artwork identity/source composition. "+
                     hold).strip() if sha else "Exact complete-artwork image has not been preserved. Do not substitute unrelated paintings."
         slots=propose_all(x["title"],x["artist"],id_)
-        assert slots and len({s["slot_id"] for s in slots})==len(slots)
+        if not slots or len({s["slot_id"] for s in slots})!=len(slots):
+            raise RuntimeError("B53 placement proposal collision for "+id_+" title="+x["title"]+" codes="+str([v["slot_id"] for v in slots]))
         selected.append({"n":n,"catalogue_row":int(x["catalogue_row"]),
             "artwork_id":id_,"title":x["title"],"artist":x["artist"],
             "frozen_decision":x["frozen_decision"],"priority":x["priority"],
