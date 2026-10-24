@@ -55,3 +55,7 @@ jobs:
         run: |
           node --check tests/customs-pitre-1900-original-scan-full-129-folio-integrity.mjs
           node tests/customs-pitre-1900-original-scan-full-129-folio-integrity.mjs
+      - name: Verify Pitrè seven original 1900 sections and 156 remaining source pages
+        run: |
+          node --check tests/customs-pitre-1900-new-121-original-folio-source-gate.mjs
+          node tests/customs-pitre-1900-new-121-original-folio-source-gate.mjs
