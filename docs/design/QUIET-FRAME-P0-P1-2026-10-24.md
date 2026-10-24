@@ -43,3 +43,10 @@ This is **not** a new web application or separate stylesheet framework.
 
 ## Known limitation
 This first P1 patch is a **foundation and scoped mobile migration**, not the entire screenshot parity redesign. The dynamic styles injected by the legacy feature owners can still compete with central CSS in some states; review computed styles in a browser before promotion.
+
+## 24 Oct follow-up: P2a visual convergence (review branch only)
+- First cleared three browser-check failures from the previous commit: non-Mass Calendar tests now enter the preserved year wheel through the visible Today seasonal link; Mass preflight tests use the visible three-choice overview rather than a hidden stage tab; Prayer route-owner test helper no longer recursively calls itself.
+- Extended the **existing** central stylesheet, not a new UI owner, to cover scoped everyday chrome: Formation header and family cards, Settings header/64px rows/grouping, and Explore header and search input.
+- These are *visual-only styles*. The Formation subject and text routes, Settings preference controls and persistence, and Explore mapping/geolocation/evidence workflows were not replaced or reordered.
+- Deliberately retained existing five-slot ribbon architecture (Today, Mass, Pray, Formation, Explore), with Settings as a utility overlay, pending separate explicit navigation acceptance. The illustrative five-tab concept would substitute Settings for Mass; do not silently change the approved live navigation contract during palette migration.
+- Acceptance pending: screenshot comparison for Formation/Settings/Explore at phone and desktop widths; map and sheet layout, French string lengths, reader/shell regressions, and baseline contrast.
