@@ -34,7 +34,7 @@ jobs:
           assert all(r['publication_allowed'] is False for r in x['records'])
           assert all(r['source_file_url'].startswith('https://') for r in x['records'])
           PY
-      - name: Recheck live Commons file licences and exact selected original hashes
+      - name: Recheck live Commons rights, save current bytes on historical SHA drift with explicit quarantine
         run: python scripts/research/sacred_art_b29_exact_selected.py
       - name: Required €0 storage gate - copy bytes to unpublished draft GitHub Release and re-verify
         env:
