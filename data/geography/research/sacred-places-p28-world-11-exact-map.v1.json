@@ -11,11 +11,11 @@
     "directory_links": 9
   },
   "proposed": {
-    "places": 398,
-    "sources": 696,
-    "crosswalk": 398,
-    "unlinked": 139,
-    "geo_areas": 142,
+    "places": 397,
+    "sources": 695,
+    "crosswalk": 397,
+    "unlinked": 138,
+    "geo_areas": 141,
     "directory_links": 9
   },
   "reviewed_named_candidates": 13,
@@ -195,24 +195,6 @@
       "scope_limit": "Church, not surrounding Stations chapels."
     },
     {
-      "candidate_id": "SG-INV-0460",
-      "place_id": "place:PA:basilica-jesus-nazareno-atalaya",
-      "name": "Basílica Menor Jesús Nazareno de Atalaya",
-      "country": "PA",
-      "place_type": "basilica",
-      "lat": 8.04326,
-      "lng": -80.92447,
-      "source_ids": [
-        "AO-P28-SITE-SG-INV-0460"
-      ],
-      "identity_source_url": "https://www.nazarenodeatalaya.com/",
-      "geo_source_url": "https://www.openstreetmap.org/way/396944583",
-      "geo_source_ref": "osm:way:396944583",
-      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W396944583",
-      "precision": "site",
-      "scope_limit": "Historical mapped physical basilica. No assertion of present access, services or 2026 earthquake recovery."
-    },
-    {
       "candidate_id": "SG-INV-0725",
       "place_id": "place:GH:saint-joseph-minor-basilica-elmina",
       "name": "Saint Joseph’s Minor Basilica, Elmina",
@@ -237,7 +219,17 @@
     "OSM-derived pages used for specific OSM way references; individual mapcarta URLs stored per row.",
     "No unverified P27 Overpass results or approximate centres used.",
     "Kevelaer existing chapels, Montserrat existing abbey and Maipú tourism polygon are different physical units.",
-    "Panama country geo area created explicitly; never infer a nearby country or reuse regional coordinates.",
-    "No Mass Times, 1962 claim, relic, artwork, visitor access or public source-link requirement."
+    "No Mass Times, 1962 claim, relic, artwork, visitor access or public source-link requirement.",
+    "Panama exact mapped basilica held until its country geo area is independently introduced; do not weaken or rewrite historic 141-area checks."
+  ],
+  "held_geo_area_required": [
+    {
+      "candidate_id": "SG-INV-0460",
+      "country": "PA",
+      "name": "Basílica Menor Jesús Nazareno de Atalaya",
+      "verified_exact_osm_ref": "osm:way:396944583",
+      "identity_source_url": "https://www.nazarenodeatalaya.com/",
+      "reason": "PA country geographic area is absent from the canonical 141-area registry. Do not publish until a separately reviewed country area expansion is admitted."
+    }
   ]
 }
