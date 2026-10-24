@@ -1,0 +1,1040 @@
+{
+  "schema": "AO_B55_CLASS_I_2026_VS_383_APPROVAL_CROSSWALK_V1",
+  "as_of": "2026-10-24",
+  "sources": {
+    "feast_dates": "platform/885-sacred-art-candidates:data/calendar/sacred-art-feast-coverage-truth-2026-20261017.v1.json",
+    "approvals": "platform/885-sacred-art-candidates:data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json",
+    "legacy_runtime": "platform/885-sacred-art-candidates:data/calendar/sacred-art-hero-implementation-audit-20261021.v1.json",
+    "current_paintings": "data/research/sacred-art-catalogue451-after-b25.csv",
+    "calendar_branch_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/887",
+    "gallery_branch_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/1633"
+  },
+  "summary": {
+    "class_i_observed_dates_2026": 53,
+    "legacy_exact_subject_links_present_for_dates": 21,
+    "legacy_dates_without_exact_link": 32,
+    "documented_2026_explicit_date_choices": 10,
+    "dated_approvals_found_same_painting_in_gallery": 4,
+    "dated_approvals_not_in_gallery": 6,
+    "gal_active_total": 383,
+    "datematched_in_gallery_review_indices": [
+      144,
+      194,
+      237,
+      371
+    ],
+    "uploaded_shipped_and_publication_certified": 0,
+    "all_53_calendar_paintings_physically_release_ready": false,
+    "user_choices_to_rescore": 0,
+    "user_explicitly_approved_but_current_383_gallery_uncoupled": true,
+    "date_specific_approval_is_not_artist_only_or_subject_only": true,
+    "production_release_ready": false,
+    "strictly_zero_euro": true
+  },
+  "protected_date_approvals": [
+    {
+      "date": "2026-03-29",
+      "occasion": "Palm Sunday",
+      "painting": {
+        "title": "The Entry of Christ into Jerusalem",
+        "artist": "Anthony van Dyck"
+      },
+      "user_choice_approved": true,
+      "relation_to_date": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+      "source_approval_evidence": "Explicit 2026-10-19 date-specific user selection",
+      "same_original_in_383": false,
+      "catalogue_matches": [],
+      "fallback_use_prohibited": true,
+      "gallery_approval_does_not_imply_date_assignment": true,
+      "app_photo_publication_cleared": false,
+      "next_action": "Recover this approved original into the catalogue as a linked external approved selection (or locate its actual preexisting canonical ID); do not replace with similarly titled art."
+    },
+    {
+      "date": "2026-04-02",
+      "occasion": "Holy Thursday",
+      "painting": {
+        "title": "Last Supper",
+        "artist": "Ugolino da Siena"
+      },
+      "user_choice_approved": true,
+      "relation_to_date": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+      "source_approval_evidence": "Explicit 2026-10-19 date-specific five-star approval",
+      "same_original_in_383": true,
+      "catalogue_matches": [
+        {
+          "review_index": 371,
+          "artwork_id": "met-459131",
+          "title": "The Last Supper",
+          "artist": "Ugolino da Siena",
+          "frozen_decision": "APPROVED_5"
+        }
+      ],
+      "fallback_use_prohibited": false,
+      "gallery_approval_does_not_imply_date_assignment": true,
+      "app_photo_publication_cleared": false,
+      "next_action": "Attach protected date-specific approval to matched frozen ID and verify exact image rendition/rights; keep user choice unchanged."
+    },
+    {
+      "date": "2026-05-23",
+      "occasion": "Pentecost Vigil",
+      "painting": {
+        "title": "The Pentecost",
+        "artist": "Juan Bautista Maíno"
+      },
+      "user_choice_approved": true,
+      "relation_to_date": "ANTICIPATORY_PENTECOST_SUBJECT_NOT_LITERAL_VIGIL_READINGS",
+      "source_approval_evidence": "2026-10-19 named Vigil image choice",
+      "same_original_in_383": false,
+      "catalogue_matches": [],
+      "fallback_use_prohibited": true,
+      "gallery_approval_does_not_imply_date_assignment": true,
+      "app_photo_publication_cleared": false,
+      "next_action": "Recover this approved original into the catalogue as a linked external approved selection (or locate its actual preexisting canonical ID); do not replace with similarly titled art."
+    },
+    {
+      "date": "2026-05-24",
+      "occasion": "Pentecost Sunday",
+      "painting": {
+        "title": "Pentecost",
+        "artist": "Jean II Restout"
+      },
+      "user_choice_approved": true,
+      "relation_to_date": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+      "source_approval_evidence": "2026-10-17 final decision freeze confirms artwork rating 5 locked; 2026-10-19 user confirms approved Pentecost painting",
+      "same_original_in_383": true,
+      "catalogue_matches": [
+        {
+          "review_index": 194,
+          "artwork_id": "ART-ean-estout-entecost",
+          "title": "Pentecost",
+          "artist": "Jean Restout",
+          "frozen_decision": "APPROVED_LOCKED"
+        }
+      ],
+      "fallback_use_prohibited": false,
+      "gallery_approval_does_not_imply_date_assignment": true,
+      "app_photo_publication_cleared": false,
+      "next_action": "Attach protected date-specific approval to matched frozen ID and verify exact image rendition/rights; keep user choice unchanged."
+    },
+    {
+      "date": "2026-05-27",
+      "occasion": "Pentecost Ember Wednesday",
+      "painting": {
+        "title": "La Petite Cène",
+        "artist": "Philippe de Champaigne"
+      },
+      "user_choice_approved": true,
+      "relation_to_date": "EUCHARISTIC_THEME_FOR_JOHN_6_NOT_LITERAL_DISCOURSE",
+      "source_approval_evidence": "User 2026-10-19 selection of Eucharistic thematic art for Ember Wednesday",
+      "same_original_in_383": true,
+      "catalogue_matches": [
+        {
+          "review_index": 237,
+          "artwork_id": "ART-hilippe-de-hampaigne-a-etite-ne",
+          "title": "La Petite Cène",
+          "artist": "Philippe de Champaigne",
+          "frozen_decision": "UNREVIEWED"
+        }
+      ],
+      "fallback_use_prohibited": false,
+      "gallery_approval_does_not_imply_date_assignment": true,
+      "app_photo_publication_cleared": false,
+      "next_action": "Attach protected date-specific approval to matched frozen ID and verify exact image rendition/rights; keep user choice unchanged."
+    },
+    {
+      "date": "2026-06-12",
+      "occasion": "Sacred Heart",
+      "painting": {
+        "title": "The Heart of Jesus",
+        "artist": "Juan Patricio Morlete Ruiz"
+      },
+      "user_choice_approved": true,
+      "relation_to_date": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+      "source_approval_evidence": "2026-10-17 final curator file: 5, locked, perfect_theme; 2026-10-19 user reaffirmation",
+      "same_original_in_383": true,
+      "catalogue_matches": [
+        {
+          "review_index": 144,
+          "artwork_id": "commons-morlete-sacred-heart-1759",
+          "title": "The Heart of Jesus",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "frozen_decision": "APPROVED_LOCKED"
+        }
+      ],
+      "fallback_use_prohibited": false,
+      "gallery_approval_does_not_imply_date_assignment": true,
+      "app_photo_publication_cleared": false,
+      "next_action": "Attach protected date-specific approval to matched frozen ID and verify exact image rendition/rights; keep user choice unchanged."
+    },
+    {
+      "date": "2026-10-25",
+      "occasion": "Christ the King",
+      "painting": {
+        "title": "Salvator Mundi",
+        "artist": "Ambrosius Benson"
+      },
+      "user_choice_approved": true,
+      "relation_to_date": "CHRIST_AS_SAVIOUR_AND_KING",
+      "source_approval_evidence": "Explicit 2026-10-19 date-specific user selection",
+      "same_original_in_383": false,
+      "catalogue_matches": [],
+      "fallback_use_prohibited": true,
+      "gallery_approval_does_not_imply_date_assignment": true,
+      "app_photo_publication_cleared": false,
+      "next_action": "Recover this approved original into the catalogue as a linked external approved selection (or locate its actual preexisting canonical ID); do not replace with similarly titled art."
+    },
+    {
+      "date": "2026-11-01",
+      "occasion": "All Saints",
+      "painting": {
+        "title": "Paradise",
+        "artist": "Carlo Saraceni"
+      },
+      "user_choice_approved": true,
+      "relation_to_date": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+      "source_approval_evidence": "Explicit 2026-10-19 date-specific user selection",
+      "same_original_in_383": false,
+      "catalogue_matches": [],
+      "fallback_use_prohibited": true,
+      "gallery_approval_does_not_imply_date_assignment": true,
+      "app_photo_publication_cleared": false,
+      "next_action": "Recover this approved original into the catalogue as a linked external approved selection (or locate its actual preexisting canonical ID); do not replace with similarly titled art."
+    },
+    {
+      "date": "2026-11-02",
+      "occasion": "All Souls",
+      "painting": {
+        "title": "An Angel Frees the Souls of Purgatory",
+        "artist": "Ludovico Carracci"
+      },
+      "user_choice_approved": true,
+      "relation_to_date": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+      "source_approval_evidence": "Explicit 2026-10-19 date-specific user selection",
+      "same_original_in_383": false,
+      "catalogue_matches": [],
+      "fallback_use_prohibited": true,
+      "gallery_approval_does_not_imply_date_assignment": true,
+      "app_photo_publication_cleared": false,
+      "next_action": "Recover this approved original into the catalogue as a linked external approved selection (or locate its actual preexisting canonical ID); do not replace with similarly titled art."
+    },
+    {
+      "date": "2026-11-29",
+      "occasion": "First Sunday of Advent",
+      "painting": {
+        "title": "The Great Day of His Wrath",
+        "artist": "John Martin"
+      },
+      "user_choice_approved": true,
+      "relation_to_date": "ESCHATOLOGICAL_THEME_NOT_LITERAL_SUNDAY_GOSPEL",
+      "source_approval_evidence": "Explicit 2026-10-19 date-specific user selection",
+      "same_original_in_383": false,
+      "catalogue_matches": [],
+      "fallback_use_prohibited": true,
+      "gallery_approval_does_not_imply_date_assignment": true,
+      "app_photo_publication_cleared": false,
+      "next_action": "Recover this approved original into the catalogue as a linked external approved selection (or locate its actual preexisting canonical ID); do not replace with similarly titled art."
+    }
+  ],
+  "class_i_dates_2026": [
+    {
+      "date": "2026-01-01",
+      "observed_principal_id": "sancti:01-01:1:w",
+      "observed_feast": "Octave Day of Christmas",
+      "calendar_class": 1,
+      "research_association_tier": "OCTAVE_CONTEXT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-01-06",
+      "observed_principal_id": "sancti:01-06:1:w",
+      "observed_feast": "Epiphany of the Lord",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-02-18",
+      "observed_principal_id": "tempora:Quadp3-3:1:v",
+      "observed_feast": "Ash Wednesday",
+      "calendar_class": 1,
+      "research_association_tier": "LITURGY_AND_GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-02-22",
+      "observed_principal_id": "tempora:Quad1-0:1:v",
+      "observed_feast": "I Sunday of Lent",
+      "calendar_class": 1,
+      "research_association_tier": "GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-03-01",
+      "observed_principal_id": "tempora:Quad2-0:1:v",
+      "observed_feast": "II Sunday of Lent",
+      "calendar_class": 1,
+      "research_association_tier": "GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-03-08",
+      "observed_principal_id": "tempora:Quad3-0:1:v",
+      "observed_feast": "III Sunday of Lent",
+      "calendar_class": 1,
+      "research_association_tier": "GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-03-15",
+      "observed_principal_id": "tempora:Quad4-0:1:pv",
+      "observed_feast": "IV Sunday of Lent",
+      "calendar_class": 1,
+      "research_association_tier": "GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-03-19",
+      "observed_principal_id": "sancti:03-19:1:w",
+      "observed_feast": "St. Joseph, Spouse of the Bl. Virgin Mary",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-03-22",
+      "observed_principal_id": "tempora:Quad5-0:1:v",
+      "observed_feast": "Passion Sunday",
+      "calendar_class": 1,
+      "research_association_tier": "LITURGY_AND_GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-03-25",
+      "observed_principal_id": "sancti:03-25:1:w",
+      "observed_feast": "Annunciation of the Blessed Virgin Mary",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-03-29",
+      "observed_principal_id": "tempora:Quad6-0r:1:rv",
+      "observed_feast": "Palm Sunday",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": {
+        "date": "2026-03-29",
+        "occasion": "Palm Sunday",
+        "painting": {
+          "title": "The Entry of Christ into Jerusalem",
+          "artist": "Anthony van Dyck"
+        },
+        "user_choice_approved": true,
+        "relation_to_date": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+        "source_approval_evidence": "Explicit 2026-10-19 date-specific user selection",
+        "same_original_in_383": false,
+        "catalogue_matches": [],
+        "fallback_use_prohibited": true,
+        "gallery_approval_does_not_imply_date_assignment": true,
+        "app_photo_publication_cleared": false,
+        "next_action": "Recover this approved original into the catalogue as a linked external approved selection (or locate its actual preexisting canonical ID); do not replace with similarly titled art."
+      },
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-03-30",
+      "observed_principal_id": "tempora:Quad6-1:1:v",
+      "observed_feast": "Feria II of Holy Week",
+      "calendar_class": 1,
+      "research_association_tier": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-03-31",
+      "observed_principal_id": "tempora:Quad6-2:1:v",
+      "observed_feast": "Feria III of Holy Week",
+      "calendar_class": 1,
+      "research_association_tier": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-04-01",
+      "observed_principal_id": "tempora:Quad6-3:1:v",
+      "observed_feast": "Feria IV of Holy Week",
+      "calendar_class": 1,
+      "research_association_tier": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-04-02",
+      "observed_principal_id": "tempora:Quad6-4r:1:w",
+      "observed_feast": "Holy Thursday",
+      "calendar_class": 1,
+      "research_association_tier": "COMPLEX_RITE_SUBJECT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": {
+        "date": "2026-04-02",
+        "occasion": "Holy Thursday",
+        "painting": {
+          "title": "Last Supper",
+          "artist": "Ugolino da Siena"
+        },
+        "user_choice_approved": true,
+        "relation_to_date": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+        "source_approval_evidence": "Explicit 2026-10-19 date-specific five-star approval",
+        "same_original_in_383": true,
+        "catalogue_matches": [
+          {
+            "review_index": 371,
+            "artwork_id": "met-459131",
+            "title": "The Last Supper",
+            "artist": "Ugolino da Siena",
+            "frozen_decision": "APPROVED_5"
+          }
+        ],
+        "fallback_use_prohibited": false,
+        "gallery_approval_does_not_imply_date_assignment": true,
+        "app_photo_publication_cleared": false,
+        "next_action": "Attach protected date-specific approval to matched frozen ID and verify exact image rendition/rights; keep user choice unchanged."
+      },
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-04-03",
+      "observed_principal_id": "tempora:Quad6-5r:1:bv",
+      "observed_feast": "Good Friday",
+      "calendar_class": 1,
+      "research_association_tier": "COMPLEX_RITE_SUBJECT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-04-04",
+      "observed_principal_id": "tempora:Quad6-6r:1:vw",
+      "observed_feast": "Holy Saturday",
+      "calendar_class": 1,
+      "research_association_tier": "COMPLEX_RITE_SUBJECT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-04-05",
+      "observed_principal_id": "tempora:Pasc0-0:1:w",
+      "observed_feast": "Easter Sunday",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-04-06",
+      "observed_principal_id": "tempora:Pasc0-1:1:w",
+      "observed_feast": "Monday in the Octave of Easter",
+      "calendar_class": 1,
+      "research_association_tier": "OCTAVE_CONTEXT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-04-07",
+      "observed_principal_id": "tempora:Pasc0-2:1:w",
+      "observed_feast": "Tuesday in the Octave of Easter",
+      "calendar_class": 1,
+      "research_association_tier": "OCTAVE_CONTEXT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-04-08",
+      "observed_principal_id": "tempora:Pasc0-3:1:w",
+      "observed_feast": "Wednesday in the Octave of Easter",
+      "calendar_class": 1,
+      "research_association_tier": "OCTAVE_CONTEXT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-04-09",
+      "observed_principal_id": "tempora:Pasc0-4:1:w",
+      "observed_feast": "Thursday in the Octave of Easter",
+      "calendar_class": 1,
+      "research_association_tier": "OCTAVE_CONTEXT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-04-10",
+      "observed_principal_id": "tempora:Pasc0-5:1:w",
+      "observed_feast": "Friday in the Octave of Easter",
+      "calendar_class": 1,
+      "research_association_tier": "OCTAVE_CONTEXT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-04-11",
+      "observed_principal_id": "tempora:Pasc0-6:1:w",
+      "observed_feast": "Saturday in the Octave of Easter",
+      "calendar_class": 1,
+      "research_association_tier": "OCTAVE_CONTEXT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-04-12",
+      "observed_principal_id": "tempora:Pasc1-0:1:w",
+      "observed_feast": "Low Sunday",
+      "calendar_class": 1,
+      "research_association_tier": "GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-05-01",
+      "observed_principal_id": "sancti:05-01r:1:w",
+      "observed_feast": "St. Joseph the Workman",
+      "calendar_class": 1,
+      "research_association_tier": "RELATED_SAINT_DIFFERENT_FEAST",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-05-14",
+      "observed_principal_id": "tempora:Pasc5-4:1:w",
+      "observed_feast": "Ascension of the Lord",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-05-23",
+      "observed_principal_id": "tempora:Pasc6-6:1:r",
+      "observed_feast": "Vigil of Pentecost",
+      "calendar_class": 1,
+      "research_association_tier": "VIGIL_CONTEXT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": {
+        "date": "2026-05-23",
+        "occasion": "Pentecost Vigil",
+        "painting": {
+          "title": "The Pentecost",
+          "artist": "Juan Bautista Maíno"
+        },
+        "user_choice_approved": true,
+        "relation_to_date": "ANTICIPATORY_PENTECOST_SUBJECT_NOT_LITERAL_VIGIL_READINGS",
+        "source_approval_evidence": "2026-10-19 named Vigil image choice",
+        "same_original_in_383": false,
+        "catalogue_matches": [],
+        "fallback_use_prohibited": true,
+        "gallery_approval_does_not_imply_date_assignment": true,
+        "app_photo_publication_cleared": false,
+        "next_action": "Recover this approved original into the catalogue as a linked external approved selection (or locate its actual preexisting canonical ID); do not replace with similarly titled art."
+      },
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-05-24",
+      "observed_principal_id": "tempora:Pasc7-0:1:r",
+      "observed_feast": "Pentecost Sunday",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": {
+        "date": "2026-05-24",
+        "occasion": "Pentecost Sunday",
+        "painting": {
+          "title": "Pentecost",
+          "artist": "Jean II Restout"
+        },
+        "user_choice_approved": true,
+        "relation_to_date": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+        "source_approval_evidence": "2026-10-17 final decision freeze confirms artwork rating 5 locked; 2026-10-19 user confirms approved Pentecost painting",
+        "same_original_in_383": true,
+        "catalogue_matches": [
+          {
+            "review_index": 194,
+            "artwork_id": "ART-ean-estout-entecost",
+            "title": "Pentecost",
+            "artist": "Jean Restout",
+            "frozen_decision": "APPROVED_LOCKED"
+          }
+        ],
+        "fallback_use_prohibited": false,
+        "gallery_approval_does_not_imply_date_assignment": true,
+        "app_photo_publication_cleared": false,
+        "next_action": "Attach protected date-specific approval to matched frozen ID and verify exact image rendition/rights; keep user choice unchanged."
+      },
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-05-25",
+      "observed_principal_id": "tempora:Pasc7-1:1:r",
+      "observed_feast": "Monday after Pentecost",
+      "calendar_class": 1,
+      "research_association_tier": "OCTAVE_CONTEXT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-05-26",
+      "observed_principal_id": "tempora:Pasc7-2:1:r",
+      "observed_feast": "Tuesday after Pentecost",
+      "calendar_class": 1,
+      "research_association_tier": "OCTAVE_CONTEXT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-05-27",
+      "observed_principal_id": "tempora:Pasc7-3:1:r",
+      "observed_feast": "Ember Wednesday of Pentecost",
+      "calendar_class": 1,
+      "research_association_tier": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": {
+        "date": "2026-05-27",
+        "occasion": "Pentecost Ember Wednesday",
+        "painting": {
+          "title": "La Petite Cène",
+          "artist": "Philippe de Champaigne"
+        },
+        "user_choice_approved": true,
+        "relation_to_date": "EUCHARISTIC_THEME_FOR_JOHN_6_NOT_LITERAL_DISCOURSE",
+        "source_approval_evidence": "User 2026-10-19 selection of Eucharistic thematic art for Ember Wednesday",
+        "same_original_in_383": true,
+        "catalogue_matches": [
+          {
+            "review_index": 237,
+            "artwork_id": "ART-hilippe-de-hampaigne-a-etite-ne",
+            "title": "La Petite Cène",
+            "artist": "Philippe de Champaigne",
+            "frozen_decision": "UNREVIEWED"
+          }
+        ],
+        "fallback_use_prohibited": false,
+        "gallery_approval_does_not_imply_date_assignment": true,
+        "app_photo_publication_cleared": false,
+        "next_action": "Attach protected date-specific approval to matched frozen ID and verify exact image rendition/rights; keep user choice unchanged."
+      },
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-05-28",
+      "observed_principal_id": "tempora:Pasc7-4:1:r",
+      "observed_feast": "Thursday after Pentecost",
+      "calendar_class": 1,
+      "research_association_tier": "OCTAVE_CONTEXT",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-05-29",
+      "observed_principal_id": "tempora:Pasc7-5:1:r",
+      "observed_feast": "Ember Friday of Pentecost",
+      "calendar_class": 1,
+      "research_association_tier": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-05-30",
+      "observed_principal_id": "tempora:Pasc7-6:1:r",
+      "observed_feast": "Ember Saturday of Pentecost",
+      "calendar_class": 1,
+      "research_association_tier": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-05-31",
+      "observed_principal_id": "tempora:Pent01-0r:1:w",
+      "observed_feast": "Trinity Sunday",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-06-04",
+      "observed_principal_id": "tempora:Pent01-4:1:w",
+      "observed_feast": "Corpus Christi",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-06-12",
+      "observed_principal_id": "tempora:Pent02-5:1:w",
+      "observed_feast": "Sacred Heart of Jesus",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 2,
+      "date_specific_user_approved_painting": {
+        "date": "2026-06-12",
+        "occasion": "Sacred Heart",
+        "painting": {
+          "title": "The Heart of Jesus",
+          "artist": "Juan Patricio Morlete Ruiz"
+        },
+        "user_choice_approved": true,
+        "relation_to_date": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+        "source_approval_evidence": "2026-10-17 final curator file: 5, locked, perfect_theme; 2026-10-19 user reaffirmation",
+        "same_original_in_383": true,
+        "catalogue_matches": [
+          {
+            "review_index": 144,
+            "artwork_id": "commons-morlete-sacred-heart-1759",
+            "title": "The Heart of Jesus",
+            "artist": "Juan Patricio Morlete Ruiz",
+            "frozen_decision": "APPROVED_LOCKED"
+          }
+        ],
+        "fallback_use_prohibited": false,
+        "gallery_approval_does_not_imply_date_assignment": true,
+        "app_photo_publication_cleared": false,
+        "next_action": "Attach protected date-specific approval to matched frozen ID and verify exact image rendition/rights; keep user choice unchanged."
+      },
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-06-24",
+      "observed_principal_id": "sancti:06-24:1:w",
+      "observed_feast": "Nativity of St. John the Baptist",
+      "calendar_class": 1,
+      "research_association_tier": "NATIVITY_SUBJECT_REQUIRED",
+      "exact_subject_source_research_link_count": 3,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-06-29",
+      "observed_principal_id": "sancti:06-29:1:r",
+      "observed_feast": "Sts. Peter & Paul",
+      "calendar_class": 1,
+      "research_association_tier": "TWO_SAINTS_SUBJECT_REQUIRED",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-07-01",
+      "observed_principal_id": "sancti:07-01:1:r",
+      "observed_feast": "The Precious Blood of Our Lord Jesus Christ",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_DEVOTION",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-08-15",
+      "observed_principal_id": "sancti:08-15:1:w",
+      "observed_feast": "Assumption of the Blessed Virgin Mary",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-09-29",
+      "observed_principal_id": "sancti:09-29:1:w",
+      "observed_feast": "Dedication of St. Michael the Archangel",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_DEVOTION",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-10-25",
+      "observed_principal_id": "sancti:10-DU:1:w",
+      "observed_feast": "Christ the King",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": {
+        "date": "2026-10-25",
+        "occasion": "Christ the King",
+        "painting": {
+          "title": "Salvator Mundi",
+          "artist": "Ambrosius Benson"
+        },
+        "user_choice_approved": true,
+        "relation_to_date": "CHRIST_AS_SAVIOUR_AND_KING",
+        "source_approval_evidence": "Explicit 2026-10-19 date-specific user selection",
+        "same_original_in_383": false,
+        "catalogue_matches": [],
+        "fallback_use_prohibited": true,
+        "gallery_approval_does_not_imply_date_assignment": true,
+        "app_photo_publication_cleared": false,
+        "next_action": "Recover this approved original into the catalogue as a linked external approved selection (or locate its actual preexisting canonical ID); do not replace with similarly titled art."
+      },
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-11-01",
+      "observed_principal_id": "sancti:11-01:1:w",
+      "observed_feast": "All Saints",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": {
+        "date": "2026-11-01",
+        "occasion": "All Saints",
+        "painting": {
+          "title": "Paradise",
+          "artist": "Carlo Saraceni"
+        },
+        "user_choice_approved": true,
+        "relation_to_date": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+        "source_approval_evidence": "Explicit 2026-10-19 date-specific user selection",
+        "same_original_in_383": false,
+        "catalogue_matches": [],
+        "fallback_use_prohibited": true,
+        "gallery_approval_does_not_imply_date_assignment": true,
+        "app_photo_publication_cleared": false,
+        "next_action": "Recover this approved original into the catalogue as a linked external approved selection (or locate its actual preexisting canonical ID); do not replace with similarly titled art."
+      },
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-11-02",
+      "observed_principal_id": "sancti:11-02m1:1:b",
+      "observed_feast": "Commemoration of All Souls",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": {
+        "date": "2026-11-02",
+        "occasion": "All Souls",
+        "painting": {
+          "title": "An Angel Frees the Souls of Purgatory",
+          "artist": "Ludovico Carracci"
+        },
+        "user_choice_approved": true,
+        "relation_to_date": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+        "source_approval_evidence": "Explicit 2026-10-19 date-specific user selection",
+        "same_original_in_383": false,
+        "catalogue_matches": [],
+        "fallback_use_prohibited": true,
+        "gallery_approval_does_not_imply_date_assignment": true,
+        "app_photo_publication_cleared": false,
+        "next_action": "Recover this approved original into the catalogue as a linked external approved selection (or locate its actual preexisting canonical ID); do not replace with similarly titled art."
+      },
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-11-29",
+      "observed_principal_id": "tempora:Adv1-0:1:v",
+      "observed_feast": "I Sunday of Advent",
+      "calendar_class": 1,
+      "research_association_tier": "GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": {
+        "date": "2026-11-29",
+        "occasion": "First Sunday of Advent",
+        "painting": {
+          "title": "The Great Day of His Wrath",
+          "artist": "John Martin"
+        },
+        "user_choice_approved": true,
+        "relation_to_date": "ESCHATOLOGICAL_THEME_NOT_LITERAL_SUNDAY_GOSPEL",
+        "source_approval_evidence": "Explicit 2026-10-19 date-specific user selection",
+        "same_original_in_383": false,
+        "catalogue_matches": [],
+        "fallback_use_prohibited": true,
+        "gallery_approval_does_not_imply_date_assignment": true,
+        "app_photo_publication_cleared": false,
+        "next_action": "Recover this approved original into the catalogue as a linked external approved selection (or locate its actual preexisting canonical ID); do not replace with similarly titled art."
+      },
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-12-06",
+      "observed_principal_id": "tempora:Adv2-0:1:v",
+      "observed_feast": "II Sunday of Advent",
+      "calendar_class": 1,
+      "research_association_tier": "GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-12-08",
+      "observed_principal_id": "sancti:12-08:1:w",
+      "observed_feast": "Immaculate Conception of the Blessed Virgin Mary",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-12-13",
+      "observed_principal_id": "tempora:Adv3-0:1:pv",
+      "observed_feast": "III Sunday of Advent",
+      "calendar_class": 1,
+      "research_association_tier": "GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-12-20",
+      "observed_principal_id": "tempora:Adv4-0:1:v",
+      "observed_feast": "IV Sunday of Advent",
+      "calendar_class": 1,
+      "research_association_tier": "GOSPEL_RESEARCH",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-12-24",
+      "observed_principal_id": "sancti:12-24:1:v",
+      "observed_feast": "Vigil of Christmas",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 0,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    },
+    {
+      "date": "2026-12-25",
+      "observed_principal_id": "sancti:12-25m1:1:w",
+      "observed_feast": "The Nativity of Our Lord",
+      "calendar_class": 1,
+      "research_association_tier": "EXACT_FEAST",
+      "exact_subject_source_research_link_count": 1,
+      "date_specific_user_approved_painting": null,
+      "requires_image_rights_check": true,
+      "shipped_artwork_proved": false
+    }
+  ],
+  "exceptions": [
+    {
+      "date": "2026-04-10",
+      "feast": "Friday in the Octave of Easter",
+      "artist": "Tommaso Minardi",
+      "note": "User selected date-specific primary on Oct 19 in a different conversation. Not recovered in the ten-choice Class I approval file; preserve as an additional explicit user selection requiring exact title/source confirmation before counting as a verified catalogue pairing.",
+      "status": "PROTECTED_USER_CHOICE_MISSING_FROM_TEN_CHOICE_LEDGER_NOT_NEGATED"
+    },
+    {
+      "date": "2026-10-25",
+      "feast": "Christ the King",
+      "artist": "Ambrosius Benson",
+      "painting": "Salvator Mundi",
+      "status": "USER_SELECTED_IN_CLASS_I_CALENDAR_LEDGER_BUT_MISSING_FROM_383_ARTWORK_CATALOGUE_AND_UNVERIFIED_FOR_APP",
+      "requires_priority": true
+    }
+  ],
+  "rules": [
+    "Dated explicit user approval outranks older research candidates and text-only art subject proposals",
+    "No automatic user re-approval, no merging two different physical works, no replacing artist/title with vaguely similar scene",
+    "Do not confuse Class I editorial day-to-theme coverage with release-ready exact photographs or 1962 runtime art selection",
+    "Place Class I date selection in dedicated review track separate from the 383 generic art catalogue, with explicit verified links when available",
+    "Retain formerly approved alternatives unselected, rather than deleting them",
+    "Require photographic reuse rights, mobile original fidelity, source image SHA, correct 1962 observed principal from DayResolver before app publication"
+  ]
+}
