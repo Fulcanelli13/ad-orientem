@@ -1,3 +1,4 @@
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {auditPlaceGeo,assertExploreGeographyRegistry} from "../src/find/geography-contracts.js";
@@ -33,7 +34,7 @@ assert.equal(disputes.dossiers.length,2);
 assert.equal(disputes.schema,"SACRED_ATLAS_CONTESTED_BODILY_ATTRIBUTIONS_REVIEW_V1");
 assert.equal(assertExploreGeographyRegistry(geography).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:shrine.shrines,pilgrimages:shrine.pilgrimages,routes:shrine.routes,temporalLinks:shrine.temporalLinks,sources:sources.sources,places:geography.places}).pass,true);
-assert.deepEqual([geography.places.length,shrine.shrines.length,shrine.pilgrimages.length,sources.sources.length,sacred.relics.length],[371,257,240,669,122]);
+assert.deepEqual([geography.places.length,shrine.shrines.length,shrine.pilgrimages.length,sources.sources.length,sacred.relics.length],[LIVE.places,257,240,LIVE.sources,122]);
 const map=new Map(geography.places.map(p=>[p.place_id,p]));
 const relics=new Map(sacred.relics.map(r=>[r.id,r]));
 for(const d of disputes.dossiers){
