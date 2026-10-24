@@ -80,6 +80,17 @@ assert.doesNotMatch(en,/data-home-mass-entry/,"Active session must not show a se
 assert.doesNotMatch(en,/data-action="follow"/,"Home Follow Mass still depends on the historical Home click controller");
 assert.match(en,/Gospel of the Mass/);
 assert.match(en,/aoTodayV2Frontispiece/);
+// The feast identity must precede the approved image source in actual DOM.
+// No title is painted across a cropped devotional illustration.
+const identityIndex=en.indexOf('class="aoTodayV2ArtOverlay aoTodayV2Identity"');
+const sourceIndex=en.indexOf('data-ao-home-art-slot');
+const actionsIndex=en.indexOf('class="aoTodayV2HeroActions"');
+assert.ok(identityIndex>=0&&sourceIndex>identityIndex&&actionsIndex>sourceIndex,
+  "Today editorial sequence must be title → reviewed art → Mass action");
+assert.equal((en.match(/data-ao-home-art-slot/g)||[]).length,1,
+  "Editorial composition must preserve one source-owned artwork slot");
+assert.match(en,/class="aoTodayV2SeasonMicro" data-home-calendar data-home-calendar-view="year"/,
+  "Liturgical season remains a Calendar-owned interaction");
 assert.match(en,/aoTodayV2PrayNow/);
 assert.match(en,/aoTodayV2ReadReflect/);
 assert.match(en,/aoTodayV2CalendarGlance/,"Approved C includes one grouped calendar summary");
