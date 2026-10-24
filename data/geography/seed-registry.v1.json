@@ -15611,6 +15611,126 @@
         "AO-P15-MERCED-LIMA-ADDRESS",
         "AO-P15-MERCED-LIMA-GEO"
       ]
+    },
+    {
+      "place_id": "place:MY:st-jude-church-rawang",
+      "name": {
+        "official": "Church of St. Jude, Rawang",
+        "aliases": [
+          "Gereja St Jude Rawang",
+          "St Jude Catholic Church Rawang"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:MY"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 3.3170625,
+        "lng": 101.5771875,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://gcatholic.org/churches/asia-east/43695",
+        "source_ref": "olc:6PM38H8G+RV",
+        "matched_country_code": "MY",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": "Jalan Lim Kak",
+        "line2": null,
+        "postal_code": "48000",
+        "city": "Rawang",
+        "region": "Selangor",
+        "country_code": "MY",
+        "country": "Malaysia",
+        "formatted": "Jalan Lim Kak, Bandar Baru Rawang, 48000 Rawang, Selangor, Malaysia"
+      },
+      "source_ids": [
+        "AO-P16-RAWANG-ARCHDIOCESE",
+        "AO-P16-RAWANG-PARISH",
+        "AO-P16-RAWANG-GEO"
+      ]
+    },
+    {
+      "place_id": "place:PE:santuario-san-martin-de-porres-jicamarca",
+      "name": {
+        "official": "Centro de Espiritualidad y Santuario San Martín de Porres, Jicamarca",
+        "aliases": [
+          "Santuario San Martín de Porres, Jicamarca",
+          "Shrine of St Martin of Porres, Jicamarca"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:PE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -11.9004375,
+        "lng": -76.9439375,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://gcatholic.org/churches/america-south/149553",
+        "source_ref": "olc:57W533X4+RC",
+        "matched_country_code": "PE",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": "Mz EH4, Lote 1, Villa del Sol–Media Luna",
+        "line2": null,
+        "postal_code": null,
+        "city": "Jicamarca, San Antonio de Huarochirí",
+        "region": "Lima",
+        "country_code": "PE",
+        "country": "Peru",
+        "formatted": "Mz EH4, Lote 1, Villa del Sol–Media Luna, Jicamarca Anexo 22, San Antonio de Huarochirí, Lima, Peru"
+      },
+      "source_ids": [
+        "AO-P16-JICAMARCA-EPISCOPATE",
+        "AO-P16-JICAMARCA-CUSTODIAN",
+        "AO-P16-JICAMARCA-GEO"
+      ]
+    },
+    {
+      "place_id": "place:UY:santuario-nuestra-senora-del-carmen-carmelo",
+      "name": {
+        "official": "Santuario Nuestra Señora del Carmen, Carmelo",
+        "aliases": [
+          "Santuario del Carmen, Carmelo",
+          "Shrine of Our Lady of Mount Carmel, Carmelo"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:UY"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -33.9995625,
+        "lng": -58.2879375,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://gcatholic.org/churches/america-south/138330",
+        "source_ref": "olc:48R32P26+5R",
+        "matched_country_code": "UY",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": "70100",
+        "city": "Carmelo",
+        "region": "Colonia",
+        "country_code": "UY",
+        "country": "Uruguay",
+        "formatted": "Santuario Nuestra Señora del Carmen, Carmelo, Colonia, Uruguay"
+      },
+      "source_ids": [
+        "AO-P16-CARMELO-EPISCOPATE",
+        "AO-P16-CARMELO-GEO",
+        "AO-P16-CARMELO-JUBILEE"
+      ]
     }
   ],
   "directoryPlaceLinks": [
