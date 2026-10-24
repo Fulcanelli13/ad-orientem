@@ -920,7 +920,7 @@
       "changesEN": true,
       "changesFR": true,
       "separateNarratorCommentRequired": false,
-      "digitalHeadingBoundaryCheckRequired": false,
+      "digitalHeadingBoundaryCheckRequired": true,
       "candidateStatus": "ASSISTANT_PROPOSED_SOURCE_LIMITED_PARAPHRASE_UNAPPROVED",
       "isPapalAutographQuote": false,
       "italianDigitalSourceLocated": true,
@@ -1913,13 +1913,29 @@
   ],
   "sourceHeadingBoundaryPolicy": {
     "casesAlreadyIdentifiedInP38": 8,
+    "eightBoundaryQuestionIds": [
+      "PX1905-Q570",
+      "PX1905-Q595",
+      "PX1905-Q621",
+      "PX1905-Q626",
+      "PX1905-Q641",
+      "PX1905-Q645",
+      "PX1905-Q650",
+      "PX1905-Q664"
+    ],
     "withinThisCorrectionCohort": [
       "PX1905-Q570",
       "PX1905-Q621",
       "PX1905-Q626",
-      "PX1905-Q641"
+      "PX1905-Q641",
+      "PX1905-Q664"
     ],
-    "instruction": "The 8 original digital heading-contamination cases must be rechecked against P33/P38; section headings must never appear in quoted answers. Four IDs in this correction cohort are known from the findings; this does not claim to enumerate all eight."
+    "withinPriorP35Holds": [
+      "PX1905-Q595",
+      "PX1905-Q645",
+      "PX1905-Q650"
+    ],
+    "instruction": "Exclude headings and section titles of the following Q&A from the quoted answer. Source boundary must be checked against P33 1905 digital extraction, not merely by changing the EN/FR draft. Do not lift P35 earlier holds."
   },
   "approval": {
     "independentHuman": false,
