@@ -94,6 +94,10 @@ assert.match(en,/class="aoTodayV2SeasonMicro" data-home-calendar data-home-calen
 assert.match(en,/aoTodayV2PrayNow/);
 assert.match(en,/aoTodayV2ReadReflect/);
 assert.match(en,/aoTodayV2CalendarGlance/,"Approved C includes one grouped calendar summary");
+assert.ok(en.indexOf('class="aoTodayV2PrayNow"')<en.indexOf('class="aoTodayV2CalendarGlance"')||
+ en.indexOf("aoTodayV2PrayNow")<en.indexOf("aoTodayV2CalendarGlance"),
+ "Premium Today first fold should prioritise prayer before upcoming calendar summary");
+assert.match(en,/aoTodayAppBarTitle/,"A single editorial screen masthead is required");
 assert.doesNotMatch(en,/class="aoTodayV2Approaching"|class="aoTodayV2Context"/,"Retired duplicated calendar panels must not render");
 assert.match(en,/Life &amp; sources|About this celebration|Calendar day &amp; sources/,
   "The Read & reflect entry must explain its destination instead of repeating the hero title");
