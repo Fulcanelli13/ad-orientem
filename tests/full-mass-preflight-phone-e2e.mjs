@@ -123,7 +123,9 @@ try{
  assert.equal(await page.locator(".aoGuidedMassFolio").count(),1,"One Guided Folio");
  // The quiet three-choice overview is a view of the existing form inputs,
  // not new shadow state or a second Start Mass action.
- await page.locator("[data-folio-overview-button]").click();
+ // The overview button itself is intentionally hidden while already on overview.
+ if((await page.locator(".aoGuidedMassFolio").getAttribute("data-ao-folio-view"))!=="overview")
+   await page.locator("[data-folio-overview-button]").click();
  assert.equal(await page.locator(".aoGuidedMassFolio").getAttribute("data-ao-folio-view"),"overview");
  assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioQuickRow").count(),3);
  assert.match(await page.locator("[data-folio-quick-mass-value]").innerText(),/Mass|Sunday|Rosary/i);
