@@ -15,7 +15,7 @@ assert.equal(j.frozen_approved_historical_decisions,107);
 assert.equal(j.B26_older_original_physical_files_previously_byte_verified,290);
 assert.equal(j.B26_older_original_bytes_previously_byte_verified,3076497763);
 assert.equal(j.B26_older_original_distinct_SHA,p.distinct_binary_sha256);
-assert.equal(j.B26_older_active_artwork_IDs_with_SHA-linked_original,245);
+assert.equal(j['B26_older_active_artwork_IDs_with_SHA-linked_original'],245);
 assert.equal(j.B29_B44_later_archive_original_file_count,122);
 assert.equal(j.B29_B44_later_archive_image_bytes,710773181);
 assert.equal(j.combined_early_and_later_image_file_instances_before_crosswave_dedupe,412);
