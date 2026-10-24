@@ -102,8 +102,8 @@ export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_S
       attestations:safeArray(customs?.attestations),
       sources:safeArray(customSources?.sources),
       guidance:[
-        ...(customGuidance?.schema==="AO_CUSTOMS_P0_GUIDANCE_EN_FR_V1"&&customGuidance?.publication==="DRAFT_ONLY"?safeArray(customGuidance.entries):[]),
-        ...(customGuidanceP1?.schema==="AO_CUSTOMS_P1_GUIDANCE_EN_FR_V1"&&customGuidanceP1?.publication==="DRAFT_ONLY"?safeArray(customGuidanceP1.entries):[]),
+        ...(customGuidance?.schema==="AO_CUSTOMS_P0_GUIDANCE_EN_FR_V1"&&customGuidance?.publication==="SUPPORTING_COPY_FOR_PUBLISHED_CANONICAL_IDS"?safeArray(customGuidance.entries):[]),
+        ...(customGuidanceP1?.schema==="AO_CUSTOMS_P1_GUIDANCE_EN_FR_V1"&&customGuidanceP1?.publication==="SUPPORTING_COPY_FOR_PUBLISHED_CANONICAL_IDS"?safeArray(customGuidanceP1.entries):[]),
       ],
     }),
     sacredPhenomena:Object.freeze({apparitions:safeArray(sacredPhenomena?.apparitions),relics:safeArray(sacredPhenomena?.relics),norms:sacredPhenomena?.norms??null}),
