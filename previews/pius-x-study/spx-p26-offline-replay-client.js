@@ -66,7 +66,11 @@ const tr={
 };
 const root=document.createElement('section');root.id='spxc-offline-replay';root.hidden=true;
 root.innerHTML="<div class='spxm-head'><strong id='spxm-offline-title'></strong><small id='spxm-offline-limit'></small></div>"+
- "<p id='spxm-offline-scope'></p><div id='spxm-offline-choices'></div>"+
+ "<p id='spxm-offline-scope'></p><div id='spxm-guided-exchange'>"+
+ "<button type='button' id='spxm-guided-start'></button>"+
+ "<p id='spxm-guided-state' aria-live='polite'></p>"+
+ "<div id='spxm-guided-continue'></div></div>"+
+ "<div id='spxm-offline-choices'></div>"+
  "<button type='button' id='spxm-offline-example' class='spxm-offline-example'></button>"+
  "<form id='spxm-offline-form'><label for='spxm-offline-question' id='spxm-offline-label'></label>"+
  "<div class='spxm-row'><input id='spxm-offline-question' maxlength='240' autocomplete='off'>"+
@@ -78,6 +82,57 @@ const add=(tag,cl,text,parent)=>{
  node.textContent=text;parent.append(node);return node;
 };
 let active=null,language='en',lastChapter=null,lastLanguage=null;
+// P2.46 guided conversations only navigate the EXISTING P22 source-owned
+// questions and replies. They neither generate text nor certify authorship.
+let guidedActive=false,guidedStep=0;
+const guidedText={
+ en:{start:'Begin a three-part source dialogue',restart:'Begin again',
+  continue:'Continue the conversation',stage:'Documented turn',
+  ready:'Follow a sequence of documented questions, one at a time. No model or invented papal replies.',
+  progress:'Source-grounded question',complete:'The documented exchange is complete.',
+  caution:'Guided playback of existing editorial answers · not a live conversation or authentic papal speech'},
+ fr:{start:'Commencer un dialogue documentaire',restart:'Recommencer',
+  continue:'Poursuivre le dialogue',stage:'Étape documentée',
+  ready:'Suivez une suite de questions documentées, une à la fois. Aucun modèle ni propos pontifical inventé.',
+  progress:'Question fondée sur les sources',complete:'Cet échange documentaire est terminé.',
+  caution:'Reprise guidée de réponses éditoriales existantes · ni conversation libre ni paroles authentiques du pape'}
+};
+function guidedReset(){
+ guidedActive=false;guidedStep=0;
+}
+function guidedRender(){
+ if(root.hidden)return;
+ const group=groups.get(active)||[],t=guidedText[language];
+ const button=$('spxm-guided-start'),state=$('spxm-guided-state');
+ button.textContent=guidedActive?t.restart:t.start;
+ state.textContent=guidedActive?
+   (guidedStep>=group.length?t.complete:t.progress+' '+(guidedStep+1)+' / '+group.length):
+   t.ready;
+ const next=$('spxm-guided-continue');next.replaceChildren();
+ $('spxm-offline-choices').hidden=guidedActive;
+ $('spxm-offline-example').hidden=guidedActive;
+ if(!guidedActive)return;
+ const foot=add('p','spxm-guided-caution',t.caution,next);
+ if(guidedStep>=group.length){foot.classList.add('spxm-guided-finished');return;}
+ const item=group[guidedStep];
+ const action=add('button','spxm-guided-question',t.continue+': '+item.question[language],next);
+ action.type='button';action.dataset.nextNodeId=item.nodeId;
+ action.addEventListener('click',()=>{
+   if(!guidedActive||root.hidden||active!==item.chapterId||language!==('fr'===language?'fr':'en'))return;
+   $('spxm-offline-question').value=item.question[language];
+   $('spxm-offline-form').requestSubmit();
+ });
+}
+$('spxm-guided-start').addEventListener('click',()=>{
+ if(root.hidden||!groups.has(active))return;
+ guidedActive=true;guidedStep=0;
+ $('spxm-offline-question').value='';
+ $('spxm-offline-replies').replaceChildren();
+ guidedRender();
+ const starter=$('spxm-guided-continue .spxm-guided-question');
+ if(starter)starter.click();
+});
+
 function contextChanged(context){
  active=context.chapterId;
  language=context.language==='fr'?'fr':'en';
@@ -95,6 +150,7 @@ function contextChanged(context){
  $('spxm-offline-send').textContent=t.send;
  $('spxm-offline-scope').textContent=t.scope;
  if(active!==lastChapter||language!==lastLanguage){
+  guidedReset();
   $('spxm-offline-question').value='';
   $('spxm-offline-replies').replaceChildren();
   lastChapter=active;lastLanguage=language;
@@ -117,6 +173,7 @@ function contextChanged(context){
    $('spxm-offline-form').requestSubmit();
   });
  }
+ guidedRender();
 }
 document.addEventListener('ao-spx-review-context',e=>contextChanged(e.detail||{}));
 $('spxm-offline-form').addEventListener('submit',e=>{
@@ -150,6 +207,15 @@ $('spxm-offline-form').addEventListener('submit',e=>{
   add('p','spxm-offline-disclaimer',t.relatedCaution,entry);
   $('spxm-offline-question').value='';
   return;
+ }
+ // The guided cursor advances ONLY after the exact current source-owned
+ // question was actually selected. Unsupported questions never advance it.
+ if(guidedActive){
+  const ordered=groups.get(active)||[];
+  if(ordered[guidedStep]?.nodeId===chosen.nodeId){
+   guidedStep++;
+   guidedRender();
+  }
  }
  add('p','spxm-warning',t.intro,entry);
  add('p','spxm-draft',chosen.reply[language],entry);
