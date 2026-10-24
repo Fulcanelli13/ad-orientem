@@ -17,9 +17,9 @@
     "paintings_not_research_sources_for_custom": true
   },
   "counts": {
-    "canonical_customs": 38,
+    "canonical_customs": 40,
     "review_candidates": 19,
-    "still_without_suitable_approved_match": 19,
+    "still_without_suitable_approved_match": 21,
     "release_ready_images": 0
   },
   "candidate_placements": [
@@ -480,6 +480,18 @@
       "artwork_display_enabled": false,
       "placement_status": "NO_SUITABLE_APPROVED_ORIGINAL_MATCH_ESTABLISHED",
       "note": "No unrelated subject image or unapproved acquisition auto-substituted."
+    },
+    {
+      "custom_id": "EPIP-003",
+      "artwork_display_enabled": false,
+      "placement_status": "NO_SUITABLE_APPROVED_ORIGINAL_MATCH_ESTABLISHED",
+      "note": "Do not invent or auto-attach sacred art; image acquisition and approval remain separate."
+    },
+    {
+      "custom_id": "DOM-014",
+      "artwork_display_enabled": false,
+      "placement_status": "NO_SUITABLE_APPROVED_ORIGINAL_MATCH_ESTABLISHED",
+      "note": "Do not invent or auto-attach sacred art; image acquisition and approval remain separate."
     }
   ]
 }
