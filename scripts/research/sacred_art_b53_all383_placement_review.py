@@ -80,6 +80,7 @@ def main():
     b41=csvrows(ROOT/"sacred-art-b41-three-institution-source-results.csv")
     b40by={x["artwork_id"]:x for x in b40}
     crosswalk={x["artwork_id"]:x for x in csvrows(ROOT/"sacred-art-b27-451-physical-crosswalk.csv")}
+    archived_alias_cases={x["frozen_id"]:x for x in rawjson("sacred-art-b48-three-alias-photo-identity-and-kmska-exception-casebook.json")["alias_cases"]}
     b41by={x["artwork_id"]:x for x in b41}
     active=sorted((x for x in cat if x["frozen_decision"]!="PERMANENTLY_REJECTED"),key=lambda x:int(x["catalogue_row"]))
     assert len(cat)==451 and len(active)==383
@@ -102,7 +103,10 @@ def main():
                 alias_record=crosswalk.get(aliases[0],{})
                 alias_hashes=[h.strip() for h in alias_record.get("matching_file_hashes","").split(" | ") if ORIGINAL_SHA.fullmatch(h.strip())]
                 hashes=alias_hashes or hashes
-                hold="Archived photo belongs to a different frozen artwork ID; this is an identity-comparison candidate, not an approved replacement."
+            if not hashes and id_ in archived_alias_cases:
+                alternative=archived_alias_cases[id_].get("source_sha256","")
+                if ORIGINAL_SHA.fullmatch(alternative):hashes=[alternative]
+            hold="Archived photo belongs to a different frozen artwork ID; this is an identity-comparison candidate, not an approved replacement."
         sha=None;tag=None;asset=None;oldmember=None
         pp=p0.get(id_)
         if pp and pp.get("archived_source_sha256") in hashes and pp.get("original_file_available_in_research_archive") is True:
@@ -124,6 +128,13 @@ def main():
             for h in x34.get("new_archived_sha",[]):
                 if h in hashes:
                     sha=h;tag=x34.get("release_tag") or B34;break
+        if sha is None and id_=="W14-004" and archived_alias_cases.get(id_):
+            # Existing B33 source is a Rubens *finished* painting, rather
+            # than necessarily this frozen modello: display with a hold.
+            h=archived_alias_cases[id_].get("source_sha256")
+            if h and h in hashes:
+                sha=h
+                tag=archived_alias_cases[id_].get("draft_release_tag") or "ao-art-originals-40076138511-1"
         if sha is None and id_ in B37_TARGETS and b37.get(id_):
             h=b37[id_].get("B37_original_SHA")
             if h in hashes:sha=h;tag=B37
