@@ -32,14 +32,14 @@ for(const x of release.held_exceptions){
  assert.ok(x.next);
  if(x.url)assert.match(x.url,/^https:\/\//);
 }
-assert.equal(geo.places.length,361);
-assert.equal(sources.sources.length,659);
+assert.equal(geo.places.length,371);
+assert.equal(sources.sources.length,669);
 assert.equal(geo.geoAreas.length,141);
 assert.equal(geo.directoryPlaceLinks.length,9);
-assert.equal(cross.place_crosswalk.length,361);
-assert.equal(cross.counts.places,361);
-assert.equal(cross.counts.places_without_direct_claim,102);
-assert.equal(cross.exception_queues.places_without_direct_claim.length,102);
+assert.equal(cross.place_crosswalk.length,371);
+assert.equal(cross.counts.places,371);
+assert.equal(cross.counts.places_without_direct_claim,112);
+assert.equal(cross.exception_queues.places_without_direct_claim.length,112);
 assert.equal(new Set(geo.places.map(p=>p.place_id)).size,geo.places.length);
 assert.equal(new Set(sources.sources.map(s=>s.id)).size,sources.sources.length);
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
