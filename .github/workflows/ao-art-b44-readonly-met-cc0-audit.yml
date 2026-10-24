@@ -1,0 +1,20 @@
+name: B44 independent Met original SHA and frozen artwork source integrity
+on:
+  push:
+    branches: [research/sacred-art-b44-met-openaccess-painting-candidates-20261024]
+    paths: [.github/workflows/ao-art-b44-readonly-met-cc0-audit.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  b44-met-openaccess-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b44-met-openaccess-painting-candidates-20261024
+      - name: Check B43 383 frozen and previous open alternatives
+        run: node tests/sacred-art-b43-cc0-alternatives-and-frozen-identity.mjs
+      - name: Independently verify B44 original bytes metadata, CC0 rights and no silent swaps
+        run: node tests/sacred-art-b44-met-cc0-source-audit.mjs

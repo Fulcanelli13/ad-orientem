@@ -1,0 +1,216 @@
+{
+  "schema": "AO_B44_MET_40_NARROW_SAINT_ART_QUERIES_V1",
+  "date": "2026-10-24",
+  "provider": "The Metropolitan Museum of Art Open Access",
+  "documentation": "https://metmuseum.github.io/",
+  "search_endpoint": "https://collectionapi.metmuseum.org/public/collection/v1.1/search",
+  "object_endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/{objectID}",
+  "total_queries": 40,
+  "unique_frozen_theme_ids": 24,
+  "strictly_zero_euro": true,
+  "app_publication_approvals": 0,
+  "editorial_adoptions": 0,
+  "alternative_source_role": "DIFFERENT_OPEN_ACCESS_WORKS_ONLY_NOT_REPLACEMENT",
+  "queries": [
+    {
+      "frozen_artwork_id": "G25-003",
+      "query": "Saint Augustine",
+      "title_regex": "\\b(?:saint|st[.]?)\\s+augustine\\b"
+    },
+    {
+      "frozen_artwork_id": "G25-003",
+      "query": "Augustine Hippo",
+      "title_regex": "\\baugustine\\b"
+    },
+    {
+      "frozen_artwork_id": "G17-006",
+      "query": "Francis de Sales",
+      "title_regex": "\\b(?:francis|françois)\\s+de\\s+sales\\b"
+    },
+    {
+      "frozen_artwork_id": "G20-002",
+      "query": "Saint Anselm",
+      "title_regex": "\\b(?:saint|st[.]?)\\s+anselm\\b"
+    },
+    {
+      "frozen_artwork_id": "G30-007",
+      "query": "Saint Peter Damian",
+      "title_regex": "\\b(?:peter|pietro)\\s+damian\\b"
+    },
+    {
+      "frozen_artwork_id": "G30-007",
+      "query": "Pietro Damiano",
+      "title_regex": "\\b(?:peter|pietro)\\s+damian\\b"
+    },
+    {
+      "frozen_artwork_id": "G30-004",
+      "query": "Saint Gregory Nazianzen",
+      "title_regex": "\\b(?:gregory|gregorio)\\s+(?:nazianzen|nazianzeno)\\b"
+    },
+    {
+      "frozen_artwork_id": "G30-010",
+      "query": "Saint Robert Bellarmine",
+      "title_regex": "\\b(?:robert|roberto)\\s+bellarmine\\b"
+    },
+    {
+      "frozen_artwork_id": "G32-002",
+      "query": "Saint Ephrem",
+      "title_regex": "\\b(?:ephrem|ephraim|effremo|efrem)\\b"
+    },
+    {
+      "frozen_artwork_id": "G29-001",
+      "query": "Saint Hilary",
+      "title_regex": "\\b(?:saint|st[.]?)\\s+hilary\\b"
+    },
+    {
+      "frozen_artwork_id": "G29-001",
+      "query": "Hilary Poitiers",
+      "title_regex": "\\b(?:hilary|hilaire)\\b"
+    },
+    {
+      "frozen_artwork_id": "QCP-HILARY-LEDUC-1896-1900",
+      "query": "Saint Hilaire",
+      "title_regex": "\\b(?:saint|st[.]?)\\s+hilaire\\b"
+    },
+    {
+      "frozen_artwork_id": "G26-007",
+      "query": "Joan of Arc",
+      "title_regex": "\\bjoan\\s+of\\s+arc\\b"
+    },
+    {
+      "frozen_artwork_id": "G26-007",
+      "query": "Jeanne d'Arc",
+      "title_regex": "\\bjeanne\\s+d[’']arc\\b"
+    },
+    {
+      "frozen_artwork_id": "G17-009",
+      "query": "Saint Denis",
+      "title_regex": "\\b(?:saint|st[.]?)\\s+denis\\b"
+    },
+    {
+      "frozen_artwork_id": "G17-009",
+      "query": "Saint Dionysius",
+      "title_regex": "\\b(?:saint|st[.]?)\\s+dionysius\\b"
+    },
+    {
+      "frozen_artwork_id": "G28-003",
+      "query": "Saint Alphonsus",
+      "title_regex": "\\b(?:saint|st[.]?)\\s+alphonsus\\b"
+    },
+    {
+      "frozen_artwork_id": "G28-003",
+      "query": "Alphonsus Liguori",
+      "title_regex": "\\balphonsus\\b"
+    },
+    {
+      "frozen_artwork_id": "G30-012",
+      "query": "Saint Peter Canisius",
+      "title_regex": "\\b(?:peter|pierre)\\s+canisius\\b"
+    },
+    {
+      "frozen_artwork_id": "italy-banchero-0700031704",
+      "query": "Lawrence Brindisi",
+      "title_regex": "\\b(?:lawrence|lorenzo)\\s+(?:of\\s+|da\\s+)?brindisi\\b"
+    },
+    {
+      "frozen_artwork_id": "carmel-lisieux-1925-therese-aux-roses",
+      "query": "Saint Therese Lisieux",
+      "title_regex": "\\b(?:th[eé]r[eè]se|therese|teresa)\\b"
+    },
+    {
+      "frozen_artwork_id": "celine-1894-john-cross",
+      "query": "Saint John of the Cross",
+      "title_regex": "\\b(?:john|juan)\\s+of\\s+the\\s+cross\\b"
+    },
+    {
+      "frozen_artwork_id": "W04-009",
+      "query": "Dream of Saint Joseph",
+      "title_regex": "\\b(?:dream|vision)\\s+of\\s+(?:saint\\s+)?joseph\\b"
+    },
+    {
+      "frozen_artwork_id": "W04-009",
+      "query": "Saint Joseph",
+      "title_regex": "\\b(?:saint|st[.]?)\\s+joseph\\b"
+    },
+    {
+      "frozen_artwork_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "query": "Holy Family Saint Anne",
+      "title_regex": "\\bholy\\s+family\\b"
+    },
+    {
+      "frozen_artwork_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "query": "Holy Family St Anne",
+      "title_regex": "\\bholy\\s+family\\b"
+    },
+    {
+      "frozen_artwork_id": "ART-eter-aul-ubens-he-oly-rinity",
+      "query": "Holy Trinity",
+      "title_regex": "\\b(?:holy\\s+)?trinity\\b"
+    },
+    {
+      "frozen_artwork_id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "query": "Saint Anthony of Padua",
+      "title_regex": "\\b(?:saint|st[.]?)\\s+anthony\\b"
+    },
+    {
+      "frozen_artwork_id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "query": "Anthony Padua Christ Child",
+      "title_regex": "\\banthony\\b"
+    },
+    {
+      "frozen_artwork_id": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "query": "Burial of Christ",
+      "title_regex": "\\b(?:burial|entombment)\\s+of\\s+christ\\b"
+    },
+    {
+      "frozen_artwork_id": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "query": "Entombment",
+      "title_regex": "\\b(?:entombment|burial)\\b"
+    },
+    {
+      "frozen_artwork_id": "G27-002",
+      "query": "Saint Patrick",
+      "title_regex": "\\b(?:saint|st[.]?)\\s+patrick\\b"
+    },
+    {
+      "frozen_artwork_id": "W10-009",
+      "query": "Apotheosis of Saint Louis",
+      "title_regex": "\\b(?:apotheosis|apoth[eé]ose)\\b"
+    },
+    {
+      "frozen_artwork_id": "W10-009",
+      "query": "Saint Louis",
+      "title_regex": "\\b(?:saint|st[.]?)\\s+louis\\b"
+    },
+    {
+      "frozen_artwork_id": "G20-002",
+      "query": "Anselm Canterbury",
+      "title_regex": "\\banselm\\b"
+    },
+    {
+      "frozen_artwork_id": "G17-006",
+      "query": "Saint Francis Sales",
+      "title_regex": "\\bfrancis\\b"
+    },
+    {
+      "frozen_artwork_id": "G30-006",
+      "query": "San Pier Damiano",
+      "title_regex": "\\b(?:peter|pietro)\\s+damian\\b"
+    },
+    {
+      "frozen_artwork_id": "G30-010",
+      "query": "Robert Bellarmino",
+      "title_regex": "\\b(?:robert|roberto)\\s+bellarmin(?:e|o)\\b"
+    },
+    {
+      "frozen_artwork_id": "G17-009",
+      "query": "Martyrdom of Saint Denis",
+      "title_regex": "\\b(?:martyrdom|denis|dionysius)\\b"
+    },
+    {
+      "frozen_artwork_id": "G29-001",
+      "query": "Bishop Saint Hilary",
+      "title_regex": "\\b(?:hilary|hilaire)\\b"
+    }
+  ]
+}

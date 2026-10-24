@@ -1,0 +1,61 @@
+name: B44 forty Met CC0 saint paintings — precise open-access research alternatives
+on:
+  push:
+    branches: [research/sacred-art-b44-met-openaccess-painting-candidates-20261024]
+    paths: [.github/workflows/ao-art-b44-met-cc0-paintings.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b44-met-cc0-saint-paintings-one
+  cancel-in-progress: false
+jobs:
+  met-openaccess-research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 42
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b44-met-openaccess-painting-candidates-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Immutable B43 archive baseline and exact subject scope
+        run: |
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python -m py_compile scripts/research/sacred_art_b44_met_40_painting_cc0.py
+          node tests/sacred-art-b43-cc0-alternatives-and-frozen-identity.mjs
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          j=json.loads(Path('data/research/sacred-art-b44-met-40-themes-manifest.json').read_text())
+          assert len(j['queries'])==j['total_queries']==40
+          assert len({x['frozen_artwork_id'] for x in j['queries']})==j['unique_frozen_theme_ids']==24
+          assert j['app_publication_approvals']==j['editorial_adoptions']==0
+          assert j['strictly_zero_euro']
+          PY
+      - name: Search 40 saint/subject combinations, require owner open images and only actual paintings
+        run: python scripts/research/sacred_art_b44_met_40_painting_cc0.py
+      - name: Mandatory unpublished Release, remote checksum readback
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py --wave b44-met-40-cc0 --source-dir artifacts/b44-met-cc0-40-saint-painting-alternatives
+      - name: Commit source evidence without any binaries or app publication
+        run: |
+          set -euo pipefail
+          cp artifacts/b44-met-cc0-40-saint-painting-alternatives/source-results.csv data/research/sacred-art-b44-met-alternative-results.csv
+          cp artifacts/b44-met-cc0-40-saint-painting-alternatives/source-summary.json data/research/sacred-art-b44-met-alternative-summary.json
+          cp artifacts/b44-met-cc0-40-saint-painting-alternatives/discovery-evidence.json data/research/sacred-art-b44-met-40-discovery-evidence.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b44-met-alternative-* data/research/sacred-art-b44-met-40-discovery-evidence.json
+          git commit -m 'research: B44 Met public-domain independent painting originals and complete discovery holds'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b44-met-openaccess-painting-candidates-20261024
+            git rebase origin/research/sacred-art-b44-met-openaccess-painting-candidates-20261024
+            git push origin HEAD:research/sacred-art-b44-met-openaccess-painting-candidates-20261024 && exit 0
+            sleep 3
+          done
+          exit 1
