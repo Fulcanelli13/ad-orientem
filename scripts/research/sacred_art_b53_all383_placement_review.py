@@ -11,7 +11,7 @@ from collections import defaultdict,Counter
 from functools import lru_cache
 import base64,csv,hashlib,io,json,os,re,subprocess,tarfile,tempfile
 from PIL import Image,ImageOps,UnidentifiedImageError
-from sacred_art_b52_placement_proposals import propose
+from sacred_art_b53_placements import propose_all
 
 ROOT=Path("data/research")
 REPO="Fulcanelli13/ad-orientem"
@@ -149,7 +149,7 @@ def main():
         if record["provisional_complete_work_photo_source"]!="True":
             hold=("Incomplete two-sided or unresolved artwork identity/source composition. "+
                     hold).strip() if sha else "Exact complete-artwork image has not been preserved. Do not substitute unrelated paintings."
-        slots=propose(x["title"],x["artist"],id_)
+        slots=propose_all(x["title"],x["artist"],id_)
         assert slots and len({s["slot_id"] for s in slots})==len(slots)
         selected.append({"n":n,"catalogue_row":int(x["catalogue_row"]),
             "artwork_id":id_,"title":x["title"],"artist":x["artist"],
