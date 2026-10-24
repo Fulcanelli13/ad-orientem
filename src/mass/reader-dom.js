@@ -303,16 +303,17 @@ const SHELL_STYLE = `
   font-size:clamp(1.45rem,3.8vw,2rem);line-height:1.34;letter-spacing:.035em;color:#fff
 }
 .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"] .ao-line-secondary{margin-top:8px;font-size:.60em;color:#b8c2b9}
-/* 320px enlarged text: never clip the words of Consecration behind a
-   horizontal scroll area. Keep the sacred font size; break only an
-   otherwise unbreakable Latin/vernacular word at the edge. */
+/* 320px enlarged LIVE text: make BOTH Consecration words and the
+   source-owned Canon prayer lines after them wrap rather than clip.
+   Preserve actual font size, Latin wording and the ritual cue identity.
+   The rule has no effect unless one word exceeds the available width. */
 @media(max-width:360px){
   #ao-r17-native-reader-preview[data-r17-curated-review="true"]
-    .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"]
-    .ao-line-primary,
+    .ao-reader-shell[data-mode="LIVE"] .ao-prayer-card .ao-reader-paragraph .ao-line-primary,
   #ao-r17-native-reader-preview[data-r17-curated-review="true"]
-    .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"]
-    .ao-line-secondary{overflow-wrap:anywhere;word-break:normal;min-width:0;max-width:100%}
+    .ao-reader-shell[data-mode="LIVE"] .ao-prayer-card .ao-reader-paragraph .ao-line-secondary{
+    overflow-wrap:anywhere;word-break:normal;min-width:0;max-width:100%
+  }
 }
 .ao-reader-paragraph[data-chant-phrased="true"] .ao-line-primary,
 .ao-reader-paragraph[data-chant-phrased="true"] .ao-line-secondary{white-space:pre-line}
