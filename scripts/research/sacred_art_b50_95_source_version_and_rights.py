@@ -42,6 +42,11 @@ def write(p,records):
     assert records
     with p.open("w",encoding="utf-8",newline="") as f:
         w=csv.DictWriter(f,fieldnames=list(records[0]));w.writeheader();w.writerows(records)
+def write(path, records):
+    assert records, "No research source evidence to write"
+    with path.open("w",encoding="utf-8",newline="") as f:
+        w=csv.DictWriter(f,fieldnames=list(records[0]));w.writeheader();w.writerows(records)
+
 def number(v):
     try:return int(float(str(v or "0").replace(",","")))
     except (TypeError,ValueError):return 0
