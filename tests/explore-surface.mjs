@@ -624,7 +624,8 @@ const practiceHtml=renderExploreToString(practiceVm);
 assert.match(practiceHtml,/data-explore-item="tradition:custom:DEV-007"/);
 assert.match(practiceHtml,new RegExp("Documented examples.*"+attestationsPerCustom("DEV-007")));
 assert.match(practiceHtml,/data-explore-open-place=/,"examples must deep-link to canonical Places");
-assert.match(practiceHtml,/Attested places/,"map is supplementary evidence navigation, not the default customs structure");
+assert.match(practiceHtml,/data-explore-customs-calendar/,"Legacy sourced practice folios direct readers to the Calendar");
+assert.doesNotMatch(practiceHtml,/data-find-filter-value="map"|data-atlas-filter=/,"Exact custom reader may not reopen geographic Atlas");
 assert.match(practiceHtml,new RegExp(">"+practiceCount+"</strong><span>practices"),"list count must describe practices, not attestations");
 
 
