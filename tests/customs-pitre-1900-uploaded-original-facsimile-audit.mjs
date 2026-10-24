@@ -49,7 +49,7 @@ assert.equal(pages.size,33);
 assert.equal(source.summary.unique_pdf_folios_examined,33);
 assert.equal(source.summary.total_research_source_detail_rows_unchanged,3407);
 assert.equal(catalog.summary.source_observations.total_source_detail_rows_including_external,3407);
-assert.equal(catalog.summary.source_review.pitre_1900_original_folio_images_visually_checked,42);
+assert.equal(catalog.summary.source_review.pitre_1900_original_folio_images_visually_checked,129);
 assert.equal(catalog.summary.source_review.pitre_1900_new_293_original_folio_images_verified,16);
 assert.equal(catalog.summary.source_review.pitre_1900_uploaded_facsimile_total_located_observations,41);
 assert.equal(catalog.summary.source_review.pitre_1900_uploaded_facsimile_unique_pdf_pages_checked,42);
@@ -73,6 +73,6 @@ for(const p of source.additional_wave03_highrisk_page_checks){
  assert.equal(idx.original_1900_scan_pdf_page_1_based,p.pdf_page_1_based);
  assert.equal(idx.original_page_evidence_anchor,p.italian_text_layer_anchor);
 }
-assert.equal(catalog.external_source_observations_pitre_original_1900_ocr.filter(r=>r.printed_scan_page_verified).length,42);
+assert.equal(catalog.external_source_observations_pitre_original_1900_ocr.filter(r=>r.printed_scan_page_verified).length,129);
 assert.equal(catalog.external_source_observations_pitre_original_1900_new_ocr.filter(r=>r.original_printed_folio_verified).length,16);
 console.log('Pitrè 1900 UPLOADED SCAN: 25/25 P0 plus 16 high-risk records located in 33 rendered printed original pages, 3407 corpus unchanged, zero rite/identity/publication certification — PASS');
