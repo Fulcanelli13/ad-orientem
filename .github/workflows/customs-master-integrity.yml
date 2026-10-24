@@ -59,3 +59,7 @@ jobs:
         run: |
           node --check tests/customs-pitre-1900-new-121-original-folio-source-gate.mjs
           node tests/customs-pitre-1900-new-121-original-folio-source-gate.mjs
+      - name: Verify entire Pitrè 1900 original 422-row printed-folio audit and zero outstanding pages
+        run: |
+          node --check tests/customs-pitre-1900-final-422-original-page-evidence-complete.mjs
+          node tests/customs-pitre-1900-final-422-original-page-evidence-complete.mjs
