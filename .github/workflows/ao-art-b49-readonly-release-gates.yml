@@ -1,0 +1,22 @@
+name: B49 independent full 383 image rights, 107 approvals / 95 / 12 release queues
+on:
+  push:
+    branches: [research/sacred-art-b49-383-photo-license-and-git-preview-20261024]
+    paths: [.github/workflows/ao-art-b49-readonly-release-gates.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  b49-readonly-all383-rights-and-source-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b49-383-photo-license-and-git-preview-20261024
+      - name: Prior B48 physical 383 artwork source partition
+        run: node tests/sacred-art-b48-383-physical-original-coverage.mjs
+      - name: B49 photo-rights evidence and app assets not art-originals
+        run: node tests/sacred-art-b49-383-photo-license-and-preview-gates.mjs
+      - name: Exact 107 historically approved artwork decisions partitioned to 95 priority and 12 hold
+        run: node tests/sacred-art-b49-approved-95-plus-12-integrity.mjs
