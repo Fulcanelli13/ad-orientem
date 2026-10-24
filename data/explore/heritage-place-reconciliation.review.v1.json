@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 398,
+    "places": 397,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 139,
+    "places_without_direct_claim": 138,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -126,7 +126,6 @@
       "place:NO:var-frue-cathedral-tromso",
       "place:NP:assumption-cathedral-lalitpur",
       "place:OM:saints-peter-paul-catholic-church-ruwi",
-      "place:PA:basilica-jesus-nazareno-atalaya",
       "place:PE:basilica-nuestra-senora-merced-lima",
       "place:PE:santuario-candelaria-chapi-polobaya",
       "place:PE:santuario-san-martin-de-porres-jicamarca",
@@ -3929,12 +3928,6 @@
     {
       "place_id": "place:OM:saints-peter-paul-catholic-church-ruwi",
       "display_name": "Saints Peter and Paul Catholic Church, Ruwi",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:PA:basilica-jesus-nazareno-atalaya",
-      "display_name": "Basílica Menor Jesús Nazareno de Atalaya",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
