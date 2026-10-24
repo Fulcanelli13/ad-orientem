@@ -8,7 +8,10 @@ REPORT=ROOT/"sacred-art-b54-383-aesthetic-biblical-review-summary.json"
 INDEX=ROOT/"sacred-art-b54-383-aesthetic-biblical-review-summary.json"
 REPO="Fulcanelli13/ad-orientem"
 def gh(*args):
-    p=subprocess.run(["gh",*args],capture_output=True,text=True,check=True)
+    p=subprocess.run(["gh",*args],capture_output=True,text=True)
+    if p.returncode:
+        raise RuntimeError("GitHub release step failed: "+str(args[:2])+
+                           " stderr="+p.stderr[-1500:]+" stdout="+p.stdout[-700:])
     return p.stdout.strip()
 def sha(path):
     h=hashlib.sha256()
