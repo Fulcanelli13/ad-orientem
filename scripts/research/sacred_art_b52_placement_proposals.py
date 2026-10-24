@@ -86,7 +86,7 @@ def propose(title, artist, artwork_id=""):
     # Specific saints must not contaminate shared name associations.
     if any(k=="john-baptist" for k,_ in saints):
         saints=[x for x in saints if x[0] not in ("john-evangelist",)]
-    if any(k=="john-cross" for k,_ in saints):
+    if any(k in ("john-cross","john-chrysostom") for k,_ in saints):
         saints=[x for x in saints if x[0]!="john-evangelist"]
     if any(k=="peter-damian" for k,_ in saints) or any(k=="peter-canisius" for k,_ in saints):
         saints=[x for x in saints if x[0]!="peter-apostle"]
