@@ -9,15 +9,17 @@
     "unreviewed_priority": 95
   },
   "scope": {
-    "candidates": 24,
-    "countries": 22
+    "candidates": 22,
+    "countries": 20,
+    "verified_existing_reuses": 2
   },
   "limits": [
     "Discovery centres are approximate town/neighbourhood search anchors and MUST NEVER become Place.geo coordinates.",
     "Overpass outputs are uncontrolled leads and MUST NEVER automatically become verified OSM features.",
     "The Catholic institutional source and exact OSM node/way/relation must identify the same specific physical unit.",
     "Complexes and duplicate same-name churches require special review, especially Santa Cova, Csíksomlyó, Budslau, Valletta, and Kevelaer.",
-    "No canonical Place IDs, typed sources, or Directory links are modified."
+    "No canonical Place IDs, typed sources, or Directory links are modified.",
+    "Explicitly reuse Ouidah Basilica and Suva Sacred Heart Cathedral existing canonical IDs instead of acquiring them as new Places."
   ],
   "candidates": [
     {
@@ -36,26 +38,6 @@
         "Aušros Vartų koplyčia",
         "Gate of Dawn",
         "Aušros vartai"
-      ],
-      "osm_feature": null,
-      "exact_identity_verified": false,
-      "ready_for_publication": false
-    },
-    {
-      "candidate_id": "SG-INV-0728",
-      "country": "BJ",
-      "label": "Basilica of the Immaculate Conception, Ouidah",
-      "source_authority": "Roman Catholic Archdiocese of Cotonou",
-      "identity_source_url": "https://archidiocesedecotonou.org/paroisses",
-      "discovery_center": {
-        "lat": 6.364,
-        "lng": 2.087,
-        "radius_m": 2500,
-        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
-      },
-      "name_variants": [
-        "Basilique de l'Immaculée Conception",
-        "Basilica of the Immaculate Conception"
       ],
       "osm_feature": null,
       "exact_identity_verified": false,
@@ -159,26 +141,6 @@
         "Baclaran Church",
         "National Shrine of Our Mother of Perpetual Help",
         "National Shrine of Our Lady of Perpetual Help"
-      ],
-      "osm_feature": null,
-      "exact_identity_verified": false,
-      "ready_for_publication": false
-    },
-    {
-      "candidate_id": "SG-INV-0748",
-      "country": "FJ",
-      "label": "Sacred Heart Cathedral, Suva",
-      "source_authority": "Roman Catholic Archdiocese of Suva",
-      "identity_source_url": "https://aosfiji.org/parish-contact-list/",
-      "discovery_center": {
-        "lat": -18.143,
-        "lng": 178.426,
-        "radius_m": 2600,
-        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
-      },
-      "name_variants": [
-        "Sacred Heart Cathedral",
-        "Cathedral of the Sacred Heart"
       ],
       "osm_feature": null,
       "exact_identity_verified": false,
@@ -512,6 +474,20 @@
       "osm_feature": null,
       "exact_identity_verified": false,
       "ready_for_publication": false
+    }
+  ],
+  "existing_canonical_reuses": [
+    {
+      "candidate_id": "SG-INV-0728",
+      "verified_existing_place_id": "place:BJ:immaculate-conception-basilica-ouidah",
+      "existing_osm_ref": "osm:way:402951938",
+      "reason": "Exact name and physical city Basilica already canonical; reuse existing OSM-mapped Place."
+    },
+    {
+      "candidate_id": "SG-INV-0748",
+      "verified_existing_place_id": "place:FJ:sacred-heart-cathedral-suva",
+      "existing_osm_ref": null,
+      "reason": "Exact-name Sacred Heart Cathedral, Suva already in master; current canonical feature uses non-OSM geoprovenance, do not duplicate."
     }
   ]
 }
