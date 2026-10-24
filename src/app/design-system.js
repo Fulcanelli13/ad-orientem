@@ -344,6 +344,108 @@ const CSS=`
 #aoPray435930 .aoP435930RootOrganised .aoP435930ModuleDescription{color:var(--ao-frame-muted)!important;font-size:14px!important}
 @media(prefers-reduced-motion:reduce){.aoQuietFrame *,#ao-global-ribbon *{scroll-behavior:auto!important}}
 
+
+/* Quiet Frame P2a: ordinary Formation / Settings / Explore chrome.
+ * Visual-only surface adaptation. Keep native controllers, map canvases,
+ * draggable sheets, site provenance and specialized reader views untouched. */
+#ao-learn-modular-root,#ao-settings-modular-root,
+#ao-find-modular-root .aoExploreSurface{
+ background:var(--ao-frame-bg,#0B0F13)!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+}
+#ao-learn-modular-root .aoLearnModTop,
+#ao-settings-modular-root .aoSetTop,
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader{
+ background:var(--ao-frame-bg,#0B0F13)!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+ border-bottom:1px solid var(--ao-frame-rule,rgba(255,255,255,.08))!important;
+ box-shadow:none!important;
+}
+#ao-learn-modular-root .aoLearnModTop button,
+#ao-settings-modular-root .aoSetTop button,
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader>button{
+ min-width:44px!important;min-height:44px!important;
+ background:transparent!important;
+ border:0!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+ box-shadow:none!important;
+}
+#ao-learn-modular-root .aoLearnModTopTitle small,
+#ao-settings-modular-root .aoSetTitle small,
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader>div>small{
+ display:none!important;
+}
+#ao-learn-modular-root .aoLearnModTopTitle strong,
+#ao-settings-modular-root .aoSetTitle strong,
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader h1{
+ font:400 19px/1.3 var(--ao-font-display,"EB Garamond",Georgia,serif)!important;
+ letter-spacing:0!important;
+ text-transform:none!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+}
+#ao-learn-modular-root .aoLearnModWrap,
+#ao-settings-modular-root .aoSetWrap{
+ width:min(var(--ao-content-max,760px),100%);
+ padding-inline:var(--ao-frame-gutter,16px)!important;
+}
+#ao-learn-modular-root .aoLearnModHero h1{
+ font:400 clamp(28px,5vw,38px)/1.16 var(--ao-font-display,"EB Garamond",Georgia,serif)!important;
+ letter-spacing:0!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+}
+#ao-learn-modular-root .aoLearnFamilyCard{
+ background:var(--ao-frame-card,#141A20)!important;
+ border-color:var(--ao-frame-rule,rgba(255,255,255,.08))!important;
+ box-shadow:none!important;
+}
+#ao-learn-modular-root .aoLearnFamilyDoor p{
+ font-size:14px!important;line-height:1.48!important;
+ color:var(--ao-frame-muted,#A3ABB4)!important;
+}
+#ao-settings-modular-root .aoSetGroup{
+ border:0!important;
+ border-radius:var(--ao-frame-radius,16px)!important;
+ background:var(--ao-frame-card,#141A20)!important;
+ box-shadow:none!important;
+}
+#ao-settings-modular-root .aoSetSection>h2{
+ font:500 13px/1.45 var(--ao-font-ui,"EB Garamond",Georgia,serif)!important;
+ color:var(--ao-frame-muted,#A3ABB4)!important;
+ font-variant-caps:small-caps!important;
+ letter-spacing:.06em!important;
+ text-transform:none!important;
+}
+#ao-settings-modular-root .aoSetRow{
+ min-height:64px!important;
+ border-bottom:1px solid var(--ao-frame-rule,rgba(255,255,255,.08))!important;
+ padding:10px 16px!important;
+ background:transparent!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+}
+#ao-settings-modular-root .aoSetRow:last-child{border-bottom:0!important}
+#ao-settings-modular-root .aoSetRowText b{
+ font:500 17px/1.3 var(--ao-font-ui,"EB Garamond",Georgia,serif)!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+}
+#ao-settings-modular-root .aoSetRowText small{
+ font:400 14px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif)!important;
+ color:var(--ao-frame-muted,#A3ABB4)!important;
+}
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader>span{
+ color:var(--ao-frame-muted,#A3ABB4)!important;
+}
+#ao-find-modular-root .aoExploreSurface .aoFindSearch input{
+ background:var(--ao-frame-raised,#1C232B)!important;
+ border-color:var(--ao-frame-rule,rgba(255,255,255,.08))!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+ font:400 16px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif)!important;
+}
+#ao-learn-modular-root :is(.aoLearnModTop button,.aoLearnFamilyDoor):focus-visible,
+#ao-settings-modular-root :is(.aoSetTop button,.aoSetRow):focus-visible,
+#ao-find-modular-root .aoExploreSurface :is(.aoFindHeader button,.aoFindSearch input):focus-visible{
+ outline:2px solid var(--liturgical,#C9AD78)!important;outline-offset:2px;
+}
+
 `;
 
 export function installAppDesignSystem(win=globalThis){
