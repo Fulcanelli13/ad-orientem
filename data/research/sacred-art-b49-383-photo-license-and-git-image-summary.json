@@ -1,0 +1,59 @@
+{
+  "schema": "AO_B49_ALL383_PHOTO_REUSE_AND_GIT_IMAGE_VISUAL_RECONCILIATION_V1",
+  "date": "2026-10-24",
+  "active_frozen_artworks": 383,
+  "previous_complete_original_source_evidence": 358,
+  "preserved_any_source": 360,
+  "remaining_complete_object_source_gaps": 25,
+  "historically_selected_artwork_counts_preserved": 107,
+  "historically_approved_with_complete_object_and_open_photo_metadata_claim": 95,
+  "priority_first_pass_release_review_queue_path": "data/research/sacred-art-b49-95-frozen-approved-rights-review-queue.csv",
+  "priority_95_are_not_approved_photo_versions": true,
+  "historically_approved_other_requiring_additional_sources_or_licensing": 12,
+  "per_photo_source_license_metadata_claim_artworks": 261,
+  "per_photo_source_license_metadata_claim_note": "Metadata claims are NOT final legal clearance; licenses may refer to the database object rather than photograph and version, and choice of preferred image may differ.",
+  "rights_evidence_class_counts": {
+    "OPEN_LICENSE_METADATA_RECORDED_BUT_COMMERCIAL_PHOTO_REUSE_AND_IDENTITY_NOT_JOINTLY_APPROVED": 261,
+    "NO_ATTRIBUTED_OPEN_PHOTO_SOURCE_RIGHTS_IN_MATCHED_ARCHIVE_RECORDS": 98,
+    "NO_EXACT_FROZEN_ARTWORK_SHA_SOURCE": 22,
+    "SPECIFIC_PHOTO_REPRODUCTION_PERMISSION_HOLD": 2
+  },
+  "confirmed_commercial_app_reusable_selected_exact_photos_end_to_end": 0,
+  "end_to_end_release_readiness_certification_completed": false,
+  "zero_certifications_means_unchecked_not_forbidden": true,
+  "photographic_files_in_git": 227,
+  "git_image_functional_categories": {
+    "active_UI": 80,
+    "approved_sacred_places": 37,
+    "generated_inline_UI": 84,
+    "other_UI_and_media": 5,
+    "staged_sacred_places": 21
+  },
+  "git_files_include_non_catalogue_app_graphics": true,
+  "git_photo_bytes": 47015237,
+  "git_files_that_decode_at_minimum_350px": 213,
+  "legacy_gallery_supplementary_tar_archive": "ao-supplement-b27-gallery159.tar",
+  "legacy_gallery_tar_bytes": 5580800,
+  "legacy_gallery_tar_members": 174,
+  "legacy_gallery_valid_photo_previews": 10,
+  "legacy_gallery_non_image_members": 5,
+  "git_to_gallery_visual_candidate_outcomes": {
+    "NO_MATCH": 227
+  },
+  "git_art_image_SHA_direct_matches_to_B48_catalogue": 0,
+  "git_perceptual_similarity_is_not_source_identity_or_permission": true,
+  "all383_ledger_path": "data/research/sacred-art-b49-383-release-photo-rights-and-repo-mapping.csv",
+  "all_git_image_candidate_path": "data/research/sacred-art-b49-git-tracked-images-and-visual-match-candidates.csv",
+  "new_frozen_catalogue_artwork_sources_promoted": 0,
+  "new_photo_reuse_approvals": 0,
+  "new_editorial_approvals": 0,
+  "new_app_publication_changes": 0,
+  "no_additional_paid_storage_or_services": true,
+  "cost_eur": 0,
+  "next_actions": [
+    "Resolve 3 archived source aliases without incorrectly treating Rubens preparatory oil modelli as finished original paintings.",
+    "Audit meaningful perceptual git-gallery matches by filename and visually inspect; no automated source adoption.",
+    "Use positive owner rights and exact SHA evidence to produce high confidence editorial release candidates; separate historic approved artworks from photographer image versions.",
+    "Continue new exact-object source acquisition for 23 no-source paintings and two partial-only cases only when new genuinely accessible source evidence emerges."
+  ]
+}
