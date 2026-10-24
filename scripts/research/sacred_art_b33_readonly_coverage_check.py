@@ -28,9 +28,9 @@ assert b["counts"]=={
  "B27_EXISTING_SOURCE_CROSS_IDENTITY_HOLD":2,
  "B33_ACCESSIONED_ORIGINAL_SOURCE_RESEARCH_ONLY":6,
  "BLOCKED_WRONG_PHOTO":1}
-assert b["historically_selected_originals_byte_verified"]==13
+assert b["historical_selected_originals_byte_verified"]==13
 assert b["other_unselected_source_file_or_alias"]==50
-assert not b["canonical_451_modified"] if "canonical_451_modified" in b else True
+assert b["canonical_451_modified"] is False
 assert all(r.get("B33_new_source_rights_approved") is False and
            r.get("B33_editorial_source_promotion") is False for r in b["rows"])
 assert all(r["photo_identity_approved"]=="NO" and r["editorial_choice_changed"]=="NO"
