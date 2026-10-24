@@ -1,3 +1,4 @@
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 const load=x=>JSON.parse(readFileSync(new URL("../"+x,import.meta.url),"utf8"));
@@ -7,7 +8,8 @@ const geo=load("data/geography/seed-registry.v1.json");
 const sources=load("data/shrines/source-registry.v1.json");
 assert.equal(p26.schema,"AO_SACRED_PLACES_P26_ADDITIONAL_AUTHORITY_EVIDENCE_V1");
 assert.equal(p26.status,"RESEARCH_ONLY_NO_CANONICAL_RELEASE");
-assert.deepEqual([geo.places.length,sources.sources.length],[p26.baseline.places,p26.baseline.typed_sources]);
+assert.deepEqual([geo.places.length,sources.sources.length],[LIVE.places,LIVE.sources]);
+assert.deepEqual([p26.baseline.places,p26.baseline.typed_sources],[387,685]);
 const prior=p25.all_151_priority_source_screen.filter(x=>!x.source_excerpt);
 assert.deepEqual(p26.remaining_131_source_screen.map(x=>x.candidate_id),prior.map(x=>x.candidate_id));
 assert.equal(p26.remaining_131_source_screen.length,131);
