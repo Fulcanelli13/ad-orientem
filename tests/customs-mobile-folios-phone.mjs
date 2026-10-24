@@ -72,7 +72,7 @@ try{
       });
       assert.equal(ui.selected,guide.custom_id,"exact canonical folio identity lost");
       const title=language==="fr"?guide.title_fr:guide.title_en;
-      assert.ok(ui.headings.includes(title),guide.custom_id+" wrong localized title");
+      assert.ok(ui.headings.includes(title),guide.custom_id+" wrong localized title: wanted="+JSON.stringify(title)+" received="+JSON.stringify(ui.headings)+" runtimeLang="+language);
       assert.ok(ui.text.includes(language==="fr"?guide.description_fr:guide.description_en),guide.custom_id+" localized description missing");
       assert.ok(ui.text.includes(language==="fr"?guide.meaning_fr:guide.meaning_en),"missing spiritual meaning");
       assert.ok(ui.text.includes(language==="fr"?guide.how_fr:guide.how_en),"missing optional practice");
