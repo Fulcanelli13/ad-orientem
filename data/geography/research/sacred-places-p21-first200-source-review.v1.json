@@ -16,23 +16,25 @@
     "Preserve Latin Catholic, Eastern Catholic, Anglican, Orthodox, historical heritage and operating status without pretending they are interchangeable.",
     "Prior reviewed canonical exact matches outrank plausible aliases; no title-only promotion.",
     "Legacy country codes DY (Benin) and HV (Burkina Faso) normalized for source routing without mutating original record IDs.",
-    "A cited URL was inspected through retrieved web text excerpts, not asserted to be a completed building-footprint and access review."
+    "A cited URL was inspected through retrieved web text excerpts, not asserted to be a completed building-footprint and access review.",
+    "September 2026 church sources show distinct old and new Peñafrancia buildings (Naga) and newly dedicated Balasar sanctuary church (Portugal); historical title alone must never geocode the wrong one."
   ],
   "counts": {
     "priority_ids": 200,
-    "source_snippets_reviewed": 34,
-    "remaining_without_new_source_review": 166,
+    "source_snippets_reviewed": 44,
+    "remaining_without_new_source_review": 156,
     "source_gates": {
       "MULTIPLE_CATHOLIC_SAME_TITLE_SITES_UNRESOLVED": 1,
-      "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT": 5,
-      "CATHOLIC_SITE_SOURCE_SUPPORTED": 16,
+      "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT": 9,
+      "CATHOLIC_SITE_SOURCE_SUPPORTED": 21,
       "EASTERN_CATHOLIC_COMPLEX_SOURCE_SUPPORTED": 1,
-      "PRIMARY_SOURCE_NOT_YET_REVIEWED": 152,
+      "PRIMARY_SOURCE_NOT_YET_REVIEWED": 142,
       "CATHOLIC_SITE_SOURCE_SUPPORTED_WITH_COORDINATE_LEAD": 1,
       "INHERITED_SOURCE_NOT_SITE_SPECIFIC_REPLACE_REQUIRED": 2,
       "CULTURAL_MONUMENT_NOT_ACTIVE_CATHOLIC_SITE": 1,
       "PRIORITY_SCOPE_WARNING_NOT_INDEPENDENTLY_VERIFIED": 14,
       "NON_CATHOLIC_OPERATING_SITE": 3,
+      "NEW_2026_CATHOLIC_BUILDING_SCOPE_SPLIT": 1,
       "NON_CATHOLIC_OPERATING_SITE_REVIEW": 1,
       "CANONICAL_PHYSICAL_REUSE_REVIEW": 1,
       "CANONICAL_COMPLEX_REUSE_SUBSITE_REVIEW": 1,
@@ -1465,12 +1467,17 @@
       "country_original": "KR",
       "country_iso_alpha2": "KR",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://www.djcatholic.or.kr/home/pages/re_shrine_view.php?ids=shrine19",
+        "issuer": "Catholic Diocese of Daejeon",
+        "scope_note": "International Haemi Martyrs Shrine at 13 Seongji 1-ro, Seosan; distinguish actual shrine church, tower, mass graves and memorial grounds."
+      }
     },
     {
       "order": 83,
@@ -1689,12 +1696,17 @@
       "country_original": "AU",
       "country_iso_alpha2": "AU",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_SITE_SOURCE_SUPPORTED",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://carmelites.au/about-the-carmelites/olmc",
+        "issuer": "Carmelite Province Australia",
+        "scope_note": "Our Lady of Mount Carmel National Shrine is an operating Catholic church at Richardson and Wright Streets, Middle Park; named side-shrines are internal features."
+      }
     },
     {
       "order": 99,
@@ -1787,12 +1799,17 @@
       "country_original": "MU",
       "country_iso_alpha2": "MU",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_SITE_SOURCE_SUPPORTED",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://www.dioceseportlouis.org/medias/archives/evenements-diocesains/ordination-episcopale-les-site-visits-s-enchainent-a-marie-reine-de-la-paix",
+        "issuer": "Diocese of Port-Louis",
+        "scope_note": "Diocese expressly names sanctuaire Marie-Reine-de-la-Paix used for episcopal liturgy; distinct from Saint-Louis Cathedral and Père Laval Centre."
+      }
     },
     {
       "order": 106,
@@ -1829,12 +1846,17 @@
       "country_original": "NL",
       "country_iso_alpha2": "NL",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://martelarenvangorcum.nl/l/over-ons",
+        "issuer": "Brielle diocesan martyr-shrine custodians",
+        "scope_note": "National Martyrs of Gorcum sanctuary at De Rik 5, Brielle, includes a pilgrimage church and martyrs' field; separate from Brielle parish church."
+      }
     },
     {
       "order": 109,
@@ -1885,12 +1907,17 @@
       "country_original": "AR",
       "country_iso_alpha2": "AR",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_SITE_SOURCE_SUPPORTED",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://arzcorrientes.org.ar/public/arquidiocesis/santuarios/basilica-itati",
+        "issuer": "Archdiocese of Corrientes",
+        "scope_note": "Our Lady of Itatí Basilica Parish at Obispo Niella s/n, Itatí is documented by archdiocese."
+      }
     },
     {
       "order": 113,
@@ -1941,12 +1968,17 @@
       "country_original": "MX",
       "country_iso_alpha2": "MX",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_SITE_SOURCE_SUPPORTED",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://diocesisdesanjuan.org/?cat=1",
+        "issuer": "Diocese of San Juan de los Lagos",
+        "scope_note": "Diocesan listing identifies San Juan de los Lagos Cathedral Basilica (Marian pilgrim shrine)."
+      }
     },
     {
       "order": 117,
@@ -1970,12 +2002,17 @@
       "country_original": "PE",
       "country_iso_alpha2": "PE",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_SITE_SOURCE_SUPPORTED",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://mail.arzobispadoarequipa.org.pe/santuario",
+        "issuer": "Archdiocese of Arequipa",
+        "scope_note": "Archdiocese lists Sanctuary of Our Lady of Chapi at Polobaya with rector and Catholic worship."
+      }
     },
     {
       "order": 119,
@@ -1984,12 +2021,17 @@
       "country_original": "PT",
       "country_iso_alpha2": "PT",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "NEW_2026_CATHOLIC_BUILDING_SCOPE_SPLIT",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://arquidiocese-braga.pt/noticia/2026-09-15-santuario-eucaristico-de-balasar-abre-nova-etapa-centrada-na-eucaristia-acolhimento-e-legado-da-beata-alexandrina-6aa97630e5529",
+        "issuer": "Archdiocese of Braga",
+        "scope_note": "New Eucharistic Sanctuary at Balasar dedicated in October 2026; distinguish new sanctuary from older parish church and earlier tomb location. Verify the new building geometry, not historical parish centroid."
+      }
     },
     {
       "order": 120,
@@ -2149,12 +2191,17 @@
       "country_original": "PH",
       "country_iso_alpha2": "PH",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://www.archdioceseofcaceres.org/post/dawn-of-reunion-pagbalyo-ni-ina-and-feast-of-divino-rostro-open-pe%C3%B1afrancia-2026",
+        "issuer": "Archdiocese of Caceres",
+        "scope_note": "In Naga, Minor Basilica and old Shrine/Parish of Our Lady of Peñafrancia are explicitly separate buildings, image transferred between them in September 2026."
+      }
     },
     {
       "order": 131,
@@ -2571,12 +2618,17 @@
       "country_original": "KR",
       "country_iso_alpha2": "KR",
       "priority": "Strong",
-      "source_status": "NO_NEW_INDEPENDENT_SOURCE_REVIEW",
-      "source_gate": "PRIMARY_SOURCE_NOT_YET_REVIEWED",
+      "source_status": "SOURCE_SNIPPET_REVIEWED_2026_10_24",
+      "source_gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
       "identity_physical_unit_verified_for_publication": false,
       "independent_exact_geo_review_pass": false,
       "approved_new_canonical_place_id": null,
-      "publication_approved": false
+      "publication_approved": false,
+      "primary_or_institutional_evidence": {
+        "url": "https://app.catholic.or.kr/web/holyplace/?flag=1&seq=2320",
+        "issuer": "Korean Catholic Church national site directory",
+        "scope_note": "Mirinae Holy Ground in Suwon diocese is Catholic martyr burial and pilgrimage precinct; investigate individual church and tomb features rather than auto-join all by name."
+      }
     },
     {
       "order": 160,
@@ -2791,7 +2843,7 @@
       "primary_or_institutional_evidence": {
         "url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/",
         "issuer": "Diocese of Port-Louis",
-        "scope_note": "2026 diocesan pilgrimage confirms Père Laval tomb/caveau at Sainte-Croix, spatially distinct from parish church and within Centre Père Laval precinct; review subsite relation before any new physical Place."
+        "scope_note": "Operating Père Laval caveau inside Sainte-Croix pilgrim precinct; stronger evidence confirms physically distinguished tomb from parish church, not automatic second canonical complex pin."
       },
       "candidate_existing_place_id": "place:MU:pere-laval-sainte-croix",
       "identity_physical_unit_verified_for_publication": false,
