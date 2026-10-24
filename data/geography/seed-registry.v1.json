@@ -15852,6 +15852,124 @@
         "AO-P17-ASUNCION-ORATORY-CULTURE",
         "AO-P17-ASUNCION-ORATORY-GEO"
       ]
+    },
+    {
+      "place_id": "place:US:sacred-heart-shrine-hales-corners",
+      "name": {
+        "official": "Sacred Heart Shrine, Hales Corners",
+        "aliases": [
+          "Monastery and Shrine of the Sacred Heart",
+          "Sacred Heart Shrine — Hales Corners"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 42.9111875,
+        "lng": -88.0439375,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://gcatholic.org/churches/usa-07/152268",
+        "source_ref": "olc:86JHWX64+FC",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": "7335 S Highway 100",
+        "line2": null,
+        "postal_code": "53130",
+        "city": "Hales Corners",
+        "region": "Wisconsin",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "7335 S Highway 100, Hales Corners, WI 53130, USA"
+      },
+      "source_ids": [
+        "AO-P18-HALES-ARCHDIOCESE",
+        "AO-P18-HALES-GEOCODE"
+      ]
+    },
+    {
+      "place_id": "place:NI:ermita-guadalupe-matagalpa",
+      "name": {
+        "official": "Ermita de Guadalupe, Matagalpa",
+        "aliases": [
+          "Guadalupe Hermitage, Matagalpa"
+        ]
+      },
+      "place_type": "chapel",
+      "geo_area_ids": [
+        "geo:country:NI"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 12.93104,
+        "lng": -85.91297,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/4534569689",
+        "source_ref": "osm:node:4534569689",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "NI",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Matagalpa",
+        "region": "Matagalpa",
+        "country_code": "NI",
+        "country": "Nicaragua",
+        "formatted": "Ermita de Guadalupe, Matagalpa, Nicaragua"
+      },
+      "source_ids": [
+        "AO-P18-MATAGALPA-INTUR",
+        "AO-P18-MATAGALPA-OSM"
+      ]
+    },
+    {
+      "place_id": "place:IT:santuario-beata-vergine-neve-foppolo",
+      "name": {
+        "official": "Santuario della Beata Vergine della Neve, Foppolo",
+        "aliases": [
+          "Chiesa della Beata Vergine della Neve",
+          "Our Lady of the Snow, Foppolo"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 46.04278,
+        "lng": 9.75723,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/875757246",
+        "source_ref": "osm:way:875757246",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": "Via Magri 12",
+        "line2": null,
+        "postal_code": "24010",
+        "city": "Foppolo",
+        "region": "Lombardia",
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Via Magri 12, 24010 Foppolo (BG), Italy"
+      },
+      "source_ids": [
+        "AO-P18-FOPPOLO-DIOCESE",
+        "AO-P18-FOPPOLO-OSM"
+      ]
     }
   ],
   "directoryPlaceLinks": [

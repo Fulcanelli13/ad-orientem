@@ -1,0 +1,105 @@
+{
+  "schema": "AO_SACRED_PLACES_P18_THREE_SITE_RELEASE_V1",
+  "date": "2026-10-24",
+  "status": "PROPOSED_VIA_PULL_REQUEST",
+  "owner_paths": [
+    "data/geography/seed-registry.v1.json",
+    "data/shrines/source-registry.v1.json",
+    "data/explore/heritage-place-reconciliation.review.v1.json"
+  ],
+  "baseline": {
+    "places": 356,
+    "typed_sources": 647,
+    "heritage_crosswalk": 356,
+    "places_without_direct_claim": 97,
+    "geo_areas": 141,
+    "directory_place_links": 9,
+    "original_p16_source_or_title_holds": 16
+  },
+  "proposed": {
+    "places": 359,
+    "typed_sources": 653,
+    "heritage_crosswalk": 359,
+    "places_without_direct_claim": 100,
+    "geo_areas": 141,
+    "directory_place_links": 9,
+    "new_places": 3,
+    "new_site_pins": 3,
+    "new_approved_media": 0,
+    "new_tlm_links": 0,
+    "new_shrine_owner_records": 0,
+    "original_exception_holds_left": 16
+  },
+  "published_new": [
+    {
+      "place_id": "place:US:sacred-heart-shrine-hales-corners",
+      "research_context": "candidate:SG-INV-0402",
+      "country": "US",
+      "name": "Sacred Heart Shrine, Hales Corners",
+      "place_type": "shrine",
+      "lat": 42.9111875,
+      "lng": -88.0439375,
+      "source_ids": [
+        "AO-P18-HALES-ARCHDIOCESE",
+        "AO-P18-HALES-GEOCODE"
+      ],
+      "location_code": "86JHWX64+FC",
+      "geo_source": "AO-P18-HALES-GEOCODE",
+      "precision": "complex_anchor",
+      "why": "Archdiocesan outdoor statue/fountain at Hales Corners monastery/shrine complex; GCatholic site grid-cell centre not independently verified statue/door location; original National Shrine Milwaukee title false."
+    },
+    {
+      "place_id": "place:NI:ermita-guadalupe-matagalpa",
+      "research_context": "candidate:SG-INV-0456",
+      "country": "NI",
+      "name": "Ermita de Guadalupe, Matagalpa",
+      "place_type": "chapel",
+      "lat": 12.93104,
+      "lng": -85.91297,
+      "source_ids": [
+        "AO-P18-MATAGALPA-INTUR",
+        "AO-P18-MATAGALPA-OSM"
+      ],
+      "osm_type": "node",
+      "osm_id": "4534569689",
+      "precision": "site",
+      "why": "Government tourism identifies the actual hermitage as processional start; OSM names separate Catholic worship node. Not the Matagalpa Guadalupe monument node 5973238551, Apante Mountain of Peace or formally designated diocesan Guadalupe shrine."
+    },
+    {
+      "place_id": "place:IT:santuario-beata-vergine-neve-foppolo",
+      "research_context": "candidate:SG-INV-0071",
+      "country": "IT",
+      "name": "Santuario della Beata Vergine della Neve, Foppolo",
+      "place_type": "shrine",
+      "lat": 46.04278,
+      "lng": 9.75723,
+      "source_ids": [
+        "AO-P18-FOPPOLO-DIOCESE",
+        "AO-P18-FOPPOLO-OSM"
+      ],
+      "osm_type": "way",
+      "osm_id": "875757246",
+      "precision": "site",
+      "why": "Diocese explicitly names this distinct seasonal sanctuary, 1975 suffragan church, Via Magri 12, and OSM has exact Roman Catholic polygon; not Maria Maggiore Bergamo, Madonna della Neve Bergamo S. Anna, or Santa Maria Assunta Foppolo."
+    }
+  ],
+  "research_policy": {
+    "original_queue": "data/geography/research/sacred-places-p16-three-qualified-site-release.v1.json",
+    "original_hold_count": 16,
+    "cases_not_automatically_resolved": [
+      "candidate:SG-INV-0402",
+      "candidate:SG-INV-0456",
+      "candidate:SG-INV-0071"
+    ],
+    "rationale": "Distinct physical sites are published under verified names; original source titles still contain contradictions or refer to multiple distinct worship sites. Do not treat independent publication as proof of original claimed shrine designation.",
+    "other_unchanged_candidates": 13
+  },
+  "location_limits": [
+    "Hales Corners: full ten-character Plus Code yields approximate 14-metre grid-cell centre on monastic shrine campus, not exact Sacred Heart statue, building door or visitor route.",
+    "Matagalpa: OSM Catholic node is the hermitage place-of-worship feature, not independently proven to mark a particular door.",
+    "Foppolo: OSM way site centre of Catholic church, not independently mapped door.",
+    "Foppolo has seasonal opening; no dates/current open-now inferred.",
+    "No photo rights or approved artwork, no Mass schedule, no 1962 Missal claim, no apparition/relic authentication inferred.",
+    "No parish church/shrine owner object was invented from the Place type; only canonical Geographic Places published."
+  ]
+}

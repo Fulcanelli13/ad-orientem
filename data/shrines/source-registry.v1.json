@@ -5177,6 +5177,54 @@
       "directness": "SECONDARY",
       "url": "https://www.openstreetmap.org/way/277917838",
       "contribution": "OSM way 277917838 is National Pantheon historical memorial with Wikidata Q3500546, mapped at -25.28228,-57.63510. The Catholic oratory occupies the same physical building, as corroborated by Archdiocese and Ministry; this is not a church-only footprint or verified entrance."
+    },
+    {
+      "id": "AO-P18-HALES-ARCHDIOCESE",
+      "title": "Sacred Heart Shrine — archdiocesan identity, physical dedication and Hales Corners address",
+      "issuer": "Roman Catholic Archdiocese of Milwaukee",
+      "directness": "OFFICIAL_DIOCESAN",
+      "url": "https://www.archmil.org/shrines",
+      "contribution": "Archdiocese lists outdoor Sacred Heart Shrine, 7335 S. Highway 100, Hales Corners WI 53130, dedicated 1989: Sacred Heart statue, fountain, walkways and gardens. Not formally named National Shrine and not a separate Milwaukee-city church or chapel."
+    },
+    {
+      "id": "AO-P18-HALES-GEOCODE",
+      "title": "Monastery and Shrine of the Sacred Heart — precise published site Open Location Code",
+      "issuer": "GCatholic Catholic site gazetteer",
+      "directness": "SECONDARY",
+      "url": "https://gcatholic.org/churches/usa-07/152268",
+      "contribution": "GCatholic lists Monastery and Shrine of the Sacred Heart in Hales Corners, at 7335 S Highway 100 with full Plus Code 86JHWX64+FC. Decoded centre represents ~14m grid-cell campus/site location, not independent monument pinpoint, exact statue or visitor entrance. No inference from 'Roman (Latin)' that site hosts 1962 Missal."
+    },
+    {
+      "id": "AO-P18-MATAGALPA-INTUR",
+      "title": "Ermita de Guadalupe, Matagalpa — Catholic hermitage and Guadalupe procession place",
+      "issuer": "Nicaragua Institute of Tourism (INTUR), Mapa Nacional de Turismo",
+      "directness": "PRIMARY_INSTITUTIONAL",
+      "url": "https://mapanicaragua.com/en/religious-festivities-of-matagalpa/",
+      "contribution": "National tourism authority expressly names the Ermita de Guadalupe as the religious procession starting point. Confirms church/hermitage identity, not separate formally titled diocesan shrine or Apante Mountain of Peace destination."
+    },
+    {
+      "id": "AO-P18-MATAGALPA-OSM",
+      "title": "Ermita de Guadalupe, Matagalpa — named Catholic OSM church node",
+      "issuer": "OpenStreetMap contributors",
+      "directness": "SECONDARY",
+      "url": "https://www.openstreetmap.org/node/4534569689",
+      "contribution": "Mapped named Ermita de Guadalupe, Matagalpa, node 4534569689 with denomination=catholic, amenity=place_of_worship; 12.93104,-85.91297 rounded site point. Not nearby Guadalupe monument OSM node 5973238551, nor separate Apante devotional mountain; not visitor entrance."
+    },
+    {
+      "id": "AO-P18-FOPPOLO-DIOCESE",
+      "title": "Beata Vergine della Neve, Foppolo — actual suffragan Catholic church and diocesan sanctuary",
+      "issuer": "Roman Catholic Diocese of Bergamo",
+      "directness": "OFFICIAL_DIOCESAN",
+      "url": "https://diocesibg.it/santuario/beata-vergine-della-neve/",
+      "contribution": "Diocese identifies actual Beata Vergine della Neve at Via Magri 12, Foppolo, a seasonal-opening church built 1969–1975, separate from Santa Maria Assunta parish, Bergamo Santa Maria Maggiore basilica and Bergamo S. Anna Madonna della Neve. Published seasonal-opening notice does not establish dates/hours."
+    },
+    {
+      "id": "AO-P18-FOPPOLO-OSM",
+      "title": "Beata Vergine della Neve, Foppolo — named Roman Catholic OSM church footprint",
+      "issuer": "OpenStreetMap contributors",
+      "directness": "SECONDARY",
+      "url": "https://www.openstreetmap.org/way/875757246",
+      "contribution": "Named Catholic church/amenity=place_of_worship, denomination=roman_catholic, OSM way 875757246 at 46.04278,9.75723 approximate church footprint centre. Distinct from Santa Maria Assunta parish church ~460m west. No visitor doorway or 1962-Missal inference."
     }
   ]
 }

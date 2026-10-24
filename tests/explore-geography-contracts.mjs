@@ -36,7 +36,7 @@ assert.equal(contract.schema, EXPLORE_GEOGRAPHY_SCHEMA);
 assert.equal(contract.version, "1.0.0");
 assert.ok(contract.invariants.some(value => /proximity/i.test(value)));
 assert.ok(contract.invariants.some(value => /Directory venue/i.test(value)));
-assert.equal(seed.places.length,261+r87.published_new.length+r89.published_new.length+r90.published_new.length+r91.published_new.length+r92.published_new.length+r93.published_new.length+6+readJson("../data/geography/research/sacred-places-p17-separated-bergamo-asuncion.v1.json").published_new.length);
+assert.equal(seed.places.length,261+r87.published_new.length+r89.published_new.length+r90.published_new.length+r91.published_new.length+r92.published_new.length+r93.published_new.length+6+readJson("../data/geography/research/sacred-places-p17-separated-bergamo-asuncion.v1.json").published_new.length+3);
 for(const entry of r87.published_new)assert.ok(seed.places.some(place=>place.place_id===entry.place_id),entry.place_id+" R87 Place missing");
 
 for (const area of seed.geoAreas) {
@@ -85,7 +85,8 @@ const r77=readJson("../data/geography/research/sacred-geography-r77-essential-co
 const r77PublishedPlaces=new Set(r77.published_new.map(row=>row.place_id));
 for(const id of r77PublishedPlaces)assert.ok(seed.places.some(p=>p.place_id===id),id+" R77 Place lost");
 const p17NewPlaceIds=readJson("../data/geography/research/sacred-places-p17-separated-bergamo-asuncion.v1.json").published_new.map(x=>x.place_id);
-const laterPublishedPlaces=new Set([...p17NewPlaceIds,...r65PublishedPlaces,...r70PublishedPlaces,...r74PublishedPlaces,...r75PublishedPlaces,...r76PublishedPlaces,...r77PublishedPlaces,...r87.published_new.map(row=>row.place_id),...r89.published_new.map(row=>row.place_id),...r90.published_new.map(row=>row.place_id),...r91.published_new.map(row=>row.place_id),...r92.published_new.map(row=>row.place_id),...r93.published_new.map(row=>row.place_id),"place:IT:santuario-san-paolo-della-croce-ovada","place:PH:monasterio-de-tarlac-risen-christ-chapel","place:PE:basilica-nuestra-senora-merced-lima","place:MY:st-jude-church-rawang","place:PE:santuario-san-martin-de-porres-jicamarca","place:UY:santuario-nuestra-senora-del-carmen-carmelo"]);
+const p18NewPlaceIds=readJson("../data/geography/research/sacred-places-p18-three-site-release.v1.json").published_new.map(x=>x.place_id);
+const laterPublishedPlaces=new Set([...p17NewPlaceIds,...p18NewPlaceIds,...r65PublishedPlaces,...r70PublishedPlaces,...r74PublishedPlaces,...r75PublishedPlaces,...r76PublishedPlaces,...r77PublishedPlaces,...r87.published_new.map(row=>row.place_id),...r89.published_new.map(row=>row.place_id),...r90.published_new.map(row=>row.place_id),...r91.published_new.map(row=>row.place_id),...r92.published_new.map(row=>row.place_id),...r93.published_new.map(row=>row.place_id),"place:IT:santuario-san-paolo-della-croce-ovada","place:PH:monasterio-de-tarlac-risen-christ-chapel","place:PE:basilica-nuestra-senora-merced-lima","place:MY:st-jude-church-rawang","place:PE:santuario-san-martin-de-porres-jicamarca","place:UY:santuario-nuestra-senora-del-carmen-carmelo"]);
 assert.deepEqual(
   seed.places.filter(place=>!laterPublishedPlaces.has(place.place_id)).map(place => place.place_id).sort(),
   [

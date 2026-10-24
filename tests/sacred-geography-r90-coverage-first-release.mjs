@@ -19,9 +19,9 @@ assert.equal(r89.result.places,306,"Prior R89 release is a frozen publication ba
 assert.equal(r90.published_new.length,12);
 assert.equal(r90.country_areas_added.length,12);
 assert.equal(new Set(r90.published_new.map(x=>x.country)).size,12);
-assert.equal(geo.places.length,306+r90.published_new.length+r91.published_new.length+r92.published_new.length+r93.published_new.length+6+p17.published_new.length);
+assert.equal(geo.places.length,306+r90.published_new.length+r91.published_new.length+r92.published_new.length+r93.published_new.length+6+p17.published_new.length+3);
 assert.equal(geo.geoAreas.length,100+r90.country_areas_added.length+r91.country_areas_added.length+r92.country_areas_added.length+r93.country_areas_added.length);
-assert.equal(sources.sources.length,539+2*r90.published_new.length+2*r91.published_new.length+2*r92.published_new.length+2*r93.published_new.length+18+p17.published_new.reduce((n,p)=>n+p.source_ids.length,0));
+assert.equal(sources.sources.length,539+2*r90.published_new.length+2*r91.published_new.length+2*r92.published_new.length+2*r93.published_new.length+18+p17.published_new.reduce((n,p)=>n+p.source_ids.length,0)+6);
 assert.equal(new Set(geo.places.map(x=>x.place_id)).size,geo.places.length);
 assert.equal(new Set(sources.sources.map(x=>x.id)).size,sources.sources.length);
 assert.equal(geo.directoryPlaceLinks.length,9);
