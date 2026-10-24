@@ -1,0 +1,103 @@
+{
+  "schema": "AO_SACRED_ART_B32_SEVEN_RESIDUAL_HOLDS_TO_B33_V1",
+  "source_22_evidence": "data/research/sacred-art-b32-22-institutional-identity-evidence.json",
+  "hold_count": 7,
+  "wrong_photo_count": 3,
+  "unresolved_identity_count": 3,
+  "institutional_reuse_count": 1,
+  "automatic_source_replacement_allowed": false,
+  "next_research_batch": "B33: exact authoritative artwork+image source identification for seven records, plus two separate cross-ID B27 SHA conflicts",
+  "rows": [
+    {
+      "artwork_id": "ART-usepe-de-ibera-aint-eter-postolate",
+      "disposition": "OBJECT_MISMATCH_QUARANTINE",
+      "canonical_institution": "Art Institute of Chicago",
+      "institutional_object_id": "1993.60",
+      "source_evidence_url": "https://www.artic.edu/files/3135a330-4071-4e25-807b-56f6cb682973/AIC_MuseumStudies_30-1_UPDF.pdf",
+      "why_current_source_is_unacceptable": "AIC 1993.60 is Saint Peter Penitent, not the specified Saint Peter Apostolate work. Shared subject/artist is insufficient.",
+      "research_task": "AUTHORITATIVE_OBJECT_ID_AND_TRUE_APOSTOLATE_IMAGE",
+      "item_specific_instructions": "The Art Institute image 1993.60 is Penitent Saint Peter, not the selected apostolate painting. Find exact apostolate object in institutional inventory; do not substitute the Chicago picture.",
+      "source_image_download_approved": false,
+      "editorial_selection_unchanged": true,
+      "publication_rights_approved": false
+    },
+    {
+      "artwork_id": "ART-usepe-de-ibera-aint-aul-postolate",
+      "disposition": "UNRESOLVED_IDENTITY_HOLD",
+      "canonical_institution": "",
+      "institutional_object_id": "",
+      "source_evidence_url": "",
+      "why_current_source_is_unacceptable": "Commons title gives Saint Paul by Ribera but lacks an authoritative catalogue accession linking this exact photo to the approved apostolate.",
+      "research_task": "CONFIRM_RIBERA_APOSTOLADO_PAUL_OBJECT_INVENTORY",
+      "item_specific_instructions": "Resolve which Ribera Saint Paul belongs to approved apostolate before any new photo acquisition.",
+      "source_image_download_approved": false,
+      "editorial_selection_unchanged": true,
+      "publication_rights_approved": false
+    },
+    {
+      "artwork_id": "G25-003",
+      "disposition": "OBJECT_MISMATCH_QUARANTINE",
+      "canonical_institution": "Museo Nacional del Prado",
+      "institutional_object_id": "P001314",
+      "source_evidence_url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-agustin/cf95015c-5744-4471-a529-84a3981719d6",
+      "why_current_source_is_unacceptable": "Selected record is Anonymous, possible Lanfranco copy, Saint Augustine. Candidate is Lanfranco Coronation of the Virgin with St Augustine and St William. Different composition.",
+      "research_task": "PRADO_P001314_EXACT_PHOTO_RIGHTS",
+      "item_specific_instructions": "Find exact image of Prado's anonymous Saint Augustine, P001314. The old Lanfranco Coronation of Virgin candidate is a different painting.",
+      "source_image_download_approved": false,
+      "editorial_selection_unchanged": true,
+      "publication_rights_approved": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+      "disposition": "UNRESOLVED_IDENTITY_HOLD",
+      "canonical_institution": "Kunsthistorisches Museum Wien",
+      "institutional_object_id": "GG 517",
+      "source_evidence_url": "https://www.khm.at/en/artworks/interior-of-the-jesuit-church-in-antwerp-794",
+      "why_current_source_is_unacceptable": "Museum confirms Rubens's Miracles of St Ignatius, but proposed 'Detail - Glory of St Ignatius' is explicitly a detail/crop. Cannot certify original full-composition reproduction.",
+      "research_task": "KHM_GG517_FULL_COMPOSITION_REPRODUCTION",
+      "item_specific_instructions": "Identify a full-work source reproduction of Rubens Miracles of Saint Ignatius, KHM GG517, not a detail/crop labelled Glory of Ignatius.",
+      "source_image_download_approved": false,
+      "editorial_selection_unchanged": true,
+      "publication_rights_approved": false
+    },
+    {
+      "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+      "disposition": "UNRESOLVED_IDENTITY_HOLD",
+      "canonical_institution": "",
+      "institutional_object_id": "",
+      "source_evidence_url": "",
+      "why_current_source_is_unacceptable": "Van Dyck Christ between two criminals could be related to the Lance Thrust, but title alone cannot resolve the exact painting and variant.",
+      "research_task": "EXACT_VAN_DYCK_LANCE_THRUST_WORK_ID",
+      "item_specific_instructions": "Resolve Lance Thrust vs alternate Crucifixion between criminals painting; verify inventory, original work and source photo.",
+      "source_image_download_approved": false,
+      "editorial_selection_unchanged": true,
+      "publication_rights_approved": false
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+      "disposition": "OBJECT_MISMATCH_QUARANTINE",
+      "canonical_institution": "Italian national cultural heritage catalogue",
+      "institutional_object_id": "0500220372A-12 versus station VIII",
+      "source_evidence_url": "https://catalogo.cultura.gov.it/detail/HistoricOrArtisticProperty/0500220372A-12",
+      "why_current_source_is_unacceptable": "The proposed file is VIA_CRUCIS_VIII (women of Jerusalem), not XII (Christ raised and dead on cross). Do not attach even as a provisional XII artwork.",
+      "research_task": "SAN_POLO_STATION_XII_EXACT_REPRODUCTION",
+      "item_specific_instructions": "Locate image explicitly labelled San Polo Via Crucis XII, state inventory 0500220372A-12; never use station VIII Women's Jerusalem picture.",
+      "source_image_download_approved": false,
+      "editorial_selection_unchanged": true,
+      "publication_rights_approved": false
+    },
+    {
+      "artwork_id": "ART-uido-eni-usannah-and-the-lders",
+      "disposition": "INSTITUTIONAL_REUSE_RESTRICTED",
+      "canonical_institution": "National Gallery, London",
+      "institutional_object_id": "NG196",
+      "source_evidence_url": "https://www.nationalgallery.org.uk/paintings/guido-reni-susannah-and-the-elders",
+      "why_current_source_is_unacceptable": "Identity of NG196 is established but National Gallery published images are CC BY-NC-ND 4.0; cannot authorize unrestricted or commercial app photo reuse. Needs separate licensed/open replacement.",
+      "research_task": "FIND_INDEPENDENTLY_LICENSED_SOURCE_OR_PERMISSION",
+      "item_specific_instructions": "NG196 is identified. National Gallery images are CC BY-NC-ND 4.0; do not use without appropriate licence for intended app distribution or substitute an unrelated version.",
+      "source_image_download_approved": false,
+      "editorial_selection_unchanged": true,
+      "publication_rights_approved": false
+    }
+  ]
+}
