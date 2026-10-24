@@ -1,3 +1,4 @@
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 const load=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
@@ -7,7 +8,8 @@ const p26=load("data/geography/research/sacred-places-p26-authority-evidence.v1.
 const geo=load("data/geography/seed-registry.v1.json");
 const sources=load("data/shrines/source-registry.v1.json");
 assert.equal(p27.status,"DISCOVERY_ONLY_NOT_RELEASE");
-assert.deepEqual([geo.places.length,sources.sources.length],[387,685]);
+assert.deepEqual([geo.places.length,sources.sources.length],[LIVE.places,LIVE.sources]);
+assert.deepEqual([p27.baseline.places,p27.baseline.typed_sources],[387,685]);
 const prior=new Map([...p25.all_151_priority_source_screen,...p26.remaining_131_source_screen].filter(x=>x.source_excerpt).map(x=>[x.candidate_id,x]));
 assert.equal(p27.candidates.length,22);
 assert.equal(new Set(p27.candidates.map(x=>x.candidate_id)).size,22);

@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 387,
+    "places": 397,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 128,
+    "places_without_direct_claim": 138,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -32,7 +32,9 @@
       "place:AE:st-joseph-cathedral-abu-dhabi",
       "place:AG:holy-family-cathedral-st-johns",
       "place:AR:basilica-nuestra-senora-itati",
+      "place:AR:santuario-san-cayetano-liniers",
       "place:AS:holy-family-cathedral-tafuna",
+      "place:AT:basilika-mariatrost-graz",
       "place:BB:st-patrick-catholic-cathedral-bridgetown",
       "place:BD:holy-rosary-cathedral-chattogram",
       "place:BE:basiliek-onze-lieve-vrouw-scherpenheuvel",
@@ -40,15 +42,20 @@
       "place:BJ:immaculate-conception-basilica-ouidah",
       "place:BM:st-theresa-cathedral-hamilton",
       "place:CD:notre-dame-du-congo-cathedral-kinshasa",
+      "place:CH:santuario-madonna-del-sasso-orselina",
       "place:CK:st-joseph-cathedral-avarua",
+      "place:CL:templo-votivo-maipu-basilica",
+      "place:CM:basilique-marie-reine-des-apotres-mvolye",
       "place:CM:notre-dame-des-victoires-cathedral-yaounde",
       "place:CW:queen-holy-rosary-cathedral-willemstad",
       "place:DE:benediktinerabtei-maria-laach",
       "place:DE:kevelaer-kerzenkapelle",
+      "place:DE:marienbasilika-kevelaer",
       "place:DK:st-ansgar-cathedral-copenhagen",
       "place:EC:basilica-voto-nacional-quito",
       "place:EE:saints-peter-paul-cathedral-tallinn",
       "place:ES:basilica-nuestra-senora-atocha-madrid",
+      "place:ES:capella-santa-cova-montserrat",
       "place:ES:covadonga-basilica",
       "place:ES:covadonga-santa-cueva",
       "place:ES:ermita-virgen-rocio-almonte",
@@ -61,6 +68,7 @@
       "place:GB:holywell-st-winefride-church",
       "place:GD:immaculate-conception-cathedral-st-georges",
       "place:GE:assumption-catholic-cathedral-tbilisi",
+      "place:GH:saint-joseph-minor-basilica-elmina",
       "place:GL:christ-the-king-catholic-church-nuuk",
       "place:GP:cathedrale-notre-dame-de-guadeloupe-basse-terre",
       "place:GU:dulce-nombre-maria-cathedral-basilica-hagatna",
@@ -97,6 +105,7 @@
       "place:LC:immaculate-conception-cathedral-basilica-castries",
       "place:LK:st-lucia-cathedral-colombo",
       "place:LS:our-lady-victories-cathedral-maseru",
+      "place:LT:zemaiciu-kalvarija-visitation-basilica",
       "place:MG:ilot-de-la-vierge-ampefy",
       "place:MG:immaculate-conception-cathedral-andohalo",
       "place:MH:cathedral-assumption-majuro",
@@ -122,6 +131,7 @@
       "place:PE:santuario-san-martin-de-porres-jicamarca",
       "place:PF:notre-dame-cathedral-papeete",
       "place:PG:holy-cross-procathedral-vanimo",
+      "place:PH:baclaran-national-shrine-perpetual-help",
       "place:PH:basilica-our-lady-penafrancia-naga",
       "place:PH:manila-cathedral-intramuros",
       "place:PH:monasterio-de-tarlac-risen-christ-chapel",
@@ -327,8 +337,20 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:AR:santuario-san-cayetano-liniers",
+      "display_name": "Santuario San Cayetano, Liniers",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:AS:holy-family-cathedral-tafuna",
       "display_name": "Holy Family Cathedral, Tafuna",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:AT:basilika-mariatrost-graz",
+      "display_name": "Basilika Mariatrost, Graz",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -718,6 +740,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:CH:santuario-madonna-del-sasso-orselina",
+      "display_name": "Santuario della Madonna del Sasso, Orselina",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:CI:basilica-of-our-lady-of-peace-yamoussoukro",
       "display_name": "Basilica of Our Lady of Peace, Yamoussoukro",
       "record_ids": {
@@ -741,6 +769,18 @@
           "shrine:CL:sanctuary-of-our-lady-of-la-tirana-chile"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CL:templo-votivo-maipu-basilica",
+      "display_name": "Templo Votivo de Maipú — Basílica de Nuestra Señora del Carmen",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CM:basilique-marie-reine-des-apotres-mvolye",
+      "display_name": "Basilique Marie-Reine-des-Apôtres de Mvolyé",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -1001,6 +1041,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:DE:marienbasilika-kevelaer",
+      "display_name": "Marienbasilika Kevelaer",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:DE:st-apollinaris-frielingsdorf",
       "display_name": "St. Apollinaris Frielingsdorf",
       "record_ids": {
@@ -1161,6 +1207,12 @@
     {
       "place_id": "place:ES:basilica-nuestra-senora-atocha-madrid",
       "display_name": "Basílica-Parroquia Nuestra Señora de Atocha",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:capella-santa-cova-montserrat",
+      "display_name": "Capella de la Santa Cova de Montserrat",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -2209,6 +2261,12 @@
           "shrine:GH:kumasi-st-peter-cathedral-basilica"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GH:saint-joseph-minor-basilica-elmina",
+      "display_name": "Saint Joseph’s Minor Basilica, Elmina",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3476,6 +3534,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:LT:zemaiciu-kalvarija-visitation-basilica",
+      "display_name": "Žemaičių Kalvarijos Švč. Mergelės Marijos Apsilankymo bazilika",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:LU:basilica-st-willibrord-echternach",
       "display_name": "Basilica of Saint Willibrord, Echternach",
       "record_ids": {
@@ -3910,6 +3974,12 @@
     {
       "place_id": "place:PG:holy-cross-procathedral-vanimo",
       "display_name": "Holy Cross Pro-Cathedral, Vanimo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PH:baclaran-national-shrine-perpetual-help",
+      "display_name": "National Shrine of Our Mother of Perpetual Help — Baclaran",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },

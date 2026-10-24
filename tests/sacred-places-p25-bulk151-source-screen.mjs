@@ -13,7 +13,7 @@ const sources=load("data/shrines/source-registry.v1.json");
 assert.equal(p25.schema,"AO_SACRED_PLACES_P25_151_REMAINING_SOURCE_SCREEN_V1");
 assert.equal(p25.status,"RESEARCH_ONLY_NO_CANONICAL_RELEASE");
 assert.deepEqual([geo.places.length,sources.sources.length],[LIVE.places,LIVE.sources]);
-assert.deepEqual([p25.baseline.places,p25.baseline.sources],[LIVE.places,LIVE.sources]);
+assert.deepEqual([p25.baseline.places,p25.baseline.sources],[387,685],"P25 research baseline frozen, not equal to future LIVE");
 assert.equal(p25.all_151_priority_source_screen.length,151);
 const priorUnreviewed=p21.reviewed_200.filter(x=>x.source_status==="NO_NEW_INDEPENDENT_SOURCE_REVIEW");
 assert.deepEqual(p25.all_151_priority_source_screen.map(x=>x.candidate_id),priorUnreviewed.map(x=>x.candidate_id),"Remaining P21 priority order must be identical");

@@ -10,6 +10,7 @@ const cross=load("data/explore/heritage-place-reconciliation.review.v1.json");
 const r92=load("data/geography/research/sacred-geography-r92-verified-site-cohort.v1.json");
 const r93=load("data/geography/research/sacred-geography-r93-first-presence-release.v1.json");
 const p17=load("data/geography/research/sacred-places-p17-separated-bergamo-asuncion.v1.json");
+const laterP28=load("data/geography/research/sacred-places-p28-world-11-exact-map.v1.json");
 const shrines=load("data/shrines/shrines-pilgrimages-seed.v1.json");
 assert.equal(r93.schema,"AO_SACRED_GEOGRAPHY_R93_FIRST_PRESENCE_CATHOLIC_PLACES_V1");
 assert.equal(r92.result.places,336,"Previous production release is frozen");
@@ -30,7 +31,9 @@ assert.equal(assertShrinesPilgrimagesRegistry({...shrines,sources:src.sources,pl
 const byPlace=new Map(geo.places.map(x=>[x.place_id,x]));
 const bySource=new Map(src.sources.map(x=>[x.id,x]));
 const releaseIds=new Set(r93.published_new.map(x=>x.place_id));
-const earlier=geo.places.filter(x=>!releaseIds.has(x.place_id));
+const laterPlaceIds=new Set(laterP28.published_new.map(x=>x.place_id));
+const earlier=geo.places.filter(x=>!releaseIds.has(x.place_id)&&!laterPlaceIds.has(x.place_id));
+// R93 first-presence means empty before R93, not empty after subsequent P28 publication.
 const usedCountries=new Set(earlier.map(x=>x.address.country_code));
 const usedGeos=new Set(earlier.map(x=>x.geo?.source_ref));
 const alpha="23456789CFGHJMPQRVWX",resolution=[20,1,.05,.0025,.000125];
