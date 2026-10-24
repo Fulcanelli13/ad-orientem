@@ -11,6 +11,10 @@ on:
     paths:
       - 'previews/pius-x-study/**'
       - 'tools/build-pius-x-p26-offline-replay.mjs'
+      - 'tools/pius-x-p31-cross-source-reconciliation.mjs'
+      - 'tests/pius-x-p31-cross-source-reconciliation.mjs'
+      - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
+      - 'data/learn/ltfaith-pius-x-it-witness-index.v1.json'
       - 'previews/pius-x-study/spx-p26-offline-replay-client.js'
       - 'previews/pius-x-study/spx-p26-offline-replay-style.css'
       - 'previews/pius-x-study/spx-p29-source-dossier-client.js'
@@ -63,6 +67,10 @@ on:
     paths:
       - 'previews/pius-x-study/**'
       - 'tools/build-pius-x-p26-offline-replay.mjs'
+      - 'tools/pius-x-p31-cross-source-reconciliation.mjs'
+      - 'tests/pius-x-p31-cross-source-reconciliation.mjs'
+      - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
+      - 'data/learn/ltfaith-pius-x-it-witness-index.v1.json'
       - 'previews/pius-x-study/spx-p26-offline-replay-client.js'
       - 'previews/pius-x-study/spx-p26-offline-replay-style.css'
       - 'previews/pius-x-study/spx-p29-source-dossier-client.js'
@@ -130,6 +138,10 @@ jobs:
         run: node tests/pius-x-study-next12-pastoral-e2e.mjs
       - name: Build separate P6 voice-review artifact for twelve earlier subjects
         run: node tools/build-pius-x-earlier-94-p6.mjs
+      - name: Reconcile 423 source-owned avatar turns with both 433-question catechism indexes without source promotion
+        run: node tools/pius-x-p31-cross-source-reconciliation.mjs
+      - name: Validate read-only cross-source candidates, editorial-number caveats and zero semantic merges
+        run: node tests/pius-x-p31-cross-source-reconciliation.mjs
       - name: Build free one-file offline Pius X source-dialogue trial with preserved sprites
         run: node tools/build-pius-x-p26-offline-replay.mjs
       - name: Browser-test offline source dialogue, French/English and original Vatican witnesses
