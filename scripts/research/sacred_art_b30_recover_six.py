@@ -10,6 +10,7 @@ import hashlib
 import json
 from pathlib import Path
 from datetime import datetime, timezone
+from urllib.parse import urlsplit
 import time
 from PIL import Image
 
@@ -65,9 +66,13 @@ def main():
   assert variants, "Selection digest lost from original photo-key ledger: "+id
   # Multiple gallery placements can point to the SAME original. Require exact
   # source file and dimensions to agree before one physical acquisition.
-  identity={(p["source_page"],p["original_url"],p["width"],p["height"],p["license_claim"]) for p in variants}
-  assert len(identity)==1, "Distinct selected source variants require human adjudication: "+id
-  candidate=variants[0]
+  identity={(p["source_page"],urlsplit(p["original_url"]).scheme,urlsplit(p["original_url"]).netloc,
+             urlsplit(p["original_url"]).path,p["width"],p["height"],p["license_claim"])
+            for p in variants}
+  assert len(identity)==1, "Different underlying selected source files require human adjudication: "+id
+  # Gallery stores original vs thumbnail_unscaled tracking labels; these are query-only,
+  # and the verified *byte SHA* and exact underlying CDN path are identical.
+  candidate=next((p for p in variants if "utm_content=original" in p["original_url"]),variants[0])
   row={key:"" for key in FIELDNAMES}
   row.update(artwork_id=id,title=art["title"],frozen_decision=art["frozen_decision"],
      source_identity_hold=art["legacy_identity_hold"],selected_original_sha256=sha,
