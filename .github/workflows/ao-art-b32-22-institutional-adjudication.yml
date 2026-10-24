@@ -1,0 +1,39 @@
+name: B32 bulk adjudicate all 22 P0 sacred-art identity and rights holds
+on:
+  push:
+    branches: [research/sacred-art-b32-p0-22-identity-rights-20261024]
+    paths: [.github/workflows/ao-art-b32-22-institutional-adjudication.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  evidence-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b32-p0-22-identity-rights-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify 22 identity and rights cases against frozen P0 registers
+        run: |
+          python -m py_compile scripts/research/sacred_art_b32_review22.py
+          python scripts/research/sacred_art_b32_review22.py
+      - name: Preserve item-specific identity dispositions without changing artwork approvals
+        run: |
+          set -euo pipefail
+          cp artifacts/sacred-art-b32-22-evidence/sacred-art-b32-*.csv data/research/
+          cp artifacts/sacred-art-b32-22-evidence/sacred-art-b32-22-evidence-summary.json data/research/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b32-*.csv data/research/sacred-art-b32-22-evidence-summary.json
+          git commit -m 'research: B32 corroborate 22 P0 candidates against institutions, quarantine image mismatches'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b32-p0-22-identity-rights-20261024
+            git rebase origin/research/sacred-art-b32-p0-22-identity-rights-20261024
+            git push origin HEAD:research/sacred-art-b32-p0-22-identity-rights-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
