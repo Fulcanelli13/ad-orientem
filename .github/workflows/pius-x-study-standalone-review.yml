@@ -12,6 +12,8 @@ on:
       - 'previews/pius-x-study/**'
       - 'tools/build-pius-x-p26-offline-replay.mjs'
       - 'tools/pius-x-p31-cross-source-reconciliation.mjs'
+      - 'tools/pius-x-p32-bulk-200-source-crosswalk.mjs'
+      - 'tests/pius-x-p32-bulk-200-source-crosswalk.mjs'
       - 'tests/pius-x-p31-cross-source-reconciliation.mjs'
       - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
       - 'data/learn/ltfaith-pius-x-it-witness-index.v1.json'
@@ -68,6 +70,8 @@ on:
       - 'previews/pius-x-study/**'
       - 'tools/build-pius-x-p26-offline-replay.mjs'
       - 'tools/pius-x-p31-cross-source-reconciliation.mjs'
+      - 'tools/pius-x-p32-bulk-200-source-crosswalk.mjs'
+      - 'tests/pius-x-p32-bulk-200-source-crosswalk.mjs'
       - 'tests/pius-x-p31-cross-source-reconciliation.mjs'
       - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
       - 'data/learn/ltfaith-pius-x-it-witness-index.v1.json'
@@ -142,6 +146,10 @@ jobs:
         run: node tools/pius-x-p31-cross-source-reconciliation.mjs
       - name: Validate read-only cross-source candidates, editorial-number caveats and zero semantic merges
         run: node tests/pius-x-p31-cross-source-reconciliation.mjs
+      - name: Cross-reference 200 existing 1905 source-owner turns against P6 and the 339-question upstream registry
+        run: node tools/pius-x-p32-bulk-200-source-crosswalk.mjs
+      - name: Test P1 200-turn source identity, research holds and zero artificial semantic merges
+        run: node tests/pius-x-p32-bulk-200-source-crosswalk.mjs
       - name: Build free one-file offline Pius X source-dialogue trial with preserved sprites
         run: node tools/build-pius-x-p26-offline-replay.mjs
       - name: Browser-test offline source dialogue, French/English and original Vatican witnesses
