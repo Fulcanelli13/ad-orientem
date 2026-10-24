@@ -1,0 +1,39 @@
+name: B37 investigate 30 exact institutional artwork and source metadata records
+on:
+  push:
+    branches: [research/sacred-art-b37-30-institutional-exceptions-20261024]
+    paths: [.github/workflows/ao-art-b37-audit30-institutions.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  source-object-evidence-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b37-30-institutional-exceptions-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check all 30 exact institution URL metadata records; do not fetch image files
+        run: |
+          python -m py_compile scripts/research/sacred_art_b37_institution30_site_audit.py
+          python scripts/research/sacred_art_b37_institution30_site_audit.py
+      - name: Preserve bounded metadata audit only, never treat OG image as verified rights
+        run: |
+          set -euo pipefail
+          cp artifacts/b37-institutional30-site-audit/source-audit.csv data/research/sacred-art-b37-30-institutional-metadata.csv
+          cp artifacts/b37-institutional30-site-audit/source-summary.json data/research/sacred-art-b37-30-institutional-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b37-30-institutional-*
+          git commit -m 'research: B37 complete all 30 institutional source page and rights-hold audit'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b37-30-institutional-exceptions-20261024
+            git rebase origin/research/sacred-art-b37-30-institutional-exceptions-20261024
+            git push origin HEAD:research/sacred-art-b37-30-institutional-exceptions-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
