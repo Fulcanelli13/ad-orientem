@@ -63,3 +63,7 @@ jobs:
         run: |
           node --check tests/customs-pitre-1900-final-422-original-page-evidence-complete.mjs
           node tests/customs-pitre-1900-final-422-original-page-evidence-complete.mjs
+      - name: Verify 105 newly mined Pitrè original chapter observations and 105 image holds
+        run: |
+          node --check tests/customs-pitre-1900-wave04-unmined-105-integrity.mjs
+          node tests/customs-pitre-1900-wave04-unmined-105-integrity.mjs
