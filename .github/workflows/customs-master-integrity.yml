@@ -84,3 +84,7 @@ jobs:
         run: |
           node --check tests/customs-pitre-1900-wave08-63-holds-and-560-page-census.mjs
           node tests/customs-pitre-1900-wave08-63-holds-and-560-page-census.mjs
+      - name: Verify Pitrè Wave09 200-page original scan coverage, 51 evidence records and 12 absent folios
+        run: |
+          node --check tests/customs-pitre-1900-wave09-200-page-source-integrity.mjs
+          node tests/customs-pitre-1900-wave09-200-page-source-integrity.mjs
