@@ -128,6 +128,26 @@ for(const c of specimens.cases){
   editorialStatus:'PRIVATE_UNAPPROVED_HISTORICAL_SOURCE_PARAPHRASE',
   bilingualTranslationsCertified:false,fullClaimReviewCertified:false,publishingApproved:false});
 }
+// P2.59: source-owned topic navigation for the EXISTING offline visual novel.
+// Names, dates and document links come from the exact four Vatican witness
+// annexes, not editorial new subjects or invented papal dialogue.
+const sourceDocumentNavigation=sources.map(annex=>{
+ const original=cases.filter(c=>c.chapterId===annex.chapterId);
+ assert(original.length>=2&&original.length<=3);
+ assert(annex.document.title.length>4);
+ assert(/^19\d{2}-\d{2}-\d{2}$/.test(annex.document.date));
+ const url=annex.document.sites.original||
+  annex.document.sites.la||
+  annex.document.sites.vaticanLatinVersion;
+ assert(url?.startsWith('https://www.vatican.va/'));
+ return {chapterId:annex.chapterId,title:annex.document.title,
+  date:annex.document.date,documentUrl:url,
+  exactOriginalNodeIDs:original.map(c=>c.nodeId),
+  questionCount:original.length,approvedForPublication:false,
+  sourceStatus:'PRIMARY_WITNESS_NAVIGATION_ONLY'};
+});
+assert.equal(sourceDocumentNavigation.length,4);
+assert.equal(new Set(sourceDocumentNavigation.map(c=>c.chapterId)).size,4);
 assert.equal(cases.length,11);
 assert.equal(distinctWitnesses.size,18);
 assert.equal(cases.reduce((n,c)=>n+c.claimTrace.length,0),23);
@@ -329,6 +349,7 @@ const offline={
  schema:'AO_SPX_P26_OFFLINE_REVIEW_CASES_V1',status:'PRIVATE_STATIC_NO_MODEL_INFERENCE',
  modelProviderEnabled:false,publishingApproved:false,sourceOnlyGateAdmissions:0,
  canonicalChapters:4,canonicalNodes:11,bilingualEditorialPairs:22,
+ documentNavigationCount:4,sourceDocumentNavigation,
  originalWitnessFragments:distinctWitnesses.size,originalCorpusNodes:423,
  claimTraceUnits:23,humanClaimCertifications:0,
  navigationAliasCount:32,navigationAliases,cases,
@@ -363,6 +384,7 @@ console.log('PASS SPX_P26_OFFLINE_BUILD '+JSON.stringify({
  path:dest,bytes:Buffer.byteLength(final),chapterCount:4,sourceOwnedQuestions:11,
  bilingualEditorialDrafts:22,originalFragments:18,claimTraceUnits:23,
  navigationAliases:32,voicePreviewCases:3,voicePreviewLanguages:2,
+ sourceDocumentNavigation:4,offlineCrossDocumentRoutes:4,
  real7bComparisons:4,real7bApproved:false,
  sourceDossierCount:sourceDossiers.length,
  sourceDossierChapterCount:sourceDossierChapterIds.size,
