@@ -48,7 +48,8 @@
     "PITRE_1900_COMPLETE_ORIGINAL_129_PAGE_VERIFICATION_20261024": "All 129 original 1900 Pitrè observations now have individual original-print folio and PDF page with source-matched Italian anchor: 25 prior P0, 17 prior P1, 87 newly completed P2. This is verification of Pitrè's printed edition, NOT of independent correspondents, supernatural stories, rite approvals, present practices or unique customs. 16 of the 293 later-extracted observations also had prior facsimile checks; remaining 277 new observations still need image checks.",
     "PITRE_NEW_STAGE01_STAGE02_20261024_FACSIMILE": "The first 121 PIT1900-NEW IDs from the seven stage01/02 sections have each been located in the original 1900 scan with an Italian normalized text anchor and original printed page; the uploaded scan's 48 relevant PDF images were contact-sheet reviewed. Together with 129/129 older observations and 16 Wave03 high-risk checks, 266/422 Pitrè originals are page-checked, 156 newer Wave03 remain. Same-author, historical-accuracy, ritual authorization, identity and publication gates still closed.",
     "PITRE_1900_ALL_SOURCE_PAGE_GATES_CLOSED_20261024": "All 422/422 Pitrè 1900 source-detail observations are now mapped to individual printed folios in the supplied original edition, with PDF page, source-matched normalized Italian phrase and visually reviewed scanned page. Original 129: 25 P0 + 17 P1 + 87 P2. Newer 293: stage01/02 121 + Wave03 highrisk16 + Wave03 final156. Pitrè 1881 is same author, not independent; all pre-1900 authority references, ritual approval, historic veracity, contemporary recurrence, new unique custom identity and app publication remain closed.",
-    "PITRE_WAVE04_NEW_CHAPTER_INTAKE_20261024": "105 source text anchors from 11 previously unrepresented book chapters were acquired against uploaded 1900 Pitrè PDF; 422 earlier indexed 1900 records remain individually facsimile verified, while Wave04 new 105 have original printed/PDF page and matching embedded Italian OCR text; comprehensive individual image verification and independent source/rite/identity reviews remain open. A chapter with some observations is NOT fully mined."
+    "PITRE_WAVE04_NEW_CHAPTER_INTAKE_20261024": "105 source text anchors from 11 previously unrepresented book chapters were acquired against uploaded 1900 Pitrè PDF; 422 earlier indexed 1900 records remain individually facsimile verified, while Wave04 new 105 have original printed/PDF page and matching embedded Italian OCR text; comprehensive individual image verification and independent source/rite/identity reviews remain open. A chapter with some observations is NOT fully mined.",
+    "PITRE_IMAGE_REVIEW_SCOPE_20261024": "The previous original 422/422 individual image verification was complete for the then-indexed source rows; after Wave04 105 new author-source text-anchored details, 422/527 are image-certified and 105/527 are pending individual visual review. 105 Italian textual anchors match primary PDF pages but image spotchecks by chapter are not equivalent to 105 individual image audits."
   },
   "summary": {
     "source_observations": {
@@ -259,8 +260,8 @@
       "pitre_1900_original_p1_date_region_verified": 17,
       "pitre_1900_all_original_folio_record_checks": 422,
       "pitre_1900_original_remaining_p2_page_checks": 0,
-      "pitre_1900_new_remaining_page_checks": 0,
-      "pitre_1900_unchecked_record_pages_remaining": 0,
+      "pitre_1900_new_remaining_page_checks": 105,
+      "pitre_1900_unchecked_record_pages_remaining": 105,
       "pitre_1900_current_calendar_dates_promoted": 0,
       "pitre_1900_original_p2_verified": 87,
       "pitre_1900_original_129_verified": 129,
@@ -277,7 +278,9 @@
       "pitre_1900_1900_chapter_groups_with_some_indexed_evidence": 31,
       "pitre_1900_1900_chapter_groups_unrepresented_in_this_register": 29,
       "pitre_1900_1900_total_indexed_source_details": 527,
-      "pitre_1900_wave04_individual_folio_image_verification_pending": 105
+      "pitre_1900_wave04_individual_folio_image_verification_pending": 105,
+      "pitre_1900_prior_422_edition_image_checks_complete": true,
+      "pitre_1900_full_527_original_image_checks_complete": false
     },
     "no_new_app_publications": true,
     "source_discovery_leads": {
