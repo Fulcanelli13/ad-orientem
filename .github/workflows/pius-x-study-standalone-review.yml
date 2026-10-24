@@ -57,6 +57,8 @@ on:
       - 'previews/pius-x-study/spx-p29-source-dossier-style.css'
       - 'tests/pius-x-p26-offline-replay-e2e.mjs'
       - 'tests/pius-x-p46-guided-source-conversation-e2e.mjs'
+      - 'tests/pius-x-p47-historical-voice-comparison-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-e-supremi-gpt6-inchat-bilingual-dialogue-20261023.v1.json'
       - 'tests/pius-x-study-standalone-e2e.mjs'
       - 'tests/pius-x-study-expanded-82-e2e.mjs'
       - 'tests/pius-x-study-next12-dialogues-e2e.mjs'
@@ -150,6 +152,8 @@ on:
       - 'previews/pius-x-study/spx-p29-source-dossier-style.css'
       - 'tests/pius-x-p26-offline-replay-e2e.mjs'
       - 'tests/pius-x-p46-guided-source-conversation-e2e.mjs'
+      - 'tests/pius-x-p47-historical-voice-comparison-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-e-supremi-gpt6-inchat-bilingual-dialogue-20261023.v1.json'
       - 'tests/pius-x-study-standalone-e2e.mjs'
       - 'tests/pius-x-study-expanded-82-e2e.mjs'
       - 'tests/pius-x-study-next12-dialogues-e2e.mjs'
@@ -274,6 +278,8 @@ jobs:
         run: node tests/pius-x-p26-offline-replay-e2e.mjs
       - name: Browser-test staged P2.46 three-turn EN/FR documented dialogue, refusals, reset and two-turn alternate
         run: node tests/pius-x-p46-guided-source-conversation-e2e.mjs
+      - name: Browser-test six P2.47 first-person editorial style specimens against source witnesses and original replies
+        run: node tests/pius-x-p47-historical-voice-comparison-e2e.mjs
       - name: Validate P6 preserved sources and bilingual offline interaction
         run: node tests/pius-x-study-earlier-94-p6-e2e.mjs
       - name: Test typed questions, conservative source navigation and short-form follow-ups
