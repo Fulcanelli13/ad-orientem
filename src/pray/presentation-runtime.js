@@ -658,10 +658,9 @@ function renderPrayHome(){
  ].join('');
  const group=(en,fr,body)=>'<section class="aoP435930RootGroup"><h3>'+esc(L(en,fr))+'</h3><div class="aoP435930RootGroupDoors aoP435930ModuleGrid">'+body+'</div></section>';
  const extraGroups=[
-  group('Daily prayer','Prière quotidienne',door('daily')),
   group('Before the Blessed Sacrament','Devant le Saint-Sacrement',door('eucharistic')),
   group('Penance and the Passion','Pénitence et Passion',door('penance')+door('passion')),
-  group('Devotions and prayers','Dévotions et prières',door('devotions')+door('library')+myCustomsDoor()),
+  group('Devotions and prayers','Dévotions et prières',door('devotions')),
   group('Rosary and chaplets','Rosaire et chapelets',door('chaplets')+prayFamilyItem(['own','pray.divine_mercy',L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Open the chaplet directly','Ouvrir directement le chapelet')]))
  ].join('');
  return head(L('Pray','Prier'))+'<main class="aoP435930Body aoP435930Home aoP435930RootOrganised aoP435930QuietHome">'
@@ -671,6 +670,7 @@ function renderPrayHome(){
   +door('library').replace('aoP435930FamilyDoor','aoP435930FamilyDoor aoP435930QuietLibraryRow')
   +prayFamilyItem(['external','pray.morning_evening',L('Morning & Evening Prayer','Prières du matin et du soir'),L('Daily prayers','Prières quotidiennes')]).replace('aoP435930ModuleCard','aoP435930ModuleCard aoP435930QuietLibraryRow')
   +prayFamilyItem(['external','pray.communion_treasury',L('Before & after Mass','Avant et après la Messe'),L('Traditional Communion prayers','Prières traditionnelles de Communion')]).replace('aoP435930ModuleCard','aoP435930ModuleCard aoP435930QuietLibraryRow')
+  +myCustomsDoor().replace('aoP435930ModuleCard','aoP435930ModuleCard aoP435930QuietLibraryRow')
   +'</section>'
   +'<details class="aoP435930QuietMore"><summary>'+esc(L('All devotions and prayer categories','Toutes les dévotions et catégories'))+'</summary><div class="aoP435930QuietMoreContent">'+extraGroups+'</div></details>'
   +'</main>';
