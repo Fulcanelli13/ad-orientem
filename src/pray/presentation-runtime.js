@@ -640,17 +640,40 @@ function myCustomsDoor(){
 function renderPrayHome(){
  const families=prayFamilies();
  const door=id=>prayFamilyDoor(id,families[id]);
- const intro=L('Choose the prayer suited to the moment, or open the full Prayer Library.','Choisissez la prière qui convient au moment, ou ouvrez le Livre de prières.');
- const group=(en,fr,body)=>`<section class="aoP435930RootGroup"><h3>${esc(L(en,fr))}</h3><div class="aoP435930RootGroupDoors aoP435930ModuleGrid">${body}</div></section>`;
- return `${head(L('Pray','Prier'),L('A place for daily prayer and devotion','Un lieu de prière et de dévotion'))}<main class="aoP435930Body aoP435930Home aoP435930RootOrganised">
-  <section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(L('Enter into prayer','Entrer en prière'))}</h2><p>${esc(intro)}</p></section>
-  <section class="aoP435930RootFeatured" aria-label="${esc(L('Begin with daily prayer','Commencer par la prière quotidienne'))}">${door('daily')}</section>
-  ${group('Before the Blessed Sacrament','Devant le Saint-Sacrement',door('eucharistic'))}
-  ${group('Penance and the Passion','Pénitence et Passion',door('penance')+door('passion'))}
-  ${group('Devotions and prayers','Dévotions et prières',door('devotions')+door('library')+myCustomsDoor())}
-  ${group('Rosary and chaplets','Rosaire et chapelets',
-    door('chaplets')+prayFamilyItem(['own','pray.divine_mercy',L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Open the chaplet directly','Ouvrir directement le chapelet')]))}
- </main>`;
+ // Six immediately usable entries retain the existing prayer route owners.
+ // The catalogue below preserves every original family and specialised route.
+ const tile=(en,fr,route,assetId,external=false)=>{
+  const target=external?'data-p435930-external="':'data-p435930-own="';
+  return '<button type="button" class="aoP435930ModuleCard aoP435930QuietTile" '+target+esc(route)+'">'
+   +assetIcon(assetId,'aoP435930ModuleAsset',{preferEmbedded:true})
+   +'<b>'+esc(L(en,fr))+'</b></button>';
+ };
+ const features=[
+  tile('Rosary','Rosaire','pray.rosary','ao-rich-rosary'),
+  door('daily').replace('aoP435930FamilyDoor','aoP435930FamilyDoor aoP435930QuietTile'),
+  tile('Confession','Confession','pray.confession','ao-rich-confession'),
+  tile('Adoration','Adoration','pray.adoration','ao-rich-adoration'),
+  tile('Stations','Chemin de Croix','pray.stations','ao-rich-stations'),
+  tile('Novenas','Neuvaines','pray.novenas','ao-rich-novenas',true),
+ ].join('');
+ const group=(en,fr,body)=>'<section class="aoP435930RootGroup"><h3>'+esc(L(en,fr))+'</h3><div class="aoP435930RootGroupDoors aoP435930ModuleGrid">'+body+'</div></section>';
+ const extraGroups=[
+  group('Daily prayer','Prière quotidienne',door('daily')),
+  group('Before the Blessed Sacrament','Devant le Saint-Sacrement',door('eucharistic')),
+  group('Penance and the Passion','Pénitence et Passion',door('penance')+door('passion')),
+  group('Devotions and prayers','Dévotions et prières',door('devotions')+door('library')+myCustomsDoor()),
+  group('Rosary and chaplets','Rosaire et chapelets',door('chaplets')+prayFamilyItem(['own','pray.divine_mercy',L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Open the chaplet directly','Ouvrir directement le chapelet')]))
+ ].join('');
+ return head(L('Pray','Prier'))+'<main class="aoP435930Body aoP435930Home aoP435930RootOrganised aoP435930QuietHome">'
+  +'<section class="aoP435930QuietTiles" aria-label="'+esc(L('Featured prayers','Prières essentielles'))+'">'+features+'</section>'
+  +'<section class="aoP435930QuietLibrary" aria-label="'+esc(L('Prayer library','Livre de prières'))+'">'
+  +'<h2>'+esc(L('Library','Bibliothèque'))+'</h2>'
+  +door('library').replace('aoP435930FamilyDoor','aoP435930FamilyDoor aoP435930QuietLibraryRow')
+  +prayFamilyItem(['external','pray.morning_evening',L('Morning & Evening Prayer','Prières du matin et du soir'),L('Daily prayers','Prières quotidiennes')]).replace('aoP435930ModuleCard','aoP435930ModuleCard aoP435930QuietLibraryRow')
+  +prayFamilyItem(['external','pray.communion_treasury',L('Before & after Mass','Avant et après la Messe'),L('Traditional Communion prayers','Prières traditionnelles de Communion')]).replace('aoP435930ModuleCard','aoP435930ModuleCard aoP435930QuietLibraryRow')
+  +'</section>'
+  +'<details class="aoP435930QuietMore"><summary>'+esc(L('All devotions and prayer categories','Toutes les dévotions et catégories'))+'</summary><div class="aoP435930QuietMoreContent">'+extraGroups+'</div></details>'
+  +'</main>';
 }
 function renderPrayFamily(){
  const family=prayFamilies()[familyId];
