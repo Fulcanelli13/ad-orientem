@@ -728,6 +728,7 @@ try{
           await page.waitForTimeout(300);
           touchTravel=await scroller.evaluate(el=>el.scrollTop);
           assert.ok(touchTravel>15,name+" Consecration cannot be finger-scrolled at 320px");
+          }
 
           const bottomEvidence=async()=>page.evaluate(()=>{
             const el=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
