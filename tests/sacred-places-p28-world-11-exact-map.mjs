@@ -18,11 +18,14 @@ assert.deepEqual([geo.places.length,ss.sources.length,cross.place_crosswalk.leng
 assert.equal(cross.counts.places,LIVE.places);assert.equal(cross.counts.places_without_direct_claim,LIVE.unlinked);
 assert.equal(p16.held_exceptions.length,16);
 assert.ok(RELEASES.some(x=>x.id==="P28"));
-assert.equal(m.published_new.length,11);assert.equal(m.reused_existing.length,2);
-assert.equal(new Set(m.published_new.map(x=>x.place_id)).size,11);
-assert.equal(new Set(m.published_new.map(x=>x.geo_source_ref)).size,11);
-assert.equal(new Set(m.published_new.map(x=>x.country)).size,11);
-assert.ok(geo.geoAreas.some(x=>x.geo_area_id==="geo:country:PA"&&x.codes.iso_alpha2==="PA"));
+assert.equal(m.published_new.length,10);assert.equal(m.reused_existing.length,2);
+assert.equal(new Set(m.published_new.map(x=>x.place_id)).size,10);
+assert.equal(new Set(m.published_new.map(x=>x.geo_source_ref)).size,10);
+assert.equal(new Set(m.published_new.map(x=>x.country)).size,10);
+assert.equal(m.held_geo_area_required.length,1);
+assert.equal(m.held_geo_area_required[0].candidate_id,"SG-INV-0460");
+assert.ok(!geo.geoAreas.some(x=>x.geo_area_id==="geo:country:PA"));
+assert.ok(!m.published_new.some(x=>x.candidate_id==="SG-INV-0460"));
 const byPlace=new Map(geo.places.map(x=>[x.place_id,x])),bySource=new Map(ss.sources.map(x=>[x.id,x]));
 assert.equal(byPlace.size,geo.places.length);assert.equal(bySource.size,ss.sources.length);
 const oldRefs=new Set(geo.places.filter(x=>!m.published_new.some(y=>y.place_id===x.place_id)).map(x=>x.geo?.source_ref).filter(Boolean));
@@ -52,4 +55,4 @@ assert.equal(byPlace.get("place:DE:kevelaer-kerzenkapelle").geo.source_ref,"osm:
 assert.equal(byPlace.get("place:ES:santa-maria-de-montserrat-abbey").geo.precision,"complex_anchor");
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...shrine,sources:ss.sources,places:geo.places}).pass,true);
-console.log("PASS P28: eleven new exact Catholic sites in eleven countries; two existing IDs reused; immutable heritage holds");
+console.log("PASS P28: ten exact Catholic sites in ten countries, two frozen ID reuses, one Panama area hold");
