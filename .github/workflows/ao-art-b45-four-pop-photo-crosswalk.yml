@@ -1,0 +1,66 @@
+name: B45 exact French Palissy/Memoire official open-data photo crosswalk
+on:
+  push:
+    branches: [research/sacred-art-b45-french-palissy-media-and-prado-reverse-20261024]
+    paths: [.github/workflows/ao-art-b45-four-pop-photo-crosswalk.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b45-french-four-palissy-photo-crosswalk
+  cancel-in-progress: false
+jobs:
+  b45-exact-photo-crosswalk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 23
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b45-french-palissy-media-and-prado-reverse-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prove B44 frozen 383 coverage and four exact French accessions
+        run: |
+          node tests/sacred-art-b44-met-cc0-source-audit.mjs
+          python -m py_compile scripts/research/sacred_art_b45_four_french_pop_media.py
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          j=json.loads(Path("data/research/sacred-art-b45-four-palissy-prado-lenzi-worklist.json").read_text())
+          assert len(j["scope"])==4
+          assert len({x["palissy"] for x in j["scope"]})==4
+          assert j["strict_zero_euro"] is True
+          assert len(j["special_cases"])==2
+          assert j["special_cases"][0]["subject_of_missing_reverse"]=="San Hilario Abad (Saint Hilary the Abbot)"
+          PY
+      - name: Official French OpenData dataset discovery and accession-specific photo record crosswalk
+        run: python scripts/research/sacred_art_b45_four_french_pop_media.py
+      - name: Fail on accidental photo/app publication or missing result coverage
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          d=json.loads(Path("data/research/sacred-art-b45-four-pop-memoire-official-api-results.json").read_text())
+          assert d["scope_cases"]==len(d["target_cases"])==4
+          assert {x["record_id"] for x in d["target_cases"]}=={"PM67000164","PM75000591","PM01002382","IM33002267"}
+          assert d["source_photo_files_downloaded"]==d["source_photo_original_bytes"]==0
+          assert d["frozen_artworks_newly_completed"]==d["app_photo_reuse_approvals"]==d["editorial_photo_selections"]==0
+          assert d["strictly_zero_euro"] is True
+          assert d["no_photo_exists_inference_allowed"] is False
+          print("B45_POP_QUERY_GATE_PASS",d["datasets_examined"],d["dataset_exact_reference_case_hits"],d["official_metadata_requests_blocked"])
+          PY
+      - name: Commit evidence only and no original images, freeze all publication gates
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b45-four-pop-memoire-official-api-results.json
+          git commit -m 'research: B45 official POP image accession evidence; no image or copyright promotion'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b45-french-palissy-media-and-prado-reverse-20261024
+            git rebase origin/research/sacred-art-b45-french-palissy-media-and-prado-reverse-20261024
+            git push origin HEAD:research/sacred-art-b45-french-palissy-media-and-prado-reverse-20261024 && exit 0
+            sleep 3
+          done
+          exit 1
