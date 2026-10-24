@@ -247,6 +247,11 @@ export function mountFullMassPreflight({
         '<section data-folio-panel="overview" class="aoMassFolioPanel">'+
         '<h3 data-folio-overview-heading></h3><p data-folio-overview-hint></p>'+
         '<div class="aoMassFolioReadyLine" data-folio-overview-selections></div>'+
+        '<div class="aoMassFolioQuickChoices" role="group" aria-label="Mass setup choices">'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="celebration"><span><strong data-folio-quick-mass-label></strong><small data-folio-quick-mass-value></small></span><span aria-hidden="true">›</span></button>'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="ceremony"><span><strong data-folio-quick-ceremony-label></strong><small data-folio-quick-ceremony-value></small></span><span aria-hidden="true">›</span></button>'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="reader"><span><strong data-folio-quick-reader-label></strong><small data-folio-quick-reader-value></small></span><span aria-hidden="true">›</span></button>'+
+        '</div>'+
         '<button type="button" data-folio-goto="celebration" class="aoMassFolioChange" data-folio-guide-start></button></section>'+
         '<section data-folio-panel="celebration" class="aoMassFolioPanel" hidden>'+
         '<h3 data-folio-celebration-heading></h3><p data-folio-celebration-intro></p>'+
@@ -421,12 +426,19 @@ export function mountFullMassPreflight({
     word("[data-folio-step-celebration]","Mass","Messe");
     word("[data-folio-step-ceremony]","Ceremony","Cérémonie");
     word("[data-folio-step-reader]","Reader","Lecture");
-    word("[data-folio-overview-heading]","Ready to begin","Prêt à commencer");
+    word("[data-folio-quick-mass-label]","Mass","Messe");
+    word("[data-folio-quick-ceremony-label]","How it is celebrated","Type de célébration");
+    word("[data-folio-quick-reader-label]","How to follow","Comment suivre");
+    word("[data-folio-quick-mass-value]",displayTitle,displayTitle);
+    word("[data-folio-quick-ceremony-value]",summary.formLabel,summary.formLabel);
+    word("[data-folio-quick-reader-value]",summary.readerMode,summary.readerMode);
+    folio.dataset.aoFolioView=folioStep;
+    word("[data-folio-overview-heading]","Mass setup","Préparation de la messe");
     word("[data-folio-overview-hint]","Your usual selections are ready. Change only what is different today.",
       "Vos choix habituels sont prêts. Ne modifiez que ce qui change aujourd’hui.");
     word("[data-folio-overview-selections]",summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode,
       summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode);
-    word("[data-folio-guide-start]","Review choices","Revoir les choix");
+    word("[data-folio-guide-start]","More choices","Autres choix");
     word("[data-folio-celebration-heading]","Which Mass are you attending ?","Quelle messe allez-vous suivre ?");
     word("[data-folio-celebration-intro]","Today's Mass is already selected. Change it only when a different Mass is actually celebrated.",
       "La messe du jour est déjà sélectionnée. Changez-la seulement si une autre messe est célébrée.");
