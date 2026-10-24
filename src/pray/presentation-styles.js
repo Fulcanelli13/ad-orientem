@@ -1038,6 +1038,100 @@ const PRAYER_PRACTICE_FOCUS_CSS=String.raw`
 }
 `;
 
+
+/* Quiet Frame: root Pray catalogue only. Guided readers, ritual, and prayer
+ * scroll/gesture systems retain their existing presentation owners.
+ * Source: approved 2026-10-24 Pray phone concept; consume shared AO tokens. */
+const QUIET_PRAY_HOME_CSS=String.raw\`
+#aoPray435930 .aoP435930QuietHome{
+ padding:20px var(--ao-frame-gutter,16px) max(96px,calc(72px + env(safe-area-inset-bottom,0px)))!important;
+ gap:24px!important;background:var(--ao-frame-bg,#0B0F13)!important;
+}
+#aoPray435930 .aoP435930Head:has(+ .aoP435930QuietHome) small,
+#aoPray435930 .aoP435930Head:has(+ .aoP435930QuietHome) p{display:none!important}
+#aoPray435930 .aoP435930Head:has(+ .aoP435930QuietHome) h1{
+ font:400 19px/1.3 var(--ao-font-display,"EB Garamond",Georgia,serif)!important;
+ letter-spacing:0!important;text-transform:none!important;text-align:center!important;margin:0!important
+}
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietTiles{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:12px!important;padding:0!important;margin:0!important;
+}
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietTile{
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:center!important;gap:14px!important;min-height:152px!important;
+ padding:18px 10px!important;margin:0!important;
+ border:1px solid var(--ao-frame-rule,rgba(255,255,255,.08))!important;
+ background:var(--ao-frame-card,#141A20)!important;
+ border-radius:var(--ao-frame-radius,16px)!important;
+ box-shadow:none!important;color:var(--ao-frame-text,#ECE8DF)!important;text-align:center!important;
+}
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietTile .aoP435930ModuleAsset,
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietTile .aoP435930ModuleIcon{
+ display:block!important;width:50px!important;height:50px!important;max-width:50px!important;max-height:50px!important;
+ margin:0 auto!important;object-fit:contain!important;flex:none!important;
+}
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietTile b{
+ display:block!important;margin:0!important;padding:0!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+ font:400 18px/1.25 var(--ao-font-display,Georgia,serif)!important;
+ letter-spacing:0!important;text-transform:none!important;text-align:center!important;
+}
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietTile :is(.aoP435930ModuleKind,.aoP435930ModuleDescription,i){display:none!important}
+#aoPray435930 .aoP435930QuietLibrary{display:flex!important;flex-direction:column!important;gap:0!important;background:var(--ao-frame-card,#141A20);border-radius:16px;overflow:hidden}
+#aoPray435930 .aoP435930QuietLibrary h2{
+ font:500 13px/1.4 var(--ao-font-ui,Georgia,serif)!important;
+ letter-spacing:.09em!important;color:var(--ao-frame-muted,#A3ABB4)!important;
+ font-variant-caps:small-caps!important;background:var(--ao-frame-bg,#0B0F13)!important;
+ padding:0 0 12px!important;margin:0!important;
+}
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietLibraryRow{
+ display:grid!important;grid-template-columns:44px minmax(0,1fr) 20px!important;
+ grid-template-rows:auto auto!important;align-content:center!important;
+ gap:2px 12px!important;min-height:76px!important;
+ border:0!important;border-radius:0!important;
+ border-bottom:1px solid var(--ao-frame-rule,rgba(255,255,255,.08))!important;
+ padding:12px 14px!important;background:var(--ao-frame-card,#141A20)!important;
+ box-shadow:none!important;text-align:left!important;
+}
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietLibraryRow:last-child{border-bottom:0!important}
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietLibraryRow .aoP435930ModuleAsset,
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietLibraryRow .aoP435930ModuleIcon{
+ grid-column:1!important;grid-row:1/3!important;align-self:center!important;
+ width:32px!important;height:32px!important;max-width:32px!important;max-height:32px!important;
+}
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietLibraryRow b{
+ grid-column:2!important;grid-row:1!important;
+ margin:0!important;color:var(--ao-frame-text,#ECE8DF)!important;
+ font:500 17px/1.3 var(--ao-font-display,Georgia,serif)!important;
+}
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietLibraryRow .aoP435930ModuleDescription{
+ display:block!important;grid-column:2!important;grid-row:2!important;
+ margin:0!important;color:var(--ao-frame-muted,#A3ABB4)!important;
+ font:400 14px/1.35 var(--ao-font-ui,Georgia,serif)!important;
+}
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietLibraryRow i{grid-column:3!important;grid-row:1/3!important;align-self:center!important}
+#aoPray435930 .aoP435930QuietMore{border-top:1px solid var(--ao-frame-rule,rgba(255,255,255,.08));padding-top:8px}
+#aoPray435930 .aoP435930QuietMore>summary{
+ min-height:52px;display:flex;align-items:center;padding:12px 2px;
+ color:var(--ao-frame-muted,#A3ABB4);font:400 16px/1.4 var(--ao-font-ui,Georgia,serif);
+ cursor:pointer;list-style:revert;outline-offset:3px;
+}
+#aoPray435930 .aoP435930QuietMoreContent{display:flex;flex-direction:column;gap:16px;padding-top:16px}
+#aoPray435930 .aoP435930QuietMoreContent .aoP435930RootGroup{margin:0!important}
+#aoPray435930 .aoP435930QuietMoreContent .aoP435930ModuleGrid{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;
+}
+@media(max-width:360px){
+ #aoPray435930 .aoP435930QuietHome .aoP435930QuietTiles{gap:8px!important}
+ #aoPray435930 .aoP435930QuietHome .aoP435930QuietTile{min-height:132px!important;gap:10px!important;padding:14px 7px!important}
+ #aoPray435930 .aoP435930QuietMoreContent .aoP435930ModuleGrid{grid-template-columns:1fr!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #aoPray435930 .aoP435930QuietHome *{scroll-behavior:auto!important}
+}
+\`;
+
 export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-v435930-pray-audit-style",AUDIT_CSS);
   ensureStyle(doc,"ao-v435930-pray-coherence-style",COHERENCE_CSS);
@@ -1057,6 +1151,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-pray-readable-guidance-style",PRAY_READING_TYPE_CSS);
   ensureStyle(doc,"ao-pray-organised-family-entry-style",PRAY_ORG_ENTRY_CSS);
   ensureStyle(doc,"ao-pray-practice-focus-phone-style",PRAYER_PRACTICE_FOCUS_CSS);
+  ensureStyle(doc,"ao-pray-quiet-home-style",QUIET_PRAY_HOME_CSS);
   return true;
 }
 
