@@ -1,0 +1,20 @@
+name: B45 immutable 383-source and exact Prado reverse iconography (read-only)
+on:
+  push:
+    branches: [research/sacred-art-b45-french-palissy-media-and-prado-reverse-20261024]
+    paths: [.github/workflows/ao-art-b45-readonly-exact-iconography.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  protected-source-identity-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b45-french-palissy-media-and-prado-reverse-20261024
+      - name: Verify predecessor B44 exact source and CC0 alternatives
+        run: node tests/sacred-art-b44-met-cc0-source-audit.mjs
+      - name: Verify Saint Hilary Abbot identity, photo rights and 25 immutable gaps
+        run: node tests/sacred-art-b45-exact-source-and-rights-integrity.mjs

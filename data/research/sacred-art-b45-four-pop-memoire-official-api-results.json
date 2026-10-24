@@ -1,0 +1,77 @@
+{
+  "schema": "AO_B45_PALISSY_MEMOIRE_EXACT_MEDIA_CROSSWALK_V1",
+  "date": "2026-10-24",
+  "strategy": "search licensed government metadata by exact Palissy/Mémoire references; do not infer image rights from text open data or missing API access",
+  "scope_cases": 4,
+  "official_catalogue_discovery_status": "NO_DATASET_IDENTIFIED_OR_ACCESS_BLOCKED",
+  "dataset_matches": [],
+  "dataset_discovery_errors": [
+    {
+      "term": "mémoire",
+      "status": "OFFICIAL_API_ACCESS_BLOCKED",
+      "error": "RuntimeError: Bad official API redirect or HTTP status"
+    },
+    {
+      "term": "palissy",
+      "status": "OFFICIAL_API_ACCESS_BLOCKED",
+      "error": "RuntimeError: Bad official API redirect or HTTP status"
+    }
+  ],
+  "target_cases": [
+    {
+      "artwork_id": "G20-002",
+      "record_id": "PM67000164",
+      "accessions_not_guessed": true,
+      "exact_source_photo_url_certified": false,
+      "photo_app_rights_cleared": false,
+      "original_image_downloaded": false,
+      "evidence": [],
+      "records_with_exact_ref": 0,
+      "access_holds": []
+    },
+    {
+      "artwork_id": "G17-006",
+      "record_id": "PM75000591",
+      "accessions_not_guessed": true,
+      "exact_source_photo_url_certified": false,
+      "photo_app_rights_cleared": false,
+      "original_image_downloaded": false,
+      "evidence": [],
+      "records_with_exact_ref": 0,
+      "access_holds": []
+    },
+    {
+      "artwork_id": "G17-009",
+      "record_id": "PM01002382",
+      "accessions_not_guessed": true,
+      "exact_source_photo_url_certified": false,
+      "photo_app_rights_cleared": false,
+      "original_image_downloaded": false,
+      "evidence": [],
+      "records_with_exact_ref": 0,
+      "access_holds": []
+    },
+    {
+      "artwork_id": "G29-001",
+      "record_id": "IM33002267",
+      "accessions_not_guessed": true,
+      "exact_source_photo_url_certified": false,
+      "photo_app_rights_cleared": false,
+      "original_image_downloaded": false,
+      "evidence": [],
+      "records_with_exact_ref": 0,
+      "access_holds": []
+    }
+  ],
+  "source_photo_files_downloaded": 0,
+  "source_photo_original_bytes": 0,
+  "frozen_artworks_newly_completed": 0,
+  "app_photo_reuse_approvals": 0,
+  "editorial_photo_selections": 0,
+  "strictly_zero_euro": true,
+  "datasets_examined": 0,
+  "dataset_exact_reference_case_hits": 0,
+  "official_metadata_requests_blocked": 2,
+  "new_photo_source_candidates_found": 0,
+  "no_photo_exists_inference_allowed": false
+}
