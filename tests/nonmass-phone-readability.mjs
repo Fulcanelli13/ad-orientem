@@ -61,6 +61,13 @@ try{
       clickTargets:buttons.map(b=>b.getBoundingClientRect().height)};
    });
    assert.ok(formation.cards>=8,"Formation subjects missing at "+width+"px");
+   const landingIndex=await page.evaluate(()=>{
+     const root=document.querySelector("#ao-learn-modular-root");
+     const navigator=root.querySelector(":scope > .aoFNav");
+     return {isLanding:root.dataset.aoLearnFamily==="",visible:Boolean(navigator&&getComputedStyle(navigator).display!=="none")};
+   });
+   if(landingIndex.isLanding)assert.equal(landingIndex.visible,false,
+     "Reader-only section navigator is crowding the Formation landing screen");
    if(width<=430){
      const duplicate=await page.evaluate(()=>{
        const root=document.querySelector("#ao-learn-modular-root");
