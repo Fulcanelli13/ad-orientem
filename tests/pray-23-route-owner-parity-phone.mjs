@@ -44,8 +44,12 @@ try{
    // idempotently avoids toggling an already-open details closed on re-entry.
    if(family!=="daily")await page.locator("#aoPray435930 .aoP435930QuietMore").evaluate(el=>{el.open=true});
    const launcher=page.locator('#aoPray435930.open [data-p435930-family="'+family+'"]');
-   await launcher.evaluate(el=>el.scrollIntoView({block:"center",inline:"nearest",behavior:"instant"}));
-   await launcher.tap();
+   await launcher.waitFor({state:"visible"});
+   // This is a route-owner parity audit, not the separate touch-gesture E2E.
+   // The canonical controller synchronously replaces the tapped DOM button,
+   // making Playwright's actionability retry target disappear after success.
+   // Deliver exactly one native click, then assert the owner in the caller.
+   await launcher.evaluate(el=>el.click());
  };
  const identify=async()=>page.evaluate(()=>{
    if(document.querySelector("#aoPrayerBookRoot.open .pbShell"))
@@ -101,7 +105,9 @@ try{
      await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==="family");
    }
    const attr=entry.kind==="own"?"data-p435930-own":"data-p435930-external";
-   await page.locator('#aoPray435930.open ['+attr+'="'+id+'"]').tap();
+   const entryLink=page.locator('#aoPray435930.open ['+attr+'="'+id+'"]');
+   await entryLink.waitFor({state:"visible"});
+   await entryLink.evaluate(el=>el.click());
    const fromCatalogue=await waitOwner(expected,id+" catalogue");
    // Contextual links and calendar launch through the same registry instead of
    // the catalogue. Compare the real mounted UI owner, not route metadata only.
@@ -115,7 +121,7 @@ try{
  }
  assert.equal(results.length,23);
  assert.deepEqual(errors.filter(x=>/SyntaxError|TypeError|ReferenceError|Unhandled/i.test(x)),[],"Prayer entry page errors: "+JSON.stringify(errors));
- console.log("PASS all 23 canonical Prayer catalogue taps agree with context/calendar registry on their one visible reader owner");
+ console.log("PASS all 23 canonical Prayer catalogue activations agree with context/calendar registry on their one visible reader owner");
  console.log("PRAY_OWNER_PARITY="+JSON.stringify(results));
  await page.close();
 }finally{await browser?.close();await new Promise(done=>server.close(done));}
