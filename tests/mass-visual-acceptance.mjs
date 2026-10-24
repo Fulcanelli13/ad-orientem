@@ -189,7 +189,7 @@ try{
   assert.equal(opening.preferencesOpen,"false","Mass preferences sheet should be closed at reader entry");
   assert.equal(opening.floatingClose,false,"obsolete floating close button still overlays the LIVE ribbon");
   assert.equal(opening.sectionJumpDisabled,false,"source-first section jump is disabled");
-  assert.equal(opening.sectionButtonCount,opening.totalCards,"section jump does not expose the complete current display model");
+  assert.equal(opening.sectionButtonCount,opening.totalCards,"section jump does not expose the complete current display model; totals="+JSON.stringify({sectionButtonCount:opening.sectionButtonCount,totalCards:opening.totalCards,sourceTotalCards:opening.sourceTotalCards,structureOwner:opening.structureOwner}));
   assert.equal(opening.totalCards,48,"visible Sung LIVE presentation no longer preserves the approved 48-step concept");
   assert.equal(opening.sourceTotalCards,39,"48-step presentation mutated or replaced the certified 39-step source model");
   assert.equal(opening.structureOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
