@@ -7,7 +7,7 @@
     "original_scan_archive_id": "afm3499.0021.001.umich.edu",
     "source_pdf_sha256": "100e2b3164bd7a342c5c0c5d01df2a60b4635d5695dea456e9b93769866ee5ee"
   },
-  "method": "Inventory of 60 numbered principal feast-description chapters from source table of contents, cross-referenced to 422 prior 1900 observation IDs and 105 new Wave04 IDs. Some representation does NOT certify chapter fully mined or local custom continuity. The original author's preface says sixty descriptions covering ninety-two Sicilian municipalities. Wave05 indexes 132 additional research-only source/detail observations in each of the 29 previously unrepresented numbered chapters. Evidence screening and research observation indexing are not chapter-exhaustion or publication. Wave08 correction: printed original table of contents itself gives chapter XI start p.141 and XLI start p.400, but original text block contains the actual chapter headings on pp.140 and 406 respectively; do not overwrite either documentary witness. Corrected body-heading boundaries are stored as a separate explicit field. Wave08 indexes eight previously held source actions, bringing cross-source observation inventory to 3652 and original-1900 Pitrè rows to 667. It also enumerates 253 printed folio pages without an indexed source observation; this is not a line-by-line completed-page audit.",
+  "method": "Inventory of 60 numbered principal feast-description chapters from source table of contents, cross-referenced to 422 prior 1900 observation IDs and 105 new Wave04 IDs. Some representation does NOT certify chapter fully mined or local custom continuity. The original author's preface says sixty descriptions covering ninety-two Sicilian municipalities. Wave05 indexes 132 additional research-only source/detail observations in each of the 29 previously unrepresented numbered chapters. Evidence screening and research observation indexing are not chapter-exhaustion or publication. Wave08 correction: printed original table of contents itself gives chapter XI start p.141 and XLI start p.400, but original text block contains the actual chapter headings on pp.140 and 406 respectively; do not overwrite either documentary witness. Corrected body-heading boundaries are stored as a separate explicit field. Wave08 indexes eight previously held source actions, bringing cross-source observation inventory to 3652 and original-1900 Pitrè rows to 667. It also enumerates 253 printed folio pages without an indexed source observation; this is not a line-by-line completed-page audit. Wave09 200 previously no-observation pages screened via original searchable 1900 PDF, 51 original-edition source action rows indexed after all 51 anchor normalized text matches. The 560 main-body printed page audit now has 358 pages with source-detail locators, 202 without; 12 of these absent from the available scan entirely. No chapter is exhaustively mined.",
   "summary": {
     "indexed_chapters_in_book": 60,
     "earlier_chapters_with_some_1900_observations": 20,
@@ -17,8 +17,8 @@
     "chapters_declared_exhaustively_mined": 0,
     "existing_source_observations": 422,
     "new_wave04_source_observations": 105,
-    "all_pitre_1900_source_observations_now": 667,
-    "workbench_source_detail_total": 3652,
+    "all_pitre_1900_source_observations_now": 718,
+    "workbench_source_detail_total": 3703,
     "unique_customs_certified": 0,
     "app_publications": 0,
     "newly_represented_chapters_wave05": 29,
@@ -28,9 +28,13 @@
     "historical_observations_unchanged_by_heading_correction": 659,
     "wave08_recovered_held_source_observations": 8,
     "original_book_body_printed_pages": 560,
-    "body_pages_with_one_or_more_indexed_source_observations": 307,
-    "body_pages_with_no_indexed_source_observations": 253,
-    "remaining_wave05_source_leads_held_after_wave08": 55
+    "body_pages_with_one_or_more_indexed_source_observations": 358,
+    "body_pages_with_no_indexed_source_observations": 202,
+    "remaining_wave05_source_leads_held_after_wave08": 55,
+    "wave09_gap_pages_screened": 200,
+    "wave09_new_source_observations_indexed": 51,
+    "source_pages_missing_from_both_available_pdfs": 12,
+    "remaining_unindexed_body_pages_holding_prior_chapter_exhaustiveness": false
   },
   "chapters": [
     {
