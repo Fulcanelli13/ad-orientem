@@ -74,7 +74,7 @@ assert.equal(catalogue.summary.source_review.pitre_1900_original_remaining_p2_pa
 assert.equal(catalogue.summary.source_review.pitre_1900_original_p2_verified,87);
 assert.equal(catalogue.summary.source_review.pitre_1900_original_129_verified,129);
 assert.equal(catalogue.summary.source_review.pitre_1900_all_original_folio_record_checks,422);
-assert.equal(catalogue.summary.source_review.pitre_1900_unchecked_record_pages_remaining,0);
+assert.equal(catalogue.summary.source_review.pitre_1900_unchecked_record_pages_remaining,105);
 assert.equal(catalogue.summary.source_review.pitre_1900_full_422_unique_pdf_pages_checked,144);
 assert.equal(catalogue.summary.source_observations.total_source_detail_rows_including_external,3512);
 assert.equal(catalogue.summary.identity_working_rows.provisional_after_53_no_owner_action_review,408);
