@@ -10,8 +10,8 @@ const rows=cat.external_source_observations_pitre_original_1900_wave05;
 assert.equal(rows.length,132);
 assert.equal(wave.accepted_source_observation_stage.length,132);
 assert.equal(wave.held_source_leads.length,63);
-assert.equal(cat.summary.source_observations.total_source_detail_rows_including_external,3644);
-assert.equal(cat.summary.source_observations.pitre_1900_all_1900_source_detail_records_now,659);
+assert.equal(cat.summary.source_observations.total_source_detail_rows_including_external,3652);
+assert.equal(cat.summary.source_observations.pitre_1900_all_1900_source_detail_records_now,667);
 assert.equal(cat.summary.source_observations.pitre_1900_wave05_noncanonical_new_chapter_observations,132);
 assert.equal(cat.summary.source_review.pitre_1900_1900_chapter_groups_with_some_indexed_evidence,60);
 assert.equal(cat.summary.source_review.pitre_1900_1900_chapter_groups_unrepresented_in_this_register,0);
@@ -20,8 +20,8 @@ assert.equal(cat.summary.source_review.pitre_1900_wave06_rendered_image_crop_pre
 assert.equal(coverage.summary.total_chapters_with_some_source_observations,60);
 assert.equal(coverage.summary.still_without_1900_source_observations,0);
 assert.equal(coverage.summary.chapters_declared_exhaustively_mined,0);
-assert.equal(coverage.summary.workbench_source_detail_total,3644);
-assert.equal(coverage.summary.all_pitre_1900_source_observations_now,659);
+assert.equal(coverage.summary.workbench_source_detail_total,3652);
+assert.equal(coverage.summary.all_pitre_1900_source_observations_now,667);
 assert.equal(coverage.chapters.filter(r=>r.coverage_after_wave05==='WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY').length,29);
 assert.equal(coverage.chapters.filter(r=>r.fully_extracted_verified).length,0);
 const allPrior=[
@@ -38,8 +38,15 @@ for(let i=0;i<rows.length;i++){
  assert.equal(r.id,s.id);
  assert.match(r.id,/^PIT1900-W05-OBS-\d{3}$/);
  assert.ok(!original.has(r.id)&&!w5.has(r.id));w5.add(r.id);c5.add(r.chapter_group);
- assert.equal(r.label,s.action_or_detail);
- assert.equal(r.chapter_group,s.source_chapter);
+ if(['PIT1900-W05-OBS-097','PIT1900-W05-OBS-098'].includes(r.id)){
+   assert.equal(r.original_research_label_prior_to_boundary_correction,s.action_or_detail);
+   assert.equal(r.original_chapter_group_prior_to_boundary_correction,s.source_chapter);
+   assert.equal(r.chapter_group,'XL');assert.equal(s.source_chapter,'XLI');
+   assert.ok(r.label.includes('Campobello'));
+ }else{
+   assert.equal(r.label,s.action_or_detail);
+   assert.equal(r.chapter_group,s.source_chapter);
+ }
  assert.equal(r.original_printed_page,s.original_printed_page);
  assert.equal(r.original_scan_pdf_page_1_based,s.original_scan_pdf_page_1_based);
  assert.ok(v);
@@ -60,4 +67,4 @@ assert.equal(new Set(wave.held_source_leads.map(r=>r.source_lead_id)).size,63);
 assert.equal(cat.summary.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(cat.summary.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(cat.summary.no_new_app_publications,true);
-console.log('PASS Pitrè Wave07 noncanonical intake: +132 indexed, 3644 source rows, 659 Pitrè, 60/60 chapters represented; no new custom certification or publication.');
+console.log('PASS Pitrè Wave07 noncanonical intake: +132 indexed, 3652 source rows, 667 Pitrè, 60/60 chapters represented; no new custom certification or publication.');
