@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 350,
+    "places": 353,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 91,
+    "places_without_direct_claim": 94,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -88,6 +88,7 @@
       "place:MQ:cathedrale-saint-louis-fort-de-france",
       "place:MU:saint-louis-cathedral-port-louis",
       "place:MW:maula-cathedral-lilongwe",
+      "place:MY:st-jude-church-rawang",
       "place:NC:cathedrale-saint-joseph-noumea",
       "place:NO:st-olav-cathedral-oslo",
       "place:NO:st-olav-cathedral-trondheim",
@@ -95,6 +96,7 @@
       "place:NP:assumption-cathedral-lalitpur",
       "place:OM:saints-peter-paul-catholic-church-ruwi",
       "place:PE:basilica-nuestra-senora-merced-lima",
+      "place:PE:santuario-san-martin-de-porres-jicamarca",
       "place:PF:notre-dame-cathedral-papeete",
       "place:PG:holy-cross-procathedral-vanimo",
       "place:PH:manila-cathedral-intramuros",
@@ -113,6 +115,7 @@
       "place:TO:st-anthony-padua-basilica-nukualofa",
       "place:TZ:st-joseph-cathedral-dar-es-salaam",
       "place:US:baltimore-basilica-assumption",
+      "place:UY:santuario-nuestra-senora-del-carmen-carmelo",
       "place:UZ:sacred-heart-cathedral-tashkent",
       "place:VC:assumption-cathedral-kingstown",
       "place:VI:saints-peter-paul-cathedral-charlotte-amalie",
@@ -3526,6 +3529,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:MY:st-jude-church-rawang",
+      "display_name": "Church of St. Jude, Rawang",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:MZ:namaacha-fatima-sanctuary",
       "display_name": "Santuário de Nossa Senhora de Fátima da Namaacha",
       "record_ids": {
@@ -3712,6 +3721,12 @@
           "relic:PE:convento-santo-domingo-lima"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PE:santuario-san-martin-de-porres-jicamarca",
+      "display_name": "Centro de Espiritualidad y Santuario San Martín de Porres, Jicamarca",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -4609,6 +4624,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:UY:santuario-nuestra-senora-del-carmen-carmelo",
+      "display_name": "Santuario Nuestra Señora del Carmen, Carmelo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:UZ:sacred-heart-cathedral-tashkent",
       "display_name": "Cathedral of the Sacred Heart of Jesus, Tashkent",
       "record_ids": {},
@@ -4899,5 +4920,32 @@
       }
     ],
     "rule": "Two independent original Catholic sites with named OSM Catholic church/chapel polygons; Lima corrected to basilica, Tarlac to Chapel of Risen Christ. No entrance, TLM, relic-authenticity, shrine label beyond owner, approved image or opening hour inference."
+  },
+  "georeference_tranche_20261024_p16": {
+    "release": "P16",
+    "release_manifest": "data/geography/research/sacred-places-p16-three-qualified-site-release.v1.json",
+    "new_sites": [
+      "place:MY:st-jude-church-rawang",
+      "place:PE:santuario-san-martin-de-porres-jicamarca",
+      "place:UY:santuario-nuestra-senora-del-carmen-carmelo"
+    ],
+    "old_candidate_crosswalk": [
+      {
+        "candidate_id": "candidate:SG-INV-0676",
+        "place_id": "place:MY:st-jude-church-rawang",
+        "label_correction": "Church, Rawang, not Kuala Lumpur city shrine"
+      },
+      {
+        "candidate_id": "candidate:SG-INV-0525",
+        "place_id": "place:PE:santuario-san-martin-de-porres-jicamarca",
+        "label_correction": "Jicamarca Anexo 22, not historic Santo Domingo central Lima"
+      },
+      {
+        "candidate_id": "candidate:SG-INV-0534",
+        "place_id": "place:UY:santuario-nuestra-senora-del-carmen-carmelo",
+        "label_correction": "Carmelo sanctuary not Colonia del Sacramento and not nearby similarly dedicated parish"
+      }
+    ],
+    "map_policy": "GCatholic independent 10-character Open Location Code site cell (center accurate to roughly 14m site grid, not certified visitor entrances or independent OSM church footprints), no invented Shrine/Relic/TLM/Calendar joins"
   }
 }
