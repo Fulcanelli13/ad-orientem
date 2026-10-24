@@ -18,6 +18,7 @@ ROLLUP=ROOT/"sacred-art-acquisition-245-source-rollup.csv"
 OUT=ROOT/"sacred-art-b49-383-release-photo-rights-and-repo-mapping.csv"
 REPORT=ROOT/"sacred-art-b49-383-photo-license-and-git-image-summary.json"
 IMAGES=ROOT/"sacred-art-b49-git-tracked-images-and-visual-match-candidates.csv"
+PRIORITY=ROOT/"sacred-art-b49-95-frozen-approved-rights-review-queue.csv"
 GALLERY_TAR="ao-supplement-b27-gallery159.tar"
 RELEASE="sacred-art-originals-b26-20261024"
 PREFIX="https://github.com/Fulcanelli13/ad-orientem/"
@@ -162,7 +163,7 @@ def main():
             x.get("institution_open_claim"))]
         negatives=[x for x in attached if LICENSE_SEEMS_RESTRICTED.search(
             str(x.get("licence",""))+" "+str(x.get("source_license_as_reported","")))]
-        older_approved=oldrow["frozen_decision"]=="APPROVED_LOCKED"
+        older_approved=oldrow["frozen_decision"] in ("APPROVED_LOCKED","APPROVED_5")
         reported_open=len(positive)
         reason=("OPEN_LICENSE_METADATA_RECORDED_BUT_COMMERCIAL_PHOTO_REUSE_AND_IDENTITY_NOT_JOINTLY_APPROVED" if reported_open else
                 "NO_ATTRIBUTED_OPEN_PHOTO_SOURCE_RIGHTS_IN_MATCHED_ARCHIVE_RECORDS")
@@ -195,6 +196,27 @@ def main():
           "action":"OBJECT_IDENTITY_AND_PHOTO_RIGHTS_REVIEW" if current["physical_source_present"]=="True" else "EXACT_ORIGINAL_SOURCE_DISCOVERY_OR_ALIAS_CLEARANCE"
         })
     write(OUT,ledgers)
+    first_pass=[x for x in ledgers if
+        x["frozen_editorial_artwork_preapproved"] and
+        x["has_open_license_metadata_claim"] and
+        x["complete_object_research_source"]=="True"]
+    assert len([x for x in ledgers if x["frozen_editorial_artwork_preapproved"]])==107
+    assert len(first_pass)==95
+    first_pass.sort(key=lambda x:(0 if x["priority"]=="P0" else 1,x["artwork_id"]))
+    priority=[
+       {"rank":n,"artwork_id":x["artwork_id"],"title":x["title"],
+        "artist":x["artist"],"priority":x["priority"],
+        "source_cohort":x["B48_source_cohort"],
+        "source_image_hashes":x["source_sha256"],
+        "license_metadata_claims_attached_to_sha":x["source_records_with_open_licence_metadata_claim"],
+        "historically_approved_artwork":True,
+        "source_image_is_complete_candidate":True,
+        "license_final_review_status":"NOT_CLEARED_AS_EXACT_COMMERCIALLY_REUSABLE_PHOTO",
+        "visual_original_identity_review_status":"REQUIRED",
+        "selected_photo_version_review_status":"REQUIRED",
+        "image_technical_resolution_review_status":"REQUIRED",
+        "ready_to_publish":False} for n,x in enumerate(first_pass,1)]
+    write(PRIORITY,priority)
     repo=git_files()
     gallery,non_images,tar_total,tar_bytes=gallery_records()
     photo_candidates=[]
@@ -227,6 +249,12 @@ def main():
         })
     write(IMAGES,photo_candidates)
     status=Counter(x["source_rights_evidence_class"] for x in ledgers)
+    git_kinds=Counter(
+        "generated_inline_UI" if f["path"].startswith("assets/generated-inline/") else
+        "active_UI" if f["path"].startswith("assets/active/") else
+        "approved_sacred_places" if f["path"].startswith("assets/approved/place") else
+        "staged_sacred_places" if f["path"].startswith("assets/staged/place") else
+        "other_UI_and_media" for f in repo)
     matches=Counter(x["matching_evidence_level"] for x in photo_candidates)
     result={
         "schema":"AO_B49_ALL383_PHOTO_REUSE_AND_GIT_IMAGE_VISUAL_RECONCILIATION_V1",
@@ -236,6 +264,10 @@ def main():
         "preserved_any_source":b48["active_with_some_actual_research_original_source"],
         "remaining_complete_object_source_gaps":b48["active_missing_complete_object_photo"],
         "historically_selected_artwork_counts_preserved":107,
+        "historically_approved_with_complete_object_and_open_photo_metadata_claim":len(priority),
+        "priority_first_pass_release_review_queue_path":str(PRIORITY),
+        "priority_95_are_not_approved_photo_versions":True,
+        "historically_approved_other_requiring_additional_sources_or_licensing":107-len(priority),
         "per_photo_source_license_metadata_claim_artworks":sum(x["has_open_license_metadata_claim"] for x in ledgers),
         "per_photo_source_license_metadata_claim_note":"Metadata claims are NOT final legal clearance; licenses may refer to the database object rather than photograph and version, and choice of preferred image may differ.",
         "rights_evidence_class_counts":dict(status),
@@ -243,6 +275,8 @@ def main():
         "end_to_end_release_readiness_certification_completed":False,
         "zero_certifications_means_unchecked_not_forbidden":True,
         "photographic_files_in_git":len(repo),
+        "git_image_functional_categories":dict(git_kinds),
+        "git_files_include_non_catalogue_app_graphics":True,
         "git_photo_bytes":sum(x["bytes"] for x in repo),
         "git_files_that_decode_at_minimum_350px":sum(x["candidate_scene"] for x in repo),
         "legacy_gallery_supplementary_tar_archive":GALLERY_TAR,
@@ -271,6 +305,7 @@ def main():
     REPORT.write_text(json.dumps(result,indent=2)+"\n")
     print("B49_FULL383_RIGHTS_AND_GIT_REPORT",json.dumps({
         "n":len(ledgers),"rights_claim_count":result["per_photo_source_license_metadata_claim_artworks"],
+        "first_pass_approved_open_license_queue":result["historically_approved_with_complete_object_and_open_photo_metadata_claim"],
         "rights_count":dict(status),"git_files":len(repo),
         "git_images_350px":result["git_files_that_decode_at_minimum_350px"],
         "gallery_previews":len(gallery),"match_outcomes":dict(matches),
