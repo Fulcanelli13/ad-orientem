@@ -76,3 +76,7 @@ jobs:
         run: |
           node --check tests/customs-pitre-1900-wave06-source-image-preview.mjs
           node tests/customs-pitre-1900-wave06-source-image-preview.mjs
+      - name: Verify Pitrè Wave07 132 noncanonical catalogued research rows, all 60 chapter IDs
+        run: |
+          node --check tests/customs-pitre-1900-wave07-132-catalogue-integration.mjs
+          node tests/customs-pitre-1900-wave07-132-catalogue-integration.mjs
