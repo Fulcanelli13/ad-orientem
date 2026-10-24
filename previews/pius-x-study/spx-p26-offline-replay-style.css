@@ -80,3 +80,23 @@ body.spxc-offline-pilot-active .spxc-free-ask{display:none!important}
  #spxm-guided-continue{width:100%}
  .spxm-guided-question{font-size:15px}
 }
+
+
+/* P2.47: explicit source-preserving research comparison, never quote styling. */
+#spxm-voice-preview-toggle{display:block;width:100%;min-height:43px;margin:12px 0 8px;
+ padding:11px 13px;border:1px solid #ad9270;background:#191f28;color:#e9d1a8;
+ font:13px/1.4 system-ui,sans-serif;cursor:pointer;text-align:left}
+#spxm-voice-preview-toggle[hidden],#spxm-voice-preview-scope[hidden],
+.spxm-voice-evidence[hidden],.spxm-offline-source[hidden],
+.spxm-claim-audit[hidden],.spxm-source-label[hidden]{display:none!important}
+#spxm-voice-preview-toggle:hover,#spxm-voice-preview-toggle:focus-visible{
+ border-color:#ead09c;background:#2b2b2b;outline-offset:3px}
+#spxm-voice-preview-scope{padding:8px 10px;margin:0 0 12px;
+ color:#dfc599;border-left:2px solid #ab8b56;background:#211b19;
+ font:12px/1.6 system-ui,sans-serif}
+.spxm-voice-evidence{margin:14px 0 12px;padding:12px;background:#131a21;
+ border:1px solid #8d7b6077;color:#d1c5b3;font:13px/1.6 Georgia,serif}
+.spxm-voice-evidence summary{cursor:pointer;color:#e0c697}
+.spxm-voice-witness{border-left:1px solid #9c855e66;padding:8px 12px;margin:12px 0;
+ color:#d5c6af;overflow-wrap:anywhere}
+.spxm-voice-witness a{display:block;margin:6px 0 0;color:#cbb18a;font:11px/1.4 system-ui,sans-serif}
