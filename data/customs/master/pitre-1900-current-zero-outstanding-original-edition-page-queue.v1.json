@@ -1,0 +1,29 @@
+{
+  "schema": "AO_PITRE_1900_SOURCE_PAGE_CHECKS_COMPLETE_422_422_V1",
+  "updated": "2026-10-24",
+  "status": "ORIGINAL_EDITION_PRINTED_FOLIO_PAGE_MAPPING_COMPLETE_NOT_INDEPENDENT_HISTORICAL_OR_RITUAL_CERTIFICATION",
+  "source_work": "Giuseppe Pitrè, Feste patronali in Sicilia (Carlo Clausen, 1900)",
+  "scan_sha256": "100e2b3164bd7a342c5c0c5d01df2a60b4635d5695dea456e9b93769866ee5ee",
+  "historical_queues_retained": [
+    "data/customs/master/pitre-1900-364-unverified-records-page-lookup-queue.v1.json",
+    "data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json",
+    "data/customs/master/pitre-1900-156-wave03-remaining-original-folio-page-queue.v1.json"
+  ],
+  "latest_source_evidence": "data/customs/master/pitre-1900-uploaded-facsimile-156-wave03-remaining-original-page-verifications.v1.json",
+  "summary": {
+    "original_1900_pitre_source_rows": 422,
+    "original_printed_page_checks_verified": 422,
+    "current_unverified_original_pages": 0,
+    "older_129_verified": 129,
+    "newer_stage01_stage02_verified": 121,
+    "newer_wave03_highrisk_verified": 16,
+    "newer_wave03_final_verified": 156,
+    "nonadditive_master_source_observations": 3407,
+    "provisional_groups_unchanged": 408,
+    "independent_historical_corrob_verified": 0,
+    "authenticated_1962_ritual_approvals": 0,
+    "new_unique_customs_certified": 0,
+    "new_app_publications": 0
+  },
+  "records": []
+}
