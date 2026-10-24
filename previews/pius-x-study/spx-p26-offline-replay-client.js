@@ -12,7 +12,8 @@ if(data.schema!=='AO_SPX_P26_OFFLINE_REVIEW_CASES_V1'||data.publishingApproved!=
    data.voicePreviewCaseCount!==3||data.voicePreviewLanguageCount!==2||
    data.voicePreviewApproved!==false||data.voicePreviewLiveInference!==false||
    data.real7bComparisonCount!==4||data.real7bComparisonApproved!==false||
-   data.real7bComparisonLive!==false)
+   data.real7bComparisonLive!==false||
+   data.documentNavigationCount!==4||data.sourceDocumentNavigation?.length!==4)
  throw Error('Unexpected offline dialogue evidence');
 const groups=new Map();
 for(const c of data.cases){
@@ -20,6 +21,19 @@ for(const c of data.cases){
  groups.get(c.chapterId).push(c);
 }
 const normalize=x=>String(x||'').trim().normalize('NFC').toLocaleLowerCase();
+const documentNavigation=new Map();
+for(const doc of data.sourceDocumentNavigation){
+ if(doc.sourceStatus!=='PRIMARY_WITNESS_NAVIGATION_ONLY'||
+  doc.approvedForPublication!==false||
+  !groups.has(doc.chapterId)||documentNavigation.has(doc.chapterId)||
+  !doc.documentUrl.startsWith('https://www.vatican.va/')||
+  doc.questionCount!==groups.get(doc.chapterId).length||
+  doc.exactOriginalNodeIDs.length!==doc.questionCount||
+  doc.exactOriginalNodeIDs.some((id,i)=>groups.get(doc.chapterId)[i]?.nodeId!==id))
+  throw Error('Unlicensed papal document navigation');
+ documentNavigation.set(doc.chapterId,doc);
+}
+if(documentNavigation.size!==4)throw Error('Missing canonical document navigation');
 if(data.cases.reduce((n,c)=>n+c.claimTrace.length,0)!==23||
    data.cases.some(c=>c.claimTrace.some(t=>t.humanReviewApproved!==false||
     t.translationApproved!==false||t.verbatimPapalSpeech!==false)))
@@ -57,6 +71,11 @@ const tr={
  real7bConcern:'Editorial concern',
  real7bSource:'Inspect original papal Latin',
  real7bRun:'Benchmark and provenance',
+ documents:'Other documented conversations',
+ documentActive:'Current document',
+ documentOpen:'Open this source conversation',
+ documentContinue:'Explore another papal document',
+ nextQuestions:'Other documented questions',
   traceTitle:'Inspect sentence-by-sentence evidence',traceCaution:'Each link is an editorial interpretation of the cited original-language excerpt, not an independently certified translation or proof of the full sentence.',
  claimLabel:'Editorial sentence',witnessLabel:'Original source excerpt',webLine:'Vatican web-text line',sourceReview:'Source correspondence pending human review'
  },
@@ -84,6 +103,11 @@ const tr={
  real7bConcern:'Réserve éditoriale',
  real7bSource:'Examiner le latin original du pape',
  real7bRun:'Expérience et provenance',
+ documents:'Autres dialogues documentés',
+ documentActive:'Document consulté',
+ documentOpen:'Ouvrir ce dialogue documentaire',
+ documentContinue:'Explorer un autre document pontifical',
+ nextQuestions:'Autres questions documentées',
   traceTitle:'Examiner les sources phrase par phrase',traceCaution:'Chaque rapprochement est une interprétation éditoriale de l’extrait original, non une traduction certifiée ni une preuve indépendante de toute la phrase.',
  claimLabel:'Phrase éditoriale',witnessLabel:'Extrait du texte original',webLine:'Ligne du texte sur le site du Vatican',sourceReview:'Correspondance avec la source à vérifier'
  }
@@ -91,6 +115,7 @@ const tr={
 const root=document.createElement('section');root.id='spxc-offline-replay';root.hidden=true;
 root.innerHTML="<div class='spxm-head'><strong id='spxm-offline-title'></strong><small id='spxm-offline-limit'></small></div>"+
  "<p id='spxm-offline-scope'></p>"+
+ "<details id='spxm-document-explore'><summary id='spxm-document-title'></summary><div id='spxm-document-options'></div></details>"+
  "<button type='button' id='spxm-voice-preview-toggle' hidden></button>"+
  "<p id='spxm-voice-preview-scope' hidden></p>"+
  "<div id='spxm-guided-exchange'>"+
@@ -109,6 +134,30 @@ const add=(tag,cl,text,parent)=>{
  node.textContent=text;parent.append(node);return node;
 };
 let active=null,language='en',lastChapter=null,lastLanguage=null;
+function renderDocumentNavigation(){
+ const t=tr[language],list=$('spxm-document-options');
+ $('spxm-document-title').textContent=t.documents+' · '+documentNavigation.size;
+ list.replaceChildren();
+ for(const doc of documentNavigation.values()){
+  const button=add('button','spxm-document-choice','',list);
+  button.type='button';button.dataset.documentChapter=doc.chapterId;
+  button.disabled=doc.chapterId===active;
+  add('strong','',doc.title,button);
+  add('small','',doc.date+' · '+doc.questionCount+' · '+
+   (doc.chapterId===active?t.documentActive:t.documentOpen),button);
+  button.addEventListener('click',()=>{
+   if(root.hidden||doc.chapterId===active)return;
+   // Invoke the EXISTING P6 chapter navigation. A synthetic custom event
+   // would only swap this panel and leave the underlying scene out of sync.
+   const target=[...document.querySelectorAll('[data-spxc-open]')].find(
+    x=>x.getAttribute('data-spxc-open')===doc.chapterId);
+   if(!target)throw Error('Original source chapter is missing');
+   target.click();
+   $('spxm-document-explore').open=false;
+  });
+ }
+}
+
 // P2.46 guided conversations only navigate the EXISTING P22 source-owned
 // questions and replies. They neither generate text nor certify authorship.
 let guidedActive=false,guidedStep=0,voicePreviewMode=false;
@@ -192,7 +241,15 @@ function guidedRender(){
  $('spxm-offline-example').hidden=guidedActive;
  if(!guidedActive)return;
  const foot=add('p','spxm-guided-caution',t.caution,next);
- if(guidedStep>=group.length){foot.classList.add('spxm-guided-finished');return;}
+ if(guidedStep>=group.length){
+  foot.classList.add('spxm-guided-finished');
+  const more=add('button','spxm-guided-other-document',t.documentContinue,next);
+  more.type='button';more.addEventListener('click',()=>{
+   const nav=$('spxm-document-explore');nav.open=true;
+   nav.scrollIntoView({block:'nearest',behavior:'instant'});
+  });
+  return;
+ }
  const item=group[guidedStep];
  const action=add('button','spxm-guided-question',t.continue+': '+item.question[language],next);
  action.type='button';action.dataset.nextNodeId=item.nodeId;
@@ -228,6 +285,7 @@ function contextChanged(context){
  $('spxm-offline-label').textContent=t.label;
  $('spxm-offline-send').textContent=t.send;
  $('spxm-offline-scope').textContent=t.scope;
+ renderDocumentNavigation();
  if(active!==lastChapter||language!==lastLanguage){
   guidedReset();
   voicePreviewMode=false;
@@ -330,6 +388,25 @@ $('spxm-offline-form').addEventListener('submit',e=>{
   }
  }
  entry.append(audit);
+ // Source-owned next question chips only when not in the sequential guided
+ // scene. This is navigation to exact pre-existing Q/A, not generation.
+ if(!guidedActive){
+  const next=group.filter(c=>c.nodeId!==chosen.nodeId);
+  if(next.length){
+   const follow=add('nav','spxm-offline-next','',entry);
+   add('p','spxm-offline-next-title',t.nextQuestions,follow);
+   for(const other of next){
+    const suggestion=add('button','spxm-offline-next-question',
+     other.question[language],follow);
+    suggestion.type='button';suggestion.dataset.nextOriginalNode=other.nodeId;
+    suggestion.addEventListener('click',()=>{
+     if(root.hidden||active!==other.chapterId)return;
+     $('spxm-offline-question').value=other.question[language];
+     $('spxm-offline-form').requestSubmit();
+    });
+   }
+  }
+ }
  // Distinct expandable ACTUAL inference research, not a new "Pius X said"
  // answer. Never inline it as the original reply or alter existing GPT-6
  // voice comparison. No 7B example exists for the third dialogue turn.
