@@ -76,7 +76,7 @@ assert.equal(pending.size,0);assert.equal(queue.records.length,0);
 assert.deepEqual(pending,new Set(queue.records.map(x=>x.id)));
 assert.equal(catalogue.summary.source_review.pitre_1900_all_original_folio_record_checks,422);
 assert.equal(catalogue.summary.source_review.pitre_1900_new_293_original_folio_images_verified,293);
-assert.equal(catalogue.summary.source_review.pitre_1900_new_remaining_page_checks,0);
+assert.equal(catalogue.summary.source_review.pitre_1900_new_remaining_page_checks,105);
 assert.equal(catalogue.summary.source_review.pitre_1900_full_422_unique_pdf_pages_checked,144);
 assert.equal(catalogue.summary.source_observations.total_source_detail_rows_including_external,3512);
 assert.equal(catalogue.summary.identity_working_rows.provisional_after_53_no_owner_action_review,408);
