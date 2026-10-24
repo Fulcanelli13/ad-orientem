@@ -231,7 +231,8 @@ export async function composeDraft(store,input,model){
     citedWitnessIds.some(id=>typeof id!=='string'||!possibleWitnesses.has(id))
   ))return held('invalid_generated_witness_reference');
   const surface=auditDraftSurface({text,language:chosen.language,
-   question:chosen.question,evidence:chosen.evidence});
+   question:chosen.question,evidence:chosen.evidence,
+   voiceMode,experimentalComposerProfile:profile});
   if(!surface.ok)return held(surface.reason);
   const candidate={text:text.trim(),ids,
     ...(citedWitnessIds===undefined?{}:{witnessIds:[...citedWitnessIds]})};
