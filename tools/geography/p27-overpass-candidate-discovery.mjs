@@ -17,7 +17,7 @@ const rad=Math.PI/180;
 const km=(a,b,c,d)=>{let p=(c-a)*rad,q=(d-b)*rad;let v=Math.sin(p/2)**2+Math.cos(a*rad)*Math.cos(c*rad)*Math.sin(q/2)**2;return 12742*Math.asin(Math.sqrt(v));};
 async function main(){
  if(process.argv.includes("--dry-run")){console.log(JSON.stringify({candidates:src.candidates.length,query_bytes:query.length,countries:src.scope.countries}));return;}
- const u=process.env.AO_OVERPASS_ENDPOINT||"https://overpass.kumi.systems/api/interpreter";
+ const u=process.env.AO_OVERPASS_ENDPOINT||"https://overpass.private.coffee/api/interpreter";
  const ctrl=new AbortController();const alarm=setTimeout(()=>ctrl.abort(),135000);
  let obj;
  try{
