@@ -314,6 +314,8 @@ const CSS=`
 .homeScreen.aoTodayV2{background:var(--ao-frame-bg)!important;color:var(--ao-frame-text)}
 .homeScreen.aoTodayV2 .aoTodayV2Header{background:var(--ao-frame-bg)!important}
 .homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayV2Tabs{display:none!important}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoHomeCalendarAccess{display:flex!important;justify-content:flex-end;padding:4px var(--ao-frame-gutter) 8px!important}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoHomeCalendarAction{border:0!important;background:transparent!important;color:var(--liturgical,var(--ao-liturgical-accent))!important}
 .homeScreen.aoTodayV2 .aoTodayV2PrimaryMass{min-height:var(--ao-frame-action)!important;border-radius:12px!important}
 .homeScreen.aoTodayV2 .aoTodayV2PrimaryMass b{font-variant-caps:normal!important;letter-spacing:0!important;font-size:17px!important}
 .homeScreen.aoTodayV2 .aoTodayV2SecondaryMass{gap:12px!important}
