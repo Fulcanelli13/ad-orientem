@@ -690,6 +690,101 @@ try{
         await page.screenshot({path:resolve(out,
           "live-65-inline-"+name+"-"+lang+"-"+width+".png"),
           fullPage:false,animations:"disabled"});
+
+        // Real 320px Consecration reachability: the final translated words
+        // must be reachable by touch scrolling and must clear the persistent
+        // arrows, progress counter and any active Schola panel. A screenshot
+        // showing truncated words at the fold is NOT itself a failure.
+        if(width===320 && lang==="en" && !secondConfiteor){
+          const scroller=page.locator("#ao-r17-native-reader-preview .ao-prayer-card");
+          const ready=await scroller.evaluate(el=>{
+            const translation=[...el.querySelectorAll(".ao-line-secondary")]
+              .filter(node=>node.textContent.trim()).at(-1);
+            return {max:el.scrollHeight-el.clientHeight,translation:translation?.textContent.trim()??"",
+              clientHeight:el.clientHeight};
+          });
+          assert.ok(ready.translation.length>35,name+" Consecration translation missing on 320px phone");
+          assert.ok(ready.max>100,name+" Consecration has no real vertical reading travel");
+          const bounds=await scroller.boundingBox();
+          assert.ok(bounds && bounds.width>150 && bounds.height>160,
+            name+" Consecration scrolling territory absent");
+          const touch=await context.newCDPSession(page);
+          const x=Math.round(bounds.x+bounds.width*.5);
+          const fromY=Math.round(bounds.y+bounds.height*.66);
+          const toY=Math.round(bounds.y+bounds.height*.22);
+          await scroller.evaluate(el=>{el.scrollTop=0});
+          await touch.send("Input.dispatchTouchEvent",{type:"touchStart",
+            touchPoints:[{x,y:fromY}]});
+          for(let step=1;step<=9;step++){
+            const y=Math.round(fromY+(toY-fromY)*step/9);
+            await touch.send("Input.dispatchTouchEvent",{type:"touchMove",touchPoints:[{x,y}]});
+          }
+          await touch.send("Input.dispatchTouchEvent",{type:"touchEnd",touchPoints:[]});
+          await page.waitForTimeout(300);
+          const touchTravel=await scroller.evaluate(el=>el.scrollTop);
+          assert.ok(touchTravel>15,name+" Consecration cannot be finger-scrolled at 320px");
+
+          const bottomEvidence=async()=>page.evaluate(()=>{
+            const el=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+            el.scrollTop=el.scrollHeight;
+            const last=[...el.querySelectorAll(".ao-line-secondary")]
+              .filter(node=>node.textContent.trim()).at(-1);
+            const controls=[...document.querySelectorAll("#ao-r17-native-reader-preview [data-reader-nav],"+
+              "#ao-r17-native-reader-preview [data-role='progress']")]
+              .filter(node=>getComputedStyle(node).display!=="none" &&
+                getComputedStyle(node).visibility!=="hidden");
+            const dock=document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock");
+            const dockActive=dock?.dataset.active==="true" &&
+              getComputedStyle(dock).display!=="none";
+            const box=el.getBoundingClientRect(),lastBox=last?.getBoundingClientRect();
+            const floor=Math.min(box.bottom,
+              ...controls.map(node=>node.getBoundingClientRect().top),
+              dockActive?dock.getBoundingClientRect().top:Infinity);
+            return {scrollTop:el.scrollTop,max:el.scrollHeight-el.clientHeight,
+              floor,scrollerTop:box.top,scrollerBottom:box.bottom,
+              lastTop:lastBox?.top??Infinity,lastBottom:lastBox?.bottom??Infinity,
+              lastText:last?.textContent.trim()??"",
+              horizontalOverflow:el.scrollWidth>el.clientWidth+1};
+          });
+          const verifyBottom=(seen,scale)=>{
+            assert.ok(Math.abs(seen.scrollTop-seen.max)<=3,
+              name+" "+scale+" failed to reach the actual final scroll position");
+            assert.equal(seen.lastText,ready.translation,
+              name+" "+scale+" discarded or substituted Consecration translation");
+            assert.equal(seen.horizontalOverflow,false,
+              name+" "+scale+" introduces side-scrolling prayer text");
+            assert.ok(seen.lastTop>=seen.scrollerTop+2 &&
+              seen.lastBottom<=seen.floor-5,
+              name+" "+scale+" last translated words are still underneath "+
+              "reader controls or Schola: "+JSON.stringify(seen));
+          };
+          await page.waitForTimeout(80);
+          const normal=await bottomEvidence();
+          verifyBottom(normal,"normal type");
+          await page.screenshot({path:resolve(out,"consecration-"+name+"-320-bottom.png"),
+            animations:"disabled"});
+
+          // Simulated 200% TEXT size: snapshot computed type sizes first and
+          // double just the prayer text, keeping the actual 320px shell,
+          // rails, progress and Schola controls in place. This is not a
+          // substitute for separate full-page browser 200% zoom acceptance.
+          await page.evaluate(()=>{
+            const el=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+            const nodes=[...el.querySelectorAll(".ao-reader-paragraph,.ao-line-primary,.ao-line-secondary")];
+            const fontSizes=nodes.map(node=>parseFloat(getComputedStyle(node).fontSize));
+            nodes.forEach((node,i)=>node.style.setProperty("font-size",
+              (fontSizes[i]*2)+"px","important"));
+          });
+          await page.waitForTimeout(120);
+          const doubled=await bottomEvidence();
+          verifyBottom(doubled,"200% prayer text");
+          await page.screenshot({path:resolve(out,"consecration-"+name+"-320-text200-bottom.png"),
+            animations:"disabled"});
+          console.log("PASS "+name+" Consecration 320px touch and 200% text reachability",{
+            touchTravel,normalBottomGap:normal.floor-normal.lastBottom,
+            enlargedBottomGap:doubled.floor-doubled.lastBottom
+          });
+        }
       }
     }
     await page.screenshot({path:resolve(out,lang+"-"+width+(secondConfiteor?"-with-local-confiteor":"")+"-credo.png"),fullPage:false});
