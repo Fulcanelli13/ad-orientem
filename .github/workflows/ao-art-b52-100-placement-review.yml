@@ -28,7 +28,14 @@ jobs:
           python -m py_compile scripts/research/sacred_art_b52_placement_proposals.py scripts/research/sacred_art_b52_first100_placement_review.py scripts/research/sacred_art_b52_publish_private_100_review.py
           test -f tests/sacred-art-b52-first100-places-and-artwork-review.mjs
           test -f previews/sacred-art-b52-review-100-template.html
-          node tests/sacred-art-b51-first50-offline-review-integrity.mjs || true
+          python - <<'PY'
+          import sys
+          sys.path.insert(0,'scripts/research')
+          from sacred_art_b52_placement_proposals import propose
+          assert any(x['slot_id']=='catena/father/john-chrysostom' for x in propose('Saint John Chrysostom','Anonymous'))
+          assert not any(x['slot_id']=='saints/profile/john-evangelist' for x in propose('Saint John Chrysostom','Anonymous'))
+          assert any(x['slot_id']=='saints/profile/hilary-abbot' for x in propose('Saint Lawrence / Saint Hilary — two-sided altarpiece panel','Juan Correa de Vivar'))
+          PY
       - name: Retrieve only exact original research archive files and create first 100 with suggested placements
         env:
           GH_TOKEN: ${{ github.token }}
