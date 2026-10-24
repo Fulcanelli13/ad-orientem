@@ -1118,6 +1118,10 @@ const QUIET_PRAY_HOME_CSS=String.raw`
  cursor:pointer;list-style:revert;outline-offset:3px;
 }
 #aoPray435930 .aoP435930QuietMoreContent{display:flex;flex-direction:column;gap:16px;padding-top:16px}
+/* Keep expanded catalogue launchers tappable above the persistent five-tab ribbon. */
+#aoPray435930 .aoP435930Mount:has(.aoP435930QuietHome){scroll-padding-bottom:calc(var(--ao-global-ribbon-h,68px) + 36px)!important}
+#aoPray435930 .aoP435930QuietMoreContent [data-p435930-family]{scroll-margin-bottom:calc(var(--ao-global-ribbon-h,68px) + 30px)!important}
+#aoPray435930 .aoP435930QuietMoreContent{padding-bottom:calc(var(--ao-global-ribbon-h,68px) + 44px)!important}
 #aoPray435930 .aoP435930QuietMoreContent .aoP435930RootGroup{margin:0!important}
 #aoPray435930 .aoP435930QuietMoreContent .aoP435930ModuleGrid{
  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;
