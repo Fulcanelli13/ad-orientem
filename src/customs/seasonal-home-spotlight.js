@@ -208,8 +208,11 @@ export const SEASONAL_CUSTOMS_PILOT = Object.freeze([
   }
 ].map(row=>Object.freeze(row)));
 const published = new Set(CALENDAR_CUSTOM_ARTICLE_IDS);
-const valid = value => /^\d{4}-\d{2}-\d{2}$/.test(String(value||"")) &&
-  new Date(String(value)+"T12:00:00Z").toISOString().slice(0,10)===value;
+const valid = value => {
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(String(value||"")))return false;
+ const d=new Date(String(value)+"T12:00:00Z");
+ return Number.isFinite(d.getTime())&&d.toISOString().slice(0,10)===value;
+};
 const utcDay = value => Date.parse(value+"T12:00:00Z")/86400000;
 const diff = (from,to) => Math.round(utcDay(to)-utcDay(from));
 function targetDates(rule,year){
