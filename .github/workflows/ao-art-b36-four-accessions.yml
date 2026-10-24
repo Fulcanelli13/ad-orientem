@@ -1,0 +1,60 @@
+name: B36 recover 4 exact institution-accessioned source photographs under unpublished SHA archive
+on:
+  push:
+    branches: [research/sacred-art-b36-87-lead-object-verification-20261024]
+    paths: [.github/workflows/ao-art-b36-four-accessions.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-b36-four-sources-once
+  cancel-in-progress: false
+jobs:
+  source-photo-archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b36-87-lead-object-verification-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Decoder and fixed scope preflight
+        run: |
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python -m py_compile scripts/research/sacred_art_b36_museum4.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          q=json.loads(Path('data/research/sacred-art-b36-four-accessioned-photo-source-manifest.json').read_text())
+          s=json.loads(Path('data/research/sacred-art-b36-87-media-object-screen.json').read_text())
+          assert len(q["records"])==4 and len(s["records"])==87
+          assert not q["publication_approved"] and not q["editorial_selected"]
+          assert all(not r["app_rights_approved"] and not r["editorial_selected"] for r in q["records"])
+          PY
+      - name: Revalidate file-level Commons licenses and recover exact accession source image bytes
+        run: python scripts/research/sacred_art_b36_museum4.py
+      - name: Mandatory draft-release remote archive transfer and SHA verification
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py \
+            --wave b36-four-accessions --source-dir artifacts/b36-museum4
+      - name: Commit only the source research audit, never photo files or editorial choices
+        run: |
+          set -euo pipefail
+          cp artifacts/b36-museum4/source-results.csv data/research/sacred-art-b36-four-file-results.csv
+          cp artifacts/b36-museum4/source-summary.json data/research/sacred-art-b36-four-file-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b36-four-file-results.csv data/research/sacred-art-b36-four-file-summary.json
+          git commit -m 'research: B36 four museum-verified file-level source SHA records, not app approvals'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b36-87-lead-object-verification-20261024
+            git rebase origin/research/sacred-art-b36-87-lead-object-verification-20261024
+            git push origin HEAD:research/sacred-art-b36-87-lead-object-verification-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
