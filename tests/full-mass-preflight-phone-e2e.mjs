@@ -136,7 +136,9 @@ try{
  }
  assert.equal(await page.locator("[data-full-mass-form]").count(),4,"Canonical form controls cloned or removed");
  assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),3,"Canonical reader controls cloned or removed");
- await page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]').click();
+ // The overview hides the old stage nav; its three visible quick rows are the
+ // canonical navigation into the same stage controls.
+ await page.locator('.aoMassFolioQuickChoices [data-folio-goto="reader"]').click();
  for(const mode of ["MISSAL","SIMPLE","LIVE"]){
   await page.locator('[data-full-mass-reader-mode][value="'+mode+'"]').check();
   assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).readerMode,mode);
