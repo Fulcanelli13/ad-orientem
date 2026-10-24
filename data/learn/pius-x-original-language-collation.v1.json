@@ -1,0 +1,419 @@
+{
+  "schema": "AO_PIUS_X_VOICE_SOURCE_COLLATION_V1",
+  "date": "2026-10-19",
+  "owner": "STYLE_ONLY_SOURCE_CRITICAL_REVIEW",
+  "publication": "DRAFT_NOT_RUNTIME",
+  "scope": "Evidence-level verification of nine simulated dialogue turns; does not approve newly authored EN/FR dialogue or answer content.",
+  "witnessPolicy": {
+    "sourceLanguageSupremacy": "LATIN_FOR_AD_DIEM_AND_ACERBO_WHERE_COMPETING_WEB_TRANSLATIONS_DIVERGE",
+    "qualityGate": "A website published by the Holy See is an authenticated host but an individual translation can contain transcription or translation errors.",
+    "italian1912CatechismFullTextVerified": false,
+    "modernEnglish433QuestionIndexIsHistoricalOriginal": false,
+    "frenchDraftPersonallySpokenBySarto": false,
+    "quam1910Authorship": "CONGREGATIONAL_DECREE_APPROVED_BY_PIUS_X_NOT_SPONTANEOUS_WORDS",
+    "originalMayorBortoloTranscriptRead": false,
+    "fullAutographsReviewed": false
+  },
+  "witnesses": [
+    {
+      "id": "ADIEM-LA-1904",
+      "type": "AUTHORITATIVE_LATIN_TEXT",
+      "url": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "locators": [
+        "Passage beginning Equidem non diffitemur",
+        "Fons igitur Christus est",
+        "Patet itaque abesse"
+      ],
+      "checked": true
+    },
+    {
+      "id": "ADIEM-FR-1904",
+      "type": "VATICAN_FRENCH_TRANSLATION",
+      "url": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "locators": [
+        "Passage Il s'en faut donc grandement"
+      ],
+      "checked": true
+    },
+    {
+      "id": "ADIEM-IT-1904",
+      "type": "VATICAN_ITALIAN_TEXT_TRANSLATION_DISCREPANCY",
+      "url": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "locators": [
+        "Passage È dunque evidente che noi dobbiamo attribuire"
+      ],
+      "checked": true,
+      "discrepant": true
+    },
+    {
+      "id": "ACERBO-LA-1905",
+      "type": "AUTHORITATIVE_LATIN_TEXT",
+      "url": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "locators": [
+        "Catechist's duty: Hoc scilicet catechistae munus est",
+        "facili quidem sermone et ad captum accommodato"
+      ],
+      "checked": true
+    },
+    {
+      "id": "ACERBO-IT-1905",
+      "type": "VATICAN_ITALIAN_VERSION",
+      "url": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "locators": [
+        "IX. La spiegazione del Vangelo",
+        "XV. L'insegnamento del catechismo richiede grande preparazione"
+      ],
+      "checked": true
+    },
+    {
+      "id": "PIUS1912-IT-LETTER",
+      "type": "PIUS_X_PUBLISHED_PERSONAL_OFFICIAL_LETTER_ITALIAN",
+      "url": "https://www.vatican.va/content/pius-x/it/letters/documents/hf_p-x_let_19121018_catechismo.html",
+      "locators": [
+        "Tuttavia col volgere degli anni",
+        "non disanimerà i giovanetti",
+        "Recitation instructions"
+      ],
+      "checked": true
+    },
+    {
+      "id": "QUAM-1910-LA-DH",
+      "type": "LATIN_EXCERPT_DH_3530_3533",
+      "url": "https://theofons.net/it/ds/3100",
+      "locators": [
+        "DH 3530 age of discretion",
+        "DH 3531 complete knowledge not prerequisite",
+        "DH 3532 discern Eucharistic bread"
+      ],
+      "checked": true,
+      "sourceTypeNote": "DH transcription of Latin original promulgated congregational decree; full official AAS 2 (1910) pp. 577–583 not independently inspected."
+    },
+    {
+      "id": "QUAM-1910-EN",
+      "type": "HISTORICAL_DOCUMENT_TRANSLATION",
+      "url": "https://www.catholicculture.org/culture/library/view.cfm?id=5170",
+      "locators": [
+        "Norms 1-3"
+      ],
+      "checked": true,
+      "sourceTypeNote": "Use for checking the meaning of the Latin norms, not as Pius X's private spoken English."
+    },
+    {
+      "id": "PX1912-EN-STRUCT",
+      "type": "MODERN_STRUCTURED_ENGLISH_CATECHISM_WITNESS",
+      "url": "https://github.com/gustavo-depaula/ember/tree/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US",
+      "locators": [
+        "Q114–116",
+        "Q232, Q235–236",
+        "Q325, Q329, Q335, Q338, Q342",
+        "Q430–433"
+      ],
+      "checked": true,
+      "sourceTypeNote": "Modern English translation/transcription of originally Italian Catechism; not original Italian source collation or proof of Pius X's personal spoken diction."
+    },
+    {
+      "id": "PX1912-IT-STRUCT",
+      "type": "ITALIAN_1912_CATECHISM_MODERN_NUMBERED_TRANSCRIPTION",
+      "url": "https://github.com/gustavo-depaula/ember/tree/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it",
+      "checked": true,
+      "locators": [
+        "Q114–116 credo-chiesa.md",
+        "Q232/Q235–236 legge-virtu.md",
+        "Q325/Q329/Q335/Q338/Q342 sacramento-eucaristia.md",
+        "Q430–433 orazione.md"
+      ],
+      "sourceTypeNote": "Pinned modern Italian transcription of 1912 Catechism, not a facsimile of 1912 print. The 15 listed Italian questions and answer passages were individually checked by number and compared with the existing modern English source for substance."
+    },
+    {
+      "id": "PX1912-IT-SECOND-INDEPENDENT",
+      "type": "INDEPENDENT_ITALIAN_CATECHISM_WEB_TRANSCRIPTION",
+      "url": "https://www.linuxpac.it/catechismo-della-dottrina-cristiana-1912-detto-di-san-pio-x",
+      "checked": true,
+      "locators": [
+        "Q114–116 Chiesa Cattolica chapter",
+        "Q232/Q235/Q236 Virtù chapter",
+        "Q430–433 Orazione chapter"
+      ],
+      "sourceTypeNote": "Independent publisher corroborates Italian text and question numbering for 10 documented questions from the sample. Eucharist chapter not fully inspected from this host during this pass; do not overclaim double-source verification."
+    }
+  ],
+  "criticalDiscrepancies": [
+    {
+      "id": "ADIEM-ITALIAN-NEGATION-OMISSION",
+      "severity": "CRITICAL_SOURCE_HAZARD",
+      "witnesses": [
+        "ADIEM-LA-1904",
+        "ADIEM-FR-1904",
+        "ADIEM-IT-1904"
+      ],
+      "latinText": "Patet itaque abesse profecto plurimum ut nos Deiparae supernaturalis gratiae efficiendae vim tribuamus, quae Dei unius est.",
+      "frenchText": "Il s'en faut donc grandement ... que Nous attribuions à la Mère de Dieu une vertu productrice de la grâce, vertu qui est de Dieu seul.",
+      "italianOnlineText": "È dunque evidente che noi dobbiamo attribuire alla Madre di Dio una virtù produttrice di grazie: quella virtù che è solo di Dio.",
+      "verdict": "ITALIAN_WEBPAGE_APPEARS_TO_REVERSE_OR_OMIT_LATIN_NEGATION",
+      "safeReading": "Mary is not attributed the proper divine power of producing supernatural grace; Christ alone is its source. Mary's intercession is derived/dependent.",
+      "action": "Prefer Latin for doctrinal meaning; mark affected Italian webpage sentence as suspect and check a physical critical edition before asserting an editorial erratum.",
+      "releaseGate": "NEVER_DERIVE_CONTRARY_DOCTRINE_FROM_ITALIAN_ONLY",
+      "notifiedPR": "#1406"
+    },
+    {
+      "id": "QUAM-Q342-SCOPE",
+      "severity": "MODERATE_SOURCE_PRECISION",
+      "witnesses": [
+        "QUAM-1910-LA-DH",
+        "PX1912-EN-STRUCT"
+      ],
+      "verdict": "Q342 asks the age at which Easter Communion obligation begins, not directly the complete eligibility/preparation test for a child's First Communion.",
+      "safeReading": "Use Quam Singulari DH 3531–3532 for minimum pre-Communion doctrinal knowledge and continued catechesis; Q342 only secondary background.",
+      "releaseGate": "DO_NOT_USE_Q342_AS_ONLY_ELIGIBILITY_PROOF"
+    },
+    {
+      "id": "Q335-OLD-FAST",
+      "severity": "HIGH_HISTORICAL_DISCIPLINE",
+      "witnesses": [
+        "PX1912-EN-STRUCT"
+      ],
+      "verdict": "The indexed Q335 includes the then-prescribed fast from midnight; that prescription must not be recast as current Catholic fasting law.",
+      "safeReading": "For the Eucharistic Real Presence, cite Q325 and/or Q331; for knowing whom one receives, Q338; never present Q335's old fasting detail without date and current-law caveat.",
+      "releaseGate": "NO_UNQUALIFIED_1912_CURRENT_DISCIPLINE"
+    },
+    {
+      "id": "EARLY_IT_CAT_NOT_COLLATED",
+      "severity": "EDITORIAL_LIMIT",
+      "witnesses": [
+        "PX1912-EN-STRUCT",
+        "PIUS1912-IT-LETTER"
+      ],
+      "verdict": "Selected 15 Italian catechism questions now located in a pinned Italian transcription; 10 independently cross-checked with a second Italian website. The 1912 printed edition/facsimile remains uninspected; authorial diction still not directly attributable to Pius X.",
+      "releaseGate": "ITALIAN_QUESTION_BY_QUESTION_COLLATION_STILL_NEEDED"
+    }
+  ],
+  "turnReviews": [
+    {
+      "caseId": "PX-STYL-OUR-LADY-01",
+      "turn": 1,
+      "sourceVerdict": "SUBSTANCE_SUPPORTED_WITH_SCOPE_NOTE",
+      "verifiedWitnessIds": [
+        "ADIEM-LA-1904",
+        "ADIEM-FR-1904",
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
+      ],
+      "originalSynthesis": "Latin confirms grace-production is divine alone and Marian intercession does not compete with Christ; distinction adoration vs veneration also needs explicit catechetical source if presented as an exact quotation.",
+      "requiredAction": "Keep simulated prose clearly unquoted; disallow discrepant Italian positive grace-production reading."
+    },
+    {
+      "caseId": "PX-STYL-OUR-LADY-01",
+      "turn": 2,
+      "sourceVerdict": "SUBSTANCE_SUPPORTED_HIGH_CRITICAL_HAZARD",
+      "verifiedWitnessIds": [
+        "ADIEM-LA-1904",
+        "ADIEM-FR-1904",
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
+      ],
+      "originalSynthesis": "Christ is the source, Mary intercedes through Christ's merits; original Latin specifically attributes to Bernard the aqueduct metaphor.",
+      "requiredAction": "Anchor to Latin and note incompatible web-Italian phrase; do not suggest Mary independently produces grace."
+    },
+    {
+      "caseId": "PX-STYL-OUR-LADY-01",
+      "turn": 3,
+      "sourceVerdict": "SUBSTANCE_SUPPORTED_WITH_EDITORIAL_CONNECTIVE",
+      "verifiedWitnessIds": [
+        "ADIEM-LA-1904",
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
+      ],
+      "originalSynthesis": "The Hail Mary seeks Mary's intercession in life and death; directing Marian devotion toward Christ is supported by the encyclical's purpose.",
+      "requiredAction": "Practical advice is composed, not papal reported speech."
+    },
+    {
+      "caseId": "PX-STYL-CHILD-CATECHISM-02",
+      "turn": 1,
+      "sourceVerdict": "SUBSTANCE_SUPPORTED_Q342_NOT_SUFFICIENT_ALONE",
+      "verifiedWitnessIds": [
+        "QUAM-1910-LA-DH",
+        "QUAM-1910-EN",
+        "PIUS1912-IT-LETTER",
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
+      ],
+      "originalSynthesis": "DH 3531: complete Christian doctrinal knowledge is not required before First Communion; DH 3532: child understands necessary mysteries in proportion to capacity and distinguishes Eucharistic bread from common bread.",
+      "requiredAction": "Make Quam Singulari DH 3531–3532 primary; Q342 only supplementary; ensure context concerns readiness, not general relaxed standards."
+    },
+    {
+      "caseId": "PX-STYL-CHILD-CATECHISM-02",
+      "turn": 2,
+      "sourceVerdict": "SUBSTANCE_SUPPORTED_Q325_STRONGER_THAN_Q335_FOR_REAL_PRESENCE",
+      "verifiedWitnessIds": [
+        "QUAM-1910-LA-DH",
+        "ACERBO-LA-1905",
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
+      ],
+      "originalSynthesis": "Catechism Q325 directly states consecrated Host is true Body of Christ; Q338 addresses faith and reverence; Quam Singulari explains a child's discernment.",
+      "requiredAction": "Cite Q325 for real presence. Q335 unnecessary here and carries historic midnight-fasting rule; keep it out of the main evidence IDs."
+    },
+    {
+      "caseId": "PX-STYL-CHILD-CATECHISM-02",
+      "turn": 3,
+      "sourceVerdict": "SUBSTANCE_SUPPORTED",
+      "verifiedWitnessIds": [
+        "QUAM-1910-LA-DH",
+        "ACERBO-LA-1905",
+        "PX1912-IT-STRUCT"
+      ],
+      "originalSynthesis": "Quam Singulari DH 3531 explicitly mandates continuing instruction and gradual acquisition of full Catechism afterwards; catechist instructed to teach accessibly.",
+      "requiredAction": "Keep short; preserve 'after First Communion' temporal distinction."
+    },
+    {
+      "caseId": "PX-STYL-TEACHING-OBJECTION-03",
+      "turn": 1,
+      "sourceVerdict": "MODERN_ENGLISH_CATECHISM_ONLY_FOR_PRECISE_QUOTATION",
+      "verifiedWitnessIds": [
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
+      ],
+      "originalSynthesis": "Q232 identifies the authority of divine revelation; Q114 and Q236 explain Church as entrusted teaching authority.",
+      "requiredAction": "Original 1912 Italian exact phrase not collated: doctrinally plausible paraphrase only, not a verified Sarto direct expression."
+    },
+    {
+      "caseId": "PX-STYL-TEACHING-OBJECTION-03",
+      "turn": 2,
+      "sourceVerdict": "MODERN_ENGLISH_CATECHISM_ONLY_FOR_PRECISE_QUOTATION",
+      "verifiedWitnessIds": [
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
+      ],
+      "originalSynthesis": "Q114–116 distinguish Church's teaching office and conditions of infallibility; application to casual remarks by individual priests is a reasonable inference, not verbatim Q114–116.",
+      "requiredAction": "Do not equate all individual episcopal or papal utterances with nonauthoritative opinions; broader magisterial nuances require content-owner judgment."
+    },
+    {
+      "caseId": "PX-STYL-TEACHING-OBJECTION-03",
+      "turn": 3,
+      "sourceVerdict": "EDUCATIONAL_TRANSITION_NOT_HISTORICALLY_ATTESTED_SPEECH",
+      "verifiedWitnessIds": [
+        "PX1912-EN-STRUCT",
+        "ACERBO-LA-1905",
+        "PX1912-IT-STRUCT"
+      ],
+      "originalSynthesis": "Request for a precise proposition supports catechetical method rather than claiming authentic recorded Sarto words.",
+      "requiredAction": "Keep quote attribution false; no scripted answer to unspecified personal doctrinal controversy."
+    }
+  ],
+  "editorialApproval": {
+    "latinMarianMeaningChecked": true,
+    "italianOnlineMarianWordingSuspicious": true,
+    "latinQuamRulesChecked": true,
+    "originalItalian1912QuestionAnswersChecked": false,
+    "sourceFactsAutomaticallyReleased": false,
+    "inventedReplyENApproved": false,
+    "inventedReplyFRApproved": false,
+    "theologicalReviewerSignedOff": false,
+    "styleReviewerSignedOff": false,
+    "runtimeImportAllowed": false,
+    "sourcesMayBeQuotedVerbatimInCharacter": false,
+    "targetedItalian1912TranscriptionAligned": true,
+    "italian1912ContemporaneousPrintChecked": false
+  },
+  "targetedItalianTranscription": {
+    "status": "SELECTED_15_QUESTION_ITALIAN_TRANSCRIPTION_CONTENT_REVIEWED",
+    "questions": [
+      {
+        "q": 114,
+        "p": "credo-chiesa.md",
+        "anchor": "Il Papa e i Vescovi uniti con lui costituiscono la Chiesa docente",
+        "doubleWitness": true
+      },
+      {
+        "q": 115,
+        "p": "credo-chiesa.md",
+        "anchor": "la Chiesa docente ... è infallibile",
+        "doubleWitness": true
+      },
+      {
+        "q": 116,
+        "p": "credo-chiesa.md",
+        "anchor": "quando da Pastore e Maestro di tutti i cristiani",
+        "doubleWitness": true
+      },
+      {
+        "q": 232,
+        "p": "legge-virtu.md",
+        "anchor": "per cui crediamo, sull'autorità di Dio",
+        "doubleWitness": true
+      },
+      {
+        "q": 235,
+        "p": "legge-virtu.md",
+        "anchor": "l'insegnamento di Gesù Cristo e degli Apostoli, fatto a viva voce",
+        "doubleWitness": true
+      },
+      {
+        "q": 236,
+        "p": "legge-virtu.md",
+        "anchor": "Dio affidò il deposito della Fede",
+        "doubleWitness": true
+      },
+      {
+        "q": 325,
+        "p": "sacramento-eucaristia.md",
+        "anchor": "l'ostia è il vero Corpo del Nostro Signor Gesù Cristo",
+        "doubleWitness": false
+      },
+      {
+        "q": 329,
+        "p": "sacramento-eucaristia.md",
+        "anchor": "ne restano solamente le specie o apparenze, senza la sostanza",
+        "doubleWitness": false
+      },
+      {
+        "q": 335,
+        "p": "sacramento-eucaristia.md",
+        "anchor": "essere digiuno dalla mezzanotte",
+        "doubleWitness": false
+      },
+      {
+        "q": 338,
+        "p": "sacramento-eucaristia.md",
+        "anchor": "accostarsi a Nostro Signor Gesù Cristo nell'Eucaristia",
+        "doubleWitness": false
+      },
+      {
+        "q": 342,
+        "p": "sacramento-eucaristia.md",
+        "anchor": "l'obbligo della comunione pasquale",
+        "doubleWitness": false
+      },
+      {
+        "q": 430,
+        "p": "orazione.md",
+        "anchor": "Madre di Dio e piena di grazia",
+        "doubleWitness": true
+      },
+      {
+        "q": 431,
+        "p": "orazione.md",
+        "anchor": "invochiamo la Madonna specialmente con l'Ave Maria",
+        "doubleWitness": true
+      },
+      {
+        "q": 432,
+        "p": "orazione.md",
+        "anchor": "materna intercessione per noi in vita e in morte",
+        "doubleWitness": true
+      },
+      {
+        "q": 433,
+        "p": "orazione.md",
+        "anchor": "per essi, e solo per essi",
+        "doubleWitness": true
+      }
+    ],
+    "primaryUrlTemplate": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/{file}",
+    "independentSecondaryUrl": "https://www.linuxpac.it/catechismo-della-dottrina-cristiana-1912-detto-di-san-pio-x",
+    "comparedWithExistingEnglishIndex": true,
+    "claimedContemporaneousPrintedEditionChecked": false,
+    "claimOfSartoPrivateSpeech": false,
+    "editorialScope": "Original Italian *textual transcription* alignment for targeted question numbers, not printed archetype or Sarto's personally composed sentence wording."
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "AO_PIUS_X_PERIOD_CATHOLIC_PROSE_COMPARATORS_V1",
+  "date": "2026-10-18",
+  "purpose": "Compare period/genre features with nearby papal authors so the style model uses contemporary Catholic prose but does not falsely ascribe conventions uniquely to Giuseppe Sarto.",
+  "scope": "RHETORICAL_CONTROL_NOT_DOCTRINE_OR_VOICE_OF_PIUS_X",
+  "publication": "DRAFT_NOT_RUNTIME",
+  "comparisonDocs": [
+    {
+      "id": "PERIOD-LEO-1902",
+      "author": "Leo XIII",
+      "title": "Mirae Caritatis",
+      "date": "1902-05-28",
+      "genre": "ENCYCLICAL",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_28051902_mirae-caritatis.html",
+      "sharedFeatures": [
+        "PAPAL_FIRST_PERSON_PLURAL",
+        "SCRIPTURE_CITATION",
+        "PERIODIC_FORMAL_SYNTAX",
+        "CHRISTIAN_CHARITY_CONCLUSION"
+      ],
+      "limitation": "Leo XIII speaks on Eucharistic devotion, so differences in subject matter are not differences in personality."
+    },
+    {
+      "id": "PERIOD-BENEDICT-1914",
+      "author": "Benedict XV",
+      "title": "Ad Beatissimi Apostolorum",
+      "date": "1914-11-01",
+      "genre": "ENCYCLICAL",
+      "url": "https://www.vatican.va/content/benedict-xv/en/encyclicals/documents/hf_ben-xv_enc_01111914_ad-beatissimi-apostolorum.html",
+      "sharedFeatures": [
+        "PAPAL_FIRST_PERSON_PLURAL",
+        "PATERNAL_FORMULA",
+        "SCRIPTURE_CITATION",
+        "GRAVE_SOCIAL_CONCERN",
+        "APOSTOLIC_BENEDICTION"
+      ],
+      "limitation": "The 1914 European-war context alters emphasis; this comparison demonstrates genre conventions, not differences in courage or charity."
+    }
+  ],
+  "periodConventionsNotEvidenceOfDistinctivePiusVoice": [
+    "Frequent formal first-person plural in papal encyclicals",
+    "Venerable Brethren and Apostolic Benediction salutation/closure",
+    "Scripture allusions and prolonged periodic syntax",
+    "Solemn language about divine providence and the Church's mission",
+    "General paternal affection and concern for the salvation of souls"
+  ],
+  "candidateSartoSignalsNeedingRepeatedInternalWitnesses": [
+    {
+      "featureId": "EFFICIENT_CATECHESIS",
+      "piusDocuments": [
+        "PXV-1905-ACERBO",
+        "PXV-1912-CATECHISM"
+      ],
+      "distinction": "Insistence on careful brevity, work of instruction, and concrete concern over learner burden.",
+      "uniqueToPius": false
+    },
+    {
+      "featureId": "PARENTAL_CORRECTION",
+      "piusDocuments": [
+        "PXV-1905-ACTION",
+        "PXV-1908-HAERENT"
+      ],
+      "distinction": "Specific coupling of rejecting distorted words or error with charity towards the erring.",
+      "uniqueToPius": false
+    },
+    {
+      "featureId": "CONCRETE_PASTORAL_OBSERVATION",
+      "piusDocuments": [
+        "PXV-1903-RURAL",
+        "PXV-1907-YOUTH",
+        "PXV-1912-CATECHISM"
+      ],
+      "distinction": "Recalls poor rural churches and addresses workaday education/organisation issues in concrete terms.",
+      "uniqueToPius": false
+    }
+  ],
+  "trainingContract": "Sample language forms from nearby period controls for calibration ONLY. Never present Leo XIII or Benedict XV wording as St Pius X's words. Claim Pius-specific tendencies only when attested in his own documents. A two-control sample cannot establish statistical uniqueness.",
+  "appliedToAvatar": false,
+  "theologicalAnswersCopied": 0,
+  "approval": false
+}
