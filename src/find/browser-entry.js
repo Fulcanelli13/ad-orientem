@@ -1016,6 +1016,13 @@ export function createFindOwner(win=globalThis){
   function onClick(event){
     if(!openState)return;
     const target=event?.target;
+    // Public customs reading now belongs to the existing Calendar, not a Places Atlas.
+    if(target?.closest?.("[data-explore-customs-calendar]")){
+      event.preventDefault?.();
+      void handoff("calendar",()=>win?.AO_CALENDAR_APP_V1?.open?.(),
+        language(win)==="fr"?"Impossible d’ouvrir le calendrier des coutumes.":"Could not open the Calendar traditions.");
+      return;
+    }
     const customsLibrary=target?.closest?.("[data-explore-customs-library]");
     if(customsLibrary&&state.lens==="traditions"){
       event.preventDefault?.();
