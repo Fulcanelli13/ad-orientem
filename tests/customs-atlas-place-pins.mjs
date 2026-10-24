@@ -15,7 +15,7 @@ const p11Review=read("data/geography/research/sacred-geography-p11-osm-site-anch
 const p11ByPlace=new Map(p11Review.records.map(row=>[row.place_id,row]));
 const places=new Map(geography.places.map(place=>[place.place_id,place]));
 const published=geography.places.filter(place=>isMapPublishablePlaceGeo(place.geo,place.address?.country_code));
-assert.equal(published.length,361,"All current canonical Places retain source-backed map coordinates");
+assert.equal(published.length,371,"All current canonical Places retain source-backed map coordinates");
 assert.equal(evidence.records.length,58,"58 source-attributed coordinate promotions required");
 assert.equal(new Set(evidence.records.map(e=>e.place_id)).size,evidence.records.length,"duplicate GPS provenance");
 for(const record of evidence.records){
