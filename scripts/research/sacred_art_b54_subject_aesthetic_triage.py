@@ -16,7 +16,7 @@ DIRECT=[
  r"\brubens\b",r"\bcaravaggio\b",r"van dyck",r"\bchampaigne\b",
  r"\bribera\b",r"\bzurbaran\b",r"\bguido reni\b",r"\brembrandt\b",
  r"\bmattia preti\b",r"\bvelazquez\b",r"\bgerard seghers\b",
- r"\bguercino\b",r"\bjan lievens\b",r"\bartemisia gentileschi\b",
+ r"\bguercino\b",r"\bjan lievens\b",r"\bjuan bautista maino\b",r"\bartemisia gentileschi\b",
  r"\bbartolomeo manfredi\b",r"\bfetti\b",r"\bclaudio coello\b",
  r"\bmurillo\b",r"\bvalentin de boulogne\b",r"\bjean jouvenet\b",
  r"\bcavalier d arpino\b",r"\bcarlo dolci\b",r"\bcaravaggist\b",
@@ -137,7 +137,14 @@ def classify(title,artist,artwork_id=""):
         if not re.search(r"\bcrucifixion of (?:saint|st)\s+(?:peter|andrew|philip)\b",t):
             add("passion")
     if hit(t,POST_EASTER):add("resurrection_acts")
-    if hit(t,GOSPEL):add("gospel_life")
+    if hit(t,GOSPEL):
+        # Visitation refers both to Luke 1 and the later Visitation order.
+        # 'St Francis de Sales giving the rule of the Visitation' is NOT
+        # the Blessed Virgin visiting St Elizabeth.
+        if not (re.search(r"visitation",t) and re.search(r"rule|regle|francis de sales|francois de sales|jeanne de chantal",t)
+                and not re.search(r"\bthe virgin\b|\bmary\b|\belizabeth\b|\belisabeth\b",t)
+                and not any(re.search(p,t) for p in GOSPEL if p!=r"\bvisitation\b")):
+            add("gospel_life")
     if hit(t,MARIAN):add("marian")
     if hit(t,DEVOTIONAL):add("devotional")
     if hit(t,SAINTS):add("saints")
