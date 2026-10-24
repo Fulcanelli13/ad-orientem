@@ -1,6 +1,10 @@
 /* Additional review layer; never part of the published St Pius X dialogue. */
 (()=>{
 "use strict";
+// Only the explicitly opt-in local P56 pilot uses bilingual atomic cues.
+ // The ordinary private review and approved offline scene stay unchanged.
+const localP56=document.querySelector('meta[name="ao-spx-p56-local"]')
+ ?.getAttribute('content')==='P53_ATOMIC_CLAIM_CUES';
 const root=document.createElement('section');
 root.id='spxc-model-review';
 root.innerHTML="<div class='spxm-head'><strong>MODEL-ASSISTED PRIVATE EDITORIAL TRIAL</strong><small id='spxm-limit'>No historical or doctrinal approval</small></div>"+
@@ -50,8 +54,13 @@ function paragraph(content,cls){const p=document.createElement('p');if(cls)p.cla
 function display(lang){
  const t=translations[lang]||translations.en;
  $('spxm-label').textContent=t.label;$('spxm-send').textContent=t.send;
- $('spxm-scope').textContent=t.scope;
- $('spxm-limit').textContent='PRIVATE · UNCOLLATED ORIGINALS · NO PUBLICATION';
+ $('spxm-scope').textContent=t.scope+(localP56?
+  (lang==='fr'?
+   ' MODÈLE LOCAL EXPÉRIMENTAL · les réponses peuvent être lentes. Texte historique reconstruit et non authentifié; les réponses documentées restent disponibles.':
+   ' LOCAL EXPERIMENTAL MODEL · replies may be slow. Constructed historical language is not authenticated; authored documentary answers remain available.'):'');
+ $('spxm-limit').textContent=localP56?
+  'PRIVATE LOCAL 7B PILOT · NO PUBLICATION · NO CLOUD':
+  'PRIVATE · UNCOLLATED ORIGINALS · NO PUBLICATION';
  renderVoiceMode();
 }
 document.addEventListener('ao-spx-review-context',e=>{
@@ -75,7 +84,9 @@ $('spxm-form').addEventListener('submit',async e=>{
   const resp=await fetch('/api/pius-x-review',{method:'POST',
    headers:{'content-type':'application/json','x-ao-review':'1'},
    body:JSON.stringify({...snapshot,question,history:previous,
-     autoRoute:['SPX-PILOT-01','SPX-PILOT-09','SPX-029','SPX-NEW-012'].includes(snapshot.chapterId)})});
+     autoRoute:['SPX-PILOT-01','SPX-PILOT-09','SPX-029','SPX-NEW-012'].includes(snapshot.chapterId),
+     ...(localP56&&snapshot.chapterId==='SPX-PILOT-01'?
+       {experimentalComposerProfile:'P53_ATOMIC_CLAIM_CUES'}:{})})});
   const result=await resp.json();
   entry.querySelector('.spxm-status')?.remove();
   if(context.chapterId!==snapshot.chapterId||context.language!==snapshot.language||
