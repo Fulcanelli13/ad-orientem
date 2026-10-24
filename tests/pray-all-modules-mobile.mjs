@@ -46,6 +46,7 @@ try{
  const visibleFamilyIds=[],externalRoutes=[];
  for(const family of ["daily","eucharistic","penance","passion","devotions"]){
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   if(family!=="daily")await page.locator("#aoPray435930 .aoP435930QuietMore>summary").click();
    const door=page.locator('#aoPray435930.open [data-p435930-family="'+family+'"]');
    assert.equal(await door.count(),1,"Missing Prayer-family door "+family);
    await door.tap({timeout:10000});
