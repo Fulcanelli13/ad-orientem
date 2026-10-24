@@ -1,3 +1,4 @@
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 
@@ -7,7 +8,7 @@ const sites=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const audit=read("data/shrines/research/holywell-source-url-drift-20261016.v1.json");
 const byId=new Map(reg.sources.map(x=>[x.id,x]));
 
-assert.equal(reg.sources.length,669);
+assert.equal(reg.sources.length,LIVE.sources);
 assert.equal(byId.size,reg.sources.length);
 assert.equal(audit.schema,"ao.shrines.source-url-drift-review.v1");
 assert.equal(audit.status,"SOURCE_OWNER_URL_REPAIR_NO_SHRINE_PLACE_ID_OR_FEAST_AUTHORITY_CHANGE");
