@@ -1,0 +1,243 @@
+{
+  "schema": "AO_SACRED_PLACES_P28_WORLD_11_EXACT_MAP_V1",
+  "date": "2026-10-24",
+  "status": "CANONICAL_MAP_FIRST_RELEASE",
+  "baseline": {
+    "places": 387,
+    "sources": 685,
+    "crosswalk": 387,
+    "unlinked": 128,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 398,
+    "sources": 696,
+    "crosswalk": 398,
+    "unlinked": 139,
+    "geo_areas": 142,
+    "directory_links": 9
+  },
+  "reviewed_named_candidates": 13,
+  "reused_existing": [
+    {
+      "candidate_id": "SG-INV-0728",
+      "place_id": "place:BJ:immaculate-conception-basilica-ouidah",
+      "geo_source_ref": "osm:way:402951938"
+    },
+    {
+      "candidate_id": "SG-INV-0748",
+      "place_id": "place:FJ:sacred-heart-cathedral-suva",
+      "geo_source_ref": null
+    }
+  ],
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0632",
+      "place_id": "place:PH:baclaran-national-shrine-perpetual-help",
+      "name": "National Shrine of Our Mother of Perpetual Help — Baclaran",
+      "country": "PH",
+      "place_type": "national_shrine",
+      "lat": 14.53141,
+      "lng": 120.99525,
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0632"
+      ],
+      "identity_source_url": "https://www.baclaranchurch.org/about",
+      "geo_source_url": "https://www.openstreetmap.org/way/24058935",
+      "geo_source_ref": "osm:way:24058935",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W24058935",
+      "precision": "site",
+      "scope_limit": "Redemptorist church building, not garden."
+    },
+    {
+      "candidate_id": "SG-INV-0184",
+      "place_id": "place:AT:basilika-mariatrost-graz",
+      "name": "Basilika Mariatrost, Graz",
+      "country": "AT",
+      "place_type": "basilica",
+      "lat": 47.10725,
+      "lng": 15.49156,
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0184"
+      ],
+      "identity_source_url": "https://www.katholische-kirche-steiermark.at/goto/instvisitenkarte/1535/Pfarre_Graz_Mariatrost",
+      "geo_source_url": "https://www.openstreetmap.org/way/121500989",
+      "geo_source_ref": "osm:way:121500989",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W121500989",
+      "precision": "site",
+      "scope_limit": "Physical basilica, not tram stop."
+    },
+    {
+      "candidate_id": "SG-NEW-MONTSERRAT-COVA",
+      "place_id": "place:ES:capella-santa-cova-montserrat",
+      "name": "Capella de la Santa Cova de Montserrat",
+      "country": "ES",
+      "place_type": "chapel",
+      "lat": 41.58813,
+      "lng": 1.84432,
+      "source_ids": [
+        "AO-P28-SITE-SG-NEW-MONTSERRAT-COVA"
+      ],
+      "identity_source_url": "https://abadiamontserrat.cat/en/seccio/santuari/Basilica-and-other-places-of-worship",
+      "geo_source_url": "https://www.openstreetmap.org/way/182464453",
+      "geo_source_ref": "osm:way:182464453",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W182464453",
+      "precision": "site",
+      "scope_limit": "Cova chapel, not existing abbey."
+    },
+    {
+      "candidate_id": "SG-INV-0273",
+      "place_id": "place:CH:santuario-madonna-del-sasso-orselina",
+      "name": "Santuario della Madonna del Sasso, Orselina",
+      "country": "CH",
+      "place_type": "shrine",
+      "lat": 46.17518,
+      "lng": 8.79397,
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0273"
+      ],
+      "identity_source_url": "https://www.madonnadelsasso.org/madonnadelsasso/religiose.html",
+      "geo_source_url": "https://www.openstreetmap.org/way/207798891",
+      "geo_source_ref": "osm:way:207798891",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/31718080",
+      "precision": "site",
+      "scope_limit": "Physical church, not rail station or museum."
+    },
+    {
+      "candidate_id": "SG-INV-0163",
+      "place_id": "place:DE:marienbasilika-kevelaer",
+      "name": "Marienbasilika Kevelaer",
+      "country": "DE",
+      "place_type": "basilica",
+      "lat": 51.58443,
+      "lng": 6.24447,
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0163"
+      ],
+      "identity_source_url": "https://www.wallfahrt-kevelaer.de/impressum",
+      "geo_source_url": "https://www.openstreetmap.org/way/152838059",
+      "geo_source_ref": "osm:way:152838059",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W152838059",
+      "precision": "site",
+      "scope_limit": "Not existing Gnadenkapelle or Kerzenkapelle."
+    },
+    {
+      "candidate_id": "SG-INV-0499",
+      "place_id": "place:CL:templo-votivo-maipu-basilica",
+      "name": "Templo Votivo de Maipú — Basílica de Nuestra Señora del Carmen",
+      "country": "CL",
+      "place_type": "basilica",
+      "lat": -33.5108,
+      "lng": -70.76616,
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0499"
+      ],
+      "identity_source_url": "https://www.santuarionacional.cl/",
+      "geo_source_url": "https://www.openstreetmap.org/way/175940910",
+      "geo_source_ref": "osm:way:175940910",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W175940910",
+      "precision": "site",
+      "scope_limit": "Physical church not tourism polygon way/175940920."
+    },
+    {
+      "candidate_id": "SG-INV-0718",
+      "place_id": "place:CM:basilique-marie-reine-des-apotres-mvolye",
+      "name": "Basilique Marie-Reine-des-Apôtres de Mvolyé",
+      "country": "CM",
+      "place_type": "basilica",
+      "lat": 3.84231,
+      "lng": 11.50773,
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0718"
+      ],
+      "identity_source_url": "https://www.basiliquemariereinedesapotres.org/histoiredelabasilique/120-grandes-dates.html",
+      "geo_source_url": "https://www.openstreetmap.org/way/188128528",
+      "geo_source_ref": "osm:way:188128528",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/fr/W188128528",
+      "precision": "site",
+      "scope_limit": "Current church, not old demolished cathedral."
+    },
+    {
+      "candidate_id": "SG-INV-0495",
+      "place_id": "place:AR:santuario-san-cayetano-liniers",
+      "name": "Santuario San Cayetano, Liniers",
+      "country": "AR",
+      "place_type": "shrine",
+      "lat": -34.63785,
+      "lng": -58.52827,
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0495"
+      ],
+      "identity_source_url": "https://sancayetanoliniers.org.ar/",
+      "geo_source_url": "https://www.openstreetmap.org/way/700566738",
+      "geo_source_ref": "osm:way:700566738",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W700566738",
+      "precision": "site",
+      "scope_limit": "Liniers shrine at Cuzco 150, no same-title other parish."
+    },
+    {
+      "candidate_id": "SG-INV-0334",
+      "place_id": "place:LT:zemaiciu-kalvarija-visitation-basilica",
+      "name": "Žemaičių Kalvarijos Švč. Mergelės Marijos Apsilankymo bazilika",
+      "country": "LT",
+      "place_type": "basilica",
+      "lat": 56.11003,
+      "lng": 22.01125,
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0334"
+      ],
+      "identity_source_url": "https://telsiuvyskupija.lt/parapijos/zemaiciu-kalvarija",
+      "geo_source_url": "https://www.openstreetmap.org/way/218106986",
+      "geo_source_ref": "osm:way:218106986",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W218106986",
+      "precision": "site",
+      "scope_limit": "Church, not surrounding Stations chapels."
+    },
+    {
+      "candidate_id": "SG-INV-0460",
+      "place_id": "place:PA:basilica-jesus-nazareno-atalaya",
+      "name": "Basílica Menor Jesús Nazareno de Atalaya",
+      "country": "PA",
+      "place_type": "basilica",
+      "lat": 8.04326,
+      "lng": -80.92447,
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0460"
+      ],
+      "identity_source_url": "https://www.nazarenodeatalaya.com/",
+      "geo_source_url": "https://www.openstreetmap.org/way/396944583",
+      "geo_source_ref": "osm:way:396944583",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W396944583",
+      "precision": "site",
+      "scope_limit": "Historical mapped physical basilica. No assertion of present access, services or 2026 earthquake recovery."
+    },
+    {
+      "candidate_id": "SG-INV-0725",
+      "place_id": "place:GH:saint-joseph-minor-basilica-elmina",
+      "name": "Saint Joseph’s Minor Basilica, Elmina",
+      "country": "GH",
+      "place_type": "basilica",
+      "lat": 5.08715,
+      "lng": -1.35353,
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0725"
+      ],
+      "identity_source_url": "https://archcapegh.org/parishes/elmina-deanery/",
+      "geo_source_url": "https://www.openstreetmap.org/way/739748721",
+      "geo_source_ref": "osm:way:739748721",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W739748721",
+      "precision": "site",
+      "scope_limit": "Church, not castle chapel/outstation."
+    }
+  ],
+  "original_p16_holds_preserved": 16,
+  "policy": [
+    "One Catholic site institutional source and exact named OSM church feature per new place.",
+    "OSM-derived pages used for specific OSM way references; individual mapcarta URLs stored per row.",
+    "No unverified P27 Overpass results or approximate centres used.",
+    "Kevelaer existing chapels, Montserrat existing abbey and Maipú tourism polygon are different physical units.",
+    "Panama country geo area created explicitly; never infer a nearby country or reuse regional coordinates.",
+    "No Mass Times, 1962 claim, relic, artwork, visitor access or public source-link requirement."
+  ]
+}
