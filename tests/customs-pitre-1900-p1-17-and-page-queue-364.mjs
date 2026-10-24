@@ -39,43 +39,45 @@ for(const r of p1.records){
 }
 assert.equal(batchSeen.size,17);assert.equal(reviewed.size,58);
 assert.equal(orig.size+newer.size,422);
-assert.equal([...orig.values()].filter(x=>x.printed_scan_page_verified).length,42);
+assert.equal([...orig.values()].filter(x=>x.printed_scan_page_verified).length,129);
 assert.equal([...newer.values()].filter(x=>x.original_printed_folio_verified).length,16);
-assert.equal(master.summary.source_review.pitre_1900_original_folio_images_visually_checked,42);
+assert.equal(master.summary.source_review.pitre_1900_original_folio_images_visually_checked,129);
 assert.equal(master.summary.source_review.pitre_1900_original_p1_date_region_verified,17);
-assert.equal(master.summary.source_review.pitre_1900_all_original_folio_record_checks,58);
+assert.equal(master.summary.source_review.pitre_1900_all_original_folio_record_checks,145);
 assert.equal(master.summary.source_review.pitre_1900_uploaded_facsimile_unique_pdf_pages_checked,42);
-assert.equal(master.summary.source_review.pitre_1900_unchecked_record_pages_remaining,364);
+assert.equal(master.summary.source_review.pitre_1900_unchecked_record_pages_remaining,277);
 assert.equal(queue.records.length,364);
 assert.equal(queue.summary.unverified_original_p2,87);
 assert.equal(queue.summary.unverified_new,277);
 assert.equal(queue.summary.verified_total,58);
 assert.deepEqual(queue.summary.priority_search_methods,{INTERPOLATED_NOT_VISUALLY_VERIFIED:241,INDEX_OR_LOCALITY_RANGE_ONLY:123});
-const unverified=new Set([...orig.values(),...newer.values()].filter(r=>!(r.printed_scan_page_verified||r.original_printed_folio_verified)).map(r=>r.id));
-assert.equal(unverified.size,364);
-const queued=new Set();
+
+const currentQueue=load('data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json');
+// The older 364 file is an immutable HISTORICAL queue snapshot, not today's outstanding set.
+assert.equal(queue.records.length,364);
+assert.equal(queue.summary.unverified_original_p2,87);
+assert.equal(queue.summary.unverified_new,277);
+assert.equal(queue.summary.verified_total,58);
+const allIds=new Set([...orig.keys(),...newer.keys()]);
+const historicalQueued=new Set();
 for(const r of queue.records){
- assert.ok(unverified.has(r.id));
- assert.ok(!reviewed.has(r.id));
- assert.ok(!queued.has(r.id));queued.add(r.id);
- assert.ok(Number.isInteger(r.source_original_ocr_line));
- assert.ok(r.conservative_original_printed_page_range || r.lookup_mode==='NO_SAFE_PAGE_BOUNDS');
- if(r.conservative_original_printed_page_range){
-  assert.ok(r.conservative_original_printed_page_range.length===2);
-  assert.ok(r.conservative_original_printed_page_range[0]>=1);
-  assert.ok(r.conservative_original_printed_page_range[1]<=572);
-  assert.ok(r.conservative_original_printed_page_range[0]<=r.conservative_original_printed_page_range[1]);
- }
- assert.equal(r.page_image_visually_verified,false);
+ assert.ok(allIds.has(r.id));
+ assert.ok(!reviewed.has(r.id),'P0/P1/first high-risk must not have been queued');
+ assert.ok(!historicalQueued.has(r.id));
+ historicalQueued.add(r.id);
+ assert.equal(r.page_image_visually_verified,false,'historical snapshot must remain unchanged');
  assert.equal(r.exact_printed_page_verified,false);
- assert.equal(r.roman_ritual_authorization_verified,false);
- assert.equal(r.custom_identity_certified,false);
- assert.equal(r.app_published,false);
 }
-assert.equal(queued.size,364);
-assert.deepEqual(queued,unverified);
+assert.equal(historicalQueued.size,364);
+const nowUnverified=new Set([...orig.values(),...newer.values()]
+ .filter(r=>!(r.printed_scan_page_verified||r.original_printed_folio_verified)).map(r=>r.id));
+assert.equal(nowUnverified.size,277);
+assert.equal(currentQueue.records.length,277);
+assert.equal(new Set(currentQueue.records.map(r=>r.id)).size,277);
+for(const row of currentQueue.records)assert.ok(nowUnverified.has(row.id));
+assert.deepEqual(new Set(currentQueue.records.map(r=>r.id)),nowUnverified);
 assert.equal(master.summary.source_observations.total_source_detail_rows_including_external,3407);
 assert.equal(master.summary.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(master.summary.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(master.summary.no_new_app_publications,true);
-console.log('Pitrè 1900: 17/17 original P1 folios checked, 58/422 confirmed, 364/364 safely queued (241 interpolated/123 index ranges), 3407 workbench, zero rite/identity/app promotions — PASS');
+console.log('Pitrè 1900: 17/17 P1 scans retained; older 364-row queue frozen; current remaining 277 newer observations, 3407 workbench, zero rite/identity/app promotions — PASS');
