@@ -36,8 +36,8 @@ export function createCustomsLibrary({customs,temporal,archive,sources,p0,p1,frC
   const historyRows=A(historical?.entries);
   const historyById=new Map(historyRows.map(x=>[x.custom_id,x]));
   if(historical?.schema!=="AO_CUSTOMS_HISTORICAL_FOLIOS_V1"||
-     historyRows.length!==27||historyById.size!==27)
-    throw Error("27 source-bounded historical folios are required");
+     historyRows.length!==29||historyById.size!==29)
+    throw Error("29 source-bounded historical folios are required: original 27 plus two release candidates");
   for(const h of historyRows){
     if(!ids.includes(h.custom_id)||!S(h.history_en)||!S(h.history_fr))
       throw Error("Historical folio without canonical identity or both languages");
