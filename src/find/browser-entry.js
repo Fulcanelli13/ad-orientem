@@ -23,7 +23,7 @@ import { readAtlasReadingPlace, saveAtlasReadingPlace } from "./bible-atlas-read
 import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, atlasCinemaPlate, renderBibleAtlasToString } from "./bible-atlas.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
-import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "./heritage-map.js";
+import { HERITAGE_CATEGORIES, PUBLIC_HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "./heritage-map.js";
 import { buildExplorePlaceProfiles } from "./place-profiles.js";
 import { publishedCustomFolioId } from "./custom-canonical-handoff.js";
 import { buildPilgrimageJourneyCatalogue,selectedPilgrimageJourney,journeysForCanonicalPlace } from "./pilgrimage-journey.js";
@@ -162,7 +162,7 @@ export function createFindOwner(win=globalThis){
     unaCum:"ANY",
     liturgy:"ANY",
     massType:"ANY",
-    heritageCategories:[...HERITAGE_CATEGORIES],
+    heritageCategories:[...PUBLIC_HERITAGE_CATEGORIES],
     highlightCustomId:null,
     journeyOpen:false,journeySelectedId:null,
     expandPlace:false,
@@ -424,8 +424,8 @@ export function createFindOwner(win=globalThis){
     const selectedOverride=state.lens==="traditions"
       ?projection.byLens.traditions.find(item=>item.item_id===state.selectedId)??null
       :state.lens==="heritage"?canonical.find(item=>item.item_id===state.selectedId)??null:null;
-    const customCards=state.lens==="heritage"
-      ?heritageCustomCards(canonical,{enabled:state.heritageCategories.includes("traditions")&&state.heritageCategories.length<HERITAGE_CATEGORIES.length,query:state.query}):[];
+    // Source attestations still enrich Place records; there is no public geographic Customs rail.
+    const customCards=[];
     const placeProfiles=preliminaryMode?[]:buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
     const journeys=preliminaryMode?[]:buildPilgrimageJourneyCatalogue(
       projection?.byLens?.pilgrimages,data?.shrines?.sources,
@@ -666,10 +666,14 @@ export function createFindOwner(win=globalThis){
       state.timeMassOpen=options?.timeMass===true;
       state.networkOpen=false;
       state.atlasMode="places";state.atlasCountry=null;
-      if(Array.isArray(options?.categories))state.heritageCategories=options.categories.filter(cat=>HERITAGE_CATEGORIES.includes(cat));
+      if(Array.isArray(options?.categories)){
+        const allowed=options.categories.filter(cat=>PUBLIC_HERITAGE_CATEGORIES.includes(cat));
+        state.heritageCategories=allowed.length?allowed:[...PUBLIC_HERITAGE_CATEGORIES];
+      }
     }
     state.calendarKey=state.lens==="pilgrimages"&&typeof options?.calendarKey==="string"?options.calendarKey:null;
     if(options?.view==="map"||options?.view==="list")state.view=options.view;
+    if(state.lens==="traditions")state.view="list"; // Existing folios, not a map or geographic Atlas.
     if(typeof options?.query==="string")state.query=options.query;
     if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
     if(customId){
@@ -832,7 +836,7 @@ export function createFindOwner(win=globalThis){
 
   function setFilter(key,value){
     const previousLens=state.lens;
-    if(key==="view")state.view=value==="map"?"map":"list";
+    if(key==="view")state.view=state.lens==="traditions"?"list":value==="map"?"map":"list";
     else if(key==="lens"&&(value==="heritage"||EXPLORE_LENSES.includes(value))){
       if(value!==previousLens){
         queryByLens.set(previousLens,state.query);
@@ -843,7 +847,7 @@ export function createFindOwner(win=globalThis){
       state.networkOpen=false;
       if(value!=="heritage"){state.journeyOpen=false;journeyPreviousCategories=null;}
       if(value==="saints")state.view="list";
-      else if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
+      else if(value==="heritage"||value==="tlm")state.view="map";
     }else if(key==="saintScope"&&["profiles","historical","later","doctors"].includes(value)&&
       (value==="profiles"||dataset?.saintsRelease?.researchEnabled)){
       state.saintScope=value;state.query="";
@@ -1155,7 +1159,7 @@ export function createFindOwner(win=globalThis){
     const worldButton=target?.closest?.("[data-heritage-world]");
     if(worldButton&&state.lens==="heritage"){
       event.preventDefault?.();
-      state.query="";state.heritageCategories=[...HERITAGE_CATEGORIES];
+      state.query="";state.heritageCategories=[...PUBLIC_HERITAGE_CATEGORIES];
       state.journeyOpen=false;journeyPreviousCategories=null;
       state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;
       state.networkOpen=false;
@@ -1402,12 +1406,12 @@ export function createFindOwner(win=globalThis){
       // preserving an obsolete route filter over an unrelated map category.
       state.journeyOpen=false;journeyPreviousCategories=null;
       const value=heritageCategory.dataset.heritageCategory;
-      if(value==="ALL")state.heritageCategories=[...HERITAGE_CATEGORIES];
-      else if(HERITAGE_CATEGORIES.includes(value)){
+      if(value==="ALL")state.heritageCategories=[...PUBLIC_HERITAGE_CATEGORIES];
+      else if(PUBLIC_HERITAGE_CATEGORIES.includes(value)){
         // One thematic filter at a time; repeat the selection to restore All.
         const current=state.heritageCategories;
         state.heritageCategories=current.length===1&&current[0]===value
-          ?[...HERITAGE_CATEGORIES]:[value];
+          ?[...PUBLIC_HERITAGE_CATEGORIES]:[value];
       }
       state.highlightCustomId=null;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
       nearbyResults=null;
@@ -1426,7 +1430,7 @@ export function createFindOwner(win=globalThis){
       const id=heritageCustom.dataset.heritageCustom;
       const custom=projection?.byLens?.traditions?.find(item=>item?.raw?.custom?.custom_id===id);
       if(!custom)return;
-      state.heritageCategories=["traditions"];
+      state.heritageCategories=[...PUBLIC_HERITAGE_CATEGORIES];
       state.highlightCustomId=state.highlightCustomId===id?null:id;
       state.selectedId=null; // Keep the map visible; extended practice text is opt-in.
       state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
