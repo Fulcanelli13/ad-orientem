@@ -1,0 +1,59 @@
+name: B42 Five exact Italian cultural heritage image records (research only)
+on:
+  push:
+    branches: [research/sacred-art-b42-open-rights-prioritization-and-arco-20261024]
+    paths: [.github/workflows/ao-art-b42-five-iccd.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b42-five-iccd-originals-single
+  cancel-in-progress: false
+jobs:
+  research-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b42-open-rights-prioritization-and-arco-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify predecessor and targeted scope
+        run: |
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          node tests/sacred-art-b41-source-coverage-integrity.mjs
+          python -m py_compile scripts/research/sacred_art_b42_five_iccd_record_media.py
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          j=json.loads(Path("data/research/sacred-art-b42-five-iccd-exact-photo-targets.json").read_text())
+          assert len(j["candidates"])==5 and len({x["id"] for x in j["candidates"]})==5
+          assert j["publication_approvals"]==j["editorial_approvals"]==0
+          PY
+      - name: Verify only source-specific ICCD image references, record access failures
+        run: python scripts/research/sacred_art_b42_five_iccd_record_media.py
+      - name: Compulsory unpublished Release and remote SHA verification
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py --wave b42-iccd-five --source-dir artifacts/b42-five-iccd-exact-object-research
+      - name: Commit compact metadata only, never original photograph or catalogue promotion
+        run: |
+          set -euo pipefail
+          cp artifacts/b42-five-iccd-exact-object-research/source-results.csv data/research/sacred-art-b42-iccd-five-source-results.csv
+          cp artifacts/b42-five-iccd-exact-object-research/source-summary.json data/research/sacred-art-b42-iccd-five-source-summary.json
+          cp artifacts/b42-five-iccd-exact-object-research/metadata-attempts.json data/research/sacred-art-b42-iccd-five-record-attempts.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b42-iccd-five-*
+          git commit -m 'research: B42 five ICCD source results and SHA-verified unpublished originals, no publication'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b42-open-rights-prioritization-and-arco-20261024
+            git rebase origin/research/sacred-art-b42-open-rights-prioritization-and-arco-20261024
+            git push origin HEAD:research/sacred-art-b42-open-rights-prioritization-and-arco-20261024 && exit 0
+            sleep 3
+          done
+          exit 1
