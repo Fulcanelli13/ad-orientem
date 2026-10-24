@@ -30,7 +30,8 @@ assert.equal(assertExploreGeographyRegistry(geo).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...shrines,sources:sources.sources,places:geo.places}).pass,true);
 const byPlace=new Map(geo.places.map(x=>[x.place_id,x]));
 const bySource=new Map(sources.sources.map(x=>[x.id,x]));
-const oldCountries=new Set(geo.places.filter(x=>!x.source_ids?.some(s=>s.startsWith("AO-R91-"))).map(x=>x.address.country_code));
+const p19Ids=new Set(load("data/geography/research/sacred-places-p19-two-catholic-site-release.v1.json").published_new.map(x=>x.place_id));
+const oldCountries=new Set(geo.places.filter(x=>!x.source_ids?.some(s=>s.startsWith("AO-R91-"))&&!p19Ids.has(x.place_id)).map(x=>x.address.country_code));
 const oldFeatures=new Set(geo.places.filter(x=>!x.source_ids?.some(s=>s.startsWith("AO-R91-"))).map(x=>x.geo?.source_ref));
 const keys=new Set(),mapRefs=new Set();
 for(const r of r91.published_new){
