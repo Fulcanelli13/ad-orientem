@@ -1,0 +1,597 @@
+{
+  "schema": "AO_SPX_P2_NEXT12_EIGHT_OPENING_CONTEXT_EVIDENCE_V1",
+  "purpose": "Evidence contexts for eight previous candidate opening claims, not a replacement corpus or a release approval",
+  "status": "PRIVATE_CLAIM_SCOPED_PRIMARY_EVIDENCE_NOT_MODEL_PROMOTED",
+  "sourceOwner": "#1458 / #1551 / PR #1570",
+  "asOf": "2026-10-23",
+  "summary": {
+    "documents": 8,
+    "openingNodes": 8,
+    "exactPhraseWitnesses": 41,
+    "newlyApprovedFullDialogues": 0,
+    "newModelEvidencePromotions": 0
+  },
+  "items": [
+    {
+      "documentKey": "pascendi-dominici-gregis",
+      "chapterId": "SPX-PILOT-07",
+      "nodeIds": [
+        "AO.SPX.DIALOGUE.SPX_PILOT_07.OPEN"
+      ],
+      "originalLanguage": "la",
+      "originalUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "verificationLevel": "ORIGINAL_VATICAN_WEBPAGE_EXCERPT_SPOTCHECK_NOT_FULL_CERTIFICATION",
+      "reviewedAt": "2026-10-23",
+      "claimSupportStatus": "SUPPORTS_CORE_ARGUMENT_NOT_EVERY_DETAIL",
+      "unresolvedClaims": [
+        "Other doctrinal and historical claims in the three source-owned answer nodes remain unmapped",
+        "This source states Pius X's polemical analysis of Modernist teachings; do not present the positions he is describing as his own"
+      ],
+      "witnesses": [
+        {
+          "id": "PD-SYSTEM",
+          "locus": "Vatican HTML displayed line 48",
+          "webLine": 48,
+          "originalText": "doctrinas suas non ordine digestas proponant",
+          "claimSupported": "Pius X portrays Modernism as an interconnected doctrinal system",
+          "speaker": "PIUS_X_ANALYSIS_OF_MODERNIST_THEORY",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "PD-AGNOST",
+          "locus": "Vatican HTML displayed line 50",
+          "webLine": 50,
+          "originalText": "philosophiae religiosae fundamentum in doctrina illa modernistae ponunt, quam vulgo agnosticismum vocant",
+          "claimSupported": "He identifies agnosticism in his account of Modernist philosophy",
+          "speaker": "PIUS_X_ANALYSIS_OF_MODERNIST_THEORY",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "PD-SENT",
+          "locus": "Vatican HTML displayed line 62",
+          "webLine": 62,
+          "originalText": "Est porro hic sensus quem modernistae fidei nomine appellant",
+          "claimSupported": "He characterizes Modernists' reduction of faith to religious feeling",
+          "speaker": "PIUS_X_ANALYSIS_OF_MODERNIST_THEORY",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "PD-DOGMA",
+          "locus": "Vatican HTML displayed line 84",
+          "webLine": 84,
+          "originalText": "Evolvi tamen ac mutari dogma non posse solum sed oportere",
+          "claimSupported": "He characterizes Modernists as affirming doctrinal change",
+          "speaker": "PIUS_X_ANALYSIS_OF_MODERNIST_THEORY",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "PD-COLLECT",
+          "locus": "Vatican HTML displayed line 233",
+          "webLine": 233,
+          "originalText": "omnium haereseon conlectum esse affirmemus",
+          "claimSupported": "Pius X explicitly characterizes Modernism as a collection of heresies",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        }
+      ],
+      "publicationApproved": false,
+      "translationApproved": false,
+      "fullDialogueClaimVerified": false
+    },
+    {
+      "documentKey": "acerbo-nimis",
+      "chapterId": "SPX-NEW-021",
+      "nodeIds": [
+        "AO.SPX.DIALOGUE.SPX-NEW-021.OPEN"
+      ],
+      "originalLanguage": "la",
+      "originalUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "verificationLevel": "ORIGINAL_VATICAN_WEBPAGE_EXCERPT_SPOTCHECK_NOT_FULL_CERTIFICATION",
+      "reviewedAt": "2026-10-23",
+      "claimSupportStatus": "SUPPORTS_HISTORICAL_LAY_CATECHIST_CLAIM",
+      "unresolvedClaims": [
+        "Safeguarding and modern legal formation are external commentary, not 1905 rules",
+        "The general statement distinguishing ordained ministry and volunteer help requires careful presentation"
+      ],
+      "witnesses": [
+        {
+          "id": "AN-PARISH",
+          "locus": "Vatican HTML displayed line 103",
+          "webLine": 103,
+          "originalText": "In omnibus et singulis paroeciis consociatio canonice instituatur",
+          "claimSupported": "Calls for a confraternity at each parish",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "AN-SHORTAGE",
+          "locus": "Vatican HTML displayed line 103",
+          "webLine": 103,
+          "originalText": "praesertim ubi sacerdotum numerus sit exiguus",
+          "claimSupported": "Especially where few priests are available",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "AN-LAY",
+          "locus": "Vatican HTML displayed line 103",
+          "webLine": 103,
+          "originalText": "adiutores in catechesi tradenda laicos habebunt",
+          "claimSupported": "Lay helpers in teaching catechism are explicitly envisaged",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "AN-SCHOOL",
+          "locus": "Vatican HTML displayed line 104",
+          "webLine": 104,
+          "originalText": "scholae religionis fundentur",
+          "claimSupported": "Establish religious instruction schools for secular students",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        }
+      ],
+      "publicationApproved": false,
+      "translationApproved": false,
+      "fullDialogueClaimVerified": false
+    },
+    {
+      "documentKey": "pieni-l-animo",
+      "chapterId": "SPX-NEW-013",
+      "nodeIds": [
+        "AO.SPX.DIALOGUE.SPX-NEW-013.OPEN"
+      ],
+      "originalLanguage": "it",
+      "originalUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_28071906_pieni-l-animo.html",
+      "verificationLevel": "ORIGINAL_VATICAN_WEBPAGE_EXCERPT_SPOTCHECK_NOT_FULL_CERTIFICATION",
+      "reviewedAt": "2026-10-23",
+      "claimSupportStatus": "SUPPORTS_HISTORICAL_SELECTION_CRITERIA",
+      "unresolvedClaims": [
+        "This is not a vocational verdict about a living individual or current juridic requirements",
+        "Do not transfer referenced Tridentine or Pauline text into independent Pius X quotations"
+      ],
+      "witnesses": [
+        {
+          "id": "PL-NOTTRADE",
+          "locus": "Vatican HTML displayed line 45",
+          "webLine": 45,
+          "originalText": "non è per fermo un mestiere od un uffizio umano qualsiasi",
+          "claimSupported": "Priesthood is not an ordinary trade open by personal demand",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "it",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "PL-ASPIRANTS",
+          "locus": "Vatican HTML displayed line 46",
+          "webLine": 46,
+          "originalText": "non secondo le brame o le pretese di chi aspira",
+          "claimSupported": "Bishops should not decide purely by aspirants' wishes",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "it",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "PL-NEEDS",
+          "locus": "Vatican HTML displayed line 46",
+          "webLine": 46,
+          "originalText": "secondo la necessità delle diocesi",
+          "claimSupported": "Diocesan need enters the historical decision",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "it",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "PL-FIT",
+          "locus": "Vatican HTML displayed line 46",
+          "webLine": 46,
+          "originalText": "solamente coloro che sono veramente idonei",
+          "claimSupported": "Only genuinely suitable candidates should be promoted",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "it",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "PL-DISC",
+          "locus": "Vatican HTML displayed line 46",
+          "webLine": 46,
+          "originalText": "la indisciplinatezza e ciò che la genera, l'orgoglio della mente",
+          "claimSupported": "Names indiscipline and intellectual pride as concerning dispositions",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "it",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        }
+      ],
+      "publicationApproved": false,
+      "translationApproved": false,
+      "fullDialogueClaimVerified": false
+    },
+    {
+      "documentKey": "sollecitudini",
+      "chapterId": "SPX-EXP-037",
+      "nodeIds": [
+        "AO.SPX.DIALOGUE.SPX_EXP_037.OPEN"
+      ],
+      "originalLanguage": "it",
+      "originalUrl": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "verificationLevel": "ORIGINAL_VATICAN_WEBPAGE_EXCERPT_SPOTCHECK_NOT_FULL_CERTIFICATION",
+      "reviewedAt": "2026-10-23",
+      "claimSupportStatus": "SUPPORTS_CORE_MUSIC_QUALITY_AND_THEATRE_DISTINCTION",
+      "unresolvedClaims": [
+        "Refrain from inventing present-day liturgical legal force or norms from the 1903 document",
+        "Context qualifies universality; do not generalize this as a ban on all vernacular or instrumental music"
+      ],
+      "witnesses": [
+        {
+          "id": "TLS-LITURGY",
+          "locus": "Vatican HTML displayed line 56",
+          "webLine": 56,
+          "originalText": "La musica sacra, come parte integrante della solenne liturgia",
+          "claimSupported": "Music is connected to the ends of the solemn liturgy",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "it",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "TLS-HOLY",
+          "locus": "Vatican HTML displayed line 58",
+          "webLine": 58,
+          "originalText": "la santità e la bontà delle forme",
+          "claimSupported": "Holiness and goodness of form are named",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "it",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "TLS-UNIVERSE",
+          "locus": "Vatican HTML displayed line 58",
+          "webLine": 58,
+          "originalText": "l’universalità",
+          "claimSupported": "Universality is explicitly added as a quality",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "it",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "TLS-ART",
+          "locus": "Vatican HTML displayed line 61",
+          "webLine": 61,
+          "originalText": "Deve essere arte vera",
+          "claimSupported": "Genuine artistry is explicitly required",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "it",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "TLS-THEATRE",
+          "locus": "Vatican HTML displayed line 75",
+          "webLine": 75,
+          "originalText": "lo stile teatrale",
+          "claimSupported": "Theatrical style is singled out for criticism",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "it",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        }
+      ],
+      "publicationApproved": false,
+      "translationApproved": false,
+      "fullDialogueClaimVerified": false
+    },
+    {
+      "documentKey": "divino-afflatu",
+      "chapterId": "SPX-NEW-003",
+      "nodeIds": [
+        "AO.SPX.DIALOGUE.SPX-NEW-003.OPEN"
+      ],
+      "originalLanguage": "la",
+      "originalUrl": "https://www.vatican.va/content/pius-x/la/apost_constitutions/documents/hf_p-x_apc_19111101_divino-afflatu.html",
+      "verificationLevel": "ORIGINAL_VATICAN_WEBPAGE_EXCERPT_SPOTCHECK_NOT_FULL_CERTIFICATION",
+      "reviewedAt": "2026-10-23",
+      "claimSupportStatus": "SUPPORTS_HISTORIC_BREVIARY_REFORM_RATIONALE",
+      "unresolvedClaims": [
+        "Existing original webpage contains typography/word concatenation; exact-match checks must preserve the site's printed string",
+        "The attached rubric revisions have their own source location and should not be overclaimed from a preamble excerpt",
+        "This is a 1911 historical liturgical arrangement, not an instruction that every lay reader is obliged to recite the Office"
+      ],
+      "witnesses": [
+        {
+          "id": "DA-WEEK",
+          "locus": "Vatican HTML displayed line 47",
+          "webLine": 47,
+          "originalText": "Psalteriumintra unius hebdomadae spatium recitandum foret integrum",
+          "claimSupported": "Older weekly-recitation norm was being displaced",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "DA-OFFICES",
+          "locus": "Vatican HTML displayed line 49",
+          "webLine": 49,
+          "originalText": "Officia de Sanctis sensim propagari coeperunt",
+          "claimSupported": "Saints' offices proliferated over time",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "DA-OMISSIONS",
+          "locus": "Vatican HTML displayed line 49",
+          "webLine": 49,
+          "originalText": "non pauci neglegerentur Psalmi",
+          "claimSupported": "Some psalms were neglected",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "DA-RESTORE",
+          "locus": "Vatican HTML displayed line 52",
+          "webLine": 52,
+          "originalText": "revocaretur consuetudo vetus recitandi per hebdomadam totum Psalterium",
+          "claimSupported": "The restoration of the weekly Psalter was sought",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "DA-OBLIGED",
+          "locus": "Vatican HTML displayed line 60",
+          "webLine": 60,
+          "originalText": "quoscumque obligatio tenet recitandi vel concinendi Horas canonicas",
+          "claimSupported": "Prescriptions address those already obliged to pray the Office",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        }
+      ],
+      "publicationApproved": false,
+      "translationApproved": false,
+      "fullDialogueClaimVerified": false
+    },
+    {
+      "documentKey": "singulari-quadam",
+      "chapterId": "SPX-NEW-008",
+      "nodeIds": [
+        "AO.SPX.DIALOGUE.SPX-NEW-008.OPEN"
+      ],
+      "originalLanguage": "la",
+      "originalUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_24091912_singulari-quadam.html",
+      "verificationLevel": "ORIGINAL_VATICAN_WEBPAGE_EXCERPT_SPOTCHECK_NOT_FULL_CERTIFICATION",
+      "reviewedAt": "2026-10-23",
+      "claimSupportStatus": "SUPPORTS_MORAL_DIMENSION_AND_CASE_SPECIFICITY",
+      "unresolvedClaims": [
+        "The moral-and-religious line in quotation marks attributes earlier teaching; label quoted authority separately",
+        "The full mixed-union conditions and present-day wage calculation remain outside these snippets"
+      ],
+      "witnesses": [
+        {
+          "id": "SQ-GERMANY",
+          "locus": "Vatican HTML displayed line 43",
+          "webLine": 43,
+          "originalText": "controversiam, quae inter eos est, de consociationibus opificum",
+          "claimSupported": "The document responds to an actual German association dispute",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "SQ-MORALS",
+          "locus": "Vatican HTML displayed line 49",
+          "webLine": 49,
+          "originalText": "quatenus bonae aut malae sunt in genere morum",
+          "claimSupported": "Human actions are considered by their moral quality",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "SQ-PEACE",
+          "locus": "Vatican HTML displayed line 50",
+          "webLine": 50,
+          "originalText": "pacem caritatemque mutuam",
+          "claimSupported": "Rejects hostility and urges peace and mutual charity between social orders",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "SQ-WAGES",
+          "locus": "Vatican HTML displayed line 51",
+          "webLine": 51,
+          "originalText": "de modo salarii",
+          "claimSupported": "Wages are among the named social issues",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "SQ-NOTECON",
+          "locus": "Vatican HTML displayed line 51",
+          "webLine": 51,
+          "originalText": "non mere oeconomicae esse naturae",
+          "claimSupported": "Social questions are not merely economic",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "SQ-PREVPOPE",
+          "locus": "Vatican HTML displayed line 51",
+          "webLine": 51,
+          "originalText": "eam (quaestionem socialem) moralem in primis et religiosam esse",
+          "claimSupported": "Explicit quoted characterization of social problem as moral and religious",
+          "speaker": "EARLIER_AUTHORITY_QUOTED_BY_PIUS_X",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        }
+      ],
+      "publicationApproved": false,
+      "translationApproved": false,
+      "fullDialogueClaimVerified": false
+    },
+    {
+      "documentKey": "editae-saepe",
+      "chapterId": "SPX-NEW-007",
+      "nodeIds": [
+        "AO.SPX.DIALOGUE.SPX-NEW-007.OPEN"
+      ],
+      "originalLanguage": "la",
+      "originalUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_26051910_editae-saepe.html",
+      "verificationLevel": "ORIGINAL_VATICAN_WEBPAGE_EXCERPT_SPOTCHECK_NOT_FULL_CERTIFICATION",
+      "reviewedAt": "2026-10-23",
+      "claimSupportStatus": "SUPPORTS_EXEMPLAR_IMMITATION_THEME",
+      "unresolvedClaims": [
+        "Quotation of Pauline exhortation at §3 must not be presented as authored by Pius X",
+        "Nuance: source lists Gregory the Great, JOHN CHRYSOSTOM, and Anselm; not only Gregory and Anselm",
+        "Do not claim all historical conduct of saints can be copied literally"
+      ],
+      "witnesses": [
+        {
+          "id": "ES-IMITATE",
+          "locus": "Vatican HTML displayed line 43",
+          "webLine": 43,
+          "originalText": "ad imitandum illustria",
+          "claimSupported": "Saints' notable acts are examples to imitate",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "ES-CHRIST",
+          "locus": "Vatican HTML displayed line 44",
+          "webLine": 44,
+          "originalText": "omnia instaurarentur in Christo",
+          "claimSupported": "Relates the recall of saints to his Christ-centred programme",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "ES-THREE",
+          "locus": "Vatican HTML displayed line 47",
+          "webLine": 47,
+          "originalText": "Gregorius Magnus, Ioannes Chrysostomus et Augustanus Anselmus",
+          "claimSupported": "Identifies three earlier saints as teaching-pastoral exemplars",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "ES-CHARLES",
+          "locus": "Vatican HTML displayed line 72",
+          "webLine": 72,
+          "originalText": "quod Carolus, nondum exacto anno aetatis suae vicesimo",
+          "claimSupported": "A later passage specifically discusses St Charles",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        }
+      ],
+      "publicationApproved": false,
+      "translationApproved": false,
+      "fullDialogueClaimVerified": false
+    },
+    {
+      "documentKey": "ad-diem-illum-laetissimum",
+      "chapterId": "SPX-013",
+      "nodeIds": [
+        "AO.SPX.DIALOGUE.SPX_013.OPEN"
+      ],
+      "originalLanguage": "la",
+      "originalUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "verificationLevel": "ORIGINAL_VATICAN_WEBPAGE_EXCERPT_SPOTCHECK_NOT_FULL_CERTIFICATION",
+      "reviewedAt": "2026-10-23",
+      "claimSupportStatus": "SUPPORTS_MARIAN_INTERCESSION_SUBORDINATE_TO_CHRIST",
+      "unresolvedClaims": [
+        "The mediatrix line occurs within a quotation attributed to Pius IX; distinguish quoted authority",
+        "Saint Bernard's aqueduct image is quoted, not independently Pius X's metaphor",
+        "Pius X's text makes Christ the source of grace; avoid language suggesting parallel autonomous saving agency"
+      ],
+      "witnesses": [
+        {
+          "id": "ADI-KNOW",
+          "locus": "Vatican HTML displayed line 59",
+          "webLine": 59,
+          "originalText": "nemo illa aptior dux et magister ad Christum noscendum",
+          "claimSupported": "Mary as teacher/guide toward knowledge of Christ",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "ADI-CLOSENESS",
+          "locus": "Vatican HTML displayed line 60",
+          "webLine": 60,
+          "originalText": "nullus etiam hac Virgine efficacior ad homines cum Christo iungendos",
+          "claimSupported": "Mary leads the faithful toward Christ",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "ADI-CHRIST",
+          "locus": "Vatican HTML displayed line 69",
+          "webLine": 69,
+          "originalText": "privato proprioque iure esse Christi",
+          "claimSupported": "Christ has the unique right to redeeming gifts",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "ADI-MEDIATOR",
+          "locus": "Vatican HTML displayed line 69",
+          "webLine": 69,
+          "originalText": "Ipse pro potestate mediator Dei atque hominum est",
+          "claimSupported": "Christ is mediator of God and humanity",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "ADI-MARY",
+          "locus": "Vatican HTML displayed line 69",
+          "webLine": 69,
+          "originalText": "mediatrix et conciliatrix",
+          "claimSupported": "Mary's intercession/mediation is affirmed in a Pius IX citation",
+          "speaker": "PIUS_IX_QUOTED_BY_PIUS_X",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "ADI-FOUNTAIN",
+          "locus": "Vatican HTML displayed line 70",
+          "webLine": 70,
+          "originalText": "Fons igitur Christus est",
+          "claimSupported": "Christ is the fountain of grace",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        },
+        {
+          "id": "ADI-GRACE",
+          "locus": "Vatican HTML displayed line 71",
+          "webLine": 71,
+          "originalText": "supernaturalis gratiae efficiendae vim tribuamus, quae Dei unius est",
+          "claimSupported": "Creating supernatural grace belongs to God alone",
+          "speaker": "PIUS_X_AUTHOR",
+          "language": "la",
+          "status": "ORIGINAL_PAGE_LOCATED_MANUAL_LITERAL_CHECK_UNAPPROVED"
+        }
+      ],
+      "publicationApproved": false,
+      "translationApproved": false,
+      "fullDialogueClaimVerified": false
+    }
+  ]
+}

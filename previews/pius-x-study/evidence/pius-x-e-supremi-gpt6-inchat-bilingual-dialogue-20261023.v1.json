@@ -1,0 +1,151 @@
+{
+  "schema": "AO_SPX_P2_INCHAT_BILINGUAL_CONVERSATION_RESEARCH_EXAMPLE_V1",
+  "chapterId": "SPX-PILOT-01",
+  "document": "E supremi",
+  "primaryUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+  "papalTextQuotedVerbatim": false,
+  "translationCertified": false,
+  "historicalCharacterSpeechAuthenticated": false,
+  "publicationApproved": false,
+  "createdDate": "2026-10-23",
+  "provenance": {
+    "modelFamily": "GPT-6",
+    "generationSurface": "Current ChatGPT text conversation",
+    "method": "One-pass model-authored 3-turn script in each language, using only the supplied exact source witnesses and their narrow glosses; not the configuredModel/composeDraft adapter",
+    "externalProviderEndpointCalled": false,
+    "independentVerifierCalled": false,
+    "multiturnStatefulnessTested": false,
+    "openEndedUserInteractionTested": false,
+    "manualGroundingAssessmentCertified": false
+  },
+  "sourceBoundaries": [
+    "St Anselm's embedded first-person testimony is not used as Pius X's personal memory",
+    "The predecessor is not personally named in the cited Latin subsection",
+    "The third turn requires the Christ-to-God theme in Latin §8; the original owner's §§1–4 locus needs separate reconciliation",
+    "Character first person is editorial voice, not authentic quotation"
+  ],
+  "sequences": [
+    {
+      "language": "en",
+      "chapterId": "SPX-PILOT-01",
+      "generationProcess": "GPT6_IN_CHAT_SINGLE_PASS_NOT_ENDPOINT_SEQUENCE",
+      "conversationMemoryIndependentlyExercised": false,
+      "turns": [
+        {
+          "turn": 1,
+          "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+          "question": "Did you welcome your election as Pope?",
+          "reply": "No. With tears and earnest prayer, We sought to be spared so grave an office. We did not consider Ourselves worthy of the pontificate. Once the burden was accepted, We could only seek the strength of God.",
+          "evidenceIds": [
+            "ES-INTRO-TEARS",
+            "ES-2-UNWORTHY",
+            "ES-4-STRENGTH"
+          ],
+          "expression": "thoughtful",
+          "status": "UNAPPROVED_IN_CHAT_EDITORIAL_EXAMPLE",
+          "publishingApproved": false,
+          "originalTextCollated": false
+        },
+        {
+          "turn": 2,
+          "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+          "question": "What made the responsibility so grave to you?",
+          "reply": "We were conscious of Our weakness, and it was no light thing to succeed so distinguished a predecessor. Both made the charge formidable. It was therefore not in Our own powers, but in God's help, that We placed Our confidence.",
+          "evidenceIds": [
+            "ES-2-UNWORTHY",
+            "ES-2-PREDECESSOR",
+            "ES-3-FEAR",
+            "ES-4-STRENGTH"
+          ],
+          "expression": "grave",
+          "status": "UNAPPROVED_IN_CHAT_EDITORIAL_EXAMPLE",
+          "publishingApproved": false,
+          "originalTextCollated": false
+        },
+        {
+          "turn": 3,
+          "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2",
+          "question": "What did you intend to do once you accepted?",
+          "reply": "One purpose was to govern Our labour: to restore all things in Christ. We sought to bring humanity under His rule and, through Him, back to God. That was the direction We set before the pontificate.",
+          "evidenceIds": [
+            "ES-4-MOTTO",
+            "ES-8-CHRIST"
+          ],
+          "expression": "explaining",
+          "status": "UNAPPROVED_IN_CHAT_EDITORIAL_EXAMPLE",
+          "publishingApproved": false,
+          "originalTextCollated": false
+        }
+      ]
+    },
+    {
+      "language": "fr",
+      "chapterId": "SPX-PILOT-01",
+      "generationProcess": "GPT6_IN_CHAT_SINGLE_PASS_NOT_ENDPOINT_SEQUENCE",
+      "conversationMemoryIndependentlyExercised": false,
+      "turns": [
+        {
+          "turn": 1,
+          "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+          "question": "Avez-vous accueilli volontiers votre élection comme pape ?",
+          "reply": "Non. Par les larmes et d'ardentes prières, Nous avons cherché à écarter de Nous cette si lourde charge. Nous ne Nous estimions pas digne du pontificat. Après l'avoir acceptée, Nous avons cherché Notre force en Dieu.",
+          "evidenceIds": [
+            "ES-INTRO-TEARS",
+            "ES-2-UNWORTHY",
+            "ES-4-STRENGTH"
+          ],
+          "expression": "thoughtful",
+          "status": "UNAPPROVED_IN_CHAT_EDITORIAL_EXAMPLE",
+          "publishingApproved": false,
+          "originalTextCollated": false
+        },
+        {
+          "turn": 2,
+          "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+          "question": "Pourquoi cette charge vous paraissait-elle si redoutable ?",
+          "reply": "Nous connaissions Notre faiblesse, et il Nous fallait succéder à un prédécesseur si éminent. Cette succession rendait la tâche plus redoutable encore. Aussi placions-Nous Notre confiance, non dans Nos forces, mais dans le secours de Dieu.",
+          "evidenceIds": [
+            "ES-2-UNWORTHY",
+            "ES-2-PREDECESSOR",
+            "ES-3-FEAR",
+            "ES-4-STRENGTH"
+          ],
+          "expression": "grave",
+          "status": "UNAPPROVED_IN_CHAT_EDITORIAL_EXAMPLE",
+          "publishingApproved": false,
+          "originalTextCollated": false
+        },
+        {
+          "turn": 3,
+          "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2",
+          "question": "Que vouliez-vous accomplir après avoir accepté ?",
+          "reply": "Un seul dessein devait guider Notre œuvre : tout restaurer dans le Christ. Nous voulions ramener les hommes sous Son autorité, afin que, par Lui, ils retournent à Dieu. Tel était le but assigné à Notre pontificat.",
+          "evidenceIds": [
+            "ES-4-MOTTO",
+            "ES-8-CHRIST"
+          ],
+          "expression": "explaining",
+          "status": "UNAPPROVED_IN_CHAT_EDITORIAL_EXAMPLE",
+          "publishingApproved": false,
+          "originalTextCollated": false
+        }
+      ]
+    }
+  ],
+  "scopeOfResult": {
+    "languages": 2,
+    "turnsPerLanguage": 3,
+    "turns": 6,
+    "distinctSourceNodes": 3,
+    "distinctWitnessIds": 7,
+    "realEndpointSequences": 0,
+    "approvedReplies": 0,
+    "publicationAllowed": false
+  },
+  "followupEvalNeeded": [
+    "Configure a real model endpoint and generate each turn with preceding model responses only as context, never source",
+    "Enforce original-source citation and speaker attribution through a separate verification pass",
+    "Probe unexpected paraphrases and adversarial questions in both languages",
+    "Assess period voice and immediate-turn responsiveness independently from the generative model"
+  ]
+}

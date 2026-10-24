@@ -1,0 +1,411 @@
+{
+  "schema": "AO_SPX_P37_INDEPENDENT_TRANSLATION_REVIEW_PREP_11_V1",
+  "date": "2026-10-24",
+  "status": "SECOND_PASS_SOURCE_ALIGNMENT_BY_ASSISTANT_NOT_INDEPENDENT_HUMAN_REVIEW",
+  "sourceOwner": "P36 11 preliminary bilingual drafts, backed by P35 original Italian extracts",
+  "criteria": [
+    "Italian original proposition present",
+    "English wording scope and omission",
+    "French sense parity",
+    "Separately presented period/editorial commentary",
+    "Specialist qualification needs"
+  ],
+  "records": [
+    {
+      "sourceQid": "PX1905-Q576",
+      "verdict": "WORDING_PRECISION_REVISION",
+      "sourcePropositionChecks": [
+        {
+          "sourceQid": "PX1905-Q576",
+          "exactItalianSpan": "parentela spirituale col battezzato e coi suoi genitori",
+          "meaningTracked": "The kinship concerns the godparents, baptized child and that child's parents.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q576",
+          "exactItalianSpan": "cagiona impedimento di matrimonio coi medesimi",
+          "meaningTracked": "The historical text asserts an impediment concerning those persons, not a mere possibility.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        }
+      ],
+      "editorialAnalysis": "The proposed English between them and French entre eux leave the historical parties less precise than the Italian. It correctly separates current law; rewrite the scope of the impediment.",
+      "nextAction": "REVISE_SECOND_BILINGUAL_DRAFT",
+      "specialistNeeded": "CANON_LAW_HISTORIAN",
+      "alternativeCandidate": {
+        "proposedEN": "The 1905 Catechism states that godparents contract spiritual kinship with the baptized child and the child's parents. Under the marriage discipline described there, this spiritual kinship constitutes an impediment to marriage with those persons.",
+        "proposedFR": "Le Catéchisme de 1905 enseigne que les parrains contractent une parenté spirituelle avec le baptisé et les parents de celui-ci. Dans la discipline matrimoniale qui y est exposée, cette parenté spirituelle constitue un empêchement de mariage avec ces personnes.",
+        "originalP36PairRetained": true,
+        "translatorApproved": false,
+        "doctrinalApproved": false
+      },
+      "originalItalianWitnessIntact": true,
+      "currentLawNarratorNotesRemainSeparate": true,
+      "humanIndependentSourceReview": false,
+      "professionalTranslationApproval": false,
+      "doctrinalSignoff": false,
+      "papalStyleSignoff": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceQid": "PX1905-Q583",
+      "verdict": "RITUAL_FORMULA_LANGUAGE_HOLD",
+      "sourcePropositionChecks": [
+        {
+          "sourceQid": "PX1905-Q583",
+          "exactItalianSpan": "Io ti segno col segno della Croce",
+          "meaningTracked": "The first-person sign-of-cross formula is present.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q583",
+          "exactItalianSpan": "ti confermo col crisma della salute",
+          "meaningTracked": "The chrism and confirmation clause is present.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        }
+      ],
+      "editorialAnalysis": "The meaning of the provisional ritual translation follows the original, but translating an exact sacramental formula needs specialist liturgical and historical-language verification. Do not silently treat 'Amen' versus 'così sia' as an approved translation.",
+      "nextAction": "KEEP_PROPOSAL_ON_FORMULA_REVIEW_HOLD",
+      "specialistNeeded": "LITURGICAL_TRANSLATOR",
+      "alternativeCandidate": null,
+      "originalItalianWitnessIntact": true,
+      "currentLawNarratorNotesRemainSeparate": true,
+      "humanIndependentSourceReview": false,
+      "professionalTranslationApproval": false,
+      "doctrinalSignoff": false,
+      "papalStyleSignoff": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceQid": "PX1905-Q585",
+      "verdict": "SOURCE_DETAIL_OMISSION",
+      "sourcePropositionChecks": [
+        {
+          "sourceQid": "PX1905-Q585",
+          "exactItalianSpan": "stende le mani sopra i cresimandi",
+          "meaningTracked": "The bishop extends his hands.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q585",
+          "exactItalianSpan": "con la sua destra dà un leggiero schiaffo",
+          "meaningTracked": "The slap is expressly given with the bishop's right hand.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q585",
+          "exactItalianSpan": "finalmente benedice solennemente tutti i cresimati",
+          "meaningTracked": "The final blessing is solemn, a qualification omitted from the draft.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        }
+      ],
+      "editorialAnalysis": "The corrected draft appropriately restores 'slap' instead of 'touch', but omits 'with his right hand' and 'solemnly blesses'. Both details are explicit in the Italian. Keep period scope separate.",
+      "nextAction": "REVISE_SECOND_BILINGUAL_DRAFT",
+      "specialistNeeded": "LITURGICAL_TRANSLATOR",
+      "alternativeCandidate": {
+        "proposedEN": "The bishop first extends his hands over those to be confirmed, invoking the Holy Ghost. He anoints each forehead in the form of a cross with sacred chrism while pronouncing the sacramental form. With his right hand he then gives a light slap on the cheek, saying “Peace be with thee”; finally, he solemnly blesses all those confirmed.",
+        "proposedFR": "L’évêque étend d’abord les mains sur ceux qui vont être confirmés, en invoquant le Saint-Esprit. Il oint ensuite chaque front en forme de croix avec le saint chrême, en prononçant la formule sacramentelle. Puis, de sa main droite, il donne une légère gifle sur la joue en disant : « La paix soit avec toi » ; enfin, il bénit solennellement tous les confirmés.",
+        "originalP36PairRetained": true,
+        "translatorApproved": false,
+        "doctrinalApproved": false
+      },
+      "originalItalianWitnessIntact": true,
+      "currentLawNarratorNotesRemainSeparate": true,
+      "humanIndependentSourceReview": false,
+      "professionalTranslationApproval": false,
+      "doctrinalSignoff": false,
+      "papalStyleSignoff": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceQid": "PX1905-Q619",
+      "verdict": "CORE_SOURCE_SUPPORTED_COMPANION_NONESSENTIAL",
+      "sourcePropositionChecks": [
+        {
+          "sourceQid": "PX1905-Q619",
+          "exactItalianSpan": "Tanto in un’ostia grande, quanto nella particella di un’ostia",
+          "meaningTracked": "Both a large host and a fragment are expressly compared.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q619",
+          "exactItalianSpan": "vi è il medesimo Gesù Cristo",
+          "meaningTracked": "The same Jesus Christ is the direct proposition.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        }
+      ],
+      "editorialAnalysis": "The short proposal faithfully follows Q619. Related Q641 addresses duration after Communion and must not be cited as if it proves the host-fragment proposition. Keep that second passage as context only.",
+      "nextAction": "KEEP_PROPOSAL_WITH_SOURCE_SCOPE_NOTE",
+      "specialistNeeded": "DOCTRINAL_EDITOR",
+      "alternativeCandidate": null,
+      "originalItalianWitnessIntact": true,
+      "currentLawNarratorNotesRemainSeparate": true,
+      "humanIndependentSourceReview": false,
+      "professionalTranslationApproval": false,
+      "doctrinalSignoff": false,
+      "papalStyleSignoff": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceQid": "PX1905-Q630",
+      "verdict": "CORE_RESTORED_PASTORAL_SCOPE_HOLD",
+      "sourcePropositionChecks": [
+        {
+          "sourceQid": "PX1905-Q630",
+          "exactItalianSpan": "deve prima di comunicarsi fare una buona confessione",
+          "meaningTracked": "The duty to confess before Communion is expressly stated.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q630",
+          "exactItalianSpan": "non bastando l’atto di contrizione perfetta, senza la confessione",
+          "meaningTracked": "The qualification about perfect contrition without Confession has been restored.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        }
+      ],
+      "editorialAnalysis": "Both essential propositions are represented in English and French, with present-case advice in a separate narrator note. Personal culpability or exceptional disciplines remain outside the historical source and need expert handling.",
+      "nextAction": "KEEP_PROPOSAL_PENDING_PASTORAL_EXPERT",
+      "specialistNeeded": "MORAL_THEOLOGIAN",
+      "alternativeCandidate": null,
+      "originalItalianWitnessIntact": true,
+      "currentLawNarratorNotesRemainSeparate": true,
+      "humanIndependentSourceReview": false,
+      "professionalTranslationApproval": false,
+      "doctrinalSignoff": false,
+      "papalStyleSignoff": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceQid": "PX1905-Q632",
+      "verdict": "CORE_RESTORED_SEVERE_LANGUAGE_HOLD",
+      "sourcePropositionChecks": [
+        {
+          "sourceQid": "PX1905-Q632",
+          "exactItalianSpan": "riceverebbe Gesù Cristo, ma non la sua grazia",
+          "meaningTracked": "Receiving Christ while not His grace is explicit.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q632",
+          "exactItalianSpan": "si farebbe meritevole della sentenza di dannazione",
+          "meaningTracked": "The historical general warning about the sentence of damnation is explicit, not a conclusion about an identifiable person.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        }
+      ],
+      "editorialAnalysis": "The rewrite does not disguise the severe historical proposition; it also separates the proper non-individualized caveat. A moral-theology reviewer must verify implications before any interactive pastoral use.",
+      "nextAction": "KEEP_PROPOSAL_PENDING_PASTORAL_EXPERT",
+      "specialistNeeded": "MORAL_THEOLOGIAN",
+      "alternativeCandidate": null,
+      "originalItalianWitnessIntact": true,
+      "currentLawNarratorNotesRemainSeparate": true,
+      "humanIndependentSourceReview": false,
+      "professionalTranslationApproval": false,
+      "doctrinalSignoff": false,
+      "papalStyleSignoff": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceQid": "PX1905-Q636",
+      "verdict": "UNSUPPORTED_ADDITION_REMOVED",
+      "sourcePropositionChecks": [
+        {
+          "sourceQid": "PX1905-Q636",
+          "exactItalianSpan": "conoscere quelle cose che s’insegnano intorno a questo sacramento",
+          "meaningTracked": "Knowledge of the Christian doctrine on the sacrament is direct.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q636",
+          "exactItalianSpan": "e crederle fermamente",
+          "meaningTracked": "Firm belief is explicit.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        }
+      ],
+      "editorialAnalysis": "The new EN/FR versions remove an unsupported 'ordinary food' contrast and preserve the two real claims. A separate question-transcription typo must still be checked against print.",
+      "nextAction": "KEEP_PROPOSAL_PENDING_TRANSLATION_AND_EDITION",
+      "specialistNeeded": "ITALIAN_EDITOR",
+      "alternativeCandidate": null,
+      "originalItalianWitnessIntact": true,
+      "currentLawNarratorNotesRemainSeparate": true,
+      "humanIndependentSourceReview": false,
+      "professionalTranslationApproval": false,
+      "doctrinalSignoff": false,
+      "papalStyleSignoff": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceQid": "PX1905-Q642",
+      "verdict": "MISSING_GESTURE_DETAIL_RESTORED",
+      "sourcePropositionChecks": [
+        {
+          "sourceQid": "PX1905-Q642",
+          "exactItalianSpan": "tenere la testa mediocremente alzata",
+          "meaningTracked": "Head moderately raised is source language.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q642",
+          "exactItalianSpan": "gli occhi modesti e rivolti alla sacra particola",
+          "meaningTracked": "The formerly omitted eye-direction and modesty are restored.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        }
+      ],
+      "editorialAnalysis": "All main physical details are now represented. 'Mediocremente' means moderately, not insignificantly; later rubric questions are not decided by this 1905 description.",
+      "nextAction": "KEEP_PROPOSAL_PENDING_LITURGICAL_REVIEW",
+      "specialistNeeded": "LITURGICAL_TRANSLATOR",
+      "alternativeCandidate": null,
+      "originalItalianWitnessIntact": true,
+      "currentLawNarratorNotesRemainSeparate": true,
+      "humanIndependentSourceReview": false,
+      "professionalTranslationApproval": false,
+      "doctrinalSignoff": false,
+      "papalStyleSignoff": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceQid": "PX1905-Q643",
+      "verdict": "MATERIAL_OBJECT_TRANSLATION_HOLD",
+      "sourcePropositionChecks": [
+        {
+          "sourceQid": "PX1905-Q643",
+          "exactItalianSpan": "tovaglia o la tavoletta della Comunione",
+          "meaningTracked": "The historical wording names a cloth or tavoletta, without using the Italian word patena.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q643",
+          "exactItalianSpan": "raccolga la sacra particola qualora essa venisse a cadere",
+          "meaningTracked": "Their functional purpose is to catch a falling sacred particle.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        }
+      ],
+      "editorialAnalysis": "The more literal small tablet/tablette removes unjustified 'paten' certainty, but the historically correct English/French liturgical object noun remains unsettled. Do not certify until material-culture terminology is independently checked.",
+      "nextAction": "KEEP_PROPOSAL_ON_OBJECT_TRANSLATION_HOLD",
+      "specialistNeeded": "LITURGICAL_HISTORIAN",
+      "alternativeCandidate": null,
+      "originalItalianWitnessIntact": true,
+      "currentLawNarratorNotesRemainSeparate": true,
+      "humanIndependentSourceReview": false,
+      "professionalTranslationApproval": false,
+      "doctrinalSignoff": false,
+      "papalStyleSignoff": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceQid": "PX1905-Q648",
+      "verdict": "SOURCE_MORAL_WARNING_OMITTED",
+      "sourcePropositionChecks": [
+        {
+          "sourceQid": "PX1905-Q648",
+          "exactItalianSpan": "non sono per loro colpa istruiti",
+          "meaningTracked": "The child's lack of instruction is subject to their own fault.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q648",
+          "exactItalianSpan": "se la dilazione della Comunione avviene per loro colpa",
+          "meaningTracked": "Parents or guardians are held responsible when the delay is their fault.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q648",
+          "exactItalianSpan": "ne dovranno rendere gran conto a Dio",
+          "meaningTracked": "The final source sentence explicitly adds that they must render a grave account to God.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        }
+      ],
+      "editorialAnalysis": "The proposal correctly restores the fault conditions, but leaves out the concluding warning that responsible adults will render a grave account to God. A faithful complete historical paraphrase should not silently omit it; no particular family's culpability may be inferred.",
+      "nextAction": "REVISE_SECOND_BILINGUAL_DRAFT",
+      "specialistNeeded": "MORAL_THEOLOGIAN",
+      "alternativeCandidate": {
+        "proposedEN": "The 1905 Catechism warns that children capable of receiving Communion sin if they do not receive because they refuse or because, through their own fault, they lack instruction. It also warns that parents or guardians who are at fault for delaying Communion will have to render a grave account to God.",
+        "proposedFR": "Le Catéchisme de 1905 avertit que les enfants capables de communier pèchent s’ils s’y refusent ou si, par leur propre faute, ils ne sont pas instruits. Il avertit aussi que les parents ou ceux qui en tiennent lieu, lorsque le retard leur est imputable, devront en rendre un compte grave à Dieu.",
+        "originalP36PairRetained": true,
+        "translatorApproved": false,
+        "doctrinalApproved": false
+      },
+      "originalItalianWitnessIntact": true,
+      "currentLawNarratorNotesRemainSeparate": true,
+      "humanIndependentSourceReview": false,
+      "professionalTranslationApproval": false,
+      "doctrinalSignoff": false,
+      "papalStyleSignoff": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceQid": "PX1905-Q655",
+      "verdict": "UNSUPPORTED_SHORTHAND_REMOVED",
+      "sourcePropositionChecks": [
+        {
+          "sourceQid": "PX1905-Q655",
+          "exactItalianSpan": "sostanzialmente il medesimo della Croce",
+          "meaningTracked": "Substantial identity of sacrifice is explicit.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q655",
+          "exactItalianSpan": "lo stesso Gesù Cristo, che si è offerto sopra la Croce",
+          "meaningTracked": "Christ's self-offering and the distinct mode of offering are present.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        },
+        {
+          "sourceQid": "PX1905-Q660",
+          "exactItalianSpan": "Il primo e principale offerente",
+          "meaningTracked": "Q660 identifies Jesus Christ as the first and principal offerer, while the priest is a minister.",
+          "automatedSpanPresenceToBeTested": true,
+          "substantiveEvaluation": "SECOND_PASS_EDITORIAL_PROPOSAL_NOT_INDEPENDENTLY_CERTIFIED"
+        }
+      ],
+      "editorialAnalysis": "The new reply is an explicitly attributed two-question historical synthesis, not a single verbatim quotation. Removing the 'same Priest and Victim' shorthand avoids source-specific attribution overreach. Doctrinal precision still requires review.",
+      "nextAction": "KEEP_PROPOSAL_AS_SOURCE_SCOPED_SYNTHESIS",
+      "specialistNeeded": "DOGMATIC_THEOLOGIAN",
+      "alternativeCandidate": null,
+      "originalItalianWitnessIntact": true,
+      "currentLawNarratorNotesRemainSeparate": true,
+      "humanIndependentSourceReview": false,
+      "professionalTranslationApproval": false,
+      "doctrinalSignoff": false,
+      "papalStyleSignoff": false,
+      "publicationApproved": false
+    }
+  ],
+  "counts": {
+    "sourceCases": 11,
+    "italianPropositionAnchors": 25,
+    "secondDraftRevisionCases": 3,
+    "specialReviewHolds": 6,
+    "humanReviewsSigned": 0,
+    "sourceClaimsCertified": 0,
+    "translationsCertified": 0,
+    "published": 0
+  },
+  "safeguards": {
+    "originalP36Unmodified": true,
+    "originalP35Unmodified": true,
+    "doNotInventIndividualPapalSpeech": true,
+    "adviceAboutModernLawDistinctFromCatechism": true
+  }
+}

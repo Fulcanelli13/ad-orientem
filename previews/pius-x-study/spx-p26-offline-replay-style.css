@@ -1,0 +1,102 @@
+/* Restrained private Pius X source replay. Reuses model-review typography. */
+#spxc-offline-replay{max-width:700px;margin:20px 0 54px;padding:21px 23px;
+ background:#0b101af2;border:1px solid #a58b5e9c;box-shadow:0 18px 34px #0008}
+#spxc-offline-replay[hidden]{display:none!important}
+#spxm-offline-scope{color:#baaa91;font:12px/1.6 system-ui,sans-serif}
+#spxm-offline-choices{display:grid;grid-template-columns:1fr;gap:8px;margin:17px 0 19px}
+.spxm-offline-choice{text-align:left;border:1px solid #82704f66;background:#151b24;
+ padding:12px 14px;color:#e6d6b7;font:15px/1.3 Palatino,Georgia,serif;cursor:pointer}
+.spxm-offline-choice:hover,.spxm-offline-choice:focus-visible{border-color:#d1b982;background:#24272d}
+#spxm-offline-label{display:block;margin:11px 0;color:#d6c29d;font:13px/1.4 system-ui,sans-serif}
+#spxm-offline-question{flex:1;min-width:0;background:#111a25;
+ border:1px solid #937c53;color:#f3e8d4;padding:12px;font:16px Palatino,Georgia,serif}
+#spxm-offline-send{border:1px solid #c4a777;background:#29251f;color:#efd5a2;
+ padding:10px 13px;font:12px system-ui,sans-serif;cursor:pointer}
+.spxm-offline-source{margin:9px 0;border-top:1px solid #8e795b43;padding:8px 0;
+ color:#ddcba9;font:13px/1.55 Palatino,Georgia,serif}
+.spxm-offline-source summary{cursor:pointer;color:#e0c390;overflow-wrap:anywhere}
+.spxm-offline-original{margin:10px 0;color:#d6cbb6;font-style:italic}
+.spxm-offline-source a{display:inline-block;color:#c4ae80;font:11px/1.4 system-ui,sans-serif}
+.spxm-offline-disclaimer{color:#a99678;font:11px/1.5 system-ui,sans-serif}
+@media(max-width:600px){#spxc-offline-replay{padding:15px}#spxc-offline-replay .spxm-row{
+ display:flex;flex-direction:column;gap:8px}#spxm-offline-send{min-height:44px}}
+@media(prefers-reduced-motion:reduce){.spxm-offline-choice{scroll-behavior:auto}}
+
+#spxm-offline-example{display:block;width:100%;margin:0 0 16px;padding:10px 12px;
+ background:transparent;border:1px dashed #97835f88;color:#cdbb99;
+ text-align:left;font:13px/1.45 Palatino,Georgia,serif;cursor:pointer}
+#spxm-offline-example[hidden]{display:none!important}
+#spxm-offline-example:hover,#spxm-offline-example:focus-visible{
+ border-color:#c5a879;background:#211e1c}
+.spxm-related-notice{margin:12px 0;color:#ead9b8;
+ font:14px/1.55 Palatino,Georgia,serif}
+.spxm-offline-related{display:block;width:100%;margin:8px 0;padding:12px 14px;
+ border:1px solid #baa071;color:#f0dfbf;background:#29251f;
+ text-align:left;font:15px/1.4 Palatino,Georgia,serif;cursor:pointer}
+.spxm-offline-related:hover,.spxm-offline-related:focus-visible{
+ background:#35302a;border-color:#f0d59d}
+
+/* The four reviewed pilot subjects have one question surface, never two.
+ * The underlying 106-subject free-ask remains intact for all other chapters. */
+body.spxc-offline-pilot-active .spxc-free-ask{display:none!important}
+
+/* Opt-in editorial comparison, kept separate from the readable reply. */
+.spxm-claim-audit{margin:16px 0 8px;padding:12px 14px;
+ border:1px solid #8b775b70;background:#10161e}
+.spxm-claim-audit>summary{cursor:pointer;color:#e0ca9d;
+ font:13px/1.5 system-ui,sans-serif}
+.spxm-trace-caution{font:12px/1.6 system-ui,sans-serif;
+ color:#baa789;border-bottom:1px solid #75634855;padding-bottom:10px}
+.spxm-trace-unit{padding:8px 0 12px;border-bottom:1px solid #74634644}
+.spxm-trace-unit:last-child{border-bottom:0}
+.spxm-trace-label{margin:12px 0 5px;color:#af9c7c;
+ font:11px/1.5 system-ui,sans-serif;letter-spacing:.02em}
+.spxm-trace-claim{font:16px/1.48 Palatino,Georgia,serif;color:#e9d9bd;margin:4px 0 12px}
+.spxm-trace-witness{padding:9px 12px;margin:7px 0;border-left:1px solid #baa27370;
+ background:#151a22}
+.spxm-trace-original{color:#dbcfb8;font:italic 14px/1.55 Palatino,Georgia,serif;
+ overflow-wrap:anywhere}
+.spxm-trace-witness a{color:#ddc18b;font:11px/1.45 system-ui,sans-serif}
+@media(max-width:600px){.spxm-claim-audit{padding:10px}.spxm-trace-witness{padding:8px}}
+
+
+/* P2.46: guided source-dialogue staging, not messenger bubbles or a live model. */
+#spxm-guided-exchange{border-block:1px solid #826d4a70;padding:13px 0 17px;margin:15px 0 8px}
+#spxm-guided-start{border:1px solid #b19a6f;background:#1f242c;color:#e6ce9d;
+ padding:10px 15px;cursor:pointer;min-height:42px;font:13px/1.35 system-ui,sans-serif}
+#spxm-guided-state{color:#b8a383;letter-spacing:.015em;font:12px/1.55 system-ui,sans-serif;margin:10px 0 0}
+#spxm-guided-continue{margin:12px 0 0}
+.spxm-guided-question{display:block;width:100%;min-height:48px;padding:13px 15px;
+ border:1px solid #c6a976;background:#292722;text-align:left;color:#f1ddba;
+ cursor:pointer;font:16px/1.5 Palatino,Georgia,serif}
+.spxm-guided-question:hover,.spxm-guided-question:focus-visible,
+#spxm-guided-start:hover,#spxm-guided-start:focus-visible{
+ background:#373128;border-color:#e5c992;outline-offset:3px}
+.spxm-guided-caution{color:#ab9a7d;font:11px/1.55 system-ui,sans-serif;margin:0 0 9px}
+.spxm-guided-finished{color:#cdb68d}
+#spxm-offline-choices[hidden]{display:none!important}
+@media(max-width:600px){
+ #spxm-guided-start{width:100%}
+ #spxm-guided-continue{width:100%}
+ .spxm-guided-question{font-size:15px}
+}
+
+
+/* P2.47: explicit source-preserving research comparison, never quote styling. */
+#spxm-voice-preview-toggle{display:block;width:100%;min-height:43px;margin:12px 0 8px;
+ padding:11px 13px;border:1px solid #ad9270;background:#191f28;color:#e9d1a8;
+ font:13px/1.4 system-ui,sans-serif;cursor:pointer;text-align:left}
+#spxm-voice-preview-toggle[hidden],#spxm-voice-preview-scope[hidden],
+.spxm-voice-evidence[hidden],.spxm-offline-source[hidden],
+.spxm-claim-audit[hidden],.spxm-source-label[hidden]{display:none!important}
+#spxm-voice-preview-toggle:hover,#spxm-voice-preview-toggle:focus-visible{
+ border-color:#ead09c;background:#2b2b2b;outline-offset:3px}
+#spxm-voice-preview-scope{padding:8px 10px;margin:0 0 12px;
+ color:#dfc599;border-left:2px solid #ab8b56;background:#211b19;
+ font:12px/1.6 system-ui,sans-serif}
+.spxm-voice-evidence{margin:14px 0 12px;padding:12px;background:#131a21;
+ border:1px solid #8d7b6077;color:#d1c5b3;font:13px/1.6 Georgia,serif}
+.spxm-voice-evidence summary{cursor:pointer;color:#e0c697}
+.spxm-voice-witness{border-left:1px solid #9c855e66;padding:8px 12px;margin:12px 0;
+ color:#d5c6af;overflow-wrap:anywhere}
+.spxm-voice-witness a{display:block;margin:6px 0 0;color:#cbb18a;font:11px/1.4 system-ui,sans-serif}

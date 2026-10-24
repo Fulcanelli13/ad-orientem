@@ -1,0 +1,1124 @@
+{
+  "schema": "AO_SPX_P2_NEXT12_ORIGINAL_DOCUMENT_DISCOVERY_BATCH_V1",
+  "status": "UNAPPROVED_PRIVATE_SOURCE_DISCOVERY_NOT_GENERATION_EVIDENCE",
+  "owner": "Pius X source owner #1458, existing visual-novel #1551, review PR #1570",
+  "asOf": "2026-10-23",
+  "population": "Existing original 106-chapter / 423-node source corpus",
+  "summary": {
+    "documentGroups": 12,
+    "chaptersInGroups": 53,
+    "sourceNodesInGroups": 195,
+    "shortExcerptsLocated": 8,
+    "alreadyMappedPilotChapters": 4,
+    "chaptersFullyCertified": 0,
+    "translatedSourceClaimsApproved": 0,
+    "shortExcerptsWithClaimLevelLimitationsRecorded": 8,
+    "newlyPromotedModelWitnesses": 0
+  },
+  "documents": [
+    {
+      "sequence": 1,
+      "documentKey": "/content/pius-x/{language}/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "title": "Pascendi dominici gregis",
+      "originalLanguage": "la",
+      "officialOriginalPage": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "sourcePageStatus": "OFFICIAL_VATICAN_PAGE_RETRIEVED_2026-10-23",
+      "researchStatus": "DOCUMENT_DISCOVERY_COMPLETE_NODE_CLAIMS_UNVERIFIED",
+      "chapters": [
+        {
+          "chapterId": "SPX-PILOT-07",
+          "chapterTitle": "The Modernist controversy",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_PILOT_07.OPEN",
+            "AO.SPX.DIALOGUE.SPX_PILOT_07.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_PILOT_07.FOLLOW_2"
+          ],
+          "sourceLocus": "Pascendi §§5–8, 11–13, 26 and 39"
+        },
+        {
+          "chapterId": "SPX-EXP-012",
+          "chapterTitle": "Can reason discover anything certain about God?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_012.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_012.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_012.F2"
+          ],
+          "sourceLocus": "§6"
+        },
+        {
+          "chapterId": "SPX-EXP-013",
+          "chapterTitle": "Is a sincere religious experience enough to establish revealed truth?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_013.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_013.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_013.F2"
+          ],
+          "sourceLocus": "§§7–8"
+        },
+        {
+          "chapterId": "SPX-EXP-014",
+          "chapterTitle": "Can a revealed dogma become false when religious opinions change?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_014.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_014.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_014.F2"
+          ],
+          "sourceLocus": "§§11–13"
+        },
+        {
+          "chapterId": "SPX-EXP-015",
+          "chapterTitle": "Were you opposed to scientific research?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_015.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_015.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_015.F2"
+          ],
+          "sourceLocus": "§§17, 45–47"
+        },
+        {
+          "chapterId": "SPX-EXP-016",
+          "chapterTitle": "Why did you challenge certain forms of biblical criticism?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_016.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_016.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_016.F2"
+          ],
+          "sourceLocus": "§§29–33"
+        },
+        {
+          "chapterId": "SPX-EXP-017",
+          "chapterTitle": "Why did you criticise the Modernists' way of defending Christianity?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_017.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_017.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_017.F2"
+          ],
+          "sourceLocus": "§§35–37"
+        },
+        {
+          "chapterId": "SPX-EXP-019",
+          "chapterTitle": "Why did you ask bishops to take special care over seminaries and books?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_019.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_019.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_019.F2"
+          ],
+          "sourceLocus": "§§44–56"
+        },
+        {
+          "chapterId": "SPX-EXP-022",
+          "chapterTitle": "What can Catholics learn from your warnings about doctrinal error among clergy?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_022.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_022.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_022.F2"
+          ],
+          "sourceLocus": "§§44–56"
+        },
+        {
+          "chapterId": "SPX-EXP-023",
+          "chapterTitle": "What duty does a bishop have when doctrine is endangered?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_023.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_023.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_023.F2"
+          ],
+          "sourceLocus": "§§44–56"
+        },
+        {
+          "chapterId": "SPX-EXP-032",
+          "chapterTitle": "Are miracles and prophecies merely symbols of religious experience?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_032.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_032.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_032.F2"
+          ],
+          "sourceLocus": "§§6–10"
+        },
+        {
+          "chapterId": "SPX-EXP-031",
+          "chapterTitle": "Does sincerity make every religion equally true?",
+          "originalOwnerFile": "source-stage-20.v1.json",
+          "nodeIds": [
+            "SPX.DIALOGUE.SPX-EXP-031.OPEN",
+            "SPX.DIALOGUE.SPX-EXP-031.F1",
+            "SPX.DIALOGUE.SPX-EXP-031.F2",
+            "SPX.DIALOGUE.SPX-EXP-031.F3"
+          ],
+          "sourceLocus": "§§14–15"
+        }
+      ],
+      "mappedNodeCountInGroup": 0,
+      "excerptCandidate": {
+        "chapterId": "SPX-PILOT-07",
+        "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_07.OPEN",
+        "originalLanguageText": "traditae sanctis fidei depositum vigilantissime custodiat",
+        "sourceWebPageLine": 38,
+        "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
+        "supportScope": "Papal duty to safeguard the received deposit of faith",
+        "interpretationCaveat": "Preamble duty is not, alone, detailed support for every argument about Modernist positions",
+        "claimTriage": {
+          "degree": "INSUFFICIENT_FOR_OPENING_ANSWER",
+          "established": [
+            "Papal obligation to guard the deposit of faith"
+          ],
+          "notEstablished": [
+            "Modernism's integrated philosophical components",
+            "Reduction of faith to sentiment",
+            "Specific claim that it is a synthesis of heresies"
+          ],
+          "additionalSourceLoci": [
+            "Pascendi sections on the Modernist philosopher, believer, theologian, historical critic, and concluding synthesis"
+          ],
+          "reviewClass": "NEEDS_SOURCE_DEPENDENT_CONTEXT",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
+      },
+      "existingPilotNode": null
+    },
+    {
+      "sequence": 2,
+      "documentKey": "/content/pius-x/{language}/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "title": "Haerent animo",
+      "originalLanguage": "la",
+      "officialOriginalPage": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "sourcePageStatus": "OFFICIAL_VATICAN_PAGE_RETRIEVED_2026-10-23",
+      "researchStatus": "DOCUMENT_DISCOVERY_COMPLETE_NODE_CLAIMS_UNVERIFIED",
+      "chapters": [
+        {
+          "chapterId": "SPX-PILOT-09",
+          "chapterTitle": "The inner life of the priest",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_PILOT_09.OPEN",
+            "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_2"
+          ],
+          "sourceLocus": "Haerent animo §§15–20"
+        },
+        {
+          "chapterId": "SPX-EXP-046",
+          "chapterTitle": "Why should a priest's example matter as much as his preaching?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_046.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_046.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_046.F2"
+          ],
+          "sourceLocus": "§§2–4"
+        },
+        {
+          "chapterId": "SPX-034",
+          "chapterTitle": "How should I meditate on Christ?",
+          "originalOwnerFile": "source-stage-20.v1.json",
+          "nodeIds": [
+            "SPX.DIALOGUE.SPX-034.OPEN",
+            "SPX.DIALOGUE.SPX-034.F1",
+            "SPX.DIALOGUE.SPX-034.F2",
+            "SPX.DIALOGUE.SPX-034.F3",
+            "SPX.DEPTH12.SPX-034.F1.D1",
+            "SPX.DEPTH12.SPX-034.F2.D1",
+            "SPX.DEPTH12.SPX-034.F3.D1"
+          ],
+          "sourceLocus": "Haerent animo §21"
+        },
+        {
+          "chapterId": "SPX-035",
+          "chapterTitle": "Why read Scripture and spiritual books regularly?",
+          "originalOwnerFile": "source-stage-20.v1.json",
+          "nodeIds": [
+            "SPX.DIALOGUE.SPX-035.OPEN",
+            "SPX.DIALOGUE.SPX-035.F1",
+            "SPX.DIALOGUE.SPX-035.F2",
+            "SPX.DIALOGUE.SPX-035.F3",
+            "SPX.DEPTH12.SPX-035.F1.D1",
+            "SPX.DEPTH12.SPX-035.F2.D1",
+            "SPX.DEPTH12.SPX-035.F3.D1"
+          ],
+          "sourceLocus": "Haerent animo §§22–24"
+        },
+        {
+          "chapterId": "SPX-NEW-017",
+          "chapterTitle": "Why should a priest who hears confessions also confess his own sins?",
+          "originalOwnerFile": "spx-p4-new-chapters-interior-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-017.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-017.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-017.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-017.FOLLOW_3"
+          ],
+          "sourceLocus": "Haerent animo (4 August 1908), §§25–28: conscience and the sacrament of Penance"
+        },
+        {
+          "chapterId": "SPX-NEW-018",
+          "chapterTitle": "Why did you recommend an annual retreat to priests?",
+          "originalOwnerFile": "spx-p4-new-chapters-interior-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-018.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-018.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-018.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-018.FOLLOW_3"
+          ],
+          "sourceLocus": "Haerent animo (4 August 1908), §34, section XV: annual exercises and monthly recollection"
+        },
+        {
+          "chapterId": "SPX-NEW-019",
+          "chapterTitle": "Why should priests support one another instead of working alone?",
+          "originalOwnerFile": "spx-p4-new-chapters-interior-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-019.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-019.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-019.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-019.FOLLOW_3"
+          ],
+          "sourceLocus": "Haerent animo (4 August 1908), §§35–36, section XV: priestly unions"
+        },
+        {
+          "chapterId": "SPX-NEW-020",
+          "chapterTitle": "What did your fiftieth anniversary as a priest mean to you?",
+          "originalOwnerFile": "spx-p4-new-chapters-interior-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-020.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-020.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-020.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-020.FOLLOW_3"
+          ],
+          "sourceLocus": "Haerent animo (4 August 1908), introduction §§1–2: fiftieth anniversary of priestly ordination"
+        }
+      ],
+      "mappedNodeCountInGroup": 3,
+      "excerptCandidate": {
+        "chapterId": "SPX-NEW-017",
+        "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-017.OPEN",
+        "originalLanguageText": null,
+        "sourceWebPageLine": null,
+        "status": "EXISTING_DOCUMENT_ANCHORS_NOT_YET_REUSED_FOR_THIS_CHAPTER",
+        "supportScope": "Existing mapped passage on prayer addresses priests; remaining chapters need separate sections",
+        "interpretationCaveat": "First-person anniversary memoir vs quoted authorities requires distinct review",
+        "claimTriage": {
+          "degree": "EXISTING_DOCUMENT_WITNESS_ONLY",
+          "established": [],
+          "notEstablished": [
+            "This specific candidate chapter has no new node-level witness mapping in the discovery batch"
+          ],
+          "additionalSourceLoci": [
+            "Haerent animo (4 August 1908), §§25–28: conscience and the sacrament of Penance"
+          ],
+          "reviewClass": "NEEDS_NODE_LEVEL_ORIGINAL_PASSAGES",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NO_NEW_WITNESS",
+          "documentExcerptVerbatimPresence": "NOT_APPLICABLE_EXISTING_DOCUMENT_ANNEX",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
+      },
+      "existingPilotNode": "SPX-PILOT-09"
+    },
+    {
+      "sequence": 3,
+      "documentKey": "/content/pius-x/{language}/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "title": "Acerbo nimis",
+      "originalLanguage": "la",
+      "officialOriginalPage": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "sourcePageStatus": "OFFICIAL_VATICAN_PAGE_RETRIEVED_2026-10-23",
+      "researchStatus": "DOCUMENT_DISCOVERY_COMPLETE_NODE_CLAIMS_UNVERIFIED",
+      "chapters": [
+        {
+          "chapterId": "SPX-PILOT-08",
+          "chapterTitle": "Teaching the faith",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_PILOT_08.OPEN",
+            "AO.SPX.DIALOGUE.SPX_PILOT_08.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_PILOT_08.FOLLOW_2"
+          ],
+          "sourceLocus": "Acerbo nimis §§16–17 and 24–26"
+        },
+        {
+          "chapterId": "SPX-EXP-043",
+          "chapterTitle": "Teaching adults carefully",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_043.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_043.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_043.FOLLOW_2"
+          ],
+          "sourceLocus": "Acerbo nimis §§24–26"
+        },
+        {
+          "chapterId": "SPX-EXP-042",
+          "chapterTitle": "How should children be prepared for Holy Communion?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_042.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_042.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_042.F2"
+          ],
+          "sourceLocus": "§§19–23"
+        },
+        {
+          "chapterId": "SPX-EXP-044",
+          "chapterTitle": "What provision did you urge for children in secular schools?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_044.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_044.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_044.F2"
+          ],
+          "sourceLocus": "§23"
+        },
+        {
+          "chapterId": "SPX-NEW-021",
+          "chapterTitle": "Can an ordinary layperson help teach the faith?",
+          "originalOwnerFile": "spx-p4-new-chapters-catechesis-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-021.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-021.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-021.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-021.FOLLOW_3"
+          ],
+          "sourceLocus": "Acerbo nimis (15 April 1905), §22, norm IV: Confraternity of Christian Doctrine"
+        },
+        {
+          "chapterId": "SPX-NEW-022",
+          "chapterTitle": "What about young people whose schools teach no religion?",
+          "originalOwnerFile": "spx-p4-new-chapters-catechesis-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-022.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-022.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-022.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-022.FOLLOW_3"
+          ],
+          "sourceLocus": "Acerbo nimis (15 April 1905), §23, norm V: religious instruction for students in nonreligious schools"
+        },
+        {
+          "chapterId": "SPX-NEW-023",
+          "chapterTitle": "Why should catechesis continue through several years of adult life?",
+          "originalOwnerFile": "spx-p4-new-chapters-catechesis-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-023.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-023.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-023.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-023.FOLLOW_3"
+          ],
+          "sourceLocus": "Acerbo nimis (15 April 1905), §24, norm VI: multi-year adult instruction"
+        },
+        {
+          "chapterId": "SPX-NEW-024",
+          "chapterTitle": "Why does knowing the faith matter when someone is trying to live well?",
+          "originalOwnerFile": "spx-p4-new-chapters-catechesis-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-024.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-024.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-024.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-024.FOLLOW_3"
+          ],
+          "sourceLocus": "Acerbo nimis (15 April 1905), §§3–5: doctrine, reason and moral conduct"
+        }
+      ],
+      "mappedNodeCountInGroup": 0,
+      "excerptCandidate": {
+        "chapterId": "SPX-NEW-021",
+        "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-021.OPEN",
+        "originalLanguageText": "adiutores in catechesi tradenda laicos habebunt",
+        "sourceWebPageLine": 103,
+        "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
+        "supportScope": "Lay helpers in catechesis in parochial confraternities",
+        "interpretationCaveat": "The rule is situated in historical parish structures; not automatic present-day licensing",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "The 1905 prescription envisages lay helpers teaching catechism alongside parish clergy"
+          ],
+          "notEstablished": [
+            "Current safeguarding and canonical requirements",
+            "The full distinction between volunteer catechist and ordained minister"
+          ],
+          "additionalSourceLoci": [
+            "Norm IV with the surrounding prescription on parish confraternities; current law must be separate"
+          ],
+          "reviewClass": "HISTORICAL_NORMS_NOT_PRESENT_DAY_RULES",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
+      },
+      "existingPilotNode": null
+    },
+    {
+      "sequence": 4,
+      "documentKey": "/content/pius-x/{language}/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "title": "E supremi",
+      "originalLanguage": "la",
+      "officialOriginalPage": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "sourcePageStatus": "OFFICIAL_VATICAN_PAGE_RETRIEVED_2026-10-23",
+      "researchStatus": "DOCUMENT_DISCOVERY_COMPLETE_NODE_CLAIMS_UNVERIFIED",
+      "chapters": [
+        {
+          "chapterId": "SPX-PILOT-01",
+          "chapterTitle": "The burden of the papacy",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+            "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2"
+          ],
+          "sourceLocus": "Opening and §§1–4"
+        },
+        {
+          "chapterId": "SPX-EXP-021",
+          "chapterTitle": "Restoring all things in Christ",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_021.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_021.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_021.FOLLOW_2"
+          ],
+          "sourceLocus": "E supremi §§4 and 8–9"
+        },
+        {
+          "chapterId": "SPX-EXP-028",
+          "chapterTitle": "How can Christians avoid discouragement when society loses faith?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_028.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_028.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_028.F2"
+          ],
+          "sourceLocus": "§§5–9"
+        },
+        {
+          "chapterId": "SPX-EXP-048",
+          "chapterTitle": "How can a Catholic defend doctrine firmly without treating opponents harshly?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_048.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_048.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_048.F2"
+          ],
+          "sourceLocus": "§§12–13"
+        },
+        {
+          "chapterId": "SPX-032",
+          "chapterTitle": "How should I correct someone without bitterness?",
+          "originalOwnerFile": "source-stage-20.v1.json",
+          "nodeIds": [
+            "SPX.DIALOGUE.SPX-032.OPEN",
+            "SPX.DIALOGUE.SPX-032.F1",
+            "SPX.DIALOGUE.SPX-032.F2",
+            "SPX.DIALOGUE.SPX-032.F3",
+            "SPX.DEPTH12.SPX-032.F1.D1",
+            "SPX.DEPTH12.SPX-032.F2.D1",
+            "SPX.DEPTH12.SPX-032.F3.D1"
+          ],
+          "sourceLocus": "E supremi §13"
+        }
+      ],
+      "mappedNodeCountInGroup": 3,
+      "excerptCandidate": {
+        "chapterId": "SPX-EXP-021",
+        "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_021.OPEN",
+        "originalLanguageText": null,
+        "sourceWebPageLine": null,
+        "status": "EXISTING_DOCUMENT_ANCHORS_NOT_YET_REUSED_FOR_THIS_CHAPTER",
+        "supportScope": "Existing witnesses include the motto and §8; further node claims need individual check",
+        "interpretationCaveat": "Earlier third-node source-range correction to §8 still remains open",
+        "claimTriage": {
+          "degree": "EXISTING_DOCUMENT_WITNESS_ONLY",
+          "established": [],
+          "notEstablished": [
+            "This specific candidate chapter has no new node-level witness mapping in the discovery batch"
+          ],
+          "additionalSourceLoci": [
+            "E supremi §§4 and 8–9"
+          ],
+          "reviewClass": "NEEDS_NODE_LEVEL_ORIGINAL_PASSAGES",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NO_NEW_WITNESS",
+          "documentExcerptVerbatimPresence": "NOT_APPLICABLE_EXISTING_DOCUMENT_ANNEX",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
+      },
+      "existingPilotNode": "SPX-PILOT-01"
+    },
+    {
+      "sequence": 5,
+      "documentKey": "/content/pius-x/{language}/encyclicals/documents/hf_p-x_enc_28071906_pieni-l-animo.html",
+      "title": "Pieni l'animo",
+      "originalLanguage": "it",
+      "officialOriginalPage": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_28071906_pieni-l-animo.html",
+      "sourcePageStatus": "OFFICIAL_VATICAN_PAGE_RETRIEVED_2026-10-23",
+      "researchStatus": "DOCUMENT_DISCOVERY_COMPLETE_NODE_CLAIMS_UNVERIFIED",
+      "chapters": [
+        {
+          "chapterId": "SPX-NEW-013",
+          "chapterTitle": "Why can someone who wants to be a priest still be refused ordination?",
+          "originalOwnerFile": "spx-p4-new-chapters-priestly-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-013.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-013.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-013.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-013.FOLLOW_3"
+          ],
+          "sourceLocus": "Pieni l'animo (28 July 1906), §4"
+        },
+        {
+          "chapterId": "SPX-NEW-014",
+          "chapterTitle": "What makes a sermon genuinely useful rather than impressive?",
+          "originalOwnerFile": "spx-p4-new-chapters-priestly-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-014.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-014.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-014.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-014.FOLLOW_3"
+          ],
+          "sourceLocus": "Pieni l'animo (28 July 1906), §§8–9"
+        },
+        {
+          "chapterId": "SPX-NEW-015",
+          "chapterTitle": "Why does a seminary need a spiritual director as well as professors?",
+          "originalOwnerFile": "spx-p4-new-chapters-priestly-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-015.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-015.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-015.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-015.FOLLOW_3"
+          ],
+          "sourceLocus": "Pieni l'animo (28 July 1906), §§5–6"
+        },
+        {
+          "chapterId": "SPX-NEW-016",
+          "chapterTitle": "Why did you encourage priests to help working people but warn against political agitation?",
+          "originalOwnerFile": "spx-p4-new-chapters-priestly-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-016.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-016.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-016.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-016.FOLLOW_3"
+          ],
+          "sourceLocus": "Pieni l'animo (28 July 1906), §§10–13"
+        }
+      ],
+      "mappedNodeCountInGroup": 0,
+      "excerptCandidate": {
+        "chapterId": "SPX-NEW-013",
+        "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-013.OPEN",
+        "originalLanguageText": "solamente coloro che sono veramente idonei",
+        "sourceWebPageLine": 46,
+        "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
+        "supportScope": "Selection of suitable candidates for priestly ordination",
+        "interpretationCaveat": "Not a modern canonical ruling on an individual applicant",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "Suitable candidates, rather than all aspirants, should be selected for priestly ordination"
+          ],
+          "notEstablished": [
+            "Full justification for refusal",
+            "Bishops' entire process of discernment",
+            "Assessment of any current individual vocation"
+          ],
+          "additionalSourceLoci": [
+            "Paragraphs on aspiration, diocesan need, candidate suitability, humility and discipline"
+          ],
+          "reviewClass": "VOCATION_INDIVIDUAL_JUDGMENT_NOT_PERMITTED",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
+      },
+      "existingPilotNode": null
+    },
+    {
+      "sequence": 6,
+      "documentKey": "/content/pius-x/{language}/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "title": "Il fermo proposito",
+      "originalLanguage": "it",
+      "officialOriginalPage": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "sourcePageStatus": "OFFICIAL_VATICAN_PAGE_RETRIEVED_2026-10-23",
+      "researchStatus": "DOCUMENT_DISCOVERY_COMPLETE_NODE_CLAIMS_UNVERIFIED",
+      "chapters": [
+        {
+          "chapterId": "SPX-EXP-026",
+          "chapterTitle": "Bishops and lay initiative",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_026.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_026.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_026.FOLLOW_2"
+          ],
+          "sourceLocus": "Il fermo proposito §§20–22"
+        },
+        {
+          "chapterId": "SPX-EXP-027",
+          "chapterTitle": "Charity and Catholic action",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_027.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_027.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_027.FOLLOW_2"
+          ],
+          "sourceLocus": "Il fermo proposito §§7–13"
+        },
+        {
+          "chapterId": "SPX-029",
+          "chapterTitle": "Is charity more than giving money?",
+          "originalOwnerFile": "source-stage-20.v1.json",
+          "nodeIds": [
+            "SPX.DIALOGUE.SPX-029.OPEN",
+            "SPX.DIALOGUE.SPX-029.F1",
+            "SPX.DIALOGUE.SPX-029.F2",
+            "SPX.DIALOGUE.SPX-029.F3"
+          ],
+          "sourceLocus": "Il fermo proposito §3"
+        }
+      ],
+      "mappedNodeCountInGroup": 4,
+      "excerptCandidate": {
+        "chapterId": "SPX-EXP-026",
+        "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_026.OPEN",
+        "originalLanguageText": null,
+        "sourceWebPageLine": null,
+        "status": "EXISTING_DOCUMENT_ANCHORS_NOT_YET_REUSED_FOR_THIS_CHAPTER",
+        "supportScope": "Earlier §3 witnesses do not support the new §§20–22 episcopal scope without separate checking",
+        "interpretationCaveat": "Do not recycle charity excerpt as proof of specific episcopal governance",
+        "claimTriage": {
+          "degree": "EXISTING_DOCUMENT_WITNESS_ONLY",
+          "established": [],
+          "notEstablished": [
+            "This specific candidate chapter has no new node-level witness mapping in the discovery batch"
+          ],
+          "additionalSourceLoci": [
+            "Il fermo proposito §§20–22"
+          ],
+          "reviewClass": "NEEDS_NODE_LEVEL_ORIGINAL_PASSAGES",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NO_NEW_WITNESS",
+          "documentExcerptVerbatimPresence": "NOT_APPLICABLE_EXISTING_DOCUMENT_ANNEX",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
+      },
+      "existingPilotNode": "SPX-029"
+    },
+    {
+      "sequence": 7,
+      "documentKey": "/content/pius-x/{language}/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "title": "Tra le sollecitudini",
+      "originalLanguage": "it",
+      "officialOriginalPage": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "sourcePageStatus": "OFFICIAL_VATICAN_PAGE_RETRIEVED_2026-10-23",
+      "researchStatus": "DOCUMENT_DISCOVERY_COMPLETE_NODE_CLAIMS_UNVERIFIED",
+      "chapters": [
+        {
+          "chapterId": "SPX-EXP-037",
+          "chapterTitle": "What makes music truly suitable for the liturgy?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_037.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_037.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_037.F2"
+          ],
+          "sourceLocus": "general instruction §§1–6"
+        },
+        {
+          "chapterId": "SPX-EXP-038",
+          "chapterTitle": "Why did the dignity of church music concern you so deeply?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_038.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_038.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_038.F2"
+          ],
+          "sourceLocus": "introduction and instruction §§1–3"
+        },
+        {
+          "chapterId": "SPX-EXP-039",
+          "chapterTitle": "What did you mean by participation in the Church's public prayer?",
+          "originalOwnerFile": "source-stage-37.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_EXP_039.OPEN",
+            "AO.SPX.DIALOGUE.SPX_EXP_039.F1",
+            "AO.SPX.DIALOGUE.SPX_EXP_039.F2"
+          ],
+          "sourceLocus": "introduction and §§1–3"
+        }
+      ],
+      "mappedNodeCountInGroup": 0,
+      "excerptCandidate": {
+        "chapterId": "SPX-EXP-037",
+        "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_037.OPEN",
+        "originalLanguageText": "la santità e la bontà delle forme",
+        "sourceWebPageLine": 58,
+        "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
+        "supportScope": "Two required qualities of liturgical sacred music",
+        "interpretationCaveat": "The source also discusses universality; one fragment cannot certify a full music policy",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "Holiness and goodness of form are specified qualities of sacred music"
+          ],
+          "notEstablished": [
+            "Full universality requirement",
+            "Specific prohibition on theatrical practices",
+            "Complete normative music policy"
+          ],
+          "additionalSourceLoci": [
+            "Sacred-music instruction opening §§1–2; theatrical abuses in preamble"
+          ],
+          "reviewClass": "ADDITIONAL_LITURGICAL_SOURCE_CLAIMS_REQUIRED",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
+      },
+      "existingPilotNode": null
+    },
+    {
+      "sequence": 8,
+      "documentKey": "/content/pius-x/{language}/apost_constitutions/documents/hf_p-x_apc_19111101_divino-afflatu.html",
+      "title": "Divino afflatu",
+      "originalLanguage": "la",
+      "officialOriginalPage": "https://www.vatican.va/content/pius-x/la/apost_constitutions/documents/hf_p-x_apc_19111101_divino-afflatu.html",
+      "sourcePageStatus": "OFFICIAL_VATICAN_PAGE_RETRIEVED_2026-10-23",
+      "researchStatus": "DOCUMENT_DISCOVERY_COMPLETE_NODE_CLAIMS_UNVERIFIED",
+      "chapters": [
+        {
+          "chapterId": "SPX-NEW-003",
+          "chapterTitle": "Why did you change the distribution of the Psalms?",
+          "originalOwnerFile": "spx-p3-new-chapters-communion-liturgy-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-003.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-003.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-003.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-003.FOLLOW_3"
+          ],
+          "sourceLocus": "Divino afflatu (1 November 1911), opening and psalter-reform paragraphs"
+        },
+        {
+          "chapterId": "SPX-NEW-004",
+          "chapterTitle": "Why restore the liturgical place of Sundays?",
+          "originalOwnerFile": "spx-p3-new-chapters-communion-liturgy-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-004.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-004.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-004.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-004.FOLLOW_3"
+          ],
+          "sourceLocus": "Divino afflatu (1911), preamble and attached Rubricae, Titles II and X"
+        }
+      ],
+      "mappedNodeCountInGroup": 0,
+      "excerptCandidate": {
+        "chapterId": "SPX-NEW-003",
+        "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-003.OPEN",
+        "originalLanguageText": "revocaretur consuetudo vetus recitandi per hebdomadam totum Psalterium",
+        "sourceWebPageLine": 52,
+        "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
+        "supportScope": "Renewed weekly recitation of the whole Psalter",
+        "interpretationCaveat": "The full reform balances saints' offices and clergy's existing burdens",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "A return to weekly recitation of the entire Psalter was sought"
+          ],
+          "notEstablished": [
+            "How multiplication of saints' offices displaced weekday/sunday psalmody",
+            "The balance between clerical workload and the weekly psalter",
+            "Limits on the application of Office obligations to laity"
+          ],
+          "additionalSourceLoci": [
+            "Preamble on new saints' offices and omitted psalms; 1911 reform's burden and new schedule"
+          ],
+          "reviewClass": "HISTORICAL_LITURGICAL_SCOPE",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
+      },
+      "existingPilotNode": null
+    },
+    {
+      "sequence": 9,
+      "documentKey": "/content/pius-x/{language}/encyclicals/documents/hf_p-x_enc_24091912_singulari-quadam.html",
+      "title": "Singulari quadam",
+      "originalLanguage": "la",
+      "officialOriginalPage": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_24091912_singulari-quadam.html",
+      "sourcePageStatus": "OFFICIAL_VATICAN_PAGE_RETRIEVED_2026-10-23",
+      "researchStatus": "DOCUMENT_DISCOVERY_COMPLETE_NODE_CLAIMS_UNVERIFIED",
+      "chapters": [
+        {
+          "chapterId": "SPX-NEW-008",
+          "chapterTitle": "Why were wages and working conditions religious questions?",
+          "originalOwnerFile": "spx-p3-new-chapters-saints-social-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-008.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-008.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-008.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-008.FOLLOW_3"
+          ],
+          "sourceLocus": "Singulari quadam (24 September 1912), §§2–5"
+        },
+        {
+          "chapterId": "SPX-NEW-009",
+          "chapterTitle": "Could Catholics cooperate with non-Catholics to improve workers' lives?",
+          "originalOwnerFile": "spx-p3-new-chapters-justice-pastoral-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-009.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-009.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-009.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-009.FOLLOW_3"
+          ],
+          "sourceLocus": "Singulari quadam (24 September 1912), §§4–8"
+        }
+      ],
+      "mappedNodeCountInGroup": 0,
+      "excerptCandidate": {
+        "chapterId": "SPX-NEW-008",
+        "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-008.OPEN",
+        "originalLanguageText": "non mere oeconomicae esse naturae",
+        "sourceWebPageLine": 51,
+        "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
+        "supportScope": "The social/labour question is not merely economic",
+        "interpretationCaveat": "Case concerns German Catholic and mixed workers' associations; avoid generalizing conditional allowances",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "Social questions about working arrangements and wages are not merely economic"
+          ],
+          "notEstablished": [
+            "The exact moral and religious claim without examining the citation of prior papal teaching",
+            "Conditions for Catholic participation in mixed trade unions",
+            "Wages of present-day particular workers"
+          ],
+          "additionalSourceLoci": [
+            "Paragraphs on Catholic social duties, moral/religious significance, German mixed associations and safeguards"
+          ],
+          "reviewClass": "QUOTED_EARLIER_AUTHORITY_AND_CONTEXT",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
+      },
+      "existingPilotNode": null
+    },
+    {
+      "sequence": 10,
+      "documentKey": "/content/pius-x/{language}/encyclicals/documents/hf_p-x_enc_26051910_editae-saepe.html",
+      "title": "Editae saepe",
+      "originalLanguage": "la",
+      "officialOriginalPage": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_26051910_editae-saepe.html",
+      "sourcePageStatus": "OFFICIAL_VATICAN_PAGE_RETRIEVED_2026-10-23",
+      "researchStatus": "DOCUMENT_DISCOVERY_COMPLETE_NODE_CLAIMS_UNVERIFIED",
+      "chapters": [
+        {
+          "chapterId": "SPX-NEW-002",
+          "chapterTitle": "Why did you encourage more frequent Holy Communion?",
+          "originalOwnerFile": "spx-p3-new-chapters-communion-liturgy-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-002.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-002.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-002.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-002.FOLLOW_3"
+          ],
+          "sourceLocus": "Editae saepe (26 May 1910), §67; discussion of the frequent-Communion decree"
+        },
+        {
+          "chapterId": "SPX-NEW-007",
+          "chapterTitle": "Why remember saints rather than simply admire them?",
+          "originalOwnerFile": "spx-p3-new-chapters-saints-social-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-007.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-007.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-007.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-007.FOLLOW_3"
+          ],
+          "sourceLocus": "Editae saepe (26 May 1910), §§1–3; St Charles Borromeo and imitation of the saints"
+        }
+      ],
+      "mappedNodeCountInGroup": 0,
+      "excerptCandidate": {
+        "chapterId": "SPX-NEW-007",
+        "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-007.OPEN",
+        "originalLanguageText": "non modo sunt ad commemorandum iucunda, sed etiam ad imitandum illustria",
+        "sourceWebPageLine": 43,
+        "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
+        "supportScope": "The saints' deeds are meant to be remembered and imitated",
+        "interpretationCaveat": "This passage invokes biblical authorities separately from Pius X's remarks",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "The saints' deeds are to be remembered and imitated"
+          ],
+          "notEstablished": [
+            "Every detail of the comparison between Gregory, Anselm and St Charles Borromeo",
+            "Specific historical contextualization of each saint's reform"
+          ],
+          "additionalSourceLoci": [
+            "Opening commemoration argument and passages identifying the three exemplars and St Charles"
+          ],
+          "reviewClass": "DISTINGUISH_PAPAL_NARRATION_FROM_CITED_SCRIPTURE",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
+      },
+      "existingPilotNode": null
+    },
+    {
+      "sequence": 11,
+      "documentKey": "/content/pius-x/{language}/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html",
+      "title": "Tribus circiter",
+      "originalLanguage": "la",
+      "officialOriginalPage": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html",
+      "sourcePageStatus": "OFFICIAL_VATICAN_PAGE_RETRIEVED_2026-10-23",
+      "researchStatus": "DOCUMENT_DISCOVERY_COMPLETE_NODE_CLAIMS_UNVERIFIED",
+      "chapters": [
+        {
+          "chapterId": "SPX-NEW-011",
+          "chapterTitle": "Can impressive devotional practices excuse rejecting the Church's pastors?",
+          "originalOwnerFile": "spx-p3-new-chapters-justice-pastoral-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-011.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-011.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-011.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-011.FOLLOW_3"
+          ],
+          "sourceLocus": "Tribus circiter (5 April 1906), §§1–5"
+        },
+        {
+          "chapterId": "SPX-NEW-012",
+          "chapterTitle": "After condemning a rebellion, could you still welcome those who repented?",
+          "originalOwnerFile": "spx-p3-new-chapters-justice-pastoral-4.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX-NEW-012.OPEN",
+            "AO.SPX.DIALOGUE.SPX-NEW-012.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX-NEW-012.FOLLOW_2",
+            "AO.SPX.DIALOGUE.SPX-NEW-012.FOLLOW_3"
+          ],
+          "sourceLocus": "Tribus circiter (5 April 1906), §§11–13"
+        }
+      ],
+      "mappedNodeCountInGroup": 4,
+      "excerptCandidate": {
+        "chapterId": "SPX-NEW-011",
+        "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-011.OPEN",
+        "originalLanguageText": null,
+        "sourceWebPageLine": null,
+        "status": "EXISTING_DOCUMENT_ANCHORS_NOT_YET_REUSED_FOR_THIS_CHAPTER",
+        "supportScope": "Earlier §11–12 mapping does not cover opening §§1–5 on unauthorized devotional leadership",
+        "interpretationCaveat": "Mariavite case is historically particular; refusal of present-status judgements remains",
+        "claimTriage": {
+          "degree": "EXISTING_DOCUMENT_WITNESS_ONLY",
+          "established": [],
+          "notEstablished": [
+            "This specific candidate chapter has no new node-level witness mapping in the discovery batch"
+          ],
+          "additionalSourceLoci": [
+            "Tribus circiter (5 April 1906), §§1–5"
+          ],
+          "reviewClass": "NEEDS_NODE_LEVEL_ORIGINAL_PASSAGES",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NO_NEW_WITNESS",
+          "documentExcerptVerbatimPresence": "NOT_APPLICABLE_EXISTING_DOCUMENT_ANNEX",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
+      },
+      "existingPilotNode": "SPX-NEW-012"
+    },
+    {
+      "sequence": 12,
+      "documentKey": "/content/pius-x/{language}/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "title": "Ad diem illum laetissimum",
+      "originalLanguage": "la",
+      "officialOriginalPage": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "sourcePageStatus": "OFFICIAL_VATICAN_PAGE_RETRIEVED_2026-10-23",
+      "researchStatus": "DOCUMENT_DISCOVERY_COMPLETE_NODE_CLAIMS_UNVERIFIED",
+      "chapters": [
+        {
+          "chapterId": "SPX-013",
+          "chapterTitle": "Why ask Our Lady to intercede with Christ?",
+          "originalOwnerFile": "source-stage-25.v1.json",
+          "nodeIds": [
+            "AO.SPX.DIALOGUE.SPX_013.OPEN",
+            "AO.SPX.DIALOGUE.SPX_013.F1",
+            "AO.SPX.DIALOGUE.SPX_013.F2",
+            "AO.SPX.DIALOGUE.SPX_013.F3"
+          ],
+          "sourceLocus": "Ad diem illum 1904 §§7–14"
+        },
+        {
+          "chapterId": "SPX-045",
+          "chapterTitle": "What does Mary at Calvary teach about suffering?",
+          "originalOwnerFile": "source-stage-20.v1.json",
+          "nodeIds": [
+            "SPX.DIALOGUE.SPX-045.OPEN",
+            "SPX.DIALOGUE.SPX-045.F1",
+            "SPX.DIALOGUE.SPX-045.F2",
+            "SPX.DIALOGUE.SPX-045.F3"
+          ],
+          "sourceLocus": "Ad diem illum §21"
+        }
+      ],
+      "mappedNodeCountInGroup": 0,
+      "excerptCandidate": {
+        "chapterId": "SPX-013",
+        "nodeId": "AO.SPX.DIALOGUE.SPX_013.OPEN",
+        "originalLanguageText": "nemo illa aptior dux et magister ad Christum noscendum",
+        "sourceWebPageLine": 59,
+        "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
+        "supportScope": "The Virgin Mary's singular ability to lead the faithful to know Christ",
+        "interpretationCaveat": "Theological interpretation requires full-context review; avoid invented Marian statements",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "Mary's singular role as a guide to knowledge of Christ"
+          ],
+          "notEstablished": [
+            "Intercession in its fuller theological sense from this isolated excerpt",
+            "The scope of Marian mediation and how it relates to Christ's unique mediation"
+          ],
+          "additionalSourceLoci": [
+            "Later Marian mediation and Christological limitations in Ad diem illum"
+          ],
+          "reviewClass": "THEOLOGICAL_EXTRAPOLATION_NEEDS_MORE_TEXT",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
+      },
+      "existingPilotNode": null
+    }
+  ]
+}

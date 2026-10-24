@@ -1,0 +1,120 @@
+{
+  "schema": "AO_SPX_P2_PRIMARY_WITNESS_ANNEX_V2",
+  "status": "PRIVATE_ORIGINAL_LANGUAGE_EXCERPT_SPOTCHECK_UNAPPROVED",
+  "originalRegistryUnmodified": true,
+  "editorialApproval": false,
+  "publicationApproved": false,
+  "approvedAsAuthenticQuotation": false,
+  "witnessCompleteness": "BOUNDED_PASSAGE_SPOTCHECK_NOT_COMPLETE_DOCUMENT_COLLATION",
+  "chapterId": "SPX-PILOT-09",
+  "document": {
+    "title": "Haerent animo",
+    "date": "1908-08-04",
+    "author": "Pius X",
+    "languageOfOriginal": "la",
+    "sites": {
+      "original": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "italian": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html"
+    }
+  },
+  "sourceWitnesses": [
+    {
+      "id": "HA-DAILY",
+      "locus": "§15, daily meditation",
+      "text": "meditationi certum aliquod spatium quotidie concedatur",
+      "meaning": "Priests are to set aside time for meditation daily",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 87,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "HA-MINISTRY",
+      "locus": "§18, pastoral work as pretext",
+      "text": "se totos agitationi ministerii dedidisse",
+      "meaning": "Some plead total absorption in the activities of ministry",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 96,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "HA-REJECT",
+      "locus": "§18, rejection of excuse",
+      "text": "Verum falluntur misere",
+      "meaning": "Pius X rejects the ministerial-work excuse",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 96,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    },
+    {
+      "id": "HA-COLLOQUY",
+      "locus": "§18, speaking with God",
+      "text": "Nec enim assueti cum Deo colloqui",
+      "meaning": "Those unaccustomed to speaking with God lose vitality in instructing others",
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 97,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
+    }
+  ],
+  "dialogueMappings": [
+    {
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_09.OPEN",
+      "witnessIds": [
+        "HA-DAILY",
+        "HA-MINISTRY",
+        "HA-REJECT",
+        "HA-COLLOQUY"
+      ],
+      "editorialWarnings": [
+        "The priestly duty is the text's immediate audience and form; do not convert into universal legal obligations for laity",
+        "St Bernard's meditation advice quoted in §15 is St Bernard's voice, not a personally reported event of Pius X"
+      ]
+    },
+    {
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_1",
+      "witnessIds": [
+        "HA-DAILY",
+        "HA-MINISTRY",
+        "HA-REJECT"
+      ],
+      "editorialWarnings": [
+        "Works of pastoral charity are valuable but do not displace daily meditation in the priestly exhortation"
+      ]
+    },
+    {
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_2",
+      "witnessIds": [
+        "HA-DAILY"
+      ],
+      "editorialWarnings": [
+        "TEXT_AUDIENCE_SPECIFIC: encyclical's title and opening address Catholic clergy; this wording is not a universal norm imposed identically on laity",
+        "It is an interpretive safeguard, not a statement about modern obligations made verbatim by Pius X"
+      ]
+    }
+  ],
+  "findings": [
+    "The Vatican Latin document is explicitly addressed to Catholic clergy",
+    "§18 rejects the argument that the exertions of ministry excuse failure to meditate",
+    "The longer preceding discussion quotes St Bernard and other authorities; do not invent personal Pius X experience from these citations"
+  ],
+  "webTextAudit": {
+    "checkedOn": "2026-10-23",
+    "matchedCount": 4,
+    "notClaiming": "Full diplomatic collation, context-independent speaker approval, or publication eligibility"
+  }
+}

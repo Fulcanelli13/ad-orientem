@@ -1,0 +1,543 @@
+{
+  "schema": "AO_SPX_P2_P22_BILINGUAL_CLAIM_ACCEPTANCE_PILOT_V1",
+  "status": "PRIVATE_EDITORIAL_TEST_REVISED_AFTER_DIRECT_VATICAN_CLAIM_READING_NO_PUBLICATION",
+  "asOf": "2026-10-24",
+  "reason": "Eleven pre-existing source-only eligible papal-document nodes receive short, independently edited bilingual answer specimens grounded in precise original-text witness IDs. No source-owner answer is replaced.",
+  "owner": "Existing 106-chapter 423-node P6 HTML and source-only research gate; parallel voice pipeline remains authoritative for stylistic decisions",
+  "documentFamilies": [
+    {
+      "chapterId": "SPX-PILOT-01",
+      "documentTitle": "E supremi",
+      "originalSource": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "language": "la",
+      "sourceStatus": "PAPAL_AUTHORED_PRIMARY_TEXT"
+    },
+    {
+      "chapterId": "SPX-PILOT-09",
+      "documentTitle": "Haerent animo",
+      "originalSource": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "language": "la",
+      "sourceStatus": "PAPAL_AUTHORED_CLERGY_EXHORTATION"
+    },
+    {
+      "chapterId": "SPX-029",
+      "documentTitle": "Il fermo proposito",
+      "originalSource": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "language": "it",
+      "sourceStatus": "PAPAL_AUTHORED_ITALIAN_ENCYCLICAL"
+    },
+    {
+      "chapterId": "SPX-NEW-012",
+      "documentTitle": "Tribus circiter",
+      "originalSource": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html",
+      "language": "la",
+      "sourceStatus": "PAPAL_AUTHORED_HISTORIC_DISCIPLINARY_ENCYCLICAL"
+    }
+  ],
+  "summary": {
+    "chapterCount": 4,
+    "sourceSelectedNodes": 11,
+    "bilingualSpecimens": 22,
+    "preflightHolds": 2,
+    "onlyOriginalPapalAuthorshipDocs": true,
+    "sourceOnlyGateAdmissionsChange": 0,
+    "modelProviderCalls": 0,
+    "certifiedHistoricalQuotes": 0,
+    "certifiedWholeAnswers": 0,
+    "certifiedTranslations": 0,
+    "publicationApprovals": 0,
+    "specimensRevisedForSourcePrecision": 5,
+    "originalBilingualSpecimensPreservedInPrecedingGitCommit": true,
+    "newModelSourceGateAdmissions": 0
+  },
+  "rules": [
+    "Do not quote the unverified original P6 English/French answer as historic source.",
+    "Specimens are editorial replies for content and contextual-coherence assessment; their historic prose style is not certified and belongs to a separate parallel voice pipeline.",
+    "Every assertion must be bounded by the selected node's exact Latin or Italian witness IDs; historical source URL is an official locator, not a substitute for verifying snippets.",
+    "Preserve quoted-author attribution, clergy-vs-laity scope, source §8 for E supremi Christ-goal, and separate historic disciplinary case from current law.",
+    "Evaluate whether each successive response addresses its actual latest question rather than repeating a generic paragraph.",
+    "Absent configured private inference, only deterministic/mock structural playback is possible; do not claim live GPT responses or verified conversational naturalness.",
+    "All source-only gate IDs, historical owner P6 answers, 5-sprite visual novel and publication hold remain unchanged."
+  ],
+  "cases": [
+    {
+      "chapterId": "SPX-PILOT-01",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "originalSourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "sourceLanguage": "la",
+      "sourceStatus": "PAPAL_AUTHORED_PRIMARY_TEXT",
+      "question": {
+        "en": "Did you welcome your election as Pope?",
+        "fr": "Avez-vous accueilli volontiers votre élection comme pape ?"
+      },
+      "evidenceIds": [
+        "ES-INTRO-TEARS",
+        "ES-2-UNWORTHY",
+        "ES-4-STRENGTH"
+      ],
+      "claimUnits": [
+        {
+          "ordinal": 1,
+          "claim": "He describes resisting the burden of the pontificate with tears and prayer",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        },
+        {
+          "ordinal": 2,
+          "claim": "He acknowledges his inadequacy and reliance on divine strength",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        }
+      ],
+      "replySpecimen": {
+        "en": "The office was not received lightly. The encyclical speaks of tears and prayers before so grave a charge, and of a strength to be sought from God rather than from personal merit.",
+        "fr": "Cette charge ne fut pas accueillie à la légère. L'encyclique évoque des larmes et des prières devant un devoir si grave, puis la force cherchée auprès de Dieu plutôt que dans les mérites personnels."
+      },
+      "unlicensedExtensions": [
+        "Do not turn St Anselm's quoted feelings into Pius X's own recollection",
+        "Do not name Leo XIII as an exact quoted word of this passage"
+      ],
+      "status": "UNAPPROVED_SOURCE_BOUND_CONTENT_SPECIMEN_NOT_VERBATIM_QUOTATION",
+      "originalTextIndependentlyCheckedAtSourceUrl": true,
+      "completeAnswerCertified": false,
+      "translationCertified": false,
+      "historicalVoiceCertified": false,
+      "liveModelTested": false,
+      "publishingApproved": false
+    },
+    {
+      "chapterId": "SPX-PILOT-01",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "originalSourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "sourceLanguage": "la",
+      "sourceStatus": "PAPAL_AUTHORED_PRIMARY_TEXT",
+      "question": {
+        "en": "What made the responsibility so grave to you?",
+        "fr": "Pourquoi cette charge vous paraissait-elle si redoutable ?"
+      },
+      "evidenceIds": [
+        "ES-2-UNWORTHY",
+        "ES-2-PREDECESSOR",
+        "ES-3-FEAR"
+      ],
+      "claimUnits": [
+        {
+          "ordinal": 1,
+          "claim": "He confesses personal weakness",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        },
+        {
+          "ordinal": 2,
+          "claim": "He mentions succeeding an admired predecessor and a grave condition of society",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        }
+      ],
+      "replySpecimen": {
+        "en": "The responsibility seemed formidable because he recognized his own weakness and was succeeding a greatly admired predecessor. The encyclical does not present that charge as something he could bear through personal confidence alone.",
+        "fr": "Cette responsabilité lui paraissait redoutable : il reconnaissait sa propre faiblesse et succédait à un prédécesseur très admiré. L’encyclique ne présente pas cette charge comme une tâche qu’il pouvait porter par la seule confiance en lui-même."
+      },
+      "unlicensedExtensions": [
+        "Do not invent an inner psychological episode",
+        "Do not identify the predecessor by a name absent from this precise original excerpt"
+      ],
+      "status": "UNAPPROVED_SOURCE_BOUND_CONTENT_SPECIMEN_NOT_VERBATIM_QUOTATION",
+      "originalTextIndependentlyCheckedAtSourceUrl": true,
+      "completeAnswerCertified": false,
+      "translationCertified": false,
+      "historicalVoiceCertified": false,
+      "liveModelTested": false,
+      "publishingApproved": false,
+      "contentRevisionReason": "Removed broad contextual assertion about troubled historical times from limited selected witness set.",
+      "sourceScopeRecheckedAgainstVaticanText": true
+    },
+    {
+      "chapterId": "SPX-PILOT-01",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2",
+      "originalSourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "sourceLanguage": "la",
+      "sourceStatus": "PAPAL_AUTHORED_PRIMARY_TEXT",
+      "question": {
+        "en": "What did you intend to do once you accepted?",
+        "fr": "Que vouliez-vous accomplir après avoir accepté ?"
+      },
+      "evidenceIds": [
+        "ES-4-MOTTO",
+        "ES-8-CHRIST"
+      ],
+      "claimUnits": [
+        {
+          "ordinal": 1,
+          "claim": "He sets the restoration of all things in Christ as the purpose",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        },
+        {
+          "ordinal": 2,
+          "claim": "He connects leading humanity to Christ with return to God in section eight",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        }
+      ],
+      "replySpecimen": {
+        "en": "One purpose stands at the centre: to restore all things in Christ. The encyclical explains that bringing humanity under Christ’s rule is the way of leading mankind back to God.",
+        "fr": "Un seul dessein est placé au centre : tout restaurer dans le Christ. L’encyclique explique que ramener les hommes sous l’autorité du Christ est la voie qui les reconduit à Dieu."
+      },
+      "unlicensedExtensions": [
+        "The supporting second claim requires section eight, not merely sections one to four",
+        "Do not invent an explicit quotation about modern Church governance"
+      ],
+      "status": "UNAPPROVED_SOURCE_BOUND_CONTENT_SPECIMEN_NOT_VERBATIM_QUOTATION",
+      "originalTextIndependentlyCheckedAtSourceUrl": true,
+      "completeAnswerCertified": false,
+      "translationCertified": false,
+      "historicalVoiceCertified": false,
+      "liveModelTested": false,
+      "publishingApproved": false,
+      "contentRevisionReason": "Replaced the narrower souls/âmes formulation with humanity/hommes, closer to the Latin genus hominum in section eight.",
+      "sourceScopeRecheckedAgainstVaticanText": true
+    },
+    {
+      "chapterId": "SPX-PILOT-09",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_09.OPEN",
+      "originalSourceUrl": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "sourceLanguage": "la",
+      "sourceStatus": "PAPAL_AUTHORED_CLERGY_EXHORTATION",
+      "question": {
+        "en": "Can a priest's work replace his prayer?",
+        "fr": "Le ministère d'un prêtre peut-il remplacer sa prière ?"
+      },
+      "evidenceIds": [
+        "HA-DAILY",
+        "HA-MINISTRY",
+        "HA-REJECT"
+      ],
+      "claimUnits": [
+        {
+          "ordinal": 1,
+          "claim": "Daily meditation remains necessary to the priestly vocation",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        },
+        {
+          "ordinal": 2,
+          "claim": "Busy ministry is not a sufficient excuse for neglecting prayer",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        }
+      ],
+      "replySpecimen": {
+        "en": "A priest may be occupied by many duties, but those labours do not dispense him from prayer. The exhortation asks him to reserve a daily time for meditation rather than let ministry displace it.",
+        "fr": "Le prêtre peut être chargé de nombreux devoirs, mais ces travaux ne le dispensent pas de prier. L'exhortation lui demande de réserver chaque jour un temps à la méditation, au lieu de la laisser écarter par le ministère."
+      },
+      "unlicensedExtensions": [
+        "The address is to clergy, not a universal disciplinary rule for lay Catholics"
+      ],
+      "status": "UNAPPROVED_SOURCE_BOUND_CONTENT_SPECIMEN_NOT_VERBATIM_QUOTATION",
+      "originalTextIndependentlyCheckedAtSourceUrl": true,
+      "completeAnswerCertified": false,
+      "translationCertified": false,
+      "historicalVoiceCertified": false,
+      "liveModelTested": false,
+      "publishingApproved": false
+    },
+    {
+      "chapterId": "SPX-PILOT-09",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_1",
+      "originalSourceUrl": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "sourceLanguage": "la",
+      "sourceStatus": "PAPAL_AUTHORED_CLERGY_EXHORTATION",
+      "question": {
+        "en": "Can good pastoral work replace meditation when a priest is very busy?",
+        "fr": "Les bonnes œuvres pastorales peuvent-elles remplacer la méditation d'un prêtre très occupé ?"
+      },
+      "evidenceIds": [
+        "HA-DAILY",
+        "HA-MINISTRY",
+        "HA-REJECT"
+      ],
+      "claimUnits": [
+        {
+          "ordinal": 1,
+          "claim": "Pastoral work can be improperly offered as an excuse",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        },
+        {
+          "ordinal": 2,
+          "claim": "The priest's intercourse with God is not interchangeable with activity",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        }
+      ],
+      "replySpecimen": {
+        "en": "Even extensive pastoral work does not dispense a priest from daily meditation. The exhortation specifically rejects the argument that the demands of ministry justify neglecting that duty.",
+        "fr": "Même un ministère très chargé ne dispense pas le prêtre de la méditation quotidienne. L’exhortation rejette expressément l’argument selon lequel les exigences du ministère justifieraient cette négligence."
+      },
+      "unlicensedExtensions": [
+        "Do not ascribe St Bernard's separate quotation to Pius X",
+        "A separate opening witness discusses colloquy with God, but it is not part of this node's allowed excerpt set."
+      ],
+      "status": "UNAPPROVED_SOURCE_BOUND_CONTENT_SPECIMEN_NOT_VERBATIM_QUOTATION",
+      "originalTextIndependentlyCheckedAtSourceUrl": true,
+      "completeAnswerCertified": false,
+      "translationCertified": false,
+      "historicalVoiceCertified": false,
+      "liveModelTested": false,
+      "publishingApproved": false,
+      "contentRevisionReason": "Removed allusion to conversation with God whose HA-COLLOQUY snippet is not licensed by this dialogue-node witness set.",
+      "sourceScopeRecheckedAgainstVaticanText": true
+    },
+    {
+      "chapterId": "SPX-PILOT-09",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_2",
+      "originalSourceUrl": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "sourceLanguage": "la",
+      "sourceStatus": "PAPAL_AUTHORED_CLERGY_EXHORTATION",
+      "question": {
+        "en": "Were those instructions addressed to every Catholic in precisely the same form?",
+        "fr": "Ces prescriptions s'adressaient-elles sous la même forme à tous les catholiques ?"
+      },
+      "evidenceIds": [
+        "HA-DAILY"
+      ],
+      "claimUnits": [
+        {
+          "ordinal": 1,
+          "claim": "The source's title and opening identify the Catholic clergy as its immediate audience",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        },
+        {
+          "ordinal": 2,
+          "claim": "Lay readers can learn by analogy but are not automatically under the same priestly obligation",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        }
+      ],
+      "replySpecimen": {
+        "en": "The exhortation is expressly addressed to Catholic clergy. Its instruction on daily meditation concerns priests; the passage does not impose that particular priestly obligation in identical terms on every lay Catholic.",
+        "fr": "L’exhortation s’adresse expressément au clergé catholique. Son instruction sur la méditation quotidienne concerne les prêtres ; ce passage n’impose pas cette obligation propre au ministère sacerdotal dans les mêmes termes à tous les fidèles laïcs."
+      },
+      "unlicensedExtensions": [
+        "Audience limitation comes partly from source header, not just the abbreviated witness snippet"
+      ],
+      "status": "UNAPPROVED_SOURCE_BOUND_CONTENT_SPECIMEN_NOT_VERBATIM_QUOTATION",
+      "originalTextIndependentlyCheckedAtSourceUrl": true,
+      "completeAnswerCertified": false,
+      "translationCertified": false,
+      "historicalVoiceCertified": false,
+      "liveModelTested": false,
+      "publishingApproved": false,
+      "contentRevisionReason": "Removed an ungrounded universal prediction of the counsel's benefit for every lay reader while preserving the historical audience limitation.",
+      "sourceScopeRecheckedAgainstVaticanText": true
+    },
+    {
+      "chapterId": "SPX-029",
+      "nodeId": "SPX.DIALOGUE.SPX-029.OPEN",
+      "originalSourceUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "sourceLanguage": "it",
+      "sourceStatus": "PAPAL_AUTHORED_ITALIAN_ENCYCLICAL",
+      "question": {
+        "en": "Is charity more than giving money?",
+        "fr": "La charité chrétienne est-elle plus que l'aumône ?"
+      },
+      "evidenceIds": [
+        "IF-TRUTH",
+        "IF-VIRTUE",
+        "IF-MERCY"
+      ],
+      "claimUnits": [
+        {
+          "ordinal": 1,
+          "claim": "Charity encompasses revealed truth, Christian virtues and acts of spiritual and corporal mercy",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        }
+      ],
+      "replySpecimen": {
+        "en": "Yes. Christian charity embraces more than material relief: it includes the sharing of revealed truth, the practice of virtue, and works of both spiritual and bodily mercy.",
+        "fr": "Oui. La charité chrétienne dépasse le secours matériel : elle comprend la transmission de la vérité révélée, la pratique des vertus et les œuvres de miséricorde spirituelle autant que corporelle."
+      },
+      "unlicensedExtensions": [
+        "Do not collapse the Catholic Action programme into only individual almsgiving"
+      ],
+      "status": "UNAPPROVED_SOURCE_BOUND_CONTENT_SPECIMEN_NOT_VERBATIM_QUOTATION",
+      "originalTextIndependentlyCheckedAtSourceUrl": true,
+      "completeAnswerCertified": false,
+      "translationCertified": false,
+      "historicalVoiceCertified": false,
+      "liveModelTested": false,
+      "publishingApproved": false
+    },
+    {
+      "chapterId": "SPX-029",
+      "nodeId": "SPX.DIALOGUE.SPX-029.F1",
+      "originalSourceUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "sourceLanguage": "it",
+      "sourceStatus": "PAPAL_AUTHORED_ITALIAN_ENCYCLICAL",
+      "question": {
+        "en": "Can works of mercy be spiritual as well as bodily?",
+        "fr": "Les œuvres de miséricorde peuvent-elles être spirituelles autant que corporelles ?"
+      },
+      "evidenceIds": [
+        "IF-MERCY"
+      ],
+      "claimUnits": [
+        {
+          "ordinal": 1,
+          "claim": "Pius X explicitly identifies spiritual and corporal works of mercy",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        }
+      ],
+      "replySpecimen": {
+        "en": "Certainly. The encyclical names works of mercy directed to spiritual needs as well as those offered to bodily needs. Neither kind is excluded from Christian charity.",
+        "fr": "Certainement. L'encyclique nomme les œuvres de miséricorde qui répondent aux besoins spirituels aussi bien que celles qui secourent les besoins corporels. La charité chrétienne n'exclut aucune de ces deux formes."
+      },
+      "unlicensedExtensions": [
+        "The witness does not provide a comprehensive modern list of individual works"
+      ],
+      "status": "UNAPPROVED_SOURCE_BOUND_CONTENT_SPECIMEN_NOT_VERBATIM_QUOTATION",
+      "originalTextIndependentlyCheckedAtSourceUrl": true,
+      "completeAnswerCertified": false,
+      "translationCertified": false,
+      "historicalVoiceCertified": false,
+      "liveModelTested": false,
+      "publishingApproved": false
+    },
+    {
+      "chapterId": "SPX-029",
+      "nodeId": "SPX.DIALOGUE.SPX-029.F2",
+      "originalSourceUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "sourceLanguage": "it",
+      "sourceStatus": "PAPAL_AUTHORED_ITALIAN_ENCYCLICAL",
+      "question": {
+        "en": "What kinds of help belong to Christian charity?",
+        "fr": "Quelles formes d'aide appartiennent à la charité chrétienne ?"
+      },
+      "evidenceIds": [
+        "IF-MERCY",
+        "IF-TRUTH",
+        "IF-VIRTUE"
+      ],
+      "claimUnits": [
+        {
+          "ordinal": 1,
+          "claim": "Catechesis in revealed truth, moral Christian conduct and works of mercy are included",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        }
+      ],
+      "replySpecimen": {
+        "en": "The passage includes spreading revealed truth, practicing Christian virtues, and works of spiritual and corporal mercy. These are complementary aspects of Christian action, not an exhaustive list of every possible form of help.",
+        "fr": "Le passage comprend la diffusion de la vérité révélée, la pratique des vertus chrétiennes et les œuvres de miséricorde spirituelle et corporelle. Ce sont des aspects complémentaires de l’action chrétienne, et non une liste exhaustive de toutes les aides possibles."
+      },
+      "unlicensedExtensions": [
+        "Do not invent specific charity institutions, dates or modern programme categories"
+      ],
+      "status": "UNAPPROVED_SOURCE_BOUND_CONTENT_SPECIMEN_NOT_VERBATIM_QUOTATION",
+      "originalTextIndependentlyCheckedAtSourceUrl": true,
+      "completeAnswerCertified": false,
+      "translationCertified": false,
+      "historicalVoiceCertified": false,
+      "liveModelTested": false,
+      "publishingApproved": false,
+      "contentRevisionReason": "Replaced the inferred triad instruction/example/practical help with the precise three categories in the Italian text.",
+      "sourceScopeRecheckedAgainstVaticanText": true
+    },
+    {
+      "chapterId": "SPX-NEW-012",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-012.OPEN",
+      "originalSourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html",
+      "sourceLanguage": "la",
+      "sourceStatus": "PAPAL_AUTHORED_HISTORIC_DISCIPLINARY_ENCYCLICAL",
+      "question": {
+        "en": "After condemning a rebellion, could you still welcome those who repented?",
+        "fr": "Après avoir condamné une rébellion, pouviez-vous encore accueillir ceux qui se repentaient ?"
+      },
+      "evidenceIds": [
+        "TC-SUPPRESS",
+        "TC-REPENT",
+        "TC-MERCY"
+      ],
+      "claimUnits": [
+        {
+          "ordinal": 1,
+          "claim": "The 1906 association was suppressed",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        },
+        {
+          "ordinal": 2,
+          "claim": "The bishops were exhorted to welcome sincerely repentant priests with paternal charity",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        }
+      ],
+      "replySpecimen": {
+        "en": "In that dispute the association was suppressed, yet the bishops were exhorted to receive priests who sincerely repented with paternal charity. A firm correction was therefore accompanied by an invitation to return.",
+        "fr": "Dans ce conflit, l'association fut supprimée ; pourtant les évêques furent exhortés à accueillir avec une charité paternelle les prêtres sincèrement repentants. Une correction ferme s'accompagnait donc d'un appel au retour."
+      },
+      "unlicensedExtensions": [
+        "Do not promise automatic restoration of clergy faculties",
+        "Apply only to the original historical Mariavite case"
+      ],
+      "status": "UNAPPROVED_SOURCE_BOUND_CONTENT_SPECIMEN_NOT_VERBATIM_QUOTATION",
+      "originalTextIndependentlyCheckedAtSourceUrl": true,
+      "completeAnswerCertified": false,
+      "translationCertified": false,
+      "historicalVoiceCertified": false,
+      "liveModelTested": false,
+      "publishingApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-012",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-012.FOLLOW_2",
+      "originalSourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html",
+      "sourceLanguage": "la",
+      "sourceStatus": "PAPAL_AUTHORED_HISTORIC_DISCIPLINARY_ENCYCLICAL",
+      "question": {
+        "en": "Could the priests immediately resume every ministry without examination?",
+        "fr": "Ces prêtres pouvaient-ils reprendre aussitôt tout ministère sans examen ?"
+      },
+      "evidenceIds": [
+        "TC-WORTHY",
+        "TC-EPISCOPAL"
+      ],
+      "claimUnits": [
+        {
+          "ordinal": 1,
+          "claim": "Suitability was to be examined",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        },
+        {
+          "ordinal": 2,
+          "claim": "Return to ministry was to occur under episcopal direction",
+          "status": "SOURCE_BOUNDED_EDITORIAL_CLAIM_REVIEW_PENDING"
+        }
+      ],
+      "replySpecimen": {
+        "en": "No automatic restoration is described. The encyclical contemplates a return to priestly functions after the men have been found suitable, and under their bishops' direction.",
+        "fr": "Aucun rétablissement automatique n'est indiqué. L'encyclique envisage la reprise des fonctions sacerdotales après examen de l'aptitude des intéressés et sous la direction de leurs évêques."
+      },
+      "unlicensedExtensions": [
+        "No determination of anyone's modern canonical status"
+      ],
+      "status": "UNAPPROVED_SOURCE_BOUND_CONTENT_SPECIMEN_NOT_VERBATIM_QUOTATION",
+      "originalTextIndependentlyCheckedAtSourceUrl": true,
+      "completeAnswerCertified": false,
+      "translationCertified": false,
+      "historicalVoiceCertified": false,
+      "liveModelTested": false,
+      "publishingApproved": false
+    }
+  ],
+  "preflightHoldCases": [
+    {
+      "chapterId": "SPX-029",
+      "nodeId": "SPX.DIALOGUE.SPX-029.F3",
+      "question": {
+        "en": "Must I belong to a large association before doing any good?",
+        "fr": "Dois-je appartenir à une grande association avant de pouvoir faire le bien ?"
+      },
+      "reason": "Negative universal claim exceeds cited paragraph; no categorical requirement or exemption certified",
+      "expected": "SOURCE_ONLY_PREFLIGHT_HOLD"
+    },
+    {
+      "chapterId": "SPX-NEW-012",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-012.FOLLOW_3",
+      "question": {
+        "en": "Can this assure someone today that a penalty no longer applies?",
+        "fr": "Cela peut-il assurer à quelqu'un aujourd'hui qu'une peine ne s'applique plus ?"
+      },
+      "reason": "A 1906 historical norm cannot determine a living person's current canonical status",
+      "expected": "SOURCE_ONLY_PREFLIGHT_HOLD"
+    }
+  ],
+  "methodNote": "P2.23 adjusted five paired EN/FR editorial specimens after a closer reading of the actual Latin or Italian Vatican context; independent qualified human translation and claim sign-off remain pending."
+}

@@ -1,0 +1,1081 @@
+{
+  "schema": "AO_SPX_P23_BILINGUAL_CLAIM_SOURCE_FIDELITY_AUDIT_V1",
+  "status": "MODEL_EDITORIAL_SOURCE_COMPARISON_ONLY_NOT_INDEPENDENT_HUMAN_SIGNOFF",
+  "asOf": "2026-10-24",
+  "sourceOwner": "P6 immutable 106-subject 423-node dialogue; revised P2.22 private acceptance specimens",
+  "summary": {
+    "chapters": 4,
+    "nodesReviewed": 11,
+    "englishSpecimensReviewed": 11,
+    "frenchSpecimensReviewed": 11,
+    "sentenceLevelClaimUnits": 23,
+    "sourceWitnessesMatchedToOfficialVaticanContext": 18,
+    "pairedSpecimensRevisedAfterContextReview": 5,
+    "remainingEnglishFrenchClaimsRequiringHumanReview": 23,
+    "certifiedEnglishTranslations": 0,
+    "certifiedFrenchTranslations": 0,
+    "historicVoiceApprovals": 0,
+    "publishingApprovals": 0,
+    "newModelGateAdmissions": 0,
+    "liveInferenceProviderCalls": 0
+  },
+  "sourceTextContexts": [
+    {
+      "document": "E supremi",
+      "url": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "originalLanguage": "la",
+      "contextLines": [
+        [
+          46,
+          56
+        ],
+        [
+          65,
+          69
+        ]
+      ],
+      "caution": "St Anselm's embedded quotation is not Pius X's own emotional history; Christ-to-God claim derives from section eight."
+    },
+    {
+      "document": "Haerent animo",
+      "url": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "originalLanguage": "la",
+      "contextLines": [
+        [
+          31,
+          36
+        ],
+        [
+          87,
+          90
+        ],
+        [
+          96,
+          97
+        ]
+      ],
+      "caution": "Addressed to Catholic clergy; distinct passage quotes St Bernard. Priest-specific daily duty is not a modern lay canon."
+    },
+    {
+      "document": "Il fermo proposito",
+      "url": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "originalLanguage": "it",
+      "contextLines": [
+        [
+          39,
+          55
+        ]
+      ],
+      "caution": "Do not remove the charity triad from its Catholic Action programme or imply an exhaustive list of modern ministries."
+    },
+    {
+      "document": "Tribus circiter",
+      "url": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html",
+      "originalLanguage": "la",
+      "contextLines": [
+        [
+          44,
+          49
+        ],
+        [
+          65,
+          67
+        ]
+      ],
+      "caution": "Conditions of repentance, evaluation and episcopal supervision were specific to 1906 Mariavite affair."
+    }
+  ],
+  "witnesses": [
+    {
+      "id": "ES-INTRO-TEARS",
+      "document": "E supremi",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "locus": "Opening, before numbered §2",
+      "officialVaticanPageLines": [
+        46,
+        46
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false,
+      "originalText": "quibus Nos lacrymis magnisque precibus formidolosum hoc pontificatus onus depellere a Nobis conati simus"
+    },
+    {
+      "id": "ES-2-UNWORTHY",
+      "document": "E supremi",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "locus": "§2, Latin continuation of introduction",
+      "officialVaticanPageLines": [
+        51,
+        51
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false,
+      "originalText": "honore pontificatus, ob tenuitatem Nostram, nullo pacto Nos dignaremur"
+    },
+    {
+      "id": "ES-4-STRENGTH",
+      "document": "E supremi",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "locus": "§4",
+      "officialVaticanPageLines": [
+        54,
+        54
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false,
+      "originalText": "erigimus animum in eo qui Nos confortat"
+    },
+    {
+      "id": "ES-2-PREDECESSOR",
+      "document": "E supremi",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "locus": "§2, Latin continuation of introduction",
+      "officialVaticanPageLines": [
+        51,
+        51
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false,
+      "originalText": "ei se successorem designari"
+    },
+    {
+      "id": "ES-3-FEAR",
+      "document": "E supremi",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "locus": "§3",
+      "officialVaticanPageLines": [
+        53,
+        53
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false,
+      "originalText": "conscii Nobis infirmitatis Nostrae"
+    },
+    {
+      "id": "ES-4-MOTTO",
+      "document": "E supremi",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "locus": "§4",
+      "officialVaticanPageLines": [
+        54,
+        56
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false,
+      "originalText": "instaurare omnia in Christo"
+    },
+    {
+      "id": "ES-8-CHRIST",
+      "document": "E supremi",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "locus": "§8",
+      "officialVaticanPageLines": [
+        65,
+        69
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false,
+      "originalText": "ut genus hominum in Christi ditionem redigamus"
+    },
+    {
+      "id": "HA-DAILY",
+      "document": "Haerent animo",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "originalText": "meditationi certum aliquod spatium quotidie concedatur",
+      "locus": "§15, daily meditation",
+      "officialVaticanPageLines": [
+        87,
+        87
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false
+    },
+    {
+      "id": "HA-REJECT",
+      "document": "Haerent animo",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "originalText": "Verum falluntur misere",
+      "locus": "§18, rejection of excuse",
+      "officialVaticanPageLines": [
+        96,
+        96
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false
+    },
+    {
+      "id": "HA-MINISTRY",
+      "document": "Haerent animo",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "originalText": "se totos agitationi ministerii dedidisse",
+      "locus": "§18, pastoral work as pretext",
+      "officialVaticanPageLines": [
+        96,
+        96
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false
+    },
+    {
+      "id": "IF-TRUTH",
+      "document": "Il fermo proposito",
+      "originalLanguage": "it",
+      "speaker": "PIUS_X_AUTHOR",
+      "originalText": "diffusione della verità rivelata",
+      "locus": "§3, charitable action and revealed truth",
+      "officialVaticanPageLines": [
+        55,
+        55
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false
+    },
+    {
+      "id": "IF-MERCY",
+      "document": "Il fermo proposito",
+      "originalLanguage": "it",
+      "speaker": "PIUS_X_AUTHOR",
+      "originalText": "opere di carità o di misericordia spirituale e corporale",
+      "locus": "§3, spiritual and corporal works",
+      "officialVaticanPageLines": [
+        55,
+        55
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false
+    },
+    {
+      "id": "IF-VIRTUE",
+      "document": "Il fermo proposito",
+      "originalLanguage": "it",
+      "speaker": "PIUS_X_AUTHOR",
+      "originalText": "esercizio delle virtù cristiane",
+      "locus": "§3, practice of Christian virtues",
+      "officialVaticanPageLines": [
+        55,
+        55
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false
+    },
+    {
+      "id": "TC-SUPPRESS",
+      "document": "Tribus circiter",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "originalText": "omnino supprimitur",
+      "locus": "§11, suppression of the Mariavite association",
+      "officialVaticanPageLines": [
+        65,
+        65
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false
+    },
+    {
+      "id": "TC-REPENT",
+      "document": "Tribus circiter",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "originalText": "statim ac sincere resipuerint",
+      "locus": "§12, condition of sincere repentance",
+      "officialVaticanPageLines": [
+        66,
+        66
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false
+    },
+    {
+      "id": "TC-MERCY",
+      "document": "Tribus circiter",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "originalText": "paterna charitate amplectamini",
+      "locus": "§12, exhortation to bishops",
+      "officialVaticanPageLines": [
+        66,
+        66
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false
+    },
+    {
+      "id": "TC-WORTHY",
+      "document": "Tribus circiter",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "originalText": "eosque rite probatos",
+      "locus": "§12, qualified return",
+      "officialVaticanPageLines": [
+        66,
+        66
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false
+    },
+    {
+      "id": "TC-EPISCOPAL",
+      "document": "Tribus circiter",
+      "originalLanguage": "la",
+      "speaker": "PIUS_X_AUTHOR",
+      "originalText": "ductu vestro",
+      "locus": "§12, episcopal direction",
+      "officialVaticanPageLines": [
+        66,
+        66
+      ],
+      "archivalAutographCertified": false,
+      "fullDocumentTranslationCertified": false
+    }
+  ],
+  "claimUnits": [
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-PILOT-01-OPEN-1",
+      "chapterId": "SPX-PILOT-01",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "ordinal": 1,
+      "englishClaim": "The office was not received lightly.",
+      "frenchClaim": "Cette charge ne fut pas accueillie à la légère.",
+      "witnessIds": [
+        "ES-INTRO-TEARS"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "ES-INTRO-TEARS",
+          "start": 46,
+          "end": 46
+        }
+      ],
+      "contextualCaution": "Do not confuse Pope's initial tears with embedded St Anselm quotation; first sentence is his own source statement.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-PILOT-01-OPEN-2",
+      "chapterId": "SPX-PILOT-01",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+      "ordinal": 2,
+      "englishClaim": "The encyclical speaks of tears and prayers before so grave a charge, and of a strength to be sought from God rather than from personal merit.",
+      "frenchClaim": "L'encyclique évoque des larmes et des prières devant un devoir si grave, puis la force cherchée auprès de Dieu plutôt que dans les mérites personnels.",
+      "witnessIds": [
+        "ES-INTRO-TEARS",
+        "ES-2-UNWORTHY",
+        "ES-4-STRENGTH"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "ES-INTRO-TEARS",
+          "start": 46,
+          "end": 46
+        },
+        {
+          "witnessId": "ES-2-UNWORTHY",
+          "start": 51,
+          "end": 51
+        },
+        {
+          "witnessId": "ES-4-STRENGTH",
+          "start": 54,
+          "end": 54
+        }
+      ],
+      "contextualCaution": "Do not confuse Pope's initial tears with embedded St Anselm quotation; first sentence is his own source statement.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-PILOT-01-FOLLOW-1-1",
+      "chapterId": "SPX-PILOT-01",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "ordinal": 1,
+      "englishClaim": "The responsibility seemed formidable because he recognized his own weakness and was succeeding a greatly admired predecessor.",
+      "frenchClaim": "Cette responsabilité lui paraissait redoutable : il reconnaissait sa propre faiblesse et succédait à un prédécesseur très admiré.",
+      "witnessIds": [
+        "ES-2-UNWORTHY",
+        "ES-2-PREDECESSOR",
+        "ES-3-FEAR"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "ES-2-UNWORTHY",
+          "start": 51,
+          "end": 51
+        },
+        {
+          "witnessId": "ES-2-PREDECESSOR",
+          "start": 51,
+          "end": 51
+        },
+        {
+          "witnessId": "ES-3-FEAR",
+          "start": 53,
+          "end": 53
+        }
+      ],
+      "contextualCaution": "Second sentence is a restrained interpretation of weak/unworthy language; do not claim verbatim private confidence.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-PILOT-01-FOLLOW-1-2",
+      "chapterId": "SPX-PILOT-01",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+      "ordinal": 2,
+      "englishClaim": "The encyclical does not present that charge as something he could bear through personal confidence alone.",
+      "frenchClaim": "L’encyclique ne présente pas cette charge comme une tâche qu’il pouvait porter par la seule confiance en lui-même.",
+      "witnessIds": [
+        "ES-2-UNWORTHY",
+        "ES-3-FEAR"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "ES-2-UNWORTHY",
+          "start": 51,
+          "end": 51
+        },
+        {
+          "witnessId": "ES-3-FEAR",
+          "start": 53,
+          "end": 53
+        }
+      ],
+      "contextualCaution": "Second sentence is a restrained interpretation of weak/unworthy language; do not claim verbatim private confidence.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-PILOT-01-FOLLOW-2-1",
+      "chapterId": "SPX-PILOT-01",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2",
+      "ordinal": 1,
+      "englishClaim": "One purpose stands at the centre: to restore all things in Christ.",
+      "frenchClaim": "Un seul dessein est placé au centre : tout restaurer dans le Christ.",
+      "witnessIds": [
+        "ES-4-MOTTO"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "ES-4-MOTTO",
+          "start": 54,
+          "end": 56
+        }
+      ],
+      "contextualCaution": "Section eight (Vatican Latin lines 65–69) is essential to the Christ-to-God assertion.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-PILOT-01-FOLLOW-2-2",
+      "chapterId": "SPX-PILOT-01",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2",
+      "ordinal": 2,
+      "englishClaim": "The encyclical explains that bringing humanity under Christ’s rule is the way of leading mankind back to God.",
+      "frenchClaim": "L’encyclique explique que ramener les hommes sous l’autorité du Christ est la voie qui les reconduit à Dieu.",
+      "witnessIds": [
+        "ES-8-CHRIST"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "ES-8-CHRIST",
+          "start": 65,
+          "end": 69
+        }
+      ],
+      "contextualCaution": "Section eight (Vatican Latin lines 65–69) is essential to the Christ-to-God assertion.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-PILOT-09-OPEN-1",
+      "chapterId": "SPX-PILOT-09",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_09.OPEN",
+      "ordinal": 1,
+      "englishClaim": "A priest may be occupied by many duties, but those labours do not dispense him from prayer.",
+      "frenchClaim": "Le prêtre peut être chargé de nombreux devoirs, mais ces travaux ne le dispensent pas de prier.",
+      "witnessIds": [
+        "HA-DAILY",
+        "HA-REJECT"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "HA-DAILY",
+          "start": 87,
+          "end": 87
+        },
+        {
+          "witnessId": "HA-REJECT",
+          "start": 96,
+          "end": 96
+        }
+      ],
+      "contextualCaution": "Historic audience is priests; does not create identical lay obligation.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-PILOT-09-OPEN-2",
+      "chapterId": "SPX-PILOT-09",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_09.OPEN",
+      "ordinal": 2,
+      "englishClaim": "The exhortation asks him to reserve a daily time for meditation rather than let ministry displace it.",
+      "frenchClaim": "L'exhortation lui demande de réserver chaque jour un temps à la méditation, au lieu de la laisser écarter par le ministère.",
+      "witnessIds": [
+        "HA-DAILY",
+        "HA-MINISTRY",
+        "HA-REJECT"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "HA-DAILY",
+          "start": 87,
+          "end": 87
+        },
+        {
+          "witnessId": "HA-MINISTRY",
+          "start": 96,
+          "end": 96
+        },
+        {
+          "witnessId": "HA-REJECT",
+          "start": 96,
+          "end": 96
+        }
+      ],
+      "contextualCaution": "Historic audience is priests; does not create identical lay obligation.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-PILOT-09-FOLLOW-1-1",
+      "chapterId": "SPX-PILOT-09",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_1",
+      "ordinal": 1,
+      "englishClaim": "Even extensive pastoral work does not dispense a priest from daily meditation.",
+      "frenchClaim": "Même un ministère très chargé ne dispense pas le prêtre de la méditation quotidienne.",
+      "witnessIds": [
+        "HA-DAILY"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "HA-DAILY",
+          "start": 87,
+          "end": 87
+        }
+      ],
+      "contextualCaution": "Previous uncited St Bernard/colloquy concepts removed from specimen; duty and ministry pretext are explicit.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-PILOT-09-FOLLOW-1-2",
+      "chapterId": "SPX-PILOT-09",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_1",
+      "ordinal": 2,
+      "englishClaim": "The exhortation specifically rejects the argument that the demands of ministry justify neglecting that duty.",
+      "frenchClaim": "L’exhortation rejette expressément l’argument selon lequel les exigences du ministère justifieraient cette négligence.",
+      "witnessIds": [
+        "HA-MINISTRY",
+        "HA-REJECT"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "HA-MINISTRY",
+          "start": 96,
+          "end": 96
+        },
+        {
+          "witnessId": "HA-REJECT",
+          "start": 96,
+          "end": 96
+        }
+      ],
+      "contextualCaution": "Previous uncited St Bernard/colloquy concepts removed from specimen; duty and ministry pretext are explicit.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-PILOT-09-FOLLOW-2-1",
+      "chapterId": "SPX-PILOT-09",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_2",
+      "ordinal": 1,
+      "englishClaim": "The exhortation is expressly addressed to Catholic clergy.",
+      "frenchClaim": "L’exhortation s’adresse expressément au clergé catholique.",
+      "witnessIds": [
+        "HA-DAILY"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "HA-DAILY",
+          "start": 87,
+          "end": 87
+        }
+      ],
+      "contextualCaution": "Clergy-only scope is grounded in Vatican title (lines 31–36), not the short HA-DAILY quote alone.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-PILOT-09-FOLLOW-2-2",
+      "chapterId": "SPX-PILOT-09",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_2",
+      "ordinal": 2,
+      "englishClaim": "Its instruction on daily meditation concerns priests; the passage does not impose that particular priestly obligation in identical terms on every lay Catholic.",
+      "frenchClaim": "Son instruction sur la méditation quotidienne concerne les prêtres ; ce passage n’impose pas cette obligation propre au ministère sacerdotal dans les mêmes termes à tous les fidèles laïcs.",
+      "witnessIds": [
+        "HA-DAILY"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "HA-DAILY",
+          "start": 87,
+          "end": 87
+        }
+      ],
+      "contextualCaution": "Clergy-only scope is grounded in Vatican title (lines 31–36), not the short HA-DAILY quote alone.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-SPX-DIALOGUE-SPX-029-OPEN-1",
+      "chapterId": "SPX-029",
+      "nodeId": "SPX.DIALOGUE.SPX-029.OPEN",
+      "ordinal": 1,
+      "englishClaim": "Yes.",
+      "frenchClaim": "Oui.",
+      "witnessIds": [
+        "IF-TRUTH",
+        "IF-MERCY"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "IF-TRUTH",
+          "start": 55,
+          "end": 55
+        },
+        {
+          "witnessId": "IF-MERCY",
+          "start": 55,
+          "end": 55
+        }
+      ],
+      "contextualCaution": "Scope is Catholic Action programme §3; not generic replacement for the whole encyclical.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-SPX-DIALOGUE-SPX-029-OPEN-2",
+      "chapterId": "SPX-029",
+      "nodeId": "SPX.DIALOGUE.SPX-029.OPEN",
+      "ordinal": 2,
+      "englishClaim": "Christian charity embraces more than material relief: it includes the sharing of revealed truth, the practice of virtue, and works of both spiritual and bodily mercy.",
+      "frenchClaim": "La charité chrétienne dépasse le secours matériel : elle comprend la transmission de la vérité révélée, la pratique des vertus et les œuvres de miséricorde spirituelle autant que corporelle.",
+      "witnessIds": [
+        "IF-TRUTH",
+        "IF-VIRTUE",
+        "IF-MERCY"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "IF-TRUTH",
+          "start": 55,
+          "end": 55
+        },
+        {
+          "witnessId": "IF-VIRTUE",
+          "start": 55,
+          "end": 55
+        },
+        {
+          "witnessId": "IF-MERCY",
+          "start": 55,
+          "end": 55
+        }
+      ],
+      "contextualCaution": "Scope is Catholic Action programme §3; not generic replacement for the whole encyclical.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-SPX-DIALOGUE-SPX-029-F1-1",
+      "chapterId": "SPX-029",
+      "nodeId": "SPX.DIALOGUE.SPX-029.F1",
+      "ordinal": 1,
+      "englishClaim": "Certainly.",
+      "frenchClaim": "Certainement.",
+      "witnessIds": [
+        "IF-MERCY"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "IF-MERCY",
+          "start": 55,
+          "end": 55
+        }
+      ],
+      "contextualCaution": "Italian spirituale e corporale directly attests spiritual and bodily mercy.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-SPX-DIALOGUE-SPX-029-F1-2",
+      "chapterId": "SPX-029",
+      "nodeId": "SPX.DIALOGUE.SPX-029.F1",
+      "ordinal": 2,
+      "englishClaim": "The encyclical names works of mercy directed to spiritual needs as well as those offered to bodily needs.",
+      "frenchClaim": "L'encyclique nomme les œuvres de miséricorde qui répondent aux besoins spirituels aussi bien que celles qui secourent les besoins corporels.",
+      "witnessIds": [
+        "IF-MERCY"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "IF-MERCY",
+          "start": 55,
+          "end": 55
+        }
+      ],
+      "contextualCaution": "Italian spirituale e corporale directly attests spiritual and bodily mercy.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-SPX-DIALOGUE-SPX-029-F1-3",
+      "chapterId": "SPX-029",
+      "nodeId": "SPX.DIALOGUE.SPX-029.F1",
+      "ordinal": 3,
+      "englishClaim": "Neither kind is excluded from Christian charity.",
+      "frenchClaim": "La charité chrétienne n'exclut aucune de ces deux formes.",
+      "witnessIds": [
+        "IF-MERCY"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "IF-MERCY",
+          "start": 55,
+          "end": 55
+        }
+      ],
+      "contextualCaution": "Italian spirituale e corporale directly attests spiritual and bodily mercy.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-SPX-DIALOGUE-SPX-029-F2-1",
+      "chapterId": "SPX-029",
+      "nodeId": "SPX.DIALOGUE.SPX-029.F2",
+      "ordinal": 1,
+      "englishClaim": "The passage includes spreading revealed truth, practicing Christian virtues, and works of spiritual and corporal mercy.",
+      "frenchClaim": "Le passage comprend la diffusion de la vérité révélée, la pratique des vertus chrétiennes et les œuvres de miséricorde spirituelle et corporelle.",
+      "witnessIds": [
+        "IF-TRUTH",
+        "IF-VIRTUE",
+        "IF-MERCY"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "IF-TRUTH",
+          "start": 55,
+          "end": 55
+        },
+        {
+          "witnessId": "IF-VIRTUE",
+          "start": 55,
+          "end": 55
+        },
+        {
+          "witnessId": "IF-MERCY",
+          "start": 55,
+          "end": 55
+        }
+      ],
+      "contextualCaution": "Second sentence says NOT EXHAUSTIVE as an editorial source-bound scope limitation.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-SPX-DIALOGUE-SPX-029-F2-2",
+      "chapterId": "SPX-029",
+      "nodeId": "SPX.DIALOGUE.SPX-029.F2",
+      "ordinal": 2,
+      "englishClaim": "These are complementary aspects of Christian action, not an exhaustive list of every possible form of help.",
+      "frenchClaim": "Ce sont des aspects complémentaires de l’action chrétienne, et non une liste exhaustive de toutes les aides possibles.",
+      "witnessIds": [
+        "IF-TRUTH",
+        "IF-VIRTUE",
+        "IF-MERCY"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "IF-TRUTH",
+          "start": 55,
+          "end": 55
+        },
+        {
+          "witnessId": "IF-VIRTUE",
+          "start": 55,
+          "end": 55
+        },
+        {
+          "witnessId": "IF-MERCY",
+          "start": 55,
+          "end": 55
+        }
+      ],
+      "contextualCaution": "Second sentence says NOT EXHAUSTIVE as an editorial source-bound scope limitation.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-NEW-012-OPEN-1",
+      "chapterId": "SPX-NEW-012",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-012.OPEN",
+      "ordinal": 1,
+      "englishClaim": "In that dispute the association was suppressed, yet the bishops were exhorted to receive priests who sincerely repented with paternal charity.",
+      "frenchClaim": "Dans ce conflit, l'association fut supprimée ; pourtant les évêques furent exhortés à accueillir avec une charité paternelle les prêtres sincèrement repentants.",
+      "witnessIds": [
+        "TC-SUPPRESS",
+        "TC-REPENT",
+        "TC-MERCY"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "TC-SUPPRESS",
+          "start": 65,
+          "end": 65
+        },
+        {
+          "witnessId": "TC-REPENT",
+          "start": 66,
+          "end": 66
+        },
+        {
+          "witnessId": "TC-MERCY",
+          "start": 66,
+          "end": 66
+        }
+      ],
+      "contextualCaution": "Strictly the original 1906 Mariavite suppression and conditional sincere return.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-NEW-012-OPEN-2",
+      "chapterId": "SPX-NEW-012",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-012.OPEN",
+      "ordinal": 2,
+      "englishClaim": "A firm correction was therefore accompanied by an invitation to return.",
+      "frenchClaim": "Une correction ferme s'accompagnait donc d'un appel au retour.",
+      "witnessIds": [
+        "TC-SUPPRESS",
+        "TC-REPENT",
+        "TC-MERCY"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "TC-SUPPRESS",
+          "start": 65,
+          "end": 65
+        },
+        {
+          "witnessId": "TC-REPENT",
+          "start": 66,
+          "end": 66
+        },
+        {
+          "witnessId": "TC-MERCY",
+          "start": 66,
+          "end": 66
+        }
+      ],
+      "contextualCaution": "Strictly the original 1906 Mariavite suppression and conditional sincere return.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-NEW-012-FOLLOW-2-1",
+      "chapterId": "SPX-NEW-012",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-012.FOLLOW_2",
+      "ordinal": 1,
+      "englishClaim": "No automatic restoration is described.",
+      "frenchClaim": "Aucun rétablissement automatique n'est indiqué.",
+      "witnessIds": [
+        "TC-WORTHY",
+        "TC-EPISCOPAL"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "TC-WORTHY",
+          "start": 66,
+          "end": 66
+        },
+        {
+          "witnessId": "TC-EPISCOPAL",
+          "start": 66,
+          "end": 66
+        }
+      ],
+      "contextualCaution": "Negative no-automatic-reinstatement claim is inferred from mandatory rite probatos and ductu vestro; not present law.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    },
+    {
+      "id": "P23-AO-SPX-DIALOGUE-SPX-NEW-012-FOLLOW-2-2",
+      "chapterId": "SPX-NEW-012",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-012.FOLLOW_2",
+      "ordinal": 2,
+      "englishClaim": "The encyclical contemplates a return to priestly functions after the men have been found suitable, and under their bishops' direction.",
+      "frenchClaim": "L'encyclique envisage la reprise des fonctions sacerdotales après examen de l'aptitude des intéressés et sous la direction de leurs évêques.",
+      "witnessIds": [
+        "TC-WORTHY",
+        "TC-EPISCOPAL"
+      ],
+      "officialVaticanLineRanges": [
+        {
+          "witnessId": "TC-WORTHY",
+          "start": 66,
+          "end": 66
+        },
+        {
+          "witnessId": "TC-EPISCOPAL",
+          "start": 66,
+          "end": 66
+        }
+      ],
+      "contextualCaution": "Negative no-automatic-reinstatement claim is inferred from mandatory rite probatos and ductu vestro; not present law.",
+      "claimSupportAssessment": "SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED",
+      "englishItalianLatinRelation": "EDITORIAL_SOURCE_COMPARISON_PROVISIONAL",
+      "frenchMeaningParity": "EDITORIAL_PARITY_CHECK_PROVISIONAL",
+      "originalSpeechVerbatim": false,
+      "qualifiedHumanReviewed": false,
+      "bilingualTranslationCertified": false,
+      "publishingApproved": false
+    }
+  ],
+  "reservations": [
+    "This checks sentence-to-witness mapping and a model editorial EN/FR semantic comparison; no independent bilingual translator, trained theologian, archivist, or style editor has signed off.",
+    "The 11 answer texts are paraphrastic third-person editorial demos, not authenticated historic speech and not yet personal-voice immersion.",
+    "Some negative scope conclusions are interpretations of the defined context, not separate literal Latin/Italian source sentences.",
+    "The prior public P6 answers and gated 144 research candidates have not been altered; zero publication approval."
+  ],
+  "manualReviewRequired": true
+}

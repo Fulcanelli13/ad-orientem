@@ -1,0 +1,81 @@
+{
+  "schema": "AO_SPX_P43_FIVE_MUSEUM_VS_1905_WIKISOURCE_TEXTUAL_VARIANT_INTERPRETATIONS_V1",
+  "asOf": "2026-10-24",
+  "status": "ASSISTANT_FORMATTING_VARIANT_ASSESSMENT_NOT_PRINT_IMAGE_COLLATION_OR_INDEPENDENT_HUMAN_REVIEW",
+  "sourceRun": {
+    "commit": "1a970f8a77733e2d8f476287d6fa585f50f2f3e3",
+    "workflowRunId": 40084669834,
+    "generated": "SPX_P43_39_Museum_vs_1905_Wikisource_Italian_Parallel.json",
+    "questionNearExact": 39,
+    "answerNearExact": 34,
+    "answerVariant": 5,
+    "answerDiscrepancyHold": 0
+  },
+  "edition": {
+    "year": 1905,
+    "publisher": "Tipografia Vaticana",
+    "scan": "https://commons.wikimedia.org/wiki/File:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu",
+    "proofreadEdition": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore"
+  },
+  "cases": [
+    {
+      "sourceQid": "PX1905-Q599",
+      "answerSimilarity": 0.8815,
+      "observedDiff": "Wikisource transcluded text splits the word Eucaristia across a printed page boundary as 'Eucari [p. 203 modifica] stia'; Museo text has continuous Eucaristia.",
+      "editorialDisposition": "FORMAT_AND_PAGE_BOUNDARY_HYPOTHESIS_NOT_IMAGE_CERTIFIED",
+      "verifiedPrintedScanPageLinks": [
+        "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/215"
+      ],
+      "humanCollationStillNeeded": true
+    },
+    {
+      "sourceQid": "PX1905-Q606",
+      "answerSimilarity": 0.9398,
+      "observedDiff": "The Wikisource transclusion inserts '[p. 204 modifica]' within the answer between 'da' and 'Gesù Cristo'; Museo has the continuous sentence.",
+      "editorialDisposition": "FORMAT_AND_PAGE_BOUNDARY_HYPOTHESIS_NOT_IMAGE_CERTIFIED",
+      "verifiedPrintedScanPageLinks": [
+        "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/215",
+        "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/216"
+      ],
+      "humanCollationStillNeeded": true
+    },
+    {
+      "sourceQid": "PX1905-Q626",
+      "answerSimilarity": 0.9316,
+      "observedDiff": "Wikisource retains ordinal list markers 1º, 2º and 3º, a proofread-text page locator, and historical diacritics; Museo omits numbered markers.",
+      "editorialDisposition": "ENUMERATION_AND_ORTHOGRAPHY_VARIANT_NOT_IMAGE_CERTIFIED",
+      "humanCollationStillNeeded": true
+    },
+    {
+      "sourceQid": "PX1905-Q664",
+      "answerSimilarity": 0.9091,
+      "observedDiff": "Wikisource retains ordinal list markers 1º and 2º and a page locator in the answer. Museo omits the list numbering; the substantive priest-assistance clause is present in both.",
+      "editorialDisposition": "ENUMERATION_AND_PAGE_LOCATOR_VARIANT_NOT_IMAGE_CERTIFIED",
+      "humanCollationStillNeeded": true
+    },
+    {
+      "sourceQid": "PX1905-Q665",
+      "answerSimilarity": 0.9375,
+      "observedDiff": "Wikisource explicitly enumerates two dispositions as 1º and 2º; Museo retains the two parts without ordinal numbering.",
+      "editorialDisposition": "ENUMERATION_VARIANT_NOT_IMAGE_CERTIFIED",
+      "humanCollationStillNeeded": true
+    }
+  ],
+  "sourceCorrections": [
+    "Keep the original Wikisource enumerators in any claim of verbatim original print text.",
+    "Never embed '[p. N modifica]' scan-page furniture in the answer.",
+    "Do not count these lexical variations as semantic corrections or independent translation approvals.",
+    "In Q606, the 1905 proofread page 203-204 witness explicitly retains 'rinnovazione'; Q611 is present on proofread printed page 204 in scan index 216.",
+    "Print-page scan index and printed page number differ; do not conflate them.",
+    "Preserve original answers and all P1.35/P1.37 approval holds."
+  ],
+  "approval": {
+    "printedPageImageVisuallyCompared": false,
+    "italianSpecialistReview": false,
+    "englishApproved": false,
+    "frenchApproved": false,
+    "theologicalApproved": false,
+    "sourceOwnerChanged": false,
+    "published": false
+  }
+}

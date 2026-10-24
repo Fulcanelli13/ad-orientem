@@ -1,0 +1,78 @@
+name: Pius X P2.52 genuine 3B bilingual composer retest
+
+# Deliberately only run on a changed smoke driver or this workflow.
+# No costs, no credentials, no production publishing, no third-party outreach.
+on:
+  push:
+    branches:
+      - prototype/pius-x-source-constrained-composer-20261023
+    paths:
+      - 'tools/pius-x-p52-real-3b-retake.mjs'
+      - '.github/workflows/pius-x-p52-real-3b-retake.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: spx-p52-real-3b-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  actual-openweight-cpu:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      AO_SPX_MODEL_URL: http://127.0.0.1:8766/v1/chat/completions
+      AO_SPX_MODEL: Qwen2.5-3B-Instruct-Q4_K_M
+      AO_SPX_MODEL_TIMEOUT_MS: '100000'
+      AO_SPX_REVIEW_MODE: '1'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Rebuild preserved original 106/423 Pius X library
+        run: |
+          node tools/build-pius-x-expanded-standalone.mjs
+          node tools/build-pius-x-next12-dialogues.mjs
+          node tools/build-pius-x-next12-pastoral-dialogues.mjs
+          node tools/build-pius-x-earlier-94-p6.mjs
+      - name: Compile actual open-source CPU inference runtime
+        run: |
+          git clone --depth 1 https://github.com/ggml-org/llama.cpp.git /tmp/spx-llama.cpp
+          cmake -S /tmp/spx-llama.cpp -B /tmp/spx-llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DGGML_NATIVE=OFF -DLLAMA_CURL=OFF
+          cmake --build /tmp/spx-llama.cpp/build --target llama-server -j 4
+          test -x /tmp/spx-llama.cpp/build/bin/llama-server
+      - name: Get official research-only Qwen 3B quantization and verify SHA256
+        run: |
+          curl --fail --location --retry 3 --connect-timeout 30 \
+            -o /tmp/spx-qwen-3b.gguf \
+            https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/resolve/main/qwen2.5-3b-instruct-q4_k_m.gguf
+          printf '%s\n' '626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d  /tmp/spx-qwen-3b.gguf' | sha256sum -c -
+      - name: Start actual model server on localhost only
+        run: |
+          nohup /tmp/spx-llama.cpp/build/bin/llama-server \
+            -m /tmp/spx-qwen-3b.gguf --alias "${AO_SPX_MODEL}" \
+            --host 127.0.0.1 --port 8766 -c 4096 -t 4 -ngl 0 \
+            > /tmp/spx-p52-server.log 2>&1 &
+          for i in $(seq 1 90); do
+            if curl --silent --fail http://127.0.0.1:8766/health > /dev/null; then
+              echo "P52 actual 3B local inference is ready"
+              exit 0
+            fi
+            sleep 2
+          done
+          tail -100 /tmp/spx-p52-server.log
+          exit 1
+      - name: Observe 6 actual 3B bilingual replies with original Latin and opt-in French editorial language aids
+        run: node tools/pius-x-p52-real-3b-retake.mjs
+      - name: Preserve complete machine outputs without publishing them as papal speech
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: spx-p52-actual-3b-french-aid-retest-no-release
+          path: artifacts/pius-x-real-p52-eval/
+          if-no-files-found: warn
+          retention-days: 7
