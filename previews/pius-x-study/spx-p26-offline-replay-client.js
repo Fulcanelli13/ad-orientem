@@ -8,7 +8,9 @@ const data=JSON.parse(seed.textContent);
 if(data.schema!=='AO_SPX_P26_OFFLINE_REVIEW_CASES_V1'||data.publishingApproved!==false||
    data.modelProviderEnabled!==false||data.cases.length!==11||
    data.navigationAliasCount!==32||data.navigationAliases.length!==32||
-   data.claimTraceUnits!==23||data.humanClaimCertifications!==0)
+   data.claimTraceUnits!==23||data.humanClaimCertifications!==0||
+   data.voicePreviewCaseCount!==3||data.voicePreviewLanguageCount!==2||
+   data.voicePreviewApproved!==false||data.voicePreviewLiveInference!==false)
  throw Error('Unexpected offline dialogue evidence');
 const groups=new Map();
 for(const c of data.cases){
@@ -43,7 +45,11 @@ const tr={
  source:'Open the Vatican source',draft:'Private editorial draft, not a certified translation or pastoral ruling',
  example:'Try different wording',related:'A related reviewed exchange exists. It may not answer every part of your question.',
  relatedAction:'Open documented question',relatedCaution:'This is only a navigation suggestion. No new historical reply has been generated.',
- traceTitle:'Inspect sentence-by-sentence evidence',traceCaution:'Each link is an editorial interpretation of the cited original-language excerpt, not an independently certified translation or proof of the full sentence.',
+ voiceOn:'Read historical-voice draft',voiceOff:'Return to documentary wording',
+ voiceIntro:'HISTORICAL-VOICE EXPERIMENT · CONSTRUCTED FIRST PERSON · NOT PIUS X\'S ACTUAL WORDS',
+ voiceScope:'GPT-6 single-pass research example. Not generated live and not a verified papal quotation.',
+ voiceSource:'Original Latin passage for the editorial reconstruction',
+  traceTitle:'Inspect sentence-by-sentence evidence',traceCaution:'Each link is an editorial interpretation of the cited original-language excerpt, not an independently certified translation or proof of the full sentence.',
  claimLabel:'Editorial sentence',witnessLabel:'Original source excerpt',webLine:'Vatican web-text line',sourceReview:'Source correspondence pending human review'
  },
  fr:{
@@ -60,13 +66,20 @@ const tr={
  related:'Un échange documentaire connexe existe ; il ne répond pas nécessairement à toute votre question.',
  relatedAction:'Ouvrir la question documentée',
  relatedCaution:'Il s’agit uniquement d’une suggestion de navigation. Aucune réponse historique nouvelle n’a été créée.',
- traceTitle:'Examiner les sources phrase par phrase',traceCaution:'Chaque rapprochement est une interprétation éditoriale de l’extrait original, non une traduction certifiée ni une preuve indépendante de toute la phrase.',
+ voiceOn:'Lire la rédaction dans un style historique',voiceOff:'Revenir à la rédaction documentaire',
+ voiceIntro:'ESSAI DE STYLE HISTORIQUE · PREMIÈRE PERSONNE RECONSTRUITE · NON PAROLES ATTESTÉES DE PIE X',
+ voiceScope:'Exemple de recherche GPT-6 en une seule passe, non généré en direct et non authentifié.',
+ voiceSource:'Passage latin à l\'appui de cette reconstruction éditoriale',
+  traceTitle:'Examiner les sources phrase par phrase',traceCaution:'Chaque rapprochement est une interprétation éditoriale de l’extrait original, non une traduction certifiée ni une preuve indépendante de toute la phrase.',
  claimLabel:'Phrase éditoriale',witnessLabel:'Extrait du texte original',webLine:'Ligne du texte sur le site du Vatican',sourceReview:'Correspondance avec la source à vérifier'
  }
 };
 const root=document.createElement('section');root.id='spxc-offline-replay';root.hidden=true;
 root.innerHTML="<div class='spxm-head'><strong id='spxm-offline-title'></strong><small id='spxm-offline-limit'></small></div>"+
- "<p id='spxm-offline-scope'></p><div id='spxm-guided-exchange'>"+
+ "<p id='spxm-offline-scope'></p>"+
+ "<button type='button' id='spxm-voice-preview-toggle' hidden></button>"+
+ "<p id='spxm-voice-preview-scope' hidden></p>"+
+ "<div id='spxm-guided-exchange'>"+
  "<button type='button' id='spxm-guided-start'></button>"+
  "<p id='spxm-guided-state' aria-live='polite'></p>"+
  "<div id='spxm-guided-continue'></div></div>"+
@@ -84,7 +97,59 @@ const add=(tag,cl,text,parent)=>{
 let active=null,language='en',lastChapter=null,lastLanguage=null;
 // P2.46 guided conversations only navigate the EXISTING P22 source-owned
 // questions and replies. They neither generate text nor certify authorship.
-let guidedActive=false,guidedStep=0;
+let guidedActive=false,guidedStep=0,voicePreviewMode=false;
+const hasVoice=chapter=>chapter==='SPX-PILOT-01'&&
+ (groups.get(chapter)||[]).every(c=>c.voicePreview?.en&&c.voicePreview?.fr);
+function voiceOptionUpdate(){
+ const possible=!root.hidden&&hasVoice(active);
+ const button=$('spxm-voice-preview-toggle'),scope=$('spxm-voice-preview-scope');
+ button.hidden=scope.hidden=!possible;
+ if(!possible)return;
+ const t=tr[language];
+ button.textContent=voicePreviewMode?t.voiceOff:t.voiceOn;
+ scope.textContent=voicePreviewMode?t.voiceScope:'';
+ scope.hidden=!voicePreviewMode;
+}
+function renderVoiceMode(){
+ voiceOptionUpdate();
+ for(const entry of root.querySelectorAll('.spxm-entry[data-node-id]')){
+  const target=(groups.get(active)||[]).find(c=>c.nodeId===entry.dataset.nodeId);
+  if(!target)continue;
+  const preview=target.voicePreview?.[language];
+  const enabled=voicePreviewMode&&hasVoice(active)&&!!preview;
+  const t=tr[language];
+  const warning=entry.querySelector('.spxm-warning');
+  const draft=entry.querySelector('.spxm-draft');
+  if(!warning||!draft)continue;
+  warning.textContent=enabled?t.voiceIntro:t.intro;
+  draft.textContent=enabled?preview.text:target.reply[language];
+  for(const previous of entry.querySelectorAll('details.spxm-offline-source'))previous.hidden=enabled;
+  const claimAudit=entry.querySelector('.spxm-claim-audit');
+  if(claimAudit)claimAudit.hidden=enabled;
+  const sourceLabel=entry.querySelector('.spxm-source-label');
+  if(sourceLabel)sourceLabel.hidden=enabled;
+  let sourceDesk=entry.querySelector('.spxm-voice-evidence');
+  if(!sourceDesk&&preview){
+   sourceDesk=document.createElement('details');
+   sourceDesk.className='spxm-voice-evidence';
+   add('summary','',t.voiceSource+' · '+preview.witnesses.length,sourceDesk);
+   const list=document.createElement('div');
+   for(const w of preview.witnesses){
+    const line=add('p','spxm-voice-witness',w.id+' · '+w.locus+' — '+w.text,list);
+    const link=add('a','',t.source,line);
+    link.href=w.sourceUrl;link.target='_blank';link.rel='noopener noreferrer';
+   }
+   sourceDesk.append(list);
+   entry.append(sourceDesk);
+  }
+  if(sourceDesk)sourceDesk.hidden=!enabled;
+ }
+}
+$('spxm-voice-preview-toggle').addEventListener('click',()=>{
+ if(!hasVoice(active)||root.hidden)return;
+ voicePreviewMode=!voicePreviewMode;
+ renderVoiceMode();
+});
 const guidedText={
  en:{start:'Begin a three-part source dialogue',restart:'Begin again',
   continue:'Continue the conversation',stage:'Documented turn',
@@ -151,6 +216,7 @@ function contextChanged(context){
  $('spxm-offline-scope').textContent=t.scope;
  if(active!==lastChapter||language!==lastLanguage){
   guidedReset();
+  voicePreviewMode=false;
   $('spxm-offline-question').value='';
   $('spxm-offline-replies').replaceChildren();
   lastChapter=active;lastLanguage=language;
@@ -174,6 +240,7 @@ function contextChanged(context){
   });
  }
  guidedRender();
+ renderVoiceMode();
 }
 document.addEventListener('ao-spx-review-context',e=>contextChanged(e.detail||{}));
 $('spxm-offline-form').addEventListener('submit',e=>{
@@ -187,6 +254,7 @@ $('spxm-offline-form').addEventListener('submit',e=>{
  // unsupported claims appear applicable to an unrelated free-form request.
  const group=groups.get(active)||[];
  const chosen=group.find(c=>normalize(c.question[language])===normalize(q));
+ if(chosen)entry.dataset.nodeId=chosen.nodeId;
  if(!chosen){
   // A manually triaged alternative formulation only suggests its source-owned
   // question; it NEVER silently reuses an answer to another visitor question.
@@ -248,6 +316,7 @@ $('spxm-offline-form').addEventListener('submit',e=>{
   }
  }
  entry.append(audit);
+ renderVoiceMode();
  add('p','spxm-offline-disclaimer',t.draft,entry);
  $('spxm-offline-question').value='';
  // The five pre-approved sprite expressions are visual staging only.
