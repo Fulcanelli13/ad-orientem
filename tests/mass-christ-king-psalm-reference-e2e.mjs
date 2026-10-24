@@ -69,11 +69,17 @@ try{
   const printed=assessPrintableProper(day,{language:"en",massForm:"MISSA_CANTATA_SIMPLE"});
   const html=renderPrintableProperHtml(day,{language:"en",massForm:"MISSA_CANTATA_SIMPLE"});
   const text=reader.slots.GRADUAL?.data?.paragraphs?.map(x=>x.latin).join("\n")??"";
+  const essentialSlots=["INTROIT","COLLECT_SET","EPISTLE_OR_LESSON","GOSPEL","OFFERTORY","SECRET_SET","PREFACE","COMMUNION","POSTCOMMUNION_SET"];
+  const essential=Object.fromEntries(essentialSlots.map(key=>[key,{
+   status:reader.slots[key]?.status??"ABSENT",
+   latin:(reader.slots[key]?.data?.paragraphs??[]).map(p=>String(p.latin??"")).join(" ")
+  }]));
   return {
    day:day.day?.main?.title,
    commemorations:(day.day?.commemorations??[]).map(x=>({id:x.id,path:x.path,title:x.title})),
    orationCounts:Object.fromEntries(["collects","secrets","postcommunions"].map(k=>[k,(revised[k]??[]).length])),
    prefaceLatin:String(revised.preface?.lat??revised.preface?.la??""),
+   essential,
    path:day.proper?.data?.sourcePath,
    raw:original.lat,
    reader:text,
@@ -100,6 +106,28 @@ try{
  for(const group of ["collects","secrets","postcommunions"])
   assert.equal(result.orationCounts[group],1,"Unexpected extra "+group+" in Christ the King Mass");
  assert.match(result.prefaceLatin,/Qui unigénitum Fílium tuum/,"Christ the King requires its own 1962 Preface");
+ // The date-specific reader must expose every major proper in its own slot,
+ // rather than replacing missing text with a nearby Sunday's ordinary.
+ const anchors={
+  INTROIT:"dignus est agnus",
+  COLLECT_SET:"omnipotens sempiterne deus",
+  EPISTLE_OR_LESSON:"gratias agimus deo patri",
+  GOSPEL:"tu es rex iudaeorum",
+  OFFERTORY:"postula a me",
+  SECRET_SET:"hostiam tibi domine",
+  PREFACE:"qui unigenitum filium tuum",
+  COMMUNION:"sedebit dominus rex",
+  POSTCOMMUNION_SET:"immortalitatis alimoniam",
+ };
+ const latinKey=value=>String(value??"").normalize("NFD")
+   .replace(/[\u0300-\u036f]/g,"").replace(/æ/g,"ae").replace(/œ/g,"oe")
+   .replace(/[^a-zA-Z ]/g," ").replace(/\s+/g," ").trim().toLowerCase();
+ for(const [slot,anchor] of Object.entries(anchors)){
+  const got=result.essential[slot];
+  assert.equal(got?.status,"READY","Missing Christ the King Proper slot: "+slot);
+  assert.ok(latinKey(got.latin).includes(anchor),"Wrong Latin source at "+slot);
+ }
+ console.log("PASS Christ the King 9 canonical Proper reader sections present, source-specific and correctly anchored");
  assert.match(result.raw,/^Ps 71:8; 78:11/m,"audit must retain the wrong upstream source label");
  assert.match(result.reader,/^Ps 71:8; 71:11/m);
  assert.equal(result.printedOk,true,result.printedReason??"print unavailable");
