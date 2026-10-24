@@ -9,7 +9,7 @@ import csv, hashlib, json, time
 from pathlib import Path
 from PIL import Image
 from sacred_art_b29_exact_selected import metadata_for,retrieve
-R=Path("data/research");O=Path("artifacts/b38-four-institution-exact-source-research")
+R=Path("data/research");O=Path("artifacts/b38-kmska-trinity-cc0-source-research")
 FIELDS=["artwork_id","source_page","institutional_evidence","role","expected_dimensions",
 "current_commons_license","current_commons_file_url","sha256","bytes","width","height",
 "technical_resolution","status","hold_reason","full_artwork_scope_closed",
