@@ -46,4 +46,22 @@ assert.match(home,/data-home-mass-entry/);
 assert.match(home,/data-home-calendar-view/);
 assert.match(home,/data-ao-home-art-slot/);
 assert.match(app,/installAppDesignSystem\(globalThis\)/);
+// The new Pray entrance must use *existing* route handlers and preserve
+// the original catalogue behind a disclosure, not duplicate data owners.
+const prayRuntime=await readFile(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
+const prayStyles=await readFile(new URL("../src/pray/presentation-styles.js",import.meta.url),"utf8");
+const prayHome=prayRuntime.slice(prayRuntime.indexOf("function renderPrayHome(){"),prayRuntime.indexOf("\nfunction renderPrayFamily(){"));
+assert.ok(prayHome.length>1000);
+for(const route of ["pray.rosary","pray.confession","pray.adoration","pray.stations","pray.novenas","pray.morning_evening","pray.communion_treasury","pray.divine_mercy","pray.library"]){
+ assert.ok(prayHome.includes(route),"Prayer route lost from home: "+route);
+}
+for(const family of ["daily","eucharistic","penance","passion","devotions","library","chaplets"]){
+ assert.ok(prayHome.includes("door('"+family+"')"),"Family missing from disclosure: "+family);
+}
+assert.match(prayHome,/aoP435930QuietTiles/);
+assert.match(prayHome,/aoP435930QuietMore/);
+assert.match(prayStyles,/QUIET_PRAY_HOME_CSS=String\.raw`/);
+assert.match(prayStyles,/ao-pray-quiet-home-style/);
+assert.match(prayStyles,/aoP435930QuietLibraryRow/);
+
 console.log("AO quiet-frame visual baseline / Today / Pray contracts: OK");
