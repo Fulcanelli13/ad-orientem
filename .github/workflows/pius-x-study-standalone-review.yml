@@ -29,6 +29,8 @@ on:
       - 'tests/pius-x-p41-specialist-bilingual-dossier-e2e.mjs'
       - 'tools/pius-x-p42-source-owner-reconciliation-preview.mjs'
       - 'tests/pius-x-p42-owner-reconciliation-preview-contract.mjs'
+      - 'tools/pius-x-p43-independent-edition-text-crosscheck.mjs'
+      - 'tests/pius-x-p43-edition-source-crosswalk-contract.mjs'
       - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
       - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
@@ -112,6 +114,8 @@ on:
       - 'tests/pius-x-p41-specialist-bilingual-dossier-e2e.mjs'
       - 'tools/pius-x-p42-source-owner-reconciliation-preview.mjs'
       - 'tests/pius-x-p42-owner-reconciliation-preview-contract.mjs'
+      - 'tools/pius-x-p43-independent-edition-text-crosscheck.mjs'
+      - 'tests/pius-x-p43-edition-source-crosswalk-contract.mjs'
       - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
       - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
@@ -238,6 +242,10 @@ jobs:
         run: node tools/pius-x-p42-source-owner-reconciliation-preview.mjs
       - name: Assert all 39 original source-owner fingerprints, unaffected followups and zero release signoffs
         run: node tests/pius-x-p42-owner-reconciliation-preview-contract.mjs
+      - name: Cross-check 39 original Italian questions and answers with proofread 1905 scan-linked Wikisource text
+        run: node tools/pius-x-p43-independent-edition-text-crosscheck.mjs
+      - name: Verify 39-item digital witness classifications and preserve all print-page and human-approval holds
+        run: node tests/pius-x-p43-edition-source-crosswalk-contract.mjs
       - name: Build free one-file offline Pius X source-dialogue trial with preserved sprites
         run: node tools/build-pius-x-p26-offline-replay.mjs
       - name: Browser-test offline source dialogue, French/English and original Vatican witnesses
