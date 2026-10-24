@@ -5,6 +5,7 @@ import { observedCommemorationLabels } from "../calendar/observed-commemoration-
 import { buildReviewedSanctoralCards } from "../calendar/reviewed-sanctoral-cards.js";
 import { getSharedSanctoralReadModel } from "../calendar/living-sanctoral-read-model.js";
 import { HOME_ENRICHERS_VERSION } from "./enrichers.js";
+import { homeSeasonalCustomForDate } from "../customs/seasonal-home-spotlight.js";
 
 const esc = value => String(value ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const L = (language,en,fr) => language === "fr" ? fr : en;
@@ -22,6 +23,7 @@ function homeReviewedHonours(observed,selected,language,readModel){
 
 export function buildTodayV2Sections(state,vm,enrichers,readModel=getSharedSanctoralReadModel()){
   const selected=vm.dateIso,language=vm.language,year=buildLiturgicalYear(selected),period=year.currentPeriod;
+  const spotlight=homeSeasonalCustomForDate(selected);
   const resolution=state?.resolution;
   // The store's selectedDate is canonical. Some resolver builds omit
   // resolution.date, while others stamp date on the resolution or day.
@@ -47,7 +49,7 @@ export function buildTodayV2Sections(state,vm,enrichers,readModel=getSharedSanct
   const daily=enrichers?.visible?enrichers.dailyCatechism??null:null;
   const historicalCommemorations=observed?observedCommemorationLabels(observed,{language}):Object.freeze([]);
   const modernHonours=homeReviewedHonours(observed,selected,language,readModel);
-  return Object.freeze({selected,language,period,upcoming:unique,feature,daily,
+  return Object.freeze({selected,language,period,upcoming:unique,feature,daily,spotlight,
     saintOrFeast,hasObservedDay:!!observed,historicalCommemorations,modernHonours,
     gospelReference:vm.gospelReference||null,
     gospelStatus:vm.properStatus,
@@ -59,8 +61,42 @@ function dateDisplay(date,language){
   return new Intl.DateTimeFormat(language==="fr"?"fr-FR":"en-GB",{day:"numeric",month:"short"})
     .format(new Date(year,month-1,day,12));
 }
+function renderSeasonalCustomsSpotlight(selection,language){
+ if(!selection)return "";
+ const art=selection.article,loc=language==="fr"?"fr":"en";
+ const txt=(en,fr)=>L(language,en,fr);
+ const timing=selection.daysUntil===0
+   ?txt("Tradition of this day","Tradition de ce jour")
+   :txt("A tradition approaching","Une tradition à venir");
+ const dateHuman=new Intl.DateTimeFormat(language==="fr"?"fr-FR":"en-GB",{day:"numeric",month:"long"})
+   .format(new Date(selection.contextDate+"T12:00:00Z"));
+ const lead=selection.daysUntil>0
+   ?txt("Associated with ","Liée au ")+dateHuman
+   :txt("Associated with today's observance","Liée à la célébration du jour");
+ const sources=(art.sources||[]).map(src=>
+  '<li><a href="'+esc(src.url)+'" target="_blank" rel="noopener noreferrer">'+esc(src.title)+" ↗</a></li>"
+ ).join("");
+ const optional=txt("An optional custom; local practice and ministerial blessings may differ.","Coutume facultative ; les usages locaux et les bénédictions réservées au ministre peuvent varier.");
+ return '<section class="aoTodayV2CustomSpotlight" data-home-custom-spotlight="'+esc(selection.id)+'" data-home-custom-date="'+esc(selection.contextDate)+'">'
+ +'<div class="aoTodayV2CustomKicker">'+esc(timing)+'</div>'
+ +'<h2>'+esc(art.title[loc])+'</h2>'
+ +'<small class="aoTodayV2CustomTiming">'+esc(lead)+'</small>'
+ +'<p class="aoTodayV2CustomSummary">'+esc(art.description[loc])+'</p>'
+ +'<details class="aoTodayV2CustomDetails"><summary>'+esc(txt("Discover the tradition","Découvrir la coutume"))+' <span aria-hidden="true">›</span></summary>'
+ +'<div class="aoTodayV2CustomReading">'
+ +'<h3>'+esc(txt("History","Histoire"))+'</h3><p>'+esc(art.history[loc])+'</p>'
+ +'<h3>'+esc(txt("Meaning","Signification"))+'</h3><p>'+esc(art.meaning[loc])+'</p>'
+ +'<h3>'+esc(txt("Traditional practice","Pratique traditionnelle"))+'</h3><p>'+esc(art.practice[loc])+'</p>'
+ +'<h3>'+esc(txt("Scope and cautions","Portée et précautions"))+'</h3><p>'+esc(art.scope[loc])+'</p><p>'+esc(art.caution[loc])+'</p>'
+ +(sources?'<h3>'+esc(txt("Sources","Sources"))+'</h3><ul>'+sources+'</ul>':"")
+ +'</div></details>'
+ +'<p class="aoTodayV2CustomScope">'+esc(optional)+'</p>'
+ +'<button type="button" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="'+esc(selection.contextDate)+'" class="aoTodayV2CustomCalendarLink">'
+ +esc(txt("View in Calendar","Voir dans le calendrier"))+' <span aria-hidden="true">›</span></button></section>';
+}
+
 export function renderTodayV2Sections(model,vm){
-  const {language,period,feature,upcoming,daily,saintOrFeast}=model;
+  const {language,period,feature,upcoming,daily,saintOrFeast,spotlight}=model;
   const txt=(en,fr)=>L(language,en,fr);
   const featureAttrs=feature?.kind==="dynamic"
     ? 'data-home-cu-dynamic="'+esc(feature.id)+'" data-home-cu-route="'+esc(feature.route||"pray.library")+'"'
@@ -122,6 +158,7 @@ export function renderTodayV2Sections(model,vm){
       ${row(txt("Sacred Scripture","Sainte Écriture"),txt("Read the traditional Catholic Bible","Lire la Bible catholique traditionnelle"),'data-home-scripture')}
     </section>
   </div>
+  ${renderSeasonalCustomsSpotlight(spotlight,language)}
   <section class="aoTodayV2CalendarGlance" aria-label="${esc(txt("Calendar at a glance","Aperçu du calendrier"))}">
     <h2>${esc(txt("Calendar at a glance","Aperçu du calendrier"))}</h2>
     ${calendarHonours}${calendarLater}
