@@ -1,0 +1,125 @@
+{
+  "schema": "AO_B50_95_EXACT_IMAGE_VERSION_PRIORITY_EXCEPTIONS_V1",
+  "date": "2026-10-24",
+  "artworks_in_first_pass": 95,
+  "source_evidence_Sha_direct_to_same_frozen_ID": 93,
+  "museum_archive_images_linked_only_via_legacy_alias": 2,
+  "prior_exact_B27_SHA_matches_for_alias": true,
+  "source_present_all95": true,
+  "source_SHA_provenance_direct_or_legacy_alias": 95,
+  "current_Commons_original_version_dimension_and_size_matches": 68,
+  "current_Commons_file_version_mismatch_cases": 3,
+  "current_Commons_licence_claimed_open": 71,
+  "current_Commons_legitimate_source_no_evidence_not_no_file": true,
+  "technical_long_edge_below_2400_or_unmeasured": 26,
+  "legacy_selected_photograph_SHA_exactly_matched": 12,
+  "source_photo_legal_and_editing_gates_pending": 95,
+  "new_app_publication_approved": 0,
+  "new_editorial_photo_approvals": 0,
+  "strictly_zero_euro": true,
+  "original_full_catalogue_record_changed": false,
+  "met_museum_alias_provenance_holds": [
+    {
+      "id": "2020.263.8",
+      "artist": "Carlo Maratti",
+      "title": "The Flight into Egypt",
+      "museum": "The Metropolitan Museum of Art",
+      "object_accession": "2020.263.8",
+      "met_object_id": 816629,
+      "museum_url": "https://www.metmuseum.org/art/collection/search/816629",
+      "original_SHA": "61630e0254184d4bf79c36a24d6cf1707b9aa60fbc308584436b7955fd0bd9c7",
+      "b27_archive_member": "ao-b20-wave150-source-screen-and-originals/originals/AO-SRC-5FD4B035B0731C.jpg",
+      "b27_original_bytes": 4213056,
+      "physical_source_retained": true,
+      "B27_also_links_frozen_id": "met-816629",
+      "photo_open_access_evidence": "Met collection object explicitly Public Domain / Open Access",
+      "source_url_provenance_gap": "Early acquisition metadata was filed against object met-816629 rather than second frozen alias 2020.263.8; original SHA is explicitly linked to BOTH in B27 photo inventory",
+      "source_exact_work_possible": true,
+      "automatically_promoted": false
+    },
+    {
+      "id": "met-438724",
+      "artist": "Philippe de Champaigne",
+      "title": "The Annunciation",
+      "museum": "The Metropolitan Museum of Art",
+      "object_accession": "2004.31",
+      "met_object_id": 438724,
+      "museum_url": "https://www.metmuseum.org/art/collection/search/438724",
+      "original_SHA": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "b27_archive_member": "ao-b20-wave150-source-screen-and-originals/originals/AO-SRC-ACE182638F6317.jpg",
+      "b27_original_bytes": 3055151,
+      "physical_source_retained": true,
+      "B27_also_links_frozen_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "photo_open_access_evidence": "Met collection object explicitly Public Domain / Open Access; Commons Met contributed CC0",
+      "source_url_provenance_gap": "Source acquisition originally mapped to long-title frozen ID; B27 explicitly links SHA to BOTH this and met-438724. Two frozen entries may be duplicates, but should not auto-merge.",
+      "source_exact_work_possible": true,
+      "automatically_promoted": false
+    }
+  ],
+  "commons_current_uploaded_file_rendition_drift": [
+    {
+      "artwork_id": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "title": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "archived_sha256": "2ef4e0f8baa052318a3d0850393a8a58f9221ae342a7683b8ea18cc5ad0d7b3d",
+      "archived_dimensions": [
+        3840,
+        5211
+      ],
+      "archived_bytes": 4552600,
+      "current_Commons_dimensions": [
+        4421,
+        6000
+      ],
+      "current_Commons_bytes": 19749000,
+      "commons_file_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Philippe_de_Champaigne_%281602-1674%29_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_licence": "Public domain",
+      "reason": "Commons uploaded file was superseded by a different (often larger) rendition; positive licence for current file does NOT hash-certify previous archived JPEG. Preserve original source SHA and original acquisition version.",
+      "new_latest_file_downloaded": false,
+      "new_latest_file_SHA_verified": false,
+      "photo_publishable_approved": false
+    },
+    {
+      "artwork_id": "ART-os-de-ibera-acob-s-ream",
+      "title": "https://commons.wikimedia.org/wiki/File:El_sue%C3%B1o_de_Jacob%2C_by_Jos%C3%A9_de_Ribera%2C_from_Prado_in_Google_Earth.jpg",
+      "archived_sha256": "a4fdbfe15a0fd139c8cfad66e916baddb9bc758ea9992d4c71915cc8af060e42",
+      "archived_dimensions": [
+        3840,
+        2904
+      ],
+      "archived_bytes": 2597598,
+      "current_Commons_dimensions": [
+        30000,
+        22691
+      ],
+      "current_Commons_bytes": 142366524,
+      "commons_file_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/El_sue%C3%B1o_de_Jacob%2C_by_Jos%C3%A9_de_Ribera%2C_from_Prado_in_Google_Earth.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_licence": "Public domain",
+      "reason": "Commons uploaded file was superseded by a different (often larger) rendition; positive licence for current file does NOT hash-certify previous archived JPEG. Preserve original source SHA and original acquisition version.",
+      "new_latest_file_downloaded": false,
+      "new_latest_file_SHA_verified": false,
+      "photo_publishable_approved": false
+    },
+    {
+      "artwork_id": "W07-014",
+      "title": "File:The Incredulity of Saint Thomas.jpg",
+      "archived_sha256": "1dbb8185f9e878a8f59494c4af0b0d619f5eeabdc0d9fd2baab960754b0339f7",
+      "archived_dimensions": [
+        3840,
+        2838
+      ],
+      "archived_bytes": 2753432,
+      "current_Commons_dimensions": [
+        9754,
+        7210
+      ],
+      "current_Commons_bytes": 61695587,
+      "commons_file_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/The_Incredulity_of_Saint_Thomas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_licence": "Public domain",
+      "reason": "Commons uploaded file was superseded by a different (often larger) rendition; positive licence for current file does NOT hash-certify previous archived JPEG. Preserve original source SHA and original acquisition version.",
+      "new_latest_file_downloaded": false,
+      "new_latest_file_SHA_verified": false,
+      "photo_publishable_approved": false
+    }
+  ],
+  "recommended_next_high_volume_work": "Review the 68 exact current Commons version metadata matches first, resolve 3 original-file rendition updates without silently overwriting the archived SHA, independently inspect 24 low/unmeasured-resolution photos and two Met aliases for duplicate frozen IDs, and check exact photo commercial rights with owner+Commons attribution. Source research alone does not close final publication gate."
+}
