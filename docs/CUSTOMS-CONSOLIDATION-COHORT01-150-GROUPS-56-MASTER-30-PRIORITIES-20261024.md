@@ -106,3 +106,37 @@ New files:
 - `data/customs/master/customs-consolidation-cohort01-calendar-pilot-5-bilingual-drafts.v1.json`
 
 The original two-dossier file has been corrected to cite actual 1958 facsimile folios.
+
+
+## 24 October — cohort 02: all 408 groups now accounted for at screening level
+
+The second consolidation cohort audits the **remaining 211 of 361 owner-unresolved provisional groups**, using their previous original observation IDs and source-page pointers, into a bounded source-label triage register. The earlier **150** rows and **47** prior owner suggestions are unchanged and disjoint: **47 + 150 + 211 = 408/408** provisional groups *covered by screening or previous owner suggestions*.
+
+**This is not 408 verified distinct practices**. It is not an exhaustive first-witness review of all groups, a source-dependence audit, or publication approval. Cohort 02 checked **zero** additional original Weiser page images: the group labels supply retrieval and owner-comparison leads, not verified customs.
+
+### Cohort 02 working decisions
+
+| Review route from existing source labels | Groups |
+| --- | ---: |
+| Catholic practice or variant identity review | **49** |
+| Priesthood, rite or local event boundary | **30** |
+| Historic context or continuity uncertainty | **69** |
+| Regional cultural/material/food context | **51** |
+| Other rites or comparative history | **5** |
+| Folk claim/superstition hold | **3** |
+| Needs complete passage context before action classification | **4** |
+| **Total** | **211** |
+
+**56 specific reversible relationship hypotheses** were recorded, including priestly Rogation field sprinkling versus a family prayer walk, multiple All Souls alms customs, the corpus flower-wreath blessing/use lifecycle, and Spanish Seises on the Immaculate Conception versus Corpus Christi. Similar dates or materials do not by themselves justify a merge.
+
+### Towards the existing Calendar: 9 drafts -> 8 provisional subject units
+
+Nine bilingual draft dossiers now converge into **eight** contextual Calendar release subjects. Five have bounded historical/institutional/cultural evidence sufficient to enter *editorial* review; one has partial geographic corroboration, and two still require variant/owner/component decisions. This accounting does **not** mean eight distinct new customs or any released article.
+
+The highest-value deduplication is Seville's **Seises**: its Corpus Christi (`CAT-WEISER-B-083`) and Immaculate Conception (`CAT-WEISER-B-109`) observations describe **one** named cathedral practice with **multiple liturgical associations**, confirmed by the Cathedral. Likewise, the Epiphany chalk record (`CAT-WEISER-A-090`) belongs in the same thematic Calendar subject as the distinct priestly Epiphany house blessing (`CAT-WEISER-A-089`) but keeps separate instructions and authority. Polish Corpus Christi wreaths (`CAT-WEISER-B-085`, `CAT-WEISER-B-086`) comprise blessing plus domestic after-use stages, with locality-specific external records and an explicit ban on treating reported magical efficacy as doctrine.
+
+Evidence and release gates are encoded in `data/customs/master/customs-consolidation-first-calendar-release-gate-board.v1.json`; individual content and sources are in `customs-consolidation-cohort01-calendar-pilot-5-bilingual-drafts.v1.json` (five prior subjects) and `customs-consolidation-cohort02-calendar-two-source-supported-drafts.v1.json` (two additional, source-backed subjects). Existing source research and published cards were not mutated.
+
+**Counts unchanged:** 3,703 research observations (nonadditive), 408 provisional group IDs, 56 working master identities, 35 published-status main customs plus three context-only. **Newly canonically approved identities, owner merges and Calendar publications: all zero.**
+
+Next release work should be an explicit adjudication of these eight release-unit recommendations against canonical source/variant/ritual/copy gates. Do not launch additional Pitrè-wide mining, add a parallel calendar or automatically publish based on source-label screening.
