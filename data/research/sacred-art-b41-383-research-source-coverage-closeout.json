@@ -1,0 +1,332 @@
+{
+  "schema": "AO_B41_383_26_GAP_ARTWORK_PHOTO_RESEARCH_V1",
+  "date": "2026-10-24",
+  "baseline_ref": "research/sacred-art-b40-27-commons-accession-image-screen-20261024",
+  "active_artworks": 383,
+  "previous_any_physical": 358,
+  "previous_complete_object": 357,
+  "previous_complete_object_gaps": 26,
+  "screened_outstanding_cases": 26,
+  "new_archived_files": 2,
+  "new_archived_image_bytes": 261952,
+  "new_artworks_with_some_official_source": 2,
+  "new_artworks_with_provisional_complete_object_photo": 1,
+  "artworks_with_some_official_photo_source": 360,
+  "artworks_with_provisional_complete_object_source": 358,
+  "artworks_without_physical_source": 23,
+  "artworks_still_without_complete_object_source": 25,
+  "all_new_files_unpublished_draft_release": "ao-art-originals-40086279346-1",
+  "verified_workflow_run": 40086279346,
+  "B40_cumulative_research_image_files": 115,
+  "B40_cumulative_research_image_bytes": 686886337,
+  "B41_cumulative_research_image_files": 117,
+  "B41_cumulative_research_image_bytes": 687148289,
+  "B41_technical_photo_access_holds": 1,
+  "B41_reuse_rights_approvals": 0,
+  "B41_editorial_approvals": 0,
+  "protected_underlying_artist_copyright_cases": 2,
+  "strictly_zero_euro": true,
+  "curatorial_status": "W04 exact full object physical source now exists, but severe damage/low resolution makes it unsuitable as chosen hero. Lenzi any-source sourced via national foaf:depiction only; exact photo subject still held. Image bits preserved ≠ approved reuse rights or editorial publication.",
+  "remaining_25_gap_note": "All preexisting 26 cases retained except W04-009 which now has provisional complete-object source. G28-003 stays incomplete pending visual identification.",
+  "records": [
+    {
+      "artwork_id": "G25-003",
+      "title": "Saint Augustine",
+      "B40_state": "FALSE_POSITIVE_MAP_OR_DOCUMENT",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "celine-1894-john-cross",
+      "title": "Saint John of the Cross",
+      "B40_state": "COPYRIGHT_HOLD",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "italy-0900119548",
+      "title": "Sant'Alfonso Maria de Liguori",
+      "B40_state": "NO_PRECISE_COMMONS_FILE_LEADS",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "G28-003",
+      "title": "Sant'Alfonso Maria de Liguori",
+      "B40_state": "NO_PRECISE_COMMONS_FILE_LEADS",
+      "B41_new_evidence": {
+        "classification": "DIRECT_OFFICIAL_LINKED_DATA_IMAGE_ARCHIVED_VISUAL_IDENTITY_HOLD",
+        "complete": false,
+        "some": true,
+        "official_source": "https://dati.cultura.gov.it/lodview-arco/resource/HistoricOrArtisticProperty/1500005082",
+        "specifics": "ICCD ArCo official depiction of Lenzi 1851 St Alphonsus exact accession, 742x1065; physical source candidate exists, object detail image still needs visual/curatorial match; public app photo reuse not established",
+        "photo_sha256": "da7915c7059b2e6d4794d44301963de8f33924222a2de43168adb6102f77cfea"
+      },
+      "B41_at_least_one_source": true,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "G17-006",
+      "title": "Saint François de Sales",
+      "B40_state": "FALSE_POSITIVE_ARCHIVAL_AUTOGRAPHS_NOT_CANVAS",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "G30-004",
+      "title": "Ritratto di San Gregorio Nazianzeno",
+      "B40_state": "NO_PRECISE_COMMONS_FILE_LEADS",
+      "B41_new_evidence": {
+        "classification": "OFFICIAL_REGIONAL_PHOTO_CERTIFICATE_FAILURE_NO_BYPASS",
+        "complete": false,
+        "some": false,
+        "official_source": "https://www.lombardiabeniculturali.it/opere-arte/schede/L0070-00118/",
+        "specifics": "Direct regional JPG URL blocked by SSL trust chain in GitHub runner; do not disable TLS verification; no new bytes/rights"
+      },
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "G20-002",
+      "title": "Saint Anselme",
+      "B40_state": "FALSE_POSITIVE_BOOKS_NOT_PAINTING",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "G30-007",
+      "title": "San Pier Damiano writing, angel indicates heaven",
+      "B40_state": "FALSE_POSITIVE_BOOKS_NOT_PAINTING",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "zeri-45874-peter-damian",
+      "title": "San Pier Damiano",
+      "B40_state": "NO_PRECISE_COMMONS_FILE_LEADS",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "G30-006",
+      "title": "San Pier Damiano",
+      "B40_state": "NO_PRECISE_COMMONS_FILE_LEADS",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "G30-010",
+      "title": "Ritratto del cardinale Roberto Bellarmino",
+      "B40_state": "FALSE_POSITIVE_BERNINI_BIOGRAPHY",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "italy-banchero-0700031704",
+      "title": "San Lorenzo da Brindisi",
+      "B40_state": "NO_PRECISE_COMMONS_FILE_LEADS",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "G32-002",
+      "title": "Sant'Effremo",
+      "B40_state": "NO_PRECISE_COMMONS_FILE_LEADS",
+      "B41_new_evidence": {
+        "classification": "ORIGINAL_BARI_MUSEUM_HOLDING_CORROBORATED_PHOTO_MISSING",
+        "complete": false,
+        "some": false,
+        "official_source": "https://www.pinacotecabari.it/index.php/iniziative/piccole-mostre-preziose-5-i-dipinti-meno-noti-di-francesco-netti-dal-9-al-24-settembre-2017",
+        "specifics": "Museum confirmed monument Sant'Effremo Netti presented in 2017; original Bari museum, later church replacement copy stolen; seek image of original only."
+      },
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+      "title": "Saint Lawrence / Saint Hilary — two-sided altarpiece panel",
+      "B40_state": "KNOWN_OBVERSE_ALREADY_ARCHIVED_REVERSE_STILL_MISSING",
+      "B41_new_evidence": {
+        "classification": "REVERSE_MISSING_DISTINCT_HERMIT_HILARY",
+        "complete": false,
+        "some": true,
+        "official_source": "https://www.museodelprado.es/coleccion/obra-de-arte/san-lorenzo-san-hilario-ermitao/71cff54c-68c8-4be5-8704-15713fe411a8",
+        "specifics": "Prado painting P001300 archived Saint Lawrence front, reverse San Hilario ermitaño still missing; do not silently equate to St Hilary of Poitiers or infer two-faced coverage."
+      },
+      "B41_at_least_one_source": true,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "G29-001",
+      "title": "Saint Hilaire de Poitiers écrivant contre l'arianisme",
+      "B40_state": "NO_PRECISE_COMMONS_FILE_LEADS",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "QCP-HILARY-LEDUC-1896-1900",
+      "title": "Saint Hilaire rédigeant son traité sur la Trinité",
+      "B40_state": "FALSE_POSITIVE_OTHER_LEDUC_ART_AND_CHURCH_PHOTOS",
+      "B41_new_evidence": {
+        "classification": "INDIVIDUAL_PATRIMONY_ACCESSION_NOW_IDENTIFIED_PHOTO_MISSING",
+        "complete": false,
+        "some": false,
+        "official_source": "https://www.patrimoine-culturel.gouv.qc.ca/detail.do?id=94025&methode=consulter&type=bien",
+        "specifics": "Official individual painting ID 94025 accession 35.2004.44, 468x226cm, distinct from heritage ensemble ID93184; specific image still not exposed. Provenance does not imply photo reuse."
+      },
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "W04-009",
+      "title": "Le songe de saint Joseph",
+      "B40_state": "NO_PRECISE_COMMONS_FILE_LEADS",
+      "B41_new_evidence": {
+        "classification": "EXACT_FULL_CANVAS_SOURCE_ARCHIVED_LOW_RES_DAMAGED_RIGHTS_HELD",
+        "complete": true,
+        "some": true,
+        "official_source": "https://collections.louvre.fr/ark:/53355/cl010060517",
+        "specifics": "INV20450, 671x750, badly damaged historic canvas; Louvre terms section 4.1.1.2 explicitly require paid permission for commercial multimedia uses; the €0 policy excludes commercial reuse of this photo",
+        "photo_sha256": "98f7abbcb3e4adf4b0fce346ad469362f60a8ae130928ec3f20cbd72884cf825",
+        "rights_page": "https://collections.louvre.fr/en/page/cgu"
+      },
+      "B41_at_least_one_source": true,
+      "B41_new_complete_object_source": true,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "carmel-lisieux-1925-therese-aux-roses",
+      "title": "Thérèse aux roses (1925)",
+      "B40_state": "COPYRIGHT_HOLD",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "G26-007",
+      "title": "Joan of Arc Listening to the Voices",
+      "B40_state": "FALSE_POSITIVE_ARCHIVAL_TEXTS_NOT_CARRIERE_PAINTING",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "W10-009",
+      "title": "L'Apothéose de saint Louis",
+      "B40_state": "NO_PRECISE_COMMONS_FILE_LEADS",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "G27-002",
+      "title": "Ceiling of St Patrick's Hall, preparatory oil sketch (St Patrick lighting Paschal fire in upper panel)",
+      "B40_state": "NO_PRECISE_COMMONS_FILE_LEADS",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "G17-009",
+      "title": "Episode de la vie de saint Denis",
+      "B40_state": "NO_PRECISE_COMMONS_FILE_LEADS",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "title": "Holy Family with Saint Anne",
+      "B40_state": "PRADO_IMAGE_ARCHIVED_B39_IDENTITY_UNRESOLVED",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "title": "Burial of Christ — Prado Passion series",
+      "B40_state": "FALSE_POSITIVE_UNRELATED_WILLIAM_PINKNEY_IMAGES",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "title": "Saint Anthony of Padua with the Christ Child",
+      "B40_state": "FALSE_POSITIVE_OTHER_SUBJECT_AND_BOOKS_RUBENS_ATTRIBUTION_OPEN",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-he-oly-rinity",
+      "title": "The Holy Trinity",
+      "B40_state": "ONE_ALREADY_ARCHIVED_B38_ONE_EXTRA_LOW_RES",
+      "B41_new_evidence": null,
+      "B41_at_least_one_source": false,
+      "B41_new_complete_object_source": false,
+      "B41_editorial_approved": false,
+      "B41_app_photo_rights_approved": false
+    }
+  ]
+}

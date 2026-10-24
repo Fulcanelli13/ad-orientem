@@ -1,0 +1,58 @@
+{
+  "schema": "AO_B41_THREE_PRECISE_OFFICIAL_IMAGE_CANDIDATES_V1",
+  "date": "2026-10-24",
+  "baseline_complete_gaps": 26,
+  "app_rights_approved": 0,
+  "strictly_zero_euro": true,
+  "rights_research_only": true,
+  "candidates": [
+    {
+      "artwork_id": "W04-009",
+      "title": "Le songe de saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "museum": "Musée du Louvre",
+      "accession": "INV 20450",
+      "official_object_page": "https://collections.louvre.fr/ark:/53355/cl010060517",
+      "image_url": "https://collections.louvre.fr/media/cache/medium/0000000021/0000060517/0000684393_OG.JPG",
+      "expected_origin_host": "collections.louvre.fr",
+      "min_width": 550,
+      "min_height": 500,
+      "corroboration": "official Louvre art record INV20450 and POP Joconde 000PE000378; web visual confirms damaged full canvas",
+      "source_identity_evidence_class": "EXACT_MUSEUM_RECORD_PHOTO_FULL_CANVAS_VISUALLY_INSPECTED",
+      "provisional_full_object_candidate": true,
+      "licensing_gate": "RMN-Grand Palais photograph reproduction not cleared for commercial/public app"
+    },
+    {
+      "artwork_id": "G28-003",
+      "title": "Sant'Alfonso Maria de Liguori",
+      "artist": "Michele Lenzi",
+      "museum": "Ministero della Cultura ICCD ArCo",
+      "accession": "1500005082",
+      "official_object_page": "https://dati.cultura.gov.it/lodview-arco/resource/HistoricOrArtisticProperty/1500005082",
+      "image_url": "https://sigecweb.beniculturali.it/images/fullsize/ICCD50007108/ICCD3912951_6260_S31.jpg",
+      "expected_origin_host": "sigecweb.beniculturali.it",
+      "min_width": 250,
+      "min_height": 350,
+      "corroboration": "official object ArCo RDF foaf:depiction; precise 1851 Lenzi religious painting with rosary, Madonna, crucifix, book",
+      "source_identity_evidence_class": "INSTITUTIONAL_EXACT_OBJECT_LINKED_IMAGE_URI_CONTENT_UNINSPECTED",
+      "provisional_full_object_candidate": false,
+      "licensing_gate": "catalogue CC BY-SA metadata does not grant photograph commercial reuse; investigate image rights separately"
+    },
+    {
+      "artwork_id": "G30-004",
+      "title": "Ritratto di San Gregorio Nazianzeno",
+      "artist": "Giuseppe Franchi (attributed)",
+      "museum": "Pinacoteca Ambrosiana, LombardiaBeniCulturali",
+      "accession": "L0070-00118",
+      "official_object_page": "https://www.lombardiabeniculturali.it/opere-arte/schede/L0070-00118/",
+      "image_url": "https://www.lombardiabeniculturali.it/assets/immagini/liv2/OA310RL/SC/OA/L0070/00/OA_L0070-00118_IMG-0000222844.jpg",
+      "expected_origin_host": "www.lombardiabeniculturali.it",
+      "min_width": 250,
+      "min_height": 350,
+      "corroboration": "regional precise painting object record L0070-00118 with image asset referenced on official page",
+      "source_identity_evidence_class": "OFFICIAL_REGIONAL_EXACT_OBJECT_PHOTO_CONTENT_UNINSPECTED",
+      "provisional_full_object_candidate": false,
+      "licensing_gate": "photographer and object reproduction rights not verified; higher resolution via custodian"
+    }
+  ]
+}
