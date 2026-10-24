@@ -262,6 +262,65 @@ for(const sequence of voiceDocument.sequences){
 }
 assert(pilotRows.every(row=>row.voicePreview?.en&&row.voicePreview?.fr));
 
+// P2.55: actual 7B inference, NOT a new source owner, certified translation,
+// or a live chat. These are optional compare-only extracts in the existing
+// offline visual novel; they must not replace the documentary/GPT-6 research
+// specimens or accidentally attribute St Anselm's quote to Pius X.
+const p54=JSON.parse(readFileSync(evidenceRoot+
+ 'pius-x-p54-real-7b-four-turn-research-20261024.v1.json','utf8'));
+assert.equal(p54.schema,'AO_SPX_P54_REAL_7B_BILINGUAL_HISTORICAL_VOICE_RESEARCH_V1');
+assert.equal(p54.chapterId,'SPX-PILOT-01');
+assert.equal(p54.execution,'ACTUAL_LLAMA_CPP_CPU_LOCAL_INFERENCE_NOT_MOCK');
+assert.equal(p54.model,'Qwen2.5-7B-Instruct-Q4_K_M');
+assert.equal(p54.counts.attempts,4);
+assert.equal(p54.counts.structurallyAccepted,4);
+assert.equal(p54.counts.independentlyApproved,0);
+assert.equal(p54.approvals.publication,false);
+assert.equal(p54.approvals.verbatimPapalSpeech,false);
+assert.equal(p54.approvals.independentSourceReview,false);
+assert.equal(p54.approvals.translationCertified,false);
+assert.equal(p54.turns.length,4);
+const p54Seen=new Set();
+for(const sample of p54.turns){
+ assert(['en','fr'].includes(sample.language));
+ assert([1,2].includes(sample.turn),'7B source comparison covers only two turns');
+ assert.equal(sample.nodeId,sample.selectedOriginalEvidenceNodeId);
+ assert.equal(sample.status,'DRAFT_STRUCTURALLY_ACCEPTED_NOT_PUBLISHED');
+ assert.equal(sample.independentHumanApproval,false);
+ const row=pilotRows[sample.turn-1];
+ assert.equal(sample.nodeId,row.nodeId);
+ assert(typeof sample.text==='string'&&sample.text.length>45);
+ const id=sample.language+'|'+sample.nodeId;
+ assert(!p54Seen.has(id));p54Seen.add(id);
+ const licensed=new Set(originalPilotAnnex.dialogueMappings[sample.turn-1].witnessIds);
+ const ids=new Set(sample.sourceWitnessIds);
+ assert(ids.size>0&&ids.size===sample.sourceWitnessIds.length);
+ const witnesses=sample.sourceWitnessIds.map(witnessId=>{
+  const source=originalPilotWitnesses.get(witnessId);
+  assert(source&&source.speaker==='PIUS_X_AUTHOR'&&licensed.has(witnessId));
+  assert((source.latin||source.text)?.length>10);
+  return {id:witnessId,text:source.latin||source.text,
+   speaker:'PIUS_X_AUTHOR',originalLanguage:'la',locus:source.locus,
+   sourceUrl:originalPilotAnnex.document.sites.la};
+ });
+ row.real7bPreview??={};
+ row.real7bPreview[sample.language]={
+  text:sample.text,witnesses,
+  status:'ACTUAL_7B_MACHINE_GENERATION_EDITORIAL_UNAPPROVED',
+  editorialConcern:sample.editorialConcern,
+  sourceRun:p54.runUrl,
+  publishingApproved:false,
+  firstPersonAuthenticated:false,
+  translationCertified:false,
+  currentModelInference:false
+ };
+}
+assert.equal(p54Seen.size,4);
+assert(pilotRows.slice(0,2).every(row=>
+ row.real7bPreview?.en&&row.real7bPreview?.fr));
+assert(!pilotRows[2].real7bPreview);
+
+
 assert.equal(sourceDossiers.length+sourceDossierHeld.length+cases.length,144);
 assert(sourceDossiers.length>75,'Corpus-level original source browsing should reach far beyond 11');
 assert(sourceDossiers.every(x=>!reviewedNodeIds.has(x.nodeId)));
@@ -275,6 +334,7 @@ const offline={
  navigationAliasCount:32,navigationAliases,cases,
  voicePreviewCaseCount:3,voicePreviewLanguageCount:2,
  voicePreviewApproved:false,voicePreviewLiveInference:false,
+ real7bComparisonCount:4,real7bComparisonApproved:false,real7bComparisonLive:false,
  sourceGateSize:144,sourceDossierCount:sourceDossiers.length,
  sourceDossierHeldCount:sourceDossierHeld.length,
  sourceDossierDistinctFragments:sourceDossierWitnessIds.size,
@@ -303,6 +363,7 @@ console.log('PASS SPX_P26_OFFLINE_BUILD '+JSON.stringify({
  path:dest,bytes:Buffer.byteLength(final),chapterCount:4,sourceOwnedQuestions:11,
  bilingualEditorialDrafts:22,originalFragments:18,claimTraceUnits:23,
  navigationAliases:32,voicePreviewCases:3,voicePreviewLanguages:2,
+ real7bComparisons:4,real7bApproved:false,
  sourceDossierCount:sourceDossiers.length,
  sourceDossierChapterCount:sourceDossierChapterIds.size,
  sourceDossierHeldCount:sourceDossierHeld.length,
