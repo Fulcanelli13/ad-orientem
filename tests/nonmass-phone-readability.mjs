@@ -88,26 +88,40 @@ try{
    await page.screenshot({path:resolve(out,"formation-"+width+".png"),fullPage:false,animations:"disabled"});
    await page.locator('[data-ao-app-surface="pray"]').click();
    await page.locator("#aoPray435930.open .aoP435930RootOrganised").waitFor({state:"visible",timeout:18000});
+   // Quiet-frame acceptance: the first fold has six canonical entries and
+   // the entire original catalogue remains reachable after disclosure.
+   const featured=await page.locator("#aoPray435930 .aoP435930QuietTiles>.aoP435930QuietTile").count();
+   assert.equal(featured,6,"Pray should show six featured routes at "+width+"px");
+   const libraryRows=await page.locator("#aoPray435930 .aoP435930QuietLibraryRow").count();
+   assert.equal(libraryRows,3,"Pray library shortcuts missing at "+width+"px");
+   await page.screenshot({path:resolve(out,"pray-"+width+".png"),fullPage:false,animations:"disabled"});
+   await page.locator("#aoPray435930 .aoP435930QuietMore>summary").click();
    const prayer=await page.evaluate(()=>{
     const root=document.querySelector("#aoPray435930.open .aoP435930RootOrganised");
-    const visible=selector=>[...document.querySelectorAll(selector)].filter(el=>{
+    const old=root?.querySelector(".aoP435930QuietMore");
+    const visible=selector=>[...root.querySelectorAll(selector)].filter(el=>{
       const s=getComputedStyle(el),r=el.getBoundingClientRect();
       return s.display!=="none"&&s.visibility!=="hidden"&&r.height>0&&r.width>0;
     });
-    const kind=visible("#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleKind");
-    const descriptions=visible("#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleDescription");
+    const tiles=visible(".aoP435930QuietTile");
+    const descriptions=visible(".aoP435930QuietMoreContent .aoP435930ModuleDescription");
+    const familyDoors=visible(".aoP435930QuietMoreContent [data-p435930-family]");
     const font=el=>parseFloat(getComputedStyle(el).fontSize);
-    return {root:!!root,kind:kind.map(font),descriptions:descriptions.map(font),
-      scrollWidth:document.documentElement.scrollWidth,innerWidth,
-      rootButtons:[...root.querySelectorAll("button")].length};
+    return {root:!!root,expanded:!!old?.open,tiles:tiles.length,
+      tileText:tiles.map(b=>font(b.querySelector("b"))),
+      descriptionFonts:descriptions.map(font),familyDoors:familyDoors.length,
+      scrollWidth:document.documentElement.scrollWidth,innerWidth};
    });
-   assert.ok(prayer.kind.length>=4&&prayer.descriptions.length>=4,
-     "Prayer family list unavailable at "+width+"px");
-   assert.ok(prayer.kind.every(px=>px>=11),"Prayer category microtype still <11px: "+JSON.stringify(prayer));
-   assert.ok(prayer.descriptions.every(px=>px>=13),
-     "Prayer descriptions still below 13px: "+JSON.stringify(prayer));
+   assert.equal(prayer.expanded,true,"Full prayer catalogue disclosure did not open");
+   assert.equal(prayer.tiles,6,"Six canonical Prayer entries not visible");
+   assert.ok(prayer.tileText.every(px=>px>=16),"Featured prayer labels too small: "+JSON.stringify(prayer));
+   assert.ok(prayer.familyDoors>=6&&prayer.descriptionFonts.length>=5,
+     "Original Prayer families unavailable after disclosure at "+width+"px: "+JSON.stringify(prayer));
+   assert.ok(prayer.descriptionFonts.every(px=>px>=13),
+     "Prayer family descriptions below 13px: "+JSON.stringify(prayer));
    assert.ok(prayer.scrollWidth<=prayer.innerWidth+1,"Prayer overflow at "+width+"px");
-   await page.screenshot({path:resolve(out,"pray-"+width+".png"),fullPage:false,animations:"disabled"});
+   console.log("PASS "+width+"px: "+formation.cards+" formation subjects, "+
+     prayer.tiles+" Prayer features, "+prayer.familyDoors+" retained families, no viewport overflow");
    assert.equal(errors.length,0,"Browser errors at "+width+"px: "+errors.slice(0,3).join("; "));
    console.log("PASS "+width+"px: "+formation.cards+" formation subjects, "+
      prayer.kind.length+" Prayer family kinds, no viewport overflow");
