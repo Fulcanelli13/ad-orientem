@@ -207,6 +207,61 @@ for(const chapter of store.data.chapters){
    answerApproved:false,publicationApproved:false});
  }
 }
+// P2.47: connect an EXISTING GPT-6 in-chat, one-pass voice specimen to the
+// offline P2.46 dialogue. This is an OPTIONAL historical-style editorial comparison,
+// never an authenticated first-person papal utterance or actual live model inference.
+const voiceDocument=JSON.parse(readFileSync(evidenceRoot+
+ 'pius-x-e-supremi-gpt6-inchat-bilingual-dialogue-20261023.v1.json','utf8'));
+assert.equal(voiceDocument.schema,'AO_SPX_P2_INCHAT_BILINGUAL_CONVERSATION_RESEARCH_EXAMPLE_V1');
+assert.equal(voiceDocument.chapterId,'SPX-PILOT-01');
+assert.equal(voiceDocument.provenance.modelFamily,'GPT-6');
+assert.equal(voiceDocument.provenance.externalProviderEndpointCalled,false);
+assert.equal(voiceDocument.provenance.independentVerifierCalled,false);
+assert.equal(voiceDocument.provenance.multiturnStatefulnessTested,false);
+assert.equal(voiceDocument.provenance.openEndedUserInteractionTested,false);
+for(const k of ['papalTextQuotedVerbatim','translationCertified','historicalCharacterSpeechAuthenticated','publicationApproved'])
+ assert.equal(voiceDocument[k],false);
+assert.deepEqual(voiceDocument.sequences.map(x=>x.language),['en','fr']);
+const pilotRows=cases.filter(x=>x.chapterId==='SPX-PILOT-01');
+assert.equal(pilotRows.length,3);
+const originalPilotAnnex=store.primaryWitnessAnnexes.get('SPX-PILOT-01');
+const originalPilotWitnesses=new Map(originalPilotAnnex.sourceWitnesses.map(w=>[w.id,w]));
+for(const sequence of voiceDocument.sequences){
+ assert.equal(sequence.turns.length,3);
+ assert.equal(sequence.generationProcess,'GPT6_IN_CHAT_SINGLE_PASS_NOT_ENDPOINT_SEQUENCE');
+ for(const [i,v] of sequence.turns.entries()){
+  const row=pilotRows[i],mapping=originalPilotAnnex.dialogueMappings[i];
+  assert.equal(v.nodeId,row.nodeId);
+  assert.equal(mapping.nodeId,row.nodeId);
+  assert.equal(v.question,row.question[sequence.language]);
+  assert.equal(v.status,'UNAPPROVED_IN_CHAT_EDITORIAL_EXAMPLE');
+  assert.equal(v.publishingApproved,false);
+  assert.equal(v.originalTextCollated,false);
+  assert(typeof v.reply==='string'&&v.reply.length>=65&&v.reply.length<=850);
+  assert(!/[“”«»]/u.test(v.reply));
+  const ids=new Set(v.evidenceIds);
+  assert.equal(ids.size,v.evidenceIds.length);
+  assert(ids.size>=2);
+  const licensed=new Set(mapping.witnessIds);
+  const refs=v.evidenceIds.map(id=>{
+   const w=originalPilotWitnesses.get(id);
+   assert(licensed.has(id)&&w&&w.speaker==='PIUS_X_AUTHOR',
+     'Voice comparison borrowed an unlicensed or non-papal witness '+id);
+   assert(w.locus&&w.text?.length>10&&w.sourceUrl===undefined);
+   return {id,text:w.text,locus:w.locus,originalLanguage:'la',speaker:w.speaker,
+     sourceUrl:originalPilotAnnex.document.sites.la||originalPilotAnnex.document.sites.original};
+  });
+  row.voicePreview??={};
+  row.voicePreview[sequence.language]={
+   text:v.reply,expression:v.expression,witnesses:refs,
+   status:'GPT6_IN_CHAT_EDITORIAL_FIRST_PERSON_STYLE_NOT_PAPAL_SPEECH',
+   publicationApproved:false,independentVerification:false,
+   liveConversationTested:false
+  };
+ }
+}
+assert(pilotRows.every(row=>row.voicePreview?.en&&row.voicePreview?.fr));
+
 assert.equal(sourceDossiers.length+sourceDossierHeld.length+cases.length,144);
 assert(sourceDossiers.length>75,'Corpus-level original source browsing should reach far beyond 11');
 assert(sourceDossiers.every(x=>!reviewedNodeIds.has(x.nodeId)));
@@ -218,6 +273,8 @@ const offline={
  originalWitnessFragments:distinctWitnesses.size,originalCorpusNodes:423,
  claimTraceUnits:23,humanClaimCertifications:0,
  navigationAliasCount:32,navigationAliases,cases,
+ voicePreviewCaseCount:3,voicePreviewLanguageCount:2,
+ voicePreviewApproved:false,voicePreviewLiveInference:false,
  sourceGateSize:144,sourceDossierCount:sourceDossiers.length,
  sourceDossierHeldCount:sourceDossierHeld.length,
  sourceDossierDistinctFragments:sourceDossierWitnessIds.size,
@@ -245,7 +302,8 @@ writeFileSync(dest,final);
 console.log('PASS SPX_P26_OFFLINE_BUILD '+JSON.stringify({
  path:dest,bytes:Buffer.byteLength(final),chapterCount:4,sourceOwnedQuestions:11,
  bilingualEditorialDrafts:22,originalFragments:18,claimTraceUnits:23,
- navigationAliases:32,sourceDossierCount:sourceDossiers.length,
+ navigationAliases:32,voicePreviewCases:3,voicePreviewLanguages:2,
+ sourceDossierCount:sourceDossiers.length,
  sourceDossierChapterCount:sourceDossierChapterIds.size,
  sourceDossierHeldCount:sourceDossierHeld.length,
  sourceDossierDistinctFragments:sourceDossierWitnessIds.size,
