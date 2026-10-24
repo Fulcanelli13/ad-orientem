@@ -92,3 +92,7 @@ jobs:
         run: |
           node --check tests/customs-unified-identity-consolidation-cohort01.mjs
           node tests/customs-unified-identity-consolidation-cohort01.mjs
+      - name: Verify final-copy five Calendar candidates are bilingual, sourced and unpublished
+        run: |
+          node --check tests/customs-calendar-five-release-candidates.mjs
+          node tests/customs-calendar-five-release-candidates.mjs
