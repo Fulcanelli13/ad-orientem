@@ -1,0 +1,39 @@
+name: B35 bulk media-source discovery for 35 unresolved Sacred Art identities (metadata only)
+on:
+  push:
+    branches: [research/sacred-art-b35-40-gaps-source-recovery-20261024]
+    paths: [.github/workflows/ao-art-b35-discover35.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  screen-35:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b35-40-gaps-source-recovery-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate and screen 35 cases against Commons public file search without acquiring binaries
+        run: |
+          python -m py_compile scripts/research/sacred_art_b35_discover35_commons.py
+          python scripts/research/sacred_art_b35_discover35_commons.py
+      - name: Preserve metadata leads as unverified research queue with absolute nonpromotion
+        run: |
+          set -euo pipefail
+          cp artifacts/b35-commons35-discovery/candidate-media-leads.csv data/research/sacred-art-b35-35-commons-candidate-leads.csv
+          cp artifacts/b35-commons35-discovery/discovery-summary.json data/research/sacred-art-b35-35-commons-discovery-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b35-35-commons-*
+          git commit -m 'research: B35 Commons media discovery across 35 unresolved artworks no image ownership claims'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b35-40-gaps-source-recovery-20261024
+            git rebase origin/research/sacred-art-b35-40-gaps-source-recovery-20261024
+            git push origin HEAD:research/sacred-art-b35-40-gaps-source-recovery-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
