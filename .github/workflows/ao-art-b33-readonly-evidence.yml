@@ -1,0 +1,37 @@
+name: B33 Sacred Art read-only source evidence integrity (64 P0)
+on:
+  push:
+    branches: [research/sacred-art-b33-seven-source-alias-governance-20261024]
+    paths:
+      - .github/workflows/ao-art-b33-readonly-evidence.yml
+      - scripts/research/sacred_art_b33_readonly_coverage_check.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-evidence-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b33-seven-source-alias-governance-20261024
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify all P0 image-source counts, retained rights holds and two cross-ID aliases
+        run: |
+          python -m py_compile scripts/research/sacred_art_b33_readonly_coverage_check.py
+          python scripts/research/sacred_art_b33_readonly_coverage_check.py
+      - name: Inspect workflow self-permission and refuse any source mutations
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          w=Path('.github/workflows/ao-art-b33-readonly-evidence.yml').read_text()
+          header=w.split('jobs:',1)[0]
+          assert header.count('contents: read') == 1
+          assert 'contents: write' not in header
+          assert 'git push' not in header
+          assert 'gh release' not in header
+          PY
