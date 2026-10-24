@@ -9,7 +9,7 @@
  */
 import {totalmem,platform,arch,cpus} from 'node:os';
 import {spawnSync} from 'node:child_process';
-import {fileURLToPath} from 'node:url';
+import {pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';
 
 const minRamGB=12;
@@ -85,7 +85,7 @@ export function formatReadiness(report){
   'For real speed: start llama-server bound to 127.0.0.1 and run --benchmark.'
  ].join('\n');
 }
-if(process.argv[1]&&import.meta.url===new URL('file://'+resolve(process.argv[1]).replace(/\\/g,'/')).href){
+if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
  const report=inspectLocalHardware();
  console.log(formatReadiness(report));
  if(process.argv.includes('--json'))console.log(JSON.stringify(report,null,2));
