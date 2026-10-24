@@ -36,7 +36,7 @@ assert.equal(contract.schema, EXPLORE_GEOGRAPHY_SCHEMA);
 assert.equal(contract.version, "1.0.0");
 assert.ok(contract.invariants.some(value => /proximity/i.test(value)));
 assert.ok(contract.invariants.some(value => /Directory venue/i.test(value)));
-assert.equal(seed.places.length,261+r87.published_new.length+r89.published_new.length+r90.published_new.length+r91.published_new.length+r92.published_new.length+r93.published_new.length+6+readJson("../data/geography/research/sacred-places-p17-separated-bergamo-asuncion.v1.json").published_new.length);
+assert.equal(seed.places.length,261+r87.published_new.length+r89.published_new.length+r90.published_new.length+r91.published_new.length+r92.published_new.length+r93.published_new.length+6+readJson("../data/geography/research/sacred-places-p17-separated-bergamo-asuncion.v1.json").published_new.length+3);
 for(const entry of r87.published_new)assert.ok(seed.places.some(place=>place.place_id===entry.place_id),entry.place_id+" R87 Place missing");
 
 for (const area of seed.geoAreas) {
