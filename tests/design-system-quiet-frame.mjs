@@ -38,6 +38,17 @@ const second=installAppDesignSystem({document});
 assert.equal(second.styleId,first.styleId);
 assert.equal(elements.size,1,"design system must not append duplicate stylesheet");
 assert.equal(style.textContent,original);
+for(const selector of [
+ "#ao-learn-modular-root .aoLearnModTop",
+ "#ao-settings-modular-root .aoSetTop",
+ "#ao-find-modular-root .aoExploreSurface>.aoFindHeader",
+ "#ao-learn-modular-root .aoLearnFamilyCard",
+ "#ao-settings-modular-root .aoSetRowText b",
+ "#ao-settings-modular-root .aoSetRowText small",
+ "#ao-find-modular-root .aoExploreSurface .aoFindSearch input",
+]){
+ assert.ok(css.includes(selector),"Missing visual-convergence selector "+selector);
+}
 assert.match(css,/prefers-reduced-motion:reduce/);
 // Existing application routes and liturgical source owners must stay authoritative.
 const home=await readFile(new URL("../src/home/presentation.js",import.meta.url),"utf8");
