@@ -207,7 +207,7 @@ assert.equal(cohort02.summary.screening_covering_all_408_groups,408);
 assert.equal(cohort02.summary.original_source_passages_inspected_in_this_second_cohort,0);
 assert.equal(cohort02.summary.new_approved_canonical_identities,0);
 assert.equal(cohort02.summary.new_calendar_publications,0);
-const screened=new Set(cohort.records.map(r=>r.provisional_group_id));
+const cohort02Seen=new Set(cohort.records.map(r=>r.provisional_group_id));
 let relationCount=0,calendarSignalCount=0;
 const countByBin={};
 for(let i=0;i<cohort02.records.length;i++){
@@ -215,7 +215,7 @@ for(let i=0;i<cohort02.records.length;i++){
  assert.equal(rec.audit_id,'AO-CONSOL-02-'+String(i+1).padStart(3,'0'));
  assert.ok(allIds.has(rec.provisional_group_id));
  assert.ok(!priorOwners.has(rec.provisional_group_id));
- assert.ok(!screened.has(rec.provisional_group_id));
+ assert.ok(!cohort02Seen.has(rec.provisional_group_id));
  assert.ok(rec.working_action_label.length>=8);
  assert.ok(rec.source_observation_ids.length>=1);
  assert.equal(rec.first_witness_exact_passage_verified_this_batch,false);
@@ -232,10 +232,10 @@ for(let i=0;i<cohort02.records.length;i++){
  }
  calendarSignalCount+=Number(rec.calendar_topic_label_signals_only.length>0);
  countByBin[rec.preliminary_scope_bin]=(countByBin[rec.preliminary_scope_bin]||0)+1;
- screened.add(rec.provisional_group_id);
+ cohort02Seen.add(rec.provisional_group_id);
 }
-assert.equal(screened.size,361);
-assert.equal(new Set([...screened,...priorOwners]).size,408);
+assert.equal(cohort02Seen.size,361);
+assert.equal(new Set([...cohort02Seen,...priorOwners]).size,408);
 assert.equal(relationCount,cohort02.summary.action_level_comparison_hypotheses);
 assert.equal(calendarSignalCount,cohort02.summary.groups_with_calendar_topic_label_signal);
 assert.deepEqual(countByBin,cohort02.summary.bin_counts);
@@ -252,7 +252,7 @@ const pilotJoseph=pilot.records.find(x=>x.group_id==='CAT-WEISER-A-028');
 assert.equal(pilotJoseph.current_approval,'FIRST_SOURCE_ONLY');
 assert.equal(pilotJoseph.calendar_link_approved,false);
 assert.equal(pilot.records.every(x=>x.record_status==='EDITORIAL_DRAFT_UNAPPROVED'),true);
-console.log('PASS customs cohort02: 408/408 research groups now screened or owner-linked (47+150+211); 56 comparison hypotheses; zero newly confirmed customs or Calendar releases.');
+console.log('PASS customs cohort02: 408/408 research groups now cohort02Seen or owner-linked (47+150+211); 56 comparison hypotheses; zero newly confirmed customs or Calendar releases.');
 
 
 const newSubjects=load('customs-consolidation-cohort02-calendar-two-source-supported-drafts.v1.json');
