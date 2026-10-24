@@ -11,7 +11,7 @@ import { sacredPlaceSynopsis, compactHeritagePlaceSheet } from "../src/find/heri
 import { exploreMapFeatures } from "../src/find/map-runtime.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "../src/find/customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "../src/find/traditions-browse.js";
-import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "../src/find/heritage-map.js";
+import { HERITAGE_CATEGORIES, PUBLIC_HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "../src/find/heritage-map.js";
 import { buildExplorePlaceProfiles, resolveApprovedPlaceMedia } from "../src/find/place-profiles.js";
 import { isMapPublishablePlaceGeo } from "../src/find/geography-contracts.js";
 import {
@@ -722,6 +722,9 @@ assert.match(homeOwnerSource,/id==="find.traditions"\)return navigateHomeShortcu
 // Each documented site appears once even when it has multiple independent claims.
 const heritagePlaces=projectHeritagePlaces(projection);
 assert.deepEqual(HERITAGE_CATEGORIES,["shrines","relics","pilgrimages","apparitions","traditions"]);
+assert.deepEqual(PUBLIC_HERITAGE_CATEGORIES,["shrines","relics","pilgrimages","apparitions"]);
+assert.ok(!PUBLIC_HERITAGE_CATEGORIES.includes("traditions"));
+assert.ok(projectHeritagePlaces(projection).every(place=>!place.heritage_categories.includes("traditions")), "Public map cannot recreate Customs Atlas pins");
 const mappedShrinePlaceIds=new Set(projection.byLens.shrines.filter(item=>item.map_publishable).map(item=>item.place_id));
 const heritagePlaceIds=new Set(heritagePlaces.map(item=>item.place_id));
 assert.deepEqual([...mappedShrinePlaceIds].filter(id=>!heritagePlaceIds.has(id)),[],"mapped shrine places must survive the unified projection");
