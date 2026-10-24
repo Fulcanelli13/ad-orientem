@@ -95,6 +95,7 @@ changeOnce('Eleven proposed bilingual corrections · thirty-five original-source
 changeOnce('data.schema!=="AO_SPX_P36_BILINGUAL_11_REVISIONS_IN_35_SOURCE_REVIEW_V1"',
  'data.schema!=="AO_SPX_P37_SECOND_PASS_11_ITALIAN_BILINGUAL_REVIEW_V1"');
 changeOnce('data.counts.priorityCases!==35','data.counts.secondPassCases!==11');
+changeOnce('data.release.humanSignedOff!==0','data.approvals.humanSignedOff!==0');
 changeOnce('matches.length+" of 35 cases shown"','matches.length+" of 11 cases shown"');
 changeOnce('a.download="SPX_P36_Provisional_Annotations.json"',
  'a.download="SPX_P37_Provisional_Annotations.json"');
