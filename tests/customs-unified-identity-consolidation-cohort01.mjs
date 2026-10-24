@@ -112,28 +112,87 @@ assert.equal(publishedSeed.customs.filter(r=>r.publication_state==='PUBLISHED').
 assert.equal(actionDossiers.summary.new_canonical_ids,0);
 assert.equal(actionDossiers.summary.new_publications,0);
 assert.equal(actionDossiers.summary.existing_main_merges,0);
-assert.equal(actionDossiers.page_locator_quality_hold.discrepancies.length,3);
-for(const hold of actionDossiers.page_locator_quality_hold.discrepancies){
- assert.ok(rankedQueue.records.some(r=>r.provisional_group_id===hold.provisional_group_id));
- assert.notEqual(hold.queue_claimed_printed_page,hold.transcription_printed_page_indication);
- assert.match(hold.inspection_status,/FACSIMILE_PENDING/);
-}
+assert.equal(actionDossiers.page_locator_quality_hold.discrepancies.length,1);
+assert.equal(actionDossiers.page_locator_quality_hold.rescinded_transcription_discrepancies.length,3);
+assert.equal(actionDossiers.page_locator_quality_hold.facsimile_image_reviews_complete_for_three,3);
+assert.equal(actionDossiers.summary.facsimile_reviews_complete,2);
+const actualHold=actionDossiers.page_locator_quality_hold.discrepancies[0];
+assert.equal(actualHold.provisional_group_id,'CAT-WEISER-A-089');
+assert.equal(actualHold.queue_claimed_printed_page,150);
+assert.equal(actualHold.original_facsimile_first_passage_page,149);
+assert.match(actualHold.inspection_status,/FACSIMILE_CONFIRMED/);
 for(const rec of actionDossiers.records){
  const inQueue=rankedQueue.records.find(r=>r.provisional_group_id===rec.provisional_group_id);
  assert.ok(inQueue,'Dossier may not introduce a new unsourced group');
  assert.deepEqual(rec.source_observation_ids,inQueue.source_observation_ids);
  assert.equal(rec.publication_state,'RESEARCH_ONLY');
- assert.equal(rec.original_page_facsimile_checked,false);
+ assert.equal(rec.original_page_facsimile_checked,true);
  assert.equal(rec.canonical_id_approved,false);
  assert.equal(rec.copy_approved,false);
  assert.equal(rec.calendar_mapping_approved,false);
  assert.equal(rec.calendar_target.existing_calendar_only,true);
  assert.ok(rec.sources.length>=2);
- assert.ok(rec.sources.some(s=>s.type==='WEISER_1958_TEXT_TRANSCRIPTION'));
+ assert.ok(rec.sources.some(s=>s.type==='WEISER_1958_ORIGINAL_FACSIMILE_IMAGE'));
+ assert.ok(Number.isInteger(rec.original_facsimile_pdf_zero_based_page));
  assert.ok(rec.sources.every(s=>s.url.startsWith('https://')));
  assert.ok(rec.draft_en.length>80 && rec.draft_fr.length>80);
  for(const id of rec.main_identity_comparison.examined_main_ids){
   assert.ok(publishedSeed.customs.some(m=>m.custom_id===id),'Main identity reference missing: '+id);
  }
 }
-console.log('PASS customs cohort01 action evidence: 2 distinct-action candidates gated, 3 preliminary source-page mismatches held, 0 releases.');
+console.log('PASS customs cohort01 action evidence: 2 facsimiles checked, 3 false transcription-page claims corrected, 0 releases.');
+
+
+// Source-page action review is a superset of the 30 prioritized QUEUE IDs, not new customs.
+const original30=load('customs-consolidation-cohort01-original-facsimile-30-action-decisions.v1.json');
+assert.equal(original30.schema,'AO_CUSTOMS_COHORT01_30_ORIGINAL_FACSIMILE_ACTION_DECISIONS_V1');
+assert.equal(original30.summary.queue_size,30);
+assert.equal(original30.summary.original_facsimile_action_passages_checked,30);
+assert.equal(original30.records.length,rankedQueue.records.length);
+assert.equal(new Set(original30.records.map(r=>r.provisional_group_id)).size,30);
+assert.equal(original30.summary.distinct_new_customs_canonically_approved,0);
+assert.equal(original30.summary.existing_customs_merges_approved,0);
+assert.equal(original30.summary.existing_calendar_card_publications,0);
+assert.equal(original30.summary.secondary_locality_witness_records,2);
+const routeCounts={};
+for(let i=0;i<30;i++){
+ const original=original30.records[i],queue=rankedQueue.records[i];
+ assert.equal(original.provisional_group_id,queue.provisional_group_id);
+ assert.equal(original.priority_rank,queue.priority_rank);
+ assert.deepEqual(original.source_observation_ids,queue.source_observation_ids);
+ assert.equal(original.previous_queue_page_pointer,queue.source_page);
+ assert.ok(original.original_folio_image_checked);
+ assert.ok(/^\d+(?:–\d+)?$/.test(original.verified_original_1958_printed_pages));
+ assert.ok(Number.isInteger(original.original_scan_pdf_page_zero_based_first));
+ assert.ok(original.action_identity_what_happens.length>25);
+ assert.ok(original.scope_and_release_guardrail.length>25);
+ assert.equal(original.evidence_status,'WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR');
+ assert.equal(original.canonical_identity_approved,false);
+ assert.equal(original.merge_approved,false);
+ assert.equal(original.calendar_card_approved,false);
+ assert.equal(original.calendar_publication_state,'RESEARCH_ONLY');
+ for(const owner of original.candidate_existing_or_research_owners_for_manual_comparison){
+  assert.ok(owner.startsWith('CUST-')||publishedSeed.customs.some(c=>c.custom_id===owner)||owner.startsWith('CANDIDATE-'),'Unknown master or working owner: '+owner);
+ }
+ routeCounts[original.suggested_identity_route]=(routeCounts[original.suggested_identity_route]||0)+1;
+}
+assert.deepEqual(routeCounts,original30.summary.action_level_preliminary_routes);
+assert.equal(original30.records.find(r=>r.provisional_group_id==='CAT-WEISER-A-089').verified_original_1958_printed_pages,'149');
+assert.equal(original30.records.find(r=>r.provisional_group_id==='CAT-WEISER-B-025').verified_original_1958_printed_pages,'217');
+assert.equal(original30.records.find(r=>r.provisional_group_id==='CAT-WEISER-A-024').verified_original_1958_printed_pages,'55–56');
+const pilot=load('customs-consolidation-cohort01-calendar-pilot-5-bilingual-drafts.v1.json');
+assert.equal(pilot.schema,'AO_CUSTOMS_COHORT01_CALENDAR_PILOT_BILINGUAL_DRAFTS_V1');
+assert.equal(pilot.summary.drafts,5);
+assert.equal(pilot.records.length,5);
+assert.equal(new Set(pilot.records.map(r=>r.group_id)).size,5);
+assert.equal(pilot.summary.calendar_publications,0);
+assert.equal(pilot.summary.approved_new_ids,0);
+for(const card of pilot.records){
+ assert.ok(original30.records.some(r=>r.provisional_group_id===card.group_id));
+ assert.ok(card.description_en.length>100&&card.description_fr.length>100);
+ assert.equal(card.canonical_id,null);
+ assert.equal(card.record_status,'EDITORIAL_DRAFT_UNAPPROVED');
+ assert.equal(card.calendar_link_approved,false);
+ assert.equal(card.public_article_approved,false);
+}
+console.log('PASS customs cohort01 30 original source-page identity routes and 5 bilingual Calendar-only draft profiles; 0 approved ids, 0 publications.');
