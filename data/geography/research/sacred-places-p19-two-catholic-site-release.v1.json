@@ -1,0 +1,89 @@
+{
+  "schema": "AO_SACRED_PLACES_P19_TWO_CATHOLIC_SITE_RELEASE_V1",
+  "date": "2026-10-24",
+  "status": "PROPOSED_VIA_PULL_REQUEST",
+  "owners": [
+    "data/geography/seed-registry.v1.json",
+    "data/shrines/source-registry.v1.json",
+    "data/explore/heritage-place-reconciliation.review.v1.json"
+  ],
+  "baseline": {
+    "places": 359,
+    "source_registry": 653,
+    "heritage_crosswalk": 359,
+    "unjoined_crosswalk": 100,
+    "geographic_areas": 141,
+    "directory_place_links": 9
+  },
+  "proposed": {
+    "places": 361,
+    "source_registry": 659,
+    "heritage_crosswalk": 361,
+    "unjoined_crosswalk": 102,
+    "places_new": 2,
+    "source_new": 6,
+    "geographic_areas": 141,
+    "directory_place_links": 9,
+    "original_p16_exception_holds": 16
+  },
+  "published_new": [
+    {
+      "place_id": "place:IT:madonna-neve-rocchetta-bergamo",
+      "name": "Santuario della Madonna della Neve in Rocchetta, Bergamo",
+      "country": "IT",
+      "place_type": "shrine",
+      "lat": 45.69707,
+      "lng": 9.676543,
+      "precision": "site",
+      "osm_type": "way",
+      "osm_id": "442724372",
+      "source_ids": [
+        "AO-P19-BERGAMO-MADONNA-NEVE-PARISH",
+        "AO-P19-BERGAMO-MADONNA-NEVE-DIOCESE",
+        "AO-P19-BERGAMO-MADONNA-NEVE-OSM"
+      ],
+      "independent_identity_sources": [
+        "https://www.santanna-borgopalazzo.it/arte-e-bellezza/",
+        "https://diocesibg.it/santuari/"
+      ],
+      "location_source": "https://www.openstreetmap.org/way/442724372",
+      "identity_limit": "Published separately from preexisting Città Alta Santa Maria Maggiore and Foppolo Neve sanctuary; historic candidate SG-INV-0071 remains a title conflation, not an exact equivalence.",
+      "mass_limit": "Parish notes Italian and Latin celebrations; does not independently certify schedule/1962 Missal availability for Ad Orientem."
+    },
+    {
+      "place_id": "place:MG:ilot-de-la-vierge-ampefy",
+      "name": "Ilot de la sainte vierge, Ampefy",
+      "country": "MG",
+      "place_type": "church",
+      "lat": -19.07121,
+      "lng": 46.76717,
+      "precision": "site",
+      "osm_type": "way",
+      "osm_id": "653581404",
+      "source_ids": [
+        "AO-P19-ITASY-CATHOLIC-BISHOPS",
+        "AO-P19-ITASY-CATHOLIC-REGSUB",
+        "AO-P19-ITASY-CHURCH-OSM"
+      ],
+      "independent_identity_sources": [
+        "https://eglisecatholique.mg/index.php?action=VoirBlogDetails&id=2491&slug=rencontre-nationale-de-la-commission-episcopale-pour-les-communications-sociales-2025",
+        "https://bistum-regensburg.de/news/reise-nach-madagaskar-bei-den-schwestern-jeanne-delanoue-in-analavory"
+      ],
+      "location_source": "https://www.openstreetmap.org/way/653581404",
+      "identity_limit": "Original SG-INV-0735's Our Lady of Itasy/Ampefy shrine title is not the authenticated formal title. Mapped church way is adjacent to a separate mapped OSM worship node 14054354383; they are not two independently released churches.",
+      "mass_limit": "2025/2026 episcopal pilgrimage Masses are dated events, not recurrent Mass or 1962 Missal schedules."
+    }
+  ],
+  "release_policy": [
+    "Never publish a place on the strength of the original unverified shrine title; verify the Catholic custodian and exact church feature independently.",
+    "Site/footprint-centre coordinates are not visitor entrances, car-park locations, public access paths or emergency-navigation instructions.",
+    "Original Pass 16 research source exceptions remain held, even if separately attested buildings are admitted.",
+    "No added or altered Directory-Mass links, shrine owner associations, calendars, miracle/relic authenticity, rights-approved media or photo downloads.",
+    "Both named OSM ways are existing Catholic church building features; preserve © OpenStreetMap contributors, ODbL 1.0."
+  ],
+  "historical_exception_context": [
+    "candidate:SG-INV-0071",
+    "candidate:SG-INV-0735"
+  ],
+  "hold_status": "NO_ORIGINAL_EXCEPTION_CLOSURE"
+}
