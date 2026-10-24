@@ -52,7 +52,8 @@ for(const item of p41.records){
  const family=ownerFamilies.get(meta.sourceOwnerPath)?.get(id);
  assert(family,'Missing exact immutable opening owner for '+id);
  const n=id.replace('PX1905-Q','');
- assert.equal(family.id,'SPX-1905-S-'+n);
+ assert.equal(family.id,meta.turnId.replace(/-T1$/,''));
+ assert.equal(family.id,(meta.sourceOwnerPath.includes('batch9-sacraments')?'SPX-1905-S-':'SPX-1905-E-')+n);
  assert.equal(meta.turnId,family.id+'-T1');
  assert.equal(family.source.questionId,id);
  assert.equal(family.turns[0].kind,'opening');
