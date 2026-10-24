@@ -1,0 +1,84 @@
+{
+  "schema": "AO_B47_383_FROZEN_OFFLINE_CC0_EDITORIAL_GALLERY_CLOSEOUT_V1",
+  "date": "2026-10-24",
+  "base_pr": 1612,
+  "frozen_451_ids_preserved": true,
+  "active_frozen_artworks": 383,
+  "artworks_with_any_research_source": 360,
+  "artworks_with_complete_object_source": 358,
+  "remaining_exact_complete_object_gaps": 25,
+  "previous_preserved_originals": 122,
+  "previous_preserved_original_bytes": 710773181,
+  "B47_new_exact_source_originals": 0,
+  "B47_new_exact_source_image_bytes": 0,
+  "B47_new_complete_object_closures": 0,
+  "B47_derived_preview_images": 6,
+  "B47_derived_compressed_preview_bytes": 619232,
+  "B47_compressed_single_html_bytes": 842324,
+  "B47_full_original_bytes_embedded": 0,
+  "B47_offline_thumbnail_decoding_verified": 6,
+  "B47_draft_release_archive_rereads": 3,
+  "B47_exact_sha_verified_source_images": 6,
+  "B47_provenance_source_releases": [
+    "ao-art-originals-40082818225-1",
+    "ao-art-originals-40090336600-1",
+    "ao-art-originals-40089028479-1"
+  ],
+  "B47_preview_gallery_path": "previews/sacred-art-b47-offline-cc0-editorial-gallery.html",
+  "B47_gallery_filters": {
+    "shortlist": 3,
+    "contextual": 2,
+    "hold": 1
+  },
+  "B47_live_external_preview_image_dependencies": 0,
+  "B47_museum_source_links_online_optional": true,
+  "B47_github_preview_source_path": "https://github.com/Fulcanelli13/ad-orientem/blob/research/sacred-art-b47-offline-cc0-gallery-from-archive-20261024/previews/sacred-art-b47-offline-cc0-editorial-gallery.html",
+  "B47_full_source_record_path": "data/research/sacred-art-b47-six-offline-thumbnail-audit.json",
+  "B47_source_images_used": [
+    {
+      "source_artwork_id": "KMSKA-314",
+      "frozen_id": "ART-eter-aul-ubens-he-oly-rinity",
+      "tier": "shortlist",
+      "source_sha256": "cd3477e583cf55ca2bd651aad191b916ec84a4af73b3ed36dc7e4e48b9c0ef38"
+    },
+    {
+      "source_artwork_id": "MET-435621",
+      "frozen_id": "G26-007",
+      "tier": "shortlist",
+      "source_sha256": "f3449f53ed30246749d4cd59495747631ffe34de7eb17d43db67e87f53d52304"
+    },
+    {
+      "source_artwork_id": "CMA-1974.108",
+      "frozen_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "tier": "shortlist",
+      "source_sha256": "2e20f08d7bf9e377baba6a04b6e7dfe34b4c4017d10a875de2fb09bffdf0dac0"
+    },
+    {
+      "source_artwork_id": "MET-471903",
+      "frozen_id": "G25-003",
+      "tier": "contextual",
+      "source_sha256": "8b8b5e5f5ce9a363f7c89e7ca769704b0e743671cd2117226668f14f26f06578"
+    },
+    {
+      "source_artwork_id": "CMA-2005.55",
+      "frozen_id": "G17-009",
+      "tier": "contextual",
+      "source_sha256": "0dbe6f7d83c9e799e4f15396fa2f0ad5c4f5efdd4369a2be61c1a9b3a1248078"
+    },
+    {
+      "source_artwork_id": "CMA-2016.32",
+      "frozen_id": "ART-eter-aul-ubens-he-oly-rinity",
+      "tier": "hold",
+      "source_sha256": "d33f8ba563c12b0fe53976a9e7b28ea9354aaadb5008aec67cc618754118c32f"
+    }
+  ],
+  "B47_editorial_approvals": 0,
+  "B47_selected_source_photos_approved_for_app": 0,
+  "B47_canonical_artwork_ID_mutations": 0,
+  "B47_app_publication_events": 0,
+  "B47_paid_storage_or_api_fee_eur": 0,
+  "B47_github_source_branch_is_unmerged_draft": true,
+  "B47_security_issue_870_unaltered": true,
+  "offline_preview_use_policy": "For research and editorial review only. Museum source claims CC0/public-domain for photographed files; no artwork is selected for application publication by this preview. Derived thumbnails stored inside HTML, full originals preserved exclusively in earlier unpublished draft release archives.",
+  "next_product_gate": "Use offline gallery for deliberate editorial review. Source count is not improved by preview derivatives. For unresolved 25 frozen entries continue exact-object source acquisitions only with a legitimate open-access owner image, or explicitly select a different work as distinct catalogue artwork."
+}

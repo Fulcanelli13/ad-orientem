@@ -1,0 +1,22 @@
+name: B47 read-only six truly offline CC0 preview and 383 immutable artwork checks
+on:
+  push:
+    branches: [research/sacred-art-b47-offline-cc0-gallery-from-archive-20261024]
+    paths: [.github/workflows/ao-art-b47-readonly-offline-integrity.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  b47-offline-source-visualization-lock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b47-offline-cc0-gallery-from-archive-20261024
+      - name: Prior B46 source gallery and strict no-publication baseline
+        run: node tests/sacred-art-b46-six-cc0-gallery-integrity.mjs
+      - name: Verify each embedded offline thumbnail matches original checksum provenance
+        run: node tests/sacred-art-b47-offline-six-review-originals.mjs
+      - name: Verify 383 frozen catalogue, 25 source gaps and zero editorial approvals
+        run: node tests/sacred-art-b47-offline-383-source-closeout.mjs
