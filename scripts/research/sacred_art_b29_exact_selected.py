@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """B29 zero-euro, research-only original-file retrieval of seven exact selected photos.
 
+Authoritative historical original-byte digest is gallery photo KEY component 3,
+which is the workbook selected-photo digest. Gallery photos[].sha256 is an
+auxiliary different field and must NOT be used as the raw-byte match gate.
+
 Never uses a new image as an approved replacement. File rights are screened
 against the current Commons file metadata; byte hashes must match the old,
 source-specific historical record or the file is rejected. The release archiver
@@ -148,7 +152,7 @@ def main():
             if max(int(rec["expected_width"]),int(rec["expected_height"]))<500:
                 raise ValueError("Only low-resolution proxy available")
             # Use a unique, non-approving filename. Never overwrite existing binaries.
-            destination=OUT/"originals"/(id+"-"+rec["expected_source_file_sha256"][:12]+".jpg")
+            destination=OUT/"originals"/(id+"-"+rec["actual_historical_selected_original_sha256"][:12]+".jpg")
             try:
                 digest,size=retrieve(rec["source_file_url"],destination,MAX_TOTAL_IMAGE-acquired_bytes)
                 Image.MAX_IMAGE_PIXELS=250_000_000
@@ -157,7 +161,7 @@ def main():
                 with Image.open(destination) as im:
                     width,height=im.size
                     fp=fingerprint(im)
-                hash_equal=digest==rec["expected_source_file_sha256"]
+                hash_equal=digest==rec["actual_historical_selected_original_sha256"]
                 dim_equal=(width,height)==(int(rec["expected_width"]),int(rec["expected_height"]))
                 distance=(fp^int(rec["selected_preview_dhash64"],16)).bit_count()
                 acquired_bytes+=size
