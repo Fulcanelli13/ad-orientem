@@ -25,6 +25,7 @@ jobs:
           python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
           python -m py_compile scripts/research/sacred_art_b47_offline_gallery_from_archives.py
           node tests/sacred-art-b46-six-cc0-gallery-integrity.mjs
+          test -f tests/sacred-art-b47-offline-six-review-originals.mjs
       - name: Reread three unpublished Releases and verify six original SHA before embedding previews
         env:
           GH_TOKEN: ${{ github.token }}
