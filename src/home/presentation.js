@@ -156,7 +156,7 @@ ${resume?
 </section></div></section>
 ${status}${translationStatus}
 ${renderTodayV2Sections(homeCalendar,vm)}
-<div class="aoTodayExploreFoot"><button type="button" data-home-find><strong>${esc(vm.language==="fr"?"Explorer les lieux sacrés":"Explore sacred places")}</strong><small>${esc(vm.language==="fr"?"Messes traditionnelles, sanctuaires, coutumes et pèlerinages":"Traditional Masses, shrines, customs and pilgrimages")}</small></button><button type="button" data-home-customs-atlas><strong>${esc(vm.language==="fr"?"Coutumes catholiques traditionnelles":"Traditional Catholic customs")}</strong><small>${esc(vm.language==="fr"?"Explorer les coutumes par lieu":"Explore local customs by place")}</small></button></div>
+<div class="aoTodayExploreFoot"><button type="button" data-home-find><strong>${esc(vm.language==="fr"?"Explorer les lieux sacrés":"Explore sacred places")}</strong><small>${esc(vm.language==="fr"?"Messes traditionnelles, sanctuaires et pèlerinages":"Traditional Masses, shrines and pilgrimages")}</small></button><button type="button" data-home-calendar data-home-calendar-view="day"><strong>${esc(vm.language==="fr"?"Coutumes au fil de l’année":"Traditions through the year")}</strong><small>${esc(vm.language==="fr"?"Consulter les coutumes et leurs sources dans le calendrier":"Read customs and their sources in Calendar")}</small></button></div>
 <div class="homeSpacer"></div></main>`;
 }
 
