@@ -128,6 +128,18 @@ try{
    await page.locator("[data-folio-overview-button]").click();
  assert.equal(await page.locator(".aoGuidedMassFolio").getAttribute("data-ao-folio-view"),"overview");
  assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioQuickRow").count(),3);
+ assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioChoiceIcon").count(),3);
+ assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioChoiceIndex").count(),0);
+ // Start action and secondary preferences share one controller. Order them
+ // visually as primary choice then secondary adjustments, without cloning form.
+ const firstChoiceOrder=await page.evaluate(()=>{
+   const folio=document.querySelector(".aoGuidedMassFolio[data-ao-folio-view='overview']");
+   const start=folio?.querySelector("[data-folio-host-actions]");
+   const extra=folio?.querySelector(".aoMassFolioExperience");
+   return {startOrder:getComputedStyle(start).order,extraOrder:getComputedStyle(extra).order};
+ });
+ assert.ok(Number(firstChoiceOrder.startOrder)<Number(firstChoiceOrder.extraOrder),
+   "Start should visually precede secondary preferences on overview");
  assert.deepEqual(await page.locator(".aoMassFolioQuickChoices .aoMassFolioChoiceIcon").evaluateAll(nodes=>
   nodes.map(x=>x.getAttribute("data-ao-asset-id"))),
   ["ao-module-before-mass","ao-rich-eucharistic-life","ao-live-hear"],
