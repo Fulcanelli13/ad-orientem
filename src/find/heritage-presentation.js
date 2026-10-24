@@ -184,18 +184,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   if(vm.atlasCoverage)html+=renderAtlasCoveragePanel({
     coverage:{...vm.atlasCoverage,selectedCountry:vm.filters.atlasCountry},
     mode:vm.filters.atlasMode,language:vm.language,limit:vm.filters.atlasCountryLimit});
-  const customs=arr(vm.customCards);
-  if(customs.length&&!vm.network&&!vm.timeMass&&!vm.atlasCoverage){
-    html+='<div class="aoHeritageCustomStrip"><div class="aoHeritageStripHeading"><span>'+L(vm.language,"Living traditions","Traditions vivantes")+'</span>';
-    if(vm.filters?.highlightCustomId)html+='<span class="aoHeritageStripActions"><button type="button" data-heritage-custom-details>'+L(vm.language,"About","Découvrir")+'</button><button type="button" data-heritage-custom-clear>'+L(vm.language,"Clear","Effacer")+'</button></span>';
-    html+='</div><div class="aoHeritageCustomRail" aria-label="'+L(vm.language,"Discover customs","Découvrir les coutumes")+'">';
-    for(const custom of customs){
-      const id=custom.raw?.custom?.custom_id;if(!id)continue;
-      const selected=vm.filters?.highlightCustomId===id;
-      html+='<button type="button" data-heritage-custom="'+esc(id)+'" aria-pressed="'+String(selected)+'" class="'+(selected?"active":"")+'"><strong>'+esc(vm.language==="fr"&&custom.title_fr?custom.title_fr:custom.title)+'</strong><small>'+L(vm.language,"Examples","Exemples")+' · '+arr(custom.attestation_examples).length+'</small></button>';
-    }
-    html+='</div></div>';
-  }
+  // Customs remain in source-backed Place profiles, not in an Explore Atlas rail.
   html+='</div>';
   if(vm.journeyOpen&&typeof journeyPanel==="function"){
     html+=journeyPanel({language:vm.language,routes:vm.journeys,selectedId:vm.journeySelectedId});
