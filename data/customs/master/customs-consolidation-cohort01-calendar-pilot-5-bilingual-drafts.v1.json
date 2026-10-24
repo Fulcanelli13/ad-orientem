@@ -1,0 +1,131 @@
+{
+  "schema": "AO_CUSTOMS_COHORT01_CALENDAR_PILOT_BILINGUAL_DRAFTS_V1",
+  "date": "2026-10-24",
+  "purpose": "Five existing-calendar-context draft editorial profiles linked to inspected canonical source pages; not extra Calendar, not approved content or new ids.",
+  "calendar_owner": "EXISTING_1962_CALENDAR_RESOLVER",
+  "baseline": "data/customs/customs-atlas-seed.v1.json@main; additional research in draft PR #1610",
+  "publication_gate": {
+    "all_drafts_unapproved": true,
+    "identity_decisions_need_review": true,
+    "ritual_validation_still_required_where_applicable": true,
+    "source_link_and_bilingual_signoff_required": true,
+    "live_calendar_unchanged": true
+  },
+  "summary": {
+    "drafts": 5,
+    "original_folio_reviewed": 5,
+    "verified_official_locality_witness": 1,
+    "proposed_existing_card_enrichments": 1,
+    "approved_new_ids": 0,
+    "calendar_publications": 0
+  },
+  "records": [
+    {
+      "group_id": "CAT-WEISER-A-028",
+      "label_en": "Carrying Saint Joseph through Advent",
+      "label_fr": "La tournée de saint Joseph pendant l'Avent",
+      "occasion": "ADVENT_NINE_DAYS_BEFORE_NATIVITY",
+      "geography": "Historical Alpine/Central European local schoolchildren",
+      "owner_check": [
+        "CUST-ADVT-HERBERGSUCHE",
+        "ADVT-003"
+      ],
+      "current_approval": "FIRST_SOURCE_ONLY",
+      "description_en": "In some Alpine communities, schoolboys carried an image of Saint Joseph from home to home during the nine evenings before Christmas. The family receiving it prayed in his honour. Weiser distinguishes this devotion from the Herbergsuche play about Mary and Joseph seeking lodging.",
+      "description_fr": "Dans certaines régions alpines, des écoliers portaient une image de saint Joseph de maison en maison pendant les neuf soirées précédant Noël. La famille qui recevait l'image priait en son honneur. Weiser distingue cette dévotion de la représentation de l'Herbergsuche, où Marie et Joseph cherchent un abri.",
+      "publication_note": "Historical practice only; do not imply a current organized event.",
+      "source_pages": "57",
+      "additional_witnesses": [],
+      "original_source_pdf": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "canonical_id": null,
+      "record_status": "EDITORIAL_DRAFT_UNAPPROVED",
+      "calendar_link_approved": false,
+      "public_article_approved": false
+    },
+    {
+      "group_id": "CAT-WEISER-B-083",
+      "label_en": "The Seises dance at Seville Cathedral",
+      "label_fr": "La danse des Seises à la cathédrale de Séville",
+      "occasion": "CORPUS_CHRISTI_LOCAL",
+      "geography": "Seville Cathedral, Spain only",
+      "owner_check": [
+        "CORP-001"
+      ],
+      "current_approval": "ORIGINAL_AND_OFFICIAL_LOCALITY_ATTESTED",
+      "description_en": "At Seville Cathedral, the Seises—young choirboys in traditional dress—perform a solemn dance in honour of the Blessed Sacrament at Corpus Christi. The practice is an established local cathedral tradition, not a customary element of Mass elsewhere. The Cathedral's own announcements confirm its observance in 2026.",
+      "description_fr": "À la cathédrale de Séville, les Seises, jeunes choristes en costumes traditionnels, exécutent une danse solennelle en l'honneur du Saint-Sacrement lors de la Fête-Dieu. Il s'agit d'une tradition particulière de la cathédrale, et non d'un élément habituel de la messe ailleurs. Les annonces de la cathédrale confirment sa célébration en 2026.",
+      "publication_note": "Do not map to any church other than Seville Cathedral; contemporary service times must not be persisted as recurring 1962 schedule.",
+      "source_pages": "265",
+      "additional_witnesses": [
+        {
+          "url": "https://www.catedraldesevilla.es/en/solemnity-of-corpus-christi-at-the-cathedral/",
+          "type": "OFFICIAL_SEVILLE_CATHEDRAL_2026"
+        }
+      ],
+      "original_source_pdf": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "canonical_id": null,
+      "record_status": "EDITORIAL_DRAFT_UNAPPROVED",
+      "calendar_link_approved": false,
+      "public_article_approved": false
+    },
+    {
+      "group_id": "CAT-WEISER-B-113",
+      "label_en": "Adorned candles brought for Candlemas",
+      "label_fr": "Les cierges décorés de la Chandeleur",
+      "occasion": "CANDLEMAS_FEB_2",
+      "geography": "Historically Central/Eastern Europe and some Eastern Christian communities; details carefully scoped",
+      "owner_check": [
+        "DOM-011"
+      ],
+      "current_approval": "ORIGINAL_SOURCE_EXISTING_OWNER_REVIEW",
+      "description_en": "In several European regions the faithful decorated candles with flowers or devotional images before bringing them for blessing at Candlemas. Blessed candles were then kept at home for prayer. The decoration is a local custom; the blessing belongs to the Church's liturgy, and keeping the candles is already covered separately in Ad Orientem.",
+      "description_fr": "Dans plusieurs régions d'Europe, les fidèles ornaient leurs cierges de fleurs ou d'images de dévotion avant de les apporter à la bénédiction de la Chandeleur. Ces cierges étaient ensuite conservés à la maison pour la prière. La décoration est un usage local ; la bénédiction relève de la liturgie de l'Église, et la conservation des cierges est déjà présentée séparément dans Ad Orientem.",
+      "publication_note": "Propose contextual enrichment of existing DOM-011 rather than another generic Candlemas custom; no automatic merge.",
+      "source_pages": "299",
+      "additional_witnesses": [],
+      "original_source_pdf": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "canonical_id": null,
+      "record_status": "EDITORIAL_DRAFT_UNAPPROVED",
+      "calendar_link_approved": false,
+      "public_article_approved": false
+    },
+    {
+      "group_id": "CAT-WEISER-B-116",
+      "label_en": "Putting away the Christmas crib at Candlemas",
+      "label_fr": "Ranger la crèche à la Chandeleur",
+      "occasion": "CANDLEMAS_FEB_2",
+      "geography": "Historical popular practice in parts of Europe",
+      "owner_check": [],
+      "current_approval": "FIRST_SOURCE_ONLY",
+      "description_en": "Some European households traditionally kept the Nativity crib in place until Candlemas, on 2 February, and then carefully put it away for the following year. This marks the conclusion of the popular Christmas season in those communities; it is not a universal rule about the Church's liturgical season.",
+      "description_fr": "Dans certaines familles européennes, la crèche de Noël restait traditionnellement installée jusqu'à la Chandeleur, le 2 février, avant d'être soigneusement rangée pour l'année suivante. Cet usage marque la fin de la période populaire de Noël dans ces régions ; il ne constitue pas une règle universelle sur le temps liturgique de l'Église.",
+      "publication_note": "Do not modify Calendar season calculation or imply an obligation to remove decorations.",
+      "source_pages": "300",
+      "additional_witnesses": [],
+      "original_source_pdf": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "canonical_id": null,
+      "record_status": "EDITORIAL_DRAFT_UNAPPROVED",
+      "calendar_link_approved": false,
+      "public_article_approved": false
+    },
+    {
+      "group_id": "CAT-WEISER-B-108",
+      "label_en": "Flowers and candles for the Immaculate Conception in Spain",
+      "label_fr": "Fleurs et lumières pour l'Immaculée Conception en Espagne",
+      "occasion": "IMMACULATE_CONCEPTION_DEC_8",
+      "geography": "Historical northern Spanish local customs",
+      "owner_check": [],
+      "current_approval": "FIRST_SOURCE_ONLY",
+      "description_en": "In parts of northern Spain, households decorated balconies with flowers, banners and candles on the eve of the Immaculate Conception. This visible celebration of Our Lady's feast belongs to local Spanish popular devotion; it is not a prescribed ritual or a guarantee that public celebrations take place in every parish.",
+      "description_fr": "Dans certaines régions du nord de l'Espagne, on ornait les balcons de fleurs, de drapeaux et de cierges à la veille de l'Immaculée Conception. Cette manière de célébrer la fête de Notre-Dame relève de la piété populaire locale ; elle n'est ni un rite prescrit ni l'annonce d'une fête publique dans chaque paroisse.",
+      "publication_note": "No universal date-triggered physical activity, only contextual suggested reading for Dec 8 feast and vigil.",
+      "source_pages": "294",
+      "additional_witnesses": [],
+      "original_source_pdf": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "canonical_id": null,
+      "record_status": "EDITORIAL_DRAFT_UNAPPROVED",
+      "calendar_link_approved": false,
+      "public_article_approved": false
+    }
+  ]
+}
