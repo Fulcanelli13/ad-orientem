@@ -1,0 +1,430 @@
+{
+  "schema": "AO_B39_27_GAPS_OBJECT_IDENTITY_RIGHTS_EXACT_PHOTO_ROUTE_V1",
+  "date": "2026-10-24",
+  "source_baseline": "B38 draft PR #1598",
+  "active_artworks": 383,
+  "complete_object_gaps": 27,
+  "artworks_with_some_physical_source_baseline": 357,
+  "artworks_with_provisional_complete_object_source_baseline": 356,
+  "case_count": 27,
+  "records_with_B39_desk_evidence": 20,
+  "B39_new_original_files": 2,
+  "B39_new_original_bytes": 234582,
+  "B39_remote_SHA_verified": true,
+  "B39_workflow_run": 40084602839,
+  "B39_draft_archive_tag": "ao-art-originals-40084602839-1",
+  "B39_new_publication_approvals": 0,
+  "B39_new_editorial_approvals": 0,
+  "B39_catalogue_promotions": 0,
+  "B39_museum_photographer_rights_preserved": true,
+  "underlying_artist_copyright_holds": 2,
+  "strict_zero_euro": true,
+  "production_main_unmodified": true,
+  "source_evidence_scoping": "Deepened exact museum object, photo accession, rights, and mismatch checks. All 27 cases re-screened; only listed evidence is newly supported, others explicitly carried forward. New binary images are research candidates for ONE distinct unresolved frozen artwork and do not change aggregate complete-source coverage.",
+  "cases": [
+    {
+      "artwork_id": "G25-003",
+      "title": "Saint Augustine",
+      "artist": "Anonymous (after Giovanni Lanfranco?)",
+      "B38_status": "EXACT_OBJECT_CONFIRMED_PHOTO_USE_NOT_CLEARED",
+      "B39_new_source_evidence": {
+        "finding": "Prado exact P001314 still no independent cleared reproduction; same-title images must not substitute",
+        "source": "https://www.museodelprado.es/coleccion/obra-de-arte/san-agustin/cf95015c-5744-4471-a529-84a3981719d6",
+        "action": "independent rights-cleared same-object photograph needed",
+        "state": "P0_RIGHTS_HOLD"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "celine-1894-john-cross",
+      "title": "Saint John of the Cross",
+      "artist": "Céline Martin",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": null,
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "italy-0900119548",
+      "title": "Sant'Alfonso Maria de Liguori",
+      "artist": "Antonio Marini",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "Prato painting identified as Antonio Marini oil, 1838, 75x56cm; second Marini copy dated 1855 is a DIFFERENT object, not interchangeable",
+        "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900119548",
+        "action": "seek original 1838 painting photographic record; block substitution of 1855 copy",
+        "state": "EXACT_OBJECT_1838_SOURCE_PHOTO_UNAVAILABLE"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "G28-003",
+      "title": "Sant'Alfonso Maria de Liguori",
+      "artist": "Michele Lenzi",
+      "B38_status": "NATIONAL_CATALOGUE_IDENTIFIED_AND_IMAGE_LINKED_DATA_CANDIDATE",
+      "B39_new_source_evidence": null,
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "G17-006",
+      "title": "Saint François de Sales",
+      "artist": "School of Philippe de Champaigne",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "POP Palissy PM75000591 identifies 17th-century school of Philippe de Champaigne work, in nave at Église Saint-Jean-Saint-François, 13 rue du Perche Paris, 160x125cm; school not autograph Champaigne",
+        "source": "https://pop.culture.gouv.fr/notice/palissy/PM75000591",
+        "action": "request or locate photograph for precise protected movable object",
+        "state": "IDENTITY_LOCATION_CONFIRMED_PHOTO_MISSING"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "G30-004",
+      "title": "Ritratto di San Gregorio Nazianzeno",
+      "artist": "Giuseppe Franchi",
+      "B38_status": "EXACT_REGIONAL_IMAGE_PAGE_DISCOVERED_RIGHTS_HELD",
+      "B39_new_source_evidence": null,
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "G20-002",
+      "title": "Saint Anselme",
+      "artist": "Unidentified painter",
+      "B38_status": "PROTECTION_FILE_PHOTO_REFERENCE_LOCATED_NOT_IMAGE",
+      "B39_new_source_evidence": null,
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "G30-007",
+      "title": "San Pier Damiano writing, angel indicates heaven",
+      "artist": "Local school, artist unidentified",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": null,
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "zeri-45874-peter-damian",
+      "title": "San Pier Damiano",
+      "artist": "Venanzio l'Eremita",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "Exact photo-positive Fondazione Zeri Fototeca catalogue inventory 102249, busta 476 fascicolo 5, PI_0476/5/9; Campania photo office credited, photographed by/before 1 June 1951, negative 527 S.S.",
+        "source": "https://catalogo.fondazionezeri.unibo.it/scheda/fotografia/95097/Fototeca%20del%20Polo%20museale%20della%20Campania%2C%20Venanzio%20l%27Eremita%20-%20sec.%20XVII%20-%20San%20Pier%20Damiani",
+        "action": "obtain lawful digital rendition through Zeri/Campania; verify print/photo reproduction rights separately",
+        "state": "EXACT_1951_ARCHIVAL_PHOTO_ACCESSION_FOUND"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "G30-006",
+      "title": "San Pier Damiano",
+      "artist": "Emilian school, artist unidentified",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "Italy ICCD 0800072792 exact San Pier Damiano at Pianoro Bologna: hand to breast, crucifix, four angels, skull resting on book; not same as Venanzio Naples or the other Italian portrait",
+        "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800072792",
+        "action": "search by ICONOGRAPHY and ICCD original for exact photo; avoid cross-Peter-Damian substitution",
+        "state": "OBJECT_SUBJECT_DISTINGUISHED"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "G30-010",
+      "title": "Ritratto del cardinale Roberto Bellarmino",
+      "artist": "Roman school, anonymous",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "ICCD 1200225121 Bellarmine painting at S Maria della Scala, Piazza della Scala 23 Rome; cardinal seated with Psalm-commentary and Ascension texts; state-owned photo to locate",
+        "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200225121",
+        "action": "source by ICCD catalogue accession; not arbitrary Bellarmine portrait",
+        "state": "EXACT_CATHOLIC_CHURCH_HOLDING_CONFIRMED"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "G30-012",
+      "title": "Prédication de saint Pierre Canisius",
+      "artist": "Pierre Wuilleret",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "Fribourg heritage-office article publishes DETAIL of Pierre Wuilleret's 1635 Preaching of Peter Canisius, not certified complete-canvas source; official subject at Saint-Michel college church, Fribourg",
+        "source": "https://www.fr.ch/dfac/sbc/recensement-des-biens-culturels-meubles/recensement-des-meubles",
+        "action": "acquire complete canvas full-frame institutional photo; preserve photographer rights",
+        "state": "DETAIL_ONLY_OFFICIAL_IMAGE_NOT_FULL_PAINTING"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "italy-banchero-0700031704",
+      "title": "San Lorenzo da Brindisi",
+      "artist": "Angelo Giacinto Banchero",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "ICCD 0700031704 Angelo Giacinto Banchero canvas, dated late-18th century, held Genoa ecclesiastical property; saint represented with skull, book, pen",
+        "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700031704",
+        "action": "request exact catalogue photo from Ligurian Soprintendenza/holder",
+        "state": "EXACT_MUSEUM_CATALOGUE_OBJECT_PHOTO_MISSING"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "G32-002",
+      "title": "Sant'Effremo",
+      "artist": "Francesco Netti",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "Francesco Netti 1892 Sant'Effremo 208x114cm, Bari Pinacoteca Corrado Giaquinto; country church original replaced with Paradiso copy subsequently stolen. Avoid copy substitution",
+        "source": "https://www.francesconetti.com/en-gb/newpage7d1e8e8d",
+        "action": "locate Bari museum photograph of original 1892 work, not site logo nor later replica",
+        "state": "OBJECT_LOCATION_AND_COPY_DIFFERENTIATED"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+      "title": "Saint Lawrence / Saint Hilary — two-sided altarpiece panel",
+      "artist": "Juan Correa de Vivar",
+      "B38_status": "MISSING_REVERSE_AND_ICONOGRAPHIC_SUBJECT_HOLD",
+      "B39_new_source_evidence": null,
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "G29-001",
+      "title": "Saint Hilaire de Poitiers écrivant contre l'arianisme",
+      "artist": "Jérôme-Martin Langlois",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "Palissy IM33002267 signed J.M. Langlois 1823 and DE TRINITATE inscription; saint Hilaire bishop writes against Arianism; avoid mixing with Prado San Hilario ermitaño",
+        "source": "https://pop.culture.gouv.fr/notice/palissy/IM33002267",
+        "action": "seek direct institutional photo at Bordeaux cathedral/sacristy",
+        "state": "EXACT_TEXT_AND_SIGNATURE_CONFIRMED"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "QCP-HILARY-LEDUC-1896-1900",
+      "title": "Saint Hilaire rédigeant son traité sur la Trinité",
+      "artist": "Ozias Leduc",
+      "B38_status": "EXACT_HERITAGE_ENSEMBLE_RECORD_IDENTIFIED_PHOTO_IDENTITY_OPEN",
+      "B39_new_source_evidence": {
+        "finding": "Quebec protected St-Hilaire ensemble includes 30 works, not blanket photograph identification; separate St Hilaire painting exists and historic municipal material dates it 1898; exact image still unverified",
+        "source": "https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=93184&methode=consulter&type=bien",
+        "action": "request/identify exact standalone canvas from Saint-Hilaire church and rights holder",
+        "state": "ENSEMBLE_NOT_OBJECT_IMAGE"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "W04-009",
+      "title": "Le songe de saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "B38_status": "CROSS_MUSEUM_FALSE_MATCH_IDENTIFIED",
+      "B39_new_source_evidence": {
+        "finding": "Joconde 000PE000378 independently crossindexes Louvre INV 20450, Philippe de Champaigne c.1629 Dream of St Joseph; photo credit RMN Grand Palais; Cuban Commons same-title oil is another object",
+        "source": "https://pop.culture.gouv.fr/notice/joconde/000PE000378",
+        "action": "find exact INV20450 independently open-photo evidence; avoid Cuban false match",
+        "state": "INDEPENDENT_LVR_OBJECT_CROSSWALK_PHOTO_RIGHTS_HOLD"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "carmel-lisieux-1925-therese-aux-roses",
+      "title": "Thérèse aux roses (1925)",
+      "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": null,
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "G26-007",
+      "title": "Joan of Arc Listening to the Voices",
+      "artist": "Eugène Carrière",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "Orsay exact RF3946 Carrière Jeanne d'Arc 1899, 55.2x46.5cm; page gives image credit RMN-Grand Palais / Hervé Lewandowski",
+        "source": "https://www.musee-orsay.fr/fr/oeuvres/jeanne-darc-ecoutant-les-voix-9256",
+        "action": "do not equate download modal with commercial license; independent permitted exact source needed",
+        "state": "PHOTO_CREDIT_EXPLICIT_REUSE_NOT_CLEARED"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "W10-009",
+      "title": "L'Apothéose de saint Louis",
+      "artist": "Jean-Honoré Fragonard (attributed)",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "Conflicting institutional attributions: Nancy catalogue attributes sketch to Jean-Honoré Fragonard, formerly Lemoyne/Doyen; Louvre as owner catalogues anonymous French school MI1391/Inv520; attribution must remain disputed, not certified Fragonard",
+        "source": "https://collections.louvre.fr/ark:/53355/cl010055469",
+        "secondary_source": "https://collections-mba.nancy.fr/fr/notice/520-apotheose-de-saint-louis-4f4dd315-e13c-44cf-9b26-11f1d3009ce4",
+        "action": "record institutional attribution disagreement and photographer Gilbert Mangin; rights review",
+        "state": "MUSEUM_ATTRIBUTION_CONFLICT_HOLD"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "G27-002",
+      "title": "Ceiling of St Patrick's Hall, preparatory oil sketch (St Patrick lighting Paschal fire in upper panel)",
+      "artist": "Vincenzo Valdrè",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "RDS digital archive explicitly forbids publication/transmission/display without written RDS Library & Archives consent; identifies full 1787-88 oil preparatory sketch and separate scene images",
+        "source": "https://digitalarchive.rds.ie/items/show/3978",
+        "action": "DO NOT download or publish under €0 and no-permission rule; seek independently cleared photograph or exclude",
+        "state": "EXPLICIT_RDS_NO_PUBLICATION_WITHOUT_CONSENT"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "G17-009",
+      "title": "Episode de la vie de saint Denis",
+      "artist": "Baronne Girod de l'Ain (Émilie Sivard de Beaulieu)",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "POP Palissy PM01002382 documents Baronne Girod de l'Ain signed 1858 oil Saint Denis beheading episode, church Saint-Denis in Cessy; POP page contains 'Image' but no exact verified binary or reuse grant",
+        "source": "https://pop.culture.gouv.fr/notice/palissy/PM01002382",
+        "action": "identify page's exact full canvas media provenance and photography rights",
+        "state": "OFFICIAL_IMAGE_INDICATED_BINARY_UNVERIFIED"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "title": "Holy Family with Saint Anne",
+      "artist": "Peter Paul Rubens",
+      "B38_status": "TWO_DISTINCT_MUSEUM_OBJECTS_REQUIRE_OBJECT_LEVEL_DISAMBIGUATION",
+      "B39_new_source_evidence": {
+        "finding": "Three different Rubens/Rubens workshop paintings: Prado P001639, NCMA 52.9.107, Bass Museum object 9. Commons WGA Prado and Bass original research files now SHA archived; do NOT assume which is target frozen record",
+        "source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Holy_Family_with_St_Anne_-_WGA20253.jpg",
+        "secondary_source": "https://commons.wikimedia.org/wiki/File:The_Holy_Family_with_St._Anne_by_Peter_Paul_Rubens,_Bass_Museum_of_Art.jpg",
+        "action": "choose exact intended object from frozen editorial reference; both images low resolution and photo rights not cleared",
+        "state": "TWO_DISTINCT_PAINTING_SOURCE_BINARIES_PRESERVED_IDENTITY_HOLD"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [
+        "PRADO_P001639",
+        "BASS_9"
+      ],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "title": "Burial of Christ — Prado Passion series",
+      "artist": "Giandomenico Tiepolo",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "Prado P000362 signed 1772 Tiepolo oil (144x124cm), eight-work Passion cycle from San Felipe Neri; not Titian Burial paintings P000440/441, despite matching subject",
+        "source": "https://www.museodelprado.es/en/the-collection/art-work/burial-of-christ/fca27623-6bb0-4bca-9856-b7c23a6651a3",
+        "action": "seek independent clear exact P000362 photo, not museum commercial-use image without license",
+        "state": "EXACT_PASSION_SERIES_OBJECT_CONFIRMED_PHOTO_HELD"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "title": "Saint Anthony of Padua with the Christ Child",
+      "artist": "Peter Paul Rubens",
+      "B38_status": "CARRIED_FORWARD_NO_NEW_EXACT_IMAGE_EVIDENCE",
+      "B39_new_source_evidence": {
+        "finding": "Internet same-title matches show Murillo CE0128P, Gaspar de Crayer Prado P003472, Giordano, Nuvolone; none proves an autograph Rubens object from this generic title",
+        "source": "https://commons.wikimedia.org/wiki/File:Saint_Anthony_of_Padua_with_the_Child.jpg",
+        "secondary_source": "https://www.museodelprado.es/coleccion/obra-de-arte/san-antonio-de-padua-con-el-nio-jesus/67e560ec-3c55-4f84-85ec-388518588028",
+        "action": "reopen frozen art-object identity rather than 'recover' wrong artist; attribution unknown until concrete original provenance",
+        "state": "ARTIST_MISATTRIBUTION_RISK_NO_RUBENS_OBJECT"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-he-oly-rinity",
+      "title": "The Holy Trinity",
+      "artist": "Peter Paul Rubens",
+      "B38_status": "CC0_SOURCE_ORIGINAL_ARCHIVED_FROZEN_CATALOGUE_IDENTITY_HOLD",
+      "B39_new_source_evidence": {
+        "finding": "Official KMSKA object 314 is original oil on panel 1620, CC0; original 56,200,164 bytes already B38 SHA archived; KMSKA objects 10101/10103 are engravings after Rubens, not original",
+        "source": "https://vlaamsekunstcollectie.be/en/collection/314",
+        "secondary_source": "https://vlaamsekunstcollectie.be/en/collection/10103",
+        "action": "verify that object 314 is the frozen original before canonical promotion; no substitution with an engraving",
+        "state": "VERIFIED_SOURCE_BINARY_EXACT_MUSEUM_ORIGINAL_CURATORIAL_HOLD"
+      },
+      "B39_desk_reviewed": true,
+      "B39_new_research_binary_ids": [],
+      "B39_canonical_complete_source_promoted": false,
+      "B39_editorial_publication_approved": false
+    }
+  ]
+}
