@@ -32,6 +32,7 @@ try{
    const door=page.locator(rootSel+' [data-p435930-family="chaplets"]');
    assert.equal(await door.count(),1);
    assert.equal(await page.locator(rootSel+' [data-p435930-own="pray.divine_mercy"]').count(),1,"Divine Mercy direct shortcut remains");
+   await page.locator(rootSel+" .aoP435930QuietMore>summary").click();
    await door.click();
    const family=page.locator(rootSel+" .aoP435930FamilyDoor"); // not required in family detail
    const all=await page.locator(rootSel+" .aoP435930ModuleGrid [data-p435930-own]").evaluateAll(xs=>xs.map(x=>x.dataset.p435930Own));
