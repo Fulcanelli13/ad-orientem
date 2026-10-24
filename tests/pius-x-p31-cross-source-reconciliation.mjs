@@ -30,7 +30,8 @@ const indexedEnglish=new Map(en.entries.map(e=>[e.q,e]));
 const indexedItalian=new Map(it.entries.map(e=>[e.q,e]));
 assert.equal(indexedEnglish.size,433);
 assert.equal(indexedItalian.size,433);
-let lexicalCount=0,noLead=0,from1905=0,fromSalzano=0;
+let lexicalCount=0,noLead=0,from1905=0,fromSalzano=0,conflictCount=0;
+let actualGraceHold=false;
 for(const c of owner.chapters){
  for(const n of c.nodes){
   const row=rows.get(n.id);
@@ -47,6 +48,15 @@ for(const c of owner.chapters){
    'No original full editorial or catechism answer copied into join');
   assert(row.candidate1912.length<=5);
   if(row.candidate1912.length)lexicalCount++;else noLead++;
+  assert(Array.isArray(row.sourceConflictHolds));
+  for(const hold of row.sourceConflictHolds){
+   conflictCount++;
+   assert.equal(hold.disposition,'NOT_A_MATCH_HOLD_FOR_HUMAN_SOURCE_EXAMINATION');
+   assert(!row.candidate1912.some(c=>c.sourceQid===hold.sourceQid));
+   assert(['DOCTRINAL_DISTINCTION_ACTUAL_VS_SACRAMENTAL_GRACE_DO_NOT_EQUIVALENCE',
+     'POST_1929_ITALIAN_MARRIAGE_EDITION_CONTAMINATION_REQUIRES_PRINT_CHECK'].includes(hold.reason));
+   if(c.id==='SPX-057'&&hold.reason.startsWith('DOCTRINAL_DISTINCTION'))actualGraceHold=true;
+  }
   const candidateNumbers=new Set();
   for(const candidate of row.candidate1912){
    assert.equal(candidate.evidenceType,'LEXICAL_TOPIC_LEAD_ONLY_NOT_SAME_INTENT');
@@ -70,8 +80,10 @@ assert.equal(noLead,data.counts.without1912LexicalLead);
 assert.equal(from1905,data.counts.with1905EditorNumberLocator);
 assert.equal(fromSalzano,data.counts.withSalzanoEditorNumberLocator);
 assert.equal(lexicalCount+noLead,423);
+assert.equal(conflictCount,data.counts.blockedKnownConflicts);
+assert(actualGraceHold,'Known 1905 actual-grace and 1912 sacramental-grace collision must be held');
 console.log('PASS SPX_P31_P0_INVARIANTS '+JSON.stringify({
  dialogueNodes:423,indexedCatechism1912:433,preliminaryTopicLeads:lexicalCount,
  no1912Lead:noLead,original1905LocatorNodes:from1905,
- salzanoLocatorNodes:fromSalzano,autoMerged:0,published:0
+ salzanoLocatorNodes:fromSalzano,conflictsHeld:conflictCount,autoMerged:0,published:0
 }));
