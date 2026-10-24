@@ -7,20 +7,22 @@
     "original_scan_archive_id": "afm3499.0021.001.umich.edu",
     "source_pdf_sha256": "100e2b3164bd7a342c5c0c5d01df2a60b4635d5695dea456e9b93769866ee5ee"
   },
-  "method": "Inventory of 60 numbered principal feast-description chapters from source table of contents, cross-referenced to 422 prior 1900 observation IDs and 105 new Wave04 IDs. Some representation does NOT certify chapter fully mined or local custom continuity. The original author's preface says sixty descriptions covering ninety-two Sicilian municipalities.",
+  "method": "Inventory of 60 numbered principal feast-description chapters from source table of contents, cross-referenced to 422 prior 1900 observation IDs and 105 new Wave04 IDs. Some representation does NOT certify chapter fully mined or local custom continuity. The original author's preface says sixty descriptions covering ninety-two Sicilian municipalities. Wave05 indexes 132 additional research-only source/detail observations in each of the 29 previously unrepresented numbered chapters. Evidence screening and research observation indexing are not chapter-exhaustion or publication.",
   "summary": {
     "indexed_chapters_in_book": 60,
     "earlier_chapters_with_some_1900_observations": 20,
     "newly_represented_chapters_wave04": 11,
-    "total_chapters_with_some_source_observations": 31,
-    "still_without_1900_source_observations": 29,
+    "total_chapters_with_some_source_observations": 60,
+    "still_without_1900_source_observations": 0,
     "chapters_declared_exhaustively_mined": 0,
     "existing_source_observations": 422,
     "new_wave04_source_observations": 105,
-    "all_pitre_1900_source_observations_now": 527,
-    "workbench_source_detail_total": 3512,
+    "all_pitre_1900_source_observations_now": 659,
+    "workbench_source_detail_total": 3644,
     "unique_customs_certified": 0,
-    "app_publications": 0
+    "app_publications": 0,
+    "newly_represented_chapters_wave05": 29,
+    "wave05_new_source_observations": 132
   },
   "chapters": [
     {
@@ -31,7 +33,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "II",
@@ -41,7 +44,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "III",
@@ -51,7 +55,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "IV",
@@ -61,7 +66,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "V",
@@ -71,7 +77,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "VI",
@@ -81,7 +88,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "VII",
@@ -91,7 +99,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "VIII",
@@ -101,7 +110,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "IX",
@@ -111,7 +121,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "X",
@@ -121,7 +132,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XI",
@@ -131,7 +143,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XII",
@@ -141,7 +154,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XIII",
@@ -151,7 +165,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XIV",
@@ -161,7 +176,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XV",
@@ -171,7 +187,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XVI",
@@ -181,7 +198,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XVII",
@@ -191,7 +209,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XVIII",
@@ -201,7 +220,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XIX",
@@ -211,7 +231,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XX",
@@ -221,7 +242,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XXI",
@@ -231,7 +253,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XXII",
@@ -241,7 +264,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XXIII",
@@ -251,7 +275,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XXIV",
@@ -261,7 +286,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XXV",
@@ -271,7 +297,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XXVI",
@@ -281,7 +308,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XXVII",
@@ -291,7 +319,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XXVIII",
@@ -301,7 +330,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XXIX",
@@ -311,7 +341,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XXX",
@@ -321,7 +352,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XXXI",
@@ -331,7 +363,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XXXII",
@@ -341,7 +374,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XXXIII",
@@ -351,7 +385,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XXXIV",
@@ -361,7 +396,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XXXV",
@@ -371,7 +407,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XXXVI",
@@ -381,7 +418,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XXXVII",
@@ -391,7 +429,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XXXVIII",
@@ -401,7 +440,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XXXIX",
@@ -411,7 +451,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XL",
@@ -421,7 +462,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XLI",
@@ -431,7 +473,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XLII",
@@ -441,7 +484,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XLIII",
@@ -451,7 +495,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XLIV",
@@ -461,7 +506,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XLV",
@@ -471,7 +517,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XLVI",
@@ -481,7 +528,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "XLVII",
@@ -491,7 +539,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XLVIII",
@@ -501,7 +550,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "XLIX",
@@ -511,7 +561,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "L",
@@ -521,7 +572,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "LI",
@@ -531,7 +583,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "LII",
@@ -541,7 +594,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "LIII",
@@ -551,7 +605,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     },
     {
       "id": "LIV",
@@ -561,7 +616,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "LV",
@@ -571,7 +627,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "LVI",
@@ -581,7 +638,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "LVII",
@@ -591,7 +649,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "LVIII",
@@ -601,7 +660,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "LIX",
@@ -611,7 +671,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
     },
     {
       "id": "LX",
@@ -621,7 +682,8 @@
       "source_scan_index_pdf_pages": "619–628",
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
-      "fully_extracted_verified": false
+      "fully_extracted_verified": false,
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
     }
   ]
 }
