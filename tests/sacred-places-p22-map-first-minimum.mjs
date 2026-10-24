@@ -59,7 +59,7 @@ for(const row of m.published_new){
  for(const prop of ["hero_image","intro_en","intro_fr","opening_hours","mass_times","external_website_url"])
   assert.equal(place[prop],undefined,"Optional enrichment must not be made a publication gate: "+prop);
 }
-assert.deepEqual(new Set(geo.places.slice(-10).map(x=>x.place_id)),new Set(m.published_new.map(x=>x.place_id)),"Append exactly the ten new IDs without changing existing Place identities");
+assert.deepEqual(new Set(m.published_new.map(x=>x.place_id)),new Set(m.published_new.map(x=>x.place_id).filter(id=>byPlace.has(id))),"All frozen P22 IDs must remain canonical after future releases");
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...shrine,sources:sources.sources,places:geo.places}).pass,true);
 const sourcesNew=m.published_new.map(x=>x.typed_source_id);

@@ -1,0 +1,320 @@
+{
+  "schema": "AO_SACRED_PLACES_P24_WORLD_16_MAP_FIRST_V1",
+  "date": "2026-10-24",
+  "status": "PROPOSED_VIA_PR",
+  "baseline": {
+    "places": 371,
+    "sources": 669,
+    "crosswalk": 371,
+    "unlinked": 112,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 387,
+    "sources": 685,
+    "crosswalk": 387,
+    "unlinked": 128,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "researched_exact_physical_features": 18,
+  "reused_existing": [
+    {
+      "candidate_id": "SG-INV-0110",
+      "place_id": "place:ES:covadonga-basilica",
+      "ref": "osm:way:94842350",
+      "identity": "Basílica de Santa María la Real de Covadonga"
+    },
+    {
+      "candidate_id": "SG-INV-0110",
+      "place_id": "place:ES:covadonga-santa-cueva",
+      "ref": "osm:way:362382526",
+      "identity": "Santa Cueva de Covadonga — Marian Holy Cave"
+    }
+  ],
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0490",
+      "place_id": "place:AR:basilica-nuestra-senora-itati",
+      "name": "Basílica de Nuestra Señora de Itatí",
+      "country": "AR",
+      "place_type": "basilica",
+      "lat": -27.26916,
+      "lng": -58.24392,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0490"
+      ],
+      "identity_source_url": "https://arzcorrientes.org.ar/public/arquidiocesis/santuarios/basilica-itati",
+      "geo_source_url": "https://www.openstreetmap.org/way/233801865",
+      "geo_source_ref": "osm:way:233801865",
+      "precision": "site",
+      "scope_limit": "Named physical worship site, not a visitor entrance or neighboring chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0306",
+      "place_id": "place:SI:bazilika-marije-zavetnice-ptujska-gora",
+      "name": "Bazilika Marije Zavetnice s plaščem — Ptujska Gora",
+      "country": "SI",
+      "place_type": "basilica",
+      "lat": 46.3546,
+      "lng": 15.76147,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0306"
+      ],
+      "identity_source_url": "https://www.ptujska-gora.si/index.php/znamenitosti/bazilika-marije-zavetnice",
+      "geo_source_url": "https://www.openstreetmap.org/way/445713801",
+      "geo_source_ref": "osm:way:445713801",
+      "precision": "site",
+      "scope_limit": "Named physical worship site, not a visitor entrance or neighboring chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0310",
+      "place_id": "place:HR:bazilika-gospe-trsatske-rijeka",
+      "name": "Bazilika Gospe Trsatske, Rijeka",
+      "country": "HR",
+      "place_type": "basilica",
+      "lat": 45.33111,
+      "lng": 14.45718,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0310"
+      ],
+      "identity_source_url": "https://www.ri-nadbiskupija.hr/franjevci-male-brace-sv-ciril-i-metod/",
+      "geo_source_url": "https://www.openstreetmap.org/way/53264271",
+      "geo_source_ref": "osm:way:53264271",
+      "precision": "site",
+      "scope_limit": "Named physical worship site, not a visitor entrance or neighboring chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0631",
+      "place_id": "place:PH:basilica-our-lady-penafrancia-naga",
+      "name": "Minor Basilica of Our Lady of Peñafrancia, Naga",
+      "country": "PH",
+      "place_type": "basilica",
+      "lat": 13.63208,
+      "lng": 123.19994,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0631"
+      ],
+      "identity_source_url": "https://www.archdioceseofcaceres.org/post/dawn-of-reunion-pagbalyo-ni-ina-and-feast-of-divino-rostro-open-pe%C3%B1afrancia-2026",
+      "geo_source_url": "https://www.openstreetmap.org/way/23670362",
+      "geo_source_ref": "osm:way:23670362",
+      "precision": "site",
+      "scope_limit": "Named physical worship site, not a visitor entrance or neighboring chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0038",
+      "place_id": "place:FR:abbatiale-sainte-foy-conques",
+      "name": "Abbatiale Sainte-Foy de Conques",
+      "country": "FR",
+      "place_type": "church",
+      "lat": 44.59921,
+      "lng": 2.39807,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0038"
+      ],
+      "identity_source_url": "https://abbaye-conques.org/labbaye-sainte-foy-de-conques",
+      "geo_source_url": "https://www.openstreetmap.org/way/219774328",
+      "geo_source_ref": "osm:way:219774328",
+      "precision": "site",
+      "scope_limit": "Named physical worship site, not a visitor entrance or neighboring chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0299",
+      "place_id": "place:SK:kaplnka-zjavenia-litmanova-zvir",
+      "name": "Kaplnka zjavenia, hora Zvir, Litmanová",
+      "country": "SK",
+      "place_type": "chapel",
+      "lat": 49.39218,
+      "lng": 20.63349,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0299"
+      ],
+      "identity_source_url": "https://www.grkatpo.sk/putnicke-miesta/litmanova/",
+      "geo_source_url": "https://www.openstreetmap.org/way/1220051919",
+      "geo_source_ref": "osm:way:1220051919",
+      "precision": "site",
+      "scope_limit": "Named physical worship site, not a visitor entrance or neighboring chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0428",
+      "place_id": "place:MX:catedral-basilica-san-juan-los-lagos",
+      "name": "Catedral Basílica de Nuestra Señora de San Juan de los Lagos",
+      "country": "MX",
+      "place_type": "cathedral",
+      "lat": 21.2453,
+      "lng": -102.33394,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0428"
+      ],
+      "identity_source_url": "https://diocesisdesanjuan.org/?cat=1",
+      "geo_source_url": "https://www.openstreetmap.org/way/280843175",
+      "geo_source_ref": "osm:way:280843175",
+      "precision": "site",
+      "scope_limit": "Named physical worship site, not a visitor entrance or neighboring chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0109",
+      "place_id": "place:ES:ermita-virgen-rocio-almonte",
+      "name": "Ermita de Nuestra Señora del Rocío",
+      "country": "ES",
+      "place_type": "shrine",
+      "lat": 37.13071,
+      "lng": -6.48475,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0109"
+      ],
+      "identity_source_url": "https://diocesisdehuelva.es/parroquia/santuario-de-nuestra-senora-del-rocio-el-rocio-almonte/",
+      "geo_source_url": "https://www.openstreetmap.org/way/35585757",
+      "geo_source_ref": "osm:way:35585757",
+      "precision": "site",
+      "scope_limit": "Named physical worship site, not a visitor entrance or neighboring chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0298",
+      "place_id": "place:SK:bazilika-narodenia-panny-marie-marianka",
+      "name": "Bazilika Narodenia Panny Márie, Marianka",
+      "country": "SK",
+      "place_type": "basilica",
+      "lat": 48.24807,
+      "lng": 17.06481,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0298"
+      ],
+      "identity_source_url": "https://www.marianka.sk/zivot-v-obci/farnost/",
+      "geo_source_url": "https://www.openstreetmap.org/way/62086339",
+      "geo_source_ref": "osm:way:62086339",
+      "precision": "site",
+      "scope_limit": "Named physical worship site, not a visitor entrance or neighboring chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0301",
+      "place_id": "place:SK:kostol-svateho-vojtecha-gaboltov",
+      "name": "Kostol svätého Vojtecha, Gaboltov",
+      "country": "SK",
+      "place_type": "church",
+      "lat": 49.36695,
+      "lng": 21.14252,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0301"
+      ],
+      "identity_source_url": "https://www.ke-arcidieceza.sk/sk/putnicke-miesta",
+      "geo_source_url": "https://www.openstreetmap.org/way/71672155",
+      "geo_source_ref": "osm:way:71672155",
+      "precision": "site",
+      "scope_limit": "Named physical worship site, not a visitor entrance or neighboring chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0079",
+      "place_id": "place:IT:santuario-francescano-la-verna",
+      "name": "Santuario francescano della Verna",
+      "country": "IT",
+      "place_type": "monastery",
+      "lat": 43.70731,
+      "lng": 11.93135,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0079"
+      ],
+      "identity_source_url": "https://www.laverna.it/",
+      "geo_source_url": "https://www.openstreetmap.org/way/989039792",
+      "geo_source_ref": "osm:way:989039792",
+      "precision": "complex_anchor",
+      "scope_limit": "Mapped monastic complex rather than separate church footprint."
+    },
+    {
+      "candidate_id": "SG-INV-0520",
+      "place_id": "place:PE:santuario-candelaria-chapi-polobaya",
+      "name": "Santuario de Nuestra Señora de la Candelaria de Chapi",
+      "country": "PE",
+      "place_type": "shrine",
+      "lat": -16.71925,
+      "lng": -71.31496,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0520"
+      ],
+      "identity_source_url": "https://mail.arzobispadoarequipa.org.pe/santuario",
+      "geo_source_url": "https://www.openstreetmap.org/way/490736063",
+      "geo_source_ref": "osm:way:490736063",
+      "precision": "site",
+      "scope_limit": "Mapped named sanctuary church, distinct from nearby pilgrims' grounds way 490740457."
+    },
+    {
+      "candidate_id": "SG-INV-0584",
+      "place_id": "place:IN:basilica-our-lady-ransom-vallarpadam",
+      "name": "Basilica of Our Lady of Ransom, Vallarpadam",
+      "country": "IN",
+      "place_type": "basilica",
+      "lat": 9.99013,
+      "lng": 76.25,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0584"
+      ],
+      "identity_source_url": "https://vallarpadambasilica.com/",
+      "geo_source_url": "https://www.openstreetmap.org/way/364406523",
+      "geo_source_ref": "osm:way:364406523",
+      "precision": "site",
+      "scope_limit": "Named physical worship site, not a visitor entrance or neighboring chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0164",
+      "place_id": "place:DE:benediktinerabtei-maria-laach",
+      "name": "Benediktinerabtei Maria Laach",
+      "country": "DE",
+      "place_type": "monastery",
+      "lat": 50.40176,
+      "lng": 7.25302,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0164"
+      ],
+      "identity_source_url": "https://www.maria-laach.de/",
+      "geo_source_url": "https://www.openstreetmap.org/way/24995659",
+      "geo_source_ref": "osm:way:24995659",
+      "precision": "complex_anchor",
+      "scope_limit": "Mapped monastic complex rather than separate church footprint."
+    },
+    {
+      "candidate_id": "SG-INV-0550",
+      "place_id": "place:PS:basilica-agony-gethsemane",
+      "name": "Basilica of the Agony (Church of All Nations), Gethsemane",
+      "country": "PS",
+      "place_type": "basilica",
+      "lat": 31.77931,
+      "lng": 35.23977,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0550"
+      ],
+      "identity_source_url": "https://www.custodia.org/en/sanctuaries/gethsemane-basilica-agony/",
+      "geo_source_url": "https://www.openstreetmap.org/way/137729554",
+      "geo_source_ref": "osm:way:137729554",
+      "precision": "site",
+      "scope_limit": "Original P21 country tag IL differs from PS East Jerusalem/West Bank geographic map grouping; sovereignty not inferred."
+    },
+    {
+      "candidate_id": "SG-INV-0732",
+      "place_id": "place:MU:marie-reine-de-la-paix-port-louis",
+      "name": "Marie Reine de la Paix, Port-Louis",
+      "country": "MU",
+      "place_type": "pilgrimage_destination",
+      "lat": -20.1704,
+      "lng": 57.49628,
+      "source_ids": [
+        "AO-P24-SITE-SG-INV-0732"
+      ],
+      "identity_source_url": "https://www.dioceseportlouis.org/medias/archives/evenements-diocesains/ordination-episcopale-les-site-visits-s-enchainent-a-marie-reine-de-la-paix",
+      "geo_source_url": "https://www.openstreetmap.org/node/5242566674",
+      "geo_source_ref": "osm:node:5242566674",
+      "precision": "site",
+      "scope_limit": "OSM node is devotional Catholic sculpture, not a church building or exact sanctuary extent."
+    }
+  ],
+  "original_p16_holds_preserved": 16,
+  "policy": [
+    "One typed institutional identity source per independently admitted physical feature; explicit OSM feature URL and ref in Place.geo.",
+    "Precise church OSM site/monastery-complex anchors are not entrances, routes, or event locations.",
+    "Separate Catholic, Greek Catholic, active monastery and outdoor devotional landmark categories.",
+    "A P21 title/location hint can map to existing IDs (Covadonga) without creating new sites; original research identifiers remain as historical input.",
+    "No added 1962 Missal/Directory link, shrine-domain owner, apparition approval, relic, photos or events.",
+    "P21 originally tagged Church of All Nations IL. P24 site geo under PS mirrors current East Jerusalem/West Bank geographic convention without a sovereignty claim.",
+    "All sixteen P16 original exceptions remain unresolved and untouched."
+  ]
+}
