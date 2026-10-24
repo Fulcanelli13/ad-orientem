@@ -1,0 +1,61 @@
+{
+  "schema": "AO_B34_FOUR_AUTHORITY_RIGHTS_FINDINGS_FOR_NEXT_SOURCE_WAVE_V1",
+  "scope": "Three image-less P2 records plus one remaining P0 exact institution preview, without rights bypass",
+  "new_art_approvals": 0,
+  "new_file_acquisitions": 0,
+  "records": [
+    {
+      "artwork_id": "G17-010",
+      "title": "The Martyrdom and Last Communion of Saint Lucy",
+      "source_kind": "NGA_EXACT_OBJECT_OPEN_ACCESS",
+      "institution": "National Gallery of Art, Washington",
+      "accession": "1984.28.1",
+      "verified_institutional_url": "https://www.nga.gov/artworks/63264-martyrdom-and-last-communion-saint-lucy",
+      "rights_evidence_url": "https://www.nga.gov/terms-and-notices",
+      "source_assessment": "Exact institutionally identified Veronese painting, whose page states that its media is free and in public domain under NGA Open Access (CC0). Strong first-priority no-image acquisition lead.",
+      "source_file_downloaded_in_B34": false,
+      "next_action": "B35_EXTRACT_EXACT_NGA_IMAGE_URL_VERIFY_BYTE_HASH_AND_ARCHIVE",
+      "publication_approved": false
+    },
+    {
+      "artwork_id": "celine-1894-john-cross",
+      "title": "Saint John of the Cross",
+      "source_kind": "AUTHOR_RIGHTS_PROTECTED",
+      "institution": "Carmel of Lisieux archives",
+      "accession": "Carmel Celine 1894",
+      "verified_institutional_url": "https://archives.carmeldelisieux.fr/en/personnage/celine-martin/",
+      "rights_evidence_url": "https://www.culture.gouv.fr/thematiques/photographie/gerer-un-fonds-photographique/evaluation-patrimoniale/connaitre-l-environnement-juridique-d-un-fonds",
+      "source_assessment": "Céline Martin died 25 February 1959. Under usual French life-plus-70 term her works remain protected through 2029 (subject to jurisdictional exceptions). Image not authorized for monetized app.",
+      "source_file_downloaded_in_B34": false,
+      "next_action": "PERMISSION_OR_RIGHTS_REVIEW_NO_DOWNLOAD",
+      "publication_approved": false
+    },
+    {
+      "artwork_id": "carmel-lisieux-1925-therese-aux-roses",
+      "title": "Thérèse aux roses",
+      "source_kind": "AUTHOR_RIGHTS_PROTECTED",
+      "institution": "Carmel of Lisieux archives",
+      "accession": "Céline Martin, 1925",
+      "verified_institutional_url": "https://archives.carmeldelisieux.fr/en/personnage/celine-martin/",
+      "rights_evidence_url": "https://www.culture.gouv.fr/thematiques/photographie/gerer-un-fonds-photographique/evaluation-patrimoniale/connaitre-l-environnement-juridique-d-un-fonds",
+      "source_assessment": "Same underlying artist/right-holder concern: Céline Martin died 1959. Do not assume Carmel gallery WebP may be packaged in commercial app.",
+      "source_file_downloaded_in_B34": false,
+      "next_action": "PERMISSION_OR_RIGHTS_REVIEW_NO_DOWNLOAD",
+      "publication_approved": false
+    },
+    {
+      "artwork_id": "G25-003",
+      "title": "Anonymous Saint Augustine, P001314",
+      "source_kind": "EXACT_PRADO_PREVIEW_FOUND_RIGHTS_HELD",
+      "institution": "Museo Nacional del Prado",
+      "accession": "P001314",
+      "verified_institutional_url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-agustin/cf95015c-5744-4471-a529-84a3981719d6",
+      "official_preview_url": "https://content3.cdnprado.net/imagenes/Documentos/imgsem/cf/cf95/cf95015c-5744-4471-a529-84a3981719d6/ab69c7a5-56ee-49d3-96fc-4649bf9273b3_832.jpg",
+      "rights_evidence_url": "https://www.imagebankmuseodelprado.com/acuerdo-de-licencia",
+      "source_assessment": "An exact institutional online image of the correct P001314 work exists at 832px, but this is only a rights-restricted preview, not a cleared archival master for the app. Prado licensing for commercial use applies. Wrong Lanfranco Coronation Commons lead remains rejected.",
+      "source_file_downloaded_in_B34": false,
+      "next_action": "SEEK_INDEPENDENT_RIGHTS_CLEARED_EXACT_IMAGE_OR_NONCOMMERCIAL_RESEARCH_ONLY",
+      "publication_approved": false
+    }
+  ]
+}
