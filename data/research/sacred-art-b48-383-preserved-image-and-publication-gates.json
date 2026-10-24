@@ -1,0 +1,391 @@
+{
+  "schema": "AO_B48_ALL_383_SACRED_ART_PHYSICAL_PRESERVATION_AND_RELEASE_CENSUS_V1",
+  "audit_date": "2026-10-24",
+  "active_frozen_artworks": 383,
+  "frozen_artwork_catalogue_total": 451,
+  "frozen_rejected": 68,
+  "frozen_approved_historical_decisions": 107,
+  "B26_older_original_physical_files_previously_byte_verified": 290,
+  "B26_older_original_bytes_previously_byte_verified": 3076497763,
+  "B26_older_original_distinct_SHA": 287,
+  "B26_older_active_artwork_IDs_with_SHA-linked_original": 245,
+  "B29_B44_later_archive_original_file_count": 122,
+  "B29_B44_later_archive_image_bytes": 710773181,
+  "combined_early_and_later_image_file_instances_before_crosswave_dedupe": 412,
+  "combined_early_and_later_image_bytes_before_crosswave_dedupe": 3787270944,
+  "early_research_release_tags": [
+    "sacred-art-originals-b26-20261024"
+  ],
+  "remote_unpublished_B26_primary_tar_count": 16,
+  "remote_unpublished_B26_extra_supplementary_tar_count": 9,
+  "remote_unpublished_newer_research_tar_count": 20,
+  "all_required_remote_archives_exist_as_unpublished_drafts": true,
+  "archive_remote_verification_type": "Remote draft asset existence and size rechecked B48; exact full image SHA byte checking was completed in original B27/research acquisition workflows, NOT rerun for 3.8GB in B48.",
+  "repo_git_tracked_image_files_hashed": 227,
+  "repo_git_tracked_image_file_bytes_hashed": 47015237,
+  "catalogue_artworks_with_matching_image_SHA_inside_current_git_tree": 0,
+  "B27_B33_B34_B35_B41_source_cohort_counts": {
+    "B29_B33_P0_RESEARCH_ARCHIVED": 63,
+    "B19_B25_EXACT_SHA_ARCHIVED": 245,
+    "B34_LEGACY_SOURCE_ARCHIVED": 35,
+    "MISSING_EXACT_RESEARCH_ORIGINAL": 23,
+    "B35_B41_PARTIAL_ONLY_RESEARCH_ARCHIVED": 2,
+    "B35_B41_FULL_SOURCE_RESEARCH_ARCHIVED": 15
+  },
+  "active_with_some_actual_research_original_source": 360,
+  "active_with_provisional_complete_object_research_photo": 358,
+  "active_with_partial_only_research_source": 2,
+  "active_without_any_stable_physical_research_source": 23,
+  "active_missing_complete_object_photo": 25,
+  "noncomplete_artwork_ids": [
+    "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+    "ART-eter-aul-ubens-he-oly-rinity",
+    "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+    "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+    "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+    "G17-006",
+    "G17-009",
+    "G20-002",
+    "G25-003",
+    "G26-007",
+    "G27-002",
+    "G28-003",
+    "G29-001",
+    "G30-004",
+    "G30-006",
+    "G30-007",
+    "G30-010",
+    "G32-002",
+    "QCP-HILARY-LEDUC-1896-1900",
+    "W10-009",
+    "carmel-lisieux-1925-therese-aux-roses",
+    "celine-1894-john-cross",
+    "italy-0900119548",
+    "italy-banchero-0700031704",
+    "zeri-45874-peter-damian"
+  ],
+  "partial_only_artwork_ids": [
+    "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+    "G28-003"
+  ],
+  "missing_any_artwork_ids": [
+    "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+    "ART-eter-aul-ubens-he-oly-rinity",
+    "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+    "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+    "G17-006",
+    "G17-009",
+    "G20-002",
+    "G25-003",
+    "G26-007",
+    "G27-002",
+    "G29-001",
+    "G30-004",
+    "G30-006",
+    "G30-007",
+    "G30-010",
+    "G32-002",
+    "QCP-HILARY-LEDUC-1896-1900",
+    "W10-009",
+    "carmel-lisieux-1925-therese-aux-roses",
+    "celine-1894-john-cross",
+    "italy-0900119548",
+    "italy-banchero-0700031704",
+    "zeri-45874-peter-damian"
+  ],
+  "catalogue_artworks_with_recorded_physical_SHA_provenance": 358,
+  "catalogue_artworks_with_physical_source_but_no_recorded_individual_SHA": 3,
+  "fully_publishable_end_to_end_certified_from_combined_record": 0,
+  "full_publishing_certification_status": "NOT_YET_RECONCILED_CANNOT_INFER_FROM_PHOTO_PRESERVATION",
+  "frozen_approved_107_not_equivalent_to_commercial_photo_permissions": true,
+  "source_rights_or_artwork_approvals_created": 0,
+  "canonical_451_artwork_records_changed": 0,
+  "production_app_changed": false,
+  "strict_zero_euro": true,
+  "B26_remote_release_evidence": {
+    "primary": [
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b19.tar",
+        "size": 220887040,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b20.tar",
+        "size": 606842880,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b20r1.tar",
+        "size": 312033280,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b21.tar",
+        "size": 950026240,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b21r1.tar",
+        "size": 372899840,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b21r2.tar",
+        "size": 61952000,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b22kress.tar",
+        "size": 16189440,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b22nga.tar",
+        "size": 67932160,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b23commons35.tar",
+        "size": 132730880,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b23p1.tar",
+        "size": 12400640,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b23p2.tar",
+        "size": 6717440,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b23r2commons46.tar",
+        "size": 259297280,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b23r3mpo.tar",
+        "size": 4966400,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b24exact4.tar",
+        "size": 9359360,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b24exact8.tar",
+        "size": 40304640,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      },
+      {
+        "tag": "sacred-art-originals-b26-20261024",
+        "asset": "ao-source-b26-b25ribera.tar",
+        "size": 2734080,
+        "is_draft": true,
+        "source_group": "B19_B25_PRIMARY_PRIOR_BYTE_VERIFIED"
+      }
+    ],
+    "later": [
+      {
+        "tag": "ao-art-originals-40090336600-1",
+        "asset": "ao-originals-b44-met-40-cc0-40090336600-1.tar",
+        "size": 11223040,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40089028479-1",
+        "asset": "ao-originals-b43-cma-cc0-alt-40089028479-1.tar",
+        "size": 12544000,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40087414206-1",
+        "asset": "ao-originals-b42-iccd-five-40087414206-1.tar",
+        "size": 20480,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40086279346-1",
+        "asset": "ao-originals-b41-institution-exact3-40086279346-1.tar",
+        "size": 276480,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40085750675-1",
+        "asset": "ao-originals-b40-sik-crossmatch-40085750675-1.tar",
+        "size": 174080,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40085570078-1",
+        "asset": "ao-originals-b40-wuilleret-p6-40085570078-1.tar",
+        "size": 1546240,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40084602839-1",
+        "asset": "ao-originals-b39-holy-family-40084602839-1.tar",
+        "size": 256000,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40082818225-1",
+        "asset": "ao-originals-b38-kmska-cc0-40082818225-1.tar",
+        "size": 56217600,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40081406021-1",
+        "asset": "ao-originals-b37-exact4-40081406021-1.tar",
+        "size": 2908160,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40080746576-1",
+        "asset": "ao-originals-b36-four-accessions-40080746576-1.tar",
+        "size": 27320320,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40079849156-1",
+        "asset": "ao-originals-b35-three-museum-originals-40079849156-1.tar",
+        "size": 12124160,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40079378349-1",
+        "asset": "ao-originals-b35-kress2-pd-40079378349-1.tar",
+        "size": 25978880,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40079025134-1",
+        "asset": "ao-originals-b35-nga2-imagelevel-40079025134-1.tar",
+        "size": 3870720,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40078052162-1",
+        "asset": "ao-originals-b34-legacy35-40078052162-1.tar",
+        "size": 199680000,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40076138511-1",
+        "asset": "ao-originals-b33-six-exact-objects-40076138511-1.tar",
+        "size": 43202560,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40074272716-1",
+        "asset": "ao-originals-b32-fifteen-research-40074272716-1.tar",
+        "size": 83169280,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40073405369-1",
+        "asset": "ao-originals-b31-p0-29-candidates-40073405369-1.tar",
+        "size": 150384640,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40072604805-1",
+        "asset": "ao-originals-b30-six-selected-40072604805-1.tar",
+        "size": 50554880,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40071629985-1",
+        "asset": "ao-originals-b29-seven-selected-40071629985-1.tar",
+        "size": 34283520,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      },
+      {
+        "tag": "ao-art-originals-40071269695-1",
+        "asset": "ao-originals-b29-seven-selected-40071269695-1.tar",
+        "size": 20480,
+        "is_draft": true,
+        "source_group": "LATER_RESEARCH_RELEASE_PRIOR_REMOTE_SHA_VERIFIED"
+      }
+    ],
+    "supplemental_b27_assets": [
+      "ao-supplement-b27-b20-early-partial.tar",
+      "ao-supplement-b27-b20-early-success.tar",
+      "ao-supplement-b27-gallery159.tar",
+      "ao-supplement-b27-sheet-b19.tar",
+      "ao-supplement-b27-sheet-b20.tar",
+      "ao-supplement-b27-sheet-b20r1.tar",
+      "ao-supplement-b27-sheet-b21.tar",
+      "ao-supplement-b27-sheet-b21r1.tar",
+      "ao-supplement-b27-sheet-b21r2.tar"
+    ],
+    "supplemental_b27_asset_count": 9,
+    "B26_primary_asset_bytes": 3077273600,
+    "later_real_archive_asset_bytes": 715755520,
+    "releases_total_visible": 22,
+    "legacy_primary_asset_count": 16,
+    "later_real_archive_asset_count": 20,
+    "all_required_draft": true,
+    "current_byte_redownload_note": "The B26 archive was independently SHA-read back and byte-verified in B27; the newer archives were SHA re-read on acquisition workflows. B48 rechecked REMOTE ASSET PRESENCE and draft status, not another 4GB complete redownload."
+  },
+  "limitations": [
+    "122 later research image files does not represent the total repository picture inventory; legacy B26 includes 290 earlier physical files (287 SHA distinct).",
+    "Combined 412 file instances count duplicates and alternative works; not 412 fully matched individual artworks.",
+    "The count of 360 with some physical source and 358 with complete artwork is provisional source research coverage, not 360 rights-cleared app photos.",
+    "A precise B26 SHA link still does not prove that the correct painting, photograph copyright, artistic quality, and editorial selection gates all pass.",
+    "Byte verification of all 290 older files was performed and preserved in B27, not repeated B48; remote draft Release preservation and all required asset presence/size were rechecked now.",
+    "External museum source imagery and catalogue alternatives do not count as exact original artwork files unless authoritatively accession-matched.",
+    "No historical frozen approval changed and no app publication is asserted."
+  ]
+}

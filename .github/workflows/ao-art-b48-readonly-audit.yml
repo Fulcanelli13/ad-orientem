@@ -1,0 +1,20 @@
+name: B48 independent 383 artwork physical archives and publication readiness integrity
+on:
+  push:
+    branches: [research/sacred-art-b48-all383-archive-photo-readiness-census-20261024]
+    paths: [.github/workflows/ao-art-b48-readonly-audit.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  independently_validate_all383_archive_ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b48-all383-archive-photo-readiness-census-20261024
+      - name: Preserve B47 previous photo-source counts
+        run: node tests/sacred-art-b47-offline-383-source-closeout.mjs
+      - name: Independently validate full 383 photo preservation census and distinct non-publishability
+        run: node tests/sacred-art-b48-383-physical-original-coverage.mjs
