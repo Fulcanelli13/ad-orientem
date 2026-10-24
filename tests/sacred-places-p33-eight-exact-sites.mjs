@@ -1,0 +1,40 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {LIVE,RELEASES} from "./helpers/sacred-places-live-baseline.mjs";
+import {assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
+import {auditShrineSource,assertShrinesPilgrimagesRegistry} from "../src/find/shrines-contracts.js";
+const get=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const m=get("data/geography/research/sacred-places-p33-eight-exact-sites-four-areas.v1.json");
+const geo=get("data/geography/seed-registry.v1.json"),ss=get("data/shrines/source-registry.v1.json");
+const cross=get("data/explore/heritage-place-reconciliation.review.v1.json"),shrines=get("data/shrines/shrines-pilgrimages-seed.v1.json");
+assert.equal(m.schema,"AO_SACRED_PLACES_P33_EIGHT_EXACT_SITES_FOUR_COUNTRIES_V1");
+assert.deepEqual([m.baseline.places,m.baseline.sources,m.baseline.crosswalk,m.baseline.unlinked,m.baseline.geo_areas],[414,712,414,155,141]);
+assert.deepEqual([m.proposed.places,m.proposed.sources,m.proposed.crosswalk,m.proposed.unlinked,m.proposed.geo_areas],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas]);
+assert.deepEqual([geo.places.length,ss.sources.length,cross.place_crosswalk.length,cross.exception_queues.places_without_direct_claim.length,geo.geoAreas.length,geo.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas,LIVE.links]);
+assert.equal(cross.counts.places,LIVE.places);assert.equal(cross.counts.places_without_direct_claim,LIVE.unlinked);
+assert.equal(m.new_places.length,8);assert.equal(m.new_geo_areas.length,4);
+assert.equal(new Set(m.new_places.map(x=>x.geo_source_ref)).size,8);assert.equal(new Set(m.new_places.map(x=>x.place_id)).size,8);
+assert.ok(RELEASES.some(x=>x.id==="P33"));
+for(const c of ["RO","PA","TW","UA"]){const area=geo.geoAreas.find(x=>x.geo_area_id==="geo:country:"+c);assert.ok(area);assert.equal(area.codes.iso_alpha2,c);assert.equal(area.area_type,"country");}
+const ids=new Map(geo.places.map(x=>[x.place_id,x])),sources=new Map(ss.sources.map(x=>[x.id,x]));
+assert.equal(ids.size,geo.places.length);assert.equal(sources.size,ss.sources.length);
+const oldRefs=new Set(geo.places.filter(x=>!m.new_places.some(y=>y.place_id===x.place_id)).map(x=>x.geo?.source_ref).filter(Boolean));
+for(const r of m.new_places){
+ assert.ok(!oldRefs.has(r.geo_source_ref));assert.match(r.geo_source_ref,/^osm:way:\d+$/);assert.match(r.geo_provenance_mapcarta_url,/^https:\/\/mapcarta.com\//);
+ const p=ids.get(r.place_id);assert.ok(p);assert.equal(p.place_type,r.place_type);assert.equal(p.name.official,r.name);
+ assert.equal(p.address.country_code,r.country);assert.deepEqual(p.geo_area_ids,["geo:country:"+r.country]);
+ assert.equal(p.geo.source_ref,r.geo_source_ref);assert.equal(p.geo.source_url,r.geo_source_url);
+ assert.deepEqual([p.geo.lat,p.geo.lng],[r.lat,r.lng]);assert.ok(isMapPublishablePlaceGeo(p.geo,r.country));
+ assert.deepEqual(p.source_ids,r.source_ids);
+ const source=sources.get(r.source_ids[0]);assert.ok(source);assert.equal(source.url,r.identity_source_url);
+ assert.equal(auditShrineSource(source).length,0);
+ assert.deepEqual(cross.place_crosswalk.find(x=>x.place_id===r.place_id).record_ids,{});
+ assert.ok(cross.exception_queues.places_without_direct_claim.includes(r.place_id));
+ assert.ok(!geo.directoryPlaceLinks.some(x=>x.place_id===r.place_id));
+ assert.ok(!shrines.shrines.some(x=>x.place_id===r.place_id));
+}
+assert.equal(m.source_coverage_after,169);
+assert.deepEqual(m.newly_sourced_priority_ids,["SG-INV-0331"]);
+assert.equal(assertExploreGeographyRegistry(geo).pass,true);
+assert.equal(assertShrinesPilgrimagesRegistry({...shrines,sources:ss.sources,places:geo.places}).pass,true);
+console.log("PASS P33: eight exact Catholic OSM church buildings in eight countries; four area additions; preserves historical frozen release gates");

@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 414,
+    "places": 422,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 155,
+    "places_without_direct_claim": 163,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -53,6 +53,7 @@
       "place:CM:basilique-marie-reine-des-apotres-mvolye",
       "place:CM:notre-dame-des-victoires-cathedral-yaounde",
       "place:CO:basilica-senor-milagros-buga",
+      "place:CU:santuario-nacional-nuestra-senora-regla",
       "place:CW:queen-holy-rosary-cathedral-willemstad",
       "place:CZ:velehrad-assumption-cyril-methodius-basilica",
       "place:DE:benediktinerabtei-maria-laach",
@@ -60,6 +61,7 @@
       "place:DE:marienbasilika-kevelaer",
       "place:DK:st-ansgar-cathedral-copenhagen",
       "place:DO:catedral-primada-santo-domingo",
+      "place:DO:santuario-nuestra-senora-mercedes-santo-cerro",
       "place:DZ:basilique-saint-augustin-annaba",
       "place:EC:basilica-voto-nacional-quito",
       "place:EE:saints-peter-paul-cathedral-tallinn",
@@ -85,6 +87,7 @@
       "place:HK:immaculate-conception-cathedral-hong-kong",
       "place:HR:bazilika-gospe-sinjske",
       "place:HR:bazilika-gospe-trsatske-rijeka",
+      "place:HU:bodajk-segito-szuz-maria-basilica",
       "place:ID:jakarta-cathedral",
       "place:IE:ballintubber-abbey-church",
       "place:IN:basilica-our-lady-ransom-vallarpadam",
@@ -114,6 +117,7 @@
       "place:KZ:our-lady-fatima-cathedral-karaganda",
       "place:LA:sacred-heart-cathedral-vientiane",
       "place:LC:immaculate-conception-cathedral-basilica-castries",
+      "place:LK:national-shrine-our-lady-matara",
       "place:LK:st-lucia-cathedral-colombo",
       "place:LS:our-lady-victories-cathedral-maseru",
       "place:LT:trakai-visitation-basilica",
@@ -139,6 +143,7 @@
       "place:NP:assumption-cathedral-lalitpur",
       "place:NZ:st-mary-angels-wellington",
       "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "place:PA:basilica-menor-jesus-nazareno-atalaya",
       "place:PE:basilica-nuestra-senora-merced-lima",
       "place:PE:santuario-candelaria-chapi-polobaya",
       "place:PE:santuario-san-martin-de-porres-jicamarca",
@@ -159,6 +164,7 @@
       "place:PY:catedral-metropolitana-asuncion",
       "place:PY:oratorio-nuestra-senora-asuncion-panteon",
       "place:QA:our-lady-rosary-church-doha",
+      "place:RO:catedrala-sfantul-iosif-bucuresti",
       "place:SB:holy-cross-cathedral-honiara",
       "place:SC:immaculate-conception-cathedral-victoria",
       "place:SE:st-eric-cathedral-stockholm",
@@ -173,7 +179,9 @@
       "place:TG:sacred-heart-cathedral-lome",
       "place:TH:assumption-cathedral-bangkok",
       "place:TO:st-anthony-padua-basilica-nukualofa",
+      "place:TW:wanjin-immaculate-conception-basilica",
       "place:TZ:st-joseph-cathedral-dar-es-salaam",
+      "place:UA:mother-god-zarvanytsia-basilica",
       "place:US:baltimore-basilica-assumption",
       "place:US:sacred-heart-shrine-hales-corners",
       "place:UY:santuario-nuestra-senora-del-carmen-carmelo",
@@ -924,6 +932,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:CU:santuario-nacional-nuestra-senora-regla",
+      "display_name": "Santuario Nacional Nuestra Señora de Regla",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:CW:queen-holy-rosary-cathedral-willemstad",
       "display_name": "Queen of the Most Holy Rosary Cathedral, Pietermaai",
       "record_ids": {},
@@ -1219,6 +1233,12 @@
           "pilgrimage:DO:higuey-altagracia-basilica-destination"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DO:santuario-nuestra-senora-mercedes-santo-cerro",
+      "display_name": "Santuario Nacional Nuestra Señora de las Mercedes, Santo Cerro",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -2445,6 +2465,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:HU:bodajk-segito-szuz-maria-basilica",
+      "display_name": "Bodajk Segítő Szűz Mária Kegytemplom",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:HU:mariapocs-greek-catholic-basilica",
       "display_name": "Máriapócs Kegytemplom — Greek Catholic Pilgrimage Basilica",
       "record_ids": {
@@ -3543,6 +3569,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:LK:national-shrine-our-lady-matara",
+      "display_name": "National Shrine of Our Lady of Matara",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:LK:saint-anne-s-national-shrine-talawila",
       "display_name": "Saint Anne's National Shrine, Talawila",
       "record_ids": {
@@ -4027,6 +4059,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PA:basilica-menor-jesus-nazareno-atalaya",
+      "display_name": "Basílica Menor Jesús Nazareno de Atalaya",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:PE:basilica-nuestra-senora-merced-lima",
       "display_name": "Basílica Menor de Nuestra Señora de la Merced, Lima",
       "record_ids": {},
@@ -4476,6 +4514,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:RO:catedrala-sfantul-iosif-bucuresti",
+      "display_name": "Catedrala Sfântul Iosif, București",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:RW:sanctuaire-kibeho",
       "display_name": "Sanctuaire Notre-Dame des Douleurs de Kibeho",
       "record_ids": {
@@ -4661,8 +4705,20 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:TW:wanjin-immaculate-conception-basilica",
+      "display_name": "Basilica of the Immaculate Conception, Wanjin",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:TZ:st-joseph-cathedral-dar-es-salaam",
       "display_name": "St Joseph's Cathedral, Dar es Salaam",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:UA:mother-god-zarvanytsia-basilica",
+      "display_name": "Our Lady of Zarvanytsia Cathedral and Basilica",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },

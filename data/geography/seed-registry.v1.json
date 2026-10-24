@@ -2326,6 +2326,70 @@
       "codes": {
         "iso_alpha2": "PG"
       }
+    },
+    {
+      "geo_area_id": "geo:country:RO",
+      "name": {
+        "official": "Romania",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "RO"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:PA",
+      "name": {
+        "official": "Panama",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PA"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:TW",
+      "name": {
+        "official": "Taiwan",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "TW"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:UA",
+      "name": {
+        "official": "Ukraine",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "UA"
+      }
     }
   ],
   "places": [
@@ -17960,6 +18024,294 @@
       },
       "source_ids": [
         "AO-P31-SITE-SG-INV-0311"
+      ]
+    },
+    {
+      "place_id": "place:HU:bodajk-segito-szuz-maria-basilica",
+      "name": {
+        "official": "Bodajk Segítő Szűz Mária Kegytemplom",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:HU"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 47.32153,
+        "lng": 18.23694,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/333285600",
+        "source_ref": "osm:way:333285600",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "HU",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Bodajk",
+        "region": null,
+        "country_code": "HU",
+        "country": "Hungary",
+        "formatted": "Bodajk Segítő Szűz Mária Kegytemplom, Bodajk, Hungary"
+      },
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0323"
+      ]
+    },
+    {
+      "place_id": "place:CU:santuario-nacional-nuestra-senora-regla",
+      "name": {
+        "official": "Santuario Nacional Nuestra Señora de Regla",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:CU"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 23.13142,
+        "lng": -82.33599,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/39075952",
+        "source_ref": "osm:way:39075952",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "CU",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Regla, Havana",
+        "region": null,
+        "country_code": "CU",
+        "country": "Cuba",
+        "formatted": "Santuario Nacional Nuestra Señora de Regla, Regla, Havana, Cuba"
+      },
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0463"
+      ]
+    },
+    {
+      "place_id": "place:DO:santuario-nuestra-senora-mercedes-santo-cerro",
+      "name": {
+        "official": "Santuario Nacional Nuestra Señora de las Mercedes, Santo Cerro",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:DO"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 19.27971,
+        "lng": -70.54687,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/320462121",
+        "source_ref": "osm:way:320462121",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "DO",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Santo Cerro, La Vega",
+        "region": null,
+        "country_code": "DO",
+        "country": "Dominican Republic",
+        "formatted": "Santuario Nacional Nuestra Señora de las Mercedes, Santo Cerro, Santo Cerro, La Vega, Dominican Republic"
+      },
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0468"
+      ]
+    },
+    {
+      "place_id": "place:LK:national-shrine-our-lady-matara",
+      "name": {
+        "official": "National Shrine of Our Lady of Matara",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:LK"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 5.94329,
+        "lng": 80.55191,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/637940698",
+        "source_ref": "osm:way:637940698",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "LK",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Matara",
+        "region": null,
+        "country_code": "LK",
+        "country": "Sri Lanka",
+        "formatted": "National Shrine of Our Lady of Matara, Matara, Sri Lanka"
+      },
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0602"
+      ]
+    },
+    {
+      "place_id": "place:TW:wanjin-immaculate-conception-basilica",
+      "name": {
+        "official": "Basilica of the Immaculate Conception, Wanjin",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:TW"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 22.59508,
+        "lng": 120.61127,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/199010890",
+        "source_ref": "osm:way:199010890",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "TW",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Wanluan, Pingtung",
+        "region": null,
+        "country_code": "TW",
+        "country": "Taiwan",
+        "formatted": "Basilica of the Immaculate Conception, Wanjin, Wanluan, Pingtung, Taiwan"
+      },
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0614"
+      ]
+    },
+    {
+      "place_id": "place:UA:mother-god-zarvanytsia-basilica",
+      "name": {
+        "official": "Our Lady of Zarvanytsia Cathedral and Basilica",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:UA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 49.22831,
+        "lng": 25.35171,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/803877437",
+        "source_ref": "osm:way:803877437",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "UA",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Zarvanytsia, Ternopil",
+        "region": null,
+        "country_code": "UA",
+        "country": "Ukraine",
+        "formatted": "Our Lady of Zarvanytsia Cathedral and Basilica, Zarvanytsia, Ternopil, Ukraine"
+      },
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0346"
+      ]
+    },
+    {
+      "place_id": "place:RO:catedrala-sfantul-iosif-bucuresti",
+      "name": {
+        "official": "Catedrala Sfântul Iosif, București",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:RO"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 44.44211,
+        "lng": 26.09138,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/75481867",
+        "source_ref": "osm:way:75481867",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "RO",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Bucharest",
+        "region": null,
+        "country_code": "RO",
+        "country": "Romania",
+        "formatted": "Catedrala Sfântul Iosif, București, Bucharest, Romania"
+      },
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0331"
+      ]
+    },
+    {
+      "place_id": "place:PA:basilica-menor-jesus-nazareno-atalaya",
+      "name": {
+        "official": "Basílica Menor Jesús Nazareno de Atalaya",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:PA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 8.04326,
+        "lng": -80.92447,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/396944583",
+        "source_ref": "osm:way:396944583",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PA",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Atalaya, Veraguas",
+        "region": null,
+        "country_code": "PA",
+        "country": "Panama",
+        "formatted": "Basílica Menor Jesús Nazareno de Atalaya, Atalaya, Veraguas, Panama"
+      },
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0460"
       ]
     }
   ],
