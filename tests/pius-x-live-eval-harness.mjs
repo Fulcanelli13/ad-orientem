@@ -18,7 +18,9 @@ const fake=async(purpose,messages)=>{
  if(purpose==='compose'){
   composeCalls++;
   seenInputs.push(data);
-  return {mode:'answer',text:'The supplied editorial teaching emphasizes careful explanation, encouragement, and pastoral responsibility in Christian instruction.',
+  return {mode:'answer',text:data.language==='fr'?
+    'Le texte documentaire souligne la responsabilité pastorale et la nécessité de transmettre fidèlement la doctrine chrétienne.':
+    'The supplied editorial teaching emphasizes careful explanation, encouragement, and pastoral responsibility in Christian instruction.',
    evidenceIds:[data.evidence[0].id],expression:'explaining'};
  }
  verifyCalls++;
