@@ -166,6 +166,16 @@ try{
        return near;
      });
      console.log("QUIET_SETTINGS_CLOSE_LAYERS "+width+"px "+JSON.stringify(closeLayers));
+     const headerGlyphs=await page.evaluate(()=>[...document.querySelectorAll("#ao-settings-modular-root .aoSetTop button")].map(btn=>({
+       action:btn.getAttribute("aria-label"),
+       visibleIcons:[...btn.querySelectorAll(".aoUiIcon,.aoSetTopIcon")].filter(icon=>{
+         const css=getComputedStyle(icon),r=icon.getBoundingClientRect();
+         return css.display!=="none"&&css.visibility!=="hidden"&&r.width>0&&r.height>0;
+       }).length
+     })));
+     assert.ok(headerGlyphs.length>=1&&headerGlyphs.every(x=>x.visibleIcons===1),
+       "Settings header must render one canonical icon per action: "+JSON.stringify(headerGlyphs));
+
      await page.screenshot({path:resolve(out,"settings-"+width+".png"),fullPage:false,animations:"disabled"});
 
      const openedExplore=await page.evaluate(async()=>await window.AO_APP_SHELL_V1.navigate("find"));
