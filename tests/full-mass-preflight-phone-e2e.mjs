@@ -134,8 +134,18 @@ try{
  // These images never alter the rendered Mass preparation or selection owner.
  const massQaDir=resolve(base,"artifacts/mass-preflight-quiet");
  await mkdir(massQaDir,{recursive:true});
+ // The previous Proper-picker interaction may have scrolled the test fixture.
+ // Restore the actual first fold before taking its acceptance screenshot.
+ await page.evaluate(()=>{
+   window.scrollTo({top:0,behavior:"instant"});
+   document.querySelector("#ao-mass-flow-v1")?.scrollTo?.({top:0,behavior:"instant"});
+ });
  await page.screenshot({path:resolve(massQaDir,"mass-overview-390.png"),fullPage:false,animations:"disabled"});
  await page.setViewportSize({width:768,height:1024});
+ await page.evaluate(()=>{
+   window.scrollTo({top:0,behavior:"instant"});
+   document.querySelector("#ao-mass-flow-v1")?.scrollTo?.({top:0,behavior:"instant"});
+ });
  await page.screenshot({path:resolve(massQaDir,"mass-overview-768.png"),fullPage:false,animations:"disabled"});
  await page.setViewportSize({width:390,height:844});
  for(const stage of ["reader","ceremony","celebration"]){
