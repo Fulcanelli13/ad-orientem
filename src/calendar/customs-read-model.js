@@ -7,6 +7,7 @@ import { buildLiturgicalYear } from "./liturgical-year.js";
 import { v384Dates } from "./traditional-year-v384.js";
 import { CANONICAL_EXTRA_CUSTOM_ARTICLES } from "./customs-extra-articles.js";
 import { calendarCustomProfileActions } from "./customs-profile-links.js";
+import { customsEditorialPreviewArticle, customsEditorialPreviewIds, customsEditorialPreviewForDate } from "./customs-editorial-preview.js";
 
 const PUBLISHED_ARTICLES = [
   {
@@ -514,8 +515,12 @@ const PUBLISHED_ARTICLES = [
 ];
 const ARTICLES = new Map([...PUBLISHED_ARTICLES,...CANONICAL_EXTRA_CUSTOM_ARTICLES].map(row=>[row.id,Object.freeze(row)]));
 export const CALENDAR_CUSTOM_ARTICLE_IDS = Object.freeze([...ARTICLES.keys()]);
-export function calendarCustomArticleIds(){return CALENDAR_CUSTOM_ARTICLE_IDS;}
-export function calendarCustomArticle(id){return ARTICLES.get(String(id))||null;}
+export function calendarCustomArticleIds({editorialPreview=false}={}){
+  return editorialPreview ? Object.freeze([...CALENDAR_CUSTOM_ARTICLE_IDS,...customsEditorialPreviewIds()]) : CALENDAR_CUSTOM_ARTICLE_IDS;
+}
+export function calendarCustomArticle(id,{editorialPreview=false}={}){
+  return ARTICLES.get(String(id))||(editorialPreview?customsEditorialPreviewArticle(id):null);
+}
 const validDate = date => /^\d{4}-\d{2}-\d{2}$/.test(String(date||"")) && !Number.isNaN(new Date(date+"T12:00:00").getTime());
 function seasonalIds(date){
   if(!validDate(date))return [];
@@ -545,12 +550,12 @@ function additionalDateBoundIds(date){
   ...(date===x.palm?["DOM-013"]:[]),
   ...(date===x.holySaturday?["BLSS-004"]:[])];
 }
-export function calendarCustomRecommendations(date,{events=[],fr=false}={}){
+export function calendarCustomRecommendations(date,{events=[],fr=false,editorialPreview=false}={}){
   if(!validDate(date))return Object.freeze([]);
   const keys=Array.isArray(events)?events.map(event=>event?.key).filter(Boolean):[];
   const eventIds=keys.flatMap(key=>calendarCustomProfileActions(key,{fr}).map(row=>row[0].split(":").at(-1)));
-  const ids=[...new Set([...eventIds,...additionalDateBoundIds(date),...seasonalIds(date)])];
-  return Object.freeze(ids.filter(id=>ARTICLES.has(id)).map(id=>ARTICLES.get(id)));
+  const ids=[...new Set([...eventIds,...additionalDateBoundIds(date),...seasonalIds(date),...(editorialPreview?customsEditorialPreviewForDate(date):[])])];
+  return Object.freeze(ids.map(id=>calendarCustomArticle(id,{editorialPreview})).filter(Boolean));
 }
 export function calendarCustomSeasonalMonthEntries(monthId,{fr=false}={}){
   if(!/^\d{4}-\d{2}$/.test(String(monthId||"")))return Object.freeze([]);
