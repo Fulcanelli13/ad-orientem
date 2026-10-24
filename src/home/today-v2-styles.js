@@ -397,4 +397,181 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
   .homeScreen.aoTodayV2 .aoTodayEditorialEdition{padding-inline:12px!important}
   .homeScreen.aoTodayV2 .aoTodayV2Identity .aoEditorialMeta{gap:5px!important}
 }
+
+/* Edition II / visual direction: sober printed liturgical volume, not card UI.
+   Visual hierarchy: editorial masthead → liturgical day → genuine approved art
+   → one principal Mass action → prayer/readers → secondary calendar summary. */
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .brandRow{
+  display:grid!important;grid-template-columns:44px minmax(0,1fr) 44px!important;
+  align-items:center!important;gap:0!important;min-height:74px!important;
+  padding:8px 18px!important;background:#0B0F13!important;
+  border-bottom:1px solid rgba(209,188,150,.17)!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .brandMark,
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .brandText{display:none!important}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayAppBarTitle{
+  display:block!important;grid-column:2;grid-row:1;text-align:center;
+  font:400 29px/1.25 var(--ao-font-display,Georgia,serif)!important;
+  letter-spacing:-.02em;color:#efe7d8!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .homeUtilityButton{
+  grid-column:3;grid-row:1;justify-self:end!important;
+  display:grid!important;place-items:center!important;
+  width:44px!important;min-height:44px!important;
+  border:0!important;border-radius:50%!important;background:transparent!important;
+  color:#c4b6a0!important;
+}
+.homeScreen.aoTodayV2[data-ao-home-calendar-view] .aoTodayAppBarTitle{display:none!important}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .dateNavigator{
+  position:relative;display:grid!important;grid-template-columns:35px minmax(0,1fr) 35px;
+  max-width:850px;margin:0 auto!important;align-items:center!important;
+  gap:7px!important;padding:18px 17px 0!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .dateNavigator .dateTitle span{
+  font:500 12px/1.35 var(--ao-font-ui,Georgia,serif)!important;
+  text-transform:uppercase;letter-spacing:.18em!important;color:#b7af9f!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .dateNavigator .dateTitle b{
+  display:block;font:400 15px/1.4 var(--ao-font-display,Georgia,serif)!important;
+  color:#cbbda8!important;margin-top:2px;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .dateNavigator .iconButton{
+  width:35px!important;min-height:35px!important;border:none!important;
+  color:#9e957f!important;background:transparent!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoHomeCalendarAccess{
+  padding:0 15px 3px!important;margin:0 auto!important;max-width:850px;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoHomeCalendarAction{
+  color:#b7aa8e!important;min-height:40px!important;
+  font:400 14px/1.3 var(--ao-font-ui,Georgia,serif)!important;
+}
+.homeScreen.aoTodayV2 .aoTodayEditorialEdition>.aoTodayV2Identity{
+  align-items:flex-start!important;text-align:left!important;
+  padding:17px 1px 19px!important;gap:8px!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2Identity .aoEditorialKicker{
+  align-self:flex-start!important;text-align:left!important;
+  font:500 10px/1.5 var(--ao-font-brand,Georgia,serif)!important;
+  color:#bca980!important;letter-spacing:.19em!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2Identity .aoEditorialTitle{
+  text-align:left!important;font:400 clamp(37px,6vw,55px)/1.09 var(--ao-font-display,Georgia,serif)!important;
+  color:#f2ecdf!important;letter-spacing:-.024em!important;
+  max-width:750px!important;text-wrap:balance;
+}
+.homeScreen.aoTodayV2 .aoTodayV2Identity .aoEditorialMeta{
+  justify-content:flex-start!important;gap:7px 14px!important;
+  font:400 15px/1.4 var(--ao-font-ui,Georgia,serif)!important;
+  color:#b9b4aa!important;margin-top:6px!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2Identity .aoEditorialMeta span{
+  border:0!important;border-radius:0!important;padding:0!important;
+  background:transparent!important;color:inherit!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2Identity .aoEditorialMeta span+span:before{
+  content:"·"!important;display:inline!important;width:auto!important;
+  height:auto!important;background:transparent!important;color:#8c856e!important;
+  vertical-align:baseline!important;margin:0 10px 0 0!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2Identity .aoTodayV2SeasonMicro{
+  padding:0!important;align-self:flex-start!important;min-height:34px!important;
+  color:#bda77d!important;font:400 15px/1.4 var(--ao-font-ui,Georgia,serif)!important;
+}
+.homeScreen.aoTodayV2 .aoTodayEditorialEdition>.aoTodayV2Art{
+  margin-top:9px!important;
+}
+.homeScreen.aoTodayV2 .aoTodayEditorialEdition .aoTodayV2ArtSource{
+  border:1px solid rgba(213,191,145,.23)!important;border-radius:8px!important;
+  background:#10161b!important;
+}
+.homeScreen.aoTodayV2 .aoTodayEditorialEdition .aoProperArt figcaption{
+  border-top:1px solid rgba(213,191,145,.12)!important;
+  color:#aaa99e!important;background:#0B0F13!important;
+  padding:9px 2px!important;font:400 13px/1.4 var(--ao-font-ui,Georgia,serif)!important;
+}
+.homeScreen.aoTodayV2 .aoTodayEditorialEdition>.aoTodayV2HeroActions{
+  padding:14px 0 10px!important;max-width:850px!important;
+}
+.homeScreen.aoTodayV2 .aoTodayEditorialEdition.aoTodayV2ArtMissing>.aoTodayV2Identity{
+  position:relative;border-bottom:1px solid rgba(206,189,147,.19)!important;
+  padding:26px 0 26px!important;
+  background:linear-gradient(145deg,rgba(196,165,111,.035),transparent 58%)!important;
+}
+.homeScreen.aoTodayV2 .aoTodayEditorialEdition.aoTodayV2ArtMissing>.aoTodayV2Identity:before{
+  content:"✠";position:absolute;right:2px;top:14px;
+  color:rgba(201,175,132,.22);font:400 42px/1 var(--ao-font-display,Georgia,serif);
+  pointer-events:none;
+}
+.homeScreen.aoTodayV2 .aoTodayEditorialEdition .aoTodayV2Mass .sectionLabel{
+  text-align:left!important;margin:0 0 10px!important;
+  font:500 10px/1.35 var(--ao-font-brand,Georgia,serif)!important;
+  color:#b19e7c!important;letter-spacing:.18em!important;
+}
+.homeScreen.aoTodayV2 .aoTodayEditorialEdition .aoTodayV2PrimaryMass{
+  min-height:63px!important;border-radius:8px!important;
+  background:var(--liturgical,#9A845F)!important;
+  border:1px solid color-mix(in srgb,var(--liturgical,#9A845F) 80%,#e7d9ba)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12)!important;
+  color:var(--liturgical-ink,#0B0F13)!important;
+}
+.homeScreen.aoTodayV2 .aoTodayEditorialEdition .aoTodayV2PrimaryMass b{
+  font:500 21px/1.25 var(--ao-font-display,Georgia,serif)!important;
+  letter-spacing:0!important;
+}
+.homeScreen.aoTodayV2 .aoTodayEditorialEdition .aoTodayV2SecondaryMass button{
+  min-height:55px!important;border-radius:8px!important;
+  border:1px solid rgba(183,185,177,.29)!important;background:#10161b!important;
+  color:#e7e0d3!important;font:400 17px/1.3 var(--ao-font-display,Georgia,serif)!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2Below{
+  padding:8px 16px 34px!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2Zone{padding:25px 0 24px!important}
+.homeScreen.aoTodayV2 .aoTodayV2SectionHead h2{
+  font:400 26px/1.1 var(--ao-font-display,Georgia,serif)!important;
+  color:#efe5d5!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2SectionHead>button{
+  font:400 14px/1.3 var(--ao-font-ui,Georgia,serif)!important;
+  color:#bda779!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2PrayerFeature{
+  border-radius:9px!important;border:1px solid rgba(193,184,164,.17)!important;
+  background:#151C21!important;box-shadow:none!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2EditorialRow{
+  min-height:78px!important;border-bottom:1px solid rgba(198,188,169,.12)!important;
+  background:transparent!important;color:#eee8db!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2EditorialRow strong{
+  font:400 19px/1.3 var(--ao-font-display,Georgia,serif)!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2EditorialRow small{color:#adafa8!important}
+.homeScreen.aoTodayV2 .aoTodayV2CalendarGlance{
+  border:0!important;border-top:1px solid rgba(201,184,145,.22)!important;
+  border-radius:0!important;background:transparent!important;
+  box-shadow:none!important;padding-top:18px!important;margin-top:5px!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2CalendarGlance>h2{
+  font:400 23px/1.2 var(--ao-font-display,Georgia,serif)!important;
+}
+.homeScreen.aoTodayV2 button:focus-visible{
+  outline:2px solid var(--liturgical,#baa373)!important;
+  outline-offset:2px!important;
+}
+@media(max-width:699px){
+  .homeScreen.aoTodayV2 .aoTodayV2Identity .aoEditorialTitle{
+    font-size:clamp(35px,9vw,43px)!important;
+  }
+  .homeScreen.aoTodayV2 .aoTodayEditorialEdition>.aoTodayV2Identity{
+    padding:13px 1px 16px!important;
+  }
+  .homeScreen.aoTodayV2 .aoTodayEditorialEdition.aoTodayV2ArtMissing>.aoTodayV2Identity{
+    padding:22px 0 20px!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .homeScreen.aoTodayV2 *{scroll-behavior:auto!important}
+}
 `;
