@@ -253,3 +253,37 @@ assert.equal(pilotJoseph.current_approval,'FIRST_SOURCE_ONLY');
 assert.equal(pilotJoseph.calendar_link_approved,false);
 assert.equal(pilot.records.every(x=>x.record_status==='EDITORIAL_DRAFT_UNAPPROVED'),true);
 console.log('PASS customs cohort02: 408/408 research groups now screened or owner-linked (47+150+211); 56 comparison hypotheses; zero newly confirmed customs or Calendar releases.');
+
+
+const newSubjects=load('customs-consolidation-cohort02-calendar-two-source-supported-drafts.v1.json');
+assert.equal(newSubjects.schema,'AO_CUSTOMS_COHORT02_TWO_SOURCE_SUPPORTED_CALENDAR_SUBJECTS_V1');
+assert.equal(newSubjects.summary.subjects_prepared,2);
+assert.equal(newSubjects.summary.initial_en_fr_drafts,2);
+assert.equal(newSubjects.records.length,2);
+assert.equal(newSubjects.summary.new_approved_canonical_ids,0);
+assert.equal(newSubjects.summary.new_publications,0);
+const used=new Set();
+for(const subject of newSubjects.records){
+ assert.equal(subject.canonical_id,null);
+ assert.equal(subject.calendar_link_approved,false);
+ assert.equal(subject.final_text_approved,false);
+ assert.equal(subject.reader_card_release_state,'UNAPPROVED_DRAFT');
+ assert.equal(subject.first_weiser_original_folio_checked_in_this_cohort02,false);
+ assert.ok(subject.draft_en.length>150&&subject.draft_fr.length>150);
+ assert.ok(subject.independent_sources.length>=2);
+ assert.ok(subject.independent_sources.every(s=>s.url.startsWith('https://')));
+ for(const id of subject.source_group_ids){
+  assert.ok(cohort02.records.some(x=>x.provisional_group_id===id),'New subject must use existing cohort02 source group');
+  assert.ok(!used.has(id),'Source group reused across two distinct subjects');
+  used.add(id);
+ }
+ for(const link of subject.canonical_main_comparisons){
+   assert.ok(publishedSeed.customs.some(c=>c.custom_id===link.id),'Unknown existing published comparator');
+ }
+}
+assert.equal(used.size,newSubjects.summary.source_group_ids_used);
+const epiphany=newSubjects.records.find(x=>x.research_subject_key==='RESEARCH-EPIPHANY-HOUSE-COMPONENTS');
+assert.deepEqual(epiphany.source_group_ids,['CAT-WEISER-A-089','CAT-WEISER-A-090']);
+const wreaths=newSubjects.records.find(x=>x.research_subject_key==='RESEARCH-POLAND-CORPUS-WREATHS');
+assert.deepEqual(wreaths.source_group_ids,['CAT-WEISER-B-085','CAT-WEISER-B-086']);
+console.log('PASS customs cohort02 context drafts: two scoped EN/FR subjects, four prior source groups, zero unapproved routes to the app.');
