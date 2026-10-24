@@ -1,0 +1,536 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B33_SOURCE_PRECISION_V1",
+  "asOf": "2026-10-25",
+  "status": "RESEARCH_ONLY_NOT_HUMAN_CERTIFIED",
+  "continuity": {
+    "baseline": "2026-10-21 consolidated 68 examined / 65 improved / 64 complete awaiting human certification / one English source blocked",
+    "latest": "B31 CSE081–090 verified at commit 3b880b46d76d0b068236d785c08795a5bbf1f776",
+    "scope": "CSE091–110, distinct IDs; no upstream changes",
+    "sourceText": "Original CSE seed questions and existing pastoral edits remain untouched",
+    "persona": "Fictional Chanoine in communion with Rome; do not attribute post-1991 texts to Archbishop Lefebvre"
+  },
+  "sources": {
+    "CCC2331-35": {
+      "en": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_6/i_male_and_female_he_created_them.index.html",
+      "loci": "2331–2335"
+    },
+    "DI2024": {
+      "en": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_en.html",
+      "fr": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_fr.html",
+      "loci": "55–60"
+    },
+    "CDF1986": {
+      "en": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19861001_homosexual-persons_en.html",
+      "loci": "16"
+    },
+    "DONUM1987": {
+      "en": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+      "fr": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_fr.html",
+      "loci": "II.A.1–2; II.B.4–7"
+    },
+    "DP2008": {
+      "en": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+      "fr": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_fr.html",
+      "loci": "12–14, 18–19, 22"
+    }
+  },
+  "proposals": [
+    {
+      "familyId": "CHA-CSE-CSE091",
+      "sourceQuestionId": "CSE091",
+      "proposedOpening": {
+        "en": "Catholic teaching begins with the equal personal dignity of man and woman, created in God's image. Their embodied sexual difference has significance for marriage and family, but a person is never merely a biological function.",
+        "fr": "L'enseignement catholique part de l'égale dignité personnelle de l'homme et de la femme, créés à l'image de Dieu. Leur différence sexuelle corporelle importe pour le mariage et la famille, mais une personne ne se réduit jamais à une fonction biologique."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does equal dignity require identical roles in every culture?",
+          "fr": "L'égale dignité impose-t-elle des rôles identiques dans toutes les cultures ?"
+        },
+        "answer": {
+          "en": "No. Equal dignity is a moral principle; particular social expectations must be examined rather than confused with doctrine.",
+          "fr": "Non. L'égale dignité est un principe moral ; les attentes sociales particulières doivent être examinées, non confondues avec la doctrine."
+        }
+      },
+      "sourceRefs": [
+        "CCC2331-35",
+        "DI2024 §59"
+      ],
+      "sourcePrecisionDelta": "Separate equal dignity and embodied difference from claims about every cultural role.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_SOURCE_BOUND_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE092",
+      "sourceQuestionId": "CSE092",
+      "proposedOpening": {
+        "en": "The Church distinguishes bodily sex from the social roles associated with it, without treating the two as wholly unrelated. Customs about occupation, dress or temperament should not be declared immutable teachings.",
+        "fr": "L'Église distingue le sexe corporel des rôles sociaux qui lui sont associés, sans les considérer comme entièrement étrangers l'un à l'autre. Les usages concernant le métier, le vêtement ou le tempérament ne doivent pas être érigés en doctrines immuables."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Can a social expectation be unjust?",
+          "fr": "Une attente sociale peut-elle être injuste ?"
+        },
+        "answer": {
+          "en": "Yes. A custom can be criticized without denying the Church's teaching on the significance of sexual difference.",
+          "fr": "Oui. On peut critiquer une coutume sans nier l'enseignement de l'Église sur la portée de la différence sexuelle."
+        }
+      },
+      "sourceRefs": [
+        "DI2024 §59"
+      ],
+      "sourcePrecisionDelta": "Retain the exact distinction: distinguished but not separated.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_SOURCE_BOUND_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE093",
+      "sourceQuestionId": "CSE093",
+      "proposedOpening": {
+        "en": "We must first ask what 'constructed' means. Societies shape many roles and expectations, but the Church does not regard bodily sexual difference as something created solely by agreement.",
+        "fr": "Demandons d'abord ce que signifie « construit ». Les sociétés façonnent de nombreux rôles et attentes, mais l'Église ne considère pas la différence sexuelle corporelle comme une pure création conventionnelle."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Do atypical developments settle that philosophical question?",
+          "fr": "Les développements atypiques tranchent-ils cette question philosophique ?"
+        },
+        "answer": {
+          "en": "No. Individual clinical complexities deserve serious attention; they neither justify stereotypes nor alone settle the moral and philosophical question.",
+          "fr": "Non. Les situations cliniques particulières méritent une attention sérieuse ; elles ne justifient ni les stéréotypes ni ne tranchent à elles seules la question morale et philosophique."
+        }
+      },
+      "sourceRefs": [
+        "DI2024 §59"
+      ],
+      "sourcePrecisionDelta": "Clinical statement is editorial caution, not a diagnostic assertion or conclusion drawn explicitly by §59.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_SOURCE_BOUND_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE098",
+      "sourceQuestionId": "CSE098",
+      "proposedOpening": {
+        "en": "The duty to speak truth never authorizes ridicule, aggression or violence. The Church's defence of human dignity applies also when there is real disagreement about moral principles.",
+        "fr": "Le devoir de dire la vérité n'autorise jamais la moquerie, l'agression ni la violence. La défense de la dignité humaine par l'Église s'applique aussi lorsqu'il existe un véritable désaccord moral."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does disagreement excuse discrimination?",
+          "fr": "Le désaccord excuse-t-il la discrimination ?"
+        },
+        "answer": {
+          "en": "No. The 2024 declaration expressly condemns aggression and unjust discrimination; this must remain explicit in pastoral answers.",
+          "fr": "Non. La déclaration de 2024 condamne expressément l'agression et la discrimination injuste ; ce point doit demeurer explicite dans les réponses pastorales."
+        }
+      },
+      "sourceRefs": [
+        "DI2024 §55"
+      ],
+      "sourcePrecisionDelta": "Use the source's explicit dignity and violence language, without attributing it to Lefebvre.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_SOURCE_BOUND_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE099",
+      "sourceQuestionId": "CSE099",
+      "proposedOpening": {
+        "en": "No single attraction, behaviour or social label exhausts the mystery of a human person. A Christian should speak first of the person made in God's image and called to holiness.",
+        "fr": "Aucune attirance, aucun comportement ni aucune étiquette sociale n'épuise le mystère d'une personne humaine. Le chrétien doit parler d'abord de la personne créée à l'image de Dieu et appelée à la sainteté."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Is it wrong for someone to describe their experience with a label?",
+          "fr": "Est-il mauvais de décrire son expérience par une étiquette ?"
+        },
+        "answer": {
+          "en": "The source warns against reducing the whole person to one aspect of experience; it does not require denying that people use descriptive terms.",
+          "fr": "Le texte met en garde contre la réduction de la personne entière à un aspect de son expérience ; il n'exige pas de nier l'usage de termes descriptifs."
+        }
+      },
+      "sourceRefs": [
+        "CDF1986 §16"
+      ],
+      "sourcePrecisionDelta": "Do not turn the anti-reductionist statement into a ban on particular vocabulary.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_SOURCE_BOUND_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE102",
+      "sourceQuestionId": "CSE102",
+      "proposedOpening": {
+        "en": "The moral question is not whether medicine is used, but whether the intervention helps the spouses' own conjugal act achieve its natural end or replaces that act with a technical procedure.",
+        "fr": "La question morale n'est pas de savoir si la médecine intervient, mais si elle aide l'acte conjugal des époux à atteindre sa fin naturelle ou le remplace par une procédure technique."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Is every artificial aid forbidden?",
+          "fr": "Toute aide artificielle est-elle interdite ?"
+        },
+        "answer": {
+          "en": "No. Donum vitae and Dignitas personae explicitly reject judging a technique merely because it is artificial.",
+          "fr": "Non. Donum vitae et Dignitas personae refusent expressément de juger une technique simplement parce qu'elle est artificielle."
+        }
+      },
+      "sourceRefs": [
+        "DONUM1987 II.B.7",
+        "DP2008 §§12–13"
+      ],
+      "sourcePrecisionDelta": "This is a moral principle; clinical classification of a specific procedure remains separate.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_SOURCE_BOUND_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE103",
+      "sourceQuestionId": "CSE103",
+      "proposedOpening": {
+        "en": "The Church judges conception through donated sperm or eggs contrary to the unity of marriage, since a third person's reproductive contribution is introduced where the spouses are called to become parents together.",
+        "fr": "L'Église juge la conception par don de sperme ou d'ovocytes contraire à l'unité du mariage, car l'apport reproductif d'un tiers intervient là où les époux sont appelés à devenir parents l'un par l'autre."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does this judgment diminish a child conceived in that way?",
+          "fr": "Ce jugement diminue-t-il la dignité d'un enfant ainsi conçu ?"
+        },
+        "answer": {
+          "en": "Not at all. The moral judgment concerns the procedure; the child retains full personal dignity and must be welcomed and loved.",
+          "fr": "Nullement. Le jugement moral porte sur le procédé ; l'enfant conserve toute sa dignité personnelle et doit être accueilli et aimé."
+        }
+      },
+      "sourceRefs": [
+        "DONUM1987 II.A.1–2",
+        "DP2008 §12"
+      ],
+      "sourcePrecisionDelta": "Never transfer moral criticism of the method to the child.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_SOURCE_BOUND_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE105",
+      "sourceQuestionId": "CSE105",
+      "proposedOpening": {
+        "en": "The difficulty with selecting embryos is not the wish to prevent disease; it is treating embryos as candidates to be accepted or discarded according to genetic findings. The 2008 instruction discusses preimplantation diagnosis in precisely that setting.",
+        "fr": "La difficulté de la sélection embryonnaire n'est pas le désir de prévenir une maladie ; elle tient au traitement des embryons comme des candidats à accepter ou écarter selon des résultats génétiques. L'instruction de 2008 traite du diagnostic préimplantatoire dans ce cadre précis."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does the Church reject every prenatal diagnosis?",
+          "fr": "L'Église rejette-t-elle tout diagnostic prénatal ?"
+        },
+        "answer": {
+          "en": "No. Donum vitae distinguishes diagnosis directed toward the child's care from diagnosis ordered toward selective elimination.",
+          "fr": "Non. Donum vitae distingue le diagnostic orienté vers les soins de l'enfant du diagnostic destiné à une élimination sélective."
+        }
+      },
+      "sourceRefs": [
+        "DP2008 §22",
+        "DONUM1987 I.2"
+      ],
+      "sourcePrecisionDelta": "Do not claim all genetic testing is equivalent to embryo selection.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_SOURCE_BOUND_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE106",
+      "sourceQuestionId": "CSE106",
+      "proposedOpening": {
+        "en": "Treatments that restore fertility, such as indicated hormonal therapy or surgery for an underlying disorder, may be morally licit when they remove obstacles without replacing the conjugal act.",
+        "fr": "Les traitements qui restaurent la fertilité, tels qu'une hormonothérapie indiquée ou la chirurgie d'une affection sous-jacente, peuvent être moralement licites lorsqu'ils lèvent un obstacle sans remplacer l'acte conjugal."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does that approve any proposed drug or operation?",
+          "fr": "Cela approuve-t-il tout médicament ou toute opération proposée ?"
+        },
+        "answer": {
+          "en": "No. The instruction gives categories and examples, not a clinical assessment of an individual treatment's safety, indication or proportionality.",
+          "fr": "Non. L'instruction donne des catégories et des exemples, non une évaluation clinique de la sécurité, de l'indication ou de la proportionnalité d'un traitement individuel."
+        }
+      },
+      "sourceRefs": [
+        "DP2008 §13"
+      ],
+      "sourcePrecisionDelta": "Explicitly distinguish moral category from case-specific medical evaluation.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_SOURCE_BOUND_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE107",
+      "sourceQuestionId": "CSE107",
+      "proposedOpening": {
+        "en": "When a new technique appears, ask what it actually does: does it respect the embryo's life, the unity of the spouses, and the relation between procreation and their conjugal act? Novelty alone neither condemns nor justifies it.",
+        "fr": "Lorsqu'une technique nouvelle apparaît, demandons ce qu'elle fait réellement : respecte-t-elle la vie de l'embryon, l'unité des époux et le lien entre procréation et acte conjugal ? La nouveauté ne suffit ni à la condamner ni à la justifier."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "May we decide from the marketing name alone?",
+          "fr": "Peut-on trancher d'après le seul nom commercial ?"
+        },
+        "answer": {
+          "en": "No. Technical facts must be established first, and an unaddressed procedure may need specialist moral and clinical review.",
+          "fr": "Non. Il faut d'abord établir les faits techniques ; une procédure non étudiée peut exiger une expertise morale et clinique."
+        }
+      },
+      "sourceRefs": [
+        "DP2008 §12",
+        "DONUM1987 II.B.7"
+      ],
+      "sourcePrecisionDelta": "This is a source-derived evaluation framework, not a Magisterial ruling on unspecified future technology.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_SOURCE_BOUND_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE109",
+      "sourceQuestionId": "CSE109",
+      "proposedOpening": {
+        "en": "Freezing embryos is not merely a neutral pause in treatment. Dignitas personae §18 objects to producing and storing embryos outside gestation, exposing them to harm and possible later manipulation.",
+        "fr": "La congélation d'embryons n'est pas une simple pause neutre dans un traitement. Dignitas personae, §18, critique leur production et leur conservation hors de la gestation, avec les risques de dommage et de manipulations ultérieures."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does that settle what should happen to embryos already frozen?",
+          "fr": "Cela résout-il le sort des embryons déjà congelés ?"
+        },
+        "answer": {
+          "en": "No. Section 19 treats that as a distinct unresolved moral predicament; it must not be answered by a simplistic instruction to discard or transfer them.",
+          "fr": "Non. Le §19 présente cette situation comme une difficulté morale distincte et non résolue ; on ne doit pas prescrire sommairement leur destruction ou leur transfert."
+        }
+      },
+      "sourceRefs": [
+        "DP2008 §§18–19"
+      ],
+      "sourcePrecisionDelta": "Do not assert a current survival percentage or claim a settled solution to existing frozen embryos.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_SOURCE_BOUND_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "held": [
+    {
+      "sourceQuestionId": "CSE094",
+      "reviewGate": "SPECIALIST_HOLD",
+      "reason": "Clinical-policy and patient-specific care evidence not independently collated; no treatment advice or attribution to historical persona.",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "sourceQuestionId": "CSE095",
+      "reviewGate": "SPECIALIST_HOLD",
+      "reason": "Specialist lane: distinction between respectful conduct and philosophical assent is supportable, but case-specific interactions/clinical context require safeguarding review.",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "sourceQuestionId": "CSE096",
+      "reviewGate": "SPECIALIST_HOLD",
+      "reason": "Mandatory source-repair lane; preserve existing semantic repair and hold medical classifications pending clinical review.",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "sourceQuestionId": "CSE097",
+      "reviewGate": "SPECIALIST_HOLD",
+      "reason": "Existing specialist precision repair already present; do not overwrite or generalize §60 to specific diagnoses.",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "sourceQuestionId": "CSE100",
+      "reviewGate": "SPECIALIST_HOLD",
+      "reason": "Child safeguarding and pediatric evidence not independently collated; no clinical recommendation beyond noncoercive respect.",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "sourceQuestionId": "CSE101",
+      "reviewGate": "SPECIALIST_HOLD",
+      "reason": "IVF ethics source available but specialist emotional/pastoral framing and clinical claims pending.",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "sourceQuestionId": "CSE104",
+      "reviewGate": "SPECIALIST_HOLD",
+      "reason": "Surrogacy clinical-policy and exploitation claims not independently verified; specialist hold.",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "sourceQuestionId": "CSE108",
+      "reviewGate": "SPECIALIST_HOLD",
+      "reason": "Specimen collection technical and moral classification require specialist examination.",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "sourceQuestionId": "CSE110",
+      "reviewGate": "SPECIALIST_HOLD",
+      "reason": "Existing cryopreserved embryo dispositions expressly unresolved in DP §19; no prescriptive answer.",
+      "release": {
+        "claimCertified": false,
+        "englishFrenchApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "counts": {
+    "familiesExamined": 20,
+    "sourceBoundProposals": 11,
+    "bilingualProposedAnswerUnits": 22,
+    "specialistHolds": 9,
+    "humanCertified": 0
+  },
+  "sourceIntegrity": {
+    "originalEnglishChanoineSourceBlocked": true,
+    "originalEnglishReconstructed": false,
+    "allProposalsEditorialParaphrase": true,
+    "posthumousDocumentsNotAttributedToLefebvre": true
+  },
+  "nextQueue": [
+    "CSE111–120: triage against source and earlier research",
+    "CSE094–097: clinical ethics specialist review; retain CSE096/097 prior repairs",
+    "CSE100: child-safeguarding specialist review",
+    "CSE110: frozen embryo unresolved disposition specialist review",
+    "Human bilingual/source/voice review of CSE091–110 proposals"
+  ],
+  "approvalsChanged": false
+}
