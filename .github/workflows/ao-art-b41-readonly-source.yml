@@ -1,0 +1,20 @@
+name: B41 Sacred Art verified source coverage closeout (read-only)
+on:
+  push:
+    branches: [research/sacred-art-b41-institution-exact-image-recovery-20261024]
+    paths: [.github/workflows/ao-art-b41-readonly-source.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b41-institution-exact-image-recovery-20261024
+      - name: B40 frozen 383 artwork predecessor checks
+        run: node tests/sacred-art-b40-complete-source-coverage-integrity.mjs
+      - name: B41 26 case source/rights/full-object count check
+        run: node tests/sacred-art-b41-source-coverage-integrity.mjs
