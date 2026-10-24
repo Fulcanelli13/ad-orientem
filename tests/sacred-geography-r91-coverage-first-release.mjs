@@ -19,7 +19,7 @@ assert.equal(r91.published_new.length,12);
 assert.equal(r91.country_areas_added.length,12);
 assert.equal(new Set(r91.published_new.map(x=>x.country)).size,12);
 assert.equal(geo.places.length,LIVE.places);
-assert.equal(geo.geoAreas.length,LIVE.unlinked+r91.country_areas_added.length+r92.country_areas_added.length+r93.country_areas_added.length);
+assert.equal(geo.geoAreas.length,LIVE.areas);
 assert.equal(sources.sources.length,LIVE.sources);
 assert.equal(new Set(geo.places.map(x=>x.place_id)).size,geo.places.length);
 assert.equal(new Set(sources.sources.map(x=>x.id)).size,sources.sources.length);
