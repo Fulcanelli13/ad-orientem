@@ -15,7 +15,7 @@ const h=read("data/explore/heritage-place-reconciliation.review.v1.json");
 const m=read("data/geography/research/sacred-geography-r75-essential-sites.v1.json");
 assert.equal(m.schema,"AO_SACRED_GEOGRAPHY_R75_ESSENTIAL_SITES_V1");
 assert.deepEqual([m.published_new.length,m.existing_confirmed.length,m.held.length],[4,4,2]);
-assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[353,257,240,639]);
+assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[356,257,240,647]);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.equal(r.candidates.length,750);
@@ -53,7 +53,7 @@ for(const entry of m.existing_confirmed){
 }
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0248")?.status,"UNMATCHED");
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0746")?.status,"TEXT_HINT_REVIEW");
-assert.equal(h.place_crosswalk.length,353);
+assert.equal(h.place_crosswalk.length,356);
 assert.equal(exploreMapFeatures(projected.byLens.shrines).length,257);
 assert.equal(exploreMapFeatures(projected.byLens.pilgrimages).length,240);
 console.log("PASS R75: four sourced physical pilgrimage Places, four canonical research reuses and 750 research candidates intact");
