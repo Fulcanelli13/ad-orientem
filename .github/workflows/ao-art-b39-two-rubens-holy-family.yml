@@ -1,0 +1,62 @@
+name: B39 two distinct Rubens Holy Family provenance-hold source originals (draft archive)
+on:
+  push:
+    branches: [research/sacred-art-b39-27-object-photo-evidence-and-commons-20261024]
+    paths: [.github/workflows/ao-art-b39-two-rubens-holy-family.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b39-holy-family-originals-one-time
+  cancel-in-progress: false
+jobs:
+  research-archive-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b39-27-object-photo-evidence-and-commons-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate source identity holds and predecessor immutable counts
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python -m py_compile scripts/research/sacred_art_b39_two_rubens_holy_family.py
+          node tests/sacred-art-b38-evidence-holds.mjs
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('data/research/sacred-art-b39-two-distinct-rubens-holy-family-commons-leads.json').read_text())
+          assert len(j['cases'])==1 and len(j['exact_photo_leads'])==2
+          assert j['source_photos_selected']==0 and j['publication_rights_approved']==0
+          assert all(not x['closing_gap_if_downloaded'] for x in j['exact_photo_leads'])
+          assert j['cases'][0]['publication_approved'] is False
+          assert {(r['expected_width'],r['expected_height']) for r in j['exact_photo_leads']}=={(1000,1316),(645,800)}
+          PY
+      - name: Acquire two distinct exact Commons research paintings with holds
+        run: python scripts/research/sacred_art_b39_two_rubens_holy_family.py
+      - name: Mandatory unpublished Release, remote image/checksum verification
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py --wave b39-holy-family --source-dir artifacts/b39-holy-family-two-identity-hold-sources
+      - name: Commit compact results without original binaries or app alterations
+        run: |
+          set -euo pipefail
+          cp artifacts/b39-holy-family-two-identity-hold-sources/source-results.csv data/research/sacred-art-b39-two-commons-source-results.csv
+          cp artifacts/b39-holy-family-two-identity-hold-sources/source-summary.json data/research/sacred-art-b39-two-commons-source-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b39-two-commons-source-results.csv data/research/sacred-art-b39-two-commons-source-summary.json
+          git commit -m 'research: B39 two distinct candidate painting bytes with source holds and SHA verified draft archive'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b39-27-object-photo-evidence-and-commons-20261024
+            git rebase origin/research/sacred-art-b39-27-object-photo-evidence-and-commons-20261024
+            git push origin HEAD:research/sacred-art-b39-27-object-photo-evidence-and-commons-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
