@@ -56,7 +56,7 @@ const diag=await runP56(['--hardware'],{
 });
 assert.equal(diag.mode,'hardware');
 assert.equal(diag.networkCalls,0);
-assert.equal(diag.published,false,undefined); // no fake production readiness assertion
+assert.equal(diag.publicationApproved,false); // no fake production readiness assertion
 assert.equal(pilotPerformanceGate(14999),'INTERACTIVE_CANDIDATE_NEEDS_MORE_TESTING');
 assert.equal(pilotPerformanceGate(15001),'SLOW_PRIVATE_PREVIEW_ONLY');
 assert.equal(pilotPerformanceGate(45001),'TOO_SLOW_FOR_LIVE_VISITOR_EXPERIENCE');
