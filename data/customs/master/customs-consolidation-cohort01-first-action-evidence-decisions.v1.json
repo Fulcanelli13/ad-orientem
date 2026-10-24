@@ -3,10 +3,10 @@
   "as_of": "2026-10-24",
   "purpose": "Convert high-priority source labels to sourced action-level editorial decisions without creating canonical IDs or publishing to Calendar. Existing 38 main customs, their statuses and calendar mechanics are unchanged.",
   "method_limits": [
-    "First witness is a searchable transcription of the 1958 Weiser book rather than a freshly inspected original page image; page offsets are therefore provisional and must be checked against original facsimile.",
-    "Modern diocese/parish guidance and CatholicCulture republications support practice/ritual distinction but do not prove independent nineteenth-century witnesses.",
-    "Do not reproduce full copyrighted source passages. All reader-facing prose below is newly authored and provisional.",
-    "These are two evidence-supported action-level candidates, not approved additions, rites, liturgical obligations, or published Calendar events."
+    "First Weiser witness has now been inspected in the original 1958 facsimile scan (not merely a secondary transcription); exact printed pages and corresponding scanned PDF zero-based page indices are recorded below.",
+    "A second source demonstrating historical ritual text, institutional or later pastoral scope is not automatically an independent witness of each older local practice.",
+    "All bilingual wording is original draft copy, not a reproduction of lengthy copyrighted passages; no approved Calendar copy or new rite.",
+    "Publication remains blocked by ritual authority, identity, editorial and Calendar gates, independently of successful facsimile page verification."
   ],
   "existing_main_baseline": {
     "canonical_main_customs_count": 38,
@@ -23,32 +23,47 @@
     "main_editorial_signoff": "data/customs/editorial-final-acceptance.v1.json@main; 35 statuses PENDING at access"
   },
   "page_locator_quality_hold": {
-    "transcription_url": "https://pdfcoffee.com/handbook-of-christian-feasts-and-customs-pdf-free.html",
-    "edition_identification": "Francis X. Weiser, Handbook of Christian Feasts and Customs, Harcourt Brace, 1958 (as identified in transcription front matter)",
+    "original_facsimile_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+    "resolution": "Prior transcription-driven mismatch claims were false or imprecise; original 1958 printed folios supersede those guesses.",
+    "rescinded_transcription_discrepancies": [
+      {
+        "provisional_group_id": "CAT-WEISER-A-089",
+        "original_queue_page": 150,
+        "previous_wrong_claim": 119,
+        "verified_original_first_passage_printed_page": 149,
+        "pdf_zero_index": 166,
+        "result": "ONE_PAGE_QUEUE_LOCATOR_CORRECTION_REQUIRED",
+        "detail": "Epiphany BLESSING OF HOMES on printed p149; printed p150 opens FOLKLORE."
+      },
+      {
+        "provisional_group_id": "CAT-WEISER-B-025",
+        "original_queue_page": 217,
+        "previous_wrong_claim": 226,
+        "verified_original_printed_page": 217,
+        "pdf_zero_index": 234,
+        "result": "QUEUE_217_CORRECT",
+        "detail": "Lantern passage visible on printed p217; p226 contains endnotes."
+      },
+      {
+        "provisional_group_id": "CAT-WEISER-A-024",
+        "original_queue_page": 56,
+        "previous_wrong_claim": 45,
+        "verified_original_printed_pages": "55–56",
+        "pdf_zero_index_first": 72,
+        "result": "QUEUE_56_VALID_CONTINUATION",
+        "detail": "Children's letters starts on p55 and continues on p56; p45 was an incorrect transcription-based inference."
+      }
+    ],
     "discrepancies": [
       {
         "provisional_group_id": "CAT-WEISER-A-089",
         "queue_claimed_printed_page": 150,
-        "transcription_printed_page_indication": 119,
-        "action_anchor": "BLESSING OF HOMES",
-        "inspection_status": "TEXT_TRANSCRIPTION_ONLY_ORIGINAL_FACSIMILE_PENDING"
-      },
-      {
-        "provisional_group_id": "CAT-WEISER-B-025",
-        "queue_claimed_printed_page": 217,
-        "transcription_printed_page_indication": 226,
-        "action_anchor": "FOLKLORE / flames of blessed fire in lanterns",
-        "inspection_status": "TEXT_TRANSCRIPTION_ONLY_ORIGINAL_FACSIMILE_PENDING"
-      },
-      {
-        "provisional_group_id": "CAT-WEISER-A-024",
-        "queue_claimed_printed_page": 56,
-        "transcription_printed_page_indication": 45,
-        "action_anchor": "CHILDREN'S LETTERS / St Nicholas Eve",
-        "inspection_status": "TEXT_TRANSCRIPTION_ONLY_ORIGINAL_FACSIMILE_PENDING"
+        "original_facsimile_first_passage_page": 149,
+        "inspection_status": "ORIGINAL_1958_FACSIMILE_CONFIRMED",
+        "remediation": "Adjust exact passage citation to printed p149; preserve earlier queue p150 as audit history."
       }
     ],
-    "disposition": "DO_NOT_USE_EXISTING_QUEUE_SOURCE_PAGE_AS_APPROVED_CITATION_UNTIL_EDITION_AND_ORIGINAL_PAGE_IMAGE_RECONCILED"
+    "facsimile_image_reviews_complete_for_three": 3
   },
   "records": [
     {
@@ -70,11 +85,11 @@
       },
       "sources": [
         {
-          "url": "https://pdfcoffee.com/handbook-of-christian-feasts-and-customs-pdf-free.html",
-          "type": "WEISER_1958_TEXT_TRANSCRIPTION",
-          "where": "Epiphany / BLESSING OF HOMES / indicated printed p.119",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "type": "WEISER_1958_ORIGINAL_FACSIMILE_IMAGE",
+          "where": "Original printed p149, PDF zero-index 166; Blessing of Homes",
           "finding": "Describes a pastor giving the blessing, including Magnificat, sprinkling, incensing, prayers and chalk",
-          "independence": "FIRST_WITNESS_TRANSCRIPTION_ONLY"
+          "independence": "WEISER_ORIGINAL_1958_WITNESS_ONLY"
         },
         {
           "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1336",
@@ -104,11 +119,13 @@
       "suggested_prayer_owner": "Reference the authoritative historical Ritual only after rubric/text rights and 1962 applicability are confirmed; do not fabricate domestic priestly formulas.",
       "research_disposition": "EVIDENCE_SUPPORTED_DISTINCT_ACTION_CANDIDATE",
       "publication_state": "RESEARCH_ONLY",
-      "original_page_facsimile_checked": false,
+      "original_page_facsimile_checked": true,
       "final_priestly_rubric_1962_checked": false,
       "canonical_id_approved": false,
       "copy_approved": false,
-      "calendar_mapping_approved": false
+      "calendar_mapping_approved": false,
+      "first_weiser_printed_folio": 149,
+      "original_facsimile_pdf_zero_based_page": 166
     },
     {
       "provisional_group_id": "CAT-WEISER-B-025",
@@ -128,11 +145,11 @@
       },
       "sources": [
         {
-          "url": "https://pdfcoffee.com/handbook-of-christian-feasts-and-customs-pdf-free.html",
-          "type": "WEISER_1958_TEXT_TRANSCRIPTION",
-          "where": "Easter Vigil / FOLKLORE / indicated printed p.226",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "type": "WEISER_1958_ORIGINAL_FACSIMILE_IMAGE",
+          "where": "Original printed p217, PDF zero-index 234; Easter Vigil blessed fire carried in lanterns",
           "finding": "Describes taking blessed-fire flames home in lanterns and lighting a vigil lamp",
-          "independence": "FIRST_WITNESS_TRANSCRIPTION_ONLY"
+          "independence": "WEISER_ORIGINAL_1958_WITNESS_ONLY"
         },
         {
           "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=574",
@@ -162,20 +179,23 @@
       "draft_fr": "Dans certaines régions catholiques d'Europe, les familles rapportent chez elles la lumière de Pâques après la Vigile, autrefois dans une lanterne protégée, afin d'allumer une lampe près du crucifix. Ce geste rappelle le Christ ressuscité, Lumière du monde. Il s'agit d'une coutume familiale, et non d'un rite supplémentaire de la messe ; elle dépend des usages paroissiaux et des règles de sécurité.",
       "research_disposition": "EVIDENCE_SUPPORTED_DISTINCT_ACTION_CANDIDATE",
       "publication_state": "RESEARCH_ONLY",
-      "original_page_facsimile_checked": false,
+      "original_page_facsimile_checked": true,
       "historical_source_independence_verified": false,
       "canonical_id_approved": false,
       "copy_approved": false,
-      "calendar_mapping_approved": false
+      "calendar_mapping_approved": false,
+      "first_weiser_printed_folio": 217,
+      "original_facsimile_pdf_zero_based_page": 234
     }
   ],
   "summary": {
     "records_action_reviewed": 2,
     "provisional_distinct_action_candidates": 2,
     "existing_main_merges": 0,
-    "page_pointer_discrepancies_found": 3,
-    "facsimile_reviews_complete": 0,
+    "page_pointer_discrepancies_found": 1,
+    "facsimile_reviews_complete": 2,
     "new_canonical_ids": 0,
-    "new_publications": 0
+    "new_publications": 0,
+    "previous_transcription_page_claims_retracted": 3
   }
 }
