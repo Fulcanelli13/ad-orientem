@@ -121,6 +121,21 @@ try{
  assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),3);
  assert.equal(await page.locator('[data-full-mass-reader-mode][value="LIVE"]').isChecked(),true);
  assert.equal(await page.locator(".aoGuidedMassFolio").count(),1,"One Guided Folio");
+ // The quiet three-choice overview is a view of the existing form inputs,
+ // not new shadow state or a second Start Mass action.
+ await page.locator("[data-folio-overview-button]").click();
+ assert.equal(await page.locator(".aoGuidedMassFolio").getAttribute("data-ao-folio-view"),"overview");
+ assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioQuickRow").count(),3);
+ assert.match(await page.locator("[data-folio-quick-mass-value]").innerText(),/Mass|Sunday|Rosary/i);
+ assert.match(await page.locator("[data-folio-quick-reader-value]").innerText(),/LIVE/);
+ for(const stage of ["reader","ceremony","celebration"]){
+  await page.locator('.aoMassFolioQuickChoices [data-folio-goto="'+stage+'"]').click();
+  assert.equal(await page.locator(".aoGuidedMassFolio").getAttribute("data-ao-folio-view"),stage);
+  assert.equal(await page.locator('[data-folio-panel="'+stage+'"]').isVisible(),true);
+  await page.locator("[data-folio-overview-button]").click();
+ }
+ assert.equal(await page.locator("[data-full-mass-form]").count(),4,"Canonical form controls cloned or removed");
+ assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),3,"Canonical reader controls cloned or removed");
  await page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]').click();
  for(const mode of ["MISSAL","SIMPLE","LIVE"]){
   await page.locator('[data-full-mass-reader-mode][value="'+mode+'"]').check();
