@@ -63,16 +63,19 @@ def build(html):
     historic_index = {r["answerTurnId"]: r for r in historical["answerEvidence"]}
     witness = source_rows(html)
     family_sources = {}
+    loaded_owner_paths = set()
     for row in historical["answerEvidence"]:
         if row["turnIndex"] != 1:
             continue
         path = row["originalAnswerOwner"]["path"]
-        if path not in family_sources:
+        if path not in loaded_owner_paths:
+            loaded_owner_paths.add(path)
             content = json.loads(Path(path).read_text())
             for fam in content["records"]:
                 if fam["id"] in family_sources:
                     raise ValueError("Owner source family duplicated")
                 family_sources[fam["id"]] = fam
+    assert len(loaded_owner_paths) == 10, len(loaded_owner_paths)
     assert len(family_sources) == 100, len(family_sources)
 
     records, mismatch = [], []
