@@ -87,7 +87,7 @@ for(const width of [1280,390]){
  await unit.locator('textarea').fill('Research proposal: reconsider the present-day-law caveat.');
  const wait=page.waitForEvent('download');
  await page.locator('#download').click();
- assert.equal((await wait).suggestedFilename(),'SPX_P34_Provisional_Annotations.json');
+ assert.equal((await wait).suggestedFilename(),'SPX_P35_Provisional_Annotations.json');
  await ctx.close();
 }
 await browser.close();
