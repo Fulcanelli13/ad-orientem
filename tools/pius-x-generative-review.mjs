@@ -79,7 +79,7 @@ export function selectDocumentedFollowups(store,{chapterId,nodeId,language}={}){
   return [];
  const start=chapter.nodes.findIndex(n=>n.id===nodeId);
  if(start<0)return [];
- const remaining=[...chapter.nodes.slice(start+1),...chapter.nodes.slice(0,start)];
+ const remaining=chapter.nodes.slice(start+1); // no automatic looping to a previous answer
  const selected=[];
  for(const node of remaining){
   if(selected.length>=2)break;
