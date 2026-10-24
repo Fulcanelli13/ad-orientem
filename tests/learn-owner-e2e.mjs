@@ -185,7 +185,8 @@ try{
   // Collapsed section-index buttons are non-rendered; also audit their actual
   // hitboxes when the user opens that menu, rather than counting them as 0px.
   const formationNavToggle=page.locator('#ao-learn-modular-root [data-ao-fnav-action="toggle"]');
-  if(await formationNavToggle.count()){
+  // The section index belongs inside Formation readers, not on the landing hub.
+  if(await formationNavToggle.count()&&await formationNavToggle.isVisible()){
     await formationNavToggle.tap();
     const openIndexTargets=await page.locator('#ao-learn-modular-root .aoFNavMenu:not([hidden]) [data-ao-fnav-go]').evaluateAll(nodes=>
       nodes.map(node=>{const r=node.getBoundingClientRect();return {w:r.width,h:r.height,label:node.textContent?.trim().slice(0,65)}}));
