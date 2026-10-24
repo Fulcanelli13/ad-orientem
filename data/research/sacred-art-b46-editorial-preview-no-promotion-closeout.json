@@ -1,0 +1,98 @@
+{
+  "schema": "AO_B46_383_EDITORIAL_GALLERY_NO_PROMOTION_CLOSEOUT_V1",
+  "date": "2026-10-24",
+  "parent_pr": 1609,
+  "active_frozen_artworks": 383,
+  "previous_with_some_source": 360,
+  "previous_with_complete_object_source": 358,
+  "remaining_source_gaps": 25,
+  "existing_frozen_artworks_changed": 0,
+  "new_original_images_archived": 0,
+  "new_original_image_bytes": 0,
+  "previous_cumulative_images": 122,
+  "previous_cumulative_image_bytes": 710773181,
+  "frozen_complete_source_gaps_closed": 0,
+  "editorial_approvals": 0,
+  "app_publication_approvals": 0,
+  "distinct_alternative_and_same_title_object_candidates": 6,
+  "existing_distinct_CMA_CCO_works": 3,
+  "existing_distinct_Met_public_domain_works": 2,
+  "existing_unselected_KMSKA_CC0_same_title_artist_candidate": 1,
+  "five_distinct_frozen_target_IDs": 5,
+  "gallery_filters": {
+    "shortlist": 3,
+    "contextual": 2,
+    "hold": 1
+  },
+  "preview_file": "previews/sacred-art-b46-cc0-editorial-gallery.html",
+  "source_image_reuse_claim": "Five alternative/one Rubens KMSKA artwork image source images are CC0/public domain per their museum source evidence; selection, frozen identity and artwork suitability remain separate review gates.",
+  "special_cautions": [
+    "Byzantine New Testament Trinity has Orthodox devotional/templon context, not default Latin Catholic primary hero.",
+    "Rubens KMSKA 314 has exact title/artist but not frozen record accession; refrain from promoting as previously intended original without editorial review.",
+    "Trevisani Holy Family, Bastien-Lepage Joan, Augustinian Bruges altarpiece, and Marmion Saint Denis are distinct objects, not exact substitutes for the previously frozen artworks.",
+    "Image previews use external museum and Commons links; single-file HTML does not include or publish original photo bytes. All original images already exist in earlier unpublished draft Releases."
+  ],
+  "strictly_zero_euro": true,
+  "preserve_frozen_451_artwork_ids": true,
+  "production_untouched": true,
+  "issue_870_branch_hygiene_guard_not_bypassed": true,
+  "preview_approval_buttons_present": false,
+  "preview_local_github_mutation_possible": false,
+  "data_path": "data/research/sacred-art-b46-six-cc0-comparison-review.json",
+  "candidates": [
+    {
+      "id": "KMSKA-314",
+      "target_id": "ART-eter-aul-ubens-he-oly-rinity",
+      "tier": "shortlist",
+      "museum_url": "https://vlaamsekunstcollectie.be/en/collection/314",
+      "owner_rights_evidence": "Owner collection labels image CC0",
+      "archive_sha": "cd3477e583cf55ca2bd651aad191b916ec84a4af73b3ed36dc7e4e48b9c0ef38",
+      "editorial_approved": false
+    },
+    {
+      "id": "MET-435621",
+      "target_id": "G26-007",
+      "tier": "shortlist",
+      "museum_url": "https://www.metmuseum.org/art/collection/search/435621",
+      "owner_rights_evidence": "Met original marked public domain (Open Access)",
+      "archive_sha": "f3449f53ed30246749d4cd59495747631ffe34de7eb17d43db67e87f53d52304",
+      "editorial_approved": false
+    },
+    {
+      "id": "CMA-1974.108",
+      "target_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "tier": "shortlist",
+      "museum_url": "https://www.clevelandart.org/art/1974.108",
+      "owner_rights_evidence": "CMA object image explicitly CC0",
+      "archive_sha": "2e20f08d7bf9e377baba6a04b6e7dfe34b4c4017d10a875de2fb09bffdf0dac0",
+      "editorial_approved": false
+    },
+    {
+      "id": "MET-471903",
+      "target_id": "G25-003",
+      "tier": "contextual",
+      "museum_url": "https://www.metmuseum.org/art/collection/search/471903",
+      "owner_rights_evidence": "Met original marked public domain (Open Access)",
+      "archive_sha": "8b8b5e5f5ce9a363f7c89e7ca769704b0e743671cd2117226668f14f26f06578",
+      "editorial_approved": false
+    },
+    {
+      "id": "CMA-2005.55",
+      "target_id": "G17-009",
+      "tier": "contextual",
+      "museum_url": "https://www.clevelandart.org/art/2005.55",
+      "owner_rights_evidence": "CMA object image explicitly CC0",
+      "archive_sha": "0dbe6f7d83c9e799e4f15396fa2f0ad5c4f5efdd4369a2be61c1a9b3a1248078",
+      "editorial_approved": false
+    },
+    {
+      "id": "CMA-2016.32",
+      "target_id": "ART-eter-aul-ubens-he-oly-rinity",
+      "tier": "hold",
+      "museum_url": "https://www.clevelandart.org/art/2016.32",
+      "owner_rights_evidence": "CMA object image explicitly CC0",
+      "archive_sha": "d33f8ba563c12b0fe53976a9e7b28ea9354aaadb5008aec67cc618754118c32f",
+      "editorial_approved": false
+    }
+  ]
+}
