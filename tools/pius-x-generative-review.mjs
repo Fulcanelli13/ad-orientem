@@ -258,8 +258,14 @@ export function configuredModel(env=process.env,fetchModel=fetch){
  const loopback=['localhost','127.0.0.1','[::1]'].includes(url.hostname);
  if(url.protocol!=='https:'&&!(url.protocol==='http:'&&loopback))
   throw new Error('Model endpoint must be HTTPS or localhost HTTP');
+ // A CPU-only LOCAL smoke test may need longer than the ordinary private
+ // 20-second response budget. Never let remote HTTPS endpoints inherit this
+ // diagnostic override or allow unbounded runner waits.
+ const configuredTimeout=loopback?Number(env.AO_SPX_MODEL_TIMEOUT_MS):NaN;
+ const timeoutMs=Number.isSafeInteger(configuredTimeout)&&configuredTimeout>=20000&&
+  configuredTimeout<=180000?configuredTimeout:20000;
  return async(purpose,messages)=>{
-  const control=new AbortController(),timer=setTimeout(()=>control.abort(),20000);
+  const control=new AbortController(),timer=setTimeout(()=>control.abort(),timeoutMs);
   try{
    const r=await fetchModel(url,{method:'POST',signal:control.signal,
     headers:{'content-type':'application/json',...(env.AO_SPX_MODEL_KEY?{authorization:'Bearer '+env.AO_SPX_MODEL_KEY}:{})},
