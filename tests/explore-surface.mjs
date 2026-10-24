@@ -188,7 +188,7 @@ assert.match(shrineHtml,/AD ORIENTEM · EXPLORE/);
 assert.match(shrineHtml,/<h1>Shrines<\/h1>/,"R53 gives the active Explore section its own heading");
 assert.match(shrineHtml,/data-find-filter="lens"/);
 assert.match(shrineHtml,/Shrines/);
-assert.match(shrineHtml,/Traditions/);
+assert.doesNotMatch(shrineHtml,/data-find-filter-value="traditions"/,"Shrine navigation must not advertise retired Customs Atlas");
 assert.match(shrineHtml,/Pilgrimages/);
 assert.match(shrineHtml,/Sanctuaire Notre-Dame de Lourdes/);
 assert.match(shrineHtml,/Official Sanctuary|OFFICIAL SANCTUARY/);
