@@ -50,3 +50,12 @@ This first P1 patch is a **foundation and scoped mobile migration**, not the ent
 - These are *visual-only styles*. The Formation subject and text routes, Settings preference controls and persistence, and Explore mapping/geolocation/evidence workflows were not replaced or reordered.
 - Deliberately retained existing five-slot ribbon architecture (Today, Mass, Pray, Formation, Explore), with Settings as a utility overlay, pending separate explicit navigation acceptance. The illustrative five-tab concept would substitute Settings for Mass; do not silently change the approved live navigation contract during palette migration.
 - Acceptance pending: screenshot comparison for Formation/Settings/Explore at phone and desktop widths; map and sheet layout, French string lengths, reader/shell regressions, and baseline contrast.
+
+## 24 Oct continuation: phone/tablet visual-acceptance instrumentation
+- Current latest completed baseline before this continuation: 26/28 active CI checks passed. The other two failed because Mass E2E clicked a now-hidden overview tab, and Pray catalogue tap was intercepted by the persistent five-tab ribbon. These failures were examined from the exact Actions logs.
+- Fixed the Mass test to use the **visible** quick-choice row on overview. Existing stage-to-stage navigation remains independently exercised.
+- Pray expanded catalogue has `scroll-padding-bottom`, per-family `scroll-margin-bottom` and extra end runway relative to the real ribbon height; the route-owner test performs centered scroll before touch activation. No duplicate routes or separate owners are introduced.
+- Extended shared Explore chrome to the real default **sacred-places map** header, without altering geometry, map controls or provenance.
+- Expanded `tests/nonmass-phone-readability.mjs` into a **real-browser visual QA collector**. It captures Today, Formation and Pray at 390/768px, and Settings and primary Explore map at 390/768px, in addition to existing Formation/Pray captures at 320/430. It asserts computed neutral surface palette, row/label dimensions, map header clipping and horizontal overflow.
+- Screenshots are uploaded by the existing `nonmass-phone-readability.yml` workflow to its limited-retention Actions artifact. They are acceptance evidence, not the permanent art archive.
+- **Not yet accepted:** complete current CI, actual visual review of screenshots, 200% text scale, French overflow and desktop screenshot parity. Retain draft status.
