@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>St Pius X · Source & translation review · 100 openings</title>
+<style>
+:root{color-scheme:dark;background:#0a0e14;color:#e7dbc6;font:13px/1.55 system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;padding:0 22px 70px}h1,h2,h3{font-family:Georgia,"Palatino Linotype",serif;font-weight:normal}
+h1{font-size:31px;margin:4px 0 10px}h2{font-size:23px}h3{font-size:16px}
+header{max-width:1460px;margin:auto;border-bottom:1px solid #62543c;padding:27px 0 18px}
+.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#b29b78}
+.dim{color:#b8a990}.notice{border-left:3px solid #a98b60;background:#121923;padding:12px 17px;max-width:1120px}
+main{max-width:1460px;margin:22px auto;display:grid;grid-template-columns:300px minmax(0,1fr);gap:22px}
+nav{position:sticky;top:10px;max-height:95vh;overflow:auto;padding-right:13px;border-right:1px solid #514638}
+.filters{display:grid;gap:8px;padding-bottom:12px;background:#0a0e14;position:sticky;top:0}
+input,select,textarea,button{background:#131a23;border:1px solid #63543f;border-radius:3px;color:#e4d6c1;padding:9px;font:12px/1.5 system-ui,sans-serif}
+input,select,textarea{width:100%}button{cursor:pointer}button:hover,button:focus-visible{border-color:#d4b986}
+#items button{display:block;text-align:left;width:100%;margin:5px 0}
+#items button[aria-current="true"]{border-color:#d8b781;background:#2a2927}
+article{min-width:0}.status{font-size:11px;letter-spacing:.06em;color:#c4aa7a}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}.tags span{padding:3px 7px;border:1px solid #78684e;font-size:10px}
+.witness{padding:14px 16px;margin:14px 0;background:#141b24;border-left:2px solid #c1a472}
+.witness .original{font:italic 17px/1.55 "Palatino Linotype",Georgia,serif}
+.columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.box{padding:13px;background:#11171f;border:1px solid #514638;min-width:0}
+.box p{font:16px/1.6 "Palatino Linotype",Georgia,serif;overflow-wrap:anywhere}
+.box label{font-size:11px;color:#c5ae84}
+.unit{border-top:1px solid #62513a;padding:18px 0}.unit h4{font-size:11px;font-weight:normal;color:#c4a77a}
+.inputrow{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:12px 0}
+.inputrow label{display:block;font-size:11px;color:#c8ad83}.inputrow select{display:block;width:100%;margin-top:4px}
+.inputrow textarea{min-height:90px}
+#download{padding:12px 16px;margin:18px 0}.footer{font-size:11px;color:#aa9c87}
+a{color:#d6b480}a:hover{text-decoration:underline}
+@media(max-width:850px){main{display:block}nav{position:static;max-height:330px;border:1px solid #514638;padding:10px;margin-bottom:20px}
+.columns,.inputrow{grid-template-columns:1fr}body{padding:0 13px 50px}}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">Ad Orientem · St Pius X · private documentary research</div>
+<h1>One hundred openings — Italian sources and bilingual editorial drafts</h1>
+<p class="dim">Source text first. No presumed quotations, theological approval or generated papal replies.</p>
+<div class="notice"><strong>Historical evidence limitation.</strong> The original Italian texts are from a digital transcription of a papally prescribed 1905 Catechism, not verified personal speech or independently collated print facsimile. English/French sentences below are unapproved editorial adaptations. Any current-discipline caveat must be distinguished from the text's historical teaching.</div>
+</header>
+<main>
+<nav aria-label="Review questions">
+<div class="filters">
+<input id="query" placeholder="Search question or QID" aria-label="Search"/>
+<select id="lane" aria-label="Review lane"><option value="">All review lanes</option>
+<option value="HISTORICAL_PASTORAL_HOLD">Historical or pastoral holds</option>
+<option value="SOURCE_TRANSLATION_REVIEW">Source and translation</option>
+<option value="PRECISION_REWRITE_REVIEW">Precision rewrite</option></select>
+<select id="flag" aria-label="Review priority"><option value="">All source cases</option>
+<option value="COMPOSITE_SOURCE_ARGUMENT">Composite answers</option>
+<option value="ITALIAN_QUESTION_TRANSCRIPTION_VARIANT">Italian transcription variants</option>
+<option value="EDITORIAL_PERIOD_CONTEXT">Period commentary</option></select>
+<div id="counter" class="dim"></div>
+</div><div id="items"></div>
+</nav>
+<article>
+<div id="detail"></div>
+<button id="download" type="button">Export provisional reviewer annotations (JSON)</button>
+<div class="footer">Annotations are held only in this open page until exported. The export marks them as reviewer-proposed, not a publication sign-off. No external network requests or model inference.</div>
+</article>
+</main>
+<script type="application/json" id="evidence">__DOCUMENTARY_REVIEW_DATA__</script>
+<script>
+(()=>{
+"use strict";
+const data=JSON.parse(document.getElementById("evidence").textContent);
+if(data.schema!=="AO_SPX_P34_ITALIAN_EN_FR_CLAIM_REVIEW_PACKET_V1"||data.counts.openingCases!==100||data.approvals.humanApprovals!==0)
+ throw Error("Source review input invalid");
+const get=id=>document.getElementById(id);
+const element=(tag,content,parent,cls)=>{
+ const n=document.createElement(tag);
+ if(content!==null)n.textContent=content;
+ if(cls)n.className=cls;
+ parent.append(n);return n;
+};
+const decisions={},cases=data.records;let current=null;
+function filtered(){
+ const text=get("query").value.trim().toLocaleLowerCase();
+ return cases.filter(r=>
+  (!text||[r.sourceQid,r.turnId,r.question.en,r.question.fr].join(" ").toLocaleLowerCase().includes(text))&&
+  (!get("lane").value||r.triageLane===get("lane").value)&&
+  (!get("flag").value||r.reviewFlags.some(x=>x.includes(get("flag").value))));
+}
+function refresh(){
+ const list=get("items");list.replaceChildren();
+ const matches=filtered();get("counter").textContent=matches.length+" of 100 cases shown";
+ for(const r of matches){
+  const b=element("button",r.sourceQid+" — "+r.question.en,list);
+  b.type="button";b.setAttribute("aria-current",String(r.turnId===current));
+  b.onclick=()=>show(r);
+ }
+}
+function show(r){
+ current=r.turnId;refresh();const root=get("detail");root.replaceChildren();
+ element("div",r.sourceQid+" · "+r.triageLane,root,"status");
+ element("h2",r.question.en,root);
+ element("p",r.question.fr,root,"dim");
+ const tags=element("div",null,root,"tags");
+ for(const flag of r.reviewFlags)element("span",flag.replaceAll("_"," "),tags);
+ element("h3","Original Italian question and answer",root);
+ for(const w of r.italianSourceWitnesses){
+  const card=element("section",null,root,"witness");
+  element("div",w.qid+" · 1905 Catechism editorial locator",card,"status");
+  element("p","D. "+w.italianQuestion,card,"original");
+  element("p","R. "+w.italianAnswer,card,"original");
+  const a=element("a","Open Museo San Pio X source",card);
+  a.href=r.sourceUrl;a.rel="noopener noreferrer";a.target="_blank";
+ }
+ element("h3","Editorial translations: not yet checked against the original",root);
+ const pair=element("div",null,root,"columns");
+ for(const [lang,text] of [["English",r.enDraft],["French",r.frDraft]]){
+  const col=element("section",null,pair,"box");element("label",lang+" · editorial adaptation",col);
+  element("p",text,col);
+ }
+ element("h3","Sentence-level documentary comparison",root);
+ element("p","The English and French sentences are aligned by position only. Select a proposed verdict after comparing the Italian sources above; none of these selections grants publication approval.",root,"dim");
+ for(const unit of r.clauses){
+  const section=element("section",null,root,"unit");
+  element("h4",unit.unitId+" · "+(unit.machineFlags.join(", ")||"No automatic cue"),section);
+  const two=element("div",null,section,"columns");
+  const en=element("div",null,two,"box");element("label","English",en);
+  element("p",unit.englishEditorialText||"—",en);
+  const fr=element("div",null,two,"box");element("label","French",fr);
+  element("p",unit.frenchEditorialText||"—",fr);
+  const form=element("div",null,section,"inputrow");
+  const l=element("label","Provisional source assessment",form);
+  const sel=element("select",null,l);
+  for(const value of ["PENDING","SOURCE_SUPPORTED_CANDIDATE","PARTIAL_SUPPORT_OR_EXTRA_CLAIM",
+     "NOT_SUPPORTED_BY_CITED_ITALIAN","NEEDS_DIFFERENT_ORIGINAL_SOURCE"]){
+   const opt=element("option",value.replaceAll("_"," "),sel);opt.value=value;
+  }
+  const noteLabel=element("label","Original text locus or concern",form);
+  const note=element("textarea",null,noteLabel);
+  note.placeholder="Specify Italian words, unsupported inference or translation uncertainty.";
+  const saved=decisions[unit.unitId]||{};
+  sel.value=saved.assessment||"PENDING";note.value=saved.note||"";
+  const update=()=>{
+   decisions[unit.unitId]={assessment:sel.value,note:note.value,
+    independentSignoff:false,doctrinalCertified:false,translationCertified:false,publicationApproved:false};
+  };
+  sel.onchange=update;note.oninput=update;
+ }
+}
+for(const id of ["query","lane","flag"])get(id).addEventListener("input",refresh);
+get("download").onclick=()=>{
+ const exportData={schema:"AO_SPX_P34_REVIEWER_PROPOSAL_NOT_APPROVAL_V1",
+  sourcePacketSchema:data.schema,exportedAt:new Date().toISOString(),
+  reviewerDecisionsUnapproved:true,annotations:decisions};
+ const url=URL.createObjectURL(new Blob([JSON.stringify(exportData,null,2)],{type:"application/json"}));
+ const a=document.createElement("a");a.href=url;a.download="SPX_P34_Provisional_Annotations.json";a.click();
+ URL.revokeObjectURL(url);
+};
+refresh();show(cases[0]);
+})();
+</script>
+</body></html>
