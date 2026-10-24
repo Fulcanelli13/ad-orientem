@@ -65,6 +65,23 @@ function createHarness({fr=false,alreadyLoaded=false}={}){
  assert.equal(h.timers.size,0);
  status.dispose();
 }
+// Style load is not the same thing as finished basemap tiles.
+{
+ const h=createHarness();
+ let tilesLoaded=false;
+ h.map.areTilesLoaded=()=>tilesLoaded;
+ const status=attachExploreMapStatus(h.container,h.map,{win:h.win,waitMs:50});
+ h.trigger("load");
+ assert.equal(status.status(),"loading",
+  "Remote tiles still pending: keep accessible loading state visible");
+ h.expire();
+ assert.equal(status.status(),"stalled","Unresolved tile fetch should disclose map delay");
+ assert.equal(h.container.nodes[0].removed,false);
+ tilesLoaded=true;h.trigger("idle");
+ assert.equal(status.status(),"ready","Late tile recovery must clear warning");
+ assert.equal(h.container.nodes[0].removed,true);
+ status.dispose();
+}
 // Keep import latency distinct from irrecoverable map failure: a slow CDN
 // cannot cause a late successful map to be destroyed.
 const ownerSource=readFileSync(new URL("../src/find/browser-entry.js",import.meta.url),"utf8");
