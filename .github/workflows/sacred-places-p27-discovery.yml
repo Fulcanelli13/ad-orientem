@@ -1,0 +1,32 @@
+name: Sacred Places P27 OSM discovery (research only)
+on:
+  pull_request:
+    paths:
+      - "data/geography/research/sacred-places-p27-osm-search-seeds.v1.json"
+      - "tools/geography/p27-overpass-candidate-discovery.mjs"
+      - ".github/workflows/sacred-places-p27-discovery.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tools/geography/p27-overpass-candidate-discovery.mjs --dry-run
+      - name: One bounded Overpass query (research only)
+        env:
+          AO_OVERPASS_ENDPOINT: https://overpass.kumi.systems/api/interpreter
+        run: node tools/geography/p27-overpass-candidate-discovery.mjs
+      - name: Preserve candidate output as temporary inspection artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-places-p27-unverified-osm-hits
+          path: /tmp/sacred-places-p27-osm-hits.json
+          if-no-files-found: ignore
+          retention-days: 7
