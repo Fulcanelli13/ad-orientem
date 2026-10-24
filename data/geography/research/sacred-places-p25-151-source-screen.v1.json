@@ -1,0 +1,4632 @@
+{
+  "schema": "AO_SACRED_PLACES_P25_151_REMAINING_SOURCE_SCREEN_V1",
+  "date": "2026-10-24",
+  "status": "RESEARCH_ONLY_NO_CANONICAL_RELEASE",
+  "baseline": {
+    "places": 387,
+    "sources": 685,
+    "prior_p21_first200": 200,
+    "prior_p21_source_reviewed": 49,
+    "prior_p21_unreviewed": 151,
+    "p20_bulk_routing": 500
+  },
+  "result": {
+    "remainder_in_priority_200": 151,
+    "additional_individually_source_excerpts_reviewed": 20,
+    "of_which_direct_church_source_or_civic_site": 18,
+    "secondary_only": 2,
+    "still_without_new_independent_source_excerpt": 131,
+    "now_source_excerpts_reviewed_in_first_200": 69,
+    "bulk_routing_rows": 500,
+    "protected_holds_carried_from_earlier": 16,
+    "canonical_new_places": 0,
+    "source_review_gate_distribution": {
+      "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED": 131,
+      "SITE_CATHOLIC_AUTHORITY": 17,
+      "CIVIC_EXACT_CATHOLIC_SITE": 1,
+      "SECONDARY_EXACT_CATHOLIC_CATALOGUE": 1,
+      "SECONDARY_DISCOVERY_ONLY": 1
+    },
+    "bulk_routing_gate_distribution": {
+      "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN": 431,
+      "ALREADY_REPRESENTED_DO_NOT_DUPLICATE": 27,
+      "SITE_CATHOLIC_AUTHORITY": 17,
+      "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT": 8,
+      "NON_CATHOLIC_OPERATING_SITE": 3,
+      "CATHOLIC_SITE_SOURCE_SUPPORTED": 2,
+      "INHERITED_SOURCE_NOT_SITE_SPECIFIC_REPLACE_REQUIRED": 2,
+      "MULTIPLE_CATHOLIC_SAME_TITLE_SITES_UNRESOLVED": 1,
+      "CIVIC_EXACT_CATHOLIC_SITE": 1,
+      "CULTURAL_MONUMENT_NOT_ACTIVE_CATHOLIC_SITE": 1,
+      "SECONDARY_EXACT_CATHOLIC_CATALOGUE": 1,
+      "SECONDARY_DISCOVERY_ONLY": 1,
+      "NEW_2026_CATHOLIC_BUILDING_SCOPE_SPLIT": 1,
+      "NON_CATHOLIC_OPERATING_SITE_REVIEW": 1,
+      "CANONICAL_PHYSICAL_REUSE_REVIEW": 1,
+      "CANONICAL_COMPLEX_REUSE_SUBSITE_REVIEW": 1,
+      "HISTORICAL_CATHOLIC_HERITAGE_NOT_ACTIVE_SITE": 1
+    },
+    "priority_countries": 96,
+    "queue_countries": 100
+  },
+  "provenance": [
+    "P20 750 frozen inventory and P20 500 lead source-acquisition queue",
+    "P21 200 priority research list and 49 first source excerpts",
+    "P22 ten new Places and P24 sixteen new Places; Covadonga P24 recognized as two existing physical IDs",
+    "Directly inspected 2026-10-24 institution/custodian/diocesan/civic web excerpts recorded per 20 new source review rows"
+  ],
+  "safety": [
+    "20 retrieved source excerpts establish Catholic affiliation and physical-site leads to varying strengths, NOT complete building-geometry or full-page audit.",
+    "Internal source link is sufficient; no outward card link, biography, photography, event schedule or typed source registry enrichment required at this stage.",
+    "The 151 rows all get explicit status, but only 20 are newly source-reviewed. The other 131 are not falsely reported as verified.",
+    "The 500 bulk queue is a continuation of an existing 500-lead acquisition tranche, not 500 newly discovered sites or 500 independently source-reviewed pages.",
+    "Legacy P16 16 title/identity exceptions remain frozen; no protected exception may publish on title similarity.",
+    "No published canonical Places, 1962 Mass schedules, Catholic shrine owners, photos, geo anchors or rights claims from this research pass.",
+    "Any site assessed from an external Catholic catalogue or indirect report needs a more direct site-specific source before map release.",
+    "No coverage percentage of global Catholic sacred sites is asserted."
+  ],
+  "all_151_priority_source_screen": [
+    {
+      "order_in_remaining_priority": 1,
+      "candidate_id": "SG-INV-0321",
+      "country": "HU",
+      "title": "Shrine of Our Lady of Mátraverebély-Szentkút",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://www.szentkut.hu/en",
+        "issuer": "Franciscan national shrine Mátraverebély-Szentkút",
+        "identity_scope_note": "Site's own Franciscan shrine director identifies the national Marian pilgrimage shrine, at Mátraverebély-Szentkút; basilica and friary subfeatures not georeferenced.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 2,
+      "candidate_id": "SG-INV-0322",
+      "country": "HU",
+      "title": "Marian shrine of Máriagyűd",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://pecsiegyhazmegye.hu/hirarchivum/hortobagyi-cirill-foapattal-unnepeltuk-nagyboldogasszonyt-mariagyudon/",
+        "issuer": "Roman Catholic Diocese of Pécs",
+        "identity_scope_note": "Diocese documents 2026 Mass and Marian pilgrimage at the Máriagyűd basilica; do not confuse outside altar and main church.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 3,
+      "candidate_id": "SG-INV-0328",
+      "country": "RO",
+      "title": "Franciscan Sanctuary of Șumuleu Ciuc (Csíksomlyó)",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://www.ersekseg.ro/index.php/hu/templomok/26/C",
+        "issuer": "Roman Catholic Archdiocese of Alba Iulia",
+        "identity_scope_note": "Archdiocese explicitly distinguishes Csíksomlyó Franciscan monastery and pilgrimage church from Csíksomlyó parish.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 4,
+      "candidate_id": "SG-INV-0333",
+      "country": "LT",
+      "title": "Gate of Dawn chapel, Vilnius",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://vilnensis.lt/baznycios/ausros-vartai-vilnius/",
+        "issuer": "Roman Catholic Archdiocese of Vilnius",
+        "identity_scope_note": "Gate of Dawn Chapel at Aušros Vartų g. 14 is a separate named worship space from adjacent St Teresa church.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 5,
+      "candidate_id": "SG-INV-0280",
+      "country": "CZ",
+      "title": "Basilica of Our Lady of Hostýn",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://www.hostyn.cz/",
+        "issuer": "Roman Catholic spiritual administration of Svatý Hostýn",
+        "identity_scope_note": "Custodian website identifies the Assumption Basilica at Svatý Hostýn and separately lists other buildings in pilgrimage precinct.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 6,
+      "candidate_id": "SG-INV-0281",
+      "country": "CZ",
+      "title": "Basilica of the Visitation, Svatý Kopeček",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://svatykopecek.cz/Church.asp",
+        "issuer": "Svatý Kopeček basilica custodians",
+        "identity_scope_note": "Site-specific Catholic liturgy page identifies the Visitation Basilica, not the adjacent Premonstratensian convent chapel.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 7,
+      "candidate_id": "SG-INV-0312",
+      "country": "HR",
+      "title": "Sanctuary of Our Lady of Remete, Zagreb",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://www.zg-nadbiskupija.hr/zupe/85?ZupeId=140",
+        "issuer": "Roman Catholic Archdiocese of Zagreb",
+        "identity_scope_note": "Remete parish of the Assumption of Mary and Marian shrine at Česmičkoga 1; current church and monastery are distinct physical features.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 8,
+      "candidate_id": "SG-INV-0318",
+      "country": "BA",
+      "title": "Marian shrine of Olovo",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 9,
+      "candidate_id": "SG-INV-0330",
+      "country": "RO",
+      "title": "Basilica of Maria Radna",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://www.basilicamariaradna.info/",
+        "issuer": "Roman Catholic parish and Basilica Maria Radna",
+        "identity_scope_note": "Parish custodian confirms Maria Radna pilgrimage basilica at Piaţa Avram Iancu 1, Lipova, Romania.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 10,
+      "candidate_id": "SG-INV-0341",
+      "country": "LV",
+      "title": "Skaistkalne Basilica",
+      "identity_gate": "CIVIC_EXACT_CATHOLIC_SITE",
+      "source_excerpt": {
+        "classification": "CIVIC_EXACT_CATHOLIC_SITE",
+        "url": "https://www.bauskasnovads.lv/lv/iestades/skaistkalnes-katolu-baznica",
+        "issuer": "Municipality of Bauska (public registry)",
+        "identity_scope_note": "Civic site names the Roman Catholic Assumption church at Slimnīcas iela 2, Skaistkalne; precise church identity but basilica juridical status not established.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 11,
+      "candidate_id": "SG-INV-0342",
+      "country": "BY",
+      "title": "National Shrine of Our Lady of Budslau",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://www.budslau.by/",
+        "issuer": "Roman Catholic parish of the Assumption, Budslau",
+        "identity_scope_note": "Catholic parish names Budslau Marian sanctuary and church at Red Square 8, distinct from outdoor festival grounds.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 12,
+      "candidate_id": "SG-INV-0350",
+      "country": "ME",
+      "title": "Sanctuary of Our Lady of the Rocks, Perast",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 13,
+      "candidate_id": "SG-INV-0365",
+      "country": "LU",
+      "title": "Cathedral of Notre-Dame, Luxembourg City",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 14,
+      "candidate_id": "SG-NEW-MONTSERRAT-COVA",
+      "country": "ES",
+      "title": "Santa Cova de Montserrat",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 15,
+      "candidate_id": "SG-INV-0348",
+      "country": "AL",
+      "title": "Shrine of Our Lady of Good Counsel, Shkodër",
+      "identity_gate": "SECONDARY_EXACT_CATHOLIC_CATALOGUE",
+      "source_excerpt": {
+        "classification": "SECONDARY_EXACT_CATHOLIC_CATALOGUE",
+        "url": "https://gcatholic.org/churches/europe/3700",
+        "issuer": "GCatholic independent ecclesiastical gazetteer",
+        "identity_scope_note": "Catalogues Basilica of Our Lady of Good Counsel in Shkodër under Shkodër–Pult Archdiocese; independently obtain diocesan/custodian confirmation before publication.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 16,
+      "candidate_id": "SG-INV-0684",
+      "country": "AM",
+      "title": "Etchmiadzin Cathedral (Armenian Apostolic heritage)",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "Armenian Apostolic cathedral (not Roman Catholic active cathedral)",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 17,
+      "candidate_id": "SG-INV-0720",
+      "country": "AO",
+      "title": "Sanctuary of Our Lady of Muxima",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://www.diocesedeviana.ao/santuario-nossa-senhora-da-conceicao-da-muxima/",
+        "issuer": "Diocese of Viana, Angola",
+        "identity_scope_note": "Diocese identifies Sanctuary of Our Lady of the Conception at Vila da Muxima, Quissamã; 2026 diocesan reporting confirms Catholic worship and reopening.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 18,
+      "candidate_id": "SG-INV-0729",
+      "country": "BI",
+      "title": "Basilica of Saint Anthony of Padua, Mugera",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 19,
+      "candidate_id": "SG-INV-0541",
+      "country": "BO",
+      "title": "Sanctuary of Our Lady of Copacabana",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 20,
+      "candidate_id": "SG-INV-0343",
+      "country": "BY",
+      "title": "Marian Sanctuary of Baruny",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 21,
+      "candidate_id": "SG-INV-0728",
+      "country": "BJ",
+      "title": "Basilica of the Immaculate Conception, Ouidah",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://archidiocesedecotonou.org/paroisses",
+        "issuer": "Roman Catholic Archdiocese of Cotonou",
+        "identity_scope_note": "Official Ouidah vicariate includes Basilica of the Immaculate Conception in Ouidah, separate from neighboring parish buildings.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 22,
+      "candidate_id": "SG-INV-0736",
+      "country": "ET",
+      "title": "Lalibela rock-hewn churches (Ethiopian Orthodox heritage)",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "Ethiopian Orthodox historical churches",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 23,
+      "candidate_id": "SG-INV-0731",
+      "country": "GQ",
+      "title": "Basilica of the Immaculate Conception, Mongomo",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 24,
+      "candidate_id": "SG-INV-0470",
+      "country": "HT",
+      "title": "National Shrine of Our Lady of Perpetual Help, Port-au-Prince",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 25,
+      "candidate_id": "SG-INV-0727",
+      "country": "BF",
+      "title": "Basilica of Our Lady of Yagma",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://catholique.bf/paroisses/1432-yagma",
+        "issuer": "Catholic Church Burkina Faso institutional parish directory",
+        "identity_scope_note": "Lists Notre-Dame de Yagma sanctuary, rector and site map lead at latitude 12.427439, longitude -1.622424; official coordinate is not certified building-door geolocation.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 26,
+      "candidate_id": "SG-INV-0687",
+      "country": "IQ",
+      "title": "Shrine of Mar Behnam (Syriac Christian heritage)",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 27,
+      "candidate_id": "SG-INV-0460",
+      "country": "PA",
+      "title": "National Shrine of Jesus Nazareno, Atalaya",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 28,
+      "candidate_id": "SG-INV-0472",
+      "country": "PR",
+      "title": "Basilica of Our Lady of Monserrate, Hormigueros",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 29,
+      "candidate_id": "SG-INV-0329",
+      "country": "RO",
+      "title": "Marian shrine of Nicula (Eastern Catholic / Orthodox shared heritage)",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 30,
+      "candidate_id": "SG-INV-0682",
+      "country": "TL",
+      "title": "National Shrine of Our Lady of Aitara, Soibada",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 31,
+      "candidate_id": "SG-INV-0695",
+      "country": "TN",
+      "title": "Amphitheatre of Carthage (Saints Perpetua and Felicity)",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "Carthage amphitheatre archaeological rather than church building",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 32,
+      "candidate_id": "SG-INV-0361",
+      "country": "TR",
+      "title": "House of the Virgin Mary, Ephesus",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 33,
+      "candidate_id": "SG-INV-0613",
+      "country": "TW",
+      "title": "National Shrine of Our Lady of China, Meishan",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 34,
+      "candidate_id": "SG-INV-0345",
+      "country": "UA",
+      "title": "Sanctuary of Our Lady of Berdychiv",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://rkc.org.ua/rkcz-v-ukrayini/naczionalni-svyatyni/",
+        "issuer": "Roman Catholic Church in Ukraine",
+        "identity_scope_note": "National Catholic shrine index records Blessed Virgin of the Holy Scapular, Berdychiv, at Soborna 25; match correct Carmelite physical precinct.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 35,
+      "candidate_id": "SG-INV-0349",
+      "country": "XK",
+      "title": "Shrine of Our Lady of Letnica",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 36,
+      "candidate_id": "SG-INV-0722",
+      "country": "ZA",
+      "title": "Ngome Marian Shrine",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 37,
+      "candidate_id": "SG-INV-0319",
+      "country": "BA",
+      "title": "Church of Our Lady of Kondžilo, Komušina",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 38,
+      "candidate_id": "SG-INV-0717",
+      "country": "CD",
+      "title": "National Shrine of Blessed Anuarite, Isiro",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 39,
+      "candidate_id": "SG-INV-0499",
+      "country": "CL",
+      "title": "Sanctuary of Our Lady of Mount Carmel, Maipú",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://www.santuarionacional.cl/",
+        "issuer": "Santuario Nacional de Maipú custodians",
+        "identity_scope_note": "Current custodian site identifies the National Marian Shrine and Templo Votivo at Maipú, Chile; old demolished Victory chapel not mapped as current church.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 40,
+      "candidate_id": "SG-INV-0718",
+      "country": "CM",
+      "title": "Basilica of Mary Queen of the Apostles, Yaoundé",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 41,
+      "candidate_id": "SG-INV-0611",
+      "country": "CN",
+      "title": "Our Lady of China Shrine, Donglu",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 42,
+      "candidate_id": "SG-INV-0463",
+      "country": "CU",
+      "title": "National Shrine of Our Lady of Regla, Havana",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 43,
+      "candidate_id": "SG-INV-0468",
+      "country": "DO",
+      "title": "Shrine of Our Lady of Mercy, Santo Cerro",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 44,
+      "candidate_id": "SG-INV-0691",
+      "country": "DZ",
+      "title": "Basilica of Notre-Dame de Santa Cruz, Oran",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 45,
+      "candidate_id": "SG-INV-0511",
+      "country": "EC",
+      "title": "Sanctuary of Our Lady of El Quinche",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 46,
+      "candidate_id": "SG-INV-0698",
+      "country": "EG",
+      "title": "Church of the Holy Family at Abu Serga, Old Cairo",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 47,
+      "candidate_id": "SG-INV-0367",
+      "country": "FI",
+      "title": "Saint Henry's Island, Kirkkokari",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 48,
+      "candidate_id": "SG-INV-0748",
+      "country": "FJ",
+      "title": "Sacred Heart Cathedral, Suva",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 49,
+      "candidate_id": "SG-INV-0686",
+      "country": "GE",
+      "title": "Svetitskhoveli Cathedral (Georgian Orthodox heritage)",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "Georgian Orthodox cathedral",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 50,
+      "candidate_id": "SG-INV-0725",
+      "country": "GH",
+      "title": "Basilica of Saint Joseph, Elmina",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 51,
+      "candidate_id": "SG-INV-0359",
+      "country": "GR",
+      "title": "Monastery of Saint John the Theologian, Patmos (Orthodox heritage)",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "Greek Orthodox monastery",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 52,
+      "candidate_id": "SG-INV-0445",
+      "country": "GT",
+      "title": "National Shrine of the Sacred Heart, Guatemala City",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 53,
+      "candidate_id": "SG-INV-0677",
+      "country": "ID",
+      "title": "Shrine of Our Lady of Sendangsono",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 54,
+      "candidate_id": "SG-INV-0371",
+      "country": "IS",
+      "title": "Skálholt historic Catholic see",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "Skálholt modern cathedral present confessional use must be assessed",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 55,
+      "candidate_id": "SG-INV-0571",
+      "country": "JO",
+      "title": "Baptism Site of Jesus Christ, Al-Maghtas",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "Al-Maghtas archaeological pilgrimage landscape, not a single identifiable church",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 56,
+      "candidate_id": "SG-INV-0712",
+      "country": "KE",
+      "title": "National Shrine of Our Lady of Africa, Subukia",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://archdioceseofnairobi.org/?p=8000",
+        "issuer": "Roman Catholic Archdiocese of Nairobi",
+        "identity_scope_note": "October 2026 diocesan statement explicitly identifies Subukia National Marian Shrine in Diocese of Nakuru; building and pilgrimage grounds still need independent map-feature separation.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 57,
+      "candidate_id": "SG-INV-0689",
+      "country": "KZ",
+      "title": "National Shrine of the Queen of Peace, Ozernoye",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 58,
+      "candidate_id": "SG-INV-0353",
+      "country": "MT",
+      "title": "Sanctuary of Our Lady of Mount Carmel, Valletta",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://church.mt/auxiliary-bishop/the-auxiliary-bishops-homilies/",
+        "issuer": "Roman Catholic Archdiocese of Malta",
+        "identity_scope_note": "July 2026 archdiocesan homily lists Basilica Sanctuary of Our Lady of Mount Carmel, Valletta; church distinct from Carmelite convent.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 59,
+      "candidate_id": "SG-INV-0608",
+      "country": "PK",
+      "title": "National Marian Shrine of Mariamabad",
+      "identity_gate": "SECONDARY_DISCOVERY_ONLY",
+      "source_excerpt": {
+        "classification": "SECONDARY_DISCOVERY_ONLY",
+        "url": "https://www.churchinneed.org/new-report-paints-worrying-picture-of-minority-rights-in-pakistan/",
+        "issuer": "Aid to the Church in Need (Catholic charity)",
+        "identity_scope_note": "Mentions Christian shrine Mariamabad as pilgrimage reference, insufficient to certify exact Catholic physical unit, legal sanctuary title, or map pin.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 60,
+      "candidate_id": "SG-INV-0709",
+      "country": "RW",
+      "title": "Cathedral Basilica of Our Lady, Kabgayi",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 61,
+      "candidate_id": "SG-INV-0369",
+      "country": "SE",
+      "title": "Vadstena Abbey and Saint Bridget's Shrine",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 62,
+      "candidate_id": "SG-INV-0308",
+      "country": "SI",
+      "title": "Calvary complex, Šmarje pri Jelšah",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 63,
+      "candidate_id": "SG-INV-0297",
+      "country": "SK",
+      "title": "Sanctuary of Ľutina",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 64,
+      "candidate_id": "SG-INV-0451",
+      "country": "SV",
+      "title": "Shrine of Saint Óscar Romero, San Salvador",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 65,
+      "candidate_id": "SG-INV-0730",
+      "country": "TG",
+      "title": "Shrine of Our Lady of the Lake, Togoville",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 66,
+      "candidate_id": "SG-INV-0473",
+      "country": "TT",
+      "title": "Shrine of Our Lady of La Divina Pastora, Siparia",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 67,
+      "candidate_id": "SG-INV-0713",
+      "country": "TZ",
+      "title": "Holy Ghost Mission Church and Museum, Bagamoyo",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 68,
+      "candidate_id": "SG-INV-0536",
+      "country": "VE",
+      "title": "Basilica of Our Lady of Coromoto, Guanare",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 69,
+      "candidate_id": "SG-INV-0672",
+      "country": "VN",
+      "title": "Basilica of Our Lady of Sở Kiện",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 70,
+      "candidate_id": "SG-INV-0724",
+      "country": "ZM",
+      "title": "Our Lady of Lusaka Marian Shrine",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 71,
+      "candidate_id": "SG-INV-0184",
+      "country": "AT",
+      "title": "Sanctuary of Mariatrost",
+      "identity_gate": "SITE_CATHOLIC_AUTHORITY",
+      "source_excerpt": {
+        "classification": "SITE_CATHOLIC_AUTHORITY",
+        "url": "https://www.katholische-kirche-steiermark.at/goto/instvisitenkarte/1535/Pfarre_Graz_Mariatrost",
+        "issuer": "Roman Catholic Diocese of Graz-Seckau",
+        "identity_scope_note": "Diocesan parish names Mariatrost pilgrimage church at Kirchplatz 8, 8044 Graz; distinct from similarly dedicated Fernitz parish.",
+        "review_type": "retrieved_source_text_excerpt",
+        "source_lookup_date": "2026-10-24"
+      },
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 72,
+      "candidate_id": "SG-INV-0507",
+      "country": "CO",
+      "title": "Shrine of Our Lady of the Rosary, La Popa, Cartagena",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 73,
+      "candidate_id": "SG-INV-0458",
+      "country": "CR",
+      "title": "Shrine of Our Lady of Ujarrás",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 74,
+      "candidate_id": "SG-INV-0282",
+      "country": "CZ",
+      "title": "Basilica of the Assumption, Velehrad",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 75,
+      "candidate_id": "SG-INV-0315",
+      "country": "HR",
+      "title": "National Shrine of Saint Nicholas Tavelić, Šibenik",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 76,
+      "candidate_id": "SG-INV-0323",
+      "country": "HU",
+      "title": "Shrine of Our Lady of Bodajk",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 77,
+      "candidate_id": "SG-INV-0575",
+      "country": "LB",
+      "title": "Shrine of Our Lady of Mantara, Maghdouche",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 78,
+      "candidate_id": "SG-INV-0715",
+      "country": "NG",
+      "title": "International Sanctuary of Jesus the Saviour and Mother Mary, Elele",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 79,
+      "candidate_id": "SG-INV-0453",
+      "country": "NI",
+      "title": "Sanctuary of El Viejo (Our Lady of the Immaculate Conception)",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 80,
+      "candidate_id": "SG-INV-0744",
+      "country": "NZ",
+      "title": "National Shrine of St Mary of the Angels, Wellington",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 81,
+      "candidate_id": "SG-INV-0567",
+      "country": "PS",
+      "title": "Shepherds' Field Church, Beit Sahour",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 82,
+      "candidate_id": "SG-INV-0531",
+      "country": "UY",
+      "title": "Sanctuary of the Virgin of the Thirty-Three, Florida",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 83,
+      "candidate_id": "SG-INV-0223",
+      "country": "BE",
+      "title": "Sanctuary of Our Lady of Oostakker",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 84,
+      "candidate_id": "SG-INV-0273",
+      "country": "CH",
+      "title": "Sanctuary of Madonna del Sasso, Orselina",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 85,
+      "candidate_id": "SG-INV-0334",
+      "country": "LT",
+      "title": "Sanctuary of Žemaičių Kalvarija",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 86,
+      "candidate_id": "SG-INV-0368",
+      "country": "NO",
+      "title": "Nidaros Cathedral, Trondheim",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "Nidaros Cathedral present Church of Norway use must be assessed",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 87,
+      "candidate_id": "SG-INV-0528",
+      "country": "PY",
+      "title": "Shrine of Our Lady of Itapé",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 88,
+      "candidate_id": "SG-INV-0617",
+      "country": "JP",
+      "title": "National Shrine of the Twenty-Six Martyrs, Nagasaki",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 89,
+      "candidate_id": "SG-INV-0602",
+      "country": "LK",
+      "title": "National Shrine of Our Lady of Matara",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 90,
+      "candidate_id": "SG-INV-0240",
+      "country": "IE",
+      "title": "Glendalough Monastic City",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "Glendalough monastic-city ruins and historic features, not one active abbey building",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 91,
+      "candidate_id": "SG-INV-0419",
+      "country": "CA",
+      "title": "National Shrine of Saint Kateri Tekakwitha, Kahnawake",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 92,
+      "candidate_id": "SG-INV-0205",
+      "country": "PL",
+      "title": "Sanctuary of Our Lady of Wambierzyce",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 93,
+      "candidate_id": "SG-INV-0163",
+      "country": "DE",
+      "title": "Basilica of Our Lady of Kevelaer",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 94,
+      "candidate_id": "SG-INV-0086",
+      "country": "IT",
+      "title": "Basilica of Saint Margaret, Cortona",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 95,
+      "candidate_id": "SG-INV-0022",
+      "country": "FR",
+      "title": "Sanctuary of Our Lady of the Sacred Heart, Issoudun",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 96,
+      "candidate_id": "SG-INV-0685",
+      "country": "AM",
+      "title": "Khor Virap Monastery (Armenian Apostolic heritage)",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "Armenian Apostolic monastery",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 97,
+      "candidate_id": "SG-INV-0542",
+      "country": "BO",
+      "title": "Sanctuary of Our Lady of Urkupiña, Quillacollo",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 98,
+      "candidate_id": "SG-INV-0344",
+      "country": "BY",
+      "title": "Marian shrine of Trokeli",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 99,
+      "candidate_id": "SG-INV-0357",
+      "country": "CY",
+      "title": "Monastery of Stavrovouni (Orthodox heritage)",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "Greek Orthodox monastery",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 100,
+      "candidate_id": "SG-INV-0688",
+      "country": "IQ",
+      "title": "Monastery of Rabban Hormizd (Chaldean Catholic heritage)",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 101,
+      "candidate_id": "SG-INV-0461",
+      "country": "PA",
+      "title": "Sanctuary of the Black Christ, Portobelo",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 102,
+      "candidate_id": "SG-INV-0471",
+      "country": "PR",
+      "title": "Shrine of Our Lady of Divine Providence, Cupey",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 103,
+      "candidate_id": "SG-INV-0331",
+      "country": "RO",
+      "title": "Cathedral of Saint Joseph, Bucharest",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 104,
+      "candidate_id": "SG-INV-0696",
+      "country": "TN",
+      "title": "Ancient Basilica of Saint Cyprian, Carthage",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "UNESCO Carthage Saint Cyprian basilica archaeological ruins, historically resolved in P13",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 105,
+      "candidate_id": "SG-INV-0362",
+      "country": "TR",
+      "title": "Basilica of Saint John, Selçuk",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "Saint John Basilica Selçuk archaeological ruins",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 106,
+      "candidate_id": "SG-INV-0614",
+      "country": "TW",
+      "title": "Basilica of the Immaculate Conception, Wanluan",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 107,
+      "candidate_id": "SG-INV-0346",
+      "country": "UA",
+      "title": "Basilica of the Assumption, Zarvanytsia",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 108,
+      "candidate_id": "SG-INV-0723",
+      "country": "ZA",
+      "title": "Tshitanini Shrine of Blessed Benedict Daswa, Nweli",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 109,
+      "candidate_id": "SG-INV-0497",
+      "country": "CL",
+      "title": "Sanctuary of Our Lady of Andacollo",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 110,
+      "candidate_id": "SG-INV-0464",
+      "country": "CU",
+      "title": "National Shrine of Saint Lazarus, El Rincón",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 111,
+      "candidate_id": "SG-INV-0469",
+      "country": "DO",
+      "title": "Cathedral of Santa María la Menor, Santo Domingo",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 112,
+      "candidate_id": "SG-INV-0692",
+      "country": "DZ",
+      "title": "Basilica of Saint Augustine, Annaba",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 113,
+      "candidate_id": "SG-INV-0512",
+      "country": "EC",
+      "title": "Sanctuary of Our Lady of El Cisne",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 114,
+      "candidate_id": "SG-INV-0699",
+      "country": "EG",
+      "title": "Church of the Virgin Mary, Maadi",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 115,
+      "candidate_id": "SG-INV-0358",
+      "country": "GR",
+      "title": "Areopagus, Athens",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "historical_scope_warning": "Areopagus Athenian classical archaeological site",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 116,
+      "candidate_id": "SG-INV-0446",
+      "country": "GT",
+      "title": "Basilica of Our Lady of the Rosary, Guatemala City",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 117,
+      "candidate_id": "SG-INV-0678",
+      "country": "ID",
+      "title": "Marian Shrine of Gua Maria Kerep, Ambarawa",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 118,
+      "candidate_id": "SG-INV-0354",
+      "country": "MT",
+      "title": "Saint Paul's Grotto, Rabat",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 119,
+      "candidate_id": "SG-INV-0307",
+      "country": "SI",
+      "title": "Sanctuary of Our Lady of the Mountain, Zaplaz",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 120,
+      "candidate_id": "SG-INV-0300",
+      "country": "SK",
+      "title": "Shrine of Our Lady of Turzovka",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 121,
+      "candidate_id": "SG-INV-0452",
+      "country": "SV",
+      "title": "Chapel of the Hospital of Divine Providence, San Salvador",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 122,
+      "candidate_id": "SG-INV-0537",
+      "country": "VE",
+      "title": "Sanctuary of Our Lady of the Rosary of Chiquinquirá, Maracaibo",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 123,
+      "candidate_id": "SG-INV-0669",
+      "country": "VN",
+      "title": "Our Lady of Tà Pao Shrine",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 124,
+      "candidate_id": "SG-INV-0186",
+      "country": "AT",
+      "title": "Sanctuary of Maria Luggau",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 125,
+      "candidate_id": "SG-INV-0738",
+      "country": "AU",
+      "title": "National Shrine of Our Lady of the Sacred Heart, Randwick",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 126,
+      "candidate_id": "SG-INV-0508",
+      "country": "CO",
+      "title": "Basilica of the Lord of Miracles, Buga",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 127,
+      "candidate_id": "SG-INV-0283",
+      "country": "CZ",
+      "title": "Marian shrine at Stará Boleslav",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 128,
+      "candidate_id": "SG-INV-0311",
+      "country": "HR",
+      "title": "Sanctuary of Our Lady of Sinj",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 129,
+      "candidate_id": "SG-INV-0324",
+      "country": "HU",
+      "title": "Sanctuary of Márianosztra",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 130,
+      "candidate_id": "SG-INV-0576",
+      "country": "LB",
+      "title": "Our Lady of Bkerké, Jounieh",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 131,
+      "candidate_id": "SG-INV-0716",
+      "country": "NG",
+      "title": "Shrine of Blessed Cyprian Michael Iwene Tansi, Onitsha",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 132,
+      "candidate_id": "SG-INV-0454",
+      "country": "NI",
+      "title": "Sanctuary of Our Lady of Candelaria, Diriomo",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 133,
+      "candidate_id": "SG-INV-0231",
+      "country": "NL",
+      "title": "Kapel in 't Zand, Roermond",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 134,
+      "candidate_id": "SG-INV-0745",
+      "country": "NZ",
+      "title": "Shrine of Blessed Suzanne Aubert, Wellington",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 135,
+      "candidate_id": "SG-INV-0568",
+      "country": "PS",
+      "title": "Milk Grotto Church, Bethlehem",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 136,
+      "candidate_id": "SG-INV-0533",
+      "country": "UY",
+      "title": "Sanctuary of Our Lady of Verdún, Minas",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 137,
+      "candidate_id": "SG-INV-0495",
+      "country": "AR",
+      "title": "Sanctuary of Saint Cayetano, Buenos Aires",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 138,
+      "candidate_id": "SG-INV-0224",
+      "country": "BE",
+      "title": "Sanctuary of Our Lady of Bon-Secours, Péruwelz",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 139,
+      "candidate_id": "SG-INV-0277",
+      "country": "CH",
+      "title": "Basilica of Saint Nicholas of Flüe, Sachseln",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 140,
+      "candidate_id": "SG-INV-0335",
+      "country": "LT",
+      "title": "Sanctuary of Our Lady of Trakai",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 141,
+      "candidate_id": "SG-INV-0434",
+      "country": "MX",
+      "title": "Cristo Rey Sanctuary, Cerro del Cubilete",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 142,
+      "candidate_id": "SG-INV-0522",
+      "country": "PE",
+      "title": "Sanctuary of Our Lady of Cocharcas",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 143,
+      "candidate_id": "SG-INV-0146",
+      "country": "PT",
+      "title": "Sanctuary of Our Lady of Nazaré",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 144,
+      "candidate_id": "SG-INV-0529",
+      "country": "PY",
+      "title": "Shrine of Our Lady of Itacuá",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 145,
+      "candidate_id": "SG-INV-0478",
+      "country": "BR",
+      "title": "Sanctuary of Our Lady of Penha, Rio de Janeiro",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 146,
+      "candidate_id": "SG-INV-0616",
+      "country": "JP",
+      "title": "Our Lady of Tsuwano, Otome Pass",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 147,
+      "candidate_id": "SG-INV-0604",
+      "country": "LK",
+      "title": "National Shrine of Saint Anne, Kattimahana",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 148,
+      "candidate_id": "SG-INV-0592",
+      "country": "IN",
+      "title": "Shrine of Saint Thomas, Malayattoor",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 149,
+      "candidate_id": "SG-INV-0549",
+      "country": "IL",
+      "title": "Church of the Wedding at Cana, Kafr Kanna",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 150,
+      "candidate_id": "SG-INV-0632",
+      "country": "PH",
+      "title": "National Shrine of Our Lady of Perpetual Help, Baclaran",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    },
+    {
+      "order_in_remaining_priority": 151,
+      "candidate_id": "SG-INV-0213",
+      "country": "PL",
+      "title": "Shrine of Saint Anne, Góra Świętej Anny",
+      "identity_gate": "PRIMARY_CUSTODIAN_SOURCE_STILL_REQUIRED",
+      "new_publishable_place": false,
+      "exact_new_building_geometry_independently_verified": false
+    }
+  ],
+  "refreshed_500_acquisition_queue": [
+    {
+      "order": 1,
+      "candidate_id": "SG-INV-0415",
+      "country": "CA",
+      "gate": "MULTIPLE_CATHOLIC_SAME_TITLE_SITES_UNRESOLVED"
+    },
+    {
+      "order": 2,
+      "candidate_id": "SG-INV-0110",
+      "country": "ES",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:ES:covadonga-basilica"
+    },
+    {
+      "order": 3,
+      "candidate_id": "SG-INV-0301",
+      "country": "SK",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:SK:kostol-svateho-vojtecha-gaboltov"
+    },
+    {
+      "order": 4,
+      "candidate_id": "SG-INV-0065",
+      "country": "IT",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT"
+    },
+    {
+      "order": 5,
+      "candidate_id": "SG-INV-0067",
+      "country": "IT",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:IT:santuario-monte-berico-vicenza"
+    },
+    {
+      "order": 6,
+      "candidate_id": "SG-INV-0079",
+      "country": "IT",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:IT:santuario-francescano-la-verna"
+    },
+    {
+      "order": 7,
+      "candidate_id": "SG-INV-0130",
+      "country": "ES",
+      "gate": "CATHOLIC_SITE_SOURCE_SUPPORTED"
+    },
+    {
+      "order": 8,
+      "candidate_id": "SG-INV-0252",
+      "country": "GB",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT"
+    },
+    {
+      "order": 9,
+      "candidate_id": "SG-INV-0295",
+      "country": "SK",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:SK:basilika-sedembolestnej-sastin"
+    },
+    {
+      "order": 10,
+      "candidate_id": "SG-INV-0298",
+      "country": "SK",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:SK:bazilika-narodenia-panny-marie-marianka"
+    },
+    {
+      "order": 11,
+      "candidate_id": "SG-INV-0299",
+      "country": "SK",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:SK:kaplnka-zjavenia-litmanova-zvir"
+    },
+    {
+      "order": 12,
+      "candidate_id": "SG-INV-0310",
+      "country": "HR",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:HR:bazilika-gospe-trsatske-rijeka"
+    },
+    {
+      "order": 13,
+      "candidate_id": "SG-INV-0321",
+      "country": "HU",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 14,
+      "candidate_id": "SG-INV-0322",
+      "country": "HU",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 15,
+      "candidate_id": "SG-INV-0328",
+      "country": "RO",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 16,
+      "candidate_id": "SG-INV-0333",
+      "country": "LT",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 17,
+      "candidate_id": "SG-INV-0352",
+      "country": "MT",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:MT:santwarju-madonna-mellieha"
+    },
+    {
+      "order": 18,
+      "candidate_id": "SG-INV-0009",
+      "country": "FR",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:FR:basilique-notre-dame-garde-marseille"
+    },
+    {
+      "order": 19,
+      "candidate_id": "SG-INV-0010",
+      "country": "FR",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:FR:basilique-notre-dame-fourviere-lyon"
+    },
+    {
+      "order": 20,
+      "candidate_id": "SG-INV-0063",
+      "country": "IT",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:IT:santuario-madonna-san-luca-bologna"
+    },
+    {
+      "order": 21,
+      "candidate_id": "SG-INV-0151",
+      "country": "PT",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:PT:basilica-bom-jesus-monte-braga"
+    },
+    {
+      "order": 22,
+      "candidate_id": "SG-INV-0222",
+      "country": "BE",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:BE:basiliek-onze-lieve-vrouw-scherpenheuvel"
+    },
+    {
+      "order": 23,
+      "candidate_id": "SG-INV-0236",
+      "country": "IE",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:IE:ballintubber-abbey-church"
+    },
+    {
+      "order": 24,
+      "candidate_id": "SG-INV-0280",
+      "country": "CZ",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 25,
+      "candidate_id": "SG-INV-0281",
+      "country": "CZ",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 26,
+      "candidate_id": "SG-INV-0305",
+      "country": "SI",
+      "gate": "INHERITED_SOURCE_NOT_SITE_SPECIFIC_REPLACE_REQUIRED"
+    },
+    {
+      "order": 27,
+      "candidate_id": "SG-INV-0306",
+      "country": "SI",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:SI:bazilika-marije-zavetnice-ptujska-gora"
+    },
+    {
+      "order": 28,
+      "candidate_id": "SG-INV-0312",
+      "country": "HR",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 29,
+      "candidate_id": "SG-INV-0318",
+      "country": "BA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 30,
+      "candidate_id": "SG-INV-0330",
+      "country": "RO",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 31,
+      "candidate_id": "SG-INV-0341",
+      "country": "LV",
+      "gate": "CIVIC_EXACT_CATHOLIC_SITE"
+    },
+    {
+      "order": 32,
+      "candidate_id": "SG-INV-0342",
+      "country": "BY",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 33,
+      "candidate_id": "SG-INV-0350",
+      "country": "ME",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 34,
+      "candidate_id": "SG-INV-0365",
+      "country": "LU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 35,
+      "candidate_id": "SG-INV-0038",
+      "country": "FR",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:FR:abbatiale-sainte-foy-conques"
+    },
+    {
+      "order": 36,
+      "candidate_id": "SG-INV-0037",
+      "country": "FR",
+      "gate": "CULTURAL_MONUMENT_NOT_ACTIVE_CATHOLIC_SITE"
+    },
+    {
+      "order": 37,
+      "candidate_id": "SG-INV-0045",
+      "country": "FR",
+      "gate": "INHERITED_SOURCE_NOT_SITE_SPECIFIC_REPLACE_REQUIRED"
+    },
+    {
+      "order": 38,
+      "candidate_id": "SG-NEW-MONTSERRAT-COVA",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 39,
+      "candidate_id": "SG-INV-0348",
+      "country": "AL",
+      "gate": "SECONDARY_EXACT_CATHOLIC_CATALOGUE"
+    },
+    {
+      "order": 40,
+      "candidate_id": "SG-INV-0684",
+      "country": "AM",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 41,
+      "candidate_id": "SG-INV-0720",
+      "country": "AO",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 42,
+      "candidate_id": "SG-INV-0729",
+      "country": "BI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 43,
+      "candidate_id": "SG-INV-0541",
+      "country": "BO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 44,
+      "candidate_id": "SG-INV-0343",
+      "country": "BY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 45,
+      "candidate_id": "SG-INV-0356",
+      "country": "CY",
+      "gate": "NON_CATHOLIC_OPERATING_SITE"
+    },
+    {
+      "order": 46,
+      "candidate_id": "SG-INV-0728",
+      "country": "DY",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 47,
+      "candidate_id": "SG-INV-0736",
+      "country": "ET",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 48,
+      "candidate_id": "SG-INV-0731",
+      "country": "GQ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 49,
+      "candidate_id": "SG-INV-0470",
+      "country": "HT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 50,
+      "candidate_id": "SG-INV-0727",
+      "country": "HV",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 51,
+      "candidate_id": "SG-INV-0687",
+      "country": "IQ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 52,
+      "candidate_id": "SG-INV-0460",
+      "country": "PA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 53,
+      "candidate_id": "SG-INV-0472",
+      "country": "PR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 54,
+      "candidate_id": "SG-INV-0329",
+      "country": "RO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 55,
+      "candidate_id": "SG-INV-0682",
+      "country": "TL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 56,
+      "candidate_id": "SG-INV-0695",
+      "country": "TN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 57,
+      "candidate_id": "SG-INV-0361",
+      "country": "TR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 58,
+      "candidate_id": "SG-INV-0613",
+      "country": "TW",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 59,
+      "candidate_id": "SG-INV-0345",
+      "country": "UA",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 60,
+      "candidate_id": "SG-INV-0349",
+      "country": "XK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 61,
+      "candidate_id": "SG-INV-0722",
+      "country": "ZA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 62,
+      "candidate_id": "SG-INV-0319",
+      "country": "BA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 63,
+      "candidate_id": "SG-INV-0717",
+      "country": "CD",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 64,
+      "candidate_id": "SG-INV-0499",
+      "country": "CL",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 65,
+      "candidate_id": "SG-INV-0718",
+      "country": "CM",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 66,
+      "candidate_id": "SG-INV-0611",
+      "country": "CN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 67,
+      "candidate_id": "SG-INV-0463",
+      "country": "CU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 68,
+      "candidate_id": "SG-INV-0468",
+      "country": "DO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 69,
+      "candidate_id": "SG-INV-0691",
+      "country": "DZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 70,
+      "candidate_id": "SG-INV-0511",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 71,
+      "candidate_id": "SG-INV-0698",
+      "country": "EG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 72,
+      "candidate_id": "SG-INV-0367",
+      "country": "FI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 73,
+      "candidate_id": "SG-INV-0748",
+      "country": "FJ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 74,
+      "candidate_id": "SG-INV-0686",
+      "country": "GE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 75,
+      "candidate_id": "SG-INV-0725",
+      "country": "GH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 76,
+      "candidate_id": "SG-INV-0359",
+      "country": "GR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 77,
+      "candidate_id": "SG-INV-0445",
+      "country": "GT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 78,
+      "candidate_id": "SG-INV-0677",
+      "country": "ID",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 79,
+      "candidate_id": "SG-INV-0371",
+      "country": "IS",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 80,
+      "candidate_id": "SG-INV-0571",
+      "country": "JO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 81,
+      "candidate_id": "SG-INV-0712",
+      "country": "KE",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 82,
+      "candidate_id": "SG-INV-0623",
+      "country": "KR",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT"
+    },
+    {
+      "order": 83,
+      "candidate_id": "SG-INV-0689",
+      "country": "KZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 84,
+      "candidate_id": "SG-INV-0353",
+      "country": "MT",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 85,
+      "candidate_id": "SG-INV-0608",
+      "country": "PK",
+      "gate": "SECONDARY_DISCOVERY_ONLY"
+    },
+    {
+      "order": 86,
+      "candidate_id": "SG-INV-0709",
+      "country": "RW",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 87,
+      "candidate_id": "SG-INV-0369",
+      "country": "SE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 88,
+      "candidate_id": "SG-INV-0308",
+      "country": "SI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 89,
+      "candidate_id": "SG-INV-0297",
+      "country": "SK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 90,
+      "candidate_id": "SG-INV-0451",
+      "country": "SV",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 91,
+      "candidate_id": "SG-INV-0730",
+      "country": "TG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 92,
+      "candidate_id": "SG-INV-0473",
+      "country": "TT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 93,
+      "candidate_id": "SG-INV-0713",
+      "country": "TZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 94,
+      "candidate_id": "SG-INV-0536",
+      "country": "VE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 95,
+      "candidate_id": "SG-INV-0672",
+      "country": "VN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 96,
+      "candidate_id": "SG-INV-0724",
+      "country": "ZM",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 97,
+      "candidate_id": "SG-INV-0184",
+      "country": "AT",
+      "gate": "SITE_CATHOLIC_AUTHORITY"
+    },
+    {
+      "order": 98,
+      "candidate_id": "SG-INV-0737",
+      "country": "AU",
+      "gate": "CATHOLIC_SITE_SOURCE_SUPPORTED"
+    },
+    {
+      "order": 99,
+      "candidate_id": "SG-INV-0507",
+      "country": "CO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 100,
+      "candidate_id": "SG-INV-0458",
+      "country": "CR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 101,
+      "candidate_id": "SG-INV-0282",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 102,
+      "candidate_id": "SG-INV-0315",
+      "country": "HR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 103,
+      "candidate_id": "SG-INV-0323",
+      "country": "HU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 104,
+      "candidate_id": "SG-INV-0575",
+      "country": "LB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 105,
+      "candidate_id": "SG-INV-0732",
+      "country": "MU",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:MU:marie-reine-de-la-paix-port-louis"
+    },
+    {
+      "order": 106,
+      "candidate_id": "SG-INV-0715",
+      "country": "NG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 107,
+      "candidate_id": "SG-INV-0453",
+      "country": "NI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 108,
+      "candidate_id": "SG-INV-0234",
+      "country": "NL",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT"
+    },
+    {
+      "order": 109,
+      "candidate_id": "SG-INV-0744",
+      "country": "NZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 110,
+      "candidate_id": "SG-INV-0567",
+      "country": "PS",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 111,
+      "candidate_id": "SG-INV-0531",
+      "country": "UY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 112,
+      "candidate_id": "SG-INV-0490",
+      "country": "AR",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:AR:basilica-nuestra-senora-itati"
+    },
+    {
+      "order": 113,
+      "candidate_id": "SG-INV-0223",
+      "country": "BE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 114,
+      "candidate_id": "SG-INV-0273",
+      "country": "CH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 115,
+      "candidate_id": "SG-INV-0334",
+      "country": "LT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 116,
+      "candidate_id": "SG-INV-0428",
+      "country": "MX",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:MX:catedral-basilica-san-juan-los-lagos"
+    },
+    {
+      "order": 117,
+      "candidate_id": "SG-INV-0368",
+      "country": "NO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 118,
+      "candidate_id": "SG-INV-0520",
+      "country": "PE",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:PE:santuario-candelaria-chapi-polobaya"
+    },
+    {
+      "order": 119,
+      "candidate_id": "SG-INV-0155",
+      "country": "PT",
+      "gate": "NEW_2026_CATHOLIC_BUILDING_SCOPE_SPLIT"
+    },
+    {
+      "order": 120,
+      "candidate_id": "SG-INV-0528",
+      "country": "PY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 121,
+      "candidate_id": "SG-INV-0484",
+      "country": "BR",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT"
+    },
+    {
+      "order": 122,
+      "candidate_id": "SG-INV-0617",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 123,
+      "candidate_id": "SG-INV-0602",
+      "country": "LK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 124,
+      "candidate_id": "SG-INV-0254",
+      "country": "GB",
+      "gate": "NON_CATHOLIC_OPERATING_SITE_REVIEW"
+    },
+    {
+      "order": 125,
+      "candidate_id": "SG-INV-0240",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 126,
+      "candidate_id": "SG-INV-0419",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 127,
+      "candidate_id": "SG-INV-0584",
+      "country": "IN",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:IN:basilica-our-lady-ransom-vallarpadam"
+    },
+    {
+      "order": 128,
+      "candidate_id": "SG-INV-0550",
+      "country": "IL",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:PS:basilica-agony-gethsemane"
+    },
+    {
+      "order": 129,
+      "candidate_id": "SG-INV-0109",
+      "country": "ES",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:ES:ermita-virgen-rocio-almonte"
+    },
+    {
+      "order": 130,
+      "candidate_id": "SG-INV-0631",
+      "country": "PH",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:PH:basilica-our-lady-penafrancia-naga"
+    },
+    {
+      "order": 131,
+      "candidate_id": "SG-INV-0205",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 132,
+      "candidate_id": "SG-INV-0163",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 133,
+      "candidate_id": "SG-INV-0375",
+      "country": "US",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT"
+    },
+    {
+      "order": 134,
+      "candidate_id": "SG-INV-0086",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 135,
+      "candidate_id": "SG-INV-0022",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 136,
+      "candidate_id": "SG-INV-0685",
+      "country": "AM",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 137,
+      "candidate_id": "SG-INV-0542",
+      "country": "BO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 138,
+      "candidate_id": "SG-INV-0344",
+      "country": "BY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 139,
+      "candidate_id": "SG-INV-0357",
+      "country": "CY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 140,
+      "candidate_id": "SG-INV-0688",
+      "country": "IQ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 141,
+      "candidate_id": "SG-INV-0461",
+      "country": "PA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 142,
+      "candidate_id": "SG-INV-0471",
+      "country": "PR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 143,
+      "candidate_id": "SG-INV-0331",
+      "country": "RO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 144,
+      "candidate_id": "SG-INV-0696",
+      "country": "TN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 145,
+      "candidate_id": "SG-INV-0362",
+      "country": "TR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 146,
+      "candidate_id": "SG-INV-0614",
+      "country": "TW",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 147,
+      "candidate_id": "SG-INV-0346",
+      "country": "UA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 148,
+      "candidate_id": "SG-INV-0723",
+      "country": "ZA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 149,
+      "candidate_id": "SG-INV-0497",
+      "country": "CL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 150,
+      "candidate_id": "SG-INV-0464",
+      "country": "CU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 151,
+      "candidate_id": "SG-INV-0469",
+      "country": "DO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 152,
+      "candidate_id": "SG-INV-0692",
+      "country": "DZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 153,
+      "candidate_id": "SG-INV-0512",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 154,
+      "candidate_id": "SG-INV-0699",
+      "country": "EG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 155,
+      "candidate_id": "SG-INV-0358",
+      "country": "GR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 156,
+      "candidate_id": "SG-INV-0446",
+      "country": "GT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 157,
+      "candidate_id": "SG-INV-0678",
+      "country": "ID",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 158,
+      "candidate_id": "SG-INV-0572",
+      "country": "JO",
+      "gate": "CANONICAL_PHYSICAL_REUSE_REVIEW"
+    },
+    {
+      "order": 159,
+      "candidate_id": "SG-INV-0629",
+      "country": "KR",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT"
+    },
+    {
+      "order": 160,
+      "candidate_id": "SG-INV-0354",
+      "country": "MT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 161,
+      "candidate_id": "SG-INV-0370",
+      "country": "SE",
+      "gate": "NON_CATHOLIC_OPERATING_SITE"
+    },
+    {
+      "order": 162,
+      "candidate_id": "SG-INV-0307",
+      "country": "SI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 163,
+      "candidate_id": "SG-INV-0300",
+      "country": "SK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 164,
+      "candidate_id": "SG-INV-0452",
+      "country": "SV",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 165,
+      "candidate_id": "SG-INV-0537",
+      "country": "VE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 166,
+      "candidate_id": "SG-INV-0669",
+      "country": "VN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 167,
+      "candidate_id": "SG-INV-0186",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 168,
+      "candidate_id": "SG-INV-0738",
+      "country": "AU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 169,
+      "candidate_id": "SG-INV-0508",
+      "country": "CO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 170,
+      "candidate_id": "SG-INV-0283",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 171,
+      "candidate_id": "SG-INV-0311",
+      "country": "HR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 172,
+      "candidate_id": "SG-INV-0324",
+      "country": "HU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 173,
+      "candidate_id": "SG-INV-0576",
+      "country": "LB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 174,
+      "candidate_id": "SG-INV-0734",
+      "country": "MU",
+      "gate": "CANONICAL_COMPLEX_REUSE_SUBSITE_REVIEW"
+    },
+    {
+      "order": 175,
+      "candidate_id": "SG-INV-0716",
+      "country": "NG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 176,
+      "candidate_id": "SG-INV-0454",
+      "country": "NI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 177,
+      "candidate_id": "SG-INV-0231",
+      "country": "NL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 178,
+      "candidate_id": "SG-INV-0745",
+      "country": "NZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 179,
+      "candidate_id": "SG-INV-0568",
+      "country": "PS",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 180,
+      "candidate_id": "SG-INV-0533",
+      "country": "UY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 181,
+      "candidate_id": "SG-INV-0495",
+      "country": "AR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 182,
+      "candidate_id": "SG-INV-0224",
+      "country": "BE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 183,
+      "candidate_id": "SG-INV-0277",
+      "country": "CH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 184,
+      "candidate_id": "SG-INV-0335",
+      "country": "LT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 185,
+      "candidate_id": "SG-INV-0434",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 186,
+      "candidate_id": "SG-INV-0522",
+      "country": "PE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 187,
+      "candidate_id": "SG-INV-0146",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 188,
+      "candidate_id": "SG-INV-0529",
+      "country": "PY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 189,
+      "candidate_id": "SG-INV-0478",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 190,
+      "candidate_id": "SG-INV-0616",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 191,
+      "candidate_id": "SG-INV-0604",
+      "country": "LK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 192,
+      "candidate_id": "SG-INV-0255",
+      "country": "GB",
+      "gate": "NON_CATHOLIC_OPERATING_SITE"
+    },
+    {
+      "order": 193,
+      "candidate_id": "SG-INV-0241",
+      "country": "IE",
+      "gate": "HISTORICAL_CATHOLIC_HERITAGE_NOT_ACTIVE_SITE"
+    },
+    {
+      "order": 194,
+      "candidate_id": "SG-INV-0420",
+      "country": "CA",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT"
+    },
+    {
+      "order": 195,
+      "candidate_id": "SG-INV-0592",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 196,
+      "candidate_id": "SG-INV-0549",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 197,
+      "candidate_id": "SG-INV-0117",
+      "country": "ES",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:ES:basilica-nuestra-senora-atocha-madrid"
+    },
+    {
+      "order": 198,
+      "candidate_id": "SG-INV-0632",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 199,
+      "candidate_id": "SG-INV-0213",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 200,
+      "candidate_id": "SG-INV-0164",
+      "country": "DE",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:DE:benediktinerabtei-maria-laach"
+    },
+    {
+      "order": 201,
+      "candidate_id": "SG-INV-0543",
+      "country": "BO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 202,
+      "candidate_id": "SG-INV-0697",
+      "country": "TN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 203,
+      "candidate_id": "SG-INV-0363",
+      "country": "TR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 204,
+      "candidate_id": "SG-INV-0347",
+      "country": "UA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 205,
+      "candidate_id": "SG-INV-0500",
+      "country": "CL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 206,
+      "candidate_id": "SG-INV-0465",
+      "country": "CU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 207,
+      "candidate_id": "SG-INV-0693",
+      "country": "DZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 208,
+      "candidate_id": "SG-INV-0513",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 209,
+      "candidate_id": "SG-INV-0700",
+      "country": "EG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 210,
+      "candidate_id": "SG-INV-0360",
+      "country": "GR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 211,
+      "candidate_id": "SG-INV-0447",
+      "country": "GT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 212,
+      "candidate_id": "SG-INV-0679",
+      "country": "ID",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 213,
+      "candidate_id": "SG-INV-0573",
+      "country": "JO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 214,
+      "candidate_id": "SG-INV-0624",
+      "country": "KR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 215,
+      "candidate_id": "SG-INV-0355",
+      "country": "MT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 216,
+      "candidate_id": "SG-INV-0302",
+      "country": "SK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 217,
+      "candidate_id": "SG-INV-0538",
+      "country": "VE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 218,
+      "candidate_id": "SG-INV-0670",
+      "country": "VN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 219,
+      "candidate_id": "SG-INV-0187",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 220,
+      "candidate_id": "SG-INV-0739",
+      "country": "AU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 221,
+      "candidate_id": "SG-INV-0505",
+      "country": "CO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 222,
+      "candidate_id": "SG-INV-0284",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 223,
+      "candidate_id": "SG-INV-0313",
+      "country": "HR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 224,
+      "candidate_id": "SG-INV-0325",
+      "country": "HU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 225,
+      "candidate_id": "SG-INV-0578",
+      "country": "LB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 226,
+      "candidate_id": "SG-INV-0455",
+      "country": "NI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 227,
+      "candidate_id": "SG-INV-0232",
+      "country": "NL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 228,
+      "candidate_id": "SG-INV-0569",
+      "country": "PS",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 229,
+      "candidate_id": "SG-INV-0535",
+      "country": "UY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 230,
+      "candidate_id": "SG-INV-0496",
+      "country": "AR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 231,
+      "candidate_id": "SG-INV-0225",
+      "country": "BE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 232,
+      "candidate_id": "SG-INV-0272",
+      "country": "CH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 233,
+      "candidate_id": "SG-INV-0337",
+      "country": "LT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 234,
+      "candidate_id": "SG-INV-0435",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 235,
+      "candidate_id": "SG-INV-0523",
+      "country": "PE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 236,
+      "candidate_id": "SG-INV-0153",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 237,
+      "candidate_id": "SG-INV-0479",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 238,
+      "candidate_id": "SG-INV-0618",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 239,
+      "candidate_id": "SG-INV-0605",
+      "country": "LK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 240,
+      "candidate_id": "SG-INV-0249",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 241,
+      "candidate_id": "SG-INV-0239",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 242,
+      "candidate_id": "SG-INV-0421",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 243,
+      "candidate_id": "SG-INV-0593",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 244,
+      "candidate_id": "SG-INV-0559",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 245,
+      "candidate_id": "SG-INV-0125",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 246,
+      "candidate_id": "SG-INV-0634",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 247,
+      "candidate_id": "SG-INV-0215",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 248,
+      "candidate_id": "SG-INV-0165",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 249,
+      "candidate_id": "SG-INV-0380",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 250,
+      "candidate_id": "SG-INV-0049",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 251,
+      "candidate_id": "SG-INV-0023",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 252,
+      "candidate_id": "SG-INV-0364",
+      "country": "TR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 253,
+      "candidate_id": "SG-INV-0501",
+      "country": "CL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 254,
+      "candidate_id": "SG-INV-0466",
+      "country": "CU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 255,
+      "candidate_id": "SG-INV-0694",
+      "country": "DZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 256,
+      "candidate_id": "SG-INV-0514",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 257,
+      "candidate_id": "SG-INV-0703",
+      "country": "EG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 258,
+      "candidate_id": "SG-INV-0448",
+      "country": "GT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 259,
+      "candidate_id": "SG-INV-0625",
+      "country": "KR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 260,
+      "candidate_id": "SG-INV-0303",
+      "country": "SK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 261,
+      "candidate_id": "SG-INV-0539",
+      "country": "VE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 262,
+      "candidate_id": "SG-INV-0671",
+      "country": "VN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 263,
+      "candidate_id": "SG-INV-0188",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 264,
+      "candidate_id": "SG-INV-0740",
+      "country": "AU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 265,
+      "candidate_id": "SG-INV-0506",
+      "country": "CO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 266,
+      "candidate_id": "SG-INV-0291",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 267,
+      "candidate_id": "SG-INV-0316",
+      "country": "HR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 268,
+      "candidate_id": "SG-INV-0326",
+      "country": "HU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 269,
+      "candidate_id": "SG-INV-0579",
+      "country": "LB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 270,
+      "candidate_id": "SG-INV-0233",
+      "country": "NL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 271,
+      "candidate_id": "SG-INV-0570",
+      "country": "PS",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 272,
+      "candidate_id": "SG-INV-0492",
+      "country": "AR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 273,
+      "candidate_id": "SG-INV-0226",
+      "country": "BE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 274,
+      "candidate_id": "SG-INV-0274",
+      "country": "CH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 275,
+      "candidate_id": "SG-INV-0339",
+      "country": "LT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 276,
+      "candidate_id": "SG-INV-0438",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 277,
+      "candidate_id": "SG-INV-0524",
+      "country": "PE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 278,
+      "candidate_id": "SG-INV-0148",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 279,
+      "candidate_id": "SG-INV-0480",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 280,
+      "candidate_id": "SG-INV-0619",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 281,
+      "candidate_id": "SG-INV-0606",
+      "country": "LK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 282,
+      "candidate_id": "SG-INV-0256",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 283,
+      "candidate_id": "SG-INV-0242",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 284,
+      "candidate_id": "SG-INV-0422",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 285,
+      "candidate_id": "SG-INV-0585",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 286,
+      "candidate_id": "SG-INV-0553",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 287,
+      "candidate_id": "SG-INV-0126",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 288,
+      "candidate_id": "SG-INV-0649",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 289,
+      "candidate_id": "SG-INV-0200",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 290,
+      "candidate_id": "SG-INV-0166",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 291,
+      "candidate_id": "SG-INV-0387",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 292,
+      "candidate_id": "SG-INV-0051",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 293,
+      "candidate_id": "SG-INV-0026",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 294,
+      "candidate_id": "SG-INV-0502",
+      "country": "CL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 295,
+      "candidate_id": "SG-INV-0515",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 296,
+      "candidate_id": "SG-INV-0704",
+      "country": "EG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 297,
+      "candidate_id": "SG-INV-0626",
+      "country": "KR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 298,
+      "candidate_id": "SG-INV-0540",
+      "country": "VE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 299,
+      "candidate_id": "SG-INV-0674",
+      "country": "VN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 300,
+      "candidate_id": "SG-INV-0189",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 301,
+      "candidate_id": "SG-INV-0741",
+      "country": "AU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 302,
+      "candidate_id": "SG-INV-0509",
+      "country": "CO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 303,
+      "candidate_id": "SG-INV-0285",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 304,
+      "candidate_id": "SG-INV-0327",
+      "country": "HU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 305,
+      "candidate_id": "SG-INV-0581",
+      "country": "LB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 306,
+      "candidate_id": "SG-INV-0493",
+      "country": "AR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 307,
+      "candidate_id": "SG-INV-0227",
+      "country": "BE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 308,
+      "candidate_id": "SG-INV-0275",
+      "country": "CH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 309,
+      "candidate_id": "SG-INV-0336",
+      "country": "LT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 310,
+      "candidate_id": "SG-INV-0440",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 311,
+      "candidate_id": "SG-INV-0526",
+      "country": "PE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 312,
+      "candidate_id": "SG-INV-0149",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 313,
+      "candidate_id": "SG-INV-0481",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 314,
+      "candidate_id": "SG-INV-0620",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 315,
+      "candidate_id": "SG-INV-0607",
+      "country": "LK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 316,
+      "candidate_id": "SG-INV-0257",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 317,
+      "candidate_id": "SG-INV-0243",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 318,
+      "candidate_id": "SG-INV-0416",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 319,
+      "candidate_id": "SG-INV-0588",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 320,
+      "candidate_id": "SG-INV-0554",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 321,
+      "candidate_id": "SG-INV-0128",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 322,
+      "candidate_id": "SG-INV-0650",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 323,
+      "candidate_id": "SG-INV-0204",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 324,
+      "candidate_id": "SG-INV-0168",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 325,
+      "candidate_id": "SG-INV-0397",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 326,
+      "candidate_id": "SG-INV-0055",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 327,
+      "candidate_id": "SG-INV-0032",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 328,
+      "candidate_id": "SG-INV-0516",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 329,
+      "candidate_id": "SG-INV-0627",
+      "country": "KR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 330,
+      "candidate_id": "SG-INV-0190",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 331,
+      "candidate_id": "SG-INV-0742",
+      "country": "AU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 332,
+      "candidate_id": "SG-INV-0510",
+      "country": "CO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 333,
+      "candidate_id": "SG-INV-0286",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 334,
+      "candidate_id": "SG-INV-0582",
+      "country": "LB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 335,
+      "candidate_id": "SG-INV-0228",
+      "country": "BE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 336,
+      "candidate_id": "SG-INV-0278",
+      "country": "CH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 337,
+      "candidate_id": "SG-INV-0429",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 338,
+      "candidate_id": "SG-INV-0150",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 339,
+      "candidate_id": "SG-INV-0483",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 340,
+      "candidate_id": "SG-INV-0621",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 341,
+      "candidate_id": "SG-INV-0260",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 342,
+      "candidate_id": "SG-INV-0244",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 343,
+      "candidate_id": "SG-INV-0425",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 344,
+      "candidate_id": "SG-INV-0590",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 345,
+      "candidate_id": "SG-INV-0555",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 346,
+      "candidate_id": "SG-INV-0133",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 347,
+      "candidate_id": "SG-INV-0652",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 348,
+      "candidate_id": "SG-INV-0211",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 349,
+      "candidate_id": "SG-INV-0170",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 350,
+      "candidate_id": "SG-INV-0399",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 351,
+      "candidate_id": "SG-INV-0057",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 352,
+      "candidate_id": "SG-INV-0008",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 353,
+      "candidate_id": "SG-INV-0517",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 354,
+      "candidate_id": "SG-INV-0628",
+      "country": "KR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 355,
+      "candidate_id": "SG-INV-0193",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 356,
+      "candidate_id": "SG-INV-0743",
+      "country": "AU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 357,
+      "candidate_id": "SG-INV-0287",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 358,
+      "candidate_id": "SG-INV-0430",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 359,
+      "candidate_id": "SG-INV-0154",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 360,
+      "candidate_id": "SG-INV-0485",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 361,
+      "candidate_id": "SG-INV-0622",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 362,
+      "candidate_id": "SG-INV-0250",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 363,
+      "candidate_id": "SG-INV-0245",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 364,
+      "candidate_id": "SG-INV-0423",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 365,
+      "candidate_id": "SG-INV-0591",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 366,
+      "candidate_id": "SG-INV-0556",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 367,
+      "candidate_id": "SG-INV-0111",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 368,
+      "candidate_id": "SG-INV-0630",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 369,
+      "candidate_id": "SG-INV-0214",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 370,
+      "candidate_id": "SG-INV-0171",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 371,
+      "candidate_id": "SG-INV-0400",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 372,
+      "candidate_id": "SG-INV-0058",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 373,
+      "candidate_id": "SG-INV-0011",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 374,
+      "candidate_id": "SG-INV-0518",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 375,
+      "candidate_id": "SG-INV-0191",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 376,
+      "candidate_id": "SG-INV-0288",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 377,
+      "candidate_id": "SG-INV-0432",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 378,
+      "candidate_id": "SG-INV-0156",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 379,
+      "candidate_id": "SG-INV-0486",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 380,
+      "candidate_id": "SG-INV-0251",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 381,
+      "candidate_id": "SG-INV-0246",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 382,
+      "candidate_id": "SG-INV-0424",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 383,
+      "candidate_id": "SG-INV-0594",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 384,
+      "candidate_id": "SG-INV-0558",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 385,
+      "candidate_id": "SG-INV-0112",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 386,
+      "candidate_id": "SG-INV-0635",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 387,
+      "candidate_id": "SG-INV-0216",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 388,
+      "candidate_id": "SG-INV-0172",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 389,
+      "candidate_id": "SG-INV-0378",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 390,
+      "candidate_id": "SG-INV-0064",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 391,
+      "candidate_id": "SG-INV-0012",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 392,
+      "candidate_id": "SG-INV-0519",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 393,
+      "candidate_id": "SG-INV-0192",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 394,
+      "candidate_id": "SG-INV-0289",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 395,
+      "candidate_id": "SG-INV-0433",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 396,
+      "candidate_id": "SG-INV-0157",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 397,
+      "candidate_id": "SG-INV-0487",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 398,
+      "candidate_id": "SG-INV-0258",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 399,
+      "candidate_id": "SG-INV-0595",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 400,
+      "candidate_id": "SG-INV-0561",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 401,
+      "candidate_id": "SG-INV-0113",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 402,
+      "candidate_id": "SG-INV-0636",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 403,
+      "candidate_id": "SG-INV-0206",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 404,
+      "candidate_id": "SG-INV-0173",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 405,
+      "candidate_id": "SG-INV-0383",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 406,
+      "candidate_id": "SG-INV-0073",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 407,
+      "candidate_id": "SG-INV-0013",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 408,
+      "candidate_id": "SG-INV-0196",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 409,
+      "candidate_id": "SG-INV-0290",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 410,
+      "candidate_id": "SG-INV-0436",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 411,
+      "candidate_id": "SG-INV-0158",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 412,
+      "candidate_id": "SG-INV-0488",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 413,
+      "candidate_id": "SG-INV-0259",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 414,
+      "candidate_id": "SG-INV-0596",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 415,
+      "candidate_id": "SG-INV-0562",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 416,
+      "candidate_id": "SG-INV-0114",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 417,
+      "candidate_id": "SG-INV-0638",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 418,
+      "candidate_id": "SG-INV-0207",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 419,
+      "candidate_id": "SG-INV-0174",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 420,
+      "candidate_id": "SG-INV-0384",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 421,
+      "candidate_id": "SG-INV-0075",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 422,
+      "candidate_id": "SG-INV-0014",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 423,
+      "candidate_id": "SG-INV-0197",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 424,
+      "candidate_id": "SG-INV-0292",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 425,
+      "candidate_id": "SG-INV-0437",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 426,
+      "candidate_id": "SG-INV-0159",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 427,
+      "candidate_id": "SG-INV-0261",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 428,
+      "candidate_id": "SG-INV-0597",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 429,
+      "candidate_id": "SG-INV-0563",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 430,
+      "candidate_id": "SG-INV-0115",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 431,
+      "candidate_id": "SG-INV-0640",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 432,
+      "candidate_id": "SG-INV-0208",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 433,
+      "candidate_id": "SG-INV-0175",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 434,
+      "candidate_id": "SG-INV-0385",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 435,
+      "candidate_id": "SG-INV-0089",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 436,
+      "candidate_id": "SG-INV-0015",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 437,
+      "candidate_id": "SG-INV-0198",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 438,
+      "candidate_id": "SG-INV-0293",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 439,
+      "candidate_id": "SG-INV-0439",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 440,
+      "candidate_id": "SG-INV-0160",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 441,
+      "candidate_id": "SG-INV-0262",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 442,
+      "candidate_id": "SG-INV-0598",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 443,
+      "candidate_id": "SG-INV-0564",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 444,
+      "candidate_id": "SG-INV-0116",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 445,
+      "candidate_id": "SG-INV-0641",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 446,
+      "candidate_id": "SG-INV-0217",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 447,
+      "candidate_id": "SG-INV-0176",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 448,
+      "candidate_id": "SG-INV-0386",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 449,
+      "candidate_id": "SG-INV-0066",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 450,
+      "candidate_id": "SG-INV-0016",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 451,
+      "candidate_id": "SG-INV-0194",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 452,
+      "candidate_id": "SG-INV-0294",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 453,
+      "candidate_id": "SG-INV-0443",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 454,
+      "candidate_id": "SG-INV-0161",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 455,
+      "candidate_id": "SG-INV-0263",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 456,
+      "candidate_id": "SG-INV-0599",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 457,
+      "candidate_id": "SG-INV-0118",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 458,
+      "candidate_id": "SG-INV-0642",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 459,
+      "candidate_id": "SG-INV-0218",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 460,
+      "candidate_id": "SG-INV-0177",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 461,
+      "candidate_id": "SG-INV-0388",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 462,
+      "candidate_id": "SG-INV-0068",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 463,
+      "candidate_id": "SG-INV-0021",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 464,
+      "candidate_id": "SG-INV-0195",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 465,
+      "candidate_id": "SG-INV-0441",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 466,
+      "candidate_id": "SG-INV-0265",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 467,
+      "candidate_id": "SG-INV-0119",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 468,
+      "candidate_id": "SG-INV-0643",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 469,
+      "candidate_id": "SG-INV-0219",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 470,
+      "candidate_id": "SG-INV-0178",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 471,
+      "candidate_id": "SG-INV-0391",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 472,
+      "candidate_id": "SG-INV-0069",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 473,
+      "candidate_id": "SG-INV-0030",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 474,
+      "candidate_id": "SG-INV-0442",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 475,
+      "candidate_id": "SG-INV-0266",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 476,
+      "candidate_id": "SG-INV-0120",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 477,
+      "candidate_id": "SG-INV-0644",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 478,
+      "candidate_id": "SG-INV-0179",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 479,
+      "candidate_id": "SG-INV-0392",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 480,
+      "candidate_id": "SG-INV-0070",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 481,
+      "candidate_id": "SG-INV-0031",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 482,
+      "candidate_id": "SG-INV-0267",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 483,
+      "candidate_id": "SG-INV-0122",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 484,
+      "candidate_id": "SG-INV-0645",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 485,
+      "candidate_id": "SG-INV-0180",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 486,
+      "candidate_id": "SG-INV-0393",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 487,
+      "candidate_id": "SG-INV-0072",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 488,
+      "candidate_id": "SG-INV-0033",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 489,
+      "candidate_id": "SG-INV-0268",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 490,
+      "candidate_id": "SG-INV-0123",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 491,
+      "candidate_id": "SG-INV-0646",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 492,
+      "candidate_id": "SG-INV-0181",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 493,
+      "candidate_id": "SG-INV-0394",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 494,
+      "candidate_id": "SG-INV-0074",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 495,
+      "candidate_id": "SG-INV-0041",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 496,
+      "candidate_id": "SG-INV-0269",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 497,
+      "candidate_id": "SG-INV-0124",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 498,
+      "candidate_id": "SG-INV-0647",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 499,
+      "candidate_id": "SG-INV-0182",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    },
+    {
+      "order": 500,
+      "candidate_id": "SG-INV-0395",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN"
+    }
+  ]
+}
