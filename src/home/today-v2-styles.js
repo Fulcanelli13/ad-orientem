@@ -596,4 +596,31 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2CustomCalendarLink{min-height:44px;border:0;background:none;padding:7px 0;color:#d5c39d;font:600 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
 @media(max-width:700px){.aoTodayV2CustomSpotlight{margin:14px 14px 0;padding:16px 5px}}
 
+
+/* Do not confuse the independent Saints resolver with the curated Proper hero:
+   never show a large empty remote-art placeholder as if it were approved art. */
+.homeScreen.aoTodayV2 .aoSaintArtCard:has(.aoSaintArtPlaceholder),
+.homeScreen.aoTodayV2 .aoSaintArtCard:has(.aoSaintArtLoading),
+.homeScreen.aoTodayV2 .aoSaintArtPlaceholder{
+ display:none!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoLiturgicalDayKicker{
+ display:none!important;
+}
+.homeScreen.aoTodayV2 .aoTodayV2Identity .aoTodayEditorialDate{
+ text-transform:uppercase!important;align-self:flex-start!important;
+ font:500 12px/1.4 var(--ao-font-ui,Georgia,serif)!important;
+ letter-spacing:.17em!important;color:#c6bca9!important;
+}
+.homeScreen.aoTodayV2 .aoTodayEditorialEdition.aoTodayV2ArtMissing>.aoTodayV2Identity{
+ background:linear-gradient(115deg,rgba(193,165,119,.055),transparent 60%)!important;
+ border-top:1px solid rgba(214,191,151,.17)!important;
+ padding:22px 0 22px!important;
+}
+.homeScreen.aoTodayV2 .aoTodayEditorialEdition.aoTodayV2ArtMissing>.aoTodayV2Identity:before{
+ font-size:26px!important;opacity:.7!important;right:3px;top:12px;
+}
+.homeScreen.aoTodayV2 .aoTodayV2CalendarGlance{
+ margin-bottom:22px!important;
+}
 `;
