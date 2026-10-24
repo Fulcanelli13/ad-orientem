@@ -26,6 +26,7 @@ jobs:
           python -m py_compile scripts/research/sacred_art_b49_all383_license_and_tracked_image_provenance.py
           node tests/sacred-art-b48-383-physical-original-coverage.mjs
           test -f tests/sacred-art-b49-383-photo-license-and-preview-gates.mjs
+          grep -q 'PRIORITY=' scripts/research/sacred_art_b49_all383_license_and_tracked_image_provenance.py
       - name: Correlate exact source SHA photo rights and perceptual preview candidates without changing publication gates
         env:
           GH_TOKEN: ${{ github.token }}
@@ -37,7 +38,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/research/sacred-art-b49-383-release-photo-rights-and-repo-mapping.csv data/research/sacred-art-b49-383-photo-license-and-git-image-summary.json data/research/sacred-art-b49-git-tracked-images-and-visual-match-candidates.csv
+          git add data/research/sacred-art-b49-383-release-photo-rights-and-repo-mapping.csv data/research/sacred-art-b49-383-photo-license-and-git-image-summary.json data/research/sacred-art-b49-git-tracked-images-and-visual-match-candidates.csv data/research/sacred-art-b49-95-frozen-approved-rights-review-queue.csv
           git commit -m 'research: B49 383-case photo rights evidence and 227 git image comparison, no app approvals'
           for attempt in 1 2 3; do
             git fetch origin research/sacred-art-b49-383-photo-license-and-git-preview-20261024
