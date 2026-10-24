@@ -1,0 +1,62 @@
+name: B38 KMSKA Rubens Holy Trinity CC0 original research archive (draft only)
+on:
+  push:
+    branches: [research/sacred-art-b38-object-identity-and-open-source-leads-20261024]
+    paths: [.github/workflows/ao-art-b38-kmska-cc0-original.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b38-art-kmska-one-time
+  cancel-in-progress: false
+jobs:
+  research-archive-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b38-object-identity-and-open-source-leads-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Decode image and verify immutable research-only B38 gates
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python -m py_compile scripts/research/sacred_art_b38_recover_kmska_cc0.py
+          node tests/sacred-art-b38-evidence-holds.mjs
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('data/research/sacred-art-b38-one-commons-cc0-source-lead.json').read_text())
+          assert len(j['cases'])==1 and len(j['exact_photo_leads'])==1
+          assert j['exact_photo_leads'][0]['expected_width']==19178
+          assert j['exact_photo_leads'][0]['expected_height']==19721
+          assert j['source_photos_selected']==0 and j['publication_rights_approved']==0
+          assert j['cases'][0]['publication_approved'] is False
+          PY
+      - name: Retrieve only currently verified Commons CC0 historical image and hash original bytes
+        run: python scripts/research/sacred_art_b38_recover_kmska_cc0.py
+      - name: Compulsory unpublished GitHub Release archive and remote SHA verification
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py --wave b38-kmska-cc0 --source-dir artifacts/b38-kmska-trinity-cc0-source-research
+      - name: Commit only compact source evidence, never source image or app catalogue
+        run: |
+          set -euo pipefail
+          cp artifacts/b38-kmska-trinity-cc0-source-research/source-results.csv data/research/sacred-art-b38-kmska-cc0-source-results.csv
+          cp artifacts/b38-kmska-trinity-cc0-source-research/source-summary.json data/research/sacred-art-b38-kmska-cc0-source-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b38-kmska-cc0-source-results.csv data/research/sacred-art-b38-kmska-cc0-source-summary.json
+          git commit -m 'research: B38 KMSKA CC0 original byte evidence and mandatory remote draft archive'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b38-object-identity-and-open-source-leads-20261024
+            git rebase origin/research/sacred-art-b38-object-identity-and-open-source-leads-20261024
+            git push origin HEAD:research/sacred-art-b38-object-identity-and-open-source-leads-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
