@@ -36,7 +36,7 @@ const win={
  },
  AO_RUNTIME_V8:{store:{getState:()=>({route:"home",language}),subscribe:()=>()=>{}}},
  AO_APP_SHELL_V1:{async navigate(dest){nav.push(dest);return succeed?{ok:true}:{ok:false,reason:"OWNER_UNAVAILABLE"};}},
- AO_FIND_APP_V1:{async open(opts){nav.push("lens:"+opts.lens);return customs;}},
+ AO_FIND_APP_V1:{async open(opts){nav.push("lens:"+opts.lens);return true;}},
  console:{error(...args){errors.push(args);}}
 };
 const owner=createHomeOwner(win);
