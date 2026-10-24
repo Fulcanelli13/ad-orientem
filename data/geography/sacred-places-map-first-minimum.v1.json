@@ -1,0 +1,30 @@
+{
+  "schema": "AO_SACRED_PLACES_MAP_FIRST_MINIMUM_V1",
+  "as_of": "2026-10-24",
+  "status": "GOVERNING_NEW_PLACE_RELEASE_GATES",
+  "mandatory": {
+    "physical_identity": "Stable ID and named physically distinct site; deduplicate against current canonical IDs and existing OSM features, including internal chapel/precinct distinctions.",
+    "catholic_scope": "Affiliation must be supported by accountable Catholic custodian, diocese, or other primary institutional source; existing Orthodox, Anglican, secular heritage should not be labelled active Catholic.",
+    "category": "Use most accurate present physical Place type without claiming unsupported formal sanctuary or monastic legal status.",
+    "location": "Country, meaningful locality, source-backed coordinates with precision and feature provenance; map anchor is not an entrance.",
+    "provenance": "At least one accountable identity record with URL retained internally; one independently attributed map feature stored in Place.geo. A second source-registry record duplicating OSM geo URL is optional.",
+    "integrity": "Stable frozen existing IDs, source references and country scopes; preserve source ambiguity holds; avoid unsupported category cross-links."
+  },
+  "deferred_not_publication_gates": [
+    "Multiple redundant institutional URLs",
+    "Separate typed map-source record when Place.geo already preserves OSM URL/ref",
+    "Detailed biography, timeline, bilingual introduction and long place guide",
+    "Photo, rights-cleared hero, image gallery",
+    "Feast/pilgrimage schedules, opening hours and visitor entrance",
+    "Specific chapel/relic/apparition/custody story not needed for physical site identity",
+    "Directory–Place matching, current TLM times, missal/rite, priest ministry or any Mass data",
+    "Customs, Saints, Calendar, archaeological and historic-route cross-domain links"
+  ],
+  "source_display": "Identity URL and OSM provenance are internal audit fields. No external link needs to appear in the initial user-facing place card.",
+  "excluded": [
+    "Auto creating ordinary parish churches merely because they exist",
+    "Publishing an unlocated shrine title, name-only match or whole-country dedication",
+    "Treating an incomplete country census as comprehensive"
+  ],
+  "next_step": "Release independently verified minimal Catholic physical sites first, then run separate enrichment pipelines without holding up the world map."
+}
