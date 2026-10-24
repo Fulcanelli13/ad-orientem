@@ -1,0 +1,48 @@
+name: B49 all 383 photo license evidence and 227 Git image provenance candidates
+on:
+  push:
+    branches: [research/sacred-art-b49-383-photo-license-and-git-preview-20261024]
+    paths: [.github/workflows/ao-art-b49-383-rights-git-photo-audit.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b49-all383-rights-git-image-audit-one
+  cancel-in-progress: false
+jobs:
+  actual-rights-and-preview-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b49-383-photo-license-and-git-preview-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate all383 B48 source partition, B49 script and integrity test present
+        run: |
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python -m py_compile scripts/research/sacred_art_b49_all383_license_and_tracked_image_provenance.py
+          node tests/sacred-art-b48-383-physical-original-coverage.mjs
+          test -f tests/sacred-art-b49-383-photo-license-and-preview-gates.mjs
+      - name: Correlate exact source SHA photo rights and perceptual preview candidates without changing publication gates
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_b49_all383_license_and_tracked_image_provenance.py
+      - name: Enforce 383 stable artwork/photo rights decisions and 227 scanned image inventory
+        run: node tests/sacred-art-b49-383-photo-license-and-preview-gates.mjs
+      - name: Commit only source-rights provenance and Git image match proposals, no original image binaries
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b49-383-release-photo-rights-and-repo-mapping.csv data/research/sacred-art-b49-383-photo-license-and-git-image-summary.json data/research/sacred-art-b49-git-tracked-images-and-visual-match-candidates.csv
+          git commit -m 'research: B49 383-case photo rights evidence and 227 git image comparison, no app approvals'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b49-383-photo-license-and-git-preview-20261024
+            git rebase origin/research/sacred-art-b49-383-photo-license-and-git-preview-20261024
+            git push origin HEAD:research/sacred-art-b49-383-photo-license-and-git-preview-20261024 && exit 0
+            sleep 3
+          done
+          exit 1
