@@ -1,0 +1,228 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B15_V1",
+  "batchId": "AO-ART-2026-10-25-B15",
+  "asOf": "2026-10-25",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Additive research only; preserves all frozen approvals, rejections and IDs; no publication, merges, paid licences, Prado or Fra Angelico sources.",
+  "sourceReconciliation": {
+    "latestCommitted": "B14 at data/research/sacred-art-b14-2026-10-24-class-i-rights-and-class-ii-open-originals.v1.json",
+    "reviewed": "B03–B14 committed records; uncommitted B12/B13 ledgers; 451 bulk works; 281 platform/885 candidate artworks; Class I 53-date decision overlay; Class II 11-priority triage",
+    "dedupe": "Ricci consecration, Ango copy, Cesari Lateran fresco, Cesari Ferens oil were absent as title/artist records from the checked 451 and 281 corpus; separate physical originals preserved. Existing Brera and Benson targets are improvements/holds, not new physical objects."
+  },
+  "records": [
+    {
+      "recordId": "B15-01",
+      "priority": "CLASS_II_2026-11-09_EXACT_SUBJECT",
+      "artist": "Giovanni Battista Ricci (Ricci da Novara)",
+      "title": "Consacrazione della basilica lateranense",
+      "date": "1595–1600 (Fondazione Zeri); photographed fresco caption 1597–1601 ca.",
+      "physicalObject": {
+        "medium": "fresco/mural painting",
+        "location": "San Giovanni in Laterano, Rome, transept",
+        "archiveCatalogue": "Fondazione Federico Zeri OA 29933",
+        "objectUrl": "https://catalogo.fondazionezeri.unibo.it/scheda.v2.jsp?apply=true&decorator=layout_resp&id=32022&locale=it&tipo_scheda=OA"
+      },
+      "image": {
+        "filePage": "https://commons.wikimedia.org/wiki/File:Giovan_battista_ricci,_consacrazione_della_basilica_lateranense,_1597-1601_ca.jpg",
+        "photographer": "Sailko",
+        "licence": "CC BY 3.0 Unported, attribution required, alterations indicated",
+        "reportedPixels": [
+          2844,
+          1820
+        ],
+        "reportedBytes": 4343817,
+        "originalSha1FromCommons": "24667eaf0b196c422c405bdbde759f24d0da8e06",
+        "downloadedThisPass": false,
+        "localHashVerified": false,
+        "visualInspection": "Browser preview inspected: liturgical consecration ceremony at altar, framed fresco. Not an oil painting; no mobile crop QA."
+      },
+      "sourceCrosscheck": [
+        "https://www.themorgan.org/drawings/item/109561",
+        "https://catalogo.fondazionezeri.unibo.it/scheda/fotografia/69048/Istituto%20Centrale%20per%20il%20Catalogo%20e%20la%20Documentazione%3A%20Fototeca%20Nazionale%C2%A0%E2%80%94%C2%A0Roma.%20Basilica%20di%20S.%20Giovanni%20%28Ricci%20affrescio%29.%20Consacrazione%20della%20Basilica"
+      ],
+      "assessment": "Major new strict iconographic match for the Lateran dedication subject, superseding B03/B14 'no exact scene found' as research evidence only. Historical depiction made c.1600, not an eyewitness 4th-century record. Photo attribution and aesthetic/crop review required. No user approval or date primary."
+    },
+    {
+      "recordId": "B15-02",
+      "priority": "CLASS_II_2026-11-09_SAME_COMPOSITION_COPY",
+      "artist": "Jean Robert Ango, after Giovanni Battista Ricci",
+      "title": "The Consecration of the Basilica of San Giovanni in Laterano",
+      "date": "18th century; Ango died 1773",
+      "physicalObject": {
+        "medium": "red chalk on paper",
+        "institution": "The Morgan Library & Museum",
+        "inventory": "1995.7",
+        "sizeMm": [
+          319,
+          454
+        ],
+        "objectUrl": "https://www.themorgan.org/drawings/item/109561"
+      },
+      "image": {
+        "downloadButton": "Morgan Drawings Online",
+        "licence": "No image-specific unrestricted commercial reuse verified; download availability is not a licence",
+        "downloadedThisPass": false,
+        "hashVerified": false
+      },
+      "assessment": "Official Morgan record explicitly identifies drawing as copy after Ricci's Lateran fresco. Separate physical drawing, not a second original depiction or oil; useful independent identity crosscheck. Do not count as strict oil-painting coverage."
+    },
+    {
+      "recordId": "B15-03",
+      "priority": "CLASS_II_2026-08-06_EXACT_SUBJECT_FRESCO",
+      "artist": "Giuseppe Cesari (Cavalier d'Arpino)",
+      "title": "Trasfigurazione",
+      "date": "c.1597–1601",
+      "physicalObject": {
+        "medium": "fresco",
+        "location": "San Giovanni in Laterano, Rome, transept",
+        "evidence": "https://commons.wikimedia.org/wiki/Category:San_Giovanni_in_Laterano_(Rome)_-_Transept"
+      },
+      "image": {
+        "filePage": "https://commons.wikimedia.org/wiki/File:Cavalier_d%27arpino,_trasfigurazione,_1597-1601_ca.jpg",
+        "photographer": "Sailko",
+        "licence": "CC BY 3.0 Unported; attribution required",
+        "reportedPixels": [
+          3456,
+          2304
+        ],
+        "reportedBytesApprox": 4980000,
+        "downloadedThisPass": false,
+        "hashVerified": false,
+        "visualQa": false
+      },
+      "assessment": "Distinct historical Transfiguration fresco with reusable attributed photograph. Not Raphael's already-selected Vatican painting and no new 6 August approval. Additional art-historical catalogue crosscheck desirable."
+    },
+    {
+      "recordId": "B15-04",
+      "priority": "CLASS_II_2026-08-06_EXACT_SUBJECT_DISTINCT_OIL",
+      "artist": "Giuseppe Cesari (Cavalier d'Arpino)",
+      "title": "The Transfiguration",
+      "date": "c.1620 (Art UK); 1620–1621 (Fondazione Zeri)",
+      "physicalObject": {
+        "medium": "oil on panel",
+        "institution": "Ferens Art Gallery, Hull",
+        "currentInventory": "KINCM:2005.4807 (Art UK)",
+        "olderCatalogueInventory": "601 (Fondazione Zeri)",
+        "dimensionsCmApprox": [
+          88.3,
+          58.9
+        ],
+        "objectUrl": "https://artuk.org/discover/artworks/the-transfiguration-78406",
+        "independentCatalogue": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/33050/Cesari%20Giuseppe%20%28Cavalier%20d%27Arpino%29%2C%20Trasfigurazione"
+      },
+      "image": {
+        "filePage": "https://commons.wikimedia.org/wiki/File:Giuseppe_Cesari_(1568-1640)_-_The_Transfiguration_-_KINCM-2005.4807_-_Ferens_Art_Gallery.jpg",
+        "reportedPixels": [
+          464,
+          685
+        ],
+        "rights": "Art UK/Ferens photo credited and terms embedded; Commons PD-Art tag does not itself certify UK/commercial reuse. HIGH_RES_RIGHTS_HOLD",
+        "downloadedThisPass": false,
+        "hashVerified": false,
+        "visualQa": false
+      },
+      "assessment": "A different physical oil painting by Cesari, NOT the Lateran fresco. Exact Transfiguration subject and closer to preferred oil medium, but low-resolution Commons derivative and unresolved photo licence. No approved primary."
+    },
+    {
+      "recordId": "B15-05",
+      "priority": "CLASS_I_APPROVED_2026-04-06_IMAGE_ROUTE_ALTERNATIVE",
+      "artist": "Caravaggio",
+      "title": "Supper at Emmaus",
+      "date": "1606",
+      "physicalObject": {
+        "institution": "Pinacoteca di Brera",
+        "inventory": "2296",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          141,
+          175
+        ],
+        "objectUrl": "https://pinacotecabrera.org/en/collezioni/collezione-on-line/supper-at-emmaus/"
+      },
+      "image": {
+        "filePage": "https://commons.wikimedia.org/wiki/File:Caravaggio_%E2%80%94_Supper_at_Emmaus.jpg",
+        "author": "Gleb Simonov",
+        "captured": "2023-12-17",
+        "uploaded": "2025-05-24",
+        "reportedPixels": [
+          8267,
+          6524
+        ],
+        "reportedBytes": 45113290,
+        "licence": "Photographer explicitly released own photo CC0 1.0; distinct from Brera's restricted institutional website photograph",
+        "downloadedThisPass": false,
+        "hashVerified": false,
+        "visualQa": false
+      },
+      "assessment": "New independently licensed exact-object photo route for the Milan 1606 version; institution itself remains source for physical identity. Not proof that user's approved Easter Monday version is Milan rather than London 1601. File camera/photo colour, framing and crop require QA."
+    },
+    {
+      "recordId": "B15-06",
+      "priority": "CLASS_I_APPROVED_2026-10-25_SOURCE_IDENTITY_HOLD",
+      "artist": "Ambrosius Benson",
+      "title": "Salvator Mundi",
+      "physicalObject": {
+        "medium": "oil on panel",
+        "dimensionsCm": [
+          91.4,
+          86.1
+        ],
+        "auctionLot": "Christie's lot 6238407",
+        "priorOwners": "Laffitte (1861), Enrique Traumann (by 1952); sold/offered as Fundación Cultural Formación y Humanismo property",
+        "objectUrl": "https://www.christies.com/zh-cn/lot/lot-6238407"
+      },
+      "image": {
+        "licence": "Christie's website imagery only licensed for limited personal noncommercial viewing; commercial reproduction prohibited by website terms",
+        "policy": "https://www.christies.com/en/about/terms-and-conditions/terms-and-conditions-for-website-use/",
+        "freeExactImageRouteVerified": false,
+        "downloadedThisPass": false,
+        "hashVerified": false
+      },
+      "assessment": "Primary auction catalog establishes concrete Benson physical object, provenance, 91.4x86.1 dimensions. However selected user's image not independently matched to this lot, and catalogue says papal tiara creates ambiguity between Christ and God the Father; do not change frozen Christ-the-King selection or replace with Massijs. No licensed usable photo found."
+    },
+    {
+      "recordId": "B15-07",
+      "priority": "DOCTOR_ST_CYRIL_OF_JERUSALEM_HELD",
+      "artist": "Unknown",
+      "title": "St. Cyril, Bishop of Jerusalem, Doctor of the Church",
+      "physicalObject": {
+        "claim": "Diocesan Library of Art says National Museum in Krakow, 1841; no identifiable creator, accession, medium or museum object URL independently established",
+        "thirdPartyLead": "https://art.diocesan.com/stock-photo/st-cyril-bishop-of-jerusalem-doctor-of-the-church-23049/"
+      },
+      "image": {
+        "rights": "Third-party stock image offered for purchase; 'public domain' assertion about depicted object is not proof of reproduction licence or exact painting",
+        "freeExactImageRouteVerified": false,
+        "downloadedThisPass": false
+      },
+      "assessment": "Keep blocked; neither a Western oil original nor exact physical museum identity established. Other Cyril/Methodius depictions must not be misidentified as Cyril of Jerusalem."
+    }
+  ],
+  "totals": {
+    "researchRecords": 7,
+    "newDistinctPhysicalObjectLeads": 4,
+    "existingObjectImageRouteImprovement": 1,
+    "approvedClassISourceIdentityImprovement": 1,
+    "unresolvedDoctorHold": 1,
+    "exactSubjectNewClassIIPhysicalLeads": 3,
+    "licencedAttributedNewPhotographRoutes": 2,
+    "independentlyLicensedCc0PhotoRoutes": 1,
+    "unrestrictedInstitutionalOpenAccessNewRoutes": 0,
+    "imagesAcquiredThisPass": 0,
+    "localHashesVerified": 0,
+    "actualCropQA": 0,
+    "canonicalIdsCreated": 0,
+    "ratingsOrApprovalsChanged": 0,
+    "productionMastersCertified": 0
+  },
+  "downloadBlocker": "Attempted Commons original download via container.download and direct Python requests. Redirect download failed and container DNS resolution for upload.wikimedia.org was unavailable. Commons metadata SHA-1 and pixels were read from source page, NOT independently recomputed.",
+  "nextQueue": [
+    "Before 9 Nov 2026 reported expiration, preserve previously acquired Met Rosary, NGA St Lawrence and Navez original bytes and verify SHA-256; this pass could not transfer binary files.",
+    "Resolve which Caravaggio Emmaus version is in the frozen user approval; compare selected image against London NG172 and Milan Brera 2296.",
+    "Obtain legally reusable exact Benson lot image from an independently licensed source, or leave selected image blocked; Christie's photo not eligible.",
+    "Check high-resolution rights for Ferens Cesari Transfiguration oil; keep separate from CC BY Lateran fresco.",
+    "Evaluate Ricci exact Lateran fresco at 390px and for user's dark Baroque aesthetics; source is CC BY 3.0, not CC0.",
+    "Investigate authentic Catholic St Cyril of Jerusalem portrait with verifiable physical original, not stock or Orthodox icon substitutes."
+  ],
+  "publicationGate": "RESEARCH_ONLY; no image bytes, production master certification, aesthetic score, canonical ID or feast placement changed."
+}
