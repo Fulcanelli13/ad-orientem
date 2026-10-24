@@ -1,0 +1,58 @@
+name: B37 read-only 30 Sacred Art exceptions and 383 catalogue image-source accounting
+on:
+  push:
+    branches: [research/sacred-art-b37-30-institutional-exceptions-20261024]
+    paths: [.github/workflows/ao-art-b37-readonly-coverage.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  accounting:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b37-30-institutional-exceptions-20261024
+          persist-credentials: false
+      - name: Recalculate four file SHA values and all 30 exact case dispositions, no publish
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          r=Path('data/research')
+          def get(name):return json.loads((r/name).read_text())
+          def table(name):
+            with (r/name).open(newline='',encoding='utf-8') as f:return list(csv.DictReader(f))
+          z=get('sacred-art-b37-383-research-source-coverage-closeout.json')
+          prev=get('sacred-art-b36-383-active-source-coverage-closeout.json')
+          site=get('sacred-art-b37-30-institutional-summary.json')
+          four=get('sacred-art-b37-four-source-summary.json')
+          results=table('sacred-art-b37-four-source-results.csv')
+          sites=table('sacred-art-b37-30-institutional-metadata.csv')
+          assert len(results)==4 and len(sites)==30 and len(z['scope_30_cases'])==30
+          assert len({x['artwork_id'] for x in z['scope_30_cases']})==30
+          assert prev['source_artworks_covered_now']==353
+          assert z['artworks_with_some_physical_research_source']==357
+          assert z['artworks_with_complete_object_provisional_source']==356
+          assert z['remaining_without_any_physical_image']==26
+          assert z['remaining_missing_full_object_coverage']==27
+          assert z['cumulative_B29_B37_net_distinct_research_image_files']==110
+          assert z['cumulative_B29_B37_net_distinct_research_image_bytes']==628764727
+          assert z['B37_new_research_source_bytes']==2889799
+          assert sum(int(x['bytes']) for x in results)==2889799
+          assert len({x['sha256'] for x in results})==4
+          assert all(x['status']=='EXACT_OBJECT_RESEARCH_FILE_SHA_VERIFIED_PENDING_RIGHTS' and
+                     x['editorial_source_photo_selected']=='NO' and
+                     x['file_image_rights_publication_approved']=='NO' for x in results)
+          assert four['provisionally_closed_full_object_file_gaps']==3
+          assert four['two_sided_object_one_face_only'] is True
+          assert site['thirty_gap_artwork_cases']==30 and site['underlying_copyright_cases_excluded']==2
+          assert site['photo_identity_or_publication_approvals']==0
+          assert len(z['remaining_full_object_gaps_by_kind']['P0'])==1
+          assert len(z['remaining_full_object_gaps_by_kind']['legacy'])==0
+          assert len(z['remaining_full_object_gaps_by_kind']['P2'])==26
+          assert z['no_new_editorial_approvals'] and z['no_publication_rights_grants']
+          assert z['canonical_451_catalogue_unchanged']
+          print('B37 READONLY PASS: 30 reviewed, 4 unique files, 357 some-source, 356 complete provisional, 27 still incomplete, 0 approvals')
+          PY
