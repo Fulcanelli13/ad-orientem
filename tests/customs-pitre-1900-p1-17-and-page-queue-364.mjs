@@ -40,19 +40,21 @@ for(const r of p1.records){
 assert.equal(batchSeen.size,17);assert.equal(reviewed.size,58);
 assert.equal(orig.size+newer.size,422);
 assert.equal([...orig.values()].filter(x=>x.printed_scan_page_verified).length,129);
-assert.equal([...newer.values()].filter(x=>x.original_printed_folio_verified).length,16);
+assert.equal([...newer.values()].filter(x=>x.original_printed_folio_verified).length,137);
 assert.equal(master.summary.source_review.pitre_1900_original_folio_images_visually_checked,129);
 assert.equal(master.summary.source_review.pitre_1900_original_p1_date_region_verified,17);
-assert.equal(master.summary.source_review.pitre_1900_all_original_folio_record_checks,145);
+assert.equal(master.summary.source_review.pitre_1900_all_original_folio_record_checks,266);
 assert.equal(master.summary.source_review.pitre_1900_uploaded_facsimile_unique_pdf_pages_checked,42);
-assert.equal(master.summary.source_review.pitre_1900_unchecked_record_pages_remaining,277);
+assert.equal(master.summary.source_review.pitre_1900_unchecked_record_pages_remaining,156);
 assert.equal(queue.records.length,364);
 assert.equal(queue.summary.unverified_original_p2,87);
 assert.equal(queue.summary.unverified_new,277);
 assert.equal(queue.summary.verified_total,58);
 assert.deepEqual(queue.summary.priority_search_methods,{INTERPOLATED_NOT_VISUALLY_VERIFIED:241,INDEX_OR_LOCALITY_RANGE_ONLY:123});
 
-const currentQueue=load('data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json');
+const snapshot277=load('data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json');
+const currentQueue=load('data/customs/master/pitre-1900-156-wave03-remaining-original-folio-page-queue.v1.json');
+assert.equal(snapshot277.records.length,277);
 // The older 364 file is an immutable HISTORICAL queue snapshot, not today's outstanding set.
 assert.equal(queue.records.length,364);
 assert.equal(queue.summary.unverified_original_p2,87);
@@ -71,9 +73,9 @@ for(const r of queue.records){
 assert.equal(historicalQueued.size,364);
 const nowUnverified=new Set([...orig.values(),...newer.values()]
  .filter(r=>!(r.printed_scan_page_verified||r.original_printed_folio_verified)).map(r=>r.id));
-assert.equal(nowUnverified.size,277);
-assert.equal(currentQueue.records.length,277);
-assert.equal(new Set(currentQueue.records.map(r=>r.id)).size,277);
+assert.equal(nowUnverified.size,156);
+assert.equal(currentQueue.records.length,156);
+assert.equal(new Set(currentQueue.records.map(r=>r.id)).size,156);
 for(const row of currentQueue.records)assert.ok(nowUnverified.has(row.id));
 assert.deepEqual(new Set(currentQueue.records.map(r=>r.id)),nowUnverified);
 assert.equal(master.summary.source_observations.total_source_detail_rows_including_external,3407);
