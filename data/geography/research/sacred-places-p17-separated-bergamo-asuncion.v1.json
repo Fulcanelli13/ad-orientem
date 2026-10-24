@@ -1,0 +1,106 @@
+{
+  "schema": "AO_SACRED_PLACES_P17_THREE_DISTINCT_CANONICAL_PLACES_V1",
+  "date": "2026-10-24",
+  "status": "PROPOSED_VIA_PULL_REQUEST",
+  "base": {
+    "places": 353,
+    "source_registry": 639,
+    "heritage_crosswalk": 353,
+    "places_without_direct_claim": 94,
+    "geo_areas": 141,
+    "directory_place_links": 9
+  },
+  "proposed": {
+    "places": 356,
+    "source_registry": 647,
+    "heritage_crosswalk": 356,
+    "places_without_direct_claim": 97,
+    "geo_areas": 141,
+    "directory_place_links": 9,
+    "new_places": 3,
+    "new_pins": 3,
+    "new_approved_media": 0,
+    "new_directory_place_links": 0,
+    "new_shrines_owner_records": 0
+  },
+  "source_queue": {
+    "held_original_exception_slots": 16,
+    "from": "data/geography/research/sacred-places-p16-three-qualified-site-release.v1.json",
+    "original_candidate_holds_unchanged": true,
+    "source_inventory_labels_that_triggered_disambiguation": [
+      "candidate:SG-INV-0071",
+      "candidate:SG-INV-0530"
+    ],
+    "note": "Original title conflates separate sanctuaries and devotion categories; do not misreport either candidate as a newly verified exact shrine. All 16 original holds remain in source queue; three independently verified named physical Places may still publish."
+  },
+  "published_new": [
+    {
+      "place_id": "place:IT:basilica-santa-maria-maggiore-bergamo",
+      "country": "IT",
+      "name": "Basilica di Santa Maria Maggiore, Bergamo",
+      "lat": 45.70321,
+      "lng": 9.66223,
+      "osm_way": "79808361",
+      "source_ids": [
+        "AO-P17-BERGAMO-DIOCESE",
+        "AO-P17-BERGAMO-CUSTODIAN",
+        "AO-P17-BERGAMO-GEO"
+      ],
+      "identity_scope": "Bergamo Città Alta, not Rome's Santa Maria Maggiore nor a Bergamo Madonna della Neve sanctuary"
+    },
+    {
+      "place_id": "place:PY:catedral-metropolitana-asuncion",
+      "country": "PY",
+      "name": "Catedral Metropolitana de Nuestra Señora de la Asunción",
+      "lat": -25.2816,
+      "lng": -57.63246,
+      "osm_way": "583058267",
+      "source_ids": [
+        "AO-P17-ASUNCION-CATHEDRAL-ARCHDIOCESE",
+        "AO-P17-ASUNCION-CATHEDRAL-GEO"
+      ],
+      "identity_scope": "Archdiocesan main cathedral on Cordillera del Amambay/Paraguayo Independiente, distinct from Marian Oratory on Palma/Chile"
+    },
+    {
+      "place_id": "place:PY:oratorio-nuestra-senora-asuncion-panteon",
+      "country": "PY",
+      "name": "Oratorio Nuestra Señora de la Asunción y Panteón Nacional de los Héroes",
+      "lat": -25.28228,
+      "lng": -57.6351,
+      "osm_way": "277917838",
+      "source_ids": [
+        "AO-P17-ASUNCION-ORATORY-ARCHDIOCESE",
+        "AO-P17-ASUNCION-ORATORY-CULTURE",
+        "AO-P17-ASUNCION-ORATORY-GEO"
+      ],
+      "identity_scope": "Marian Catholic oratory within a shared national memorial, not the metropolitan cathedral, nor a separately designated shrine"
+    }
+  ],
+  "source_owner_policy": [
+    "Diocesan or current custodial identification and independently named OSM building/map polygon are distinct independent evidence layers.",
+    "A published church polygon/site centre is not a certified visitor entrance.",
+    "Oratorio site is shared with the National Pantheon of the Heroes, and OSM identifies it as a historic memorial; no false standalone shrine classification.",
+    "Historic shrine title and 1962-Missal services never follow automatically from a Marian dedication or from ordinary Mass listings.",
+    "No photo may be added to Place profile without exact-license, subject and derivative review.",
+    "Use exact original candidate IDs only for research-context crosswalk; no new duplicate Place for a single structure."
+  ],
+  "known_related_but_not_promoted": [
+    {
+      "candidate_id": "candidate:SG-INV-0071",
+      "sites_distinct": [
+        "Santa Maria Maggiore Basilica, Bergamo",
+        "Madonna della Neve, Bergamo Sant'Anna",
+        "Beata Vergine della Neve, Foppolo"
+      ],
+      "why_held": "Original entry claims a single 'Our Lady of the Snow, Santa Maria Maggiore' sanctuary, contradicted by diocesan list. Basilical entry published independently."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0530",
+      "sites_distinct": [
+        "Catedral Metropolitana de Nuestra Señora de la Asunción",
+        "Oratorio Nuestra Señora de la Asunción y Panteón Nacional de los Héroes"
+      ],
+      "why_held": "Original asserts a separate Shrine of Our Lady of Assumption, not attested by Archdiocese. Publish separately identified existing Cathedral and Oratory instead."
+    }
+  ]
+}
