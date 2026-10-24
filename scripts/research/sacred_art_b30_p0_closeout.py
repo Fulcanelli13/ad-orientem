@@ -15,7 +15,7 @@ OUT=Path("artifacts/sacred-art-b30-p0-closeout")
 def csvrows(file):
  with (R/file).open(encoding="utf-8",newline="") as f:return list(csv.DictReader(f))
 def write(file,records):
- with (OUT/file).open(encoding="utf-8",newline="") as f:
+ with (OUT/file).open("w",encoding="utf-8",newline="") as f:
   writer=csv.DictWriter(f,fieldnames=list(records[0]));writer.writeheader();writer.writerows(records)
 
 def main():
