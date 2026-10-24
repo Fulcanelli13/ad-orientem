@@ -1,0 +1,203 @@
+{
+  "schema": "AO_CUSTOMS_CONSOLIDATION_FIRST_CALENDAR_RELEASE_GATE_BOARD_V1",
+  "date": "2026-10-24",
+  "purpose": "A single countable release-unit view: reconcile 9 bilingual draft dossiers to 8 contextual Calendar subjects. Neither creates a parallel Calendar nor publishes an unapproved ID.",
+  "reference_main": "data/customs/customs-atlas-seed.v1.json@main",
+  "source_files": [
+    "data/customs/master/customs-consolidation-cohort01-first-action-evidence-decisions.v1.json",
+    "data/customs/master/customs-consolidation-cohort01-calendar-pilot-5-bilingual-drafts.v1.json",
+    "data/customs/master/customs-consolidation-cohort02-calendar-two-source-supported-drafts.v1.json"
+  ],
+  "gate_definitions": {
+    "SOURCE_BOUNDED_EDITORIAL_REVIEW": "Specific action, occasion and Catholic/institutional or historical sources agree within stated scope. Copy, local authority, canonical identity and actual Calendar publication are not approved.",
+    "PARTIAL_SCOPE_EVIDENCE_HOLD": "A related modern locality is confirmed, but the broad or original action still requires exact independent corroboration.",
+    "EXISTING_OWNER_COMPONENT_REVIEW": "Likely variant/contextual component of an existing canonical subject; do not create a duplicate ID.",
+    "EXISTING_RESEARCH_OWNER_VARIANT_REVIEW": "Relation to a previous accepted but unpublished research identity, exact scope not confirmed."
+  },
+  "records": [
+    {
+      "release_unit": "CU-REVIEW-001",
+      "title": "Epiphany home blessing and doorway chalk",
+      "draft_source_groups": [
+        "CAT-WEISER-A-089",
+        "CAT-WEISER-A-090"
+      ],
+      "editorial_dossier_count": 2,
+      "calendar_context": "EPIPHANY",
+      "readiness": "SOURCE_BOUNDED_EDITORIAL_REVIEW",
+      "approved_main_nearby": [
+        "DOM-003",
+        "EPIP-001",
+        "EPIP-002"
+      ],
+      "proposed_structure": "One Calendar theme with separate lay doorway-chalking custom and priestly authorized ritual; two independently described actions",
+      "next_blocking_gate": "Confirm 1962 ritual formula, distinguish priestly action from lay devotional instructions, final English/French copy acceptance",
+      "source_links": [
+        "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1336"
+      ],
+      "canonical_identity_approved": false,
+      "calendar_release_approved": false,
+      "reader_copy_approved": false
+    },
+    {
+      "release_unit": "CU-REVIEW-002",
+      "title": "Taking Easter Vigil light home in a lantern",
+      "draft_source_groups": [
+        "CAT-WEISER-B-025"
+      ],
+      "editorial_dossier_count": 1,
+      "calendar_context": "HOLY_SATURDAY_EASTER_VIGIL",
+      "readiness": "SOURCE_BOUNDED_EDITORIAL_REVIEW",
+      "approved_main_nearby": [
+        "BLSS-004"
+      ],
+      "proposed_structure": "Distinct regional home-light practice; NOT Easter food blessing",
+      "next_blocking_gate": "Confirm contemporary parish feasibility and safe presentation, Calendar anchoring, final bilingual copy",
+      "source_links": [
+        "https://www.erzdioezese-wien.at/pages/inst/21452566/service/kirchenjahr/osterfestkreis/osterlicht"
+      ],
+      "canonical_identity_approved": false,
+      "calendar_release_approved": false,
+      "reader_copy_approved": false
+    },
+    {
+      "release_unit": "CU-REVIEW-003",
+      "title": "Seville Cathedral's Seises dance",
+      "draft_source_groups": [
+        "CAT-WEISER-B-083",
+        "CAT-WEISER-B-109"
+      ],
+      "editorial_dossier_count": 1,
+      "calendar_context": "CORPUS_CHRISTI_AND_IMMACULATE_CONCEPTION_SEVILLE",
+      "readiness": "SOURCE_BOUNDED_EDITORIAL_REVIEW",
+      "approved_main_nearby": [
+        "CORP-001"
+      ],
+      "proposed_structure": "One named cathedral custom with two Calendar feast hooks (and further cathedral-specific occasions), not two separate new customs",
+      "next_blocking_gate": "Check existing Calendar local contextual index; avoid generalizing Cathedral liturgical privilege to other parishes",
+      "source_links": [
+        "https://www.catedraldesevilla.es/la-danza-de-los-seises-un-tesoro-vivo-en-la-catedral-de-sevilla/",
+        "https://www.catedraldesevilla.es/actos-en-la-catedral-por-la-festividad-de-la-inmaculada-concepcion/"
+      ],
+      "canonical_identity_approved": false,
+      "calendar_release_approved": false,
+      "reader_copy_approved": false
+    },
+    {
+      "release_unit": "CU-REVIEW-004",
+      "title": "Removing Christmas crib at Candlemas",
+      "draft_source_groups": [
+        "CAT-WEISER-B-116"
+      ],
+      "editorial_dossier_count": 1,
+      "calendar_context": "CANDLEMAS_FEB_2",
+      "readiness": "SOURCE_BOUNDED_EDITORIAL_REVIEW",
+      "approved_main_nearby": [],
+      "proposed_structure": "Optional historical household custom; never impose a second liturgical end of Christmas",
+      "next_blocking_gate": "Approve Catholic-source bounded explanation and seasonal non-obligation caution",
+      "source_links": [
+        "https://www.dioceseofprovidence.org/news/0202-feast-of-the-presentation-of-the-lord",
+        "https://www.ewtn.com/catholicism/library/when-to-remove-the-christmas-crib-4793"
+      ],
+      "canonical_identity_approved": false,
+      "calendar_release_approved": false,
+      "reader_copy_approved": false
+    },
+    {
+      "release_unit": "CU-REVIEW-005",
+      "title": "Blessed Corpus Christi wreaths in Poland",
+      "draft_source_groups": [
+        "CAT-WEISER-B-085",
+        "CAT-WEISER-B-086"
+      ],
+      "editorial_dossier_count": 1,
+      "calendar_context": "CORPUS_CHRISTI_POLISH_LOCAL_OCTAVE",
+      "readiness": "SOURCE_BOUNDED_EDITORIAL_REVIEW",
+      "approved_main_nearby": [
+        "CORP-001",
+        "BLSS-002"
+      ],
+      "proposed_structure": "One Polish regional practice with blessing and domestic use stages, not flower carpets or Assumption herbs",
+      "next_blocking_gate": "Verify Polish-specific octave practice against historical 1962 local use and no magical efficacy claims",
+      "source_links": [
+        "https://www.gov.pl/web/sport/uroczystosc-bozego-ciala--tradycje-i-obyczaje",
+        "https://www.gov.pl/web/rolnictwo/herbatki-z-ziolowych-wiankow",
+        "https://www.sciencedirect.com/science/article/abs/pii/S0378874112002760"
+      ],
+      "canonical_identity_approved": false,
+      "calendar_release_approved": false,
+      "reader_copy_approved": false
+    },
+    {
+      "release_unit": "CU-REVIEW-006",
+      "title": "Immaculate Conception balcony lights in Spain",
+      "draft_source_groups": [
+        "CAT-WEISER-B-108"
+      ],
+      "editorial_dossier_count": 1,
+      "calendar_context": "IMMACULATE_CONCEPTION_DEC_8",
+      "readiness": "PARTIAL_SCOPE_EVIDENCE_HOLD",
+      "approved_main_nearby": [],
+      "proposed_structure": "Document named local municipality practice such as Jarandilla, not generic Spanish national tradition or the distinct Colombian Noche de Velitas",
+      "next_blocking_gate": "Reconcile original regional attribution to independent specific local witness before broader wording",
+      "source_links": [
+        "https://losescobazos.com/fiesta-de-los-escobazos/curiosidades/"
+      ],
+      "canonical_identity_approved": false,
+      "calendar_release_approved": false,
+      "reader_copy_approved": false
+    },
+    {
+      "release_unit": "CU-REVIEW-007",
+      "title": "Alpine Advent Saint Joseph image visit",
+      "draft_source_groups": [
+        "CAT-WEISER-A-028"
+      ],
+      "editorial_dossier_count": 1,
+      "calendar_context": "ADVENT_NINE_NIGHTS",
+      "readiness": "EXISTING_RESEARCH_OWNER_VARIANT_REVIEW",
+      "approved_main_nearby": [],
+      "unpublished_research_owner": "CUST-ADVT-HERBERGSUCHE",
+      "proposed_structure": "Potential image-object variant of Herbergsuche; sources for Marian/Holy Family images do not prove Joseph-only custom independently",
+      "next_blocking_gate": "Exact object/person in source witness and action boundary versus Herbergsuche",
+      "source_links": [
+        "https://www.kath-kirche-kaernten.at/pfarren/detail/C2920/herbergsuche-wer-klopfet-an-marijo-nositi-kdo-trka-she",
+        "https://www.erzdioezese-wien.at/unit/feiertagsgruesse/kalender/kalendertexte/article/134703.html"
+      ],
+      "canonical_identity_approved": false,
+      "calendar_release_approved": false,
+      "reader_copy_approved": false
+    },
+    {
+      "release_unit": "CU-REVIEW-008",
+      "title": "Decorating Candlemas candles before blessing",
+      "draft_source_groups": [
+        "CAT-WEISER-B-113"
+      ],
+      "editorial_dossier_count": 1,
+      "calendar_context": "CANDLEMAS_FEB_2",
+      "readiness": "EXISTING_OWNER_COMPONENT_REVIEW",
+      "approved_main_nearby": [
+        "DOM-011"
+      ],
+      "proposed_structure": "Add regional decoration context to published keeping blessed candles at home, without duplicating the priestly blessing or inventing ritual directions",
+      "next_blocking_gate": "Independent witness specifically for decorative step and decision whether a sub-section under DOM-011 is preferable",
+      "source_links": [],
+      "canonical_identity_approved": false,
+      "calendar_release_approved": false,
+      "reader_copy_approved": false
+    }
+  ],
+  "summary": {
+    "total_draft_dossiers": 9,
+    "unique_provisional_calendar_subjects": 8,
+    "source_bounded_editorial_review_subjects": 5,
+    "partial_geographic_scope_hold_subjects": 1,
+    "existing_owner_component_review_subjects": 1,
+    "existing_research_owner_variant_review_subjects": 1,
+    "distinct_new_customs_approved": 0,
+    "new_calendar_items_published": 0
+  },
+  "policy": "This board is review data and contains no runtime or published data mutation. Do not treat a subject as an approved canonical custom or sanctioned ritual, and retain 1962 Calendar date authority."
+}
