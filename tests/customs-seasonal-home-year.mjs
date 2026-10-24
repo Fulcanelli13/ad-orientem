@@ -60,6 +60,24 @@ assert.match(english,/Discover the tradition/);
 assert.match(english,/data-home-calendar-date="2026-02-02"/);
 assert.match(english,/target="_blank" rel="noopener noreferrer"/);
 assert.ok(!english.includes("data-home-customs-atlas"));
+// Date-specific presentation contracts for the three acceptance exemplars.
+for(const [date,id] of [
+ [v384Dates(2026).palm,"DOM-013"],
+ ["2026-11-02","DEAD-001"]
+]){
+ const vm={dateIso:date,language:"en",celebration:"1962 observed day",gospelReference:null,properStatus:"ready"};
+ const m=buildTodayV2Sections({},vm,{visible:false});
+ assert.equal(m.spotlight?.id,id,"Observed custom for "+date);
+ const html=renderTodayV2Sections(m,vm);
+ assert.equal((html.match(/data-home-custom-spotlight=/g)||[]).length,1,"Exactly one feature on "+date);
+ assert.match(html,/Discover the tradition/);
+ assert.match(html,/Traditional practice/);
+ assert.match(html,/Scope and cautions/);
+ assert.match(html,/data-home-calendar-view="day"/);
+ const inFrench=renderTodayV2Sections({...m,language:"fr"},{...vm,language:"fr"});
+ assert.match(inFrench,/Découvrir la coutume/);
+ assert.equal((inFrench.match(/data-home-custom-spotlight=/g)||[]).length,1);
+}
 const french=renderTodayV2Sections({...model,language:"fr"},{dateIso:"2026-02-02"});
 assert.match(french,/Conserver les cierges bénits de la Chandeleur/);
 assert.match(french,/Découvrir la coutume/);
