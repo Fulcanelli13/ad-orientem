@@ -12,14 +12,14 @@ assert.deepEqual([m.baseline.places,m.baseline.sources,m.baseline.crosswalk,m.ba
 assert.deepEqual([m.proposed.places,m.proposed.sources,m.proposed.crosswalk,m.proposed.unlinked,m.proposed.geo_areas],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas]);
 assert.deepEqual([geo.places.length,ss.sources.length,cross.place_crosswalk.length,cross.exception_queues.places_without_direct_claim.length,geo.geoAreas.length,geo.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas,LIVE.links]);
 assert.equal(cross.counts.places,LIVE.places);assert.equal(cross.counts.places_without_direct_claim,LIVE.unlinked);
-assert.equal(m.new_places.length,8);assert.equal(m.new_geo_areas.length,4);
-assert.equal(new Set(m.new_places.map(x=>x.geo_source_ref)).size,8);assert.equal(new Set(m.new_places.map(x=>x.place_id)).size,8);
+assert.equal(m.published_new.length,8);assert.equal(m.new_geo_areas.length,4);
+assert.equal(new Set(m.published_new.map(x=>x.geo_source_ref)).size,8);assert.equal(new Set(m.published_new.map(x=>x.place_id)).size,8);
 assert.ok(RELEASES.some(x=>x.id==="P33"));
 for(const c of ["RO","PA","TW","UA"]){const area=geo.geoAreas.find(x=>x.geo_area_id==="geo:country:"+c);assert.ok(area);assert.equal(area.codes.iso_alpha2,c);assert.equal(area.area_type,"country");}
 const ids=new Map(geo.places.map(x=>[x.place_id,x])),sources=new Map(ss.sources.map(x=>[x.id,x]));
 assert.equal(ids.size,geo.places.length);assert.equal(sources.size,ss.sources.length);
-const oldRefs=new Set(geo.places.filter(x=>!m.new_places.some(y=>y.place_id===x.place_id)).map(x=>x.geo?.source_ref).filter(Boolean));
-for(const r of m.new_places){
+const oldRefs=new Set(geo.places.filter(x=>!m.published_new.some(y=>y.place_id===x.place_id)).map(x=>x.geo?.source_ref).filter(Boolean));
+for(const r of m.published_new){
  assert.ok(!oldRefs.has(r.geo_source_ref));assert.match(r.geo_source_ref,/^osm:way:\d+$/);assert.match(r.geo_provenance_mapcarta_url,/^https:\/\/mapcarta.com\//);
  const p=ids.get(r.place_id);assert.ok(p);assert.equal(p.place_type,r.place_type);assert.equal(p.name.official,r.name);
  assert.equal(p.address.country_code,r.country);assert.deepEqual(p.geo_area_ids,["geo:country:"+r.country]);

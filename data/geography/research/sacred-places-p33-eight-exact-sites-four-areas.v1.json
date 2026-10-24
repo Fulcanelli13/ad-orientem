@@ -24,7 +24,21 @@
     "geo:country:TW",
     "geo:country:UA"
   ],
-  "new_places": [
+  "source_coverage_before": 168,
+  "source_coverage_after": 169,
+  "newly_sourced_priority_ids": [
+    "SG-INV-0331"
+  ],
+  "p16_protected_exceptions": 16,
+  "disposition_policy": [
+    "Each published site has explicit independent named ecclesial/custodian or official civil evidence plus a distinct OpenStreetMap physical way.",
+    "TW source is official civil; preserve it as SECONDARY directness rather than misrepresent government page as Catholic diocese.",
+    "UA church is Ukrainian Greek Catholic and is Catholic. Distinguish Mary of Zarvanytsia from Assumption title error.",
+    "RO, PA, TW, UA geography country rows are real ISO 3166 alpha-2 records and must be integrated with historical release tests; never fake regional area.",
+    "All preexisting Place IDs, 9 Directory links and 16 protected historical exceptions remain unchanged.",
+    "No 1962 Mass Times, relic, photo, outbound Place card URL, biography, hours or access inferred."
+  ],
+  "published_new": [
     {
       "candidate_id": "SG-INV-0323",
       "place_id": "place:HU:bodajk-segito-szuz-maria-basilica",
@@ -177,19 +191,5 @@
       "identity_tier": "OFFICIAL_CHURCH",
       "scope_limit": "Mapped active Catholic basilica physical church; no claims of exact current public access or service schedule."
     }
-  ],
-  "source_coverage_before": 168,
-  "source_coverage_after": 169,
-  "newly_sourced_priority_ids": [
-    "SG-INV-0331"
-  ],
-  "p16_protected_exceptions": 16,
-  "disposition_policy": [
-    "Each published site has explicit independent named ecclesial/custodian or official civil evidence plus a distinct OpenStreetMap physical way.",
-    "TW source is official civil; preserve it as SECONDARY directness rather than misrepresent government page as Catholic diocese.",
-    "UA church is Ukrainian Greek Catholic and is Catholic. Distinguish Mary of Zarvanytsia from Assumption title error.",
-    "RO, PA, TW, UA geography country rows are real ISO 3166 alpha-2 records and must be integrated with historical release tests; never fake regional area.",
-    "All preexisting Place IDs, 9 Directory links and 16 protected historical exceptions remain unchanged.",
-    "No 1962 Mass Times, relic, photo, outbound Place card URL, biography, hours or access inferred."
   ]
 }

@@ -35,7 +35,7 @@ assert.equal(assertShrinesPilgrimagesRegistry({...shrines,sources:src.sources,pl
 const byPlace=new Map(geo.places.map(x=>[x.place_id,x]));
 const bySource=new Map(src.sources.map(x=>[x.id,x]));
 const releaseIds=new Set(r93.published_new.map(x=>x.place_id));
-const laterPlaceIds=new Set([...laterP28.published_new,...laterP30.published_new,...laterP31.published_new,...laterP33.new_places].map(x=>x.place_id));
+const laterPlaceIds=new Set([...laterP28.published_new,...laterP30.published_new,...laterP31.published_new,...laterP33.published_new].map(x=>x.place_id));
 const earlier=geo.places.filter(x=>!releaseIds.has(x.place_id)&&!laterPlaceIds.has(x.place_id));
 // R93 first-presence means empty before R93, not empty after subsequent P28 publication.
 const usedCountries=new Set(earlier.map(x=>x.address.country_code));
