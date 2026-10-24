@@ -23,7 +23,7 @@ import { readAtlasReadingPlace, saveAtlasReadingPlace } from "./bible-atlas-read
 import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, atlasCinemaPlate, renderBibleAtlasToString } from "./bible-atlas.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
-import { HERITAGE_CATEGORIES, PUBLIC_HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "./heritage-map.js";
+import { PUBLIC_HERITAGE_CATEGORIES, projectHeritagePlaces, nearbyHeritagePlaces } from "./heritage-map.js";
 import { buildExplorePlaceProfiles } from "./place-profiles.js";
 import { publishedCustomFolioId } from "./custom-canonical-handoff.js";
 import { buildPilgrimageJourneyCatalogue,selectedPilgrimageJourney,journeysForCanonicalPlace } from "./pilgrimage-journey.js";
@@ -1264,7 +1264,7 @@ export function createFindOwner(win=globalThis){
         if(mode!=="places"){
           state.networkOpen=false;
           state.timeMassOpen=false;state.journeyOpen=false;journeyPreviousCategories=null;
-          state.highlightCustomId=null;state.heritageCategories=[...HERITAGE_CATEGORIES];
+          state.highlightCustomId=null;state.heritageCategories=[...PUBLIC_HERITAGE_CATEGORIES];
           state.selectedId=null;state.selectedPlaceId=null;state.query="";nearbyResults=null;
         }
         void paint();
@@ -1370,7 +1370,7 @@ export function createFindOwner(win=globalThis){
     }
     if(target?.closest?.("[data-explore-journey-close]")&&state.lens==="heritage"){
       event.preventDefault?.();state.journeyOpen=false;
-      state.heritageCategories=journeyPreviousCategories??[...HERITAGE_CATEGORIES];
+      state.heritageCategories=journeyPreviousCategories??[...PUBLIC_HERITAGE_CATEGORIES];
       journeyPreviousCategories=null;void paint();return;
     }
     const journeySelect=target?.closest?.("[data-explore-journey-select]");
