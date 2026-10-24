@@ -15970,6 +15970,89 @@
         "AO-P18-FOPPOLO-DIOCESE",
         "AO-P18-FOPPOLO-OSM"
       ]
+    },
+    {
+      "place_id": "place:IT:madonna-neve-rocchetta-bergamo",
+      "name": {
+        "official": "Santuario della Madonna della Neve in Rocchetta, Bergamo",
+        "aliases": [
+          "Chiesa della Beata Vergine della Neve, Bergamo",
+          "Chiesa della Madonna della Neve in Rocchetta"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.69707,
+        "lng": 9.676543,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/442724372",
+        "source_ref": "osm:way:442724372",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": "Via Gabriele Camozzi 130",
+        "line2": null,
+        "postal_code": "24121",
+        "city": "Bergamo",
+        "region": "Lombardia",
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Via Gabriele Camozzi 130, 24121 Bergamo, Italy"
+      },
+      "source_ids": [
+        "AO-P19-BERGAMO-MADONNA-NEVE-PARISH",
+        "AO-P19-BERGAMO-MADONNA-NEVE-DIOCESE",
+        "AO-P19-BERGAMO-MADONNA-NEVE-OSM"
+      ]
+    },
+    {
+      "place_id": "place:MG:ilot-de-la-vierge-ampefy",
+      "name": {
+        "official": "Ilot de la sainte vierge, Ampefy",
+        "aliases": [
+          "Îlot de la Vierge",
+          "Îlot de la Sainte Vierge — Lake Itasy",
+          "Église de l'Îlot de la Vierge"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:MG"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -19.07121,
+        "lng": 46.76717,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/653581404",
+        "source_ref": "osm:way:653581404",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "MG",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Ampefy",
+        "region": "Itasy",
+        "country_code": "MG",
+        "country": "Madagascar",
+        "formatted": "Îlot de la Vierge, Manjakasoa, Ampefy, Itasy, Madagascar"
+      },
+      "source_ids": [
+        "AO-P19-ITASY-CATHOLIC-BISHOPS",
+        "AO-P19-ITASY-CATHOLIC-REGSUB",
+        "AO-P19-ITASY-CHURCH-OSM"
+      ]
     }
   ],
   "directoryPlaceLinks": [
