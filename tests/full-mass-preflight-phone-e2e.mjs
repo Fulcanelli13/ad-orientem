@@ -68,7 +68,7 @@ try{
  const picker=page.locator("[data-ao-observed-mass-picker]");
  assert.equal(await page.locator("[data-full-mass-source-slot] [data-ao-observed-mass-picker]").count(),1,
    "Different Proper picker is outside the unified Mass form/celebration module");
- await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
+ await page.locator('.aoMassFolioQuickChoices [data-folio-goto="celebration"]').click();
  await page.locator('[data-full-mass-category="SOURCE_DATE"]').click();
  assert.equal(await picker.locator("details").evaluate(el=>el.open),true,
    "Other Proper category failed to open the source-day selector");
