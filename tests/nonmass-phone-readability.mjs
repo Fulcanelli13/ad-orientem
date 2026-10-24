@@ -191,6 +191,22 @@ try{
      assert.ok(explore.height>=44&&explore.width>=width-4,"Explore map header clipped: "+JSON.stringify(explore));
      assert.ok(explore.scroll<=explore.viewport+1,"Explore horizontal overflow: "+JSON.stringify(explore));
      await page.screenshot({path:resolve(out,"explore-"+width+".png"),fullPage:false,animations:"disabled"});
+     if(width===390){
+       // The actual French setting, rather than browser-locale emulation.
+       assert.equal((await page.evaluate(async()=>await window.AO_APP_SHELL_V1.navigate("settings")))?.ok,true);
+       await page.locator('#ao-settings-modular-root [data-settings-route="/settings/language-reading"]').click();
+       await page.locator('#ao-settings-modular-root [data-pref-path="general.uiLanguage"][data-pref-value="fr"]').click();
+       await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr",null,{timeout:12000});
+       const french=await page.evaluate(()=>{
+         const root=document.querySelector("#ao-settings-modular-root");
+         const nodes=[...root.querySelectorAll(".aoSetRowText,.aoSetTitle,.aoSetSection>h2")];
+         return {language:document.documentElement.lang,scroll:root.scrollWidth,viewport:root.clientWidth,
+           maxOverflow:nodes.reduce((v,el)=>Math.max(v,el.scrollWidth-el.clientWidth),0)};
+       });
+       assert.ok(french.scroll<=french.viewport+1&&french.maxOverflow<=2,
+         "French Settings text overflow at 390px: "+JSON.stringify(french));
+       await page.screenshot({path:resolve(out,"settings-fr-390.png"),fullPage:false,animations:"disabled"});
+     }
      console.log("PASS "+width+"px quiet frame Settings/Explore chrome and screenshots");
    }
    assert.equal(errors.length,0,"Browser errors at "+width+"px: "+errors.slice(0,3).join("; "));
