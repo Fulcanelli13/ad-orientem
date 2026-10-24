@@ -1,0 +1,43 @@
+{
+  "schema": "ao.catena.mixed-excerpt-speaker-ownership.v1",
+  "date": "2026-10-21",
+  "status": "research_only__source_text_unchanged",
+  "sourcePointer": "catena.matthew.27.45:1",
+  "inheritedFatherLabel": "Origen",
+  "problem": "Canonical segment Origen includes a distinct inline PSEUDO-DIONYSIUS. passage at character offset 726. The Christian writer's name is itself a transmitted pseudonymous attribution and must not become historical Dionysius the Areopagite's or Origen's invented first-person speech.",
+  "fullFragmentCharacterLength": 1239,
+  "splitCharacterOffset": 726,
+  "units": [
+    {
+      "range": {
+        "start": 0,
+        "endExclusive": 726
+      },
+      "printedAttribution": "Origen",
+      "attributionOrigin": "canonical_segment_father_label",
+      "startPhrase": "Some take occasion from this text to cavil",
+      "endPhrase": "s was an exception to the established laws of nature.",
+      "sourceQuestionVoice": "reported_doubters_and_author_response",
+      "publicationStatus": "blocked_pending_historical_work_and_context"
+    },
+    {
+      "range": {
+        "start": 726,
+        "endExclusive": 1239
+      },
+      "printedAttribution": "Pseudo-Dionysius",
+      "attributionOrigin": "inline_heading_PSEUDO-DIONYSIUS._(ad_Polycarp._Ep._7.)",
+      "startPhrase": "PSEUDO-DIONYSIUS. (ad Polycarp. Ep. 7.) When we were toget",
+      "endPhrase": "e way, being thus the very reverse of an ordinary eclipse.",
+      "sourceQuestionVoice": "separate_reported_observation",
+      "publicationStatus": "blocked_pending_pseudonymous_witness_review"
+    }
+  ],
+  "policy": [
+    "All current canonical Catena texts remain verbatim; no destructive split or author-label rewrite.",
+    "Attribution split is an internal source-ownership record keyed to exact character ranges only.",
+    "The second section attributes a reported astronomical observation; it must not be presented as established modern astronomy or credible eyewitness evidence without independent research.",
+    "Pseudo-Dionysius is a historical pseudonymous corpus designation, not independently a first-century eyewitness, and is not Origen's speech.",
+    "Do not render either substring to users as newly formulated Father quotation until work provenance, licence and full context are approved."
+  ]
+}

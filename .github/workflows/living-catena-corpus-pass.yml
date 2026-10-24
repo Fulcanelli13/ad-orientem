@@ -1,0 +1,254 @@
+name: Living Catena whole-corpus source audit
+
+on:
+  push:
+    branches:
+      - research/living-catena-corpus-wide-pass-20261021
+    paths:
+      - scripts/scripture-catena-first-pass.mjs
+      - scripts/scripture-catena-schaff-ocr-ingest.mjs
+      - scripts/scripture-catena-schaff-layout-acquire.mjs
+      - scripts/scripture-catena-schaff-page-align.mjs
+      - tests/scripture-catena-schaff-page-align.mjs
+      - scripts/scripture-catena-schaff-section-ingest.mjs
+      - scripts/scripture-catena-schaff-question-context-pilot.mjs
+      - scripts/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
+      - scripts/scripture-catena-chrysostom-original-question-replies.mjs
+      - scripts/scripture-catena-chrysostom-speech-layers.mjs
+      - scripts/scripture-catena-chrysostom-catena-overlap.mjs
+      - scripts/scripture-catena-chrysostom-focused-parallels.mjs
+      - scripts/scripture-catena-chrysostom-extended-context.mjs
+      - scripts/scripture-catena-chrysostom-bulk-context.mjs
+      - scripts/scripture-catena-chrysostom-full-structural-context.mjs
+      - scripts/scripture-catena-chrysostom-ocr-blocks.mjs
+      - tests/scripture-catena-chrysostom-ocr-blocks.mjs
+      - tests/scripture-catena-chrysostom-full-structural-context.mjs
+      - tests/scripture-catena-chrysostom-bulk-context.mjs
+      - tests/scripture-catena-chrysostom-extended-context.mjs
+      - tests/scripture-catena-chrysostom-focused-parallels.mjs
+      - tests/scripture-catena-chrysostom-24-argument-hypotheses.mjs
+      - tests/scripture-catena-chrysostom-catena-overlap.mjs
+      - tests/scripture-catena-chrysostom-speech-layers.mjs
+      - tests/scripture-catena-chrysostom-original-question-replies.mjs
+      - tests/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
+      - tests/scripture-catena-schaff-question-context-pilot.mjs
+      - tests/scripture-catena-schaff-section-ingest.mjs
+      - tests/scripture-catena-schaff-ocr-ingest.mjs
+      - .github/workflows/living-catena-corpus-pass.yml
+  pull_request:
+    paths:
+      - scripts/scripture-catena-first-pass.mjs
+      - tests/scripture-catena-first-pass.mjs
+      - tests/scripture-catena-matthew-batch-one.mjs
+      - tests/scripture-catena-mark-batch-one.mjs
+      - tests/scripture-catena-mark-adjudication.mjs
+      - tests/scripture-catena-mark-original-works.mjs
+      - tests/scripture-catena-schaff-first-seeds.mjs
+      - scripts/scripture-catena-schaff-ocr-ingest.mjs
+      - scripts/scripture-catena-schaff-layout-acquire.mjs
+      - scripts/scripture-catena-schaff-page-align.mjs
+      - tests/scripture-catena-schaff-page-align.mjs
+      - scripts/scripture-catena-schaff-section-ingest.mjs
+      - scripts/scripture-catena-schaff-question-context-pilot.mjs
+      - scripts/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
+      - scripts/scripture-catena-chrysostom-original-question-replies.mjs
+      - scripts/scripture-catena-chrysostom-speech-layers.mjs
+      - scripts/scripture-catena-chrysostom-catena-overlap.mjs
+      - scripts/scripture-catena-chrysostom-focused-parallels.mjs
+      - scripts/scripture-catena-chrysostom-extended-context.mjs
+      - scripts/scripture-catena-chrysostom-bulk-context.mjs
+      - scripts/scripture-catena-chrysostom-full-structural-context.mjs
+      - scripts/scripture-catena-chrysostom-ocr-blocks.mjs
+      - tests/scripture-catena-chrysostom-ocr-blocks.mjs
+      - tests/scripture-catena-chrysostom-full-structural-context.mjs
+      - tests/scripture-catena-chrysostom-bulk-context.mjs
+      - tests/scripture-catena-chrysostom-extended-context.mjs
+      - tests/scripture-catena-chrysostom-focused-parallels.mjs
+      - tests/scripture-catena-chrysostom-24-argument-hypotheses.mjs
+      - tests/scripture-catena-chrysostom-catena-overlap.mjs
+      - tests/scripture-catena-chrysostom-speech-layers.mjs
+      - tests/scripture-catena-chrysostom-original-question-replies.mjs
+      - tests/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
+      - tests/scripture-catena-schaff-question-context-pilot.mjs
+      - tests/scripture-catena-schaff-section-ingest.mjs
+      - tests/scripture-catena-schaff-ocr-ingest.mjs
+      - tests/scripture-catena-matthew-batch-two.mjs
+      - tests/scripture-catena-matthew-batch-two-reconciliation.mjs
+      - tests/scripture-catena-matthew-batch-three.mjs
+      - scripts/scripture-catena-reader-routing.mjs
+      - tests/scripture-catena-reader-routing.mjs
+      - src/scripture/catena-research-retrieval.js
+      - tests/scripture-catena-research-retrieval.mjs
+      - tests/scripture-catena-first-30-adjudication.mjs
+      - tests/scripture-catena-external-loci.mjs
+      - tests/scripture-catena-nine-focus.mjs
+      - previews/living-catena-reader-research-20261021.html
+      - data/scripture/catena/research/full-corpus-pass-20261021/**
+      - .github/workflows/living-catena-corpus-pass.yml
+
+permissions:
+  contents: read
+
+jobs:
+  index-all-excerpts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Inventory every Catena excerpt and build review batches
+        run: node scripts/scripture-catena-first-pass.mjs
+      - name: Verify complete coverage, source text identity and review queue uniqueness
+        run: node tests/scripture-catena-first-pass.mjs
+      - name: Verify the 300-item Matthew review and 26 source-grounded spot reviews
+        run: node tests/scripture-catena-matthew-batch-one.mjs
+      - name: Verify second 300 Matthew excerpts and 47 source-level reviews
+        run: node tests/scripture-catena-matthew-batch-two.mjs
+      - name: Reconcile both Matthew batch-two AI reviews and mixed author ownership
+        run: node tests/scripture-catena-matthew-batch-two-reconciliation.mjs
+      - name: Verify third 300 Matthew source rows and 80 AI-assisted context mappings
+        run: node tests/scripture-catena-matthew-batch-three.mjs
+      - name: Generate reader-first Matthew source routes and whole-book queue
+        run: node scripts/scripture-catena-reader-routing.mjs
+      - name: Verify complete partition and editorial provenance
+        run: node tests/scripture-catena-reader-routing.mjs
+      - name: Verify source-backed Matthew question retrieval and abstention
+        run: node tests/scripture-catena-research-retrieval.mjs
+      - name: Verify source evidence and human-publication locks for 30 Matthew candidates
+        run: node tests/scripture-catena-first-30-adjudication.mjs
+      - name: Validate identified primary-work English parallels and blocked approval
+        run: node tests/scripture-catena-external-loci.mjs
+      - name: Verify pinned nine-record human-review focus batch
+        run: node tests/scripture-catena-nine-focus.mjs
+      - name: Verify Mark first 300 source pointers
+        run: node tests/scripture-catena-mark-batch-one.mjs
+      - name: Verify Mark original-work crosswalk without publication approval
+        run: node tests/scripture-catena-mark-original-works.mjs
+      - name: Verify Mark AI-only editorial assessment and adversarial probes
+        run: node tests/scripture-catena-mark-adjudication.mjs
+      - name: Verify Schaff 1888 full-work question anchors and three deduplicated canonical pointers
+        run: node tests/scripture-catena-schaff-first-seeds.mjs
+      - name: Verify public-domain Schaff OCR parser, corpus-wide overlap hints and source provenance
+        run: node tests/scripture-catena-schaff-ocr-ingest.mjs
+      - name: Ensure generated index is up to date for PR
+        run: |
+          git diff --exit-code -- data/scripture/catena/research/full-corpus-pass-20261021/
+          test -z "$(git status --porcelain -- data/scripture/catena/research/full-corpus-pass-20261021/)"
+          test -f data/scripture/catena/research/full-corpus-pass-20261021/summary.v1.json
+
+  schaff-public-domain-volume-acquisition:
+    # External full-volume OCR acquisition is an independent research job:
+    # source hosting outages cannot break canonical reader/Schaff schema tests.
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Acquire both complete 1888 print scans and extract internal question windows
+        run: node scripts/scripture-catena-schaff-ocr-ingest.mjs --volume all
+      - name: Segment books and homilies and link exactly-preserved original OCR questions
+        run: node scripts/scripture-catena-schaff-section-ingest.mjs
+      - name: Verify 94 source units and 4131 source-hashed question candidates
+        run: node tests/scripture-catena-schaff-section-ingest.mjs
+      - name: Screen OCR question attribution and extract source-exact nearby context for 94 work units
+        run: node scripts/scripture-catena-schaff-question-context-pilot.mjs
+      - name: Verify question classification and immutable original-word envelopes
+        run: node tests/scripture-catena-schaff-question-context-pilot.mjs
+      - name: Anchor existing fourteen Schaff question seeds against printed historical source units
+        run: node scripts/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
+      - name: Verify ten exact historical OCR anchors and four unresolved printed variants
+        run: node tests/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
+      - name: Recover exact printed question and ensuing prose for Chrysostom's 90 Matthew homilies
+        run: node scripts/scripture-catena-chrysostom-original-question-replies.mjs
+      - name: Verify all source words, 180 research envelopes and four prior historical-work questions
+        run: node tests/scripture-catena-chrysostom-original-question-replies.mjs
+      - name: Classify biblical quote, reported interlocutor and editorial-note risks across all 184 Chrysostom contexts
+        run: node scripts/scripture-catena-chrysostom-speech-layers.mjs
+      - name: Verify every source quote offset, original digest and blocked Father attribution
+        run: node tests/scripture-catena-chrysostom-speech-layers.mjs
+      - name: Compare the 184 historical Chrysostom research contexts with the frozen Matthew Catena
+        run: node scripts/scripture-catena-chrysostom-catena-overlap.mjs
+      - name: Verify every literal overlap phrase against original text of both historic English editions
+        run: node tests/scripture-catena-chrysostom-catena-overlap.mjs
+      - name: Build 24 source-faithful Chrysostom/Catena original-text parallel research records
+        run: node scripts/scripture-catena-chrysostom-focused-parallels.mjs
+      - name: Verify 24 full original-source and canonical Catena excerpts with exact quotation evidence
+        run: node tests/scripture-catena-chrysostom-focused-parallels.mjs
+      - name: Verify twenty-four first-pass argument interpretations remain exact-source linked, provisional and blocked
+        run: node tests/scripture-catena-chrysostom-24-argument-hypotheses.mjs
+      - name: Recover longer Schaff source context and six exact-scripture collision matrices
+        run: node scripts/scripture-catena-chrysostom-extended-context.mjs
+      - name: Verify all long historical source words and scene relationships for eighteen Catena pointers
+        run: node tests/scripture-catena-chrysostom-extended-context.mjs
+      - name: Screen all 1938 source question-prose candidates and extend 180 contexts across ninety Chrysostom homilies
+        run: node scripts/scripture-catena-chrysostom-bulk-context.mjs
+      - name: Check every bulk source hash, original question line, Catena pointer and publication block
+        run: node tests/scripture-catena-chrysostom-bulk-context.mjs
+      - name: Expand every one of 1938 structural source candidates into historical homily-bounded context
+        run: node scripts/scripture-catena-chrysostom-full-structural-context.mjs
+      - name: Validate 1938 original text windows and conservative paragraph and speaker locator clues
+        run: node tests/scripture-catena-chrysostom-full-structural-context.mjs
+      - name: Derive original blank-line OCR block locators and 1938 question-continuation pointers
+        run: node scripts/scripture-catena-chrysostom-ocr-blocks.mjs
+      - name: Verify source-hashed OCR blocks, next-block links and all 1938 structural candidate origins
+        run: node tests/scripture-catena-chrysostom-ocr-blocks.mjs
+      - name: Attach both full original scan OCR texts and candidate indexes
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catena-schaff-1888-full-ocr-research-only
+          path: |
+            dist/schaff-original-ocr/
+            dist/schaff-sectioned-research/
+            dist/schaff-context-pilot/
+            dist/schaff-chrysostom-replies/
+            dist/schaff-chrysostom-speech-layers/
+            dist/schaff-chrysostom-catena-overlap/
+            dist/schaff-chrysostom-focused-parallels/
+            dist/schaff-chrysostom-extended/
+            dist/schaff-chrysostom-bulk-research/
+            dist/schaff-chrysostom-full-structural/
+            dist/schaff-chrysostom-ocr-blocks/
+            data/scripture/catena/research/full-corpus-pass-20261021/chrysostom-24-argument-research-hypotheses.v1.json
+            data/scripture/catena/research/full-corpus-pass-20261021/CHRYSOSTOM_24_ARGUMENT_COMPARISON_20261023.md
+          if-no-files-found: error
+          retention-days: 14
+
+  schaff-historical-scan-coordinate-layout:
+    needs: schaff-public-domain-volume-acquisition
+    # A separate optional research job: the coordinate archive is substantial.
+    # Never let network failures gate the canonical scripture reader.
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Acquire original 1888 Chrysostom page coordinates and printed scan metadata
+        run: node scripts/scripture-catena-schaff-layout-acquire.mjs --edition NPNF1-10
+      - name: Download the matching immutable original 1888 print text research sources
+        uses: actions/download-artifact@v4
+        with:
+          name: catena-schaff-1888-full-ocr-research-only
+          path: .
+      - name: Align every one of 1938 Schaff source questions to actual word-coordinate scan leaves
+        run: node scripts/scripture-catena-schaff-page-align.mjs
+      - name: Verify 1938 source-pinned page matches, original six-word OCR evidence and original word coordinates
+        run: node tests/scripture-catena-schaff-page-align.mjs
+      - name: Attach original coordinate OCR and source-identification hashes
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catena-chrysostom-1888-original-layout-source
+          path: |
+            dist/schaff-layout-1888/
+            dist/schaff-chrysostom-page-alignment/
+          if-no-files-found: error
+          retention-days: 7

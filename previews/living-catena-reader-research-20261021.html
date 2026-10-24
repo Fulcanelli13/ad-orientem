@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Living Catena · Matthew editorial research preview</title>
+<style>
+:root{color-scheme:dark;--bg:#080c12;--surface:#101721;--surface2:#18222d;--line:#544b40;--gold:#d5bb8e;--text:#f0e9dd;--muted:#b8b1a5;--danger:#d9ad85}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);margin:0;font-family:Georgia,serif;font-size:16px;line-height:1.55}
+header{border-bottom:1px solid var(--line);background:linear-gradient(120deg,#18222e,#090e15 60%);padding:26px max(20px,calc((100vw - 1280px)/2))}
+.kicker{color:var(--gold);text-transform:uppercase;font:600 11px system-ui,sans-serif;letter-spacing:.16em}
+h1{font:normal clamp(26px,4vw,39px)/1.13 Georgia,serif;margin:5px 0 8px}
+p{margin:7px 0}header p{max-width:850px;color:var(--muted)}
+small,.muted{color:var(--muted)}a{color:var(--gold)}
+main{max-width:1280px;margin:auto;display:grid;grid-template-columns:minmax(315px,435px) minmax(0,1fr);gap:17px;padding:18px 16px 32px}
+aside,.stage{border:1px solid var(--line);background:var(--surface);border-radius:12px;min-width:0;overflow:hidden}
+aside{align-self:start}
+.controls{padding:17px;border-bottom:1px solid var(--line)}
+label{display:block;font:500 13px system-ui,sans-serif;color:var(--gold);margin:0 0 7px}
+input{display:block;width:100%;border:1px solid #74624b;border-radius:7px;background:#080e15;color:var(--text);padding:13px;font:15px Georgia,serif;outline-offset:3px;min-height:47px}
+button{cursor:pointer;color:var(--text);font:500 13px system-ui,sans-serif;background:var(--surface2);border:1px solid #665b4a;border-radius:7px;min-height:43px;padding:9px 12px}
+button:hover,button:focus-visible{border-color:#d6b783}
+button[aria-pressed=true]{background:#554831;border-color:#dcc18f}
+.actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.actions button{flex:1}
+.chips{display:flex;gap:7px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line)}
+.chips button{min-height:38px;border-radius:30px}
+.resultsHead{padding:12px 16px 6px;font:600 12px system-ui,sans-serif;color:var(--muted)}
+#results{max-height:calc(100dvh - 390px);min-height:130px;overflow:auto;padding:6px 8px 14px}
+.result{width:100%;margin:0 0 7px;text-align:left;display:block;background:#101b27;border-color:#374554;font:normal 16px/1.35 Georgia,serif;padding:14px}
+.result span{display:block;font:600 10px/1.5 system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.result small{font:12px/1.4 system-ui,sans-serif;display:block;margin-top:8px}
+.stage{padding:22px 22px 32px;min-height:530px}
+.stage h2{font:normal clamp(22px,2.5vw,30px)/1.25 Georgia,serif;color:#f3dfbd;margin:4px 0 12px}
+.notice{color:#d5c4ac;background:#1c2228;border-left:2px solid #8f7653;padding:10px 13px;margin:12px 0 22px;font:13px/1.6 system-ui,sans-serif}
+.provenance{font:12px/1.55 system-ui,sans-serif;color:var(--muted);margin:8px 0}
+.excerpt{background:#15202c;border:1px solid #47505b;margin:19px 0;padding:17px;border-radius:9px}
+.excerpt h3{font:600 14px/1.4 system-ui,sans-serif;color:var(--gold);margin:0 0 5px}
+.excerpt h4{font:600 12px/1.4 system-ui,sans-serif;color:#dcc496;margin:15px 0 8px}
+.excerpt p.original{white-space:pre-wrap;overflow-wrap:anywhere;font:17px/1.72 Georgia,serif;color:#f0e7dd;padding:0 0 6px;margin:8px 0}
+.excerpt .unit+.unit{border-top:1px solid #54535a;margin-top:16px}
+.excerpt a{font:12px system-ui,sans-serif}
+.status{font:11px/1.5 system-ui,sans-serif;color:#d5c4ac;text-transform:uppercase;letter-spacing:.065em}
+.empty{padding:24px 15px;color:var(--muted)}
+footer{max-width:1280px;margin:0 auto;padding:0 20px 28px;color:var(--muted);font:12px/1.65 system-ui,sans-serif}
+@media(max-width:750px){main{display:block;padding:11px 8px}aside{margin-bottom:13px}.stage{padding:17px;min-height:360px}#results{max-height:330px}header{padding:20px 17px}.excerpt{padding:13px}.excerpt p.original{font-size:16px}}
+@media(prefers-reduced-motion:no-preference){.result{transition:background .15s,border-color .15s}}
+</style>
+</head>
+<body>
+<header>
+<div class="kicker">Ad Orientem · Living Catena · research workspace</div>
+<h1>The Fathers on Holy Scripture</h1>
+<p>Find the original commentary through a passage or a modern reader question. Explanations remain separate and attributed; none is rewritten into a simulated conversation.</p>
+</header>
+<main>
+<aside aria-label="Reader question navigation">
+<div class="controls">
+<label for="question">Scripture reference or reader question</label>
+<form id="searchForm"><input id="question" type="search" maxlength="220" value="What does daily bread mean?" autocomplete="off" placeholder="E.g. Matthew 6:11, or daily bread"></form>
+<div class="actions">
+<button type="submit" form="searchForm">Find original passages</button>
+<button id="reviewMode" type="button" aria-pressed="false">Editorial review queue</button>
+</div>
+</div>
+<div class="chips" aria-label="Examples">
+<button type="button" data-query="Matthew 6:11">Matthew 6:11</button>
+<button type="button" data-query="What do the Magi's gifts mean?">Magi's gifts</button>
+<button type="button" data-query="Why did Christ cry on the Cross?">Christ's cry</button>
+<button type="button" data-query="Matthew 1:16-17">Genealogies</button>
+</div>
+<div class="resultsHead" id="resultCount" aria-live="polite">Loading source index…</div>
+<div id="results" aria-label="Source discovery results"></div>
+</aside>
+<section class="stage" id="stage" aria-live="polite">
+<div class="kicker">Original source excerpts</div>
+<h2>Select a reader question</h2>
+<p class="muted">No AI-authored Father speech, interpretations or composite answers are displayed. The approved publication count is currently zero.</p>
+</section>
+</main>
+<footer>This is a research inspection preview, separate from the existing Living Catena Messenger branch. The Oxford/Newman text, inherited author labels and original source references are preserved. Independent context, authorship and translation review are still required before publication.</footer>
+<script type="module">
+import {createCatenaResearchRegistry,searchCatenaResearch,loadCatenaResearchExcerpt,deriveCatenaHumanReviewQueue}
+ from "../src/scripture/catena-research-retrieval.js";
+const base="../data/scripture/catena/research/full-corpus-pass-20261021/";
+const count=document.getElementById("resultCount"),results=document.getElementById("results"),
+ stage=document.getElementById("stage"),input=document.getElementById("question"),
+ reviewButton=document.getElementById("reviewMode");
+let registry=null,anomalies=[],mode="questions",selection=0;
+function elem(tag,cls,value){
+ const x=document.createElement(tag);
+ if(cls)x.className=cls;
+ if(value!==undefined)x.textContent=value;
+ return x;
+}
+function addText(parent,tag,cls,value){const x=elem(tag,cls,value);parent.append(x);return x}
+function clear(node){node.replaceChildren()}
+async function getJson(name){
+ const response=await fetch(base+name,{cache:"force-cache"});
+ if(!response.ok)throw new Error("Could not load "+name+" ("+response.status+")");
+ return response.json();
+}
+function showError(message){clear(stage);addText(stage,"h2",null,"Original source unavailable");addText(stage,"p","notice",message)}
+function candidates(){
+ if(!registry)return [];
+ if(mode==="review")return deriveCatenaHumanReviewQueue(registry).map(r=>({
+   id:r.sourcePointer,kind:"review",question:r.proposedReaderQuestion,pointers:[r.sourcePointer],caution:"Human review pending: original work, voice, context, translation and independent second editor."}));
+ return searchCatenaResearch(registry,input.value,{limit:12});
+}
+function renderResults(){
+ clear(results);
+ const entries=candidates();
+ count.textContent=entries.length+" "+(mode==="review"?"pending human-review priorities":"source-linked discovery routes");
+ if(!entries.length){
+  addText(results,"p","empty","No source-backed research question matched. Try a Matthew verse reference or a simpler biblical question.");return;
+ }
+ entries.forEach((hit,i)=>{
+  const b=elem("button","result");b.type="button";
+  b.setAttribute("aria-pressed",String(i===selection));
+  addText(b,"span",null,hit.kind==="comparison"?"Compare separate Fathers":hit.kind==="review"?"Human review needed":"Single source excerpt");
+  addText(b,"div",null,hit.question);
+  const people=[...new Set(hit.pointers.map(p=>registry.entries.get(p).inheritedFatherLabel))];
+  addText(b,"small",null,people.join(" · "));
+  b.addEventListener("click",()=>{selection=i;renderResults();renderSelected(hit)});
+  results.append(b);
+ });
+ renderSelected(entries[Math.min(selection,entries.length-1)]);
+}
+async function renderSelected(hit){
+ const stamp=++renderSelected.sequence;
+ clear(stage);
+ addText(stage,"div","kicker",hit.kind==="review"?"Editorial shortlist · not approved":"Reader question · editorial wording");
+ addText(stage,"h2",null,hit.question);
+ addText(stage,"p","notice","Research only. This is a navigation question written by editors, not a question historically spoken by a Father. Texts below are unaltered original Catena excerpts; their inherited attributions require verification.");
+ if(hit.caution)addText(stage,"p","muted",hit.caution);
+ if(hit.kind==="comparison")addText(stage,"p","provenance","Multiple source passages are kept distinct. Their arguments must not be merged into one supposed patristic answer.");
+ const loading=addText(stage,"p","muted","Opening source-verified Catena chapter packs…");
+ try{
+  const found=await Promise.all(hit.pointers.map(p=>loadCatenaResearchExcerpt(registry,p,{anomalies})));
+  if(stamp!==renderSelected.sequence)return;
+  loading.remove();
+  for(const entry of found){
+   const card=elem("article","excerpt");
+   addText(card,"div","status","Original Catena excerpt · unapproved research");
+   addText(card,"h3",null,entry.citation);
+   addText(card,"p","provenance",entry.edition+" · "+entry.pointer);
+   for(const unit of entry.units){
+    const part=elem("section","unit");
+    addText(part,"h4",null,"Attributed in the Catena to "+unit.printedAttribution);
+    addText(part,"p","original",unit.originalWords);
+    card.append(part);
+   }
+   const a=elem("a",null,"View historical Catena source");
+   a.href=entry.sourceUrl;a.rel="noopener noreferrer";a.target="_blank";
+   card.append(a);
+   stage.append(card);
+  }
+ }catch(error){
+  if(stamp!==renderSelected.sequence)return;
+  loading.remove();
+  addText(stage,"p","notice","Unable to verify and open the original excerpt: "+String(error.message||error)+". This preview requires a hosted HTTPS page; unverified content is not substituted.");
+ }
+}
+renderSelected.sequence=0;
+document.getElementById("searchForm").addEventListener("submit",event=>{
+ event.preventDefault();mode="questions";reviewButton.setAttribute("aria-pressed","false");selection=0;renderResults();
+});
+reviewButton.addEventListener("click",()=>{
+ mode=mode==="review"?"questions":"review";
+ reviewButton.setAttribute("aria-pressed",String(mode==="review"));
+ selection=0;renderResults();
+});
+document.querySelectorAll("[data-query]").forEach(b=>b.addEventListener("click",()=>{
+ input.value=b.dataset.query;mode="questions";reviewButton.setAttribute("aria-pressed","false");selection=0;renderResults();
+}));
+try{
+ const [c,g,i,a2,a3]=await Promise.all([
+  getJson("matthew-reader-catalogue.v1.json"),
+  getJson("matthew-reader-comparison-routes.v1.json"),
+  getJson("matthew-index.v1.json"),
+  getJson("matthew-batch-02-mixed-owner-anomaly.v1.json"),
+  getJson("matthew-batch-03-mixed-owner-anomaly.v1.json")]);
+ registry=createCatenaResearchRegistry(c,g,i);
+ anomalies=[a2,a3];
+ renderResults();
+}catch(error){
+ count.textContent="Source index unavailable";
+ showError(String(error.message||error));
+}
+</script>
+</body>
+</html>
