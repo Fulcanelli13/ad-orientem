@@ -2,6 +2,7 @@
 // Ceremony FORM and the liturgical CELEBRATION are different axes. The latter
 // remains owned by the 1962 calendar/Proper resolver; NEVER substitute a Proper.
 import {normalizeMassForm,MASS_FORMS} from "./session-engine.js";
+import {resolveCanonicalAssetUrl} from "../assets/asset-registry.js";
 import {availableOptionalMassRites,composeOptionalMassRites} from "./full-mass-optional-rites.js";
 import {specialMassPresentation,renderSpecialMassContext} from "./full-mass-special-presentation.js";
 import {massCalendarPreflightContext,fillMassCalendarPreflight} from "./calendar-preflight-context.js";
@@ -23,6 +24,11 @@ const KIND_LABELS=Object.freeze({
   EASTER_VIGIL:["Easter Vigil","Vigile pascale"]
 });
 const txt=(pair,fr)=>pair?.[fr?1:0]??"";
+function folioAssetIcon(id){
+  const url=resolveCanonicalAssetUrl(id);
+  if(!url)return '';
+  return '<span class="aoMassFolioChoiceIcon" data-ao-asset-id="'+id+'" aria-hidden="true" style="-webkit-mask:url(\''+url+'\') center/contain no-repeat;mask:url(\''+url+'\') center/contain no-repeat"></span>';
+}
 export const FULL_MASS_FORM_OPTIONS=Object.freeze(MASS_FORMS.map(id=>Object.freeze({id,en:LABELS[id][0],fr:LABELS[id][1]})));
 export function massCelebrationKind(legacy={}){
   const exceptional=String(legacy?.exceptionalProfile??"").toLowerCase();
@@ -248,9 +254,9 @@ export function mountFullMassPreflight({
         '<h3 data-folio-overview-heading></h3><p data-folio-overview-hint></p>'+
         '<div class="aoMassFolioReadyLine" data-folio-overview-selections></div>'+
         '<div class="aoMassFolioQuickChoices" role="group" aria-label="Mass setup choices">'+
-        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="celebration"><i class="aoMassFolioChoiceIndex" aria-hidden="true">I</i><span><strong data-folio-quick-mass-label></strong><small data-folio-quick-mass-value></small></span><span aria-hidden="true">›</span></button>'+
-        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="ceremony"><i class="aoMassFolioChoiceIndex" aria-hidden="true">II</i><span><strong data-folio-quick-ceremony-label></strong><small data-folio-quick-ceremony-value></small></span><span aria-hidden="true">›</span></button>'+
-        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="reader"><i class="aoMassFolioChoiceIndex" aria-hidden="true">III</i><span><strong data-folio-quick-reader-label></strong><small data-folio-quick-reader-value></small></span><span aria-hidden="true">›</span></button>'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="celebration">'+folioAssetIcon('ao-module-before-mass')+'<span><strong data-folio-quick-mass-label></strong><small data-folio-quick-mass-value></small></span><span aria-hidden="true">›</span></button>'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="ceremony">'+folioAssetIcon('ao-rich-eucharistic-life')+'<span><strong data-folio-quick-ceremony-label></strong><small data-folio-quick-ceremony-value></small></span><span aria-hidden="true">›</span></button>'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="reader">'+folioAssetIcon('ao-live-hear')+'<span><strong data-folio-quick-reader-label></strong><small data-folio-quick-reader-value></small></span><span aria-hidden="true">›</span></button>'+
         '</div>'+
         '<button type="button" data-folio-goto="celebration" class="aoMassFolioChange" data-folio-guide-start></button></section>'+
         '<section data-folio-panel="celebration" class="aoMassFolioPanel" hidden>'+
