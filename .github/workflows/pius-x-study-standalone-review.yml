@@ -64,6 +64,8 @@ on:
       - 'tests/pius-x-p51-real-output-surface-gate.mjs'
       - 'tests/pius-x-p52-localized-composer-context.mjs'
       - 'tests/pius-x-p53-atomic-natural-dialogue.mjs'
+      - 'tests/pius-x-p56-local-gpu-runtime-contract.mjs'
+      - 'tools/pius-x-p56-local-pilot.mjs'
       - 'tools/pius-x-p53-atomic-claim-composer.mjs'
       - 'tools/pius-x-p52-bilingual-composer-context.mjs'
       - 'tools/pius-x-draft-surface-gate.mjs'
@@ -168,6 +170,8 @@ on:
       - 'tests/pius-x-p51-real-output-surface-gate.mjs'
       - 'tests/pius-x-p52-localized-composer-context.mjs'
       - 'tests/pius-x-p53-atomic-natural-dialogue.mjs'
+      - 'tests/pius-x-p56-local-gpu-runtime-contract.mjs'
+      - 'tools/pius-x-p56-local-pilot.mjs'
       - 'tools/pius-x-p53-atomic-claim-composer.mjs'
       - 'tools/pius-x-p52-bilingual-composer-context.mjs'
       - 'tools/pius-x-draft-surface-gate.mjs'
@@ -308,6 +312,8 @@ jobs:
         run: node tests/pius-x-p52-localized-composer-context.mjs
       - name: Test P2.53 six unprepared bilingual visitor questions, six private-detail holds and atomic cue evidence isolation
         run: node tests/pius-x-p53-atomic-natural-dialogue.mjs
+      - name: Contract-test P2.56 strict €0 localhost 7B runtime, fake backend, source guards and original visual novel
+        run: node tests/pius-x-p56-local-gpu-runtime-contract.mjs
       - name: Validate P6 preserved sources and bilingual offline interaction
         run: node tests/pius-x-study-earlier-94-p6-e2e.mjs
       - name: Test typed questions, conservative source navigation and short-form follow-ups
