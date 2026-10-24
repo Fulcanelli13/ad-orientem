@@ -6,6 +6,7 @@ on:
       - "data/customs/master/**"
       - "tests/customs-master-integrity.mjs"
       - "tests/customs-full-registry-census.mjs"
+      - "tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs"
       - "tests/customs-weiser-readiness-pages.mjs"
       - ".github/workflows/customs-master-integrity.yml"
   workflow_dispatch:
@@ -67,3 +68,7 @@ jobs:
         run: |
           node --check tests/customs-pitre-1900-wave04-unmined-105-integrity.mjs
           node tests/customs-pitre-1900-wave04-unmined-105-integrity.mjs
+      - name: Verify Pitrè Wave05 195 evidence leads, 132 staged records, 63 holds
+        run: |
+          node --check tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs
+          node tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs
