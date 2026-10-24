@@ -1,0 +1,67 @@
+{
+  "schema": "AO_B48_THREE_SOURCE_ALIASES_AND_ONE_UNSELECTED_EXACT_CANDIDATE_V1",
+  "date": "2026-10-24",
+  "source_count_alias_cases": 3,
+  "existing_duplicate_artwork_IDs_auto_merged": 0,
+  "source_photo_approval_created": 0,
+  "cost_eur": 0,
+  "alias_cases": [
+    {
+      "frozen_id": "ART-iambattista-iepolo-aint-atherine-of-iena",
+      "frozen_title": "Saint Catherine of Siena",
+      "source_registration_id": "C32:giambattistatiepolokunsthistorischesmuseumwiengemaldegalerie",
+      "artist": "Giambattista Tiepolo",
+      "owner": "Kunsthistorisches Museum Vienna",
+      "accession": "GG 348",
+      "source_sha256": "b26150d466ab57b6516752bd4a341ccaebd82ac33050baef10b63085cbc0714d",
+      "archive_wave": "b23commons35",
+      "source_role": "OLDER_VERIFIED_SHA_ATTACHED_TO_DISTINCT_FROZEN_CATALOGUE_ENTRY",
+      "auto_crosslink_as_same_artwork": false,
+      "required_gate": "Verify that the protected short-title Saint Catherine of Siena is deliberately the same KHM GG348 original and establish duplicates/cross-ID governance. The older image's SHA is preserved, but automatic identity promotion is forbidden."
+    },
+    {
+      "frozen_id": "W14-006",
+      "frozen_title": "The Miracles of Saint Francis Xavier (oil modello)",
+      "source_registration_id": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
+      "artist": "Peter Paul Rubens",
+      "owner": "Kunsthistorisches Museum Vienna",
+      "accession": "Not inherited by short-title modello record",
+      "source_sha256": "b2d561176887c8723e5ce3aa495eee78dbd559ba1d332fe8dc1ada048ffe87ff",
+      "archive_wave": "b23commons35",
+      "source_role": "POTENTIALLY_DIFFERENT_RUBENS_PAINTING_VS_MODELLO",
+      "auto_crosslink_as_same_artwork": false,
+      "required_gate": "Prove oil modello is same object as the previously archived Miracles of Saint Francis Xavier full painting; preparatory sketch may be a distinct Rubens work."
+    },
+    {
+      "frozen_id": "W14-004",
+      "frozen_title": "The Miracles of Saint Ignatius of Loyola (oil modello)",
+      "source_registration_id": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+      "artist": "Peter Paul Rubens",
+      "owner": "Kunsthistorisches Museum Vienna",
+      "accession": "GG 517 / non-modello original",
+      "source_sha256": "2f4a667512623c9b4aa71b8b3c6495668a7e0b37a435980eb2227c91e5b18a39",
+      "archive_wave": "b33",
+      "draft_release_tag": "ao-art-originals-40076138511-1",
+      "source_role": "EXACT_ARCHIVED_HIGH_ALTAR_PAINTING_NOT_PROVEN_OIL_MODELLO",
+      "auto_crosslink_as_same_artwork": false,
+      "required_gate": "Verify oil modello separate original vs GG517 finished painting; do not promote high-altar original file as oil modello without museum-object identity."
+    }
+  ],
+  "unselected_exact_candidate": {
+    "frozen_id": "ART-eter-aul-ubens-he-oly-rinity",
+    "title": "The Holy Trinity",
+    "artist": "Peter Paul Rubens",
+    "object_candidate": "KMSKA Antwerp painting inv. 314",
+    "existing_sha256": "cd3477e583cf55ca2bd651aad191b916ec84a4af73b3ed36dc7e4e48b9c0ef38",
+    "physical_candidate_exists_in_draft_archive": true,
+    "source_specific_CCO_claim": true,
+    "source_object_id_verified": true,
+    "frozen_catalogue_identity_link_approved": false,
+    "app_published": false,
+    "editorial_decision_pending": true,
+    "reason": "Museum original digitally preserved and owner CC0, but frozen unreviewed generic Rubens entry lacks accession and requires exact editorial selection; cannot count as full-object source for this frozen entry."
+  },
+  "no_canonical_artwork_merge": true,
+  "no_app_publication_rights_inferred": true,
+  "strict_zero_euro": true
+}
