@@ -41,7 +41,7 @@ try{
  };
  const openFamilyDoor=async family=>{
    if(family!=="daily")await page.locator("#aoPray435930 .aoP435930QuietMore>summary").click();
-   await openFamilyDoor(family);
+   await page.locator('#aoPray435930.open [data-p435930-family="'+family+'"]').tap();
  };
  const identify=async()=>page.evaluate(()=>{
    if(document.querySelector("#aoPrayerBookRoot.open .pbShell"))
