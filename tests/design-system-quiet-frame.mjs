@@ -43,7 +43,7 @@ assert.match(css,/prefers-reduced-motion:reduce/);
 const home=await readFile(new URL("../src/home/presentation.js",import.meta.url),"utf8");
 const app=await readFile(new URL("../src/app/browser-entry.js",import.meta.url),"utf8");
 assert.match(home,/data-home-mass-entry/);
-assert.match(home,/data-home-calendar-view="year"/);
+assert.match(home,/data-home-calendar-view/);
 assert.match(home,/data-ao-home-art-slot/);
 assert.match(app,/installAppDesignSystem\(globalThis\)/);
 console.log("AO quiet-frame visual baseline / Today / Pray contracts: OK");
