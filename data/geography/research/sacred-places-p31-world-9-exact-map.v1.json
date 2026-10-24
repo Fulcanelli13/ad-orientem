@@ -1,0 +1,236 @@
+{
+  "schema": "AO_SACRED_PLACES_P31_WORLD_9_EXACT_MAP_V1",
+  "date": "2026-10-24",
+  "status": "P31_CANONICAL_RELEASE_PROPOSED",
+  "baseline": {
+    "places": 405,
+    "sources": 703,
+    "crosswalk": 405,
+    "unlinked": 146,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 414,
+    "sources": 712,
+    "crosswalk": 414,
+    "unlinked": 155,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "new_first200_source_excerpts": 9,
+  "first200_source_excerpt_coverage_if_merged": 136,
+  "unreviewed_first200_after_release": 64,
+  "new_physical_locations": 9,
+  "new_country_area_count": 0,
+  "p16_protected_holds": 16,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0205",
+      "place_id": "place:PL:bazylika-nawiedzenia-wambierzyce",
+      "name": "Bazylika Nawiedzenia Najświętszej Maryi Panny, Wambierzyce",
+      "country": "PL",
+      "place_type": "basilica",
+      "lat": 50.49012,
+      "lng": 16.45484,
+      "source_ids": [
+        "AO-P31-SITE-SG-INV-0205"
+      ],
+      "identity_source_url": "https://wambierzyce.pl/sanktuarium/bazylika/",
+      "identity_source_issuer": "Franciscan custodians, Sanktuarium Matki Bożej Wambierzyckiej",
+      "geo_source_url": "https://www.openstreetmap.org/way/149397698",
+      "geo_source_ref": "osm:way:149397698",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W149397698",
+      "precision": "site",
+      "scope_limit": "Church footprint only; exclude separate Wambierzyce Calvary and monumental stairway."
+    },
+    {
+      "candidate_id": "SG-INV-0224",
+      "place_id": "place:BE:basilique-notre-dame-bon-secours-peruwelz",
+      "name": "Basilique Notre-Dame de Bon-Secours, Péruwelz",
+      "country": "BE",
+      "place_type": "basilica",
+      "lat": 50.49729,
+      "lng": 3.60733,
+      "source_ids": [
+        "AO-P31-SITE-SG-INV-0224"
+      ],
+      "identity_source_url": "https://www.paroisseperuwelz.be/basilique.php",
+      "identity_source_issuer": "Unité Pastorale de Péruwelz",
+      "geo_source_url": "https://www.openstreetmap.org/way/170982487",
+      "geo_source_ref": "osm:way:170982487",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W170982487",
+      "precision": "site",
+      "scope_limit": "Basilica building at Place Jean Absil distinct from Chapelle Sainte Rita and Notre-Dame des Affligés."
+    },
+    {
+      "candidate_id": "SG-INV-0478",
+      "place_id": "place:BR:basilica-santuario-nossa-senhora-penha-rio",
+      "name": "Basílica Santuário de Nossa Senhora da Penha de França, Rio de Janeiro",
+      "country": "BR",
+      "place_type": "basilica",
+      "lat": -22.84431,
+      "lng": -43.27509,
+      "source_ids": [
+        "AO-P31-SITE-SG-INV-0478"
+      ],
+      "identity_source_url": "https://www.igrejadapenharj.org.br/funcionamento-do-santuario",
+      "identity_source_issuer": "Basílica Santuário de Nossa Senhora da Penha, church custodians",
+      "geo_source_url": "https://www.openstreetmap.org/way/33132709",
+      "geo_source_ref": "osm:way:33132709",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W33132709",
+      "precision": "site",
+      "scope_limit": "Catholic hilltop basilica 19 Largo da Penha; not a similarly named São Paulo church."
+    },
+    {
+      "candidate_id": "SG-INV-0277",
+      "place_id": "place:CH:pfarr-wallfahrtskirche-st-theodul-sachseln",
+      "name": "Pfarr- und Wallfahrtskirche St. Theodul, Sachseln",
+      "country": "CH",
+      "place_type": "church",
+      "lat": 46.86764,
+      "lng": 8.23997,
+      "source_ids": [
+        "AO-P31-SITE-SG-INV-0277"
+      ],
+      "identity_source_url": "https://www.pfarrei-sachseln.ch/kirchen-und-kapellen/kirchen-kapellen/pfarr-und-wallfahrtskirche/",
+      "identity_source_issuer": "Pfarrei Sachseln (Catholic parish)",
+      "geo_source_url": "https://www.openstreetmap.org/way/239572509",
+      "geo_source_ref": "osm:way:239572509",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W239572509",
+      "precision": "site",
+      "scope_limit": "Correct patron St Theodul; contains tomb of St Nicholas of Flüe, but is NOT a Saint Nicholas basilica or different church."
+    },
+    {
+      "candidate_id": "SG-INV-0086",
+      "place_id": "place:IT:basilica-santa-margherita-cortona",
+      "name": "Basilica di Santa Margherita da Cortona",
+      "country": "IT",
+      "place_type": "basilica",
+      "lat": 43.27647,
+      "lng": 11.99237,
+      "source_ids": [
+        "AO-P31-SITE-SG-INV-0086"
+      ],
+      "identity_source_url": "https://diocesi.arezzo.it/parrocchie/luoghi-della-fede/santuario-di-santa-margherita-da-cortona/",
+      "identity_source_issuer": "Diocese of Arezzo-Cortona-Sansepolcro",
+      "geo_source_url": "https://www.openstreetmap.org/way/123379240",
+      "geo_source_ref": "osm:way:123379240",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W123379240",
+      "precision": "site",
+      "scope_limit": "Basilica building distinct from former oratory and nearby St Nicholas church."
+    },
+    {
+      "candidate_id": "SG-INV-0146",
+      "place_id": "place:PT:santuario-nossa-senhora-nazare",
+      "name": "Santuário de Nossa Senhora da Nazaré",
+      "country": "PT",
+      "place_type": "shrine",
+      "lat": 39.60545,
+      "lng": -9.07692,
+      "source_ids": [
+        "AO-P31-SITE-SG-INV-0146"
+      ],
+      "identity_source_url": "https://cnsn.pt/valencias/santuario-de-nossa-senhora-da-nazare/",
+      "identity_source_issuer": "Confraria de Nossa Senhora da Nazaré (sanctuary custodians)",
+      "geo_source_url": "https://www.openstreetmap.org/way/411306655",
+      "geo_source_ref": "osm:way:411306655",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W411306655",
+      "precision": "site",
+      "scope_limit": "Physical Nazaré sanctuary church, not separate Ermida da Memória or viewpoint."
+    },
+    {
+      "candidate_id": "SG-INV-0223",
+      "place_id": "place:BE:basiliek-onze-lieve-vrouw-oostakker",
+      "name": "Basiliek Onze-Lieve-Vrouw Onbevlekte Ontvangenis, Oostakker",
+      "country": "BE",
+      "place_type": "basilica",
+      "lat": 51.0828,
+      "lng": 3.76359,
+      "source_ids": [
+        "AO-P31-SITE-SG-INV-0223"
+      ],
+      "identity_source_url": "https://www.kerknet.be/bedevaartsoord-oostakker/organisatie/contactgegevens",
+      "identity_source_issuer": "Bedevaartsoord Oostakker, Diocese of Ghent (Kerknet)",
+      "geo_source_url": "https://www.openstreetmap.org/way/115611099",
+      "geo_source_ref": "osm:way:115611099",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W115611099",
+      "precision": "site",
+      "scope_limit": "Catholic basilica at Onze-Lieve-Vrouwdreef 8; distinguish nearby Lourdes grotto and Bernadette parish."
+    },
+    {
+      "candidate_id": "SG-INV-0568",
+      "place_id": "place:PS:chapel-milk-grotto-bethlehem",
+      "name": "Chapel of the Milk Grotto, Bethlehem",
+      "country": "PS",
+      "place_type": "chapel",
+      "lat": 31.70326,
+      "lng": 35.20876,
+      "source_ids": [
+        "AO-P31-SITE-SG-INV-0568"
+      ],
+      "identity_source_url": "https://www.custodia.org/en/convents/bethlehem/",
+      "identity_source_issuer": "Franciscan Custody of the Holy Land",
+      "geo_source_url": "https://www.openstreetmap.org/way/313843776",
+      "geo_source_ref": "osm:way:313843776",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/28496830",
+      "precision": "site",
+      "scope_limit": "Franciscan Milk Grotto chapel physical way; distinct from Nativity Basilica and St Catherine church."
+    },
+    {
+      "candidate_id": "SG-INV-0311",
+      "place_id": "place:HR:bazilika-gospe-sinjske",
+      "name": "Bazilika Uznesenja Blažene Djevice Marije — Gospa Sinjska",
+      "country": "HR",
+      "place_type": "basilica",
+      "lat": 43.70146,
+      "lng": 16.63736,
+      "source_ids": [
+        "AO-P31-SITE-SG-INV-0311"
+      ],
+      "identity_source_url": "https://www.sub.gospa-sinjska.hr/index.php/engleski/1088-sanctuary-of-the-miraculous-lady-of-sinj-english",
+      "identity_source_issuer": "Franciscan Sanctuary of the Miraculous Lady of Sinj",
+      "geo_source_url": "https://www.openstreetmap.org/way/45454745",
+      "geo_source_ref": "osm:way:45454745",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W45454745",
+      "precision": "site",
+      "scope_limit": "Main town-square Basilica/Church of Our Lady of Sinj, not separate fortress votive chapel or monastery."
+    }
+  ],
+  "still_held": [
+    {
+      "candidate_id": "SG-INV-0331",
+      "country": "RO",
+      "name": "Saint Joseph Cathedral, Bucharest",
+      "osm_ref": "osm:way:75481867",
+      "reason": "Canonical geo:country:RO missing; excluded until separate country-area integration"
+    },
+    {
+      "candidate_id": "SG-INV-0460",
+      "country": "PA",
+      "name": "Jesús Nazareno Basilica, Atalaya",
+      "osm_ref": "osm:way:396944583",
+      "reason": "Canonical geo:country:PA missing"
+    },
+    {
+      "candidate_id": "SG-INV-0434",
+      "country": "MX",
+      "name": "Cristo Rey at Cerro del Cubilete",
+      "osm_ref": "osm:way:526165517",
+      "reason": "Prominent statue versus chapel; exact church-custodian identity not established"
+    }
+  ],
+  "identity_correction": {
+    "candidate_id": "SG-INV-0277",
+    "incorrect_research_title": "Basilica of Saint Nicholas of Flüe, Sachseln",
+    "correct_mapped_identity": "Pfarr- und Wallfahrtskirche St. Theodul, Sachseln",
+    "source_url": "https://www.pfarrei-sachseln.ch/kirchen-und-kapellen/kirchen-kapellen/pfarr-und-wallfahrtskirche/"
+  },
+  "policy": [
+    "Distinct site-level OSM way and primary Catholic custodial identity for all nine; country areas independently present and supported.",
+    "Source-screening coverage increments must not be mistaken for worldwide geography completeness.",
+    "Hold RO and PA without a supported country area; separate statue from church in MX.",
+    "No mass schedule, 1962-specific venue claims, private-site claims, artwork or mandatory public links.",
+    "Frozen Directory links and 16 P16 exceptions unchanged."
+  ]
+}
