@@ -8,6 +8,7 @@ No image is committed to the public git tree. Existing 451 frozen IDs retained.
 """
 from pathlib import Path
 from collections import defaultdict,Counter
+from functools import lru_cache
 import base64,csv,hashlib,io,json,os,re,subprocess,tarfile,tempfile
 from PIL import Image,ImageOps,UnidentifiedImageError
 from sacred_art_b52_placement_proposals import propose
@@ -37,6 +38,7 @@ def rawjson(name):return json.loads((ROOT/name).read_text(encoding="utf-8"))
 def gh(*args):
     p=subprocess.run(["gh",*args],capture_output=True,text=True,check=True)
     return p.stdout.strip()
+@lru_cache(maxsize=32)
 def tag_asset(tag):
     j=json.loads(gh("release","view",tag,"--repo",REPO,"--json","isDraft,assets"))
     if j.get("isDraft") is not True:raise RuntimeError("Private research archive unexpectedly non-draft "+tag)
@@ -46,9 +48,9 @@ def tag_asset(tag):
 def thumb(source,id_):
     try:
         with Image.open(io.BytesIO(source)) as im:
+            original=im.size
             im.draft("RGB",(1040,1040))
             ImageOps.exif_transpose(im,in_place=True)
-            original=im.size
             if min(original)<120:raise ValueError("Source too small to inspect")
             im.thumbnail((1050,1050),Image.Resampling.LANCZOS)
             im=im.convert("RGB")
