@@ -1,0 +1,22 @@
+name: B40 Sacred Art full 383-source 27-exception coverage integrity read-only
+on:
+  push:
+    branches: [research/sacred-art-b40-27-commons-accession-image-screen-20261024]
+    paths: [.github/workflows/ao-art-b40-readonly-coverage.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  b40-research-source-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b40-27-commons-accession-image-screen-20261024
+      - name: B38 prior original/rights invariants
+        run: node tests/sacred-art-b38-evidence-holds.mjs
+      - name: B39 two archived paintings and 27 frozen IDs
+        run: node tests/sacred-art-b39-27-evidence-integrity.mjs
+      - name: B40 one verified full-object source with two independent images, 26 remaining
+        run: node tests/sacred-art-b40-complete-source-coverage-integrity.mjs

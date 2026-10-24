@@ -1,0 +1,1920 @@
+{
+  "schema": "AO_B40_27_PRECISE_COMMONS_METADATA_QUERY_SCREEN_V1",
+  "date": "2026-10-24",
+  "method": "Wikimedia Commons File namespace search, up to six returned results per query. Search metadata only; no image bytes or reuse rights certified. Query failure is not no-image proof.",
+  "case_count": 27,
+  "copyright_excluded_cases": 2,
+  "searchable_cases": 25,
+  "queries_completed": 49,
+  "queries_failed": 0,
+  "unique_case_file_pairs": 47,
+  "source_files_downloaded": 0,
+  "source_bytes_preserved": 0,
+  "photo_rights_approved": 0,
+  "catalogue_coverage_increment": 0,
+  "editorial_approvals": 0,
+  "strictly_zero_euro": true,
+  "base_any_source": 357,
+  "base_complete_object": 356,
+  "remaining_full_object_gaps": 27,
+  "cases": [
+    {
+      "artwork_id": "G25-003",
+      "title": "Saint Augustine",
+      "status": "METADATA_LEADS_UNVERIFIED",
+      "queries": [
+        {
+          "query": "\"P001314\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:Dépt. de l'Eure (région du nord) - btv1b10571899b.jpg",
+              "page_id": 162333744,
+              "file_page": "https://commons.wikimedia.org/wiki/File:D%C3%A9pt._de_l'Eure_(r%C3%A9gion_du_nord)_-_btv1b10571899b.jpg",
+              "mime": "image/jpeg",
+              "width": 6107,
+              "height": 4152,
+              "bytes": 5547874,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/D%C3%A9pt._de_l%27Eure_%28r%C3%A9gion_du_nord%29_-_btv1b10571899b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        },
+        {
+          "query": "\"cf95015c-5744-4471-a529-84a3981719d6\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [
+        {
+          "file_title": "File:Dépt. de l'Eure (région du nord) - btv1b10571899b.jpg",
+          "page_id": 162333744,
+          "file_page": "https://commons.wikimedia.org/wiki/File:D%C3%A9pt._de_l'Eure_(r%C3%A9gion_du_nord)_-_btv1b10571899b.jpg",
+          "mime": "image/jpeg",
+          "width": 6107,
+          "height": 4152,
+          "bytes": 5547874,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/D%C3%A9pt._de_l%27Eure_%28r%C3%A9gion_du_nord%29_-_btv1b10571899b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        }
+      ],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "celine-1894-john-cross",
+      "title": "Saint John of the Cross",
+      "status": "UNDERLYING_ARTWORK_COPYRIGHT",
+      "queries": [],
+      "raw_candidate_files": [],
+      "search_completed": false,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "italy-0900119548",
+      "title": "Sant'Alfonso Maria de Liguori",
+      "status": "NO_FILE_LEADS_FROM_THIS_LIMITED_QUERY",
+      "queries": [
+        {
+          "query": "\"0900119548\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Antonio Marini\" \"Alfonso\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "G28-003",
+      "title": "Sant'Alfonso Maria de Liguori",
+      "status": "NO_FILE_LEADS_FROM_THIS_LIMITED_QUERY",
+      "queries": [
+        {
+          "query": "\"1500005082\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Michele Lenzi\" \"Alfonso\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "G17-006",
+      "title": "Saint François de Sales",
+      "status": "METADATA_LEADS_UNVERIFIED",
+      "queries": [
+        {
+          "query": "\"PM75000591\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Philippe de Champaigne\" \"François de Sales\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:Collection d'autographes, de dessins et de portraits de personnages célèbres, français et étrangers, du XVIe au XIXe siècle, formée par Alexandre Bixio. XVIe-XIXe siècle. III. D - F - btv1b10086686g (030 of 284).jpg",
+              "page_id": 196393336,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Collection_d'autographes,_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres,_fran%C3%A7ais_et_%C3%A9trangers,_du_XVIe_au_XIXe_si%C3%A8cle,_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10086686g_(030_of_284).jpg",
+              "mime": "image/jpeg",
+              "width": 8370,
+              "height": 6016,
+              "bytes": 6977497,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Collection_d%27autographes%2C_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres%2C_fran%C3%A7ais_et_%C3%A9trangers%2C_du_XVIe_au_XIXe_si%C3%A8cle%2C_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10086686g_%28030_of_284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Collection d'autographes, de dessins et de portraits de personnages célèbres, français et étrangers, du XVIe au XIXe siècle, formée par Alexandre Bixio. XVIe-XIXe siècle. III. D - F - btv1b10027296v (055 of 494).jpg",
+              "page_id": 196423583,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Collection_d'autographes,_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres,_fran%C3%A7ais_et_%C3%A9trangers,_du_XVIe_au_XIXe_si%C3%A8cle,_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_(055_of_494).jpg",
+              "mime": "image/jpeg",
+              "width": 2152,
+              "height": 3427,
+              "bytes": 328995,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Collection_d%27autographes%2C_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres%2C_fran%C3%A7ais_et_%C3%A9trangers%2C_du_XVIe_au_XIXe_si%C3%A8cle%2C_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_%28055_of_494%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Collection d'autographes, de dessins et de portraits de personnages célèbres, français et étrangers, du XVIe au XIXe siècle, formée par Alexandre Bixio. XVIe-XIXe siècle. III. D - F - btv1b10027296v (079 of 494).jpg",
+              "page_id": 196423831,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Collection_d'autographes,_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres,_fran%C3%A7ais_et_%C3%A9trangers,_du_XVIe_au_XIXe_si%C3%A8cle,_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_(079_of_494).jpg",
+              "mime": "image/jpeg",
+              "width": 2815,
+              "height": 3599,
+              "bytes": 405130,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Collection_d%27autographes%2C_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres%2C_fran%C3%A7ais_et_%C3%A9trangers%2C_du_XVIe_au_XIXe_si%C3%A8cle%2C_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_%28079_of_494%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Collection d'autographes, de dessins et de portraits de personnages célèbres, français et étrangers, du XVIe au XIXe siècle, formée par Alexandre Bixio. XVIe-XIXe siècle. III. D - F - btv1b10027296v (122 of 494).jpg",
+              "page_id": 196424240,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Collection_d'autographes,_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres,_fran%C3%A7ais_et_%C3%A9trangers,_du_XVIe_au_XIXe_si%C3%A8cle,_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_(122_of_494).jpg",
+              "mime": "image/jpeg",
+              "width": 3912,
+              "height": 5755,
+              "bytes": 684062,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Collection_d%27autographes%2C_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres%2C_fran%C3%A7ais_et_%C3%A9trangers%2C_du_XVIe_au_XIXe_si%C3%A8cle%2C_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_%28122_of_494%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Collection d'autographes, de dessins et de portraits de personnages célèbres, français et étrangers, du XVIe au XIXe siècle, formée par Alexandre Bixio. XVIe-XIXe siècle. III. D - F - btv1b10027296v (188 of 494).jpg",
+              "page_id": 196424769,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Collection_d'autographes,_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres,_fran%C3%A7ais_et_%C3%A9trangers,_du_XVIe_au_XIXe_si%C3%A8cle,_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_(188_of_494).jpg",
+              "mime": "image/jpeg",
+              "width": 3938,
+              "height": 5762,
+              "bytes": 1637353,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Collection_d%27autographes%2C_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres%2C_fran%C3%A7ais_et_%C3%A9trangers%2C_du_XVIe_au_XIXe_si%C3%A8cle%2C_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_%28188_of_494%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Collection d'autographes, de dessins et de portraits de personnages célèbres, français et étrangers, du XVIe au XIXe siècle, formée par Alexandre Bixio. XVIe-XIXe siècle. III. D - F - btv1b10027296v (270 of 494).jpg",
+              "page_id": 196425442,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Collection_d'autographes,_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres,_fran%C3%A7ais_et_%C3%A9trangers,_du_XVIe_au_XIXe_si%C3%A8cle,_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_(270_of_494).jpg",
+              "mime": "image/jpeg",
+              "width": 3719,
+              "height": 5548,
+              "bytes": 1814997,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Collection_d%27autographes%2C_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres%2C_fran%C3%A7ais_et_%C3%A9trangers%2C_du_XVIe_au_XIXe_si%C3%A8cle%2C_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_%28270_of_494%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        }
+      ],
+      "raw_candidate_files": [
+        {
+          "file_title": "File:Collection d'autographes, de dessins et de portraits de personnages célèbres, français et étrangers, du XVIe au XIXe siècle, formée par Alexandre Bixio. XVIe-XIXe siècle. III. D - F - btv1b10086686g (030 of 284).jpg",
+          "page_id": 196393336,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Collection_d'autographes,_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres,_fran%C3%A7ais_et_%C3%A9trangers,_du_XVIe_au_XIXe_si%C3%A8cle,_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10086686g_(030_of_284).jpg",
+          "mime": "image/jpeg",
+          "width": 8370,
+          "height": 6016,
+          "bytes": 6977497,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Collection_d%27autographes%2C_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres%2C_fran%C3%A7ais_et_%C3%A9trangers%2C_du_XVIe_au_XIXe_si%C3%A8cle%2C_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10086686g_%28030_of_284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Collection d'autographes, de dessins et de portraits de personnages célèbres, français et étrangers, du XVIe au XIXe siècle, formée par Alexandre Bixio. XVIe-XIXe siècle. III. D - F - btv1b10027296v (055 of 494).jpg",
+          "page_id": 196423583,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Collection_d'autographes,_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres,_fran%C3%A7ais_et_%C3%A9trangers,_du_XVIe_au_XIXe_si%C3%A8cle,_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_(055_of_494).jpg",
+          "mime": "image/jpeg",
+          "width": 2152,
+          "height": 3427,
+          "bytes": 328995,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Collection_d%27autographes%2C_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres%2C_fran%C3%A7ais_et_%C3%A9trangers%2C_du_XVIe_au_XIXe_si%C3%A8cle%2C_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_%28055_of_494%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Collection d'autographes, de dessins et de portraits de personnages célèbres, français et étrangers, du XVIe au XIXe siècle, formée par Alexandre Bixio. XVIe-XIXe siècle. III. D - F - btv1b10027296v (079 of 494).jpg",
+          "page_id": 196423831,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Collection_d'autographes,_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres,_fran%C3%A7ais_et_%C3%A9trangers,_du_XVIe_au_XIXe_si%C3%A8cle,_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_(079_of_494).jpg",
+          "mime": "image/jpeg",
+          "width": 2815,
+          "height": 3599,
+          "bytes": 405130,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Collection_d%27autographes%2C_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres%2C_fran%C3%A7ais_et_%C3%A9trangers%2C_du_XVIe_au_XIXe_si%C3%A8cle%2C_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_%28079_of_494%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Collection d'autographes, de dessins et de portraits de personnages célèbres, français et étrangers, du XVIe au XIXe siècle, formée par Alexandre Bixio. XVIe-XIXe siècle. III. D - F - btv1b10027296v (122 of 494).jpg",
+          "page_id": 196424240,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Collection_d'autographes,_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres,_fran%C3%A7ais_et_%C3%A9trangers,_du_XVIe_au_XIXe_si%C3%A8cle,_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_(122_of_494).jpg",
+          "mime": "image/jpeg",
+          "width": 3912,
+          "height": 5755,
+          "bytes": 684062,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Collection_d%27autographes%2C_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres%2C_fran%C3%A7ais_et_%C3%A9trangers%2C_du_XVIe_au_XIXe_si%C3%A8cle%2C_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_%28122_of_494%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Collection d'autographes, de dessins et de portraits de personnages célèbres, français et étrangers, du XVIe au XIXe siècle, formée par Alexandre Bixio. XVIe-XIXe siècle. III. D - F - btv1b10027296v (188 of 494).jpg",
+          "page_id": 196424769,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Collection_d'autographes,_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres,_fran%C3%A7ais_et_%C3%A9trangers,_du_XVIe_au_XIXe_si%C3%A8cle,_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_(188_of_494).jpg",
+          "mime": "image/jpeg",
+          "width": 3938,
+          "height": 5762,
+          "bytes": 1637353,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Collection_d%27autographes%2C_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres%2C_fran%C3%A7ais_et_%C3%A9trangers%2C_du_XVIe_au_XIXe_si%C3%A8cle%2C_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_%28188_of_494%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Collection d'autographes, de dessins et de portraits de personnages célèbres, français et étrangers, du XVIe au XIXe siècle, formée par Alexandre Bixio. XVIe-XIXe siècle. III. D - F - btv1b10027296v (270 of 494).jpg",
+          "page_id": 196425442,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Collection_d'autographes,_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres,_fran%C3%A7ais_et_%C3%A9trangers,_du_XVIe_au_XIXe_si%C3%A8cle,_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_(270_of_494).jpg",
+          "mime": "image/jpeg",
+          "width": 3719,
+          "height": 5548,
+          "bytes": 1814997,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Collection_d%27autographes%2C_de_dessins_et_de_portraits_de_personnages_c%C3%A9l%C3%A8bres%2C_fran%C3%A7ais_et_%C3%A9trangers%2C_du_XVIe_au_XIXe_si%C3%A8cle%2C_form%C3%A9e_par_Alexandre_Bixio._XVIe-XIXe_si%C3%A8cle._III._D_-_F_-_btv1b10027296v_%28270_of_494%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        }
+      ],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "G30-004",
+      "title": "Ritratto di San Gregorio Nazianzeno",
+      "status": "NO_FILE_LEADS_FROM_THIS_LIMITED_QUERY",
+      "queries": [
+        {
+          "query": "\"L0070-00118\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Giuseppe Franchi\" \"Gregorio Nazianzeno\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "G20-002",
+      "title": "Saint Anselme",
+      "status": "METADATA_LEADS_UNVERIFIED",
+      "queries": [
+        {
+          "query": "\"PM67000164\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Saint Anselme\" \"Marmoutier\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:Saint Anselm (IA saintanselm00churrich).pdf",
+              "page_id": 96276020,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Saint_Anselm_(IA_saintanselm00churrich).pdf",
+              "mime": "application/pdf",
+              "width": 729,
+              "height": 1102,
+              "bytes": 18399490,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Saint_Anselm_%28IA_saintanselm00churrich%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Saint Anselm (IA cu31924029420175).pdf",
+              "page_id": 97989745,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Saint_Anselm_(IA_cu31924029420175).pdf",
+              "mime": "application/pdf",
+              "width": 718,
+              "height": 1070,
+              "bytes": 6642715,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Saint_Anselm_%28IA_cu31924029420175%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Saint Anselm (IA cu31924029420159).pdf",
+              "page_id": 97989747,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Saint_Anselm_(IA_cu31924029420159).pdf",
+              "mime": "application/pdf",
+              "width": 1583,
+              "height": 2364,
+              "bytes": 22306497,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Saint_Anselm_%28IA_cu31924029420159%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Mémoires de la Société archéologique d'Eure-et-Loir (IA deureetloir08soci).pdf",
+              "page_id": 98581588,
+              "file_page": "https://commons.wikimedia.org/wiki/File:M%C3%A9moires_de_la_Soci%C3%A9t%C3%A9_arch%C3%A9ologique_d'Eure-et-Loir_(IA_deureetloir08soci).pdf",
+              "mime": "application/pdf",
+              "width": 931,
+              "height": 1475,
+              "bytes": 26504876,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/M%C3%A9moires_de_la_Soci%C3%A9t%C3%A9_arch%C3%A9ologique_d%27Eure-et-Loir_%28IA_deureetloir08soci%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Gilbert de la Porrée - évêque de Poitiers et sa philosophie (1070-1154) (IA gilbertdelaporr00bert).pdf",
+              "page_id": 202168174,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Gilbert_de_la_Porr%C3%A9e_-_%C3%A9v%C3%AAque_de_Poitiers_et_sa_philosophie_(1070-1154)_(IA_gilbertdelaporr00bert).pdf",
+              "mime": "application/pdf",
+              "width": 1018,
+              "height": 1660,
+              "bytes": 22689111,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Gilbert_de_la_Porr%C3%A9e_-_%C3%A9v%C3%AAque_de_Poitiers_et_sa_philosophie_%281070-1154%29_%28IA_gilbertdelaporr00bert%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        }
+      ],
+      "raw_candidate_files": [
+        {
+          "file_title": "File:Saint Anselm (IA saintanselm00churrich).pdf",
+          "page_id": 96276020,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Saint_Anselm_(IA_saintanselm00churrich).pdf",
+          "mime": "application/pdf",
+          "width": 729,
+          "height": 1102,
+          "bytes": 18399490,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Saint_Anselm_%28IA_saintanselm00churrich%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Saint Anselm (IA cu31924029420175).pdf",
+          "page_id": 97989745,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Saint_Anselm_(IA_cu31924029420175).pdf",
+          "mime": "application/pdf",
+          "width": 718,
+          "height": 1070,
+          "bytes": 6642715,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Saint_Anselm_%28IA_cu31924029420175%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Saint Anselm (IA cu31924029420159).pdf",
+          "page_id": 97989747,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Saint_Anselm_(IA_cu31924029420159).pdf",
+          "mime": "application/pdf",
+          "width": 1583,
+          "height": 2364,
+          "bytes": 22306497,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Saint_Anselm_%28IA_cu31924029420159%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Mémoires de la Société archéologique d'Eure-et-Loir (IA deureetloir08soci).pdf",
+          "page_id": 98581588,
+          "file_page": "https://commons.wikimedia.org/wiki/File:M%C3%A9moires_de_la_Soci%C3%A9t%C3%A9_arch%C3%A9ologique_d'Eure-et-Loir_(IA_deureetloir08soci).pdf",
+          "mime": "application/pdf",
+          "width": 931,
+          "height": 1475,
+          "bytes": 26504876,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/M%C3%A9moires_de_la_Soci%C3%A9t%C3%A9_arch%C3%A9ologique_d%27Eure-et-Loir_%28IA_deureetloir08soci%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Gilbert de la Porrée - évêque de Poitiers et sa philosophie (1070-1154) (IA gilbertdelaporr00bert).pdf",
+          "page_id": 202168174,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Gilbert_de_la_Porr%C3%A9e_-_%C3%A9v%C3%AAque_de_Poitiers_et_sa_philosophie_(1070-1154)_(IA_gilbertdelaporr00bert).pdf",
+          "mime": "application/pdf",
+          "width": 1018,
+          "height": 1660,
+          "bytes": 22689111,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Gilbert_de_la_Porr%C3%A9e_-_%C3%A9v%C3%AAque_de_Poitiers_et_sa_philosophie_%281070-1154%29_%28IA_gilbertdelaporr00bert%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        }
+      ],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "G30-007",
+      "title": "San Pier Damiano writing, angel indicates heaven",
+      "status": "METADATA_LEADS_UNVERIFIED",
+      "queries": [
+        {
+          "query": "\"1500926537\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"San Pier Damiano\" \"angelo\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:Milano ne' suoi monumenti (IA milanonesuoimonu02romu 0).pdf",
+              "page_id": 95435801,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Milano_ne'_suoi_monumenti_(IA_milanonesuoimonu02romu_0).pdf",
+              "mime": "application/pdf",
+              "width": 1204,
+              "height": 1766,
+              "bytes": 68440802,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Milano_ne%27_suoi_monumenti_%28IA_milanonesuoimonu02romu_0%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Storia della Badia di Montecassino (IA storiadellabadia01tost).pdf",
+              "page_id": 95604889,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Storia_della_Badia_di_Montecassino_(IA_storiadellabadia01tost).pdf",
+              "mime": "application/pdf",
+              "width": 752,
+              "height": 1100,
+              "bytes": 33518501,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Storia_della_Badia_di_Montecassino_%28IA_storiadellabadia01tost%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Sermone recitato nell'Oratorio della Sciabica nel cimiterio della chiesa di san Giuseppe della città di Palermo. Celebrandosi la festa della miracolosa immagine della Madonna di Prouidenza (IA bub gb IeFz1KEhxoYC).pdf",
+              "page_id": 98062391,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Sermone_recitato_nell'Oratorio_della_Sciabica_nel_cimiterio_della_chiesa_di_san_Giuseppe_della_citt%C3%A0_di_Palermo._Celebrandosi_la_festa_della_miracolosa_immagine_della_Madonna_di_Prouidenza_(IA_bub_gb_IeFz1KEhxoYC).pdf",
+              "mime": "application/pdf",
+              "width": 625,
+              "height": 1179,
+              "bytes": 4625138,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Sermone_recitato_nell%27Oratorio_della_Sciabica_nel_cimiterio_della_chiesa_di_san_Giuseppe_della_citt%C3%A0_di_Palermo._Celebrandosi_la_festa_della_miracolosa_immagine_della_Madonna_di_Prouidenza_%28IA_bub_gb_IeFz1KEhxoYC%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Annali d'Italia - dal principio dell'era volgare sino all'anno 1750 (IA annaliditaliadal04murauoft).pdf",
+              "page_id": 194504758,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Annali_d'Italia_-_dal_principio_dell'era_volgare_sino_all'anno_1750_(IA_annaliditaliadal04murauoft).pdf",
+              "mime": "application/pdf",
+              "width": 829,
+              "height": 1279,
+              "bytes": 67932078,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Annali_d%27Italia_-_dal_principio_dell%27era_volgare_sino_all%27anno_1750_%28IA_annaliditaliadal04murauoft%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        }
+      ],
+      "raw_candidate_files": [
+        {
+          "file_title": "File:Milano ne' suoi monumenti (IA milanonesuoimonu02romu 0).pdf",
+          "page_id": 95435801,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Milano_ne'_suoi_monumenti_(IA_milanonesuoimonu02romu_0).pdf",
+          "mime": "application/pdf",
+          "width": 1204,
+          "height": 1766,
+          "bytes": 68440802,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Milano_ne%27_suoi_monumenti_%28IA_milanonesuoimonu02romu_0%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Storia della Badia di Montecassino (IA storiadellabadia01tost).pdf",
+          "page_id": 95604889,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Storia_della_Badia_di_Montecassino_(IA_storiadellabadia01tost).pdf",
+          "mime": "application/pdf",
+          "width": 752,
+          "height": 1100,
+          "bytes": 33518501,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Storia_della_Badia_di_Montecassino_%28IA_storiadellabadia01tost%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Sermone recitato nell'Oratorio della Sciabica nel cimiterio della chiesa di san Giuseppe della città di Palermo. Celebrandosi la festa della miracolosa immagine della Madonna di Prouidenza (IA bub gb IeFz1KEhxoYC).pdf",
+          "page_id": 98062391,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Sermone_recitato_nell'Oratorio_della_Sciabica_nel_cimiterio_della_chiesa_di_san_Giuseppe_della_citt%C3%A0_di_Palermo._Celebrandosi_la_festa_della_miracolosa_immagine_della_Madonna_di_Prouidenza_(IA_bub_gb_IeFz1KEhxoYC).pdf",
+          "mime": "application/pdf",
+          "width": 625,
+          "height": 1179,
+          "bytes": 4625138,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Sermone_recitato_nell%27Oratorio_della_Sciabica_nel_cimiterio_della_chiesa_di_san_Giuseppe_della_citt%C3%A0_di_Palermo._Celebrandosi_la_festa_della_miracolosa_immagine_della_Madonna_di_Prouidenza_%28IA_bub_gb_IeFz1KEhxoYC%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Annali d'Italia - dal principio dell'era volgare sino all'anno 1750 (IA annaliditaliadal04murauoft).pdf",
+          "page_id": 194504758,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Annali_d'Italia_-_dal_principio_dell'era_volgare_sino_all'anno_1750_(IA_annaliditaliadal04murauoft).pdf",
+          "mime": "application/pdf",
+          "width": 829,
+          "height": 1279,
+          "bytes": 67932078,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Annali_d%27Italia_-_dal_principio_dell%27era_volgare_sino_all%27anno_1750_%28IA_annaliditaliadal04murauoft%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        }
+      ],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "zeri-45874-peter-damian",
+      "title": "San Pier Damiano",
+      "status": "NO_FILE_LEADS_FROM_THIS_LIMITED_QUERY",
+      "queries": [
+        {
+          "query": "\"PI_0476/5/9\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Venanzio\" \"Pier Damiano\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "G30-006",
+      "title": "San Pier Damiano",
+      "status": "NO_FILE_LEADS_FROM_THIS_LIMITED_QUERY",
+      "queries": [
+        {
+          "query": "\"0800072792\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"San Pier Damiano\" \"Pianoro\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "G30-010",
+      "title": "Ritratto del cardinale Roberto Bellarmino",
+      "status": "METADATA_LEADS_UNVERIFIED",
+      "queries": [
+        {
+          "query": "\"1200225121\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Roberto Bellarmino\" \"Scala\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:Vita del cavalier Gio. Lorenzo Bernino (IA gri 000033125010846356).pdf",
+              "page_id": 95056321,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Vita_del_cavalier_Gio._Lorenzo_Bernino_(IA_gri_000033125010846356).pdf",
+              "mime": "application/pdf",
+              "width": 783,
+              "height": 1016,
+              "bytes": 19916624,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Vita_del_cavalier_Gio._Lorenzo_Bernino_%28IA_gri_000033125010846356%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        }
+      ],
+      "raw_candidate_files": [
+        {
+          "file_title": "File:Vita del cavalier Gio. Lorenzo Bernino (IA gri 000033125010846356).pdf",
+          "page_id": 95056321,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Vita_del_cavalier_Gio._Lorenzo_Bernino_(IA_gri_000033125010846356).pdf",
+          "mime": "application/pdf",
+          "width": 783,
+          "height": 1016,
+          "bytes": 19916624,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Vita_del_cavalier_Gio._Lorenzo_Bernino_%28IA_gri_000033125010846356%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        }
+      ],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "G30-012",
+      "title": "Prédication de saint Pierre Canisius",
+      "status": "METADATA_LEADS_UNVERIFIED",
+      "queries": [
+        {
+          "query": "\"Pierre Wuilleret\" \"Canisius\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:Pierre Wuilleret - sik work-16300845.jpg",
+              "page_id": 156752485,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Pierre_Wuilleret_-_sik_work-16300845.jpg",
+              "mime": "image/jpeg",
+              "width": 658,
+              "height": 1000,
+              "bytes": 156658,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Pierre_Wuilleret_-_sik_work-16300845.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        },
+        {
+          "query": "\"Prédication\" \"Canisius\" \"Wuilleret\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:Pierre Wuilleret - sik work-16300845.jpg",
+              "page_id": 156752485,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Pierre_Wuilleret_-_sik_work-16300845.jpg",
+              "mime": "image/jpeg",
+              "width": 658,
+              "height": 1000,
+              "bytes": 156658,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Pierre_Wuilleret_-_sik_work-16300845.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        }
+      ],
+      "raw_candidate_files": [
+        {
+          "file_title": "File:Pierre Wuilleret - sik work-16300845.jpg",
+          "page_id": 156752485,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Pierre_Wuilleret_-_sik_work-16300845.jpg",
+          "mime": "image/jpeg",
+          "width": 658,
+          "height": 1000,
+          "bytes": 156658,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Pierre_Wuilleret_-_sik_work-16300845.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        }
+      ],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "italy-banchero-0700031704",
+      "title": "San Lorenzo da Brindisi",
+      "status": "NO_FILE_LEADS_FROM_THIS_LIMITED_QUERY",
+      "queries": [
+        {
+          "query": "\"0700031704\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Angelo Giacinto Banchero\" \"Lorenzo\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "G32-002",
+      "title": "Sant'Effremo",
+      "status": "NO_FILE_LEADS_FROM_THIS_LIMITED_QUERY",
+      "queries": [
+        {
+          "query": "\"Francesco Netti\" \"Effremo\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Netti\" \"Sant'Effremo\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+      "title": "Saint Lawrence / Saint Hilary — two-sided altarpiece panel",
+      "status": "METADATA_LEADS_UNVERIFIED",
+      "queries": [
+        {
+          "query": "\"San Hilario ermitaño\" \"Correa\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Saint Hilary\" \"Correa de Vivar\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:San Lorenzo, de Juan Correa de Vivar (Museo del Prado).jpg",
+              "page_id": 77175073,
+              "file_page": "https://commons.wikimedia.org/wiki/File:San_Lorenzo,_de_Juan_Correa_de_Vivar_(Museo_del_Prado).jpg",
+              "mime": "image/jpeg",
+              "width": 822,
+              "height": 1920,
+              "bytes": 1203410,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/San_Lorenzo%2C_de_Juan_Correa_de_Vivar_%28Museo_del_Prado%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        }
+      ],
+      "raw_candidate_files": [
+        {
+          "file_title": "File:San Lorenzo, de Juan Correa de Vivar (Museo del Prado).jpg",
+          "page_id": 77175073,
+          "file_page": "https://commons.wikimedia.org/wiki/File:San_Lorenzo,_de_Juan_Correa_de_Vivar_(Museo_del_Prado).jpg",
+          "mime": "image/jpeg",
+          "width": 822,
+          "height": 1920,
+          "bytes": 1203410,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/San_Lorenzo%2C_de_Juan_Correa_de_Vivar_%28Museo_del_Prado%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        }
+      ],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "G29-001",
+      "title": "Saint Hilaire de Poitiers écrivant contre l'arianisme",
+      "status": "NO_FILE_LEADS_FROM_THIS_LIMITED_QUERY",
+      "queries": [
+        {
+          "query": "\"IM33002267\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Jérôme-Martin Langlois\" \"Hilaire\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "QCP-HILARY-LEDUC-1896-1900",
+      "title": "Saint Hilaire rédigeant son traité sur la Trinité",
+      "status": "METADATA_LEADS_UNVERIFIED",
+      "queries": [
+        {
+          "query": "\"Ozias Leduc\" \"Hilaire\" \"Trinité\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Saint Hilaire\" \"Ozias Leduc\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:Ozias Leduc - Boy with Bread.jpg",
+              "page_id": 5990879,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Ozias_Leduc_-_Boy_with_Bread.jpg",
+              "mime": "image/jpeg",
+              "width": 640,
+              "height": 575,
+              "bytes": 56866,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Ozias_Leduc_-_Boy_with_Bread.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Ozias Leduc (1864–1955) - La Liseuse.png",
+              "page_id": 16693465,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Ozias_Leduc_(1864%E2%80%931955)_-_La_Liseuse.png",
+              "mime": "image/png",
+              "width": 1790,
+              "height": 2068,
+              "bytes": 5524429,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Ozias_Leduc_%281864%E2%80%931955%29_-_La_Liseuse.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Ozias Leduc mon portrait 1899.jpg",
+              "page_id": 17475903,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Ozias_Leduc_mon_portrait_1899.jpg",
+              "mime": "image/jpeg",
+              "width": 517,
+              "height": 640,
+              "bytes": 57564,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Ozias_Leduc_mon_portrait_1899.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Paul Chomedey de Maisonneuve - Ozias Leduc.jpg",
+              "page_id": 18394447,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Paul_Chomedey_de_Maisonneuve_-_Ozias_Leduc.jpg",
+              "mime": "image/jpeg",
+              "width": 680,
+              "height": 917,
+              "bytes": 70571,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Paul_Chomedey_de_Maisonneuve_-_Ozias_Leduc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Eglise-St-Hilaire6.jpg",
+              "page_id": 21702148,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Eglise-St-Hilaire6.jpg",
+              "mime": "image/jpeg",
+              "width": 1721,
+              "height": 1291,
+              "bytes": 693986,
+              "license_short_name_metadata": "CC BY-SA 3.0",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Eglise-St-Hilaire6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Nature morte au mannequin (1898) 01.jpg",
+              "page_id": 54379819,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Nature_morte_au_mannequin_(1898)_01.jpg",
+              "mime": "image/jpeg",
+              "width": 2181,
+              "height": 2566,
+              "bytes": 1565868,
+              "license_short_name_metadata": "CC0",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Nature_morte_au_mannequin_%281898%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        }
+      ],
+      "raw_candidate_files": [
+        {
+          "file_title": "File:Ozias Leduc - Boy with Bread.jpg",
+          "page_id": 5990879,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Ozias_Leduc_-_Boy_with_Bread.jpg",
+          "mime": "image/jpeg",
+          "width": 640,
+          "height": 575,
+          "bytes": 56866,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Ozias_Leduc_-_Boy_with_Bread.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Ozias Leduc (1864–1955) - La Liseuse.png",
+          "page_id": 16693465,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Ozias_Leduc_(1864%E2%80%931955)_-_La_Liseuse.png",
+          "mime": "image/png",
+          "width": 1790,
+          "height": 2068,
+          "bytes": 5524429,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Ozias_Leduc_%281864%E2%80%931955%29_-_La_Liseuse.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Ozias Leduc mon portrait 1899.jpg",
+          "page_id": 17475903,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Ozias_Leduc_mon_portrait_1899.jpg",
+          "mime": "image/jpeg",
+          "width": 517,
+          "height": 640,
+          "bytes": 57564,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Ozias_Leduc_mon_portrait_1899.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Paul Chomedey de Maisonneuve - Ozias Leduc.jpg",
+          "page_id": 18394447,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Paul_Chomedey_de_Maisonneuve_-_Ozias_Leduc.jpg",
+          "mime": "image/jpeg",
+          "width": 680,
+          "height": 917,
+          "bytes": 70571,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Paul_Chomedey_de_Maisonneuve_-_Ozias_Leduc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Eglise-St-Hilaire6.jpg",
+          "page_id": 21702148,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Eglise-St-Hilaire6.jpg",
+          "mime": "image/jpeg",
+          "width": 1721,
+          "height": 1291,
+          "bytes": 693986,
+          "license_short_name_metadata": "CC BY-SA 3.0",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Eglise-St-Hilaire6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Nature morte au mannequin (1898) 01.jpg",
+          "page_id": 54379819,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Nature_morte_au_mannequin_(1898)_01.jpg",
+          "mime": "image/jpeg",
+          "width": 2181,
+          "height": 2566,
+          "bytes": 1565868,
+          "license_short_name_metadata": "CC0",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Nature_morte_au_mannequin_%281898%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        }
+      ],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "W04-009",
+      "title": "Le songe de saint Joseph",
+      "status": "NO_FILE_LEADS_FROM_THIS_LIMITED_QUERY",
+      "queries": [
+        {
+          "query": "\"INV 20450\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Philippe de Champaigne\" \"Le songe de saint Joseph\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "carmel-lisieux-1925-therese-aux-roses",
+      "title": "Thérèse aux roses (1925)",
+      "status": "UNDERLYING_ARTWORK_COPYRIGHT",
+      "queries": [],
+      "raw_candidate_files": [],
+      "search_completed": false,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "G26-007",
+      "title": "Joan of Arc Listening to the Voices",
+      "status": "METADATA_LEADS_UNVERIFIED",
+      "queries": [
+        {
+          "query": "\"RF 3946\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Eugène Carrière\" \"Jeanne d'Arc\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:Rochegude - Promenades dans toutes les rues de Paris, 18.djvu",
+              "page_id": 8495691,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Rochegude_-_Promenades_dans_toutes_les_rues_de_Paris,_18.djvu",
+              "mime": "image/vnd.djvu",
+              "width": 1851,
+              "height": 2823,
+              "bytes": 1715757,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Rochegude_-_Promenades_dans_toutes_les_rues_de_Paris%2C_18.djvu?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Catalogue de la ... Exposition (IA gri 33125009338845).pdf",
+              "page_id": 95141119,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Catalogue_de_la_..._Exposition_(IA_gri_33125009338845).pdf",
+              "mime": "application/pdf",
+              "width": 1183,
+              "height": 1500,
+              "bytes": 2194372,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Catalogue_de_la_..._Exposition_%28IA_gri_33125009338845%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:La vie artistique (IA lavieartistique02geff).pdf",
+              "page_id": 95338762,
+              "file_page": "https://commons.wikimedia.org/wiki/File:La_vie_artistique_(IA_lavieartistique02geff).pdf",
+              "mime": "application/pdf",
+              "width": 625,
+              "height": 964,
+              "bytes": 22723056,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/La_vie_artistique_%28IA_lavieartistique02geff%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Les Arts; revue mensuelle des musées, collections, expositions (IA lesartsrevuemens5190unse).pdf",
+              "page_id": 95361732,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Les_Arts%3B_revue_mensuelle_des_mus%C3%A9es,_collections,_expositions_(IA_lesartsrevuemens5190unse).pdf",
+              "mime": "application/pdf",
+              "width": 1387,
+              "height": 1977,
+              "bytes": 111886350,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Les_Arts%3B_revue_mensuelle_des_mus%C3%A9es%2C_collections%2C_expositions_%28IA_lesartsrevuemens5190unse%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Promenades dans toutes les rues de Paris par arrondissements; origines des rues, maisons historiques ou curieuses, anciens et nouveaux hotels, enseignes (IA promenadesdansto18roch).pdf",
+              "page_id": 95535516,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Promenades_dans_toutes_les_rues_de_Paris_par_arrondissements%3B_origines_des_rues,_maisons_historiques_ou_curieuses,_anciens_et_nouveaux_hotels,_enseignes_(IA_promenadesdansto18roch).pdf",
+              "mime": "application/pdf",
+              "width": 664,
+              "height": 1075,
+              "bytes": 4649227,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Promenades_dans_toutes_les_rues_de_Paris_par_arrondissements%3B_origines_des_rues%2C_maisons_historiques_ou_curieuses%2C_anciens_et_nouveaux_hotels%2C_enseignes_%28IA_promenadesdansto18roch%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Salon de .. (IA salondemont1885mont).pdf",
+              "page_id": 95582456,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Salon_de_.._(IA_salondemont1885mont).pdf",
+              "mime": "application/pdf",
+              "width": 1212,
+              "height": 1812,
+              "bytes": 10462306,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Salon_de_.._%28IA_salondemont1885mont%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        }
+      ],
+      "raw_candidate_files": [
+        {
+          "file_title": "File:Rochegude - Promenades dans toutes les rues de Paris, 18.djvu",
+          "page_id": 8495691,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Rochegude_-_Promenades_dans_toutes_les_rues_de_Paris,_18.djvu",
+          "mime": "image/vnd.djvu",
+          "width": 1851,
+          "height": 2823,
+          "bytes": 1715757,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Rochegude_-_Promenades_dans_toutes_les_rues_de_Paris%2C_18.djvu?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Catalogue de la ... Exposition (IA gri 33125009338845).pdf",
+          "page_id": 95141119,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Catalogue_de_la_..._Exposition_(IA_gri_33125009338845).pdf",
+          "mime": "application/pdf",
+          "width": 1183,
+          "height": 1500,
+          "bytes": 2194372,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Catalogue_de_la_..._Exposition_%28IA_gri_33125009338845%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:La vie artistique (IA lavieartistique02geff).pdf",
+          "page_id": 95338762,
+          "file_page": "https://commons.wikimedia.org/wiki/File:La_vie_artistique_(IA_lavieartistique02geff).pdf",
+          "mime": "application/pdf",
+          "width": 625,
+          "height": 964,
+          "bytes": 22723056,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/La_vie_artistique_%28IA_lavieartistique02geff%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Les Arts; revue mensuelle des musées, collections, expositions (IA lesartsrevuemens5190unse).pdf",
+          "page_id": 95361732,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Les_Arts%3B_revue_mensuelle_des_mus%C3%A9es,_collections,_expositions_(IA_lesartsrevuemens5190unse).pdf",
+          "mime": "application/pdf",
+          "width": 1387,
+          "height": 1977,
+          "bytes": 111886350,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Les_Arts%3B_revue_mensuelle_des_mus%C3%A9es%2C_collections%2C_expositions_%28IA_lesartsrevuemens5190unse%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Promenades dans toutes les rues de Paris par arrondissements; origines des rues, maisons historiques ou curieuses, anciens et nouveaux hotels, enseignes (IA promenadesdansto18roch).pdf",
+          "page_id": 95535516,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Promenades_dans_toutes_les_rues_de_Paris_par_arrondissements%3B_origines_des_rues,_maisons_historiques_ou_curieuses,_anciens_et_nouveaux_hotels,_enseignes_(IA_promenadesdansto18roch).pdf",
+          "mime": "application/pdf",
+          "width": 664,
+          "height": 1075,
+          "bytes": 4649227,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Promenades_dans_toutes_les_rues_de_Paris_par_arrondissements%3B_origines_des_rues%2C_maisons_historiques_ou_curieuses%2C_anciens_et_nouveaux_hotels%2C_enseignes_%28IA_promenadesdansto18roch%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Salon de .. (IA salondemont1885mont).pdf",
+          "page_id": 95582456,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Salon_de_.._(IA_salondemont1885mont).pdf",
+          "mime": "application/pdf",
+          "width": 1212,
+          "height": 1812,
+          "bytes": 10462306,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Salon_de_.._%28IA_salondemont1885mont%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        }
+      ],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "W10-009",
+      "title": "L'Apothéose de saint Louis",
+      "status": "NO_FILE_LEADS_FROM_THIS_LIMITED_QUERY",
+      "queries": [
+        {
+          "query": "\"MI 1391\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Apothéose de saint Louis\" \"Fragonard\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "G27-002",
+      "title": "Ceiling of St Patrick's Hall, preparatory oil sketch (St Patrick lighting Paschal fire in upper panel)",
+      "status": "NO_FILE_LEADS_FROM_THIS_LIMITED_QUERY",
+      "queries": [
+        {
+          "query": "\"Vincenzo Valdrè\" \"Saint Patrick\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"St Patrick's Hall\" \"Valdrè\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "G17-009",
+      "title": "Episode de la vie de saint Denis",
+      "status": "NO_FILE_LEADS_FROM_THIS_LIMITED_QUERY",
+      "queries": [
+        {
+          "query": "\"PM01002382\"",
+          "status": "OK",
+          "hits": []
+        },
+        {
+          "query": "\"Baronne Girod\" \"saint Denis\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "title": "Holy Family with Saint Anne",
+      "status": "METADATA_LEADS_UNVERIFIED",
+      "queries": [
+        {
+          "query": "\"P001639\" \"Rubens\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:Peter Paul Rubens - The Holy Family with St Anne - WGA20253.jpg",
+              "page_id": 15417510,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Holy_Family_with_St_Anne_-_WGA20253.jpg",
+              "mime": "image/jpeg",
+              "width": 1000,
+              "height": 1316,
+              "bytes": 149799,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Peter_Paul_Rubens_-_The_Holy_Family_with_St_Anne_-_WGA20253.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        },
+        {
+          "query": "\"52.9.107\" \"Rubens\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [
+        {
+          "file_title": "File:Peter Paul Rubens - The Holy Family with St Anne - WGA20253.jpg",
+          "page_id": 15417510,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Holy_Family_with_St_Anne_-_WGA20253.jpg",
+          "mime": "image/jpeg",
+          "width": 1000,
+          "height": 1316,
+          "bytes": 149799,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Peter_Paul_Rubens_-_The_Holy_Family_with_St_Anne_-_WGA20253.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        }
+      ],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "title": "Burial of Christ — Prado Passion series",
+      "status": "METADATA_LEADS_UNVERIFIED",
+      "queries": [
+        {
+          "query": "\"P000362\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:Williampinkney.jpg",
+              "page_id": 1723106,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Williampinkney.jpg",
+              "mime": "image/jpeg",
+              "width": 849,
+              "height": 1256,
+              "bytes": 508724,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Williampinkney.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Williampinkney (1).jpg",
+              "page_id": 3838282,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Williampinkney_(1).jpg",
+              "mime": "image/jpeg",
+              "width": 175,
+              "height": 225,
+              "bytes": 31982,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Williampinkney_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:William Pinkney (NYPL Hades-256737-EM15101).tiff",
+              "page_id": 49484216,
+              "file_page": "https://commons.wikimedia.org/wiki/File:William_Pinkney_(NYPL_Hades-256737-EM15101).tiff",
+              "mime": "image/tiff",
+              "width": 3544,
+              "height": 6000,
+              "bytes": 63800287,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/William_Pinkney_%28NYPL_Hades-256737-EM15101%29.tiff?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:William Pinkney (NYPL Hades-256737-EM15101).jpg",
+              "page_id": 49484233,
+              "file_page": "https://commons.wikimedia.org/wiki/File:William_Pinkney_(NYPL_Hades-256737-EM15101).jpg",
+              "mime": "image/jpeg",
+              "width": 3544,
+              "height": 6000,
+              "bytes": 3808564,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/William_Pinkney_%28NYPL_Hades-256737-EM15101%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:William Pinkney, full-length portrait, seated, facing right) - from the original painting by Chappel in the possession of the publishers LCCN92519194.jpg",
+              "page_id": 68134705,
+              "file_page": "https://commons.wikimedia.org/wiki/File:William_Pinkney,_full-length_portrait,_seated,_facing_right)_-_from_the_original_painting_by_Chappel_in_the_possession_of_the_publishers_LCCN92519194.jpg",
+              "mime": "image/jpeg",
+              "width": 916,
+              "height": 1536,
+              "bytes": 143639,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/William_Pinkney%2C_full-length_portrait%2C_seated%2C_facing_right%29_-_from_the_original_painting_by_Chappel_in_the_possession_of_the_publishers_LCCN92519194.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:William Pinkney, full-length portrait, seated, facing right) - from the original painting by Chappel in the possession of the publishers LCCN92519194.tif",
+              "page_id": 68134715,
+              "file_page": "https://commons.wikimedia.org/wiki/File:William_Pinkney,_full-length_portrait,_seated,_facing_right)_-_from_the_original_painting_by_Chappel_in_the_possession_of_the_publishers_LCCN92519194.tif",
+              "mime": "image/tiff",
+              "width": 916,
+              "height": 1536,
+              "bytes": 1408962,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/William_Pinkney%2C_full-length_portrait%2C_seated%2C_facing_right%29_-_from_the_original_painting_by_Chappel_in_the_possession_of_the_publishers_LCCN92519194.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        },
+        {
+          "query": "\"Giandomenico Tiepolo\" \"Entierro de Cristo\"",
+          "status": "OK",
+          "hits": []
+        }
+      ],
+      "raw_candidate_files": [
+        {
+          "file_title": "File:Williampinkney.jpg",
+          "page_id": 1723106,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Williampinkney.jpg",
+          "mime": "image/jpeg",
+          "width": 849,
+          "height": 1256,
+          "bytes": 508724,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Williampinkney.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Williampinkney (1).jpg",
+          "page_id": 3838282,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Williampinkney_(1).jpg",
+          "mime": "image/jpeg",
+          "width": 175,
+          "height": 225,
+          "bytes": 31982,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Williampinkney_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:William Pinkney (NYPL Hades-256737-EM15101).tiff",
+          "page_id": 49484216,
+          "file_page": "https://commons.wikimedia.org/wiki/File:William_Pinkney_(NYPL_Hades-256737-EM15101).tiff",
+          "mime": "image/tiff",
+          "width": 3544,
+          "height": 6000,
+          "bytes": 63800287,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/William_Pinkney_%28NYPL_Hades-256737-EM15101%29.tiff?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:William Pinkney (NYPL Hades-256737-EM15101).jpg",
+          "page_id": 49484233,
+          "file_page": "https://commons.wikimedia.org/wiki/File:William_Pinkney_(NYPL_Hades-256737-EM15101).jpg",
+          "mime": "image/jpeg",
+          "width": 3544,
+          "height": 6000,
+          "bytes": 3808564,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/William_Pinkney_%28NYPL_Hades-256737-EM15101%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:William Pinkney, full-length portrait, seated, facing right) - from the original painting by Chappel in the possession of the publishers LCCN92519194.jpg",
+          "page_id": 68134705,
+          "file_page": "https://commons.wikimedia.org/wiki/File:William_Pinkney,_full-length_portrait,_seated,_facing_right)_-_from_the_original_painting_by_Chappel_in_the_possession_of_the_publishers_LCCN92519194.jpg",
+          "mime": "image/jpeg",
+          "width": 916,
+          "height": 1536,
+          "bytes": 143639,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/William_Pinkney%2C_full-length_portrait%2C_seated%2C_facing_right%29_-_from_the_original_painting_by_Chappel_in_the_possession_of_the_publishers_LCCN92519194.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:William Pinkney, full-length portrait, seated, facing right) - from the original painting by Chappel in the possession of the publishers LCCN92519194.tif",
+          "page_id": 68134715,
+          "file_page": "https://commons.wikimedia.org/wiki/File:William_Pinkney,_full-length_portrait,_seated,_facing_right)_-_from_the_original_painting_by_Chappel_in_the_possession_of_the_publishers_LCCN92519194.tif",
+          "mime": "image/tiff",
+          "width": 916,
+          "height": 1536,
+          "bytes": 1408962,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/William_Pinkney%2C_full-length_portrait%2C_seated%2C_facing_right%29_-_from_the_original_painting_by_Chappel_in_the_possession_of_the_publishers_LCCN92519194.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        }
+      ],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "title": "Saint Anthony of Padua with the Christ Child",
+      "status": "METADATA_LEADS_UNVERIFIED",
+      "queries": [
+        {
+          "query": "\"Peter Paul Rubens\" \"Saint Anthony of Padua\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:Peter Paul Rubens - St. Anthony in prayer.jpg",
+              "page_id": 79142205,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_St._Anthony_in_prayer.jpg",
+              "mime": "image/jpeg",
+              "width": 435,
+              "height": 650,
+              "bytes": 39572,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Peter_Paul_Rubens_-_St._Anthony_in_prayer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        },
+        {
+          "query": "\"Rubens\" \"Anthony of Padua\" \"Child\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:The Art journal (IA artjournal6419unse).pdf",
+              "page_id": 94846167,
+              "file_page": "https://commons.wikimedia.org/wiki/File:The_Art_journal_(IA_artjournal6419unse).pdf",
+              "mime": "application/pdf",
+              "width": 1285,
+              "height": 1877,
+              "bytes": 120835626,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/The_Art_journal_%28IA_artjournal6419unse%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:A catalogue of a truly valuable & genuine collection of prints (IA catalogueoftruly00rich).pdf",
+              "page_id": 94899767,
+              "file_page": "https://commons.wikimedia.org/wiki/File:A_catalogue_of_a_truly_valuable_%26_genuine_collection_of_prints_(IA_catalogueoftruly00rich).pdf",
+              "mime": "application/pdf",
+              "width": 1056,
+              "height": 1452,
+              "bytes": 3354214,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/A_catalogue_of_a_truly_valuable_%26_genuine_collection_of_prints_%28IA_catalogueoftruly00rich%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Catalog of the Gardiner Greene Hubbard collection of engravings, presented to the Library of Congress by Mrs. Gardiner Greene Hubbard (IA catalogofgardine00librrich).pdf",
+              "page_id": 94901417,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Catalog_of_the_Gardiner_Greene_Hubbard_collection_of_engravings,_presented_to_the_Library_of_Congress_by_Mrs._Gardiner_Greene_Hubbard_(IA_catalogofgardine00librrich).pdf",
+              "mime": "application/pdf",
+              "width": 1268,
+              "height": 1710,
+              "bytes": 22174849,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Catalog_of_the_Gardiner_Greene_Hubbard_collection_of_engravings%2C_presented_to_the_Library_of_Congress_by_Mrs._Gardiner_Greene_Hubbard_%28IA_catalogofgardine00librrich%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Graphical illustrations of Fonthill Abbey - the seat of John Farquhar, Esq. (IA graphicalillustr00neal).pdf",
+              "page_id": 95054138,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Graphical_illustrations_of_Fonthill_Abbey_-_the_seat_of_John_Farquhar,_Esq._(IA_graphicalillustr00neal).pdf",
+              "mime": "application/pdf",
+              "width": 1414,
+              "height": 1825,
+              "bytes": 1916316,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Graphical_illustrations_of_Fonthill_Abbey_-_the_seat_of_John_Farquhar%2C_Esq._%28IA_graphicalillustr00neal%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:The Art journal (IA gri 33125006187799).pdf",
+              "page_id": 95084304,
+              "file_page": "https://commons.wikimedia.org/wiki/File:The_Art_journal_(IA_gri_33125006187799).pdf",
+              "mime": "application/pdf",
+              "width": 1216,
+              "height": 1500,
+              "bytes": 69369585,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/The_Art_journal_%28IA_gri_33125006187799%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Engravings & etchings (IA b14679863a).pdf",
+              "page_id": 98150901,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Engravings_%26_etchings_(IA_b14679863a).pdf",
+              "mime": "application/pdf",
+              "width": 433,
+              "height": 656,
+              "bytes": 3390868,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Engravings_%26_etchings_%28IA_b14679863a%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        }
+      ],
+      "raw_candidate_files": [
+        {
+          "file_title": "File:Peter Paul Rubens - St. Anthony in prayer.jpg",
+          "page_id": 79142205,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_St._Anthony_in_prayer.jpg",
+          "mime": "image/jpeg",
+          "width": 435,
+          "height": 650,
+          "bytes": 39572,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Peter_Paul_Rubens_-_St._Anthony_in_prayer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:The Art journal (IA artjournal6419unse).pdf",
+          "page_id": 94846167,
+          "file_page": "https://commons.wikimedia.org/wiki/File:The_Art_journal_(IA_artjournal6419unse).pdf",
+          "mime": "application/pdf",
+          "width": 1285,
+          "height": 1877,
+          "bytes": 120835626,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/The_Art_journal_%28IA_artjournal6419unse%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:A catalogue of a truly valuable & genuine collection of prints (IA catalogueoftruly00rich).pdf",
+          "page_id": 94899767,
+          "file_page": "https://commons.wikimedia.org/wiki/File:A_catalogue_of_a_truly_valuable_%26_genuine_collection_of_prints_(IA_catalogueoftruly00rich).pdf",
+          "mime": "application/pdf",
+          "width": 1056,
+          "height": 1452,
+          "bytes": 3354214,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/A_catalogue_of_a_truly_valuable_%26_genuine_collection_of_prints_%28IA_catalogueoftruly00rich%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Catalog of the Gardiner Greene Hubbard collection of engravings, presented to the Library of Congress by Mrs. Gardiner Greene Hubbard (IA catalogofgardine00librrich).pdf",
+          "page_id": 94901417,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Catalog_of_the_Gardiner_Greene_Hubbard_collection_of_engravings,_presented_to_the_Library_of_Congress_by_Mrs._Gardiner_Greene_Hubbard_(IA_catalogofgardine00librrich).pdf",
+          "mime": "application/pdf",
+          "width": 1268,
+          "height": 1710,
+          "bytes": 22174849,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Catalog_of_the_Gardiner_Greene_Hubbard_collection_of_engravings%2C_presented_to_the_Library_of_Congress_by_Mrs._Gardiner_Greene_Hubbard_%28IA_catalogofgardine00librrich%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Graphical illustrations of Fonthill Abbey - the seat of John Farquhar, Esq. (IA graphicalillustr00neal).pdf",
+          "page_id": 95054138,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Graphical_illustrations_of_Fonthill_Abbey_-_the_seat_of_John_Farquhar,_Esq._(IA_graphicalillustr00neal).pdf",
+          "mime": "application/pdf",
+          "width": 1414,
+          "height": 1825,
+          "bytes": 1916316,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Graphical_illustrations_of_Fonthill_Abbey_-_the_seat_of_John_Farquhar%2C_Esq._%28IA_graphicalillustr00neal%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:The Art journal (IA gri 33125006187799).pdf",
+          "page_id": 95084304,
+          "file_page": "https://commons.wikimedia.org/wiki/File:The_Art_journal_(IA_gri_33125006187799).pdf",
+          "mime": "application/pdf",
+          "width": 1216,
+          "height": 1500,
+          "bytes": 69369585,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/The_Art_journal_%28IA_gri_33125006187799%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Engravings & etchings (IA b14679863a).pdf",
+          "page_id": 98150901,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Engravings_%26_etchings_(IA_b14679863a).pdf",
+          "mime": "application/pdf",
+          "width": 433,
+          "height": 656,
+          "bytes": 3390868,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Engravings_%26_etchings_%28IA_b14679863a%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        }
+      ],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-he-oly-rinity",
+      "title": "The Holy Trinity",
+      "status": "METADATA_LEADS_UNVERIFIED",
+      "queries": [
+        {
+          "query": "\"KMSKA\" \"314\" \"Holy Trinity\"",
+          "status": "OK",
+          "hits": [
+            {
+              "file_title": "File:Rubens - Hoy Trinity, KMSKA.jpg",
+              "page_id": 115742330,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Rubens_-_Hoy_Trinity,_KMSKA.jpg",
+              "mime": "image/jpeg",
+              "width": 608,
+              "height": 640,
+              "bytes": 41867,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Rubens_-_Hoy_Trinity%2C_KMSKA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            },
+            {
+              "file_title": "File:Peter Paul Rubens - Heilige Drievuldigheid - 314 - Royal Museum of Fine Arts Antwerp.jpg",
+              "page_id": 134194011,
+              "file_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Heilige_Drievuldigheid_-_314_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg",
+              "mime": "image/jpeg",
+              "width": 19178,
+              "height": 19721,
+              "bytes": 56200164,
+              "license_short_name_metadata": "Public domain",
+              "media_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Peter_Paul_Rubens_-_Heilige_Drievuldigheid_-_314_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "match_certified": false,
+              "object_identity_certified": false,
+              "app_rights_approved": false
+            }
+          ]
+        }
+      ],
+      "raw_candidate_files": [
+        {
+          "file_title": "File:Rubens - Hoy Trinity, KMSKA.jpg",
+          "page_id": 115742330,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Rubens_-_Hoy_Trinity,_KMSKA.jpg",
+          "mime": "image/jpeg",
+          "width": 608,
+          "height": 640,
+          "bytes": 41867,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Rubens_-_Hoy_Trinity%2C_KMSKA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        },
+        {
+          "file_title": "File:Peter Paul Rubens - Heilige Drievuldigheid - 314 - Royal Museum of Fine Arts Antwerp.jpg",
+          "page_id": 134194011,
+          "file_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Heilige_Drievuldigheid_-_314_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg",
+          "mime": "image/jpeg",
+          "width": 19178,
+          "height": 19721,
+          "bytes": 56200164,
+          "license_short_name_metadata": "Public domain",
+          "media_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Peter_Paul_Rubens_-_Heilige_Drievuldigheid_-_314_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "match_certified": false,
+          "object_identity_certified": false,
+          "app_rights_approved": false
+        }
+      ],
+      "search_completed": true,
+      "photo_promoted": false,
+      "acquisition_permitted": false
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+name: B40 precise Commons metadata census for remaining 27 artwork source gaps
+on:
+  push:
+    branches: [research/sacred-art-b40-27-commons-accession-image-screen-20261024]
+    paths: [.github/workflows/ao-art-b40-27-commons-metadata.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b40-commons-metadata-census-one-time
+  cancel-in-progress: false
+jobs:
+  research-metadata-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b40-27-commons-accession-image-screen-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Immutable B38/B39 case IDs and hold invariants
+        run: |
+          node tests/sacred-art-b38-evidence-holds.mjs
+          node tests/sacred-art-b39-27-evidence-integrity.mjs
+          python -m py_compile scripts/research/sacred_art_b40_27_precise_commons_metadata.py
+      - name: Screen 25 noncopyright cases using 49 exact Commons accession/artist queries
+        run: python scripts/research/sacred_art_b40_27_precise_commons_metadata.py
+      - name: Deterministic B40 no-promotions counts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          j=json.loads(Path('data/research/sacred-art-b40-27-commons-file-metadata-screen.json').read_text())
+          assert len(j['cases'])==27 and j['copyright_excluded_cases']==2
+          assert j['queries_completed']+j['queries_failed']==49
+          assert j['source_files_downloaded']==j['source_bytes_preserved']==0
+          assert j['catalogue_coverage_increment']==j['photo_rights_approved']==j['editorial_approvals']==0
+          assert j['strictly_zero_euro'] is True
+          assert all(not row['acquisition_permitted'] and not row['photo_promoted'] for row in j['cases'])
+          print("B40_BULK_METADATA_SCREEN_PASS",j['queries_completed'],j['queries_failed'],j['unique_case_file_pairs'])
+          PY
+      - name: Commit metadata leads only without images or master edits
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b40-27-commons-file-metadata-screen.json
+          git commit -m 'research: B40 exact Commons object and accession metadata screen; no source or rights promotion'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b40-27-commons-accession-image-screen-20261024
+            git rebase origin/research/sacred-art-b40-27-commons-accession-image-screen-20261024
+            git push origin HEAD:research/sacred-art-b40-27-commons-accession-image-screen-20261024 && exit 0
+            sleep 3
+          done
+          exit 1
