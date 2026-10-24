@@ -8,7 +8,8 @@ const wave=load('data/customs/master/pitre-1900-original-ocr-unmined-messina-rag
 const master=load('data/customs/master/comprehensive-customs-working-catalogue.v1.json');
 const scan=load('data/customs/master/pitre-1900-uploaded-facsimile-25p0-16-wave03-page-gates.v1.json');
 const new121=load('data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json');
-const scannedNew=new Set([...scan.additional_wave03_highrisk_page_checks.map(r=>r.source_id),...new121.records.map(r=>r.source_id)]);
+const new156=load('data/customs/master/pitre-1900-uploaded-facsimile-156-wave03-remaining-original-page-verifications.v1.json');
+const scannedNew=new Set([...scan.additional_wave03_highrisk_page_checks.map(r=>r.source_id),...new121.records.map(r=>r.source_id),...new156.records.map(r=>r.id)]);
 assert.equal(previous.records.length,129);
 assert.equal(old1.records.length+old2.records.length,121);
 assert.equal(wave.records.length,172);
@@ -39,6 +40,6 @@ assert.equal(wave.summary.app_publications,0);
 assert.deepEqual(wave.summary.section_counts,{MESSINA_ASSUNTA:47,RAGUSA_GEORGE_JOHN:40,SCICLI_MILIZIE:33,COMISO_EASTER:15,MAZARA_ST_VITUS:20,CALATAFIMI_CRUCIFIX:17});
 assert.equal(master.summary.source_observations.pitre_1900_original_all_new_sections_ocr_details,293);
 assert.equal(master.summary.source_review.pitre_1900_new_293_verified_unique_customs,0);
-assert.equal(master.summary.source_review.pitre_1900_new_293_original_folio_images_verified,137);
+assert.equal(master.summary.source_review.pitre_1900_new_293_original_folio_images_verified,293);
 assert.equal(master.summary.no_new_app_publications,true);
 console.log('Pitrè 1900 source audit: 129 original + 293 new source details = 422 provenance records, 3407 corpus rows, zero promotion — PASS');
