@@ -1,0 +1,995 @@
+{
+  "schema": "AO_SACRED_PLACES_P32_FULL64_SOURCE_TRIAGE_V1",
+  "date": "2026-10-24",
+  "status": "RESEARCH_ONLY_NO_PUBLICATION",
+  "canonical_baseline": {
+    "places": 414,
+    "typed_sources": 712,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "source_coverage": {
+    "first200_total": 200,
+    "first200_previous_site_excerpts": 136,
+    "unreviewed_start": 64,
+    "site_specific_excerpts_added": 32,
+    "first200_now_with_site_excerpts": 168,
+    "unreviewed_remaining": 32,
+    "primary_catholic_custodian_excerpts": 14,
+    "source_tiers": {
+      "HERITAGE_SPECIALIST": 1,
+      "OFFICIAL_CIVIL": 12,
+      "SECONDARY": 3,
+      "OFFICIAL_CATHOLIC": 10,
+      "CUSTODIAN": 4,
+      "CATHOLIC_PRESS": 1,
+      "CATHOLIC_REFERENCE": 1
+    }
+  },
+  "release_result": {
+    "new_places": 0,
+    "new_typed_sources": 0,
+    "geom_verified": 0,
+    "new_areas": 0,
+    "public_pins": 0
+  },
+  "excluded_due_to_prior_publication": {
+    "p30": [
+      "SG-INV-0692",
+      "SG-INV-0508",
+      "SG-INV-0335",
+      "SG-INV-0186",
+      "SG-INV-0469",
+      "SG-INV-0213"
+    ],
+    "p31": [
+      "SG-INV-0205",
+      "SG-INV-0224",
+      "SG-INV-0478",
+      "SG-INV-0277",
+      "SG-INV-0086",
+      "SG-INV-0146",
+      "SG-INV-0223",
+      "SG-INV-0568",
+      "SG-INV-0311"
+    ]
+  },
+  "rules": [
+    "All 64 original remaining candidate IDs and their order are preserved; new source URL is not a claim of validated site geometry.",
+    "A retrieved indexed public page/excerpt is weaker than full primary archival source validation; distinguish official Catholic, official civil, press, specialist heritage, secondary.",
+    "Never merge archaeological sites, non-Catholic operators, projected unbuilt shrines, or restricted private sites into the public Catholic live map.",
+    "A shrine campus may contain multiple independent physical chapels/churches and monuments; make exact unit decisions before publication.",
+    "This pass changes no existing production Place, typed source, Directory association or protected historical exception.",
+    "Correct site dedications and preserve Eastern Catholic churches as Catholic, distinct from Orthodox/Protestant historic heritage."
+  ],
+  "remaining_64": [
+    {
+      "original_p29_unreviewed_order": 3,
+      "candidate_id": "SG-INV-0343",
+      "country": "BY",
+      "title": "Marian Sanctuary of Baruny",
+      "screened_order": 1,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 5,
+      "candidate_id": "SG-INV-0687",
+      "country": "IQ",
+      "title": "Shrine of Mar Behnam (Syriac Christian heritage)",
+      "screened_order": 2,
+      "disposition": "CATHOLIC_EASTERN_RESTORED_MONASTERY",
+      "source_evidence": {
+        "url": "https://rememberingmosul.org/mar-behnam-shrine/",
+        "issuer": "Remembering Mosul conservation inventory",
+        "tier": "HERITAGE_SPECIALIST",
+        "note": "Mar Behnam monastery was Syriac Orthodox historically, under Syriac Catholic jurisdiction since nineteenth century; mausoleum and church must be matched separately.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 6,
+      "candidate_id": "SG-INV-0695",
+      "country": "TN",
+      "title": "Amphitheatre of Carthage (Saints Perpetua and Felicity)",
+      "screened_order": 3,
+      "disposition": "ARCHAEOLOGY_NOT_CATHOLIC_WORSHIP",
+      "source_evidence": {
+        "url": "https://whc.unesco.org/en/list/37/",
+        "issuer": "UNESCO World Heritage Centre",
+        "tier": "OFFICIAL_CIVIL",
+        "note": "Carthage amphitheatre survives as protected archaeological heritage, not operating Catholic church or chapel.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 7,
+      "candidate_id": "SG-INV-0361",
+      "country": "TR",
+      "title": "House of the Virgin Mary, Ephesus",
+      "screened_order": 4,
+      "disposition": "PILGRIMAGE_HOUSE_MULTI_FAITH_GEOMETRY_HOLD",
+      "source_evidence": {
+        "url": "https://www.visitizmir.org/en/Destinasyon/11133",
+        "issuer": "İzmir official visitor bureau",
+        "tier": "OFFICIAL_CIVIL",
+        "note": "House of Mary on Mount Bülbül is visited by Christians and Muslims; tourism designation cannot confirm exact Catholic building jurisdiction.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 8,
+      "candidate_id": "SG-INV-0349",
+      "country": "XK",
+      "title": "Shrine of Our Lady of Letnica",
+      "screened_order": 5,
+      "disposition": "SECONDARY_KOSOVO_CATHOLIC_SHRINE",
+      "source_evidence": {
+        "url": "https://naveguia.com/en/kosovo/letnica/",
+        "issuer": "Naveguia 2026 secondary location research",
+        "tier": "SECONDARY",
+        "note": "Letnica Marian church described as Kosovo Catholic shrine; direct Diocese Prizren-Pristina record and regional area status pending.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 9,
+      "candidate_id": "SG-INV-0611",
+      "country": "CN",
+      "title": "Our Lady of China Shrine, Donglu",
+      "screened_order": 6,
+      "disposition": "DESTROYED_OR_RESTRICTED_NO_PUBLIC_PIN",
+      "source_evidence": {
+        "url": "https://www.cecc.gov/publications/commission-analysis/officials-detain-two-unregistered-catholic-priests-in-baoding-hebei",
+        "issuer": "US Congressional-Executive Commission on China",
+        "tier": "OFFICIAL_CIVIL",
+        "note": "Reports shrine demolition and restrictions in Donglu; do not invent coordinates for any subsequent unregistered church or private worship location.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 10,
+      "candidate_id": "SG-INV-0463",
+      "country": "CU",
+      "title": "National Shrine of Our Lady of Regla, Havana",
+      "screened_order": 7,
+      "disposition": "CATHOLIC_CHURCH_CUSTODY_EXACT_GEO_NEEDED",
+      "source_evidence": {
+        "url": "https://arquidiocesisdelahabana.org/parroquias/",
+        "issuer": "Roman Catholic Archdiocese of Havana",
+        "tier": "OFFICIAL_CATHOLIC",
+        "note": "Archdiocesan list locates Nuestra Señora de Regla national shrine at the town parish church, not nearby Christ the Redeemer.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 11,
+      "candidate_id": "SG-INV-0468",
+      "country": "DO",
+      "title": "Shrine of Our Lady of Mercy, Santo Cerro",
+      "screened_order": 8,
+      "disposition": "CATHOLIC_SANCTUARY_BUILDING_GEO_NEEDED",
+      "source_evidence": {
+        "url": "https://santocerro.org/",
+        "issuer": "Santuario Nacional Nuestra Señora de las Mercedes",
+        "tier": "CUSTODIAN",
+        "note": "Sanctuary custodians identify Our Lady of Mercy church at Santo Cerro, La Vega; hill location is not exact church footprint.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 13,
+      "candidate_id": "SG-INV-0367",
+      "country": "FI",
+      "title": "Saint Henry's Island, Kirkkokari",
+      "screened_order": 9,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 14,
+      "candidate_id": "SG-INV-0686",
+      "country": "GE",
+      "title": "Svetitskhoveli Cathedral (Georgian Orthodox heritage)",
+      "screened_order": 10,
+      "disposition": "NON_CATHOLIC_GEORGIAN_ORTHODOX",
+      "source_evidence": {
+        "url": "https://whc.unesco.org/en/list/708/",
+        "issuer": "UNESCO World Heritage Centre",
+        "tier": "OFFICIAL_CIVIL",
+        "note": "Mtskheta monuments including Svetitskhoveli remain Georgian Orthodox and Apostolic Church headquarters, not an operating Catholic church.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 16,
+      "candidate_id": "SG-INV-0445",
+      "country": "GT",
+      "title": "National Shrine of the Sacred Heart, Guatemala City",
+      "screened_order": 11,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 18,
+      "candidate_id": "SG-INV-0571",
+      "country": "JO",
+      "title": "Baptism Site of Jesus Christ, Al-Maghtas",
+      "screened_order": 12,
+      "disposition": "MULTI_DENOMINATIONAL_ARCHAEOLOGICAL_SITE",
+      "source_evidence": {
+        "url": "https://baptismsite.com/faqs/",
+        "issuer": "Jordan Baptism Site Commission",
+        "tier": "OFFICIAL_CIVIL",
+        "note": "Baptism site has separate Catholic and Greek Orthodox river access and several churches; do not represent the whole landscape as a single Catholic building.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 19,
+      "candidate_id": "SG-INV-0709",
+      "country": "RW",
+      "title": "Cathedral Basilica of Our Lady, Kabgayi",
+      "screened_order": 13,
+      "disposition": "SECONDARY_CATHOLIC_CATHEDRAL_BASILICA",
+      "source_evidence": {
+        "url": "https://gcatholic.org/churches/africa/1291",
+        "issuer": "GCatholic catalogue",
+        "tier": "SECONDARY",
+        "note": "Lists Kabgayi Cathedral Basilica under Immaculate Conception. Seek direct diocese confirmation and exact feature before map publication.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 21,
+      "candidate_id": "SG-INV-0308",
+      "country": "SI",
+      "title": "Calvary complex, Šmarje pri Jelšah",
+      "screened_order": 14,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 22,
+      "candidate_id": "SG-INV-0451",
+      "country": "SV",
+      "title": "Shrine of Saint Óscar Romero, San Salvador",
+      "screened_order": 15,
+      "disposition": "LIKELY_DUPLICATE_OSCAR_ROMERO_CHAPEL",
+      "source_evidence": {
+        "url": "https://www.hospitaldivinaprovidenciasv.org/capilla-de-la-divina-providencia/",
+        "issuer": "Hospital Divina Providencia",
+        "tier": "CUSTODIAN",
+        "note": "Oscar Romero shrine may refer to the same Divine Providence martyrdom chapel candidate SG-INV-0452. Never publish both as separate Places without evidence.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 23,
+      "candidate_id": "SG-INV-0730",
+      "country": "TG",
+      "title": "Shrine of Our Lady of the Lake, Togoville",
+      "screened_order": 16,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 24,
+      "candidate_id": "SG-INV-0713",
+      "country": "TZ",
+      "title": "Holy Ghost Mission Church and Museum, Bagamoyo",
+      "screened_order": 17,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 26,
+      "candidate_id": "SG-INV-0724",
+      "country": "ZM",
+      "title": "Our Lady of Lusaka Marian Shrine",
+      "screened_order": 18,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 27,
+      "candidate_id": "SG-INV-0507",
+      "country": "CO",
+      "title": "Shrine of Our Lady of the Rosary, La Popa, Cartagena",
+      "screened_order": 19,
+      "disposition": "WRONG_MARIAN_TITLE_CONVENT_COMPLEX",
+      "source_evidence": {
+        "url": "https://www.cartagena.gov.co/noticias/cartagena-indias-celebra-novena-virgen-candelaria-patrona-espiritual-ciudad",
+        "issuer": "Cartagena municipal government",
+        "tier": "OFFICIAL_CIVIL",
+        "note": "La Popa is Our Lady of Candelaria, not Our Lady of Rosary; convent and church identities require precise separate matching.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 30,
+      "candidate_id": "SG-INV-0315",
+      "country": "HR",
+      "title": "National Shrine of Saint Nicholas Tavelić, Šibenik",
+      "screened_order": 20,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 31,
+      "candidate_id": "SG-INV-0323",
+      "country": "HU",
+      "title": "Shrine of Our Lady of Bodajk",
+      "screened_order": 21,
+      "disposition": "CATHOLIC_PILGRIMAGE_CHURCH_ADDRESS",
+      "source_evidence": {
+        "url": "https://www.szfvar.katolikus.hu/gyujtemenyek/plebaniak/segito-szuz-maria-plebania-bodajk-",
+        "issuer": "Roman Catholic Diocese of Székesfehérvár",
+        "tier": "OFFICIAL_CATHOLIC",
+        "note": "Bodajk Mary Help of Christians parish at Szent István tér 1 is an operating Marian pilgrimage church; exact OSM feature needed.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 32,
+      "candidate_id": "SG-INV-0575",
+      "country": "LB",
+      "title": "Shrine of Our Lady of Mantara, Maghdouche",
+      "screened_order": 22,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 33,
+      "candidate_id": "SG-INV-0715",
+      "country": "NG",
+      "title": "International Sanctuary of Jesus the Saviour and Mother Mary, Elele",
+      "screened_order": 23,
+      "disposition": "LARGE_CATHOLIC_COMPLEX_CHURCH_SPLIT",
+      "source_evidence": {
+        "url": "https://catholicdioceseofijebuode.org/we-are-here-to-pray-to-restore-the-chrstian-hope-bishop-adesina-echoes-at-national-year-of-hope-pilgrimage/",
+        "issuer": "Roman Catholic Diocese of Ijebu-Ode",
+        "tier": "OFFICIAL_CATHOLIC",
+        "note": "Catholic national gathering confirms Elele sanctuary, but multiple churches and pilgrimage buildings require precise feature mapping.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 34,
+      "candidate_id": "SG-INV-0453",
+      "country": "NI",
+      "title": "Sanctuary of El Viejo (Our Lady of the Immaculate Conception)",
+      "screened_order": 24,
+      "disposition": "OPERATING_BASILICA_NEEDS_CATHOLIC_PRIMARY",
+      "source_evidence": {
+        "url": "https://www.mapanicaragua.com/municipio-de-el-viejo/",
+        "issuer": "Nicaragua official tourism map",
+        "tier": "OFFICIAL_CIVIL",
+        "note": "El Viejo Immaculate Conception sanctuary is a standing pilgrimage basilica, pending full independent Catholic custodian confirmation.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 36,
+      "candidate_id": "SG-INV-0567",
+      "country": "PS",
+      "title": "Shepherds' Field Church, Beit Sahour",
+      "screened_order": 25,
+      "disposition": "LATIN_CATHOLIC_VS_GREEK_ORTHODOX_CHAPEL_SPLIT",
+      "source_evidence": {
+        "url": "https://www.custodia.org/en/sanctuaries/bethlehem-the-shepherds-field-and-grotto/",
+        "issuer": "Franciscan Custody of the Holy Land",
+        "tier": "CUSTODIAN",
+        "note": "Beit Sahour has separate Latin Catholic and Greek Orthodox Shepherds Fields sites; Catholic side itself contains more than one chapel.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 38,
+      "candidate_id": "SG-INV-0368",
+      "country": "NO",
+      "title": "Nidaros Cathedral, Trondheim",
+      "screened_order": 26,
+      "disposition": "NON_CATHOLIC_LUTHERAN_OPERATOR",
+      "source_evidence": {
+        "url": "https://www.pilegrimsleden.no/en/interest-points/nidarosdomen",
+        "issuer": "Norwegian pilgrimage administration",
+        "tier": "OFFICIAL_CIVIL",
+        "note": "Historic Saint Olav Catholic pilgrimage cathedral now serves as Lutheran Church of Norway cathedral and parish.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 39,
+      "candidate_id": "SG-INV-0528",
+      "country": "PY",
+      "title": "Shrine of Our Lady of Itapé",
+      "screened_order": 27,
+      "disposition": "SHRINE_TITLE_VIRGEN_DEL_PASO",
+      "source_evidence": {
+        "url": "https://episcopal.org.py/?p=412",
+        "issuer": "Conferencia Episcopal Paraguaya",
+        "tier": "OFFICIAL_CATHOLIC",
+        "note": "Episcopal conference calls the Itapé shrine Virgen del Paso, distinct from nearby San Isidro Labrador parish church.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 40,
+      "candidate_id": "SG-INV-0617",
+      "country": "JP",
+      "title": "National Shrine of the Twenty-Six Martyrs, Nagasaki",
+      "screened_order": 28,
+      "disposition": "MARTYRS_MEMORIAL_CHURCH_MUSEUM_SPLIT",
+      "source_evidence": {
+        "url": "https://www.city.nagasaki.lg.jp/page/1045.html",
+        "issuer": "Nagasaki City Cultural Heritage Office",
+        "tier": "OFFICIAL_CIVIL",
+        "note": "Twenty Six Martyrs site at Nishizaka comprises historic execution ground, monument, museum and Saint Philip memorial church; choose unit.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 41,
+      "candidate_id": "SG-INV-0602",
+      "country": "LK",
+      "title": "National Shrine of Our Lady of Matara",
+      "screened_order": 29,
+      "disposition": "OPERATING_CATHOLIC_SHRINE_GEO_NEEDED",
+      "source_evidence": {
+        "url": "https://gallediocese.org/parishes/",
+        "issuer": "Roman Catholic Diocese of Galle",
+        "tier": "OFFICIAL_CATHOLIC",
+        "note": "Diocesan church directory lists National Shrine of Our Lady of Matara as a distinct operating Marian place of worship.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 42,
+      "candidate_id": "SG-INV-0240",
+      "country": "IE",
+      "title": "Glendalough Monastic City",
+      "screened_order": 30,
+      "disposition": "ARCHAEOLOGICAL_MONASTIC_COMPLEX_NOT_ONE_CHURCH",
+      "source_evidence": {
+        "url": "https://heritageireland.ie/places-to-visit/glendalough-monastic-site-and-visitor-centre/",
+        "issuer": "Heritage Ireland, Office of Public Works",
+        "tier": "OFFICIAL_CIVIL",
+        "note": "Glendalough contains ruined medieval churches, round tower and an archaeological landscape; no single modern Catholic church implied.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 46,
+      "candidate_id": "SG-INV-0542",
+      "country": "BO",
+      "title": "Sanctuary of Our Lady of Urkupiña, Quillacollo",
+      "screened_order": 31,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 47,
+      "candidate_id": "SG-INV-0344",
+      "country": "BY",
+      "title": "Marian shrine of Trokeli",
+      "screened_order": 32,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 48,
+      "candidate_id": "SG-INV-0357",
+      "country": "CY",
+      "title": "Monastery of Stavrovouni (Orthodox heritage)",
+      "screened_order": 33,
+      "disposition": "NON_CATHOLIC_EASTERN_MONASTERY_HOLD",
+      "source_evidence": {
+        "url": "https://www.visitcyprus.com/discover-cyprus/culture/sites-and-monuments/stavrovouni-monastery/",
+        "issuer": "Cyprus official tourism administration",
+        "tier": "OFFICIAL_CIVIL",
+        "note": "Stavrovouni remains Eastern monastic site with access rules like Mount Athos; do not recast as contemporary Roman Catholic monastery.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 49,
+      "candidate_id": "SG-INV-0688",
+      "country": "IQ",
+      "title": "Monastery of Rabban Hormizd (Chaldean Catholic heritage)",
+      "screened_order": 34,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 50,
+      "candidate_id": "SG-INV-0461",
+      "country": "PA",
+      "title": "Sanctuary of the Black Christ, Portobelo",
+      "screened_order": 35,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 51,
+      "candidate_id": "SG-INV-0471",
+      "country": "PR",
+      "title": "Shrine of Our Lady of Divine Providence, Cupey",
+      "screened_order": 36,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 52,
+      "candidate_id": "SG-INV-0331",
+      "country": "RO",
+      "title": "Cathedral of Saint Joseph, Bucharest",
+      "screened_order": 37,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 53,
+      "candidate_id": "SG-INV-0696",
+      "country": "TN",
+      "title": "Ancient Basilica of Saint Cyprian, Carthage",
+      "screened_order": 38,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 55,
+      "candidate_id": "SG-INV-0614",
+      "country": "TW",
+      "title": "Basilica of the Immaculate Conception, Wanluan",
+      "screened_order": 39,
+      "disposition": "CATHOLIC_BASILICA_BUILDING_SOURCE_GEO_NEEDED",
+      "source_evidence": {
+        "url": "https://taiwangods.moi.gov.tw/html/landscape_en/1_0011.aspx?i=24",
+        "issuer": "Taiwan Ministry of the Interior Religious Culture Map",
+        "tier": "OFFICIAL_CIVIL",
+        "note": "Ministry identifies Wanjin Immaculate Conception Basilica at 24 Wanxing Road, a specific Catholic church apart from procession route.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 56,
+      "candidate_id": "SG-INV-0346",
+      "country": "UA",
+      "title": "Basilica of the Assumption, Zarvanytsia",
+      "screened_order": 40,
+      "disposition": "EASTERN_CATHOLIC_BASILICA_TITLE_CORRECTION",
+      "source_evidence": {
+        "url": "https://map.ugcc.ua/view/118-sobor-zarvanytskoy-materi-bozhoy-mariyskogo-duhovnogo-tsentru-s-zarvanytsya-ternopilska-obl",
+        "issuer": "Ukrainian Greek Catholic Church official map",
+        "tier": "OFFICIAL_CATHOLIC",
+        "note": "Zarvanytsia papal basilica is Cathedral of Mother of God of Zarvanytsia, not generic Assumption Basilica; complex contains other chapels.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 57,
+      "candidate_id": "SG-INV-0723",
+      "country": "ZA",
+      "title": "Tshitanini Shrine of Blessed Benedict Daswa, Nweli",
+      "screened_order": 41,
+      "disposition": "NWELI_OPERATING_VS_TSHITANINI_UNBUILT",
+      "source_evidence": {
+        "url": "https://www.scross.co.za/2026/02/10-years-after-beatification-how-is-the-daswa-sainthood-cause-going/",
+        "issuer": "Southern Cross Catholic press 2026",
+        "tier": "CATHOLIC_PRESS",
+        "note": "Reports Nweli working shrine; projected Tshitanini construction still stalled by land-title issues. Distinct sites, never promote unbuilt campus.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 59,
+      "candidate_id": "SG-INV-0464",
+      "country": "CU",
+      "title": "National Shrine of Saint Lazarus, El Rincón",
+      "screened_order": 42,
+      "disposition": "CATHOLIC_SHRINE_NOT_MIAMI_INDEPENDENT_CHURCH",
+      "source_evidence": {
+        "url": "https://www.arquidiocesisdelahabana.org/contens/webs/ind_main7_directorio.htm",
+        "issuer": "Roman Catholic Archdiocese of Havana",
+        "tier": "OFFICIAL_CATHOLIC",
+        "note": "Directory lists San Lázaro national shrine in El Rincón, Cuba; unrelated same-name independent church in Florida must not be substituted.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 62,
+      "candidate_id": "SG-INV-0699",
+      "country": "EG",
+      "title": "Church of the Virgin Mary, Maadi",
+      "screened_order": 43,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 63,
+      "candidate_id": "SG-INV-0358",
+      "country": "GR",
+      "title": "Areopagus, Athens",
+      "screened_order": 44,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 64,
+      "candidate_id": "SG-INV-0446",
+      "country": "GT",
+      "title": "Basilica of Our Lady of the Rosary, Guatemala City",
+      "screened_order": 45,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 65,
+      "candidate_id": "SG-INV-0678",
+      "country": "ID",
+      "title": "Marian Shrine of Gua Maria Kerep, Ambarawa",
+      "screened_order": 46,
+      "disposition": "GROTTO_DISTINCT_FROM_ST_JOSEPH_PARISH",
+      "source_evidence": {
+        "url": "https://kas.or.id/paroki-di-kevikepan-semarang/paroki-st-yusuf-ambarawa/",
+        "issuer": "Roman Catholic Archdiocese of Semarang",
+        "tier": "OFFICIAL_CATHOLIC",
+        "note": "Gua Maria Kerep is Marian grotto associated with Ambarawa parish, distinct from Gereja Jago Saint Joseph's church building.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 67,
+      "candidate_id": "SG-INV-0307",
+      "country": "SI",
+      "title": "Sanctuary of Our Lady of the Mountain, Zaplaz",
+      "screened_order": 47,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 68,
+      "candidate_id": "SG-INV-0300",
+      "country": "SK",
+      "title": "Shrine of Our Lady of Turzovka",
+      "screened_order": 48,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 69,
+      "candidate_id": "SG-INV-0452",
+      "country": "SV",
+      "title": "Chapel of the Hospital of Divine Providence, San Salvador",
+      "screened_order": 49,
+      "disposition": "OPERATING_CATHOLIC_HOSPITAL_CHAPEL",
+      "source_evidence": {
+        "url": "https://www.hospitaldivinaprovidenciasv.org/capilla-de-la-divina-providencia/",
+        "issuer": "Hospital Divina Providencia chapel custodians",
+        "tier": "CUSTODIAN",
+        "note": "Hospital chapel is operating Roman Catholic place where Oscar Romero was killed while celebrating Mass; do not pin whole hospital.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 70,
+      "candidate_id": "SG-INV-0537",
+      "country": "VE",
+      "title": "Sanctuary of Our Lady of the Rosary of Chiquinquirá, Maracaibo",
+      "screened_order": 50,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 71,
+      "candidate_id": "SG-INV-0669",
+      "country": "VN",
+      "title": "Our Lady of Tà Pao Shrine",
+      "screened_order": 51,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 73,
+      "candidate_id": "SG-INV-0738",
+      "country": "AU",
+      "title": "National Shrine of Our Lady of the Sacred Heart, Randwick",
+      "screened_order": 52,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 77,
+      "candidate_id": "SG-INV-0324",
+      "country": "HU",
+      "title": "Sanctuary of Márianosztra",
+      "screened_order": 53,
+      "disposition": "CATHOLIC_LEXICON_HISTORICAL_NOT_GEO",
+      "source_evidence": {
+        "url": "https://lexikon.katolikus.hu/M/M%C3%A1rianosztra.html",
+        "issuer": "Hungarian Catholic Lexicon",
+        "tier": "CATHOLIC_REFERENCE",
+        "note": "Historical Pauline Marian shrine and church at Márianosztra attested, but not an exact modern building OSM feature.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 78,
+      "candidate_id": "SG-INV-0576",
+      "country": "LB",
+      "title": "Our Lady of Bkerké, Jounieh",
+      "screened_order": 54,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 79,
+      "candidate_id": "SG-INV-0716",
+      "country": "NG",
+      "title": "Shrine of Blessed Cyprian Michael Iwene Tansi, Onitsha",
+      "screened_order": 55,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 80,
+      "candidate_id": "SG-INV-0454",
+      "country": "NI",
+      "title": "Sanctuary of Our Lady of Candelaria, Diriomo",
+      "screened_order": 56,
+      "disposition": "SECONDARY_DIOCESAN_MARIAN_SHRINE",
+      "source_evidence": {
+        "url": "https://www.laprensani.com/2016/02/03/departamentales/1979890-celebran-a-virgen-candelaria-en-diriomo",
+        "issuer": "La Prensa Nicaragua",
+        "tier": "SECONDARY",
+        "note": "2016 reporting calls Diriomo church diocesan Marian sanctuary; requires direct modern Catholic diocesan or custodial confirmation.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 81,
+      "candidate_id": "SG-INV-0231",
+      "country": "NL",
+      "title": "Kapel in 't Zand, Roermond",
+      "screened_order": 57,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 82,
+      "candidate_id": "SG-INV-0745",
+      "country": "NZ",
+      "title": "Shrine of Blessed Suzanne Aubert, Wellington",
+      "screened_order": 58,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 84,
+      "candidate_id": "SG-INV-0533",
+      "country": "UY",
+      "title": "Sanctuary of Our Lady of Verdún, Minas",
+      "screened_order": 59,
+      "disposition": "MARION_STATUE_HILL_AND_CHAPEL_DISTINCT",
+      "source_evidence": {
+        "url": "https://www.iglesiacatolicaflorida.org/l/manana-es-la-fiesta-de-maria-en-el-cerro-del-verdun/",
+        "issuer": "Roman Catholic Diocese of Florida Uruguay",
+        "tier": "OFFICIAL_CATHOLIC",
+        "note": "Diocesan account distinguishes hilltop Marian monument, 1975 chapel and former retreat building in Verdún complex.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 88,
+      "candidate_id": "SG-INV-0434",
+      "country": "MX",
+      "title": "Cristo Rey Sanctuary, Cerro del Cubilete",
+      "screened_order": 60,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 89,
+      "candidate_id": "SG-INV-0522",
+      "country": "PE",
+      "title": "Sanctuary of Our Lady of Cocharcas",
+      "screened_order": 61,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 91,
+      "candidate_id": "SG-INV-0529",
+      "country": "PY",
+      "title": "Shrine of Our Lady of Itacuá",
+      "screened_order": 62,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 93,
+      "candidate_id": "SG-INV-0616",
+      "country": "JP",
+      "title": "Our Lady of Tsuwano, Otome Pass",
+      "screened_order": 63,
+      "disposition": "MARTYRDOM_HILL_CHAPEL_VS_PARISH",
+      "source_evidence": {
+        "url": "https://hiroshima.catholic.jp/church/tsuwano/",
+        "issuer": "Roman Catholic Diocese of Hiroshima",
+        "tier": "OFFICIAL_CATHOLIC",
+        "note": "Otome Pass Marian chapel on martyrdom hill is separate from Tsuwano town parish of Saint Thérèse; exact identity mandatory.",
+        "observed_on": "2026-10-24",
+        "review_level": "PUBLIC_RESULT_PAGE_OR_EXCERPT"
+      },
+      "geometry_verified": false,
+      "public_place_approved": false
+    },
+    {
+      "original_p29_unreviewed_order": 94,
+      "candidate_id": "SG-INV-0604",
+      "country": "LK",
+      "title": "National Shrine of Saint Anne, Kattimahana",
+      "screened_order": 64,
+      "disposition": "NO_NEW_SITE_SPECIFIC_EVIDENCE",
+      "source_evidence": null,
+      "geometry_verified": false,
+      "public_place_approved": false
+    }
+  ]
+}
