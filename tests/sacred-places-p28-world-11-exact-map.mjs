@@ -13,7 +13,7 @@ const p16=load("data/geography/research/sacred-places-p16-three-qualified-site-r
 const p27=load("data/geography/research/sacred-places-p27-osm-search-seeds.v1.json");
 assert.equal(m.schema,"AO_SACRED_PLACES_P28_WORLD_11_EXACT_MAP_V1");
 assert.deepEqual([m.baseline.places,m.baseline.sources,m.baseline.crosswalk,m.baseline.unlinked,m.baseline.geo_areas],[387,685,387,128,141]);
-assert.deepEqual([m.proposed.places,m.proposed.sources,m.proposed.crosswalk,m.proposed.unlinked,m.proposed.geo_areas],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas]);
+assert.deepEqual([m.proposed.places,m.proposed.sources,m.proposed.crosswalk,m.proposed.unlinked,m.proposed.geo_areas],[397,695,397,138,141],"P28 historical release must remain immutable after P30");
 assert.deepEqual([geo.places.length,ss.sources.length,cross.place_crosswalk.length,cross.exception_queues.places_without_direct_claim.length,geo.geoAreas.length,geo.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas,LIVE.links]);
 assert.equal(cross.counts.places,LIVE.places);assert.equal(cross.counts.places_without_direct_claim,LIVE.unlinked);
 assert.equal(p16.held_exceptions.length,16);

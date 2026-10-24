@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 397,
+    "places": 405,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 138,
+    "places_without_direct_claim": 146,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -35,6 +35,7 @@
       "place:AR:santuario-san-cayetano-liniers",
       "place:AS:holy-family-cathedral-tafuna",
       "place:AT:basilika-mariatrost-graz",
+      "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
       "place:BB:st-patrick-catholic-cathedral-bridgetown",
       "place:BD:holy-rosary-cathedral-chattogram",
       "place:BE:basiliek-onze-lieve-vrouw-scherpenheuvel",
@@ -47,11 +48,15 @@
       "place:CL:templo-votivo-maipu-basilica",
       "place:CM:basilique-marie-reine-des-apotres-mvolye",
       "place:CM:notre-dame-des-victoires-cathedral-yaounde",
+      "place:CO:basilica-senor-milagros-buga",
       "place:CW:queen-holy-rosary-cathedral-willemstad",
+      "place:CZ:velehrad-assumption-cyril-methodius-basilica",
       "place:DE:benediktinerabtei-maria-laach",
       "place:DE:kevelaer-kerzenkapelle",
       "place:DE:marienbasilika-kevelaer",
       "place:DK:st-ansgar-cathedral-copenhagen",
+      "place:DO:catedral-primada-santo-domingo",
+      "place:DZ:basilique-saint-augustin-annaba",
       "place:EC:basilica-voto-nacional-quito",
       "place:EE:saints-peter-paul-cathedral-tallinn",
       "place:ES:basilica-nuestra-senora-atocha-madrid",
@@ -105,6 +110,7 @@
       "place:LC:immaculate-conception-cathedral-basilica-castries",
       "place:LK:st-lucia-cathedral-colombo",
       "place:LS:our-lady-victories-cathedral-maseru",
+      "place:LT:trakai-visitation-basilica",
       "place:LT:zemaiciu-kalvarija-visitation-basilica",
       "place:MG:ilot-de-la-vierge-ampefy",
       "place:MG:immaculate-conception-cathedral-andohalo",
@@ -125,6 +131,7 @@
       "place:NO:st-olav-cathedral-trondheim",
       "place:NO:var-frue-cathedral-tromso",
       "place:NP:assumption-cathedral-lalitpur",
+      "place:NZ:st-mary-angels-wellington",
       "place:OM:saints-peter-paul-catholic-church-ruwi",
       "place:PE:basilica-nuestra-senora-merced-lima",
       "place:PE:santuario-candelaria-chapi-polobaya",
@@ -137,6 +144,7 @@
       "place:PH:monasterio-de-tarlac-risen-christ-chapel",
       "place:PH:quiapo-national-shrine-jesus-nazareno",
       "place:PH:santo-nino-tondo-minor-basilica",
+      "place:PL:bazylika-sw-anny-gora-swietej-anny",
       "place:PS:basilica-agony-gethsemane",
       "place:PT:basilica-bom-jesus-monte-braga",
       "place:PY:catedral-metropolitana-asuncion",
@@ -381,6 +389,12 @@
           "att:DEV-010:MARIAZELL"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
+      "display_name": "Wallfahrtsbasilika Maria Schnee, Maria Luggau",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -803,6 +817,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:CO:basilica-senor-milagros-buga",
+      "display_name": "Basílica del Señor de los Milagros, Buga",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:CO:chiquinquira-basilica",
       "display_name": "Basílica de Nuestra Señora del Rosario de Chiquinquirá",
       "record_ids": {
@@ -906,6 +926,12 @@
           "att:DEV-007:SVATA-HORA"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CZ:velehrad-assumption-cyril-methodius-basilica",
+      "display_name": "Bazilika Nanebevzetí Panny Marie a svatých Cyrila a Metoděje, Velehrad",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -1144,6 +1170,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:DO:catedral-primada-santo-domingo",
+      "display_name": "Catedral Primada de América — Santa María de la Encarnación",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:DO:higuey-altagracia-basilica",
       "display_name": "Basílica Catedral Nuestra Señora de la Altagracia — Higüey",
       "record_ids": {
@@ -1164,6 +1196,12 @@
           "shrine:DZ:basilica-of-notre-dame-dafrique-algiers"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DZ:basilique-saint-augustin-annaba",
+      "display_name": "Basilique Saint-Augustin d’Annaba",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3518,6 +3556,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:LT:trakai-visitation-basilica",
+      "display_name": "Trakų Švč. Mergelės Marijos Apsilankymo bazilika",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:LT:vilnius-cathedral-st-casimir",
       "display_name": "Vilnius Cathedral — Chapel of Saint Casimir",
       "record_ids": {
@@ -3907,6 +3951,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:NZ:st-mary-angels-wellington",
+      "display_name": "St Mary of the Angels, Wellington",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:NZ:st-peter-chanel-russell",
       "display_name": "National Catholic Shrine of St Peter Chanel",
       "record_ids": {
@@ -4084,6 +4134,12 @@
           "shrine:PK:karachi-our-lady-fatima-parish"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:bazylika-sw-anny-gora-swietej-anny",
+      "display_name": "Bazylika Świętej Anny — Góra Świętej Anny",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {

@@ -1,0 +1,209 @@
+{
+  "schema": "AO_SACRED_PLACES_P30_WORLD_8_EXACT_MAP_V1",
+  "date": "2026-10-24",
+  "status": "P30_CANONICAL_RELEASE_PROPOSED",
+  "baseline": {
+    "places": 397,
+    "sources": 695,
+    "crosswalk": 397,
+    "unlinked": 138,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 405,
+    "sources": 703,
+    "crosswalk": 405,
+    "unlinked": 146,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "candidates_source_screened_in_p29_or_p30": 8,
+  "independent_source_review_new_in_p30": 6,
+  "source_excerpt_coverage_if_published": 127,
+  "canonical_reuse_count": 0,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0692",
+      "place_id": "place:DZ:basilique-saint-augustin-annaba",
+      "name": "Basilique Saint-Augustin d’Annaba",
+      "country": "DZ",
+      "place_type": "basilica",
+      "lat": 36.88191,
+      "lng": 7.74475,
+      "source_ids": [
+        "AO-P30-SITE-SG-INV-0692"
+      ],
+      "identity_source_url": "https://eglise-catholique-algerie.org/eglise-algerie/diocese-constantine-hippone/basilique-saint-augustin-annaba/",
+      "identity_source_issuer": "Roman Catholic Diocese of Constantine and Hippo",
+      "geo_source_url": "https://www.openstreetmap.org/way/1176925222",
+      "geo_source_ref": "osm:way:1176925222",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W1176925222",
+      "precision": "site",
+      "scope_limit": "Operating Catholic Saint Augustine basilica and pro-cathedral; distinct from nearby ancient Hippo Regius excavations.",
+      "previous_p29_source_review": false
+    },
+    {
+      "candidate_id": "SG-INV-0508",
+      "place_id": "place:CO:basilica-senor-milagros-buga",
+      "name": "Basílica del Señor de los Milagros, Buga",
+      "country": "CO",
+      "place_type": "basilica",
+      "lat": 3.89723,
+      "lng": -76.30199,
+      "source_ids": [
+        "AO-P30-SITE-SG-INV-0508"
+      ],
+      "identity_source_url": "https://www.milagrosodebuga.com/",
+      "identity_source_issuer": "Redemptorist custodians of Basilica del Señor de los Milagros",
+      "geo_source_url": "https://www.openstreetmap.org/way/1202885973",
+      "geo_source_ref": "osm:way:1202885973",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W1202885973",
+      "precision": "site",
+      "scope_limit": "Redemptorist basilica at Carrera 14 #3-62, not nearby Museo del Milagroso or Chapel of San Francisco.",
+      "previous_p29_source_review": false
+    },
+    {
+      "candidate_id": "SG-INV-0282",
+      "place_id": "place:CZ:velehrad-assumption-cyril-methodius-basilica",
+      "name": "Bazilika Nanebevzetí Panny Marie a svatých Cyrila a Metoděje, Velehrad",
+      "country": "CZ",
+      "place_type": "basilica",
+      "lat": 49.10351,
+      "lng": 17.39553,
+      "source_ids": [
+        "AO-P30-SITE-SG-INV-0282"
+      ],
+      "identity_source_url": "https://www.cirkev.cz/velehrad-hostil-spolecnou-pout-reckokatoliku-ze-slovenska-a-ceska_70844",
+      "identity_source_issuer": "Catholic Church in Czechia / bishops' media",
+      "geo_source_url": "https://www.openstreetmap.org/way/33650267",
+      "geo_source_ref": "osm:way:33650267",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W33650267",
+      "precision": "site",
+      "scope_limit": "Velehrad Roman Catholic basilica building, not entire former Cistercian monastery, adjacent crypt or other chapel.",
+      "previous_p29_source_review": true
+    },
+    {
+      "candidate_id": "SG-INV-0335",
+      "place_id": "place:LT:trakai-visitation-basilica",
+      "name": "Trakų Švč. Mergelės Marijos Apsilankymo bazilika",
+      "country": "LT",
+      "place_type": "basilica",
+      "lat": 54.64284,
+      "lng": 24.93442,
+      "source_ids": [
+        "AO-P30-SITE-SG-INV-0335"
+      ],
+      "identity_source_url": "https://vilnensis.lt/savivaldybes/traku-r/",
+      "identity_source_issuer": "Roman Catholic Archdiocese of Vilnius",
+      "geo_source_url": "https://www.openstreetmap.org/way/87604026",
+      "geo_source_ref": "osm:way:87604026",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W87604026",
+      "precision": "site",
+      "scope_limit": "Catholic Visitation basilica at Birutės g. 5; not the nearby Orthodox Nativity church (OSM way 106814693).",
+      "previous_p29_source_review": false
+    },
+    {
+      "candidate_id": "SG-INV-0744",
+      "place_id": "place:NZ:st-mary-angels-wellington",
+      "name": "St Mary of the Angels, Wellington",
+      "country": "NZ",
+      "place_type": "church",
+      "lat": -41.28877,
+      "lng": 174.77393,
+      "source_ids": [
+        "AO-P30-SITE-SG-INV-0744"
+      ],
+      "identity_source_url": "https://smoa.org.nz/",
+      "identity_source_issuer": "St Mary of the Angels Roman Catholic parish, Wellington",
+      "geo_source_url": "https://www.openstreetmap.org/way/256656474",
+      "geo_source_ref": "osm:way:256656474",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W256656474",
+      "precision": "site",
+      "scope_limit": "Specific Catholic church at 17 Boulcott Street, not another church associated with the same parish or Wellington Central.",
+      "previous_p29_source_review": true
+    },
+    {
+      "candidate_id": "SG-INV-0186",
+      "place_id": "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
+      "name": "Wallfahrtsbasilika Maria Schnee, Maria Luggau",
+      "country": "AT",
+      "place_type": "basilica",
+      "lat": 46.70538,
+      "lng": 12.73572,
+      "source_ids": [
+        "AO-P30-SITE-SG-INV-0186"
+      ],
+      "identity_source_url": "https://www.kath-kirche-kaernten.at/pfarren/detail/C3035/dekanatswallfahrt-nach-maria-luggau",
+      "identity_source_issuer": "Roman Catholic Diocese of Gurk-Klagenfurt",
+      "geo_source_url": "https://www.openstreetmap.org/way/183278424",
+      "geo_source_ref": "osm:way:183278424",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/de/W183278424",
+      "precision": "site",
+      "scope_limit": "Maria Schnee pilgrimage basilica in Lesachtal; not nearby Marian chapel or village/whole pilgrimage route.",
+      "previous_p29_source_review": false
+    },
+    {
+      "candidate_id": "SG-INV-0469",
+      "place_id": "place:DO:catedral-primada-santo-domingo",
+      "name": "Catedral Primada de América — Santa María de la Encarnación",
+      "country": "DO",
+      "place_type": "cathedral",
+      "lat": 18.47299,
+      "lng": -69.88395,
+      "source_ids": [
+        "AO-P30-SITE-SG-INV-0469"
+      ],
+      "identity_source_url": "https://arquidiocesisd.org/catedral/",
+      "identity_source_issuer": "Roman Catholic Archdiocese of Santo Domingo",
+      "geo_source_url": "https://www.openstreetmap.org/way/41565898",
+      "geo_source_ref": "osm:way:41565898",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W41565898",
+      "precision": "site",
+      "scope_limit": "Current cathedral church building, not associated cathedral museum or adjacent historic colonial buildings.",
+      "previous_p29_source_review": false
+    },
+    {
+      "candidate_id": "SG-INV-0213",
+      "place_id": "place:PL:bazylika-sw-anny-gora-swietej-anny",
+      "name": "Bazylika Świętej Anny — Góra Świętej Anny",
+      "country": "PL",
+      "place_type": "basilica",
+      "lat": 50.45626,
+      "lng": 18.16933,
+      "source_ids": [
+        "AO-P30-SITE-SG-INV-0213"
+      ],
+      "identity_source_url": "https://www.swanna.pl/sanktuarium/bazylika.html",
+      "identity_source_issuer": "Franciscan Custodians of St Anne Sanctuary",
+      "geo_source_url": "https://www.openstreetmap.org/way/231900588",
+      "geo_source_ref": "osm:way:231900588",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W231900588",
+      "precision": "site",
+      "scope_limit": "Basilica at Klasztorna 6 distinct from Franciscan monastery precinct, nearby Golgotha/calvary chapels and Lourdes grotto.",
+      "previous_p29_source_review": false
+    }
+  ],
+  "held_status": [
+    {
+      "candidate_id": "SG-INV-0368",
+      "reason": "Nidaros Cathedral present-day Lutheran operator, not Catholic, no public Catholic Place",
+      "source_url": "https://mapcarta.com/26914330",
+      "osm_ref": "osm:way:417245741"
+    },
+    {
+      "candidate_id": "SG-INV-0461",
+      "reason": "Panama canonical country geo area absent, requires full area admission before public map publication",
+      "country": "PA"
+    }
+  ],
+  "p16_protected_historical_exceptions": 16,
+  "policy": [
+    "Each new Place is one distinct Catholic-operated physical building verified via OSM way reference and Catholic institutional/custodian primary source.",
+    "No venue/Mass Times/1962 Missal claim, relics, art, opening hours or visitor access implied.",
+    "P29 first-200 source excerpt coverage counts exclude incomplete or unreviewed held sites; P30 publication is distinct from research-only status.",
+    "The eight individually named OSM-derived Mapcarta provenance URLs are traceable in this manifest, not placeholders.",
+    "R93 historical first-presence test must exclude P30's later additions; no alteration of frozen R93 records.",
+    "No new geography areas; maintain existing nine Directory links and 16 historical holds."
+  ]
+}
