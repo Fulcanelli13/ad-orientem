@@ -1,0 +1,95 @@
+{
+  "schema": "AO_LIVING_CHURCH_PIUS_X_DOCTRINAL_CONCEPT_GUARDED_RESULT_V1",
+  "date": "2026-10-19",
+  "execution": "ISOLATED_CHECKED_IN_JS_REGRESSION_GITHUB_ACTIONS_PENDING",
+  "owner": "PR #1443",
+  "researchEvidenceOwner": "PR #1458",
+  "fixture": "data/learn/living-church-pius-x-doctrinal-concept-frozen-46.v1.json",
+  "originalFirstRun": "data/learn/living-church-pius-x-concept-first-run-20261019.v1.json",
+  "originalFirstRunObserved": {
+    "shared": {
+      "correctHistoricalSource": 27,
+      "safeHistoricalAbstentions": 1,
+      "wrongHistoricalSource": 0,
+      "safeNegatives": 8,
+      "unsafeNegatives": 4,
+      "confirmedFollowups": 0,
+      "safeUnresolvedFollowups": 6
+    },
+    "hybrid": {
+      "correctHistoricalSource": 27,
+      "safeHistoricalAbstentions": 1,
+      "wrongHistoricalSource": 0,
+      "safeNegatives": 8,
+      "unsafeNegatives": 4,
+      "confirmedFollowups": 0,
+      "safeUnresolvedFollowups": 6
+    }
+  },
+  "guardedRegressionObserved": {
+    "shared": {
+      "correctHistoricalSource": 27,
+      "safeHistoricalAbstentions": 1,
+      "wrongHistoricalSource": 0,
+      "safeNegatives": 12,
+      "unsafeNegatives": 0,
+      "confirmedFollowups": 0,
+      "safeUnresolvedFollowups": 6
+    },
+    "hybrid": {
+      "correctHistoricalSource": 27,
+      "safeHistoricalAbstentions": 1,
+      "wrongHistoricalSource": 0,
+      "safeNegatives": 12,
+      "unsafeNegatives": 0,
+      "confirmedFollowups": 0,
+      "safeUnresolvedFollowups": 6
+    }
+  },
+  "previouslyInspectedBilingual60": {
+    "shared": {
+      "exactDocument": 36,
+      "safeUnresolved": 4,
+      "wrongSpecific": 0,
+      "safePersonalHold": 8,
+      "unsafePersonalHold": 0,
+      "safeOutside": 12,
+      "unsafeOutside": 0
+    },
+    "hybrid": {
+      "exactDocument": 36,
+      "safeUnresolved": 4,
+      "wrongSpecific": 0,
+      "safePersonalHold": 8,
+      "unsafePersonalHold": 0,
+      "safeOutside": 12,
+      "unsafeOutside": 0
+    }
+  },
+  "additionalNegativeRegressions": {
+    "personalVerdictBoundary48": "48/48 correct on both engines",
+    "liturgicalRoleScope26": "26/26 correct on both engines"
+  },
+  "method": [
+    "Seven source-owned bilingual concept families, each requiring two corroborating facets, route to exact original passage URLs.",
+    "The fact that a concept family matches does not authorize an answer, quotation, doctrinal inference or fabricated papal memory.",
+    "A personal-state question or third-party judgment is refused before source navigation and cannot be bypassed by topic selection or context.",
+    "Modern enforceability of historic discipline and judgments about contemporary parish performers are not settled from historical decrees.",
+    "First-Communion source requires a child/first-reception actor, not mere coincidental Eucharistic and age terminology.",
+    "Lay Rosary, private Communion thanksgiving, priestly meditation and Canon's liturgical Postcommunion keep separate source owners.",
+    "Six newly inspected confirmed-context follow-ups remain safe abstentions, NOT successfully resolved conversations.",
+    "Original first-run editorial sample has been preserved unaltered; this post-correction sample is a regression, not a fresh independent evaluation."
+  ],
+  "release": {
+    "historicalDialogueApproved": 0,
+    "independentVisitorRetrievalCertified": false,
+    "sourceNavigationProductionEnabled": false,
+    "CI_AtRecording": "Queued",
+    "voicePublished": false
+  },
+  "next": [
+    "Source scope/role safeguards should remain hard gates before all generic semantic retrieval.",
+    "Move to consented topic continuity and typed source sections; context should never bootstrap from a merely proposed topic.",
+    "Review new language variations with independent evaluators, rather than counting these edited-inspected samples as representative visitor accuracy."
+  ]
+}

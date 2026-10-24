@@ -1,0 +1,170 @@
+{
+  "schema": "AO_LIVING_CHURCH_LITURGICAL_SCOPE_CONTRAST_PROBES_V1",
+  "date": "2026-10-19",
+  "status": "FROZEN_BEFORE_LITURGICAL_SCOPE_GUARD_IMPLEMENTATION_EDITORIAL_REGRESSION_ONLY",
+  "policy": "These are controlled source-scope probes, not live visitor language and not a blind performance holdout. Never treat authored evaluation sentences as theological source evidence.",
+  "cases": [
+    {
+      "id": "SPXSCOPE-001",
+      "language": "en",
+      "question": "Can laypeople recite their Rosary while assisting at the Holy Sacrifice?",
+      "expected_scope": "PIUS_X_ROSARY_AT_MASS"
+    },
+    {
+      "id": "SPXSCOPE-002",
+      "language": "fr",
+      "question": "Est-il permis aux fidèles de prier le rosaire durant la célébration de la messe ?",
+      "expected_scope": "PIUS_X_ROSARY_AT_MASS"
+    },
+    {
+      "id": "SPXSCOPE-003",
+      "language": "en",
+      "question": "When the priest celebrates Mass, may the congregation use the Rosary devotion?",
+      "expected_scope": "PIUS_X_ROSARY_AT_MASS"
+    },
+    {
+      "id": "SPXSCOPE-004",
+      "language": "fr",
+      "question": "Un paroissien peut-il dire le chapelet pendant que le célébrant officie ?",
+      "expected_scope": "PIUS_X_ROSARY_AT_MASS"
+    },
+    {
+      "id": "SPXSCOPE-005",
+      "language": "en",
+      "question": "Does saying the Rosary at the Latin Mass prevent prayerful attendance?",
+      "expected_scope": "PIUS_X_ROSARY_AT_MASS"
+    },
+    {
+      "id": "SPXSCOPE-006",
+      "language": "fr",
+      "question": "La récitation du rosaire par le fidèle au cours de la messe est-elle défendue ?",
+      "expected_scope": "PIUS_X_ROSARY_AT_MASS"
+    },
+    {
+      "id": "SPXSCOPE-007",
+      "language": "en",
+      "question": "What prayerful silence belongs after a person has received Communion?",
+      "expected_scope": "PIUS_X_THANKSGIVING_AFTER_COMMUNION"
+    },
+    {
+      "id": "SPXSCOPE-008",
+      "language": "fr",
+      "question": "Après la réception de l'Eucharistie, comment cultiver le recueillement ?",
+      "expected_scope": "PIUS_X_THANKSGIVING_AFTER_COMMUNION"
+    },
+    {
+      "id": "SPXSCOPE-009",
+      "language": "en",
+      "question": "Should I give thanks once I receive the Host at Communion?",
+      "expected_scope": "PIUS_X_THANKSGIVING_AFTER_COMMUNION"
+    },
+    {
+      "id": "SPXSCOPE-010",
+      "language": "fr",
+      "question": "Que doit-on faire pour remercier Dieu après avoir reçu l'Hostie ?",
+      "expected_scope": "PIUS_X_THANKSGIVING_AFTER_COMMUNION"
+    },
+    {
+      "id": "SPXSCOPE-011",
+      "language": "en",
+      "question": "Following reception of the Blessed Sacrament, is quiet adoration fitting?",
+      "expected_scope": "PIUS_X_THANKSGIVING_AFTER_COMMUNION"
+    },
+    {
+      "id": "SPXSCOPE-012",
+      "language": "fr",
+      "question": "Après avoir communié, quelle place accorder à la prière silencieuse ?",
+      "expected_scope": "PIUS_X_THANKSGIVING_AFTER_COMMUNION"
+    },
+    {
+      "id": "SPXSCOPE-013",
+      "language": "en",
+      "question": "Can people privately pray during Mass while the celebrant is at the altar?",
+      "expected_scope": "SAFE_ABSTAIN_UNSPECIFIED_LAY_PRAYER"
+    },
+    {
+      "id": "SPXSCOPE-014",
+      "language": "fr",
+      "question": "Le fidèle peut-il méditer durant la messe pendant que le prêtre officie ?",
+      "expected_scope": "SAFE_ABSTAIN_UNSPECIFIED_LAY_PRAYER"
+    },
+    {
+      "id": "SPXSCOPE-015",
+      "language": "en",
+      "question": "What should congregants think while the priest celebrates Mass?",
+      "expected_scope": "SAFE_ABSTAIN_UNSPECIFIED_LAY_PRAYER"
+    },
+    {
+      "id": "SPXSCOPE-016",
+      "language": "fr",
+      "question": "Comment les laïcs participent-ils par la prière pendant que le prêtre célèbre ?",
+      "expected_scope": "SAFE_ABSTAIN_UNSPECIFIED_LAY_PRAYER"
+    },
+    {
+      "id": "SPXSCOPE-017",
+      "language": "en",
+      "question": "Should worshippers make a private meditation as the priest offers the Mass?",
+      "expected_scope": "SAFE_ABSTAIN_UNSPECIFIED_LAY_PRAYER"
+    },
+    {
+      "id": "SPXSCOPE-018",
+      "language": "fr",
+      "question": "La prière du fidèle pendant le sacrifice ressemble-t-elle à la méditation du prêtre ?",
+      "expected_scope": "SAFE_ABSTAIN_UNSPECIFIED_LAY_PRAYER"
+    },
+    {
+      "id": "SPXSCOPE-019",
+      "language": "en",
+      "question": "Does the priest's own meditation help his pastoral work?",
+      "expected_scope": "PIUS_X_PRIESTLY_MEDITATION"
+    },
+    {
+      "id": "SPXSCOPE-020",
+      "language": "fr",
+      "question": "Un prêtre chargé du ministère doit-il pratiquer l'oraison mentale ?",
+      "expected_scope": "PIUS_X_PRIESTLY_MEDITATION"
+    },
+    {
+      "id": "SPXSCOPE-021",
+      "language": "en",
+      "question": "What does the Catechism teach about the Real Presence of Christ in the Host?",
+      "expected_scope": "NO_HISTORICAL_SOURCE_SCOPE"
+    },
+    {
+      "id": "SPXSCOPE-022",
+      "language": "fr",
+      "question": "Pourquoi le tabernacle conserve-t-il les saintes espèces ?",
+      "expected_scope": "NO_HISTORICAL_SOURCE_SCOPE"
+    },
+    {
+      "id": "SPXSCOPE-023",
+      "language": "en",
+      "question": "What liturgical prayer is said by the priest after Communion at Mass?",
+      "expected_scope": "NO_HISTORICAL_SOURCE_SCOPE"
+    },
+    {
+      "id": "SPXSCOPE-024",
+      "language": "fr",
+      "question": "Où se trouve le tabernacle dans le sanctuaire ?",
+      "expected_scope": "NO_HISTORICAL_SOURCE_SCOPE"
+    },
+    {
+      "id": "SPXSCOPE-025",
+      "language": "en",
+      "question": "Does the Rosary have fifteen decades in its traditional form?",
+      "expected_scope": "NO_HISTORICAL_SOURCE_SCOPE"
+    },
+    {
+      "id": "SPXSCOPE-026",
+      "language": "fr",
+      "question": "Que signifie la présence réelle après la consécration ?",
+      "expected_scope": "NO_HISTORICAL_SOURCE_SCOPE"
+    }
+  ],
+  "boundaries": {
+    "rosary": "Historical permission at Mass only with Rosary plus celebration/Mass context; not a general doctrine of participation.",
+    "thanksgiving": "Historical post-reception devotion only with a reception-time marker and inward-prayer/thanksgiving request; not priest's Postcommunion or the Real Presence.",
+    "lay": "Lay interior participation must not map to clergy's Haerent animo; without a precise historical source, abstain.",
+    "ordinary": "Unrelated sacramental/architectural/doctrinal questions should not be claimed by these two source owners."
+  }
+}
