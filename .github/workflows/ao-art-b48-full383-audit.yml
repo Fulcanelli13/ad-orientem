@@ -24,6 +24,7 @@ jobs:
         run: |
           python -m py_compile scripts/research/sacred_art_b48_all383_archive_and_rights_census.py
           node tests/sacred-art-b47-offline-383-source-closeout.mjs
+          test -f tests/sacred-art-b48-383-physical-original-coverage.mjs
       - name: Check actual draft Release assets; audit SHA-linked older 290 originals and later 122 and scan repo image bytes
         env:
           GH_TOKEN: ${{ github.token }}
