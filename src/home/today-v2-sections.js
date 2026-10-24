@@ -127,5 +127,5 @@ export function renderTodayV2Sections(model,vm){
     ${calendarHonours}${calendarLater}
     <div class="aoTodayV2GlanceEvents">${calendarDates||'<p class="aoTodayV2GlanceEmpty">'+esc(txt("See dates in Calendar","Consulter les dates dans le calendrier"))+'</p>'}</div>
     <p class="aoTodayV2GlanceNote">${esc(glanceNote)}</p>
-  </section>`;;
+  </section>`;
 }
