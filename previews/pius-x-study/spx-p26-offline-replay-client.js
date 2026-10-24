@@ -10,7 +10,9 @@ if(data.schema!=='AO_SPX_P26_OFFLINE_REVIEW_CASES_V1'||data.publishingApproved!=
    data.navigationAliasCount!==32||data.navigationAliases.length!==32||
    data.claimTraceUnits!==23||data.humanClaimCertifications!==0||
    data.voicePreviewCaseCount!==3||data.voicePreviewLanguageCount!==2||
-   data.voicePreviewApproved!==false||data.voicePreviewLiveInference!==false)
+   data.voicePreviewApproved!==false||data.voicePreviewLiveInference!==false||
+   data.real7bComparisonCount!==4||data.real7bComparisonApproved!==false||
+   data.real7bComparisonLive!==false)
  throw Error('Unexpected offline dialogue evidence');
 const groups=new Map();
 for(const c of data.cases){
@@ -49,6 +51,12 @@ const tr={
  voiceIntro:'HISTORICAL-VOICE EXPERIMENT · CONSTRUCTED FIRST PERSON · NOT PIUS X\'S ACTUAL WORDS',
  voiceScope:'GPT-6 single-pass research example. Not generated live and not a verified papal quotation.',
  voiceSource:'Original Latin passage for the editorial reconstruction',
+ real7bTitle:'Compare a REAL 7B model answer · unapproved',
+ real7bWarning:'ACTUAL MODEL OUTPUT · FIRST-PERSON EXPERIMENT · NOT A HISTORICAL QUOTATION',
+ real7bModel:'Qwen2.5 7B · local, source-constrained · original answer unchanged',
+ real7bConcern:'Editorial concern',
+ real7bSource:'Inspect original papal Latin',
+ real7bRun:'Benchmark and provenance',
   traceTitle:'Inspect sentence-by-sentence evidence',traceCaution:'Each link is an editorial interpretation of the cited original-language excerpt, not an independently certified translation or proof of the full sentence.',
  claimLabel:'Editorial sentence',witnessLabel:'Original source excerpt',webLine:'Vatican web-text line',sourceReview:'Source correspondence pending human review'
  },
@@ -70,6 +78,12 @@ const tr={
  voiceIntro:'ESSAI DE STYLE HISTORIQUE · PREMIÈRE PERSONNE RECONSTRUITE · NON PAROLES ATTESTÉES DE PIE X',
  voiceScope:'Exemple de recherche GPT-6 en une seule passe, non généré en direct et non authentifié.',
  voiceSource:'Passage latin à l\'appui de cette reconstruction éditoriale',
+ real7bTitle:'Comparer une VRAIE réponse du modèle 7B · non approuvée',
+ real7bWarning:'TEXTE GÉNÉRÉ · PREMIÈRE PERSONNE EXPÉRIMENTALE · NON CITATION HISTORIQUE',
+ real7bModel:'Qwen2.5 7B · modèle local contraint par les sources · réponse originale intacte',
+ real7bConcern:'Réserve éditoriale',
+ real7bSource:'Examiner le latin original du pape',
+ real7bRun:'Expérience et provenance',
   traceTitle:'Examiner les sources phrase par phrase',traceCaution:'Chaque rapprochement est une interprétation éditoriale de l’extrait original, non une traduction certifiée ni une preuve indépendante de toute la phrase.',
  claimLabel:'Phrase éditoriale',witnessLabel:'Extrait du texte original',webLine:'Ligne du texte sur le site du Vatican',sourceReview:'Correspondance avec la source à vérifier'
  }
@@ -316,6 +330,36 @@ $('spxm-offline-form').addEventListener('submit',e=>{
   }
  }
  entry.append(audit);
+ // Distinct expandable ACTUAL inference research, not a new "Pius X said"
+ // answer. Never inline it as the original reply or alter existing GPT-6
+ // voice comparison. No 7B example exists for the third dialogue turn.
+ const real=chosen.real7bPreview?.[language];
+ if(real){
+  if(real.status!=='ACTUAL_7B_MACHINE_GENERATION_EDITORIAL_UNAPPROVED'||
+    real.publishingApproved!==false||real.firstPersonAuthenticated!==false||
+    real.currentModelInference!==false||real.witnesses.length<1)
+   throw Error('Unexpected P2.55 real model research approval state');
+  const comparison=document.createElement('details');
+  comparison.className='spxm-real-7b-comparison';
+  comparison.dataset.researchOnly='true';
+  add('summary','',t.real7bTitle,comparison);
+  add('p','spxm-real-7b-warning',t.real7bWarning,comparison);
+  add('p','spxm-real-7b-model',t.real7bModel,comparison);
+  add('p','spxm-real-7b-text',real.text,comparison);
+  add('p','spxm-real-7b-concern',t.real7bConcern+': '+real.editorialConcern,comparison);
+  const origins=document.createElement('details');
+  origins.className='spxm-real-7b-sources';
+  add('summary','',t.real7bSource+' · '+real.witnesses.length,origins);
+  for(const w of real.witnesses){
+   const line=add('p','spxm-real-7b-witness',w.id+' · '+w.locus+' — '+w.text,origins);
+   const link=add('a','',t.source,line);
+   link.href=w.sourceUrl;link.target='_blank';link.rel='noopener noreferrer';
+  }
+  comparison.append(origins);
+  const run=add('a','spxm-real-7b-run',t.real7bRun,comparison);
+  run.href=real.sourceRun;run.target='_blank';run.rel='noopener noreferrer';
+  entry.append(comparison);
+ }
  renderVoiceMode();
  add('p','spxm-offline-disclaimer',t.draft,entry);
  $('spxm-offline-question').value='';
