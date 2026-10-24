@@ -11,7 +11,7 @@ permissions:
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 7
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -20,7 +20,7 @@ jobs:
       - run: node tools/geography/p27-overpass-candidate-discovery.mjs --dry-run
       - name: One bounded Overpass query (research only)
         env:
-          AO_OVERPASS_ENDPOINT: https://overpass.private.coffee/api/interpreter
+          AO_OVERPASS_ENDPOINT: https://maps.mail.ru/osm/tools/overpass/api/interpreter
         run: node tools/geography/p27-overpass-candidate-discovery.mjs
       - name: Preserve candidate output as temporary inspection artifact
         if: always()
