@@ -18,8 +18,10 @@ assert re.fullmatch("[0-9a-f]{64}",source["sourceDigitalPageRawSha256"])
 c=source["counts"]
 assert c["openingQuestionsAudited"]==100
 assert c["originalItalianAnswersLocated"]==100
-assert c["multipleSourceReferenceOpeningHolds"]==5
-assert c["additionalItalianSupportPassages"]>=5
+assert c["multipleSourceReferenceOpeningHolds"]==7
+assert c["additionalItalianSupportPassages"]==9
+assert c["normalizedExactQuestionIdentities"]==95
+assert c["questionIdentityMismatchesOrHolds"]==5
 assert c["unverifiedEnglishFrenchEditorialAnswerPairs"]==100
 assert c["pastoralHistoricalHolds"]==30
 assert c["sourceTranslationReview"]==57
