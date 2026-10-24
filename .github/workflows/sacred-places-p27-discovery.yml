@@ -20,7 +20,7 @@ jobs:
       - run: node tools/geography/p27-overpass-candidate-discovery.mjs --dry-run
       - name: One bounded Overpass query (research only)
         env:
-          AO_OVERPASS_ENDPOINT: https://overpass.kumi.systems/api/interpreter
+          AO_OVERPASS_ENDPOINT: https://overpass.private.coffee/api/interpreter
         run: node tools/geography/p27-overpass-candidate-discovery.mjs
       - name: Preserve candidate output as temporary inspection artifact
         if: always()
