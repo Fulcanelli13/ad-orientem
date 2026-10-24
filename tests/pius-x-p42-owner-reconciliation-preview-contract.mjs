@@ -19,12 +19,12 @@ assert.equal(p42.records.length,39);
 assert.equal(ledger.cases.length,39);
 assert.equal(triage.records.length,100);
 assert.equal(p41.records.length,39);
-assert.equal(Object.keys(p42.files).length,10);
+assert.equal(Object.keys(p42.files).length,9);
 assert.deepEqual([p42.counts.originalOpenings,p42.counts.stagedExactOwnerTurnPairs,
 p42.counts.sourceOwnerFilesCovered,p42.counts.remainingSpecialistReview,
 p42.counts.previousP35Holds,p42.counts.previousP37SecondPass,p42.counts.signedOffCases,
 p42.counts.sourceOwnerRecordsEdited,p42.counts.existingP6_423Changed,p42.counts.published],
-[100,39,10,26,24,11,0,0,0,0]);
+[100,39,9,26,24,11,0,0,0,0]);
 assert(Object.values(p42.safeguards).every(x=>x===true));
 const from41=new Map(p41.records.map(x=>[x.sourceQid,x]));
 const owners=new Map(triage.records.map(x=>[x.id,x]));
@@ -82,4 +82,4 @@ assert([...excluded].every(x=>!seen.has(x)));
 assert.equal(new Set([...excluded,...seen]).size,100);
 assert(p42.records.find(x=>x.sourceQid==='PX1905-Q611').technicalReviewerLane==='TECHNICAL_SACRAMENTAL_THEOLOGY');
 assert(p42.records.find(x=>x.sourceQid==='PX1905-Q657').technicalReviewerLane==='TECHNICAL_SACRAMENTAL_THEOLOGY');
-console.log('PASS P42_EXACT_OWNER_RECONCILIATION_PREVIEW '+JSON.stringify({ownerFiles:10,candidateTurns:39,reviewersSigned:0,recordsEdited:0,dialoguesEdited:0,publication:0}));
+console.log('PASS P42_EXACT_OWNER_RECONCILIATION_PREVIEW '+JSON.stringify({ownerFilesWithCandidates:9,candidateTurns:39,reviewersSigned:0,recordsEdited:0,dialoguesEdited:0,publication:0}));
