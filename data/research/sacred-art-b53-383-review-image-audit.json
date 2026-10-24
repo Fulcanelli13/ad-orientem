@@ -396,10 +396,10 @@
   "cases_without_displayable_image": 23,
   "incomplete_work_image_previews_displayed": 2,
   "separate_identity_or_missing_source_holds": 28,
-  "total_placement_proposals": 674,
-  "average_placement_proposals_per_artwork": 1.76,
+  "total_placement_proposals": 1125,
+  "average_placement_proposals_per_artwork": 2.94,
   "total_offline_webp_bytes": 23039258,
-  "offline_HTML_bytes": 31160546,
+  "offline_HTML_bytes": 31259510,
   "source_archive_groups": [
     {
       "tag": "ao-art-originals-40071629985-1",
@@ -598,6 +598,16 @@
         {
           "slot_id": "scripture/parallels/peter-repentance",
           "label": "Scripture Connections — Peter's denial and repentance",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "scripture/historia/denial-peter",
+          "label": "Historia Salutis — Peter's Denial and Repentance",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/denial-peter",
+          "label": "Scripture Connections — Peter's Denial and Repentance",
           "confidence": "exploratory"
         }
       ],
@@ -2329,6 +2339,26 @@
           "slot_id": "calendar/feast/jeanne-chantal",
           "label": "Calendar — St Jane Frances de Chantal",
           "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/historia/visitation",
+          "label": "Historia Salutis — The Visitation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/visitation",
+          "label": "Scripture Connections — The Visitation (Luke 1)",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/visitation",
+          "label": "Calendar — Visitation of Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-2",
+          "label": "Traditional Rosary — Joyful II — Visitation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -2688,6 +2718,11 @@
           "slot_id": "prayers/immaculate-heart",
           "label": "Devotions — Immaculate Heart of Mary",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/immaculate-conception",
+          "label": "Calendar — Immaculate Conception (8 December)",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -3734,8 +3769,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "prayers/marian-devotion",
+          "label": "Prayer Library — Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/marian-art",
+          "label": "Rosary — general Marian contemplation",
           "confidence": "exploratory"
         }
       ],
@@ -3859,6 +3899,16 @@
         {
           "slot_id": "adoration/eucharistic-miracles",
           "label": "Adoration — Eucharistic miracles",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "prayers/marian-devotion",
+          "label": "Prayer Library — Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/marian-art",
+          "label": "Rosary — general Marian contemplation",
           "confidence": "exploratory"
         }
       ],
@@ -4309,8 +4359,8 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "saints/profile/francis-assisi",
+          "label": "Saints Catalogue — St Francis of Assisi",
           "confidence": "exploratory"
         }
       ],
@@ -4335,8 +4385,8 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "saints/profile/francis-assisi",
+          "label": "Saints Catalogue — St Francis of Assisi",
           "confidence": "exploratory"
         }
       ],
@@ -4361,8 +4411,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "saints/profile/dominic-guzman",
+          "label": "Saints Catalogue — St Dominic",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/dominic-guzman",
+          "label": "Calendar — St Dominic",
           "confidence": "exploratory"
         }
       ],
@@ -4387,8 +4442,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "saints/profile/dominic-guzman",
+          "label": "Saints Catalogue — St Dominic",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/dominic-guzman",
+          "label": "Calendar — St Dominic",
           "confidence": "exploratory"
         }
       ],
@@ -4413,8 +4473,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "saints/profile/dominic-guzman",
+          "label": "Saints Catalogue — St Dominic",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/dominic-guzman",
+          "label": "Calendar — St Dominic",
           "confidence": "exploratory"
         }
       ],
@@ -4439,8 +4504,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "saints/profile/benedict-nursia",
+          "label": "Saints Catalogue — St Benedict",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/benedict-nursia",
+          "label": "Calendar — St Benedict",
           "confidence": "exploratory"
         }
       ],
@@ -4465,8 +4535,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "saints/profile/benedict-nursia",
+          "label": "Saints Catalogue — St Benedict",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/benedict-nursia",
+          "label": "Calendar — St Benedict",
           "confidence": "exploratory"
         }
       ],
@@ -4491,8 +4566,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "saints/profile/benedict-nursia",
+          "label": "Saints Catalogue — St Benedict",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/benedict-nursia",
+          "label": "Calendar — St Benedict",
           "confidence": "exploratory"
         }
       ],
@@ -4517,9 +4597,9 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/francis-xavier",
+          "label": "Saints Catalogue — St Francis Xavier",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4543,9 +4623,9 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/francis-xavier",
+          "label": "Saints Catalogue — St Francis Xavier",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4569,9 +4649,9 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/ignatius-loyola",
+          "label": "Saints Catalogue — St Ignatius of Loyola",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4595,9 +4675,9 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/ignatius-loyola",
+          "label": "Saints Catalogue — St Ignatius of Loyola",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4621,9 +4701,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/margaret-mary",
+          "label": "Saints Catalogue — St Margaret Mary Alacoque",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/sacred-heart",
+          "label": "Sacred Heart devotion",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4647,9 +4732,9 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/john-vianney",
+          "label": "Saints Catalogue — St John Vianney",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4673,9 +4758,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/sebastian",
+          "label": "Saints Catalogue — St Sebastian",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/sebastian",
+          "label": "Calendar — St Sebastian",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4699,9 +4789,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/sebastian",
+          "label": "Saints Catalogue — St Sebastian",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/sebastian",
+          "label": "Calendar — St Sebastian",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4725,9 +4820,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/sebastian",
+          "label": "Saints Catalogue — St Sebastian",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/sebastian",
+          "label": "Calendar — St Sebastian",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4751,8 +4851,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "prayers/marian-devotion",
+          "label": "Prayer Library — Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/marian-art",
+          "label": "Rosary — general Marian contemplation",
           "confidence": "exploratory"
         }
       ],
@@ -4777,9 +4882,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/lucy",
+          "label": "Saints Catalogue — St Lucy",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/lucy",
+          "label": "Calendar — St Lucy",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4803,9 +4913,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/agnes",
+          "label": "Saints Catalogue — St Agnes",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/agnes",
+          "label": "Calendar — St Agnes",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4829,9 +4944,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/agnes",
+          "label": "Saints Catalogue — St Agnes",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/agnes",
+          "label": "Calendar — St Agnes",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4855,9 +4975,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/agnes",
+          "label": "Saints Catalogue — St Agnes",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/agnes",
+          "label": "Calendar — St Agnes",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4881,9 +5006,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/cecilia",
+          "label": "Saints Catalogue — St Cecilia",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/cecilia",
+          "label": "Calendar — St Cecilia",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4933,9 +5063,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/cecilia",
+          "label": "Saints Catalogue — St Cecilia",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/cecilia",
+          "label": "Calendar — St Cecilia",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -4985,9 +5120,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/catherine-alexandria",
+          "label": "Saints Catalogue — St Catherine of Alexandria",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/catherine-alexandria",
+          "label": "Calendar — St Catherine of Alexandria",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5011,8 +5151,8 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "confession/penitence",
+          "label": "Confession — Penitence and conversion",
           "confidence": "exploratory"
         }
       ],
@@ -5050,6 +5190,11 @@
           "slot_id": "prayers/devotion/mary-magdalene",
           "label": "Prayer Library — St Mary Magdalene",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "confession/penitence",
+          "label": "Confession — Penitence and conversion",
+          "confidence": "exploratory"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5086,6 +5231,11 @@
           "slot_id": "prayers/devotion/mary-magdalene",
           "label": "Prayer Library — St Mary Magdalene",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "confession/penitence",
+          "label": "Confession — Penitence and conversion",
+          "confidence": "exploratory"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5109,9 +5259,9 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/genevieve",
+          "label": "Saints Catalogue — St Genevieve",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5187,9 +5337,9 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/vincent-de-paul",
+          "label": "Saints Catalogue — St Vincent de Paul",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5213,9 +5363,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/martin-tours",
+          "label": "Saints Catalogue — St Martin of Tours",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/martin-tours",
+          "label": "Calendar — St Martin of Tours",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5265,9 +5420,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "calendar/holy-family",
+          "label": "Calendar — Holy Family",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-family",
+          "label": "Prayer Library — Holy Family",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5317,9 +5477,9 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/francis-paola",
+          "label": "Saints Catalogue — St Francis of Paola",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5343,9 +5503,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "calendar/sacred-heart",
+          "label": "Calendar — Sacred Heart of Jesus",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/sacred-heart",
+          "label": "Sacred Heart devotion",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "first-fridays",
+          "label": "First Friday devotion",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5369,9 +5539,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "calendar/immaculate-heart",
+          "label": "Calendar — Immaculate Heart of Mary",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/immaculate-heart",
+          "label": "Immaculate Heart devotion",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "first-saturdays",
+          "label": "First Saturday devotion",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5429,6 +5609,16 @@
           "slot_id": "calendar/feast/teresa-avila",
           "label": "Liturgical Calendar — feast of St Teresa of Ávila",
           "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/all-souls",
+          "label": "Calendar — All Souls' Day",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-souls",
+          "label": "Prayer Library — Holy Souls",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5452,9 +5642,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "prayers/marian-devotion",
+          "label": "Prayer Library — Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/marian-art",
+          "label": "Rosary — general Marian contemplation",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/all-souls",
+          "label": "Calendar — All Souls' Day",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-souls",
+          "label": "Prayer Library — Holy Souls",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5478,8 +5683,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "prayers/marian-devotion",
+          "label": "Prayer Library — Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/marian-art",
+          "label": "Rosary — general Marian contemplation",
           "confidence": "exploratory"
         }
       ],
@@ -5504,8 +5714,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "calendar/trinity-sunday",
+          "label": "Calendar — Trinity Sunday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-trinity",
+          "label": "Prayer Library — Holy Trinity",
           "confidence": "exploratory"
         }
       ],
@@ -5530,8 +5745,18 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/creation-fall",
+          "label": "Historia Salutis — Creation, the Fall and expulsion from Eden",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/creation-fall",
+          "label": "Scripture Connections — Creation, the Fall and expulsion from Eden",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "covenants/adam",
+          "label": "Historia Salutis — Adam and the first covenant",
           "confidence": "exploratory"
         }
       ],
@@ -5556,9 +5781,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/flight-egypt",
+          "label": "Historia Salutis — Flight into Egypt (Matthew 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/flight-egypt",
+          "label": "Scripture Connections — Flight into Egypt (Matthew 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas-season",
+          "label": "Calendar — Christmas season",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5582,9 +5817,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/flight-egypt",
+          "label": "Historia Salutis — Flight into Egypt (Matthew 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/flight-egypt",
+          "label": "Scripture Connections — Flight into Egypt (Matthew 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas-season",
+          "label": "Calendar — Christmas season",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5608,9 +5853,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/flight-egypt",
+          "label": "Historia Salutis — Flight into Egypt (Matthew 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/flight-egypt",
+          "label": "Scripture Connections — Flight into Egypt (Matthew 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas-season",
+          "label": "Calendar — Christmas season",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5634,9 +5889,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/flight-egypt",
+          "label": "Historia Salutis — Flight into Egypt (Matthew 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/flight-egypt",
+          "label": "Scripture Connections — Flight into Egypt (Matthew 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas-season",
+          "label": "Calendar — Christmas season",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5660,9 +5925,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/flight-egypt",
+          "label": "Historia Salutis — Flight into Egypt (Matthew 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/flight-egypt",
+          "label": "Scripture Connections — Flight into Egypt (Matthew 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas-season",
+          "label": "Calendar — Christmas season",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5686,9 +5961,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/baptism-christ",
+          "label": "Historia Salutis — Baptism of Christ (Matthew 3)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/baptism-christ",
+          "label": "Scripture Connections — Baptism of Christ (Matthew 3)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/baptism-christ",
+          "label": "Calendar — Baptism of Our Lord",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5712,9 +5997,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/baptism-christ",
+          "label": "Historia Salutis — Baptism of Christ (Matthew 3)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/baptism-christ",
+          "label": "Scripture Connections — Baptism of Christ (Matthew 3)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/baptism-christ",
+          "label": "Calendar — Baptism of Our Lord",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5738,9 +6033,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/baptism-christ",
+          "label": "Historia Salutis — Baptism of Christ (Matthew 3)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/baptism-christ",
+          "label": "Scripture Connections — Baptism of Christ (Matthew 3)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/baptism-christ",
+          "label": "Calendar — Baptism of Our Lord",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5764,9 +6069,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/temptation-christ",
+          "label": "Historia Salutis — The Temptation in the Wilderness",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/temptation-christ",
+          "label": "Scripture Connections — The Temptation in the Wilderness",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/lent/temptation",
+          "label": "Calendar — Lent, Christ's Temptation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5790,8 +6105,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/draught-fishes",
+          "label": "Historia Salutis — Miraculous Draught of Fishes (Luke 5)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/draught-fishes",
+          "label": "Scripture Connections — Miraculous Draught of Fishes (Luke 5)",
           "confidence": "exploratory"
         }
       ],
@@ -5816,8 +6136,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/cana",
+          "label": "Historia Salutis — Wedding Feast at Cana (John 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/cana",
+          "label": "Scripture Connections — Wedding Feast at Cana (John 2)",
           "confidence": "exploratory"
         }
       ],
@@ -5842,8 +6167,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/cana",
+          "label": "Historia Salutis — Wedding Feast at Cana (John 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/cana",
+          "label": "Scripture Connections — Wedding Feast at Cana (John 2)",
           "confidence": "exploratory"
         }
       ],
@@ -5868,8 +6198,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/samaria",
+          "label": "Historia Salutis — Jesus and the Samaritan Woman (John 4)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/samaria",
+          "label": "Scripture Connections — Jesus and the Samaritan Woman (John 4)",
           "confidence": "exploratory"
         }
       ],
@@ -5894,8 +6229,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/samaria",
+          "label": "Historia Salutis — Jesus and the Samaritan Woman (John 4)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/samaria",
+          "label": "Scripture Connections — Jesus and the Samaritan Woman (John 4)",
           "confidence": "exploratory"
         }
       ],
@@ -5920,8 +6260,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/paralytic",
+          "label": "Historia Salutis — Healing of the Paralytic",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/paralytic",
+          "label": "Scripture Connections — Healing of the Paralytic",
           "confidence": "exploratory"
         }
       ],
@@ -5946,8 +6291,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/paralytic",
+          "label": "Historia Salutis — Healing of the Paralytic",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/paralytic",
+          "label": "Scripture Connections — Healing of the Paralytic",
           "confidence": "exploratory"
         }
       ],
@@ -5972,9 +6322,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/transfiguration",
+          "label": "Historia Salutis — The Transfiguration",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/transfiguration",
+          "label": "Scripture Connections — The Transfiguration",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/transfiguration",
+          "label": "Calendar — Transfiguration of Our Lord",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -5998,8 +6358,18 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/good-samaritan",
+          "label": "Historia Salutis — Parable of the Good Samaritan (Luke 10)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/good-samaritan",
+          "label": "Scripture Connections — Parable of the Good Samaritan (Luke 10)",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "prayers/works-mercy",
+          "label": "Catholic life — works of mercy",
           "confidence": "exploratory"
         }
       ],
@@ -6024,8 +6394,18 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/good-samaritan",
+          "label": "Historia Salutis — Parable of the Good Samaritan (Luke 10)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/good-samaritan",
+          "label": "Scripture Connections — Parable of the Good Samaritan (Luke 10)",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "prayers/works-mercy",
+          "label": "Catholic life — works of mercy",
           "confidence": "exploratory"
         }
       ],
@@ -6050,8 +6430,18 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/good-samaritan",
+          "label": "Historia Salutis — Parable of the Good Samaritan (Luke 10)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/good-samaritan",
+          "label": "Scripture Connections — Parable of the Good Samaritan (Luke 10)",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "prayers/works-mercy",
+          "label": "Catholic life — works of mercy",
           "confidence": "exploratory"
         }
       ],
@@ -6076,8 +6466,18 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/good-samaritan",
+          "label": "Historia Salutis — Parable of the Good Samaritan (Luke 10)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/good-samaritan",
+          "label": "Scripture Connections — Parable of the Good Samaritan (Luke 10)",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "prayers/works-mercy",
+          "label": "Catholic life — works of mercy",
           "confidence": "exploratory"
         }
       ],
@@ -6102,9 +6502,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/prodigal-son",
+          "label": "Historia Salutis — Parable of the Prodigal Son (Luke 15)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/prodigal-son",
+          "label": "Scripture Connections — Parable of the Prodigal Son (Luke 15)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "confession/reconciliation",
+          "label": "Confession — repentance and reconciliation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6128,9 +6538,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/prodigal-son",
+          "label": "Historia Salutis — Parable of the Prodigal Son (Luke 15)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/prodigal-son",
+          "label": "Scripture Connections — Parable of the Prodigal Son (Luke 15)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "confession/reconciliation",
+          "label": "Confession — repentance and reconciliation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6154,9 +6574,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/prodigal-son",
+          "label": "Historia Salutis — Parable of the Prodigal Son (Luke 15)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/prodigal-son",
+          "label": "Scripture Connections — Parable of the Prodigal Son (Luke 15)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "confession/reconciliation",
+          "label": "Confession — repentance and reconciliation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6180,8 +6610,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/martha-mary",
+          "label": "Historia Salutis — Christ with Martha and Mary (Luke 10)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/martha-mary",
+          "label": "Scripture Connections — Christ with Martha and Mary (Luke 10)",
           "confidence": "exploratory"
         }
       ],
@@ -6247,9 +6682,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/emmaus",
+          "label": "Historia Salutis — Road to Emmaus and the Breaking of Bread (Luke 24)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/emmaus",
+          "label": "Scripture Connections — Road to Emmaus and the Breaking of Bread (Luke 24)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "mass-explorer/recognition-breaking-bread",
+          "label": "Mass Explorer — Emmaus and breaking of bread",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6273,9 +6718,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/emmaus",
+          "label": "Historia Salutis — Road to Emmaus and the Breaking of Bread (Luke 24)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/emmaus",
+          "label": "Scripture Connections — Road to Emmaus and the Breaking of Bread (Luke 24)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "mass-explorer/recognition-breaking-bread",
+          "label": "Mass Explorer — Emmaus and breaking of bread",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6299,9 +6754,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/entry-jerusalem",
+          "label": "Historia Salutis — Palm Sunday Entry (Matthew 21)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/entry-jerusalem",
+          "label": "Scripture Connections — Palm Sunday Entry (Matthew 21)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/palm-sunday",
+          "label": "Calendar — Palm Sunday",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6351,9 +6816,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6377,9 +6857,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/visitation",
+          "label": "Historia Salutis — The Visitation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/visitation",
+          "label": "Scripture Connections — The Visitation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/visitation",
+          "label": "Calendar — Visitation of Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-2",
+          "label": "Traditional Rosary — Joyful II — Visitation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6403,9 +6898,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6481,9 +6991,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/agony-garden",
+          "label": "Historia Salutis — Christ's Agony in Gethsemane",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/agony-garden",
+          "label": "Scripture Connections — Christ's Agony in Gethsemane",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/holy-week/gethsemane",
+          "label": "Calendar — Holy Week, Gethsemane",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-1",
+          "label": "Traditional Rosary — Sorrowful I — Agony in the Garden",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6507,9 +7032,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/scourging",
+          "label": "Historia Salutis — The Scourging at the Pillar",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/scourging",
+          "label": "Scripture Connections — The Scourging at the Pillar",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/holy-week/passion",
+          "label": "Calendar — Passion of Our Lord",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-2",
+          "label": "Traditional Rosary — Sorrowful II — Scourging",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6533,9 +7073,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/crowning-thorns",
+          "label": "Historia Salutis — The Crowning with Thorns",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/crowning-thorns",
+          "label": "Scripture Connections — The Crowning with Thorns",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/holy-week/passion",
+          "label": "Calendar — Passion of Our Lord",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-3",
+          "label": "Traditional Rosary — Sorrowful III — Crowning with Thorns",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6559,9 +7114,29 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/carrying-cross",
+          "label": "Historia Salutis — Jesus Carries the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/carrying-cross",
+          "label": "Scripture Connections — Jesus Carries the Cross",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/good-friday",
+          "label": "Calendar — Good Friday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-4",
+          "label": "Traditional Rosary — Sorrowful IV — Carrying of the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/2",
+          "label": "Stations of the Cross — II, Jesus Takes Up His Cross",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6611,9 +7186,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/resurrection",
+          "label": "Historia Salutis — Resurrection of Christ",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/resurrection",
+          "label": "Scripture Connections — Resurrection of Christ",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/easter",
+          "label": "Calendar — Easter",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-1",
+          "label": "Traditional Rosary — Glorious I — Resurrection",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6663,9 +7253,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/pentecost",
+          "label": "Historia Salutis — The Descent of the Holy Ghost",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/pentecost",
+          "label": "Scripture Connections — The Descent of the Holy Ghost",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/pentecost",
+          "label": "Calendar — Pentecost",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-3",
+          "label": "Traditional Rosary — Glorious III — Pentecost",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6689,9 +7294,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/assumption",
+          "label": "Historia Salutis — Assumption of the Blessed Virgin Mary",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/assumption",
+          "label": "Scripture Connections — Assumption of the Blessed Virgin Mary",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/assumption",
+          "label": "Calendar — Assumption",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-4",
+          "label": "Traditional Rosary — Glorious IV — Assumption",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6715,9 +7335,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/coronation-mary",
+          "label": "Historia Salutis — Coronation of the Blessed Virgin",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/coronation-mary",
+          "label": "Scripture Connections — Coronation of the Blessed Virgin",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/marian/coronation",
+          "label": "Marian Calendar — Coronation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-5",
+          "label": "Traditional Rosary — Glorious V — Coronation of Our Lady",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -6741,9 +7376,9 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "stations/1",
+          "label": "Stations of the Cross — I, Jesus Is Condemned",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -7053,9 +7688,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/descent-cross",
+          "label": "Historia Salutis — Descent from the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/descent-cross",
+          "label": "Scripture Connections — Descent from the Cross",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/good-friday",
+          "label": "Calendar — Good Friday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/13",
+          "label": "Stations of the Cross — XIII, Jesus Taken Down",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -7079,9 +7729,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/burial",
+          "label": "Historia Salutis — Burial of Christ",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/burial",
+          "label": "Scripture Connections — Burial of Christ",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/holy-saturday",
+          "label": "Calendar — Holy Saturday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/14",
+          "label": "Stations of the Cross — XIV, Burial of Jesus",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -7113,6 +7778,11 @@
           "slot_id": "prayers/immaculate-heart",
           "label": "Devotions — Immaculate Heart of Mary",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/immaculate-conception",
+          "label": "Calendar — Immaculate Conception (8 December)",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -7229,8 +7899,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "calendar/trinity-sunday",
+          "label": "Calendar — Trinity Sunday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-trinity",
+          "label": "Prayer Library — Holy Trinity",
           "confidence": "exploratory"
         }
       ],
@@ -7697,9 +8372,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/magi",
+          "label": "Historia Salutis — The Adoration of the Magi (Matthew 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/magi",
+          "label": "Scripture Connections — The Adoration of the Magi (Matthew 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/epiphany",
+          "label": "Calendar — Epiphany",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -7795,9 +8480,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/raising-lazarus",
+          "label": "Historia Salutis — Raising of Lazarus (John 11)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/raising-lazarus",
+          "label": "Scripture Connections — Raising of Lazarus (John 11)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/passiontide/lazarus",
+          "label": "Calendar — Passiontide / Lazarus",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -7955,9 +8650,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/pentecost",
+          "label": "Historia Salutis — The Descent of the Holy Ghost",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/pentecost",
+          "label": "Scripture Connections — The Descent of the Holy Ghost",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/pentecost",
+          "label": "Calendar — Pentecost",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-3",
+          "label": "Traditional Rosary — Glorious III — Pentecost",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -7981,8 +8691,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "calendar/trinity-sunday",
+          "label": "Calendar — Trinity Sunday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-trinity",
+          "label": "Prayer Library — Holy Trinity",
           "confidence": "exploratory"
         }
       ],
@@ -8007,9 +8722,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/ascension",
+          "label": "Historia Salutis — Ascension of Our Lord",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/ascension",
+          "label": "Scripture Connections — Ascension of Our Lord",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/ascension",
+          "label": "Calendar — Ascension Thursday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-2",
+          "label": "Traditional Rosary — Glorious II — Ascension",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8033,9 +8763,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/presentation",
+          "label": "Historia Salutis — Presentation of Our Lord (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/presentation",
+          "label": "Scripture Connections — Presentation of Our Lord (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/candlemas",
+          "label": "Calendar — Candlemas / Presentation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-4",
+          "label": "Traditional Rosary — Joyful IV — Presentation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8059,9 +8804,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/presentation",
+          "label": "Historia Salutis — Presentation of Our Lord (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/presentation",
+          "label": "Scripture Connections — Presentation of Our Lord (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/candlemas",
+          "label": "Calendar — Candlemas / Presentation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-4",
+          "label": "Traditional Rosary — Joyful IV — Presentation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8163,9 +8923,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/christ-doctors",
+          "label": "Historia Salutis — The Finding of Jesus in the Temple (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/christ-doctors",
+          "label": "Scripture Connections — The Finding of Jesus in the Temple (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-5",
+          "label": "Traditional Rosary — Joyful V — Finding of Jesus in the Temple",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8189,9 +8959,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/christ-doctors",
+          "label": "Historia Salutis — The Finding of Jesus in the Temple (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/christ-doctors",
+          "label": "Scripture Connections — The Finding of Jesus in the Temple (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-5",
+          "label": "Traditional Rosary — Joyful V — Finding of Jesus in the Temple",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8215,9 +8995,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/scourging",
+          "label": "Historia Salutis — The Scourging at the Pillar",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/scourging",
+          "label": "Scripture Connections — The Scourging at the Pillar",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/holy-week/passion",
+          "label": "Calendar — Passion of Our Lord",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-2",
+          "label": "Traditional Rosary — Sorrowful II — Scourging",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8241,9 +9036,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/assumption",
+          "label": "Historia Salutis — Assumption of the Blessed Virgin Mary",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/assumption",
+          "label": "Scripture Connections — Assumption of the Blessed Virgin Mary",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/assumption",
+          "label": "Calendar — Assumption",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-4",
+          "label": "Traditional Rosary — Glorious IV — Assumption",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8267,9 +9077,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/assumption",
+          "label": "Historia Salutis — Assumption of the Blessed Virgin Mary",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/assumption",
+          "label": "Scripture Connections — Assumption of the Blessed Virgin Mary",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/assumption",
+          "label": "Calendar — Assumption",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-4",
+          "label": "Traditional Rosary — Glorious IV — Assumption",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8293,9 +9118,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/coronation-mary",
+          "label": "Historia Salutis — Coronation of the Blessed Virgin",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/coronation-mary",
+          "label": "Scripture Connections — Coronation of the Blessed Virgin",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/marian/coronation",
+          "label": "Marian Calendar — Coronation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-5",
+          "label": "Traditional Rosary — Glorious V — Coronation of Our Lady",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8363,6 +9203,21 @@
           "slot_id": "scripture/historia/john-baptist",
           "label": "Historia Salutis — the Forerunner",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "scripture/historia/john-baptist-preaching",
+          "label": "Historia Salutis — John the Baptist's Call to Repentance (Matthew 3)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/john-baptist-preaching",
+          "label": "Scripture Connections — John the Baptist's Call to Repentance (Matthew 3)",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/advent/forerunner",
+          "label": "Calendar — Advent and the Forerunner",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8386,9 +9241,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8464,9 +9334,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/baptism-christ",
+          "label": "Historia Salutis — Baptism of Christ (Matthew 3)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/baptism-christ",
+          "label": "Scripture Connections — Baptism of Christ (Matthew 3)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/baptism-christ",
+          "label": "Calendar — Baptism of Our Lord",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8516,9 +9396,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/raising-lazarus",
+          "label": "Historia Salutis — Raising of Lazarus (John 11)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/raising-lazarus",
+          "label": "Scripture Connections — Raising of Lazarus (John 11)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/passiontide/lazarus",
+          "label": "Calendar — Passiontide / Lazarus",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8542,9 +9432,64 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/carrying-cross",
+          "label": "Historia Salutis — Jesus Carries the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/carrying-cross",
+          "label": "Scripture Connections — Jesus Carries the Cross",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/good-friday",
+          "label": "Calendar — Good Friday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-4",
+          "label": "Traditional Rosary — Sorrowful IV — Carrying of the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/historia/resurrection",
+          "label": "Historia Salutis — Resurrection of Christ",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/resurrection",
+          "label": "Scripture Connections — Resurrection of Christ",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/easter",
+          "label": "Calendar — Easter",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-1",
+          "label": "Traditional Rosary — Glorious I — Resurrection",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-5",
+          "label": "Traditional Rosary — Sorrowful V — Crucifixion",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/12",
+          "label": "Stations of the Cross — XII, Jesus Dies on the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "mass-explorer/calvary-sacrifice",
+          "label": "Mass Explorer — Calvary and the Sacrifice of the Mass",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "stations/2",
+          "label": "Stations of the Cross — II, Jesus Takes Up His Cross",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8568,9 +9513,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8594,9 +9554,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8620,8 +9595,38 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/historia/creation-fall",
+          "label": "Historia Salutis — Creation, the Fall and expulsion from Eden",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/creation-fall",
+          "label": "Scripture Connections — Creation, the Fall and expulsion from Eden",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "covenants/adam",
+          "label": "Historia Salutis — Adam and the first covenant",
           "confidence": "exploratory"
         }
       ],
@@ -8646,9 +9651,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8672,9 +9692,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8698,9 +9733,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8724,9 +9774,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8750,9 +9815,44 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8776,9 +9876,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8802,9 +9917,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8828,9 +9958,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8854,9 +9999,44 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/historia/assumption",
+          "label": "Historia Salutis — Assumption of the Blessed Virgin Mary",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/assumption",
+          "label": "Scripture Connections — Assumption of the Blessed Virgin Mary",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/assumption",
+          "label": "Calendar — Assumption",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-4",
+          "label": "Traditional Rosary — Glorious IV — Assumption",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8880,9 +10060,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8906,9 +10101,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8932,9 +10142,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8958,9 +10183,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -8984,9 +10224,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/assumption",
+          "label": "Historia Salutis — Assumption of the Blessed Virgin Mary",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/assumption",
+          "label": "Scripture Connections — Assumption of the Blessed Virgin Mary",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/assumption",
+          "label": "Calendar — Assumption",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-4",
+          "label": "Traditional Rosary — Glorious IV — Assumption",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9010,9 +10265,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/assumption",
+          "label": "Historia Salutis — Assumption of the Blessed Virgin Mary",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/assumption",
+          "label": "Scripture Connections — Assumption of the Blessed Virgin Mary",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/assumption",
+          "label": "Calendar — Assumption",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-4",
+          "label": "Traditional Rosary — Glorious IV — Assumption",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9036,9 +10306,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/coronation-mary",
+          "label": "Historia Salutis — Coronation of the Blessed Virgin",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/coronation-mary",
+          "label": "Scripture Connections — Coronation of the Blessed Virgin",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/marian/coronation",
+          "label": "Marian Calendar — Coronation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-5",
+          "label": "Traditional Rosary — Glorious V — Coronation of Our Lady",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9062,8 +10347,33 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/coronation-mary",
+          "label": "Historia Salutis — Coronation of the Blessed Virgin",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/coronation-mary",
+          "label": "Scripture Connections — Coronation of the Blessed Virgin",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/marian/coronation",
+          "label": "Marian Calendar — Coronation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-5",
+          "label": "Traditional Rosary — Glorious V — Coronation of Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/trinity-sunday",
+          "label": "Calendar — Trinity Sunday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-trinity",
+          "label": "Prayer Library — Holy Trinity",
           "confidence": "exploratory"
         }
       ],
@@ -9088,9 +10398,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/coronation-mary",
+          "label": "Historia Salutis — Coronation of the Blessed Virgin",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/coronation-mary",
+          "label": "Scripture Connections — Coronation of the Blessed Virgin",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/marian/coronation",
+          "label": "Marian Calendar — Coronation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-5",
+          "label": "Traditional Rosary — Glorious V — Coronation of Our Lady",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9114,8 +10439,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "prayers/marian-devotion",
+          "label": "Prayer Library — Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/marian-art",
+          "label": "Rosary — general Marian contemplation",
           "confidence": "exploratory"
         }
       ],
@@ -9140,8 +10470,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "prayers/marian-devotion",
+          "label": "Prayer Library — Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/marian-art",
+          "label": "Rosary — general Marian contemplation",
           "confidence": "exploratory"
         }
       ],
@@ -9166,8 +10501,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "prayers/marian-devotion",
+          "label": "Prayer Library — Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/marian-art",
+          "label": "Rosary — general Marian contemplation",
           "confidence": "exploratory"
         }
       ],
@@ -9192,9 +10532,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/magi",
+          "label": "Historia Salutis — The Adoration of the Magi (Matthew 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/magi",
+          "label": "Scripture Connections — The Adoration of the Magi (Matthew 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/epiphany",
+          "label": "Calendar — Epiphany",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9218,9 +10568,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/magi",
+          "label": "Historia Salutis — The Adoration of the Magi (Matthew 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/magi",
+          "label": "Scripture Connections — The Adoration of the Magi (Matthew 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/epiphany",
+          "label": "Calendar — Epiphany",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9244,9 +10604,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/magi",
+          "label": "Historia Salutis — The Adoration of the Magi (Matthew 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/magi",
+          "label": "Scripture Connections — The Adoration of the Magi (Matthew 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/epiphany",
+          "label": "Calendar — Epiphany",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9270,9 +10640,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/magi",
+          "label": "Historia Salutis — The Adoration of the Magi (Matthew 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/magi",
+          "label": "Scripture Connections — The Adoration of the Magi (Matthew 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/epiphany",
+          "label": "Calendar — Epiphany",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9296,9 +10676,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9322,9 +10717,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9348,9 +10758,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9374,9 +10799,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9400,9 +10840,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9426,9 +10881,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9452,9 +10922,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9478,9 +10963,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9504,9 +11004,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9530,8 +11045,18 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/creation-fall",
+          "label": "Historia Salutis — Creation, the Fall and expulsion from Eden",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/creation-fall",
+          "label": "Scripture Connections — Creation, the Fall and expulsion from Eden",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "covenants/adam",
+          "label": "Historia Salutis — Adam and the first covenant",
           "confidence": "exploratory"
         }
       ],
@@ -9556,9 +11081,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/agony-garden",
+          "label": "Historia Salutis — Christ's Agony in Gethsemane",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/agony-garden",
+          "label": "Scripture Connections — Christ's Agony in Gethsemane",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/holy-week/gethsemane",
+          "label": "Calendar — Holy Week, Gethsemane",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-1",
+          "label": "Traditional Rosary — Sorrowful I — Agony in the Garden",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9582,9 +11122,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/burial",
+          "label": "Historia Salutis — Burial of Christ",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/burial",
+          "label": "Scripture Connections — Burial of Christ",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/holy-saturday",
+          "label": "Calendar — Holy Saturday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/14",
+          "label": "Stations of the Cross — XIV, Burial of Jesus",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9608,9 +11163,29 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/carrying-cross",
+          "label": "Historia Salutis — Jesus Carries the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/carrying-cross",
+          "label": "Scripture Connections — Jesus Carries the Cross",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/good-friday",
+          "label": "Calendar — Good Friday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-4",
+          "label": "Traditional Rosary — Sorrowful IV — Carrying of the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/2",
+          "label": "Stations of the Cross — II, Jesus Takes Up His Cross",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9634,8 +11209,23 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "calendar/good-friday",
+          "label": "Calendar — Good Friday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-5",
+          "label": "Traditional Rosary — Sorrowful V — Crucifixion",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/12",
+          "label": "Stations of the Cross — XII, Jesus Dies on the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "mass-explorer/calvary-sacrifice",
+          "label": "Mass Explorer — Calvary and the Sacrifice of the Mass",
           "confidence": "exploratory"
         }
       ],
@@ -9660,8 +11250,23 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "calendar/good-friday",
+          "label": "Calendar — Good Friday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-5",
+          "label": "Traditional Rosary — Sorrowful V — Crucifixion",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/12",
+          "label": "Stations of the Cross — XII, Jesus Dies on the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "mass-explorer/calvary-sacrifice",
+          "label": "Mass Explorer — Calvary and the Sacrifice of the Mass",
           "confidence": "exploratory"
         }
       ],
@@ -9686,8 +11291,23 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "calendar/good-friday",
+          "label": "Calendar — Good Friday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-5",
+          "label": "Traditional Rosary — Sorrowful V — Crucifixion",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/12",
+          "label": "Stations of the Cross — XII, Jesus Dies on the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "mass-explorer/calvary-sacrifice",
+          "label": "Mass Explorer — Calvary and the Sacrifice of the Mass",
           "confidence": "exploratory"
         }
       ],
@@ -9712,8 +11332,23 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "calendar/good-friday",
+          "label": "Calendar — Good Friday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-5",
+          "label": "Traditional Rosary — Sorrowful V — Crucifixion",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/12",
+          "label": "Stations of the Cross — XII, Jesus Dies on the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "mass-explorer/calvary-sacrifice",
+          "label": "Mass Explorer — Calvary and the Sacrifice of the Mass",
           "confidence": "exploratory"
         }
       ],
@@ -9738,8 +11373,23 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "calendar/good-friday",
+          "label": "Calendar — Good Friday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-5",
+          "label": "Traditional Rosary — Sorrowful V — Crucifixion",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/12",
+          "label": "Stations of the Cross — XII, Jesus Dies on the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "mass-explorer/calvary-sacrifice",
+          "label": "Mass Explorer — Calvary and the Sacrifice of the Mass",
           "confidence": "exploratory"
         }
       ],
@@ -9764,8 +11414,23 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "calendar/good-friday",
+          "label": "Calendar — Good Friday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-5",
+          "label": "Traditional Rosary — Sorrowful V — Crucifixion",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/12",
+          "label": "Stations of the Cross — XII, Jesus Dies on the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "mass-explorer/calvary-sacrifice",
+          "label": "Mass Explorer — Calvary and the Sacrifice of the Mass",
           "confidence": "exploratory"
         }
       ],
@@ -9798,6 +11463,16 @@
           "slot_id": "calendar/feast/peter-apostle",
           "label": "Liturgical Calendar — feast of St Peter",
           "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/historia/denial-peter",
+          "label": "Historia Salutis — Peter's Denial and Repentance",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/denial-peter",
+          "label": "Scripture Connections — Peter's Denial and Repentance",
+          "confidence": "exploratory"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9821,9 +11496,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/descent-cross",
+          "label": "Historia Salutis — Descent from the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/descent-cross",
+          "label": "Scripture Connections — Descent from the Cross",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/good-friday",
+          "label": "Calendar — Good Friday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/13",
+          "label": "Stations of the Cross — XIII, Jesus Taken Down",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9847,9 +11537,34 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "saints/profile/catherine-alexandria",
+          "label": "Saints Catalogue — St Catherine of Alexandria",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/catherine-alexandria",
+          "label": "Calendar — St Catherine of Alexandria",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9906,6 +11621,66 @@
           "slot_id": "scripture/historia/john-baptist",
           "label": "Historia Salutis — the Forerunner",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/marian-devotion",
+          "label": "Prayer Library — Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/marian-art",
+          "label": "Rosary — general Marian contemplation",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "saints/profile/lucy",
+          "label": "Saints Catalogue — St Lucy",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/lucy",
+          "label": "Calendar — St Lucy",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "saints/profile/agnes",
+          "label": "Saints Catalogue — St Agnes",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/agnes",
+          "label": "Calendar — St Agnes",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "saints/profile/catherine-alexandria",
+          "label": "Saints Catalogue — St Catherine of Alexandria",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/catherine-alexandria",
+          "label": "Calendar — St Catherine of Alexandria",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -9988,6 +11763,21 @@
           "slot_id": "scripture/historia/john-baptist",
           "label": "Historia Salutis — the Forerunner",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "scripture/historia/beheading-john",
+          "label": "Historia Salutis — Death of John the Baptist (Mark 6)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/beheading-john",
+          "label": "Scripture Connections — Death of John the Baptist (Mark 6)",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/martyrdom-john-baptist",
+          "label": "Calendar — Beheading of St John the Baptist",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -10055,6 +11845,16 @@
           "slot_id": "calendar/feast/matthew",
           "label": "Liturgical Calendar — feast of St Matthew",
           "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/historia/calling-matthew",
+          "label": "Historia Salutis — The Calling of Matthew (Matthew 9)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/calling-matthew",
+          "label": "Scripture Connections — The Calling of Matthew (Matthew 9)",
+          "confidence": "exploratory"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -10078,8 +11878,23 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "calendar/good-friday",
+          "label": "Calendar — Good Friday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-5",
+          "label": "Traditional Rosary — Sorrowful V — Crucifixion",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/12",
+          "label": "Stations of the Cross — XII, Jesus Dies on the Cross",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "mass-explorer/calvary-sacrifice",
+          "label": "Mass Explorer — Calvary and the Sacrifice of the Mass",
           "confidence": "exploratory"
         }
       ],
@@ -10112,6 +11927,16 @@
           "slot_id": "calendar/feast/peter-apostle",
           "label": "Liturgical Calendar — feast of St Peter",
           "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/historia/denial-peter",
+          "label": "Historia Salutis — Peter's Denial and Repentance",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/denial-peter",
+          "label": "Scripture Connections — Peter's Denial and Repentance",
+          "confidence": "exploratory"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -10135,8 +11960,8 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "saints/profile/francis-assisi",
+          "label": "Saints Catalogue — St Francis of Assisi",
           "confidence": "exploratory"
         }
       ],
@@ -10161,8 +11986,8 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "saints/profile/francis-assisi",
+          "label": "Saints Catalogue — St Francis of Assisi",
           "confidence": "exploratory"
         }
       ],
@@ -10205,6 +12030,21 @@
           "slot_id": "scripture/historia/john-baptist",
           "label": "Historia Salutis — the Forerunner",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "scripture/historia/john-baptist-preaching",
+          "label": "Historia Salutis — John the Baptist's Call to Repentance (Matthew 3)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/john-baptist-preaching",
+          "label": "Scripture Connections — John the Baptist's Call to Repentance (Matthew 3)",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/advent/forerunner",
+          "label": "Calendar — Advent and the Forerunner",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -10228,8 +12068,8 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "confession/penitence",
+          "label": "Confession — Penitence and conversion",
           "confidence": "exploratory"
         }
       ],
@@ -10357,8 +12197,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "saints/profile/dominic-guzman",
+          "label": "Saints Catalogue — St Dominic",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/dominic-guzman",
+          "label": "Calendar — St Dominic",
           "confidence": "exploratory"
         }
       ],
@@ -10383,8 +12228,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "adoration/eucharistic-miracles",
-          "label": "Adoration — Eucharistic miracles",
+          "slot_id": "saints/profile/anthony-abbot",
+          "label": "Saints Catalogue — St Anthony the Abbot",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/anthony-abbot",
+          "label": "Calendar — St Anthony the Abbot",
           "confidence": "exploratory"
         }
       ],
@@ -10419,8 +12269,33 @@
           "confidence": "strong"
         },
         {
-          "slot_id": "adoration/eucharistic-miracles",
-          "label": "Adoration — Eucharistic miracles",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "saints/profile/anthony-abbot",
+          "label": "Saints Catalogue — St Anthony the Abbot",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/anthony-abbot",
+          "label": "Calendar — St Anthony the Abbot",
           "confidence": "exploratory"
         }
       ],
@@ -10445,8 +12320,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "adoration/eucharistic-miracles",
-          "label": "Adoration — Eucharistic miracles",
+          "slot_id": "saints/profile/anthony-abbot",
+          "label": "Saints Catalogue — St Anthony the Abbot",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/anthony-abbot",
+          "label": "Calendar — St Anthony the Abbot",
           "confidence": "exploratory"
         }
       ],
@@ -10512,8 +12392,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "saints/profile/benedict-nursia",
+          "label": "Saints Catalogue — St Benedict",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/benedict-nursia",
+          "label": "Calendar — St Benedict",
           "confidence": "exploratory"
         }
       ],
@@ -10538,8 +12423,28 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "prayers/marian-devotion",
+          "label": "Prayer Library — Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/marian-art",
+          "label": "Rosary — general Marian contemplation",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "saints/profile/catherine-alexandria",
+          "label": "Saints Catalogue — St Catherine of Alexandria",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/catherine-alexandria",
+          "label": "Calendar — St Catherine of Alexandria",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "saints/profile/rose",
+          "label": "Saints Catalogue — St Rose",
           "confidence": "exploratory"
         }
       ],
@@ -10564,9 +12469,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/catherine-alexandria",
+          "label": "Saints Catalogue — St Catherine of Alexandria",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/catherine-alexandria",
+          "label": "Calendar — St Catherine of Alexandria",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -10590,9 +12500,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/catherine-alexandria",
+          "label": "Saints Catalogue — St Catherine of Alexandria",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/catherine-alexandria",
+          "label": "Calendar — St Catherine of Alexandria",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -10616,9 +12531,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/cecilia",
+          "label": "Saints Catalogue — St Cecilia",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/cecilia",
+          "label": "Calendar — St Cecilia",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -10642,8 +12562,8 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "saints/profile/francis-assisi",
+          "label": "Saints Catalogue — St Francis of Assisi",
           "confidence": "exploratory"
         }
       ],
@@ -10717,6 +12637,16 @@
           "slot_id": "scripture/historia/john-baptist",
           "label": "Historia Salutis — the Forerunner",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "saints/profile/lucy",
+          "label": "Saints Catalogue — St Lucy",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/lucy",
+          "label": "Calendar — St Lucy",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -10740,23 +12670,8 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "saints/profile/joseph",
-          "label": "Saints Catalogue — St Joseph",
-          "confidence": "strong"
-        },
-        {
-          "slot_id": "calendar/feast/joseph",
-          "label": "Liturgical Calendar — feast of St Joseph",
-          "confidence": "strong"
-        },
-        {
           "slot_id": "prayers/devotion/joseph",
           "label": "Prayer Library — St Joseph",
-          "confidence": "exploratory"
-        },
-        {
-          "slot_id": "novenas/joseph",
-          "label": "Novena — St Joseph",
           "confidence": "exploratory"
         },
         {
@@ -10765,8 +12680,8 @@
           "confidence": "strong"
         },
         {
-          "slot_id": "prayers/st-joseph",
-          "label": "Prayers to St Joseph",
+          "slot_id": "saints/profile/joseph-cupertino",
+          "label": "Saints Catalogue — St Joseph of Cupertino",
           "confidence": "strong"
         }
       ],
@@ -10791,9 +12706,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/lucy",
+          "label": "Saints Catalogue — St Lucy",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/lucy",
+          "label": "Calendar — St Lucy",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -10817,9 +12737,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/lucy",
+          "label": "Saints Catalogue — St Lucy",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/lucy",
+          "label": "Calendar — St Lucy",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -10843,9 +12768,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/lucy",
+          "label": "Saints Catalogue — St Lucy",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/lucy",
+          "label": "Calendar — St Lucy",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -10869,9 +12799,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/lucy",
+          "label": "Saints Catalogue — St Lucy",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/lucy",
+          "label": "Calendar — St Lucy",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -10941,9 +12876,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/nicholas-bari",
+          "label": "Saints Catalogue — St Nicholas of Myra",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/nicholas-bari",
+          "label": "Calendar — St Nicholas",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11078,6 +13018,16 @@
           "slot_id": "calendar/feast/philip",
           "label": "Liturgical Calendar — feast of St Philip",
           "confidence": "strong"
+        },
+        {
+          "slot_id": "saints/profile/philip-neri",
+          "label": "Saints Catalogue — St Philip Neri",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/philip-neri",
+          "label": "Calendar — St Philip Neri",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11101,9 +13051,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "saints/profile/sebastian",
+          "label": "Saints Catalogue — St Sebastian",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/sebastian",
+          "label": "Calendar — St Sebastian",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11127,9 +13082,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/nativity",
+          "label": "Historia Salutis — The Birth of Christ (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/nativity",
+          "label": "Scripture Connections — The Birth of Christ (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/christmas",
+          "label": "Calendar — Christmas",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-3",
+          "label": "Traditional Rosary — Joyful III — Nativity",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11153,8 +13123,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "prayers/marian-devotion",
+          "label": "Prayer Library — Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/marian-art",
+          "label": "Rosary — general Marian contemplation",
           "confidence": "exploratory"
         }
       ],
@@ -11179,8 +13154,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/bless-children",
+          "label": "Historia Salutis — Jesus Blessing the Children (Mark 10)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/bless-children",
+          "label": "Scripture Connections — Jesus Blessing the Children (Mark 10)",
           "confidence": "exploratory"
         }
       ],
@@ -11205,9 +13185,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/magi",
+          "label": "Historia Salutis — The Adoration of the Magi (Matthew 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/magi",
+          "label": "Scripture Connections — The Adoration of the Magi (Matthew 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/epiphany",
+          "label": "Calendar — Epiphany",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11231,9 +13221,19 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/christ-doctors",
+          "label": "Historia Salutis — The Finding of Jesus in the Temple (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/christ-doctors",
+          "label": "Scripture Connections — The Finding of Jesus in the Temple (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-5",
+          "label": "Traditional Rosary — Joyful V — Finding of Jesus in the Temple",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11270,6 +13270,16 @@
           "slot_id": "scripture/historia/john-baptist",
           "label": "Historia Salutis — the Forerunner",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/holy-family",
+          "label": "Calendar — Holy Family",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-family",
+          "label": "Prayer Library — Holy Family",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11293,9 +13303,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "calendar/holy-family",
+          "label": "Calendar — Holy Family",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-family",
+          "label": "Prayer Library — Holy Family",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11319,9 +13334,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "calendar/holy-family",
+          "label": "Calendar — Holy Family",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-family",
+          "label": "Prayer Library — Holy Family",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11345,9 +13365,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "calendar/holy-family",
+          "label": "Calendar — Holy Family",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-family",
+          "label": "Prayer Library — Holy Family",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11371,9 +13396,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "calendar/holy-family",
+          "label": "Calendar — Holy Family",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-family",
+          "label": "Prayer Library — Holy Family",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11397,9 +13427,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "calendar/holy-family",
+          "label": "Calendar — Holy Family",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-family",
+          "label": "Prayer Library — Holy Family",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11423,9 +13458,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "calendar/holy-family",
+          "label": "Calendar — Holy Family",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-family",
+          "label": "Prayer Library — Holy Family",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11475,9 +13515,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/presentation",
+          "label": "Historia Salutis — Presentation of Our Lord (Luke 2)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/presentation",
+          "label": "Scripture Connections — Presentation of Our Lord (Luke 2)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/candlemas",
+          "label": "Calendar — Candlemas / Presentation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-4",
+          "label": "Traditional Rosary — Joyful IV — Presentation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11501,8 +13556,8 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "confession/penitence",
+          "label": "Confession — Penitence and conversion",
           "confidence": "exploratory"
         }
       ],
@@ -11527,9 +13582,14 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
-          "confidence": "exploratory"
+          "slot_id": "calendar/holy-family",
+          "label": "Calendar — Holy Family",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-family",
+          "label": "Prayer Library — Holy Family",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11553,9 +13613,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/annunciation",
+          "label": "Historia Salutis — The Annunciation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/annunciation",
+          "label": "Scripture Connections — The Annunciation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/annunciation",
+          "label": "Calendar — Annunciation (25 March)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-1",
+          "label": "Traditional Rosary — Joyful I — Annunciation",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11579,9 +13654,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/agony-garden",
+          "label": "Historia Salutis — Christ's Agony in Gethsemane",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/agony-garden",
+          "label": "Scripture Connections — Christ's Agony in Gethsemane",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/holy-week/gethsemane",
+          "label": "Calendar — Holy Week, Gethsemane",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/sorrowful-1",
+          "label": "Traditional Rosary — Sorrowful I — Agony in the Garden",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11605,8 +13695,28 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/last-supper",
+          "label": "Historia Salutis — The Last Supper",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/last-supper",
+          "label": "Scripture Connections — The Last Supper",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/holy-thursday",
+          "label": "Calendar — Maundy Thursday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "mass-explorer/eucharist-institution",
+          "label": "Mass Explorer — Institution of the Holy Eucharist",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "adoration/real-presence",
+          "label": "Adoration — Mystery of the Eucharist",
           "confidence": "exploratory"
         }
       ],
@@ -11631,9 +13741,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/burial",
+          "label": "Historia Salutis — Burial of Christ",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/burial",
+          "label": "Scripture Connections — Burial of Christ",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/holy-saturday",
+          "label": "Calendar — Holy Saturday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "stations/14",
+          "label": "Stations of the Cross — XIV, Burial of Jesus",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11657,9 +13782,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/resurrection",
+          "label": "Historia Salutis — Resurrection of Christ",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/resurrection",
+          "label": "Scripture Connections — Resurrection of Christ",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/easter",
+          "label": "Calendar — Easter",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-1",
+          "label": "Traditional Rosary — Glorious I — Resurrection",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11683,9 +13823,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/ascension",
+          "label": "Historia Salutis — Ascension of Our Lord",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/ascension",
+          "label": "Scripture Connections — Ascension of Our Lord",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/ascension",
+          "label": "Calendar — Ascension Thursday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-2",
+          "label": "Traditional Rosary — Glorious II — Ascension",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11709,9 +13864,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/pentecost",
+          "label": "Historia Salutis — The Descent of the Holy Ghost",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/pentecost",
+          "label": "Scripture Connections — The Descent of the Holy Ghost",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/pentecost",
+          "label": "Calendar — Pentecost",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-3",
+          "label": "Traditional Rosary — Glorious III — Pentecost",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11735,8 +13905,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "calendar/trinity-sunday",
+          "label": "Calendar — Trinity Sunday",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "prayers/holy-trinity",
+          "label": "Prayer Library — Holy Trinity",
           "confidence": "exploratory"
         }
       ],
@@ -11774,6 +13949,21 @@
           "slot_id": "scripture/historia/john-baptist",
           "label": "Historia Salutis — the Forerunner",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "scripture/historia/beheading-john",
+          "label": "Historia Salutis — Death of John the Baptist (Mark 6)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/beheading-john",
+          "label": "Scripture Connections — Death of John the Baptist (Mark 6)",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/martyrdom-john-baptist",
+          "label": "Calendar — Beheading of St John the Baptist",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11823,9 +14013,44 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "adoration/eucharistic-miracles",
-          "label": "Adoration — Eucharistic miracles",
+          "slot_id": "scripture/historia/visitation",
+          "label": "Historia Salutis — The Visitation (Luke 1)",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/visitation",
+          "label": "Scripture Connections — The Visitation (Luke 1)",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/visitation",
+          "label": "Calendar — Visitation of Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/joyful-2",
+          "label": "Traditional Rosary — Joyful II — Visitation",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "saints/profile/anthony-abbot",
+          "label": "Saints Catalogue — St Anthony the Abbot",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/anthony-abbot",
+          "label": "Calendar — St Anthony the Abbot",
+          "confidence": "exploratory"
+        },
+        {
+          "slot_id": "saints/profile/nicholas-bari",
+          "label": "Saints Catalogue — St Nicholas of Myra",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "calendar/feast/nicholas-bari",
+          "label": "Calendar — St Nicholas",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11849,9 +14074,24 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "scripture/historia/assumption",
+          "label": "Historia Salutis — Assumption of the Blessed Virgin Mary",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "scripture/parallels/assumption",
+          "label": "Scripture Connections — Assumption of the Blessed Virgin Mary",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/assumption",
+          "label": "Calendar — Assumption",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/mystery/glorious-4",
+          "label": "Traditional Rosary — Glorious IV — Assumption",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11875,8 +14115,13 @@
       "source_missing_or_unsupported": null,
       "placement_suggestions": [
         {
-          "slot_id": "art/library/unassigned",
-          "label": "Sacred Art Library — unassigned collection",
+          "slot_id": "prayers/marian-devotion",
+          "label": "Prayer Library — Our Lady",
+          "confidence": "strong"
+        },
+        {
+          "slot_id": "rosary/marian-art",
+          "label": "Rosary — general Marian contemplation",
           "confidence": "exploratory"
         }
       ],
@@ -11909,6 +14154,11 @@
           "slot_id": "prayers/immaculate-heart",
           "label": "Devotions — Immaculate Heart of Mary",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/immaculate-conception",
+          "label": "Calendar — Immaculate Conception (8 December)",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
@@ -11940,16 +14190,21 @@
           "slot_id": "prayers/immaculate-heart",
           "label": "Devotions — Immaculate Heart of Mary",
           "confidence": "exploratory"
+        },
+        {
+          "slot_id": "calendar/immaculate-conception",
+          "label": "Calendar — Immaculate Conception (8 December)",
+          "confidence": "strong"
         }
       ],
       "photo_app_rights_cleared": false,
       "user_decision_preselected": false
     }
   ],
-  "review_private_draft_release_tag": "ao-art-review-b53-all383-placements-40108409238-1",
-  "review_private_draft_release_url": "https://github.com/Fulcanelli13/ad-orientem/releases/tag/untagged-97a9fb2cb9ae95acf336",
+  "review_private_draft_release_tag": "ao-art-review-b53-all383-placements-40109058580-1",
+  "review_private_draft_release_url": "https://github.com/Fulcanelli13/ad-orientem/releases/tag/untagged-a4961d6c430a366e13bf",
   "review_file_name": "sacred-art-b53-review-all383-placement-offline.html",
-  "review_HTML_SHA256": "17cd8ea5d1769dafa31acad02bd828c7c676e6ebec921bbb845c36f305d679d4",
+  "review_HTML_SHA256": "020107c06d846aa855f9976d767e7e977962bd1ccd817e2290b5cc97ea98a49d",
   "remote_re_read_verification": true,
   "private_100_review_file_committed_to_public_git": false
 }
