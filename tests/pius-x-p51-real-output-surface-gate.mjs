@@ -42,6 +42,23 @@ for(const row of observed){
  assert.equal(result.ok,false);
  assert.equal(result.reason,row.expect);
 }
+// A sanity guard must also preserve the existing, manually drafted P22 EN/FR
+// evidence cases. Passing here is a surface check, NOT a certified translation.
+const specimens=JSON.parse(readFileSync(
+ 'previews/pius-x-study/evidence/pius-x-p22-bilingual-claim-acceptance-pilot-20261024.v1.json','utf8'));
+assert.equal(specimens.cases.length,11);
+let existingSpecimensNotBlocked=0;
+for(const c of specimens.cases)for(const language of ['en','fr']){
+ const v=selectEvidence(store,{chapterId:c.chapterId,nodeId:c.nodeId,
+  language,question:c.question[language]});
+ assert.equal(v.status,'eligible');
+ const surface=auditDraftSurface({text:c.replySpecimen[language],language,evidence:v.evidence});
+ assert.equal(surface.ok,true,
+  'Previously drafted source-limited '+language+' specimen '+c.nodeId+' held: '+surface.reason);
+ existingSpecimensNotBlocked++;
+}
+assert.equal(existingSpecimensNotBlocked,22);
+
 const englishInFrench="The office was not received lightly. The letter speaks of tears and prayers before a heavy charge, and of help sought from God.";
 assert.equal(auditDraftSurface({text:englishInFrench,language:'fr',
  evidence:evidenceFor(0,'fr')}).reason,'reply_not_in_selected_language');
@@ -89,7 +106,7 @@ assert.equal(good.publishingApproved,false);
 assert.equal(verifyCalls,before+1);
 assert.equal(store.data.counts.allNodes,423);
 console.log('PASS SPX_P51_REAL_3B_OUTPUT_REGRESSION '+JSON.stringify({
- observedP50FalseAcceptsReclassified:3,wrongFrenchLanguageHeld:true,
+ observedP50FalseAcceptsReclassified:3,existingP22BilingualSpecimensNotBlocked:22,wrongFrenchLanguageHeld:true,
  actualModelInferenceInThisTest:false,
  goodFrenchControlPasses:true,
  verificationCallsForRejectedOutputs:0,
