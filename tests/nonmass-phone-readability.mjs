@@ -42,6 +42,9 @@ try{
      null,{timeout:35000});
    await page.waitForFunction(()=>!document.getElementById("ao-cinema-boot"),
      null,{timeout:18000});
+   // One screenshot of the real Today shell, never a synthetic composition.
+   if(width===390||width===768)
+     await page.screenshot({path:resolve(out,"today-"+width+".png"),fullPage:false,animations:"disabled"});
    await page.locator('[data-ao-app-surface="learn"]').click();
    await page.locator("#ao-learn-modular-root .aoLearnFamilyGrid").waitFor({state:"visible",timeout:18000});
    const formation=await page.evaluate(()=>{
@@ -122,6 +125,42 @@ try{
    assert.ok(prayer.scrollWidth<=prayer.innerWidth+1,"Prayer overflow at "+width+"px");
    console.log("PASS "+width+"px: "+formation.cards+" formation subjects, "+
      prayer.tiles+" Prayer features, "+prayer.familyDoors+" retained families, no viewport overflow");
+   // Cross-surface quiet-frame QA. Real browser snapshots and computed style
+   // values, with navigation still owned by AO_APP_SHELL_V1. Skip duplicate
+   // captures at narrow widths (Formation and Pray are covered at all sizes).
+   if(width===390||width===768){
+     const openedSettings=await page.evaluate(async()=>await window.AO_APP_SHELL_V1.navigate("settings"));
+     assert.equal(openedSettings?.ok,true,"Settings utility overlay not routable");
+     await page.locator("#ao-settings-modular-root .aoSetRow").first().waitFor({state:"visible",timeout:15000});
+     const settings=await page.evaluate(()=>{
+       const r=document.querySelector("#ao-settings-modular-root");
+       const row=r.querySelector(".aoSetRow"),header=r.querySelector(".aoSetTop");
+       return {bg:getComputedStyle(r).backgroundColor,header:getComputedStyle(header).backgroundColor,
+         rowHeight:row.getBoundingClientRect().height,
+         rowFont:parseFloat(getComputedStyle(row.querySelector(".aoSetRowText b")).fontSize),
+         scroll:document.documentElement.scrollWidth,viewport:innerWidth};
+     });
+     assert.equal(settings.bg,"rgb(11, 15, 19)","Settings missing shared quiet-frame background");
+     assert.equal(settings.header,settings.bg,"Settings header drifted from quiet-frame palette");
+     assert.ok(settings.rowHeight>=64&&settings.rowFont>=16,"Settings touch rows or labels are undersized: "+JSON.stringify(settings));
+     assert.ok(settings.scroll<=settings.viewport+1,"Settings horizontal overflow: "+JSON.stringify(settings));
+     await page.screenshot({path:resolve(out,"settings-"+width+".png"),fullPage:false,animations:"disabled"});
+
+     const openedExplore=await page.evaluate(async()=>await window.AO_APP_SHELL_V1.navigate("find"));
+     assert.equal(openedExplore?.ok,true,"Explore destination not routable");
+     await page.locator("#ao-find-modular-root .aoHeritageSurface>.aoFindHeader").waitFor({state:"visible",timeout:60000});
+     const explore=await page.evaluate(()=>{
+       const header=document.querySelector("#ao-find-modular-root .aoHeritageSurface>.aoFindHeader");
+       const r=header.getBoundingClientRect();
+       return {bg:getComputedStyle(header).backgroundColor,height:r.height,width:r.width,
+         scroll:document.documentElement.scrollWidth,viewport:innerWidth};
+     });
+     assert.equal(explore.bg,"rgb(11, 15, 19)","Explore default map header missing quiet-frame palette");
+     assert.ok(explore.height>=44&&explore.width>=width-4,"Explore map header clipped: "+JSON.stringify(explore));
+     assert.ok(explore.scroll<=explore.viewport+1,"Explore horizontal overflow: "+JSON.stringify(explore));
+     await page.screenshot({path:resolve(out,"explore-"+width+".png"),fullPage:false,animations:"disabled"});
+     console.log("PASS "+width+"px quiet frame Settings/Explore chrome and screenshots");
+   }
    assert.equal(errors.length,0,"Browser errors at "+width+"px: "+errors.slice(0,3).join("; "));
   }finally{await context.close();}
  }
