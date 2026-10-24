@@ -113,8 +113,8 @@ requireOnce(' for(const flag of r.reviewFlags)element("span",flag.replaceAll("_"
  ' element("p","Recommended action: "+finding.requestedRevisionOrDisposition,review);'+
  ' if(finding.sourceBoundaryContaminationQids.length)element("p","Warning: the raw digitization includes a following-section heading near "+finding.sourceBoundaryContaminationQids.join(", ")+"; do not mistake it for the answer.",review);'
 );
-requireOnce('sourcePacketSchema:data.schema,exportedAt:new Date().toISOString()',
- 'sourcePacketSchema:data.schema,exportedAt:new Date().toISOString()');
+requireOnce('a.download="SPX_P34_Provisional_Annotations.json"',
+ 'a.download="SPX_P35_Provisional_Annotations.json"');
 const baked=JSON.stringify(report).replace(/</g,'\\u003c');
 requireOnce('__DOCUMENTARY_REVIEW_DATA__',baked);
 const htmlPath=root+'SPX_P35_35_Editorial_Italian_Review.html';
