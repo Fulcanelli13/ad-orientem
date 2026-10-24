@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 356,
+    "places": 359,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 97,
+    "places_without_direct_claim": 100,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -64,6 +64,7 @@
       "place:IN:st-thomas-mount-shrine-chennai",
       "place:IS:christ-king-cathedral-reykjavik",
       "place:IT:basilica-santa-maria-maggiore-bergamo",
+      "place:IT:santuario-beata-vergine-neve-foppolo",
       "place:IT:santuario-san-paolo-della-croce-ovada",
       "place:JM:holy-trinity-cathedral-kingston",
       "place:JO:memorial-moses-mount-nebo",
@@ -91,6 +92,7 @@
       "place:MW:maula-cathedral-lilongwe",
       "place:MY:st-jude-church-rawang",
       "place:NC:cathedrale-saint-joseph-noumea",
+      "place:NI:ermita-guadalupe-matagalpa",
       "place:NO:st-olav-cathedral-oslo",
       "place:NO:st-olav-cathedral-trondheim",
       "place:NO:var-frue-cathedral-tromso",
@@ -118,6 +120,7 @@
       "place:TO:st-anthony-padua-basilica-nukualofa",
       "place:TZ:st-joseph-cathedral-dar-es-salaam",
       "place:US:baltimore-basilica-assumption",
+      "place:US:sacred-heart-shrine-hales-corners",
       "place:UY:santuario-nuestra-senora-del-carmen-carmelo",
       "place:UZ:sacred-heart-cathedral-tashkent",
       "place:VC:assumption-cathedral-kingstown",
@@ -3084,6 +3087,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IT:santuario-beata-vergine-neve-foppolo",
+      "display_name": "Santuario della Beata Vergine della Neve, Foppolo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IT:santuario-san-paolo-della-croce-ovada",
       "display_name": "Santuario di San Paolo della Croce, Ovada",
       "record_ids": {},
@@ -3611,6 +3620,12 @@
           "apparition:NI:cuapa"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:NI:ermita-guadalupe-matagalpa",
+      "display_name": "Ermita de Guadalupe, Matagalpa",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -4544,6 +4559,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:US:sacred-heart-shrine-hales-corners",
+      "display_name": "Sacred Heart Shrine, Hales Corners",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:US:seton-emmitsburg",
       "display_name": "The National Shrine of Saint Elizabeth Ann Seton",
       "record_ids": {
@@ -4982,5 +5003,20 @@
       "candidate:SG-INV-0530"
     ],
     "rule": "Source-owned physical Catholic identities independently mapped; preserve original inventory's conflated/unattested shrine titles as 16 research holds; no photo, 1962 service, approved editorial claims or entrance implication."
+  },
+  "georeference_tranche_20261024_p18": {
+    "release": "P18",
+    "release_manifest": "data/geography/research/sacred-places-p18-three-site-release.v1.json",
+    "new_sites": [
+      "place:US:sacred-heart-shrine-hales-corners",
+      "place:NI:ermita-guadalupe-matagalpa",
+      "place:IT:santuario-beata-vergine-neve-foppolo"
+    ],
+    "research_context": [
+      "candidate:SG-INV-0402",
+      "candidate:SG-INV-0456",
+      "candidate:SG-INV-0071"
+    ],
+    "rule": "Catholic archdiocese/diocese or original national governmental identity and independently sourced Plus Code/OSM site. The original three unverified shrine title conflations remain separate research holds. Explicit no unsupported Mass, image, relic, shrine-owner or door implications."
   }
 }
