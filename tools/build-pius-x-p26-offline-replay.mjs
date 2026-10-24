@@ -247,8 +247,8 @@ for(const sequence of voiceDocument.sequences){
    const w=originalPilotWitnesses.get(id);
    assert(licensed.has(id)&&w&&w.speaker==='PIUS_X_AUTHOR',
      'Voice comparison borrowed an unlicensed or non-papal witness '+id);
-   assert(w.locus&&w.text?.length>10&&w.sourceUrl===undefined);
-   return {id,text:w.text,locus:w.locus,originalLanguage:'la',speaker:w.speaker,
+   assert(w.locus&&(w.latin||w.text)?.length>10);
+   return {id,text:w.latin||w.text,locus:w.locus,originalLanguage:'la',speaker:w.speaker,
      sourceUrl:originalPilotAnnex.document.sites.la||originalPilotAnnex.document.sites.original};
   });
   row.voicePreview??={};
