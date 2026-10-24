@@ -1,0 +1,67 @@
+name: B30 recover six exact historical selected artworks with independent draft archive
+on:
+  push:
+    branches: [research/sacred-art-b30-selected-six-20261024]
+    paths: [.github/workflows/ao-art-b30-six-exact-selected.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b30-six-selected-recovery-once
+  cancel-in-progress: false
+jobs:
+  selected-six:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b30-selected-six-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install only the image decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Assert all six frozen source identities are research-only
+        run: |
+          python -m py_compile scripts/research/sacred_art_b30_recover_six.py scripts/research/sacred_art_release_archive_gate.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('data/research/sacred-art-b29-p0-64-all-81-photo-variants.json').read_text())
+          assert len(data['rows'])==64 and data['photo_variants']==81
+          assert data['approved_publication_count']==0 and data['rights_verification_required']
+          PY
+      - name: Download only exact frozen selected byte-hashes after current file licence check
+        run: python scripts/research/sacred_art_b30_recover_six.py
+      - name: Compulsory unpublished GitHub Release transfer and remote SHA verification
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py \
+            --wave b30-six-selected --source-dir artifacts/b30-selected-six
+      - name: Commit compact audit, never image binaries or publication approvals
+        run: |
+          set -euo pipefail
+          cp artifacts/b30-selected-six/Acquisition_results.csv data/research/sacred-art-b30-six-selected-acquisition.csv
+          cp artifacts/b30-selected-six/Acquisition_summary.json data/research/sacred-art-b30-six-selected-acquisition.summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b30-six-selected-acquisition*
+          git commit -m 'research: B30 exact-selected six SHA evidence and persisted research-only archives'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b30-selected-six-20261024
+            git rebase origin/research/sacred-art-b30-selected-six-20261024
+            git push origin HEAD:research/sacred-art-b30-selected-six-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Preserve compact audit as downloadable Actions report
+        uses: actions/upload-artifact@v4
+        with:
+          name: b30-six-exact-selected-audit
+          path: |
+            artifacts/b30-selected-six/Acquisition_results.csv
+            artifacts/b30-selected-six/Acquisition_summary.json
+          retention-days: 30
+          if-no-files-found: error
