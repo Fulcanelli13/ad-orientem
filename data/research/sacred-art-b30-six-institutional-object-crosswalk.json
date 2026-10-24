@@ -1,0 +1,88 @@
+{
+  "schema": "AO_B30_SIX_SELECTED_INSTITUTIONAL_OBJECT_CROSSWALK_V1",
+  "evidence_scope": "Independent institutional title/artist/accession corroboration against exact existing Commons/WGA historically selected file identities; no photographic reuse permission or editorial approval implied",
+  "verified_object_records": 6,
+  "publication_approvals": 0,
+  "editorial_approvals": 0,
+  "source_workflow_run": 40072604805,
+  "files": [
+    {
+      "artwork_id": "ART-uido-eni-aint-ary-agdalene",
+      "verified_object_title": "Guido Reni — The Penitent Magdalene",
+      "institution": "Walters Art Museum",
+      "object_identifier": "37.2631",
+      "authority_url": "https://art.thewalters.org/object/37.2631/",
+      "identity_evidence": "INSTITUTION_OBJECT_ID_AND_COMMONS_EXACT_FILE_SOURCE_CORRELATED",
+      "status_note": "The exact historical file depicts The Penitent Magdalene at Walters; Reni painted multiple Magdalene works. Preserve the approved ID but append this object identity, not merely the generic title.",
+      "source_file_byte_verified": true,
+      "source_file_publication_rights_approved": false,
+      "editorial_approval_created": false,
+      "previous_frozen_decision_must_remain_unchanged": true
+    },
+    {
+      "artwork_id": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+      "verified_object_title": "Jean-Léon Gérôme — Siècle d’Auguste : naissance de N.-S. Jésus-Christ",
+      "institution": "Musée de Picardie / Musée d’Orsay",
+      "object_identifier": "RF 1983 92",
+      "authority_url": "https://www.amiens.fr/Vivre-a-Amiens/Culture-Patrimoine/Etablissements-culturels/Musee-de-Picardie/Collections/XIX/Notices/Notice-Jean-Leon-Gerome-Siecle-d-Auguste",
+      "identity_evidence": "INSTITUTION_TITLE_ARTIST_INVENTORY_AND_COMMONS_FILE_CORRELATED",
+      "status_note": "Historically frozen IMAGE_REPLACEMENT_HOLD remains in force; photographic reuse/attribution not certified by this match.",
+      "source_file_byte_verified": true,
+      "source_file_publication_rights_approved": false,
+      "editorial_approval_created": false,
+      "previous_frozen_decision_must_remain_unchanged": true
+    },
+    {
+      "artwork_id": "ART-ean-estout-entecost",
+      "verified_object_title": "Jean II Restout — La Pentecôte",
+      "institution": "Musée du Louvre",
+      "object_identifier": "INV 20303",
+      "authority_url": "https://collections.louvre.fr/en/ark:/53355/cl010062538",
+      "identity_evidence": "INSTITUTION_TITLE_ARTIST_INVENTORY_AND_COMMONS_WGA_CORRELATED",
+      "status_note": "Existing Commons/WGA rendition is low resolution (1240 x 730); institutional photographic rights must be assessed separately.",
+      "source_file_byte_verified": true,
+      "source_file_publication_rights_approved": false,
+      "editorial_approval_created": false,
+      "previous_frozen_decision_must_remain_unchanged": true
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+      "verified_object_title": "Giandomenico Tiepolo — Via Crucis II, Jesus Carries the Cross",
+      "institution": "Chiesa di San Polo / Chorus Venezia",
+      "object_identifier": "Via Crucis II",
+      "authority_url": "https://chorusvenezia.org/en/visita/church-of-san-polo/",
+      "identity_evidence": "INSTITUTION_LOCATION_CYCLE_AND_STATION_TITLE_CORRELATED",
+      "status_note": "Do not mix up station II (carrying cross) with VIII (pious women), despite misleading variants in earlier gallery.",
+      "source_file_byte_verified": true,
+      "source_file_publication_rights_approved": false,
+      "editorial_approval_created": false,
+      "previous_frozen_decision_must_remain_unchanged": true
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
+      "verified_object_title": "Giandomenico Tiepolo — Via Crucis IV, Jesus Meets His Mother",
+      "institution": "Chiesa di San Polo / Chorus Venezia",
+      "object_identifier": "Via Crucis IV",
+      "authority_url": "https://chorusvenezia.org/en/visita/via-crucis-jesus-encounters-the-mother/",
+      "identity_evidence": "INSTITUTION_LOCATION_CYCLE_AND_STATION_TITLE_CORRELATED",
+      "status_note": "Do not mix up station IV with VIII (pious women), despite misleading variants in earlier gallery.",
+      "source_file_byte_verified": true,
+      "source_file_publication_rights_approved": false,
+      "editorial_approval_created": false,
+      "previous_frozen_decision_must_remain_unchanged": true
+    },
+    {
+      "artwork_id": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "verified_object_title": "Giovanni Lanfranco — The Miracle of the Loaves and Fishes",
+      "institution": "National Gallery of Ireland",
+      "object_identifier": "NGI.72",
+      "authority_url": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes",
+      "identity_evidence": "INSTITUTION_OBJECT_ID_AND_COMMONS_WGA_TITLE_CORRELATED",
+      "status_note": "Existing Commons/WGA rendition low resolution (1285 x 683); original museum photography reuse permission separate.",
+      "source_file_byte_verified": true,
+      "source_file_publication_rights_approved": false,
+      "editorial_approval_created": false,
+      "previous_frozen_decision_must_remain_unchanged": true
+    }
+  ]
+}
