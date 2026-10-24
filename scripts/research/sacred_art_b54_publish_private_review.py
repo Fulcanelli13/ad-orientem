@@ -60,8 +60,8 @@ def main():
     print("B54_PRIVATE_REVIEW_VERIFIED",json.dumps({
       "release":remote["url"],"tag":tag,"name":HTML.name,
       "bytes":HTML.stat().st_size,"sha256":sha(HTML),
-      "verified_images":j["images_actually_embedded_and_SHA_verified"],
-      "missing_images":j["cases_without_displayable_image"],
-      "placements":j["total_placement_proposals"]
+      "verified_images":j["photos_exactly_preserved_from_B53_rehash"],
+      "missing_images":j["missing_source_photos"],
+      "placements":j["previous_placement_count"]
     }),flush=True)
 if __name__=="__main__":main()
