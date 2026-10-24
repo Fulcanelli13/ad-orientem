@@ -42,9 +42,24 @@ try{
      null,{timeout:35000});
    await page.waitForFunction(()=>!document.getElementById("ao-cinema-boot"),
      null,{timeout:18000});
-   // One screenshot of the real Today shell, never a synthetic composition.
-   if(width===390||width===768||width===1280)
+   // Artwork can resolve after shell boot. Distinguish approved painting,
+   // a legitimate no-art day, and the remote resolver's transient placeholder.
+   if(width===390||width===768||width===1280){
+     if(width===390)await page.waitForTimeout(7500);
+     const artwork=await page.evaluate(()=>{
+       const hero=document.querySelector(".homeScreen .aoTodayV2Frontispiece");
+       const slot=hero?.querySelector("[data-ao-home-art-slot]");
+       const image=slot?.querySelector("img");
+       const text=(slot?.innerText||"").trim().slice(0,180);
+       return {missing:hero?.classList.contains("aoTodayV2ArtMissing"),
+         text,imageSrc:image?.getAttribute("src")||null,
+         imageLoaded:Boolean(image?.complete&&image?.naturalWidth>0),
+         media:slot?.querySelectorAll("img,picture source,video[poster],canvas").length||0,
+         markup:(slot?.innerHTML||"").slice(0,500)};
+     });
+     console.log("QUIET_TODAY_ART "+width+"px "+JSON.stringify(artwork));
      await page.screenshot({path:resolve(out,"today-"+width+".png"),fullPage:false,animations:"disabled"});
+   }
    await page.locator('[data-ao-app-surface="learn"]').click();
    await page.locator("#ao-learn-modular-root .aoLearnFamilyGrid").waitFor({state:"visible",timeout:18000});
    const formation=await page.evaluate(()=>{
@@ -190,6 +205,21 @@ try{
      assert.equal(explore.bg,"rgb(11, 15, 19)","Explore default map header missing quiet-frame palette");
      assert.ok(explore.height>=44&&explore.width>=width-4,"Explore map header clipped: "+JSON.stringify(explore));
      assert.ok(explore.scroll<=explore.viewport+1,"Explore horizontal overflow: "+JSON.stringify(explore));
+     // The third-party MapLibre module/style are independent of directory
+     // data and may fail in CI. Capture the *settled* map, not a blank loader.
+     if(width===390)await page.waitForTimeout(13000);
+     const mapState=await page.evaluate(()=>{
+       const el=document.querySelector("#ao-find-modular-root .aoHeritageSurface [data-find-map]");
+       const canvas=el?.querySelector("canvas.maplibregl-canvas");
+       const fallback=el?.querySelector(".aoExploreMapLoading,.aoFindMapFallback");
+       return {state:el?.dataset.aoMapState||null,
+         canvas:canvas?{width:canvas.width,height:canvas.height}:null,
+         fallback:(fallback?.innerText||"").trim().slice(0,240),
+         feedbackVisible:Boolean(fallback&&getComputedStyle(fallback).display!=="none"),
+         html:(el?.innerHTML||"").slice(0,280)};
+     });
+     console.log("QUIET_EXPLORE_MAP "+width+"px "+JSON.stringify(mapState));
+     if(width===390)assert.notEqual(mapState.state,"loading","Explore map still silently loading after watchdog interval");
      await page.screenshot({path:resolve(out,"explore-"+width+".png"),fullPage:false,animations:"disabled"});
      if(width===390){
        // The actual French setting, rather than browser-locale emulation.
