@@ -33,7 +33,7 @@ for(let q=1;q<=433;q++){
  assert(en.get(q).source_file_url.startsWith('https://github.com/'));
  assert(it.get(q).italianSourceFileUrl.startsWith('https://github.com/'));
 }
-const stop=new Set('a an and are as at be been by can could did do does for from have how i in into is it its me my of on or our the their there these this to us was were what when where which who whom why with would you your catholic church god jesus christ mean means meaning explain please tell'.split(' '));
+const stop=new Set('a an and are as at be been by can could did do does for from have how i in into is it its me my of on or our the their there these this to us was were what when where which who whom why with would you your catholic church god jesus christ mean means meaning explain please tell after became must make perform that each know certain difference between may someone everyone merely only toward'.split(' '));
 const tokens=value=>new Set(
  String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()
  .replace(/[^a-z0-9]+/g,' ').split(/\s+/)
@@ -79,7 +79,25 @@ for(const c of corpus.chapters){
   const source=node.source?.url?node.source:c.source;
   const loc=source?.locus||'';
   const all=source?.url||'';
-  const matched1912=candidatesFor(node.q.en);
+  // Known negative source relationship: the 1912 shorter catechism
+  // discusses sacramental grace at Q269–271; SPX-057 asks about *actual*
+  // versus habitual/sanctifying grace, supported elsewhere by 1905 Q527–533.
+  // A shared 'grace' token must never silently erase this doctrinal distinction.
+  const rawMatches=candidatesFor(node.q.en);
+  const riskHolds=[];
+  const matched1912=[];
+  for(const lead of rawMatches){
+   const doctrinalCollision=c.id==='SPX-057'&&
+     [269,270,271].includes(lead.number);
+   const editionCollision=[409,410,411].includes(lead.number);
+   if(doctrinalCollision||editionCollision){
+    riskHolds.push({sourceQid:lead.sourceQid,
+     reason:doctrinalCollision?
+      'DOCTRINAL_DISTINCTION_ACTUAL_VS_SACRAMENTAL_GRACE_DO_NOT_EQUIVALENCE':
+      'POST_1929_ITALIAN_MARRIAGE_EDITION_CONTAMINATION_REQUIRES_PRINT_CHECK',
+     disposition:'NOT_A_MATCH_HOLD_FOR_HUMAN_SOURCE_EXAMINATION'});
+   }else matched1912.push(lead);
+  }
   if(matched1912.length)proposedLexical++;else noLexical++;
   const cited1905=/catechismo-maggiore|catechismo.maggiore/i.test(all+' '+loc);
   const citedSalzano=/salzano|arciprete-di-salzano/i.test(all+' '+loc);
@@ -95,6 +113,7 @@ for(const c of corpus.chapters){
    provenance:{owner:'ORIGINAL_P6_NODE',sourceAnswerUnchanged:true,
     sourceUrlIsContentCertification:false},
    candidate1912:matched1912,
+   sourceConflictHolds:riskHolds,
    original1905EditorialLocusQids:printed1905,
    originalSalzanoEditorialLocusQids:printedSalzano,
    statuses:{exactSemanticDuplicatesApproved:0,questionMergesApproved:0,
@@ -152,6 +171,7 @@ const result={
   without1912LexicalLead:noLexical,
   with1905EditorNumberLocator:source1905,
   withSalzanoEditorNumberLocator:sourceSalzano,
+  blockedKnownConflicts:rows.reduce((n,r)=>n+r.sourceConflictHolds.length,0),
   approvedSameIntentMatches:0,
   approvedCrossEditionMerges:0
  },
