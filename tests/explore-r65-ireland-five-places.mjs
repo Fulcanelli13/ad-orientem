@@ -10,7 +10,7 @@ const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const geo=read("data/geography/seed-registry.v1.json"),seed=read("data/shrines/shrines-pilgrimages-seed.v1.json"),
  sources=read("data/shrines/source-registry.v1.json"),guideData=read("data/shrines/illustrated-place-guides-ireland.v1.json"),
  media=read("data/geography/approved-place-media.v1.json"),featured=read("data/geography/major-places-editorial.v1.json");
-assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,sources.sources.length],[353,257,240,639]);
+assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,sources.sources.length],[356,257,240,647]);
 assert.equal(seed.routes.length,20);assert.equal(seed.temporalLinks.length,77);
 assert.equal(featured.items.length,20);assert.equal(media.items.length,31,"New photos extend the original published set");
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:seed.shrines,pilgrimages:seed.pilgrimages,routes:seed.routes,
@@ -61,7 +61,7 @@ const dataset={
 const projection=projectExploreDataset(dataset),features=exploreMapFeatures(projection.byLens.shrines);
 assert.equal(features.length,257,"Exactly one pin per shrine physical Place");
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-11"});
-assert.equal(profiles.length,353);
+assert.equal(profiles.length,356);
 assert.equal(profiles.filter(p=>p.illustrated_guide).length,5);
 for(const row of recordSet){
  const profile=explorePlaceProfile(profiles,row.id);

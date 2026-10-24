@@ -28,6 +28,7 @@ for(const row of read("data/geography/research/sacred-geography-r79-major-church
 for(const row of read("data/geography/research/sacred-geography-r87-first-canonical-release.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
 // The P14 Ovada release is later than this frozen original Europe research census.
 publishedAfterFreeze.add(read("data/geography/research/sacred-places-p14-ovada-canonical-release.v1.json").published_new.place_id);
+for(const row of read("data/geography/research/sacred-places-p17-separated-bergamo-asuncion.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 const id=x=>x.research_id||x.lead_id||x.id||x.site_id||x.place_id;
 const allBefore=[

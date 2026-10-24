@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 353,
+    "places": 356,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 94,
+    "places_without_direct_claim": 97,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -63,6 +63,7 @@
       "place:IN:santhome-cathedral-basilica-chennai",
       "place:IN:st-thomas-mount-shrine-chennai",
       "place:IS:christ-king-cathedral-reykjavik",
+      "place:IT:basilica-santa-maria-maggiore-bergamo",
       "place:IT:santuario-san-paolo-della-croce-ovada",
       "place:JM:holy-trinity-cathedral-kingston",
       "place:JO:memorial-moses-mount-nebo",
@@ -103,6 +104,8 @@
       "place:PH:monasterio-de-tarlac-risen-christ-chapel",
       "place:PH:quiapo-national-shrine-jesus-nazareno",
       "place:PH:santo-nino-tondo-minor-basilica",
+      "place:PY:catedral-metropolitana-asuncion",
+      "place:PY:oratorio-nuestra-senora-asuncion-panteon",
       "place:QA:our-lady-rosary-church-doha",
       "place:SB:holy-cross-cathedral-honiara",
       "place:SC:immaculate-conception-cathedral-victoria",
@@ -2594,6 +2597,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IT:basilica-santa-maria-maggiore-bergamo",
+      "display_name": "Basilica di Santa Maria Maggiore, Bergamo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IT:basilica-santa-rita-cascia",
       "display_name": "Basilica di Santa Rita da Cascia",
       "record_ids": {
@@ -4079,6 +4088,18 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PY:catedral-metropolitana-asuncion",
+      "display_name": "Catedral Metropolitana de Nuestra Señora de la Asunción",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PY:oratorio-nuestra-senora-asuncion-panteon",
+      "display_name": "Oratorio Nuestra Señora de la Asunción y Panteón Nacional de los Héroes",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:QA:our-lady-rosary-church-doha",
       "display_name": "Our Lady of the Rosary Catholic Church — Doha",
       "record_ids": {},
@@ -4947,5 +4968,19 @@
       }
     ],
     "map_policy": "GCatholic independent 10-character Open Location Code site cell (center accurate to roughly 14m site grid, not certified visitor entrances or independent OSM church footprints), no invented Shrine/Relic/TLM/Calendar joins"
+  },
+  "georeference_tranche_20261024_p17": {
+    "release": "P17",
+    "release_manifest": "data/geography/research/sacred-places-p17-separated-bergamo-asuncion.v1.json",
+    "new_sites": [
+      "place:IT:basilica-santa-maria-maggiore-bergamo",
+      "place:PY:catedral-metropolitana-asuncion",
+      "place:PY:oratorio-nuestra-senora-asuncion-panteon"
+    ],
+    "research_context": [
+      "candidate:SG-INV-0071",
+      "candidate:SG-INV-0530"
+    ],
+    "rule": "Source-owned physical Catholic identities independently mapped; preserve original inventory's conflated/unattested shrine titles as 16 research holds; no photo, 1962 service, approved editorial claims or entrance implication."
   }
 }

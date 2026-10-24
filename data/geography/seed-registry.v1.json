@@ -15731,6 +15731,127 @@
         "AO-P16-CARMELO-GEO",
         "AO-P16-CARMELO-JUBILEE"
       ]
+    },
+    {
+      "place_id": "place:IT:basilica-santa-maria-maggiore-bergamo",
+      "name": {
+        "official": "Basilica di Santa Maria Maggiore, Bergamo",
+        "aliases": [
+          "Santuario Santa Maria Maggiore, Bergamo",
+          "Basilica of Saint Mary Major, Bergamo Città Alta"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.70321,
+        "lng": 9.66223,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/79808361",
+        "source_ref": "osm:way:79808361",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": "Piazza Duomo",
+        "line2": null,
+        "postal_code": "24129",
+        "city": "Bergamo",
+        "region": "Lombardia",
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza Duomo, 24129 Bergamo (Città Alta), Italy"
+      },
+      "source_ids": [
+        "AO-P17-BERGAMO-DIOCESE",
+        "AO-P17-BERGAMO-CUSTODIAN",
+        "AO-P17-BERGAMO-GEO"
+      ]
+    },
+    {
+      "place_id": "place:PY:catedral-metropolitana-asuncion",
+      "name": {
+        "official": "Catedral Metropolitana de Nuestra Señora de la Asunción",
+        "aliases": [
+          "Catedral Metropolitana de Asunción",
+          "Metropolitan Cathedral of Our Lady of the Assumption, Asunción"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:PY"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -25.2816,
+        "lng": -57.63246,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/583058267",
+        "source_ref": "osm:way:583058267",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PY",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": "Cordillera del Amambay y Paraguayo Independiente",
+        "line2": null,
+        "postal_code": null,
+        "city": "Asunción",
+        "region": "Distrito Capital",
+        "country_code": "PY",
+        "country": "Paraguay",
+        "formatted": "Cordillera del Amambay y Paraguayo Independiente, Asunción, Paraguay"
+      },
+      "source_ids": [
+        "AO-P17-ASUNCION-CATHEDRAL-ARCHDIOCESE",
+        "AO-P17-ASUNCION-CATHEDRAL-GEO"
+      ]
+    },
+    {
+      "place_id": "place:PY:oratorio-nuestra-senora-asuncion-panteon",
+      "name": {
+        "official": "Oratorio Nuestra Señora de la Asunción y Panteón Nacional de los Héroes",
+        "aliases": [
+          "Oratory of Our Lady of the Assumption and National Pantheon of the Heroes"
+        ]
+      },
+      "place_type": "chapel",
+      "geo_area_ids": [
+        "geo:country:PY"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -25.28228,
+        "lng": -57.6351,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/277917838",
+        "source_ref": "osm:way:277917838",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PY",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": "Palma y Chile",
+        "line2": null,
+        "postal_code": null,
+        "city": "Asunción",
+        "region": "Distrito Capital",
+        "country_code": "PY",
+        "country": "Paraguay",
+        "formatted": "Palma y Chile, Asunción, Paraguay"
+      },
+      "source_ids": [
+        "AO-P17-ASUNCION-ORATORY-ARCHDIOCESE",
+        "AO-P17-ASUNCION-ORATORY-CULTURE",
+        "AO-P17-ASUNCION-ORATORY-GEO"
+      ]
     }
   ],
   "directoryPlaceLinks": [

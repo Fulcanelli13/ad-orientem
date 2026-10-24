@@ -24,6 +24,7 @@ for(const row of read("data/geography/research/sacred-geography-r79-major-church
 for(const row of read("data/geography/research/sacred-geography-r87-first-canonical-release.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
 // P14 Ovada is a later release, not part of the original European source-census denominator.
 publishedAfterFreeze.add(read("data/geography/research/sacred-places-p14-ovada-canonical-release.v1.json").published_new.place_id);
+for(const row of read("data/geography/research/sacred-places-p17-separated-bergamo-asuncion.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 assert.equal(W2.schema,"AO_EXPLORE_EUROPE_RESEARCH_WAVE2_ZERO_COVERAGE_V1");
 assert.equal(W2.status,"RESEARCH_ONLY_NO_PRODUCTION_ASSETS_OR_PINS");
