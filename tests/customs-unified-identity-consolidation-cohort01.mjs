@@ -54,6 +54,26 @@ assert.equal(mastersWithLexicalHints,cohort.summary.groups_with_potential_master
 assert.equal(cohort.summary.verified_distinct_new_customs,0);
 assert.equal(cohort.summary.verified_existing_master_merges,0);
 assert.equal(cohort.summary.new_calendar_publications,0);
+const queue=load('customs-consolidation-cohort01-calendar-first-30-source-review-queue.v1.json');
+assert.equal(queue.records.length,30);
+assert.equal(queue.summary.priority_page_specific_existing_groups,30);
+assert.equal(queue.summary.new_unique_catholic_customs_verified,0);
+assert.equal(queue.summary.new_calendar_publications,0);
+assert.equal(queue.summary.source_passages_fully_reviewed_in_this_pass,0);
+const qids=new Set(),screened=new Map(cohort.records.map(r=>[r.provisional_group_id,r]));
+for(let i=0;i<queue.records.length;i++){
+ const r=queue.records[i];
+ assert.equal(r.priority_rank,i+1);
+ assert.ok(screened.has(r.provisional_group_id));
+ assert.ok(!qids.has(r.provisional_group_id));qids.add(r.provisional_group_id);
+ const source=screened.get(r.provisional_group_id);
+ assert.deepEqual(r.source_observation_ids,source.original_source_observation_ids);
+ assert.equal(r.source_passage_review_complete,false);
+ assert.equal(r.distinct_practice_id_approved,false);
+ assert.equal(r.live_1962_calendar_mapping_approved,false);
+ assert.equal(r.public_card_copy_approved,false);
+ assert.equal(r.publication_state,'RESEARCH_ONLY');
+}
 const master=load('working-master.v1.json');
 assert.equal(master.records.length,56);
 assert.equal(audit.records.length,56);
