@@ -140,6 +140,19 @@ try{
    window.scrollTo({top:0,behavior:"instant"});
    document.querySelector("#ao-mass-flow-v1")?.scrollTo?.({top:0,behavior:"instant"});
  });
+ const fold=await page.locator("[data-folio-overview-heading]").boundingBox();
+ assert.ok(fold&&fold.y>=-1&&fold.y<230,
+   "Mass overview header must appear within the phone first fold: "+JSON.stringify(fold));
+ const primaryButton=await page.locator("[data-folio-host-actions] [data-ao-start-live]").evaluate(el=>({
+   background:getComputedStyle(el).backgroundColor,
+   color:getComputedStyle(el).color,
+   height:el.getBoundingClientRect().height,
+ }));
+ assert.equal(primaryButton.background,"rgb(189, 164, 119)",
+   "Start Mass button lost restrained antique-gold presentation");
+ assert.ok(primaryButton.height>=52,"Start Mass touch target became undersized");
+ assert.equal(await page.locator("[data-folio-guide-start]").isVisible(),false,
+   "Duplicate More choices route must stay hidden on three-choice overview");
  await page.screenshot({path:resolve(massQaDir,"mass-overview-390.png"),fullPage:false,animations:"disabled"});
  await page.setViewportSize({width:768,height:1024});
  await page.evaluate(()=>{
