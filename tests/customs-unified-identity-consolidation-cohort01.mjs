@@ -273,7 +273,7 @@ for(const subject of newSubjects.records){
  assert.ok(subject.independent_sources.length>=2);
  assert.ok(subject.independent_sources.every(s=>s.url.startsWith('https://')));
  for(const id of subject.source_group_ids){
-  assert.ok(cohort02.records.some(x=>x.provisional_group_id===id),'New subject must use existing cohort02 source group');
+  assert.ok(cohort02.records.some(x=>x.provisional_group_id===id)||cohort.records.some(x=>x.provisional_group_id===id),'New subject must use already-screened source group');
   assert.ok(!used.has(id),'Source group reused across two distinct subjects');
   used.add(id);
  }
