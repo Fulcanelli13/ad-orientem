@@ -1,0 +1,51 @@
+name: B35 NGA 2 exact no-image artwork sources image-level Open Access and archive
+on:
+  push:
+    branches: [research/sacred-art-b35-40-gaps-source-recovery-20261024]
+    paths: [.github/workflows/ao-art-b35-nga2-imagelevel.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b35-nga2-imagelevel-once
+  cancel-in-progress: false
+jobs:
+  source-recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b35-40-gaps-source-recovery-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Python decoder and source integrity preflight
+        run: |
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python -m py_compile scripts/research/sacred_art_b35_nga2.py scripts/research/sacred_art_release_archive_gate.py
+      - name: Download only exact NGA image-level openaccess=1 IIIF rendition
+        run: python scripts/research/sacred_art_b35_nga2.py
+      - name: Mandatory unpublished original bytes transfer and re-read SHA proof
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py \
+            --wave b35-nga2-imagelevel --source-dir artifacts/b35-nga2-imagelevel
+      - name: Persist compact NGA per-image attribution and rights evidence
+        run: |
+          set -euo pipefail
+          cp artifacts/b35-nga2-imagelevel/source-results.csv data/research/sacred-art-b35-nga2-results.csv
+          cp artifacts/b35-nga2-imagelevel/source-summary.json data/research/sacred-art-b35-nga2-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b35-nga2-results.csv data/research/sacred-art-b35-nga2-summary.json
+          git commit -m 'research: B35 NGA 2 object-specific IIIF Open Access source evidence and verified draft archive'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b35-40-gaps-source-recovery-20261024
+            git rebase origin/research/sacred-art-b35-40-gaps-source-recovery-20261024
+            git push origin HEAD:research/sacred-art-b35-40-gaps-source-recovery-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
