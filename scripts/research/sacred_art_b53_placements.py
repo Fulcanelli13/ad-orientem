@@ -197,6 +197,11 @@ def propose_all(title,artist,artwork_id=""):
         add("saints/profile/sebastian","Saints Catalogue — St Sebastian",
             "Roman martyr portrait; not a Gospel Passion scene.")
         add("calendar/feast/sebastian","Calendar — St Sebastian","Traditional feast context.")
+    if re.search(r"saint anthony abbot|anthony the abbot|antonio abate|saint antoine abbe",t):
+        add("saints/profile/anthony-abbot","Saints Catalogue — St Anthony the Abbot",
+            "Desert Father and founder of monasticism; distinct from St Anthony of Padua.")
+        add("calendar/feast/anthony-abbot","Calendar — St Anthony the Abbot",
+            "Feast portrait or monastic historical context.","exploratory")
     if re.search(r"saint nicholas of bari|saint nicholas",t):
         add("saints/profile/nicholas-bari","Saints Catalogue — St Nicholas of Myra",
             "Traditional saint and pastoral witness.")
@@ -234,5 +239,8 @@ def propose_all(title,artist,artwork_id=""):
             "Saintly repentance theme; not a depiction of the rite of confession.","exploratory")
     if len(out)>1 and "art/library/unassigned" in seen:
         out=[x for x in out if x["slot_id"]!="art/library/unassigned"]
+    if not out:
+        add("art/library/unassigned","Sacred Art Library — editorial destination pending",
+            "The subject requires human identification before a responsible module placement.","exploratory")
     assert len(out)==len({x["slot_id"] for x in out})
     return out
