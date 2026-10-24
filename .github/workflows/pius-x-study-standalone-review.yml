@@ -18,6 +18,9 @@ on:
       - 'tools/pius-x-p35-substantive-35-editorial-review.mjs'
       - 'tools/pius-x-p36-corrected-bilingual-35-review.mjs'
       - 'tools/pius-x-p37-second-pass-eleven.mjs'
+      - 'tools/pius-x-p38-bulk-89-remaining-original-text-audit.mjs'
+      - 'tests/pius-x-p38-bulk-89-review-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p38-sixtyfive-new-italian-source-assessments-20261024.v1.json'
       - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
       - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
@@ -90,6 +93,9 @@ on:
       - 'tools/pius-x-p35-substantive-35-editorial-review.mjs'
       - 'tools/pius-x-p36-corrected-bilingual-35-review.mjs'
       - 'tools/pius-x-p37-second-pass-eleven.mjs'
+      - 'tools/pius-x-p38-bulk-89-remaining-original-text-audit.mjs'
+      - 'tests/pius-x-p38-bulk-89-review-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p38-sixtyfive-new-italian-source-assessments-20261024.v1.json'
       - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
       - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
@@ -200,6 +206,10 @@ jobs:
         run: node tools/pius-x-p37-second-pass-eleven.mjs
       - name: Browser-test 11 evidence cases and 3 additive EN/FR refinements with no publication or remote calls
         run: node tests/pius-x-p37-second-pass-eleven-e2e.mjs
+      - name: Consolidate source-scope assessments for 89 remaining openings (65 newly inspected, 24 preserved earlier)
+        run: node tools/pius-x-p38-bulk-89-remaining-original-text-audit.mjs
+      - name: Browser-test the 89-case offline source desk and verify original evidence and bilingual drafts remain intact
+        run: node tests/pius-x-p38-bulk-89-review-e2e.mjs
       - name: Build free one-file offline Pius X source-dialogue trial with preserved sprites
         run: node tools/build-pius-x-p26-offline-replay.mjs
       - name: Browser-test offline source dialogue, French/English and original Vatican witnesses
