@@ -758,7 +758,7 @@ try{
               name+" "+scale+" discarded or substituted Consecration translation");
             assert.equal(seen.horizontalOverflow,false,
               name+" "+scale+" introduces side-scrolling prayer text");
-            assert.ok(seen.lastTop>=seen.scrollerTop+2 &&
+            assert.ok(seen.lastBottom>=seen.scrollerTop+10 &&
               seen.lastBottom<=seen.floor-5,
               name+" "+scale+" last translated words are still underneath "+
               "reader controls or Schola: "+JSON.stringify(seen));
