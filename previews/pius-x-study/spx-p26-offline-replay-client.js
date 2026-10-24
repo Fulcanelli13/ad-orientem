@@ -118,7 +118,7 @@ function guidedRender(){
  const action=add('button','spxm-guided-question',t.continue+': '+item.question[language],next);
  action.type='button';action.dataset.nextNodeId=item.nodeId;
  action.addEventListener('click',()=>{
-   if(!guidedActive||root.hidden||active!==item.chapterId||language!==('fr'===language?'fr':'en'))return;
+   if(!guidedActive||root.hidden||active!==item.chapterId)return;
    $('spxm-offline-question').value=item.question[language];
    $('spxm-offline-form').requestSubmit();
  });
