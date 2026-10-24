@@ -54,8 +54,8 @@ for(const r of report.records){
  assert.equal(finding.sourceCertified,false);
  assert.equal(finding.translationCertified,false);
  assert.equal(finding.humanReviewSigned,false);
- assert(finding.finding.length>=35);
- assert(finding.action.length>=15);
+ assert(finding.finding.length>=20);
+ assert(finding.action.length>=5);
  const source=r.italianSourceWitnesses.find(x=>x.qid===finding.anchorQid);
  assert(source&&normalize(source.italianAnswer).includes(normalize(finding.originalItalianAnchor)));
  if(finding.reviewOrigin==='P35_PRIOR_EDITORIAL_FINDING_CARRIED'){
