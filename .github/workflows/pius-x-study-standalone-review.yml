@@ -58,6 +58,8 @@ on:
       - 'tests/pius-x-p26-offline-replay-e2e.mjs'
       - 'tests/pius-x-p46-guided-source-conversation-e2e.mjs'
       - 'tests/pius-x-p47-historical-voice-comparison-e2e.mjs'
+      - 'tests/pius-x-p55-real-model-comparison-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p54-real-7b-four-turn-research-20261024.v1.json'
       - 'tests/pius-x-p48-contextual-model-conversation-e2e.mjs'
       - 'tests/pius-x-p51-real-output-surface-gate.mjs'
       - 'tests/pius-x-p52-localized-composer-context.mjs'
@@ -160,6 +162,8 @@ on:
       - 'tests/pius-x-p26-offline-replay-e2e.mjs'
       - 'tests/pius-x-p46-guided-source-conversation-e2e.mjs'
       - 'tests/pius-x-p47-historical-voice-comparison-e2e.mjs'
+      - 'tests/pius-x-p55-real-model-comparison-e2e.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p54-real-7b-four-turn-research-20261024.v1.json'
       - 'tests/pius-x-p48-contextual-model-conversation-e2e.mjs'
       - 'tests/pius-x-p51-real-output-surface-gate.mjs'
       - 'tests/pius-x-p52-localized-composer-context.mjs'
@@ -294,6 +298,8 @@ jobs:
         run: node tests/pius-x-p46-guided-source-conversation-e2e.mjs
       - name: Browser-test six P2.47 first-person editorial style specimens against source witnesses and original replies
         run: node tests/pius-x-p47-historical-voice-comparison-e2e.mjs
+      - name: Browser-test four genuine P2.55 Qwen 7B research samples against original Latin and unchanged EN/FR avatar dialogue
+        run: node tests/pius-x-p55-real-model-comparison-e2e.mjs
       - name: Exercise P2.48 contextual source follow-ups and optional period voice in private model review UI
         run: node tests/pius-x-p48-contextual-model-conversation-e2e.mjs
       - name: Reject actual P2.50 model false-positives in P2.51 source-grounded bilingual output surface gate
