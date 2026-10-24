@@ -1,0 +1,823 @@
+{
+  "schema": "AO_CUSTOMS_COHORT01_30_ORIGINAL_FACSIMILE_ACTION_DECISIONS_V1",
+  "as_of": "2026-10-24",
+  "purpose": "Thirty action-level decisions on pre-existing priority cases, original 1958 Weiser facsimile image checked, scoped to current 1962 Calendar. These are suggested review routes, not verified new canonical identities.",
+  "original_facsimile": {
+    "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+    "book": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+    "page_image_relation": "For the 30 inspected passages the scanned PDF is printed page + 17 in zero-based page indexing. Range starts reflect inspected scan pages; source-first appearance is recorded in printed pages.",
+    "note": "Original scan provides one author/witness; not independent cross-source corroboration. Two specific 2026/current locality witnesses separately cited where explicitly listed."
+  },
+  "baseline": {
+    "source_priority_queue": "data/customs/master/customs-consolidation-cohort01-calendar-first-30-source-review-queue.v1.json",
+    "main_customs_seed": "data/customs/customs-atlas-seed.v1.json@main",
+    "existing_main_canonical": 38,
+    "preexisting_master56": 56,
+    "provisional_groups_unchanged": 408
+  },
+  "summary": {
+    "queue_size": 30,
+    "original_facsimile_action_passages_checked": 30,
+    "action_level_preliminary_routes": {
+      "CANDIDATE_DOMESTIC_PRACTICE": 2,
+      "RELATED_REGIONAL_COMPONENT": 1,
+      "DISTINCT_REGIONAL_PRACTICE_CANDIDATE": 3,
+      "REGIONAL_FAMILY_CONTEXT": 1,
+      "HISTORICAL_HOUSEHOLD_CONTEXT": 1,
+      "HISTORICAL_RITUAL_BOUNDARY": 1,
+      "HISTORICALLY_LOCAL_EVENT": 1,
+      "EASTERN_TRADITION_CONTEXT_HOLD": 1,
+      "RITUAL_TEXT_AND_AUTHORITY_HOLD": 2,
+      "DISTINCT_HISTORIC_REGIONAL_CANDIDATE": 1,
+      "CULTURAL_CONTEXT_SUPERSTITION_HOLD": 1,
+      "HISTORICAL_GREETING_CANDIDATE": 1,
+      "DISTINCT_LOCAL_PROCESSION_REVIEW": 1,
+      "RELATED_VARIANT_NO_AUTOMERGE": 1,
+      "SEASONAL_SYMBOL_CONTEXT": 1,
+      "HISTORICAL_REGIONAL_PRAYER_CANDIDATE": 1,
+      "LOCAL_INSTITUTIONAL_CUSTOM_CONFIRMED": 1,
+      "REGIONAL_VARIANT_IDENTITY_REVIEW": 1,
+      "EXISTING_CUSTOM_EXPANSION_REVIEW": 1,
+      "DISTINCT_SEASONAL_HOUSEHOLD_CANDIDATE": 1,
+      "FOLK_NARRATIVE_CHARITY_SPLIT": 1,
+      "REGIONAL_FOOD_CONTEXT": 1,
+      "DISTINCT_REGIONAL_SAINTS_DAY_CANDIDATE": 1,
+      "LOCAL_PROCESSIONAL_COMPONENT": 1,
+      "FOLKLORIC_CONTEXT_HOLD": 1,
+      "DISTINCT_REGIONAL_SEASONAL_CANDIDATE": 1
+    },
+    "secondary_locality_witness_records": 2,
+    "corrected_queue_first_passage_locator_cases": [
+      {
+        "id": "CAT-WEISER-A-089",
+        "queue": 150,
+        "first_passage": 149
+      },
+      {
+        "id": "CAT-WEISER-B-146",
+        "queue": 314,
+        "first_passage": 313
+      }
+    ],
+    "distinct_new_customs_canonically_approved": 0,
+    "existing_customs_merges_approved": 0,
+    "existing_calendar_card_publications": 0,
+    "remaining_first_150_cohort_unresolved_identity_approvals": 150
+  },
+  "records": [
+    {
+      "priority_rank": 1,
+      "provisional_group_id": "CAT-WEISER-A-002",
+      "source_observation_ids": [
+        "WEI58-01-005"
+      ],
+      "working_label": "Children recounting the Sunday sermon at home",
+      "previous_queue_page_pointer": 16,
+      "verified_original_1958_printed_pages": "16",
+      "original_scan_pdf_page_zero_based_first": 33,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "A family meal conversation in which children recount and discuss Sunday's sermon",
+      "suggested_identity_route": "CANDIDATE_DOMESTIC_PRACTICE",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "No liturgical response or duty; private catechetical custom with no proven modern regional continuity",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 2,
+      "provisional_group_id": "CAT-WEISER-A-004",
+      "source_observation_ids": [
+        "WEI58-01-007"
+      ],
+      "working_label": "Making a cross on newly baked Sunday bread",
+      "previous_queue_page_pointer": 16,
+      "verified_original_1958_printed_pages": "16",
+      "original_scan_pdf_page_zero_based_first": 33,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "A household signs new Sunday bread before cutting it",
+      "suggested_identity_route": "CANDIDATE_DOMESTIC_PRACTICE",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "Devotional sign, not a priestly or sacramental blessing",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 3,
+      "provisional_group_id": "CAT-WEISER-A-024",
+      "source_observation_ids": [
+        "WEI58-05-004"
+      ],
+      "working_label": "Children's letters to Christ Child on Saint Nicholas Eve",
+      "previous_queue_page_pointer": 56,
+      "verified_original_1958_printed_pages": "55–56",
+      "original_scan_pdf_page_zero_based_first": 72,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Children leave letters to the Christ Child near St Nicholas Eve or the Nativity crib",
+      "suggested_identity_route": "RELATED_REGIONAL_COMPONENT",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "SNIC-001"
+      ],
+      "scope_and_release_guardrail": "Related to St Nicholas gifts, but writing letters is not the same action; neither angels' receipt nor supernatural delivery is claimed as fact",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 4,
+      "provisional_group_id": "CAT-WEISER-A-028",
+      "source_observation_ids": [
+        "WEI58-05-009"
+      ],
+      "working_label": "Nine-night visits of an image of Saint Joseph",
+      "previous_queue_page_pointer": 57,
+      "verified_original_1958_printed_pages": "57",
+      "original_scan_pdf_page_zero_based_first": 74,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Boys circulate a statue of St Joseph nightly to different houses before Christmas",
+      "suggested_identity_route": "DISTINCT_REGIONAL_PRACTICE_CANDIDATE",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "CUST-ADVT-HERBERGSUCHE",
+        "ADVT-003"
+      ],
+      "scope_and_release_guardrail": "Source differentiates Josephstragen image procession from a Herbergsuche lodging play and Mexican Posadas; historical Alpine scope",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 5,
+      "provisional_group_id": "CAT-WEISER-A-031",
+      "source_observation_ids": [
+        "WEI58-06-006"
+      ],
+      "working_label": "Meatless Christmas Eve family meal",
+      "previous_queue_page_pointer": 73,
+      "verified_original_1958_printed_pages": "73–74",
+      "original_scan_pdf_page_zero_based_first": 90,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "A Christmas Eve domestic meal with fish and regional abstinence/fasting customs",
+      "suggested_identity_route": "REGIONAL_FAMILY_CONTEXT",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "XMAS-001"
+      ],
+      "scope_and_release_guardrail": "Opłatek is one distinct action in a wider meal; historical obligation language in Weiser does not define current or 1962 universal fasting law",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 6,
+      "provisional_group_id": "CAT-WEISER-A-034",
+      "source_observation_ids": [
+        "WEI58-06-011"
+      ],
+      "working_label": "Christmas Eve household reconciliation and completion of tasks",
+      "previous_queue_page_pointer": 74,
+      "verified_original_1958_printed_pages": "74",
+      "original_scan_pdf_page_zero_based_first": 91,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Household finishes work and tidies ahead of Christmas Eve",
+      "suggested_identity_route": "HISTORICAL_HOUSEHOLD_CONTEXT",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "Practical folk preparation, not a separate Catholic liturgical practice; may be a component of wider vigil customs",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 7,
+      "provisional_group_id": "CAT-WEISER-A-043",
+      "source_observation_ids": [
+        "WEI58-07-012"
+      ],
+      "working_label": "Kindelwiegen rocking a cradle with Christ Child figure",
+      "previous_queue_page_pointer": 92,
+      "verified_original_1958_printed_pages": "91–92",
+      "original_scan_pdf_page_zero_based_first": 108,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Cradle with Christ Child figure is rocked to carols in historic German/Austrian communities",
+      "suggested_identity_route": "HISTORICAL_RITUAL_BOUNDARY",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "Weiser states church use was forbidden in the sixteenth century and continued domestically; never propose a new church ceremony",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 8,
+      "provisional_group_id": "CAT-WEISER-A-057",
+      "source_observation_ids": [
+        "WEI58-08-024"
+      ],
+      "working_label": "Children's Nativity gifts for poor at parish crib",
+      "previous_queue_page_pointer": 110,
+      "verified_original_1958_printed_pages": "109–110",
+      "original_scan_pdf_page_zero_based_first": 126,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Children brought Christmas gifts to a Boston parish crib for later distribution to the poor",
+      "suggested_identity_route": "HISTORICALLY_LOCAL_EVENT",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "Boston Holy Trinity 1851 example; no current parish observance inferred",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 9,
+      "provisional_group_id": "CAT-WEISER-A-061",
+      "source_observation_ids": [
+        "WEI58-09-001"
+      ],
+      "working_label": "Ukrainian didukh Christmas sheaf",
+      "previous_queue_page_pointer": 116,
+      "verified_original_1958_printed_pages": "116",
+      "original_scan_pdf_page_zero_based_first": 133,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Ukrainian Christmas sheaf placed upright in the home, the didukh/forefather motif",
+      "suggested_identity_route": "EASTERN_TRADITION_CONTEXT_HOLD",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "CUST-XMAS-POLISH-HAY"
+      ],
+      "scope_and_release_guardrail": "Different cultural item from Polish hay at table; no blanket presentation as Latin-Roman rite",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 10,
+      "provisional_group_id": "CAT-WEISER-A-089",
+      "source_observation_ids": [
+        "WEI58-12-009"
+      ],
+      "working_label": "Epiphany house blessing by a priest",
+      "previous_queue_page_pointer": 150,
+      "verified_original_1958_printed_pages": "149",
+      "original_scan_pdf_page_zero_based_first": 166,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Priest blesses a home at Epiphany with Magnificat, holy water and incense; chalk follows as a related act",
+      "suggested_identity_route": "RITUAL_TEXT_AND_AUTHORITY_HOLD",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "DOM-003",
+        "EPIP-001",
+        "EPIP-002"
+      ],
+      "scope_and_release_guardrail": "Distinct from ordinary holy-water use and carols; exact authorized rite and 1962 applicability need final approval",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 11,
+      "provisional_group_id": "CAT-WEISER-A-104",
+      "source_observation_ids": [
+        "WEI58-14-013"
+      ],
+      "working_label": "Mothering Sunday family visit and simnel cake",
+      "previous_queue_page_pointer": 178,
+      "verified_original_1958_printed_pages": "178",
+      "original_scan_pdf_page_zero_based_first": 195,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "English Laetare/Mothering Sunday visits to mother church and family, with flowers or simnel cake",
+      "suggested_identity_route": "DISTINCT_HISTORIC_REGIONAL_CANDIDATE",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "English medieval/local family custom; distinguish Catholic historical practice from later confessional continuities",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 12,
+      "provisional_group_id": "CAT-WEISER-A-108",
+      "source_observation_ids": [
+        "WEI58-14-023"
+      ],
+      "working_label": "Lenten pretzels distributed as alms",
+      "previous_queue_page_pointer": 184,
+      "verified_original_1958_printed_pages": "184",
+      "original_scan_pdf_page_zero_based_first": 201,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Central European Lenten pretzels distributed to poor persons",
+      "suggested_identity_route": "DISTINCT_REGIONAL_PRACTICE_CANDIDATE",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "Sourced historical Lenten charity, not compulsory fasting food or universal Ash Wednesday observance",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 13,
+      "provisional_group_id": "CAT-WEISER-B-016",
+      "source_observation_ids": [
+        "WEI58-15-032"
+      ],
+      "working_label": "Good Friday hot cross buns",
+      "previous_queue_page_pointer": 206,
+      "verified_original_1958_printed_pages": "206",
+      "original_scan_pdf_page_zero_based_first": 223,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Hot cross buns eaten on Good Friday and historically also during Lent in Britain/Ireland",
+      "suggested_identity_route": "CULTURAL_CONTEXT_SUPERSTITION_HOLD",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "Explicitly exclude disease protection, charms, magic or efficacy claims reported in Weiser",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 14,
+      "provisional_group_id": "CAT-WEISER-B-021",
+      "source_observation_ids": [
+        "WEI58-16-005"
+      ],
+      "working_label": "Surrexit Dominus vere Easter greeting",
+      "previous_queue_page_pointer": 212,
+      "verified_original_1958_printed_pages": "212",
+      "original_scan_pdf_page_zero_based_first": 229,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Early Latin Easter greeting Surrexit Dominus vere with historic social response",
+      "suggested_identity_route": "HISTORICAL_GREETING_CANDIDATE",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "Do not publish a universal Mass dialogue or claim fixed liturgical response",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 15,
+      "provisional_group_id": "CAT-WEISER-B-025",
+      "source_observation_ids": [
+        "WEI58-16-014"
+      ],
+      "working_label": "Taking home Easter Vigil blessed fire by lantern",
+      "previous_queue_page_pointer": 217,
+      "verified_original_1958_printed_pages": "217",
+      "original_scan_pdf_page_zero_based_first": 234,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Some European households bring blessed Easter fire/light home in a lantern and light a crucifix lamp",
+      "suggested_identity_route": "DISTINCT_REGIONAL_PRACTICE_CANDIDATE",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "BLSS-004"
+      ],
+      "scope_and_release_guardrail": "Separate from blessing Easter foods; fire safety and parish availability are essential",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": "VIENNA_ARCHDIOCESE_MODERN_PASTORAL",
+      "independent_source_url": "https://www.erzdioezese-wien.at/pages/inst/21452566/service/kirchenjahr/osterfestkreis/osterlicht",
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 16,
+      "provisional_group_id": "CAT-WEISER-B-029",
+      "source_observation_ids": [
+        "WEI58-16-023"
+      ],
+      "working_label": "Osterritt Easter mounted procession",
+      "previous_queue_page_pointer": 221,
+      "verified_original_1958_printed_pages": "220–221",
+      "original_scan_pdf_page_zero_based_first": 237,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Easter Sunday processions or mounted Osterritt rides in parts of Germany and Austria",
+      "suggested_identity_route": "DISTINCT_LOCAL_PROCESSION_REVIEW",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "EAST-001"
+      ],
+      "scope_and_release_guardrail": "Not the Easter Monday Emmaus walk; no inferred current parish event",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 17,
+      "provisional_group_id": "CAT-WEISER-B-040",
+      "source_observation_ids": [
+        "WEI58-17-016"
+      ],
+      "working_label": "Easter egg rolling and associated games",
+      "previous_queue_page_pointer": 235,
+      "verified_original_1958_printed_pages": "235",
+      "original_scan_pdf_page_zero_based_first": 252,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Children roll or play games with hard-boiled Easter eggs",
+      "suggested_identity_route": "RELATED_VARIANT_NO_AUTOMERGE",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "CANDIDATE-EASTER-EGG-CRAFT"
+      ],
+      "scope_and_release_guardrail": "Playing with eggs is distinct from painting them; distinguish recreational game from Catholic religious observance",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 18,
+      "provisional_group_id": "CAT-WEISER-B-043",
+      "source_observation_ids": [
+        "WEI58-17-019"
+      ],
+      "working_label": "Easter lily in church and household decoration",
+      "previous_queue_page_pointer": 236,
+      "verified_original_1958_printed_pages": "236",
+      "original_scan_pdf_page_zero_based_first": 253,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Easter lilies decorate American churches and households for Easter",
+      "suggested_identity_route": "SEASONAL_SYMBOL_CONTEXT",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "A decorative symbol developed in America; no distinct church rite or mandatory devotional practice",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 19,
+      "provisional_group_id": "CAT-WEISER-B-062",
+      "source_observation_ids": [
+        "WEI58-19-018"
+      ],
+      "working_label": "Pentecost dawn hilltop prayer",
+      "previous_queue_page_pointer": 253,
+      "verified_original_1958_printed_pages": "253",
+      "original_scan_pdf_page_zero_based_first": 270,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Praying at dawn on a hilltop on Pentecost in some European communities",
+      "suggested_identity_route": "HISTORICAL_REGIONAL_PRAYER_CANDIDATE",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "Separate dawn prayer from the same-page dew cures and folk magical claims",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 20,
+      "provisional_group_id": "CAT-WEISER-B-083",
+      "source_observation_ids": [
+        "WEI58-21-017"
+      ],
+      "working_label": "Seville boys' Corpus Christi dance",
+      "previous_queue_page_pointer": 265,
+      "verified_original_1958_printed_pages": "265",
+      "original_scan_pdf_page_zero_based_first": 282,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Seville Cathedral choirboys perform Seises dance for Corpus Christi",
+      "suggested_identity_route": "LOCAL_INSTITUTIONAL_CUSTOM_CONFIRMED",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "CORP-001"
+      ],
+      "scope_and_release_guardrail": "Documented by Seville Cathedral in 2026; distinct from flower carpets; no general invitation to reproduce the institution",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": "SEVILLE_CATHEDRAL_OFFICIAL_2026",
+      "independent_source_url": "https://www.catedraldesevilla.es/en/solemnity-of-corpus-christi-at-the-cathedral/",
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 21,
+      "provisional_group_id": "CAT-WEISER-B-091",
+      "source_observation_ids": [
+        "WEI58-22-007"
+      ],
+      "working_label": "Harvest produce processions near the Assumption",
+      "previous_queue_page_pointer": 270,
+      "verified_original_1958_printed_pages": "270",
+      "original_scan_pdf_page_zero_based_first": 287,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Harvest wreaths/processions and thanksgiving associated with Assumption in some Hungarian and Polish regions",
+      "suggested_identity_route": "REGIONAL_VARIANT_IDENTITY_REVIEW",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "BLSS-002",
+        "MARI-001"
+      ],
+      "scope_and_release_guardrail": "No equation between French Marian processions, harvest blessings and Hungarian/Polish pageants; 1962 date/authority separate",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 22,
+      "provisional_group_id": "CAT-WEISER-B-113",
+      "source_observation_ids": [
+        "WEI58-25-007"
+      ],
+      "working_label": "Adorned candles brought for Candlemas blessing",
+      "previous_queue_page_pointer": 299,
+      "verified_original_1958_printed_pages": "299",
+      "original_scan_pdf_page_zero_based_first": 316,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Some communities decorate candles before Candlemas priestly blessing and take them home",
+      "suggested_identity_route": "EXISTING_CUSTOM_EXPANSION_REVIEW",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "DOM-011"
+      ],
+      "scope_and_release_guardrail": "Decoration, clergy blessing and later keeping/using candle are three actions; DOM-011 owns latter only; Syrian and Chaldean details other-rite scoped",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 23,
+      "provisional_group_id": "CAT-WEISER-B-116",
+      "source_observation_ids": [
+        "WEI58-25-012"
+      ],
+      "working_label": "Taking down Christmas crib on Candlemas",
+      "previous_queue_page_pointer": 300,
+      "verified_original_1958_printed_pages": "300",
+      "original_scan_pdf_page_zero_based_first": 317,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Some communities take down Christmas crib decorations on Candlemas",
+      "suggested_identity_route": "DISTINCT_SEASONAL_HOUSEHOLD_CANDIDATE",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "Popular end of Christmas season, not a mandatory 1962 liturgical endpoint",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 24,
+      "provisional_group_id": "CAT-WEISER-B-123",
+      "source_observation_ids": [
+        "WEI58-25-023"
+      ],
+      "working_label": "Seed blessing at Nativity of Mary",
+      "previous_queue_page_pointer": 305,
+      "verified_original_1958_printed_pages": "305",
+      "original_scan_pdf_page_zero_based_first": 322,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Harvest seeds or grape offerings are blessed on Nativity of Our Lady (8 September) regionally",
+      "suggested_identity_route": "RITUAL_TEXT_AND_AUTHORITY_HOLD",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "BLSS-002"
+      ],
+      "scope_and_release_guardrail": "Not the Assumption feast; verify each relevant blessing formula/ministerial permission before instructions",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 25,
+      "provisional_group_id": "CAT-WEISER-B-144",
+      "source_observation_ids": [
+        "WEI58-26-025"
+      ],
+      "working_label": "Polish empty chair and food charity for All Souls",
+      "previous_queue_page_pointer": 313,
+      "verified_original_1958_printed_pages": "313",
+      "original_scan_pdf_page_zero_based_first": 330,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Polish All Souls households leave a place/portion symbolically for deceased and distribute food to poor",
+      "suggested_identity_route": "FOLK_NARRATIVE_CHARITY_SPLIT",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "DEAD-003"
+      ],
+      "scope_and_release_guardrail": "Keep charitable almsgiving; do not present feeding souls, spirit-placation or magical assumptions as Catholic doctrine",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 26,
+      "provisional_group_id": "CAT-WEISER-B-146",
+      "source_observation_ids": [
+        "WEI58-26-027"
+      ],
+      "working_label": "Huesos de Santo and panellets on All Souls",
+      "previous_queue_page_pointer": 314,
+      "verified_original_1958_printed_pages": "313",
+      "original_scan_pdf_page_zero_based_first": 330,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "All Souls pastries known as Huesos de Santo and panellets in parts of Spain",
+      "suggested_identity_route": "REGIONAL_FOOD_CONTEXT",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "Regional food custom not a separate Roman-ritual blessing",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 27,
+      "provisional_group_id": "CAT-WEISER-B-178",
+      "source_observation_ids": [
+        "WEI58-28-024"
+      ],
+      "working_label": "Saint Lucy Advent candlelight observances",
+      "previous_queue_page_pointer": 341,
+      "verified_original_1958_printed_pages": "342",
+      "original_scan_pdf_page_zero_based_first": 359,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Swedish and Scandinavian St Lucy candle-crowned procession/breakfast custom",
+      "suggested_identity_route": "DISTINCT_REGIONAL_SAINTS_DAY_CANDIDATE",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "CUST-BARBARA-BRANCHES"
+      ],
+      "scope_and_release_guardrail": "Not interchangeable with St Barbara branches; exclude historical Lucifer/demon mythology and fire magic",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 28,
+      "provisional_group_id": "CAT-WEISER-B-081",
+      "source_observation_ids": [
+        "WEI58-21-015"
+      ],
+      "working_label": "Children dressed as angels and strewing petals",
+      "previous_queue_page_pointer": 265,
+      "verified_original_1958_printed_pages": "265",
+      "original_scan_pdf_page_zero_based_first": 282,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Historical Corpus Christi processions include children dressed as angels and flower-strewing",
+      "suggested_identity_route": "LOCAL_PROCESSIONAL_COMPONENT",
+      "candidate_existing_or_research_owners_for_manual_comparison": [
+        "CORP-001"
+      ],
+      "scope_and_release_guardrail": "Described historical component, not separate universally prescribed rite; source cites gradual suppression",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 29,
+      "provisional_group_id": "CAT-WEISER-B-089",
+      "source_observation_ids": [
+        "WEI58-22-005"
+      ],
+      "working_label": "Decorating a cross-shaped last sheaf of grain",
+      "previous_queue_page_pointer": 269,
+      "verified_original_1958_printed_pages": "269",
+      "original_scan_pdf_page_zero_based_first": 286,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Southern French last sheaf shaped as cross and kept at home after harvest",
+      "suggested_identity_route": "FOLKLORIC_CONTEXT_HOLD",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "Source connects folk good-fortune and pre-Christian harvest rites; do not assert Catholic sacramental power",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 30,
+      "provisional_group_id": "CAT-WEISER-B-108",
+      "source_observation_ids": [
+        "WEI58-24-021"
+      ],
+      "working_label": "Spanish Immaculate Conception balcony candles and flowers",
+      "previous_queue_page_pointer": 294,
+      "verified_original_1958_printed_pages": "294",
+      "original_scan_pdf_page_zero_based_first": 311,
+      "original_folio_image_checked": true,
+      "original_scan_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "action_identity_what_happens": "Spanish Immaculate Conception Eve balconies decorated with flowers, flags and lit candles",
+      "suggested_identity_route": "DISTINCT_REGIONAL_SEASONAL_CANDIDATE",
+      "candidate_existing_or_research_owners_for_manual_comparison": [],
+      "scope_and_release_guardrail": "Regional Spanish custom tied to 8 December; not a mandatory household observance or live procession promise",
+      "evidence_status": "WEISER_1958_FACSIMILE_PASSAGE_CONFIRMED_SINGLE_AUTHOR",
+      "independent_secondary_witness_verified": null,
+      "independent_source_url": null,
+      "canonical_identity_approved": false,
+      "merge_approved": false,
+      "calendar_card_approved": false,
+      "calendar_publication_state": "RESEARCH_ONLY"
+    }
+  ]
+}

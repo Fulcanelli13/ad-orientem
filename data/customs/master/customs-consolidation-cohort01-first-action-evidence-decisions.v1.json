@@ -1,0 +1,201 @@
+{
+  "schema": "AO_CUSTOMS_COHORT01_ACTION_EVIDENCE_DECISIONS_V1",
+  "as_of": "2026-10-24",
+  "purpose": "Convert high-priority source labels to sourced action-level editorial decisions without creating canonical IDs or publishing to Calendar. Existing 38 main customs, their statuses and calendar mechanics are unchanged.",
+  "method_limits": [
+    "First Weiser witness has now been inspected in the original 1958 facsimile scan (not merely a secondary transcription); exact printed pages and corresponding scanned PDF zero-based page indices are recorded below.",
+    "A second source demonstrating historical ritual text, institutional or later pastoral scope is not automatically an independent witness of each older local practice.",
+    "All bilingual wording is original draft copy, not a reproduction of lengthy copyrighted passages; no approved Calendar copy or new rite.",
+    "Publication remains blocked by ritual authority, identity, editorial and Calendar gates, independently of successful facsimile page verification."
+  ],
+  "existing_main_baseline": {
+    "canonical_main_customs_count": 38,
+    "publication_state_PUBLISHED": 35,
+    "publication_state_CONTEXT_ONLY": 3,
+    "epiphany_home_priest_rite_in_main_customs": false,
+    "easter_fire_lantern_household_in_main_customs": false,
+    "nearby_existing_customs": [
+      "EPIP-001",
+      "EPIP-002",
+      "BLSS-004"
+    ],
+    "verified_source": "data/customs/customs-atlas-seed.v1.json@main",
+    "main_editorial_signoff": "data/customs/editorial-final-acceptance.v1.json@main; 35 statuses PENDING at access"
+  },
+  "page_locator_quality_hold": {
+    "original_facsimile_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+    "resolution": "Prior transcription-driven mismatch claims were false or imprecise; original 1958 printed folios supersede those guesses.",
+    "rescinded_transcription_discrepancies": [
+      {
+        "provisional_group_id": "CAT-WEISER-A-089",
+        "original_queue_page": 150,
+        "previous_wrong_claim": 119,
+        "verified_original_first_passage_printed_page": 149,
+        "pdf_zero_index": 166,
+        "result": "ONE_PAGE_QUEUE_LOCATOR_CORRECTION_REQUIRED",
+        "detail": "Epiphany BLESSING OF HOMES on printed p149; printed p150 opens FOLKLORE."
+      },
+      {
+        "provisional_group_id": "CAT-WEISER-B-025",
+        "original_queue_page": 217,
+        "previous_wrong_claim": 226,
+        "verified_original_printed_page": 217,
+        "pdf_zero_index": 234,
+        "result": "QUEUE_217_CORRECT",
+        "detail": "Lantern passage visible on printed p217; p226 contains endnotes."
+      },
+      {
+        "provisional_group_id": "CAT-WEISER-A-024",
+        "original_queue_page": 56,
+        "previous_wrong_claim": 45,
+        "verified_original_printed_pages": "55–56",
+        "pdf_zero_index_first": 72,
+        "result": "QUEUE_56_VALID_CONTINUATION",
+        "detail": "Children's letters starts on p55 and continues on p56; p45 was an incorrect transcription-based inference."
+      }
+    ],
+    "discrepancies": [
+      {
+        "provisional_group_id": "CAT-WEISER-A-089",
+        "queue_claimed_printed_page": 150,
+        "original_facsimile_first_passage_page": 149,
+        "inspection_status": "ORIGINAL_1958_FACSIMILE_CONFIRMED",
+        "remediation": "Adjust exact passage citation to printed p149; preserve earlier queue p150 as audit history."
+      }
+    ],
+    "facsimile_image_reviews_complete_for_three": 3
+  },
+  "records": [
+    {
+      "provisional_group_id": "CAT-WEISER-A-089",
+      "source_observation_ids": [
+        "WEI58-12-009"
+      ],
+      "candidate_title_en": "Epiphany blessing of the home",
+      "candidate_title_fr": "Bénédiction de la maison à l'Épiphanie",
+      "action_identity": "Priest performs a specified Epiphany house blessing, including prayer, sprinkling with holy water, and incensation. A household's devotional chalk inscription is associated but must not be represented as the same ministerial rite.",
+      "main_identity_comparison": {
+        "examined_main_ids": [
+          "EPIP-001",
+          "EPIP-002",
+          "DOM-003"
+        ],
+        "decision": "DISTINCT_FROM_EXISTING_MAIN_SUBJECTS",
+        "reason": "Epiphany star singers, King's Cake and general household use of holy water are not the specified Epiphany house-blessing rite."
+      },
+      "sources": [
+        {
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "type": "WEISER_1958_ORIGINAL_FACSIMILE_IMAGE",
+          "where": "Original printed p149, PDF zero-index 166; Blessing of Homes",
+          "finding": "Describes a pastor giving the blessing, including Magnificat, sprinkling, incensing, prayers and chalk",
+          "independence": "WEISER_ORIGINAL_1958_WITNESS_ONLY"
+        },
+        {
+          "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1336",
+          "type": "PUBLISHED_1952_ROMAN_RITUAL_TRANSLATION",
+          "where": "Philip Weller, Roman Ritual Volume III, 1952, Epiphany house blessing",
+          "finding": "Provides distinguishable priestly formulary with antiphon, Magnificat, sprinkling and incensation",
+          "independence": "RITUAL_TEXT_1952_NOT_WEISER_REPRINT"
+        },
+        {
+          "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+          "type": "VATICAN_DIRECTORY_LATER_PASTORAL",
+          "where": "Epiphany popular-piety customs",
+          "finding": "Describes separate practice of chalk inscription, C+M+B, and its significance",
+          "independence": "LATER_OFFICIAL_CONTEXT_NOT_1962_RITUAL_AUTHORITY"
+        }
+      ],
+      "calendar_target": {
+        "existing_calendar_only": true,
+        "occasion": "EPIPHANY",
+        "suggested_day": "6 January (1962 Calendar resolver owns the feast)",
+        "geographical_scope": "Historical Latin-rite custom, no universal parish availability asserted",
+        "display_category": "Optional local rite and related household custom",
+        "priestly_action_available_only_if_arranged": true
+      },
+      "draft_en": "At Epiphany some Catholic households invite their priest to bless the home, recalling Christ's manifestation to the nations. The older Roman Ritual contains a special blessing with the Magnificat, prayers, holy water and incense. Marking the doorway with chalk is a related household tradition, but it must not be confused with the priest's rite. Availability depends on local clergy and practice.",
+      "draft_fr": "À l'Épiphanie, certaines familles catholiques invitent un prêtre à bénir leur maison, en mémoire de la manifestation du Christ aux nations. L'ancien Rituel romain prévoit une bénédiction particulière avec le Magnificat, des prières, de l'eau bénite et de l'encens. L'inscription à la craie sur la porte est une coutume domestique associée, distincte du rite accompli par le prêtre. Sa célébration dépend des usages et des prêtres du lieu.",
+      "suggested_prayer_owner": "Reference the authoritative historical Ritual only after rubric/text rights and 1962 applicability are confirmed; do not fabricate domestic priestly formulas.",
+      "research_disposition": "EVIDENCE_SUPPORTED_DISTINCT_ACTION_CANDIDATE",
+      "publication_state": "RESEARCH_ONLY",
+      "original_page_facsimile_checked": true,
+      "final_priestly_rubric_1962_checked": false,
+      "canonical_id_approved": false,
+      "copy_approved": false,
+      "calendar_mapping_approved": false,
+      "first_weiser_printed_folio": 149,
+      "original_facsimile_pdf_zero_based_page": 166
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-B-025",
+      "source_observation_ids": [
+        "WEI58-16-014"
+      ],
+      "candidate_title_en": "Taking Easter light home after the Vigil",
+      "candidate_title_fr": "Rapporter la lumière pascale à la maison",
+      "action_identity": "Some Catholic households take a light kindled at Easter from church to their home in a lantern or candle; distinguished from the priestly blessing of fire in the vigil itself and from Easter food blessings.",
+      "main_identity_comparison": {
+        "examined_main_ids": [
+          "BLSS-004",
+          "EAST-001"
+        ],
+        "decision": "NOT_SAME_ACTION_AS_MAIN",
+        "reason": "BLSS-004 concerns blessed Easter foods; EAST-001 is an Emmaus walk. Neither owns domestic carriage of the Easter light."
+      },
+      "sources": [
+        {
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "type": "WEISER_1958_ORIGINAL_FACSIMILE_IMAGE",
+          "where": "Original printed p217, PDF zero-index 234; Easter Vigil blessed fire carried in lanterns",
+          "finding": "Describes taking blessed-fire flames home in lanterns and lighting a vigil lamp",
+          "independence": "WEISER_ORIGINAL_1958_WITNESS_ONLY"
+        },
+        {
+          "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=574",
+          "type": "STOKES_1955_REPRINT",
+          "where": "How to Make Your House a Home, 1955 / New Fire of Easter",
+          "finding": "Describes a family bringing light in a lantern after the vigil, subject to parish permission",
+          "independence": "HISTORICAL_WITNESS_DEPENDENCE_ON_WEISER_NOT_ESTABLISHED"
+        },
+        {
+          "url": "https://www.erzdioezese-wien.at/pages/inst/21452566/service/kirchenjahr/osterfestkreis/osterlicht",
+          "type": "VIENNA_ARCHDIOCESAN_PASTORAL",
+          "where": "Osterlicht for home",
+          "finding": "Notes taking Easter light home is customary in many Austrian regions",
+          "independence": "MODERN_DIOCESAN_SCOPE_ONLY"
+        }
+      ],
+      "calendar_target": {
+        "existing_calendar_only": true,
+        "occasion": "EASTER_VIGIL",
+        "suggested_day": "Holy Saturday Vigil; date from existing Calendar",
+        "geographical_scope": "Documented some European regions, with Austria as modern diocesan witness",
+        "display_category": "Optional regional home practice",
+        "must_not_imply_parish_fire_access": true,
+        "fire_safety_note_required": true
+      },
+      "draft_en": "In some European Catholic communities, families carry the light of Easter home after the Vigil, traditionally using a protected lantern to light a lamp before the crucifix. It recalls the risen Christ as the Light of the World. This is a household custom, not an additional part of the Mass; it depends on local parish arrangements and fire-safety rules.",
+      "draft_fr": "Dans certaines régions catholiques d'Europe, les familles rapportent chez elles la lumière de Pâques après la Vigile, autrefois dans une lanterne protégée, afin d'allumer une lampe près du crucifix. Ce geste rappelle le Christ ressuscité, Lumière du monde. Il s'agit d'une coutume familiale, et non d'un rite supplémentaire de la messe ; elle dépend des usages paroissiaux et des règles de sécurité.",
+      "research_disposition": "EVIDENCE_SUPPORTED_DISTINCT_ACTION_CANDIDATE",
+      "publication_state": "RESEARCH_ONLY",
+      "original_page_facsimile_checked": true,
+      "historical_source_independence_verified": false,
+      "canonical_id_approved": false,
+      "copy_approved": false,
+      "calendar_mapping_approved": false,
+      "first_weiser_printed_folio": 217,
+      "original_facsimile_pdf_zero_based_page": 234
+    }
+  ],
+  "summary": {
+    "records_action_reviewed": 2,
+    "provisional_distinct_action_candidates": 2,
+    "existing_main_merges": 0,
+    "page_pointer_discrepancies_found": 1,
+    "facsimile_reviews_complete": 2,
+    "new_canonical_ids": 0,
+    "new_publications": 0,
+    "previous_transcription_page_claims_retracted": 3
+  }
+}
