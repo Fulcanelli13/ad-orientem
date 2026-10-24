@@ -19,7 +19,7 @@
       "working-master.v1.json"
     ]
   },
-  "methodology": "Preserve 408 research groups and all prior 47 explicit owner suggestions. Deterministic systematic stratified selection of 150 no-owner groups (not necessarily a representative random sample). Review prior labels, source pointer, geography and existing owner resolution; produce preliminary risk/Calendar signal buckets and lexical retrieval hints only. No source-page facsimile re-read, independent attestation or verified equivalence. Lexical hints are not evidence of same action and are never merged. No date rules inferred from titles. No implicit 1962 rite or universal practice claims.",
+  "methodology": "Preserve 408 research groups and all prior 47 explicit owner suggestions. Deterministic systematic stratified selection of 150 no-owner groups (not necessarily a representative random sample). Review prior labels, source pointer, geography and existing owner resolution; produce preliminary risk/Calendar signal buckets and lexical retrieval hints only. No source-page facsimile re-read, independent attestation or verified equivalence. Lexical hints are not evidence of same action and are never merged. No date rules inferred from titles. No implicit 1962 rite or universal practice claims. Editorial correction: 'Nativity of Mary' signals the September Marian feast, not the Christmas season. This is a title-only locator, not date rule approval.",
   "summary": {
     "all_provisional_groups": 408,
     "prior_groups_with_owner_candidate": 47,
@@ -51,7 +51,7 @@
     "groups_with_potential_master_lexical_hints": 7,
     "groups_with_potential_provisional_duplicate_hints": 33,
     "labelled_calendar_signal_counts": {
-      "CHRISTMAS": 27,
+      "CHRISTMAS": 26,
       "ST_NICHOLAS": 1,
       "ST_JOSEPH": 2,
       "EPIPHANY": 3,
@@ -62,6 +62,7 @@
       "CORPUS_CHRISTI": 2,
       "ASSUMPTION": 2,
       "CANDLEMAS": 2,
+      "NATIVITY_OF_MARY": 1,
       "ALL_SOULS": 2,
       "ADVENT": 3,
       "ST_JOHN": 1
@@ -2943,7 +2944,7 @@
       "original_source_locator_class": "WEISER_1958_PAGE_POINTER_PRIOR_WORK",
       "preliminary_routing": "PRACTICE_IDENTITY_AND_REGIONAL_VARIANT_REVIEW",
       "date_or_season_label_signal_only": [
-        "CHRISTMAS"
+        "NATIVITY_OF_MARY"
       ],
       "potential_existing_master_lexical_hints": [],
       "potential_other_provisional_group_lexical_hints": [],
@@ -2954,7 +2955,8 @@
       "contemporary_local_continuity_verified": false,
       "calendar_date_rule_verified": false,
       "calendar_publication_eligible": false,
-      "next_evidence_gate": "Read source passage; check same-action counterparts, regional attestation, then canonical identity proposal"
+      "next_evidence_gate": "Read source passage; check same-action counterparts, regional attestation, then canonical identity proposal",
+      "calendar_label_heuristic_correction": "Nativity of the Blessed Virgin Mary (8 Sep) is not the Nativity of Our Lord (Christmas); prior automatic keyword mapping corrected."
     },
     {
       "audit_id": "AO-CONSOL-01-086",
