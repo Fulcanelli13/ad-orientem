@@ -48,7 +48,7 @@ for(const record of [...source.original_129_p0_page_checks,...source.additional_
 assert.equal(pages.size,33);
 assert.equal(source.summary.unique_pdf_folios_examined,33);
 assert.equal(source.summary.total_research_source_detail_rows_unchanged,3407);
-assert.equal(catalog.summary.source_observations.total_source_detail_rows_including_external,3652);
+assert.equal(catalog.summary.source_observations.total_source_detail_rows_including_external,3703);
 assert.equal(catalog.summary.source_review.pitre_1900_original_folio_images_visually_checked,129);
 assert.equal(catalog.summary.source_review.pitre_1900_new_293_original_folio_images_verified,293);
 assert.equal(catalog.summary.source_review.pitre_1900_uploaded_facsimile_total_located_observations,41);
