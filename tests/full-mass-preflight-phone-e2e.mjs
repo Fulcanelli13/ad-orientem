@@ -128,6 +128,20 @@ try{
    await page.locator("[data-folio-overview-button]").click();
  assert.equal(await page.locator(".aoGuidedMassFolio").getAttribute("data-ao-folio-view"),"overview");
  assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioQuickRow").count(),3);
+ assert.deepEqual(await page.locator(".aoMassFolioQuickChoices .aoMassFolioChoiceIndex").allInnerTexts(),
+  ["I","II","III"],"The real three selectors must have visible editorial sequence markers");
+ const firstFold=await page.evaluate(()=>{
+  const shell=document.querySelector(".aoGuidedMassFolio[data-ao-folio-view='overview']");
+  const header=shell?.querySelector(".aoMassFolioIdentity");
+  const guide=shell?.querySelector(".aoMassFolioGuide");
+  const feast=header?.querySelector("[data-folio-celebration]");
+  const bounds=element=>element?.getBoundingClientRect();
+  return {headerVisible:!!header&&getComputedStyle(header).display!=="none",
+   feastVisible:!!feast&&getComputedStyle(feast).display!=="none",
+   identity:bounds(header)?.top,guide:bounds(guide)?.top};
+ });
+ assert.ok(firstFold.headerVisible&&firstFold.feastVisible&&firstFold.identity<=firstFold.guide,
+  "Canonical feast identity must lead the Mass selection surface: "+JSON.stringify(firstFold));
  assert.match(await page.locator("[data-folio-quick-mass-value]").innerText(),/Mass|Sunday|Rosary/i);
  assert.match(await page.locator("[data-folio-quick-reader-value]").innerText(),/LIVE/);
  // Save actual browser visuals of the *canonical* preflight, not a mockup.
