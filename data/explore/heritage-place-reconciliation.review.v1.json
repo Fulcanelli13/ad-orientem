@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 405,
+    "places": 414,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 146,
+    "places_without_direct_claim": 155,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -38,11 +38,15 @@
       "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
       "place:BB:st-patrick-catholic-cathedral-bridgetown",
       "place:BD:holy-rosary-cathedral-chattogram",
+      "place:BE:basiliek-onze-lieve-vrouw-oostakker",
       "place:BE:basiliek-onze-lieve-vrouw-scherpenheuvel",
+      "place:BE:basilique-notre-dame-bon-secours-peruwelz",
       "place:BH:our-lady-arabia-cathedral-awali",
       "place:BJ:immaculate-conception-basilica-ouidah",
       "place:BM:st-theresa-cathedral-hamilton",
+      "place:BR:basilica-santuario-nossa-senhora-penha-rio",
       "place:CD:notre-dame-du-congo-cathedral-kinshasa",
+      "place:CH:pfarr-wallfahrtskirche-st-theodul-sachseln",
       "place:CH:santuario-madonna-del-sasso-orselina",
       "place:CK:st-joseph-cathedral-avarua",
       "place:CL:templo-votivo-maipu-basilica",
@@ -79,6 +83,7 @@
       "place:GU:dulce-nombre-maria-cathedral-basilica-hagatna",
       "place:GY:immaculate-conception-cathedral-brickdam",
       "place:HK:immaculate-conception-cathedral-hong-kong",
+      "place:HR:bazilika-gospe-sinjske",
       "place:HR:bazilika-gospe-trsatske-rijeka",
       "place:ID:jakarta-cathedral",
       "place:IE:ballintubber-abbey-church",
@@ -87,6 +92,7 @@
       "place:IN:santhome-cathedral-basilica-chennai",
       "place:IN:st-thomas-mount-shrine-chennai",
       "place:IS:christ-king-cathedral-reykjavik",
+      "place:IT:basilica-santa-margherita-cortona",
       "place:IT:basilica-santa-maria-maggiore-bergamo",
       "place:IT:madonna-neve-rocchetta-bergamo",
       "place:IT:santuario-beata-vergine-neve-foppolo",
@@ -144,9 +150,12 @@
       "place:PH:monasterio-de-tarlac-risen-christ-chapel",
       "place:PH:quiapo-national-shrine-jesus-nazareno",
       "place:PH:santo-nino-tondo-minor-basilica",
+      "place:PL:bazylika-nawiedzenia-wambierzyce",
       "place:PL:bazylika-sw-anny-gora-swietej-anny",
       "place:PS:basilica-agony-gethsemane",
+      "place:PS:chapel-milk-grotto-bethlehem",
       "place:PT:basilica-bom-jesus-monte-braga",
+      "place:PT:santuario-nossa-senhora-nazare",
       "place:PY:catedral-metropolitana-asuncion",
       "place:PY:oratorio-nuestra-senora-asuncion-panteon",
       "place:QA:our-lady-rosary-church-doha",
@@ -471,8 +480,20 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:BE:basiliek-onze-lieve-vrouw-oostakker",
+      "display_name": "Basiliek Onze-Lieve-Vrouw Onbevlekte Ontvangenis, Oostakker",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:BE:basiliek-onze-lieve-vrouw-scherpenheuvel",
       "display_name": "Basiliek van Onze-Lieve-Vrouw van Scherpenheuvel",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BE:basilique-notre-dame-bon-secours-peruwelz",
+      "display_name": "Basilique Notre-Dame de Bon-Secours, Péruwelz",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -543,6 +564,12 @@
           "att:DEV-007:APARECIDA"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BR:basilica-santuario-nossa-senhora-penha-rio",
+      "display_name": "Basílica Santuário de Nossa Senhora da Penha de França, Rio de Janeiro",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -751,6 +778,12 @@
           "pilgrimage:CH:mariastein-destination"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CH:pfarr-wallfahrtskirche-st-theodul-sachseln",
+      "display_name": "Pfarr- und Wallfahrtskirche St. Theodul, Sachseln",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -2380,6 +2413,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:HR:bazilika-gospe-sinjske",
+      "display_name": "Bazilika Uznesenja Blažene Djevice Marije — Gospa Sinjska",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:HR:bazilika-gospe-trsatske-rijeka",
       "display_name": "Bazilika Gospe Trsatske, Rijeka",
       "record_ids": {},
@@ -2787,6 +2826,12 @@
           "relic:IT:true-cross-padua"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:basilica-santa-margherita-cortona",
+      "display_name": "Basilica di Santa Margherita da Cortona",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -4137,6 +4182,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PL:bazylika-nawiedzenia-wambierzyce",
+      "display_name": "Bazylika Nawiedzenia Najświętszej Maryi Panny, Wambierzyce",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:PL:bazylika-sw-anny-gora-swietej-anny",
       "display_name": "Bazylika Świętej Anny — Góra Świętej Anny",
       "record_ids": {},
@@ -4294,6 +4345,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PS:chapel-milk-grotto-bethlehem",
+      "display_name": "Chapel of the Milk Grotto, Bethlehem",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:PS:holy-sepulchre-jerusalem",
       "display_name": "Church of the Holy Sepulchre — shared Christian sanctuary",
       "record_ids": {
@@ -4379,6 +4436,12 @@
           "pilgrimage:PT:santarem-santissimo-milagre-destination"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PT:santuario-nossa-senhora-nazare",
+      "display_name": "Santuário de Nossa Senhora da Nazaré",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {

@@ -13,7 +13,7 @@ const p16=load("data/geography/research/sacred-places-p16-three-qualified-site-r
 const p29=load("data/geography/research/sacred-places-p29-priority95-source-screen.v1.json");
 assert.equal(m.schema,"AO_SACRED_PLACES_P30_WORLD_8_EXACT_MAP_V1");
 assert.deepEqual([m.baseline.places,m.baseline.sources,m.baseline.crosswalk,m.baseline.unlinked,m.baseline.geo_areas],[397,695,397,138,141]);
-assert.deepEqual([m.proposed.places,m.proposed.sources,m.proposed.crosswalk,m.proposed.unlinked,m.proposed.geo_areas],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas]);
+assert.deepEqual([m.proposed.places,m.proposed.sources,m.proposed.crosswalk,m.proposed.unlinked,m.proposed.geo_areas],[405,703,405,146,141],"P30 immutable release proposed totals must not drift with later LIVE");
 assert.deepEqual([geo.places.length,src.sources.length,cross.place_crosswalk.length,cross.exception_queues.places_without_direct_claim.length,geo.geoAreas.length,geo.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas,LIVE.links]);
 assert.equal(cross.counts.places,LIVE.places);assert.equal(cross.counts.places_without_direct_claim,LIVE.unlinked);
 assert.equal(p16.held_exceptions.length,16);

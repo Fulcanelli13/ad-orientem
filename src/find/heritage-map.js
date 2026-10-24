@@ -1,10 +1,12 @@
 // Unified Explore geography. A Place gets one marker even when several
 // independent source-owned records refer to it. No proximity-based joins.
 export const HERITAGE_CATEGORIES=Object.freeze(["shrines","relics","pilgrimages","apparitions","traditions"]);
+// Geography provenance retains tradition attestations, but live map browsing is place-led, not a Customs Atlas.
+export const PUBLIC_HERITAGE_CATEGORIES=Object.freeze(HERITAGE_CATEGORIES.filter(key=>key!=="traditions"));
 const list=value=>Array.isArray(value)?value:[];
 const text=value=>String(value??"").trim();
 
-export function projectHeritagePlaces(projection,{categories=HERITAGE_CATEGORIES,query="",customId=null}={}){
+export function projectHeritagePlaces(projection,{categories=PUBLIC_HERITAGE_CATEGORIES,query="",customId=null}={}){
   const selected=new Set(list(categories).filter(category=>HERITAGE_CATEGORIES.includes(category)));
   const term=text(query).toLowerCase(),sites=new Map();
   for(const category of HERITAGE_CATEGORIES){
