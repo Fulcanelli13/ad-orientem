@@ -100,3 +100,30 @@ body.spxc-offline-pilot-active .spxc-free-ask{display:none!important}
 .spxm-voice-witness{border-left:1px solid #9c855e66;padding:8px 12px;margin:12px 0;
  color:#d5c6af;overflow-wrap:anywhere}
 .spxm-voice-witness a{display:block;margin:6px 0 0;color:#cbb18a;font:11px/1.4 system-ui,sans-serif}
+
+
+/* P2.55: compare genuinely generated but UNAPPROVED 7B research in the
+   existing papal study. Separate surface from authored dialogue and GPT-6
+   historical-voice specimens, not a messenger bubble. */
+.spxm-real-7b-comparison{margin:14px 0 18px;padding:12px 14px;
+ border:1px solid #97826373;background:#131821;color:#dec9a9}
+.spxm-real-7b-comparison>summary{cursor:pointer;min-height:38px;
+ color:#e6cca0;font:13px/1.5 system-ui,sans-serif;outline-offset:3px}
+.spxm-real-7b-warning{font:11px/1.5 system-ui,sans-serif;letter-spacing:.04em;
+ border-left:2px solid #b39561;padding:8px 10px;background:#29221c;color:#e8ceaa}
+.spxm-real-7b-model{font:11px/1.5 system-ui,sans-serif;color:#a99a83}
+.spxm-real-7b-text{font:17px/1.6 Palatino,Georgia,serif;color:#f1e2ca;
+ margin:14px 0 18px}
+.spxm-real-7b-concern{border-top:1px solid #7d6d5466;
+ padding:12px 0;color:#c1ab8b;font:12px/1.55 system-ui,sans-serif}
+.spxm-real-7b-sources{padding:12px 0;border-top:1px solid #75664e73;
+ font:12px/1.5 system-ui,sans-serif}
+.spxm-real-7b-sources>summary{cursor:pointer;color:#e4cba0}
+.spxm-real-7b-witness{margin:12px 0;padding:8px 12px;
+ border-left:1px solid #baa47791;font:14px/1.55 Palatino,Georgia,serif;color:#d6c5ae}
+.spxm-real-7b-witness a{display:block;margin-top:8px;
+ font:11px/1.4 system-ui,sans-serif;color:#d6b981}
+.spxm-real-7b-run{display:inline-block;margin-top:10px;
+ font:11px/1.4 system-ui,sans-serif;color:#d9bd88}
+@media(max-width:600px){.spxm-real-7b-comparison{padding:11px}
+ .spxm-real-7b-text{font-size:16px}}
