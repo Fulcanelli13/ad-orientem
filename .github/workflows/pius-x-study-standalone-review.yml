@@ -31,6 +31,8 @@ on:
       - 'tests/pius-x-p42-owner-reconciliation-preview-contract.mjs'
       - 'tools/pius-x-p43-independent-edition-text-crosscheck.mjs'
       - 'tests/pius-x-p43-edition-source-crosswalk-contract.mjs'
+      - 'tools/pius-x-p44-map-39-to-1905-printed-scan-pages.mjs'
+      - 'tests/pius-x-p44-printed-page-locator-contract.mjs'
       - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
       - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
@@ -116,6 +118,8 @@ on:
       - 'tests/pius-x-p42-owner-reconciliation-preview-contract.mjs'
       - 'tools/pius-x-p43-independent-edition-text-crosscheck.mjs'
       - 'tests/pius-x-p43-edition-source-crosswalk-contract.mjs'
+      - 'tools/pius-x-p44-map-39-to-1905-printed-scan-pages.mjs'
+      - 'tests/pius-x-p44-printed-page-locator-contract.mjs'
       - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
       - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
@@ -246,6 +250,10 @@ jobs:
         run: node tools/pius-x-p43-independent-edition-text-crosscheck.mjs
       - name: Verify 39-item digital witness classifications and preserve all print-page and human-approval holds
         run: node tests/pius-x-p43-edition-source-crosswalk-contract.mjs
+      - name: Resolve 39 question IDs to 1905 printed scan pages and build offline visual-locator desk
+        run: node tools/pius-x-p44-map-39-to-1905-printed-scan-pages.mjs
+      - name: Verify P1.44 printed page metadata, 18 priority scan notes and no invented human approvals
+        run: node tests/pius-x-p44-printed-page-locator-contract.mjs
       - name: Build free one-file offline Pius X source-dialogue trial with preserved sprites
         run: node tools/build-pius-x-p26-offline-replay.mjs
       - name: Browser-test offline source dialogue, French/English and original Vatican witnesses
