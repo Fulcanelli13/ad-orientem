@@ -93,7 +93,7 @@ try{
    const featured=await page.locator("#aoPray435930 .aoP435930QuietTiles>.aoP435930QuietTile").count();
    assert.equal(featured,6,"Pray should show six featured routes at "+width+"px");
    const libraryRows=await page.locator("#aoPray435930 .aoP435930QuietLibraryRow").count();
-   assert.equal(libraryRows,3,"Pray library shortcuts missing at "+width+"px");
+   assert.equal(libraryRows,4,"Pray library shortcuts or My Customs entry missing at "+width+"px");
    await page.screenshot({path:resolve(out,"pray-"+width+".png"),fullPage:false,animations:"disabled"});
    await page.locator("#aoPray435930 .aoP435930QuietMore>summary").click();
    const prayer=await page.evaluate(()=>{
