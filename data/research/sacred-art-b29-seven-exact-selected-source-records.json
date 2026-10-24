@@ -19,7 +19,8 @@
       "expected_width": 8180,
       "expected_height": 10537,
       "publication_allowed": false,
-      "selected_preview_dhash64": "07efea2f277b6d6d"
+      "selected_preview_dhash64": "07efea2f277b6d6d",
+      "actual_historical_selected_original_sha256": "0d9f7b9c85319cbb859baa002c684ca788dcf6f5b371819ac18c144af62cf6a2"
     },
     {
       "artwork_id": "W07-014",
@@ -33,7 +34,8 @@
       "expected_width": 3840,
       "expected_height": 2838,
       "publication_allowed": false,
-      "selected_preview_dhash64": "0f092b7773737676"
+      "selected_preview_dhash64": "0f092b7773737676",
+      "actual_historical_selected_original_sha256": "1dbb8185f9e878a8f59494c4af0b0d619f5eeabdc0d9fd2baab960754b0339f7"
     },
     {
       "artwork_id": "B01-MARK-RENI-GENOA",
@@ -47,7 +49,8 @@
       "expected_width": 1309,
       "expected_height": 1435,
       "publication_allowed": false,
-      "selected_preview_dhash64": "7f75252409075372"
+      "selected_preview_dhash64": "7f75252409075372",
+      "actual_historical_selected_original_sha256": "fd7adbc610f0d0c9c87f8d472d82a78348152ac5dba5fce9f35195f07607c3ab"
     },
     {
       "artwork_id": "W07-007",
@@ -61,7 +64,8 @@
       "expected_width": 8708,
       "expected_height": 6212,
       "publication_allowed": false,
-      "selected_preview_dhash64": "0c8272636f226327"
+      "selected_preview_dhash64": "0c8272636f226327",
+      "actual_historical_selected_original_sha256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158"
     },
     {
       "artwork_id": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
@@ -75,7 +79,8 @@
       "expected_width": 2231,
       "expected_height": 2952,
       "publication_allowed": false,
-      "selected_preview_dhash64": "3cbc918ccccd9d18"
+      "selected_preview_dhash64": "3cbc918ccccd9d18",
+      "actual_historical_selected_original_sha256": "5e4aa3db3f35edd7a06f033e958a6c3799bf7b35c146f0dc5c7deebc9cc90d3b"
     },
     {
       "artwork_id": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
@@ -89,7 +94,8 @@
       "expected_width": 2994,
       "expected_height": 3906,
       "publication_allowed": false,
-      "selected_preview_dhash64": "3a35a6e6c6c6de03"
+      "selected_preview_dhash64": "3a35a6e6c6c6de03",
+      "actual_historical_selected_original_sha256": "c4250c3888a03434b5128c8b6bccaca0a37168e323b8fb31a1edd7d13ad12869"
     },
     {
       "artwork_id": "ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
@@ -103,8 +109,15 @@
       "expected_width": 1093,
       "expected_height": 1500,
       "publication_allowed": false,
-      "selected_preview_dhash64": "c5e44f472686d6cb"
+      "selected_preview_dhash64": "c5e44f472686d6cb",
+      "actual_historical_selected_original_sha256": "d55c169f3b2f8dc28d51e79e8769187a2b3a2cab3fff0fdd9cebca25b9d195b3"
     }
   ],
-  "preview_fingerprint_provenance": "8x8 luminance dHash of historically selected WebP preview extracted from Ad_Orientem_Sacred_Art_Preview_Rescue_2026-10-24.zip; advisory research comparison only"
+  "preview_fingerprint_provenance": "8x8 luminance dHash of historically selected WebP preview extracted from Ad_Orientem_Sacred_Art_Preview_Rescue_2026-10-24.zip; advisory research comparison only",
+  "checksum_field_semantics": {
+    "selected_preview_sha256": "LEGACY_FIELD_NAME: this SHA is in the historic selected photo key, is the ORIGINAL DOWNLOADED FILE BYTE SHA and matches workbook selected_photo_expected_sha256. It is not a preview-image SHA.",
+    "expected_source_file_sha256": "LEGACY_FIELD_NAME: auxiliary gallery photos[].sha256; empirically NOT the historical selected original downloaded-byte SHA. Retain for provenance, never use as exact selected-original acceptance digest.",
+    "primary_recovery_sha_key": "selected_preview_sha256",
+    "independent_verification": "data/research/sacred-art-b29-selected-exact7-corrected.summary.json; release archive run 40071629985; forensic run 40071802253"
+  }
 }
