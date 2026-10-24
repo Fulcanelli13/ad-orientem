@@ -72,7 +72,7 @@ assert.equal(byPlace.get("place:IT:santuario-francescano-la-verna").geo.precisio
 assert.equal(byPlace.get("place:DE:benediktinerabtei-maria-laach").geo.precision,"complex_anchor");
 assert.equal(byPlace.get("place:MU:marie-reine-de-la-paix-port-louis").place_type,"pilgrimage_destination");
 assert.equal(byPlace.get("place:PS:basilica-agony-gethsemane").address.country_code,"PS");
-assert.equal(manifest.protected.original_p16_holds,16);
+assert.equal(manifest.original_p16_holds_preserved,16);
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...shrine,sources:sources.sources,places:geo.places}).pass,true);
 console.log("PASS P24: 18 physical features, two canonical Covadonga reuses, 16 new map-first Places across 14 country codes, one typed identity source each, 16 historical holds retained");
