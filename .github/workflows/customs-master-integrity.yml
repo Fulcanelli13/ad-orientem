@@ -72,3 +72,7 @@ jobs:
         run: |
           node --check tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs
           node tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs
+      - name: Verify Pitrè Wave06 rendered-source preview audit and original anchor corrections
+        run: |
+          node --check tests/customs-pitre-1900-wave06-source-image-preview.mjs
+          node tests/customs-pitre-1900-wave06-source-image-preview.mjs
