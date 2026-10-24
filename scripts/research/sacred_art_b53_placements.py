@@ -64,6 +64,15 @@ def propose_all(title,artist,artwork_id=""):
     t=norm(title)
     old=propose(title,artist,artwork_id)
     out=list(old)
+    # Family names and medieval devotional scenes must not be presented as
+    # literal historical Gospel episodes or confused with another saint.
+    if re.search(r"joseph of cupertino|giuseppe da copertino",t):
+        out=[x for x in out if not (
+            x["slot_id"] in ("saints/profile/joseph","calendar/feast/joseph","prayers/st-joseph")
+            or x["slot_id"].startswith("novenas/joseph")
+        )]
+    if re.search(r"anthony abbot|antonio abate",t):
+        out=[x for x in out if x["slot_id"]!="adoration/eucharistic-miracles"]
     seen={x["slot_id"] for x in out}
     def add(key,label,why,confidence="strong"):
         if key in seen:return
@@ -74,7 +83,7 @@ def propose_all(title,artist,artwork_id=""):
             "Art for the relevant Gospel/Scripture episode, after exact scene verification.")
         add("scripture/parallels/"+key,"Scripture Connections — "+label,
             "Optional illustration in the separate thematic parallels compendium.","exploratory")
-    unrelated_crucifix=re.search(r"crucifixion of (?:saint|st)\s+(?:peter|andrew|philip)|crucifixion of (?:sainte|san)\b",t)
+    unrelated_crucifix=re.search(r"crucifixion of (?:saint|st)\s+(?:peter|andrew|philip)|crucifixion of (?:sainte|san)\b|kneeling before christ on the cross|saint luke as a painter before christ on the cross",t)
     for key,pattern,subject,calendar_key,calendar_label,rosary in GOSPEL:
         if re.search(pattern,t):
             scripture(key,subject)
