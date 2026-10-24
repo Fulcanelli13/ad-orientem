@@ -127,3 +127,38 @@ body.spxc-offline-pilot-active .spxc-free-ask{display:none!important}
  font:11px/1.4 system-ui,sans-serif;color:#d9bd88}
 @media(max-width:600px){.spxm-real-7b-comparison{padding:11px}
  .spxm-real-7b-text{font-size:16px}}
+
+
+/* P2.59 — native P6 document navigation and exact-source follow-ups.
+   The quiet, collapsed topic shelf keeps the sacred-study frame intact. */
+#spxm-document-explore{margin:10px 0 14px;padding:8px 11px;
+ border-block:1px solid #8d7c5a70;background:#111823}
+#spxm-document-explore>summary{cursor:pointer;color:#ddc49b;
+ font:12px/1.5 system-ui,sans-serif;min-height:35px;padding:7px 0}
+#spxm-document-options{display:grid;gap:7px;padding:10px 0 7px}
+.spxm-document-choice{display:flex;flex-direction:column;align-items:flex-start;
+ gap:4px;min-height:52px;text-align:left;border:1px solid #a4895c70;
+ background:#1a2129;color:#e1c9a4;padding:9px 12px;cursor:pointer}
+.spxm-document-choice strong{font:16px/1.4 Palatino,Georgia,serif}
+.spxm-document-choice small{font:11px/1.4 system-ui,sans-serif;color:#b5a181}
+.spxm-document-choice:disabled{opacity:.72;cursor:default;
+ border-color:#5e645b88;background:#191e24}
+.spxm-document-choice:not(:disabled):hover,
+.spxm-document-choice:not(:disabled):focus-visible{background:#2d2a29;
+ border-color:#e1c38a;outline-offset:3px}
+.spxm-guided-other-document{display:block;width:100%;min-height:44px;
+ margin:14px 0 2px;padding:10px 13px;text-align:left;
+ background:#191e27;border:1px solid #a18a64;color:#e4cda4;
+ font:13px/1.45 system-ui,sans-serif;cursor:pointer}
+.spxm-offline-next{margin:16px 0 2px;border-block-start:1px solid #70634b73;
+ padding:12px 0 2px;display:grid;gap:7px}
+.spxm-offline-next-title{font:11px/1.45 system-ui,sans-serif;color:#b19c7b;
+ margin:0 0 3px}
+.spxm-offline-next-question{min-height:44px;padding:10px 13px;
+ color:#e2d0ad;border:1px solid #82735482;background:#17202a;
+ text-align:left;font:14px/1.45 Palatino,Georgia,serif;cursor:pointer}
+.spxm-offline-next-question:hover,.spxm-offline-next-question:focus-visible,
+.spxm-guided-other-document:hover,.spxm-guided-other-document:focus-visible{
+ background:#292c2f;border-color:#d6b980;outline-offset:2px}
+@media(max-width:600px){.spxm-document-choice,.spxm-offline-next-question{
+ min-height:48px}.spxm-offline-next{margin-top:12px}}
