@@ -1,0 +1,81 @@
+{
+  "schema": "AO_B45_EXACT_FRENCH_PALISSY_IMAGE_LINK_CROSSWALK_V1",
+  "date": "2026-10-24",
+  "strict_zero_euro": true,
+  "rights_policy_page": "https://pop.culture.gouv.fr/aide",
+  "rights_summary": "French POP textual/media open data, when licensed, does not automatically license every underlying photographic reproduction. Exact photo photographer rights/issuer must be separately assessed; no app publication.",
+  "official_ods_api": "https://data.culture.gouv.fr/api/explore/v2.1",
+  "official_memories_metadata": "https://www.data.gouv.fr/datasets/memoire-illustration-merimee-et-palissy-monuments-historiques",
+  "scope": [
+    {
+      "artwork_id": "G20-002",
+      "palissy": "PM67000164",
+      "artist": "Unidentified painter",
+      "title": "Saint Anselme",
+      "locale": "Marmoutier, abbaye Saint-Étienne",
+      "image_inventory": "CRMH 6774C1240",
+      "object_page": "https://pop.culture.gouv.fr/notice/palissy/PM67000164",
+      "work_type": "painting on canvas",
+      "source_status": "PROTECTION_CATALOGUE_EXACT_IMAGE_REQUIRED"
+    },
+    {
+      "artwork_id": "G17-006",
+      "palissy": "PM75000591",
+      "artist": "School of Philippe de Champaigne",
+      "title": "Saint François de Sales",
+      "locale": "Église Saint-Jean-Saint-François, Paris 3e",
+      "image_inventory": null,
+      "object_page": "https://pop.culture.gouv.fr/notice/palissy/PM75000591",
+      "work_type": "painting on canvas",
+      "source_status": "PROTECTION_CATALOGUE_EXACT_IMAGE_REQUIRED"
+    },
+    {
+      "artwork_id": "G17-009",
+      "palissy": "PM01002382",
+      "artist": "Baronne Girod de l'Ain",
+      "title": "Épisode de la vie de saint Denis",
+      "locale": "Église Saint-Denis, Cessy (Ain); painting moved to presbytery attic",
+      "image_inventory": "CAOA 2016; AD Ain 8V23",
+      "object_page": "https://pop.culture.gouv.fr/notice/palissy/PM01002382",
+      "work_type": "oil on canvas, 260 x 226 cm, 1858",
+      "source_status": "PROTECTION_CATALOGUE_EXACT_IMAGE_REQUIRED"
+    },
+    {
+      "artwork_id": "G29-001",
+      "palissy": "IM33002267",
+      "artist": "Jérôme-Martin Langlois",
+      "title": "Saint Hilaire de Poitiers écrivant contre l'arianisme",
+      "locale": "Bordeaux Cathédrale Saint-André, sacristie",
+      "image_inventory": "Dossier Inventaire Nouvelle-Aquitaine; signature 1823 DE TRINITATE",
+      "object_page": "https://pop.culture.gouv.fr/notice/palissy/IM33002267",
+      "work_type": "oil on canvas 210 x 149 cm",
+      "source_status": "PROTECTION_CATALOGUE_EXACT_IMAGE_REQUIRED"
+    }
+  ],
+  "special_cases": [
+    {
+      "artwork_id": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+      "provider": "Museo Nacional del Prado",
+      "accession": "P001300",
+      "object_page": "https://www.museodelprado.es/coleccion/obra-de-arte/san-lorenzo-san-hilario-ermitao/71cff54c-68c8-4be5-8704-15713fe411a8",
+      "official_2017_study": "https://content.cdnprado.net/doclinks/pdf/una-obra-un-artista/uoua-ago17.pdf",
+      "subject_of_missing_reverse": "San Hilario Abad (Saint Hilary the Abbot)",
+      "saint_hilary_of_poitiers": false,
+      "source_basis": "Prado official education research note AUG 2017 p.1; exterior side of right Guisando 1559 retablo door. Recto depicts Saint Lawrence; reverse depicts San Hilario Abad. Not an automatic image acquisition.",
+      "reverse_original_photo_sha_certified": false,
+      "app_reuse_permission": false
+    },
+    {
+      "artwork_id": "G28-003",
+      "provider": "ICCD Italian MiC",
+      "accession": "1500005082",
+      "object_page": "https://dati.cultura.gov.it/lodview-arco/resource/HistoricOrArtisticProperty/1500005082",
+      "institution_image_original_sha": "da7915c7059b2e6d4794d44301963de8f33924222a2de43168adb6102f77cfea",
+      "photo_content_identity_review_pending": true,
+      "rights_policy": "https://www.iccd.beniculturali.it/it/consultazione-riproduzione-immagini",
+      "institution_photograph_commercial_use_confirmed": false,
+      "strict_zero_euro_rights_hold": true
+    }
+  ],
+  "metadata_vs_photos": "Physical photo source and public commercial app permission are independent. Search linked open data for exact URL, but no image can be promoted unless exact full artwork is visually confirmed. This is not a copyright licence grant."
+}
