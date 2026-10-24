@@ -1,0 +1,34 @@
+{
+  "schema": "AO_B39_TWO_DISTINCT_RUBENS_HOLY_FAMILY_RESEARCH_FILE_CANDIDATES_V1",
+  "publication_rights_approved": 0,
+  "source_photos_selected": 0,
+  "protected_underlying_copyright_cases": 0,
+  "cases": [
+    {
+      "artwork_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "publication_approved": false
+    }
+  ],
+  "exact_photo_leads": [
+    {
+      "artwork_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne@PRADO_P001639",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Holy_Family_with_St_Anne_-_WGA20253.jpg",
+      "expected_width": 1000,
+      "expected_height": 1316,
+      "institutional_object_evidence": "Separate original oil Rubens The Holy Family with Saint Anne, Museo del Prado P001639 c.1630; Commons file identifies exact Prado UUID and WGA image",
+      "role": "DISTINCT_PRADO_P001639_PAINTING_CANDIDATE_FROZEN_OBJECT_IDENTITY_HOLD",
+      "closing_gap_if_downloaded": false,
+      "rights_gate": "Commons PD-Art claim, Madrid jurisdiction and WGA source/photographer rights not automatically cleared; inadequate hero resolution. Research only."
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne@BASS_9",
+      "file_page": "https://commons.wikimedia.org/wiki/File:The_Holy_Family_with_St._Anne_by_Peter_Paul_Rubens,_Bass_Museum_of_Art.jpg",
+      "expected_width": 645,
+      "expected_height": 800,
+      "institutional_object_evidence": "DIFFERENT oil painting Bass Museum accession 9, attributed Rubens and studio, image caption contradictory 'Saint Elisabeth'; do not confuse with Prado P001639 or NCMA 52.9.107",
+      "role": "DISTINCT_BASS_MUSEUM_9_ATTRIBUTION_AND_SUBJECT_CONFLICT",
+      "closing_gap_if_downloaded": false,
+      "rights_gate": "Commons public domain claim only; image 645x800 below quality threshold and source label has Elisabeth/Anne conflict. Research only."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+name: B39 Sacred Art 27-case read-only source evidence and archive reconciliation
+on:
+  push:
+    branches: [research/sacred-art-b39-27-object-photo-evidence-and-commons-20261024]
+    paths:
+      - .github/workflows/ao-art-b39-readonly-casebook.yml
+      - tests/sacred-art-b39-27-evidence-integrity.mjs
+      - data/research/sacred-art-b39-27-gap-object-photo-rights-casebook.json
+      - data/research/sacred-art-b39-two-commons-source-results.csv
+      - data/research/sacred-art-b39-two-commons-source-summary.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  b39-readonly-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b39-27-object-photo-evidence-and-commons-20261024
+      - name: B38 source evidence invariant
+        run: node tests/sacred-art-b38-evidence-holds.mjs
+      - name: B39 27-case exact identity and rights verification
+        run: node tests/sacred-art-b39-27-evidence-integrity.mjs
