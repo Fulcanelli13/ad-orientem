@@ -59,3 +59,10 @@ This first P1 patch is a **foundation and scoped mobile migration**, not the ent
 - Expanded `tests/nonmass-phone-readability.mjs` into a **real-browser visual QA collector**. It captures Today, Formation and Pray at 390/768px, and Settings and primary Explore map at 390/768px, in addition to existing Formation/Pray captures at 320/430. It asserts computed neutral surface palette, row/label dimensions, map header clipping and horizontal overflow.
 - Screenshots are uploaded by the existing `nonmass-phone-readability.yml` workflow to its limited-retention Actions artifact. They are acceptance evidence, not the permanent art archive.
 - **Not yet accepted:** complete current CI, actual visual review of screenshots, 200% text scale, French overflow and desktop screenshot parity. Retain draft status.
+
+## Actual screenshot review — previous passing Formation/Pray run
+Inspected **real Playwright screenshots** from the `nonmass-phone-readability` Actions artifact, run 40110663906, artifact 12566343623 (390px, before the latest convergence fixes):
+- PRAY: six 2-column illustrated tiles, calm charcoal surfaces, legible Garamond titles, separate library rows and persistent bottom navigation. Visual direction is substantially closer to the approved concept.
+- Formation: cards are readable, but the nine-section reader navigator was unnecessarily stacked above the Formation discovery landing title. Scope its removal **only to the Formation landing** (`#ao-learn-modular-root[data-ao-learn-family=""]>.aoFNav`); retain the reader's index and controls.
+- The current visual QA suite adds direct Today, Settings and Explore captures and a 1280px desktop capture. These new images were not available in that earlier artifact and must not be represented as reviewed yet.
+- Never use historical Playwright screenshots as proof of a later commit's complete visual acceptance.
