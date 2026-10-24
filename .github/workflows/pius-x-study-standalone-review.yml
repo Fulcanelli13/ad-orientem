@@ -25,6 +25,8 @@ on:
       - 'tests/pius-x-p39-bilingual-candidate-queue-contract.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p40-65-answer-second-pass-20261024.v1.json'
       - 'tests/pius-x-p40-source-second-pass-contract.mjs'
+      - 'tools/pius-x-p41-build-specialist-bilingual-dossier.mjs'
+      - 'tests/pius-x-p41-specialist-bilingual-dossier-e2e.mjs'
       - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
       - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
@@ -104,6 +106,8 @@ on:
       - 'tests/pius-x-p39-bilingual-candidate-queue-contract.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p40-65-answer-second-pass-20261024.v1.json'
       - 'tests/pius-x-p40-source-second-pass-contract.mjs'
+      - 'tools/pius-x-p41-build-specialist-bilingual-dossier.mjs'
+      - 'tests/pius-x-p41-specialist-bilingual-dossier-e2e.mjs'
       - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
       - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
@@ -222,6 +226,10 @@ jobs:
         run: node tests/pius-x-p39-bilingual-candidate-queue-contract.mjs
       - name: Verify P1.40 65-answer original-language second-pass partitions (editorial, not human translation approval)
         run: node tests/pius-x-p40-source-second-pass-contract.mjs
+      - name: Assemble P1.41 source-anchored 39-case bilingual specialist dossier from original P34 Italian witnesses
+        run: node tools/pius-x-p41-build-specialist-bilingual-dossier.mjs
+      - name: Verify original Italian text provenance, section boundaries and offline desktop/mobile P1.41 desk
+        run: node tests/pius-x-p41-specialist-bilingual-dossier-e2e.mjs
       - name: Build free one-file offline Pius X source-dialogue trial with preserved sprites
         run: node tools/build-pius-x-p26-offline-replay.mjs
       - name: Browser-test offline source dialogue, French/English and original Vatican witnesses
