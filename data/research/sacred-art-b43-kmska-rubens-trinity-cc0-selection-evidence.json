@@ -1,0 +1,57 @@
+{
+  "schema": "AO_B43_KMSKA_RUBENS_TRINITY_CC0_CANDIDATE_RECONCILIATION_V1",
+  "date": "2026-10-24",
+  "frozen_artwork_id": "ART-eter-aul-ubens-he-oly-rinity",
+  "frozen_artwork_title": "The Holy Trinity",
+  "frozen_artwork_artist": "Peter Paul Rubens",
+  "frozen_artwork_prior_frozen_state": "UNREVIEWED_P2_TITLE_ARTIST_ONLY_NO_OBJECT_ACCESSION",
+  "verified_candidate": {
+    "institution": "Royal Museum of Fine Arts Antwerp (KMSKA)",
+    "collection": "Flemish Art Collection",
+    "institution_accession": "314",
+    "title": "The Holy Trinity",
+    "maker": "Peter Paul Rubens",
+    "dated": "c.1620",
+    "type": "Painting, altar panel",
+    "support": "oil on panel",
+    "height_cm": 157,
+    "width_cm": 150,
+    "collection_object_page": "https://vlaamsekunstcollectie.be/en/collection/314",
+    "owner_museum_page": "https://kmska.be/en/masterpiece/the-holy-trinity",
+    "iiif_manifest": "https://iiif.kmska.be/iiif/2/28958/manifest.json",
+    "commons_exact_file_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Heilige_Drievuldigheid_-_314_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg",
+    "owner_collection_rights_status": "Image CC0",
+    "photo_reuse_rights_candidate": "OFFICIAL_COLLECTION_CC0_POSITIVE_PENDING_APP_JURISDICTION_REVIEW",
+    "unpublished_original_research_archive": "ao-art-originals-40082818225-1",
+    "unpublished_original_sha256": "cd3477e583cf55ca2bd651aad191b916ec84a4af73b3ed36dc7e4e48b9c0ef38",
+    "unpublished_original_image_bytes": 56200164,
+    "source_image_dimensions": {
+      "width": 19178,
+      "height": 19721
+    },
+    "image_exact_museum_object_verified": true
+  },
+  "artwork_identity_vs_frozen": "TITLE_ARTIST_MATCH_ONLY_FROZEN_RECORD_DID_NOT_IDENTIFY_MUSEUM_OR_ACCESSION",
+  "source_image_technically_verified": true,
+  "object_matched_to_frozen_intent": false,
+  "automatic_catalogue_source_promotion": false,
+  "user_editorial_approval_required": true,
+  "app_publication_approved": false,
+  "same_title_hazards": [
+    {
+      "accession": "555",
+      "maker": "Anonymous Southern Netherlandish 16th-century master",
+      "institution": "KMSKA",
+      "note": "Different Holy Trinity oil on panel; do not substitute"
+    },
+    {
+      "accession": "10103",
+      "maker": "Engraver after Rubens",
+      "institution": "KMSKA",
+      "note": "Print after Rubens; not original 314"
+    }
+  ],
+  "zero_euro": true,
+  "production_changed": false,
+  "editorial_instruction": "Offer museum object 314 as specific CC0 selection; original generic art record remains frozen and unreviewed until deliberate exact-image curatorial adoption; no automatic numerical source gap closure."
+}
