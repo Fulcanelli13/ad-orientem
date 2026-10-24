@@ -1,0 +1,56 @@
+name: B52 first 100 Sacred Art placement review — offline, exact archived originals
+on:
+  push:
+    branches:
+      - research/sacred-art-b52-100-ordered-placement-review-20261024
+    paths:
+      - .github/workflows/ao-art-b52-100-placement-review.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-art-b52-100-visual-review
+  cancel-in-progress: false
+jobs:
+  source-verified-private-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b52-100-ordered-placement-review-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen 383 catalogue, preview code and review test
+        run: |
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python -m py_compile scripts/research/sacred_art_b52_placement_proposals.py scripts/research/sacred_art_b52_first100_placement_review.py scripts/research/sacred_art_b52_publish_private_100_review.py
+          test -f tests/sacred-art-b52-first100-places-and-artwork-review.mjs
+          test -f previews/sacred-art-b52-review-100-template.html
+          node tests/sacred-art-b51-first50-offline-review-integrity.mjs || true
+      - name: Retrieve only exact original research archive files and create first 100 with suggested placements
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_b52_first100_placement_review.py
+      - name: Prove real images, unique catalogue IDs, independent artwork and placement decisions
+        run: node tests/sacred-art-b52-first100-places-and-artwork-review.mjs
+      - name: Store reviewer HTML in unpublished draft Release, verify remote SHA
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_b52_publish_private_100_review.py
+      - name: Commit only reviewed source metadata, not 100 image previews
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b52-100-review-image-audit.json data/research/sacred-art-b52-batch01-100-placement-index.json
+          git commit -m 'research: B52 first 100 source evidence and all proposed destinations, no photo publication'
+          for n in 1 2 3; do
+            git fetch origin research/sacred-art-b52-100-ordered-placement-review-20261024
+            git rebase origin/research/sacred-art-b52-100-ordered-placement-review-20261024
+            git push origin HEAD:research/sacred-art-b52-100-ordered-placement-review-20261024 && exit 0
+            sleep 3
+          done
+          exit 1
