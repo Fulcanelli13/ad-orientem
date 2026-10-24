@@ -2019,6 +2019,8 @@ const indexedPitre3=researchCatalogue.external_source_observations_pitre_origina
 assert.equal(indexedPitre3.length,172);
 const scanPitre20261024=load('data/customs/master/pitre-1900-uploaded-facsimile-25p0-16-wave03-page-gates.v1.json');
 const scanPitreNewVerifiedIds=new Set(scanPitre20261024.additional_wave03_highrisk_page_checks.map(r=>r.source_id));
+const scanWave03Final=load('data/customs/master/pitre-1900-uploaded-facsimile-156-wave03-remaining-original-page-verifications.v1.json');
+for(const entry of scanWave03Final.records)scanPitreNewVerifiedIds.add(entry.id);
 const p3Seen=new Set();
 for(let i=0;i<172;i++){
  const raw=pitreWave03.records[i], idx=indexedPitre3[i];
@@ -2054,7 +2056,7 @@ assert.equal(count.source_observations.pitre_1900_original_new_six_complexes_wav
 assert.equal(count.source_observations.pitre_1900_original_all_new_sections_ocr_details,293);
 assert.equal(count.source_review.pitre_1900_new_293_original_ocr_source_rows_indexed,293);
 assert.equal(count.source_review.pitre_1900_new_293_distinct_local_festival_complexes,13);
-assert.equal(count.source_review.pitre_1900_new_293_original_folio_images_verified,137);
+assert.equal(count.source_review.pitre_1900_new_293_original_folio_images_verified,293);
 assert.equal(count.source_review.pitre_1900_new_293_verified_unique_customs,0);
 assert.equal(count.source_observations.total_source_detail_rows_including_external,3407);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
