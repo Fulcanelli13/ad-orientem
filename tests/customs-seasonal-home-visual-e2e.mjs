@@ -84,7 +84,7 @@ try{
       const b=node.getBoundingClientRect();
       const card=node.closest(".aoTodayV2CustomSpotlight");
       const lum=rgb=>{
-        const vals=(getComputedStyle(rgb).color.match(/[\\d.]+/g)||[]).slice(0,3).map(Number);
+        const vals=(getComputedStyle(rgb).color.match(/\d+(?:\.\d+)?/g)||[]).slice(0,3).map(Number);
         const channels=vals.map(v=>{const n=v/255;return n<=.04045?n/12.92:((n+.055)/1.055)**2.4});
         return .2126*channels[0]+.7152*channels[1]+.0722*channels[2];
       };
