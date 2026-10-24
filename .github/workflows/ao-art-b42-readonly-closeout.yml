@@ -1,0 +1,22 @@
+name: B42 final Sacred Art 25-gap read-only integrity
+on:
+  push:
+    branches: [research/sacred-art-b42-open-rights-prioritization-and-arco-20261024]
+    paths: [.github/workflows/ao-art-b42-readonly-closeout.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  b42-final-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b42-open-rights-prioritization-and-arco-20261024
+      - name: B41 predecessor counts and source rights
+        run: node tests/sacred-art-b41-source-coverage-integrity.mjs
+      - name: B42 rights-first immutable case triage
+        run: node tests/sacred-art-b42-zero-euro-readiness.mjs
+      - name: B42 final zero acquisitions and 10 blocked access attempts
+        run: node tests/sacred-art-b42-research-closeout-integrity.mjs

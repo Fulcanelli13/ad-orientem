@@ -1,0 +1,20 @@
+name: B42 strictly €0 25-case source / rights integrity
+on:
+  push:
+    branches: [research/sacred-art-b42-open-rights-prioritization-and-arco-20261024]
+    paths: [.github/workflows/ao-art-b42-readonly-triage.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-triage-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b42-open-rights-prioritization-and-arco-20261024
+      - name: Predecessor 383 artwork source counts B41
+        run: node tests/sacred-art-b41-source-coverage-integrity.mjs
+      - name: B42 all 25 IDs and distinct rights/identity hold classes
+        run: node tests/sacred-art-b42-zero-euro-readiness.mjs
