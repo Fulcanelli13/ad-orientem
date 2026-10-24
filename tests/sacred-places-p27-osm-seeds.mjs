@@ -9,8 +9,10 @@ const sources=load("data/shrines/source-registry.v1.json");
 assert.equal(p27.status,"DISCOVERY_ONLY_NOT_RELEASE");
 assert.deepEqual([geo.places.length,sources.sources.length],[387,685]);
 const prior=new Map([...p25.all_151_priority_source_screen,...p26.remaining_131_source_screen].filter(x=>x.source_excerpt).map(x=>[x.candidate_id,x]));
-assert.equal(p27.candidates.length,24);
-assert.equal(new Set(p27.candidates.map(x=>x.candidate_id)).size,24);
+assert.equal(p27.candidates.length,22);
+assert.equal(new Set(p27.candidates.map(x=>x.candidate_id)).size,22);
+assert.equal(p27.existing_canonical_reuses.length,2);
+for(const r of p27.existing_canonical_reuses){ assert.ok(geo.places.some(p=>p.place_id===r.verified_existing_place_id)); assert.ok(!p27.candidates.some(p=>p.candidate_id===r.candidate_id)); }
 for(const x of p27.candidates){
  const source=prior.get(x.candidate_id);
  assert.ok(source,"missing source evidence "+x.candidate_id);
@@ -24,4 +26,4 @@ for(const x of p27.candidates){
  assert.equal(x.ready_for_publication,false);
  assert.ok(x.name_variants.length>=2);
 }
-console.log("PASS P27: 24 source-backed OSM search seeds, zero geo verification / Place publication");
+console.log("PASS P27: 22 source-backed OSM search seeds, zero geo verification / Place publication");
