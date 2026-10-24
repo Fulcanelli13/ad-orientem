@@ -581,6 +581,8 @@ export function buildExploreViewModel({
 }
 
 export function renderExploreToString(vm){
+  // A stale direct Traditions link can inspect its source folio, never reopen a map or Customs Atlas.
+  if(vm.lens==="traditions"&&vm.view!=="list")vm={...vm,view:"list"};
   if(vm.lens==="heritage")return renderHeritageToString(vm,{
     placeSheet,detailSheet,itemPreview:compactExploreItemSheet,
     journeyPanel:renderPilgrimageJourneyPanel,
