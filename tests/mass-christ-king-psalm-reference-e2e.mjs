@@ -71,6 +71,9 @@ try{
   const text=reader.slots.GRADUAL?.data?.paragraphs?.map(x=>x.latin).join("\n")??"";
   return {
    day:day.day?.main?.title,
+   commemorations:(day.day?.commemorations??[]).map(x=>({id:x.id,path:x.path,title:x.title})),
+   orationCounts:Object.fromEntries(["collects","secrets","postcommunions"].map(k=>[k,(revised[k]??[]).length])),
+   prefaceLatin:String(revised.preface?.lat??revised.preface?.la??""),
    path:day.proper?.data?.sourcePath,
    raw:original.lat,
    reader:text,
@@ -91,6 +94,12 @@ try{
  });
  console.log("CHRIST_KING_REFERENCE_PARITY="+JSON.stringify(result));
  assert.equal(result.path,"Sancti/10-DU");
+ // 1960 General Rubrics §17(d): Christ the King replaces its occurring Sunday.
+ // Do not import the displaced Sunday as a commemoration (or its three orations).
+ assert.deepEqual(result.commemorations,[],"Christ the King must not commemorate the replaced Sunday (RG §17d)");
+ for(const group of ["collects","secrets","postcommunions"])
+  assert.equal(result.orationCounts[group],1,"Unexpected extra "+group+" in Christ the King Mass");
+ assert.match(result.prefaceLatin,/Qui unigénitum Fílium tuum/,"Christ the King requires its own 1962 Preface");
  assert.match(result.raw,/^Ps 71:8; 78:11/m,"audit must retain the wrong upstream source label");
  assert.match(result.reader,/^Ps 71:8; 71:11/m);
  assert.equal(result.printedOk,true,result.printedReason??"print unavailable");
