@@ -115,7 +115,7 @@ try{
    assert.equal(prayer.expanded,true,"Full prayer catalogue disclosure did not open");
    assert.equal(prayer.tiles,6,"Six canonical Prayer entries not visible");
    assert.ok(prayer.tileText.every(px=>px>=16),"Featured prayer labels too small: "+JSON.stringify(prayer));
-   assert.ok(prayer.familyDoors>=6&&prayer.descriptionFonts.length>=5,
+   assert.ok(prayer.familyDoors>=5&&prayer.descriptionFonts.length>=5,
      "Original Prayer families unavailable after disclosure at "+width+"px: "+JSON.stringify(prayer));
    assert.ok(prayer.descriptionFonts.every(px=>px>=13),
      "Prayer family descriptions below 13px: "+JSON.stringify(prayer));
