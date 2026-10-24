@@ -45,7 +45,7 @@ export function makeP53AtomicComposerContext(chosen,voiceMode){
   evidence:[{
    id:e.id,question:e.question,
    status:e.status,
-   originalLatinWitnesses:witnesses,
+   originalLanguageWitnesses:witnesses,
    explicitLimits:'Use only these fragment-supported propositions; do not add memories, new historical facts, ecclesiastical judgments or invented speech.'
   }],
   outputReferenceRequirements:{
