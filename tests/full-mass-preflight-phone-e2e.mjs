@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {mkdir,readFile} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
@@ -130,6 +130,14 @@ try{
  assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioQuickRow").count(),3);
  assert.match(await page.locator("[data-folio-quick-mass-value]").innerText(),/Mass|Sunday|Rosary/i);
  assert.match(await page.locator("[data-folio-quick-reader-value]").innerText(),/LIVE/);
+ // Save actual browser visuals of the *canonical* preflight, not a mockup.
+ // These images never alter the rendered Mass preparation or selection owner.
+ const massQaDir=resolve(base,"artifacts/mass-preflight-quiet");
+ await mkdir(massQaDir,{recursive:true});
+ await page.screenshot({path:resolve(massQaDir,"mass-overview-390.png"),fullPage:false,animations:"disabled"});
+ await page.setViewportSize({width:768,height:1024});
+ await page.screenshot({path:resolve(massQaDir,"mass-overview-768.png"),fullPage:false,animations:"disabled"});
+ await page.setViewportSize({width:390,height:844});
  for(const stage of ["reader","ceremony","celebration"]){
   await page.locator('.aoMassFolioQuickChoices [data-folio-goto="'+stage+'"]').click();
   assert.equal(await page.locator(".aoGuidedMassFolio").getAttribute("data-ao-folio-view"),stage);
