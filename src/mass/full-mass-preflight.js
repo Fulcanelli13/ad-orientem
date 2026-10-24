@@ -248,9 +248,9 @@ export function mountFullMassPreflight({
         '<h3 data-folio-overview-heading></h3><p data-folio-overview-hint></p>'+
         '<div class="aoMassFolioReadyLine" data-folio-overview-selections></div>'+
         '<div class="aoMassFolioQuickChoices" role="group" aria-label="Mass setup choices">'+
-        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="celebration"><span><strong data-folio-quick-mass-label></strong><small data-folio-quick-mass-value></small></span><span aria-hidden="true">›</span></button>'+
-        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="ceremony"><span><strong data-folio-quick-ceremony-label></strong><small data-folio-quick-ceremony-value></small></span><span aria-hidden="true">›</span></button>'+
-        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="reader"><span><strong data-folio-quick-reader-label></strong><small data-folio-quick-reader-value></small></span><span aria-hidden="true">›</span></button>'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="celebration"><i class="aoMassFolioChoiceIndex" aria-hidden="true">I</i><span><strong data-folio-quick-mass-label></strong><small data-folio-quick-mass-value></small></span><span aria-hidden="true">›</span></button>'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="ceremony"><i class="aoMassFolioChoiceIndex" aria-hidden="true">II</i><span><strong data-folio-quick-ceremony-label></strong><small data-folio-quick-ceremony-value></small></span><span aria-hidden="true">›</span></button>'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="reader"><i class="aoMassFolioChoiceIndex" aria-hidden="true">III</i><span><strong data-folio-quick-reader-label></strong><small data-folio-quick-reader-value></small></span><span aria-hidden="true">›</span></button>'+
         '</div>'+
         '<button type="button" data-folio-goto="celebration" class="aoMassFolioChange" data-folio-guide-start></button></section>'+
         '<section data-folio-panel="celebration" class="aoMassFolioPanel" hidden>'+
