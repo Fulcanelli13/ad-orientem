@@ -6,8 +6,8 @@
   "active_artworks": 383,
   "B37_some_source": 357,
   "B37_complete_object_source": 356,
-  "B38_source_files_downloaded": 0,
-  "B38_original_bytes_archived": 0,
+  "B38_source_files_downloaded": 1,
+  "B38_original_bytes_archived": 56200164,
   "B38_cases_screened_against_earlier_master": 27,
   "B38_cases_with_new_external_object_evidence": 9,
   "remaining_complete_object_gaps": 27,
@@ -17,7 +17,7 @@
   "master_mutated": false,
   "financial_policy": "STRICTLY_ZERO_EURO",
   "workflow_policy": "DRAFT_RESEARCH_ONLY_DO_NOT_MERGE_OR_WEAKEN_PRODUCTION_SECURITY_GATE",
-  "method": "Source-specific external identity/rights leads; not a live crawl of all 27 items; unchanged ones explicitly carried forward. Candidate image URLs are not byte or license certifications.",
+  "method": "Source-specific external identity/rights leads; not a live crawl of all 27 items; unchanged ones explicitly carried forward. Candidate image URLs are not byte or license certifications. B38 CC0 original KMSKA candidate acquired and remotely SHA-verified after early screening; curatorial identity match to original frozen artwork not yet certified.",
   "cases": [
     {
       "artwork_id": "G25-003",
@@ -517,9 +517,9 @@
       "priority": "P2",
       "B37_state": "NO_ACCEPTABLE_COMPLETE_OBJECT_IMAGE",
       "existing_source_page": null,
-      "B38_status": "EXACT_MUSEUM_OBJECT_CANDIDATE_CC0_IMAGE_NOT_YET_ARCHIVED",
+      "B38_status": "CC0_SOURCE_ORIGINAL_ARCHIVED_FROZEN_CATALOGUE_IDENTITY_HOLD",
       "B38_new_evidence": {
-        "state": "EXACT_MUSEUM_OBJECT_CANDIDATE_CC0_IMAGE_NOT_YET_ARCHIVED",
+        "state": "CC0_SOURCE_ORIGINAL_ARCHIVED_FROZEN_CATALOGUE_IDENTITY_HOLD",
         "candidate": {
           "title": "The Holy Trinity",
           "artist": "Peter Paul Rubens",
@@ -536,16 +536,22 @@
           "approx_original_MiB": 53.6,
           "commons_file_claim": "CC0 1.0",
           "official_object_claim": "CC0",
-          "downloaded": false,
-          "sha256": null
+          "downloaded": true,
+          "sha256": "cd3477e583cf55ca2bd651aad191b916ec84a4af73b3ed36dc7e4e48b9c0ef38",
+          "bytes": 56200164,
+          "archive_run_id": 40082818225,
+          "draft_tag": "ao-art-originals-40082818225-1"
         },
         "gate": "Artwork title and artist match; verify intended frozen object identity, current Commons metadata and binary SHA before catalogue source promotion. 53.6 MB original may be used with strictly zero-euro unpublished-release archive."
       },
-      "B38_preserved_image_binary": false,
-      "B38_remote_sha256_verified": false,
+      "B38_preserved_image_binary": true,
+      "B38_remote_sha256_verified": true,
       "B38_complete_object_coverage_promoted": false,
       "B38_editorial_approved": false,
       "B38_publication_rights_approved": false
     }
-  ]
+  ],
+  "B38_source_files_with_remote_SHA_archive": 1,
+  "B38_verified_archive_run_id": 40082818225,
+  "B38_verified_draft_tag": "ao-art-originals-40082818225-1"
 }
