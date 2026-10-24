@@ -80,3 +80,7 @@ jobs:
         run: |
           node --check tests/customs-pitre-1900-wave07-132-catalogue-integration.mjs
           node tests/customs-pitre-1900-wave07-132-catalogue-integration.mjs
+      - name: Verify Pitrè Wave08 63 deferred cases, source recoveries, XI/XLI chapter identity and 560-page gap audit
+        run: |
+          node --check tests/customs-pitre-1900-wave08-63-holds-and-560-page-census.mjs
+          node tests/customs-pitre-1900-wave08-63-holds-and-560-page-census.mjs
