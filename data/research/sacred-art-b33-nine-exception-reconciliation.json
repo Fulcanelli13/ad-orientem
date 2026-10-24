@@ -1,0 +1,105 @@
+{
+  "schema": "AO_B33_SEVEN_RESIDUAL_PLUS_TWO_ALIAS_EVIDENCE_V1",
+  "seven_source_cases": 7,
+  "six_new_exact_object_sources_physically_recovered": 6,
+  "one_Prado_P001314_without_verified_source": 1,
+  "two_cross_id_existing_research_file_aliases": 2,
+  "new_approvals": 0,
+  "source_photos_research_only": true,
+  "identity_alias_merges_performed": 0,
+  "case_records": [
+    {
+      "artwork_id": "ART-usepe-de-ibera-aint-eter-postolate",
+      "status": "NEW_SOURCE_IMAGE_BYTES_ARCHIVED_RESEARCH_ONLY",
+      "institution": "Museo Nacional del Prado",
+      "accession": "P001071",
+      "source": "https://commons.wikimedia.org/wiki/File:Ribera_-_San_Pedro,_P001071.jpg",
+      "sha256": "db18b13c5ceef7c117bb8d4f45432f951a8f680f4a02964f9d94b6e9768d7c14",
+      "rights_approved": false,
+      "editorial_selected": false
+    },
+    {
+      "artwork_id": "ART-usepe-de-ibera-aint-aul-postolate",
+      "status": "NEW_SOURCE_IMAGE_BYTES_ARCHIVED_RESEARCH_ONLY",
+      "institution": "Museo Nacional del Prado",
+      "accession": "P001074",
+      "source": "https://commons.wikimedia.org/wiki/File:Ribera_-_San_Pablo,_P001074.jpg",
+      "sha256": "d248e0f268437c7120b73280d0221a8ba42fe14b87b2b45de0361f8bdd545961",
+      "rights_approved": false,
+      "editorial_selected": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+      "status": "NEW_SOURCE_IMAGE_BYTES_ARCHIVED_RESEARCH_ONLY",
+      "institution": "Kunsthistorisches Museum Wien",
+      "accession": "GG_517",
+      "source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens,_,_Kunsthistorisches_Museum_Wien,_Gem%C3%A4ldegalerie_-_Wunder_des_Hl._Ignatius_von_Loyola_-_GG_517_-_Kunsthistorisches_Museum.jpg",
+      "sha256": "2f4a667512623c9b4aa71b8b3c6495668a7e0b37a435980eb2227c91e5b18a39",
+      "rights_approved": false,
+      "editorial_selected": false
+    },
+    {
+      "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+      "status": "NEW_SOURCE_IMAGE_BYTES_ARCHIVED_RESEARCH_ONLY",
+      "institution": "KMSKA Antwerp",
+      "accession": "297",
+      "source": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+      "sha256": "0dea697a2137bfc3c2145389d495e43921e61335f457b75450eaf5e4e6f4034e",
+      "rights_approved": false,
+      "editorial_selected": false
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+      "status": "NEW_SOURCE_IMAGE_BYTES_ARCHIVED_RESEARCH_ONLY",
+      "institution": "Chiesa di San Polo / Italian national cultural catalogue",
+      "accession": "0500220372A-12",
+      "source": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XII_-_Jesus_dies_on_the_cross.jpg",
+      "sha256": "4d59307c2553be1b7103d5e9642631f3025fc4cad929e3ed4fdd7348a5cfbeec",
+      "rights_approved": false,
+      "editorial_selected": false
+    },
+    {
+      "artwork_id": "ART-uido-eni-usannah-and-the-lders",
+      "status": "NEW_SOURCE_IMAGE_BYTES_ARCHIVED_RESEARCH_ONLY",
+      "institution": "National Gallery London",
+      "accession": "NG196",
+      "source": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Susannah_and_the_Elders_NG196.jpg",
+      "sha256": "ebd4a272ffcb1e22fe8324815e93c933175467fbfa82d66f787457fd69c0c6a4",
+      "rights_approved": false,
+      "editorial_selected": false
+    },
+    {
+      "artwork_id": "G25-003",
+      "title": "Saint Augustine (Anonymous, possible copy after Lanfranco)",
+      "institution": "Museo Nacional del Prado",
+      "institutional_object_id": "P001314",
+      "institutional_record_url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-agustin/cf95015c-5744-4471-a529-84a3981719d6",
+      "research_photo_disposition": "OBJECT_KNOWN_NO_TRUSTED_FILE",
+      "research_hold": "Prado identifies an anonymous ecclesiastical father P001314; B32 old candidate is Lanfranco Coronation of Virgin — different artwork. No Commons exact P001314 source image verified in B33; preserve hold. Do not replace with a lookalike.",
+      "file_download_allowed": false,
+      "status": "P001314_UNRESOLVED_NO_FILE"
+    }
+  ],
+  "alias_records": [
+    {
+      "canonical_id": "W05-008",
+      "approved_legacy_id": "ART-eter-aul-ubens-aint-atthias-postolate",
+      "sha256": "eb8a4011cd8395a26d4e3c5830bf6717e156f10f134b85f2a0ddae557866ff26",
+      "object": "Prado Rubens Saint Matthias",
+      "object_id": "Prado Saint Mathias",
+      "object_source_url": "https://www.museodelprado.es/en/the-collection/art-work/saint-mathias/7266e04d-6251-4769-a1c1-7d2711eceb3b",
+      "evidence": "W05-008 contains exact source SHA, Prado source and same subject/artist; approved legacy entry has same subject/artist and frozen approval but no SHA. Strong probable duplicate art object, pending owner adjudication.",
+      "action": "CROSS_REFERENCE_OR_FROZEN_ALIAS_ONLY_NO_ID_MERGE"
+    },
+    {
+      "canonical_id": "W36-SNT-OT-13-5387d641cce6",
+      "approved_legacy_id": "ART-laudio-oello-aint-ominic-of-uzm-n",
+      "sha256": "93609e4a56a996445120de59235bfe4a6d80741d6bde7fb6a2e73f3563b3fd13",
+      "object": "Claudio Coello Saint Dominic",
+      "object_id": "Prado P000662",
+      "object_source_url": "https://www.museodelprado.es/en/the-collection/art-work/saint-dominic-of-guzman/80a673a4-8833-4334-a878-0046662c25d9",
+      "evidence": "W36 filename is the same Commons source selected by approved legacy entry; exact physical hash identical, subject/artist common. Strong duplicate object candidate, but distinct editorial records.",
+      "action": "CROSS_REFERENCE_OR_FROZEN_ALIAS_ONLY_NO_ID_MERGE"
+    }
+  ]
+}
