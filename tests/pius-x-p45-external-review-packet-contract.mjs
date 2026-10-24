@@ -8,6 +8,7 @@ import {readFileSync} from 'node:fs';
 const read=p=>JSON.parse(readFileSync(p,'utf8'));
 const root='previews/pius-x-study/';
 const p40=read(root+'evidence/pius-x-p40-65-answer-second-pass-20261024.v1.json');
+const p39=read(root+'evidence/pius-x-p39-bilingual29-and-specialist36-20261024.v1.json');
 const p44=read(root+'evidence/pius-x-p44-39-print-scan-page-index-20261024.v1.json');
 const triage=read('data/learn/research/pius-x-100answer-editorial-release-triage-20261020.v1.json');
 const packet=readFileSync(root+'review/pius-x-p45-specialist-39-review-packet-20261024.md','utf8');
@@ -21,6 +22,7 @@ assert.equal(p44.records.length,39);
 assert.equal(new Set(records.map(z=>z.sourceQid)).size,39);
 const old=new Map(triage.records.map(z=>[z.id,z]));
 const pages=new Map(p44.records.map(z=>[z.sourceQid,z]));
+const oldFindings=new Map(p39.corrections.map(z=>[z.sourceQid,z.sourceReviewFinding.replace(/\r?\n/g,' ')]));
 const technical=new Set(['PX1905-Q611','PX1905-Q613','PX1905-Q657']);
 const historical=new Set(['PX1905-Q574','PX1905-Q577','PX1905-Q584','PX1905-Q594']);
 let t=0,h=0,l=0;
@@ -31,6 +33,7 @@ for(const c of records){
  assert.equal(prev.published,false);
  assert(Object.values(prev.approval).every(x=>x==='NOT_SIGNED_OFF'));
  assert(packet.includes('### '+c.sourceQid+' — '+prev.questionEN),'Missing case entry '+c.sourceQid);
+ if(oldFindings.has(c.sourceQid))assert(packet.includes(oldFindings.get(c.sourceQid)), 'Missing case-specific original finding '+c.sourceQid);
  for(const wording of [prev.originalDraftEN,prev.originalDraftFR,c.en,c.fr]){
    assert(packet.includes(escaped(wording)),'Missing/altered old/new bilingual text for '+c.sourceQid);
  }
