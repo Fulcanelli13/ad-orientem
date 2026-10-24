@@ -1,0 +1,323 @@
+{
+  "schema": "AO_CUSTOMS_INDEPENDENT_SOURCE_CLOSURE_B03_V1",
+  "as_of": "2026-10-21",
+  "status": "EDITORIAL_RESEARCH_BOUNDED_NOT_RELEASED",
+  "audit": {
+    "candidate_records": 8,
+    "witnesses": 13,
+    "source_bounded_total_after_batch": 23,
+    "still_open_candidate_source_gates": 19,
+    "canonical_ids_created": 0,
+    "app_publications": 0,
+    "additional_catholic_lexicon_corroboration": true
+  },
+  "policy": [
+    "Source attestation only extends to the stated locality, time and practice.",
+    "A household cultural custom does not change the Roman calendar.",
+    "Priestly blessing formularies and local schedules need separate witnesses.",
+    "Folklore about charms and guaranteed effects is contextual only.",
+    "The sources do not themselves authorize new canonical IDs."
+  ],
+  "records": [
+    {
+      "weiser_id": "WEI58-06-008",
+      "title_en": "Christkind bell announcing gifts",
+      "title_fr": "Clochette du Christkind annonçant les cadeaux",
+      "calendar_context": "Christmas Eve, local household gift exchange",
+      "geography": "Austria, Diocese of Linz",
+      "history_en": "A Catholic parish in Upper Austria refers explicitly to the little bell used at Christmas gift-giving. It supports a household signal, not a universal prescribed ceremony or exact historical origin.",
+      "history_fr": "Une paroisse catholique de Haute-Autriche évoque la clochette utilisée à la distribution des cadeaux de Noël. Elle atteste un signal familial, sans établir un rite universel ou une origine historique précise.",
+      "meaning_en": "The bell may accompany family Christmas joy, without a required religious script.",
+      "meaning_fr": "La clochette peut accompagner la joie familiale de Noël, sans texte religieux obligatoire.",
+      "practice_en": "If the household already uses a Christmas bell, ring it before exchanging gifts; any prayer is optional.",
+      "practice_fr": "Si la famille utilise une clochette de Noël, la sonner avant les cadeaux ; toute prière est facultative.",
+      "qualification_en": "This local bell custom is not a Mass gesture or a rule about the Christ Child literally distributing gifts.",
+      "qualification_fr": "Cette clochette familiale n’est ni un geste de la messe ni une affirmation selon laquelle l’Enfant Jésus remet matériellement les cadeaux.",
+      "identity_recommendation": "RELATED_COMPONENT_NOT_DISTINCT_ID",
+      "related_records": [
+        "WEI58-08-026"
+      ],
+      "sources": [
+        {
+          "id": "AT-LINZ-CHRISTKIND",
+          "issuer": "Diocese of Linz, EferdingerLand parish",
+          "url": "https://www.dioezese-linz.at/pfarre/4502/wirindeinernaehe/pfarre/pionierpfarre/article/192692.html",
+          "supports": "Explicit familiar little bell used at Christmas Eve gift-giving",
+          "limit": "Does not verify a required prayer or historic origins"
+        }
+      ],
+      "bilingual_status": "EDITORIAL_DRAFT_EN_FR",
+      "publication_enabled": false,
+      "identity_approved": false,
+      "source_claim_bounded": true,
+      "approval_state": "SOURCE_BOUNDED_EDITED_COPY_PENDING_FINAL_REVIEW"
+    },
+    {
+      "weiser_id": "WEI58-06-010",
+      "title_en": "Christmas Eve hay beneath the tablecloth",
+      "title_fr": "Foin sous la nappe de la veille de Noël",
+      "calendar_context": "24 December, Christmas Eve in Polish households",
+      "geography": "Poland, with related regional variants",
+      "history_en": "Polish national heritage records describe hay beneath the white Christmas Eve tablecloth in recollection of Christ's birth in a stable. This is distinct from adding straw to a devotional Advent crib.",
+      "history_fr": "Les documents polonais du patrimoine décrivent le foin sous la nappe blanche de la veille de Noël, souvenir de la naissance du Christ dans l’étable. Il ne s’agit pas de la paille ajoutée à une crèche pendant l’Avent.",
+      "meaning_en": "A family may follow its traditional table custom without divination.",
+      "meaning_fr": "Une famille peut suivre cet usage à table sans tirer de présages.",
+      "practice_en": "A little clean hay may be placed beneath the Christmas Eve tablecloth where this is customary; do not interpret straw lengths as predictions.",
+      "practice_fr": "Mettre un peu de foin propre sous la nappe de Noël selon l’usage local, sans tirer de présages des brins.",
+      "qualification_en": "Not to be merged with Advent manger-straw good-deeds practice, nor presented as obligatory.",
+      "qualification_fr": "À distinguer de la paille de la crèche de l’Avent ; aucun caractère obligatoire.",
+      "identity_recommendation": "DISTINCT_CHRISTMAS_TABLE_FAMILY_NOT_MANGER_STRAW",
+      "related_records": [
+        "ADVT-002"
+      ],
+      "sources": [
+        {
+          "id": "PL-MINISTRY-WIGILIA",
+          "issuer": "Polish Ministry of Culture",
+          "url": "https://www.gov.pl/web/kultura/nowy-wpis-na-krajowej-liscie-niematerialnego-dziedzictwa-kulturowego",
+          "supports": "Hay under white Christmas Eve tablecloth recalls the stable",
+          "limit": "Regional heritage is not a Roman rite"
+        },
+        {
+          "id": "PL-FORESTRY-WIGILIA",
+          "issuer": "Polish State Forests",
+          "url": "https://www.lasy.gov.pl/pl/informacje/aktualnosci/podlazniczka-i-diduch-czyli-tradycje-i-swiateczne-zwyczaje",
+          "supports": "Christmas hay and associated historical straw divination",
+          "limit": "Folkloric divination is not doctrine"
+        }
+      ],
+      "bilingual_status": "EDITORIAL_DRAFT_EN_FR",
+      "publication_enabled": false,
+      "identity_approved": false,
+      "source_claim_bounded": true,
+      "approval_state": "SOURCE_BOUNDED_EDITED_COPY_PENDING_FINAL_REVIEW"
+    },
+    {
+      "weiser_id": "WEI58-06-012",
+      "title_en": "Christmas Eve care for livestock and birds",
+      "title_fr": "Soins aux animaux à la veille de Noël",
+      "calendar_context": "24 December, locality-bound family observance",
+      "geography": "Kashubia and other documented Polish rural communities",
+      "history_en": "Polish agricultural heritage accounts describe Kashubian farmers giving particularly good fodder to livestock before Christmas and leaving grain for birds. Legends about talking animals or guaranteed protection are folklore.",
+      "history_fr": "Les sources patrimoniales polonaises rapportent qu’en Cachoubie on offrait une bonne nourriture au bétail avant Noël et laissait des céréales aux oiseaux. Les légendes d’animaux parlant ou de protection garantie relèvent du folklore.",
+      "meaning_en": "Respectful, suitable animal care is a voluntary expression of gratitude for creation.",
+      "meaning_fr": "Des soins adaptés aux animaux sont une expression libre de reconnaissance pour la création.",
+      "practice_en": "Show care for livestock and birds with safe, suitable food, not unsuitable folk feeding or promises of protection.",
+      "practice_fr": "Prendre soin du bétail et des oiseaux avec une nourriture adaptée, sans reproduire des gestes dangereux ni garantir une protection.",
+      "qualification_en": "Kashubian testimony does not prove the same custom throughout Scandinavia or constitute veterinary advice.",
+      "qualification_fr": "Le témoignage cachoube ne prouve pas un usage dans toute la Scandinavie et ne remplace pas les soins vétérinaires.",
+      "identity_recommendation": "DISTINCT_REGIONAL_ANIMAL_CARE_FROM_OPLATEK",
+      "related_records": [
+        "XMAS-001"
+      ],
+      "sources": [
+        {
+          "id": "PL-AGRI-KASHUBIA",
+          "issuer": "Polish Ministry of Agriculture, Pomorskie",
+          "url": "https://www.gov.pl/web/rolnictwo/woj-pomorskie1",
+          "supports": "Best fodder for Kashubian livestock and grain for birds",
+          "limit": "Does not establish same practice in Scandinavia"
+        },
+        {
+          "id": "PL-MINISTRY-UNESCO-WIGILIA",
+          "issuer": "Polish Ministry of Culture",
+          "url": "https://www.gov.pl/web/kultura/zlozylismy-wniosek-o-wpisanie-wigilii-na-liste-unesco",
+          "supports": "Polish animal care and coloured Christmas Eve wafers",
+          "limit": "Folklore about animal magic omitted"
+        }
+      ],
+      "bilingual_status": "EDITORIAL_DRAFT_EN_FR",
+      "publication_enabled": false,
+      "identity_approved": false,
+      "source_claim_bounded": true,
+      "approval_state": "SOURCE_BOUNDED_EDITED_COPY_PENDING_FINAL_REVIEW"
+    },
+    {
+      "weiser_id": "WEI58-06-015",
+      "title_en": "Provençal Christmas réveillon after midnight",
+      "title_fr": "Réveillon provençal après minuit",
+      "calendar_context": "Christmas Eve to Christmas Day, after midnight",
+      "geography": "Provence, France; no nationwide extrapolation",
+      "history_en": "The French Ministry of Culture's intangible-heritage inventory distinguishes the earlier meatless Gros Souper from the richer réveillon after midnight, in a Christmas cycle associated with Midnight Mass and local desserts.",
+      "history_fr": "L’inventaire du patrimoine immatériel français distingue le gros souper provençal, traditionnellement maigre et pris avant minuit, du réveillon plus riche qui suit minuit, dans un cycle associé à la messe de minuit et aux desserts de Noël.",
+      "meaning_en": "Families may share their regional Christmas meal; no menu or liturgical fast is imposed by the description.",
+      "meaning_fr": "Les familles peuvent partager leur repas régional de Noël ; cette notice n’impose ni menu ni règle de jeûne.",
+      "practice_en": "Share an appropriate festive meal according to family and local practice; no special food rule follows from this historical notice.",
+      "practice_fr": "Partager un repas de fête selon les habitudes familiales et régionales ; la notice historique ne prescrit aucun menu.",
+      "qualification_en": "The French heritage source describes Provence, not universal French practice or any 1962 fasting dispensation.",
+      "qualification_fr": "La source patrimoniale concerne la Provence, sans prouver une pratique française universelle ni dispenser des règles de jeûne de 1962.",
+      "identity_recommendation": "RELATED_PROVENCAL_MEAL_FAMILY",
+      "related_records": [
+        "WEI58-09-006"
+      ],
+      "sources": [
+        {
+          "id": "FR-CULTURE-NOEL-PROVENCE",
+          "issuer": "French Ministry of Culture, intangible heritage inventory p.4",
+          "url": "https://www.culture.gouv.fr/Media/Thematiques/Patrimoine-culturel-immateriel/Files/Fiches-inventaire-du-PCI/Les-fetes-de-Noel-en-Provence",
+          "supports": "Gros Souper before and réveillon after midnight",
+          "limit": "This is Provence, not a universal French Mass or fasting rule"
+        }
+      ],
+      "bilingual_status": "EDITORIAL_DRAFT_EN_FR",
+      "publication_enabled": false,
+      "identity_approved": false,
+      "source_claim_bounded": true,
+      "approval_state": "SOURCE_BOUNDED_EDITED_COPY_PENDING_FINAL_REVIEW"
+    },
+    {
+      "weiser_id": "WEI58-07-009",
+      "title_en": "Hungarian betlehemezés Nativity visiting plays",
+      "title_fr": "Jeux hongrois de la Nativité betlehemezés",
+      "calendar_context": "Christmas season, local dates",
+      "geography": "Hungary, regional folk-drama variants",
+      "history_en": "The Hungarian ethnographic lexicon documents Christmas visiting plays with shepherd dialogue, song and portable Nativity scenes. It distinguishes actor and puppet versions and surviving written Hungarian forms from the seventeenth century.",
+      "history_fr": "Le lexique ethnographique hongrois décrit des jeux de Noël joués de maison en maison, avec bergers, chants et crèches portatives. Il distingue les acteurs des marionnettes et des textes hongrois conservés dès le XVIIe siècle.",
+      "meaning_en": "The Nativity is expressed through local religious drama, not a prescribed Mass text.",
+      "meaning_fr": "La Nativité est évoquée dans le théâtre religieux populaire, sans être un texte prescrit de la messe.",
+      "practice_en": "Attend an authentic local Nativity drama or document its songs where a community actually continues the tradition.",
+      "practice_fr": "Assister à une représentation locale authentique de la Nativité ou en conserver les chants là où la tradition existe.",
+      "qualification_en": "Hungarian betlehemezés is distinct from Polish szopka carolling and Las Posadas, despite shared themes.",
+      "qualification_fr": "Le betlehemezés hongrois se distingue des szopka polonaises et des Posadas malgré des thèmes communs.",
+      "identity_recommendation": "DISTINCT_HUNGARIAN_DRAMA_NOT_MEXICAN_POLISH",
+      "related_records": [
+        "WEI58-07-008"
+      ],
+      "sources": [
+        {
+          "id": "HU-NEPRAJZ-LEXIKON",
+          "issuer": "Magyar Néprajzi Lexikon, Hungarian Electronic Library",
+          "url": "https://mek.oszk.hu/02100/02115/html/1-713.html",
+          "supports": "House visiting, shepherd Nativity plays, regional actors and puppets",
+          "limit": "Ethnography, not ecclesiastical law; mirror may intermittently fail"
+        },
+        {
+          "id": "HU-MAGYAR-KATOLIKUS-LEXIKON-BETLEHEMEZES",
+          "issuer": "Magyar Katolikus Lexikon, betlehemezés",
+          "url": "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html",
+          "supports": "Hungarian Catholic historical classification, Nativity dramatic components and regional variants; earliest surviving Hungarian-language texts from the seventeenth century",
+          "limit": "Religious and ethnographic evidence, not a Roman rite or proof that every community retains the custom."
+        }
+      ],
+      "bilingual_status": "EDITORIAL_DRAFT_EN_FR",
+      "publication_enabled": false,
+      "identity_approved": false,
+      "source_claim_bounded": true,
+      "approval_state": "SOURCE_BOUNDED_EDITED_COPY_PENDING_FINAL_REVIEW",
+      "editorial_verified_note": "Original Hungarian ethnographic lexicon web page returned a transient 502 during opening; original indexed entry was corroborated by the Magyar Katolikus Lexikon. Both references remain cited with different scopes."
+    },
+    {
+      "weiser_id": "WEI58-19-003",
+      "title_en": "Pentecost greenery decorating Polish homes",
+      "title_fr": "Décorations végétales de Pentecôte dans les foyers polonais",
+      "calendar_context": "Pentecost, movable feast resolved by Calendar",
+      "geography": "Poland, including Bronowice near Kraków",
+      "history_en": "Polish regional sources record decorating homes, gates and churches with spring branches at Zielone Świątki. The Polish National Archives captions a 1930 photograph of such house decoration near Kraków. Protective magical claims are not Catholic teaching.",
+      "history_fr": "Les sources régionales polonaises signalent l’ornement des maisons, portails et églises avec des rameaux à la Pentecôte. Les Archives nationales légendent une photographie de 1930 prise près de Cracovie. Les pouvoirs magiques prêtés aux branches ne sont pas une doctrine catholique.",
+      "meaning_en": "An optional regional sign of Pentecost joy, never a required Roman liturgical decoration.",
+      "meaning_fr": "Un signe régional libre de la joie de Pentecôte, et non une décoration liturgique romaine imposée.",
+      "practice_en": "Optional household greenery may recall Pentecost, using sustainably obtained branches without attributing magical powers.",
+      "practice_fr": "Un feuillage domestique facultatif peut rappeler la Pentecôte, avec des rameaux prélevés sans dommage et sans leur prêter de pouvoir magique.",
+      "qualification_en": "A local Polish custom is not a universal Roman Pentecost decoration or a priestly blessing.",
+      "qualification_fr": "Une coutume polonaise locale n’est ni une décoration liturgique romaine universelle ni une bénédiction sacerdotale.",
+      "identity_recommendation": "DISTINCT_PENTECOST_HOUSEHOLD_DECORATION",
+      "related_records": [
+        "DEV-001"
+      ],
+      "sources": [
+        {
+          "id": "PL-NAC-PENTECOST-1930",
+          "issuer": "Polish National Archives, centenary photo album pp.132–133",
+          "url": "https://www.nac.gov.pl/wp-content/uploads/2019/11/2018_11_26-100x100-album-maly.pdf",
+          "supports": "1930 captioned image of house greenery at Pentecost in Bronowice",
+          "limit": "Historic local photo, not universal current practice"
+        },
+        {
+          "id": "PL-FORESTRY-PENTECOST",
+          "issuer": "Polish State Forests, Zielone Świątki",
+          "url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich",
+          "supports": "Household, gate and church greenery at Polish Pentecost",
+          "limit": "Regional history not mandatory liturgical instructions"
+        }
+      ],
+      "bilingual_status": "EDITORIAL_DRAFT_EN_FR",
+      "publication_enabled": false,
+      "identity_approved": false,
+      "source_claim_bounded": true,
+      "approval_state": "SOURCE_BOUNDED_EDITED_COPY_PENDING_FINAL_REVIEW"
+    },
+    {
+      "weiser_id": "WEI58-21-020",
+      "title_en": "Corpus Christi flower wreaths taken home",
+      "title_fr": "Couronnes de fleurs de la Fête-Dieu conservées au foyer",
+      "calendar_context": "Corpus Christi and local traditional octave customs",
+      "geography": "Poland",
+      "history_en": "Poland's Ministry of Culture records flower and herb wreaths brought to church and taken home, formerly hung near doors or religious images. It also documents folk protective beliefs, which must not be taught as guaranteed cures. This source cannot establish the precise Roman Ritual blessing formula.",
+      "history_fr": "Le ministère polonais de la Culture décrit des couronnes de fleurs et d’herbes portées à l’église puis conservées au foyer, parfois près des portes ou images pieuses. Il rapporte également des croyances protectrices populaires sans valeur de guérison garantie ; la formule du Rituel romain reste à vérifier.",
+      "meaning_en": "Domestic wreath use is distinct from flower carpets along the procession route.",
+      "meaning_fr": "Conserver une couronne chez soi diffère des tapis floraux disposés sur le parcours processionnel.",
+      "practice_en": "Where a parish actually blesses wreaths, households may keep the genuinely blessed flowers; no blessing may be presumed or imitated.",
+      "practice_fr": "Là où une paroisse bénit réellement des couronnes, on peut conserver les fleurs effectivement bénies ; aucune bénédiction ne doit être présumée ou imitée.",
+      "qualification_en": "The Polish cultural source does not identify an approved 1962 Roman Ritual text, and protective cures are folklore.",
+      "qualification_fr": "La source culturelle polonaise ne fournit aucune formule approuvée du Rituel romain de 1962 ; les guérisons protectrices appartiennent au folklore.",
+      "identity_recommendation": "DISTINCT_HOUSEHOLD_FACET_RITUAL_GATE",
+      "related_records": [
+        "CORP-001"
+      ],
+      "sources": [
+        {
+          "id": "PL-CULTURE-CORPUS-WREATHS",
+          "issuer": "Polish Ministry of Culture, Corpus Christi customs",
+          "url": "https://www.gov.pl/web/kultura/uroczystosc-bozego-ciala--tradycje-i-obyczaje/",
+          "supports": "Herb/flower wreaths taken to church and hung in homes",
+          "limit": "Does not establish exact 1962 blessing rite or supernatural effects"
+        }
+      ],
+      "bilingual_status": "EDITORIAL_DRAFT_EN_FR",
+      "publication_enabled": false,
+      "identity_approved": false,
+      "source_claim_bounded": true,
+      "approval_state": "SOURCE_BOUNDED_EDITED_COPY_PENDING_FINAL_REVIEW"
+    },
+    {
+      "weiser_id": "WEI58-22-008",
+      "title_en": "Martinmas end-of-harvest village celebrations",
+      "title_fr": "Réjouissances villageoises de fin des récoltes à la Saint-Martin",
+      "calendar_context": "11 November, St Martin's Day; local festivities",
+      "geography": "Poland and parts of Central Europe",
+      "history_en": "Polish local government history links St Martin's Day to the closure of agricultural work and community feasts including roast goose. Public educational material documents German lantern processions and family meals. Neither demonstrates a universal harvest Thanksgiving Mass on 11 November.",
+      "history_fr": "Une source municipale polonaise relie la Saint-Martin à la fin des travaux agricoles et à des repas communautaires, notamment à l’oie rôtie. Un document éducatif décrit aussi les cortèges allemands de lanternes et les repas familiaux. Cela n’atteste aucune messe universelle d’action de grâce des récoltes le 11 novembre.",
+      "meaning_en": "Historical local feast culture and charitable example of the saint; church events need their own announcement.",
+      "meaning_fr": "Culture festive locale et exemple charitable du saint ; toute cérémonie paroissiale exige son propre programme.",
+      "practice_en": "A community may mark St Martin with a shared meal or act of charity if local tradition supports it; consult parishes for any actual Mass.",
+      "practice_fr": "Une communauté peut marquer la Saint-Martin par un repas ou un acte de charité selon ses usages ; consulter la paroisse pour une messe réellement annoncée.",
+      "qualification_en": "Agricultural year-end celebration is not evidence of a universal harvest Thanksgiving Mass on 11 November.",
+      "qualification_fr": "La fin de l’année agricole ne prouve pas une messe universelle d’action de grâce des récoltes le 11 novembre.",
+      "identity_recommendation": "MARTINMAS_CONTEXT_NOT_AUTO_HARVEST_MASS",
+      "related_records": [
+        "PATR-001"
+      ],
+      "sources": [
+        {
+          "id": "PL-CHODZIEZ-MARTIN",
+          "issuer": "Gmina Chodzież, municipal St Martin heritage",
+          "url": "https://samorzad.gov.pl/web/gmina-chodziez/dziedzictwo-kulturowe-szanse-i-wyzwania-dla-samorzadow",
+          "supports": "St Martin as agricultural year-end and village feast",
+          "limit": "Local civic history, not proof of Mass schedules"
+        },
+        {
+          "id": "PL-ZPE-MARTINSTAG",
+          "issuer": "Polish public education portal, Der Martinstag",
+          "url": "https://zpe.gov.pl/a/przeczytaj/D16PYBAfj",
+          "supports": "German St Martin lantern parades and family goose meal",
+          "limit": "Cultural education, not liturgical instruction"
+        }
+      ],
+      "bilingual_status": "EDITORIAL_DRAFT_EN_FR",
+      "publication_enabled": false,
+      "identity_approved": false,
+      "source_claim_bounded": true,
+      "approval_state": "SOURCE_BOUNDED_EDITED_COPY_PENDING_FINAL_REVIEW"
+    }
+  ]
+}

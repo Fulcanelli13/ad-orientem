@@ -1,0 +1,258 @@
+{
+  "schema": "AO_CUSTOMS_INDEPENDENT_SOURCE_CLOSURE_B01_V1",
+  "review_date": "2026-10-21",
+  "status": "INDEPENDENT_ATTESTATION_OF_NARROW_CLAIMS_NOT_AUTO_PUBLICATION",
+  "scope": {
+    "possible_distinct_pool": 42,
+    "batch_observations": 6,
+    "source_witnesses": 9,
+    "no_publication": true,
+    "no_canonical_ids_created": true,
+    "bilingual_editorial_drafts": 6
+  },
+  "source_method": "Web-verified public parish, government, heritage and local reporting pages checked 21 Oct 2026; titles and claim scopes corrected; no app publishing.",
+  "records": [
+    {
+      "weiser_id": "WEI58-05-010",
+      "english_name": "Herbergsuche — Advent Marian-image visits between households",
+      "french_name": "Herbergsuche — visite d'une image mariale de foyer en foyer pendant l'Avent",
+      "claim": "The Catholic parish of Großpetersdorf documents a Marian image or statue moving from one family to another during Advent with a short devotion at each handover. This is a household relay, not direct evidence of a staged lodging-search drama.",
+      "geo": "Kaiserebersdorf, Vienna, Austria",
+      "calendar": "Advent; individual parish house-visit itinerary, not a universal fixed nine-day programme",
+      "evidence_status": "DIRECT_DIOCESAN_LOCAL_WITNESS",
+      "sources": [
+        {
+          "id": "AT-PARISH-HERBERGSUCHE",
+          "issuer": "Roman Catholic Parish Großpetersdorf, Austria",
+          "url": "https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html",
+          "supports": "House-to-house passage of Marian image or statue, household devotion, connection with Mary and Joseph seeking lodging",
+          "limit": "2023 parish witness; does not prove every German-speaking parish celebrates on the same dates."
+        }
+      ],
+      "limits": [
+        "The parish documents an Advent image relay, not every German-speaking inn-search drama.",
+        "Do not claim that a fixed novena or uniform date schedule applies in all Austrian parishes."
+      ],
+      "identity_status": "DISTINCT_PRACTICE_CANDIDATE_REQUIRES_CROSS_MODULE_DUPLICATE_GATE",
+      "user_facing_status": "NOT_RELEASED",
+      "source_claim_bounded": true,
+      "original_weiser_observation_retained": true,
+      "history_en": "In Großpetersdorf, an Advent image or statue of Our Lady moves between households. Families pray a short devotion as the image arrives and departs. The custom recalls the journey of Mary and Joseph to Bethlehem and encourages hospitality. Dramatic local lodging-search plays must be researched as separate variants.",
+      "history_fr": "À Großpetersdorf, une image ou statue de Notre-Dame passe de foyer en foyer pendant l’Avent. Les familles récitent une courte prière à son arrivée et à son départ. La coutume rappelle le voyage de Marie et Joseph à Bethléem et encourage l’hospitalité. Les représentations théâtrales locales demeurent des variantes distinctes à vérifier.",
+      "meaning_en": "Hospitality toward Mary and Joseph as preparation to welcome Christ.",
+      "meaning_fr": "L’hospitalité envers Marie et Joseph pour se préparer à accueillir le Christ.",
+      "practice_en": "In a participating parish, receive the image and pray as a household; otherwise retain as a historical local account.",
+      "practice_fr": "Dans une paroisse qui le pratique, accueillir l’image et prier en famille ; ailleurs, le présenter comme un usage local attesté.",
+      "qualification_en": "Not identical to Mexican Las Posadas; a house-to-house Marian-image relay may differ from a dramatic lodging play.",
+      "qualification_fr": "Ne pas confondre avec les Posadas mexicaines : la circulation d’une image mariale peut différer du théâtre de la recherche d’hospitalité.",
+      "bilingual_editorial_status": "PREPARED_SOURCE_BOUNDED_NOT_APPROVED",
+      "publication_enabled": false
+    },
+    {
+      "weiser_id": "WEI58-07-007",
+      "english_name": "La guignolée — French Canadian Christmas alms collection",
+      "french_name": "La guignolée — quête caritative canadienne-française de Noël",
+      "claim": "The Québec cultural heritage register independently identifies guignolée charitable food collections initiated by the Society of St Vincent de Paul in the early 1860s. The Montréal Society's current page confirms continued local Christmas-season campaigns.",
+      "geo": "Québec, Canada",
+      "calendar": "Christmas-season charity drive; actual annual dates locally announced",
+      "evidence_status": "DIRECT_CIVIC_HERITAGE_AND_ORGANIZER_WITNESSES",
+      "sources": [
+        {
+          "id": "QC-HERITAGE-GUIGNOLEE",
+          "issuer": "Québec Répertoire du patrimoine culturel — La guignolée",
+          "url": "https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=234696&methode=consulter&type=bien",
+          "supports": "Charitable Catholic origins in early 1860s and historical door-to-door donation collection",
+          "limit": "Museum artifact account: does not specify universal current parish practice."
+        },
+        {
+          "id": "SSVP-GUIGNOLEE-2026",
+          "issuer": "Société de Saint-Vincent de Paul de Montréal",
+          "url": "https://ssvp-mtl.org/fr/guignolee",
+          "supports": "2026 official organizer account of ongoing guignolée and local December collection",
+          "limit": "Modern collection may include non-Catholic participants and is not a universal liturgical act."
+        }
+      ],
+      "limits": [
+        "Later nonreligious charitable collections do not automatically retain explicit Catholic religious character.",
+        "Do not invent universal collection days, donations or parish participation."
+      ],
+      "identity_status": "DISTINCT_PRACTICE_CANDIDATE_REQUIRES_CROSS_MODULE_DUPLICATE_GATE",
+      "user_facing_status": "NOT_RELEASED",
+      "source_claim_bounded": true,
+      "original_weiser_observation_retained": true,
+      "history_en": "The Society of St Vincent de Paul helped establish the guignolée as an organized charitable collection in nineteenth-century Québec. Visitors went from door to door collecting food or gifts for those in need. Modern organizers continue local Christmas-season campaigns, which can include people with no Catholic affiliation.",
+      "history_fr": "La Société de Saint-Vincent-de-Paul a contribué à organiser la guignolée comme collecte charitable dans le Québec du XIXe siècle. Les quêteurs passaient de maison en maison afin de recueillir des denrées pour les plus démunis. Les organisateurs actuels poursuivent ces campagnes locales de Noël, auxquelles participent aussi des personnes sans appartenance catholique.",
+      "meaning_en": "Christian almsgiving and practical care for families in need.",
+      "meaning_fr": "L’aumône chrétienne et le souci concret des familles pauvres.",
+      "practice_en": "Support a legitimate local charity drive without assuming a fixed date or mandatory donation.",
+      "practice_fr": "Soutenir une collecte locale reconnue, sans présumer d’une date obligatoire ni d’un don imposé.",
+      "qualification_en": "Not an element of Mass or a required Catholic ritual; the tradition's later forms may be civic.",
+      "qualification_fr": "Ce n’est ni un élément de la messe ni un rite catholique obligatoire ; les formes récentes peuvent être civiques.",
+      "bilingual_editorial_status": "PREPARED_SOURCE_BOUNDED_NOT_APPROVED",
+      "publication_enabled": false
+    },
+    {
+      "weiser_id": "WEI58-07-008",
+      "english_name": "Polish kolędnicy — Christmas visiting carollers",
+      "french_name": "Kolędnicy polonais — quêteurs et chanteurs de Noël",
+      "claim": "Poland's official educational portal describes kolędnicy who visit households, sing carols and sometimes stage Nativity or Herod plays, preserving a distinction between religious singing and wider folk theatre.",
+      "geo": "Poland (regional variants)",
+      "calendar": "Christmas cycle; dates and troupe forms differ across regions",
+      "evidence_status": "DIRECT_NATIONAL_HERITAGE_WITNESS",
+      "sources": [
+        {
+          "id": "PL-ZPE-KOLEDNICI",
+          "issuer": "Polish government educational portal ZPE — Polskie obyczaje bożonarodzeniowe",
+          "url": "https://zpe.gov.pl/a/polskie-obyczaje-bozonarodzeniowe-koleda-pastoralka-kolednicy-i-koledowanie/DWQhHa9xN",
+          "supports": "Definition of Christmas house-to-house carollers, performances and greetings",
+          "limit": "Educational/ethnographic description, not certification of a specifically Roman Catholic ritual or date."
+        }
+      ],
+      "limits": [
+        "Some performances contain secular folklore; not all forms are explicitly Catholic rites.",
+        "Do not conflate Polish groups with German Epiphany Sternsinger or Hungarian Bethlehem play."
+      ],
+      "identity_status": "DISTINCT_PRACTICE_CANDIDATE_REQUIRES_CROSS_MODULE_DUPLICATE_GATE",
+      "user_facing_status": "NOT_RELEASED",
+      "source_claim_bounded": true,
+      "original_weiser_observation_retained": true,
+      "history_en": "Polish kolędnicy are visiting Christmas carollers who sing, bring seasonal good wishes and sometimes enact Nativity or Herod plays in homes. A Polish state educational resource documents the performers, songs and comic or theatrical folk elements. Catholic religious themes should be distinguished from broader regional folklore.",
+      "history_fr": "Les kolędnicy polonais sont des groupes qui visitent les foyers pendant Noël pour chanter des cantiques, présenter des vœux et parfois jouer la Nativité ou le drame d’Hérode. Une ressource éducative publique décrit les chants ainsi que les composantes théâtrales ou comiques. Les thèmes religieux catholiques doivent être distingués du folklore régional.",
+      "meaning_en": "The birth of Christ remembered through local song and shared hospitality.",
+      "meaning_fr": "Le souvenir de la naissance du Christ transmis par le chant et l’accueil.",
+      "practice_en": "Enjoy or welcome an established local carolling tradition; no uniform troupe script is prescribed.",
+      "practice_fr": "Accueillir ou écouter un groupe local traditionnel, sans imposer un scénario unique.",
+      "qualification_en": "Do not equate every Polish carolling troupe with the separate Epiphany Sternsinger charity collection.",
+      "qualification_fr": "Ne pas assimiler tous les groupes polonais aux Sternsinger allemands de l’Épiphanie.",
+      "bilingual_editorial_status": "PREPARED_SOURCE_BOUNDED_NOT_APPROVED",
+      "publication_enabled": false
+    },
+    {
+      "weiser_id": "WEI58-08-019",
+      "english_name": "St Barbara branches — Barbarazweige",
+      "french_name": "Rameaux de sainte Barbe — Barbarazweige",
+      "claim": "The Archdiocese of Vienna documents branches cut from cherry or apple trees and placed in water on St Barbara's 4 December observance, sometimes flowering by Christmas.",
+      "geo": "Austria and Central European households",
+      "calendar": "Traditional observance 4 December; voluntary domestic symbolism, not a Mass rite",
+      "evidence_status": "DIRECT_DIOCESAN_EXPLANATION",
+      "sources": [
+        {
+          "id": "AT-VIENNA-BARBARA",
+          "issuer": "Archdiocese of Vienna — St Barbara, 4 December",
+          "url": "https://www.erzdioezese-wien.at/heilige-barbara",
+          "supports": "Exact 4 December domestic branch custom, winter flowering and association with the saint's legend",
+          "limit": "Blooming is not guaranteed and the legend is not established biography."
+        }
+      ],
+      "limits": [
+        "The natural bloom is horticultural, not a guaranteed divine sign.",
+        "Does not establish obligatory plant species or universal liturgical use."
+      ],
+      "identity_status": "DISTINCT_PRACTICE_CANDIDATE_REQUIRES_CROSS_MODULE_DUPLICATE_GATE",
+      "user_facing_status": "NOT_RELEASED",
+      "source_claim_bounded": true,
+      "original_weiser_observation_retained": true,
+      "history_en": "For St Barbara's traditional 4 December observance, branches of fruit trees, especially cherry or apple, are placed in water and may blossom around Christmas. The Archdiocese of Vienna describes this household custom and relates it to later stories of the martyr. Her exact ancient biography is not securely documented.",
+      "history_fr": "Le 4 décembre, jour traditionnel de sainte Barbe, on met dans l’eau des rameaux d’arbres fruitiers, notamment cerisiers ou pommiers, qui peuvent fleurir vers Noël. L’archidiocèse de Vienne décrit cet usage familial et le rattache à des récits tardifs sur la martyre. Les détails de son ancienne biographie ne sont pas assurés.",
+      "meaning_en": "A winter sign of hope and patient preparation for Christmas.",
+      "meaning_fr": "Un signe d’espérance en hiver et une préparation patiente à Noël.",
+      "practice_en": "Place appropriate fruit-tree branches in water, where locally customary; pray for perseverance and hope.",
+      "practice_fr": "Mettre des rameaux adaptés dans l’eau selon l’usage local, et prier pour la persévérance et l’espérance.",
+      "qualification_en": "Whether a branch blooms is a natural outcome, not a guarantee of future fortune or favour.",
+      "qualification_fr": "La floraison est un phénomène naturel, non une garantie de bonheur ou de faveur future.",
+      "bilingual_editorial_status": "PREPARED_SOURCE_BOUNDED_NOT_APPROVED",
+      "publication_enabled": false
+    },
+    {
+      "weiser_id": "WEI58-16-020",
+      "english_name": "L-Irxoxt — Maltese running procession with the Risen Christ",
+      "french_name": "L-Irxoxt — procession maltaise du Ressuscité portée au pas de course",
+      "claim": "Malta's public administration documents the traditional Easter Sunday L-Irxoxt procession, and contemporary reporting directly witnesses local runs with statues of the risen Christ.",
+      "geo": "Malta and Gozo, confirmed in named communities",
+      "calendar": "Easter Sunday, only parishes with actual announced procession",
+      "evidence_status": "DIRECT_GOVERNMENT_AND_CURRENT_EVENT_WITNESS",
+      "sources": [
+        {
+          "issuer": "Malta Public Administration",
+          "url": "https://publicservice.gov.mt/en/news/easter-in-gozo-a-celebration-of-faith-culture-and-community",
+          "supports": "Traditional L-Irxoxt Resurrection procession as Easter Sunday custom"
+        },
+        {
+          "issuer": "Times of Malta, 20 April 2025",
+          "url": "https://timesofmalta.com/article/running-risen-unique-easter-tradition-draws-crowds-and-devotion.1108477",
+          "supports": "Observed statue-running in Senglea and Three Cities on Easter Sunday"
+        }
+      ],
+      "limits": [
+        "The Malta government source confirms a Resurrection procession in Gozo, not the act of running the statue.",
+        "Times of Malta documents actual statue runs in specific localities, notably Senglea and the Three Cities; the practice is not identical in every parish.",
+        "Do not use the local celebration to infer any action within the 1962 Mass."
+      ],
+      "identity_status": "DISTINCT_PRACTICE_CANDIDATE_REQUIRES_CROSS_MODULE_DUPLICATE_GATE",
+      "user_facing_status": "NOT_RELEASED",
+      "source_claim_bounded": true,
+      "original_weiser_observation_retained": true,
+      "history_en": "In Maltese communities, the risen Christ is carried through the streets in an Easter Sunday procession. In certain localities, bearers run briefly with the statue. Malta's public administration confirms the Easter Resurrection procession, while local reporting documents the distinctive running in places such as Senglea.",
+      "history_fr": "À Malte, une statue du Christ ressuscité est portée dans les rues le dimanche de Pâques. Dans certaines localités, les porteurs courent brièvement avec la statue. L’administration maltaise confirme la procession pascale, tandis que des témoignages locaux attestent cette course particulière, notamment à Senglea.",
+      "meaning_en": "A public expression of joy in Christ's Resurrection.",
+      "meaning_fr": "Une expression publique de la joie de la Résurrection du Christ.",
+      "practice_en": "Attend an actual advertised Easter procession as an observer or participant according to local arrangements.",
+      "practice_fr": "Assister à une procession pascale réellement annoncée, selon les usages et les consignes du lieu.",
+      "qualification_en": "The run occurs only in some localities and is not an action within the Mass or a universal Easter obligation.",
+      "qualification_fr": "La course n’existe que dans certaines localités ; elle n’appartient pas aux rites de la messe et n’est pas une obligation pascale.",
+      "bilingual_editorial_status": "PREPARED_SOURCE_BOUNDED_NOT_APPROVED",
+      "publication_enabled": false
+    },
+    {
+      "weiser_id": "WEI58-24-007",
+      "english_name": "Faradda di li Candareri — Sassari's Marian offering procession",
+      "french_name": "Faradda di li Candareri — procession votive mariale de Sassari",
+      "claim": "Sassari's municipal programme confirms its annual 14 August guild procession carrying decorated wooden votive candles to Santa Maria di Betlem, and Italy's Ministry of Culture registers the Faradda as a distinct local August Marian heritage tradition.",
+      "geo": "Sassari, Sardinia, Italy",
+      "calendar": "14 August local procession associated with Assumption, not a universal Marian vigil rite",
+      "evidence_status": "DIRECT_REGIONAL_HERITAGE_AND_LOCAL_ORGANIZER",
+      "sources": [
+        {
+          "id": "IT-SASSARI-FARADDA-2026",
+          "issuer": "Comune di Sassari, Faradda 2026",
+          "url": "https://www.comune.sassari.it/it/novita/notizia/Candelieri-2026-segui-tutti-gli-aggiornamenti/",
+          "supports": "Local event, 14 August in 2026, procession to Santa Maria di Betlem",
+          "limit": "Specific 2026 local programme, not a transferable liturgical calendar event."
+        },
+        {
+          "id": "IT-MIC-FARADDA",
+          "issuer": "Italian Ministry of Culture heritage registry",
+          "url": "https://idese.cultura.gov.it/en/place/discesa-dei-candelieri-la-faradda/",
+          "supports": "Annual 14 August Marian votive procession and history",
+          "limit": "Medieval origin narratives require separate documentary analysis."
+        }
+      ],
+      "limits": [
+        "It is a Sassari-specific votive procession, not a universal Assumption rite.",
+        "Do not fix the number of candelieri from older contradictory museum descriptions; the 2026 municipal festival site describes thirteen.",
+        "The feast date does not imply a procession in any other parish."
+      ],
+      "identity_status": "DISTINCT_PRACTICE_CANDIDATE_REQUIRES_CROSS_MODULE_DUPLICATE_GATE",
+      "user_facing_status": "NOT_RELEASED",
+      "source_claim_bounded": true,
+      "original_weiser_observation_retained": true,
+      "history_en": "On 14 August the guilds of Sassari carry large decorated wooden candle structures in a Marian votive procession known as the Faradda. The route culminates at Santa Maria di Betlem, recalling a civic vow attributed to deliverance from plague. Modern municipal and Italian heritage records describe the living local celebration.",
+      "history_fr": "Le 14 août, les corporations de Sassari portent de grands cierges votifs en bois décoré lors de la Faradda, procession mariale qui rejoint Santa Maria di Betlem. Elle renouvelle un vœu civique lié, dans la tradition locale, à la délivrance de la peste. Les sources municipales et patrimoniales italiennes décrivent cette célébration toujours vivante.",
+      "meaning_en": "A local civic and Catholic expression of thanksgiving and honour to Our Lady of the Assumption.",
+      "meaning_fr": "Une action de grâce locale, civique et catholique, en l’honneur de Notre-Dame de l’Assomption.",
+      "practice_en": "Discover or attend Sassari's announced local procession; no other parish celebration is inferred.",
+      "practice_fr": "Découvrir ou suivre la procession locale annoncée à Sassari, sans supposer qu’elle existe dans d’autres paroisses.",
+      "qualification_en": "The guild procession is distinct from a generic Assumption statue procession, a candle blessing and the Roman liturgy.",
+      "qualification_fr": "La procession des corporations se distingue d’une procession mariale générique, d’une bénédiction des cierges et de la liturgie romaine.",
+      "bilingual_editorial_status": "PREPARED_SOURCE_BOUNDED_NOT_APPROVED",
+      "publication_enabled": false
+    }
+  ],
+  "corrections_20261021": [
+    "Replaced uncorroborated generic Austrian Herbergsuche date claim with an actual Roman Catholic parish witness.",
+    "Replaced the incorrect national-ministry kolędnicy page with a Polish state educational source discussing house-to-house carollers.",
+    "Updated the Québec guignolée organizer URL and exact heritage evidence.",
+    "Updated St Barbara's branches to the diocesan saint page.",
+    "Updated Sassari's procession to current civic programme and national heritage registry."
+  ]
+}

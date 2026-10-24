@@ -1,0 +1,875 @@
+{
+  "schema": "AO_CUSTOMS_MASTER_SOT07_ORIGINAL_63_CROSSWALK_V1",
+  "as_of": "2026-10-21",
+  "status": "COMPLETE_IDENTITY_PROVENANCE_AND_OWNER_RECONCILIATION_NOT_PUBLICATION",
+  "source": "data/customs/sot07-full-recovery.review.v1.json@main",
+  "summary": {
+    "original_rows": 63,
+    "canonical_in_working_master": 16,
+    "other_module_or_editorial_owner": 40,
+    "rejected": 4,
+    "source_held": 3,
+    "additional_canonicals": 0,
+    "new_publications": 0
+  },
+  "policy": [
+    "No original 63 SOT-07 source IDs are erased or reassigned to unrelated later custom IDs.",
+    "Original workbook contains prayer, fasting, pastoral guidance and calendar concepts; not every row is an independently publishable custom.",
+    "Preserve the original distinction between 16 canonical, 40 other owner/review, three holds and four rejected records."
+  ],
+  "records": [
+    {
+      "original_sot07_id": "DOM-001",
+      "original_workbook_row": 5,
+      "original_source_ids": [
+        "WEISER-FAM",
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Learn + optional Pray",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-002",
+      "original_workbook_row": 6,
+      "original_source_ids": [
+        "MUCEM-BENITIER"
+      ],
+      "original_owner_hint": "Learn",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "DOM-002",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-003",
+      "original_workbook_row": 7,
+      "original_source_ids": [
+        "TONNE-1950",
+        "MUCEM-BENITIER",
+        "RIT-WELLER"
+      ],
+      "original_owner_hint": "Learn + Pray",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "DOM-003",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-004",
+      "original_workbook_row": 8,
+      "original_source_ids": [
+        "RIT-WELLER",
+        "CATHCULT-HOUSE"
+      ],
+      "original_owner_hint": "Learn / priestly blessing",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-005",
+      "original_workbook_row": 9,
+      "original_source_ids": [
+        "ECF-MAY",
+        "FERON-1934"
+      ],
+      "original_owner_hint": "HOLD",
+      "original_research_disposition": "HOLD_NOT_PUBLISHED",
+      "working_master_id": null,
+      "assignment": "EVIDENCE_HOLD_KEEP_UNPUBLISHED",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-006",
+      "original_workbook_row": 10,
+      "original_source_ids": [
+        "PARAY-CONSECRATION",
+        "MONTAGUE-1958"
+      ],
+      "original_owner_hint": "Pray + Calendar + Learn",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "DOM-006",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-007",
+      "original_workbook_row": 11,
+      "original_source_ids": [
+        "PARAY-INTRONISATION"
+      ],
+      "original_owner_hint": "Pray + Learn",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "DOM-007",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-008",
+      "original_workbook_row": 12,
+      "original_source_ids": [
+        "CATHCULT-HOUSE"
+      ],
+      "original_owner_hint": "REJECT",
+      "original_research_disposition": "REJECT_NOT_PUBLISHED",
+      "working_master_id": null,
+      "assignment": "EXCLUDED_PRESERVE_PROVENANCE",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-009",
+      "original_workbook_row": 13,
+      "original_source_ids": [
+        "WEISER-FAM",
+        "TONNE-1950",
+        "DPP-2001"
+      ],
+      "original_owner_hint": "Pray + Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-010",
+      "original_workbook_row": 14,
+      "original_source_ids": [
+        "WEISER-FAM"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-011",
+      "original_workbook_row": 15,
+      "original_source_ids": [
+        "WEISER-FAM",
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "DOM-011",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-012",
+      "original_workbook_row": 16,
+      "original_source_ids": [
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Learn / serious illness",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-013",
+      "original_workbook_row": 17,
+      "original_source_ids": [
+        "WEISER-FAM",
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "DOM-013",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-014",
+      "original_workbook_row": 18,
+      "original_source_ids": [
+        "MONTAGUE-1958"
+      ],
+      "original_owner_hint": "Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DOM-015",
+      "original_workbook_row": 19,
+      "original_source_ids": [
+        "WEISER-FAM"
+      ],
+      "original_owner_hint": "HOLD",
+      "original_research_disposition": "HOLD_NOT_PUBLISHED",
+      "working_master_id": null,
+      "assignment": "EVIDENCE_HOLD_KEEP_UNPUBLISHED",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "LIFE-001",
+      "original_workbook_row": 20,
+      "original_source_ids": [
+        "RIT-WELLER",
+        "RR-PREGNANCY"
+      ],
+      "original_owner_hint": "Learn / blessing",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "LIFE-002",
+      "original_workbook_row": 21,
+      "original_source_ids": [
+        "RIT-1878",
+        "SCHOLA-RELEVAILLES",
+        "FERON-1934"
+      ],
+      "original_owner_hint": "Learn / historical",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "LIFE-002",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "LIFE-003",
+      "original_workbook_row": 22,
+      "original_source_ids": [
+        "CATHCULT-RR-CHILD",
+        "RIT-WELLER"
+      ],
+      "original_owner_hint": "Learn / blessing",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "LIFE-004",
+      "original_workbook_row": 23,
+      "original_source_ids": [
+        "RIT-WELLER",
+        "RR-SICK-CHILD"
+      ],
+      "original_owner_hint": "Learn / illness",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "LIFE-005",
+      "original_workbook_row": 24,
+      "original_source_ids": [
+        "RIT-WELLER",
+        "FERON-1934"
+      ],
+      "original_owner_hint": "HOLD",
+      "original_research_disposition": "HOLD_NOT_PUBLISHED",
+      "working_master_id": null,
+      "assignment": "EVIDENCE_HOLD_KEEP_UNPUBLISHED",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "LIFE-006",
+      "original_workbook_row": 25,
+      "original_source_ids": [
+        "BENEDICTIONALE"
+      ],
+      "original_owner_hint": "Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "LIFE-007",
+      "original_workbook_row": 26,
+      "original_source_ids": [
+        "RIT-WELLER",
+        "RITUEL-PARVUM"
+      ],
+      "original_owner_hint": "Learn / source lock",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEV-001",
+      "original_workbook_row": 27,
+      "original_source_ids": [
+        "ECF-MAY",
+        "WEISER-FAM"
+      ],
+      "original_owner_hint": "Calendar + Pray + Learn",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "DEV-001",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEV-002",
+      "original_workbook_row": 28,
+      "original_source_ids": [
+        "ECF-MAY"
+      ],
+      "original_owner_hint": "Calendar + Pray",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEV-003",
+      "original_workbook_row": 29,
+      "original_source_ids": [
+        "ECF-MAY"
+      ],
+      "original_owner_hint": "Learn / local",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEV-004",
+      "original_workbook_row": 30,
+      "original_source_ids": [
+        "WEISER-FAM"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEV-005",
+      "original_workbook_row": 31,
+      "original_source_ids": [
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar / governance",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEV-006",
+      "original_workbook_row": 32,
+      "original_source_ids": [
+        "ECF-PILGRIMAGE",
+        "DPP-2001"
+      ],
+      "original_owner_hint": "Explore + Calendar context",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "DEV-006",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEV-007",
+      "original_workbook_row": 33,
+      "original_source_ids": [
+        "ECF-PILGRIMAGE"
+      ],
+      "original_owner_hint": "Explore / local variants",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "DEV-007",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEV-008",
+      "original_workbook_row": 34,
+      "original_source_ids": [
+        "HAEGY-1935",
+        "DPP-2001"
+      ],
+      "original_owner_hint": "Learn / relics",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEV-009",
+      "original_workbook_row": 35,
+      "original_source_ids": [
+        "LAGHET-EXVOTO",
+        "ECF-PILGRIMAGE"
+      ],
+      "original_owner_hint": "Explore / ex-votos",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "DEV-009",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEV-010",
+      "original_workbook_row": 36,
+      "original_source_ids": [
+        "LOURDES-CANDLES"
+      ],
+      "original_owner_hint": "Explore / votive candles",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "DEV-010",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEAD-001",
+      "original_workbook_row": 37,
+      "original_source_ids": [
+        "DPP-2001",
+        "ECF-DEAD"
+      ],
+      "original_owner_hint": "Pray + Calendar + Learn",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "DEAD-001",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEAD-002",
+      "original_workbook_row": 38,
+      "original_source_ids": [
+        "DPP-2001",
+        "ECF-DEAD"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEAD-003",
+      "original_workbook_row": 39,
+      "original_source_ids": [
+        "ECF-DEAD",
+        "DPP-2001"
+      ],
+      "original_owner_hint": "Pray + Calendar",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "DEAD-003",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEAD-004",
+      "original_workbook_row": 40,
+      "original_source_ids": [
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Pray + Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "DEAD-005",
+      "original_workbook_row": 41,
+      "original_source_ids": [
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Learn / source detail",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "BELL-001",
+      "original_workbook_row": 42,
+      "original_source_ids": [
+        "AO-ANGELUS-RESEARCH"
+      ],
+      "original_owner_hint": "Pray",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "BELL-002",
+      "original_workbook_row": 43,
+      "original_source_ids": [
+        "AO-ANGELUS-RESEARCH"
+      ],
+      "original_owner_hint": "Pray / posture",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "BELL-003",
+      "original_workbook_row": 44,
+      "original_source_ids": [
+        "AO-ANGELUS-RESEARCH"
+      ],
+      "original_owner_hint": "Pray",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "BELL-004",
+      "original_workbook_row": 45,
+      "original_source_ids": [
+        "ECF-GLAS"
+      ],
+      "original_owner_hint": "Learn / history",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "BELL-004",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "BELL-005",
+      "original_workbook_row": 46,
+      "original_source_ids": [
+        "ECF-GLAS"
+      ],
+      "original_owner_hint": "REJECT",
+      "original_research_disposition": "REJECT_NOT_PUBLISHED",
+      "working_master_id": null,
+      "assignment": "EXCLUDED_PRESERVE_PROVENANCE",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "FOOD-001",
+      "original_workbook_row": 47,
+      "original_source_ids": [
+        "PAIN-BENIT"
+      ],
+      "original_owner_hint": "Explore / history",
+      "original_research_disposition": "PUBLISHED_CANONICAL",
+      "working_master_id": "FOOD-001",
+      "assignment": "INCLUDED_WITH_ORIGINAL_CANONICAL_ID",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "FAST-001",
+      "original_workbook_row": 48,
+      "original_source_ids": [
+        "CIC-1249-1253"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "FAST-002",
+      "original_workbook_row": 49,
+      "original_source_ids": [
+        "CIC-1249-1253"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "FAST-003",
+      "original_workbook_row": 50,
+      "original_source_ids": [
+        "CIC-919"
+      ],
+      "original_owner_hint": "Mass + Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "FAST-004",
+      "original_workbook_row": 51,
+      "original_source_ids": [
+        "SACRAM-COMMUNIONEM"
+      ],
+      "original_owner_hint": "Learn / historical",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "FAST-005",
+      "original_workbook_row": 52,
+      "original_source_ids": [
+        "AO-DISCIPLINE-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar governance",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "FAST-006",
+      "original_workbook_row": 53,
+      "original_source_ids": [
+        "AO-DISCIPLINE-RESEARCH",
+        "CIC-1249-1253"
+      ],
+      "original_owner_hint": "Learn / historical",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "FAST-007",
+      "original_workbook_row": 54,
+      "original_source_ids": [
+        "AO-DISCIPLINE-RESEARCH",
+        "SCHUSTER"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "FAST-008",
+      "original_workbook_row": 55,
+      "original_source_ids": [
+        "AO-DISCIPLINE-RESEARCH"
+      ],
+      "original_owner_hint": "Learn / historical",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "FAST-009",
+      "original_workbook_row": 56,
+      "original_source_ids": [
+        "CIC-1249-1253",
+        "AO-DISCIPLINE-RESEARCH"
+      ],
+      "original_owner_hint": "REJECT",
+      "original_research_disposition": "REJECT_NOT_PUBLISHED",
+      "working_master_id": null,
+      "assignment": "EXCLUDED_PRESERVE_PROVENANCE",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "FAST-010",
+      "original_workbook_row": 57,
+      "original_source_ids": [
+        "AO-DEVOTIONAL-CALENDAR-RESEARCH"
+      ],
+      "original_owner_hint": "REJECT",
+      "original_research_disposition": "REJECT_NOT_PUBLISHED",
+      "working_master_id": null,
+      "assignment": "EXCLUDED_PRESERVE_PROVENANCE",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "FAST-011",
+      "original_workbook_row": 58,
+      "original_source_ids": [
+        "AO-DEVOTIONAL-CALENDAR-RESEARCH"
+      ],
+      "original_owner_hint": "Learn / historical",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "FAST-012",
+      "original_workbook_row": 59,
+      "original_source_ids": [
+        "CIC-1249-1253",
+        "AO-DISCIPLINE-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar engine",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "SEAS-001",
+      "original_workbook_row": 60,
+      "original_source_ids": [
+        "SCHUSTER",
+        "AO-DISCIPLINE-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "SEAS-002",
+      "original_workbook_row": 61,
+      "original_source_ids": [
+        "SCHUSTER",
+        "CIC-1249-1253"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "SEAS-003",
+      "original_workbook_row": 62,
+      "original_source_ids": [
+        "AO-DISCIPLINE-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "SEAS-004",
+      "original_workbook_row": 63,
+      "original_source_ids": [
+        "WEISER-FAM",
+        "AO-DEVOTIONAL-CALENDAR-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar + Pray",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "SEAS-005",
+      "original_workbook_row": 64,
+      "original_source_ids": [
+        "DPP-2001",
+        "ECF-DEAD",
+        "WEISER-FAM"
+      ],
+      "original_owner_hint": "Calendar + Pray",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "SOT-PRINC-001",
+      "original_workbook_row": 65,
+      "original_source_ids": [
+        "MASTER-RESEARCH-INDEX"
+      ],
+      "original_owner_hint": "Governance",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "SOT-PRINC-002",
+      "original_workbook_row": 66,
+      "original_source_ids": [
+        "MASTER-RESEARCH-INDEX",
+        "SOT-00"
+      ],
+      "original_owner_hint": "Governance",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    },
+    {
+      "original_sot07_id": "SOT-PRINC-003",
+      "original_workbook_row": 67,
+      "original_source_ids": [
+        "AO-SCOPE-RULE"
+      ],
+      "original_owner_hint": "Governance",
+      "original_research_disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "working_master_id": null,
+      "assignment": "OTHER_MODULE_OR_EDITORIAL_OWNER",
+      "app_publication_created": false,
+      "source_verification_status": "PREVIOUS_WORKBOOK_OR_RESEARCH_DECISION_NOT_REAUDITED"
+    }
+  ]
+}
