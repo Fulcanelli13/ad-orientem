@@ -29,6 +29,7 @@ publishedAfterFreeze.add(read("data/geography/research/sacred-places-p14-ovada-c
 for(const row of read("data/geography/research/sacred-places-p17-separated-bergamo-asuncion.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
 // Later P18 publications must not change frozen original European discovery denominators.
 for(const row of read("data/geography/research/sacred-places-p18-three-site-release.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
+for(const row of JSON.parse(readFileSync("data/geography/research/sacred-places-p19-two-catholic-site-release.v1.json","utf8")).published_new)publishedAfterFreeze.add(row.place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 assert.equal(A.schema,"AO_EXPLORE_EUROPE_FOUR_WAVE_MASTER_REVIEW_V1");
 assert.equal(A.status,"REGISTRY_RESEARCH_IN_PROGRESS_NONE_COMPLETE");

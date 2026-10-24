@@ -11,15 +11,15 @@ const prior=load("data/geography/research/sacred-places-p16-three-qualified-site
 const r=load("data/geography/research/sacred-places-p18-three-site-release.v1.json");
 assert.equal(r.schema,"AO_SACRED_PLACES_P18_THREE_SITE_RELEASE_V1");
 assert.deepEqual([r.baseline.places,r.baseline.typed_sources,r.baseline.heritage_crosswalk],[356,647,356]);
-assert.deepEqual([geo.places.length,src.sources.length,cross.place_crosswalk.length],[359,653,359]);
-assert.equal(cross.counts.places,359);
-assert.equal(cross.counts.places_without_direct_claim,100);
-assert.equal(cross.exception_queues.places_without_direct_claim.length,100);
+assert.deepEqual([geo.places.length,src.sources.length,cross.place_crosswalk.length],[361,659,361]);
+assert.equal(cross.counts.places,361);
+assert.equal(cross.counts.places_without_direct_claim,102);
+assert.equal(cross.exception_queues.places_without_direct_claim.length,102);
 assert.equal(geo.geoAreas.length,141);
 assert.equal(geo.directoryPlaceLinks.length,9);
 assert.equal(r.published_new.length,3);
-assert.equal(new Set(geo.places.map(x=>x.place_id)).size,359);
-assert.equal(new Set(src.sources.map(x=>x.id)).size,653);
+assert.equal(new Set(geo.places.map(x=>x.place_id)).size,361);
+assert.equal(new Set(src.sources.map(x=>x.id)).size,659);
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...shrineCorpus,sources:src.sources,places:geo.places}).pass,true);
 assert.equal(prior.held_exceptions.length,16);
@@ -77,4 +77,4 @@ for(const id of r.research_policy.cases_not_automatically_resolved){
 }
 assert.equal(r.proposed.new_approved_media,0);
 assert.equal(r.proposed.new_tlm_links,0);
-console.log("PASS P18 359 canonical Places, 653 typed sources, three distinct mapped Catholic sites, original 16 title holds retained");
+console.log("PASS P18: three distinct mapped Catholic sites and original 16 holds retained under later Geography expansions");

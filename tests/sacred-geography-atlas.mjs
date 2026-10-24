@@ -8,11 +8,11 @@ import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-p
 
 const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const geo=read("data/geography/seed-registry.v1.json"),sacred=read("data/explore/sacred-phenomena-seed.v1.json");
-assert.equal(geo.places.length,359);
+assert.equal(geo.places.length,361);
 assert.equal(sacred.apparitions.length,33);
 assert.equal(sacred.relics.length,122);
 assert.equal(sacred.scope,"PARTIAL_VERIFIED_SEED_NOT_COMPLETE_WORLD_CENSUS");
-assert.equal(assertExploreGeographyRegistry(geo).counts.places,359);
+assert.equal(assertExploreGeographyRegistry(geo).counts.places,361);
 const places=new Map(geo.places.map(p=>[p.place_id,p]));
 const p12=read("data/geography/research/sacred-places-p12-six-georef-and-23-source-exceptions.v1.json");
 assert.equal(p12.schema,"AO_SACRED_PLACES_P12_RESEARCH_DISPOSITIONS_V1");
@@ -80,7 +80,7 @@ for(const row of p13.decisions){
   assert.ok(row.source_review_20261024.next,"Missing publication hold: "+row.candidate_id);
 }
 assert.equal(p13.map_or_publication_proposals.length,3);
-assert.equal(geo.places.length,359,"P13 remains evidence-only; P17 and P18 add six sourced Places");
+assert.equal(geo.places.length,361,"P13 remains evidence-only; P17–P19 add eight sourced Places");
 
 const p11ExactChurchFootprints=[
   ["place:FR:basilique-saint-sernin-toulouse","osm:way:260584755",43.60838,1.44188],
@@ -194,7 +194,7 @@ assert.match(detail,/Sainte Couronne d’épines/);
 assert.match(detail,/notredamedeparis.fr/);
 assert.match(detail,/aucune authentification canonique indépendante/);
 const profiles=buildExplorePlaceProfiles({geography:geo},projection,{today:"2026-10-09"});
-assert.equal(profiles.length,359);
+assert.equal(profiles.length,361);
 const cotignac=profiles.find(p=>p.place_id==="place:FR:saint-joseph-bessillon");
 assert.equal(cotignac.counts.apparitions,1);
 assert.equal(cotignac.counts.relics,0);
