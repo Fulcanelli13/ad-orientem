@@ -51,3 +51,7 @@ jobs:
         run: |
           node --check tests/customs-pitre-1900-p1-17-and-page-queue-364.mjs
           node tests/customs-pitre-1900-p1-17-and-page-queue-364.mjs
+      - name: Verify Pitrè complete old 129 original-folio evidence and new 277 pending queue
+        run: |
+          node --check tests/customs-pitre-1900-original-scan-full-129-folio-integrity.mjs
+          node tests/customs-pitre-1900-original-scan-full-129-folio-integrity.mjs
