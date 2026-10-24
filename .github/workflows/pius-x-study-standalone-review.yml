@@ -14,6 +14,9 @@ on:
       - 'tools/pius-x-p31-cross-source-reconciliation.mjs'
       - 'tools/pius-x-p32-bulk-200-source-crosswalk.mjs'
       - 'tools/formation/pius-x-p33-italian-original-100-audit.py'
+      - 'tools/pius-x-p34-bilingual-claim-comparison.mjs'
+      - 'previews/pius-x-study/spx-p34-claim-review-template.html'
+      - 'tests/pius-x-p34-claim-review-e2e.mjs'
       - 'tests/pius-x-p33-italian-original-100-audit.py'
       - 'tests/pius-x-p32-bulk-200-source-crosswalk.mjs'
       - 'tests/pius-x-p31-cross-source-reconciliation.mjs'
@@ -74,6 +77,9 @@ on:
       - 'tools/pius-x-p31-cross-source-reconciliation.mjs'
       - 'tools/pius-x-p32-bulk-200-source-crosswalk.mjs'
       - 'tools/formation/pius-x-p33-italian-original-100-audit.py'
+      - 'tools/pius-x-p34-bilingual-claim-comparison.mjs'
+      - 'previews/pius-x-study/spx-p34-claim-review-template.html'
+      - 'tests/pius-x-p34-claim-review-e2e.mjs'
       - 'tests/pius-x-p33-italian-original-100-audit.py'
       - 'tests/pius-x-p32-bulk-200-source-crosswalk.mjs'
       - 'tests/pius-x-p31-cross-source-reconciliation.mjs'
@@ -160,6 +166,10 @@ jobs:
         run: python3 tools/formation/pius-x-p33-italian-original-100-audit.py
       - name: Reconcile 100 Italian source witnesses and keep translations, print and pastoral holds unapproved
         run: python3 tests/pius-x-p33-italian-original-100-audit.py
+      - name: Align 100 bilingual editorial opening drafts with original Italian witness excerpts as an uncertified claim review packet
+        run: node tools/pius-x-p34-bilingual-claim-comparison.mjs
+      - name: Browser-test 100-case offline documentary desk, human-review flags and research export
+        run: node tests/pius-x-p34-claim-review-e2e.mjs
       - name: Build free one-file offline Pius X source-dialogue trial with preserved sprites
         run: node tools/build-pius-x-p26-offline-replay.mjs
       - name: Browser-test offline source dialogue, French/English and original Vatican witnesses
