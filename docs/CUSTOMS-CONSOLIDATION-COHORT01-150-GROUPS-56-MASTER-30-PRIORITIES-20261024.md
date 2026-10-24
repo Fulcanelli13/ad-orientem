@@ -73,3 +73,36 @@ Next pass: read original passages for the **30 priority cases**, make evidence-b
 - `.github/workflows/customs-master-integrity.yml`
 
 Nothing has been inserted into the app or live Calendar.
+
+
+## 24 October — original-folio action-level pass (supersedes the earlier 0/30 source-check status)
+
+- The exact **30/30** preselected Weiser priority group actions have now been checked against the scanned pages of the **1958 original edition** ([facsimile](https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf)). Each remains the *same* provisional group with its original source observation and research-only state; **no new canonical ID or approved merge** was created.
+- The original page check overturned **three mistaken page-mismatch allegations** introduced in the first action dossier when relying on a transcription. The Easter light / lantern account **is on printed p.217**, so the old p.226 allegation is withdrawn. St Nicholas letters begin p.55 and continue p.56, so the queue's p.56 is a valid continuation and p.45 was incorrect. Epiphany's **Blessing of Homes starts on printed p.149**, next to the queue's p.150, which opens a different folklore section. The original-page facsimile review supersedes the transcription-derived guesses.
+- The 30 actions are now provisionally routed to distinct-practice review, an existing master’s contextual extension, related regional variant, historic local event, cultural-only context, ritual authority hold or folklore/superstition exclusion. A single Weiser page is **not** independent corroboration, contemporary continuity or Calendar-release clearance.
+- **Two** practices have an additional institutionally scoped contemporary witness: the [Archdiocese of Vienna on Easter light carried home](https://www.erzdioezese-wien.at/pages/inst/21452566/service/kirchenjahr/osterfestkreis/osterlicht) and [Seville Cathedral on its Seises Corpus dance](https://www.catedraldesevilla.es/en/solemnity-of-corpus-christi-at-the-cathedral/). These corroborate *the locality/scoped practice*, not every historical detail in Weiser.
+- **Five** further English/French Calendar editorial profiles now exist as **unapproved drafts**: Advent St Joseph image rounds; Seville Seises; decorated Candlemas candles; Candlemas crib removal; and Spanish Immaculate Conception balconies. With the previous two action dossiers, there are **seven** initial bilingual prose drafts—**not** seven canonically approved customs. The decorated candles dossier is explicitly a possible contextual extension to existing `DOM-011`, not a seventh new identity.
+
+### Current measured gate state
+
+| Metric | Count |
+| --- | ---: |
+| Provisional groups held steady | **408** |
+| Master identities held steady | **56** |
+| Existing `main` customs (35 published-state + 3 context-only) | **38** |
+| First cohort label-screened | **150/361 ownerless** |
+| Calendar-priority action passages checked against 1958 facsimile | **30/30** |
+| Additional modern locality witnesses for these priority passages | **2** |
+| EN/FR unapproved editorial draft dossiers | **7** |
+| Newly approved distinct custom identities | **0** |
+| Newly approved owner merges | **0** |
+| New Calendar publications | **0** |
+
+Next step is **cross-source confirmation and canonical/variant adjudication** on the highest-value Calendar subjects, rather than further Pitrè extraction or another general first-pass registry. No new Calendar UI is authorized.
+
+New files:
+
+- `data/customs/master/customs-consolidation-cohort01-original-facsimile-30-action-decisions.v1.json`
+- `data/customs/master/customs-consolidation-cohort01-calendar-pilot-5-bilingual-drafts.v1.json`
+
+The original two-dossier file has been corrected to cite actual 1958 facsimile folios.
