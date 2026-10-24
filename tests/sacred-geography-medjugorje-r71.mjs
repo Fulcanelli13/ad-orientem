@@ -19,7 +19,7 @@ const pilgrimId="pilgrimage:BA:medjugorje-destination";
 const reportId="apparition:BA:medjugorje";
 
 assert.deepEqual([geography.places.length,corpus.shrines.length,corpus.pilgrimages.length,
-  phenomena.apparitions.length,sources.sources.length],[371,257,240,33,669]);
+  phenomena.apparitions.length,sources.sources.length],[LIVE.places,257,240,33,LIVE.sources]);
 assert.equal(assertExploreGeographyRegistry(geography).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({
   shrines:corpus.shrines,pilgrimages:corpus.pilgrimages,routes:corpus.routes,
