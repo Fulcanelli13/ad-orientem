@@ -15,7 +15,7 @@ assert.equal(p13.summary.original_exception_slots,23);
 assert.equal(p14.base.places,347);
 assert.equal(p14.proposed.places,348);
 assert.equal(geo.places.length,p14.proposed.places+5+3+3+2);
-assert.equal(src.sources.length,p14.proposed.shrine_sources+15+8+6);
+assert.equal(src.sources.length,p14.proposed.shrine_sources+15+8+6+6);
 assert.equal(geo.geoAreas.length,141);
 assert.equal(geo.directoryPlaceLinks.length,9);
 assert.equal(cross.place_crosswalk.length,geo.places.length);
