@@ -37,6 +37,12 @@ export function routePilotQuestion(store,input){
  const question=String(input.question||'').trim();
  if(question.length<4||question.length>240)return {status:'unmatched',reason:'invalid_question'};
  const normalized=normalize(question);
+ // Narrow keyword routing must not misinterpret private-life questions as
+ // source-backed simply because they mention election, predecessor or pope.
+ // These require evidence outside the bounded original papal extracts.
+ const speculativePrivateDetail=/(?:secret|private (?:meeting|conversation|diary)|childhood|birthplace|doctor|dinner|breakfast|what did (?:you|he) eat|(?:predecessor|predecesseur).{0,32}(?:name|nom)|(?:name|nom).{0,32}(?:predecessor|predecesseur)|(?:repas|secret|enfance|medecin|dejeuner|diner|manger))/u;
+ if(speculativePrivateDetail.test(normalized))
+  return {status:'unmatched',reason:'no_explicit_bounded_intent'};
  // Exact questions from the original P6 source owner remain available even
  // when their ordinary grammar omits our manually chosen topic keyphrases.
  const exact=chapter.nodes.find(n=>normalize(n.q[input.language])===normalized);
