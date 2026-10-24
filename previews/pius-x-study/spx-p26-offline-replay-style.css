@@ -58,3 +58,25 @@ body.spxc-offline-pilot-active .spxc-free-ask{display:none!important}
  overflow-wrap:anywhere}
 .spxm-trace-witness a{color:#ddc18b;font:11px/1.45 system-ui,sans-serif}
 @media(max-width:600px){.spxm-claim-audit{padding:10px}.spxm-trace-witness{padding:8px}}
+
+
+/* P2.46: guided source-dialogue staging, not messenger bubbles or a live model. */
+#spxm-guided-exchange{border-block:1px solid #826d4a70;padding:13px 0 17px;margin:15px 0 8px}
+#spxm-guided-start{border:1px solid #b19a6f;background:#1f242c;color:#e6ce9d;
+ padding:10px 15px;cursor:pointer;min-height:42px;font:13px/1.35 system-ui,sans-serif}
+#spxm-guided-state{color:#b8a383;letter-spacing:.015em;font:12px/1.55 system-ui,sans-serif;margin:10px 0 0}
+#spxm-guided-continue{margin:12px 0 0}
+.spxm-guided-question{display:block;width:100%;min-height:48px;padding:13px 15px;
+ border:1px solid #c6a976;background:#292722;text-align:left;color:#f1ddba;
+ cursor:pointer;font:16px/1.5 Palatino,Georgia,serif}
+.spxm-guided-question:hover,.spxm-guided-question:focus-visible,
+#spxm-guided-start:hover,#spxm-guided-start:focus-visible{
+ background:#373128;border-color:#e5c992;outline-offset:3px}
+.spxm-guided-caution{color:#ab9a7d;font:11px/1.55 system-ui,sans-serif;margin:0 0 9px}
+.spxm-guided-finished{color:#cdb68d}
+#spxm-offline-choices[hidden]{display:none!important}
+@media(max-width:600px){
+ #spxm-guided-start{width:100%}
+ #spxm-guided-continue{width:100%}
+ .spxm-guided-question{font-size:15px}
+}
