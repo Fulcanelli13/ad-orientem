@@ -149,16 +149,54 @@ def main():
             "original_sha256":sha,"archive_tag":tag,"archive_asset":asset,
             "old_archive_member":oldmember,"sha_candidates":hashes,
             "image_identity_hold":hold,"suggested_places":slots})
-    groups={}
-    for s in selected:
-        if s["original_sha256"]:groups[(s["archive_tag"],s["archive_asset"])]=None
-    print("B53_SOURCE_GROUPS",json.dumps([{"tag":t,"asset":a} for t,a in groups]),flush=True)
-    # Download a source TAR once, not one copy per image.
-    with tempfile.TemporaryDirectory(prefix="ao-b52-100-verification-") as tmp:
+    # For later B35–B41 source recoveries, find the pre-registered SHA
+    # inside actual acquisition manifests; neither saint names nor titles
+    # can establish identity or justify an artwork substitution.
+    with tempfile.TemporaryDirectory(prefix="ao-b53-383-verification-") as tmp:
         dest=Path(tmp)
         tarpaths={}
+        unresolved=[r for r in selected if not r["original_sha256"] and r["sha_candidates"]]
+        if unresolved:
+            target_hashes={h for r in unresolved for h in r["sha_candidates"]}
+            releases=json.loads(gh("api",f"repos/{REPO}/releases?per_page=100"))
+            late=[]
+            for rel in releases:
+                tag=rel.get("tag_name","")
+                if not re.fullmatch(r"ao-art-originals-\d+-1",tag) or rel.get("draft") is not True:continue
+                archive_names=[a["name"] for a in rel.get("assets",[])
+                    if a["name"].endswith(".tar") and re.match(r"ao-originals-b(?:35|36|37|40|41)-",a["name"])]
+                if len(archive_names)==1:late.append((tag,archive_names[0]))
+            assert len(late)>=7
+            index={}
+            for tag,asset in sorted(late):
+                print("B53_SCAN_LATE_SOURCE",tag,asset,flush=True)
+                gh("release","download",tag,"--repo",REPO,"--pattern",asset,"--dir",str(dest))
+                tarpath=dest/asset
+                with tarfile.open(tarpath,"r") as tar:
+                    manifest=json.load(tar.extractfile("AO_ARCHIVE_ACQUISITION_INDEX.json"))
+                    assert manifest["research_only"] and manifest["publication_rights_approved"] is False
+                    for file in manifest["files"]:
+                        h=file.get("sha256","")
+                        if file.get("image_file") and h in target_hashes and h not in index:
+                            index[h]=(tag,asset)
+                tarpaths[(tag,asset)]=tarpath
+            for row in unresolved:
+                for sha_candidate in row["sha_candidates"]:
+                    if sha_candidate in index:
+                        row["original_sha256"]=sha_candidate
+                        row["archive_tag"],row["archive_asset"]=index[sha_candidate]
+                        break
+                if not row["original_sha256"]:
+                    row["image_identity_hold"]+=(" " if row["image_identity_hold"] else "")+"The recorded research source SHA could not be matched to a surviving archived image; source review required."
+        groups={}
+        for row in selected:
+            if row["original_sha256"]:
+                assert row["archive_tag"] and row["archive_asset"]
+                groups[(row["archive_tag"],row["archive_asset"])]=None
+        print("B53_SOURCE_GROUPS",json.dumps([{"tag":t,"asset":a} for t,a in groups]),flush=True)
         for tag,asset in groups:
-            print("B52_DOWNLOAD_PRIVATE",tag,asset,flush=True)
+            if (tag,asset) in tarpaths:continue
+            print("B53_DOWNLOAD_PRIVATE",tag,asset,flush=True)
             gh("release","download",tag,"--repo",REPO,"--pattern",asset,"--dir",str(dest))
             p=dest/asset
             if not p.exists():raise RuntimeError("Remote original preservation absent "+asset)
