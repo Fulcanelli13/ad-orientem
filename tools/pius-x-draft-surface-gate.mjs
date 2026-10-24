@@ -32,10 +32,25 @@ function confidence(s){
  const count=set=>ws.reduce((n,w)=>n+(set.has(w)?1:0),0);
  return {fr:count(french),en:count(english)};
 }
-export function auditDraftSurface({text,language,evidence=[],question=''}={}){
+export function auditDraftSurface({text,language,evidence=[],question='',
+ voiceMode='documentary',experimentalComposerProfile=null}={}){
  if(!['en','fr'].includes(language)||typeof text!=='string')
   return {ok:false,reason:'invalid_draft_surface_request'};
  const plain=text.trim();
+ // A P53-only stricter hold following actual 3B research output. A first-
+ // person papal reconstruction must never be returned under documentary mode.
+ // Historical editorial mode is separately labelled and still source-gated.
+ if(experimentalComposerProfile==='P53_ATOMIC_CLAIM_CUES'){
+  if(question&&lower(plain).startsWith(lower(question))&&
+     lower(question).length>=16)
+   return {ok:false,reason:'visitor_question_echoed_as_answer'};
+  if(/\b(?:encyclop[eé]die|encyclopedia)\s+(?:de|of)\s+(?:Pius|Pie)\b/iu.test(plain))
+   return {ok:false,reason:'invented_secondary_source_reference'};
+  if(voiceMode==='documentary'&&(
+    /\b(?:I|my|mine|we|our|ours)\b/u.test(plain)||
+    /\b(?:je|j['’]|moi|mon|ma|mes|nous|notre|nos)\b/iu.test(plain)
+   ))return {ok:false,reason:'first_person_roleplay_in_documentary_mode'};
+ }
  if(/^\s*(?:\.\.\.|…|[-–—]\s|[;:,])/.test(plain)||
     /(?:predecessor is not named in this sentence|declared declared|as stated in §)/i.test(plain))
   return {ok:false,reason:'fragmentary_editorial_reply'};
