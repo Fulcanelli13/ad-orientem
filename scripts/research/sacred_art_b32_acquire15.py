@@ -31,7 +31,7 @@ FIELDNAMES=[
  "current_download_sha256","original_file_url","recorded_license","current_license",
  "file_length_bytes","width","height","technical_resolution_gate",
  "candidate_photo_identity_certified","editorial_selected","publication_reuse_approved",
- "source_status","failure","archive_required"
+ "source_status","failure","archive_required","existing_archive_wave","existing_archive_file","existing_archive_catalogue_ids"
 ]
 def rows(path):
  with (DATA/path).open(newline="",encoding="utf-8") as f:
@@ -50,12 +50,18 @@ def main():
  previous=rows("sacred-art-b31-29-candidate-results.csv")
  assert len(previous)==29
  oldHashes={r["original_file_sha256_measured"].lower() for r in previous}
- oldHashes|={r["sha256"].lower() for r in rows("sacred-art-b27-physical-image-inventory.csv")}
+ oldB27=rows("sacred-art-b27-physical-image-inventory.csv")
+ oldHashes|={r["sha256"].lower() for r in oldB27}
+ b27_by_hash={r["sha256"].lower():r for r in oldB27}
  oldHashes|={r["download_sha256"].lower() for r in rows("sacred-art-b30-six-selected-acquisition.csv")}
  b29=json.loads((DATA/"sacred-art-b29-selected-exact7-corrected.summary.json").read_text())
  oldHashes|={r["recovered_original_sha256"] for r in b29["files"]}
  hashes={r["existing_candidate_gallery_sha256"] for r in queue}
- assert len(hashes)==15 and not hashes & oldHashes,"Refusing duplicate archival bytes"
+ assert len(hashes)==15
+ duplicates=hashes & oldHashes
+ assert len(duplicates)==2,"B32 expected two pre-archived source binaries; investigate any drift"
+ assert duplicates=={r["sha256"].lower() for r in oldB27 if r["sha256"].lower() in hashes}
+ assert {r["catalogue_ids_with_recorded_hash"] for r in oldB27 if r["sha256"].lower() in duplicates}=={"W05-008","W36-SNT-OT-13-5387d641cce6"}
  assert not {r["artwork_id"] for r in queue} & {
      "ART-usepe-de-ibera-aint-eter-postolate",
      "G25-003",
@@ -95,6 +101,17 @@ def main():
   if suffix not in {".jpg",".jpeg",".png",".webp",".tif",".tiff"}: suffix=".image"
   filename=hashlib.sha256(id.encode()).hexdigest()[:20]+"-"+hashExpected[:18]+suffix
   dest=OUTPUT/"originals"/filename
+  if hashExpected in duplicates:
+   archived=b27_by_hash[hashExpected]
+   result.update(source_status="ALREADY_IN_B27_OTHER_CATALOGUE_IDENTITY_HOLD",
+      current_download_sha256=hashExpected,
+      existing_archive_wave=archived["archive_wave"],
+      existing_archive_file=archived["file_path"],
+      existing_archive_catalogue_ids=archived["catalogue_ids_with_recorded_hash"],
+      archive_required="ALREADY_BYTE_VERIFIED_IN_B27_NO_DUPLICATE_STORAGE")
+   output.append(result)
+   print("B32_REUSED_EXISTING",id,archived["catalogue_ids_with_recorded_hash"],flush=True)
+   continue
   try:
    current=metadata_for(variant["source_page"])
    result["current_license"]=current["license_short_name"]
@@ -132,7 +149,8 @@ def main():
   "schema":"AO_SACRED_ART_B32_15_SOURCE_OBJECT_RESEARCH_ORIGINALS_V1",
   "source_artwork_candidates":15,
   "exact_technical_research_source_files":len(successful),
-  "source_holds":len(output)-len(successful),
+  "source_holds":sum(r["source_status"]=="SOURCE_HOLD_NOT_ACQUIRED" for r in output),
+  "preexisting_research_file_alias_conflicts":sum(r["source_status"]=="ALREADY_IN_B27_OTHER_CATALOGUE_IDENTITY_HOLD" for r in output),
   "source_bytes_acquired":byte_count,
   "long_edge_2400_pass":sum(r["technical_resolution_gate"]=="LONG_EDGE_2400_PASS" for r in successful),
   "resolution_review_hold":sum(r["technical_resolution_gate"]=="RESOLUTION_REVIEW" for r in successful),
