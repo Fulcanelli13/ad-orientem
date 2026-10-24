@@ -58,8 +58,19 @@ export async function probeLocalModel(settings,fetchLocal=fetch){
   if(!resp.ok)return {ready:false,reason:'local_model_not_ready',http:resp.status};
   const json=await resp.json().catch(()=>({}));
   if(json.status!=='ok')return {ready:false,reason:'local_model_not_loaded'};
-  return {ready:true,reason:'LOCAL_MODEL_RUNNING',endpoint:'127.0.0.1:8766',
-   verifiedModelIdentity:false,paidServiceRequests:0};
+  // An arbitrary healthy local server may expose a different model. Pin the
+  // exact alias expected by the documentary source gates before serving.
+  const models=await fetchLocal(new URL('/v1/models',url).toString(),{
+   signal:controller.signal,redirect:'error',cache:'no-store'
+  });
+  if(!models.ok)return {ready:false,reason:'local_model_identity_unavailable'};
+  const catalog=await models.json().catch(()=>({}));
+  const ids=(Array.isArray(catalog.data)?catalog.data:[]).map(x=>x.id);
+  if(!ids.includes(settings.AO_SPX_MODEL))
+   return {ready:false,reason:'local_model_alias_mismatch',
+    expectedAlias:settings.AO_SPX_MODEL};
+  return {ready:true,reason:'LOCAL_7B_ALIAS_RUNNING',endpoint:'127.0.0.1:8766',
+   verifiedModelIdentity:'SERVER_REPORTED_ALIAS_ONLY',paidServiceRequests:0};
  }catch{
   return {ready:false,reason:'local_model_not_running'};
  }finally{clearTimeout(timer);}
