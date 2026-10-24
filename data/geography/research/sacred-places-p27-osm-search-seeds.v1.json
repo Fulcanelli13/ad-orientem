@@ -1,0 +1,517 @@
+{
+  "schema": "AO_SACRED_PLACES_P27_OSM_SEARCH_SEEDS_V1",
+  "date": "2026-10-24",
+  "status": "DISCOVERY_ONLY_NOT_RELEASE",
+  "baseline": {
+    "places": 387,
+    "typed_sources": 685,
+    "first200_source_excerpts": 105,
+    "unreviewed_priority": 95
+  },
+  "scope": {
+    "candidates": 24,
+    "countries": 22
+  },
+  "limits": [
+    "Discovery centres are approximate town/neighbourhood search anchors and MUST NEVER become Place.geo coordinates.",
+    "Overpass outputs are uncontrolled leads and MUST NEVER automatically become verified OSM features.",
+    "The Catholic institutional source and exact OSM node/way/relation must identify the same specific physical unit.",
+    "Complexes and duplicate same-name churches require special review, especially Santa Cova, Csíksomlyó, Budslau, Valletta, and Kevelaer.",
+    "No canonical Place IDs, typed sources, or Directory links are modified."
+  ],
+  "candidates": [
+    {
+      "candidate_id": "SG-INV-0333",
+      "country": "LT",
+      "label": "Gate of Dawn chapel, Vilnius",
+      "source_authority": "Roman Catholic Archdiocese of Vilnius",
+      "identity_source_url": "https://vilnensis.lt/baznycios/ausros-vartai-vilnius/",
+      "discovery_center": {
+        "lat": 54.6735,
+        "lng": 25.2885,
+        "radius_m": 1200,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Aušros Vartų koplyčia",
+        "Gate of Dawn",
+        "Aušros vartai"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0728",
+      "country": "BJ",
+      "label": "Basilica of the Immaculate Conception, Ouidah",
+      "source_authority": "Roman Catholic Archdiocese of Cotonou",
+      "identity_source_url": "https://archidiocesedecotonou.org/paroisses",
+      "discovery_center": {
+        "lat": 6.364,
+        "lng": 2.087,
+        "radius_m": 2500,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Basilique de l'Immaculée Conception",
+        "Basilica of the Immaculate Conception"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0499",
+      "country": "CL",
+      "label": "Sanctuary of Our Lady of Mount Carmel, Maipú",
+      "source_authority": "Santuario Nacional de Maipú custodians",
+      "identity_source_url": "https://www.santuarionacional.cl/",
+      "discovery_center": {
+        "lat": -33.502,
+        "lng": -70.767,
+        "radius_m": 3200,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Templo Votivo de Maipú",
+        "Santuario Nacional de Maipú"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0184",
+      "country": "AT",
+      "label": "Sanctuary of Mariatrost",
+      "source_authority": "Roman Catholic Diocese of Graz-Seckau",
+      "identity_source_url": "https://www.katholische-kirche-steiermark.at/goto/instvisitenkarte/1535/Pfarre_Graz_Mariatrost",
+      "discovery_center": {
+        "lat": 47.107,
+        "lng": 15.492,
+        "radius_m": 2300,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Basilika Mariatrost",
+        "Wallfahrtskirche Mariatrost",
+        "Basilika Mariä Geburt"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0163",
+      "country": "DE",
+      "label": "Basilica of Our Lady of Kevelaer",
+      "source_authority": "Catholic pilgrimage parish St Marien Kevelaer",
+      "identity_source_url": "https://www.wallfahrt-kevelaer.de/impressum",
+      "discovery_center": {
+        "lat": 51.582,
+        "lng": 6.246,
+        "radius_m": 2000,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Marienbasilika",
+        "Basilika Kevelaer",
+        "Basilika St. Marien"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0350",
+      "country": "ME",
+      "label": "Our Lady of the Rocks church, Perast",
+      "source_authority": "Croatian Encyclopaedia",
+      "identity_source_url": "https://www.enciklopedija.hr/clanak/gospa-od-skrpjela",
+      "discovery_center": {
+        "lat": 42.485,
+        "lng": 18.692,
+        "radius_m": 2000,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Gospa od Škrpjela",
+        "Our Lady of the Rocks"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0632",
+      "country": "PH",
+      "label": "Baclaran National Shrine",
+      "source_authority": "Redemptorist National Shrine of Our Mother of Perpetual Help",
+      "identity_source_url": "https://www.baclaranchurch.org/about",
+      "discovery_center": {
+        "lat": 14.531,
+        "lng": 120.993,
+        "radius_m": 1800,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Baclaran Church",
+        "National Shrine of Our Mother of Perpetual Help",
+        "National Shrine of Our Lady of Perpetual Help"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0748",
+      "country": "FJ",
+      "label": "Sacred Heart Cathedral, Suva",
+      "source_authority": "Roman Catholic Archdiocese of Suva",
+      "identity_source_url": "https://aosfiji.org/parish-contact-list/",
+      "discovery_center": {
+        "lat": -18.143,
+        "lng": 178.426,
+        "radius_m": 2600,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Sacred Heart Cathedral",
+        "Cathedral of the Sacred Heart"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0472",
+      "country": "PR",
+      "label": "Our Lady of Monserrate, Hormigueros",
+      "source_authority": "Roman Catholic Diocese of Mayagüez",
+      "identity_source_url": "https://diocesisdemayaguez.org/basilica-nuestra-senora-de-la-monserrate",
+      "discovery_center": {
+        "lat": 18.138,
+        "lng": -67.127,
+        "radius_m": 2800,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Basílica Menor Nuestra Señora de la Monserrate",
+        "Basílica de Monserrate",
+        "Basilica of Our Lady of Monserrate"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0531",
+      "country": "UY",
+      "label": "Virgen de los Treinta y Tres, Florida",
+      "source_authority": "Roman Catholic Diocese of Florida, Uruguay",
+      "identity_source_url": "https://www.iglesiacatolicaflorida.org/parroquias/",
+      "discovery_center": {
+        "lat": -34.099,
+        "lng": -56.215,
+        "radius_m": 2500,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Catedral Basílica Nuestra Señora de los Treinta y Tres",
+        "Catedral de Florida"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0273",
+      "country": "CH",
+      "label": "Madonna del Sasso, Orselina",
+      "source_authority": "Capuchin custodians, Madonna del Sasso",
+      "identity_source_url": "https://www.madonnadelsasso.org/madonnadelsasso/religiose.html",
+      "discovery_center": {
+        "lat": 46.173,
+        "lng": 8.795,
+        "radius_m": 2600,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Madonna del Sasso",
+        "Santuario Madonna del Sasso"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0334",
+      "country": "LT",
+      "label": "Žemaičių Kalvarija basilica",
+      "source_authority": "Roman Catholic Diocese of Telšiai",
+      "identity_source_url": "https://telsiuvyskupija.lt/parapijos/zemaiciu-kalvarija",
+      "discovery_center": {
+        "lat": 56.114,
+        "lng": 22.022,
+        "radius_m": 2300,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Žemaičių Kalvarijos bazilika",
+        "Žemaičių Kalvarija",
+        "Basilica of the Visitation"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-NEW-MONTSERRAT-COVA",
+      "country": "ES",
+      "label": "Santa Cova de Montserrat",
+      "source_authority": "Benedictine Abbey of Montserrat",
+      "identity_source_url": "https://abadiamontserrat.cat/en/seccio/santuari/Basilica-and-other-places-of-worship",
+      "discovery_center": {
+        "lat": 41.592,
+        "lng": 1.838,
+        "radius_m": 2300,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Santa Cova",
+        "Capella de la Santa Cova"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0549",
+      "country": "IL",
+      "label": "Franciscan Wedding Church, Kafr Kanna",
+      "source_authority": "Franciscan Custody of the Holy Land",
+      "identity_source_url": "https://www.custodia.org/en/news/cana-of-galilee-the-joy-of-jesus-first-miracle/",
+      "discovery_center": {
+        "lat": 32.748,
+        "lng": 35.343,
+        "radius_m": 2300,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Wedding Church",
+        "Franciscan Wedding Church",
+        "כנסיית החתונה"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0495",
+      "country": "AR",
+      "label": "Santuario San Cayetano Liniers",
+      "source_authority": "Santuario San Cayetano Liniers parish",
+      "identity_source_url": "https://sancayetanoliniers.org.ar/",
+      "discovery_center": {
+        "lat": -34.641,
+        "lng": -58.521,
+        "radius_m": 2300,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Santuario de San Cayetano",
+        "San Cayetano Liniers"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0353",
+      "country": "MT",
+      "label": "Carmelite basilica, Valletta",
+      "source_authority": "Roman Catholic Archdiocese of Malta",
+      "identity_source_url": "https://church.mt/auxiliary-bishop/the-auxiliary-bishops-homilies/",
+      "discovery_center": {
+        "lat": 35.9,
+        "lng": 14.51,
+        "radius_m": 1100,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Our Lady of Mount Carmel",
+        "Bażilika tal-Madonna tal-Karmnu",
+        "Basilica of Our Lady of Mount Carmel"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0328",
+      "country": "RO",
+      "label": "Franciscan sanctuary Csíksomlyó",
+      "source_authority": "Roman Catholic Archdiocese of Alba Iulia",
+      "identity_source_url": "https://www.ersekseg.ro/index.php/hu/templomok/26/C",
+      "discovery_center": {
+        "lat": 46.38,
+        "lng": 25.823,
+        "radius_m": 2000,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Csíksomlyói kegytemplom",
+        "Șumuleu Ciuc",
+        "Csíksomlyó"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0330",
+      "country": "RO",
+      "label": "Basilica Maria Radna",
+      "source_authority": "Roman Catholic parish and Basilica Maria Radna",
+      "identity_source_url": "https://www.basilicamariaradna.info/",
+      "discovery_center": {
+        "lat": 46.18,
+        "lng": 21.556,
+        "radius_m": 2100,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Maria Radna",
+        "Mária Radna",
+        "Bazilica Maria Radna"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0322",
+      "country": "HU",
+      "label": "Máriagyűd pilgrimage basilica",
+      "source_authority": "Roman Catholic Diocese of Pécs",
+      "identity_source_url": "https://pecsiegyhazmegye.hu/hirarchivum/hortobagyi-cirill-foapattal-unnepeltuk-nagyboldogasszonyt-mariagyudon/",
+      "discovery_center": {
+        "lat": 45.879,
+        "lng": 18.275,
+        "radius_m": 2000,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Máriagyűd",
+        "Máriagyűdi kegytemplom"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0342",
+      "country": "BY",
+      "label": "Our Lady of Budslau",
+      "source_authority": "Roman Catholic parish of the Assumption, Budslau",
+      "identity_source_url": "https://www.budslau.by/",
+      "discovery_center": {
+        "lat": 54.786,
+        "lng": 27.449,
+        "radius_m": 2300,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Будслаўскі касцёл",
+        "Будслав",
+        "Budslau"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0341",
+      "country": "LV",
+      "label": "Skaistkalne Basilica",
+      "source_authority": "Municipality of Bauska (public registry)",
+      "identity_source_url": "https://www.bauskasnovads.lv/lv/iestades/skaistkalnes-katolu-baznica",
+      "discovery_center": {
+        "lat": 56.375,
+        "lng": 24.652,
+        "radius_m": 3000,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Skaistkalnes baznīca",
+        "Skaistkalne Basilica"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0460",
+      "country": "PA",
+      "label": "Basilica Jesús Nazareno, Atalaya",
+      "source_authority": "Basilica Menor Jesús Nazareno de Atalaya parish",
+      "identity_source_url": "https://www.nazarenodeatalaya.com/",
+      "discovery_center": {
+        "lat": 8.042,
+        "lng": -80.929,
+        "radius_m": 2500,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Basílica Menor Jesús Nazareno",
+        "Basilica de Atalaya",
+        "Jesús Nazareno de Atalaya"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0718",
+      "country": "CM",
+      "label": "Basilica Mary Queen of Apostles, Mvolyé",
+      "source_authority": "Basilique Marie Reine des Apôtres at Mvolyé",
+      "identity_source_url": "https://www.basiliquemariereinedesapotres.org/histoiredelabasilique/120-grandes-dates.html",
+      "discovery_center": {
+        "lat": 3.854,
+        "lng": 11.501,
+        "radius_m": 4000,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "Basilique Marie Reine des Apôtres",
+        "Marie Reine des Apôtres"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    },
+    {
+      "candidate_id": "SG-INV-0725",
+      "country": "GH",
+      "label": "Basilica of St Joseph, Elmina",
+      "source_authority": "Roman Catholic Archdiocese of Cape Coast",
+      "identity_source_url": "https://archcapegh.org/parishes/elmina-deanery/",
+      "discovery_center": {
+        "lat": 5.089,
+        "lng": -1.35,
+        "radius_m": 3500,
+        "meaning": "APPROXIMATE_SEARCH_CENTRE_ONLY_NOT_A_PLACE_GEO"
+      },
+      "name_variants": [
+        "St. Joseph Minor Basilica",
+        "Basilica of Saint Joseph",
+        "St Joseph Basilica"
+      ],
+      "osm_feature": null,
+      "exact_identity_verified": false,
+      "ready_for_publication": false
+    }
+  ]
+}
