@@ -1,0 +1,74 @@
+name: B33 recover six exact-object research source files with unpublished SHA-verified archive
+on:
+  push:
+    branches: [research/sacred-art-b33-seven-source-alias-governance-20261024]
+    paths:
+      - .github/workflows/ao-art-b33-exact-object-sources.yml
+      - scripts/research/sacred_art_b33_six_object_sources.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b33-exact-object-originals-single-writer
+  cancel-in-progress: false
+jobs:
+  new-object-source-batch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b33-seven-source-alias-governance-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install source-file image decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Validate six exact object accession leads and one preserved institutional hold
+        run: |
+          python -m py_compile scripts/research/sacred_art_b33_six_object_sources.py scripts/research/sacred_art_release_archive_gate.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('data/research/sacred-art-b33-seven-case-exact-source-and-two-alias-evidence.json').read_text())
+          assert len(r["new_research_candidate_sources"])==6
+          assert len(r["remaining_no_source"])==1
+          assert r["remaining_no_source"][0]["institutional_object_id"]=="P001314"
+          assert len(r["existing_duplicate_SHA_identity_pairs"])==2
+          assert all(x["institutional_object_id"] != "148" for x in r["new_research_candidate_sources"])
+          assert r["publication_approvals_created"]==0 and r["editorial_approvals_created"]==0
+          PY
+      - name: Metadata and direct-original byte verification on six exact object sources
+        run: python scripts/research/sacred_art_b33_six_object_sources.py
+      - name: Mandatory zero-cost unpublished draft release archive and remote byte SHA verification
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py \
+            --wave b33-six-exact-objects --source-dir artifacts/b33-six-exact-object-candidates
+      - name: Commit compact outcome evidence, not image originals, selection changes or published art
+        run: |
+          set -euo pipefail
+          cp artifacts/b33-six-exact-object-candidates/source-decisions.csv data/research/sacred-art-b33-six-source-decisions.csv
+          cp artifacts/b33-six-exact-object-candidates/source-summary.json data/research/sacred-art-b33-six-source-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b33-six-source-decisions.csv data/research/sacred-art-b33-six-source-summary.json
+          git commit -m 'research: B33 source original image SHA+licence audit, all editorial holds unchanged'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b33-seven-source-alias-governance-20261024
+            git rebase origin/research/sacred-art-b33-seven-source-alias-governance-20261024
+            git push origin HEAD:research/sacred-art-b33-seven-source-alias-governance-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Research audit only, convenience export
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-b33-six-object-source-research-only
+          path: |
+            artifacts/b33-six-exact-object-candidates/source-decisions.csv
+            artifacts/b33-six-exact-object-candidates/source-summary.json
+          retention-days: 30
+          if-no-files-found: error
