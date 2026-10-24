@@ -15,7 +15,7 @@ assert.equal(old1.records.length+old2.records.length,121);
 assert.equal(wave.records.length,172);
 assert.equal(master.external_source_observations_pitre_original_1900_ocr.length,129);
 assert.equal(master.external_source_observations_pitre_original_1900_new_ocr.length,293);
-assert.equal(master.summary.source_observations.total_source_detail_rows_including_external,3652);
+assert.equal(master.summary.source_observations.total_source_detail_rows_including_external,3703);
 assert.equal(master.summary.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 const ids=new Set(previous.records.map(r=>r.id));
 const raw=[...old1.records,...old2.records,...wave.records];
@@ -42,4 +42,4 @@ assert.equal(master.summary.source_observations.pitre_1900_original_all_new_sect
 assert.equal(master.summary.source_review.pitre_1900_new_293_verified_unique_customs,0);
 assert.equal(master.summary.source_review.pitre_1900_new_293_original_folio_images_verified,293);
 assert.equal(master.summary.no_new_app_publications,true);
-console.log('Pitrè 1900 source audit: 129 original + 293 new source details = 422 provenance records, 3652 corpus rows, zero promotion — PASS');
+console.log('Pitrè 1900 source audit: 129 original + 293 new source details = 422 provenance records, 3703 corpus rows, zero promotion — PASS');
