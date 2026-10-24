@@ -40,7 +40,9 @@ try{
    await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==="home");
  };
  const openFamilyDoor=async family=>{
-   if(family!=="daily")await page.locator("#aoPray435930 .aoP435930QuietMore>summary").click();
+   // Route-parity traversal is not a disclosure-interaction test. Opening
+   // idempotently avoids toggling an already-open details closed on re-entry.
+   if(family!=="daily")await page.locator("#aoPray435930 .aoP435930QuietMore").evaluate(el=>{el.open=true});
    const launcher=page.locator('#aoPray435930.open [data-p435930-family="'+family+'"]');
    await launcher.evaluate(el=>el.scrollIntoView({block:"center",inline:"nearest",behavior:"instant"}));
    await launcher.tap();
