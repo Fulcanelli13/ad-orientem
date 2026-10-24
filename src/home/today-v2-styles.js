@@ -210,4 +210,24 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2Art .aoProperArt figcaption{flex:0 0 var(--ao-hero-credit-h);box-sizing:border-box;overflow:hidden;align-items:center}
 .aoTodayV2Art:has(.aoProperArt figcaption):after{bottom:var(--ao-hero-credit-h)}
 .aoTodayV2Art:has(.aoProperArt figcaption) .aoTodayV2ArtOverlay{bottom:calc(var(--ao-hero-credit-h) + 10px)}
+/* One calm, contextual Home Customs folio; none when there is no timely approved subject. */
+.aoTodayV2CustomSpotlight{box-sizing:border-box;max-width:780px;margin:19px auto 4px;padding:18px clamp(16px,4vw,26px);border-top:1px solid var(--border,rgba(227,212,187,.18));border-bottom:1px solid var(--border,rgba(227,212,187,.12));background:rgba(215,198,169,.025)}
+.aoTodayV2CustomKicker{color:var(--liturgical,#c9ad78);font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;text-transform:uppercase}
+.aoTodayV2CustomSpotlight h2{margin:8px 0 2px;color:var(--text,#eee9df);font:400 clamp(22px,4.8vw,28px)/1.18 'EB Garamond',Georgia,serif}
+.aoTodayV2CustomTiming{display:block;color:var(--muted,#b2afa9);font:500 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTodayV2CustomSpotlight>p{font:400 15px/1.65 var(--ao-font-body,Georgia,serif);color:var(--text,#e5dfd6);margin:9px 0 12px}
+.aoTodayV2CustomDetails{border-top:1px solid var(--border,rgba(238,238,238,.12))}
+.aoTodayV2CustomDetails>summary{min-height:44px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none;color:var(--text,#eee9df);font:600 13px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTodayV2CustomDetails>summary::-webkit-details-marker{display:none}
+.aoTodayV2CustomDetails>summary span{color:var(--liturgical,#c9ad78)}
+.aoTodayV2CustomDetails>summary:focus-visible,.aoTodayV2CustomCalendarLink:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}
+.aoTodayV2CustomReading{padding:0 0 11px;color:var(--text,#e5dfd6);font:400 14px/1.6 var(--ao-font-body,Georgia,serif)}
+.aoTodayV2CustomReading h3{font:600 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);margin:14px 0 4px;color:var(--muted,#b2afa9)}
+.aoTodayV2CustomReading p{margin:4px 0 8px}
+.aoTodayV2CustomReading ul{padding-left:19px;overflow-wrap:anywhere}
+.aoTodayV2CustomReading a{color:var(--liturgical,#c9ad78)}
+.aoTodayV2CustomSpotlight .aoTodayV2CustomScope{font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b2afa9);margin:8px 0 9px}
+.aoTodayV2CustomCalendarLink{min-height:44px;border:0;background:none;padding:7px 0;color:var(--liturgical,#c9ad78);font:600 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+@media(max-width:700px){.aoTodayV2CustomSpotlight{margin:14px 14px 0;padding:16px 5px}}
+
 `;
