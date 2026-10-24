@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {loadSourceOnlyGate,sourceOnlyEvidence} from './pius-x-source-only-gate.mjs';
 import {routePilotQuestion} from './pius-x-pilot-question-router.mjs';
 import {auditDraftSurface} from './pius-x-draft-surface-gate.mjs';
+import {makeP52ComposerContext,SPX_P52_PROFILE} from './pius-x-p52-bilingual-composer-context.mjs';
 
 // Small, explicitly sourced evidence annex for one pilot subject only. The original
 // 106/423 source-owner corpus and public reader remain untouched.
@@ -193,11 +194,20 @@ export async function composeDraft(store,input,model){
  const sourceInput=route?.status==='matched'?{...input,nodeId:route.nodeId}:input;
  const chosen=selectEvidence(store,sourceInput);if(chosen.status!=='eligible')return chosen;
  const voiceMode=input?.voiceMode==='historical'?'historical':'documentary';
+ const profile=input?.experimentalComposerProfile===SPX_P52_PROFILE?
+   SPX_P52_PROFILE:null;
+ if(profile&&chosen.chapterId!=='SPX-PILOT-01')
+  return held('experimental_language_aid_unavailable_for_subject');
  if(typeof model!=='function')return held('no_private_model_configured');
  try{
+  // Source-owned evidence and the verifier input are ALWAYS the same untouched
+  // selectEvidence() result. Only the research composer can receive a
+  // differentiated output-language aid. No bilingual gloss is source truth.
+  const composeInput=profile?makeP52ComposerContext(chosen,voiceMode):
+   {...chosen,voiceMode};
   const proposal=parse(await model('compose',[
    {role:'system',content:composerRules},
-   {role:'user',content:JSON.stringify({...chosen,voiceMode})}
+   {role:'user',content:JSON.stringify(composeInput)}
   ]));
   if(proposal?.mode!=='answer')return held('out_of_covered_sources');
   const text=proposal.text;
@@ -234,6 +244,8 @@ export async function composeDraft(store,input,model){
    return held('unsupported_or_unverified_generated_claim');
   const allowed=new Set(['neutral','welcoming','explaining','thoughtful','grave']);
   return {status:'draft',reply:candidate.text,
+   composerEvidenceProfile:profile||'ORIGINAL_ENGLISH_CLAIM_GLOSSES',
+   editorialLanguageAidApproved:false,
    voiceMode,sourceOwnedFollowups:selectDocumentedFollowups(store,{
     chapterId:chosen.chapterId,nodeId:chosen.evidence[0].id,language:chosen.language
    }),
