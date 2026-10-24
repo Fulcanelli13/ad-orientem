@@ -650,6 +650,40 @@
       "calendar_trigger_hint": "May or another suitable gardening season; linked to DEV-001",
       "confidence": "MEDIUM_HIGH",
       "guardrail": "Voluntary household devotion connected to existing May custom DEV-001, not a new feast. No magical, medicinal or historically unsupported plant properties."
+    },
+    {
+      "custom_id": "EPIP-003",
+      "family": "Epiphany household prayer",
+      "name": "Epiphany doorway chalking (C+M+B)",
+      "canonical_statement": "Some Catholic families mark the doorway at Epiphany with the Cross, the year and the letters C+M+B, praying that Christ bless their home. The family gesture is optional and distinct from the priest's blessing of a house.",
+      "custom_class": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "period_label": "Historically attested Epiphany devotion; modern episcopal pastoral witness",
+      "decision": "KEEP — COHORT1 SOURCE-BOUND PROMOTION CANDIDATE",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "6 January (Epiphany); preparations may begin shortly beforehand; no universal parish blessing schedule",
+      "confidence": "HIGH",
+      "guardrail": "Family chalking is not the priest's Roman Ritual blessing. Chalk may already have been blessed; do not imply this marking guarantees protection, makes a new rubric, or authorizes lay imitation of priest-only formulas."
+    },
+    {
+      "custom_id": "DOM-014",
+      "family": "Christmas household customs",
+      "name": "Keeping the Nativity crib until Candlemas",
+      "canonical_statement": "Some Catholic families keep their Nativity crib until Candlemas on 2 February and put it away after the feast. This is a voluntary household custom; it does not determine when Christmastide ends in the 1962 liturgical calendar.",
+      "custom_class": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "period_label": "Historical European household usage; modern Catholic commentary records variable practice",
+      "decision": "KEEP — COHORT1 SOURCE-BOUND PROMOTION CANDIDATE",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "2 February household context; distinct from Candlemas candle blessing and liturgical season",
+      "confidence": "MEDIUM_HIGH",
+      "guardrail": "Neither compulsory parish decoration rule nor Mass rite. Candlemas does not extend the 1962 Christmas liturgical season; this custom is not a continuation of the DOM-011 blessed candle practice."
     }
   ],
   "attestations": [
@@ -2217,6 +2251,54 @@
       "evidence_note": "WEI58-13-011. Catholic Culture documents practical household Mary gardens, without independently establishing legends about particular plant names.",
       "map_policy": "NOT_MAPPED",
       "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "attestation_id": "att:EPIP-003:GENERAL",
+      "custom_id": "EPIP-003",
+      "geo_area_id": "geo:world",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "SOURCE_UNSPECIFIED",
+      "period_label": "Historically and pastorally documented but regionally variable",
+      "strength": "STRONG",
+      "source_ids": [
+        "DPP-2001",
+        "IE-BISHOPS-EPIPHANY-CHALK-2022"
+      ],
+      "evidence_note": "The Holy See describes Epiphany door markings in its modern Directory on Popular Piety §118. Irish episcopal guidance records family marking and prayer. The historical priestly Weller home blessing is a separate ritual; neither reference makes the custom universal or confirms a local parish service.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DOM-014:GENERAL",
+      "custom_id": "DOM-014",
+      "geo_area_id": "geo:world",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "SOURCE_UNSPECIFIED",
+      "period_label": "Historical Catholic households, differing practices; no universal fixed date",
+      "strength": "MODERATE",
+      "source_ids": [
+        "EWTN-CHRISTMAS-CRIB-2015",
+        "WEISER-1958-CHRISTIAN-FEASTS",
+        "CATHCULT-CHRISTMAS-CANDLEMAS-1962"
+      ],
+      "evidence_note": "Historical 1958 custom witness and modern Catholic liturgical commentary support removing the Nativity crib on Candlemas as one optional choice. No claim is made about an entire country, the end of the 1962 Christmas season or mandated decorations.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "MEDIUM_HIGH"
     }
-  ]
+  ],
+  "releaseExtension": {
+    "cohort": "CUSTOMS_20261024_EPIPHANY_CANDLEMAS_TWO",
+    "priorCanonicalCount": 38,
+    "priorPublishedCount": 35,
+    "addedIds": [
+      "EPIP-003",
+      "DOM-014"
+    ],
+    "priorAttestations": 97,
+    "releaseApproval": "BRANCH_CANDIDATE_NOT_MERGED",
+    "historicalSOT": "SOT-07",
+    "geography": "EVIDENCE_ONLY_NO_MAP_PINS"
+  }
 }
