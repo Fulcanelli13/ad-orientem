@@ -105,20 +105,13 @@ try{
    &&document.querySelector('[data-heritage-category="ALL"]')?.getAttribute("aria-pressed")==="false",null,{timeout:15000});
  await activeAll.tap();
  await page.waitForFunction(()=>document.querySelector('[data-heritage-category="ALL"]')?.getAttribute("aria-pressed")==="true",null,{timeout:15000});
- // A widespread devotion remains discoverable as a thematic card, not
- // as an invented geographic point or a top-level list.
+ // The Customs Atlas has been deliberately retired from Explore.
+ // Underlying attestations remain source-owned; no thematic map rail is public.
  const customRail=page.locator('#ao-find-modular-root .aoHeritageCustomRail');
- assert.ok(await customRail.count()===0,"the unfiltered map should not be obstructed by a customs rail");
- await page.locator('#ao-find-modular-root [data-heritage-category="traditions"]').tap();
- assert.ok(await customRail.count()===1,"customs carousel should appear on the Customs filter");
- const custom=customRail.locator('[data-heritage-custom]').first();
- const customId=await custom.getAttribute("data-heritage-custom");
- assert.ok(customId,"custom strip has no source-backed practice identity");
- await custom.tap();
- await page.waitForFunction(id=>Boolean(document.querySelector('[data-heritage-custom="'+id+'"].active')),customId,{timeout:15000});
- assert.ok(await page.locator('#ao-find-modular-root [data-heritage-custom-details]').count()===1,"selected custom has no optional explanation");
- await page.locator('#ao-find-modular-root [data-heritage-custom-clear]').tap();
- const lenses=["tlm","shrines","apparitions","relics","traditions","pilgrimages"];
+ assert.equal(await customRail.count(),0);
+ assert.equal(await page.locator('#ao-find-modular-root [data-heritage-category="traditions"]').count(),0);
+ assert.equal(await page.locator('#ao-find-modular-root [data-find-filter-value="traditions"]').count(),0);
+ const lenses=["tlm","shrines","apparitions","relics","pilgrimages"];
  const reached=[];
  let verifiedSourceLinks=0;
  for(const lens of lenses){
@@ -234,23 +227,7 @@ try{
    await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
      snapshot.count,{timeout:12000});
   }
-  if(lens==="traditions"){
-   await page.locator("#ao-find-modular-root .aoCustomsAtlasDiscovery summary").tap();
-   const period=page.locator('#ao-find-modular-root [data-atlas-filter="atlasPeriod"]');
-   assert.equal(await period.count(),1,"Traditions period selector is missing");
-   const option=await period.locator('option:not([value="ANY"])').first().getAttribute("value").catch(()=>null);
-   if(option){
-     await period.selectOption(option);
-     await page.waitForFunction(value=>document.querySelector('#ao-find-modular-root [data-atlas-filter="atlasPeriod"]')?.value===value,
-       option,{timeout:12000});
-     const narrowed=Number(await page.locator("#ao-find-modular-root .aoFindResultMeta strong").innerText());
-     assert.ok(narrowed<=snapshot.count,"Traditions period selector incorrectly adds attestations");
-     await page.locator("#ao-find-modular-root [data-atlas-clear]").tap();
-     await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
-       snapshot.count,{timeout:12000});
-   }
-  }
-  // All six lenses must have a meaningful Map/List state, including sparse lenses.
+  // All five remaining public lenses must have a meaningful Map/List state, including sparse lenses.
   await page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="map"]').tap();
   await page.waitForFunction(id=>{
     const node=document.querySelector('#ao-find-modular-root [data-find-view="map"][data-explore-lens="'+id+'"] [data-find-map]');
@@ -272,7 +249,7 @@ try{
     &&Boolean(document.querySelector('#ao-find-modular-root [data-find-view="map"][data-explore-lens="heritage"]')),null,{timeout:15000});
  }
  assert.deepEqual(reached.map(x=>x.lens),lenses);
- assert.ok(verifiedSourceLinks>=1,"Explore exposed no source hyperlink in the six tested details");
+ assert.ok(verifiedSourceLinks>=1,"Explore exposed no source hyperlink in the five tested details");
  assert.equal(await page.locator("#ao-find-modular-root [data-find-filter='lens']").count(),7,"Six established Explore links and the new Saints doorway must remain discoverable");
  await page.locator("#ao-find-modular-root [data-find-close]").tap({timeout:10000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home"
