@@ -112,7 +112,7 @@ try{
   INTROIT:"dignus est agnus",
   COLLECT_SET:"omnipotens sempiterne deus",
   EPISTLE_OR_LESSON:"gratias agimus deo patri",
-  GOSPEL:"tu es rex iudaeorum",
+  GOSPEL:"regnum meum non est de hoc mundo",
   OFFERTORY:"postula a me",
   SECRET_SET:"hostiam tibi domine",
   PREFACE:"qui unigenitum filium tuum",
