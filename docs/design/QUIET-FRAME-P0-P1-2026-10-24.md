@@ -21,11 +21,12 @@ This is **not** a new web application or separate stylesheet framework.
 2. Reusable `aoQuiet*` class vocabulary (header, card, list row, primary and secondary action) within the **existing** `design-system.js` owner. Feature owners may progressively consume these classes.
 3. Shared 12px bottom tab labels and 24px icon geometry without touching ribbon routing.
 4. Today: on the main mobile Today view, redundant embedded calendar switches are visually hidden, but remain available inside the embedded calendar views; artwork title is moved *visually* above artwork; original artwork slot and credit remain intact; primary and secondary actions adopt restrained spacing.
-5. PRAY: scoped catalogue cards, ordinary titles and muted metadata converge to the approved quiet palette. Immersive prayer readers and devotional stages are explicitly excluded.
+5. PRAY: six prominent source-route-backed entries (Rosary, Daily Prayer, Confession, Adoration, Stations, Novenas), three useful library rows, and an expandable complete legacy family catalogue. Illustrations come from existing asset IDs, not generated runtime images. The navigation implementation is in the existing `src/pray/presentation-runtime.js` and the root-only styling in the existing `src/pray/presentation-styles.js`. Immersive prayer readers and devotional stages are excluded.
+6. PRAY phone QA was updated to assert six visible feature entries, three library rows, the ability to expand all historical families, no horizontal overflow and minimum readable text; two unrelated fixture HTTP handlers now read their files before sending headers.
 
 ## Deferred to the next integration slices
-- Real navigable Mass setup picker/sheet; its existing setup logic and celebration selection require an owner-level audit before restyling.
-- Structured Pray landing layout with exactly six illustrated feature tiles: preserve editorial group taxonomy and deep links while redesigning hierarchy.
+- Real navigable Mass setup picker/sheet. The existing owner is `src/mass/full-mass-preflight.js` plus `src/mass/full-mass-preflight-styles.js`. **Do not replace** the existing source-owned guided folio with an unrelated modal. It moves live Mass category, form and reader controls into stage slots and preserves source-date, Votive, Nuptial, Requiem, other Proper, optional rites and before/after prayer selections. The next slice should restyle its overview into three compact choices (Mass, celebration form, reader mode) while reusing the same live controls and launch actions.
+- PRAY phone screenshot review at 320/390/430px and explicit selection tests for each of the six feature entries; the basic six-tile layout is now implemented.
 - Consistent non-Today headers, desktop left rail, Explore draggable sheet, Formation and Settings rows.
 - Art credit placement and responsive art aspect ratios on 320/390/768px viewports.
 - Mass LIVE, Missal and Simple visual adjustments only after separate behaviour-regression suite passes.
@@ -34,6 +35,7 @@ This is **not** a new web application or separate stylesheet framework.
 ## Acceptance gates
 - `node tests/design-system-coherence.mjs`
 - `node tests/design-system-quiet-frame.mjs`
+- `node tests/nonmass-phone-readability.mjs` (six-feature plus expanded library acceptance)
 - Existing Home, app-shell, PRAY, Calendar and reader suites; the branch has not yet been certified against the entire repository test suite.
 - Real-browser visual checks at 320, 390, 768 and desktop widths (including missing art, French strings, 200% text zoom, light/dark adaptation as supported, and safe-area handling).
 - LIVE 48-card mode and all readers show no content, ritual or navigation regressions.
