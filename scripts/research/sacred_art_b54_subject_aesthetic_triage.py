@@ -40,8 +40,8 @@ OTHER_PERIOD=[
  r"\bmasolino\b",r"\bfilippino lippi\b",r"\bfra filippo lippi\b",
  r"\bniccolo di buonaccorso\b",r"\bgiotto\b",r"\bbenozzo gozzoli\b",
  r"\bmemling\b",r"\bvan eyck\b",r"\bsandro botticelli\b",r"\bpetrus christus\b",
- r"\brogier van der weyden\b",r"\bgiovanni battista ma[iy]no\b",  # deliberate? remove latter from this group
- r"\bjan van eyck\b",r"\bgerard david\b",r"\bcosme tura\b",
+ r"\brogier van der weyden\b",r"\bjan van eyck\b",
+ r"\bgerard david\b",r"\bcosme tura\b",
  r"\bjan van scorel\b",r"\bjan van eyck\b",r"\bcimabue\b",
  r"\bbernard van orley\b",r"\bantoniazzo romano\b",r"\bmaestro bartolome\b",
  r"\bmasaccio\b",r"\bjean leon gerome\b",r"\bingres\b",
