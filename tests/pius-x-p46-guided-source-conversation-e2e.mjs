@@ -22,7 +22,7 @@ const pilot=data.cases.filter(c=>c.chapterId==='SPX-PILOT-01');
 assert.equal(pilot.length,3);
 assert.equal(data.cases.filter(c=>c.chapterId==='SPX-NEW-012').length,2);
 assert(pilot.every(c=>c.publishingApproved===false&&c.witnesses.length>0));
-assert(html.includes('id="spxm-guided-exchange"'));
+assert(html.includes("id='spxm-guided-exchange'"));
 assert(!/<script[^>]+src=/.test(html));
 assert(!/<link[^>]+https?:\/\//.test(html));
 const screenshots='artifacts/pius-x-study-expanded/review-screenshots/';
