@@ -106,13 +106,7 @@ export function renderTodayV2Sections(model,vm){
     return `<button type="button" class="aoTodayV2Event" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="${esc(rowData.date)}" aria-label="${esc(dateDisplay(rowData.date,language)+" · "+name)}"><span class="aoTodayV2EventDate">${esc(dateDisplay(rowData.date,language))}</span><strong>${esc(name)}</strong></button>`;
   }).join("");
   const glanceNote=txt("Upcoming calendar dates · confirm actual 1962 observance in Calendar","Dates à venir · vérifier la célébration effective de 1962 dans le calendrier");
-  return `<section class="aoTodayV2CalendarGlance" aria-label="${esc(txt("Calendar at a glance","Aperçu du calendrier"))}">
-    <h2>${esc(txt("Calendar at a glance","Aperçu du calendrier"))}</h2>
-    ${calendarHonours}${calendarLater}
-    <div class="aoTodayV2GlanceEvents">${calendarDates||'<p class="aoTodayV2GlanceEmpty">'+esc(txt("See dates in Calendar","Consulter les dates dans le calendrier"))+'</p>'}</div>
-    <p class="aoTodayV2GlanceNote">${esc(glanceNote)}</p>
-  </section>
-  <div class="aoTodayV2Below" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}">
+  return `  <div class="aoTodayV2Below" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}">
     <section class="aoTodayV2Zone aoTodayV2PrayNow"><div class="aoTodayV2SectionHead"><div><h2>${esc(txt("Pray now","Prier maintenant"))}</h2></div><button type="button" data-home-cu-route="pray.library">${esc(txt("All prayers","Toutes les prières"))} →</button></div>
       <div class="aoTodayV2PrayerFeature"><div class="aoTodayV2PrayerGlyph" aria-hidden="true"></div><div><small>${esc(featureRole)}</small><strong>${esc(featureName)}</strong><span>${esc(featureDetail)}</span></div><button type="button" ${featureAttrs}>${esc(txt("Pray","Prier"))}</button></div>
       <div class="aoTodayV2PrayerShortcuts">
@@ -127,5 +121,11 @@ export function renderTodayV2Sections(model,vm){
       ${row(cateTitle,cateDetail,'data-home-daily-catechism')}
       ${row(txt("Sacred Scripture","Sainte Écriture"),txt("Read the traditional Catholic Bible","Lire la Bible catholique traditionnelle"),'data-home-scripture')}
     </section>
-  </div>`;
+  </div>
+  <section class="aoTodayV2CalendarGlance" aria-label="${esc(txt("Calendar at a glance","Aperçu du calendrier"))}">
+    <h2>${esc(txt("Calendar at a glance","Aperçu du calendrier"))}</h2>
+    ${calendarHonours}${calendarLater}
+    <div class="aoTodayV2GlanceEvents">${calendarDates||'<p class="aoTodayV2GlanceEmpty">'+esc(txt("See dates in Calendar","Consulter les dates dans le calendrier"))+'</p>'}</div>
+    <p class="aoTodayV2GlanceNote">${esc(glanceNote)}</p>
+  </section>`;;
 }
