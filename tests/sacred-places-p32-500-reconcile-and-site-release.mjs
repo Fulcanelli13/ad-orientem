@@ -1,0 +1,52 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {LIVE,RELEASES} from "./helpers/sacred-places-live-baseline.mjs";
+import {assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
+import {auditShrineSource,assertShrinesPilgrimagesRegistry} from "../src/find/shrines-contracts.js";
+const load=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const m=load("data/geography/research/sacred-places-p32-three-sites-bulk500.v1.json");
+const q=load("data/geography/research/sacred-places-p32-acquisition500-live-reconciled.v1.json");
+const original=load("data/geography/research/sacred-places-p25-151-source-screen.v1.json");
+const g=load("data/geography/seed-registry.v1.json");
+const s=load("data/shrines/source-registry.v1.json");
+const cross=load("data/explore/heritage-place-reconciliation.review.v1.json");
+const shrines=load("data/shrines/shrines-pilgrimages-seed.v1.json");
+assert.deepEqual([m.baseline.places,m.baseline.sources,m.baseline.crosswalk,m.baseline.unlinked],[414,712,414,155]);
+assert.deepEqual([m.proposed.places,m.proposed.sources,m.proposed.crosswalk,m.proposed.unlinked,m.proposed.geo_areas],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas]);
+assert.deepEqual([g.places.length,s.sources.length,cross.place_crosswalk.length,cross.exception_queues.places_without_direct_claim.length,g.geoAreas.length,g.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas,LIVE.links]);
+assert.equal(m.published_new.length,3);assert.equal(m.source_excerpt_coverage_first200_after,139);
+assert.ok(RELEASES.some(x=>x.id==="P32"));
+const byId=new Map(g.places.map(x=>[x.place_id,x])),bySource=new Map(s.sources.map(x=>[x.id,x]));
+assert.equal(byId.size,g.places.length);assert.equal(bySource.size,s.sources.length);
+const oldRefs=new Set(g.places.filter(x=>!m.published_new.some(y=>y.place_id===x.place_id)).map(x=>x.geo?.source_ref).filter(Boolean));
+for(const x of m.published_new){
+ assert.ok(!oldRefs.has(x.geo_source_ref));assert.match(x.geo_source_ref,/^osm:way:\d+$/);
+ assert.match(x.geo_provenance_mapcarta_url,/^https:\/\/mapcarta.com\//);
+ const p=byId.get(x.place_id);assert.ok(p);
+ assert.equal(p.name.official,x.name);assert.equal(p.address.country_code,x.country);
+ assert.deepEqual(p.geo_area_ids,["geo:country:"+x.country]);
+ assert.deepEqual([p.geo.lat,p.geo.lng],[x.lat,x.lng]);
+ assert.equal(p.geo.source_ref,x.geo_source_ref);assert.equal(p.geo.source_url,x.geo_source_url);
+ assert.equal(p.geo.precision,"site");assert.ok(isMapPublishablePlaceGeo(p.geo,x.country));
+ assert.deepEqual(p.source_ids,x.source_ids);assert.equal(p.source_ids.length,1);
+ const ss=bySource.get(x.source_ids[0]);assert.ok(ss);assert.equal(auditShrineSource(ss).length,0);
+ assert.equal(ss.url,x.identity_source_url);
+ assert.ok(cross.exception_queues.places_without_direct_claim.includes(x.place_id));
+ assert.deepEqual(cross.place_crosswalk.find(r=>r.place_id===x.place_id).record_ids,{});
+ assert.ok(!g.directoryPlaceLinks.some(r=>r.place_id===x.place_id));
+ assert.ok(!shrines.shrines.some(r=>r.place_id===x.place_id));
+}
+assert.equal(q.leads.length,500);
+assert.deepEqual(q.leads.map(x=>x.candidate_id),original.refreshed_500_acquisition_queue.map(x=>x.candidate_id));
+for(let i=0;i<500;i++){
+ const a=q.leads[i],old=original.refreshed_500_acquisition_queue[i];
+ for(const field of ["order","candidate_id","country","gate"])assert.equal(a[field],old[field]);
+ assert.equal(a.verified_existing_place_id,old.verified_existing_place_id);
+ if(a.live_reconciliation.status==="ALREADY_IN_LIVE_CANONICAL")assert.ok(byId.has(a.live_reconciliation.canonical_place_id));
+ else assert.equal(a.live_reconciliation.status,"UNRESOLVED_RESEARCH_ACQUISITION_LEAD");
+}
+assert.equal(q.result.ALREADY_IN_LIVE_CANONICAL,57);assert.equal(q.result.UNRESOLVED_RESEARCH_ACQUISITION_LEAD,443);
+assert.equal(q.result.source_verification_additional_by_queue,0);
+assert.equal(assertExploreGeographyRegistry(g).pass,true);
+assert.equal(assertShrinesPilgrimagesRegistry({...shrines,sources:s.sources,places:g.places}).pass,true);
+console.log("PASS P32: 3 mapped worship sites + exact 500/500 acquisition lead reconciliation (57 already canonical, 443 still open); no fabricated source screenings or Directory links");

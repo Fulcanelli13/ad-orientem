@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 414,
+    "places": 417,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 155,
+    "places_without_direct_claim": 158,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -114,6 +114,7 @@
       "place:KZ:our-lady-fatima-cathedral-karaganda",
       "place:LA:sacred-heart-cathedral-vientiane",
       "place:LC:immaculate-conception-cathedral-basilica-castries",
+      "place:LK:national-shrine-our-lady-matara",
       "place:LK:st-lucia-cathedral-colombo",
       "place:LS:our-lady-victories-cathedral-maseru",
       "place:LT:trakai-visitation-basilica",
@@ -132,6 +133,7 @@
       "place:MX:catedral-basilica-san-juan-los-lagos",
       "place:MY:st-jude-church-rawang",
       "place:NC:cathedrale-saint-joseph-noumea",
+      "place:NI:basilica-inmaculada-concepcion-el-viejo",
       "place:NI:ermita-guadalupe-matagalpa",
       "place:NO:st-olav-cathedral-oslo",
       "place:NO:st-olav-cathedral-trondheim",
@@ -159,6 +161,7 @@
       "place:PY:catedral-metropolitana-asuncion",
       "place:PY:oratorio-nuestra-senora-asuncion-panteon",
       "place:QA:our-lady-rosary-church-doha",
+      "place:RW:basilique-cathedrale-immaculee-conception-kabgayi",
       "place:SB:holy-cross-cathedral-honiara",
       "place:SC:immaculate-conception-cathedral-victoria",
       "place:SE:st-eric-cathedral-stockholm",
@@ -3543,6 +3546,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:LK:national-shrine-our-lady-matara",
+      "display_name": "National Shrine of Our Lady of Matara",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:LK:saint-anne-s-national-shrine-talawila",
       "display_name": "Saint Anne's National Shrine, Talawila",
       "record_ids": {
@@ -3899,6 +3908,12 @@
           "att:DEV-007:UGWOGO-PERPETUAL-HELP"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:NI:basilica-inmaculada-concepcion-el-viejo",
+      "display_name": "Santuario Nacional Basílica de Nuestra Señora de la Inmaculada Concepción, El Viejo",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -4472,6 +4487,12 @@
     {
       "place_id": "place:QA:our-lady-rosary-church-doha",
       "display_name": "Our Lady of the Rosary Catholic Church — Doha",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:RW:basilique-cathedrale-immaculee-conception-kabgayi",
+      "display_name": "Basilique Cathédrale Notre-Dame de l’Immaculée Conception, Kabgayi",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },

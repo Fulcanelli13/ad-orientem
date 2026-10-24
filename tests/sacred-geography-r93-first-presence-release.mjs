@@ -13,6 +13,7 @@ const p17=load("data/geography/research/sacred-places-p17-separated-bergamo-asun
 const laterP28=load("data/geography/research/sacred-places-p28-world-11-exact-map.v1.json");
 const laterP30=load("data/geography/research/sacred-places-p30-world-8-exact-map.v1.json");
 const laterP31=load("data/geography/research/sacred-places-p31-world-9-exact-map.v1.json");
+const laterP32=load("data/geography/research/sacred-places-p32-three-sites-bulk500.v1.json");
 const shrines=load("data/shrines/shrines-pilgrimages-seed.v1.json");
 assert.equal(r93.schema,"AO_SACRED_GEOGRAPHY_R93_FIRST_PRESENCE_CATHOLIC_PLACES_V1");
 assert.equal(r92.result.places,336,"Previous production release is frozen");
@@ -33,7 +34,7 @@ assert.equal(assertShrinesPilgrimagesRegistry({...shrines,sources:src.sources,pl
 const byPlace=new Map(geo.places.map(x=>[x.place_id,x]));
 const bySource=new Map(src.sources.map(x=>[x.id,x]));
 const releaseIds=new Set(r93.published_new.map(x=>x.place_id));
-const laterPlaceIds=new Set([...laterP28.published_new,...laterP30.published_new,...laterP31.published_new].map(x=>x.place_id));
+const laterPlaceIds=new Set([...laterP28.published_new,...laterP30.published_new,...laterP31.published_new,...laterP32.published_new].map(x=>x.place_id));
 const earlier=geo.places.filter(x=>!releaseIds.has(x.place_id)&&!laterPlaceIds.has(x.place_id));
 // R93 first-presence means empty before R93, not empty after subsequent P28 publication.
 const usedCountries=new Set(earlier.map(x=>x.address.country_code));

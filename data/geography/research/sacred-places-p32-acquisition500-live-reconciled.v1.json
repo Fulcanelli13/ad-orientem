@@ -1,0 +1,5168 @@
+{
+  "schema": "AO_SACRED_PLACES_P32_ALL500_ACQUISITION_LIVE_RECONCILIATION_V1",
+  "date": "2026-10-24",
+  "status": "DEDUPLICATION_ONLY_NOT_NEW_SITE_VERIFICATION",
+  "baseline": {
+    "p25_acquisition_leads": 500,
+    "p25_explicit_canonical_reuses": 27,
+    "previous_live": 414
+  },
+  "result": {
+    "leads_reconciled": 500,
+    "UNRESOLVED_RESEARCH_ACQUISITION_LEAD": 443,
+    "ALREADY_IN_LIVE_CANONICAL": 57,
+    "p32_newly_mapped": 3,
+    "p28_p30_p31_prior_new_published": 27,
+    "canonical_place_count_after_p32": 417,
+    "source_verification_additional_by_queue": 0
+  },
+  "rules": [
+    "Preserve all 500 inherited candidate IDs/order/country/original gates exactly.",
+    "Only map to an existing Place when P25 explicitly verified a frozen ID, or a P28/P30/P31/P32 immutable release manifest links the same candidate ID to the exact live Place.",
+    "An unresolved source-acquisition lead is not a verified Catholic physical Place; never infer one from a name or region.",
+    "Review the 500 unresolved statuses against the live master on future releases instead of repeating 500 source searches."
+  ],
+  "leads": [
+    {
+      "order": 1,
+      "candidate_id": "SG-INV-0415",
+      "country": "CA",
+      "gate": "MULTIPLE_CATHOLIC_SAME_TITLE_SITES_UNRESOLVED",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 2,
+      "candidate_id": "SG-INV-0110",
+      "country": "ES",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:ES:covadonga-basilica",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:ES:covadonga-basilica",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 3,
+      "candidate_id": "SG-INV-0301",
+      "country": "SK",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:SK:kostol-svateho-vojtecha-gaboltov",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:SK:kostol-svateho-vojtecha-gaboltov",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 4,
+      "candidate_id": "SG-INV-0065",
+      "country": "IT",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 5,
+      "candidate_id": "SG-INV-0067",
+      "country": "IT",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:IT:santuario-monte-berico-vicenza",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:IT:santuario-monte-berico-vicenza",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 6,
+      "candidate_id": "SG-INV-0079",
+      "country": "IT",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:IT:santuario-francescano-la-verna",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:IT:santuario-francescano-la-verna",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 7,
+      "candidate_id": "SG-INV-0130",
+      "country": "ES",
+      "gate": "CATHOLIC_SITE_SOURCE_SUPPORTED",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 8,
+      "candidate_id": "SG-INV-0252",
+      "country": "GB",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 9,
+      "candidate_id": "SG-INV-0295",
+      "country": "SK",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:SK:basilika-sedembolestnej-sastin",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:SK:basilika-sedembolestnej-sastin",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 10,
+      "candidate_id": "SG-INV-0298",
+      "country": "SK",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:SK:bazilika-narodenia-panny-marie-marianka",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:SK:bazilika-narodenia-panny-marie-marianka",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 11,
+      "candidate_id": "SG-INV-0299",
+      "country": "SK",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:SK:kaplnka-zjavenia-litmanova-zvir",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:SK:kaplnka-zjavenia-litmanova-zvir",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 12,
+      "candidate_id": "SG-INV-0310",
+      "country": "HR",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:HR:bazilika-gospe-trsatske-rijeka",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:HR:bazilika-gospe-trsatske-rijeka",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 13,
+      "candidate_id": "SG-INV-0321",
+      "country": "HU",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 14,
+      "candidate_id": "SG-INV-0322",
+      "country": "HU",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 15,
+      "candidate_id": "SG-INV-0328",
+      "country": "RO",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 16,
+      "candidate_id": "SG-INV-0333",
+      "country": "LT",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 17,
+      "candidate_id": "SG-INV-0352",
+      "country": "MT",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:MT:santwarju-madonna-mellieha",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:MT:santwarju-madonna-mellieha",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 18,
+      "candidate_id": "SG-INV-0009",
+      "country": "FR",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:FR:basilique-notre-dame-garde-marseille",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:FR:basilique-notre-dame-garde-marseille",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 19,
+      "candidate_id": "SG-INV-0010",
+      "country": "FR",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:FR:basilique-notre-dame-fourviere-lyon",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:FR:basilique-notre-dame-fourviere-lyon",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 20,
+      "candidate_id": "SG-INV-0063",
+      "country": "IT",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:IT:santuario-madonna-san-luca-bologna",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:IT:santuario-madonna-san-luca-bologna",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 21,
+      "candidate_id": "SG-INV-0151",
+      "country": "PT",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:PT:basilica-bom-jesus-monte-braga",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:PT:basilica-bom-jesus-monte-braga",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 22,
+      "candidate_id": "SG-INV-0222",
+      "country": "BE",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:BE:basiliek-onze-lieve-vrouw-scherpenheuvel",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:BE:basiliek-onze-lieve-vrouw-scherpenheuvel",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 23,
+      "candidate_id": "SG-INV-0236",
+      "country": "IE",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:IE:ballintubber-abbey-church",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:IE:ballintubber-abbey-church",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 24,
+      "candidate_id": "SG-INV-0280",
+      "country": "CZ",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 25,
+      "candidate_id": "SG-INV-0281",
+      "country": "CZ",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 26,
+      "candidate_id": "SG-INV-0305",
+      "country": "SI",
+      "gate": "INHERITED_SOURCE_NOT_SITE_SPECIFIC_REPLACE_REQUIRED",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 27,
+      "candidate_id": "SG-INV-0306",
+      "country": "SI",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:SI:bazilika-marije-zavetnice-ptujska-gora",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:SI:bazilika-marije-zavetnice-ptujska-gora",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 28,
+      "candidate_id": "SG-INV-0312",
+      "country": "HR",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 29,
+      "candidate_id": "SG-INV-0318",
+      "country": "BA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 30,
+      "candidate_id": "SG-INV-0330",
+      "country": "RO",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 31,
+      "candidate_id": "SG-INV-0341",
+      "country": "LV",
+      "gate": "CIVIC_EXACT_CATHOLIC_SITE",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 32,
+      "candidate_id": "SG-INV-0342",
+      "country": "BY",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 33,
+      "candidate_id": "SG-INV-0350",
+      "country": "ME",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 34,
+      "candidate_id": "SG-INV-0365",
+      "country": "LU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 35,
+      "candidate_id": "SG-INV-0038",
+      "country": "FR",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:FR:abbatiale-sainte-foy-conques",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:FR:abbatiale-sainte-foy-conques",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 36,
+      "candidate_id": "SG-INV-0037",
+      "country": "FR",
+      "gate": "CULTURAL_MONUMENT_NOT_ACTIVE_CATHOLIC_SITE",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 37,
+      "candidate_id": "SG-INV-0045",
+      "country": "FR",
+      "gate": "INHERITED_SOURCE_NOT_SITE_SPECIFIC_REPLACE_REQUIRED",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 38,
+      "candidate_id": "SG-NEW-MONTSERRAT-COVA",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:ES:capella-santa-cova-montserrat",
+        "source_release": "P28",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 39,
+      "candidate_id": "SG-INV-0348",
+      "country": "AL",
+      "gate": "SECONDARY_EXACT_CATHOLIC_CATALOGUE",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 40,
+      "candidate_id": "SG-INV-0684",
+      "country": "AM",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 41,
+      "candidate_id": "SG-INV-0720",
+      "country": "AO",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 42,
+      "candidate_id": "SG-INV-0729",
+      "country": "BI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 43,
+      "candidate_id": "SG-INV-0541",
+      "country": "BO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 44,
+      "candidate_id": "SG-INV-0343",
+      "country": "BY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 45,
+      "candidate_id": "SG-INV-0356",
+      "country": "CY",
+      "gate": "NON_CATHOLIC_OPERATING_SITE",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 46,
+      "candidate_id": "SG-INV-0728",
+      "country": "DY",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 47,
+      "candidate_id": "SG-INV-0736",
+      "country": "ET",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 48,
+      "candidate_id": "SG-INV-0731",
+      "country": "GQ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 49,
+      "candidate_id": "SG-INV-0470",
+      "country": "HT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 50,
+      "candidate_id": "SG-INV-0727",
+      "country": "HV",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 51,
+      "candidate_id": "SG-INV-0687",
+      "country": "IQ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 52,
+      "candidate_id": "SG-INV-0460",
+      "country": "PA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 53,
+      "candidate_id": "SG-INV-0472",
+      "country": "PR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 54,
+      "candidate_id": "SG-INV-0329",
+      "country": "RO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 55,
+      "candidate_id": "SG-INV-0682",
+      "country": "TL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 56,
+      "candidate_id": "SG-INV-0695",
+      "country": "TN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 57,
+      "candidate_id": "SG-INV-0361",
+      "country": "TR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 58,
+      "candidate_id": "SG-INV-0613",
+      "country": "TW",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 59,
+      "candidate_id": "SG-INV-0345",
+      "country": "UA",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 60,
+      "candidate_id": "SG-INV-0349",
+      "country": "XK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 61,
+      "candidate_id": "SG-INV-0722",
+      "country": "ZA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 62,
+      "candidate_id": "SG-INV-0319",
+      "country": "BA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 63,
+      "candidate_id": "SG-INV-0717",
+      "country": "CD",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 64,
+      "candidate_id": "SG-INV-0499",
+      "country": "CL",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:CL:templo-votivo-maipu-basilica",
+        "source_release": "P28",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 65,
+      "candidate_id": "SG-INV-0718",
+      "country": "CM",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:CM:basilique-marie-reine-des-apotres-mvolye",
+        "source_release": "P28",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 66,
+      "candidate_id": "SG-INV-0611",
+      "country": "CN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 67,
+      "candidate_id": "SG-INV-0463",
+      "country": "CU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 68,
+      "candidate_id": "SG-INV-0468",
+      "country": "DO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 69,
+      "candidate_id": "SG-INV-0691",
+      "country": "DZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 70,
+      "candidate_id": "SG-INV-0511",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 71,
+      "candidate_id": "SG-INV-0698",
+      "country": "EG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 72,
+      "candidate_id": "SG-INV-0367",
+      "country": "FI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 73,
+      "candidate_id": "SG-INV-0748",
+      "country": "FJ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 74,
+      "candidate_id": "SG-INV-0686",
+      "country": "GE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 75,
+      "candidate_id": "SG-INV-0725",
+      "country": "GH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:GH:saint-joseph-minor-basilica-elmina",
+        "source_release": "P28",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 76,
+      "candidate_id": "SG-INV-0359",
+      "country": "GR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 77,
+      "candidate_id": "SG-INV-0445",
+      "country": "GT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 78,
+      "candidate_id": "SG-INV-0677",
+      "country": "ID",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 79,
+      "candidate_id": "SG-INV-0371",
+      "country": "IS",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 80,
+      "candidate_id": "SG-INV-0571",
+      "country": "JO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 81,
+      "candidate_id": "SG-INV-0712",
+      "country": "KE",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 82,
+      "candidate_id": "SG-INV-0623",
+      "country": "KR",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 83,
+      "candidate_id": "SG-INV-0689",
+      "country": "KZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 84,
+      "candidate_id": "SG-INV-0353",
+      "country": "MT",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 85,
+      "candidate_id": "SG-INV-0608",
+      "country": "PK",
+      "gate": "SECONDARY_DISCOVERY_ONLY",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 86,
+      "candidate_id": "SG-INV-0709",
+      "country": "RW",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:RW:basilique-cathedrale-immaculee-conception-kabgayi",
+        "source_release": "P32",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 87,
+      "candidate_id": "SG-INV-0369",
+      "country": "SE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 88,
+      "candidate_id": "SG-INV-0308",
+      "country": "SI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 89,
+      "candidate_id": "SG-INV-0297",
+      "country": "SK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 90,
+      "candidate_id": "SG-INV-0451",
+      "country": "SV",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 91,
+      "candidate_id": "SG-INV-0730",
+      "country": "TG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 92,
+      "candidate_id": "SG-INV-0473",
+      "country": "TT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 93,
+      "candidate_id": "SG-INV-0713",
+      "country": "TZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 94,
+      "candidate_id": "SG-INV-0536",
+      "country": "VE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 95,
+      "candidate_id": "SG-INV-0672",
+      "country": "VN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 96,
+      "candidate_id": "SG-INV-0724",
+      "country": "ZM",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 97,
+      "candidate_id": "SG-INV-0184",
+      "country": "AT",
+      "gate": "SITE_CATHOLIC_AUTHORITY",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:AT:basilika-mariatrost-graz",
+        "source_release": "P28",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 98,
+      "candidate_id": "SG-INV-0737",
+      "country": "AU",
+      "gate": "CATHOLIC_SITE_SOURCE_SUPPORTED",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 99,
+      "candidate_id": "SG-INV-0507",
+      "country": "CO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 100,
+      "candidate_id": "SG-INV-0458",
+      "country": "CR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 101,
+      "candidate_id": "SG-INV-0282",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:CZ:velehrad-assumption-cyril-methodius-basilica",
+        "source_release": "P30",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 102,
+      "candidate_id": "SG-INV-0315",
+      "country": "HR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 103,
+      "candidate_id": "SG-INV-0323",
+      "country": "HU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 104,
+      "candidate_id": "SG-INV-0575",
+      "country": "LB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 105,
+      "candidate_id": "SG-INV-0732",
+      "country": "MU",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:MU:marie-reine-de-la-paix-port-louis",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:MU:marie-reine-de-la-paix-port-louis",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 106,
+      "candidate_id": "SG-INV-0715",
+      "country": "NG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 107,
+      "candidate_id": "SG-INV-0453",
+      "country": "NI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:NI:basilica-inmaculada-concepcion-el-viejo",
+        "source_release": "P32",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 108,
+      "candidate_id": "SG-INV-0234",
+      "country": "NL",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 109,
+      "candidate_id": "SG-INV-0744",
+      "country": "NZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:NZ:st-mary-angels-wellington",
+        "source_release": "P30",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 110,
+      "candidate_id": "SG-INV-0567",
+      "country": "PS",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 111,
+      "candidate_id": "SG-INV-0531",
+      "country": "UY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 112,
+      "candidate_id": "SG-INV-0490",
+      "country": "AR",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:AR:basilica-nuestra-senora-itati",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:AR:basilica-nuestra-senora-itati",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 113,
+      "candidate_id": "SG-INV-0223",
+      "country": "BE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:BE:basiliek-onze-lieve-vrouw-oostakker",
+        "source_release": "P31",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 114,
+      "candidate_id": "SG-INV-0273",
+      "country": "CH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:CH:santuario-madonna-del-sasso-orselina",
+        "source_release": "P28",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 115,
+      "candidate_id": "SG-INV-0334",
+      "country": "LT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:LT:zemaiciu-kalvarija-visitation-basilica",
+        "source_release": "P28",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 116,
+      "candidate_id": "SG-INV-0428",
+      "country": "MX",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:MX:catedral-basilica-san-juan-los-lagos",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:MX:catedral-basilica-san-juan-los-lagos",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 117,
+      "candidate_id": "SG-INV-0368",
+      "country": "NO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 118,
+      "candidate_id": "SG-INV-0520",
+      "country": "PE",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:PE:santuario-candelaria-chapi-polobaya",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:PE:santuario-candelaria-chapi-polobaya",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 119,
+      "candidate_id": "SG-INV-0155",
+      "country": "PT",
+      "gate": "NEW_2026_CATHOLIC_BUILDING_SCOPE_SPLIT",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 120,
+      "candidate_id": "SG-INV-0528",
+      "country": "PY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 121,
+      "candidate_id": "SG-INV-0484",
+      "country": "BR",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 122,
+      "candidate_id": "SG-INV-0617",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 123,
+      "candidate_id": "SG-INV-0602",
+      "country": "LK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:LK:national-shrine-our-lady-matara",
+        "source_release": "P32",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 124,
+      "candidate_id": "SG-INV-0254",
+      "country": "GB",
+      "gate": "NON_CATHOLIC_OPERATING_SITE_REVIEW",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 125,
+      "candidate_id": "SG-INV-0240",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 126,
+      "candidate_id": "SG-INV-0419",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 127,
+      "candidate_id": "SG-INV-0584",
+      "country": "IN",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:IN:basilica-our-lady-ransom-vallarpadam",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:IN:basilica-our-lady-ransom-vallarpadam",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 128,
+      "candidate_id": "SG-INV-0550",
+      "country": "IL",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:PS:basilica-agony-gethsemane",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:PS:basilica-agony-gethsemane",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 129,
+      "candidate_id": "SG-INV-0109",
+      "country": "ES",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:ES:ermita-virgen-rocio-almonte",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:ES:ermita-virgen-rocio-almonte",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 130,
+      "candidate_id": "SG-INV-0631",
+      "country": "PH",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:PH:basilica-our-lady-penafrancia-naga",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:PH:basilica-our-lady-penafrancia-naga",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 131,
+      "candidate_id": "SG-INV-0205",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:PL:bazylika-nawiedzenia-wambierzyce",
+        "source_release": "P31",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 132,
+      "candidate_id": "SG-INV-0163",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:DE:marienbasilika-kevelaer",
+        "source_release": "P28",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 133,
+      "candidate_id": "SG-INV-0375",
+      "country": "US",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 134,
+      "candidate_id": "SG-INV-0086",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:IT:basilica-santa-margherita-cortona",
+        "source_release": "P31",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 135,
+      "candidate_id": "SG-INV-0022",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 136,
+      "candidate_id": "SG-INV-0685",
+      "country": "AM",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 137,
+      "candidate_id": "SG-INV-0542",
+      "country": "BO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 138,
+      "candidate_id": "SG-INV-0344",
+      "country": "BY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 139,
+      "candidate_id": "SG-INV-0357",
+      "country": "CY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 140,
+      "candidate_id": "SG-INV-0688",
+      "country": "IQ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 141,
+      "candidate_id": "SG-INV-0461",
+      "country": "PA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 142,
+      "candidate_id": "SG-INV-0471",
+      "country": "PR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 143,
+      "candidate_id": "SG-INV-0331",
+      "country": "RO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 144,
+      "candidate_id": "SG-INV-0696",
+      "country": "TN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 145,
+      "candidate_id": "SG-INV-0362",
+      "country": "TR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 146,
+      "candidate_id": "SG-INV-0614",
+      "country": "TW",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 147,
+      "candidate_id": "SG-INV-0346",
+      "country": "UA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 148,
+      "candidate_id": "SG-INV-0723",
+      "country": "ZA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 149,
+      "candidate_id": "SG-INV-0497",
+      "country": "CL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 150,
+      "candidate_id": "SG-INV-0464",
+      "country": "CU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 151,
+      "candidate_id": "SG-INV-0469",
+      "country": "DO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:DO:catedral-primada-santo-domingo",
+        "source_release": "P30",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 152,
+      "candidate_id": "SG-INV-0692",
+      "country": "DZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:DZ:basilique-saint-augustin-annaba",
+        "source_release": "P30",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 153,
+      "candidate_id": "SG-INV-0512",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 154,
+      "candidate_id": "SG-INV-0699",
+      "country": "EG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 155,
+      "candidate_id": "SG-INV-0358",
+      "country": "GR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 156,
+      "candidate_id": "SG-INV-0446",
+      "country": "GT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 157,
+      "candidate_id": "SG-INV-0678",
+      "country": "ID",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 158,
+      "candidate_id": "SG-INV-0572",
+      "country": "JO",
+      "gate": "CANONICAL_PHYSICAL_REUSE_REVIEW",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 159,
+      "candidate_id": "SG-INV-0629",
+      "country": "KR",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 160,
+      "candidate_id": "SG-INV-0354",
+      "country": "MT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 161,
+      "candidate_id": "SG-INV-0370",
+      "country": "SE",
+      "gate": "NON_CATHOLIC_OPERATING_SITE",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 162,
+      "candidate_id": "SG-INV-0307",
+      "country": "SI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 163,
+      "candidate_id": "SG-INV-0300",
+      "country": "SK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 164,
+      "candidate_id": "SG-INV-0452",
+      "country": "SV",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 165,
+      "candidate_id": "SG-INV-0537",
+      "country": "VE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 166,
+      "candidate_id": "SG-INV-0669",
+      "country": "VN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 167,
+      "candidate_id": "SG-INV-0186",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
+        "source_release": "P30",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 168,
+      "candidate_id": "SG-INV-0738",
+      "country": "AU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 169,
+      "candidate_id": "SG-INV-0508",
+      "country": "CO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:CO:basilica-senor-milagros-buga",
+        "source_release": "P30",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 170,
+      "candidate_id": "SG-INV-0283",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 171,
+      "candidate_id": "SG-INV-0311",
+      "country": "HR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:HR:bazilika-gospe-sinjske",
+        "source_release": "P31",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 172,
+      "candidate_id": "SG-INV-0324",
+      "country": "HU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 173,
+      "candidate_id": "SG-INV-0576",
+      "country": "LB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 174,
+      "candidate_id": "SG-INV-0734",
+      "country": "MU",
+      "gate": "CANONICAL_COMPLEX_REUSE_SUBSITE_REVIEW",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 175,
+      "candidate_id": "SG-INV-0716",
+      "country": "NG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 176,
+      "candidate_id": "SG-INV-0454",
+      "country": "NI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 177,
+      "candidate_id": "SG-INV-0231",
+      "country": "NL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 178,
+      "candidate_id": "SG-INV-0745",
+      "country": "NZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 179,
+      "candidate_id": "SG-INV-0568",
+      "country": "PS",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:PS:chapel-milk-grotto-bethlehem",
+        "source_release": "P31",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 180,
+      "candidate_id": "SG-INV-0533",
+      "country": "UY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 181,
+      "candidate_id": "SG-INV-0495",
+      "country": "AR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:AR:santuario-san-cayetano-liniers",
+        "source_release": "P28",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 182,
+      "candidate_id": "SG-INV-0224",
+      "country": "BE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:BE:basilique-notre-dame-bon-secours-peruwelz",
+        "source_release": "P31",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 183,
+      "candidate_id": "SG-INV-0277",
+      "country": "CH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:CH:pfarr-wallfahrtskirche-st-theodul-sachseln",
+        "source_release": "P31",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 184,
+      "candidate_id": "SG-INV-0335",
+      "country": "LT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:LT:trakai-visitation-basilica",
+        "source_release": "P30",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 185,
+      "candidate_id": "SG-INV-0434",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 186,
+      "candidate_id": "SG-INV-0522",
+      "country": "PE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 187,
+      "candidate_id": "SG-INV-0146",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:PT:santuario-nossa-senhora-nazare",
+        "source_release": "P31",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 188,
+      "candidate_id": "SG-INV-0529",
+      "country": "PY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 189,
+      "candidate_id": "SG-INV-0478",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:BR:basilica-santuario-nossa-senhora-penha-rio",
+        "source_release": "P31",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 190,
+      "candidate_id": "SG-INV-0616",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 191,
+      "candidate_id": "SG-INV-0604",
+      "country": "LK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 192,
+      "candidate_id": "SG-INV-0255",
+      "country": "GB",
+      "gate": "NON_CATHOLIC_OPERATING_SITE",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 193,
+      "candidate_id": "SG-INV-0241",
+      "country": "IE",
+      "gate": "HISTORICAL_CATHOLIC_HERITAGE_NOT_ACTIVE_SITE",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 194,
+      "candidate_id": "SG-INV-0420",
+      "country": "CA",
+      "gate": "CATHOLIC_COMPLEX_NEEDS_PHYSICAL_SPLIT",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 195,
+      "candidate_id": "SG-INV-0592",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 196,
+      "candidate_id": "SG-INV-0549",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 197,
+      "candidate_id": "SG-INV-0117",
+      "country": "ES",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:ES:basilica-nuestra-senora-atocha-madrid",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:ES:basilica-nuestra-senora-atocha-madrid",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 198,
+      "candidate_id": "SG-INV-0632",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:PH:baclaran-national-shrine-perpetual-help",
+        "source_release": "P28",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 199,
+      "candidate_id": "SG-INV-0213",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:PL:bazylika-sw-anny-gora-swietej-anny",
+        "source_release": "P30",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 200,
+      "candidate_id": "SG-INV-0164",
+      "country": "DE",
+      "gate": "ALREADY_REPRESENTED_DO_NOT_DUPLICATE",
+      "verified_existing_place_id": "place:DE:benediktinerabtei-maria-laach",
+      "live_reconciliation": {
+        "status": "ALREADY_IN_LIVE_CANONICAL",
+        "canonical_place_id": "place:DE:benediktinerabtei-maria-laach",
+        "source_release": "P25_VERIFIED_EXISTING_REUSE",
+        "publication_gate": "NO_NEW_PLACE"
+      }
+    },
+    {
+      "order": 201,
+      "candidate_id": "SG-INV-0543",
+      "country": "BO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 202,
+      "candidate_id": "SG-INV-0697",
+      "country": "TN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 203,
+      "candidate_id": "SG-INV-0363",
+      "country": "TR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 204,
+      "candidate_id": "SG-INV-0347",
+      "country": "UA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 205,
+      "candidate_id": "SG-INV-0500",
+      "country": "CL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 206,
+      "candidate_id": "SG-INV-0465",
+      "country": "CU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 207,
+      "candidate_id": "SG-INV-0693",
+      "country": "DZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 208,
+      "candidate_id": "SG-INV-0513",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 209,
+      "candidate_id": "SG-INV-0700",
+      "country": "EG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 210,
+      "candidate_id": "SG-INV-0360",
+      "country": "GR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 211,
+      "candidate_id": "SG-INV-0447",
+      "country": "GT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 212,
+      "candidate_id": "SG-INV-0679",
+      "country": "ID",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 213,
+      "candidate_id": "SG-INV-0573",
+      "country": "JO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 214,
+      "candidate_id": "SG-INV-0624",
+      "country": "KR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 215,
+      "candidate_id": "SG-INV-0355",
+      "country": "MT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 216,
+      "candidate_id": "SG-INV-0302",
+      "country": "SK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 217,
+      "candidate_id": "SG-INV-0538",
+      "country": "VE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 218,
+      "candidate_id": "SG-INV-0670",
+      "country": "VN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 219,
+      "candidate_id": "SG-INV-0187",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 220,
+      "candidate_id": "SG-INV-0739",
+      "country": "AU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 221,
+      "candidate_id": "SG-INV-0505",
+      "country": "CO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 222,
+      "candidate_id": "SG-INV-0284",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 223,
+      "candidate_id": "SG-INV-0313",
+      "country": "HR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 224,
+      "candidate_id": "SG-INV-0325",
+      "country": "HU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 225,
+      "candidate_id": "SG-INV-0578",
+      "country": "LB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 226,
+      "candidate_id": "SG-INV-0455",
+      "country": "NI",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 227,
+      "candidate_id": "SG-INV-0232",
+      "country": "NL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 228,
+      "candidate_id": "SG-INV-0569",
+      "country": "PS",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 229,
+      "candidate_id": "SG-INV-0535",
+      "country": "UY",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 230,
+      "candidate_id": "SG-INV-0496",
+      "country": "AR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 231,
+      "candidate_id": "SG-INV-0225",
+      "country": "BE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 232,
+      "candidate_id": "SG-INV-0272",
+      "country": "CH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 233,
+      "candidate_id": "SG-INV-0337",
+      "country": "LT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 234,
+      "candidate_id": "SG-INV-0435",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 235,
+      "candidate_id": "SG-INV-0523",
+      "country": "PE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 236,
+      "candidate_id": "SG-INV-0153",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 237,
+      "candidate_id": "SG-INV-0479",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 238,
+      "candidate_id": "SG-INV-0618",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 239,
+      "candidate_id": "SG-INV-0605",
+      "country": "LK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 240,
+      "candidate_id": "SG-INV-0249",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 241,
+      "candidate_id": "SG-INV-0239",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 242,
+      "candidate_id": "SG-INV-0421",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 243,
+      "candidate_id": "SG-INV-0593",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 244,
+      "candidate_id": "SG-INV-0559",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 245,
+      "candidate_id": "SG-INV-0125",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 246,
+      "candidate_id": "SG-INV-0634",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 247,
+      "candidate_id": "SG-INV-0215",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 248,
+      "candidate_id": "SG-INV-0165",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 249,
+      "candidate_id": "SG-INV-0380",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 250,
+      "candidate_id": "SG-INV-0049",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 251,
+      "candidate_id": "SG-INV-0023",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 252,
+      "candidate_id": "SG-INV-0364",
+      "country": "TR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 253,
+      "candidate_id": "SG-INV-0501",
+      "country": "CL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 254,
+      "candidate_id": "SG-INV-0466",
+      "country": "CU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 255,
+      "candidate_id": "SG-INV-0694",
+      "country": "DZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 256,
+      "candidate_id": "SG-INV-0514",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 257,
+      "candidate_id": "SG-INV-0703",
+      "country": "EG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 258,
+      "candidate_id": "SG-INV-0448",
+      "country": "GT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 259,
+      "candidate_id": "SG-INV-0625",
+      "country": "KR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 260,
+      "candidate_id": "SG-INV-0303",
+      "country": "SK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 261,
+      "candidate_id": "SG-INV-0539",
+      "country": "VE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 262,
+      "candidate_id": "SG-INV-0671",
+      "country": "VN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 263,
+      "candidate_id": "SG-INV-0188",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 264,
+      "candidate_id": "SG-INV-0740",
+      "country": "AU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 265,
+      "candidate_id": "SG-INV-0506",
+      "country": "CO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 266,
+      "candidate_id": "SG-INV-0291",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 267,
+      "candidate_id": "SG-INV-0316",
+      "country": "HR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 268,
+      "candidate_id": "SG-INV-0326",
+      "country": "HU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 269,
+      "candidate_id": "SG-INV-0579",
+      "country": "LB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 270,
+      "candidate_id": "SG-INV-0233",
+      "country": "NL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 271,
+      "candidate_id": "SG-INV-0570",
+      "country": "PS",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 272,
+      "candidate_id": "SG-INV-0492",
+      "country": "AR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 273,
+      "candidate_id": "SG-INV-0226",
+      "country": "BE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 274,
+      "candidate_id": "SG-INV-0274",
+      "country": "CH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 275,
+      "candidate_id": "SG-INV-0339",
+      "country": "LT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 276,
+      "candidate_id": "SG-INV-0438",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 277,
+      "candidate_id": "SG-INV-0524",
+      "country": "PE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 278,
+      "candidate_id": "SG-INV-0148",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 279,
+      "candidate_id": "SG-INV-0480",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 280,
+      "candidate_id": "SG-INV-0619",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 281,
+      "candidate_id": "SG-INV-0606",
+      "country": "LK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 282,
+      "candidate_id": "SG-INV-0256",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 283,
+      "candidate_id": "SG-INV-0242",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 284,
+      "candidate_id": "SG-INV-0422",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 285,
+      "candidate_id": "SG-INV-0585",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 286,
+      "candidate_id": "SG-INV-0553",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 287,
+      "candidate_id": "SG-INV-0126",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 288,
+      "candidate_id": "SG-INV-0649",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 289,
+      "candidate_id": "SG-INV-0200",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 290,
+      "candidate_id": "SG-INV-0166",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 291,
+      "candidate_id": "SG-INV-0387",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 292,
+      "candidate_id": "SG-INV-0051",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 293,
+      "candidate_id": "SG-INV-0026",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 294,
+      "candidate_id": "SG-INV-0502",
+      "country": "CL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 295,
+      "candidate_id": "SG-INV-0515",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 296,
+      "candidate_id": "SG-INV-0704",
+      "country": "EG",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 297,
+      "candidate_id": "SG-INV-0626",
+      "country": "KR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 298,
+      "candidate_id": "SG-INV-0540",
+      "country": "VE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 299,
+      "candidate_id": "SG-INV-0674",
+      "country": "VN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 300,
+      "candidate_id": "SG-INV-0189",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 301,
+      "candidate_id": "SG-INV-0741",
+      "country": "AU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 302,
+      "candidate_id": "SG-INV-0509",
+      "country": "CO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 303,
+      "candidate_id": "SG-INV-0285",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 304,
+      "candidate_id": "SG-INV-0327",
+      "country": "HU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 305,
+      "candidate_id": "SG-INV-0581",
+      "country": "LB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 306,
+      "candidate_id": "SG-INV-0493",
+      "country": "AR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 307,
+      "candidate_id": "SG-INV-0227",
+      "country": "BE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 308,
+      "candidate_id": "SG-INV-0275",
+      "country": "CH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 309,
+      "candidate_id": "SG-INV-0336",
+      "country": "LT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 310,
+      "candidate_id": "SG-INV-0440",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 311,
+      "candidate_id": "SG-INV-0526",
+      "country": "PE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 312,
+      "candidate_id": "SG-INV-0149",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 313,
+      "candidate_id": "SG-INV-0481",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 314,
+      "candidate_id": "SG-INV-0620",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 315,
+      "candidate_id": "SG-INV-0607",
+      "country": "LK",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 316,
+      "candidate_id": "SG-INV-0257",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 317,
+      "candidate_id": "SG-INV-0243",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 318,
+      "candidate_id": "SG-INV-0416",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 319,
+      "candidate_id": "SG-INV-0588",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 320,
+      "candidate_id": "SG-INV-0554",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 321,
+      "candidate_id": "SG-INV-0128",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 322,
+      "candidate_id": "SG-INV-0650",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 323,
+      "candidate_id": "SG-INV-0204",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 324,
+      "candidate_id": "SG-INV-0168",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 325,
+      "candidate_id": "SG-INV-0397",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 326,
+      "candidate_id": "SG-INV-0055",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 327,
+      "candidate_id": "SG-INV-0032",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 328,
+      "candidate_id": "SG-INV-0516",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 329,
+      "candidate_id": "SG-INV-0627",
+      "country": "KR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 330,
+      "candidate_id": "SG-INV-0190",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 331,
+      "candidate_id": "SG-INV-0742",
+      "country": "AU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 332,
+      "candidate_id": "SG-INV-0510",
+      "country": "CO",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 333,
+      "candidate_id": "SG-INV-0286",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 334,
+      "candidate_id": "SG-INV-0582",
+      "country": "LB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 335,
+      "candidate_id": "SG-INV-0228",
+      "country": "BE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 336,
+      "candidate_id": "SG-INV-0278",
+      "country": "CH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 337,
+      "candidate_id": "SG-INV-0429",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 338,
+      "candidate_id": "SG-INV-0150",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 339,
+      "candidate_id": "SG-INV-0483",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 340,
+      "candidate_id": "SG-INV-0621",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 341,
+      "candidate_id": "SG-INV-0260",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 342,
+      "candidate_id": "SG-INV-0244",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 343,
+      "candidate_id": "SG-INV-0425",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 344,
+      "candidate_id": "SG-INV-0590",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 345,
+      "candidate_id": "SG-INV-0555",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 346,
+      "candidate_id": "SG-INV-0133",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 347,
+      "candidate_id": "SG-INV-0652",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 348,
+      "candidate_id": "SG-INV-0211",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 349,
+      "candidate_id": "SG-INV-0170",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 350,
+      "candidate_id": "SG-INV-0399",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 351,
+      "candidate_id": "SG-INV-0057",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 352,
+      "candidate_id": "SG-INV-0008",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 353,
+      "candidate_id": "SG-INV-0517",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 354,
+      "candidate_id": "SG-INV-0628",
+      "country": "KR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 355,
+      "candidate_id": "SG-INV-0193",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 356,
+      "candidate_id": "SG-INV-0743",
+      "country": "AU",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 357,
+      "candidate_id": "SG-INV-0287",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 358,
+      "candidate_id": "SG-INV-0430",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 359,
+      "candidate_id": "SG-INV-0154",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 360,
+      "candidate_id": "SG-INV-0485",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 361,
+      "candidate_id": "SG-INV-0622",
+      "country": "JP",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 362,
+      "candidate_id": "SG-INV-0250",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 363,
+      "candidate_id": "SG-INV-0245",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 364,
+      "candidate_id": "SG-INV-0423",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 365,
+      "candidate_id": "SG-INV-0591",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 366,
+      "candidate_id": "SG-INV-0556",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 367,
+      "candidate_id": "SG-INV-0111",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 368,
+      "candidate_id": "SG-INV-0630",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 369,
+      "candidate_id": "SG-INV-0214",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 370,
+      "candidate_id": "SG-INV-0171",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 371,
+      "candidate_id": "SG-INV-0400",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 372,
+      "candidate_id": "SG-INV-0058",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 373,
+      "candidate_id": "SG-INV-0011",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 374,
+      "candidate_id": "SG-INV-0518",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 375,
+      "candidate_id": "SG-INV-0191",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 376,
+      "candidate_id": "SG-INV-0288",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 377,
+      "candidate_id": "SG-INV-0432",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 378,
+      "candidate_id": "SG-INV-0156",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 379,
+      "candidate_id": "SG-INV-0486",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 380,
+      "candidate_id": "SG-INV-0251",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 381,
+      "candidate_id": "SG-INV-0246",
+      "country": "IE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 382,
+      "candidate_id": "SG-INV-0424",
+      "country": "CA",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 383,
+      "candidate_id": "SG-INV-0594",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 384,
+      "candidate_id": "SG-INV-0558",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 385,
+      "candidate_id": "SG-INV-0112",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 386,
+      "candidate_id": "SG-INV-0635",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 387,
+      "candidate_id": "SG-INV-0216",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 388,
+      "candidate_id": "SG-INV-0172",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 389,
+      "candidate_id": "SG-INV-0378",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 390,
+      "candidate_id": "SG-INV-0064",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 391,
+      "candidate_id": "SG-INV-0012",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 392,
+      "candidate_id": "SG-INV-0519",
+      "country": "EC",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 393,
+      "candidate_id": "SG-INV-0192",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 394,
+      "candidate_id": "SG-INV-0289",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 395,
+      "candidate_id": "SG-INV-0433",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 396,
+      "candidate_id": "SG-INV-0157",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 397,
+      "candidate_id": "SG-INV-0487",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 398,
+      "candidate_id": "SG-INV-0258",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 399,
+      "candidate_id": "SG-INV-0595",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 400,
+      "candidate_id": "SG-INV-0561",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 401,
+      "candidate_id": "SG-INV-0113",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 402,
+      "candidate_id": "SG-INV-0636",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 403,
+      "candidate_id": "SG-INV-0206",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 404,
+      "candidate_id": "SG-INV-0173",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 405,
+      "candidate_id": "SG-INV-0383",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 406,
+      "candidate_id": "SG-INV-0073",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 407,
+      "candidate_id": "SG-INV-0013",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 408,
+      "candidate_id": "SG-INV-0196",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 409,
+      "candidate_id": "SG-INV-0290",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 410,
+      "candidate_id": "SG-INV-0436",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 411,
+      "candidate_id": "SG-INV-0158",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 412,
+      "candidate_id": "SG-INV-0488",
+      "country": "BR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 413,
+      "candidate_id": "SG-INV-0259",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 414,
+      "candidate_id": "SG-INV-0596",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 415,
+      "candidate_id": "SG-INV-0562",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 416,
+      "candidate_id": "SG-INV-0114",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 417,
+      "candidate_id": "SG-INV-0638",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 418,
+      "candidate_id": "SG-INV-0207",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 419,
+      "candidate_id": "SG-INV-0174",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 420,
+      "candidate_id": "SG-INV-0384",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 421,
+      "candidate_id": "SG-INV-0075",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 422,
+      "candidate_id": "SG-INV-0014",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 423,
+      "candidate_id": "SG-INV-0197",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 424,
+      "candidate_id": "SG-INV-0292",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 425,
+      "candidate_id": "SG-INV-0437",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 426,
+      "candidate_id": "SG-INV-0159",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 427,
+      "candidate_id": "SG-INV-0261",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 428,
+      "candidate_id": "SG-INV-0597",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 429,
+      "candidate_id": "SG-INV-0563",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 430,
+      "candidate_id": "SG-INV-0115",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 431,
+      "candidate_id": "SG-INV-0640",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 432,
+      "candidate_id": "SG-INV-0208",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 433,
+      "candidate_id": "SG-INV-0175",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 434,
+      "candidate_id": "SG-INV-0385",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 435,
+      "candidate_id": "SG-INV-0089",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 436,
+      "candidate_id": "SG-INV-0015",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 437,
+      "candidate_id": "SG-INV-0198",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 438,
+      "candidate_id": "SG-INV-0293",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 439,
+      "candidate_id": "SG-INV-0439",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 440,
+      "candidate_id": "SG-INV-0160",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 441,
+      "candidate_id": "SG-INV-0262",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 442,
+      "candidate_id": "SG-INV-0598",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 443,
+      "candidate_id": "SG-INV-0564",
+      "country": "IL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 444,
+      "candidate_id": "SG-INV-0116",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 445,
+      "candidate_id": "SG-INV-0641",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 446,
+      "candidate_id": "SG-INV-0217",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 447,
+      "candidate_id": "SG-INV-0176",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 448,
+      "candidate_id": "SG-INV-0386",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 449,
+      "candidate_id": "SG-INV-0066",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 450,
+      "candidate_id": "SG-INV-0016",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 451,
+      "candidate_id": "SG-INV-0194",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 452,
+      "candidate_id": "SG-INV-0294",
+      "country": "CZ",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 453,
+      "candidate_id": "SG-INV-0443",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 454,
+      "candidate_id": "SG-INV-0161",
+      "country": "PT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 455,
+      "candidate_id": "SG-INV-0263",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 456,
+      "candidate_id": "SG-INV-0599",
+      "country": "IN",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 457,
+      "candidate_id": "SG-INV-0118",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 458,
+      "candidate_id": "SG-INV-0642",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 459,
+      "candidate_id": "SG-INV-0218",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 460,
+      "candidate_id": "SG-INV-0177",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 461,
+      "candidate_id": "SG-INV-0388",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 462,
+      "candidate_id": "SG-INV-0068",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 463,
+      "candidate_id": "SG-INV-0021",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 464,
+      "candidate_id": "SG-INV-0195",
+      "country": "AT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 465,
+      "candidate_id": "SG-INV-0441",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 466,
+      "candidate_id": "SG-INV-0265",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 467,
+      "candidate_id": "SG-INV-0119",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 468,
+      "candidate_id": "SG-INV-0643",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 469,
+      "candidate_id": "SG-INV-0219",
+      "country": "PL",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 470,
+      "candidate_id": "SG-INV-0178",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 471,
+      "candidate_id": "SG-INV-0391",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 472,
+      "candidate_id": "SG-INV-0069",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 473,
+      "candidate_id": "SG-INV-0030",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 474,
+      "candidate_id": "SG-INV-0442",
+      "country": "MX",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 475,
+      "candidate_id": "SG-INV-0266",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 476,
+      "candidate_id": "SG-INV-0120",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 477,
+      "candidate_id": "SG-INV-0644",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 478,
+      "candidate_id": "SG-INV-0179",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 479,
+      "candidate_id": "SG-INV-0392",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 480,
+      "candidate_id": "SG-INV-0070",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 481,
+      "candidate_id": "SG-INV-0031",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 482,
+      "candidate_id": "SG-INV-0267",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 483,
+      "candidate_id": "SG-INV-0122",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 484,
+      "candidate_id": "SG-INV-0645",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 485,
+      "candidate_id": "SG-INV-0180",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 486,
+      "candidate_id": "SG-INV-0393",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 487,
+      "candidate_id": "SG-INV-0072",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 488,
+      "candidate_id": "SG-INV-0033",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 489,
+      "candidate_id": "SG-INV-0268",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 490,
+      "candidate_id": "SG-INV-0123",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 491,
+      "candidate_id": "SG-INV-0646",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 492,
+      "candidate_id": "SG-INV-0181",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 493,
+      "candidate_id": "SG-INV-0394",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 494,
+      "candidate_id": "SG-INV-0074",
+      "country": "IT",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 495,
+      "candidate_id": "SG-INV-0041",
+      "country": "FR",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 496,
+      "candidate_id": "SG-INV-0269",
+      "country": "GB",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 497,
+      "candidate_id": "SG-INV-0124",
+      "country": "ES",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 498,
+      "candidate_id": "SG-INV-0647",
+      "country": "PH",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 499,
+      "candidate_id": "SG-INV-0182",
+      "country": "DE",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    },
+    {
+      "order": 500,
+      "candidate_id": "SG-INV-0395",
+      "country": "US",
+      "gate": "SOURCE_DISCOVERY_OR_EXACT_SITE_GEO_REMAIN",
+      "live_reconciliation": {
+        "status": "UNRESOLVED_RESEARCH_ACQUISITION_LEAD",
+        "publication_gate": "INSTITUTION_IDENTITY_AND_EXACT_PHYSICAL_SITE_REQUIRED"
+      }
+    }
+  ]
+}

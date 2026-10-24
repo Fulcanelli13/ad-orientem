@@ -1,0 +1,88 @@
+{
+  "schema": "AO_SACRED_PLACES_P32_TRIPLE_SITE_BULK500_V1",
+  "date": "2026-10-24",
+  "status": "CANONICAL_RELEASE_PROPOSED",
+  "baseline": {
+    "places": 414,
+    "sources": 712,
+    "crosswalk": 414,
+    "unlinked": 155,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 417,
+    "sources": 715,
+    "crosswalk": 417,
+    "unlinked": 158,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0453",
+      "place_id": "place:NI:basilica-inmaculada-concepcion-el-viejo",
+      "name": "Santuario Nacional Basílica de Nuestra Señora de la Inmaculada Concepción, El Viejo",
+      "country": "NI",
+      "place_type": "basilica",
+      "lat": 12.66222,
+      "lng": -87.16669,
+      "source_ids": [
+        "AO-P32-SITE-SG-INV-0453"
+      ],
+      "identity_source_url": "https://www.vatican.va/content/john-paul-ii/es/angelus/1992/documents/hf_jp-ii_ang_19920913.html",
+      "identity_source_issuer": "Holy See — Pope John Paul II, Angelus, 13 September 1992",
+      "geo_source_url": "https://www.openstreetmap.org/way/548569283",
+      "geo_source_ref": "osm:way:548569283",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W548569283",
+      "scope_limit": "The Pope explicitly names the Marian sanctuary in El Viejo, Diocese of León; independently OSM named Immaculate Conception church (building=church, denomination=catholic). No assertion of current visitor schedule or rites."
+    },
+    {
+      "candidate_id": "SG-INV-0602",
+      "place_id": "place:LK:national-shrine-our-lady-matara",
+      "name": "National Shrine of Our Lady of Matara",
+      "country": "LK",
+      "place_type": "shrine",
+      "lat": 5.94329,
+      "lng": 80.55191,
+      "source_ids": [
+        "AO-P32-SITE-SG-INV-0602"
+      ],
+      "identity_source_url": "https://gallediocese.org/parishes/",
+      "identity_source_issuer": "Roman Catholic Diocese of Galle",
+      "geo_source_url": "https://www.openstreetmap.org/way/637940698",
+      "geo_source_ref": "osm:way:637940698",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W637940698",
+      "scope_limit": "Diocese's own parish listing and 2026 feast reporting establish operating national shrine; OSM way is named Catholic place-of-worship feature, not a verified individual building outline. Distinguish from Matara town-centre node."
+    },
+    {
+      "candidate_id": "SG-INV-0709",
+      "place_id": "place:RW:basilique-cathedrale-immaculee-conception-kabgayi",
+      "name": "Basilique Cathédrale Notre-Dame de l’Immaculée Conception, Kabgayi",
+      "country": "RW",
+      "place_type": "cathedral",
+      "lat": -2.10027,
+      "lng": 29.75186,
+      "source_ids": [
+        "AO-P32-SITE-SG-INV-0709"
+      ],
+      "identity_source_url": "https://eglisecatholiquerwanda.org/IMG/pdf/annuairecepr2017.pdf",
+      "identity_source_issuer": "Catholic Episcopal Conference of Rwanda, official 2017 directory",
+      "geo_source_url": "https://www.openstreetmap.org/way/309319349",
+      "geo_source_ref": "osm:way:309319349",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/fr/W309319349",
+      "scope_limit": "National bishops directory records the cathedral of Kabgayi raised to minor basilica 22 October 1992. OSM church building with Catholic denomination; not Kabgayi hospital or mission campus."
+    }
+  ],
+  "source_excerpt_coverage_first200_before": 136,
+  "source_excerpt_coverage_first200_after": 139,
+  "remaining_first200_without_site_source_after": 61,
+  "acquisition500_reconciliation": "data/geography/research/sacred-places-p32-acquisition500-live-reconciled.v1.json",
+  "p16_protected_exceptions": 16,
+  "policy": [
+    "Each new Place uses a Catholic institutional source and a specifically named matching OSM worship-place feature; Matara OSM way does not independently demonstrate a building outline.",
+    "P32 500-row reconciliation is deduplication only; it does NOT constitute 500 independently validated site sources or buildings.",
+    "Historical 27 canonical reuses remain untouched, already released Places keep frozen IDs.",
+    "Do not add Mass Times, TLM venue claims, public outbound links, visitor access, relics or hero art."
+  ]
+}
