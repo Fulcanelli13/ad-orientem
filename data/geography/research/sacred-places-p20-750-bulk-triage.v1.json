@@ -32,7 +32,8 @@
     "Keep all sixteen P16 original historical holds, including three IDs absent from this 750-record slice. Later independently published nearby buildings do not resolve the originals.",
     "Prior negative match decisions reject specific colliding IDs, not the potential existence of an independently verified Catholic site.",
     "No new Place, coordinate, TLM venue, 1962 schedule, shrine ownership, photo, relic, miracle, apparition or event-frequency claim results from automated bulk triage.",
-    "First 200 priorities are evidence-research assignments; 500 is the full source-acquisition tranche; neither subset is publication-approved."
+    "First 200 priorities are evidence-research assignments; 500 is the full source-acquisition tranche; neither subset is publication-approved.",
+    "Zeitoun's original site is Coptic Orthodox; treat its scope as outside the Catholic publication lane even when an earlier collision review labels it a physical-scope hold."
   ],
   "counts": {
     "source_candidate_universe": 750,
@@ -43,10 +44,10 @@
     "identity_gate_totals": {
       "CONFIRMED_EXISTING_CANONICAL": 170,
       "NEEDS_NEW_SOURCE_AND_EXACT_PHYSICAL_IDENTITY": 554,
-      "R78_PHYSICAL_SCOPE_HOLD": 6,
+      "R78_PHYSICAL_SCOPE_HOLD": 5,
       "WRONG_PREVIOUS_CANONICAL_SUGGESTION": 6,
       "P16_HISTORICAL_TITLE_HOLD": 13,
-      "OUTSIDE_CATHOLIC_SCOPE_HOLD": 1
+      "OUTSIDE_CATHOLIC_SCOPE_HOLD": 2
     },
     "original_p16_exception_holds": 16,
     "historic_holds_in_750": 13,
@@ -9394,7 +9395,7 @@
       "category": "Marian shrine",
       "priority": "Strong",
       "discovery_source_mentions": 0,
-      "identity_gate": "R78_PHYSICAL_SCOPE_HOLD",
+      "identity_gate": "OUTSIDE_CATHOLIC_SCOPE_HOLD",
       "unverified_text_match_place_id": "place:EG:zeitoun-coptic-saint-mary",
       "existing_country_places": 1,
       "physical_identity_and_geo_verified_for_new_publication": false,
