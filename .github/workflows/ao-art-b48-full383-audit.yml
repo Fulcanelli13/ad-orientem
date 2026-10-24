@@ -1,0 +1,48 @@
+name: B48 full 383 Sacred Art physical archive and release-gate reconciliation
+on:
+  push:
+    branches: [research/sacred-art-b48-all383-archive-photo-readiness-census-20261024]
+    paths: [.github/workflows/ao-art-b48-full383-audit.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b48-383-physical-originals-census-one
+  cancel-in-progress: false
+jobs:
+  all383-actual-binary-preservation-ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 38
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b48-all383-archive-photo-readiness-census-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify predecessor sources and immutable 451 artworks
+        run: |
+          python -m py_compile scripts/research/sacred_art_b48_all383_archive_and_rights_census.py
+          node tests/sacred-art-b47-offline-383-source-closeout.mjs
+      - name: Check actual draft Release assets; audit SHA-linked older 290 originals and later 122 and scan repo image bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_b48_all383_archive_and_rights_census.py
+      - name: Check every frozen ID, disjoint acquisition cohort, and no premature distribution claims
+        run: |
+          node tests/sacred-art-b48-383-physical-original-coverage.mjs
+      - name: Commit only the 383-row physical preservation, licence and app-release gate ledgers
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b48-383-preserved-image-and-publication-gates.json data/research/sacred-art-b48-383-photo-preservation-ledger.csv data/research/sacred-art-b48-unmatched-repo-image-physical-summary.json
+          git commit -m 'research: B48 reconcile all 383 against long-term 290 early files and 122 later SHA archives, identify exact release gaps'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b48-all383-archive-photo-readiness-census-20261024
+            git rebase origin/research/sacred-art-b48-all383-archive-photo-readiness-census-20261024
+            git push origin HEAD:research/sacred-art-b48-all383-archive-photo-readiness-census-20261024 && exit 0
+            sleep 3
+          done
+          exit 1
