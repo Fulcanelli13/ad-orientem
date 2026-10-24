@@ -64,6 +64,19 @@ try{
          markup:(slot?.innerHTML||"").slice(0,500)};
      });
      console.log("QUIET_TODAY_ART "+width+"px "+JSON.stringify(artwork));
+     const visual=await page.evaluate(()=>{
+       const date=document.querySelector(".homeScreen .aoTodayEditorialDate");
+       const pending=[...document.querySelectorAll(".homeScreen .aoSaintArtPlaceholder")];
+       const visiblePending=pending.filter(el=>{
+         const holder=el.closest(".aoSaintArtCard")||el;
+         const box=holder.getBoundingClientRect(),style=getComputedStyle(holder);
+         return box.width>10&&box.height>10&&style.display!=="none";
+       }).length;
+       return {dateText:date?.textContent?.trim()||"",visiblePending};
+     });
+     assert.ok(visual.dateText.length>=8,"Editorial Today is missing its source-owned date");
+     assert.equal(visual.visiblePending,0,
+       "Unresolved remote Saints artwork is occupying the premium Today first fold");
      await page.screenshot({path:resolve(out,"today-"+width+".png"),fullPage:false,animations:"disabled"});
    }
    await page.locator('[data-ao-app-surface="learn"]').click();
