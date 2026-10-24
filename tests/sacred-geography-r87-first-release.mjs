@@ -1,3 +1,4 @@
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import fs from "node:fs";
 import assert from "node:assert/strict";
 import {assertExploreGeographyRegistry, isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
@@ -16,8 +17,8 @@ const r91 = load("../data/geography/research/sacred-geography-r91-coverage-first
 const r92 = load("../data/geography/research/sacred-geography-r92-verified-site-cohort.v1.json");
 const r93 = load("../data/geography/research/sacred-geography-r93-first-presence-release.v1.json");
 const p17 = load("../data/geography/research/sacred-places-p17-separated-bergamo-asuncion.v1.json");
-assert.equal(geography.places.length,294+r89.published_new.length+r90.published_new.length+r91.published_new.length+r92.published_new.length+r93.published_new.length+6+p17.published_new.length+3+2+10);
-assert.equal(sources.sources.length,515+r89.published_new.length*2+r90.published_new.length*2+r91.published_new.length*2+r92.published_new.length*2+r93.published_new.length*2+18+p17.published_new.reduce((n,p)=>n+p.source_ids.length,0)+6+6+10);
+assert.equal(geography.places.length,LIVE.places);
+assert.equal(sources.sources.length,LIVE.sources);
 assert.equal(geography.geoAreas.length,89+r89.country_areas_added.length+r90.country_areas_added.length+r91.country_areas_added.length+r92.country_areas_added.length+r93.country_areas_added.length);
 assert.equal(release.country_areas_added.length,17);
 assert.equal(new Set(release.published_new.map(row=>row.place_id)).size,33);
@@ -26,7 +27,7 @@ assert.equal(new Set(geography.places.map(x=>x.place_id)).size,geography.places.
 assert.equal(new Set(sources.sources.map(x=>x.id)).size,sources.sources.length);
 assert.equal(assertExploreGeographyRegistry(geography).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...shrineCorpus,sources:sources.sources,places:geography.places}).pass,true);
-assert.equal(heritage.place_crosswalk.length,294+r89.published_new.length+r90.published_new.length+r91.published_new.length+r92.published_new.length+r93.published_new.length+6+p17.published_new.length+3+2+10);
+assert.equal(heritage.place_crosswalk.length,LIVE.heritage_crosswalk);
 assert.deepEqual(new Set(geography.places.map(p=>p.place_id)),new Set(heritage.place_crosswalk.map(r=>r.place_id)),"R87 must extend independent review crosswalk without removing old Places");
 const siteById = new Map(geography.places.map(p=>[p.place_id,p]));
 const sourceById = new Map(sources.sources.map(s=>[s.id,s]));

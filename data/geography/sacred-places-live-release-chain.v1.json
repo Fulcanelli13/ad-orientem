@@ -1,0 +1,27 @@
+{
+  "schema": "AO_SACRED_PLACES_LIVE_RELEASE_CHAIN_V1",
+  "as_of": "2026-10-24",
+  "state": "ACTIVE_RELEASE_LEDGER",
+  "starting_point": {
+    "places": 361,
+    "sources": 659,
+    "heritage_crosswalk": 361,
+    "places_without_direct_claim": 102,
+    "geo_areas": 141,
+    "directory_place_links": 9,
+    "historical_title_holds": 16
+  },
+  "releases": [
+    {
+      "id": "P22",
+      "manifest": "data/geography/research/sacred-places-p22-map-first-ten-sites.v1.json"
+    }
+  ],
+  "policy": [
+    "Only this ledger lists canonical Place releases after the frozen 361/659 P21 baseline.",
+    "New canonical releases must append an immutable release-manifest path with explicit baseline/proposed deltas; changing Place/source counts without that manifest fails CI.",
+    "Historical research manifests remain frozen; existing individual ID, geo provenance, confessional and title collision checks remain in force.",
+    "All older tests should derive live counts from this chain, not copy current numbers or rebuild a long arithmetic expression.",
+    "Shrine profiles, pilgrimages, TLM venues, images and historical exceptions are separate domains and never inferred from Place counts."
+  ]
+}

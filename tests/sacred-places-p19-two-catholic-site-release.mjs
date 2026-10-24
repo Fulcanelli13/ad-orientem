@@ -1,3 +1,4 @@
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
@@ -11,14 +12,14 @@ const prior=load("data/geography/research/sacred-places-p16-three-qualified-site
 const r=load("data/geography/research/sacred-places-p19-two-catholic-site-release.v1.json");
 assert.equal(r.schema,"AO_SACRED_PLACES_P19_TWO_CATHOLIC_SITE_RELEASE_V1");
 assert.deepEqual([r.baseline.places,r.baseline.source_registry,r.baseline.heritage_crosswalk],[359,653,359]);
-assert.deepEqual([geo.places.length,src.sources.length,cross.place_crosswalk.length],[371,669,371]);
-assert.equal(cross.counts.places,371);
-assert.equal(cross.counts.places_without_direct_claim,112);
-assert.equal(cross.exception_queues.places_without_direct_claim.length,112);
+assert.deepEqual([geo.places.length,src.sources.length,cross.place_crosswalk.length],[LIVE.places,LIVE.sources,LIVE.places]);
+assert.equal(cross.counts.places,LIVE.places);
+assert.equal(cross.counts.places_without_direct_claim,LIVE.unlinked);
+assert.equal(cross.exception_queues.places_without_direct_claim.length,LIVE.unlinked);
 assert.equal(geo.geoAreas.length,141);
 assert.equal(geo.directoryPlaceLinks.length,9);
-assert.equal(new Set(geo.places.map(x=>x.place_id)).size,371);
-assert.equal(new Set(src.sources.map(x=>x.id)).size,669);
+assert.equal(new Set(geo.places.map(x=>x.place_id)).size,LIVE.places);
+assert.equal(new Set(src.sources.map(x=>x.id)).size,LIVE.sources);
 assert.equal(r.published_new.length,2);
 assert.equal(r.proposed.original_p16_exception_holds,16);
 assert.equal(prior.held_exceptions.length,16);

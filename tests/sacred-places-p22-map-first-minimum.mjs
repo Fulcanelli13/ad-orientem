@@ -1,3 +1,4 @@
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
@@ -14,7 +15,7 @@ const p21=get("data/geography/research/sacred-places-p21-first200-source-review.
 assert.equal(m.schema,"AO_SACRED_PLACES_P22_MAP_FIRST_TEN_SITE_RELEASE_V1");
 assert.equal(policy.schema,"AO_SACRED_PLACES_MAP_FIRST_MINIMUM_V1");
 assert.deepEqual([m.baseline.places,m.baseline.sources,m.baseline.crosswalk,m.baseline.unlinked,m.baseline.p16_holds],[361,659,361,102,16]);
-assert.deepEqual([geo.places.length,sources.sources.length,cross.place_crosswalk.length,cross.counts.places_without_direct_claim,geo.geoAreas.length,geo.directoryPlaceLinks.length],[371,669,371,112,141,9]);
+assert.deepEqual([geo.places.length,sources.sources.length,cross.place_crosswalk.length,cross.counts.places_without_direct_claim,geo.geoAreas.length,geo.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas,LIVE.links]);
 assert.deepEqual([m.proposed.places,m.proposed.sources,m.proposed.crosswalk,m.proposed.unlinked,m.proposed.directory_links],[371,669,371,112,9]);
 assert.equal(p16.held_exceptions.length,16);
 assert.equal(m.published_new.length,10);
@@ -22,8 +23,8 @@ assert.equal(new Set(m.published_new.map(x=>x.place_id)).size,10);
 assert.equal(new Set(m.published_new.map(x=>x.candidate_id)).size,10);
 assert.equal(new Set(m.published_new.map(x=>x.country)).size,8);
 const byPlace=new Map(geo.places.map(x=>[x.place_id,x])), bySource=new Map(sources.sources.map(x=>[x.id,x]));
-assert.equal(byPlace.size,371);
-assert.equal(bySource.size,669);
+assert.equal(byPlace.size,LIVE.places);
+assert.equal(bySource.size,LIVE.sources);
 const original=new Set(p21.reviewed_200.map(x=>x.candidate_id));
 for(const row of m.published_new){
  assert.ok(original.has(row.candidate_id),"P22 needs traced P21 source review: "+row.candidate_id);
@@ -63,6 +64,6 @@ assert.equal(assertExploreGeographyRegistry(geo).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...shrine,sources:sources.sources,places:geo.places}).pass,true);
 const sourcesNew=m.published_new.map(x=>x.typed_source_id);
 assert.equal(new Set(sourcesNew).size,10);
-assert.equal(sources.sources.slice(-10).filter(x=>sourcesNew.includes(x.id)).length,10);
+assert.equal(sourcesNew.filter(id=>bySource.has(id)).length,10);
 assert.ok(policy.deferred_not_publication_gates.some(x=>x.includes("Directory")));
 console.log("PASS P22: 10 unique map-first Catholic physical Places across 8 countries; +10 typed sources only; 16 historical holds and nine Directory links frozen");

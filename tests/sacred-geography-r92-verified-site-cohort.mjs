@@ -1,3 +1,4 @@
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import {assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
@@ -16,9 +17,9 @@ assert.equal(r91.result.places,330,"Preserve frozen R91 production baseline");
 assert.equal(r92.published_new.length,6);
 assert.equal(r92.country_areas_added.length,6);
 assert.equal(new Set(r92.published_new.map(r=>r.country)).size,6);
-assert.equal(geo.places.length,330+r92.published_new.length+r93.published_new.length+6+p17.published_new.length+3+2+10);
+assert.equal(geo.places.length,LIVE.places);
 assert.equal(geo.geoAreas.length,124+r92.country_areas_added.length+r93.country_areas_added.length);
-assert.equal(sources.sources.length,587+2*r92.published_new.length+2*r93.published_new.length+18+p17.published_new.reduce((n,p)=>n+p.source_ids.length,0)+6+6+10);
+assert.equal(sources.sources.length,LIVE.sources);
 assert.equal(new Set(geo.places.map(x=>x.place_id)).size,geo.places.length);
 assert.equal(new Set(sources.sources.map(x=>x.id)).size,sources.sources.length);
 assert.equal(geo.directoryPlaceLinks.length,9);
