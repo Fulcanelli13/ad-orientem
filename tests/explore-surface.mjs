@@ -574,7 +574,9 @@ assert.match(novenaRuntimeSource,/result\?\.ok===true\?window\.AO_FIND_APP_V1\?\
 assert.match(novenaRuntimeSource,/Object\.keys\(CORPUS\)\.length===16/,"Novena QA still assumes the obsolete 12-target corpus");
 
 const homeSource=readFileSync("src/home/presentation.js","utf8");
-assert.match(homeSource,/Traditional Masses, shrines, customs and pilgrimages/);
+assert.match(homeSource,/Traditional Masses, shrines and pilgrimages/);
+assert.match(homeSource,/Traditions through the year/);
+assert.match(homeSource,/Read customs and their sources in Calendar/);
 assert.match(homeSource,/data-home-find/,"Explore route lost shell-compatible Home trigger");
 
 
@@ -714,8 +716,10 @@ assert.doesNotMatch(shrineHtml,/data-atlas-filter=/,"Customs Atlas controls must
 assert.match(browserSource,/filterCustomsAtlasItems/);
 assert.match(browserSource,/addEventListener\?\.\("change",onChange,true\)/);
 assert.match(browserSource,/options\?\.view==="map"/);
-assert.match(homeSource,/data-home-customs-atlas/);
+assert.doesNotMatch(homeSource,/data-home-customs-atlas/,"The Home route must no longer invite users into a geographical Customs Atlas");
+assert.match(homeSource,/data-home-calendar data-home-calendar-view="day"/,"Home traditions must use the existing Calendar");
 const homeOwnerSource=readFileSync("src/home/browser-entry.js","utf8");
+// Legacy route compatibility remains until Explore itself is separately retired.
 assert.match(homeOwnerSource,/data-home-customs-atlas/);
 assert.match(homeOwnerSource,/lens:"heritage",view:"map",categories:\["traditions"\],query:""/,"Home Customs entry should open map with the traditions filter");
 
