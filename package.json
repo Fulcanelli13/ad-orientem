@@ -141,7 +141,7 @@
     "directory:import:icksp": "node tools/directory/import-icksp.mjs",
     "directory:import:ibp": "node tools/directory/import-ibp.mjs",
     "test:find": "node tests/find-surface.mjs",
-    "test:explore-geography": "node tests/explore-geography-contracts.mjs && node tests/sacred-geography-r89-first-coverage-release.mjs && node tests/heritage-place-reconciliation.mjs && node tests/sacred-geography-r90-coverage-first-release.mjs && node tests/sacred-geography-r91-coverage-first-release.mjs && node tests/sacred-geography-r92-verified-site-cohort.mjs && node tests/sacred-geography-r93-first-presence-release.mjs && node tests/sacred-places-p14-ovada-release.mjs && npm run test:sacred-places-p15 && npm run test:sacred-places-p16 && npm run test:sacred-places-p17 && npm run test:sacred-places-p18 && npm run test:sacred-places-p19 && npm run test:sacred-places-p20 && npm run test:sacred-places-p21 && npm run test:sacred-places-p22 && npm run test:sacred-places-live && npm run test:sacred-places-p24 && npm run test:sacred-places-p25",
+    "test:explore-geography": "node tests/explore-geography-contracts.mjs && node tests/sacred-geography-r89-first-coverage-release.mjs && node tests/heritage-place-reconciliation.mjs && node tests/sacred-geography-r90-coverage-first-release.mjs && node tests/sacred-geography-r91-coverage-first-release.mjs && node tests/sacred-geography-r92-verified-site-cohort.mjs && node tests/sacred-geography-r93-first-presence-release.mjs && node tests/sacred-places-p14-ovada-release.mjs && npm run test:sacred-places-p15 && npm run test:sacred-places-p16 && npm run test:sacred-places-p17 && npm run test:sacred-places-p18 && npm run test:sacred-places-p19 && npm run test:sacred-places-p20 && npm run test:sacred-places-p21 && npm run test:sacred-places-p22 && npm run test:sacred-places-live && npm run test:sacred-places-p24 && npm run test:sacred-places-p25 && npm run test:sacred-places-p26",
     "test:customs-atlas": "node tests/customs-atlas-contracts.mjs && node tests/customs-blaise-calendar.mjs && node tests/customs-feast-blessings-calendar.mjs && npm run test:customs-weiser && node tests/customs-coordinated-integration.mjs && node tests/customs-weiser-p0-six.mjs && node tests/customs-calendar-profile-handoff.mjs && node tests/customs-weiser-p1-five.mjs && npm run test:customs-library",
     "test:shrines-pilgrimages": "node tests/shrines-pilgrimages-contracts.mjs",
     "directory:geocode": "node tools/directory/geocode-runtime-snapshots.mjs",
@@ -288,7 +288,8 @@
     "test:sacred-places-p22": "node tests/sacred-places-p22-map-first-minimum.mjs",
     "test:sacred-places-live": "node tests/sacred-places-current-live-baseline.mjs",
     "test:sacred-places-p24": "node tests/sacred-places-p24-world-16-map-first.mjs",
-    "test:sacred-places-p25": "node tests/sacred-places-p25-bulk151-source-screen.mjs"
+    "test:sacred-places-p25": "node tests/sacred-places-p25-bulk151-source-screen.mjs",
+    "test:sacred-places-p26": "node tests/sacred-places-p26-authority-evidence.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
