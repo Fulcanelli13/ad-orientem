@@ -45,7 +45,7 @@ assert.equal(two.records.some(r=>r.classification==='FOLK_EFFICACY_CLAIM_HOLD'),
 assert.equal(two.records.some(r=>r.classification==='HISTORICAL_ALTERNATING_VARIANT'),true);
 
 assert.equal(currentCatalog.external_source_observations_pitre_original_1900_new_ocr.length,293);
-assert.equal(currentCatalog.summary.source_observations.total_source_detail_rows_including_external,3512);
+assert.equal(currentCatalog.summary.source_observations.total_source_detail_rows_including_external,3644);
 assert.equal(currentCatalog.summary.source_observations.pitre_1900_original_new_seven_sections_ocr_details,121);
 assert.equal(currentCatalog.summary.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(currentCatalog.summary.identity_working_rows.final_uniquely_verified_customs_added,0);
