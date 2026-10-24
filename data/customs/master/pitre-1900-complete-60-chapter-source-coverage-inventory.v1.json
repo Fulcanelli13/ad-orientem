@@ -7,7 +7,7 @@
     "original_scan_archive_id": "afm3499.0021.001.umich.edu",
     "source_pdf_sha256": "100e2b3164bd7a342c5c0c5d01df2a60b4635d5695dea456e9b93769866ee5ee"
   },
-  "method": "Inventory of 60 numbered principal feast-description chapters from source table of contents, cross-referenced to 422 prior 1900 observation IDs and 105 new Wave04 IDs. Some representation does NOT certify chapter fully mined or local custom continuity. The original author's preface says sixty descriptions covering ninety-two Sicilian municipalities. Wave05 indexes 132 additional research-only source/detail observations in each of the 29 previously unrepresented numbered chapters. Evidence screening and research observation indexing are not chapter-exhaustion or publication.",
+  "method": "Inventory of 60 numbered principal feast-description chapters from source table of contents, cross-referenced to 422 prior 1900 observation IDs and 105 new Wave04 IDs. Some representation does NOT certify chapter fully mined or local custom continuity. The original author's preface says sixty descriptions covering ninety-two Sicilian municipalities. Wave05 indexes 132 additional research-only source/detail observations in each of the 29 previously unrepresented numbered chapters. Evidence screening and research observation indexing are not chapter-exhaustion or publication. Wave08 correction: printed original table of contents itself gives chapter XI start p.141 and XLI start p.400, but original text block contains the actual chapter headings on pp.140 and 406 respectively; do not overwrite either documentary witness. Corrected body-heading boundaries are stored as a separate explicit field.",
   "summary": {
     "indexed_chapters_in_book": 60,
     "earlier_chapters_with_some_1900_observations": 20,
@@ -22,7 +22,10 @@
     "unique_customs_certified": 0,
     "app_publications": 0,
     "newly_represented_chapters_wave05": 29,
-    "wave05_new_source_observations": 132
+    "wave05_new_source_observations": 132,
+    "index_vs_body_chapter_heading_discrepancies_known": 2,
+    "wave05_workbench_chapter_misattributions_corrected": 2,
+    "historical_observations_unchanged_by_heading_correction": 659
   },
   "chapters": [
     {
@@ -34,7 +37,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 1,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "II",
@@ -45,7 +51,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 49,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "III",
@@ -56,7 +65,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 71,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "IV",
@@ -67,7 +79,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 87,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "V",
@@ -78,7 +93,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 94,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "VI",
@@ -89,7 +107,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 109,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "VII",
@@ -100,7 +121,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 120,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "VIII",
@@ -111,7 +135,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 123,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "IX",
@@ -122,7 +149,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 126,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "X",
@@ -133,7 +163,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 131,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XI",
@@ -144,7 +177,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 140,
+      "original_table_of_contents_heading_discrepancy": true,
+      "actual_heading_page_evidence": "Original 1900 body chapter heading independently located in original scanned folio; old original printed table-of-contents locator preserved"
     },
     {
       "id": "XII",
@@ -155,7 +191,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 147,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XIII",
@@ -166,7 +205,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 176,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XIV",
@@ -177,7 +219,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 183,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XV",
@@ -188,7 +233,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 189,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XVI",
@@ -199,7 +247,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 193,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XVII",
@@ -210,7 +261,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 199,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XVIII",
@@ -221,7 +275,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 207,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XIX",
@@ -232,7 +289,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 215,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XX",
@@ -243,7 +303,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 234,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXI",
@@ -254,7 +317,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 241,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXII",
@@ -265,7 +331,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 245,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXIII",
@@ -276,7 +345,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 250,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXIV",
@@ -287,7 +359,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 257,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXV",
@@ -298,7 +373,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "WAVE04_NEW_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 263,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXVI",
@@ -309,7 +387,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 273,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXVII",
@@ -320,7 +401,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 283,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXVIII",
@@ -331,7 +415,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 293,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXIX",
@@ -342,7 +429,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 296,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXX",
@@ -353,7 +443,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 309,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXXI",
@@ -364,7 +457,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 320,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXXII",
@@ -375,7 +471,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 333,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXXIII",
@@ -386,7 +485,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 342,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXXIV",
@@ -397,7 +499,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 349,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXXV",
@@ -408,7 +513,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 362,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXXVI",
@@ -419,7 +527,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 367,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXXVII",
@@ -430,7 +541,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 386,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXXVIII",
@@ -441,7 +555,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 392,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XXXIX",
@@ -452,7 +569,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 397,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XL",
@@ -463,7 +583,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 400,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XLI",
@@ -474,7 +597,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 406,
+      "original_table_of_contents_heading_discrepancy": true,
+      "actual_heading_page_evidence": "Original 1900 body chapter heading independently located in original scanned folio; old original printed table-of-contents locator preserved"
     },
     {
       "id": "XLII",
@@ -485,7 +611,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 413,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XLIII",
@@ -496,7 +625,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 422,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XLIV",
@@ -507,7 +639,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 432,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XLV",
@@ -518,7 +653,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 438,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XLVI",
@@ -529,7 +667,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 441,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XLVII",
@@ -540,7 +681,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 463,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XLVIII",
@@ -551,7 +695,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 472,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "XLIX",
@@ -562,7 +709,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 478,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "L",
@@ -573,7 +723,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 488,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "LI",
@@ -584,7 +737,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 495,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "LII",
@@ -595,7 +751,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 501,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "LIII",
@@ -606,7 +765,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 511,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "LIV",
@@ -617,7 +779,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 518,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "LV",
@@ -628,7 +793,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 527,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "LVI",
@@ -639,7 +807,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 534,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "LVII",
@@ -650,7 +821,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 537,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "LVIII",
@@ -661,7 +835,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 541,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "LIX",
@@ -672,7 +849,10 @@
       "coverage_prior_to_wave04": "NONE_IN_EXISTING_422",
       "coverage_after_wave04": "NO_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY"
+      "coverage_after_wave05": "WAVE05_SOURCE_OBSERVATIONS_INDEXED_RESEARCH_ONLY",
+      "actual_chapter_heading_printed_page": 550,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     },
     {
       "id": "LX",
@@ -683,7 +863,10 @@
       "coverage_prior_to_wave04": "SOME_1900_OBSERVATIONS_INDEXED",
       "coverage_after_wave04": "OLDER_1900_OBSERVATIONS_INDEXED",
       "fully_extracted_verified": false,
-      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED"
+      "coverage_after_wave05": "EARLIER_OR_WAVE04_SOURCE_OBSERVATIONS_INDEXED",
+      "actual_chapter_heading_printed_page": 557,
+      "original_table_of_contents_heading_discrepancy": false,
+      "actual_heading_page_evidence": "Original printed contents chapter-start locator, with body-heading position consistent where sampled"
     }
   ]
 }
