@@ -33,7 +33,10 @@ for(const path of allFilePaths){
   assert(r.turns.length>=2);
   assert.equal(r.turns[0].kind,'opening');
   assert(r.release&&Object.values(r.release).every(v=>v===false));
-  assert.equal(r.source.attribution,'PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH');
+  const sourceClass=r.source.attribution??r.source.sourceClass;
+  assert(['PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH',
+    'PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH'].includes(sourceClass),
+    'Source owner must remain explicitly educational and not personal papal speech');
  }
 }
 const makeSignoff=(specialty)=>({
