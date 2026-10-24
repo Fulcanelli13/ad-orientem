@@ -1,0 +1,43 @@
+name: B51 sacred art fifty-item offline visual review
+on:
+  push:
+    branches:
+      - research/sacred-art-b51-review-first50-offline-20261024
+    paths:
+      - .github/workflows/ao-art-b51-first50-offline-review.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verified-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b51-review-first50-offline-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder and verify upstream ledger
+        run: |
+          python -m pip install 'Pillow>=11,<13'
+          node tests/sacred-art-b50-95-full-source-rights-closeout.mjs
+      - name: Build fifty-artwork offline review from verified archived originals
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_b51_first50_offline_review_gallery.py
+      - name: Validate all fifty images and user review controls
+        run: node tests/sacred-art-b51-first50-offline-review-integrity.mjs
+      - name: Store offline gallery securely in a draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_b51_publish_private_review.py
+      - name: Save source evidence without copying picture bytes to git
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b51-batch01-50-source-sha-and-thumb-audit.json data/research/sacred-art-b51-review-batch01-index.json
+          git commit -m 'research: B51 fifty image review source inventory'
+          git pull --rebase origin research/sacred-art-b51-review-first50-offline-20261024
+          git push origin HEAD:research/sacred-art-b51-review-first50-offline-20261024
