@@ -1,0 +1,22 @@
+name: B50 read-only 95 frozen-approved source identity and current Commons rights proof
+on:
+  push:
+    branches: [research/sacred-art-b50-95-selected-photo-version-evidence-20261024]
+    paths: [.github/workflows/ao-art-b50-readonly-95-integrity.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  b50-source-version-and-photo-rights:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b50-95-selected-photo-version-evidence-20261024
+      - name: Preserve B49 107 historical approved art choices and 95+12 partition
+        run: node tests/sacred-art-b49-approved-95-plus-12-integrity.mjs
+      - name: Independently check 95 source IDs, source SHA identity and no automatic app publishing
+        run: node tests/sacred-art-b50-95-image-version-rights-integrity.mjs
+      - name: Confirm two museum duplicate-ID image aliases and three version drift exceptions
+        run: node tests/sacred-art-b50-95-full-source-rights-closeout.mjs
