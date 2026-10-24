@@ -250,12 +250,12 @@ try{
  }
  assert.deepEqual(reached.map(x=>x.lens),lenses);
  assert.ok(verifiedSourceLinks>=1,"Explore exposed no source hyperlink in the five tested details");
- assert.equal(await page.locator("#ao-find-modular-root [data-find-filter='lens']").count(),7,"Six established Explore links and the new Saints doorway must remain discoverable");
+ assert.equal(await page.locator("#ao-find-modular-root [data-find-filter='lens']").count(),6,"Five public Explore lenses and the Saints doorway remain after Customs Atlas retirement");
  await page.locator("#ao-find-modular-root [data-find-close]").tap({timeout:10000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home"
   &&globalThis.AO_FIND_APP_V1?.status?.().open===false,null,{timeout:12000});
  assert.equal(errors.length,0,"Explore phone journey threw runtime errors: "+errors.join(" | "));
- console.log("PASS six Explore lenses phone: list results, detail close, 120-item pagination, search/clear, map/list and Home return "+JSON.stringify(reached));
+ console.log("PASS five public Explore lenses phone: list results, detail close, 120-item pagination, search/clear, map/list and Home return "+JSON.stringify(reached));
  await context.close();
 }finally{
  await browser?.close().catch(()=>{});
