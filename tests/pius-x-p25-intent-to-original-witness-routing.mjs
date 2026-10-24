@@ -29,7 +29,9 @@ const responseModel=async(kind,messages)=>{
  if(kind==='compose'){
   compose++;
   return {mode:'answer',
-   text:'The selected document offers a bounded historical proposition for private research. No personal recollection or present-day ruling is inferred.',
+   text:payload.language==='fr'?
+    'Le document choisi présente une proposition historique limitée pour cette recherche privée. Aucun souvenir personnel ni jugement contemporain ne peut être déduit.':
+    'The selected document offers a bounded historical proposition for private research. No personal recollection or present-day ruling is inferred.',
    evidenceIds:[payload.evidence[0].id],
    witnessIds:[payload.evidence[0].originalLanguageWitnesses[0].id],
    expression:'explaining'};
