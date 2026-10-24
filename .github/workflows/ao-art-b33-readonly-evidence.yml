@@ -2,7 +2,9 @@ name: B33 Sacred Art read-only source evidence integrity (64 P0)
 on:
   push:
     branches: [research/sacred-art-b33-seven-source-alias-governance-20261024]
-    paths: [.github/workflows/ao-art-b33-readonly-evidence.yml]
+    paths:
+      - .github/workflows/ao-art-b33-readonly-evidence.yml
+      - scripts/research/sacred_art_b33_readonly_coverage_check.py
   workflow_dispatch:
 permissions:
   contents: read
