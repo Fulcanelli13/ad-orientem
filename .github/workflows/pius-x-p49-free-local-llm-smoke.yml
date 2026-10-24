@@ -1,9 +1,13 @@
 name: Pius X actual free local model smoke (not release)
 
+# This heavyweight, genuine-model runner should NEVER repeat on unrelated PR
+# commits. Trigger explicitly by editing its driver script on the research
+# branch, or by workflow_dispatch once it exists on the default branch.
 on:
-  pull_request:
+  push:
+    branches:
+      - prototype/pius-x-source-constrained-composer-20261023
     paths:
-      - '.github/workflows/pius-x-p49-free-local-llm-smoke.yml'
       - 'tools/pius-x-p49-real-local-model-smoke.mjs'
   workflow_dispatch:
 
