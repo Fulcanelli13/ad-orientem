@@ -47,3 +47,7 @@ jobs:
         run: |
           node --check tests/customs-pitre-1900-uploaded-original-facsimile-audit.mjs
           node tests/customs-pitre-1900-uploaded-original-facsimile-audit.mjs
+      - name: Verify Pitrè 17 P1 original pages and 364 remaining source search candidates
+        run: |
+          node --check tests/customs-pitre-1900-p1-17-and-page-queue-364.mjs
+          node tests/customs-pitre-1900-p1-17-and-page-queue-364.mjs
