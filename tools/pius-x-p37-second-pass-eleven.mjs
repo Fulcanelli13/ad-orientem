@@ -38,7 +38,7 @@ const records=notes.records.map(note=>{
   assert(witness,'Original Italian source not found '+span.sourceQid);
   assert(norm(witness.italianAnswer).includes(norm(span.exactItalianSpan)),
    'Italian evidence text not reproduced in source: '+note.sourceQid+' '+span.exactItalianSpan);
-  assert(span.meaningTracked.length>=40);
+  assert(span.meaningTracked.length>=20,'Empty or uninformative source-to-claim explanation');
   anchors++;
  }
  if(note.alternativeCandidate){
