@@ -13,9 +13,13 @@ const server=http.createServer(async(req,res)=>{
  try{
   const path=resolve(root,"."+decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname));
   if(path!==root&&!path.startsWith(root+sep)){res.writeHead(403);return res.end("forbidden")}
+  const content=await readFile(path);
   res.writeHead(200,{"content-type":mime[extname(path)]||"application/octet-stream","cache-control":"no-store"});
-  res.end(await readFile(path));
- }catch(error){res.writeHead(error?.code==="ENOENT"?404:500);res.end(String(error?.message||error))}
+  res.end(content);
+ }catch(error){
+  if(!res.headersSent)res.writeHead(error?.code==="ENOENT"?404:500);
+  if(!res.writableEnded)res.end(String(error?.message||error));
+ }
 });
 await new Promise(ok=>server.listen(0,"127.0.0.1",ok));
 async function waitForWeekLoader(page){
