@@ -73,7 +73,8 @@ const backend=createServer(async(req,res)=>{
  const input=JSON.parse(payload.messages[1].content);
  const compose=payload.messages[0].content.includes('Compose a PRIVATE, UNAPPROVED');
  if(compose)assert.equal(input.chapterId,'SPX-PILOT-01');
- const lang=input.language||'en';
+ // P53 atomic composer uses outputLanguage, unlike default evidence shape.
+ const lang=input.outputLanguage||input.language||'en';
  callLog.push({compose,lang,node:compose?input.evidence[0].id:input.candidate.ids[0]});
  let result;
  if(compose){
