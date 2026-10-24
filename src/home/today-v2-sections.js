@@ -82,7 +82,7 @@ function renderSeasonalCustomsSpotlight(selection,language){
  +'<div class="aoTodayV2CustomKicker">'+esc(timing)+'</div>'
  +'<h2>'+esc(art.title[loc])+'</h2>'
  +'<small class="aoTodayV2CustomTiming">'+esc(lead)+'</small>'
- +'<p>'+esc(art.description[loc])+'</p>'
+ +'<p class="aoTodayV2CustomSummary">'+esc(art.description[loc])+'</p>'
  +'<details class="aoTodayV2CustomDetails"><summary>'+esc(txt("Discover the tradition","Découvrir la coutume"))+' <span aria-hidden="true">›</span></summary>'
  +'<div class="aoTodayV2CustomReading">'
  +'<h3>'+esc(txt("History","Histoire"))+'</h3><p>'+esc(art.history[loc])+'</p>'
