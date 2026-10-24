@@ -126,6 +126,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Real phone — Follow Mass must expose source-owned preflight
         run: node tests/mass-preflight-entry-phone.mjs
+      - name: Christ the King (25 October 2026) — actual reader Proper and chant parity
+        run: node tests/mass-christ-king-psalm-reference-e2e.mjs
 
   app-shell-contract:
     runs-on: ubuntu-latest
