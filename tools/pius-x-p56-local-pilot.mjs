@@ -157,7 +157,11 @@ export async function runP56(argv=process.argv.slice(2),env=process.env){
  const port=Number(env.AO_SPX_REVIEW_PORT||8787);
  if(!Number.isSafeInteger(port)||port<1024||port>65535)
   throw Error('Invalid review port');
- const server=createReviewServer({html:buildReviewHTML(),model:configuredModel(settings)});
+ const ordinary=buildReviewHTML();
+ if(!ordinary.includes('</head>'))throw Error('Original study head is missing');
+ const localHTML=ordinary.replace('</head>',
+  '<meta name="ao-spx-p56-local" content="P53_ATOMIC_CLAIM_CUES"></head>');
+ const server=createReviewServer({html:localHTML,model:configuredModel(settings)});
  await new Promise((resolve,reject)=>{
   server.once('error',reject);
   server.listen(port,'127.0.0.1',resolve);
