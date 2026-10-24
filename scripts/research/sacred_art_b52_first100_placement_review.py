@@ -102,6 +102,13 @@ def main():
         pp=p0.get(id_)
         if pp and pp.get("archived_source_sha256") in hashes and pp.get("original_file_available_in_research_archive") is True:
             sha=pp["archived_source_sha256"];tag=pp["draft_release_tag"]
+            if tag==B26:
+                # P0 aliases into B26 must select their B27 per-wave TAR.
+                if sha not in b27sha:
+                    raise RuntimeError("P0 B26 alias missing byte-verified index: "+id_)
+                src=b27sha[sha][0]
+                oldmember=src["file_path"]
+                asset=f'ao-source-b26-{src["archive_wave"]}.tar'
         if sha is None:
             for h in hashes:
                 if h in b27sha:
