@@ -32,7 +32,7 @@ function confidence(s){
  const count=set=>ws.reduce((n,w)=>n+(set.has(w)?1:0),0);
  return {fr:count(french),en:count(english)};
 }
-export function auditDraftSurface({text,language,evidence=[]}={}){
+export function auditDraftSurface({text,language,evidence=[],question=''}={}){
  if(!['en','fr'].includes(language)||typeof text!=='string')
   return {ok:false,reason:'invalid_draft_surface_request'};
  const plain=text.trim();
@@ -45,6 +45,12 @@ export function auditDraftSurface({text,language,evidence=[]}={}){
  // It does not judge nuanced bilingual quotations or regional differences.
  if(language==='fr'&&(lang.fr<3||(lang.en>=3&&lang.en>lang.fr*0.6)))
   return {ok:false,reason:'reply_not_in_selected_language'};
+ // Editorial metadata (paragraph locators, 'this claim belongs in §8')
+ // is not papal dialogue. Explicit scholarly source questions are exempt.
+ const sourceQuestion=/\b(?:where\s+in|which\s+(?:section|paragraph)|citez|source|paragraphe|section|dans quel passage|ou se trouve)\b/i.test(
+  lower(question));
+ if(!sourceQuestion&&/(?:\b(?:paragraph|paragraphe|section)\s*(?:§\s*)?\d+\b|§\s*\d+|(?:cette affirmation|ce passage|this statement|this passage).{0,50}(?:appartient|belongs)|(?:editorial research note|note de recherche éditoriale))/iu.test(plain))
+  return {ok:false,reason:'editorial_source_metadata_in_reply'};
  const normalized=lower(plain);
  const notes=evidence.flatMap(e=>e.originalLanguageWitnesses||[])
   .map(w=>lower(w.readingNote)).filter(x=>x.split(' ').length>=5);
