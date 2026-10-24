@@ -32,9 +32,16 @@ export function attachExploreMapStatus(container,map,{win=globalThis,waitMs=1200
       ?"Le fond de carte tarde à répondre. La recherche et les fiches restent disponibles."
       :"The map background is taking longer than expected. Search and place details remain available.";
   }
-  map.on?.("load",ready);
+  // MapLibre's load event indicates a parsed style; remote raster/vector
+  // tiles may still be pending. A premature "ready" hides our status over
+  // an empty atlas. Keep the existing mock/non-MapLibre compatibility path.
+  const tilesPending=()=>typeof map.areTilesLoaded==="function"
+    &&map.areTilesLoaded()!==true;
+  const settle=()=>{if(!tilesPending())ready();};
+  map.on?.("load",settle);
+  map.on?.("idle",settle);
   timer=setTimeoutSafe(stalled,waitMs);
-  if(map.loaded?.()===true)ready();
+  if(map.loaded?.()===true)settle();
   return Object.freeze({
     status:()=>state,
     dispose(){
