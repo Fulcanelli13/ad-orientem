@@ -1,0 +1,59 @@
+name: B35 read-only 383 Sacred Art original-source recovery coverage check
+on:
+  push:
+    branches: [research/sacred-art-b35-40-gaps-source-recovery-20261024]
+    paths: [.github/workflows/ao-art-b35-readonly-integrity.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-source-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b35-40-gaps-source-recovery-20261024
+          persist-credentials: false
+      - name: Reconcile 40 gap records and 7 new research images against immutable catalogue
+        run: |
+          python - <<'PY'
+          import json,csv
+          from pathlib import Path
+          p=Path('data/research')
+          def read(name):return json.loads((p/name).read_text())
+          def table(name):
+            with (p/name).open(newline='',encoding='utf-8') as f:return list(csv.DictReader(f))
+          b34=read('sacred-art-b34-383-active-physical-progress.json')
+          a=read('sacred-art-b35-383-active-40-gaps-closeout.json')
+          f=read('sacred-art-b35-35-commons-discovery-summary.json')
+          nga=table('sacred-art-b35-nga2-results.csv')
+          kress=table('sacred-art-b35-kress2-results.csv')
+          old=table('sacred-art-b35-3-originals-results.csv')
+          assert len(a['full40_reconciliation_rows'])==40
+          assert len({x['artwork_id'] for x in a['full40_reconciliation_rows']})==40
+          assert b34['active_with_some_evidenced_physical_source']==343
+          assert a['active_with_some_research_image_source']==349
+          assert a['B35_newly_closed_source_cases']==6
+          assert a['remaining_without_physical_source']==34
+          assert len(a['remaining']['P0_institution_photo_rights_hold'])==1
+          assert len(a['remaining']['P1P2_legacy_other_holds'])==3
+          assert len(a['remaining']['P2_initially_image_less'])==30
+          assert a['source_recovery_bytes_cumulative_B29_B35']==602843232
+          assert a['B35_newly_acquired_research_source_bytes']==41916013
+          assert len(nga)==2 and len(kress)==2 and len(old)==3
+          assert all(x['status']=='IMAGE_LEVEL_OPENACCESS_1_IIIF_SOURCE_RECOVERED_RESEARCH_ONLY'
+                     and x['NGA_image_openaccess']=='1' and x['publication_approved']=='NO' for x in nga)
+          assert all(x['source_state']=='EXACT_INSTITUTION_PUBLIC_DOMAIN_IMAGE_ARCHIVED_RESEARCH_ONLY'
+                     and x['editorial_image_selected']=='NO' for x in kress)
+          assert all(x['acquisition_status']=='EXACT_PREEXISTING_GALLERY_BYTES_ARCHIVED_RESEARCH_ONLY'
+                     and x['historical_gallery_file_sha256']==x['actual_image_sha256']
+                     and x['specific_photo_publication_approved']=='NO' for x in old)
+          assert sum(int(x['rendition_bytes']) for x in nga)+sum(int(x['download_bytes']) for x in kress)+sum(int(x['acquired_bytes']) for x in old)==41916013
+          assert f['individual_source_cases_searched']==35
+          assert f['candidate_media_file_entries']==87
+          assert f['cases_with_search_errors']==0 and f['zero_approved_identity_links']
+          assert all(x['publication_approvals_created']==0 for x in [a,b34,f] if 'publication_approvals_created' in x)
+          assert a['canonical_451_untouched'] is True
+          print('PASS B35: 349/383 physical source coverage, 34 remain, no editorial or photo release approvals')
+          PY

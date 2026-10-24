@@ -1,0 +1,32 @@
+{
+  "schema": "AO_B35_NGA_IMAGE_LEVEL_TWO_SOURCE_TARGETS_V1",
+  "research_only": true,
+  "canonical_451_artwork_ids_unchanged": true,
+  "selection_approvals_created": 0,
+  "publication_approvals_created": 0,
+  "rights_gate": "EXACT_NGA_PUBLISHED_IMAGES_CSV_IMAGE_OPENACCESS_1",
+  "source_dataset": "https://raw.githubusercontent.com/NationalGalleryOfArt/opendata/main/data/published_images.csv",
+  "image_license_policy": "https://www.nga.gov/artworks/free-images-and-open-access",
+  "requested_iiif_tier": "full/!3200,3200/0/default.jpg",
+  "records": [
+    {
+      "artwork_id": "G17-010",
+      "object_id": "63264",
+      "title": "The Martyrdom and Last Communion of Saint Lucy",
+      "artist": "Paolo Veronese",
+      "source_page": "https://www.nga.gov/artworks/63264-martyrdom-and-last-communion-saint-lucy",
+      "identity_basis": "EXACT_NGA_ARTWORK_ID_63264_ACC_1984_28_1",
+      "scope": "MISSING30_P2_UNREVIEWED",
+      "publication_allowed": false
+    },
+    {
+      "artwork_id": "nga-96688",
+      "object_id": "96688",
+      "title": "The Miraculous Draught of Fishes",
+      "source_page": "https://www.nga.gov/artworks/96688-miraculous-draught-of-fishes",
+      "identity_basis": "EXACT_NGA_ARTWORK_ID_96688",
+      "scope": "LEGACY44_P1_UNSELECTED",
+      "publication_allowed": false
+    }
+  ]
+}

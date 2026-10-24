@@ -1,0 +1,51 @@
+name: B35 recover three exact museum-correlated existing legacy original files
+on:
+  push:
+    branches: [research/sacred-art-b35-40-gaps-source-recovery-20261024]
+    paths: [.github/workflows/ao-art-b35-three-exact-legacy.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b35-three-museum-exact-once
+  cancel-in-progress: false
+jobs:
+  original-source-archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b35-40-gaps-source-recovery-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image decoder, assert source-code integrity
+        run: |
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python -m py_compile scripts/research/sacred_art_b35_three_existing_originals.py
+      - name: Verify three exact historical photo SHA and dimensions against institutional object inventory
+        run: python scripts/research/sacred_art_b35_three_existing_originals.py
+      - name: Mandatory unpublished research archive remote checksum readback
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py \
+            --wave b35-three-museum-originals --source-dir artifacts/b35-three-institutional-source-originals
+      - name: Preserve compact read-only source audit on isolated research branch
+        run: |
+          set -euo pipefail
+          cp artifacts/b35-three-institutional-source-originals/source-results.csv data/research/sacred-art-b35-3-originals-results.csv
+          cp artifacts/b35-three-institutional-source-originals/source-summary.json data/research/sacred-art-b35-3-originals-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b35-3-originals-*
+          git commit -m 'research: B35 original gallery source bytes Prado/Antwerp/Saint-Roch and unpublished verified archive'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b35-40-gaps-source-recovery-20261024
+            git rebase origin/research/sacred-art-b35-40-gaps-source-recovery-20261024
+            git push origin HEAD:research/sacred-art-b35-40-gaps-source-recovery-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
