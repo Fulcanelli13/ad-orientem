@@ -67,6 +67,8 @@ assert.match(runtime,/AO_CUSTOMS_EDITORIAL_REVIEW==="five-20261024"/);
 assert.match(runtime,/calendarCustomRecommendations\(selected,\{events,fr:fr\(\),editorialPreview:customsEditorialReview\(\)\}\)/);
 assert.match(runtime,/data-cal-custom-editorial-review/);
 assert.match(runtime,/draft, not published/);
+assert.match(runtime,/Lcopy\("DRAFT","BROUILLON"\)/);
+assert.match(runtime,/How this custom is observed/);
 assert.match(runtime,/calendarCustomArticleIds\(\{editorialPreview:preview\}\)/);
 assert.match(runtime,/personalCustomsForDate\(selected,\{storage,canonicalIds:calendarCustomArticleIds\(\)\}\)/);
 assert.equal(seed.customs.filter(x=>x.publication_state==="PUBLISHED").length,35);
