@@ -34,7 +34,7 @@ const pending=original.records.filter(r=>!exclude.has(r.sourceQid));
 assert.equal(pending.length,89);
 const norm=t=>String(t).normalize('NFD').replace(/[\u0300-\u036f]/g,'')
  .toLowerCase().replace(/[^a-z0-9]+/g,' ').trim().replace(/\s+/g,' ');
-const followingHeading=/§\s*\d|CAPO\s+[IVX]+|Della\s+(?:natura|maniera|istituzione|Cresima|essenza|disposizioni)/i;
+const followingHeading=/(?:§\s*\d)|(?:\bCAPO\s+[IVX]+\b)/i;
 let carried=0,firstPass=0,exceptions=0,primaFacie=0,headingCases=0,italianPassages=0;
 const classification={};
 const records=pending.map(r=>{
