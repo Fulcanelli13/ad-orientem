@@ -363,6 +363,9 @@ const CSS=`
  box-shadow:none!important;
 }
 #ao-learn-modular-root .aoLearnModTop button,
+/* The canonical icon resolver injects .aoUiIcon SVG into native buttons.
+ * When it does, suppress only the redundant pre-resolver mask span. */
+#ao-settings-modular-root .aoSetTop button.aoUiIconOnly > .aoSetTopIcon{display:none!important}
 #ao-settings-modular-root .aoSetTop button,
 #ao-find-modular-root .aoExploreSurface>.aoFindHeader>button,
 #ao-find-modular-root .aoHeritageSurface>.aoFindHeader>button{
