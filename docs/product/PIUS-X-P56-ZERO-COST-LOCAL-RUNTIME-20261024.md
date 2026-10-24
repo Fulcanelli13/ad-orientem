@@ -8,6 +8,29 @@ Qwen2.5 7B (Q4_K_M) is a **candidate for a self-owned desktop GPU**, not the pro
 
 The tested `Qwen2.5-7B-Instruct-Q4_K_M` quantized model file is approximately **4.7 GB**, with **more memory required during inference**. As a planning estimate, GPU with **~8 GB VRAM** is an appropriate first target, but actual availability, model offloading and response speed MUST be measured on the user's existing device. A 4–6 GB GPU, integrated graphics or CPU-only setup may be slow or fail to load. No purchases should be made for this pilot.
 
+## P2.58 — one-click Windows report (recommended entry point)
+
+For the owner's existing Windows PC, double-click `tools/pius-x-p58-private-pc-check.cmd`. This runs **hardware-only diagnostics** by default, without any network connection, GPU model, downloads, account or special permission. Requires Node.js already installed (as used by the existing Ad Orientem build).
+
+Alternatively, from the repository's PowerShell window run:
+
+```powershell
+node tools/pius-x-p58-device-report.mjs
+```
+
+A readable `.txt` report and structured `.json` report are created **only on that PC** under `artifacts/pius-x-private-device-reports/`. The folder is Git-ignored; nothing is uploaded automatically. Reports include coarse OS architecture, memory, GPU name/VRAM, readiness and — only if explicitly tested — EN/FR timings and fail/hold categories. They exclude account credentials, hostname, username, serial number, original visitor questions and model-generated papal answers.
+
+**Only after** installing and starting the verified Qwen 7B local `llama-server` as documented below, an explicitly opt-in benchmark can be run:
+
+```powershell
+$env:AO_SPX_LOCAL_PILOT_MODE="I_AM_RUNNING_A_PRIVATE_LOCAL_MODEL"
+node tools/pius-x-p58-device-report.mjs --benchmark
+```
+
+The benchmark only calls the existing **127.0.0.1** model endpoint, makes exactly the original-source English and French composer/verification trials, and reports separate timings. Missing local model leads to an **offline fallback** outcome; it never requests a paid provider or attempts remote inference. If the opt-in variable is not set, `--benchmark` refuses to run. Hardware-only reports **must not** be presented as measured performance.
+
+The decision codes distinguish no-model, slow private demonstration, not-live-ready, and a **preliminary** interactive candidate. Two quick answers are still not enough to certify conversational quality or 20–50 concurrent Android visitors. Even the preliminary category needs more real-device testing.
+
 ## P2.57 — hardware check before downloading any 7B weights
 
 On the existing Windows PC, open PowerShell in the Ad Orientem repository checkout and run:
