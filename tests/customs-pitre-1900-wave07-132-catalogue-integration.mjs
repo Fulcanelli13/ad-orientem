@@ -36,7 +36,7 @@ const reviews=new Map(review.records.map(x=>[x.id,x]));
 for(let i=0;i<rows.length;i++){
  const r=rows[i],s=wave.accepted_source_observation_stage[i],v=reviews.get(r.id);
  assert.equal(r.id,s.id);
- assert.match(r.id,/^PIT1900-W05-OBS-\\d{3}$/);
+ assert.match(r.id,/^PIT1900-W05-OBS-\d{3}$/);
  assert.ok(!original.has(r.id)&&!w5.has(r.id));w5.add(r.id);c5.add(r.chapter_group);
  assert.equal(r.label,s.action_or_detail);
  assert.equal(r.chapter_group,s.source_chapter);
