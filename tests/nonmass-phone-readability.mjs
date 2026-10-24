@@ -29,7 +29,7 @@ const base="http://127.0.0.1:"+server.address().port;
 let browser;
 try{
  browser=await chromium.launch({headless:true});
- for(const width of [320,390,430,768]){
+ for(const width of [320,390,430,768,1280]){
   const height=width===768?1000:width===320?700:width===390?844:932;
   const context=await browser.newContext({viewport:{width,height},hasTouch:true,
     isMobile:width<600,deviceScaleFactor:1,locale:"en-GB",reducedMotion:"reduce"});
@@ -43,7 +43,7 @@ try{
    await page.waitForFunction(()=>!document.getElementById("ao-cinema-boot"),
      null,{timeout:18000});
    // One screenshot of the real Today shell, never a synthetic composition.
-   if(width===390||width===768)
+   if(width===390||width===768||width===1280)
      await page.screenshot({path:resolve(out,"today-"+width+".png"),fullPage:false,animations:"disabled"});
    await page.locator('[data-ao-app-surface="learn"]').click();
    await page.locator("#ao-learn-modular-root .aoLearnFamilyGrid").waitFor({state:"visible",timeout:18000});
@@ -128,7 +128,7 @@ try{
    // Cross-surface quiet-frame QA. Real browser snapshots and computed style
    // values, with navigation still owned by AO_APP_SHELL_V1. Skip duplicate
    // captures at narrow widths (Formation and Pray are covered at all sizes).
-   if(width===390||width===768){
+   if(width===390||width===768||width===1280){
      const openedSettings=await page.evaluate(async()=>await window.AO_APP_SHELL_V1.navigate("settings"));
      assert.equal(openedSettings?.ok,true,"Settings utility overlay not routable");
      await page.locator("#ao-settings-modular-root .aoSetRow").first().waitFor({state:"visible",timeout:15000});
