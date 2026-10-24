@@ -15,6 +15,7 @@ import {pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';
 import {buildReviewHTML,configuredModel,createReviewServer,readCorpus,
  composeDraft} from './pius-x-generative-review.mjs';
+import {inspectLocalHardware,formatReadiness} from './pius-x-p57-device-readiness.mjs';
 
 export const LOCAL_MODEL='Qwen2.5-7B-Instruct-Q4_K_M';
 export const LOCAL_URL='http://127.0.0.1:8766/v1/chat/completions';
@@ -97,23 +98,38 @@ export async function benchmarkLocal({settings,fetchModel,print=console.log}={})
  assertScene();
  const {readFileSync}=await import('node:fs');
  const corpus=readCorpus(readFileSync(SCENE,'utf8'));
- const model=configuredModel(settings,fetchModel);
- if(!model)throw Error('No local model configured');
+ const configured=configuredModel(settings,fetchModel);
+ if(!configured)throw Error('No local model configured');
  const chapter=corpus.chapters.get('SPX-PILOT-01'),samples=[];
+ let currentStages;
+ const model=async(stage,messages)=>{
+  const start=performance.now();
+  try{return await configured(stage,messages)}
+  finally{
+   if(currentStages&&['compose','verify'].includes(stage))
+    currentStages[stage].push(Math.round(performance.now()-start));
+  }
+ };
  for(const lang of ['en','fr']){
   const node=chapter.nodes[0],question=node.q[lang];
-  const started=Date.now();
+  currentStages={compose:[],verify:[]};
+  const started=performance.now();
   const reply=await composeDraft(corpus,{
    chapterId:chapter.id,nodeId:node.id,language:lang,
    question,voiceMode:'historical',
    experimentalComposerProfile:'P53_ATOMIC_CLAIM_CUES'
   },model);
-  const elapsedMs=Date.now()-started;
+  const elapsedMs=Math.round(performance.now()-started);
   const status=pilotPerformanceGate(elapsedMs);
+  const composeMs=currentStages.compose[0]??null;
+  const verifyMs=currentStages.verify[0]??null;
   samples.push({language:lang,status:reply.status,
    reason:reply.reason||null,sourceNodeId:node.id,elapsedMs,
+   composeMs,verifyMs,
+   composeCalls:currentStages.compose.length,verifyCalls:currentStages.verify.length,
    interactivity:status,modelClaimsApproved:false,publishingApproved:false});
-  print('SPX LOCAL REAL ' +lang+' '+elapsedMs+'ms '+reply.status+' '+status);
+  print('SPX LOCAL REAL '+lang+' '+elapsedMs+'ms (composer '+composeMs+
+   'ms, verifier '+(verifyMs??'not reached')+'ms) '+reply.status+' '+status);
  }
  return {
   schema:'AO_SPX_P56_LOCAL_GPU_BENCHMARK_V1',
@@ -126,14 +142,19 @@ export async function benchmarkLocal({settings,fetchModel,print=console.log}={})
 }
 export async function runP56(argv=process.argv.slice(2),env=process.env){
  const choice=argv[0]||'--help';
- if(!['--help','--prepare','--diagnose','--serve','--benchmark'].includes(choice))
-  throw Error('Use --prepare, --diagnose, --serve, --benchmark or --help');
+ if(!['--help','--hardware','--prepare','--diagnose','--serve','--benchmark'].includes(choice))
+  throw Error('Use --hardware, --prepare, --diagnose, --serve, --benchmark or --help');
  if(choice==='--help'){
   console.log('SPX P56 LOCAL ONLY. First start llama-server on 127.0.0.1:8766 with Qwen2.5 7B Q4_K_M, GPU offload enabled.');
   console.log('Set AO_SPX_LOCAL_PILOT_MODE=I_AM_RUNNING_A_PRIVATE_LOCAL_MODEL.');
-  console.log('Run --prepare to build existing offline scene, --diagnose to check model, --benchmark to measure actual English/French latency, or --serve to open private local review.');
+  console.log('Run --hardware to inspect your existing PC WITHOUT model setup or opt-in, --prepare for the offline scene, --diagnose to check the model, --benchmark to measure English/French composer/verifier latency, or --serve to open private local review.');
   console.log('This does not deliver a shared public mobile inference service; offline visual novel remains the fallback.');
   return {mode:'help'};
+ }
+ if(choice==='--hardware'){
+  const report=inspectLocalHardware();
+  console.log(formatReadiness(report));
+  return {mode:'hardware',...report};
  }
  if(choice==='--prepare'){
   prepareScene();
