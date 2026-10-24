@@ -54,12 +54,12 @@ for(let i=0;i<105;i++){
   assert.equal(q.identity_certified,false);
   assert.equal(q.publicly_published,false);
 }
-assert.equal(cat.summary.source_observations.total_source_detail_rows_including_external,3652);
+assert.equal(cat.summary.source_observations.total_source_detail_rows_including_external,3703);
 assert.equal(cat.summary.source_observations.pitre_1900_wave04_new_original_edition_pdf_text_anchored_details,105);
-assert.equal(cat.summary.source_observations.pitre_1900_all_1900_source_detail_records_now,667);
+assert.equal(cat.summary.source_observations.pitre_1900_all_1900_source_detail_records_now,718);
 assert.equal(cat.summary.source_review.pitre_1900_1900_chapter_groups_with_some_indexed_evidence,60);
 assert.equal(cat.summary.source_review.pitre_1900_1900_chapter_groups_unrepresented_in_this_register,0);
-assert.equal(cat.summary.source_review.pitre_1900_1900_total_indexed_source_details,667);
+assert.equal(cat.summary.source_review.pitre_1900_1900_total_indexed_source_details,718);
 assert.equal(cat.summary.source_review.pitre_1900_verified_all_original_1900_pdf_source_rows,422);
 assert.equal(cat.summary.source_review.pitre_1900_wave04_individual_folio_image_verification_pending,105);
 assert.equal(cat.summary.source_review.pitre_1900_full_527_original_image_checks_complete,false);
@@ -67,4 +67,4 @@ assert.equal(cat.summary.source_review.pitre_1900_2026_folio_verification_comple
 assert.equal(cat.summary.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(cat.summary.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(cat.summary.no_new_app_publications,true);
-console.log('Pitrè 1900 Wave04: 105 genuine new chapter-level source observations, 11 newly represented index sections, 3652 total, 667 Pitrè, 105 individual image checks pending, no publication — PASS');
+console.log('Pitrè 1900 Wave04: 105 genuine new chapter-level source observations, 11 newly represented index sections, 3703 total, 718 Pitrè, 105 individual image checks pending, no publication — PASS');
