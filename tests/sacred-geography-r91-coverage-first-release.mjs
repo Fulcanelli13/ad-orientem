@@ -10,15 +10,16 @@ const r90=load("data/geography/research/sacred-geography-r90-coverage-first-rele
 const r91=load("data/geography/research/sacred-geography-r91-coverage-first-release.v1.json");
 const r92=load("data/geography/research/sacred-geography-r92-verified-site-cohort.v1.json");
 const r93=load("data/geography/research/sacred-geography-r93-first-presence-release.v1.json");
+const p17=load("data/geography/research/sacred-places-p17-separated-bergamo-asuncion.v1.json");
 const shrines=load("data/shrines/shrines-pilgrimages-seed.v1.json");
 assert.equal(r91.schema,"AO_SACRED_GEOGRAPHY_R91_COVERAGE_FIRST_RELEASE_V1");
 assert.equal(r90.result.places,318,"R90 publication numbers are immutable");
 assert.equal(r91.published_new.length,12);
 assert.equal(r91.country_areas_added.length,12);
 assert.equal(new Set(r91.published_new.map(x=>x.country)).size,12);
-assert.equal(geo.places.length,318+r91.published_new.length+r92.published_new.length+r93.published_new.length+6);
+assert.equal(geo.places.length,318+r91.published_new.length+r92.published_new.length+r93.published_new.length+6+p17.published_new.length);
 assert.equal(geo.geoAreas.length,112+r91.country_areas_added.length+r92.country_areas_added.length+r93.country_areas_added.length);
-assert.equal(sources.sources.length,563+2*r91.published_new.length+2*r92.published_new.length+2*r93.published_new.length+18);
+assert.equal(sources.sources.length,563+2*r91.published_new.length+2*r92.published_new.length+2*r93.published_new.length+18+p17.published_new.reduce((n,p)=>n+p.source_ids.length,0));
 assert.equal(new Set(geo.places.map(x=>x.place_id)).size,geo.places.length);
 assert.equal(new Set(sources.sources.map(x=>x.id)).size,sources.sources.length);
 assert.equal(geo.directoryPlaceLinks.length,9);
