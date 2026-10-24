@@ -189,6 +189,53 @@ try{
    },previous,{timeout:12000});
    assert.equal(await page.locator("#ao-r17-native-reader-preview [data-ao-reader-shell]").getAttribute("data-mode"),mode,
      "Reader mode silently changed on next Mass section");
+
+   // In-church continuity: after starting this EXACT source-owned Sunday Mass,
+   // turning off the network must not prevent movement through its cached
+   // native reader. Then verify the production Home Resume entry restores
+   // the same feast and advanced card after a fresh page reload.
+   if(mode==="LIVE"){
+    const beforeOffline=await page.locator("#ao-r17-native-reader-preview [data-role='progress']").textContent();
+    await context.setOffline(true);
+    await next.click();
+    await page.waitForFunction(previous=>{
+      const text=document.querySelector("#ao-r17-native-reader-preview [data-role='progress']")?.textContent?.trim();
+      return Boolean(text&&text!==previous);
+    },beforeOffline.trim(),{timeout:12000});
+    const offlineState=await page.evaluate(()=>({
+      date:globalThis.AO_R17_ACTIVE_MASS?.session?.resolvedMass?.date,
+      mode:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")?.dataset.mode,
+      text:document.querySelector("#ao-r17-native-reader-preview [data-role='paragraphs']")?.textContent?.trim(),
+      progress:document.querySelector("#ao-r17-native-reader-preview [data-role='progress']")?.textContent?.trim()
+    }));
+    assert.equal(offlineState.date,"2026-10-25","Offline Mass lost selected feast");
+    assert.equal(offlineState.mode,"LIVE","Offline Mass changed mode");
+    assert.ok(offlineState.text?.length>30,"Offline next card is blank");
+    await context.setOffline(false);
+    await page.reload({waitUntil:"domcontentloaded",timeout:90000});
+    await page.waitForSelector(".homeScreen",{state:"visible",timeout:35000});
+    const resume=page.locator(".homeScreen [data-resume-mass]");
+    await resume.waitFor({state:"visible",timeout:30000});
+    assert.equal(await page.locator(".homeScreen [data-home-mass-entry]").count(),0,
+      "Resume and Start-as-new appeared as ambiguous duplicate actions");
+    await resume.click();
+    await page.waitForFunction(()=>Boolean(document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")),null,{timeout:45000});
+    const resumed=await page.evaluate(()=>({
+      date:globalThis.AO_R17_ACTIVE_MASS?.session?.resolvedMass?.date,
+      source:globalThis.AO_R17_ACTIVE_MASS?.session?.resolvedMass?.proper?.sourcePath,
+      mode:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")?.dataset.mode,
+      progress:document.querySelector("#ao-r17-native-reader-preview [data-role='progress']")?.textContent?.trim(),
+      visible:!!document.querySelector("#ao-r17-native-reader-preview [data-role='paragraphs']")?.textContent?.trim()
+    }));
+    assert.equal(resumed.date,"2026-10-25","Resume changed the active source date");
+    assert.equal(resumed.source,"Sancti/10-DU","Resume changed the feast Proper");
+    assert.equal(resumed.mode,"LIVE","Resume changed the reader mode");
+    assert.equal(resumed.visible,true,"Resume rendered empty prayer text");
+    assert.equal(resumed.progress,offlineState.progress,
+      "Resume restarted at the beginning instead of preserving card position");
+    console.log("PASS Christ King LIVE offline card navigation and on-reload resume",JSON.stringify({offline:offlineState.progress,resumed}));
+   }
+
    assert.deepEqual(errors.filter(x=>!/ResizeObserver loop/.test(x)),[],
     mode+" actual Sunday Mass produced JS page errors");
    console.log("PASS 25 Oct Home -> Christ King Proper -> folio -> "+mode+" -> native reader next",JSON.stringify(opened));
