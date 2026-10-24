@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+"""B53 targeted source-safe theological placement sanity checks."""
+import sys
+sys.path.insert(0,"scripts/research")
+from sacred_art_b53_placements import propose_all
+def slots(title):return {x["slot_id"] for x in propose_all(title,"historical source","test-article")}
+def require(title,*wanted):
+    actual=slots(title)
+    for x in wanted:
+        assert x in actual, (title,x,sorted(actual))
+def forbid(title,*unwanted):
+    actual=slots(title)
+    for x in unwanted:
+        assert x not in actual, (title,x,sorted(actual))
+require("The Annunciation","calendar/annunciation","rosary/mystery/joyful-1","scripture/historia/annunciation")
+require("The Visitation","rosary/mystery/joyful-2","calendar/visitation")
+require("The Adoration of the Shepherds","rosary/mystery/joyful-3","calendar/christmas")
+require("The Presentation in the Temple","rosary/mystery/joyful-4","calendar/candlemas")
+require("Christ among the Doctors","rosary/mystery/joyful-5")
+require("The Agony in the Garden","rosary/mystery/sorrowful-1")
+require("Christ Carrying the Cross","stations/2","rosary/mystery/sorrowful-4","calendar/good-friday")
+require("The Crucifixion","stations/12","rosary/mystery/sorrowful-5")
+require("The Descent from the Cross","stations/13")
+require("The Entombment","stations/14")
+require("The Resurrection of Christ","rosary/mystery/glorious-1","calendar/easter")
+require("The Ascension of Christ","rosary/mystery/glorious-2","calendar/ascension")
+require("Pentecost","rosary/mystery/glorious-3","calendar/pentecost")
+require("The Assumption of the Virgin","rosary/mystery/glorious-4","calendar/assumption")
+require("The Baptism of Christ","scripture/historia/baptism-christ")
+require("The Wedding Feast at Cana","scripture/historia/cana")
+require("The Good Samaritan","scripture/historia/good-samaritan","prayers/works-mercy")
+require("The Prodigal Son","confession/reconciliation")
+require("The Last Supper","mass-explorer/eucharist-institution","calendar/holy-thursday")
+require("The Heart of Jesus","first-fridays","prayers/sacred-heart")
+require("The Heart of Mary","first-saturdays","prayers/immaculate-heart")
+require("The Holy Family","calendar/holy-family","prayers/holy-family")
+require("Madonna and Child with Saints","prayers/marian-devotion","rosary/marian-art")
+require("The Creation of the World and the Expulsion from Paradise","covenants/adam")
+require("Saint Lucy","saints/profile/lucy")
+require("Saint Francis Xavier","saints/profile/francis-xavier")
+require("Saint Dominic of Guzmán","saints/profile/dominic-guzman")
+require("Saint Joseph of Cupertino","saints/profile/joseph-cupertino")
+forbid("The Crucifixion of Saint Peter","stations/12","rosary/mystery/sorrowful-5","calendar/good-friday")
+forbid("The Crucifixion of Saint Andrew","stations/12","calendar/good-friday")
+forbid("St. Francis Kneeling before Christ on the Cross","stations/12","calendar/good-friday")
+forbid("Saint Joseph of Cupertino","saints/profile/joseph","prayers/st-joseph")
+forbid("Saint Anthony Abbot","adoration/eucharistic-miracles")
+forbid("The Last Communion of Saint Lucy","mass-explorer/eucharist-institution")
+forbid("Madonna and Child","rosary/mystery/joyful-3")
+forbid("The Holy Family","calendar/christmas")
+forbid("The Crucifixion of Saint Peter","mass-explorer/calvary-sacrifice")
+forbid("The Heart of Mary","first-fridays")
+print("B53_PLACEMENT_SCENARIOS_PASS: traditional 15-mystery rosary, Holy Week stations, calendar, Scripture, saints and devotions; common subject conflations blocked.")
