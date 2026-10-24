@@ -1,5 +1,7 @@
 # Sacred Geography R70 — Coverage first, depth second
 
+> **Policy superseded for new Places by P22 (24 October 2026):** R70's bilingual historical introductions and extra typed map-source records are no longer required for map-first physical-site publication. See `data/geography/sacred-places-map-first-minimum.v1.json` and `docs/SACRED-PLACES-P22-MAP-FIRST-20261024.md`. Older numbers below describe R70's frozen research snapshot, not the live 371-Place proposed P22 baseline.
+
 ## Why R70 supersedes further gallery expansion
 
 The 2026-10-11 repository already publishes **219 shrines across 48 countries**, with **219 physically geolocated pins, 219 bilingual English/French historical introductions and 219 places with source URLs**; it includes 209 linked pilgrimage records. There are **14 detailed guides**, **18 approved hero photographs**, and **6 supplemental gallery images**. That is a good source-backed *base* for the current catalogue, not good coverage of the full world.
