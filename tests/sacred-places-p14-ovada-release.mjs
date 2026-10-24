@@ -17,7 +17,7 @@ assert.equal(p14.base.places,347);
 assert.equal(p14.proposed.places,348);
 assert.equal(geo.places.length,LIVE.places);
 assert.equal(src.sources.length,LIVE.sources);
-assert.equal(geo.geoAreas.length,141);
+assert.equal(geo.geoAreas.length,LIVE.areas);
 assert.equal(geo.directoryPlaceLinks.length,9);
 assert.equal(cross.place_crosswalk.length,geo.places.length);
 assert.equal(cross.counts.places,geo.places.length);

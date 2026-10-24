@@ -35,7 +35,7 @@ for(const x of release.held_exceptions){
 }
 assert.equal(geo.places.length,LIVE.places);
 assert.equal(sources.sources.length,LIVE.sources);
-assert.equal(geo.geoAreas.length,141);
+assert.equal(geo.geoAreas.length,LIVE.areas);
 assert.equal(geo.directoryPlaceLinks.length,9);
 assert.equal(cross.place_crosswalk.length,LIVE.places);
 assert.equal(cross.counts.places,LIVE.places);
