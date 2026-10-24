@@ -44,7 +44,8 @@
     "PITRE_1900_129_CROSS_SOURCE_AND_71_PAIR_DECISION_BOUNDARY": "All 129 earlier OCR-observation IDs retain provenance and were screened against earlier label pools. 74 have candidate lexical hints (166 edges); 55 no lexical hints. Separate 71 manually judged action-description pairs distinguish local shared St Joseph family actions, date/saint/region variants, and false equivalences. Neither hints nor action-pair relation types certify a global distinct custom, independently checked old eyewitness manuscripts, original printed page facsimile, 1962 rite authority, or current continuance. This is nonadditive: existing counted source-detail row total unchanged.",
     "PITRE1900_COMPLETE_ACTION_TRIAGE_NOT_COMPLETE_TEXT_MINING": "All 129 already extracted Pitrè 1900 OCR source-detail records are covered by 7 noncanonical patronal research families, 71 previous action-description pair reviews touching 82 source IDs, and 47 individually screened unpaired source IDs; zero 1900 OCR chapters newly extracted in this pass because original OCR remote endpoint currently inaccessible. The 7 sampled feast chapters remain NONEXHAUSTIVE relative to author's 60 reported festival subjects; printed-page images and original cited earlier witnesses remain unread. No new distinct customs, master owner IDs or publications.",
     "PITRE_ORIGINAL_TEXT_ACCESS_HOLD_OCT24": "129 previously source-located Pitrè 1900 observations retain original OCR evidence. This session could read Google Books' original 1900 catalogue and 1881 precursor contents, but no complete new original 1900 OCR chapter: Internet Archive text denied, Google Books direct text denied/download CAPTCHA, large Wikimedia complete PDF exceeded reader limit, runtime container has no outbound network. Six bibliographic scan routes are NOT independent authors. Original 1881 same-author Santa Lucia page-424 source is a known comparison target but original body not read. Strictly nonadditive.",
-    "PITRE_ORIGINAL_FACSIMILE_NEW_EVIDENCE": "24 Oct 2026: a compressed 1900 Michigan volume was directly supplied and scanned, original printed pages located for all 25 pre-existing P0 critical Pitrè records and 16 additional high-risk Wave03 records. 41 observations span 33 original PDF pages. Existing 129-row source-access register preserves its old pre-acquisition zero-image snapshot and is superseded on these page checks by pitre-1900-uploaded-facsimile-25p0-16-wave03-page-gates.v1.json. Source authenticity of previous historiography, 1881 same-author dependence, rite approval, uniquely distinct identities and publication remain unverified."
+    "PITRE_ORIGINAL_FACSIMILE_NEW_EVIDENCE": "24 Oct 2026: a compressed 1900 Michigan volume was directly supplied and scanned, original printed pages located for all 25 pre-existing P0 critical Pitrè records and 16 additional high-risk Wave03 records. 41 observations span 33 original PDF pages. Existing 129-row source-access register preserves its old pre-acquisition zero-image snapshot and is superseded on these page checks by pitre-1900-uploaded-facsimile-25p0-16-wave03-page-gates.v1.json. Source authenticity of previous historiography, 1881 same-author dependence, rite approval, uniquely distinct identities and publication remain unverified.",
+    "PITRE_1900_COMPLETE_ORIGINAL_129_PAGE_VERIFICATION_20261024": "All 129 original 1900 Pitrè observations now have individual original-print folio and PDF page with source-matched Italian anchor: 25 prior P0, 17 prior P1, 87 newly completed P2. This is verification of Pitrè's printed edition, NOT of independent correspondents, supernatural stories, rite approvals, present practices or unique customs. 16 of the 293 later-extracted observations also had prior facsimile checks; remaining 277 new observations still need image checks."
   },
   "summary": {
     "source_observations": {
@@ -236,7 +237,7 @@
       "pitre_1900_129_context_p1": 17,
       "pitre_1900_129_standard_p2": 87,
       "pitre_1900_six_bibliographic_access_routes_nonindependent": 6,
-      "pitre_1900_original_folio_images_visually_checked": 42,
+      "pitre_1900_original_folio_images_visually_checked": 129,
       "pitre_1900_new_121_original_ocr_source_rows_indexed": 121,
       "pitre_1900_new_121_distinct_1900_section_labels": 7,
       "pitre_1900_new_121_original_folio_images_verified": 0,
@@ -251,11 +252,14 @@
       "pitre_1900_uploaded_facsimile_total_located_observations": 41,
       "pitre_1900_uploaded_facsimile_independently_approved_rituals": 0,
       "pitre_1900_original_p1_date_region_verified": 17,
-      "pitre_1900_all_original_folio_record_checks": 58,
-      "pitre_1900_original_remaining_p2_page_checks": 87,
+      "pitre_1900_all_original_folio_record_checks": 145,
+      "pitre_1900_original_remaining_p2_page_checks": 0,
       "pitre_1900_new_remaining_page_checks": 277,
-      "pitre_1900_unchecked_record_pages_remaining": 364,
-      "pitre_1900_current_calendar_dates_promoted": 0
+      "pitre_1900_unchecked_record_pages_remaining": 277,
+      "pitre_1900_current_calendar_dates_promoted": 0,
+      "pitre_1900_original_p2_verified": 87,
+      "pitre_1900_original_129_verified": 129,
+      "pitre_1900_full_422_unique_pdf_pages_checked": 59
     },
     "no_new_app_publications": true,
     "source_discovery_leads": {
@@ -353,7 +357,8 @@
     "pitre_1900_new_original_ocr_four_sections": "data/customs/master/pitre-1900-new-gangi-gratteri-geraci-marineo-original-ocr-stage02.v1.json",
     "pitre_1900_original_ocr_six_untouched_complexes_wave03": "data/customs/master/pitre-1900-original-ocr-unmined-messina-ragusa-scicli-comiso-mazara-calatafimi-wave03.v1.json",
     "pitre_1900_uploaded_original_scan_page_verification": "data/customs/master/pitre-1900-uploaded-facsimile-25p0-16-wave03-page-gates.v1.json",
-    "pitre_1900_uploaded_original_scan_p1_17_verifications": "data/customs/master/pitre-1900-uploaded-facsimile-17-p1-date-region-page-gates.v1.json"
+    "pitre_1900_uploaded_original_scan_p1_17_verifications": "data/customs/master/pitre-1900-uploaded-facsimile-17-p1-date-region-page-gates.v1.json",
+    "pitre_1900_uploaded_original_scan_p2_87_verifications": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json"
   },
   "existing_master_identities": [
     {
@@ -36723,10 +36728,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 441,
+      "original_1900_scan_pdf_page_1_based": 499,
+      "original_page_evidence_anchor": "È la Domenica precedente al 19 Marzo",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-002",
@@ -36736,10 +36746,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 441,
+      "original_1900_scan_pdf_page_1_based": 499,
+      "original_page_evidence_anchor": "due lunghe file di cavalieri",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-003",
@@ -36749,10 +36764,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 442,
+      "original_1900_scan_pdf_page_1_based": 500,
+      "original_page_evidence_anchor": "La stràgula è una torre alta una decina di metri",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-004",
@@ -36762,10 +36782,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 442,
+      "original_1900_scan_pdf_page_1_based": 500,
+      "original_page_evidence_anchor": "superfìcie coperta di grossi buccellati",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-005",
@@ -36775,10 +36800,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 442,
+      "original_1900_scan_pdf_page_1_based": 500,
+      "original_page_evidence_anchor": "un quadra di S. Griuseppe",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-006",
@@ -36788,10 +36818,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 442,
+      "original_1900_scan_pdf_page_1_based": 500,
+      "original_page_evidence_anchor": "due buoi dalle corna rivestite di nastri",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-007",
@@ -36801,10 +36836,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 442,
+      "original_1900_scan_pdf_page_1_based": 500,
+      "original_page_evidence_anchor": "la sera del 17 percorre tutte le vie",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-008",
@@ -36814,10 +36854,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 443,
+      "original_1900_scan_pdf_page_1_based": 501,
+      "original_page_evidence_anchor": "un vecchio, una giovane ed un bambino",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-009",
@@ -36827,10 +36872,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 443,
+      "original_1900_scan_pdf_page_1_based": 501,
+      "original_page_evidence_anchor": "apparecchiato da alcuni giorni",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-010",
@@ -36840,10 +36890,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 443,
+      "original_1900_scan_pdf_page_1_based": 501,
+      "original_page_evidence_anchor": "la mattina del 19 viene esposto",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-011",
@@ -36853,10 +36908,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 444,
+      "original_1900_scan_pdf_page_1_based": 502,
+      "original_page_evidence_anchor": "attaccate alle pareti",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-012",
@@ -36866,10 +36926,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 444,
+      "original_1900_scan_pdf_page_1_based": 502,
+      "original_page_evidence_anchor": "si scodella in un tavolo a parte",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-013",
@@ -36879,10 +36944,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 444,
+      "original_1900_scan_pdf_page_1_based": 502,
+      "original_page_evidence_anchor": "una mezza arancia acida",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-014",
@@ -36892,10 +36962,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 444,
+      "original_1900_scan_pdf_page_1_based": 502,
+      "original_page_evidence_anchor": "un saggio di ciascuna delle pietanze",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-015",
@@ -36905,10 +36980,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 444,
+      "original_1900_scan_pdf_page_1_based": 502,
+      "original_page_evidence_anchor": "sparando un colpo ad",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-016",
@@ -36969,10 +37049,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 446,
+      "original_1900_scan_pdf_page_1_based": 504,
+      "original_page_evidence_anchor": "dà ad ognuno di essi una delle grandi cudduri",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-020",
@@ -36982,10 +37067,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 447,
+      "original_1900_scan_pdf_page_1_based": 505,
+      "original_page_evidence_anchor": "processione della statua di S.",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-021",
@@ -36995,10 +37085,15 @@
       "locality": "Ribera, Agrigento, Sicily",
       "feast": "St Joseph, 19 March and preceding days",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 447,
+      "original_1900_scan_pdf_page_1_based": 505,
+      "original_page_evidence_anchor": "il governatore ha facoltà",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-022",
@@ -37061,10 +37156,15 @@
       "locality": "Canicattini (Syracuse), Sicily",
       "feast": "St Joseph (19 March; historically first September Sunday)",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 448,
+      "original_1900_scan_pdf_page_1_based": 506,
+      "original_page_evidence_anchor": "le altre tutte piccoline",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-026",
@@ -37074,10 +37174,15 @@
       "locality": "Canicattini (Syracuse), Sicily",
       "feast": "St Joseph (19 March; historically first September Sunday)",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 448,
+      "original_1900_scan_pdf_page_1_based": 506,
+      "original_page_evidence_anchor": "una donna ed un bambino",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-027",
@@ -37087,10 +37192,15 @@
       "locality": "Canicattini (Syracuse), Sicily",
       "feast": "St Joseph (19 March; historically first September Sunday)",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 448,
+      "original_1900_scan_pdf_page_1_based": 506,
+      "original_page_evidence_anchor": "celebrasi la messa cantata",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-028",
@@ -37100,10 +37210,15 @@
       "locality": "Canicattini (Syracuse), Sicily",
       "feast": "St Joseph (19 March; historically first September Sunday)",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 448,
+      "original_1900_scan_pdf_page_1_based": 506,
+      "original_page_evidence_anchor": "le tre ciambelle grandi ai tre poveri",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-029",
@@ -37113,10 +37228,15 @@
       "locality": "Canicattini (Syracuse), Sicily",
       "feast": "St Joseph (19 March; historically first September Sunday)",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 448,
+      "original_1900_scan_pdf_page_1_based": 506,
+      "original_page_evidence_anchor": "un' avemmaria e un paternostro",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-030",
@@ -37126,10 +37246,15 @@
       "locality": "Canicattini (Syracuse), Sicily",
       "feast": "St Joseph (19 March; historically first September Sunday)",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 448,
+      "original_1900_scan_pdf_page_1_based": 506,
+      "original_page_evidence_anchor": "regalare al Santo un dono qualsiasi",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-031",
@@ -37139,10 +37264,15 @@
       "locality": "Canicattini (Syracuse), Sicily",
       "feast": "St Joseph (19 March; historically first September Sunday)",
       "claim_class": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 448,
+      "original_1900_scan_pdf_page_1_based": 506,
+      "original_page_evidence_anchor": "vendita dei doni",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-032",
@@ -37170,10 +37300,15 @@
       "locality": "Canicattini (Syracuse), Sicily",
       "feast": "St Joseph (19 March; historically first September Sunday)",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 449,
+      "original_1900_scan_pdf_page_1_based": 507,
+      "original_page_evidence_anchor": "il giuoco dello sten",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-034",
@@ -37219,10 +37354,15 @@
       "locality": "Santa Croce Camerina, Ragusa, Sicily",
       "feast": "St Joseph, 17–19 March",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 450,
+      "original_1900_scan_pdf_page_1_based": 508,
+      "original_page_evidence_anchor": "tre poveri, che sceglie",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-037",
@@ -37232,10 +37372,15 @@
       "locality": "Santa Croce Camerina, Ragusa, Sicily",
       "feast": "St Joseph, 17–19 March",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 450,
+      "original_1900_scan_pdf_page_1_based": 508,
+      "original_page_evidence_anchor": "enormi buccellati",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-038",
@@ -37245,10 +37390,15 @@
       "locality": "Santa Croce Camerina, Ragusa, Sicily",
       "feast": "St Joseph, 17–19 March",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 450,
+      "original_1900_scan_pdf_page_1_based": 508,
+      "original_page_evidence_anchor": "un quadro della Sacra Famiglia",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-039",
@@ -37309,10 +37459,15 @@
       "locality": "Santa Croce Camerina, Ragusa, Sicily",
       "feast": "St Joseph, 17–19 March",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 451,
+      "original_1900_scan_pdf_page_1_based": 509,
+      "original_page_evidence_anchor": "uno della famiglia che li deve ricevere",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-043",
@@ -37356,10 +37511,15 @@
       "locality": "Santa Croce Camerina, Ragusa, Sicily",
       "feast": "St Joseph, 17–19 March",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 451,
+      "original_1900_scan_pdf_page_1_based": 509,
+      "original_page_evidence_anchor": "un piatto di macco",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-046",
@@ -37369,10 +37529,15 @@
       "locality": "Santa Croce Camerina, Ragusa, Sicily",
       "feast": "St Joseph, 17–19 March",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 452,
+      "original_1900_scan_pdf_page_1_based": 510,
+      "original_page_evidence_anchor": "servendo i poveri venuti",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-047",
@@ -37382,10 +37547,15 @@
       "locality": "Santa Croce Camerina, Ragusa, Sicily",
       "feast": "St Joseph, 17–19 March",
       "claim_class": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 452,
+      "original_1900_scan_pdf_page_1_based": 510,
+      "original_page_evidence_anchor": "dove frumento",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-048",
@@ -37395,10 +37565,15 @@
       "locality": "Santa Croce Camerina, Ragusa, Sicily",
       "feast": "St Joseph, 17–19 March",
       "claim_class": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 452,
+      "original_1900_scan_pdf_page_1_based": 510,
+      "original_page_evidence_anchor": "si vendono all' incanto",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-049",
@@ -37408,10 +37583,15 @@
       "locality": "Pachino, Syracuse, Sicily",
       "feast": "St Joseph, March",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 454,
+      "original_1900_scan_pdf_page_1_based": 512,
+      "original_page_evidence_anchor": "vicchiareddiy ne sfama",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-050",
@@ -37439,10 +37619,15 @@
       "locality": "Spadafora San Martino, Messina, Sicily",
       "feast": "St Joseph, March and July",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 454,
+      "original_1900_scan_pdf_page_1_based": 512,
+      "original_page_evidence_anchor": "getti di fave e ceci abbrustoliti",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-052",
@@ -37470,10 +37655,15 @@
       "locality": "Raccuia, Messina, Sicily",
       "feast": "St Joseph, third Sunday after Easter in reported custom",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 454,
+      "original_1900_scan_pdf_page_1_based": 512,
+      "original_page_evidence_anchor": "grano che vi gettan sopra dai balconi",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-054",
@@ -37483,10 +37673,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 219,
+      "original_1900_scan_pdf_page_1_based": 277,
+      "original_page_evidence_anchor": "Candelore dalla prime ore",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-055",
@@ -37496,10 +37691,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 219,
+      "original_1900_scan_pdf_page_1_based": 277,
+      "original_page_evidence_anchor": "episodi del martirio di Sant' Agata",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-056",
@@ -37509,10 +37709,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 220,
+      "original_1900_scan_pdf_page_1_based": 278,
+      "original_page_evidence_anchor": "giro dei vari membri",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-057",
@@ -37522,10 +37727,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 220,
+      "original_1900_scan_pdf_page_1_based": 278,
+      "original_page_evidence_anchor": "da otto o dieci robusti uomini",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-058",
@@ -37535,10 +37745,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 220,
+      "original_1900_scan_pdf_page_1_based": 278,
+      "original_page_evidence_anchor": "balla a suon di musica",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-059",
@@ -37548,10 +37763,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 222,
+      "original_1900_scan_pdf_page_1_based": 280,
+      "original_page_evidence_anchor": "prima e dopo entro il Duomo, lungo i pilastri",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-060",
@@ -37561,10 +37781,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 222,
+      "original_1900_scan_pdf_page_1_based": 280,
+      "original_page_evidence_anchor": "Partiti o canturi sono alcune schiere",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-061",
@@ -37574,10 +37799,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 222,
+      "original_1900_scan_pdf_page_1_based": 280,
+      "original_page_evidence_anchor": "preceduti da fiaccole",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-062",
@@ -37587,10 +37817,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 225,
+      "original_1900_scan_pdf_page_1_based": 283,
+      "original_page_evidence_anchor": "diecimila pezzuole si agitano",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-063",
@@ -37600,10 +37835,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 225,
+      "original_1900_scan_pdf_page_1_based": 283,
+      "original_page_evidence_anchor": "sopravveste bianca detto sacco",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-064",
@@ -37613,10 +37853,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 225,
+      "original_1900_scan_pdf_page_1_based": 283,
+      "original_page_evidence_anchor": "i piedi scalzi",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-065",
@@ -37678,10 +37923,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 229,
+      "original_1900_scan_pdf_page_1_based": 287,
+      "original_page_evidence_anchor": "Cinquanta forti giovani si sottopongono",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-069",
@@ -37709,10 +37959,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 230,
+      "original_1900_scan_pdf_page_1_based": 288,
+      "original_page_evidence_anchor": "uscendo da porta Uzeda",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-071",
@@ -37722,10 +37977,15 @@
       "locality": "Catania, Sicily",
       "feast": "St Agatha, February",
       "claim_class": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 230,
+      "original_1900_scan_pdf_page_1_based": 288,
+      "original_page_evidence_anchor": "Dal Seminario dei Chierici vengon lanciate",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-072",
@@ -37735,10 +37995,15 @@
       "locality": "Syracuse, Sicily",
       "feast": "St Lucy, December; May quail festival variant",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 274,
+      "original_1900_scan_pdf_page_1_based": 332,
+      "original_page_evidence_anchor": "ragione della cuccia",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-073",
@@ -37765,10 +38030,15 @@
       "locality": "Syracuse, Sicily",
       "feast": "St Lucy, December; May quail festival variant",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 274,
+      "original_1900_scan_pdf_page_1_based": 332,
+      "original_page_evidence_anchor": "preceduta da una tredicina",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-075",
@@ -37778,10 +38048,15 @@
       "locality": "Syracuse, Sicily",
       "feast": "St Lucy, December; May quail festival variant",
       "claim_class": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 274,
+      "original_1900_scan_pdf_page_1_based": 332,
+      "original_page_evidence_anchor": "le campane della città suonano",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-076",
@@ -37791,10 +38066,15 @@
       "locality": "Syracuse, Sicily",
       "feast": "St Lucy, December; May quail festival variant",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 275,
+      "original_1900_scan_pdf_page_1_based": 333,
+      "original_page_evidence_anchor": "il trasporto delle reliquie",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-077",
@@ -37804,10 +38084,15 @@
       "locality": "Syracuse, Sicily",
       "feast": "St Lucy, December; May quail festival variant",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 275,
+      "original_1900_scan_pdf_page_1_based": 333,
+      "original_page_evidence_anchor": "Viva Santa Lu",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-078",
@@ -37817,10 +38102,15 @@
       "locality": "Syracuse, Sicily",
       "feast": "St Lucy, December; May quail festival variant",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 275,
+      "original_1900_scan_pdf_page_1_based": 333,
+      "original_page_evidence_anchor": "in processione V argenteo simulacro",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-079",
@@ -37830,10 +38120,15 @@
       "locality": "Syracuse, Sicily",
       "feast": "St Lucy, December; May quail festival variant",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 276,
+      "original_1900_scan_pdf_page_1_based": 334,
+      "original_page_evidence_anchor": "un uomo in tuba",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-080",
@@ -37879,10 +38174,15 @@
       "locality": "Syracuse, Sicily",
       "feast": "St Lucy, December; May quail festival variant",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 278,
+      "original_1900_scan_pdf_page_1_based": 336,
+      "original_page_evidence_anchor": "Santa è tratta, come sei mesi",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-083",
@@ -37909,10 +38209,15 @@
       "locality": "Melilli, Syracuse, Sicily",
       "feast": "St Sebastian, May",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 286,
+      "original_1900_scan_pdf_page_1_based": 344,
+      "original_page_evidence_anchor": "i devoti chiedono grazie al Santo",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-085",
@@ -37922,10 +38227,15 @@
       "locality": "Melilli, Syracuse, Sicily",
       "feast": "St Sebastian, May",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 286,
+      "original_1900_scan_pdf_page_1_based": 344,
+      "original_page_evidence_anchor": "Questa immagine con la sua splendida barella",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-086",
@@ -37952,10 +38262,15 @@
       "locality": "Melilli, Syracuse, Sicily",
       "feast": "St Sebastian, May",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 288,
+      "original_1900_scan_pdf_page_1_based": 346,
+      "original_page_evidence_anchor": "dodici miglia",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-088",
@@ -37965,10 +38280,15 @@
       "locality": "Melilli, Syracuse, Sicily",
       "feast": "St Sebastian, May",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 288,
+      "original_1900_scan_pdf_page_1_based": 346,
+      "original_page_evidence_anchor": "Yiva Sammastianu",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-089",
@@ -37996,10 +38316,15 @@
       "locality": "Melilli, Syracuse, Sicily",
       "feast": "St Sebastian, May",
       "claim_class": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 290,
+      "original_1900_scan_pdf_page_1_based": 348,
+      "original_page_evidence_anchor": "fiera degli animali",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-091",
@@ -38026,10 +38351,15 @@
       "locality": "Melilli, Syracuse, Sicily",
       "feast": "St Sebastian, May",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 290,
+      "original_1900_scan_pdf_page_1_based": 348,
+      "original_page_evidence_anchor": "ogni sera , per voti fatti percorrono",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-093",
@@ -38039,10 +38369,15 @@
       "locality": "Palazzolo Acreide, Syracuse, Sicily",
       "feast": "St Paul Apostle, annual patronal feast",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 355,
+      "original_1900_scan_pdf_page_1_based": 413,
+      "original_page_evidence_anchor": "lo imminente apparire della processione",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-094",
@@ -38052,10 +38387,15 @@
       "locality": "Palazzolo Acreide, Syracuse, Sicily",
       "feast": "St Paul Apostle, annual patronal feast",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 355,
+      "original_1900_scan_pdf_page_1_based": 413,
+      "original_page_evidence_anchor": "una grossa ciiddura a forma di serpente",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-095",
@@ -38065,10 +38405,15 @@
       "locality": "Palazzolo Acreide, Syracuse, Sicily",
       "feast": "St Paul Apostle, annual patronal feast",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 355,
+      "original_1900_scan_pdf_page_1_based": 413,
+      "original_page_evidence_anchor": "un vassoio con sopravi scorsoni",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-096",
@@ -38078,10 +38423,15 @@
       "locality": "Palazzolo Acreide, Syracuse, Sicily",
       "feast": "St Paul Apostle, annual patronal feast",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 355,
+      "original_1900_scan_pdf_page_1_based": 413,
+      "original_page_evidence_anchor": "Nessuno ha il diritto di questa raccolta",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-097",
@@ -38108,10 +38458,15 @@
       "locality": "Palazzolo Acreide, Syracuse, Sicily",
       "feast": "St Paul Apostle, annual patronal feast",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 356,
+      "original_1900_scan_pdf_page_1_based": 414,
+      "original_page_evidence_anchor": "custodite in una preziosa teca",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-099",
@@ -38138,10 +38493,15 @@
       "locality": "Palazzolo Acreide, Syracuse, Sicily",
       "feast": "St Paul Apostle, annual patronal feast",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 357,
+      "original_1900_scan_pdf_page_1_based": 415,
+      "original_page_evidence_anchor": "spicaddossu, spiga",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-101",
@@ -38151,10 +38511,15 @@
       "locality": "Palazzolo Acreide, Syracuse, Sicily",
       "feast": "St Paul Apostle, annual patronal feast",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 357,
+      "original_1900_scan_pdf_page_1_based": 415,
+      "original_page_evidence_anchor": "l'offerta di uova",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-102",
@@ -38181,10 +38546,15 @@
       "locality": "Palazzolo Acreide, Syracuse, Sicily",
       "feast": "St Paul Apostle, annual patronal feast",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 358,
+      "original_1900_scan_pdf_page_1_based": 416,
+      "original_page_evidence_anchor": "Le cudduri che questi han portate",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-104",
@@ -38194,10 +38564,15 @@
       "locality": "Solarino, Syracuse, Sicily",
       "feast": "Conversion of St Paul, 25 January",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 359,
+      "original_1900_scan_pdf_page_1_based": 417,
+      "original_page_evidence_anchor": "una spada rivolta all'ingiù",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-105",
@@ -38242,10 +38617,15 @@
       "locality": "Agrigento (Girgenti), Sicily",
       "feast": "St Calogero patronal feast",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 375,
+      "original_1900_scan_pdf_page_1_based": 433,
+      "original_page_evidence_anchor": "lo sollevano grondanti di sudore",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-108",
@@ -38272,10 +38652,15 @@
       "locality": "Agrigento (Girgenti), Sicily",
       "feast": "St Calogero patronal feast",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 375,
+      "original_1900_scan_pdf_page_1_based": 433,
+      "original_page_evidence_anchor": "Pezzi di pane , pagnotte divise",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-110",
@@ -38285,10 +38670,15 @@
       "locality": "Agrigento (Girgenti), Sicily",
       "feast": "St Calogero patronal feast",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 377,
+      "original_1900_scan_pdf_page_1_based": 435,
+      "original_page_evidence_anchor": "presentano grossi torcetti",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-111",
@@ -38298,10 +38688,15 @@
       "locality": "Agrigento (Girgenti), Sicily",
       "feast": "St Calogero patronal feast",
       "claim_class": "PREPARATION_OBJECT_OR_MATERIAL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 377,
+      "original_1900_scan_pdf_page_1_based": 435,
+      "original_page_evidence_anchor": "offrono agnelli e capre",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-112",
@@ -38311,10 +38706,15 @@
       "locality": "Agrigento (Girgenti), Sicily",
       "feast": "St Calogero patronal feast",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 377,
+      "original_1900_scan_pdf_page_1_based": 435,
+      "original_page_evidence_anchor": "quelle donne con pani votivi",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-113",
@@ -38324,10 +38724,15 @@
       "locality": "Agrigento (Girgenti), Sicily",
       "feast": "St Calogero patronal feast",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 377,
+      "original_1900_scan_pdf_page_1_based": 435,
+      "original_page_evidence_anchor": "girano raccogliendo di tutto un po'",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-114",
@@ -38390,10 +38795,15 @@
       "locality": "Naro, Agrigento, Sicily",
       "feast": "St Calogero, January remembrance and June feast",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 381,
+      "original_1900_scan_pdf_page_1_based": 439,
+      "original_page_evidence_anchor": "alla sua chiesa, ad oriente",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-118",
@@ -38403,10 +38813,15 @@
       "locality": "Naro, Agrigento, Sicily",
       "feast": "St Calogero, January remembrance and June feast",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 382,
+      "original_1900_scan_pdf_page_1_based": 440,
+      "original_page_evidence_anchor": "simulacro su d'una piccola bara",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-119",
@@ -38451,10 +38866,15 @@
       "locality": "Caltanissetta, Sicily",
       "feast": "St Michael Archangel, May and September",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 515,
+      "original_1900_scan_pdf_page_1_based": 573,
+      "original_page_evidence_anchor": "canzoncine siciliane accompagnate al suono dei violini",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-122",
@@ -38499,10 +38919,15 @@
       "locality": "Caltanissetta, Sicily",
       "feast": "St Michael Archangel, May and September",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 516,
+      "original_1900_scan_pdf_page_1_based": 574,
+      "original_page_evidence_anchor": "accenderle quindi durante",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-125",
@@ -38512,10 +38937,15 @@
       "locality": "Caltanissetta, Sicily",
       "feast": "St Michael Archangel, May and September",
       "claim_class": "PROCESSIONAL_ACTION_OR_COMPONENT",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 516,
+      "original_1900_scan_pdf_page_1_based": 574,
+      "original_page_evidence_anchor": "dal duomo si trasporta al santuario",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-126",
@@ -38525,10 +38955,15 @@
       "locality": "Caltanissetta, Sicily",
       "feast": "St Michael Archangel, May and September",
       "claim_class": "REPORTED_DEVOTIONAL_ACTION",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 516,
+      "original_1900_scan_pdf_page_1_based": 574,
+      "original_page_evidence_anchor": "visitato, venerato da quanti gli vanno",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     },
     {
       "id": "PIT1900-IT-127",
@@ -38572,10 +39007,15 @@
       "locality": "Caltanissetta, Sicily",
       "feast": "St Michael Archangel, May and September",
       "claim_class": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
-      "printed_scan_page_verified": false,
+      "printed_scan_page_verified": true,
       "independent_witness_certified": false,
       "practice_identity_certified": false,
-      "app_publication": "NONE"
+      "app_publication": "NONE",
+      "original_1900_printed_page": 517,
+      "original_1900_scan_pdf_page_1_based": 575,
+      "original_page_evidence_anchor": "fiera di animali e di oggetti di uso",
+      "facsimile_provenance_file": "data/customs/master/pitre-1900-uploaded-facsimile-87-p2-original-page-verifications.v1.json",
+      "source_printed_page_verified_from_uploaded_1900_original": true
     }
   ],
   "external_source_observations_pitre_original_1900_new_ocr": [
