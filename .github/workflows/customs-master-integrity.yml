@@ -5,6 +5,9 @@ on:
     paths:
       - "data/customs/master/**"
       - "tests/customs-master-integrity.mjs"
+      - "tests/customs-full-registry-census.mjs"
+      - "tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs"
+      - "tests/customs-weiser-readiness-pages.mjs"
       - ".github/workflows/customs-master-integrity.yml"
   workflow_dispatch:
 permissions:
@@ -25,3 +28,63 @@ jobs:
         run: |
           node --check tests/customs-master-integrity.mjs
           node tests/customs-master-integrity.mjs
+      - name: Verify independent customs research census and historical recovery
+        run: |
+          node --check tests/customs-full-registry-census.mjs
+          node tests/customs-full-registry-census.mjs
+      - name: Verify original Weiser page backlog and 408-source group readiness
+        run: |
+          node --check tests/customs-weiser-readiness-pages.mjs
+          node tests/customs-weiser-readiness-pages.mjs
+      - name: Verify original Pitrè 1900 recovered-OCR staging and zero promotion
+        run: |
+          node --check tests/customs-pitre-1900-new-ocr-stage01.mjs
+          node tests/customs-pitre-1900-new-ocr-stage01.mjs
+          node --check tests/customs-pitre-1900-new-ocr-stage02.mjs
+          node tests/customs-pitre-1900-new-ocr-stage02.mjs
+          node --check tests/customs-pitre-1900-original-ocr-wave03.mjs
+          node tests/customs-pitre-1900-original-ocr-wave03.mjs
+      - name: Verify user-supplied original Pitrè page checks and source provenance
+        run: |
+          node --check tests/customs-pitre-1900-uploaded-original-facsimile-audit.mjs
+          node tests/customs-pitre-1900-uploaded-original-facsimile-audit.mjs
+      - name: Verify Pitrè 17 P1 original pages and 364 remaining source search candidates
+        run: |
+          node --check tests/customs-pitre-1900-p1-17-and-page-queue-364.mjs
+          node tests/customs-pitre-1900-p1-17-and-page-queue-364.mjs
+      - name: Verify Pitrè complete old 129 original-folio evidence and new 277 pending queue
+        run: |
+          node --check tests/customs-pitre-1900-original-scan-full-129-folio-integrity.mjs
+          node tests/customs-pitre-1900-original-scan-full-129-folio-integrity.mjs
+      - name: Verify Pitrè seven original 1900 sections and 156 remaining source pages
+        run: |
+          node --check tests/customs-pitre-1900-new-121-original-folio-source-gate.mjs
+          node tests/customs-pitre-1900-new-121-original-folio-source-gate.mjs
+      - name: Verify entire Pitrè 1900 original 422-row printed-folio audit and zero outstanding pages
+        run: |
+          node --check tests/customs-pitre-1900-final-422-original-page-evidence-complete.mjs
+          node tests/customs-pitre-1900-final-422-original-page-evidence-complete.mjs
+      - name: Verify 105 newly mined Pitrè original chapter observations and 105 image holds
+        run: |
+          node --check tests/customs-pitre-1900-wave04-unmined-105-integrity.mjs
+          node tests/customs-pitre-1900-wave04-unmined-105-integrity.mjs
+      - name: Verify Pitrè Wave05 195 evidence leads, 132 staged records, 63 holds
+        run: |
+          node --check tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs
+          node tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs
+      - name: Verify Pitrè Wave06 rendered-source preview audit and original anchor corrections
+        run: |
+          node --check tests/customs-pitre-1900-wave06-source-image-preview.mjs
+          node tests/customs-pitre-1900-wave06-source-image-preview.mjs
+      - name: Verify Pitrè Wave07 132 noncanonical catalogued research rows, all 60 chapter IDs
+        run: |
+          node --check tests/customs-pitre-1900-wave07-132-catalogue-integration.mjs
+          node tests/customs-pitre-1900-wave07-132-catalogue-integration.mjs
+      - name: Verify Pitrè Wave08 63 deferred cases, source recoveries, XI/XLI chapter identity and 560-page gap audit
+        run: |
+          node --check tests/customs-pitre-1900-wave08-63-holds-and-560-page-census.mjs
+          node tests/customs-pitre-1900-wave08-63-holds-and-560-page-census.mjs
+      - name: Verify Pitrè Wave09 200-page original scan coverage, 51 evidence records and 12 absent folios
+        run: |
+          node --check tests/customs-pitre-1900-wave09-200-page-source-integrity.mjs
+          node tests/customs-pitre-1900-wave09-200-page-source-integrity.mjs

@@ -1,0 +1,188 @@
+{
+  "schema": "AO_CUSTOMS_IE_IT_FR_NEXT_SOURCE_DISCOVERY_QUEUE_V1",
+  "date": "2026-10-23",
+  "status": "ACQUISITION_AND_EVIDENCE_TRIAGE_ONLY_DO_NOT_ADD_TO_SOURCE_DETAIL_COUNTS",
+  "methodology": "Ireland: exact CBÉS folio references from searchable Dúchas Schools' Collection transcript listings, but full manuscript source pages require access; report search-index locations only, never claim full direct verification. Italy: national UNESCO documentation cites four cities as four related but distinct festival traditions; source-level component extraction and periodisation pending. France: ministerial La Sanch inventory identified for full read. Do not turn reported folk supernatural claims into approved Catholic acts.",
+  "counts": {
+    "irish_folios": 8,
+    "italian_locality_specific_festival_leads": 4,
+    "french_document_leads": 1,
+    "leads_total": 13,
+    "source_detail_rows_added_to_master": 0,
+    "verified_distinct_customs": 0,
+    "app_publications": 0
+  },
+  "leads": [
+    {
+      "lead_id": "IR-CBES-0747-300",
+      "region": "Ireland — locality to verify from source metadata",
+      "source": "National Folklore Collection, Schools' Collection",
+      "ref": "CBÉS 0747, p.300",
+      "topic": "St Brigid's Eve crosses",
+      "reported_actions": [
+        "Make rush or wooden crosses",
+        "Fasten each year's cross to the house roof or rafters",
+        "Process with a dressed Brideog doll and request gifts"
+      ],
+      "url": "https://www.duchas.ie/en/cbes/transcripts?Page=33&PerPage=20&SearchLanguage=en&SearchText=st+Brigid",
+      "review": "1930s second-hand pupil transcript; story and ritual action must be distinguished"
+    },
+    {
+      "lead_id": "IR-CBES-0769-490",
+      "region": "Ireland — locality to verify",
+      "source": "National Folklore Collection, Schools' Collection",
+      "ref": "CBÉS 0769, p.490",
+      "topic": "Brigid, Shrovetide and Easter family customs",
+      "reported_actions": [
+        "Hang a St Brigid straw cross at home",
+        "Make pancakes on Shrove Tuesday",
+        "Gather eggs for Easter on Holy Saturday"
+      ],
+      "url": "https://www.duchas.ie/en/cbes/transcripts?Page=33&PerPage=20&SearchLanguage=en&SearchText=st+Brigid",
+      "review": "Multiple feasts within one pupil page; split before identity review"
+    },
+    {
+      "lead_id": "IR-CBES-0776D-11002",
+      "region": "Kilcullen vicinity — county/locality to verify",
+      "source": "National Folklore Collection, Schools' Collection",
+      "ref": "CBÉS 0776D, p.11_002",
+      "topic": "Saint Brigid crosses and palms",
+      "reported_actions": [
+        "Gather rushes for crosses on St Brigid's Day",
+        "Take crosses for priestly blessing",
+        "Hang new crosses and blessed palms in family home"
+      ],
+      "url": "https://www.duchas.ie/en/cbes/transcripts?Page=33&PerPage=20&SearchLanguage=en&SearchText=st+Brigid",
+      "review": "Blessing approval and historic locale require original transcript read"
+    },
+    {
+      "lead_id": "IR-CBES-0841-015",
+      "region": "Ireland — locality to verify",
+      "source": "National Folklore Collection, Schools' Collection",
+      "ref": "CBÉS 0841, p.015",
+      "topic": "Christmas candles, Brigid cloth, Easter water",
+      "reported_actions": [
+        "Leave candle in window at Christmas",
+        "Leave Brigid cloth and water at window overnight",
+        "Sprinkle holy Easter water on farmhouse and animals"
+      ],
+      "url": "https://www.duchas.ie/en/cbes/transcripts?Page=33&PerPage=20&SearchLanguage=en&SearchText=st+Brigid",
+      "review": "Folk protection and curative efficacy claims not endorsed"
+    },
+    {
+      "lead_id": "IR-CBES-0138D-12038",
+      "region": "Ireland — locality to verify",
+      "source": "National Folklore Collection, Schools' Collection",
+      "ref": "CBÉS 0138D, p.12_038",
+      "topic": "St John's Eve",
+      "reported_actions": [
+        "Accumulate turf and furze before the feast",
+        "Light a village bonfire at nightfall",
+        "Say prayers near the bonfire"
+      ],
+      "url": "https://www.duchas.ie/en/cbes/transcripts?SearchLanguage=ga&SearchText=john%27s+eve",
+      "review": "Calendar date should be vigil 23 June and independent from later St Peter's Eve bonfires"
+    },
+    {
+      "lead_id": "IR-CBES-0287-076",
+      "region": "Ireland — locality to verify",
+      "source": "National Folklore Collection, Schools' Collection",
+      "ref": "CBÉS 0287, p.076",
+      "topic": "St John's Eve bonfire",
+      "reported_actions": [
+        "Light bonfire near potato fields"
+      ],
+      "url": "https://www.duchas.ie/en/cbes/transcripts?SearchLanguage=ga&SearchText=john%27s+eve",
+      "review": "Reported crop protection superstition should not be endorsed"
+    },
+    {
+      "lead_id": "IR-CBES-0654-158",
+      "region": "Ireland — locality to verify",
+      "source": "National Folklore Collection, Schools' Collection",
+      "ref": "CBÉS 0654, p.158",
+      "topic": "St John's Eve field customs",
+      "reported_actions": [
+        "Pass or drive cattle near festival fires",
+        "Sprinkle Easter holy water at four corners of a field",
+        "Place eggs in a cowshed wall"
+      ],
+      "url": "https://www.duchas.ie/en/cbes/transcripts?Page=10&PerPage=20&SearchLanguage=ga&SearchText=john%27s+eve",
+      "review": "Keep independently described religious act and folk agricultural magic separate"
+    },
+    {
+      "lead_id": "IR-CBES-0794-091",
+      "region": "Ireland — locality to verify",
+      "source": "National Folklore Collection, Schools' Collection",
+      "ref": "CBÉS 0794, p.91",
+      "topic": "Christmas candle and Saint Stephen wren observance",
+      "reported_actions": [
+        "Light window candle Christmas night",
+        "Keep house doors open for Christmas hospitality",
+        "Carry decorated wren bush on Saint Stephen's Day"
+      ],
+      "url": "https://www.duchas.ie/en/cbes/transcripts?Page=22&PerPage=20&SearchLanguage=en&SearchText=christmas",
+      "review": "Separately ascertain wren boys folklore versus Catholic piety"
+    },
+    {
+      "lead_id": "IT-UNESCO-NOLA",
+      "region": "Nola, Campania, Italy",
+      "source": "UNESCO/Italian Ministry intangible heritage dossier, inscription 2013",
+      "ref": "No.00721, Nola",
+      "topic": "Festa dei Gigli",
+      "reported_actions": [
+        "Carry eight towering wooden and papier-mâché Gigli associated with St Paolino"
+      ],
+      "url": "https://unesco.cultura.gov.it/en/projects/rete-delle-feste-delle-grandi-macchine-a-spalla/",
+      "review": "Local Catholic procession mixed with civic/artisanal content; do not project modern details into 1962"
+    },
+    {
+      "lead_id": "IT-UNESCO-PALMI",
+      "region": "Palmi, Calabria, Italy",
+      "source": "UNESCO/Italian Ministry intangible heritage dossier, inscription 2013",
+      "ref": "No.00721, Palmi",
+      "topic": "Varia di Palmi",
+      "reported_actions": [
+        "Carry a monumental structure honoring Madonna della Sacra Lettera"
+      ],
+      "url": "https://unesco.cultura.gov.it/en/projects/rete-delle-feste-delle-grandi-macchine-a-spalla/",
+      "review": "Read independent regional historical reports for 20th-century liturgical chronology"
+    },
+    {
+      "lead_id": "IT-UNESCO-SASSARI",
+      "region": "Sassari, Sardinia, Italy",
+      "source": "UNESCO/Italian Ministry intangible heritage dossier, inscription 2013",
+      "ref": "No.00721, Sassari",
+      "topic": "Faradda / Discesa dei Candelieri",
+      "reported_actions": [
+        "Transport votive carved wooden Candelieri in procession"
+      ],
+      "url": "https://unesco.cultura.gov.it/en/projects/rete-delle-feste-delle-grandi-macchine-a-spalla/",
+      "review": "Ascertain historic feast date, guild patronage, procession phases and religious/civic separation"
+    },
+    {
+      "lead_id": "IT-UNESCO-VITERBO",
+      "region": "Viterbo, Lazio, Italy",
+      "source": "UNESCO/Italian Ministry intangible heritage dossier, inscription 2013",
+      "ref": "No.00721, Viterbo",
+      "topic": "Macchina di Santa Rosa",
+      "reported_actions": [
+        "Carry patron-saint tower structure through historic town"
+      ],
+      "url": "https://unesco.cultura.gov.it/en/projects/rete-delle-feste-delle-grandi-macchine-a-spalla/",
+      "review": "Festival chronology, Catholic devotion and load-bearer traditions require local records"
+    },
+    {
+      "lead_id": "FR-PCI-SANCH",
+      "region": "Roussillon, Pyrénées-Orientales, France",
+      "source": "French National Intangible Cultural Heritage inventory",
+      "ref": "La Sanch, Perpignan/Collioure",
+      "topic": "Good Friday confraternity penitential processions",
+      "reported_actions": [
+        "Penitential procession of the confraternity of the Precious Blood",
+        "Carry devotional Passion objects and floats"
+      ],
+      "url": "https://www.culture.gouv.fr/Media/Thematiques/Patrimoine-culturel-immateriel/Files/Fiches-inventaire-du-PCI/la-sanch-processions-des-penitents-du-vendredi-saint-en-roussillon-pyrenees-orientales",
+      "review": "Chronology 1417 through 1950 appears in inventory; complete inventory read required"
+    }
+  ]
+}

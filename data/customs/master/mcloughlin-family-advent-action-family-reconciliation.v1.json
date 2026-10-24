@@ -1,0 +1,564 @@
+{
+  "schema": "AO_CUSTOMS_MCLOUGHLIN_SOURCE_TO_PRACTICE_FAMILIES_V1",
+  "as_of": "2026-10-23",
+  "authority": "RESEARCH_ONLY_NO_IDENTITY_EQUIVALENCE_CERTIFIED",
+  "methodology": "Manually cluster 70 observed descriptions into action families without claiming unique Catholic customs. The source borrows passages from Weiser and recipes from Berger. Own-family adaptations are not treated as independent geographic or period attestations.",
+  "summary": {
+    "original_source_mentions": 70,
+    "working_action_families": 26,
+    "observations_mapped_once": 70,
+    "clusters_with_a_prior_master_or_group_relation": 11,
+    "clusters_without_relation": 15,
+    "certified_distinct_new_catholic_customs": 0,
+    "publication_changes": 0
+  },
+  "families": [
+    {
+      "cluster_id": "MCL54-CLUSTER-001",
+      "practice_family_label": "Family Advent wreath making, lighting and seasonal transition",
+      "family_type": "HOUSEHOLD_CEREMONY",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-001",
+        "MCL54-EWTN-002",
+        "MCL54-EWTN-003",
+        "MCL54-EWTN-004",
+        "MCL54-EWTN-005",
+        "MCL54-EWTN-006",
+        "MCL54-EWTN-007",
+        "MCL54-EWTN-008",
+        "MCL54-EWTN-009"
+      ],
+      "source_claim_types": [
+        "REPORTED_WIDER_PRACTICE",
+        "AUTHOR_FAMILY_PRACTICE",
+        "AUTHOR_SUGGESTED_ADAPTATION",
+        "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM"
+      ],
+      "possible_master_ids": [
+        "ADVT-001"
+      ],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-A-023"
+      ],
+      "status": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "The Advent wreath has an established master identity. Details are variants, not extra customs automatically.",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-002",
+      "practice_family_label": "Stir-up Sunday communal plum pudding ceremony",
+      "family_type": "FOOD_FAMILY_CUSTOM",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-010",
+        "MCL54-EWTN-011",
+        "MCL54-EWTN-012",
+        "MCL54-EWTN-013"
+      ],
+      "source_claim_types": [
+        "AUTHOR_FAMILY_PRACTICE"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "Practical family custom reported by author, separate from generic Christmas pudding recipe.",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-003",
+      "practice_family_label": "Children's Advent good-deed manger and Christmas Infant figure",
+      "family_type": "FAMILY_DEVOTION",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-014",
+        "MCL54-EWTN-015"
+      ],
+      "source_claim_types": [
+        "AUTHOR_FAMILY_PRACTICE"
+      ],
+      "possible_master_ids": [
+        "ADVT-002"
+      ],
+      "possible_provisional_group_ids": [],
+      "status": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-004",
+      "practice_family_label": "Blessed wheat seeded at Advent and grown beside crib",
+      "family_type": "REPORTED_REGIONAL_HOUSEHOLD",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-016",
+        "MCL54-EWTN-017"
+      ],
+      "source_claim_types": [
+        "REPORTED_REGIONAL_TRADITION",
+        "AUTHOR_FAMILY_PRACTICE"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "Author calls this Hungarian, but historical independent regional corroboration needed.",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-005",
+      "practice_family_label": "Advent family prayers, seasonal versicles and hymn singing",
+      "family_type": "FAMILY_DEVOTION",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-018",
+        "MCL54-EWTN-019",
+        "MCL54-EWTN-020",
+        "MCL54-EWTN-021",
+        "MCL54-EWTN-022"
+      ],
+      "source_claim_types": [
+        "AUTHOR_FAMILY_PRACTICE"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-006",
+      "practice_family_label": "St Nicholas early gifts, cookies, carols and charitable giving",
+      "family_type": "MULTI_ACTION_FEAST_FAMILY",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-023",
+        "MCL54-EWTN-024",
+        "MCL54-EWTN-025",
+        "MCL54-EWTN-026",
+        "MCL54-EWTN-027",
+        "MCL54-EWTN-028"
+      ],
+      "source_claim_types": [
+        "AUTHOR_FAMILY_PRACTICE",
+        "RECIPE_ASSOCIATED_WITH_FEAST"
+      ],
+      "possible_master_ids": [
+        "SNIC-001"
+      ],
+      "possible_provisional_group_ids": [],
+      "status": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-007",
+      "practice_family_label": "Mary Candle, Immaculate Conception Marian altar and symbolic veiling",
+      "family_type": "MARIAL_HOUSEHOLD_CUSTOM",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-029",
+        "MCL54-EWTN-030",
+        "MCL54-EWTN-031",
+        "MCL54-EWTN-032",
+        "MCL54-EWTN-033"
+      ],
+      "source_claim_types": [
+        "AUTHOR_FAMILY_PRACTICE",
+        "REPORTED_WIDER_PRACTICE"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-008",
+      "practice_family_label": "Swedish Saint Lucy saffron cat-shaped buns",
+      "family_type": "REGIONAL_FESTIVE_FOOD",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-034"
+      ],
+      "source_claim_types": [
+        "REPORTED_REGIONAL_TRADITION"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-B-179"
+      ],
+      "status": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "Food tradition related by feast to Lucy wreath/breakfast but not the same action.",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-009",
+      "practice_family_label": "Dramatizing Advent Gospel scenes and Nativity journey",
+      "family_type": "HOUSEHOLD_AND_SCHOOL_DRAMA",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-035",
+        "MCL54-EWTN-036"
+      ],
+      "source_claim_types": [
+        "AUTHOR_FAMILY_PRACTICE"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-010",
+      "practice_family_label": "Creating domestic Nativity figures and personalized crib banners",
+      "family_type": "HOUSEHOLD_CRAFT",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-037",
+        "MCL54-EWTN-038",
+        "MCL54-EWTN-039"
+      ],
+      "source_claim_types": [
+        "AUTHOR_FAMILY_PRACTICE",
+        "AUTHOR_SUGGESTED_ADAPTATION"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-A-045"
+      ],
+      "status": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "Overlaps broad Nativity displays, but unique child-name banners are an author adaptation.",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-011",
+      "practice_family_label": "Seven-window Advent House of Great O Antiphons",
+      "family_type": "FAMILY_DEVOTIONAL_OBJECT",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-040",
+        "MCL54-EWTN-041",
+        "MCL54-EWTN-042"
+      ],
+      "source_claim_types": [
+        "AUTHOR_FAMILY_PRACTICE"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-012",
+      "practice_family_label": "Children's Jesse Tree and Salvation-History ornaments",
+      "family_type": "FAMILY_DEVOTIONAL_CRAFT",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-043",
+        "MCL54-EWTN-044",
+        "MCL54-EWTN-045",
+        "MCL54-EWTN-046"
+      ],
+      "source_claim_types": [
+        "AUTHOR_FAMILY_PRACTICE"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-013",
+      "practice_family_label": "French Christmas brioche",
+      "family_type": "RECIPE_WITH_FEAST",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-047"
+      ],
+      "source_claim_types": [
+        "RECIPE_ASSOCIATED_WITH_FEAST"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-014",
+      "practice_family_label": "German symbolic Christstollen",
+      "family_type": "RECIPE_WITH_FEAST",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-048"
+      ],
+      "source_claim_types": [
+        "RECIPE_ASSOCIATED_WITH_FEAST"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-A-064"
+      ],
+      "status": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-015",
+      "practice_family_label": "Greek Christmas Melachrino and hidden child or coin",
+      "family_type": "FOOD_AND_SYMBOLIC_VARIANT",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-049",
+        "MCL54-EWTN-053",
+        "MCL54-EWTN-054"
+      ],
+      "source_claim_types": [
+        "RECIPE_ASSOCIATED_WITH_FEAST",
+        "REPORTED_REGIONAL_TRADITION",
+        "AUTHOR_FAMILY_PRACTICE"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-016",
+      "practice_family_label": "Historic Christian blessed bread after early Eucharistic assemblies",
+      "family_type": "HISTORICAL_LITURGICAL_CONTEXT",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-050"
+      ],
+      "source_claim_types": [
+        "HISTORICAL_OR_ORIGIN_CLAIM"
+      ],
+      "possible_master_ids": [
+        "FOOD-001"
+      ],
+      "possible_provisional_group_ids": [],
+      "status": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "Historical paragraph not automatically proof of any exact ancient formula.",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-017",
+      "practice_family_label": "Byzantine blessed bread taken home",
+      "family_type": "OTHER_RITE_COMPARATIVE_CONTEXT",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-051"
+      ],
+      "source_claim_types": [
+        "COMPARATIVE_RITE_CONTEXT"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "Cross-rite comparison, not Roman Ritual prescription.",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-018",
+      "practice_family_label": "Lay parent's proposed blessing of festive bread",
+      "family_type": "AUTHOR_PROPOSED_CEREMONY",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-052"
+      ],
+      "source_claim_types": [
+        "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "Formula requires separate ecclesiastical authority audit; not approved ritual text.",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-019",
+      "practice_family_label": "Italian Christmas Eve Cassata dessert",
+      "family_type": "FEAST_FOOD",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-055"
+      ],
+      "source_claim_types": [
+        "RECIPE_ASSOCIATED_WITH_FEAST"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-020",
+      "practice_family_label": "English manger-shaped Christmas mince pie",
+      "family_type": "FEAST_FOOD",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-056"
+      ],
+      "source_claim_types": [
+        "RECIPE_ASSOCIATED_WITH_FEAST"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-A-068"
+      ],
+      "status": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-021",
+      "practice_family_label": "Gingerbread boy Christ Child origin assertion",
+      "family_type": "HISTORICAL_CLAIM_REVIEW",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-057"
+      ],
+      "source_claim_types": [
+        "HISTORICAL_OR_ORIGIN_CLAIM"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "A historical origin claim, not distinct ritual/custom evidence.",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-022",
+      "practice_family_label": "Decorating Christmas home with Marian image and vigil lights",
+      "family_type": "HOME_DEVOTIONAL_DECOR",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-058"
+      ],
+      "source_claim_types": [
+        "AUTHOR_FAMILY_PRACTICE"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-023",
+      "practice_family_label": "Irish-style Christmas house candle lit after Angelus",
+      "family_type": "REGIONAL_REPORTED_CUSTOM",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-059"
+      ],
+      "source_claim_types": [
+        "REPORTED_REGIONAL_TRADITION"
+      ],
+      "possible_master_ids": [
+        "CANDIDATE-IRISH-CHRISTMAS-CANDLE"
+      ],
+      "possible_provisional_group_ids": [],
+      "status": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-024",
+      "practice_family_label": "Christmas Eve crib procession, Martyrology, Gospel and home prayers",
+      "family_type": "HOUSEHOLD_NATIVITY_CEREMONY",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-060",
+        "MCL54-EWTN-061",
+        "MCL54-EWTN-062",
+        "MCL54-EWTN-063",
+        "MCL54-EWTN-064",
+        "MCL54-EWTN-065",
+        "MCL54-EWTN-066"
+      ],
+      "source_claim_types": [
+        "AUTHOR_FAMILY_PRACTICE",
+        "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-A-032"
+      ],
+      "status": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-025",
+      "practice_family_label": "Christmas tree and domestic crib blessing occasions",
+      "family_type": "HOUSEHOLD_CEREMONY",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-067",
+        "MCL54-EWTN-069",
+        "MCL54-EWTN-070"
+      ],
+      "source_claim_types": [
+        "REPORTED_WIDER_PRACTICE",
+        "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "status": "SOURCE_BOUNDED_FAMILY_NEEDS_DISTINCTNESS_ASSESSMENT",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    },
+    {
+      "cluster_id": "MCL54-CLUSTER-026",
+      "practice_family_label": "Paradise-tree origin attribution quoted from Weiser",
+      "family_type": "HISTORICAL_CLAIM_REVIEW",
+      "included_source_observation_ids": [
+        "MCL54-EWTN-068"
+      ],
+      "source_claim_types": [
+        "HISTORICAL_OR_ORIGIN_CLAIM"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-A-051"
+      ],
+      "status": "POSSIBLE_EXISTING_PRACTICE_RELATION",
+      "provenance_limit": "McLoughlin online text may contain later revisions; many statements are family testimony or adaptations, not independent historical proof.",
+      "specific_note": "Explicitly sourced by McLoughlin from Weiser; not independent corroboration of origin.",
+      "confidence": "SINGLE_AUTHOR_ONLINE_SOURCE_NOT_INDEPENDENTLY_HISTORICALLY_VERIFIED",
+      "app_publication": false
+    }
+  ]
+}

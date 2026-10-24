@@ -1,0 +1,5324 @@
+{
+  "schema": "AO_CUSTOMS_125_LENT_EASTER_SOURCE_RELATION_CANDIDATES_V1",
+  "as_of": "2026-10-23",
+  "status": "RETRIEVAL_WORKLIST_NO_CANONICAL_EQUIVALENCE",
+  "method": "Weighted lexical retrieval across exact current label pool with ≥2 content-word overlaps; output is search help, not verified semantic or geographical relation. The 1992 and 1977 witnesses are family-guidance literature often drawing on previous practices. There may be many false matches or overlooked true matches. Preserve both source locator and underlying initial ID via source file.",
+  "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+  "summary": {
+    "rows_mapped": 125,
+    "owner_candidates_total": 490,
+    "prior_source_observation_candidates_total": 901,
+    "rows_with_owner_hints": 50,
+    "rows_with_source_hints": 84,
+    "rows_without_either": 34,
+    "hint_links": 372,
+    "certified_independent_witnesses": 0,
+    "certified_new_customs": 0,
+    "automated_merges": 0,
+    "publications": 0
+  },
+  "rows": [
+    {
+      "source_id": "WFF92-EWTN-001",
+      "action_label": "Family confession as preparation on Shrove Tuesday",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-A-094",
+          "target_label": "Shrove Tuesday Confession before Lent",
+          "shared_tokens": [
+            "shrove",
+            "tuesday",
+            "confession"
+          ],
+          "retrieval_score": 24.44,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-A-099",
+          "target_label": "Shrove Tuesday pancakes and eating formerly restricted foods",
+          "shared_tokens": [
+            "shrove",
+            "tuesday"
+          ],
+          "retrieval_score": 16.99,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-073",
+          "target_label": "Family Shrove Tuesday procession collecting old palms",
+          "shared_tokens": [
+            "shrove",
+            "tuesday"
+          ],
+          "retrieval_score": 16.99,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-002",
+      "action_label": "Choose age-appropriate Lenten self-denial commitments with children",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-NEWLAND-0911-02",
+          "target_label": "Use a purple-bean counter for children's Lenten self-denial",
+          "shared_tokens": [
+            "lenten",
+            "self",
+            "denial"
+          ],
+          "retrieval_score": 21.29,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-043",
+          "target_label": "Donate money saved through family Lenten self-denial to the poor",
+          "shared_tokens": [
+            "lenten",
+            "self",
+            "denial"
+          ],
+          "retrieval_score": 21.29,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-010",
+          "target_label": "Childrens acts of self-denial offered during Advent",
+          "shared_tokens": [
+            "self",
+            "denial"
+          ],
+          "retrieval_score": 15.28,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-NEWLAND-0273-01",
+          "target_label": "Present voluntary Advent self-denial as a gift to the Christ Child",
+          "shared_tokens": [
+            "self",
+            "denial"
+          ],
+          "retrieval_score": 15.28,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-003",
+      "action_label": "Establish additional household prayers throughout Lent",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-004",
+      "action_label": "Add a shared evening Angelus at the family table",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-005",
+      "action_label": "Introduce a family prayer period using the Daily Office",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-006",
+      "action_label": "Avoid instrumental music at home between Holy Thursday Gloria and Easter vigil",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "FRPCI18-BB-034",
+          "target_label": "Use traditional local instrumental music at moments corresponding to offertory and elevation",
+          "shared_tokens": [
+            "instrumental",
+            "music"
+          ],
+          "retrieval_score": 17.89,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "FRPCI18-BB-043",
+          "target_label": "Alternate sacred song and instrumental music while processing through village",
+          "shared_tokens": [
+            "instrumental",
+            "music"
+          ],
+          "retrieval_score": 17.89,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-061",
+          "target_label": "Complete Easter housecleaning before the sacred days to avoid interrupting services",
+          "shared_tokens": [
+            "easter",
+            "avoid"
+          ],
+          "retrieval_score": 13.55,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-007",
+      "action_label": "Teach children's voluntary self-denial during Lent",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-NEWLAND-0273-01",
+          "target_label": "Present voluntary Advent self-denial as a gift to the Christ Child",
+          "shared_tokens": [
+            "voluntary",
+            "self",
+            "denial"
+          ],
+          "retrieval_score": 23.73,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-010",
+          "target_label": "Childrens acts of self-denial offered during Advent",
+          "shared_tokens": [
+            "self",
+            "denial"
+          ],
+          "retrieval_score": 15.28,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-NEWLAND-0273-04",
+          "target_label": "Count daily acts of Advent self-denial with beans in a gift box",
+          "shared_tokens": [
+            "self",
+            "denial"
+          ],
+          "retrieval_score": 15.28,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-NEWLAND-0911-02",
+          "target_label": "Use a purple-bean counter for children's Lenten self-denial",
+          "shared_tokens": [
+            "self",
+            "denial"
+          ],
+          "retrieval_score": 15.28,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-008",
+      "action_label": "Reduce household television during Lenten penance",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "KEL59-EWTN-042",
+          "target_label": "Replace favorite television with Lenten spiritual reading",
+          "shared_tokens": [
+            "television",
+            "lenten"
+          ],
+          "retrieval_score": 16.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-009",
+      "action_label": "Limit discretionary shopping or leisure outings in Lent",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-010",
+      "action_label": "Donate clothing or possessions to those in need for Lent",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-011",
+      "action_label": "Volunteer charitable services in Lent",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-012",
+      "action_label": "Attend weekday Mass during Lent when possible",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "KEL59-EWTN-040",
+          "target_label": "Adopt extra weekday Mass attendance during Lent",
+          "shared_tokens": [
+            "weekday",
+            "mass",
+            "lent"
+          ],
+          "retrieval_score": 21.92,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-062",
+          "target_label": "Attend Holy Thursday cathedral services when possible",
+          "shared_tokens": [
+            "when",
+            "possible"
+          ],
+          "retrieval_score": 16.2,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-NEWLAND-1234-04",
+          "target_label": "Join a monastery's Rogation procession before Mass when nearby",
+          "shared_tokens": [
+            "mass",
+            "when"
+          ],
+          "retrieval_score": 11.24,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-013",
+      "action_label": "Create an Alleluia banner to put away for Lent and display at Easter",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-A-095",
+          "target_label": "Farewell to the Alleluia before Lent",
+          "shared_tokens": [
+            "alleluia",
+            "lent"
+          ],
+          "retrieval_score": 14.12,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-022",
+          "target_label": "Polish joyful Alleluia Easter greeting",
+          "shared_tokens": [
+            "alleluia",
+            "easter"
+          ],
+          "retrieval_score": 11.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-080",
+          "target_label": "Display handmade Alleluia and Resurrexit inscriptions",
+          "shared_tokens": [
+            "display",
+            "alleluia"
+          ],
+          "retrieval_score": 14.99,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-101",
+          "target_label": "Easter octave triple Alleluia used before dinner",
+          "shared_tokens": [
+            "easter",
+            "alleluia"
+          ],
+          "retrieval_score": 11.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-088",
+          "target_label": "Sing Easter Alleluia melodies with the family",
+          "shared_tokens": [
+            "easter",
+            "alleluia"
+          ],
+          "retrieval_score": 11.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-014",
+      "action_label": "Include an additional Lenten prayer at family meals",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-015",
+      "action_label": "Read Scripture passages about fasting and penance as family study",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-NEWLAND-0274-04",
+          "target_label": "Read Genesis and other biblical passages while preparing the Christ candle",
+          "shared_tokens": [
+            "read",
+            "passages"
+          ],
+          "retrieval_score": 16.51,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-NEWLAND-0433-02",
+          "target_label": "Read the Advent calendar Scripture at evening prayers",
+          "shared_tokens": [
+            "read",
+            "scripture"
+          ],
+          "retrieval_score": 13.71,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-016",
+      "action_label": "Replace some television with a structured Lenten family reading program",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "KEL59-EWTN-042",
+          "target_label": "Replace favorite television with Lenten spiritual reading",
+          "shared_tokens": [
+            "replace",
+            "television",
+            "lenten",
+            "reading"
+          ],
+          "retrieval_score": 32.59,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-017",
+      "action_label": "Read aloud the Bible in an evening family session during Lent",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "KEL59-EWTN-013",
+          "target_label": "Read the Bible together every night",
+          "shared_tokens": [
+            "read",
+            "bible"
+          ],
+          "retrieval_score": 16.51,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-037",
+          "target_label": "Read the Nativity Gospel aloud to the gathered family on Christmas Eve",
+          "shared_tokens": [
+            "read",
+            "aloud"
+          ],
+          "retrieval_score": 15.52,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-018",
+      "action_label": "Read Catholic spiritual classics aloud with family in Lent",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-197",
+          "target_label": "Family spiritual reading shared aloud",
+          "shared_tokens": [
+            "spiritual",
+            "aloud"
+          ],
+          "retrieval_score": 17.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-037",
+          "target_label": "Read the Nativity Gospel aloud to the gathered family on Christmas Eve",
+          "shared_tokens": [
+            "read",
+            "aloud"
+          ],
+          "retrieval_score": 15.52,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-070",
+          "target_label": "Read spiritual literature and explain each day's Church services at home",
+          "shared_tokens": [
+            "read",
+            "spiritual"
+          ],
+          "retrieval_score": 14.2,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-019",
+      "action_label": "English medieval Mothering Sunday observance linked to Laetare Sunday",
+      "claim_type": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-A-103",
+          "target_label": "Mothering Sunday return to mother church",
+          "shared_tokens": [
+            "mothering",
+            "sunday"
+          ],
+          "retrieval_score": 14.83,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-A-104",
+          "target_label": "Mothering Sunday family visit and simnel cake",
+          "shared_tokens": [
+            "mothering",
+            "sunday"
+          ],
+          "retrieval_score": 14.83,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-GAP-035",
+          "target_label": "English medieval resistance to ivy inside Christmas households",
+          "shared_tokens": [
+            "english",
+            "medieval"
+          ],
+          "retrieval_score": 14,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-020",
+      "action_label": "Pray Stations of the Cross as Passiontide devotion",
+      "claim_type": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-GAP-026",
+          "target_label": "Stations of the Cross incorporated into private prayer hours",
+          "shared_tokens": [
+            "stations",
+            "cross"
+          ],
+          "retrieval_score": 14.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-109",
+          "target_label": "Pray the Magnificat as a household Visitation devotion",
+          "shared_tokens": [
+            "pray",
+            "devotion"
+          ],
+          "retrieval_score": 13.31,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-021",
+      "action_label": "Pray the Rosary and Sorrowful Mysteries as Passiontide devotion",
+      "claim_type": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "KEL59-EWTN-058",
+          "target_label": "Pray the rosary daily during May",
+          "shared_tokens": [
+            "pray",
+            "rosary"
+          ],
+          "retrieval_score": 13.4,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-109",
+          "target_label": "Pray the Magnificat as a household Visitation devotion",
+          "shared_tokens": [
+            "pray",
+            "devotion"
+          ],
+          "retrieval_score": 13.31,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-022",
+      "action_label": "Say five prayers in honor of Christ's wounds during Passiontide",
+      "claim_type": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-023",
+      "action_label": "Keep a devotional remembrance of Mary's Seven Sorrows in Passiontide",
+      "claim_type": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-C-006",
+          "target_label": "Seven Sorrows devotion on Passion Week Friday",
+          "shared_tokens": [
+            "seven",
+            "sorrows"
+          ],
+          "retrieval_score": 18.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-024",
+      "action_label": "Participate in priestly blessing and distribution of Palm Sunday palms",
+      "claim_type": "PUBLIC_LITURGICAL_CEREMONY_CONTEXT_NOT_FAMILY_CUSTOM",
+      "owner_hints": [
+        {
+          "target_id": "DOM-013",
+          "target_label": "Keeping blessed Palm Sunday branches at home",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-002",
+          "target_label": "Historical Palm Sunday donkey-image procession",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-003",
+          "target_label": "Palm Sunday cemetery visits accompanying the procession",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-005",
+          "target_label": "Slavic Palm Sunday willow tapping / Boże Rany",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-076",
+          "target_label": "Palm Sunday blessed palms placed in every room",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "palms"
+          ],
+          "retrieval_score": 19.83,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-079",
+          "target_label": "Spruce and palm bouquets blessed on Palm Sunday",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-052",
+          "target_label": "Collect old Palm Sunday palm fronds from household religious images in silent procession",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-059",
+          "target_label": "Decorate individual rooms with newly blessed Palm Sunday fronds",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-025",
+      "action_label": "Carry blessed palms at Palm Sunday procession",
+      "claim_type": "PUBLIC_LITURGICAL_CEREMONY_CONTEXT_NOT_FAMILY_CUSTOM",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-002",
+          "target_label": "Historical Palm Sunday donkey-image procession",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "procession"
+          ],
+          "retrieval_score": 16.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-003",
+          "target_label": "Palm Sunday cemetery visits accompanying the procession",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "procession"
+          ],
+          "retrieval_score": 16.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "DOM-013",
+          "target_label": "Keeping blessed Palm Sunday branches at home",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-005",
+          "target_label": "Slavic Palm Sunday willow tapping / Boże Rany",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-076",
+          "target_label": "Palm Sunday blessed palms placed in every room",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "palms"
+          ],
+          "retrieval_score": 19.83,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-052",
+          "target_label": "Collect old Palm Sunday palm fronds from household religious images in silent procession",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "procession"
+          ],
+          "retrieval_score": 16.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-058",
+          "target_label": "Carry blessed palms home through the house",
+          "shared_tokens": [
+            "carry",
+            "palms"
+          ],
+          "retrieval_score": 13.59,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-079",
+          "target_label": "Spruce and palm bouquets blessed on Palm Sunday",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-026",
+      "action_label": "Medieval Christians' reported fasting across the days of Holy Week",
+      "claim_type": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "FRPCI20-PARDON-036",
+          "target_label": "Lead horses through a fountain or have horses jump across the water in reported fertility folk rites",
+          "shared_tokens": [
+            "across",
+            "reported"
+          ],
+          "retrieval_score": 16.09,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-027",
+      "action_label": "Attend parish Tenebrae with Lamentations of Jeremiah chants",
+      "claim_type": "PUBLIC_LITURGICAL_CEREMONY_CONTEXT_NOT_FAMILY_CUSTOM",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-028",
+      "action_label": "Pray an adapted family Tenebrae devotion when church service is unavailable",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-109",
+          "target_label": "Pray the Magnificat as a household Visitation devotion",
+          "shared_tokens": [
+            "pray",
+            "devotion"
+          ],
+          "retrieval_score": 13.31,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-029",
+      "action_label": "Prepare a simplified Christian symbolic Holy Thursday Passover-style meal",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-010",
+          "target_label": "Green Thursday herbs and spinach family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-TRAPP-0789-03",
+          "target_label": "Serve a Holy Thursday noon meal of spring-herb soup and spinach with eggs",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-067",
+          "target_label": "Mark Holy Thursday with a more elaborate family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-047",
+          "target_label": "Serve unleavened bread at a Holy Thursday family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-030",
+      "action_label": "Spring cleaning associated with Holy Thursday and paschal household preparation",
+      "claim_type": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-101",
+          "target_label": "Recall a childhood custom of making Sunday-eve cleaning and fresh linen a solemn family preparation",
+          "shared_tokens": [
+            "cleaning",
+            "preparation"
+          ],
+          "retrieval_score": 16.09,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-082",
+          "target_label": "Trapp Holy Thursday spring herb soup",
+          "shared_tokens": [
+            "thursday",
+            "spring"
+          ],
+          "retrieval_score": 14.5,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0789-03",
+          "target_label": "Serve a Holy Thursday noon meal of spring-herb soup and spinach with eggs",
+          "shared_tokens": [
+            "thursday",
+            "spring"
+          ],
+          "retrieval_score": 14.5,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-031",
+      "action_label": "Return to church after Holy Thursday Mass for adoration",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CHANEY55-EWTN-078",
+          "target_label": "Family exchanges gifts after return from Midnight Mass",
+          "shared_tokens": [
+            "return",
+            "mass"
+          ],
+          "retrieval_score": 12.93,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-032",
+      "action_label": "Use abbreviated staged elements of Christian symbolic Holy Thursday supper",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-084",
+          "target_label": "Trapp Holy Thursday Easter lamb supper",
+          "shared_tokens": [
+            "thursday",
+            "supper"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0789-04",
+          "target_label": "Prepare a festive Holy Thursday family supper in Sunday attire",
+          "shared_tokens": [
+            "thursday",
+            "supper"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-068",
+          "target_label": "Sing Ubi Caritas at the Holy Thursday family supper",
+          "shared_tokens": [
+            "thursday",
+            "supper"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-033",
+      "action_label": "Start symbolic Holy Thursday family meal early to accommodate evening Mass",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-010",
+          "target_label": "Green Thursday herbs and spinach family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "FRPCI18-BB-051",
+          "target_label": "Ceremonial gendarmes straighten guards' dress at start of Mass or Vespers",
+          "shared_tokens": [
+            "start",
+            "mass"
+          ],
+          "retrieval_score": 14.93,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0789-03",
+          "target_label": "Serve a Holy Thursday noon meal of spring-herb soup and spinach with eggs",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-067",
+          "target_label": "Mark Holy Thursday with a more elaborate family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-047",
+          "target_label": "Serve unleavened bread at a Holy Thursday family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-034",
+      "action_label": "Bring children to parish Stations of the Cross during Lent",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-GAP-026",
+          "target_label": "Stations of the Cross incorporated into private prayer hours",
+          "shared_tokens": [
+            "stations",
+            "cross"
+          ],
+          "retrieval_score": 14.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "FRPCI20-PARDON-008",
+          "target_label": "Bring procession banners and devotional objects from the parish church",
+          "shared_tokens": [
+            "bring",
+            "parish"
+          ],
+          "retrieval_score": 13.13,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-035",
+      "action_label": "Prepare a home Stations candelabrum inspired by Tenebrae",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-NEWLAND-0911-01",
+          "target_label": "Construct a twelve-candle family Stations candelabrum",
+          "shared_tokens": [
+            "stations",
+            "candelabrum"
+          ],
+          "retrieval_score": 18.89,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-036",
+      "action_label": "Family prays Stations together at home on evenings of Holy Week",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-037",
+      "action_label": "Home Stations especially kept on Wednesday Thursday and Friday of Holy Week",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-H-001",
+          "target_label": "Ancient Wednesday-and-Friday station fasting",
+          "shared_tokens": [
+            "wednesday",
+            "friday"
+          ],
+          "retrieval_score": 14,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-038",
+      "action_label": "Attend Good Friday church services with the family",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "target_label": "Good Friday Three Hours devotion",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-015",
+          "target_label": "Good Friday voluntary silence and spare food",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-087",
+          "target_label": "Trapp Good Friday silence and simple standing meal",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "target_label": "Trapp Good Friday noon-to-three household devotions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-01",
+          "target_label": "Observe a quiet Good Friday family fast",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-02",
+          "target_label": "Eat a sparse Good Friday soup standing at an uncovered table",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-039",
+      "action_label": "Visit church to pray Stations when unable to attend Good Friday services",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "target_label": "Good Friday Three Hours devotion",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-015",
+          "target_label": "Good Friday voluntary silence and spare food",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-062",
+          "target_label": "Attend Holy Thursday cathedral services when possible",
+          "shared_tokens": [
+            "services",
+            "when"
+          ],
+          "retrieval_score": 15.2,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-087",
+          "target_label": "Trapp Good Friday silence and simple standing meal",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "target_label": "Trapp Good Friday noon-to-three household devotions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-01",
+          "target_label": "Observe a quiet Good Friday family fast",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-040",
+      "action_label": "Serve European cross-marked buns on Good Friday",
+      "claim_type": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-016",
+          "target_label": "Good Friday hot cross buns",
+          "shared_tokens": [
+            "good",
+            "friday",
+            "cross",
+            "buns"
+          ],
+          "retrieval_score": 26.81,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-A-065",
+          "target_label": "Greek Christmas bread marked with a cross",
+          "shared_tokens": [
+            "marked",
+            "cross"
+          ],
+          "retrieval_score": 14.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "KEL59-EWTN-050",
+          "target_label": "Serve a very plain Good Friday evening meal",
+          "shared_tokens": [
+            "serve",
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 18.81,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0789-05",
+          "target_label": "Distribute hot-cross buns after the father signs the first bun with a cross",
+          "shared_tokens": [
+            "cross",
+            "buns"
+          ],
+          "retrieval_score": 14.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-087",
+          "target_label": "Trapp Good Friday silence and simple standing meal",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "target_label": "Trapp Good Friday noon-to-three household devotions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-041",
+      "action_label": "Keep devotional observance during noon-to-three hours of Good Friday",
+      "claim_type": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "target_label": "Good Friday Three Hours devotion",
+          "shared_tokens": [
+            "good",
+            "friday",
+            "three",
+            "hours"
+          ],
+          "retrieval_score": 26.5,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-015",
+          "target_label": "Good Friday voluntary silence and spare food",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "target_label": "Trapp Good Friday noon-to-three household devotions",
+          "shared_tokens": [
+            "good",
+            "friday",
+            "noon",
+            "three"
+          ],
+          "retrieval_score": 27.67,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-05",
+          "target_label": "Stop ordinary household activity from noon to three on Good Friday",
+          "shared_tokens": [
+            "noon",
+            "three",
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 27.67,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-069",
+          "target_label": "Keep hours of household silence during Holy Week",
+          "shared_tokens": [
+            "keep",
+            "hours"
+          ],
+          "retrieval_score": 14.41,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-06",
+          "target_label": "Spend the three hours before the cross in reading and meditation",
+          "shared_tokens": [
+            "three",
+            "hours"
+          ],
+          "retrieval_score": 14.15,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-042",
+      "action_label": "Maintain quieter household with devotional reading on Good Friday",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "target_label": "Good Friday Three Hours devotion",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-015",
+          "target_label": "Good Friday voluntary silence and spare food",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-087",
+          "target_label": "Trapp Good Friday silence and simple standing meal",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "target_label": "Trapp Good Friday noon-to-three household devotions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-01",
+          "target_label": "Observe a quiet Good Friday family fast",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-02",
+          "target_label": "Eat a sparse Good Friday soup standing at an uncovered table",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-043",
+      "action_label": "Take on an unpleasant overdue household task as Good Friday penance",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "target_label": "Good Friday Three Hours devotion",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-015",
+          "target_label": "Good Friday voluntary silence and spare food",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-087",
+          "target_label": "Trapp Good Friday silence and simple standing meal",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "target_label": "Trapp Good Friday noon-to-three household devotions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-01",
+          "target_label": "Observe a quiet Good Friday family fast",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-02",
+          "target_label": "Eat a sparse Good Friday soup standing at an uncovered table",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-044",
+      "action_label": "Give a religious medal to a child and ask priest to bless it",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-045",
+      "action_label": "Keep holy water at the door for making the Sign of Cross at home",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-067",
+          "target_label": "Sign of the Cross during ordinary household work on Trinity Sunday",
+          "shared_tokens": [
+            "sign",
+            "cross"
+          ],
+          "retrieval_score": 14.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-UNIDX-003",
+          "target_label": "Short prayer and Sign of the Cross when a clock strikes each hour",
+          "shared_tokens": [
+            "sign",
+            "cross"
+          ],
+          "retrieval_score": 14.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "CHANEY55-EWTN-125",
+          "target_label": "Father makes sign of cross on children's foreheads at evening prayer",
+          "shared_tokens": [
+            "sign",
+            "cross"
+          ],
+          "retrieval_score": 14.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-079",
+          "target_label": "Keep water linens and a small bell ready for a sickroom sacramental visit",
+          "shared_tokens": [
+            "keep",
+            "water"
+          ],
+          "retrieval_score": 12.16,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-046",
+      "action_label": "Ask children to observe priestly and lay signs of cross while attending Mass",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-TRAPP-0789-05",
+          "target_label": "Distribute hot-cross buns after the father signs the first bun with a cross",
+          "shared_tokens": [
+            "cross",
+            "signs"
+          ],
+          "retrieval_score": 15.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-BERGER-1151-01",
+          "target_label": "Observe a fast on the Exaltation of the Holy Cross as a reported historic custom",
+          "shared_tokens": [
+            "observe",
+            "cross"
+          ],
+          "retrieval_score": 14.87,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0381-12",
+          "target_label": "Rest before attending Midnight Mass",
+          "shared_tokens": [
+            "attending",
+            "mass"
+          ],
+          "retrieval_score": 13.93,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-055",
+          "target_label": "Study the next day's Lenten Mass text in the evening before attending Mass",
+          "shared_tokens": [
+            "mass",
+            "attending"
+          ],
+          "retrieval_score": 13.93,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-047",
+      "action_label": "Maintain a quiet domestic atmosphere on Holy Saturday",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CHANEY55-EWTN-042",
+          "target_label": "Keep a quiet household atmosphere on Christmas Eve",
+          "shared_tokens": [
+            "quiet",
+            "atmosphere"
+          ],
+          "retrieval_score": 18.89,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-091",
+          "target_label": "Holy Saturday domestic procession with Easter water",
+          "shared_tokens": [
+            "saturday",
+            "domestic"
+          ],
+          "retrieval_score": 12.02,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-051",
+          "target_label": "Renew baptismal promises before the domestic altar on Holy Saturday",
+          "shared_tokens": [
+            "domestic",
+            "saturday"
+          ],
+          "retrieval_score": 12.02,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-048",
+      "action_label": "Prepare Easter foods and home arrangements together on Holy Saturday",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "BLSS-004",
+          "target_label": "Holy Saturday — blessing of Easter foods",
+          "shared_tokens": [
+            "saturday",
+            "easter",
+            "foods"
+          ],
+          "retrieval_score": 18.2,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-018",
+          "target_label": "Holy Saturday priestly blessing of foods at home",
+          "shared_tokens": [
+            "saturday",
+            "foods"
+          ],
+          "retrieval_score": 14.1,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "KEL59-EWTN-054",
+          "target_label": "Read Gospel accounts of the Passion and Resurrection together on Holy Saturday night",
+          "shared_tokens": [
+            "together",
+            "saturday"
+          ],
+          "retrieval_score": 13.11,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-096",
+          "target_label": "Blessed Easter foods eaten across Easter days",
+          "shared_tokens": [
+            "easter",
+            "foods"
+          ],
+          "retrieval_score": 11.74,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0391-01",
+          "target_label": "Serve blessed Easter foods at the festive family breakfast",
+          "shared_tokens": [
+            "easter",
+            "foods"
+          ],
+          "retrieval_score": 11.74,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-083",
+          "target_label": "Bring Easter foods for blessing by a priest when that custom is observed",
+          "shared_tokens": [
+            "easter",
+            "foods"
+          ],
+          "retrieval_score": 11.74,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-049",
+      "action_label": "Keep Easter decorations put away until Easter itself",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CHANEY55-EWTN-045",
+          "target_label": "Some families withhold Christmas tree decorations until Christmas Eve",
+          "shared_tokens": [
+            "decorations",
+            "until"
+          ],
+          "retrieval_score": 15.32,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0381-02",
+          "target_label": "Keep the Christmas gift room closed until its ceremonial opening",
+          "shared_tokens": [
+            "keep",
+            "until"
+          ],
+          "retrieval_score": 13.59,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0391-03",
+          "target_label": "Keep artistically painted Easter eggs as mementos through the year",
+          "shared_tokens": [
+            "keep",
+            "easter"
+          ],
+          "retrieval_score": 11.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-050",
+      "action_label": "Light a family Easter candle at home if unable to attend the Vigil",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-NEWLAND-1065-05",
+          "target_label": "Have the first child awake light the candle on Easter morning",
+          "shared_tokens": [
+            "light",
+            "candle",
+            "easter"
+          ],
+          "retrieval_score": 14.86,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-04",
+          "target_label": "Extinguish a household vigil light before the Marian image",
+          "shared_tokens": [
+            "vigil",
+            "light"
+          ],
+          "retrieval_score": 12.44,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MCL54-EWTN-058",
+          "target_label": "Evergreen mantel with Madonna and Child, vigil lights, and white dining candle",
+          "shared_tokens": [
+            "vigil",
+            "candle"
+          ],
+          "retrieval_score": 11.06,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-125",
+          "target_label": "Louisiana graveside All Souls night candle vigil",
+          "shared_tokens": [
+            "candle",
+            "vigil"
+          ],
+          "retrieval_score": 11.06,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-051",
+      "action_label": "Keep Easter household candle burning at meals through Easter season",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "MCL54-EWTN-007",
+          "target_label": "Keeping an Advent candle lit at family meals or evening prayers",
+          "shared_tokens": [
+            "candle",
+            "meals"
+          ],
+          "retrieval_score": 11.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MCL54-EWTN-033",
+          "target_label": "Candle with white or blue ribbon burned by Our Lady's image at meals and prayers",
+          "shared_tokens": [
+            "candle",
+            "meals"
+          ],
+          "retrieval_score": 11.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CHANEY55-EWTN-100",
+          "target_label": "Family places Christmas Christ candle at dinner table for meals",
+          "shared_tokens": [
+            "candle",
+            "meals"
+          ],
+          "retrieval_score": 11.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0391-03",
+          "target_label": "Keep artistically painted Easter eggs as mementos through the year",
+          "shared_tokens": [
+            "keep",
+            "easter"
+          ],
+          "retrieval_score": 11.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-052",
+      "action_label": "Light a symbolic new Easter fire safely outdoors or in heatproof vessel",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-025",
+          "target_label": "Taking home Easter Vigil blessed fire by lantern",
+          "shared_tokens": [
+            "easter",
+            "fire"
+          ],
+          "retrieval_score": 12.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-089",
+          "target_label": "New Easter fire carried home in lantern",
+          "shared_tokens": [
+            "easter",
+            "fire"
+          ],
+          "retrieval_score": 12.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-053",
+      "action_label": "Exchange traditional resurrection greetings on Easter morning",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-H-027",
+          "target_label": "Byzantine midnight Easter Resurrection procession",
+          "shared_tokens": [
+            "easter",
+            "resurrection"
+          ],
+          "retrieval_score": 12.55,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-094",
+          "target_label": "Easter eggs decorated with Resurrection symbols",
+          "shared_tokens": [
+            "easter",
+            "resurrection"
+          ],
+          "retrieval_score": 12.55,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-079",
+          "target_label": "Paint Easter eggs with Christian resurrection symbols",
+          "shared_tokens": [
+            "easter",
+            "resurrection"
+          ],
+          "retrieval_score": 12.55,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-054",
+      "action_label": "Historical Alleluia sung by laborers during their work in Easter season",
+      "claim_type": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-A-096",
+          "target_label": "Historical Alleluia burial by Toul choirboys",
+          "shared_tokens": [
+            "historical",
+            "alleluia"
+          ],
+          "retrieval_score": 12.7,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-A-097",
+          "target_label": "Historical Paris Alleluia straw effigy custom",
+          "shared_tokens": [
+            "historical",
+            "alleluia"
+          ],
+          "retrieval_score": 12.7,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-022",
+          "target_label": "Polish joyful Alleluia Easter greeting",
+          "shared_tokens": [
+            "alleluia",
+            "easter"
+          ],
+          "retrieval_score": 11.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-H-029",
+          "target_label": "O filii et filiae sung during Easter",
+          "shared_tokens": [
+            "sung",
+            "easter"
+          ],
+          "retrieval_score": 11.1,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-101",
+          "target_label": "Easter octave triple Alleluia used before dinner",
+          "shared_tokens": [
+            "easter",
+            "alleluia"
+          ],
+          "retrieval_score": 11.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-088",
+          "target_label": "Sing Easter Alleluia melodies with the family",
+          "shared_tokens": [
+            "easter",
+            "alleluia"
+          ],
+          "retrieval_score": 11.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-055",
+      "action_label": "Historical Christian mothers teaching Alleluia to children as praise",
+      "claim_type": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-A-096",
+          "target_label": "Historical Alleluia burial by Toul choirboys",
+          "shared_tokens": [
+            "historical",
+            "alleluia"
+          ],
+          "retrieval_score": 12.7,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-A-097",
+          "target_label": "Historical Paris Alleluia straw effigy custom",
+          "shared_tokens": [
+            "historical",
+            "alleluia"
+          ],
+          "retrieval_score": 12.7,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-056",
+      "action_label": "Lay festive Easter table using the household's best dishes and flowers",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-057",
+      "action_label": "Children search for Easter eggs on Easter morning",
+      "claim_type": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-058",
+      "action_label": "Children receive Easter baskets with sweets and eggs",
+      "claim_type": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-059",
+      "action_label": "Add saints' biographies or small Scripture books to children's Easter baskets",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-060",
+      "action_label": "Add a saint's medal or holy image to Easter basket gifts",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-095",
+          "target_label": "Slovak Easter basket blessed on Holy Saturday",
+          "shared_tokens": [
+            "easter",
+            "basket"
+          ],
+          "retrieval_score": 12.96,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-082",
+          "target_label": "Arrange a decorative household Easter-food basket with bread and eggs",
+          "shared_tokens": [
+            "easter",
+            "basket"
+          ],
+          "retrieval_score": 12.96,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-061",
+      "action_label": "Make an Easter cake in the form of the Lamb",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-037",
+          "target_label": "Easter lamb-shaped pastries and table figures",
+          "shared_tokens": [
+            "easter",
+            "lamb"
+          ],
+          "retrieval_score": 11.55,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-C-009",
+          "target_label": "Blessing the Easter lamb",
+          "shared_tokens": [
+            "easter",
+            "lamb"
+          ],
+          "retrieval_score": 11.55,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-084",
+          "target_label": "Trapp Holy Thursday Easter lamb supper",
+          "shared_tokens": [
+            "easter",
+            "lamb"
+          ],
+          "retrieval_score": 11.55,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-097",
+          "target_label": "Polish Easter butter lamb and shared egg",
+          "shared_tokens": [
+            "easter",
+            "lamb"
+          ],
+          "retrieval_score": 11.55,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-098",
+          "target_label": "Roman Easter table and lamb blessed",
+          "shared_tokens": [
+            "easter",
+            "lamb"
+          ],
+          "retrieval_score": 11.55,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-062",
+      "action_label": "Make small Easter cakes decorated as egg nests",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-046",
+          "target_label": "Polish mazurki and South German Easter cakes",
+          "shared_tokens": [
+            "easter",
+            "cakes"
+          ],
+          "retrieval_score": 12.55,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "CHANEY55-EWTN-140",
+          "target_label": "Children make decorated small containers for Epiphany holy water",
+          "shared_tokens": [
+            "decorated",
+            "small"
+          ],
+          "retrieval_score": 12.16,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-063",
+      "action_label": "Older Ascension Day outdoor processions imitating the journey to Olivet",
+      "claim_type": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-103",
+          "target_label": "Report outdoor Corpus Christi processions through villages and fields",
+          "shared_tokens": [
+            "outdoor",
+            "processions"
+          ],
+          "retrieval_score": 15.85,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-064",
+      "action_label": "Italian Pentecost custom of scattering rose petals from church roofs",
+      "claim_type": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "FRPCI18-BB-003",
+          "target_label": "Scatter rose petals during the Blessed Sacrament procession with white-clad girls",
+          "shared_tokens": [
+            "rose",
+            "petals"
+          ],
+          "retrieval_score": 16.72,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "FRPCI18-BB-033",
+          "target_label": "Cast rose petals from baskets only during outdoor procession",
+          "shared_tokens": [
+            "rose",
+            "petals"
+          ],
+          "retrieval_score": 16.72,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-065",
+      "action_label": "French Pentecost custom of trumpet fanfares recalling rushing wind",
+      "claim_type": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-059",
+          "target_label": "Historical Pentecost trumpet blasts during the sequence",
+          "shared_tokens": [
+            "pentecost",
+            "trumpet"
+          ],
+          "retrieval_score": 16.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-066",
+      "action_label": "Take a family springtime walk on Easter Monday",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "EAST-001",
+          "target_label": "An Easter Monday Emmaus walk",
+          "shared_tokens": [
+            "easter",
+            "monday",
+            "walk"
+          ],
+          "retrieval_score": 21.41,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-033",
+          "target_label": "Easter Monday visits to grandparents",
+          "shared_tokens": [
+            "easter",
+            "monday"
+          ],
+          "retrieval_score": 12.55,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-067",
+      "action_label": "Take children to museum or library to view Christian art in Easter week",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-079",
+          "target_label": "Paint Easter eggs with Christian resurrection symbols",
+          "shared_tokens": [
+            "easter",
+            "christian"
+          ],
+          "retrieval_score": 12.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "WFF92-EWTN-068",
+      "action_label": "Pray Regina Coeli in place of mealtime Angelus during Easter season",
+      "claim_type": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-089",
+          "target_label": "Recite the Easter Sequence and Regina Coeli as domestic Easter devotion",
+          "shared_tokens": [
+            "easter",
+            "regina",
+            "coeli"
+          ],
+          "retrieval_score": 23.41,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-001",
+      "action_label": "Reschedule Holy Week household routine for evening parish Triduum services",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-002",
+      "action_label": "Gather after Palm Sunday meal for a home palm devotion",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "DOM-013",
+          "target_label": "Keeping blessed Palm Sunday branches at home",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-002",
+          "target_label": "Historical Palm Sunday donkey-image procession",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-003",
+          "target_label": "Palm Sunday cemetery visits accompanying the procession",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-005",
+          "target_label": "Slavic Palm Sunday willow tapping / Boże Rany",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-005",
+          "target_label": "Gather under the Advent wreath for Sunday evening reflection",
+          "shared_tokens": [
+            "gather",
+            "sunday"
+          ],
+          "retrieval_score": 12.84,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-076",
+          "target_label": "Palm Sunday blessed palms placed in every room",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-079",
+          "target_label": "Spruce and palm bouquets blessed on Palm Sunday",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-052",
+          "target_label": "Collect old Palm Sunday palm fronds from household religious images in silent procession",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-003",
+      "action_label": "Form small crosses from blessed palms for household doorways",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-077",
+          "target_label": "Small palm crosses worn during Holy Week",
+          "shared_tokens": [
+            "small",
+            "crosses"
+          ],
+          "retrieval_score": 14.34,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-004",
+      "action_label": "Weave blessed palms for placing behind family crucifixes",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-005",
+      "action_label": "Read Matthew's account of the Lord's entry into Jerusalem before home procession",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-TRAPP-0789-07",
+          "target_label": "Read the Gospel account of the Last Supper at the family meal",
+          "shared_tokens": [
+            "read",
+            "account"
+          ],
+          "retrieval_score": 16.51,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-006",
+      "action_label": "Mother leads Palm Sunday candlelit procession from room to room",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-002",
+          "target_label": "Historical Palm Sunday donkey-image procession",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "procession"
+          ],
+          "retrieval_score": 16.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-003",
+          "target_label": "Palm Sunday cemetery visits accompanying the procession",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "procession"
+          ],
+          "retrieval_score": 16.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "DOM-013",
+          "target_label": "Keeping blessed Palm Sunday branches at home",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-005",
+          "target_label": "Slavic Palm Sunday willow tapping / Boże Rany",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-076",
+          "target_label": "Palm Sunday blessed palms placed in every room",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "room"
+          ],
+          "retrieval_score": 19.14,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-052",
+          "target_label": "Collect old Palm Sunday palm fronds from household religious images in silent procession",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "procession"
+          ],
+          "retrieval_score": 16.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-079",
+          "target_label": "Spruce and palm bouquets blessed on Palm Sunday",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-059",
+          "target_label": "Decorate individual rooms with newly blessed Palm Sunday fronds",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-007",
+      "action_label": "Family sings All Glory Laud and Honor during Palm Sunday home procession",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-002",
+          "target_label": "Historical Palm Sunday donkey-image procession",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "procession"
+          ],
+          "retrieval_score": 16.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-003",
+          "target_label": "Palm Sunday cemetery visits accompanying the procession",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "procession"
+          ],
+          "retrieval_score": 16.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "DOM-013",
+          "target_label": "Keeping blessed Palm Sunday branches at home",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-005",
+          "target_label": "Slavic Palm Sunday willow tapping / Boże Rany",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-052",
+          "target_label": "Collect old Palm Sunday palm fronds from household religious images in silent procession",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "procession"
+          ],
+          "retrieval_score": 16.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CHANEY55-EWTN-069",
+          "target_label": "Family sings carols during Christ Child procession to manger",
+          "shared_tokens": [
+            "sings",
+            "procession"
+          ],
+          "retrieval_score": 14.63,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-076",
+          "target_label": "Palm Sunday blessed palms placed in every room",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-079",
+          "target_label": "Spruce and palm bouquets blessed on Palm Sunday",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-008",
+      "action_label": "Children wave blessed palms during household procession",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-073",
+          "target_label": "Family Shrove Tuesday procession collecting old palms",
+          "shared_tokens": [
+            "procession",
+            "palms"
+          ],
+          "retrieval_score": 11.63,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-057",
+          "target_label": "Attend blessing and procession of palms with children",
+          "shared_tokens": [
+            "procession",
+            "palms"
+          ],
+          "retrieval_score": 11.63,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-009",
+      "action_label": "Father recites end prayer after the home Palm Sunday procession",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-002",
+          "target_label": "Historical Palm Sunday donkey-image procession",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "procession"
+          ],
+          "retrieval_score": 16.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-003",
+          "target_label": "Palm Sunday cemetery visits accompanying the procession",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "procession"
+          ],
+          "retrieval_score": 16.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "DOM-013",
+          "target_label": "Keeping blessed Palm Sunday branches at home",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-005",
+          "target_label": "Slavic Palm Sunday willow tapping / Boże Rany",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-052",
+          "target_label": "Collect old Palm Sunday palm fronds from household religious images in silent procession",
+          "shared_tokens": [
+            "palm",
+            "sunday",
+            "procession"
+          ],
+          "retrieval_score": 16.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-076",
+          "target_label": "Palm Sunday blessed palms placed in every room",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-079",
+          "target_label": "Spruce and palm bouquets blessed on Palm Sunday",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-059",
+          "target_label": "Decorate individual rooms with newly blessed Palm Sunday fronds",
+          "shared_tokens": [
+            "palm",
+            "sunday"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-010",
+      "action_label": "Keep blessed palm crosses visible in the house through the year",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-077",
+          "target_label": "Small palm crosses worn during Holy Week",
+          "shared_tokens": [
+            "palm",
+            "crosses"
+          ],
+          "retrieval_score": 15.12,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-011",
+      "action_label": "Burn old blessed palm reverently the following Ash Wednesday",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-012",
+      "action_label": "Household cleaning before paschal feast associated with Jewish home traditions",
+      "claim_type": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-013",
+      "action_label": "Conduct extra housecleaning in first three days of Holy Week",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-014",
+      "action_label": "Simplify family meals during Holy Week without depriving necessary food",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-015",
+      "action_label": "Omit usual dessert as a voluntary Holy Week penance",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-016",
+      "action_label": "Set aside additional home prayer periods during first days of Holy Week",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-017",
+      "action_label": "Prepare or repair family's Easter clothing ahead of the feast",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-018",
+      "action_label": "Defer wearing prepared Easter garments until Easter morning",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-A-003",
+          "target_label": "First wearing new garments to Sunday Mass",
+          "shared_tokens": [
+            "wearing",
+            "garments"
+          ],
+          "retrieval_score": 17.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-C-008",
+          "target_label": "White garments during the Easter Octave",
+          "shared_tokens": [
+            "garments",
+            "easter"
+          ],
+          "retrieval_score": 13.55,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-027",
+          "target_label": "First wearing new clothes on Easter",
+          "shared_tokens": [
+            "wearing",
+            "easter"
+          ],
+          "retrieval_score": 12.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-019",
+      "action_label": "Recite selected Psalm 21 passages before or after Holy Week family dinner",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-020",
+      "action_label": "Make an extra effort to practice consideration and reconciliation at home on Holy Thursday",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-021",
+      "action_label": "Father performs a humble household service for children on Holy Thursday",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-022",
+      "action_label": "Father may clean children's shoes as symbolic humble work",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-023",
+      "action_label": "Father may wash dishes or clothes as Holy Thursday service",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-024",
+      "action_label": "Share a special family Holy Thursday supper before parish Mass",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CHANEY55-EWTN-055",
+          "target_label": "Share unleavened Christmas Eve family wafer before supper",
+          "shared_tokens": [
+            "share",
+            "supper"
+          ],
+          "retrieval_score": 14.13,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-084",
+          "target_label": "Trapp Holy Thursday Easter lamb supper",
+          "shared_tokens": [
+            "thursday",
+            "supper"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0789-04",
+          "target_label": "Prepare a festive Holy Thursday family supper in Sunday attire",
+          "shared_tokens": [
+            "thursday",
+            "supper"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-068",
+          "target_label": "Sing Ubi Caritas at the Holy Thursday family supper",
+          "shared_tokens": [
+            "thursday",
+            "supper"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-025",
+      "action_label": "Offer unleavened bread at Holy Thursday meal as symbolic food",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-010",
+          "target_label": "Green Thursday herbs and spinach family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "KEL59-EWTN-047",
+          "target_label": "Serve unleavened bread at a Holy Thursday family meal",
+          "shared_tokens": [
+            "unleavened",
+            "bread",
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 25.9,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-066",
+          "target_label": "Serve unleavened bread and wine as a household symbolic meal",
+          "shared_tokens": [
+            "unleavened",
+            "bread",
+            "meal"
+          ],
+          "retrieval_score": 19.53,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CHANEY55-EWTN-057",
+          "target_label": "Substitute homemade Christmas bread for unleavened supper wafer",
+          "shared_tokens": [
+            "bread",
+            "unleavened"
+          ],
+          "retrieval_score": 13.97,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-041",
+          "target_label": "Bring bread eggs and salt to the church for Epiphany food blessings",
+          "shared_tokens": [
+            "bread",
+            "food"
+          ],
+          "retrieval_score": 13.16,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-026",
+      "action_label": "Include bitter greens or horseradish at symbolic Holy Thursday supper",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-084",
+          "target_label": "Trapp Holy Thursday Easter lamb supper",
+          "shared_tokens": [
+            "thursday",
+            "supper"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0789-04",
+          "target_label": "Prepare a festive Holy Thursday family supper in Sunday attire",
+          "shared_tokens": [
+            "thursday",
+            "supper"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-068",
+          "target_label": "Sing Ubi Caritas at the Holy Thursday family supper",
+          "shared_tokens": [
+            "thursday",
+            "supper"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-027",
+      "action_label": "Use fruit-nut haroseth-style dish in Holy Thursday meal symbolism",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-UNIDX-022",
+          "target_label": "Venezuelan hallaca as Christmas meal dish",
+          "shared_tokens": [
+            "meal",
+            "dish"
+          ],
+          "retrieval_score": 14.43,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-010",
+          "target_label": "Green Thursday herbs and spinach family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-TRAPP-0789-03",
+          "target_label": "Serve a Holy Thursday noon meal of spring-herb soup and spinach with eggs",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-067",
+          "target_label": "Mark Holy Thursday with a more elaborate family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-047",
+          "target_label": "Serve unleavened bread at a Holy Thursday family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-028",
+      "action_label": "Invite neighbors or relatives to share Holy Thursday supper",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-BERGER-0454-02",
+          "target_label": "Invite the poor and disadvantaged to share a Saint Joseph feast",
+          "shared_tokens": [
+            "invite",
+            "share"
+          ],
+          "retrieval_score": 15.99,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CHANEY55-EWTN-108",
+          "target_label": "Invite neighbors on post-Christmas outing ending with carols",
+          "shared_tokens": [
+            "invite",
+            "neighbors"
+          ],
+          "retrieval_score": 15.99,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CHANEY55-EWTN-055",
+          "target_label": "Share unleavened Christmas Eve family wafer before supper",
+          "shared_tokens": [
+            "share",
+            "supper"
+          ],
+          "retrieval_score": 14.13,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-084",
+          "target_label": "Trapp Holy Thursday Easter lamb supper",
+          "shared_tokens": [
+            "thursday",
+            "supper"
+          ],
+          "retrieval_score": 12.38,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-029",
+      "action_label": "Serve roast lamb as symbolic paschal food at Holy Thursday meal",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-158",
+          "target_label": "Saint Joseph pilgrimage followed by lamb meal",
+          "shared_tokens": [
+            "lamb",
+            "meal"
+          ],
+          "retrieval_score": 13.02,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-010",
+          "target_label": "Green Thursday herbs and spinach family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-TRAPP-0789-08",
+          "target_label": "Serve roast paschal lamb at the household supper",
+          "shared_tokens": [
+            "serve",
+            "roast",
+            "paschal",
+            "lamb"
+          ],
+          "retrieval_score": 33.21,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0789-03",
+          "target_label": "Serve a Holy Thursday noon meal of spring-herb soup and spinach with eggs",
+          "shared_tokens": [
+            "serve",
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 18.4,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-047",
+          "target_label": "Serve unleavened bread at a Holy Thursday family meal",
+          "shared_tokens": [
+            "serve",
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 18.4,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-084",
+          "target_label": "Trapp Holy Thursday Easter lamb supper",
+          "shared_tokens": [
+            "thursday",
+            "lamb"
+          ],
+          "retrieval_score": 13.82,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-030",
+      "action_label": "Present a cake shaped as lamb at the Holy Thursday table",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-037",
+          "target_label": "Easter lamb-shaped pastries and table figures",
+          "shared_tokens": [
+            "lamb",
+            "shaped",
+            "table"
+          ],
+          "retrieval_score": 20.56,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-098",
+          "target_label": "Roman Easter table and lamb blessed",
+          "shared_tokens": [
+            "table",
+            "lamb"
+          ],
+          "retrieval_score": 13.91,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-084",
+          "target_label": "Trapp Holy Thursday Easter lamb supper",
+          "shared_tokens": [
+            "thursday",
+            "lamb"
+          ],
+          "retrieval_score": 13.82,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-NEWLAND-0286-03",
+          "target_label": "Bake a crown-shaped Epiphany cake",
+          "shared_tokens": [
+            "shaped",
+            "cake"
+          ],
+          "retrieval_score": 13.78,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-031",
+      "action_label": "Sing Ubi Caritas at close of family Holy Thursday meal",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-010",
+          "target_label": "Green Thursday herbs and spinach family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-068",
+          "target_label": "Sing Ubi Caritas at the Holy Thursday family supper",
+          "shared_tokens": [
+            "sing",
+            "caritas",
+            "thursday"
+          ],
+          "retrieval_score": 23.27,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0789-03",
+          "target_label": "Serve a Holy Thursday noon meal of spring-herb soup and spinach with eggs",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-067",
+          "target_label": "Mark Holy Thursday with a more elaborate family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-047",
+          "target_label": "Serve unleavened bread at a Holy Thursday family meal",
+          "shared_tokens": [
+            "thursday",
+            "meal"
+          ],
+          "retrieval_score": 11.94,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-032",
+      "action_label": "Keep Good Friday family conversation quiet as a penitential practice",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "target_label": "Good Friday Three Hours devotion",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-015",
+          "target_label": "Good Friday voluntary silence and spare food",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-TRAPP-0390-03",
+          "target_label": "Restrict household conversation on Good Friday",
+          "shared_tokens": [
+            "conversation",
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 21.8,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-01",
+          "target_label": "Observe a quiet Good Friday family fast",
+          "shared_tokens": [
+            "quiet",
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 20.8,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-NEWLAND-0273-05",
+          "target_label": "Set aside quiet family craft-and-conversation time for Advent recollection",
+          "shared_tokens": [
+            "quiet",
+            "conversation"
+          ],
+          "retrieval_score": 17.89,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CHANEY55-EWTN-042",
+          "target_label": "Keep a quiet household atmosphere on Christmas Eve",
+          "shared_tokens": [
+            "keep",
+            "quiet"
+          ],
+          "retrieval_score": 15.58,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-033",
+      "action_label": "Avoid secular television and entertainment on Good Friday",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "target_label": "Good Friday Three Hours devotion",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-015",
+          "target_label": "Good Friday voluntary silence and spare food",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-087",
+          "target_label": "Trapp Good Friday silence and simple standing meal",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "target_label": "Trapp Good Friday noon-to-three household devotions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-01",
+          "target_label": "Observe a quiet Good Friday family fast",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-02",
+          "target_label": "Eat a sparse Good Friday soup standing at an uncovered table",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-034",
+      "action_label": "Take household pictures down temporarily for Good Friday",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "target_label": "Good Friday Three Hours devotion",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-015",
+          "target_label": "Good Friday voluntary silence and spare food",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-087",
+          "target_label": "Trapp Good Friday silence and simple standing meal",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "target_label": "Trapp Good Friday noon-to-three household devotions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-01",
+          "target_label": "Observe a quiet Good Friday family fast",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-02",
+          "target_label": "Eat a sparse Good Friday soup standing at an uncovered table",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-035",
+      "action_label": "Read Passion narrative aloud during a simple Good Friday family meal",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-C-006",
+          "target_label": "Seven Sorrows devotion on Passion Week Friday",
+          "shared_tokens": [
+            "passion",
+            "friday"
+          ],
+          "retrieval_score": 13.78,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "target_label": "Good Friday Three Hours devotion",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-087",
+          "target_label": "Trapp Good Friday silence and simple standing meal",
+          "shared_tokens": [
+            "good",
+            "friday",
+            "simple",
+            "meal"
+          ],
+          "retrieval_score": 26.05,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-050",
+          "target_label": "Serve a very plain Good Friday evening meal",
+          "shared_tokens": [
+            "good",
+            "friday",
+            "meal"
+          ],
+          "retrieval_score": 17.92,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-037",
+          "target_label": "Read the Nativity Gospel aloud to the gathered family on Christmas Eve",
+          "shared_tokens": [
+            "read",
+            "aloud"
+          ],
+          "retrieval_score": 15.52,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-054",
+          "target_label": "Read Gospel accounts of the Passion and Resurrection together on Holy Saturday night",
+          "shared_tokens": [
+            "read",
+            "passion"
+          ],
+          "retrieval_score": 13.71,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-036",
+      "action_label": "Use a cross-marked bun as simple Good Friday dessert",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-016",
+          "target_label": "Good Friday hot cross buns",
+          "shared_tokens": [
+            "good",
+            "friday",
+            "cross"
+          ],
+          "retrieval_score": 18.36,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-A-065",
+          "target_label": "Greek Christmas bread marked with a cross",
+          "shared_tokens": [
+            "marked",
+            "cross"
+          ],
+          "retrieval_score": 14.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-087",
+          "target_label": "Trapp Good Friday silence and simple standing meal",
+          "shared_tokens": [
+            "good",
+            "friday",
+            "simple"
+          ],
+          "retrieval_score": 20.48,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "target_label": "Trapp Good Friday noon-to-three household devotions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-01",
+          "target_label": "Observe a quiet Good Friday family fast",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-02",
+          "target_label": "Eat a sparse Good Friday soup standing at an uncovered table",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-037",
+      "action_label": "Keep Good Friday Three Hours prayers from noon to three",
+      "claim_type": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "target_label": "Good Friday Three Hours devotion",
+          "shared_tokens": [
+            "good",
+            "friday",
+            "three",
+            "hours"
+          ],
+          "retrieval_score": 26.5,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-015",
+          "target_label": "Good Friday voluntary silence and spare food",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "target_label": "Trapp Good Friday noon-to-three household devotions",
+          "shared_tokens": [
+            "good",
+            "friday",
+            "noon",
+            "three"
+          ],
+          "retrieval_score": 27.67,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-05",
+          "target_label": "Stop ordinary household activity from noon to three on Good Friday",
+          "shared_tokens": [
+            "noon",
+            "three",
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 27.67,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-069",
+          "target_label": "Keep hours of household silence during Holy Week",
+          "shared_tokens": [
+            "keep",
+            "hours"
+          ],
+          "retrieval_score": 14.41,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-06",
+          "target_label": "Spend the three hours before the cross in reading and meditation",
+          "shared_tokens": [
+            "three",
+            "hours"
+          ],
+          "retrieval_score": 14.15,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-038",
+      "action_label": "Pray at home during parish Good Friday service if unable to attend",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "target_label": "Good Friday Three Hours devotion",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-015",
+          "target_label": "Good Friday voluntary silence and spare food",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-087",
+          "target_label": "Trapp Good Friday silence and simple standing meal",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "target_label": "Trapp Good Friday noon-to-three household devotions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-01",
+          "target_label": "Observe a quiet Good Friday family fast",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-02",
+          "target_label": "Eat a sparse Good Friday soup standing at an uncovered table",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-039",
+      "action_label": "Give a prominent place to uncovered home crucifix on Good Friday",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "target_label": "Good Friday Three Hours devotion",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-015",
+          "target_label": "Good Friday voluntary silence and spare food",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-TRAPP-0390-02",
+          "target_label": "Eat a sparse Good Friday soup standing at an uncovered table",
+          "shared_tokens": [
+            "good",
+            "friday",
+            "uncovered"
+          ],
+          "retrieval_score": 22.8,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-074",
+          "target_label": "Give a child a crucifix or devotional image as a First Communion keepsake",
+          "shared_tokens": [
+            "give",
+            "crucifix"
+          ],
+          "retrieval_score": 16.25,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-087",
+          "target_label": "Trapp Good Friday silence and simple standing meal",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "target_label": "Trapp Good Friday noon-to-three household devotions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-040",
+      "action_label": "Keep Holy Thursday and Good Friday evenings free of nonspiritual appointments",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-011",
+          "target_label": "Holy Sepulchre devotional tableaux on Good Friday",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "target_label": "Good Friday Calvary and entombment processions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "target_label": "Good Friday Three Hours devotion",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-B-015",
+          "target_label": "Good Friday voluntary silence and spare food",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "STOKES55-EWTN-087",
+          "target_label": "Trapp Good Friday silence and simple standing meal",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "target_label": "Trapp Good Friday noon-to-three household devotions",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-01",
+          "target_label": "Observe a quiet Good Friday family fast",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0390-02",
+          "target_label": "Eat a sparse Good Friday soup standing at an uncovered table",
+          "shared_tokens": [
+            "good",
+            "friday"
+          ],
+          "retrieval_score": 12.35,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-041",
+      "action_label": "Maintain quiet waiting and avoid festive visiting on Holy Saturday",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-042",
+      "action_label": "Read Easter Vigil stories aloud during Holy Saturday family meals",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "KEL59-EWTN-037",
+          "target_label": "Read the Nativity Gospel aloud to the gathered family on Christmas Eve",
+          "shared_tokens": [
+            "read",
+            "aloud"
+          ],
+          "retrieval_score": 15.52,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CHANEY55-EWTN-053",
+          "target_label": "Simple Christmas Eve vigil fast and restrained household meals",
+          "shared_tokens": [
+            "vigil",
+            "meals"
+          ],
+          "retrieval_score": 13.13,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-054",
+          "target_label": "Read Gospel accounts of the Passion and Resurrection together on Holy Saturday night",
+          "shared_tokens": [
+            "read",
+            "saturday"
+          ],
+          "retrieval_score": 12.53,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-043",
+      "action_label": "Prepare Holy Week text booklets before attending Easter Vigil",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-055",
+          "target_label": "Study the next day's Lenten Mass text in the evening before attending Mass",
+          "shared_tokens": [
+            "text",
+            "attending"
+          ],
+          "retrieval_score": 17.89,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-044",
+      "action_label": "Complete household cooking and decorations before Easter feast",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-061",
+          "target_label": "Complete Easter housecleaning before the sacred days to avoid interrupting services",
+          "shared_tokens": [
+            "complete",
+            "easter"
+          ],
+          "retrieval_score": 12.96,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-045",
+      "action_label": "Host special Easter feast at home with religious family prayer",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-046",
+      "action_label": "Paint Easter eggs with Christological symbols such as Chi Rho",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-079",
+          "target_label": "Paint Easter eggs with Christian resurrection symbols",
+          "shared_tokens": [
+            "paint",
+            "easter",
+            "eggs"
+          ],
+          "retrieval_score": 19.92,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-086",
+          "target_label": "Paint Easter eggs with crosses and other symbols of Christ's victory",
+          "shared_tokens": [
+            "paint",
+            "easter",
+            "eggs"
+          ],
+          "retrieval_score": 19.92,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-047",
+      "action_label": "Bring a vessel for taking Easter water home from Vigil",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-025",
+          "target_label": "Taking home Easter Vigil blessed fire by lantern",
+          "shared_tokens": [
+            "taking",
+            "easter",
+            "vigil"
+          ],
+          "retrieval_score": 18.92,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-A-088",
+          "target_label": "Taking blessed Epiphany water home",
+          "shared_tokens": [
+            "taking",
+            "water"
+          ],
+          "retrieval_score": 13.47,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "CHANEY55-EWTN-141",
+          "target_label": "Families bring blessed Epiphany water home for day of feast",
+          "shared_tokens": [
+            "bring",
+            "water"
+          ],
+          "retrieval_score": 12.02,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-062",
+          "target_label": "Epiphany vigil water blessed for domestic use",
+          "shared_tokens": [
+            "vigil",
+            "water"
+          ],
+          "retrieval_score": 11.4,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-083",
+          "target_label": "Bring Easter foods for blessing by a priest when that custom is observed",
+          "shared_tokens": [
+            "bring",
+            "easter"
+          ],
+          "retrieval_score": 11.1,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-048",
+      "action_label": "Sprinkle rooms at Easter using blessed Easter water",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "DOM-003",
+          "target_label": "Using holy water at home",
+          "shared_tokens": [
+            "using",
+            "water"
+          ],
+          "retrieval_score": 13.15,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-076",
+          "target_label": "Sprinkle members of the family and domestic surroundings with Easter holy water",
+          "shared_tokens": [
+            "sprinkle",
+            "easter",
+            "water"
+          ],
+          "retrieval_score": 18.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-053",
+          "target_label": "Sprinkle children or household Easter meal with blessed Easter water",
+          "shared_tokens": [
+            "sprinkle",
+            "easter",
+            "water"
+          ],
+          "retrieval_score": 18.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-064",
+          "target_label": "Father sprinkles rooms with Epiphany water",
+          "shared_tokens": [
+            "rooms",
+            "water"
+          ],
+          "retrieval_score": 12.67,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-036",
+          "target_label": "Walk through domestic rooms with holy water during the house-blessing prayers",
+          "shared_tokens": [
+            "rooms",
+            "water"
+          ],
+          "retrieval_score": 12.67,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-049",
+      "action_label": "Sprinkle Easter food at home using Easter water",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [
+        {
+          "target_id": "DOM-003",
+          "target_label": "Using holy water at home",
+          "shared_tokens": [
+            "using",
+            "water"
+          ],
+          "retrieval_score": 13.15,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-076",
+          "target_label": "Sprinkle members of the family and domestic surroundings with Easter holy water",
+          "shared_tokens": [
+            "sprinkle",
+            "easter",
+            "water"
+          ],
+          "retrieval_score": 18.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-053",
+          "target_label": "Sprinkle children or household Easter meal with blessed Easter water",
+          "shared_tokens": [
+            "sprinkle",
+            "easter",
+            "water"
+          ],
+          "retrieval_score": 18.57,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-082",
+          "target_label": "Arrange a decorative household Easter-food basket with bread and eggs",
+          "shared_tokens": [
+            "easter",
+            "food"
+          ],
+          "retrieval_score": 11.74,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "MUE55-EWTN-085",
+          "target_label": "Recite traditional Easter food blessing prayers in a household response format",
+          "shared_tokens": [
+            "easter",
+            "food"
+          ],
+          "retrieval_score": 11.74,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-050",
+      "action_label": "Father reads selected baptismal-vigil prayers in household reflection",
+      "claim_type": "FAMILY_PRAYER_FORMULA_AUTHORITY_UNVERIFIED",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-051",
+      "action_label": "Place Easter candle at center of family festive table",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "KEL59-EWTN-020",
+          "target_label": "Place a four-candle evergreen Advent wreath at the family dining table",
+          "shared_tokens": [
+            "place",
+            "candle",
+            "table"
+          ],
+          "retrieval_score": 17.7,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CHANEY55-EWTN-054",
+          "target_label": "Place straw on Christmas Eve dining table under white linen",
+          "shared_tokens": [
+            "place",
+            "table"
+          ],
+          "retrieval_score": 13.01,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CHANEY55-EWTN-152",
+          "target_label": "Epiphany place cards use Mass texts and table collect",
+          "shared_tokens": [
+            "place",
+            "table"
+          ],
+          "retrieval_score": 13.01,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-029",
+          "target_label": "Place a large Christ-symbolizing Advent candle before a Marian-and-Child picture",
+          "shared_tokens": [
+            "place",
+            "candle"
+          ],
+          "retrieval_score": 11.24,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-052",
+      "action_label": "Bring Easter foods to church for priestly blessing where customary",
+      "claim_type": "FAMILY_PRAYER_FORMULA_AUTHORITY_UNVERIFIED",
+      "owner_hints": [
+        {
+          "target_id": "CAT-WEISER-B-018",
+          "target_label": "Holy Saturday priestly blessing of foods at home",
+          "shared_tokens": [
+            "priestly",
+            "foods"
+          ],
+          "retrieval_score": 15.77,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-C-010",
+          "target_label": "Historical priestly blessing of Easter eggs",
+          "shared_tokens": [
+            "priestly",
+            "easter"
+          ],
+          "retrieval_score": 12.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CAT-WEISER-C-011",
+          "target_label": "Historical priestly blessing of Easter ham",
+          "shared_tokens": [
+            "priestly",
+            "easter"
+          ],
+          "retrieval_score": 12.23,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "BLSS-004",
+          "target_label": "Holy Saturday — blessing of Easter foods",
+          "shared_tokens": [
+            "easter",
+            "foods"
+          ],
+          "retrieval_score": 11.74,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-083",
+          "target_label": "Bring Easter foods for blessing by a priest when that custom is observed",
+          "shared_tokens": [
+            "bring",
+            "easter",
+            "foods"
+          ],
+          "retrieval_score": 18.74,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-062",
+          "target_label": "Bring motorcars for a Saint Christopher feast-day blessing in places where observed",
+          "shared_tokens": [
+            "bring",
+            "where"
+          ],
+          "retrieval_score": 15.44,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "STOKES55-EWTN-096",
+          "target_label": "Blessed Easter foods eaten across Easter days",
+          "shared_tokens": [
+            "easter",
+            "foods"
+          ],
+          "retrieval_score": 11.74,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-TRAPP-0391-01",
+          "target_label": "Serve blessed Easter foods at the festive family breakfast",
+          "shared_tokens": [
+            "easter",
+            "foods"
+          ],
+          "retrieval_score": 11.74,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-053",
+      "action_label": "Father says home Easter meal blessing when no church blessing available",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-NEWLAND-1234-02",
+          "target_label": "Invite a priest to lead prayers or bless crops when available",
+          "shared_tokens": [
+            "when",
+            "available"
+          ],
+          "retrieval_score": 17.2,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-054",
+      "action_label": "Visit lonely or housebound relatives during Easter feast day",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-055",
+      "action_label": "Keep a voluntary Lenten self-denial private rather than announce it",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "MUE55-EWTN-054",
+          "target_label": "Keep children's self-denial offerings discreet rather than publicly rewarded",
+          "shared_tokens": [
+            "keep",
+            "self",
+            "denial",
+            "rather",
+            "than"
+          ],
+          "retrieval_score": 39.31,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-NEWLAND-0273-01",
+          "target_label": "Present voluntary Advent self-denial as a gift to the Christ Child",
+          "shared_tokens": [
+            "voluntary",
+            "self",
+            "denial"
+          ],
+          "retrieval_score": 23.73,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "CCEX26-NEWLAND-0911-02",
+          "target_label": "Use a purple-bean counter for children's Lenten self-denial",
+          "shared_tokens": [
+            "lenten",
+            "self",
+            "denial"
+          ],
+          "retrieval_score": 21.29,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-043",
+          "target_label": "Donate money saved through family Lenten self-denial to the poor",
+          "shared_tokens": [
+            "lenten",
+            "self",
+            "denial"
+          ],
+          "retrieval_score": 21.29,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-056",
+      "action_label": "Give up a favorite broadcast without complaint as children's Lenten penance",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [
+        {
+          "target_id": "CCEX26-NEWLAND-0273-03",
+          "target_label": "Offer household chores done without complaint as Advent sacrifices",
+          "shared_tokens": [
+            "without",
+            "complaint"
+          ],
+          "retrieval_score": 19.89,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        },
+        {
+          "target_id": "KEL59-EWTN-042",
+          "target_label": "Replace favorite television with Lenten spiritual reading",
+          "shared_tokens": [
+            "favorite",
+            "lenten"
+          ],
+          "retrieval_score": 15.45,
+          "status": "LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS"
+        }
+      ],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    },
+    {
+      "source_id": "HYN77-CC-057",
+      "action_label": "Parent forgoes personal leisure to help children during Lent",
+      "claim_type": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "owner_hints": [],
+      "prior_source_hints": [],
+      "manual_identity_decision": "UNREVIEWED",
+      "source_independence": "UNREVIEWED",
+      "canonical_owner": null,
+      "app_publication": false
+    }
+  ]
+}

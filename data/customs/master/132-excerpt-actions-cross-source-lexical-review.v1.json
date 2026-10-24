@@ -1,0 +1,2677 @@
+{
+  "schema": "AO_CUSTOMS_132_CATHOLICCULTURE_SOURCE_ACTION_LEXICAL_REVIEW_V1",
+  "date": "2026-10-23",
+  "method": "Deterministic weighted-token Dice on short descriptive labels after removing generic occasion/household terms; minimum 2 significant shared tokens and score>=0.35; top three per source. Only a search worklist. NOT contextual semantic validation, NOT historical source verification, NOT an identity-merging algorithm.",
+  "status": "RESEARCH_ONLY_ALL_CANDIDATES_UNCERTIFIED",
+  "summary": {
+    "observations_routed": 132,
+    "with_lexical_candidate": 61,
+    "without_lexical_candidate": 71,
+    "lexical_suggestion_links": 105,
+    "suggestions_by_layer": {
+      "STOKES_COMPILATION": 43,
+      "PROVISIONAL_GROUP": 42,
+      "EXISTING_MASTER": 13,
+      "MCLOUGHLIN_TEXT": 7
+    },
+    "manual_identity_reviews_completed": 0,
+    "source_independence_certified": 0,
+    "automatic_merges": 0,
+    "verified_unique_customs": 0,
+    "app_publications": 0
+  },
+  "high_priority_possible_text_reuse": [
+    {
+      "source_id": "CCEX26-TRAPP-0789-01",
+      "candidate": "STOKES55-EWTN-081",
+      "basis": "Both specifically describe the Trapp Holy Week hand-clapper; investigate derivative quotation, do not count independent confirmations."
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0789-03",
+      "candidate": "STOKES55-EWTN-082",
+      "basis": "Both specifically describe Trapp Holy Thursday spring herb soup; investigate shared provenance."
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0390-02",
+      "candidate": "STOKES55-EWTN-087",
+      "basis": "Both specify Trapp Good Friday standing/simple meal; examine whether source describes precisely same household action."
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0390-05",
+      "candidate": "STOKES55-EWTN-088",
+      "basis": "Both mention Trapp noon-to-three Good Friday devotions; strong derivative relationship candidate, not independently corroborated."
+    }
+  ],
+  "known_false_positive_examples": [
+    {
+      "source_id": "CCEX26-TRAPP-0381-06",
+      "bad_candidate": "CAT-WEISER-B-032",
+      "reason": "Christmas announcement bell and Easter bell ringing are different actions; token match alone misleads."
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0381-10",
+      "bad_candidate": "STOKES55-EWTN-136",
+      "reason": "Christmas gift distribution and baptism gifts differ by occasion and ritual meaning."
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0390-03",
+      "bad_candidate": "CAT-WEISER-B-016",
+      "reason": "Good Friday silence is not equivalent to hot-cross-bun practice."
+    }
+  ],
+  "records": [
+    {
+      "source_id": "CCEX26-TRAPP-0381-01",
+      "source_label": "Make Christmas Eve an occasion for sacramental confession",
+      "occasion": "Christmas Eve",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0381-02",
+      "source_label": "Keep the Christmas gift room closed until its ceremonial opening",
+      "occasion": "Christmas Eve",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0381-03",
+      "source_label": "Set the Christmas crib alongside the Christmas tree",
+      "occasion": "Christmas Eve",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-032",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.459,
+          "shared_terms": [
+            "set",
+            "tree"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0381-04",
+      "source_label": "Tidy the household and dress for a feast before the vigil",
+      "occasion": "Christmas Eve",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0381-05",
+      "source_label": "Gather for a household rosary and Advent hymns before the Christmas-room opening",
+      "occasion": "Christmas Eve",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0381-06",
+      "source_label": "Ring a small bell to announce the Christ Child's arrival",
+      "occasion": "Christmas Eve",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-B-032",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.433,
+          "shared_terms": [
+            "ring",
+            "bell"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0381-07",
+      "source_label": "Have the youngest child proclaim the Nativity narrative from Luke",
+      "occasion": "Christmas Eve",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0381-08",
+      "source_label": "Sing Silent Night in German and English before opening gifts",
+      "occasion": "Christmas Eve",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-036",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.514,
+          "shared_terms": [
+            "sing",
+            "silent",
+            "night"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-H-002",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.377,
+          "shared_terms": [
+            "silent",
+            "night"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0381-09",
+      "source_label": "Exchange the greeting of a blessed Christmas before the gifts",
+      "occasion": "Christmas Eve",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0381-10",
+      "source_label": "Distribute Christmas gifts after a family religious observance",
+      "occasion": "Christmas Eve",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-136",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.395,
+          "shared_terms": [
+            "gift",
+            "religiou"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0381-11",
+      "source_label": "Serve carp with potato salad for the Christmas Eve supper",
+      "occasion": "Christmas Eve",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0381-12",
+      "source_label": "Rest before attending Midnight Mass",
+      "occasion": "Christmas Eve",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-029",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.496,
+          "shared_terms": [
+            "midnight",
+            "mass"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-034",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.443,
+          "shared_terms": [
+            "midnight",
+            "mass"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-A-037",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.438,
+          "shared_terms": [
+            "midnight",
+            "mass"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0789-01",
+      "source_label": "Replace household meal bell with wooden clapper during the Triduum",
+      "occasion": "Holy Thursday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-081",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.469,
+          "shared_terms": [
+            "replace",
+            "bell",
+            "clapper"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0789-02",
+      "source_label": "Assign the youngest family member to sound the clapper",
+      "occasion": "Holy Thursday",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0789-03",
+      "source_label": "Serve a Holy Thursday noon meal of spring-herb soup and spinach with eggs",
+      "occasion": "Holy Thursday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-082",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.565,
+          "shared_terms": [
+            "thursday",
+            "spring",
+            "herb",
+            "soup"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-B-010",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.55,
+          "shared_terms": [
+            "thursday",
+            "meal",
+            "herb",
+            "spinach"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0789-04",
+      "source_label": "Prepare a festive Holy Thursday family supper in Sunday attire",
+      "occasion": "Holy Thursday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-084",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.351,
+          "shared_terms": [
+            "thursday",
+            "supper"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0789-05",
+      "source_label": "Distribute hot-cross buns after the father signs the first bun with a cross",
+      "occasion": "Holy Thursday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-B-016",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.47,
+          "shared_terms": [
+            "hot",
+            "cros",
+            "buns"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0789-06",
+      "source_label": "Share household bread and wine in a father-led remembrance meal",
+      "occasion": "Holy Thursday",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0789-07",
+      "source_label": "Read the Gospel account of the Last Supper at the family meal",
+      "occasion": "Holy Thursday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-113",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.351,
+          "shared_terms": [
+            "gospel",
+            "supper"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0789-08",
+      "source_label": "Serve roast paschal lamb at the household supper",
+      "occasion": "Holy Thursday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-084",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.391,
+          "shared_terms": [
+            "lamb",
+            "supper"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0789-09",
+      "source_label": "Take turns praying before the reserved Sacrament at the altar of repose",
+      "occasion": "Holy Thursday",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0390-01",
+      "source_label": "Observe a quiet Good Friday family fast",
+      "occasion": "Good Friday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.37,
+          "shared_terms": [
+            "good",
+            "friday"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-B-016",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.357,
+          "shared_terms": [
+            "good",
+            "friday"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.356,
+          "shared_terms": [
+            "good",
+            "friday"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0390-02",
+      "source_label": "Eat a sparse Good Friday soup standing at an uncovered table",
+      "occasion": "Good Friday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-087",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.374,
+          "shared_terms": [
+            "good",
+            "friday",
+            "stand"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0390-03",
+      "source_label": "Restrict household conversation on Good Friday",
+      "occasion": "Good Friday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.408,
+          "shared_terms": [
+            "good",
+            "friday"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-B-016",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.393,
+          "shared_terms": [
+            "good",
+            "friday"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-B-012",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.391,
+          "shared_terms": [
+            "good",
+            "friday"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0390-04",
+      "source_label": "Extinguish a household vigil light before the Marian image",
+      "occasion": "Good Friday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-B-024",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.492,
+          "shared_terms": [
+            "extinguish",
+            "vigil"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-B-106",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.354,
+          "shared_terms": [
+            "marian",
+            "image"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0390-05",
+      "source_label": "Stop ordinary household activity from noon to three on Good Friday",
+      "occasion": "Good Friday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-088",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.582,
+          "shared_terms": [
+            "noon",
+            "three",
+            "good",
+            "friday"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.456,
+          "shared_terms": [
+            "three",
+            "good",
+            "friday"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0390-06",
+      "source_label": "Spend the three hours before the cross in reading and meditation",
+      "occasion": "Good Friday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.363,
+          "shared_terms": [
+            "three",
+            "hour"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0390-07",
+      "source_label": "Interleave the three hours of silence with Passion hymns",
+      "occasion": "Good Friday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-B-013",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.357,
+          "shared_terms": [
+            "three",
+            "hour"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-H-020",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.35,
+          "shared_terms": [
+            "passion",
+            "hymn"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0391-01",
+      "source_label": "Serve blessed Easter foods at the festive family breakfast",
+      "occasion": "Easter",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "BLSS-004",
+          "layer": "EXISTING_MASTER",
+          "score": 0.524,
+          "shared_terms": [
+            "bless",
+            "easter",
+            "food"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-B-042",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.466,
+          "shared_terms": [
+            "bless",
+            "easter",
+            "breakfast"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-096",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.401,
+          "shared_terms": [
+            "bless",
+            "easter",
+            "food"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0391-02",
+      "source_label": "Decorate the Easter breakfast with eggs, spring branches and ribbons",
+      "occasion": "Easter",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0391-03",
+      "source_label": "Keep artistically painted Easter eggs as mementos through the year",
+      "occasion": "Easter",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0391-04",
+      "source_label": "Play Eierpecken egg-tapping at the Easter breakfast table",
+      "occasion": "Easter",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-B-042",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.477,
+          "shared_terms": [
+            "egg",
+            "easter",
+            "breakfast"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0393-01",
+      "source_label": "Begin nine days of household Pentecost preparation at the Ascension",
+      "occasion": "Ascension-to-Pentecost",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0393-02",
+      "source_label": "Discuss one gift of the Holy Ghost each evening of the preparation",
+      "occasion": "Ascension-to-Pentecost",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0393-03",
+      "source_label": "Reserve the eighth day for a reflection on the fruits of the Holy Ghost",
+      "occasion": "Ascension-to-Pentecost",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0393-04",
+      "source_label": "Meditate together on Veni Sancte Spiritus and Veni Creator Spiritus on the ninth day",
+      "occasion": "Ascension-to-Pentecost",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-105",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.362,
+          "shared_terms": [
+            "veni",
+            "creator"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0393-05",
+      "source_label": "Attend Pentecost High Mass after the home preparation",
+      "occasion": "Ascension-to-Pentecost",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0075-01",
+      "source_label": "Plant Hungarian Christmas wheat on Saint Lucy's feast",
+      "occasion": "Advent",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "MCL54-EWTN-016",
+          "layer": "MCLOUGHLIN_TEXT",
+          "score": 0.564,
+          "shared_terms": [
+            "plant",
+            "hungarian",
+            "wheat"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0075-02",
+      "source_label": "Tend the sprouting wheat as an Advent devotional symbol",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0075-03",
+      "source_label": "Set the sprouted wheat at the Christmas crib until Epiphany",
+      "occasion": "Advent",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "MCL54-EWTN-017",
+          "layer": "MCLOUGHLIN_TEXT",
+          "score": 0.478,
+          "shared_terms": [
+            "wheat",
+            "crib",
+            "until",
+            "epiphany"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-1109-01",
+      "source_label": "Choose the Sacred Heart feast as a household family day",
+      "occasion": "Sacred Heart",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "DOM-006",
+          "layer": "EXISTING_MASTER",
+          "score": 0.613,
+          "shared_terms": [
+            "sacr",
+            "heart"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-A-011",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.557,
+          "shared_terms": [
+            "sacr",
+            "heart"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "DOM-007",
+          "layer": "EXISTING_MASTER",
+          "score": 0.531,
+          "shared_terms": [
+            "sacr",
+            "heart"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-1109-02",
+      "source_label": "Attend a festive Mass and breakfast for the chosen household feast",
+      "occasion": "Sacred Heart",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-1109-03",
+      "source_label": "Convene an annual family conference on the Sacred Heart feast",
+      "occasion": "Sacred Heart",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "DOM-006",
+          "layer": "EXISTING_MASTER",
+          "score": 0.442,
+          "shared_terms": [
+            "sacr",
+            "heart"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-A-011",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.412,
+          "shared_terms": [
+            "sacr",
+            "heart"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "DOM-007",
+          "layer": "EXISTING_MASTER",
+          "score": 0.398,
+          "shared_terms": [
+            "sacr",
+            "heart"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-1109-04",
+      "source_label": "Discuss family plans and personal commitments at the annual family gathering",
+      "occasion": "Sacred Heart",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-1109-05",
+      "source_label": "Report alternatives of Holy Family or Saint Joseph as a family feast day",
+      "occasion": "Sacred Heart",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0411-01",
+      "source_label": "Prepare for Confirmation by studying the gifts and fruits of the Holy Ghost",
+      "occasion": "Confirmation",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0411-02",
+      "source_label": "Mark Confirmation with a responsibility-symbolizing gift such as a desk or watch",
+      "occasion": "Confirmation",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-138",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.501,
+          "shared_terms": [
+            "mark",
+            "confirmation",
+            "responsibility"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0411-03",
+      "source_label": "Commemorate anniversaries of children's sacraments with family feasting",
+      "occasion": "Confirmation",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0398-01",
+      "source_label": "Make a Marian feast pilgrimage to Maria Plain near Salzburg",
+      "occasion": "Marian feasts",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0398-02",
+      "source_label": "Pray repeated rosaries while walking to a pilgrimage shrine",
+      "occasion": "Marian feasts",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-UNIDX-009",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.378,
+          "shared_terms": [
+            "pray",
+            "rosary",
+            "while"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-110",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.376,
+          "shared_terms": [
+            "pray",
+            "rosary"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-B-028",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.368,
+          "shared_terms": [
+            "walk",
+            "pilgrimage"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0398-03",
+      "source_label": "Light candles on arrival at the pilgrimage sanctuary",
+      "occasion": "Marian feasts",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-A-023",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.42,
+          "shared_terms": [
+            "light",
+            "candle"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-C-001",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.369,
+          "shared_terms": [
+            "light",
+            "candle"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-1165-01",
+      "source_label": "Explain Holy Orders to children on an Ember Saturday",
+      "occasion": "Ember Days",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-1165-02",
+      "source_label": "Encourage household prayer for priests and attendance at ordinations",
+      "occasion": "Ember Days",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-TRAPP-0316-01",
+      "source_label": "Wake the family with a traditional Austrian Christmas morning carol",
+      "occasion": "Christmas",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-UNIDX-014",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.408,
+          "shared_terms": [
+            "austrian",
+            "carol"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0463-01",
+      "source_label": "Collect bouquets of fragrant herbs for the Assumption",
+      "occasion": "Assumption",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-120",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.518,
+          "shared_terms": [
+            "bouquet",
+            "herb",
+            "assumption"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "BLSS-002",
+          "layer": "EXISTING_MASTER",
+          "score": 0.381,
+          "shared_terms": [
+            "herb",
+            "assumption"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0463-02",
+      "source_label": "Decorate the chapel with herbs and flowers on the Assumption",
+      "occasion": "Assumption",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "BLSS-002",
+          "layer": "EXISTING_MASTER",
+          "score": 0.579,
+          "shared_terms": [
+            "herb",
+            "flower",
+            "assumption"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-120",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.484,
+          "shared_terms": [
+            "herb",
+            "flower",
+            "assumption"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0463-03",
+      "source_label": "Bring herbs and first fruits to an Assumption blessing",
+      "occasion": "Assumption",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "BLSS-002",
+          "layer": "EXISTING_MASTER",
+          "score": 0.688,
+          "shared_terms": [
+            "herb",
+            "fruit",
+            "assumption",
+            "bless"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-H-037",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.461,
+          "shared_terms": [
+            "first",
+            "assumption",
+            "bless"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-121",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.415,
+          "shared_terms": [
+            "herb",
+            "assumption",
+            "bless"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0463-04",
+      "source_label": "Wear herb boutonnieres after the feast blessing",
+      "occasion": "Assumption",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "BLSS-002",
+          "layer": "EXISTING_MASTER",
+          "score": 0.365,
+          "shared_terms": [
+            "herb",
+            "bless"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-GAP-018",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.355,
+          "shared_terms": [
+            "herb",
+            "bless"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0463-05",
+      "source_label": "Bring sheaves of wheat into an Assumption harvest procession",
+      "occasion": "Assumption",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-B-091",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.428,
+          "shared_terms": [
+            "assumption",
+            "harvest",
+            "procession"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0463-06",
+      "source_label": "Gather household garden fruits and herbs on the vigil of the Assumption",
+      "occasion": "Assumption",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "BLSS-002",
+          "layer": "EXISTING_MASTER",
+          "score": 0.549,
+          "shared_terms": [
+            "fruit",
+            "herb",
+            "assumption"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-120",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.464,
+          "shared_terms": [
+            "gather",
+            "herb",
+            "assumption"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-GAP-018",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.367,
+          "shared_terms": [
+            "gather",
+            "herb"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0463-07",
+      "source_label": "Prepare a fruit-and-herb drink for the Assumption family table",
+      "occasion": "Assumption",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "BLSS-002",
+          "layer": "EXISTING_MASTER",
+          "score": 0.535,
+          "shared_terms": [
+            "fruit",
+            "herb",
+            "assumption"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0463-08",
+      "source_label": "Serve an herb-themed dessert at an Assumption meal",
+      "occasion": "Assumption",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-1103-01",
+      "source_label": "Decorate Yorkshire fishing boats for Saint Peter's patronal day",
+      "occasion": "Saints Peter and Paul",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-1103-02",
+      "source_label": "Seek a priestly blessing for new boats at the Saint Peter feast",
+      "occasion": "Saints Peter and Paul",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-1103-03",
+      "source_label": "Hold a fishermen's communal fork supper after waterfront ceremonies",
+      "occasion": "Saints Peter and Paul",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-1103-04",
+      "source_label": "Serve fish salad for a household or communal Saint Peter feast",
+      "occasion": "Saints Peter and Paul",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-1151-01",
+      "source_label": "Observe a fast on the Exaltation of the Holy Cross as a reported historic custom",
+      "occasion": "Exaltation of the Cross",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-UNIDX-005",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.379,
+          "shared_terms": [
+            "fast",
+            "historic"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-1151-02",
+      "source_label": "Hold autumn trade fairs after Holy Cross Day",
+      "occasion": "Exaltation of the Cross",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-1151-03",
+      "source_label": "Associate named fairs with the patronage of a saint such as Saint Luke",
+      "occasion": "Exaltation of the Cross",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0454-01",
+      "source_label": "Set a substantial Saint Joseph buffet for invited guests in Sicily",
+      "occasion": "Saint Joseph",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0454-02",
+      "source_label": "Invite the poor and disadvantaged to share a Saint Joseph feast",
+      "occasion": "Saint Joseph",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "SJOS-001",
+          "layer": "EXISTING_MASTER",
+          "score": 0.405,
+          "shared_terms": [
+            "poor",
+            "joseph"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0454-03",
+      "source_label": "Arrange a cooperative village Saint Joseph feast in a public square",
+      "occasion": "Saint Joseph",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0454-04",
+      "source_label": "Begin a Saint Joseph meal with Holy Family dramatic roles",
+      "occasion": "Saint Joseph",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-B-158",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.35,
+          "shared_terms": [
+            "joseph",
+            "meal"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0454-05",
+      "source_label": "Prepare traditional sfinge cream puffs for the Saint Joseph celebration",
+      "occasion": "Saint Joseph",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-BERGER-0454-06",
+      "source_label": "Serve a vegetarian pasta-and-fennel dish at the Saint Joseph feast",
+      "occasion": "Saint Joseph",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0272-01",
+      "source_label": "Make an evergreen Advent wreath as a household project",
+      "occasion": "Advent",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-001",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.6,
+          "shared_terms": [
+            "evergreen",
+            "wreath"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "MCL54-EWTN-001",
+          "layer": "MCLOUGHLIN_TEXT",
+          "score": 0.401,
+          "shared_terms": [
+            "evergreen",
+            "wreath"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0272-02",
+      "source_label": "Build a wreath from fresh greens in wet sand or a water pan",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0272-03",
+      "source_label": "Set out four Advent candles in a circle with penitential ribbon",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0272-04",
+      "source_label": "Assign family members to light successive Advent candles",
+      "occasion": "Advent",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-C-001",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.609,
+          "shared_terms": [
+            "member",
+            "light",
+            "candle"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "MCL54-EWTN-006",
+          "layer": "MCLOUGHLIN_TEXT",
+          "score": 0.562,
+          "shared_terms": [
+            "light",
+            "successive",
+            "candle"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-A-023",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.418,
+          "shared_terms": [
+            "light",
+            "candle"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0272-05",
+      "source_label": "Recite Advent Sunday collects at the domestic wreath",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0272-06",
+      "source_label": "Let children explain the Advent wreath to houseguests",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0433-01",
+      "source_label": "Make a home Advent calendar with opening picture-and-Scripture doors",
+      "occasion": "Advent",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-A-025",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.517,
+          "shared_terms": [
+            "calendar",
+            "picture"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0433-02",
+      "source_label": "Read the Advent calendar Scripture at evening prayers",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0433-03",
+      "source_label": "Mark daily Advent mortifications on a homemade calendar",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0433-04",
+      "source_label": "Make a paper Christmas-tree Advent calendar with one decoration per day",
+      "occasion": "Advent",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-H-004",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.356,
+          "shared_terms": [
+            "tree",
+            "decoration"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0273-01",
+      "source_label": "Present voluntary Advent self-denial as a gift to the Christ Child",
+      "occasion": "Advent",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-A-059",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.446,
+          "shared_terms": [
+            "present",
+            "gift"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-010",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.41,
+          "shared_terms": [
+            "self",
+            "denial"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0273-02",
+      "source_label": "Give up household desserts or treats on selected Advent days",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0273-03",
+      "source_label": "Offer household chores done without complaint as Advent sacrifices",
+      "occasion": "Advent",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-042",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.425,
+          "shared_terms": [
+            "offer",
+            "sacrifice"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0273-04",
+      "source_label": "Count daily acts of Advent self-denial with beans in a gift box",
+      "occasion": "Advent",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-010",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.466,
+          "shared_terms": [
+            "acts",
+            "self",
+            "denial"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0273-05",
+      "source_label": "Set aside quiet family craft-and-conversation time for Advent recollection",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0273-06",
+      "source_label": "Make a Christ candle as a family Advent meditation project",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0300-01",
+      "source_label": "Renew baptismal promises in the home during Easter night",
+      "occasion": "Easter Vigil",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-135",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.64,
+          "shared_terms": [
+            "renew",
+            "baptismal",
+            "promise"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-155",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.429,
+          "shared_terms": [
+            "renew",
+            "promise"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0300-02",
+      "source_label": "Hold blessed candles during a home renewal of baptismal promises",
+      "occasion": "Easter Vigil",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-092",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.434,
+          "shared_terms": [
+            "renewal",
+            "baptismal"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-135",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.382,
+          "shared_terms": [
+            "baptismal",
+            "promise"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0300-03",
+      "source_label": "Use holy water for the family after renewing baptismal promises",
+      "occasion": "Easter Vigil",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-135",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.618,
+          "shared_terms": [
+            "renew",
+            "baptismal",
+            "promise"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-155",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.415,
+          "shared_terms": [
+            "renew",
+            "promise"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-062",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.369,
+          "shared_terms": [
+            "use",
+            "water"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0300-04",
+      "source_label": "Repeat domestic baptismal-promise renewal on a child's baptism anniversary",
+      "occasion": "Easter Vigil",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-135",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.649,
+          "shared_terms": [
+            "baptismal",
+            "promise",
+            "baptism",
+            "anniversary"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-092",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.367,
+          "shared_terms": [
+            "baptismal",
+            "renewal"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1215-01",
+      "source_label": "Create Jesse-tree ornaments representing biblical salvation history",
+      "occasion": "Advent",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "MCL54-EWTN-044",
+          "layer": "MCLOUGHLIN_TEXT",
+          "score": 0.376,
+          "shared_terms": [
+            "tree",
+            "ornament",
+            "biblical"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1215-02",
+      "source_label": "Add individual patron-saint symbols made by children to the Jesse tree",
+      "occasion": "Advent",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "MCL54-EWTN-046",
+          "layer": "MCLOUGHLIN_TEXT",
+          "score": 0.364,
+          "shared_terms": [
+            "symbol",
+            "jesse",
+            "tree"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1215-03",
+      "source_label": "Search Scripture together for ornament themes and biblical figures",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1215-04",
+      "source_label": "Conduct a household tree blessing described in the source, with formula authority unverified",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1215-05",
+      "source_label": "Rehearse Advent songs and the O Antiphons during Jesse-tree preparation",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0274-01",
+      "source_label": "Make a decorated Christ candle for Christmas Eve",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0274-02",
+      "source_label": "Cover a German-style Christ candle with a Marian blue mantle",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0274-03",
+      "source_label": "Design candle imagery tracing Adam and Eve to the Nativity",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0274-04",
+      "source_label": "Read Genesis and other biblical passages while preparing the Christ candle",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0274-05",
+      "source_label": "Light the Christ candle on Christmas Eve at midnight",
+      "occasion": "Advent",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-A-023",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.528,
+          "shared_terms": [
+            "light",
+            "candle"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "MCL54-EWTN-059",
+          "layer": "MCLOUGHLIN_TEXT",
+          "score": 0.462,
+          "shared_terms": [
+            "light",
+            "candle",
+            "eve"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-C-001",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.45,
+          "shared_terms": [
+            "light",
+            "candle"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1065-01",
+      "source_label": "Prepare a home Paschal candle during Lent",
+      "occasion": "Holy Saturday",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1065-02",
+      "source_label": "Mark the candle with cross, Alpha, Omega and year",
+      "occasion": "Holy Saturday",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "CAT-WEISER-A-065",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.383,
+          "shared_terms": [
+            "mark",
+            "cros"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1065-03",
+      "source_label": "Decorate the candle with pelican, phoenix, lamb, grapes and wheat symbols",
+      "occasion": "Holy Saturday",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1065-04",
+      "source_label": "Insert five cloves into a home Paschal candle as a devotional image",
+      "occasion": "Holy Saturday",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1065-05",
+      "source_label": "Have the first child awake light the candle on Easter morning",
+      "occasion": "Holy Saturday",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0911-01",
+      "source_label": "Construct a twelve-candle family Stations candelabrum",
+      "occasion": "Lent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0911-02",
+      "source_label": "Use a purple-bean counter for children's Lenten self-denial",
+      "occasion": "Lent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0911-03",
+      "source_label": "Veil household sacred pictures with purple cloth for Passiontide",
+      "occasion": "Lent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0911-04",
+      "source_label": "Extinguish one candle after each family Stations meditation",
+      "occasion": "Lent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0911-05",
+      "source_label": "Put out the last light at the twelfth Station to represent Christ's death",
+      "occasion": "Lent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0277-01",
+      "source_label": "Wrap a homemade Christmas surprise ball around a small Christ Child or devotional medal",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0277-02",
+      "source_label": "Conceal saint-symbolic trinkets in successive layers of the surprise ball",
+      "occasion": "Advent",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1214-01",
+      "source_label": "Celebrate Saint Barbara at dinner with a feast-day greeting",
+      "occasion": "Saint Barbara",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1214-02",
+      "source_label": "Tell Saint Barbara's martyrdom narrative to children",
+      "occasion": "Saint Barbara",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1214-03",
+      "source_label": "Pray the collect of Saint Barbara at night prayers",
+      "occasion": "Saint Barbara",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-190",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.413,
+          "shared_terms": [
+            "collect",
+            "night"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1218-01",
+      "source_label": "Make handmade presents in Advent as a purposeful family devotion",
+      "occasion": "Immaculate Conception",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1218-02",
+      "source_label": "Discuss the mysteries of the Annunciation and Immaculate Conception while crafting Advent presents",
+      "occasion": "Immaculate Conception",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1256-01",
+      "source_label": "Use Jonah and gourd symbols when decorating Easter eggs",
+      "occasion": "Holy Week",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-094",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.537,
+          "shared_terms": [
+            "symbol",
+            "decorat",
+            "easter",
+            "eggs"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-B-038",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.376,
+          "shared_terms": [
+            "decorat",
+            "easter",
+            "eggs"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CANDIDATE-EASTER-EGG-CRAFT",
+          "layer": "EXISTING_MASTER",
+          "score": 0.372,
+          "shared_terms": [
+            "decorat",
+            "easter",
+            "eggs"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0286-01",
+      "source_label": "Move Magi figures gradually toward the household crib during Christmastide",
+      "occasion": "Epiphany",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-056",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.56,
+          "shared_terms": [
+            "magi",
+            "figure",
+            "toward",
+            "crib"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0286-02",
+      "source_label": "Offer the Advent-made gifts to the Christ Child on Epiphany",
+      "occasion": "Epiphany",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-042",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.554,
+          "shared_terms": [
+            "offer",
+            "gift"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "CAT-WEISER-A-060",
+          "layer": "PROVISIONAL_GROUP",
+          "score": 0.487,
+          "shared_terms": [
+            "gift",
+            "epiphany"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-041",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.421,
+          "shared_terms": [
+            "gift",
+            "epiphany"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0286-03",
+      "source_label": "Bake a crown-shaped Epiphany cake",
+      "occasion": "Epiphany",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0286-04",
+      "source_label": "Hide a bean and pea in a cake for mock king-and-queen roles",
+      "occasion": "Epiphany",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-0286-05",
+      "source_label": "Make children's crowns for a Twelfth Night family feast",
+      "occasion": "Epiphany",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-066",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.653,
+          "shared_terms": [
+            "crown",
+            "twelfth",
+            "night"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-065",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.437,
+          "shared_terms": [
+            "twelfth",
+            "night"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1234-01",
+      "source_label": "Hold a family Rogation procession to pray for crops",
+      "occasion": "Rogation Days",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-103",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.431,
+          "shared_terms": [
+            "rogation",
+            "pray"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        },
+        {
+          "target_id": "STOKES55-EWTN-102",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.353,
+          "shared_terms": [
+            "rogation",
+            "procession"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1234-02",
+      "source_label": "Invite a priest to lead prayers or bless crops when available",
+      "occasion": "Rogation Days",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1234-03",
+      "source_label": "Report French-Canadian blessed grain scattered in fields on Rogation days",
+      "occasion": "Rogation Days",
+      "screening_route": "NO_LEXICAL_HIT_NOT_A_NEW_CUSTOM_CLAIM",
+      "candidate_links": [],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    },
+    {
+      "source_id": "CCEX26-NEWLAND-1234-04",
+      "source_label": "Join a monastery's Rogation procession before Mass when nearby",
+      "occasion": "Rogation Days",
+      "screening_route": "LEXICAL_CANDIDATES_REQUIRE_HUMAN_REVIEW",
+      "candidate_links": [
+        {
+          "target_id": "STOKES55-EWTN-102",
+          "layer": "STOKES_COMPILATION",
+          "score": 0.606,
+          "shared_terms": [
+            "join",
+            "rogation",
+            "procession",
+            "mass"
+          ],
+          "review_status": "LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE"
+        }
+      ],
+      "manual_action_identity_decision": "UNREVIEWED",
+      "source_independence_decision": "UNREVIEWED",
+      "automatic_merges": 0,
+      "app_publication": "NONE"
+    }
+  ]
+}

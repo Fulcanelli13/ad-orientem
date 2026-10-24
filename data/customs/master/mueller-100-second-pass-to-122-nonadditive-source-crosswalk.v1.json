@@ -1,0 +1,2800 @@
+{
+  "schema": "AO_CUSTOMS_MUELLER_SAME_WORK_NONADDITIVE_CROSSWALK_V1",
+  "as_of": "2026-10-23",
+  "status": "100_SECOND_PASS_MUELLER_DETAILS_RECONCILED_TO_122_SAME_WORK_PRIMARY_SOURCE_OBSERVATIONS_NOT_COUNTED_AS_NEW_SOURCE_WITNESSES",
+  "authority": "EWTN line co-location and lexical lookup hints only, no identical-custom conclusion",
+  "methodology": "Mueller 1955 EWTN fifth-edition content was separately mined in the 122-record Mueller/Kelly source intake and a 100-record second-pass extract. Preserve all secondary IDs for audit but do NOT add 100 to research-row/source-count numerator. 95 share exact EWTN text lines with at least one prior 122 record; five have no same-line relation and require manual comparison, potentially adding finer detail later. Even same-line records may describe distinct subactions. No identity certification, no cross-author attestation.",
+  "summary": {
+    "primary_mueller_source_obs": 122,
+    "secondary_mueller_detail_obs": 100,
+    "exact_ewtn_line_co_located": 95,
+    "without_exact_line": 5,
+    "secondary_obs_added_to_catalogue_source_count": 0,
+    "not_new_verified_customs": 100,
+    "app_publications": 0
+  },
+  "source_paths": {
+    "prior": "data/customs/master/mueller-1955-kelly-1959-ewtn-action-intake.v1.json",
+    "second_pass": "data/customs/master/mueller-1955-our-childrens-year-of-grace-ewtn-first-pass.v1.json"
+  },
+  "records": [
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-001",
+      "secondary_label": "Preparing a four-candle evergreen Advent wreath before first Advent Sunday",
+      "ewtn_line": 128,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-001",
+        "MUE55-EWTN-002"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-001",
+          "action_label": "Make an Advent wreath of evergreen or holly with four candles",
+          "same_html_line": true,
+          "lexical_jaccard": 0.364
+        },
+        {
+          "observation_id": "MUE55-EWTN-002",
+          "action_label": "Hang the completed wreath visibly in the family living room",
+          "same_html_line": true,
+          "lexical_jaccard": 0.077
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-002",
+      "secondary_label": "Explaining Advent wreath candles through a family symbolism discussion",
+      "ewtn_line": 129,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-003"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-003",
+          "action_label": "Make the wreath collectively while discussing the cycle of seasons and Advent meaning",
+          "same_html_line": true,
+          "lexical_jaccard": 0.154
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-003",
+      "secondary_label": "Suspending the completed Advent wreath in the family living room",
+      "ewtn_line": 130,
+      "co_located_prior_mueller_source_ids": [],
+      "same_line_lexical_review_hints": [],
+      "near_line_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-003",
+          "action_label": "Make the wreath collectively while discussing the cycle of seasons and Advent meaning",
+          "line_distance": 1,
+          "lexical_jaccard": 0.154
+        },
+        {
+          "observation_id": "MUE55-EWTN-004",
+          "action_label": "Study the First Advent Sunday Mass from the household missal",
+          "line_distance": 1,
+          "lexical_jaccard": 0.091
+        },
+        {
+          "observation_id": "MUE55-EWTN-002",
+          "action_label": "Hang the completed wreath visibly in the family living room",
+          "line_distance": 2,
+          "lexical_jaccard": 0.5
+        },
+        {
+          "observation_id": "MUE55-EWTN-001",
+          "action_label": "Make an Advent wreath of evergreen or holly with four candles",
+          "line_distance": 2,
+          "lexical_jaccard": 0.182
+        }
+      ],
+      "relationship_disposition": "SAME_WORK_NEARBY_OR_NOT_PREVIOUSLY_INDEXED_NEEDS_MANUAL_CHECK",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-004",
+      "secondary_label": "Studying the First Advent Sunday Mass in a family missal session",
+      "ewtn_line": 131,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-004"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-004",
+          "action_label": "Study the First Advent Sunday Mass from the household missal",
+          "same_html_line": true,
+          "lexical_jaccard": 0.625
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-005",
+      "secondary_label": "Sunday evening household Advent hymn and Rorate singing by wreathlight",
+      "ewtn_line": 135,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-005",
+        "MUE55-EWTN-006",
+        "MUE55-EWTN-007"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-005",
+          "action_label": "Gather under the Advent wreath for Sunday evening reflection",
+          "same_html_line": true,
+          "lexical_jaccard": 0.273
+        },
+        {
+          "observation_id": "MUE55-EWTN-006",
+          "action_label": "Recite or sing the Rorate Coeli as part of the family's Advent prayers",
+          "same_html_line": true,
+          "lexical_jaccard": 0.167
+        },
+        {
+          "observation_id": "MUE55-EWTN-007",
+          "action_label": "Sing Advent hymns at the weekly household wreath devotion",
+          "same_html_line": true,
+          "lexical_jaccard": 0.083
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-006",
+      "secondary_label": "Children illustrate Advent road-preparation image using pencil or clay",
+      "ewtn_line": 142,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-008"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-008",
+          "action_label": "Make a drawing or clay model of the road described in Advent Gospel imagery",
+          "same_html_line": true,
+          "lexical_jaccard": 0.214
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-007",
+      "secondary_label": "Children dramatize Annunciation Visitation and Baptist scenes at Advent Ember Days",
+      "ewtn_line": 143,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-009"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-009",
+          "action_label": "Stage a simple domestic prayer-drama of Annunciation and Visitation on Advent Ember days",
+          "same_html_line": true,
+          "lexical_jaccard": 0.385
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-008",
+      "secondary_label": "Preparing Christmas charity gifts in imitation of Saint Nicholas",
+      "ewtn_line": 147,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-010"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-010",
+          "action_label": "Organize Christmas gift-giving around Saint Nicholas's example of charity toward children and the poor",
+          "same_html_line": true,
+          "lexical_jaccard": 0.231
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-009",
+      "secondary_label": "Scheduling quiet family Christmas Eve preparations",
+      "ewtn_line": 154,
+      "co_located_prior_mueller_source_ids": [],
+      "same_line_lexical_review_hints": [],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_WORK_NEARBY_OR_NOT_PREVIOUSLY_INDEXED_NEEDS_MANUAL_CHECK",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-010",
+      "secondary_label": "Christmas Eve quiet hour by the four Advent candles",
+      "ewtn_line": 157,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-011"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-011",
+          "action_label": "Hold a quiet family Advent-wreath hour before the Christmas-room opening",
+          "same_html_line": true,
+          "lexical_jaccard": 0.4
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-011",
+      "secondary_label": "Reserving illumination of the Christmas tree until Christmas Eve",
+      "ewtn_line": 158,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-012"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-012",
+          "action_label": "Light the Christmas tree only on Christmas Eve rather than earlier",
+          "same_html_line": true,
+          "lexical_jaccard": 0.2
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-012",
+      "secondary_label": "Leading children into the Nativity room for Christmas celebration",
+      "ewtn_line": 159,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-013"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-013",
+          "action_label": "Lead children into a separately prepared Christmas room containing the crib and tree",
+          "same_html_line": true,
+          "lexical_jaccard": 0.182
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-013",
+      "secondary_label": "Singing carols before the home Nativity scene on Christmas Eve",
+      "ewtn_line": 160,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-014",
+        "MUE55-EWTN-015",
+        "MUE55-EWTN-016"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-014",
+          "action_label": "Sing Christmas hymns together around the Nativity crib",
+          "same_html_line": true,
+          "lexical_jaccard": 0.182
+        },
+        {
+          "observation_id": "MUE55-EWTN-015",
+          "action_label": "Read the Christmas Gospel from the shepherds' Mass before family gifts",
+          "same_html_line": true,
+          "lexical_jaccard": 0.091
+        },
+        {
+          "observation_id": "MUE55-EWTN-016",
+          "action_label": "Read the Christmas Collect and Epistle in the domestic gathering",
+          "same_html_line": true,
+          "lexical_jaccard": 0.091
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-014",
+      "secondary_label": "Reading the shepherds Mass Gospel and collect beside the Nativity scene",
+      "ewtn_line": 160,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-015",
+        "MUE55-EWTN-016",
+        "MUE55-EWTN-014"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-015",
+          "action_label": "Read the Christmas Gospel from the shepherds' Mass before family gifts",
+          "same_html_line": true,
+          "lexical_jaccard": 0.273
+        },
+        {
+          "observation_id": "MUE55-EWTN-016",
+          "action_label": "Read the Christmas Collect and Epistle in the domestic gathering",
+          "same_html_line": true,
+          "lexical_jaccard": 0.077
+        },
+        {
+          "observation_id": "MUE55-EWTN-014",
+          "action_label": "Sing Christmas hymns together around the Nativity crib",
+          "same_html_line": true,
+          "lexical_jaccard": 0.071
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-015",
+      "secondary_label": "Exchanging family Christmas presents after Nativity devotion",
+      "ewtn_line": 161,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-017"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-017",
+          "action_label": "Exchange blessings and good wishes before distributing Christmas presents",
+          "same_html_line": true,
+          "lexical_jaccard": 0.2
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-016",
+      "secondary_label": "Keeping a constructed Bethlehem stable and figures in Catholic homes",
+      "ewtn_line": 162,
+      "co_located_prior_mueller_source_ids": [],
+      "same_line_lexical_review_hints": [],
+      "near_line_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-017",
+          "action_label": "Exchange blessings and good wishes before distributing Christmas presents",
+          "line_distance": 1,
+          "lexical_jaccard": 0
+        },
+        {
+          "observation_id": "MUE55-EWTN-018",
+          "action_label": "Add one Nativity-scene element per day of Advent",
+          "line_distance": 1,
+          "lexical_jaccard": 0
+        },
+        {
+          "observation_id": "MUE55-EWTN-019",
+          "action_label": "Delay placing the Holy Family in a progressively assembled crib until Christmas Eve",
+          "line_distance": 1,
+          "lexical_jaccard": 0
+        },
+        {
+          "observation_id": "MUE55-EWTN-014",
+          "action_label": "Sing Christmas hymns together around the Nativity crib",
+          "line_distance": 2,
+          "lexical_jaccard": 0
+        }
+      ],
+      "relationship_disposition": "SAME_WORK_NEARBY_OR_NOT_PREVIOUSLY_INDEXED_NEEDS_MANUAL_CHECK",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-017",
+      "secondary_label": "Tyrolean carpenters progressively build Nativity landscape during Advent",
+      "ewtn_line": 163,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-018",
+        "MUE55-EWTN-019"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-018",
+          "action_label": "Add one Nativity-scene element per day of Advent",
+          "same_html_line": true,
+          "lexical_jaccard": 0.2
+        },
+        {
+          "observation_id": "MUE55-EWTN-019",
+          "action_label": "Delay placing the Holy Family in a progressively assembled crib until Christmas Eve",
+          "same_html_line": true,
+          "lexical_jaccard": 0.071
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-018",
+      "secondary_label": "Adding a crib component each day while holding Holy Family figures for Christmas",
+      "ewtn_line": 163,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-019",
+        "MUE55-EWTN-018"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-019",
+          "action_label": "Delay placing the Holy Family in a progressively assembled crib until Christmas Eve",
+          "same_html_line": true,
+          "lexical_jaccard": 0.154
+        },
+        {
+          "observation_id": "MUE55-EWTN-018",
+          "action_label": "Add one Nativity-scene element per day of Advent",
+          "same_html_line": true,
+          "lexical_jaccard": 0
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-019",
+      "secondary_label": "Making handmade Nativity statues and grottoes for the family crib",
+      "ewtn_line": 165,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-020",
+        "MUE55-EWTN-021"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-020",
+          "action_label": "Spend the year gathering materials for the Christmas crib",
+          "same_html_line": true,
+          "lexical_jaccard": 0.1
+        },
+        {
+          "observation_id": "MUE55-EWTN-021",
+          "action_label": "Make household Nativity figures from wood clay or other simple materials",
+          "same_html_line": true,
+          "lexical_jaccard": 0.077
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-020",
+      "secondary_label": "Expanding the Nativity crib figures year after year",
+      "ewtn_line": 167,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-023"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-023",
+          "action_label": "Enlarge a family crib gradually over successive Christmases",
+          "same_html_line": true,
+          "lexical_jaccard": 0.125
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-021",
+      "secondary_label": "Moving three Magi figures toward domestic crib for Epiphany",
+      "ewtn_line": 168,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-024"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-024",
+          "action_label": "Move the Magi figures toward the crib through the Christmas season until Epiphany",
+          "same_html_line": true,
+          "lexical_jaccard": 0.417
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-022",
+      "secondary_label": "Saint Johns Day drinking of Saint Johns love in some older countries",
+      "ewtn_line": 169,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-025"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-025",
+          "action_label": "Observe the older Saint John's Day ceremonial drinking of charity in households",
+          "same_html_line": true,
+          "lexical_jaccard": 0.182
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-023",
+      "secondary_label": "Blessed Saint Johns wine ceremonially passed between family members",
+      "ewtn_line": 170,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-026",
+        "MUE55-EWTN-027"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-026",
+          "action_label": "Serve specially blessed wine before the principal Saint John's Day meal",
+          "same_html_line": true,
+          "lexical_jaccard": 0.167
+        },
+        {
+          "observation_id": "MUE55-EWTN-027",
+          "action_label": "Pass the Saint John's cup among household members with exchanged goodwill wishes",
+          "same_html_line": true,
+          "lexical_jaccard": 0.077
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-024",
+      "secondary_label": "Comparable love-cup custom associated with Saint Gertrude of Nivelles",
+      "ewtn_line": 171,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-028"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-028",
+          "action_label": "Record an analogous festive household drinking observance linked by the author to Saint Gertrude",
+          "same_html_line": true,
+          "lexical_jaccard": 0.077
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-025",
+      "secondary_label": "Children receive a special blessing at church on Holy Innocents",
+      "ewtn_line": 173,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-029"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-029",
+          "action_label": "Invite young children to church for a special feast-day blessing",
+          "same_html_line": true,
+          "lexical_jaccard": 0.286
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-026",
+      "secondary_label": "Youngest child leads convent or school on Holy Innocents",
+      "ewtn_line": 174,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-030",
+        "MUE55-EWTN-031"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-030",
+          "action_label": "Assign the youngest child authority over family songs prayers menu and games on Holy Innocents",
+          "same_html_line": true,
+          "lexical_jaccard": 0.182
+        },
+        {
+          "observation_id": "MUE55-EWTN-031",
+          "action_label": "Allow a school's youngest pupil to serve as symbolic principal or superior for the day",
+          "same_html_line": true,
+          "lexical_jaccard": 0.182
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-027",
+      "secondary_label": "Youngest child chooses some family singing prayer games and food on Holy Innocents",
+      "ewtn_line": 174,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-030",
+        "MUE55-EWTN-031"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-030",
+          "action_label": "Assign the youngest child authority over family songs prayers menu and games on Holy Innocents",
+          "same_html_line": true,
+          "lexical_jaccard": 0.231
+        },
+        {
+          "observation_id": "MUE55-EWTN-031",
+          "action_label": "Allow a school's youngest pupil to serve as symbolic principal or superior for the day",
+          "same_html_line": true,
+          "lexical_jaccard": 0.067
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-028",
+      "secondary_label": "Children process Magi figures with songs to Nativity crib on Epiphany Eve",
+      "ewtn_line": 177,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-032",
+        "MUE55-EWTN-033"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-032",
+          "action_label": "Carry the Magi figures in a singing children's procession to the Nativity crib",
+          "same_html_line": true,
+          "lexical_jaccard": 0.4
+        },
+        {
+          "observation_id": "MUE55-EWTN-033",
+          "action_label": "Place symbolic Magi gifts at the crib on Epiphany",
+          "same_html_line": true,
+          "lexical_jaccard": 0.3
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-029",
+      "secondary_label": "Parish-wide Epiphany house blessing pronounced toward four directions",
+      "ewtn_line": 180,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-034"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-034",
+          "action_label": "Describe the parish's Epiphany house-blessing performed in four directions from church or tower where homes are too numerous to visit",
+          "same_html_line": true,
+          "lexical_jaccard": 0.375
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-030",
+      "secondary_label": "Father leads domestic Epiphany blessing prayers and holy-water room visit",
+      "ewtn_line": 181,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-036",
+        "MUE55-EWTN-035"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-036",
+          "action_label": "Walk through domestic rooms with holy water during the house-blessing prayers",
+          "same_html_line": true,
+          "lexical_jaccard": 0.308
+        },
+        {
+          "observation_id": "MUE55-EWTN-035",
+          "action_label": "Gather at a household altar while a collective parish house blessing is performed",
+          "same_html_line": true,
+          "lexical_jaccard": 0.063
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-031",
+      "secondary_label": "Epiphany gold taken to church for blessing and sacred vessel offering",
+      "ewtn_line": 182,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-037",
+        "MUE55-EWTN-038",
+        "MUE55-EWTN-039"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-037",
+          "action_label": "Bring gold or frankincense for a church blessing near Epiphany",
+          "same_html_line": true,
+          "lexical_jaccard": 0.3
+        },
+        {
+          "observation_id": "MUE55-EWTN-038",
+          "action_label": "Offer blessed gold toward sacred vessels in the parish",
+          "same_html_line": true,
+          "lexical_jaccard": 0.167
+        },
+        {
+          "observation_id": "MUE55-EWTN-039",
+          "action_label": "Burn blessed Epiphany incense during household prayers",
+          "same_html_line": true,
+          "lexical_jaccard": 0.083
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-032",
+      "secondary_label": "Epiphany frankincense blessed for burning during household prayer",
+      "ewtn_line": 182,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-039",
+        "MUE55-EWTN-037",
+        "MUE55-EWTN-038"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-039",
+          "action_label": "Burn blessed Epiphany incense during household prayers",
+          "same_html_line": true,
+          "lexical_jaccard": 0.333
+        },
+        {
+          "observation_id": "MUE55-EWTN-037",
+          "action_label": "Bring gold or frankincense for a church blessing near Epiphany",
+          "same_html_line": true,
+          "lexical_jaccard": 0.2
+        },
+        {
+          "observation_id": "MUE55-EWTN-038",
+          "action_label": "Offer blessed gold toward sacred vessels in the parish",
+          "same_html_line": true,
+          "lexical_jaccard": 0.083
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-033",
+      "secondary_label": "Door lintels inscribed with blessed Epiphany chalk and year",
+      "ewtn_line": 183,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-040"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-040",
+          "action_label": "Mark the lintel with Epiphany blessed chalk and Magi initials plus year",
+          "same_html_line": true,
+          "lexical_jaccard": 0.273
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-034",
+      "secondary_label": "Bread eggs and salt taken for Epiphany blessing then used in festive meals",
+      "ewtn_line": 184,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-041",
+        "MUE55-EWTN-042"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-041",
+          "action_label": "Bring bread eggs and salt to the church for Epiphany food blessings",
+          "same_html_line": true,
+          "lexical_jaccard": 0.308
+        },
+        {
+          "observation_id": "MUE55-EWTN-042",
+          "action_label": "Consume blessed Epiphany foods at the festive family meal",
+          "same_html_line": true,
+          "lexical_jaccard": 0.143
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-035",
+      "secondary_label": "Family members bring individual candles to church for Candlemas blessing",
+      "ewtn_line": 193,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-044",
+        "MUE55-EWTN-045"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-044",
+          "action_label": "Bring a candle for each family member to the Candlemas church blessing",
+          "same_html_line": true,
+          "lexical_jaccard": 0.333
+        },
+        {
+          "observation_id": "MUE55-EWTN-045",
+          "action_label": "Reserve additional blessed candles for visits to sick family members",
+          "same_html_line": true,
+          "lexical_jaccard": 0.182
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-036",
+      "secondary_label": "Extra Candlemas candle retained for expected child or godchild",
+      "ewtn_line": 193,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-044",
+        "MUE55-EWTN-045"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-044",
+          "action_label": "Bring a candle for each family member to the Candlemas church blessing",
+          "same_html_line": true,
+          "lexical_jaccard": 0.2
+        },
+        {
+          "observation_id": "MUE55-EWTN-045",
+          "action_label": "Reserve additional blessed candles for visits to sick family members",
+          "same_html_line": true,
+          "lexical_jaccard": 0
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-037",
+      "secondary_label": "Family evening Candlemas candle procession through home rooms",
+      "ewtn_line": 194,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-046",
+        "MUE55-EWTN-047"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-046",
+          "action_label": "Repeat a household candle procession in the evening for relatives absent from church",
+          "same_html_line": true,
+          "lexical_jaccard": 0.333
+        },
+        {
+          "observation_id": "MUE55-EWTN-047",
+          "action_label": "Sing and pray while the father leads Candlemas candles through the rooms",
+          "same_html_line": true,
+          "lexical_jaccard": 0.167
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-038",
+      "secondary_label": "Father recites Candlemas procession prayers in family circle",
+      "ewtn_line": 194,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-047",
+        "MUE55-EWTN-046"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-047",
+          "action_label": "Sing and pray while the father leads Candlemas candles through the rooms",
+          "same_html_line": true,
+          "lexical_jaccard": 0.167
+        },
+        {
+          "observation_id": "MUE55-EWTN-046",
+          "action_label": "Repeat a household candle procession in the evening for relatives absent from church",
+          "same_html_line": true,
+          "lexical_jaccard": 0.091
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-039",
+      "secondary_label": "Blessed Candlemas candles lit during family illness or sorrow",
+      "ewtn_line": 196,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-048"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-048",
+          "action_label": "Light preserved blessed candles for patronal feasts personal anniversaries or family decisions",
+          "same_html_line": true,
+          "lexical_jaccard": 0.154
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-040",
+      "secondary_label": "Blessed candles used for feast days name days anniversaries or decisions",
+      "ewtn_line": 196,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-048"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-048",
+          "action_label": "Light preserved blessed candles for patronal feasts personal anniversaries or family decisions",
+          "same_html_line": true,
+          "lexical_jaccard": 0.308
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-041",
+      "secondary_label": "Farewell Alleluia celebration with several melodies before Septuagesima",
+      "ewtn_line": 206,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-049"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-049",
+          "action_label": "Celebrate the farewell to Alleluia with final pre-Lenten Alleluia singing",
+          "same_html_line": true,
+          "lexical_jaccard": 0.2
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-042",
+      "secondary_label": "Using field and garden work as a family Lent catechesis analogy",
+      "ewtn_line": 210,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-050"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-050",
+          "action_label": "Compare garden ploughing and sowing with spiritual preparation during Sexagesima",
+          "same_html_line": true,
+          "lexical_jaccard": 0.071
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-043",
+      "secondary_label": "Pre-Lent carnival family feasting in Catholic traditional regions",
+      "ewtn_line": 212,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-051"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-051",
+          "action_label": "Hold a short period of festive household carnival food and recreation before Ash Wednesday",
+          "same_html_line": true,
+          "lexical_jaccard": 0.077
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-044",
+      "secondary_label": "Household procession collecting last years blessed palm fronds",
+      "ewtn_line": 213,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-052",
+        "MUE55-EWTN-053"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-052",
+          "action_label": "Collect old Palm Sunday palm fronds from household religious images in silent procession",
+          "same_html_line": true,
+          "lexical_jaccard": 0.25
+        },
+        {
+          "observation_id": "MUE55-EWTN-053",
+          "action_label": "Burn last year's palms as a symbolic pre-Lenten observance",
+          "same_html_line": true,
+          "lexical_jaccard": 0.083
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-045",
+      "secondary_label": "Reverently burning old palm as family Lenten penitential lesson",
+      "ewtn_line": 213,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-053",
+        "MUE55-EWTN-052"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-053",
+          "action_label": "Burn last year's palms as a symbolic pre-Lenten observance",
+          "same_html_line": true,
+          "lexical_jaccard": 0.091
+        },
+        {
+          "observation_id": "MUE55-EWTN-052",
+          "action_label": "Collect old Palm Sunday palm fronds from household religious images in silent procession",
+          "same_html_line": true,
+          "lexical_jaccard": 0.077
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-046",
+      "secondary_label": "Children plan positive charitable deeds alongside fasting in Lent",
+      "ewtn_line": 214,
+      "co_located_prior_mueller_source_ids": [],
+      "same_line_lexical_review_hints": [],
+      "near_line_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-052",
+          "action_label": "Collect old Palm Sunday palm fronds from household religious images in silent procession",
+          "line_distance": 1,
+          "lexical_jaccard": 0
+        },
+        {
+          "observation_id": "MUE55-EWTN-053",
+          "action_label": "Burn last year's palms as a symbolic pre-Lenten observance",
+          "line_distance": 1,
+          "lexical_jaccard": 0
+        },
+        {
+          "observation_id": "MUE55-EWTN-054",
+          "action_label": "Keep children's self-denial offerings discreet rather than publicly rewarded",
+          "line_distance": 1,
+          "lexical_jaccard": 0
+        },
+        {
+          "observation_id": "MUE55-EWTN-051",
+          "action_label": "Hold a short period of festive household carnival food and recreation before Ash Wednesday",
+          "line_distance": 2,
+          "lexical_jaccard": 0
+        }
+      ],
+      "relationship_disposition": "SAME_WORK_NEARBY_OR_NOT_PREVIOUSLY_INDEXED_NEEDS_MANUAL_CHECK",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-047",
+      "secondary_label": "Children keep personal Lenten offerings discreet within family",
+      "ewtn_line": 215,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-054"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-054",
+          "action_label": "Keep children's self-denial offerings discreet rather than publicly rewarded",
+          "same_html_line": true,
+          "lexical_jaccard": 0.25
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-048",
+      "secondary_label": "Daily Mass participation offered as principal family Lenten observance",
+      "ewtn_line": 218,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-056",
+        "MUE55-EWTN-055"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-056",
+          "action_label": "Extract one or two memorable ideas from daily Lenten Mass propers for household meditation",
+          "same_html_line": true,
+          "lexical_jaccard": 0.25
+        },
+        {
+          "observation_id": "MUE55-EWTN-055",
+          "action_label": "Study the next day's Lenten Mass text in the evening before attending Mass",
+          "same_html_line": true,
+          "lexical_jaccard": 0.167
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-049",
+      "secondary_label": "Study next days Lenten Mass texts together the prior evening",
+      "ewtn_line": 218,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-055",
+        "MUE55-EWTN-056"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-055",
+          "action_label": "Study the next day's Lenten Mass text in the evening before attending Mass",
+          "same_html_line": true,
+          "lexical_jaccard": 0.455
+        },
+        {
+          "observation_id": "MUE55-EWTN-056",
+          "action_label": "Extract one or two memorable ideas from daily Lenten Mass propers for household meditation",
+          "same_html_line": true,
+          "lexical_jaccard": 0.133
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-050",
+      "secondary_label": "Children attend Palm Sunday church blessing and procession",
+      "ewtn_line": 223,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-057",
+        "MUE55-EWTN-059",
+        "MUE55-EWTN-058"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-057",
+          "action_label": "Attend blessing and procession of palms with children",
+          "same_html_line": true,
+          "lexical_jaccard": 0.5
+        },
+        {
+          "observation_id": "MUE55-EWTN-059",
+          "action_label": "Decorate individual rooms with newly blessed Palm Sunday fronds",
+          "same_html_line": true,
+          "lexical_jaccard": 0.182
+        },
+        {
+          "observation_id": "MUE55-EWTN-058",
+          "action_label": "Carry blessed palms home through the house",
+          "same_html_line": true,
+          "lexical_jaccard": 0
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-051",
+      "secondary_label": "Carrying newly blessed palms around home and adorning rooms",
+      "ewtn_line": 223,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-058",
+        "MUE55-EWTN-059",
+        "MUE55-EWTN-057"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-058",
+          "action_label": "Carry blessed palms home through the house",
+          "same_html_line": true,
+          "lexical_jaccard": 0.3
+        },
+        {
+          "observation_id": "MUE55-EWTN-059",
+          "action_label": "Decorate individual rooms with newly blessed Palm Sunday fronds",
+          "same_html_line": true,
+          "lexical_jaccard": 0.231
+        },
+        {
+          "observation_id": "MUE55-EWTN-057",
+          "action_label": "Attend blessing and procession of palms with children",
+          "same_html_line": true,
+          "lexical_jaccard": 0.091
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-052",
+      "secondary_label": "Small blessed palm cross worn on clothing during Holy Week",
+      "ewtn_line": 224,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-060"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-060",
+          "action_label": "Wear a small cross fashioned from palm leaves during Holy Week",
+          "same_html_line": true,
+          "lexical_jaccard": 0.455
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-053",
+      "secondary_label": "Finishing Easter household cleaning before the sacred Triduum",
+      "ewtn_line": 226,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-061"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-061",
+          "action_label": "Complete Easter housecleaning before the sacred days to avoid interrupting services",
+          "same_html_line": true,
+          "lexical_jaccard": 0.182
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-054",
+      "secondary_label": "Household attends cathedral Holy Thursday liturgy where feasible",
+      "ewtn_line": 227,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-062",
+        "MUE55-EWTN-063"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-062",
+          "action_label": "Attend Holy Thursday cathedral services when possible",
+          "same_html_line": true,
+          "lexical_jaccard": 0.2
+        },
+        {
+          "observation_id": "MUE55-EWTN-063",
+          "action_label": "Witness the mandatum or foot-washing rite if offered",
+          "same_html_line": true,
+          "lexical_jaccard": 0
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-055",
+      "secondary_label": "Holy Thursday family meal with more ceremonial attention",
+      "ewtn_line": 229,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-067",
+        "MUE55-EWTN-068",
+        "MUE55-EWTN-066",
+        "MUE55-EWTN-065"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-067",
+          "action_label": "Mark Holy Thursday with a more elaborate family meal",
+          "same_html_line": true,
+          "lexical_jaccard": 0.429
+        },
+        {
+          "observation_id": "MUE55-EWTN-068",
+          "action_label": "Sing Ubi Caritas at the Holy Thursday family supper",
+          "same_html_line": true,
+          "lexical_jaccard": 0.125
+        },
+        {
+          "observation_id": "MUE55-EWTN-066",
+          "action_label": "Serve unleavened bread and wine as a household symbolic meal",
+          "same_html_line": true,
+          "lexical_jaccard": 0.1
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-056",
+      "secondary_label": "Singing Ubi Caritas at Holy Thursday family supper",
+      "ewtn_line": 229,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-068",
+        "MUE55-EWTN-067",
+        "MUE55-EWTN-065",
+        "MUE55-EWTN-066"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-068",
+          "action_label": "Sing Ubi Caritas at the Holy Thursday family supper",
+          "same_html_line": true,
+          "lexical_jaccard": 0.6
+        },
+        {
+          "observation_id": "MUE55-EWTN-067",
+          "action_label": "Mark Holy Thursday with a more elaborate family meal",
+          "same_html_line": true,
+          "lexical_jaccard": 0.125
+        },
+        {
+          "observation_id": "MUE55-EWTN-065",
+          "action_label": "Serve deliberately simple Holy Week meals",
+          "same_html_line": true,
+          "lexical_jaccard": 0
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-057",
+      "secondary_label": "Keeping periods of silence and spiritual reading through Holy Week",
+      "ewtn_line": 230,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-069",
+        "MUE55-EWTN-070",
+        "MUE55-EWTN-071"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-069",
+          "action_label": "Keep hours of household silence during Holy Week",
+          "same_html_line": true,
+          "lexical_jaccard": 0.222
+        },
+        {
+          "observation_id": "MUE55-EWTN-070",
+          "action_label": "Read spiritual literature and explain each day's Church services at home",
+          "same_html_line": true,
+          "lexical_jaccard": 0.083
+        },
+        {
+          "observation_id": "MUE55-EWTN-071",
+          "action_label": "Attend Tenebrae with older family members where offered",
+          "same_html_line": true,
+          "lexical_jaccard": 0
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-058",
+      "secondary_label": "Older family members attend Tenebrae during Holy Week",
+      "ewtn_line": 230,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-071",
+        "MUE55-EWTN-069",
+        "MUE55-EWTN-070"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-071",
+          "action_label": "Attend Tenebrae with older family members where offered",
+          "same_html_line": true,
+          "lexical_jaccard": 0.5
+        },
+        {
+          "observation_id": "MUE55-EWTN-069",
+          "action_label": "Keep hours of household silence during Holy Week",
+          "same_html_line": true,
+          "lexical_jaccard": 0.222
+        },
+        {
+          "observation_id": "MUE55-EWTN-070",
+          "action_label": "Read spiritual literature and explain each day's Church services at home",
+          "same_html_line": true,
+          "lexical_jaccard": 0
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-059",
+      "secondary_label": "Family renews baptismal vows on Holy Saturday evening",
+      "ewtn_line": 238,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-073",
+        "MUE55-EWTN-074",
+        "MUE55-EWTN-072"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-073",
+          "action_label": "Renew baptismal vows collectively before Easter",
+          "same_html_line": true,
+          "lexical_jaccard": 0.25
+        },
+        {
+          "observation_id": "MUE55-EWTN-074",
+          "action_label": "Sing thanksgiving after household renewal of baptismal promises",
+          "same_html_line": true,
+          "lexical_jaccard": 0.111
+        },
+        {
+          "observation_id": "MUE55-EWTN-072",
+          "action_label": "Display baptismal robes and candles on a home altar",
+          "same_html_line": true,
+          "lexical_jaccard": 0.1
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-060",
+      "secondary_label": "Displaying baptismal robes and candles on Holy Saturday home altar",
+      "ewtn_line": 238,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-072",
+        "MUE55-EWTN-073",
+        "MUE55-EWTN-074"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-072",
+          "action_label": "Display baptismal robes and candles on a home altar",
+          "same_html_line": true,
+          "lexical_jaccard": 0.625
+        },
+        {
+          "observation_id": "MUE55-EWTN-073",
+          "action_label": "Renew baptismal vows collectively before Easter",
+          "same_html_line": true,
+          "lexical_jaccard": 0.091
+        },
+        {
+          "observation_id": "MUE55-EWTN-074",
+          "action_label": "Sing thanksgiving after household renewal of baptismal promises",
+          "same_html_line": true,
+          "lexical_jaccard": 0.091
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-061",
+      "secondary_label": "Singing hymn of thanksgiving after household baptismal renewal",
+      "ewtn_line": 238,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-074",
+        "MUE55-EWTN-073",
+        "MUE55-EWTN-072"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-074",
+          "action_label": "Sing thanksgiving after household renewal of baptismal promises",
+          "same_html_line": true,
+          "lexical_jaccard": 0.429
+        },
+        {
+          "observation_id": "MUE55-EWTN-073",
+          "action_label": "Renew baptismal vows collectively before Easter",
+          "same_html_line": true,
+          "lexical_jaccard": 0.111
+        },
+        {
+          "observation_id": "MUE55-EWTN-072",
+          "action_label": "Display baptismal robes and candles on a home altar",
+          "same_html_line": true,
+          "lexical_jaccard": 0.1
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-062",
+      "secondary_label": "Family carries freshly blessed Easter water home in decorated container",
+      "ewtn_line": 239,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-075",
+        "MUE55-EWTN-077",
+        "MUE55-EWTN-076"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-075",
+          "action_label": "Carry newly blessed Easter water home in a specially decorated bottle",
+          "same_html_line": true,
+          "lexical_jaccard": 0.417
+        },
+        {
+          "observation_id": "MUE55-EWTN-077",
+          "action_label": "Decorate an Easter-water container with Baptism or Trinity symbols",
+          "same_html_line": true,
+          "lexical_jaccard": 0.25
+        },
+        {
+          "observation_id": "MUE55-EWTN-076",
+          "action_label": "Sprinkle members of the family and domestic surroundings with Easter holy water",
+          "same_html_line": true,
+          "lexical_jaccard": 0.167
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-063",
+      "secondary_label": "Father sprinkles the family and house with new Easter water",
+      "ewtn_line": 239,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-076",
+        "MUE55-EWTN-077",
+        "MUE55-EWTN-075"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-076",
+          "action_label": "Sprinkle members of the family and domestic surroundings with Easter holy water",
+          "same_html_line": true,
+          "lexical_jaccard": 0.222
+        },
+        {
+          "observation_id": "MUE55-EWTN-077",
+          "action_label": "Decorate an Easter-water container with Baptism or Trinity symbols",
+          "same_html_line": true,
+          "lexical_jaccard": 0.2
+        },
+        {
+          "observation_id": "MUE55-EWTN-075",
+          "action_label": "Carry newly blessed Easter water home in a specially decorated bottle",
+          "same_html_line": true,
+          "lexical_jaccard": 0.167
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-064",
+      "secondary_label": "Blessing garden or fields with Easter water as family practice",
+      "ewtn_line": 239,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-076",
+        "MUE55-EWTN-077",
+        "MUE55-EWTN-075"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-076",
+          "action_label": "Sprinkle members of the family and domestic surroundings with Easter holy water",
+          "same_html_line": true,
+          "lexical_jaccard": 0.2
+        },
+        {
+          "observation_id": "MUE55-EWTN-077",
+          "action_label": "Decorate an Easter-water container with Baptism or Trinity symbols",
+          "same_html_line": true,
+          "lexical_jaccard": 0.182
+        },
+        {
+          "observation_id": "MUE55-EWTN-075",
+          "action_label": "Carry newly blessed Easter water home in a specially decorated bottle",
+          "same_html_line": true,
+          "lexical_jaccard": 0.154
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-065",
+      "secondary_label": "Decorating home for Easter with flowers and greenery",
+      "ewtn_line": 245,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-078",
+        "MUE55-EWTN-081",
+        "MUE55-EWTN-079",
+        "MUE55-EWTN-080"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-078",
+          "action_label": "Decorate the home with greenery and flowers for Easter",
+          "same_html_line": true,
+          "lexical_jaccard": 0.667
+        },
+        {
+          "observation_id": "MUE55-EWTN-081",
+          "action_label": "String oranges as part of household Easter decoration",
+          "same_html_line": true,
+          "lexical_jaccard": 0.111
+        },
+        {
+          "observation_id": "MUE55-EWTN-079",
+          "action_label": "Paint Easter eggs with Christian resurrection symbols",
+          "same_html_line": true,
+          "lexical_jaccard": 0.1
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-066",
+      "secondary_label": "Easter oranges strung as domestic feast decorations",
+      "ewtn_line": 245,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-081",
+        "MUE55-EWTN-078",
+        "MUE55-EWTN-079",
+        "MUE55-EWTN-080"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-081",
+          "action_label": "String oranges as part of household Easter decoration",
+          "same_html_line": true,
+          "lexical_jaccard": 0.222
+        },
+        {
+          "observation_id": "MUE55-EWTN-078",
+          "action_label": "Decorate the home with greenery and flowers for Easter",
+          "same_html_line": true,
+          "lexical_jaccard": 0.1
+        },
+        {
+          "observation_id": "MUE55-EWTN-079",
+          "action_label": "Paint Easter eggs with Christian resurrection symbols",
+          "same_html_line": true,
+          "lexical_jaccard": 0.091
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-067",
+      "secondary_label": "Easter eggs painted with Resurrection symbols",
+      "ewtn_line": 245,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-079",
+        "MUE55-EWTN-078",
+        "MUE55-EWTN-081",
+        "MUE55-EWTN-080"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-079",
+          "action_label": "Paint Easter eggs with Christian resurrection symbols",
+          "same_html_line": true,
+          "lexical_jaccard": 0.571
+        },
+        {
+          "observation_id": "MUE55-EWTN-078",
+          "action_label": "Decorate the home with greenery and flowers for Easter",
+          "same_html_line": true,
+          "lexical_jaccard": 0.111
+        },
+        {
+          "observation_id": "MUE55-EWTN-081",
+          "action_label": "String oranges as part of household Easter decoration",
+          "same_html_line": true,
+          "lexical_jaccard": 0.111
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-068",
+      "secondary_label": "Alleluia and Resurrexit lettering displayed in dining room for Easter",
+      "ewtn_line": 245,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-080",
+        "MUE55-EWTN-078",
+        "MUE55-EWTN-081",
+        "MUE55-EWTN-079"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-080",
+          "action_label": "Display handmade Alleluia and Resurrexit inscriptions",
+          "same_html_line": true,
+          "lexical_jaccard": 0.2
+        },
+        {
+          "observation_id": "MUE55-EWTN-078",
+          "action_label": "Decorate the home with greenery and flowers for Easter",
+          "same_html_line": true,
+          "lexical_jaccard": 0.091
+        },
+        {
+          "observation_id": "MUE55-EWTN-081",
+          "action_label": "String oranges as part of household Easter decoration",
+          "same_html_line": true,
+          "lexical_jaccard": 0.091
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-069",
+      "secondary_label": "Setting festive Easter meal with bread eggs roast fruit and cake",
+      "ewtn_line": 247,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-082",
+        "MUE55-EWTN-084",
+        "MUE55-EWTN-083"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-082",
+          "action_label": "Arrange a decorative household Easter-food basket with bread and eggs",
+          "same_html_line": true,
+          "lexical_jaccard": 0.231
+        },
+        {
+          "observation_id": "MUE55-EWTN-084",
+          "action_label": "Share part of the blessed Easter provisions with poor parishioners",
+          "same_html_line": true,
+          "lexical_jaccard": 0.067
+        },
+        {
+          "observation_id": "MUE55-EWTN-083",
+          "action_label": "Bring Easter foods for blessing by a priest when that custom is observed",
+          "same_html_line": true,
+          "lexical_jaccard": 0.063
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-070",
+      "secondary_label": "Parish Easter food blessings with a share given to priest and poor",
+      "ewtn_line": 247,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-084",
+        "MUE55-EWTN-082",
+        "MUE55-EWTN-083"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-084",
+          "action_label": "Share part of the blessed Easter provisions with poor parishioners",
+          "same_html_line": true,
+          "lexical_jaccard": 0.25
+        },
+        {
+          "observation_id": "MUE55-EWTN-082",
+          "action_label": "Arrange a decorative household Easter-food basket with bread and eggs",
+          "same_html_line": true,
+          "lexical_jaccard": 0.154
+        },
+        {
+          "observation_id": "MUE55-EWTN-083",
+          "action_label": "Bring Easter foods for blessing by a priest when that custom is observed",
+          "same_html_line": true,
+          "lexical_jaccard": 0.143
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-071",
+      "secondary_label": "Father reads domestic Easter meal blessing prayers with responses",
+      "ewtn_line": 248,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-085"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-085",
+          "action_label": "Recite traditional Easter food blessing prayers in a household response format",
+          "same_html_line": true,
+          "lexical_jaccard": 0.231
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-072",
+      "secondary_label": "Easter Exsultet repeated before a household baptismal candle",
+      "ewtn_line": 250,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-087",
+        "MUE55-EWTN-088",
+        "MUE55-EWTN-089"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-087",
+          "action_label": "Repeat the Exsultet before the household baptismal candle",
+          "same_html_line": true,
+          "lexical_jaccard": 0.5
+        },
+        {
+          "observation_id": "MUE55-EWTN-088",
+          "action_label": "Sing Easter Alleluia melodies with the family",
+          "same_html_line": true,
+          "lexical_jaccard": 0.125
+        },
+        {
+          "observation_id": "MUE55-EWTN-089",
+          "action_label": "Recite the Easter Sequence and Regina Coeli as domestic Easter devotion",
+          "same_html_line": true,
+          "lexical_jaccard": 0.091
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-073",
+      "secondary_label": "Family sings Alleluia Regina Caeli and Easter Mass sequence at home",
+      "ewtn_line": 250,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-089",
+        "MUE55-EWTN-088",
+        "MUE55-EWTN-087"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-089",
+          "action_label": "Recite the Easter Sequence and Regina Coeli as domestic Easter devotion",
+          "same_html_line": true,
+          "lexical_jaccard": 0.25
+        },
+        {
+          "observation_id": "MUE55-EWTN-088",
+          "action_label": "Sing Easter Alleluia melodies with the family",
+          "same_html_line": true,
+          "lexical_jaccard": 0.2
+        },
+        {
+          "observation_id": "MUE55-EWTN-087",
+          "action_label": "Repeat the Exsultet before the household baptismal candle",
+          "same_html_line": true,
+          "lexical_jaccard": 0
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-074",
+      "secondary_label": "Meditating the Mass propers on each evening of Easter Octave",
+      "ewtn_line": 251,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-090"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-090",
+          "action_label": "Read and explain the following day's Easter Octave Mass propers at evening family prayers",
+          "same_html_line": true,
+          "lexical_jaccard": 0.455
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-075",
+      "secondary_label": "Ascension-to-Pentecost novena kept in household prayers",
+      "ewtn_line": 258,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-093",
+        "MUE55-EWTN-092",
+        "MUE55-EWTN-091"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-093",
+          "action_label": "Sing Veni Creator at night prayers during the Pentecost novena",
+          "same_html_line": true,
+          "lexical_jaccard": 0.3
+        },
+        {
+          "observation_id": "MUE55-EWTN-092",
+          "action_label": "Hold a household novena after Ascension for the coming of the Holy Ghost",
+          "same_html_line": true,
+          "lexical_jaccard": 0.25
+        },
+        {
+          "observation_id": "MUE55-EWTN-091",
+          "action_label": "Keep Rogation-day household petitions and devotions",
+          "same_html_line": true,
+          "lexical_jaccard": 0
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-076",
+      "secondary_label": "Veni Creator sung at family night prayer before Pentecost",
+      "ewtn_line": 258,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-093",
+        "MUE55-EWTN-091",
+        "MUE55-EWTN-092"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-093",
+          "action_label": "Sing Veni Creator at night prayers during the Pentecost novena",
+          "same_html_line": true,
+          "lexical_jaccard": 0.4
+        },
+        {
+          "observation_id": "MUE55-EWTN-091",
+          "action_label": "Keep Rogation-day household petitions and devotions",
+          "same_html_line": true,
+          "lexical_jaccard": 0
+        },
+        {
+          "observation_id": "MUE55-EWTN-092",
+          "action_label": "Hold a household novena after Ascension for the coming of the Holy Ghost",
+          "same_html_line": true,
+          "lexical_jaccard": 0
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-077",
+      "secondary_label": "Pentecost domestic altar dominated by red dove Holy Spirit emblem",
+      "ewtn_line": 261,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-094",
+        "MUE55-EWTN-095"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-094",
+          "action_label": "Place a red-paper Holy Ghost symbol at the home altar for Pentecost",
+          "same_html_line": true,
+          "lexical_jaccard": 0.167
+        },
+        {
+          "observation_id": "MUE55-EWTN-095",
+          "action_label": "Decorate the Pentecost devotional setting with red roses",
+          "same_html_line": true,
+          "lexical_jaccard": 0.091
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-078",
+      "secondary_label": "Red roses placed by Pentecost household altar",
+      "ewtn_line": 261,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-095",
+        "MUE55-EWTN-094"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-095",
+          "action_label": "Decorate the Pentecost devotional setting with red roses",
+          "same_html_line": true,
+          "lexical_jaccard": 0.286
+        },
+        {
+          "observation_id": "MUE55-EWTN-094",
+          "action_label": "Place a red-paper Holy Ghost symbol at the home altar for Pentecost",
+          "same_html_line": true,
+          "lexical_jaccard": 0.222
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-079",
+      "secondary_label": "Holy Spirit seven gifts represented with cut-paper silhouettes",
+      "ewtn_line": 262,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-096"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-096",
+          "action_label": "Arrange a paper tableau with dove seven gifts and cosmos symbols for Pentecost",
+          "same_html_line": true,
+          "lexical_jaccard": 0.25
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-080",
+      "secondary_label": "Pentecost Eve family commemorates founding of the Church",
+      "ewtn_line": 264,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-097"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-097",
+          "action_label": "Gather on Pentecost eve to celebrate the Church's birthday and a family Confirmation anniversary",
+          "same_html_line": true,
+          "lexical_jaccard": 0.125
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-081",
+      "secondary_label": "Pentecost Eve family renews pledge of love and obedience to Church",
+      "ewtn_line": 264,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-097"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-097",
+          "action_label": "Gather on Pentecost eve to celebrate the Church's birthday and a family Confirmation anniversary",
+          "same_html_line": true,
+          "lexical_jaccard": 0.1
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-082",
+      "secondary_label": "Pentecost family recalls individual confirmation ceremonies and words",
+      "ewtn_line": 266,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-099",
+        "MUE55-EWTN-098"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-099",
+          "action_label": "Ask for renewal of Confirmation grace during the Pentecost home celebration",
+          "same_html_line": true,
+          "lexical_jaccard": 0.182
+        },
+        {
+          "observation_id": "MUE55-EWTN-098",
+          "action_label": "Recall the words and actions of each member's Confirmation ceremony in a family devotion",
+          "same_html_line": true,
+          "lexical_jaccard": 0.167
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-083",
+      "secondary_label": "Saturday preparation to anticipate Sunday in family prayer",
+      "ewtn_line": 279,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-100"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-100",
+          "action_label": "Prepare for Sunday spiritually and domestically on Saturday evening",
+          "same_html_line": true,
+          "lexical_jaccard": 0.222
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-084",
+      "secondary_label": "Childhood family Saturday house-preparation for Sunday best rooms and meal",
+      "ewtn_line": 280,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-101"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-101",
+          "action_label": "Recall a childhood custom of making Sunday-eve cleaning and fresh linen a solemn family preparation",
+          "same_html_line": true,
+          "lexical_jaccard": 0.2
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-085",
+      "secondary_label": "Saturday evening Vespers as historic Sunday anticipation example",
+      "ewtn_line": 282,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-102"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-102",
+          "action_label": "Set apart Saturday evening hours to prepare mentally for Sunday worship",
+          "same_html_line": true,
+          "lexical_jaccard": 0.25
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-086",
+      "secondary_label": "Corpus Christi outdoor Eucharistic processions with banners and flowers",
+      "ewtn_line": 291,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-104",
+        "MUE55-EWTN-103",
+        "MUE55-EWTN-106",
+        "MUE55-EWTN-105",
+        "MUE55-EWTN-107"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-104",
+          "action_label": "Carry banners flowers and other symbolic objects in Corpus Christi processions",
+          "same_html_line": true,
+          "lexical_jaccard": 0.455
+        },
+        {
+          "observation_id": "MUE55-EWTN-103",
+          "action_label": "Report outdoor Corpus Christi processions through villages and fields",
+          "same_html_line": true,
+          "lexical_jaccard": 0.4
+        },
+        {
+          "observation_id": "MUE55-EWTN-106",
+          "action_label": "Decorate household windows and doorways for the Corpus Christi procession",
+          "same_html_line": true,
+          "lexical_jaccard": 0.182
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-087",
+      "secondary_label": "Corpus Christi homes adorned with holy images garlands and candles",
+      "ewtn_line": 291,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-106",
+        "MUE55-EWTN-103",
+        "MUE55-EWTN-104",
+        "MUE55-EWTN-105",
+        "MUE55-EWTN-107"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-106",
+          "action_label": "Decorate household windows and doorways for the Corpus Christi procession",
+          "same_html_line": true,
+          "lexical_jaccard": 0.182
+        },
+        {
+          "observation_id": "MUE55-EWTN-103",
+          "action_label": "Report outdoor Corpus Christi processions through villages and fields",
+          "same_html_line": true,
+          "lexical_jaccard": 0.167
+        },
+        {
+          "observation_id": "MUE55-EWTN-104",
+          "action_label": "Carry banners flowers and other symbolic objects in Corpus Christi processions",
+          "same_html_line": true,
+          "lexical_jaccard": 0.143
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-088",
+      "secondary_label": "Neighborhood erects outdoor altars for Corpus Christi Benediction",
+      "ewtn_line": 291,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-107",
+        "MUE55-EWTN-103",
+        "MUE55-EWTN-106",
+        "MUE55-EWTN-104",
+        "MUE55-EWTN-105"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-107",
+          "action_label": "Prepare neighborhood procession altars for Benediction",
+          "same_html_line": true,
+          "lexical_jaccard": 0.333
+        },
+        {
+          "observation_id": "MUE55-EWTN-103",
+          "action_label": "Report outdoor Corpus Christi processions through villages and fields",
+          "same_html_line": true,
+          "lexical_jaccard": 0.273
+        },
+        {
+          "observation_id": "MUE55-EWTN-106",
+          "action_label": "Decorate household windows and doorways for the Corpus Christi procession",
+          "same_html_line": true,
+          "lexical_jaccard": 0.182
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-089",
+      "secondary_label": "Family Magnificat devotion for Visitation feast",
+      "ewtn_line": 302,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-109",
+        "MUE55-EWTN-108"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-109",
+          "action_label": "Pray the Magnificat as a household Visitation devotion",
+          "same_html_line": true,
+          "lexical_jaccard": 0.6
+        },
+        {
+          "observation_id": "MUE55-EWTN-108",
+          "action_label": "Celebrate the Visitation as a special domestic commemoration for mothers",
+          "same_html_line": true,
+          "lexical_jaccard": 0.111
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-090",
+      "secondary_label": "Visit and help an expectant mother on Visitation",
+      "ewtn_line": 303,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-110"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-110",
+          "action_label": "Visit and assist an expectant mother as a family act of charity on the Visitation",
+          "same_html_line": true,
+          "lexical_jaccard": 0.571
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-091",
+      "secondary_label": "Children gather large Assumption bouquets of wild herbs and flowers",
+      "ewtn_line": 305,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-111"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-111",
+          "action_label": "Children gather numerous wild herbs and flowers into a traditional Assumption bouquet",
+          "same_html_line": true,
+          "lexical_jaccard": 0.5
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-092",
+      "secondary_label": "Assumption wild herb bouquets blessed before High Mass",
+      "ewtn_line": 306,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-112",
+        "MUE55-EWTN-113"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-112",
+          "action_label": "Bring gathered Assumption herbs to a blessing before High Mass",
+          "same_html_line": true,
+          "lexical_jaccard": 0.273
+        },
+        {
+          "observation_id": "MUE55-EWTN-113",
+          "action_label": "Distribute Assumption blessed herbs through stable pantry gardens and fields",
+          "same_html_line": true,
+          "lexical_jaccard": 0.154
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-093",
+      "secondary_label": "Blessed Assumption herbs divided between house stable and garden",
+      "ewtn_line": 306,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-113",
+        "MUE55-EWTN-112"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-113",
+          "action_label": "Distribute Assumption blessed herbs through stable pantry gardens and fields",
+          "same_html_line": true,
+          "lexical_jaccard": 0.333
+        },
+        {
+          "observation_id": "MUE55-EWTN-112",
+          "action_label": "Bring gathered Assumption herbs to a blessing before High Mass",
+          "same_html_line": true,
+          "lexical_jaccard": 0.154
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-094",
+      "secondary_label": "Marian September and October feasts kept with family hymns and psalms",
+      "ewtn_line": 308,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-115"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-115",
+          "action_label": "Keep September and November Marian observances at home with psalms hymns and reflections",
+          "same_html_line": true,
+          "lexical_jaccard": 0.333
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-095",
+      "secondary_label": "Family saint-of-month historical and devotional study",
+      "ewtn_line": 309,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-117",
+        "MUE55-EWTN-116"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-117",
+          "action_label": "Study the saint-of-the-week as a family devotional exercise",
+          "same_html_line": true,
+          "lexical_jaccard": 0.333
+        },
+        {
+          "observation_id": "MUE55-EWTN-116",
+          "action_label": "Create a household saint-of-the-month reading club",
+          "same_html_line": true,
+          "lexical_jaccard": 0.143
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-096",
+      "secondary_label": "Reading saints Mass lessons and Gospel as family biography sources",
+      "ewtn_line": 311,
+      "co_located_prior_mueller_source_ids": [],
+      "same_line_lexical_review_hints": [],
+      "near_line_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-116",
+          "action_label": "Create a household saint-of-the-month reading club",
+          "line_distance": 2,
+          "lexical_jaccard": 0.111
+        },
+        {
+          "observation_id": "MUE55-EWTN-117",
+          "action_label": "Study the saint-of-the-week as a family devotional exercise",
+          "line_distance": 2,
+          "lexical_jaccard": 0
+        }
+      ],
+      "relationship_disposition": "SAME_WORK_NEARBY_OR_NOT_PREVIOUSLY_INDEXED_NEEDS_MANUAL_CHECK",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-097",
+      "secondary_label": "Family sings Litany of Saints approaching All Saints",
+      "ewtn_line": 314,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-118",
+        "MUE55-EWTN-119"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-118",
+          "action_label": "Recite or sing the Litany of the Saints at home",
+          "same_html_line": true,
+          "lexical_jaccard": 0.167
+        },
+        {
+          "observation_id": "MUE55-EWTN-119",
+          "action_label": "Compile and recite a family litany of members' patron saints",
+          "same_html_line": true,
+          "lexical_jaccard": 0.143
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-098",
+      "secondary_label": "Family adapts a litany of relatives patron saints",
+      "ewtn_line": 314,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-119",
+        "MUE55-EWTN-118"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-119",
+          "action_label": "Compile and recite a family litany of members' patron saints",
+          "same_html_line": true,
+          "lexical_jaccard": 0.286
+        },
+        {
+          "observation_id": "MUE55-EWTN-118",
+          "action_label": "Recite or sing the Litany of the Saints at home",
+          "same_html_line": true,
+          "lexical_jaccard": 0.143
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-099",
+      "secondary_label": "Office of Dead introduced to children on All Souls",
+      "ewtn_line": 315,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-120",
+        "MUE55-EWTN-121"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-120",
+          "action_label": "Read or discuss the Office of the Dead with children on All Souls",
+          "same_html_line": true,
+          "lexical_jaccard": 0.5
+        },
+        {
+          "observation_id": "MUE55-EWTN-121",
+          "action_label": "Sustain household conversations on death and Christian hope during November",
+          "same_html_line": true,
+          "lexical_jaccard": 0
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    },
+    {
+      "secondary_source_observation_id": "MUELLER55-EWTN-100",
+      "secondary_label": "November family remembrance of deceased relatives and saints deaths",
+      "ewtn_line": 316,
+      "co_located_prior_mueller_source_ids": [
+        "MUE55-EWTN-122"
+      ],
+      "same_line_lexical_review_hints": [
+        {
+          "observation_id": "MUE55-EWTN-122",
+          "action_label": "Recount stories of the deaths of saints and deceased relatives during November",
+          "same_html_line": true,
+          "lexical_jaccard": 0.5
+        }
+      ],
+      "near_line_review_hints": [],
+      "relationship_disposition": "SAME_LINE_PRIOR_SOURCE_TEXT_OVERLAP_NOT_NEW_COUNT",
+      "separate_distinct_custom_verified": false,
+      "independent_second_author_corroboration": false,
+      "add_to_1629_source_rows": false
+    }
+  ]
+}

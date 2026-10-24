@@ -1,0 +1,2321 @@
+{
+  "schema": "AO_SPAIN_ELCHE_BERGA_CARAVACA_3_COMPLEXES_LOCAL_PASS_V1",
+  "research_date": "2026-10-23",
+  "scope": "NONCANONICAL_LOCAL_RELIGIOUS_AND_CIVIC_FESTIVAL_SOURCE_DETAILS",
+  "methodology": "Institutional original webpage or festival program line-anchored paraphrases, with Murcia Caravaca festival page available only as indexed excerpt and therefore lacking stable HTML lines. Includes 2026 programme-specific descriptions, costume/theatrical scenes, folklore history and official feast observances; they are ONE component of one of THREE local festival complexes, not independent customs. Elche plays sacred drama but staged baptism or funerary gestures are not liturgical sacraments to repeat. Medieval claims require original archival verification. Never infer compatibility with 1962 Missal or ecclesiastical endorsement from tourism promotion; no text/prayers reproduced. Supplemented by detailed Caravaca municipal source on the actual 1–5 May religious sequence, preserving nine reported rites as action/context proposals rather than certifying nine approved 1962 ritual formulas; explicitly notes May 1 unblessed flowers versus May 2 blessing.",
+  "sources": [
+    {
+      "source_key": "EF",
+      "url": "https://misteridelx.com/misteri-festividad/",
+      "access": "DIRECT_PATRONATO_HTML_LINE"
+    },
+    {
+      "source_key": "EH",
+      "url": "https://misteridelx.com/informacion-horarios/",
+      "access": "DIRECT_PATRONATO_HTML_LINE"
+    },
+    {
+      "source_key": "EM",
+      "url": "https://misteridelx.com/misteri/",
+      "access": "DIRECT_PATRONATO_HTML_LINE"
+    },
+    {
+      "source_key": "EG",
+      "url": "https://misteridelx.com/representacion-guia/",
+      "access": "DIRECT_PATRONATO_HTML_LINE"
+    },
+    {
+      "source_key": "ES",
+      "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+      "access": "DIRECT_PATRONATO_HTML_LINE"
+    },
+    {
+      "source_key": "BG",
+      "url": "https://patrimoni.gencat.cat/en/collection/la-patum",
+      "access": "DIRECT_GENERALITAT_HTML_LINE"
+    },
+    {
+      "source_key": "BD",
+      "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+      "access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+    },
+    {
+      "source_key": "BU",
+      "url": "https://ajberga.cat/actualitat/agenda/5935-diumenge-de-corpus-",
+      "access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+    },
+    {
+      "source_key": "BC",
+      "url": "https://www.ajberga.cat/actualitat/noticies/el-departament-de-cultura-reforca-el-seu-compromis-amb-la-patum-de-berga-",
+      "access": "DIRECT_BERGA_SECONDARY_HTML_LINE"
+    },
+    {
+      "source_key": "CR",
+      "url": "https://www.turismoregiondemurcia.es/en/caravaca_de_la_cruz//",
+      "access": "DIRECT_OFFICIAL_TOURISM_HTML_LINE"
+    },
+    {
+      "source_key": "CM",
+      "url": "https://www.turismoregiondemurcia.es/en/event/fiestas-de-la-santisima-y-vera-cruz%2C-moros-y-cristianos-y-caballos-del-vino-M424145/",
+      "access": "WEB_SEARCH_STRUCTURED_EXCERPT_NOT_FULL_PAGE_LINE_NUMBER"
+    },
+    {
+      "source_key": "CU",
+      "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+      "access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+    },
+    {
+      "source_key": "CV",
+      "url": "https://nueva.turismocaravaca.com/en/the-cross-of-caravaca",
+      "access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+    }
+  ],
+  "summary": {
+    "source_detail_records": 145,
+    "by_complex": {
+      "E": 72,
+      "B": 36,
+      "C": 37
+    },
+    "unique_local_festival_complexes": 3,
+    "claim_types": {
+      "CONFRATERNITY_THEATRICAL_CONTEXT": 1,
+      "SACRED_DRAMA_MATERIAL": 5,
+      "SACRED_DRAMA_COSTUME": 5,
+      "SACRED_DRAMA_GESTURE": 7,
+      "PUBLIC_CATHOLIC_DEVOTION": 1,
+      "DEVOTIONAL_MATERIAL_REQUIRES_CAUTION": 2,
+      "MARIAN_CIVIC_VOTIVE_OFFERING": 2,
+      "PUBLIC_MARIAN_VIGIL": 2,
+      "MARIAN_OCTAVE_DEVOTION": 3,
+      "2026_SCHEDULE_NOT_FIXED_YEAR": 2,
+      "PUBLIC_ANNUAL_PERFORMANCE": 2,
+      "EXTRAORDINARY_2026_PERFORMANCE": 2,
+      "SACRED_DRAMA_STAGE": 16,
+      "SACRED_DRAMA_SYMBOLIC_OBJECT": 2,
+      "SACRED_DRAMA_ACT_SEQUENCE": 2,
+      "PUBLIC_LITURGY_CONTEXT": 7,
+      "SACRED_DRAMA_CEREMONIAL_ENTRY": 3,
+      "SACRED_DRAMA_PROCESSION": 8,
+      "SACRED_DRAMA_SOUND": 1,
+      "SACRED_DRAMA_MUSIC": 2,
+      "SACRED_DRAMA_THEOLOGICAL_SCENE": 2,
+      "FESTIVAL_CHRISTIAN_ORIGIN_CONTEXT": 1,
+      "HISTORICAL_REPORT_SECONDARY": 1,
+      "FESTIVAL_PROGRAM_STRUCTURE": 1,
+      "SACRED_CIVIC_FESTIVAL_ELEMENT": 6,
+      "FESTIVAL_PYROTECHNIC": 2,
+      "FESTIVAL_MUSIC": 2,
+      "EXPLICIT_2026_PROGRAM": 18,
+      "CONTEXT_HISTORICAL_SECONDARY": 2,
+      "CHILD_TRANSMISSION": 1,
+      "CIVIC_FESTIVAL_ORGANIZATION": 1,
+      "VERA_CRUZ_DEVOTIONAL_RITE_REQUIRES_CHECK": 1,
+      "WINE_HORSES_CIVIC_FESTIVAL": 8,
+      "HISTORICAL_ORIGIN_UNVERIFIED": 2,
+      "FESTIVAL_VOTIVE_SOCIAL": 1,
+      "FESTIVAL_COSTUME": 1,
+      "MAY1_FLORAL_OFFERING_NOT_YET_BLESSED": 1,
+      "CIVIC_MUSIC": 1,
+      "WINE_HORSES_EMBROIDERY": 2,
+      "MATERIAL_PREPARATION": 1,
+      "FESTIVAL_SIGNAL": 1,
+      "WINE_AND_FLOWERS_RITE_AUTHORITY_NOT_VERIFIED": 4,
+      "VERA_CRUZ_PROCESSION": 2,
+      "CIVIC_ESCORT_DISTINCT_FROM_RELIGIOUS_RITE": 1,
+      "CHILD_FESTIVAL_TRANSMISSION": 1,
+      "HISTORICAL_ORIGIN_CLAIM_NOT_ARCHIVE_CHECKED": 1,
+      "AGRICULTURAL_BLESSING_AUTHORITY_UNVERIFIED": 1,
+      "SOCIAL_GIFT_CROSS_NOT_ASSUMED_RITUAL": 1,
+      "HISTORICAL_GIFT_EVIDENCE_NEEDS_ARCHIVE": 1,
+      "JUBILEE_PILGRIMAGE_HISTORY_NOT_DOCUMENT_CHECKED": 1,
+      "INDULGENCE_HISTORY_REQUIRES_PRIMARY_TEXT": 1
+    },
+    "verified_distinct_new_customs": 0,
+    "independent_primary_archival_witnesses_certified": 0,
+    "app_publications": 0
+  },
+  "records": [
+    {
+      "observation_id": "SPREG26-E-001",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Priests portray the three sacral roles of St Peter, principal Araceli angel and Eternal Father",
+      "detail_type": "CONFRATERNITY_THEATRICAL_CONTEXT",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 66,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-002",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Carry a processional cross within the dramatized funeral of Mary",
+      "detail_type": "SACRED_DRAMA_MATERIAL",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 67,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-003",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Use a canopy above the dramatized funeral bier",
+      "detail_type": "SACRED_DRAMA_MATERIAL",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 67,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-004",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Use an incense vessel in the staged Assumption funeral",
+      "detail_type": "SACRED_DRAMA_MATERIAL",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 67,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-005",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Dress the St Peter character in alb stole and cope during the second act",
+      "detail_type": "SACRED_DRAMA_COSTUME",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 67,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-006",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Use staged baptism gestures for the converted opponents in the sacred play",
+      "detail_type": "SACRED_DRAMA_GESTURE",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 68,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-007",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Light candles at the dramatic death of the Virgin",
+      "detail_type": "SACRED_DRAMA_MATERIAL",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 68,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-008",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Apostles make ceremonial reverences before the Virgin during the Salve",
+      "detail_type": "SACRED_DRAMA_GESTURE",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 69,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-009",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Celebrate early-morning Masses on the Assumption at the temporary stage in Santa Maria",
+      "detail_type": "PUBLIC_CATHOLIC_DEVOTION",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 70,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-010",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Spectators gather fallen gold-paper fragments from the basilica stage machinery as Marian keepsakes",
+      "detail_type": "DEVOTIONAL_MATERIAL_REQUIRES_CAUTION",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 71,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-011",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Some devotees preserve detached fragments of the theatrical golden palm as family keepsakes",
+      "detail_type": "DEVOTIONAL_MATERIAL_REQUIRES_CAUTION",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 71,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-012",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Households set off fireworks from their roofs during the August 13 Nit de l Alba",
+      "detail_type": "MARIAN_CIVIC_VOTIVE_OFFERING",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 84,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-013",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "At midnight a special Marian fireworks palm is launched from the Santa Maria belfry",
+      "detail_type": "MARIAN_CIVIC_VOTIVE_OFFERING",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 84,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-014",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Devotees carry lighted candles during the overnight Roa procession",
+      "detail_type": "PUBLIC_MARIAN_VIGIL",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 85,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-015",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Overnight Roa walkers follow the route of the next morning Marian funeral procession",
+      "detail_type": "PUBLIC_MARIAN_VIGIL",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 85,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-016",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Offer sung Salves before the recumbent Marian image during the Assumption octave",
+      "detail_type": "MARIAN_OCTAVE_DEVOTION",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 86,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-017",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Include a formal homily in the octave Salves celebration",
+      "detail_type": "MARIAN_OCTAVE_DEVOTION",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 86,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-018",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Sing traditional Assumption gozos at the octave service",
+      "detail_type": "MARIAN_OCTAVE_DEVOTION",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri-festividad/",
+        "web_line": 86,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-019",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Stage complete rehearsal performances on August 11 and August 12",
+      "detail_type": "2026_SCHEDULE_NOT_FIXED_YEAR",
+      "source_locator": {
+        "url": "https://misteridelx.com/informacion-horarios/",
+        "web_line": 47,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-020",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Stage another complete rehearsal on August 13",
+      "detail_type": "2026_SCHEDULE_NOT_FIXED_YEAR",
+      "source_locator": {
+        "url": "https://misteridelx.com/informacion-horarios/",
+        "web_line": 47,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-021",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Perform Vespra on August 14 at the Basilica",
+      "detail_type": "PUBLIC_ANNUAL_PERFORMANCE",
+      "source_locator": {
+        "url": "https://misteridelx.com/informacion-horarios/",
+        "web_line": 49,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-022",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Perform Festa on Assumption August 15 at the Basilica",
+      "detail_type": "PUBLIC_ANNUAL_PERFORMANCE",
+      "source_locator": {
+        "url": "https://misteridelx.com/informacion-horarios/",
+        "web_line": 49,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-023",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Offer complete special Elche performances on October 30 and 31 2026",
+      "detail_type": "EXTRAORDINARY_2026_PERFORMANCE",
+      "source_locator": {
+        "url": "https://misteridelx.com/informacion-horarios/",
+        "web_line": 52,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-024",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Present an additional two-part mystery on November 1 2026",
+      "detail_type": "EXTRAORDINARY_2026_PERFORMANCE",
+      "source_locator": {
+        "url": "https://misteridelx.com/informacion-horarios/",
+        "web_line": 54,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-025",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Lead the Marian cortege from basilica entrance up the andador to the temporary stage",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri/",
+        "web_line": 57,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-026",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Lower the aerial Mangrana apparatus containing a messenger angel",
+      "detail_type": "SACRED_DRAMA_MATERIAL",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri/",
+        "web_line": 58,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-027",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "The Mangrana angel hands a golden palm to the Virgin in the first act",
+      "detail_type": "SACRED_DRAMA_SYMBOLIC_OBJECT",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri/",
+        "web_line": 58,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-028",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Assemble the apostles except St Thomas around the dying Virgin",
+      "detail_type": "SACRED_DRAMA_ACT_SEQUENCE",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri/",
+        "web_line": 59,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-029",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Replace the boy portraying Mary with a recumbent Assumption image after the depicted death",
+      "detail_type": "SACRED_DRAMA_ACT_SEQUENCE",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri/",
+        "web_line": 59,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-030",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Lower the Araceli angel choir to retrieve the Virgin soul symbol",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/misteri/",
+        "web_line": 59,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-031",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Sing the solemn Assumption Vespers before the first act",
+      "detail_type": "PUBLIC_LITURGY_CONTEXT",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 58,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-032",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Process from St Sebastian hermitage to the basilica with the performers",
+      "detail_type": "SACRED_DRAMA_CEREMONIAL_ENTRY",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 59,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-033",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "The parish rector and festival electos lead the performers cortege",
+      "detail_type": "SACRED_DRAMA_CEREMONIAL_ENTRY",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 59,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-034",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Municipal band precedes the stage performers toward the basilica",
+      "detail_type": "SACRED_DRAMA_CEREMONIAL_ENTRY",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 60,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-035",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "A boy portrays Mary in a white tunic blue mantle and golden diadem",
+      "detail_type": "SACRED_DRAMA_COSTUME",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 61,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-036",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Festival electos occupy assigned seats beside the theatrical raised path",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 64,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-037",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "The Virgin kneels on cushions and sings her wish to be reunited with her Son",
+      "detail_type": "SACRED_DRAMA_GESTURE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 84,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-038",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "The Marian cortege pauses at three small Passion-themed stations on the andador",
+      "detail_type": "SACRED_DRAMA_PROCESSION",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 95,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-039",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "First Passion station evokes Christ in Gethsemane",
+      "detail_type": "SACRED_DRAMA_PROCESSION",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 97,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-040",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Second Passion station evokes Calvary",
+      "detail_type": "SACRED_DRAMA_PROCESSION",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 110,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-041",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Third Passion station evokes the Holy Sepulchre",
+      "detail_type": "SACRED_DRAMA_PROCESSION",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 121,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-042",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Use twelve lit candles around the temporary each-stage railing",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 131,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-043",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Conceal the dome as a painted heavenly vault opening for angelic entrances",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 142,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-044",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Lower the cloud-or-pomegranate sphere through the stage sky opening",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 143,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-045",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Open the aerial pomegranate into eight segments revealing a child angel",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 144,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-046",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Accompany the heavenly opening with organ bells and fireworks",
+      "detail_type": "SACRED_DRAMA_SOUND",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 144,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-047",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Drop cut gold-colored paper from the heavenly apparatus",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 145,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-048",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "The Virgin transfers the golden funeral palm to St John",
+      "detail_type": "SACRED_DRAMA_SYMBOLIC_OBJECT",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 246,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-049",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Kiss and touch the golden palm with the forehead when transferring it",
+      "detail_type": "SACRED_DRAMA_GESTURE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 268,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-050",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "St Peter enters carrying oversized symbolic golden keys",
+      "detail_type": "SACRED_DRAMA_COSTUME",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 312,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-051",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Apostles venerate the Virgin with kisses of her hands and genuflections",
+      "detail_type": "SACRED_DRAMA_GESTURE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 324,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-052",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "The choirmaster participates as a costumed apostle and discreetly directs the ensemble",
+      "detail_type": "SACRED_DRAMA_MUSIC",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 325,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-053",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Three apostles converge from three different basilica doors for the Ternari",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 326,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-054",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "St James enters dressed as a pilgrim bearing staff and water gourd",
+      "detail_type": "SACRED_DRAMA_COSTUME",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia/",
+        "web_line": 327,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-055",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Second act is also preceded by sung Vespers",
+      "detail_type": "PUBLIC_LITURGY_CONTEXT",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 57,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-056",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "The electos kiss the feet of the recumbent Assumption image",
+      "detail_type": "SACRED_DRAMA_GESTURE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 58,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-057",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "St Peter changes into alb stole and cope for the funeral act",
+      "detail_type": "SACRED_DRAMA_COSTUME",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 58,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-058",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Open a central square stage grave to portray Mary's burial",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 59,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-059",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Four apostles invite the Marian companion group to join the simulated funeral",
+      "detail_type": "SACRED_DRAMA_PROCESSION",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 71,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-060",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Apostles hear the penitence of the dramatic opponents before the simulated baptism",
+      "detail_type": "SACRED_DRAMA_THEOLOGICAL_SCENE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 213,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-061",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "The St Peter actor touches the heads of opponents with the golden palm to represent baptism",
+      "detail_type": "SACRED_DRAMA_THEOLOGICAL_SCENE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 245,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-062",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Actors carry an elevated cross leading Mary's symbolic funeral",
+      "detail_type": "SACRED_DRAMA_PROCESSION",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 275,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-063",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Apostles and converted opponents circle the stage together for a short procession",
+      "detail_type": "SACRED_DRAMA_PROCESSION",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 275,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-064",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Carry the image of Mary on a bier underneath a canopy in the stage funeral",
+      "detail_type": "SACRED_DRAMA_PROCESSION",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 276,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-065",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Sing In exitu Israel during the simulated funeral procession",
+      "detail_type": "SACRED_DRAMA_MUSIC",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 276,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-066",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "The St Peter actor kneels and censes the image three times before symbolic burial",
+      "detail_type": "SACRED_DRAMA_GESTURE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 326,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-067",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Lower the Marian image beneath the floor of the dramatized sepulchre",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 327,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-068",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Lower the Araceli again with the angelic choir bearing Mary's soul symbol",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 327,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-069",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Replace principal Araceli angel with the Assumption statue before ascending",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 360,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-070",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Suspend the ascending angel choir midway for St Thomas late entrance",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 362,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-071",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Lower a separate Trinity coronation apparatus toward the ascending Mary",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 384,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-E-072",
+      "regional_complex": "ELCHE_ASSUMPTION_MISTERI_COMPLEX",
+      "label": "Lower a crown on cords onto the Marian statue",
+      "detail_type": "SACRED_DRAMA_STAGE",
+      "source_locator": {
+        "url": "https://misteridelx.com/representacion-guia-segundo-acto/",
+        "web_line": 395,
+        "source_access": "DIRECT_PATRONATO_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-001",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Preserve the memory that Patum grew from Corpus Christi medieval processions",
+      "detail_type": "FESTIVAL_CHRISTIAN_ORIGIN_CONTEXT",
+      "source_locator": {
+        "url": "https://patrimoni.gencat.cat/en/collection/la-patum",
+        "web_line": 56,
+        "source_access": "DIRECT_GENERALITAT_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-002",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Local cultural authorities relate Patum to medieval Corpus street performances",
+      "detail_type": "HISTORICAL_REPORT_SECONDARY",
+      "source_locator": {
+        "url": "https://patrimoni.gencat.cat/en/collection/la-patum",
+        "web_line": 58,
+        "source_access": "DIRECT_GENERALITAT_HTML_LINE"
+      },
+      "period": "SECONDARY_HISTORICAL_CLAIM",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-003",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Distinguish more solemn midday Patum from participatory night celebration",
+      "detail_type": "FESTIVAL_PROGRAM_STRUCTURE",
+      "source_locator": {
+        "url": "https://patrimoni.gencat.cat/en/collection/la-patum",
+        "web_line": 59,
+        "source_access": "DIRECT_GENERALITAT_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-004",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Turcs i Cavallets impersonate knights in the Corpus-derived festive theatre",
+      "detail_type": "SACRED_CIVIC_FESTIVAL_ELEMENT",
+      "source_locator": {
+        "url": "https://patrimoni.gencat.cat/en/collection/la-patum",
+        "web_line": 59,
+        "source_access": "DIRECT_GENERALITAT_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-005",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Perform the Maces procession within La Patum",
+      "detail_type": "SACRED_CIVIC_FESTIVAL_ELEMENT",
+      "source_locator": {
+        "url": "https://patrimoni.gencat.cat/en/collection/la-patum",
+        "web_line": 59,
+        "source_access": "DIRECT_GENERALITAT_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-006",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Perform the Guites or mule monsters in the processional theatre",
+      "detail_type": "SACRED_CIVIC_FESTIVAL_ELEMENT",
+      "source_locator": {
+        "url": "https://patrimoni.gencat.cat/en/collection/la-patum",
+        "web_line": 59,
+        "source_access": "DIRECT_GENERALITAT_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-007",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Present the figure and dance of the Eagle",
+      "detail_type": "SACRED_CIVIC_FESTIVAL_ELEMENT",
+      "source_locator": {
+        "url": "https://patrimoni.gencat.cat/en/collection/la-patum",
+        "web_line": 59,
+        "source_access": "DIRECT_GENERALITAT_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-008",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Dance the Old and New dwarves during the Corpus week celebrations",
+      "detail_type": "SACRED_CIVIC_FESTIVAL_ELEMENT",
+      "source_locator": {
+        "url": "https://patrimoni.gencat.cat/en/collection/la-patum",
+        "web_line": 59,
+        "source_access": "DIRECT_GENERALITAT_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-009",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Bring giant figures into the Patum dances",
+      "detail_type": "SACRED_CIVIC_FESTIVAL_ELEMENT",
+      "source_locator": {
+        "url": "https://patrimoni.gencat.cat/en/collection/la-patum",
+        "web_line": 59,
+        "source_access": "DIRECT_GENERALITAT_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-010",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Make the Salt de Plens the climax of the night Patum with fire devils",
+      "detail_type": "FESTIVAL_PYROTECHNIC",
+      "source_locator": {
+        "url": "https://patrimoni.gencat.cat/en/collection/la-patum",
+        "web_line": 60,
+        "source_access": "DIRECT_GENERALITAT_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-011",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Accompany principal Patum figures with tabal drums and composed music",
+      "detail_type": "FESTIVAL_MUSIC",
+      "source_locator": {
+        "url": "https://patrimoni.gencat.cat/en/collection/la-patum",
+        "web_line": 60,
+        "source_access": "DIRECT_GENERALITAT_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-012",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Fetch the appointed administrators in a musical morning parade on Corpus Thursday",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 258,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-013",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Celebrate Corpus Thursday sung Mass in the parish of Santa Eulalia",
+      "detail_type": "PUBLIC_LITURGY_CONTEXT",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 261,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-014",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Perform the fixed-order morning Patum de Lluiment before afternoon festivities",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 264,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-015",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Begin the Patum de Lluiment with Turcs i Cavallets",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 264,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-016",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Present Maces and angel roles after the Turcs i Cavallets",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 264,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-017",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Follow the Maces and angels with the Guites",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 264,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-018",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Perform the Eagle dance after the Guites",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 264,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-019",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Dance the Nans Vells after the Eagle",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 264,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-020",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Introduce giants and then Nans Nous in the morning order",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 264,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-021",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Conclude the morning exhibition with the Tirabols dance",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 264,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-022",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Omit Plens from the morning exhibition portion",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 264,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-023",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Perform the complete evening Patum with four dance rounds",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 278,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-024",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Perform the Plens only after the second and fourth rounds",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 278,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-025",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "At the final Tirabols dancers join both Guites with both giant pairs",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/temes/ambit-la-patum/5932-dijous-de-corpus-",
+        "web_line": 279,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-026",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Sunday administrators join the Corpus Sunday procession to the town square",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/actualitat/agenda/5935-diumenge-de-corpus-",
+        "web_line": 258,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-027",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Celebrate Corpus Sunday Mass including a locally named Missa Patumaire",
+      "detail_type": "PUBLIC_LITURGY_CONTEXT",
+      "source_locator": {
+        "url": "https://ajberga.cat/actualitat/agenda/5935-diumenge-de-corpus-",
+        "web_line": 263,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-028",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Perform a solemn Corpus Sunday morning Patum de Lluiment",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/actualitat/agenda/5935-diumenge-de-corpus-",
+        "web_line": 268,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-029",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Do not include Plens in the Sunday morning Patum exhibition",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/actualitat/agenda/5935-diumenge-de-corpus-",
+        "web_line": 268,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-030",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Repeat full Patum evening sequence with Plens at designated rounds on Corpus Sunday",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/actualitat/agenda/5935-diumenge-de-corpus-",
+        "web_line": 282,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-031",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Conclude Sunday Patum Completa with Tirabols in the square",
+      "detail_type": "EXPLICIT_2026_PROGRAM",
+      "source_locator": {
+        "url": "https://ajberga.cat/actualitat/agenda/5935-diumenge-de-corpus-",
+        "web_line": 283,
+        "source_access": "DIRECT_BERGA_2026_MUNICIPAL_HTML_LINE"
+      },
+      "period": "EXPLICIT_2026_EVENT_ONLY",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-032",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Distinguish the earliest archival Corpus reference from current Patum dance form",
+      "detail_type": "CONTEXT_HISTORICAL_SECONDARY",
+      "source_locator": {
+        "url": "https://www.ajberga.cat/actualitat/noticies/el-departament-de-cultura-reforca-el-seu-compromis-amb-la-patum-de-berga-",
+        "web_line": 291,
+        "source_access": "DIRECT_BERGA_SECONDARY_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-033",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Keep 1725 described Patum structure separate from present staged events",
+      "detail_type": "CONTEXT_HISTORICAL_SECONDARY",
+      "source_locator": {
+        "url": "https://www.ajberga.cat/actualitat/noticies/el-departament-de-cultura-reforca-el-seu-compromis-amb-la-patum-de-berga-",
+        "web_line": 292,
+        "source_access": "DIRECT_BERGA_SECONDARY_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-034",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Hold the Friday Patum Infantil as an educational small-scale counterpart",
+      "detail_type": "CHILD_TRANSMISSION",
+      "source_locator": {
+        "url": "https://www.ajberga.cat/actualitat/noticies/el-departament-de-cultura-reforca-el-seu-compromis-amb-la-patum-de-berga-",
+        "web_line": 293,
+        "source_access": "DIRECT_BERGA_SECONDARY_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-035",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Include the Quatre Fuets opening test within Corpus week cycle",
+      "detail_type": "FESTIVAL_PYROTECHNIC",
+      "source_locator": {
+        "url": "https://www.ajberga.cat/actualitat/noticies/el-departament-de-cultura-reforca-el-seu-compromis-amb-la-patum-de-berga-",
+        "web_line": 293,
+        "source_access": "DIRECT_BERGA_SECONDARY_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-B-036",
+      "regional_complex": "BERGA_CORPUS_PATUM_COMPLEX",
+      "label": "Manage the Patum through a municipal patronat with dance troupe representatives",
+      "detail_type": "CIVIC_FESTIVAL_ORGANIZATION",
+      "source_locator": {
+        "url": "https://www.ajberga.cat/actualitat/noticies/el-departament-de-cultura-reforca-el-seu-compromis-amb-la-patum-de-berga-",
+        "web_line": 294,
+        "source_access": "DIRECT_BERGA_SECONDARY_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-001",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Bathe or immerse the Vera Cruz relic at its sanctuary on May 3",
+      "detail_type": "VERA_CRUZ_DEVOTIONAL_RITE_REQUIRES_CHECK",
+      "source_locator": {
+        "url": "https://www.turismoregiondemurcia.es/en/caravaca_de_la_cruz//",
+        "web_line": 272,
+        "source_access": "DIRECT_OFFICIAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-002",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Race decorated wine horses on the steep slope toward Caravaca castle",
+      "detail_type": "WINE_HORSES_CIVIC_FESTIVAL",
+      "source_locator": {
+        "url": "https://www.turismoregiondemurcia.es/en/caravaca_de_la_cruz//",
+        "web_line": 273,
+        "source_access": "DIRECT_OFFICIAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-003",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Commemorate the medieval siege story through the Caballos del Vino celebration",
+      "detail_type": "HISTORICAL_ORIGIN_UNVERIFIED",
+      "source_locator": {
+        "url": "https://www.turismoregiondemurcia.es/en/event/fiestas-de-la-santisima-y-vera-cruz%2C-moros-y-cristianos-y-caballos-del-vino-M424145/",
+        "web_line": null,
+        "source_access": "WEB_SEARCH_STRUCTURED_EXCERPT_NOT_FULL_PAGE_LINE_NUMBER"
+      },
+      "period": "SECONDARY_HISTORICAL_CLAIM",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-004",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Bring costumed Moorish and Christian groups into the May 1-5 fiesta",
+      "detail_type": "FESTIVAL_VOTIVE_SOCIAL",
+      "source_locator": {
+        "url": "https://www.turismoregiondemurcia.es/en/event/fiestas-de-la-santisima-y-vera-cruz%2C-moros-y-cristianos-y-caballos-del-vino-M424145/",
+        "web_line": null,
+        "source_access": "WEB_SEARCH_STRUCTURED_EXCERPT_NOT_FULL_PAGE_LINE_NUMBER"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-005",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Play Moorish marches during the ceremonial Moors and Christians defiles",
+      "detail_type": "FESTIVAL_MUSIC",
+      "source_locator": {
+        "url": "https://www.turismoregiondemurcia.es/en/event/fiestas-de-la-santisima-y-vera-cruz%2C-moros-y-cristianos-y-caballos-del-vino-M424145/",
+        "web_line": null,
+        "source_access": "WEB_SEARCH_STRUCTURED_EXCERPT_NOT_FULL_PAGE_LINE_NUMBER"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-006",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Hold a timed Caballos del Vino race as central May 2 attraction",
+      "detail_type": "WINE_HORSES_CIVIC_FESTIVAL",
+      "source_locator": {
+        "url": "https://www.turismoregiondemurcia.es/en/event/fiestas-de-la-santisima-y-vera-cruz%2C-moros-y-cristianos-y-caballos-del-vino-M424145/",
+        "web_line": null,
+        "source_access": "WEB_SEARCH_STRUCTURED_EXCERPT_NOT_FULL_PAGE_LINE_NUMBER"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-007",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Costume horse teams with heavily embroidered coverings",
+      "detail_type": "WINE_HORSES_CIVIC_FESTIVAL",
+      "source_locator": {
+        "url": "https://www.turismoregiondemurcia.es/en/event/fiestas-de-la-santisima-y-vera-cruz%2C-moros-y-cristianos-y-caballos-del-vino-M424145/",
+        "web_line": null,
+        "source_access": "WEB_SEARCH_STRUCTURED_EXCERPT_NOT_FULL_PAGE_LINE_NUMBER"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-008",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Local associations or peñas prepare and compete with wine horses",
+      "detail_type": "WINE_HORSES_CIVIC_FESTIVAL",
+      "source_locator": {
+        "url": "https://www.turismoregiondemurcia.es/en/event/fiestas-de-la-santisima-y-vera-cruz%2C-moros-y-cristianos-y-caballos-del-vino-M424145/",
+        "web_line": null,
+        "source_access": "WEB_SEARCH_STRUCTURED_EXCERPT_NOT_FULL_PAGE_LINE_NUMBER"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-009",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Link the legendary rescue of besieged inhabitants to carried wineskins",
+      "detail_type": "HISTORICAL_ORIGIN_UNVERIFIED",
+      "source_locator": {
+        "url": "https://www.turismoregiondemurcia.es/en/event/fiestas-de-la-santisima-y-vera-cruz%2C-moros-y-cristianos-y-caballos-del-vino-M424145/",
+        "web_line": null,
+        "source_access": "WEB_SEARCH_STRUCTURED_EXCERPT_NOT_FULL_PAGE_LINE_NUMBER"
+      },
+      "period": "SECONDARY_HISTORICAL_CLAIM",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-010",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Festival crowds traditionally wear white and red during the competition",
+      "detail_type": "FESTIVAL_COSTUME",
+      "source_locator": {
+        "url": "https://www.turismoregiondemurcia.es/en/event/fiestas-de-la-santisima-y-vera-cruz%2C-moros-y-cristianos-y-caballos-del-vino-M424145/",
+        "web_line": null,
+        "source_access": "WEB_SEARCH_STRUCTURED_EXCERPT_NOT_FULL_PAGE_LINE_NUMBER"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-011",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Keep three Caballos del Vino competitions distinct: bareback horse, ornate harness and timed race",
+      "detail_type": "WINE_HORSES_CIVIC_FESTIVAL",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 21,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-012",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Offer flowers to the Holy Cross on May 1 before the later blessing of flowers",
+      "detail_type": "MAY1_FLORAL_OFFERING_NOT_YET_BLESSED",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 28,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-013",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Bring the Cross outside to preside over Mass and receive floral offerings on May 1",
+      "detail_type": "PUBLIC_LITURGY_CONTEXT",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 29,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-014",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Present bareback horses in an exhibition on the Plaza del Hoyo",
+      "detail_type": "WINE_HORSES_CIVIC_FESTIVAL",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 41,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-015",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Festival music bands enter the town square and participants sing the city hymn",
+      "detail_type": "CIVIC_MUSIC",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 47,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-016",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Display horse vestments and embroideries separately before dressing the animals",
+      "detail_type": "WINE_HORSES_EMBROIDERY",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 50,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-017",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Veteran caballistas prepare the decorated wine horses very early on May 2",
+      "detail_type": "MATERIAL_PREPARATION",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 55,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-018",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Ring bells and fire salutes to announce the May 2 morning festivities",
+      "detail_type": "FESTIVAL_SIGNAL",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 57,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-019",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Lead the wine horses on morning neighbourhood walks with their four handlers",
+      "detail_type": "WINE_HORSES_CIVIC_FESTIVAL",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 62,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-020",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Hold the Apparition Mass at the Templete Bañadero on May 2",
+      "detail_type": "PUBLIC_LITURGY_CONTEXT",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 63,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-021",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "The mayor offers a tray of flowers before the Holy Cross on May 2",
+      "detail_type": "WINE_AND_FLOWERS_RITE_AUTHORITY_NOT_VERIFIED",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 84,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-022",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "A chaplain pronounces a blessing over wine and adjacent flowers",
+      "detail_type": "WINE_AND_FLOWERS_RITE_AUTHORITY_NOT_VERIFIED",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 84,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-023",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "The Cross relic is immersed three times in wine during the May 2 rite",
+      "detail_type": "WINE_AND_FLOWERS_RITE_AUTHORITY_NOT_VERIFIED",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 84,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-024",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Wine drops from the relic are sprinkled over the nearby flowers",
+      "detail_type": "WINE_AND_FLOWERS_RITE_AUTHORITY_NOT_VERIFIED",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 84,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-025",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Run individual wine-horse timed competitions up the castle hill",
+      "detail_type": "WINE_HORSES_CIVIC_FESTIVAL",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 90,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-026",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "A judging panel awards the decorated-horse mantle prize",
+      "detail_type": "WINE_HORSES_EMBROIDERY",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 97,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-027",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Carry the floral-decorated Cross reliquary downhill with candlebearing devotees on May 2",
+      "detail_type": "VERA_CRUZ_PROCESSION",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 104,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-028",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Costumed Moors and Christians provide an escort for the relic's May 2 procession",
+      "detail_type": "CIVIC_ESCORT_DISTINCT_FROM_RELIGIOUS_RITE",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 111,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-029",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Celebrate May 3 solemn Mass of the Cross at El Salvador church",
+      "detail_type": "PUBLIC_LITURGY_CONTEXT",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 123,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-030",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Children join their own May 3 parade imitating costumed festival groups",
+      "detail_type": "CHILD_FESTIVAL_TRANSMISSION",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 128,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-031",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Local account connects the Cross procession to a route used since the 1384 locust-plague story",
+      "detail_type": "HISTORICAL_ORIGIN_CLAIM_NOT_ARCHIVE_CHECKED",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 139,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-032",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "On May 5 process with lighted candles escorting the Cross back to the sanctuary",
+      "detail_type": "VERA_CRUZ_PROCESSION",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 192,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-033",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Bless the town fields and crops toward the four cardinal directions at festival end",
+      "detail_type": "AGRICULTURAL_BLESSING_AUTHORITY_UNVERIFIED",
+      "source_locator": {
+        "url": "https://www.turismocaravaca.com/es/nuestra-tierra/fiestas-de-caravaca/fiestas-de-mayo",
+        "web_line": 198,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-034",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Give a small Caravaca Cross as a gesture of affection according to the local tradition",
+      "detail_type": "SOCIAL_GIFT_CROSS_NOT_ASSUMED_RITUAL",
+      "source_locator": {
+        "url": "https://nueva.turismocaravaca.com/en/the-cross-of-caravaca",
+        "web_line": 120,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-035",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Municipal account relates a Caravaca Cross gifted to St Teresa by Carmelite nuns",
+      "detail_type": "HISTORICAL_GIFT_EVIDENCE_NEEDS_ARCHIVE",
+      "source_locator": {
+        "url": "https://nueva.turismocaravaca.com/en/the-cross-of-caravaca",
+        "web_line": 120,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-036",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Make pilgrimage to the Caravaca Cross sanctuary associated with later papal jubilees",
+      "detail_type": "JUBILEE_PILGRIMAGE_HISTORY_NOT_DOCUMENT_CHECKED",
+      "source_locator": {
+        "url": "https://nueva.turismocaravaca.com/en/the-cross-of-caravaca",
+        "web_line": 116,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    },
+    {
+      "observation_id": "SPREG26-C-037",
+      "regional_complex": "CARAVACA_TRUE_CROSS_MAY_COMPLEX",
+      "label": "Local tourism source reports papal indulgence privileges for visiting Cross pilgrims",
+      "detail_type": "INDULGENCE_HISTORY_REQUIRES_PRIMARY_TEXT",
+      "source_locator": {
+        "url": "https://nueva.turismocaravaca.com/en/the-cross-of-caravaca",
+        "web_line": 104,
+        "source_access": "DIRECT_OFFICIAL_MUNICIPAL_TOURISM_HTML_LINE"
+      },
+      "period": "SOURCE_DESCRIBED_PRACTICE_OR_SCENE",
+      "ritual_authority": "NOT_VERIFIED_FOR_1962_USE",
+      "custom_identity_certified": false,
+      "app_publication": false
+    }
+  ],
+  "critical_notes": [
+    "Data consistency: classification counts recomputed after supplementary Caravaca municipal passage.",
+    "Elche religious theatre scenes are NOT themselves sacramental Catholic rites; simulated baptism, bodily Assumption, coronation and staged funerary gestures remain under one performance complex.",
+    "Berga source observations tagged EXPLICIT_2026_PROGRAM are year-specific, not timeless liturgical dates or universal prescriptions.",
+    "Caravaca 2026 and later historic ceremonial descriptions do not prove the minister's 1962 Roman Ritual authorization, the truth of locust-clearing miracles, or all reported papal privileges."
+  ]
+}

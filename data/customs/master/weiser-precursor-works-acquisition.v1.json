@@ -1,0 +1,95 @@
+{
+  "schema": "AO_CUSTOMS_WEISER_PRECURSORS_SOURCE_EXPANSION_REGISTER_V1",
+  "as_of": "2026-10-23",
+  "scope": "ACQUISITION_AND_SOURCE_COMPARISON_ONLY",
+  "crucial_author_statement": "In the 1958 Handbook foreword Weiser says this compilation combined his three prior books but left out material of restricted interest including recipes, music and poems. A Handbook-only customs census cannot close the precursor-source completeness gate.",
+  "primary_statement_locator": {
+    "title": "Handbook of Christian Feasts and Customs",
+    "year": 1958,
+    "section": "Foreword",
+    "printed_page": "x",
+    "pdf_page_index_zero_based": null,
+    "pdf_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+    "ocr_url": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+    "pdf_page_index_note": "Exact zero-based PDF index for roman-numeral front matter not verified; refer to Foreword itself"
+  },
+  "rules": [
+    "Bibliographic confirmation is not a claim that source has been mined.",
+    "Precursor books are not independently corroborating the Handbook because they share the same author.",
+    "Do not count recipes, textual poems or musical compositions as distinct customs without an identifiable associated traditional practice.",
+    "Record any source-exclusive customs alongside overlap mapping to 1958 book."
+  ],
+  "works": [
+    {
+      "source_id": "WEISER-CHRISTMAS-1952",
+      "title": "The Christmas Book",
+      "year": 1952,
+      "publisher": "Harcourt, Brace",
+      "source_rel": "Direct precursor to Handbook Christmas chapters; retains material that 1958 compilation says it omitted",
+      "verification_urls": [
+        "https://sophiainstitute.com/product/the-christmas-book/",
+        "https://jesuitarchives.org/wp-content/uploads/2016/03/Francis-X.-Weiser-SJ-Papers.pdf"
+      ],
+      "text_status": "NOT_FULLY_RETRIEVED_OR_MINED",
+      "coverage_target": [
+        "Christmas household rituals",
+        "regional carol/music source data",
+        "recipes and menus",
+        "Nativity plays",
+        "symbolic decorations"
+      ]
+    },
+    {
+      "source_id": "WEISER-EASTER-1954",
+      "title": "The Easter Book",
+      "year": 1954,
+      "publisher": "Harcourt, Brace",
+      "source_rel": "Direct precursor to Handbook Lent, Holy Week and Easter materials; may contain items omitted in compendium",
+      "verification_urls": [
+        "https://www.catholicculture.org/culture/library/view.cfm?recnum=105",
+        "https://jesuitarchives.org/wp-content/uploads/2016/03/Francis-X.-Weiser-SJ-Papers.pdf"
+      ],
+      "text_status": "SELECTED_PUBLIC_EXCERPT_FOUND_NOT_COMPLETE_TEXT",
+      "coverage_target": [
+        "Lenten domestic foods",
+        "Holy Week customs",
+        "Easter songs and games",
+        "local celebrations",
+        "original footnotes"
+      ]
+    },
+    {
+      "source_id": "WEISER-HOLYDAY-1956",
+      "title": "The Holyday Book",
+      "year": 1956,
+      "publisher": "Harcourt, Brace",
+      "source_rel": "Direct precursor to Handbook saint and Pentecost cycle material; may have omitted specifics",
+      "verification_urls": [
+        "https://search.worldcat.org/title/1149472092",
+        "https://jesuitarchives.org/wp-content/uploads/2016/03/Francis-X.-Weiser-SJ-Papers.pdf"
+      ],
+      "text_status": "BIBLIOGRAPHIC_DISCOVERY_ONLY_FULL_TEXT_NOT_MINED",
+      "coverage_target": [
+        "saints feast variants",
+        "regional foods and gifts",
+        "Holy Ghost and Marian customs",
+        "harvest and All Souls"
+      ]
+    },
+    {
+      "source_id": "WEISER-YEAR-LORD-HOME-1964",
+      "title": "The Year of the Lord in the Christian Home",
+      "year": 1964,
+      "publisher": "Liturgical Press",
+      "source_rel": "Additional Weiser family year observance work, potentially overlapping with family book and Handbook",
+      "verification_urls": [
+        "https://jesuitarchives.org/wp-content/uploads/2016/03/Francis-X.-Weiser-SJ-Papers.pdf"
+      ],
+      "text_status": "ARCHIVAL_BIBLIOGRAPHY_ONLY_CONTENT_NOT_CHECKED",
+      "coverage_target": [
+        "household year observances",
+        "domestic ceremonial variants"
+      ]
+    }
+  ]
+}

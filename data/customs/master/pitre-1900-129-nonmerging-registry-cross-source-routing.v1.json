@@ -1,0 +1,3991 @@
+{
+  "schema": "AO_PITRE1900_129_CROSS_SOURCE_NONMERGING_RETRIEVAL_V1",
+  "as_of": "2026-10-24",
+  "evidence_boundary": "Every one of 129 actual original 1900 OCR action details is routed; lexical label candidates are *search aids only*, NOT evidence that different festivals, saints, places, local informants or rituals describe the same practice. A different Pitrè title or later paraphrase is not independent corroboration; source image pages have not been directly inspected.",
+  "source_register": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+  "summary": {
+    "source_rows_reconciled": 129,
+    "source_distinct_locality_buckets": 14,
+    "source_ocr_lines_retained": 129,
+    "prior_master_or_working_group_candidates": 464,
+    "prior_regional_source_observation_candidates": 575,
+    "rows_with_any_lexical_lookup_hint": 74,
+    "rows_with_master_label_hint": 16,
+    "rows_with_other_regional_source_hint": 64,
+    "rows_without_lookup_hint": 55,
+    "total_lexical_edges": 166,
+    "folk_claims_quarantined": 12,
+    "manual_practice_equivalences_verified": 0,
+    "independent_historical_corrob_verified": 0,
+    "new_distinct_customs_certified": 0,
+    "app_publications": 0
+  },
+  "records": [
+    {
+      "source_id": "PIT1900-IT-001",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 16751,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITSI26-ENN-002",
+          "target_label": "Dramatise Christ's entry into Jerusalem near San Sebastiano chapel on Palm Sunday",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "entry",
+            "sunday"
+          ],
+          "score": 13.6
+        },
+        {
+          "target_id": "ITSI26-ENN-019",
+          "target_label": "Hold living Palm Sunday entry representation along Papardura–San Sebastiano route",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "sunday",
+            "entry"
+          ],
+          "score": 13.6
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-002",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
+      "ocr_line": 16760,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-066",
+          "target_label": "Cover altar scaffolding with box and laurel boughs",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "laurel",
+            "boughs"
+          ],
+          "score": 18.46
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-003",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 16778,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "IT-BSSP26-P-012",
+          "target_label": "Test the selected figures' courage before placing them on the tall structure",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "tall",
+            "structure"
+          ],
+          "score": 17.46
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-004",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 16787,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-066",
+          "target_label": "Cover altar scaffolding with box and laurel boughs",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "cover",
+            "laurel"
+          ],
+          "score": 17.46
+        },
+        {
+          "target_id": "ITREG26-071",
+          "target_label": "Place a laurel branch decorated with breads at the entrance or balcony on feast day",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "laurel",
+            "breads"
+          ],
+          "score": 13.97
+        },
+        {
+          "target_id": "ITREG26-045",
+          "target_label": "Place tiny unleavened ring breads called Cuddureddi in the animal-feed blessing preparation",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "ring",
+            "breads"
+          ],
+          "score": 13.23
+        },
+        {
+          "target_id": "ITREG26-061",
+          "target_label": "Make large breads in number corresponding to the children who represent holy family members",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "large",
+            "breads"
+          ],
+          "score": 12.75
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-005",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 16794,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "SPREG26-E-067",
+          "target_label": "Lower the Marian image beneath the floor of the dramatized sepulchre",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "image",
+            "beneath"
+          ],
+          "score": 13.18
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-006",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
+      "ocr_line": 16798,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-007",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 16801,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-008",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 16819,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-099",
+          "target_label": "Assign roles of Jesus, Mary and Joseph to the three symbolic guests at local votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "jesus",
+            "mary",
+            "joseph",
+            "three",
+            "votive"
+          ],
+          "score": 31.09
+        },
+        {
+          "target_id": "ITREG26-056",
+          "target_label": "Promise a meal for three children as fulfilment of a votive pledge to St Joseph",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "meal",
+            "three",
+            "votive",
+            "joseph"
+          ],
+          "score": 22.56
+        },
+        {
+          "target_id": "ITREG26-075",
+          "target_label": "Serve traditional offerings accompanied by the acclamation honoring Jesus, Mary and Joseph",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "jesus",
+            "mary",
+            "joseph"
+          ],
+          "score": 19.89
+        },
+        {
+          "target_id": "IT-BSSP26-P-002",
+          "target_label": "Represent Mary's Assumption by a moving votive tower",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "represent",
+            "mary",
+            "votive"
+          ],
+          "score": 19.22
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-009",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 16825,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-010",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 16833,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-099",
+          "target_label": "Assign roles of Jesus, Mary and Joseph to the three symbolic guests at local votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "joseph",
+            "votive",
+            "table"
+          ],
+          "score": 17.59
+        },
+        {
+          "target_id": "ITREG26-111",
+          "target_label": "Arrange the Holy Family images and new spring produce on the Saint Joseph votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "joseph",
+            "votive",
+            "table"
+          ],
+          "score": 17.59
+        },
+        {
+          "target_id": "ITREG26-108",
+          "target_label": "Set the Holy Family picture and oil lamp above a votive table flanked by wheat germinated in darkness",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "votive",
+            "table"
+          ],
+          "score": 12.18
+        },
+        {
+          "target_id": "ITREG26-113",
+          "target_label": "Householder serves the votive table to three people representing the Holy Family",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "votive",
+            "table"
+          ],
+          "score": 12.18
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-011",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 16840,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-012",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 16849,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-109",
+          "target_label": "Serve three symbolic Holy Family guests the local pasta dish called principissedda",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "serve",
+            "three",
+            "guests",
+            "dish"
+          ],
+          "score": 31.8
+        },
+        {
+          "target_id": "ITREG26-099",
+          "target_label": "Assign roles of Jesus, Mary and Joseph to the three symbolic guests at local votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "guests",
+            "table"
+          ],
+          "score": 20.47
+        },
+        {
+          "target_id": "ITREG26-073",
+          "target_label": "Householder washes the hands of the three child guests before serving the votive meal",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "guests"
+          ],
+          "score": 13.75
+        },
+        {
+          "target_id": "ITREG26-113",
+          "target_label": "Householder serves the votive table to three people representing the Holy Family",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "table",
+            "three"
+          ],
+          "score": 12.44
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-013",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 16854,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "CAT-WEISER-B-019",
+          "target_label": "Polish ritual mock burial of herring and sour soup",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "ritual",
+            "sour"
+          ],
+          "score": 18.05
+        },
+        {
+          "target_id": "ITREG26-074",
+          "target_label": "Begin the guests' meal with an orange peeled by the child representing the Christ Child",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "guests",
+            "orange"
+          ],
+          "score": 18.05
+        },
+        {
+          "target_id": "ITREG26-073",
+          "target_label": "Householder washes the hands of the three child guests before serving the votive meal",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "guests"
+          ],
+          "score": 13.75
+        },
+        {
+          "target_id": "ITREG26-099",
+          "target_label": "Assign roles of Jesus, Mary and Joseph to the three symbolic guests at local votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "guests"
+          ],
+          "score": 13.75
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-014",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 16857,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-070",
+          "target_label": "Prepare meatless local seasonal dishes for the household votive meal in Lent",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "dishes",
+            "votive"
+          ],
+          "score": 14.49
+        },
+        {
+          "target_id": "ITREG26-099",
+          "target_label": "Assign roles of Jesus, Mary and Joseph to the three symbolic guests at local votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "votive",
+            "table"
+          ],
+          "score": 12.18
+        },
+        {
+          "target_id": "ITREG26-108",
+          "target_label": "Set the Holy Family picture and oil lamp above a votive table flanked by wheat germinated in darkness",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "votive",
+            "table"
+          ],
+          "score": 12.18
+        },
+        {
+          "target_id": "ITREG26-111",
+          "target_label": "Arrange the Holy Family images and new spring produce on the Saint Joseph votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "votive",
+            "table"
+          ],
+          "score": 12.18
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-015",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
+      "ocr_line": 16862,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-073",
+          "target_label": "Householder washes the hands of the three child guests before serving the votive meal",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "householder",
+            "guests"
+          ],
+          "score": 17.05
+        },
+        {
+          "target_id": "ITREG26-109",
+          "target_label": "Serve three symbolic Holy Family guests the local pasta dish called principissedda",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "guests",
+            "dish"
+          ],
+          "score": 17.05
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-016",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "HISTORICAL_SACRED_REPRESENTATION",
+      "ocr_line": 16880,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "SPREG26-E-059",
+          "target_label": "Four apostles invite the Marian companion group to join the simulated funeral",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "apostles",
+            "group"
+          ],
+          "score": 16.89
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-017",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "HISTORICAL_SACRED_REPRESENTATION",
+      "ocr_line": 16900,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-018",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "HISTORICAL_SACRED_REPRESENTATION",
+      "ocr_line": 16914,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-019",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 16923,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-083",
+          "target_label": "Stage a special thirteen-guest Cenà du Santu Patri modelled on St Joseph's votive meal",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "guest",
+            "meal"
+          ],
+          "score": 14.98
+        },
+        {
+          "target_id": "ITREG26-047",
+          "target_label": "Distribute St Blaise holy cards and small votive breads to pilgrims after the church visit",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "distribute",
+            "breads"
+          ],
+          "score": 13.23
+        },
+        {
+          "target_id": "ITREG26-089",
+          "target_label": "Distribute small marked cross breads on September 9–10 in connection with the Augustinian saint",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "distribute",
+            "breads"
+          ],
+          "score": 13.23
+        },
+        {
+          "target_id": "ITREG26-097",
+          "target_label": "Distribute circular breads with a cross after their feast-day blessing",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "distribute",
+            "breads"
+          ],
+          "score": 13.23
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-020",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 16947,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "CAT-WEISER-B-158",
+          "target_label": "Saint Joseph pilgrimage followed by lamb meal",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "joseph",
+            "followed"
+          ],
+          "score": 14.44
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-021",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 16952,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-084",
+          "target_label": "Distribute small bread rings bearing a cross to feast-day churchgoers",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "distribute",
+            "bread"
+          ],
+          "score": 13.01
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-022",
+      "original_locale": "Ribera, Agrigento, Sicily",
+      "original_occasion": "St Joseph, 19 March and preceding days",
+      "claim_type": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED",
+      "ocr_line": 16955,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": true,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-023",
+      "original_locale": "Canicattini (Syracuse), Sicily",
+      "original_occasion": "St Joseph (19 March; historically first September Sunday)",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 16968,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-024",
+      "original_locale": "Canicattini (Syracuse), Sicily",
+      "original_occasion": "St Joseph (19 March; historically first September Sunday)",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 16972,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "CAT-WEISER-B-127",
+          "target_label": "Swallow departure near September Marian feasts",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "september",
+            "feasts"
+          ],
+          "score": 15.47
+        },
+        {
+          "target_id": "ITREG26-019",
+          "target_label": "Document the seasonal serpent collection beginning after the St Joseph feast in late March",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "joseph",
+            "march"
+          ],
+          "score": 14.44
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-025",
+      "original_locale": "Canicattini (Syracuse), Sicily",
+      "original_occasion": "St Joseph (19 March; historically first September Sunday)",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 16989,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-045",
+          "target_label": "Place tiny unleavened ring breads called Cuddureddi in the animal-feed blessing preparation",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "ring",
+            "breads"
+          ],
+          "score": 13.23
+        },
+        {
+          "target_id": "ITREG26-061",
+          "target_label": "Make large breads in number corresponding to the children who represent holy family members",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "large",
+            "breads"
+          ],
+          "score": 12.75
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-026",
+      "original_locale": "Canicattini (Syracuse), Sicily",
+      "original_occasion": "St Joseph (19 March; historically first September Sunday)",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 16993,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-062",
+          "target_label": "Reserve a decorated Cucciddatu bread for the child representing Jesus",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "bread",
+            "child",
+            "representing"
+          ],
+          "score": 18.47
+        },
+        {
+          "target_id": "ITREG26-063",
+          "target_label": "Prepare the symbolic Parma bread for the child representing Our Lady",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "bread",
+            "child",
+            "representing"
+          ],
+          "score": 18.47
+        },
+        {
+          "target_id": "ITREG26-064",
+          "target_label": "Prepare the flower-and-tool-decorated Vastuni bread for the child representing St Joseph",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "bread",
+            "child",
+            "representing"
+          ],
+          "score": 18.47
+        },
+        {
+          "target_id": "ITREG26-101",
+          "target_label": "Prepare Cucciddatu bread for the guest representing the Christ Child",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "bread",
+            "representing",
+            "child"
+          ],
+          "score": 18.47
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-027",
+      "original_locale": "Canicattini (Syracuse), Sicily",
+      "original_occasion": "St Joseph (19 March; historically first September Sunday)",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 16995,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-081",
+          "target_label": "Attend Mass at the sanctuary and return home for a votive meal with the youths",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "attend",
+            "mass"
+          ],
+          "score": 13.69
+        },
+        {
+          "target_id": "PIT-PAL-26-095",
+          "target_label": "Guild members attend Mass at their patronal chapel",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "attend",
+            "mass"
+          ],
+          "score": 13.69
+        },
+        {
+          "target_id": "SPREG26-B-013",
+          "target_label": "Celebrate Corpus Thursday sung Mass in the parish of Santa Eulalia",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "sung",
+            "mass"
+          ],
+          "score": 12.28
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-028",
+      "original_locale": "Canicattini (Syracuse), Sicily",
+      "original_occasion": "St Joseph (19 March; historically first September Sunday)",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 16996,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITSI26-CL-018",
+          "target_label": "Sixteen small Varicedde duplicate the larger Thursday Passion ensembles while three depict additional scenes",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "larger",
+            "three"
+          ],
+          "score": 13.75
+        },
+        {
+          "target_id": "ITREG26-047",
+          "target_label": "Distribute St Blaise holy cards and small votive breads to pilgrims after the church visit",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "distribute",
+            "breads"
+          ],
+          "score": 13.23
+        },
+        {
+          "target_id": "ITREG26-089",
+          "target_label": "Distribute small marked cross breads on September 9–10 in connection with the Augustinian saint",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "distribute",
+            "breads"
+          ],
+          "score": 13.23
+        },
+        {
+          "target_id": "ITREG26-097",
+          "target_label": "Distribute circular breads with a cross after their feast-day blessing",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "distribute",
+            "breads"
+          ],
+          "score": 13.23
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-029",
+      "original_locale": "Canicattini (Syracuse), Sicily",
+      "original_occasion": "St Joseph (19 March; historically first September Sunday)",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 16999,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-030",
+      "original_locale": "Canicattini (Syracuse), Sicily",
+      "original_occasion": "St Joseph (19 March; historically first September Sunday)",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 17003,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-019",
+          "target_label": "Document the seasonal serpent collection beginning after the St Joseph feast in late March",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "seasonal",
+            "joseph",
+            "march"
+          ],
+          "score": 21.66
+        },
+        {
+          "target_id": "ITREG26-111",
+          "target_label": "Arrange the Holy Family images and new spring produce on the Saint Joseph votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "produce",
+            "joseph"
+          ],
+          "score": 13.85
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-031",
+      "original_locale": "Canicattini (Syracuse), Sicily",
+      "original_occasion": "St Joseph (19 March; historically first September Sunday)",
+      "claim_type": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
+      "ocr_line": 17010,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-032",
+      "original_locale": "Canicattini (Syracuse), Sicily",
+      "original_occasion": "St Joseph (19 March; historically first September Sunday)",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 17020,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "SPREG26-B-030",
+          "target_label": "Repeat full Patum evening sequence with Plens at designated rounds on Corpus Sunday",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "repeat",
+            "sunday"
+          ],
+          "score": 15.18
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-033",
+      "original_locale": "Canicattini (Syracuse), Sicily",
+      "original_occasion": "St Joseph (19 March; historically first September Sunday)",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 17030,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-010",
+          "target_label": "Carry ring-shaped ciambellati described as blessed, offering them to banner and statue carriers",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "carry",
+            "banner",
+            "statue"
+          ],
+          "score": 18.15
+        },
+        {
+          "target_id": "SPREG26-C-005",
+          "target_label": "Play Moorish marches during the ceremonial Moors and Christians defiles",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "play",
+            "ceremonial"
+          ],
+          "score": 14.48
+        },
+        {
+          "target_id": "ITREG26-004",
+          "target_label": "Celebrate a patronal Mass before preparing the statue for the procession",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "patronal",
+            "statue"
+          ],
+          "score": 13
+        },
+        {
+          "target_id": "ITSI26-CL-011",
+          "target_label": "Historical artisan city militia is reported to have exchanged arms for ceremonial candles and patronal banners",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "ceremonial",
+            "patronal"
+          ],
+          "score": 12.91
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-034",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 17038,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "CANDIDATE-STJOHN-BONFIRE",
+          "target_label": "St John Baptist's community bonfire",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "john",
+            "baptist"
+          ],
+          "score": 16.6
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-035",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 17049,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "PIT-PAL-26-064",
+          "target_label": "Attempt to shorten the city's five-day festival to three days under Caracciolo",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "days"
+          ],
+          "score": 14.75
+        },
+        {
+          "target_id": "ITREG26-019",
+          "target_label": "Document the seasonal serpent collection beginning after the St Joseph feast in late March",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "joseph",
+            "march"
+          ],
+          "score": 14.44
+        },
+        {
+          "target_id": "SPREG26-E-001",
+          "target_label": "Priests portray the three sacral roles of St Peter, principal Araceli angel and Eternal Father",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "principal"
+          ],
+          "score": 13.17
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-036",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 17063,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-113",
+          "target_label": "Householder serves the votive table to three people representing the Holy Family",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "votive",
+            "three",
+            "representing"
+          ],
+          "score": 18.23
+        },
+        {
+          "target_id": "PIT-PAL-26-091",
+          "target_label": "Invite learned preachers to exhort participants in the three Rogation processions",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "invite",
+            "three"
+          ],
+          "score": 14.75
+        },
+        {
+          "target_id": "CAT-WEISER-A-048",
+          "target_label": "Three joined Christmas candles representing the Trinity",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "three",
+            "representing"
+          ],
+          "score": 12.76
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-037",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 17069,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-099",
+          "target_label": "Assign roles of Jesus, Mary and Joseph to the three symbolic guests at local votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "guests",
+            "table"
+          ],
+          "score": 20.47
+        },
+        {
+          "target_id": "ITREG26-073",
+          "target_label": "Householder washes the hands of the three child guests before serving the votive meal",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "guests"
+          ],
+          "score": 13.75
+        },
+        {
+          "target_id": "ITREG26-109",
+          "target_label": "Serve three symbolic Holy Family guests the local pasta dish called principissedda",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "guests"
+          ],
+          "score": 13.75
+        },
+        {
+          "target_id": "ITREG26-113",
+          "target_label": "Householder serves the votive table to three people representing the Holy Family",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "table",
+            "three"
+          ],
+          "score": 12.44
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-038",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 17080,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-039",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED",
+      "ocr_line": 17084,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-099",
+          "target_label": "Assign roles of Jesus, Mary and Joseph to the three symbolic guests at local votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "symbolic",
+            "guests"
+          ],
+          "score": 20.98
+        },
+        {
+          "target_id": "ITREG26-109",
+          "target_label": "Serve three symbolic Holy Family guests the local pasta dish called principissedda",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "symbolic",
+            "guests"
+          ],
+          "score": 20.98
+        },
+        {
+          "target_id": "ITREG26-093",
+          "target_label": "Report a folk notion that almsgiving makes the deceased happier in Heaven",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "report",
+            "that"
+          ],
+          "score": 14.67
+        },
+        {
+          "target_id": "ITREG26-073",
+          "target_label": "Householder washes the hands of the three child guests before serving the votive meal",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "guests"
+          ],
+          "score": 13.75
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": true,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-040",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "HISTORICAL_SACRED_REPRESENTATION",
+      "ocr_line": 17094,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-099",
+          "target_label": "Assign roles of Jesus, Mary and Joseph to the three symbolic guests at local votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "jesus",
+            "mary",
+            "joseph",
+            "three"
+          ],
+          "score": 25.62
+        },
+        {
+          "target_id": "ITREG26-075",
+          "target_label": "Serve traditional offerings accompanied by the acclamation honoring Jesus, Mary and Joseph",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "jesus",
+            "mary",
+            "joseph"
+          ],
+          "score": 19.89
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-041",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "BLESSING_OR_RITUAL_APPROVAL_NOT_CHECKED",
+      "ocr_line": 17099,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITSI26-ENN-003",
+          "target_label": "Have confraternity rectors and assistants lead the first Palm Sunday procession with their insignia",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "have",
+            "first"
+          ],
+          "score": 14.48
+        },
+        {
+          "target_id": "ITREG26-073",
+          "target_label": "Householder washes the hands of the three child guests before serving the votive meal",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "guests"
+          ],
+          "score": 13.75
+        },
+        {
+          "target_id": "ITREG26-099",
+          "target_label": "Assign roles of Jesus, Mary and Joseph to the three symbolic guests at local votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "guests"
+          ],
+          "score": 13.75
+        },
+        {
+          "target_id": "ITREG26-109",
+          "target_label": "Serve three symbolic Holy Family guests the local pasta dish called principissedda",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "three",
+            "guests"
+          ],
+          "score": 13.75
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-042",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 17101,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-043",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "HISTORICAL_SACRED_REPRESENTATION",
+      "ocr_line": 17108,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-044",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "HISTORICAL_SACRED_REPRESENTATION",
+      "ocr_line": 17114,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-016",
+          "target_label": "Record locally reported blessing requests for people or animals, ritual formula not verified",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "blessing",
+            "formula"
+          ],
+          "score": 14.36
+        },
+        {
+          "target_id": "ITREG26-064",
+          "target_label": "Prepare the flower-and-tool-decorated Vastuni bread for the child representing St Joseph",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "representing",
+            "joseph"
+          ],
+          "score": 12.44
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-045",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 17124,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-109",
+          "target_label": "Serve three symbolic Holy Family guests the local pasta dish called principissedda",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "serve",
+            "guests",
+            "dish"
+          ],
+          "score": 26.07
+        },
+        {
+          "target_id": "ITREG26-073",
+          "target_label": "Householder washes the hands of the three child guests before serving the votive meal",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "guests",
+            "votive",
+            "meal"
+          ],
+          "score": 19.45
+        },
+        {
+          "target_id": "CAT-WEISER-UNIDX-022",
+          "target_label": "Venezuelan hallaca as Christmas meal dish",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "meal",
+            "dish"
+          ],
+          "score": 14.98
+        },
+        {
+          "target_id": "ITREG26-074",
+          "target_label": "Begin the guests' meal with an orange peeled by the child representing the Christ Child",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "guests",
+            "meal"
+          ],
+          "score": 13.98
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-046",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 17137,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-092",
+          "target_label": "Give the cemetery breads to poor visitors as alms for deceased relatives",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "poor",
+            "visitors"
+          ],
+          "score": 15.02
+        },
+        {
+          "target_id": "ITREG26-098",
+          "target_label": "Some local households open Saint Joseph votive tables to visitors for the day",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "votive",
+            "visitors"
+          ],
+          "score": 13.91
+        },
+        {
+          "target_id": "ITREG26-073",
+          "target_label": "Householder washes the hands of the three child guests before serving the votive meal",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "guests",
+            "votive"
+          ],
+          "score": 13.5
+        },
+        {
+          "target_id": "ITREG26-099",
+          "target_label": "Assign roles of Jesus, Mary and Joseph to the three symbolic guests at local votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "guests",
+            "votive"
+          ],
+          "score": 13.5
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-047",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
+      "ocr_line": 17143,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-048",
+      "original_locale": "Santa Croce Camerina, Ragusa, Sicily",
+      "original_occasion": "St Joseph, 17–19 March",
+      "claim_type": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
+      "ocr_line": 17149,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-049",
+      "original_locale": "Pachino, Syracuse, Sicily",
+      "original_occasion": "St Joseph, March",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 17216,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-098",
+          "target_label": "Some local households open Saint Joseph votive tables to visitors for the day",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "households",
+            "joseph"
+          ],
+          "score": 13.44
+        },
+        {
+          "target_id": "ITREG26-099",
+          "target_label": "Assign roles of Jesus, Mary and Joseph to the three symbolic guests at local votive table",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "joseph",
+            "guests"
+          ],
+          "score": 13.44
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-050",
+      "original_locale": "Spadafora San Martino, Messina, Sicily",
+      "original_occasion": "St Joseph, March and July",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 17219,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-019",
+          "target_label": "Document the seasonal serpent collection beginning after the St Joseph feast in late March",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "joseph",
+            "march"
+          ],
+          "score": 14.44
+        },
+        {
+          "target_id": "ITREG26-004",
+          "target_label": "Celebrate a patronal Mass before preparing the statue for the procession",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "celebrate",
+            "patronal"
+          ],
+          "score": 13.73
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-051",
+      "original_locale": "Spadafora San Martino, Messina, Sicily",
+      "original_occasion": "St Joseph, March and July",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 17221,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-044",
+          "target_label": "Priest blesses animals after Mass together with a mixture of barley, oats and broad beans",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "broad",
+            "beans"
+          ],
+          "score": 19.05
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-052",
+      "original_locale": "Raccuia, Messina, Sicily",
+      "original_occasion": "St Joseph, third Sunday after Easter in reported custom",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 17226,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-053",
+      "original_locale": "Raccuia, Messina, Sicily",
+      "original_occasion": "St Joseph, third Sunday after Easter in reported custom",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 17232,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "CAT-WEISER-B-122",
+          "target_label": "Annunciation image placed among seed grain with prayer",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "image",
+            "grain"
+          ],
+          "score": 13.18
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-054",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 9297,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITSI26-TP-001",
+          "target_label": "Carry two framed Pietà images on shoulder-borne processional platforms through Trapani in Holy Week",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "carry",
+            "borne"
+          ],
+          "score": 13.81
+        },
+        {
+          "target_id": "PIT-PAL-26-039",
+          "target_label": "Carry large shoulder-borne artistic life-of-saints scenes called cilii",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "carry",
+            "borne"
+          ],
+          "score": 13.81
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-055",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 9304,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-056",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 9311,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-036",
+          "target_label": "Confraternity members resumed a Mass as part of their guild feast responsibilities",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "members",
+            "guild"
+          ],
+          "score": 13.23
+        },
+        {
+          "target_id": "PIT-PAL-26-095",
+          "target_label": "Guild members attend Mass at their patronal chapel",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "guild",
+            "members"
+          ],
+          "score": 13.23
+        },
+        {
+          "target_id": "PIT-PAL-26-097",
+          "target_label": "Guild members carry a statue of their own saint in public procession",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "guild",
+            "members"
+          ],
+          "score": 13.23
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-057",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 9316,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "IT-BSSP26-S-014",
+          "target_label": "Carry the Candeliere using the crossed base poles that provide eight bearer positions",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "carry",
+            "poles",
+            "eight"
+          ],
+          "score": 22.03
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-058",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
+      "ocr_line": 9315,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-059",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 9387,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "CAT-WEISER-GAP-033",
+          "target_label": "Historical York Cathedral mistletoe display at Christmas",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "cathedral",
+            "display"
+          ],
+          "score": 12.62
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-060",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 9396,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-061",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 9410,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-062",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 9492,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-063",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 9502,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-064",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 9509,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "PIT-PAL-26-010",
+          "target_label": "Walk between churches to visit Sepolcri devotional altars",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "walk",
+            "devotional"
+          ],
+          "score": 14.04
+        },
+        {
+          "target_id": "PIT-PAL-26-057",
+          "target_label": "Recite the Rosary and other prayers while making the traditional devotional viaggio",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "traditional",
+            "devotional"
+          ],
+          "score": 13.05
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-065",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "AUTHOR_CITED_OTHER_HISTORIAN_NOT_INDEPENDENTLY_READ",
+      "ocr_line": 9518,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "IT-BSSP26-P-003",
+          "target_label": "Preserve history of the Marian hair relic presented from Messina to Palmi in 1582",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "history",
+            "relic"
+          ],
+          "score": 16.74
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-066",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 9580,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-085",
+          "target_label": "Report resumption of a formerly discontinued St Anthony bread-giving practice",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "report",
+            "formerly",
+            "practice"
+          ],
+          "score": 22.89
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-067",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "AUTHOR_CITED_OTHER_HISTORIAN_NOT_INDEPENDENTLY_READ",
+      "ocr_line": 9614,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "SPREG26-C-027",
+          "target_label": "Carry the floral-decorated Cross reliquary downhill with candlebearing devotees on May 2",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "reliquary",
+            "devotees"
+          ],
+          "score": 16.15
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-068",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 9667,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-010",
+          "target_label": "Carry ring-shaped ciambellati described as blessed, offering them to banner and statue carriers",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "carry",
+            "carriers"
+          ],
+          "score": 13.81
+        },
+        {
+          "target_id": "PIT-PAL-26-054",
+          "target_label": "Carry a silver statue of Our Lady in the formal church and civic procession",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "carry",
+            "silver"
+          ],
+          "score": 13.81
+        },
+        {
+          "target_id": "SPREG26-C-027",
+          "target_label": "Carry the floral-decorated Cross reliquary downhill with candlebearing devotees on May 2",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "carry",
+            "reliquary"
+          ],
+          "score": 12.49
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-069",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 9683,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "SPREG26-B-032",
+          "target_label": "Distinguish the earliest archival Corpus reference from current Patum dance form",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "distinguish",
+            "form"
+          ],
+          "score": 17.46
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-070",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 9690,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITSI26-TP-002",
+          "target_label": "Carry the Pietà dei Massari through the city on Holy Tuesday under Piano San Rocco porters",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "carry",
+            "under"
+          ],
+          "score": 13.23
+        },
+        {
+          "target_id": "SPREG26-C-027",
+          "target_label": "Carry the floral-decorated Cross reliquary downhill with candlebearing devotees on May 2",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "carry",
+            "reliquary"
+          ],
+          "score": 12.49
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-071",
+      "original_locale": "Catania, Sicily",
+      "original_occasion": "St Agatha, February",
+      "claim_type": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
+      "ocr_line": 9698,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-072",
+      "original_locale": "Syracuse, Sicily",
+      "original_occasion": "St Lucy, December; May quail festival variant",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 11067,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-073",
+      "original_locale": "Syracuse, Sicily",
+      "original_occasion": "St Lucy, December; May quail festival variant",
+      "claim_type": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED",
+      "ocr_line": 11077,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": true,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-074",
+      "original_locale": "Syracuse, Sicily",
+      "original_occasion": "St Lucy, December; May quail festival variant",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 11090,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-075",
+      "original_locale": "Syracuse, Sicily",
+      "original_occasion": "St Lucy, December; May quail festival variant",
+      "claim_type": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
+      "ocr_line": 11091,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "SPREG26-C-018",
+          "target_label": "Ring bells and fire salutes to announce the May 2 morning festivities",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "ring",
+            "bells"
+          ],
+          "score": 15.15
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-076",
+      "original_locale": "Syracuse, Sicily",
+      "original_occasion": "St Lucy, December; May quail festival variant",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 11118,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-077",
+      "original_locale": "Syracuse, Sicily",
+      "original_occasion": "St Lucy, December; May quail festival variant",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 11127,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-078",
+      "original_locale": "Syracuse, Sicily",
+      "original_occasion": "St Lucy, December; May quail festival variant",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 11132,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "PIT-PAL-26-054",
+          "target_label": "Carry a silver statue of Our Lady in the formal church and civic procession",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "carry",
+            "silver"
+          ],
+          "score": 13.81
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-079",
+      "original_locale": "Syracuse, Sicily",
+      "original_occasion": "St Lucy, December; May quail festival variant",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 11144,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "SPREG26-E-054",
+          "target_label": "St James enters dressed as a pilgrim bearing staff and water gourd",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "dressed",
+            "bearing"
+          ],
+          "score": 15.41
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-080",
+      "original_locale": "Syracuse, Sicily",
+      "original_occasion": "St Lucy, December; May quail festival variant",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 11195,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-081",
+      "original_locale": "Syracuse, Sicily",
+      "original_occasion": "St Lucy, December; May quail festival variant",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 11238,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-082",
+      "original_locale": "Syracuse, Sicily",
+      "original_occasion": "St Lucy, December; May quail festival variant",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 11241,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-083",
+      "original_locale": "Syracuse, Sicily",
+      "original_occasion": "St Lucy, December; May quail festival variant",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 11248,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-084",
+      "original_locale": "Melilli, Syracuse, Sicily",
+      "original_occasion": "St Sebastian, May",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 11522,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-085",
+      "original_locale": "Melilli, Syracuse, Sicily",
+      "original_occasion": "St Sebastian, May",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 11531,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "CAT-WEISER-GAP-004",
+          "target_label": "French Fête des brandons young people carry firebrands",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "young",
+            "carry"
+          ],
+          "score": 12.23
+        },
+        {
+          "target_id": "ITREG26-079",
+          "target_label": "Young participants carry wreath breads and the first youth carries a flower-topped staff",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "young",
+            "carry"
+          ],
+          "score": 12.23
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-086",
+      "original_locale": "Melilli, Syracuse, Sicily",
+      "original_occasion": "St Sebastian, May",
+      "claim_type": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED",
+      "ocr_line": 11549,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": true,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-087",
+      "original_locale": "Melilli, Syracuse, Sicily",
+      "original_occasion": "St Sebastian, May",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 11594,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-088",
+      "original_locale": "Melilli, Syracuse, Sicily",
+      "original_occasion": "St Sebastian, May",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 11603,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-089",
+      "original_locale": "Melilli, Syracuse, Sicily",
+      "original_occasion": "St Sebastian, May",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 11651,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-090",
+      "original_locale": "Melilli, Syracuse, Sicily",
+      "original_occasion": "St Sebastian, May",
+      "claim_type": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
+      "ocr_line": 11663,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-091",
+      "original_locale": "Melilli, Syracuse, Sicily",
+      "original_occasion": "St Sebastian, May",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 11670,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "CAT-WEISER-H-024",
+          "target_label": "Passion oratorios and devotional dramas during Lent",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "oratorios",
+            "dramas"
+          ],
+          "score": 20.04
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-092",
+      "original_locale": "Melilli, Syracuse, Sicily",
+      "original_occasion": "St Sebastian, May",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 11692,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "IT-BSSP26-V-018",
+          "target_label": "Walk the transport route in reverse before the main evening carrying",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "walk",
+            "route",
+            "evening"
+          ],
+          "score": 21.38
+        },
+        {
+          "target_id": "PIT-PAL-26-058",
+          "target_label": "Some participants make the night journey barefoot as fulfillment of a vow",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "some",
+            "barefoot"
+          ],
+          "score": 17.46
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-093",
+      "original_locale": "Palazzolo Acreide, Syracuse, Sicily",
+      "original_occasion": "St Paul Apostle, annual patronal feast",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 13903,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-094",
+      "original_locale": "Palazzolo Acreide, Syracuse, Sicily",
+      "original_occasion": "St Paul Apostle, annual patronal feast",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 13910,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITSI26-ENN-003",
+          "target_label": "Have confraternity rectors and assistants lead the first Palm Sunday procession with their insignia",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "have",
+            "lead",
+            "their"
+          ],
+          "score": 21.39
+        },
+        {
+          "target_id": "ITREG26-009",
+          "target_label": "Young women in local costume lead with baskets of decorated ring-shaped ciambellati",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "lead",
+            "ring",
+            "shaped"
+          ],
+          "score": 20.89
+        },
+        {
+          "target_id": "ITREG26-002",
+          "target_label": "Local serpari capture nonvenomous live snakes on slopes near Cocullo before the feast",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "live",
+            "snakes"
+          ],
+          "score": 15.88
+        },
+        {
+          "target_id": "ITREG26-006",
+          "target_label": "Arrange live snakes around the bust or head of St Dominic on the processional statue",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "live",
+            "snakes"
+          ],
+          "score": 15.88
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-095",
+      "original_locale": "Palazzolo Acreide, Syracuse, Sicily",
+      "original_occasion": "St Paul Apostle, annual patronal feast",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 13917,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-002",
+          "target_label": "Local serpari capture nonvenomous live snakes on slopes near Cocullo before the feast",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "live",
+            "snakes"
+          ],
+          "score": 15.88
+        },
+        {
+          "target_id": "ITREG26-006",
+          "target_label": "Arrange live snakes around the bust or head of St Dominic on the processional statue",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "live",
+            "snakes"
+          ],
+          "score": 15.88
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-096",
+      "original_locale": "Palazzolo Acreide, Syracuse, Sicily",
+      "original_occasion": "St Paul Apostle, annual patronal feast",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 13918,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-097",
+      "original_locale": "Palazzolo Acreide, Syracuse, Sicily",
+      "original_occasion": "St Paul Apostle, annual patronal feast",
+      "claim_type": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED",
+      "ocr_line": 13925,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": true,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-098",
+      "original_locale": "Palazzolo Acreide, Syracuse, Sicily",
+      "original_occasion": "St Paul Apostle, annual patronal feast",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 13939,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "CAT-WEISER-B-099",
+          "target_label": "Public ceremonial translation of saints' relics",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "ceremonial",
+            "relics"
+          ],
+          "score": 15.07
+        },
+        {
+          "target_id": "CAT-WEISER-B-100",
+          "target_label": "Historical decorated glass reliquary display",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "reliquary",
+            "display"
+          ],
+          "score": 14.74
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-099",
+      "original_locale": "Palazzolo Acreide, Syracuse, Sicily",
+      "original_occasion": "St Paul Apostle, annual patronal feast",
+      "claim_type": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED",
+      "ocr_line": 13975,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "IT-BSSP26-P-007",
+          "target_label": "Display or preserve the claimed Marian hair relic at the San Nicola concattedrale",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "preserve",
+            "claimed"
+          ],
+          "score": 16.15
+        },
+        {
+          "target_id": "CAT-WEISER-B-167",
+          "target_label": "Blessing Peter and Paul feast grain",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "blessing",
+            "paul"
+          ],
+          "score": 12.78
+        },
+        {
+          "target_id": "CAT-WEISER-B-169",
+          "target_label": "Special Saint Peter and Paul feast bread blessing",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "paul",
+            "blessing"
+          ],
+          "score": 12.78
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": true,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-100",
+      "original_locale": "Palazzolo Acreide, Syracuse, Sicily",
+      "original_occasion": "St Paul Apostle, annual patronal feast",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 13981,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-101",
+      "original_locale": "Palazzolo Acreide, Syracuse, Sicily",
+      "original_occasion": "St Paul Apostle, annual patronal feast",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 13985,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-102",
+      "original_locale": "Palazzolo Acreide, Syracuse, Sicily",
+      "original_occasion": "St Paul Apostle, annual patronal feast",
+      "claim_type": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED",
+      "ocr_line": 13998,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "PIT-PAL-26-012",
+          "target_label": "Hold an early-May patronal fair for St Christina",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "hold",
+            "patronal"
+          ],
+          "score": 13.1
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": true,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-103",
+      "original_locale": "Palazzolo Acreide, Syracuse, Sicily",
+      "original_occasion": "St Paul Apostle, annual patronal feast",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 14026,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-095",
+          "target_label": "Take flower-shaped breads for a feast-day church blessing and share them with the poor",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "shaped",
+            "breads",
+            "them"
+          ],
+          "score": 19.19
+        },
+        {
+          "target_id": "ITREG26-092",
+          "target_label": "Give the cemetery breads to poor visitors as alms for deceased relatives",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "breads",
+            "relatives"
+          ],
+          "score": 14.55
+        },
+        {
+          "target_id": "ITREG26-010",
+          "target_label": "Carry ring-shaped ciambellati described as blessed, offering them to banner and statue carriers",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "shaped",
+            "them"
+          ],
+          "score": 13.66
+        },
+        {
+          "target_id": "ITREG26-047",
+          "target_label": "Distribute St Blaise holy cards and small votive breads to pilgrims after the church visit",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "distribute",
+            "breads"
+          ],
+          "score": 13.23
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-104",
+      "original_locale": "Solarino, Syracuse, Sicily",
+      "original_occasion": "Conversion of St Paul, 25 January",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 14054,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-105",
+      "original_locale": "Solarino, Syracuse, Sicily",
+      "original_occasion": "Conversion of St Paul, 25 January",
+      "claim_type": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED",
+      "ocr_line": 14066,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "CAT-WEISER-GAP-015",
+          "target_label": "Walking barefoot through Pentecost dew for folk healing belief",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "folk",
+            "healing",
+            "belief"
+          ],
+          "score": 26.75
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": true,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-106",
+      "original_locale": "Solarino, Syracuse, Sicily",
+      "original_occasion": "Conversion of St Paul, 25 January",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 14075,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-107",
+      "original_locale": "Agrigento (Girgenti), Sicily",
+      "original_occasion": "St Calogero patronal feast",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 14523,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "SPREG26-E-014",
+          "target_label": "Devotees carry lighted candles during the overnight Roa procession",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "devotees",
+            "carry"
+          ],
+          "score": 13.23
+        },
+        {
+          "target_id": "SPREG26-C-027",
+          "target_label": "Carry the floral-decorated Cross reliquary downhill with candlebearing devotees on May 2",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "carry",
+            "devotees"
+          ],
+          "score": 13.23
+        },
+        {
+          "target_id": "PIT-PAL-26-073",
+          "target_label": "Carry a paired Saints Cosmas and Damian litter at a running pace",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "carry",
+            "running"
+          ],
+          "score": 12.82
+        },
+        {
+          "target_id": "IT-BSSP26-N-014",
+          "target_label": "Carry an obelisk on shoulders in coordinated paranza teams to live music",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "carry",
+            "teams"
+          ],
+          "score": 12.82
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-108",
+      "original_locale": "Agrigento (Girgenti), Sicily",
+      "original_occasion": "St Calogero patronal feast",
+      "claim_type": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED",
+      "ocr_line": 14529,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITSI26-ENN-016",
+          "target_label": "Remove the black veil from the Marian statue when the figure of the risen Christ appears",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "statue",
+            "when",
+            "appears"
+          ],
+          "score": 23.38
+        },
+        {
+          "target_id": "ITREG26-011",
+          "target_label": "Interpret snakes covering the patron statue's face as an evil omen",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "statue",
+            "face"
+          ],
+          "score": 15.16
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": true,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-109",
+      "original_locale": "Agrigento (Girgenti), Sicily",
+      "original_occasion": "St Calogero patronal feast",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 14543,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-110",
+      "original_locale": "Agrigento (Girgenti), Sicily",
+      "original_occasion": "St Calogero patronal feast",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 14603,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "PIT-PAL-26-040",
+          "target_label": "Offer enormous candles to Our Lady on behalf of guilds, Senate and clergy",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "offer",
+            "candles"
+          ],
+          "score": 13.36
+        },
+        {
+          "target_id": "ITSI26-CL-011",
+          "target_label": "Historical artisan city militia is reported to have exchanged arms for ceremonial candles and patronal banners",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "ceremonial",
+            "candles"
+          ],
+          "score": 12.18
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-111",
+      "original_locale": "Agrigento (Girgenti), Sicily",
+      "original_occasion": "St Calogero patronal feast",
+      "claim_type": "PREPARATION_OBJECT_OR_MATERIAL",
+      "ocr_line": 14607,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-112",
+      "original_locale": "Agrigento (Girgenti), Sicily",
+      "original_occasion": "St Calogero patronal feast",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 14612,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-100",
+          "target_label": "Prepare sesame-enriched modeled votive breads shaped as animals, fruit and sacred symbols",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "votive",
+            "breads",
+            "shaped"
+          ],
+          "score": 16.95
+        },
+        {
+          "target_id": "ITREG26-009",
+          "target_label": "Young women in local costume lead with baskets of decorated ring-shaped ciambellati",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "women",
+            "shaped"
+          ],
+          "score": 13.66
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-113",
+      "original_locale": "Agrigento (Girgenti), Sicily",
+      "original_occasion": "St Calogero patronal feast",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 14614,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-114",
+      "original_locale": "Agrigento (Girgenti), Sicily",
+      "original_occasion": "St Calogero patronal feast",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 14624,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-115",
+      "original_locale": "Naro, Agrigento, Sicily",
+      "original_occasion": "St Calogero, January remembrance and June feast",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 14724,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-116",
+      "original_locale": "Naro, Agrigento, Sicily",
+      "original_occasion": "St Calogero, January remembrance and June feast",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 14767,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "SPREG26-C-011",
+          "target_label": "Keep three Caballos del Vino competitions distinct: bareback horse, ornate harness and timed race",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "keep",
+            "three"
+          ],
+          "score": 13.17
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-117",
+      "original_locale": "Naro, Agrigento, Sicily",
+      "original_occasion": "St Calogero, January remembrance and June feast",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 14767,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-118",
+      "original_locale": "Naro, Agrigento, Sicily",
+      "original_occasion": "St Calogero, January remembrance and June feast",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 14794,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITSI26-CL-018",
+          "target_label": "Sixteen small Varicedde duplicate the larger Thursday Passion ensembles while three depict additional scenes",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "small",
+            "larger"
+          ],
+          "score": 14.07
+        },
+        {
+          "target_id": "ITSI26-CL-024",
+          "target_label": "Decorate the larger Vare platforms with flowers and ceremonial lights",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "larger",
+            "ceremonial"
+          ],
+          "score": 14.07
+        },
+        {
+          "target_id": "ITREG26-096",
+          "target_label": "Bring produce and small marked votive breads for a priestly blessing at first Vespers",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "bring",
+            "small"
+          ],
+          "score": 12.62
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-119",
+      "original_locale": "Naro, Agrigento, Sicily",
+      "original_occasion": "St Calogero, January remembrance and June feast",
+      "claim_type": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED",
+      "ocr_line": 14800,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": true,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-120",
+      "original_locale": "Caltanissetta, Sicily",
+      "original_occasion": "St Michael Archangel, May and September",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 19142,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "SPREG26-C-011",
+          "target_label": "Keep three Caballos del Vino competitions distinct: bareback horse, ornate harness and timed race",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "keep",
+            "distinct"
+          ],
+          "score": 15.88
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-121",
+      "original_locale": "Caltanissetta, Sicily",
+      "original_occasion": "St Michael Archangel, May and September",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 19155,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-122",
+      "original_locale": "Caltanissetta, Sicily",
+      "original_occasion": "St Michael Archangel, May and September",
+      "claim_type": "HISTORICAL_VARIANT_OR_DATE",
+      "ocr_line": 19182,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "EAST-001",
+          "target_label": "An Easter Monday Emmaus walk",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "easter",
+            "monday"
+          ],
+          "score": 12.37
+        },
+        {
+          "target_id": "CAT-WEISER-B-033",
+          "target_label": "Easter Monday visits to grandparents",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "easter",
+            "monday"
+          ],
+          "score": 12.37
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-123",
+      "original_locale": "Caltanissetta, Sicily",
+      "original_occasion": "St Michael Archangel, May and September",
+      "claim_type": "BLESSING_OR_RITUAL_APPROVAL_NOT_CHECKED",
+      "ocr_line": 19185,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "PIT-PAL-26-095",
+          "target_label": "Guild members attend Mass at their patronal chapel",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "patronal",
+            "chapel"
+          ],
+          "score": 14.31
+        },
+        {
+          "target_id": "ITSI26-CL-011",
+          "target_label": "Historical artisan city militia is reported to have exchanged arms for ceremonial candles and patronal banners",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "candles",
+            "patronal"
+          ],
+          "score": 13
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-124",
+      "original_locale": "Caltanissetta, Sicily",
+      "original_occasion": "St Michael Archangel, May and September",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 19188,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "DOM-011",
+          "target_label": "Keeping blessed Candlemas candles at home",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "blessed",
+            "candles",
+            "home"
+          ],
+          "score": 17.46
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-125",
+      "original_locale": "Caltanissetta, Sicily",
+      "original_occasion": "St Michael Archangel, May and September",
+      "claim_type": "PROCESSIONAL_ACTION_OR_COMPONENT",
+      "ocr_line": 19203,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-126",
+      "original_locale": "Caltanissetta, Sicily",
+      "original_occasion": "St Michael Archangel, May and September",
+      "claim_type": "REPORTED_DEVOTIONAL_ACTION",
+      "ocr_line": 19205,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "PIT-PAL-26-010",
+          "target_label": "Walk between churches to visit Sepolcri devotional altars",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "between",
+            "visit",
+            "devotional"
+          ],
+          "score": 19.79
+        },
+        {
+          "target_id": "PIT-PAL-26-058",
+          "target_label": "Some participants make the night journey barefoot as fulfillment of a vow",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "make",
+            "journey"
+          ],
+          "score": 15.89
+        },
+        {
+          "target_id": "SPREG26-C-036",
+          "target_label": "Make pilgrimage to the Caravaca Cross sanctuary associated with later papal jubilees",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "make",
+            "sanctuary"
+          ],
+          "score": 13.44
+        },
+        {
+          "target_id": "PIT-PAL-26-056",
+          "target_label": "Walk repeatedly between the Marian church and Cathedral during eight nights of devotion",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "between",
+            "cathedral"
+          ],
+          "score": 12.82
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-127",
+      "original_locale": "Caltanissetta, Sicily",
+      "original_occasion": "St Michael Archangel, May and September",
+      "claim_type": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED",
+      "ocr_line": 19217,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "CAT-WEISER-GAP-015",
+          "target_label": "Walking barefoot through Pentecost dew for folk healing belief",
+          "target_pool": "PRIOR_MASTER_OR_WORKING_GROUP",
+          "shared_terms": [
+            "folk",
+            "belief"
+          ],
+          "score": 17.73
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": true,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-128",
+      "original_locale": "Caltanissetta, Sicily",
+      "original_occasion": "St Michael Archangel, May and September",
+      "claim_type": "FOLK_BELIEF_OR_SUPERNATURAL_EFFICACY_NOT_ENDORSED",
+      "ocr_line": 19227,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [
+        {
+          "target_id": "ITREG26-011",
+          "target_label": "Interpret snakes covering the patron statue's face as an evil omen",
+          "target_pool": "PRIOR_REGIONAL_SOURCE_OBSERVATION",
+          "shared_terms": [
+            "interpret",
+            "statue",
+            "omen"
+          ],
+          "score": 26.18
+        }
+      ],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": true,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    },
+    {
+      "source_id": "PIT1900-IT-129",
+      "original_locale": "Caltanissetta, Sicily",
+      "original_occasion": "St Michael Archangel, May and September",
+      "claim_type": "COMMUNITY_CIVIC_OR_FESTIVAL_DETAIL",
+      "ocr_line": 19234,
+      "source_url": "https://archive.org/stream/afm3499.0021.001.umich.edu/afm3499.0021.001.umich.edu_djvu.txt",
+      "lexical_lookup_candidates": [],
+      "proposed_owner": null,
+      "source_dependency": "UNREVIEWED_MAY_DERIVE_FROM_PITRE_OWN_OTHER_WORK_OR_LOCAL_CORRESPONDENTS",
+      "visual_folio_verified": false,
+      "folklore_quarantine": false,
+      "manual_semantic_identity_verified": false,
+      "independent_witness_verified": false,
+      "ritual_authority_1962_verified": false,
+      "app_publication": false
+    }
+  ]
+}

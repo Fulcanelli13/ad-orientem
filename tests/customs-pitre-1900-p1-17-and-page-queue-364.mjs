@@ -1,0 +1,87 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+const load=p=>JSON.parse(readFileSync(p,'utf8'));
+const prev=load('data/customs/master/pitre-1900-129-original-witness-facsimile-and-1881-dependency-gates.v1.json');
+const p0plus=load('data/customs/master/pitre-1900-uploaded-facsimile-25p0-16-wave03-page-gates.v1.json');
+const p1=load('data/customs/master/pitre-1900-uploaded-facsimile-17-p1-date-region-page-gates.v1.json');
+const queue=load('data/customs/master/pitre-1900-364-unverified-records-page-lookup-queue.v1.json');
+const master=load('data/customs/master/comprehensive-customs-working-catalogue.v1.json');
+const orig=new Map(master.external_source_observations_pitre_original_1900_ocr.map(x=>[x.id,x]));
+const newer=new Map(master.external_source_observations_pitre_original_1900_new_ocr.map(x=>[x.id,x]));
+assert.equal(orig.size,129);assert.equal(newer.size,293);
+const expectedP1=new Set(prev.records.filter(x=>x.priority==='P1_CONTEXT_VERIFICATION').map(x=>x.original_source_id));
+const reviewed=new Set([...p0plus.original_129_p0_page_checks.map(x=>x.source_id),...p0plus.additional_wave03_highrisk_page_checks.map(x=>x.source_id)]);
+assert.equal(expectedP1.size,17);
+assert.equal(p1.records.length,17);
+assert.equal(p1.summary.individually_checked_printed_folio,17);
+assert.equal(p1.summary.unique_pdf_pages_in_this_batch,12);
+assert.equal(p1.witness.uploaded_pdf_sha256,p0plus.source.uploaded_compressed_scan_sha256);
+const batchSeen=new Set();
+for(const r of p1.records){
+ assert.ok(expectedP1.has(r.source_id));
+ assert.ok(!reviewed.has(r.source_id));
+ assert.ok(!batchSeen.has(r.source_id));batchSeen.add(r.source_id);
+ reviewed.add(r.source_id);
+ const old=orig.get(r.source_id);assert.ok(old);
+ assert.equal(r.original_scan_pdf_page_1_based,r.original_printed_page+58);
+ assert.equal(old.original_1900_printed_page,r.original_printed_page);
+ assert.equal(old.original_1900_scan_pdf_page_1_based,r.original_scan_pdf_page_1_based);
+ assert.equal(old.original_page_evidence_anchor,r.original_italian_text_anchor);
+ assert.equal(old.printed_scan_page_verified,true);
+ assert.equal(old.historical_feast_date_current_practice_verified,false);
+ assert.equal(r.original_page_image_checked,true);
+ assert.equal(r.italian_text_confirmed,true);
+ assert.equal(r.modern_current_date_verified,false);
+ assert.equal(r.prayer_or_rite_authority_verified,false);
+ assert.equal(r.independent_corrob_verified,false);
+ assert.equal(r.custom_identity_certified,false);
+ assert.equal(r.app_published,false);
+}
+assert.equal(batchSeen.size,17);assert.equal(reviewed.size,58);
+assert.equal(orig.size+newer.size,422);
+assert.equal([...orig.values()].filter(x=>x.printed_scan_page_verified).length,129);
+assert.equal([...newer.values()].filter(x=>x.original_printed_folio_verified).length,293);
+assert.equal(master.summary.source_review.pitre_1900_original_folio_images_visually_checked,129);
+assert.equal(master.summary.source_review.pitre_1900_original_p1_date_region_verified,17);
+assert.equal(master.summary.source_review.pitre_1900_all_original_folio_record_checks,422);
+assert.equal(master.summary.source_review.pitre_1900_uploaded_facsimile_unique_pdf_pages_checked,42);
+assert.equal(master.summary.source_review.pitre_1900_unchecked_record_pages_remaining,105);
+assert.equal(queue.records.length,364);
+assert.equal(queue.summary.unverified_original_p2,87);
+assert.equal(queue.summary.unverified_new,277);
+assert.equal(queue.summary.verified_total,58);
+assert.deepEqual(queue.summary.priority_search_methods,{INTERPOLATED_NOT_VISUALLY_VERIFIED:241,INDEX_OR_LOCALITY_RANGE_ONLY:123});
+
+const snapshot277=load('data/customs/master/pitre-1900-277-new-observations-current-original-page-queue.v1.json');
+const snapshot156=load('data/customs/master/pitre-1900-156-wave03-remaining-original-folio-page-queue.v1.json');
+const currentQueue=load('data/customs/master/pitre-1900-current-zero-outstanding-original-edition-page-queue.v1.json');
+assert.equal(snapshot156.records.length,156);
+assert.equal(snapshot277.records.length,277);
+// The older 364 file is an immutable HISTORICAL queue snapshot, not today's outstanding set.
+assert.equal(queue.records.length,364);
+assert.equal(queue.summary.unverified_original_p2,87);
+assert.equal(queue.summary.unverified_new,277);
+assert.equal(queue.summary.verified_total,58);
+const allIds=new Set([...orig.keys(),...newer.keys()]);
+const historicalQueued=new Set();
+for(const r of queue.records){
+ assert.ok(allIds.has(r.id));
+ assert.ok(!reviewed.has(r.id),'P0/P1/first high-risk must not have been queued');
+ assert.ok(!historicalQueued.has(r.id));
+ historicalQueued.add(r.id);
+ assert.equal(r.page_image_visually_verified,false,'historical snapshot must remain unchanged');
+ assert.equal(r.exact_printed_page_verified,false);
+}
+assert.equal(historicalQueued.size,364);
+const nowUnverified=new Set([...orig.values(),...newer.values()]
+ .filter(r=>!(r.printed_scan_page_verified||r.original_printed_folio_verified)).map(r=>r.id));
+assert.equal(nowUnverified.size,0);
+assert.equal(currentQueue.records.length,0);
+assert.equal(new Set(currentQueue.records.map(r=>r.id)).size,0);
+for(const row of currentQueue.records)assert.ok(nowUnverified.has(row.id));
+assert.deepEqual(new Set(currentQueue.records.map(r=>r.id)),nowUnverified);
+assert.equal(master.summary.source_observations.total_source_detail_rows_including_external,3703);
+assert.equal(master.summary.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(master.summary.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(master.summary.no_new_app_publications,true);
+console.log('Pitrè 1900: 17/17 P1 scans retained; older 364-row queue frozen; current remaining 277 newer observations, 3703 workbench, zero rite/identity/app promotions — PASS');

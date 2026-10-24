@@ -1,0 +1,1958 @@
+{
+  "schema": "AO_CUSTOMS_PITRE_110_HISTORIC_COMPLEX_ROUTING_AND_31_NONMERGE_COMPARISONS_V1",
+  "date": "2026-10-23",
+  "stage": "EDITORIAL_GROUPING_NOT_DISTINCT_CUSTOM_IDENTITY",
+  "source_file": "data/customs/master/pitre-palermo-retrospective-vol1-vol2-source-details-wave01.v1.json",
+  "method": "Routed all 110 source-action observations to 35 document-specific historical event-context clusters; 31 high-value cross-source relationships read and classified manually using catalogue action descriptions, occasion and regional/period scope. These are review labels not original historical manuscript comparisons or independent corroboration. Flag two same-author inter-volume repetitions. Source observation count unchanged.",
+  "summary": {
+    "pitre_source_observations_routed": 110,
+    "document_context_clusters": 35,
+    "comparison_pairs_manually_triaged": 31,
+    "same_author_cross_volume_repetition_candidates": 2,
+    "source_rows_added": 0,
+    "new_distinct_customs_certified": 0,
+    "original_archival_folios_inspected": 0,
+    "independent_witnesses_certified": 0,
+    "merges": 0,
+    "calendar_publications": 0
+  },
+  "clusters": [
+    {
+      "cluster_id": "PIT-HIST-C01",
+      "editorial_description": "Carnival personification and mock execution",
+      "source_observation_ids": [
+        "PIT-PAL-26-001"
+      ],
+      "source_observation_count": 1,
+      "disposition": "SECULAR_FESTIVAL_NOT_CALENDAR_DEVOTION",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C02",
+      "editorial_description": "Mid-Lent cutting of allegorical Lent effigy",
+      "source_observation_ids": [
+        "PIT-PAL-26-002"
+      ],
+      "source_observation_count": 1,
+      "disposition": "SECULAR_FESTIVAL_NOT_CALENDAR_DEVOTION",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C03",
+      "editorial_description": "Historical Holy Week penitential discipline",
+      "source_observation_ids": [
+        "PIT-PAL-26-003",
+        "PIT-PAL-26-004"
+      ],
+      "source_observation_count": 2,
+      "disposition": "HISTORICAL_PENANCE_NO_1962_INFERENCE",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C04",
+      "editorial_description": "Palermo Marian Holy Week penitential processions",
+      "source_observation_ids": [
+        "PIT-PAL-26-005",
+        "PIT-PAL-26-006",
+        "PIT-PAL-26-007",
+        "PIT-PAL-26-008"
+      ],
+      "source_observation_count": 4,
+      "disposition": "HISTORICAL_REGIONAL_DEVOTIONAL_PROCESSION",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C05",
+      "editorial_description": "Good Friday carriage abstention",
+      "source_observation_ids": [
+        "PIT-PAL-26-009"
+      ],
+      "source_observation_count": 1,
+      "disposition": "HISTORICAL_LOCAL_BEHAVIOURAL_CUSTOM",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C06",
+      "editorial_description": "Holy Week Sepolcri visits and clothing",
+      "source_observation_ids": [
+        "PIT-PAL-26-010",
+        "PIT-PAL-26-011"
+      ],
+      "source_observation_count": 2,
+      "disposition": "HISTORICAL_DOMESTIC_OR_POPULAR_DEVOTION",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C07",
+      "editorial_description": "St Christina patronal fair and historical displacement",
+      "source_observation_ids": [
+        "PIT-PAL-26-012",
+        "PIT-PAL-26-013",
+        "PIT-PAL-26-014"
+      ],
+      "source_observation_count": 3,
+      "disposition": "HISTORICAL_CIVIC_CONTEXT",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C08",
+      "editorial_description": "Ascension livestock sea washing and decoration",
+      "source_observation_ids": [
+        "PIT-PAL-26-015",
+        "PIT-PAL-26-016",
+        "PIT-PAL-26-017"
+      ],
+      "source_observation_count": 3,
+      "disposition": "FOLK_PROTECTIVE_BELIEF_NOT_ENDORSED",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C09",
+      "editorial_description": "St Anthony Abbot animal blessing",
+      "source_observation_ids": [
+        "PIT-PAL-26-018"
+      ],
+      "source_observation_count": 1,
+      "disposition": "RITUAL_AUTHORITY_AND_CHRONOLOGY_UNCHECKED",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C10",
+      "editorial_description": "St John unspecified superstition",
+      "source_observation_ids": [
+        "PIT-PAL-26-019"
+      ],
+      "source_observation_count": 1,
+      "disposition": "VAGUE_FOLKLORE_EXCLUDED_FROM_PRACTICE_SUGGESTIONS",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C11",
+      "editorial_description": "St Peter fisherman meals",
+      "source_observation_ids": [
+        "PIT-PAL-26-020"
+      ],
+      "source_observation_count": 1,
+      "disposition": "CIVIC_FOOD_CUSTOM_NOT_VERIFIED_DEVOTIONAL",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C12",
+      "editorial_description": "St Peter in Chains forfeiture games",
+      "source_observation_ids": [
+        "PIT-PAL-26-021"
+      ],
+      "source_observation_count": 1,
+      "disposition": "SECULAR_GAME_NOT_CALENDAR_DEVOTION",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C13",
+      "editorial_description": "St Rosalia September cave Forty Hours and Senate attendance",
+      "source_observation_ids": [
+        "PIT-PAL-26-022",
+        "PIT-PAL-26-023",
+        "PIT-PAL-26-102"
+      ],
+      "source_observation_count": 3,
+      "disposition": "HISTORICAL_REGIONAL_DEVOTIONAL_AND_CIVIC_COMPLEX",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C14",
+      "editorial_description": "Nativity of Our Lady Monreale elite pilgrimage",
+      "source_observation_ids": [
+        "PIT-PAL-26-024"
+      ],
+      "source_observation_count": 1,
+      "disposition": "HISTORICAL_REGIONAL_PILGRIMAGE",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C15",
+      "editorial_description": "St Bartholomew hospital charity by Carità confraternity",
+      "source_observation_ids": [
+        "PIT-PAL-26-025",
+        "PIT-PAL-26-026",
+        "PIT-PAL-26-027",
+        "PIT-PAL-26-028"
+      ],
+      "source_observation_count": 4,
+      "disposition": "HISTORICAL_CHARITABLE_CONFRATERNITY_COMPLEX",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C16",
+      "editorial_description": "St Bartholomew miniature-shirting engagement custom",
+      "source_observation_ids": [
+        "PIT-PAL-26-029"
+      ],
+      "source_observation_count": 1,
+      "disposition": "HISTORICAL_COURTSHIP_SOCIAL_VARIANT_NOT_RELIGIOUS_RITE",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C17",
+      "editorial_description": "Palermo Corpus Christi public Eucharistic procession",
+      "source_observation_ids": [
+        "PIT-PAL-26-030",
+        "PIT-PAL-26-031",
+        "PIT-PAL-26-032",
+        "PIT-PAL-26-033",
+        "PIT-PAL-26-034",
+        "PIT-PAL-26-035",
+        "PIT-PAL-26-036",
+        "PIT-PAL-26-037"
+      ],
+      "source_observation_count": 8,
+      "disposition": "HISTORICAL_PROCESSION_WITH_CIVIC_AND_LITURGICAL_COMPONENTS",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C18",
+      "editorial_description": "Assumption guild ceri/cilii and procession order",
+      "source_observation_ids": [
+        "PIT-PAL-26-038",
+        "PIT-PAL-26-039",
+        "PIT-PAL-26-040",
+        "PIT-PAL-26-041",
+        "PIT-PAL-26-100",
+        "PIT-PAL-26-101"
+      ],
+      "source_observation_count": 6,
+      "disposition": "HISTORICAL_GUILD_AND_MARIAN_PROCESSION",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C19",
+      "editorial_description": "Assumption royal prison visits and clemency",
+      "source_observation_ids": [
+        "PIT-PAL-26-042",
+        "PIT-PAL-26-043"
+      ],
+      "source_observation_count": 2,
+      "disposition": "HISTORIC_ROYAL_CIVIC_CHARITY",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C20",
+      "editorial_description": "Immaculate Conception Palermo municipal vow and public procession",
+      "source_observation_ids": [
+        "PIT-PAL-26-044",
+        "PIT-PAL-26-045",
+        "PIT-PAL-26-046",
+        "PIT-PAL-26-047",
+        "PIT-PAL-26-048",
+        "PIT-PAL-26-049",
+        "PIT-PAL-26-050",
+        "PIT-PAL-26-051",
+        "PIT-PAL-26-052",
+        "PIT-PAL-26-053",
+        "PIT-PAL-26-054",
+        "PIT-PAL-26-055"
+      ],
+      "source_observation_count": 12,
+      "disposition": "HISTORICAL_CIVIC_VOW_AND_MARIAN_DEVOTIONS",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C21",
+      "editorial_description": "Immaculate Conception octave night Marian viaggio",
+      "source_observation_ids": [
+        "PIT-PAL-26-056",
+        "PIT-PAL-26-057",
+        "PIT-PAL-26-058",
+        "PIT-PAL-26-059"
+      ],
+      "source_observation_count": 4,
+      "disposition": "HISTORIC_EIGHT_NIGHT_LOCAL_DEVOTIONAL_PILGRIMAGE",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C22",
+      "editorial_description": "St Rosalia July Festino civic and religious ceremonies",
+      "source_observation_ids": [
+        "PIT-PAL-26-060",
+        "PIT-PAL-26-061",
+        "PIT-PAL-26-062",
+        "PIT-PAL-26-063",
+        "PIT-PAL-26-064",
+        "PIT-PAL-26-065",
+        "PIT-PAL-26-066",
+        "PIT-PAL-26-067",
+        "PIT-PAL-26-068",
+        "PIT-PAL-26-069",
+        "PIT-PAL-26-070",
+        "PIT-PAL-26-071",
+        "PIT-PAL-26-072"
+      ],
+      "source_observation_count": 13,
+      "disposition": "HISTORICAL_PATRONAL_COMPLEX_VARYING_BY_YEAR",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C23",
+      "editorial_description": "Saints Cosmas and Damian litter in Rosalia Festino",
+      "source_observation_ids": [
+        "PIT-PAL-26-073",
+        "PIT-PAL-26-074"
+      ],
+      "source_observation_count": 2,
+      "disposition": "SAME_FESTIVAL_SPECIFIC_SAINT_PROCESSION_VARIANT",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C24",
+      "editorial_description": "Monreale Exaltation Dimostranza",
+      "source_observation_ids": [
+        "PIT-PAL-26-075",
+        "PIT-PAL-26-076",
+        "PIT-PAL-26-077",
+        "PIT-PAL-26-078",
+        "PIT-PAL-26-079",
+        "PIT-PAL-26-080",
+        "PIT-PAL-26-081",
+        "PIT-PAL-26-082",
+        "PIT-PAL-26-083",
+        "PIT-PAL-26-084"
+      ],
+      "source_observation_count": 10,
+      "disposition": "OCCASIONAL_HISTORICAL_RELIGIOUS_DRAMATIZATION_NOT_ANNUAL",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C25",
+      "editorial_description": "Historical Bolla della Crociata fasting dispensation system",
+      "source_observation_ids": [
+        "PIT-PAL-26-085",
+        "PIT-PAL-26-086"
+      ],
+      "source_observation_count": 2,
+      "disposition": "REPEALED_OR_HISTORIC_DISCIPLINARY_CONTEXT_NOT_PUBLICATION",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C26",
+      "editorial_description": "Ash Wednesday ashes",
+      "source_observation_ids": [
+        "PIT-PAL-26-087"
+      ],
+      "source_observation_count": 1,
+      "disposition": "OFFICIAL_LITURGICAL_CONTEXT_NOT_NEW_CUSTOM",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C27",
+      "editorial_description": "Lenten sermon cycles and civic selection",
+      "source_observation_ids": [
+        "PIT-PAL-26-088",
+        "PIT-PAL-26-089",
+        "PIT-PAL-26-090"
+      ],
+      "source_observation_count": 3,
+      "disposition": "HISTORICAL_PREACHING_AND_CIVIC_CONTEXT",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C28",
+      "editorial_description": "Pre-Ascension Rogation processions and preaching",
+      "source_observation_ids": [
+        "PIT-PAL-26-091",
+        "PIT-PAL-26-092"
+      ],
+      "source_observation_count": 2,
+      "disposition": "OFFICIAL_RITE_OR_PASTORAL_CONTEXT_TO_VERIFY",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C29",
+      "editorial_description": "Craft guild patronal feasts",
+      "source_observation_ids": [
+        "PIT-PAL-26-093",
+        "PIT-PAL-26-094",
+        "PIT-PAL-26-095",
+        "PIT-PAL-26-096",
+        "PIT-PAL-26-097"
+      ],
+      "source_observation_count": 5,
+      "disposition": "HISTORIC_GUILD_FEAST_BUNDLED_ACTIONS",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C30",
+      "editorial_description": "Religious brotherhood and guild distinct ownership",
+      "source_observation_ids": [
+        "PIT-PAL-26-098"
+      ],
+      "source_observation_count": 1,
+      "disposition": "INSTITUTIONAL_ORGANIZATION_NOT_STANDALONE_CUSTOM",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C31",
+      "editorial_description": "Confraternity chapel burial rights",
+      "source_observation_ids": [
+        "PIT-PAL-26-099"
+      ],
+      "source_observation_count": 1,
+      "disposition": "HISTORICAL_FUNERARY_INSTITUTION",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C32",
+      "editorial_description": "Noble funeral suffrages and bells",
+      "source_observation_ids": [
+        "PIT-PAL-26-103",
+        "PIT-PAL-26-104"
+      ],
+      "source_observation_count": 2,
+      "disposition": "HISTORIC_FUNERARY_LITURGICAL_AND_CIVIC_COMPONENTS",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C33",
+      "editorial_description": "Professional public mourners",
+      "source_observation_ids": [
+        "PIT-PAL-26-105"
+      ],
+      "source_observation_count": 1,
+      "disposition": "SECULAR_FUNERARY_PRACTICE_NOT_CALENDAR_DEVOTION",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C34",
+      "editorial_description": "Pauper burial alms and Joseph Arimathea confraternity",
+      "source_observation_ids": [
+        "PIT-PAL-26-106",
+        "PIT-PAL-26-107"
+      ],
+      "source_observation_count": 2,
+      "disposition": "HISTORICAL_CHARITABLE_BURIAL_MISSION",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    },
+    {
+      "cluster_id": "PIT-HIST-C35",
+      "editorial_description": "Common Palermo funerals and burial subscriptions",
+      "source_observation_ids": [
+        "PIT-PAL-26-108",
+        "PIT-PAL-26-109",
+        "PIT-PAL-26-110"
+      ],
+      "source_observation_count": 3,
+      "disposition": "HISTORICAL_FUNERARY_CUSTOM_OR_MATERIAL",
+      "independent_custom_identity_certified": false,
+      "calendar_publication": "NONE",
+      "historical_period_and_locality_required": true
+    }
+  ],
+  "source_action_to_cluster": [
+    {
+      "source_id": "PIT-PAL-26-001",
+      "cluster_id": "PIT-HIST-C01",
+      "original_volume": "V2",
+      "original_source_web_line": 154,
+      "claim_class": "SECULAR_FESTIVAL",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-002",
+      "cluster_id": "PIT-HIST-C02",
+      "original_volume": "V2",
+      "original_source_web_line": 155,
+      "claim_class": "SECULAR_FESTIVAL",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-003",
+      "cluster_id": "PIT-HIST-C03",
+      "original_volume": "V2",
+      "original_source_web_line": 156,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-004",
+      "cluster_id": "PIT-HIST-C03",
+      "original_volume": "V2",
+      "original_source_web_line": 156,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-005",
+      "cluster_id": "PIT-HIST-C04",
+      "original_volume": "V2",
+      "original_source_web_line": 156,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-006",
+      "cluster_id": "PIT-HIST-C04",
+      "original_volume": "V2",
+      "original_source_web_line": 156,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-007",
+      "cluster_id": "PIT-HIST-C04",
+      "original_volume": "V2",
+      "original_source_web_line": 156,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-008",
+      "cluster_id": "PIT-HIST-C04",
+      "original_volume": "V2",
+      "original_source_web_line": 156,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-009",
+      "cluster_id": "PIT-HIST-C05",
+      "original_volume": "V2",
+      "original_source_web_line": 157,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-010",
+      "cluster_id": "PIT-HIST-C06",
+      "original_volume": "V2",
+      "original_source_web_line": 157,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-011",
+      "cluster_id": "PIT-HIST-C06",
+      "original_volume": "V2",
+      "original_source_web_line": 157,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-012",
+      "cluster_id": "PIT-HIST-C07",
+      "original_volume": "V2",
+      "original_source_web_line": 160,
+      "claim_class": "SECULAR_FESTIVAL",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-013",
+      "cluster_id": "PIT-HIST-C07",
+      "original_volume": "V2",
+      "original_source_web_line": 161,
+      "claim_class": "SECULAR_FESTIVAL",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-014",
+      "cluster_id": "PIT-HIST-C07",
+      "original_volume": "V2",
+      "original_source_web_line": 169,
+      "claim_class": "HISTORICAL_CHANGE",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-015",
+      "cluster_id": "PIT-HIST-C08",
+      "original_volume": "V2",
+      "original_source_web_line": 171,
+      "claim_class": "FOLK_BELIEF_NOT_ENDORSED",
+      "editorial_release_status": "FOLKLORE_QUARANTINE",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-016",
+      "cluster_id": "PIT-HIST-C08",
+      "original_volume": "V2",
+      "original_source_web_line": 172,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-017",
+      "cluster_id": "PIT-HIST-C08",
+      "original_volume": "V2",
+      "original_source_web_line": 172,
+      "claim_class": "SECULAR_FESTIVAL",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-018",
+      "cluster_id": "PIT-HIST-C09",
+      "original_volume": "V2",
+      "original_source_web_line": 173,
+      "claim_class": "RITUAL_AUTHORITY_UNVERIFIED",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-019",
+      "cluster_id": "PIT-HIST-C10",
+      "original_volume": "V2",
+      "original_source_web_line": 174,
+      "claim_class": "FOLK_BELIEF_NOT_ENDORSED",
+      "editorial_release_status": "FOLKLORE_QUARANTINE",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-020",
+      "cluster_id": "PIT-HIST-C11",
+      "original_volume": "V2",
+      "original_source_web_line": 174,
+      "claim_class": "SECULAR_FESTIVAL",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-021",
+      "cluster_id": "PIT-HIST-C12",
+      "original_volume": "V2",
+      "original_source_web_line": 175,
+      "claim_class": "SECULAR_FESTIVAL",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-022",
+      "cluster_id": "PIT-HIST-C13",
+      "original_volume": "V2",
+      "original_source_web_line": 180,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-023",
+      "cluster_id": "PIT-HIST-C13",
+      "original_volume": "V2",
+      "original_source_web_line": 180,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-024",
+      "cluster_id": "PIT-HIST-C14",
+      "original_volume": "V2",
+      "original_source_web_line": 181,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-025",
+      "cluster_id": "PIT-HIST-C15",
+      "original_volume": "V2",
+      "original_source_web_line": 183,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-026",
+      "cluster_id": "PIT-HIST-C15",
+      "original_volume": "V2",
+      "original_source_web_line": 183,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-027",
+      "cluster_id": "PIT-HIST-C15",
+      "original_volume": "V2",
+      "original_source_web_line": 183,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-028",
+      "cluster_id": "PIT-HIST-C15",
+      "original_volume": "V2",
+      "original_source_web_line": 183,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-029",
+      "cluster_id": "PIT-HIST-C16",
+      "original_volume": "V2",
+      "original_source_web_line": 184,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-030",
+      "cluster_id": "PIT-HIST-C17",
+      "original_volume": "V2",
+      "original_source_web_line": 186,
+      "claim_class": "HISTORICAL_CHANGE",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-031",
+      "cluster_id": "PIT-HIST-C17",
+      "original_volume": "V2",
+      "original_source_web_line": 186,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-032",
+      "cluster_id": "PIT-HIST-C17",
+      "original_volume": "V2",
+      "original_source_web_line": 187,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-033",
+      "cluster_id": "PIT-HIST-C17",
+      "original_volume": "V2",
+      "original_source_web_line": 187,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-034",
+      "cluster_id": "PIT-HIST-C17",
+      "original_volume": "V2",
+      "original_source_web_line": 188,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-035",
+      "cluster_id": "PIT-HIST-C17",
+      "original_volume": "V2",
+      "original_source_web_line": 188,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-036",
+      "cluster_id": "PIT-HIST-C17",
+      "original_volume": "V2",
+      "original_source_web_line": 189,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-037",
+      "cluster_id": "PIT-HIST-C17",
+      "original_volume": "V2",
+      "original_source_web_line": 190,
+      "claim_class": "RITUAL_AUTHORITY_UNVERIFIED",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-038",
+      "cluster_id": "PIT-HIST-C18",
+      "original_volume": "V2",
+      "original_source_web_line": 193,
+      "claim_class": "HISTORICAL_CHANGE",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-039",
+      "cluster_id": "PIT-HIST-C18",
+      "original_volume": "V2",
+      "original_source_web_line": 194,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-040",
+      "cluster_id": "PIT-HIST-C18",
+      "original_volume": "V2",
+      "original_source_web_line": 194,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-041",
+      "cluster_id": "PIT-HIST-C18",
+      "original_volume": "V2",
+      "original_source_web_line": 194,
+      "claim_class": "HISTORICAL_CHANGE",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-042",
+      "cluster_id": "PIT-HIST-C19",
+      "original_volume": "V2",
+      "original_source_web_line": 195,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-043",
+      "cluster_id": "PIT-HIST-C19",
+      "original_volume": "V2",
+      "original_source_web_line": 196,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-044",
+      "cluster_id": "PIT-HIST-C20",
+      "original_volume": "V2",
+      "original_source_web_line": 201,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-045",
+      "cluster_id": "PIT-HIST-C20",
+      "original_volume": "V2",
+      "original_source_web_line": 202,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-046",
+      "cluster_id": "PIT-HIST-C20",
+      "original_volume": "V2",
+      "original_source_web_line": 203,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-047",
+      "cluster_id": "PIT-HIST-C20",
+      "original_volume": "V2",
+      "original_source_web_line": 205,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-048",
+      "cluster_id": "PIT-HIST-C20",
+      "original_volume": "V2",
+      "original_source_web_line": 206,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-049",
+      "cluster_id": "PIT-HIST-C20",
+      "original_volume": "V2",
+      "original_source_web_line": 207,
+      "claim_class": "SECULAR_FESTIVAL",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-050",
+      "cluster_id": "PIT-HIST-C20",
+      "original_volume": "V2",
+      "original_source_web_line": 208,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-051",
+      "cluster_id": "PIT-HIST-C20",
+      "original_volume": "V2",
+      "original_source_web_line": 209,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-052",
+      "cluster_id": "PIT-HIST-C20",
+      "original_volume": "V2",
+      "original_source_web_line": 210,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-053",
+      "cluster_id": "PIT-HIST-C20",
+      "original_volume": "V2",
+      "original_source_web_line": 210,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-054",
+      "cluster_id": "PIT-HIST-C20",
+      "original_volume": "V2",
+      "original_source_web_line": 212,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-055",
+      "cluster_id": "PIT-HIST-C20",
+      "original_volume": "V2",
+      "original_source_web_line": 212,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-056",
+      "cluster_id": "PIT-HIST-C21",
+      "original_volume": "V2",
+      "original_source_web_line": 215,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-057",
+      "cluster_id": "PIT-HIST-C21",
+      "original_volume": "V2",
+      "original_source_web_line": 215,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-058",
+      "cluster_id": "PIT-HIST-C21",
+      "original_volume": "V2",
+      "original_source_web_line": 215,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-059",
+      "cluster_id": "PIT-HIST-C21",
+      "original_volume": "V2",
+      "original_source_web_line": 216,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-060",
+      "cluster_id": "PIT-HIST-C22",
+      "original_volume": "V2",
+      "original_source_web_line": 223,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-061",
+      "cluster_id": "PIT-HIST-C22",
+      "original_volume": "V2",
+      "original_source_web_line": 224,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-062",
+      "cluster_id": "PIT-HIST-C22",
+      "original_volume": "V2",
+      "original_source_web_line": 224,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-063",
+      "cluster_id": "PIT-HIST-C22",
+      "original_volume": "V2",
+      "original_source_web_line": 225,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-064",
+      "cluster_id": "PIT-HIST-C22",
+      "original_volume": "V2",
+      "original_source_web_line": 229,
+      "claim_class": "HISTORICAL_CHANGE",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-065",
+      "cluster_id": "PIT-HIST-C22",
+      "original_volume": "V2",
+      "original_source_web_line": 233,
+      "claim_class": "HISTORICAL_CHANGE",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-066",
+      "cluster_id": "PIT-HIST-C22",
+      "original_volume": "V2",
+      "original_source_web_line": 235,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-067",
+      "cluster_id": "PIT-HIST-C22",
+      "original_volume": "V2",
+      "original_source_web_line": 236,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-068",
+      "cluster_id": "PIT-HIST-C22",
+      "original_volume": "V2",
+      "original_source_web_line": 239,
+      "claim_class": "SECULAR_FESTIVAL",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-069",
+      "cluster_id": "PIT-HIST-C22",
+      "original_volume": "V2",
+      "original_source_web_line": 243,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-070",
+      "cluster_id": "PIT-HIST-C22",
+      "original_volume": "V2",
+      "original_source_web_line": 243,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-071",
+      "cluster_id": "PIT-HIST-C22",
+      "original_volume": "V2",
+      "original_source_web_line": 246,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-072",
+      "cluster_id": "PIT-HIST-C22",
+      "original_volume": "V2",
+      "original_source_web_line": 247,
+      "claim_class": "HISTORICAL_CHANGE",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-073",
+      "cluster_id": "PIT-HIST-C23",
+      "original_volume": "V2",
+      "original_source_web_line": 249,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-074",
+      "cluster_id": "PIT-HIST-C23",
+      "original_volume": "V2",
+      "original_source_web_line": 250,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-075",
+      "cluster_id": "PIT-HIST-C24",
+      "original_volume": "V2",
+      "original_source_web_line": 255,
+      "claim_class": "RELIGIOUS_DRAMATIZATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-076",
+      "cluster_id": "PIT-HIST-C24",
+      "original_volume": "V2",
+      "original_source_web_line": 257,
+      "claim_class": "RELIGIOUS_DRAMATIZATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-077",
+      "cluster_id": "PIT-HIST-C24",
+      "original_volume": "V2",
+      "original_source_web_line": 258,
+      "claim_class": "RELIGIOUS_DRAMATIZATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-078",
+      "cluster_id": "PIT-HIST-C24",
+      "original_volume": "V2",
+      "original_source_web_line": 259,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-079",
+      "cluster_id": "PIT-HIST-C24",
+      "original_volume": "V2",
+      "original_source_web_line": 260,
+      "claim_class": "RELIGIOUS_DRAMATIZATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-080",
+      "cluster_id": "PIT-HIST-C24",
+      "original_volume": "V2",
+      "original_source_web_line": 261,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-081",
+      "cluster_id": "PIT-HIST-C24",
+      "original_volume": "V2",
+      "original_source_web_line": 262,
+      "claim_class": "HISTORICAL_CHANGE",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-082",
+      "cluster_id": "PIT-HIST-C24",
+      "original_volume": "V2",
+      "original_source_web_line": 268,
+      "claim_class": "RELIGIOUS_DRAMATIZATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-083",
+      "cluster_id": "PIT-HIST-C24",
+      "original_volume": "V2",
+      "original_source_web_line": 269,
+      "claim_class": "RELIGIOUS_DRAMATIZATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-084",
+      "cluster_id": "PIT-HIST-C24",
+      "original_volume": "V2",
+      "original_source_web_line": 270,
+      "claim_class": "RELIGIOUS_DRAMATIZATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-085",
+      "cluster_id": "PIT-HIST-C25",
+      "original_volume": "V2",
+      "original_source_web_line": 842,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-086",
+      "cluster_id": "PIT-HIST-C25",
+      "original_volume": "V2",
+      "original_source_web_line": 844,
+      "claim_class": "HISTORICAL_CHANGE",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-087",
+      "cluster_id": "PIT-HIST-C26",
+      "original_volume": "V2",
+      "original_source_web_line": 856,
+      "claim_class": "RITUAL_AUTHORITY_UNVERIFIED",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-088",
+      "cluster_id": "PIT-HIST-C27",
+      "original_volume": "V2",
+      "original_source_web_line": 861,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-089",
+      "cluster_id": "PIT-HIST-C27",
+      "original_volume": "V2",
+      "original_source_web_line": 862,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-090",
+      "cluster_id": "PIT-HIST-C27",
+      "original_volume": "V2",
+      "original_source_web_line": 867,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-091",
+      "cluster_id": "PIT-HIST-C28",
+      "original_volume": "V2",
+      "original_source_web_line": 883,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-092",
+      "cluster_id": "PIT-HIST-C28",
+      "original_volume": "V2",
+      "original_source_web_line": 884,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-093",
+      "cluster_id": "PIT-HIST-C29",
+      "original_volume": "V1",
+      "original_source_web_line": 866,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-094",
+      "cluster_id": "PIT-HIST-C29",
+      "original_volume": "V1",
+      "original_source_web_line": 866,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-095",
+      "cluster_id": "PIT-HIST-C29",
+      "original_volume": "V1",
+      "original_source_web_line": 866,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-096",
+      "cluster_id": "PIT-HIST-C29",
+      "original_volume": "V1",
+      "original_source_web_line": 866,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-097",
+      "cluster_id": "PIT-HIST-C29",
+      "original_volume": "V1",
+      "original_source_web_line": 866,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-098",
+      "cluster_id": "PIT-HIST-C30",
+      "original_volume": "V1",
+      "original_source_web_line": 867,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-099",
+      "cluster_id": "PIT-HIST-C31",
+      "original_volume": "V1",
+      "original_source_web_line": 869,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-100",
+      "cluster_id": "PIT-HIST-C18",
+      "original_volume": "V1",
+      "original_source_web_line": 870,
+      "claim_class": "PROCESSION_COMPONENT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-101",
+      "cluster_id": "PIT-HIST-C18",
+      "original_volume": "V1",
+      "original_source_web_line": 870,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-102",
+      "cluster_id": "PIT-HIST-C13",
+      "original_volume": "V1",
+      "original_source_web_line": 1579,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-103",
+      "cluster_id": "PIT-HIST-C32",
+      "original_volume": "V1",
+      "original_source_web_line": 2949,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-104",
+      "cluster_id": "PIT-HIST-C32",
+      "original_volume": "V1",
+      "original_source_web_line": 2949,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-105",
+      "cluster_id": "PIT-HIST-C33",
+      "original_volume": "V1",
+      "original_source_web_line": 2952,
+      "claim_class": "SECULAR_FESTIVAL",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-106",
+      "cluster_id": "PIT-HIST-C34",
+      "original_volume": "V1",
+      "original_source_web_line": 2955,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-107",
+      "cluster_id": "PIT-HIST-C34",
+      "original_volume": "V1",
+      "original_source_web_line": 2958,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-108",
+      "cluster_id": "PIT-HIST-C35",
+      "original_volume": "V1",
+      "original_source_web_line": 2959,
+      "claim_class": "HISTORICAL_DEVOTION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-109",
+      "cluster_id": "PIT-HIST-C35",
+      "original_volume": "V1",
+      "original_source_web_line": 2960,
+      "claim_class": "CIVIC_OR_ASSOCIATION",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    },
+    {
+      "source_id": "PIT-PAL-26-110",
+      "cluster_id": "PIT-HIST-C35",
+      "original_volume": "V1",
+      "original_source_web_line": 2961,
+      "claim_class": "MATERIAL_OBJECT",
+      "editorial_release_status": "NOT_VERIFIED_FOR_CALENDAR",
+      "canonical_identity": "NONE"
+    }
+  ],
+  "comparisons": [
+    {
+      "review_id": "PIT-XREF-001",
+      "source_id": "PIT-PAL-26-022",
+      "source_cluster_id": "PIT-HIST-C13",
+      "existing_research_id": "CAT-WEISER-A-101",
+      "relationship": "SAME_GENERAL_DEVOTIONAL_GENRE_DIFFERENT_FEAST_DATE",
+      "rationale": "Forty Hours is a wider Eucharistic devotion: a September Rosalia grotto occurrence is not Weiser's pre-Lenten timing; this is not source corroboration of one annual practice.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-002",
+      "source_id": "PIT-PAL-26-035",
+      "source_cluster_id": "PIT-HIST-C17",
+      "existing_research_id": "CAT-WEISER-B-075",
+      "relationship": "CLOSE_ACTION_CORE_DIFFERENT_LOCALITY_AND_SETTING",
+      "rationale": "Kneeling as the Eucharist passes is similar devotional posture to adoration by a home; Palermo historic street procession and a different generic example are not proved the same local custom.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-003",
+      "source_id": "PIT-PAL-26-003",
+      "source_cluster_id": "PIT-HIST-C03",
+      "existing_research_id": "CAT-WEISER-B-014",
+      "relationship": "RELATED_SEASON_DISTINCT_PRIMARY_ACTION",
+      "rationale": "Bodily penitential disciplines within confraternities are not automatically the public hooded-confraternity procession; participation and ritual action differ.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-004",
+      "source_id": "PIT-PAL-26-004",
+      "source_cluster_id": "PIT-HIST-C03",
+      "existing_research_id": "CAT-WEISER-H-015",
+      "relationship": "POSSIBLE_SAME_HISTORICAL_FAST_GENRE_NOT_CERTIFIED",
+      "rationale": "The two-day bread-and-water fasting motif is close to the Handbook historical Passion fast, but setting, date, practice-lineage and historical sources need exact comparison.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-005",
+      "source_id": "PIT-PAL-26-009",
+      "source_cluster_id": "PIT-HIST-C05",
+      "existing_research_id": "HYN77-CC-033",
+      "relationship": "REJECT_LEXICAL_MATCH_DIFFERENT_ACTION",
+      "rationale": "Avoiding carriage journeys in historic Palermo is not refraining from television or entertainment on Good Friday.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-006",
+      "source_id": "PIT-PAL-26-030",
+      "source_cluster_id": "PIT-HIST-C17",
+      "existing_research_id": "FRPCI18-BB-049",
+      "relationship": "REJECT_SAME_FEAST_DIFFERENT_RULE_AND_PLACE",
+      "rationale": "A reported Palermo decree changing Corpus Christi morning-to-afternoon procession in 1782 is not the Basque Octave Sunday programme.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-007",
+      "source_id": "PIT-PAL-26-044",
+      "source_cluster_id": "PIT-HIST-C20",
+      "existing_research_id": "CAT-WEISER-B-107",
+      "relationship": "RELATED_FEAST_DISTINCT_CIVIC_OATH",
+      "rationale": "Palermo's recurring civic vow to the Immaculate Conception is not equivalent to broad Marian novenas or processions in the Handbook.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-008",
+      "source_id": "PIT-PAL-26-055",
+      "source_cluster_id": "PIT-HIST-C20",
+      "existing_research_id": "STOKES55-EWTN-111",
+      "relationship": "REJECT_LEXICAL_MATCH_DIFFERENT_SEASON",
+      "rationale": "Jewellery on a processional Marian statue in December differs from May crowning of a domestic Marian statue.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-009",
+      "source_id": "PIT-PAL-26-039",
+      "source_cluster_id": "PIT-HIST-C18",
+      "existing_research_id": "FRSAN23-025",
+      "relationship": "RELATED_PROCESSIONAL_MATERIAL_DISTINCT_OBJECT_AND_OCCASION",
+      "rationale": "Assumption guild cilii depicting saints' lives are not the Roussillon Holy Week misteri representing Passion scenes; generic shoulder carriage only.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-010",
+      "source_id": "PIT-PAL-26-054",
+      "source_cluster_id": "PIT-HIST-C20",
+      "existing_research_id": "IT-BSSP26-P-013",
+      "relationship": "REJECT_MARIAN_KEYWORD_DIFFERENT_PRIMARY_OBJECT",
+      "rationale": "Palermo silver Immaculate Conception statue is not a claimed Marian hair relic carried in Palmi.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-011",
+      "source_id": "PIT-PAL-26-025",
+      "source_cluster_id": "PIT-HIST-C15",
+      "existing_research_id": "ITSI26-ENN-037",
+      "relationship": "REJECT_GENERIC_CONFRATERNITY_WORDS",
+      "rationale": "St Bartholomew charity brothers travel to a hospital with new shirts and lint, unlike the Enna Holy Wednesday Addolorata cortege.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-012",
+      "source_id": "PIT-PAL-26-046",
+      "source_cluster_id": "PIT-HIST-C20",
+      "existing_research_id": "CAT-WEISER-B-107",
+      "relationship": "RELATED_FEAST_DISTINCT_OATH",
+      "rationale": "A historic pledge about defending Mary's Immaculate Conception is not a novena or generic feast procession.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-013",
+      "source_id": "PIT-PAL-26-094",
+      "source_cluster_id": "PIT-HIST-C29",
+      "existing_research_id": "NDAY-001",
+      "relationship": "REJECT_NAMED_PATRON_CONFLATION",
+      "rationale": "A craft guild ceasing work on its corporate patron's day is not a child's baptismal patronal name day.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-014",
+      "source_id": "PIT-PAL-26-104",
+      "source_cluster_id": "PIT-HIST-C32",
+      "existing_research_id": "CAT-WEISER-B-032",
+      "relationship": "REJECT_BELL_KEYWORD_DIFFERENT_FEAST",
+      "rationale": "Funeral bells cannot be identified with Easter bells from a single shared noun.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-015",
+      "source_id": "PIT-PAL-26-087",
+      "source_cluster_id": "PIT-HIST-C26",
+      "existing_research_id": "KEL59-EWTN-044",
+      "relationship": "SAME_UNIVERSAL_RITUAL_GENRE_NOT_DISTINCT_CUSTOM",
+      "rationale": "The imposition of ashes is a liturgical rite; the Kelly family recommendation to attend it does not establish two local customs.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-016",
+      "source_id": "PIT-PAL-26-097",
+      "source_cluster_id": "PIT-HIST-C29",
+      "existing_research_id": "FRPCI20-PARDON-021",
+      "relationship": "RELATED_PROCESSION_CORE_DISTINCT_REGIONAL_FORMS",
+      "rationale": "Guild saint statues in historical Palermo and saint relics/statues at a Breton pardon are related acts but distinct local traditions.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-017",
+      "source_id": "PIT-PAL-26-002",
+      "source_cluster_id": "PIT-HIST-C02",
+      "existing_research_id": "CAT-WEISER-A-110",
+      "relationship": "POSSIBLE_SIMILAR_MID_LENT_FOLK_MOTIF_NOT_CERTIFIED",
+      "rationale": "Sawing a Lent figure in Ballarò marketplace may resemble winter effigy processions, but season, material, social meaning and region need verification.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-018",
+      "source_id": "PIT-PAL-26-107",
+      "source_cluster_id": "PIT-HIST-C34",
+      "existing_research_id": "SJOS-001",
+      "relationship": "REJECT_SAINT_NAME_FALSE_MATCH",
+      "rationale": "Joseph of Arimathea burial almsgiving is neither St Joseph the Foster Father nor household St Joseph tables.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-019",
+      "source_id": "PIT-PAL-26-016",
+      "source_cluster_id": "PIT-HIST-C08",
+      "existing_research_id": "FRPCI20-PARDON-032",
+      "relationship": "RELATED_LIVESTOCK_DECORATION_DIFFERENT_REASON",
+      "rationale": "Ascension seaside livestock washing with protective folk belief is not decorating livestock for a local animal blessing at a Breton pardon.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-020",
+      "source_id": "PIT-PAL-26-018",
+      "source_cluster_id": "PIT-HIST-C09",
+      "existing_research_id": "ITREG26-043",
+      "relationship": "CLOSE_FEAST_AND_ACT_DIFFERENT_CITY_PERIOD",
+      "rationale": "St Anthony Abbot animal blessing occurs in both Palermo and Salemi descriptions, but centuries/localities differ; separate historical witnesses and local variants are not yet demonstrated.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-021",
+      "source_id": "PIT-PAL-26-018",
+      "source_cluster_id": "PIT-HIST-C09",
+      "existing_research_id": "ITREG26-044",
+      "relationship": "RELATED_BLESSING_DIFFERENT_MATERIAL",
+      "rationale": "The Palermo report mentions animal blessing but not the barley/oats/beans mixture described at Salemi. Do not transfer materials across towns.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-022",
+      "source_id": "PIT-PAL-26-107",
+      "source_cluster_id": "PIT-HIST-C34",
+      "existing_research_id": "FRSAN23-008",
+      "relationship": "RELATED_BURIAL_CHARITY_DIFFERENT_BENEFICIARIES",
+      "rationale": "Burial of executed prisoners by La Sanch brothers is not identical to the Joseph of Arimathea confraternity's collecting alms for pauper burial.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-023",
+      "source_id": "PIT-PAL-26-056",
+      "source_cluster_id": "PIT-HIST-C21",
+      "existing_research_id": "CAT-WEISER-B-139",
+      "relationship": "REJECT_OCTAVE_EIGHT_KEYWORD",
+      "rationale": "The Marian eight-night pilgrimage is unrelated to eight nights of Holy Souls devotion after All Souls.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-024",
+      "source_id": "PIT-PAL-26-102",
+      "source_cluster_id": "PIT-HIST-C13",
+      "existing_research_id": "CAT-WEISER-A-101",
+      "relationship": "SAME_GENERAL_DEVOTIONAL_GENRE_DIFFERENT_CALENDAR_CONTEXT",
+      "rationale": "The Palermo civic visit to the Rosalia shrine during Forty Hours is not the Weiser pre-Lenten Forty Hours devotion.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-025",
+      "source_id": "PIT-PAL-26-103",
+      "source_cluster_id": "PIT-HIST-C32",
+      "existing_research_id": "STOKES55-EWTN-086",
+      "relationship": "REJECT_MULTIPLE_CHURCHES_KEYWORD",
+      "rationale": "Multiple Masses for a dead noble's suffrages are not Mexican Holy Thursday visiting several churches.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-026",
+      "source_id": "PIT-PAL-26-099",
+      "source_cluster_id": "PIT-HIST-C31",
+      "existing_research_id": "FRSAN23-056",
+      "relationship": "RELATED_FUNERAL_CONFRATERNITY_DISTINCT_ACTION",
+      "rationale": "Burial under one's confraternity chapel differs from interment wearing a confraternity penitential robe; neither verifies the other's region or period.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-027",
+      "source_id": "PIT-PAL-26-088",
+      "source_cluster_id": "PIT-HIST-C27",
+      "existing_research_id": "WFF92-EWTN-012",
+      "relationship": "REJECT_LENT_ATTENDANCE_CONFLATION",
+      "rationale": "Lenten sermons in Palermo's principal church are not weekday Mass attendance during Lent.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-028",
+      "source_id": "PIT-PAL-26-095",
+      "source_cluster_id": "PIT-HIST-C29",
+      "existing_research_id": "ITREG26-036",
+      "relationship": "CLOSE_INSTITUTIONAL_CONTEXT_DISTINCT_GUILD_DATE",
+      "rationale": "Pitrè's patronal guild Mass and Gubbio masons' re-established feast Mass resemble a genre of action; guild and chronology are distinct.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-029",
+      "source_id": "PIT-PAL-26-093",
+      "source_cluster_id": "PIT-HIST-C29",
+      "existing_research_id": "IT-BSSP26-S-005",
+      "relationship": "RELATED_GUILD_PATRONAGE_DISTINCT_COMPLEX",
+      "rationale": "Palermo craft guild patron saint system differs from Sassari gremi each maintaining a processional Candeliere and saint.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-030",
+      "source_id": "PIT-PAL-26-057",
+      "source_cluster_id": "PIT-HIST-C21",
+      "existing_research_id": "KEL59-EWTN-010",
+      "relationship": "REJECT_COMMON_ROSARY_WITH_DIFFERENT_CONTEXT",
+      "rationale": "Reciting rosary on historic Palermo's eight-night Marian pilgrimage is not a generic family evening Rosary.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    },
+    {
+      "review_id": "PIT-XREF-031",
+      "source_id": "PIT-PAL-26-052",
+      "source_cluster_id": "PIT-HIST-C20",
+      "existing_research_id": "KEL59-EWTN-051",
+      "relationship": "REJECT_VOW_WORD_DIFFERENT_SACRAMENT_AND_ACTOR",
+      "rationale": "Palermo civic officials swearing a Marian historical oath are not a family renewing baptismal promises on Holy Saturday.",
+      "review_evidence": "MANUAL_SOURCE_ACTION_LABEL_AND_LITURGICAL_CONTEXT_COMPARISON_ONLY",
+      "historical_practice_identity_proven": false,
+      "source_independence_proven": false,
+      "automatic_merge": false,
+      "rite_authority_proven": false,
+      "calendar_publication": false
+    }
+  ],
+  "same_author_repeated_components": [
+    {
+      "source_id": "PIT-PAL-26-022",
+      "repeated_by": "PIT-PAL-26-102",
+      "interpretation": "Both volume passages describe Senate participation at St Rosalia's sanctuary Forty Hours, likely same author describing one historical devotional setting; not two independent witnesses.",
+      "status": "INTERNAL_SAME_AUTHOR_CONTEXT_REPETITION_NOT_IDENTITY_PROVEN"
+    },
+    {
+      "source_id": "PIT-PAL-26-040",
+      "repeated_by": "PIT-PAL-26-101",
+      "interpretation": "Both volume passages describe Assumption guild ceri/cilii offerings; same author and city, so second passage is not independent historical corroboration.",
+      "status": "INTERNAL_SAME_AUTHOR_CONTEXT_REPETITION_NOT_IDENTITY_PROVEN"
+    }
+  ]
+}

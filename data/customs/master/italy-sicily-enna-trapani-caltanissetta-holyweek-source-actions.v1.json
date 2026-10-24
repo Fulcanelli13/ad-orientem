@@ -1,0 +1,1834 @@
+{
+  "schema": "AO_CUSTOMS_ITALY_SICILY_THREE_CITIES_SOURCE_ACTION_WAVE01_V1",
+  "as_of": "2026-10-23",
+  "status": "RESEARCH_ONLY_NO_NEW_DISTINCT_IDENTITIES",
+  "source_scope": "Three new Sicilian Holy Week municipal/local/diocesan source corpora Enna Trapani Caltanissetta, explicitly distinct from already indexed UNESCO shoulder-machine festivals Nola Sassari Palmi Viterbo.",
+  "source_index": {
+    "ENN_OV": {
+      "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+      "author": "Comune di Enna",
+      "doc": "Settimana Santa (municipal historical description)",
+      "date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED"
+    },
+    "ENN_PALM": {
+      "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/17/DOMENICA-DELLE-PALME",
+      "author": "Comune di Enna",
+      "doc": "Domenica delle Palme (2024 program)",
+      "date_scope": "2024_PROGRAMME_NOT_ANNUAL_RUBRIC"
+    },
+    "ENN_MON": {
+      "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/18/LUNEDI--SANTO",
+      "author": "Comune di Enna",
+      "doc": "Lunedì Santo (2024 program)",
+      "date_scope": "2024_PROGRAMME"
+    },
+    "ENN_TUE": {
+      "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/19/MARTEDI--SANTO",
+      "author": "Comune di Enna",
+      "doc": "Martedì Santo (2024 program)",
+      "date_scope": "2024_PROGRAMME"
+    },
+    "ENN_WED": {
+      "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/20/MERCOLEDI--SANTO-",
+      "author": "Comune di Enna",
+      "doc": "Mercoledì Santo (2024 program)",
+      "date_scope": "2024_PROGRAMME"
+    },
+    "ENN_THU": {
+      "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/21/GIOVEDI--SANTO",
+      "author": "Comune di Enna",
+      "doc": "Giovedì Santo (2024 program)",
+      "date_scope": "2024_PROGRAMME"
+    },
+    "ENN_FRI": {
+      "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/22/VENERDI--SANTO",
+      "author": "Comune di Enna",
+      "doc": "Venerdì Santo (2024 program)",
+      "date_scope": "2024_PROGRAMME"
+    },
+    "ENN_EAST": {
+      "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/24/DOMENICA-IN-ALBIS",
+      "author": "Comune di Enna",
+      "doc": "Domenica in Albis webpage containing Easter and subsequent Sunday rites (2024); calendar ambiguity",
+      "date_scope": "AMBIGUOUS_2024_PAGE_EASTER_VS_IN_ALBIS_MUST_DISAMBIGUATE"
+    },
+    "TP_MAD": {
+      "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+      "author": "I Misteri di Trapani local traditions archive",
+      "doc": "Le Madri Pietà",
+      "date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS"
+    },
+    "TP_DIO": {
+      "url": "https://www.diocesi.trapani.it/accompagnare-la-pieta-popolare/",
+      "author": "Diocesi di Trapani",
+      "doc": "Accompagnare la pietà popolare (2019)",
+      "date_scope": "2019_DIOCESAN_POLICY_NOT_HISTORICAL_1962_AUTHORITY"
+    },
+    "TP_CITY": {
+      "url": "https://comune.trapani.it/novita/settimana-santa-2024-firmata-lordinanza-che-disciplina-il-divieto-di-vendita-e-somministrazione-bevande-alcoliche/",
+      "author": "Comune di Trapani",
+      "doc": "2024 civic acknowledgment of processional calendar",
+      "date_scope": "2024_OFFICIAL_CIVIC_EVIDENCE"
+    },
+    "CL_CITY": {
+      "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+      "author": "Comune di Caltanissetta",
+      "doc": "Settimana Santa 2025 historic commentary and scheduled celebrations",
+      "date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS"
+    }
+  },
+  "method": "One recorded action, preparation, material variant, time-bound ecclesiastical policy, or place-specific sequence per row. Linked to exact HTML witness URL and displayed line. 2024/2025 programmes prove those specific editions only, not continuous historical observance or adherence to 1962 rubrics. Some rows share one paragraph or describe a single larger processional sequence: never infer distinct custom count. Legend, origin report, contemporary parish rite and secular guild event tagged separately. The Enna municipal Domenica in Albis page mixes Easter and Octave details: keep chronology explicitly ambiguous and check later.",
+  "summary": {
+    "source_detail_rows": 96,
+    "by_locality": {
+      "ENN": 48,
+      "TP": 20,
+      "CL": 28
+    },
+    "by_observation_type": {
+      "HISTORICAL_REPORTED_VARIANT": 16,
+      "SACRED_REPRESENTATION": 10,
+      "PROCESSIONAL_COMPONENT": 40,
+      "DEVOTIONAL_PRACTICE": 9,
+      "MATERIAL_OR_COSTUME": 12,
+      "RITUAL_AUTHORITY_UNVERIFIED": 3,
+      "LITURGICAL_CONTEXT_NOT_DISTINCT_CUSTOM": 2,
+      "CIVIC_OR_ASSOCIATIONAL_NONDEVOTIONAL": 4
+    },
+    "source_pages": 12,
+    "regional_holy_week_complexes": 3,
+    "unique_distinct_customs_certified": 0,
+    "new_provisional_group_ids": 0,
+    "app_publications": 0
+  },
+  "records": [
+    {
+      "id": "ITSI26-ENN-001",
+      "action_or_detail_label": "Municipal record cites a 1261 mention of the confraternity of Santissimo Salvatore",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 2,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Week historical context",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-002",
+      "action_or_detail_label": "Dramatise Christ's entry into Jerusalem near San Sebastiano chapel on Palm Sunday",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 3,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Palm Sunday",
+      "observation_type": "SACRED_REPRESENTATION",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-003",
+      "action_or_detail_label": "Have confraternity rectors and assistants lead the first Palm Sunday procession with their insignia",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 4,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Palm Sunday",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-004",
+      "action_or_detail_label": "Visit the Cathedral for confraternity adoration of the exposed Blessed Sacrament",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 4,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Palm Sunday–Holy Wednesday",
+      "observation_type": "DEVOTIONAL_PRACTICE",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-005",
+      "action_or_detail_label": "Arrange the sixteen confraternities' processions to the Cathedral at hourly intervals, locally called Ura",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 5,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Palm Sunday–Holy Wednesday",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-006",
+      "action_or_detail_label": "Accompany the confraternity procession to the cathedral with the municipal band",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 5,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Palm Sunday–Holy Wednesday",
+      "observation_type": "MATERIAL_OR_COSTUME",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-007",
+      "action_or_detail_label": "Visit the decorated Altar of Repose at successive churches on Holy Thursday",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 6,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Thursday",
+      "observation_type": "DEVOTIONAL_PRACTICE",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-008",
+      "action_or_detail_label": "Set bowls of germinating wheat near Holy Thursday church devotional displays",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 6,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Thursday",
+      "observation_type": "MATERIAL_OR_COSTUME",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-009",
+      "action_or_detail_label": "Add the confraternities sequentially to the Good Friday cortege en route from the Passion church",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 7,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Good Friday",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-010",
+      "action_or_detail_label": "Enter the Addolorata church to venerate Our Lady's carried image before joining the Good Friday cortege",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 8,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Good Friday",
+      "observation_type": "DEVOTIONAL_PRACTICE",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-011",
+      "action_or_detail_label": "Carry the Addolorata image with the characteristic oscillating step to the Cathedral",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 8,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Good Friday",
+      "observation_type": "MATERIAL_OR_COSTUME",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-012",
+      "action_or_detail_label": "Bring the Christ Dead urna from Santissimo Salvatore church to the Cathedral before the combined procession",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 8,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Good Friday",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-013",
+      "action_or_detail_label": "Process in a fixed confraternity precedence order from the Cathedral to the municipal cemetery",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 9,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Good Friday",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-014",
+      "action_or_detail_label": "Give a procession blessing at the cemetery with the cross reliquary locally said to contain a Holy Thorn",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 9,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Good Friday",
+      "observation_type": "RITUAL_AUTHORITY_UNVERIFIED",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-015",
+      "action_or_detail_label": "Stage the Easter meeting of statues representing the risen Christ and His Mother, called the Paci",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 10,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Easter Sunday",
+      "observation_type": "SACRED_REPRESENTATION",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-016",
+      "action_or_detail_label": "Remove the black veil from the Marian statue when the figure of the risen Christ appears",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 11,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Easter Sunday",
+      "observation_type": "SACRED_REPRESENTATION",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-017",
+      "action_or_detail_label": "Bring the figures together and escort both into the Cathedral following the Paci",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 11,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Easter Sunday",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-018",
+      "action_or_detail_label": "Return the Christ and Marian images to their home churches at the Spartenza after the Easter octave",
+      "source_id": "ENN_OV",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/eca/festa/Settimana%20Santa",
+        "html_line": 11,
+        "section": "Settimana Santa (municipal historical description)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Sunday in Albis",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "MUNICIPAL_HISTORICAL_OVERVIEW_DATE_UNSPECIFIED",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-019",
+      "action_or_detail_label": "Hold living Palm Sunday entry representation along Papardura–San Sebastiano route",
+      "source_id": "ENN_PALM",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/17/DOMENICA-DELLE-PALME",
+        "html_line": 11,
+        "section": "Domenica delle Palme (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Palm Sunday",
+      "observation_type": "SACRED_REPRESENTATION",
+      "historical_date_scope": "2024_PROGRAMME_NOT_ANNUAL_RUBRIC",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-020",
+      "action_or_detail_label": "Follow the Palm Sunday representation with palm blessing and solemn Mass at San Leonardo",
+      "source_id": "ENN_PALM",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/17/DOMENICA-DELLE-PALME",
+        "html_line": 11,
+        "section": "Domenica delle Palme (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Palm Sunday",
+      "observation_type": "LITURGICAL_CONTEXT_NOT_DISTINCT_CUSTOM",
+      "historical_date_scope": "2024_PROGRAMME_NOT_ANNUAL_RUBRIC",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-021",
+      "action_or_detail_label": "The Collegio dei Rettori processes from Montesalvo to open the 2024 Holy Week observances",
+      "source_id": "ENN_PALM",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/17/DOMENICA-DELLE-PALME",
+        "html_line": 14,
+        "section": "Domenica delle Palme (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Palm Sunday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME_NOT_ANNUAL_RUBRIC",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-022",
+      "action_or_detail_label": "The Rosary confraternity processes from San Giovanni to the Cathedral for adoration",
+      "source_id": "ENN_PALM",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/17/DOMENICA-DELLE-PALME",
+        "html_line": 16,
+        "section": "Domenica delle Palme (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Palm Sunday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME_NOT_ANNUAL_RUBRIC",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-023",
+      "action_or_detail_label": "The Crocifisso di Pergusa confraternity processes from the Carmine church",
+      "source_id": "ENN_PALM",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/17/DOMENICA-DELLE-PALME",
+        "html_line": 17,
+        "section": "Domenica delle Palme (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Palm Sunday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME_NOT_ANNUAL_RUBRIC",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-024",
+      "action_or_detail_label": "The Santissima Passione confraternity escorts an Ecce Homo image from San Leonardo",
+      "source_id": "ENN_PALM",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/17/DOMENICA-DELLE-PALME",
+        "html_line": 18,
+        "section": "Domenica delle Palme (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Palm Sunday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME_NOT_ANNUAL_RUBRIC",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-025",
+      "action_or_detail_label": "The Santissimo Salvatore confraternity departs its church for Cathedral devotion",
+      "source_id": "ENN_PALM",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/17/DOMENICA-DELLE-PALME",
+        "html_line": 21,
+        "section": "Domenica delle Palme (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Palm Sunday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME_NOT_ANNUAL_RUBRIC",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-026",
+      "action_or_detail_label": "Pause with the Ecce Homo before the Addolorata church to recall Christ's encounter with His Mother",
+      "source_id": "ENN_PALM",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/17/DOMENICA-DELLE-PALME",
+        "html_line": 22,
+        "section": "Domenica delle Palme (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Palm Sunday 2024",
+      "observation_type": "DEVOTIONAL_PRACTICE",
+      "historical_date_scope": "2024_PROGRAMME_NOT_ANNUAL_RUBRIC",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-027",
+      "action_or_detail_label": "Santa Anna confraternity processes from San Cataldo for the cathedral adoration",
+      "source_id": "ENN_MON",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/18/LUNEDI--SANTO",
+        "html_line": 11,
+        "section": "Lunedì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Monday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-028",
+      "action_or_detail_label": "Visitazione confraternity processes from Montesalvo for the cathedral adoration",
+      "source_id": "ENN_MON",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/18/LUNEDI--SANTO",
+        "html_line": 13,
+        "section": "Lunedì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Monday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-029",
+      "action_or_detail_label": "Madonna delle Grazie confraternity processes from Sant'Agostino",
+      "source_id": "ENN_MON",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/18/LUNEDI--SANTO",
+        "html_line": 15,
+        "section": "Lunedì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Monday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-030",
+      "action_or_detail_label": "Santissimo Sacramento confraternity processes from San Tommaso",
+      "source_id": "ENN_MON",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/18/LUNEDI--SANTO",
+        "html_line": 17,
+        "section": "Lunedì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Monday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-031",
+      "action_or_detail_label": "Santa Maria la Nuova confraternity processes from its own church",
+      "source_id": "ENN_MON",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/18/LUNEDI--SANTO",
+        "html_line": 18,
+        "section": "Lunedì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Monday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-032",
+      "action_or_detail_label": "Spirito Santo confraternity processes from its church toward the Cathedral",
+      "source_id": "ENN_TUE",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/19/MARTEDI--SANTO",
+        "html_line": 12,
+        "section": "Martedì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Tuesday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-033",
+      "action_or_detail_label": "Anime Sante del Purgatorio archconfraternity processes from the church of the Holy Souls",
+      "source_id": "ENN_TUE",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/19/MARTEDI--SANTO",
+        "html_line": 14,
+        "section": "Martedì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Tuesday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-034",
+      "action_or_detail_label": "San Giuseppe confraternity processes from its sanctuary",
+      "source_id": "ENN_TUE",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/19/MARTEDI--SANTO",
+        "html_line": 16,
+        "section": "Martedì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Tuesday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-035",
+      "action_or_detail_label": "Valverde confraternity processes from its Marian sanctuary",
+      "source_id": "ENN_WED",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/20/MERCOLEDI--SANTO-",
+        "html_line": 11,
+        "section": "Mercoledì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Wednesday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-036",
+      "action_or_detail_label": "Sacro Cuore di Gesù confraternity processes from Santa Maria del Popolo",
+      "source_id": "ENN_WED",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/20/MERCOLEDI--SANTO-",
+        "html_line": 13,
+        "section": "Mercoledì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Wednesday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-037",
+      "action_or_detail_label": "Addolorata confraternity processes from its own church",
+      "source_id": "ENN_WED",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/20/MERCOLEDI--SANTO-",
+        "html_line": 15,
+        "section": "Mercoledì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Wednesday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-038",
+      "action_or_detail_label": "Immacolata confraternity processes from San Francesco d'Assisi",
+      "source_id": "ENN_WED",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/20/MERCOLEDI--SANTO-",
+        "html_line": 17,
+        "section": "Mercoledì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Wednesday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-039",
+      "action_or_detail_label": "Crocifisso di Pergusa confraternity stages a living Passion representation named Percusa",
+      "source_id": "ENN_WED",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/20/MERCOLEDI--SANTO-",
+        "html_line": 20,
+        "section": "Mercoledì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Wednesday 2024",
+      "observation_type": "SACRED_REPRESENTATION",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-040",
+      "action_or_detail_label": "Confraternity churches arrange exhibitions of their devotional and processional objects",
+      "source_id": "ENN_THU",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/21/GIOVEDI--SANTO",
+        "html_line": 13,
+        "section": "Giovedì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Holy Thursday 2024",
+      "observation_type": "MATERIAL_OR_COSTUME",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-041",
+      "action_or_detail_label": "Santissima Passione leads the afternoon procession from San Leonardo",
+      "source_id": "ENN_FRI",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/22/VENERDI--SANTO",
+        "html_line": 13,
+        "section": "Venerdì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Good Friday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-042",
+      "action_or_detail_label": "Confraternities pay homage to the Addolorata at her church on the way to Cathedral",
+      "source_id": "ENN_FRI",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/22/VENERDI--SANTO",
+        "html_line": 13,
+        "section": "Venerdì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Good Friday 2024",
+      "observation_type": "DEVOTIONAL_PRACTICE",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-043",
+      "action_or_detail_label": "Escort the Marian fercolo from Addolorata church last into the Cathedral",
+      "source_id": "ENN_FRI",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/22/VENERDI--SANTO",
+        "html_line": 13,
+        "section": "Venerdì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Good Friday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-044",
+      "action_or_detail_label": "Sixteen confraternities carry the Cristo Morto and Addolorata figures from Cathedral toward the cemetery",
+      "source_id": "ENN_FRI",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/22/VENERDI--SANTO",
+        "html_line": 14,
+        "section": "Venerdì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Good Friday 2024",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-045",
+      "action_or_detail_label": "Bless the gathered faithful with the local Holy Thorn relic at the cemetery",
+      "source_id": "ENN_FRI",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/22/VENERDI--SANTO",
+        "html_line": 14,
+        "section": "Venerdì Santo (2024 program)"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Good Friday 2024",
+      "observation_type": "RITUAL_AUTHORITY_UNVERIFIED",
+      "historical_date_scope": "2024_PROGRAMME",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-046",
+      "action_or_detail_label": "Carry the risen Christ and Marian figures on opposite routes before the Easter Paci meeting in Piazza Mazzini",
+      "source_id": "ENN_EAST",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/24/DOMENICA-IN-ALBIS",
+        "html_line": 13,
+        "section": "Domenica in Albis webpage containing Easter and subsequent Sunday rites (2024); calendar ambiguity"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Easter Sunday (2024 municipal wording ambiguous)",
+      "observation_type": "SACRED_REPRESENTATION",
+      "historical_date_scope": "AMBIGUOUS_2024_PAGE_EASTER_VS_IN_ALBIS_MUST_DISAMBIGUATE",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-047",
+      "action_or_detail_label": "Hold a solemn blessing of fields near Castello di Lombardia during the in-Albis procession",
+      "source_id": "ENN_EAST",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/24/DOMENICA-IN-ALBIS",
+        "html_line": 16,
+        "section": "Domenica in Albis webpage containing Easter and subsequent Sunday rites (2024); calendar ambiguity"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Sunday in Albis (verify schedule)",
+      "observation_type": "RITUAL_AUTHORITY_UNVERIFIED",
+      "historical_date_scope": "AMBIGUOUS_2024_PAGE_EASTER_VS_IN_ALBIS_MUST_DISAMBIGUATE",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-ENN-048",
+      "action_or_detail_label": "Perform the Spartenza separation rite with Holy Ghost image and return patronal statues home",
+      "source_id": "ENN_EAST",
+      "source_locator": {
+        "url": "https://www.comune.enna.it/vivere-enna/eventi/Eventi-culturali/24/DOMENICA-IN-ALBIS",
+        "html_line": 17,
+        "section": "Domenica in Albis webpage containing Easter and subsequent Sunday rites (2024); calendar ambiguity"
+      },
+      "locality": "Enna, Sicily",
+      "liturgical_period": "Sunday in Albis (verify schedule)",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "AMBIGUOUS_2024_PAGE_EASTER_VS_IN_ALBIS_MUST_DISAMBIGUATE",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-001",
+      "action_or_detail_label": "Carry two framed Pietà images on shoulder-borne processional platforms through Trapani in Holy Week",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 2,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Holy Tuesday and Wednesday",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-002",
+      "action_or_detail_label": "Carry the Pietà dei Massari through the city on Holy Tuesday under Piano San Rocco porters",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 3,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Holy Tuesday",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-003",
+      "action_or_detail_label": "Mount the sixteenth-century Pietà dei Massari image in its later neoclassical processional platform",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 3,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Holy Tuesday",
+      "observation_type": "MATERIAL_OR_COSTUME",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-004",
+      "action_or_detail_label": "Historically choose annual household custody of the Pietà by the local family game called tocco",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 4,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Historic practice before 1934",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-005",
+      "action_or_detail_label": "Escort the chosen custodial family with the Pietà to its home for a year",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 4,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Historic practice before 1934",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-006",
+      "action_or_detail_label": "Perform characteristic rocking annacate with the Pietà platform at specified street stops",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 5,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Holy Tuesday",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-007",
+      "action_or_detail_label": "Bring the Massari Pietà into Palazzo Fodale along its customary route",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 5,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Holy Tuesday",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-008",
+      "action_or_detail_label": "Keep an overnight vigil with the Massari Pietà in a temporary chapel at Piazza Lucatelli",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 5,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Holy Tuesday night",
+      "observation_type": "DEVOTIONAL_PRACTICE",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-009",
+      "action_or_detail_label": "Return the Massari Pietà to the Purgatorio church on the following evening",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 5,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Holy Wednesday",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-010",
+      "action_or_detail_label": "Carry the Pietà del Popolo on its Baroque platform through the city on Holy Wednesday",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 7,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Holy Wednesday",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-011",
+      "action_or_detail_label": "The fruit-sellers' guild currently tends the Pietà del Popolo; the Sant'Anna company formerly did",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 7,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Historic versus present custodians",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-012",
+      "action_or_detail_label": "Oral tradition recalls women carrying the Popolo Pietà when men were away at war",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 7,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Reported wartime variant",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-013",
+      "action_or_detail_label": "Move the Popolo Pietà with annacate in time to funeral marches",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 8,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Holy Wednesday",
+      "observation_type": "MATERIAL_OR_COSTUME",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-014",
+      "action_or_detail_label": "Perform ceremonial candle exchange, Scambio del cero, between former rival custodial groups near Piazza Lucatelli",
+      "source_id": "TP_MAD",
+      "source_locator": {
+        "url": "https://www.misteriditrapani.it/le-madri-pieta/",
+        "html_line": 9,
+        "section": "Le Madri Pietà"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "Holy Wednesday",
+      "observation_type": "DEVOTIONAL_PRACTICE",
+      "historical_date_scope": "LOCAL_HISTORICAL_ACCOUNT_NO_PRINT_FOLIOS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-015",
+      "action_or_detail_label": "Municipal ordinance records distinct Pietà dei Massari, Pietà del Popolo, Misteri and Cristo Risorto processions",
+      "source_id": "TP_CITY",
+      "source_locator": {
+        "url": "https://comune.trapani.it/novita/settimana-santa-2024-firmata-lordinanza-che-disciplina-il-divieto-di-vendita-e-somministrazione-bevande-alcoliche/",
+        "html_line": 28,
+        "section": "2024 civic acknowledgment of processional calendar"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "2024 municipal context",
+      "observation_type": "CIVIC_OR_ASSOCIATIONAL_NONDEVOTIONAL",
+      "historical_date_scope": "2024_OFFICIAL_CIVIC_EVIDENCE",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-016",
+      "action_or_detail_label": "Diocesan guidelines treat popular religious processions separately from civic entertainments",
+      "source_id": "TP_DIO",
+      "source_locator": {
+        "url": "https://www.diocesi.trapani.it/accompagnare-la-pieta-popolare/",
+        "html_line": 177,
+        "section": "Accompagnare la pietà popolare (2019)"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "2019 policy context",
+      "observation_type": "CIVIC_OR_ASSOCIATIONAL_NONDEVOTIONAL",
+      "historical_date_scope": "2019_DIOCESAN_POLICY_NOT_HISTORICAL_1962_AUTHORITY",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-017",
+      "action_or_detail_label": "Diocesan policy declines reinstating hooded penitents in the Trapani Misteri procession",
+      "source_id": "TP_DIO",
+      "source_locator": {
+        "url": "https://www.diocesi.trapani.it/accompagnare-la-pieta-popolare/",
+        "html_line": 178,
+        "section": "Accompagnare la pietà popolare (2019)"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "2019 policy restriction",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "2019_DIOCESAN_POLICY_NOT_HISTORICAL_1962_AUTHORITY",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-018",
+      "action_or_detail_label": "Diocesan guidelines discourage procession girate that could be confused with paid or reverential turning",
+      "source_id": "TP_DIO",
+      "source_locator": {
+        "url": "https://www.diocesi.trapani.it/accompagnare-la-pieta-popolare/",
+        "html_line": 178,
+        "section": "Accompagnare la pietà popolare (2019)"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "2019 policy restriction",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "2019_DIOCESAN_POLICY_NOT_HISTORICAL_1962_AUTHORITY",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-019",
+      "action_or_detail_label": "The diocese encourages devotional rocking annacate of the processional platforms",
+      "source_id": "TP_DIO",
+      "source_locator": {
+        "url": "https://www.diocesi.trapani.it/accompagnare-la-pieta-popolare/",
+        "html_line": 178,
+        "section": "Accompagnare la pietà popolare (2019)"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "2019 pastoral recognition",
+      "observation_type": "DEVOTIONAL_PRACTICE",
+      "historical_date_scope": "2019_DIOCESAN_POLICY_NOT_HISTORICAL_1962_AUTHORITY",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-TP-020",
+      "action_or_detail_label": "The diocese values funeral band marches and local-dialect devotional songs at the Misteri",
+      "source_id": "TP_DIO",
+      "source_locator": {
+        "url": "https://www.diocesi.trapani.it/accompagnare-la-pieta-popolare/",
+        "html_line": 178,
+        "section": "Accompagnare la pietà popolare (2019)"
+      },
+      "locality": "Trapani, Sicily",
+      "liturgical_period": "2019 pastoral recognition",
+      "observation_type": "DEVOTIONAL_PRACTICE",
+      "historical_date_scope": "2019_DIOCESAN_POLICY_NOT_HISTORICAL_1962_AUTHORITY",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-001",
+      "action_or_detail_label": "Municipal oral account attributes Palm Sunday Gesù Nazareno procession to excluded peasant participants",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 84,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Historical origin claim",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-002",
+      "action_or_detail_label": "Earlier Palm Sunday procession carried an image of the dead Christ covered with flowers",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 86,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Before 1869",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-003",
+      "action_or_detail_label": "Replace the flower-covered dead Christ with a blessing Christ statue upon a flower throne",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 87,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "From 1869 onward, as municipal history",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-004",
+      "action_or_detail_label": "Weave and arrange floral decoration on the Nazareno boat-shaped platform",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 88,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Palm Sunday",
+      "observation_type": "MATERIAL_OR_COSTUME",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-005",
+      "action_or_detail_label": "Set a richly dressed Nazareno statue among ex-voto objects on the flower-adorned platform",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 88,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Palm Sunday",
+      "observation_type": "MATERIAL_OR_COSTUME",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-006",
+      "action_or_detail_label": "Carry the flower-platform Christ into the Palm Sunday streets after Mass at Sant'Agata",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 89,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "2025 Palm Sunday programme",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-007",
+      "action_or_detail_label": "Stage A Scinnenza as Holy Week Passion dramatization over two evenings",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 93,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Holy Monday and Tuesday 2025",
+      "observation_type": "SACRED_REPRESENTATION",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-008",
+      "action_or_detail_label": "Dramatize the Entry, Supper, Foot Washing and Arrest in the first part of A Scinnenza",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 100,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Holy Monday 2025",
+      "observation_type": "SACRED_REPRESENTATION",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-009",
+      "action_or_detail_label": "Dramatize Christ before Pilate and the Flagellation during second part of A Scinnenza",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 103,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Holy Tuesday 2025",
+      "observation_type": "SACRED_REPRESENTATION",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-010",
+      "action_or_detail_label": "Stage Calvary, Crucifixion, Death and Deposition in the second A Scinnenza performance",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 104,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Holy Tuesday 2025",
+      "observation_type": "SACRED_REPRESENTATION",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-011",
+      "action_or_detail_label": "Historical artisan city militia is reported to have exchanged arms for ceremonial candles and patronal banners",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 112,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "1848 transition as described",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-012",
+      "action_or_detail_label": "Ten craft categories choose a captain to lead the Real Maestranza",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 113,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Present-day guild organization",
+      "observation_type": "CIVIC_OR_ASSOCIATIONAL_NONDEVOTIONAL",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-013",
+      "action_or_detail_label": "Historical captain's release of a prisoner is now reinterpreted as participation of a young detainee",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 113,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Historically attested / modern practice",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-014",
+      "action_or_detail_label": "Real Maestranza carries the Most Holy Crucifix to enthronement at Sant'Agata",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 114,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Holy Tuesday 2025",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-015",
+      "action_or_detail_label": "Mayor ceremonially transfers city keys to the Real Maestranza captain before procession",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 116,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Holy Wednesday 2025",
+      "observation_type": "CIVIC_OR_ASSOCIATIONAL_NONDEVOTIONAL",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-016",
+      "action_or_detail_label": "Real Maestranza guild procession proceeds through historic centre",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 118,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Holy Wednesday 2025",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-017",
+      "action_or_detail_label": "Process with nineteen smaller Passion tableaux called Varicedde",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 121,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Holy Wednesday 2025",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-018",
+      "action_or_detail_label": "Sixteen small Varicedde duplicate the larger Thursday Passion ensembles while three depict additional scenes",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 123,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Holy Wednesday 2025",
+      "observation_type": "MATERIAL_OR_COSTUME",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-019",
+      "action_or_detail_label": "Varicedde are generally kept by their private owners before Holy Week display",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 124,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Household custody practice",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-020",
+      "action_or_detail_label": "Bring private Varicedde into the city for floral-and-light preparation before the evening cortege",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 124,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Holy Wednesday",
+      "observation_type": "MATERIAL_OR_COSTUME",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-021",
+      "action_or_detail_label": "Carry sixteen larger full-size Passion tableaux called Vare through the city",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 168,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Holy Thursday 2025",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-022",
+      "action_or_detail_label": "The 1883–1902 Vare groups were originally carried on shoulders",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 168,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Late nineteenth to mid twentieth century",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-023",
+      "action_or_detail_label": "Later replace shoulder-bearing of the larger Vare with wheeled carts because of their weight",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 169,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Late 1960s onward",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-024",
+      "action_or_detail_label": "Decorate the larger Vare platforms with flowers and ceremonial lights",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 169,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Holy Thursday",
+      "observation_type": "MATERIAL_OR_COSTUME",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-025",
+      "action_or_detail_label": "Accompany Vare procession with local musical bands",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 169,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Holy Thursday",
+      "observation_type": "MATERIAL_OR_COSTUME",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-026",
+      "action_or_detail_label": "Local origin legend ascribes Cristo Nero to an image discovered in a cave by vegetable-gatherers",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 207,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Legend, not established historical provenance",
+      "observation_type": "HISTORICAL_REPORTED_VARIANT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-027",
+      "action_or_detail_label": "Carry the Cristo Nero, Santissimo Crocifisso Signore della Città, from its sanctuary on Good Friday",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 208,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Good Friday 2025",
+      "observation_type": "PROCESSIONAL_COMPONENT",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "ITSI26-CL-028",
+      "action_or_detail_label": "The Real Maestranza escorts the bishop toward the Cathedral for Easter Eucharistic celebration",
+      "source_id": "CL_CITY",
+      "source_locator": {
+        "url": "https://www.comune.caltanissetta.it/it/news/settimana-santa-di-caltanissetta-2025-la-passione-di-cristo-nei-riti-della-tradizione-nissena",
+        "html_line": 212,
+        "section": "Settimana Santa 2025 historic commentary and scheduled celebrations"
+      },
+      "locality": "Caltanissetta, Sicily",
+      "liturgical_period": "Easter Sunday 2025",
+      "observation_type": "LITURGICAL_CONTEXT_NOT_DISTINCT_CUSTOM",
+      "historical_date_scope": "2025_PROGRAMME_WITH_SECONDARY_HISTORICAL_CLAIMS",
+      "identity_status": "REGIONAL_ACTION_OR_VARIANT_NOT_VERIFIED_DISTINCT",
+      "source_independence_status": "MUNICIPAL_AND_LOCAL_DOCUMENTARY_WITNESS_NOT_INDEPENDENT_EYEWITNESS_PROVEN",
+      "ritual_1962_status": "NOT_CHECKED",
+      "app_publication": "NONE"
+    }
+  ]
+}

@@ -1,0 +1,2807 @@
+{
+  "schema": "AO_PITRE_1900_WAVE08_560_PAGE_NONEXHAUSTIVE_COVERAGE_CENSUS_V1",
+  "date": "2026-10-24",
+  "source": {
+    "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+    "original_scan_sha256": "100e2b3164bd7a342c5c0c5d01df2a60b4635d5695dea456e9b93769866ee5ee",
+    "original_body_printed_pages": "1–560 inclusive; not the illustrated plates, prefatory matter or index"
+  },
+  "method": "Count actual printed folio locations with >=1 retained original-edition source/detail observation across 129 first-pass +293 further OCR +105 Wave04 +132 Wave05 +8 Wave08. No-hit pages are a research completion queue and NOT proof of no customs. Respect body-heading starts (XI p140; XLI p406) rather than two erroneous original printed TOC locators; all other starts inherited from the source table of contents. Full line-by-line page completeness is 0 and chapter exhaustiveness is 0.",
+  "summary": {
+    "original_body_printed_pages": 560,
+    "original_1900_source_observations": 667,
+    "printed_pages_with_one_or_more_indexed_observations": 307,
+    "printed_pages_with_no_indexed_source_observation": 253,
+    "chapter_ids_with_some_indexed_observations": 60,
+    "chapter_ids_exhaustively_mined": 0,
+    "held_leads_previous": 63,
+    "held_source_actions_recovered": 8,
+    "remaining_held_leads": 55,
+    "source_pages_fully_line_by_line_certified": 0,
+    "new_unique_customs_certified": 0,
+    "live_calendar_publications": 0,
+    "largest_page_gaps_by_chapter": [
+      {
+        "chapter": "I",
+        "missing_pages": 33,
+        "span": "1-48"
+      },
+      {
+        "chapter": "XXXVI",
+        "missing_pages": 14,
+        "span": "367-385"
+      },
+      {
+        "chapter": "II",
+        "missing_pages": 13,
+        "span": "49-70"
+      },
+      {
+        "chapter": "XII",
+        "missing_pages": 12,
+        "span": "147-175"
+      },
+      {
+        "chapter": "XIX",
+        "missing_pages": 11,
+        "span": "215-233"
+      },
+      {
+        "chapter": "XLVI",
+        "missing_pages": 9,
+        "span": "441-462"
+      },
+      {
+        "chapter": "XXIX",
+        "missing_pages": 8,
+        "span": "296-308"
+      },
+      {
+        "chapter": "XXXIV",
+        "missing_pages": 8,
+        "span": "349-361"
+      },
+      {
+        "chapter": "XXX",
+        "missing_pages": 6,
+        "span": "309-319"
+      },
+      {
+        "chapter": "XLIII",
+        "missing_pages": 6,
+        "span": "422-431"
+      },
+      {
+        "chapter": "XLVII",
+        "missing_pages": 6,
+        "span": "463-471"
+      },
+      {
+        "chapter": "XLIX",
+        "missing_pages": 6,
+        "span": "478-487"
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "chapter_id": "I",
+      "chapter_title": "Santa Rosalia — Palermo",
+      "body_heading_printed_start": 1,
+      "end_printed_page": 48,
+      "original_toc_claimed_start": 1,
+      "source_action_rows_indexed": 27,
+      "indexed_printed_page_locations": [
+        3,
+        12,
+        13,
+        14,
+        16,
+        17,
+        19,
+        20,
+        22,
+        28,
+        31,
+        32,
+        33,
+        34,
+        36
+      ],
+      "no_indexed_source_observation_on_pages": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        15,
+        18,
+        21,
+        23,
+        24,
+        25,
+        26,
+        27,
+        29,
+        30,
+        35,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "II",
+      "chapter_title": "Saint Francis of Paola — Palermo",
+      "body_heading_printed_start": 49,
+      "end_printed_page": 70,
+      "original_toc_claimed_start": 49,
+      "source_action_rows_indexed": 12,
+      "indexed_printed_page_locations": [
+        52,
+        53,
+        54,
+        55,
+        57,
+        59,
+        61,
+        63,
+        65
+      ],
+      "no_indexed_source_observation_on_pages": [
+        49,
+        50,
+        51,
+        56,
+        58,
+        60,
+        62,
+        64,
+        66,
+        67,
+        68,
+        69,
+        70
+      ],
+      "remaining_held_leads_in_chapter": 1,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "III",
+      "chapter_title": "Saints Cosmas and Damian — Palermo",
+      "body_heading_printed_start": 71,
+      "end_printed_page": 86,
+      "original_toc_claimed_start": 71,
+      "source_action_rows_indexed": 29,
+      "indexed_printed_page_locations": [
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        82,
+        83,
+        84,
+        86
+      ],
+      "no_indexed_source_observation_on_pages": [
+        81,
+        85
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "IV",
+      "chapter_title": "Our Lady of Loreto — Altavilla",
+      "body_heading_printed_start": 87,
+      "end_printed_page": 93,
+      "original_toc_claimed_start": 87,
+      "source_action_rows_indexed": 5,
+      "indexed_printed_page_locations": [
+        88,
+        89,
+        90,
+        91
+      ],
+      "no_indexed_source_observation_on_pages": [
+        87,
+        92,
+        93
+      ],
+      "remaining_held_leads_in_chapter": 1,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "V",
+      "chapter_title": "Holy Crucifix — Monreale",
+      "body_heading_printed_start": 94,
+      "end_printed_page": 108,
+      "original_toc_claimed_start": 94,
+      "source_action_rows_indexed": 11,
+      "indexed_printed_page_locations": [
+        95,
+        99,
+        100,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108
+      ],
+      "no_indexed_source_observation_on_pages": [
+        94,
+        96,
+        97,
+        98,
+        101
+      ],
+      "remaining_held_leads_in_chapter": 2,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "VI",
+      "chapter_title": "Crucifix — Montelepre, Carini, Palazzo Adriano, Roccapalumba, Chiusa, Resuttano, Menfi",
+      "body_heading_printed_start": 109,
+      "end_printed_page": 119,
+      "original_toc_claimed_start": 109,
+      "source_action_rows_indexed": 10,
+      "indexed_printed_page_locations": [
+        110,
+        111,
+        113,
+        114,
+        115,
+        116,
+        118,
+        119
+      ],
+      "no_indexed_source_observation_on_pages": [
+        109,
+        112,
+        117
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "VII",
+      "chapter_title": "Holy Spirit — Gangi",
+      "body_heading_printed_start": 120,
+      "end_printed_page": 122,
+      "original_toc_claimed_start": 120,
+      "source_action_rows_indexed": 5,
+      "indexed_printed_page_locations": [
+        120,
+        121,
+        122
+      ],
+      "no_indexed_source_observation_on_pages": [],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "VIII",
+      "chapter_title": "Saint James — Gratteri",
+      "body_heading_printed_start": 123,
+      "end_printed_page": 125,
+      "original_toc_claimed_start": 123,
+      "source_action_rows_indexed": 10,
+      "indexed_printed_page_locations": [
+        124,
+        125
+      ],
+      "no_indexed_source_observation_on_pages": [
+        123
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "IX",
+      "chapter_title": "Blessed Sacrament — Geraci Siculo",
+      "body_heading_printed_start": 126,
+      "end_printed_page": 130,
+      "original_toc_claimed_start": 126,
+      "source_action_rows_indexed": 16,
+      "indexed_printed_page_locations": [
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "no_indexed_source_observation_on_pages": [],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "X",
+      "chapter_title": "Saint Cyrus — Marineo",
+      "body_heading_printed_start": 131,
+      "end_printed_page": 139,
+      "original_toc_claimed_start": 131,
+      "source_action_rows_indexed": 22,
+      "indexed_printed_page_locations": [
+        133,
+        135,
+        136,
+        137,
+        138
+      ],
+      "no_indexed_source_observation_on_pages": [
+        131,
+        132,
+        134,
+        139
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XI",
+      "chapter_title": "Saint Vitalis — Castronovo",
+      "body_heading_printed_start": 140,
+      "end_printed_page": 146,
+      "original_toc_claimed_start": 141,
+      "source_action_rows_indexed": 7,
+      "indexed_printed_page_locations": [
+        140,
+        141,
+        142
+      ],
+      "no_indexed_source_observation_on_pages": [
+        143,
+        144,
+        145,
+        146
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XII",
+      "chapter_title": "Assumption — Messina",
+      "body_heading_printed_start": 147,
+      "end_printed_page": 175,
+      "original_toc_claimed_start": 147,
+      "source_action_rows_indexed": 47,
+      "indexed_printed_page_locations": [
+        147,
+        148,
+        149,
+        150,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167
+      ],
+      "no_indexed_source_observation_on_pages": [
+        151,
+        152,
+        153,
+        154,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XIII",
+      "chapter_title": "Assumption — Novara and Tusa",
+      "body_heading_printed_start": 176,
+      "end_printed_page": 182,
+      "original_toc_claimed_start": 176,
+      "source_action_rows_indexed": 11,
+      "indexed_printed_page_locations": [
+        176,
+        177,
+        178,
+        180,
+        181
+      ],
+      "no_indexed_source_observation_on_pages": [
+        179,
+        182
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XIV",
+      "chapter_title": "Saint Nicholas — Gioiosa Marea and Palazzo Adriano",
+      "body_heading_printed_start": 183,
+      "end_printed_page": 188,
+      "original_toc_claimed_start": 183,
+      "source_action_rows_indexed": 12,
+      "indexed_printed_page_locations": [
+        183,
+        185,
+        186,
+        187,
+        188
+      ],
+      "no_indexed_source_observation_on_pages": [
+        184
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XV",
+      "chapter_title": "Saint Mark and Saint Nicholas — San Marco d'Alunzio",
+      "body_heading_printed_start": 189,
+      "end_printed_page": 192,
+      "original_toc_claimed_start": 189,
+      "source_action_rows_indexed": 9,
+      "indexed_printed_page_locations": [
+        189,
+        190,
+        191
+      ],
+      "no_indexed_source_observation_on_pages": [
+        192
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XVI",
+      "chapter_title": "Annunciation — Fiumedinisi",
+      "body_heading_printed_start": 193,
+      "end_printed_page": 198,
+      "original_toc_claimed_start": 193,
+      "source_action_rows_indexed": 9,
+      "indexed_printed_page_locations": [
+        193,
+        194,
+        195,
+        197,
+        198
+      ],
+      "no_indexed_source_observation_on_pages": [
+        196
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XVII",
+      "chapter_title": "Saint Onuphrius — Casalvecchio",
+      "body_heading_printed_start": 199,
+      "end_printed_page": 206,
+      "original_toc_claimed_start": 199,
+      "source_action_rows_indexed": 11,
+      "indexed_printed_page_locations": [
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206
+      ],
+      "no_indexed_source_observation_on_pages": [],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XVIII",
+      "chapter_title": "Saint Cono — Naso",
+      "body_heading_printed_start": 207,
+      "end_printed_page": 214,
+      "original_toc_claimed_start": 207,
+      "source_action_rows_indexed": 11,
+      "indexed_printed_page_locations": [
+        207,
+        208,
+        209,
+        210,
+        211
+      ],
+      "no_indexed_source_observation_on_pages": [
+        212,
+        213,
+        214
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XIX",
+      "chapter_title": "Saint Agatha — Catania",
+      "body_heading_printed_start": 215,
+      "end_printed_page": 233,
+      "original_toc_claimed_start": 215,
+      "source_action_rows_indexed": 18,
+      "indexed_printed_page_locations": [
+        219,
+        220,
+        222,
+        225,
+        227,
+        228,
+        229,
+        230
+      ],
+      "no_indexed_source_observation_on_pages": [
+        215,
+        216,
+        217,
+        218,
+        221,
+        223,
+        224,
+        226,
+        231,
+        232,
+        233
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XX",
+      "chapter_title": "Saints Alfio, Filadelfo and Cirino — Trecastagne",
+      "body_heading_printed_start": 234,
+      "end_printed_page": 240,
+      "original_toc_claimed_start": 234,
+      "source_action_rows_indexed": 10,
+      "indexed_printed_page_locations": [
+        235,
+        236,
+        237,
+        238,
+        240
+      ],
+      "no_indexed_source_observation_on_pages": [
+        234,
+        239
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXI",
+      "chapter_title": "Our Lady della Lavina — Cerami",
+      "body_heading_printed_start": 241,
+      "end_printed_page": 244,
+      "original_toc_claimed_start": 241,
+      "source_action_rows_indexed": 8,
+      "indexed_printed_page_locations": [
+        241,
+        242,
+        243,
+        244
+      ],
+      "no_indexed_source_observation_on_pages": [],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXII",
+      "chapter_title": "Saint Febronia — Palagonia",
+      "body_heading_printed_start": 245,
+      "end_printed_page": 249,
+      "original_toc_claimed_start": 245,
+      "source_action_rows_indexed": 7,
+      "indexed_printed_page_locations": [
+        245,
+        246,
+        247,
+        248,
+        249
+      ],
+      "no_indexed_source_observation_on_pages": [],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXIII",
+      "chapter_title": "Saint Giles — Linguaglossa and Palazzolo Acreide",
+      "body_heading_printed_start": 250,
+      "end_printed_page": 256,
+      "original_toc_claimed_start": 250,
+      "source_action_rows_indexed": 3,
+      "indexed_printed_page_locations": [
+        250,
+        253
+      ],
+      "no_indexed_source_observation_on_pages": [
+        251,
+        252,
+        254,
+        255,
+        256
+      ],
+      "remaining_held_leads_in_chapter": 3,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXIV",
+      "chapter_title": "Saint Philip — Agira and Calatabiano",
+      "body_heading_printed_start": 257,
+      "end_printed_page": 262,
+      "original_toc_claimed_start": 257,
+      "source_action_rows_indexed": 2,
+      "indexed_printed_page_locations": [
+        259,
+        262
+      ],
+      "no_indexed_source_observation_on_pages": [
+        257,
+        258,
+        260,
+        261
+      ],
+      "remaining_held_leads_in_chapter": 3,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXV",
+      "chapter_title": "Saint Sylvester — Troina",
+      "body_heading_printed_start": 263,
+      "end_printed_page": 272,
+      "original_toc_claimed_start": 263,
+      "source_action_rows_indexed": 10,
+      "indexed_printed_page_locations": [
+        264,
+        265,
+        266,
+        267,
+        268,
+        269
+      ],
+      "no_indexed_source_observation_on_pages": [
+        263,
+        270,
+        271,
+        272
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXVI",
+      "chapter_title": "Saint Lucy — Syracuse, Carlentini and Realmonte",
+      "body_heading_printed_start": 273,
+      "end_printed_page": 282,
+      "original_toc_claimed_start": 273,
+      "source_action_rows_indexed": 12,
+      "indexed_printed_page_locations": [
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279
+      ],
+      "no_indexed_source_observation_on_pages": [
+        280,
+        281,
+        282
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXVII",
+      "chapter_title": "Saint Sebastian — Melilli",
+      "body_heading_printed_start": 283,
+      "end_printed_page": 292,
+      "original_toc_claimed_start": 283,
+      "source_action_rows_indexed": 9,
+      "indexed_printed_page_locations": [
+        286,
+        287,
+        288,
+        289,
+        290
+      ],
+      "no_indexed_source_observation_on_pages": [
+        283,
+        284,
+        285,
+        291,
+        292
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXVIII",
+      "chapter_title": "Saint Sebastian — Francofonte",
+      "body_heading_printed_start": 293,
+      "end_printed_page": 295,
+      "original_toc_claimed_start": 293,
+      "source_action_rows_indexed": 3,
+      "indexed_printed_page_locations": [
+        293,
+        294
+      ],
+      "no_indexed_source_observation_on_pages": [
+        295
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXIX",
+      "chapter_title": "Saint Conrad — Noto and Avola",
+      "body_heading_printed_start": 296,
+      "end_printed_page": 308,
+      "original_toc_claimed_start": 296,
+      "source_action_rows_indexed": 7,
+      "indexed_printed_page_locations": [
+        301,
+        302,
+        305,
+        307,
+        308
+      ],
+      "no_indexed_source_observation_on_pages": [
+        296,
+        297,
+        298,
+        299,
+        300,
+        303,
+        304,
+        306
+      ],
+      "remaining_held_leads_in_chapter": 5,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXX",
+      "chapter_title": "Saint George and Saint Peter — Modica",
+      "body_heading_printed_start": 309,
+      "end_printed_page": 319,
+      "original_toc_claimed_start": 309,
+      "source_action_rows_indexed": 6,
+      "indexed_printed_page_locations": [
+        309,
+        310,
+        312,
+        316,
+        318
+      ],
+      "no_indexed_source_observation_on_pages": [
+        311,
+        313,
+        314,
+        315,
+        317,
+        319
+      ],
+      "remaining_held_leads_in_chapter": 4,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXXI",
+      "chapter_title": "Saint George and Saint John Baptist — Ragusa",
+      "body_heading_printed_start": 320,
+      "end_printed_page": 332,
+      "original_toc_claimed_start": 320,
+      "source_action_rows_indexed": 40,
+      "indexed_printed_page_locations": [
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        332
+      ],
+      "no_indexed_source_observation_on_pages": [
+        320,
+        321,
+        322
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXXII",
+      "chapter_title": "Our Lady delle Milizie — Scicli",
+      "body_heading_printed_start": 333,
+      "end_printed_page": 341,
+      "original_toc_claimed_start": 333,
+      "source_action_rows_indexed": 33,
+      "indexed_printed_page_locations": [
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341
+      ],
+      "no_indexed_source_observation_on_pages": [],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXXIII",
+      "chapter_title": "Saint Blaise and Annunciation — Comiso",
+      "body_heading_printed_start": 342,
+      "end_printed_page": 348,
+      "original_toc_claimed_start": 342,
+      "source_action_rows_indexed": 15,
+      "indexed_printed_page_locations": [
+        343,
+        344,
+        345,
+        346,
+        347
+      ],
+      "no_indexed_source_observation_on_pages": [
+        342,
+        348
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXXIV",
+      "chapter_title": "Saint Paul — Palazzolo Acreide and Solarino",
+      "body_heading_printed_start": 349,
+      "end_printed_page": 361,
+      "original_toc_claimed_start": 349,
+      "source_action_rows_indexed": 14,
+      "indexed_printed_page_locations": [
+        355,
+        356,
+        357,
+        358,
+        359
+      ],
+      "no_indexed_source_observation_on_pages": [
+        349,
+        350,
+        351,
+        352,
+        353,
+        354,
+        360,
+        361
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXXV",
+      "chapter_title": "Ecce Homo — Canicattini Bagni",
+      "body_heading_printed_start": 362,
+      "end_printed_page": 366,
+      "original_toc_claimed_start": 362,
+      "source_action_rows_indexed": 4,
+      "indexed_printed_page_locations": [
+        362,
+        363,
+        364
+      ],
+      "no_indexed_source_observation_on_pages": [
+        365,
+        366
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXXVI",
+      "chapter_title": "Saint Calogero — Girgenti, Naro, Sciacca, Aragona, SS Salvatore di Fitalia",
+      "body_heading_printed_start": 367,
+      "end_printed_page": 385,
+      "original_toc_claimed_start": 367,
+      "source_action_rows_indexed": 13,
+      "indexed_printed_page_locations": [
+        375,
+        377,
+        380,
+        381,
+        382
+      ],
+      "no_indexed_source_observation_on_pages": [
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        376,
+        378,
+        379,
+        383,
+        384,
+        385
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXXVII",
+      "chapter_title": "Holy Crucifix — Santa Margherita di Belice",
+      "body_heading_printed_start": 386,
+      "end_printed_page": 391,
+      "original_toc_claimed_start": 386,
+      "source_action_rows_indexed": 4,
+      "indexed_printed_page_locations": [
+        389,
+        390
+      ],
+      "no_indexed_source_observation_on_pages": [
+        386,
+        387,
+        388,
+        391
+      ],
+      "remaining_held_leads_in_chapter": 1,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXXVIII",
+      "chapter_title": "Holy Cross — Casteltermini",
+      "body_heading_printed_start": 392,
+      "end_printed_page": 396,
+      "original_toc_claimed_start": 392,
+      "source_action_rows_indexed": 4,
+      "indexed_printed_page_locations": [
+        392,
+        393,
+        394
+      ],
+      "no_indexed_source_observation_on_pages": [
+        395,
+        396
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XXXIX",
+      "chapter_title": "Our Lady of the Rosary — Castrofilippo",
+      "body_heading_printed_start": 397,
+      "end_printed_page": 399,
+      "original_toc_claimed_start": 397,
+      "source_action_rows_indexed": 3,
+      "indexed_printed_page_locations": [
+        397,
+        399
+      ],
+      "no_indexed_source_observation_on_pages": [
+        398
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XL",
+      "chapter_title": "Our Lady dell'Aiuto — Campobello di Licata",
+      "body_heading_printed_start": 400,
+      "end_printed_page": 405,
+      "original_toc_claimed_start": 400,
+      "source_action_rows_indexed": 3,
+      "indexed_printed_page_locations": [
+        400,
+        401,
+        402
+      ],
+      "no_indexed_source_observation_on_pages": [
+        403,
+        404,
+        405
+      ],
+      "remaining_held_leads_in_chapter": 2,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XLI",
+      "chapter_title": "Our Lady delle Mortelle — Villafranca Sicula",
+      "body_heading_printed_start": 406,
+      "end_printed_page": 412,
+      "original_toc_claimed_start": 400,
+      "source_action_rows_indexed": 3,
+      "indexed_printed_page_locations": [
+        408,
+        410,
+        411
+      ],
+      "no_indexed_source_observation_on_pages": [
+        406,
+        407,
+        409,
+        412
+      ],
+      "remaining_held_leads_in_chapter": 5,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XLII",
+      "chapter_title": "Saint Angelo — Licata and Sant'Angelo Muxaro",
+      "body_heading_printed_start": 413,
+      "end_printed_page": 421,
+      "original_toc_claimed_start": 413,
+      "source_action_rows_indexed": 5,
+      "indexed_printed_page_locations": [
+        415,
+        416,
+        419,
+        421
+      ],
+      "no_indexed_source_observation_on_pages": [
+        413,
+        414,
+        417,
+        418,
+        420
+      ],
+      "remaining_held_leads_in_chapter": 3,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XLIII",
+      "chapter_title": "Our Lady del Monte — Racalmuto",
+      "body_heading_printed_start": 422,
+      "end_printed_page": 431,
+      "original_toc_claimed_start": 422,
+      "source_action_rows_indexed": 6,
+      "indexed_printed_page_locations": [
+        423,
+        424,
+        430,
+        431
+      ],
+      "no_indexed_source_observation_on_pages": [
+        422,
+        425,
+        426,
+        427,
+        428,
+        429
+      ],
+      "remaining_held_leads_in_chapter": 3,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XLIV",
+      "chapter_title": "Our Lady dell'Udienza — Sambuca-Zabut and Menfi",
+      "body_heading_printed_start": 432,
+      "end_printed_page": 437,
+      "original_toc_claimed_start": 432,
+      "source_action_rows_indexed": 3,
+      "indexed_printed_page_locations": [
+        435,
+        436
+      ],
+      "no_indexed_source_observation_on_pages": [
+        432,
+        433,
+        434,
+        437
+      ],
+      "remaining_held_leads_in_chapter": 2,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XLV",
+      "chapter_title": "Our Lady — Canicattì",
+      "body_heading_printed_start": 438,
+      "end_printed_page": 440,
+      "original_toc_claimed_start": 438,
+      "source_action_rows_indexed": 1,
+      "indexed_printed_page_locations": [
+        438
+      ],
+      "no_indexed_source_observation_on_pages": [
+        439,
+        440
+      ],
+      "remaining_held_leads_in_chapter": 2,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XLVI",
+      "chapter_title": "Saint Joseph — Ribera, Canicattini, Santa Croce, Militello and others",
+      "body_heading_printed_start": 441,
+      "end_printed_page": 462,
+      "original_toc_claimed_start": 441,
+      "source_action_rows_indexed": 53,
+      "indexed_printed_page_locations": [
+        441,
+        442,
+        443,
+        444,
+        445,
+        446,
+        447,
+        448,
+        449,
+        450,
+        451,
+        452,
+        454
+      ],
+      "no_indexed_source_observation_on_pages": [
+        453,
+        455,
+        456,
+        457,
+        458,
+        459,
+        460,
+        461,
+        462
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XLVII",
+      "chapter_title": "Annunciation — Trapani",
+      "body_heading_printed_start": 463,
+      "end_printed_page": 471,
+      "original_toc_claimed_start": 463,
+      "source_action_rows_indexed": 3,
+      "indexed_printed_page_locations": [
+        467,
+        470,
+        471
+      ],
+      "no_indexed_source_observation_on_pages": [
+        463,
+        464,
+        465,
+        466,
+        468,
+        469
+      ],
+      "remaining_held_leads_in_chapter": 5,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XLVIII",
+      "chapter_title": "Our Lady of Custonaci — Monte San Giuliano",
+      "body_heading_printed_start": 472,
+      "end_printed_page": 477,
+      "original_toc_claimed_start": 472,
+      "source_action_rows_indexed": 3,
+      "indexed_printed_page_locations": [
+        474,
+        476
+      ],
+      "no_indexed_source_observation_on_pages": [
+        472,
+        473,
+        475,
+        477
+      ],
+      "remaining_held_leads_in_chapter": 2,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "XLIX",
+      "chapter_title": "Our Lady of Miracles — Alcamo and Collesano",
+      "body_heading_printed_start": 478,
+      "end_printed_page": 487,
+      "original_toc_claimed_start": 478,
+      "source_action_rows_indexed": 7,
+      "indexed_printed_page_locations": [
+        482,
+        483,
+        484,
+        485
+      ],
+      "no_indexed_source_observation_on_pages": [
+        478,
+        479,
+        480,
+        481,
+        486,
+        487
+      ],
+      "remaining_held_leads_in_chapter": 2,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "L",
+      "chapter_title": "Saint John the Baptist — Marsala",
+      "body_heading_printed_start": 488,
+      "end_printed_page": 494,
+      "original_toc_claimed_start": 488,
+      "source_action_rows_indexed": 4,
+      "indexed_printed_page_locations": [
+        489,
+        490,
+        491,
+        492
+      ],
+      "no_indexed_source_observation_on_pages": [
+        488,
+        493,
+        494
+      ],
+      "remaining_held_leads_in_chapter": 2,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "LI",
+      "chapter_title": "Saint Vitus — Mazara",
+      "body_heading_printed_start": 495,
+      "end_printed_page": 500,
+      "original_toc_claimed_start": 495,
+      "source_action_rows_indexed": 20,
+      "indexed_printed_page_locations": [
+        496,
+        497,
+        498,
+        499,
+        500
+      ],
+      "no_indexed_source_observation_on_pages": [
+        495
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "LII",
+      "chapter_title": "Holy Crucifix — Calatafimi",
+      "body_heading_printed_start": 501,
+      "end_printed_page": 510,
+      "original_toc_claimed_start": 501,
+      "source_action_rows_indexed": 17,
+      "indexed_printed_page_locations": [
+        501,
+        502,
+        503,
+        504
+      ],
+      "no_indexed_source_observation_on_pages": [
+        505,
+        506,
+        507,
+        508,
+        509,
+        510
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "LIII",
+      "chapter_title": "Saint Michael Archangel — Caltanissetta",
+      "body_heading_printed_start": 511,
+      "end_printed_page": 517,
+      "original_toc_claimed_start": 511,
+      "source_action_rows_indexed": 10,
+      "indexed_printed_page_locations": [
+        515,
+        516,
+        517
+      ],
+      "no_indexed_source_observation_on_pages": [
+        511,
+        512,
+        513,
+        514
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "LIV",
+      "chapter_title": "Our Lady of Graces — Santa Caterina, Mirabella Imbaccari, Feria",
+      "body_heading_printed_start": 518,
+      "end_printed_page": 526,
+      "original_toc_claimed_start": 518,
+      "source_action_rows_indexed": 4,
+      "indexed_printed_page_locations": [
+        519,
+        520,
+        525
+      ],
+      "no_indexed_source_observation_on_pages": [
+        518,
+        521,
+        522,
+        523,
+        524,
+        526
+      ],
+      "remaining_held_leads_in_chapter": 4,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "LV",
+      "chapter_title": "Our Lady del Bosco and Our Lady del Mazzaro — Niscemi and Mazzarino",
+      "body_heading_printed_start": 527,
+      "end_printed_page": 533,
+      "original_toc_claimed_start": 527,
+      "source_action_rows_indexed": 5,
+      "indexed_printed_page_locations": [
+        528,
+        529,
+        530,
+        531
+      ],
+      "no_indexed_source_observation_on_pages": [
+        527,
+        532,
+        533
+      ],
+      "remaining_held_leads_in_chapter": 1,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "LVI",
+      "chapter_title": "Our Lady dell'Alemanna — Terranova Sicula",
+      "body_heading_printed_start": 534,
+      "end_printed_page": 536,
+      "original_toc_claimed_start": 534,
+      "source_action_rows_indexed": 3,
+      "indexed_printed_page_locations": [
+        534,
+        535,
+        536
+      ],
+      "no_indexed_source_observation_on_pages": [],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "LVII",
+      "chapter_title": "Saint Peter — Calascibetta and Petralia Soprana",
+      "body_heading_printed_start": 537,
+      "end_printed_page": 540,
+      "original_toc_claimed_start": 537,
+      "source_action_rows_indexed": 4,
+      "indexed_printed_page_locations": [
+        537,
+        539,
+        540
+      ],
+      "no_indexed_source_observation_on_pages": [
+        538
+      ],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "LVIII",
+      "chapter_title": "Saint Roch — Butera and Realmonte",
+      "body_heading_printed_start": 541,
+      "end_printed_page": 549,
+      "original_toc_claimed_start": 541,
+      "source_action_rows_indexed": 7,
+      "indexed_printed_page_locations": [
+        542,
+        543,
+        544,
+        548,
+        549
+      ],
+      "no_indexed_source_observation_on_pages": [
+        541,
+        545,
+        546,
+        547
+      ],
+      "remaining_held_leads_in_chapter": 1,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "LIX",
+      "chapter_title": "Saint Lawrence and Saint Philip — Aidone",
+      "body_heading_printed_start": 550,
+      "end_printed_page": 556,
+      "original_toc_claimed_start": 550,
+      "source_action_rows_indexed": 5,
+      "indexed_printed_page_locations": [
+        551,
+        553,
+        554,
+        556
+      ],
+      "no_indexed_source_observation_on_pages": [
+        550,
+        552,
+        555
+      ],
+      "remaining_held_leads_in_chapter": 1,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    },
+    {
+      "chapter_id": "LX",
+      "chapter_title": "Assumption — Piazza Armerina",
+      "body_heading_printed_start": 557,
+      "end_printed_page": 560,
+      "original_toc_claimed_start": 557,
+      "source_action_rows_indexed": 12,
+      "indexed_printed_page_locations": [
+        557,
+        558,
+        559,
+        560
+      ],
+      "no_indexed_source_observation_on_pages": [],
+      "remaining_held_leads_in_chapter": 0,
+      "entire_chapter_exhaustively_source_mined": false,
+      "facsimile_line_by_line_certified": false
+    }
+  ],
+  "source_page_completion_worklist": [
+    {
+      "printed_page": 1,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 2,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 4,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 5,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 6,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 7,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 8,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 9,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 10,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 11,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 15,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 18,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 21,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 23,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 24,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 25,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 26,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 27,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 29,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 30,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 35,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 37,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 38,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 39,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 40,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 41,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 42,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 43,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 44,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 45,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 46,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 47,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 48,
+      "chapter": "I",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 49,
+      "chapter": "II",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 50,
+      "chapter": "II",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 51,
+      "chapter": "II",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 56,
+      "chapter": "II",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 58,
+      "chapter": "II",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 60,
+      "chapter": "II",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 62,
+      "chapter": "II",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 64,
+      "chapter": "II",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 66,
+      "chapter": "II",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 67,
+      "chapter": "II",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 68,
+      "chapter": "II",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 69,
+      "chapter": "II",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 70,
+      "chapter": "II",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 81,
+      "chapter": "III",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 85,
+      "chapter": "III",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 87,
+      "chapter": "IV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 92,
+      "chapter": "IV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 93,
+      "chapter": "IV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 94,
+      "chapter": "V",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 96,
+      "chapter": "V",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 97,
+      "chapter": "V",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 98,
+      "chapter": "V",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 101,
+      "chapter": "V",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 109,
+      "chapter": "VI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 112,
+      "chapter": "VI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 117,
+      "chapter": "VI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 123,
+      "chapter": "VIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 131,
+      "chapter": "X",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 132,
+      "chapter": "X",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 134,
+      "chapter": "X",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 139,
+      "chapter": "X",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 143,
+      "chapter": "XI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 144,
+      "chapter": "XI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 145,
+      "chapter": "XI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 146,
+      "chapter": "XI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 151,
+      "chapter": "XII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 152,
+      "chapter": "XII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 153,
+      "chapter": "XII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 154,
+      "chapter": "XII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 168,
+      "chapter": "XII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 169,
+      "chapter": "XII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 170,
+      "chapter": "XII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 171,
+      "chapter": "XII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 172,
+      "chapter": "XII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 173,
+      "chapter": "XII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 174,
+      "chapter": "XII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 175,
+      "chapter": "XII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 179,
+      "chapter": "XIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 182,
+      "chapter": "XIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 184,
+      "chapter": "XIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 192,
+      "chapter": "XV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 196,
+      "chapter": "XVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 212,
+      "chapter": "XVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 213,
+      "chapter": "XVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 214,
+      "chapter": "XVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 215,
+      "chapter": "XIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 216,
+      "chapter": "XIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 217,
+      "chapter": "XIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 218,
+      "chapter": "XIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 221,
+      "chapter": "XIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 223,
+      "chapter": "XIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 224,
+      "chapter": "XIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 226,
+      "chapter": "XIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 231,
+      "chapter": "XIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 232,
+      "chapter": "XIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 233,
+      "chapter": "XIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 234,
+      "chapter": "XX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 239,
+      "chapter": "XX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 251,
+      "chapter": "XXIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 252,
+      "chapter": "XXIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 254,
+      "chapter": "XXIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 255,
+      "chapter": "XXIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 256,
+      "chapter": "XXIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 257,
+      "chapter": "XXIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 258,
+      "chapter": "XXIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 260,
+      "chapter": "XXIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 261,
+      "chapter": "XXIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 263,
+      "chapter": "XXV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 270,
+      "chapter": "XXV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 271,
+      "chapter": "XXV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 272,
+      "chapter": "XXV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 280,
+      "chapter": "XXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 281,
+      "chapter": "XXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 282,
+      "chapter": "XXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 283,
+      "chapter": "XXVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 284,
+      "chapter": "XXVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 285,
+      "chapter": "XXVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 291,
+      "chapter": "XXVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 292,
+      "chapter": "XXVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 295,
+      "chapter": "XXVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 296,
+      "chapter": "XXIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 297,
+      "chapter": "XXIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 298,
+      "chapter": "XXIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 299,
+      "chapter": "XXIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 300,
+      "chapter": "XXIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 303,
+      "chapter": "XXIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 304,
+      "chapter": "XXIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 306,
+      "chapter": "XXIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 311,
+      "chapter": "XXX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 313,
+      "chapter": "XXX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 314,
+      "chapter": "XXX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 315,
+      "chapter": "XXX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 317,
+      "chapter": "XXX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 319,
+      "chapter": "XXX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 320,
+      "chapter": "XXXI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 321,
+      "chapter": "XXXI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 322,
+      "chapter": "XXXI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 342,
+      "chapter": "XXXIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 348,
+      "chapter": "XXXIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 349,
+      "chapter": "XXXIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 350,
+      "chapter": "XXXIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 351,
+      "chapter": "XXXIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 352,
+      "chapter": "XXXIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 353,
+      "chapter": "XXXIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 354,
+      "chapter": "XXXIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 360,
+      "chapter": "XXXIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 361,
+      "chapter": "XXXIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 365,
+      "chapter": "XXXV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 366,
+      "chapter": "XXXV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 367,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 368,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 369,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 370,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 371,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 372,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 373,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 374,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 376,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 378,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 379,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 383,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 384,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 385,
+      "chapter": "XXXVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 386,
+      "chapter": "XXXVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 387,
+      "chapter": "XXXVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 388,
+      "chapter": "XXXVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 391,
+      "chapter": "XXXVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 395,
+      "chapter": "XXXVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 396,
+      "chapter": "XXXVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 398,
+      "chapter": "XXXIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 403,
+      "chapter": "XL",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 404,
+      "chapter": "XL",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 405,
+      "chapter": "XL",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 406,
+      "chapter": "XLI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 407,
+      "chapter": "XLI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 409,
+      "chapter": "XLI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 412,
+      "chapter": "XLI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 413,
+      "chapter": "XLII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 414,
+      "chapter": "XLII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 417,
+      "chapter": "XLII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 418,
+      "chapter": "XLII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 420,
+      "chapter": "XLII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 422,
+      "chapter": "XLIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 425,
+      "chapter": "XLIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 426,
+      "chapter": "XLIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 427,
+      "chapter": "XLIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 428,
+      "chapter": "XLIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 429,
+      "chapter": "XLIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 432,
+      "chapter": "XLIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 433,
+      "chapter": "XLIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 434,
+      "chapter": "XLIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 437,
+      "chapter": "XLIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 439,
+      "chapter": "XLV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 440,
+      "chapter": "XLV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 453,
+      "chapter": "XLVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 455,
+      "chapter": "XLVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 456,
+      "chapter": "XLVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 457,
+      "chapter": "XLVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 458,
+      "chapter": "XLVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 459,
+      "chapter": "XLVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 460,
+      "chapter": "XLVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 461,
+      "chapter": "XLVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 462,
+      "chapter": "XLVI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 463,
+      "chapter": "XLVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 464,
+      "chapter": "XLVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 465,
+      "chapter": "XLVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 466,
+      "chapter": "XLVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 468,
+      "chapter": "XLVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 469,
+      "chapter": "XLVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 472,
+      "chapter": "XLVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 473,
+      "chapter": "XLVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 475,
+      "chapter": "XLVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 477,
+      "chapter": "XLVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 478,
+      "chapter": "XLIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 479,
+      "chapter": "XLIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 480,
+      "chapter": "XLIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 481,
+      "chapter": "XLIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 486,
+      "chapter": "XLIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 487,
+      "chapter": "XLIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 488,
+      "chapter": "L",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 493,
+      "chapter": "L",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 494,
+      "chapter": "L",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 495,
+      "chapter": "LI",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 505,
+      "chapter": "LII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 506,
+      "chapter": "LII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 507,
+      "chapter": "LII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 508,
+      "chapter": "LII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 509,
+      "chapter": "LII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 510,
+      "chapter": "LII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 511,
+      "chapter": "LIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 512,
+      "chapter": "LIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 513,
+      "chapter": "LIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 514,
+      "chapter": "LIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 518,
+      "chapter": "LIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 521,
+      "chapter": "LIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 522,
+      "chapter": "LIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 523,
+      "chapter": "LIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 524,
+      "chapter": "LIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 526,
+      "chapter": "LIV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 527,
+      "chapter": "LV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 532,
+      "chapter": "LV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 533,
+      "chapter": "LV",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 538,
+      "chapter": "LVII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 541,
+      "chapter": "LVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 545,
+      "chapter": "LVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 546,
+      "chapter": "LVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 547,
+      "chapter": "LVIII",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 550,
+      "chapter": "LIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 552,
+      "chapter": "LIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    },
+    {
+      "printed_page": 555,
+      "chapter": "LIX",
+      "status": "REQUIRES_COMPREHENSIVE_PAGE_READ_NOT_YET_CERTIFIED"
+    }
+  ]
+}
