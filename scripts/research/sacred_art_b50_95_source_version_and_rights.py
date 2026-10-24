@@ -52,6 +52,7 @@ def number(v):
     except (TypeError,ValueError):return 0
 def cfilename(url):
     if not url:return None
+    if url.startswith("File:"):return unquote(url).replace("_"," ")
     u=urlparse(url)
     if u.hostname not in ("commons.wikimedia.org","upload.wikimedia.org"):return None
     s=unquote(u.path)
@@ -65,15 +66,24 @@ def cfilename(url):
 def meta_records():
     result=defaultdict(list)
     for entry in read("sacred-art-acquisition-245-source-rollup.csv"):
-        h=(entry.get("original_sha256") or "").lower()
-        if not SHA.fullmatch(h):continue
-        result[(entry["record_id"],h)].append(dict(
-            origin="B19-B25-acquisition",sha256=h,license=entry.get("metadata_license") or "",
-            source_page=entry.get("source_evidence_link") or entry.get("source_url") or "",
-            bytes=number(entry.get("original_bytes")),width=number(entry.get("original_width")),
-            height=number(entry.get("original_height")),
-            review="LEGACY_SOURCE_IMAGE_AND_RIGHTS_NOT_FINAL",
-            external_source=entry.get("source_url") or "",source_type=entry.get("source_type") or ""))
+        # Some CMA source originals exceeded acquisition size cap. Only the
+        # institutionally issued PRINT rendition was archived and SHA-verified.
+        # It is valid source-photo evidence, never pretend original-master bytes.
+        for kind,hashfield,sizefield,wfield,hfield,urlfield in (
+            ("MUSEUM_ORIGINAL","original_sha256","original_bytes","original_width","original_height","original_file_url"),
+            ("MUSEUM_PRINT_DERIVATIVE","museum_print_sha256","museum_print_bytes","museum_print_width","museum_print_height","museum_print_url")
+        ):
+            h=(entry.get(hashfield) or "").lower()
+            if not SHA.fullmatch(h):continue
+            result[(entry["record_id"],h)].append(dict(
+                origin="B19-B25-acquisition:"+kind,sha256=h,
+                license=entry.get("metadata_license") or "",
+                source_page=entry.get("source_evidence_link") or entry.get("source_url") or "",
+                bytes=number(entry.get(sizefield)),width=number(entry.get(wfield)),
+                height=number(entry.get(hfield)),
+                review="LEGACY_SOURCE_PHOTO_AND_RIGHTS_NOT_FINAL",
+                external_source=entry.get(urlfield) or "",
+                source_type=(entry.get("source_type") or "")+":"+kind))
     for name,hashcol,licensecol,urlcol,sizecol,wcol,hcol in METADATA:
         for row in read(name):
             id_=row.get("artwork_id") or ""
