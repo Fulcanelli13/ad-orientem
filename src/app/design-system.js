@@ -392,6 +392,9 @@ const CSS=`
  width:min(var(--ao-content-max,760px),100%);
  padding-inline:var(--ao-frame-gutter,16px)!important;
 }
+/* The nine-section table of contents belongs in an opened Formation reader,
+ * not above the discovery homepage. Preserve it for each subject/lesson. */
+#ao-learn-modular-root[data-ao-learn-family=""]>.aoFNav{display:none!important}
 #ao-learn-modular-root .aoLearnModHero h1{
  font:400 clamp(28px,5vw,38px)/1.16 var(--ao-font-display,"EB Garamond",Georgia,serif)!important;
  letter-spacing:0!important;
