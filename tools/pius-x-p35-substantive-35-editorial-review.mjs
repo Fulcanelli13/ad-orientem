@@ -100,7 +100,9 @@ requireOnce('One hundred openings — Italian sources and bilingual editorial dr
  'Thirty-five priority openings — Italian evidence and editorial corrections');
 requireOnce('No presumed quotations, theological approval or generated papal replies.',
  '35 source-anchored editorial analyses; none is a certified theological or translation verdict.');
+requireOnce('data.schema!=="AO_SPX_P34_ITALIAN_EN_FR_CLAIM_REVIEW_PACKET_V1"','data.schema!=="AO_SPX_P35_35_PROVISIONAL_SUBSTANTIVE_EDITORIAL_FINDINGS_V1"');
 requireOnce('data.counts.openingCases!==100','data.counts.cases!==35');
+requireOnce('data.approvals.humanApprovals!==0','data.release.humanSignedOff!==0');
 requireOnce('matches.length+" of 100 cases shown"','matches.length+" of 35 cases shown"');
 requireOnce(' for(const flag of r.reviewFlags)element("span",flag.replaceAll("_"," "),tags);',
  ' for(const flag of r.reviewFlags)element("span",flag.replaceAll("_"," "),tags);'+
