@@ -24,7 +24,8 @@ jobs:
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
-          python -m py_compile scripts/research/sacred_art_b53_all383_placement_review.py scripts/research/sacred_art_b53_publish_private_all383_review.py scripts/research/sacred_art_b52_placement_proposals.py
+          python -m py_compile scripts/research/sacred_art_b53_all383_placement_review.py scripts/research/sacred_art_b53_publish_private_all383_review.py scripts/research/sacred_art_b52_placement_proposals.py scripts/research/sacred_art_b53_placements.py
+          python tests/sacred-art-b53-placement-scenarios.py
           test -f tests/sacred-art-b53-all383-placement-review-integrity.mjs
           test -f previews/sacred-art-b53-review-all383-template.html
           test ! -e previews/sacred-art-b53-review-all383-placement-offline.html
