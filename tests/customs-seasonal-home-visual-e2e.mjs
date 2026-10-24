@@ -68,11 +68,13 @@ try{
       const pageWidth=document.documentElement.scrollWidth;
       return {width:b.width,left:b.left,right:b.right,viewport:vw,pageWidth,display:cs.display,
         title:node.querySelector("h2")?.textContent?.trim()||"",summary:node.querySelector(":scope > p")?.textContent?.trim()||"",
-        sourceCount:node.querySelectorAll(".aoTodayV2CustomReading a[href]").length};
+        sourceCount:node.querySelectorAll(".aoTodayV2CustomReading a[href]").length,
+        summaryClamp:getComputedStyle(node.querySelector(".aoTodayV2CustomSummary")).webkitLineClamp};
     });
     assert.ok(before.title.length>7,"Custom title missing");
     assert.ok(before.summary.length>30,"Source-derived description missing");
     assert.ok(before.sourceCount>=1,"Sourced editorial reader has no citation links");
+    assert.equal(before.summaryClamp,"3","Closed Home teaser is too long and crowds the page");
     assert.ok(before.left>=-1&&before.right<=width+1,"Custom card clips horizontally: "+JSON.stringify(before));
     await spotlight.screenshot({path:resolve(shots,item.key+"-"+width+"-collapsed.png")});
     const details=spotlight.locator("details.aoTodayV2CustomDetails");
@@ -80,11 +82,25 @@ try{
     assert.equal(await details.evaluate(node=>node.open),true,"Source reader refused to expand");
     const more=await details.evaluate(node=>{
       const b=node.getBoundingClientRect();
+      const card=node.closest(".aoTodayV2CustomSpotlight");
+      const lum=rgb=>{
+        const vals=(getComputedStyle(rgb).color.match(/[\\d.]+/g)||[]).slice(0,3).map(Number);
+        const channels=vals.map(v=>{const n=v/255;return n<=.04045?n/12.92:((n+.055)/1.055)**2.4});
+        return .2126*channels[0]+.7152*channels[1]+.0722*channels[2];
+      };
+      const background=.2126*(8/255/12.92)+.7152*(12/255/12.92)+.0722*(18/255/12.92);
+      const contrast=el=>{const fg=lum(el);return (Math.max(fg,background)+.05)/(Math.min(fg,background)+.05)};
+      const sources=[...node.querySelectorAll("a[href]")];
+      const calendar=card.querySelector(".aoTodayV2CustomCalendarLink");
       return {height:b.height,width:b.width,left:b.left,right:b.right,sourceCount:node.querySelectorAll("a[href]").length,
-        history:node.textContent.includes("History"),practice:node.textContent.includes("Traditional practice"),meaning:node.textContent.includes("Meaning")};
+        history:node.textContent.includes("History"),practice:node.textContent.includes("Traditional practice"),meaning:node.textContent.includes("Meaning"),
+        sourceContrast:Math.min(...sources.map(contrast)),calendarContrast:contrast(calendar),
+        expandedSummaryClamp:getComputedStyle(card.querySelector(".aoTodayV2CustomSummary")).webkitLineClamp};
     });
     assert.ok(more.history&&more.practice&&more.meaning,"Detailed custom lacks authored teaching sections");
     assert.ok(more.sourceCount>=1,"Expanded custom omitted source citations");
+    assert.ok(more.sourceContrast>=4.5&&more.calendarContrast>=4.5,"Link contrast too low on "+item.date+": "+JSON.stringify(more));
+    assert.equal(more.expandedSummaryClamp,"none","Open folio must restore full source introduction");
     assert.ok(more.left>=-1&&more.right<=width+1,"Expanded article clips on device width");
     assert.equal(await spotlight.locator('button[data-home-calendar][data-home-calendar-view="day"][data-home-calendar-date="'+item.date+'"]').count(),1);
     await spotlight.screenshot({path:resolve(shots,item.key+"-"+width+"-expanded.png")});
