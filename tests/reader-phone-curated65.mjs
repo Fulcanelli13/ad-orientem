@@ -757,7 +757,14 @@ try{
               floor,scrollerTop:box.top,scrollerBottom:box.bottom,
               lastTop:lastBox?.top??Infinity,lastBottom:lastBox?.bottom??Infinity,
               lastText:last?.textContent.trim()??"",
-              horizontalOverflow:el.scrollWidth>el.clientWidth+1};
+              horizontalOverflow:el.scrollWidth>el.clientWidth+1,
+              scrollSize:[el.scrollWidth,el.clientWidth],
+              overflowNodes:[...el.querySelectorAll("*")].filter(node=>
+                node.scrollWidth>node.clientWidth+2).slice(0,9).map(node=>({
+                  className:String(node.className??"").slice(0,100),
+                  width:node.clientWidth,scroll:node.scrollWidth,
+                  text:node.textContent.trim().slice(0,95)
+                }))};
           });
           const verifyBottom=(seen,scale)=>{
             assert.ok(seen.scrollTop>=0 && seen.scrollTop<=seen.max+2,
@@ -790,9 +797,11 @@ try{
           });
           await page.waitForTimeout(120);
           const doubled=await bottomEvidence();
-          verifyBottom(doubled,"200% prayer text");
           await page.screenshot({path:resolve(out,"consecration-"+name+"-320-text200-bottom.png"),
             animations:"disabled"});
+          if(doubled.horizontalOverflow)console.log("CONSECRATION_320_OVERFLOW_DIAGNOSTICS="+
+            JSON.stringify({name,normal,doubled}));
+          verifyBottom(doubled,"200% prayer text");
           console.log("PASS "+name+" Consecration 320px touch and 200% text reachability",{
             touchTravel,normalBottomGap:normal.floor-normal.lastBottom,
             enlargedBottomGap:doubled.floor-doubled.lastBottom
