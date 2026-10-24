@@ -1,0 +1,47 @@
+name: B50 all 95 frozen-approved exact photo SHA, dimensions and Commons licence checks
+on:
+  push:
+    branches: [research/sacred-art-b50-95-selected-photo-version-evidence-20261024]
+    paths: [.github/workflows/ao-art-b50-95-source-version-rights.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b50-95-exact-art-source-rights-once
+  cancel-in-progress: false
+jobs:
+  check95-source-photo-reuse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 36
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b50-95-selected-photo-version-evidence-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check B49 95 target identities and no changed artwork original approvals
+        run: |
+          python -m py_compile scripts/research/sacred_art_b50_95_source_version_and_rights.py
+          node tests/sacred-art-b49-approved-95-plus-12-integrity.mjs
+          test -f tests/sacred-art-b50-95-image-version-rights-integrity.mjs
+      - name: Read entire 95 exact frozen-ID SHA source evidence, cautiously query current Commons metadata
+        run: |
+          python scripts/research/sacred_art_b50_95_source_version_and_rights.py
+      - name: Preserve independent source and publication rights decision gates
+        run: |
+          node tests/sacred-art-b50-95-image-version-rights-integrity.mjs
+      - name: Commit only source-linked 95 decisions and archived Commons metadata response, no artwork binaries
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b50-95-exact-photo-version-evidence.csv data/research/sacred-art-b50-95-source-specific-commons-license-checks.json data/research/sacred-art-b50-95-photo-rights-resolution-summary.json
+          git commit -m 'research: B50 frozen 95 exact source SHA/photo-version and Commons licensing checks with zero publication promotion'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b50-95-selected-photo-version-evidence-20261024
+            git rebase origin/research/sacred-art-b50-95-selected-photo-version-evidence-20261024
+            git push origin HEAD:research/sacred-art-b50-95-selected-photo-version-evidence-20261024 && exit 0
+            sleep 3
+          done
+          exit 1
