@@ -99,3 +99,41 @@ assert.equal(cat.summary.identity_working_rows.provisional_after_53_no_owner_act
 assert.equal(cat.summary.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(cat.summary.no_new_app_publications,true);
 console.log('PASS customs consolidation cohort01: 150/361 ownerless research groups triaged, 56 master statuses audited (35 existing published metadata), 0 merges or Calendar releases.');
+
+// First action-level dossiers: preserve distinctions and fail-closed Calendar gating.
+const actionDossiers=load('customs-consolidation-cohort01-first-action-evidence-decisions.v1.json');
+const rankedQueue=load('customs-consolidation-cohort01-calendar-first-30-source-review-queue.v1.json');
+const publishedSeed=JSON.parse(readFileSync('data/customs/customs-atlas-seed.v1.json','utf8'));
+assert.equal(actionDossiers.schema,'AO_CUSTOMS_COHORT01_ACTION_EVIDENCE_DECISIONS_V1');
+assert.equal(actionDossiers.summary.records_action_reviewed,2);
+assert.equal(actionDossiers.records.length,2);
+assert.equal(publishedSeed.customs.length,38);
+assert.equal(publishedSeed.customs.filter(r=>r.publication_state==='PUBLISHED').length,35);
+assert.equal(actionDossiers.summary.new_canonical_ids,0);
+assert.equal(actionDossiers.summary.new_publications,0);
+assert.equal(actionDossiers.summary.existing_main_merges,0);
+assert.equal(actionDossiers.page_locator_quality_hold.discrepancies.length,3);
+for(const hold of actionDossiers.page_locator_quality_hold.discrepancies){
+ assert.ok(rankedQueue.records.some(r=>r.provisional_group_id===hold.provisional_group_id));
+ assert.notEqual(hold.queue_claimed_printed_page,hold.transcription_printed_page_indication);
+ assert.match(hold.inspection_status,/FACSIMILE_PENDING/);
+}
+for(const rec of actionDossiers.records){
+ const inQueue=rankedQueue.records.find(r=>r.provisional_group_id===rec.provisional_group_id);
+ assert.ok(inQueue,'Dossier may not introduce a new unsourced group');
+ assert.deepEqual(rec.source_observation_ids,inQueue.source_observation_ids);
+ assert.equal(rec.publication_state,'RESEARCH_ONLY');
+ assert.equal(rec.original_page_facsimile_checked,false);
+ assert.equal(rec.canonical_id_approved,false);
+ assert.equal(rec.copy_approved,false);
+ assert.equal(rec.calendar_mapping_approved,false);
+ assert.equal(rec.calendar_target.existing_calendar_only,true);
+ assert.ok(rec.sources.length>=2);
+ assert.ok(rec.sources.some(s=>s.type==='WEISER_1958_TEXT_TRANSCRIPTION'));
+ assert.ok(rec.sources.every(s=>s.url.startsWith('https://')));
+ assert.ok(rec.draft_en.length>80 && rec.draft_fr.length>80);
+ for(const id of rec.main_identity_comparison.examined_main_ids){
+  assert.ok(publishedSeed.customs.some(m=>m.custom_id===id),'Main identity reference missing: '+id);
+ }
+}
+console.log('PASS customs cohort01 action evidence: 2 distinct-action candidates gated, 3 preliminary source-page mismatches held, 0 releases.');
