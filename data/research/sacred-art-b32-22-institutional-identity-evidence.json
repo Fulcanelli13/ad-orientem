@@ -1,0 +1,261 @@
+{
+  "schema": "AO_SACRED_ART_B32_22_P0_INSTITUTIONAL_IDENTITY_REVIEW_V1",
+  "methodology": "Manually reconciled cited institutional inventory claims and saved canonical catalogue against exact previously recorded Commons/institutional candidate source-page titles. Distinguish artwork object identity from specific reproduction photograph; no automatic source promotion or legal clearance.",
+  "source_research_freeze": "B31 64-P0 physical matrix and B30 51 remaining source queue",
+  "artworks_reviewed": 22,
+  "status_counts": {
+    "OBJECT_MISMATCH_QUARANTINE": 3,
+    "OBJECT_CORROBORATED_PHOTO_HOLD": 13,
+    "UNRESOLVED_IDENTITY_HOLD": 3,
+    "SERIES_CORROBORATED_PHOTO_HOLD": 2,
+    "INSTITUTIONAL_REUSE_RESTRICTED": 1
+  },
+  "new_editorial_approvals": 0,
+  "new_publication_approvals": 0,
+  "research_only": true,
+  "rights_claims_not_grants": true,
+  "records": [
+    {
+      "artwork_id": "ART-usepe-de-ibera-aint-eter-postolate",
+      "disposition": "OBJECT_MISMATCH_QUARANTINE",
+      "institution": "Art Institute of Chicago",
+      "institutional_object_id": "1993.60",
+      "institutional_source_url": "https://www.artic.edu/files/3135a330-4071-4e25-807b-56f6cb682973/AIC_MuseumStudies_30-1_UPDF.pdf",
+      "evidence_reason": "AIC 1993.60 is Saint Peter Penitent, not the specified Saint Peter Apostolate work. Shared subject/artist is insufficient.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-aint-atthias-postolate",
+      "disposition": "OBJECT_CORROBORATED_PHOTO_HOLD",
+      "institution": "Museo Nacional del Prado",
+      "institutional_object_id": "Saint Mathias; Rubens Apostolado",
+      "institutional_source_url": "https://www.museodelprado.es/en/the-collection/art-work/saint-mathias/7266e04d-6251-4769-a1c1-7d2711eceb3b",
+      "evidence_reason": "Prado identifies Rubens Saint Mathias within its apostolate; Commons file-to-object photo itself still requires source-specific corroboration.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-usepe-de-ibera-aint-aul-postolate",
+      "disposition": "UNRESOLVED_IDENTITY_HOLD",
+      "institution": "",
+      "institutional_object_id": "",
+      "institutional_source_url": "",
+      "evidence_reason": "Commons title gives Saint Paul by Ribera but lacks an authoritative catalogue accession linking this exact photo to the approved apostolate.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+      "disposition": "OBJECT_CORROBORATED_PHOTO_HOLD",
+      "institution": "National Gallery, London",
+      "institutional_object_id": "NG50",
+      "institutional_source_url": "https://www.nationalgallery.org.uk/paintings/anthony-van-dyck-st-ambrose-barring-theodosius-from-milan-cathedral",
+      "evidence_reason": "National Gallery lists Van Dyck St Ambrose barring Theodosius NG50; exact Commons 'Anthonis van Dyck 005' photo still not independently compared.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "G25-003",
+      "disposition": "OBJECT_MISMATCH_QUARANTINE",
+      "institution": "Museo Nacional del Prado",
+      "institutional_object_id": "P001314",
+      "institutional_source_url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-agustin/cf95015c-5744-4471-a529-84a3981719d6",
+      "evidence_reason": "Selected record is Anonymous, possible Lanfranco copy, Saint Augustine. Candidate is Lanfranco Coronation of the Virgin with St Augustine and St William. Different composition.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-laudio-oello-aint-ominic-of-uzm-n",
+      "disposition": "OBJECT_CORROBORATED_PHOTO_HOLD",
+      "institution": "Museo Nacional del Prado",
+      "institutional_object_id": "P000662",
+      "institutional_source_url": "https://www.museodelprado.es/en/the-collection/art-work/saint-dominic-of-guzman/80a673a4-8833-4334-a878-0046662c25d9",
+      "evidence_reason": "Prado confirms Claudio Coello's Santo Domingo de Guzmán P000662; Commons image accession/crop remains unverified.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+      "disposition": "UNRESOLVED_IDENTITY_HOLD",
+      "institution": "Kunsthistorisches Museum Wien",
+      "institutional_object_id": "GG 517",
+      "institutional_source_url": "https://www.khm.at/en/artworks/interior-of-the-jesuit-church-in-antwerp-794",
+      "evidence_reason": "Museum confirms Rubens's Miracles of St Ignatius, but proposed 'Detail - Glory of St Ignatius' is explicitly a detail/crop. Cannot certify original full-composition reproduction.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+      "disposition": "SERIES_CORROBORATED_PHOTO_HOLD",
+      "institution": "Rijksmuseum",
+      "institutional_object_id": "Antwerp Rosary series: David Teniers I, Mount of Olives",
+      "institutional_source_url": "https://www.rijksmuseum.nl/en/collection/object/The-Interior-of-the-Dominican-Church-Antwerp-Looking-East-with-the-Procession-of-the-Holy-Sacrament--726b246f95fceeb2c845f889ddb4b733",
+      "evidence_reason": "Rijksmuseum documents David Teniers I's Christ on Mount of Olives in Antwerp rosary cycle; Commons file must be explicitly bound to that church painting.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-nthony-van-yck-he-ance-hrust",
+      "disposition": "UNRESOLVED_IDENTITY_HOLD",
+      "institution": "",
+      "institutional_object_id": "",
+      "institutional_source_url": "",
+      "evidence_reason": "Van Dyck Christ between two criminals could be related to the Lance Thrust, but title alone cannot resolve the exact painting and variant.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+      "disposition": "SERIES_CORROBORATED_PHOTO_HOLD",
+      "institution": "Rijksmuseum",
+      "institutional_object_id": "Antwerp Rosary series: Artus Wolffort, Ascension",
+      "institutional_source_url": "https://www.rijksmuseum.nl/en/collection/object/The-Interior-of-the-Dominican-Church-Antwerp-Looking-East-with-the-Procession-of-the-Holy-Sacrament--726b246f95fceeb2c845f889ddb4b733",
+      "evidence_reason": "Rijksmuseum independently identifies Wolffort's Ascension in the rosary cycle, but the exact Commons photo-to-church-object link remains to be checked.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-05-imon-of-yrene-elps",
+      "disposition": "OBJECT_CORROBORATED_PHOTO_HOLD",
+      "institution": "Italian national cultural heritage catalogue",
+      "institutional_object_id": "0500220372A-5",
+      "institutional_source_url": "https://catalogo.cultura.gov.it/detail/HistoricOrArtisticProperty/0500220372A-5",
+      "evidence_reason": "State inventory identifies the Giandomenico Tiepolo San Polo Via Crucis station V, Simon of Cyrene. Commons filename names station V.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-06-eronica-ipes-is-ace",
+      "disposition": "OBJECT_CORROBORATED_PHOTO_HOLD",
+      "institution": "Italian national cultural heritage catalogue",
+      "institutional_object_id": "0500220372A-0; station VI",
+      "institutional_source_url": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0500220372A-0",
+      "evidence_reason": "National inventory confirms Veronica's station VI in the church cycle; exact selected photo remains unrecorded.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-08-esus-ddresses-the-omen-of-erusalem",
+      "disposition": "OBJECT_CORROBORATED_PHOTO_HOLD",
+      "institution": "Italian national cultural heritage catalogue",
+      "institutional_object_id": "0500220372A-0; station VIII",
+      "institutional_source_url": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0500220372A-0",
+      "evidence_reason": "National inventory confirms station VIII addresses Jerusalem's women, matching this station VIII candidate name; photography still under review.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+      "disposition": "OBJECT_MISMATCH_QUARANTINE",
+      "institution": "Italian national cultural heritage catalogue",
+      "institutional_object_id": "0500220372A-12 versus station VIII",
+      "institutional_source_url": "https://catalogo.cultura.gov.it/detail/HistoricOrArtisticProperty/0500220372A-12",
+      "evidence_reason": "The proposed file is VIA_CRUCIS_VIII (women of Jerusalem), not XII (Christ raised and dead on cross). Do not attach even as a provisional XII artwork.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-and-an-rueghel-the-lder-arden-of-den-with-the-all",
+      "disposition": "OBJECT_CORROBORATED_PHOTO_HOLD",
+      "institution": "Mauritshuis",
+      "institutional_object_id": "253",
+      "institutional_source_url": "https://www.mauritshuis.nl/en/our-collection/artworks/253-the-garden-of-eden-with-the-fall-of-man",
+      "evidence_reason": "Mauritshuis records the collaborative Brueghel/Rubens Garden of Eden with Fall, inv. 253; Commons photo requires source version/copyright checks.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-os-de-ibera-acob-s-ream",
+      "disposition": "OBJECT_CORROBORATED_PHOTO_HOLD",
+      "institution": "Museo Nacional del Prado",
+      "institutional_object_id": "El sueño de Jacob (Ribera, 1639)",
+      "institutional_source_url": "https://www.museodelprado.es/actualidad/multimedia/jacobs-dream-jusepe-de-ribera/05b9379d-0e43-99fa-02d6-b27d562974cc",
+      "evidence_reason": "Prado identifies Ribera's 1639 Jacob's Dream; Commons Google Earth derivative still needs exact original-painting crosswalk.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-he-razen-erpent",
+      "disposition": "OBJECT_CORROBORATED_PHOTO_HOLD",
+      "institution": "National Gallery, London",
+      "institutional_object_id": "NG59",
+      "institutional_source_url": "https://www.nationalgallery.org.uk/paintings/peter-paul-rubens-the-brazen-serpent",
+      "evidence_reason": "National Gallery catalogues Rubens's Brazen Serpent NG59; Commons rendition not certified by institutional accession.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-aravaggio-avid-with-the-ead-of-oliath",
+      "disposition": "OBJECT_CORROBORATED_PHOTO_HOLD",
+      "institution": "Galleria Borghese",
+      "institutional_object_id": "455",
+      "institutional_source_url": "https://www.collezionegalleriaborghese.it/en/opere/david-with-the-head-of-goliath",
+      "evidence_reason": "Galleria Borghese identifies Caravaggio's David with Goliath, inv. 455; there are other Caravaggio versions, so exact photographic composition remains a hold.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-aniel-in-the-ions-en",
+      "disposition": "OBJECT_CORROBORATED_PHOTO_HOLD",
+      "institution": "National Gallery of Art, Washington",
+      "institutional_object_id": "1965.13.1",
+      "institutional_source_url": "https://www.nga.gov/artworks/50298-daniel-lions-den",
+      "evidence_reason": "NGA identifies Rubens Daniel in the Lions' Den (1965.13.1) and states its own media is public domain; exact Commons file relationship not yet certified.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-uido-eni-usannah-and-the-lders",
+      "disposition": "INSTITUTIONAL_REUSE_RESTRICTED",
+      "institution": "National Gallery, London",
+      "institutional_object_id": "NG196",
+      "institutional_source_url": "https://www.nationalgallery.org.uk/paintings/guido-reni-susannah-and-the-elders",
+      "evidence_reason": "Identity of NG196 is established but National Gallery published images are CC BY-NC-ND 4.0; cannot authorize unrestricted or commercial app photo reuse. Needs separate licensed/open replacement.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "disposition": "OBJECT_CORROBORATED_PHOTO_HOLD",
+      "institution": "National Gallery, London",
+      "institutional_object_id": "NG6276",
+      "institutional_source_url": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph",
+      "evidence_reason": "National Gallery identifies Champaigne's Dream of St Joseph as NG6276; candidate Commons file names NG6276 but photo rights/source version still subject to verification.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    },
+    {
+      "artwork_id": "ART-ustache-e-ueur-aint-aul-reaching-at-phesus",
+      "disposition": "OBJECT_CORROBORATED_PHOTO_HOLD",
+      "institution": "Musée du Louvre",
+      "institutional_object_id": "INV 8020",
+      "institutional_source_url": "https://collections.louvre.fr/en/ark:/53355/cl010061650",
+      "evidence_reason": "Louvre inventories Le Sueur's St Paul Preaching at Ephesus INV 8020; Commons WGA source candidate is low-resolution and not yet certified as selected photo.",
+      "photo_reuse_approved": false,
+      "frozen_selection_altered": false,
+      "source_promotion_allowed": false
+    }
+  ]
+}
