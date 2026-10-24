@@ -41,7 +41,9 @@ try{
  };
  const openFamilyDoor=async family=>{
    if(family!=="daily")await page.locator("#aoPray435930 .aoP435930QuietMore>summary").click();
-   await page.locator('#aoPray435930.open [data-p435930-family="'+family+'"]').tap();
+   const launcher=page.locator('#aoPray435930.open [data-p435930-family="'+family+'"]');
+   await launcher.evaluate(el=>el.scrollIntoView({block:"center",inline:"nearest",behavior:"instant"}));
+   await launcher.tap();
  };
  const identify=async()=>page.evaluate(()=>{
    if(document.querySelector("#aoPrayerBookRoot.open .pbShell"))
