@@ -1,0 +1,39 @@
+name: B30 close 64 P0 artwork recovery and classify remaining 51 without promotion
+on:
+  push:
+    branches: [research/sacred-art-b30-selected-six-20261024]
+    paths: [.github/workflows/ao-art-b30-p0-closeout.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  register-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b30-selected-six-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify 64 full priority entries, 13 recovered and 51 held/candidates
+        run: |
+          python -m py_compile scripts/research/sacred_art_b30_p0_closeout.py
+          python scripts/research/sacred_art_b30_p0_closeout.py
+      - name: Commit reproducible 51-item exception queue and factual summary
+        run: |
+          set -euo pipefail
+          cp artifacts/sacred-art-b30-p0-closeout/sacred-art-b30-remaining51-p0-acquisition-gates.csv data/research/
+          cp artifacts/sacred-art-b30-p0-closeout/sacred-art-b30-p0-64-closeout.summary.json data/research/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b30-remaining51-p0-acquisition-gates.csv data/research/sacred-art-b30-p0-64-closeout.summary.json
+          git commit -m 'research: B30 P0 64-item archive closeout and 51-source gates'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b30-selected-six-20261024
+            git rebase origin/research/sacred-art-b30-selected-six-20261024
+            git push origin HEAD:research/sacred-art-b30-selected-six-20261024 && exit 0
+            sleep 4
+          done
+          exit 1
