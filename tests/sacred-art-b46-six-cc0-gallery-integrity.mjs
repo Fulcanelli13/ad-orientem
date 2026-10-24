@@ -1,0 +1,85 @@
+#!/usr/bin/env node
+import fs from "node:fs";
+import assert from "node:assert/strict";
+const root="data/research/",read=n=>JSON.parse(fs.readFileSync(root+n,"utf8"));
+const j=read("sacred-art-b46-six-cc0-comparison-review.json");
+const close=read("sacred-art-b46-editorial-preview-no-promotion-closeout.json");
+const b45=read("sacred-art-b45-383-source-iconography-and-rights-closeout.json");
+const oldKMSKA=read("sacred-art-b43-kmska-rubens-trinity-cc0-selection-evidence.json");
+const archivedCMA=fs.readFileSync(root+"sacred-art-b43-cma-cc0-alternative-results.csv","utf8");
+const archivedMet=fs.readFileSync(root+"sacred-art-b44-met-alternative-results.csv","utf8");
+const html=fs.readFileSync("previews/sacred-art-b46-cc0-editorial-gallery.html","utf8");
+assert.equal(j.schema,"AO_B46_EDITORIAL_PREVIEW_SIX_SOURCE_VERIFIED_CC0_CANDIDATES_V1");
+assert.equal(close.schema,"AO_B46_383_EDITORIAL_GALLERY_NO_PROMOTION_CLOSEOUT_V1");
+assert.equal(j.items.length,6);
+assert.equal(close.candidates.length,6);
+assert.equal(new Set(j.items.map(x=>x.id)).size,6);
+assert.equal(new Set(j.items.map(x=>x.frozen_artwork_id)).size,5);
+assert.equal(j.groups.shortlist,3);
+assert.equal(j.groups.contextual,2);
+assert.equal(j.groups.hold,1);
+assert.equal(j.gallery_candidate_count,6);
+assert.equal(close.gallery_filters.shortlist,3);
+assert.equal(close.gallery_filters.contextual,2);
+assert.equal(close.gallery_filters.hold,1);
+assert.equal(close.active_frozen_artworks,383);
+assert.equal(close.previous_with_some_source,b45.B45_any_source);
+assert.equal(close.previous_with_complete_object_source,b45.B45_complete_object_source);
+assert.equal(close.remaining_source_gaps,b45.B45_complete_object_gaps);
+assert.equal(close.remaining_source_gaps,25);
+assert.equal(close.new_original_images_archived,0);
+assert.equal(close.new_original_image_bytes,0);
+assert.equal(close.previous_cumulative_images,122);
+assert.equal(close.previous_cumulative_image_bytes,710773181);
+assert.equal(close.frozen_complete_source_gaps_closed,0);
+assert.equal(close.existing_frozen_artworks_changed,0);
+assert.equal(close.editorial_approvals,0);
+assert.equal(close.app_publication_approvals,0);
+assert.equal(close.preview_approval_buttons_present,false);
+assert.equal(close.preview_local_github_mutation_possible,false);
+assert.equal(close.strictly_zero_euro,true);
+assert.equal(close.preserve_frozen_451_artwork_ids,true);
+assert.equal(close.production_untouched,true);
+assert.equal(close.issue_870_branch_hygiene_guard_not_bypassed,true);
+assert.equal(oldKMSKA.object_matched_to_frozen_intent,false);
+assert.equal(oldKMSKA.automatic_catalogue_source_promotion,false);
+assert.equal(oldKMSKA.verified_candidate.owner_collection_rights_status,"Image CC0");
+const expected={ "KMSKA-314":oldKMSKA.verified_candidate.unpublished_original_sha256};
+let sources=0;
+for (const x of j.items) {
+ assert.equal(x.research_original_sha256.length,64);
+ assert.ok(/^https:\/\//.test(x.image_url));
+ assert.ok(/^https:\/\//.test(x.museum_url));
+ assert.equal(x.app_published,false);
+ assert.ok(/NOT_APPROVED|_HOLD/.test(x.editorial_status));
+ if(x.id.startsWith("CMA-")) {
+   assert.ok(archivedCMA.includes(x.research_original_sha256),x.id+" unknown CMA original");
+   assert.match(x.provider_rights,/CC0/);
+ } else if(x.id.startsWith("MET-")){
+   assert.ok(archivedMet.includes(x.research_original_sha256),x.id+" unknown Met original");
+   assert.match(x.provider_rights,/public domain/);
+ } else {
+   assert.equal(x.id,"KMSKA-314");
+   assert.equal(x.research_original_sha256,expected[x.id]);
+ }
+ assert.ok(x.merit && x.limitation && x.best_use);
+ if(x.tier==="hold") assert.equal(x.id,"CMA-2016.32");
+ sources++;
+}
+assert.equal(sources,6);
+assert.match(html,/<!doctype html>/i);
+assert.match(html,/<meta name="viewport"/);
+assert.match(html,/const items=/);
+assert.match(html,/aria-pressed/);
+assert.match(html,/data-filter="shortlist"/);
+assert.match(html,/data-filter="contextual"/);
+assert.match(html,/data-filter="hold"/);
+assert.doesNotMatch(html,/fetch\s*\(|localStorage|sendBeacon|XMLHttpRequest|navigator\.clipboard|<form\b/i);
+assert.doesNotMatch(html,/button[^>]*approve|button[^>]*publish/i);
+const captured=html.match(/const items=(\[[\s\S]*?\]);\s*const gallery=/);
+assert.ok(captured,"Standalone gallery must embed all six records, not fetch data");
+const inline=JSON.parse(captured[1]);
+assert.deepEqual(inline,j.items);
+assert.equal(j.source_file_originals_added_in_B46,0);
+assert.equal(j.source_file_bytes_added_in_B46,0);
+console.log("B46_PASS six original-source-checked CC0 gallery cards, 3 priority + 2 contextual + 1 hold, five distinct frozen subjects, zero original downloads/approvals, 360 any/358 complete/25 gaps, €0.");
