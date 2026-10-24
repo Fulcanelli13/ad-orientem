@@ -1,0 +1,18 @@
+name: B55 protect Class I feast art approvals from general 383-art review
+on:
+  push:
+    branches: [research/sacred-art-b55-class-i-2026-versus-383-crosswalk-20261024]
+    paths: [.github/workflows/ao-art-b55-classi-editorial-reconciliation.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  enforce-user-date-specific-approvals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b55-class-i-2026-versus-383-crosswalk-20261024
+      - name: Verify all protected Class I dates, approved paintings and distinct source image rights
+        run: node tests/sacred-art-b55-classi-protected-approval-reconciliation.mjs
