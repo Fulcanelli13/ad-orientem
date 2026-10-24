@@ -2326,6 +2326,22 @@
       "codes": {
         "iso_alpha2": "PG"
       }
+    },
+    {
+      "geo_area_id": "geo:country:PA",
+      "name": {
+        "official": "Panama",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PA"
+      }
     }
   ],
   "places": [
@@ -16988,6 +17004,402 @@
       },
       "source_ids": [
         "AO-P24-SITE-SG-INV-0732"
+      ]
+    },
+    {
+      "place_id": "place:PH:baclaran-national-shrine-perpetual-help",
+      "name": {
+        "official": "National Shrine of Our Mother of Perpetual Help — Baclaran",
+        "aliases": []
+      },
+      "place_type": "national_shrine",
+      "geo_area_ids": [
+        "geo:country:PH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 14.53141,
+        "lng": 120.99525,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/24058935",
+        "source_ref": "osm:way:24058935",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PH",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Parañaque",
+        "region": null,
+        "country_code": "PH",
+        "country": "Philippines",
+        "formatted": "National Shrine of Our Mother of Perpetual Help — Baclaran, Parañaque, Philippines"
+      },
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0632"
+      ]
+    },
+    {
+      "place_id": "place:AT:basilika-mariatrost-graz",
+      "name": {
+        "official": "Basilika Mariatrost, Graz",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:AT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 47.10725,
+        "lng": 15.49156,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/121500989",
+        "source_ref": "osm:way:121500989",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "AT",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Graz",
+        "region": null,
+        "country_code": "AT",
+        "country": "Austria",
+        "formatted": "Basilika Mariatrost, Graz, Graz, Austria"
+      },
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0184"
+      ]
+    },
+    {
+      "place_id": "place:ES:capella-santa-cova-montserrat",
+      "name": {
+        "official": "Capella de la Santa Cova de Montserrat",
+        "aliases": []
+      },
+      "place_type": "chapel",
+      "geo_area_ids": [
+        "geo:country:ES"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.58813,
+        "lng": 1.84432,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/182464453",
+        "source_ref": "osm:way:182464453",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "ES",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Monistrol de Montserrat",
+        "region": null,
+        "country_code": "ES",
+        "country": "Spain",
+        "formatted": "Capella de la Santa Cova de Montserrat, Monistrol de Montserrat, Spain"
+      },
+      "source_ids": [
+        "AO-P28-SITE-SG-NEW-MONTSERRAT-COVA"
+      ]
+    },
+    {
+      "place_id": "place:CH:santuario-madonna-del-sasso-orselina",
+      "name": {
+        "official": "Santuario della Madonna del Sasso, Orselina",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:CH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 46.17518,
+        "lng": 8.79397,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/207798891",
+        "source_ref": "osm:way:207798891",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "CH",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Orselina",
+        "region": null,
+        "country_code": "CH",
+        "country": "Switzerland",
+        "formatted": "Santuario della Madonna del Sasso, Orselina, Orselina, Switzerland"
+      },
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0273"
+      ]
+    },
+    {
+      "place_id": "place:DE:marienbasilika-kevelaer",
+      "name": {
+        "official": "Marienbasilika Kevelaer",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:DE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 51.58443,
+        "lng": 6.24447,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/152838059",
+        "source_ref": "osm:way:152838059",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "DE",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Kevelaer",
+        "region": null,
+        "country_code": "DE",
+        "country": "Germany",
+        "formatted": "Marienbasilika Kevelaer, Kevelaer, Germany"
+      },
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0163"
+      ]
+    },
+    {
+      "place_id": "place:CL:templo-votivo-maipu-basilica",
+      "name": {
+        "official": "Templo Votivo de Maipú — Basílica de Nuestra Señora del Carmen",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:CL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -33.5108,
+        "lng": -70.76616,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/175940910",
+        "source_ref": "osm:way:175940910",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "CL",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Maipú",
+        "region": null,
+        "country_code": "CL",
+        "country": "Chile",
+        "formatted": "Templo Votivo de Maipú — Basílica de Nuestra Señora del Carmen, Maipú, Chile"
+      },
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0499"
+      ]
+    },
+    {
+      "place_id": "place:CM:basilique-marie-reine-des-apotres-mvolye",
+      "name": {
+        "official": "Basilique Marie-Reine-des-Apôtres de Mvolyé",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:CM"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 3.84231,
+        "lng": 11.50773,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/188128528",
+        "source_ref": "osm:way:188128528",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "CM",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Yaoundé",
+        "region": null,
+        "country_code": "CM",
+        "country": "Cameroon",
+        "formatted": "Basilique Marie-Reine-des-Apôtres de Mvolyé, Yaoundé, Cameroon"
+      },
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0718"
+      ]
+    },
+    {
+      "place_id": "place:AR:santuario-san-cayetano-liniers",
+      "name": {
+        "official": "Santuario San Cayetano, Liniers",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:AR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -34.63785,
+        "lng": -58.52827,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/700566738",
+        "source_ref": "osm:way:700566738",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "AR",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Buenos Aires",
+        "region": null,
+        "country_code": "AR",
+        "country": "Argentina",
+        "formatted": "Santuario San Cayetano, Liniers, Buenos Aires, Argentina"
+      },
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0495"
+      ]
+    },
+    {
+      "place_id": "place:LT:zemaiciu-kalvarija-visitation-basilica",
+      "name": {
+        "official": "Žemaičių Kalvarijos Švč. Mergelės Marijos Apsilankymo bazilika",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:LT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 56.11003,
+        "lng": 22.01125,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/218106986",
+        "source_ref": "osm:way:218106986",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "LT",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Žemaičių Kalvarija",
+        "region": null,
+        "country_code": "LT",
+        "country": "Lithuania",
+        "formatted": "Žemaičių Kalvarijos Švč. Mergelės Marijos Apsilankymo bazilika, Žemaičių Kalvarija, Lithuania"
+      },
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0334"
+      ]
+    },
+    {
+      "place_id": "place:PA:basilica-jesus-nazareno-atalaya",
+      "name": {
+        "official": "Basílica Menor Jesús Nazareno de Atalaya",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:PA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 8.04326,
+        "lng": -80.92447,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/396944583",
+        "source_ref": "osm:way:396944583",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PA",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Atalaya",
+        "region": null,
+        "country_code": "PA",
+        "country": "Panama",
+        "formatted": "Basílica Menor Jesús Nazareno de Atalaya, Atalaya, Panama"
+      },
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0460"
+      ]
+    },
+    {
+      "place_id": "place:GH:saint-joseph-minor-basilica-elmina",
+      "name": {
+        "official": "Saint Joseph’s Minor Basilica, Elmina",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:GH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 5.08715,
+        "lng": -1.35353,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/739748721",
+        "source_ref": "osm:way:739748721",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "GH",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Elmina",
+        "region": null,
+        "country_code": "GH",
+        "country": "Ghana",
+        "formatted": "Saint Joseph’s Minor Basilica, Elmina, Elmina, Ghana"
+      },
+      "source_ids": [
+        "AO-P28-SITE-SG-INV-0725"
       ]
     }
   ],
