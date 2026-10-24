@@ -14,7 +14,7 @@ const p16=load("data/geography/research/sacred-places-p16-three-qualified-site-r
 const p22=load("data/geography/research/sacred-places-p22-map-first-ten-sites.v1.json");
 assert.equal(manifest.schema,"AO_SACRED_PLACES_P24_WORLD_16_MAP_FIRST_V1");
 assert.deepEqual([manifest.baseline.places,manifest.baseline.sources,manifest.baseline.crosswalk,manifest.baseline.unlinked],[371,669,371,112]);
-assert.deepEqual([manifest.proposed.places,manifest.proposed.sources,manifest.proposed.crosswalk,manifest.proposed.unlinked],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked]);
+assert.deepEqual([manifest.proposed.places,manifest.proposed.sources,manifest.proposed.crosswalk,manifest.proposed.unlinked],[387,685,387,128],"P24 immutable release values");
 assert.deepEqual([geo.places.length,sources.sources.length,cross.place_crosswalk.length,geo.geoAreas.length,geo.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.areas,LIVE.links]);
 assert.equal(cross.counts.places,LIVE.places);
 assert.equal(cross.counts.places_without_direct_claim,LIVE.unlinked);
