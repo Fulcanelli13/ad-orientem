@@ -321,3 +321,57 @@ const allDossierTitles=gates.records.map(x=>x.title);
 assert.equal(new Set(allDossierTitles).size,8);
 assert.ok(gates.records.find(x=>x.release_unit==='CU-REVIEW-003').draft_source_groups.includes('CAT-WEISER-B-109'));
 console.log('PASS customs editorial gate board: 9 draft dossiers -> 8 provisional Calendar subjects, 5 source-bounded editorial review, 0 approved new entries.');
+
+
+// Phase 1 workbook source-of-truth derivative: every one of the 408 group IDs is accounted for.
+const phase1=load('customs-consolidation-phase1-408-decisions-priority50.v1.json');
+assert.equal(phase1.schema,'AO_CUSTOMS_CONSOLIDATION_PHASE1_408_IDENTITY_DECISIONS_AND_PRIORITY50_V1');
+assert.equal(phase1.summary.master_identities,56);
+assert.equal(phase1.summary.provisional_groups,408);
+assert.equal(phase1.summary.prior_owner_leads,47);
+assert.equal(phase1.summary.screened_cohort01,150);
+assert.equal(phase1.summary.screened_cohort02,211);
+assert.equal(phase1.summary.original_folio_checked,30);
+assert.equal(phase1.summary.priority_subjects,50);
+assert.equal(phase1.summary.editorial_drafts,5);
+assert.equal(phase1.summary.unpublished_master_in_queue,18);
+assert.equal(phase1.summary.provisional_leads_in_queue,27);
+assert.equal(phase1.summary.proposed_clusters,12);
+assert.equal(phase1.summary.new_merges_approved,0);
+assert.equal(phase1.summary.new_published,0);
+assert.equal(phase1.identity_rows.length,408);
+const p1id=new Set(),p1kind={};
+for(const row of phase1.identity_rows){
+  assert.ok(allIds.has(row.provisional_group_id));
+  assert.ok(!p1id.has(row.provisional_group_id),'Duplicate identity research group');
+  p1id.add(row.provisional_group_id);
+  p1kind[row.review_cohort]=(p1kind[row.review_cohort]||0)+1;
+  assert.equal(row.identity_decision,'NOT_APPROVED');
+  assert.equal(row.merge_approved,false);
+  assert.equal(row.calendar_release_approved,false);
+  for(const owner of row.proposed_owner_ids)assert.ok(audit.records.some(m=>m.custom_id===owner));
+  for(const rel of row.semantic_comparators)assert.ok(rel.compare_to.startsWith('OTHER_MODULE_')||allIds.has(rel.compare_to)||audit.records.some(m=>m.custom_id===rel.compare_to));
+}
+assert.equal(p1id.size,408);
+assert.equal(p1kind.PREVIOUS_47_OWNER_LEADS,47);
+assert.equal(p1kind.FIRST_150_LABEL_SCREEN,150);
+assert.equal(p1kind.SECOND_211_LABEL_SCREEN,211);
+assert.equal(phase1.identity_rows.filter(x=>x.original_weiser_folio_checked).length,30);
+const p1priority=new Set(),tiers={};
+for(const row of phase1.priority_queue){
+  assert.ok(!p1priority.has(row.subject_id),'Duplicate review priority');
+  p1priority.add(row.subject_id);
+  assert.notEqual(row.release_state,'PUBLISHED');
+  tiers[row.tier]=(tiers[row.tier]||0)+1;
+  for(const group of row.source_group_ids)assert.ok(allIds.has(group));
+}
+assert.equal(p1priority.size,50);
+assert.equal(tiers.FIVE_BILINGUAL_DRAFTS,5);
+assert.equal(tiers.PRE_EXISTING_UNPUBLISHED_MASTER,18);
+assert.equal(tiers.PROVISIONAL_GROUP_NEEDS_VERIFICATION,27);
+assert.equal(phase1.clusters.length,12);
+for(const cluster of phase1.clusters){
+  assert.equal(cluster.decision,'PROPOSED_NOT_AUTHORIZED');
+  for(const id of cluster.members)assert.ok(allIds.has(id));
+}
+console.log('PASS phase1 customs export: 408 research groups, 47/150/211 identity strata, 12 review clusters, 50 review priorities, 0 authorized merges or releases.');
