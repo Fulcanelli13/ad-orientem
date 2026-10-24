@@ -79,6 +79,7 @@ def main():
     b40=csvrows(ROOT/"sacred-art-b40-wuilleret-commons-crossmatch-results.csv")
     b41=csvrows(ROOT/"sacred-art-b41-three-institution-source-results.csv")
     b40by={x["artwork_id"]:x for x in b40}
+    crosswalk={x["artwork_id"]:x for x in csvrows(ROOT/"sacred-art-b27-451-physical-crosswalk.csv")}
     b41by={x["artwork_id"]:x for x in b41}
     active=sorted((x for x in cat if x["frozen_decision"]!="PERMANENTLY_REJECTED"),key=lambda x:int(x["catalogue_row"]))
     assert len(cat)==451 and len(active)==383
@@ -93,11 +94,15 @@ def main():
         original=None
         hold=""
         # Source identity aliases are visually reviewable but not auto-promoted.
-        if id_=="ART-iambattista-iepolo-aint-atherine-of-iena":
-            alias="C32:giambattistatiepolokunsthistorischesmuseumwiengemaldegalerie"
-            cross=next(z for z in csvrows(ROOT/"sacred-art-b27-451-physical-crosswalk.csv") if z["artwork_id"]==alias)
-            hashes=[z for z in cross["matching_file_hashes"].split(" | ") if ORIGINAL_SHA.fullmatch(z)]
-            hold="Legacy photo attached to a different frozen ID; visually compare object identity before selecting."
+        if b34.get(id_,{}).get("state")=="PREEXISTING_ARCHIVE_SOURCE_ALIAS":
+            # Photograph attached under a different historic frozen ID.
+            # No automatic merging of preparatory sketches vs final paintings.
+            aliases=[v[4:] for v in b34[id_].get("preexisting_archival_refs",[]) if v.startswith("B27:")]
+            if aliases:
+                alias_record=crosswalk.get(aliases[0],{})
+                alias_hashes=[h.strip() for h in alias_record.get("matching_file_hashes","").split(" | ") if ORIGINAL_SHA.fullmatch(h.strip())]
+                hashes=alias_hashes or hashes
+                hold="Archived photo belongs to a different frozen artwork ID; this is an identity-comparison candidate, not an approved replacement."
         sha=None;tag=None;asset=None;oldmember=None
         pp=p0.get(id_)
         if pp and pp.get("archived_source_sha256") in hashes and pp.get("original_file_available_in_research_archive") is True:
@@ -142,7 +147,7 @@ def main():
             "source_coverage":record["preservation_evidence_cohort"],
             "complete_original_candidate":record["provisional_complete_work_photo_source"]=="True",
             "original_sha256":sha,"archive_tag":tag,"archive_asset":asset,
-            "old_archive_member":oldmember,
+            "old_archive_member":oldmember,"sha_candidates":hashes,
             "image_identity_hold":hold,"suggested_places":slots})
     groups={}
     for s in selected:
