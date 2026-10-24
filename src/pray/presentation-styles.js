@@ -1042,7 +1042,7 @@ const PRAYER_PRACTICE_FOCUS_CSS=String.raw`
 /* Quiet Frame: root Pray catalogue only. Guided readers, ritual, and prayer
  * scroll/gesture systems retain their existing presentation owners.
  * Source: approved 2026-10-24 Pray phone concept; consume shared AO tokens. */
-const QUIET_PRAY_HOME_CSS=String.raw\`
+const QUIET_PRAY_HOME_CSS=String.raw`
 #aoPray435930 .aoP435930QuietHome{
  padding:20px var(--ao-frame-gutter,16px) max(96px,calc(72px + env(safe-area-inset-bottom,0px)))!important;
  gap:24px!important;background:var(--ao-frame-bg,#0B0F13)!important;
@@ -1130,7 +1130,7 @@ const QUIET_PRAY_HOME_CSS=String.raw\`
 @media(prefers-reduced-motion:reduce){
  #aoPray435930 .aoP435930QuietHome *{scroll-behavior:auto!important}
 }
-\`;
+`;
 
 export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-v435930-pray-audit-style",AUDIT_CSS);
