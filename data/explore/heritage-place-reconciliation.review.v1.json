@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 414,
+    "places": 421,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 155,
+    "places_without_direct_claim": 162,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -60,6 +60,7 @@
       "place:DE:marienbasilika-kevelaer",
       "place:DK:st-ansgar-cathedral-copenhagen",
       "place:DO:catedral-primada-santo-domingo",
+      "place:DO:santuario-nuestra-senora-mercedes-santo-cerro",
       "place:DZ:basilique-saint-augustin-annaba",
       "place:EC:basilica-voto-nacional-quito",
       "place:EE:saints-peter-paul-cathedral-tallinn",
@@ -80,6 +81,7 @@
       "place:GH:saint-joseph-minor-basilica-elmina",
       "place:GL:christ-the-king-catholic-church-nuuk",
       "place:GP:cathedrale-notre-dame-de-guadeloupe-basse-terre",
+      "place:GT:basilica-santo-domingo-rosario-guatemala",
       "place:GU:dulce-nombre-maria-cathedral-basilica-hagatna",
       "place:GY:immaculate-conception-cathedral-brickdam",
       "place:HK:immaculate-conception-cathedral-hong-kong",
@@ -114,6 +116,7 @@
       "place:KZ:our-lady-fatima-cathedral-karaganda",
       "place:LA:sacred-heart-cathedral-vientiane",
       "place:LC:immaculate-conception-cathedral-basilica-castries",
+      "place:LK:national-shrine-our-lady-matara",
       "place:LK:st-lucia-cathedral-colombo",
       "place:LS:our-lady-victories-cathedral-maseru",
       "place:LT:trakai-visitation-basilica",
@@ -132,6 +135,7 @@
       "place:MX:catedral-basilica-san-juan-los-lagos",
       "place:MY:st-jude-church-rawang",
       "place:NC:cathedrale-saint-joseph-noumea",
+      "place:NI:basilica-inmaculada-concepcion-el-viejo",
       "place:NI:ermita-guadalupe-matagalpa",
       "place:NO:st-olav-cathedral-oslo",
       "place:NO:st-olav-cathedral-trondheim",
@@ -159,6 +163,7 @@
       "place:PY:catedral-metropolitana-asuncion",
       "place:PY:oratorio-nuestra-senora-asuncion-panteon",
       "place:QA:our-lady-rosary-church-doha",
+      "place:RW:cathedrale-basilique-immaculee-conception-kabgayi",
       "place:SB:holy-cross-cathedral-honiara",
       "place:SC:immaculate-conception-cathedral-victoria",
       "place:SE:st-eric-cathedral-stockholm",
@@ -169,6 +174,7 @@
       "place:SK:kostol-svateho-vojtecha-gaboltov",
       "place:SL:sacred-heart-cathedral-freetown",
       "place:SR:saints-peter-paul-cathedral-paramaribo",
+      "place:SV:capilla-divina-providencia-san-salvador",
       "place:SZ:our-lady-assumption-cathedral-manzini",
       "place:TG:sacred-heart-cathedral-lome",
       "place:TH:assumption-cathedral-bangkok",
@@ -179,6 +185,7 @@
       "place:UY:santuario-nuestra-senora-del-carmen-carmelo",
       "place:UZ:sacred-heart-cathedral-tashkent",
       "place:VC:assumption-cathedral-kingstown",
+      "place:VE:basilica-nuestra-senora-chiquinquira-maracaibo",
       "place:VI:saints-peter-paul-cathedral-charlotte-amalie",
       "place:VU:sacred-heart-cathedral-port-vila",
       "place:WF:cathedrale-assomption-mata-utu",
@@ -1219,6 +1226,12 @@
           "pilgrimage:DO:higuey-altagracia-basilica-destination"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DO:santuario-nuestra-senora-mercedes-santo-cerro",
+      "display_name": "Santuario Nacional Nuestra Señora de las Mercedes, Santo Cerro",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -2366,6 +2379,12 @@
           "relic:GR:saint-titus-heraklion"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GT:basilica-santo-domingo-rosario-guatemala",
+      "display_name": "Basílica de Nuestra Señora del Rosario — Santo Domingo, Guatemala",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3543,6 +3562,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:LK:national-shrine-our-lady-matara",
+      "display_name": "National Shrine of Our Lady of Matara",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:LK:saint-anne-s-national-shrine-talawila",
       "display_name": "Saint Anne's National Shrine, Talawila",
       "record_ids": {
@@ -3899,6 +3924,12 @@
           "att:DEV-007:UGWOGO-PERPETUAL-HELP"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:NI:basilica-inmaculada-concepcion-el-viejo",
+      "display_name": "Basílica de la Inmaculada Concepción de María, El Viejo",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -4476,6 +4507,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:RW:cathedrale-basilique-immaculee-conception-kabgayi",
+      "display_name": "Cathédrale-Basilique Notre-Dame de l'Immaculée Conception de Kabgayi",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:RW:sanctuaire-kibeho",
       "display_name": "Sanctuaire Notre-Dame des Douleurs de Kibeho",
       "record_ids": {
@@ -4604,6 +4641,12 @@
     {
       "place_id": "place:SR:saints-peter-paul-cathedral-paramaribo",
       "display_name": "Cathedral Basilica of Saints Peter and Paul, Paramaribo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:SV:capilla-divina-providencia-san-salvador",
+      "display_name": "Capilla de la Divina Providencia, Hospital Divina Providencia",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -5081,6 +5124,12 @@
     {
       "place_id": "place:VC:assumption-cathedral-kingstown",
       "display_name": "Cathedral of the Assumption, Kingstown",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:VE:basilica-nuestra-senora-chiquinquira-maracaibo",
+      "display_name": "Basílica de Nuestra Señora del Rosario de Chiquinquirá y San Juan de Dios",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
