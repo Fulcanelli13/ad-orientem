@@ -1,0 +1,323 @@
+{
+  "schema": "AO_B43_383_SACRED_ART_CC0_SOURCE_SELECTION_CANDIDATES_V1",
+  "date": "2026-10-24",
+  "frozen_catalogue_active": 383,
+  "baseline_some_source": 360,
+  "baseline_complete_object": 358,
+  "remaining_complete_object_gaps": 25,
+  "B43_new_frozen_complete_object_promotions": 0,
+  "B43_new_frozen_some_source_promotions": 0,
+  "B43_new_CC0_alternative_originals": 3,
+  "B43_new_CMA_alternative_original_image_bytes": 12474749,
+  "B43_B29_B42_research_image_files": 117,
+  "B43_B29_B42_research_image_bytes": 687148289,
+  "B43_cumulative_research_originals_including_distinct_CC0_alternatives": 120,
+  "B43_cumulative_research_original_bytes_including_distinct_CC0_alternatives": 699623038,
+  "CMA_search_subject_queries": 19,
+  "CMA_search_successful_queries": 19,
+  "CMA_subject_file_pairs": 68,
+  "CMA_title_matches": 29,
+  "new_frozen_catalogue_entries": 0,
+  "editorial_selection_approvals": 0,
+  "app_publication_decisions": 0,
+  "only_explicit_owner_CC0_candidates_archived": true,
+  "zero_euro": true,
+  "production_unchanged": true,
+  "CMA_draft_archive_verified_run": 40089028479,
+  "CMA_draft_release": "ao-art-originals-40089028479-1",
+  "rights_vs_selection_policy": "CC0 museum photo reuse and source-preservation are not selection of this image for a frozen artwork. An exact art-source gap closes only after deliberate identity adoption. No new app release, no changed 451 art IDs.",
+  "KMSKA_Rubens_original_candidate": {
+    "schema": "AO_B43_KMSKA_RUBENS_TRINITY_CC0_CANDIDATE_RECONCILIATION_V1",
+    "date": "2026-10-24",
+    "frozen_artwork_id": "ART-eter-aul-ubens-he-oly-rinity",
+    "frozen_artwork_title": "The Holy Trinity",
+    "frozen_artwork_artist": "Peter Paul Rubens",
+    "frozen_artwork_prior_frozen_state": "UNREVIEWED_P2_TITLE_ARTIST_ONLY_NO_OBJECT_ACCESSION",
+    "verified_candidate": {
+      "institution": "Royal Museum of Fine Arts Antwerp (KMSKA)",
+      "collection": "Flemish Art Collection",
+      "institution_accession": "314",
+      "title": "The Holy Trinity",
+      "maker": "Peter Paul Rubens",
+      "dated": "c.1620",
+      "type": "Painting, altar panel",
+      "support": "oil on panel",
+      "height_cm": 157,
+      "width_cm": 150,
+      "collection_object_page": "https://vlaamsekunstcollectie.be/en/collection/314",
+      "owner_museum_page": "https://kmska.be/en/masterpiece/the-holy-trinity",
+      "iiif_manifest": "https://iiif.kmska.be/iiif/2/28958/manifest.json",
+      "commons_exact_file_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Heilige_Drievuldigheid_-_314_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg",
+      "owner_collection_rights_status": "Image CC0",
+      "photo_reuse_rights_candidate": "OFFICIAL_COLLECTION_CC0_POSITIVE_PENDING_APP_JURISDICTION_REVIEW",
+      "unpublished_original_research_archive": "ao-art-originals-40082818225-1",
+      "unpublished_original_sha256": "cd3477e583cf55ca2bd651aad191b916ec84a4af73b3ed36dc7e4e48b9c0ef38",
+      "unpublished_original_image_bytes": 56200164,
+      "source_image_dimensions": {
+        "width": 19178,
+        "height": 19721
+      },
+      "image_exact_museum_object_verified": true
+    },
+    "artwork_identity_vs_frozen": "TITLE_ARTIST_MATCH_ONLY_FROZEN_RECORD_DID_NOT_IDENTIFY_MUSEUM_OR_ACCESSION",
+    "source_image_technically_verified": true,
+    "object_matched_to_frozen_intent": false,
+    "automatic_catalogue_source_promotion": false,
+    "user_editorial_approval_required": true,
+    "app_publication_approved": false,
+    "same_title_hazards": [
+      {
+        "accession": "555",
+        "maker": "Anonymous Southern Netherlandish 16th-century master",
+        "institution": "KMSKA",
+        "note": "Different Holy Trinity oil on panel; do not substitute"
+      },
+      {
+        "accession": "10103",
+        "maker": "Engraver after Rubens",
+        "institution": "KMSKA",
+        "note": "Print after Rubens; not original 314"
+      }
+    ],
+    "zero_euro": true,
+    "production_changed": false,
+    "editorial_instruction": "Offer museum object 314 as specific CC0 selection; original generic art record remains frozen and unreviewed until deliberate exact-image curatorial adoption; no automatic numerical source gap closure."
+  },
+  "alternative_proposals": [
+    {
+      "id": "cma-147696",
+      "frozen_target": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "museum_accession": "1974.108",
+      "artist": "Francesco Trevisani",
+      "work": "Presentation Sketch for The Holy Family with Saints Anne, Joachim, and John the Baptist",
+      "period": "c.1729",
+      "medium": "oil on canvas",
+      "rights": "CMA_CC0_OBJECT_IMAGE",
+      "source_url": "https://www.clevelandart.org/art/1974.108",
+      "bytes": 3639275,
+      "sha": "2e20f08d7bf9e377baba6a04b6e7dfe34b4c4017d10a875de2fb09bffdf0dac0",
+      "dimensions": [
+        2298,
+        3400
+      ],
+      "proposal": "EDITORIAL_CANDIDATE_REVIEW",
+      "caution": "Distinct Trevisani presentation sketch, NOT the frozen Rubens original or a final painting with identical composition."
+    },
+    {
+      "id": "cma-164432",
+      "frozen_target": "G17-009",
+      "museum_accession": "2005.55",
+      "artist": "Simon Marmion",
+      "work": "The Martyrdom of Saint Denis (breviary leaf)",
+      "period": "c.1467-70",
+      "medium": "tempera on vellum",
+      "rights": "CMA_CC0_OBJECT_IMAGE",
+      "source_url": "https://www.clevelandart.org/art/2005.55",
+      "bytes": 5691094,
+      "sha": "0dbe6f7d83c9e799e4f15396fa2f0ad5c4f5efdd4369a2be61c1a9b3a1248078",
+      "dimensions": [
+        2555,
+        3400
+      ],
+      "proposal": "ILLUMINATED_MANUSCRIPT_ALTERNATIVE_REVIEW",
+      "caution": "Distinct medieval Catholic illumination, NOT Baronne Girod de l'Ain 1858 oil painting, must review different medium, detail crop and narrative focus."
+    },
+    {
+      "id": "cma-283088",
+      "frozen_target": "ART-eter-aul-ubens-he-oly-rinity",
+      "museum_accession": "2016.32",
+      "artist": "Anonymous Byzantine/Constantinople",
+      "work": "Icon of the New Testament Trinity",
+      "period": "c.1450",
+      "medium": "tempera and gold on wood panel",
+      "rights": "CMA_CC0_OBJECT_IMAGE",
+      "source_url": "https://www.clevelandart.org/art/2016.32",
+      "bytes": 3144380,
+      "sha": "d33f8ba563c12b0fe53976a9e7b28ea9354aaadb5008aec67cc618754118c32f",
+      "dimensions": [
+        3400,
+        1990
+      ],
+      "proposal": "BYZANTINE_ORTHODOX_CONTEXT_DOCTRINAL_AND_EDITORIAL_HOLD",
+      "caution": "CMA describes Byzantine Orthodox icon/templon; not a default Traditional Roman Catholic primary hero. Original Rubens KMSKA 314 is already an independent stronger CC0 candidate for Holy Trinity; never substitute automatically."
+    }
+  ],
+  "B42_25_cases_still_incomplete": [
+    {
+      "artwork_id": "G25-003",
+      "category": "SPECIFIC_EXACT_PHOTO_REUSE_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "celine-1894-john-cross",
+      "category": "UNDERLYING_ARTWORK_RIGHTS_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "italy-0900119548",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "G28-003",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "G17-006",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "G30-004",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "G20-002",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "G30-007",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "zeri-45874-peter-damian",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "G30-006",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "G30-010",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "italy-banchero-0700031704",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "G32-002",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+      "category": "MULTI_FACE_OBJECT_INCOMPLETE",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "G29-001",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "QCP-HILARY-LEDUC-1896-1900",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "carmel-lisieux-1925-therese-aux-roses",
+      "category": "UNDERLYING_ARTWORK_RIGHTS_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "G26-007",
+      "category": "SPECIFIC_EXACT_PHOTO_REUSE_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "W10-009",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "G27-002",
+      "category": "SPECIFIC_EXACT_PHOTO_REUSE_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "G17-009",
+      "category": "EXACT_INSTITUTIONAL_PHOTO_RECOVERY",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": true,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "category": "FROZEN_OBJECT_IDENTITY_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": true,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "category": "SPECIFIC_EXACT_PHOTO_REUSE_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "category": "FROZEN_OBJECT_IDENTITY_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": false,
+      "B43_app_published": false
+    },
+    {
+      "artwork_id": "ART-eter-aul-ubens-he-oly-rinity",
+      "category": "FROZEN_OBJECT_IDENTITY_HOLD",
+      "B43_exact_original_gap_closed": false,
+      "B43_alternative_suggested": true,
+      "B43_app_published": false
+    }
+  ],
+  "B43_next_gate": "Request editorial choice for KMSKA 314 matching unreviewed Rubens Trinity source intention; assess Trevisani 1974.108 and Marmion 2005.55 as optional different-work candidates. Reject automatic transfer of 2016.32 Byzantine icon into Roman Catholic primary visual art. For remaining original images, require new legitimate access route rather than rescreening blocked ICCD URLs."
+}

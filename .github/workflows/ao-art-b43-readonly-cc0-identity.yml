@@ -1,0 +1,20 @@
+name: B43 sacred art CC0 candidate integrity, protected frozen artwork decisions
+on:
+  push:
+    branches: [research/sacred-art-b43-cc0-object-candidates-and-identity-lock-20261024]
+    paths: [.github/workflows/ao-art-b43-readonly-cc0-identity.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  b43-research-provenance-rights:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b43-cc0-object-candidates-and-identity-lock-20261024
+      - name: B42 predecessor source and rights gates
+        run: node tests/sacred-art-b42-research-closeout-integrity.mjs
+      - name: B43 frozen source provenance and unselected CC0 alternatives
+        run: node tests/sacred-art-b43-cc0-alternatives-and-frozen-identity.mjs

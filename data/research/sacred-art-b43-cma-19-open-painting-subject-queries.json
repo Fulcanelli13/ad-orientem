@@ -1,0 +1,126 @@
+{
+  "schema": "AO_B43_CMA_19_SAINT_AND_RELATED_THEME_OPEN_ACCESS_CANDIDATE_QUERIES_V1",
+  "date": "2026-10-24",
+  "provider": "Cleveland Museum of Art",
+  "provider_policy": "https://www.clevelandart.org/open-access",
+  "provider_api": "https://openaccess-api.clevelandart.org/api/artworks/",
+  "publication_approvals": 0,
+  "editorial_selections": 0,
+  "zero_euro": true,
+  "queries": [
+    {
+      "frozen_artwork_id": "G25-003",
+      "query": "Saint Augustine",
+      "title_regex": "\\b(?:saint|st\\.?|s\\.)\\s+augustine\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "G20-002",
+      "query": "Saint Anselm",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+anselm\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "G17-006",
+      "query": "Saint Francis de Sales",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+francis\\s+(?:de\\s+)?sales\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "G30-007",
+      "query": "Saint Peter Damian",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+peter\\s+damian\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "G30-004",
+      "query": "Saint Gregory Nazianzen",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+gregory\\s+nazianzen\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "G30-010",
+      "query": "Saint Robert Bellarmine",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+(?:robert\\s+)?bellarmine\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "italy-banchero-0700031704",
+      "query": "Saint Lawrence of Brindisi",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+lawrence\\s+(?:of\\s+)?brindisi\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "G32-002",
+      "query": "Saint Ephrem",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+(?:ephrem|ephraim)\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "G29-001",
+      "query": "Saint Hilary",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+hilary\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "celine-1894-john-cross",
+      "query": "Saint John of the Cross",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+john\\s+of\\s+the\\s+cross\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "query": "Saint Anthony of Padua",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+anthony\\s+(?:of\\s+)?padua\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "W04-009",
+      "query": "Dream of Saint Joseph",
+      "title_regex": "(?:dream|vision)\\s+of\\s+(?:saint\\s+|st\\.?\\s*)?joseph\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "G26-007",
+      "query": "Joan of Arc",
+      "title_regex": "\\bjoan\\s+of\\s+arc\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "G17-009",
+      "query": "Saint Denis",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+denis\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "query": "Holy Family with Saint Anne",
+      "title_regex": "\\bholy\\s+family\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "ART-eter-aul-ubens-he-oly-rinity",
+      "query": "Holy Trinity",
+      "title_regex": "\\b(?:holy\\s+)?trinity\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "G28-003",
+      "query": "Saint Alphonsus Liguori",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+alphonsus\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "G30-012",
+      "query": "Saint Peter Canisius",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+peter\\s+canisius\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    },
+    {
+      "frozen_artwork_id": "QCP-HILARY-LEDUC-1896-1900",
+      "query": "Saint Hilary of Poitiers",
+      "title_regex": "\\b(?:saint|st\\.?)\\s+hilary\\b",
+      "role": "ALTERNATIVE_ARTWORK_NOT_FROZEN_ORIGINAL"
+    }
+  ]
+}
