@@ -8,6 +8,7 @@ import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
 import { calendarCustomRecommendations, calendarCustomSeasonalMonthEntries, calendarCustomArticleIds, calendarCustomArticle } from "./customs-read-model.js";
 import { normaliseCustomSearch, calendarCustomSearchIndex, calendarCustomSearchMatches } from "./customs-search.js";
+import { groupCalendarCustomsByYear } from "../customs/year-led-library.js";
 import { personalCustomsForDate } from "../customs/personal-store.js";
 import { calendarMassColour } from "./colour-projection.js";
 import { calendarPaletteColour, yearDailyProjection, yearSeasonGradient } from "./year-colour-wheel.js";
@@ -728,6 +729,7 @@ function calendarCustomArticleMarkup(article){
 function calendarCustomCatalogueMarkup(){
   const articles=calendarCustomArticleIds().map(calendarCustomArticle).filter(Boolean);
   const isFr=fr();
+  const groups=groupCalendarCustomsByYear(articles);
   const item=article=>{
     const searchable=calendarCustomSearchIndex(article);
     return '<div data-cal-custom-item data-cal-custom-terms="'+esc(searchable)+'">'+calendarCustomArticleMarkup(article)+'</div>';
@@ -737,7 +739,7 @@ function calendarCustomCatalogueMarkup(){
     +'<label class="aoCalCustomCatalogueLabel" for="ao-cal-custom-search">'+esc(L("Search customs","Rechercher une coutume"))+'</label>'
     +'<input id="ao-cal-custom-search" type="search" data-cal-custom-search autocomplete="off" placeholder="'+esc(L("Name or subject","Nom ou sujet"))+'">'
     +'<p data-cal-custom-empty hidden>'+esc(L("No matching customs.","Aucune coutume correspondante."))+'</p>'
-    +'<div class="aoCalCustomCatalogueItems">'+articles.map(item).join("")+'</div>'
+    +'<div class="aoCalCustomCatalogueItems">'+groups.map(group=>'<section class="aoCalCustomYearGroup" data-cal-custom-year-group="'+esc(group.key)+'"><h4>'+esc(isFr?group.fr:group.en)+'</h4>'+group.articles.map(item).join("")+'</section>').join("")+'</div>'
     +'</details><button type="button" class="aoCalMyCustomsButton" data-cal-my-customs-open>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+' →</button></section>';
 }
 
@@ -1118,6 +1120,9 @@ function hybridMonthCss(){return `
 .aoCalCustomCatalogue [data-cal-custom-search]{box-sizing:border-box;width:100%;max-width:100%;border:1px solid rgba(227,212,187,.23);border-radius:5px;background:#111923;color:#ebe1d0;font:inherit;min-height:42px;padding:10px}
 .aoCalCustomCatalogue [data-cal-custom-item][hidden]{display:none!important}
 .aoCalCustomCatalogueItems{margin-top:10px}
+.aoCalCustomYearGroup{padding:2px 0 11px;border-top:1px solid rgba(227,212,187,.12)}
+.aoCalCustomYearGroup[hidden]{display:none!important}
+.aoCalCustomYearGroup>h4{margin:11px 0 3px;color:#cbb896;font-size:13px;font-weight:500;letter-spacing:.035em}
 .aoCalCustomCatalogue [data-cal-custom-empty]{font-size:13px;color:#aba49b}
 .aoCalMyCustomsButton{margin-top:13px;background:transparent;border:1px solid rgba(202,180,144,.4);border-radius:5px;color:#d9c49d;padding:10px 14px;min-height:44px;font-size:14px;cursor:pointer}
 .aoCalPersonalContext{margin:14px 0 20px;padding:13px;border-left:2px solid rgba(203,176,131,.55);background:rgba(203,176,131,.045)}
@@ -1477,6 +1482,9 @@ function bind(r){
       const matches=calendarCustomSearchMatches(row.dataset.calCustomTerms||"",term);
       row.hidden=!matches;
       if(matches)visible++;
+    }
+    for(const group of container?.querySelectorAll("[data-cal-custom-year-group]")||[]){
+      group.hidden=![...group.querySelectorAll("[data-cal-custom-item]")].some(row=>!row.hidden);
     }
     const empty=container?.querySelector("[data-cal-custom-empty]");
     if(empty)empty.hidden=visible!==0;

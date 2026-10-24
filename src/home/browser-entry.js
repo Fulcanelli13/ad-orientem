@@ -179,27 +179,12 @@ export function createHomeOwner(win=globalThis){
       });
   }
 
-  async function openCustomsAtlas(trigger){
-    const ok=await navigateHomeShortcut("find",{trigger,routeId:"find.traditions"});
-    if(!ok)return false;
-    try{
-      const result=await win?.AO_FIND_APP_V1?.open?.({lens:"heritage",view:"map",categories:["traditions"],query:""});
-      if(routeAccepted(result))return true;
-    }catch(error){
-      try{win?.console?.error?.("Customs Atlas unavailable",error)}catch{}
-    }
-    // Do not display a general Explore screen as if the selected lens opened.
-    await navigateHomeShortcut("home",{trigger,routeId:"find.traditions"});
-    showRouteError("find.traditions",trigger);
-    return false;
-  }
-
   function openRoute(route,{trigger=null}={}){
     const id=String(route??"");
     if(!id)return false;
     if(id==="mass.current")return navigateHomeShortcut("mass",{trigger,routeId:id});
     if(id==="today.calendar"||id==="calendar")return navigateHomeShortcut("calendar",{trigger,routeId:id});
-    if(id==="find.traditions")return openCustomsAtlas(trigger);
+    if(id==="find.traditions")return navigateHomeShortcut("calendar",{trigger,routeId:"calendar"}); // backward-compatible bookmark; no Atlas
     if(["settings","find","mass","calendar"].includes(id))return navigateHomeShortcut(id,{trigger,routeId:id});
     if(id.startsWith("pray.")||id.startsWith("learn.")){
       const exactFallback=()=>{
@@ -351,13 +336,6 @@ export function createHomeOwner(win=globalThis){
       event.preventDefault?.();
       event.stopImmediatePropagation?.();
       void navigateHomeShortcut("settings",{trigger:settings,routeId:"settings"});
-      return;
-    }
-    const customsAtlas=target?.closest?.("[data-home-customs-atlas]");
-    if(customsAtlas){
-      event.preventDefault?.();
-      event.stopImmediatePropagation?.();
-      void openCustomsAtlas(customsAtlas);
       return;
     }
     const find=target?.closest?.("[data-home-find]");

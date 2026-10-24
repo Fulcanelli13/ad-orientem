@@ -581,6 +581,8 @@ export function buildExploreViewModel({
 }
 
 export function renderExploreToString(vm){
+  // A stale direct Traditions link can inspect its source folio, never reopen a map or Customs Atlas.
+  if(vm.lens==="traditions"&&vm.view!=="list")vm={...vm,view:"list"};
   if(vm.lens==="heritage")return renderHeritageToString(vm,{
     placeSheet,detailSheet,itemPreview:compactExploreItemSheet,
     journeyPanel:renderPilgrimageJourneyPanel,
@@ -595,12 +597,13 @@ export function renderExploreToString(vm){
     :esc(L(vm.language,"SACRED GEOGRAPHY","GÉOGRAPHIE SACRÉE"))+' · '+esc(lensLabel(vm.language,vm.lens)))+'</span>';
   html+='<details class="aoExploreSectionSwitcher"><summary>'+esc(L(vm.language,"Other sections","Autres sections"))+'</summary><div>';
   html+='<button type="button" data-find-filter="lens" data-find-filter-value="heritage">'+esc(L(vm.language,"Sacred places map","Carte des lieux sacrés"))+'</button>';
-  for(const lens of ["tlm","saints","shrines","apparitions","relics","traditions","pilgrimages"]){
+  for(const lens of ["tlm","saints","shrines","apparitions","relics","pilgrimages"]){
     if(lens===vm.lens)continue;
     html+='<button type="button" data-find-filter="lens" data-find-filter-value="'+esc(lens)+'">'+esc(lensLabel(vm.language,lens))+'</button>';
   }
   html+='</div></details></nav>';
-  if(vm.lens==="traditions")html+=customsAtlasPanel(vm);
+  // Legacy exact custom deep links remain readable, but the country-first Atlas is retired.
+  if(vm.lens==="traditions")html+='<section class="aoCustomsAtlasPanel" data-ao-customs-legacy-reader><h2>'+esc(L(vm.language,"Customs belong in the Calendar","Les coutumes se découvrent dans le calendrier"))+'</h2><p>'+esc(L(vm.language,"Explore traditions by feast and season in the existing liturgical Calendar.","Découvrez les coutumes selon les fêtes et les saisons dans le calendrier liturgique."))+'</p><button type="button" class="aoCustomsLibraryLaunch" data-explore-customs-calendar>'+esc(L(vm.language,"Read traditions through the year","Lire les coutumes au fil de l’année"))+' →</button></section>';
   if(vm.lens==="saints")html+='<p class="aoSaintScopeNote">'+esc(vm.view==="map"
   ?L(vm.language,"Map shows verified physical places only. Switch to List for Saints and source indexes.","La carte ne montre que les lieux vérifiés. Passez en Liste pour les saints et les index de sources.")
   :f.saintScope==="historical"
@@ -625,7 +628,7 @@ export function renderExploreToString(vm){
     L(vm.language,"Pilgrimage, shrine, route or place","Pèlerinage, sanctuaire, itinéraire ou lieu")
   )+'"></div>';
 
-  html+='<nav class="aoFindViewTabs">'+pill("view","list",vm.lens==="traditions"?L(vm.language,"Practices","Pratiques"):L(vm.language,"List","Liste"),vm.view)+pill("view","map",vm.lens==="traditions"?L(vm.language,"Attested places","Lieux attestés"):L(vm.language,"Map","Carte"),vm.view)+'</nav>';
+  if(vm.lens!=="traditions")html+='<nav class="aoFindViewTabs">'+pill("view","list",L(vm.language,"List","Liste"),vm.view)+pill("view","map",L(vm.language,"Map","Carte"),vm.view)+'</nav>';
   if(vm.lens==="tlm")html+='</div>';
   if(vm.lens==="tlm")html+=tlmFilters(vm);
   if(vm.lens==="saints"&&vm.view==="list"&&vm.saintsRelease?.researchEnabled){
