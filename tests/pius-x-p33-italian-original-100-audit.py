@@ -18,6 +18,8 @@ assert re.fullmatch("[0-9a-f]{64}",source["sourceDigitalPageRawSha256"])
 c=source["counts"]
 assert c["openingQuestionsAudited"]==100
 assert c["originalItalianAnswersLocated"]==100
+assert c["multipleSourceReferenceOpeningHolds"]==5
+assert c["additionalItalianSupportPassages"]>=5
 assert c["unverifiedEnglishFrenchEditorialAnswerPairs"]==100
 assert c["pastoralHistoricalHolds"]==30
 assert c["sourceTranslationReview"]==57
@@ -42,6 +44,15 @@ for r in source["records"]:
     assert re.fullmatch("[0-9a-f]{64}",r["witnessQuestionFingerprintSha256"])
     assert re.fullmatch("[0-9a-f]{64}",r["witnessAnswerFingerprintSha256"])
     assert r["italianAnswerLocated"] is True
+    assert r["sourceQid"] in r["allOriginalSourceQuestionIds"]
+    assert r["allOriginalSourceQuestionIds"]==known[r["turnId"]]["source1905QuestionIds"]
+    assert len(r["supplementarySourceWitnesses"])==len(r["allOriginalSourceQuestionIds"])-1
+    assert r["multiSourceEditorialAnswerHold"]==(len(r["supplementarySourceWitnesses"])>0)
+    for sup in r["supplementarySourceWitnesses"]:
+        assert sup["sourceQid"] in r["allOriginalSourceQuestionIds"]
+        assert sup["sourceQid"]!=r["sourceQid"]
+        assert sup["italianQuestion"] and sup["italianAnswer"]
+        assert re.fullmatch("[0-9a-f]{64}",sup["answerFingerprintSha256"])
     assert r["original1905PrintedQuestionNumber"] is False
     assert r["bilingualTranslationCertified"] is False
     assert r["printFacsimileCertified"] is False
@@ -68,5 +79,6 @@ print("PASS SPX_P33_100_SOURCE_WITNESSES",json.dumps({
  "normalizedExactQuestions":c["normalizedExactQuestionIdentities"],
  "identityHolds":c["questionIdentityMismatchesOrHolds"],
  "historicalPastoralHolds":30,
+ "multiSourceQuestionHolds":c["multipleSourceReferenceOpeningHolds"],
  "bilingualClaimsApproved":0,"printFacsimileApproved":0,"published":0
 }))
