@@ -111,7 +111,7 @@ footer{padding:20px 0 38px;border-top:1px solid #333b45;font:11px/1.65 system-ui
 <label for="note">Other remarks (quality, iconography, cropping, doubts)</label>
 <textarea id="note" rows="2" placeholder="Optional comments"></textarea>
 </div>
-<div class="nav"><button id="prev">← Previous</button><small id="position">1 / 100</small><button id="next">Next →</button></div>
+<div class="nav"><button id="prev">← Previous</button><small id="position">1 / 383</small><button id="next">Next →</button></div>
 <p class="help">Use ← → to navigate (outside text fields). Review progress is cached locally where permitted; Export JSON is the authoritative backup.</p>
 </section></div></dialog>
 <script>
@@ -239,7 +239,7 @@ document.querySelectorAll("[data-range]").forEach(b=>b.addEventListener("click",
   range=b.dataset.range;
   document.querySelectorAll("[data-range]").forEach(z=>z.setAttribute("aria-pressed",String(z===b)));
   refresh();
-  window.scrollTo({top:0,behavior:"instant"});
+  window.scrollTo(0,0);
 }));
 document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click",()=>{
   filter=b.dataset.filter;
@@ -272,8 +272,9 @@ $("upload").addEventListener("change",async e=>{
  try{
   if(file.size>5000000)throw Error("Review file exceeds size limit");
   const obj=JSON.parse(await file.text());
-  if(obj.schema!=="AO_SACRED_ART_USER_REVIEW_PLACEMENTS_V2"||obj.batch!=="all"||!Array.isArray(obj.decisions)||obj.decisions.length!==383)
-   throw Error("Not an all-383 artwork placement review");
+  const full=(obj.schema==="AO_SACRED_ART_USER_REVIEW_PLACEMENTS_V3"&&obj.batch==="all"&&Array.isArray(obj.decisions)&&obj.decisions.length===383);
+  const prior100=(obj.schema==="AO_SACRED_ART_USER_REVIEW_PLACEMENTS_V2"&&obj.batch===1&&Array.isArray(obj.decisions)&&obj.decisions.length===100);
+  if(!full&&!prior100)throw Error("Expected an all-383 review, or the earlier Batch 01 review of 100");
   const rebuilt={};
   for(const decision of obj.decisions){
     const a=byId.get(decision.artwork_id);
@@ -290,9 +291,9 @@ $("upload").addEventListener("change",async e=>{
        placements:votes,custom:typeof decision.custom_placement_suggestions==="string"?decision.custom_placement_suggestions:"",
        note:typeof decision.notes==="string"?decision.notes:""};
   }
-  if(new Set(obj.decisions.map(d=>d.artwork_id)).size!==383)throw Error("Duplicate artwork in imported review");
-  if(!confirm("Replace your current local decisions with this saved full-383 artwork review?"))return;
-  opinions=clean(rebuilt);save();refresh();alert("Review imported. You can continue where you stopped.");
+  if(new Set(obj.decisions.map(d=>d.artwork_id)).size!==obj.decisions.length)throw Error("Duplicate artwork in imported review");
+  if(!confirm(prior100?"Merge the earlier 100-artwork decisions into this full review?":"Replace your current full-collection review with this saved file?"))return;
+  opinions=clean(prior100?{...opinions,...rebuilt}:rebuilt);save();refresh();alert("Review imported. You can continue where you stopped.");
  }catch(err){alert("Import rejected: "+err.message);}
  finally{e.target.value=""}
 });
