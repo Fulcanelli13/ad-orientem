@@ -1,0 +1,56 @@
+name: B34 read-only 383-artwork physical source and rights proof
+on:
+  push:
+    branches: [research/sacred-art-b34-74-bulk-source-triage-20261024]
+    paths: [.github/workflows/ao-art-b34-readonly-source-audit.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  frozen-source-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b34-74-bulk-source-triage-20261024
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate exact byte inventories, source lineage, all 383 active IDs and unchanged approvals
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          root=Path('data/research')
+          def obj(f):return json.loads((root/f).read_text())
+          def rows(f):
+            with (root/f).open(newline='',encoding='utf-8') as h:return list(csv.DictReader(h))
+          m=obj('sacred-art-b34-383-active-physical-progress.json')
+          a=obj('sacred-art-b34-74-final-physical-and-rights-matrix.json')
+          b=obj('sacred-art-b33-p0-64-complete-research-coverage.json')
+          c=rows('sacred-art-b27-451-physical-crosswalk.csv')
+          f=rows('sacred-art-b34-35-source-results.csv')
+          s=obj('sacred-art-b34-35-source-summary.json')
+          assert len(c)==451 and len(a['rows'])==74 and len(b['rows'])==64 and len(f)==35
+          assert s['source_files_recovered']==35 and s['unrecovered_holds']==0
+          assert s['verified_new_bytes']==199569784 and s['technical_2400_pass']==29
+          assert len({x['downloaded_sha256'] for x in f})==35
+          assert all(x['status']=='EXACT_SOURCE_BYTES_RECOVERED_RESEARCH_ONLY' and
+                     x['editorial_selected']=='NO_NEW_SELECTION' and x['publication_approved']=='NO' for x in f)
+          actualids=set(x['artwork_id'] for x in a['rows']+b['rows'])
+          original={x['artwork_id'] for x in c if x['frozen_decision']!='PERMANENTLY_REJECTED' and int(x['verified_distinct_sha256'])>0}
+          assert len(original)==245 and len(actualids)==138 and original.isdisjoint(actualids)
+          assert len(original|actualids)==383
+          assert m['active_with_some_evidenced_physical_source']==343
+          assert m['active_without_evidenced_physical_source']==40
+          assert m['newly_acquired_images_B29_B34']==96
+          assert m['new_image_bytes_B29_B34']==560927219
+          assert m['composition']=={'B27_sha_linked':245,'B29_B33_P0_source_present':63,
+                                  'B34_legacy_physical_source_present':35,'remaining_P0':1,
+                                  'remaining_legacy44':9,'remaining_image_less':30}
+          assert not m['canonical_master_modified'] and m['publication_approvals_created']==0
+          assert not a['canonical_451_modified'] and a['publication_approvals_created']==0
+          print('B34 READ-ONLY PASS: 343/383 research source coverage; 40 remain, no approvals')
+          PY
