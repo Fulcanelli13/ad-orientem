@@ -40,16 +40,22 @@ try{
    await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==="home");
  };
  const openFamilyDoor=async family=>{
-   // Route-parity traversal is not a disclosure-interaction test. Opening
-   // idempotently avoids toggling an already-open details closed on re-entry.
-   if(family!=="daily")await page.locator("#aoPray435930 .aoP435930QuietMore").evaluate(el=>{el.open=true});
-   const launcher=page.locator('#aoPray435930.open [data-p435930-family="'+family+'"]');
-   await launcher.waitFor({state:"visible"});
-   // This is a route-owner parity audit, not the separate touch-gesture E2E.
-   // The canonical controller synchronously replaces the tapped DOM button,
-   // making Playwright's actionability retry target disappear after success.
-   // Deliver exactly one native click, then assert the owner in the caller.
-   await launcher.evaluate(el=>el.click());
+   // Audit exact route owners in one DOM event turn. The prayer controller
+   // synchronously replaces its own category launcher on activation; awaiting
+   // actionability of that launcher allows a re-render to close its disclosure.
+   // Separate mobile tests cover real pointer access to the disclosure.
+   const activation=await page.evaluate(family=>{
+     const root=document.querySelector("#aoPray435930.open");
+     const details=root?.querySelector(".aoP435930QuietMore");
+     if(family!=="daily"&&details)details.open=true;
+     const button=[...root?.querySelectorAll("[data-p435930-family]")||[]]
+       .find(node=>node.dataset.p435930Family===family);
+     if(!button)return {activated:false,reason:"missing family door"};
+     if(family!=="daily"&&!details?.open)return {activated:false,reason:"disclosure refused open"};
+     button.click();
+     return {activated:true};
+   },family);
+   assert.equal(activation.activated,true,"Prayer family launcher not available: "+family+" "+JSON.stringify(activation));
  };
  const identify=async()=>page.evaluate(()=>{
    if(document.querySelector("#aoPrayerBookRoot.open .pbShell"))
