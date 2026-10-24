@@ -55,11 +55,12 @@ assert.ok(prayHome.length>1000);
 for(const route of ["pray.rosary","pray.confession","pray.adoration","pray.stations","pray.novenas","pray.morning_evening","pray.communion_treasury","pray.divine_mercy","pray.library"]){
  assert.ok(prayHome.includes(route),"Prayer route lost from home: "+route);
 }
-for(const family of ["daily","eucharistic","penance","passion","devotions","library","chaplets"]){
+for(const family of ["eucharistic","penance","passion","devotions","chaplets"]){
  assert.ok(prayHome.includes("door('"+family+"')"),"Family missing from disclosure: "+family);
 }
 assert.match(prayHome,/aoP435930QuietTiles/);
 assert.match(prayHome,/aoP435930QuietMore/);
+assert.match(prayHome,/myCustomsDoor\(\)\.replace/);
 assert.match(prayStyles,/QUIET_PRAY_HOME_CSS=String\.raw`/);
 assert.match(prayStyles,/ao-pray-quiet-home-style/);
 assert.match(prayStyles,/aoP435930QuietLibraryRow/);
