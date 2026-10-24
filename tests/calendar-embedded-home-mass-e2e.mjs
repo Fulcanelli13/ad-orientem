@@ -61,7 +61,9 @@ try{
     }
   }
   await page.screenshot({path:resolve(shots,"today-"+width+".png"),fullPage:true});
-  await page.locator('.aoTodayV2Tabs [data-home-calendar-view="year"]').click();
+  // Normal Today intentionally hides the duplicate Day/Month/Year tab row.
+  // The liturgical-season link is the visible entry to the preserved year wheel.
+  await page.locator('.aoTodayV2SeasonMicro[data-home-calendar-view="year"]').click();
   await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="year"]',{state:"visible",timeout:45000});
   assert.equal(await page.locator('.aoTodayV2CalendarInline .aoClockDial').count(),1,
     "Home Liturgical Year must show the interactive Clock");
