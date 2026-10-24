@@ -693,35 +693,29 @@ const atlasVm=buildExploreViewModel({
   filters:{atlasArea:"geo:country:FR",atlasPeriod:"ANY",atlasCalendar:"NOVENA"},
 });
 const atlasHtml=renderExploreToString(atlasVm);
-assert.match(atlasHtml,/Customs Atlas/);
-assert.match(atlasHtml,/data-atlas-filter="atlasFamily"/);
-assert.match(atlasHtml,/data-atlas-filter="atlasArea"/);
-assert.match(atlasHtml,/data-atlas-filter="atlasPeriod"/);
-assert.match(atlasHtml,/data-atlas-filter="atlasCalendar"/);
-assert.match(atlasHtml,/data-atlas-clear/);
-assert.match(atlasHtml,/value="geo:country:FR" selected/);
-assert.match(atlasHtml,/value="NOVENA" selected/);
-assert.match(atlasHtml,/Periods and calendar hints are source descriptions/);
-assert.match(atlasHtml,/data-find-view="map"/);
+// The 1962 Calendar is the public Customs owner. Keep a legacy exact-record reader,
+ // but no geographic Atlas controls or public Explore nav destination.
+assert.match(atlasHtml,/Customs belong in the Calendar/);
+assert.match(atlasHtml,/data-explore-customs-calendar/);
+assert.doesNotMatch(atlasHtml,/data-atlas-filter=/);
+assert.doesNotMatch(atlasHtml,/data-atlas-clear/);
+assert.doesNotMatch(atlasHtml,/data-find-filter-value="traditions"/);
 const atlasFrHtml=renderExploreToString(buildExploreViewModel({
   language:"fr",items:atlasFrance,lens:"traditions",counts:projection.counts,
   atlasFacets,filters:{atlasArea:"ANY",atlasPeriod:"ANY",atlasCalendar:"ANY"},view:"list",
 }));
-assert.match(atlasFrHtml,/Atlas des coutumes/);
-assert.match(atlasFrHtml,/Thème/);
-assert.match(atlasFrHtml,/Géographie/);
-assert.match(atlasFrHtml,/Période historique/);
-assert.match(atlasFrHtml,/Contexte calendaire/);
-assert.doesNotMatch(shrineHtml,/data-atlas-filter=/,"Customs Atlas controls must remain confined to Traditions");
+assert.match(atlasFrHtml,/Les coutumes se découvrent dans le calendrier/);
+assert.match(atlasFrHtml,/Lire les coutumes au fil de l’année/);
+assert.doesNotMatch(atlasFrHtml,/Atlas des coutumes/);
+assert.doesNotMatch(shrineHtml,/data-atlas-filter=/);
 assert.match(browserSource,/filterCustomsAtlasItems/);
 assert.match(browserSource,/addEventListener\?\.\("change",onChange,true\)/);
 assert.match(browserSource,/options\?\.view==="map"/);
 assert.doesNotMatch(homeSource,/data-home-customs-atlas/,"The Home route must no longer invite users into a geographical Customs Atlas");
 assert.match(homeSource,/data-home-calendar data-home-calendar-view="day"/,"Home traditions must use the existing Calendar");
 const homeOwnerSource=readFileSync("src/home/browser-entry.js","utf8");
-// Legacy route compatibility remains until Explore itself is separately retired.
-assert.match(homeOwnerSource,/data-home-customs-atlas/);
-assert.match(homeOwnerSource,/lens:"heritage",view:"map",categories:\["traditions"\],query:""/,"Home Customs entry should open map with the traditions filter");
+assert.doesNotMatch(homeOwnerSource,/data-home-customs-atlas|openCustomsAtlas/);
+assert.match(homeOwnerSource,/id==="find.traditions"\)return navigateHomeShortcut\("calendar"/,"old bookmarks must route to Calendar");
 
 
 // Unified map is derived from source-owned Place IDs, not from coordinate proximity.
@@ -753,16 +747,18 @@ assert.equal(heritageCustoms.length,practiceCount,"all canonical practices must 
 assert.equal(heritageCustomCards(practiceBrowse,{enabled:false}).length,0);
 const heritageVm=buildExploreViewModel({
   language:"en",lens:"heritage",view:"map",items:heritagePlaces,
-  filters:{query:"",heritageCategories:[...HERITAGE_CATEGORIES],highlightCustomId:null},
-  customCards:heritageCustoms,counts:{...projection.counts,heritage:heritagePlaces.length},
+  filters:{query:"",heritageCategories:["shrines","relics","pilgrimages","apparitions"],highlightCustomId:null},
+  customCards:[],counts:{...projection.counts,heritage:heritagePlaces.length},
 });
 const heritageHtml=renderExploreToString(heritageVm);
 assert.match(heritageHtml,/Sacred places/);
 assert.match(heritageHtml,/data-find-view="map"/);
 assert.match(heritageHtml,/data-heritage-category="ALL"/);
-for(const category of HERITAGE_CATEGORIES)assert.match(heritageHtml,new RegExp('data-heritage-category="'+category+'"'));
-assert.match(heritageHtml,/aoHeritageCustomRail/,"customs need a compact horizontal rail");
-assert.match(heritageHtml,/data-heritage-custom="DEV-006"/,"universal customs must remain visible without pins");
+for(const category of ["shrines","relics","pilgrimages","apparitions"])
+  assert.match(heritageHtml,new RegExp('data-heritage-category="'+category+'"'));
+assert.doesNotMatch(heritageHtml,/data-heritage-category="traditions"|aoHeritageCustomRail/,"geographic Customs browsing was retired");
+assert.doesNotMatch(heritageHtml,/data-find-filter-value="traditions"/,"Explore menus cannot reopen Atlas");
+assert.match(heritageHtml,/data-bible-atlas-open/,"Biblical Atlas remains a separate intact feature");
 assert.doesNotMatch(heritageHtml,/class="aoFindList"/,"map-first Explore must not default to a result list");
 assert.match(heritageHtml,/data-heritage-nearby/,"map-first discovery must support user-requested nearby recentering");
 assert.match(heritageHtml,/aoHeritageMapHint/,"initial screen should explain pin interaction without a long list");
