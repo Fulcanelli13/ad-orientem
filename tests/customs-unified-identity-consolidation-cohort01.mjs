@@ -196,3 +196,60 @@ for(const card of pilot.records){
  assert.equal(card.public_article_approved,false);
 }
 console.log('PASS customs cohort01 30 original source-page identity routes and 5 bilingual Calendar-only draft profiles; 0 approved ids, 0 publications.');
+
+
+// Full 408-group coverage at screening level: 47 older owner candidates + 150 cohort01 + 211 cohort02.
+const cohort02=load('customs-unified-identity-consolidation-cohort02-211.v1.json');
+assert.equal(cohort02.schema,'AO_CUSTOMS_COHORT02_211_OWNER_UNRESOLVED_SOURCE_LABEL_ACTION_SCREEN_V1');
+assert.equal(cohort02.records.length,211);
+assert.equal(cohort02.summary.newly_screened_groups,211);
+assert.equal(cohort02.summary.screening_covering_all_408_groups,408);
+assert.equal(cohort02.summary.original_source_passages_inspected_in_this_second_cohort,0);
+assert.equal(cohort02.summary.new_approved_canonical_identities,0);
+assert.equal(cohort02.summary.new_calendar_publications,0);
+const screened=new Set(cohort.records.map(r=>r.provisional_group_id));
+let relationCount=0,calendarSignalCount=0;
+const countByBin={};
+for(let i=0;i<cohort02.records.length;i++){
+ const rec=cohort02.records[i];
+ assert.equal(rec.audit_id,'AO-CONSOL-02-'+String(i+1).padStart(3,'0'));
+ assert.ok(allIds.has(rec.provisional_group_id));
+ assert.ok(!priorOwners.has(rec.provisional_group_id));
+ assert.ok(!screened.has(rec.provisional_group_id));
+ assert.ok(rec.working_action_label.length>=8);
+ assert.ok(rec.source_observation_ids.length>=1);
+ assert.equal(rec.first_witness_exact_passage_verified_this_batch,false);
+ assert.equal(rec.independent_secondary_witness_verified_this_batch,false);
+ assert.equal(rec.existing_owner_confirmed,false);
+ assert.equal(rec.distinct_identity_approved,false);
+ assert.equal(rec.calendar_date_rule_approved,false);
+ assert.equal(rec.calendar_publication_approved,false);
+ assert.equal(rec.publication_state,'RESEARCH_ONLY');
+ for(const cmp of rec.action_level_manual_comparators){
+   assert.ok(typeof cmp.explanation==='string'&&cmp.explanation.length>35);
+   assert.ok(allIds.has(cmp.compare_to)||audit.records.some(m=>m.custom_id===cmp.compare_to)||cmp.compare_to.startsWith('OTHER_MODULE_'),'Unknown candidate comparator: '+cmp.compare_to);
+   relationCount++;
+ }
+ calendarSignalCount+=Number(rec.calendar_topic_label_signals_only.length>0);
+ countByBin[rec.preliminary_scope_bin]=(countByBin[rec.preliminary_scope_bin]||0)+1;
+ screened.add(rec.provisional_group_id);
+}
+assert.equal(screened.size,361);
+assert.equal(new Set([...screened,...priorOwners]).size,408);
+assert.equal(relationCount,cohort02.summary.action_level_comparison_hypotheses);
+assert.equal(calendarSignalCount,cohort02.summary.groups_with_calendar_topic_label_signal);
+assert.deepEqual(countByBin,cohort02.summary.bin_counts);
+assert.equal(cohort02.records.find(x=>x.provisional_group_id==='CAT-WEISER-B-109').action_level_manual_comparators[0].compare_to,'CAT-WEISER-B-083');
+assert.equal(cohort02.records.find(x=>x.provisional_group_id==='CAT-WEISER-A-090').action_level_manual_comparators[0].compare_to,'CAT-WEISER-A-089');
+// Verified outside sources may upgrade a narrowly defined practice but cannot approve its publication.
+const pilotSeises=pilot.records.find(x=>x.group_id==='CAT-WEISER-B-083');
+assert.equal(pilotSeises.recommended_identity_disposition,'SINGLE_LOCAL_IDENTITY_MULTI_OCCASION');
+assert.equal(pilotSeises.multi_feast_same_identity_research_lead,'CAT-WEISER-B-109');
+assert.ok(pilotSeises.additional_sources.some(s=>s.url.includes('catedraldesevilla.es')));
+const pilotCandlemasCrib=pilot.records.find(x=>x.group_id==='CAT-WEISER-B-116');
+assert.ok(pilotCandlemasCrib.additional_sources.some(s=>s.url.includes('dioceseofprovidence.org')));
+const pilotJoseph=pilot.records.find(x=>x.group_id==='CAT-WEISER-A-028');
+assert.equal(pilotJoseph.current_approval,'FIRST_SOURCE_ONLY');
+assert.equal(pilotJoseph.calendar_link_approved,false);
+assert.equal(pilot.records.every(x=>x.record_status==='EDITORIAL_DRAFT_UNAPPROVED'),true);
+console.log('PASS customs cohort02: 408/408 research groups now screened or owner-linked (47+150+211); 56 comparison hypotheses; zero newly confirmed customs or Calendar releases.');
