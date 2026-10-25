@@ -662,9 +662,19 @@
    "lane": "priest_action",
    "title": "Priest strikes his breast",
    "reviewGroup": "a-breast",
-   "status": "text-only",
-   "decidedBy": "gap-no-approved-art",
-   "assetId": null
+   "status": "locked",
+   "decidedBy": "user-2026-10-25-confirmed-existing-bank-reuse",
+   "assetId": "v46_breast_strike",
+   "userName": "Breast Strike",
+   "lockStatus": "approved",
+   "path": "assets/active/mass-v46/breast_strike.svg",
+   "sha256": "1d6730ca3ee8b2ac289f4db139ada8c614922ac5105a49b395e1d6fd0d314fff",
+   "bytes": 170855,
+   "format": "SVG",
+   "reusesMeaning": "faithful.gesture.strike_breast",
+   "semanticApproval": "BREAST_STRIKE_ANY_ACTOR",
+   "semanticSource": "data/presentation/mass-icon-final-semantic-lexicon-20261020.v1.json",
+   "note": "Approved generic breast-strike gesture. Actual PRIEST actor and strike count remain source-owned; never show as faithful posture."
   },
   {
    "meaningId": "priest.action.indulgentiam",
@@ -1070,11 +1080,6 @@
   }
  ],
  "gaps": [
-  {
-   "meaningId": "priest.action.strike_breast",
-   "title": "Priest strikes his breast (vested)",
-   "where": "Confiteor, Nobis quoque, Agnus Dei, Domine non sum dignus"
-  },
   {
    "meaningId": "priest.action.final_blessing",
    "title": "Final blessing of the people",
