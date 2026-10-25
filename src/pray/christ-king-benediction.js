@@ -6,7 +6,8 @@ export const CHRIST_KING_WITNESSES=Object.freeze({
   "consecrationFrench": "https://www.icrsp.org/Publicationsbis/Revue-2019/01-40.pdf",
   "consecrationEnglish": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=920",
   "royalPraises": "https://www.vatican.va/news_services/liturgy/libretti/2012/20121007.pdf",
-  "sacredHeartLitany": "https://www.preces-latinae.org/thesaurus/Filius.html"
+  "sacredHeartLitany": "https://www.icrsp.org/Litanies-Sacre-Coeur",
+  "christKingOrdo": "https://icrspfrance.fr/ordo.php?d=2026-10-01"
 });
 export const CHRIST_KING_OPTION_DEFAULTS=Object.freeze({procession:true,royalPraises:true,sacredHeartLitany:false,consecration:true});
 export const CHRIST_KING_EXTRA_STAGES=Object.freeze([
