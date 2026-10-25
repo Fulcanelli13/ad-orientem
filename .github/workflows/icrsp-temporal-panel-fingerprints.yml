@@ -34,14 +34,14 @@ jobs:
         run: |
           python tools/icrsp/fingerprint_commentary_bodies.py \
             --inventory data/source-text/icrsp-france-index-discovery.v1.json \
-            --start \${{ matrix.start }} \
-            --end \${{ matrix.end }} \
+            --start ${{ matrix.start }} \
+            --end ${{ matrix.end }} \
             --delay 5.0 \
-            --out icrsp-temporal-fingerprint-\${{ matrix.start }}.json
+            --out icrsp-temporal-fingerprint-${{ matrix.start }}.json
       - uses: actions/upload-artifact@v4
         with:
-          name: icrsp-temporal-fingerprint-\${{ matrix.start }}
-          path: icrsp-temporal-fingerprint-\${{ matrix.start }}.json
+          name: icrsp-temporal-fingerprint-${{ matrix.start }}
+          path: icrsp-temporal-fingerprint-${{ matrix.start }}.json
           if-no-files-found: error
           retention-days: 30
 
