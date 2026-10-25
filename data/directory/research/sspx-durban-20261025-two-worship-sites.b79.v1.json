@@ -1,0 +1,38 @@
+{
+  "schema": "AO_DIRECTORY_RESEARCH_SSPX_DURBAN_SEPARATE_WORSHIP_BUILDINGS_B79_V1",
+  "checked_on": "2026-10-25",
+  "publication_state": "RESEARCH_ONLY_NOT_PUBLIC",
+  "primary_source_url": "https://fsspx.africa/en/our-lady-holy-rosary-church-and-priory-44202",
+  "additional_first_party_news_url": "https://fsspx.africa/en/news/durban-south-africa-new-home-our-lady-holy-rosary-priory-60964",
+  "source_update": "Official SSPX Africa district site identifies Sunday Mass at old 12 Gumtree Avenue chapel and weekday Masses at new 29 Abelia Road priory, during relocation.",
+  "physical_sites": [
+    {
+      "canonical_research_group_id": "RG-B79-B7229BA72FAD",
+      "source_id": "SSPX-B79-DURBAN-GUMTREE-SUNDAY-20261025",
+      "name": "Our Lady of the Holy Rosary Chapel — Berea",
+      "address": "12 Gumtree Avenue, Berea, Durban, South Africa",
+      "liturgical_activity": "SUNDAY_MASS",
+      "owner_claim_time": "Sunday high Mass 08:30",
+      "schedule_state": "UNVERIFIED_SOURCE_ONLY; not copied into verified timetable",
+      "new_research_site": true
+    },
+    {
+      "canonical_research_group_id": "RG-3D36E375FBE7",
+      "source_id": "SSPXMAP:OPE-001486",
+      "name": "Our Lady of the Holy Rosary Priory",
+      "address": "29 Abelia Road, Kloof, Durban, South Africa",
+      "liturgical_activity": "WEEKDAY_MASS",
+      "owner_claim_time": "Check current district page",
+      "schedule_state": "VERIFY_TRANSITION_TIMES",
+      "new_research_site": false
+    }
+  ],
+  "qa": {
+    "distinct_physical_worship_addresses": 2,
+    "b77_preexisting_sites": 1,
+    "new_research_site_admissions": 1,
+    "new_public_place_ids": 0,
+    "new_timetrable_rows": 0,
+    "b79_full_timetrable_rows_unchanged": 4681
+  }
+}
