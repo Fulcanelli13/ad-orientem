@@ -196,11 +196,11 @@ export function installSequentialDevotionalReader({
   });
   let touch=null,lastHorizontalSwipe=0;
   body.addEventListener("touchstart",e=>{
-    if(e.touches.length!==1||e.target.closest("a,input,textarea,select,summary,[contenteditable],[data-ao-devo-no-swipe],button:not([data-p435930-card-flip]):not([data-tp381-flip])")){touch=null;return}
+    if(e.touches.length!==1||e.target.closest("a,input,textarea,select,summary,[contenteditable],[data-ao-devo-no-swipe],button:not([data-p435930-card-flip]):not([data-tp381-flip]):not([data-p435930-flip])")){touch=null;return}
     touch={x:e.touches[0].clientX,y:e.touches[0].clientY,at:Date.now()};
   },{passive:true});
   body.addEventListener("click",e=>{
-    if(Date.now()-lastHorizontalSwipe<450&&e.target.closest("[data-p435930-card-flip],[data-tp381-flip]")){
+    if(Date.now()-lastHorizontalSwipe<450&&e.target.closest("[data-p435930-card-flip],[data-tp381-flip],[data-p435930-flip]")){
       e.preventDefault();e.stopImmediatePropagation();
     }
   },true);
