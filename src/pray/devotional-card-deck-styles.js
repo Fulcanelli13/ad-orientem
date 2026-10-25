@@ -639,7 +639,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 }
 /* Stations already names the episode in the fourteen-stage chapter rail:
    show its actual response and prayer instead of a duplicate numbered title. */
-#aoPray435930 .aoP435930Stations:has(.aoDevoSequenceTimeline) .aoDevoCardHead{
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="stations"] .aoP435930Stations .aoDevoCardHead{
  display:none!important;
 }
 #aoPray435930 .aoP435930Stations .aoP435930PrayerOptions{
