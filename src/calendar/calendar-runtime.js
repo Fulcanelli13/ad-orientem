@@ -25,6 +25,7 @@ import { canonical1962Commemorations } from "./traditional-day-adjudication.js";
 import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, calendarTransferRubricalClaimsForDay, calendarObservedCommemorationClaimsForDay, calendarInseparableApostlesClaimForDay, calendarOmittedFeastClaimForDay } from "./rubrical-claim-citations.js";
 import { observedCommemorationLabels } from "./observed-commemoration-labels.js";
 import { renderSecondarySaintSection, SANCTORAL_DAY_CSS } from "./sanctoral-day-ui.js";
+import { approvedClassIHeroMarkup, approvedClassIHeroCss } from "./approved-class-i-heroes-2026.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -889,6 +890,7 @@ function daySurface(selected,r){
     <section class="aoCalV2Hero" style="--ao-cal-liturgical:${esc(liturgicalAccent(r))}">
       <small class="aoCalV2Eyebrow">${esc(L("CALENDARIUM ROMANUM · 1962","CALENDARIUM ROMANUM · 1962"))}</small>
       <h2>${esc(titleOf(r))}</h2>
+      ${approvedClassIHeroMarkup(selected, r?.day?.main?.id, fr())}
       <div class="aoCalIdentityMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}${profileOf(r)?`<span>${esc(profileOf(r))}</span>`:""}</div>
       ${cm.length?`<section class="aoCalV2Commemorations" aria-label="${esc(L("Observed 1962 Mass commemorations","Commémorations à la messe de 1962"))}"><small>${esc(L("1962 MASS · ALSO COMMEMORATED","MESSE DE 1962 · COMMÉMORATIONS"))}</small><h3>${esc(L("Commemorations","Commémorations"))}</h3>${cm.map(x=>`<p><i aria-hidden="true"></i><span>${esc(x)}</span></p>`).join("")}</section>`:""}
       ${calendarScriptureControls(selected,r)}
@@ -1251,6 +1253,7 @@ function css(){
 /* Body-copy readability floor; do not enlarge dates, hierarchy captions or rubrical labels. */
 .aoCalV2Saint p,.aoCalMonthIndexHead p,.aoCalV2ComingGrid span,.aoCalV2Commemorations span,.aoCalPilgrimagePlaces>p,.aoCalPracticeIntro,.aoCalV2RingCore span{font-size:max(14px,.875rem);line-height:1.5}
 ${liturgicalClockCss}
+${approvedClassIHeroCss}
 #${ROOT_ID} .aoClock{--bg:var(--ao-bg-canvas,#080c12);--text:var(--ao-text-primary,#e9e4d9);--muted:var(--ao-text-muted,#a6a198);--liturgical:var(--ao-liturgical-accent,#c7ae6d);--liturgical-border:var(--ao-rule,rgba(226,214,190,.15))}
 #${ROOT_ID} .aoClock+.aoCalV2YearHero{margin-top:24px;padding-top:18px;border-top:1px solid var(--ao-rule,rgba(226,214,190,.15))}
 ${hybridMonthCss()}
