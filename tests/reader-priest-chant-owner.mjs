@@ -17,6 +17,24 @@ const laterChoirCues=[
  ...Array.from({length:15},(_,i)=>"AO.SM.C"+String(91+i).padStart(4,"0")),
 ];
 assert.equal(new Set(laterChoirCues).size,30);
+// The 1962 source concordance is not itself executable timing or user art.
+const witness=load("mass/icksp-1962-gloria-credo-priest-schola-b02.v1.json");
+assert.equal(witness.schema,"ao-icksp-1962-gloria-credo-priest-schola-concordance-b02-v1");
+assert.equal(witness.rubrics.length,12);
+assert.equal(witness.counts.alreadyInGestureMatrix,10);
+assert.equal(witness.counts.pendingSourceGestureRecord,2);
+assert.deepEqual(witness.rubrics.filter(r=>!r.gestureMatrixId).map(r=>r.cueId),
+ ["AO.SM.C0054","AO.SM.C0056"],"B02 contains unreviewed/extraneous gesture gaps");
+for(const rec of witness.rubrics){
+ assert.equal(corpusById.get(rec.cueId)?.clock,"SCHOLA_PUBLIC",
+   rec.cueId+" donor/source clock changed without adjudication");
+ const rows=matrix.items.filter(x=>x.cueId===rec.cueId&&x.actor==="PRIEST");
+ assert.equal(rec.gestureMatrixId,rows[0]?.id??null);
+ assert.equal(rec.runtimePromotion,"NOT_IN_THIS_BATCH",
+   "Research witness may not create automatic priest gesture clocks");
+}
+assert.deepEqual(Object.keys(witness.guardContract.publicScholaContinuations),
+ ["gloria","credo"]);
 for(const cue of laterChoirCues)
  assert.equal(corpusById.get(cue)?.clock,"SCHOLA_PUBLIC",cue+": unexpected donor clock");
 assert.equal(corpusById.get("AO.SM.C0054")?.clock,"SCHOLA_PUBLIC");
