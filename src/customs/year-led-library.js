@@ -21,7 +21,8 @@ export const CUSTOMS_YEAR_LIBRARY_SECTIONS=Object.freeze([
       "XMAS-001",
       "BLSS-003",
       "EPIP-001",
-      "EPIP-002,"EPIP-003"
+      "EPIP-002",
+      "EPIP-003"
     ]
   },
   {
