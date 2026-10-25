@@ -1,0 +1,165 @@
+{
+  "schema": "AO_TLM_B86_FIRST_PARTY_POLAND_58_CASE_TRIAGE_9_G0_V1",
+  "date": "2026-10-25",
+  "research_only": true,
+  "baseline": {
+    "b84_sites": 2584,
+    "b84_historical_canonical_groups": 2587,
+    "b84_source_rows": 2690,
+    "b84_mass_rows": 4681,
+    "b84_inherited_verified": 3347
+  },
+  "dependencies": {
+    "B84": "https://github.com/Fulcanelli13/ad-orientem/pull/1691",
+    "B85": "https://github.com/Fulcanelli13/ad-orientem/pull/1695"
+  },
+  "triage": {
+    "B85_weak_or_unmatched_source_entries": 58,
+    "source_backed_G0_from_queue": 8,
+    "unresolved_retained": 50,
+    "supplementary_Cieszyn_from_same_first_party_organizer": 1
+  },
+  "sources": {
+    "dated_owner_october_2026": "https://tridentina-bielsko.blogspot.com/2026/10/",
+    "Zamosc_official_1962_community": "https://diecezja.zamojskolubaczowska.pl/ruchy-i-stowarzyszenia/srodowisko-tradycji-lacinskiej",
+    "Zamosc_mass_page": "https://www.katarzynazamosc.pl/kategorie/msze_swiete",
+    "Tarnow_1962_community": "https://trydencka.tarnow.pl/kontakt",
+    "Lomza_mass_page": "https://bozecialo.lomza.pl/pg_info_msze.php",
+    "Wyszkow_2026_site": "https://tridentina-wyszkow.blogspot.com/p/terminy-mszy-swietej.html"
+  },
+  "new_G0": [
+    {
+      "upstream_id": "B85-013",
+      "group_id": "RG-B86-E6B4C6B92E9C",
+      "name": "Kaplica Matki Bożej Częstochowskiej",
+      "city": "Bielsko-Biała",
+      "address": "ul. Tuwima 62",
+      "source_url": "https://tridentina-bielsko.blogspot.com/2026/10/",
+      "publication_state": "G0_RESEARCH_NOT_PUBLIC",
+      "schedule_state": "UNVERIFIED_FROM_DISCOVERY",
+      "geo_state": "EXACT_PIN_PENDING"
+    },
+    {
+      "upstream_id": "B86-EXTRA-CIESZYN",
+      "group_id": "RG-B86-50F7B85ABDFD",
+      "name": "Kościół Bonifratrów Wniebowzięcia NMP",
+      "city": "Cieszyn",
+      "address": "pl. ks. Józefa Londzina 1",
+      "source_url": "https://tridentina-bielsko.blogspot.com/2026/10/",
+      "publication_state": "G0_RESEARCH_NOT_PUBLIC",
+      "schedule_state": "UNVERIFIED_FROM_DISCOVERY",
+      "geo_state": "EXACT_PIN_PENDING"
+    },
+    {
+      "upstream_id": "B85-021",
+      "group_id": "RG-B86-A160578F09B7",
+      "name": "Kościół św. Jana Kantego",
+      "city": "Kęty",
+      "address": "ul. Adama Mickiewicza 2 (not parish office at 4)",
+      "source_url": "https://parafiakety.com.pl/",
+      "publication_state": "G0_RESEARCH_NOT_PUBLIC",
+      "schedule_state": "UNVERIFIED_FROM_DISCOVERY",
+      "geo_state": "EXACT_PIN_PENDING"
+    },
+    {
+      "upstream_id": "B85-044",
+      "group_id": "RG-B86-EFDAD29E61C4",
+      "name": "Kościół św. Marka",
+      "city": "Żywiec",
+      "address": "ul. Henryka Sienkiewicza; number unverified",
+      "source_url": "https://parafiazywiecka.net/parafia/koscioly/kosciol-pw-sw-marka",
+      "publication_state": "G0_RESEARCH_NOT_PUBLIC",
+      "schedule_state": "UNVERIFIED_FROM_DISCOVERY",
+      "geo_state": "EXACT_PIN_PENDING"
+    },
+    {
+      "upstream_id": "B85-014",
+      "group_id": "RG-B86-AA00CC6B1C9A",
+      "name": "Kaplica Matki Bożej Fatimskiej",
+      "city": "Oświęcim",
+      "address": "pl. św. Maksymiliana Męczennika 2",
+      "source_url": "https://diecezja.bielsko.pl/parafie/swietego-maksymiliana-meczennika-oswiecim/",
+      "publication_state": "G0_RESEARCH_NOT_PUBLIC",
+      "schedule_state": "UNVERIFIED_FROM_DISCOVERY",
+      "geo_state": "EXACT_PIN_PENDING"
+    },
+    {
+      "upstream_id": "B85-052",
+      "group_id": "RG-B86-C6DA0CF689A8",
+      "name": "Kościół rektoralny św. Katarzyny",
+      "city": "Zamość",
+      "address": "Plac Jana Jaroszewicza 1 (rectorate Ormiańska 11/2 is not church)",
+      "source_url": "https://www.katarzynazamosc.pl/kategorie/kontakt",
+      "publication_state": "G0_RESEARCH_NOT_PUBLIC",
+      "schedule_state": "UNVERIFIED_FROM_DISCOVERY",
+      "geo_state": "EXACT_PIN_PENDING"
+    },
+    {
+      "upstream_id": "B85-029",
+      "group_id": "RG-B86-EF50DD591510",
+      "name": "Kościół Akademicki św. Józefa",
+      "city": "Tarnów",
+      "address": "ul. Józefa Dwernickiego 1",
+      "source_url": "https://trydencka.tarnow.pl/kontakt",
+      "publication_state": "G0_RESEARCH_NOT_PUBLIC",
+      "schedule_state": "UNVERIFIED_FROM_DISCOVERY",
+      "geo_state": "EXACT_PIN_PENDING"
+    },
+    {
+      "upstream_id": "B85-031",
+      "group_id": "RG-B86-4E1A32EC1D40",
+      "name": "Kościół Bożego Ciała / interior Lady Chapel",
+      "city": "Łomża",
+      "address": "ul. Przykoszarowa 26",
+      "source_url": "https://bozecialo.lomza.pl/pg_info_msze.php",
+      "publication_state": "G0_RESEARCH_NOT_PUBLIC",
+      "schedule_state": "UNVERIFIED_FROM_DISCOVERY",
+      "geo_state": "EXACT_PIN_PENDING"
+    },
+    {
+      "upstream_id": "B85-076",
+      "group_id": "RG-B86-6CF846FD0613",
+      "name": "Sanktuarium Świętej Rodziny",
+      "city": "Wyszków",
+      "address": "ul. gen. Władysława Sikorskiego 40",
+      "source_url": "https://tridentina-wyszkow.blogspot.com/p/terminy-mszy-swietej.html",
+      "publication_state": "G0_RESEARCH_NOT_PUBLIC",
+      "schedule_state": "UNVERIFIED_FROM_DISCOVERY",
+      "geo_state": "EXACT_PIN_PENDING"
+    }
+  ],
+  "projected_research_counts": {
+    "distinct_site_groups": 2595,
+    "historical_canonical_ids": 2598,
+    "venue_source_rows": 2701,
+    "original_mass_rows": 4681,
+    "inherited_verified_mass_rows": 3347,
+    "verified_schedule_admissions": 0,
+    "public_map_admissions": 0
+  },
+  "identity_notes": [
+    "Kety church Mickiewicza 2 vs parish office Mickiewicza 4; correct building location matters",
+    "Zamosc church Plac Jana Jaroszewicza 1 vs rectorate Ormianska 11/2",
+    "Oswiecim chapel is on St Maximilian parish campus; do not create two map pins for same building or campus automatically",
+    "Lomza parish church vs interior Lady Chapel is one physical site unless separate entrance/building proven",
+    "Wyszkow sanctuary is not B84 Holy Family chapel in Jozefow",
+    "No house number supplied by owner for Zywiec St Mark, verify pin before release"
+  ],
+  "readback": {
+    "B84_original_sheets": 51,
+    "B86_projected_sheets": 55,
+    "B84_original_sheets_unchanged_except_three_append_only_registers": true,
+    "all_4681_timetable_rows_preserved": true
+  },
+  "external_review_artifacts": [
+    {
+      "filename": "Ad_Orientem_B86_58_Lead_Adjudication_9_Polish_Sites_2026-10-25.xlsx",
+      "sha256": "ba478092f892b02edc2806719c6383e6ca1358d00a47877794c1da3d2497e38c"
+    },
+    {
+      "filename": "Ad_Orientem_B86_Research_Projection_2595_Sites_2026-10-25.zip",
+      "sha256": "2bfa483bb587be7f4d28a2f237a0b12b64abbcfd03e07fe544e2db816fd7a17d"
+    }
+  ],
+  "delivery_boundary": "B86 ZIP is a 55-sheet-equivalent research-data projection; not an XLSX production master and not merged into the GitHub main branch. No timetable certification or public map promotion."
+}
