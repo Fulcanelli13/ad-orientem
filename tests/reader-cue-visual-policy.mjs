@@ -33,7 +33,7 @@ assert.ok(actions.some(x=>x.cueId==="AO.SM.C0204"&&x.label==="MINOR ELEVATION"))
 assert.ok(actions.some(x=>x.cueId==="AO.SM.C0242"&&x.label==="SHOWS SACRED HOST"));
 for(const guard of [
  "function syncRailIconSurfaces(root)",'item.dataset.iconVisible=String(visual)',
- "function syncIconlessSourceRubric(root,current,mode,iconResolver,form)",
+ "function syncIconlessSourceRubric(root,current,mode,iconResolver,form,language)",
  'note.dataset.sourceCueId=cueId','note.dataset.observedNow="false"',
  "syncIconlessSourceRubric(root,current,mode,iconResolver",
  'node.dataset.cueId===cueId',
