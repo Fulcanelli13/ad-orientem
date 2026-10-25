@@ -2646,6 +2646,7 @@ export async function mountNativeReaderPreview({
             visibleCard.paragraphs,ready.data?.rubricEvents??null,{
               form:ready.prepared?.session?.resolvedMass?.form,
               language:ready.prepared?.readerPreferences?.language??"en",
+              presentationMode:"MISSAL",
             }),{
             formStateData:ready.formState,
             cueState:ready.cueState,
