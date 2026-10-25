@@ -1,0 +1,331 @@
+{
+  "schema": "AO_TLM_B81_FIRST_PARTY_SITE_ADJUDICATION_20261025_V1",
+  "scope": "RESEARCH_ONLY",
+  "reporting_date": "2026-10-25",
+  "baseline": {
+    "version": "B79",
+    "provisional_distinct_physical_groups": 2575,
+    "canonical_historical_records": 2576,
+    "venue_source_records": 2679,
+    "inherited_timetable_rows": 4681,
+    "inherited_verified_timetable_rows": 3347
+  },
+  "screened_upstream": {
+    "batch": "B80",
+    "first_party_directory_entries": 116,
+    "exceptions_reviewed": 30
+  },
+  "results": {
+    "existing_site_or_source_cases_reconciled": 16,
+    "unlocated_identity_holds": 11,
+    "source_conflict_holds": 2,
+    "new_physical_worship_site_research_leads": 1,
+    "new_master_site_admissions": 0,
+    "new_verified_schedules": 0,
+    "public_map_changes": 0
+  },
+  "decisions": [
+    {
+      "entry_id": "FSSP-CA-006",
+      "decision": "MERGE_THREE_SAME_BUILDING_IDS",
+      "existing_group_ids": "RG-FB8FE21E0732;RG-570BDEDA273D;RG-3EFF2C4A33C0",
+      "conclusion": "Saint-Irénée church 560 Atwater; 3030 Delisle in other owner directory, function unresolved",
+      "source_url": "https://st-irenee.org/a-propos-de-nous/?lang=fr",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-CA-008",
+      "decision": "UPDATE_EXISTING_PHYSICAL_ADDRESS",
+      "existing_group_ids": "RG-91DED12A8EBD",
+      "conclusion": "535 8th St East is worship site; 238 4th St East is rectory/mailing address; 301 Avenue Y S in B79 is inaccurate",
+      "source_url": "https://saskatoonlatinmass.com/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "IBP-AU-033",
+      "decision": "EXISTING_SITE_ALIAS",
+      "existing_group_ids": "RG-8DF43C14A584",
+      "conclusion": "Launceston apostolate at existing 59 Main St Hadspen",
+      "source_url": "https://tasmania.ibpaustralia.org/tasmania/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "IBP-AU-034",
+      "decision": "CITY_ONLY_HOLD",
+      "existing_group_ids": "",
+      "conclusion": "Sydney IBP apostolate not equivalent to any FSSP/diocesan site without a building-specific source",
+      "source_url": "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "IBP-BR-027",
+      "decision": "EXISTING_SITE_ALIAS",
+      "existing_group_ids": "RG-B65-F58D1C8B0693",
+      "conclusion": "IBP Florianopolis existing Asilo Irmão Joaquim chapel",
+      "source_url": "https://ibpamericalatina.org/casa/florianopolis/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "IBP-BR-026",
+      "decision": "CITY_ONLY_HOLD",
+      "existing_group_ids": "",
+      "conclusion": "Sapiranga physical church unconfirmed",
+      "source_url": "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "IBP-BR-025",
+      "decision": "SECONDARY_BUILDING_LEAD_HOLD",
+      "existing_group_ids": "",
+      "conclusion": "Toledo: secondary source names Capela Nossa Senhora do Rosário, Estrada da Usina, but official building-specific use not confirmed",
+      "source_url": "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "IBP-CA-031",
+      "decision": "MATCH_TWO_EXISTING_PHYSICAL_SITES",
+      "existing_group_ids": "RG-21EC99F9A0F9;RG-2C256D75AC91",
+      "conclusion": "Moncton weekend Notre-Dame-de-Grâce 854 Mountain Rd, weekday Saint Augustine 113 Norwood Ave; weekday timetable limited to 8 July–1 Sep 2026",
+      "source_url": "https://monctontlms.org/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-CA-004",
+      "decision": "RECOVER_FALSE_CITY_MISS",
+      "existing_group_ids": "RG-B96320D65CE9",
+      "conclusion": "Ottawa Saint Clement already in B79, address 528 Old St Patrick Street",
+      "source_url": "https://www.fssp.ca/apostolates",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "IBP-CO-029",
+      "decision": "CITY_ONLY_HOLD",
+      "existing_group_ids": "",
+      "conclusion": "Paipa physical site not confirmed",
+      "source_url": "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "IBP-FR-009",
+      "decision": "EXISTING_SITE_ALIAS",
+      "existing_group_ids": "RG-5342068F2AA7",
+      "conclusion": "Acy was missed by short city token screen; current record exists",
+      "source_url": "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-US-034",
+      "decision": "CITY_DIFFERENT_OPERATOR_HOLD",
+      "existing_group_ids": "RG-DF0447B2F633",
+      "conclusion": "Dayton existing group not proven same as FSSP venue",
+      "source_url": "https://fssp.com/locations-list/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-US-040",
+      "decision": "CITY_DIFFERENT_OPERATOR_HOLD",
+      "existing_group_ids": "RG-3ED1AAC62716",
+      "conclusion": "Harrisburg existing group not proven same as FSSP venue",
+      "source_url": "https://fssp.com/locations-list/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-US-026",
+      "decision": "CITY_ONLY_HOLD",
+      "existing_group_ids": "",
+      "conclusion": "Lexington FSSP city without building address",
+      "source_url": "https://fssp.com/locations-list/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-US-001",
+      "decision": "CITY_ONLY_HOLD",
+      "existing_group_ids": "",
+      "conclusion": "Little Rock FSSP city without building address",
+      "source_url": "https://fssp.com/locations-list/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-US-036",
+      "decision": "CITY_ONLY_HOLD",
+      "existing_group_ids": "",
+      "conclusion": "Oklahoma City FSSP city without building address",
+      "source_url": "https://fssp.com/locations-list/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-US-015",
+      "decision": "CITY_ONLY_HOLD",
+      "existing_group_ids": "",
+      "conclusion": "Orlando FSSP city without building address",
+      "source_url": "https://fssp.com/locations-list/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-US-033",
+      "decision": "CITY_ONLY_HOLD",
+      "existing_group_ids": "",
+      "conclusion": "Pequannock FSSP city without building address",
+      "source_url": "https://fssp.com/locations-list/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-US-004",
+      "decision": "CITY_DIFFERENT_OPERATOR_HOLD",
+      "existing_group_ids": "RG-86A7E1914773;RG-316E65557831",
+      "conclusion": "Phoenix existing groups do not establish FSSP Mass building",
+      "source_url": "https://fssp.com/locations-list/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-PHYS-014",
+      "decision": "EXISTING_SITE_ALIAS",
+      "existing_group_ids": "RG-E1AB21F23164",
+      "conclusion": "Boondall Nudgee College FSSP worship site exists",
+      "source_url": "https://www.fssp.net/locations",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-PHYS-009",
+      "decision": "EXISTING_SITE_ALIAS",
+      "existing_group_ids": "RG-7402BF6460DC",
+      "conclusion": "Buronga St Michael the Archangel Church exists; owner address Pitman Avenue",
+      "source_url": "https://www.fssp.net/locations",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-PHYS-012",
+      "decision": "EXISTING_SITE_ALIAS",
+      "existing_group_ids": "RG-4CE970898882",
+      "conclusion": "Hikurangi Holy Name of Mary church exists; owner address 18 Valley Road",
+      "source_url": "https://www.fssp.net/locations",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-PHYS-020",
+      "decision": "EXISTING_SITE_MATCH",
+      "existing_group_ids": "",
+      "conclusion": "Naremburn St Leonard church, 43 Donnelly Rd, matches B79 named site; exact ID crosswalk pending",
+      "source_url": "https://www.fssp.net/locations",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-PHYS-004",
+      "decision": "DATED_CURRENT_DIRECTORY_SUPERSEDES_STATIC",
+      "existing_group_ids": "RG-93A3A6C51499;RG-D1974FD3532F",
+      "conclusion": "18 October 2026 Bedford FSSP bulletin: All Saints Sunday; Our Lady of Ransom weekdays; not Christ the King static directory",
+      "source_url": "https://fssp.org.uk/category/bedford/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-PHYS-006",
+      "decision": "EXISTING_SITE_MATCH",
+      "existing_group_ids": "",
+      "conclusion": "Reading St William of York Church existing, presbytery is another address",
+      "source_url": "https://fssp.org.uk/locations/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-PHYS-007",
+      "decision": "EXISTING_SITE_MATCH",
+      "existing_group_ids": "",
+      "conclusion": "Warrington St Mary Shrine existing, priory is not separate Mass church",
+      "source_url": "https://fssp.org.uk/locations/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-PHYS-003",
+      "decision": "CONFLICTING_FIRST_PARTY_LOCATION_HOLD",
+      "existing_group_ids": "RG-C77CFA07C48D",
+      "conclusion": "Waterford: local FSSP Ireland St John Church vs FSSP UK generic Holy Trinity Cathedral",
+      "source_url": "https://fssp.ie/mass-times/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-PHYS-011",
+      "decision": "EXISTING_SITE_MATCH",
+      "existing_group_ids": "",
+      "conclusion": "Ponsonby Saint Paul college chapel existing",
+      "source_url": "https://www.fssp.net/locations",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-PHYS-002",
+      "decision": "NEW_BUILDING_RESEARCH_LEAD_NO_ADMISSION",
+      "existing_group_ids": "",
+      "conclusion": "St Alphonsus Church, Barntown Co Wexford: FSSP UK names it and Diocese of Ferns establishes physical church; TLM timetable not independently certified",
+      "source_url": "https://fssp.org.uk/locations/",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    },
+    {
+      "entry_id": "FSSP-PHYS-013",
+      "decision": "EXISTING_SITE_MATCH",
+      "existing_group_ids": "",
+      "conclusion": "Titirangi Mount St Mary chapel already B79; schedule source assignment still requires validation",
+      "source_url": "https://www.fssp.net/locations",
+      "publication_gate": "RESEARCH_ONLY_NO_SCHEDULE_OR_PUBLIC_PIN_CHANGE"
+    }
+  ],
+  "first_party_crosschecks": [
+    {
+      "purpose": "Barntown host parish physical church",
+      "url": "https://ferns.ie/barntown-glynn/"
+    },
+    {
+      "purpose": "Moncton diocesan church identity",
+      "url": "https://www.diocesemoncton.ca/en/parish/moncton-notre-dame-de-grace"
+    },
+    {
+      "purpose": "Saskatoon host church physical identity",
+      "url": "https://www.stjosephsaskatoon.ca/contact_us.php"
+    },
+    {
+      "purpose": "Canadian FSSP general competing addresses",
+      "url": "https://www.fssp.ca/apostolates"
+    },
+    {
+      "purpose": "Waterford competing FSSP generic directory",
+      "url": "https://fssp.org.uk/locations/"
+    }
+  ],
+  "derived_view_parity": {
+    "missing_from_PHYSICAL_but_in_CANONICAL": [
+      "RG-5982F41E1BEF",
+      "RG-B72-7441A9AFEE69",
+      "RG-B72-77E1820587D7",
+      "RG-B72-A0793D1196A8",
+      "RG-B72-AA0F32A61E7D",
+      "RG-B72-BD22249C1E0A",
+      "RG-B72-C3125D4F28D8",
+      "RG-B72-C3DDC3BDBE27",
+      "RG-B72-CCA76E31DCCC",
+      "RG-B72-ECA381127BD9",
+      "RG-B72-FA193CC91864",
+      "RG-B72-FB8664166420",
+      "RG-B77-0AE5D57F50DB",
+      "RG-B77-7097C32DF9A0",
+      "RG-B77-8874F2F6370F",
+      "RG-B77-99C034E239A2",
+      "RG-B77-AFF55325F37B",
+      "RG-B77-B5A236527B66",
+      "RG-B77-BB1E2269B11C",
+      "RG-B77-D197359100A5",
+      "RG-B77-D8786FB804EA",
+      "RG-B77-E2A7387A85DB",
+      "RG-B77-F01A0F43F58F",
+      "RG-B77-F46376B81282",
+      "RG-B77-F58644AD6231",
+      "RG-B79-B7229BA72FAD"
+    ],
+    "missing_from_CANONICAL_but_in_PHYSICAL": [
+      "RG-B69-6415E91BC4A8",
+      "RG-B69-7B862EC2FE95",
+      "RG-B69-8020AEEEC172",
+      "RG-B69-DE69FB1FBC95",
+      "RG-B69-F55F05975DD6"
+    ],
+    "interpretation": "Derived PHYSICAL view out of sync. Do not mistake 31 set-difference IDs for new or removed sites; 5 legacy B69 rows require historical lineage review; preserve all IDs."
+  },
+  "integrity": "No original historical group IDs or schedule rows changed by this evidence manifest.",
+  "workflow": "Import research-only evidence into next workbook reconciliation after independent frozen-ID parity checks. Do not automatically infer active TLM schedules from listed church, nor promote research sites to public map."
+}
