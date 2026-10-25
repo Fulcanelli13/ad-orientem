@@ -30,7 +30,7 @@ class FingerprintTests(unittest.TestCase):
         self.assertGreater(rows[0]['bodyCharacterCount'],20)
 
     def test_same_content_ignoring_summary_and_title(self):
-        newer=HTML.replace('Dom Guéranger, l\\'Année liturgique',
+        newer=HTML.replace("Dom Guéranger, l'Année liturgique",
                            'Dom Schuster, Liber Sacramentorum')
         self.assertEqual(mod.fingerprint(HTML)[0]['bodyTextSha256'],
                          mod.fingerprint(newer)[0]['bodyTextSha256'])
