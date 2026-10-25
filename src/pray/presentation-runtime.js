@@ -649,10 +649,12 @@ function renderPrayHome(){
    +'<b>'+esc(L(en,fr))+'</b></button>';
  };
  const features=[
+  // Art-directed order: two major devotional frontispieces, followed by four
+  // quieter entrances. All six original source-route owners are unchanged.
   tile('Rosary','Rosaire','pray.rosary','ao-rich-rosary'),
+  tile('Adoration','Adoration','pray.adoration','ao-rich-adoration'),
   door('daily').replace('aoP435930FamilyDoor','aoP435930FamilyDoor aoP435930QuietTile'),
   tile('Confession','Confession','pray.confession','ao-rich-confession'),
-  tile('Adoration','Adoration','pray.adoration','ao-rich-adoration'),
   tile('Stations','Chemin de Croix','pray.stations','ao-rich-stations'),
   tile('Novenas','Neuvaines','pray.novenas','ao-rich-novenas',true),
  ].join('');
