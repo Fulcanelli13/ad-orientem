@@ -173,6 +173,22 @@ try{
  });
  assert.ok(imageCheck.every(item=>item.ok&&item.png),
    "Mass setup icons must resolve to actual PNG assets, not registry-only placeholders: "+JSON.stringify(imageCheck));
+ const layout=await page.evaluate(()=>{
+   const cards=[...document.querySelectorAll(".aoGuidedMassFolio[data-ao-folio-view='overview'] .aoMassFolioQuickRow")];
+   return cards.map(row=>{
+     const icon=row.querySelector(".aoMassFolioChoiceIcon")?.getBoundingClientRect();
+     const text=row.querySelector("span:nth-of-type(2)")?.getBoundingClientRect();
+     const button=row.getBoundingClientRect();
+     const strong=row.querySelector("strong")?.getBoundingClientRect();
+     return {buttonWidth:button.width,textWidth:text?.width||0,titleWidth:strong?.width||0,
+       iconRight:icon?.right||0,textLeft:text?.left||0,textRight:text?.right||0,
+       textColumn:getComputedStyle(row.querySelector("span:nth-of-type(2)")).gridColumnStart};
+   });
+ });
+ assert.ok(layout.length===3&&layout.every(item=>
+   item.textWidth>=item.buttonWidth*.45&&item.iconRight+3<=item.textLeft&&
+   item.textRight<=item.buttonWidth+page.viewportSize().width),
+   "Mass setup text must occupy a full independent column beside its illustration: "+JSON.stringify(layout));
  const firstFold=await page.evaluate(()=>{
   const shell=document.querySelector(".aoGuidedMassFolio[data-ao-folio-view='overview']");
   const duplicate= shell?.querySelector(".aoMassFolioIdentity");
