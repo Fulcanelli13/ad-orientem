@@ -29,7 +29,7 @@ test("image publication is not implied by approval",()=>{
  const previews=APPROVED_CLASS_I_2026.filter(x=>x.image);
  assert.equal(previews.length,8);
  for(const row of previews){
-  assert.match(row.image,/^https:\/\/thumb.wikimedia.org\/wikipedia\/commons\/thumb\//);
+  assert.match(row.image,/^https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\//);
   assert.match(row.imagePublicationStatus,/NOT_OFFLINE_CERTIFIED/);
  }
 });
