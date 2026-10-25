@@ -8,6 +8,9 @@ on:
       - 'data/source-text/icrsp-france-temporal-193-gap-register.v1.json'
       - 'data/source-text/icrsp-france-temporal-189-dedup-verified.v1.json'
       - 'tests/test_icrsp_gap_register_integrity.py'
+      - 'tests/test_icrsp_mass_explorer_owner_parity.py'
+      - 'data/source-text/icrsp-france-mass-explorer-39-owner-parity.v1.json'
+      - 'data/source-text/icrsp-france-mass-moment-author-overlap.v1.json'
   workflow_dispatch:
 
 permissions:
@@ -24,4 +27,6 @@ jobs:
         with:
           python-version: '3.12'
       - name: Validate all source, owner and release-gate contracts
-        run: python -m unittest discover -s tests -p 'test_icrsp_gap_register_integrity.py' -v
+        run: |
+          python -m unittest discover -s tests -p 'test_icrsp_gap_register_integrity.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_mass_explorer_owner_parity.py' -v
