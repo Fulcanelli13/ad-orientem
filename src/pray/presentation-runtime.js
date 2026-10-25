@@ -1,6 +1,7 @@
 import "./confession-path-styles.js";
 import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS } from "./confession-paths.js";
 import "./canonical-data.js";
+import {CHRIST_KING_CONSECRATION, CHRIST_KING_DEFAULT, CHRIST_KING_SOURCES, CHRIST_KING_OPTION_IDS, christKingBenedictionStages} from "./christ-king-benediction.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
 import "./adoration-folio-styles.js";
@@ -189,7 +190,7 @@ let praySessionLanguage=null;
 const isFr=()=>(praySessionLanguage??core()?.language)==='fr';
 const L=(en,fr)=>isFr()?(fr||en):en;
 const lang=()=>isFr()?'fr':'en';
-const P=id=>DATA.prayers?.[id]||null;
+const P=id=>id===CHRIST_KING_CONSECRATION.id?CHRIST_KING_CONSECRATION:(DATA.prayers?.[id]||null);
 const nowIso=()=>new Date().toISOString();
 const DEFAULT_STATE=Object.freeze({
   angelusMode:'auto',angelusHistoricalConclusion:true,angelusGuided:false,
@@ -230,7 +231,7 @@ let rosaryScriptureReturn=null;
 let ROSARY_CHOOSER={method:'ordinary',decades:5,guide:S.rosary.mode==='guided'?'guided':'simple',optionsOpen:false};
 function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,since:''}}
 let CONF=freshConfessionState();
-let BEN={step:0,divinePraises:false};
+let BEN={step:0,divinePraises:false,christKing:{...CHRIST_KING_DEFAULT},specialOptionsOpen:false};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};
 let adorationQuietReturn=null;
 let FF={step:0,intention:false,communion:false};
@@ -1432,9 +1433,38 @@ function renderConfession(){
  const initialProgress=CONF.stage===0?devotionalProgressMarkup({index:0,total:stages.length,language:lang(),unit:'stage'}):'';
  return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${sectionRail}${initialProgress}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${body}${devotionalGuide('confession')}${sources}${navigation}</main>`;
 }
-const BEN_STAGES=[
+const BEN_BASE_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
 ];
+let BEN_STAGES=BEN_BASE_STAGES;
+function setChristKingBenedictionOption(key,checked){
+ const old=BEN_STAGES[BEN.step]?.[0]||'adoration';
+ if(key==='enabled')BEN.christKing.enabled=checked;
+ else if(CHRIST_KING_OPTION_IDS.includes(key))BEN.christKing[key]=checked;
+ else return;
+ BEN_STAGES=christKingBenedictionStages(BEN_BASE_STAGES,BEN.christKing);
+ const next=BEN_STAGES.findIndex(x=>x[0]===old);
+ BEN.step=next<0?1:next;
+ BEN.specialOptionsOpen=true;
+ render();
+}
+function christKingOptionsMarkup(){
+ const selected=!!BEN.christKing.enabled;
+ const options=[
+ ['procession',L('Eucharistic procession','Procession eucharistique')],
+ ['royal','Christus vincit · Laudes Regiæ'],
+ ['litany',L('Litany of the Sacred Heart','Litanies du Sacré-Cœur')],
+ ['consecration',L('Consecration of the human race','Consécration du genre humain')]
+ ];
+ return `<details class="aoP435930PrayerOptions aoP435930BenSpecialOptions" data-ao-ben-special-options ${BEN.specialOptionsOpen?'open':''}>
+ <summary><span>${esc(L('Special celebration · optional','Célébration spéciale · facultatif'))}</span><small>${esc(selected?L('Christ the King','Christ-Roi'):L('Ordinary Benediction','Bénédiction ordinaire'))}</small></summary>
+ <div class="aoP435930PrayerOptionsBody"><p class="aoP435930BenSpecialNote">${esc(L('Select only what the clergy actually use. This sequence follows the church, never imposes an order.','Choisissez seulement les parties réellement suivies par le clergé. Cet ordre accompagne l’office sans le prescrire.'))}</p>
+ <label class="aoP435930Toggle"><input type="checkbox" data-p435930-ben-special="enabled" ${selected?'checked':''}><span><b>${esc(L('Christ the King celebration','Célébration du Christ-Roi'))}</b></span></label>
+ ${selected?options.map(([id,label])=>`<label class="aoP435930Toggle"><input type="checkbox" data-p435930-ben-special="${id}" ${BEN.christKing[id]?'checked':''}><span>${esc(label)}</span></label>`).join(''):''}
+ <p class="aoP435930BenSpecialNote">${esc(L('Consecration belongs to this feast; the procession and Royal Praises vary locally.','La consécration appartient à cette fête ; la procession et les Laudes Regiæ varient selon les usages.'))}</p>
+ <a class="aoP435930SourceLink" target="_blank" rel="noopener noreferrer" href="${CHRIST_KING_SOURCES.encyclical}">Pius XI · Quas primas §28</a></div></details>`;
+}
+
 function benMacroIndex(step){if(step<=0)return 0;if(step===1)return 1;if(step>=6)return 3;return 2}
 function benMacroRail(step){const labels=[L('Exposition','Exposition'),L('Adoration','Adoration'),L('Benediction','Bénédiction'),L('Reposition','Reposition')];return `<div class="aoP435930StageRail aoP435930BenMacroRail">${labels.map((x,i)=>`<span class="${i===benMacroIndex(step)?'active':''}" ${i===benMacroIndex(step)?'aria-current="step"':''}>${esc(x)}</span>`).join('')}</div>`}
 function renderBenediction(){
