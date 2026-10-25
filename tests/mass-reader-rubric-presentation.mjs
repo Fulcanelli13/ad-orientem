@@ -34,6 +34,28 @@ for(const cue of sourceSequences){
   }
  }
 }
+// The new Ritus XII.1 Placeat annotation sits at the EXISTING prayer cue,
+// prior to the EXISTING altar kiss, not at the blessing or an inferred LIVE clock.
+const sungPlaceat=sung.blocks.flatMap(b=>b.units).find(u=>u.cue_id==="AO.SM.C0261");
+assert.ok(sungPlaceat?.latin.startsWith("Pláceat tibi"));
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+ for(const language of ["en","fr"]){
+  const rubrics=mk("AO.SM.C0261",form,language,"TEXT").publishedMissalRubrics;
+  assert.equal(rubrics.length,1,form+"/"+language+" must receive one source-only Placeat rubric");
+  const r=rubrics[0];
+  assert.equal(r.id,"AO.RUB.C0261.01");
+  assert.equal(r.sourceCueId,"AO.SM.C0261");
+  assert.equal(r.actor,"PRIEST");
+  assert.equal(r.observedNow,false);
+  assert.equal(r.sourceId,"MR62_RITUS");
+  assert.equal(r.owner,"PUBLISHED_R17_MISSAL_INLINE");
+  assert.match(r.displayText,language==="fr"?/mains jointes.*voix basse/:/joined hands.*silently/);
+  assert.equal(mk("AO.SM.C0038",form,language,"TEXT").publishedMissalRubrics.length,0,
+    "Oramus te already has a gesture-matrix owner; do not add a duplicate published inline rubric");
+  const next=mk("AO.SM.C0262",form,language,"RUBRIC").publishedMissalRubrics;
+  assert.ok(next.some(x=>x.id==="AO.RUB.C0262.01"),"Existing altar kiss must remain present");
+ }
+}
 for(const cue of ["AO.SM.C0232","AO.SM.C0234"]){
  for(const language of ["en","fr"]){
   const row=mk(cue,"LOW",language,"TEXT");
