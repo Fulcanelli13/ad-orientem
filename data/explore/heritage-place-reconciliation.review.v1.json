@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 457,
+    "places": 463,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 198,
+    "places_without_direct_claim": 204,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -226,7 +226,13 @@
       "place:VU:sacred-heart-cathedral-port-vila",
       "place:WF:cathedrale-assomption-mata-utu",
       "place:WS:immaculate-conception-cathedral-mulivai-apia",
-      "place:ZW:sacred-heart-cathedral-harare"
+      "place:ZW:sacred-heart-cathedral-harare",
+      "place:CZ:basilika-panny-marie-bolestne-bohosudov",
+      "place:CZ:poutni-kostel-jmena-panny-marie-krtiny",
+      "place:FR:basilique-notre-dame-bon-secours-lablachere",
+      "place:FR:basilique-notre-dame-buglose",
+      "place:FR:basilique-notre-dame-marienthal",
+      "place:FR:basilique-notre-dame-lepine"
     ],
     "customs_without_exact_place": [
       {
@@ -5454,6 +5460,42 @@
     {
       "place_id": "place:ZW:sacred-heart-cathedral-harare",
       "display_name": "Sacred Heart Cathedral, Harare",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CZ:basilika-panny-marie-bolestne-bohosudov",
+      "display_name": "Bazilika Panny Marie Bolestné, Bohosudov",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CZ:poutni-kostel-jmena-panny-marie-krtiny",
+      "display_name": "Poutní kostel Jména Panny Marie, Křtiny",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-bon-secours-lablachere",
+      "display_name": "Basilique Notre-Dame-de-Bon-Secours, Lablachère",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-buglose",
+      "display_name": "Basilique Notre-Dame de Buglose",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-marienthal",
+      "display_name": "Basilique Notre-Dame de Marienthal",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-lepine",
+      "display_name": "Basilique Notre-Dame de L'Épine",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }
