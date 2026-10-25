@@ -5,8 +5,10 @@ const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const j=read("data/geography/research/sacred-places-p39-global500-open68-reconciliation.v1.json");
 const g=read("data/geography/seed-registry.v1.json"), l=read("data/geography/sacred-places-live-release-chain.v1.json");
 assert.equal(j.schema,"AO_SACRED_PLACES_P39_GLOBAL500_AND_OPEN68_RECONCILIATION_V1");
-assert.equal(j.canonical_live.places,g.places.length);
-assert.equal(j.canonical_live.release,l.releases.at(-1).id);
+assert.equal(j.canonical_live.places,463); // P39 historical immutable snapshot after P38
+assert.ok(g.places.length>=j.canonical_live.places);
+assert.equal(j.canonical_live.release,"P38");
+assert.ok(l.releases.some(x=>x.id===j.canonical_live.release));
 assert.equal(j.global_500.length,500);
 assert.equal(j.global_500.filter(x=>x.current_status==="VERIFIED_EXISTING_CANONICAL").length,98);
 assert.equal(j.global_500.filter(x=>x.current_status==="STILL_REQUIRES_IDENTITY_OR_GEOMETRY").length,402);
