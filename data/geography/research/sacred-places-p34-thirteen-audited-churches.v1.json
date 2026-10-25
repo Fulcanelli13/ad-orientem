@@ -1,0 +1,313 @@
+{
+  "schema": "AO_SACRED_PLACES_P34_THIRTEEN_AUDITED_EXACT_CHURCHES_V1",
+  "date": "2026-10-25",
+  "status": "P34_PROPOSED_CANONICAL_RELEASE_UNTIL_CI_AND_MERGE",
+  "baseline": {
+    "places": 414,
+    "sources": 712,
+    "crosswalk": 414,
+    "unlinked": 155,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 427,
+    "sources": 725,
+    "crosswalk": 427,
+    "unlinked": 168,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "new_physical_locations": 13,
+  "new_country_area_count": 0,
+  "source_review_screens_added_to_first200": 0,
+  "p16_protected_historical_exceptions": 16,
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0492",
+      "place_id": "place:AR:catedral-basilica-nuestra-senora-rosario",
+      "name": "Basílica Catedral Nuestra Señora del Rosario",
+      "country": "AR",
+      "country_name": "Argentina",
+      "city": "Rosario",
+      "place_type": "cathedral",
+      "lat": -32.94747,
+      "lng": -60.63226,
+      "source_ids": [
+        "AO-P34-SITE-SG-INV-0492"
+      ],
+      "identity_source_url": "https://rosario.tur.ar/donde-ir/atractivos-particulares/catedral",
+      "identity_source_issuer": "Municipal Tourism Board of Rosario",
+      "source_directness": "PRIMARY_INSTITUTIONAL",
+      "geo_source_url": "https://www.openstreetmap.org/way/185914322",
+      "geo_source_ref": "osm:way:185914322",
+      "precision": "site",
+      "scope_limit": "Official city heritage identifies the active Catholic cathedral at Buenos Aires 789; exclude historical first chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0189",
+      "place_id": "place:AT:wallfahrtsbasilika-maria-plain",
+      "name": "Wallfahrtsbasilika Maria Plain",
+      "country": "AT",
+      "country_name": "Austria",
+      "city": "Bergheim",
+      "place_type": "basilica",
+      "lat": 47.83863,
+      "lng": 13.0398,
+      "source_ids": [
+        "AO-P34-SITE-SG-INV-0189"
+      ],
+      "identity_source_url": "https://www.mariaplain.at/",
+      "identity_source_issuer": "Benedictine custodians of Maria Plain",
+      "source_directness": "OFFICIAL_CHURCH",
+      "geo_source_url": "https://www.openstreetmap.org/way/66232062",
+      "geo_source_ref": "osm:way:66232062",
+      "precision": "site",
+      "scope_limit": "Main Marian pilgrimage basilica; exclude nearby pilgrimage chapels."
+    },
+    {
+      "candidate_id": "SG-INV-0423",
+      "place_id": "place:CA:basilique-notre-dame-montreal",
+      "name": "Basilique Notre-Dame de Montréal",
+      "country": "CA",
+      "country_name": "Canada",
+      "city": "Montréal",
+      "place_type": "basilica",
+      "lat": 45.50444,
+      "lng": -73.55601,
+      "source_ids": [
+        "AO-P34-SITE-SG-INV-0423"
+      ],
+      "identity_source_url": "https://www.basiliquenotredame.ca/en",
+      "identity_source_issuer": "Notre-Dame Basilica, Montréal official custodian",
+      "source_directness": "OFFICIAL_CHURCH",
+      "geo_source_url": "https://www.openstreetmap.org/way/4320792",
+      "geo_source_ref": "osm:way:4320792",
+      "precision": "site",
+      "scope_limit": "Identifies the basilica building, not Saint Joseph Oratory or adjacent institutional properties."
+    },
+    {
+      "candidate_id": "SG-INV-0177",
+      "place_id": "place:DE:wieskirche",
+      "name": "Wallfahrtskirche zum Gegeißelten Heiland auf der Wies",
+      "country": "DE",
+      "country_name": "Germany",
+      "city": "Steingaden",
+      "place_type": "church",
+      "lat": 47.68058,
+      "lng": 10.90054,
+      "source_ids": [
+        "AO-P34-SITE-SG-INV-0177"
+      ],
+      "identity_source_url": "https://www.wieskirche.de/en/index_en.html",
+      "identity_source_issuer": "Wieskirche parish and sanctuary custodians",
+      "source_directness": "OFFICIAL_CHURCH",
+      "geo_source_url": "https://www.openstreetmap.org/way/49867155",
+      "geo_source_ref": "osm:way:49867155",
+      "precision": "site",
+      "scope_limit": "Wieskirche UNESCO pilgrimage church distinct from nearby Wieskapelle."
+    },
+    {
+      "candidate_id": "SG-INV-0041",
+      "place_id": "place:FR:cathedrale-notre-dame-reims",
+      "name": "Cathédrale Notre-Dame de Reims",
+      "country": "FR",
+      "country_name": "France",
+      "city": "Reims",
+      "place_type": "cathedral",
+      "lat": 49.25377,
+      "lng": 4.03382,
+      "source_ids": [
+        "AO-P34-SITE-SG-INV-0041"
+      ],
+      "identity_source_url": "https://www.cathedrale-reims.fr/",
+      "identity_source_issuer": "Centre des monuments nationaux, Cathedral of Reims towers",
+      "source_directness": "PRIMARY_INSTITUTIONAL",
+      "geo_source_url": "https://www.openstreetmap.org/way/92294792",
+      "geo_source_ref": "osm:way:92294792",
+      "precision": "site",
+      "scope_limit": "Official heritage source confirms Reims Cathedral monument but directly covers towers; no inference about parish schedule."
+    },
+    {
+      "candidate_id": "SG-INV-0116",
+      "place_id": "place:ES:basilica-virgen-desamparados-valencia",
+      "name": "Basílica de la Virgen de los Desamparados",
+      "country": "ES",
+      "country_name": "Spain",
+      "city": "València",
+      "place_type": "basilica",
+      "lat": 39.47625,
+      "lng": -0.37481,
+      "source_ids": [
+        "AO-P34-SITE-SG-INV-0116"
+      ],
+      "identity_source_url": "https://turisme.dival.es/monumento/basilica-de-la-virgen-de-los-desamparados/",
+      "identity_source_issuer": "Diputación de Valencia official heritage tourism",
+      "source_directness": "PRIMARY_INSTITUTIONAL",
+      "geo_source_url": "https://www.openstreetmap.org/way/135630265",
+      "geo_source_ref": "osm:way:135630265",
+      "precision": "site",
+      "scope_limit": "Specific Marian basilica distinct from Valencia Cathedral next door."
+    },
+    {
+      "candidate_id": "SG-INV-0593",
+      "place_id": "place:IN:st-andrews-basilica-arthunkal",
+      "name": "St Andrew's Basilica, Arthunkal",
+      "country": "IN",
+      "country_name": "India",
+      "city": "Arthunkal",
+      "place_type": "basilica",
+      "lat": 9.66112,
+      "lng": 76.30042,
+      "source_ids": [
+        "AO-P34-SITE-SG-INV-0593"
+      ],
+      "identity_source_url": "https://arthunkalbasilica.com/",
+      "identity_source_issuer": "St Andrew's Basilica parish, Arthunkal",
+      "source_directness": "OFFICIAL_CHURCH",
+      "geo_source_url": "https://www.openstreetmap.org/way/1177248266",
+      "geo_source_ref": "osm:way:1177248266",
+      "precision": "site",
+      "scope_limit": "Actual Catholic basilica church building, not nearby St Rita chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0174",
+      "place_id": "place:DE:bamberger-dom",
+      "name": "Bamberger Dom St. Peter und St. Georg",
+      "country": "DE",
+      "country_name": "Germany",
+      "city": "Bamberg",
+      "place_type": "cathedral",
+      "lat": 49.89072,
+      "lng": 10.88253,
+      "source_ids": [
+        "AO-P34-SITE-SG-INV-0174"
+      ],
+      "identity_source_url": "https://bamberger-dom.de/",
+      "identity_source_issuer": "Bamberger Dom official cathedral custodians",
+      "source_directness": "OFFICIAL_CHURCH",
+      "geo_source_url": "https://www.openstreetmap.org/way/122385636",
+      "geo_source_ref": "osm:way:122385636",
+      "precision": "site",
+      "scope_limit": "Cathedral building, excluding diocesan museum and adjoining buildings."
+    },
+    {
+      "candidate_id": "SG-INV-0101",
+      "place_id": "place:IT:duomo-siena",
+      "name": "Cattedrale Metropolitana di Santa Maria Assunta, Siena",
+      "country": "IT",
+      "country_name": "Italy",
+      "city": "Siena",
+      "place_type": "cathedral",
+      "lat": 43.31779,
+      "lng": 11.32899,
+      "source_ids": [
+        "AO-P34-SITE-SG-INV-0101"
+      ],
+      "identity_source_url": "https://operaduomo.siena.it/en/the-cathedral/",
+      "identity_source_issuer": "Opera della Metropolitana di Siena",
+      "source_directness": "PRIMARY_INSTITUTIONAL",
+      "geo_source_url": "https://www.openstreetmap.org/way/418912842",
+      "geo_source_ref": "osm:way:418912842",
+      "precision": "site",
+      "scope_limit": "Cathedral proper distinct from Duomo Museum and Piccolomini Library; site-specific visitor source."
+    },
+    {
+      "candidate_id": "SG-INV-0172",
+      "place_id": "place:DE:basilika-st-martin-weingarten",
+      "name": "Basilika St. Martin, Weingarten",
+      "country": "DE",
+      "country_name": "Germany",
+      "city": "Weingarten",
+      "place_type": "basilica",
+      "lat": 47.8092,
+      "lng": 9.64461,
+      "source_ids": [
+        "AO-P34-SITE-SG-INV-0172"
+      ],
+      "identity_source_url": "https://katholisch-weingarten.de/kirchengemeinde-st-martin/",
+      "identity_source_issuer": "Catholic parish of St Martin, Weingarten",
+      "source_directness": "OFFICIAL_CHURCH",
+      "geo_source_url": "https://www.openstreetmap.org/way/24504064",
+      "geo_source_ref": "osm:way:24504064",
+      "precision": "site",
+      "scope_limit": "Catholic basilica, not the adjacent Evangelical city church."
+    },
+    {
+      "candidate_id": "SG-INV-0280",
+      "place_id": "place:CZ:bazilika-svaty-hostyn",
+      "name": "Bazilika Nanebevzetí Panny Marie, Svatý Hostýn",
+      "country": "CZ",
+      "country_name": "Czech Republic",
+      "city": "Svatý Hostýn",
+      "place_type": "basilica",
+      "lat": 49.37673,
+      "lng": 17.70032,
+      "source_ids": [
+        "AO-P34-SITE-SG-INV-0280"
+      ],
+      "identity_source_url": "https://www.ado.cz/katalog/www/kostely/A6CAA7E7-A103-4D5A-A55D-C2BD8F9B9EDE",
+      "identity_source_issuer": "Archdiocese of Olomouc church directory",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "geo_source_url": "https://www.openstreetmap.org/way/384289788",
+      "geo_source_ref": "osm:way:384289788",
+      "precision": "site",
+      "scope_limit": "Major Catholic pilgrimage basilica, separate from minor chapels in the shrine complex."
+    },
+    {
+      "candidate_id": "SG-INV-0176",
+      "place_id": "place:DE:basilika-vierzehnheiligen",
+      "name": "Basilika Vierzehnheiligen",
+      "country": "DE",
+      "country_name": "Germany",
+      "city": "Bad Staffelstein",
+      "place_type": "basilica",
+      "lat": 50.11567,
+      "lng": 11.05408,
+      "source_ids": [
+        "AO-P34-SITE-SG-INV-0176"
+      ],
+      "identity_source_url": "https://glauben.erzbistum-bamberg.de/wallfahrtsorte/wallfahrtsorte/vierzehnheiligen",
+      "identity_source_issuer": "Archdiocese of Bamberg pilgrimage register",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "geo_source_url": "https://www.openstreetmap.org/way/43972480",
+      "geo_source_ref": "osm:way:43972480",
+      "precision": "site",
+      "scope_limit": "Catholic shrine basilica named Vierzehnheiligen, excluding auxiliary buildings."
+    },
+    {
+      "candidate_id": "SG-INV-0100",
+      "place_id": "place:IT:cattedrale-santa-maria-del-fiore-firenze",
+      "name": "Cattedrale di Santa Maria del Fiore, Firenze",
+      "country": "IT",
+      "country_name": "Italy",
+      "city": "Firenze",
+      "place_type": "cathedral",
+      "lat": 43.77312,
+      "lng": 11.25657,
+      "source_ids": [
+        "AO-P34-SITE-SG-INV-0100"
+      ],
+      "identity_source_url": "https://www.duomofirenze.it/en/vita-liturgica/",
+      "identity_source_issuer": "Metropolitan Cathedral Chapter of Florence",
+      "source_directness": "OFFICIAL_CHURCH",
+      "geo_source_url": "https://www.openstreetmap.org/way/43768260",
+      "geo_source_ref": "osm:way:43768260",
+      "precision": "site",
+      "scope_limit": "Operating cathedral used for the Catholic liturgy; not separate Baptistery, Campanile or excavations."
+    }
+  ],
+  "held_cases": [
+    "SG-INV-0650 Cebu Santo Niño: religious-site polygon does not prove worship building footprint",
+    "SG-INV-0049 St John Lateran: mapped relation covers wider complex",
+    "SG-INV-0141 Salamanca: preserve distinct Old/New Cathedral building identity"
+  ],
+  "policy": [
+    "Use source-backed exact Catholic church physical building location, independent of mass schedules and media.",
+    "Do not substitute site/complex polygons for known named church building footprints without further verification.",
+    "These 13 are distinct from the 13 in still-open P32/P33 branches, which remain unmerged and must be reconciled separately.",
+    "Published baseline changes only when this manifest is appended to the canonical live release chain and passes all gates."
+  ]
+}
