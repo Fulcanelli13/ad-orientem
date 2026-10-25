@@ -138,6 +138,29 @@ try{
    assert.equal(featured,6,"Pray should show six featured routes at "+width+"px");
    const libraryRows=await page.locator("#aoPray435930 .aoP435930QuietLibraryRow").count();
    assert.equal(libraryRows,4,"Pray library shortcuts or My Customs entry missing at "+width+"px");
+   // Screenshot-independent art-direction gate. The top two source-owned
+   // devotions must read as illustrated folios; the other four as open rows.
+   const visual=await page.evaluate(()=>{
+     const tiles=[...document.querySelectorAll("#aoPray435930 .aoP435930QuietTiles>.aoP435930QuietTile")];
+     return tiles.map(tile=>{
+       const style=getComputedStyle(tile);
+       const asset=tile.querySelector(".aoP435930ModuleAsset,.aoP435930ModuleIcon");
+       const a=asset?getComputedStyle(asset):null;
+       return {route:tile.getAttribute("data-p435930-own")||tile.getAttribute("data-p435930-external")||tile.getAttribute("data-p435930-family"),
+         h:tile.getBoundingClientRect().height,icon:asset?.getBoundingClientRect().width||0,
+         title:parseFloat(getComputedStyle(tile.querySelector("b")).fontSize),
+         topBorder:parseFloat(style.borderTopWidth),background:style.backgroundColor,
+         assetId:asset?.getAttribute("data-ao-asset-id")||null};
+     });
+   });
+   assert.deepEqual(visual.slice(0,2).map(t=>t.route),["pray.rosary","pray.adoration"],
+     "Illustrated Prayer frontispieces must retain their live canonical routes");
+   assert.ok(visual.slice(0,2).every(t=>t.icon>=80&&t.title>=22&&t.topBorder>=1),
+     "The two illustrated folios lost artwork prominence: "+JSON.stringify(visual));
+   assert.ok(visual.slice(2).every(t=>t.icon>=56&&t.title>=16&&t.topBorder===0),
+     "Four quiet Prayer entrances have reverted to boxed app tiles: "+JSON.stringify(visual));
+   assert.ok(visual[0].h>visual[2].h+30,
+     "Sacred illustration hierarchy collapsed to six uniform tiles: "+JSON.stringify(visual));
    await page.screenshot({path:resolve(out,"pray-"+width+".png"),fullPage:false,animations:"disabled"});
    await page.locator("#aoPray435930 .aoP435930QuietMore>summary").click();
    const prayer=await page.evaluate(()=>{
