@@ -57,6 +57,32 @@ assert.equal(iconKeysForReaderState({cueId:"AO.SM.C0055",
  gesture:{...localAdjacent.gesture,canonicalCueId:"AO.SM.C0056"},
  curated65FinalArt:true}).gestureIconKey,null,
  "Local user option must not carry over to the next source cue");
+// ICKSP-compatible exceptional sung kneeling: a priest's own private
+// genuflection and the faithful's Christmas/Annunciation *sung* kneeling
+// are distinct. When the selected Mass requires KNEEL, the approved
+// posture asset must appear in the gesture position instead of vanishing.
+const exceptional=projectGloriaCredoFaithfulCue({
+ cueId:"AO.SM.C0096",form:"SOLEMN",incarnatusAction:"KNEEL",
+ preferences:{gestureProfile:"GUIDED_1962"},sourcedPosture:{value:"STAND"},
+});
+assert.equal(exceptional.gesture?.type,"KNEEL");
+assert.equal(iconKeysForReaderState({cueId:"AO.SM.C0096",
+ gesture:exceptional.gesture,curated65FinalArt:true,form:"SOLEMN"}).gestureIconKey,
+ "canon:faithful.posture.kneel",
+ "1962 exceptional Incarnatus kneeling must not lose its faithful icon");
+const localKneel=projectGloriaCredoFaithfulCue({
+ cueId:"AO.SM.C0055",form:"MISSA_CANTATA_SIMPLE",
+ preferences:{gestureProfile:"GUIDED_1962",
+  localGestures:{"AO.SM.C0055":"KNEEL"}},
+ sourcedPosture:{value:"STAND"},
+});
+assert.equal(iconKeysForReaderState({cueId:"AO.SM.C0055",
+ gesture:localKneel.gesture,curated65FinalArt:true}).gestureIconKey,
+ "canon:faithful.posture.kneel",
+ "Exact saved custom kneel must resolve to existing approved posture asset");
+assert.equal(iconKeysForReaderState({cueId:"AO.SM.C0056",
+ gesture:localKneel.gesture,curated65FinalArt:true}).gestureIconKey,null,
+ "Local kneeling must never inherit across cue boundaries");
 // The current active 21 Oct canonical resolver already has correct
 // source-meaning for both post-Communion ablutions. This is a regression
 // gate, not a mutation of the frozen 20 Oct asset/cue crosswalk.
