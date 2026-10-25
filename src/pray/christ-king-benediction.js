@@ -62,7 +62,7 @@ export const CHRIST_KING_SOURCES=Object.freeze({
  laudes:"https://www.vatican.va/news_services/liturgy/libretti/2025/20250518-libretto-inizio-ministero-petrino.pdf",
  litany:"https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
 });
-export const CHRIST_KING_OPTION_IDS=Object.freeze(["procession","royal","litany","consecration"]);
+export const CHRIST_KING_OPTION_IDS=Object.freeze(["procession","royal","consecration"]);
 export const CHRIST_KING_DEFAULT=Object.freeze({enabled:false,procession:true,royal:true,litany:false,consecration:true});
 export const CHRIST_KING_STAGE_NAMES=Object.freeze({
  procession:["Eucharistic procession","Procession eucharistique"],
