@@ -372,7 +372,7 @@ try{
             // Check that its actual row, original cue and legible text survive.
             // States remain independently printed as exact-ID annotations.
             const sourceText=row?.querySelector(".ao-line-primary")?.textContent?.trim()??"";
-            const sourceCues=new Set((row?.dataset.sourceCueIds??"").split(/\\s+/).filter(Boolean));
+            const sourceCues=new Set((row?.dataset.sourceCueIds??"").split(/\s+/).filter(Boolean));
             const rowRendered=!!row && row.getBoundingClientRect().width>0 &&
               getComputedStyle(row).display!=="none";
             for(const event of events){
