@@ -366,15 +366,27 @@ try{
             });
             const row=rows.find(el=>el.dataset.paragraphId===p.id);
             const printedSource=p.kind==="RUBRIC"||/^\s*\[/.test(String(p.primary??""));
-            const ids=new Set([...row?.querySelectorAll?.("[data-rubric-id]")??[]]
-              .map(el=>el.dataset.rubricId));
+            const idNodes=[...row?.querySelectorAll?.("[data-rubric-id]")??[]];
+            const ids=new Set(idNodes.map(el=>el.dataset.rubricId));
+            // A source-printed direction is NOT automatically a visual pass.
+            // Check that its actual row, original cue and legible text survive.
+            // States remain independently printed as exact-ID annotations.
+            const sourceText=row?.querySelector(".ao-line-primary")?.textContent?.trim()??"";
+            const sourceCues=new Set((row?.dataset.sourceCueIds??"").split(/\\s+/).filter(Boolean));
+            const rowRendered=!!row && row.getBoundingClientRect().width>0 &&
+              getComputedStyle(row).display!=="none";
             for(const event of events){
               expected.add(event.id);
-              if(printedSource){found.add(event.id);continue;}
-              if(ids.has(event.id))found.add(event.id);
-              else missing.push({card:card.title,paragraph:p.id,rubric:event.id,cue:event.sourceCueId});
+              const sourceWitness=printedSource && event.kind!=="STATE" &&
+                rowRendered && sourceText.length>0 && sourceCues.has(event.sourceCueId);
+              const annotation=idNodes.find(el=>el.dataset.rubricId===event.id &&
+                el.textContent.trim().length>0 && el.getBoundingClientRect().width>0);
+              if(sourceWitness || (rowRendered && annotation))found.add(event.id);
+              else missing.push({card:card.title,paragraph:p.id,rubric:event.id,
+                cue:event.sourceCueId,sourcePrinted:printedSource,
+                hasRow:!!row,sourceText:sourceText.slice(0,60)});
             }
-            for(const item of row?.querySelectorAll?.("[data-rubric-id]")??[]){
+            for(const item of idNodes){
               const id=item.dataset.rubricId;
               if(!registry.items.some(record=>record.id===id))
                 uncertified.push({card:card.title,id});
@@ -780,7 +792,34 @@ try{
           fullPage:false,animations:"disabled"});
       }
     }
-    await page.screenshot({path:resolve(out,lang+"-"+width+(secondConfiteor?"-with-local-confiteor":"")+"-credo.png"),fullPage:false});
+    // Capture the named liturgical scene, never the last card left behind
+    // by an earlier rubric/cue sweep. The former *-credo.png files displayed
+    // the Chalice Consecration and could not certify Gloria/Credo visually.
+    for(const [slug,title] of [
+      ["gloria-praise","Gloria · Praise and Supplication"],
+      ["gloria-doxology","Gloria · Doxology"],
+      ["credo-incarnation","Credo · Incarnation, Passion and Resurrection"],
+    ]){
+      const scene=await page.evaluate(t=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const card=api.model.cards.find(c=>c.title===t);
+        if(!card)return {found:false};
+        api.showSequence(card.sequence);
+        return {found:true,expected:card.sectionId,
+          actual:api.getCurrentCard()?.sectionId,
+          title:api.getCurrentCard()?.title??null};
+      },title);
+      assert.ok(scene.found&&scene.actual===scene.expected,
+        "Screenshot target is not the requested liturgical card: "+title+
+        " "+JSON.stringify(scene));
+      await page.evaluate(()=>new Promise(done=>
+        requestAnimationFrame(()=>requestAnimationFrame(done))));
+      assert.ok(await page.locator("#ao-r17-native-reader-preview .ao-prayer-body .ao-reader-paragraph").count()>0,
+        "Named screenshot has no real prayer text: "+title);
+      await page.screenshot({path:resolve(out,
+        lang+"-"+width+(secondConfiteor?"-with-local-confiteor":"")+"-"+slug+".png"),
+        fullPage:false,animations:"disabled"});
+    }
     assert.deepEqual(errors,[],"Curated mobile browser JS errors");
     await context.close();
   }
