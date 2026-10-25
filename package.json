@@ -269,7 +269,7 @@
     "test:mass-icon-originals": "node tests/mass-icon-originals-leclerc1661.mjs",
     "test:customs-weiser": "node tests/customs-weiser-selective-release.mjs",
     "test:mass-final-icon-crosswalk": "node tests/mass-final-icon-crosswalk.mjs",
-    "test:mass-icon-canonical-set": "node tests/mass-icon-canonical-set.mjs",
+    "test:mass-icon-canonical-set": "node tests/mass-icon-canonical-set.mjs && node tests/mass-existing-icon-bank-reconciliation.mjs",
     "test:mass-icon-canonical-coverage": "node tests/mass-icon-canonical-coverage.mjs",
     "test:mass-priest-position-continuity": "node tests/mass-priest-position-continuity.mjs",
     "test:reader-final65-position-icons": "node tests/reader-final65-position-icons.mjs",
