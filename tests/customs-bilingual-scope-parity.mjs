@@ -4,8 +4,8 @@ import {calendarCustomArticle,CALENDAR_CUSTOM_ARTICLE_IDS} from "../src/calendar
 const seed=JSON.parse(readFileSync(new URL("../data/customs/customs-atlas-seed.v1.json",import.meta.url),"utf8"));
 const folios=JSON.parse(readFileSync(new URL("../data/customs/customs-historical-folios.v1.json",import.meta.url),"utf8"));
 const published=seed.customs.filter(c=>c.publication_state==="PUBLISHED");
-assert.equal(published.length,35);
-assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,35);
+assert.equal(published.length,37);
+assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,37);
 assert.deepEqual(new Set(CALENDAR_CUSTOM_ARTICLE_IDS),new Set(published.map(c=>c.custom_id)));
 for(const id of CALENDAR_CUSTOM_ARTICLE_IDS){
   const card=calendarCustomArticle(id);
