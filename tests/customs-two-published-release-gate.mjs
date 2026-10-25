@@ -90,4 +90,9 @@ assert.ok(groups.find(g=>g.key==="christmas_epiphany").articles.some(a=>a.id==="
 assert.ok(groups.find(g=>g.key==="candlemas_lent").articles.some(a=>a.id==="CRIB-001"));
 assert.match(calendarCustomArticle("EPIP-003").caution.en,/priest|Roman Ritual/i);
 assert.match(calendarCustomArticle("CRIB-001").caution.en,/1962/);
+// Fr McNamara's 2015 answer concerns church Nativity scenes. Do not cite
+// that pastoral commentary as direct proof of a universal family practice.
+assert.match(calendarCustomArticle("CRIB-001").history.en,/in churches/);
+assert.match(calendarCustomArticle("CRIB-001").history.fr,/dans les églises/);
+assert.doesNotMatch(calendarCustomArticle("CRIB-001").history.en,/some families remove the crib/);
 console.log("PASS +2 customs: frozen 35 preserved, 37 bilingual published, 112 registered sources, 99 evidence-only attestations, 1962 feast links, one Home spotlight, no invented map pins or editor signatures.");
