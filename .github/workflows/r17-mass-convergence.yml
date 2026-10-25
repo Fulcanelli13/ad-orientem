@@ -85,6 +85,8 @@ jobs:
       # it must not hide an Agnus/Gloria/Creed renderer failure.
       - name: Confirm independent priest and Schola icons on LIVE phone
         run: node tests/reader-priest-chant-phone.mjs
+      - name: Verify selected Gloria/Credo omissions and independent chant windows
+        run: node tests/reader-gloria-credo-omission-phone.mjs
       - run: node tests/reader-phone-production-card-default.mjs
       - uses: actions/upload-artifact@v4
         if: always()
