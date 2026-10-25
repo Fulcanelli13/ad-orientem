@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 463,
+    "places": 475,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 204,
+    "places_without_direct_claim": 216,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -232,7 +232,19 @@
       "place:FR:basilique-notre-dame-bon-secours-lablachere",
       "place:FR:basilique-notre-dame-buglose",
       "place:FR:basilique-notre-dame-marienthal",
-      "place:FR:basilique-notre-dame-lepine"
+      "place:FR:basilique-notre-dame-lepine",
+      "place:BR:santuario-basilica-divino-pai-eterno-trindade",
+      "place:ES:catedral-santa-maria-burgos",
+      "place:FR:abbatiale-saint-pierre-solesmes",
+      "place:FR:chapelle-notre-dame-peiniere",
+      "place:IT:basilica-san-domenico-siena",
+      "place:KR:haemi-martyrs-shrine-main-church",
+      "place:NL:bedevaartskerk-martelaren-gorcum-brielle",
+      "place:PL:bazylika-bartlomieja-jadwigi-trzebnica",
+      "place:PL:bazylika-mariacka-gdansk",
+      "place:PR:basilica-monserrate-hormigueros",
+      "place:PT:basilica-sao-bento-porta-aberta",
+      "place:US:historic-chapel-our-lady-la-leche-st-augustine"
     ],
     "customs_without_exact_place": [
       {
@@ -5496,6 +5508,78 @@
     {
       "place_id": "place:FR:basilique-notre-dame-lepine",
       "display_name": "Basilique Notre-Dame de L'Épine",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BR:santuario-basilica-divino-pai-eterno-trindade",
+      "display_name": "Santuário Basílica do Divino Pai Eterno",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:catedral-santa-maria-burgos",
+      "display_name": "Catedral de Santa María de Burgos",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:abbatiale-saint-pierre-solesmes",
+      "display_name": "Église abbatiale Saint-Pierre de Solesmes",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:chapelle-notre-dame-peiniere",
+      "display_name": "Chapelle Notre-Dame de La Peinière",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:basilica-san-domenico-siena",
+      "display_name": "Basilica Cateriniana di San Domenico",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:KR:haemi-martyrs-shrine-main-church",
+      "display_name": "Haemi Martyrs International Shrine — Main Church",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:NL:bedevaartskerk-martelaren-gorcum-brielle",
+      "display_name": "Bedevaartskerk HH. Martelaren van Gorcum",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:bazylika-bartlomieja-jadwigi-trzebnica",
+      "display_name": "Bazylika św. Bartłomieja Apostoła i św. Jadwigi",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:bazylika-mariacka-gdansk",
+      "display_name": "Bazylika Mariacka Wniebowzięcia Najświętszej Maryi Panny",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PR:basilica-monserrate-hormigueros",
+      "display_name": "Basílica Nuestra Señora de la Monserrate",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PT:basilica-sao-bento-porta-aberta",
+      "display_name": "Basílica de São Bento da Porta Aberta",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:historic-chapel-our-lady-la-leche-st-augustine",
+      "display_name": "Historic Chapel of Our Lady of La Leche",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }

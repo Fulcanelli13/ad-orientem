@@ -2390,6 +2390,22 @@
       "codes": {
         "iso_alpha2": "UA"
       }
+    },
+    {
+      "geo_area_id": "geo:country:PR",
+      "name": {
+        "official": "Puerto Rico",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PR"
+      }
     }
   ],
   "places": [
@@ -19788,6 +19804,438 @@
       },
       "source_ids": [
         "AO-P38-SITE-SG-INV-0013"
+      ]
+    },
+    {
+      "place_id": "place:BR:santuario-basilica-divino-pai-eterno-trindade",
+      "name": {
+        "official": "Santuário Basílica do Divino Pai Eterno",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:BR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -16.6607094,
+        "lng": -49.4853965,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/131382347",
+        "source_ref": "osm:way:131382347",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "BR",
+        "verified_at": "2026-10-25"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Trindade, Goiás",
+        "region": null,
+        "country_code": "BR",
+        "country": "Brazil",
+        "formatted": "Santuário Basílica do Divino Pai Eterno, Trindade, Goiás, Brazil"
+      },
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0483"
+      ]
+    },
+    {
+      "place_id": "place:ES:catedral-santa-maria-burgos",
+      "name": {
+        "official": "Catedral de Santa María de Burgos",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:ES"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 42.3407336,
+        "lng": -3.7043491,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/relation/12074743",
+        "source_ref": "osm:relation:12074743",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "ES",
+        "verified_at": "2026-10-25"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Burgos",
+        "region": null,
+        "country_code": "ES",
+        "country": "Spain",
+        "formatted": "Catedral de Santa María de Burgos, Burgos, Spain"
+      },
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0137"
+      ]
+    },
+    {
+      "place_id": "place:FR:abbatiale-saint-pierre-solesmes",
+      "name": {
+        "official": "Église abbatiale Saint-Pierre de Solesmes",
+        "aliases": []
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 47.8520355,
+        "lng": -0.3032105,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/151237849",
+        "source_ref": "osm:way:151237849",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-25"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Solesmes, Sarthe",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Église abbatiale Saint-Pierre de Solesmes, Solesmes, Sarthe, France"
+      },
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0043"
+      ]
+    },
+    {
+      "place_id": "place:FR:chapelle-notre-dame-peiniere",
+      "name": {
+        "official": "Chapelle Notre-Dame de La Peinière",
+        "aliases": []
+      },
+      "place_type": "chapel",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 48.1063625,
+        "lng": -1.353796,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/123878443",
+        "source_ref": "osm:way:123878443",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-25"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "La Peinière, Ille-et-Vilaine",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Chapelle Notre-Dame de La Peinière, La Peinière, Ille-et-Vilaine, France"
+      },
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0016"
+      ]
+    },
+    {
+      "place_id": "place:IT:basilica-san-domenico-siena",
+      "name": {
+        "official": "Basilica Cateriniana di San Domenico",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 43.3198022,
+        "lng": 11.3267559,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/28396159",
+        "source_ref": "osm:way:28396159",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-25"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Siena",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Basilica Cateriniana di San Domenico, Siena, Italy"
+      },
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0087"
+      ]
+    },
+    {
+      "place_id": "place:KR:haemi-martyrs-shrine-main-church",
+      "name": {
+        "official": "Haemi Martyrs International Shrine — Main Church",
+        "aliases": []
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:KR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 36.7126432,
+        "lng": 126.5379024,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/325502443",
+        "source_ref": "osm:way:325502443",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "KR",
+        "verified_at": "2026-10-25"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Haemi, Seosan",
+        "region": null,
+        "country_code": "KR",
+        "country": "South Korea",
+        "formatted": "Haemi Martyrs International Shrine — Main Church, Haemi, Seosan, South Korea"
+      },
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0623"
+      ]
+    },
+    {
+      "place_id": "place:NL:bedevaartskerk-martelaren-gorcum-brielle",
+      "name": {
+        "official": "Bedevaartskerk HH. Martelaren van Gorcum",
+        "aliases": []
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:NL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 51.8952071,
+        "lng": 4.154452,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/268094130",
+        "source_ref": "osm:way:268094130",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "NL",
+        "verified_at": "2026-10-25"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Brielle, South Holland",
+        "region": null,
+        "country_code": "NL",
+        "country": "Netherlands",
+        "formatted": "Bedevaartskerk HH. Martelaren van Gorcum, Brielle, South Holland, Netherlands"
+      },
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0234"
+      ]
+    },
+    {
+      "place_id": "place:PL:bazylika-bartlomieja-jadwigi-trzebnica",
+      "name": {
+        "official": "Bazylika św. Bartłomieja Apostoła i św. Jadwigi",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:PL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 51.3095363,
+        "lng": 17.0669459,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/96064628",
+        "source_ref": "osm:way:96064628",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PL",
+        "verified_at": "2026-10-25"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Trzebnica",
+        "region": null,
+        "country_code": "PL",
+        "country": "Poland",
+        "formatted": "Bazylika św. Bartłomieja Apostoła i św. Jadwigi, Trzebnica, Poland"
+      },
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0214"
+      ]
+    },
+    {
+      "place_id": "place:PL:bazylika-mariacka-gdansk",
+      "name": {
+        "official": "Bazylika Mariacka Wniebowzięcia Najświętszej Maryi Panny",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:PL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 54.349807,
+        "lng": 18.6530127,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/46426385",
+        "source_ref": "osm:way:46426385",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PL",
+        "verified_at": "2026-10-25"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Gdańsk",
+        "region": null,
+        "country_code": "PL",
+        "country": "Poland",
+        "formatted": "Bazylika Mariacka Wniebowzięcia Najświętszej Maryi Panny, Gdańsk, Poland"
+      },
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0219"
+      ]
+    },
+    {
+      "place_id": "place:PR:basilica-monserrate-hormigueros",
+      "name": {
+        "official": "Basílica Nuestra Señora de la Monserrate",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:PR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 18.1407181,
+        "lng": -67.1271593,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/535302292",
+        "source_ref": "osm:way:535302292",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PR",
+        "verified_at": "2026-10-25"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Hormigueros",
+        "region": null,
+        "country_code": "PR",
+        "country": "Puerto Rico",
+        "formatted": "Basílica Nuestra Señora de la Monserrate, Hormigueros, Puerto Rico"
+      },
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0472"
+      ]
+    },
+    {
+      "place_id": "place:PT:basilica-sao-bento-porta-aberta",
+      "name": {
+        "official": "Basílica de São Bento da Porta Aberta",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:PT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.6902311,
+        "lng": -8.2032744,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/533214373",
+        "source_ref": "osm:way:533214373",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PT",
+        "verified_at": "2026-10-25"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "São Bento, Terras de Bouro",
+        "region": null,
+        "country_code": "PT",
+        "country": "Portugal",
+        "formatted": "Basílica de São Bento da Porta Aberta, São Bento, Terras de Bouro, Portugal"
+      },
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0160"
+      ]
+    },
+    {
+      "place_id": "place:US:historic-chapel-our-lady-la-leche-st-augustine",
+      "name": {
+        "official": "Historic Chapel of Our Lady of La Leche",
+        "aliases": []
+      },
+      "place_type": "chapel",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 29.9047316,
+        "lng": -81.3152454,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/237757052",
+        "source_ref": "osm:way:237757052",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-25"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "St. Augustine, Florida",
+        "region": null,
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "Historic Chapel of Our Lady of La Leche, St. Augustine, Florida, United States"
+      },
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0375"
       ]
     }
   ],

@@ -1,0 +1,318 @@
+{
+  "schema": "AO_SACRED_PLACES_P40_TWELVE_VERIFIED_CATHOLIC_BUILDINGS_V1",
+  "date": "2026-10-25",
+  "status": "PROPOSED_CANONICAL_RELEASE_PENDING_CI_MERGE",
+  "baseline": {
+    "places": 463,
+    "sources": 761,
+    "crosswalk": 463,
+    "unlinked": 204,
+    "geo_areas": 145,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 475,
+    "sources": 773,
+    "crosswalk": 475,
+    "unlinked": 216,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "new_physical_locations": 12,
+  "new_geo_areas": [
+    "geo:country:PR"
+  ],
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "research_source": {
+    "manifest": "data/geography/research/sacred-places-p39-open68-osm-evidence.v1.json",
+    "pr": 1668,
+    "run_id": 40201920486,
+    "corrected_outages": 0
+  },
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0483",
+      "place_id": "place:BR:santuario-basilica-divino-pai-eterno-trindade",
+      "name": "Santuário Basílica do Divino Pai Eterno",
+      "place_type": "basilica",
+      "country": "BR",
+      "country_name": "Brazil",
+      "city": "Trindade, Goiás",
+      "lat": -16.6607094,
+      "lng": -49.4853965,
+      "geo_source_ref": "osm:way:131382347",
+      "geo_source_url": "https://www.openstreetmap.org/way/131382347",
+      "identity_source_url": "https://arquidiocesedegoiania.org.br/paroquia/santuario-basilica-do-divino-pai-eterno-trindade/",
+      "identity_source_issuer": "Roman Catholic Archdiocese of Goiânia",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Current named basilica church building, not associated sanctuary grounds, chapels or Carmelite community",
+      "precision": "site",
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0483"
+      ],
+      "osm_name": "Santuario Basílica do Divino Pai Eterno",
+      "osm_building": "basilica"
+    },
+    {
+      "candidate_id": "SG-INV-0137",
+      "place_id": "place:ES:catedral-santa-maria-burgos",
+      "name": "Catedral de Santa María de Burgos",
+      "place_type": "cathedral",
+      "country": "ES",
+      "country_name": "Spain",
+      "city": "Burgos",
+      "lat": 42.3407336,
+      "lng": -3.7043491,
+      "geo_source_ref": "osm:relation:12074743",
+      "geo_source_url": "https://www.openstreetmap.org/relation/12074743",
+      "identity_source_url": "https://catedraldeburgos.es/liturgias/",
+      "identity_source_issuer": "Cabildo Metropolitano de Burgos, cathedral custodians",
+      "source_directness": "OFFICIAL_CHURCH",
+      "scope_limit": "Named cathedral multipolygon building, not surrounding diocesan museums or neighbouring San Nicolás church",
+      "precision": "site",
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0137"
+      ],
+      "osm_name": "Catedral de Santa María",
+      "osm_building": "cathedral"
+    },
+    {
+      "candidate_id": "SG-INV-0043",
+      "place_id": "place:FR:abbatiale-saint-pierre-solesmes",
+      "name": "Église abbatiale Saint-Pierre de Solesmes",
+      "place_type": "church",
+      "country": "FR",
+      "country_name": "France",
+      "city": "Solesmes, Sarthe",
+      "lat": 47.8520355,
+      "lng": -0.3032105,
+      "geo_source_ref": "osm:way:151237849",
+      "geo_source_url": "https://www.openstreetmap.org/way/151237849",
+      "identity_source_url": "https://www.abbayedesolesmes.fr/accueil-retraite/accueil-et-horaires/",
+      "identity_source_issuer": "Benedictine Abbey of Saint-Pierre de Solesmes",
+      "source_directness": "OFFICIAL_CHURCH",
+      "scope_limit": "Saint-Pierre abbey church; exclude nearby Notre-Dame de l’Assomption parish church and Sainte-Cécile abbey church",
+      "precision": "site",
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0043"
+      ],
+      "osm_name": "Abbatiale Saint-Pierre de Solesmes",
+      "osm_building": "church"
+    },
+    {
+      "candidate_id": "SG-INV-0016",
+      "place_id": "place:FR:chapelle-notre-dame-peiniere",
+      "name": "Chapelle Notre-Dame de La Peinière",
+      "place_type": "chapel",
+      "country": "FR",
+      "country_name": "France",
+      "city": "La Peinière, Ille-et-Vilaine",
+      "lat": 48.1063625,
+      "lng": -1.353796,
+      "geo_source_ref": "osm:way:123878443",
+      "geo_source_url": "https://www.openstreetmap.org/way/123878443",
+      "identity_source_url": "https://www.diocese35.fr/la-peiniere/page/lhistoire-du-sanctuaire/",
+      "identity_source_issuer": "Roman Catholic Archdiocese of Rennes, La Peinière sanctuary",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "The named pilgrimage chapel, not the park, Marian statue, Bethany venue or sanctuary grounds",
+      "precision": "site",
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0016"
+      ],
+      "osm_name": "Chapelle Notre-Dame de Peinière",
+      "osm_building": "yes"
+    },
+    {
+      "candidate_id": "SG-INV-0087",
+      "place_id": "place:IT:basilica-san-domenico-siena",
+      "name": "Basilica Cateriniana di San Domenico",
+      "place_type": "basilica",
+      "country": "IT",
+      "country_name": "Italy",
+      "city": "Siena",
+      "lat": 43.3198022,
+      "lng": 11.3267559,
+      "geo_source_ref": "osm:way:28396159",
+      "geo_source_url": "https://www.openstreetmap.org/way/28396159",
+      "identity_source_url": "https://santacaterina.siena.it/basilica-di-san-domenico/",
+      "identity_source_issuer": "Siena Santa Caterina Catholic sanctuary custodians",
+      "source_directness": "OFFICIAL_CHURCH",
+      "scope_limit": "Dominican Basilica di San Domenico associated with Saint Catherine; not Siena Cathedral or neighbouring oratories",
+      "precision": "site",
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0087"
+      ],
+      "osm_name": "Basilica Cateriniana di San Domenico",
+      "osm_building": "church"
+    },
+    {
+      "candidate_id": "SG-INV-0623",
+      "place_id": "place:KR:haemi-martyrs-shrine-main-church",
+      "name": "Haemi Martyrs International Shrine — Main Church",
+      "place_type": "church",
+      "country": "KR",
+      "country_name": "South Korea",
+      "city": "Haemi, Seosan",
+      "lat": 36.7126432,
+      "lng": 126.5379024,
+      "geo_source_ref": "osm:way:325502443",
+      "geo_source_url": "https://www.openstreetmap.org/way/325502443",
+      "identity_source_url": "https://www.djcatholic.or.kr/home/pages/re_shrine_view.php?ids=shrine19",
+      "identity_source_issuer": "Roman Catholic Diocese of Daejeon",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "The Haemi International Martyrs Shrine's named main church building; exclude town parish church, martyr grounds and memorial structures",
+      "precision": "site",
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0623"
+      ],
+      "osm_name": "해미순교성지 대성당",
+      "osm_building": "church"
+    },
+    {
+      "candidate_id": "SG-INV-0234",
+      "place_id": "place:NL:bedevaartskerk-martelaren-gorcum-brielle",
+      "name": "Bedevaartskerk HH. Martelaren van Gorcum",
+      "place_type": "church",
+      "country": "NL",
+      "country_name": "Netherlands",
+      "city": "Brielle, South Holland",
+      "lat": 51.8952071,
+      "lng": 4.154452,
+      "geo_source_ref": "osm:way:268094130",
+      "geo_source_url": "https://www.openstreetmap.org/way/268094130",
+      "identity_source_url": "https://martelarenvangorcum.nl/plan-uw-bedevaart",
+      "identity_source_issuer": "Heiligdom HH. Martelaren van Gorcum pilgrimage custodians",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Pilgrimage church of the Martyrs of Gorcum; exclude martyr field, ciborium and other shrine property",
+      "precision": "site",
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0234"
+      ],
+      "osm_name": "Bedevaartskerk H. H. Martelaren van Gorcum",
+      "osm_building": "church"
+    },
+    {
+      "candidate_id": "SG-INV-0214",
+      "place_id": "place:PL:bazylika-bartlomieja-jadwigi-trzebnica",
+      "name": "Bazylika św. Bartłomieja Apostoła i św. Jadwigi",
+      "place_type": "basilica",
+      "country": "PL",
+      "country_name": "Poland",
+      "city": "Trzebnica",
+      "lat": 51.3095363,
+      "lng": 17.0669459,
+      "geo_source_ref": "osm:way:96064628",
+      "geo_source_url": "https://www.openstreetmap.org/way/96064628",
+      "identity_source_url": "https://archidiecezja.wroc.pl/parafie/sw-bartlomieja-apostola-i-sw-jadwigi%2Cbd68241a-2bdb-490e-b18b-54304a04e8f2",
+      "identity_source_issuer": "Roman Catholic Archdiocese of Wrocław",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Basilica church including the Saint Hedwig devotion; not separate monastery grounds or Saints Peter and Paul parish church",
+      "precision": "site",
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0214"
+      ],
+      "osm_name": "Bazylika Świętego Bartłomieja Apostoła i Świętej Jadwigi",
+      "osm_building": "church"
+    },
+    {
+      "candidate_id": "SG-INV-0219",
+      "place_id": "place:PL:bazylika-mariacka-gdansk",
+      "name": "Bazylika Mariacka Wniebowzięcia Najświętszej Maryi Panny",
+      "place_type": "basilica",
+      "country": "PL",
+      "country_name": "Poland",
+      "city": "Gdańsk",
+      "lat": 54.349807,
+      "lng": 18.6530127,
+      "geo_source_ref": "osm:way:46426385",
+      "geo_source_url": "https://www.openstreetmap.org/way/46426385",
+      "identity_source_url": "https://www.diecezja.gda.pl/parafie/325",
+      "identity_source_issuer": "Roman Catholic Archdiocese of Gdańsk",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Mary's Basilica proper; exclude separate Royal Chapel, St Nicholas Basilica and nearby churches",
+      "precision": "site",
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0219"
+      ],
+      "osm_name": "Bazylika Konkatedralna Wniebowzięcia Najświętszej Maryi Panny",
+      "osm_building": "church"
+    },
+    {
+      "candidate_id": "SG-INV-0472",
+      "place_id": "place:PR:basilica-monserrate-hormigueros",
+      "name": "Basílica Nuestra Señora de la Monserrate",
+      "place_type": "basilica",
+      "country": "PR",
+      "country_name": "Puerto Rico",
+      "city": "Hormigueros",
+      "lat": 18.1407181,
+      "lng": -67.1271593,
+      "geo_source_ref": "osm:way:535302292",
+      "geo_source_url": "https://www.openstreetmap.org/way/535302292",
+      "identity_source_url": "https://diocesisdemayaguez.org/basilica-nuestra-senora-de-la-monserrate",
+      "identity_source_issuer": "Roman Catholic Diocese of Mayagüez",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Named Monserrate basilica-sanctuary building at Calle José A. Mulet; exclude Pilgrims House and other parish chapels",
+      "precision": "site",
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0472"
+      ],
+      "osm_name": "Santuario de Nuestra Señora de Monserrate",
+      "osm_building": "yes"
+    },
+    {
+      "candidate_id": "SG-INV-0160",
+      "place_id": "place:PT:basilica-sao-bento-porta-aberta",
+      "name": "Basílica de São Bento da Porta Aberta",
+      "place_type": "basilica",
+      "country": "PT",
+      "country_name": "Portugal",
+      "city": "São Bento, Terras de Bouro",
+      "lat": 41.6902311,
+      "lng": -8.2032744,
+      "geo_source_ref": "osm:way:533214373",
+      "geo_source_url": "https://www.openstreetmap.org/way/533214373",
+      "identity_source_url": "https://www.sbento.pt/pt/hp/basilica/",
+      "identity_source_issuer": "São Bento da Porta Aberta sanctuary custodians",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Basilica church built in 1880–1895; exclude the distinct lower crypt and exterior sanctuary facilities",
+      "precision": "site",
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0160"
+      ],
+      "osm_name": "Basílica de São Bento da Porta Aberta",
+      "osm_building": "church"
+    },
+    {
+      "candidate_id": "SG-INV-0375",
+      "place_id": "place:US:historic-chapel-our-lady-la-leche-st-augustine",
+      "name": "Historic Chapel of Our Lady of La Leche",
+      "place_type": "chapel",
+      "country": "US",
+      "country_name": "United States",
+      "city": "St. Augustine, Florida",
+      "lat": 29.9047316,
+      "lng": -81.3152454,
+      "geo_source_ref": "osm:way:237757052",
+      "geo_source_url": "https://www.openstreetmap.org/way/237757052",
+      "identity_source_url": "https://missionandshrine.org/history-timeline/",
+      "identity_source_issuer": "National Shrine of Our Lady of La Leche, Mission Nombre de Dios custodians",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Small historic shrine chapel reconstructed c.1915; exclude the separately named 1965 Prince of Peace Votive Church, renamed Church of Our Lady of La Leche, and the broader grounds",
+      "precision": "site",
+      "source_ids": [
+        "AO-P40-SITE-SG-INV-0375"
+      ],
+      "osm_name": "Shrine of our Lady of la Leche",
+      "osm_building": "yes"
+    }
+  ],
+  "complex_scope_hold_policy": "No existing canonical Place reused by proximity only; deliberately exclude ambiguous Werl, Nuria, Balaguer, La Leche main church, multiple San Gabriele churches, Montichiari, Saint Jude host church and other unverified details.",
+  "policy": [
+    "Exact named OSM building objects and Catholic custodian records must independently converge.",
+    "The recorded OSM geometry center must belong to the selected individual church polygon or building relation, not an approximate inherited search anchor.",
+    "Puerto Rico is represented by its ISO territory-area record, not a sovereignty or ecclesiastical-jurisdiction assertion.",
+    "No photos, Mass schedules, shrine-event profiles or Directory links are inferred from this release."
+  ]
+}
