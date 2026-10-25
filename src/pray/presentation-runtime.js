@@ -1439,6 +1439,31 @@ const BEN_STAGES=[
 function benStages(){return christKingStages(BEN_STAGES,BEN.celebration,BEN.feastOptions)}
 function benMacroIndex(step){const id=benStages()[step]?.[0];if(id==='exposition')return 0;if(id==='adoration'||id?.startsWith('king-'))return 1;if(id==='reposition')return 3;return 2}
 function benMacroRail(step){const labels=[L('Exposition','Exposition'),L('Adoration','Adoration'),L('Benediction','Bénédiction'),L('Reposition','Reposition')];return `<div class="aoP435930StageRail aoP435930BenMacroRail">${labels.map((x,i)=>`<span class="${i===benMacroIndex(step)?'active':''}" ${i===benMacroIndex(step)?'aria-current="step"':''}>${esc(x)}</span>`).join('')}</div>`}
+function benFeastSource(title,url){
+ return '<p class="aoP435930FeastSource"><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(title)+' ↗</a></p>';
+}
+function benFeastPrayer(record,title,url){
+ const vern=record[lang()]||record.en||'',latin=record.la||'',both=Boolean(vern&&latin);
+ return '<article class="aoP435930Prayer aoP435930FeastPrayer">'+
+  '<div class="aoP435930PrayerHead"><div><h3>'+esc(title)+'</h3></div></div>'+
+  (both?'<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="'+esc(L('Replace prayer with Latin','Remplacer la prière par le latin'))+'"><span data-face-v>'+nl(vern)+'</span><span data-face-la hidden>'+nl(latin)+'</span></button>':
+   '<div class="aoP435930Text">'+nl(vern||latin)+'</div>')+
+  benFeastSource(L('Text and provenance','Texte et provenance'),url)+
+  (record.note?'<details class="aoP435930FeastEdition"><summary>'+esc(L('Text version','Version du texte'))+'</summary><p>'+esc(record.note)+'</p></details>':'')+'</article>';
+}
+function benFeastOptions(){
+ const enabled=BEN.celebration==='christKing';
+ const opts=[['procession',L('Eucharistic procession','Procession eucharistique')],
+  ['royalPraises','Christus vincit'],['sacredHeartLitany',L('Litany of the Sacred Heart','Litanies du Sacré-Cœur')],
+  ['consecration',L('Consecration of the human race','Consécration du genre humain')]];
+ return '<details class="aoP435930PrayerOptions aoP435930BenFeastOptions" data-ao-ben-feast-options>'+
+  '<summary>'+esc(L('Celebration · '+(enabled?'Christ the King':'Ordinary'),'Célébration · '+(enabled?'Christ-Roi':'Ordinaire')))+'</summary>'+
+  '<div class="aoP435930PrayerOptionsBody">'+
+  '<label class="aoP435930Toggle"><input type="checkbox" data-p435930-ben-feast '+(enabled?'checked':'')+'><span><b>'+esc(L('Christ the King · optional elements','Christ-Roi · éléments facultatifs'))+'</b><small>'+esc(L('This is not a universal order of service.','Ceci n’est pas un ordre de cérémonie universel.'))+'</small></span></label>'+
+  (enabled?opts.map(([key,label])=>'<label class="aoP435930Toggle"><input type="checkbox" data-p435930-ben-feast-option="'+key+'" '+(BEN.feastOptions[key]?'checked':'')+'><span><b>'+esc(label)+'</b></span></label>').join(''):'')+
+  benFeastSource(L('Pius XI · Quas primas §28','Pie XI · Quas primas §28'),CHRIST_KING_WITNESSES.decree)+
+  '</div></details>';
+}
 function renderBenediction(){
  const stages=benStages(),i=Math.max(0,Math.min(stages.length-1,BEN.step)),id=stages[i][0],titles=stages.map(x=>L(x[1],x[2]));let body='';
  if(id==='exposition')body=`${guideNow(L('Attend to the Exposition','Soyez attentif à l’exposition'),L('When the Blessed Sacrament is exposed, turn your attention to the altar. If O Salutaris is actually sung, pray or sing it with the church; otherwise follow what is used.','Lorsque le Saint-Sacrement est exposé, tournez votre attention vers l’autel. Si O Salutaris est effectivement chanté, priez-le ou chantez-le avec l’assemblée ; sinon, suivez ce qui est utilisé.'))}${prayerBlock('benediction_o_salutaris',{kicker:L('If sung here','Si chanté ici')})}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Stay here until the opening hymn or prayers have finished and the service settles into adoration.','Restez ici jusqu’à la fin du chant ou des prières d’ouverture et jusqu’à ce que l’office entre dans l’adoration.'))}`;
@@ -1448,7 +1473,8 @@ function renderBenediction(){
  if(id==='blessing')body=`${guideNow(L('Receive the Eucharistic blessing','Recevez la bénédiction eucharistique'),L('Stop interacting with the phone. Attend to the blessing being given with the Blessed Sacrament.','Cessez d’interagir avec le téléphone. Soyez attentif à la bénédiction donnée avec le Saint-Sacrement.'))}${guideCue(L('WAIT UNTIL IT ENDS','ATTENDEZ LA FIN'),L('Do not advance during the blessing. Continue only after it has ended and the service moves on.','N’avancez pas pendant la bénédiction. Continuez seulement lorsqu’elle est terminée et que l’office se poursuit.'))}`;
  if(id==='praises')body=`${guideNow(L('Follow what is actually prayed next','Suivez ce qui est réellement prié ensuite'),L('If the Divine Praises are said here, pray them with the church. If they are omitted, leave them off and continue when Reposition begins.','Si les Louanges divines sont récitées ici, priez-les avec l’assemblée. Si elles sont omises, ne les ajoutez pas et continuez lorsque commence la reposition.'))}<label class="aoP435930Toggle"><input type="checkbox" data-p435930-ben-praises ${BEN.divinePraises?'checked':''}><span><b>${esc(L('The Divine Praises are being said','Les Louanges divines sont récitées'))}</b><small>${esc(L('Show the text only when it belongs to this service','Afficher le texte seulement lorsqu’il appartient à cet office'))}</small></span></label>${BEN.divinePraises?prayerBlock('benediction_divine_praises',{kicker:L('Pray with the church','Prier avec l’assemblée')}):''}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the Blessed Sacrament is being returned to the tabernacle.','Avancez lorsque le Saint-Sacrement est reporté au tabernacle.'))}`;
  if(id==='reposition')body=`${guideNow(L('Follow the Reposition','Suivez la reposition'),L('Follow the chant and movement actually used as the Blessed Sacrament is returned to the tabernacle. The app does not force Psalm 116 or another local custom.','Suivez le chant et le mouvement réellement utilisés lorsque le Saint-Sacrement est reporté au tabernacle. L’application n’impose ni le psaume 116 ni un autre usage local.'))}${guideCue(L('FINISH WHEN','TERMINEZ LORSQUE'),L('The Blessed Sacrament has been reposed and the public service has actually ended.','Le Saint-Sacrement a été replacé au tabernacle et l’office public est réellement terminé.'))}`;
- return `${head(L('Benediction','Bénédiction'),L('Live companion · the church determines the pace','Compagnon en direct · l’église détermine le rythme'))}<main class="aoP435930Body aoP435930BenedictionReader" data-ao-benediction-step="${i}">
+ return `${head(L('Benediction','Bénédiction'),L('Live companion · the church determines the pace','Compagnon en direct · l’église détermine le rythme'))}<main class="aoP435930Body aoP435930BenedictionReader" data-ao-benediction-step="${i}" data-ao-benediction-celebration="${esc(BEN.celebration)}">
+  ${benFeastOptions()}
  <section class="aoDevoCard" data-ao-devo-card="${esc(id)}">
   <header class="aoDevoCardHead"><small class="aoDevoCardNumber">${i+1} / ${stages.length}</small><h2 class="aoDevoCardTitle">${esc(titles[i])}</h2></header>
   <div class="aoDevoCardScroll" role="region" tabindex="0" aria-label="${esc(titles[i])}">${body}</div>
