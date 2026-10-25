@@ -41,7 +41,7 @@ export function postureMeaning(posture) {
 // A source cue family, not a clock. This projection applies only to the
 // two fixed Ordinary prayer spans; no substring scans or invented cues.
 function isGloriaCredoCue(id) {
-  const hit = String(id ?? "").match(/^AO\\.SM\\.C(\\d{4})$/);
+  const hit = String(id ?? "").match(/^AO\.SM\.C(\d{4})$/);
   if (!hit) return false;
   const n = Number(hit[1]);
   return n >= 53 && n <= 69 || n >= 89 && n <= 105;
