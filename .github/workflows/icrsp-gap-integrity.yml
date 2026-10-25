@@ -1,0 +1,27 @@
+name: ICRSP source gap register integrity
+on:
+  push:
+    branches: [governance/icrsp-source-inventory-1665]
+    paths:
+      - '.github/workflows/icrsp-gap-integrity.yml'
+      - 'data/source-text/icrsp-france-39-major-content-gap-triage.v1.json'
+      - 'data/source-text/icrsp-france-temporal-193-gap-register.v1.json'
+      - 'data/source-text/icrsp-france-temporal-189-dedup-verified.v1.json'
+      - 'tests/test_icrsp_gap_register_integrity.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-source-gap-registry:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate all source, owner and release-gate contracts
+        run: python -m unittest discover -s tests -p 'test_icrsp_gap_register_integrity.py' -v
