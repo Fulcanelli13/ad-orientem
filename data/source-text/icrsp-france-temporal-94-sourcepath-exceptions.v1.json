@@ -1,5 +1,5 @@
 {
-  "schema": "AO_ICRSP_TEMPORAL_94_NO_SOURCEPATH_WITNESS_EXCEPTION_ADJUDICATION_V1",
+  "schema": "AO_ICRSP_TEMPORAL_93_NO_SOURCEPATH_WITNESS_EXCEPTION_ADJUDICATION_V1",
   "date": "2026-10-25",
   "status": "EXCEPTIONS_TRIAGED_NOT_PROVEN_MISSING_CONTENT",
   "ownerIssue": 1665,
@@ -10,8 +10,8 @@
   ],
   "totals": {
     "allTemporal": 193,
-    "withExistingReadingSourcePathWitness": 99,
-    "withoutMatchingWitness": 94,
+    "withExistingReadingSourcePathWitness": 100,
+    "withoutMatchingWitness": 93,
     "knownExistingExplicitHolds": 3,
     "probableActualAppGapsProven": 0,
     "publicationApproved": 0
@@ -19,7 +19,7 @@
   "categories": {
     "ADVENT_FERIA_SOURCE_PATH_SPECULATION_DO_NOT_PROMOTE": 21,
     "OFFICE_O_ANTIPHON_NOT_MASS_PROPER": 7,
-    "NO_SAFE_DIRECT_PATH_OR_OTHER_OWNER_SEARCH_REQUIRED": 17,
+    "NO_SAFE_DIRECT_PATH_OR_OTHER_OWNER_SEARCH_REQUIRED": 16,
     "HISTORICAL_OR_OCTAVE_NOT_GLOBAL_1962_PROPER": 36,
     "EXISTING_OWNER_EXPLICIT_HOLD": 3,
     "EASTER_OCTAVE_MASS_PROPER_NOT_IN_CHECKED_READINGS_REGISTRIES": 6,
@@ -1162,18 +1162,13 @@
       "publicationEligibility": false,
       "assertsMissingFeature": false,
       "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0619_ancien"
-    },
-    {
-      "articleId": "a0246_ancien",
-      "indexPosition": 192,
-      "indexTitle": "24ᵉ et dernier dimanche après la Pentecôte",
-      "sourcePathCandidate": null,
-      "sourcePathEvidence": "NO_ACTUAL_SOURCE_PATH_CANDIDATE",
-      "reviewDisposition": "NO_SAFE_DIRECT_PATH_OR_OTHER_OWNER_SEARCH_REQUIRED",
-      "alreadyKnownHold": null,
-      "publicationEligibility": false,
-      "assertsMissingFeature": false,
-      "sourceArticleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0246_ancien"
     }
-  ]
+  ],
+  "correction": {
+    "articleId": "a0246_ancien",
+    "sourcePath": "Tempora/Pent24-0",
+    "reason": "24th and last Sunday label grammar escaped the first rule; explicit 1962 reading sourcePath witness already present in registry",
+    "priorArtifact": "data/source-text/icrsp-france-temporal-193-sourcepath-crosswalk.v1.json",
+    "safeForCalendarAutomaticPromotion": false
+  }
 }
