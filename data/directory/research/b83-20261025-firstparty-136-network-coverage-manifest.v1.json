@@ -1,0 +1,88 @@
+{
+  "schema": "AO_B83_FIRSTPARTY_136_DIRECTORY_ENTRY_CROSSWALK_V1",
+  "checked_on": "2026-10-25",
+  "publication_state": "RESEARCH_ONLY_NOT_PUBLIC",
+  "canonical_operational_baseline": "B82 (2026-10-25), 2,573 provisional distinct physical site groups",
+  "original_mass_rows_preserved": 4681,
+  "original_verified_timetable_rows_preserved": 3347,
+  "discovery_design": "First-party locations or apostolate directory entries deduplicated against the full B82 canonical physical site view; no naive group minting on locality alone.",
+  "sources": [
+    {
+      "code": "ICKSP_FR",
+      "count": 42,
+      "url": "https://icrspfrance.fr/?page=apostolates",
+      "note": "Apostolate locality directory; includes Belgium, Switzerland, Martinique entries and provincial house"
+    },
+    {
+      "code": "ICKSP_US",
+      "count": 27,
+      "url": "https://institute-christ-king.org/resources",
+      "note": "Institute's own index; includes houses/institutions not necessarily separate public Mass buildings"
+    },
+    {
+      "code": "ICKSP_DE",
+      "count": 10,
+      "url": "https://institut-christus-koenig.de/apostolate/",
+      "note": "Germany plus Swiss locations"
+    },
+    {
+      "code": "ICKSP_GB",
+      "count": 6,
+      "url": "https://icksp.org.uk/events/locations/",
+      "note": "Named shrines and convent/institution labels"
+    },
+    {
+      "code": "ICKSP_IT",
+      "count": 4,
+      "url": "https://institute-christ-king.org/international-home",
+      "note": "Four Italian locations with owner-supplied physical descriptions"
+    },
+    {
+      "code": "AASJMV_PAR",
+      "count": 14,
+      "url": "https://adapostolica.org/paroquias/",
+      "note": "Official personal apostolic administration's parish names and postal addresses; contacts may not be church entrance"
+    },
+    {
+      "code": "AASJMV_REC",
+      "count": 3,
+      "url": "https://adapostolica.org/reitorias/",
+      "note": "Three named rectorate churches in Campos with address"
+    },
+    {
+      "code": "AASJMV_BH",
+      "count": 6,
+      "url": "https://oratoriosaojosebh.org/comunidades-atendidas/",
+      "note": "Detailed Mass venue descriptions in Minas Gerais, sometimes historical; current schedules need independent 2026 verification"
+    },
+    {
+      "code": "SSPX_BR",
+      "count": 24,
+      "url": "https://fsspx.com.br/pt/priorados-e-capelas-51589",
+      "note": "Redundancy-control cohort because B77 already includes significant SSPX Brazilian coverage"
+    }
+  ],
+  "screened_total": 136,
+  "screening_status_counts": {
+    "HIGH_CONFIDENCE_EXISTING_REVIEW": 14,
+    "ADDRESS_COMPATIBLE_IDENTITY_REVIEW": 2,
+    "NAME_AND_LOCALITY_REVIEW": 27,
+    "LOCALITY_ONLY_REVIEW": 51,
+    "CITY_ONLY_SOURCE_HOLD": 23,
+    "NO_CLOSE_SAME_COUNTRY_MATCH": 19
+  },
+  "priority_exception_rows": 45,
+  "b82_known_ICKSP_overlap": "146 B82 owner-labelled ICKSP and 11 printed-directory records, with possible overlap; new ICKSP entries cannot be counted naively",
+  "b82_known_SSPX_overlap": "B77 had already screened Brazil; no fresh location admissions from crosscheck without distinct physical building evidence",
+  "new_research_group_admissions": 0,
+  "new_verified_schedule_rows": 0,
+  "public_map_site_admissions": 0,
+  "critical_interpretation": "No close automated match is NOT proof of a missing church. City-name/apostolate labels are not physical worship sites. Address comparison is heuristic, and contact addresses may be rectories.",
+  "full_auditable_workbook": {
+    "filename": "Ad_Orientem_B83_130plus_FirstParty_Directory_Crosswalk_2026-10-25.xlsx",
+    "sha256": "4457e36a91d7eb14aa63fb3570dbf1ae94c1b81ea1eda39d449b37dc54611b57",
+    "scope": "136 source entries, official URL per entry, B82 candidate IDs and match classification, 45-case priority queue",
+    "git_status": "Not committed to repository (binary Excel); this is a source/provenance manifest"
+  },
+  "next_priority": "Target AASJMV 23 named sites with street-address comparison against B82 including other operator labels; only after exact building identity review admit G0 research sites, never schedules or production pins. Then resume 100-200 entry screens from uncovered networks."
+}
