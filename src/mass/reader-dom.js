@@ -2131,9 +2131,14 @@ function syncRailIconSurfaces(root){
       item.dataset.voiceTextFallback==="true";
     const visual=hasArt&&!forcedText&&!blankVoice;
     item.dataset.iconVisible=String(visual);
+    // Historical objective-context CSS has high-specificity display:grid
+    // rules. The explicit tile-level visibility contract must win even there.
     if(!visual){
+      item.style?.setProperty?.("display","none","important");
       item.removeAttribute("role");
       item.setAttribute("aria-hidden","true");
+    }else{
+      item.style?.removeProperty?.("display");
     }
   }
   syncRailVisibility(root);
