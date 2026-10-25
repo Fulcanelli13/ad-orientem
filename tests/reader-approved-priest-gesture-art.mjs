@@ -54,7 +54,9 @@ for(const [id,item] of Object.entries(APPROVED_PRIEST_RUBRIC_GESTURE_ART)){
  }
 }
 const later=canonical.meanings.find(x=>x.meaningId==="priest.action.hands_joined");
-assert.equal(later?.status,"text-only","Do not promote inline annotations to a priest action rail icon");
+assert.ok(!later?.path,"Do not promote inline annotations to a priest action rail icon");
+assert.ok(canonical.gaps.some(x=>x.meaningId==="priest.action.hands_joined"),
+  "The unresolved canonical priest-action meaning must remain on the explicit gap list");
 assert.ok(dom.includes("approvedPriestRubricGestureArt(event)"));
 assert.ok(dom.includes("icon.dataset.approvedPriestGestureEvent=event.id"));
 assert.ok(dom.includes("text.prepend(icon)"));
