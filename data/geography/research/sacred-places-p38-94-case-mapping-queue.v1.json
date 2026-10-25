@@ -568,7 +568,9 @@
         "lng": 1.83075,
         "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
       },
-      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "scope_verification": "FIRST_PARTY_COMPLEX_SCOPE_DOCUMENTED_EXACT_WAY_NOT_CERTIFIED",
+      "scope_classification": "CAVE_CHURCH_SPIRITUALITY_CENTRE_COMPLEX"
     },
     {
       "queue_row": 28,
@@ -1296,7 +1298,9 @@
         "lng": -81.31537,
         "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
       },
-      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "scope_verification": "FIRST_PARTY_COMPLEX_SCOPE_DOCUMENTED_EXACT_WAY_NOT_CERTIFIED",
+      "scope_classification": "MULTI_BUILDING_CATHOLIC_SHRINE_COMPLEX"
     },
     {
       "queue_row": 68,
@@ -1332,7 +1336,9 @@
         "lng": -81.52287,
         "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
       },
-      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "scope_verification": "FIRST_PARTY_COMPLEX_SCOPE_DOCUMENTED_EXACT_WAY_NOT_CERTIFIED",
+      "scope_classification": "SHRINE_INSIDE_HOST_PARISH_CHURCH"
     },
     {
       "queue_row": 70,
@@ -1350,7 +1356,9 @@
         "lng": -87.63987,
         "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
       },
-      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "scope_verification": "FIRST_PARTY_COMPLEX_SCOPE_DOCUMENTED_EXACT_WAY_NOT_CERTIFIED",
+      "scope_classification": "FORMER_HOSPITAL_CHAPEL_RETAINED_AS_NATIONAL_SHRINE"
     },
     {
       "queue_row": 71,
@@ -1386,7 +1394,9 @@
         "lng": -87.97637,
         "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
       },
-      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "scope_verification": "FIRST_PARTY_COMPLEX_SCOPE_DOCUMENTED_EXACT_WAY_NOT_CERTIFIED",
+      "scope_classification": "SHRINE_CHURCH_MUSEUM_AND_GROUNDS_COMPLEX"
     },
     {
       "queue_row": 73,
@@ -1404,7 +1414,9 @@
         "lng": -89.88962,
         "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
       },
-      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "scope_verification": "FIRST_PARTY_COMPLEX_SCOPE_DOCUMENTED_EXACT_WAY_NOT_CERTIFIED",
+      "scope_classification": "SHRINE_WITHIN_ST_MARYS_BARRENS_CHURCH_MULTIFEATURE_GROUNDS"
     },
     {
       "queue_row": 74,
@@ -1607,5 +1619,66 @@
     "existing_canonical_scope_reconciliation": 1,
     "other_open_rows_not_yet_building_verified": 66,
     "notes": "6 plus provisional PR plus Paray existing-canonical = 8 of 74 rows with an identified feature or scope finding; 66 await exact church geometry. No new Place publication."
+  },
+  "institutional_scope_adjudications": [
+    {
+      "id": "SG-INV-0397",
+      "scope": "SHRINE_INSIDE_HOST_PARISH_CHURCH",
+      "url": "https://natlshrinestdymphna.org/site/",
+      "finding": "National Shrine of Saint Dymphna is located inside Saint Mary's Church in Massillon, not independently a distinct Dymphna church building.",
+      "next": "Identify exact OSM way for Saint Mary's parish church; reuse or add host physical church only after identity deduplication. Keep devotional shrine classification separate.",
+      "status": "RESEARCH_ONLY_NOT_MAP_VERIFIED",
+      "evaluated_at": "2026-10-25"
+    },
+    {
+      "id": "SG-INV-0375",
+      "scope": "MULTI_BUILDING_CATHOLIC_SHRINE_COMPLEX",
+      "url": "https://missionandshrine.org/location-and-hours/",
+      "finding": "Mission Nombre de Dios site distinguishes Shrine Church, Historic Chapel, and grounds at St Augustine.",
+      "next": "Independently identify a named church-footprint OSM way, separate historic chapel, and exclude campus grounds from the church Place.",
+      "status": "RESEARCH_ONLY_NOT_MAP_VERIFIED",
+      "evaluated_at": "2026-10-25"
+    },
+    {
+      "id": "SG-INV-0126",
+      "scope": "CAVE_CHURCH_SPIRITUALITY_CENTRE_COMPLEX",
+      "url": "https://www.covamanresa.cat/en/sanctuary",
+      "finding": "The Cave of Saint Ignatius site includes the original cave, a church and an Ignatian spirituality centre; place-title alone does not identify a church building.",
+      "next": "Determine whether desired published Place is the worship church, cave, or entire sanctuary; map the intended unit without conflation.",
+      "status": "RESEARCH_ONLY_NOT_MAP_VERIFIED",
+      "evaluated_at": "2026-10-25"
+    },
+    {
+      "id": "SG-INV-0399",
+      "scope": "SHRINE_CHURCH_MUSEUM_AND_GROUNDS_COMPLEX",
+      "url": "https://www.littleflower.org/national-shrine-and-museum-of-st-therese/plan-your-visit/",
+      "finding": "The Darien site has a shrine/museum and church within extensive shrine property.",
+      "next": "Confirm exact worship-building boundary and independently mapped feature, not landscaped grounds.",
+      "status": "RESEARCH_ONLY_NOT_MAP_VERIFIED",
+      "evaluated_at": "2026-10-25"
+    },
+    {
+      "id": "SG-INV-0385",
+      "scope": "SHRINE_WITHIN_ST_MARYS_BARRENS_CHURCH_MULTIFEATURE_GROUNDS",
+      "url": "https://amm.org/visit-us/national-shrine-nichole/",
+      "finding": "Perryville Miraculous Medal Shrine is housed at Saint Mary's of the Barrens Church with separate pilgrim grounds and grotto.",
+      "next": "Map the historic host church building and avoid publishing a separate identical physical church for a devotional title.",
+      "status": "RESEARCH_ONLY_NOT_MAP_VERIFIED",
+      "evaluated_at": "2026-10-25"
+    },
+    {
+      "id": "SG-INV-0392",
+      "scope": "FORMER_HOSPITAL_CHAPEL_RETAINED_AS_NATIONAL_SHRINE",
+      "url": "https://cabrininationalshrine.org/history/the-national-shrine/",
+      "finding": "Chicago Cabrini shrine occupies historic former Columbus Hospital chapel; hospital demolished or repurposed around it.",
+      "next": "Confirm the surviving chapel's current exact mapped footprint rather than reusing a historic hospital polygon.",
+      "status": "RESEARCH_ONLY_NOT_MAP_VERIFIED",
+      "evaluated_at": "2026-10-25"
+    }
+  ],
+  "scope_review_status": {
+    "first_party_site_scope_assessments": 6,
+    "scope_adjudications_not_georeferenced": 6,
+    "note": "These assessments refine existing 74 candidate rows; none authorizes a new Place or exact geometry."
   }
 }
