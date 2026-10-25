@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 490,
+    "places": 498,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 231,
+    "places_without_direct_claim": 239,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -259,7 +259,15 @@
       "place:GB:p42-sg-inv-0249",
       "place:FR:p42-sg-inv-0032",
       "place:DE:p42-sg-inv-0181",
-      "place:US:p42-sg-inv-0378"
+      "place:US:p42-sg-inv-0378",
+      "place:DE:p43-sg-0166-110413194",
+      "place:DE:p43-sg-0166-110413193",
+      "place:IT:p43-sg-0057-3422378",
+      "place:IT:p43-sg-0091-11888423",
+      "place:IT:p43-sg-0091-11888425",
+      "place:IT:p43-sg-0094-144658381",
+      "place:IT:p43-sg-0075-262801874",
+      "place:EC:p43-sg-0511-561028428"
     ],
     "customs_without_exact_place": [
       {
@@ -5685,6 +5693,54 @@
     {
       "place_id": "place:US:p42-sg-inv-0378",
       "display_name": "Basilica and National Shrine of Our Lady of Consolation",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:p43-sg-0166-110413194",
+      "display_name": "Wallfahrtsbasilika Mariä Heimsuchung",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:p43-sg-0166-110413193",
+      "display_name": "Alte Wallfahrtskirche Werl",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0057-3422378",
+      "display_name": "Santuario dell'Amore Misericordioso",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0091-11888423",
+      "display_name": "Nuovo Santuario di San Gabriele dell'Addolorata",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0091-11888425",
+      "display_name": "Antico Santuario di San Gabriele dell'Addolorata",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0094-144658381",
+      "display_name": "Basilica Santuario di San Giuseppe da Copertino",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0075-262801874",
+      "display_name": "Santuario della Madonna di Canneto",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:EC:p43-sg-0511-561028428",
+      "display_name": "Santuario Nacional de Nuestra Señora de El Quinche",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }

@@ -8,13 +8,13 @@ const m=read("data/geography/research/sacred-places-p42-fifteen-named-catholic-b
 assert.equal(m.schema,"AO_SACRED_PLACES_P42_FIFTEEN_NAMED_CATHOLIC_BUILDINGS_V1");
 assert.deepEqual(Object.values(m.baseline),[475,773,475,216,146,9]);
 assert.deepEqual(Object.values(m.proposed),[490,788,490,231,146,9]);
-assert.equal(RELEASES.at(-1).id,"P42");
+assert.ok(RELEASES.some(x=>x.id==="P42"));
 assert.deepEqual([g.places.length,s.sources.length,h.place_crosswalk.length,h.exception_queues.places_without_direct_claim.length,g.geoAreas.length,g.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas,LIVE.links]);
-assert.equal(LIVE.places,490);assert.equal(LIVE.sources,788);assert.equal(LIVE.areas,146);assert.equal(LIVE.links,9);
+assert.ok(LIVE.places>=490);assert.ok(LIVE.sources>=788);assert.equal(LIVE.areas,146);assert.equal(LIVE.links,9);
 assert.equal(h.counts.places,LIVE.places);assert.equal(h.counts.places_without_direct_claim,LIVE.unlinked);
 assert.equal(m.published_new.length,15);assert.equal(m.new_physical_locations,15);
 assert.equal(m.photo_assets_approved,0);assert.equal(m.tlm_schedule_links_added,0);
-const published=new Set(m.published_new.map(x=>x.place_id)),prev=g.places.filter(x=>!published.has(x.place_id));
+const published=new Set(m.published_new.map(x=>x.place_id));const p42Index=RELEASES.findIndex(x=>x.id==="P42");const laterIds=new Set(RELEASES.slice(p42Index+1).flatMap(x=>(x.data.published_new||[]).map(z=>z.place_id)));const prev=g.places.filter(x=>!published.has(x.place_id)&&!laterIds.has(x.place_id));
 assert.equal(published.size,15);assert.equal(prev.length,475);
 const beforeRefs=new Set(prev.map(x=>x.geo?.source_ref).filter(Boolean)),afterRefs=new Set(),names=new Set(),placeById=new Map(g.places.map(x=>[x.place_id,x])),sourceById=new Map(s.sources.map(x=>[x.id,x]));
 assert.equal(placeById.size,g.places.length);assert.equal(sourceById.size,s.sources.length);
