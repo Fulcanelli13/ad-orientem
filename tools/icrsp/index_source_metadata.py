@@ -22,7 +22,7 @@ UA = "AdOrientemResearchIndexer/1.0 (metadata only; no text redistribution)"
 MAX_BYTES = 10_485_760
 SECTIONS = {
     "temporal": "temporal", "sanctoral": "sanctoral",
-    "communs": "commons", "commun des saints": "commons",
+    "communs": "commons", "communs des saints": "commons", "commun des saints": "commons",
     "propres diocésains": "local_propers",
     "messes votives et des défunts": "votives_requiem",
     "préfaces": "prefaces", "rituel": "ritual",
@@ -144,6 +144,12 @@ def main():
     except Exception as exc:
         sys.exit(f"Index fetch failed, no completion claim: {exc}")
     occurrences, pages = discover(html)
+    # Detect identifiers embedded in non-anchor attributes or script-generated links.
+    # Keep these candidates out of the verified URL count until their link semantics
+    # and category are checked; they can reveal gaps in plain <a href> extraction.
+    raw_ids = set(re.findall(r"(?<![A-Za-z0-9_])a\d{4}_(?:ancien|nouveau)(?![A-Za-z0-9_])", html))
+    linked_ids = {p["articleId"] for p in pages}
+    unlinked_raw_ids = sorted(raw_ids - linked_ids)
     errors = []
     limit = len(pages) if args.inspect == -1 else min(args.inspect, len(pages))
     for idx, page in enumerate(pages[:limit], start=1):
@@ -178,9 +184,12 @@ def main():
             "indexOccurrences": len(occurrences),
             "uniqueArticleUrls": len(pages),
             "metadataInspected": sum(p["state"] == "METADATA_INSPECTED" for p in pages),
-            "errors": len(errors)
+            "errors": len(errors),
+            "rawArticleIdCandidates": len(raw_ids),
+            "rawIdsMissingFromAnchors": len(unlinked_raw_ids)
         },
         "occurrences": occurrences, "pages": pages, "errors": errors,
+        "unlinkedRawArticleIdCandidates": unlinked_raw_ids,
     }
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
