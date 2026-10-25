@@ -306,6 +306,52 @@ try{
     });
     assert.ok(resolvedIcons.slots.length>=1,
       "Production icon bank did not render a visible icon on any curated source-cued card");
+
+    // The approved icon registry being complete does not imply the art is
+    // actually visible on a live phone. Check every default visible card's
+    // first source state for broken/misplaced/empty transient tiles.
+    if(width===390 && lang==="en" && !secondConfiteor){
+      const iconRailAudit=await page.evaluate(async()=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const rows=[],empty=[],misplaced=[];
+        const frame=()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+        const shown=el=>Boolean(el&&!el.hidden&&el.getClientRects().length&&
+          getComputedStyle(el).display!=="none"&&getComputedStyle(el).visibility!=="hidden");
+        for(const card of api.model.cards){
+          if(!api.showSequence(card.sequence))continue;
+          await frame();await frame();
+          const root=document.querySelector("#ao-r17-native-reader-preview");
+          const items=[...root.querySelectorAll(".ao-rail-left .ao-rail-item,.ao-rail-right .ao-rail-item")];
+          for(const tile of items.filter(el=>el.dataset.active==="true"&&shown(el))){
+            const lane=tile.closest(".ao-rail-left")?"left":"right";
+            const channel=tile.dataset.channel;
+            const icon=tile.querySelector("[data-icon-slot]");
+            const sprite=shown(icon)&&
+              (getComputedStyle(icon).maskImage!=="none" ||
+               getComputedStyle(icon).webkitMaskImage!=="none" ||
+               getComputedStyle(icon).backgroundImage!=="none");
+            const copy=[...tile.querySelectorAll(".ao-rail-copy")]
+              .some(el=>shown(el)&&el.textContent.trim()&&
+                getComputedStyle(el).opacity!=="0");
+            const record={card:card.title,seq:card.sequence,cue:api.getActiveCue(),lane,
+              channel,sprite,copy,label:tile.getAttribute("aria-label")};
+            rows.push(record);
+            if(!sprite&&!copy)empty.push(record);
+            if((lane==="left"&&["priest-action","priest-position","priest-voice","bell"].includes(channel)) ||
+               (lane==="right"&&["gesture","posture","response","posture-change"].includes(channel)))
+              misplaced.push(record);
+          }
+        }
+        return {scenes:rows.length,empty,misplaced,
+          byChannel:Object.fromEntries([...new Set(rows.map(r=>r.channel))]
+            .map(channel=>[channel,rows.filter(r=>r.channel===channel).length]))};
+      });
+      console.log("LIVE_ICON_RAIL_RENDERED_AUDIT="+JSON.stringify(iconRailAudit));
+      assert.deepEqual(iconRailAudit.misplaced,[],
+        "LIVE left/right actor lanes are wrongly placed in the phone reader");
+      assert.deepEqual(iconRailAudit.empty,[],
+        "LIVE phone displays a source-active but visually blank icon tile");
+    }
     // A visible priest intonation is one paragraph with two source cue
     // records; it still needs a unique active cue for voice, rubric and
     // scroll-focus ownership. Do not drop either canonical source ID.
