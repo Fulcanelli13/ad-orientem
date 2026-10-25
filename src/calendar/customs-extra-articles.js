@@ -1290,7 +1290,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
     "sourceResearchUnit": "CU-REVIEW-001"
   },
   {
-    "id": "DOM-014",
+    "id": "CRIB-001",
     "title": {
       "en": "Keeping the Christmas crib until Candlemas",
       "fr": "Garder la crèche jusqu'à la Chandeleur"
