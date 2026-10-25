@@ -135,6 +135,11 @@ try{
   // contextual way back. The link itself must never mount ritual stages.
   assert.equal(await page.evaluate(()=>
     globalThis.AO_PRAY_V435930.open("pray.adoration",{returnContext:null})),true);
+  // Explicit deep-link routing preserves the selected Adoration submode.
+  // Return through its existing "Choose another mode" control before
+  // asserting a chooser-only public-rite link.
+  const backToChooser=page.locator("#aoPray435930.open [data-p435930-ador-home]");
+  if(await backToChooser.count())await backToChooser.click();
   await page.waitForSelector("#aoPray435930.open .aoAdorationChooser",{timeout:5000});
   assert.equal(await publicRiteLink.count(),1,
     "Return to the public rite must be offered after a Benediction-origin transition");
