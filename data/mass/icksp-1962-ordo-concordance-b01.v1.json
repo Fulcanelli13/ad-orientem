@@ -1,0 +1,948 @@
+{
+  "schema": "ao-mass-icksp-1962-ordo-concordance-b01-v1",
+  "version": "1.0.0",
+  "date": "2026-10-25",
+  "status": "RESEARCH_ONLY_NOT_RUNTIME",
+  "baselineBranch": "main",
+  "scope": "Selected verifiable opening, Gloria, Credo and concluding rite directions; NOT a full-text rubrics exhaustion or certification",
+  "primaryAuthority": "ROMAN_MISSAL_1962_RITUS_SERVANDUS",
+  "witnesses": [
+    {
+      "id": "RITUS_1962",
+      "role": "PRIMARY_NORMATIVE",
+      "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "anchors": [
+        "Ritus III.6-7",
+        "IV.1-3",
+        "VI.3-4",
+        "XII.1-5"
+      ]
+    },
+    {
+      "id": "ICKSP_ORDO_1962",
+      "role": "CONCORDANCE_WITNESS_AND_FRENCH_REFERENCE",
+      "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien",
+      "anchors": [
+        "Prières au bas de l'autel",
+        "Gloria",
+        "Credo",
+        "Conclusion de la Messe"
+      ]
+    }
+  ],
+  "invariants": [
+    "No modification to frozen text, existing 279 Sung cue identities, 65-card LIVE map or published 57-rubric registry in this research batch.",
+    "No automatic creation of icon assets, gestures, timing or imagined observed behaviour.",
+    "Priest private recitation has its own clock; never project priest gestures on schola text without actor/source adjudication.",
+    "Do not recast the optional second Communion Confiteor as universally normative.",
+    "Do not duplicate parallel PR #1653 (Communion Confiteor and silent Placeat wording) or PR #1643 (57-rubric preservation QA).",
+    "Review page footnotes and disputed translations against the primary 1962 Ritus before runtime promotion."
+  ],
+  "count": 26,
+  "statusCounts": {
+    "REVIEW_ACTOR_CLOCK": 4,
+    "PRESENT_PUBLISHED": 7,
+    "PRESENT_OTHER_REGISTRY": 12,
+    "REVIEW_PUBLISHED_GAP": 2,
+    "CONDITIONAL_EXISTING": 1
+  },
+  "items": [
+    {
+      "id": "B01-001",
+      "section": "Entrance",
+      "cueIds": [
+        "AO.SM.C0001"
+      ],
+      "rubricalPoint": "Priest makes the Sign of the Cross; spoken voice must be form-aware.",
+      "status": "REVIEW_ACTOR_CLOCK",
+      "existingEvidence": "Gesture exists; Sung voice registry says LOW / QUIET, while ICKSP and Ritus specify clear voice for the introductory formula.",
+      "nextAction": "Check form-specific voice semantics; no silent-to-audible promotion without Low/Sung authority.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0001",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [
+            "Sign of the Cross"
+          ],
+          "voiceStates": [
+            "LOW / QUIET"
+          ],
+          "stations": [
+            "FOOT_CENTER"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B01-002",
+      "section": "Entrance",
+      "cueIds": [
+        "AO.SM.C0010"
+      ],
+      "rubricalPoint": "Priest bows head to the Cross at Gloria Patri of Psalm 42.",
+      "status": "PRESENT_PUBLISHED",
+      "existingEvidence": "Published priest rubric AO.RUB.C0010.01 exists.",
+      "nextAction": "Keep existing published rubric and Passion/Requiem omission guards.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0010",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [
+            "AO.RUB.C0010.01"
+          ],
+          "priestActions": [],
+          "gestureEvents": [],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-003",
+      "section": "Entrance",
+      "cueIds": [
+        "AO.SM.C0014"
+      ],
+      "rubricalPoint": "Priest signs himself at Adjutorium nostrum.",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "Gesture matrix has Sign of the Cross.",
+      "nextAction": "Do not duplicate the gesture.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0014",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [
+            "Sign of the Cross"
+          ],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-004",
+      "section": "Entrance",
+      "cueIds": [
+        "AO.SM.C0016"
+      ],
+      "rubricalPoint": "Priest makes profound bow for his Confiteor.",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "Priest action registry contains PROFOUND BOW.",
+      "nextAction": "Check that the Missal conveys the direction without a duplicate LIVE card.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0016",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [
+            "PROFOUND BOW"
+          ],
+          "gestureEvents": [],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-005",
+      "section": "Entrance",
+      "cueIds": [
+        "AO.SM.C0017"
+      ],
+      "rubricalPoint": "Priest strikes his breast three times at mea culpa.",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "Priest action registry contains STRIKES BREAST.",
+      "nextAction": "Retain trigger at the exact words.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0017",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [
+            "STRIKES BREAST"
+          ],
+          "gestureEvents": [],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-006",
+      "section": "Entrance",
+      "cueIds": [
+        "AO.SM.C0021",
+        "AO.SM.C0022",
+        "AO.SM.C0023"
+      ],
+      "rubricalPoint": "Ministers' Confiteor and gestures at the foot of the altar, not the optional Communion Confiteor.",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "Ordinary blocks and faithful gesture records exist.",
+      "nextAction": "Keep distinct from optional C0235-C0241 local practice.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0021",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [
+            "Profound bow / remain kneeling according profile"
+          ],
+          "voiceStates": [
+            "MINISTER RESPONSE / QUIET"
+          ],
+          "stations": []
+        },
+        {
+          "cueId": "AO.SM.C0022",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [
+            "Strike breast ×3"
+          ],
+          "voiceStates": [],
+          "stations": []
+        },
+        {
+          "cueId": "AO.SM.C0023",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [
+            "Remain bowed / return after conclusion"
+          ],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-007",
+      "section": "Entrance",
+      "cueIds": [
+        "AO.SM.C0026"
+      ],
+      "rubricalPoint": "Priest makes the Sign of the Cross at Indulgentiam.",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "Gesture registry includes the sign.",
+      "nextAction": "No new icon or event warranted.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0026",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [
+            "Sign of the Cross"
+          ],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-008",
+      "section": "Entrance",
+      "cueIds": [
+        "AO.SM.C0037"
+      ],
+      "rubricalPoint": "Priest ascends the altar while praying Aufer a nobis silently.",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "Action, position and quiet voice registries cover ascent.",
+      "nextAction": "Preserve independent position and voice.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0037",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [
+            "ASCENDS ALTAR"
+          ],
+          "gestureEvents": [],
+          "voiceStates": [
+            "SECRET / QUIET WHILE MOVING"
+          ],
+          "stations": [
+            "ALTAR_STEPS_ASCENDING"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B01-009",
+      "section": "Entrance",
+      "cueIds": [
+        "AO.SM.C0038"
+      ],
+      "rubricalPoint": "Priest bows over altar while beginning Oramus te.",
+      "status": "REVIEW_PUBLISHED_GAP",
+      "existingEvidence": "Quiet prayer and altar-centre station exist; no published exact priest bow rubric at C0038.",
+      "nextAction": "Compare Ritus IV.1 and other detailed ceremonial layers before proposing release.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0038",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [],
+          "voiceStates": [
+            "SECRET / QUIET"
+          ],
+          "stations": [
+            "ALTAR_CENTER"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B01-010",
+      "section": "Entrance",
+      "cueIds": [
+        "AO.SM.C0039"
+      ],
+      "rubricalPoint": "Priest kisses the altar during Oramus te.",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "Priest action registry includes KISSES ALTAR.",
+      "nextAction": "Avoid duplicate printed actions.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0039",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [
+            "KISSES ALTAR"
+          ],
+          "gestureEvents": [],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-011",
+      "section": "Gloria",
+      "cueIds": [
+        "AO.SM.C0053",
+        "AO.SM.C0054",
+        "AO.SM.C0055"
+      ],
+      "rubricalPoint": "Priest intones Gloria and bows head at Deo; his private continuation is not the schola clock.",
+      "status": "REVIEW_ACTOR_CLOCK",
+      "existingEvidence": "Intonation and voice records exist; separate head inclination at Deo not present in published 57-rubric overlay.",
+      "nextAction": "Adjudicate exact priest-owned cue, rather than attaching to the schola's Deo.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0053",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [
+            "INTONES GLORIA"
+          ],
+          "gestureEvents": [],
+          "voiceStates": [
+            "SUNG / PUBLIC"
+          ],
+          "stations": [
+            "ALTAR_CENTER"
+          ]
+        },
+        {
+          "cueId": "AO.SM.C0054",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [],
+          "voiceStates": [
+            "SUNG / CLEAR"
+          ],
+          "stations": []
+        },
+        {
+          "cueId": "AO.SM.C0055",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [
+            "Bow head"
+          ],
+          "voiceStates": [
+            "QUIET PRIVATE RECITATION"
+          ],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-012",
+      "section": "Gloria",
+      "cueIds": [
+        "AO.SM.C0056"
+      ],
+      "rubricalPoint": "Priest bows head at Adoramus te.",
+      "status": "REVIEW_ACTOR_CLOCK",
+      "existingEvidence": "Faithful gesture registry treats participation as customary; published priest-rubric overlay lacks this source anchor.",
+      "nextAction": "A normative priest rubric is not a normative faithful gesture. Establish priest-owned timing.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0056",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [
+            "Customary bow may follow local practice; do not hard-code as universal."
+          ],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-013",
+      "section": "Gloria",
+      "cueIds": [
+        "AO.SM.C0058"
+      ],
+      "rubricalPoint": "Priest bows head at Gratias agimus tibi.",
+      "status": "PRESENT_PUBLISHED",
+      "existingEvidence": "Published priest rubric AO.RUB.C0058.01.",
+      "nextAction": "Retain.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0058",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [
+            "AO.RUB.C0058.01"
+          ],
+          "priestActions": [],
+          "gestureEvents": [
+            "Bow head"
+          ],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-014",
+      "section": "Gloria",
+      "cueIds": [
+        "AO.SM.C0061"
+      ],
+      "rubricalPoint": "Priest bows head at Iesu Christe.",
+      "status": "PRESENT_PUBLISHED",
+      "existingEvidence": "Published priest rubric AO.RUB.C0061.01.",
+      "nextAction": "Retain.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0061",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [
+            "AO.RUB.C0061.01"
+          ],
+          "priestActions": [],
+          "gestureEvents": [
+            "Bow head"
+          ],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-015",
+      "section": "Gloria",
+      "cueIds": [
+        "AO.SM.C0064"
+      ],
+      "rubricalPoint": "Priest bows head at suscipe deprecationem.",
+      "status": "PRESENT_PUBLISHED",
+      "existingEvidence": "Published priest rubric AO.RUB.C0064.01.",
+      "nextAction": "Retain.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0064",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [
+            "AO.RUB.C0064.01"
+          ],
+          "priestActions": [],
+          "gestureEvents": [
+            "Bow head"
+          ],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-016",
+      "section": "Gloria",
+      "cueIds": [
+        "AO.SM.C0067",
+        "AO.SM.C0068"
+      ],
+      "rubricalPoint": "Priest bows at final Iesu Christe and signs himself at Cum Sancto Spiritu.",
+      "status": "PRESENT_PUBLISHED",
+      "existingEvidence": "Published rubrics AO.RUB.C0067.01 and AO.RUB.C0068.01.",
+      "nextAction": "Retain source-word anchoring.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0067",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [
+            "AO.RUB.C0067.01"
+          ],
+          "priestActions": [],
+          "gestureEvents": [
+            "Bow head"
+          ],
+          "voiceStates": [],
+          "stations": []
+        },
+        {
+          "cueId": "AO.SM.C0068",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [
+            "AO.RUB.C0068.01"
+          ],
+          "priestActions": [],
+          "gestureEvents": [
+            "Sign of the Cross"
+          ],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-017",
+      "section": "Credo",
+      "cueIds": [
+        "AO.SM.C0090"
+      ],
+      "rubricalPoint": "Priest bows head at Deum in Credo.",
+      "status": "REVIEW_ACTOR_CLOCK",
+      "existingEvidence": "Faithful gesture matrix contains a bow for Credo in unum Deum but no separately published priest rubric.",
+      "nextAction": "Review 1962 Ritus Credo voice/actor timing; avoid schola-to-priest inference.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0090",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [
+            "Bow head"
+          ],
+          "voiceStates": [
+            "SUNG / CLEAR"
+          ],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-018",
+      "section": "Credo",
+      "cueIds": [
+        "AO.SM.C0096"
+      ],
+      "rubricalPoint": "Priest genuflects at Et incarnatus est through Et homo factus est.",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "Priest action C0096 is GENUFLECTS; faithful posture is separately form/calendar-aware.",
+      "nextAction": "Do not convert the priest rubric to a universal congregational rule.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0096",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [
+            "GENUFLECTS"
+          ],
+          "gestureEvents": [
+            "Kneeling/genuflection here depends on sung/local calendar rule; Christmas and..."
+          ],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-019",
+      "section": "Concluding rites",
+      "cueIds": [
+        "AO.SM.C0259",
+        "AO.SM.C0260"
+      ],
+      "rubricalPoint": "Ite, missa est and response.",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "Published text and voices exist.",
+      "nextAction": "Dismissal variant depends on resolved liturgical action, not calendar date alone.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0259",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [
+            "TURNS TO PEOPLE"
+          ],
+          "gestureEvents": [],
+          "voiceStates": [
+            "SUNG / PUBLIC"
+          ],
+          "stations": []
+        },
+        {
+          "cueId": "AO.SM.C0260",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [],
+          "voiceStates": [
+            "LISTENS"
+          ],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-020",
+      "section": "Concluding rites",
+      "cueIds": [
+        "AO.SM.C0261"
+      ],
+      "rubricalPoint": "Priest bows at altar centre with joined hands resting on it while saying Placeat tibi silently.",
+      "status": "REVIEW_PUBLISHED_GAP",
+      "existingEvidence": "Text, altar-centre position and SECRET / QUIET voice exist; no separately published C0261 bow instruction in 57-event overlay.",
+      "nextAction": "Cross-check any other existing semantic layer, then propose a source-owned short Missal rubric using an approved icon only if available; do not invent LIVE timing.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0261",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [],
+          "voiceStates": [
+            "SECRET / QUIET"
+          ],
+          "stations": [
+            "ALTAR_CENTER"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B01-021",
+      "section": "Concluding rites",
+      "cueIds": [
+        "AO.SM.C0262"
+      ],
+      "rubricalPoint": "Priest kisses altar and rises facing it after Placeat.",
+      "status": "PRESENT_PUBLISHED",
+      "existingEvidence": "Published priest rubrics AO.RUB.C0262.01 and .02 exist.",
+      "nextAction": "Retain.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0262",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [
+            "AO.RUB.C0262.01",
+            "AO.RUB.C0262.02"
+          ],
+          "priestActions": [],
+          "gestureEvents": [],
+          "voiceStates": [
+            "SILENT"
+          ],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-022",
+      "section": "Concluding rites",
+      "cueIds": [
+        "AO.SM.C0263"
+      ],
+      "rubricalPoint": "Priest elevates eyes and hands, joins hands, bows head to the Cross.",
+      "status": "PRESENT_PUBLISHED",
+      "existingEvidence": "Published priest rubrics AO.RUB.C0263.01 through .03 exist.",
+      "nextAction": "Retain.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0263",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [
+            "AO.RUB.C0263.01",
+            "AO.RUB.C0263.02",
+            "AO.RUB.C0263.03"
+          ],
+          "priestActions": [],
+          "gestureEvents": [],
+          "voiceStates": [],
+          "stations": [
+            "ALTAR_CENTER"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B01-023",
+      "section": "Concluding rites",
+      "cueIds": [
+        "AO.SM.C0265"
+      ],
+      "rubricalPoint": "Priest gives final blessing (if prescribed).",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "Priest-action and gesture records exist.",
+      "nextAction": "Verify suppression in Requiem and Benedicamus variants; no universal blessing.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0265",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [
+            "BLESSES PEOPLE"
+          ],
+          "gestureEvents": [
+            "Sign of the Cross"
+          ],
+          "voiceStates": [],
+          "stations": [
+            "ALTAR_CENTER"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B01-024",
+      "section": "Last Gospel",
+      "cueIds": [
+        "AO.SM.C0269"
+      ],
+      "rubricalPoint": "Priest makes book/altar cross, forehead, lips and breast crosses at Last Gospel.",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "Action SIGNS BOOK and small-cross gesture present.",
+      "nextAction": "Keep source actors and exact liturgical sequence.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0269",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [
+            "SIGNS BOOK"
+          ],
+          "gestureEvents": [
+            "Forehead · lips · breast small crosses"
+          ],
+          "voiceStates": [
+            "CLEAR SPOKEN / local audibility"
+          ],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-025",
+      "section": "Last Gospel",
+      "cueIds": [
+        "AO.SM.C0273",
+        "AO.SM.C0274"
+      ],
+      "rubricalPoint": "Genuflect at Et Verbum caro factum est; rise at the continuation.",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "C0273 GENUFLECTS and C0274 Rise gesture exist.",
+      "nextAction": "Keep word trigger exact.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0273",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [
+            "GENUFLECTS"
+          ],
+          "gestureEvents": [
+            "Genuflect"
+          ],
+          "voiceStates": [],
+          "stations": []
+        },
+        {
+          "cueId": "AO.SM.C0274",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [
+            "Rise"
+          ],
+          "voiceStates": [],
+          "stations": []
+        }
+      ]
+    },
+    {
+      "id": "B01-026",
+      "section": "Communion local option",
+      "cueIds": [
+        "AO.SM.C0235",
+        "AO.SM.C0238",
+        "AO.SM.C0240"
+      ],
+      "rubricalPoint": "Optional Communion Confiteor and priest's Misereatur/Indulgentiam.",
+      "status": "CONDITIONAL_EXISTING",
+      "existingEvidence": "Source blocks and conditional voices exist; PR #1653 handles preflight visibility and LIVE explanation.",
+      "nextAction": "No implementation overlap with PR #1653; never make normative default.",
+      "sourceIds": [
+        "RITUS_1962",
+        "ICKSP_ORDO_1962"
+      ],
+      "mainBranchSnapshot": [
+        {
+          "cueId": "AO.SM.C0235",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [
+            "Remain bowed / recollected"
+          ],
+          "voiceStates": [
+            "LISTENS"
+          ],
+          "stations": [
+            "ALTAR_CENTER"
+          ]
+        },
+        {
+          "cueId": "AO.SM.C0238",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [],
+          "voiceStates": [
+            "CLEAR / LOCAL"
+          ],
+          "stations": [
+            "ALTAR_CENTER"
+          ]
+        },
+        {
+          "cueId": "AO.SM.C0240",
+          "presentInSungCorpus": true,
+          "publishedRubricIds": [],
+          "priestActions": [],
+          "gestureEvents": [
+            "Sign of the Cross"
+          ],
+          "voiceStates": [
+            "CLEAR / LOCAL"
+          ],
+          "stations": []
+        }
+      ]
+    }
+  ]
+}
