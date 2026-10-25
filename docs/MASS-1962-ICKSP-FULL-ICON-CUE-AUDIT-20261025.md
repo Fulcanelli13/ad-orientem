@@ -32,6 +32,18 @@ All published rubric and priest-action references resolve to canonical cues. The
 
 **Protected, not unresolved:** 38 choir-public cues across Gloria/Credo (30), Sanctus/Benedictus (5), and Agnus Dei (3) are guarded. They **must not** spawn priest motion or private speech from schola phrase advancement. `C0054` and `C0090` are separate priest intonation endings.
 
+## Exception adjudication completed — 25 October
+
+The lexical screen has been **closed against the current source-first LIVE runtime**. Its 15 candidates should no longer be counted as 15 outstanding programming defects:
+
+- **12** donor-extracted, duplicate Gloria/Credo bow/cross triggers belong to adjoining source cues. The merged exact-owner projector already prevents those stale rows from creating extra icons.
+- **1** Gospel event at `C0084` ("At Gospel announcement") correctly belongs to `Sequentia ✠`; the English event description is not expected to occur verbatim in the Latin.
+- **2** former *Nobis quoque peccatoribus* faithful breast-strike repeats at `C0197–C0198` are already suppressed by `V183_GESTURE_SUPPRESS` in `reader-cue-state.js`. The actual trigger is `C0196`, where the priest strikes **once**; the faithful's imitation is a custom, not a separately mandated second/third strike. For external comparison see the 1962 ceremonial witness in O'Connell and the historical [Catholic Encyclopedia entry](https://www.newadvent.org/cathen/02751a.htm).
+
+The 17 rows awaiting **exact artwork** are also inventoried with individual dispositions. Seven are priest actions, ten are faithful gestures or participation cues. Existing source-exact handlers already cover `C0056` (*Adoramus te*) and `C0096` (*Et incarnatus est*) with local/selected-Mass rules. Actual elevations at `C0174` and `C0181` are distinct from preceding words of Consecration; the priest's combined hands-over-offerings, *Memento* gestures and minor elevation remain **text-only until exact approved art is available**. No unapproved artwork or unconditional user posture is introduced.
+
+Structured decisions: `data/mass/icksp-1962-icon-exception-adjudication-20261025.v1.json`. The dedicated `tests/mass-icksp-icon-exception-adjudication.mjs` asserts every lexical and exact-art row is accounted for. These are source and runtime ownership decisions, not certification of pixel-level icon position for every cue.
+
 ## Source discipline
 
 - Primary ceremonial anchors: [ICKSP France, Ordo Missae 1962](https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien) and the [1962 Missale Romanum / Ritus servandus](https://www.musicasacra.com/pdf/missale62.pdf).
