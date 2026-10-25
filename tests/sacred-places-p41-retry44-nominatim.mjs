@@ -16,4 +16,21 @@ const val=formatCandidate(t[0],item);
 assert.equal(val.osm_ref,"osm:way:110413194");assert.equal(val.status,"UNVERIFIED_NOMINATIM_SEARCH_HIT_NOT_EXACT_BUILDING_IDENTITY");
 assert.equal(val.geo_candidate.meaning,"UNVERIFIED_NOMINATIM_CENTER_DO_NOT_PUBLISH");
 assert.equal(formatCandidate(t[0],{...item,osm_type:"X"}),null);
+const evidence=read("data/geography/research/sacred-places-p41-retry44-nominatim-evidence.v1.json");
+assert.equal(evidence.schema,"AO_SACRED_PLACES_P41_ONE_TIME_NOMINATIM_RETRY44_V1");
+assert.deepEqual([evidence.rows.length,evidence.summary.input_failed_rows,evidence.summary.with_search_candidates,evidence.summary.empty_name_search,evidence.summary.remote_failed,evidence.summary.distinct_candidate_osm_refs,evidence.summary.published_new_places],[44,44,6,38,0,8,0]);
+assert.equal(new Set(evidence.rows.map(x=>x.queue_row)).size,44);
+const ids=new Set(t.map(x=>x.queue_row));
+for(const row of evidence.rows){
+ assert.ok(ids.has(row.queue_row));
+ assert.equal(row.publication_authorized,false);
+ assert.ok(["CANDIDATES_FOUND_NOT_VERIFIED","NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE"].includes(row.status));
+ assert.equal(row.candidates.length>0,row.status==="CANDIDATES_FOUND_NOT_VERIFIED");
+ for(const f of row.candidates){
+  assert.match(f.osm_ref,/^osm:(way|node|relation):\d+$/);
+  assert.equal(f.geo_candidate.meaning,"UNVERIFIED_NOMINATIM_CENTER_DO_NOT_PUBLISH");
+  assert.equal(f.status,"UNVERIFIED_NOMINATIM_SEARCH_HIT_NOT_EXACT_BUILDING_IDENTITY");
+ }
+}
+
 console.log("PASS P41: 44 source-owned failures, 24 successful searches retained, 12 P40 releases excluded, one-time single-threaded search guards");

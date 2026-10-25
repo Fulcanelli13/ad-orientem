@@ -1,31 +1,24 @@
-name: Sacred Places P41 one-time 44 failed OSM searches (read only)
+name: Sacred Places P41 44-result evidence regression (read-only)
 on:
   pull_request:
     paths:
       - "tools/geography/sacred-places-p41-retry44-nominatim.mjs"
       - "tests/sacred-places-p41-retry44-nominatim.mjs"
+      - "data/geography/research/sacred-places-p41-retry44-nominatim-evidence.v1.json"
       - ".github/workflows/sacred-places-p41-retry44.yml"
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  retry44:
+  cached-research:
     runs-on: ubuntu-latest
-    timeout-minutes: 13
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Certify 44-only one-time OSM input
+      - name: Check complete frozen 44-row evidence without any remote queries
         run: node tests/sacred-places-p41-retry44-nominatim.mjs
-      - name: Search the 44 historically failed records sequentially
-        run: node tools/geography/sacred-places-p41-retry44-nominatim.mjs --network
-      - name: Transport only (commit results permanently before expiration)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: sacred-places-p41-retry44-transport-only
-          path: data/geography/research/sacred-places-p41-retry44-nominatim-evidence.v1.json
-          if-no-files-found: ignore
-          retention-days: 1
+      - name: Verify reproducible scope dry-run (network disabled)
+        run: node tools/geography/sacred-places-p41-retry44-nominatim.mjs --dry-run
