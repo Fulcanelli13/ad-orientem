@@ -76,8 +76,14 @@ try{
       assert.ok(copy.includes(article.caution[language]),id+" missing exact approved-boundary caution");
       assert.ok(copy.includes(article.history[language]),id+" missing complete historical-source attribution");
       assert.ok(await folio.locator("a[href^='https://']").count()>=2,id+" must have inspectable sources");
-      if(id==="EPIP-003")assert.match(copy,language==="fr"?/prêtre|sacerdotale/i:/priest|Roman Ritual/i,
-        "Epiphany lay/priest distinction missing");
+      if(id==="EPIP-003"){
+        assert.match(copy,language==="fr"?/prêtre|sacerdotale/i:/priest|Roman Ritual/i,
+          "Epiphany lay/priest distinction missing");
+        if(language==="fr"){
+          const familyLabel=await rootLocator.locator("p.aoCustEyebrow").textContent();
+          assert.match(familyLabel,/Prière familiale de l’Épiphanie/,"Epiphany category retained English label");
+        }
+      }
       if(id==="CRIB-001"){
         assert.match(copy,/1962/,"Crib custom must not redefine 1962 Christmastide");
         assert.match(article.history.en,/in churches/,"Church-crib reference misattributed to households");
