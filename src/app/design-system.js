@@ -479,17 +479,17 @@ const CSS=`
   border-bottom:1px solid rgba(207,189,153,.18)!important;
 }
 #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{
-  display:grid!important;grid-template-columns:43px minmax(0,1fr)!important;
+  display:grid!important;grid-template-columns:54px minmax(0,1fr)!important;
   grid-template-rows:auto auto!important;column-gap:15px!important;
   row-gap:4px!important;align-items:center!important;
-  min-height:92px!important;padding:15px 5px!important;width:100%!important;
+  min-height:102px!important;padding:17px 5px!important;width:100%!important;
   background:transparent!important;border:0!important;text-align:left!important;
   border-radius:0!important;box-shadow:none!important;
 }
 #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor .aoLearnModIcon{
   display:block!important;grid-column:1!important;grid-row:1 / 3!important;
   align-self:center!important;justify-self:center!important;
-  width:34px!important;height:34px!important;max-width:34px!important;max-height:34px!important;
+  width:43px!important;height:43px!important;max-width:43px!important;max-height:43px!important;
   color:#c3b18d!important;
 }
 #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor strong{
@@ -509,6 +509,19 @@ const CSS=`
 }
 #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor:focus-visible{
   outline:2px solid var(--liturgical,#c6b28b)!important;outline-offset:-2px!important;
+}
+/* Tablet/desktop: two independent open columns of an illustrated reading index.
+ * The phone stays single-column; no repeated card treatment. */
+@media(min-width:700px){
+  #ao-learn-modular-root .aoLearnFamilyGrid{
+    display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    column-gap:22px!important;align-items:stretch!important;
+  }
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard{width:100%!important;}
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{
+    grid-template-columns:48px minmax(0,1fr)!important;
+    min-height:116px!important;padding:17px 4px!important;
+  }
 }
 @media(max-width:360px){
   #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{

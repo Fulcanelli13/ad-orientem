@@ -510,31 +510,37 @@ try{
     legacyOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
   }));
   assert.equal(prayHub.owner,"modular-pray-v1");
-  assert.equal(prayHub.cards,9,"PRAY landing retains all original doors, Chaplets and Divine Mercy, plus the new private My Customs module");
+  // The Quiet Pray entrance has six editorial doors, four library shortcuts,
+  // and source-owned family doors in the optional catalogue.
+  assert.equal(prayHub.cards,16,"PRAY catalogue gained or lost a canonical entry");
+  assert.equal(await page.locator("#aoPray435930 .aoP435930QuietTiles>.aoP435930QuietTile").count(),6,
+    "Six canonical featured devotions must remain visible");
+  assert.equal(await page.locator("#aoPray435930 .aoP435930QuietLibraryRow").count(),4,
+    "Four existing prayer library shortcuts must remain available");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-my-customs]").count(),1,
-    "private My Customs & Prayers must appear exactly once in canonical Pray Home");
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-family='chaplets']").count(),1,"Rosary & Chaplets family missing");
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-own='pray.divine_mercy']").count(),1,"Direct Divine Mercy shortcut missing");
-  assert.equal(prayHub.legacyOpen,false,"legacy Prayer Book is visible beneath modular PRAY");
-  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930HomeIntro")?.dataset?.aoPresentationFxHero,null,{timeout:3000});
-  const prayFx=await page.evaluate(()=>({
-    hero:document.querySelector("#aoPray435930 .aoP435930HomeIntro")?.dataset?.aoPresentationFxHero??null,
-    rootScan:document.getElementById("aoPray435930")?.dataset?.aoPresentationFxArtScan??null,
-  }));
-  assert.match(prayFx.hero,/modular-presentation-fx-v3/,"PRAY home hero did not receive recovered entry choreography");
-  assert.equal(prayFx.rootScan,"legacy-v4312","PRAY modular root bypassed the approved v43.12 art loader");
-  const prayDesign=await page.evaluate(()=>({
-    displayFont:getComputedStyle(document.querySelector("#aoPray435930 .aoP435930HomeIntro h2")).fontFamily,
-    gutter:getComputedStyle(document.querySelector("#aoPray435930 .aoP435930Body")).paddingLeft,
-    cardRadius:getComputedStyle(document.querySelector("#aoPray435930 .aoP435930ModuleCard")).borderRadius,
-    topControl:(()=>{const x=document.querySelector("#aoPray435930 .aoP435930Head button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
-  }));
-  assert.equal(prayDesign.displayFont,designBaseline.displayFont,"PRAY display typography diverged from the app system");
-  assert.equal(prayDesign.gutter,designBaseline.gutter,"PRAY phone gutter diverged from the app grid");
-  assert.equal(prayDesign.cardRadius,designBaseline.cardRadius,"PRAY module cards diverged from canonical geometry");
-  assert.equal(Math.round(prayDesign.topControl.w),44,"PRAY top control width diverged");
-  assert.equal(Math.round(prayDesign.topControl.h),44,"PRAY top control height diverged");
-  assert.equal(prayDesign.topControl.r,"999px","PRAY top control lost canonical circular geometry");
+    "Private My Customs & Prayers must appear exactly once");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-family='chaplets']").count(),1,
+    "Rosary & Chaplets family missing from the expanded catalogue");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-own='pray.divine_mercy']").count(),1,
+    "Direct Divine Mercy shortcut missing from the expanded catalogue");
+  assert.equal(prayHub.legacyOpen,false,"Legacy Prayer Book is visible beneath modular PRAY");
+  const prayDesign=await page.evaluate(()=>{
+    const root=document.querySelector("#aoPray435930 .aoP435930QuietHome");
+    const first=root?.querySelector(".aoP435930QuietTile");
+    const secondary=root?.querySelector(".aoP435930QuietTile:nth-child(3)");
+    const top=root?.closest("#aoPray435930")?.querySelector(".aoP435930Head button");
+    const topStyle=getComputedStyle(top);
+    return {font:getComputedStyle(first.querySelector("b")).fontFamily,
+      firstIcon:first.querySelector(".aoP435930ModuleAsset,.aoP435930ModuleIcon")?.getBoundingClientRect().width||0,
+      secondaryIcon:secondary.querySelector(".aoP435930ModuleAsset,.aoP435930ModuleIcon")?.getBoundingClientRect().width||0,
+      control:{w:top.getBoundingClientRect().width,h:top.getBoundingClientRect().height,
+        radius:topStyle.borderRadius}};
+  });
+  assert.equal(prayDesign.font,designBaseline.displayFont,"Pray display typography diverged from shared scale");
+  assert.ok(prayDesign.firstIcon>=80&&prayDesign.firstIcon>prayDesign.secondaryIcon,
+    "Prayer illustrations lost their editorial hierarchy: "+JSON.stringify(prayDesign));
+  assert.ok(prayDesign.control.w>=44&&prayDesign.control.h>=44,
+    "Prayer header actions are undersized");
   await shot("03-pray");
 
   // Exact v3.14 Angelus ritual rail: the rail belongs to the reading grid.

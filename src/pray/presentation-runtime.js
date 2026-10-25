@@ -2551,8 +2551,15 @@ function onClick(e){
    if(Number.isInteger(n)&&n>=0&&n<steps.length){MERCY.step=n;return render()}
    return;
   }
-  if(b.hasAttribute('data-p435930-mercy-guide')){MERCY.guide=MERCY.guide==='guided'?'simple':'guided';return render()}
-  if(b.hasAttribute('data-p435930-mercy-closing')){MERCY.includeClosing=!MERCY.includeClosing;return render()}
+  if(b.hasAttribute('data-p435930-mercy-guide')||b.hasAttribute('data-p435930-mercy-closing')){
+   // A native details toggle event can be queued after the summary is opened.
+   // Capture live disclosure state before replacing the DOM synchronously.
+   const disclosure=mount()?.querySelector('[data-ao-mercy-options]');
+   if(disclosure)MERCY.optionsOpen=disclosure.open;
+   if(b.hasAttribute('data-p435930-mercy-guide'))MERCY.guide=MERCY.guide==='guided'?'simple':'guided';
+   else MERCY.includeClosing=!MERCY.includeClosing;
+   return render();
+  }
  }
  if(b.matches('[data-p435930-close]'))return close();
  if(b.matches('[data-p435930-home]')||b.matches('[data-p435930-home-retry]'))return goGlobalHome();
