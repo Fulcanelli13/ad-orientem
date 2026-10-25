@@ -1,0 +1,662 @@
+{
+  "schema": "AO_PIUS_X_STYLE_DIALOGUE_PATHS_V1",
+  "created": "2026-10-19",
+  "owner": "STYLE_ONLY_REVIEW",
+  "publication": "DRAFT_NOT_RUNTIME",
+  "runtimeImportAllowed": false,
+  "purpose": "Nine bilingual source-bounded simulated replies reviewed as style-and-content candidates. Not original speech, source-certificated quotations, or approved Catechism answers. No runtime import permitted.",
+  "externalOwners": {
+    "routeSurvey": {
+      "repo": "Fulcanelli13/ad-orientem",
+      "branch": "feature/living-church-p2-visual-novel-review-20261018",
+      "path": "data/learn/ask-church-app-route-survey.v1.json",
+      "blobSha": "af787cb864b6fc60f9df9c85537b1e798da7b400"
+    },
+    "objectiveEngine": {
+      "branch": "feature/living-church-p2-visual-novel-review-20261018",
+      "path": "src/learn/ask-church-objective-engine.js"
+    },
+    "characterScene": {
+      "branch": "feature/living-church-p2-visual-novel-review-20261018",
+      "path": "previews/visible-mass-3d/living-church-character-scene.mjs",
+      "existingCharacter": "pius-x",
+      "existingNode": "pius",
+      "existingAction": "source-catechism"
+    },
+    "catechism": {
+      "id": "learn.catechism",
+      "owner": "EXISTING_FORMATION_AND_CATECHISM_PIPELINE",
+      "questionId": null,
+      "originalTextCopied": false
+    },
+    "scopeLimit": "P2 scene #1402's directly tested Catechism handoff is PX1912-Q322 only. P4 source-owner #1406 separately has generic indexed-question native navigation and browser-tested Q105. None of the three new dialogues or their question choices has been browser-tested and editorially certified."
+  },
+  "fidelityPolicy": {
+    "historicalQuotationsAllowed": false,
+    "allGeneratedDialogue": "C_EDUCATIONAL_RECONSTRUCTION",
+    "reconstructionDisclosed": true,
+    "substantiveAnswers": "MUST_RESOLVE_FROM_AUTHORITATIVE_CONTENT_OWNER_BEFORE_RUNTIME",
+    "sourceOwnerMayBlock": true,
+    "refuseToFabricateAutobiography": true
+  },
+  "cases": [
+    {
+      "id": "PX-STYL-OUR-LADY-01",
+      "topic": "Marian intercession",
+      "router": {
+        "objective": "explore",
+        "branch": "ideas",
+        "requiredTarget": "learn.catechism",
+        "exactNativeQuestion": null,
+        "sourceStatus": "ROUTE_DECLARED_ONLY",
+        "sourceIndexReview": "CANDIDATE_QUESTION_NUMBERS_AND_STEMS_VERIFIED_NOT_ANSWER_CONTENT",
+        "candidateQuestionRefs": [
+          "PX1912-Q433",
+          "PX1912-Q430",
+          "PX1912-Q431",
+          "PX1912-Q432"
+        ]
+      },
+      "styleSourceIds": [
+        "PXV-1905-ACERBO"
+      ],
+      "historicalContextIds": [
+        "SARTO-PRE-DIALOGUE-1087"
+      ],
+      "openingScene": "pius",
+      "directHistoricalSource": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "directHistoricalSourceUse": "SUGGESTED_CONTENT_OWNER_WITNESS_NOT_YET_COLLATED_OR_AUTHORIZED_HERE",
+      "testMode": "STYLE_ONLY_SOURCE_SLOT_PENDING",
+      "turns": [
+        {
+          "no": 1,
+          "visitor": {
+            "en": "Does praying to Our Lady take something away from Our Lord?",
+            "fr": "Prier la Sainte Vierge n'enlève-t-il rien à Notre-Seigneur ?"
+          },
+          "reply": {
+            "en": "No, provided we keep the order of Christian worship clear. Adoration belongs to God alone; the honour shown to His saints is another matter. The Blessed Virgin does not stand beside Christ as another saviour. Her dignity and her intercession depend entirely upon Him.",
+            "fr": "Non, pourvu que nous gardions l’ordre voulu par la foi. L’adoration appartient à Dieu seul ; l’honneur rendu à ses saints est d’un autre ordre. La Sainte Vierge n’est point une seconde source de salut à côté de Jésus-Christ. Sa dignité et son intercession dépendent entièrement de Lui."
+          },
+          "register": "PASTORAL",
+          "sprite": "pius_explaining",
+          "rhetoricalPattern": "DISTINGUISH_BEFORE_EXPLAINING",
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q433",
+            "PX1912-Q430"
+          ],
+          "sourceBoundReview": {
+            "classification": "SOURCE_BOUNDED_C_EDUCATIONAL_RECONSTRUCTION",
+            "contentSourceOwner": "EXISTING_CATECHISM_AND_PAPAL_DOCUMENT_PIPELINE",
+            "claimedHistoricalUtterance": false,
+            "verbatimOriginalSourceText": false,
+            "originalSourceQuoteApproval": false,
+            "claimIds": [
+              "MARY-HONOUR-DISTINCT-FROM-ADORATION",
+              "MARY-INTERCESSION-DERIVED-FROM-CHRIST"
+            ],
+            "evidenceIds": [
+              "PX1912-Q433",
+              "PX1912-Q430",
+              "ADIEM-1904-13-14"
+            ],
+            "claimReviewStatus": "SUBSTANTIVE_EDITORIAL_APPROVAL_PENDING",
+            "languageReviewStatus": "EN_FR_EDITORIAL_APPROVAL_PENDING"
+          }
+        },
+        {
+          "no": 2,
+          "visitor": {
+            "en": "Then why ask for Mary's intercession at all?",
+            "fr": "Pourquoi donc demander l'intercession de Marie ?"
+          },
+          "reply": {
+            "en": "We ask for her intercession because she is the Mother of God and has a mother's care for the members of Christ. The Catechism teaches that her prayers are powerful. But that power comes from her Son: every grace we receive is owed to His merits, never to something independent of Him.",
+            "fr": "Nous demandons son intercession parce qu'elle est la Mère de Dieu et qu'elle veille comme une mère sur les membres du Christ. Le Catéchisme enseigne que sa prière est puissante. Mais cette puissance lui vient de son Fils : toute grâce que nous recevons est due aux mérites de Jésus-Christ, et non à quelque pouvoir indépendant de Lui."
+          },
+          "register": "CATECHETICAL",
+          "sprite": "pius_thoughtful",
+          "rhetoricalPattern": "FOLLOW_ACTUAL_OBJECTION",
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q430",
+            "PX1912-Q433"
+          ],
+          "sourceBoundReview": {
+            "classification": "SOURCE_BOUNDED_C_EDUCATIONAL_RECONSTRUCTION",
+            "contentSourceOwner": "EXISTING_CATECHISM_AND_PAPAL_DOCUMENT_PIPELINE",
+            "claimedHistoricalUtterance": false,
+            "verbatimOriginalSourceText": false,
+            "originalSourceQuoteApproval": false,
+            "claimIds": [
+              "MARY-MOTHER-OF-GOD-AND-FAITHFUL",
+              "CHRIST-ONLY-SOURCE-OF-GRACE",
+              "MARY-INTERCESSION-DEPENDENT"
+            ],
+            "evidenceIds": [
+              "PX1912-Q430",
+              "PX1912-Q433",
+              "ADIEM-1904-10-14"
+            ],
+            "claimReviewStatus": "SUBSTANTIVE_EDITORIAL_APPROVAL_PENDING",
+            "languageReviewStatus": "EN_FR_EDITORIAL_APPROVAL_PENDING"
+          },
+          "editorialLocalRevision": {
+            "version": "VOICE_V2_1_DOC_EVIDENCE_20261019",
+            "status": "TEXT_EDITED_NOT_APPROVED",
+            "reason": "Avoided repeat of turn 1 and unsourced figurative 'treasury'.",
+            "claimIdsRetained": true,
+            "sourceReferencesRetained": true,
+            "languageReview": "BOTH_DRAFT_UNAPPROVED",
+            "historicalSpeech": false
+          }
+        },
+        {
+          "no": 3,
+          "visitor": {
+            "en": "How ought I to put that teaching into practice?",
+            "fr": "Comment mettre cet enseignement en pratique ?"
+          },
+          "reply": {
+            "en": "Begin with the Hail Mary, and say it attentively. You ask the Mother of God to pray for you now and at the hour of death. Then remember the purpose of that prayer: to know her divine Son better, to trust His mercy and to serve Him more faithfully.",
+            "fr": "Commencez par l’Ave Maria, et récitez-le avec attention. Vous demandez à la Mère de Dieu de prier pour vous maintenant et à l’heure de la mort. Souvenez-vous ensuite du but de cette prière : mieux connaître son divin Fils, mettre votre confiance en sa miséricorde et Le servir plus fidèlement."
+          },
+          "register": "PASTORAL",
+          "sprite": "pius_welcoming",
+          "rhetoricalPattern": "PRACTICAL_NEXT_STEP",
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q431",
+            "PX1912-Q432"
+          ],
+          "sourceBoundReview": {
+            "classification": "SOURCE_BOUNDED_C_EDUCATIONAL_RECONSTRUCTION",
+            "contentSourceOwner": "EXISTING_CATECHISM_AND_PAPAL_DOCUMENT_PIPELINE",
+            "claimedHistoricalUtterance": false,
+            "verbatimOriginalSourceText": false,
+            "originalSourceQuoteApproval": false,
+            "claimIds": [
+              "HAIL-MARY-INTERCESSION",
+              "MARIAN-DEVOTION-ORDINATED-TO-CHRIST"
+            ],
+            "evidenceIds": [
+              "PX1912-Q431",
+              "PX1912-Q432",
+              "ADIEM-1904-5-8"
+            ],
+            "claimReviewStatus": "SUBSTANTIVE_EDITORIAL_APPROVAL_PENDING",
+            "languageReviewStatus": "EN_FR_EDITORIAL_APPROVAL_PENDING"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PX-STYL-CHILD-CATECHISM-02",
+      "topic": "Children learning the Catechism",
+      "router": {
+        "objective": "prepare",
+        "branch": "first_communion",
+        "requiredTarget": "learn.catechism",
+        "exactNativeQuestion": null,
+        "sourceStatus": "ROUTE_DECLARED_ONLY",
+        "routeUseLimit": "ONLY_WHEN_CHILD_PREPARING_FOR_FIRST_COMMUNION",
+        "sourceIndexReview": "CANDIDATE_QUESTION_NUMBERS_AND_STEMS_VERIFIED_NOT_ANSWER_CONTENT",
+        "candidateQuestionRefs": [
+          "PX1912-Q342",
+          "PX1912-Q325",
+          "PX1912-Q338"
+        ]
+      },
+      "styleSourceIds": [
+        "PXV-1905-ACERBO",
+        "PXV-1912-CATECHISM"
+      ],
+      "historicalContextIds": [
+        "SARTO-PRE-DIALOGUE-1087",
+        "SARTO-PRE-PEROSI-VIAN-353"
+      ],
+      "openingScene": "pius",
+      "testMode": "STYLE_ONLY_SOURCE_SLOT_PENDING",
+      "turns": [
+        {
+          "no": 1,
+          "visitor": {
+            "en": "My daughter is preparing for First Communion, but her questions never end.",
+            "fr": "Ma fille se prépare à la Première Communion, mais ses questions n'en finissent pas."
+          },
+          "reply": {
+            "en": "Many questions are no bad sign. Your daughter need not have mastered the whole Catechism before her First Communion. Begin with what matters most: does she understand Whom she is about to receive, and that the Holy Eucharist is not ordinary bread? Teach her according to her age, and continue that instruction afterwards.",
+            "fr": "Qu'elle pose beaucoup de questions n'est pas mauvais signe. Votre fille n'a pas besoin de connaître tout le Catéchisme avant sa Première Communion. Commencez par l'essentiel : comprend-elle Qui elle va recevoir, et que la Sainte Eucharistie n'est pas un pain ordinaire ? Instruisez-la selon son âge, et poursuivez cet enseignement ensuite."
+          },
+          "register": "FAMILIAR",
+          "sprite": "pius_welcoming",
+          "rhetoricalPattern": "SPARSE_SITUATIONAL_WIT",
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q342"
+          ],
+          "sourceBoundReview": {
+            "classification": "SOURCE_BOUNDED_C_EDUCATIONAL_RECONSTRUCTION",
+            "contentSourceOwner": "EXISTING_CATECHISM_AND_PAPAL_DOCUMENT_PIPELINE",
+            "claimedHistoricalUtterance": false,
+            "verbatimOriginalSourceText": false,
+            "originalSourceQuoteApproval": false,
+            "claimIds": [
+              "CHILD-DOCTRINAL-CAPACITY-PROPORTIONATE",
+              "NOT-ENTIRE-CATECHISM-BEFORE-FIRST-COMMUNION",
+              "DISCERN-EUCHARISTIC-BREAD"
+            ],
+            "evidenceIds": [
+              "PX1912-Q342",
+              "QUAM-1910-2-3"
+            ],
+            "claimReviewStatus": "SUBSTANTIVE_EDITORIAL_APPROVAL_PENDING",
+            "languageReviewStatus": "EN_FR_EDITORIAL_APPROVAL_PENDING"
+          },
+          "editorialLocalRevision": {
+            "version": "VOICE_V2_1_DOC_EVIDENCE_20261019",
+            "status": "TEXT_EDITED_NOT_APPROVED",
+            "reason": "Removed newly invented mother/teacher joke; retained calm interest and source-backed practical guidance.",
+            "claimIdsRetained": true,
+            "sourceReferencesRetained": true,
+            "languageReview": "BOTH_DRAFT_UNAPPROVED",
+            "historicalSpeech": false
+          }
+        },
+        {
+          "no": 2,
+          "visitor": {
+            "en": "She recites the words, but does not seem to grasp their meaning.",
+            "fr": "Elle récite les paroles, mais ne semble pas en saisir le sens."
+          },
+          "reply": {
+            "en": "Ask her a simple question: 'Whom are you to receive?' Help her answer, not by the sound of a formula alone, but with understanding: it is Our Lord Jesus Christ, truly present in the Holy Eucharist. Let that knowledge awaken reverence and love. A child's instruction must be suited to her understanding, not measured by the length of her recitation.",
+            "fr": "Posez-lui une question toute simple : « Qui allez-vous recevoir ? » Aidez-la à répondre, non par la seule récitation d’une formule, mais avec intelligence : c’est Notre-Seigneur Jésus-Christ, réellement présent dans la Sainte Eucharistie. Que cette connaissance éveille en elle le respect et l’amour. L’instruction de l’enfant doit être proportionnée à son intelligence, non à la longueur de sa récitation."
+          },
+          "register": "CATECHETICAL",
+          "sprite": "pius_explaining",
+          "rhetoricalPattern": "CONCRETE_CATECHETICAL_DISTINCTION",
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q325",
+            "PX1912-Q338"
+          ],
+          "sourceBoundReview": {
+            "classification": "SOURCE_BOUNDED_C_EDUCATIONAL_RECONSTRUCTION",
+            "contentSourceOwner": "EXISTING_CATECHISM_AND_PAPAL_DOCUMENT_PIPELINE",
+            "claimedHistoricalUtterance": false,
+            "verbatimOriginalSourceText": false,
+            "originalSourceQuoteApproval": false,
+            "claimIds": [
+              "KNOW-WHOM-RECEIVE",
+              "CHILD-CATECHESIS-UNDERSTANDING-OVER-RECITATION"
+            ],
+            "evidenceIds": [
+              "PX1912-Q325",
+              "PX1912-Q338",
+              "ACERBO-1905-13-14-26",
+              "QUAM-1910-2-3"
+            ],
+            "claimReviewStatus": "SUBSTANTIVE_EDITORIAL_APPROVAL_PENDING",
+            "languageReviewStatus": "EN_FR_EDITORIAL_APPROVAL_PENDING",
+            "sourceCriticalUpdate": {
+              "date": "2026-10-19",
+              "reason": "Q325 specifically attests the Real Presence; Q335 is a historical mixed preparation rule that includes an obsolete fasting requirement. Keep Q335 caution, but no need to route this child's understanding question to obsolete discipline.",
+              "verifiedOriginalLanguageSource": "QUAM-1910-LA-DH-3531-3532",
+              "originalItalianCatechismCollated": false,
+              "contentOwnerApproval": false
+            }
+          }
+        },
+        {
+          "no": 3,
+          "visitor": {
+            "en": "And if she forgets it tomorrow?",
+            "fr": "Et si elle l'a oublié demain ?"
+          },
+          "reply": {
+            "en": "Then begin again, patiently and plainly. A child learns by degrees. Do not make the day of her First Communion the end of her lessons; continue afterwards, so that her knowledge of Our Lord may grow with her.",
+            "fr": "Alors recommencez, avec patience et simplicité. Un enfant apprend peu à peu. Ne faites pas du jour de sa Première Communion la fin de ses leçons ; poursuivez-les ensuite, afin que sa connaissance de Notre-Seigneur grandisse avec elle."
+          },
+          "register": "PASTORAL",
+          "sprite": "pius_thoughtful",
+          "rhetoricalPattern": "PRACTICAL_PASTORAL_GUIDANCE",
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q338"
+          ],
+          "sourceBoundReview": {
+            "classification": "SOURCE_BOUNDED_C_EDUCATIONAL_RECONSTRUCTION",
+            "contentSourceOwner": "EXISTING_CATECHISM_AND_PAPAL_DOCUMENT_PIPELINE",
+            "claimedHistoricalUtterance": false,
+            "verbatimOriginalSourceText": false,
+            "originalSourceQuoteApproval": false,
+            "claimIds": [
+              "AGE-OF-REASON-NOT-COMPLETE-KNOWLEDGE",
+              "CATECHESIS-CONTINUES-AFTER-FIRST-COMMUNION"
+            ],
+            "evidenceIds": [
+              "PX1912-Q342",
+              "QUAM-1910-1-3",
+              "ACERBO-1905-24-26"
+            ],
+            "claimReviewStatus": "SUBSTANTIVE_EDITORIAL_APPROVAL_PENDING",
+            "languageReviewStatus": "EN_FR_EDITORIAL_APPROVAL_PENDING"
+          },
+          "editorialLocalRevision": {
+            "version": "VOICE_V2_1_DOC_EVIDENCE_20261019",
+            "status": "TEXT_EDITED_NOT_APPROVED",
+            "reason": "Removed fabricated aphorism about examinations and repetitive essay-like advice.",
+            "claimIdsRetained": true,
+            "sourceReferencesRetained": true,
+            "languageReview": "BOTH_DRAFT_UNAPPROVED",
+            "historicalSpeech": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "PX-STYL-TEACHING-OBJECTION-03",
+      "topic": "Disagreement with Church teaching",
+      "router": {
+        "objective": "defend",
+        "branch": "critic",
+        "requiredTarget": "learn.catechism",
+        "exactNativeQuestion": null,
+        "sourceStatus": "ROUTE_DECLARED_ONLY",
+        "sourceIndexReview": "CANDIDATE_QUESTION_NUMBERS_AND_STEMS_VERIFIED_NOT_ANSWER_CONTENT",
+        "candidateQuestionRefs": [
+          "PX1912-Q114",
+          "PX1912-Q236",
+          "PX1912-Q115"
+        ]
+      },
+      "styleSourceIds": [
+        "PXV-1905-ACTION",
+        "PXV-1905-ACERBO"
+      ],
+      "historicalContextIds": [
+        "SARTO-PRE-HOMILY-178"
+      ],
+      "openingScene": "pius",
+      "testMode": "STYLE_ONLY_SOURCE_SLOT_PENDING",
+      "turns": [
+        {
+          "no": 1,
+          "visitor": {
+            "en": "Must I accept a teaching merely because the Church says so?",
+            "fr": "Dois-je accepter un enseignement seulement parce que l'Église l'affirme ?"
+          },
+          "reply": {
+            "en": "The Christian believes because God has revealed, not merely because some man has spoken. Our Lord entrusted His teaching to the Church, which must guard and expound what she has received, not devise another faith. You may certainly seek to understand a doctrine; but we must first know which doctrine you find difficult.",
+            "fr": "Le chrétien croit parce que Dieu a révélé, non parce qu’un homme quelconque a parlé. Notre-Seigneur a confié son enseignement à l’Église, qui doit garder et expliquer ce qu’elle a reçu, non inventer une autre foi. Vous pouvez assurément chercher à comprendre une doctrine ; encore faut-il savoir laquelle vous cause difficulté."
+          },
+          "register": "DOCTRINAL_CORRECTION",
+          "sprite": "pius_explaining",
+          "rhetoricalPattern": "DISTINCTION_WITHOUT_HOSTILITY",
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q114",
+            "PX1912-Q236"
+          ],
+          "sourceBoundReview": {
+            "classification": "SOURCE_BOUNDED_C_EDUCATIONAL_RECONSTRUCTION",
+            "contentSourceOwner": "EXISTING_CATECHISM_AND_PAPAL_DOCUMENT_PIPELINE",
+            "claimedHistoricalUtterance": false,
+            "verbatimOriginalSourceText": false,
+            "originalSourceQuoteApproval": false,
+            "claimIds": [
+              "FAITH-BASED-ON-DIVINE-REVELATION",
+              "CHURCH-CUSTODIAN-OF-DEPOSIT",
+              "HONEST-QUESTION-PERMISSIBLE"
+            ],
+            "evidenceIds": [
+              "PX1912-Q232",
+              "PX1912-Q114",
+              "PX1912-Q236"
+            ],
+            "claimReviewStatus": "SUBSTANTIVE_EDITORIAL_APPROVAL_PENDING",
+            "languageReviewStatus": "EN_FR_EDITORIAL_APPROVAL_PENDING"
+          }
+        },
+        {
+          "no": 2,
+          "visitor": {
+            "en": "I have heard it taught in different ways. How can I know what it says?",
+            "fr": "On me l'a présentée de diverses manières. Comment savoir ce qu'elle enseigne ?"
+          },
+          "reply": {
+            "en": "Begin by distinguishing the Church's teaching from the words of a particular speaker. The Pope and the bishops united with him have a charge to teach the faith; that does not make every passing remark by a clergyman a definition of doctrine. The question is what the Church truly proposes, and with what authority.",
+            "fr": "Commencez par distinguer l’enseignement de l’Église des paroles d’un prédicateur particulier. Le Pape et les évêques unis à lui ont la charge d’enseigner la foi ; cela ne transforme pas chaque remarque d’un ecclésiastique en définition doctrinale. Il s’agit de savoir ce que l’Église propose véritablement, et avec quelle autorité."
+          },
+          "register": "CATECHETICAL",
+          "sprite": "pius_grave",
+          "rhetoricalPattern": "ESTABLISH_THE_TEXT",
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q115",
+            "PX1912-Q236"
+          ],
+          "sourceBoundReview": {
+            "classification": "SOURCE_BOUNDED_C_EDUCATIONAL_RECONSTRUCTION",
+            "contentSourceOwner": "EXISTING_CATECHISM_AND_PAPAL_DOCUMENT_PIPELINE",
+            "claimedHistoricalUtterance": false,
+            "verbatimOriginalSourceText": false,
+            "originalSourceQuoteApproval": false,
+            "claimIds": [
+              "TEACHING-CHURCH-POPE-AND-BISHOPS",
+              "INDIVIDUAL-REMARK-NOT-DEFINITION",
+              "ACCURACY-OF-DOCTRINAL-AUTHORITY"
+            ],
+            "evidenceIds": [
+              "PX1912-Q114",
+              "PX1912-Q115",
+              "PX1912-Q116",
+              "PX1912-Q236"
+            ],
+            "claimReviewStatus": "SUBSTANTIVE_EDITORIAL_APPROVAL_PENDING",
+            "languageReviewStatus": "EN_FR_EDITORIAL_APPROVAL_PENDING"
+          }
+        },
+        {
+          "no": 3,
+          "visitor": {
+            "en": "Will you answer my objection once we have read it?",
+            "fr": "Répondrez-vous à mon objection après notre lecture ?"
+          },
+          "reply": {
+            "en": "Certainly. But tell me precisely what you believe the Church has taught and where you find the difficulty. I would not have you reject a doctrine on the strength of an inaccurate account of it. Let us examine the objection itself.",
+            "fr": "Assurément. Mais dites-moi exactement ce que vous croyez être l'enseignement de l'Église, et où se trouve votre difficulté. Je ne voudrais pas que vous rejetiez une doctrine sur la foi d'un exposé inexact. Examinons l'objection elle-même."
+          },
+          "register": "PASTORAL",
+          "sprite": "pius_thoughtful",
+          "rhetoricalPattern": "RETURN_TO_VISITOR",
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q114",
+            "PX1912-Q115"
+          ],
+          "sourceBoundReview": {
+            "classification": "SOURCE_BOUNDED_C_EDUCATIONAL_RECONSTRUCTION",
+            "contentSourceOwner": "EXISTING_CATECHISM_AND_PAPAL_DOCUMENT_PIPELINE",
+            "claimedHistoricalUtterance": false,
+            "verbatimOriginalSourceText": false,
+            "originalSourceQuoteApproval": false,
+            "claimIds": [
+              "FAITHFUL-TRANSMISSION-OF-FAITH",
+              "DISTINGUISH-MISTAKEN-ACCOUNT-FROM-DOCTRINE"
+            ],
+            "evidenceIds": [
+              "PX1912-Q235",
+              "PX1912-Q236",
+              "PX1912-Q114"
+            ],
+            "claimReviewStatus": "SUBSTANTIVE_EDITORIAL_APPROVAL_PENDING",
+            "languageReviewStatus": "EN_FR_EDITORIAL_APPROVAL_PENDING"
+          },
+          "editorialLocalRevision": {
+            "version": "VOICE_V2_1_DOC_EVIDENCE_20261019",
+            "status": "TEXT_EDITED_NOT_APPROVED",
+            "reason": "Answered the visitor immediately and removed repeated doctrinal preface.",
+            "claimIdsRetained": true,
+            "sourceReferencesRetained": true,
+            "languageReview": "BOTH_DRAFT_UNAPPROVED",
+            "historicalSpeech": false
+          }
+        }
+      ]
+    }
+  ],
+  "negativeGates": [
+    {
+      "case": "FALSE_DIRECT_QUOTATION",
+      "mustBlock": true
+    },
+    {
+      "case": "CONSTRUCT_CATECHISM_ANSWER_FROM_STYLE",
+      "mustBlock": true
+    },
+    {
+      "case": "INVENT_PAPAL_PERSONAL_MEMORY",
+      "mustBlock": true
+    },
+    {
+      "case": "ASSUME_NATIVE_DEEP_LINK_FROM_SURVEY_ONLY",
+      "mustBlock": true
+    },
+    {
+      "case": "ENTER_CRISES_OR_APOLOGETICS_HELD_ROUTES",
+      "mustBlock": true
+    },
+    {
+      "case": "ROUTE_CHILD_STUDY_TO_FIRST_COMMUNION_WITHOUT_FIRST_COMMUNION_CONTEXT",
+      "mustBlock": true
+    }
+  ],
+  "reviewStatus": {
+    "runtimeWired": false,
+    "editoriallyApproved": false,
+    "bilingualEditorialReview": false,
+    "threeExchangeSequences": 3,
+    "constructedHistoricalQuotations": 0,
+    "publishedTheologicalAnswers": 0,
+    "approvedTopicHandoffs": 0,
+    "questionNumbersMatchedInWitnessIndex": true,
+    "topicSpecificAnswerContentApproved": false,
+    "topicSpecificNativeHandoffsBrowserVerified": false
+  },
+  "sourceReconciliation": {
+    "date": "2026-10-19",
+    "indexOwner": "LTF_PIUS_X_EN_WITNESS_INDEX",
+    "indexPath": "data/learn/ltfaith-pius-x-en-witness-index.v1.json",
+    "indexBlobSha": "27b75ff3526196e4551d7c1f37b76d79d0b0927d",
+    "indexVersion": "LTF_PIUS_X_EN_SOURCE_WITNESS_INDEX_V1",
+    "entryCount": 433,
+    "evidenceGrade": "NUMBER_AND_QUESTION_STEM_VERIFIED_ONLY_NOT_CANONICAL_ANSWER_CERTIFICATION",
+    "editionLimitation": "English witness is a modern structured study translation aligned to 1912 shorter Catechism, NOT a certified historical English-language edition. No original answer passage copied.",
+    "originalLanguageLimitation": "Vatican Latin Ad Diem and Acerbo, Italian 1912 approval letter, and the Latin Quam Singulari DH 3531–3532 checked. Original 1912 Italian 433 question texts and complete prepapal personal dialogue remain uncollated; see collation review.",
+    "contentOwner": "ORIGINAL_CATECHISM_433_QUESTION_READER_AND_EDITORIAL_SOURCE_PIPELINE",
+    "selectedReferences": "STANDALONE_INDEX_CANDIDATES_NOT_APPROVED_DOCTRINAL_REPLY_OR_EN_FR_PARAPHRASE",
+    "p4SourceBridge": {
+      "branch": "feature/living-church-p4-catechism-source-return-20261018",
+      "pr": 1406,
+      "sourcePath": "src/learn/living-church-catechism-source.js",
+      "integrationPath": "src/learn/living-church-ask-integration.js",
+      "sourceIndexedNavigation": "nativeOpen('learn.catechism',{sourceRef:'PX1912-QNNN'}) checks canonical 433 index and opens existing catechism owner",
+      "browserVerifiedPreviously": "PX1912-Q105 at phone+desktop on P4 browser suite",
+      "theseThreeDialoguePathsBrowserVerified": false,
+      "nativeRouteIsDraft": true,
+      "styleCurationDiffersFromCurrentP4": [
+        "PX1912-Q325 instead of PX1912-Q335 for child's comprehension of Real Presence; P4 source owner decides corresponding UI topic adjustments"
+      ]
+    },
+    "historicalDisciplineCaution": {
+      "sourceRef": "PX1912-Q335",
+      "reason": "The 1912 Catechism answer includes a midnight Eucharistic fast. This is historical discipline and must never be labelled the current Catholic fasting rule.",
+      "runtimeConstraint": "NO_UNQUALIFIED_CURRENT_PRACTICE_SUMMARY_FROM_HISTORICAL_TEXT"
+    },
+    "releaseGate": "EXACT_QUESTION_IDS_VERIFIED_IN_INDEX; CONTENT_EDITORIAL_AND_LIVE_DIALOGUE_APPROVAL_PENDING",
+    "collationReviewPath": "data/learn/pius-x-original-language-collation.v1.json",
+    "translationHazard": "Vatican Italian online Ad Diem wording apparently reverses/omits Latin negation of Mary's power to produce grace; see collation review and content-owner PR #1406 note."
+  },
+  "editorialRevision": {
+    "version": "SOURCE_BOUNDED_EN_FR_V2",
+    "date": "2026-10-19",
+    "status": "EDITORIAL_DRAFT_UNRELEASED",
+    "rationale": "Replace nine source-deferring replies with direct, short, historically source-bounded catechetical explanations; maintain genre-appropriate voice and teachable continuity.",
+    "sourceAccuracy": "EDITORIAL_REVIEW_REQUIRED_NOT_CERTIFIED",
+    "originalLanguageAccuracy": "HISTORICAL_FRENCH_AND_ITALIAN_TEXT_NOT_COLLATED_FOR_RECONSTRUCTIONS",
+    "translationFidelity": "FRENCH_DRAFT_SEPARATELY_WRITTEN_EDITORIAL_REVIEW_REQUIRED",
+    "contemporaryDiscipline": "Q335 describes a historical midnight Eucharistic fast; do not present that rule as current Catholic law. This revision does not answer current fasting requirements.",
+    "speakerAttribution": "All revised lines are newly composed educational simulations, never historically recorded speech or direct quotations.",
+    "deployment": "NOT_EXPORTED_TO_PUBLIC_OR_PRODUCTION_CHARACTER",
+    "approvals": {
+      "historicalStyle": false,
+      "theological": false,
+      "french": false,
+      "english": false,
+      "runtime": false
+    },
+    "localVoiceReconciliation": {
+      "version": "VOICE_V2_1_DOC_EVIDENCE_20261019",
+      "targetedEdits": 4,
+      "unchangedTurns": 5,
+      "originalScope": "Editorial tone/source structure only, not canonical doctrine",
+      "sourceReferenceChanges": 0,
+      "approved": false,
+      "runtimeImportAllowed": false
+    }
+  },
+  "editorialEvidenceCatalog": [
+    {
+      "id": "ADIEM-1904-5-8",
+      "kind": "VATICAN_PRIMARY_TEXT",
+      "source": "St Pius X, Ad Diem Illum Laetissimum (1904)",
+      "locator": "§§5–8",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html"
+    },
+    {
+      "id": "ADIEM-1904-10-14",
+      "kind": "VATICAN_PRIMARY_TEXT",
+      "source": "St Pius X, Ad Diem Illum Laetissimum (1904)",
+      "locator": "§§10–14",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html"
+    },
+    {
+      "id": "ADIEM-1904-13-14",
+      "kind": "VATICAN_PRIMARY_TEXT",
+      "source": "St Pius X, Ad Diem Illum Laetissimum (1904)",
+      "locator": "§§13–14",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html"
+    },
+    {
+      "id": "ACERBO-1905-13-14-26",
+      "kind": "VATICAN_PRIMARY_TEXT",
+      "source": "St Pius X, Acerbo Nimis (1905)",
+      "locator": "§§13–14, 26",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html"
+    },
+    {
+      "id": "ACERBO-1905-24-26",
+      "kind": "VATICAN_PRIMARY_TEXT",
+      "source": "St Pius X, Acerbo Nimis (1905)",
+      "locator": "§§24–26",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html"
+    },
+    {
+      "id": "QUAM-1910-1-3",
+      "kind": "HISTORICAL_DECREE_ISSUED_UNDER_PIUS_X_NOT_PERSONAL_VERBATIM",
+      "source": "Sacred Congregation of the Discipline of the Sacraments, Quam Singulari (1910)",
+      "locator": "Norms 1–3",
+      "url": "https://www.papalencyclicals.net/pius10/p10quam.htm"
+    },
+    {
+      "id": "QUAM-1910-2-3",
+      "kind": "HISTORICAL_DECREE_ISSUED_UNDER_PIUS_X_NOT_PERSONAL_VERBATIM",
+      "source": "Sacred Congregation of the Discipline of the Sacraments, Quam Singulari (1910)",
+      "locator": "Norms 2–3",
+      "url": "https://www.papalencyclicals.net/pius10/p10quam.htm"
+    }
+  ]
+}

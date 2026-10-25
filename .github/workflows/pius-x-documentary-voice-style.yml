@@ -1,0 +1,57 @@
+name: Pius X documentary voice style
+on:
+  push:
+    branches:
+      - feature/pius-x-documentary-voice-style-20261018
+    paths:
+      - data/learn/pius-x-documentary-voice-style.v1.json
+      - data/learn/pius-x-period-catholic-prose-controls.v1.json
+      - data/learn/pius-x-prepapal-conversational-evidence.v1.json
+      - data/learn/pius-x-prepapal-style-batch2.v1.json
+      - data/learn/pius-x-style-dialogue-paths.v1.json
+      - data/learn/pius-x-original-language-collation.v1.json
+      - data/learn/pius-x-personal-correspondence-evidence.v2.json
+      - data/learn/pius-x-personal-voice-benchmark.v1.json
+      - data/learn/pius-x-personal-voice-contrastive-eval.v1.json
+      - data/learn/pius-x-unified-documentary-voice-review.v1.json
+      - previews/pius-x-voice-scene-review-20261019.html
+      - tests/pius-x-voice-scene-preview.mjs
+      - tests/pius-x-prepapal-style-batch2.mjs
+      - tests/pius-x-style-dialogue-paths.mjs
+      - docs/product/PIUS-X-DOCUMENTARY-VOICE-STYLE-V1.md
+      - tests/pius-x-documentary-voice-style.mjs
+      - .github/workflows/pius-x-documentary-voice-style.yml
+  pull_request:
+    paths:
+      - data/learn/pius-x-documentary-voice-style.v1.json
+      - data/learn/pius-x-period-catholic-prose-controls.v1.json
+      - data/learn/pius-x-prepapal-conversational-evidence.v1.json
+      - data/learn/pius-x-prepapal-style-batch2.v1.json
+      - data/learn/pius-x-style-dialogue-paths.v1.json
+      - data/learn/pius-x-original-language-collation.v1.json
+      - data/learn/pius-x-personal-correspondence-evidence.v2.json
+      - data/learn/pius-x-personal-voice-benchmark.v1.json
+      - data/learn/pius-x-personal-voice-contrastive-eval.v1.json
+      - data/learn/pius-x-unified-documentary-voice-review.v1.json
+      - previews/pius-x-voice-scene-review-20261019.html
+      - tests/pius-x-voice-scene-preview.mjs
+      - tests/pius-x-prepapal-style-batch2.mjs
+      - docs/product/PIUS-X-DOCUMENTARY-VOICE-STYLE-V1.md
+      - tests/pius-x-documentary-voice-style.mjs
+      - .github/workflows/pius-x-documentary-voice-style.yml
+permissions:
+  contents: read
+jobs:
+  historical-voice-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate documentary style without any answer-owner changes
+        run: |
+          node tests/pius-x-documentary-voice-style.mjs
+          node tests/pius-x-prepapal-style-batch2.mjs
+          node tests/pius-x-style-dialogue-paths.mjs
+          node tests/pius-x-voice-scene-preview.mjs
