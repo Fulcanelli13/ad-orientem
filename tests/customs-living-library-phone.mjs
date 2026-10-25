@@ -42,7 +42,7 @@ try{
       return {opened,...api.status};
     },language);
     assert.equal(response.opened,true,"Customs owner must open from standalone route");
-    assert.equal(response.canonical,38);
+    assert.equal(response.canonical,40);
     assert.equal(response.research,568);
     const rootLocator=page.locator("#ao-customs-library-root");
     await rootLocator.waitFor({state:"visible"});
