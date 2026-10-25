@@ -32,7 +32,7 @@ const EXACT_SOURCE_ACTION_CAPTIONS=Object.freeze({
   "BOWS PROFOUNDLY":Object.freeze(["The priest bows profoundly.","Le prêtre s’incline profondément."]),
 });
 export function sourceActionRubricLabel(label,language="en"){
- const raw=String(label??"").trim().replace(/\\s+/g," ");
+ const raw=String(label??"").trim().replace(/\s+/g," ");
  if(!raw||raw.length>95)return null;
  const approved=EXACT_SOURCE_ACTION_CAPTIONS[raw.toUpperCase()];
  if(approved)return approved[String(language).toLowerCase().startsWith("fr")?1:0];
