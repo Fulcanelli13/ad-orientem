@@ -1,0 +1,135 @@
+{
+  "schema": "AO_TLM_B89_LMS_UK_196_HISTORICAL_INDEX_SCREEN_20261025_V1",
+  "checked_on": "2026-10-25",
+  "scope": "RESEARCH_INDEX_ONLY_NOT_OWNER_1962_VERIFICATION_NOT_PUBLICATION",
+  "source": {
+    "organization": "Latin Mass Society of England and Wales",
+    "type": "Mass association-maintained directory of church names and locality, NOT a first-party parish Mass timetable",
+    "url": "https://lms.org.uk/list-of-churches",
+    "screened_range": "first 196 ordered church index positions",
+    "source_snapshot_warning": "Search index content crawled earlier in 2026; not confirmed a fresh complete October live census. Individual church records may say no current traditional Latin Mass. The list is NOT proof that a present 1962 Missal Mass occurs at every listed building."
+  },
+  "upstream": {
+    "b82_master": "Ad_Orientem_TLM_B82_Consolidated_Identity_And_Physical_View_2026-10-25.xlsx",
+    "b82_provisional_distinct_physical_sites": 2573,
+    "b82_historical_group_id_rows": 2576,
+    "b82_venue_source_records": 2679,
+    "b82_timetable_rows": 4681,
+    "b82_previously_verified_rows": 3347,
+    "b82_great_britain_canonical_rows": 289,
+    "b88_unimported_brazil_proposal": 5,
+    "b88_pr": 1701
+  },
+  "screened": {
+    "church_index_entries": 196,
+    "unique_label_locality_keys_in_cohort": 196,
+    "computer_suggested_matches_by_status": {
+      "NAME_AND_LOCALITY_MATCH_SUGGESTION": 79,
+      "HIGH_NAME_MATCH_LOCALITY_UNCONFIRMED": 92,
+      "PARTIAL_NAME_LOCALITY_REVIEW": 7,
+      "LOCALITY_EXISTS_DIFFERENT_OR_UNPROVEN_BUILDING": 12,
+      "NO_STRONG_NAME_OR_LOCALITY_MATCH_UNVERIFIED": 6
+    }
+  },
+  "priority_cases": [
+    {
+      "id": "B89-LMS-010",
+      "source_church": "Brinkburn Priory",
+      "locality": "Morpeth",
+      "decision": "NO_STRONG_MATCH_RESEARCH_LEAD; historic site 1962 Mass currently not verified"
+    },
+    {
+      "id": "B89-LMS-048",
+      "source_church": "Lyford Grange",
+      "locality": "Lyford",
+      "decision": "NO_STRONG_MATCH_PRIVATE_SITE_HOLD; public Mass access not established"
+    },
+    {
+      "id": "B89-LMS-053",
+      "source_church": "Most Holy Trinity",
+      "locality": "Ledbury",
+      "decision": "SOURCE_DATE_CONFLICT_HOLD; independent 2026 status reports canceled; current parish list does not explicitly establish a 1962 Mass",
+      "sources": [
+        "https://www.ledburycatholicchurch.org.uk/home.htm",
+        "https://www.latinmassdir.org/trends/2025/uk/"
+      ]
+    },
+    {
+      "id": "B89-LMS-088",
+      "source_church": "Our Lady's",
+      "locality": "Marnhull",
+      "decision": "SITE_EXISTS_CURRENT_RITE_UNPROVEN; October 2026 parish page does not independently establish 1962 Mass",
+      "sources": [
+        "https://www.marnhullandgillinghamrc.org.uk/mass-times"
+      ]
+    },
+    {
+      "id": "B89-LMS-089",
+      "source_church": "Our Lady's",
+      "locality": "Stowmarket",
+      "decision": "SITE_EXISTS_CURRENT_RITE_UNPROVEN; current parish webpage does not claim 1962 Mass",
+      "sources": [
+        "https://ourladystowmarket.org.uk/"
+      ]
+    },
+    {
+      "id": "B89-LMS-165",
+      "source_church": "St Joan of Arc Memorial Church",
+      "locality": "Catterick Garrison",
+      "decision": "NO_CURRENT_LMS_TLM_LISTED; society church page says no Traditional Latin Masses found",
+      "sources": [
+        "https://lms.org.uk/church/st-joan-arc-memorial-church-catterick-garrison"
+      ]
+    },
+    {
+      "id": "B89-LMS-015",
+      "source_church": "Christ the King",
+      "locality": "Bedford",
+      "decision": "HISTORICAL_DIRECTORY_CONFLICT; 18 October 2026 FSSP local bulletin cites All Saints Sunday and Our Lady of Ransom weekdays",
+      "sources": [
+        "https://fssp.org.uk/category/bedford/"
+      ]
+    },
+    {
+      "id": "B89-LMS-084",
+      "source_church": "Our Lady of the Assumption & St Gregory",
+      "locality": "London",
+      "decision": "INDEPENDENT_2026_STATUS_CANCELED; confirm current church bulletin before any map/time inference",
+      "sources": [
+        "https://www.latinmassdir.org/trends/2025/uk/"
+      ]
+    },
+    {
+      "id": "B89-LMS-003",
+      "source_church": "Belmont Abbey",
+      "locality": "Hereford",
+      "decision": "INDEPENDENT_2025_TLM_CANCELED; does not mean Catholic site permanently closed",
+      "sources": [
+        "https://www.latinmassdir.org/trends/2025/uk/"
+      ]
+    },
+    {
+      "id": "B89-LMS-079",
+      "source_church": "Our Lady of Ransom",
+      "locality": "Eastbourne",
+      "decision": "INDEPENDENT_2025_TLM_CANCELED; distinguish from Bedford Our Lady of Ransom",
+      "sources": [
+        "https://www.latinmassdir.org/trends/2025/uk/"
+      ]
+    }
+  ],
+  "workflow": "Use name+locality screen as research-only suggestions. Every proposed match requires building-level owner/locality/street attestation; every Mass-time claim needs independent current liturgical schedule. Never automatically infer that a church in LMS list hosts a 1962 Mass. Reconcile source-date conflicts before attempting site admissions.",
+  "release_gate": {
+    "new_site_admissions": 0,
+    "new_verified_timetable_rows": 0,
+    "new_public_map_pins": 0,
+    "existing_frozen_ids_changed": 0,
+    "existing_timetable_rows_changed": 0
+  },
+  "companion_workbook": {
+    "filename": "Ad_Orientem_B89_UK_LMS_196_Church_Index_Crosswalk_2026-10-25.xlsx",
+    "sha256": "9e3a92f891d355a00254e3668181d2c51ba9a7882d6cf70aca9607082d5c5131",
+    "stored_in_pr": false,
+    "notes": "Complete 196-row research index crosswalk, 289-row B82 UK baseline, 10 priority cases, source/gate and QA sheets. Delivered separately as conversation workbook; not an executable import."
+  }
+}
