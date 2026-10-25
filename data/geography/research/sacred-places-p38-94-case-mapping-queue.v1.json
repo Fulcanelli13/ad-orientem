@@ -250,14 +250,16 @@
       "country": "CZ",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
       "inherited_institutional_source_lead_url": "https://katalog.dltm.cz/web/chramy/524",
       "inherited_search_center": {
         "lat": 50.68163,
         "lng": 13.8715,
         "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
       },
-      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "verified_building_osm_ref": "osm:way:26228879",
+      "verified_institution_url": "https://katalog.dltm.cz/web/chramy/524"
     },
     {
       "queue_row": 11,
@@ -268,14 +270,16 @@
       "country": "CZ",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
       "inherited_institutional_source_lead_url": "http://www.pmkrtiny.cz",
       "inherited_search_center": {
         "lat": 49.2965,
         "lng": 16.743,
         "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
       },
-      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "verified_building_osm_ref": "osm:way:61229899",
+      "verified_institution_url": "https://krtiny.katolik.cz/index.php?page=%2Fuvod%2Fzakladni_udaje"
     },
     {
       "queue_row": 12,
@@ -647,14 +651,16 @@
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
       "inherited_institutional_source_lead_url": "https://notredamedebonsecours.org/",
       "inherited_search_center": {
         "lat": 44.45338,
         "lng": 4.221,
         "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
       },
-      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "verified_building_osm_ref": "osm:way:361802563",
+      "verified_institution_url": "https://notredamedebonsecours.org/"
     },
     {
       "queue_row": 33,
@@ -665,14 +671,16 @@
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
       "inherited_institutional_source_lead_url": "https://diocese40.fr/paroisse/saint-vincent-notre-dame/",
       "inherited_search_center": {
         "lat": 43.78425,
         "lng": -0.991,
         "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
       },
-      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "verified_building_osm_ref": "osm:way:146716528",
+      "verified_institution_url": "https://diocese40.fr/paroisse/saint-vincent-notre-dame/"
     },
     {
       "queue_row": 34,
@@ -683,14 +691,16 @@
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
       "inherited_institutional_source_lead_url": "https://www.basiliquemarienthal.fr/",
       "inherited_search_center": {
         "lat": 48.7795,
         "lng": 7.8165,
         "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
       },
-      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "verified_building_osm_ref": "osm:way:52873054",
+      "verified_institution_url": "https://www.basiliquemarienthal.fr/"
     },
     {
       "queue_row": 35,
@@ -701,14 +711,16 @@
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
       "inherited_institutional_source_lead_url": "https://chalons.catholique.fr/lepine/",
       "inherited_search_center": {
         "lat": 48.977,
         "lng": 4.47,
         "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
       },
-      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "verified_building_osm_ref": "osm:way:132183915",
+      "verified_institution_url": "https://chalons.catholique.fr/lepine/"
     },
     {
       "queue_row": 36,
@@ -1434,6 +1446,166 @@
     "Separately identify physical churches, chapels, religious campus grounds, archaeological monuments, non-Catholic custodians and genuinely ambiguous scopes.",
     "Resolve existing-Place reuse or geometry upgrade before creating new Place IDs; preserve frozen IDs and historical release ledger.",
     "Keep Bonaria, Materdomini and Sacra di San Michele protected until their exact building-versus-complex boundaries are independently established.",
-    "This file is NOT appended to sacred-places-live-release-chain; published counts remain 457/755/145 and no Mass schedule, image right, relic claim or pilgrim service is implied."
-  ]
+    "This file is NOT appended to sacred-places-live-release-chain; published counts remain 457/755/145 and no Mass schedule, image right, relic claim or pilgrim service is implied.",
+    "The six matched ways are exact individual named building records and are not automatically promoted by this research-only PR; the current live registry has no matching geo.source_ref values."
+  ],
+  "researched_building_matches": [
+    {
+      "id": "SG-INV-0285",
+      "name": "Bazilika Panny Marie Bolestné, Bohosudov",
+      "country": "CZ",
+      "city": "Bohosudov, Krupka",
+      "type": "basilica",
+      "way": 26228879,
+      "lat": 50.68174,
+      "lng": 13.87192,
+      "tag": "building=yes; amenity=place_of_worship; denomination=roman_catholic",
+      "identity_url": "https://katalog.dltm.cz/web/chramy/524",
+      "issuer": "Roman Catholic Diocese of Litoměřice church catalogue",
+      "map_url": "https://mapcarta.com/W26228879",
+      "scope": "Named Basilica of Our Lady of Sorrows building on Mariánské náměstí; exclude other Bohosudov campus premises",
+      "geo_source_ref": "osm:way:26228879",
+      "geo_source_url": "https://www.openstreetmap.org/way/26228879",
+      "geo_precision": "site",
+      "independent_named_building_match": true,
+      "existing_canonical_source_ref_collision": false,
+      "matched_existing_place_id": null,
+      "source_reviewed_at": "2026-10-25",
+      "release_gate": "RELEASE_CANDIDATE_REQUIRES_FULL_CANONICAL_BUILD_AND_CI"
+    },
+    {
+      "id": "SG-INV-0284",
+      "name": "Poutní kostel Jména Panny Marie, Křtiny",
+      "country": "CZ",
+      "city": "Křtiny",
+      "type": "church",
+      "way": 61229899,
+      "lat": 49.2966,
+      "lng": 16.74265,
+      "tag": "building=church; amenity=place_of_worship; denomination=roman_catholic",
+      "identity_url": "https://krtiny.katolik.cz/index.php?page=%2Fuvod%2Fzakladni_udaje",
+      "issuer": "Roman Catholic Parish of Křtiny (archived parish identity; refers to newer pmkrtiny.cz site)",
+      "map_url": "https://mapcarta.com/fr/39526790",
+      "scope": "Main Křtiny pilgrimage church only, separate St Anne chapel, cloister and residence",
+      "geo_source_ref": "osm:way:61229899",
+      "geo_source_url": "https://www.openstreetmap.org/way/61229899",
+      "geo_precision": "site",
+      "independent_named_building_match": true,
+      "existing_canonical_source_ref_collision": false,
+      "matched_existing_place_id": null,
+      "source_reviewed_at": "2026-10-25",
+      "release_gate": "RELEASE_CANDIDATE_REQUIRES_FULL_CANONICAL_BUILD_AND_CI"
+    },
+    {
+      "id": "SG-INV-0011",
+      "name": "Basilique Notre-Dame-de-Bon-Secours, Lablachère",
+      "country": "FR",
+      "city": "Lablachère",
+      "type": "basilica",
+      "way": 361802563,
+      "lat": 44.45325,
+      "lng": 4.22129,
+      "tag": "building=church; amenity=place_of_worship; denomination=catholic",
+      "identity_url": "https://notredamedebonsecours.org/",
+      "issuer": "Sanctuaire Notre-Dame de Bon Secours, parish Sainte-Thérèse des Cévennes (Diocese of Viviers)",
+      "map_url": "https://mapcarta.com/W361802563",
+      "scope": "Current pilgrimage basilica building; do not conflate historic chapels or adjacent parish facilities",
+      "geo_source_ref": "osm:way:361802563",
+      "geo_source_url": "https://www.openstreetmap.org/way/361802563",
+      "geo_precision": "site",
+      "independent_named_building_match": true,
+      "existing_canonical_source_ref_collision": false,
+      "matched_existing_place_id": null,
+      "source_reviewed_at": "2026-10-25",
+      "release_gate": "RELEASE_CANDIDATE_REQUIRES_FULL_CANONICAL_BUILD_AND_CI"
+    },
+    {
+      "id": "SG-INV-0015",
+      "name": "Basilique Notre-Dame de Buglose",
+      "country": "FR",
+      "city": "Saint-Vincent-de-Paul, Landes",
+      "type": "basilica",
+      "way": 146716528,
+      "lat": 43.78422,
+      "lng": -0.99067,
+      "tag": "building=church; amenity=place_of_worship; denomination=catholic",
+      "identity_url": "https://diocese40.fr/paroisse/saint-vincent-notre-dame/",
+      "issuer": "Roman Catholic Diocese of Aire-et-Dax parish and Buglose sanctuary register",
+      "map_url": "https://mapcarta.com/W146716528",
+      "scope": "Basilica building only; separate Miracle Chapel osm:way:146710084 and monastery/sanctuary osm:way:146711156",
+      "geo_source_ref": "osm:way:146716528",
+      "geo_source_url": "https://www.openstreetmap.org/way/146716528",
+      "geo_precision": "site",
+      "independent_named_building_match": true,
+      "existing_canonical_source_ref_collision": false,
+      "matched_existing_place_id": null,
+      "source_reviewed_at": "2026-10-25",
+      "release_gate": "RELEASE_CANDIDATE_REQUIRES_FULL_CANONICAL_BUILD_AND_CI"
+    },
+    {
+      "id": "SG-INV-0014",
+      "name": "Basilique Notre-Dame de Marienthal",
+      "country": "FR",
+      "city": "Marienthal, Haguenau",
+      "type": "basilica",
+      "way": 52873054,
+      "lat": 48.7795,
+      "lng": 7.81693,
+      "tag": "building=church; amenity=place_of_worship; denomination=roman_catholic",
+      "identity_url": "https://www.basiliquemarienthal.fr/",
+      "issuer": "Basilique et sanctuaire Notre-Dame de Marienthal official custodians",
+      "map_url": "https://mapcarta.com/W52873054",
+      "scope": "Main pilgrimage basilica; exclude distinct confession chapel, Saint Christophe chapel, Carmel chapel, guest house",
+      "geo_source_ref": "osm:way:52873054",
+      "geo_source_url": "https://www.openstreetmap.org/way/52873054",
+      "geo_precision": "site",
+      "independent_named_building_match": true,
+      "existing_canonical_source_ref_collision": false,
+      "matched_existing_place_id": null,
+      "source_reviewed_at": "2026-10-25",
+      "release_gate": "RELEASE_CANDIDATE_REQUIRES_FULL_CANONICAL_BUILD_AND_CI"
+    },
+    {
+      "id": "SG-INV-0013",
+      "name": "Basilique Notre-Dame de L'Épine",
+      "country": "FR",
+      "city": "L'Épine, Marne",
+      "type": "basilica",
+      "way": 132183915,
+      "lat": 48.97707,
+      "lng": 4.47042,
+      "tag": "building=church; amenity=place_of_worship; denomination=catholic",
+      "identity_url": "https://chalons.catholique.fr/lepine/",
+      "issuer": "Roman Catholic Diocese of Châlons, Notre-Dame de L'Épine sanctuary",
+      "map_url": "https://mapcarta.com/W132183915",
+      "scope": "Individual Gothic basilica building, not the broader sanctuary property",
+      "geo_source_ref": "osm:way:132183915",
+      "geo_source_url": "https://www.openstreetmap.org/way/132183915",
+      "geo_precision": "site",
+      "independent_named_building_match": true,
+      "existing_canonical_source_ref_collision": false,
+      "matched_existing_place_id": null,
+      "source_reviewed_at": "2026-10-25",
+      "release_gate": "RELEASE_CANDIDATE_REQUIRES_FULL_CANONICAL_BUILD_AND_CI"
+    }
+  ],
+  "additional_geometry_candidates": [
+    {
+      "candidate_id": "SG-INV-0472",
+      "place_name": "Basilica of Our Lady of Monserrate, Hormigueros",
+      "proposed_osm_way_ref": "osm:way:534971537",
+      "evidence": "https://commons.wikimedia.org/wiki/Category:Bas%C3%ADlica_Menor_Nuestra_Se%C3%B1ora_de_la_Monserrate",
+      "government_identity": "https://jp.pr.gov/wp-content/uploads/2021/11/Hormigueros-Plan-Final-5-diciembre-2009-Documento.pdf",
+      "remaining_gate": "Confirm way building tags and distinct basilica footprint, not attached historic pilgrimage house; independent Catholic institutional custody needed",
+      "status": "PROVISIONAL_NOT_RELEASE_READY"
+    }
+  ],
+  "geometry_review_status": {
+    "queue_rows": 74,
+    "candidates_with_full_matched_named_church_ways": 6,
+    "candidate_with_provisional_way_unverified": 1,
+    "existing_canonical_scope_reconciliation": 1,
+    "other_open_rows_not_yet_building_verified": 66,
+    "notes": "6 plus provisional PR plus Paray existing-canonical = 8 of 74 rows with an identified feature or scope finding; 66 await exact church geometry. No new Place publication."
+  }
 }
