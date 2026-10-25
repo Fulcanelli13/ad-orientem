@@ -60,11 +60,30 @@ try{
       const a=scroller.getBoundingClientRect(),b=hit.getBoundingClientRect();
       scroller.scrollTop=Math.max(0,b.top-a.top+scroller.scrollTop+b.height/2-scroller.clientHeight*.39);
     },spec.cue);
-    await page.waitForFunction(cue=>window.__AO_PHONE_PREVIEW.getActiveCue()===cue,
-      spec.cue,{timeout:8500});
-    await page.waitForFunction(cue=>
-      window.__AO_PHONE_PREVIEW.getNativeEventState()?.nativeCueId===cue,
-      spec.cue,{timeout:8500});
+    try{
+      await page.waitForFunction(cue=>window.__AO_PHONE_PREVIEW.getActiveCue()===cue,
+        spec.cue,{timeout:4500});
+      await page.waitForFunction(cue=>
+        window.__AO_PHONE_PREVIEW.getNativeEventState()?.nativeCueId===cue,
+        spec.cue,{timeout:4500});
+    }catch(error){
+      const trace=await page.evaluate(cue=>{
+        const card=document.querySelector(".ao-prayer-card");
+        return {requested:cue,active:window.__AO_PHONE_PREVIEW.getActiveCue(),
+          native:window.__AO_PHONE_PREVIEW.getNativeEventState()?.nativeCueId,
+          currentCard:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId,
+          top:card?.scrollTop,height:card?.clientHeight,scrollHeight:card?.scrollHeight,
+          rows:[...card.querySelectorAll(".ao-reader-paragraph")].map(e=>({
+            id:e.dataset.cueId,source:e.dataset.sourceCueIds,
+            top:e.getBoundingClientRect().top,
+            text:e.querySelector(".ao-line-primary")?.textContent?.slice(0,90)
+          }))};
+      },spec.cue);
+      await page.screenshot({path:resolve(output,spec.width+"-"+spec.kind+"-focus-diagnostic.png")});
+      report.push({...spec,focusError:String(error.message),trace});
+      console.error("SOURCE FOCUS DIAGNOSTIC "+JSON.stringify(trace));
+      throw new Error("Cannot focus source cue "+spec.cue+": "+JSON.stringify(trace));
+    }
     await page.evaluate(()=>new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok))));
     const snapshot=await page.evaluate(cue=>{
       const shell=document.querySelector("[data-ao-reader-shell]");
