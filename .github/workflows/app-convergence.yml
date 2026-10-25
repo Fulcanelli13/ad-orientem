@@ -20,6 +20,8 @@ on:
       - "src/mass/reader-dom.js"
       - "src/mass/reader-native-preview.js"
       - "src/mass/browser-entry.js"
+      - "src/mass/full-mass-preflight.js"
+      - "src/mass/reader-live-curated-cards.js"
       - "src/mass/reader-proper-runtime-recovery.js"
       - "src/mass/proper-reader-slots.js"
       - "index.html"
@@ -50,6 +52,7 @@ on:
       - "tests/learn-*.mjs"
       - "tests/settings-*.mjs"
       - "tests/reader-phone-acceptance.mjs"
+      - "tests/mass-local-communion-confiteor-preflight-phone.mjs"
       - "tests/source-transport-compat.mjs"
       - "tests/field-current-week-e2e.mjs"
       - "tools/calendar/proper-source-batch-100.mjs"
@@ -73,6 +76,8 @@ on:
       - "src/mass/reader-dom.js"
       - "src/mass/reader-native-preview.js"
       - "src/mass/browser-entry.js"
+      - "src/mass/full-mass-preflight.js"
+      - "src/mass/reader-live-curated-cards.js"
       - "src/mass/reader-proper-runtime-recovery.js"
       - "src/mass/proper-reader-slots.js"
       - "index.html"
@@ -103,6 +108,7 @@ on:
       - "tests/learn-*.mjs"
       - "tests/settings-*.mjs"
       - "tests/reader-phone-acceptance.mjs"
+      - "tests/mass-local-communion-confiteor-preflight-phone.mjs"
       - "tests/production-tree-hygiene.mjs"
       - "docs/APP-CONVERGENCE.md"
       - ".github/workflows/app-convergence.yml"
@@ -126,6 +132,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Real phone — Follow Mass must expose source-owned preflight
         run: node tests/mass-preflight-entry-phone.mjs
+      - name: Real phone — local Communion Confiteor and silent Placeat order
+        run: node tests/mass-local-communion-confiteor-preflight-phone.mjs
 
   app-shell-contract:
     runs-on: ubuntu-latest
