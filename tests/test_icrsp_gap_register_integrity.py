@@ -40,9 +40,10 @@ class IcRSpResearchGapTests(unittest.TestCase):
         self.assertEqual(sum(x["commentarySectionPresent"] for x in r),189)
         self.assertEqual(sum(bool(x["relatedExistingMajorReviewId"]) for x in r),27)
         self.assertEqual(sum(not x["relatedExistingMajorReviewId"] for x in r),166)
-        self.assertEqual(sum(x["editionOrRiteFlags"] and
-                             "SOURCE_EXPLICIT_HISTORICAL_OR_PRE_POST_1955_LABEL" in x["editionOrRiteFlags"]
-                             for x in r),25)
+        self.assertEqual(sum(
+            "SOURCE_EXPLICIT_HISTORICAL_OR_PRE_POST_1955_LABEL" in x["editionOrRiteFlags"]
+            for x in r
+        ),25)
         self.assertEqual(sum(bool(x["commentaryHashDuplicateGroups"]) for x in r),45)
         self.assertEqual(len(set(x["articleId"] for x in r)),193)
         self.assertTrue(all(x["canonicalMassProperId"] is None and
