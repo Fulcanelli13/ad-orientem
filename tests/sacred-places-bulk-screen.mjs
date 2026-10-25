@@ -59,4 +59,25 @@ assert.deepEqual(Object.fromEntries(Object.entries(lanes).sort()),Object.fromEnt
 }).sort()));
 assert.ok(sources.rows.every(x=>x.publication_authorized===false));
 
+const evidence=read("data/geography/research/sacred-places-p39-open68-osm-evidence.v1.json");
+assert.equal(evidence.schema,"AO_SACRED_PLACES_P39_FULL68_FIRST_OSM_EXECUTION_EVIDENCE_V1");
+assert.deepEqual([evidence.results.length,evidence.summary.has_osm_candidate,evidence.summary.remote_query_failed,evidence.summary.verified_no_match,evidence.summary.automatic_new_places],[68,24,44,0,0]);
+assert.equal(new Set(evidence.results.map(x=>x.queue_row)).size,68);
+const openByRow=new Map(j.open_mapping_68.map(x=>[x.queue_row,x]));
+const refs=new Set();
+for(const x of evidence.results){
+ const inherited=openByRow.get(x.queue_row);assert.ok(inherited,"Evidence without inherited row");
+ assert.deepEqual(x.candidate_ids,inherited.candidate_ids);
+ assert.equal(x.publication_authorized,false);
+ assert.equal(x.osm_candidates.length>0,x.status==="OSM_CANDIDATE_REVIEW_REQUIRED");
+ for(const hit of x.osm_candidates){
+  assert.match(hit.osm_ref,/^osm:(node|way|relation):[0-9]+$/);
+  assert.equal(hit.verification_status,"OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED");
+  assert.equal(hit.osm_feature_center.meaning,"UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO");
+  refs.add(hit.osm_ref);
+ }
+ if(x.status==="REMOTE_QUERY_FAILED")assert.ok(x.remote_error,"Network failure must keep error");
+}
+assert.equal(refs.size,112);
+
 console.log("PASS P39 bulk: all 500 IDs, 98 exact canonical links, 402 acquisition holds; 68 mapping rows/69 IDs, 54 overlaps; safe bounded Overpass queries; zero automatic publication");
