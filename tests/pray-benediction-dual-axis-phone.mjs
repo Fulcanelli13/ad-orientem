@@ -233,6 +233,21 @@ try{
  await page.setViewportSize({width:320,height:720});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
   "Optional Christ King celebration introduced phone overflow");
+
+ // Entering Adoration must offer an actual doorway to public Benediction,
+ // including its opt-in Christ the King sequence, without a second ritual owner.
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.adoration",{returnContext:null}));
+ const adorationChooser="#aoPray435930.open .aoAdorationChooser";
+ assert.equal(await page.locator(adorationChooser+" [data-p435930-go-ben]").count(),1,
+  "The public Benediction route is undiscoverable from the Adoration chooser");
+ await page.locator(adorationChooser+" [data-p435930-go-ben]").click();
+ assert.equal((await snapshot()).card,"exposition",
+  "Adoration handoff must preserve the original public-rite entry");
+ assert.equal(await page.locator(rootSel+" [data-ao-ben-feast-options]").count(),1,
+  "The linked Benediction must expose optional Christ the King additions");
+ await page.locator("#aoPray435930.open .aoP435930Back").click();
+ assert.equal(await page.locator(adorationChooser).count(),1,
+  "Back from public Benediction must restore the Adoration chooser");
  assert.deepEqual(errors,[],"Browser exceptions: "+errors.join(" | "));
  console.log("PASS canonical seven-stage Benediction: timeline, vertical focus, horizontal swipe, conditional Praises and manual ritual pace");
  await page.close();
