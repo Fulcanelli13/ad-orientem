@@ -305,11 +305,12 @@ function applySettingsPreferences(raw={}){
  };
 }
 let prayTouch=null;
-function shell(){
-  let r=document.getElementById(ROOT_ID);if(r)return r;
-  r=document.createElement('div');r.id=ROOT_ID;r.className='aoP435930Backdrop';r.setAttribute('aria-hidden','true');r.dataset.aoDevotionalUx=DEVOTIONAL_UX_CONTRACT_VERSION;
-  r.innerHTML='<section class="aoP435930Sheet" role="dialog" aria-modal="true" aria-labelledby="aoP435930Title"><div class="aoP435930Mount"></div></section>';
-  document.body.appendChild(r);
+// External source-owned prayer modules can rebuild the shared Prayer root on
+// return. Reattach delegated events to a replacement node exactly once.
+const boundPrayShells=new WeakSet();
+function bindPrayShell(r){
+  if(boundPrayShells.has(r))return r;
+  boundPrayShells.add(r);
   r.addEventListener('click',onClick);
   r.addEventListener('change',onChange);
   // Keep the one Prayer-options drawer stable across child rerenders.
@@ -323,6 +324,14 @@ function shell(){
   r.addEventListener('touchstart',onPrayTouchStart,{passive:true});
   r.addEventListener('touchend',onPrayTouchEnd,{passive:true});
   return r;
+}
+function shell(){
+  let r=document.getElementById(ROOT_ID);
+  if(r)return bindPrayShell(r);
+  r=document.createElement('div');r.id=ROOT_ID;r.className='aoP435930Backdrop';r.setAttribute('aria-hidden','true');r.dataset.aoDevotionalUx=DEVOTIONAL_UX_CONTRACT_VERSION;
+  r.innerHTML='<section class="aoP435930Sheet" role="dialog" aria-modal="true" aria-labelledby="aoP435930Title"><div class="aoP435930Mount"></div></section>';
+  document.body.appendChild(r);
+  return bindPrayShell(r);
 }
 function mount(){return shell().querySelector('.aoP435930Mount')}
 function open(id,opts={}){
