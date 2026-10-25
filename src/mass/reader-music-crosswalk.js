@@ -64,7 +64,7 @@ export function buildReaderMusicCrosswalk({
       condition:String(event.condition),
       endBoundary:event.endBoundary??null,
       performanceStatus:event.kind==="SOURCE_HOLD"
-        ? "SOURCE_HOLD" : "EXPECTED_NOT_OBSERVED",
+        ? "SOURCE_HOLD" : "INDEXED_NOT_OBSERVED",
       clockOwner:"SPECIAL_RITE_NOT_ORDINARY_SCHOLA",
     })));
   const trackIds=ordinary.map(t=>t.trackId);
