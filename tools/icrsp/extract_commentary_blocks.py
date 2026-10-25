@@ -31,6 +31,10 @@ def classify(label):
         return "SCHUSTER_LIBER_SACRAMENTORUM", "EXPLICIT_WEBSITE_WORK_LABEL"
     if "parsch" in name and "guide" in name and "annee liturgique" in name:
         return "PARSCH_GUIDE_ANNEE_LITURGIQUE", "EXPLICIT_WEBSITE_WORK_LABEL"
+    if "benoit xvi" in name and "cateches" in name:
+        return "BENEDICT_XVI_CATECHESES_CANDIDATE", "EXPLICIT_WEBSITE_WORK_LABEL"
+    if "prudentius" in name and "peristephanon" in name:
+        return "PRUDENTIUS_PERISTEPHANON_CANDIDATE", "EXPLICIT_WEBSITE_WORK_LABEL"
     # Do not assign an author to "Présentation", "Office du jour" etc.
     return None, "UNATTRIBUTED_OR_OTHER_BLOCK_NEEDS_EDITORIAL_REVIEW"
 
@@ -162,6 +166,7 @@ def main():
     cli.add_argument("--start", type=int, default=0)
     cli.add_argument("--count", type=int, default=0)
     cli.add_argument("--delay", type=float, default=3.0)
+    cli.add_argument("--only-commentary", action="store_true", help="skip articles without a previously observed h3 Commentaires heading")
     cli.add_argument("--out", required=True)
     args = cli.parse_args()
     if args.delay < 2.5 or args.start < 0 or args.count < 0:
@@ -174,6 +179,18 @@ def main():
         positions = list(range(args.start, args.start + args.count))
     if len(positions) != len(set(positions)) or any(i < 0 or i >= len(pages) for i in positions):
         cli.error("invalid, duplicated or out-of-bounds positions")
+    requested_window = len(positions)
+    if args.only_commentary:
+        # Only skip when the *full 855-item certified metadata* contains H3
+        # observations for every article. Never infer absence from index labels.
+        if any(page.get("state") != "METADATA_INSPECTED" for page in pages):
+            cli.error("--only-commentary requires every indexed source to have inspected metadata")
+        positions = [
+            i for i in positions
+            if any(h.get("level") == "h3" and folded(h.get("text")) == "commentaires"
+                   for h in pages[i].get("headings", []))
+        ]
+    skipped = requested_window - len(positions)
     robots = RobotFileParser()
     robots.set_url("https://icrspfrance.fr/robots.txt")
     robots.read()
@@ -207,6 +224,7 @@ def main():
         "sourceIndex": master["sourceIndex"],
         "indexPositionsRequested": positions,
         "totals": {
+            "windowPositions": requested_window, "skippedWithoutCommentary": skipped,
             "requested": len(positions), "inspected": len(rows),
             "errors": len(errors), "pagesWithCommentary": sum(r["commentaryHeadingCount"] > 0 for r in rows),
             "pagesWithBlockStructure": sum(bool(r["commentaryBlocks"]) for r in rows),
