@@ -9,6 +9,7 @@ const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const seed=read("data/customs/customs-atlas-seed.v1.json");
 const sources=read("data/customs/source-registry.v1.json");
 const legacy=read("data/customs/research/customs-published-35-editorial-first-pass.20261023.v1.json");
+const sot07=read("data/customs/sot07-full-recovery.review.v1.json");
 const canonical=seed.customs, published=canonical.filter(x=>x.publication_state==="PUBLISHED");
 const registered=new Map(sources.sources.map(x=>[x.id,x]));
 const newIds=["EPIP-003","CRIB-001"], oldIds=new Set(legacy.records.map(x=>x.custom_id));
@@ -27,6 +28,9 @@ assert.ok([...oldIds].every(id=>published.some(x=>x.custom_id===id)),"Frozen 35 
 assert.equal(canonical.filter(x=>x.publication_state==="CONTEXT_ONLY").length,3);
 assert.deepEqual(new Set(CALENDAR_CUSTOM_ARTICLE_IDS.filter(id=>!oldIds.has(id))),new Set(newIds));
 assert.deepEqual(seed.releaseExtension?.addedIds,newIds);
+const frozenOriginalIds=new Set(sot07.rows.map(x=>x.original_custom_id));
+for(const id of newIds)assert.ok(!frozenOriginalIds.has(id),"New canonical identity collides with historical SOT07 row: "+id);
+assert.ok(frozenOriginalIds.has("DOM-014"),"Original SOT07 DOM-014 must not be reassigned");
 assert.equal(seed.releaseExtension?.releaseApproval,"BRANCH_CANDIDATE_NOT_MERGED",
  "A draft/research approval flag must not be confused with final publisher signature");
 assert.equal(seed.releaseExtension?.priorPublishedCount,35);
