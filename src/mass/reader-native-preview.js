@@ -58,6 +58,7 @@ import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 import { structureSupport } from "./reader-structure.js";
 import { loadGuideRegistry, guideForPresentationCard } from "./reader-guide.js";
 import { createNativeScholaController } from "./reader-schola.js";
+import { buildReaderMusicCrosswalk } from "./reader-music-crosswalk.js";
 import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./reader-customary-preferences.js";
 import { projectGloriaCredoFaithfulCue, resolveIncarnatusSungAction } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
@@ -477,6 +478,11 @@ export async function prepareNativeReaderPreview({
     sungCorpus:data?.sungCorpus,properSlots:model.properSlots,
     prepared,frenchOrdinary:data?.frenchOrdinary??null,
   });
+  const musicCrosswalk=buildReaderMusicCrosswalk({
+    presentationModel,sungCorpus:data?.sungCorpus,
+    scholaTracks:scholaState.tracks??[],
+    riteMusicRegistry:loadedRiteMusic??null,
+  });
   const transientState=createReaderTransientController({events,prepared});
   const rubricState=createReaderRubricEventController({data:data?.rubricEvents??null});
   const gestureMatrixState=createReaderGestureMatrixController({data:data?.gestureMatrix??null});
@@ -520,7 +526,7 @@ export async function prepareNativeReaderPreview({
   const lifecycleRuntime=createFormLifecycleRuntime({prepared});
   return Object.freeze({
     prepared,curatedEligible,curatedIntroitEntry:explicitIntroitEntry,
-    data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
+    data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,musicCrosswalk,transientState,rubricState,gestureMatrixState,formState,
     aspergesController,palmController,ashController,candlemasController,rogationsController,
     requiemAbsolutionController,corpusChristiController,holyThursdayPostController,genericProcessionController,lifecycleRuntime,
     riteMusicRegistry:loadedRiteMusic,
