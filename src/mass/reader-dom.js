@@ -508,7 +508,12 @@ const SHELL_STYLE = `
 .ao-schola-dock[data-shared="true"] .ao-schola-meta{margin-top:4px;gap:3px}
 .ao-schola-resize{position:absolute;top:0;left:25%;right:25%;height:10px;cursor:ns-resize;touch-action:none}
 .ao-schola-resize:before{content:"";position:absolute;left:50%;top:3px;width:34px;height:2px;border-radius:2px;background:color-mix(in srgb,var(--ao-mass-accent) 28%,transparent);transform:translateX(-50%)}
-.ao-schola-title{display:flex;align-items:center;gap:8px;min-height:21px;padding-right:54px}
+.ao-schola-title{display:flex;align-items:center;gap:6px;min-height:21px;padding-right:54px}
+.ao-schola-kicker{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ao-schola-find-place{appearance:none;flex-shrink:0;min-height:30px;border:1px solid color-mix(in srgb,var(--ao-mass-accent) 35%,transparent);background:transparent;color:var(--ao-mass-accent-text);border-radius:6px;padding:5px 7px;font:650 9px/1 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+.ao-schola-find-place:focus-visible{outline:2px solid var(--ao-mass-accent-text);outline-offset:2px}
+.ao-schola-dock[data-collapsed="true"] .ao-schola-find-place{display:none}
+@media(max-width:380px){.ao-schola-title .ao-schola-page{display:none}}
 /* Schola uses approved sacred-art original. Give the figure the same
    perceptual area as other reader icons, not a tiny 22px dock stamp. */
 .ao-schola-title .ao-icon-mask{width:34px;height:34px;flex:0 0 34px;color:var(--ao-mass-accent-text)}
@@ -2026,7 +2031,7 @@ export function buildReaderShellMarkup(prepared = {}) {
 
   <div class="ao-schola-dock" data-channel="schola" data-active="false" data-collapsed="false" data-show-translation="false">
     <span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span>
-    <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-status" data-role="schola-status" hidden></span><span class="ao-schola-page" data-role="schola-page"></span></div>
+    <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-status" data-role="schola-status" hidden></span><span class="ao-schola-page" data-role="schola-page"></span><button type="button" class="ao-schola-find-place" data-schola-find-place aria-label="Find my place in the Mass after following the Schola">FIND</button></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
     <div class="ao-schola-main" data-schola-translate title="Tap to translate" role="button" tabindex="-1" aria-label="Translate Schola text in place" aria-pressed="false" aria-disabled="true"><span data-role="schola" aria-live="polite">—</span></div>
     <div class="ao-schola-meta">
@@ -2861,6 +2866,20 @@ export function createReaderDomAdapter({
           onSectionSelect?.(sectionButton.dataset.readerSection,current,prepared);
         }
         closeSectionMenu();
+        return;
+      }
+      const scholaLocate=event.target?.closest?.("[data-schola-find-place]");
+      if(scholaLocate){
+        // Follow music without assuming a corresponding priest position.
+        // Reuse the existing source-backed section picker; selecting a
+        // section is an explicit user action, not a choir-clock update.
+        const menu=root.querySelector('[data-role="section-menu"]');
+        const jump=root.querySelector('[data-role="section-jump"]');
+        if(menu && jump && !jump.disabled){
+          menu.hidden=false;
+          jump.setAttribute("aria-expanded","true");
+          setPreferencesOpen(false);
+        }
         return;
       }
       const scholaToggle=event.target?.closest?.("[data-schola-toggle]");
