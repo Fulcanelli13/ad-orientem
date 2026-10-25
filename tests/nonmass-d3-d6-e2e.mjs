@@ -73,7 +73,16 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='holy']").count(),1,"Final donor Holy Hour entry is missing from Adoration");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='four']").count(),1,"Final donor Four Ends entry is missing from Adoration");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='treasury']").count(),1);
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-go-ben]").count(),0,"Benediction leaked into the private Adoration landing surface");
+  // The current quiet-v2 chooser deliberately offers a separate, labelled
+  // handoff to a PUBLIC Benediction rite. A link does not begin that rite or
+  // insert its seven-stage reader into private Adoration.
+  const publicRiteLink=page.locator("#aoPray435930 .aoAdorationChooser [data-p435930-go-ben]");
+  assert.equal(await publicRiteLink.count(),1,
+    "The Adoration chooser must retain its explicit public Benediction handoff");
+  assert.match(await publicRiteLink.innerText(),
+    /Follow public Benediction|Suivre la bénédiction eucharistique/i);
+  assert.equal(await page.locator("#aoPray435930 .aoP435930BenedictionReader").count(),0,
+    "Public Benediction ritual stages must not open inside the private chooser");
 
   await page.locator("#aoPray435930 [data-p435930-ador-mode='open']").click();
   // This older D3/D6 cross-module smoke test verifies the *presence* of
