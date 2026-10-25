@@ -1,0 +1,155 @@
+{
+  "schema": "AO_TLM_FIRST_PARTY_FSSP_IBP_COVERAGE_SCREEN_B80_V1",
+  "screen_date": "2026-10-25",
+  "state": "RESEARCH_ONLY_NO_PUBLICATION",
+  "baseline": "B79 library operational workbook (unmodified)",
+  "scope": {
+    "objective": "Screen first-party physical-worship-location gaps without repeating B77 SSPX coverage or certifying schedules",
+    "input_sources": [
+      {
+        "source": "FSSP North America apostolate index",
+        "url": "https://fssp.com/locations-list/",
+        "entries": 61,
+        "interpretation": "city-level apostolate index, not a distinct-building census"
+      },
+      {
+        "source": "Institute of the Good Shepherd worldwide apostolate index",
+        "url": "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/",
+        "entries": 34,
+        "interpretation": "city/house/apostolate labels; page states 33 apostolate places; do not equate count with buildings"
+      },
+      {
+        "source": "FSSP UK and Ireland physical locations",
+        "url": "https://fssp.org.uk/locations/",
+        "entries": 7,
+        "interpretation": "named Mass buildings"
+      },
+      {
+        "source": "FSSP District of Oceania physical locations",
+        "url": "https://www.fssp.net/locations",
+        "entries": 14,
+        "interpretation": "named worship buildings and hosted/occasional Mass sites"
+      }
+    ],
+    "excluded_prior_coverage": {
+      "source": "B77 SSPX 613 owner crosswalk",
+      "usa_entries": 107,
+      "germany_entries": 43,
+      "reason": "Already screened; avoid reprocessing"
+    }
+  },
+  "screening": {
+    "total_index_entries": 116,
+    "fssp_entries": 82,
+    "ibp_entries": 34,
+    "status_counts": {
+      "LOCALITY_COVERAGE_ONLY__ADDRESS_MATCH_REQUIRED": 70,
+      "NO_SAME_CITY_OPERATOR_RECORD__REVIEW_FIRST": 15,
+      "OWNER_STREET_COMPATIBLE__IDENTITY_REVIEW": 12,
+      "SAME_LOCALITY_DIFFERENT_OR_UNCONFIRMED_ADDRESS__REVIEW": 6,
+      "CROSS_REFERENCE_EXISTING__IDENTITY_REVIEW": 5,
+      "INSTITUTION__PUBLIC_MASS_NOT_ESTABLISHED": 4,
+      "CONFLICTING_ADDRESS_CLAIMS__PRIORITY_REVIEW": 2,
+      "NO_STREET_ADDRESS__IDENTITY_HOLD": 1,
+      "OCCASIONAL_MASS_STATUS_UNCLEAR__HOLD": 1
+    },
+    "exception_queue_entries": 30,
+    "new_research_groups_admitted": 0,
+    "new_public_place_ids": 0,
+    "new_timetrable_rows": 0,
+    "new_verified_schedules": 0,
+    "logic": "Identity match results are provisional; locality is never proof of identical worship building. Existing cross-operator identities must be ruled out before any new group is admitted."
+  },
+  "identity_samples": [
+    {
+      "case": "Montréal FSSP mission",
+      "decision": "ADDRESS_ROLE_CONFLICT_HOLD",
+      "same_physical_church_candidate_groups": [
+        "RG-570BDEDA273D",
+        "RG-FB8FE21E0732"
+      ],
+      "church": "560 Avenue Atwater, Montréal, Québec",
+      "other_directory": "3030 rue Delisle",
+      "sources": [
+        "https://st-irenee.org/mass-times/",
+        "https://fssp.com/apostolate/fssp-montreal/",
+        "https://www.fssp.ca/apostolates/18-eglise-saint-irenee-montreal"
+      ],
+      "comment": "The local current Mass page and North American FSSP apostolate page support Atwater as the actual church; do not substitute office or directory address. Two canonical research IDs need exact building-level alias adjudication."
+    },
+    {
+      "case": "Saskatoon FSSP chaplaincy",
+      "decision": "THREE_ADDRESS_CONFLICT_HOLD",
+      "b79_group": "RG-91DED12A8EBD",
+      "b79_address": "301 Avenue Y South",
+      "fssp_canada_directory": "238 4th Street East",
+      "diocesan_current_mass_site": "535 8th Street East, St Joseph Church",
+      "sources": [
+        "https://www.fssp.ca/apostolates/43-st-joseph-parish-saskatoon",
+        "https://rcdos.ca/parishes-mass-times-list/"
+      ],
+      "comment": "Function, relocation and publication date need reconciliation; no automatic third pin or overwrite."
+    },
+    {
+      "case": "Buronga, Australia",
+      "decision": "CROSS_OPERATOR_EXISTING_REVIEW",
+      "owner_worship_building": "St Michael the Archangel Church, Pitman Avenue",
+      "existing_research_group": "RG-7402BF6460DC",
+      "source": "https://www.fssp.net/locations"
+    },
+    {
+      "case": "Hikurangi, New Zealand",
+      "decision": "CROSS_OPERATOR_EXISTING_REVIEW",
+      "owner_worship_building": "Holy Name of Mary Church, 18 Valley Road",
+      "existing_research_group": "RG-4CE970898882",
+      "source": "https://www.fssp.net/locations"
+    },
+    {
+      "case": "Boondall, Australia",
+      "decision": "CROSS_OPERATOR_EXISTING_REVIEW",
+      "owner_worship_building": "St Joseph's Nudgee College, 2199 Sandgate Road",
+      "existing_research_groups": [
+        "RG-E1AB21F23164",
+        "RG-12E1E9D493AB"
+      ],
+      "source": "https://www.fssp.net/locations"
+    },
+    {
+      "case": "Acy, France",
+      "decision": "EXISTING_ALIAS_DETECTED",
+      "existing_research_group": "RG-5342068F2AA7",
+      "comment": "Three-letter locality had been omitted by minimum token length in first-pass operator search; recovered."
+    },
+    {
+      "case": "Florianópolis, Brazil",
+      "decision": "EXISTING_OPERATOR_ALIAS_DETECTED",
+      "existing_research_group": "RG-B65-F58D1C8B0693",
+      "comment": "Portuguese name Instituto Bom Pastor must map to IBP."
+    }
+  ],
+  "unresolved_geographical_leads": [
+    "Toledo BR (IBP)",
+    "Sapiranga BR (IBP)",
+    "Paipa CO (IBP)",
+    "Moncton CA (IBP)",
+    "Launceston AU (IBP)",
+    "Sydney AU (IBP)"
+  ],
+  "baseline_sheet_parity": {
+    "canonical_group_rows": 2576,
+    "physical_sites_tab_rows": 2555,
+    "distinct_provisional_site_groups_reported_in_B79": 2575,
+    "canonical_groups_absent_from_physical_tab": 26,
+    "physical_tab_groups_absent_from_canonical_tab": 5,
+    "interpretation": "PHYSICAL SITES tab is not synchronized with CANONICAL SITES after newer B72/B77/B79 source additions and historical B69 identity changes; tab discrepancy is not a new-site count.",
+    "required_action": "Rebuild/refresh derived PHYSICAL SITES view from canonical-source records without mutating frozen source IDs, and reconcile the 31 set-difference cases explicitly."
+  },
+  "qa": {
+    "baseline_site_ids_mutated": 0,
+    "timetable_rows_preserved": 4681,
+    "previously_verified_rows_preserved": 3347,
+    "public_map_changes": 0,
+    "new_site_certifications": 0
+  },
+  "followup": "Review 30 exception cases by opening precise original owner pages and assigning physical building-level identity to B79; keep source-only schedule claims out of verified timetable."
+}
