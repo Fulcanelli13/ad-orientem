@@ -70,12 +70,24 @@ try{
     timeline:mount.querySelectorAll(".aoDevoSequenceTimeline .aoDevoStop").length};
  });
  const waitOwner=async(expected,id)=>{
-   await page.waitForFunction(({expected})=>{
-     if(expected==="rosary")return !!document.querySelector("#aoPrayerBookRoot.open .pbShell");
-     const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
-     if(!m)return false;
-     return (m.dataset.aoPrayView==="traditional-pray"?"traditional:"+m.dataset.aoTraditionalPrayRoute:m.dataset.aoPrayView)===expected;
-   },{expected},{timeout:18000});
+   try{
+     await page.waitForFunction(({expected})=>{
+       if(expected==="rosary")return !!document.querySelector("#aoPrayerBookRoot.open .pbShell");
+       const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
+       if(!m)return false;
+       return (m.dataset.aoPrayView==="traditional-pray"?"traditional:"+m.dataset.aoTraditionalPrayRoute:m.dataset.aoPrayView)===expected;
+     },{expected},{timeout:18000});
+   }catch(error){
+     const owner=await identify();
+     const debug=await page.evaluate(()=>({
+       openRoutes:[...document.querySelectorAll("#aoPray435930.open [data-p435930-own],#aoPray435930.open [data-p435930-external]")]
+         .filter(el=>el.getBoundingClientRect().width>0).map(el=>el.dataset.p435930Own||el.dataset.p435930External).slice(0,35),
+       currentView:document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView||null,
+       text:document.querySelector("#aoPray435930.open .aoP435930Mount")?.innerText?.slice(0,250)||null
+     }));
+     throw new Error(id+": expected "+expected+", actual "+JSON.stringify(owner)+
+       ", browser "+JSON.stringify(debug)+", cause "+String(error?.message||error));
+   }
    const value=await identify();
    assert.equal(value.owner,expected,id+" opened a different UI owner: "+JSON.stringify(value));
    assert.equal(value.alternate||0,0,id+" opened a route error");
