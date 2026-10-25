@@ -17,6 +17,31 @@ const laterChoirCues=[
  ...Array.from({length:15},(_,i)=>"AO.SM.C"+String(91+i).padStart(4,"0")),
 ];
 assert.equal(new Set(laterChoirCues).size,30);
+// B02 research is a SOURCE WITNESS only; do not convert choir scroll
+// positions to physical priest movement or icon events.
+const witness=load("mass/icksp-1962-gloria-credo-priest-schola-b02.v1.json");
+assert.equal(witness.schema,"ao-icksp-1962-gloria-credo-priest-schola-concordance-b02-v1");
+assert.equal(witness.rubrics.length,12);
+assert.equal(witness.counts.alreadyInGestureMatrix,10);
+assert.equal(witness.counts.pendingSourceGestureRecord,2);
+assert.deepEqual(witness.rubrics.filter(x=>!x.gestureMatrixId).map(x=>x.cueId),
+  ["AO.SM.C0054","AO.SM.C0056"]);
+assert.equal(witness.researchAdjudication.counts.newPublishedGestureEvents,0);
+assert.equal(witness.researchAdjudication.counts.newIcons,0);
+for(const item of witness.rubrics){
+ assert.equal(corpusById.get(item.cueId)?.clock,"SCHOLA_PUBLIC");
+ const source=matrix.items.find(x=>x.cueId===item.cueId&&x.actor==="PRIEST");
+ assert.equal(item.gestureMatrixId,source?.id??null);
+ assert.equal(item.runtimePromotion,"NOT_IN_THIS_BATCH");
+}
+for(const cue of ["AO.SM.C0054","AO.SM.C0056"]){
+ const row=witness.rubrics.find(x=>x.cueId===cue);
+ assert.equal(row.primary1962Source.section,"Ritus servandus IV.3");
+ assert.equal(row.primary1962Source.originalLatinChecked,true);
+ assert.equal(row.formTiming.missaCantata,"PRIEST_OWN_RECITATION_NOT_SCHOLA_CLOCK");
+ assert.equal(row.liveClockGate,"REQUIRES_ACTUAL_SOURCE_OWNED_PRIEST_EVENT_NO_SCHOLA_INFERENCE");
+}
+assert.deepEqual(Object.keys(witness.guardContract.publicScholaContinuations),["gloria","credo"]);
 for(const cue of laterChoirCues)
  assert.equal(corpusById.get(cue)?.clock,"SCHOLA_PUBLIC",cue+": donor clock changed");
 
