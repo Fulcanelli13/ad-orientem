@@ -128,12 +128,13 @@ def discover(html):
 
 def main():
     cli = argparse.ArgumentParser(description=__doc__)
-    cli.add_argument("--inspect", type=int, default=0, help="article metadata count: 0=index only, -1=all")
+    cli.add_argument("--inspect", type=int, default=0, help="number of article metadata checks: 0=index only, -1=all remaining")
+    cli.add_argument("--start", type=int, default=0, help="zero-based start position in unique article index")
     cli.add_argument("--delay", type=float, default=2.5, help="delay per inspected page; minimum 2 seconds")
     cli.add_argument("--out", default="icrsp-index-metadata.v1.json")
     args = cli.parse_args()
-    if args.inspect < -1 or args.delay < 2:
-        cli.error("inspect must be >= -1; delay must be >= 2")
+    if args.inspect < -1 or args.delay < 2 or args.start < 0:
+        cli.error("inspect must be >= -1; delay must be >= 2; start must be >= 0")
     robots = RobotFileParser()
     robots.set_url("https://icrspfrance.fr/robots.txt")
     try:
@@ -151,8 +152,27 @@ def main():
     linked_ids = {p["articleId"] for p in pages}
     unlinked_raw_ids = sorted(raw_ids - linked_ids)
     errors = []
-    limit = len(pages) if args.inspect == -1 else min(args.inspect, len(pages))
-    for idx, page in enumerate(pages[:limit], start=1):
+    # A prior run may have inspected an earlier index window. Reuse inspected
+    # metadata only when the index bytes match; never confuse a changed index
+    # with a completed or edition-certified inventory.
+    out = Path(args.out)
+    if out.exists():
+        prior = json.loads(out.read_text(encoding="utf-8"))
+        if prior.get("indexHtmlSha256") == index_hash:
+            prior_by_url = {p["sourceUrl"]: p for p in prior.get("pages", [])}
+            for page in pages:
+                previous = prior_by_url.get(page["sourceUrl"])
+                if previous and previous.get("state") == "METADATA_INSPECTED":
+                    for field in ("state", "htmlSha256", "headings", "authorsMentionedHeuristic"):
+                        if field in previous:
+                            page[field] = previous[field]
+        else:
+            print("INDEX CHANGED — earlier metadata not merged", file=sys.stderr)
+    end = len(pages) if args.inspect == -1 else min(len(pages), args.start + args.inspect)
+    window = pages[args.start:end]
+    for idx, page in enumerate(window, start=1):
+        if page["state"] == "METADATA_INSPECTED":
+            continue
         u = page["sourceUrl"]
         if not robots.can_fetch(UA, u):
             page["state"] = "ROBOTS_DISALLOWED"
@@ -174,7 +194,7 @@ def main():
             page["state"] = "INSPECTION_FAILED"
             errors.append({"url": u, "reason": str(exc)[:300]})
         if idx % 25 == 0:
-            print(f"Inspected {idx}/{limit}", file=sys.stderr)
+            print(f"Window processed {idx}/{len(window)}", file=sys.stderr)
     result = {
         "schema": "AO_ICRSP_INDEX_METADATA_V1", "issue": 1665,
         "sourceIndex": INDEX, "inspectedAtUtc": datetime.now(timezone.utc).isoformat(),
@@ -188,10 +208,10 @@ def main():
             "rawArticleIdCandidates": len(raw_ids),
             "rawIdsMissingFromAnchors": len(unlinked_raw_ids)
         },
+        "scanWindow": {"start": args.start, "requested": args.inspect, "actual": len(window)},
         "occurrences": occurrences, "pages": pages, "errors": errors,
         "unlinkedRawArticleIdCandidates": unlinked_raw_ids,
     }
-    out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(result["totals"]))
