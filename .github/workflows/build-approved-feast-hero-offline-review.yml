@@ -1,0 +1,41 @@
+name: Build Offline Feast Hero Photograph Review
+on:
+  push:
+    branches: [fix/approved-feast-heroes-main-20261021]
+    paths:
+      - "tools/calendar/build-approved-feast-hero-offline-review.py"
+      - ".github/workflows/build-approved-feast-hero-offline-review.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-gallery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build one-image-embedded offline photograph QA gallery
+        run: |
+          python -m py_compile tools/calendar/build-approved-feast-hero-offline-review.py
+          python tools/calendar/build-approved-feast-hero-offline-review.py
+      - name: Check all ten photos embedded, no remote image references
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('artifacts/approved-feast-hero-offline-review/ten-approved-feast-hero-photo-review.html')
+          t=p.read_text()
+          assert t.count('data:image/webp;base64,') == 10
+          assert 'ad-orientem-ten-hero-photo-reviews.json' in t
+          assert t.count('class="piece"') == 10
+          assert 'rightsApprovalsIssued:0' in t
+          print('OFFLINE GALLERY 10/10 EMBEDDED; PHOTO QA ONLY')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ten-approved-feast-hero-photos-offline-review
+          path: artifacts/approved-feast-hero-offline-review/ten-approved-feast-hero-photo-review.html
+          if-no-files-found: error
+          retention-days: 30

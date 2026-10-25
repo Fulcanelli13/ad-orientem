@@ -18,6 +18,7 @@ import { observedCycle } from "./observed-cycle.js";
 import { readMonthPreview, writeMonthPreview } from "./month-preview-cache.js";
 import {calendarScriptureContexts} from "./scripture-handoff.js";
 import {matchingSelectedCalendarScriptureObject} from "./selected-scripture-objects.js";
+import { resolveApprovedFeastHero, renderApprovedFeastHero } from "./approved-feast-heroes.js";
 import { calendarObservanceAlias } from "./observance-title.js";
 import { buildReviewedSanctoralCards } from "./reviewed-sanctoral-cards.js";
 import { loadSharedSanctoralReadModel } from "./living-sanctoral-read-model.js";
@@ -889,6 +890,9 @@ function daySurface(selected,r){
     <section class="aoCalV2Hero" style="--ao-cal-liturgical:${esc(liturgicalAccent(r))}">
       <small class="aoCalV2Eyebrow">${esc(L("CALENDARIUM ROMANUM · 1962","CALENDARIUM ROMANUM · 1962"))}</small>
       <h2>${esc(titleOf(r))}</h2>
+      ${renderApprovedFeastHero(resolveApprovedFeastHero(
+        selected,r?.day?.main?.id,globalThis.AO_APPROVED_FEAST_ART_RELEASE_V1,"calendar"
+      ),{calendar:true})}
       <div class="aoCalIdentityMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}${profileOf(r)?`<span>${esc(profileOf(r))}</span>`:""}</div>
       ${cm.length?`<section class="aoCalV2Commemorations" aria-label="${esc(L("Observed 1962 Mass commemorations","Commémorations à la messe de 1962"))}"><small>${esc(L("1962 MASS · ALSO COMMEMORATED","MESSE DE 1962 · COMMÉMORATIONS"))}</small><h3>${esc(L("Commemorations","Commémorations"))}</h3>${cm.map(x=>`<p><i aria-hidden="true"></i><span>${esc(x)}</span></p>`).join("")}</section>`:""}
       ${calendarScriptureControls(selected,r)}

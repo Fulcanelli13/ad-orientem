@@ -1,0 +1,36 @@
+{
+  "schema": "AO_SACRED_ART_FREE_ONLY_NO_CONTACT_POLICY_V1",
+  "effectiveDate": "2026-10-21",
+  "authority": "OWNER_EXPLICIT_NONNEGOTIABLE_CONSTRAINT",
+  "zeroPayment": true,
+  "zeroContact": true,
+  "emailPermitted": false,
+  "emailDraftsPermitted": false,
+  "licensingOutreachPermitted": false,
+  "licencePurchasesPermitted": false,
+  "requestsForQuotesPermitted": false,
+  "priority": "HARD_BLOCK",
+  "scope": "Every Sacred Art photograph and release pipeline in Ad Orientem",
+  "selectedArtworkPolicy": "Preserve exact already-approved physical painting; never silently choose another original.",
+  "photoPolicy": "Search only public, freely reusable, documented photos of selected original. Met CC0 and comparable explicit institutional open-access sources preferred; other apparently free source photos require per-photo reuse rights verification from published records, without contacting anyone.",
+  "unresolvedPolicy": "PHOTO_RIGHTS_HOLD_FREE_ONLY; do not publish or pursue paid/contact resolution; focus on other approved original art.",
+  "existingHolds": [
+    {
+      "date": "2026-11-29",
+      "painting": "John Martin — The Great Day of His Wrath",
+      "reason": "The exact Tate-sourced reproduction has asserted rights restrictions; pursue only independently verified free reuses of the same painting."
+    },
+    {
+      "date": "2026-10-25",
+      "painting": "Ambrosius Benson — Salvator Mundi",
+      "reason": "Christie's-sourced photograph presents rights questions; pursue only a freely reusable photo of the same physical original."
+    },
+    {
+      "date": "2026-11-02",
+      "painting": "Ludovico Carracci — An Angel Frees the Souls of Purgatory",
+      "reason": "Published dimensions vs photograph orientation unresolved; search only public source documentation; no contact."
+    }
+  ],
+  "noOutreachArchive": "docs/research/SACRED-ART-THREE-IMAGE-CLEARANCE-REQUESTS-20261021.md",
+  "publicationGate": "No licence or human photo release may be inferred from absence of a complaint, photo access, or source PD-Art tags."
+}

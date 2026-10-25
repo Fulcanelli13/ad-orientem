@@ -1,0 +1,275 @@
+{
+  "schema": "AO_FEAST_HERO_EXACT_PHOTO_COPYRIGHT_DUE_DILIGENCE_20261021_V2",
+  "date": "2026-10-21",
+  "scope": "NO_USER_PAINTING_SELECTION_CHANGES; LEGAL_INFORMATION_RESEARCH_NOT_LEGAL_OPINION",
+  "policyWitnesses": [
+    "https://www.metmuseum.org/policies/image-resources",
+    "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
+    "https://commons.wikimedia.org/wiki/Commons:When_to_use_the_PD-Art_tag"
+  ],
+  "counts": {
+    "approvedPaintings": 10,
+    "candidateWebps": 10,
+    "officialMetCC0PolicySupported": 2,
+    "commonsFaithfulReproductionJurisdictionReview": 8,
+    "explicitTateUKReproductionClaim": 1,
+    "elevatedChristiesUKAuctionPhotograph": 1,
+    "carracciDimensionDocumentationHold": 1,
+    "sourcePhotosFormallyAcceptedByCurator": 0,
+    "finalAppRelease": 0,
+    "explicitSourceLicenseRestrictionForUKTateAndChristies": 2
+  },
+  "principles": [
+    "Copyright in original painting not same as photographer's reproduction license",
+    "Commons PD-Art U.S. legality does NOT establish all-country reuse rights",
+    "Preserve exact chosen ARTIST+TITLE; alternative photo of same original is not a new artwork selection",
+    "No source permission inferred from photo availability, use of Google Art Project, RMN, auction provenance, or WGA uploads",
+    "Photographic user review is separately required before app release; no way to infer it from prior painting star rating"
+  ],
+  "photos": [
+    {
+      "date": "2026-03-29",
+      "artist": "Anthony van Dyck",
+      "title": "The Entry of Christ into Jerusalem",
+      "photoHash": "7dd646da72caebcac8b915db81d97e5e09b430ffe6501834034201ddfd9072aa",
+      "photoPath": "assets/sacred-art/candidates/hero-2026-03-29-3eb608022b94.webp",
+      "userPaintingApproved": true,
+      "humanPhotoAccepted": false,
+      "sourceLicensing": {
+        "tier": "COMMONS_PD_ART_WITH_LOCAL_PHOTOGRAPHER",
+        "origin": "Newfields/Indianapolis museum artwork; Commons photograph attributed Zambonia 2013",
+        "sourceClaim": "Faithful 2D photo PD-Art US; not an independent grant for worldwide reuse",
+        "verification": [
+          "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg"
+        ],
+        "restrictions": [
+          "Independent photo rights for all distribution jurisdictions not cleared"
+        ],
+        "release": "REVIEW_REQUIRED"
+      },
+      "readyForUnrestrictedAppRelease": false
+    },
+    {
+      "date": "2026-04-02",
+      "artist": "Ugolino da Siena",
+      "title": "Last Supper",
+      "photoHash": "12ffe0d36e5378762b4e3f400fea43a790e53becfa6e747db199b0886a4951ef",
+      "photoPath": "assets/sacred-art/candidates/hero-2026-04-02-5d19d31a2a21.webp",
+      "userPaintingApproved": true,
+      "humanPhotoAccepted": false,
+      "sourceLicensing": {
+        "tier": "MET_OPEN_ACCESS_CC0",
+        "origin": "Metropolitan Museum official collection photograph of Ugolino da Siena object 459131",
+        "sourceClaim": "The Met Open Access policy allows free CC0 use, including commercial redistribution",
+        "verification": [
+          "https://www.metmuseum.org/art/collection/search/459131",
+          "https://www.metmuseum.org/policies/image-resources",
+          "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources"
+        ],
+        "restrictions": [
+          "Curator has approved the PAINTING, not this exact photo. Whole-frame visual signoff still pending."
+        ],
+        "release": "POLICY_SOURCE_PASSED_PHOTO_SIGNOFF_PENDING"
+      },
+      "readyForUnrestrictedAppRelease": false
+    },
+    {
+      "date": "2026-05-23",
+      "artist": "Juan Bautista Maíno",
+      "title": "The Pentecost",
+      "photoHash": "d03e5fa2ca64b4d576f3461d25bf861267d2f69382e69bc5bd1f1de4e02038f5",
+      "photoPath": "assets/sacred-art/candidates/hero-2026-05-23-196bdfd806aa.webp",
+      "userPaintingApproved": true,
+      "humanPhotoAccepted": false,
+      "sourceLicensing": {
+        "tier": "COMMONS_PD_ART_WITH_PRADO_CUSTODIAN",
+        "origin": "Prado P003018, Maíno 1612–14; museum-derived Commons faithful reproduction",
+        "sourceClaim": "Commons PD-Art / painting public domain, jurisdiction and custody-related photo rights not independently cleared",
+        "verification": [
+          "https://commons.wikimedia.org/wiki/File:Maino_Pentecost%C3%A9s._Lienzo._285_x_163_cm._Museo_del_Prado.jpg",
+          "https://www.museodelprado.es/en/the-collection/art-work/the-pentecost/49c1d551-240d-4bab-8f4a-39c706ce0ee5"
+        ],
+        "restrictions": [
+          "Spanish/other jurisdiction reproduction-rights claim review"
+        ],
+        "release": "REVIEW_REQUIRED"
+      },
+      "readyForUnrestrictedAppRelease": false
+    },
+    {
+      "date": "2026-05-24",
+      "artist": "Jean Restout",
+      "title": "Pentecost",
+      "photoHash": "5db13e2aedbed466ed8f7d049398f8a9f8a5175dc5665c8b6da56cdc1ee39e1f",
+      "photoPath": "assets/sacred-art/candidates/hero-2026-05-24-2f81e53275f9.webp",
+      "userPaintingApproved": true,
+      "humanPhotoAccepted": false,
+      "sourceLicensing": {
+        "tier": "COMMONS_PD_ART_WITH_WGA",
+        "origin": "Jean Restout Louvre painting, reproduction from Web Gallery of Art",
+        "sourceClaim": "Commons PD-Art allows US reuse; exact WGA photo rights for wider distribution not independently cleared",
+        "verification": [
+          "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+          "https://collections.louvre.fr/en/ark:/53355/cl010062538"
+        ],
+        "restrictions": [
+          "Source photograph 1240×730: check detail legibility on phone; Louvre RMN photograph is a different photo and not presumed reusable"
+        ],
+        "release": "REVIEW_REQUIRED"
+      },
+      "readyForUnrestrictedAppRelease": false
+    },
+    {
+      "date": "2026-05-27",
+      "artist": "Philippe de Champaigne",
+      "title": "La Petite Cène",
+      "photoHash": "64d631d58256a4e479a05b799af5956240e90c945b6e0418c0c4f3d7ac7af83a",
+      "photoPath": "assets/sacred-art/candidates/hero-2026-05-27-d4d8b3c1ea95.webp",
+      "userPaintingApproved": true,
+      "humanPhotoAccepted": false,
+      "sourceLicensing": {
+        "tier": "COMMONS_PD_ART_WITH_GOOGLE_IMAGE",
+        "origin": "Louvre INV1125; Google-sourced Commons file, 1112×591 unframed photo",
+        "sourceClaim": "Commons PD-Art in US; no independent photograph permission evidenced elsewhere",
+        "verification": [
+          "https://commons.wikimedia.org/wiki/File:Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
+          "https://collections.louvre.fr/en/ark:/53355/cl010062076"
+        ],
+        "restrictions": [
+          "France/other jurisdictions faithful-photography rights; small image readability phone signoff"
+        ],
+        "release": "REVIEW_REQUIRED"
+      },
+      "readyForUnrestrictedAppRelease": false
+    },
+    {
+      "date": "2026-06-12",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "title": "The Heart of Jesus",
+      "photoHash": "d0d69e4f0dc0dbfe47b8e7f4dd129f2767ddcd6005412b7fb0a1fd6545878630",
+      "photoPath": "assets/sacred-art/candidates/hero-2026-06-12-06f940863256.webp",
+      "userPaintingApproved": true,
+      "humanPhotoAccepted": false,
+      "sourceLicensing": {
+        "tier": "COMMONS_PD_ART_WITH_GOOGLE_ART_PROJECT",
+        "origin": "Google Art Project public-domain artwork photograph source",
+        "sourceClaim": "Commons PD-Art (faithful photograph, US public domain); not necessarily global photograph rights",
+        "verification": [
+          "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+        ],
+        "restrictions": [
+          "World jurisdictions image-rights and contractual terms review"
+        ],
+        "release": "REVIEW_REQUIRED"
+      },
+      "readyForUnrestrictedAppRelease": false
+    },
+    {
+      "date": "2026-10-25",
+      "artist": "Ambrosius Benson",
+      "title": "Salvator Mundi",
+      "photoHash": "37cd218c71758d44037d05bddbebf9b2de8eb62d0fa2c50c969be8f7119fa749",
+      "photoPath": "assets/sacred-art/candidates/hero-2026-10-25-2a25ed08f0fc.webp",
+      "userPaintingApproved": true,
+      "humanPhotoAccepted": false,
+      "sourceLicensing": {
+        "tier": "COMMONS_PD_ART_WITH_CHRISTIES_COPY",
+        "origin": "Exact Christie’s UK auction catalogue photograph, 3 December 2019 lot 4",
+        "sourceClaim": "Commons PD-Art in US, photograph source originally from UK commercial auction house",
+        "verification": [
+          "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+          "https://www.christies.com/about-us/contact/terms-and-conditions/?lid=1&sc_lang=en",
+          "https://press.christies.com/images-terms-of-use/"
+        ],
+        "restrictions": [
+          "Christie's official website terms authorize only a personal, non-commercial copy and prohibit redistribution, modification and public/commercial use without prior written permission; Commons U.S. faithful-copy rule may differ but does not remove the documented source contractual risk.",
+          "UK and cross-border 2D reproduction copyright/contract concerns; no Christie’s licensing permission evidenced"
+        ],
+        "release": "HOLD_OR_OBTAIN_EXPRESS_PHOTO_REUSE_PERMISSION_OR_OTHER_PROVENANCE"
+      },
+      "readyForUnrestrictedAppRelease": false
+    },
+    {
+      "date": "2026-11-01",
+      "artist": "Carlo Saraceni",
+      "title": "Paradise",
+      "photoHash": "e5f4fde3cf40bb02bfb5fee8d0a54da6a9aaef43a24a508a2db58f6d29326791",
+      "photoPath": "assets/sacred-art/candidates/hero-2026-11-01-dd8a69a0c86c.webp",
+      "userPaintingApproved": true,
+      "humanPhotoAccepted": false,
+      "sourceLicensing": {
+        "tier": "MET_OPEN_ACCESS_CC0",
+        "origin": "The Met official source photograph, Saraceni Paradise object 437607",
+        "sourceClaim": "Official Met CC0 Open Access allows commercial reuse of this public-domain collection image",
+        "verification": [
+          "https://www.metmuseum.org/art/collection/search/437607",
+          "https://www.metmuseum.org/policies/image-resources",
+          "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources"
+        ],
+        "restrictions": [
+          "Curator photo acceptance and Home/Calendar release still pending"
+        ],
+        "release": "POLICY_SOURCE_PASSED_PHOTO_SIGNOFF_PENDING"
+      },
+      "readyForUnrestrictedAppRelease": false
+    },
+    {
+      "date": "2026-11-02",
+      "artist": "Ludovico Carracci",
+      "title": "An Angel Frees the Souls of Purgatory",
+      "photoHash": "8ddb069cdbded62cb6927f0723848fcac1d199b073f2a9ea1455ac3c22956139",
+      "photoPath": "assets/sacred-art/candidates/hero-2026-11-02-18da520ad0e9.webp",
+      "userPaintingApproved": true,
+      "humanPhotoAccepted": false,
+      "sourceLicensing": {
+        "tier": "COMMONS_PD_ART_WITH_WGA_AND_DIMENSIONS_CONFLICT",
+        "origin": "WGA uploaded photograph, Vatican Pinacoteca Carracci c1610",
+        "sourceClaim": "Commons PD-Art in US",
+        "verification": [
+          "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+          "https://beta.wga.hu/artists/carracci-lodovico-rca68553c81de94/an-angel-frees-the-souls-of-purgatory-rabe8f2105f93a5"
+        ],
+        "restrictions": [
+          "Catalog says 44cm high x51cm wide, same WGA site supplies PORTRAIT 866x1200 source. Measurements in source unreliable/may be transposed; no museum inventory/proof of complete surface. Do not assert solved."
+        ],
+        "release": "ELEVATED_IDENTITY_AND_PHOTO_RIGHTS_REVIEW_REQUIRED"
+      },
+      "readyForUnrestrictedAppRelease": false
+    },
+    {
+      "date": "2026-11-29",
+      "artist": "John Martin",
+      "title": "The Great Day of His Wrath",
+      "photoHash": "b9b79c0dc71bcde7c6483ab845f5d709e07b87e4628fa275dd665d2eda9ac73d",
+      "photoPath": "assets/sacred-art/candidates/hero-2026-11-29-315324ebdea6.webp",
+      "userPaintingApproved": true,
+      "humanPhotoAccepted": false,
+      "sourceLicensing": {
+        "tier": "COMMONS_PD_ART_EXPLICIT_TATE_UK_PHOTO_CLAIM",
+        "origin": "Google Arts & Culture sourced from Tate Images; exact original photo also described as Tate, London 2011",
+        "sourceClaim": "Commons faithful 2D PD-Art in US; THE EXACT FILE separately records Tate’s asserted UK photograph copyright",
+        "verification": [
+          "https://commons.wikimedia.org/wiki/File:John_Martin_-_The_Great_Day_of_His_Wrath_-_Google_Art_Project.jpg",
+          "https://artuk.org/discover/artworks/the-great-day-of-his-wrath-117730",
+          "https://www.tate.org.uk/art/artworks/martin-the-great-day-of-his-wrath-n05613",
+          "https://www.bapla.org.uk/image-suppliers/tate-images",
+          "https://artuk.org/discover/artworks/the-great-day-of-his-wrath-117730"
+        ],
+        "restrictions": [
+          "Art UK lists this photograph only under CC BY-NC-ND; this is incompatible with a future paid/mobile application redistribution or converting the file to a WebP derivative absent separate permission.",
+          "Explicit UK Tate photograph copyright assertion on Commons; Art UK provides only CC BY-NC-ND for its photograph—UNSUITABLE for commercial app and WebP modification; require permission for exact photo or separately suitable photograph of same approved painting."
+        ],
+        "release": "PHOTO_VERSION_HIGH_RIGHTS_HOLD_NO_WORLDWIDE_RELEASE"
+      },
+      "readyForUnrestrictedAppRelease": false
+    }
+  ],
+  "releaseGate": "ALL 10 FAIL_CLOSED_NOT_YET_RELEASED; 2 Met licenses policy verified; 8 Commons require reuse assessment; user photo decisions missing",
+  "findings": [
+    "Met official OA CC0 covers selected exact Met API photos of Ugolino and Saraceni for commercial/non-commercial reuse; human visual acceptance still missing.",
+    "All eight Commons files carry PD-Art US reasoning; in other territories photographic reproductions of public-domain 2D paintings may have rights/contract claims; do not treat Commons metadata as commercial world licence.",
+    "Tate-sourced John Martin photo has an explicit Tate UK copyright claim on its exact Commons file, and Art UK offers CC BY-NC-ND only on its image; serious reuse blocker for commercial app distribution.",
+    "Christie's-source Ambrosius Benson reproduction is from a commercial UK auction catalogue; Christie’s restricts website/press photographic reproduction and redistribution without separate permission; serious reuse blocker for app.",
+    "Carracci WGA itself identifies portrait 866×1200 file *and* 44×51cm physical original, source conflict cannot be resolved from derivative catalogues. Keep no-full-surface-certified."
+  ]
+}

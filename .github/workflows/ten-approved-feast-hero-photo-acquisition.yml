@@ -1,0 +1,34 @@
+name: Acquire Ten Approved Feast Hero Photographs
+on:
+  push:
+    branches: [fix/approved-feast-heroes-main-20261021]
+    paths:
+      - data/calendar/approved-feast-hero-photo-acquisition-20261021.v1.json
+      - tools/calendar/acquire-approved-feast-hero-photos.py
+      - .github/workflows/ten-approved-feast-hero-photo-acquisition.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquisition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install photo inspection dependencies
+        run: pip install 'Pillow>=10,<12' 'requests>=2.31,<3'
+      - name: Fetch approved original subjects and build uncropped mobile contact sheets
+        run: |
+          python -m py_compile tools/calendar/acquire-approved-feast-hero-photos.py
+          python tools/calendar/acquire-approved-feast-hero-photos.py
+      - name: Preserve checksummed original bytes and rights evidence without publishing
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ten-curator-approved-feast-hero-photo-evidence
+          path: artifacts/sacred-art-approved-feast-hero-photographs/
+          retention-days: 30
+          if-no-files-found: warn

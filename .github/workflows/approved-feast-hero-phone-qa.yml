@@ -1,0 +1,47 @@
+name: Approved Feast Hero Candidate Phone QA
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "assets/sacred-art/candidates/**"
+      - "data/calendar/approved-feast-hero-packaged-candidates-20261021.v1.json"
+      - "data/calendar/approved-feast-hero-photo-sha-evidence-20261021.v1.json"
+      - "docs/research/APPROVED-FEAST-HERO-PHOTO-REVIEW-20261021.html"
+      - "tests/approved-feast-hero-**"
+      - ".github/workflows/approved-feast-hero-phone-qa.yml"
+  push:
+    branches: [fix/approved-feast-heroes-main-20261021]
+    paths:
+      - "assets/sacred-art/candidates/**"
+      - "data/calendar/approved-feast-hero-packaged-candidates-20261021.v1.json"
+      - "tests/approved-feast-hero-**"
+      - ".github/workflows/approved-feast-hero-phone-qa.yml"
+permissions:
+  contents: read
+jobs:
+  mobile-gallery-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify source-image identity, candidate SHA, and 0/10 publication gate
+        run: |
+          node --check tests/approved-feast-hero-candidate-integrity.mjs
+          node tests/approved-feast-hero-candidate-integrity.mjs
+      - name: Install browser test dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Render ten actual candidates at 320px and 390px viewport widths
+        run: node tests/approved-feast-hero-gallery-phone-e2e.mjs
+      - name: Retain actual phone screenshots and dimensions audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: approved-feast-hero-gallery-320-390-qa
+          path: artifacts/sacred-art-approved-feast-hero-phone-qa/
+          if-no-files-found: warn
+          retention-days: 30
