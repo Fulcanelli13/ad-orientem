@@ -2447,14 +2447,26 @@ export async function mountNativeReaderPreview({
     // Purple II-class Rogation votives always omit Gloria. Under 1960
     // General Rubrics §343(a), Credo is retained if the occurring
     // Sunday prescribes it. Keep the canonical 48-card source unchanged.
-    const isRogation=prepared?.session?.resolvedMass?.actualCelebration?.id==="rogation-mass-1962";
+    const resolved=prepared?.session?.resolvedMass;
+    const isRogation=resolved?.actualCelebration?.id==="rogation-mass-1962";
     const sourceSection=String(card.sourceSectionId??card.sectionId??"");
-    const prov=prepared?.session?.resolvedMass?.provenance??{};
-    if(isRogation && sourceSection==="AO.CARD.003"){
-      if(prov.gloria!==false)throw new Error("ROGATION_GLORIA_OMISSION_NOT_CERTIFIED");
-      return null;
-    }
-    if(isRogation && sourceSection==="AO.CARD.009"&&prov.credo===false)return null;
+    const prov=resolved?.provenance??{};
+    if(isRogation && sourceSection==="AO.CARD.003" && prov.gloria!==false)
+      throw new Error("ROGATION_GLORIA_OMISSION_NOT_CERTIFIED");
+    // The selected Mass, not a generic season or civil date, owns whether
+    // Gloria and Credo are prescribed. A Requiem omits both; the canonical
+    // source model and original cards remain intact for another Mass.
+    // Unknown flags keep the source text visible (fail without invention).
+    const isRequiem=resolved?.isRequiem===true || resolved?.provenance?.isRequiem===true ||
+      ["REQUIEM","MASS_FOR_THE_DEAD"].includes(
+        String(resolved?.actualCelebration?.type??"").toUpperCase()) ||
+      ["REQUIEM","MASS_FOR_THE_DEAD"].includes(
+        String(resolved?.actualCelebration?.kind??"").toUpperCase()) ||
+      (resolved?.overlays??[]).some(value=>
+        ["REQUIEM","MASS_FOR_THE_DEAD"].includes(
+          String(value?.id??value?.type??value??"").toUpperCase()));
+    if(sourceSection==="AO.CARD.003" && (isRequiem||prov.gloria===false))return null;
+    if(sourceSection==="AO.CARD.009" && (isRequiem||prov.credo===false))return null;
     const plan=prepared?.session?.plan;
     if(plan?.blessingAllowed!==false)return card;
     const blessing=card.blocks?.find?.(value=>value.blockId==="AO.SM.B092");
