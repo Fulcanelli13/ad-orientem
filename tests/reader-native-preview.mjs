@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { legacyReaderStateSnapshot, prepareNativeReaderPreview, resolveGestureProjection, resolveCueOwnedChannels, createCardTransitionTransientGuard, palmGospelFocusedRow } from "../src/mass/reader-native-preview.js";
+import { buildReaderMusicCrosswalk } from "../src/mass/reader-music-crosswalk.js";
 import { READER_OBJECTIVE_CONTEXT_ROWS, projectReaderObjectiveContext } from "../src/mass/reader-objective-context.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
@@ -115,6 +116,29 @@ assert.equal(curatedReady.presentationModel.totalCards,65,
   "the real native preview must show one combined Sanctus–Benedictus");
 assert.equal(curatedReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.equal(curatedReady.presentationModel.sourceAuthorityModel,curatedReady.model);
+const curatedMusic=curatedReady.musicCrosswalk;
+assert.equal(curatedMusic.schema,"ao-mass-music-source-crosswalk-v1");
+assert.equal(curatedMusic.ordinary.length,curatedReady.scholaState.tracks.length,
+  "Crosswalk must use only chants actually resolved for the selected Mass");
+assert.equal(curatedMusic.ordinary.some(x=>x.trackId==="ALLELUIA_TRACT_SEQUENCE"),false,
+  "Absent separately sourced Alleluia/Tract/Sequence must not gain a phantom Schola track");
+assert.deepEqual(curatedMusic.ordinaryUnmappedTracks,[],
+  "Selected music tracks must map to current LIVE presentation source blocks");
+const selectedIds=new Set(curatedReady.presentationModel.cards.map(x=>x.sectionId));
+for(const track of curatedMusic.ordinary){
+  assert.equal(track.clockOwner,"INDEPENDENT_SCHOLA");
+  assert.equal(track.performanceStatus,"INDEXED_NOT_OBSERVED");
+  for(const id of track.presentationCardIds)assert.ok(selectedIds.has(id),
+    "Music registry invented an unresolved LIVE card "+id);
+}
+assert.throws(()=>buildReaderMusicCrosswalk({
+  presentationModel:curatedReady.presentationModel,sungCorpus:data.sungCorpus,
+  scholaTracks:[{id:"UNSOURCED",kind:"PROPER",canonicalBlockIds:["AO.SM.B999"]}]
+}),/Unknown canonical Schola source block/);
+assert.throws(()=>buildReaderMusicCrosswalk({
+  presentationModel:curatedReady.presentationModel,sungCorpus:data.sungCorpus,
+  scholaTracks:[],riteMusicRegistry:{schema:"INVALID"}
+}),/Unverified special-rite music registry/);
 const previewIntroit=curatedReady.presentationModel.cards.find(c=>
   c.blocks.some(b=>b.blockId==="AO.SM.B014"));
 assert.equal(previewIntroit?.sequence,5,
@@ -154,6 +178,15 @@ const musicReady=await prepareNativeReaderPreview({
   riteMusicData:musicRegistry,
 });
 assert.equal(musicReady.riteMusicRegistry.schema,"ao-mass-special-rite-music-events-v1");
+assert.equal(musicReady.musicCrosswalk.special.length,47,
+  "Special music index must retain all 47 source-owned event identities");
+assert.equal(new Set(musicReady.musicCrosswalk.special.map(x=>x.eventId)).size,47);
+assert.equal(musicReady.musicCrosswalk.special.find(x=>
+  x.eventId==="AO.MUS.PROC.UNSPECIFIED")?.performanceStatus,"SOURCE_HOLD");
+assert.equal(musicReady.musicCrosswalk.special.find(x=>
+  x.eventId==="AO.MUS.ASP.VIDI")?.condition,"PASCHAL");
+assert.ok(musicReady.musicCrosswalk.special.every(x=>
+  x.performanceStatus==="SOURCE_HOLD"||x.performanceStatus==="INDEXED_NOT_OBSERVED"));
 assert.equal(musicReady.riteMusicSources.ASPERGES.schema,"ao-r20-asperges-payload-v1");
 assert.equal(musicReady.aspergesController.project().formulaState.formula,"ORDINARY");
 assert.equal(musicReady.model.totalCards,39,
