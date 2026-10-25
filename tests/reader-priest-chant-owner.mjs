@@ -10,9 +10,44 @@ const matrix=load("mass/gesture-matrix.v1.json");
 const sung=load("presentation/reader-text-sung.v1.json");
 const corpusById=new Map(sung.blocks.flatMap(b=>b.units.map(u=>[u.cue_id,u])));
 const forms=["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"];
+// 1962 Ritus IV.3 and VI.3: the priest continues Gloria/Credo privately
+// after his intonation; no scroll into the *sung* continuation observes him.
+const laterChoirCues=[
+ ...Array.from({length:15},(_,i)=>"AO.SM.C"+String(55+i).padStart(4,"0")),
+ ...Array.from({length:15},(_,i)=>"AO.SM.C"+String(91+i).padStart(4,"0")),
+];
+assert.equal(new Set(laterChoirCues).size,30);
+for(const cue of laterChoirCues)
+ assert.equal(corpusById.get(cue)?.clock,"SCHOLA_PUBLIC",cue+": donor clock changed");
+
 assert.deepEqual(PRIEST_SANCTUS_OBSERVATION_TYPES,
  ["PRIEST_SANCTUS_RECITATION","PRIEST_BENEDICTUS_RECITATION"]);
 for(const form of forms){
+  for(const cue of laterChoirCues){
+    const original={label:"PRIVATE PRIEST ACTION",cueId:cue};
+    const result=resolvePriestChantAction({form,cueId:cue,
+      sourceClock:"SCHOLA_PUBLIC",ordinaryAction:original,gestureMatrix:matrix});
+    assert.equal(result.priestAction,null,form+"/"+cue+" invented a priest action at choir words");
+    assert.equal(result.owner,"PRIEST_EVENT_UNOBSERVED");
+    const voice=resolvePriestChantVoice({form,cueId:cue,
+      sourceClock:"SCHOLA_PUBLIC",ordinaryVoice:{label:"PRIVATE PRIEST VOICE"}});
+    assert.equal(voice.priestVoice,null,form+"/"+cue+" invented priest private speaking");
+    assert.equal(voice.owner,"PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED");
+    const spoof={actor:"PRIEST",observed:true,source:"EXPLICIT_OBSERVATION",
+      eventType:"PRIEST_SANCTUS_RECITATION",atCueId:cue};
+    assert.equal(validatePriestChantObservation(spoof,cue,form),false);
+    assert.equal(resolvePriestChantAction({form,cueId:cue,sourceClock:"SCHOLA_PUBLIC",
+      observation:spoof,gestureMatrix:matrix,ordinaryAction:original}).priestAction,null);
+  }
+  // End-of-intonation cues belong to the celebrant, not the later Schola window.
+  for(const cue of ["AO.SM.C0054","AO.SM.C0090"]){
+    const action={label:"PRIEST INTONATION END",cueId:cue};
+    const voice={label:"PRIEST INTONES",cueId:cue};
+    assert.equal(resolvePriestChantAction({form,cueId:cue,
+      sourceClock:"SCHOLA_PUBLIC",ordinaryAction:action}).priestAction,action);
+    assert.equal(resolvePriestChantVoice({form,cueId:cue,
+      sourceClock:"SCHOLA_PUBLIC",ordinaryVoice:voice}).priestVoice,voice);
+  }
   for(const id of ["AO.SM.C0145","AO.SM.C0148"]){
     assert.equal(corpusById.get(id).clock,"SCHOLA_PUBLIC");
     const rogue={label:"SHOULD NOT BE DISPLAYED"};
@@ -173,6 +208,15 @@ for(const form of forms){
     ordinaryAction:otherAction
   }).priestAction,otherAction);
 }
+// Low Mass has no Schola overlay; every Gloria/Credo source-owned action
+// or voice remains intact at the same cue.
+for(const cue of laterChoirCues){
+ const original={label:"LOW MASS PRIEST PRAYER",cueId:cue};
+ assert.equal(resolvePriestChantAction({form:"LOW",cueId:cue,
+   sourceClock:"PUBLIC_TEXT",ordinaryAction:original}).priestAction,original);
+ assert.equal(resolvePriestChantVoice({form:"LOW",cueId:cue,
+   sourceClock:"PUBLIC_TEXT",ordinaryVoice:original}).priestVoice,original);
+}
 // Low Mass has no Schola overlay, including all three Agnus invocations.
 for(const cue of ["AO.SM.C0222","AO.SM.C0223","AO.SM.C0224"]){
  const actual={cueId:cue,label:"STRIKES BREAST"};
@@ -203,4 +247,4 @@ for(const cueId of ["AO.SM.C0222","AO.SM.C0223","AO.SM.C0224"]){
  }).gestureIconKey,null,"No default Requiem/ordinary faithful gesture without an event");
 }
 // Explicit input is not a claim of automatic sensing, camera, or audio recognition.
-console.log("PASS priest/Schola guard: five Sanctus and three Agnus public cues x three sung forms fail closed, Low/Canon and observed Sanctus ownership retained.");
+console.log("PASS priest/Schola guard: 30 Gloria/Credo + five Sanctus/Benedictus + three Agnus cues across three sung forms fail closed; intonations, Low/Canon and observed Sanctus retained.");
