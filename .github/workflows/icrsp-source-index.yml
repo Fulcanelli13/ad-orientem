@@ -20,7 +20,7 @@ jobs:
   metadata-only:
     if: github.repository == 'Fulcanelli13/ad-orientem'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,10 +31,12 @@ jobs:
           python-version: '3.12'
       - name: Check indexer safety tests
         run: python -m unittest discover -s tests -p 'test_icrsp_index_source_metadata.py' -v
-      - name: Index link discovery (not article-body scraping)
+      - name: Index and inspect first 200 article headings (no full-text storage)
         run: |
           python tools/icrsp/index_source_metadata.py \
-            --inspect 0 \
+            --inspect 200 \
+            --start 0 \
+            --delay 2.5 \
             --out data/source-text/icrsp-france-index-discovery.v1.json
       - name: Validate non-empty measured inventory
         run: |
