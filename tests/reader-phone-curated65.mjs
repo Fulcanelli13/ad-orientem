@@ -238,6 +238,14 @@ try{
       if(title==="Gloria · The Celebrant's Intonation")assert.equal(state.track,null);
       if(title==="Gloria · Praise and Supplication")assert.equal(state.track,"GLORIA");
       if(title==="Sanctus")assert.equal(state.track,"SANCTUS_BENEDICTUS");
+      if(width===390&&lang==="en"&&!secondConfiteor &&
+        (/^Gloria · Praise/.test(title)||/^Credo · Incarnation/.test(title))){
+        await page.screenshot({
+          path:resolve(out,title.startsWith("Gloria")
+            ?"gloria-ordinary-paragraphs-390.png":"credo-ordinary-paragraphs-390.png"),
+          animations:"disabled",fullPage:false
+        });
+      }
       if(/^Gloria|^Credo/.test(title)){
         assert.ok(state.cueRows>0,title+" lost source gesture identities");
         assert.equal(state.miniIcons,0,title+" repeats icons beside every verse");
