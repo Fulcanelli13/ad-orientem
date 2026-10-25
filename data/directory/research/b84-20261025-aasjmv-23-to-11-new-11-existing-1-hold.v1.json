@@ -1,0 +1,245 @@
+{
+  "schema": "AO_TLM_B84_AASJMV_23_SOURCE_PHYSICAL_RECONCILIATION_V1",
+  "date": "2026-10-25",
+  "publication_state": "RESEARCH_ONLY",
+  "baseline": "B82 source master, 2573 provisional physical sites; source workbook unchanged",
+  "upstream_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/1687",
+  "official_sources": [
+    "https://adapostolica.org/paroquias/",
+    "https://adapostolica.org/reitorias/",
+    "https://oratoriosaojosebh.org/comunidades-atendidas/"
+  ],
+  "reviewed": 23,
+  "research_admissions": 11,
+  "existing_site_matches": 11,
+  "hold_count": 1,
+  "hold": {
+    "source_entry": "B83-099",
+    "reason": "Quase-Paróquia Nossa Senhora de Lourdes e São Padre Pio lacks a confirmed separate worship-building address",
+    "admission": "NO"
+  },
+  "new_provisional_site_count_in_B84_data_snapshot": 2584,
+  "historical_canonical_research_IDs_in_B84_data_snapshot": 2587,
+  "venue_source_records_in_B84_data_snapshot": 2690,
+  "original_mass_rows_unchanged": 4681,
+  "previous_verified_schedule_rows_unchanged": 3347,
+  "new_verified_schedule_rows": 0,
+  "new_public_place_ids": 0,
+  "admissions": [
+    {
+      "b83_entry": "B83-091",
+      "research_group_id": "RG-B84-4A178DCBF5FE",
+      "name": "Paróquia Nossa Senhora do Terço",
+      "locality": "Campos dos Goytacazes",
+      "address": "Av. Sete de Setembro 268",
+      "country": "BR",
+      "owner_url": "https://adapostolica.org/paroquias/",
+      "corroboration_url": "https://gcatholic.org/churches/brazil/24413",
+      "admission": "G0_RESEARCH_ONLY",
+      "verified_schedule": false,
+      "public_map": false
+    },
+    {
+      "b83_entry": "B83-092",
+      "research_group_id": "RG-B84-D1F86F038D00",
+      "name": "Paróquia de Nossa Senhora da Conceição",
+      "locality": "Ururaí, Campos dos Goytacazes",
+      "address": "Rua Amaro Barroso 169",
+      "country": "BR",
+      "owner_url": "https://adapostolica.org/paroquias/",
+      "corroboration_url": "https://gcatholic.org/churches/brazil/24414",
+      "admission": "G0_RESEARCH_ONLY",
+      "verified_schedule": false,
+      "public_map": false
+    },
+    {
+      "b83_entry": "B83-094",
+      "research_group_id": "RG-B84-2DBD3DA5FF62",
+      "name": "Paróquia Senhor Bom Jesus Crucificado e Imaculado Coração de Maria",
+      "locality": "Bom Jesus do Itabapoana",
+      "address": "Rua Pedro Rodrigues do Carmo 150",
+      "country": "BR",
+      "owner_url": "https://adapostolica.org/paroquias/",
+      "corroboration_url": "https://gcatholic.org/churches/america-south/24419.htm",
+      "admission": "G0_RESEARCH_ONLY",
+      "verified_schedule": false,
+      "public_map": false
+    },
+    {
+      "b83_entry": "B83-095",
+      "research_group_id": "RG-B84-CAFFE92C3CC3",
+      "name": "Paróquia Nossa Senhora do Rosário de Fátima e São Geraldo",
+      "locality": "Itaperuna",
+      "address": "Av. Euclides Poubel de Lima 622",
+      "country": "BR",
+      "owner_url": "https://adapostolica.org/paroquias/",
+      "corroboration_url": "https://gcatholic.org/churches/america-south/24420.htm",
+      "admission": "G0_RESEARCH_ONLY",
+      "verified_schedule": false,
+      "public_map": false
+    },
+    {
+      "b83_entry": "B83-096",
+      "research_group_id": "RG-B84-96A7E2FCF142",
+      "name": "Paróquia Nossa Senhora das Graças",
+      "locality": "Natividade",
+      "address": "Rua Vereador Alceu Lanes Tinoco 186",
+      "country": "BR",
+      "owner_url": "https://adapostolica.org/paroquias/",
+      "corroboration_url": "https://gcatholic.org/churches/brazil/24421",
+      "admission": "G0_RESEARCH_ONLY",
+      "verified_schedule": false,
+      "public_map": false
+    },
+    {
+      "b83_entry": "B83-097",
+      "research_group_id": "RG-B84-A9F8640B80F4",
+      "name": "Paróquia Nossa Senhora Aparecida",
+      "locality": "Porciúncula",
+      "address": "Rua Dep. Luiz Fernando Linhares 1027",
+      "country": "BR",
+      "owner_url": "https://adapostolica.org/paroquias/",
+      "corroboration_url": "https://gcatholic.org/churches/local/zjoa3-n",
+      "admission": "G0_RESEARCH_ONLY",
+      "verified_schedule": false,
+      "public_map": false
+    },
+    {
+      "b83_entry": "B83-098",
+      "research_group_id": "RG-B84-0AED67A991EE",
+      "name": "Quase-Paróquia São Judas Tadeu e Santa Clara",
+      "locality": "Santa Clara, Porciúncula",
+      "address": "Rua Projetada s/n Bairro São Judas Tadeu",
+      "country": "BR",
+      "owner_url": "https://adapostolica.org/paroquias/",
+      "corroboration_url": "https://gcatholic.org/churches/america-south/24423.htm",
+      "admission": "G0_RESEARCH_ONLY",
+      "verified_schedule": false,
+      "public_map": false
+    },
+    {
+      "b83_entry": "B83-100",
+      "research_group_id": "RG-B84-50C4AAA33D1C",
+      "name": "Paróquia Nossa Senhora do Rosário de Fátima e Santo Antônio",
+      "locality": "Santo Antônio de Pádua",
+      "address": "Rua Amaral Peixoto 120",
+      "country": "BR",
+      "owner_url": "https://adapostolica.org/paroquias/",
+      "corroboration_url": "https://gcatholic.org/churches/brazil/24424",
+      "admission": "G0_RESEARCH_ONLY",
+      "verified_schedule": false,
+      "public_map": false
+    },
+    {
+      "b83_entry": "B83-102",
+      "research_group_id": "RG-B84-86463D74DCDC",
+      "name": "Paróquia Nossa Senhora das Graças",
+      "locality": "São João da Barra",
+      "address": "Rua Senhor dos Passos 87",
+      "country": "BR",
+      "owner_url": "https://adapostolica.org/paroquias/",
+      "corroboration_url": "https://gcatholic.org/churches/brazil/24426",
+      "admission": "G0_RESEARCH_ONLY",
+      "verified_schedule": false,
+      "public_map": false
+    },
+    {
+      "b83_entry": "B83-103",
+      "research_group_id": "RG-B84-BEEF1BA5BAD2",
+      "name": "Paróquia Nossa Senhora das Graças e São Sebastião",
+      "locality": "Varre-Sai",
+      "address": "Rua Luiz Amit s/n",
+      "country": "BR",
+      "owner_url": "https://adapostolica.org/paroquias/",
+      "corroboration_url": "https://gcatholic.org/churches/brazil/24427",
+      "admission": "G0_RESEARCH_ONLY",
+      "verified_schedule": false,
+      "public_map": false
+    },
+    {
+      "b83_entry": "B83-107",
+      "research_group_id": "RG-B84-946B8BA59D22",
+      "name": "Capela do Oratório São José",
+      "locality": "Belo Horizonte",
+      "address": "Rua Aiuruoca 148 Fernão Dias",
+      "country": "BR",
+      "owner_url": "https://oratoriosaojosebh.org/comunidades-atendidas/",
+      "corroboration_url": "https://oratoriosaojosebh.org/comunidades-atendidas/",
+      "admission": "G0_RESEARCH_ONLY",
+      "verified_schedule": false,
+      "public_map": false
+    }
+  ],
+  "existing_site_links": [
+    {
+      "source_entry": "B83-090",
+      "existing_research_group_id": "RG-039BD5307887",
+      "action": "LINK_FIRST_PARTY_OWNER_EVIDENCE_NO_NEW_SITE"
+    },
+    {
+      "source_entry": "B83-093",
+      "existing_research_group_id": "RG-9A22C0A51830",
+      "action": "LINK_FIRST_PARTY_OWNER_EVIDENCE_NO_NEW_SITE"
+    },
+    {
+      "source_entry": "B83-101",
+      "existing_research_group_id": "RG-8144F4F2DCF9",
+      "action": "LINK_FIRST_PARTY_OWNER_EVIDENCE_NO_NEW_SITE"
+    },
+    {
+      "source_entry": "B83-104",
+      "existing_research_group_id": "RG-CDC22A087DFE",
+      "action": "LINK_FIRST_PARTY_OWNER_EVIDENCE_NO_NEW_SITE"
+    },
+    {
+      "source_entry": "B83-105",
+      "existing_research_group_id": "RG-EA8DB7E608E7",
+      "action": "LINK_FIRST_PARTY_OWNER_EVIDENCE_NO_NEW_SITE"
+    },
+    {
+      "source_entry": "B83-106",
+      "existing_research_group_id": "RG-71C56F0FFB47",
+      "action": "LINK_FIRST_PARTY_OWNER_EVIDENCE_NO_NEW_SITE"
+    },
+    {
+      "source_entry": "B83-108",
+      "existing_research_group_id": "RG-A28165FAF54C",
+      "action": "LINK_FIRST_PARTY_OWNER_EVIDENCE_NO_NEW_SITE"
+    },
+    {
+      "source_entry": "B83-109",
+      "existing_research_group_id": "RG-9723082006BB",
+      "action": "LINK_FIRST_PARTY_OWNER_EVIDENCE_NO_NEW_SITE"
+    },
+    {
+      "source_entry": "B83-110",
+      "existing_research_group_id": "RG-BC468A8AF86A",
+      "action": "LINK_FIRST_PARTY_OWNER_EVIDENCE_NO_NEW_SITE"
+    },
+    {
+      "source_entry": "B83-111",
+      "existing_research_group_id": "RG-456C824082EF",
+      "action": "LINK_FIRST_PARTY_OWNER_EVIDENCE_NO_NEW_SITE"
+    },
+    {
+      "source_entry": "B83-112",
+      "existing_research_group_id": "RG-730D6582F2F6",
+      "action": "LINK_FIRST_PARTY_OWNER_EVIDENCE_NO_NEW_SITE"
+    }
+  ],
+  "source_data_fingerprints": {
+    "delta_excel_sha256": "b5b608f648c3c04a2151d87d471d48e19406ab865a371383c0b877d4b4ff9f30",
+    "audit_json_sha256": "833812058f8378ad09af0885a21cf9b9e029daf5ab54f248795d937d7e94fe1a",
+    "consolidated_json_archive_sha256": "0491b9ebc3648765c9d1751279bd0edca7238398fafa156c312a6d5eca0298ba"
+  },
+  "export_note": "The 51-sheet consolidated data snapshot exists as a zipped JSON collection and the 23-entry review delta exists as an XLSX; full 51-sheet Excel export failed before file creation. Binary artifacts are not committed to GitHub. B82 XLSX remains unchanged; do not claim it has been overwritten.",
+  "qa": {
+    "all_original_B82_canonical_IDs_preserved_in_snapshot": true,
+    "all_original_B82_source_IDs_preserved_in_snapshot": true,
+    "all_original_4681_mass_rows_cell_equal": true,
+    "new_ids_prefix": "RG-B84-",
+    "frozen_id_policy": "Unique ID per first-party address/site; source labels and building identities may have multiple associations; do not recertify Mass times",
+    "mass_source": "No new Mass time rows or schedule verification"
+  },
+  "next_gate": "Independent present-day Mass-use recency, stable church vs office address, geometry, current schedule; no map publication from G0 research. Next batch prioritize genuinely unscreened networks and 100-200 entries."
+}
