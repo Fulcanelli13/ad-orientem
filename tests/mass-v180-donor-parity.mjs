@@ -202,8 +202,12 @@ assert.ok(dom.includes('el.classList?.add?.("ao-icon-direct")'),
   "rich SVG fallback must remain visible when offline or first loading");
 assert.ok(dom.includes("el.style.backgroundImage=cssUrl(src)"),
   "rich asset fallback no longer displays the correct frozen wrapper");
-assert.match(dom,/kind==="ELEVATION" \? current\.priestActionIconKey : null/,
+assert.match(dom,/kind==="ELEVATION"\?current\.priestActionIconKey:null/,
   "elevation cinema no longer consumes the exact current priest-action art");
+assert.match(dom,/const noArtCinematic=visible && \(kind==="ELEVATION"\|\|kind==="BELL"\)/,
+  "iconless elevation must never display a blank cinematic rectangle");
+assert.ok(dom.includes("cinematic.hidden=!visible||sourceQuietScene||noArtCinematic"),
+  "missing approved cinematic art is no longer suppressed");
 assert.match(dom,/@keyframes aoBellHold\{/,"v1.80 held-bell animation is missing");
 assert.match(dom,/animation:aoBellHold 3\.4s ease-out both/,"v1.80 held-bell salience duration drifted");
 
