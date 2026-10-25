@@ -306,6 +306,94 @@ try{
     });
     assert.ok(resolvedIcons.slots.length>=1,
       "Production icon bank did not render a visible icon on any curated source-cued card");
+
+    if(width===390 && lang==="en" && !secondConfiteor){
+      // A premium reading layout shows the same exact-cue faithful gesture
+      // in its rail/ribbon, not miniature buttons on each Gloria/Credo line.
+      const presentation=await page.evaluate(async()=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const states=[];
+        for(const name of ["Gloria · Praise and Supplication",
+          "Gloria · Doxology","Credo · Incarnation, Passion and Resurrection"]){
+          const card=api.model.cards.find(c=>c.title===name);
+          if(!card){states.push({name,missing:true});continue;}
+          api.showSequence(card.sequence);
+          await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+          const shell=document.querySelector("[data-ao-reader-shell]");
+          const rows=[...shell.querySelectorAll('.ao-reader-paragraph[data-faithful-cues="true"]')];
+          states.push({name,count:rows.length,
+            inlineButtons:shell.querySelectorAll(".ao-faithful-paragraph-icons,.ao-faithful-icon-edit").length,
+            stateRibbon:!!shell.querySelector("[data-side='faithful'] [data-icon-slot='posture-top']"),
+            hasSourceIds:rows.every(el=>el.dataset.faithfulRowId&&el.dataset.sourceCueIds)});
+        }
+        const scholaCard=api.model.cards.find(c=>c.title==="Gloria · Praise and Supplication");
+        api.showSequence(scholaCard.sequence);
+        await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+        const root=document.querySelector("#ao-r17-native-reader-preview");
+        const dock=root.querySelector('.ao-schola-dock [data-icon-slot="schola"]');
+        const cs=getComputedStyle(dock),rect=dock.getBoundingClientRect();
+        return {states,schola:{hidden:dock.hidden,width:rect.width,height:rect.height,
+          artwork:cs.maskImage!=="none"||cs.webkitMaskImage!=="none"||cs.backgroundImage!=="none"}};
+      });
+      for(const state of presentation.states){
+        assert.equal(state.missing,undefined,"Missing Gloria/Credo 65-card chapter "+state.name);
+        assert.ok(state.count>0,state.name+" lost canonical faithful cue identities");
+        assert.ok(state.hasSourceIds,state.name+" faithful cue lost paragraph source IDs");
+        assert.equal(state.inlineButtons,0,state.name+" still duplicates icons beside sentences");
+        assert.equal(state.stateRibbon,true,state.name+" lost the common posture control");
+      }
+      assert.equal(presentation.schola.hidden,false,"Active Gloria Schola icon is hidden");
+      assert.equal(presentation.schola.artwork,true,"Schola icon has no painted mask or source asset");
+      assert.ok(presentation.schola.width>=32&&presentation.schola.height>=32,
+        "Schola original still too small in dock: "+JSON.stringify(presentation.schola));
+
+      // No published 1962 rubric may disappear from the actual LIVE paragraph
+      // merely because an unrelated small icon was removed. Source-printed
+      // bracketed rubrics already carry their wording, so don't double-print.
+      const rubricParity=await page.evaluate(async()=>{
+        const {publishedMissalRubricsForParagraph}=await import("/src/mass/reader-missal-rubrics.js");
+        const registry=await (await fetch("/data/presentation/reader-rubric-events.v1.json")).json();
+        const api=window.__AO_PHONE_PREVIEW,expected=new Set(),found=new Set();
+        const missing=[],uncertified=[];
+        for(const card of api.model.cards){
+          if(!api.showSequence(card.sequence))continue;
+          await new Promise(done=>requestAnimationFrame(done));
+          const root=document.querySelector("#ao-r17-native-reader-preview");
+          const rows=[...root.querySelectorAll(".ao-prayer-body .ao-reader-paragraph")];
+          for(const p of card.paragraphs){
+            const events=publishedMissalRubricsForParagraph(p,registry,{
+              form:"MISSA_CANTATA_SIMPLE",language:"en"
+            });
+            const row=rows.find(el=>el.dataset.paragraphId===p.id);
+            const printedSource=p.kind==="RUBRIC"||/^\s*\[/.test(String(p.primary??""));
+            const ids=new Set([...row?.querySelectorAll?.("[data-rubric-id]")??[]]
+              .map(el=>el.dataset.rubricId));
+            for(const event of events){
+              expected.add(event.id);
+              if(printedSource){found.add(event.id);continue;}
+              if(ids.has(event.id))found.add(event.id);
+              else missing.push({card:card.title,paragraph:p.id,rubric:event.id,cue:event.sourceCueId});
+            }
+            for(const item of row?.querySelectorAll?.("[data-rubric-id]")??[]){
+              const id=item.dataset.rubricId;
+              if(!registry.items.some(record=>record.id===id))
+                uncertified.push({card:card.title,id});
+            }
+          }
+        }
+        return {expected:expected.size,found:found.size,missing,uncertified};
+      });
+      assert.ok(rubricParity.expected>=45,
+        "Full ordinary LIVE 1962 rubric source audit lost registry coverage: "+
+        JSON.stringify(rubricParity));
+      assert.deepEqual(rubricParity.missing,[],
+        "Published source-backed rubrics missing from LIVE DOM");
+      assert.deepEqual(rubricParity.uncertified,[],
+        "LIVE displayed a rubric absent from the source registry");
+      console.log("PASS Gloria/Credo source cues, single-icon chrome, 34px Schola and published 1962 rubric parity",{
+        schola:presentation.schola,published:rubricParity
+      });
+    }
     // A visible priest intonation is one paragraph with two source cue
     // records; it still needs a unique active cue for voice, rubric and
     // scroll-focus ownership. Do not drop either canonical source ID.
