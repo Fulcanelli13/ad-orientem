@@ -1,4 +1,4 @@
-/* Editor-reviewed Calendar prose for 24 identities already PUBLISHED in canonical SOT-07.
+/* Editor-reviewed Calendar prose for the extended set of identities PUBLISHED in canonical SOT-07.
  * This is a source-bounded read-model projection. No new customs, Mass
  * rites, local ceremonies, bookings or geography are published.
  * Acceptance register: data/customs/calendar-copy-acceptance.v1.json
