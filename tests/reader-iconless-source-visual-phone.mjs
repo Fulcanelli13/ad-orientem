@@ -127,7 +127,16 @@ try{
       )].map(el=>({type:el.className,sourceCueId:el.dataset.sourceCueId??null,
         text:el.textContent?.trim()??"",display:display(el),
         bounds:(()=>{const b=el.getBoundingClientRect();return {left:b.left,right:b.right,width:b.width}})()})):[];
-      return {cue,form:native?.form??null,mode:shell?.dataset.mode,
+      const cinematic=shell.querySelector('[data-role="cinematic"]');
+      const cinematicIcon=cinematic?.querySelector('[data-icon-slot="cinematic"]');
+      const cinematicStyle=cinematicIcon?getComputedStyle(cinematicIcon):null;
+      const cinematicState={visible:Boolean(cinematic&&!cinematic.hidden&&display(cinematic)!=="none"),
+        kind:cinematic?.dataset.kind,missingApprovedArt:cinematic?.dataset.missingApprovedArt,
+        iconHidden:cinematicIcon?.hidden,
+        iconPainted:Boolean(cinematicIcon&&!cinematicIcon.hidden &&
+          [cinematicStyle?.maskImage,cinematicStyle?.webkitMaskImage,
+           cinematicStyle?.backgroundImage].some(x=>x&&x!=="none"))};
+      return {cue,form:native?.form??null,mode:shell?.dataset.mode,cinematic:cinematicState,
         currentCue:native?.nativeCueId,action:native?.priestAction??null,
         actionIconKey:native?.priestActionIconKey??null,
         sourceParagraphKind:owner?.dataset.kind??null,
@@ -160,6 +169,17 @@ try{
         assert.equal(minister?.display,"none","Text-only minister box is still visible");
       }
       const iconless=spec.kind==="minor-elevation"||spec.kind==="ecce-agnus";
+      if(snapshot.cinematic.visible &&
+        ["ELEVATION","BELL"].includes(snapshot.cinematic.kind)){
+        assert.equal(snapshot.cinematic.iconPainted,true,
+          "A ceremonial cinematic displays a blank/unapproved icon surface");
+      }
+      if(spec.kind==="minor-elevation"){
+        assert.equal(snapshot.cinematic.visible,false,
+          "Per ipsum has no exact approved cinematic artwork: do not cover the Missal");
+        assert.equal(snapshot.cinematic.missingApprovedArt,"true",
+          "Missing original graphic must be recorded, never replaced with a blank square");
+      }
       if(iconless){
         const actionTile=snapshot.rails.flatMap(x=>x.tiles).find(x=>x.channel==="priest-action");
         if(actionTile?.iconVisible==="false"){
