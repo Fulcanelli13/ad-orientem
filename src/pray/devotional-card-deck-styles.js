@@ -637,6 +637,11 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  font:400 clamp(19px,5vw,23px)/1.65 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
  color:var(--text,#f1e7d7)!important;
 }
+/* The chapter rail already identifies the active examination category. Do not
+   repeat the numbered card heading and compete with the questions. */
+#aoPray435930 .aoP435930ConfessionReader[data-ao-confession-dual-axis="true"] .aoDevoCardHead{
+ display:none!important;
+}
 /* The sacramental preparation reader is NOT a text-only prayer: the questions
    are primary, while instructions, privacy notes and doctrine are secondary. */
 #aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930ConfQuestions li,
