@@ -5,6 +5,8 @@ on:
       - "tools/geography/sacred-places-bulk-screen.mjs"
       - "tests/sacred-places-bulk-screen.mjs"
       - "data/geography/research/sacred-places-p39-global500-open68-reconciliation.v1.json"
+      - "data/geography/research/sacred-places-p39-open68-osm-evidence.v1.json"
+      - "data/geography/research/sacred-places-p39-source-evidence-500-routing.v1.json"
       - ".github/workflows/sacred-places-p39-bulk-screen.yml"
   workflow_dispatch:
 permissions:
@@ -28,9 +30,10 @@ jobs:
       - name: Dry-run bounded research scope
         run: node tools/geography/sacred-places-bulk-screen.mjs --dry-run
       - name: Screen all 68 remaining cases on OSM (zero publication)
+        if: github.event_name == 'workflow_dispatch'
         run: node tools/geography/sacred-places-bulk-screen.mjs --network --shard=${{ matrix.shard }}/4
       - name: Temporary transport for reviewed permanent archival commit
-        if: always()
+        if: github.event_name == 'workflow_dispatch' && always()
         uses: actions/upload-artifact@v4
         with:
           name: p39-68-osm-evidence-shard-${{ matrix.shard }}-of4
