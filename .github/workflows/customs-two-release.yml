@@ -1,0 +1,41 @@
+name: Customs two-article incremental release
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "data/customs/customs-atlas-seed.v1.json"
+      - "data/customs/source-registry.v1.json"
+      - "src/calendar/customs-extra-articles.js"
+      - "src/calendar/customs-read-model.js"
+      - "src/calendar/customs-search.js"
+      - "src/customs/seasonal-home-spotlight.js"
+      - "src/customs/year-led-library.js"
+      - "tests/customs-two-published-release-gate.mjs"
+      - ".github/workflows/customs-two-release.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  incremental-customs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Compile all changed modules
+        run: |
+          node --check src/calendar/customs-extra-articles.js
+          node --check src/calendar/customs-read-model.js
+          node --check src/customs/year-led-library.js
+          node --check src/customs/seasonal-home-spotlight.js
+          node --check tests/customs-two-published-release-gate.mjs
+      - name: Verify additive two records and frozen historical 35
+        run: |
+          node tests/customs-two-published-release-gate.mjs
+          node tests/calendar-customs-context.mjs
+          node tests/calendar-customs-search.mjs
+          node tests/customs-seasonal-home-year.mjs
+          node tests/customs-35-editorial-first-pass.mjs
+          node tests/customs-final-editorial-acceptance.mjs
