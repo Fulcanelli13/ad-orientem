@@ -680,9 +680,9 @@ try{
   await assertNoMass("Learn -> Pray");
   await assertFocusSafe("Learn -> Pray");
 
-  // Calendar is now embedded in Today (PR #1023), not a standalone
-  // sixth app destination. Use the exact Month control, not the nine
-  // context-specific buttons sharing data-home-calendar.
+  // Calendar is embedded in Today, not a standalone sixth destination.
+  // Quiet Frame replaced the permanent Month tab with the visible full-
+  // calendar entrance; the hidden original tab is not a tappable target.
   await openLearn();
   await page.locator("[data-ao-app-surface='home']").tap();
   await page.waitForFunction(()=>
@@ -690,7 +690,9 @@ try{
     !document.getElementById("ao-learn-modular-root"),
     null,{timeout:10000}
   );
-  await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').tap();
+  const visibleCalendarEntrance=page.locator(".aoHomeCalendarAccess .aoHomeCalendarAction");
+  await visibleCalendarEntrance.waitFor({state:"visible",timeout:10000});
+  await visibleCalendarEntrance.tap();
   await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',
     {state:"visible",timeout:15000});
   assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-body]').count(),1,

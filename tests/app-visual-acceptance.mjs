@@ -1502,7 +1502,12 @@ try{
   assert.equal(learnDesign.displayFont,designBaseline.displayFont,"Learn display typography diverged from the app system");
   assert.equal(learnDesign.bodyFont,designBaseline.bodyFont,"Learn body typography diverged from Home");
   assert.equal(learnDesign.gutter,designBaseline.gutter,"Learn phone gutter diverged from the app grid");
-  assert.equal(learnDesign.cardRadius,designBaseline.cardRadius,"Learn cards diverged from canonical geometry");
+  // Formation uses an open reading-index layout: the retired 15px app cards
+  // would reintroduce precisely the repetitive treatment Quiet Frame removed.
+  assert.equal(learnDesign.cardRadius,"0px",
+    "Formation subject index regressed to rounded, generic app cards");
+  assert.equal(await page.locator("#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard").count(),9,
+    "Formation no longer exposes its nine illustrated editorial sections");
   assert.equal(Math.round(learnDesign.topControl.w),44,"Learn top control width diverged");
   assert.equal(Math.round(learnDesign.topControl.h),44,"Learn top control height diverged");
   assert.equal(learnDesign.topControl.r,"999px","Learn top control lost canonical circular geometry");
