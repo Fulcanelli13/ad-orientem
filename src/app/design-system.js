@@ -463,6 +463,66 @@ const CSS=`
  outline:2px solid var(--liturgical,#C9AD78)!important;outline-offset:2px;
 }
 
+
+/* Formation discovery as an illustrated reading index rather than a wall of cards. */
+#ao-learn-modular-root .aoLearnFamilyGrid{
+  display:flex!important;flex-direction:column!important;
+  gap:0!important;margin:17px 0 28px!important;
+  background:transparent!important;border:0!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard{
+  width:100%!important;min-width:0!important;margin:0!important;
+  padding:0!important;border:0!important;border-top:1px solid rgba(207,189,153,.18)!important;
+  border-radius:0!important;background:transparent!important;box-shadow:none!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard:last-child{
+  border-bottom:1px solid rgba(207,189,153,.18)!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{
+  display:grid!important;grid-template-columns:43px minmax(0,1fr)!important;
+  grid-template-rows:auto auto!important;column-gap:15px!important;
+  row-gap:4px!important;align-items:center!important;
+  min-height:92px!important;padding:15px 5px!important;width:100%!important;
+  background:transparent!important;border:0!important;text-align:left!important;
+  border-radius:0!important;box-shadow:none!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor .aoLearnModIcon{
+  display:block!important;grid-column:1!important;grid-row:1 / 3!important;
+  align-self:center!important;justify-self:center!important;
+  width:34px!important;height:34px!important;max-width:34px!important;max-height:34px!important;
+  color:#c3b18d!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor strong{
+  display:block!important;grid-column:2!important;grid-row:1!important;
+  margin:0!important;min-width:0!important;
+  font:400 22px/1.15 var(--ao-font-display,Georgia,serif)!important;
+  color:#f0e7d9!important;letter-spacing:0!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor p{
+  display:block!important;grid-column:2!important;grid-row:2!important;
+  margin:0!important;min-width:0!important;
+  font:400 14px/1.43 var(--ao-font-ui,Georgia,serif)!important;
+  color:#a9a9a3!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor:hover{
+  background:rgba(205,178,125,.035)!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor:focus-visible{
+  outline:2px solid var(--liturgical,#c6b28b)!important;outline-offset:-2px!important;
+}
+@media(max-width:360px){
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{
+    grid-template-columns:32px minmax(0,1fr)!important;column-gap:10px!important;
+    min-height:88px!important;
+  }
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor .aoLearnModIcon{
+    width:27px!important;height:27px!important;
+  }
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor strong{
+    font-size:20px!important;
+  }
+}
+
 `;
 
 export function installAppDesignSystem(win=globalThis){
