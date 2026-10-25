@@ -4,10 +4,22 @@ import {mkdir,readFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {publishedMissalRubricsForParagraph} from "../src/mass/reader-missal-rubrics.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/curated65-phone");
 await mkdir(out,{recursive:true});
+const rubrics=JSON.parse(await readFile(resolve(root,"data/presentation/reader-rubric-events.v1.json"),"utf8"));
+const priestRubricIds=rubrics.items.filter(x=>x.actor==="PRIEST"&&x.kind!=="BELL")
+  .map(x=>x.id).sort();
+const publishedByCue=Object.fromEntries(
+  [...new Set(rubrics.items.map(x=>x.cueId))].map(cueId=>[
+    cueId,publishedMissalRubricsForParagraph({
+      id:cueId,kind:"TEXT",primary:"",sourceCueIds:[cueId]
+    },rubrics,{form:"MISSA_CANTATA_SIMPLE",language:"en"})
+      .map(row=>({id:row.id,kind:row.kind}))
+  ])
+);
 const mime={
   ".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
   ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
@@ -175,6 +187,21 @@ try{
           prayerOpacity:Number(getComputedStyle(shell.querySelector('.ao-reader-paragraph')).opacity),
           readerBottom:shell.querySelector('.ao-prayer-card')?.getBoundingClientRect()?.bottom??null,
           scholaTop:shell.querySelector('.ao-schola-dock[data-active="true"]')?.getBoundingClientRect()?.top??null,
+          miniIcons:shell.querySelectorAll(".ao-faithful-paragraph-icons,.ao-faithful-icon-edit").length,
+          cueRows:shell.querySelectorAll(".ao-reader-paragraph[data-faithful-row-id]").length,
+          cuePadding:(()=>{
+            const row=shell.querySelector(".ao-reader-paragraph[data-faithful-row-id]");
+            return row?parseFloat(getComputedStyle(row).paddingLeft):null;
+          })(),
+          scholaAsset:(()=>{
+            const dock=shell.querySelector(".ao-schola-dock[data-active='true']");
+            if(!dock)return null;
+            const node=dock.querySelector("[data-icon-slot='schola']");
+            const style=getComputedStyle(node);
+            return {hidden:node.hidden,width:node.getBoundingClientRect().width,
+              rendered:style.maskImage!=="none"||style.webkitMaskImage!=="none"||
+                style.backgroundImage!=="none"};
+          })(),
           layoutDiagnostics:(()=>{
             const sc=shell.querySelector(".ao-prayer-card");
             const vp=shell.querySelector(".ao-card-viewport");
@@ -211,14 +238,32 @@ try{
       if(title==="Gloria · The Celebrant's Intonation")assert.equal(state.track,null);
       if(title==="Gloria · Praise and Supplication")assert.equal(state.track,"GLORIA");
       if(title==="Sanctus")assert.equal(state.track,"SANCTUS_BENEDICTUS");
+      if(width===390&&lang==="en"&&!secondConfiteor &&
+        (/^Gloria · Praise/.test(title)||/^Credo · Incarnation/.test(title))){
+        await page.screenshot({
+          path:resolve(out,title.startsWith("Gloria")
+            ?"gloria-ordinary-paragraphs-390.png":"credo-ordinary-paragraphs-390.png"),
+          animations:"disabled",fullPage:false
+        });
+      }
+      if(/^Gloria|^Credo/.test(title)){
+        assert.ok(state.cueRows>0,title+" lost source gesture identities");
+        assert.equal(state.miniIcons,0,title+" repeats icons beside every verse");
+        assert.ok(state.cuePadding<=12,title+" retains a 67px icon gutter");
+      }
+      if(state.scholaAsset){
+        assert.equal(state.scholaAsset.hidden,false,title+" Schola symbol hidden");
+        assert.equal(state.scholaAsset.rendered,true,title+" Schola symbol lacks art");
+        assert.ok(state.scholaAsset.width>=30,title+" Schola icon too small: "+JSON.stringify(state.scholaAsset));
+      }
     }
     // Walk every liturgical card in source order, not merely selected screenshots.
     // A local second Confiteor is present in source audit, but absent from
     // the default navigation path unless explicitly requested.
-    const walked=await page.evaluate(()=>{
+    const walked=await page.evaluate(({expectedByCue,checkRubrics})=>{
       const api=window.__AO_PHONE_PREVIEW;
       const optionalTitle="Second Confiteor · Optional Local Custom";
-      const skipped=[],visited=[],defects=[];
+      const skipped=[],visited=[],defects=[],rubricSeen=new Set(),rubricPrinted=new Set();
       const optional=api.model.cards.find(c=>c.title===optionalTitle);
       for(const card of api.model.cards){
         const shown=api.showSequence(card.sequence);
@@ -255,6 +300,25 @@ try{
         }
         if(shell && shell.scrollWidth>shell.clientWidth+3)defects.push("overflow "+card.title);
         if(!/^[0-9]+ \/ [0-9]+$/.test(progress??""))defects.push("invalid progress "+card.title+": "+progress);
+        if(checkRubrics){
+          for(const paragraph of card.paragraphs){
+            const ids=[...new Set((paragraph.sourceCueIds??[])
+              .flatMap(cueId=>expectedByCue[cueId]??[])
+              .map(event=>event.id))];
+            if(!ids.length)continue;
+            const row=domRows.find(node=>node.dataset.paragraphId===paragraph.id);
+            for(const id of ids){
+              const held=[...(row?.querySelectorAll("[data-rubric-id],[data-rubric-ids]")??[])]
+                .some(node=>node.dataset.rubricId===id||
+                  node.dataset.rubricIds?.split(" ").includes(id));
+              if(held)rubricSeen.add(id);
+              else if(paragraph.kind==="RUBRIC"||/^\s*\[/.test(String(paragraph.primary??"")))
+                rubricPrinted.add(id);
+              else defects.push("Missing published 1962 rubric "+id+" at "+card.title+
+                " / "+paragraph.id);
+            }
+          }
+        }
         visited.push({title:card.title,progress,sequence:card.sequence});
       }
       const finalProgress=document.querySelector('[data-role="progress"]')?.textContent?.trim();
@@ -268,8 +332,16 @@ try{
           defects.push("next from Communion Confiteor boundary navigates incorrectly");
         }
       }
-      return {visited,skipped,defects,finalProgress,optionalSeq:optional?.sequence??null};
-    });
+      return {visited,skipped,defects,finalProgress,optionalSeq:optional?.sequence??null,rubricSeen:[...rubricSeen],rubricPrinted:[...rubricPrinted]};
+    },{expectedByCue:publishedByCue,checkRubrics:width===390&&lang==="en"&&!secondConfiteor});
+    if(width===390&&lang==="en"&&!secondConfiteor){
+      const recovered=[...new Set([...walked.rubricSeen,...walked.rubricPrinted])].sort();
+      assert.deepEqual(recovered,priestRubricIds,
+        "Published 1962 priest rubric source IDs missing in actual 65-card LIVE DOM");
+      console.log("PASS 1962 LIVE rubric DOM: "+walked.rubricSeen.length+
+        " explicit source-linked annotations, "+walked.rubricPrinted.length+
+        " source-printed directions; "+recovered.length+" approved priest IDs accounted for");
+    }
     const expectedVisible=secondConfiteor?65:64;
     assert.equal(walked.visited.length,expectedVisible,
       "The optional local Confiteor must not be shown by default");
