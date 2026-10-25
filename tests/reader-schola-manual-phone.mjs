@@ -108,6 +108,29 @@ try{
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.index===1);
    const sharedAdvance=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().title);
    assert.equal(sharedAdvance,"Kyrie","Shared Schola manual correction moved the main Mass card");
+   // Gloria occupies multiple curated LIVE cards, but all share the same
+   // independent choir track. Moving between these prayer cards must not
+   // reinterpret the priest's paragraph as an observed Schola phrase.
+   const gloriaClocks=await page.evaluate(()=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const cards=api.model.cards.filter(card=>card.sourceSectionId==="AO.CARD.003");
+     if(cards.length<2)throw new Error("CURATED_GLORIA_SOURCE_CARDS_MISSING");
+     api.showSequence(cards[0].sequence);
+     api.selectScholaTrack("GLORIA");
+     api.nextSchola();
+     const before=api.getScholaState();
+     for(const card of cards.slice(1))api.showSequence(card.sequence);
+     const after=api.getScholaState();
+     return {count:cards.length,firstCard:cards[0].sectionId,
+       lastCard:api.getCurrentCard().sectionId,
+       beforeTrack:before.trackId,afterTrack:after.trackId,
+       beforePhrase:before.schola?.segmentId,afterPhrase:after.schola?.segmentId};
+   });
+   assert.equal(gloriaClocks.beforeTrack,"GLORIA");
+   assert.equal(gloriaClocks.afterTrack,"GLORIA");
+   assert.notEqual(gloriaClocks.lastCard,gloriaClocks.firstCard);
+   assert.equal(gloriaClocks.afterPhrase,gloriaClocks.beforePhrase,
+     "Gloria presentation card changes redirected the independent Schola phrase");
    const chosen=await page.evaluate(()=>{
      const api=window.__AO_PHONE_PREVIEW;
      const sanctus=api.model.cards.find(card=>card.title==="Sanctus");
