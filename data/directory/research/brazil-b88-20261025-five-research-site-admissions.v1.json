@@ -1,0 +1,114 @@
+{
+  "schema": "AO_TLM_B88_FIVE_DISTINCT_BRAZIL_RESEARCH_SITE_ADMISSIONS_20261025_V1",
+  "date": "2026-10-25",
+  "branch_role": "RESEARCH_ADMISSION_DELTA_ONLY_NOT_BINARY_MASTER_OR_APP_DATABASE",
+  "upstream_prs": [
+    1694,
+    1698
+  ],
+  "baseline": {
+    "version": "B82",
+    "distinct_physical_provisional_sites": 2573,
+    "historical_canonical_research_group_ids": 2576,
+    "venue_source_rows": 2679,
+    "verified_mass_time_rows": 3347,
+    "all_mass_time_rows": 4681
+  },
+  "proposed_post_import": {
+    "distinct_physical_provisional_sites": 2578,
+    "historical_canonical_research_group_ids": 2581,
+    "venue_source_rows": 2684,
+    "verified_mass_time_rows": 3347,
+    "all_mass_time_rows": 4681,
+    "public_pins": 0
+  },
+  "source_ids_policy": "Keep every historical B82 canonical and venue ID unchanged; new RG-B88 IDs deterministic from source ID and address. AASJMV-EXT-001 is a recovered historic R50/R51 source ID, not a newly invented one.",
+  "sites": [
+    {
+      "research_group_id": "RG-B88-F691777F8D8D",
+      "source_id": "AO-B88-BR-001",
+      "site_name": "Igreja São José Operário",
+      "country": "BR",
+      "locality": "Barra Mansa, RJ",
+      "physical_address": "Via Sérgio Braga, Comunidade Terra Nova, Barbará",
+      "upstream": "B87-01",
+      "physical_source": "https://diocesevr.com.br/noticia/2414/co-catedral-nossa-senhora-da-conceicao-acolhe-comunidade-sao-jose-operario-de-barra-mansa",
+      "liturgical_source": "https://folhadoaco.com.br/2026/07/10/dom-luiz-henrique-reafirma-unidade-da-igreja-e-orienta-fieis-sobre-celebracao-da-missa-na-forma-antiga-na-diocese/",
+      "admission": "ACCEPTED_FOR_B88_RESEARCH_DELTA_PENDING_MASTER_IMPORT",
+      "public_map": "NOT_APPROVED",
+      "verified_timetable": "NO_CHANGE"
+    },
+    {
+      "research_group_id": "RG-B88-E491FACD85B9",
+      "source_id": "AO-B88-BR-002",
+      "site_name": "Capelania Pessoal Nossa Senhora do Perpétuo Socorro",
+      "country": "BR",
+      "locality": "Volta Redonda, RJ",
+      "physical_address": "Rua Doutor Miguel Couto 78, Jardim Amália I",
+      "upstream": "B87-02",
+      "physical_source": "https://www.diocesevr.com.br/paroquia/47/capelania-pessoal-nossa-senhora-do-perpetuo-socorro",
+      "liturgical_source": "https://folhadoaco.com.br/2026/07/10/dom-luiz-henrique-reafirma-unidade-da-igreja-e-orienta-fieis-sobre-celebracao-da-missa-na-forma-antiga-na-diocese/",
+      "admission": "ACCEPTED_FOR_B88_RESEARCH_DELTA_PENDING_MASTER_IMPORT",
+      "public_map": "NOT_APPROVED",
+      "verified_timetable": "NO_CHANGE"
+    },
+    {
+      "research_group_id": "RG-B88-D6480F7F32B7",
+      "source_id": "AO-B88-BR-003",
+      "site_name": "Capela São Sebastião",
+      "country": "BR",
+      "locality": "Bulhões, Resende, RJ",
+      "physical_address": "Estrada de Bulhões (door number unestablished)",
+      "upstream": "B87-03",
+      "physical_source": "https://folhadoaco.com.br/2026/07/10/dom-luiz-henrique-reafirma-unidade-da-igreja-e-orienta-fieis-sobre-celebracao-da-missa-na-forma-antiga-na-diocese/",
+      "liturgical_source": "https://www.folhadointerior.com.br/dom-luiz-henrique-orienta-fieis-sobre-celebracao-da-missa-na-forma-antiga-na-diocese/",
+      "admission": "ACCEPTED_FOR_B88_RESEARCH_DELTA_PENDING_MASTER_IMPORT",
+      "public_map": "NOT_APPROVED",
+      "verified_timetable": "NO_CHANGE"
+    },
+    {
+      "research_group_id": "RG-B88-60104C25870A",
+      "source_id": "AO-B88-BR-004",
+      "site_name": "Santuário do Bom Jesus",
+      "country": "BR",
+      "locality": "Montes Claros, MG",
+      "physical_address": "Praça do Bom Jesus 116, Centro",
+      "upstream": "B87-04",
+      "physical_source": "https://ssvm.org.br/missa-tridentina/",
+      "liturgical_source": "https://ssvm.org.br/artigo3/quinta-visita-ibp-montes-claros/",
+      "admission": "ACCEPTED_FOR_B88_RESEARCH_DELTA_PENDING_MASTER_IMPORT",
+      "public_map": "NOT_APPROVED",
+      "verified_timetable": "NO_CHANGE"
+    },
+    {
+      "research_group_id": "RG-B88-B1EB74BB63BD",
+      "source_id": "AASJMV-EXT-001",
+      "site_name": "Capela do Oratório São José",
+      "country": "BR",
+      "locality": "Belo Horizonte, MG",
+      "physical_address": "Rua Aiuruoca 148, Fernão Dias",
+      "upstream": "B84/B85 legacy recovery",
+      "physical_source": "https://oratoriosaojosebh.org/comunidades-atendidas/",
+      "liturgical_source": "https://oratoriosaojosebh.org/programacao-outubro-2026/",
+      "admission": "ACCEPTED_FOR_B88_RESEARCH_DELTA_PENDING_MASTER_IMPORT",
+      "public_map": "NOT_APPROVED",
+      "verified_timetable": "NO_CHANGE"
+    }
+  ],
+  "quality_checks": {
+    "source_rows": 5,
+    "unique_new_group_ids": 5,
+    "unique_source_ids": 5,
+    "new_public_map_pins": 0,
+    "new_verified_schedule_rows": 0,
+    "complete_workbook_rebuild": "PENDING_RETRY_BINARY_EXPORT_PARITY"
+  },
+  "separate_binary_delta": {
+    "name": "Ad_Orientem_B88_Five_Brazil_Site_Admission_Delta_2026-10-25.xlsx",
+    "sha256": "78ebfd1edd08c475462183b5fcba0c32b1112c6ba07bcb8e9b464198278524d6",
+    "read_back": "PASSED",
+    "committed_to_repo": false
+  },
+  "caution": "The attempted full 44+ sheet B82 workbook reconstruction failed during artifact import. Do not claim B82 was updated, merged, or that proposed 2,578 site count is operational. First import the 5 vetted research records, preserve every historical workbook row and exact timetable cell, then independently read back, QA, and only then replace B82 operational master.",
+  "next_step": "After safe 5-site import, bulk-screen another 100–200 genuine first-party sites in a source network/region not already covered by B77 SSPX, B75 ICKSP, B80 FSSP/IBP, or B86 Brazilian directory."
+}
