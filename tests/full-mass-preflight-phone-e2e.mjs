@@ -160,8 +160,19 @@ try{
    "Start should visually precede secondary preferences on overview");
  assert.deepEqual(await page.locator(".aoMassFolioQuickChoices .aoMassFolioChoiceIcon").evaluateAll(nodes=>
   nodes.map(x=>x.getAttribute("data-ao-asset-id"))),
-  ["ao-module-before-mass","ao-rich-eucharistic-life","ao-live-hear"],
+  ["ao-brand-emblem","ao-live-priest-foot-altar","ao-nav-learn"],
   "The three source-owned choices must use exact canonical bank icons");
+ const imageCheck=await page.evaluate(async()=>{
+   const {resolveCanonicalAssetUrl}=await import("/src/assets/asset-registry.js");
+   const ids=[...document.querySelectorAll(".aoMassFolioQuickChoices .aoMassFolioChoiceIcon")].map(n=>n.dataset.aoAssetId);
+   return await Promise.all(ids.map(async id=>{
+     const url=resolveCanonicalAssetUrl(id),response=url?await fetch(url):null;
+     const bytes=response?.ok?new Uint8Array(await response.arrayBuffer()):null;
+     return {id,ok:!!response?.ok,png:!!bytes&&bytes[0]===137&&bytes[1]===80&&bytes[2]===78&&bytes[3]===71};
+   }));
+ });
+ assert.ok(imageCheck.every(item=>item.ok&&item.png),
+   "Mass setup icons must resolve to actual PNG assets, not registry-only placeholders: "+JSON.stringify(imageCheck));
  const firstFold=await page.evaluate(()=>{
   const shell=document.querySelector(".aoGuidedMassFolio[data-ao-folio-view='overview']");
   const duplicate= shell?.querySelector(".aoMassFolioIdentity");
