@@ -25,6 +25,18 @@ assert.equal(witness.counts.alreadyInGestureMatrix,10);
 assert.equal(witness.counts.pendingSourceGestureRecord,2);
 assert.deepEqual(witness.rubrics.filter(r=>!r.gestureMatrixId).map(r=>r.cueId),
  ["AO.SM.C0054","AO.SM.C0056"],"B02 contains unreviewed/extraneous gesture gaps");
+for(const cue of ["AO.SM.C0054","AO.SM.C0056"]){
+ const record=witness.rubrics.find(x=>x.cueId===cue);
+ assert.equal(record.primary1962Source.originalLatinChecked,true);
+ assert.equal(record.primary1962Source.section,"Ritus servandus IV.3");
+ assert.match(record.shortDescription.en,/priest.*(joins|bows)/);
+ assert.match(record.shortDescription.fr,/prêtre/);
+ assert.equal(record.formTiming.missaCantata,"PRIEST_OWN_RECITATION_NOT_SCHOLA_CLOCK");
+ assert.equal(record.liveClockGate,"REQUIRES_ACTUAL_SOURCE_OWNED_PRIEST_EVENT_NO_SCHOLA_INFERENCE");
+ assert.equal(record.nextPublicationTarget,"MISSAL_BOOK_REFERENCE_FIRST");
+}
+assert.equal(witness.researchAdjudication.counts.newPublishedGestureEvents,0);
+assert.equal(witness.researchAdjudication.counts.newIcons,0);
 for(const rec of witness.rubrics){
  assert.equal(corpusById.get(rec.cueId)?.clock,"SCHOLA_PUBLIC",
    rec.cueId+" donor/source clock changed without adjudication");
