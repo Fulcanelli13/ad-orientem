@@ -12,7 +12,7 @@ class TemporalPathEvidence(unittest.TestCase):
     def setUpClass(cls):
         cls.audit=load("data/source-text/icrsp-france-temporal-193-sourcepath-crosswalk.v1.json")
         cls.old=load("data/source-text/icrsp-france-temporal-193-gap-register.v1.json")
-        cls.exceptions=load("data/source-text/icrsp-france-temporal-94-sourcepath-exceptions.v1.json")
+        cls.exceptions=load("data/source-text/icrsp-france-temporal-93-sourcepath-exceptions.v2.json")
         cls.witnesses=set()
         for path,roots in [
           ("data/mass/scripture-temporal-sunday-source-audit.v1.json",["originalWitnesses","splitReadingWitnesses"]),
@@ -33,10 +33,10 @@ class TemporalPathEvidence(unittest.TestCase):
         a=self.audit
         self.assertEqual(len(a["rows"]),193)
         self.assertEqual(len(set(r["articleId"] for r in a["rows"])),193)
-        self.assertEqual(a["totals"]["articleRowsWithExistingPathWitness"],99)
-        self.assertEqual(a["totals"]["previouslyUnlinkedTemporalWithExistingPathWitness"],77)
-        self.assertEqual(a["totals"]["articleRowsWithoutAnyPathWitness"],94)
-        self.assertEqual(sum(r["checkedWitnessFileCount"]>0 for r in a["rows"]),99)
+        self.assertEqual(a["totals"]["articleRowsWithExistingPathWitness"],100)
+        self.assertEqual(a["totals"]["previouslyUnlinkedTemporalWithExistingPathWitness"],78)
+        self.assertEqual(a["totals"]["articleRowsWithoutAnyPathWitness"],93)
+        self.assertEqual(sum(r["checkedWitnessFileCount"]>0 for r in a["rows"]),100)
         for row in a["rows"]:
             self.assertEqual(row["checkedWitnessFileCount"],len(row["existingRegistryWitnesses"]))
             for w in row["existingRegistryWitnesses"]:
@@ -62,16 +62,20 @@ class TemporalPathEvidence(unittest.TestCase):
         trinity=[r for r in self.audit["rows"] if r["matchGrade"]=="MATCHED_TRINITY_PROPER_BUT_PENTECOST_FIRST_SUNDAY_NOT_DISTINCT"]
         self.assertEqual(len(trinity),1)
 
-    def test_94_unmatched_are_exception_queue_not_missing_features(self):
+    def test_93_unmatched_are_exception_queue_not_missing_features(self):
         e=self.exceptions
         rows=e["rows"]
-        self.assertEqual(len(rows),94)
+        self.assertEqual(len(rows),93)
         self.assertEqual({r["articleId"] for r in rows},
                          {r["articleId"] for r in self.audit["rows"] if r["checkedWitnessFileCount"]==0})
-        self.assertEqual(sum(e["categories"].values()),94)
+        self.assertEqual(sum(e["categories"].values()),93)
         self.assertEqual(e["categories"]["EXISTING_OWNER_EXPLICIT_HOLD"],3)
         self.assertEqual(e["categories"]["OFFICE_O_ANTIPHON_NOT_MASS_PROPER"],7)
         self.assertEqual(e["categories"]["ADVENT_FERIA_SOURCE_PATH_SPECULATION_DO_NOT_PROMOTE"],21)
+        last=next(r for r in self.audit["rows"] if r["articleId"]=="a0246_ancien")
+        self.assertEqual(last["sourcePathCandidate"],"Tempora/Pent24-0")
+        self.assertGreater(last["checkedWitnessFileCount"],0)
+        self.assertNotIn("a0246_ancien",{r["articleId"] for r in rows})
         self.assertTrue(all(r["assertsMissingFeature"] is False and
                             r["publicationEligibility"] is False for r in rows))
         holds={r["sourcePathCandidate"]:r["alreadyKnownHold"]
