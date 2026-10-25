@@ -172,7 +172,11 @@ export function installSequentialDevotionalReader({
       // highlighting one question must not hide other possible sins to review.
       const confessionPrimary=kind==="confession"&&
         Boolean(p.closest(".aoP435930ConfOneCard,.aoP435930Prayer"));
-      const power=canonicalPrayer||confessionPrimary?"1":i===found?"1":Math.abs(i-found)===1?".56":".30";
+      // Keep both halves of the public V./R. and St Alphonsus's prayer legible;
+      // focus still determines when the actual user reaches each posture cue.
+      const stationsPrayer=kind==="stations"&&
+        Boolean(p.closest(".aoP435930VRLine,.aoP435930StationPrayer"));
+      const power=canonicalPrayer||confessionPrimary||stationsPrayer?"1":i===found?"1":Math.abs(i-found)===1?".56":".30";
       p.style.setProperty("--ao-devo-focus",power);
       p.style.setProperty("opacity",power,"important");
       p.dataset.aoDevoActive=i===found?"true":"false";
