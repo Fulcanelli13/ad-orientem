@@ -1,0 +1,226 @@
+{
+  "schema": "AO_SACRED_PLACES_P37_EIGHT_EXACT_CHURCH_BUILDINGS_V1",
+  "date": "2026-10-25",
+  "status": "P37_PROPOSED_CANONICAL_RELEASE_PENDING_CI_MERGE",
+  "baseline": {
+    "places": 449,
+    "sources": 747,
+    "crosswalk": 449,
+    "unlinked": 190,
+    "geo_areas": 145,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 457,
+    "sources": 755,
+    "crosswalk": 457,
+    "unlinked": 198,
+    "geo_areas": 145,
+    "directory_links": 9
+  },
+  "new_physical_locations": 8,
+  "new_geo_areas": [],
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0055",
+      "place_id": "place:IT:basilica-santa-cristina-bolsena",
+      "name": "Basilica di Santa Cristina, Bolsena",
+      "place_type": "basilica",
+      "country": "IT",
+      "city": "Bolsena",
+      "country_name": "Italy",
+      "lat": 42.64341,
+      "lng": 11.98947,
+      "source_ids": [
+        "AO-P37-SITE-SG-INV-0055"
+      ],
+      "geo_source_url": "https://www.openstreetmap.org/way/239555110",
+      "geo_source_ref": "osm:way:239555110",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W239555110",
+      "identity_source_url": "https://basilicasantacristina.it/informazioni-2",
+      "identity_source_issuer": "Basilica di Santa Cristina parish custodians",
+      "source_directness": "OFFICIAL_CHURCH",
+      "scope_limit": "Basilica building distinct from Chapel of the Miracle, crypt and catacomb itinerary",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0078",
+      "place_id": "place:IT:basilica-santa-maria-degli-angeli-assisi",
+      "name": "Basilica Papale di Santa Maria degli Angeli in Porziuncola",
+      "place_type": "basilica",
+      "country": "IT",
+      "city": "Santa Maria degli Angeli, Assisi",
+      "country_name": "Italy",
+      "lat": 43.05825,
+      "lng": 12.58035,
+      "source_ids": [
+        "AO-P37-SITE-SG-INV-0078"
+      ],
+      "geo_source_url": "https://www.openstreetmap.org/way/432970256",
+      "geo_source_ref": "osm:way:432970256",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W432970256",
+      "identity_source_url": "https://www.porziuncola.org/orari.html",
+      "identity_source_issuer": "Franciscan Custody of the Porziuncola",
+      "source_directness": "OFFICIAL_CHURCH",
+      "scope_limit": "Major papal basilica surrounding the distinct interior Porziuncola chapel, not Saint Francis Basilica on the hill",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0072",
+      "place_id": "place:IT:santuario-madonna-della-corona",
+      "name": "Santuario Madonna della Corona",
+      "place_type": "shrine",
+      "country": "IT",
+      "city": "Spiazzi, Ferrara di Monte Baldo",
+      "country_name": "Italy",
+      "lat": 45.64938,
+      "lng": 10.8565,
+      "source_ids": [
+        "AO-P37-SITE-SG-INV-0072"
+      ],
+      "geo_source_url": "https://www.openstreetmap.org/way/1553719227",
+      "geo_source_ref": "osm:way:1553719227",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W1553719227",
+      "identity_source_url": "https://www.madonnadellacorona.it/messe-e-celebrazioni/",
+      "identity_source_issuer": "Diocesan Shrine of Madonna della Corona, Verona",
+      "source_directness": "OFFICIAL_CHURCH",
+      "scope_limit": "Cliffside Catholic sanctuary church proper; exclude shuttle access path, steps and adjacent facilities",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0064",
+      "place_id": "place:IT:basilica-santuario-madonna-tindari",
+      "name": "Basilica Santuario Maria SS. del Tindari",
+      "place_type": "basilica",
+      "country": "IT",
+      "city": "Tindari, Patti",
+      "country_name": "Italy",
+      "lat": 38.14138,
+      "lng": 15.04643,
+      "source_ids": [
+        "AO-P37-SITE-SG-INV-0064"
+      ],
+      "geo_source_url": "https://www.openstreetmap.org/way/156320182",
+      "geo_source_ref": "osm:way:156320182",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W156320182",
+      "identity_source_url": "https://www.diocesipatti.it/santuario-tindari/",
+      "identity_source_issuer": "Roman Catholic Diocese of Patti",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Main mapped new sanctuary basilica, separate from nearby ancient sanctuary church and office",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0066",
+      "place_id": "place:IT:basilica-maria-consolazione-reggio-calabria",
+      "name": "Basilica di Maria SS.ma della Consolazione, Eremo",
+      "place_type": "basilica",
+      "country": "IT",
+      "city": "Reggio Calabria",
+      "country_name": "Italy",
+      "lat": 38.11595,
+      "lng": 15.67174,
+      "source_ids": [
+        "AO-P37-SITE-SG-INV-0066"
+      ],
+      "geo_source_url": "https://www.openstreetmap.org/way/1373635116",
+      "geo_source_ref": "osm:way:1373635116",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W1373635116",
+      "identity_source_url": "https://www.reggiobova.it/i-santuari-dellarcidiocesi-di-reggio-calabria-bova/",
+      "identity_source_issuer": "Archdiocese of Reggio Calabria–Bova",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Hilltop Eremo basilica, distinct from city cathedral used for temporary Madonna della Consolazione procession",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0353",
+      "place_id": "place:MT:basilica-our-lady-mount-carmel-valletta",
+      "name": "Basilica of Our Lady of Mount Carmel, Valletta",
+      "place_type": "basilica",
+      "country": "MT",
+      "city": "Valletta",
+      "country_name": "Malta",
+      "lat": 35.9002,
+      "lng": 14.5123,
+      "source_ids": [
+        "AO-P37-SITE-SG-INV-0353"
+      ],
+      "geo_source_url": "https://www.openstreetmap.org/way/33808113",
+      "geo_source_ref": "osm:way:33808113",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W33808113",
+      "identity_source_url": "https://church.mt/feasts-in-malta-and-gozo-in-2026/",
+      "identity_source_issuer": "Archdiocese of Malta feast and church register",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Roman Catholic Carmelite basilica, not neighbouring Anglican St Paul's Pro-Cathedral",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0355",
+      "place_id": "place:MT:basilica-st-paul-rabat",
+      "name": "Basilica Collegiate Church of Saint Paul, Rabat",
+      "place_type": "basilica",
+      "country": "MT",
+      "city": "Rabat",
+      "country_name": "Malta",
+      "lat": 35.88174,
+      "lng": 14.39938,
+      "source_ids": [
+        "AO-P37-SITE-SG-INV-0355"
+      ],
+      "geo_source_url": "https://www.openstreetmap.org/way/30419053",
+      "geo_source_ref": "osm:way:30419053",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W30419053",
+      "identity_source_url": "https://church.mt/missio-malta-celebrates-the-work-of-missionaries-around-the-globe/",
+      "identity_source_issuer": "Archdiocese of Malta",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Rabat St Paul Basilica building, not St Paul's Mdina Cathedral or adjoining Saint Publius church",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0384",
+      "place_id": "place:US:our-lady-victory-basilica-lackawanna",
+      "name": "Our Lady of Victory National Shrine and Basilica",
+      "place_type": "basilica",
+      "country": "US",
+      "city": "Lackawanna, NY",
+      "country_name": "United States",
+      "lat": 42.82534,
+      "lng": -78.82363,
+      "source_ids": [
+        "AO-P37-SITE-SG-INV-0384"
+      ],
+      "geo_source_url": "https://www.openstreetmap.org/way/171063783",
+      "geo_source_ref": "osm:way:171063783",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W171063783",
+      "identity_source_url": "https://www.olvbasilica.org/frequently-asked-questions",
+      "identity_source_issuer": "Our Lady of Victory National Shrine and Basilica custodians",
+      "source_directness": "OFFICIAL_CHURCH",
+      "scope_limit": "Catholic Basilica at 767 Ridge Road, not adjacent school, charitable institutions or Buffalo-area Our Lady of Victory names",
+      "precision": "site"
+    }
+  ],
+  "held_scope": [
+    {
+      "candidate_id": "SG-INV-0068",
+      "name": "Bonaria, Cagliari",
+      "reason": "Old sanctuary and newer basilica are separately attested; physical-building boundary must be resolved"
+    },
+    {
+      "candidate_id": "SG-INV-0092",
+      "name": "San Gerardo Maiella, Materdomini",
+      "reason": "Separate Basilica and Chiesa del Redentore must not be collapsed into one building"
+    },
+    {
+      "candidate_id": "SG-INV-0104",
+      "name": "Sacra di San Michele",
+      "reason": "Available OSM way identifies monastery grounds, not a specific church footprint"
+    }
+  ],
+  "policy": [
+    "All eight names matched to named OSM church way features with first-party Catholic institutional or diocesan evidence.",
+    "One physical Place per building; do not infer 1962 Traditional Latin Mass schedules, images, openings, confession availability or shrine profile records from this seed.",
+    "Keep all previous canonical IDs, P16 protected historical exceptions, Directory links and source provenance unchanged.",
+    "Historic original acquisition queue remains research provenance; screening and promotion are distinct."
+  ]
+}

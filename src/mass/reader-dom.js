@@ -8,6 +8,11 @@ import { normalizePresentationMode } from "./session-engine.js";
 import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-liturgical-theme.js";
 import { R17_DONOR_PNG_ICON_KEYS, R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { exactIconBackedRubric } from "./reader-icon-backed-rubrics.js";
+import { approvedFingerRubricArt } from "./reader-approved-finger-art.js";
+import { approvedPriestRubricGestureArt } from "./reader-approved-priest-gesture-art.js";
+import { approvedPriestHeadBowRubricArt } from "./reader-approved-priest-head-bow.js";
+import { actionMeaning } from "./reader-canonical-icons.js";
+import { CUE_SURFACE, resolveCueSurface, sourceActionRubricLabel } from "./reader-cue-visual-policy.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -317,17 +322,11 @@ const SHELL_STYLE = `
 .ao-ritual-cross-symbol.ao-ritual-trigger-live{animation:aoRitualCross 1.25s ease-out both}
 @keyframes aoRitualCross{0%{transform:scale(.92);filter:brightness(.8)}35%{transform:scale(1.28);filter:brightness(1.35)}100%{transform:scale(1.08);filter:none}}
 .ao-reader-paragraph[data-translate-toggle="true"]{cursor:pointer}
-/* Gloria/Credo: one source cue, one faithful display row. The mini-icons
-   belong on the faithful side, not beside the priest's transient actions. */
-.ao-reader-paragraph[data-faithful-cues="true"]{position:relative;padding-left:67px}
-.ao-faithful-paragraph-icons{position:absolute;top:2px;left:2px;display:flex;gap:2px;align-items:flex-start}
-.ao-faithful-icon-edit{appearance:none;display:grid;place-items:center;
-  width:32px;height:36px;padding:3px;border:1px solid color-mix(in srgb,var(--ao-mass-accent) 18%,transparent);
-  border-radius:8px;background:color-mix(in srgb,var(--ao-mass-panel) 93%,transparent);
-  color:var(--ao-mass-accent-text);cursor:pointer}
-.ao-faithful-icon-edit .ao-icon-mask{width:24px;height:24px;flex:0 0 24px}
-.ao-faithful-icon-edit[data-active="true"]{border-color:var(--ao-mass-accent);box-shadow:0 0 0 1px color-mix(in srgb,var(--ao-mass-accent) 22%,transparent)}
-.ao-faithful-icon-edit:focus-visible,.ao-state-cell[data-faithful-icon-open]:focus-visible{
+/* Gloria/Credo: keep source cue ownership, but use ordinary Mass
+   paragraph geometry. Posture/gesture art is shown once in the persistent
+   ribbon and exact-cue rails, never as duplicate buttons beside every line. */
+.ao-reader-paragraph[data-faithful-cues="true"]{position:relative}
+.ao-state-cell[data-faithful-icon-open]:focus-visible{
   outline:2px solid var(--ao-mass-accent-text);outline-offset:2px}
 .ao-state-cell[data-faithful-icon-open]{cursor:pointer}
 .ao-faithful-icon-picker{position:absolute;z-index:38;left:50%;bottom:max(8px,env(safe-area-inset-bottom));
@@ -392,18 +391,21 @@ const SHELL_STYLE = `
 .ao-rail-item[data-major="true"]{width:64px;height:64px;min-height:64px;z-index:8;transform:scale(1.06)}
 @keyframes aoCueIn{0%{opacity:0;transform:scale(.78)}55%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
 .ao-rail-copy{display:none!important}
-.ao-rail-item[data-channel="priest-action"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{display:block!important;max-width:54px;font:700 7px/1.12 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;text-transform:uppercase;color:#c8d0c9;text-align:center;overflow-wrap:anywhere}
-/* Fallback for the two elevation tiles found blank in the final-icon capture. */
-.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-action"][data-action-text-fallback="true"] .ao-icon-mask{display:none!important}
-.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-action"][data-action-text-fallback="true"] .ao-rail-copy{
- display:block!important;max-width:50px;font:600 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
- color:#e6dfcd;text-transform:uppercase;letter-spacing:0;text-align:center;overflow-wrap:anywhere
+/* LIVE rails are graphic surfaces only. Missing artwork never becomes an
+   uppercase miniature rubric inside a blank icon frame. The source-owned
+   instruction remains inline with its original Mass paragraph. */
+.ao-reader-shell[data-mode="LIVE"] .ao-rail .ao-rail-item[data-icon-visible="false"]{
+  display:none!important;
 }
-/* Consecration voice-state cue stays legible if its final artwork paints blank. */
-.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-voice"][data-voice-text-fallback="true"] .ao-icon-mask{display:none!important}
-.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-voice"][data-voice-text-fallback="true"] .ao-rail-copy{
- display:block!important;max-width:50px;font:600 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
- color:#d7ddcf;letter-spacing:0;text-align:center;overflow-wrap:anywhere
+.ao-reader-shell[data-mode="LIVE"] .ao-rail .ao-rail-item .ao-rail-copy{
+  display:none!important;
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-iconless-source-rubric{
+  display:block;max-width:66ch;margin:5px 0 3px;padding:3px 0 3px 9px;
+  border-left:1px solid color-mix(in srgb,var(--ao-mass-accent) 46%,transparent);
+  font:italic 400 clamp(11px,1.04vw,13px)/1.38 var(--ao-missal-face,Georgia,serif);
+  color:color-mix(in srgb,var(--ao-text-primary,#e8e2d5) 76%,transparent);
+  text-align:left;
 }
 /* No new artwork/clock: one occasional Solemn minister *rubric*, not a
    claimed observation or a priest-action clone. Only certified existing
@@ -506,7 +508,13 @@ const SHELL_STYLE = `
 .ao-schola-resize{position:absolute;top:0;left:25%;right:25%;height:10px;cursor:ns-resize;touch-action:none}
 .ao-schola-resize:before{content:"";position:absolute;left:50%;top:3px;width:34px;height:2px;border-radius:2px;background:color-mix(in srgb,var(--ao-mass-accent) 28%,transparent);transform:translateX(-50%)}
 .ao-schola-title{display:flex;align-items:center;gap:8px;min-height:21px;padding-right:54px}
-.ao-schola-title .ao-icon-mask{width:22px;height:22px;color:var(--ao-mass-accent-text)}
+/* Schola uses approved sacred-art original. Give the figure the same
+   perceptual area as other reader icons, not a tiny 22px dock stamp. */
+.ao-schola-title .ao-icon-mask{width:34px;height:34px;flex:0 0 34px;color:var(--ao-mass-accent-text)}
+.ao-schola-title{min-height:36px}
+.ao-rail-item[data-channel="schola-shared"] .ao-icon-mask{
+  width:42px;height:42px;flex:0 0 42px
+}
 .ao-schola-kicker{font:700 8.5px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em;text-transform:uppercase;color:var(--ao-mass-accent-text)}
 .ao-schola-page{font:700 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--ao-mass-accent-text)}
 .ao-schola-status{font:600 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.06em;color:#9aa79b}
@@ -1126,6 +1134,23 @@ button.ao-schola-control{cursor:pointer}
   summary{cursor:pointer;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
 .ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics .ao-missal-ceremonial-state-detail
   p{margin:5px 0;font:italic 400 12px/1.45 var(--ao-missal-face,Georgia,serif)}
+/* Illustrate only source-certified priest finger STATE events with the
+   existing 11 Oct approved artwork. Keep the printed rubric readable in
+   MISSAL and LIVE; never place these persistent states in the action rail. */
+.ao-reader-shell .ao-approved-finger-rubric-art,
+.ao-reader-shell .ao-approved-priest-gesture-rubric-art,
+.ao-reader-shell .ao-approved-priest-head-bow-rubric-art{
+ display:inline-block;vertical-align:middle;flex:none;
+ width:29px;height:29px;margin-inline-end:6px;
+ background:var(--ao-warm,#d6caa6);
+ -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+ -webkit-mask-position:center;mask-position:center;
+ -webkit-mask-size:contain;mask-size:contain;
+}
+.ao-reader-shell .ao-approved-finger-rubric-art[hidden]{display:none}
+.ao-reader-shell .ao-approved-priest-gesture-rubric-art[hidden]{display:none}
+.ao-reader-shell .ao-approved-priest-head-bow-rubric-art[hidden]{display:none}
+
 
 .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-active="true"]){opacity:.64}
 
@@ -2079,14 +2104,83 @@ function syncRailVisibility(root){
   // transient faithful cues count when deciding if the left rail exists.
   const contextActive=live&&shell?.dataset?.objectiveContext==="true";
   const hasVisibleCue=rail=>Boolean(rail?.querySelector?.(
-    contextActive?'.ao-rail-item[data-active="true"]':
-      '.ao-rail-item[data-active="true"]:not([data-channel="posture"])'
+    contextActive
+      ?'.ao-rail-item[data-active="true"][data-icon-visible="true"]'
+      :'.ao-rail-item[data-active="true"][data-icon-visible="true"]:not([data-channel="posture"])'
   ));
   const leftActive=live&&hasVisibleCue(left),rightActive=live&&hasVisibleCue(right);
   if(left)left.dataset.visible=String(leftActive);
   if(right)right.dataset.visible=String(rightActive);
   stage.dataset.leftRail=String(leftActive);
   stage.dataset.rightRail=String(rightActive);
+}
+
+// A rail tile is allowed to exist visually only when the exact approved art
+// resolves. Text belongs in source rubrics, not in a 52px icon-shaped box.
+function syncRailIconSurfaces(root){
+  for(const item of root.querySelectorAll?.(".ao-rail .ao-rail-item")??[]){
+    const icon=item.querySelector?.(".ao-icon-mask");
+    const hasArt=Boolean(item.dataset.active==="true" && icon && !icon.hidden &&
+      icon.__aoIconIdentity);
+    // The two cinematic elevations historically forced a text-only tile
+    // because their donor graphics sometimes painted blank. Preserve source
+    // text inline instead of allowing the empty tile back.
+    const forcedText=item.dataset.channel==="priest-action" &&
+      item.dataset.actionTextFallback==="true";
+    const blankVoice=item.dataset.channel==="priest-voice" &&
+      item.dataset.voiceTextFallback==="true";
+    const visual=hasArt&&!forcedText&&!blankVoice;
+    item.dataset.iconVisible=String(visual);
+    // Historical objective-context CSS has high-specificity display:grid
+    // rules. The explicit tile-level visibility contract must win even there.
+    if(!visual){
+      item.style?.setProperty?.("display","none","important");
+      item.removeAttribute("role");
+      item.setAttribute("aria-hidden","true");
+    }else{
+      item.style?.removeProperty?.("display");
+    }
+  }
+  syncRailVisibility(root);
+}
+function syncIconlessSourceRubric(root,current,mode,iconResolver,form,language){
+  for(const old of root.querySelectorAll?.("[data-ao-iconless-rubric]")??[])
+    old.remove();
+  if(mode!=="LIVE")return;
+  const cueId=current?.nativeCueId??null;
+  if(!/^AO\.SM\.C\d{4}$/.test(String(cueId??"")))return;
+  const action=current?.priestAction;
+  const sourceCueId=action?.cueId??null;
+  const meaning=actionMeaning(action,{cueId,form});
+  const iconKey=current?.priestActionIconKey??null;
+  const tile=root.querySelector?.('.ao-rail-right [data-channel="priest-action"]');
+  const iconUrl=tile?.dataset.iconVisible==="true" &&
+    typeof iconResolver==="function" && iconKey ?iconResolver(iconKey):null;
+  const rows=[...(root.querySelectorAll?.(".ao-reader-paragraph")??[])];
+  const owner=rows.find(node=>node.dataset.cueId===cueId) ??
+    rows.find(node=>String(node.dataset.sourceCueIds??"").split(/\s+/).includes(cueId));
+  if(!owner)return;
+  const printedRubric=owner.dataset.kind==="RUBRIC" ||
+    /^\s*\[/.test(owner.querySelector?.(".ao-line-primary")?.textContent??"");
+  const hasSourceRubric=Boolean(owner.querySelector?.(
+    '.ao-live-inline-rubrics [data-source-cue-id="'+cueId+'"]'
+  ));
+  const decision=resolveCueSurface({mode,cueId,sourceCueId,
+    actionMeaning:meaning,iconKey,iconUrl,hasSourceRubric,printedRubric});
+  if(decision!==CUE_SURFACE.INLINE_RUBRIC)return;
+  const label=sourceActionRubricLabel(action?.label??action?.action??action?.value,
+    language);
+  if(!label)return;
+  const doc=owner.ownerDocument??globalThis.document;
+  const note=doc.createElement("span");
+  note.className="ao-iconless-source-rubric";
+  note.dataset.aoIconlessRubric="true";
+  note.dataset.sourceCueId=cueId;
+  note.dataset.sourceMeaning=meaning;
+  note.dataset.presentation="INLINE_RUBRIC";
+  note.dataset.observedNow="false";
+  note.textContent=label;
+  owner.append(note);
 }
 
 // The v1.80 bank uses SVG transport wrappers for 57 PNG alpha payloads,
@@ -3224,44 +3318,12 @@ export function createReaderDomAdapter({
     }
   }
   function syncFaithfulParagraphIcons(){
+    // Gloria and Credo retain editable source-cue preferences, but their
+    // gestures and posture are displayed exclusively in the common state
+    // ribbon / exact-cue rails. There is no inline art or per-line tap target.
     for(const node of root.querySelectorAll?.('.ao-reader-paragraph[data-faithful-row-id]')??[]){
       const row=current?.paragraphCues?.[node.dataset.faithfulRowId];
-      if(!row)continue;
-      node.dataset.faithfulPosture=row.posture;
-      // Inline faithful gesture art is optional. A rejected head-bow starts
-      // with no button, but a later local choice such as SIGN_OF_CROSS must
-      // create its own button without rebuilding the source prayer paragraph.
-      // Resetting to an iconless default removes it again rather than leaving
-      // an empty pictogram. The persistent posture button always remains.
-      const icons=node.querySelector(".ao-faithful-paragraph-icons");
-      if(icons){
-        let gestureButton=icons.querySelector('[data-faithful-field="gesture"]');
-        if(row.gestureIconKey && !gestureButton){
-          const doc=root.ownerDocument;
-          gestureButton=doc.createElement("button");
-          gestureButton.type="button";
-          gestureButton.className="ao-faithful-icon-edit";
-          gestureButton.dataset.faithfulIconOpen=node.dataset.faithfulRowId;
-          gestureButton.dataset.faithfulField="gesture";
-          gestureButton.setAttribute("aria-label","Customize my gesture at "+row.cueId);
-          const art=doc.createElement("span");
-          art.className="ao-icon-mask";
-          art.dataset.faithfulIconField="gesture";
-          gestureButton.append(art);
-          icons.append(gestureButton);
-        }else if(!row.gestureIconKey && gestureButton){
-          gestureButton.remove();
-        }
-      }
-      for(const button of node.querySelectorAll?.('[data-faithful-icon-open]')??[]){
-        const field=button.dataset.faithfulField;
-        const key=field==="gesture"?row.gestureIconKey:row.postureIconKey;
-        applyIconNode(button.querySelector(".ao-icon-mask"),key,iconResolver);
-        button.dataset.active=String(row.cueId===current?.customary?.cueId);
-        button.title=field==="gesture"
-          ? "My "+String(row.gesture?.label??"gesture")+" · tap to customize"
-          : "My "+row.posture+" · tap to customize";
-      }
+      if(row)node.dataset.faithfulPosture=row.posture;
     }
   }
 
@@ -3446,7 +3508,6 @@ export function createReaderDomAdapter({
     syncScholaChrome();
     syncScholaContent();
     syncProgress();
-    syncRailVisibility(root);
 
     applyIcon(root,"priest-position-rail",showContext
       ? current.priestPositionIconKey:null,iconResolver);
@@ -3472,15 +3533,17 @@ export function createReaderDomAdapter({
     applyIcon(root,"bell",visibleBell ? (current.bellIconKey??"bells") : null,iconResolver);
     applyIcon(root,"schola-shared",current.scholaShared ? current.scholaIconKey : null,iconResolver);
     applyIcon(root,"schola",current.scholaIconKey,iconResolver);
+    syncRailIconSurfaces(root);
 
     const actionBadge=root.querySelector('[data-role="priest-action-badge"]');
     const actionRail=root.querySelector('[data-channel="priest-action"]');
     const majorCue=new Set(["AO.SM.C0161","AO.SM.C0174","AO.SM.C0181","AO.SM.C0225","AO.SM.C0265","AO.SM.C0273"]);
     const activeCue=current.cinematic?.cueId ?? current.bell?.cueId ?? current.priestAction?.cueId ?? null;
     const missalAction=mode==="MISSAL"?current.missalRubric?.priestAction:null;
+    const badgeKey=missalAction?.iconKey??current.priestActionIconKey;
     const actionActive=Boolean(
-      textValue(missalAction??current.priestAction) &&
-      (missalAction?.iconKey??current.priestActionIconKey)
+      textValue(missalAction??current.priestAction) && badgeKey &&
+      typeof iconResolver==="function"&&iconResolver(badgeKey)
     );
     if(actionBadge){actionBadge.dataset.active=String(actionActive);actionBadge.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));}
     if(actionRail)actionRail.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));
@@ -3714,24 +3777,12 @@ export function createReaderDomAdapter({
           }
           const own=current.paragraphCues?.[p.id];
           if(own){
+            // Gloria and Credo have the same single, source-owned posture and
+            // gesture surface as every other Mass part: the faithful ribbon
+            // and LIVE gesture rail. The editorial cue remains attached to
+            // this paragraph; no second tiny editable icon per sentence.
             node.dataset.faithfulCues="true";
             node.dataset.faithfulRowId=p.id;
-            const icons=doc.createElement("span");
-            icons.className="ao-faithful-paragraph-icons";
-            for(const field of ["posture","gesture"]){
-              if(field==="gesture" && !own.gestureIconKey)continue;
-              const button=doc.createElement("button");
-              button.type="button";
-              button.className="ao-faithful-icon-edit";
-              button.dataset.faithfulIconOpen=p.id;
-              button.dataset.faithfulField=field;
-              button.setAttribute("aria-label","Customize my "+field+" at "+own.cueId);
-              const art=doc.createElement("span");
-              art.className="ao-icon-mask";
-              art.dataset.faithfulIconField=field;
-              button.append(art);icons.append(button);
-            }
-            node.append(icons);
           }
           // MISSAL never uses tap-to-replace as its primary reading
           // experience. Source-projected Latin and vernacular are rendered
@@ -3790,7 +3841,15 @@ export function createReaderDomAdapter({
           // Exact source-printed rubric wins. The only exception is a
           // separately approved persistent priest state: not another action.
           const shortRubrics=alreadyPrintedRubric
-            ? inlineRubrics.filter(event=>event.kind==="STATE")
+            ? inlineRubrics.filter(event=>event.kind==="STATE" ||
+                // The paragraph itself is a source rubric: never print a
+                // duplicate action. Exact separately certified Solemn
+                // minister exceptions may still need their full rubric
+                // when the existing printed line omits that instruction.
+                (event.review==="EXISTING_CERTIFIED_R18_SOLEMN_MINISTER" &&
+                 event.owner==="R18_CERTIFIED_SOLEMN_MISSAL" &&
+                 !String(p.primary??"").toLocaleLowerCase().includes(
+                   String(event.displayText??"").toLocaleLowerCase())))
             : inlineRubrics;
           if(shortRubrics?.length){
             const note=doc.createElement(mode==="MISSAL"?"div":"span");
@@ -3837,6 +3896,28 @@ export function createReaderDomAdapter({
                 text.dataset.rubricId=event.id;
                 text.dataset.sourceCueId=event.sourceCueId;
                 text.textContent=short;
+                const approvedArt=approvedFingerRubricArt(event);
+                const approvedGestureArt=approvedPriestRubricGestureArt(event);
+                const approvedHeadBowArt=approvedPriestHeadBowRubricArt(event);
+                if(approvedArt||approvedGestureArt||approvedHeadBowArt){
+                  // Keep each source-owned gesture/state tied to its exact
+                  // published 1962 rubric: no action-rail or timing mutation.
+                  const art=approvedArt??approvedGestureArt??approvedHeadBowArt;
+                  const icon=doc.createElement("span");
+                  icon.className=approvedArt
+                    ?"ao-approved-finger-rubric-art"
+                    :approvedGestureArt
+                      ?"ao-approved-priest-gesture-rubric-art"
+                      :"ao-approved-priest-head-bow-rubric-art";
+                  if(approvedArt)icon.dataset.approvedFingerEvent=event.id;
+                  if(approvedGestureArt)icon.dataset.approvedPriestGestureEvent=event.id;
+                  if(approvedHeadBowArt)icon.dataset.approvedPriestHeadBowEvent=event.id;
+                  icon.dataset.approvedAsset=art.assetId??art.assetUserKey;
+                  icon.setAttribute("aria-hidden","true");
+                  icon.style.webkitMaskImage=`url("${art.imageUrl}")`;
+                  icon.style.maskImage=`url("${art.imageUrl}")`;
+                  text.prepend(icon);
+                }
                 if(isFingerStart && event.sourceUrl){
                   const detail=doc.createElement("details");
                   detail.className="ao-missal-ceremonial-state-detail";
@@ -3919,6 +4000,9 @@ export function createReaderDomAdapter({
     }
     syncReaderRitualHighlights(root,current.gesture);
     syncExactIconBackedRubrics(root,current,mode,iconResolver);
+    syncIconlessSourceRubric(root,current,mode,iconResolver,
+      prepared?.session?.resolvedMass?.form??null,
+      prepared?.readerPreferences?.language??"en");
     syncFaithfulParagraphIcons();
     return current;
   }

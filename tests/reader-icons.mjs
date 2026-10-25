@@ -216,7 +216,7 @@ for(const [label,want] of [
   ["RECEIVES CHALICE",C("priest.action.receive_chalice")],
   ["BREAKS HOST",C("priest.action.fraction")],
   ["PLACES PARTICLE",C("priest.action.commingling")],
-  ["STRIKES BREAST",null],
+  ["STRIKES BREAST",C("priest.action.strike_breast")],
   ["BLESSES PEOPLE",null],
 ]){
   assert.equal(iconKeysForReaderState({priestAction:{label}}).priestActionIconKey,
@@ -286,4 +286,11 @@ for(const action of [{label:"BOWS HEAD",iconKey:"head_bow"},{label:"BOWS SLIGHTL
 for(const action of [{label:"BOWS PROFOUNDLY",iconKey:"priest_profound_bow_rich"},{label:"PROFOUND BOW"}]){
   assert.equal(iconKeysForReaderState({priestAction:action}).priestActionIconKey,C("priest.action.profound_bow"));
 }
+// Exact approved generic gesture; never infer the actor from artwork.
+assert.equal(iconKeysForReaderState({
+  priestAction:{label:"STRIKES BREAST",cueId:"AO.SM.C0196"},
+  cueId:"AO.SM.C0196"
+}).priestActionIconKey,C("priest.action.strike_breast"));
+assert.notEqual(C("priest.action.strike_breast"),C("faithful.gesture.strike_breast"),
+  "The two actor lanes retain distinct semantic keys despite shared approved art");
 console.log("reader icons: PASS — canonical 21 October set, separate priest position/action/voice lanes.");

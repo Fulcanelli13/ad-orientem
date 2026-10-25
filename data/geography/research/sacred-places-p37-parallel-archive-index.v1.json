@@ -1,0 +1,65 @@
+{
+  "schema": "AO_SACRED_PLACES_P37_PARALLEL_RESEARCH_ARCHIVE_V1",
+  "date": "2026-10-25",
+  "status": "RESEARCH_ARCHIVE_NOT_A_CANONICAL_PLACE_RELEASE",
+  "canonical_live_baseline": {
+    "places": 449,
+    "typed_sources": 747,
+    "geo_areas": 145,
+    "source_of_truth": "data/geography/sacred-places-live-release-chain.v1.json"
+  },
+  "superseding_releases": [
+    {
+      "id": "P35",
+      "pr": 1648,
+      "manifest": "data/geography/research/sacred-places-p35-world-13-consolidated.v1.json",
+      "physical_places": 13
+    },
+    {
+      "id": "P36",
+      "pr": 1651,
+      "manifest": "data/geography/research/sacred-places-p36-nine-exact-churches.v1.json",
+      "physical_places": 9
+    }
+  ],
+  "historical_parallel_prs": [
+    {
+      "pr": 1629,
+      "branch": "feature/sacred-places-p33-eight-exact-sites-four-areas-20261024",
+      "status": "SUPERSEDED_RESEARCH_ONLY",
+      "unique_publications_allowed": 0
+    },
+    {
+      "pr": 1632,
+      "branch": "feature/sacred-places-p32-three-sites-bulk500-reconcile-20261024",
+      "status": "SUPERSEDED_RESEARCH_ONLY",
+      "unique_publications_allowed": 0,
+      "important_research": "Contains a frozen 500-lead acquisition snapshot with status as of 2026-10-24, NOT an updated post-P36 status."
+    },
+    {
+      "pr": 1634,
+      "branch": "feature/sacred-places-p32-world-7-exact-map-20261024",
+      "status": "SUPERSEDED_RESEARCH_ONLY",
+      "unique_publications_allowed": 0
+    }
+  ],
+  "preserved_documents": [
+    "data/geography/research/sacred-places-p32-world-7-exact-map.v1.json",
+    "data/geography/research/sacred-places-p33-eight-exact-sites-four-areas.v1.json",
+    "data/geography/research/sacred-places-p32-three-sites-bulk500.v1.json",
+    "data/geography/research/sacred-places-p32-acquisition500-live-reconciled.v1.json",
+    "docs/SACRED-PLACES-P32-WORLD-7-EXACT-MAP-20261024.md",
+    "docs/SACRED-PLACES-P33-EIGHT-EXACT-SITES-FOUR-AREAS-20261024.md",
+    "docs/SACRED-PLACES-P32-BULK500-AND-THREE-SITES-20261024.md"
+  ],
+  "known_overlaps": [
+    "SG-INV-0468 Santo Cerro appears in P32 and P33, published once P35",
+    "SG-INV-0602 Matara appears in P32 and P33, published once P35"
+  ],
+  "policy": [
+    "Preserved files are immutable research provenance, not additional live canonical release manifests.",
+    "Never append P32/P33 archived manifests to the canonical release ledger.",
+    "Archived 500-lead statuses are historically frozen. Current counts must be recomputed against live Place IDs.",
+    "Legacy PRs can be closed as superseded only after this archive PR has merged successfully."
+  ]
+}

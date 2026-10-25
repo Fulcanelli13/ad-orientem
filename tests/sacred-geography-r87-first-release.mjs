@@ -19,7 +19,8 @@ const r93 = load("../data/geography/research/sacred-geography-r93-first-presence
 const p17 = load("../data/geography/research/sacred-places-p17-separated-bergamo-asuncion.v1.json");
 assert.equal(geography.places.length,LIVE.places);
 assert.equal(sources.sources.length,LIVE.sources);
-assert.equal(geography.geoAreas.length,89+r89.country_areas_added.length+r90.country_areas_added.length+r91.country_areas_added.length+r92.country_areas_added.length+r93.country_areas_added.length);
+assert.equal(89+r89.country_areas_added.length+r90.country_areas_added.length+r91.country_areas_added.length+r92.country_areas_added.length+r93.country_areas_added.length,141,"Historical R93 country-area baseline is frozen");
+assert.equal(geography.geoAreas.length,LIVE.areas,"Current area count must come from immutable release ledger");
 assert.equal(release.country_areas_added.length,17);
 assert.equal(new Set(release.published_new.map(row=>row.place_id)).size,33);
 assert.equal(new Set(release.published_new.map(row=>row.country)).size,24);

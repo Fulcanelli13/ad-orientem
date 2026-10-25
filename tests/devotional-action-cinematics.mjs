@@ -81,7 +81,7 @@ const runtime=readFileSync(new URL("../src/pray/presentation-runtime.js",import.
 const opening=readFileSync(new URL("../src/pray/devotional-cinematic.js",import.meta.url),"utf8");
 const styles=readFileSync(new URL("../src/pray/devotional-action-cinematic-styles.js",import.meta.url),"utf8");
 assert.ok(runtime.includes("actionCinematics.sync(scene,{mount:m"));
-assert.ok(runtime.includes("benedictionStage:view==='benediction'?BEN_STAGES[BEN.step]?.[0]:null"));
+assert.ok(runtime.includes("benedictionStage:view==='benediction'?benStages()[BEN.step]?.[0]:null"));
 assert.ok(runtime.includes("stationRitual:view==='stations'?certifiedPublicStationCue({"));
 assert.ok(runtime.includes("resolveAngelusIncarnationCinematic({"));
 assert.ok(opening.includes("entry.openingShown"));

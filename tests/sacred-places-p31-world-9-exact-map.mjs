@@ -11,7 +11,7 @@ const p29=get("data/geography/research/sacred-places-p29-priority95-source-scree
 const p16=get("data/geography/research/sacred-places-p16-three-qualified-site-release.v1.json");
 assert.equal(m.schema,"AO_SACRED_PLACES_P31_WORLD_9_EXACT_MAP_V1");
 assert.deepEqual([m.baseline.places,m.baseline.sources,m.baseline.crosswalk,m.baseline.unlinked,m.baseline.geo_areas],[405,703,405,146,141]);
-assert.deepEqual([m.proposed.places,m.proposed.sources,m.proposed.crosswalk,m.proposed.unlinked,m.proposed.geo_areas],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas]);
+assert.deepEqual([m.proposed.places,m.proposed.sources,m.proposed.crosswalk,m.proposed.unlinked,m.proposed.geo_areas],[414,712,414,155,141],"P31 approved historical release snapshot is immutable as later releases grow");
 assert.deepEqual([geo.places.length,ss.sources.length,cross.place_crosswalk.length,cross.exception_queues.places_without_direct_claim.length,geo.geoAreas.length,geo.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas,LIVE.links]);
 assert.equal(cross.counts.places,LIVE.places);assert.equal(cross.counts.places_without_direct_claim,LIVE.unlinked);
 assert.equal(p16.held_exceptions.length,16);assert.equal(m.p16_protected_holds,16);
@@ -45,8 +45,10 @@ for(const r of m.published_new){
  for(const field of ["opening_hours","hero_image","description_en","description_fr","mass_times","pilgrimage_schedule"])assert.equal(p[field],undefined);
 }
 assert.equal(ids.get("place:CH:pfarr-wallfahrtskirche-st-theodul-sachseln").name.official,"Pfarr- und Wallfahrtskirche St. Theodul, Sachseln");
-assert.ok(!geo.places.some(x=>x.geo?.source_ref==="osm:way:75481867"),"Romania held without geography country area");
-assert.ok(!geo.geoAreas.some(x=>x.geo_area_id==="geo:country:RO"));
+const p31Index=RELEASES.findIndex(r=>r.id==="P31");
+assert.ok(p31Index>=0);
+assert.ok(RELEASES.slice(0,p31Index+1).every(r=>!(r.data.published_new||[]).some(x=>x.geo_source_ref==="osm:way:75481867")),"Romanian site was historically held through P31");
+assert.equal(m.proposed.geo_areas,141,"P31 frozen geography remains 141 irrespective of later releases");
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...shrines,sources:ss.sources,places:geo.places}).pass,true);
 console.log("PASS P31: 9 exact Catholic physical site OSM ways across 8 countries; 9 independent sources, 9 source screens, 16 historical holds and 9 Directory links intact");

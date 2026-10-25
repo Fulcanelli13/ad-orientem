@@ -1,0 +1,249 @@
+{
+  "schema": "AO_SACRED_PLACES_P43_EIGHT_DISTINCT_CHURCH_BUILDINGS_V1",
+  "date": "2026-10-25",
+  "status": "PROPOSED_CANONICAL_RELEASE_PENDING_CI_MERGE",
+  "baseline": {
+    "places": 490,
+    "sources": 788,
+    "crosswalk": 490,
+    "unlinked": 231,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 498,
+    "sources": 796,
+    "crosswalk": 498,
+    "unlinked": 239,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "new_physical_locations": 8,
+  "new_mapping_rows_resolved": 6,
+  "new_candidate_ids_resolved": 7,
+  "new_geo_areas": [],
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "source_owners": [
+    "data/geography/research/sacred-places-p39-open68-osm-evidence.v1.json",
+    "data/geography/research/sacred-places-p38-94-case-mapping-queue.v1.json",
+    "Official Catholic pilgrim sanctuary and diocesan sources, individually itemized",
+    "Mapcarta named individual OSM church ways for Canneto, Osimo, El Quinche"
+  ],
+  "published_new": [
+    {
+      "candidate_ids": [
+        "SG-INV-0166"
+      ],
+      "candidate_id": "SG-INV-0166",
+      "place_id": "place:DE:p43-sg-0166-110413194",
+      "name": "Wallfahrtsbasilika Mariä Heimsuchung",
+      "place_type": "basilica",
+      "country": "DE",
+      "country_name": "Germany",
+      "city": "Werl",
+      "lat": 51.5537144,
+      "lng": 7.9152898,
+      "geo_source_ref": "osm:way:110413194",
+      "geo_source_url": "https://www.openstreetmap.org/way/110413194",
+      "geo_provenance_mapcarta_url": null,
+      "identity_source_url": "https://wallfahrt-werl.de/orte/basilika_mit_gnadenbild/",
+      "identity_source_issuer": "Marienwallfahrt Werl",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Newer church housing Marian image, distinct from old pilgrimage church",
+      "precision": "site",
+      "source_ids": [
+        "AO-P43-SITE-SG-INV-0166-110413194"
+      ],
+      "mapping_method": "P39_NAMED_CHURCH_BUILDING"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0166"
+      ],
+      "candidate_id": "SG-INV-0166",
+      "place_id": "place:DE:p43-sg-0166-110413193",
+      "name": "Alte Wallfahrtskirche Werl",
+      "place_type": "church",
+      "country": "DE",
+      "country_name": "Germany",
+      "city": "Werl",
+      "lat": 51.5534353,
+      "lng": 7.9150114,
+      "geo_source_ref": "osm:way:110413193",
+      "geo_source_url": "https://www.openstreetmap.org/way/110413193",
+      "geo_provenance_mapcarta_url": null,
+      "identity_source_url": "https://wallfahrt-werl.de/orte/alte_wallfahrtskirche/",
+      "identity_source_issuer": "Marienwallfahrt Werl",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Historic Baroque pilgrimage church physically distinct from newer basilica",
+      "precision": "site",
+      "source_ids": [
+        "AO-P43-SITE-SG-INV-0166-110413193"
+      ],
+      "mapping_method": "P39_NAMED_CHURCH_BUILDING"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0057"
+      ],
+      "candidate_id": "SG-INV-0057",
+      "place_id": "place:IT:p43-sg-0057-3422378",
+      "name": "Santuario dell'Amore Misericordioso",
+      "place_type": "shrine",
+      "country": "IT",
+      "country_name": "Italy",
+      "city": "Collevalenza, Todi",
+      "lat": 42.7471343,
+      "lng": 12.4825207,
+      "geo_source_ref": "osm:relation:3422378",
+      "geo_source_url": "https://www.openstreetmap.org/relation/3422378",
+      "geo_provenance_mapcarta_url": null,
+      "identity_source_url": "https://www.collevalenza.org/collevalenza/santuario/",
+      "identity_source_issuer": "Collevalenza Santuario dell'Amore Misericordioso custodians",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Santuario church, excluding Madonna delle Grazie parish church, pools and accommodation",
+      "precision": "site",
+      "source_ids": [
+        "AO-P43-SITE-SG-INV-0057-3422378"
+      ],
+      "mapping_method": "P39_NAMED_CHURCH_BUILDING"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0091"
+      ],
+      "candidate_id": "SG-INV-0091",
+      "place_id": "place:IT:p43-sg-0091-11888423",
+      "name": "Nuovo Santuario di San Gabriele dell'Addolorata",
+      "place_type": "basilica",
+      "country": "IT",
+      "country_name": "Italy",
+      "city": "Isola del Gran Sasso",
+      "lat": 42.5166586,
+      "lng": 13.6579465,
+      "geo_source_ref": "osm:relation:11888423",
+      "geo_source_url": "https://www.openstreetmap.org/relation/11888423",
+      "geo_provenance_mapcarta_url": null,
+      "identity_source_url": "https://www.sangabriele.org/orari-santuario/",
+      "identity_source_issuer": "Santuario San Gabriele Catholic Passionist custodians",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Modern 1970s sanctuary worship building separate from older basilica",
+      "precision": "site",
+      "source_ids": [
+        "AO-P43-SITE-SG-INV-0091-11888423"
+      ],
+      "mapping_method": "P39_NAMED_CHURCH_BUILDING"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0091"
+      ],
+      "candidate_id": "SG-INV-0091",
+      "place_id": "place:IT:p43-sg-0091-11888425",
+      "name": "Antico Santuario di San Gabriele dell'Addolorata",
+      "place_type": "basilica",
+      "country": "IT",
+      "country_name": "Italy",
+      "city": "Isola del Gran Sasso",
+      "lat": 42.5175938,
+      "lng": 13.6576909,
+      "geo_source_ref": "osm:relation:11888425",
+      "geo_source_url": "https://www.openstreetmap.org/relation/11888425",
+      "geo_provenance_mapcarta_url": null,
+      "identity_source_url": "https://cultura.gov.it/luogo/santuario-di-san-gabriele-dell-addolorata",
+      "identity_source_issuer": "Italian Ministry of Culture",
+      "source_directness": "PRIMARY_INSTITUTIONAL",
+      "scope_limit": "Older 19th-century sanctuary church distinct from modern basilica",
+      "precision": "site",
+      "source_ids": [
+        "AO-P43-SITE-SG-INV-0091-11888425"
+      ],
+      "mapping_method": "P39_NAMED_CHURCH_BUILDING"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0094"
+      ],
+      "candidate_id": "SG-INV-0094",
+      "place_id": "place:IT:p43-sg-0094-144658381",
+      "name": "Basilica Santuario di San Giuseppe da Copertino",
+      "place_type": "basilica",
+      "country": "IT",
+      "country_name": "Italy",
+      "city": "Osimo",
+      "lat": 43.48651,
+      "lng": 13.48353,
+      "geo_source_ref": "osm:way:144658381",
+      "geo_source_url": "https://www.openstreetmap.org/way/144658381",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/de/W144658381",
+      "identity_source_url": "https://sangiuseppedacopertino.net/",
+      "identity_source_issuer": "Basilica Santuario San Giuseppe da Copertino in Osimo",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Osimo basilica on Piazza Gallo, not the different sanctuary in Copertino, Lecce",
+      "precision": "site",
+      "source_ids": [
+        "AO-P43-SITE-SG-INV-0094-144658381"
+      ],
+      "mapping_method": "P43_INDEPENDENT_MAPCARTA_NAMED_CHURCH_WAY"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0075"
+      ],
+      "candidate_id": "SG-INV-0075",
+      "place_id": "place:IT:p43-sg-0075-262801874",
+      "name": "Santuario della Madonna di Canneto",
+      "place_type": "basilica",
+      "country": "IT",
+      "country_name": "Italy",
+      "city": "Settefrati",
+      "lat": 41.67832,
+      "lng": 13.90823,
+      "geo_source_ref": "osm:way:262801874",
+      "geo_source_url": "https://www.openstreetmap.org/way/262801874",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/36059166",
+      "identity_source_url": "https://www.madonnadicanneto.it/",
+      "identity_source_issuer": "Madonna di Canneto sanctuary Catholic custodians",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Individual Marian sanctuary church; exclude pilgrimage path and nearby parkland",
+      "precision": "site",
+      "source_ids": [
+        "AO-P43-SITE-SG-INV-0075-262801874"
+      ],
+      "mapping_method": "P43_INDEPENDENT_MAPCARTA_NAMED_CHURCH_WAY"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0511",
+        "SG-INV-0515"
+      ],
+      "candidate_id": "SG-INV-0511",
+      "place_id": "place:EC:p43-sg-0511-561028428",
+      "name": "Santuario Nacional de Nuestra Señora de El Quinche",
+      "place_type": "basilica",
+      "country": "EC",
+      "country_name": "Ecuador",
+      "city": "El Quinche, Pichincha",
+      "lat": -0.11107,
+      "lng": -78.2961,
+      "geo_source_ref": "osm:way:561028428",
+      "geo_source_url": "https://www.openstreetmap.org/way/561028428",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W561028428",
+      "identity_source_url": "https://www.arquidiocesisdequito.com.ec/parroquias/item/parroquia-san-pedro-el-quinche.html",
+      "identity_source_issuer": "Archdiocese of Quito",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "One named Marian basilica, not two Places for paired SG-INV-0511 and SG-INV-0515",
+      "precision": "site",
+      "source_ids": [
+        "AO-P43-SITE-SG-INV-0511-561028428"
+      ],
+      "mapping_method": "P43_INDEPENDENT_MAPCARTA_NAMED_CHURCH_WAY"
+    }
+  ],
+  "policy": [
+    "Separate physically different church buildings at Werl and San Gabriele into independent Places.",
+    "El Quinche dual candidate IDs represent a single Catholic basilica, never two Places.",
+    "Only named individual church OSM ways or church building relations; no campus points, duplicate objects, images or TLM schedules."
+  ]
+}

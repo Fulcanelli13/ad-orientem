@@ -164,7 +164,19 @@ export function installSequentialDevotionalReader({
       if(selected>=0)found=selected;
     }else if(body.scrollTop<2)found=0;
     shown.forEach((p,i)=>{
-      const power=i===found?"1":Math.abs(i-found)===1?".56":".30";
+      // A liturgical prayer is never muted behind instructional focus cues.
+      // Adoration/Benediction retain subtle focus only for their guidance.
+      const canonicalPrayer=(kind==="adoration"||kind==="benediction")&&
+        Boolean(p.closest(".aoP435930Prayer"));
+      // The complete examination and preparation text must remain readable:
+      // highlighting one question must not hide other possible sins to review.
+      const confessionPrimary=kind==="confession"&&
+        Boolean(p.closest(".aoP435930ConfOneCard,.aoP435930Prayer"));
+      // Keep both halves of the public V./R. and St Alphonsus's prayer legible;
+      // focus still determines when the actual user reaches each posture cue.
+      const stationsPrayer=kind==="stations"&&
+        Boolean(p.closest(".aoP435930VRLine,.aoP435930StationPrayer"));
+      const power=canonicalPrayer||confessionPrimary||stationsPrayer?"1":i===found?"1":Math.abs(i-found)===1?".56":".30";
       p.style.setProperty("--ao-devo-focus",power);
       p.style.setProperty("opacity",power,"important");
       p.dataset.aoDevoActive=i===found?"true":"false";
@@ -196,11 +208,11 @@ export function installSequentialDevotionalReader({
   });
   let touch=null,lastHorizontalSwipe=0;
   body.addEventListener("touchstart",e=>{
-    if(e.touches.length!==1||e.target.closest("a,input,textarea,select,summary,[contenteditable],[data-ao-devo-no-swipe],button:not([data-p435930-card-flip]):not([data-tp381-flip])")){touch=null;return}
+    if(e.touches.length!==1||e.target.closest("a,input,textarea,select,summary,[contenteditable],[data-ao-devo-no-swipe],button:not([data-p435930-card-flip]):not([data-tp381-flip]):not([data-p435930-flip])")){touch=null;return}
     touch={x:e.touches[0].clientX,y:e.touches[0].clientY,at:Date.now()};
   },{passive:true});
   body.addEventListener("click",e=>{
-    if(Date.now()-lastHorizontalSwipe<450&&e.target.closest("[data-p435930-card-flip],[data-tp381-flip]")){
+    if(Date.now()-lastHorizontalSwipe<450&&e.target.closest("[data-p435930-card-flip],[data-tp381-flip],[data-p435930-flip]")){
       e.preventDefault();e.stopImmediatePropagation();
     }
   },true);

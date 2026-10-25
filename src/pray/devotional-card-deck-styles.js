@@ -133,8 +133,8 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930Flip{
  max-width:100%;white-space:normal}
 #aoPray435930 .aoP435930BenedictionReader[data-ao-benediction-dual-axis="true"] .aoP435930GuideNav{display:none!important}
-#aoPray435930 .aoP435930BenedictionReader[data-ao-benediction-dual-axis="true"][data-ao-benediction-step="6"] .aoP435930GuideNav{display:flex!important}
-#aoPray435930 .aoP435930BenedictionReader[data-ao-benediction-dual-axis="true"][data-ao-benediction-step="6"] [data-p435930-ben-prev]{display:none!important}
+#aoPray435930 .aoP435930BenedictionReader[data-ao-benediction-dual-axis="true"][data-ao-benediction-final="true"] .aoP435930GuideNav{display:flex!important}
+#aoPray435930 .aoP435930BenedictionReader[data-ao-benediction-dual-axis="true"][data-ao-benediction-final="true"] [data-p435930-ben-prev]{display:none!important}
 #aoPray435930 .aoP435930BenedictionReader [data-ao-benediction-guide]{
  margin:12px 0 8px}
 #aoPray435930 .aoP435930BenedictionReader [data-ao-benediction-guide]>summary{
@@ -462,6 +462,243 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
   grid-template-columns:26px minmax(0,1fr)!important;gap:8px!important
  }
  #aoPray435930 .aoFolioReader .aoDevoCardScroll .aoAngelusDialogueLine>.ao-liturgical-speaker{width:26px!important}
+}
+
+
+/* Unified Eucharistic module chapter navigation: one quiet underlined timeline.
+   Adoration already owns this treatment; Benediction now uses the same anatomy. */
+#aoPray435930 .aoP435930BenedictionReader .aoDevoSequenceTimeline{
+ position:relative!important;top:auto!important;z-index:1!important;
+ background:transparent!important;border-block:0!important;
+ padding:0 0 4px!important;margin:0 0 5px!important;min-height:48px!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoSequenceTimeline .aoDevoStop{
+ flex:0 0 max(116px,42%)!important;min-height:45px!important;
+ border:0!important;border-bottom:1px solid var(--border,rgba(255,255,255,.13))!important;
+ border-radius:0!important;background:transparent!important;box-shadow:none!important;
+ display:grid!important;place-content:center!important;text-align:center!important;
+ padding:4px 8px!important;color:var(--muted,#aaa39a)!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoSequenceTimeline .aoDevoStop.active{
+ border-bottom:2px solid var(--liturgical,#c3a77e)!important;
+ color:var(--text,#f0e5d6)!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoStopNumber{display:none!important}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoStopTitle{
+ font:italic 12px/1.3 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:inherit!important;
+}
+/* PRAY #1644 — one prayer-first type hierarchy, shared by Adoration and Benediction.
+   Horizontal navigation and Latin tap remain runtime owners; this is presentation only. */
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="adoration"]>.aoP435930Head,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="benediction"]>.aoP435930Head{
+ grid-template-columns:44px minmax(0,1fr) 44px 44px!important;
+ align-items:center!important;gap:5px!important;
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="adoration"]>.aoP435930Head>div,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="benediction"]>.aoP435930Head>div{min-width:0!important;overflow:hidden}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="adoration"]>.aoP435930Head h1,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="benediction"]>.aoP435930Head h1{
+ overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+ font-size:clamp(15px,4.2vw,21px)!important;line-height:1.2!important;
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="adoration"]>.aoP435930Head p,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="benediction"]>.aoP435930Head p{display:none!important}
+#aoPray435930 .aoP435930SessionLanguage{
+ font:700 12px/1 var(--ao-font-ui,system-ui,sans-serif)!important;
+ letter-spacing:.07em!important;border-radius:9px!important;
+ border:1px solid var(--liturgical-border,rgba(206,177,122,.5))!important;
+ color:var(--text,#f2e8d7)!important;background:transparent!important;
+ min-height:44px!important;min-width:44px!important;touch-action:manipulation;
+}
+/* The shared card is not a second editor or a checklist. Put actual prayers first. */
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll{
+ display:flex!important;flex-direction:column!important;gap:14px!important;
+ align-items:stretch!important;overflow-anchor:none!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll>.aoP435930Prayer,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll>.aoP435930GuidePrayers{
+ order:-2;margin:0 0 10px!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll>.aoP435930GuideNow,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll>.aoP435930GuideNow{order:0}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll>.aoP435930GuideCue,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll>.aoP435930GuideCue{order:2}
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll>.aoAdorationQuietLink,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll>.aoAdorationQuietEnter{order:3}
+/* Prayer: dominant liturgical face, high contrast, generous measure and spacing. */
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930Prayer,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll .aoP435930Prayer{
+ border:0!important;border-radius:0!important;box-shadow:none!important;
+ background:transparent!important;padding:12px 0 16px!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930PrayerHead h3,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll .aoP435930PrayerHead h3{
+ font:500 clamp(19px,5vw,25px)/1.3 var(--ao-font-display,"EB Garamond",Georgia,serif)!important;
+ color:var(--liturgical,#c8ad7b)!important;margin:5px 0 13px!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930Flip,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll .aoP435930Flip,
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930Text,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll .aoP435930Text{
+ font:400 clamp(19px,5.1vw,24px)/1.65 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f4eddf)!important;letter-spacing:0!important;
+ white-space:normal!important;overflow-wrap:break-word!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoP435930PrayerHead>span,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoP435930PrayerHead>span{display:none!important}
+/* Rubrics and instructions: muted compact sans-serif, never prayer-like Georgia. */
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930GuideNow,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll .aoP435930GuideNow{
+ padding:10px 0 0!important;margin:0!important;background:none!important;border:0!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930GuideNow h2,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll .aoP435930GuideNow h2,
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930GuideNow small,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll .aoP435930GuideNow small{display:none!important}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930GuideNow p,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll .aoP435930GuideNow p{
+ margin:0!important;color:var(--muted,#afa89c)!important;
+ font:400 clamp(12px,3.5vw,14px)/1.55 var(--ao-font-ui,system-ui,sans-serif)!important;
+ letter-spacing:0!important;text-align:left!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930GuideCue,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll .aoP435930GuideCue{
+ margin:4px 0 0!important;padding:9px 0 0!important;
+ border:0!important;border-top:1px solid var(--border,rgba(255,255,255,.13))!important;
+ background:transparent!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930GuideCue small,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll .aoP435930GuideCue small{
+ color:var(--liturgical,#c5aa7b)!important;
+ font:650 10px/1.35 var(--ao-font-ui,system-ui,sans-serif)!important;
+ text-transform:uppercase!important;letter-spacing:.08em!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930GuideCue p,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll .aoP435930GuideCue p{
+ color:var(--muted,#afa89c)!important;
+ font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)!important;
+ margin:3px 0 0!important;letter-spacing:0!important;
+}
+/* The chapter timeline already names the stage; repeat neither its title nor 1/7
+   above a prayer. Keep the action title on prayerless Blessing/Silence cards. */
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCard:has(.aoP435930Prayer)>.aoDevoCardHead,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCard:has(.aoP435930Prayer)>.aoDevoCardHead{display:none!important}
+/* A prayerless stage remains legible: silence, blessing and reposition are not blank cards. */
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll:not(:has(.aoP435930Prayer)) .aoP435930GuideNow p,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll:not(:has(.aoP435930Prayer)) .aoP435930GuideNow p{
+ font-size:clamp(14px,3.8vw,16px)!important;line-height:1.62!important;
+ color:var(--text,#e6ddce)!important;
+}
+
+
+/* PRAY shared parity phase 2: Stations and Confession reuse the same one-tap
+   session locale and quiet hierarchy. Their owners and cardinalities do not change. */
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="stations"]>.aoP435930Head,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="confession"]>.aoP435930Head{
+ grid-template-columns:44px minmax(0,1fr) 44px 44px!important;
+ align-items:center!important;gap:5px!important;
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="stations"]>.aoP435930Head>div,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="confession"]>.aoP435930Head>div{
+ min-width:0!important;overflow:hidden!important;
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="stations"]>.aoP435930Head h1,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="confession"]>.aoP435930Head h1{
+ overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;
+ font-size:clamp(15px,4.2vw,21px)!important;line-height:1.2!important;
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="stations"]>.aoP435930Head p,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="confession"]>.aoP435930Head p{display:none!important}
+/* Stations retains its original direction/verse/meditation/prayer order:
+   source-based posture cues depend on paragraph scroll, so DO NOT reorder it. */
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930GuideNow{
+ padding:4px 0 2px!important;background:transparent!important;border:0!important;
+}
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930GuideNow p,
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930GuideCue p,
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930GuideNow p{
+ color:var(--muted,#aaa49b)!important;
+ font:400 clamp(12px,3.3vw,14px)/1.55 var(--ao-font-ui,system-ui,sans-serif)!important;
+ letter-spacing:0!important;
+}
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930GuideNow small,
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930GuideCue small{
+ font:650 10px/1.35 var(--ao-font-ui,system-ui,sans-serif)!important;
+ letter-spacing:.07em!important;color:var(--liturgical,#c8ad7b)!important;
+}
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930StationConsider p{
+ font:400 clamp(17px,4.5vw,21px)/1.6 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f1e7d7)!important;
+}
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930StationPrayer .aoP435930Flip,
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930VRLine{
+ font:400 clamp(19px,5vw,23px)/1.65 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f1e7d7)!important;
+}
+/* Stations already names the episode in the fourteen-stage chapter rail:
+   show its actual response and prayer instead of a duplicate numbered title. */
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="stations"] .aoP435930Stations .aoDevoCardHead{
+ display:none!important;
+}
+#aoPray435930 .aoP435930Stations .aoP435930PrayerOptions{
+ background:transparent!important;border:0!important;
+ border-bottom:1px solid var(--border,rgba(255,255,255,.13))!important;
+ border-radius:0!important;margin:0 0 4px!important;
+}
+#aoPray435930 .aoP435930Stations .aoP435930PrayerOptions>summary{
+ min-height:44px!important;padding:5px 3px!important;
+ color:var(--muted,#ada69c)!important;
+ font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+#aoPray435930 .aoP435930Stations .aoP435930PrayerOptions>summary>small{
+ color:var(--muted,#ada69c)!important;
+ font:500 11px/1.35 var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+#aoPray435930 .aoP435930Stations .aoP435930VRLine>button,
+#aoPray435930 .aoP435930Stations .aoP435930StationPrayer .aoP435930Flip{
+ font:400 clamp(19px,5vw,23px)/1.65 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f1e7d7)!important;
+}
+/* The chapter rail already identifies the active examination category. Do not
+   repeat the numbered card heading and compete with the questions. */
+#aoPray435930 .aoP435930ConfessionReader[data-ao-confession-dual-axis="true"] .aoDevoCardHead{
+ display:none!important;
+}
+/* The sacramental preparation reader is NOT a text-only prayer: the questions
+   are primary, while instructions, privacy notes and doctrine are secondary. */
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930ConfQuestions li,
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930ConfOneCard>p{
+ font:400 clamp(18px,4.6vw,22px)/1.62 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f1e7d7)!important;
+}
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930Prayer{
+ border:0!important;background:transparent!important;box-shadow:none!important;
+}
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930PrayerHead h3{
+ font:500 clamp(19px,5vw,25px)/1.3 var(--ao-font-display,"EB Garamond",Georgia,serif)!important;
+ color:var(--liturgical,#c8ad7b)!important;
+}
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930Flip{
+ font:400 clamp(19px,5.1vw,24px)/1.65 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f4eddf)!important;
+}
+
+
+/* Public Eucharistic rite is discoverable from the Adoration chooser, while
+   its own source-owned seven-stage reader remains the only implementation. */
+#aoPray435930 .aoAdorationChooser .aoAdorationPublicRiteLink{
+ display:block!important;width:100%!important;text-align:left!important;
+ min-height:54px!important;margin:9px 0 0!important;padding:12px 14px!important;
+ border:1px solid var(--border,rgba(255,255,255,.12))!important;
+ border-radius:10px!important;background:transparent!important;
+ color:var(--text,#f1e7d7)!important;
+ font:500 15px/1.35 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+}
+#aoPray435930 .aoAdorationChooser .aoAdorationPublicRiteLink small{
+ display:block!important;margin-top:5px!important;color:var(--muted,#aca69d)!important;
+ font:400 11px/1.5 var(--ao-font-ui,system-ui,sans-serif)!important;
 }
 
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}

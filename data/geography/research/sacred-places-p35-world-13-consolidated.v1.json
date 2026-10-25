@@ -1,0 +1,319 @@
+{
+  "schema": "AO_SACRED_PLACES_P35_WORLD_13_CONSOLIDATED_V1",
+  "date": "2026-10-25",
+  "status": "P35_PROPOSED_CANONICAL_RELEASE_NOT_MERGED",
+  "baseline": {
+    "places": 427,
+    "sources": 725,
+    "crosswalk": 427,
+    "unlinked": 168,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 440,
+    "sources": 738,
+    "crosswalk": 440,
+    "unlinked": 181,
+    "geo_areas": 145,
+    "directory_links": 9
+  },
+  "new_physical_locations": 13,
+  "new_country_area_count": 4,
+  "old_branch_overlaps": [
+    {
+      "id": "SG-INV-0468",
+      "first": "osm:way:320462121",
+      "other": "osm:way:320462121"
+    },
+    {
+      "id": "SG-INV-0602",
+      "first": "osm:way:637940698",
+      "other": "osm:way:637940698"
+    }
+  ],
+  "first200_additional_source_ids": [
+    "SG-INV-0537",
+    "SG-INV-0446",
+    "SG-INV-0331"
+  ],
+  "p16_protected_historical_exceptions": 16,
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0453",
+      "place_id": "place:NI:basilica-inmaculada-concepcion-el-viejo",
+      "name": "Basílica de la Inmaculada Concepción de María, El Viejo",
+      "country": "NI",
+      "place_type": "basilica",
+      "lat": 12.66222,
+      "lng": -87.16669,
+      "source_ids": [
+        "AO-P32-SITE-SG-INV-0453"
+      ],
+      "identity_source_url": "https://fides.org/es/news/34683-AMERICA_NICARAGUA_Nicaragua_celebra_450_anos_de_devocion_mariana",
+      "identity_source_issuer": "Agenzia Fides reporting the Catholic Bishops' Conference of Nicaragua",
+      "geo_source_url": "https://www.openstreetmap.org/way/548569283",
+      "geo_source_ref": "osm:way:548569283",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W548569283",
+      "precision": "site",
+      "scope_limit": "Named Catholic national shrine basilica, not the adjacent duplicate OSM church node or the wider town.",
+      "provenance_pr": "P32"
+    },
+    {
+      "candidate_id": "SG-INV-0468",
+      "place_id": "place:DO:santuario-nuestra-senora-mercedes-santo-cerro",
+      "name": "Santuario Nacional Nuestra Señora de las Mercedes, Santo Cerro",
+      "country": "DO",
+      "place_type": "shrine",
+      "lat": 19.27971,
+      "lng": -70.54687,
+      "source_ids": [
+        "AO-P32-SITE-SG-INV-0468"
+      ],
+      "identity_source_url": "https://santocerro.org/",
+      "identity_source_issuer": "Santuario Nacional Nuestra Señora de las Mercedes, custodial institution",
+      "geo_source_url": "https://www.openstreetmap.org/way/320462121",
+      "geo_source_ref": "osm:way:320462121",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W320462121",
+      "precision": "site",
+      "scope_limit": "Worship building on Santo Cerro, OSM way 320462121; neither nearby separate church mapping nor cemetery/viewpoint.",
+      "provenance_pr": "P32"
+    },
+    {
+      "candidate_id": "SG-INV-0452",
+      "place_id": "place:SV:capilla-divina-providencia-san-salvador",
+      "name": "Capilla de la Divina Providencia, Hospital Divina Providencia",
+      "country": "SV",
+      "place_type": "chapel",
+      "lat": 13.71114,
+      "lng": -89.2237,
+      "source_ids": [
+        "AO-P32-SITE-SG-INV-0452"
+      ],
+      "identity_source_url": "https://www.hospitaldivinaprovidenciasv.org/capilla-de-la-divina-providencia/",
+      "identity_source_issuer": "Hospital Divina Providencia chapel custodian",
+      "geo_source_url": "https://www.openstreetmap.org/way/1539175330",
+      "geo_source_ref": "osm:way:1539175330",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W1539175330",
+      "precision": "site",
+      "scope_limit": "Exact memorial chapel where Archbishop Romero was killed; not hospital building OSM way 671283006 or another similarly named chapel in Delgado.",
+      "provenance_pr": "P32"
+    },
+    {
+      "candidate_id": "SG-INV-0537",
+      "place_id": "place:VE:basilica-nuestra-senora-chiquinquira-maracaibo",
+      "name": "Basílica de Nuestra Señora del Rosario de Chiquinquirá y San Juan de Dios",
+      "country": "VE",
+      "place_type": "basilica",
+      "lat": 10.643,
+      "lng": -71.61592,
+      "source_ids": [
+        "AO-P32-SITE-SG-INV-0537"
+      ],
+      "identity_source_url": "https://conferenciaepiscopalvenezolana.com/mons-jose-luis-azuaje-consagro-al-estado-zulia-a-nuestra-senora-del-rosario-de-chiquinquira/",
+      "identity_source_issuer": "Conferencia Episcopal Venezolana, Arquidiócesis de Maracaibo",
+      "geo_source_url": "https://www.openstreetmap.org/way/412180343",
+      "geo_source_ref": "osm:way:412180343",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W412180343",
+      "precision": "site",
+      "scope_limit": "Roman Catholic basilica in central Maracaibo, not Cathedral of Saints Peter and Paul or adjoining plaza.",
+      "provenance_pr": "P32"
+    },
+    {
+      "candidate_id": "SG-INV-0602",
+      "place_id": "place:LK:national-shrine-our-lady-matara",
+      "name": "National Shrine of Our Lady of Matara",
+      "country": "LK",
+      "place_type": "shrine",
+      "lat": 5.94329,
+      "lng": 80.55191,
+      "source_ids": [
+        "AO-P32-SITE-SG-INV-0602"
+      ],
+      "identity_source_url": "https://gallediocese.org/parishes/",
+      "identity_source_issuer": "Roman Catholic Diocese of Galle, parish register",
+      "geo_source_url": "https://www.openstreetmap.org/way/637940698",
+      "geo_source_ref": "osm:way:637940698",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W637940698",
+      "precision": "site",
+      "scope_limit": "National Shrine of Our Lady of Matara listed by Diocese of Galle; exact dedicated OSM place_of_worship polygon, not Matara city node.",
+      "provenance_pr": "P32"
+    },
+    {
+      "candidate_id": "SG-INV-0446",
+      "place_id": "place:GT:basilica-santo-domingo-rosario-guatemala",
+      "name": "Basílica de Nuestra Señora del Rosario — Santo Domingo, Guatemala",
+      "country": "GT",
+      "place_type": "basilica",
+      "lat": 14.63759,
+      "lng": -90.50654,
+      "source_ids": [
+        "AO-P32-SITE-SG-INV-0446"
+      ],
+      "identity_source_url": "https://basilicadelrosario.gt/",
+      "identity_source_issuer": "Dominican Parroquia Santo Domingo / Basílica del Rosario",
+      "geo_source_url": "https://www.openstreetmap.org/way/405394242",
+      "geo_source_ref": "osm:way:405394242",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W405394242",
+      "precision": "site",
+      "scope_limit": "Dominican church building called Iglesia de Santo Domingo; duplicate nearby Rosario OSM node 9752146961 is not separate Place.",
+      "provenance_pr": "P32"
+    },
+    {
+      "candidate_id": "SG-INV-0709",
+      "place_id": "place:RW:cathedrale-basilique-immaculee-conception-kabgayi",
+      "name": "Cathédrale-Basilique Notre-Dame de l'Immaculée Conception de Kabgayi",
+      "country": "RW",
+      "place_type": "basilica",
+      "lat": -2.10027,
+      "lng": 29.75186,
+      "source_ids": [
+        "AO-P32-SITE-SG-INV-0709"
+      ],
+      "identity_source_url": "https://www.eglisecatholiquerwanda.org/IMG/pdf/grands_seminaire_de_nyakibanda.pdf",
+      "identity_source_issuer": "Conférence Episcopale du Rwanda, historical cathedral identification",
+      "geo_source_url": "https://www.openstreetmap.org/way/309319349",
+      "geo_source_ref": "osm:way:309319349",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/fr/W309319349",
+      "precision": "site",
+      "scope_limit": "Actual Catholic cathedral-basilica church footprint. Distinct from nearby generic Kabgayi place_of_worship node 1401426461.",
+      "provenance_pr": "P32"
+    },
+    {
+      "candidate_id": "SG-INV-0323",
+      "place_id": "place:HU:bodajk-segito-szuz-maria-basilica",
+      "name": "Bodajk Segítő Szűz Mária Kegytemplom",
+      "country": "HU",
+      "place_type": "basilica",
+      "lat": 47.32153,
+      "lng": 18.23694,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0323"
+      ],
+      "geo_source_ref": "osm:way:333285600",
+      "geo_source_url": "https://www.openstreetmap.org/way/333285600",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W333285600",
+      "identity_source_url": "https://www.szfvar.katolikus.hu/gyujtemenyek/plebaniak/segito-szuz-maria-plebania-bodajk-",
+      "identity_issuer": "Diocese of Székesfehérvár",
+      "identity_tier": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Main Marian pilgrimage basilica (minor basilica since 2023) at Szent István tér 1; not nearby Calvary chapel.",
+      "provenance_pr": "P33"
+    },
+    {
+      "candidate_id": "SG-INV-0463",
+      "place_id": "place:CU:santuario-nacional-nuestra-senora-regla",
+      "name": "Santuario Nacional Nuestra Señora de Regla",
+      "country": "CU",
+      "place_type": "shrine",
+      "lat": 23.13142,
+      "lng": -82.33599,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0463"
+      ],
+      "geo_source_ref": "osm:way:39075952",
+      "geo_source_url": "https://www.openstreetmap.org/way/39075952",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W39075952",
+      "identity_source_url": "https://arquidiocesisdelahabana.org/parroquias/",
+      "identity_issuer": "Roman Catholic Archdiocese of Havana",
+      "identity_tier": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Parish church in Regla municipality; archdiocese lists distinct Santo Cristo Redentor and other chapels separately.",
+      "provenance_pr": "P33"
+    },
+    {
+      "candidate_id": "SG-INV-0614",
+      "place_id": "place:TW:wanjin-immaculate-conception-basilica",
+      "name": "Basilica of the Immaculate Conception, Wanjin",
+      "country": "TW",
+      "place_type": "basilica",
+      "lat": 22.59508,
+      "lng": 120.61127,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0614"
+      ],
+      "geo_source_ref": "osm:way:199010890",
+      "geo_source_url": "https://www.openstreetmap.org/way/199010890",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W199010890",
+      "identity_source_url": "https://taiwangods.moi.gov.tw/html/landscape_en/1_0011.aspx?i=24",
+      "identity_issuer": "Taiwan Ministry of the Interior Religious Culture Map",
+      "identity_tier": "SECONDARY",
+      "scope_limit": "Official civil primary record of exact Wanjin Catholic basilica at Wanxing Road 24; distinct from annual procession route.",
+      "provenance_pr": "P33"
+    },
+    {
+      "candidate_id": "SG-INV-0346",
+      "place_id": "place:UA:mother-god-zarvanytsia-basilica",
+      "name": "Our Lady of Zarvanytsia Cathedral and Basilica",
+      "country": "UA",
+      "place_type": "basilica",
+      "lat": 49.22831,
+      "lng": 25.35171,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0346"
+      ],
+      "geo_source_ref": "osm:way:803877437",
+      "geo_source_url": "https://www.openstreetmap.org/way/803877437",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W803877437",
+      "identity_source_url": "https://map.ugcc.ua/view/118-sobor-zarvanytskoy-materi-bozhoy-mariyskogo-duhovnogo-tsentru-s-zarvanytsya-ternopilska-obl",
+      "identity_issuer": "Ukrainian Greek Catholic Church official church map",
+      "identity_tier": "OFFICIAL_CHURCH",
+      "scope_limit": "Eastern Catholic cathedral dedicated to the Mother of God of Zarvanytsia, not Assumption basilica or adjacent Holy Trinity Chapel.",
+      "provenance_pr": "P33"
+    },
+    {
+      "candidate_id": "SG-INV-0331",
+      "place_id": "place:RO:catedrala-sfantul-iosif-bucuresti",
+      "name": "Catedrala Sfântul Iosif, București",
+      "country": "RO",
+      "place_type": "cathedral",
+      "lat": 44.44211,
+      "lng": 26.09138,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0331"
+      ],
+      "geo_source_ref": "osm:way:75481867",
+      "geo_source_url": "https://www.openstreetmap.org/way/75481867",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W75481867",
+      "identity_source_url": "https://www.catedralasfantuliosif.ro/",
+      "identity_issuer": "Saint Joseph Cathedral Catholic custodians and Archdiocese of Bucharest",
+      "identity_tier": "OFFICIAL_CHURCH",
+      "scope_limit": "Roman Catholic cathedral building at 19 General Berthelot Street, not adjacent Romanian Atheneum or Orthodox cathedral.",
+      "provenance_pr": "P33"
+    },
+    {
+      "candidate_id": "SG-INV-0460",
+      "place_id": "place:PA:basilica-menor-jesus-nazareno-atalaya",
+      "name": "Basílica Menor Jesús Nazareno de Atalaya",
+      "country": "PA",
+      "place_type": "basilica",
+      "lat": 8.04326,
+      "lng": -80.92447,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0460"
+      ],
+      "geo_source_ref": "osm:way:396944583",
+      "geo_source_url": "https://www.openstreetmap.org/way/396944583",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W396944583",
+      "identity_source_url": "https://www.nazarenodeatalaya.com/",
+      "identity_issuer": "Jesús Nazareno de Atalaya, parish shrine custodians Diocese of Santiago",
+      "identity_tier": "OFFICIAL_CHURCH",
+      "scope_limit": "Mapped active Catholic basilica physical church; no claims of exact current public access or service schedule.",
+      "provenance_pr": "P33"
+    }
+  ],
+  "policy": [
+    "This is a stacked release dependent on P34 (PR #1647), not yet canonical on main.",
+    "P32 seven exact-site records take precedence for duplicate NI/LK/RW site IDs; P33 Santo Cerro and Matara repeats are source context only, not duplicate physical Places.",
+    "Four new country areas from P33 are required: RO, PA, TW, UA.",
+    "Keep previous heritage, shrine, apparition and 1962 Directory links unchanged and add only independent Catholic identity source records.",
+    "Verify Matara as dedicated worship-site polygon rather than claiming an established building footprint.",
+    "Old overlapping pull requests #1629, #1632, #1634 are not separately mergeable and must be reconciled after this release passes."
+  ],
+  "new_geo_areas": [
+    "geo:country:RO",
+    "geo:country:PA",
+    "geo:country:TW",
+    "geo:country:UA"
+  ]
+}

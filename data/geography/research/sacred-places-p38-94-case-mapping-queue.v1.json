@@ -1,0 +1,1796 @@
+{
+  "schema": "AO_SACRED_PLACES_P38_94_CASE_QUEUE_RECONCILIATION_V1",
+  "date": "2026-10-25",
+  "status": "HISTORICAL_74_ROW_AUDIT_WITH_POST_P38_CANONICAL_DISPOSITIONS_RESEARCH_ONLY",
+  "purpose": "Preserve the exact 94-row post-P37 mapping audit and route all 74 open rows to bulk footprint/complex-scope review; this is a review index, not location verification or a release manifest.",
+  "source_audit": {
+    "file": "Ad_Orientem_Sacred_Places_Pass10_P37_Merged_2026-10-25.xlsx",
+    "sheet": "94-CASE QUEUE",
+    "status": "User's prior audit workbook; research identifiers, row order and disposition extracted; source URLs remain in original audit workbook.",
+    "prior_audit": "Ad_Orientem_Sacred_Places_Pass6_Source_Audit_13_2026-10-25.xlsx",
+    "candidate_identity_registry": "data/geography/research/sacred-geography-curated-750-site-crosswalk-2026-10-10.v1.1.json",
+    "source_and_coordinates": "All 74 inherited institutional website leads and approximate research coordinates reproduced row-by-row from the Pass10 94-CASE QUEUE worksheet; this preserves discovery context, not site/geometry verification."
+  },
+  "canonical_at_review": {
+    "places": 457,
+    "typed_sources": 755,
+    "geo_areas": 145,
+    "release_chain": "data/geography/sacred-places-live-release-chain.v1.json",
+    "latest_merged_pr": 1659
+  },
+  "queue_accounting": {
+    "original_rows": 94,
+    "published_P36": 9,
+    "published_P37": 8,
+    "protected_complex_holds": 3,
+    "open_mapping_rows": 74,
+    "open_candidate_ids": 75,
+    "dual_id_row": "SG-INV-0511 | SG-INV-0515",
+    "review_lane_counts": {
+      "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW": 53,
+      "NAMED_CHURCH_FOOTPRINT_LOOKUP": 20,
+      "CANONICAL_SCOPE_RECONCILIATION": 1
+    }
+  },
+  "prior_published": {
+    "P36": {
+      "manifest": "data/geography/research/sacred-places-p36-nine-exact-churches.v1.json",
+      "candidate_ids": [
+        "SG-INV-0332",
+        "SG-INV-0073",
+        "SG-INV-0069",
+        "SG-INV-0291",
+        "SG-INV-0281",
+        "SG-INV-0111",
+        "SG-INV-0289",
+        "SG-INV-0127",
+        "SG-INV-0112"
+      ]
+    },
+    "P37": {
+      "manifest": "data/geography/research/sacred-places-p37-eight-exact-churches.v1.json",
+      "candidate_ids": [
+        "SG-INV-0055",
+        "SG-INV-0078",
+        "SG-INV-0072",
+        "SG-INV-0064",
+        "SG-INV-0066",
+        "SG-INV-0353",
+        "SG-INV-0355",
+        "SG-INV-0384"
+      ]
+    }
+  },
+  "protected_holds": [
+    {
+      "candidate_id": "SG-INV-0068",
+      "name": "Bonaria, Cagliari",
+      "reason": "Old sanctuary and newer basilica are separately attested; physical-building boundary must be resolved"
+    },
+    {
+      "candidate_id": "SG-INV-0092",
+      "name": "San Gerardo Maiella, Materdomini",
+      "reason": "Separate Basilica and Chiesa del Redentore must not be collapsed into one building"
+    },
+    {
+      "candidate_id": "SG-INV-0104",
+      "name": "Sacra di San Michele",
+      "reason": "Available OSM way identifies monastery grounds, not a specific church footprint"
+    }
+  ],
+  "open_mapping_queue": [
+    {
+      "queue_row": 1,
+      "candidate_ids": [
+        "SG-INV-0737"
+      ],
+      "site_name": "National Shrine of Our Lady of Mount Carmel, Middle Park",
+      "country": "AU",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://carmelites.au/about-the-carmelites/olmc",
+      "inherited_search_center": {
+        "lat": -37.8485,
+        "lng": 144.95938,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 2,
+      "candidate_ids": [
+        "SG-INV-0738"
+      ],
+      "site_name": "National Shrine of Our Lady of the Sacred Heart, Randwick",
+      "country": "AU",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.sacredheart.org.au/",
+      "inherited_search_center": {
+        "lat": -33.91625,
+        "lng": 151.2415,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 3,
+      "candidate_ids": [
+        "SG-INV-0740"
+      ],
+      "site_name": "National Shrine of Saint Anthony, Hawthorn",
+      "country": "AU",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://stanthonyshawthorn.org.au/",
+      "inherited_search_center": {
+        "lat": -37.827,
+        "lng": 145.02475,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 4,
+      "candidate_ids": [
+        "SG-INV-0741"
+      ],
+      "site_name": "National Shrine of Saint Thérèse of Lisieux, Kew",
+      "country": "AU",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://mtcarmelkew.com.au/",
+      "inherited_search_center": {
+        "lat": -37.80875,
+        "lng": 145.01638,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 5,
+      "candidate_ids": [
+        "SG-INV-0481"
+      ],
+      "site_name": "Basilica of Our Lady of Conceição da Praia, Salvador",
+      "country": "BR",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://arquidiocesesalvador.org.br/herancas-da-fe-basilica-santuario-nossa-senhora-da-conceicao-da-praia-uma-historia-de-fe-sob-o-olhar-da-padroeira-da-bahia/",
+      "inherited_search_center": {
+        "lat": -12.97525,
+        "lng": -38.5145,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 6,
+      "candidate_ids": [
+        "SG-INV-0479"
+      ],
+      "site_name": "Sanctuary of Our Lady of Piedade, Caeté",
+      "country": "BR",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://santuarionossasenhoradapiedade.arquidiocesebh.org.br/santuario/localizacao-e-como-chegar/",
+      "inherited_search_center": {
+        "lat": -19.82275,
+        "lng": -43.67575,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 7,
+      "candidate_ids": [
+        "SG-INV-0483"
+      ],
+      "site_name": "Shrine of the Eternal Father, Trindade Goiás",
+      "country": "BR",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://arquidiocesedegoiania.org.br/paroquia/santuario-basilica-do-divino-pai-eterno-trindade/",
+      "inherited_search_center": {
+        "lat": -16.66075,
+        "lng": -49.48587,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 8,
+      "candidate_ids": [
+        "SG-INV-0275"
+      ],
+      "site_name": "Sanctuary of Our Lady of Valère, Sion",
+      "country": "CH",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://diocese-sion.ch/prier/faire-un-pelerinage/valere-et-longeborgne",
+      "inherited_search_center": {
+        "lat": 46.23363,
+        "lng": 7.36438,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 9,
+      "candidate_ids": [
+        "SG-INV-0497"
+      ],
+      "site_name": "Sanctuary of Our Lady of Andacollo",
+      "country": "CL",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.santuarioandacollo.cl",
+      "inherited_search_center": {
+        "lat": -30.23175,
+        "lng": -71.08487,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 10,
+      "candidate_ids": [
+        "SG-INV-0285"
+      ],
+      "site_name": "Church of Our Lady of Sorrows, Bohosudov",
+      "country": "CZ",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "PUBLISHED_IN_CANONICAL_P38",
+      "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
+      "inherited_institutional_source_lead_url": "https://katalog.dltm.cz/web/chramy/524",
+      "inherited_search_center": {
+        "lat": 50.68163,
+        "lng": 13.8715,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "verified_building_osm_ref": "osm:way:26228879",
+      "verified_institution_url": "https://katalog.dltm.cz/web/chramy/524",
+      "published_place_id": "place:CZ:basilika-panny-marie-bolestne-bohosudov",
+      "published_source_ids": [
+        "AO-P38-SITE-SG-INV-0285"
+      ],
+      "canonical_release": "P38"
+    },
+    {
+      "queue_row": 11,
+      "candidate_ids": [
+        "SG-INV-0284"
+      ],
+      "site_name": "Church of the Name of the Virgin Mary, Křtiny",
+      "country": "CZ",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "PUBLISHED_IN_CANONICAL_P38",
+      "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
+      "inherited_institutional_source_lead_url": "http://www.pmkrtiny.cz",
+      "inherited_search_center": {
+        "lat": 49.2965,
+        "lng": 16.743,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "verified_building_osm_ref": "osm:way:61229899",
+      "verified_institution_url": "https://krtiny.katolik.cz/index.php?page=%2Fuvod%2Fzakladni_udaje",
+      "published_place_id": "place:CZ:poutni-kostel-jmena-panny-marie-krtiny",
+      "published_source_ids": [
+        "AO-P38-SITE-SG-INV-0284"
+      ],
+      "canonical_release": "P38"
+    },
+    {
+      "queue_row": 12,
+      "candidate_ids": [
+        "SG-INV-0181"
+      ],
+      "site_name": "Ettal Abbey",
+      "country": "DE",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.kloster-ettal.de",
+      "inherited_search_center": {
+        "lat": 47.5695,
+        "lng": 11.09425,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 13,
+      "candidate_ids": [
+        "SG-INV-0166"
+      ],
+      "site_name": "Sanctuary of Our Lady of Werl",
+      "country": "DE",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://wallfahrt-werl.de/",
+      "inherited_search_center": {
+        "lat": 51.55363,
+        "lng": 7.915,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 14,
+      "candidate_ids": [
+        "SG-INV-0511",
+        "SG-INV-0515"
+      ],
+      "site_name": "Sanctuary of Our Lady of El Quinche",
+      "country": "EC",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.arquidiocesisdequito.com.ec/parroquias/item/parroquia-san-pedro-el-quinche.html",
+      "inherited_search_center": {
+        "lat": -0.111,
+        "lng": -78.2965,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 15,
+      "candidate_ids": [
+        "SG-INV-0135"
+      ],
+      "site_name": "Basilica of the Sagrada Família, Barcelona",
+      "country": "ES",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://sagradafamilia.org",
+      "inherited_search_center": {
+        "lat": 41.40313,
+        "lng": 2.17475,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 16,
+      "candidate_ids": [
+        "SG-INV-0130"
+      ],
+      "site_name": "Basilica of the Vera Cruz, Caravaca de la Cruz",
+      "country": "ES",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.lacruzdecaravaca.com/horarios/",
+      "inherited_search_center": {
+        "lat": 38.10763,
+        "lng": -1.85875,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 17,
+      "candidate_ids": [
+        "SG-INV-0137"
+      ],
+      "site_name": "Burgos Cathedral",
+      "country": "ES",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.catedraldeburgos.es",
+      "inherited_search_center": {
+        "lat": 42.34038,
+        "lng": -3.70487,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 18,
+      "candidate_ids": [
+        "SG-INV-0136"
+      ],
+      "site_name": "Cathedral of Toledo",
+      "country": "ES",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.architoledo.org/catedral",
+      "inherited_search_center": {
+        "lat": 39.857,
+        "lng": -4.0245,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 19,
+      "candidate_ids": [
+        "SG-INV-0142"
+      ],
+      "site_name": "Monastery of Poblet",
+      "country": "ES",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.poblet.cat",
+      "inherited_search_center": {
+        "lat": 41.38038,
+        "lng": 1.08263,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 20,
+      "candidate_ids": [
+        "SG-INV-0124"
+      ],
+      "site_name": "Monastery of Santo Domingo de Silos",
+      "country": "ES",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.abadiadesilos.es",
+      "inherited_search_center": {
+        "lat": 41.962,
+        "lng": -3.41975,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 21,
+      "candidate_ids": [
+        "SG-INV-0115"
+      ],
+      "site_name": "Sanctuary of Our Lady of Núria",
+      "country": "ES",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.valldenuria.cat/estiu/valldenuria/el-santuari-basilica/",
+      "inherited_search_center": {
+        "lat": 42.39688,
+        "lng": 2.1535,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 22,
+      "candidate_ids": [
+        "SG-INV-0118"
+      ],
+      "site_name": "Sanctuary of Our Lady of Regla, Chipiona",
+      "country": "ES",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.santamariaderegla.com/index.php/contacto/",
+      "inherited_search_center": {
+        "lat": 36.73013,
+        "lng": -6.43887,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 23,
+      "candidate_ids": [
+        "SG-INV-0120"
+      ],
+      "site_name": "Sanctuary of Our Lady of the Angels, Getafe",
+      "country": "ES",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://cerrodelosangeles.es/ermita/",
+      "inherited_search_center": {
+        "lat": 40.308,
+        "lng": -3.6845,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 24,
+      "candidate_ids": [
+        "SG-INV-0133"
+      ],
+      "site_name": "Sanctuary of the Great Promise, Valladolid",
+      "country": "ES",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://webmail.archivalladolid.org/entidad.php?Clave=tbagprom",
+      "inherited_search_center": {
+        "lat": 41.64925,
+        "lng": -4.72087,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 25,
+      "candidate_ids": [
+        "SG-INV-0132"
+      ],
+      "site_name": "Sanctuary of the Holy Christ of Balaguer",
+      "country": "ES",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.parroquiabalaguer.org",
+      "inherited_search_center": {
+        "lat": 41.79538,
+        "lng": 0.806,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 26,
+      "candidate_ids": [
+        "SG-INV-0138"
+      ],
+      "site_name": "Seville Cathedral",
+      "country": "ES",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://catedraldesevilla.es",
+      "inherited_search_center": {
+        "lat": 37.38563,
+        "lng": -5.994,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 27,
+      "candidate_ids": [
+        "SG-INV-0126"
+      ],
+      "site_name": "Shrine at the Cave of Saint Ignatius, Manresa",
+      "country": "ES",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.covamanresa.cat/es/actividades-santuario",
+      "inherited_search_center": {
+        "lat": 41.72163,
+        "lng": 1.83075,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "scope_verification": "FIRST_PARTY_COMPLEX_SCOPE_DOCUMENTED_EXACT_WAY_NOT_CERTIFIED",
+      "scope_classification": "CAVE_CHURCH_SPIRITUALITY_CENTRE_COMPLEX"
+    },
+    {
+      "queue_row": 28,
+      "candidate_ids": [
+        "SG-INV-0048"
+      ],
+      "site_name": "Abbey of Saint-Michel de Frigolet",
+      "country": "FR",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.frigolet.com",
+      "inherited_search_center": {
+        "lat": 43.85825,
+        "lng": 4.72775,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 29,
+      "candidate_ids": [
+        "SG-INV-0043"
+      ],
+      "site_name": "Abbey of Solesmes",
+      "country": "FR",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.solesmes.com",
+      "inherited_search_center": {
+        "lat": 47.852,
+        "lng": -0.303,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 30,
+      "candidate_ids": [
+        "SG-INV-0017"
+      ],
+      "site_name": "Basilica of the Sacred Heart, Paray-le-Monial",
+      "country": "FR",
+      "review_lane": "CANONICAL_SCOPE_RECONCILIATION",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NAMED_OSM_CHURCH_WAY_IDENTIFIED_NEEDS_EXISTING_PLACE_SCOPE_DECISION",
+      "inherited_institutional_source_lead_url": "http://www.sacrecoeur-paray.org/lieux/la-basilique-du-sacre-coeur/",
+      "inherited_search_center": {
+        "lat": 46.44975,
+        "lng": 4.12138,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 31,
+      "candidate_ids": [
+        "SG-INV-0042"
+      ],
+      "site_name": "Cathedral of Notre-Dame de Strasbourg",
+      "country": "FR",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.cathedrale-strasbourg.fr",
+      "inherited_search_center": {
+        "lat": 48.58163,
+        "lng": 7.75025,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 32,
+      "candidate_ids": [
+        "SG-INV-0011"
+      ],
+      "site_name": "Notre-Dame de Bon-Secours, Lablachère",
+      "country": "FR",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "PUBLISHED_IN_CANONICAL_P38",
+      "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
+      "inherited_institutional_source_lead_url": "https://notredamedebonsecours.org/",
+      "inherited_search_center": {
+        "lat": 44.45338,
+        "lng": 4.221,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "verified_building_osm_ref": "osm:way:361802563",
+      "verified_institution_url": "https://notredamedebonsecours.org/",
+      "published_place_id": "place:FR:basilique-notre-dame-bon-secours-lablachere",
+      "published_source_ids": [
+        "AO-P38-SITE-SG-INV-0011"
+      ],
+      "canonical_release": "P38"
+    },
+    {
+      "queue_row": 33,
+      "candidate_ids": [
+        "SG-INV-0015"
+      ],
+      "site_name": "Notre-Dame de Buglose",
+      "country": "FR",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "PUBLISHED_IN_CANONICAL_P38",
+      "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
+      "inherited_institutional_source_lead_url": "https://diocese40.fr/paroisse/saint-vincent-notre-dame/",
+      "inherited_search_center": {
+        "lat": 43.78425,
+        "lng": -0.991,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "verified_building_osm_ref": "osm:way:146716528",
+      "verified_institution_url": "https://diocese40.fr/paroisse/saint-vincent-notre-dame/",
+      "published_place_id": "place:FR:basilique-notre-dame-buglose",
+      "published_source_ids": [
+        "AO-P38-SITE-SG-INV-0015"
+      ],
+      "canonical_release": "P38"
+    },
+    {
+      "queue_row": 34,
+      "candidate_ids": [
+        "SG-INV-0014"
+      ],
+      "site_name": "Notre-Dame de Marienthal",
+      "country": "FR",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "PUBLISHED_IN_CANONICAL_P38",
+      "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
+      "inherited_institutional_source_lead_url": "https://www.basiliquemarienthal.fr/",
+      "inherited_search_center": {
+        "lat": 48.7795,
+        "lng": 7.8165,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "verified_building_osm_ref": "osm:way:52873054",
+      "verified_institution_url": "https://www.basiliquemarienthal.fr/",
+      "published_place_id": "place:FR:basilique-notre-dame-marienthal",
+      "published_source_ids": [
+        "AO-P38-SITE-SG-INV-0014"
+      ],
+      "canonical_release": "P38"
+    },
+    {
+      "queue_row": 35,
+      "candidate_ids": [
+        "SG-INV-0013"
+      ],
+      "site_name": "Notre-Dame de l'Épine, L'Épine",
+      "country": "FR",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "PUBLISHED_IN_CANONICAL_P38",
+      "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
+      "inherited_institutional_source_lead_url": "https://chalons.catholique.fr/lepine/",
+      "inherited_search_center": {
+        "lat": 48.977,
+        "lng": 4.47,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "verified_building_osm_ref": "osm:way:132183915",
+      "verified_institution_url": "https://chalons.catholique.fr/lepine/",
+      "published_place_id": "place:FR:basilique-notre-dame-lepine",
+      "published_source_ids": [
+        "AO-P38-SITE-SG-INV-0013"
+      ],
+      "canonical_release": "P38"
+    },
+    {
+      "queue_row": 36,
+      "candidate_ids": [
+        "SG-INV-0012"
+      ],
+      "site_name": "Notre-Dame de la Délivrande, Douvres-la-Délivrande",
+      "country": "FR",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://bayeuxlisieux.catholique.fr/paroisses/notre-dame-de-la-delivrande/presentation-de-la-paroisse/",
+      "inherited_search_center": {
+        "lat": 49.29875,
+        "lng": -0.3725,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 37,
+      "candidate_ids": [
+        "SG-INV-0016"
+      ],
+      "site_name": "Our Lady of La Peinière",
+      "country": "FR",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.diocese35.fr/sanctuaire/la-peiniere/",
+      "inherited_search_center": {
+        "lat": 48.10638,
+        "lng": -1.354,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 38,
+      "candidate_ids": [
+        "SG-INV-0045"
+      ],
+      "site_name": "Saint-Victor Abbey, Marseille",
+      "country": "FR",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.saintvictor.net",
+      "inherited_search_center": {
+        "lat": 43.29025,
+        "lng": 5.36513,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 39,
+      "candidate_ids": [
+        "SG-INV-0022"
+      ],
+      "site_name": "Sanctuary of Our Lady of the Sacred Heart, Issoudun",
+      "country": "FR",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.issoudun-msc.com/pelerinages",
+      "inherited_search_center": {
+        "lat": 46.95163,
+        "lng": 1.99413,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 40,
+      "candidate_ids": [
+        "SG-INV-0032"
+      ],
+      "site_name": "Shrine of Saint John Francis Regis, Lalouvesc",
+      "country": "FR",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.saintregislalouvesc.org/le-sanctuaire/",
+      "inherited_search_center": {
+        "lat": 45.11838,
+        "lng": 4.53588,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 41,
+      "candidate_ids": [
+        "SG-INV-0250"
+      ],
+      "site_name": "Carfin Grotto",
+      "country": "GB",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.carfingrotto.org",
+      "inherited_search_center": {
+        "lat": 55.80638,
+        "lng": -3.95575,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 42,
+      "candidate_ids": [
+        "SG-INV-0249"
+      ],
+      "site_name": "National Shrine of Our Lady of the Taper, Cardigan",
+      "country": "GB",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.ourladyofthetaper.org.uk",
+      "inherited_search_center": {
+        "lat": 52.08725,
+        "lng": -4.65275,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 43,
+      "candidate_ids": [
+        "SG-INV-0322"
+      ],
+      "site_name": "Marian shrine of Máriagyűd",
+      "country": "HU",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://mariagyud.hu",
+      "inherited_search_center": {
+        "lat": 45.87838,
+        "lng": 18.27338,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 44,
+      "candidate_ids": [
+        "SG-INV-0321"
+      ],
+      "site_name": "Shrine of Our Lady of Mátraverebély-Szentkút",
+      "country": "HU",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.turizmus.szentkut.hu/en",
+      "inherited_search_center": {
+        "lat": 48.00013,
+        "lng": 19.76125,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 45,
+      "candidate_ids": [
+        "SG-INV-0592"
+      ],
+      "site_name": "Shrine of Saint Thomas, Malayattoor",
+      "country": "IN",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://ernakulamarchdiocese.org/pilgrim",
+      "inherited_search_center": {
+        "lat": 10.18525,
+        "lng": 76.50663,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 46,
+      "candidate_ids": [
+        "SG-INV-0098"
+      ],
+      "site_name": "Abbey of Grottaferrata",
+      "country": "IT",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.abbaziagrecia.it/parrocchia.asp",
+      "inherited_search_center": {
+        "lat": 41.78563,
+        "lng": 12.66638,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 47,
+      "candidate_ids": [
+        "SG-INV-0097"
+      ],
+      "site_name": "Abbey of Subiaco (Sacro Speco)",
+      "country": "IT",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.monasterosanbenedettosubiaco.it",
+      "inherited_search_center": {
+        "lat": 41.91688,
+        "lng": 13.118,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 48,
+      "candidate_ids": [
+        "SG-INV-0087"
+      ],
+      "site_name": "Basilica of Saint Catherine, Siena",
+      "country": "IT",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.essentiaonline.com/basilica/",
+      "inherited_search_center": {
+        "lat": 43.32013,
+        "lng": 11.32625,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 49,
+      "candidate_ids": [
+        "SG-INV-0057"
+      ],
+      "site_name": "Sanctuary of Merciful Love, Collevalenza",
+      "country": "IT",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.collevalenza.org/collevalenza/santuario/",
+      "inherited_search_center": {
+        "lat": 42.74688,
+        "lng": 12.4825,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 50,
+      "candidate_ids": [
+        "SG-INV-0065"
+      ],
+      "site_name": "Sanctuary of Oropa",
+      "country": "IT",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.santuariodioropa.it/",
+      "inherited_search_center": {
+        "lat": 45.62863,
+        "lng": 7.97825,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 51,
+      "candidate_ids": [
+        "SG-INV-0075"
+      ],
+      "site_name": "Sanctuary of Our Lady of Canneto, Settefrati",
+      "country": "IT",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.madonnadicanneto.it",
+      "inherited_search_center": {
+        "lat": 41.67825,
+        "lng": 13.90775,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 52,
+      "candidate_ids": [
+        "SG-INV-0074"
+      ],
+      "site_name": "Sanctuary of Our Lady of the Mystical Rose, Montichiari",
+      "country": "IT",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://rosamisticafontanelle.it/",
+      "inherited_search_center": {
+        "lat": 45.3845,
+        "lng": 10.39725,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 53,
+      "candidate_ids": [
+        "SG-INV-0091"
+      ],
+      "site_name": "Sanctuary of Saint Gabriel of Our Lady of Sorrows, Isola del Gran Sasso",
+      "country": "IT",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.sangabriele.org",
+      "inherited_search_center": {
+        "lat": 42.517,
+        "lng": 13.6575,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 54,
+      "candidate_ids": [
+        "SG-INV-0094"
+      ],
+      "site_name": "Sanctuary of Saint Joseph of Cupertino, Osimo",
+      "country": "IT",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.sangiuseppedacopertino.net/",
+      "inherited_search_center": {
+        "lat": 43.48638,
+        "lng": 13.48313,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 55,
+      "candidate_ids": [
+        "SG-INV-0070"
+      ],
+      "site_name": "Sanctuary of the Madonna of Caravaggio, Caravaggio",
+      "country": "IT",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.santuariodicaravaggio.it",
+      "inherited_search_center": {
+        "lat": 45.48138,
+        "lng": 9.63,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 56,
+      "candidate_ids": [
+        "SG-INV-0623"
+      ],
+      "site_name": "Haemi Martyrs International Shrine",
+      "country": "KR",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.haemi.or.kr",
+      "inherited_search_center": {
+        "lat": 36.7125,
+        "lng": 126.53813,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 57,
+      "candidate_ids": [
+        "SG-INV-0234"
+      ],
+      "site_name": "Martyrs of Gorcum Shrine, Brielle",
+      "country": "NL",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.martelarenvangorcum.nl",
+      "inherited_search_center": {
+        "lat": 51.89488,
+        "lng": 4.15475,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 58,
+      "candidate_ids": [
+        "SG-INV-0636"
+      ],
+      "site_name": "National Shrine of Our Lady of Aranzazu, San Mateo",
+      "country": "PH",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://aranzazushrine.ph",
+      "inherited_search_center": {
+        "lat": 14.6955,
+        "lng": 121.11738,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 59,
+      "candidate_ids": [
+        "SG-INV-0638"
+      ],
+      "site_name": "National Shrine of Our Lady of Mount Carmel, Quezon City",
+      "country": "PH",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://mtcarmelshrine.com.ph",
+      "inherited_search_center": {
+        "lat": 14.61438,
+        "lng": 121.03075,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 60,
+      "candidate_ids": [
+        "SG-INV-0214"
+      ],
+      "site_name": "Basilica of Saint Hedwig, Trzebnica",
+      "country": "PL",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://bazylika-trzebnica.pl",
+      "inherited_search_center": {
+        "lat": 51.30938,
+        "lng": 17.06625,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 61,
+      "candidate_ids": [
+        "SG-INV-0219"
+      ],
+      "site_name": "Basilica of Saint Mary, Gdańsk",
+      "country": "PL",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.bazylikamariacka.pl",
+      "inherited_search_center": {
+        "lat": 54.34988,
+        "lng": 18.65213,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 62,
+      "candidate_ids": [
+        "SG-INV-0204"
+      ],
+      "site_name": "Sanctuary of Our Lady of Ludźmierz",
+      "country": "PL",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://mbludzm.pl/",
+      "inherited_search_center": {
+        "lat": 49.465,
+        "lng": 19.98275,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 63,
+      "candidate_ids": [
+        "SG-INV-0211"
+      ],
+      "site_name": "Sanctuary of Our Lady of Sorrows, Stary Wielisław",
+      "country": "PL",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.starywielislaw.pl",
+      "inherited_search_center": {
+        "lat": 50.39975,
+        "lng": 16.56463,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 64,
+      "candidate_ids": [
+        "SG-INV-0472"
+      ],
+      "site_name": "Basilica of Our Lady of Monserrate, Hormigueros",
+      "country": "PR",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.santuariolamonserrate.org",
+      "inherited_search_center": {
+        "lat": 18.1405,
+        "lng": -67.12712,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 65,
+      "candidate_ids": [
+        "SG-INV-0160"
+      ],
+      "site_name": "Sanctuary of São Bento da Porta Aberta",
+      "country": "PT",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.sbento.pt",
+      "inherited_search_center": {
+        "lat": 41.69013,
+        "lng": -8.20362,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 66,
+      "candidate_ids": [
+        "SG-INV-0378"
+      ],
+      "site_name": "National Shrine of Our Lady of Consolation, Carey",
+      "country": "US",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.olcshrine.com",
+      "inherited_search_center": {
+        "lat": 40.951,
+        "lng": -83.38712,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 67,
+      "candidate_ids": [
+        "SG-INV-0375"
+      ],
+      "site_name": "National Shrine of Our Lady of La Leche, St Augustine",
+      "country": "US",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://missionandshrine.org",
+      "inherited_search_center": {
+        "lat": 29.90475,
+        "lng": -81.31537,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "scope_verification": "FIRST_PARTY_COMPLEX_SCOPE_DOCUMENTED_EXACT_WAY_NOT_CERTIFIED",
+      "scope_classification": "MULTI_BUILDING_CATHOLIC_SHRINE_COMPLEX"
+    },
+    {
+      "queue_row": 68,
+      "candidate_ids": [
+        "SG-INV-0386"
+      ],
+      "site_name": "National Shrine of Our Lady of Sorrows, Portland",
+      "country": "US",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.thegrotto.org",
+      "inherited_search_center": {
+        "lat": 45.553,
+        "lng": -122.57162,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 69,
+      "candidate_ids": [
+        "SG-INV-0397"
+      ],
+      "site_name": "National Shrine of Saint Dymphna, Massillon",
+      "country": "US",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.natlshrinestdymphna.org",
+      "inherited_search_center": {
+        "lat": 40.802,
+        "lng": -81.52287,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "scope_verification": "FIRST_PARTY_COMPLEX_SCOPE_DOCUMENTED_EXACT_WAY_NOT_CERTIFIED",
+      "scope_classification": "SHRINE_INSIDE_HOST_PARISH_CHURCH"
+    },
+    {
+      "queue_row": 70,
+      "candidate_ids": [
+        "SG-INV-0392"
+      ],
+      "site_name": "National Shrine of Saint Frances Xavier Cabrini, Chicago",
+      "country": "US",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://cabrinishrinechicago.com",
+      "inherited_search_center": {
+        "lat": 41.929,
+        "lng": -87.63987,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "scope_verification": "FIRST_PARTY_COMPLEX_SCOPE_DOCUMENTED_EXACT_WAY_NOT_CERTIFIED",
+      "scope_classification": "FORMER_HOSPITAL_CHAPEL_RETAINED_AS_NATIONAL_SHRINE"
+    },
+    {
+      "queue_row": 71,
+      "candidate_ids": [
+        "SG-INV-0394"
+      ],
+      "site_name": "National Shrine of Saint Jude, Chicago",
+      "country": "US",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.stjudeleague.com",
+      "inherited_search_center": {
+        "lat": 41.73013,
+        "lng": -87.54675,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    },
+    {
+      "queue_row": 72,
+      "candidate_ids": [
+        "SG-INV-0399"
+      ],
+      "site_name": "National Shrine of Saint Thérèse, Darien",
+      "country": "US",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.saint-therese.org",
+      "inherited_search_center": {
+        "lat": 41.734,
+        "lng": -87.97637,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "scope_verification": "FIRST_PARTY_COMPLEX_SCOPE_DOCUMENTED_EXACT_WAY_NOT_CERTIFIED",
+      "scope_classification": "SHRINE_CHURCH_MUSEUM_AND_GROUNDS_COMPLEX"
+    },
+    {
+      "queue_row": 73,
+      "candidate_ids": [
+        "SG-INV-0385"
+      ],
+      "site_name": "Shrine of Our Lady of the Miraculous Medal, Perryville",
+      "country": "US",
+      "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.amm.org/visit.htm",
+      "inherited_search_center": {
+        "lat": 37.72675,
+        "lng": -89.88962,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
+      "scope_verification": "FIRST_PARTY_COMPLEX_SCOPE_DOCUMENTED_EXACT_WAY_NOT_CERTIFIED",
+      "scope_classification": "SHRINE_WITHIN_ST_MARYS_BARRENS_CHURCH_MULTIFEATURE_GROUNDS"
+    },
+    {
+      "queue_row": 74,
+      "candidate_ids": [
+        "SG-INV-0672"
+      ],
+      "site_name": "Basilica of Our Lady of Sở Kiện",
+      "country": "VN",
+      "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
+      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://trungtamhanhhuongsokien.org",
+      "inherited_search_center": {
+        "lat": 20.49975,
+        "lng": 105.89638,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
+    }
+  ],
+  "research_findings": [
+    {
+      "candidate_id": "SG-INV-0017",
+      "name": "Basilica of the Sacred Heart, Paray-le-Monial",
+      "existing_canonical_place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "existing_place_geo_precision": "complex_anchor",
+      "proposed_osm_church_feature": "osm:way:121381927",
+      "osm_url": "https://www.openstreetmap.org/way/121381927",
+      "map_feature_evidence_url": "https://mapcarta.com/W121381927",
+      "custodian_reference": "https://sacrecoeur-paray.org/en/1st-stage-the-basilica-and-the-sacred-heart/",
+      "provisional_decision": "MATCHED_BASILICA_WAY; DO_NOT_ADD_DUPLICATE; FIRST_DECIDE_IF_EXISTING_PLACE_IS_COMPLEX_LEVEL_OR_BUILDING_LEVEL",
+      "publication_gate": "EXISTING_PLACE_SCOPE_AND_GEO_CONTRACT_REVIEW"
+    }
+  ],
+  "operational_gates": [
+    "Screen all 74 original rows together while preserving both candidate IDs on the El Quinche row.",
+    "An inherited coordinate, map search result, website excerpt or name similarity alone does not verify a church building.",
+    "Confirm first-party Catholic ownership/identity, exact OSM way with church footprint (or independently certified site geometry), then deduplicate against current canonical Place and source_ref.",
+    "Separately identify physical churches, chapels, religious campus grounds, archaeological monuments, non-Catholic custodians and genuinely ambiguous scopes.",
+    "Resolve existing-Place reuse or geometry upgrade before creating new Place IDs; preserve frozen IDs and historical release ledger.",
+    "Keep Bonaria, Materdomini and Sacra di San Michele protected until their exact building-versus-complex boundaries are independently established.",
+    "This file is NOT appended to sacred-places-live-release-chain; published counts remain 457/755/145 and no Mass schedule, image right, relic claim or pilgrim service is implied.",
+    "The six matched ways are exact individual named building records and are not automatically promoted by this research-only PR; the current live registry has no matching geo.source_ref values."
+  ],
+  "researched_building_matches": [
+    {
+      "id": "SG-INV-0285",
+      "name": "Bazilika Panny Marie Bolestné, Bohosudov",
+      "country": "CZ",
+      "city": "Bohosudov, Krupka",
+      "type": "basilica",
+      "way": 26228879,
+      "lat": 50.68174,
+      "lng": 13.87192,
+      "tag": "building=yes; amenity=place_of_worship; denomination=roman_catholic",
+      "identity_url": "https://katalog.dltm.cz/web/chramy/524",
+      "issuer": "Roman Catholic Diocese of Litoměřice church catalogue",
+      "map_url": "https://mapcarta.com/W26228879",
+      "scope": "Named Basilica of Our Lady of Sorrows building on Mariánské náměstí; exclude other Bohosudov campus premises",
+      "geo_source_ref": "osm:way:26228879",
+      "geo_source_url": "https://www.openstreetmap.org/way/26228879",
+      "geo_precision": "site",
+      "independent_named_building_match": true,
+      "existing_canonical_source_ref_collision": false,
+      "matched_existing_place_id": null,
+      "source_reviewed_at": "2026-10-25",
+      "release_gate": "RELEASE_CANDIDATE_REQUIRES_FULL_CANONICAL_BUILD_AND_CI"
+    },
+    {
+      "id": "SG-INV-0284",
+      "name": "Poutní kostel Jména Panny Marie, Křtiny",
+      "country": "CZ",
+      "city": "Křtiny",
+      "type": "church",
+      "way": 61229899,
+      "lat": 49.2966,
+      "lng": 16.74265,
+      "tag": "building=church; amenity=place_of_worship; denomination=roman_catholic",
+      "identity_url": "https://krtiny.katolik.cz/index.php?page=%2Fuvod%2Fzakladni_udaje",
+      "issuer": "Roman Catholic Parish of Křtiny (archived parish identity; refers to newer pmkrtiny.cz site)",
+      "map_url": "https://mapcarta.com/fr/39526790",
+      "scope": "Main Křtiny pilgrimage church only, separate St Anne chapel, cloister and residence",
+      "geo_source_ref": "osm:way:61229899",
+      "geo_source_url": "https://www.openstreetmap.org/way/61229899",
+      "geo_precision": "site",
+      "independent_named_building_match": true,
+      "existing_canonical_source_ref_collision": false,
+      "matched_existing_place_id": null,
+      "source_reviewed_at": "2026-10-25",
+      "release_gate": "RELEASE_CANDIDATE_REQUIRES_FULL_CANONICAL_BUILD_AND_CI"
+    },
+    {
+      "id": "SG-INV-0011",
+      "name": "Basilique Notre-Dame-de-Bon-Secours, Lablachère",
+      "country": "FR",
+      "city": "Lablachère",
+      "type": "basilica",
+      "way": 361802563,
+      "lat": 44.45325,
+      "lng": 4.22129,
+      "tag": "building=church; amenity=place_of_worship; denomination=catholic",
+      "identity_url": "https://notredamedebonsecours.org/",
+      "issuer": "Sanctuaire Notre-Dame de Bon Secours, parish Sainte-Thérèse des Cévennes (Diocese of Viviers)",
+      "map_url": "https://mapcarta.com/W361802563",
+      "scope": "Current pilgrimage basilica building; do not conflate historic chapels or adjacent parish facilities",
+      "geo_source_ref": "osm:way:361802563",
+      "geo_source_url": "https://www.openstreetmap.org/way/361802563",
+      "geo_precision": "site",
+      "independent_named_building_match": true,
+      "existing_canonical_source_ref_collision": false,
+      "matched_existing_place_id": null,
+      "source_reviewed_at": "2026-10-25",
+      "release_gate": "RELEASE_CANDIDATE_REQUIRES_FULL_CANONICAL_BUILD_AND_CI"
+    },
+    {
+      "id": "SG-INV-0015",
+      "name": "Basilique Notre-Dame de Buglose",
+      "country": "FR",
+      "city": "Saint-Vincent-de-Paul, Landes",
+      "type": "basilica",
+      "way": 146716528,
+      "lat": 43.78422,
+      "lng": -0.99067,
+      "tag": "building=church; amenity=place_of_worship; denomination=catholic",
+      "identity_url": "https://diocese40.fr/paroisse/saint-vincent-notre-dame/",
+      "issuer": "Roman Catholic Diocese of Aire-et-Dax parish and Buglose sanctuary register",
+      "map_url": "https://mapcarta.com/W146716528",
+      "scope": "Basilica building only; separate Miracle Chapel osm:way:146710084 and monastery/sanctuary osm:way:146711156",
+      "geo_source_ref": "osm:way:146716528",
+      "geo_source_url": "https://www.openstreetmap.org/way/146716528",
+      "geo_precision": "site",
+      "independent_named_building_match": true,
+      "existing_canonical_source_ref_collision": false,
+      "matched_existing_place_id": null,
+      "source_reviewed_at": "2026-10-25",
+      "release_gate": "RELEASE_CANDIDATE_REQUIRES_FULL_CANONICAL_BUILD_AND_CI"
+    },
+    {
+      "id": "SG-INV-0014",
+      "name": "Basilique Notre-Dame de Marienthal",
+      "country": "FR",
+      "city": "Marienthal, Haguenau",
+      "type": "basilica",
+      "way": 52873054,
+      "lat": 48.7795,
+      "lng": 7.81693,
+      "tag": "building=church; amenity=place_of_worship; denomination=roman_catholic",
+      "identity_url": "https://www.basiliquemarienthal.fr/",
+      "issuer": "Basilique et sanctuaire Notre-Dame de Marienthal official custodians",
+      "map_url": "https://mapcarta.com/W52873054",
+      "scope": "Main pilgrimage basilica; exclude distinct confession chapel, Saint Christophe chapel, Carmel chapel, guest house",
+      "geo_source_ref": "osm:way:52873054",
+      "geo_source_url": "https://www.openstreetmap.org/way/52873054",
+      "geo_precision": "site",
+      "independent_named_building_match": true,
+      "existing_canonical_source_ref_collision": false,
+      "matched_existing_place_id": null,
+      "source_reviewed_at": "2026-10-25",
+      "release_gate": "RELEASE_CANDIDATE_REQUIRES_FULL_CANONICAL_BUILD_AND_CI"
+    },
+    {
+      "id": "SG-INV-0013",
+      "name": "Basilique Notre-Dame de L'Épine",
+      "country": "FR",
+      "city": "L'Épine, Marne",
+      "type": "basilica",
+      "way": 132183915,
+      "lat": 48.97707,
+      "lng": 4.47042,
+      "tag": "building=church; amenity=place_of_worship; denomination=catholic",
+      "identity_url": "https://chalons.catholique.fr/lepine/",
+      "issuer": "Roman Catholic Diocese of Châlons, Notre-Dame de L'Épine sanctuary",
+      "map_url": "https://mapcarta.com/W132183915",
+      "scope": "Individual Gothic basilica building, not the broader sanctuary property",
+      "geo_source_ref": "osm:way:132183915",
+      "geo_source_url": "https://www.openstreetmap.org/way/132183915",
+      "geo_precision": "site",
+      "independent_named_building_match": true,
+      "existing_canonical_source_ref_collision": false,
+      "matched_existing_place_id": null,
+      "source_reviewed_at": "2026-10-25",
+      "release_gate": "RELEASE_CANDIDATE_REQUIRES_FULL_CANONICAL_BUILD_AND_CI"
+    }
+  ],
+  "additional_geometry_candidates": [
+    {
+      "candidate_id": "SG-INV-0472",
+      "place_name": "Basilica of Our Lady of Monserrate, Hormigueros",
+      "proposed_osm_way_ref": "osm:way:534971537",
+      "evidence": "https://commons.wikimedia.org/wiki/Category:Bas%C3%ADlica_Menor_Nuestra_Se%C3%B1ora_de_la_Monserrate",
+      "government_identity": "https://jp.pr.gov/wp-content/uploads/2021/11/Hormigueros-Plan-Final-5-diciembre-2009-Documento.pdf",
+      "remaining_gate": "Confirm way building tags and distinct basilica footprint, not attached historic pilgrimage house; independent Catholic institutional custody needed",
+      "status": "PROVISIONAL_NOT_RELEASE_READY"
+    }
+  ],
+  "geometry_review_status": {
+    "queue_rows": 74,
+    "candidates_with_full_matched_named_church_ways": 6,
+    "candidate_with_provisional_way_unverified": 1,
+    "existing_canonical_scope_reconciliation": 1,
+    "other_open_rows_not_yet_building_verified": 66,
+    "notes": "6 plus provisional PR plus Paray existing-canonical = 8 of 74 rows with an identified feature or scope finding; 66 await exact church geometry. No new Place publication.",
+    "published_canonical_in_p38": 6,
+    "current_remaining_open": 68,
+    "note": "Six exact building matches published in P38 via PR #1664. One provisional Hormigueros, one Paray existing-canonical scope and 66 other original rows still open. No additional Place publication from this audit."
+  },
+  "institutional_scope_adjudications": [
+    {
+      "id": "SG-INV-0397",
+      "scope": "SHRINE_INSIDE_HOST_PARISH_CHURCH",
+      "url": "https://natlshrinestdymphna.org/site/",
+      "finding": "National Shrine of Saint Dymphna is located inside Saint Mary's Church in Massillon, not independently a distinct Dymphna church building.",
+      "next": "Identify exact OSM way for Saint Mary's parish church; reuse or add host physical church only after identity deduplication. Keep devotional shrine classification separate.",
+      "status": "RESEARCH_ONLY_NOT_MAP_VERIFIED",
+      "evaluated_at": "2026-10-25"
+    },
+    {
+      "id": "SG-INV-0375",
+      "scope": "MULTI_BUILDING_CATHOLIC_SHRINE_COMPLEX",
+      "url": "https://missionandshrine.org/location-and-hours/",
+      "finding": "Mission Nombre de Dios site distinguishes Shrine Church, Historic Chapel, and grounds at St Augustine.",
+      "next": "Independently identify a named church-footprint OSM way, separate historic chapel, and exclude campus grounds from the church Place.",
+      "status": "RESEARCH_ONLY_NOT_MAP_VERIFIED",
+      "evaluated_at": "2026-10-25"
+    },
+    {
+      "id": "SG-INV-0126",
+      "scope": "CAVE_CHURCH_SPIRITUALITY_CENTRE_COMPLEX",
+      "url": "https://www.covamanresa.cat/en/sanctuary",
+      "finding": "The Cave of Saint Ignatius site includes the original cave, a church and an Ignatian spirituality centre; place-title alone does not identify a church building.",
+      "next": "Determine whether desired published Place is the worship church, cave, or entire sanctuary; map the intended unit without conflation.",
+      "status": "RESEARCH_ONLY_NOT_MAP_VERIFIED",
+      "evaluated_at": "2026-10-25"
+    },
+    {
+      "id": "SG-INV-0399",
+      "scope": "SHRINE_CHURCH_MUSEUM_AND_GROUNDS_COMPLEX",
+      "url": "https://www.littleflower.org/national-shrine-and-museum-of-st-therese/plan-your-visit/",
+      "finding": "The Darien site has a shrine/museum and church within extensive shrine property.",
+      "next": "Confirm exact worship-building boundary and independently mapped feature, not landscaped grounds.",
+      "status": "RESEARCH_ONLY_NOT_MAP_VERIFIED",
+      "evaluated_at": "2026-10-25"
+    },
+    {
+      "id": "SG-INV-0385",
+      "scope": "SHRINE_WITHIN_ST_MARYS_BARRENS_CHURCH_MULTIFEATURE_GROUNDS",
+      "url": "https://amm.org/visit-us/national-shrine-nichole/",
+      "finding": "Perryville Miraculous Medal Shrine is housed at Saint Mary's of the Barrens Church with separate pilgrim grounds and grotto.",
+      "next": "Map the historic host church building and avoid publishing a separate identical physical church for a devotional title.",
+      "status": "RESEARCH_ONLY_NOT_MAP_VERIFIED",
+      "evaluated_at": "2026-10-25"
+    },
+    {
+      "id": "SG-INV-0392",
+      "scope": "FORMER_HOSPITAL_CHAPEL_RETAINED_AS_NATIONAL_SHRINE",
+      "url": "https://cabrininationalshrine.org/history/the-national-shrine/",
+      "finding": "Chicago Cabrini shrine occupies historic former Columbus Hospital chapel; hospital demolished or repurposed around it.",
+      "next": "Confirm the surviving chapel's current exact mapped footprint rather than reusing a historic hospital polygon.",
+      "status": "RESEARCH_ONLY_NOT_MAP_VERIFIED",
+      "evaluated_at": "2026-10-25"
+    }
+  ],
+  "scope_review_status": {
+    "first_party_site_scope_assessments": 6,
+    "scope_adjudications_not_georeferenced": 6,
+    "note": "These assessments refine existing 74 candidate rows; none authorizes a new Place or exact geometry."
+  },
+  "spatial_dedup_screen": {
+    "status": "FULL_74_RESEARCH_CENTRE_PROXIMITY_SCAN_COMPLETED_NOT_SAME_BUILDING_VERIFICATION (P37 BASELINE, ARCHIVED PRE_P38)",
+    "candidate_rows_screened": 74,
+    "canonical_place_count_at_scan": 457,
+    "radius_m": 1500,
+    "nearby_rows": 3,
+    "very_close_rows_under_300m": 1,
+    "method": "Haversine distance from inherited approximate research search centre to published Place point in same ISO country; not a precise boundary intersection",
+    "results": [
+      {
+        "row": 30,
+        "candidate_ids": [
+          "SG-INV-0017"
+        ],
+        "name": "Basilica of the Sacred Heart, Paray-le-Monial",
+        "nearby": [
+          {
+            "existing_place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+            "name": "Sanctuaire du Sacré-Cœur de Paray-le-Monial",
+            "distance_m": 7,
+            "existing_geo_precision": "complex_anchor"
+          }
+        ],
+        "identity_conclusion": "EXISTING_PARAY_SANCTUARY_OVERLAP_SAME_LARGER_SITE_SCOPE_UNRESOLVED"
+      },
+      {
+        "row": 38,
+        "candidate_ids": [
+          "SG-INV-0045"
+        ],
+        "name": "Saint-Victor Abbey, Marseille",
+        "nearby": [
+          {
+            "existing_place_id": "place:FR:basilique-notre-dame-garde-marseille",
+            "name": "Basilique Notre-Dame de la Garde",
+            "distance_m": 858,
+            "existing_geo_precision": "site"
+          }
+        ],
+        "identity_conclusion": "PHYSICAL_SITE_DISTINCT_FROM_NEARBY_CANONICAL_CHURCH; NO AUTOMATIC_REUSE"
+      },
+      {
+        "row": 48,
+        "candidate_ids": [
+          "SG-INV-0087"
+        ],
+        "name": "Basilica of Saint Catherine, Siena",
+        "nearby": [
+          {
+            "existing_place_id": "place:IT:duomo-siena",
+            "name": "Cattedrale Metropolitana di Santa Maria Assunta, Siena",
+            "distance_m": 342,
+            "existing_geo_precision": "site"
+          }
+        ],
+        "identity_conclusion": "PHYSICAL_SITE_DISTINCT_FROM_NEARBY_CANONICAL_CHURCH; NO AUTOMATIC_REUSE"
+      }
+    ],
+    "policy": "Distance alone is neither evidence of identity nor proof of uniqueness; no name/country or nearby-cathedral collision is promoted without the exact building way and institutional source."
+  },
+  "current_canonical_at_review": {
+    "places": 463,
+    "typed_sources": 761,
+    "geo_areas": 145,
+    "release_chain": "data/geography/sacred-places-live-release-chain.v1.json",
+    "latest_merged_pr": 1664
+  },
+  "post_p38_reconciliation": {
+    "original_cases": 94,
+    "published_P36": 9,
+    "published_P37": 8,
+    "published_P38": 6,
+    "protected_complex_holds": 3,
+    "mapping_rows_still_open": 68,
+    "full_historical_queue_rows_retained": 74,
+    "original_source_leads_preserved": 74,
+    "original_dual_id_row": "SG-INV-0511 | SG-INV-0515",
+    "policy": "Historical 74-row research queue retained intact with six rows marked published P38, not deleted or counted as current open. Outstanding 68 include one scoped Paray canonical reuse review; protected 3 are separate."
+  }
+}

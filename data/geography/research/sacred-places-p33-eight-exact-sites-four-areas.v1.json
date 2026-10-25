@@ -1,0 +1,195 @@
+{
+  "schema": "AO_SACRED_PLACES_P33_EIGHT_EXACT_SITES_FOUR_COUNTRIES_V1",
+  "date": "2026-10-24",
+  "status": "P33_CANONICAL_RELEASE_PROPOSED",
+  "baseline": {
+    "places": 414,
+    "sources": 712,
+    "crosswalk": 414,
+    "unlinked": 155,
+    "geo_areas": 141,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 422,
+    "sources": 720,
+    "crosswalk": 422,
+    "unlinked": 163,
+    "geo_areas": 145,
+    "directory_links": 9
+  },
+  "new_geo_areas": [
+    "geo:country:RO",
+    "geo:country:PA",
+    "geo:country:TW",
+    "geo:country:UA"
+  ],
+  "source_coverage_before": 168,
+  "source_coverage_after": 169,
+  "newly_sourced_priority_ids": [
+    "SG-INV-0331"
+  ],
+  "p16_protected_exceptions": 16,
+  "disposition_policy": [
+    "Each published site has explicit independent named ecclesial/custodian or official civil evidence plus a distinct OpenStreetMap physical way.",
+    "TW source is official civil; preserve it as SECONDARY directness rather than misrepresent government page as Catholic diocese.",
+    "UA church is Ukrainian Greek Catholic and is Catholic. Distinguish Mary of Zarvanytsia from Assumption title error.",
+    "RO, PA, TW, UA geography country rows are real ISO 3166 alpha-2 records and must be integrated with historical release tests; never fake regional area.",
+    "All preexisting Place IDs, 9 Directory links and 16 protected historical exceptions remain unchanged.",
+    "No 1962 Mass Times, relic, photo, outbound Place card URL, biography, hours or access inferred."
+  ],
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0323",
+      "place_id": "place:HU:bodajk-segito-szuz-maria-basilica",
+      "name": "Bodajk Segítő Szűz Mária Kegytemplom",
+      "country": "HU",
+      "place_type": "basilica",
+      "lat": 47.32153,
+      "lng": 18.23694,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0323"
+      ],
+      "geo_source_ref": "osm:way:333285600",
+      "geo_source_url": "https://www.openstreetmap.org/way/333285600",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W333285600",
+      "identity_source_url": "https://www.szfvar.katolikus.hu/gyujtemenyek/plebaniak/segito-szuz-maria-plebania-bodajk-",
+      "identity_issuer": "Diocese of Székesfehérvár",
+      "identity_tier": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Main Marian pilgrimage basilica (minor basilica since 2023) at Szent István tér 1; not nearby Calvary chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0463",
+      "place_id": "place:CU:santuario-nacional-nuestra-senora-regla",
+      "name": "Santuario Nacional Nuestra Señora de Regla",
+      "country": "CU",
+      "place_type": "shrine",
+      "lat": 23.13142,
+      "lng": -82.33599,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0463"
+      ],
+      "geo_source_ref": "osm:way:39075952",
+      "geo_source_url": "https://www.openstreetmap.org/way/39075952",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W39075952",
+      "identity_source_url": "https://arquidiocesisdelahabana.org/parroquias/",
+      "identity_issuer": "Roman Catholic Archdiocese of Havana",
+      "identity_tier": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Parish church in Regla municipality; archdiocese lists distinct Santo Cristo Redentor and other chapels separately."
+    },
+    {
+      "candidate_id": "SG-INV-0468",
+      "place_id": "place:DO:santuario-nuestra-senora-mercedes-santo-cerro",
+      "name": "Santuario Nacional Nuestra Señora de las Mercedes, Santo Cerro",
+      "country": "DO",
+      "place_type": "shrine",
+      "lat": 19.27971,
+      "lng": -70.54687,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0468"
+      ],
+      "geo_source_ref": "osm:way:320462121",
+      "geo_source_url": "https://www.openstreetmap.org/way/320462121",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W320462121",
+      "identity_source_url": "https://santocerro.org/",
+      "identity_issuer": "Santuario Nacional Nuestra Señora de las Mercedes, shrine custodians",
+      "identity_tier": "OFFICIAL_CHURCH",
+      "scope_limit": "Catholic shrine at Santo Cerro, not another parish of similar title or the whole hill."
+    },
+    {
+      "candidate_id": "SG-INV-0602",
+      "place_id": "place:LK:national-shrine-our-lady-matara",
+      "name": "National Shrine of Our Lady of Matara",
+      "country": "LK",
+      "place_type": "shrine",
+      "lat": 5.94329,
+      "lng": 80.55191,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0602"
+      ],
+      "geo_source_ref": "osm:way:637940698",
+      "geo_source_url": "https://www.openstreetmap.org/way/637940698",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W637940698",
+      "identity_source_url": "https://gallediocese.org/parishes/",
+      "identity_issuer": "Roman Catholic Diocese of Galle",
+      "identity_tier": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Specifically identified Matara Marian National Shrine in diocesan parish roster; not coastal town or nearby Buddhist temple."
+    },
+    {
+      "candidate_id": "SG-INV-0614",
+      "place_id": "place:TW:wanjin-immaculate-conception-basilica",
+      "name": "Basilica of the Immaculate Conception, Wanjin",
+      "country": "TW",
+      "place_type": "basilica",
+      "lat": 22.59508,
+      "lng": 120.61127,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0614"
+      ],
+      "geo_source_ref": "osm:way:199010890",
+      "geo_source_url": "https://www.openstreetmap.org/way/199010890",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W199010890",
+      "identity_source_url": "https://taiwangods.moi.gov.tw/html/landscape_en/1_0011.aspx?i=24",
+      "identity_issuer": "Taiwan Ministry of the Interior Religious Culture Map",
+      "identity_tier": "SECONDARY",
+      "scope_limit": "Official civil primary record of exact Wanjin Catholic basilica at Wanxing Road 24; distinct from annual procession route."
+    },
+    {
+      "candidate_id": "SG-INV-0346",
+      "place_id": "place:UA:mother-god-zarvanytsia-basilica",
+      "name": "Our Lady of Zarvanytsia Cathedral and Basilica",
+      "country": "UA",
+      "place_type": "basilica",
+      "lat": 49.22831,
+      "lng": 25.35171,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0346"
+      ],
+      "geo_source_ref": "osm:way:803877437",
+      "geo_source_url": "https://www.openstreetmap.org/way/803877437",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W803877437",
+      "identity_source_url": "https://map.ugcc.ua/view/118-sobor-zarvanytskoy-materi-bozhoy-mariyskogo-duhovnogo-tsentru-s-zarvanytsya-ternopilska-obl",
+      "identity_issuer": "Ukrainian Greek Catholic Church official church map",
+      "identity_tier": "OFFICIAL_CHURCH",
+      "scope_limit": "Eastern Catholic cathedral dedicated to the Mother of God of Zarvanytsia, not Assumption basilica or adjacent Holy Trinity Chapel."
+    },
+    {
+      "candidate_id": "SG-INV-0331",
+      "place_id": "place:RO:catedrala-sfantul-iosif-bucuresti",
+      "name": "Catedrala Sfântul Iosif, București",
+      "country": "RO",
+      "place_type": "cathedral",
+      "lat": 44.44211,
+      "lng": 26.09138,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0331"
+      ],
+      "geo_source_ref": "osm:way:75481867",
+      "geo_source_url": "https://www.openstreetmap.org/way/75481867",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W75481867",
+      "identity_source_url": "https://www.catedralasfantuliosif.ro/",
+      "identity_issuer": "Saint Joseph Cathedral Catholic custodians and Archdiocese of Bucharest",
+      "identity_tier": "OFFICIAL_CHURCH",
+      "scope_limit": "Roman Catholic cathedral building at 19 General Berthelot Street, not adjacent Romanian Atheneum or Orthodox cathedral."
+    },
+    {
+      "candidate_id": "SG-INV-0460",
+      "place_id": "place:PA:basilica-menor-jesus-nazareno-atalaya",
+      "name": "Basílica Menor Jesús Nazareno de Atalaya",
+      "country": "PA",
+      "place_type": "basilica",
+      "lat": 8.04326,
+      "lng": -80.92447,
+      "source_ids": [
+        "AO-P33-SITE-SG-INV-0460"
+      ],
+      "geo_source_ref": "osm:way:396944583",
+      "geo_source_url": "https://www.openstreetmap.org/way/396944583",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W396944583",
+      "identity_source_url": "https://www.nazarenodeatalaya.com/",
+      "identity_issuer": "Jesús Nazareno de Atalaya, parish shrine custodians Diocese of Santiago",
+      "identity_tier": "OFFICIAL_CHURCH",
+      "scope_limit": "Mapped active Catholic basilica physical church; no claims of exact current public access or service schedule."
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "schema": "AO_SACRED_PLACES_P36_NINE_EXACT_CHURCHES_V1",
+  "date": "2026-10-25",
+  "status": "PROPOSED_NOT_MERGED",
+  "baseline": {
+    "places": 440,
+    "sources": 738,
+    "crosswalk": 440,
+    "unlinked": 181,
+    "geo_areas": 145,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 449,
+    "sources": 747,
+    "crosswalk": 449,
+    "unlinked": 190,
+    "geo_areas": 145,
+    "directory_links": 9
+  },
+  "new_physical_locations": 9,
+  "new_geo_areas": [],
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0332",
+      "place_id": "place:LT:siluvos-svc-mergeles-marijos-gimimo-bazilika",
+      "name": "Šiluvos Švč. Mergelės Marijos Gimimo bazilika",
+      "country": "LT",
+      "country_name": "Lithuania",
+      "city": "Šiluva",
+      "place_type": "basilica",
+      "lat": 55.5302,
+      "lng": 23.22475,
+      "geo_source_ref": "osm:way:208543255",
+      "geo_source_url": "https://www.openstreetmap.org/way/208543255",
+      "identity_source_url": "https://siluva.lt/apie-sventove/",
+      "identity_source_issuer": "Šiluva pilgrimage sanctuary custodians",
+      "source_directness": "OFFICIAL_CHURCH",
+      "source_ids": [
+        "AO-P36-SITE-SG-INV-0332"
+      ],
+      "scope_limit": "The Basilica of the Nativity of the Blessed Virgin Mary; distinct from the existing Apparition Chapel Place",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0073",
+      "place_id": "place:IT:santuario-madonna-delle-lacrime-siracusa",
+      "name": "Basilica Santuario della Madonna delle Lacrime, Siracusa",
+      "country": "IT",
+      "country_name": "Italy",
+      "city": "Siracusa",
+      "place_type": "basilica",
+      "lat": 37.07472,
+      "lng": 15.28552,
+      "geo_source_ref": "osm:way:47272256",
+      "geo_source_url": "https://www.openstreetmap.org/way/47272256",
+      "identity_source_url": "https://www.madonnadellelacrime.it/orari/",
+      "identity_source_issuer": "Santuario Madonna delle Lacrime, Siracusa",
+      "source_directness": "OFFICIAL_CHURCH",
+      "source_ids": [
+        "AO-P36-SITE-SG-INV-0073"
+      ],
+      "scope_limit": "Basilica worship building, not Casa del Pianto or adjoining museum",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0069",
+      "place_id": "place:IT:santuario-nostra-signora-montallegro-rapallo",
+      "name": "Santuario Basilica di Nostra Signora di Montallegro",
+      "country": "IT",
+      "country_name": "Italy",
+      "city": "Rapallo",
+      "place_type": "basilica",
+      "lat": 44.37015,
+      "lng": 9.25595,
+      "geo_source_ref": "osm:way:204742171",
+      "geo_source_url": "https://www.openstreetmap.org/way/204742171",
+      "identity_source_url": "https://www.diocesichiavari.it/parrocchia/santuario-di-nostra-signora-di-montallegro/",
+      "identity_source_issuer": "Roman Catholic Diocese of Chiavari",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "source_ids": [
+        "AO-P36-SITE-SG-INV-0069"
+      ],
+      "scope_limit": "Distinct shrine building on Montallegro, not the cable-car station, woodland or footpath",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0291",
+      "place_id": "place:CZ:poutni-kostel-svateho-jana-nepomuckeho-zelena-hora",
+      "name": "Poutní kostel svatého Jana Nepomuckého na Zelené hoře",
+      "country": "CZ",
+      "country_name": "Czech Republic",
+      "city": "Žďár nad Sázavou",
+      "place_type": "church",
+      "lat": 49.58015,
+      "lng": 15.942,
+      "geo_source_ref": "osm:way:37135377",
+      "geo_source_url": "https://www.openstreetmap.org/way/37135377",
+      "identity_source_url": "https://www.zelena-hora.cz/cs/kontakty",
+      "identity_source_issuer": "Roman Catholic parish Žďár nad Sázavou-II and site custodians",
+      "source_directness": "OFFICIAL_CHURCH",
+      "source_ids": [
+        "AO-P36-SITE-SG-INV-0291"
+      ],
+      "scope_limit": "Central star-shaped pilgrimage church, not perimeter cloister, chapels or neighboring abbey basilica",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0281",
+      "place_id": "place:CZ:bazilika-navstiveni-panny-marie-svaty-kopecek",
+      "name": "Bazilika Navštívení Panny Marie, Svatý Kopeček",
+      "country": "CZ",
+      "country_name": "Czech Republic",
+      "city": "Svatý Kopeček, Olomouc",
+      "place_type": "basilica",
+      "lat": 49.62923,
+      "lng": 17.33812,
+      "geo_source_ref": "osm:way:357664858",
+      "geo_source_url": "https://www.openstreetmap.org/way/357664858",
+      "identity_source_url": "https://www.svatykopecek.cz/FixPage.asp?ID=108",
+      "identity_source_issuer": "Basilica of the Visitation, Svatý Kopeček official custodians",
+      "source_directness": "OFFICIAL_CHURCH",
+      "source_ids": [
+        "AO-P36-SITE-SG-INV-0281"
+      ],
+      "scope_limit": "Main pilgrimage basilica building, not surrounding monastery or auxiliary chapel",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0111",
+      "place_id": "place:ES:basilica-nuestra-senora-arantzazu-onati",
+      "name": "Basílica de Nuestra Señora de Arantzazu, Oñati",
+      "country": "ES",
+      "country_name": "Spain",
+      "city": "Oñati",
+      "place_type": "basilica",
+      "lat": 42.97907,
+      "lng": -2.39847,
+      "geo_source_ref": "osm:way:45344404",
+      "geo_source_url": "https://www.openstreetmap.org/way/45344404",
+      "identity_source_url": "https://www.euskadi.eus/es/patrimonio-cultural/santuario-de-arantzazu/web01-ejeduki/es/",
+      "identity_source_issuer": "Basque Government cultural heritage authority",
+      "source_directness": "PRIMARY_INSTITUTIONAL",
+      "source_ids": [
+        "AO-P36-SITE-SG-INV-0111"
+      ],
+      "scope_limit": "Actual Franciscan basilica, distinct from Gogartetxea church and nearby grotto or monastery",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0289",
+      "place_id": "place:CZ:bazilika-svateho-vavrince-zdislavy-jablonne",
+      "name": "Bazilika sv. Vavřince a sv. Zdislavy, Jablonné v Podještědí",
+      "country": "CZ",
+      "country_name": "Czech Republic",
+      "city": "Jablonné v Podještědí",
+      "place_type": "basilica",
+      "lat": 50.76541,
+      "lng": 14.76219,
+      "geo_source_ref": "osm:way:48970830",
+      "geo_source_url": "https://www.openstreetmap.org/way/48970830",
+      "identity_source_url": "https://www.zdislava.cz/bazilika-2/prohlidky/",
+      "identity_source_issuer": "Dominican custodians of Saint Zdislava shrine basilica",
+      "source_directness": "OFFICIAL_CHURCH",
+      "source_ids": [
+        "AO-P36-SITE-SG-INV-0289"
+      ],
+      "scope_limit": "Specific basilica at Dominican site, separate monastery cloister and pilgrimage house",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0127",
+      "place_id": "place:ES:basilica-san-isidoro-leon",
+      "name": "Real Basílica Colegiata de San Isidoro, León",
+      "country": "ES",
+      "country_name": "Spain",
+      "city": "León",
+      "place_type": "basilica",
+      "lat": 42.60083,
+      "lng": -5.57084,
+      "geo_source_ref": "osm:way:679784520",
+      "geo_source_url": "https://www.openstreetmap.org/way/679784520",
+      "identity_source_url": "https://basilicasanisidoro.com/",
+      "identity_source_issuer": "Cabildo de la Real Colegiata de San Isidoro",
+      "source_directness": "OFFICIAL_CHURCH",
+      "source_ids": [
+        "AO-P36-SITE-SG-INV-0127"
+      ],
+      "scope_limit": "Actual liturgical basilica, not Royal Pantheon museum or tourist ticket office",
+      "precision": "site"
+    },
+    {
+      "candidate_id": "SG-INV-0112",
+      "place_id": "place:ES:basilica-nuestra-senora-begona-bilbao",
+      "name": "Basílica de Nuestra Señora de Begoña, Bilbao",
+      "country": "ES",
+      "country_name": "Spain",
+      "city": "Bilbao",
+      "place_type": "basilica",
+      "lat": 43.25876,
+      "lng": -2.91374,
+      "geo_source_ref": "osm:way:28463782",
+      "geo_source_url": "https://www.openstreetmap.org/way/28463782",
+      "identity_source_url": "https://begona.org/visitar/horarios/",
+      "identity_source_issuer": "Basilica de Begoña parish custodians",
+      "source_directness": "OFFICIAL_CHURCH",
+      "source_ids": [
+        "AO-P36-SITE-SG-INV-0112"
+      ],
+      "scope_limit": "Named basilica church, not neighboring parish facilities or the historic Begoña neighborhood",
+      "precision": "site"
+    }
+  ],
+  "held_scope": [
+    {
+      "candidate_id": "SG-INV-0017",
+      "reason": "Existing canonical Paray-le-Monial sanctuary anchor covers the basilica; OSM way 121381927 verified, but parent/building strategy must be settled before creating a second Place"
+    }
+  ],
+  "policy": [
+    "Existing Catholic institution + named building OSM feature and official/first-party identification required.",
+    "Basilica of Šiluva is distinct from already-published apparition chapel.",
+    "Mass schedules or image licenses are not inferred.",
+    "Candidates with monastery/chapel/parent-complex collisions remain protected, not auto-published."
+  ]
+}

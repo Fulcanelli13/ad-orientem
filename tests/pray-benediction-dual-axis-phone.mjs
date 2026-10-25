@@ -51,6 +51,37 @@ try{
  const guide=page.locator(rootSel+" [data-ao-benediction-guide]");
  assert.equal(await guide.evaluate(el=>el.open),false,"Historical guidance must be optional and below the prayer");
  await page.screenshot({path:resolve(captures,"benediction-390-exposition.png"),animations:"disabled"});
+ // Actual phone locale and visual-salience acceptance, not only static selectors.
+ const locale=page.locator("#aoPray435930 .aoP435930SessionLanguage");
+ assert.equal(await locale.count(),1,"In-rite language control is missing");
+ assert.equal((await locale.innerText()).trim(),"EN");
+ const prayerFace=page.locator(rootSel+" .aoP435930Flip").first();
+ const faceFont=await prayerFace.evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
+ const cueFont=await page.locator(rootSel+" .aoP435930GuideNow p").first()
+  .evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
+ assert.ok(faceFont>=cueFont+4,"Prayer text must dominate small instructions: "+JSON.stringify({faceFont,cueFont}));
+ await locale.click();
+ assert.equal((await locale.innerText()).trim(),"FR");
+ assert.equal((await snapshot()).index,0,"Changing French altered the public rite stage");
+ assert.match(await page.locator(rootSel+" .aoP435930Flip [data-face-v]").first().innerText(),/Victime sainte/);
+ await page.screenshot({path:resolve(captures,"benediction-390-exposition-fr.png"),animations:"disabled"});
+ await locale.click();
+ assert.equal((await locale.innerText()).trim(),"EN");
+ const latinFlip=page.locator(rootSel+" .aoP435930Flip").first();
+ await latinFlip.evaluate(el=>el.click());
+ assert.equal(await latinFlip.locator("[data-face-la]").evaluate(el=>el.hidden),false,
+  "Tap on prayer must reveal original Latin");
+ await latinFlip.evaluate(el=>el.click());
+ assert.equal(await latinFlip.locator("[data-face-v]").evaluate(el=>el.hidden),false);
+ // A horizontal swipe beginning on the same prayer-face button MUST navigate.
+ await latinFlip.evaluate(el=>{
+  const t=(x,y)=>new Touch({identifier:18,target:el,clientX:x,clientY:y});
+  el.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[t(215,335)],changedTouches:[t(215,335)]}));
+  el.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[t(60,338)]}));
+ });
+ assert.equal((await snapshot()).card,"adoration","Swiping the prayer text did not advance a card");
+ await page.locator(timeline+" [data-ao-devo-chapter='0']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).card,"exposition");
  const swipe=async(dx,dy)=>page.locator(rootSel+" .aoDevoCardScroll").evaluate((el,{dx,dy})=>{
   const t=(x,y)=>new Touch({identifier:14,target:el,clientX:x,clientY:y});
   el.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[t(230,340)],changedTouches:[t(230,340)]}));
@@ -148,6 +179,134 @@ try{
  assert.ok(safeLine.right<=safeLine.viewport-46,
   "Ritual gesture icon overlaps the 320px prayer text: "+JSON.stringify(safeLine));
  await page.screenshot({path:resolve(captures,"benediction-320-reposition.png"),animations:"disabled"});
+
+ // Opt-in Christ the King celebration: procession before optional Royal Praises,
+ // consecration of the human race before Tantum Ergo. Ordinary route above stays seven.
+ await page.setViewportSize({width:390,height:844});
+ const feastDetails=page.locator(rootSel+" [data-ao-ben-feast-options]");
+ assert.equal(await feastDetails.count(),1);
+ assert.equal(await page.locator(rootSel+" [data-p435930-ben-feast]").isChecked(),false,
+   "Feast material was silently forced into ordinary Benediction");
+ await feastDetails.locator("summary").tap();
+ await page.locator(rootSel+" [data-p435930-ben-feast]").check();
+ assert.equal(await feastDetails.evaluate(el=>el.open),true,"Feast options close during configuration");
+ assert.equal((await snapshot()).stops,10,"Expected seven canonical stages plus three witnessed additions");
+ const sequence=await page.locator(timeline+" [data-ao-devo-chapter]").evaluateAll(els=>els.map(el=>el.getAttribute("data-ao-devo-chapter")));
+ assert.equal(sequence.length,10);
+ assert.equal(await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").isChecked(),false,
+   "Unconfirmed Sacred Heart Litany must be opt-in");
+ await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
+ assert.equal((await snapshot()).card,"king-procession");
+ await page.locator(timeline+" [data-ao-devo-chapter='3']").tap();
+ assert.equal((await snapshot()).card,"king-royal-praises");
+ assert.match(await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-la]").innerText(),/Christus vincit/);
+ const royalTextEn=await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText();
+ assert.match(royalTextEn,/I · For the Church/);
+ assert.match(royalTextEn,/II · For the Supreme Pontiff/);
+ assert.match(royalTextEn,/III · For the bishops and faithful/);
+ assert.match(royalTextEn,/IV · For the people/);
+ assert.match(royalTextEn,/May the peace of Christ come/);
+ assert.ok(royalTextEn.length>2900,
+  "Vatican four-part Laudes has collapsed to an excerpt");
+ assert.equal((royalTextEn.match(/℟\./g)||[]).length>=58,true,
+  "All saint invocations and closing responses must be present");
+ const royalScroll=await page.locator(rootSel+" .aoDevoCardScroll").evaluate(el=>({
+  height:el.scrollHeight,viewport:el.clientHeight,overflow:getComputedStyle(el).overflowY
+ }));
+ assert.ok(royalScroll.height>royalScroll.viewport&&royalScroll.overflow==="auto",
+  "Full Laudes must scroll vertically within its existing card");
+ await page.screenshot({path:resolve(captures,"benediction-390-christus-vincit-en.png"),animations:"disabled"});
+ await locale.click();
+ assert.equal((await snapshot()).card,"king-royal-praises",
+  "French switch changed the current Laudes stage");
+ const royalFrench=await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText();
+ assert.match(royalFrench,/I · Pour l'Église/);
+ assert.match(royalFrench,/IV · Pour les peuples/);
+ assert.match(royalFrench,/Que vienne la paix du Christ/);
+ await page.screenshot({path:resolve(captures,"benediction-390-christus-vincit-fr.png"),animations:"disabled"});
+ const royalLatin=page.locator(rootSel+" .aoP435930FeastPrayer [data-p435930-flip]");
+ await royalLatin.tap();
+ assert.equal(await royalLatin.locator("[data-face-la]").evaluate(el=>el.hidden),false);
+ const royalLatinText=await royalLatin.locator("[data-face-la]").innerText();
+ assert.match(royalLatinText,/I · Pro Ecclesia/);
+ assert.match(royalLatinText,/N\. Summo Pontifici/);
+ assert.match(royalLatinText,/Pax Christi veniat/);
+ await page.screenshot({path:resolve(captures,"benediction-390-christus-vincit-latin.png"),animations:"disabled"});
+ await locale.click();
+ assert.equal((await snapshot()).card,"king-royal-praises");
+
+ await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
+ assert.equal((await snapshot()).card,"king-consecration");
+ assert.match(await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText(),/Most sweet Jesus/);
+ await locale.click();
+ assert.equal((await snapshot()).card,"king-consecration","Local French toggle lost Feast card");
+ assert.match(await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText(),/Très doux Jésus/);
+ await page.screenshot({path:resolve(captures,"benediction-390-christ-king-consecration-fr.png"),animations:"disabled"});
+ const feastFlip=page.locator(rootSel+" .aoP435930FeastPrayer [data-p435930-flip]");
+ await feastFlip.tap();
+ assert.equal(await feastFlip.locator("[data-face-la]").evaluate(x=>x.hidden),false,
+   "Latin consecration does not replace the French text");
+ await page.locator(timeline+" [data-ao-devo-chapter='5']").tap();
+ assert.equal((await snapshot()).card,"hymn","Consecration must lead to canonical Tantum Ergo");
+ await feastDetails.locator("summary").tap();
+ await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").check();
+ assert.equal((await snapshot()).stops,11,"Explicit litany inclusion must add one optional card");
+ assert.equal((await snapshot()).card,"hymn","Changing optional elements may not discard the current canonical stage");
+ assert.equal(await feastDetails.evaluate(el=>el.open),true,"Optional cards configuration collapsed");
+ await feastDetails.locator("summary").tap();
+ await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
+ assert.equal((await snapshot()).card,"king-sacred-heart-litany");
+ const litanyVern=page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]");
+ const fullLitany=await litanyVern.innerText();
+ assert.equal((fullLitany.match(/Cœur de Jésus,/g)||[]).length,33,
+  "The Christ the King litany must display all 33 existing French invocations, not only one response");
+ assert.match(fullLitany,/Ainsi soit-il\./,
+  "The entire Sacred Heart litany including its concluding collect must be readable");
+ const litanyScroll=await page.locator(rootSel+" .aoDevoCardScroll").evaluate(el=>({
+  height:el.scrollHeight,viewport:el.clientHeight,overflow:getComputedStyle(el).overflowY
+ }));
+ assert.ok(litanyScroll.height>litanyScroll.viewport&&litanyScroll.overflow==="auto",
+  "The full litany must be scrollable within its card on a 390px phone");
+ await page.screenshot({path:resolve(captures,"benediction-390-christ-king-litany-fr.png"),animations:"disabled"});
+ const litanyLatin=page.locator(rootSel+" .aoP435930FeastPrayer [data-p435930-flip]");
+ await litanyLatin.tap();
+ assert.equal(await litanyLatin.locator("[data-face-la]").evaluate(el=>el.hidden),false);
+ assert.equal(((await litanyLatin.locator("[data-face-la]").innerText()).match(/Cor Iesu,/g)||[]).length,33,
+  "Latin face must contain every invocation, not a fragment");
+ await page.screenshot({path:resolve(captures,"benediction-390-christ-king-litany-latin.png"),animations:"disabled"});
+ await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
+ assert.equal((await snapshot()).card,"hymn","The complete optional litany must precede Consecration and Tantum Ergo");
+ await feastDetails.locator("summary").tap();
+ await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").uncheck();
+ assert.equal((await snapshot()).stops,10);
+ await page.locator(timeline+" [data-ao-devo-chapter='9']").tap();
+ assert.equal((await snapshot()).card,"reposition");
+ assert.equal(await page.locator(rootSel).getAttribute("data-ao-benediction-final"),"true");
+ assert.ok(await page.locator(rootSel+" .aoP435930GuideNav").evaluate(x=>getComputedStyle(x).display)!=="none",
+   "The optional celebration must not hide the final Reposition exit");
+ await feastDetails.locator("summary").tap();
+ await page.locator(rootSel+" [data-p435930-ben-feast]").uncheck();
+ assert.equal((await snapshot()).stops,7,"Ordinary Benediction was not restored on disabling feast");
+ await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
+ assert.equal((await snapshot()).card,"hymn");
+ await page.setViewportSize({width:320,height:720});
+ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
+  "Optional Christ King celebration introduced phone overflow");
+
+ // Entering Adoration must offer an actual doorway to public Benediction,
+ // including its opt-in Christ the King sequence, without a second ritual owner.
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.adoration",{returnContext:null}));
+ const adorationChooser="#aoPray435930.open .aoAdorationChooser";
+ assert.equal(await page.locator(adorationChooser+" [data-p435930-go-ben]").count(),1,
+  "The public Benediction route is undiscoverable from the Adoration chooser");
+ await page.locator(adorationChooser+" [data-p435930-go-ben]").click();
+ assert.equal((await snapshot()).card,"exposition",
+  "Adoration handoff must preserve the original public-rite entry");
+ assert.equal(await page.locator(rootSel+" [data-ao-ben-feast-options]").count(),1,
+  "The linked Benediction must expose optional Christ the King additions");
+ await page.locator("#aoPray435930.open .aoP435930Back").click();
+ assert.equal(await page.locator(adorationChooser).count(),1,
+  "Back from public Benediction must restore the Adoration chooser");
  assert.deepEqual(errors,[],"Browser exceptions: "+errors.join(" | "));
  console.log("PASS canonical seven-stage Benediction: timeline, vertical focus, horizontal swipe, conditional Praises and manual ritual pace");
  await page.close();
