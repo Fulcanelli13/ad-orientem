@@ -73,16 +73,14 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='holy']").count(),1,"Final donor Holy Hour entry is missing from Adoration");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='four']").count(),1,"Final donor Four Ends entry is missing from Adoration");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='treasury']").count(),1);
-  // The current quiet-v2 chooser deliberately offers a separate, labelled
-  // handoff to a PUBLIC Benediction rite. A link does not begin that rite or
-  // insert its seven-stage reader into private Adoration.
+  // A fresh private Adoration entry cannot silently invite the public
+  // Benediction rite. The chooser's *return* link belongs only to an
+  // explicit prior Benediction-to-Adoration transition.
   const publicRiteLink=page.locator("#aoPray435930 .aoAdorationChooser [data-p435930-go-ben]");
-  assert.equal(await publicRiteLink.count(),1,
-    "The Adoration chooser must retain its explicit public Benediction handoff");
-  assert.match(await publicRiteLink.innerText(),
-    /Follow public Benediction|Suivre la bénédiction eucharistique/i);
+  assert.equal(await publicRiteLink.count(),0,
+    "Fresh private Adoration must not invent an active public-rite return");
   assert.equal(await page.locator("#aoPray435930 .aoP435930BenedictionReader").count(),0,
-    "Public Benediction ritual stages must not open inside the private chooser");
+    "Public Benediction ritual stages must not open inside private Adoration");
 
   await page.locator("#aoPray435930 [data-p435930-ador-mode='open']").click();
   // This older D3/D6 cross-module smoke test verifies the *presence* of
@@ -132,6 +130,25 @@ try{
     "Benediction must identify exactly one current stage");
   assert.equal(await page.locator(benRoot+"[data-ao-benediction-step='0'] [data-ao-devo-card='exposition']").count(),1,
     "Benediction must open at Exposition without silently advancing");
+
+  // Only a person explicitly arriving FROM the public rite has a source-
+  // contextual way back. The link itself must never mount ritual stages.
+  assert.equal(await page.evaluate(()=>
+    globalThis.AO_PRAY_V435930.open("pray.adoration",{returnContext:null})),true);
+  // Explicit deep-link routing preserves the selected Adoration submode.
+  // Return through its existing "Choose another mode" control before
+  // asserting a chooser-only public-rite link.
+  const backToChooser=page.locator("#aoPray435930.open [data-p435930-ador-home]");
+  if(await backToChooser.count())await backToChooser.click();
+  await page.waitForSelector("#aoPray435930.open .aoAdorationChooser",{timeout:5000});
+  assert.equal(await publicRiteLink.count(),1,
+    "Return to the public rite must be offered after a Benediction-origin transition");
+  assert.match(await publicRiteLink.innerText(),
+    /Return to public Benediction|Revenir à la bénédiction eucharistique/i);
+  assert.equal(await page.locator("#aoPray435930 .aoP435930BenedictionReader").count(),0,
+    "Contextual Benediction return link must not mount ritual stages itself");
+  await publicRiteLink.click();
+  await page.waitForSelector(benRoot+"[data-ao-benediction-step='0']",{timeout:5000});
 
   await page.evaluate(async()=>{globalThis.AO_PRAY_V435930.close({silent:true});await globalThis.AO_APP_SHELL_V1?.navigate?.("settings")});
   await page.waitForSelector("#ao-settings-modular-root",{state:"visible",timeout:10000});
