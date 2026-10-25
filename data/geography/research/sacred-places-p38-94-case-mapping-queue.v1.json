@@ -1,7 +1,7 @@
 {
   "schema": "AO_SACRED_PLACES_P38_94_CASE_QUEUE_RECONCILIATION_V1",
   "date": "2026-10-25",
-  "status": "RESEARCH_ONLY_NO_CANONICAL_PLACE_PUBLICATION",
+  "status": "HISTORICAL_74_ROW_AUDIT_WITH_POST_P38_CANONICAL_DISPOSITIONS_RESEARCH_ONLY",
   "purpose": "Preserve the exact 94-row post-P37 mapping audit and route all 74 open rows to bulk footprint/complex-scope review; this is a review index, not location verification or a release manifest.",
   "source_audit": {
     "file": "Ad_Orientem_Sacred_Places_Pass10_P37_Merged_2026-10-25.xlsx",
@@ -249,7 +249,7 @@
       "site_name": "Church of Our Lady of Sorrows, Bohosudov",
       "country": "CZ",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
-      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "publication_state": "PUBLISHED_IN_CANONICAL_P38",
       "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
       "inherited_institutional_source_lead_url": "https://katalog.dltm.cz/web/chramy/524",
       "inherited_search_center": {
@@ -259,7 +259,12 @@
       },
       "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
       "verified_building_osm_ref": "osm:way:26228879",
-      "verified_institution_url": "https://katalog.dltm.cz/web/chramy/524"
+      "verified_institution_url": "https://katalog.dltm.cz/web/chramy/524",
+      "published_place_id": "place:CZ:basilika-panny-marie-bolestne-bohosudov",
+      "published_source_ids": [
+        "AO-P38-SITE-SG-INV-0285"
+      ],
+      "canonical_release": "P38"
     },
     {
       "queue_row": 11,
@@ -269,7 +274,7 @@
       "site_name": "Church of the Name of the Virgin Mary, Křtiny",
       "country": "CZ",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
-      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "publication_state": "PUBLISHED_IN_CANONICAL_P38",
       "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
       "inherited_institutional_source_lead_url": "http://www.pmkrtiny.cz",
       "inherited_search_center": {
@@ -279,7 +284,12 @@
       },
       "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
       "verified_building_osm_ref": "osm:way:61229899",
-      "verified_institution_url": "https://krtiny.katolik.cz/index.php?page=%2Fuvod%2Fzakladni_udaje"
+      "verified_institution_url": "https://krtiny.katolik.cz/index.php?page=%2Fuvod%2Fzakladni_udaje",
+      "published_place_id": "place:CZ:poutni-kostel-jmena-panny-marie-krtiny",
+      "published_source_ids": [
+        "AO-P38-SITE-SG-INV-0284"
+      ],
+      "canonical_release": "P38"
     },
     {
       "queue_row": 12,
@@ -652,7 +662,7 @@
       "site_name": "Notre-Dame de Bon-Secours, Lablachère",
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
-      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "publication_state": "PUBLISHED_IN_CANONICAL_P38",
       "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
       "inherited_institutional_source_lead_url": "https://notredamedebonsecours.org/",
       "inherited_search_center": {
@@ -662,7 +672,12 @@
       },
       "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
       "verified_building_osm_ref": "osm:way:361802563",
-      "verified_institution_url": "https://notredamedebonsecours.org/"
+      "verified_institution_url": "https://notredamedebonsecours.org/",
+      "published_place_id": "place:FR:basilique-notre-dame-bon-secours-lablachere",
+      "published_source_ids": [
+        "AO-P38-SITE-SG-INV-0011"
+      ],
+      "canonical_release": "P38"
     },
     {
       "queue_row": 33,
@@ -672,7 +687,7 @@
       "site_name": "Notre-Dame de Buglose",
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
-      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "publication_state": "PUBLISHED_IN_CANONICAL_P38",
       "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
       "inherited_institutional_source_lead_url": "https://diocese40.fr/paroisse/saint-vincent-notre-dame/",
       "inherited_search_center": {
@@ -682,7 +697,12 @@
       },
       "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
       "verified_building_osm_ref": "osm:way:146716528",
-      "verified_institution_url": "https://diocese40.fr/paroisse/saint-vincent-notre-dame/"
+      "verified_institution_url": "https://diocese40.fr/paroisse/saint-vincent-notre-dame/",
+      "published_place_id": "place:FR:basilique-notre-dame-buglose",
+      "published_source_ids": [
+        "AO-P38-SITE-SG-INV-0015"
+      ],
+      "canonical_release": "P38"
     },
     {
       "queue_row": 34,
@@ -692,7 +712,7 @@
       "site_name": "Notre-Dame de Marienthal",
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
-      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "publication_state": "PUBLISHED_IN_CANONICAL_P38",
       "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
       "inherited_institutional_source_lead_url": "https://www.basiliquemarienthal.fr/",
       "inherited_search_center": {
@@ -702,7 +722,12 @@
       },
       "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
       "verified_building_osm_ref": "osm:way:52873054",
-      "verified_institution_url": "https://www.basiliquemarienthal.fr/"
+      "verified_institution_url": "https://www.basiliquemarienthal.fr/",
+      "published_place_id": "place:FR:basilique-notre-dame-marienthal",
+      "published_source_ids": [
+        "AO-P38-SITE-SG-INV-0014"
+      ],
+      "canonical_release": "P38"
     },
     {
       "queue_row": 35,
@@ -712,7 +737,7 @@
       "site_name": "Notre-Dame de l'Épine, L'Épine",
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
-      "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
+      "publication_state": "PUBLISHED_IN_CANONICAL_P38",
       "exact_building_verification": "NAMED_CHURCH_WAY_AND_INSTITUTIONAL_IDENTITY_MATCHED",
       "inherited_institutional_source_lead_url": "https://chalons.catholique.fr/lepine/",
       "inherited_search_center": {
@@ -722,7 +747,12 @@
       },
       "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK",
       "verified_building_osm_ref": "osm:way:132183915",
-      "verified_institution_url": "https://chalons.catholique.fr/lepine/"
+      "verified_institution_url": "https://chalons.catholique.fr/lepine/",
+      "published_place_id": "place:FR:basilique-notre-dame-lepine",
+      "published_source_ids": [
+        "AO-P38-SITE-SG-INV-0013"
+      ],
+      "canonical_release": "P38"
     },
     {
       "queue_row": 36,
@@ -1618,7 +1648,10 @@
     "candidate_with_provisional_way_unverified": 1,
     "existing_canonical_scope_reconciliation": 1,
     "other_open_rows_not_yet_building_verified": 66,
-    "notes": "6 plus provisional PR plus Paray existing-canonical = 8 of 74 rows with an identified feature or scope finding; 66 await exact church geometry. No new Place publication."
+    "notes": "6 plus provisional PR plus Paray existing-canonical = 8 of 74 rows with an identified feature or scope finding; 66 await exact church geometry. No new Place publication.",
+    "published_canonical_in_p38": 6,
+    "current_remaining_open": 68,
+    "note": "Six exact building matches published in P38 via PR #1664. One provisional Hormigueros, one Paray existing-canonical scope and 66 other original rows still open. No additional Place publication from this audit."
   },
   "institutional_scope_adjudications": [
     {
@@ -1682,7 +1715,7 @@
     "note": "These assessments refine existing 74 candidate rows; none authorizes a new Place or exact geometry."
   },
   "spatial_dedup_screen": {
-    "status": "FULL_74_RESEARCH_CENTRE_PROXIMITY_SCAN_COMPLETED_NOT_SAME_BUILDING_VERIFICATION",
+    "status": "FULL_74_RESEARCH_CENTRE_PROXIMITY_SCAN_COMPLETED_NOT_SAME_BUILDING_VERIFICATION (P37 BASELINE, ARCHIVED PRE_P38)",
     "candidate_rows_screened": 74,
     "canonical_place_count_at_scan": 457,
     "radius_m": 1500,
@@ -1740,5 +1773,24 @@
       }
     ],
     "policy": "Distance alone is neither evidence of identity nor proof of uniqueness; no name/country or nearby-cathedral collision is promoted without the exact building way and institutional source."
+  },
+  "current_canonical_at_review": {
+    "places": 463,
+    "typed_sources": 761,
+    "geo_areas": 145,
+    "release_chain": "data/geography/sacred-places-live-release-chain.v1.json",
+    "latest_merged_pr": 1664
+  },
+  "post_p38_reconciliation": {
+    "original_cases": 94,
+    "published_P36": 9,
+    "published_P37": 8,
+    "published_P38": 6,
+    "protected_complex_holds": 3,
+    "mapping_rows_still_open": 68,
+    "full_historical_queue_rows_retained": 74,
+    "original_source_leads_preserved": 74,
+    "original_dual_id_row": "SG-INV-0511 | SG-INV-0515",
+    "policy": "Historical 74-row research queue retained intact with six rows marked published P38, not deleted or counted as current open. Outstanding 68 include one scoped Paray canonical reuse review; protected 3 are separate."
   }
 }
