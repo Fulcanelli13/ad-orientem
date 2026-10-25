@@ -1259,7 +1259,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       {
         "id": "DPP-2001",
         "title": "Directory on Popular Piety and the Liturgy, §118",
-        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
         "role": "OFFICIAL_PASTORAL_DIRECTORY",
         "claim_scope": "Door chalk, Magi, charity, C+M+B and household context; document dated 2002, not a 1962 rubric"
       },
