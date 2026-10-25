@@ -92,6 +92,34 @@ try{
   const cleared=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
   assert.equal(cleared.priestVoice,null);
   assert.equal(cleared.ownership?.priestVoice,"PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED");
+  // Check actual LIVE right rail, not just pure resolver outputs.
+  // Priest recites the Gloria/Credo on an independent timeline; a
+  // public choir phrase cannot assert a current priest bow/genuflection.
+  for(const choirCue of ["AO.SM.C0058","AO.SM.C0096"]){
+   const sequence=await page.evaluate(cue=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const card=api.model.cards.find(c=>c.paragraphs?.some(p=>
+       (p.sourceCueIds??[]).includes(cue)));
+     if(!card)throw Error("Missing choir paragraph "+cue);
+     api.showSequence(card.sequence);
+     return card.sequence;
+   },choirCue);
+   await page.locator(".ao-prayer-card").evaluate((el,cue)=>{
+     const p=[...el.querySelectorAll(".ao-reader-paragraph")].find(n=>
+       (n.dataset.sourceCueIds??"").split(/\\s+/).includes(cue));
+     if(!p)throw Error("Choir cue has no actual LIVE DOM paragraph "+cue);
+     const a=el.getBoundingClientRect(),b=p.getBoundingClientRect();
+     el.scrollTop=Math.max(0,b.top-a.top+el.scrollTop+b.height/2-el.clientHeight*.39);
+   },choirCue);
+   await page.waitForFunction(cue=>
+     window.__AO_PHONE_PREVIEW.getActiveCue()===cue,choirCue,{timeout:5000});
+   const state=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
+   assert.equal(state.nativeCueId,choirCue);
+   assert.equal(state.priestAction,null,choirCue+" choir phrase forged priest action");
+   assert.equal(state.priestVoice,null,choirCue+" choir phrase forged priest voice");
+   assert.equal(state.ownership?.priestAction,"PRIEST_EVENT_UNOBSERVED_FAIL_CLOSED");
+   assert.equal(state.ownership?.priestVoice,"PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED");
+  }
   await page.evaluate(()=>{
    const api=window.__AO_PHONE_PREVIEW;
    const host=api.model.cards.find(c=>c.paragraphs?.some(p=>
