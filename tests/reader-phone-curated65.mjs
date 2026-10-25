@@ -824,6 +824,25 @@ try{
         requestAnimationFrame(()=>requestAnimationFrame(done))));
       assert.ok(await page.locator("#ao-r17-native-reader-preview .ao-prayer-body .ao-reader-paragraph").count()>0,
         "Named screenshot has no real prayer text: "+title);
+      if(width===390 && lang==="en" && !secondConfiteor){
+        const railState=await page.evaluate(()=>{
+          const root=document.querySelector("#ao-r17-native-reader-preview");
+          return [...root.querySelectorAll(".ao-rail-right .ao-rail-item")].map(el=>{
+            const icon=el.querySelector(".ao-icon-mask"),copy=el.querySelector(".ao-rail-copy");
+            const css=icon?getComputedStyle(icon):null;
+            const rc=el.getBoundingClientRect();
+            return {channel:el.dataset.channel,active:el.dataset.active,
+              displayed:getComputedStyle(el).display!=="none"&&rc.width>0,
+              iconHidden:icon?.hidden??true,
+              mask:css?.maskImage??"none",webkitMask:css?.webkitMaskImage??"none",
+              image:css?.backgroundImage??"none",
+              fallbackText:copy?.textContent?.trim()??"",
+              fallbackDisplay:copy?getComputedStyle(copy).display:"none",
+              aria:el.getAttribute("aria-label")};
+          }).filter(x=>x.active==="true"&&x.displayed);
+        });
+        console.log("PR1645 named screenshot active rail",slug,railState);
+      }
       await page.screenshot({path:resolve(out,
         lang+"-"+width+(secondConfiteor?"-with-local-confiteor":"")+"-"+slug+".png"),
         fullPage:false,animations:"disabled"});
