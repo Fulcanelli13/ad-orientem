@@ -1,0 +1,63 @@
+name: ICRSP France source-index inventory
+on:
+  push:
+    branches:
+      - governance/icrsp-source-inventory-1665
+    paths:
+      - "tools/icrsp/**"
+      - "tests/test_icrsp_index_source_metadata.py"
+      - ".github/workflows/icrsp-source-index.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: icrsp-index-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  metadata-only:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check indexer safety tests
+        run: python -m unittest discover -s tests -p 'test_icrsp_index_source_metadata.py' -v
+      - name: Index link discovery (not article-body scraping)
+        run: |
+          python tools/icrsp/index_source_metadata.py \
+            --inspect 0 \
+            --out data/source-text/icrsp-france-index-discovery.v1.json
+      - name: Validate non-empty measured inventory
+        run: |
+          python - <<'PY'
+          import json
+          p = 'data/source-text/icrsp-france-index-discovery.v1.json'
+          data = json.load(open(p, encoding='utf-8'))
+          counts = data['totals']
+          assert counts['indexOccurrences'] > 0, counts
+          assert counts['uniqueArticleUrls'] > 0, counts
+          assert all(x['promotion'] == 'NONE' for x in data['pages'])
+          print('Measured discovery only:', counts)
+          PY
+      - name: Persist index audit in research branch
+        env:
+          GH_BRANCH: ${{ github.head_ref || github.ref_name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/source-text/icrsp-france-index-discovery.v1.json
+          if git diff --cached --quiet; then
+            echo "No inventory differences"
+          else
+            git commit -m "research: persist measured ICRSP index discovery metadata (#1665)"
+            git push origin HEAD:"$GH_BRANCH"
+          fi
