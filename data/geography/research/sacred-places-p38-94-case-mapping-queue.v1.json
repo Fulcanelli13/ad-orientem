@@ -1680,5 +1680,65 @@
     "first_party_site_scope_assessments": 6,
     "scope_adjudications_not_georeferenced": 6,
     "note": "These assessments refine existing 74 candidate rows; none authorizes a new Place or exact geometry."
+  },
+  "spatial_dedup_screen": {
+    "status": "FULL_74_RESEARCH_CENTRE_PROXIMITY_SCAN_COMPLETED_NOT_SAME_BUILDING_VERIFICATION",
+    "candidate_rows_screened": 74,
+    "canonical_place_count_at_scan": 457,
+    "radius_m": 1500,
+    "nearby_rows": 3,
+    "very_close_rows_under_300m": 1,
+    "method": "Haversine distance from inherited approximate research search centre to published Place point in same ISO country; not a precise boundary intersection",
+    "results": [
+      {
+        "row": 30,
+        "candidate_ids": [
+          "SG-INV-0017"
+        ],
+        "name": "Basilica of the Sacred Heart, Paray-le-Monial",
+        "nearby": [
+          {
+            "existing_place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+            "name": "Sanctuaire du Sacré-Cœur de Paray-le-Monial",
+            "distance_m": 7,
+            "existing_geo_precision": "complex_anchor"
+          }
+        ],
+        "identity_conclusion": "EXISTING_PARAY_SANCTUARY_OVERLAP_SAME_LARGER_SITE_SCOPE_UNRESOLVED"
+      },
+      {
+        "row": 38,
+        "candidate_ids": [
+          "SG-INV-0045"
+        ],
+        "name": "Saint-Victor Abbey, Marseille",
+        "nearby": [
+          {
+            "existing_place_id": "place:FR:basilique-notre-dame-garde-marseille",
+            "name": "Basilique Notre-Dame de la Garde",
+            "distance_m": 858,
+            "existing_geo_precision": "site"
+          }
+        ],
+        "identity_conclusion": "PHYSICAL_SITE_DISTINCT_FROM_NEARBY_CANONICAL_CHURCH; NO AUTOMATIC_REUSE"
+      },
+      {
+        "row": 48,
+        "candidate_ids": [
+          "SG-INV-0087"
+        ],
+        "name": "Basilica of Saint Catherine, Siena",
+        "nearby": [
+          {
+            "existing_place_id": "place:IT:duomo-siena",
+            "name": "Cattedrale Metropolitana di Santa Maria Assunta, Siena",
+            "distance_m": 342,
+            "existing_geo_precision": "site"
+          }
+        ],
+        "identity_conclusion": "PHYSICAL_SITE_DISTINCT_FROM_NEARBY_CANONICAL_CHURCH; NO AUTOMATIC_REUSE"
+      }
+    ],
+    "policy": "Distance alone is neither evidence of identity nor proof of uniqueness; no name/country or nearby-cathedral collision is promoted without the exact building way and institutional source."
   }
 }
