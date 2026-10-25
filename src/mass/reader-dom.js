@@ -1698,6 +1698,14 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
             event.owner==="MR62_1962_MISSAL_ADDITIONS" &&
             event.actor==="PRIEST" && event.kind==="GESTURE" &&
             event.sourceId==="MR62_RITUS") ||
+           // Two exact C0054/C0056 1962 book directions. Source notes,
+           // not inferred choir-synchronized LIVE priest gestures.
+           ((event.id==="MR62.ADD.C0054.01"&&event.sourceCueId==="AO.SM.C0054"||
+             event.id==="MR62.ADD.C0056.01"&&event.sourceCueId==="AO.SM.C0056") &&
+            event.review==="SOURCE_CERTIFIED_1962_MISSAL_ONLY_NOT_LIVE_CLOCK" &&
+            event.owner==="MR62_1962_MISSAL_ONLY_GLORIA_BOWS" &&
+            event.actor==="PRIEST" && event.kind==="GESTURE" &&
+            event.sourceId==="MR62_RITUS") ||
            (event.review==="EXISTING_CERTIFIED_R18_SOLEMN_MINISTER" &&
             event.owner==="R18_CERTIFIED_SOLEMN_MISSAL" &&
             typeof event.actor==="string" && event.actor.trim() &&
