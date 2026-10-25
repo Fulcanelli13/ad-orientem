@@ -218,6 +218,29 @@ try{
  assert.equal((await snapshot()).stops,11,"Explicit litany inclusion must add one optional card");
  assert.equal((await snapshot()).card,"hymn","Changing optional elements may not discard the current canonical stage");
  assert.equal(await feastDetails.evaluate(el=>el.open),true,"Optional cards configuration collapsed");
+ await feastDetails.locator("summary").tap();
+ await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
+ assert.equal((await snapshot()).card,"king-sacred-heart-litany");
+ const litanyVern=page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]");
+ const fullLitany=await litanyVern.innerText();
+ assert.equal((fullLitany.match(/Cœur de Jésus,/g)||[]).length,33,
+  "The Christ the King litany must display all 33 existing French invocations, not only one response");
+ assert.match(fullLitany,/Ainsi soit-il\./,
+  "The entire Sacred Heart litany including its concluding collect must be readable");
+ const litanyScroll=await page.locator(rootSel+" .aoDevoCardScroll").evaluate(el=>({
+  height:el.scrollHeight,viewport:el.clientHeight,overflow:getComputedStyle(el).overflowY
+ }));
+ assert.ok(litanyScroll.height>litanyScroll.viewport&&litanyScroll.overflow==="auto",
+  "The full litany must be scrollable within its card on a 390px phone");
+ const litanyLatin=page.locator(rootSel+" .aoP435930FeastPrayer [data-p435930-flip]");
+ await litanyLatin.tap();
+ assert.equal(await litanyLatin.locator("[data-face-la]").evaluate(el=>el.hidden),false);
+ assert.equal(((await litanyLatin.locator("[data-face-la]").innerText()).match(/Cor Iesu,/g)||[]).length,33,
+  "Latin face must contain every invocation, not a fragment");
+ await page.screenshot({path:resolve(captures,"benediction-390-christ-king-litany-fr.png"),animations:"disabled"});
+ await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
+ assert.equal((await snapshot()).card,"hymn","The complete optional litany must precede Consecration and Tantum Ergo");
+ await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").uncheck();
  assert.equal((await snapshot()).stops,10);
  await page.locator(timeline+" [data-ao-devo-chapter='9']").tap();
