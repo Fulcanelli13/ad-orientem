@@ -179,6 +179,54 @@ try{
  assert.ok(safeLine.right<=safeLine.viewport-46,
   "Ritual gesture icon overlaps the 320px prayer text: "+JSON.stringify(safeLine));
  await page.screenshot({path:resolve(captures,"benediction-320-reposition.png"),animations:"disabled"});
+
+ // Opt-in Christ the King celebration: procession before optional Royal Praises,
+ // consecration of the human race before Tantum Ergo. Ordinary route above stays seven.
+ await page.setViewportSize({width:390,height:844});
+ const feastDetails=page.locator(rootSel+" [data-ao-ben-feast-options]");
+ assert.equal(await feastDetails.count(),1);
+ assert.equal(await page.locator(rootSel+" [data-p435930-ben-feast]").isChecked(),false,
+   "Feast material was silently forced into ordinary Benediction");
+ await feastDetails.locator("summary").tap();
+ await page.locator(rootSel+" [data-p435930-ben-feast]").check();
+ assert.equal(await feastDetails.evaluate(el=>el.open),true,"Feast options close during configuration");
+ assert.equal((await snapshot()).stops,10,"Expected seven canonical stages plus three witnessed additions");
+ const sequence=await page.locator(timeline+" [data-ao-devo-chapter]").evaluateAll(els=>els.map(el=>el.getAttribute("data-ao-devo-chapter")));
+ assert.equal(sequence.length,10);
+ assert.equal(await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").isChecked(),false,
+   "Unconfirmed Sacred Heart Litany must be opt-in");
+ await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
+ assert.equal((await snapshot()).card,"king-procession");
+ await page.locator(timeline+" [data-ao-devo-chapter='3']").tap();
+ assert.equal((await snapshot()).card,"king-royal-praises");
+ assert.match(await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-la]").innerText(),/Christus vincit/);
+ await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
+ assert.equal((await snapshot()).card,"king-consecration");
+ assert.match(await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText(),/Most sweet Jesus/);
+ await locale.click();
+ assert.equal((await snapshot()).card,"king-consecration","Local French toggle lost Feast card");
+ assert.match(await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText(),/Très doux Jésus/);
+ await page.screenshot({path:resolve(captures,"benediction-390-christ-king-consecration-fr.png"),animations:"disabled"});
+ const feastFlip=page.locator(rootSel+" .aoP435930FeastPrayer [data-p435930-flip]");
+ await feastFlip.tap();
+ assert.equal(await feastFlip.locator("[data-face-la]").evaluate(x=>x.hidden),false,
+   "Latin consecration does not replace the French text");
+ await page.locator(timeline+" [data-ao-devo-chapter='5']").tap();
+ assert.equal((await snapshot()).card,"hymn","Consecration must lead to canonical Tantum Ergo");
+ await feastDetails.locator("summary").tap();
+ await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").check();
+ assert.equal((await snapshot()).stops,11,"Explicit litany inclusion must add one optional card");
+ assert.equal((await snapshot()).card,"hymn","Changing optional elements may not discard the current canonical stage");
+ assert.equal(await feastDetails.evaluate(el=>el.open),true,"Optional cards configuration collapsed");
+ await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").uncheck();
+ assert.equal((await snapshot()).stops,10);
+ await page.locator(rootSel+" [data-p435930-ben-feast]").uncheck();
+ assert.equal((await snapshot()).stops,7,"Ordinary Benediction was not restored on disabling feast");
+ await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
+ assert.equal((await snapshot()).card,"hymn");
+ await page.setViewportSize({width:320,height:720});
+ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
+  "Optional Christ King celebration introduced phone overflow");
  assert.deepEqual(errors,[],"Browser exceptions: "+errors.join(" | "));
  console.log("PASS canonical seven-stage Benediction: timeline, vertical focus, horizontal swipe, conditional Praises and manual ritual pace");
  await page.close();
