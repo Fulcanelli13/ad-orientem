@@ -603,3 +603,20 @@ for(const id of [
   assert.ok(prayer[language]?.trim(),"Missing "+language+" prayer in PRAY canonical data: "+id);
  }
 }
+
+
+// Shared PRAY folio phase 2: Stations and Confession retain their separate
+// ritual/penitential owners while inheriting the tested session locale control.
+assert.match(runtime,/const prayerLanguage=\['adoration','benediction','stations','confession'\]\.includes\(view\)/);
+assert.match(runtime,/data-p435930-session-language/);
+assert.match(runtime,/praySessionLanguage=isFr\(\)\?'en':'fr'/);
+assert.match(runtime,/if\(b\.hasAttribute\('data-p435930-session-language'\)&&\['adoration','benediction','stations','confession'\]\.includes\(view\)\)/);
+const fourFolioCSS=readFileSync("src/pray/devotional-card-deck-styles.js","utf8");
+assert.match(fourFolioCSS,/PRAY shared parity phase 2/);
+assert.match(fourFolioCSS,/data-ao-pray-view="stations"/);
+assert.match(fourFolioCSS,/data-ao-pray-view="confession"/);
+assert.match(fourFolioCSS,/aoP435930Stations \.aoDevoCardScroll \.aoP435930StationPrayer \.aoP435930Flip/);
+assert.match(fourFolioCSS,/aoP435930ConfessionReader \.aoDevoCardScroll \.aoP435930ConfQuestions li/);
+assert.match(runtime,/STATION_DATA\.alphonsus\?\.\[lang\(\)\]/);
+assert.match(runtime,/const ex=isFr\(\)\?DATA\.examFr:DATA\.exam/);
+assert.match(runtime,/CONF\.since/);
