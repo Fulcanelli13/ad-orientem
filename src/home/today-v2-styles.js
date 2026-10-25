@@ -475,7 +475,7 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
   vertical-align:baseline!important;margin:0 10px 0 0!important;
 }
 .homeScreen.aoTodayV2 .aoTodayV2Identity .aoTodayV2SeasonMicro{
-  padding:7px 3px!important;align-self:flex-start!important;min-height:44px!important;
+  padding:7px 3px!important;align-self:flex-start!important;min-height:48px!important;
   color:#bda77d!important;font:400 15px/1.4 var(--ao-font-ui,Georgia,serif)!important;
 }
 .homeScreen.aoTodayV2 .aoTodayEditorialEdition>.aoTodayV2Art{
