@@ -251,7 +251,7 @@ export function mountFullMassPreflight({
         '<button type="button" data-folio-goto="ceremony">2 · <span data-folio-step-ceremony></span></button>'+
         '<button type="button" data-folio-goto="reader">3 · <span data-folio-step-reader></span></button></nav>'+
         '<section data-folio-panel="overview" class="aoMassFolioPanel">'+
-        '<h3 data-folio-overview-heading></h3><p data-folio-overview-hint></p>'+
+        '<small class="aoMassFolioOverviewDate" data-folio-overview-date></small><h3 data-folio-overview-heading></h3><p data-folio-overview-hint></p>'+
         '<div class="aoMassFolioReadyLine" data-folio-overview-selections></div>'+
         '<div class="aoMassFolioQuickChoices" role="group" aria-label="Mass setup choices">'+
         '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="celebration">'+folioAssetIcon('ao-module-before-mass')+'<span><strong data-folio-quick-mass-label></strong><small data-folio-quick-mass-value></small></span><span aria-hidden="true">›</span></button>'+
@@ -284,6 +284,12 @@ export function mountFullMassPreflight({
         '<button type="button" data-folio-back hidden></button><button type="button" data-folio-next hidden></button></div>'+
         '<div data-folio-host-actions></div></div>';
       root.prepend(folio);
+      // In the simple overview, one concise Mass choice already names the
+      // celebration. Keep exact calendar/Proper details beneath the choices,
+      // not in a duplicate masthead that pushes all actions below the fold.
+      const calendarDetails=folio.querySelector('[data-folio-calendar-details]');
+      const overview=folio.querySelector('[data-folio-panel="overview"]');
+      if(calendarDetails&&overview)overview.append(calendarDetails);
       const move=(selector,slot)=>{
         const source=root.querySelector(selector),destination=folio.querySelector(slot);
         if(source&&destination)destination.append(source);
@@ -418,6 +424,10 @@ export function mountFullMassPreflight({
     };
     const displayTitle=summary.actualTitle||summary.kindLabel;
     word("[data-folio-date]",date,""+date);
+    const dateObject=/^\d{4}-\d{2}-\d{2}$/.test(date)?new Date(date+"T12:00:00"):null;
+    const overviewDate=dateObject&&!Number.isNaN(dateObject.valueOf())?
+      new Intl.DateTimeFormat(french()?"fr-FR":"en-GB",{weekday:"long",day:"numeric",month:"long"}).format(dateObject):date;
+    word("[data-folio-overview-date]",overviewDate,overviewDate);
     word("[data-folio-kind]",summary.kindLabel,summary.kindLabel);
     word("[data-folio-celebration]",displayTitle,displayTitle);
     word("[data-folio-season]",[context.actual?.colour||context.calendar?.colour,context.season].filter(Boolean).join(" · "),
