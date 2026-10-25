@@ -252,7 +252,7 @@ try{
     // Walk every liturgical card in source order, not merely selected screenshots.
     // A local second Confiteor is present in source audit, but absent from
     // the default navigation path unless explicitly requested.
-    const walked=await page.evaluate(expectedByCue=>{
+    const walked=await page.evaluate(({expectedByCue,checkRubrics})=>{
       const api=window.__AO_PHONE_PREVIEW;
       const optionalTitle="Second Confiteor · Optional Local Custom";
       const skipped=[],visited=[],defects=[],rubricSeen=new Set(),rubricPrinted=new Set();
@@ -292,7 +292,7 @@ try{
         }
         if(shell && shell.scrollWidth>shell.clientWidth+3)defects.push("overflow "+card.title);
         if(!/^[0-9]+ \/ [0-9]+$/.test(progress??""))defects.push("invalid progress "+card.title+": "+progress);
-        if(width===390&&lang==="en"&&!secondConfiteor){
+        if(checkRubrics){
           for(const paragraph of card.paragraphs){
             const ids=[...new Set((paragraph.sourceCueIds??[])
               .flatMap(cueId=>expectedByCue[cueId]??[])
@@ -325,7 +325,7 @@ try{
         }
       }
       return {visited,skipped,defects,finalProgress,optionalSeq:optional?.sequence??null,rubricSeen:[...rubricSeen],rubricPrinted:[...rubricPrinted]};
-    },publishedByCue);
+    },{expectedByCue:publishedByCue,checkRubrics:width===390&&lang==="en"&&!secondConfiteor});
     if(width===390&&lang==="en"&&!secondConfiteor){
       const recovered=[...new Set([...walked.rubricSeen,...walked.rubricPrinted])].sort();
       assert.deepEqual(recovered,priestRubricIds,
