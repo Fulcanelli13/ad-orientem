@@ -6,6 +6,8 @@ on:
       - "data/mass/icksp-1962-full-icon-cue-screening-20261025.v1.json"
       - "docs/MASS-1962-ICKSP-FULL-ICON-CUE-AUDIT-20261025.md"
       - "tests/mass-icksp-full-icon-screening.mjs"
+      - "tests/mass-icksp-icon-exception-adjudication.mjs"
+      - "data/mass/icksp-1962-icon-exception-adjudication-20261025.v1.json"
       - ".github/workflows/mass-icksp-279-icon-snapshot.yml"
   workflow_dispatch:
 jobs:
@@ -20,3 +22,5 @@ jobs:
       # mandatory baseline for every subsequent reader feature or source edit.
       - name: Check source-pinned 279 cue screening
         run: node tests/mass-icksp-full-icon-screening.mjs
+      - name: Check closed lexical triggers and exact-art holds
+        run: node tests/mass-icksp-icon-exception-adjudication.mjs
