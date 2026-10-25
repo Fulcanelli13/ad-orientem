@@ -40,10 +40,10 @@
   ],
   "count": 26,
   "statusCounts": {
-    "REVIEW_ACTOR_CLOCK": 4,
+    "REVIEW_ACTOR_CLOCK": 3,
     "PRESENT_PUBLISHED": 7,
-    "PRESENT_OTHER_REGISTRY": 12,
-    "REVIEW_PUBLISHED_GAP": 2,
+    "PRESENT_OTHER_REGISTRY": 14,
+    "REVIEW_PUBLISHED_GAP": 1,
     "CONDITIONAL_EXISTING": 1
   },
   "items": [
@@ -75,6 +75,13 @@
           ],
           "stations": [
             "FOOT_CENTER"
+          ],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0001.01",
+              "gesture": "SIGN_OF_CROSS",
+              "sourceRubricEventId": null
+            }
           ]
         }
       ]
@@ -103,7 +110,14 @@
           "priestActions": [],
           "gestureEvents": [],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0010.01",
+              "gesture": "HEAD_OR_BODY_BOW",
+              "sourceRubricEventId": "AO.RUB.C0010.01"
+            }
+          ]
         }
       ]
     },
@@ -131,7 +145,8 @@
             "Sign of the Cross"
           ],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": []
         }
       ]
     },
@@ -159,7 +174,14 @@
           ],
           "gestureEvents": [],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0016.01",
+              "gesture": "PROFOUND_BOW",
+              "sourceRubricEventId": null
+            }
+          ]
         }
       ]
     },
@@ -187,7 +209,14 @@
           ],
           "gestureEvents": [],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0017.01",
+              "gesture": "BREAST_STRIKE",
+              "sourceRubricEventId": null
+            }
+          ]
         }
       ]
     },
@@ -219,7 +248,8 @@
           "voiceStates": [
             "MINISTER RESPONSE / QUIET"
           ],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": []
         },
         {
           "cueId": "AO.SM.C0022",
@@ -230,7 +260,8 @@
             "Strike breast ×3"
           ],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": []
         },
         {
           "cueId": "AO.SM.C0023",
@@ -241,7 +272,8 @@
             "Remain bowed / return after conclusion"
           ],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": []
         }
       ]
     },
@@ -269,7 +301,14 @@
             "Sign of the Cross"
           ],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0026.01",
+              "gesture": "SIGN_OF_CROSS",
+              "sourceRubricEventId": null
+            }
+          ]
         }
       ]
     },
@@ -301,7 +340,8 @@
           ],
           "stations": [
             "ALTAR_STEPS_ASCENDING"
-          ]
+          ],
+          "priestGestureMatrix": []
         }
       ]
     },
@@ -312,9 +352,9 @@
         "AO.SM.C0038"
       ],
       "rubricalPoint": "Priest bows over altar while beginning Oramus te.",
-      "status": "REVIEW_PUBLISHED_GAP",
-      "existingEvidence": "Quiet prayer and altar-centre station exist; no published exact priest bow rubric at C0038.",
-      "nextAction": "Compare Ritus IV.1 and other detailed ceremonial layers before proposing release.",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "Ritus IV.1 is already source-owned at GM.P.C0038.01 (priest BODY_BOW, exact Oramus te cue) in data/mass/gesture-matrix.v1.json; C0039 carries altar kiss.",
+      "nextAction": "Preserve existing priest gesture and approved asset. Check actual presentation; DO NOT duplicate.",
       "sourceIds": [
         "RITUS_1962",
         "ICKSP_ORDO_1962"
@@ -331,6 +371,13 @@
           ],
           "stations": [
             "ALTAR_CENTER"
+          ],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0038.01",
+              "gesture": "BODY_BOW",
+              "sourceRubricEventId": null
+            }
           ]
         }
       ]
@@ -359,7 +406,14 @@
           ],
           "gestureEvents": [],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0039.01",
+              "gesture": "ALTAR_KISS",
+              "sourceRubricEventId": null
+            }
+          ]
         }
       ]
     },
@@ -393,7 +447,8 @@
           ],
           "stations": [
             "ALTAR_CENTER"
-          ]
+          ],
+          "priestGestureMatrix": []
         },
         {
           "cueId": "AO.SM.C0054",
@@ -404,7 +459,8 @@
           "voiceStates": [
             "SUNG / CLEAR"
           ],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": []
         },
         {
           "cueId": "AO.SM.C0055",
@@ -417,7 +473,8 @@
           "voiceStates": [
             "QUIET PRIVATE RECITATION"
           ],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": []
         }
       ]
     },
@@ -445,7 +502,8 @@
             "Customary bow may follow local practice; do not hard-code as universal."
           ],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": []
         }
       ]
     },
@@ -475,7 +533,14 @@
             "Bow head"
           ],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0058.01",
+              "gesture": "HEAD_OR_BODY_BOW",
+              "sourceRubricEventId": "AO.RUB.C0058.01"
+            }
+          ]
         }
       ]
     },
@@ -505,7 +570,14 @@
             "Bow head"
           ],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0061.01",
+              "gesture": "HEAD_OR_BODY_BOW",
+              "sourceRubricEventId": "AO.RUB.C0061.01"
+            }
+          ]
         }
       ]
     },
@@ -535,7 +607,14 @@
             "Bow head"
           ],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0064.01",
+              "gesture": "HEAD_OR_BODY_BOW",
+              "sourceRubricEventId": "AO.RUB.C0064.01"
+            }
+          ]
         }
       ]
     },
@@ -566,7 +645,14 @@
             "Bow head"
           ],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0067.01",
+              "gesture": "HEAD_OR_BODY_BOW",
+              "sourceRubricEventId": "AO.RUB.C0067.01"
+            }
+          ]
         },
         {
           "cueId": "AO.SM.C0068",
@@ -579,7 +665,14 @@
             "Sign of the Cross"
           ],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0068.01",
+              "gesture": "SIGN_OF_CROSS",
+              "sourceRubricEventId": "AO.RUB.C0068.01"
+            }
+          ]
         }
       ]
     },
@@ -590,9 +683,9 @@
         "AO.SM.C0090"
       ],
       "rubricalPoint": "Priest bows head at Deum in Credo.",
-      "status": "REVIEW_ACTOR_CLOCK",
-      "existingEvidence": "Faithful gesture matrix contains a bow for Credo in unum Deum but no separately published priest rubric.",
-      "nextAction": "Review 1962 Ritus Credo voice/actor timing; avoid schola-to-priest inference.",
+      "status": "PRESENT_OTHER_REGISTRY",
+      "existingEvidence": "Priest head bow is already source-owned at GM.P.C0090.01 (besides separate faithful GM.F.C0090.01); no additional event needed.",
+      "nextAction": "Verify priest/schola timing before changing display. DO NOT duplicate source priest gesture.",
       "sourceIds": [
         "RITUS_1962",
         "ICKSP_ORDO_1962"
@@ -609,7 +702,14 @@
           "voiceStates": [
             "SUNG / CLEAR"
           ],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0090.01",
+              "gesture": "HEAD_BOW",
+              "sourceRubricEventId": null
+            }
+          ]
         }
       ]
     },
@@ -639,7 +739,14 @@
             "Kneeling/genuflection here depends on sung/local calendar rule; Christmas and..."
           ],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0096.01",
+              "gesture": "GENUFLECT",
+              "sourceRubricEventId": null
+            }
+          ]
         }
       ]
     },
@@ -670,7 +777,8 @@
           "voiceStates": [
             "SUNG / PUBLIC"
           ],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": []
         },
         {
           "cueId": "AO.SM.C0260",
@@ -681,7 +789,8 @@
           "voiceStates": [
             "LISTENS"
           ],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": []
         }
       ]
     },
@@ -694,7 +803,7 @@
       "rubricalPoint": "Priest bows at altar centre with joined hands resting on it while saying Placeat tibi silently.",
       "status": "REVIEW_PUBLISHED_GAP",
       "existingEvidence": "Text, altar-centre position and SECRET / QUIET voice exist; no separately published C0261 bow instruction in 57-event overlay.",
-      "nextAction": "Cross-check any other existing semantic layer, then propose a source-owned short Missal rubric using an approved icon only if available; do not invent LIVE timing.",
+      "nextAction": "Presentation-only bilingual source-certified addendum in draft PR #1663; preserve frozen 57-event original rubric/icon crosswalk; no new icon, card or LIVE clock.",
       "sourceIds": [
         "RITUS_1962",
         "ICKSP_ORDO_1962"
@@ -711,7 +820,8 @@
           ],
           "stations": [
             "ALTAR_CENTER"
-          ]
+          ],
+          "priestGestureMatrix": []
         }
       ]
     },
@@ -742,7 +852,14 @@
           "voiceStates": [
             "SILENT"
           ],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0262.01",
+              "gesture": "ALTAR_KISS",
+              "sourceRubricEventId": "AO.RUB.C0262.01"
+            }
+          ]
         }
       ]
     },
@@ -774,6 +891,23 @@
           "voiceStates": [],
           "stations": [
             "ALTAR_CENTER"
+          ],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0263.01",
+              "gesture": "RAISE_EYES_AND_HANDS",
+              "sourceRubricEventId": "AO.RUB.C0263.01"
+            },
+            {
+              "id": "GM.P.C0263.02",
+              "gesture": "JOIN_HANDS",
+              "sourceRubricEventId": "AO.RUB.C0263.02"
+            },
+            {
+              "id": "GM.P.C0263.03",
+              "gesture": "HEAD_OR_BODY_BOW",
+              "sourceRubricEventId": "AO.RUB.C0263.03"
+            }
           ]
         }
       ]
@@ -806,6 +940,13 @@
           "voiceStates": [],
           "stations": [
             "ALTAR_CENTER"
+          ],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0265.01",
+              "gesture": "BLESSING_CROSS",
+              "sourceRubricEventId": null
+            }
           ]
         }
       ]
@@ -838,7 +979,14 @@
           "voiceStates": [
             "CLEAR SPOKEN / local audibility"
           ],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0269.01",
+              "gesture": "GOSPEL_BOOK_AND_BODY_CROSSES",
+              "sourceRubricEventId": null
+            }
+          ]
         }
       ]
     },
@@ -869,7 +1017,14 @@
             "Genuflect"
           ],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": [
+            {
+              "id": "GM.P.C0273.01",
+              "gesture": "GENUFLECT",
+              "sourceRubricEventId": null
+            }
+          ]
         },
         {
           "cueId": "AO.SM.C0274",
@@ -880,7 +1035,8 @@
             "Rise"
           ],
           "voiceStates": [],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": []
         }
       ]
     },
@@ -914,7 +1070,8 @@
           ],
           "stations": [
             "ALTAR_CENTER"
-          ]
+          ],
+          "priestGestureMatrix": []
         },
         {
           "cueId": "AO.SM.C0238",
@@ -927,7 +1084,8 @@
           ],
           "stations": [
             "ALTAR_CENTER"
-          ]
+          ],
+          "priestGestureMatrix": []
         },
         {
           "cueId": "AO.SM.C0240",
@@ -940,9 +1098,16 @@
           "voiceStates": [
             "CLEAR / LOCAL"
           ],
-          "stations": []
+          "stations": [],
+          "priestGestureMatrix": []
         }
       ]
     }
-  ]
+  ],
+  "enrichment": {
+    "matrix": "data/mass/gesture-matrix.v1.json",
+    "matrixAuthority": "EXISTING_SOURCE_OWNED_RUNTIME_GESTURE_FAMILY",
+    "correctionDate": "2026-10-25",
+    "note": "Main snapshot unchanged; adding explicit existing priest gesture-matrix ownership resolves mistaken publication gaps. The 57-rubric publication registry is a distinct narrower source."
+  }
 }
