@@ -354,11 +354,13 @@ try{
  assert.ok(picked>=0&&silent>=0);
  await page.locator("#reviewer").fill("Independent External Reviewer A");
  await page.locator("#cases").selectOption(String(picked));
- await page.locator("#reviewForm article.case").first().waitFor({state:"visible",timeout:15000});
- const retrieved=await page.locator("#reviewForm article.case").count();
+ await page.locator("#reviewForm > article.case").first().waitFor({state:"visible",timeout:15000});
+ const retrieved=await page.locator("#reviewForm > article.case").count();
+ assert.equal(retrieved,packet.cases[picked].results.length,
+  "Only genuinely retrieved Messenger excerpts may be graded; canonical context is reference-only");
  assert.ok(retrieved>=1&&retrieved<=4);
  for(let i=0;i<retrieved;i++){
-  const card=page.locator("#reviewForm article.case").nth(i);
+  const card=page.locator("#reviewForm > article.case").nth(i);
   await card.locator("select").selectOption("1");
   await card.locator("textarea").fill("Source excerpt preserved, but independent theological relevance remains unverified.");
  }
