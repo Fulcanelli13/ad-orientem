@@ -133,8 +133,8 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll .aoP435930Flip{
  max-width:100%;white-space:normal}
 #aoPray435930 .aoP435930BenedictionReader[data-ao-benediction-dual-axis="true"] .aoP435930GuideNav{display:none!important}
-#aoPray435930 .aoP435930BenedictionReader[data-ao-benediction-dual-axis="true"][data-ao-benediction-step="6"] .aoP435930GuideNav{display:flex!important}
-#aoPray435930 .aoP435930BenedictionReader[data-ao-benediction-dual-axis="true"][data-ao-benediction-step="6"] [data-p435930-ben-prev]{display:none!important}
+#aoPray435930 .aoP435930BenedictionReader[data-ao-benediction-dual-axis="true"][data-ao-benediction-final="true"] .aoP435930GuideNav{display:flex!important}
+#aoPray435930 .aoP435930BenedictionReader[data-ao-benediction-dual-axis="true"][data-ao-benediction-final="true"] [data-p435930-ben-prev]{display:none!important}
 #aoPray435930 .aoP435930BenedictionReader [data-ao-benediction-guide]{
  margin:12px 0 8px}
 #aoPray435930 .aoP435930BenedictionReader [data-ao-benediction-guide]>summary{
