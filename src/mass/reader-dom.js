@@ -3860,7 +3860,15 @@ export function createReaderDomAdapter({
           // Exact source-printed rubric wins. The only exception is a
           // separately approved persistent priest state: not another action.
           const shortRubrics=alreadyPrintedRubric
-            ? inlineRubrics.filter(event=>event.kind==="STATE")
+            ? inlineRubrics.filter(event=>event.kind==="STATE" ||
+                // The paragraph itself is a source rubric: never print a
+                // duplicate action. Exact separately certified Solemn
+                // minister exceptions may still need their full rubric
+                // when the existing printed line omits that instruction.
+                (event.review==="EXISTING_CERTIFIED_R18_SOLEMN_MINISTER" &&
+                 event.owner==="R18_CERTIFIED_SOLEMN_MISSAL" &&
+                 !String(p.primary??"").toLocaleLowerCase().includes(
+                   String(event.displayText??"").toLocaleLowerCase())))
             : inlineRubrics;
           if(shortRubrics?.length){
             const note=doc.createElement(mode==="MISSAL"?"div":"span");
