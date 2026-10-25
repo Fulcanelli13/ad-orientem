@@ -164,7 +164,11 @@ export function installSequentialDevotionalReader({
       if(selected>=0)found=selected;
     }else if(body.scrollTop<2)found=0;
     shown.forEach((p,i)=>{
-      const power=i===found?"1":Math.abs(i-found)===1?".56":".30";
+      // A liturgical prayer is never muted behind instructional focus cues.
+      // Adoration/Benediction retain subtle focus only for their guidance.
+      const canonicalPrayer=(kind==="adoration"||kind==="benediction")&&
+        Boolean(p.closest(".aoP435930Prayer"));
+      const power=canonicalPrayer?"1":i===found?"1":Math.abs(i-found)===1?".56":".30";
       p.style.setProperty("--ao-devo-focus",power);
       p.style.setProperty("opacity",power,"important");
       p.dataset.aoDevoActive=i===found?"true":"false";
