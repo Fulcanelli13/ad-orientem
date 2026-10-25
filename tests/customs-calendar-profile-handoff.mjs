@@ -64,5 +64,11 @@ for(const year of [2026,2027,2030]){
   }
  }
 }
-assert.equal(atlas.customs.length,38);
+// Freeze the original 38-record Weiser owner baseline. An optional, complete
+// two-article Calendar candidate adds two customs, two attestations and four
+// source registrations without changing historical Weiser owners.
+const candidateIds=["EPIP-003","CRIB-001"];
+const candidateCount=candidateIds.filter(id=>atlas.customs.some(x=>x.custom_id===id)).length;
+assert.ok(candidateCount===0||candidateCount===2,"Calendar candidate cohort must be complete");
+assert.equal(atlas.customs.length,38+candidateCount);
 console.log("PASS: exact eleven custom Calendar deep links across three liturgical years, EN/FR, no duplicate rite or feasts, 33 unique customs.");
