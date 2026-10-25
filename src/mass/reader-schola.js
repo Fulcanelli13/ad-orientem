@@ -113,6 +113,7 @@ export function createNativeScholaController(args={}){
     if(segment.cueId)cueToTrack.set(segment.cueId,{trackId:track.id,index:track.segments.indexOf(segment)});
   }
   let activeTrackId=null,index=0,complete=false,lastSyncedCueId=null;
+  let lastSelectedSourceCard=null;
   // Choir setting belongs to the actual local performance. It cannot be
   // inferred from the Mass form, date, priest's paragraph or display timer.
   const normalizeStyle=v=>["GREGORIAN","POLYPHONIC"].includes(v)?v:"UNSPECIFIED";
@@ -164,6 +165,7 @@ export function createNativeScholaController(args={}){
     if(!byId.has(trackId)){activeTrackId=null;index=0;complete=false;lastSyncedCueId=null;return state()}
     if(activeTrackId!==trackId || reset){
       activeTrackId=trackId;index=0;complete=false;lastSyncedCueId=null;
+      lastSelectedSourceCard=null;
       if(trackId==="SANCTUS_BENEDICTUS")benedictusReleased=sanctusPerformance==="GREGORIAN";
     }
     return state();
@@ -215,12 +217,29 @@ export function createNativeScholaController(args={}){
     const matches=tracksForSourceCard(card);
     const current=activeTrackId?byId.get(activeTrackId):null;
     if(current&&matches.some(t=>t.id===current.id)){
-      // B022 can display multiple source-ordered public chant paragraphs.
-      // Opening or scrolling a different paragraph cannot observe the
-      // schola singing or change its independently controlled index.
+      // A separately verified, navigable curated Sequence card is a real
+      // editorial *selection*, unlike a paragraph scroll on the same card.
+      // Preserve its original source-owned B022 segment when that specific
+      // card is deliberately opened; never infer segment progress from the
+      // visible paragraph inside an unchanged card or a layout repaint.
+      const selectedCard=String(card.sectionId??"");
+      if(current.id==="ALLELUIA_TRACT_SEQUENCE" &&
+         selectedCard.startsWith("AO.LIVECURATED.") &&
+         selectedCard!==lastSelectedSourceCard &&
+         (card.paragraphs??[]).length===1 &&
+         blockIds.size===1&&blockIds.has("AO.SM.B022")){
+        const paragraphId=String(card.paragraphs[0].id);
+        const at=current.segments.findIndex(segment=>segment.id===paragraphId);
+        if(at>=0){index=at;complete=false;lastSyncedCueId=null;}
+      }
+      if(selectedCard)lastSelectedSourceCard=selectedCard;
       return state();
     }
-    if(matches.length)return activate(matches[0].id);
+    if(matches.length){
+      const result=activate(matches[0].id);
+      lastSelectedSourceCard=String(card.sectionId??"")||null;
+      return result;
+    }
 
     // The Introit belongs to the actual entrance, not its later printed
     // Proper (B014). The first ordinary opening prayer cards are the
