@@ -1,0 +1,190 @@
+{
+  "schema": "ao-mass-existing-approved-icon-bank-reconciliation-v1",
+  "date": "2026-10-25",
+  "status": "EVIDENCE_RECONCILED_PENDING_VISUAL_REASSIGNMENT",
+  "authority": "AUDIT_ONLY_NO_RUNTIME_REBIND",
+  "sourceOfTruth": {
+    "current": "data/presentation/mass-icon-canonical-set-20261021.v1.json",
+    "approvedLock": "data/presentation/mass-icon-final-user-lock-20261020.v1.json",
+    "historicCrosswalk": "data/presentation/mass-icon-final-cue-crosswalk-20261020.v1.json",
+    "priorUserSelections": "data/presentation/mass-icon-user-selections-20261010.v1.json",
+    "exactGestureEvidence": "data/mass/gesture-matrix.v1.json",
+    "nativeActionCues": "data/presentation/reader-priest-actions.v1.json"
+  },
+  "rules": [
+    "Use existing exact approved assets; do not infer ceremony from filenames or prior provisional aliases.",
+    "Offertory Host and chalice icons must not automatically replace the minor elevation at Per ipsum.",
+    "Keep all Mass cue IDs, modes, prayers, actor ownership, voice and position separate.",
+    "Current canonical C0247 and C0248 overrides take precedence over the frozen October 20 crosswalk's reversed historical choices.",
+    "Prior priest gesture assignments are recorded as candidates, not automatically restored where the October 20 lock or October 21 canonical model withheld approval.",
+    "No generated artwork and no change to approved original bytes."
+  ],
+  "approvedSequence": [
+    {
+      "cueId": "AO.SM.C0110",
+      "meaningId": "priest.action.offer_host",
+      "assetId": "v46_priest_elevate_host_rich",
+      "phase": "OFFERTORY_HOST"
+    },
+    {
+      "cueId": "AO.SM.C0114",
+      "meaningId": "priest.action.offer_chalice",
+      "assetId": "v46_priest_elevate_chalice_rich",
+      "phase": "OFFERTORY_CHALICE"
+    },
+    {
+      "cueId": "AO.SM.C0174",
+      "meaningId": "priest.action.elevate_host",
+      "assetId": "v46_priest_elevation",
+      "phase": "MAJOR_ELEVATION_HOST"
+    },
+    {
+      "cueId": "AO.SM.C0181",
+      "meaningId": "priest.action.elevate_chalice",
+      "assetId": "ao_elevation_chalice",
+      "phase": "MAJOR_ELEVATION_CHALICE"
+    },
+    {
+      "cueId": "AO.SM.C0216",
+      "meaningId": "priest.action.fraction",
+      "assetId": "ea_priest_fraction_host",
+      "phase": "FRACTION"
+    },
+    {
+      "cueId": "AO.SM.C0221",
+      "meaningId": "priest.action.commingling",
+      "assetId": "ea_priest_commingling",
+      "phase": "COMMINGLING"
+    },
+    {
+      "cueId": "AO.SM.C0232",
+      "meaningId": "priest.action.receive_host",
+      "assetId": "ea_priest_communion_host_original",
+      "phase": "PRIEST_COMMUNION_HOST"
+    },
+    {
+      "cueId": "AO.SM.C0234",
+      "meaningId": "priest.action.receive_chalice",
+      "assetId": "ea_priest_communion_chalice_original",
+      "phase": "PRIEST_COMMUNION_CHALICE"
+    },
+    {
+      "cueId": "AO.SM.C0247",
+      "meaningId": "priest.action.purify_chalice",
+      "assetId": "ao_purify_chalice",
+      "phase": "FIRST_ABLUTION_CHALICE"
+    },
+    {
+      "cueId": "AO.SM.C0248",
+      "meaningId": "priest.action.purify_fingers",
+      "assetId": "ao_purify_fingers",
+      "phase": "SECOND_ABLUTION_FINGERS"
+    }
+  ],
+  "historicalCorrection": [
+    {
+      "cueId": "AO.SM.C0247",
+      "oldCrosswalk": "ao_purify_fingers",
+      "canonical": "ao_purify_chalice",
+      "basis": "Quod ore sumpsimus: first ablution, chalice"
+    },
+    {
+      "cueId": "AO.SM.C0248",
+      "oldCrosswalk": "ao_purify_chalice",
+      "canonical": "ao_purify_fingers",
+      "basis": "Corpus tuum: ablution of the priest's fingers"
+    }
+  ],
+  "unresolvedMeanings": [
+    {
+      "meaningId": "priest.action.final_blessing",
+      "candidates": [
+        "ao-live-blessing",
+        "v46_priest_facing_people"
+      ],
+      "decision": "VISUAL_REVIEW_REQUIRED",
+      "reason": "Recovered V4 generic blessing available; final blessing is not Indulgentiam, and a position icon is not necessarily an action."
+    },
+    {
+      "meaningId": "priest.action.gospel_crosses",
+      "candidates": [
+        "v46_gospel_crosses"
+      ],
+      "decision": "SOURCE_MATRIX_REUSE_REVIEW",
+      "reason": "Earlier priest gesture matrix binds C0084 and C0269, but the approved asset's image duplicates ordinary cross and October 20 names it for the faithful."
+    },
+    {
+      "meaningId": "priest.action.kiss_gospel",
+      "candidates": [
+        "v46_priest_gospel_rich",
+        "v46_priest_kiss_altar_rich"
+      ],
+      "decision": "NO_EXACT_CEREMONY",
+      "reason": "One image means a priest's station (repurposed to Epistle), the other is an altar kiss; neither shows kissing the Gospel book."
+    },
+    {
+      "meaningId": "priest.action.minor_elevation",
+      "candidates": [
+        "v46_priest_elevate_host_rich",
+        "v46_priest_elevate_chalice_rich",
+        "v46_canon"
+      ],
+      "decision": "USER_INTENT_TO_REVIEW",
+      "reason": "User recalls describing minor elevation as 'priest offers Host/chalice', but both individually approved icons are assigned by locked later evidence to distinct Offertory actions. Per ipsum needs Host held above chalice in a single low elevation."
+    },
+    {
+      "meaningId": "priest.action.shows_host",
+      "candidates": [
+        "v46_priest_elevation",
+        "v46_priest_elevate_host_rich"
+      ],
+      "decision": "NO_EXACT_CEREMONY",
+      "reason": "Ecce Agnus Dei presentation is distinct from both Consecration high elevation and Offertory offering."
+    },
+    {
+      "meaningId": "priest.action.bow_head",
+      "candidates": [
+        "head_bow",
+        "ao-live-head-bow"
+      ],
+      "decision": "SOURCE_MATRIX_REUSE_REVIEW",
+      "reason": "Priest cue matrix already uses head_bow, but the final canonical priest-action slot was deliberately held text-only pending reconciliation."
+    },
+    {
+      "meaningId": "priest.action.bow_moderate",
+      "candidates": [
+        "v46_bow",
+        "ao_adoration"
+      ],
+      "decision": "DEGREE_REVIEW_REQUIRED",
+      "reason": "Faithful generic bow differs from priest's exact inclinatus; approved ao_adoration means profound, not moderate bow."
+    },
+    {
+      "meaningId": "priest.action.hands_joined",
+      "candidates": [
+        "v46_hands_joined",
+        "legacy_hands_joined"
+      ],
+      "decision": "SOURCE_MATRIX_REUSE_REVIEW",
+      "reason": "Generic approved Hands Joined art appears in priest gesture matrix for C0117 and C0263, but canonical action cannot silently cross actor lanes."
+    },
+    {
+      "meaningId": "priest.action.hands_over_oblations",
+      "candidates": [
+        "v46_priest_centre_hands_rich",
+        "review:priest-hands-over-oblations"
+      ],
+      "decision": "NO_APPROVED_EXACT_ACTION",
+      "reason": "Rich artwork approved as altar-centre position; exact-action proposal remains in review/ and unapproved."
+    },
+    {
+      "meaningId": "priest.action.consecration",
+      "candidates": [
+        "ao_adoration",
+        "v46_priest_profound_bow_rich"
+      ],
+      "decision": "NO_APPROVED_EXACT_ACTION",
+      "reason": "Profound bow and altar kiss are not exact priest inclining over Host/chalice during the Consecration."
+    }
+  ]
+}
