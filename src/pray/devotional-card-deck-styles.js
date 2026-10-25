@@ -558,6 +558,10 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)!important;
  margin:3px 0 0!important;letter-spacing:0!important;
 }
+/* The chapter timeline already names the stage; repeat neither its title nor 1/7
+   above a prayer. Keep the action title on prayerless Blessing/Silence cards. */
+#aoPray435930 .aoP435930BenedictionReader .aoDevoCard:has(.aoP435930Prayer)>.aoDevoCardHead,
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCard:has(.aoP435930Prayer)>.aoDevoCardHead{display:none!important}
 /* A prayerless stage remains legible: silence, blessing and reposition are not blank cards. */
 #aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll:not(:has(.aoP435930Prayer)) .aoP435930GuideNow p,
 #aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll:not(:has(.aoP435930Prayer)) .aoP435930GuideNow p{
