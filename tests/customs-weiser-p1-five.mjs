@@ -20,7 +20,13 @@ const specs=[
  ["EAST-001","DE",["MUNICH-FREISING-EMMAUSGANG"]],
  ["MARI-002","US",["CATHCULTURE-MARY-GARDEN"]]
 ];
-assert.deepEqual([atlas.customs.length,atlas.attestations.length,sources.sources.length,extensions.extensions.length,negative.entries.length,p1.entries.length],[38,97,108,22,7,5]);
+// Freeze the original 38-record Weiser owner baseline. An optional, complete
+// two-article Calendar candidate adds two customs, two attestations and four
+// source registrations without changing historical Weiser owners.
+const candidateIds=["EPIP-003","CRIB-001"];
+const candidateCount=candidateIds.filter(id=>atlas.customs.some(x=>x.custom_id===id)).length;
+assert.ok(candidateCount===0||candidateCount===2,"Calendar candidate cohort must be complete");
+assert.deepEqual([atlas.customs.length,atlas.attestations.length,sources.sources.length,extensions.extensions.length,negative.entries.length,p1.entries.length],[38+candidateCount,97+candidateCount,108+candidateCount*2,22,7,5]);
 assert.equal(p0.publication,"SUPPORTING_COPY_FOR_PUBLISHED_CANONICAL_IDS");
 assert.equal(p1.publication,"SUPPORTING_COPY_FOR_PUBLISHED_CANONICAL_IDS");
 for(const [id,country,ids] of specs){
@@ -52,7 +58,7 @@ assert.equal(audit.pass,true);
 assert.equal(audit.mapCandidates.length,58,"national custom attestation cannot create a place pin");
 const raw=projectTraditionItems({customs:atlas.customs,attestations:atlas.attestations,places:geography.places,geoAreas:geography.geoAreas,sources:sources.sources,guidance:[...p0.entries,...p1.entries]});
 const cards=groupTraditionsForBrowse(raw);
-assert.equal(cards.length,38);
+assert.equal(cards.length,38+candidateCount);
 for(const [id] of specs){
  const card=cards.find(row=>row.source_id===id);
  assert.equal(card?.kind,"CANONICAL_CUSTOM",id+" missing Atlas folio");
