@@ -26,8 +26,8 @@ assert.equal(resolveCueSurface({...base,iconKey:"canon:priest.action.elevate_hos
  CUE_SURFACE.ICON);
 assert.equal(resolveCueSurface({...base,iconKey:"canon:priest.action.elevate_host",iconUrl:null}),
  CUE_SURFACE.INLINE_RUBRIC,"An icon identifier without an actual asset is not a pictogram");
-assert.equal(sourceActionRubricLabel("MINOR ELEVATION","en"),"The priest: Minor elevation");
-assert.equal(sourceActionRubricLabel("MINOR ELEVATION","fr"),"Le prêtre : Minor elevation");
+assert.equal(sourceActionRubricLabel("MINOR ELEVATION","en"),"The priest raises the Host and chalice slightly.");
+assert.equal(sourceActionRubricLabel("MINOR ELEVATION","fr"),"Le prêtre élève légèrement l’Hostie et le calice.");
 assert.equal(sourceActionRubricLabel(""),null);
 assert.ok(actions.some(x=>x.cueId==="AO.SM.C0204"&&x.label==="MINOR ELEVATION"));
 assert.ok(actions.some(x=>x.cueId==="AO.SM.C0242"&&x.label==="SHOWS SACRED HOST"));
