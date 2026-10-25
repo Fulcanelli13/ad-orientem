@@ -69,6 +69,13 @@ try{
  assert.deepEqual({stage:st.stage,id:st.id,stops:st.stops,index:st.index,current:st.current,overflow:st.overflow},
  {stage:1,id:"quick-commandments-1",stops:5,index:0,current:1,overflow:"auto"});
  assert.ok(st.questions>=3&&st.active>=1,"Original examination questions are not focusable paragraphs");
+ assert.equal(await page.locator(sel+" .aoDevoCardHead").evaluate(x=>getComputedStyle(x).display),"none",
+  "Duplicated numbered examination headline competes with the existing chapter rail");
+ const questionContrast=await page.locator(sel+" .aoP435930ConfQuestions li").evaluateAll(
+  es=>es.map(x=>Number(getComputedStyle(x).opacity)));
+ assert.ok(questionContrast.length>=3&&questionContrast.every(x=>x>=.94),
+  "All examination questions must remain readable, not dimmed by paragraph focus: "+JSON.stringify(questionContrast));
+
 
  const enExamText=await page.locator(sel+" .aoP435930ConfQuestions").innerText();
  await locale.click();
