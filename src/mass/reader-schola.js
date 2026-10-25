@@ -216,14 +216,11 @@ export function createNativeScholaController(args={}){
     const matches=tracksForSourceCard(card);
     const current=activeTrackId?byId.get(activeTrackId):null;
     if(current&&matches.some(t=>t.id===current.id)){
-      // When a verified Alleluia/Tract and Sequence occupy separate
-      // navigable B022 paragraphs, show the exact selected paragraph;
-      // other Schola tracks still keep their independent progression.
-      if(current.id==="ALLELUIA_TRACT_SEQUENCE"){
-        const ids=new Set((card.paragraphs??[]).map(p=>String(p.id)));
-        const at=current.segments.findIndex(segment=>ids.has(segment.id));
-        if(at>=0&&at!==index){index=at;complete=false;lastSyncedCueId=null}
-      }
+      // A reader card with Alleluia, Tract or Sequence paragraphs is NOT an
+      // independent observation of the choir. In particular B022 may contain
+      // several source-ordered chants in one track. Do not select a phrase
+      // from card.paragraphs: the Schola's manual position must survive
+      // reading jumps, resize and repaint.
       return state();
     }
     if(matches.length)return activate(matches[0].id);
