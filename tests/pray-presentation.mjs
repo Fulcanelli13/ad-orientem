@@ -1,3 +1,4 @@
+import "./pray-christ-king-benediction.mjs";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { PRAY_CANONICAL_DATA_V435930 } from "../src/pray/canonical-data.js";
@@ -313,7 +314,7 @@ assert.match(runtime,/'pray\.eternal_rest':\{id:'pray\.eternal_rest',type:'praye
 assert.match(runtime,/ADOR\.mode==='visit'&&ADOR\.visitStep===0/,"Adoration arrival cue lost exact visit-entry ownership");
 assert.match(runtime,/ao-live-genuflect/,"Adoration arrival lost the donor genuflection cue");
 assert.match(runtime,/Remain present/,"Adoration recollection rail lost its persistent silence state");
-assert.match(runtime,/const stage=BEN_STAGES\?\.\[BEN\.step\]\?\.\[0\]/,"Benediction rails stopped following the public-rite stage");
+assert.match(runtime,/const stage=benStages\(\)\[BEN\.step\]\?\.\[0\]/,"Benediction rails stopped following the selected public-rite stage");
 assert.match(runtime,/blessing:\['ao-live-blessing'/,"Benediction blessing stage lost the canonical blessing cue");
 assert.match(runtime,/prayer:\['ao-live-response'/,"Benediction versicle\/collect stage lost the response cue");
 assert.match(runtime,/praises:\['ao-live-response'/,"Benediction Divine Praises stage lost the response cue");
