@@ -84,6 +84,12 @@ const gloriaAfterManual=s.schola.segmentId;
 assert.notEqual(gloriaAfterManual,gloriaCue);
 s=schola.syncCue("AO.SM.C0056");
 assert.equal(s.schola.segmentId,gloriaAfterManual,"duplicate Gloria cue rewound independent Schola progress");
+s=schola.syncCue("AO.SM.C0055");
+assert.equal(s.schola.segmentId,gloriaAfterManual,
+  "scrolling to an earlier Gloria paragraph must not rewind the independent Schola");
+s=schola.syncCue("AO.SM.C0059");
+assert.equal(s.schola.segmentId,gloriaAfterManual,
+  "scrolling to a later Gloria paragraph must not auto-advance the independent Schola");
 s=schola.syncCue("AO.SM.C0001");
 assert.equal(s.schola.segmentId,gloriaAfterManual,"unrelated priest cue advanced the Schola");
 s=schola.activateForCard(3);
