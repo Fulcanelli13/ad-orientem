@@ -220,6 +220,12 @@ try{
  assert.equal(await feastDetails.evaluate(el=>el.open),true,"Optional cards configuration collapsed");
  await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").uncheck();
  assert.equal((await snapshot()).stops,10);
+ await page.locator(timeline+" [data-ao-devo-chapter='9']").tap();
+ assert.equal((await snapshot()).card,"reposition");
+ assert.equal(await page.locator(rootSel).getAttribute("data-ao-benediction-final"),"true");
+ assert.ok(await page.locator(rootSel+" .aoP435930GuideNav").evaluate(x=>getComputedStyle(x).display)!=="none",
+   "The optional celebration must not hide the final Reposition exit");
+ await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast]").uncheck();
  assert.equal((await snapshot()).stops,7,"Ordinary Benediction was not restored on disabling feast");
  await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
