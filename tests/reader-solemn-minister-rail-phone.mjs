@@ -65,9 +65,14 @@ try{
       const current=await page.evaluate(()=>{
         const rail=document.querySelector('.ao-rail-right [data-channel="sacred-minister"]');
         const state=window.__AO_PHONE_PREVIEW.getNativeEventState();
+        const lines=[...document.querySelectorAll(
+          '.ao-live-inline-rubrics .ao-live-rubric-action[data-source-cue-id="AO.SM.C0082"]'
+        )].map(el=>el.textContent?.trim()??"");
         return {active:rail?.dataset.active,text:rail?.textContent,
           accessible:rail?.getAttribute("aria-label"),minister:state?.sacredMinister,
-          stage:document.querySelector(".ao-reader-stage")?.dataset.rightRail,
+          railDisplay:rail?getComputedStyle(rail).display:null,
+          railHidden:rail?.getAttribute("aria-hidden"),
+          inline:lines,stage:document.querySelector(".ao-reader-stage")?.dataset.rightRail,
           overflow:document.documentElement.scrollWidth-innerWidth};
       });
       if(form==="SOLEMN"){
@@ -75,7 +80,12 @@ try{
         assert.match(current.text??"",/DEACON.*GOSPEL/i);
         assert.match(current.accessible??"",/not independently observed/i);
         assert.equal(current.minister?.actor,"DEACON");
-        assert.equal(current.stage,"true","Source-owned minister rail was invisible");
+        assert.equal(current.railDisplay,"none",
+          "The priest/minister rail must not show a text-only icon-shaped tile");
+        assert.equal(current.railHidden,"true",
+          "Text-only minister source must not masquerade as a graphic");
+        assert.ok(current.inline.some(x=>/DEACON.*GOSPEL/i.test(x)),
+          "Solemn deacon's exact source rubric is missing from its LIVE paragraph");
       }else{
         assert.equal(current.active,"false","Cantata improperly invented a deacon");
         assert.equal(current.minister,null);
@@ -139,8 +149,14 @@ try{
       const observed=await page.evaluate(()=>{
         const rail=document.querySelector('.ao-rail-right [data-channel="sacred-minister"]');
         const state=window.__AO_PHONE_PREVIEW.getNativeEventState();
+        const cue=state?.nativeCueId??null;
+        const inline=[...document.querySelectorAll('.ao-live-inline-rubrics .ao-live-rubric-action')]
+          .filter(el=>el.dataset.sourceCueId===cue)
+          .map(el=>el.textContent?.trim()??"");
         return {active:rail?.dataset.active,text:rail?.textContent,
           aria:rail?.getAttribute("aria-label"),minister:state?.sacredMinister,
+          railDisplay:rail?getComputedStyle(rail).display:null,
+          railHidden:rail?.getAttribute("aria-hidden"),inline,
           width:document.documentElement.scrollWidth-innerWidth};
       });
       assert.equal(observed.active,expectVisible?"true":"false",
@@ -149,8 +165,11 @@ try{
         // The compact rail intentionally shows actor + short label only;
         // the sourced full action remains available in the native projection.
         assert.match(observed.minister?.action??"",part);
-        assert.match(observed.text??"",/REQUIEM/i);
-        assert.match(observed.aria??"",/not independently observed/i);
+        assert.equal(observed.railDisplay,"none",
+          "Requiem minister instruction must not be compressed into a rail tile");
+        assert.equal(observed.railHidden,"true");
+        assert.ok(observed.inline.some(x=>part.test(x)),
+          "The exact certified Requiem minister rubric is missing inline at "+cue);
         assert.ok(observed.minister);
       }else{
         assert.equal(observed.minister,null,"Absent Requiem action was exported");
@@ -161,7 +180,7 @@ try{
     assert.deepEqual(errors,[],"Requiem phone browser errors");
     await context.close();
   }
-  console.log("PASS 360/390px Solemn/Cantata 65-card LIVE, distinct Requiem legacy compatibility: minister rail remains source-owned, unobserved actions fail closed.");
+  console.log("PASS 360/390px Solemn/Cantata LIVE: certified minister instructions are inline, missing-art rail hidden and unobserved actions fail closed.");
 }finally{
   await browser?.close().catch(()=>{});
   await new Promise(resolve=>server.close(resolve));
