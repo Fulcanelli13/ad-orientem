@@ -1,4 +1,8 @@
-// Exact owner guard for priest action/voice during choir-owned Sanctus, Benedictus and Agnus Dei.
+// Source-exact actor/clock guard for the sung Gloria, Credo, Sanctus,
+// Benedictus and Agnus Dei. None of the public Schola phrase ticks
+// establishes the priest's independent ritual movements or private voice.
+// C0054 (Deo) and C0090 (in unum Deum) finish priest intonation and
+// remain outside the later choir-only guard (see parallel PR #1554).
 // Public Schola text and the priest's own silent/quiet prayer are independent.
 // An explicit observation is an external/manual input, NOT automatic movement recognition.
 // No canonical cue, devotional instruction, or faithful posture is generated here.
@@ -23,6 +27,12 @@ const SCHOLA_CUES=new Set([
 const AGNUS_SCHOLA_CUES=new Set([
   "AO.SM.C0222","AO.SM.C0223","AO.SM.C0224",
 ]);
+// The priest intones through Deo/in unum Deum (C0054/C0090).
+// Their subsequent 30 public choir phrases do not own his private recitation.
+const GLORIA_CREDO_CHOIR_CUES=new Set([
+  ...Array.from({length:15},(_,i)=>"AO.SM.C"+String(55+i).padStart(4,"0")),
+  ...Array.from({length:15},(_,i)=>"AO.SM.C"+String(91+i).padStart(4,"0")),
+]);
 const WINDOW_CUES=new Set([
   "AO.SM.C0145","AO.SM.C0146","AO.SM.C0147","AO.SM.C0148","AO.SM.C0149"
 ]);
@@ -39,7 +49,8 @@ export function resolvePriestChantAction({
     return Object.freeze({priestAction:ordinaryAction??null,owner:"UNCHANGED_FORM",reason:null,observed:false});
   }
   const id=String(cueId??"");
-  const schola=(SCHOLA_CUES.has(id)||AGNUS_SCHOLA_CUES.has(id)) &&
+  const schola=(SCHOLA_CUES.has(id)||AGNUS_SCHOLA_CUES.has(id)||
+    GLORIA_CREDO_CHOIR_CUES.has(id)) &&
     sourceClock==="SCHOLA_PUBLIC";
   // Reject even a correct observation if focus has changed since it was made.
   const validObservation=observation?.actor==="PRIEST" &&
@@ -86,7 +97,8 @@ export function resolvePriestChantVoice({
 }={}){
   const selected=String(form??"").toUpperCase(),id=String(cueId??"");
   if(!SUNG_FORMS.has(selected)||
-      !(WINDOW_CUES.has(id)||AGNUS_SCHOLA_CUES.has(id))||
+      !(WINDOW_CUES.has(id)||AGNUS_SCHOLA_CUES.has(id)||
+        GLORIA_CREDO_CHOIR_CUES.has(id))||
       sourceClock!=="SCHOLA_PUBLIC"){
     return Object.freeze({priestVoice:ordinaryVoice??null,
       owner:"EXISTING_SOURCE_VOICE",observed:false});
@@ -94,7 +106,8 @@ export function resolvePriestChantVoice({
   // Agnus gestures are source-attested but no independently observable
   // Agnus event type has been certified. Never reuse a Sanctus observation,
   // a choir tick, or a frozen quiet-priest voice for these three cues.
-  if(AGNUS_SCHOLA_CUES.has(id))return Object.freeze({
+  if(AGNUS_SCHOLA_CUES.has(id)||GLORIA_CREDO_CHOIR_CUES.has(id))
+    return Object.freeze({
     priestVoice:null,owner:"PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED",observed:false
   });
   const verified=observedPriestAction?.observed===true &&
