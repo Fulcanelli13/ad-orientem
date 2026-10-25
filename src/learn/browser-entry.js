@@ -331,10 +331,16 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     if(!state.open)return false;
     const node=ensureRoot();
     if(!node)return false;
+    // A specialist child may leave the suspended parent with stale
+    // inline visibility; restore it only on the explicit parent-return path.
     node.hidden=false;
     node.removeAttribute("aria-hidden");
+    node.style?.removeProperty?.("display");
+    node.style?.removeProperty?.("visibility");
     try{node.inert=false;}catch{}
+    win?.document?.body?.classList?.add?.("aoLearnModularOpen");
     paint();
+    try{win?.AO_APP_SHELL_V1?.syncSurface?.("learn");}catch{}
     if(focus){
       const selector=state.lastDiscoveryReference&&state.discoveryQuery
         ?`[data-ao-learn-reference-id="${state.lastDiscoveryReference}"]`

@@ -48,6 +48,9 @@ ${roots} .aoFNavIndex button>span:first-child{flex:0 0 auto;color:var(--liturgic
 ${roots} .aoFNavIndex button>span:last-child{min-width:0;overflow-wrap:break-word}
 ${roots} .aoFNav :is(button):focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}
 ${roots} .aoFNavTarget{scroll-margin-top:150px}
+/* One authoritative Formation H1. Hide the duplicate toolbar title on
+   the overview at all widths, retaining its reader and family controls. */
+#ao-learn-modular-root[data-ao-learn-family=""] .aoLearnModTopTitle strong{display:none!important}
 @media(max-width:560px){
  /* Formation overview owns the real H1; the sticky shell need not repeat it. */
  #ao-learn-modular-root[data-ao-learn-family=""] .aoLearnModTopTitle strong{display:none}

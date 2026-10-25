@@ -1426,6 +1426,8 @@ try{
     cards:[...document.querySelectorAll("#ao-learn-modular-root .aoLearnModCard")].map(x=>{const r=x.getBoundingClientRect();return {w:r.width,h:r.height}}),
   }));
   assert.equal(learnParity.heroTitles,1,"Learn lost its single formation identity");
+  assert.equal(await page.locator("#ao-learn-modular-root .aoLearnModTopTitle strong").isVisible(),false,
+    "Formation overview duplicates or truncates its canonical H1 in the toolbar");
   assert.equal(learnParity.heroTitle,"Formation","Formation hero no longer preserves the locked A2 title");
   assert.ok(learnParity.intro.length>20,"Learn formation introduction is blank or collapsed");
   assert.ok(learnParity.context.length>0,"Learn lost its selected-day context line");

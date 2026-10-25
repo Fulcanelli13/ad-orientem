@@ -346,6 +346,14 @@ try{
   );
   await assertNoMass("Glossary -> Formation");
   await assertFocusSafe("Glossary -> Formation");
+  await page.waitForFunction(()=>{
+    const root=document.getElementById("ao-learn-modular-root");
+    const back=root?.querySelector("[data-ao-learn-back]");
+    if(!root||!back)return false;
+    const r=back.getBoundingClientRect(),style=getComputedStyle(back);
+    return !root.hidden&&!root.inert&&r.width>=44&&r.height>=44&&
+      style.display!=="none"&&style.visibility!=="hidden";
+  },null,{timeout:10000});
 
   // Spiritual Life: published 14-lesson phone journey, readable and explicitly non-scored.
   await openFormationFamily("spiritual-moral");
