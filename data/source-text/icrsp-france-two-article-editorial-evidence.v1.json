@@ -1,0 +1,289 @@
+{
+  "schema": "AO_ICRSP_EDITORIAL_EVIDENCE_SEEDS_V1",
+  "asOf": "2026-10-25",
+  "status": "TWO_SOURCE_PILOT_ANCHOR_EXTRACTION_NO_CANONICAL_IMPORT",
+  "policy": {
+    "rights": "INDEX_AND_LINK_ONLY_REPRODUCTION_NOT_CLEARED",
+    "sourceAuthority": "ICRSP_FRANCE_WEB_COMPILATION_NOT_ALWAYS_1962_NORMATIVE",
+    "authorAttribution": "EXPLICIT_SOURCE_SECTION_HEADING_ONLY",
+    "scripture": "VERIFY_BIBLE_AND_LITURGICAL_EDITION_PRIOR_TO_PROMOTION",
+    "runtimeMutation": false
+  },
+  "sources": [
+    {
+      "sourceId": "ICRSP-a0088_ancien",
+      "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0088_ancien",
+      "pageTitle": "1er dimanche de l’Avent",
+      "calendarTarget": "advent.first_sunday",
+      "editionCertification": "PENDING_1962_COLLATION",
+      "commentarySegments": [
+        {
+          "id": "ADVENT1-GUERANGER",
+          "attributedAuthor": "Dom Prosper Guéranger",
+          "identifiedWork": "L'Année liturgique",
+          "headingLocator": "Commentaires / Dom Guéranger, l'Année Liturgique",
+          "topics": [
+            "Roman station at Santa Maria Maggiore (St Mary ad Praesepe)",
+            "Isaiah as Advent prophetic text and thematic preparation",
+            "Romans 13 reading and conversion of St Augustine",
+            "Gospel of the Last Coming and spiritual preparation"
+          ],
+          "candidateTargets": [
+            "calendar.liturgical_commentary",
+            "mass_explorer",
+            "sacred_places.stational_churches",
+            "scripture.themes"
+          ],
+          "attributionStatus": "HOST_VISIBLE_NAME_WORK_NOT_ORIGINAL_EDITION_VERIFIED"
+        },
+        {
+          "id": "ADVENT1-SCHUSTER",
+          "attributedAuthor": "Blessed Ildefonso Schuster",
+          "identifiedWork": "Liber Sacramentorum",
+          "headingLocator": "Commentaires / Bhx Cardinal Schuster, Liber Sacramentorum",
+          "topics": [
+            "Historical origins of the Advent cycle",
+            "Solemn Roman station at Santa Maria Maggiore",
+            "Psalm 24 links across entrance, gradual and offertory chants",
+            "Liturgical reasons for omitting Gloria and identifying preface variants"
+          ],
+          "candidateTargets": [
+            "mass_explorer",
+            "calendar.liturgical_commentary",
+            "sacred_places.stational_churches"
+          ],
+          "attributionStatus": "HOST_VISIBLE_NAME_WORK_NOT_ORIGINAL_EDITION_VERIFIED"
+        },
+        {
+          "id": "ADVENT1-PARSCH",
+          "attributedAuthor": "Dom Pius Parsch",
+          "identifiedWork": "Guide dans l'année liturgique",
+          "headingLocator": "Commentaires / Dom Pius Parsch, le Guide dans l’année liturgique",
+          "topics": [
+            "Advent response: watching for the King",
+            "Office antiphons and their melodic qualities",
+            "Advent Sunday Mass: Gospel, Epistle and prayers"
+          ],
+          "candidateTargets": [
+            "calendar.liturgical_commentary",
+            "mass_explorer"
+          ],
+          "attributionStatus": "HOST_VISIBLE_NAME_WORK_NOT_ORIGINAL_EDITION_VERIFIED"
+        }
+      ],
+      "properWitnesses": [
+        {
+          "component": "introit",
+          "citation": "Psalm 24:1-3",
+          "incipit": "Ad te levavi",
+          "languagePairShown": [
+            "la",
+            "fr"
+          ]
+        },
+        {
+          "component": "collect",
+          "citation": null,
+          "incipit": "Excita, quaesumus, Domine",
+          "languagePairShown": [
+            "la",
+            "fr"
+          ]
+        },
+        {
+          "component": "epistle",
+          "citation": "Romans 13:11-14",
+          "languagePairShown": [
+            "la",
+            "fr"
+          ]
+        },
+        {
+          "component": "gradual",
+          "citation": "Psalm 24:3-4",
+          "languagePairShown": [
+            "la",
+            "fr"
+          ]
+        },
+        {
+          "component": "alleluia",
+          "citation": "Psalm 84:8",
+          "languagePairShown": [
+            "la",
+            "fr"
+          ]
+        },
+        {
+          "component": "gospel",
+          "citation": "Luke 21:25-33",
+          "languagePairShown": [
+            "la",
+            "fr"
+          ]
+        },
+        {
+          "component": "offertory",
+          "citation": "Psalm 24:1-3",
+          "languagePairShown": [
+            "la",
+            "fr"
+          ]
+        },
+        {
+          "component": "secret",
+          "citation": null,
+          "incipit": "Haec sacra nos, Domine",
+          "languagePairShown": [
+            "la",
+            "fr"
+          ]
+        },
+        {
+          "component": "communion",
+          "citation": "Psalm 84:13",
+          "incipit": "Dominus dabit benignitatem",
+          "languagePairShown": [
+            "la",
+            "fr"
+          ]
+        },
+        {
+          "component": "postcommunion",
+          "citation": null,
+          "incipit": "Suscipiamus, Domine, misericordiam tuam",
+          "languagePairShown": [
+            "la",
+            "fr"
+          ]
+        }
+      ],
+      "editionWarnings": [
+        "The article distinguishes the Sunday Trinity preface, weekday Common preface and some French/local Advent preface; cannot infer a universal 1962 preface from this page.",
+        "Alleluia omitted when the Sunday Mass is resumed on Advent weekdays: verify precise 1962 context before applying."
+      ],
+      "canonicalMatchStatus": "NOT_CHECKED_NO_TEXT_DIFF",
+      "sourceLocatorScheme": "Visible heading and liturgical component, exact webpage URL; page HTML fingerprint in 855 metadata registry"
+    },
+    {
+      "sourceId": "ICRSP-a0146_ancien",
+      "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0146_ancien",
+      "pageTitle": "Purification de la Très Sainte Vierge (Présentation du Seigneur)",
+      "calendarTarget": "february_02_purification_candlemas",
+      "editionCertification": "PENDING_1962_COLLATION",
+      "scriptureConnections": [
+        {
+          "id": "CANDLEMAS-TYPE-BUSH",
+          "sourceSection": "Commentaires / Office / First Vespers Antiphon 3",
+          "sourceTextType": "OFFICE_ANTIPHON",
+          "referenceCandidate": "Exodus 3:2",
+          "relationship": "explicit_typology_in_antiphon",
+          "topic": "burning bush as figure of the Virgin's undiminished virginity",
+          "target": "scripture.parallels",
+          "referenceStatus": "BIBLICAL_VERSE_REQUIRES_INDEPENDENT_VERIFICATION"
+        },
+        {
+          "id": "CANDLEMAS-TYPE-JESSE",
+          "sourceSection": "Commentaires / Office / First Vespers Antiphon 4",
+          "sourceTextType": "OFFICE_ANTIPHON",
+          "referenceCandidate": "Isaiah 11:1",
+          "relationship": "explicit_typology_in_antiphon",
+          "topic": "shoot from Jesse interpreted in Marian-Christological liturgical text",
+          "target": "scripture.parallels",
+          "referenceStatus": "BIBLICAL_VERSE_REQUIRES_INDEPENDENT_VERIFICATION"
+        },
+        {
+          "id": "CANDLEMAS-TYPE-STAR",
+          "sourceSection": "Commentaires / Office / First Vespers Antiphon 4",
+          "sourceTextType": "OFFICE_ANTIPHON",
+          "referenceCandidate": "Numbers 24:17",
+          "relationship": "explicit_typology_in_antiphon",
+          "topic": "star out of Jacob applied within Marian-Christological antiphon",
+          "target": "scripture.parallels",
+          "referenceStatus": "BIBLICAL_VERSE_REQUIRES_INDEPENDENT_VERIFICATION"
+        },
+        {
+          "id": "CANDLEMAS-LAW-FIRSTBORN",
+          "sourceSection": "Commentaires / Office / Matins first lesson",
+          "sourceTextType": "SCRIPTURE_READING",
+          "referenceCandidate": "Exodus 13:1-3,11-13",
+          "relationship": "liturgical_reading_to_gospel_event",
+          "topic": "consecration of the first-born and Presentation in Temple",
+          "target": "scripture.parallels",
+          "referenceStatus": "SOURCE_LABEL_VISIBLE"
+        },
+        {
+          "id": "CANDLEMAS-PURIFICATION",
+          "sourceSection": "Commentaires / Office / Matins second and third lessons",
+          "sourceTextType": "SCRIPTURE_READING",
+          "referenceCandidate": "Leviticus 12:1-8",
+          "relationship": "liturgical_reading_to_gospel_event",
+          "topic": "purification under Mosaic Law and presentation of Jesus",
+          "target": "scripture.parallels",
+          "referenceStatus": "SOURCE_LABEL_VISIBLE"
+        },
+        {
+          "id": "CANDLEMAS-TEMPLE",
+          "sourceSection": "Textes de la Messe / Epistle",
+          "sourceTextType": "MASS_READING",
+          "referenceCandidate": "Malachi 3:1-4",
+          "relationship": "prophecy_to_fulfilment_candidate",
+          "topic": "Lord entering his temple",
+          "target": "scripture.parallels",
+          "referenceStatus": "SOURCE_LABEL_VISIBLE"
+        },
+        {
+          "id": "CANDLEMAS-SIMEON",
+          "sourceSection": "Procession antiphon / Nunc dimittis",
+          "sourceTextType": "PROCESSIONAL_ANTIPHON",
+          "referenceCandidate": "Luke 2:26-29",
+          "relationship": "direct_scriptural_liturgical_use",
+          "topic": "Simeon's recognition of Christ",
+          "target": "scripture.parallels",
+          "referenceStatus": "SOURCE_LABEL_VISIBLE"
+        }
+      ],
+      "ceremonialEvidence": [
+        {
+          "id": "CANDLEMAS-PROCESSION",
+          "sourceSection": "Blessing and Procession / Deinde fit Processio",
+          "claimType": "ACTOR_ORDER",
+          "sourceObservation": "Thurifer, cross-bearing subdeacon between acolytes, clergy, celebrant and deacon proceed with lighted candles; deacon directs Procedamus in pace",
+          "actor": "CLERGY_AND_ATTENDANTS",
+          "review": "1962_COMPARISON_REQUIRED"
+        },
+        {
+          "id": "CANDLEMAS-OMISSIONS",
+          "sourceSection": "Textes de la Messe / De Missa",
+          "claimType": "SPECIAL_MASS_OMISSIONS",
+          "sourceObservation": "In Mass following blessing of candles/procession, page says omit Judica me, Confiteor with absolution, following verses and Aufer a nobis / Oramus te Domine; 1962 certification required",
+          "actor": "PRIEST",
+          "review": "1962_COMPARISON_REQUIRED"
+        },
+        {
+          "id": "CANDLEMAS-CANDLE-HOLDING-VARIANTS",
+          "sourceSection": "Textes de la Messe / De Missa",
+          "claimType": "POTENTIAL_INTERNAL_VARIANT",
+          "sourceObservation": "Adjacent paragraphs describe candles at Gospel and through entire Canon vs Gospel and from Canon opening through Communion; exact conditions and edition not explicit in this metadata extraction",
+          "actor": "FAITHFUL_AND_CLERGY_DISTINCTION_UNVERIFIED",
+          "review": "SOURCE_VARIANT_DO_NOT_PROMOTE"
+        }
+      ],
+      "candidateTargets": [
+        "calendar.customs",
+        "scripture.parallels",
+        "mass_reader.special_day_overlay",
+        "mass_explorer"
+      ],
+      "canonicalMatchStatus": "NOT_CHECKED_NO_TEXT_DIFF",
+      "sourceLocatorScheme": "Visible section/chant heading plus stable source URL"
+    }
+  ],
+  "gates": [
+    "VERIFY_SECTION_LEVEL_AUTHOR_BOUNDARIES",
+    "CHECK_ORIGINAL_WORK_EDITION_AND_FR_TRANSLATION_RIGHTS",
+    "SCRIPTURE_PARALLEL_REQUIRES_PASSAGE_TEXT_AND_TRADITIONAL_INTERPRETATION",
+    "COMPARE_SPECIAL_DAY_RUBRICS_WITH_1962_PRIMARY_WITNESS",
+    "RECONCILE_AGAINST_EXISTING_DOMAIN_IDS_BEFORE_PROMOTION"
+  ]
+}
