@@ -378,7 +378,7 @@ function open(id,opts={}){
   else if(id==='pray.divine_mercy'){view='mercy';MERCY.step=0;}
   else if(id==='pray.rosary_methods'){view='rosaryMethods';}
   else if(id==='pray.confession'){view='confession';CONF=freshConfessionState();}
-  else if(id==='pray.benediction')view='benediction';
+  else if(id==='pray.benediction'){view='benediction';BEN={step:0,divinePraises:false,christKing:{...CHRIST_KING_DEFAULT},specialOptionsOpen:false};BEN_STAGES=BEN_BASE_STAGES;}
   else if(id==='pray.adoration')view='adoration';
   else if(id==='pray.stations'){view='stations';STATIONS.step=0}
   else if(id==='pray.visit_blessed_sacrament'){view='adoration';ADOR.mode='visit'}
@@ -1453,7 +1453,6 @@ function christKingOptionsMarkup(){
  const options=[
  ['procession',L('Eucharistic procession','Procession eucharistique')],
  ['royal','Christus vincit · Laudes Regiæ'],
- ['litany',L('Litany of the Sacred Heart','Litanies du Sacré-Cœur')],
  ['consecration',L('Consecration of the human race','Consécration du genre humain')]
  ];
  return `<details class="aoP435930PrayerOptions aoP435930BenSpecialOptions" data-ao-ben-special-options ${BEN.specialOptionsOpen?'open':''}>
