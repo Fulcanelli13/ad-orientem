@@ -40,6 +40,7 @@ import { DEVOTIONAL_WITNESSES, PRAYER_WITNESSED_VARIANTS } from "./devotional-wi
 import { parseSevenWordsHistoricalWitness } from "./seven-words-witness.v1.js";
 import { prayCollationNotice } from "./source-collation-notices.v1.js";
 import { prayerCompendiumFrenchWitness } from "./compendium-french-witnesses.v1.js";
+import {christKingStages,CHRIST_KING_OPTION_DEFAULTS,CHRIST_KING_CONSECRATION,CHRIST_KING_ROYAL_PRAISES,CHRIST_KING_WITNESSES} from "./christ-king-benediction.js";
 
 // Locked v43.59.30 PRAY presentation runtime. Kept intact inside a browser-only
 // guard so unit tests may import the modular owner without a DOM.
@@ -142,7 +143,7 @@ function semanticRails(){
      :semanticRailChip('ao-refined-silence',L('Silence','Silence'),L('Remain present','Demeurez présent'),{channel:'persistent'});
    right=semanticRailChip('ao-rich-adoration',L('Adoration','Adoration'),presence==='exposed'?L('Exposed','Exposé'):L('Reserved','Réservé'),{channel:'persistent'});
  }else if(view==='benediction'){
-   const stage=BEN_STAGES?.[BEN.step]?.[0]||'exposition';
+   const stage=benStages()[BEN.step]?.[0]||'exposition';
    const service={
      exposition:['ao-rich-adoration',L('Exposition','Exposition')],
      adoration:['ao-refined-silence',L('Adoration','Adoration')],
@@ -230,7 +231,7 @@ let rosaryScriptureReturn=null;
 let ROSARY_CHOOSER={method:'ordinary',decades:5,guide:S.rosary.mode==='guided'?'guided':'simple',optionsOpen:false};
 function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,since:''}}
 let CONF=freshConfessionState();
-let BEN={step:0,divinePraises:false};
+let BEN={step:0,divinePraises:false,celebration:"ordinary",feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};
 let adorationQuietReturn=null;
 let FF={step:0,intention:false,communion:false};
@@ -1435,10 +1436,11 @@ function renderConfession(){
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
 ];
-function benMacroIndex(step){if(step<=0)return 0;if(step===1)return 1;if(step>=6)return 3;return 2}
+function benStages(){return christKingStages(BEN_STAGES,BEN.celebration,BEN.feastOptions)}
+function benMacroIndex(step){const id=benStages()[step]?.[0];if(id==='exposition')return 0;if(id==='adoration'||id?.startsWith('king-'))return 1;if(id==='reposition')return 3;return 2}
 function benMacroRail(step){const labels=[L('Exposition','Exposition'),L('Adoration','Adoration'),L('Benediction','Bénédiction'),L('Reposition','Reposition')];return `<div class="aoP435930StageRail aoP435930BenMacroRail">${labels.map((x,i)=>`<span class="${i===benMacroIndex(step)?'active':''}" ${i===benMacroIndex(step)?'aria-current="step"':''}>${esc(x)}</span>`).join('')}</div>`}
 function renderBenediction(){
- const i=BEN.step,id=BEN_STAGES[i][0],titles=BEN_STAGES.map(x=>L(x[1],x[2]));let body='';
+ const stages=benStages(),i=Math.max(0,Math.min(stages.length-1,BEN.step)),id=stages[i][0],titles=stages.map(x=>L(x[1],x[2]));let body='';
  if(id==='exposition')body=`${guideNow(L('Attend to the Exposition','Soyez attentif à l’exposition'),L('When the Blessed Sacrament is exposed, turn your attention to the altar. If O Salutaris is actually sung, pray or sing it with the church; otherwise follow what is used.','Lorsque le Saint-Sacrement est exposé, tournez votre attention vers l’autel. Si O Salutaris est effectivement chanté, priez-le ou chantez-le avec l’assemblée ; sinon, suivez ce qui est utilisé.'))}${prayerBlock('benediction_o_salutaris',{kicker:L('If sung here','Si chanté ici')})}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Stay here until the opening hymn or prayers have finished and the service settles into adoration.','Restez ici jusqu’à la fin du chant ou des prières d’ouverture et jusqu’à ce que l’office entre dans l’adoration.'))}`;
  if(id==='adoration')body=`${guideNow(L('Remain with the public rite','Restez avec le rite public'),L('Adore in silence or follow the Scripture, prayer or sacred music actually being used. Do not fill the interval simply because the app has more text.','Adorez en silence ou suivez l’Écriture, la prière ou la musique sacrée réellement utilisées. Ne remplissez pas l’intervalle simplement parce que l’application contient davantage de texte.'))}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when Tantum Ergo begins, or when the service clearly moves into the hymn immediately before Benediction.','Avancez lorsque commence Tantum Ergo, ou lorsque l’office passe clairement au chant qui précède immédiatement la bénédiction.'))}`;
  if(id==='hymn')body=`${guideNow(L('Pray or sing Tantum Ergo','Priez ou chantez Tantum Ergo'),L('Follow the congregation and local posture. Keep your attention on the Blessed Sacrament rather than on the screen.','Suivez l’assemblée et la posture locale. Gardez votre attention sur le Saint-Sacrement plutôt que sur l’écran.'))}${prayerBlock('benediction_tantum_ergo',{kicker:L('Traditional hymn','Hymne traditionnel')})}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the minister begins Panem de caelo and the collect that follows.','Avancez lorsque le ministre commence Panem de caelo et l’oraison qui suit.'))}`;
@@ -1448,12 +1450,12 @@ function renderBenediction(){
  if(id==='reposition')body=`${guideNow(L('Follow the Reposition','Suivez la reposition'),L('Follow the chant and movement actually used as the Blessed Sacrament is returned to the tabernacle. The app does not force Psalm 116 or another local custom.','Suivez le chant et le mouvement réellement utilisés lorsque le Saint-Sacrement est reporté au tabernacle. L’application n’impose ni le psaume 116 ni un autre usage local.'))}${guideCue(L('FINISH WHEN','TERMINEZ LORSQUE'),L('The Blessed Sacrament has been reposed and the public service has actually ended.','Le Saint-Sacrement a été replacé au tabernacle et l’office public est réellement terminé.'))}`;
  return `${head(L('Benediction','Bénédiction'),L('Live companion · the church determines the pace','Compagnon en direct · l’église détermine le rythme'))}<main class="aoP435930Body aoP435930BenedictionReader" data-ao-benediction-step="${i}">
  <section class="aoDevoCard" data-ao-devo-card="${esc(id)}">
-  <header class="aoDevoCardHead"><small class="aoDevoCardNumber">${i+1} / ${BEN_STAGES.length}</small><h2 class="aoDevoCardTitle">${esc(titles[i])}</h2></header>
+  <header class="aoDevoCardHead"><small class="aoDevoCardNumber">${i+1} / ${stages.length}</small><h2 class="aoDevoCardTitle">${esc(titles[i])}</h2></header>
   <div class="aoDevoCardScroll" role="region" tabindex="0" aria-label="${esc(titles[i])}">${body}</div>
  </section>
  <details class="aoP435930PrayerOptions" data-ao-benediction-guide><summary>${esc(L('Rite guidance and sources','Guide du rite et sources'))}</summary>
  ${callout(esc(L('Advance only when the public rite actually reaches the next moment. Never use the app as a timer or substitute for the clergy.','Avancez seulement lorsque le rite public atteint réellement l’étape suivante. Ne remplacez ni le clergé ni le déroulement de l’office par un minuteur.')),'rubric')}${devotionalGuide('benediction')}</details>
- ${guideNav('ben',i,BEN_STAGES.length,L('Finish after Reposition','Terminer après la reposition'))}
+ ${guideNav('ben',i,stages.length,L('Finish after Reposition','Terminer après la reposition'))}
  </main>`;
 }
 function presenceBar(){return nav(L('Presence','Présence'),[['reserved','Reserved in tabernacle','Réservé au tabernacle'],['exposed','Exposed','Exposé']],adorationPresence())}
@@ -1819,7 +1821,7 @@ function horizontalStep(direction){
  const d=direction>0?1:-1;
  if(view==='stations'){STATIONS.step=Math.max(0,Math.min(13,STATIONS.step+d));render();return true}
  if(view==='confession'){if(!CONF.path)return false;CONF.stage=Math.max(0,Math.min(3,CONF.stage+d));render();return true}
- if(view==='benediction'){BEN.step=Math.max(0,Math.min(BEN_STAGES.length-1,BEN.step+d));render();return true}
+ if(view==='benediction'){BEN.step=Math.max(0,Math.min(benStages().length-1,BEN.step+d));render();return true}
  if(view==='adoration'&&ADOR.mode==='visit'){ADOR.visitStep=Math.max(0,Math.min(visitSteps().length-1,ADOR.visitStep+d));render();return true}
  if(view==='adoration'&&ADOR.mode==='holy'){ADOR.holyStep=Math.max(0,Math.min(holySteps().length-1,ADOR.holyStep+d));render();return true}
  if(view==='adoration'&&ADOR.mode==='four'){ADOR.fourStep=Math.max(0,Math.min(fourSteps().length-1,ADOR.fourStep+d));render();return true}
@@ -2251,7 +2253,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   queueMicrotask(()=>m.querySelector('[data-p435930-ador-quiet-exit]')?.focus?.({preventScroll:true}));
  }else if(view==='benediction'||view==='adoration'||view==='stations'){
   const scene=resolveDevotionalActionScene({
-    view,benedictionStage:view==='benediction'?BEN_STAGES[BEN.step]?.[0]:null,
+    view,benedictionStage:view==='benediction'?benStages()[BEN.step]?.[0]:null,
     adorationMode:view==='adoration'?ADOR.mode:null,
     visitStep:view==='adoration'?ADOR.visitStep:null,
     stationStep:view==='stations'?STATIONS.step:null,
@@ -2386,8 +2388,8 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   }
  });
  if(view==='benediction')queueMicrotask(()=>{
-  const titles=BEN_STAGES.map(stage=>L(stage[1],stage[2]));
-  const chapters=BEN_STAGES.map((stage,i)=>({id:stage[0],title:titles[i]}));
+  const stages=benStages(),titles=stages.map(stage=>L(stage[1],stage[2]));
+  const chapters=stages.map((stage,i)=>({id:stage[0],title:titles[i]}));
   const reader=installSequentialDevotionalReader({
    mount:m,kind:'benediction',chapters,activeIndex:BEN.step,
    paragraphSelector:'.aoP435930GuideNow p,.aoP435930GuideCue p,.aoP435930Prayer .aoP435930Flip,.aoP435930Prayer .aoP435930Text',
@@ -2639,8 +2641,8 @@ function onClick(e){
  }
  if(b.matches('[data-p435930-conf-clear]')){CONF=freshConfessionState();return render()}
  if(b.dataset.p435930BenStep!=null){BEN.step=+b.dataset.p435930BenStep;return render()}
- if(b.matches('[data-p435930-ben-finish]')&&BEN.step===BEN_STAGES.length-1){
-  setAdorationPresence('reserved');BEN={step:0,divinePraises:false};popView('home');return render()
+ if(b.matches('[data-p435930-ben-finish]')&&BEN.step===benStages().length-1){
+  setAdorationPresence('reserved');BEN={step:0,divinePraises:false,celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};popView('home');return render()
  }
  if(b.matches('[data-p435930-ador-quiet-enter]'))return enterAdorationQuiet();
  if(b.matches('[data-p435930-ador-quiet-exit]'))return exitAdorationQuiet();
