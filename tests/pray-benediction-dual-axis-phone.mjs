@@ -232,12 +232,13 @@ try{
  }));
  assert.ok(litanyScroll.height>litanyScroll.viewport&&litanyScroll.overflow==="auto",
   "The full litany must be scrollable within its card on a 390px phone");
+ await page.screenshot({path:resolve(captures,"benediction-390-christ-king-litany-fr.png"),animations:"disabled"});
  const litanyLatin=page.locator(rootSel+" .aoP435930FeastPrayer [data-p435930-flip]");
  await litanyLatin.tap();
  assert.equal(await litanyLatin.locator("[data-face-la]").evaluate(el=>el.hidden),false);
  assert.equal(((await litanyLatin.locator("[data-face-la]").innerText()).match(/Cor Iesu,/g)||[]).length,33,
   "Latin face must contain every invocation, not a fragment");
- await page.screenshot({path:resolve(captures,"benediction-390-christ-king-litany-fr.png"),animations:"disabled"});
+ await page.screenshot({path:resolve(captures,"benediction-390-christ-king-litany-latin.png"),animations:"disabled"});
  await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
  assert.equal((await snapshot()).card,"hymn","The complete optional litany must precede Consecration and Tantum Ergo");
  await feastDetails.locator("summary").tap();
