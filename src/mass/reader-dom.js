@@ -508,6 +508,14 @@ const SHELL_STYLE = `
 .ao-schola-resize{position:absolute;top:0;left:25%;right:25%;height:10px;cursor:ns-resize;touch-action:none}
 .ao-schola-resize:before{content:"";position:absolute;left:50%;top:3px;width:34px;height:2px;border-radius:2px;background:color-mix(in srgb,var(--ao-mass-accent) 28%,transparent);transform:translateX(-50%)}
 .ao-schola-title{display:flex;align-items:center;gap:8px;min-height:21px;padding-right:54px}
+.ao-schola-kicker{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ao-schola-find-place{appearance:none;margin-left:auto;flex:0 0 auto;min-height:32px;
+  padding:5px 7px;border:1px solid color-mix(in srgb,var(--ao-mass-accent) 32%,transparent);
+  border-radius:7px;background:transparent;color:var(--ao-mass-accent-text);
+  font:650 9px/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.02em;cursor:pointer}
+.ao-schola-find-place:focus-visible{outline:2px solid var(--ao-mass-accent-text);outline-offset:2px}
+.ao-schola-dock[data-collapsed="true"] .ao-schola-find-place{display:none}
+@media(max-width:400px){.ao-schola-title .ao-schola-page{display:none}}
 .ao-schola-title .ao-icon-mask{width:36px;height:36px;flex:0 0 36px;color:var(--ao-mass-accent-text);transform:scale(1.06)}
 .ao-schola-kicker{font:700 8.5px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em;text-transform:uppercase;color:var(--ao-mass-accent-text)}
 .ao-schola-page{font:700 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--ao-mass-accent-text)}
@@ -2006,7 +2014,7 @@ export function buildReaderShellMarkup(prepared = {}) {
 
   <div class="ao-schola-dock" data-channel="schola" data-active="false" data-collapsed="false" data-show-translation="false">
     <span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span>
-    <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-status" data-role="schola-status" hidden></span><span class="ao-schola-page" data-role="schola-page"></span></div>
+    <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-status" data-role="schola-status" hidden></span><span class="ao-schola-page" data-role="schola-page"></span><button type="button" class="ao-schola-find-place" data-schola-find-place aria-label="Find my place in the Mass after following the Schola">FIND PLACE</button></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
     <div class="ao-schola-main" data-schola-translate title="Tap to translate" role="button" tabindex="-1" aria-label="Translate Schola text in place" aria-pressed="false" aria-disabled="true"><span data-role="schola" aria-live="polite">—</span></div>
     <div class="ao-schola-meta">
@@ -2841,6 +2849,20 @@ export function createReaderDomAdapter({
           onSectionSelect?.(sectionButton.dataset.readerSection,current,prepared);
         }
         closeSectionMenu();
+        return;
+      }
+      const scholaLocate=event.target?.closest?.("[data-schola-find-place]");
+      if(scholaLocate){
+        // A musical passage does not identify the priest's present card.
+        // Offer the existing source-backed section navigator, never infer a
+        // jump from a Schola phrase or alter the priest/choir clocks.
+        const menu=root.querySelector('[data-role="section-menu"]');
+        const jump=root.querySelector('[data-role="section-jump"]');
+        if(menu && jump && !jump.disabled){
+          menu.hidden=false;
+          jump.setAttribute("aria-expanded","true");
+          setPreferencesOpen(false);
+        }
         return;
       }
       const scholaToggle=event.target?.closest?.("[data-schola-toggle]");
