@@ -41,4 +41,22 @@ assert.equal(screened.publication_authorized,false);
 const dry=await screen({network:false});
 assert.deepEqual([dry.rows,dry.global_leads,dry.existing_canonical,dry.still_open_acquisition,dry.overlap_ids],[68,500,98,402,54]);
 assert.equal(dry.publication_authorized,false);
+const shardResults=await Promise.all([0,1,2,3].map(shardIndex=>screen({network:false,shardIndex,shardCount:4})));
+assert.deepEqual(shardResults.map(x=>x.rows),[17,17,17,17]);
+assert.ok(shardResults.every(x=>x.publication_authorized===false));
+const sources=read("data/geography/research/sacred-places-p39-source-evidence-500-routing.v1.json");
+assert.equal(sources.rows.length,500);
+assert.equal(sources.counts.canonical_linked,98);
+assert.equal(sources.counts.unresolved,402);
+assert.equal(sources.counts.unresolved_with_individual_previous_audit_url,78);
+assert.equal(sources.counts.unresolved_without_audit_url,324);
+const lanes=sources.rows.filter(x=>!x.canonical_place_id).reduce((a,x)=>(a[x.next_lane]=(a[x.next_lane]||0)+1,a),{});
+assert.deepEqual(Object.fromEntries(Object.entries(lanes).sort()),Object.fromEntries(Object.entries({
+ SITE_SPECIFIC_CATHOLIC_IDENTITY_SOURCE_DISCOVERY_REQUIRED:285,
+ OPEN68_OSM_BUILDING_AND_SCOPE_MATCH:54,
+ PRIOR_SOURCE_EVIDENCE_GEO_OR_ELIGIBILITY_REQUIRED:50,
+ OPERATOR_ELIGIBILITY_EXCEPTION:13
+}).sort()));
+assert.ok(sources.rows.every(x=>x.publication_authorized===false));
+
 console.log("PASS P39 bulk: all 500 IDs, 98 exact canonical links, 402 acquisition holds; 68 mapping rows/69 IDs, 54 overlaps; safe bounded Overpass queries; zero automatic publication");
