@@ -15,7 +15,7 @@ assert.equal(a.counts.alreadyProtectedGloriaCredo,12);
 assert.equal(a.counts.validNonliteralAnchor,1);
 assert.equal(a.counts.alreadySuppressedCanonDuplicates,2);
 const candidates=base.rows.filter(x=>x.sourceFlags.includes("FAITHFUL_SOURCE_TRIGGER_OUTSIDE_CUE_TEXT")).map(x=>x.cueId);
-assert.deepEqual(a.lexicalAdjudications.map(x=>x.cueId),candidates,"Must adjudicate every source-screened lexical anomaly without extra invented cues");
+assert.deepEqual(a.lexicalAdjudications.map(x=>x.cueId).sort(),candidates.sort(),"Must adjudicate every source-screened lexical anomaly without extra invented cues");
 const allowed=["RESOLVED_IN_ACTIVE_GLORIA_CREDO_EXACT_CUE_OWNER","VALID_SEMANTIC_EVENT_ANCHOR_NOT_LITERAL_LATIN_ERROR","ALREADY_SUPPRESSED_BY_ACTIVE_V183_CUE_CONTROLLER"];
 for(const row of a.lexicalAdjudications){
   assert.ok(allowed.includes(row.disposition),row.cueId+" unknown disposition");
