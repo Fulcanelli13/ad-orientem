@@ -1,12 +1,5 @@
 name: ICRSP France source-index inventory
 on:
-  push:
-    branches:
-      - governance/icrsp-source-inventory-1665
-    paths:
-      - "tools/icrsp/**"
-      - "tests/test_icrsp_index_source_metadata.py"
-      - ".github/workflows/icrsp-source-index.yml"
   workflow_dispatch:
 
 permissions:
