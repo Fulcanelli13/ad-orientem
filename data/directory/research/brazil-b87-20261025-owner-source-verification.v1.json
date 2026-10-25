@@ -1,0 +1,208 @@
+{
+  "schema": "AO_TLM_B87_BRAZIL_FIRST_PARTY_SITE_VERIFICATION_20261025_V1",
+  "checked_on": "2026-10-25",
+  "scope": "RESEARCH_ONLY_NO_MASTER_OR_TIMETABLE_CHANGE",
+  "baseline": {
+    "master": "B82",
+    "provisional_distinct_physical_sites": 2573,
+    "historical_canonical_group_ids": 2576,
+    "venue_source_records": 2679,
+    "full_timetable_rows": 4681,
+    "previously_verified_timetable_rows": 3347
+  },
+  "upstream": {
+    "b86_pr": 1694,
+    "index_positions": 91,
+    "unique_name_locality_keys": 89,
+    "b82_brazil_canonical_group_rows": 85
+  },
+  "qa": {
+    "cases_reviewed": 13,
+    "source_backed_distinct_physical_site_research_leads": 4,
+    "existing_b82_site_source_matches": 2,
+    "remaining_holds": 7,
+    "new_canonical_site_admissions": 0,
+    "new_public_map_pins": 0,
+    "new_verified_timetables": 0,
+    "b82_mutations": 0
+  },
+  "source_caveat": "At least two current-1962 location assertions derive from 2026 diocesan press statement reported by local newspapers; the diocese's own physical address and chapel pages independently corroborate their buildings. Distinguish this from a verified dated schedule.",
+  "cases": [
+    {
+      "b87_id": "B87-01",
+      "b86_id": "B86-BR-061",
+      "place": "Igreja São José Operário",
+      "locality": "Barra Mansa, RJ",
+      "address": "Via Sérgio Braga, Comunidade Terra Nova, Barbará",
+      "status": "CURRENT_1962_RESEARCH_LEAD",
+      "sources": [
+        "https://folhadoaco.com.br/2026/07/10/dom-luiz-henrique-reafirma-unidade-da-igreja-e-orienta-fieis-sobre-celebracao-da-missa-na-forma-antiga-na-diocese/",
+        "https://www.diocesevr.com.br/noticia/2113/dom-luiz-henrique-comemora-seu-aniversario-natalicio-com-santa-missa-em-barra-mansa"
+      ],
+      "caveat": "2026 diocesan statement as reported; no current recurring timetable certified"
+    },
+    {
+      "b87_id": "B87-02",
+      "b86_id": null,
+      "place": "Capelania Pessoal Nossa Senhora do Perpétuo Socorro",
+      "locality": "Volta Redonda, RJ",
+      "address": "Rua Doutor Miguel Couto 78, Jardim Amália I",
+      "status": "CURRENT_1962_RESEARCH_LEAD",
+      "sources": [
+        "https://www.diocesevr.com.br/paroquia/47/capelania-pessoal-nossa-senhora-do-perpetuo-socorro",
+        "https://diariodovale.com.br/geral/bispo-orienta-fieis-sobre-missa-em-rito-antigo-na-diocese/"
+      ],
+      "caveat": "Distinct from CMRI chapel RG-FB0A5B188CE0 on Rodovia RJ-153 km 7"
+    },
+    {
+      "b87_id": "B87-03",
+      "b86_id": null,
+      "place": "Capela São Sebastião",
+      "locality": "Bulhões, Resende, RJ",
+      "address": "Estrada de Bulhões, no door number independently established",
+      "status": "CURRENT_1962_RESEARCH_LEAD",
+      "sources": [
+        "https://folhadoaco.com.br/2026/07/10/dom-luiz-henrique-reafirma-unidade-da-igreja-e-orienta-fieis-sobre-celebracao-da-missa-na-forma-antiga-na-diocese/",
+        "https://www.findglocal.com/BR/Volta-Redonda/994419643911253/Capelania-Pessoal-Nossa-Senhora-do-Perp%C3%A9tuo-Socorro"
+      ],
+      "caveat": "First Mass dated 20 June 2026 according to chaplaincy social-post mirror; no fixed schedule established"
+    },
+    {
+      "b87_id": "B87-04",
+      "b86_id": "B86-BR-087",
+      "place": "Santuário do Bom Jesus",
+      "locality": "Montes Claros, MG",
+      "address": "Praça do Bom Jesus 116, Centro",
+      "status": "CURRENT_1962_RESEARCH_LEAD",
+      "sources": [
+        "https://ssvm.org.br/missa-tridentina/",
+        "https://ssvm.org.br/artigo3/quinta-visita-ibp-montes-claros/"
+      ],
+      "caveat": "First-party local association says ordinary Friday 19:00; dated IBP sung Mass 14 Aug 2026, no automatic schedule certification"
+    },
+    {
+      "b87_id": "B87-05",
+      "b86_id": "B86-BR-064",
+      "place": "Mosteiro da Santa Face",
+      "locality": "Formosa, GO",
+      "address": "Rua Trajano Balduíno 312",
+      "status": "HOLD_PUBLIC_1962_MASS_USE_UNPROVEN",
+      "sources": [
+        "https://www.mosteirodasantaface.org/msf-historia",
+        "https://www.liriocatolico.com.br/horario_missa/cidade/formosa-go/"
+      ],
+      "caveat": "Traditional liturgy and physical monastery established; no public current schedule"
+    },
+    {
+      "b87_id": "B87-06",
+      "b86_id": "B86-BR-090",
+      "place": "Capela Nossa Senhora da Imaculada Conceição (Terra Santa)",
+      "locality": "Petrópolis, RJ",
+      "address": "Rua Monsenhor Bacelar 590",
+      "status": "HOLD_1962_MASS_NOT_OWNER_CONFIRMED",
+      "sources": [
+        "https://diocesepetropolis.com.br/paroquia-sao-pedro-de-alcantara/",
+        "https://rezaremlatim.com/missa_tridentina/onde_tem_missa_tridentina/"
+      ],
+      "caveat": "Diocese attests chapel; external traditional Mass listing not current owner liturgy evidence"
+    },
+    {
+      "b87_id": "B87-07",
+      "b86_id": "B86-BR-049",
+      "place": "Igreja do Imaculado Coração de Maria",
+      "locality": "Cardoso Moreira, RJ",
+      "address": "Rua Manoel Aguiar 17",
+      "status": "HOLD_CURRENT_1962_USE",
+      "sources": [
+        "https://www.abim.inf.br/lancamento-do-mais-recente-livro-do-pe-david-francisquini/",
+        "https://www.missatridentina.com.br/rio-de-janeiro/"
+      ],
+      "caveat": "2026 church active; historical timetable is stale"
+    },
+    {
+      "b87_id": "B87-08",
+      "b86_id": "B86-BR-038",
+      "place": "Capela Nossa Senhora de Guadalupe — Colégio Santo Afonso",
+      "locality": "Manaus, AM",
+      "address": "Rua Belo Horizonte 1382",
+      "status": "EXISTING_B82_SOURCE_MATCH",
+      "existing_group_id": "RG-B65-C1D9CF051646",
+      "sources": [
+        "https://salvemaria.com.br/",
+        "https://salvemaria.com.br/missa-tridentina-em-manaus/"
+      ],
+      "caveat": "School label and chapel same campus; no second site"
+    },
+    {
+      "b87_id": "B87-09",
+      "b86_id": "B86-BR-002",
+      "place": "Capela Colégio Santo Tomás de Aquino",
+      "locality": "Uberlândia, MG",
+      "address": "Rua Rafael Rinaldi 1485",
+      "status": "EXISTING_B82_SOURCE_MATCH",
+      "existing_group_id": "RG-B65-F542148DE182",
+      "sources": [
+        "https://irmandadedocarmo.org/2026/05/01/liturgia-diaria-01-05-2026-festa-de-sao-jose-artesao/"
+      ],
+      "caveat": "Dated owner evidence; no duplicate"
+    },
+    {
+      "b87_id": "B87-10",
+      "b86_id": "B86-BR-003",
+      "place": "Capela São Vicente de Paulo",
+      "locality": "Juiz de Fora, MG",
+      "address": "Rua São Sebastião 412",
+      "status": "HOLD_EXACT_B82_IDENTITY",
+      "possible_group_id": "RG-F6325D6B52FE",
+      "sources": [
+        "https://rezaremlatim.com/missa_tridentina/onde_tem_missa_tridentina/"
+      ],
+      "caveat": "Existing same-name B82 group lacks street"
+    },
+    {
+      "b87_id": "B87-11",
+      "b86_id": "B86-BR-086",
+      "place": "Reitoria Nossa Senhora das Graças",
+      "locality": "Goiânia, GO",
+      "address": "Rua 4, Setor Central",
+      "status": "HOLD_EXACT_B82_IDENTITY",
+      "possible_group_id": "RG-85591EC590C0",
+      "sources": [
+        "https://www.latinmassdir.org/venue/reitoria-nossa-das-gracas-goiania-state-of-goias-brazil/"
+      ],
+      "caveat": "Generic B82 site name lacks address"
+    },
+    {
+      "b87_id": "B87-12",
+      "b86_id": "B86-BR-088",
+      "place": "Santuário São José",
+      "locality": "Salesópolis, SP",
+      "address": "Praça Padre João Menendes",
+      "status": "HOLD_OLDER_MASS_CLAIM",
+      "sources": [
+        "https://www.latinmassdir.org/venue/santuario-sao-jose-saint-joseph-sanctuary-salesopolis-state-of-sao-paulo-brazil/"
+      ],
+      "caveat": "No current first-party time"
+    },
+    {
+      "b87_id": "B87-13",
+      "b86_id": "B86-BR-004",
+      "place": "Congregação Mariana Nossa Senhora de Fátima",
+      "locality": "Manaus, AM",
+      "address": "Rua Dom Milton Correia Pereira, Parque Dez",
+      "status": "HOLD_OCCASIONAL_MASS_ROLE",
+      "sources": [
+        "https://www.latinmassdir.org/country/br/?view=list",
+        "https://salvemaria.com.br/"
+      ],
+      "caveat": "Separate worship building not established; don't double count Santo Afonso"
+    }
+  ],
+  "artifact": {
+    "name": "Ad_Orientem_B87_Brazil_FirstParty_13_Cases_4_Site_Leads_2026-10-25.xlsx",
+    "sha256": "76eed52d22dfe19ab85e41291741eaf2ba72a54dd5b4ffd580cc52aabb1c1fd7",
+    "repository_inclusion": false,
+    "notes": "Separate 91-row workbook delivered in conversation; no binary import in this PR."
+  },
+  "workflow": "Before actual site admission, reconcile physical building footprints with any historical research source IDs, then update operational master independently; existing timetable verification must remain unchanged."
+}
