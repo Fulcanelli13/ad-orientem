@@ -2143,7 +2143,7 @@ function syncRailIconSurfaces(root){
   }
   syncRailVisibility(root);
 }
-function syncIconlessSourceRubric(root,current,mode,iconResolver,form){
+function syncIconlessSourceRubric(root,current,mode,iconResolver,form,language){
   for(const old of root.querySelectorAll?.("[data-ao-iconless-rubric]")??[])
     old.remove();
   if(mode!=="LIVE")return;
@@ -2169,7 +2169,7 @@ function syncIconlessSourceRubric(root,current,mode,iconResolver,form){
     actionMeaning:meaning,iconKey,iconUrl,hasSourceRubric,printedRubric});
   if(decision!==CUE_SURFACE.INLINE_RUBRIC)return;
   const label=sourceActionRubricLabel(action?.label??action?.action??action?.value,
-    root.querySelector?.('[data-ao-reader-shell]')?.dataset?.language??"en");
+    language);
   if(!label)return;
   const doc=owner.ownerDocument??globalThis.document;
   const note=doc.createElement("span");
@@ -3993,7 +3993,8 @@ export function createReaderDomAdapter({
     syncReaderRitualHighlights(root,current.gesture);
     syncExactIconBackedRubrics(root,current,mode,iconResolver);
     syncIconlessSourceRubric(root,current,mode,iconResolver,
-      prepared?.session?.resolvedMass?.form??null);
+      prepared?.session?.resolvedMass?.form??null,
+      prepared?.readerPreferences?.language??"en");
     syncFaithfulParagraphIcons();
     return current;
   }
