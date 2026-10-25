@@ -1,0 +1,271 @@
+{
+  "schema": "ao-icksp-1962-gloria-credo-priest-schola-concordance-b02-v1",
+  "version": "1.0.0",
+  "status": "RESEARCH_WITNESS_AND_CLOCK_GUARD_NOT_LITURGICAL_RUNTIME_TRIGGER",
+  "sourceDate": "2026-10-25",
+  "authorities": [
+    {
+      "id": "MR62_RITUS_IV_3",
+      "role": "1962_NORMATIVE_ENGLISH_TRANSLATION",
+      "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5"
+    },
+    {
+      "id": "MR62_RITUS_VI_3",
+      "role": "1962_NORMATIVE_ENGLISH_TRANSLATION",
+      "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=8"
+    },
+    {
+      "id": "ICKSP_ORDO",
+      "role": "BILINGUAL_CONCORDANCE",
+      "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien"
+    }
+  ],
+  "guardContract": {
+    "forms": [
+      "MISSA_CANTATA_SIMPLE",
+      "MISSA_CANTATA_INCENSE",
+      "SOLEMN"
+    ],
+    "publicScholaContinuations": {
+      "gloria": {
+        "start": "AO.SM.C0055",
+        "end": "AO.SM.C0069",
+        "excludedPriestIntonationEnd": "AO.SM.C0054"
+      },
+      "credo": {
+        "start": "AO.SM.C0091",
+        "end": "AO.SM.C0105",
+        "excludedPriestIntonationEnd": "AO.SM.C0090"
+      }
+    },
+    "prohibition": "Choir public cue cannot automatically trigger priest bow, genuflection or private voice, even where a corresponding priest rubric exists.",
+    "allowedTrigger": "Independently attested priest event with exact actor, cue, source and form; not implemented by this change.",
+    "lowMass": "No choir; existing Low Mass priest actions/voices unaffected.",
+    "confiteorPlaceat": "Out of scope; parallel PR #1653 and #1663",
+    "iconMaster": "Frozen 57-rubric, 142-gesture and 414-asset crosswalk remain untouched",
+    "pendingConflictingChange": "PR #1554 adjudicates priest intonation through Deo/in unum Deum; do not undo it or assert the choir owns those endings."
+  },
+  "counts": {
+    "total": 12,
+    "alreadyInGestureMatrix": 10,
+    "pendingSourceGestureRecord": 2,
+    "scholaPublicContinuationCues": 30
+  },
+  "rubrics": [
+    {
+      "id": "AO.ICKSP.B02.001",
+      "cueId": "AO.SM.C0054",
+      "prayer": "GLORIA",
+      "priestRecitationPhase": "PRIEST_INTONATION_END",
+      "gesture": "HEAD_BOW",
+      "latinAnchor": "Deo",
+      "ritusSection": "IV.3",
+      "sungDonorClock": "SCHOLA_PUBLIC",
+      "gestureMatrixId": null,
+      "sourceStatus": "SOURCE_ATTESTED_NOT_IN_GESTURE_MATRIX",
+      "executionPolicy": "PRESERVE_PRIEST_INTONATION_REF_PR1554",
+      "runtimePromotion": "NOT_IN_THIS_BATCH",
+      "primary1962Source": {
+        "url": "https://www.musicasacra.com/pdf/missale62.pdf",
+        "section": "Ritus servandus IV.3",
+        "originalLatinChecked": true,
+        "englishTranslationUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5",
+        "ickspWitnessUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien"
+      },
+      "shortDescription": {
+        "en": "At Deo, the priest joins his hands and bows his head toward the Cross.",
+        "fr": "À Deo, le prêtre joint les mains et incline la tête vers la Croix."
+      },
+      "formTiming": {
+        "lowMass": "SOURCE_WORD_SYNC_WITH_PRIEST_SPEECH",
+        "missaCantata": "PRIEST_OWN_RECITATION_NOT_SCHOLA_CLOCK",
+        "solemn": "PRIEST_OWN_RECITATION_NOT_SCHOLA_CLOCK"
+      },
+      "nextPublicationTarget": "MISSAL_BOOK_REFERENCE_FIRST",
+      "liveClockGate": "REQUIRES_ACTUAL_SOURCE_OWNED_PRIEST_EVENT_NO_SCHOLA_INFERENCE"
+    },
+    {
+      "id": "AO.ICKSP.B02.002",
+      "cueId": "AO.SM.C0056",
+      "prayer": "GLORIA",
+      "priestRecitationPhase": "PRIEST_QUIET_CONTINUATION",
+      "gesture": "HEAD_BOW",
+      "latinAnchor": "Adoramus te",
+      "ritusSection": "IV.3",
+      "sungDonorClock": "SCHOLA_PUBLIC",
+      "gestureMatrixId": null,
+      "sourceStatus": "SOURCE_ATTESTED_NOT_IN_GESTURE_MATRIX",
+      "executionPolicy": "NEVER_INFER_FROM_SCHOLA_CLOCK",
+      "runtimePromotion": "NOT_IN_THIS_BATCH",
+      "primary1962Source": {
+        "url": "https://www.musicasacra.com/pdf/missale62.pdf",
+        "section": "Ritus servandus IV.3",
+        "originalLatinChecked": true,
+        "englishTranslationUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5",
+        "ickspWitnessUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien"
+      },
+      "shortDescription": {
+        "en": "At Adoramus te, the priest bows his head toward the Cross during his own recitation.",
+        "fr": "À Adoramus te, le prêtre incline la tête vers la Croix pendant sa propre récitation."
+      },
+      "formTiming": {
+        "lowMass": "SOURCE_WORD_SYNC_WITH_PRIEST_SPEECH",
+        "missaCantata": "PRIEST_OWN_RECITATION_NOT_SCHOLA_CLOCK",
+        "solemn": "PRIEST_OWN_RECITATION_NOT_SCHOLA_CLOCK"
+      },
+      "nextPublicationTarget": "MISSAL_BOOK_REFERENCE_FIRST",
+      "liveClockGate": "REQUIRES_ACTUAL_SOURCE_OWNED_PRIEST_EVENT_NO_SCHOLA_INFERENCE"
+    },
+    {
+      "id": "AO.ICKSP.B02.003",
+      "cueId": "AO.SM.C0058",
+      "prayer": "GLORIA",
+      "priestRecitationPhase": "PRIEST_QUIET_CONTINUATION",
+      "gesture": "HEAD_BOW",
+      "latinAnchor": "Gratias agimus tibi",
+      "ritusSection": "IV.3",
+      "sungDonorClock": "SCHOLA_PUBLIC",
+      "gestureMatrixId": "GM.P.C0058.01",
+      "sourceStatus": "ALREADY_GESTURE_MATRIX_OWNED",
+      "executionPolicy": "NEVER_INFER_FROM_SCHOLA_CLOCK",
+      "runtimePromotion": "NOT_IN_THIS_BATCH"
+    },
+    {
+      "id": "AO.ICKSP.B02.004",
+      "cueId": "AO.SM.C0061",
+      "prayer": "GLORIA",
+      "priestRecitationPhase": "PRIEST_QUIET_CONTINUATION",
+      "gesture": "HEAD_BOW",
+      "latinAnchor": "Jesu Christe",
+      "ritusSection": "IV.3",
+      "sungDonorClock": "SCHOLA_PUBLIC",
+      "gestureMatrixId": "GM.P.C0061.01",
+      "sourceStatus": "ALREADY_GESTURE_MATRIX_OWNED",
+      "executionPolicy": "NEVER_INFER_FROM_SCHOLA_CLOCK",
+      "runtimePromotion": "NOT_IN_THIS_BATCH"
+    },
+    {
+      "id": "AO.ICKSP.B02.005",
+      "cueId": "AO.SM.C0064",
+      "prayer": "GLORIA",
+      "priestRecitationPhase": "PRIEST_QUIET_CONTINUATION",
+      "gesture": "HEAD_BOW",
+      "latinAnchor": "Suscipe deprecationem",
+      "ritusSection": "IV.3",
+      "sungDonorClock": "SCHOLA_PUBLIC",
+      "gestureMatrixId": "GM.P.C0064.01",
+      "sourceStatus": "ALREADY_GESTURE_MATRIX_OWNED",
+      "executionPolicy": "NEVER_INFER_FROM_SCHOLA_CLOCK",
+      "runtimePromotion": "NOT_IN_THIS_BATCH"
+    },
+    {
+      "id": "AO.ICKSP.B02.006",
+      "cueId": "AO.SM.C0067",
+      "prayer": "GLORIA",
+      "priestRecitationPhase": "PRIEST_QUIET_CONTINUATION",
+      "gesture": "HEAD_BOW",
+      "latinAnchor": "Jesu Christe (final)",
+      "ritusSection": "IV.3",
+      "sungDonorClock": "SCHOLA_PUBLIC",
+      "gestureMatrixId": "GM.P.C0067.01",
+      "sourceStatus": "ALREADY_GESTURE_MATRIX_OWNED",
+      "executionPolicy": "NEVER_INFER_FROM_SCHOLA_CLOCK",
+      "runtimePromotion": "NOT_IN_THIS_BATCH"
+    },
+    {
+      "id": "AO.ICKSP.B02.007",
+      "cueId": "AO.SM.C0068",
+      "prayer": "GLORIA",
+      "priestRecitationPhase": "PRIEST_QUIET_CONTINUATION",
+      "gesture": "SIGN_OF_CROSS",
+      "latinAnchor": "Cum Sancto Spiritu",
+      "ritusSection": "IV.3",
+      "sungDonorClock": "SCHOLA_PUBLIC",
+      "gestureMatrixId": "GM.P.C0068.01",
+      "sourceStatus": "ALREADY_GESTURE_MATRIX_OWNED",
+      "executionPolicy": "NEVER_INFER_FROM_SCHOLA_CLOCK",
+      "runtimePromotion": "NOT_IN_THIS_BATCH"
+    },
+    {
+      "id": "AO.ICKSP.B02.008",
+      "cueId": "AO.SM.C0090",
+      "prayer": "CREDO",
+      "priestRecitationPhase": "PRIEST_INTONATION_END",
+      "gesture": "HEAD_BOW",
+      "latinAnchor": "in unum Deum",
+      "ritusSection": "VI.3",
+      "sungDonorClock": "SCHOLA_PUBLIC",
+      "gestureMatrixId": "GM.P.C0090.01",
+      "sourceStatus": "ALREADY_GESTURE_MATRIX_OWNED",
+      "executionPolicy": "PRESERVE_PRIEST_INTONATION_REF_PR1554",
+      "runtimePromotion": "NOT_IN_THIS_BATCH"
+    },
+    {
+      "id": "AO.ICKSP.B02.009",
+      "cueId": "AO.SM.C0093",
+      "prayer": "CREDO",
+      "priestRecitationPhase": "PRIEST_QUIET_CONTINUATION",
+      "gesture": "HEAD_BOW",
+      "latinAnchor": "Jesum Christum",
+      "ritusSection": "VI.3",
+      "sungDonorClock": "SCHOLA_PUBLIC",
+      "gestureMatrixId": "GM.P.C0093.01",
+      "sourceStatus": "ALREADY_GESTURE_MATRIX_OWNED",
+      "executionPolicy": "NEVER_INFER_FROM_SCHOLA_CLOCK",
+      "runtimePromotion": "NOT_IN_THIS_BATCH"
+    },
+    {
+      "id": "AO.ICKSP.B02.010",
+      "cueId": "AO.SM.C0096",
+      "prayer": "CREDO",
+      "priestRecitationPhase": "PRIEST_QUIET_CONTINUATION",
+      "gesture": "GENUFLECTION",
+      "latinAnchor": "Et incarnatus est ... et homo factus est",
+      "ritusSection": "VI.3",
+      "sungDonorClock": "SCHOLA_PUBLIC",
+      "gestureMatrixId": "GM.P.C0096.01",
+      "sourceStatus": "ALREADY_GESTURE_MATRIX_OWNED",
+      "executionPolicy": "NEVER_INFER_FROM_SCHOLA_CLOCK",
+      "runtimePromotion": "NOT_IN_THIS_BATCH"
+    },
+    {
+      "id": "AO.ICKSP.B02.011",
+      "cueId": "AO.SM.C0101",
+      "prayer": "CREDO",
+      "priestRecitationPhase": "PRIEST_QUIET_CONTINUATION",
+      "gesture": "HEAD_BOW",
+      "latinAnchor": "simul adoratur",
+      "ritusSection": "VI.3",
+      "sungDonorClock": "SCHOLA_PUBLIC",
+      "gestureMatrixId": "GM.P.C0101.01",
+      "sourceStatus": "ALREADY_GESTURE_MATRIX_OWNED",
+      "executionPolicy": "NEVER_INFER_FROM_SCHOLA_CLOCK",
+      "runtimePromotion": "NOT_IN_THIS_BATCH"
+    },
+    {
+      "id": "AO.ICKSP.B02.012",
+      "cueId": "AO.SM.C0104",
+      "prayer": "CREDO",
+      "priestRecitationPhase": "PRIEST_QUIET_CONTINUATION",
+      "gesture": "SIGN_OF_CROSS",
+      "latinAnchor": "Et vitam venturi saeculi",
+      "ritusSection": "VI.3",
+      "sungDonorClock": "SCHOLA_PUBLIC",
+      "gestureMatrixId": "GM.P.C0104.01",
+      "sourceStatus": "ALREADY_GESTURE_MATRIX_OWNED",
+      "executionPolicy": "NEVER_INFER_FROM_SCHOLA_CLOCK",
+      "runtimePromotion": "NOT_IN_THIS_BATCH"
+    }
+  ],
+  "researchAdjudication": {
+    "scope": "TWO_NORMATIVE_PRIEST_BOWS",
+    "certification": "SOURCE_CONFIRMED_PUBLICATION_NOT_YET_SCHEDULED",
+    "latin1962MissalChecked": true,
+    "counts": {
+      "newPublishedGestureEvents": 0,
+      "newIcons": 0,
+      "newCards": 0
+    },
+    "rule": "Normative action may be described in the Missal; do not display as observed in LIVE until independent clock/source event can establish timing."
+  }
+}
