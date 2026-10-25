@@ -106,6 +106,36 @@ try{
  assert.equal(await page.locator("#aoPray435930 .aoP435930StationRail .aoDevoStop").count(),14);
  assert.equal(await page.locator("#aoPray435930 .aoP435930StationRail [aria-current='step']").count(),1);
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard").getAttribute("data-ao-devo-card"),"station-1");
+
+ const stationsLocale=page.locator("#aoPray435930 .aoP435930SessionLanguage");
+ assert.equal(await stationsLocale.count(),1,"Stations must share in-session EN/FR control");
+ const englishStation=await page.locator("#aoPray435930 .aoDevoCardTitle").innerText();
+ const englishMeditation=await page.locator("#aoPray435930 .aoP435930StationConsider p").innerText();
+ await stationsLocale.click();
+ assert.equal((await stationsLocale.innerText()).trim(),"FR");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard").getAttribute("data-ao-devo-card"),"station-1");
+ assert.notEqual(await page.locator("#aoPray435930 .aoDevoCardTitle").innerText(),englishStation,
+  "French language switch did not select the canonical French Station title");
+ assert.notEqual(await page.locator("#aoPray435930 .aoP435930StationConsider p").innerText(),englishMeditation,
+  "French language switch did not render the existing French meditation");
+ const stationPrayerSize=await page.locator("#aoPray435930 .aoP435930StationPrayer .aoP435930Flip")
+  .first().evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
+ const stationInstructionSize=await page.locator("#aoPray435930 .aoP435930GuideNow p")
+  .first().evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
+ assert.ok(stationPrayerSize>stationInstructionSize+3,
+  "Stations prayer must visually dominate instructions");
+ assert.equal(await page.locator("#aoPray435930 .aoP435930Stations .aoDevoCardHead")
+  .evaluate(x=>getComputedStyle(x).display),"none",
+  "The station is already named in the chapter rail; do not duplicate its title");
+ const responseOpacity=await page.locator("#aoPray435930 .aoP435930Stations .aoP435930VRLine")
+  .evaluateAll(es=>es.map(x=>Number(getComputedStyle(x).opacity)));
+ assert.ok(responseOpacity.length>=2&&responseOpacity.every(x=>x>=.94),
+  "Both parts of the Stations versicle/response must be legible: "+JSON.stringify(responseOpacity));
+
+ await page.screenshot({path:resolve(captures,"02-stations-fr-language-390.png"),fullPage:false,animations:"disabled"});
+ await stationsLocale.click();
+ assert.equal((await stationsLocale.innerText()).trim(),"EN");
+
  await page.screenshot({path:resolve(captures,"02-stations-dual-axis-390.png"),fullPage:false,animations:"disabled"});
  await page.emulateMedia({reducedMotion:"reduce"});
  await gesture(7,-155);

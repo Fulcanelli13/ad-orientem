@@ -592,6 +592,99 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  color:var(--text,#e6ddce)!important;
 }
 
+
+/* PRAY shared parity phase 2: Stations and Confession reuse the same one-tap
+   session locale and quiet hierarchy. Their owners and cardinalities do not change. */
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="stations"]>.aoP435930Head,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="confession"]>.aoP435930Head{
+ grid-template-columns:44px minmax(0,1fr) 44px 44px!important;
+ align-items:center!important;gap:5px!important;
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="stations"]>.aoP435930Head>div,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="confession"]>.aoP435930Head>div{
+ min-width:0!important;overflow:hidden!important;
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="stations"]>.aoP435930Head h1,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="confession"]>.aoP435930Head h1{
+ overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;
+ font-size:clamp(15px,4.2vw,21px)!important;line-height:1.2!important;
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="stations"]>.aoP435930Head p,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="confession"]>.aoP435930Head p{display:none!important}
+/* Stations retains its original direction/verse/meditation/prayer order:
+   source-based posture cues depend on paragraph scroll, so DO NOT reorder it. */
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930GuideNow{
+ padding:4px 0 2px!important;background:transparent!important;border:0!important;
+}
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930GuideNow p,
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930GuideCue p,
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930GuideNow p{
+ color:var(--muted,#aaa49b)!important;
+ font:400 clamp(12px,3.3vw,14px)/1.55 var(--ao-font-ui,system-ui,sans-serif)!important;
+ letter-spacing:0!important;
+}
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930GuideNow small,
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930GuideCue small{
+ font:650 10px/1.35 var(--ao-font-ui,system-ui,sans-serif)!important;
+ letter-spacing:.07em!important;color:var(--liturgical,#c8ad7b)!important;
+}
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930StationConsider p{
+ font:400 clamp(17px,4.5vw,21px)/1.6 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f1e7d7)!important;
+}
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930StationPrayer .aoP435930Flip,
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930VRLine{
+ font:400 clamp(19px,5vw,23px)/1.65 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f1e7d7)!important;
+}
+/* Stations already names the episode in the fourteen-stage chapter rail:
+   show its actual response and prayer instead of a duplicate numbered title. */
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="stations"] .aoP435930Stations .aoDevoCardHead{
+ display:none!important;
+}
+#aoPray435930 .aoP435930Stations .aoP435930PrayerOptions{
+ background:transparent!important;border:0!important;
+ border-bottom:1px solid var(--border,rgba(255,255,255,.13))!important;
+ border-radius:0!important;margin:0 0 4px!important;
+}
+#aoPray435930 .aoP435930Stations .aoP435930PrayerOptions>summary{
+ min-height:44px!important;padding:5px 3px!important;
+ color:var(--muted,#ada69c)!important;
+ font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+#aoPray435930 .aoP435930Stations .aoP435930PrayerOptions>summary>small{
+ color:var(--muted,#ada69c)!important;
+ font:500 11px/1.35 var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+#aoPray435930 .aoP435930Stations .aoP435930VRLine>button,
+#aoPray435930 .aoP435930Stations .aoP435930StationPrayer .aoP435930Flip{
+ font:400 clamp(19px,5vw,23px)/1.65 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f1e7d7)!important;
+}
+/* The chapter rail already identifies the active examination category. Do not
+   repeat the numbered card heading and compete with the questions. */
+#aoPray435930 .aoP435930ConfessionReader[data-ao-confession-dual-axis="true"] .aoDevoCardHead{
+ display:none!important;
+}
+/* The sacramental preparation reader is NOT a text-only prayer: the questions
+   are primary, while instructions, privacy notes and doctrine are secondary. */
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930ConfQuestions li,
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930ConfOneCard>p{
+ font:400 clamp(18px,4.6vw,22px)/1.62 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f1e7d7)!important;
+}
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930Prayer{
+ border:0!important;background:transparent!important;box-shadow:none!important;
+}
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930PrayerHead h3{
+ font:500 clamp(19px,5vw,25px)/1.3 var(--ao-font-display,"EB Garamond",Georgia,serif)!important;
+ color:var(--liturgical,#c8ad7b)!important;
+}
+#aoPray435930 .aoP435930ConfessionReader .aoDevoCardScroll .aoP435930Flip{
+ font:400 clamp(19px,5.1vw,24px)/1.65 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f4eddf)!important;
+}
+
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDevoCard{animation:none}#aoPray435930 .aoDevoParagraph{transition:none!important}}
 `;

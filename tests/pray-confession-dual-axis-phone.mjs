@@ -36,6 +36,20 @@ try{
  assert.equal(await page.locator(sel+" [data-p435930-since]").count(),1,
   "Only the optional time since last Confession belongs in the preparation screen");
  assert.equal(await page.locator(sel+" input").count(),1,"Confession screen collects sensitive sin answers");
+
+ const locale=page.locator("#aoPray435930 .aoP435930SessionLanguage");
+ assert.equal(await locale.count(),1,"Confession should share the devotional EN/FR header control");
+ assert.equal((await locale.innerText()).trim(),"EN");
+ await page.locator(sel+" [data-p435930-since]").fill("three weeks");
+ await locale.click();
+ assert.equal((await locale.innerText()).trim(),"FR");
+ assert.equal(await page.locator(sel+" [data-p435930-since]").inputValue(),"three weeks",
+  "Switching language may not discard the private session-only time estimate");
+ assert.match(await page.locator(sel+" [data-p435930-conf-path='regular']").innerText(),/Confession rapide/);
+ await page.screenshot({path:resolve(captures,"confession-390-chooser-fr.png"),animations:"disabled"});
+ await locale.click();
+ assert.equal((await locale.innerText()).trim(),"EN");
+
  await page.locator(sel+" [data-p435930-conf-path='regular']").tap();
  await page.locator(sel+" [data-p435930-conf-next]").tap();
  await page.waitForSelector(timeline,{timeout:12000});
@@ -55,6 +69,31 @@ try{
  assert.deepEqual({stage:st.stage,id:st.id,stops:st.stops,index:st.index,current:st.current,overflow:st.overflow},
  {stage:1,id:"quick-commandments-1",stops:5,index:0,current:1,overflow:"auto"});
  assert.ok(st.questions>=3&&st.active>=1,"Original examination questions are not focusable paragraphs");
+ assert.equal(await page.locator(sel+" .aoDevoCardHead").evaluate(x=>getComputedStyle(x).display),"none",
+  "Duplicated numbered examination headline competes with the existing chapter rail");
+ const questionContrast=await page.locator(sel+" .aoP435930ConfQuestions li").evaluateAll(
+  es=>es.map(x=>Number(getComputedStyle(x).opacity)));
+ assert.ok(questionContrast.length>=3&&questionContrast.every(x=>x>=.94),
+  "All examination questions must remain readable, not dimmed by paragraph focus: "+JSON.stringify(questionContrast));
+
+
+ const enExamText=await page.locator(sel+" .aoP435930ConfQuestions").innerText();
+ await locale.click();
+ assert.equal((await locale.innerText()).trim(),"FR");
+ let frState=await state();
+ assert.equal(frState.stage,1);assert.equal(frState.id,st.id);
+ assert.equal(frState.index,0,"Changing French must not discard the current examination card");
+ const frExamText=await page.locator(sel+" .aoP435930ConfQuestions").innerText();
+ assert.ok(frExamText.length>20&&frExamText!==enExamText,"French examination must use existing source text");
+ const questionFont=await page.locator(sel+" .aoP435930ConfQuestions li").first().evaluate(
+  el=>parseFloat(getComputedStyle(el).fontSize));
+ const instructionFont=await page.locator(sel+" .aoP435930GuideNow p").first().evaluate(
+  el=>parseFloat(getComputedStyle(el).fontSize));
+ assert.ok(questionFont>instructionFont+3,"Examination questions must be more salient than directions");
+ await page.screenshot({path:resolve(captures,"confession-390-examination-fr.png"),animations:"disabled"});
+ await locale.click();
+ assert.equal((await locale.innerText()).trim(),"EN");
+
  assert.equal(st.nav,null,"Interior Confession cards must not render extra Previous/Next controls");
  assert.equal(await page.locator(sel+" [data-p435930-since]").count(),0,"Time estimate must not follow user into examination");
  await page.screenshot({path:resolve(captures,"regular-exam-390.png"),animations:"disabled"});
