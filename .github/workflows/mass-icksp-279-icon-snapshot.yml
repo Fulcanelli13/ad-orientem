@@ -1,0 +1,22 @@
+name: Mass 1962 279-cue icon snapshot
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/mass/icksp-1962-full-icon-cue-screening-20261025.v1.json"
+      - "docs/MASS-1962-ICKSP-FULL-ICON-CUE-AUDIT-20261025.md"
+      - "tests/mass-icksp-full-icon-screening.mjs"
+      - ".github/workflows/mass-icksp-279-icon-snapshot.yml"
+  workflow_dispatch:
+jobs:
+  source-snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # The audit describes the frozen 25 Oct 2026 registry snapshot, not a
+      # mandatory baseline for every subsequent reader feature or source edit.
+      - name: Check source-pinned 279 cue screening
+        run: node tests/mass-icksp-full-icon-screening.mjs
