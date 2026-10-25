@@ -1,4 +1,4 @@
-// Search for the 35 published Calendar customs using their actual EN/FR article
+// Search for the canonically published Calendar customs using their actual EN/FR article
 // content. This never changes publication state or creates date-bound events.
 const TEXT_FIELDS=Object.freeze(["title","description","history","meaning","practice","caution","scope","occasion"]);
 const SOURCE_FIELDS=Object.freeze(["sources","history_sources","supporting_sources"]);
