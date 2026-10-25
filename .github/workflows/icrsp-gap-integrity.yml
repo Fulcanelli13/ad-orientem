@@ -12,8 +12,10 @@ on:
       - 'data/source-text/icrsp-france-mass-explorer-39-owner-parity.v1.json'
       - 'data/source-text/icrsp-france-mass-moment-author-overlap.v1.json'
       - 'data/source-text/icrsp-france-temporal-193-sourcepath-crosswalk.v1.json'
-      - 'data/source-text/icrsp-france-temporal-94-sourcepath-exceptions.v1.json'
+      - 'data/source-text/icrsp-france-temporal-93-sourcepath-exceptions.v2.json'
       - 'tests/test_icrsp_temporal_sourcepath_witnesses.py'
+      - 'data/source-text/icrsp-france-b10-lent-pentecost51-content-screen.v1.json'
+      - 'tests/test_icrsp_b10_lent_pentecost_content_screen.py'
   workflow_dispatch:
 
 permissions:
@@ -34,3 +36,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_gap_register_integrity.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_mass_explorer_owner_parity.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_temporal_sourcepath_witnesses.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b10_lent_pentecost_content_screen.py' -v
