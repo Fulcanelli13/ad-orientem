@@ -1,0 +1,154 @@
+{
+  "schema": "AO_B84_45_SOURCE_EXCEPTION_TRIAGE_20261025_V1",
+  "date": "2026-10-25",
+  "publication_state": "RESEARCH_ONLY_NO_SITE_OR_TIMETABLE_IMPORT",
+  "baseline": {
+    "version": "B82",
+    "distinct_provisional_physical_sites": 2573,
+    "historical_group_ids": 2576,
+    "venue_source_records": 2679,
+    "timetable_rows_unchanged": 4681,
+    "previously_verified_states_unchanged": 3347
+  },
+  "predecessor": {
+    "pr": 1687,
+    "batch": "B83",
+    "first_party_directory_entries_screened": 136,
+    "priority_exceptions": 45
+  },
+  "audit": {
+    "triaged_cases": 45,
+    "category_counts": {
+      "existing_site_source_link_supported": 6,
+      "legacy_source_lead_recovered_without_canonical_id": 1,
+      "temporary_worship_site_name_address_conflation": 1,
+      "b82_same_name_but_physical_identity_unresolved": 5,
+      "parish_or_rectorate_contact_address_worship_unconfirmed": 12,
+      "likely_existing_icksp_name_needs_street": 11,
+      "city_or_unspecified_building_holds": 6,
+      "institution_or_region_holds": 3
+    }
+  },
+  "decisions": [
+    {
+      "classification": "EXISTING_SITE_SOURCE_LINK_SUPPORTED",
+      "ids": [
+        "B83-087",
+        "B83-108",
+        "B83-109",
+        "B83-110",
+        "B83-111",
+        "B83-112"
+      ],
+      "action": "Attach first-party source to existing frozen research ID; no additional physical site.",
+      "urls": [
+        "https://www.icrss.it/firenze/",
+        "https://oratoriosaojosebh.org/comunidades-atendidas/"
+      ]
+    },
+    {
+      "classification": "RECOVER_LEGACY_SOURCE_LEAD_CANONICAL_GAP",
+      "ids": [
+        "B83-107"
+      ],
+      "legacy_source_id": "AASJMV-EXT-001",
+      "name": "Capela do Oratorio Sao Jose",
+      "address": "Rua Aiuruoca 148, Fernao Dias, Belo Horizonte",
+      "action": "Older 2026-10-10 master already held source identity, but B82 canonical has no exact physical group. Reconcile source lineage; do not call this novel first discovery, do not mint ID or timetable automatically.",
+      "urls": [
+        "https://oratoriosaojosebh.org/comunidades-atendidas/",
+        "https://oratoriosaojosebh.org/programacao-outubro-2026/"
+      ]
+    },
+    {
+      "classification": "TEMPORARY_WORSHIP_SITE_NAME_ADDRESS_CONFLATION",
+      "ids": [
+        "B83-086"
+      ],
+      "historical_church": "Basilica dei Santi Celso e Giuliano, Via del Banco di Santo Spirito 5, Rome",
+      "temporary_2026_worship_church": "Chiesa dell'Immacolata dei Miracoli, Via Sebastiano Veniero 3, Rome",
+      "existing_b82_group": "RG-0139779AA43D",
+      "action": "B82 canonical name denotes historical basilica, but stored physical address denotes separate temporary church. Preserve frozen source identity and history, separate physical-building roles and temporal Mass assignment; do not change verified timetable from generic international Institute listing.",
+      "urls": [
+        "https://www.icrss.it/roma/",
+        "https://institute-christ-king.org/international-home"
+      ]
+    },
+    {
+      "classification": "B82_SAME_NAME_PHYSICAL_IDENTITY_UNRESOLVED",
+      "ids": [
+        "B83-090",
+        "B83-093",
+        "B83-101",
+        "B83-105",
+        "B83-106"
+      ],
+      "action": "Existing names are plausible links but no owner worship-building street verified. No alias/new-site decision from name only."
+    },
+    {
+      "classification": "PARISH_OR_RECTORATE_CONTACT_ADDRESS_WORSHIP_UNCONFIRMED",
+      "ids": [
+        "B83-091",
+        "B83-092",
+        "B83-094",
+        "B83-095",
+        "B83-096",
+        "B83-097",
+        "B83-098",
+        "B83-099",
+        "B83-100",
+        "B83-102",
+        "B83-103",
+        "B83-104"
+      ],
+      "action": "AASJMV owner directory parish/rectorate addresses require distinction between office and actual Mass building. Keep unresolved."
+    },
+    {
+      "classification": "LIKELY_EXISTING_ICKSP_NAME_NEEDS_STREET",
+      "ids": [
+        "B83-002",
+        "B83-047",
+        "B83-053",
+        "B83-062",
+        "B83-067",
+        "B83-071",
+        "B83-073",
+        "B83-075",
+        "B83-078",
+        "B83-080",
+        "B83-081"
+      ],
+      "action": "Likely named owner/B82 identity overlap; no new physical group until building confirmation."
+    },
+    {
+      "classification": "CITY_OR_UNSPECIFIED_BUILDING_HOLD",
+      "ids": [
+        "B83-018",
+        "B83-046",
+        "B83-049",
+        "B83-052",
+        "B83-064",
+        "B83-068"
+      ],
+      "action": "Do not infer worship building from city/apostolate label."
+    },
+    {
+      "classification": "INSTITUTION_OR_REGION_HOLD",
+      "ids": [
+        "B83-022",
+        "B83-054",
+        "B83-085"
+      ],
+      "action": "Institution/region rather than source-evidenced public Mass building; hold."
+    }
+  ],
+  "source_access_note": "AASJMV institutional /paroquias/ and /reitorias/ first-party pages returned HTTP 403 during B84 direct check; their contents rely on B83's retained transcription rather than a successful fresh fetch.",
+  "evidence_workbook": "Ad_Orientem_B84_FirstParty_45_Exception_Triage_2026-10-25.xlsx (separate conversation artifact; not committed as binary)",
+  "gates": {
+    "new_site_admissions": 0,
+    "new_public_pins": 0,
+    "new_verified_timetables": 0,
+    "mutation_of_B82": 0
+  },
+  "next_batch": "First resolve Rome physical temporary-location split and recover AASJMV-EXT-001 lineage. Then retrieve specific church-building evidence for remaining AASJMV parishes and continue high-volume first-party discovery without duplicating ICKSP/SSPX completed censuses."
+}
