@@ -805,8 +805,8 @@ try{
         const card=api.model.cards.find(c=>c.title===t);
         if(!card)return {found:false};
         api.showSequence(card.sequence);
-        return {found:true,expected:card.sectionId,
-          actual:api.getCurrentCard()?.sectionId,
+        return {found:true,expected:card.sequence,
+          actual:api.getCurrentCard()?.sequence,
           title:api.getCurrentCard()?.title??null};
       },title);
       assert.ok(scene.found&&scene.actual===scene.expected,
