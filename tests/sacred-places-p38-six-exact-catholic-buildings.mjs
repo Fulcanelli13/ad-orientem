@@ -24,7 +24,7 @@ const byId=new Map(g.places.map(x=>[x.place_id,x])),bySource=new Map(s.sources.m
 assert.equal(byId.size,g.places.length);assert.equal(bySource.size,s.sources.length);
 for(const x of m.published_new){
   assert.ok(!refs.has(x.geo_source_ref),"Duplicate OSM church way "+x.geo_source_ref);
-  assert.match(x.geo_source_ref,/^osm:way:\\d+$/);
+  assert.match(x.geo_source_ref,/^osm:way:\d+$/);
   assert.equal(x.geo_source_url,"https://www.openstreetmap.org/way/"+x.geo_source_ref.split(":")[2]);
   const p=byId.get(x.place_id);assert.ok(p);
   assert.equal(p.name.official,x.name);assert.equal(p.place_type,x.place_type);
