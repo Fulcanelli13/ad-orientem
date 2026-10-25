@@ -95,7 +95,11 @@ assert.equal(curatedReady.presentationModel.sourceAuthorityModel,curatedReady.mo
 const crosswalk=curatedReady.musicCrosswalk;
 assert.equal(crosswalk.schema,"ao-mass-music-source-crosswalk-v1");
 assert.equal(crosswalk.readerStructureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
-assert.equal(crosswalk.ordinary.length,10);
+assert.equal(crosswalk.ordinary.length,curatedReady.scholaState.tracks.length,
+  "Music crosswalk must contain exactly the chants selected for this Mass");
+assert.equal(crosswalk.ordinary.some(t=>t.trackId==="ALLELUIA_TRACT_SEQUENCE"),false,
+  "No separate Alleluia, Tract or Sequence may be invented for this synthetic Proper");
+assert.equal(crosswalk.ordinary.some(t=>t.trackId==="GRADUAL"),true);
 assert.deepEqual(crosswalk.ordinaryUnmappedTracks,[],
   "The live music crosswalk has unresolved Ordinary source/card anchors");
 assert.equal(crosswalk.notLivePerformanceEvidence,true);
