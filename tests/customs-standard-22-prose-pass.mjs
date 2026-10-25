@@ -6,7 +6,7 @@ const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const manifest=read("data/customs/editorial-final-acceptance.v1.json");
 const ids=manifest.records.filter(x=>x.priority==="STANDARD").map(x=>x.custom_id);
 assert.equal(ids.length,22);
-assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,35);
+assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,37);
 assert.deepEqual(validationErrors(manifest),[]);
 const checks={
 "XMAS-001":[/unconsecrated bread/i,/pain non consacré/],
