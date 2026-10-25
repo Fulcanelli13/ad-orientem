@@ -155,7 +155,7 @@ try{
           .map(el=>el.textContent?.trim()??"");
         const paragraph=[...document.querySelectorAll(".ao-reader-paragraph")]
           .find(el=>el.dataset.cueId===cue ||
-            String(el.dataset.sourceCueIds??"").split(/\\s+/).includes(cue));
+            String(el.dataset.sourceCueIds??"").split(/\s+/).includes(cue));
         const sourceParagraphText=paragraph?.querySelector(".ao-line-primary")?.textContent?.trim()??"";
         return {active:rail?.dataset.active,text:rail?.textContent,
           aria:rail?.getAttribute("aria-label"),minister:state?.sacredMinister,
