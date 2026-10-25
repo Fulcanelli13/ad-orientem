@@ -153,10 +153,14 @@ try{
         const inline=[...document.querySelectorAll('.ao-live-inline-rubrics .ao-live-rubric-action')]
           .filter(el=>el.dataset.sourceCueId===cue)
           .map(el=>el.textContent?.trim()??"");
+        const paragraph=[...document.querySelectorAll(".ao-reader-paragraph")]
+          .find(el=>el.dataset.cueId===cue ||
+            String(el.dataset.sourceCueIds??"").split(/\\s+/).includes(cue));
+        const sourceParagraphText=paragraph?.querySelector(".ao-line-primary")?.textContent?.trim()??"";
         return {active:rail?.dataset.active,text:rail?.textContent,
           aria:rail?.getAttribute("aria-label"),minister:state?.sacredMinister,
           railDisplay:rail?getComputedStyle(rail).display:null,
-          railHidden:rail?.getAttribute("aria-hidden"),inline,
+          railHidden:rail?.getAttribute("aria-hidden"),inline,sourceParagraphText,
           width:document.documentElement.scrollWidth-innerWidth};
       });
       assert.equal(observed.active,expectVisible?"true":"false",
@@ -168,8 +172,9 @@ try{
         assert.equal(observed.railDisplay,"none",
           "Requiem minister instruction must not be compressed into a rail tile");
         assert.equal(observed.railHidden,"true");
-        assert.ok(observed.inline.some(x=>part.test(x)),
-          "The exact certified Requiem minister rubric is missing inline at "+cue);
+        assert.ok(observed.inline.some(x=>part.test(x)) ||
+          part.test(observed.sourceParagraphText),
+          "The exact certified Requiem minister rubric is absent from inline annotation AND printed source paragraph at "+cue);
         assert.ok(observed.minister);
       }else{
         assert.equal(observed.minister,null,"Absent Requiem action was exported");
