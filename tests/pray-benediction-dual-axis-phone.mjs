@@ -189,6 +189,7 @@ try{
  assert.equal(await page.locator(rootSel+" [data-p435930-ben-special='enabled']").isChecked(),false);
  await special.locator(":scope > summary").click();
  await page.locator(rootSel+" [data-p435930-ben-special='enabled']").check();
+ assert.equal(await special.evaluate(x=>x.open),false,"Choosing the solemn sequence should restore the prayer-first reading area");
  state=await snapshot();
  assert.equal(state.stops,10,"Default Christ the King programme should add the three attested stations");
  assert.equal(state.card,"reposition","Enabling special feast must preserve the active public rite station");
@@ -218,6 +219,7 @@ try{
  await page.locator(timeline+" [data-ao-devo-chapter='5']").tap();
  assert.equal((await snapshot()).card,"hymn","Tantum ergo must immediately follow the last selected feast prayer");
  // Disable only Royal Praises; other parts and the currently active hymn survive.
+ await special.locator(":scope > summary").click();
  await page.locator(rootSel+" [data-p435930-ben-special='royal']").uncheck();
  assert.equal((await snapshot()).stops,9);
  assert.equal((await snapshot()).card,"hymn");
