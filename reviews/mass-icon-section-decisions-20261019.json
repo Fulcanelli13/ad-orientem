@@ -1,0 +1,68 @@
+{
+  "schema": "ao-mass-icon-section-review-v1",
+  "reviewDate": "2026-10-19",
+  "scope": "Editorial icon and cue matching only. No production asset activation; priest rubrics and user postures remain under canonical reader owners.",
+  "provenance": {
+    "canonicalMass": "data/presentation/reader-text-sung.v1.json",
+    "priestPositions": "data/presentation/reader-priest-positions.v1.json",
+    "faithfulPostures": "data/presentation/reader-postures.v1.json",
+    "gestureMatrix": "data/mass/gesture-matrix.v1.json",
+    "reviewedIcons": "src/mass/reader-icons.js",
+    "frozenBank": "assets/active/mass-v46/"
+  },
+  "sections": [
+    {
+      "id": "PREPARATORY_FOOT_OPENING",
+      "title": "Opening prayers at foot of altar",
+      "cueIds": [
+        "AO.SM.C0001",
+        "AO.SM.C0002",
+        "AO.SM.C0003"
+      ],
+      "decisions": [
+        {
+          "id": "section1-A",
+          "owner": "PRIEST_POSITION",
+          "semantic": "FOOT_CENTER",
+          "legacyCandidate": "assets/active/mass-v46/priest_foot.svg",
+          "disposition": "REJECT",
+          "acceptedReplacement": null,
+          "remarks": "User rejected A; retain historical bank file; do not infer a fallback as approved."
+        },
+        {
+          "id": "section1-B",
+          "owner": "PRIEST_GESTURE",
+          "semantic": "SIGN_OF_CROSS",
+          "cueId": "AO.SM.C0001",
+          "newCandidate": "/Ad Orientem/Approved Mass Icons/ao_sign_of_cross_2026-10-19.svg",
+          "disposition": "ACCEPT_VISUAL",
+          "remarks": "User accepted new B icon over frozen bank candidate. Approved review asset, not yet wired into live reader."
+        },
+        {
+          "id": "section1-C",
+          "owner": "FAITHFUL_POSTURE",
+          "semantic": "STAND",
+          "existingCandidate": "assets/approved/live-posture/ao-reviewed-stand.svg",
+          "condition": "PROCESSION_ACTIVE",
+          "disposition": "RETAIN_APPROVED"
+        },
+        {
+          "id": "section1-D",
+          "owner": "FAITHFUL_POSTURE",
+          "semantic": "KNEEL",
+          "existingCandidate": "assets/approved/live-posture/ao-reviewed-kneel.svg",
+          "condition": "AO_DEFAULT_1962_SUNG && NOT_PERSONALLY_SINGING_INTROIT",
+          "disposition": "RETAIN_APPROVED"
+        }
+      ],
+      "comments": "None"
+    }
+  ],
+  "nextSection": "PSALM_42_AND_ADJUTORIUM",
+  "reviewPolicy": [
+    "Section by section; present actual existing bank images before proposing new alternatives.",
+    "Separate icon-visual acceptance from match and ceremonial certification.",
+    "Respect distinct priest / faithful icon and profile owners.",
+    "Do not overwrite frozen bank or change running reader from these editorial selections."
+  ]
+}
