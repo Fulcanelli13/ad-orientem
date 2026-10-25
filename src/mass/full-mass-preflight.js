@@ -254,9 +254,9 @@ export function mountFullMassPreflight({
         '<small class="aoMassFolioOverviewDate" data-folio-overview-date></small><h3 data-folio-overview-heading></h3><p data-folio-overview-hint></p>'+
         '<div class="aoMassFolioReadyLine" data-folio-overview-selections></div>'+
         '<div class="aoMassFolioQuickChoices" role="group" aria-label="Mass setup choices">'+
-        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="celebration">'+folioAssetIcon('ao-module-before-mass')+'<span><strong data-folio-quick-mass-label></strong><small data-folio-quick-mass-value></small></span><span aria-hidden="true">›</span></button>'+
-        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="ceremony">'+folioAssetIcon('ao-rich-eucharistic-life')+'<span><strong data-folio-quick-ceremony-label></strong><small data-folio-quick-ceremony-value></small></span><span aria-hidden="true">›</span></button>'+
-        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="reader">'+folioAssetIcon('ao-live-hear')+'<span><strong data-folio-quick-reader-label></strong><small data-folio-quick-reader-value></small></span><span aria-hidden="true">›</span></button>'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="celebration">'+folioAssetIcon('ao-brand-emblem')+'<span><strong data-folio-quick-mass-label></strong><small data-folio-quick-mass-value></small></span><span aria-hidden="true">›</span></button>'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="ceremony">'+folioAssetIcon('ao-live-priest-foot-altar')+'<span><strong data-folio-quick-ceremony-label></strong><small data-folio-quick-ceremony-value></small></span><span aria-hidden="true">›</span></button>'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="reader">'+folioAssetIcon('ao-nav-learn')+'<span><strong data-folio-quick-reader-label></strong><small data-folio-quick-reader-value></small></span><span aria-hidden="true">›</span></button>'+
         '</div>'+
         '<button type="button" data-folio-goto="celebration" class="aoMassFolioChange" data-folio-guide-start></button></section>'+
         '<section data-folio-panel="celebration" class="aoMassFolioPanel" hidden>'+
