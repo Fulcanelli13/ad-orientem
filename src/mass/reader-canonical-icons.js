@@ -18,6 +18,14 @@ const normVoice = v => String(v ?? "").trim().toUpperCase().replace(/_/g, " ").r
 const VOICE_CLASS = new Map(Object.entries(SET.voiceMap).flatMap(([cls, list]) => list.map(v => [normVoice(v), cls])));
 
 const token = v => String(v ?? "").trim().toUpperCase().replace(/[ -]+/g, "_");
+const faithfulMeaningForType = kind => {
+  const type = token(kind);
+  // An exceptional sung Incarnatus or exact saved local instruction can
+  // legitimately be KNEEL rather than GENUFLECT. The faithful lane has an
+  // approved kneeling *posture* asset, not a separate kneel-gesture asset.
+  if (type === "KNEEL") return "faithful.posture.kneel";
+  return SET.faithfulGestureMap.byType[type] ?? null;
+};
 const isMeaning = v => typeof v === "string" && /^(priest|minister|faithful|response|schola|bell|marker|rite)\./.test(v);
 
 /** Icon key for a meaning, or null when the meaning has no approved art. */
@@ -61,7 +69,7 @@ export function gestureMeaning(gesture, state = {}) {
     if (cue !== focused) return null;
     if (gesture.owner === "LOCAL_FAITHFUL_CUSTOM") {
       if (gesture.canonicalCueId !== focused) return null;
-      return SET.faithfulGestureMap.byType[token(gesture.type ?? gesture.value)] ?? null;
+      return faithfulMeaningForType(gesture.type ?? gesture.value);
     }
     const spec = GLORIA_CREDO_FAITHFUL_GESTURES[focused];
     if (!spec || !["R17_PROFILE_CUE","R17_RUBRICAL_CUE"].includes(gesture.owner) ||
@@ -75,7 +83,7 @@ export function gestureMeaning(gesture, state = {}) {
     // A matrix row with no icon key is held back on purpose (local custom varies).
     return gesture.iconKey ? SET.faithfulGestureMap.byMatrixIconKey[gesture.iconKey] ?? null : null;
   }
-  return SET.faithfulGestureMap.byType[token(gesture.type ?? gesture.value)] ?? null;
+  return faithfulMeaningForType(gesture.type ?? gesture.value);
 }
 
 export function positionMeaning(position) {
