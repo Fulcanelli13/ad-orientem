@@ -637,6 +637,30 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  font:400 clamp(19px,5vw,23px)/1.65 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
  color:var(--text,#f1e7d7)!important;
 }
+/* Stations already names the episode in the fourteen-stage chapter rail:
+   show its actual response and prayer instead of a duplicate numbered title. */
+#aoPray435930 .aoP435930Stations:has(.aoDevoSequenceTimeline) .aoDevoCardHead{
+ display:none!important;
+}
+#aoPray435930 .aoP435930Stations .aoP435930PrayerOptions{
+ background:transparent!important;border:0!important;
+ border-bottom:1px solid var(--border,rgba(255,255,255,.13))!important;
+ border-radius:0!important;margin:0 0 4px!important;
+}
+#aoPray435930 .aoP435930Stations .aoP435930PrayerOptions>summary{
+ min-height:44px!important;padding:5px 3px!important;
+ color:var(--muted,#ada69c)!important;
+ font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+#aoPray435930 .aoP435930Stations .aoP435930PrayerOptions>summary>small{
+ color:var(--muted,#ada69c)!important;
+ font:500 11px/1.35 var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+#aoPray435930 .aoP435930Stations .aoP435930VRLine>button,
+#aoPray435930 .aoP435930Stations .aoP435930StationPrayer .aoP435930Flip{
+ font:400 clamp(19px,5vw,23px)/1.65 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f1e7d7)!important;
+}
 /* The chapter rail already identifies the active examination category. Do not
    repeat the numbered card heading and compete with the questions. */
 #aoPray435930 .aoP435930ConfessionReader[data-ao-confession-dual-axis="true"] .aoDevoCardHead{
