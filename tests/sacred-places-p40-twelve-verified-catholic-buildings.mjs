@@ -10,9 +10,9 @@ const h=read("data/explore/heritage-place-reconciliation.review.v1.json"),sh=rea
 assert.equal(m.schema,"AO_SACRED_PLACES_P40_TWELVE_VERIFIED_CATHOLIC_BUILDINGS_V1");
 assert.deepEqual(Object.values(m.baseline),[463,761,463,204,145,9]);
 assert.deepEqual(Object.values(m.proposed),[475,773,475,216,146,9]);
-assert.equal(RELEASES.at(-1).id,"P40");
+assert.ok(RELEASES.some(r=>r.id==="P40"));
 assert.deepEqual([g.places.length,s.sources.length,h.place_crosswalk.length,h.exception_queues.places_without_direct_claim.length,g.geoAreas.length,g.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas,LIVE.links]);
-assert.equal(LIVE.places,475);assert.equal(LIVE.sources,773);assert.equal(LIVE.areas,146);assert.equal(LIVE.links,9);
+assert.ok(LIVE.places>=475);assert.ok(LIVE.sources>=773);assert.ok(LIVE.areas>=146);assert.equal(LIVE.links,9);
 assert.equal(h.counts.places,LIVE.places);assert.equal(h.counts.places_without_direct_claim,LIVE.unlinked);
 assert.equal(m.published_new.length,12);assert.equal(m.new_physical_locations,12);
 assert.equal(m.photo_assets_approved,0);assert.equal(m.tlm_schedule_links_added,0);
@@ -24,7 +24,9 @@ assert.deepEqual(prArea[0].codes,{iso_alpha2:"PR"});
 assert.equal(prArea[0].area_type,"country");
 const placesById=new Map(g.places.map(x=>[x.place_id,x])),srcById=new Map(s.sources.map(x=>[x.id,x]));
 assert.equal(placesById.size,g.places.length);assert.equal(srcById.size,s.sources.length);
-const newIds=new Set(m.published_new.map(x=>x.place_id)),prev=g.places.filter(x=>!newIds.has(x.place_id));
+const newIds=new Set(m.published_new.map(x=>x.place_id));
+const subsequentIds=new Set(RELEASES.slice(index+1).flatMap(r=>(r.data.published_new||[]).map(x=>x.place_id)));
+const prev=g.places.filter(x=>!newIds.has(x.place_id)&&!subsequentIds.has(x.place_id));
 assert.equal(newIds.size,12);assert.equal(prev.length,463);
 const usedRefs=new Set(prev.map(x=>x.geo?.source_ref).filter(Boolean)),newRefs=new Set(),cand=new Set();
 for(const row of m.published_new){
