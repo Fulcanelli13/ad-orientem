@@ -1059,8 +1059,8 @@ const QUIET_PRAY_HOME_CSS=String.raw`
 }
 #aoPray435930 .aoP435930QuietHome .aoP435930QuietTile{
  display:flex!important;flex-direction:column!important;align-items:center!important;
- justify-content:center!important;gap:14px!important;min-height:152px!important;
- padding:18px 10px!important;margin:0!important;
+ justify-content:center!important;gap:16px!important;min-height:186px!important;
+ padding:20px 12px!important;margin:0!important;
  border:1px solid var(--ao-frame-rule,rgba(255,255,255,.08))!important;
  background:var(--ao-frame-card,#141A20)!important;
  border-radius:var(--ao-frame-radius,16px)!important;
@@ -1068,13 +1068,15 @@ const QUIET_PRAY_HOME_CSS=String.raw`
 }
 #aoPray435930 .aoP435930QuietHome .aoP435930QuietTile .aoP435930ModuleAsset,
 #aoPray435930 .aoP435930QuietHome .aoP435930QuietTile .aoP435930ModuleIcon{
- display:block!important;width:50px!important;height:50px!important;max-width:50px!important;max-height:50px!important;
+ display:block!important;width:76px!important;height:76px!important;max-width:76px!important;max-height:76px!important;
  margin:0 auto!important;object-fit:contain!important;flex:none!important;
 }
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietTile:hover{border-color:rgba(211,192,155,.36)!important;background:#192027!important}
+#aoPray435930 .aoP435930QuietHome .aoP435930QuietTile:focus-visible{outline:2px solid #d6ba85!important;outline-offset:2px!important}
 #aoPray435930 .aoP435930QuietHome .aoP435930QuietTile b{
  display:block!important;margin:0!important;padding:0!important;
  color:var(--ao-frame-text,#ECE8DF)!important;
- font:400 18px/1.25 var(--ao-font-display,Georgia,serif)!important;
+ font:400 22px/1.18 var(--ao-font-display,Georgia,serif)!important;
  letter-spacing:0!important;text-transform:none!important;text-align:center!important;
 }
 #aoPray435930 .aoP435930QuietHome .aoP435930QuietTile :is(.aoP435930ModuleKind,.aoP435930ModuleDescription,i){display:none!important}
@@ -1129,6 +1131,8 @@ const QUIET_PRAY_HOME_CSS=String.raw`
 @media(max-width:360px){
  #aoPray435930 .aoP435930QuietHome .aoP435930QuietTiles{gap:8px!important}
  #aoPray435930 .aoP435930QuietHome .aoP435930QuietTile{min-height:132px!important;gap:10px!important;padding:14px 7px!important}
+ #aoPray435930 .aoP435930QuietHome .aoP435930QuietTile{min-height:164px!important}
+ #aoPray435930 .aoP435930QuietHome .aoP435930QuietTile .aoP435930ModuleAsset{width:65px!important;height:65px!important;max-width:65px!important;max-height:65px!important}
  #aoPray435930 .aoP435930QuietMoreContent .aoP435930ModuleGrid{grid-template-columns:1fr!important}
 }
 @media(prefers-reduced-motion:reduce){
