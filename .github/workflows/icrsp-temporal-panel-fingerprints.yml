@@ -1,4 +1,5 @@
 name: ICRSP Temporal commentary deduplication research
+# Rerun after the synthetic citation-quoting fixture correction; read-only by design.
 on:
   push:
     branches: [governance/icrsp-source-inventory-1665]
