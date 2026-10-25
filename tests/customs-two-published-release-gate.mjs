@@ -11,7 +11,7 @@ const sources=read("data/customs/source-registry.v1.json");
 const legacy=read("data/customs/research/customs-published-35-editorial-first-pass.20261023.v1.json");
 const canonical=seed.customs, published=canonical.filter(x=>x.publication_state==="PUBLISHED");
 const registered=new Map(sources.sources.map(x=>[x.id,x]));
-const newIds=["EPIP-003","DOM-014"], oldIds=new Set(legacy.records.map(x=>x.custom_id));
+const newIds=["EPIP-003","CRIB-001"], oldIds=new Set(legacy.records.map(x=>x.custom_id));
 assert.equal(seed.schema,"CUSTOMS_ATLAS_SEED_V1");
 assert.equal(canonical.length,40);
 assert.equal(published.length,37);
@@ -67,9 +67,9 @@ for(const y of dates){
  const ep=calendarCustomRecommendations(y+"-01-06").map(x=>x.id);
  const candle=calendarCustomRecommendations(y+"-02-02").map(x=>x.id);
  assert.ok(ep.includes("EPIP-003"));
- assert.ok(candle.includes("DOM-014")&&candle.includes("DOM-011"));
+ assert.ok(candle.includes("CRIB-001")&&candle.includes("DOM-011"));
  assert.equal(calendarCustomRecommendations(y+"-01-08").some(x=>x.id==="EPIP-003"),false);
- assert.equal(calendarCustomRecommendations(y+"-02-04").some(x=>x.id==="DOM-014"),false);
+ assert.equal(calendarCustomRecommendations(y+"-02-04").some(x=>x.id==="CRIB-001"),false);
  assert.equal(homeSeasonalCustomForDate(y+"-01-03")?.id,"EPIP-003",
   "Epiphany household preparation spotlight must not be displaced by regional custom");
  assert.equal(homeSeasonalCustomForDate(y+"-02-02")?.id,"DOM-011",
@@ -83,7 +83,7 @@ const grouped=groups.flatMap(x=>x.articles.map(a=>a.id));
 assert.equal(grouped.length,37);
 assert.equal(new Set(grouped).size,37);
 assert.ok(groups.find(g=>g.key==="christmas_epiphany").articles.some(a=>a.id==="EPIP-003"));
-assert.ok(groups.find(g=>g.key==="candlemas_lent").articles.some(a=>a.id==="DOM-014"));
+assert.ok(groups.find(g=>g.key==="candlemas_lent").articles.some(a=>a.id==="CRIB-001"));
 assert.match(calendarCustomArticle("EPIP-003").caution.en,/priest|Roman Ritual/i);
-assert.match(calendarCustomArticle("DOM-014").caution.en,/1962/);
+assert.match(calendarCustomArticle("CRIB-001").caution.en,/1962/);
 console.log("PASS +2 customs: frozen 35 preserved, 37 bilingual published, 112 registered sources, 99 evidence-only attestations, 1962 feast links, one Home spotlight, no invented map pins or editor signatures.");
