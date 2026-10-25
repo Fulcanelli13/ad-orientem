@@ -200,6 +200,41 @@ try{
  await page.locator(timeline+" [data-ao-devo-chapter='3']").tap();
  assert.equal((await snapshot()).card,"king-royal-praises");
  assert.match(await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-la]").innerText(),/Christus vincit/);
+ const royalTextEn=await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText();
+ assert.match(royalTextEn,/I · For the Church/);
+ assert.match(royalTextEn,/II · For the Supreme Pontiff/);
+ assert.match(royalTextEn,/III · For the bishops and faithful/);
+ assert.match(royalTextEn,/IV · For the people/);
+ assert.match(royalTextEn,/May the peace of Christ come/);
+ assert.ok(royalTextEn.length>2900,
+  "Vatican four-part Laudes has collapsed to an excerpt");
+ assert.equal((royalTextEn.match(/℟\./g)||[]).length>=58,true,
+  "All saint invocations and closing responses must be present");
+ const royalScroll=await page.locator(rootSel+" .aoDevoCardScroll").evaluate(el=>({
+  height:el.scrollHeight,viewport:el.clientHeight,overflow:getComputedStyle(el).overflowY
+ }));
+ assert.ok(royalScroll.height>royalScroll.viewport&&royalScroll.overflow==="auto",
+  "Full Laudes must scroll vertically within its existing card");
+ await page.screenshot({path:resolve(captures,"benediction-390-christus-vincit-en.png"),animations:"disabled"});
+ await locale.click();
+ assert.equal((await snapshot()).card,"king-royal-praises",
+  "French switch changed the current Laudes stage");
+ const royalFrench=await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText();
+ assert.match(royalFrench,/I · Pour l'Église/);
+ assert.match(royalFrench,/IV · Pour les peuples/);
+ assert.match(royalFrench,/Que vienne la paix du Christ/);
+ await page.screenshot({path:resolve(captures,"benediction-390-christus-vincit-fr.png"),animations:"disabled"});
+ const royalLatin=page.locator(rootSel+" .aoP435930FeastPrayer [data-p435930-flip]");
+ await royalLatin.tap();
+ assert.equal(await royalLatin.locator("[data-face-la]").evaluate(el=>el.hidden),false);
+ const royalLatinText=await royalLatin.locator("[data-face-la]").innerText();
+ assert.match(royalLatinText,/I · Pro Ecclesia/);
+ assert.match(royalLatinText,/N\. Summo Pontifici/);
+ assert.match(royalLatinText,/Pax Christi veniat/);
+ await page.screenshot({path:resolve(captures,"benediction-390-christus-vincit-latin.png"),animations:"disabled"});
+ await locale.click();
+ assert.equal((await snapshot()).card,"king-royal-praises");
+
  await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
  assert.equal((await snapshot()).card,"king-consecration");
  assert.match(await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText(),/Most sweet Jesus/);
