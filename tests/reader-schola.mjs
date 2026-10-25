@@ -84,6 +84,10 @@ const gloriaAfterManual=s.schola.segmentId;
 assert.notEqual(gloriaAfterManual,gloriaCue);
 s=schola.syncCue("AO.SM.C0056");
 assert.equal(s.schola.segmentId,gloriaAfterManual,"duplicate Gloria cue rewound independent Schola progress");
+s=schola.syncCue("AO.SM.C0055");
+assert.equal(s.schola.segmentId,gloriaAfterManual,"Earlier Gloria cue rewound Schola");
+s=schola.syncCue("AO.SM.C0059");
+assert.equal(s.schola.segmentId,gloriaAfterManual,"Later Gloria cue auto-advanced Schola");
 s=schola.syncCue("AO.SM.C0001");
 assert.equal(s.schola.segmentId,gloriaAfterManual,"unrelated priest cue advanced the Schola");
 s=schola.activateForCard(3);
@@ -105,6 +109,25 @@ assert.deepEqual(gradualTrack.canonicalBlockIds,["AO.SM.B021"]);
 assert.deepEqual(alleluiaTrack.canonicalBlockIds,["AO.SM.B022"]);
 s=schola.selectTrack("ALLELUIA_TRACT_SEQUENCE");
 assert.equal(s.schola.latin,"Sequentia");
+const splitPreGospelSlots={...properSlots,slots:{...properSlots.slots,
+  ALLELUIA_TRACT_SEQUENCE:{status:"READY",data:{paragraphs:[
+    {id:"AO.PG.ALLELUIA",latin:"Alleluia"},
+    {id:"AO.PG.SEQUENCE",latin:"Sequentia"},
+  ]}}}};
+const splitChant=createNativeScholaController({
+  sungCorpus:sung,properSlots:splitPreGospelSlots,prepared,
+});
+const b022Card=id=>({
+  sourceSectionId:"AO.CARD.006",sectionId:"AO.READER.B022",
+  blocks:[{blockId:"AO.SM.B022"}],paragraphs:[{id,sourceCueIds:[]}],
+});
+splitChant.selectTrack("ALLELUIA_TRACT_SEQUENCE");
+splitChant.next();
+assert.equal(splitChant.activateForCard(b022Card("AO.PG.ALLELUIA")).index,1,
+  "Earlier B022 paragraph rewound independently selected chant");
+splitChant.previous();
+assert.equal(splitChant.activateForCard(b022Card("AO.PG.SEQUENCE")).index,0,
+  "Later B022 paragraph advanced independently selected chant");
 
 // The existing full Schola track traversal is explicitly Gregorian:
  // never assume this setting from an unknown local choir.
