@@ -103,6 +103,45 @@ try{
     (p.sourceCueIds??[]).includes("AO.SM.C0173")));
   const stale=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
   assert.notEqual(stale.ownership?.priestAction,"INDEPENDENT_PRIEST_OBSERVATION");
+  // Actual mobile output: the choir-owned Agnus is not a current
+  // priest action/voice. This tests the LIVE rail, not just the pure guard.
+  const agnus=await page.evaluate(async()=>{
+    const api=window.__AO_PHONE_PREVIEW,cue="AO.SM.C0222";
+    const card=api.model.cards.find(c=>c.paragraphs?.some(p=>
+      (p.sourceCueIds??[]).includes(cue)));
+    if(!card)throw Error("Sung Agnus source cue missing from 65-card LIVE");
+    api.showSequence(card.sequence);
+    const frame=()=>new Promise(done=>requestAnimationFrame(()=>
+      requestAnimationFrame(done)));
+    await frame();
+    const scroller=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+    if(!scroller)throw Error("Agnus reader scroll container missing");
+    const max=Math.max(0,scroller.scrollHeight-scroller.clientHeight);
+    const samples=[];
+    for(let amount=0;amount<=max+16;amount+=16){
+      scroller.scrollTop=Math.min(max,amount);
+      scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
+      await frame();
+      const focused=api.getActiveCue();
+      if(samples.length<12)samples.push([Math.round(scroller.scrollTop),focused]);
+      if(focused===cue)return {
+        reached:true,cue:focused,state:api.getNativeEventState(),
+        owner:document.querySelector("#ao-r17-native-reader-preview")?.dataset.r17OwnerPriestAction
+      };
+    }
+    return {reached:false,cue:api.getActiveCue(),card:card.title,max,samples};
+  });
+  assert.equal(agnus.reached,true,
+   "Could not focus actual Agnus source text on phone: "+JSON.stringify(agnus));
+  assert.equal(agnus.state.nativeCueId,"AO.SM.C0222");
+  assert.equal(agnus.state.priestAction,null,
+   "Choir Agnus first invocation forged priest breast-strike icon");
+  assert.equal(agnus.state.priestVoice,null,
+   "Choir Agnus forged priest recitation on voice rail");
+  assert.equal(agnus.state.ownership?.priestAction,
+   "PRIEST_EVENT_UNOBSERVED_FAIL_CLOSED");
+  assert.equal(agnus.state.ownership?.priestVoice,
+   "PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED");
   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),65);
   await ctx.close();
  }
