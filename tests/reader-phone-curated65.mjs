@@ -175,6 +175,21 @@ try{
           prayerOpacity:Number(getComputedStyle(shell.querySelector('.ao-reader-paragraph')).opacity),
           readerBottom:shell.querySelector('.ao-prayer-card')?.getBoundingClientRect()?.bottom??null,
           scholaTop:shell.querySelector('.ao-schola-dock[data-active="true"]')?.getBoundingClientRect()?.top??null,
+          miniIcons:shell.querySelectorAll(".ao-faithful-paragraph-icons,.ao-faithful-icon-edit").length,
+          cueRows:shell.querySelectorAll(".ao-reader-paragraph[data-faithful-row-id]").length,
+          cuePadding:(()=>{
+            const row=shell.querySelector(".ao-reader-paragraph[data-faithful-row-id]");
+            return row?parseFloat(getComputedStyle(row).paddingLeft):null;
+          })(),
+          scholaAsset:(()=>{
+            const dock=shell.querySelector(".ao-schola-dock[data-active='true']");
+            if(!dock)return null;
+            const node=dock.querySelector("[data-icon-slot='schola']");
+            const style=getComputedStyle(node);
+            return {hidden:node.hidden,width:node.getBoundingClientRect().width,
+              rendered:style.maskImage!=="none"||style.webkitMaskImage!=="none"||
+                style.backgroundImage!=="none"};
+          })(),
           layoutDiagnostics:(()=>{
             const sc=shell.querySelector(".ao-prayer-card");
             const vp=shell.querySelector(".ao-card-viewport");
@@ -211,6 +226,16 @@ try{
       if(title==="Gloria · The Celebrant's Intonation")assert.equal(state.track,null);
       if(title==="Gloria · Praise and Supplication")assert.equal(state.track,"GLORIA");
       if(title==="Sanctus")assert.equal(state.track,"SANCTUS_BENEDICTUS");
+      if(/^Gloria|^Credo/.test(title)){
+        assert.ok(state.cueRows>0,title+" lost source gesture identities");
+        assert.equal(state.miniIcons,0,title+" repeats icons beside every verse");
+        assert.ok(state.cuePadding<=12,title+" retains a 67px icon gutter");
+      }
+      if(state.scholaAsset){
+        assert.equal(state.scholaAsset.hidden,false,title+" Schola symbol hidden");
+        assert.equal(state.scholaAsset.rendered,true,title+" Schola symbol lacks art");
+        assert.ok(state.scholaAsset.width>=30,title+" Schola icon too small: "+JSON.stringify(state.scholaAsset));
+      }
     }
     // Walk every liturgical card in source order, not merely selected screenshots.
     // A local second Confiteor is present in source audit, but absent from
