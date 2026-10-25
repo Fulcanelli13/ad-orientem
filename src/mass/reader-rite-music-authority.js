@@ -25,7 +25,7 @@ export function resolve1962OrganPermission({
   season=null,requiem=false,septEmberFerial=false,
   triduum=false,holyThursdayChrism=false,
   holyThursdayGloria=false,easterVigilGloriaReached=false,
-  exceptionalFeastConfirmed=false,lowMassCustomRelevant=false,
+  exceptionalFeastConfirmed=false,organOnlySunday=false,lowMassCustomRelevant=false,
   lowMassRestrictedInterval=false
 }={}){
   const use=String(kind).toUpperCase();
@@ -60,6 +60,12 @@ export function resolve1962OrganPermission({
   const lentenRestriction=RESTRICTED_SEASONS.has(liturgicalSeason) &&
     !(triduum && easterVigilGloriaReached);
   const seasonalBan=lentenRestriction||Boolean(requiem)||Boolean(septEmberFerial);
+  // §83(b): the third Sunday of Advent and the fourth of Lent admit the
+  // organ (or harmonium) only; other instruments stay forbidden.
+  if(lentenRestriction && organOnlySunday && !requiem && !septEmberFerial)
+    return use==="OTHER_INSTRUMENTS"
+      ? verdict("FORBIDDEN","GAUDETE_LAETARE_ORGAN_ONLY",["83b"])
+      : verdict("PERMITTED_NOT_OBSERVED","GAUDETE_LAETARE_ORGAN_ONLY",["83b"]);
   if(seasonalBan && exceptionalFeastConfirmed && !requiem)
     return verdict("PERMITTED_NOT_OBSERVED","VERIFIED_EXCEPTION_FEAST_OR_EXTRAORDINARY_SOLEMNITY",["83a"]);
   if(seasonalBan){

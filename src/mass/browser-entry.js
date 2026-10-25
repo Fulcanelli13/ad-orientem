@@ -28,6 +28,7 @@ import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
 import {select1962CommemorationsForMassForm} from "./1962-commemoration-form-source.js";
 import {selectedPreflightStudyProper} from "./preflight-study-proper.js";
+import {verifiedOrganContextFrom1962Calendar} from "./organ-calendar-context.js";
 import {massScriptureContextForCard} from "./scripture-reading-context.js";
 import {nativeRiteScriptureContext} from "./scripture-native-rite-context.js";
 import {extendedLessonScriptureContext} from "./scripture-extended-lesson-context.js";
@@ -824,8 +825,21 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
       });
       const rogationSelection=rogationPreflight?.selectionFor?.(resolvedMass)??null;
       const chosen=fullMassPreflight?.selectionFor?.(resolvedMass)??null;
-      const calendarResolution=runtimeState()?.resolution?.date===resolvedMass.date?
-        runtimeState().resolution:null;
+      const liveCalendarState=runtimeState();
+      const calendarResolution=liveCalendarState?.resolution?.date===resolvedMass.date &&
+        liveCalendarState?.selectedDate===resolvedMass.date && !liveCalendarState?.resolving
+        ? liveCalendarState.resolution:null;
+      // Same resolved day as Mass entry, not a calendar date/name guess.
+      // Exceptional Holy Week and local-performance conditions stay source-owned.
+      const organ1962=verifiedOrganContextFrom1962Calendar({
+        date:resolvedMass.date,calendarResolution,
+        selectedCalendarDate:liveCalendarState?.selectedDate??null,
+        calendarResolving:liveCalendarState?.resolving===true,
+        celebrationType:resolvedMass.celebrationType??"CALENDAR",
+        observedSource:Boolean(observed),
+        distinctRite:chosen?.kind==="GOOD_FRIDAY"?"GOOD_FRIDAY":
+          chosen?.kind==="EASTER_VIGIL"?"EASTER_VIGIL":null,
+      });
       const formSelectedProper=select1962CommemorationsForMassForm({
         proper,
         calendarResolution,
@@ -854,7 +868,7 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
         presentedProper=result.proper;
       }
       const optional=fullMassPreflight?.composeRitesFor?.(resolvedMass,options)??null;
-      return Object.freeze({...options,proper:presentedProper,rogationSelection,
+      return Object.freeze({...options,proper:presentedProper,rogationSelection,organ1962,
         ...(optional?{
           precedingRites:optional.precedingRites,
           followingActions:optional.followingActions,

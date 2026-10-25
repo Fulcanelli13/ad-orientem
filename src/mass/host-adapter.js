@@ -141,6 +141,12 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       requiemAbsolution:options.requiemAbsolution??legacy.requiemAbsolution??null,
       commemorations:[...(legacy.commemorations??[])],
       seasonalMode:legacy.seasonalMode??null,
+      // Resolved Calendar context is a separate permission authority,
+      // not a local performance observation, selected Proper or feast name.
+      organ1962:options.organ1962?.source==="LITURGICAL_PLAN_1962" &&
+        options.organ1962?.verified===true &&
+        options.organ1962?.date===legacy.date
+        ? Object.freeze({...options.organ1962}) : null,
       exceptionalProfile:legacy.exceptionalProfile??null,
       insertedRites:[...(legacy.insertedRites??[])],
       conditions:[...(legacy.conditions??[])],
