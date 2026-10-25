@@ -12,7 +12,12 @@ permissions:
 jobs:
   bulk-screen:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0, 1, 2, 3]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,12 +28,12 @@ jobs:
       - name: Dry-run bounded research scope
         run: node tools/geography/sacred-places-bulk-screen.mjs --dry-run
       - name: Screen all 68 remaining cases on OSM (zero publication)
-        run: node tools/geography/sacred-places-bulk-screen.mjs --network
+        run: node tools/geography/sacred-places-bulk-screen.mjs --network --shard=${{ matrix.shard }}/4
       - name: Temporary transport for reviewed permanent archival commit
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: p39-68-osm-research-evidence-not-canonical
-          path: data/geography/research/sacred-places-p39-open68-osm-evidence.v1.json
+          name: p39-68-osm-evidence-shard-${{ matrix.shard }}-of4
+          path: data/geography/research/sacred-places-p39-open68-osm-evidence-shard-${{ matrix.shard }}-of4.v1.json
           if-no-files-found: ignore
           retention-days: 1
