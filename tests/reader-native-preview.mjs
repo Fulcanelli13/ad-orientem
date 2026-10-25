@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { legacyReaderStateSnapshot, prepareNativeReaderPreview, resolveGestureProjection, resolveCueOwnedChannels, createCardTransitionTransientGuard, palmGospelFocusedRow } from "../src/mass/reader-native-preview.js";
+import { buildReaderMusicCrosswalk } from "../src/mass/reader-music-crosswalk.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const data={
@@ -98,6 +99,20 @@ assert.equal(crosswalk.ordinary.length,10);
 assert.deepEqual(crosswalk.ordinaryUnmappedTracks,[],
   "The live music crosswalk has unresolved Ordinary source/card anchors");
 assert.equal(crosswalk.notLivePerformanceEvidence,true);
+assert.throws(()=>buildReaderMusicCrosswalk({
+  presentationModel:curatedReady.presentationModel,sungCorpus:data.sungCorpus,
+  scholaTracks:[{id:"BAD",kind:"PROPER",canonicalBlockIds:["AO.SM.B999"]}],
+}),/Unknown canonical Schola source block/,
+  "Orphan music source block must fail closed rather than inventing a card");
+assert.throws(()=>buildReaderMusicCrosswalk({
+  presentationModel:curatedReady.presentationModel,sungCorpus:data.sungCorpus,
+  scholaTracks:[],riteMusicRegistry:{schema:"MUTATED"},
+}),/Unverified special-rite music registry/);
+assert.equal(buildReaderMusicCrosswalk({
+  presentationModel:curatedReady.presentationModel,sungCorpus:data.sungCorpus,
+  scholaTracks:[],
+}).ordinary.length,0,
+  "Low/absent Schola must not be synthesized from existing Mass presentation cards");
 const actualCardIds=new Set(curatedReady.presentationModel.cards.map(c=>c.sectionId));
 const actualBlockIds=new Set(data.sungCorpus.blocks.map(b=>b.Block_ID));
 for(const track of crosswalk.ordinary){
