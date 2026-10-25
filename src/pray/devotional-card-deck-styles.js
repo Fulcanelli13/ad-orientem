@@ -492,7 +492,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll,
 #aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll{
  display:flex!important;flex-direction:column!important;gap:14px!important;
- align-items:stretch!important;
+ align-items:stretch!important;overflow-anchor:none!important;
 }
 #aoPray435930 .aoP435930BenedictionReader .aoDevoCardScroll>.aoP435930Prayer,
 #aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio="v1"] .aoDevoCardScroll>.aoP435930GuidePrayers{
