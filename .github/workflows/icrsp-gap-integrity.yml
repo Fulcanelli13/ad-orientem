@@ -11,6 +11,9 @@ on:
       - 'tests/test_icrsp_mass_explorer_owner_parity.py'
       - 'data/source-text/icrsp-france-mass-explorer-39-owner-parity.v1.json'
       - 'data/source-text/icrsp-france-mass-moment-author-overlap.v1.json'
+      - 'data/source-text/icrsp-france-temporal-193-sourcepath-crosswalk.v1.json'
+      - 'data/source-text/icrsp-france-temporal-94-sourcepath-exceptions.v1.json'
+      - 'tests/test_icrsp_temporal_sourcepath_witnesses.py'
   workflow_dispatch:
 
 permissions:
@@ -30,3 +33,4 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_icrsp_gap_register_integrity.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_mass_explorer_owner_parity.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_temporal_sourcepath_witnesses.py' -v
