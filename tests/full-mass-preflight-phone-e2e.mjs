@@ -130,6 +130,24 @@ try{
  assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioQuickRow").count(),3);
  assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioChoiceIcon").count(),3);
  assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioChoiceIndex").count(),0);
+ // The source-owned choices must read as one open editorial folio, not three
+ // nested bordered app cards. Test the actual computed browser styles.
+ const editorial=await page.evaluate(()=>{
+   const choices=document.querySelector(".aoGuidedMassFolio[data-ao-folio-view='overview'] .aoMassFolioQuickChoices");
+   const rows=[...choices.querySelectorAll(".aoMassFolioQuickRow")];
+   return {gap:getComputedStyle(choices).rowGap,
+     rows:rows.map(row=>{
+       const cs=getComputedStyle(row);
+       const icon=row.querySelector(".aoMassFolioChoiceIcon");
+       return {radius:parseFloat(cs.borderTopLeftRadius),leftBorder:parseFloat(cs.borderLeftWidth),
+         height:row.getBoundingClientRect().height,icon:icon?.getBoundingClientRect().width||0};
+     })};
+ });
+ assert.equal(editorial.gap,"0px","The Mass choices are still three detached tiles");
+ assert.ok(editorial.rows.every(row=>row.radius===0&&row.leftBorder===0),
+   "Mass choices must share open folio rules, not individual card borders: "+JSON.stringify(editorial));
+ assert.ok(editorial.rows[0].height>editorial.rows[1].height+8&&editorial.rows[0].icon>=46,
+   "Source-owned Mass identity lost its editorial emphasis: "+JSON.stringify(editorial));
  // Start action and secondary preferences share one controller. Order them
  // visually as primary choice then secondary adjustments, without cloning form.
  const firstChoiceOrder=await page.evaluate(()=>{
