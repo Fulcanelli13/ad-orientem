@@ -387,6 +387,14 @@ const SHELL_STYLE = `
 @keyframes aoCueIn{0%{opacity:0;transform:scale(.78)}55%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
 .ao-rail-copy{display:none!important}
 .ao-rail-item[data-channel="priest-action"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{display:block!important;max-width:54px;font:700 7px/1.12 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;text-transform:uppercase;color:#c8d0c9;text-align:center;overflow-wrap:anywhere}
+/* An approved cue with unavailable artwork must show a readable meaning,
+   not an empty framed rail tile. This includes priest voice/gesture states
+   as well as actions; do not guess an unapproved substitute pictogram. */
+.ao-reader-shell[data-mode="LIVE"] .ao-rail .ao-rail-item[data-active="true"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{
+ display:block!important;max-width:50px;padding:2px;
+ font:600 8px/1.16 var(--ao-font-ui,system-ui,sans-serif);
+ text-transform:none;letter-spacing:0;color:#e1e5dc;text-align:center;overflow-wrap:anywhere
+}
 /* Fallback for the two elevation tiles found blank in the final-icon capture. */
 .ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-action"][data-action-text-fallback="true"] .ao-icon-mask{display:none!important}
 .ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-action"][data-action-text-fallback="true"] .ao-rail-copy{
