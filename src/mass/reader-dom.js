@@ -9,6 +9,7 @@ import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-litu
 import { R17_DONOR_PNG_ICON_KEYS, R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { exactIconBackedRubric } from "./reader-icon-backed-rubrics.js";
 import { approvedFingerRubricArt } from "./reader-approved-finger-art.js";
+import { approvedPriestRubricGestureArt } from "./reader-approved-priest-gesture-art.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -1138,7 +1139,8 @@ button.ao-schola-control{cursor:pointer}
 /* Illustrate only source-certified priest finger STATE events with the
    existing 11 Oct approved artwork. Keep the printed rubric readable in
    MISSAL and LIVE; never place these persistent states in the action rail. */
-.ao-reader-shell .ao-approved-finger-rubric-art{
+.ao-reader-shell .ao-approved-finger-rubric-art,
+.ao-reader-shell .ao-approved-priest-gesture-rubric-art{
  display:inline-block;vertical-align:middle;flex:none;
  width:29px;height:29px;margin-inline-end:6px;
  background:var(--ao-warm,#d6caa6);
@@ -1147,6 +1149,7 @@ button.ao-schola-control{cursor:pointer}
  -webkit-mask-size:contain;mask-size:contain;
 }
 .ao-reader-shell .ao-approved-finger-rubric-art[hidden]{display:none}
+.ao-reader-shell .ao-approved-priest-gesture-rubric-art[hidden]{display:none}
 
 
 .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-active="true"]){opacity:.64}
@@ -3816,17 +3819,21 @@ export function createReaderDomAdapter({
                 text.dataset.sourceCueId=event.sourceCueId;
                 text.textContent=short;
                 const approvedArt=approvedFingerRubricArt(event);
-                if(approvedArt){
-                  // The SOURCE STATE remains a rubric, not an observed cue.
-                  // Only the two previously approved exact ceremonial phases
-                  // receive art; neither source text nor 1962 timing changes.
+                const approvedGestureArt=approvedPriestRubricGestureArt(event);
+                if(approvedArt||approvedGestureArt){
+                  // Keep each source-owned gesture/state tied to its exact
+                  // published 1962 rubric: no action-rail or timing mutation.
+                  const art=approvedArt??approvedGestureArt;
                   const icon=doc.createElement("span");
-                  icon.className="ao-approved-finger-rubric-art";
-                  icon.dataset.approvedFingerEvent=event.id;
-                  icon.dataset.approvedAsset=approvedArt.assetId;
+                  icon.className=approvedArt
+                    ?"ao-approved-finger-rubric-art"
+                    :"ao-approved-priest-gesture-rubric-art";
+                  if(approvedArt)icon.dataset.approvedFingerEvent=event.id;
+                  if(approvedGestureArt)icon.dataset.approvedPriestGestureEvent=event.id;
+                  icon.dataset.approvedAsset=art.assetId;
                   icon.setAttribute("aria-hidden","true");
-                  icon.style.webkitMaskImage=`url("${approvedArt.imageUrl}")`;
-                  icon.style.maskImage=`url("${approvedArt.imageUrl}")`;
+                  icon.style.webkitMaskImage=`url("${art.imageUrl}")`;
+                  icon.style.maskImage=`url("${art.imageUrl}")`;
                   text.prepend(icon);
                 }
                 if(isFingerStart && event.sourceUrl){
