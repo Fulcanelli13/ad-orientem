@@ -1,4 +1,6 @@
-// Exact owner guard for priest actions during the Sung Sanctus.
+// Exact actor/clock guard for priest actions during sung Ordinary chants.
+// The Gloria/Credo priest's intonation and private recitation do not run
+// on the later public Schola chant clock.
 // Public Schola text and the priest's own silent/quiet prayer are independent.
 // An explicit observation is an external/manual input, NOT automatic movement recognition.
 // No canonical cue, devotional instruction, or faithful posture is generated here.
@@ -13,6 +15,17 @@ const SOURCE_GESTURES=Object.freeze({
   }),
 });
 const SCHOLA_CUES=new Set(["AO.SM.C0145","AO.SM.C0148"]);
+// Exact public CHOIR continuation windows AFTER the priest's intonation.
+// C0054 (Gloria "Deo") and C0090 (Credo "in unum Deum") remain
+// priest-intonation endings, not automatic Schola-driven priest actions.
+// The donor's SCHOLA_PUBLIC label on the two endings is historically
+// ambiguous; a distinct pending source-owned adjudication handles them.
+// Never use these public choir phrases as evidence of an observed priest
+// bow, genuflection, private voice, or movement.
+const GLORIA_CREDO_CHOIR_CUES=new Set([
+  ...Array.from({length:15},(_,i)=>"AO.SM.C"+String(55+i).padStart(4,"0")),
+  ...Array.from({length:15},(_,i)=>"AO.SM.C"+String(91+i).padStart(4,"0")),
+]);
 const WINDOW_CUES=new Set([
   "AO.SM.C0145","AO.SM.C0146","AO.SM.C0147","AO.SM.C0148","AO.SM.C0149"
 ]);
@@ -29,7 +42,8 @@ export function resolvePriestChantAction({
     return Object.freeze({priestAction:ordinaryAction??null,owner:"UNCHANGED_FORM",reason:null,observed:false});
   }
   const id=String(cueId??"");
-  const schola=SCHOLA_CUES.has(id) && sourceClock==="SCHOLA_PUBLIC";
+  const schola=(SCHOLA_CUES.has(id)||GLORIA_CREDO_CHOIR_CUES.has(id)) &&
+    sourceClock==="SCHOLA_PUBLIC";
   // Reject even a correct observation if focus has changed since it was made.
   const validObservation=observation?.actor==="PRIEST" &&
     observation?.observed===true &&
@@ -74,11 +88,14 @@ export function resolvePriestChantVoice({
   ordinaryVoice=null,observedPriestAction=null,observation=null
 }={}){
   const selected=String(form??"").toUpperCase(),id=String(cueId??"");
-  if(!SUNG_FORMS.has(selected)||!WINDOW_CUES.has(id)||sourceClock!=="SCHOLA_PUBLIC"){
+  if(!SUNG_FORMS.has(selected)||
+     !(WINDOW_CUES.has(id)||GLORIA_CREDO_CHOIR_CUES.has(id))||
+     sourceClock!=="SCHOLA_PUBLIC"){
     return Object.freeze({priestVoice:ordinaryVoice??null,
       owner:"EXISTING_SOURCE_VOICE",observed:false});
   }
-  const verified=observedPriestAction?.observed===true &&
+  const verified=WINDOW_CUES.has(id) &&
+    observedPriestAction?.observed===true &&
     observedPriestAction?.owner==="INDEPENDENT_PRIEST_OBSERVATION" &&
     observation?.actor==="PRIEST" && observation?.observed===true &&
     observation?.source==="EXPLICIT_OBSERVATION" &&
