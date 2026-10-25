@@ -8,6 +8,7 @@ import {calendarCustomArticle} from "../src/calendar/customs-read-model.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const capture=resolve(root,"artifacts/customs-living-library");
+const canonicalSeed=JSON.parse(await readFile(resolve(root,"data/customs/customs-atlas-seed.v1.json"),"utf8"));
 await mkdir(capture,{recursive:true});
 const mime={".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".html":"text/html; charset=utf-8",".css":"text/css; charset=utf-8"};
 const server=http.createServer(async(req,res)=>{
@@ -68,7 +69,10 @@ try{
       const folio=page.locator(".aoCustArticle");
       await folio.waitFor({state:"visible"});
       const copy=await folio.textContent();
-      assert.ok((await rootLocator.textContent()).includes(article.title[language]),id+" missing localized title");
+      // The independent Customs browser uses the canonical seed's concise EN
+      // label and the accepted French display title; Calendar has a fuller EN heading.
+      const libraryTitle=language==="fr"?article.title.fr:canonicalSeed.customs.find(x=>x.custom_id===id)?.name;
+      assert.ok(libraryTitle&&(await rootLocator.textContent()).includes(libraryTitle),id+" missing localized library title");
       assert.ok(copy.includes(article.caution[language]),id+" missing exact approved-boundary caution");
       assert.ok(copy.includes(article.history[language]),id+" missing complete historical-source attribution");
       assert.ok(await folio.locator("a[href^='https://']").count()>=2,id+" must have inspectable sources");
