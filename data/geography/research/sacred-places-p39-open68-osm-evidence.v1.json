@@ -1,0 +1,4303 @@
+{
+  "schema": "AO_SACRED_PLACES_P39_FULL68_FIRST_OSM_EXECUTION_EVIDENCE_V1",
+  "date": "2026-10-25",
+  "status": "READ_ONLY_UNVERIFIED_OSM_CANDIDATES_WITH_EXPLICIT_NETWORK_FAILURES",
+  "provenance": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "pr": 1668,
+    "run_id": 40201920486,
+    "head_sha": "56cc294bcb2a25cc831098d46979744ad755344d",
+    "job_ids": [
+      121194699962,
+      121194699753,
+      121194699921,
+      121194699934
+    ],
+    "provider": "OpenStreetMap contributors (ODbL)",
+    "method": "Reconstructed verbatim per-row JSON evidence logged by successful GitHub Actions P39 four-shard run; network failures are never no-match results"
+  },
+  "constraints": [
+    "24 OSM hit cases are NOT automatically Catholic or precise named church features.",
+    "44 remote query failures require targeted retry, not exclusion or negative eligibility.",
+    "All OSM center coordinates are research-only and cannot be promoted to canonical sites.",
+    "Exact building identity requires institution plus geometry independently confirmed."
+  ],
+  "summary": {
+    "total_input_rows": 68,
+    "has_osm_candidate": 24,
+    "remote_query_failed": 44,
+    "verified_no_match": 0,
+    "unique_candidate_osm_refs": 112,
+    "automatic_new_places": 0
+  },
+  "results": [
+    {
+      "queue_row": 1,
+      "candidate_ids": [
+        "SG-INV-0737"
+      ],
+      "country": "AU",
+      "site_name": "National Shrine of Our Lady of Mount Carmel, Middle Park",
+      "identity_source_lead_url": "https://carmelites.au/about-the-carmelites/olmc",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 2,
+      "candidate_ids": [
+        "SG-INV-0738"
+      ],
+      "country": "AU",
+      "site_name": "National Shrine of Our Lady of the Sacred Heart, Randwick",
+      "identity_source_lead_url": "https://www.sacredheart.org.au/",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 3,
+      "candidate_ids": [
+        "SG-INV-0740"
+      ],
+      "country": "AU",
+      "site_name": "National Shrine of Saint Anthony, Hawthorn",
+      "identity_source_lead_url": "https://stanthonyshawthorn.org.au/",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:node:3472412851",
+          "osm_url": "https://www.openstreetmap.org/node/3472412851",
+          "osm_feature_name": "St Anthony's",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": -37.8267452,
+            "lng": 145.0247785,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 28,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 65,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:229809145",
+          "osm_url": "https://www.openstreetmap.org/way/229809145",
+          "osm_feature_name": "Chapel of St Kevin",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": -37.8348806,
+            "lng": 145.0240235,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 879,
+          "building": "chapel",
+          "amenity": null,
+          "religion": null,
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 28,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 4,
+      "candidate_ids": [
+        "SG-INV-0741"
+      ],
+      "country": "AU",
+      "site_name": "National Shrine of Saint Thérèse of Lisieux, Kew",
+      "identity_source_lead_url": "https://mtcarmelkew.com.au/",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: HTTP 504",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 5,
+      "candidate_ids": [
+        "SG-INV-0481"
+      ],
+      "country": "BR",
+      "site_name": "Basilica of Our Lady of Conceição da Praia, Salvador",
+      "identity_source_lead_url": "https://arquidiocesesalvador.org.br/herancas-da-fe-basilica-santuario-nossa-senhora-da-conceicao-da-praia-uma-historia-de-fe-sob-o-olhar-da-padroeira-da-bahia/",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 6,
+      "candidate_ids": [
+        "SG-INV-0479"
+      ],
+      "country": "BR",
+      "site_name": "Sanctuary of Our Lady of Piedade, Caeté",
+      "identity_source_lead_url": "https://santuarionossasenhoradapiedade.arquidiocesebh.org.br/santuario/localizacao-e-como-chegar/",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 7,
+      "candidate_ids": [
+        "SG-INV-0483"
+      ],
+      "country": "BR",
+      "site_name": "Shrine of the Eternal Father, Trindade Goiás",
+      "identity_source_lead_url": "https://arquidiocesedegoiania.org.br/paroquia/santuario-basilica-do-divino-pai-eterno-trindade/",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:131382347",
+          "osm_url": "https://www.openstreetmap.org/way/131382347",
+          "osm_feature_name": "Santuario Basílica do Divino Pai Eterno",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": -16.6607094,
+            "lng": -49.4853965,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 51,
+          "building": "basilica",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "https://www.paieterno.com.br/",
+          "wikidata_candidate": "Q10368270",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 79,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:708162767",
+          "osm_url": "https://www.openstreetmap.org/way/708162767",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": -16.6556178,
+            "lng": -49.4916623,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 840,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q26257457",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 45,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:717426023",
+          "osm_url": "https://www.openstreetmap.org/way/717426023",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": -16.6622399,
+            "lng": -49.4887007,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 344,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 29,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:706070288",
+          "osm_url": "https://www.openstreetmap.org/way/706070288",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": -16.6560059,
+            "lng": -49.4883605,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 590,
+          "building": "church",
+          "amenity": null,
+          "religion": null,
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 28,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:688681469",
+          "osm_url": "https://www.openstreetmap.org/way/688681469",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": -16.6541528,
+            "lng": -49.488904,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 802,
+          "building": "church",
+          "amenity": null,
+          "religion": null,
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 28,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:707064333",
+          "osm_url": "https://www.openstreetmap.org/way/707064333",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": -16.6582198,
+            "lng": -49.4891107,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 445,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 25,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:707064334",
+          "osm_url": "https://www.openstreetmap.org/way/707064334",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": -16.6583769,
+            "lng": -49.4903715,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 547,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 22,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:718155258",
+          "osm_url": "https://www.openstreetmap.org/way/718155258",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": -16.6573151,
+            "lng": -49.4899606,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 579,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 21,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 8,
+      "candidate_ids": [
+        "SG-INV-0275"
+      ],
+      "country": "CH",
+      "site_name": "Sanctuary of Our Lady of Valère, Sion",
+      "identity_source_lead_url": "https://diocese-sion.ch/prier/faire-un-pelerinage/valere-et-longeborgne",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: HTTP 504",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 9,
+      "candidate_ids": [
+        "SG-INV-0497"
+      ],
+      "country": "CL",
+      "site_name": "Sanctuary of Our Lady of Andacollo",
+      "identity_source_lead_url": "http://www.santuarioandacollo.cl",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 12,
+      "candidate_ids": [
+        "SG-INV-0181"
+      ],
+      "country": "DE",
+      "site_name": "Ettal Abbey",
+      "identity_source_lead_url": "http://www.kloster-ettal.de",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 13,
+      "candidate_ids": [
+        "SG-INV-0166"
+      ],
+      "country": "DE",
+      "site_name": "Sanctuary of Our Lady of Werl",
+      "identity_source_lead_url": "https://wallfahrt-werl.de/",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:110413193",
+          "osm_url": "https://www.openstreetmap.org/way/110413193",
+          "osm_feature_name": "Alte Wallfahrtskirche",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 51.5534353,
+            "lng": 7.9150114,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 22,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "https://www.wallfahrt-werl.de/",
+          "wikidata_candidate": "Q436380",
+          "heritage": "8",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 80,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:110413194",
+          "osm_url": "https://www.openstreetmap.org/way/110413194",
+          "osm_feature_name": "Wallfahrtsbasilika Mariä Heimsuchung",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 51.5537144,
+            "lng": 7.9152898,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 22,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "https://www.wallfahrt-werl.de/",
+          "wikidata_candidate": "Q2542800",
+          "heritage": "8",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 80,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:95052210",
+          "osm_url": "https://www.openstreetmap.org/way/95052210",
+          "osm_feature_name": "St. Walburga, Propsteikirche",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 51.5525077,
+            "lng": 7.9140217,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 142,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": "https://www.propstei-Werl.de",
+          "wikidata_candidate": "Q2323685",
+          "heritage": "8",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 76,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:110435203",
+          "osm_url": "https://www.openstreetmap.org/way/110435203",
+          "osm_feature_name": "Muttergottes in der Not",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 51.5531633,
+            "lng": 7.9094626,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 386,
+          "building": "chapel",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q1955984",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 68,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:302494251",
+          "osm_url": "https://www.openstreetmap.org/way/302494251",
+          "osm_feature_name": "Kapelle auf dem Gänzvöhde",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 51.5569536,
+            "lng": 7.9178898,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 420,
+          "building": "chapel",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 67,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:94175108",
+          "osm_url": "https://www.openstreetmap.org/way/94175108",
+          "osm_feature_name": "St. Peter",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 51.5605402,
+            "lng": 7.9126364,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 786,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q1406035",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 61,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:110924271",
+          "osm_url": "https://www.openstreetmap.org/way/110924271",
+          "osm_feature_name": "Neuapostolische Kirche, Gemeinde Werl",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 51.5509039,
+            "lng": 7.9185324,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 389,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "new_apostolic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 56,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:7770064997",
+          "osm_url": "https://www.openstreetmap.org/node/7770064997",
+          "osm_feature_name": "Kreuzwegplatz",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 51.5535939,
+            "lng": 7.915921,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 64,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "https://www.wallfahrt-werl.de/",
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 51,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 14,
+      "candidate_ids": [
+        "SG-INV-0511",
+        "SG-INV-0515"
+      ],
+      "country": "EC",
+      "site_name": "Sanctuary of Our Lady of El Quinche",
+      "identity_source_lead_url": "https://www.arquidiocesisdequito.com.ec/parroquias/item/parroquia-san-pedro-el-quinche.html",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: HTTP 504",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 15,
+      "candidate_ids": [
+        "SG-INV-0135"
+      ],
+      "country": "ES",
+      "site_name": "Basilica of the Sagrada Família, Barcelona",
+      "identity_source_lead_url": "https://sagradafamilia.org",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 16,
+      "candidate_ids": [
+        "SG-INV-0130"
+      ],
+      "country": "ES",
+      "site_name": "Basilica of the Vera Cruz, Caravaca de la Cruz",
+      "identity_source_lead_url": "https://www.lacruzdecaravaca.com/horarios/",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 17,
+      "candidate_ids": [
+        "SG-INV-0137"
+      ],
+      "country": "ES",
+      "site_name": "Burgos Cathedral",
+      "identity_source_lead_url": "http://www.catedraldeburgos.es",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:relation:12074743",
+          "osm_url": "https://www.openstreetmap.org/relation/12074743",
+          "osm_feature_name": "Catedral de Santa María",
+          "osm_feature_type": "relation",
+          "osm_feature_center": {
+            "lat": 42.3407336,
+            "lng": -3.7043491,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 58,
+          "building": "cathedral",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "https://www.catedraldeburgos.es/",
+          "wikidata_candidate": "Q744420",
+          "heritage": "1",
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 88,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:81949890",
+          "osm_url": "https://www.openstreetmap.org/way/81949890",
+          "osm_feature_name": "Iglesia de San Nicolás de Bari",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 42.3407533,
+            "lng": -3.7055233,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 68,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q5910998",
+          "heritage": "3",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 79,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:81843670",
+          "osm_url": "https://www.openstreetmap.org/way/81843670",
+          "osm_feature_name": "Iglesia de Santa Águeda",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 42.3398051,
+            "lng": -3.7065962,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 156,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": "https://www.archiburgos.es/parroquias/parroquia-santiago-y-sta-agueda-burgos/",
+          "wikidata_candidate": "Q7419595",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 76,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:82027964",
+          "osm_url": "https://www.openstreetmap.org/way/82027964",
+          "osm_feature_name": "Iglesia de San Esteban",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 42.341891,
+            "lng": -3.7051478,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 170,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q5910087",
+          "heritage": "3",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 75,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:81024893",
+          "osm_url": "https://www.openstreetmap.org/way/81024893",
+          "osm_feature_name": "Iglesia de la Merced",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 42.3384486,
+            "lng": -3.7037165,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 235,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q5909295",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 73,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:81870714",
+          "osm_url": "https://www.openstreetmap.org/way/81870714",
+          "osm_feature_name": "Capilla de la Divina Pastora",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 42.3417046,
+            "lng": -3.70188,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 287,
+          "building": "chapel",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q29850956",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 71,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:81883695",
+          "osm_url": "https://www.openstreetmap.org/way/81883695",
+          "osm_feature_name": "Iglesia de San Lorenzo",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 42.342501,
+            "lng": -3.7007911,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 410,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q5910667",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 67,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:556832981",
+          "osm_url": "https://www.openstreetmap.org/way/556832981",
+          "osm_feature_name": "Iglesia del Carmen",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 42.3367054,
+            "lng": -3.705706,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 414,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q5912707",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 67,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 18,
+      "candidate_ids": [
+        "SG-INV-0136"
+      ],
+      "country": "ES",
+      "site_name": "Cathedral of Toledo",
+      "identity_source_lead_url": "https://www.architoledo.org/catedral",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: HTTP 504",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 19,
+      "candidate_ids": [
+        "SG-INV-0142"
+      ],
+      "country": "ES",
+      "site_name": "Monastery of Poblet",
+      "identity_source_lead_url": "http://www.poblet.cat",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 20,
+      "candidate_ids": [
+        "SG-INV-0124"
+      ],
+      "country": "ES",
+      "site_name": "Monastery of Santo Domingo de Silos",
+      "identity_source_lead_url": "http://www.abadiadesilos.es",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 21,
+      "candidate_ids": [
+        "SG-INV-0115"
+      ],
+      "country": "ES",
+      "site_name": "Sanctuary of Our Lady of Núria",
+      "identity_source_lead_url": "http://www.valldenuria.cat/estiu/valldenuria/el-santuari-basilica/",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:1051808405",
+          "osm_url": "https://www.openstreetmap.org/way/1051808405",
+          "osm_feature_name": "Basílica de la Mare de Déu de Núria",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 42.3972178,
+            "lng": 2.1534356,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 38,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q133321404",
+          "heritage": null,
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 77,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:205994042",
+          "osm_url": "https://www.openstreetmap.org/way/205994042",
+          "osm_feature_name": "Sant Gil",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 42.3958795,
+            "lng": 2.1522544,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 151,
+          "building": "chapel",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q17601383",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 76,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:33115436",
+          "osm_url": "https://www.openstreetmap.org/way/33115436",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 42.3971235,
+            "lng": 2.15352,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 27,
+          "building": "church",
+          "amenity": null,
+          "religion": null,
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q133321404",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 47,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:5918175234",
+          "osm_url": "https://www.openstreetmap.org/node/5918175234",
+          "osm_feature_name": "Crucifix",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 42.3926736,
+            "lng": 2.1564249,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 526,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 35,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 22,
+      "candidate_ids": [
+        "SG-INV-0118"
+      ],
+      "country": "ES",
+      "site_name": "Sanctuary of Our Lady of Regla, Chipiona",
+      "identity_source_lead_url": "https://www.santamariaderegla.com/index.php/contacto/",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: HTTP 504",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 23,
+      "candidate_ids": [
+        "SG-INV-0120"
+      ],
+      "country": "ES",
+      "site_name": "Sanctuary of Our Lady of the Angels, Getafe",
+      "identity_source_lead_url": "https://cerrodelosangeles.es/ermita/",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 24,
+      "candidate_ids": [
+        "SG-INV-0133"
+      ],
+      "country": "ES",
+      "site_name": "Sanctuary of the Great Promise, Valladolid",
+      "identity_source_lead_url": "https://webmail.archivalladolid.org/entidad.php?Clave=tbagprom",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 25,
+      "candidate_ids": [
+        "SG-INV-0132"
+      ],
+      "country": "ES",
+      "site_name": "Sanctuary of the Holy Christ of Balaguer",
+      "identity_source_lead_url": "http://www.parroquiabalaguer.org",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:211495998",
+          "osm_url": "https://www.openstreetmap.org/way/211495998",
+          "osm_feature_name": "Església de Santa Maria de Balaguer",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.7917249,
+            "lng": 0.8043826,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 428,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q18007561",
+          "heritage": "3",
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 80,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:1241117725",
+          "osm_url": "https://www.openstreetmap.org/way/1241117725",
+          "osm_feature_name": "Santuari de Sant Crist de Balaguer",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.7956838,
+            "lng": 0.8060832,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 34,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q18006698",
+          "heritage": null,
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 77,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:375841251",
+          "osm_url": "https://www.openstreetmap.org/way/375841251",
+          "osm_feature_name": "Sant Domènec",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.7937361,
+            "lng": 0.8094125,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 337,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q18003931",
+          "heritage": "3",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 70,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:7634608517",
+          "osm_url": "https://www.openstreetmap.org/node/7634608517",
+          "osm_feature_name": "Santa Maria d'Almatà",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 41.7958245,
+            "lng": 0.8060365,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 50,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q65207154",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 67,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:relation:16947017",
+          "osm_url": "https://www.openstreetmap.org/relation/16947017",
+          "osm_feature_name": "Convent de Sant Domènec de Balaguer",
+          "osm_feature_type": "relation",
+          "osm_feature_center": {
+            "lat": 41.7940078,
+            "lng": 0.809305,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 314,
+          "building": "public",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q18003931",
+          "heritage": null,
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 64,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:1167181090",
+          "osm_url": "https://www.openstreetmap.org/way/1167181090",
+          "osm_feature_name": "Església del Sagrat Cor",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.7912805,
+            "lng": 0.8113139,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 634,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q47014678",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 61,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:436204685",
+          "osm_url": "https://www.openstreetmap.org/way/436204685",
+          "osm_feature_name": "Església de la Mare de Déu del Miracle",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.7888653,
+            "lng": 0.8058952,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 724,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 61,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:436204716",
+          "osm_url": "https://www.openstreetmap.org/way/436204716",
+          "osm_feature_name": "Església de Sant Josep",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.7884611,
+            "lng": 0.805808,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 770,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q108909734",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 61,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 26,
+      "candidate_ids": [
+        "SG-INV-0138"
+      ],
+      "country": "ES",
+      "site_name": "Seville Cathedral",
+      "identity_source_lead_url": "http://catedraldesevilla.es",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: HTTP 504",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 27,
+      "candidate_ids": [
+        "SG-INV-0126"
+      ],
+      "country": "ES",
+      "site_name": "Shrine at the Cave of Saint Ignatius, Manresa",
+      "identity_source_lead_url": "https://www.covamanresa.cat/es/actividades-santuario",
+      "scope_adjudication": "CAVE_CHURCH_SPIRITUALITY_CENTRE_COMPLEX",
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 28,
+      "candidate_ids": [
+        "SG-INV-0048"
+      ],
+      "country": "FR",
+      "site_name": "Abbey of Saint-Michel de Frigolet",
+      "identity_source_lead_url": "http://www.frigolet.com",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 29,
+      "candidate_ids": [
+        "SG-INV-0043"
+      ],
+      "country": "FR",
+      "site_name": "Abbey of Solesmes",
+      "identity_source_lead_url": "http://www.solesmes.com",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:151237849",
+          "osm_url": "https://www.openstreetmap.org/way/151237849",
+          "osm_feature_name": "Abbatiale Saint-Pierre de Solesmes",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 47.8520355,
+            "lng": -0.3032105,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 16,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q306131",
+          "heritage": null,
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 93,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:151237832",
+          "osm_url": "https://www.openstreetmap.org/way/151237832",
+          "osm_feature_name": "Église Notre-Dame-de-l'Assomption",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 47.8516115,
+            "lng": -0.3030086,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 43,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q60385270",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 80,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:151237903",
+          "osm_url": "https://www.openstreetmap.org/way/151237903",
+          "osm_feature_name": "Chapelle Saint-Aquilin",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 47.8519591,
+            "lng": -0.3008255,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 162,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q60365305",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 76,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:151237839",
+          "osm_url": "https://www.openstreetmap.org/way/151237839",
+          "osm_feature_name": "Église abbatiale Sainte-Cécile",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 47.8483449,
+            "lng": -0.3056924,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 453,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q38368264",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 66,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:4694078875",
+          "osm_url": "https://www.openstreetmap.org/node/4694078875",
+          "osm_feature_name": "Sainte-Vierge",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 47.8514708,
+            "lng": -0.3032059,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 61,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": "wayside_shrine",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 51,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:327289200",
+          "osm_url": "https://www.openstreetmap.org/way/327289200",
+          "osm_feature_name": "Chapelle Notre-Dame du Nid",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 47.8549256,
+            "lng": -0.3035153,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 328,
+          "building": "chapel",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q2956659",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 45,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 30,
+      "candidate_ids": [
+        "SG-INV-0017"
+      ],
+      "country": "FR",
+      "site_name": "Basilica of the Sacred Heart, Paray-le-Monial",
+      "identity_source_lead_url": "http://www.sacrecoeur-paray.org/lieux/la-basilique-du-sacre-coeur/",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: HTTP 504",
+      "near_existing_canonical": [
+        {
+          "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+          "distance_m": 7
+        }
+      ],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 31,
+      "candidate_ids": [
+        "SG-INV-0042"
+      ],
+      "country": "FR",
+      "site_name": "Cathedral of Notre-Dame de Strasbourg",
+      "identity_source_lead_url": "http://www.cathedrale-strasbourg.fr",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 36,
+      "candidate_ids": [
+        "SG-INV-0012"
+      ],
+      "country": "FR",
+      "site_name": "Notre-Dame de la Délivrande, Douvres-la-Délivrande",
+      "identity_source_lead_url": "https://bayeuxlisieux.catholique.fr/paroisses/notre-dame-de-la-delivrande/presentation-de-la-paroisse/",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 37,
+      "candidate_ids": [
+        "SG-INV-0016"
+      ],
+      "country": "FR",
+      "site_name": "Our Lady of La Peinière",
+      "identity_source_lead_url": "https://www.diocese35.fr/sanctuaire/la-peiniere/",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:123878443",
+          "osm_url": "https://www.openstreetmap.org/way/123878443",
+          "osm_feature_name": "Chapelle Notre-Dame de Peinière",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 48.1063625,
+            "lng": -1.353796,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 15,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q60347116",
+          "heritage": null,
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 78,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 38,
+      "candidate_ids": [
+        "SG-INV-0045"
+      ],
+      "country": "FR",
+      "site_name": "Saint-Victor Abbey, Marseille",
+      "identity_source_lead_url": "http://www.saintvictor.net",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: HTTP 504",
+      "near_existing_canonical": [
+        {
+          "place_id": "place:FR:basilique-notre-dame-garde-marseille",
+          "distance_m": 858
+        }
+      ],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 39,
+      "candidate_ids": [
+        "SG-INV-0022"
+      ],
+      "country": "FR",
+      "site_name": "Sanctuary of Our Lady of the Sacred Heart, Issoudun",
+      "identity_source_lead_url": "https://www.issoudun-msc.com/pelerinages",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 40,
+      "candidate_ids": [
+        "SG-INV-0032"
+      ],
+      "country": "FR",
+      "site_name": "Shrine of Saint John Francis Regis, Lalouvesc",
+      "identity_source_lead_url": "https://www.saintregislalouvesc.org/le-sanctuaire/",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 41,
+      "candidate_ids": [
+        "SG-INV-0250"
+      ],
+      "country": "GB",
+      "site_name": "Carfin Grotto",
+      "identity_source_lead_url": "http://www.carfingrotto.org",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:274218916",
+          "osm_url": "https://www.openstreetmap.org/way/274218916",
+          "osm_feature_name": "St Francis Xavier's Catholic Church",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 55.8064988,
+            "lng": -3.9542174,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 97,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 37,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:268267582",
+          "osm_url": "https://www.openstreetmap.org/way/268267582",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 55.8140219,
+            "lng": -3.9504634,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 912,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": null,
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 20,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 42,
+      "candidate_ids": [
+        "SG-INV-0249"
+      ],
+      "country": "GB",
+      "site_name": "National Shrine of Our Lady of the Taper, Cardigan",
+      "identity_source_lead_url": "http://www.ourladyofthetaper.org.uk",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: HTTP 504",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 43,
+      "candidate_ids": [
+        "SG-INV-0322"
+      ],
+      "country": "HU",
+      "site_name": "Marian shrine of Máriagyűd",
+      "identity_source_lead_url": "http://mariagyud.hu",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 44,
+      "candidate_ids": [
+        "SG-INV-0321"
+      ],
+      "country": "HU",
+      "site_name": "Shrine of Our Lady of Mátraverebély-Szentkút",
+      "identity_source_lead_url": "https://www.turizmus.szentkut.hu/en",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 45,
+      "candidate_ids": [
+        "SG-INV-0592"
+      ],
+      "country": "IN",
+      "site_name": "Shrine of Saint Thomas, Malayattoor",
+      "identity_source_lead_url": "https://ernakulamarchdiocese.org/pilgrim",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:549086035",
+          "osm_url": "https://www.openstreetmap.org/way/549086035",
+          "osm_feature_name": "St Thomas Pilgrim Center Malayattoor",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 10.1850561,
+            "lng": 76.505862,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 87,
+          "building": "chapel",
+          "amenity": null,
+          "religion": null,
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 2,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 71,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:549086034",
+          "osm_url": "https://www.openstreetmap.org/way/549086034",
+          "osm_feature_name": "Malayattoor Old Church",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 10.1850172,
+            "lng": 76.5069401,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 43,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 52,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:959816272",
+          "osm_url": "https://www.openstreetmap.org/way/959816272",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 10.1834012,
+            "lng": 76.5126552,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 691,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "hindu",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": true,
+          "existing_exact_osm_ref": false,
+          "score": -60,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 46,
+      "candidate_ids": [
+        "SG-INV-0098"
+      ],
+      "country": "IT",
+      "site_name": "Abbey of Grottaferrata",
+      "identity_source_lead_url": "http://www.abbaziagrecia.it/parrocchia.asp",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: HTTP 504",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 47,
+      "candidate_ids": [
+        "SG-INV-0097"
+      ],
+      "country": "IT",
+      "site_name": "Abbey of Subiaco (Sacro Speco)",
+      "identity_source_lead_url": "http://www.monasterosanbenedettosubiaco.it",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 48,
+      "candidate_ids": [
+        "SG-INV-0087"
+      ],
+      "country": "IT",
+      "site_name": "Basilica of Saint Catherine, Siena",
+      "identity_source_lead_url": "http://www.essentiaonline.com/basilica/",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [
+        {
+          "place_id": "place:IT:duomo-siena",
+          "distance_m": 342
+        }
+      ],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:418912842",
+          "osm_url": "https://www.openstreetmap.org/way/418912842",
+          "osm_feature_name": "Cattedrale di Santa Maria Assunta",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 43.3177923,
+            "lng": 11.3289864,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 341,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "https://operaduomo.siena.it/",
+          "wikidata_candidate": "Q282554",
+          "heritage": "church",
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": true,
+          "score": 83,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:28396159",
+          "osm_url": "https://www.openstreetmap.org/way/28396159",
+          "osm_feature_name": "Basilica Cateriniana di San Domenico",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 43.3198022,
+            "lng": 11.3267559,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 55,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "https://www.basilicacateriniana.it/",
+          "wikidata_candidate": "Q810075",
+          "heritage": "church",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 79,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:50059765",
+          "osm_url": "https://www.openstreetmap.org/way/50059765",
+          "osm_feature_name": "Chiesa del Crocifisso",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 43.3199623,
+            "lng": 11.3282168,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 160,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q185303",
+          "heritage": "church",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 76,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:50079284",
+          "osm_url": "https://www.openstreetmap.org/way/50079284",
+          "osm_feature_name": "Oratorio di Santa Caterina del Paradiso",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 43.3210887,
+            "lng": 11.3287871,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 231,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q3884824",
+          "heritage": "church",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 73,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:28838206",
+          "osm_url": "https://www.openstreetmap.org/way/28838206",
+          "osm_feature_name": "Chiesa di Santa Maria delle Nevi",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 43.3214845,
+            "lng": 11.3299183,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 333,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q3674012",
+          "heritage": "church",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 70,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:47800501",
+          "osm_url": "https://www.openstreetmap.org/way/47800501",
+          "osm_feature_name": "Chiesa di San Sebastiano in Vallepiatta",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 43.3171323,
+            "lng": 11.3271614,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 341,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q3672030",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 70,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:48174025",
+          "osm_url": "https://www.openstreetmap.org/way/48174025",
+          "osm_feature_name": "Chiesa della Santissima Annunziata",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 43.3170179,
+            "lng": 11.3284492,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 389,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q3669184",
+          "heritage": "church",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 68,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:50123704",
+          "osm_url": "https://www.openstreetmap.org/way/50123704",
+          "osm_feature_name": "Chiesa di Sant'Andrea",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 43.323423,
+            "lng": 11.3284911,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 409,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q3672424",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 67,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 49,
+      "candidate_ids": [
+        "SG-INV-0057"
+      ],
+      "country": "IT",
+      "site_name": "Sanctuary of Merciful Love, Collevalenza",
+      "identity_source_lead_url": "https://www.collevalenza.org/collevalenza/santuario/",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:1304271089",
+          "osm_url": "https://www.openstreetmap.org/way/1304271089",
+          "osm_feature_name": "Chiesa Madre della Madonna delle Grazie",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 42.7467743,
+            "lng": 12.4838494,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 111,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 77,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:relation:3422378",
+          "osm_url": "https://www.openstreetmap.org/relation/3422378",
+          "osm_feature_name": "Santuario dell'Amore Misericordioso",
+          "osm_feature_type": "relation",
+          "osm_feature_center": {
+            "lat": 42.7471343,
+            "lng": 12.4825207,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 28,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q16600400",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 76,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:relation:17885484",
+          "osm_url": "https://www.openstreetmap.org/relation/17885484",
+          "osm_feature_name": null,
+          "osm_feature_type": "relation",
+          "osm_feature_center": {
+            "lat": 42.7482014,
+            "lng": 12.4816808,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 161,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 31,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 50,
+      "candidate_ids": [
+        "SG-INV-0065"
+      ],
+      "country": "IT",
+      "site_name": "Sanctuary of Oropa",
+      "identity_source_lead_url": "https://www.santuariodioropa.it/",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 51,
+      "candidate_ids": [
+        "SG-INV-0075"
+      ],
+      "country": "IT",
+      "site_name": "Sanctuary of Our Lady of Canneto, Settefrati",
+      "identity_source_lead_url": "http://www.madonnadicanneto.it",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 52,
+      "candidate_ids": [
+        "SG-INV-0074"
+      ],
+      "country": "IT",
+      "site_name": "Sanctuary of Our Lady of the Mystical Rose, Montichiari",
+      "identity_source_lead_url": "https://rosamisticafontanelle.it/",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:1056717470",
+          "osm_url": "https://www.openstreetmap.org/way/1056717470",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 45.3845173,
+            "lng": 10.3971648,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 7,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 81,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:691460338",
+          "osm_url": "https://www.openstreetmap.org/way/691460338",
+          "osm_feature_name": "Chiesa della Madonnina",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 45.3884277,
+            "lng": 10.4053993,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 772,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 61,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:13615674267",
+          "osm_url": "https://www.openstreetmap.org/node/13615674267",
+          "osm_feature_name": "Santuario Mariano",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 45.3848766,
+            "lng": 10.3972457,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 42,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": null,
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 27,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 53,
+      "candidate_ids": [
+        "SG-INV-0091"
+      ],
+      "country": "IT",
+      "site_name": "Sanctuary of Saint Gabriel of Our Lady of Sorrows, Isola del Gran Sasso",
+      "identity_source_lead_url": "http://www.sangabriele.org",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:relation:11888423",
+          "osm_url": "https://www.openstreetmap.org/relation/11888423",
+          "osm_feature_name": "Santuario moderno di San Gabriele",
+          "osm_feature_type": "relation",
+          "osm_feature_center": {
+            "lat": 42.5166586,
+            "lng": 13.6579465,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 53,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q3950012",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 75,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:relation:11888425",
+          "osm_url": "https://www.openstreetmap.org/relation/11888425",
+          "osm_feature_name": "Santuario di San Gabriele",
+          "osm_feature_type": "relation",
+          "osm_feature_center": {
+            "lat": 42.5175938,
+            "lng": 13.6576909,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 68,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q3950012",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 75,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 54,
+      "candidate_ids": [
+        "SG-INV-0094"
+      ],
+      "country": "IT",
+      "site_name": "Sanctuary of Saint Joseph of Cupertino, Osimo",
+      "identity_source_lead_url": "https://www.sangiuseppedacopertino.net/",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 55,
+      "candidate_ids": [
+        "SG-INV-0070"
+      ],
+      "country": "IT",
+      "site_name": "Sanctuary of the Madonna of Caravaggio, Caravaggio",
+      "identity_source_lead_url": "http://www.santuariodicaravaggio.it",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 56,
+      "candidate_ids": [
+        "SG-INV-0623"
+      ],
+      "country": "KR",
+      "site_name": "Haemi Martyrs International Shrine",
+      "identity_source_lead_url": "http://www.haemi.or.kr",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:325502443",
+          "osm_url": "https://www.openstreetmap.org/way/325502443",
+          "osm_feature_name": "해미순교성지 대성당",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 36.7126432,
+            "lng": 126.5379024,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 26,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 2,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 106,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:1079782652",
+          "osm_url": "https://www.openstreetmap.org/way/1079782652",
+          "osm_feature_name": "해미성당",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 36.7116166,
+            "lng": 126.5428236,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 430,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 64,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:846909788",
+          "osm_url": "https://www.openstreetmap.org/way/846909788",
+          "osm_feature_name": "해미순복음교회",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 36.7073765,
+            "lng": 126.5460527,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 907,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "protestant",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": true,
+          "existing_exact_osm_ref": false,
+          "score": -44,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 57,
+      "candidate_ids": [
+        "SG-INV-0234"
+      ],
+      "country": "NL",
+      "site_name": "Martyrs of Gorcum Shrine, Brielle",
+      "identity_source_lead_url": "http://www.martelarenvangorcum.nl",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:268094130",
+          "osm_url": "https://www.openstreetmap.org/way/268094130",
+          "osm_feature_name": "Bedevaartskerk H. H. Martelaren van Gorcum",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 51.8952071,
+            "lng": 4.154452,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 42,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "https://www.martelarenvangorcum.nl/",
+          "wikidata_candidate": "Q2185056",
+          "heritage": "2",
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 93,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 58,
+      "candidate_ids": [
+        "SG-INV-0636"
+      ],
+      "country": "PH",
+      "site_name": "National Shrine of Our Lady of Aranzazu, San Mateo",
+      "identity_source_lead_url": "http://aranzazushrine.ph",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 59,
+      "candidate_ids": [
+        "SG-INV-0638"
+      ],
+      "country": "PH",
+      "site_name": "National Shrine of Our Lady of Mount Carmel, Quezon City",
+      "identity_source_lead_url": "http://mtcarmelshrine.com.ph",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 60,
+      "candidate_ids": [
+        "SG-INV-0214"
+      ],
+      "country": "PL",
+      "site_name": "Basilica of Saint Hedwig, Trzebnica",
+      "identity_source_lead_url": "http://bazylika-trzebnica.pl",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:96064628",
+          "osm_url": "https://www.openstreetmap.org/way/96064628",
+          "osm_feature_name": "Bazylika Świętego Bartłomieja Apostoła i Świętej Jadwigi",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 51.3095363,
+            "lng": 17.0669459,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 51,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": "Salwatorianie (SDS)",
+          "website_candidate": "www.trzebnica.sds.pl",
+          "wikidata_candidate": "Q1552528",
+          "heritage": "2",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 79,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:544119248",
+          "osm_url": "https://www.openstreetmap.org/way/544119248",
+          "osm_feature_name": "Kościół pw. Świętych Apostołów Piotra i Pawła",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 51.3064844,
+            "lng": 17.0586595,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 618,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "www.trzebnica.archidiecezja.wroc.pl",
+          "wikidata_candidate": "Q26073100",
+          "heritage": "2",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 61,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:relation:1385696",
+          "osm_url": "https://www.openstreetmap.org/relation/1385696",
+          "osm_feature_name": "Sanktuarium św. Jadwigi Śląskiej",
+          "osm_feature_type": "relation",
+          "osm_feature_center": {
+            "lat": 51.3088809,
+            "lng": 17.066975,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 75,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "http://www.trzebnica.sds.pl/",
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 59,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 61,
+      "candidate_ids": [
+        "SG-INV-0219"
+      ],
+      "country": "PL",
+      "site_name": "Basilica of Saint Mary, Gdańsk",
+      "identity_source_lead_url": "http://www.bazylikamariacka.pl",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:46426385",
+          "osm_url": "https://www.openstreetmap.org/way/46426385",
+          "osm_feature_name": "Bazylika Konkatedralna Wniebowzięcia Najświętszej Maryi Panny",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 54.349807,
+            "lng": 18.6530127,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 58,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "https://bazylikamariacka.gdansk.pl/",
+          "wikidata_candidate": "Q933903",
+          "heritage": "2",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 79,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:96749612",
+          "osm_url": "https://www.openstreetmap.org/way/96749612",
+          "osm_feature_name": "Kaplica Królewska",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 54.3503039,
+            "lng": 18.653715,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 113,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q1796127",
+          "heritage": "2",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 77,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:240128505",
+          "osm_url": "https://www.openstreetmap.org/way/240128505",
+          "osm_feature_name": "Bazylika Świętego Mikołaja",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 54.3522394,
+            "lng": 18.6521119,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 262,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": "Zakon Kaznodziejski",
+          "website_candidate": "https://gdansk.dominikanie.pl/",
+          "wikidata_candidate": "Q11747294",
+          "heritage": "2",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 72,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:143108640",
+          "osm_url": "https://www.openstreetmap.org/way/143108640",
+          "osm_feature_name": "Kościół pw. Świętego Jana",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 54.3518759,
+            "lng": 18.6563424,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 352,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q1669899",
+          "heritage": "2",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 69,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:96209716",
+          "osm_url": "https://www.openstreetmap.org/way/96209716",
+          "osm_feature_name": "Kościół pw. Świętej Katarzyny",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 54.3541241,
+            "lng": 18.6512989,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 475,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": "Zakon Braci Najświętszej Maryi Panny z Góry Karmel",
+          "website_candidate": null,
+          "wikidata_candidate": "Q479323",
+          "heritage": "2",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 65,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:96209723",
+          "osm_url": "https://www.openstreetmap.org/way/96209723",
+          "osm_feature_name": "Bazylika Świętej Brygidy",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 54.3545988,
+            "lng": 18.6522324,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 525,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "https://www.brygida.gdansk.pl/",
+          "wikidata_candidate": "Q11746615",
+          "heritage": "2",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 64,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:39374646",
+          "osm_url": "https://www.openstreetmap.org/way/39374646",
+          "osm_feature_name": "Kościół pw. Świętego Piotra i Pawła",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 54.3452227,
+            "lng": 18.6505901,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 527,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "http://www.piotripawel.diecezja.gda.pl",
+          "wikidata_candidate": "Q11747377",
+          "heritage": "2",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 63,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:292830619",
+          "osm_url": "https://www.openstreetmap.org/way/292830619",
+          "osm_feature_name": "Kościół pw. Świętej Trójcy",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 54.3458442,
+            "lng": 18.6472817,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 548,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": "Franciszkanie Konwentualni (OFMConv)",
+          "website_candidate": null,
+          "wikidata_candidate": "Q11746337",
+          "heritage": "2",
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 63,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 62,
+      "candidate_ids": [
+        "SG-INV-0204"
+      ],
+      "country": "PL",
+      "site_name": "Sanctuary of Our Lady of Ludźmierz",
+      "identity_source_lead_url": "https://mbludzm.pl/",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 63,
+      "candidate_ids": [
+        "SG-INV-0211"
+      ],
+      "country": "PL",
+      "site_name": "Sanctuary of Our Lady of Sorrows, Stary Wielisław",
+      "identity_source_lead_url": "http://www.starywielislaw.pl",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 64,
+      "candidate_ids": [
+        "SG-INV-0472"
+      ],
+      "country": "PR",
+      "site_name": "Basilica of Our Lady of Monserrate, Hormigueros",
+      "identity_source_lead_url": "http://www.santuariolamonserrate.org",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:535302292",
+          "osm_url": "https://www.openstreetmap.org/way/535302292",
+          "osm_feature_name": "Santuario de Nuestra Señora de Monserrate",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 18.1407181,
+            "lng": -67.1271593,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 25,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 52,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:534971537",
+          "osm_url": "https://www.openstreetmap.org/way/534971537",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 18.1436704,
+            "lng": -67.1282908,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 374,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q4868426",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 28,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 65,
+      "candidate_ids": [
+        "SG-INV-0160"
+      ],
+      "country": "PT",
+      "site_name": "Sanctuary of São Bento da Porta Aberta",
+      "identity_source_lead_url": "http://www.sbento.pt",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:533214373",
+          "osm_url": "https://www.openstreetmap.org/way/533214373",
+          "osm_feature_name": "Basílica de São Bento da Porta Aberta",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.6902311,
+            "lng": -8.2032744,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 31,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q10375573",
+          "heritage": null,
+          "name_overlap_terms": 4,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 132,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:234261188",
+          "osm_url": "https://www.openstreetmap.org/way/234261188",
+          "osm_feature_name": "Cripta",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.6907317,
+            "lng": -8.2034095,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 69,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 38,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:11985177869",
+          "osm_url": "https://www.openstreetmap.org/node/11985177869",
+          "osm_feature_name": null,
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 41.6897973,
+            "lng": -8.2030414,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 61,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 26,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 66,
+      "candidate_ids": [
+        "SG-INV-0378"
+      ],
+      "country": "US",
+      "site_name": "National Shrine of Our Lady of Consolation, Carey",
+      "identity_source_lead_url": "http://www.olcshrine.com",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 67,
+      "candidate_ids": [
+        "SG-INV-0375"
+      ],
+      "country": "US",
+      "site_name": "National Shrine of Our Lady of La Leche, St Augustine",
+      "identity_source_lead_url": "http://missionandshrine.org",
+      "scope_adjudication": "MULTI_BUILDING_CATHOLIC_SHRINE_COMPLEX",
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:237757052",
+          "osm_url": "https://www.openstreetmap.org/way/237757052",
+          "osm_feature_name": "Shrine of our Lady of la Leche",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 29.9047316,
+            "lng": -81.3152454,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 12,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 78,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:237755292",
+          "osm_url": "https://www.openstreetmap.org/way/237755292",
+          "osm_feature_name": "Prince of Peace Votive Church",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 29.9036484,
+            "lng": -81.3165504,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 167,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "http://www.thefirstparish.org/",
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 59,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:335580756",
+          "osm_url": "https://www.openstreetmap.org/way/335580756",
+          "osm_feature_name": "Mission Church of Nombre de Dios",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 29.9067954,
+            "lng": -81.3151082,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 229,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 32,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:335580726",
+          "osm_url": "https://www.openstreetmap.org/way/335580726",
+          "osm_feature_name": "North City Baptist Church",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 29.9030869,
+            "lng": -81.3183427,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 341,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 29,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:335846762",
+          "osm_url": "https://www.openstreetmap.org/way/335846762",
+          "osm_feature_name": "Church of the Nazarene",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 29.9099694,
+            "lng": -81.3191267,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 684,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 20,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:335580727",
+          "osm_url": "https://www.openstreetmap.org/way/335580727",
+          "osm_feature_name": "Hurst Chapel AME Church",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 29.9033927,
+            "lng": -81.3192729,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 405,
+          "building": "yes",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "african_methodist_episcopal",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": true,
+          "existing_exact_osm_ref": false,
+          "score": -53,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:358735195",
+          "osm_url": "https://www.openstreetmap.org/node/358735195",
+          "osm_feature_name": "Calvary Baptist Church",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 29.9016821,
+            "lng": -81.3136948,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 377,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "baptist",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": true,
+          "existing_exact_osm_ref": false,
+          "score": -65,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:358735116",
+          "osm_url": "https://www.openstreetmap.org/node/358735116",
+          "osm_feature_name": "Memorial Presbyterian Church",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 29.9016354,
+            "lng": -81.3178507,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 421,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "presbyterian",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": true,
+          "existing_exact_osm_ref": false,
+          "score": -66,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 68,
+      "candidate_ids": [
+        "SG-INV-0386"
+      ],
+      "country": "US",
+      "site_name": "National Shrine of Our Lady of Sorrows, Portland",
+      "identity_source_lead_url": "http://www.thegrotto.org",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: HTTP 504",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 69,
+      "candidate_ids": [
+        "SG-INV-0397"
+      ],
+      "country": "US",
+      "site_name": "National Shrine of Saint Dymphna, Massillon",
+      "identity_source_lead_url": "http://www.natlshrinestdymphna.org",
+      "scope_adjudication": "SHRINE_INSIDE_HOST_PARISH_CHURCH",
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:node:357447762",
+          "osm_url": "https://www.openstreetmap.org/node/357447762",
+          "osm_feature_name": "Saint Marys Catholic Church",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 40.8022798,
+            "lng": -81.5228982,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 31,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q7590114",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 52,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:708680471",
+          "osm_url": "https://www.openstreetmap.org/way/708680471",
+          "osm_feature_name": "The Salvation Army",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 40.800946,
+            "lng": -81.517826,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 440,
+          "building": "public",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 25,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:357447757",
+          "osm_url": "https://www.openstreetmap.org/node/357447757",
+          "osm_feature_name": "First Spiritualist Church",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 40.7992244,
+            "lng": -81.5203981,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 372,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 16,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:357447732",
+          "osm_url": "https://www.openstreetmap.org/node/357447732",
+          "osm_feature_name": "First Assembly of God Church",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 40.798391,
+            "lng": -81.5187313,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 531,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "pentecostal",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 10,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:357508974",
+          "osm_url": "https://www.openstreetmap.org/node/357508974",
+          "osm_feature_name": "First Church of Christ Scientist",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 40.7978355,
+            "lng": -81.5192869,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 553,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 10,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:357447745",
+          "osm_url": "https://www.openstreetmap.org/node/357447745",
+          "osm_feature_name": "Community of Christ",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 40.7997799,
+            "lng": -81.51512,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 697,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "mormon",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 8,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:357508967",
+          "osm_url": "https://www.openstreetmap.org/node/357508967",
+          "osm_feature_name": "Church of Christ",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 40.8039466,
+            "lng": -81.5142865,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 754,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 8,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:357507328",
+          "osm_url": "https://www.openstreetmap.org/node/357507328",
+          "osm_feature_name": "Saint Johns United Church of Christ",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 40.7947799,
+            "lng": -81.5203982,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 829,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 8,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 70,
+      "candidate_ids": [
+        "SG-INV-0392"
+      ],
+      "country": "US",
+      "site_name": "National Shrine of Saint Frances Xavier Cabrini, Chicago",
+      "identity_source_lead_url": "http://cabrinishrinechicago.com",
+      "scope_adjudication": "FORMER_HOSPITAL_CHAPEL_RETAINED_AS_NATIONAL_SHRINE",
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    },
+    {
+      "queue_row": 71,
+      "candidate_ids": [
+        "SG-INV-0394"
+      ],
+      "country": "US",
+      "site_name": "National Shrine of Saint Jude, Chicago",
+      "identity_source_lead_url": "http://www.stjudeleague.com",
+      "scope_adjudication": null,
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:way:211359704",
+          "osm_url": "https://www.openstreetmap.org/way/211359704",
+          "osm_feature_name": "Our Lady of Guadalupe Roman Catholic Church",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.7304353,
+            "lng": -87.5466571,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 35,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q6978443",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 80,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:node:11992062369",
+          "osm_url": "https://www.openstreetmap.org/node/11992062369",
+          "osm_feature_name": "National Shrine of Saint Jude",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 41.7303112,
+            "lng": -87.5466223,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 23,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": null,
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": "https://shrineofstjude.org/",
+          "wikidata_candidate": "Q6978443",
+          "heritage": null,
+          "name_overlap_terms": 1,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 65,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:211361122",
+          "osm_url": "https://www.openstreetmap.org/way/211361122",
+          "osm_feature_name": "Immaculate Conception Roman Catholic Church",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.7358128,
+            "lng": -87.5518965,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 763,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": "roman_catholic",
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q5117956",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 61,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:211362039",
+          "osm_url": "https://www.openstreetmap.org/way/211362039",
+          "osm_feature_name": "Beyth-el Temple & College",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.7307299,
+            "lng": -87.5495375,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 241,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": "Q131394197",
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 48,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:211359771",
+          "osm_url": "https://www.openstreetmap.org/way/211359771",
+          "osm_feature_name": "Trinity Resurrection United Church",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.7303826,
+            "lng": -87.5432162,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 295,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 46,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:211361875",
+          "osm_url": "https://www.openstreetmap.org/way/211361875",
+          "osm_feature_name": "New Holy Trinity Temple",
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.7317025,
+            "lng": -87.549703,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 301,
+          "building": "church",
+          "amenity": "place_of_worship",
+          "religion": "christian",
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 46,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:211362252",
+          "osm_url": "https://www.openstreetmap.org/way/211362252",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.7294386,
+            "lng": -87.5459129,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 104,
+          "building": "church",
+          "amenity": null,
+          "religion": null,
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 45,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:211364007",
+          "osm_url": "https://www.openstreetmap.org/way/211364007",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 41.72972,
+            "lng": -87.5453793,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 123,
+          "building": "church",
+          "amenity": null,
+          "religion": null,
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 44,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699962,
+        "shard": 0,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699962"
+      }
+    },
+    {
+      "queue_row": 72,
+      "candidate_ids": [
+        "SG-INV-0399"
+      ],
+      "country": "US",
+      "site_name": "National Shrine of Saint Thérèse, Darien",
+      "identity_source_lead_url": "http://www.saint-therese.org",
+      "scope_adjudication": "SHRINE_CHURCH_MUSEUM_AND_GROUNDS_COMPLEX",
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: HTTP 504",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699753,
+        "shard": 1,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699753"
+      }
+    },
+    {
+      "queue_row": 73,
+      "candidate_ids": [
+        "SG-INV-0385"
+      ],
+      "country": "US",
+      "site_name": "Shrine of Our Lady of the Miraculous Medal, Perryville",
+      "identity_source_lead_url": "http://www.amm.org/visit.htm",
+      "scope_adjudication": "SHRINE_WITHIN_ST_MARYS_BARRENS_CHURCH_MULTIFEATURE_GROUNDS",
+      "status": "OSM_CANDIDATE_REVIEW_REQUIRED",
+      "remote_error": null,
+      "near_existing_canonical": [],
+      "osm_candidates": [
+        {
+          "osm_ref": "osm:node:11986398569",
+          "osm_url": "https://www.openstreetmap.org/node/11986398569",
+          "osm_feature_name": "St. Mary of the Barrens-National Shrine of Our Lady of the Miraculous Medal and Rosary Walk",
+          "osm_feature_type": "node",
+          "osm_feature_center": {
+            "lat": 37.7265875,
+            "lng": -89.8886904,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 84,
+          "building": null,
+          "amenity": "place_of_worship",
+          "religion": null,
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 2,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 51,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        },
+        {
+          "osm_ref": "osm:way:1549756648",
+          "osm_url": "https://www.openstreetmap.org/way/1549756648",
+          "osm_feature_name": null,
+          "osm_feature_type": "way",
+          "osm_feature_center": {
+            "lat": 37.7268003,
+            "lng": -89.889023,
+            "meaning": "UNVERIFIED_OSM_OBJECT_CENTER_NEVER_CANONICAL_SITE_GEO"
+          },
+          "distance_from_unverified_search_centre_m": 53,
+          "building": "church",
+          "amenity": null,
+          "religion": null,
+          "denomination": null,
+          "operator": null,
+          "website_candidate": null,
+          "wikidata_candidate": null,
+          "heritage": null,
+          "name_overlap_terms": 0,
+          "noncatholic_tag_detected": false,
+          "existing_exact_osm_ref": false,
+          "score": 46,
+          "verification_status": "OSM_DISCOVERY_ONLY_IDENTITY_AND_EXACT_GEOMETRY_NOT_VERIFIED"
+        }
+      ],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699921,
+        "shard": 2,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699921"
+      }
+    },
+    {
+      "queue_row": 74,
+      "candidate_ids": [
+        "SG-INV-0672"
+      ],
+      "country": "VN",
+      "site_name": "Basilica of Our Lady of Sở Kiện",
+      "identity_source_lead_url": "http://trungtamhanhhuongsokien.org",
+      "scope_adjudication": null,
+      "status": "REMOTE_QUERY_FAILED",
+      "remote_error": "https://overpass.private.coffee/api/interpreter: This operation was aborted; https://maps.mail.ru/osm/tools/overpass/api/interpreter: This operation was aborted",
+      "near_existing_canonical": [],
+      "osm_candidates": [],
+      "publication_authorized": false,
+      "remote_execution": {
+        "run_id": 40201920486,
+        "job_id": 121194699934,
+        "shard": 3,
+        "job_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40201920486/job/121194699934"
+      }
+    }
+  ]
+}
