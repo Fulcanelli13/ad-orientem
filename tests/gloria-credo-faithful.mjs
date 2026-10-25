@@ -61,13 +61,13 @@ assert.equal(iconKeysForReaderState({cueId:"AO.SM.C0055",
 // genuflection and the faithful's Christmas/Annunciation *sung* kneeling
 // are distinct. When the selected Mass requires KNEEL, the approved
 // posture asset must appear in the gesture position instead of vanishing.
-const exceptional=projectGloriaCredoFaithfulCue({
+const exceptionalKneelDisplay=projectGloriaCredoFaithfulCue({
  cueId:"AO.SM.C0096",form:"SOLEMN",incarnatusAction:"KNEEL",
  preferences:{gestureProfile:"GUIDED_1962"},sourcedPosture:{value:"STAND"},
 });
-assert.equal(exceptional.gesture?.type,"KNEEL");
+assert.equal(exceptionalKneelDisplay.gesture?.type,"KNEEL");
 assert.equal(iconKeysForReaderState({cueId:"AO.SM.C0096",
- gesture:exceptional.gesture,curated65FinalArt:true,form:"SOLEMN"}).gestureIconKey,
+ gesture:exceptionalKneelDisplay.gesture,curated65FinalArt:true,form:"SOLEMN"}).gestureIconKey,
  "canon:faithful.posture.kneel",
  "1962 exceptional Incarnatus kneeling must not lose its faithful icon");
 const localKneel=projectGloriaCredoFaithfulCue({
