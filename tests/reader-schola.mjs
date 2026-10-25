@@ -112,6 +112,35 @@ assert.deepEqual(alleluiaTrack.canonicalBlockIds,["AO.SM.B022"]);
 s=schola.selectTrack("ALLELUIA_TRACT_SEQUENCE");
 assert.equal(s.schola.latin,"Sequentia");
 
+// Two distinct B022 paragraphs test the actual scroll/choir split:
+// card identity and source ownership can change without anyone hearing
+// an advance of the Schola. This is not a new source text or Mass event.
+const splitPreGospelSlots={
+  ...properSlots,
+  slots:{
+    ...properSlots.slots,
+    ALLELUIA_TRACT_SEQUENCE:{status:"READY",data:{paragraphs:[
+      {id:"AO.PG.ALLELUIA",latin:"Alleluia"},
+      {id:"AO.PG.SEQUENCE",latin:"Sequentia"},
+    ]}},
+  },
+};
+const splitChant=createNativeScholaController({
+  sungCorpus:sung,properSlots:splitPreGospelSlots,prepared,
+});
+splitChant.selectTrack("ALLELUIA_TRACT_SEQUENCE");
+splitChant.next();
+assert.equal(splitChant.project().index,1,"Test fixture requires second B022 phrase");
+const b022Card=ids=>({
+  sourceSectionId:"AO.CARD.006",sectionId:"AO.READER.B022",
+  blocks:[{blockId:"AO.SM.B022"}],paragraphs:ids.map(id=>({id,sourceCueIds:[]})),
+});
+assert.equal(splitChant.activateForCard(b022Card(["AO.PG.ALLELUIA"])).index,1,
+  "Earlier source B022 paragraph incorrectly rewound observed Schola position");
+splitChant.previous();
+assert.equal(splitChant.activateForCard(b022Card(["AO.PG.SEQUENCE"])).index,0,
+  "Later source B022 paragraph incorrectly advanced unobserved Schola position");
+
 // The existing full Schola track traversal is explicitly Gregorian:
  // never assume this setting from an unknown local choir.
 schola.setSanctusPerformance("GREGORIAN");
