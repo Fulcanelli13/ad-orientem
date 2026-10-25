@@ -28,8 +28,9 @@ assert.equal(placeMap.size,g.places.length);
 assert.equal(sourceMap.size,s.sources.length);
 const p36Ids=new Set(m.published_new.map(r=>r.place_id));
 const p36Refs=new Set(m.published_new.map(r=>r.geo_source_ref));
-const existing=g.places.filter(x=>!p36Ids.has(x.place_id));
-assert.equal(existing.length,440);
+const laterIds=new Set(RELEASES.slice(releaseIndex+1).flatMap(r=>(r.data.published_new||[]).map(x=>x.place_id)));
+const existing=g.places.filter(x=>!p36Ids.has(x.place_id)&&!laterIds.has(x.place_id));
+assert.equal(existing.length,440,"P36 approved historical 440-place predecessor is preserved");
 assert.ok(existing.every(x=>!p36Refs.has(x.geo?.source_ref)));
 for(const row of m.published_new){
  assert.ok(!previousReleaseIds.has(row.place_id));
