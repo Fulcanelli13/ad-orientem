@@ -4,10 +4,10 @@
  * observation or a change to the ritual text/card/clock.
  *
  * The 19 Canon entries reuse the existing strict published Canon allowlist.
- * The remaining outside-Canon R17 entries are individually approved in the
- * published registry. The added Placeat rubric (C0261) has its own exact
- * 1962 Ritus XII.1 source and explicit publication allowlist. It is a short
- * non-observational text direction, not a priest movement clock or new icon.
+ * The other 33 entries are individually approved in the frozen R17 registry.
+ * New Ritus XII.1 bowed-hands detail is a separate, fully source-identified,
+ * exact-cue display addendum. It never alters the frozen 57-event art crosswalk
+ * nor manufactures an observed priest/Schola action clock.
  */
 import {publishedCanonRubricsForParagraph} from "./reader-canon-published-rubrics.js";
 
@@ -22,7 +22,7 @@ const NONCANON_APPROVED=new Set([
  "AO.RUB.C0117.02","AO.RUB.C0119.01","AO.RUB.C0126.01",
  "AO.RUB.C0208.01","AO.RUB.C0219.01","AO.RUB.C0228.01",
  "AO.RUB.C0232.01","AO.RUB.C0232.02","AO.RUB.C0234.01",
- "AO.RUB.C0234.02","AO.RUB.C0261.01","AO.RUB.C0262.01","AO.RUB.C0262.02",
+ "AO.RUB.C0234.02","AO.RUB.C0262.01","AO.RUB.C0262.02",
  "AO.RUB.C0263.01","AO.RUB.C0263.02","AO.RUB.C0263.03",
 ]);
 // A single published priest label can include an action belonging to the
@@ -32,7 +32,6 @@ const ACTIONS=Object.freeze({
  "BLESSES OFFERINGS":["The priest blesses the offerings.","Le prêtre bénit les offrandes."],
  "BOWS HEAD":["The priest inclines his head.","Le prêtre incline la tête."],
  "BOWS HEAD TO CROSS":["The priest inclines his head towards the cross.","Le prêtre incline la tête vers la croix."],
- "BOWS AT ALTAR WITH JOINED HANDS":["The priest bows his head over the altar, with his joined hands resting upon it, and says this prayer silently.","Le prêtre incline la tête devant l’autel, les mains jointes posées sur celui-ci, et récite cette prière à voix basse."],
  "COVERS CHALICE":["The priest covers the chalice.","Le prêtre recouvre le calice."],
  "CROSSES WITH CHALICE":["The priest traces a sign of the Cross with the chalice.","Le prêtre trace un signe de croix avec le calice."],
  "CROSSES WITH PATEN":["The priest traces a sign of the Cross with the paten.","Le prêtre trace un signe de croix avec la patène."],
@@ -85,6 +84,25 @@ const validCue=id=>/^AO\.SM\.C\d{4}$/.test(String(id??""));
 const frozen=Object.freeze;
 const isCanon=id=>Number(id.slice(-4))>=150&&Number(id.slice(-4))<=207;
 
+// Explicit source certification outside the 57 frozen rubric/icon master.
+// C0261 already contains the complete silent prayer. The 1962 Ritus XII.1
+// directs the priest's posture for that prayer; it does NOT create a new
+// visible prayer card or constitute evidence of a live timed observation.
+// Source: https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=22
+// Witness: https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien
+export const RITUS_1962_PLACEAT_ADDENDUM=Object.freeze({
+  id:"MR62.ADD.C0261.01",
+  cueId:"AO.SM.C0261",
+  actor:"PRIEST",
+  kind:"GESTURE",
+  sourceSection:"Ritus servandus XII.1",
+  triggerLat:"Placeat tibi, sancta Trinitas",
+  en:"The priest bows his head over the altar, with his joined hands resting upon it, and says this prayer silently.",
+  fr:"Le prêtre incline la tête devant l’autel, les mains jointes posées sur celui-ci, et récite cette prière à voix basse.",
+  owner:"MR62_1962_MISSAL_ADDITIONS",
+  review:"NEW_1962_RITUS_SOURCE_CERTIFIED_ADDENDUM",
+});
+
 /**
  * Reuses original Canon publication authority and the explicit outside-Canon
  * list. A citation URL is reused, not copied from unapproved French research.
@@ -135,7 +153,7 @@ export function publishedMissalRubricsForParagraph(paragraph,registry,{
    label:x.label,sourceUrl:source.url,kind:"STATE"})));
  }
  const positioned=new Map(ids.map((id,i)=>[id,i]));
- return frozen(candidates.sort((a,b)=>
+ const original=frozen(candidates.sort((a,b)=>
      positioned.get(a.cueId)-positioned.get(b.cueId)||a.order-b.order)
    .filter(x=>ACTIONS[x.label] || (x.kind==="STATE"&&APPROVED_MISSAL_PRIEST_STATES[x.id]))
    .map(x=>frozen({
@@ -146,7 +164,25 @@ export function publishedMissalRubricsForParagraph(paragraph,registry,{
      sourceId:"MR62_RITUS",
      sourceUrl:x.sourceUrl??source.url,review:"EXISTING_PUBLISHED_R17_1962_RUBRIC",
      observedNow:false,owner:MISSAL_RUBRIC_OWNER,
-   })));
+   }))));
+ // Never use a text match or external preference to activate this direction.
+ // Preserve the original published registry and its 414-row icon crosswalk.
+ const placeat=RITUS_1962_PLACEAT_ADDENDUM;
+ const addendumAllowed=ids.includes(placeat.cueId) &&
+   !registry.items.some(x=>x.cueId===placeat.cueId && x.actor==="PRIEST") &&
+   !original.some(x=>x.sourceCueId===placeat.cueId);
+ if(!addendumAllowed)return original;
+ const added=frozen({
+   id:placeat.id,sourceCueId:placeat.cueId,actor:placeat.actor,
+   shortAction:"BOWS AT ALTAR WITH JOINED HANDS",
+   displayText:placeat[isFrench?"fr":"en"],
+   kind:placeat.kind,latinTrigger:placeat.triggerLat,order:1,
+   sourceId:"MR62_RITUS",sourceUrl:source.url,
+   review:placeat.review,observedNow:false,owner:placeat.owner,
+ });
+ return frozen([...original,added].sort((a,b)=>
+   positioned.get(a.sourceCueId)-positioned.get(b.sourceCueId)||
+   a.order-b.order));
 }
 
 export function withPublishedMissalParagraphRubrics(paragraphs,registry,options={}){
