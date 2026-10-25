@@ -195,7 +195,6 @@ export function renderHome(root,state,win=globalThis){
     const otherMedia=Boolean(slot.querySelector("video[poster],canvas"));
     const hasArt=images.length>0||Boolean(slot.querySelector("picture source[srcset]"))||otherMedia;
     const clearFailedArtwork=()=>{
-      if(!slot.isConnected)return;
       hero?.classList?.add("aoTodayV2ArtMissing");
       slot.innerHTML='<div class="aoTodayV2NoArt" aria-label="No reviewed artwork for this celebration"></div>';
     };
@@ -204,8 +203,7 @@ export function renderHome(root,state,win=globalThis){
       // A remote src is not proof that a painting loaded. Never publish its
       // caption alone or reserve an empty art panel when Wikimedia fails.
       const syncArtwork=()=>{
-        if(!slot.isConnected)return;
-        const loaded=images.some(image=>image.complete&&image.naturalWidth>0);
+          const loaded=images.some(image=>image.complete&&image.naturalWidth>0);
         hero?.classList?.toggle("aoTodayV2ArtMissing",!loaded);
         if(!loaded&&images.every(image=>image.complete))clearFailedArtwork();
       };
