@@ -140,13 +140,13 @@ try{
        const cs=getComputedStyle(row);
        const icon=row.querySelector(".aoMassFolioChoiceIcon");
        return {radius:parseFloat(cs.borderTopLeftRadius),leftBorder:parseFloat(cs.borderLeftWidth),
-         height:row.getBoundingClientRect().height,icon:icon?.getBoundingClientRect().width||0};
+         height:row.getBoundingClientRect().height,icon:icon?.getBoundingClientRect().width||0,title:parseFloat(getComputedStyle(row.querySelector("strong")).fontSize)};
      })};
  });
  assert.equal(editorial.gap,"0px","The Mass choices are still three detached tiles");
  assert.ok(editorial.rows.every(row=>row.radius===0&&row.leftBorder===0),
    "Mass choices must share open folio rules, not individual card borders: "+JSON.stringify(editorial));
- assert.ok(editorial.rows[0].height>editorial.rows[1].height+8&&editorial.rows[0].icon>=46,
+ assert.ok(editorial.rows.every(row=>row.height>=64)&&editorial.rows[0].icon>=46&&editorial.rows[0].icon>editorial.rows[1].icon&&editorial.rows[0].title>editorial.rows[1].title,
    "Source-owned Mass identity lost its editorial emphasis: "+JSON.stringify(editorial));
  // Start action and secondary preferences share one controller. Order them
  // visually as primary choice then secondary adjustments, without cloning form.
