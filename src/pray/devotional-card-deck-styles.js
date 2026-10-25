@@ -724,6 +724,20 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  color:var(--text,#f4eddf)!important;
 }
 
+
+#aoPray435930 .aoAdorationChooser .aoAdorationPublicRiteLink{
+ display:block!important;width:100%!important;text-align:left!important;
+ min-height:54px!important;margin:9px 0 0!important;padding:12px 14px!important;
+ border:1px solid var(--border,rgba(255,255,255,.12))!important;
+ border-radius:10px!important;background:transparent!important;
+ color:var(--text,#f1e7d7)!important;
+ font:500 15px/1.35 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+}
+#aoPray435930 .aoAdorationChooser .aoAdorationPublicRiteLink small{
+ display:block;margin-top:5px;color:var(--muted,#aca69d)!important;
+ font:400 11px/1.5 var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDevoCard{animation:none}#aoPray435930 .aoDevoParagraph{transition:none!important}}
 `;
