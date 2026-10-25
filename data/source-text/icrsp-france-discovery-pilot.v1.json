@@ -1,0 +1,493 @@
+{
+  "schema": "AO_ICRSP_FRANCE_SOURCE_DISCOVERY_PILOT_V1",
+  "asOf": "2026-10-25",
+  "issue": 1665,
+  "sourceIndex": "https://icrspfrance.fr/textes-liturgiques.php",
+  "status": "27_PUBLIC_PAGE_TITLES_OPENED_NOT_FULLY_EXTRACTED_NOT_CANONICALLY_RECONCILED",
+  "policy": "RESEARCH_ONLY_LINKS_AND_METADATA_NO_TEXT_REPUBLICATION_RIGHTS_NOT_CLEARED",
+  "editionRule": "_ancien and _nouveau are website-internal article keys; never infer liturgical edition or 1962 compatibility from suffix. Example a0010_nouveau is labelled Palm Sunday before 1955.",
+  "ownership": "Source discovery only; 1962 Ordo Missae separate audit owns reader corrections; existing canonical domain registries own publication.",
+  "records": [
+    {
+      "sourceId": "ICRSP-a0088_ancien",
+      "articleId": "a0088_ancien",
+      "titleEnWorking": "First Sunday of Advent",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0088_ancien",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "missal",
+        "commentary"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ],
+      "scriptureReferencesObserved": [
+        "Rom 13:11-14",
+        "Lk 21:25-33",
+        "Ps 24"
+      ],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0833_ancien",
+      "articleId": "a0833_ancien",
+      "titleEnWorking": "O Sapientia and the Great O Antiphons",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0833_ancien",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "prayer",
+        "commentary"
+      ],
+      "editionStatus": "OFFICE_TRADITION_REVIEW",
+      "commentaryAuthorsObserved": [
+        "Guéranger"
+      ],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0096_ancien",
+      "articleId": "a0096_ancien",
+      "titleEnWorking": "Nativity of the Lord (25 December)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0096_ancien",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "missal",
+        "commentary"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0130_ancien",
+      "articleId": "a0130_ancien",
+      "titleEnWorking": "Septuagesima Sunday",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0130_ancien",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "missal",
+        "commentary"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0139_ancien",
+      "articleId": "a0139_ancien",
+      "titleEnWorking": "Ash Wednesday",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0139_ancien",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "missal",
+        "customs"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0010_nouveau",
+      "articleId": "a0010_nouveau",
+      "titleEnWorking": "Palm Sunday before 1955",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0010_nouveau",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "historical_liturgy"
+      ],
+      "editionStatus": "EXPLICIT_PRE_1955",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0593_ancien",
+      "articleId": "a0593_ancien",
+      "titleEnWorking": "Palm Sunday",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0593_ancien",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "missal",
+        "holy_week"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0221_ancien",
+      "articleId": "a0221_ancien",
+      "titleEnWorking": "Holy Thursday before Pius XII",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0221_ancien",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "historical_liturgy"
+      ],
+      "editionStatus": "EXPLICIT_PRE_1955",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0020_nouveau",
+      "articleId": "a0020_nouveau",
+      "titleEnWorking": "Holy Thursday after 1955",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0020_nouveau",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "holy_week"
+      ],
+      "editionStatus": "POST_1955_NOT_INDEPENDENTLY_1962_CERTIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0220_ancien",
+      "articleId": "a0220_ancien",
+      "titleEnWorking": "Good Friday before Pius XII",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_ancien",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "historical_liturgy"
+      ],
+      "editionStatus": "EXPLICIT_PRE_1955",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0029_nouveau",
+      "articleId": "a0029_nouveau",
+      "titleEnWorking": "Good Friday after 1955",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0029_nouveau",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "holy_week"
+      ],
+      "editionStatus": "POST_1955_NOT_INDEPENDENTLY_1962_CERTIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0222_ancien",
+      "articleId": "a0222_ancien",
+      "titleEnWorking": "Holy Saturday before Pius XII",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_ancien",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "historical_liturgy"
+      ],
+      "editionStatus": "EXPLICIT_PRE_1955",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0030_nouveau",
+      "articleId": "a0030_nouveau",
+      "titleEnWorking": "Holy Saturday after 1951",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0030_nouveau",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "historical_liturgy"
+      ],
+      "editionStatus": "POST_1951_EDITION_REVIEW",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0595_ancien",
+      "articleId": "a0595_ancien",
+      "titleEnWorking": "Easter Vigil",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0595_ancien",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "holy_week"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0031_nouveau",
+      "articleId": "a0031_nouveau",
+      "titleEnWorking": "Easter Sunday",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0031_nouveau",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "missal",
+        "commentary"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0087_nouveau",
+      "articleId": "a0087_nouveau",
+      "titleEnWorking": "Greater Litanies (25 April)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0087_nouveau",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "processions",
+        "customs"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0111_nouveau",
+      "articleId": "a0111_nouveau",
+      "titleEnWorking": "Ascension of the Lord",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0111_nouveau",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "missal",
+        "commentary"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0281_ancien",
+      "articleId": "a0281_ancien",
+      "titleEnWorking": "Vigil of Pentecost",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0281_ancien",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "liturgical_history"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0165_nouveau",
+      "articleId": "a0165_nouveau",
+      "titleEnWorking": "Vigil of Pentecost after 1955",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0165_nouveau",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "missal"
+      ],
+      "editionStatus": "POST_1955_NOT_INDEPENDENTLY_1962_CERTIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [
+        "Acts 19:1-8",
+        "Ezek 36:23-26"
+      ],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0167_nouveau",
+      "articleId": "a0167_nouveau",
+      "titleEnWorking": "Pentecost Sunday",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0167_nouveau",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "missal",
+        "commentary"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0297_ancien",
+      "articleId": "a0297_ancien",
+      "titleEnWorking": "Corpus Christi",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0297_ancien",
+      "indexSection": "temporal",
+      "destinationCandidates": [
+        "calendar",
+        "missal",
+        "processions"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0665_ancien",
+      "articleId": "a0665_ancien",
+      "titleEnWorking": "St Blaise (3 February)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0665_ancien",
+      "indexSection": "sanctoral",
+      "destinationCandidates": [
+        "calendar",
+        "saints"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0146_ancien",
+      "articleId": "a0146_ancien",
+      "titleEnWorking": "Purification of the Blessed Virgin Mary (2 February)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0146_ancien",
+      "indexSection": "sanctoral",
+      "destinationCandidates": [
+        "calendar",
+        "missal",
+        "customs"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0003_ancien",
+      "articleId": "a0003_ancien",
+      "titleEnWorking": "Ordo Missae (1962)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien",
+      "indexSection": "reference",
+      "destinationCandidates": [
+        "mass_reader_evidence"
+      ],
+      "editionStatus": "LABELLED_1962_CONCURRENT_AUDIT",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0152_ancien",
+      "articleId": "a0152_ancien",
+      "titleEnWorking": "Precedence occurrence concurrence tables (1960)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0152_ancien",
+      "indexSection": "reference",
+      "destinationCandidates": [
+        "calendar_rubrics"
+      ],
+      "editionStatus": "LABELLED_1960",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0258_ancien",
+      "articleId": "a0258_ancien",
+      "titleEnWorking": "Infant Baptism",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0258_ancien",
+      "indexSection": "ritual",
+      "destinationCandidates": [
+        "sacraments",
+        "formation"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    },
+    {
+      "sourceId": "ICRSP-a0690_ancien",
+      "articleId": "a0690_ancien",
+      "titleEnWorking": "St Blaise blessings of candles and food",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0690_ancien",
+      "indexSection": "ritual",
+      "destinationCandidates": [
+        "calendar",
+        "customs"
+      ],
+      "editionStatus": "UNVERIFIED",
+      "commentaryAuthorsObserved": [],
+      "scriptureReferencesObserved": [],
+      "inspection": "PUBLIC_PAGE_OPENED_TITLE_CONFIRMED; ADDITIONAL_FIELDS_PARTIAL",
+      "rights": "NOT_CLEARED_INDEX_LINK_ONLY",
+      "promotion": "NONE"
+    }
+  ]
+}
