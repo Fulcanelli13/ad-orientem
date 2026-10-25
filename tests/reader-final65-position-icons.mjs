@@ -43,14 +43,15 @@ for(const row of cross.rows.filter(x=>x.lane==="priest_voice")){
 const icon=(cueId,state={})=>iconKeysForReaderState({
  form:"MISSA_CANTATA_SIMPLE",...state,cueId,curated65FinalArt:true,
 });
-// 21 Oct 2026 canonical set: the source label at the cue decides; the priest's
-// breast strike has no vested art (the lay figure is not reused for the priest),
-// and Communion of the faithful is shown by the rail position + faithful lane.
+// 25 Oct approved-bank reuse: the generic breast-strike pictogram is
+// expressly licensed across priest/faithful actors by the semantic lexicon.
+// Separate canonical meanings preserve actor ownership; Communion distribution
+// remains owned by the rail position + faithful lane.
 for(const [cue,label,expected] of [
  ["AO.SM.C0110","OFFERS HOST","canon:priest.action.offer_host"],
  ["AO.SM.C0114","OFFERS CHALICE","canon:priest.action.offer_chalice"],
  ["AO.SM.C0174","ELEVATES HOST","canon:priest.action.elevate_host"],
- ["AO.SM.C0222","STRIKES BREAST",null],
+ ["AO.SM.C0222","STRIKES BREAST","canon:priest.action.strike_breast"],
  ["AO.SM.C0246","GIVES COMMUNION",null],
 ]){
  assert.equal(icon(cue,{priestAction:{cueId:cue,label}}).priestActionIconKey,

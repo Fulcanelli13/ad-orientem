@@ -49,7 +49,15 @@ for (const m of set.meanings.filter(m => m.assetId)) {
     // A declared reuse: same picture as another meaning in the SAME lane, by explicit user decision.
     const owner = meanings.get(m.reusesMeaning);
     ok(owner && owner.assetId === m.assetId, `${m.meaningId}: declared reuse of ${m.reusesMeaning} but the asset differs`);
-    ok(owner.lane === m.lane, `${m.meaningId}: a reuse may not cross lanes (${owner.lane} -> ${m.lane})`);
+    // 25 Oct approved semantic-lexicon exception: the same generic gesture
+    // depicts breast striking by either actor. Ownership and count remain in
+    // source events; no priest position/faithful posture is inferred.
+    const genericBreastStrike = m.meaningId === 'priest.action.strike_breast' &&
+      owner.meaningId === 'faithful.gesture.strike_breast' &&
+      m.semanticApproval === 'BREAST_STRIKE_ANY_ACTOR' &&
+      m.semanticSource === 'data/presentation/mass-icon-final-semantic-lexicon-20261020.v1.json';
+    ok(owner.lane === m.lane || genericBreastStrike,
+      `${m.meaningId}: a reuse may not cross lanes (${owner.lane} -> ${m.lane})`);
     ok(/^user-/.test(m.decidedBy), `${m.meaningId}: a reuse must be a user decision`);
   } else {
     ok(!assetSeen.has(m.assetId), `${m.assetId} is canonical for two meanings (${assetSeen.get(m.assetId)}, ${m.meaningId})`);
