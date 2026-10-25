@@ -465,6 +465,29 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 }
 
 
+/* Unified Eucharistic module chapter navigation: one quiet underlined timeline.
+   Adoration already owns this treatment; Benediction now uses the same anatomy. */
+#aoPray435930 .aoP435930BenedictionReader .aoDevoSequenceTimeline{
+ position:relative!important;top:auto!important;z-index:1!important;
+ background:transparent!important;border-block:0!important;
+ padding:0 0 4px!important;margin:0 0 5px!important;min-height:48px!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoSequenceTimeline .aoDevoStop{
+ flex:0 0 max(116px,42%)!important;min-height:45px!important;
+ border:0!important;border-bottom:1px solid var(--border,rgba(255,255,255,.13))!important;
+ border-radius:0!important;background:transparent!important;box-shadow:none!important;
+ display:grid!important;place-content:center!important;text-align:center!important;
+ padding:4px 8px!important;color:var(--muted,#aaa39a)!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoSequenceTimeline .aoDevoStop.active{
+ border-bottom:2px solid var(--liturgical,#c3a77e)!important;
+ color:var(--text,#f0e5d6)!important;
+}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoStopNumber{display:none!important}
+#aoPray435930 .aoP435930BenedictionReader .aoDevoStopTitle{
+ font:italic 12px/1.3 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:inherit!important;
+}
 /* PRAY #1644 — one prayer-first type hierarchy, shared by Adoration and Benediction.
    Horizontal navigation and Latin tap remain runtime owners; this is presentation only. */
 #aoPray435930 .aoP435930Mount[data-ao-pray-view="adoration"]>.aoP435930Head,
