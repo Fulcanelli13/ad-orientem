@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {iconKeysForReaderState} from "../src/mass/reader-icons.js";
+import {isRequiemAgnusBreastStrikeOmitted,requiemAgnusVariantsForResolvedMass} from "../src/mass/reader-requiem-conditions.js";
 import {resolvePriestChantAction,resolvePriestChantVoice,validatePriestChantObservation,
   PRIEST_SANCTUS_OBSERVATION_TYPES} from "../src/mass/reader-priest-chant-owner.js";
 
@@ -117,6 +119,18 @@ for(const form of forms){
     assert.equal(projected.priestAction,null,form+"/"+cue+" choir inferred priest breast strike");
     assert.equal(projected.owner,"PRIEST_EVENT_UNOBSERVED");
     assert.equal(projected.reason,"SCHOLA_PUBLIC_CUE_NOT_PRIEST_ACTION");
+    const faithfullySung=iconKeysForReaderState({form,cueId:cue,
+      priestAction:projected.priestAction,
+      gesture:{cueId:cue,type:"BREAST_STRIKE",owner:"R17_PROFILE_CUE"}});
+    assert.equal(faithfullySung.priestActionIconKey,null,
+      cue+" unobserved priest action appeared on right rail");
+    assert.equal(faithfullySung.gestureIconKey,"canon:faithful.gesture.strike_breast",
+      cue+" unrelated faithful customary gesture vanished");
+    assert.equal(isRequiemAgnusBreastStrikeOmitted(cue,
+      {session:{resolvedMass:{form,overlays:["REQUIEM"]}}}),true);
+    const requiem=requiemAgnusVariantsForResolvedMass({form,overlays:["REQUIEM"]});
+    assert.match(requiem[cue]?.lat??"",/dona eis réquiem/,
+      "Requiem Agnus must never retain ordinary words");
     const voice=resolvePriestChantVoice({form,cueId:cue,sourceClock:"SCHOLA_PUBLIC",
       ordinaryVoice:{cueId:cue,label:"QUIET PRIEST TRACK"}});
     assert.equal(voice.priestVoice,null,form+"/"+cue+" choir inferred priest's private voice");
@@ -179,5 +193,14 @@ const lowVoice={label:"PRIEST RECITES SANCTUS"};
 assert.equal(resolvePriestChantVoice({
   form:"LOW",cueId:"AO.SM.C0145",sourceClock:"PUBLIC_TEXT",ordinaryVoice:lowVoice
 }).priestVoice,lowVoice,"Low Mass priest voice must never be suppressed");
+// The Canonical icon lane must also honour the omitted Requiem faithful prompt;
+// a pure icon resolver renders only actions that another source actually supplies.
+for(const cueId of ["AO.SM.C0222","AO.SM.C0223","AO.SM.C0224"]){
+ assert.equal(isRequiemAgnusBreastStrikeOmitted(cueId,
+  {session:{resolvedMass:{form:"SOLEMN",overlays:[]}}}),false);
+ assert.equal(iconKeysForReaderState({
+  form:"SOLEMN",cueId,priestAction:null,gesture:null,
+ }).gestureIconKey,null,"No default Requiem/ordinary faithful gesture without an event");
+}
 // Explicit input is not a claim of automatic sensing, camera, or audio recognition.
 console.log("PASS priest/Schola guard: five Sanctus and three Agnus public cues x three sung forms fail closed, Low/Canon and observed Sanctus ownership retained.");
