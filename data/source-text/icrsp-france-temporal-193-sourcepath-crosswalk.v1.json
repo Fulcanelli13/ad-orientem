@@ -20,22 +20,23 @@
     "Pre-1955 Holy Week and suppressed octaves must not receive a 1962 sourcePath through name similarity.",
     "The 1st Sunday after Pentecost overlaps with Trinity Sunday; do not invent separate Mass Proper identity.",
     "Advent weekday index labels are contextual and insufficient to establish separate feria Proper without source witness and 1962 source edition.",
-    "No content from ICRSP was added to existing LIVE/Missal/Simple reader, Calendar, Mass Explorer or proper source files."
+    "No content from ICRSP was added to existing LIVE/Missal/Simple reader, Calendar, Mass Explorer or proper source files.",
+    "The last (24th) Sunday after Pentecost is found explicitly in an existing Tempora/Pent24-0 source-path witness even though its French label includes 'et dernier'; calendar and chant selection remain existing-resolver questions."
   ],
   "totals": {
     "sourceArticles": 193,
     "previousMajorCalendarLinks": 27,
-    "candidateSourcePaths": 133,
-    "articleRowsWithExistingPathWitness": 99,
-    "articleRowsWithoutAnyPathWitness": 94,
-    "previouslyUnlinkedTemporalWithExistingPathWitness": 77,
+    "candidateSourcePaths": 134,
+    "articleRowsWithExistingPathWitness": 100,
+    "articleRowsWithoutAnyPathWitness": 93,
+    "previouslyUnlinkedTemporalWithExistingPathWitness": 78,
     "explicitPre1955NoForced1962SourcePath": 21,
     "canonicalPublications": 0
   },
   "grades": {
-    "CHECKED_EXISTING_READING_SOURCE_PATH_WITNESS": 95,
+    "CHECKED_EXISTING_READING_SOURCE_PATH_WITNESS": 96,
     "INDEX_DERIVED_PATH_NOT_FOUND_IN_CHECKED_OWNERS": 34,
-    "NO_ACTUAL_SOURCE_PATH_CANDIDATE": 60,
+    "NO_ACTUAL_SOURCE_PATH_CANDIDATE": 59,
     "MATCHED_RESUMED_SOURCE_PATH_CONDITIONAL": 3,
     "MATCHED_TRINITY_PROPER_BUT_PENTECOST_FIRST_SUNDAY_NOT_DISTINCT": 1
   },
@@ -5891,19 +5892,27 @@
       "icrspIndexTitle": "24ᵉ et dernier dimanche après la Pentecôte",
       "priorStatus": "REQUIRES_EXACT_1962_AND_HISTORICAL_RITE_CROSSWALK",
       "previousMajorCalendarLink": null,
-      "sourcePathCandidate": null,
-      "sourcePathMappingMethod": "NO_SAFE_ONE_TO_ONE_PROPER_IDENTIFICATION",
-      "existingRegistryWitnesses": [],
-      "checkedWitnessFileCount": 0,
-      "matchGrade": "NO_ACTUAL_SOURCE_PATH_CANDIDATE",
+      "sourcePathCandidate": "Tempora/Pent24-0",
+      "sourcePathMappingMethod": "POST_PENTECOST_LAST_SUNDAY",
+      "existingRegistryWitnesses": [
+        {
+          "file": "data/mass/scripture-reading-witness-register.v1.json",
+          "recordType": "SOURCE_READING_WITNESS",
+          "title": "Last Sunday after Pentecost",
+          "scopeNote": "DATE_AND_RETAINED_CHANTS_TO_BE_RESOLVED_BY_CURRENT_1962_CALENDAR"
+        }
+      ],
+      "checkedWitnessFileCount": 1,
+      "matchGrade": "CHECKED_EXISTING_READING_SOURCE_PATH_WITNESS",
       "exact1962MissalEditorialCertified": false,
       "canonicalFeastOrProperId": null,
       "sourceTextParityChecked": false,
       "readerRubricStatus": "NOT_OWNED_BY_ICRSP_PIPELINE",
       "rightsCleared": false,
-      "triageOwner": "EXISTING_CALENDAR_MASS_PROPER_AND_MASS_EXPLORER",
+      "triageOwner": "EXISTING_CALENDAR_TEMPORAL_FINAL_SUNDAY_AND_MASS_PROPER",
       "historicalScopeGuard": [
-        "SPECIAL_CEREMONY_OR_RITE_SCOPE_REVIEW"
+        "SPECIAL_CEREMONY_OR_RITE_SCOPE_REVIEW",
+        "FINAL_SUNDAY_TEMPORAL_RESOLVER_ONLY_NO_DATE_INFERENCE"
       ],
       "contentDecision": "NOT_YET_PROVEN_NEW_MATERIAL",
       "publicationStatus": "BLOCKED"
