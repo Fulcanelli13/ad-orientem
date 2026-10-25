@@ -14,7 +14,9 @@ const gestureMatrix=load("../data/mass/gesture-matrix.v1.json");
 
 const audit=validateReaderRubricEvents(data);
 assert.equal(audit.schema,"ao-reader-rubric-events-v1");
-assert.equal(audit.itemCount,57);
+assert.equal(audit.itemCount,58);
+assert.equal(data.items.filter(x=>x.cueId==="AO.SM.C0261").length,1,
+  "Placeat must have exactly one newly source-certified non-observational priest rubric");
 assert.equal(audit.sourceCount,2);
 assert.ok(audit.primaryPriestCueCount>20);
 assert.equal(data.invariants.primaryAuthority,"ROMAN_MISSAL_1962");
@@ -63,6 +65,16 @@ assert.equal(living.primaryPriestAction.label,"REMEMBERS THE LIVING");
 const dead=controller.project("AO.SM.C0193");
 assert.equal(dead.primaryPriestAction.label,"REMEMBERS THE DEAD");
 
+const placeat=controller.project("AO.SM.C0261");
+assert.equal(placeat.events.length,1);
+assert.equal(placeat.events[0].id,"AO.RUB.C0261.01");
+assert.equal(placeat.events[0].label,"BOWS AT ALTAR WITH JOINED HANDS");
+assert.equal(placeat.events[0].displayPrimary,false,
+  "A sourced Missal rubric is not an observed/live right-rail movement clock");
+assert.equal(placeat.events[0].iconKey,null,
+  "Do not invent a composite bow/hands icon");
+assert.deepEqual(placeat.events[0].sources,["MR62_RITUS"]);
+assert.equal(placeat.primaryPriestAction,null);
 const blessingPrep=controller.project("AO.SM.C0263");
 assert.deepEqual(blessingPrep.events.map(x=>x.label),[
   "RAISES EYES AND HANDS","JOINS HANDS","BOWS HEAD TO CROSS"
