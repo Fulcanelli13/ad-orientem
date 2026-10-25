@@ -9,11 +9,11 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
     "artist": "Anthony van Dyck",
     "artworkId": "primary:2026-03-29",
     "source": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg/960px-Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg/960px-Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
     "imageTier": "commons-pd-art",
     "note": "",
     "editorialApproval": "APPROVED_DATE_SPECIFIC_2026-10-19",
-    "imagePublicationStatus": "REMOTE_SOURCE_LINKED_NOT_OFFLINE_CERTIFIED"
+    "imagePublicationStatus": "REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"
   },
   {
     "date": "2026-04-02",
@@ -22,11 +22,11 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
     "artist": "Ugolino da Siena",
     "artworkId": "met-459131",
     "source": "https://commons.wikimedia.org/wiki/File:1%D0%B3_Ugolino_di_Nerio._The_Last_Supper_Metropolitan_mus._N-Y.jpg",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/1%D0%B3_Ugolino_di_Nerio._The_Last_Supper_Metropolitan_mus._N-Y.jpg/960px-1%D0%B3_Ugolino_di_Nerio._The_Last_Supper_Metropolitan_mus._N-Y.jpg",
-    "imageTier": "met-cc0",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/1%D0%B3_Ugolino_di_Nerio._The_Last_Supper_Metropolitan_mus._N-Y.jpg/960px-1%D0%B3_Ugolino_di_Nerio._The_Last_Supper_Metropolitan_mus._N-Y.jpg",
+    "imageTier": "commons-pd-art",
     "note": "",
     "editorialApproval": "APPROVED_DATE_SPECIFIC_2026-10-19",
-    "imagePublicationStatus": "REMOTE_SOURCE_LINKED_NOT_OFFLINE_CERTIFIED"
+    "imagePublicationStatus": "REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"
   },
   {
     "date": "2026-05-23",
@@ -34,12 +34,12 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
     "title": "The Pentecost",
     "artist": "Juan Bautista Maíno",
     "artworkId": "primary:2026-05-23",
-    "source": "https://commons.wikimedia.org/wiki/File:Maino_Pentecost%C3%A9s._Lienzo._285_x_163_cm._Museo_del_Prado.jpg",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Maino_Pentecost%C3%A9s._Lienzo._285_x_163_cm._Museo_del_Prado.jpg/960px-Maino_Pentecost%C3%A9s._Lienzo._285_x_163_cm._Museo_del_Prado.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Maino_Pentecost%C3%A9s%2C_1620-1625._Museo_del_Prado.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Maino_Pentecost%C3%A9s%2C_1620-1625._Museo_del_Prado.jpg/960px-Maino_Pentecost%C3%A9s%2C_1620-1625._Museo_del_Prado.jpg",
     "imageTier": "commons-pd-art",
     "note": "Anticipatory Pentecost scene; not a literal depiction of the Vigil readings",
     "editorialApproval": "APPROVED_DATE_SPECIFIC_2026-10-19",
-    "imagePublicationStatus": "REMOTE_SOURCE_LINKED_NOT_OFFLINE_CERTIFIED"
+    "imagePublicationStatus": "REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"
   },
   {
     "date": "2026-05-24",
@@ -48,11 +48,11 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
     "artist": "Jean II Restout",
     "artworkId": "ART-ean-estout-entecost",
     "source": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Jean_II_Restout_-_Pentecost_-_WGA19318.jpg/960px-Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Jean_II_Restout_-_Pentecost_-_WGA19318.jpg/960px-Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
     "imageTier": "commons-pd-art",
     "note": "",
     "editorialApproval": "APPROVED_DATE_SPECIFIC_2026-10-19",
-    "imagePublicationStatus": "REMOTE_SOURCE_LINKED_NOT_OFFLINE_CERTIFIED"
+    "imagePublicationStatus": "REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"
   },
   {
     "date": "2026-05-27",
@@ -60,12 +60,12 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
     "title": "La Petite Cène",
     "artist": "Philippe de Champaigne",
     "artworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
-    "source": "https://commons.wikimedia.org/wiki/File:Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Champaigne_Petite_C%C3%A8ne_Louvre.jpg/960px-Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
-    "imageTier": "commons-pd-art",
+    "source": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre%2C_INV_1125).jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre%2C_INV_1125).jpg/960px-Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre%2C_INV_1125).jpg",
+    "imageTier": "commons-pd-self",
     "note": "Eucharistic theme, not a literal depiction of the Wednesday Gospel",
     "editorialApproval": "APPROVED_DATE_SPECIFIC_2026-10-19",
-    "imagePublicationStatus": "REMOTE_SOURCE_LINKED_NOT_OFFLINE_CERTIFIED"
+    "imagePublicationStatus": "REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"
   },
   {
     "date": "2026-06-12",
@@ -74,11 +74,11 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
     "artist": "Juan Patricio Morlete Ruiz",
     "artworkId": "commons-morlete-sacred-heart-1759",
     "source": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg/500px-Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg/960px-Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
     "imageTier": "commons-pd-art",
     "note": "",
     "editorialApproval": "APPROVED_DATE_SPECIFIC_2026-10-19",
-    "imagePublicationStatus": "REMOTE_SOURCE_LINKED_NOT_OFFLINE_CERTIFIED"
+    "imagePublicationStatus": "REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"
   },
   {
     "date": "2026-10-25",
@@ -100,11 +100,11 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
     "artist": "Carlo Saraceni",
     "artworkId": "primary:2026-11-01",
     "source": "https://commons.wikimedia.org/wiki/File:Paradise_MET_DT1448.jpg",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Paradise_MET_DT1448.jpg/960px-Paradise_MET_DT1448.jpg",
-    "imageTier": "met-cc0",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Paradise_MET_DT1448.jpg/960px-Paradise_MET_DT1448.jpg",
+    "imageTier": "commons-pd-art",
     "note": "",
     "editorialApproval": "APPROVED_DATE_SPECIFIC_2026-10-19",
-    "imagePublicationStatus": "REMOTE_SOURCE_LINKED_NOT_OFFLINE_CERTIFIED"
+    "imagePublicationStatus": "REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"
   },
   {
     "date": "2026-11-02",
@@ -113,11 +113,11 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
     "artist": "Ludovico Carracci",
     "artworkId": "primary:2026-11-02",
     "source": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Carracci-Purgatory.jpg/500px-Carracci-Purgatory.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Carracci-Purgatory.jpg/500px-Carracci-Purgatory.jpg",
     "imageTier": "commons-pd-art",
     "note": "Preview below hero-resolution requirement",
     "editorialApproval": "APPROVED_DATE_SPECIFIC_2026-10-19",
-    "imagePublicationStatus": "REMOTE_SOURCE_LINKED_NOT_OFFLINE_CERTIFIED"
+    "imagePublicationStatus": "REMOTE_COMMONS_PREVIEW_NOT_OFFLINE_CERTIFIED"
   },
   {
     "date": "2026-11-29",
