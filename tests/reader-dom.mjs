@@ -60,6 +60,7 @@ for(const token of [
   'data-role="section-menu"',
   'data-schola-resize',
   'data-schola-toggle',
+  'data-schola-find-place',
   'data-schola-slower',
   'data-role="schola-speed"',
   'data-schola-faster',
