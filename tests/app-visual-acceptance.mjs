@@ -604,6 +604,9 @@ try{
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
+  // The secondary devotional taxonomy is a native disclosure in Quiet Frame.
+  // Exercise the visible summary; never force-click a hidden child.
+  await page.locator("#aoPray435930 .aoP435930QuietMore > summary").click();
   await page.locator("#aoPray435930 [data-p435930-family='passion']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.stations']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="stations",null,{timeout:5000});
@@ -662,6 +665,9 @@ try{
 
   // Exact-donor devotional rails: Adoration arrival is transient genuflection,
   // then yields to persistent silence without changing reader geometry.
+  // The secondary devotional taxonomy is a native disclosure in Quiet Frame.
+  // Exercise the visible summary; never force-click a hidden child.
+  await page.locator("#aoPray435930 .aoP435930QuietMore > summary").click();
   await page.locator("#aoPray435930 [data-p435930-family='eucharistic']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.adoration']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="adoration",null,{timeout:5000});
@@ -717,6 +723,9 @@ try{
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
   // Benediction rail follows the public rite rather than presenting one generic card.
+  // The secondary devotional taxonomy is a native disclosure in Quiet Frame.
+  // Exercise the visible summary; never force-click a hidden child.
+  await page.locator("#aoPray435930 .aoP435930QuietMore > summary").click();
   await page.locator("#aoPray435930 [data-p435930-family='eucharistic']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.benediction']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="benediction",null,{timeout:5000});
@@ -780,6 +789,9 @@ try{
 
   // Confession remains private/read-only; only the exact in-confessional moment
   // owns the transient Sign-of-Cross rail cue.
+  // The secondary devotional taxonomy is a native disclosure in Quiet Frame.
+  // Exercise the visible summary; never force-click a hidden child.
+  await page.locator("#aoPray435930 .aoP435930QuietMore > summary").click();
   await page.locator("#aoPray435930 [data-p435930-family='penance']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.confession']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="confession",null,{timeout:5000});
