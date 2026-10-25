@@ -1,0 +1,570 @@
+{
+  "schema": "ao-mass-lanslots-1897-chapter-coverage-audit-v1",
+  "date": "2026-10-14",
+  "publicationStatus": "RESEARCH_ONLY_UNPUBLISHED",
+  "inputFiles": [
+    "data/research/mass-lanslots-1897-ocr-scripture-batch01.v1.json",
+    "data/research/mass-lanslots-1897-ocr-scripture-batch02.v1.json",
+    "data/research/mass-lanslots-1897-seven-context-chapters.v1.json",
+    "data/research/mass-lanslots-1897-chapter-ocr-boundaries.v1.json",
+    "data/research/mass-lanslots-1897-source-first39-map.v1.json"
+  ],
+  "census": {
+    "numberedChapters": 25,
+    "chaptersWithSourceEvidence": 25,
+    "chaptersWithScriptureSample": 18,
+    "chaptersWithContextInstead": 7,
+    "scriptureReferenceOccurrences": 69,
+    "originalTextPdfPagesVisuallyChecked": 11,
+    "completeBookLocalOcrExtracted": true,
+    "exhaustiveVerseCountKnown": false,
+    "totalResearchCitationOccurrenceRecords": 91,
+    "scriptureReferenceOccurrencesOriginalFirstTwoBatches": 69
+  },
+  "interpretation": "Full original OCR and 404-page PDF have been recovered. Twenty-five chapters have at least one source item; the first two source registers comprise 69 Scripture records across 18 chapters and introduction, with another 17 + 5 discovered later (91 total source occurrences). The separate complete-text screen adjudicates 82 parenthetical candidate strings (77 biblical, 5 nonbiblical), of which one carries two verses. These are different non-additive metrics. Eleven original PDF images inspected, 393 not checked. Not an exhaustive citation/allusion census.",
+  "chapterCoverage": [
+    {
+      "chapter": "I",
+      "topic": "Altar",
+      "ocrHeadingLine": 478,
+      "printedStartPageNotVisuallyVerified": 13,
+      "scriptureSourceOccurrenceCount": 4,
+      "scriptureRecordIds": [
+        "L1897-OCR-002",
+        "L1897-OCR-003",
+        "L1897-OCR-004",
+        "L1897-OCR-005"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.001"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "II",
+      "topic": "Altar decorations",
+      "ocrHeadingLine": 618,
+      "printedStartPageNotVisuallyVerified": 18,
+      "scriptureSourceOccurrenceCount": 7,
+      "scriptureRecordIds": [
+        "L1897-OCR-006",
+        "L1897-OCR2-001",
+        "L1897-OCR2-002",
+        "L1897-OCR2-003",
+        "L1897-OCR2-004",
+        "L1897-OCR2-005",
+        "L1897-OCR2-006"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.001"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "III",
+      "topic": "Chalice and appurtenances",
+      "ocrHeadingLine": 848,
+      "printedStartPageNotVisuallyVerified": 25,
+      "scriptureSourceOccurrenceCount": 3,
+      "scriptureRecordIds": [
+        "L1897-OCR-007",
+        "L1897-OCR-008",
+        "L1897-OCR-009"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.001"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "IV",
+      "topic": "Priestly vestments",
+      "ocrHeadingLine": 987,
+      "printedStartPageNotVisuallyVerified": 30,
+      "scriptureSourceOccurrenceCount": 5,
+      "scriptureRecordIds": [
+        "L1897-OCR-010",
+        "L1897-OCR-011",
+        "L1897-OCR2-007",
+        "L1897-OCR2-008",
+        "L1897-OCR2-009"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.001"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "V",
+      "topic": "Liturgical colours",
+      "ocrHeadingLine": 1282,
+      "printedStartPageNotVisuallyVerified": 40,
+      "scriptureSourceOccurrenceCount": 7,
+      "scriptureRecordIds": [
+        "L1897-OCR-012",
+        "L1897-OCR2-010",
+        "L1897-OCR2-011",
+        "L1897-OCR2-012",
+        "L1897-OCR2-013",
+        "L1897-OCR2-014",
+        "L1897-OCR2-015"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.001"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "VI",
+      "topic": "Liturgical language",
+      "ocrHeadingLine": 1607,
+      "printedStartPageNotVisuallyVerified": 51,
+      "scriptureSourceOccurrenceCount": 0,
+      "scriptureRecordIds": [],
+      "otherContextIds": [
+        "L1897-CONTEXT-01"
+      ],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.001"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "VII",
+      "topic": "Beginning of Mass",
+      "ocrHeadingLine": 1762,
+      "printedStartPageNotVisuallyVerified": 57,
+      "scriptureSourceOccurrenceCount": 0,
+      "scriptureRecordIds": [],
+      "otherContextIds": [
+        "L1897-CONTEXT-02"
+      ],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.001"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "VIII",
+      "topic": "Incensation, Introit, Kyrie",
+      "ocrHeadingLine": 2111,
+      "printedStartPageNotVisuallyVerified": 69,
+      "scriptureSourceOccurrenceCount": 1,
+      "scriptureRecordIds": [
+        "L1897-OCR-013"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.001",
+        "AO.CARD.002"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "IX",
+      "topic": "Gloria and Collects",
+      "ocrHeadingLine": 2344,
+      "printedStartPageNotVisuallyVerified": 77,
+      "scriptureSourceOccurrenceCount": 1,
+      "scriptureRecordIds": [
+        "L1897-OCR-014"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.003",
+        "AO.CARD.004"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "X",
+      "topic": "Epistle and chants",
+      "ocrHeadingLine": 2600,
+      "printedStartPageNotVisuallyVerified": 86,
+      "scriptureSourceOccurrenceCount": 1,
+      "scriptureRecordIds": [
+        "L1897-OCR-015"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.005",
+        "AO.CARD.006"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XI",
+      "topic": "Gospel",
+      "ocrHeadingLine": 2797,
+      "printedStartPageNotVisuallyVerified": 93,
+      "scriptureSourceOccurrenceCount": 8,
+      "scriptureRecordIds": [
+        "L1897-OCR-016",
+        "L1897-OCR-017",
+        "L1897-OCR-018",
+        "L1897-OCR-019",
+        "L1897-OCR-020",
+        "L1897-OCR-021",
+        "L1897-OCR-022",
+        "L1897-OCR2-016"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.007"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XII",
+      "topic": "Credo",
+      "ocrHeadingLine": 3009,
+      "printedStartPageNotVisuallyVerified": 100,
+      "scriptureSourceOccurrenceCount": 0,
+      "scriptureRecordIds": [],
+      "otherContextIds": [
+        "L1897-CONTEXT-03"
+      ],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.009"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XIII",
+      "topic": "Offertory",
+      "ocrHeadingLine": 3563,
+      "printedStartPageNotVisuallyVerified": 117,
+      "scriptureSourceOccurrenceCount": 6,
+      "scriptureRecordIds": [
+        "L1897-OCR-023",
+        "L1897-OCR-024",
+        "L1897-OCR2-017",
+        "L1897-OCR2-018",
+        "L1897-OCR2-019",
+        "L1897-OCR2-020"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.010"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XIV",
+      "topic": "Incensing and Lavabo",
+      "ocrHeadingLine": 4037,
+      "printedStartPageNotVisuallyVerified": 133,
+      "scriptureSourceOccurrenceCount": 2,
+      "scriptureRecordIds": [
+        "L1897-OCR-025",
+        "L1897-OCR-026"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.010"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XV",
+      "topic": "Orate fratres, Secrets, Preface",
+      "ocrHeadingLine": 4398,
+      "printedStartPageNotVisuallyVerified": 145,
+      "scriptureSourceOccurrenceCount": 3,
+      "scriptureRecordIds": [
+        "L1897-OCR-027",
+        "L1897-OCR-028",
+        "L1897-OCR-029"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.011",
+        "AO.CARD.012",
+        "AO.CARD.013"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XVI",
+      "topic": "First Canon prayer",
+      "ocrHeadingLine": 4895,
+      "printedStartPageNotVisuallyVerified": 162,
+      "scriptureSourceOccurrenceCount": 0,
+      "scriptureRecordIds": [],
+      "otherContextIds": [
+        "L1897-CONTEXT-04"
+      ],
+      "sourceFirstPresentationSections": [
+        "AO.CANON.01"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XVII",
+      "topic": "Memento living and Communicantes",
+      "ocrHeadingLine": 5265,
+      "printedStartPageNotVisuallyVerified": 175,
+      "scriptureSourceOccurrenceCount": 0,
+      "scriptureRecordIds": [],
+      "otherContextIds": [
+        "L1897-CONTEXT-05"
+      ],
+      "sourceFirstPresentationSections": [
+        "AO.CANON.02",
+        "AO.CANON.03"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XVIII",
+      "topic": "Hanc igitur and preparation to consecration",
+      "ocrHeadingLine": 5990,
+      "printedStartPageNotVisuallyVerified": 199,
+      "scriptureSourceOccurrenceCount": 2,
+      "scriptureRecordIds": [
+        "L1897-OCR2-021",
+        "L1897-OCR2-022"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CANON.04",
+        "AO.CANON.05"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XIX",
+      "topic": "Consecration",
+      "ocrHeadingLine": 6284,
+      "printedStartPageNotVisuallyVerified": 209,
+      "scriptureSourceOccurrenceCount": 1,
+      "scriptureRecordIds": [
+        "L1897-OCR-030"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CANON.06",
+        "AO.CANON.07"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XX",
+      "topic": "First prayers after consecration",
+      "ocrHeadingLine": 6666,
+      "printedStartPageNotVisuallyVerified": 221,
+      "scriptureSourceOccurrenceCount": 3,
+      "scriptureRecordIds": [
+        "L1897-OCR-031",
+        "L1897-OCR-032",
+        "L1897-OCR2-023"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CANON.08",
+        "AO.CANON.09",
+        "AO.CANON.10"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XXI",
+      "topic": "Memento dead and Nobis quoque",
+      "ocrHeadingLine": 7193,
+      "printedStartPageNotVisuallyVerified": 239,
+      "scriptureSourceOccurrenceCount": 0,
+      "scriptureRecordIds": [],
+      "otherContextIds": [
+        "L1897-CONTEXT-06"
+      ],
+      "sourceFirstPresentationSections": [
+        "AO.CANON.11",
+        "AO.CANON.12"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XXII",
+      "topic": "Per ipsum, Pater, Libera nos",
+      "ocrHeadingLine": 7704,
+      "printedStartPageNotVisuallyVerified": 256,
+      "scriptureSourceOccurrenceCount": 0,
+      "scriptureRecordIds": [],
+      "otherContextIds": [
+        "L1897-CONTEXT-07"
+      ],
+      "sourceFirstPresentationSections": [
+        "AO.CANON.13",
+        "AO.CANON.14",
+        "AO.CARD.019",
+        "AO.CARD.020"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XXIII",
+      "topic": "Fraction through Communion",
+      "ocrHeadingLine": 8170,
+      "printedStartPageNotVisuallyVerified": 272,
+      "scriptureSourceOccurrenceCount": 5,
+      "scriptureRecordIds": [
+        "L1897-OCR-033",
+        "L1897-OCR-034",
+        "L1897-OCR-035",
+        "L1897-OCR2-024",
+        "L1897-OCR2-025"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.020",
+        "AO.CARD.021",
+        "AO.CARD.022"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XXIV",
+      "topic": "Communion",
+      "ocrHeadingLine": 8617,
+      "printedStartPageNotVisuallyVerified": 287,
+      "scriptureSourceOccurrenceCount": 8,
+      "scriptureRecordIds": [
+        "L1897-OCR-036",
+        "L1897-OCR-037",
+        "L1897-OCR-038",
+        "L1897-OCR-039",
+        "L1897-OCR-040",
+        "L1897-OCR-041",
+        "L1897-OCR-042",
+        "L1897-OCR2-026"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.023",
+        "AO.CARD.024",
+        "AO.CARD.025"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    },
+    {
+      "chapter": "XXV",
+      "topic": "Thanksgiving and end of Mass",
+      "ocrHeadingLine": 9252,
+      "printedStartPageNotVisuallyVerified": 308,
+      "scriptureSourceOccurrenceCount": 1,
+      "scriptureRecordIds": [
+        "L1897-OCR-043"
+      ],
+      "otherContextIds": [],
+      "sourceFirstPresentationSections": [
+        "AO.CARD.026",
+        "AO.CARD.027",
+        "AO.CARD.028",
+        "AO.CARD.029",
+        "AO.CARD.030"
+      ],
+      "hasOriginalTextEvidence": true,
+      "scriptureCitationCensusExhaustive": false,
+      "originalPageImageVerified": false,
+      "chapterResearchStatus": "INITIAL_SOURCE_COVERAGE_NOT_FULL_COLLATED"
+    }
+  ],
+  "remainingGates": [
+    "Full original OCR archived; improve machine and human citation extraction for unrecognized abbreviations and allusions",
+    "Collate all verse citations by Catholic book/edition including Psalm numbering and OCR ambiguities",
+    "Expand original PDF page-image collation beyond first 11 sampled pages",
+    "Deduplicate each historical/theological claim against Guéranger and frozen 422 evidence records",
+    "Independent native-French source/theological review",
+    "Source-first 39-step phrase-level Guide matching and mobile browser acceptance before publication"
+  ],
+  "additionalReview": {
+    "wholeOcrParenPatternCandidates": 82,
+    "reviewedCitationOccurrencesIncludingNewBatch": 91,
+    "visuallyCheckedOriginalPdfPages": 11,
+    "originalPdfPages": 404,
+    "citationExhaustiveness": false,
+    "adjudicatedParentheticalBibleCitations": 77,
+    "adjudicatedParentheticalBibleLocators": 78,
+    "adjudicatedNonBiblicalParentheses": 5,
+    "fiveAdditionalRecoveredSourceOccurrences": 5,
+    "distinctBibleVersesCountCertified": false,
+    "adjudicationLedger": "data/research/mass-lanslots-1897-82-parenthetical-adjudication.v1.json"
+  }
+}

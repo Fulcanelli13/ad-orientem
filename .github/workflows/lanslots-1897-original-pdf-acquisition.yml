@@ -1,0 +1,58 @@
+name: Lanslots 1897 original PDF acquisition (research only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - mass/342-lanslots-1897-crosswalk
+    paths:
+      - '.github/workflows/lanslots-1897-original-pdf-acquisition.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  preserve-original-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - name: Download original scan from public archival source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/lanslots-original-scan
+          pdf="artifacts/lanslots-original-scan/lanslots-1897-original.pdf"
+          source="artifacts/lanslots-original-scan/source-url.txt"
+          for url in \
+            "https://archive.org/download/illustratedexpla00lans/illustratedexpla00lans.pdf" \
+            "https://upload.wikimedia.org/wikipedia/commons/2/26/Illustrated_explanation_of_the_prayers_and_ceremonies_of_the_Mass_%28IA_illustratedexpla00lans%29.pdf"
+          do
+            echo "Trying ${url%%/*}"
+            if curl -fLsS --retry 2 --retry-all-errors --connect-timeout 20 --max-time 280 "$url" -o "$pdf"; then
+              if test "$(wc -c < "$pdf")" -gt 12000000 && test "$(head -c 4 "$pdf")" = "%PDF"; then
+                printf '%s\n' "$url" > "$source"
+                break
+              fi
+            fi
+            rm -f "$pdf"
+          done
+          test -s "$pdf" || { echo "::error::Original PDF scan could not be acquired"; exit 1; }
+      - name: Verify PDF size, pages and digest
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -qq -y poppler-utils
+          file="artifacts/lanslots-original-scan/lanslots-1897-original.pdf"
+          pdfinfo "$file" > artifacts/lanslots-original-scan/pdfinfo.txt
+          sha256sum "$file" > artifacts/lanslots-original-scan/pdf-sha256.txt
+          head -n 20 artifacts/lanslots-original-scan/pdfinfo.txt
+          cat artifacts/lanslots-original-scan/pdf-sha256.txt
+      - name: Retain full original PDF for local image-level collation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lanslots-1897-uncollated-original-pdf
+          path: artifacts/lanslots-original-scan/
+          retention-days: 14
+          if-no-files-found: warn
