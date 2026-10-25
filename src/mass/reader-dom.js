@@ -612,6 +612,7 @@ button.ao-schola-control{cursor:pointer}
 .ao-cinematic-inner{display:grid;gap:9px;justify-items:center;max-width:88%}
 .ao-cinematic-mark{font:400 1.35rem/1 var(--ao-font-display,Georgia,serif);color:var(--ao-warm);display:grid;place-items:center}
 .ao-cinematic-icon{display:block;width:68%;height:68%;color:#efe9d2}
+.ao-cinematic-icon[hidden]{display:none!important}
 .ao-cinematic-fallback{display:block}
 .ao-cinematic-fallback[hidden]{display:none!important}
 .ao-cinematic-title{font:400 clamp(1.2rem,4vw,2rem)/1.15 var(--ao-font-display,Georgia,"Times New Roman",serif);letter-spacing:.08em;color:#f0f1e9}
@@ -3575,20 +3576,30 @@ export function createReaderDomAdapter({
       // Major Elevations illuminate the existing reader rather than blacking
       // out the Latin Consecration and gesture rails.
       const focusElevation=sceneId==="HOST_ELEVATION"||sceneId==="CHALICE_ELEVATION";
+      // An Elevation cinematic is an ICON surface, not a textual substitute:
+      // the 1962 minor elevation at Per ipsum has no exact approved graphic.
+      // Its existing source-timed inline rubric must remain unobscured.
+      const cinematicKey=kind==="BELL"?"bells":
+        kind==="ELEVATION"?current.priestActionIconKey:null;
+      const approvedCinematicGraphic=Boolean(cinematicKey &&
+        typeof iconResolver==="function"&&iconResolver(cinematicKey));
+      const noArtCinematic=visible && (kind==="ELEVATION"||kind==="BELL") &&
+        !approvedCinematicGraphic;
       // Final visibility is settled after paragraph layout. Keep the source
       // prayer measurable before deciding whether spare space permits big art.
       // A transient part-curtain must not obscure an already focused,
       // independently source-owned Hanc, Gospel or Passion cue.
       const sourceQuietScene=["HANC_IGITUR_HANDS","GOSPEL_CROSSES","PASSION_DEATH"].includes(sceneId);
-      cinematic.hidden=!visible||sourceQuietScene;
-      cinematic.setAttribute?.("aria-hidden",String(!visible||focusElevation||sourceQuietScene));
+      cinematic.hidden=!visible||sourceQuietScene||noArtCinematic;
+      cinematic.setAttribute?.("aria-hidden",String(
+        !visible||focusElevation||sourceQuietScene||noArtCinematic));
       cinematic.dataset.kind=kind;
+      cinematic.dataset.missingApprovedArt=String(noArtCinematic);
       setText(root,"cinematic-title",visible ? current.cinematic.title : null);
       setText(root,"cinematic-sub",visible ? current.cinematic.subtitle : null);
-      // Bell cinematics use the APPROVED bell asset, never the default
-      // decorative cross. They belong only to an exact native sound cue.
-      applyIcon(root,"cinematic",visible && kind==="BELL" ? "bells" :
-        visible && kind==="ELEVATION" ? current.priestActionIconKey : null,iconResolver);
+      // Bells and high elevations may use only the corresponding approved
+      // bank icon. No bare unmasked square or generic pictogram substitution.
+      applyIcon(root,"cinematic",noArtCinematic?null:cinematicKey,iconResolver);
       const fallback=cinematic.querySelector?.(".ao-cinematic-fallback");
       if(fallback)fallback.hidden=visible && (kind==="BELL"||kind==="ELEVATION");
     }

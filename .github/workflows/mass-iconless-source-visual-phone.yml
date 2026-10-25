@@ -1,0 +1,36 @@
+name: Mass iconless source visual phone
+
+on:
+  pull_request:
+    paths:
+      - "tests/reader-iconless-source-visual-phone.mjs"
+      - "src/mass/reader-dom.js"
+      - "src/mass/reader-cue-visual-policy.js"
+      - "src/mass/reader-native-preview.js"
+      - ".github/workflows/mass-iconless-source-visual-phone.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify source-anchored rubrics versus approved graphical rail tiles
+        run: node tests/reader-iconless-source-visual-phone.mjs
+      - name: Retain real phone screenshots and source-cue JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-iconless-source-mobile-proof
+          path: artifacts/mass-iconless-visual/
+          if-no-files-found: warn
+          retention-days: 7
