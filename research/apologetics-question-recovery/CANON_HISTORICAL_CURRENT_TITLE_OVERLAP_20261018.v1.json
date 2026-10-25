@@ -1,0 +1,38 @@
+{
+  "schema": "AO_CANON_EXACT_NORMALIZED_TITLE_OVERLAP_V1",
+  "asOf": "2026-10-18",
+  "policy": "Normalized textual identities are source-title overlap evidence only. Do not collapse historical IDs or claim verified original chats or answer equivalence.",
+  "normalizer": "NFKD casefold, curly quote normalization, punctuation/separator folding, whitespace collapse",
+  "summary": {
+    "historicalQuestions": 452,
+    "currentSourceTitleRecords": 282,
+    "exactNormalizedCrossCollectionPairs": 1,
+    "uniqueHistoricalTitlesMatched": 1,
+    "duplicateHistoricalTitleGroups": 1,
+    "historicalIdsInDuplicateGroups": 2
+  },
+  "normalizedHistoricalToCurrentMatches": [
+    {
+      "historicalId": "MAR-019",
+      "historicalQuestion": "Do Catholics worship Mary?",
+      "currentSourceId": "APOL-034",
+      "currentCollection": "Canonical Apologetics",
+      "currentOwner": "APOL-034",
+      "currentTitle": "Do Catholics worship Mary?",
+      "equivalence": "NORMALIZED_TITLE_ONLY_DOES_NOT_VERIFY_ORIGINAL_CHAT_OR_ANSWER"
+    }
+  ],
+  "duplicateHistoricalTitles": [
+    {
+      "normalizedTitle": "what authority does scripture have",
+      "historicalIds": [
+        "ANG-006",
+        "BAP-EV-020"
+      ],
+      "bankIds": [
+        "ANG",
+        "BAP-EV"
+      ]
+    }
+  ]
+}
