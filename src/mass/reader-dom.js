@@ -11,6 +11,8 @@ import { exactIconBackedRubric } from "./reader-icon-backed-rubrics.js";
 import { approvedFingerRubricArt } from "./reader-approved-finger-art.js";
 import { approvedPriestRubricGestureArt } from "./reader-approved-priest-gesture-art.js";
 import { approvedPriestHeadBowRubricArt } from "./reader-approved-priest-head-bow.js";
+import { actionMeaning } from "./reader-canonical-icons.js";
+import { CUE_SURFACE, resolveCueSurface, sourceActionRubricLabel } from "./reader-cue-visual-policy.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -389,26 +391,21 @@ const SHELL_STYLE = `
 .ao-rail-item[data-major="true"]{width:64px;height:64px;min-height:64px;z-index:8;transform:scale(1.06)}
 @keyframes aoCueIn{0%{opacity:0;transform:scale(.78)}55%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
 .ao-rail-copy{display:none!important}
-.ao-rail-item[data-channel="priest-action"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{display:block!important;max-width:54px;font:700 7px/1.12 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;text-transform:uppercase;color:#c8d0c9;text-align:center;overflow-wrap:anywhere}
-/* An approved cue with unavailable artwork must show a readable meaning,
-   not an empty framed rail tile. This includes priest voice/gesture states
-   as well as actions; do not guess an unapproved substitute pictogram. */
-.ao-reader-shell[data-mode="LIVE"] .ao-rail .ao-rail-item[data-active="true"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{
- display:block!important;max-width:50px;padding:2px;
- font:600 8px/1.16 var(--ao-font-ui,system-ui,sans-serif);
- text-transform:none;letter-spacing:0;color:#e1e5dc;text-align:center;overflow-wrap:anywhere
+/* LIVE rails are graphic surfaces only. Missing artwork never becomes an
+   uppercase miniature rubric inside a blank icon frame. The source-owned
+   instruction remains inline with its original Mass paragraph. */
+.ao-reader-shell[data-mode="LIVE"] .ao-rail .ao-rail-item[data-icon-visible="false"]{
+  display:none!important;
 }
-/* Fallback for the two elevation tiles found blank in the final-icon capture. */
-.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-action"][data-action-text-fallback="true"] .ao-icon-mask{display:none!important}
-.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-action"][data-action-text-fallback="true"] .ao-rail-copy{
- display:block!important;max-width:50px;font:600 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
- color:#e6dfcd;text-transform:uppercase;letter-spacing:0;text-align:center;overflow-wrap:anywhere
+.ao-reader-shell[data-mode="LIVE"] .ao-rail .ao-rail-item .ao-rail-copy{
+  display:none!important;
 }
-/* Consecration voice-state cue stays legible if its final artwork paints blank. */
-.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-voice"][data-voice-text-fallback="true"] .ao-icon-mask{display:none!important}
-.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-voice"][data-voice-text-fallback="true"] .ao-rail-copy{
- display:block!important;max-width:50px;font:600 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
- color:#d7ddcf;letter-spacing:0;text-align:center;overflow-wrap:anywhere
+.ao-reader-shell[data-mode="LIVE"] .ao-iconless-source-rubric{
+  display:block;max-width:66ch;margin:5px 0 3px;padding:3px 0 3px 9px;
+  border-left:1px solid color-mix(in srgb,var(--ao-mass-accent) 46%,transparent);
+  font:italic 400 clamp(11px,1.04vw,13px)/1.38 var(--ao-missal-face,Georgia,serif);
+  color:color-mix(in srgb,var(--ao-text-primary,#e8e2d5) 76%,transparent);
+  text-align:left;
 }
 /* No new artwork/clock: one occasional Solemn minister *rubric*, not a
    claimed observation or a priest-action clone. Only certified existing
@@ -2107,14 +2104,83 @@ function syncRailVisibility(root){
   // transient faithful cues count when deciding if the left rail exists.
   const contextActive=live&&shell?.dataset?.objectiveContext==="true";
   const hasVisibleCue=rail=>Boolean(rail?.querySelector?.(
-    contextActive?'.ao-rail-item[data-active="true"]':
-      '.ao-rail-item[data-active="true"]:not([data-channel="posture"])'
+    contextActive
+      ?'.ao-rail-item[data-active="true"][data-icon-visible="true"]'
+      :'.ao-rail-item[data-active="true"][data-icon-visible="true"]:not([data-channel="posture"])'
   ));
   const leftActive=live&&hasVisibleCue(left),rightActive=live&&hasVisibleCue(right);
   if(left)left.dataset.visible=String(leftActive);
   if(right)right.dataset.visible=String(rightActive);
   stage.dataset.leftRail=String(leftActive);
   stage.dataset.rightRail=String(rightActive);
+}
+
+// A rail tile is allowed to exist visually only when the exact approved art
+// resolves. Text belongs in source rubrics, not in a 52px icon-shaped box.
+function syncRailIconSurfaces(root){
+  for(const item of root.querySelectorAll?.(".ao-rail .ao-rail-item")??[]){
+    const icon=item.querySelector?.(".ao-icon-mask");
+    const hasArt=Boolean(item.dataset.active==="true" && icon && !icon.hidden &&
+      icon.__aoIconIdentity);
+    // The two cinematic elevations historically forced a text-only tile
+    // because their donor graphics sometimes painted blank. Preserve source
+    // text inline instead of allowing the empty tile back.
+    const forcedText=item.dataset.channel==="priest-action" &&
+      item.dataset.actionTextFallback==="true";
+    const blankVoice=item.dataset.channel==="priest-voice" &&
+      item.dataset.voiceTextFallback==="true";
+    const visual=hasArt&&!forcedText&&!blankVoice;
+    item.dataset.iconVisible=String(visual);
+    // Historical objective-context CSS has high-specificity display:grid
+    // rules. The explicit tile-level visibility contract must win even there.
+    if(!visual){
+      item.style?.setProperty?.("display","none","important");
+      item.removeAttribute("role");
+      item.setAttribute("aria-hidden","true");
+    }else{
+      item.style?.removeProperty?.("display");
+    }
+  }
+  syncRailVisibility(root);
+}
+function syncIconlessSourceRubric(root,current,mode,iconResolver,form,language){
+  for(const old of root.querySelectorAll?.("[data-ao-iconless-rubric]")??[])
+    old.remove();
+  if(mode!=="LIVE")return;
+  const cueId=current?.nativeCueId??null;
+  if(!/^AO\.SM\.C\d{4}$/.test(String(cueId??"")))return;
+  const action=current?.priestAction;
+  const sourceCueId=action?.cueId??null;
+  const meaning=actionMeaning(action,{cueId,form});
+  const iconKey=current?.priestActionIconKey??null;
+  const tile=root.querySelector?.('.ao-rail-right [data-channel="priest-action"]');
+  const iconUrl=tile?.dataset.iconVisible==="true" &&
+    typeof iconResolver==="function" && iconKey ?iconResolver(iconKey):null;
+  const rows=[...(root.querySelectorAll?.(".ao-reader-paragraph")??[])];
+  const owner=rows.find(node=>node.dataset.cueId===cueId) ??
+    rows.find(node=>String(node.dataset.sourceCueIds??"").split(/\s+/).includes(cueId));
+  if(!owner)return;
+  const printedRubric=owner.dataset.kind==="RUBRIC" ||
+    /^\s*\[/.test(owner.querySelector?.(".ao-line-primary")?.textContent??"");
+  const hasSourceRubric=Boolean(owner.querySelector?.(
+    '.ao-live-inline-rubrics [data-source-cue-id="'+cueId+'"]'
+  ));
+  const decision=resolveCueSurface({mode,cueId,sourceCueId,
+    actionMeaning:meaning,iconKey,iconUrl,hasSourceRubric,printedRubric});
+  if(decision!==CUE_SURFACE.INLINE_RUBRIC)return;
+  const label=sourceActionRubricLabel(action?.label??action?.action??action?.value,
+    language);
+  if(!label)return;
+  const doc=owner.ownerDocument??globalThis.document;
+  const note=doc.createElement("span");
+  note.className="ao-iconless-source-rubric";
+  note.dataset.aoIconlessRubric="true";
+  note.dataset.sourceCueId=cueId;
+  note.dataset.sourceMeaning=meaning;
+  note.dataset.presentation="INLINE_RUBRIC";
+  note.dataset.observedNow="false";
+  note.textContent=label;
+  owner.append(note);
 }
 
 // The v1.80 bank uses SVG transport wrappers for 57 PNG alpha payloads,
@@ -3442,7 +3508,6 @@ export function createReaderDomAdapter({
     syncScholaChrome();
     syncScholaContent();
     syncProgress();
-    syncRailVisibility(root);
 
     applyIcon(root,"priest-position-rail",showContext
       ? current.priestPositionIconKey:null,iconResolver);
@@ -3468,15 +3533,17 @@ export function createReaderDomAdapter({
     applyIcon(root,"bell",visibleBell ? (current.bellIconKey??"bells") : null,iconResolver);
     applyIcon(root,"schola-shared",current.scholaShared ? current.scholaIconKey : null,iconResolver);
     applyIcon(root,"schola",current.scholaIconKey,iconResolver);
+    syncRailIconSurfaces(root);
 
     const actionBadge=root.querySelector('[data-role="priest-action-badge"]');
     const actionRail=root.querySelector('[data-channel="priest-action"]');
     const majorCue=new Set(["AO.SM.C0161","AO.SM.C0174","AO.SM.C0181","AO.SM.C0225","AO.SM.C0265","AO.SM.C0273"]);
     const activeCue=current.cinematic?.cueId ?? current.bell?.cueId ?? current.priestAction?.cueId ?? null;
     const missalAction=mode==="MISSAL"?current.missalRubric?.priestAction:null;
+    const badgeKey=missalAction?.iconKey??current.priestActionIconKey;
     const actionActive=Boolean(
-      textValue(missalAction??current.priestAction) &&
-      (missalAction?.iconKey??current.priestActionIconKey)
+      textValue(missalAction??current.priestAction) && badgeKey &&
+      typeof iconResolver==="function"&&iconResolver(badgeKey)
     );
     if(actionBadge){actionBadge.dataset.active=String(actionActive);actionBadge.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));}
     if(actionRail)actionRail.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));
@@ -3925,6 +3992,9 @@ export function createReaderDomAdapter({
     }
     syncReaderRitualHighlights(root,current.gesture);
     syncExactIconBackedRubrics(root,current,mode,iconResolver);
+    syncIconlessSourceRubric(root,current,mode,iconResolver,
+      prepared?.session?.resolvedMass?.form??null,
+      prepared?.readerPreferences?.language??"en");
     syncFaithfulParagraphIcons();
     return current;
   }

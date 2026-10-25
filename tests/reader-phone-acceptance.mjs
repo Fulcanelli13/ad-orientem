@@ -220,10 +220,10 @@ try{
       text:copy?.textContent??"",display:copy?getComputedStyle(copy).display:null};
   });
   if(voiceEvidence.active==="true"){
-    assert.equal(voiceEvidence.voiceFallback,"true",
-      "Consecration voice tile must not rely on the unpainted icon");
-    assert.ok(voiceEvidence.display!=="none"&&voiceEvidence.text.trim()!=="—",
-      "Consecration words lost the priest's audible/silent source cue");
+    assert.ok(voiceEvidence.text.trim()!=="—",
+      "Source priest voice meaning was lost from the semantic registry");
+    assert.equal(voiceEvidence.display,"none",
+      "Priest voice must not become miniature words inside an icon rail box");
   }
   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.bell??null),null,
     "Host elevation bell fires on the words cue before the action cue");
@@ -302,21 +302,21 @@ try{
     "The faithful posture must remain visible in the left rail");
   assert.equal(objectiveVisual.postureDisplay,"grid",
     "Context ribbon hid the actual faithful posture tile via legacy LIVE CSS");
-  assert.ok(!objectiveVisual.postureIconHidden ||
-    (objectiveVisual.postureCopyDisplay!=="none"&&
-     /kneel/i.test(objectiveVisual.postureCopy)&&
-     !/\[object Object\]/.test(objectiveVisual.postureCopy)),
-    "Faithful posture must show a reviewed icon or a legible source-state label");
+  assert.ok(!objectiveVisual.postureIconHidden,
+    "Visible LIVE posture tile must contain real reviewed artwork, not a text fallback");
+  assert.equal(objectiveVisual.postureCopyDisplay,"none",
+    "Posture text may not be miniaturized inside the icon rail");
   assert.equal(objectiveVisual.rightVisible,"true",
     "Priest actions and position must remain on the right rail");
   assert.equal(objectiveVisual.positionActive,"true",
     "Context ribbon displaced the priest's active station");
   assert.equal(objectiveVisual.sourceActionFallback,"true",
-    "Blank elevation priest-action pictogram must use its canonical label");
-  assert.ok(objectiveVisual.sourceActionTextDisplay!=="none" &&
-    objectiveVisual.sourceActionText.trim() &&
+    "The legacy objective context still identifies the unpainted elevation");
+  assert.equal(objectiveVisual.sourceActionTextDisplay,"none",
+    "An icon-shaped tile must never show tiny fallback rubric text");
+  assert.ok(objectiveVisual.sourceActionText.trim() &&
     !/^—$/.test(objectiveVisual.sourceActionText.trim()),
-    "Elevation right rail still contains an empty priest-action tile");
+    "Keep the original priest action text in source state, not in a rail box");
   assert.ok(objectiveVisual.ribbonHeight<=90,
     "Explanatory ribbon expanded excessively on a narrow phone");
   assert.ok(objectiveVisual.viewportOverflow<=1,
