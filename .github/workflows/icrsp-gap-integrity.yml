@@ -1,4 +1,5 @@
 name: ICRSP source gap register integrity
+# Includes B11 51-article source-subject, historical polemic and publication release guards.
 on:
   push:
     branches: [governance/icrsp-source-inventory-1665]
