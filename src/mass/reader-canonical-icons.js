@@ -5,6 +5,7 @@
 // Exact tables only: no keyword or filename inference. A meaning without
 // approved art resolves to null and the source text stays visible.
 import { CANONICAL_ICON_SET as SET, CANONICAL_ICON_ASSETS } from "./reader-canonical-icon-set.js";
+import { GLORIA_CREDO_FAITHFUL_GESTURES } from "./faithful-gesture-cues.js";
 
 export { CANONICAL_ICON_ASSETS };
 export const CANONICAL_KEY_PREFIX = "canon:";
@@ -19,6 +20,14 @@ const normVoice = v => String(v ?? "").trim().toUpperCase().replace(/_/g, " ").r
 const VOICE_CLASS = new Map(Object.entries(SET.voiceMap).flatMap(([cls, list]) => list.map(v => [normVoice(v), cls])));
 
 const token = v => String(v ?? "").trim().toUpperCase().replace(/[ -]+/g, "_");
+const faithfulMeaningForType = kind => {
+  const type = token(kind);
+  // An exceptional sung Incarnatus or exact saved local instruction can
+  // legitimately be KNEEL rather than GENUFLECT. The faithful lane has an
+  // approved kneeling *posture* asset, not a separate kneel-gesture asset.
+  if (type === "KNEEL") return "faithful.posture.kneel";
+  return SET.faithfulGestureMap.byType[type] ?? null;
+};
 const isMeaning = v => typeof v === "string" && /^(priest|minister|faithful|response|schola|bell|marker|rite)\./.test(v);
 
 /** Icon key for a meaning, or null when the meaning has no approved art. */
@@ -39,15 +48,44 @@ export function postureMeaning(posture) {
   return SET.postureMap[token(posture?.value ?? posture?.label)] ?? null;
 }
 
+// A source cue family, not a clock. This projection applies only to the
+// two fixed Ordinary prayer spans; no substring scans or invented cues.
+function isGloriaCredoCue(id) {
+  const hit = String(id ?? "").match(/^AO\.SM\.C(\d{4})$/);
+  if (!hit) return false;
+  const n = Number(hit[1]);
+  return n >= 53 && n <= 69 || n >= 89 && n <= 105;
+}
+
 export function gestureMeaning(gesture, state = {}) {
   if (!gesture) return null;
   const cue = cueOf(gesture, state);
+  // The canonical 65-card LIVE reader follows exact Latin phrase IDs.
+  // Its older donor/crosswalk repeats Gloria/Credo "instant" bows on
+  // neighbouring Schola paragraphs (e.g. C0055, C0057, C0060).
+  // Only the independent, profile-aware faithful cue projector owns the
+  // standard action; an exact-cue *saved local* choice remains valid.
+  // Do not confuse these faithful cues with the priest's private recital.
+  if (state.curated65FinalArt === true && isGloriaCredoCue(state.cueId)) {
+    const focused = String(state.cueId);
+    if (cue !== focused) return null;
+    if (gesture.owner === "LOCAL_FAITHFUL_CUSTOM") {
+      if (gesture.canonicalCueId !== focused) return null;
+      return faithfulMeaningForType(gesture.type ?? gesture.value);
+    }
+    const spec = GLORIA_CREDO_FAITHFUL_GESTURES[focused];
+    if (!spec || !["R17_PROFILE_CUE","R17_RUBRICAL_CUE"].includes(gesture.owner) ||
+        gesture.canonicalCueId !== focused) return null;
+    const expected = spec.action === "INCARNATUS_RESOLVER"
+      ? ["GENUFLECT","KNEEL"] : [spec.action];
+    if (!expected.includes(token(gesture.type ?? gesture.value))) return null;
+  }
   if (SET.faithfulGestureMap.byCue[cue]) return SET.faithfulGestureMap.byCue[cue];
   if (gesture.owner === "GESTURE_MATRIX_SOT") {
     // A matrix row with no icon key is held back on purpose (local custom varies).
     return gesture.iconKey ? SET.faithfulGestureMap.byMatrixIconKey[gesture.iconKey] ?? null : null;
   }
-  return SET.faithfulGestureMap.byType[token(gesture.type ?? gesture.value)] ?? null;
+  return faithfulMeaningForType(gesture.type ?? gesture.value);
 }
 
 export function positionMeaning(position) {
