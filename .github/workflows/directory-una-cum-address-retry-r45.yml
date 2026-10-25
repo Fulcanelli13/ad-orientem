@@ -1,0 +1,27 @@
+name: Directory R45 Alternate Address Recovery
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: directory-r45-alternate-geocoder-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  geocode:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Single-threaded alternative named venue searches
+        run: node tools/directory/retry-una-cum-address-geocodes-r45.mjs
+      - name: Upload evidence with unresolved holds
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r45-alternate-source-venue-coordinate-evidence
+          path: ${{ runner.temp }}/r45-una-cum-geocoding/
+          retention-days: 30
+          if-no-files-found: warn

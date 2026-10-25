@@ -1,0 +1,32 @@
+name: R52 Rome-Recognised Named Worship Venue Recovery
+on:
+  pull_request:
+    paths:
+      - "tools/directory/recover-named-worship-site-coordinates-r52.mjs"
+      - "data/directory/research/staging/map-first-r37/r52-priority-named-worship-addresses.json"
+      - ".github/workflows/directory-r52-worship-site-geocodes.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: r52-rome-worship-geocoding
+  cancel-in-progress: false
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 11
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Query source-named churches at Nominatim policy-compliant rate
+        run: node tools/directory/recover-named-worship-site-coordinates-r52.mjs
+      - name: Retain originals and unresolved review cases
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r52-source-named-worship-site-coordinates
+          path: ${{ runner.temp }}/r52-priority-worship-geocodes/
+          retention-days: 30
+          if-no-files-found: warn

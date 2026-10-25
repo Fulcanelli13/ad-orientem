@@ -1,0 +1,28 @@
+name: Directory Italian Pins R46
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Extract original map markers
+        run: node tools/directory/recover-italy-markers-r46.mjs ${{ matrix.shard }}
+      - name: Upload source evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r46-italian-source-pins-${{ matrix.shard }}
+          path: ${{ runner.temp }}/r46-italy-${{ matrix.shard }}/
+          retention-days: 30
+          if-no-files-found: warn

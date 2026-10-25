@@ -146,6 +146,55 @@ export function matchOfficialMapPlaces(snapshots,items){
   return {eligible_source_places:source.length,matched:safe,holds,unmatched,
     rejected_non_mass_or_non_sspx:items.length-source.length};
 }
+
+/**
+ * Stage ALL official-map site relationships for the map-first directory.
+ * Coordinates are upstream centroids/markers of unverified precision, never certified church entrances.
+ * A published pin still requires physical-site reconciliation and attribution review.
+ */
+export function stageAllOfficialMapPinEvidence(items){
+  const features=[],holds=[],seen=new Set();
+  const massKinds=new Set(["chapel","mission"]);
+  const nonWorshipKinds=new Set(["school","residence","retirement_home","general_house","district_hq","seminary","noviciate","retreat_house"]);
+  for(const p of items){
+    const id=asText(p?.crmId),slug=asText(p?.slug);
+    if(!id||!slug||seen.has(id)){holds.push({id,reason:"MISSING_OR_REPEATED_CRM_ID"});continue;}
+    seen.add(id);
+    const lat=p.lat===null||p.lat===undefined?NaN:Number(p.lat);
+    const lng=p.lng===null||p.lng===undefined?NaN:Number(p.lng);
+    if(!Number.isFinite(lat)||!Number.isFinite(lng)||Math.abs(lat)>90||Math.abs(lng)>180||(lat===0&&lng===0)){
+      holds.push({id,reason:"NO_VALID_COORDINATES"});continue;
+    }
+    const kinds=[p.kind,...(Array.isArray(p.alsoKinds)?p.alsoKinds:[])].filter(Boolean);
+    const name=asText(p.name),country=asText(p.countryCode).toUpperCase();
+    if(!name||!/^[-A-Z]{2,3}$/.test(country)){
+      holds.push({id,reason:"NO_NAME_OR_COUNTRY"});continue;
+    }
+    const relationship=asText(p.relationship)||"unknown";
+    const community=asText(p.community);
+    const hasMassKind=kinds.some(k=>massKinds.has(k));
+    const hasMassFlag=p.sundayMass===true||p.weekdayMass===true;
+    // Mixed facilities can offer Mass, but remain in staging until publication status is verified.
+    const mixedNonWorship=kinds.some(k=>nonWorshipKinds.has(k));
+    const candidate=hasMassKind||hasMassFlag&&["priory","chaplaincy","monastery","convent"].includes(p.kind);
+    const gate=!candidate?"HOLD_NON_MASS_FACILITY":mixedNonWorship?"REVIEW_MIXED_FACILITY":"PROVISIONAL_SITE_CANDIDATE";
+    const link=new URL(p.url||"/en/places/"+slug,BASE).href;
+    features.push({type:"Feature",geometry:{type:"Point",coordinates:[lng,lat]},
+      properties:{source_id:"SSPXMAP:"+id,crm_id:id,slug,name,country_code:country,
+        city:asText(p.city),region:asText(p.region),kind:asText(p.kind),also_kinds:kinds.filter(k=>k!==p.kind),
+        relationship,community:community||null,affiliation_label:relationship==="fsspx"?"SSPX":community||"Other community — unclassified",
+        source_url:link,source_family:"SSPX_OFFICIAL_WORLD_MAP",geolocation_precision:"SOURCE_MARKER_UNASSESSED",
+        attribution:"Official SSPX map; upstream relationships preserved",eligibility:gate,
+        note:"No assertion about una cum, public access or exact building entrance"}});
+  }
+  return {type:"FeatureCollection",schema:"AO_SSPX_ALL_RELATIONSHIPS_STAGING_V1",
+    metadata:{acquired:new Date().toISOString(),source:API,coordinates:"unverified provider markers",
+      site_id_is_upstream_not_canonical:true,no_schedule_times:true,
+      eligibility_counts:Object.fromEntries(["PROVISIONAL_SITE_CANDIDATE","REVIEW_MIXED_FACILITY","HOLD_NON_MASS_FACILITY"].map(g=>[g,features.filter(f=>f.properties.eligibility===g).length])),
+      records_without_valid_coordinates:holds.length},
+    features,holds};
+}
+
 export async function runOfficialGeoHarvest({root=ROOT,out=null,fetchImpl=fetch}={}){
   const feed=await acquireOfficialMap({fetchImpl});
   const dir=path.join(root,"data/directory/generated/v19");
@@ -176,6 +225,12 @@ export async function runOfficialGeoHarvest({root=ROOT,out=null,fetchImpl=fetch}
       JSON.stringify({schema:"AO_SSPX_MAP_GEO_CANDIDATES_V1",source_url:API,records:result.matched},null,2)+"\n");
     await fs.writeFile(path.join(out,"official-sspx-source-geo-holds.v1.json"),
       JSON.stringify({schema:"AO_SSPX_MAP_GEO_HOLDS_V1",records:result.holds},null,2)+"\n");
+    const allPlaces=stageAllOfficialMapPinEvidence(feed.items);
+    await fs.writeFile(path.join(out,"official-sspx-all-relationship-places.geojson"),JSON.stringify(allPlaces,null,2)+"\n");
+    await fs.writeFile(path.join(out,"official-sspx-all-relationship-report.v1.json"),JSON.stringify({source_total:feed.total,...allPlaces.metadata,staging_features:allPlaces.features.length},null,2)+"\n");
+    const existingGeo=path.join(root,"data/directory/research/staging/map-first-r37/provider-pins-merged.geojson");
+    try{await fs.copyFile(existingGeo,path.join(out,"prior-github-map-layer.geojson"));}
+    catch(error){if(error.code!=="ENOENT")throw error;}
   }
   return {report,...result};
 }
