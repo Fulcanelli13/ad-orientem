@@ -30,7 +30,7 @@ export const CUSTOMS_YEAR_LIBRARY_SECTIONS=Object.freeze([
     "en": "Candlemas, Lent & Holy Week",
     "fr": "Chandeleur, Carême et Semaine sainte",
     "ids": [
-      "DOM-011","DOM-014",
+      "DOM-011","CRIB-001",
       "BLSS-001",
       "DOM-013",
       "HTHU-001",
