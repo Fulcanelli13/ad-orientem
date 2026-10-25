@@ -81,7 +81,10 @@ for(const [cueId,action,expected] of [
  assert.equal(icon(cueId,{priestAction:{cueId,label:"UNRELATED ACTION"}}).priestActionIconKey,null,
   "A generic source cue cannot substitute an unrelated action image: "+cueId);
 }
-assert.equal(icon("AO.SM.C0055",{gesture:{cueId:"AO.SM.C0055",owner:"GESTURE_MATRIX_SOT",iconKey:"head_bow",label:"Bow head"}}).gestureIconKey,"canon:faithful.gesture.bow_head");
+// Old donor C0055 bow pointed at C0056 Adoramus te: the active
+// 65-card renderer must not trust it as an instantaneous event.
+assert.equal(icon("AO.SM.C0055",{gesture:{cueId:"AO.SM.C0055",owner:"GESTURE_MATRIX_SOT",iconKey:"head_bow",label:"Bow head"}}).gestureIconKey,null,
+ "A legacy bow must not illuminate Et in terra pax before Adoramus te");
 assert.equal(icon("AO.SM.C0072",{priestPosition:{station:"ALTAR_EPISTLE_MISSAL"}}).priestPositionIconKey,"canon:priest.position.epistle_side");
 assert.equal(icon("AO.SM.C0144",{priestPosition:{station:"ALTAR_CENTER",missalLocation:"GOSPEL_SIDE"}}).priestPositionIconKey,"canon:priest.position.centre");
 assert.equal(icon("AO.SM.C0086",{priestPosition:{station:"ALTAR_GOSPEL_MISSAL"}}).priestPositionIconKey,"canon:priest.position.gospel_side");
