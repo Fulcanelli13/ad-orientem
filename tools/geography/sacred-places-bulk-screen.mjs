@@ -58,10 +58,10 @@ export const assess=(row,response)=>{
  const closeExisting=GEO.places.filter(p=>p.address?.country_code===row.country&&p.geo?.lat!=null&&p.geo?.lng!=null).map(p=>({place_id:p.place_id,distance_m:distanceM(row.research_search_center.lat,row.research_search_center.lng,p.geo.lat,p.geo.lng)})).filter(p=>p.distance_m<=1300).sort((a,b)=>a.distance_m-b.distance_m).slice(0,4);
  return {queue_row:row.queue_row,candidate_ids:row.candidate_ids,country:row.country,site_name:row.site_name,identity_source_lead_url:row.source_lead_url,scope_adjudication:row.scope_adjudication||null,status:response.error?"REMOTE_QUERY_FAILED":unique.length?"OSM_CANDIDATE_REVIEW_REQUIRED":"NO_OSM_WORSHIP_FEATURE_IN_RADIUS",remote_error:response.error||null,near_existing_canonical:closeExisting,osm_candidates:unique,publication_authorized:false};
 };
-const urls=[process.env.AO_OVERPASS_ENDPOINT||"https://maps.mail.ru/osm/tools/overpass/api/interpreter","https://overpass.kumi.systems/api/interpreter"];
+const urls=[process.env.AO_OVERPASS_ENDPOINT||"https://overpass-api.de/api/interpreter","https://overpass.kumi.systems/api/interpreter"];
 const delay=ms=>new Promise(ok=>setTimeout(ok,ms));
 async function fetchFrom(url,query){
- const ctrl=new AbortController(),t=setTimeout(()=>ctrl.abort(),55000);
+ const ctrl=new AbortController(),t=setTimeout(()=>ctrl.abort(),22000);
  try{
   const res=await fetch(url,{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded","User-Agent":"AdOrientemSacredPlacesBulkResearch/1.0 (+https://github.com/Fulcanelli13/ad-orientem)"},body:new URLSearchParams({data:query}),signal:ctrl.signal});
   if(!res.ok)throw Error("HTTP "+res.status);
@@ -77,32 +77,32 @@ async function fetchBatch(rows){
   const r=await fetchFrom(url,q);
   if(!r.error)return r;
   errors.push(url+": "+r.error);
-  await delay(850);
+  await delay(350);
  }
  return {elements:[],error:errors.join("; "),endpoint:null};
 }
-export async function screen({network=false,output="data/geography/research/sacred-places-p39-open68-osm-evidence.v1.json"}={}){
- const rows=BASE.open_mapping_68,all=[],errors=[];
+export async function screen({network=false,output=null,shardIndex=null,shardCount=4}={}){
+ if(!Number.isInteger(shardCount)||shardCount<1||shardCount>8||shardIndex!==null&&(!Number.isInteger(shardIndex)||shardIndex<0||shardIndex>=shardCount))throw Error("Invalid shard");
+ const rows=BASE.open_mapping_68.filter((row,i)=>shardIndex===null || i%shardCount===shardIndex),all=[],errors=[];
+ const destName=output||("data/geography/research/sacred-places-p39-open68-osm-evidence"+(shardIndex===null?"":("-shard-"+shardIndex+"-of"+shardCount))+".v1.json");
  const batchSize=5;
  if(!network) return {mode:"dry-run",rows:rows.length,batches:Math.ceil(rows.length/batchSize),global_leads:BASE.global_500.length,existing_canonical:BASE.counts.verified_canonical_links,still_open_acquisition:BASE.counts.still_open_acquisition_rows,overlap_ids:BASE.counts.acquisition_ids_also_in_mapping_queue,sample_query_bytes:makeQuery(rows.slice(0,batchSize)).length,publication_authorized:false};
  for(let i=0;i<rows.length;i+=batchSize){
   const batch=rows.slice(i,i+batchSize);
   let r=await fetchBatch(batch);
   // Failed five-row calls are retried in smaller groups; preserve each outage as an explicit exception.
-  if(r.error && batch.length>1){
-   const attempts=[];
-   for(let n=0;n<batch.length;n+=2){const part=batch.slice(n,n+2);attempts.push({part,response:await fetchBatch(part)});await delay(450);}
-   for(const x of attempts){all.push(...x.part.map(row=>assess(row,x.response)));if(x.response.error)errors.push({rows:x.part.map(v=>v.queue_row),error:x.response.error});}
-  }else{all.push(...batch.map(row=>assess(row,r)));if(r.error)errors.push({rows:batch.map(v=>v.queue_row),error:r.error});}
+  all.push(...batch.map(row=>assess(row,r)));
+  if(r.error)errors.push({rows:batch.map(v=>v.queue_row),error:r.error});
+  // Failed remote queries are explicit retry candidates. Never silently call them "no OSM site".
   console.log("P39_PROGRESS "+JSON.stringify({processed:all.length,total:rows.length,remote_failures:all.filter(x=>x.status==="REMOTE_QUERY_FAILED").length,with_hits:all.filter(x=>x.osm_candidates.length>0).length}));
   await delay(700);
  }
  all.sort((a,b)=>a.queue_row-b.queue_row);
- if(all.length!==68||new Set(all.map(x=>x.queue_row)).size!==68)throw Error("Lost/duplicated rows in remote acquisition");
+ if(all.length!==rows.length||new Set(all.map(x=>x.queue_row)).size!==rows.length)throw Error("Lost/duplicated rows in remote acquisition");
  const count=name=>all.filter(x=>x.status===name).length;
- const doc={schema:"AO_SACRED_PLACES_P39_OSM_DISCOVERY_ALL68_V1",generated_at:new Date().toISOString(),status:"UNVERIFIED_OSM_DISCOVERY_RESULTS_NO_CANONICAL_PUBLICATION",source_reconciliation_manifest:baselinePath,canonical_snapshot:{places:GEO.places.length},source_licence:"© OpenStreetMap contributors, ODbL 1.0",query_radius_m:900,search_centres_are_not_map_publishable:true,summary:{input_rows:all.length,rows_with_osm_hits:count("OSM_CANDIDATE_REVIEW_REQUIRED"),rows_no_hits:count("NO_OSM_WORSHIP_FEATURE_IN_RADIUS"),rows_remote_failed:count("REMOTE_QUERY_FAILED"),new_places_published:0,upstream_global_500_verified_reuses:BASE.counts.verified_canonical_links,upstream_global_500_unresolved:BASE.counts.still_open_acquisition_rows},remote_errors:errors,results:all};
- const dest=resolve(ROOT,output);mkdirSync(resolve(dest,".."),{recursive:true});writeFileSync(dest,JSON.stringify(doc,null,2)+"\n");
- console.log("P39_BULK_RESULT "+JSON.stringify({schema:doc.schema,summary:doc.summary,output}));
+ const doc={schema:"AO_SACRED_PLACES_P39_OSM_DISCOVERY_ALL68_V1",generated_at:new Date().toISOString(),status:"UNVERIFIED_OSM_DISCOVERY_RESULTS_NO_CANONICAL_PUBLICATION",source_reconciliation_manifest:baselinePath,shard:{index:shardIndex,count:shardIndex===null?1:shardCount,input_total_rows:68},canonical_snapshot:{places:GEO.places.length},source_licence:"© OpenStreetMap contributors, ODbL 1.0",query_radius_m:900,search_centres_are_not_map_publishable:true,summary:{input_rows:all.length,rows_with_osm_hits:count("OSM_CANDIDATE_REVIEW_REQUIRED"),rows_no_hits:count("NO_OSM_WORSHIP_FEATURE_IN_RADIUS"),rows_remote_failed:count("REMOTE_QUERY_FAILED"),new_places_published:0,upstream_global_500_verified_reuses:BASE.counts.verified_canonical_links,upstream_global_500_unresolved:BASE.counts.still_open_acquisition_rows},remote_errors:errors,results:all};
+ const dest=resolve(ROOT,destName);mkdirSync(resolve(dest,".."),{recursive:true});writeFileSync(dest,JSON.stringify(doc,null,2)+"\n");
+ console.log("P39_BULK_RESULT "+JSON.stringify({schema:doc.schema,summary:doc.summary,output:destName}));
  for(const row of all)console.log("P39_ROW_JSON "+JSON.stringify(row));
  if(process.env.GITHUB_STEP_SUMMARY)writeFileSync(process.env.GITHUB_STEP_SUMMARY,[
   "# Sacred Places P39 research — read only",
@@ -114,5 +114,9 @@ export async function screen({network=false,output="data/geography/research/sacr
 }
 if(process.argv[1] && resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  const network=process.argv.includes("--network");
- screen({network}).then(x=>{if(!network)console.log(JSON.stringify(x));}).catch(e=>{console.error(e);process.exitCode=1});
+ const shardArg=process.argv.find(a=>a.startsWith("--shard="));
+ const shard=shardArg?.slice(8).match(/^(\d+)\/(\d+)$/);
+ if(shardArg&&!shard)throw Error("Expected --shard=0/4");
+ const args=shard?{shardIndex:Number(shard[1]),shardCount:Number(shard[2])}:{};
+ screen({network,...args}).then(x=>{if(!network)console.log(JSON.stringify(x));}).catch(e=>{console.error(e);process.exitCode=1});
 }
