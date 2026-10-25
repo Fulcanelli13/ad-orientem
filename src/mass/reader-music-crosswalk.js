@@ -47,7 +47,7 @@ export function buildReaderMusicCrosswalk({
       sourceEventIds:unique(matching.flatMap(c=>c.sourceEventIds??c.eventIds??[])),
       resolvedPhraseCount:(track.segments??[]).length,
       sourceMapped:matching.length>0,
-      performanceStatus:"EXPECTED_NOT_OBSERVED",
+      performanceStatus:"INDEXED_NOT_OBSERVED",
       clockOwner:"INDEPENDENT_SCHOLA",
     });
   });
