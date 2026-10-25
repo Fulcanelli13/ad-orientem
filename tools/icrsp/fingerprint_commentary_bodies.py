@@ -15,7 +15,7 @@ from pathlib import Path
 from urllib.robotparser import RobotFileParser
 
 from index_source_metadata import UA, load_html
-from extract_commentary_blocks import folded
+from extract_commentary_blocks import folded, inspect_html
 
 EXCLUDE_TAGS = {"script", "style", "noscript"}
 
@@ -104,7 +104,23 @@ def main():
     if args.delay < 2.5 or not (0 <= args.start < args.end <= 855):
         cli.error("invalid window or delay")
     prior = json.loads(Path(args.inventory).read_text(encoding="utf-8"))
-    rows = {r["indexPosition"]: r for r in prior["records"]}
+    if "records" in prior:
+        rows = {r["indexPosition"]: r for r in prior["records"]}
+    else:
+        # The research branch retains fully inspected source titles for the
+        # 193 Temporal entries. Avoid cross-run artifact authentication.
+        pages = prior["pages"]
+        rows = {
+            i: {
+                "indexPosition": i,
+                "articleId": p["articleId"], "sourceUrl": p["sourceUrl"],
+                "indexSection": p["sections"][0]
+            }
+            for i, p in enumerate(pages) if p["sections"][0] == "temporal"
+            and p["state"] == "METADATA_INSPECTED"
+            and any(h["level"] == "h3" and h["text"] == "Commentaires"
+                    for h in p.get("headings", []))
+        }
     robots = RobotFileParser()
     robots.set_url("https://icrspfrance.fr/robots.txt")
     robots.read()
@@ -124,14 +140,21 @@ def main():
         try:
             html, page_sha = load_html(url)
             blocks = fingerprint(html)
-            if len(blocks) != len(previous["commentaryBlocks"]):
+            live_panels = inspect_html(html, url)["commentaryBlocks"]
+            if len(blocks) != len(live_panels):
+                raise ValueError("BLOCK_COUNT_DIFFERS_BETWEEN_INDEPENDENT_PARSERS")
+            if "commentaryBlocks" in previous and len(blocks) != len(previous["commentaryBlocks"]):
                 raise ValueError("BLOCK_COUNT_CHANGED_FROM_VERIFIED_INVENTORY")
             # Ordinal must be unchanged, but source text hashes may differ when
             # the website legitimately corrects a passage. Preserve page hash.
             for block in blocks:
-                b0 = previous["commentaryBlocks"][block["blockOrdinal"] - 1]
+                b0 = live_panels[block["blockOrdinal"] - 1]
                 if b0["blockOrdinal"] != block["blockOrdinal"]:
                     raise ValueError("SOURCE_BLOCK_ORDINAL_CHANGED")
+                if "commentaryBlocks" in previous:
+                    historic = previous["commentaryBlocks"][block["blockOrdinal"] - 1]
+                    if historic["blockLabel"] != b0["blockLabel"]:
+                        raise ValueError("SOURCE_BLOCK_LABEL_CHANGED_FROM_BASELINE")
                 block["candidateWorkFamily"] = b0.get("workCandidate")
                 block["sourceLabel"] = b0["blockLabel"]
                 block["sourceAnchor"] = b0["sourceAnchor"]
