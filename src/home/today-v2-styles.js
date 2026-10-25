@@ -436,14 +436,14 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
   color:#cbbda8!important;margin-top:2px;
 }
 .homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .dateNavigator .iconButton{
-  width:35px!important;min-height:35px!important;border:none!important;
+  width:44px!important;min-height:44px!important;border:none!important;
   color:#9e957f!important;background:transparent!important;
 }
 .homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoHomeCalendarAccess{
   padding:0 15px 3px!important;margin:0 auto!important;max-width:850px;
 }
 .homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoHomeCalendarAction{
-  color:#b7aa8e!important;min-height:40px!important;
+  color:#b7aa8e!important;min-height:44px!important;
   font:400 14px/1.3 var(--ao-font-ui,Georgia,serif)!important;
 }
 .homeScreen.aoTodayV2 .aoTodayEditorialEdition>.aoTodayV2Identity{
@@ -475,7 +475,7 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
   vertical-align:baseline!important;margin:0 10px 0 0!important;
 }
 .homeScreen.aoTodayV2 .aoTodayV2Identity .aoTodayV2SeasonMicro{
-  padding:0!important;align-self:flex-start!important;min-height:34px!important;
+  padding:7px 3px!important;align-self:flex-start!important;min-height:44px!important;
   color:#bda77d!important;font:400 15px/1.4 var(--ao-font-ui,Georgia,serif)!important;
 }
 .homeScreen.aoTodayV2 .aoTodayEditorialEdition>.aoTodayV2Art{
