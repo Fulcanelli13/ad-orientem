@@ -623,4 +623,73 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .homeScreen.aoTodayV2 .aoTodayV2CalendarGlance{
  margin-bottom:22px!important;
 }
+
+/* First-fold liturgical action priority: premium is useful before it is decorative. */
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition{
+  gap:0!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition>.aoTodayV2Identity{
+  order:0!important;padding-bottom:13px!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition>.aoTodayV2HeroActions{
+  order:1!important;padding:5px 0 19px!important;
+  max-width:660px!important;margin-inline:auto!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition>.aoTodayV2Art{
+  order:2!important;margin-top:4px!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition .aoTodayV2Mass .sectionLabel{
+  margin-bottom:6px!important;letter-spacing:.14em!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition .aoTodayV2PrimaryMass{
+  display:flex!important;align-items:center;justify-content:center;
+  min-height:58px!important;border-radius:4px!important;
+  box-shadow:none!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition .aoTodayV2PrimaryMass b{
+  font:500 20px/1.24 var(--ao-font-display,Georgia,serif)!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition .aoTodayV2SecondaryMass{
+  display:flex!important;justify-content:center!important;gap:20px!important;
+  margin-top:6px!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition .aoTodayV2SecondaryMass button{
+  flex:0 1 auto!important;min-height:42px!important;
+  padding:5px 12px!important;border:0!important;border-radius:0!important;
+  background:transparent!important;color:#c9b998!important;
+  font:400 16px/1.25 var(--ao-font-ui,Georgia,serif)!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition.aoTodayV2ArtMissing>.aoTodayV2Identity{
+  padding-bottom:13px!important;border-bottom:0!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition.aoTodayV2ArtMissing>.aoTodayV2HeroActions{
+  padding-top:5px!important;padding-bottom:23px!important;
+  border-bottom:1px solid rgba(205,189,154,.20)!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoHomeCalendarAccess{
+  display:flex!important;justify-content:center!important;
+  max-width:850px;margin:0 auto 3px!important;
+  padding:5px 16px 17px!important;background:#0B0F13!important;
+}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoHomeCalendarAction{
+  min-height:42px!important;font:400 15px/1.35 var(--ao-font-ui,Georgia,serif)!important;
+  color:#baa984!important;border:0!important;background:transparent!important;
+}
+@media(max-width:699px){
+  .homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .dateNavigator{
+    padding-top:8px!important;
+  }
+  .homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition>.aoTodayV2Identity{
+    padding-top:9px!important;padding-bottom:10px!important;
+  }
+  .homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayV2Identity .aoEditorialTitle{
+    font-size:clamp(34px,8.5vw,42px)!important;
+  }
+  .homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition>.aoTodayV2HeroActions{
+    padding-top:4px!important;padding-bottom:15px!important;
+  }
+  .homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayEditorialEdition .aoTodayV2ArtSource img{
+    max-height:42vh!important;
+  }
+}
 `;
