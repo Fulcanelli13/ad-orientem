@@ -6,6 +6,7 @@ import {availableOptionalMassRites,composeOptionalMassRites} from "./full-mass-o
 import {specialMassPresentation,renderSpecialMassContext} from "./full-mass-special-presentation.js";
 import {massCalendarPreflightContext,fillMassCalendarPreflight} from "./calendar-preflight-context.js";
 import {normalizeFolioExperience,experiencePrayerRoute,experiencePrayerDepth,mayOpenFolioPrayer} from "./full-mass-folio-options.js";
+import {readMassCustomaryPreferences,updateMassCustomaryPreferences} from "./reader-customary-preferences.js";
 
 const LABELS=Object.freeze({
   LOW:["Low Mass","Messe basse"],
@@ -74,6 +75,8 @@ export function mountFullMassPreflight({
   let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
   let folioStep="overview",experience={before:"none",after:"none",language:null},prayerOpening=false;
   const donorSuppressed=new Map();
+  const customaryStorage=()=>{try{return doc.defaultView?.localStorage??null;}catch{return null;}};
+  const communionConfiteor=()=>readMassCustomaryPreferences({},customaryStorage()).secondConfiteor===true;
   const suppressDonorDuplicates=()=>{
     const panel=root?.parentElement;
     if(!panel?.classList?.contains("aoMassFlowBody"))return;
@@ -254,7 +257,10 @@ export function mountFullMassPreflight({
         '<section data-folio-panel="ceremony" class="aoMassFolioPanel" hidden>'+
         '<h3 data-folio-ceremony-heading></h3><div data-folio-ceremony-controls></div></section>'+
         '<section data-folio-panel="reader" class="aoMassFolioPanel" hidden>'+
-        '<h3 data-folio-reader-heading></h3><div data-folio-reader-controls></div></section>'+
+        '<h3 data-folio-reader-heading></h3><div data-folio-reader-controls></div>'+
+         '<label class="aoMassFolioOption"><input type="checkbox" data-folio-communion-confiteor> '+
+         '<span data-folio-communion-confiteor-label></span></label>'+
+         '<small data-folio-communion-confiteor-note></small></section>'+
         '<section class="aoMassFolioExperience"><h3 data-folio-experience-heading></h3>'+
         '<div class="aoMassFolioOption"><label data-folio-language-heading for="ao-folio-language"></label>'+
         '<select id="ao-folio-language" data-folio-language><option value="en">English</option><option value="fr">Français</option></select></div>'+
@@ -387,6 +393,13 @@ export function mountFullMassPreflight({
           riteOverrides={...riteOverrides,[id]:el.checked};
           refresh();return;
         }
+        if(el?.matches?.("[data-folio-communion-confiteor]")){
+          const current=readMassCustomaryPreferences({},customaryStorage());
+          updateMassCustomaryPreferences(current,{
+            kind:"secondConfiteor",value:String(el.checked)
+          },customaryStorage());
+          refresh();return;
+        }
         if(el?.matches?.("[data-full-mass-reader-mode]")&&["MISSAL","SIMPLE","LIVE"].includes(el.value)){
           selectedMode=el.value;explicitMode=true;refresh();return;
         }
@@ -424,14 +437,18 @@ export function mountFullMassPreflight({
     word("[data-folio-overview-heading]","Ready to begin","Prêt à commencer");
     word("[data-folio-overview-hint]","Your usual selections are ready. Change only what is different today.",
       "Vos choix habituels sont prêts. Ne modifiez que ce qui change aujourd’hui.");
-    word("[data-folio-overview-selections]",summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode,
-      summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode);
+    word("[data-folio-overview-selections]",summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode+
+      (communionConfiteor()?" · Communion Confiteor":""),
+      summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode+
+      (communionConfiteor()?" · Confiteor avant communion":""));
     word("[data-folio-guide-start]","Review choices","Revoir les choix");
     word("[data-folio-celebration-heading]","Which Mass are you attending ?","Quelle messe allez-vous suivre ?");
     word("[data-folio-celebration-intro]","Today's Mass is already selected. Change it only when a different Mass is actually celebrated.",
       "La messe du jour est déjà sélectionnée. Changez-la seulement si une autre messe est célébrée.");
     word("[data-folio-ceremony-heading]","How is the Mass celebrated?","Comment la messe est-elle célébrée ?");
     word("[data-folio-reader-heading]","How would you like to follow?","Comment souhaitez-vous suivre ?");
+    word("[data-folio-communion-confiteor-label]","Include the Confiteor before the faithful receive Communion","Inclure le Confiteor avant la communion des fidèles");
+    word("[data-folio-communion-confiteor-note]","Local custom (including at some ICKSP Masses): Confiteor, Misereatur and Indulgentiam before Ecce Agnus Dei. Not prescribed in the ordinary 1962 rubrics.","Coutume locale (notamment à certaines messes de l’ICRSP) : Confiteor, Misereatur et Indulgentiam avant Ecce Agnus Dei. Non prescrit dans les rubriques ordinaires de 1962.");
     word("[data-folio-experience-heading]","Your Mass experience","Votre expérience de la messe");
     word("[data-folio-language-heading]","Language","Langue");
     word("[data-folio-before-heading]","Before Mass","Avant la messe");
@@ -448,6 +465,8 @@ export function mountFullMassPreflight({
     folio.querySelector("[data-folio-language]").value=summary.readerLanguage;
     for(const item of folio.querySelectorAll("[data-folio-before]"))item.checked=item.value===summary.beforeMass;
     for(const item of folio.querySelectorAll("[data-folio-after]"))item.checked=item.value===summary.afterMass;
+    const confiteorSwitch=folio.querySelector("[data-folio-communion-confiteor]");
+    if(confiteorSwitch)confiteorSwitch.checked=communionConfiteor();
     folio.querySelector("[data-folio-open-prayer]").hidden=!mayOpenFolioPrayer("before",selectedExperience());
     for(const section of folio.querySelectorAll("[data-folio-panel]"))section.hidden=section.dataset.folioPanel!==folioStep;
     for(const nav of folio.querySelectorAll("[data-folio-goto]")){
