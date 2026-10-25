@@ -285,9 +285,15 @@ export function createNativeScholaController(args={}){
       if(isSanctus()&&index<2)index=2;
       return state();
     }
-    // A layout refresh or unchanged cue focus must not rewind a Schola
-    // segment manually advanced within its independent track.
-    if(id===lastSyncedCueId && activeTrackId===hit.trackId)return state();
+    // The text focus is the reader's clock, not the choir's. Once the
+    // Schola is already in this track, a different paragraph gaining focus
+    // cannot advance OR rewind the independent musical performance.
+    // Only an explicit choir control or an independently observed musical
+    // event may change the phrase index.
+    if(activeTrackId===hit.trackId){
+      lastSyncedCueId=id;
+      return state();
+    }
     activeTrackId=hit.trackId;index=hit.index;complete=false;
     lastSyncedCueId=id;
     return state();
