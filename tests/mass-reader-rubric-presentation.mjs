@@ -57,6 +57,46 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   assert.ok(next.some(x=>x.id==="AO.RUB.C0262.01"),"Existing altar kiss must remain present");
  }
 }
+// Normative Ritus IV.3 words; strictly MISSAL, never the choir's
+// instantaneous priest state in LIVE/SIMPLE. C0054 may share a paragraph
+// with C0053 but must retain the original exact source cue ID.
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+ for(const language of ["en","fr"]){
+  for(const [cue,expected] of [
+    ["AO.SM.C0054","MR62.ADD.C0054.01"],
+    ["AO.SM.C0056","MR62.ADD.C0056.01"],
+  ]){
+   const params={form,language,presentationMode:"MISSAL"};
+   const paragraph={kind:"TEXT",sourceCueIds:[cue]};
+   const found=publishedMissalRubricsForParagraph(paragraph,registry,params);
+   assert.equal(found.length,1,form+"/"+language+"/"+cue+" missing book-only direction");
+   const entry=found[0];
+   assert.equal(entry.id,expected);
+   assert.equal(entry.sourceCueId,cue);
+   assert.equal(entry.actor,"PRIEST");
+   assert.equal(entry.sourceId,"MR62_RITUS");
+   assert.equal(entry.owner,"MR62_1962_MISSAL_ONLY_GLORIA_BOWS");
+   assert.equal(entry.review,"SOURCE_CERTIFIED_1962_MISSAL_ONLY_NOT_LIVE_CLOCK");
+   assert.equal(entry.observedNow,false);
+   assert.match(entry.displayText,language==="fr"?/prêtre.*(Croix|tête)/:/priest.*(Cross|head)/);
+   for(const mode of [undefined,"LIVE","SIMPLE"]){
+    assert.equal(publishedMissalRubricsForParagraph(paragraph,registry,{
+      form,language,presentationMode:mode,
+    }).length,0,"Never infer priest bows from an audible Schola phrase");
+   }
+  }
+ }
+}
+// The two intonation source IDs share a paragraph. It may receive the
+// C0054 note without creating a new card or suppressing C0053.
+const combined=publishedMissalRubricsForParagraph({
+  kind:"TEXT",sourceCueIds:["AO.SM.C0053","AO.SM.C0054"],
+},registry,{form:"SOLEMN",language:"en",presentationMode:"MISSAL"});
+assert.deepEqual(combined.map(e=>e.id),["MR62.ADD.C0054.01"]);
+const domEvents=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
+assert.match(domEvents,/MR62_1962_MISSAL_ONLY_GLORIA_BOWS/);
+const nativeMode=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
+assert.match(nativeMode,/presentationMode:"MISSAL"/);
 for(const cue of ["AO.SM.C0232","AO.SM.C0234"]){
  for(const language of ["en","fr"]){
   const row=mk(cue,"LOW",language,"TEXT");
