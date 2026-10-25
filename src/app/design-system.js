@@ -369,10 +369,11 @@ const CSS=`
  border-bottom:1px solid var(--ao-frame-rule,rgba(255,255,255,.08))!important;
  box-shadow:none!important;
 }
-#ao-learn-modular-root .aoLearnModTop button,
-/* The canonical icon resolver injects .aoUiIcon SVG into native buttons.
- * When it does, suppress only the redundant pre-resolver mask span. */
+/* Hide only redundant mask spans once the approved icon has resolved;
+ * never hide the interactive Formation back/home toolbar buttons. */
+#ao-learn-modular-root .aoLearnModTop button.aoUiIconOnly > .aoLearnControlIcon,
 #ao-settings-modular-root .aoSetTop button.aoUiIconOnly > .aoSetTopIcon{display:none!important}
+#ao-learn-modular-root .aoLearnModTop button,
 #ao-settings-modular-root .aoSetTop button,
 #ao-find-modular-root .aoExploreSurface>.aoFindHeader>button,
 #ao-find-modular-root .aoHeritageSurface>.aoFindHeader>button{
