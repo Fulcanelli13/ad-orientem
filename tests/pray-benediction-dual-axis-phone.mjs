@@ -232,6 +232,16 @@ try{
  assert.equal((await snapshot()).stops,7);
  assert.equal(await page.locator(rootSel+" [data-p435930-ben-special='enabled']").isChecked(),false);
 
+
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.adoration",{returnContext:null}));
+ assert.equal(await page.locator("#aoPray435930 .aoAdorationChooser [data-p435930-go-ben]").count(),1,
+  "A user who opens Adoration must still be able to find the public Christ the King ceremony");
+ await page.locator("#aoPray435930 .aoAdorationChooser [data-p435930-go-ben]").click();
+ assert.equal((await snapshot()).card,"exposition");
+ assert.equal(await special.count(),1,"Public-rite handoff lost the optional Christ the King selector");
+ await page.locator("#aoPray435930 .aoP435930Back").click();
+ assert.equal(await page.locator("#aoPray435930 .aoAdorationChooser").count(),1,
+  "Back from the public ceremony must restore the Adoration chooser");
  assert.deepEqual(errors,[],"Browser exceptions: "+errors.join(" | "));
  console.log("PASS canonical seven-stage Benediction: timeline, vertical focus, horizontal swipe, conditional Praises and manual ritual pace");
  await page.close();
