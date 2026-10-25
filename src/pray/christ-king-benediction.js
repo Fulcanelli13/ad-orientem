@@ -5,7 +5,8 @@ export const CHRIST_KING_WITNESSES=Object.freeze({
   "consecrationLatin": "https://preces-latinae.org/thesaurus/Filius/IesuDRedempt.html",
   "consecrationFrench": "https://www.a-genoux.com/acte-de-consecration-de-lhumanite-au-christ-roi/",
   "consecrationEnglish": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=920",
-  "royalPraises": "https://www.vatican.va/news_services/liturgy/libretti/2012/20121007.pdf"
+  "royalPraises": "https://www.vatican.va/news_services/liturgy/libretti/2012/20121007.pdf",
+  "sacredHeartLitany": "https://www.preces-latinae.org/thesaurus/Filius.html"
 });
 export const CHRIST_KING_OPTION_DEFAULTS=Object.freeze({procession:true,royalPraises:true,sacredHeartLitany:false,consecration:true});
 export const CHRIST_KING_EXTRA_STAGES=Object.freeze([
