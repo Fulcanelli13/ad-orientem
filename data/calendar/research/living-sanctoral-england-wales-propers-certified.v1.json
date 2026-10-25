@@ -1,0 +1,131 @@
+{
+  "schema": "AO_P2_CBCEW_PROPER_RESEARCH_V1",
+  "status": "SOURCE_CERTIFIED_AND_LINKED_TO_CANONICAL_LEDGER_RESEARCH_ONLY",
+  "observances": [
+    {
+      "jurisdiction": "ENGLAND",
+      "subjectId": "saint.anselm-canterbury",
+      "monthDay": "04-21",
+      "rank": "OPTIONAL_MEMORIAL",
+      "runtimeEligible": false,
+      "sourceEvidenceId": "p2-national-england-001",
+      "sourceUrl": "https://www.liturgyoffice.org.uk/Calendar/National/England1.shtml",
+      "territory": "DIOCESES_OF_ENGLAND_MODERN_ROMAN",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "effectiveDate": null
+    },
+    {
+      "jurisdiction": "ENGLAND",
+      "subjectId": "saint.catherine-siena",
+      "monthDay": "04-29",
+      "rank": "FEAST",
+      "runtimeEligible": false,
+      "sourceEvidenceId": "p2-national-england-002",
+      "sourceUrl": "https://www.liturgyoffice.org.uk/Calendar/National/England1.shtml",
+      "territory": "DIOCESES_OF_ENGLAND_MODERN_ROMAN",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "effectiveDate": null
+    },
+    {
+      "jurisdiction": "ENGLAND",
+      "subjectId": "saint.bede-venerable",
+      "monthDay": "05-25",
+      "rank": "MEMORIAL",
+      "runtimeEligible": false,
+      "sourceEvidenceId": "p2-national-england-003",
+      "sourceUrl": "https://www.liturgyoffice.org.uk/Calendar/National/England1.shtml",
+      "territory": "DIOCESES_OF_ENGLAND_MODERN_ROMAN",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "effectiveDate": null
+    },
+    {
+      "jurisdiction": "ENGLAND",
+      "subjectId": "saint.teresa-benedicta-cross-stein",
+      "monthDay": "08-09",
+      "rank": "FEAST",
+      "runtimeEligible": false,
+      "sourceEvidenceId": "p2-national-england-004",
+      "sourceUrl": "https://www.liturgyoffice.org.uk/Calendar/National/England1.shtml",
+      "territory": "DIOCESES_OF_ENGLAND_MODERN_ROMAN",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "effectiveDate": null
+    },
+    {
+      "jurisdiction": "ENGLAND",
+      "subjectId": "saint.gregory-great",
+      "monthDay": "09-03",
+      "rank": "FEAST",
+      "runtimeEligible": false,
+      "sourceEvidenceId": "p2-national-england-005",
+      "sourceUrl": "https://www.liturgyoffice.org.uk/Calendar/National/England1.shtml",
+      "territory": "DIOCESES_OF_ENGLAND_MODERN_ROMAN",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "effectiveDate": null
+    },
+    {
+      "jurisdiction": "ENGLAND",
+      "subjectId": "saint.john-henry-newman",
+      "monthDay": "10-09",
+      "rank": "FEAST",
+      "runtimeEligible": false,
+      "sourceEvidenceId": "p2-national-england-006",
+      "sourceUrl": "https://www.liturgyoffice.org.uk/Calendar/2026/Oct.shtml",
+      "territory": "DIOCESES_OF_ENGLAND_MODERN_ROMAN",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "effectiveDate": null
+    },
+    {
+      "jurisdiction": "WALES",
+      "subjectId": "saint.catherine-siena",
+      "monthDay": "04-29",
+      "rank": "FEAST",
+      "runtimeEligible": false,
+      "sourceEvidenceId": "p2-national-wales-001",
+      "sourceUrl": "https://www.liturgyoffice.org.uk/Calendar/National/Wales1.shtml",
+      "territory": "DIOCESES_OF_WALES_MODERN_ROMAN",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "effectiveDate": null
+    },
+    {
+      "jurisdiction": "WALES",
+      "subjectId": "saint.teresa-benedicta-cross-stein",
+      "monthDay": "08-09",
+      "rank": "FEAST",
+      "runtimeEligible": false,
+      "sourceEvidenceId": "p2-national-wales-002",
+      "sourceUrl": "https://www.liturgyoffice.org.uk/Calendar/National/Wales1.shtml",
+      "territory": "DIOCESES_OF_WALES_MODERN_ROMAN",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "effectiveDate": null
+    },
+    {
+      "jurisdiction": "WALES",
+      "subjectId": "saint.john-henry-newman",
+      "monthDay": "10-09",
+      "rank": "FEAST",
+      "runtimeEligible": false,
+      "sourceEvidenceId": "p2-national-wales-003",
+      "sourceUrl": "https://www.liturgyoffice.org.uk/Calendar/2026/Oct.shtml",
+      "territory": "DIOCESES_OF_WALES_MODERN_ROMAN",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "effectiveDate": null
+    }
+  ],
+  "sources": {
+    "ENGLAND": "https://www.liturgyoffice.org.uk/Calendar/National/England1.shtml",
+    "WALES": "https://www.liturgyoffice.org.uk/Calendar/National/Wales1.shtml",
+    "NEWMAN_2026": "https://www.liturgyoffice.org.uk/Calendar/2026/Oct.shtml"
+  },
+  "constraints": {
+    "historical1962Unchanged": true,
+    "massPermissionGranted": false,
+    "NewmanWalesSummarySupersededFor2026": true
+  },
+  "counts": {
+    "added": 9,
+    "uniqueIndividuals": 6,
+    "England": 6,
+    "Wales": 3,
+    "distinctDateWitnessEdges": 4
+  }
+}
