@@ -1,0 +1,831 @@
+{
+  "schema": "AO_TLM_B90_LMS_UK_DIRECTORY_COMPLETE_263_INDEX_20261025_V1",
+  "date": "2026-10-25",
+  "scope": "RESEARCH_ONLY_NOT_CURRENT_MASS_CERTIFICATION",
+  "source_warning": "Association-maintained historical LMS index cached approximately 1.3 years prior to review; cannot certify live October 2026 completeness or current 1962 liturgy. No index item automatically becomes a new Mass building.",
+  "b89_inherited": {
+    "pr": 1704,
+    "index_positions": 196,
+    "classification_unchanged": true
+  },
+  "b90": {
+    "index_positions": 67,
+    "final_source_position": 263,
+    "combined_positions": 263,
+    "unique_church_name_diocese_locality_index_keys": 262,
+    "source_duplicate_positions": [
+      209,
+      210
+    ],
+    "heuristic_classes": {
+      "strong_name_locality_suggestion": 51,
+      "likely_existing_name_locality_suggestion": 1,
+      "name_only_hold": 8,
+      "no_strong_match_hold": 7
+    },
+    "source_specific_followups": 16,
+    "source_rows": [
+      {
+        "source_id": "B90-LMS-197",
+        "position": 197,
+        "church_name": "St Mary Magdalene",
+        "diocese": "East Anglia",
+        "locality": "Ipswich",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-198",
+        "position": 198,
+        "church_name": "St Mary Magdalene",
+        "diocese": "Liverpool",
+        "locality": "Penwortham",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-199",
+        "position": 199,
+        "church_name": "St Mary Magdalene",
+        "diocese": "Arundel and Brighton",
+        "locality": "Bexhill on Sea",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-200",
+        "position": 200,
+        "church_name": "St Mary Moorfields",
+        "diocese": "Westminster",
+        "locality": "London",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "OWNER_CURRENT_NO_1962_SHOWN",
+        "owner_source_url": "https://parish.rcdow.org.uk/moorfields/mass-times/"
+      },
+      {
+        "source_id": "B90-LMS-201",
+        "position": 201,
+        "church_name": "St Mary of the Annunciation",
+        "diocese": "Nottingham",
+        "locality": "Loughborough",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-202",
+        "position": 202,
+        "church_name": "St Mary on the Hill",
+        "diocese": "Birmingham",
+        "locality": "Wednesbury",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-203",
+        "position": 203,
+        "church_name": "St Mary's",
+        "diocese": "Hexham and Newcastle",
+        "locality": "Hexham",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-204",
+        "position": 204,
+        "church_name": "St Mary's",
+        "diocese": "Hexham and Newcastle",
+        "locality": "Barnard Castle",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-205",
+        "position": 205,
+        "church_name": "St Mary's",
+        "diocese": "Lancaster",
+        "locality": "Hornby",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-206",
+        "position": 206,
+        "church_name": "St Mary's",
+        "diocese": "Portsmouth",
+        "locality": "Ryde",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-207",
+        "position": 207,
+        "church_name": "St Mary's",
+        "diocese": "Southwark (North)",
+        "locality": "Chislehurst",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-208",
+        "position": 208,
+        "church_name": "St Mary's",
+        "diocese": "Portsmouth",
+        "locality": "Reading",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-209",
+        "position": 209,
+        "church_name": "St Mary's",
+        "diocese": "Portsmouth",
+        "locality": "Aldershot",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "SOURCE_DUPLICATE_ST_MARY_ALDERSHOT",
+        "owner_source_url": "https://portsmouthdiocese.org.uk/parish/st-josephs-st-marys-aldershot/page/2/"
+      },
+      {
+        "source_id": "B90-LMS-210",
+        "position": 210,
+        "church_name": "St Mary's",
+        "diocese": "Portsmouth",
+        "locality": "Aldershot",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "SOURCE_DUPLICATE_ST_MARY_ALDERSHOT",
+        "owner_source_url": "https://portsmouthdiocese.org.uk/parish/st-josephs-st-marys-aldershot/page/2/"
+      },
+      {
+        "source_id": "B90-LMS-211",
+        "position": 211,
+        "church_name": "St Mary's",
+        "diocese": "Nottingham",
+        "locality": "Husbands Bosworth",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-212",
+        "position": 212,
+        "church_name": "St Mary's",
+        "diocese": "Nottingham",
+        "locality": "Boston",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-213",
+        "position": 213,
+        "church_name": "St Mary's Abbey",
+        "diocese": "Birmingham",
+        "locality": "Stone",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "BENEDICTINE_ABBEY_OWNER_MASS_PUBLIC_1962_HOLD",
+        "owner_source_url": "https://benedictinesofmary.org/about-us/colwich/"
+      },
+      {
+        "source_id": "B90-LMS-214",
+        "position": 214,
+        "church_name": "St Mary's Shrine",
+        "diocese": "Liverpool",
+        "locality": "Warrington",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "SAME_WARRINGTON_CHURCH_TWO_B82_IDS_PROPOSE_ALIAS",
+        "owner_source_url": "https://fssp.org.uk/warrington/"
+      },
+      {
+        "source_id": "B90-LMS-215",
+        "position": 215,
+        "church_name": "St Mary, Immaculate Mother of God",
+        "diocese": "Plymouth",
+        "locality": "Barnstaple",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-216",
+        "position": 216,
+        "church_name": "St Mary`s Cathedral",
+        "diocese": "Hexham and Newcastle",
+        "locality": "Newcastle upon Tyne",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-217",
+        "position": 217,
+        "church_name": "St Michael's",
+        "diocese": "Portsmouth",
+        "locality": "Bembridge",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-218",
+        "position": 218,
+        "church_name": "St Michael's Abbey",
+        "diocese": "Portsmouth",
+        "locality": "Farnborough",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-219",
+        "position": 219,
+        "church_name": "St Osmund's",
+        "diocese": "Salford",
+        "locality": "Bolton",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-220",
+        "position": 220,
+        "church_name": "St Pancras",
+        "diocese": "Arundel and Brighton",
+        "locality": "Lewes",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-221",
+        "position": 221,
+        "church_name": "St Pancras",
+        "diocese": "East Anglia",
+        "locality": "Ipswich",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-222",
+        "position": 222,
+        "church_name": "St Patrick",
+        "diocese": "Hexham and Newcastle",
+        "locality": "Sunderland",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-223",
+        "position": 223,
+        "church_name": "St Patrick and St David",
+        "diocese": "Menevia",
+        "locality": "Haverfordwest",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-224",
+        "position": 224,
+        "church_name": "St Patrick's",
+        "diocese": "Leeds",
+        "locality": "Bradford",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-225",
+        "position": 225,
+        "church_name": "St Patrick's Cemetery Chapel",
+        "diocese": "Brentwood",
+        "locality": "Leytonstone",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "CATHOLIC_CEMETERY_CHAPEL_NO_1962_STATUS",
+        "owner_source_url": "https://stpatrickscatholiccemetery.co.uk/"
+      },
+      {
+        "source_id": "B90-LMS-226",
+        "position": 226,
+        "church_name": "St Peter's",
+        "diocese": "Nottingham",
+        "locality": "Leicester",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-227",
+        "position": 227,
+        "church_name": "St Peter's",
+        "diocese": "Leeds",
+        "locality": "Bradford",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-228",
+        "position": 228,
+        "church_name": "St Peter's",
+        "diocese": "Clifton",
+        "locality": "Cirencester",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-229",
+        "position": 229,
+        "church_name": "St Philip's Priory",
+        "diocese": "Brentwood",
+        "locality": "Chelmsford",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-230",
+        "position": 230,
+        "church_name": "St Simon Stock",
+        "diocese": "Southwark (Kent)",
+        "locality": "Ashford South",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-231",
+        "position": 231,
+        "church_name": "St Teilo’s Chapel",
+        "diocese": "Cardiff",
+        "locality": "Cardiff",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-232",
+        "position": 232,
+        "church_name": "St Teresa's",
+        "diocese": "Brentwood",
+        "locality": "Rochford",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "FIRST_SUNDAY_LATIN_NOT_EXPLICIT_1962",
+        "owner_source_url": "https://www.rcrochford.co.uk/service-times/"
+      },
+      {
+        "source_id": "B90-LMS-233",
+        "position": 233,
+        "church_name": "St Theresa of Lisieux",
+        "diocese": "Brentwood",
+        "locality": "Stansted Mountfitchet",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-234",
+        "position": 234,
+        "church_name": "St Therese of Lisieux",
+        "diocese": "Menevia",
+        "locality": "Port Talbot",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-235",
+        "position": 235,
+        "church_name": "St Thomas Becket",
+        "diocese": "Shrewsbury",
+        "locality": "Tarporley",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-236",
+        "position": 236,
+        "church_name": "St Thomas More",
+        "diocese": "Arundel and Brighton",
+        "locality": "Seaford",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-237",
+        "position": 237,
+        "church_name": "St Thomas More",
+        "diocese": "Portsmouth",
+        "locality": "Bournemouth",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-238",
+        "position": 238,
+        "church_name": "St Thomas More",
+        "diocese": "Southwark (North)",
+        "locality": "Bexleyheath",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-239",
+        "position": 239,
+        "church_name": "St Thomas of Canterbury",
+        "diocese": "Southwark (Kent)",
+        "locality": "Headcorn",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-240",
+        "position": 240,
+        "church_name": "St Thomas of Canterbury",
+        "diocese": "Portsmouth",
+        "locality": "Cowes",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-241",
+        "position": 241,
+        "church_name": "St Thomas of Canterbury",
+        "diocese": "Hallam",
+        "locality": "Kirk Sandall",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-242",
+        "position": 242,
+        "church_name": "St Thomas of Canterbury",
+        "diocese": "Nottingham",
+        "locality": "Exton",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-243",
+        "position": 243,
+        "church_name": "St Thomas of Canterbury and English Martyrs",
+        "diocese": "Lancaster",
+        "locality": "Preston",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "ICKSP_MISSION_ENDED_JUNE_2024",
+        "owner_source_url": "https://icksp.org.uk/preston/statement-from-the-diocese-of-lancaster-regarding-st-thomas-of-canterbury-and-english-martyrs/"
+      },
+      {
+        "source_id": "B90-LMS-244",
+        "position": 244,
+        "church_name": "St Vincent de Paul's",
+        "diocese": "Shrewsbury",
+        "locality": "Altrincham",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-245",
+        "position": 245,
+        "church_name": "St Walburge's",
+        "diocese": "Lancaster",
+        "locality": "Preston",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "EXISTING_ST_WALBURGE_OWNER_BUILDING",
+        "owner_source_url": "https://icksp.org.uk/preston/contact-us/"
+      },
+      {
+        "source_id": "B90-LMS-246",
+        "position": 246,
+        "church_name": "St William of York",
+        "diocese": "Portsmouth",
+        "locality": "Reading",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "SAME_READING_CHURCH_TWO_B82_IDS_PROPOSE_ALIAS",
+        "owner_source_url": "https://fssp.org.uk/reading/"
+      },
+      {
+        "source_id": "B90-LMS-247",
+        "position": 247,
+        "church_name": "St Winefride's",
+        "diocese": "Shrewsbury",
+        "locality": "Shrewsbury",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "EXISTING_SHREWSBURY_SITE_DISTINCT_FROM_HOLYWELL",
+        "owner_source_url": "https://icksp.org.uk/"
+      },
+      {
+        "source_id": "B90-LMS-248",
+        "position": 248,
+        "church_name": "St Winefride's",
+        "diocese": "Wrexham",
+        "locality": "Holywell",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-249",
+        "position": 249,
+        "church_name": "St Wulstan",
+        "diocese": "Birmingham",
+        "locality": "Newcastle-Under-Lyme",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-250",
+        "position": 250,
+        "church_name": "St Wulstan",
+        "diocese": "Birmingham",
+        "locality": "Little Malvern",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-251",
+        "position": 251,
+        "church_name": "The Good Shepherd",
+        "diocese": "Nottingham",
+        "locality": "Nottingham",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-252",
+        "position": 252,
+        "church_name": "The Holy Ghost",
+        "diocese": "Clifton",
+        "locality": "Yeovil",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-253",
+        "position": 253,
+        "church_name": "The Manchester Oratory",
+        "diocese": "Salford",
+        "locality": "Manchester",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-254",
+        "position": 254,
+        "church_name": "The Oratory",
+        "diocese": "Westminster",
+        "locality": "London",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "EXISTING_LONDON_ORATORY_NAME_ALIAS",
+        "owner_source_url": "https://www.bromptonoratory.co.uk/"
+      },
+      {
+        "source_id": "B90-LMS-255",
+        "position": 255,
+        "church_name": "The Oratory",
+        "diocese": "Birmingham",
+        "locality": "Birmingham",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "EXISTING_BIRMINGHAM_ORATORY_NAME_ALIAS",
+        "owner_source_url": "https://birminghamoratory.org.uk/mass-times/"
+      },
+      {
+        "source_id": "B90-LMS-256",
+        "position": 256,
+        "church_name": "The Oratory",
+        "diocese": "Birmingham",
+        "locality": "Oxford",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "EXISTING_OXFORD_ORATORY_NAME_ALIAS",
+        "owner_source_url": "https://www.oxfordoratory.org.uk/"
+      },
+      {
+        "source_id": "B90-LMS-257",
+        "position": 257,
+        "church_name": "The Oratory (St Wilfrid)",
+        "diocese": "Middlesbrough",
+        "locality": "York",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-258",
+        "position": 258,
+        "church_name": "The Oratory School",
+        "diocese": "Birmingham",
+        "locality": "Reading",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-259",
+        "position": 259,
+        "church_name": "Tyburn Convent",
+        "diocese": "Westminster",
+        "locality": "London",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-260",
+        "position": 260,
+        "church_name": "University Chaplaincy",
+        "diocese": "Leeds",
+        "locality": "Leeds",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-261",
+        "position": 261,
+        "church_name": "University Chaplaincy",
+        "diocese": "Birmingham",
+        "locality": "Oxford",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION"
+      },
+      {
+        "source_id": "B90-LMS-262",
+        "position": 262,
+        "church_name": "Wakefield Chantry Chapel",
+        "diocese": "Leeds",
+        "locality": "Wakefield",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "CURRENT_ANGLICAN_CHANTRY_NO_CATHOLIC_1962",
+        "owner_source_url": "https://www.wakefieldcathedral.org.uk/worship-and-music/services/"
+      },
+      {
+        "source_id": "B90-LMS-263",
+        "position": 263,
+        "church_name": "Westminster Cathedral",
+        "diocese": "Westminster",
+        "locality": "London",
+        "source_url": "https://lms.org.uk/list-of-churches",
+        "decision": "NAME_LOCALITY_SCREEN_ONLY_NOT_CURRENT_1962_CERTIFICATION",
+        "review_state": "EXISTING_WESTMINSTER_CATHEDRAL_1962_NOT_VERIFIED",
+        "owner_source_url": "https://westminstercathedral.org.uk/"
+      }
+    ]
+  },
+  "crosswalk_overrides": [
+    {
+      "source_id": "B90-LMS-200",
+      "crosswalk_id": "RG-F31C337444C6",
+      "state": "OWNER_CURRENT_NO_1962_SHOWN",
+      "source_url": "https://parish.rcdow.org.uk/moorfields/mass-times/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-209",
+      "crosswalk_id": null,
+      "state": "SOURCE_DUPLICATE_ST_MARY_ALDERSHOT",
+      "source_url": "https://portsmouthdiocese.org.uk/parish/st-josephs-st-marys-aldershot/page/2/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-210",
+      "crosswalk_id": null,
+      "state": "SOURCE_DUPLICATE_ST_MARY_ALDERSHOT",
+      "source_url": "https://portsmouthdiocese.org.uk/parish/st-josephs-st-marys-aldershot/page/2/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-213",
+      "crosswalk_id": null,
+      "state": "BENEDICTINE_ABBEY_OWNER_MASS_PUBLIC_1962_HOLD",
+      "source_url": "https://benedictinesofmary.org/about-us/colwich/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-214",
+      "crosswalk_id": "RG-2E1FB8361143;RG-4BC0694A51BE",
+      "state": "SAME_WARRINGTON_CHURCH_TWO_B82_IDS_PROPOSE_ALIAS",
+      "source_url": "https://fssp.org.uk/warrington/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-225",
+      "crosswalk_id": null,
+      "state": "CATHOLIC_CEMETERY_CHAPEL_NO_1962_STATUS",
+      "source_url": "https://stpatrickscatholiccemetery.co.uk/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-232",
+      "crosswalk_id": "RG-C94D7E3D48FD (UNCONFIRMED MATCH)",
+      "state": "FIRST_SUNDAY_LATIN_NOT_EXPLICIT_1962",
+      "source_url": "https://www.rcrochford.co.uk/service-times/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-243",
+      "crosswalk_id": null,
+      "state": "ICKSP_MISSION_ENDED_JUNE_2024",
+      "source_url": "https://icksp.org.uk/preston/statement-from-the-diocese-of-lancaster-regarding-st-thomas-of-canterbury-and-english-martyrs/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-245",
+      "crosswalk_id": "RG-8176AED316A2",
+      "state": "EXISTING_ST_WALBURGE_OWNER_BUILDING",
+      "source_url": "https://icksp.org.uk/preston/contact-us/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-246",
+      "crosswalk_id": "RG-CF06C93617A1;RG-BF0D731A3654",
+      "state": "SAME_READING_CHURCH_TWO_B82_IDS_PROPOSE_ALIAS",
+      "source_url": "https://fssp.org.uk/reading/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-247",
+      "crosswalk_id": "RG-CDB454DA9E61",
+      "state": "EXISTING_SHREWSBURY_SITE_DISTINCT_FROM_HOLYWELL",
+      "source_url": "https://icksp.org.uk/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-254",
+      "crosswalk_id": "RG-A39E87B5A30C",
+      "state": "EXISTING_LONDON_ORATORY_NAME_ALIAS",
+      "source_url": "https://www.bromptonoratory.co.uk/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-255",
+      "crosswalk_id": "RG-EC5A4BA48BF9",
+      "state": "EXISTING_BIRMINGHAM_ORATORY_NAME_ALIAS",
+      "source_url": "https://birminghamoratory.org.uk/mass-times/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-256",
+      "crosswalk_id": "RG-DA2F4D212252",
+      "state": "EXISTING_OXFORD_ORATORY_NAME_ALIAS",
+      "source_url": "https://www.oxfordoratory.org.uk/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-262",
+      "crosswalk_id": null,
+      "state": "CURRENT_ANGLICAN_CHANTRY_NO_CATHOLIC_1962",
+      "source_url": "https://www.wakefieldcathedral.org.uk/worship-and-music/services/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    },
+    {
+      "source_id": "B90-LMS-263",
+      "crosswalk_id": "RG-01F176BB1074",
+      "state": "EXISTING_WESTMINSTER_CATHEDRAL_1962_NOT_VERIFIED",
+      "source_url": "https://westminstercathedral.org.uk/",
+      "publication_gate": "RESEARCH_ONLY_NO_ID_OR_SCHEDULE_MUTATION"
+    }
+  ],
+  "special_identity_issues": {
+    "warrington": {
+      "same_building_group_ids": [
+        "RG-2E1FB8361143",
+        "RG-4BC0694A51BE"
+      ],
+      "owner": "https://fssp.org.uk/warrington/",
+      "state": "ALIAS_PROPOSED_DO_NOT_MODIFY_GROUP_IDS"
+    },
+    "reading": {
+      "same_building_group_ids": [
+        "RG-CF06C93617A1",
+        "RG-BF0D731A3654"
+      ],
+      "owner": "https://fssp.org.uk/reading/",
+      "state": "ALIAS_PROPOSED_DO_NOT_MODIFY_GROUP_IDS"
+    },
+    "preston": {
+      "st_walburge_group_id": "RG-8176AED316A2",
+      "english_martyrs_distinct": true,
+      "icksp_english_martyrs_end_date": "2024-06-30",
+      "owner": "https://icksp.org.uk/preston/statement-from-the-diocese-of-lancaster-regarding-st-thomas-of-canterbury-and-english-martyrs/"
+    }
+  },
+  "operational_baseline": {
+    "version": "B82",
+    "distinct_provisional_physical_site_groups": 2573,
+    "historical_group_id_rows": 2576,
+    "venue_source_rows": 2679,
+    "mass_times_rows": 4681,
+    "previously_verified_rows": 3347,
+    "great_britain_group_rows": 289
+  },
+  "b88_brazil_unimported_delta": {
+    "pr": 1701,
+    "proposed_research_site_groups": 5,
+    "not_added_here": true
+  },
+  "workbook": {
+    "name": "Ad_Orientem_B90_LMS_UK_263_Complete_Index_Source_Audit_2026-10-25.xlsx",
+    "sha256": "c319b74ca491b809198cfeccdc44938a68cb06e7c9b6556554a24243a2a4b217",
+    "included_in_pr": false
+  },
+  "qa": {
+    "b90_rows": 67,
+    "owner_check_cases": 16,
+    "original_ids_changed": 0,
+    "new_site_admissions": 0,
+    "verified_timetable_changes": 0,
+    "public_map_pins": 0
+  },
+  "next_step": "Do not scan this completed historical index again. For future coverage choose fresh first-party site schedules in an undercovered country/network; resolve valid same-building alias links with ID-preserving separate import QA."
+}
