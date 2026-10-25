@@ -90,6 +90,49 @@ for(const form of forms){
       eventType:"PRIEST_SANCTUS_RECITATION",atCueId:"AO.SM.C0145"
     }
   }).priestAction,null);
+  // Every public Sanctus/Benedictus phrase is clock-independent.
+  // A priest action linked to that Latin phrase must not survive merely
+  // because the choir happens to sing it now.
+  for(const cue of ["AO.SM.C0146","AO.SM.C0147","AO.SM.C0149"]){
+    assert.equal(corpusById.get(cue)?.clock,"SCHOLA_PUBLIC");
+    const fake={cueId:cue,label:"BOWS FOR SANCTUS",iconKey:"head_bow"};
+    const result=resolvePriestChantAction({form,cueId:cue,
+      sourceClock:"SCHOLA_PUBLIC",ordinaryAction:fake,gestureMatrix:matrix});
+    assert.equal(result.priestAction,null,form+"/"+cue+" inferred priest bow from schola phrase");
+    assert.equal(result.owner,"PRIEST_EVENT_UNOBSERVED");
+  }
+  // ICKSP + 1962 Ritus: the priest strikes his breast three times,
+  // independently of the same text sung by the Schola; Requiem suppresses
+  // the priest's striking, and its public Agnus has distinct invocations.
+  // These three choir-owned cues must NEVER act as observed priest actions.
+  for(const cue of ["AO.SM.C0222","AO.SM.C0223","AO.SM.C0224"]){
+    assert.equal(corpusById.get(cue)?.clock,"SCHOLA_PUBLIC");
+    const source=matrix.items.find(x=>x.cueId===cue&&x.actor==="PRIEST");
+    assert.equal(source?.gesture,"BREAST_STRIKE",cue+" source priest gesture lost");
+    assert.equal(source?.condition,"NOT_REQUIEM",cue+" Requiem condition lost");
+    const bogus={cueId:cue,label:"STRIKES BREAST",
+      owner:"GESTURE_MATRIX_SOT",sourceGestureId:source.id};
+    const projected=resolvePriestChantAction({form,cueId:cue,sourceClock:"SCHOLA_PUBLIC",
+      ordinaryAction:bogus,gestureMatrix:matrix});
+    assert.equal(projected.priestAction,null,form+"/"+cue+" choir inferred priest breast strike");
+    assert.equal(projected.owner,"PRIEST_EVENT_UNOBSERVED");
+    assert.equal(projected.reason,"SCHOLA_PUBLIC_CUE_NOT_PRIEST_ACTION");
+    const voice=resolvePriestChantVoice({form,cueId:cue,sourceClock:"SCHOLA_PUBLIC",
+      ordinaryVoice:{cueId:cue,label:"QUIET PRIEST TRACK"}});
+    assert.equal(voice.priestVoice,null,form+"/"+cue+" choir inferred priest's private voice");
+    assert.equal(voice.owner,"PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED");
+    const spoof={actor:"PRIEST",observed:true,source:"EXPLICIT_OBSERVATION",
+      eventType:"PRIEST_SANCTUS_RECITATION",atCueId:cue};
+    assert.equal(validatePriestChantObservation(spoof,cue,form),false);
+    const invalid=resolvePriestChantAction({form,cueId:cue,sourceClock:"SCHOLA_PUBLIC",
+      gestureMatrix:matrix,observation:spoof,ordinaryAction:bogus});
+    assert.equal(invalid.priestAction,null,form+"/"+cue+" accepted a forged Sanctus observation");
+    // Text cue alone cannot infer action even if a user scrolls back/forth.
+    const offClock={label:"PRIEST SPEAKS",cueId:cue};
+    assert.equal(resolvePriestChantAction({form,cueId:cue,sourceClock:"PRIEST_PRIVATE",
+      ordinaryAction:offClock}).priestAction,offClock,
+      "Do not suppress independently source-owned priest prayer in other clock");
+  }
   for(const cue of ["AO.SM.C0146","AO.SM.C0147","AO.SM.C0149"]){
     const projection=resolvePriestChantVoice({form,cueId:cue,
       sourceClock:"SCHOLA_PUBLIC",ordinaryVoice:{label:"INHERITED QUIET PRIEST TRACK"}});
@@ -116,6 +159,15 @@ for(const form of forms){
     ordinaryAction:otherAction
   }).priestAction,otherAction);
 }
+// Low Mass has no Schola overlay, including all three Agnus invocations.
+for(const cue of ["AO.SM.C0222","AO.SM.C0223","AO.SM.C0224"]){
+ const actual={cueId:cue,label:"STRIKES BREAST"};
+ const voice={cueId:cue,label:"PRIEST RECITES AGNUS DEI"};
+ assert.equal(resolvePriestChantAction({form:"LOW",cueId:cue,
+  sourceClock:"PUBLIC_TEXT",ordinaryAction:actual}).priestAction,actual);
+ assert.equal(resolvePriestChantVoice({form:"LOW",cueId:cue,
+  sourceClock:"PUBLIC_TEXT",ordinaryVoice:voice}).priestVoice,voice);
+}
 const low={label:"PRIEST RECITES SANCTUS"};
 assert.equal(resolvePriestChantAction({
   form:"LOW",cueId:"AO.SM.C0145",sourceClock:"PUBLIC_TEXT",ordinaryAction:low
@@ -128,4 +180,4 @@ assert.equal(resolvePriestChantVoice({
   form:"LOW",cueId:"AO.SM.C0145",sourceClock:"PUBLIC_TEXT",ordinaryVoice:lowVoice
 }).priestVoice,lowVoice,"Low Mass priest voice must never be suppressed");
 // Explicit input is not a claim of automatic sensing, camera, or audio recognition.
-console.log("PASS priest/Schola owner guard: three Sung form variants fail closed; explicit priest observations only; Low, Canon and faithful lanes unchanged.");
+console.log("PASS priest/Schola guard: five Sanctus and three Agnus public cues x three sung forms fail closed, Low/Canon and observed Sanctus ownership retained.");
