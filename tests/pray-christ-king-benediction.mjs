@@ -34,7 +34,7 @@ const existingSacredHeartLitany=SACRED_HEART_DEVOTIONS_V382.litany;
 for(const [lang,term] of [["en","Heart of Jesus,"],["fr","Cœur de Jésus,"],["la","Cor Iesu,"]]){
  const full=existingSacredHeartLitany[lang];
  assert.ok(full&&full.split(term).length-1===33,"Existing canonical Sacred Heart litany must contain exactly 33 invocations in "+lang);
- assert.equal(full.split("\\n").filter(Boolean).length,49,"Full litany includes opening, 33 invocations and closing oration");
+ assert.equal(full.split(String.fromCharCode(10)).filter(Boolean).length,49,"Full litany includes opening, 33 invocations and closing oration");
 }
 assert.match(runtime,/benFeastPrayer\(SACRED_HEART_DEVOTIONS_V382\.litany/);
 assert.match(runtime,/CHRIST_KING_WITNESSES\.christKingOrdo/);
