@@ -1,0 +1,769 @@
+{
+  "schema": "AO_ICRSP_TEMPORAL_189_DEDUPLICATION_VERIFIED_V1",
+  "date": "2026-10-25",
+  "ownerIssue": 1665,
+  "evidence": {
+    "workflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40210047111",
+    "artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40210047111/artifacts/12606085313",
+    "index": "data/source-text/icrsp-france-index-discovery.v1.json"
+  },
+  "status": "NORMALIZED_HOSTED_TEXT_HASH_EQUIVALENCE_RESEARCH_ONLY",
+  "totals": {
+    "temporalArticlesAll": 193,
+    "temporalArticlesWithCommentary": 189,
+    "articleFetchFailures": 0,
+    "sourcePanelInstances": 807,
+    "substantialPanelsCompared": 753,
+    "substantialUniqueBodyHashes": 705,
+    "duplicateHashGroups": 28,
+    "duplicatePanelInstances": 76,
+    "duplicateExcessPanelInstances": 48,
+    "shortPanelsExcludedFromComparison": 54,
+    "originalTextEditionCertified": 0,
+    "rightsCleared": 0,
+    "canonicalImports": 0
+  },
+  "interpretation": [
+    "Identical hashes mean byte-equivalent whitespace-normalized panel body text, not identity of a historical rite, saint, date, author's original printing or translation licence.",
+    "Retain all page-level witness locators. Treat one research-text group as a deduplication candidate, never merge 1962 and historical rite content.",
+    "Dedup excludes bodies with <=120 characters; exact group IDs reference workflow's 28 reported ordered duplicate groups without copying commentary paragraphs or hashes."
+  ],
+  "groups": [
+    {
+      "groupId": "ICRSP-TEMP-HASH-G01",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "SCHUSTER_LIBER_SACRAMENTORUM",
+      "members": [
+        {
+          "articleId": "a0813_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0813_ancien",
+          "sourceIndexLabel": "Lun."
+        },
+        {
+          "articleId": "a0814_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0814_ancien",
+          "sourceIndexLabel": "Mar."
+        },
+        {
+          "articleId": "a0815_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0815_ancien",
+          "sourceIndexLabel": "Mer."
+        },
+        {
+          "articleId": "a0816_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0816_ancien",
+          "sourceIndexLabel": "Jeu."
+        },
+        {
+          "articleId": "a0817_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0817_ancien",
+          "sourceIndexLabel": "Ven."
+        },
+        {
+          "articleId": "a0818_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0818_ancien",
+          "sourceIndexLabel": "Sam."
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G02",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "SCHUSTER_LIBER_SACRAMENTORUM",
+      "members": [
+        {
+          "articleId": "a0819_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0819_ancien",
+          "sourceIndexLabel": "Lun."
+        },
+        {
+          "articleId": "a0820_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0820_ancien",
+          "sourceIndexLabel": "Mar."
+        },
+        {
+          "articleId": "a0821_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0821_ancien",
+          "sourceIndexLabel": "Mer."
+        },
+        {
+          "articleId": "a0822_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0822_ancien",
+          "sourceIndexLabel": "Jeu."
+        },
+        {
+          "articleId": "a0823_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0823_ancien",
+          "sourceIndexLabel": "Ven."
+        },
+        {
+          "articleId": "a0824_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0824_ancien",
+          "sourceIndexLabel": "Sam."
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G03",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "EDITORIAL_GENERIC_NOT_ATTRIBUTED",
+      "members": [
+        {
+          "articleId": "a0827_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0827_ancien",
+          "sourceIndexLabel": "Jeu."
+        },
+        {
+          "articleId": "a0828_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0828_ancien",
+          "sourceIndexLabel": "Lun."
+        },
+        {
+          "articleId": "a0829_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0829_ancien",
+          "sourceIndexLabel": "Mar."
+        },
+        {
+          "articleId": "a0830_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0830_ancien",
+          "sourceIndexLabel": "Mer."
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G04",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "GUERANGER_ANNEE_LITURGIQUE",
+      "members": [
+        {
+          "articleId": "a0010_nouveau",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0010_nouveau",
+          "sourceIndexLabel": "Dimanche des Rameaux avant 1955"
+        },
+        {
+          "articleId": "a0593_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0593_ancien",
+          "sourceIndexLabel": "Dimanche des Rameaux"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G05",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "SCHUSTER_LIBER_SACRAMENTORUM",
+      "members": [
+        {
+          "articleId": "a0010_nouveau",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0010_nouveau",
+          "sourceIndexLabel": "Dimanche des Rameaux avant 1955"
+        },
+        {
+          "articleId": "a0593_ancien",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0593_ancien",
+          "sourceIndexLabel": "Dimanche des Rameaux"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G06",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "PARSCH_GUIDE_ANNEE_LITURGIQUE",
+      "members": [
+        {
+          "articleId": "a0010_nouveau",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0010_nouveau",
+          "sourceIndexLabel": "Dimanche des Rameaux avant 1955"
+        },
+        {
+          "articleId": "a0593_ancien",
+          "panelOrdinal": 4,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0593_ancien",
+          "sourceIndexLabel": "Dimanche des Rameaux"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G07",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "GUERANGER_ANNEE_LITURGIQUE",
+      "members": [
+        {
+          "articleId": "a0034_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0034_ancien",
+          "sourceIndexLabel": "Lun. saint · av. 1955"
+        },
+        {
+          "articleId": "a0013_nouveau",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0013_nouveau",
+          "sourceIndexLabel": "Lun. saint"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G08",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "SCHUSTER_LIBER_SACRAMENTORUM",
+      "members": [
+        {
+          "articleId": "a0034_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0034_ancien",
+          "sourceIndexLabel": "Lun. saint · av. 1955"
+        },
+        {
+          "articleId": "a0013_nouveau",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0013_nouveau",
+          "sourceIndexLabel": "Lun. saint"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G09",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "PARSCH_GUIDE_ANNEE_LITURGIQUE",
+      "members": [
+        {
+          "articleId": "a0034_ancien",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0034_ancien",
+          "sourceIndexLabel": "Lun. saint · av. 1955"
+        },
+        {
+          "articleId": "a0013_nouveau",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0013_nouveau",
+          "sourceIndexLabel": "Lun. saint"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G10",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "GUERANGER_ANNEE_LITURGIQUE",
+      "members": [
+        {
+          "articleId": "a0035_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0035_ancien",
+          "sourceIndexLabel": "Mar. saint · av. 1955"
+        },
+        {
+          "articleId": "a0014_nouveau",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0014_nouveau",
+          "sourceIndexLabel": "Mar. saint"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G11",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "SCHUSTER_LIBER_SACRAMENTORUM",
+      "members": [
+        {
+          "articleId": "a0035_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0035_ancien",
+          "sourceIndexLabel": "Mar. saint · av. 1955"
+        },
+        {
+          "articleId": "a0014_nouveau",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0014_nouveau",
+          "sourceIndexLabel": "Mar. saint"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G12",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "PARSCH_GUIDE_ANNEE_LITURGIQUE",
+      "members": [
+        {
+          "articleId": "a0035_ancien",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0035_ancien",
+          "sourceIndexLabel": "Mar. saint · av. 1955"
+        },
+        {
+          "articleId": "a0014_nouveau",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0014_nouveau",
+          "sourceIndexLabel": "Mar. saint"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G13",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "GUERANGER_ANNEE_LITURGIQUE",
+      "members": [
+        {
+          "articleId": "a0036_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0036_ancien",
+          "sourceIndexLabel": "Mer. saint · av. 1955"
+        },
+        {
+          "articleId": "a0015_nouveau",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0015_nouveau",
+          "sourceIndexLabel": "Mer. saint"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G14",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "SCHUSTER_LIBER_SACRAMENTORUM",
+      "members": [
+        {
+          "articleId": "a0036_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0036_ancien",
+          "sourceIndexLabel": "Mer. saint · av. 1955"
+        },
+        {
+          "articleId": "a0015_nouveau",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0015_nouveau",
+          "sourceIndexLabel": "Mer. saint"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G15",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "GUERANGER_ANNEE_LITURGIQUE",
+      "members": [
+        {
+          "articleId": "a0111_nouveau",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0111_nouveau",
+          "sourceIndexLabel": "Ascension du Seigneur"
+        },
+        {
+          "articleId": "a0279_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0279_ancien",
+          "sourceIndexLabel": "L’Ascension du Seigneur"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G16",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "SCHUSTER_LIBER_SACRAMENTORUM",
+      "members": [
+        {
+          "articleId": "a0111_nouveau",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0111_nouveau",
+          "sourceIndexLabel": "Ascension du Seigneur"
+        },
+        {
+          "articleId": "a0279_ancien",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0279_ancien",
+          "sourceIndexLabel": "L’Ascension du Seigneur"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G17",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "PARSCH_GUIDE_ANNEE_LITURGIQUE",
+      "members": [
+        {
+          "articleId": "a0111_nouveau",
+          "panelOrdinal": 4,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0111_nouveau",
+          "sourceIndexLabel": "Ascension du Seigneur"
+        },
+        {
+          "articleId": "a0279_ancien",
+          "panelOrdinal": 4,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0279_ancien",
+          "sourceIndexLabel": "L’Ascension du Seigneur"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G18",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "EDITORIAL_GENERIC_NOT_ATTRIBUTED",
+      "members": [
+        {
+          "articleId": "a0157_nouveau",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0157_nouveau",
+          "sourceIndexLabel": "Sam. de l’octave"
+        },
+        {
+          "articleId": "a0939_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0939_ancien",
+          "sourceIndexLabel": "Sam. de l’octave · av. 1955"
+        },
+        {
+          "articleId": "a0160_nouveau",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0160_nouveau",
+          "sourceIndexLabel": "Mar. de l’octave"
+        },
+        {
+          "articleId": "a0161_nouveau",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0161_nouveau",
+          "sourceIndexLabel": "Mer. de l’octave"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G19",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "GUERANGER_ANNEE_LITURGIQUE",
+      "members": [
+        {
+          "articleId": "a0157_nouveau",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0157_nouveau",
+          "sourceIndexLabel": "Sam. de l’octave"
+        },
+        {
+          "articleId": "a0939_ancien",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0939_ancien",
+          "sourceIndexLabel": "Sam. de l’octave · av. 1955"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G20",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "SCHUSTER_LIBER_SACRAMENTORUM",
+      "members": [
+        {
+          "articleId": "a0970_ancien",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0970_ancien",
+          "sourceIndexLabel": "Ven. de l’octave · av. 1955"
+        },
+        {
+          "articleId": "a0971_ancien",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0971_ancien",
+          "sourceIndexLabel": "Sam. de l’octave · av. 1955"
+        },
+        {
+          "articleId": "a0972_ancien",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0972_ancien",
+          "sourceIndexLabel": "Lun. de l’octave · av. 1955"
+        },
+        {
+          "articleId": "a0973_ancien",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0973_ancien",
+          "sourceIndexLabel": "Mar. de l’octave · av. 1955"
+        },
+        {
+          "articleId": "a0974_ancien",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0974_ancien",
+          "sourceIndexLabel": "Mer. de l’octave · av. 1955"
+        },
+        {
+          "articleId": "a0975_ancien",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0975_ancien",
+          "sourceIndexLabel": "Octave de la Fête-Dieu (avant 1955)"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G21",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "EDITORIAL_GENERIC_NOT_ATTRIBUTED",
+      "members": [
+        {
+          "articleId": "a0970_ancien",
+          "panelOrdinal": 5,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0970_ancien",
+          "sourceIndexLabel": "Ven. de l’octave · av. 1955"
+        },
+        {
+          "articleId": "a0972_ancien",
+          "panelOrdinal": 5,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0972_ancien",
+          "sourceIndexLabel": "Lun. de l’octave · av. 1955"
+        },
+        {
+          "articleId": "a0973_ancien",
+          "panelOrdinal": 5,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0973_ancien",
+          "sourceIndexLabel": "Mar. de l’octave · av. 1955"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G22",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "EDITORIAL_GENERIC_NOT_ATTRIBUTED",
+      "members": [
+        {
+          "articleId": "a0972_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0972_ancien",
+          "sourceIndexLabel": "Lun. de l’octave · av. 1955"
+        },
+        {
+          "articleId": "a0973_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0973_ancien",
+          "sourceIndexLabel": "Mar. de l’octave · av. 1955"
+        },
+        {
+          "articleId": "a0974_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0974_ancien",
+          "sourceIndexLabel": "Mer. de l’octave · av. 1955"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G23",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "GUERANGER_ANNEE_LITURGIQUE",
+      "members": [
+        {
+          "articleId": "a0220_nouveau",
+          "panelOrdinal": 2,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_nouveau",
+          "sourceIndexLabel": "Fête du Sacré-Coeur"
+        },
+        {
+          "articleId": "a0992_ancien",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0992_ancien",
+          "sourceIndexLabel": "Octave du Sacré-Cœur (avant 1955)"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G24",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "SCHUSTER_LIBER_SACRAMENTORUM",
+      "members": [
+        {
+          "articleId": "a0220_nouveau",
+          "panelOrdinal": 3,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_nouveau",
+          "sourceIndexLabel": "Fête du Sacré-Coeur"
+        },
+        {
+          "articleId": "a0992_ancien",
+          "panelOrdinal": 4,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0992_ancien",
+          "sourceIndexLabel": "Octave du Sacré-Cœur (avant 1955)"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G25",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "PARSCH_GUIDE_ANNEE_LITURGIQUE",
+      "members": [
+        {
+          "articleId": "a0220_nouveau",
+          "panelOrdinal": 4,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_nouveau",
+          "sourceIndexLabel": "Fête du Sacré-Coeur"
+        },
+        {
+          "articleId": "a0992_ancien",
+          "panelOrdinal": 5,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0992_ancien",
+          "sourceIndexLabel": "Octave du Sacré-Cœur (avant 1955)"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G26",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "EDITORIAL_GENERIC_NOT_ATTRIBUTED",
+      "members": [
+        {
+          "articleId": "a0988_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0988_ancien",
+          "sourceIndexLabel": "Lun. de l’octave · av. 1955"
+        },
+        {
+          "articleId": "a0990_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0990_ancien",
+          "sourceIndexLabel": "Mer. de l’octave · av. 1955"
+        },
+        {
+          "articleId": "a0991_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0991_ancien",
+          "sourceIndexLabel": "Jeu. de l’octave · av. 1955"
+        },
+        {
+          "articleId": "a0992_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0992_ancien",
+          "sourceIndexLabel": "Octave du Sacré-Cœur (avant 1955)"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G27",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "EDITORIAL_GENERIC_NOT_ATTRIBUTED",
+      "members": [
+        {
+          "articleId": "a0222_nouveau",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_nouveau",
+          "sourceIndexLabel": "4ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "articleId": "a0223_nouveau",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0223_nouveau",
+          "sourceIndexLabel": "5ᵉ Dimanche après la Pentecôte"
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    },
+    {
+      "groupId": "ICRSP-TEMP-HASH-G28",
+      "sameNormalizedTextBody": true,
+      "authorFamilyCandidate": "GUERANGER_ANNEE_LITURGIQUE",
+      "members": [
+        {
+          "articleId": "a0452_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0452_ancien",
+          "sourceIndexLabel": "Mer. Q.-T."
+        },
+        {
+          "articleId": "a0454_ancien",
+          "panelOrdinal": 1,
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0454_ancien",
+          "sourceIndexLabel": "Sam. Q.-T."
+        }
+      ],
+      "originalHistoricalTextIdentityCertified": false,
+      "liturgicalEditionEquivalenceCertified": false,
+      "rightsCleared": false
+    }
+  ]
+}
