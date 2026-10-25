@@ -26,11 +26,15 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Verify source-anchored rubrics versus approved graphical rail tiles
         run: node tests/reader-iconless-source-visual-phone.mjs
+      - name: Verify bilingual Missal rubric typography and two-column book view
+        run: node tests/mass-missal-columns-phone.mjs
       - name: Retain real phone screenshots and source-cue JSON
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: mass-iconless-source-mobile-proof
-          path: artifacts/mass-iconless-visual/
+          path: |
+            artifacts/mass-iconless-visual/
+            artifacts/missal-phone-review/
           if-no-files-found: warn
           retention-days: 7

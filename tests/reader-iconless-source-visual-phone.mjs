@@ -127,6 +127,18 @@ try{
       )].map(el=>({type:el.className,sourceCueId:el.dataset.sourceCueId??null,
         text:el.textContent?.trim()??"",display:display(el),
         bounds:(()=>{const b=el.getBoundingClientRect();return {left:b.left,right:b.right,width:b.width}})()})):[];
+      const rubricStyles=[...shell.querySelectorAll(
+        ".ao-live-inline-rubrics:not([data-fully-icon-backed='true']),.ao-iconless-source-rubric"
+      )].filter(el=>display(el)!=="none").map(el=>{
+        const cs=getComputedStyle(el);
+        return {kind:el.classList.contains("ao-iconless-source-rubric")
+            ?"ICONLESS_SOURCE":"PUBLISHED_SOURCE",
+          fontSize:parseFloat(cs.fontSize),lineHeight:parseFloat(cs.lineHeight),
+          fontFamily:cs.fontFamily,fontStyle:cs.fontStyle,
+          borderLeftWidth:parseFloat(cs.borderLeftWidth),
+          paddingLeft:parseFloat(cs.paddingLeft),marginTop:parseFloat(cs.marginTop),
+          textAlign:cs.textAlign};
+      });
       const cinematic=shell.querySelector('[data-role="cinematic"]');
       const cinematicIcon=cinematic?.querySelector('[data-icon-slot="cinematic"]');
       const cinematicStyle=cinematicIcon?getComputedStyle(cinematicIcon):null;
@@ -141,7 +153,7 @@ try{
         actionIconKey:native?.priestActionIconKey??null,
         sourceParagraphKind:owner?.dataset.kind??null,
         sourceCueIds:owner?.dataset.sourceCueIds??null,
-        rails,rubrics,stage:{left:stage?.dataset.leftRail,right:stage?.dataset.rightRail},
+        rails,rubrics,rubricStyles,stage:{left:stage?.dataset.leftRail,right:stage?.dataset.rightRail},
         width:innerWidth,documentWidth:document.documentElement.scrollWidth};
     },spec.cue);
     const name=spec.width+"-"+spec.kind+".png";
@@ -167,6 +179,16 @@ try{
           "Certified minister source text disappeared at "+spec.cue);
         const minister=snapshot.rails.flatMap(x=>x.tiles).find(x=>x.channel==="sacred-minister");
         assert.equal(minister?.display,"none","Text-only minister box is still visible");
+      }
+      for(const style of snapshot.rubricStyles){
+        assert.ok(style.fontSize>=13&&style.fontSize<=15.1,
+          "LIVE source rubric is unreadably small: "+JSON.stringify(style));
+        assert.ok(style.lineHeight/style.fontSize>=1.49,
+          "LIVE rubric line spacing fell below its reference");
+        assert.ok(style.borderLeftWidth>=2&&style.paddingLeft>=11,
+          "LIVE rubric loses the consistent inset rule");
+        assert.equal(style.fontStyle,"italic");
+        assert.equal(style.textAlign,"left");
       }
       const iconless=spec.kind==="minor-elevation"||spec.kind==="ecce-agnus";
       if(snapshot.cinematic.visible &&
