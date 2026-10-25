@@ -58,7 +58,8 @@ export const assess=(row,response)=>{
  const closeExisting=GEO.places.filter(p=>p.address?.country_code===row.country&&p.geo?.lat!=null&&p.geo?.lng!=null).map(p=>({place_id:p.place_id,distance_m:distanceM(row.research_search_center.lat,row.research_search_center.lng,p.geo.lat,p.geo.lng)})).filter(p=>p.distance_m<=1300).sort((a,b)=>a.distance_m-b.distance_m).slice(0,4);
  return {queue_row:row.queue_row,candidate_ids:row.candidate_ids,country:row.country,site_name:row.site_name,identity_source_lead_url:row.source_lead_url,scope_adjudication:row.scope_adjudication||null,status:response.error?"REMOTE_QUERY_FAILED":unique.length?"OSM_CANDIDATE_REVIEW_REQUIRED":"NO_OSM_WORSHIP_FEATURE_IN_RADIUS",remote_error:response.error||null,near_existing_canonical:closeExisting,osm_candidates:unique,publication_authorized:false};
 };
-const urls=[process.env.AO_OVERPASS_ENDPOINT||"https://overpass-api.de/api/interpreter","https://overpass.kumi.systems/api/interpreter"];
+// Public OSM wiki: private.coffee (formerly kumi.systems) and VK Maps allow modest shared research; free and best-effort.
+const urls=[process.env.AO_OVERPASS_ENDPOINT||"https://overpass.private.coffee/api/interpreter","https://maps.mail.ru/osm/tools/overpass/api/interpreter"];
 const delay=ms=>new Promise(ok=>setTimeout(ok,ms));
 async function fetchFrom(url,query){
  const ctrl=new AbortController(),t=setTimeout(()=>ctrl.abort(),22000);
