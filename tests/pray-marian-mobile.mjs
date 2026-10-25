@@ -124,6 +124,14 @@ try{
   .first().evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
  assert.ok(stationPrayerSize>stationInstructionSize+3,
   "Stations prayer must visually dominate instructions");
+ assert.equal(await page.locator("#aoPray435930 .aoP435930Stations .aoDevoCardHead")
+  .evaluate(x=>getComputedStyle(x).display),"none",
+  "The station is already named in the chapter rail; do not duplicate its title");
+ const responseOpacity=await page.locator("#aoPray435930 .aoP435930Stations .aoP435930VRLine")
+  .evaluateAll(es=>es.map(x=>Number(getComputedStyle(x).opacity)));
+ assert.ok(responseOpacity.length>=2&&responseOpacity.every(x=>x>=.94),
+  "Both parts of the Stations versicle/response must be legible: "+JSON.stringify(responseOpacity));
+
  await page.screenshot({path:resolve(captures,"02-stations-fr-language-390.png"),fullPage:false,animations:"disabled"});
  await stationsLocale.click();
  assert.equal((await stationsLocale.innerText()).trim(),"EN");
