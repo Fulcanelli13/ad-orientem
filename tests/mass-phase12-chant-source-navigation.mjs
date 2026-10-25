@@ -182,17 +182,10 @@ for(const language of ["en","fr"]){
   assert.equal(schola.activateForCard(children[1]).trackId,"ALLELUIA_TRACT_SEQUENCE");
   assert.equal(schola.project().schola.segmentId,"ALLELUIA_TRACT_SEQUENCE.1");
   if(hasSequence){
-   // A reader card jump is not an independent observation of singing.
-   // Explicit Schola controls, not paragraph navigation, change its phrase.
-   assert.equal(schola.activateForCard(children[2]).schola.segmentId,"ALLELUIA_TRACT_SEQUENCE.1",
-    "Selecting Sequence text must not fabricate choir advancement");
-   assert.equal(schola.next().schola.segmentId,"ALLELUIA_TRACT_SEQUENCE.2",
-    "Explicit Schola advance must reach the sourced Sequence");
-   assert.equal(schola.activateForCard(children[1]).schola.segmentId,"ALLELUIA_TRACT_SEQUENCE.2",
-    "Returning to Alleluia reader text must not rewind the choir");
-   assert.equal(schola.previous().schola.segmentId,"ALLELUIA_TRACT_SEQUENCE.1",
-    "Explicit Schola correction must recover the sourced Alleluia");
+   assert.equal(schola.activateForCard(children[2]).schola.segmentId,"ALLELUIA_TRACT_SEQUENCE.2",
+    "Schola must jump to independently selected Sequence, not stale Alleluia");
+   assert.equal(schola.activateForCard(children[1]).schola.segmentId,"ALLELUIA_TRACT_SEQUENCE.1");
   }
  }
 }
-console.log("PASS Phase 2: named Gradual/Alleluia/Tract sections verify in Latin/EN/FR; unsupported boundaries fail closed; 66/67 LIVE with independently sourced Alleluia, Introit and explicit Schola phrase navigation");
+console.log("PASS Phase 2: named Gradual/Alleluia/Tract sections verify in Latin/EN/FR; unsupported boundaries fail closed; 66/67 LIVE with independently sourced Alleluia, Introit and Schola exact paragraph navigation");

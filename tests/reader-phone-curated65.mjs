@@ -878,8 +878,8 @@ try{
         console.log("PR1645 named screenshot active rail",slug,railState);
         assert.deepEqual(railState.filter(x=>
           ["priest-voice","priest-action","gesture","response","bell"].includes(x.channel) &&
-          x.iconHidden && x.fallbackDisplay==="none"),[],
-          "LIVE showed an empty rail tile when approved artwork was unavailable: "+
+          (x.iconHidden || x.fallbackDisplay!=="none")),[],
+          "LIVE rails must display actual artwork only, with text in source rubrics: "+
           JSON.stringify({slug,railState}));
       }
       await page.screenshot({path:resolve(out,
