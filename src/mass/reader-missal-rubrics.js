@@ -4,8 +4,10 @@
  * observation or a change to the ritual text/card/clock.
  *
  * The 19 Canon entries reuse the existing strict published Canon allowlist.
- * The other 33 entries are also individually approved in the shipped R17
- * registry; no new "1962_NORMATIVE" row is automatically promoted.
+ * The remaining outside-Canon R17 entries are individually approved in the
+ * published registry. The added Placeat rubric (C0261) has its own exact
+ * 1962 Ritus XII.1 source and explicit publication allowlist. It is a short
+ * non-observational text direction, not a priest movement clock or new icon.
  */
 import {publishedCanonRubricsForParagraph} from "./reader-canon-published-rubrics.js";
 
@@ -20,7 +22,7 @@ const NONCANON_APPROVED=new Set([
  "AO.RUB.C0117.02","AO.RUB.C0119.01","AO.RUB.C0126.01",
  "AO.RUB.C0208.01","AO.RUB.C0219.01","AO.RUB.C0228.01",
  "AO.RUB.C0232.01","AO.RUB.C0232.02","AO.RUB.C0234.01",
- "AO.RUB.C0234.02","AO.RUB.C0262.01","AO.RUB.C0262.02",
+ "AO.RUB.C0234.02","AO.RUB.C0261.01","AO.RUB.C0262.01","AO.RUB.C0262.02",
  "AO.RUB.C0263.01","AO.RUB.C0263.02","AO.RUB.C0263.03",
 ]);
 // A single published priest label can include an action belonging to the
@@ -30,6 +32,7 @@ const ACTIONS=Object.freeze({
  "BLESSES OFFERINGS":["The priest blesses the offerings.","Le prêtre bénit les offrandes."],
  "BOWS HEAD":["The priest inclines his head.","Le prêtre incline la tête."],
  "BOWS HEAD TO CROSS":["The priest inclines his head towards the cross.","Le prêtre incline la tête vers la croix."],
+ "BOWS AT ALTAR WITH JOINED HANDS":["The priest bows his head over the altar, with his joined hands resting upon it, and says this prayer silently.","Le prêtre incline la tête devant l’autel, les mains jointes posées sur celui-ci, et récite cette prière à voix basse."],
  "COVERS CHALICE":["The priest covers the chalice.","Le prêtre recouvre le calice."],
  "CROSSES WITH CHALICE":["The priest traces a sign of the Cross with the chalice.","Le prêtre trace un signe de croix avec le calice."],
  "CROSSES WITH PATEN":["The priest traces a sign of the Cross with the paten.","Le prêtre trace un signe de croix avec la patène."],
