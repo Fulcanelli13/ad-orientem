@@ -43,7 +43,7 @@ assert.match(runtime,/\.filter\(\(\[route\]\)=>!route\.startsWith\("find:traditi
 console.log("PASS: canonical Calendar customs day, season and month contextual folios, source links, bilingual copy and unpublished holds");
 
 const pinnedDates={
-  "2026-01-06":["EPIP-003"],"2026-02-02":["DOM-011","DOM-014"],"2026-02-03":["BLSS-001"],
+  "2026-01-06":["EPIP-003"],"2026-02-02":["DOM-011","CRIB-001"],"2026-02-03":["BLSS-001"],
   "2026-03-19":["SJOS-001"],"2026-06-13":["SANT-001"],
   "2026-07-25":["SCHR-001"],"2026-08-15":["MARI-001","BLSS-002"],
   "2026-11-02":["DEAD-001","DEAD-003"],"2026-12-06":["SNIC-001"],
