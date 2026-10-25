@@ -43,12 +43,13 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   const rubrics=mk("AO.SM.C0261",form,language,"TEXT").publishedMissalRubrics;
   assert.equal(rubrics.length,1,form+"/"+language+" must receive one source-only Placeat rubric");
   const r=rubrics[0];
-  assert.equal(r.id,"AO.RUB.C0261.01");
+  assert.equal(r.id,"MR62.ADD.C0261.01");
   assert.equal(r.sourceCueId,"AO.SM.C0261");
   assert.equal(r.actor,"PRIEST");
   assert.equal(r.observedNow,false);
   assert.equal(r.sourceId,"MR62_RITUS");
-  assert.equal(r.owner,"PUBLISHED_R17_MISSAL_INLINE");
+  assert.equal(r.owner,"MR62_1962_MISSAL_ADDITIONS");
+  assert.equal(r.review,"NEW_1962_RITUS_SOURCE_CERTIFIED_ADDENDUM");
   assert.match(r.displayText,language==="fr"?/mains jointes.*voix basse/:/joined hands.*silently/);
   assert.equal(mk("AO.SM.C0038",form,language,"TEXT").publishedMissalRubrics.length,0,
     "Oramus te already has a gesture-matrix owner; do not add a duplicate published inline rubric");
@@ -86,6 +87,8 @@ assert.match(dom,/renderedIcon&&!renderedIcon\.hidden/);
 assert.match(dom,/syncExactIconBackedRubrics/);
 assert.match(dom,/mode==="MISSAL"\|\|mode==="LIVE"/);
 assert.match(dom,/source\.href=event\.sourceUrl/);
+assert.match(dom,/MR62_1962_MISSAL_ADDITIONS/);
+assert.match(dom,/NEW_1962_RITUS_SOURCE_CERTIFIED_ADDENDUM/);
 assert.match(dom,/node\.dataset\.rubricPresentationOwner=conciseSource\.owner/);
 assert.doesNotMatch(dom,/data-prayer-suggestion|optional-private-prayer/);
 const native=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
