@@ -39,6 +39,13 @@ const CSS=`
   --ao-type-prose:18px;
   --ao-type-action-primary:17px;
   --ao-type-action-secondary:16px;
+  /* Editorial hierarchy shared by Today/Pray/Formation/Mass setup.
+   * Sacred reading text retains its separately governed reader scale. */
+  --ao-type-editorial-label:12px;
+  --ao-type-metadata:15px;
+  --ao-type-selection-title:20px;
+  --ao-type-feature-title:25px;
+  --ao-type-hero-title:clamp(33px,6vw,41px);
   --ao-type-speaker-weight:650;
   /* Tab-bar labels. Earlier per-breakpoint rules shrank them to 7.4-9 px. */
   --ao-type-nav:12px;
