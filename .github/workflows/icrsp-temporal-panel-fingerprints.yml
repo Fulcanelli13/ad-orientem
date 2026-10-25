@@ -30,18 +30,10 @@ jobs:
           python-version: '3.12'
       - name: Verify source-only hash transformations
         run: python -m unittest discover -s tests -p 'test_icrsp_commentary_fingerprints.py' -v
-      - name: Download exact 783 panel labels/positions from successful run
-        uses: actions/download-artifact@v4
-        with:
-          run-id: 40204497782
-          github-token: \${{ github.token }}
-          repository: Fulcanelli13/ad-orientem
-          name: icrsp-commentary-783-merged
-          path: /tmp/icrsp
       - name: Fingerprint source commentary bodies with zero text reproduction
         run: |
           python tools/icrsp/fingerprint_commentary_bodies.py \
-            --inventory /tmp/icrsp/icrsp-commentary-783.v1.json \
+            --inventory data/source-text/icrsp-france-index-discovery.v1.json \
             --start \${{ matrix.start }} \
             --end \${{ matrix.end }} \
             --delay 5.0 \
