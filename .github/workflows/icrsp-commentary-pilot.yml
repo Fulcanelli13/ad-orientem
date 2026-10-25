@@ -1,0 +1,47 @@
+name: ICRSP commentary sections research pilot
+on:
+  push:
+    branches: [governance/icrsp-source-inventory-1665]
+    paths: ['.github/workflows/icrsp-commentary-pilot.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  extract-fifteen:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check exact author block and anonymous-control fixtures
+        run: python -m unittest discover -s tests -p 'test_icrsp_commentary_boundaries.py' -v
+      - name: Inspect 15 distributed articles from the existing index
+        run: |
+          python tools/icrsp/extract_commentary_blocks.py \
+            --indices 0,20,80,120,190,193,230,300,460,635,665,690,720,780,805 \
+            --delay 3.0 \
+            --out icrsp-commentary-pilot-15.v1.json
+      - name: Report author work labels and review flags
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('icrsp-commentary-pilot-15.v1.json', encoding='utf-8'))
+          print('Structured review:', d['totals'])
+          for r in d['records']:
+              print(r['articleId'], r['indexSection'], r['commentaryHeadingCount'],
+                    r['explicitAuthorWorkBlocks'], r['anonymousOrOtherBlocks'])
+          assert d['totals']['inspected'] == 15, d['errors']
+          assert d['totals']['pagesWithBlockStructure'] > 0
+          assert all(r['editionCertification']=='NOT_CERTIFIED_1962' for r in d['records'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-commentary-pilot-15
+          path: icrsp-commentary-pilot-15.v1.json
+          retention-days: 30
+          if-no-files-found: error
