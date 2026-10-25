@@ -64,7 +64,25 @@
       "gestureMatrixId": null,
       "sourceStatus": "SOURCE_ATTESTED_NOT_IN_GESTURE_MATRIX",
       "executionPolicy": "PRESERVE_PRIEST_INTONATION_REF_PR1554",
-      "runtimePromotion": "NOT_IN_THIS_BATCH"
+      "runtimePromotion": "NOT_IN_THIS_BATCH",
+      "primary1962Source": {
+        "url": "https://www.musicasacra.com/pdf/missale62.pdf",
+        "section": "Ritus servandus IV.3",
+        "originalLatinChecked": true,
+        "englishTranslationUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5",
+        "ickspWitnessUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien"
+      },
+      "shortDescription": {
+        "en": "At Deo, the priest joins his hands and bows his head toward the Cross.",
+        "fr": "À Deo, le prêtre joint les mains et incline la tête vers la Croix."
+      },
+      "formTiming": {
+        "lowMass": "SOURCE_WORD_SYNC_WITH_PRIEST_SPEECH",
+        "missaCantata": "PRIEST_OWN_RECITATION_NOT_SCHOLA_CLOCK",
+        "solemn": "PRIEST_OWN_RECITATION_NOT_SCHOLA_CLOCK"
+      },
+      "nextPublicationTarget": "MISSAL_BOOK_REFERENCE_FIRST",
+      "liveClockGate": "REQUIRES_ACTUAL_SOURCE_OWNED_PRIEST_EVENT_NO_SCHOLA_INFERENCE"
     },
     {
       "id": "AO.ICKSP.B02.002",
@@ -78,7 +96,25 @@
       "gestureMatrixId": null,
       "sourceStatus": "SOURCE_ATTESTED_NOT_IN_GESTURE_MATRIX",
       "executionPolicy": "NEVER_INFER_FROM_SCHOLA_CLOCK",
-      "runtimePromotion": "NOT_IN_THIS_BATCH"
+      "runtimePromotion": "NOT_IN_THIS_BATCH",
+      "primary1962Source": {
+        "url": "https://www.musicasacra.com/pdf/missale62.pdf",
+        "section": "Ritus servandus IV.3",
+        "originalLatinChecked": true,
+        "englishTranslationUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5",
+        "ickspWitnessUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien"
+      },
+      "shortDescription": {
+        "en": "At Adoramus te, the priest bows his head toward the Cross during his own recitation.",
+        "fr": "À Adoramus te, le prêtre incline la tête vers la Croix pendant sa propre récitation."
+      },
+      "formTiming": {
+        "lowMass": "SOURCE_WORD_SYNC_WITH_PRIEST_SPEECH",
+        "missaCantata": "PRIEST_OWN_RECITATION_NOT_SCHOLA_CLOCK",
+        "solemn": "PRIEST_OWN_RECITATION_NOT_SCHOLA_CLOCK"
+      },
+      "nextPublicationTarget": "MISSAL_BOOK_REFERENCE_FIRST",
+      "liveClockGate": "REQUIRES_ACTUAL_SOURCE_OWNED_PRIEST_EVENT_NO_SCHOLA_INFERENCE"
     },
     {
       "id": "AO.ICKSP.B02.003",
@@ -220,5 +256,16 @@
       "executionPolicy": "NEVER_INFER_FROM_SCHOLA_CLOCK",
       "runtimePromotion": "NOT_IN_THIS_BATCH"
     }
-  ]
+  ],
+  "researchAdjudication": {
+    "scope": "TWO_NORMATIVE_PRIEST_BOWS",
+    "certification": "SOURCE_CONFIRMED_PUBLICATION_NOT_YET_SCHEDULED",
+    "latin1962MissalChecked": true,
+    "counts": {
+      "newPublishedGestureEvents": 0,
+      "newIcons": 0,
+      "newCards": 0
+    },
+    "rule": "Normative action may be described in the Missal; do not display as observed in LIVE until independent clock/source event can establish timing."
+  }
 }
