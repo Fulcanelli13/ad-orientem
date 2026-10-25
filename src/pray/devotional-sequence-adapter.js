@@ -168,7 +168,11 @@ export function installSequentialDevotionalReader({
       // Adoration/Benediction retain subtle focus only for their guidance.
       const canonicalPrayer=(kind==="adoration"||kind==="benediction")&&
         Boolean(p.closest(".aoP435930Prayer"));
-      const power=canonicalPrayer?"1":i===found?"1":Math.abs(i-found)===1?".56":".30";
+      // The complete examination and preparation text must remain readable:
+      // highlighting one question must not hide other possible sins to review.
+      const confessionPrimary=kind==="confession"&&
+        Boolean(p.closest(".aoP435930ConfOneCard,.aoP435930Prayer"));
+      const power=canonicalPrayer||confessionPrimary?"1":i===found?"1":Math.abs(i-found)===1?".56":".30";
       p.style.setProperty("--ao-devo-focus",power);
       p.style.setProperty("opacity",power,"important");
       p.dataset.aoDevoActive=i===found?"true":"false";
