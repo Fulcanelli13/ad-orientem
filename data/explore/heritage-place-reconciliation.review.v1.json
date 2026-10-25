@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 440,
+    "places": 449,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 181,
+    "places_without_direct_claim": 190,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -58,7 +58,10 @@
       "place:CO:basilica-senor-milagros-buga",
       "place:CU:santuario-nacional-nuestra-senora-regla",
       "place:CW:queen-holy-rosary-cathedral-willemstad",
+      "place:CZ:bazilika-navstiveni-panny-marie-svaty-kopecek",
+      "place:CZ:bazilika-svateho-vavrince-zdislavy-jablonne",
       "place:CZ:bazilika-svaty-hostyn",
+      "place:CZ:poutni-kostel-svateho-jana-nepomuckeho-zelena-hora",
       "place:CZ:velehrad-assumption-cyril-methodius-basilica",
       "place:DE:bamberger-dom",
       "place:DE:basilika-st-martin-weingarten",
@@ -73,7 +76,10 @@
       "place:DZ:basilique-saint-augustin-annaba",
       "place:EC:basilica-voto-nacional-quito",
       "place:EE:saints-peter-paul-cathedral-tallinn",
+      "place:ES:basilica-nuestra-senora-arantzazu-onati",
       "place:ES:basilica-nuestra-senora-atocha-madrid",
+      "place:ES:basilica-nuestra-senora-begona-bilbao",
+      "place:ES:basilica-san-isidoro-leon",
       "place:ES:basilica-virgen-desamparados-valencia",
       "place:ES:capella-santa-cova-montserrat",
       "place:ES:covadonga-basilica",
@@ -114,8 +120,10 @@
       "place:IT:madonna-neve-rocchetta-bergamo",
       "place:IT:santuario-beata-vergine-neve-foppolo",
       "place:IT:santuario-francescano-la-verna",
+      "place:IT:santuario-madonna-delle-lacrime-siracusa",
       "place:IT:santuario-madonna-san-luca-bologna",
       "place:IT:santuario-monte-berico-vicenza",
+      "place:IT:santuario-nostra-signora-montallegro-rapallo",
       "place:IT:santuario-san-paolo-della-croce-ovada",
       "place:JM:holy-trinity-cathedral-kingston",
       "place:JO:memorial-moses-mount-nebo",
@@ -134,6 +142,7 @@
       "place:LK:national-shrine-our-lady-matara",
       "place:LK:st-lucia-cathedral-colombo",
       "place:LS:our-lady-victories-cathedral-maseru",
+      "place:LT:siluvos-svc-mergeles-marijos-gimimo-bazilika",
       "place:LT:trakai-visitation-basilica",
       "place:LT:zemaiciu-kalvarija-visitation-basilica",
       "place:MG:ilot-de-la-vierge-ampefy",
@@ -980,8 +989,26 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:CZ:bazilika-navstiveni-panny-marie-svaty-kopecek",
+      "display_name": "Bazilika Navštívení Panny Marie, Svatý Kopeček",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CZ:bazilika-svateho-vavrince-zdislavy-jablonne",
+      "display_name": "Bazilika sv. Vavřince a sv. Zdislavy, Jablonné v Podještědí",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:CZ:bazilika-svaty-hostyn",
       "display_name": "Bazilika Nanebevzetí Panny Marie, Svatý Hostýn",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CZ:poutni-kostel-svateho-jana-nepomuckeho-zelena-hora",
+      "display_name": "Poutní kostel svatého Jana Nepomuckého na Zelené hoře",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -1362,8 +1389,26 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:ES:basilica-nuestra-senora-arantzazu-onati",
+      "display_name": "Basílica de Nuestra Señora de Arantzazu, Oñati",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:ES:basilica-nuestra-senora-atocha-madrid",
       "display_name": "Basílica-Parroquia Nuestra Señora de Atocha",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:basilica-nuestra-senora-begona-bilbao",
+      "display_name": "Basílica de Nuestra Señora de Begoña, Bilbao",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:basilica-san-isidoro-leon",
+      "display_name": "Real Basílica Colegiata de San Isidoro, León",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -3468,6 +3513,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IT:santuario-madonna-delle-lacrime-siracusa",
+      "display_name": "Basilica Santuario della Madonna delle Lacrime, Siracusa",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IT:santuario-madonna-san-luca-bologna",
       "display_name": "Santuario della Beata Vergine di San Luca",
       "record_ids": {},
@@ -3476,6 +3527,12 @@
     {
       "place_id": "place:IT:santuario-monte-berico-vicenza",
       "display_name": "Santuario Santa Maria di Monte Berico",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:santuario-nostra-signora-montallegro-rapallo",
+      "display_name": "Santuario Basilica di Nostra Signora di Montallegro",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -3732,6 +3789,12 @@
           "apparition:LT:siluva"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:LT:siluvos-svc-mergeles-marijos-gimimo-bazilika",
+      "display_name": "Šiluvos Švč. Mergelės Marijos Gimimo bazilika",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
