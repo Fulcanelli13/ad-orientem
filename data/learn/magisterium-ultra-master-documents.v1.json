@@ -1,0 +1,2767 @@
+{
+  "schema": "AO_MAGISTERIUM_ULTRA_MASTER_DOCUMENTS_V1",
+  "created": "2026-10-19",
+  "status": "P0_P1_RESEARCH_ONLY",
+  "scope": "Unique primary Church document identity; no duplicate text and no doctrine-claim authorisation",
+  "sourceOfTruth": "Original documents; Denzinger is an auxiliary concordance",
+  "families": [
+    {
+      "id": "revelation-scripture",
+      "title": "Revelation, Scripture and Tradition"
+    },
+    {
+      "id": "trinity-christology",
+      "title": "Trinity and Christology"
+    },
+    {
+      "id": "ecclesiology-authority",
+      "title": "Church, primacy and Magisterium"
+    },
+    {
+      "id": "grace-salvation",
+      "title": "Sin, grace and salvation"
+    },
+    {
+      "id": "eucharist-mass",
+      "title": "Eucharist and sacrifice of the Mass"
+    },
+    {
+      "id": "sacraments",
+      "title": "The seven sacraments"
+    },
+    {
+      "id": "mary-saints",
+      "title": "Our Lady, saints, veneration"
+    },
+    {
+      "id": "moral-theology",
+      "title": "Moral theology and human dignity"
+    },
+    {
+      "id": "social-teaching",
+      "title": "Society, political authority and economic life"
+    },
+    {
+      "id": "liturgy-discipline",
+      "title": "Liturgy and ecclesiastical discipline"
+    },
+    {
+      "id": "eschatology",
+      "title": "Last things"
+    },
+    {
+      "id": "modern-controversies",
+      "title": "Historical controversies and interpretation"
+    }
+  ],
+  "records": [
+    {
+      "id": "NICAEA-I-325",
+      "title": "Nicene Creed and definitions",
+      "year": 325,
+      "issuer": "Council of Nicaea I",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "trinity-christology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "CONSTANTINOPLE-I-381",
+      "title": "Creed and Trinitarian teaching",
+      "year": 381,
+      "issuer": "Council of Constantinople I",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "trinity-christology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "EPHESUS-431",
+      "title": "Cyril's letter and council Christology",
+      "year": 431,
+      "issuer": "Council of Ephesus",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "trinity-christology",
+        "mary-saints"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sourceId": "EPHESUS431",
+          "urlLead": "https://www.newadvent.org/fathers/3810.htm",
+          "locatorLead": "Cyril's second letter, Theotokos and unity of Christ's person",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "CHALCEDON-451",
+      "title": "Definition of faith on the two natures of Christ",
+      "year": 451,
+      "issuer": "Council of Chalcedon",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "trinity-christology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "CONSTANTINOPLE-II-553",
+      "title": "Conciliar Christological definitions",
+      "year": 553,
+      "issuer": "Council of Constantinople II",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "trinity-christology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "CONSTANTINOPLE-III-681",
+      "title": "Definition on the two wills and operations of Christ",
+      "year": 681,
+      "issuer": "Council of Constantinople III",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "trinity-christology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "NICAEA-II-787",
+      "title": "Definition concerning the veneration of holy images",
+      "year": 787,
+      "issuer": "Council of Nicaea II",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "mary-saints"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "LATERAN-IV-1215",
+      "title": "Firmiter credimus and related constitutions",
+      "year": 1215,
+      "issuer": "Fourth Lateran Council",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "trinity-christology",
+        "eucharist-mass",
+        "ecclesiology-authority"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "LYON-II-1274",
+      "title": "Profession of faith of Michael Palaeologus",
+      "year": 1274,
+      "issuer": "Second Council of Lyon",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "ecclesiology-authority",
+        "sacraments",
+        "eschatology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "FLORENCE-1439-UNION",
+      "title": "Laetentur caeli: Decree of Union with the Greeks",
+      "year": 1439,
+      "issuer": "Council of Florence",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "ecclesiology-authority",
+        "eschatology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "FLORENCE-1439-ARMENIANS",
+      "title": "Exsultate Deo: Decree for the Armenians",
+      "year": 1439,
+      "issuer": "Council of Florence",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "sacraments"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "TRENT-IV-1546",
+      "title": "Decree concerning the canonical Scriptures and apostolic traditions",
+      "year": 1546,
+      "issuer": "Council of Trent — Session IV",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "revelation-scripture"
+      ],
+      "primarySource": {
+        "url": "https://www.papalencyclicals.net/councils/trent/the-complete-text.htm",
+        "language": "en",
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": true,
+        "sourceClass": "PUBLIC_HISTORICAL_TRANSLATION",
+        "rightsReview": "PENDING_REPRODUCTION_REVIEW"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sourceId": "TRENT4",
+          "urlLead": "https://www.papalencyclicals.net/councils/trent/the-complete-text.htm",
+          "locatorLead": "Session IV, 8 April 1546",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY",
+      "sourceVerificationNotes": "Direct English transcription at a third-party historical site; Latin original not yet verified for this record."
+    },
+    {
+      "id": "TRENT-V-1546",
+      "title": "Decree on Original Sin",
+      "year": 1546,
+      "issuer": "Council of Trent — Session V",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "grace-salvation"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "TRENT-VI-1547",
+      "title": "Decree on Justification",
+      "year": 1547,
+      "issuer": "Council of Trent — Session VI",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "grace-salvation"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sourceId": "TRENT6",
+          "urlLead": "https://www.ewtn.com/catholicism/library/decree-on-justification-1496",
+          "locatorLead": "13 January 1547, chapters 7–10, 13, 16 and canons 1,9,14–18",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "TRENT-VII-1547",
+      "title": "Decree and canons on the Sacraments in general",
+      "year": 1547,
+      "issuer": "Council of Trent — Session VII",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "sacraments"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sourceId": "TRENT7",
+          "urlLead": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_VII/Sacraments",
+          "locatorLead": "Session VII general canons 1–13",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "TRENT-XIII-1551",
+      "title": "Decree concerning the Most Holy Eucharist",
+      "year": 1551,
+      "issuer": "Council of Trent — Session XIII",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "eucharist-mass"
+      ],
+      "primarySource": {
+        "url": "https://www.papalencyclicals.net/councils/trent/the-complete-text.htm",
+        "language": "en",
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": true,
+        "sourceClass": "PUBLIC_HISTORICAL_TRANSLATION",
+        "rightsReview": "PENDING_REPRODUCTION_REVIEW"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sourceId": "TRENT13",
+          "urlLead": "https://www.ewtn.com/catholicism/library/thirteenth-session-of-the-council-of-trent-1493",
+          "locatorLead": "October 1551, Eucharistic presence and transubstantiation",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY",
+      "sourceVerificationNotes": "Direct English transcription at a third-party historical site; Latin original not yet verified for this record."
+    },
+    {
+      "id": "TRENT-XIV-1551",
+      "title": "Decrees on Penance and Extreme Unction",
+      "year": 1551,
+      "issuer": "Council of Trent — Session XIV",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "sacraments"
+      ],
+      "primarySource": {
+        "url": "https://www.papalencyclicals.net/councils/trent/the-complete-text.htm",
+        "language": "en",
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": true,
+        "sourceClass": "PUBLIC_HISTORICAL_TRANSLATION",
+        "rightsReview": "PENDING_REPRODUCTION_REVIEW"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY",
+      "sourceVerificationNotes": "Direct English transcription at a third-party historical site; Latin original not yet verified for this record."
+    },
+    {
+      "id": "TRENT-XXI-1562",
+      "title": "Decree on Communion under Both Species",
+      "year": 1562,
+      "issuer": "Council of Trent — Session XXI",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "eucharist-mass",
+        "sacraments"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "TRENT-XXII-1562",
+      "title": "Doctrine and canons concerning the Sacrifice of the Mass",
+      "year": 1562,
+      "issuer": "Council of Trent — Session XXII",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "eucharist-mass"
+      ],
+      "primarySource": {
+        "url": "https://www.papalencyclicals.net/councils/trent/the-complete-text.htm",
+        "language": "en",
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": true,
+        "sourceClass": "PUBLIC_HISTORICAL_TRANSLATION",
+        "rightsReview": "PENDING_REPRODUCTION_REVIEW"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sourceId": "TRENT22",
+          "urlLead": "https://www.ewtn.com/catholicism/library/twentysecond-session-of-the-council-of-trent-1489",
+          "locatorLead": "September 1562, chapters 1–2 and canons 1–3",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY",
+      "sourceVerificationNotes": "Direct English transcription at a third-party historical site; Latin original not yet verified for this record."
+    },
+    {
+      "id": "TRENT-XXIII-1563",
+      "title": "Decree on the Sacrament of Order",
+      "year": 1563,
+      "issuer": "Council of Trent — Session XXIII",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "sacraments"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sourceId": "TRENT23",
+          "urlLead": "https://www.ewtn.com/catholicism/library/twentythird-session-of-the-council-of-trent-1491",
+          "locatorLead": "1563, doctrine and canons on Orders, priesthood and bishops",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "TRENT-XXIV-1563",
+      "title": "Doctrine and canons on Matrimony",
+      "year": 1563,
+      "issuer": "Council of Trent — Session XXIV",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "sacraments",
+        "moral-theology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sourceId": "TRENT24",
+          "urlLead": "https://history.hanover.edu/texts/trent/ct24.html",
+          "locatorLead": "11 November 1563; doctrine of matrimony, canons 1–12",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "TRENT-XXV-1563",
+      "title": "Decrees on Purgatory, Saints, Relics and Sacred Images",
+      "year": 1563,
+      "issuer": "Council of Trent — Session XXV",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "mary-saints",
+        "eschatology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sourceId": "TRENT25",
+          "urlLead": "https://www.ewtn.com/catholicism/library/twentyfifth-session-of-the-council-of-trent-1492",
+          "locatorLead": "December 1563, distinct decrees on Purgatory, saints, relics and images",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "VATICAN-I-DEI-FILIUS-1870",
+      "title": "Dei Filius",
+      "year": 1870,
+      "issuer": "First Vatican Council",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "revelation-scripture",
+        "ecclesiology-authority"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "VATICAN-I-PASTOR-AETERNUS-1870",
+      "title": "Pastor aeternus",
+      "year": 1870,
+      "issuer": "First Vatican Council",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "ecclesiology-authority"
+      ],
+      "primarySource": {
+        "url": "https://www.vatican.va/content/pius-ix/de/documents/constitutio-dogmatica-pastor-aeternus-18-iulii-1870.html",
+        "language": "la",
+        "originalTextLocated": true,
+        "verifiedAtDocumentLevel": true,
+        "sourceClass": "VATICAN_OFFICIAL_LATIN",
+        "rightsReview": "PENDING_REPRODUCTION_REVIEW"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sourceId": "V1",
+          "urlLead": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+          "locatorLead": "chapters 1–4, especially 4 on ex cathedra",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY",
+      "sourceVerificationNotes": "Official Vatican Latin document page."
+    },
+    {
+      "id": "UNAM-SANCTAM-1302",
+      "title": "Unam sanctam",
+      "year": 1302,
+      "issuer": "Pope Boniface VIII",
+      "documentForm": "papal_bull",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "ecclesiology-authority"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "BENEDICTUS-DEUS-1336",
+      "title": "Benedictus Deus",
+      "year": 1336,
+      "issuer": "Pope Benedict XII",
+      "documentForm": "apostolic_constitution",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "eschatology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "EXSURGE-DOMINE-1520",
+      "title": "Exsurge Domine",
+      "year": 1520,
+      "issuer": "Pope Leo X",
+      "documentForm": "papal_bull",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "modern-controversies"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "CUM-OCCASIONE-1653",
+      "title": "Cum occasione",
+      "year": 1653,
+      "issuer": "Pope Innocent X",
+      "documentForm": "apostolic_constitution",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "grace-salvation",
+        "modern-controversies"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "UNIGENITUS-1713",
+      "title": "Unigenitus Dei Filius",
+      "year": 1713,
+      "issuer": "Pope Clement XI",
+      "documentForm": "apostolic_constitution",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "grace-salvation",
+        "modern-controversies"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "AUCTOREM-FIDEI-1794",
+      "title": "Auctorem fidei",
+      "year": 1794,
+      "issuer": "Pope Pius VI",
+      "documentForm": "apostolic_constitution",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "liturgy-discipline",
+        "modern-controversies"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "MIRARI-VOS-1832",
+      "title": "Mirari vos",
+      "year": 1832,
+      "issuer": "Pope Gregory XVI",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "ecclesiology-authority",
+        "social-teaching"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "INEFFABILIS-DEUS-1854",
+      "title": "Ineffabilis Deus",
+      "year": 1854,
+      "issuer": "Pope Pius IX",
+      "documentForm": "apostolic_constitution",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "mary-saints"
+      ],
+      "primarySource": {
+        "url": "https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html",
+        "language": "it",
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": true,
+        "sourceClass": "VATICAN_OFFICIAL_TRANSLATION",
+        "rightsReview": "PENDING_REPRODUCTION_REVIEW"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sourceId": "INEFF1854",
+          "urlLead": "https://www.vatican.va/content/pius-ix/en/documents/18541208-costituzione-apostolica-ineffabilis-deus.html",
+          "locatorLead": "8 December 1854, definition of Immaculate Conception",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY",
+      "sourceVerificationNotes": "Official Italian Vatican version, original Latin not yet linked."
+    },
+    {
+      "id": "QUANTA-CURA-1864",
+      "title": "Quanta cura",
+      "year": 1864,
+      "issuer": "Pope Pius IX",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "social-teaching"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "SYLLABUS-ERRORUM-1864",
+      "title": "Syllabus of Errors",
+      "year": 1864,
+      "issuer": "Pope Pius IX",
+      "documentForm": "papal_syllabus",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "modern-controversies",
+        "social-teaching"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "IMMORTALE-DEI-1885",
+      "title": "Immortale Dei",
+      "year": 1885,
+      "issuer": "Pope Leo XIII",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "social-teaching"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+          "sourceId": "AO26_CRDOC05_ANSWE_2",
+          "urlLead": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html",
+          "locatorLead": "§§4–6,33–36",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "LIBERTAS-1888",
+      "title": "Libertas praestantissimum",
+      "year": 1888,
+      "issuer": "Pope Leo XIII",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "social-teaching",
+        "moral-theology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "RERUM-NOVARUM-1891",
+      "title": "Rerum novarum",
+      "year": 1891,
+      "issuer": "Pope Leo XIII",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "social-teaching"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "PROVIDENTISSIMUS-DEUS-1893",
+      "title": "Providentissimus Deus",
+      "year": 1893,
+      "issuer": "Pope Leo XIII",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "revelation-scripture"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "APOSTOLICAE-CURAE-1896",
+      "title": "Apostolicae curae",
+      "year": 1896,
+      "issuer": "Pope Leo XIII",
+      "documentForm": "apostolic_letter",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "sacraments",
+        "ecclesiology-authority"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sourceId": "APOST",
+          "urlLead": "https://www.vatican.va/content/leo-xiii/en/apost_letters/documents/litterae-apostolicae-apostolicae-curae-13-septembris-1896.html",
+          "locatorLead": "1896, conclusion on defect of form and intent",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "SATIS-COGNITUM-1896",
+      "title": "Satis cognitum",
+      "year": 1896,
+      "issuer": "Pope Leo XIII",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "ecclesiology-authority"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "DIVINUM-ILLUD-MUNUS-1897",
+      "title": "Divinum illud munus",
+      "year": 1897,
+      "issuer": "Pope Leo XIII",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "trinity-christology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "TESTEM-BENEVOLENTIAE-1899",
+      "title": "Testem benevolentiae",
+      "year": 1899,
+      "issuer": "Pope Leo XIII",
+      "documentForm": "apostolic_letter",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "modern-controversies"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "MIRAE-CARITATIS-1902",
+      "title": "Mirae caritatis",
+      "year": 1902,
+      "issuer": "Pope Leo XIII",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "eucharist-mass"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "TRA-LE-SOLLECITUDINI-1903",
+      "title": "Tra le sollecitudini",
+      "year": 1903,
+      "issuer": "Pope Pius X",
+      "documentForm": "motu_proprio",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "liturgy-discipline"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "AD-DIEM-ILLUM-1904",
+      "title": "Ad diem illum",
+      "year": 1904,
+      "issuer": "Pope Pius X",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "mary-saints"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "SACRA-TRIDENTINA-SYNODUS-1905",
+      "title": "Sacra Tridentina Synodus",
+      "year": 1905,
+      "issuer": "Sacred Congregation of the Council (approved under Pius X)",
+      "documentForm": "congregational_decree",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "eucharist-mass",
+        "liturgy-discipline"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "LAMENTABILI-SANE-1907",
+      "title": "Lamentabili sane exitu",
+      "year": 1907,
+      "issuer": "Holy Office (under Pius X)",
+      "documentForm": "congregational_decree",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "modern-controversies",
+        "revelation-scripture"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "PASCENDI-1907",
+      "title": "Pascendi dominici gregis",
+      "year": 1907,
+      "issuer": "Pope Pius X",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "modern-controversies",
+        "revelation-scripture"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+          "sourceId": "PASCENDI",
+          "urlLead": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+          "locatorLead": "Pius X, Pascendi dominici gregis (1907)",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "PRAESTANTIA-SCRIPTURAE-1907",
+      "title": "Praestantia Scripturae",
+      "year": 1907,
+      "issuer": "Pope Pius X",
+      "documentForm": "motu_proprio",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "revelation-scripture"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "SACRORUM-ANTISTITUM-1910",
+      "title": "Sacrorum antistitum",
+      "year": 1910,
+      "issuer": "Pope Pius X",
+      "documentForm": "motu_proprio",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "modern-controversies"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "QUAM-SINGULARI-1910",
+      "title": "Quam singulari",
+      "year": 1910,
+      "issuer": "Sacred Congregation of the Sacraments (approved under Pius X)",
+      "documentForm": "congregational_decree",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "eucharist-mass",
+        "sacraments"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "DIVINO-AFFLATU-1911",
+      "title": "Divino afflatu",
+      "year": 1911,
+      "issuer": "Pope Pius X",
+      "documentForm": "apostolic_constitution",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "liturgy-discipline"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "MAXIMUM-ILLUD-1919",
+      "title": "Maximum illud",
+      "year": 1919,
+      "issuer": "Pope Benedict XV",
+      "documentForm": "apostolic_letter",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "ecclesiology-authority"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "UBI-ARCANO-1922",
+      "title": "Ubi arcano Dei consilio",
+      "year": 1922,
+      "issuer": "Pope Pius XI",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "social-teaching"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "QUAS-PRIMAS-1925",
+      "title": "Quas primas",
+      "year": 1925,
+      "issuer": "Pope Pius XI",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "social-teaching",
+        "liturgy-discipline"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+          "sourceId": "AO26_CRDOC05_ANSWE_1",
+          "urlLead": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html",
+          "locatorLead": "§§15–18",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "MORTALIUM-ANIMOS-1928",
+      "title": "Mortalium animos",
+      "year": 1928,
+      "issuer": "Pope Pius XI",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "ecclesiology-authority"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "CASTI-CONNUBII-1930",
+      "title": "Casti connubii",
+      "year": 1930,
+      "issuer": "Pope Pius XI",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "moral-theology",
+        "sacraments"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "QUADRAGESIMO-ANNO-1931",
+      "title": "Quadragesimo anno",
+      "year": 1931,
+      "issuer": "Pope Pius XI",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "social-teaching"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "AD-CATHOLICI-SACERDOTII-1935",
+      "title": "Ad catholici sacerdotii",
+      "year": 1935,
+      "issuer": "Pope Pius XI",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "sacraments"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "DIVINI-REDEMPTORIS-1937",
+      "title": "Divini Redemptoris",
+      "year": 1937,
+      "issuer": "Pope Pius XI",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "social-teaching"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "MYSTICI-CORPORIS-1943",
+      "title": "Mystici Corporis Christi",
+      "year": 1943,
+      "issuer": "Pope Pius XII",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "ecclesiology-authority"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "DIVINO-AFFLANTE-SPIRITU-1943",
+      "title": "Divino afflante Spiritu",
+      "year": 1943,
+      "issuer": "Pope Pius XII",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "revelation-scripture"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "MEDIATOR-DEI-1947",
+      "title": "Mediator Dei",
+      "year": 1947,
+      "issuer": "Pope Pius XII",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "liturgy-discipline",
+        "eucharist-mass"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+          "sourceId": "MD47",
+          "urlLead": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+          "locatorLead": "Pius XII, Mediator Dei §§46–49, liturgy and faith",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "HUMANI-GENERIS-1950",
+      "title": "Humani generis",
+      "year": 1950,
+      "issuer": "Pope Pius XII",
+      "documentForm": "encyclical",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "revelation-scripture",
+        "modern-controversies"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "MUNIFICENTISSIMUS-DEUS-1950",
+      "title": "Munificentissimus Deus",
+      "year": 1950,
+      "issuer": "Pope Pius XII",
+      "documentForm": "apostolic_constitution",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "mary-saints"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sourceId": "MUNIF1950",
+          "urlLead": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
+          "locatorLead": "1 November 1950, §44 definition of the Assumption",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "CHRISTUS-DOMINUS-FAST-1953",
+      "title": "Christus Dominus (Eucharistic fasting)",
+      "year": 1953,
+      "issuer": "Pope Pius XII",
+      "documentForm": "apostolic_constitution",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "liturgy-discipline",
+        "eucharist-mass"
+      ],
+      "primarySource": {
+        "url": "https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19530106_christus-dominus.html",
+        "language": "la",
+        "originalTextLocated": true,
+        "verifiedAtDocumentLevel": true,
+        "sourceClass": "VATICAN_OFFICIAL_LATIN",
+        "rightsReview": "PENDING_REPRODUCTION_REVIEW"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY",
+      "sourceVerificationNotes": "Official Vatican Latin document page."
+    },
+    {
+      "id": "MAXIMA-REDEMPTIONIS-1955",
+      "title": "Maxima redemptionis nostrae mysteria",
+      "year": 1955,
+      "issuer": "Sacred Congregation of Rites (under Pius XII)",
+      "documentForm": "congregational_decree",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "liturgy-discipline"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+          "sourceId": "LIT55",
+          "urlLead": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_19551116_maxima-redemptionis_la.html",
+          "locatorLead": "Original Latin decree, 16 November 1955, restored Holy Week, introduction and §§I–II",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "SACRAM-COMMUNIONEM-1957",
+      "title": "Sacram communionem",
+      "year": 1957,
+      "issuer": "Pope Pius XII",
+      "documentForm": "motu_proprio",
+      "historicalLayer": "HISTORICAL_THROUGH_1962",
+      "doctrineFamilies": [
+        "liturgy-discipline",
+        "eucharist-mass"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "VATICAN-II-SACROSANCTUM-1963",
+      "title": "Sacrosanctum Concilium",
+      "year": 1963,
+      "issuer": "Second Vatican Council",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "liturgy-discipline"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+          "sourceId": "SC63",
+          "urlLead": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+          "locatorLead": "Sacrosanctum Concilium, articles 21–23 (1963)",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "VATICAN-II-LUMEN-GENTIUM-1964",
+      "title": "Lumen gentium",
+      "year": 1964,
+      "issuer": "Second Vatican Council",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "ecclesiology-authority",
+        "mary-saints"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sourceId": "LG",
+          "urlLead": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+          "locatorLead": "§§8, 18–25, 39–42",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        },
+        {
+          "sourcePack": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+          "sourceId": "LG64",
+          "urlLead": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+          "locatorLead": "§§8, 18–25, 27 and 37, church and hierarchy",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "VATICAN-II-UNITATIS-1964",
+      "title": "Unitatis redintegratio",
+      "year": 1964,
+      "issuer": "Second Vatican Council",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "ecclesiology-authority"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+          "sourceId": "UR64",
+          "urlLead": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html",
+          "locatorLead": "§§1–4, 11 and 22, Catholic ecumenism",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "VATICAN-II-DEI-VERBUM-1965",
+      "title": "Dei Verbum",
+      "year": 1965,
+      "issuer": "Second Vatican Council",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "revelation-scripture"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sourceId": "DEIV",
+          "urlLead": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+          "locatorLead": "§§2–10, 19",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        },
+        {
+          "sourcePack": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+          "sourceId": "DV65",
+          "urlLead": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+          "locatorLead": "§§2–10, 12 and 19, revelation",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "VATICAN-II-DIGNITATIS-1965",
+      "title": "Dignitatis humanae",
+      "year": 1965,
+      "issuer": "Second Vatican Council",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "social-teaching"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+          "sourceId": "AO26_CRDOC05_DOCUM_3",
+          "urlLead": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html",
+          "locatorLead": "§§1–2,6",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "VATICAN-II-NOSTRA-AETATE-1965",
+      "title": "Nostra aetate",
+      "year": 1965,
+      "issuer": "Second Vatican Council",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "ecclesiology-authority"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sourceId": "NA1965",
+          "urlLead": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html",
+          "locatorLead": "§4, Jews, condemnation of anti-Semitism, Church's shared roots",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        },
+        {
+          "sourcePack": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+          "sourceId": "NOSTRA65",
+          "urlLead": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html",
+          "locatorLead": "§4, Jewish people, Christ and rejection of antisemitism",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "VATICAN-II-GAUDIUM-1965",
+      "title": "Gaudium et spes",
+      "year": 1965,
+      "issuer": "Second Vatican Council",
+      "documentForm": "ecumenical_council",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "moral-theology",
+        "social-teaching"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sourceId": "GS1965",
+          "urlLead": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html",
+          "locatorLead": "§§16, 19–21, conscience and modern atheism",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        },
+        {
+          "sourcePack": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+          "sourceId": "GAU65",
+          "urlLead": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html",
+          "locatorLead": "§§4–10, 16, 19–21, 36, modern world and atheism",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "MYSTERIUM-FIDEI-1965",
+      "title": "Mysterium fidei",
+      "year": 1965,
+      "issuer": "Pope Paul VI",
+      "documentForm": "encyclical",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "eucharist-mass"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "HUMANAE-VITAE-1968",
+      "title": "Humanae vitae",
+      "year": 1968,
+      "issuer": "Pope Paul VI",
+      "documentForm": "encyclical",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "moral-theology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "FAMILIARIS-CONSORTIO-1981",
+      "title": "Familiaris consortio",
+      "year": 1981,
+      "issuer": "Pope John Paul II",
+      "documentForm": "apostolic_exhortation",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "moral-theology",
+        "sacraments"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "CATECHISM-1992",
+      "title": "Catechism of the Catholic Church",
+      "year": 1992,
+      "issuer": "Pope John Paul II / commission",
+      "documentForm": "catechism",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "revelation-scripture",
+        "ecclesiology-authority"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "VERITATIS-SPLENDOR-1993",
+      "title": "Veritatis splendor",
+      "year": 1993,
+      "issuer": "Pope John Paul II",
+      "documentForm": "encyclical",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "moral-theology"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
+          "sourceId": "AO26_CRMOR06_ANSWE_2",
+          "urlLead": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+          "locatorLead": "§§65–70",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "DOMINUS-IESUS-2000",
+      "title": "Dominus Iesus",
+      "year": 2000,
+      "issuer": "Congregation for the Doctrine of the Faith (approved by John Paul II)",
+      "documentForm": "congregational_declaration",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "ecclesiology-authority"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [
+        {
+          "sourcePack": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sourceId": "DOMJES",
+          "urlLead": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html",
+          "locatorLead": "§§5–7, 13–17, 20–22",
+          "editorialStatus": "RESEARCH_LINK_ONLY_UNAPPROVED"
+        }
+      ],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "SUMMORUM-PONTIFICUM-2007",
+      "title": "Summorum Pontificum",
+      "year": 2007,
+      "issuer": "Pope Benedict XVI",
+      "documentForm": "motu_proprio",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "liturgy-discipline"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    },
+    {
+      "id": "TRADITIONIS-CUSTODES-2021",
+      "title": "Traditionis custodes",
+      "year": 2021,
+      "issuer": "Pope Francis",
+      "documentForm": "motu_proprio",
+      "historicalLayer": "AFTER_1962",
+      "doctrineFamilies": [
+        "liturgy-discipline"
+      ],
+      "primarySource": {
+        "url": null,
+        "language": null,
+        "originalTextLocated": false,
+        "verifiedAtDocumentLevel": false,
+        "sourceClass": "NOT_ATTACHED",
+        "rightsReview": "PENDING"
+      },
+      "existingResearchReferences": [],
+      "denzingerCrosswalk": {
+        "oldDenzinger": null,
+        "denzingerSchonmetzer": null,
+        "denzingerHunermann": null,
+        "matchStatus": "NOT_VERIFIED"
+      },
+      "originalPassagesImported": 0,
+      "claimLevelAuthorityReview": "NOT_ASSESSED",
+      "publicationGate": "INDEX_ONLY"
+    }
+  ],
+  "constraints": [
+    "Original document authorship must remain distinct from pontifical approval of congregational decrees.",
+    "Historical discipline may be superseded; never display historical laws as current without separate temporal law verification.",
+    "An ecumenical council contains texts of different scope and genre; a document's authority cannot be inferred from documentForm alone.",
+    "Do not assign DS/DH/old Denzinger numbers without exact edition and entry-level verification.",
+    "Translated edited text rights require independent review before in-app reproduction.",
+    "Source registry refs are leads, not approved theological passages."
+  ],
+  "metrics": {
+    "documentCandidates": 83,
+    "historicalThrough1962": 68,
+    "post1962": 15,
+    "documentLevelPrimaryVerified": 7,
+    "originalPassagesImported": 0,
+    "denzingerCrosswalkVerified": 0,
+    "withExistingResearchSourceLeads": 27,
+    "existingResearchSourceLinkCount": 31,
+    "originalLatinVerified": 2
+  }
+}

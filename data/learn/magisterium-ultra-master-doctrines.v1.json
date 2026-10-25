@@ -1,0 +1,1431 @@
+{
+  "schema": "AO_MAGISTERIUM_ULTRA_MASTER_DOCTRINES_V1",
+  "created": "2026-10-19",
+  "status": "P0_RECONCILIATION_RESEARCH_ONLY",
+  "canonicalDoctrineOwner": "Ad Orientem doctrine subject index; existing Catechism, Apologetics and Church Crisis remain owners of their original content",
+  "documentsFile": "data/learn/magisterium-ultra-master-documents.v1.json",
+  "existingResearch": {
+    "apologetics": "data/learn/apologetics-canonical.v1.json",
+    "churchCrisis": "data/learn/church-crisis-canonical.v1.json",
+    "piusIndex": "data/learn/ltfaith-pius-x-en-witness-index.v1.json",
+    "massFormation": "src/learn/mass-explorer.js"
+  },
+  "records": [
+    {
+      "id": "GOD_EXISTENCE",
+      "title": "Existence and knowledge of God",
+      "family": "revelation-scripture",
+      "documentCandidates": [
+        {
+          "documentId": "VATICAN-I-DEI-FILIUS-1870",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "CATECHISM-1992",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-001",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "FAITH_REASON",
+      "title": "Faith and reason",
+      "family": "revelation-scripture",
+      "documentCandidates": [
+        {
+          "documentId": "VATICAN-I-DEI-FILIUS-1870",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "HUMANI-GENERIS-1950",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-002",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "DIVINE_REVELATION",
+      "title": "Divine Revelation",
+      "family": "revelation-scripture",
+      "documentCandidates": [
+        {
+          "documentId": "VATICAN-I-DEI-FILIUS-1870",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VATICAN-II-DEI-VERBUM-1965",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-005",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "SCRIPTURE_CANON",
+      "title": "Biblical canon",
+      "family": "revelation-scripture",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-IV-1546",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VATICAN-II-DEI-VERBUM-1965",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-012",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-013",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "SCRIPTURE_INSPIRATION",
+      "title": "Biblical inspiration and interpretation",
+      "family": "revelation-scripture",
+      "documentCandidates": [
+        {
+          "documentId": "PROVIDENTISSIMUS-DEUS-1893",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "DIVINO-AFFLANTE-SPIRITU-1943",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VATICAN-II-DEI-VERBUM-1965",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-012",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "APOSTOLIC_TRADITION",
+      "title": "Apostolic Tradition",
+      "family": "revelation-scripture",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-IV-1546",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VATICAN-II-DEI-VERBUM-1965",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-014",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-015",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "TRINITY",
+      "title": "Most Holy Trinity",
+      "family": "trinity-christology",
+      "documentCandidates": [
+        {
+          "documentId": "NICAEA-I-325",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "CONSTANTINOPLE-I-381",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-010",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "INCARNATION",
+      "title": "Incarnation and two natures",
+      "family": "trinity-christology",
+      "documentCandidates": [
+        {
+          "documentId": "EPHESUS-431",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "CHALCEDON-451",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "CONSTANTINOPLE-II-553",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-010",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "TWO_WILLS_CHRIST",
+      "title": "Two wills and operations of Christ",
+      "family": "trinity-christology",
+      "documentCandidates": [
+        {
+          "documentId": "CONSTANTINOPLE-III-681",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-010",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "REDEMPTION",
+      "title": "Redemption in Jesus Christ",
+      "family": "trinity-christology",
+      "documentCandidates": [
+        {
+          "documentId": "CHALCEDON-451",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-VI-1547",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-011",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "NATURE_OF_CHURCH",
+      "title": "Nature of the Catholic Church",
+      "family": "ecclesiology-authority",
+      "documentCandidates": [
+        {
+          "documentId": "VATICAN-I-PASTOR-AETERNUS-1870",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "MYSTICI-CORPORIS-1943",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VATICAN-II-LUMEN-GENTIUM-1964",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-016",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-017",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "APOSTOLIC_SUCCESSION",
+      "title": "Apostolic succession",
+      "family": "ecclesiology-authority",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-XXIII-1563",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "APOSTOLICAE-CURAE-1896",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VATICAN-II-LUMEN-GENTIUM-1964",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-019",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "PAPAL_PRIMACY",
+      "title": "Primacy of the Roman Pontiff",
+      "family": "ecclesiology-authority",
+      "documentCandidates": [
+        {
+          "documentId": "VATICAN-I-PASTOR-AETERNUS-1870",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "SATIS-COGNITUM-1896",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-018",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "PAPAL_INFALLIBILITY",
+      "title": "Papal infallibility",
+      "family": "ecclesiology-authority",
+      "documentCandidates": [
+        {
+          "documentId": "VATICAN-I-PASTOR-AETERNUS-1870",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-020",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q116",
+          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "DOCTRINAL_DEVELOPMENT",
+      "title": "Development and continuity of doctrine",
+      "family": "ecclesiology-authority",
+      "documentCandidates": [
+        {
+          "documentId": "VATICAN-I-DEI-FILIUS-1870",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VATICAN-II-DEI-VERBUM-1965",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-021",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "CHURCH_CRISIS_CANONICAL_V1",
+          "ref": "CR-DOC-02",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_CONCLUSION"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "ORIGINAL_SIN",
+      "title": "Original sin",
+      "family": "grace-salvation",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-V-1546",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "JUSTIFICATION",
+      "title": "Justification by grace",
+      "family": "grace-salvation",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-VI-1547",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-038",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "GRACE_PREDESTINATION",
+      "title": "Grace, free will and predestination",
+      "family": "grace-salvation",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-VI-1547",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "CUM-OCCASIONE-1653",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "UNIGENITUS-1713",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-043",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "EUCHARIST_REAL_PRESENCE",
+      "title": "Real Presence in the Eucharist",
+      "family": "eucharist-mass",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-XIII-1551",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "MIRAE-CARITATIS-1902",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "MYSTERIUM-FIDEI-1965",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-030",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q325",
+          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q329",
+          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q330",
+          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q331",
+          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "TRANSUBSTANTIATION",
+      "title": "Transubstantiation",
+      "family": "eucharist-mass",
+      "documentCandidates": [
+        {
+          "documentId": "LATERAN-IV-1215",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-XIII-1551",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "MYSTERIUM-FIDEI-1965",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-030",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "EUCHARISTIC_SACRIFICE",
+      "title": "Sacrifice of the Holy Mass",
+      "family": "eucharist-mass",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-XXII-1562",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "MEDIATOR-DEI-1947",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-031",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "COMMUNION_UNDER_SPECIES",
+      "title": "Communion under one or both species",
+      "family": "eucharist-mass",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-XXI-1562",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-XIII-1551",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-030",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q331",
+          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "SACRAMENTS_SEVEN",
+      "title": "Seven sacraments",
+      "family": "sacraments",
+      "documentCandidates": [
+        {
+          "documentId": "FLORENCE-1439-ARMENIANS",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-VII-1547",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-023",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "BAPTISM",
+      "title": "Sacrament of Baptism",
+      "family": "sacraments",
+      "documentCandidates": [
+        {
+          "documentId": "FLORENCE-1439-ARMENIANS",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-VII-1547",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-XIV-1551",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE",
+          "relationType": "PASSAGE_LEVEL_SECONDARY_CONTEXT_PROPOSED",
+          "basisPassageIds": [
+            "MG-P028",
+            "MG-P033"
+          ],
+          "scopeNote": "Passage-level context only; no source-text certification, doctrinal authority decision, or user-facing answer authorization."
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-024",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q294",
+          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "PENANCE_ABSOLUTION",
+      "title": "Confession, contrition and absolution",
+      "family": "sacraments",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-XIV-1551",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-026",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q355",
+          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q359",
+          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q363",
+          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "ANOINTING_SICK",
+      "title": "Extreme Unction and Anointing",
+      "family": "sacraments",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-XIV-1551",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-027",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "HOLY_ORDERS",
+      "title": "Holy Orders and sacerdotal ministry",
+      "family": "sacraments",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-XXIII-1563",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "AD-CATHOLICI-SACERDOTII-1935",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-029",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "MATRIMONY",
+      "title": "Matrimony, unity and indissolubility",
+      "family": "sacraments",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-XXIV-1563",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "CASTI-CONNUBII-1930",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-028",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "IMMACULATE_CONCEPTION",
+      "title": "Immaculate Conception",
+      "family": "mary-saints",
+      "documentCandidates": [
+        {
+          "documentId": "INEFFABILIS-DEUS-1854",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-033",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "ASSUMPTION",
+      "title": "Assumption of Our Lady",
+      "family": "mary-saints",
+      "documentCandidates": [
+        {
+          "documentId": "MUNIFICENTISSIMUS-DEUS-1950",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-033",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "SAINTS_INTERCESSION",
+      "title": "Intercession of the saints",
+      "family": "mary-saints",
+      "documentCandidates": [
+        {
+          "documentId": "TRENT-XXV-1563",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-XXII-1562",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE",
+          "relationType": "PASSAGE_LEVEL_SECONDARY_CONTEXT_PROPOSED",
+          "basisPassageIds": [
+            "MG-P046",
+            "MG-P052"
+          ],
+          "scopeNote": "Passage-level context only; no source-text certification, doctrinal authority decision, or user-facing answer authorization."
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-035",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q430",
+          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q433",
+          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "HOLY_IMAGES_RELICS",
+      "title": "Veneration of sacred images and relics",
+      "family": "mary-saints",
+      "documentCandidates": [
+        {
+          "documentId": "NICAEA-II-787",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-XXV-1563",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-036",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-037",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "PURGATORY",
+      "title": "Purgatory and prayer for the dead",
+      "family": "eschatology",
+      "documentCandidates": [
+        {
+          "documentId": "FLORENCE-1439-UNION",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-XXV-1563",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-XXII-1562",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE",
+          "relationType": "PASSAGE_LEVEL_SECONDARY_CONTEXT_PROPOSED",
+          "basisPassageIds": [
+            "MG-P061"
+          ],
+          "scopeNote": "Passage-level context only; no source-text certification, doctrinal authority decision, or user-facing answer authorization."
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-040",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "BEATIFIC_VISION",
+      "title": "Beatific Vision",
+      "family": "eschatology",
+      "documentCandidates": [
+        {
+          "documentId": "BENEDICTUS-DEUS-1336",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-042",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "ETERNAL_PUNISHMENT",
+      "title": "Hell and last things",
+      "family": "eschatology",
+      "documentCandidates": [
+        {
+          "documentId": "LATERAN-IV-1215",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "BENEDICTUS-DEUS-1336",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-041",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "NATURAL_LAW",
+      "title": "Natural law and moral objectivity",
+      "family": "moral-theology",
+      "documentCandidates": [
+        {
+          "documentId": "LIBERTAS-1888",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VERITATIS-SPLENDOR-1993",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-050",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "CONSCIENCE",
+      "title": "Moral conscience",
+      "family": "moral-theology",
+      "documentCandidates": [
+        {
+          "documentId": "CASTI-CONNUBII-1930",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VERITATIS-SPLENDOR-1993",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-051",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "MARRIAGE_ETHICS",
+      "title": "Marriage and marital ethics",
+      "family": "moral-theology",
+      "documentCandidates": [
+        {
+          "documentId": "CASTI-CONNUBII-1930",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "HUMANAE-VITAE-1968",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-028",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "SOCIAL_JUSTICE",
+      "title": "Social teaching and economic justice",
+      "family": "social-teaching",
+      "documentCandidates": [
+        {
+          "documentId": "RERUM-NOVARUM-1891",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "QUADRAGESIMO-ANNO-1931",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-053",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "CHRIST_KINGSHIP",
+      "title": "Social kingship of Jesus Christ",
+      "family": "social-teaching",
+      "documentCandidates": [
+        {
+          "documentId": "QUAS-PRIMAS-1925",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "IMMORTALE-DEI-1885",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-053",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "CHURCH_CRISIS_CANONICAL_V1",
+          "ref": "CR-DOC-05",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_CONCLUSION"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "RELIGIOUS_LIBERTY",
+      "title": "Religious liberty and conscience",
+      "family": "social-teaching",
+      "documentCandidates": [
+        {
+          "documentId": "QUANTA-CURA-1864",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "LIBERTAS-1888",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VATICAN-II-DIGNITATIS-1965",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "CHURCH_CRISIS_CANONICAL_V1",
+          "ref": "CR-DOC-04",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_CONCLUSION"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "CHURCH_UNITY_ECUMENISM",
+      "title": "Church unity and ecumenism",
+      "family": "ecclesiology-authority",
+      "documentCandidates": [
+        {
+          "documentId": "MORTALIUM-ANIMOS-1928",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VATICAN-II-UNITATIS-1964",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-016",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-021",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "CHURCH_CRISIS_CANONICAL_V1",
+          "ref": "CR-DOC-06",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_CONCLUSION"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "MODERNISM",
+      "title": "Modernism, revelation and dogma",
+      "family": "modern-controversies",
+      "documentCandidates": [
+        {
+          "documentId": "LAMENTABILI-SANE-1907",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "PASCENDI-1907",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "SACRORUM-ANTISTITUM-1910",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-002",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-021",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "CHURCH_CRISIS_CANONICAL_V1",
+          "ref": "CR-ORG-03",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_CONCLUSION"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "LITURGY_PRINCIPLES",
+      "title": "Liturgy and worship principles",
+      "family": "liturgy-discipline",
+      "documentCandidates": [
+        {
+          "documentId": "MEDIATOR-DEI-1947",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VATICAN-II-SACROSANCTUM-1963",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-XIII-1551",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE",
+          "relationType": "PASSAGE_LEVEL_SECONDARY_CONTEXT_PROPOSED",
+          "basisPassageIds": [
+            "MG-P015"
+          ],
+          "scopeNote": "Passage-level context only; no source-text certification, doctrinal authority decision, or user-facing answer authorization."
+        },
+        {
+          "documentId": "TRENT-XXII-1562",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE",
+          "relationType": "PASSAGE_LEVEL_SECONDARY_CONTEXT_PROPOSED",
+          "basisPassageIds": [
+            "MG-P016",
+            "MG-P017",
+            "MG-P048",
+            "MG-P049",
+            "MG-P054",
+            "MG-P056"
+          ],
+          "scopeNote": "Passage-level context only; no source-text certification, doctrinal authority decision, or user-facing answer authorization."
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-031",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "CHURCH_CRISIS_CANONICAL_V1",
+          "ref": "CR-LIT-02",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_CONCLUSION"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "HOLY_WEEK_REFORM",
+      "title": "Holy Week and historical discipline",
+      "family": "liturgy-discipline",
+      "documentCandidates": [
+        {
+          "documentId": "MAXIMA-REDEMPTIONIS-1955",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VATICAN-II-SACROSANCTUM-1963",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "CHURCH_CRISIS_CANONICAL_V1",
+          "ref": "CR-LIT-05",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_CONCLUSION"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "COMMUNION_FREQUENCY",
+      "title": "Frequent Communion",
+      "family": "liturgy-discipline",
+      "documentCandidates": [
+        {
+          "documentId": "SACRA-TRIDENTINA-SYNODUS-1905",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "MIRAE-CARITATIS-1902",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-030",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "FIRST_COMMUNION_AGE",
+      "title": "Children's First Communion",
+      "family": "liturgy-discipline",
+      "documentCandidates": [
+        {
+          "documentId": "QUAM-SINGULARI-1910",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-024",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "EUCHARISTIC_FAST_HISTORY",
+      "title": "Eucharistic fasting rules and their history",
+      "family": "liturgy-discipline",
+      "documentCandidates": [
+        {
+          "documentId": "CHRISTUS-DOMINUS-FAST-1953",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "SACRAM-COMMUNIONEM-1957",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-030",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "CHURCH_CRISIS_CANONICAL_V1",
+          "ref": "CR-LIT-11",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_CONCLUSION"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "ROMAN_MASS_REFORM_HISTORY",
+      "title": "Historical development of the Roman Mass",
+      "family": "liturgy-discipline",
+      "documentCandidates": [
+        {
+          "documentId": "MEDIATOR-DEI-1947",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "MAXIMA-REDEMPTIONIS-1955",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "VATICAN-II-SACROSANCTUM-1963",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-031",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        },
+        {
+          "owner": "CHURCH_CRISIS_CANONICAL_V1",
+          "ref": "CR-LIT-05",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_CONCLUSION"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "TRADITIONAL_RITE_DISCIPLINE",
+      "title": "Discipline concerning the traditional Roman liturgy",
+      "family": "liturgy-discipline",
+      "documentCandidates": [
+        {
+          "documentId": "SUMMORUM-PONTIFICUM-2007",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRADITIONIS-CUSTODES-2021",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "CHURCH_CRISIS_CANONICAL_V1",
+          "ref": "CR-AUT-07",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_CONCLUSION"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    },
+    {
+      "id": "ANGLICAN_ORDERS",
+      "title": "Anglican ordinations and sacramental form",
+      "family": "sacraments",
+      "documentCandidates": [
+        {
+          "documentId": "APOSTOLICAE-CURAE-1896",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-XXIII-1563",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        }
+      ],
+      "existingOwners": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-022",
+          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
+        }
+      ],
+      "historicalClaimReview": "PENDING",
+      "allPassagesVerified": false
+    }
+  ],
+  "metrics": {
+    "doctrineTopics": 51,
+    "topicToDocumentCandidates": 106,
+    "indexedApologeticsLinks": 53,
+    "indexedChurchCrisisLinks": 10,
+    "originalPassageCertifications": 0,
+    "b4ReconciledPassageTopicEdges": 12,
+    "b4AddedDocumentCandidatePairs": 5
+  },
+  "policy": {
+    "noDuplicatedAnswers": true,
+    "topicLinksAreNotClaims": true,
+    "referenceDoesNotImplyEndorsementOrCurrentLaw": true,
+    "chronologicalLayersMustBeVisible": true,
+    "magisterialAuthorityIsPassageSpecific": true,
+    "publishable": false
+  },
+  "reviewNotes": [
+    "PX1912-Q251 concerns evangelical counsels, not the seven sacraments; do not link.",
+    "PX1912-Q240 concerns charity, not a direct catechism entry on predestination; do not link.",
+    "APOL-038 centres justification/salvation, not specifically the definition of Original Sin; separate topic.",
+    "APOL-048 concerns religious pluralism, not the legal/doctrinal question of religious liberty; do not link.",
+    "All remaining relationships are provisional topical joins, not assertion-level provenance.",
+    "B4: five proposed document-topic contextual joins reconcile 12 previously orphaned passage-topic edges. Topic-level inclusion must not be mistaken for claim, quotation, or character-voice certification."
+  ]
+}

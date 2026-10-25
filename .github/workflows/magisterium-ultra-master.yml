@@ -1,0 +1,30 @@
+name: Magisterium Ultra Master integrity
+on:
+  push:
+    branches:
+      - research/magisterium-ultra-master-p0-p1-20261019
+    paths:
+      - data/learn/magisterium-ultra-master-documents.v1.json
+      - data/learn/magisterium-ultra-master-doctrines.v1.json
+      - data/learn/magisterium-source-passages-pilot.v1.json
+      - tests/magisterium-ultra-master-p0-p1.mjs
+      - .github/workflows/magisterium-ultra-master.yml
+  pull_request:
+    paths:
+      - data/learn/magisterium-ultra-master-documents.v1.json
+      - data/learn/magisterium-ultra-master-doctrines.v1.json
+      - data/learn/magisterium-source-passages-pilot.v1.json
+      - tests/magisterium-ultra-master-p0-p1.mjs
+      - .github/workflows/magisterium-ultra-master.yml
+permissions:
+  contents: read
+jobs:
+  p0-p1-canonical-references:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Crosscheck original-content ownership and magisterial provenance
+        run: node tests/magisterium-ultra-master-p0-p1.mjs

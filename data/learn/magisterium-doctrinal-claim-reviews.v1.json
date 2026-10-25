@@ -1,0 +1,1860 @@
+{
+  "schema": "AO_MAGISTERIUM_DOCTRINAL_CLAIM_REVIEW_V1",
+  "created": "2026-10-19",
+  "status": "B6_COMPLETE_EDITORIAL_DISPOSITION_NOT_THEOLOGICALLY_CERTIFIED",
+  "sourceRegistry": "data/learn/magisterium-source-passages-pilot.v1.json",
+  "documentRegistry": "data/learn/magisterium-ultra-master-documents.v1.json",
+  "doctrineRegistry": "data/learn/magisterium-ultra-master-doctrines.v1.json",
+  "rules": {
+    "sourceTextUnedited": false,
+    "originalLatinNotReproduced": true,
+    "modernTranslationNotImported": true,
+    "denzingerEditionNotCertified": true,
+    "historicalDisciplineRequiresTemporalReview": true,
+    "authorityNotInferredFromDocumentAlone": true,
+    "noCharacterFirstPersonAttribution": true,
+    "notVisitorFacing": true
+  },
+  "metrics": {
+    "reviewedClaims": 59,
+    "distinctLinkedPassages": 59,
+    "totalSourcePassageLocators": 61,
+    "remainingPassagesWithoutEditorialClaim": 0,
+    "sourceScopedCanons": 28,
+    "genreCounts": {
+      "CONCILIAR_CANON_CONDEMNING_PROPOSITION": 28,
+      "CONCILIAR_DOCTRINAL_EXPOSITION": 22,
+      "HISTORICAL_DISCIPLINARY_OR_EXPLANATORY_CONTEXT": 4,
+      "NON_DEFINING_ARGUMENT_OR_BACKGROUND": 3,
+      "SOLEMN_DEFINITION_FORMULA": 2
+    },
+    "rightsCleared": 0,
+    "doctrinallyCertified": 0,
+    "publiclyUsable": 0,
+    "nonStandalonePassageAliases": 2,
+    "allPassagesDispositioned": 61
+  },
+  "records": [
+    {
+      "claimId": "MGC-P032",
+      "passageId": "MG-P032",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "Penance is a distinct sacrament instituted by Christ for sins after Baptism.",
+      "interpretationGuard": "Not every instance of ordinary repentance is thereby sacramental.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon I — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P033",
+      "passageId": "MG-P033",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION",
+        "BAPTISM"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "Baptism and Penance are distinct sacraments.",
+      "interpretationGuard": "Do not describe Confession as repeating Baptism.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon II — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P034",
+      "passageId": "MG-P034",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "John 20:22–23 concerns the sacramental authority to forgive and retain sins.",
+      "interpretationGuard": "The canon rejects its reduction merely to preaching.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon III — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P035",
+      "passageId": "MG-P035",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The acts of the penitent are contrition, confession and satisfaction.",
+      "interpretationGuard": "The canon rejects reducing these to terror and confidence alone.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon IV — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P036",
+      "passageId": "MG-P036",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "Thoughtful sorrow for sin joined to a purpose of amendment is useful and genuine.",
+      "interpretationGuard": "Do not equate every such act automatically with perfect contrition.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon V — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P037",
+      "passageId": "MG-P037",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The council affirms sacramental confession, including private confession to a priest.",
+      "interpretationGuard": "Distinguish doctrinal claim from historically varying confession practice.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon VI — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P038",
+      "passageId": "MG-P038",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "Mortal sins remembered after diligent examination, including species-changing circumstances, are to be confessed.",
+      "interpretationGuard": "The statement does not require impossible recollection of forgotten sins.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon VII — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P039",
+      "passageId": "MG-P039",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The council rejects the claim that integral confession is impossible and invokes the then-established annual obligation.",
+      "interpretationGuard": "Annual timing is a historical discipline; independently confirm applicable current law.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon VIII — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "REQUIRED",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P023",
+      "passageId": "MG-P023",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "Priestly absolution is a judicial sacramental act rather than bare announcement of pardon.",
+      "interpretationGuard": "Do not construe the priest as absolving through an empty performance or faith alone.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon IX, sacramental absolution as judicial act",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P040",
+      "passageId": "MG-P040",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "Ordained priestly ministry remains proper to absolution, even if a priest is himself in mortal sin.",
+      "interpretationGuard": "Validity, faculties, disposition and law must be analysed separately.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon X — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P041",
+      "passageId": "MG-P041",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "Bishops may reserve certain cases; reservation has significance beyond external administration.",
+      "interpretationGuard": "Specific reserved cases and their law are historically contingent.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon XI — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "REQUIRED",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P042",
+      "passageId": "MG-P042",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The remission of guilt does not necessarily remove all temporal punishment.",
+      "interpretationGuard": "Do not assert that every remitted sin invariably entails an identical remaining penance.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon XII — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P043",
+      "passageId": "MG-P043",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "Satisfaction through Christ includes accepted sufferings and penitential practices.",
+      "interpretationGuard": "The council explicitly grounds human satisfaction in Christ's merits.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon XIII — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P044",
+      "passageId": "MG-P044",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "Penitential satisfaction in Christ is not merely a human custom obscuring divine grace.",
+      "interpretationGuard": "Do not separate satisfactions from Christ or reduce them to self-salvation.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon XIV — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P045",
+      "passageId": "MG-P045",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The power of the keys includes binding as well as loosing and can entail temporal penance.",
+      "interpretationGuard": "Distinguish sacramental penance from noncurrent medieval disciplinary details.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, canon XV — sacrament of Penance",
+        "webEvidenceRange": "Session XIV, Penance canons 1–15; Latin transcribed unit 693–707",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P018",
+      "passageId": "MG-P018",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The Mass is a true and proper sacrifice offered to God.",
+      "interpretationGuard": "Reject conflating the Mass solely with distributing food.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, canon I: true and proper sacrifice",
+        "webEvidenceRange": "Session XXII, sacrifice canons 1–9; Latin transcribed unit 925–929",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P050",
+      "passageId": "MG-P050",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "Christ instituted the apostles as priests and commanded them to offer his Body and Blood.",
+      "interpretationGuard": "The text references the institution and offering, not a specific modern ordination ceremony.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, canon II — Sacrifice of the Mass",
+        "webEvidenceRange": "Session XXII, sacrifice canons 1–9; Latin transcribed unit 925–929",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P019",
+      "passageId": "MG-P019",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The sacrifice of the Mass is propitiatory and offered for living and departed faithful.",
+      "interpretationGuard": "The canon rejects the view that Mass is only praise or bare memorial.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, canon III: propitiatory for living and dead",
+        "webEvidenceRange": "Session XXII, sacrifice canons 1–9; Latin transcribed unit 925–929",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P051",
+      "passageId": "MG-P051",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The Mass does not diminish or blaspheme Christ's sacrifice on the Cross.",
+      "interpretationGuard": "Do not describe the Mass as an independent second Calvary.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, canon IV — Sacrifice of the Mass",
+        "webEvidenceRange": "Session XXII, sacrifice canons 1–9; Latin transcribed unit 925–929",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P052",
+      "passageId": "MG-P052",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "SAINTS_INTERCESSION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "Celebrating Mass in honour of saints and seeking their intercession is not an imposture.",
+      "interpretationGuard": "The sacrifice is to God, never offered to the saints.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, canon V — Sacrifice of the Mass",
+        "webEvidenceRange": "Session XXII, sacrifice canons 1–9; Latin transcribed unit 925–929",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P053",
+      "passageId": "MG-P053",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The Roman Mass Canon is not to be rejected as containing errors.",
+      "interpretationGuard": "This is not a textual authorization of every later translation or app card.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, canon VI — Sacrifice of the Mass",
+        "webEvidenceRange": "Session XXII, sacrifice canons 1–9; Latin transcribed unit 925–929",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P054",
+      "passageId": "MG-P054",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "LITURGY_PRINCIPLES"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The Church's ceremonial signs and vestments are not inherently inducements to impiety.",
+      "interpretationGuard": "Does not establish the specific 1962 rubrical choreography.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, canon VII — Sacrifice of the Mass",
+        "webEvidenceRange": "Session XXII, sacrifice canons 1–9; Latin transcribed unit 925–929",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P055",
+      "passageId": "MG-P055",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "Mass remains lawful where only the celebrant receives sacramentally.",
+      "interpretationGuard": "Chapter VI positively desires Communion by faithful attending; retain both contexts.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, canon VIII — Sacrifice of the Mass",
+        "webEvidenceRange": "Session XXII, sacrifice canons 1–9; Latin transcribed unit 925–929",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P056",
+      "passageId": "MG-P056",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "LITURGY_PRINCIPLES"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The Roman low-voice custom, wider liturgical language, and mixing water with chalice wine are defended.",
+      "interpretationGuard": "Historical and disciplinary setting must not be asserted as the entire current law.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, canon IX — Sacrifice of the Mass",
+        "webEvidenceRange": "Session XXII, sacrifice canons 1–9; Latin transcribed unit 925–929",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "REQUIRED",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P001",
+      "passageId": "MG-P001",
+      "documentId": "TRENT-IV-1546",
+      "doctrineIds": [
+        "APOSTOLIC_TRADITION",
+        "SCRIPTURE_CANON"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "The council receives the written Scriptures and apostolic traditions transmitted without writing with reverence.",
+      "interpretationGuard": "Avoid suggesting every later custom has the same origin or evidentiary standing.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session IV, decree on sacred books and traditions, opening",
+        "webEvidenceRange": "Session IV first decree, 219–220",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P010",
+      "passageId": "MG-P010",
+      "documentId": "TRENT-IV-1546",
+      "doctrineIds": [
+        "SCRIPTURE_CANON"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "The council enumerates the canonical biblical books, including the listed deuterocanonical books.",
+      "interpretationGuard": "Separate canon of Scripture from questions of translations and textual editions.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session IV, first decree: books of the Old Testament, paragraph 2",
+        "webEvidenceRange": "Session IV first decree, 221–224",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P009",
+      "passageId": "MG-P009",
+      "documentId": "TRENT-IV-1546",
+      "doctrineIds": [
+        "SCRIPTURE_CANON"
+      ],
+      "passageGenre": "HISTORICAL_DISCIPLINARY_OR_EXPLANATORY_CONTEXT",
+      "editorialProposition": "The council prescribes historical authoritative use of the Latin Vulgate for specified public functions.",
+      "interpretationGuard": "Do not infer that only the Vulgate is permissible in every modern circumstance.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session IV, second decree: Vulgate authenticity and scriptural interpretation",
+        "webEvidenceRange": "Session IV second decree, 226–229",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "history",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "REQUIRED",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P002",
+      "passageId": "MG-P002",
+      "documentId": "TRENT-XIII-1551",
+      "doctrineIds": [
+        "TRANSUBSTANTIATION",
+        "EUCHARIST_REAL_PRESENCE"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "By consecration the substances of bread and wine become Christ's Body and Blood, with species remaining.",
+      "interpretationGuard": "The definition concerns substance, not the disappearance of sensible appearances.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIII, chapter IV, De transubstantiatione",
+        "webEvidenceRange": "Session XIII, chapter IV, Latin 548–549",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P003",
+      "passageId": "MG-P003",
+      "documentId": "TRENT-XIII-1551",
+      "doctrineIds": [
+        "EUCHARIST_REAL_PRESENCE"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The Real Presence is not merely figurative: the whole Christ is truly, really and substantially present.",
+      "interpretationGuard": "The canon condemns a reduction to sign or figure; do not claim it requires visible bodily form.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIII, canon I concerning the Most Holy Eucharist",
+        "webEvidenceRange": "Session XIII, Eucharistic canon 1, Latin 571–574",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P011",
+      "passageId": "MG-P011",
+      "documentId": "TRENT-XIII-1551",
+      "doctrineIds": [
+        "EUCHARIST_REAL_PRESENCE"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "The Eucharist contains Christ before sacramental reception once consecration has occurred.",
+      "interpretationGuard": "Do not identify the Eucharist solely with the act of eating.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIII, chapter III, Real Presence before use of the sacrament",
+        "webEvidenceRange": "Session XIII, chapter III, Latin 545–547",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P012",
+      "passageId": "MG-P012",
+      "documentId": "TRENT-XIII-1551",
+      "doctrineIds": [
+        "EUCHARIST_REAL_PRESENCE"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Divine worship is due to Christ present in the Eucharist; reverence and procession are defended.",
+      "interpretationGuard": "Do not treat this paragraph as a 1962 procession rubric.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIII, chapter V, adoration due to the Eucharist",
+        "webEvidenceRange": "Session XIII, chapter V, Latin 550–556",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P013",
+      "passageId": "MG-P013",
+      "documentId": "TRENT-XIII-1551",
+      "doctrineIds": [
+        "TRANSUBSTANTIATION"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The conversion of the bread's and wine's entire substances is affirmed against theories leaving their substances present.",
+      "interpretationGuard": "The appearances remain; avoid claims of material chemical transmutation.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIII, canon II on the conversion of the substances",
+        "webEvidenceRange": "Session XIII, Eucharistic canon 2, Latin 573–575",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P014",
+      "passageId": "MG-P014",
+      "documentId": "TRENT-XIII-1551",
+      "doctrineIds": [
+        "EUCHARIST_REAL_PRESENCE",
+        "COMMUNION_UNDER_SPECIES"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "The whole Christ is contained under either Eucharistic species and their divided parts.",
+      "interpretationGuard": "This teaching is not a comprehensive contemporary rule about Communion under both kinds.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIII, canon III on whole Christ under either species",
+        "webEvidenceRange": "Session XIII, Eucharistic canon 3, Latin 575–576",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P015",
+      "passageId": "MG-P015",
+      "documentId": "TRENT-XIII-1551",
+      "doctrineIds": [
+        "EUCHARIST_REAL_PRESENCE",
+        "LITURGY_PRINCIPLES"
+      ],
+      "passageGenre": "CONCILIAR_CANON_CONDEMNING_PROPOSITION",
+      "editorialProposition": "Eucharistic adoration and processions are defended against the proposition that the sacrament must not be adored.",
+      "interpretationGuard": "Does not alone settle whether a procession occurs on a given calendar day.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIII, canon VI on adoration and Eucharistic processions",
+        "webEvidenceRange": "Session XIII, Eucharistic canon 6; Latin 571–581",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "canon",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P005",
+      "passageId": "MG-P005",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "The Mass is the unbloody offering of the same Christ who once offered himself on the Cross; it is truly propitiatory.",
+      "interpretationGuard": "Do not imply a different sacrifice, or ignore penitent disposition and the living/dead distinction.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, doctrine on the Sacrifice of the Mass, chapter II",
+        "webEvidenceRange": "Session XXII, chapter II, Latin 900–903",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P016",
+      "passageId": "MG-P016",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "LITURGY_PRINCIPLES"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Trent honours the established sacred Roman Canon as free from error and serving reverent worship.",
+      "interpretationGuard": "Not a certification of the wording in a future app edition.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, chapter IV, the Canon of the Mass",
+        "webEvidenceRange": "Session XXII, chapter IV, Latin 908–909",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P017",
+      "passageId": "MG-P017",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "LITURGY_PRINCIPLES",
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Ceremonial signs, vestments, incense, lights and varied vocal levels aid meditation on the mysteries.",
+      "interpretationGuard": "Do not infer individual 1962 Mass actions directly from the chapter.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, chapter V, sacred ceremonies, vestments, signs and audible versus silent speech",
+        "webEvidenceRange": "Session XXII, chapter V, Latin 911–912",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P046",
+      "passageId": "MG-P046",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "SAINTS_INTERCESSION"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Masses in honour of saints offer sacrifice to God alone while requesting saints' intercession.",
+      "interpretationGuard": "Honouring saints is not offering the Eucharistic sacrifice to saints.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, chapter III — Masses in honour of the saints",
+        "webEvidenceRange": "Session XXII, chapter III, Latin 904–906",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P047",
+      "passageId": "MG-P047",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "The council desires sacramental Communion by the faithful, yet permits and commends Mass where the priest alone communicates.",
+      "interpretationGuard": "Never selectively quote only the permissive clause.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, chapter VI — priest's sacramental Communion and faithful's spiritual communion",
+        "webEvidenceRange": "Session XXII, chapter VI, Latin 913–914",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P048",
+      "passageId": "MG-P048",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "LITURGY_PRINCIPLES"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Mixing water into the chalice wine is presented with symbolic and traditional explanations.",
+      "interpretationGuard": "This is not a complete modern rubric specifying quantities or timing.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, chapter VII — water mixed with chalice wine",
+        "webEvidenceRange": "Session XXII, chapter VII, Latin 915–917",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P049",
+      "passageId": "MG-P049",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "LITURGY_PRINCIPLES"
+      ],
+      "passageGenre": "HISTORICAL_DISCIPLINARY_OR_EXPLANATORY_CONTEXT",
+      "editorialProposition": "Trent's fathers resisted universal celebration of Mass in the vernacular in their context, while instructing pastors to explain Mass mysteries.",
+      "interpretationGuard": "Historical discipline must not be presented as a timeless prohibition covering later laws.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, chapter VIII — explaining Mass mysteries and historical vernacular rule",
+        "webEvidenceRange": "Session XXII, chapter VIII, Latin 919–921",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "history",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "REQUIRED",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P020",
+      "passageId": "MG-P020",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "The form of Penance centrally includes priestly absolution; the penitent's acts are contrition, confession and satisfaction.",
+      "interpretationGuard": "Do not mistake accompanying prayers for the essential sacramental form.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, chapter III, form of absolution and acts of the penitent",
+        "webEvidenceRange": "Session XIV, chapter III, Latin 632–635",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P021",
+      "passageId": "MG-P021",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Contrition includes sorrow and detestation of sin, purpose of amendment, and sacramental desire; attrition can dispose to grace.",
+      "interpretationGuard": "Imperfect contrition alone is not equated with justification outside the sacrament.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, chapter IV, contrition and attrition",
+        "webEvidenceRange": "Session XIV, chapter IV, Latin 637–644",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P022",
+      "passageId": "MG-P022",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Sacramental absolution is judicial and must not be reduced to mere proclamation that sins are forgiven.",
+      "interpretationGuard": "Distinguish ministerial judgment from a priest's personal sanctity.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, chapter VI, minister of penance and absolution",
+        "webEvidenceRange": "Session XIV, chapter VI, Latin 657–660",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P027",
+      "passageId": "MG-P027",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Christ instituted Penance as a remedy for sins committed after Baptism.",
+      "interpretationGuard": "Distinguish repentance in general from this sacrament.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, chapter I — institution of the sacrament of Penance",
+        "webEvidenceRange": "Session XIV, chapter I, Latin 620–626",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P028",
+      "passageId": "MG-P028",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION",
+        "BAPTISM"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Penance differs from Baptism in its sacramental operation and is ordered to the baptized who sin thereafter.",
+      "interpretationGuard": "Baptism is not repeated upon postbaptismal sins.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, chapter II — Penance distinct from Baptism",
+        "webEvidenceRange": "Session XIV, chapter II, Latin 626–630",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P029",
+      "passageId": "MG-P029",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "The council teaches integral confession of remembered mortal sins and notes established confidential practice.",
+      "interpretationGuard": "Do not demand confession of forgotten sins after proper examination.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, chapter V — integrity and secrecy of confession",
+        "webEvidenceRange": "Session XIV, chapter V, Latin 645–654",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P030",
+      "passageId": "MG-P030",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "HISTORICAL_DISCIPLINARY_OR_EXPLANATORY_CONTEXT",
+      "editorialProposition": "Jurisdiction and reserved cases shape the administration of absolution in Trent's historical setting.",
+      "interpretationGuard": "Do not apply 1551 faculties, absolution cases or disciplinary arrangements as current law.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, chapter VII — reservation of cases and jurisdiction",
+        "webEvidenceRange": "Session XIV, chapter VII, Latin 661–665",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "history",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "REQUIRED",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P031",
+      "passageId": "MG-P031",
+      "documentId": "TRENT-XIV-1551",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Satisfaction is not reducible to an arbitrary human invention, and remains dependent on Christ's merit.",
+      "interpretationGuard": "Penitential works do not replace grace.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XIV, chapter VIII — necessity and fruits of satisfaction",
+        "webEvidenceRange": "Session XIV, chapter VIII, Latin 666–674",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P024",
+      "passageId": "MG-P024",
+      "documentId": "VATICAN-I-PASTOR-AETERNUS-1870",
+      "doctrineIds": [
+        "PAPAL_PRIMACY"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "The Roman Pontiff is taught to have supreme, full and immediate jurisdiction.",
+      "interpretationGuard": "Not the same proposition as papal infallibility or unlimited personal impeccability.",
+      "sourceWitness": {
+        "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+        "documentUnit": "Chapter III, supreme and immediate jurisdiction of Roman Pontiff",
+        "webEvidenceRange": "Pastor aeternus, chapter III, 18–26",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P025",
+      "passageId": "MG-P025",
+      "documentId": "VATICAN-I-PASTOR-AETERNUS-1870",
+      "doctrineIds": [
+        "PAPAL_INFALLIBILITY"
+      ],
+      "passageGenre": "NON_DEFINING_ARGUMENT_OR_BACKGROUND",
+      "editorialProposition": "Chapter IV situates the papal teaching office in safeguarding apostolic revelation.",
+      "interpretationGuard": "Do not infer new revelation is granted to a pontiff.",
+      "sourceWitness": {
+        "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+        "documentUnit": "Chapter IV, scope and limitations preceding the final ex cathedra definition",
+        "webEvidenceRange": "Pastor aeternus, chapter IV, 27–38",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "context",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P006",
+      "passageId": "MG-P006",
+      "documentId": "VATICAN-I-PASTOR-AETERNUS-1870",
+      "doctrineIds": [
+        "PAPAL_INFALLIBILITY"
+      ],
+      "passageGenre": "SOLEMN_DEFINITION_FORMULA",
+      "editorialProposition": "The Roman Pontiff teaches infallibly when defining a doctrine of faith or morals to be held by the whole Church while acting as universal pastor and teacher.",
+      "interpretationGuard": "Do not extend this defined condition to every interview, sermon, prudential decision or private remark.",
+      "sourceWitness": {
+        "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+        "documentUnit": "Chapter IV, final definition on ex cathedra teaching",
+        "webEvidenceRange": "Pastor aeternus, chapter IV final formula, 39–40",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "definition",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P026",
+      "passageId": "MG-P026",
+      "documentId": "INEFFABILIS-DEUS-1854",
+      "doctrineIds": [
+        "IMMACULATE_CONCEPTION"
+      ],
+      "passageGenre": "NON_DEFINING_ARGUMENT_OR_BACKGROUND",
+      "editorialProposition": "The Pope recounts discernment and consultation preceding the Immaculate Conception definition.",
+      "interpretationGuard": "The preparatory arguments are not identical to the formally defined proposition.",
+      "sourceWitness": {
+        "url": "https://corpus-ineffabilis.org/corpus/",
+        "documentUnit": "Preparatory explanation and episcopal consultation preceding dogmatic formula",
+        "webEvidenceRange": "Ineffabilis Deus, Latin corpus lines 200–215",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "context",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P007",
+      "passageId": "MG-P007",
+      "documentId": "INEFFABILIS-DEUS-1854",
+      "doctrineIds": [
+        "IMMACULATE_CONCEPTION"
+      ],
+      "passageGenre": "SOLEMN_DEFINITION_FORMULA",
+      "editorialProposition": "Mary was preserved from every stain of original sin at the first instant of her conception by a singular divine grace in view of Christ's merits.",
+      "interpretationGuard": "Do not confuse her conception with the virginal conception of Christ; include grace and merits of Christ.",
+      "sourceWitness": {
+        "url": "https://corpus-ineffabilis.org/corpus/",
+        "documentUnit": "Definition of the Immaculate Conception, opening 'declaramus, pronuntiamus et definimus' in original",
+        "webEvidenceRange": "Ineffabilis Deus, Latin corpus lines 221–223",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "definition",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P008",
+      "passageId": "MG-P008",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Trent describes Christ, priest according to the order of Melchizedek, instituting a visible Eucharistic sacrifice at the Last Supper which represents the single bloody sacrifice of the Cross and applies its fruits.",
+      "interpretationGuard": "This is not an independent second sacrifice; the chapter's Malachi argument is retained separately at MG-P060.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, doctrine on the Sacrifice of the Mass, chapter I",
+        "webEvidenceRange": "Session XXII, chapter I, Latin lines 894–899",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM",
+      "b6ContextLinks": [
+        "MG-P060",
+        "MG-P005"
+      ],
+      "sourceBoundaryChecked": true
+    },
+    {
+      "claimId": "MGC-P057",
+      "passageId": "MG-P057",
+      "documentId": "INEFFABILIS-DEUS-1854",
+      "doctrineIds": [
+        "IMMACULATE_CONCEPTION"
+      ],
+      "passageGenre": "NON_DEFINING_ARGUMENT_OR_BACKGROUND",
+      "editorialProposition": "The opening of Ineffabilis Deus frames Mary's extraordinary preservation within God's redemptive design, Christ's Incarnation, and divine election of his Mother.",
+      "interpretationGuard": "The introductory theological rationale must not be confused with the formally defining proposition in lines 221–223, recorded at MG-P007.",
+      "sourceWitness": {
+        "url": "https://corpus-ineffabilis.org/corpus/",
+        "documentUnit": "Original Latin lines 1–9 — opening theological reasoning on Mary's preservation",
+        "webEvidenceRange": "Ineffabilis Deus, corpus lines 1–9, opening providential argument",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "context",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM",
+      "b6ContextLinks": [
+        "MG-P007"
+      ],
+      "sourceBoundaryChecked": true
+    },
+    {
+      "claimId": "MGC-P059",
+      "passageId": "MG-P059",
+      "documentId": "INEFFABILIS-DEUS-1854",
+      "doctrineIds": [
+        "IMMACULATE_CONCEPTION"
+      ],
+      "passageGenre": "HISTORICAL_DISCIPLINARY_OR_EXPLANATORY_CONTEXT",
+      "editorialProposition": "Immediately after defining the Immaculate Conception, Pius IX warns against dissent and refers to ecclesiastical penalties for externally manifesting opposition.",
+      "interpretationGuard": "The defined doctrine ends at line 223; the legal and disciplinary consequences described in 1854 require separate historical and current-law analysis.",
+      "sourceWitness": {
+        "url": "https://corpus-ineffabilis.org/corpus/",
+        "documentUnit": "Original Latin lines 224–228 — reception warning after the definition",
+        "webEvidenceRange": "Ineffabilis Deus, corpus lines 224–228, post-definition warning and historical penalties",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "history",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "REQUIRED",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM",
+      "b6ContextLinks": [
+        "MG-P007"
+      ],
+      "sourceBoundaryChecked": true
+    },
+    {
+      "claimId": "MGC-P060",
+      "passageId": "MG-P060",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Trent interprets Malachi's pure offering and the Old Testament sacrificial figures as witnesses and prefigurations fulfilled by the Eucharistic sacrifice.",
+      "interpretationGuard": "The typological appeal is part of chapter I's broader argument at MG-P008 and should not be presented as the entire defined doctrine of the Mass.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, chapter I, concluding Old Testament typological argument (Malachi 1:11)",
+        "webEvidenceRange": "Session XXII, chapter I, Latin lines 898–899, Malachi 1:11 and Old Testament figures",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM",
+      "b6ContextLinks": [
+        "MG-P008"
+      ],
+      "sourceBoundaryChecked": true
+    },
+    {
+      "claimId": "MGC-P061",
+      "passageId": "MG-P061",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "PURGATORY"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Trent explicitly teaches that the sacrifice of the Mass is offered for living faithful and also for those deceased in Christ who are not yet fully purified.",
+      "interpretationGuard": "This is a distinct clause within the larger propitiatory-sacrifice chapter MG-P005; it does not prescribe a particular Requiem ceremony or prove every aspect of Purgatory in isolation.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, chapter II, concluding sacrifice for the departed",
+        "webEvidenceRange": "Session XXII, chapter II, Latin line 903, living and dead",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM",
+      "b6ContextLinks": [
+        "MG-P005"
+      ],
+      "sourceBoundaryChecked": true
+    }
+  ],
+  "notYetScopedPassageIds": [],
+  "nonStandalonePassageAliases": [
+    {
+      "passageId": "MG-P004",
+      "canonicalPassageId": "MG-P028",
+      "kind": "OVERLAPPING_BROAD_INTRO_AND_CHAPTER",
+      "detail": "Session XIV introductory heading is historical framing; the doctrinal chapter II claim is already scoped at P028. Do not generate a second doctrinal summary."
+    },
+    {
+      "passageId": "MG-P058",
+      "canonicalPassageId": "MG-P026",
+      "kind": "DUPLICATE_CONSULTATION_SCOPE",
+      "detail": "Lines 200–215 fall within the same pre-definition episcopal-consultation scope already summarized in P026. Preserve locator for source reading, not second talking point."
+    }
+  ],
+  "researchBatch": "2026-10-19-B6"
+}
