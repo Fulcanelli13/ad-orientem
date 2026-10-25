@@ -1,0 +1,777 @@
+{
+  "schema": "AO_ICRSP_MAJOR_CALENDAR_CROSSWALK_CANDIDATES_V1",
+  "date": "2026-10-25",
+  "status": "TITLE_MATCHED_MAJOR_CELEBRATIONS_NOT_RUNTIME_CERTIFIED",
+  "provenance": {
+    "index": "data/source-text/icrsp-france-index-discovery.v1.json",
+    "calendar": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+    "issue": 1665
+  },
+  "warning": "The calendar owner returns date-labelled celebration projections, not stable saint/feast IDs. This file deliberately sets calendarStableObservanceId=null and does not fabricate source of truth IDs. ICRSP witness is not 1962 authority by title alone; special rites and vigil overlays separate from Mass day.",
+  "totals": {
+    "calendarMajorRowsMatchedByExplicitEnglishLabel": 39,
+    "initialSourceCandidateArticles": 39,
+    "additionalHistoricOrAlternativeLinks": 12,
+    "directIDBindingsCertified": 0,
+    "properTextsCollated": 0,
+    "productionChanges": 0
+  },
+  "candidates": [
+    {
+      "calendarRenderedEnglishTitle": "First Sunday of Advent",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0088_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0088_ancien",
+        "indexLabel": "1ᵉʳ dimanche de l’Avent",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Second Sunday of Advent",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0089_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0089_ancien",
+        "indexLabel": "2ᵉ dimanche de l’Avent",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Third Sunday of Advent · Gaudete",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0090_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0090_ancien",
+        "indexLabel": "3ᵉ dimanche de l’Avent",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Fourth Sunday of Advent",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0091_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0091_ancien",
+        "indexLabel": "4ᵉ dimanche de l’Avent",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Vigil of the Nativity",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0092_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0092_ancien",
+        "indexLabel": "Vigile de la Nativité",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Nativity of Our Lord",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0096_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0096_ancien",
+        "indexLabel": "Nativité du Seigneur (25 décembre)",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Octave of the Nativity · Circumcision of Our Lord",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0104_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0104_ancien",
+        "indexLabel": "Octave de la Nativité (1ᵉʳ janvier, Circoncision du Seigneur)",
+        "sourceSection": "sanctoral",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Epiphany of Our Lord",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0108_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0108_ancien",
+        "indexLabel": "Epiphanie du Seigneur (6 janvier)",
+        "sourceSection": "sanctoral",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Purification of the Blessed Virgin Mary · Candlemas",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0146_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0146_ancien",
+        "indexLabel": "Purification de la T. Sainte Vierge (Présentation du Seigneur)",
+        "sourceSection": "sanctoral",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Septuagesima Sunday",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0130_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0130_ancien",
+        "indexLabel": "Dimanche de la Septuagésime",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Ash Wednesday",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0139_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0139_ancien",
+        "indexLabel": "Mer. des Cendres",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "First Sunday of Lent",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0155_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0155_ancien",
+        "indexLabel": "1ᵉʳ Dimanche de Carême",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Second Sunday of Lent",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0180_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0180_ancien",
+        "indexLabel": "2ᵉ dimanche de Carême",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Third Sunday of Lent",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0188_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0188_ancien",
+        "indexLabel": "3ᵉ dimanche de Carême",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Fourth Sunday of Lent · Laetare",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0199_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0199_ancien",
+        "indexLabel": "4ᵉ Dimanche de Carême",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Saint Joseph, Spouse of the Blessed Virgin Mary",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0721_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0721_ancien",
+        "indexLabel": "St Joseph, époux de la bienheureuse Vierge Marie, confesseur",
+        "sourceSection": "sanctoral",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Passion Sunday",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0002_nouveau",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0002_nouveau",
+        "indexLabel": "Premier Dimanche de la Passion",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Annunciation of the Blessed Virgin Mary",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0021_nouveau",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0021_nouveau",
+        "indexLabel": "Annonciation de la Bse Vierge Marie",
+        "sourceSection": "sanctoral",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Palm Sunday",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0593_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0593_ancien",
+        "indexLabel": "Dimanche des Rameaux",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [
+        {
+          "articleId": "a0010_nouveau",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0010_nouveau",
+          "indexLabel": "Dimanche des Rameaux avant 1955",
+          "sourceSection": "temporal",
+          "status": "EDITION_OR_SCOPE_REVIEW_REQUIRED"
+        }
+      ],
+      "sourceVariantRisk": "HISTORICAL_PRE_1955_ALTERNATIVE",
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Holy Monday",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0013_nouveau",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0013_nouveau",
+        "indexLabel": "Lun. saint",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [
+        {
+          "articleId": "a0034_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0034_ancien",
+          "indexLabel": "Lun. saint · av. 1955",
+          "sourceSection": "temporal",
+          "status": "EDITION_OR_SCOPE_REVIEW_REQUIRED"
+        }
+      ],
+      "sourceVariantRisk": "HISTORICAL_PRE_1955_ALTERNATIVE",
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Holy Tuesday",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0014_nouveau",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0014_nouveau",
+        "indexLabel": "Mar. saint",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [
+        {
+          "articleId": "a0035_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0035_ancien",
+          "indexLabel": "Mar. saint · av. 1955",
+          "sourceSection": "temporal",
+          "status": "EDITION_OR_SCOPE_REVIEW_REQUIRED"
+        }
+      ],
+      "sourceVariantRisk": "HISTORICAL_PRE_1955_ALTERNATIVE",
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Holy Wednesday",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0015_nouveau",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0015_nouveau",
+        "indexLabel": "Mer. saint",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [
+        {
+          "articleId": "a0036_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0036_ancien",
+          "indexLabel": "Mer. saint · av. 1955",
+          "sourceSection": "temporal",
+          "status": "EDITION_OR_SCOPE_REVIEW_REQUIRED"
+        }
+      ],
+      "sourceVariantRisk": "HISTORICAL_PRE_1955_ALTERNATIVE",
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Holy Thursday",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0020_nouveau",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0020_nouveau",
+        "indexLabel": "Jeu. saint · ap. 1955",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [
+        {
+          "articleId": "a0221_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0221_ancien",
+          "indexLabel": "Jeu. saint · av. 1955",
+          "sourceSection": "temporal",
+          "status": "EDITION_OR_SCOPE_REVIEW_REQUIRED"
+        }
+      ],
+      "sourceVariantRisk": "HISTORICAL_PRE_1955_ALTERNATIVE",
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Good Friday",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0029_nouveau",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0029_nouveau",
+        "indexLabel": "Ven. saint · ap. 1955",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [
+        {
+          "articleId": "a0220_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_ancien",
+          "indexLabel": "Ven. saint · av. 1955",
+          "sourceSection": "temporal",
+          "status": "EDITION_OR_SCOPE_REVIEW_REQUIRED"
+        }
+      ],
+      "sourceVariantRisk": "HISTORICAL_PRE_1955_ALTERNATIVE",
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Holy Saturday · Easter Vigil",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0030_nouveau",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0030_nouveau",
+        "indexLabel": "Sam. saint · ap. 1955",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [
+        {
+          "articleId": "a0222_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_ancien",
+          "indexLabel": "Sam. saint · av. 1955",
+          "sourceSection": "temporal",
+          "status": "EDITION_OR_SCOPE_REVIEW_REQUIRED"
+        },
+        {
+          "articleId": "a0595_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0595_ancien",
+          "indexLabel": "Vigile Pascale",
+          "sourceSection": "temporal",
+          "status": "EDITION_OR_SCOPE_REVIEW_REQUIRED"
+        }
+      ],
+      "sourceVariantRisk": "INTERNAL_INDEX_H2_EDITION_CONFLICT_AND_ALTERNATIVE",
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Easter Sunday",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0031_nouveau",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0031_nouveau",
+        "indexLabel": "Dimanche de la Résurrection (Dimanche de Pâques)",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Low Sunday",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0038_nouveau",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0038_nouveau",
+        "indexLabel": "Dimanche in Albis dans l’Octave de Pâques",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Ascension of Our Lord",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0111_nouveau",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0111_nouveau",
+        "indexLabel": "Ascension du Seigneur",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [
+        {
+          "articleId": "a0279_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0279_ancien",
+          "indexLabel": "L’Ascension du Seigneur",
+          "sourceSection": "temporal",
+          "status": "EDITION_OR_SCOPE_REVIEW_REQUIRED"
+        }
+      ],
+      "sourceVariantRisk": "MULTIPLE_WITNESSES_EDITION_UNDETERMINED",
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Pentecost Sunday",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0167_nouveau",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0167_nouveau",
+        "indexLabel": "Dimanche de la Pentecôte",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [
+        {
+          "articleId": "a0164_nouveau",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0164_nouveau",
+          "indexLabel": "Vigile de la Pentecôte avant 1955",
+          "sourceSection": "temporal",
+          "status": "EDITION_OR_SCOPE_REVIEW_REQUIRED"
+        },
+        {
+          "articleId": "a0165_nouveau",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0165_nouveau",
+          "indexLabel": "Vigile de la Pentecôte après 1955",
+          "sourceSection": "temporal",
+          "status": "EDITION_OR_SCOPE_REVIEW_REQUIRED"
+        },
+        {
+          "articleId": "a0281_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0281_ancien",
+          "indexLabel": "Vigile de la Pentecôte",
+          "sourceSection": "temporal",
+          "status": "EDITION_OR_SCOPE_REVIEW_REQUIRED"
+        }
+      ],
+      "sourceVariantRisk": "SEPARATE_VIGIL_MATERIAL_NOT_SUNDAY_EQUIVALENT",
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Trinity Sunday",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0294_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0294_ancien",
+        "indexLabel": "Fête de la Trinité",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Corpus Christi",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0297_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0297_ancien",
+        "indexLabel": "Fête-Dieu ou Fête du Très Saint Sacrement",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Sacred Heart of Jesus",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0220_nouveau",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_nouveau",
+        "indexLabel": "Fête du Sacré-Coeur",
+        "sourceSection": "temporal",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Nativity of Saint John the Baptist",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0309_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0309_ancien",
+        "indexLabel": "Nativité de Saint Jean-Baptiste",
+        "sourceSection": "sanctoral",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Saints Peter and Paul",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0318_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0318_ancien",
+        "indexLabel": "Sts Pierre et Paul, apôtres",
+        "sourceSection": "sanctoral",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Assumption of the Blessed Virgin Mary",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0409_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0409_ancien",
+        "indexLabel": "Assomption de la T. Sᵗᵉ Vierge Marie",
+        "sourceSection": "sanctoral",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Dedication of Saint Michael the Archangel",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0468_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0468_ancien",
+        "indexLabel": "Dédicace de St Michel, archange",
+        "sourceSection": "sanctoral",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Christ the King",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0507_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0507_ancien",
+        "indexLabel": "Dernier Dimanche d’Octobre : le Christ-Roi",
+        "sourceSection": "sanctoral",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "All Saints",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0541_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0541_ancien",
+        "indexLabel": "Fête de Tous les Saints",
+        "sourceSection": "sanctoral",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    },
+    {
+      "calendarRenderedEnglishTitle": "Commemoration of All the Faithful Departed",
+      "calendarOwner": "src/calendar/liturgical-year.js#buildMajorCelebrations",
+      "calendarStableObservanceId": null,
+      "canonicalMatchGrade": "CANDIDATE_OBSERVANCE_IDENTITY_BY_TITLE_NOT_RUNTIME_BINDING",
+      "sourcePrimaryCandidate": {
+        "articleId": "a0542_ancien",
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0542_ancien",
+        "indexLabel": "Commémoraison de tous les Fidèles défunts",
+        "sourceSection": "sanctoral",
+        "editionCertified": false
+      },
+      "supplementaryWitnesses": [],
+      "sourceVariantRisk": null,
+      "releaseGate": "NEEDS_DOMAIN_OWNER_TEXT_EDITION_RIGHTS_AND_EXACT_PROPER_MATCH",
+      "canonicalDataMutation": "NONE"
+    }
+  ]
+}
