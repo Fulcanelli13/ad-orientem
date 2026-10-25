@@ -9,6 +9,7 @@ import {updateDevotionalProgress,devotionalProgressMarkup} from "./devotional-pr
 import {angelusCommunalParts} from "./angelus-folio-recitation.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
+import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
 import {monthlyDevotionalRegister} from "./quiet-devotional-progression.js";
 import "./quiet-devotional-progression-styles.js";
 import {showDevotionalInterlude,showDevotionalParagraphCue,resetDevotionalCinematicSession} from "./devotional-cinematic.js";
@@ -1525,9 +1526,13 @@ function exitAdorationQuiet(){
   m.scrollTop=resume.mountScroll;
   const card=m.querySelector('.aoP435930AdorationReader .aoDevoCardScroll');
   if(card){
+   // The shared reader creates the focus runway in a later animation frame.
+   // Establish that same runway synchronously before restoring this scroll.
+   const paragraphs=[...card.querySelectorAll('.aoP435930GuideNow p,.aoP435930GuideCue p,.aoP435930Prayer .aoP435930Flip,.aoP435930Prayer .aoP435930Text')];
+   ensureDevotionalReadingRunway(card,paragraphs,{ratio:.40});
+   card.dataset.aoFocusRunway='1';
    card.scrollTop=resume.cardScroll;
-   // The shared focus adapter recomputes runway padding on its first frame.
-   // Restore once more after that layout pass so silence cannot reset the passage.
+   // Guard against a later font/layout pass without changing the stage.
    requestAnimationFrame(()=>{
     if(view==='adoration'&&!ADOR.quiet&&ADOR.mode===resume.mode&&card.isConnected){
      m.scrollTop=resume.mountScroll;
