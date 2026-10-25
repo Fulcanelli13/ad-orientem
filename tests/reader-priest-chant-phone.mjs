@@ -106,7 +106,7 @@ try{
    },choirCue);
    await page.locator(".ao-prayer-card").evaluate((el,cue)=>{
      const p=[...el.querySelectorAll(".ao-reader-paragraph")].find(n=>
-       (n.dataset.sourceCueIds??"").split(/\\s+/).includes(cue));
+       (n.dataset.sourceCueIds??"").split(/\s+/).includes(cue));
      if(!p)throw Error("Choir cue has no actual LIVE DOM paragraph "+cue);
      const a=el.getBoundingClientRect(),b=p.getBoundingClientRect();
      el.scrollTop=Math.max(0,b.top-a.top+el.scrollTop+b.height/2-el.clientHeight*.39);
