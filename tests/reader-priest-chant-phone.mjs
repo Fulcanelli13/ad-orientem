@@ -96,23 +96,40 @@ try{
   // Priest recites the Gloria/Credo on an independent timeline; a
   // public choir phrase cannot assert a current priest bow/genuflection.
   for(const choirCue of ["AO.SM.C0058","AO.SM.C0096"]){
-   const sequence=await page.evaluate(cue=>{
+   // Use the same reachable scroll-position sweep as the 65-card focus
+   // acceptance test; a single ideal position may clamp to zero.
+   const focus=await page.evaluate(async cue=>{
      const api=window.__AO_PHONE_PREVIEW;
      const card=api.model.cards.find(c=>c.paragraphs?.some(p=>
        (p.sourceCueIds??[]).includes(cue)));
      if(!card)throw Error("Missing choir paragraph "+cue);
      api.showSequence(card.sequence);
-     return card.sequence;
+     const frame=()=>new Promise(done=>requestAnimationFrame(()=>
+       requestAnimationFrame(done)));
+     await frame();
+     const scroller=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+     const node=[...scroller.querySelectorAll(".ao-reader-paragraph[data-cue-id]")]
+       .find(n=>n.dataset.cueId===cue);
+     if(!node)throw Error("Choir cue has no exact source cue DOM paragraph "+cue);
+     const rect=node.getBoundingClientRect(),root=scroller.getBoundingClientRect();
+     const center=rect.top-root.top+scroller.scrollTop+rect.height/2;
+     const maxScroll=Math.max(0,scroller.scrollHeight-scroller.clientHeight);
+     const ideal=center-scroller.clientHeight*.39;
+     const start=Math.max(0,Math.floor(Math.min(ideal-100,center-150)/16)*16);
+     const stop=Math.min(maxScroll,Math.max(center+145,ideal+150));
+     const candidates=[0,maxScroll];
+     for(let y=start;y<=stop;y+=16)candidates.push(y);
+     const trace=[];
+     for(const amount of [...new Set(candidates)]){
+       scroller.scrollTop=Math.max(0,Math.min(maxScroll,amount));
+       scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
+       await frame();
+       trace.push([Math.round(scroller.scrollTop),api.getActiveCue()]);
+       if(api.getActiveCue()===cue)return {reached:true,trace:trace.slice(-8)};
+     }
+     return {reached:false,trace:trace.slice(-20),maxScroll,center,card:card.title};
    },choirCue);
-   await page.locator(".ao-prayer-card").evaluate((el,cue)=>{
-     const p=[...el.querySelectorAll(".ao-reader-paragraph")].find(n=>
-       (n.dataset.sourceCueIds??"").split(/\s+/).includes(cue));
-     if(!p)throw Error("Choir cue has no actual LIVE DOM paragraph "+cue);
-     const a=el.getBoundingClientRect(),b=p.getBoundingClientRect();
-     el.scrollTop=Math.max(0,b.top-a.top+el.scrollTop+b.height/2-el.clientHeight*.39);
-   },choirCue);
-   await page.waitForFunction(cue=>
-     window.__AO_PHONE_PREVIEW.getActiveCue()===cue,choirCue,{timeout:5000});
+   assert.equal(focus.reached,true,choirCue+" unreachable by a real LIVE scroll: "+JSON.stringify(focus));
    const state=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
    assert.equal(state.nativeCueId,choirCue);
    assert.equal(state.priestAction,null,choirCue+" choir phrase forged priest action");
