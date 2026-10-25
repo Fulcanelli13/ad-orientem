@@ -674,7 +674,7 @@ try{
   const adorationLanding=await page.evaluate(()=>({
     modes:[...document.querySelectorAll("#aoPray435930 [data-p435930-ador-mode]")].map(x=>x.getAttribute("data-p435930-ador-mode")),
     titles:[...document.querySelectorAll("#aoPray435930 [data-p435930-ador-mode] b")].map(x=>x.textContent?.trim()??""),
-    benedictionCard:document.querySelectorAll("#aoPray435930 [data-p435930-go-ben]").length,
+    benedictionCard:document.querySelectorAll("#aoPray435930 .aoAdorationChooser [data-p435930-go-ben]").length,
   }));
   assert.deepEqual(adorationLanding.modes,["visit","open","holy","four","treasury"],"Adoration landing no longer matches the final five-entry donor composition");
   assert.deepEqual(adorationLanding.titles,["Visit to the Blessed Sacrament","Silent Adoration","Guided Holy Hour","The Four Ends","Eucharistic Treasury"],"Adoration landing titles regressed");
