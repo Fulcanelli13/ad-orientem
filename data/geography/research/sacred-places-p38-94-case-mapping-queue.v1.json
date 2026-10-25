@@ -8,7 +8,8 @@
     "sheet": "94-CASE QUEUE",
     "status": "User's prior audit workbook; research identifiers, row order and disposition extracted; source URLs remain in original audit workbook.",
     "prior_audit": "Ad_Orientem_Sacred_Places_Pass6_Source_Audit_13_2026-10-25.xlsx",
-    "candidate_identity_registry": "data/geography/research/sacred-geography-curated-750-site-crosswalk-2026-10-10.v1.1.json"
+    "candidate_identity_registry": "data/geography/research/sacred-geography-curated-750-site-crosswalk-2026-10-10.v1.1.json",
+    "source_and_coordinates": "All 74 inherited institutional website leads and approximate research coordinates reproduced row-by-row from the Pass10 94-CASE QUEUE worksheet; this preserves discovery context, not site/geometry verification."
   },
   "canonical_at_review": {
     "places": 457,
@@ -87,7 +88,14 @@
       "country": "AU",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://carmelites.au/about-the-carmelites/olmc",
+      "inherited_search_center": {
+        "lat": -37.8485,
+        "lng": 144.95938,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 2,
@@ -98,7 +106,14 @@
       "country": "AU",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.sacredheart.org.au/",
+      "inherited_search_center": {
+        "lat": -33.91625,
+        "lng": 151.2415,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 3,
@@ -109,7 +124,14 @@
       "country": "AU",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://stanthonyshawthorn.org.au/",
+      "inherited_search_center": {
+        "lat": -37.827,
+        "lng": 145.02475,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 4,
@@ -120,7 +142,14 @@
       "country": "AU",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://mtcarmelkew.com.au/",
+      "inherited_search_center": {
+        "lat": -37.80875,
+        "lng": 145.01638,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 5,
@@ -131,7 +160,14 @@
       "country": "BR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://arquidiocesesalvador.org.br/herancas-da-fe-basilica-santuario-nossa-senhora-da-conceicao-da-praia-uma-historia-de-fe-sob-o-olhar-da-padroeira-da-bahia/",
+      "inherited_search_center": {
+        "lat": -12.97525,
+        "lng": -38.5145,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 6,
@@ -142,7 +178,14 @@
       "country": "BR",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://santuarionossasenhoradapiedade.arquidiocesebh.org.br/santuario/localizacao-e-como-chegar/",
+      "inherited_search_center": {
+        "lat": -19.82275,
+        "lng": -43.67575,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 7,
@@ -153,7 +196,14 @@
       "country": "BR",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://arquidiocesedegoiania.org.br/paroquia/santuario-basilica-do-divino-pai-eterno-trindade/",
+      "inherited_search_center": {
+        "lat": -16.66075,
+        "lng": -49.48587,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 8,
@@ -164,7 +214,14 @@
       "country": "CH",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://diocese-sion.ch/prier/faire-un-pelerinage/valere-et-longeborgne",
+      "inherited_search_center": {
+        "lat": 46.23363,
+        "lng": 7.36438,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 9,
@@ -175,7 +232,14 @@
       "country": "CL",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.santuarioandacollo.cl",
+      "inherited_search_center": {
+        "lat": -30.23175,
+        "lng": -71.08487,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 10,
@@ -186,7 +250,14 @@
       "country": "CZ",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://katalog.dltm.cz/web/chramy/524",
+      "inherited_search_center": {
+        "lat": 50.68163,
+        "lng": 13.8715,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 11,
@@ -197,7 +268,14 @@
       "country": "CZ",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.pmkrtiny.cz",
+      "inherited_search_center": {
+        "lat": 49.2965,
+        "lng": 16.743,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 12,
@@ -208,7 +286,14 @@
       "country": "DE",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.kloster-ettal.de",
+      "inherited_search_center": {
+        "lat": 47.5695,
+        "lng": 11.09425,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 13,
@@ -219,7 +304,14 @@
       "country": "DE",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://wallfahrt-werl.de/",
+      "inherited_search_center": {
+        "lat": 51.55363,
+        "lng": 7.915,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 14,
@@ -231,7 +323,14 @@
       "country": "EC",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.arquidiocesisdequito.com.ec/parroquias/item/parroquia-san-pedro-el-quinche.html",
+      "inherited_search_center": {
+        "lat": -0.111,
+        "lng": -78.2965,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 15,
@@ -242,7 +341,14 @@
       "country": "ES",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://sagradafamilia.org",
+      "inherited_search_center": {
+        "lat": 41.40313,
+        "lng": 2.17475,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 16,
@@ -253,7 +359,14 @@
       "country": "ES",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.lacruzdecaravaca.com/horarios/",
+      "inherited_search_center": {
+        "lat": 38.10763,
+        "lng": -1.85875,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 17,
@@ -264,7 +377,14 @@
       "country": "ES",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.catedraldeburgos.es",
+      "inherited_search_center": {
+        "lat": 42.34038,
+        "lng": -3.70487,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 18,
@@ -275,7 +395,14 @@
       "country": "ES",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.architoledo.org/catedral",
+      "inherited_search_center": {
+        "lat": 39.857,
+        "lng": -4.0245,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 19,
@@ -286,7 +413,14 @@
       "country": "ES",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.poblet.cat",
+      "inherited_search_center": {
+        "lat": 41.38038,
+        "lng": 1.08263,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 20,
@@ -297,7 +431,14 @@
       "country": "ES",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.abadiadesilos.es",
+      "inherited_search_center": {
+        "lat": 41.962,
+        "lng": -3.41975,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 21,
@@ -308,7 +449,14 @@
       "country": "ES",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.valldenuria.cat/estiu/valldenuria/el-santuari-basilica/",
+      "inherited_search_center": {
+        "lat": 42.39688,
+        "lng": 2.1535,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 22,
@@ -319,7 +467,14 @@
       "country": "ES",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.santamariaderegla.com/index.php/contacto/",
+      "inherited_search_center": {
+        "lat": 36.73013,
+        "lng": -6.43887,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 23,
@@ -330,7 +485,14 @@
       "country": "ES",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://cerrodelosangeles.es/ermita/",
+      "inherited_search_center": {
+        "lat": 40.308,
+        "lng": -3.6845,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 24,
@@ -341,7 +503,14 @@
       "country": "ES",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://webmail.archivalladolid.org/entidad.php?Clave=tbagprom",
+      "inherited_search_center": {
+        "lat": 41.64925,
+        "lng": -4.72087,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 25,
@@ -352,7 +521,14 @@
       "country": "ES",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.parroquiabalaguer.org",
+      "inherited_search_center": {
+        "lat": 41.79538,
+        "lng": 0.806,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 26,
@@ -363,7 +539,14 @@
       "country": "ES",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://catedraldesevilla.es",
+      "inherited_search_center": {
+        "lat": 37.38563,
+        "lng": -5.994,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 27,
@@ -374,7 +557,14 @@
       "country": "ES",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.covamanresa.cat/es/actividades-santuario",
+      "inherited_search_center": {
+        "lat": 41.72163,
+        "lng": 1.83075,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 28,
@@ -385,7 +575,14 @@
       "country": "FR",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.frigolet.com",
+      "inherited_search_center": {
+        "lat": 43.85825,
+        "lng": 4.72775,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 29,
@@ -396,7 +593,14 @@
       "country": "FR",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.solesmes.com",
+      "inherited_search_center": {
+        "lat": 47.852,
+        "lng": -0.303,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 30,
@@ -407,7 +611,14 @@
       "country": "FR",
       "review_lane": "CANONICAL_SCOPE_RECONCILIATION",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NAMED_OSM_CHURCH_WAY_IDENTIFIED_NEEDS_EXISTING_PLACE_SCOPE_DECISION"
+      "exact_building_verification": "NAMED_OSM_CHURCH_WAY_IDENTIFIED_NEEDS_EXISTING_PLACE_SCOPE_DECISION",
+      "inherited_institutional_source_lead_url": "http://www.sacrecoeur-paray.org/lieux/la-basilique-du-sacre-coeur/",
+      "inherited_search_center": {
+        "lat": 46.44975,
+        "lng": 4.12138,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 31,
@@ -418,7 +629,14 @@
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.cathedrale-strasbourg.fr",
+      "inherited_search_center": {
+        "lat": 48.58163,
+        "lng": 7.75025,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 32,
@@ -429,7 +647,14 @@
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://notredamedebonsecours.org/",
+      "inherited_search_center": {
+        "lat": 44.45338,
+        "lng": 4.221,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 33,
@@ -440,7 +665,14 @@
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://diocese40.fr/paroisse/saint-vincent-notre-dame/",
+      "inherited_search_center": {
+        "lat": 43.78425,
+        "lng": -0.991,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 34,
@@ -451,7 +683,14 @@
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.basiliquemarienthal.fr/",
+      "inherited_search_center": {
+        "lat": 48.7795,
+        "lng": 7.8165,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 35,
@@ -462,7 +701,14 @@
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://chalons.catholique.fr/lepine/",
+      "inherited_search_center": {
+        "lat": 48.977,
+        "lng": 4.47,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 36,
@@ -473,7 +719,14 @@
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://bayeuxlisieux.catholique.fr/paroisses/notre-dame-de-la-delivrande/presentation-de-la-paroisse/",
+      "inherited_search_center": {
+        "lat": 49.29875,
+        "lng": -0.3725,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 37,
@@ -484,7 +737,14 @@
       "country": "FR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.diocese35.fr/sanctuaire/la-peiniere/",
+      "inherited_search_center": {
+        "lat": 48.10638,
+        "lng": -1.354,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 38,
@@ -495,7 +755,14 @@
       "country": "FR",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.saintvictor.net",
+      "inherited_search_center": {
+        "lat": 43.29025,
+        "lng": 5.36513,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 39,
@@ -506,7 +773,14 @@
       "country": "FR",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.issoudun-msc.com/pelerinages",
+      "inherited_search_center": {
+        "lat": 46.95163,
+        "lng": 1.99413,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 40,
@@ -517,7 +791,14 @@
       "country": "FR",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.saintregislalouvesc.org/le-sanctuaire/",
+      "inherited_search_center": {
+        "lat": 45.11838,
+        "lng": 4.53588,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 41,
@@ -528,7 +809,14 @@
       "country": "GB",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.carfingrotto.org",
+      "inherited_search_center": {
+        "lat": 55.80638,
+        "lng": -3.95575,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 42,
@@ -539,7 +827,14 @@
       "country": "GB",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.ourladyofthetaper.org.uk",
+      "inherited_search_center": {
+        "lat": 52.08725,
+        "lng": -4.65275,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 43,
@@ -550,7 +845,14 @@
       "country": "HU",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://mariagyud.hu",
+      "inherited_search_center": {
+        "lat": 45.87838,
+        "lng": 18.27338,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 44,
@@ -561,7 +863,14 @@
       "country": "HU",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.turizmus.szentkut.hu/en",
+      "inherited_search_center": {
+        "lat": 48.00013,
+        "lng": 19.76125,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 45,
@@ -572,7 +881,14 @@
       "country": "IN",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://ernakulamarchdiocese.org/pilgrim",
+      "inherited_search_center": {
+        "lat": 10.18525,
+        "lng": 76.50663,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 46,
@@ -583,7 +899,14 @@
       "country": "IT",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.abbaziagrecia.it/parrocchia.asp",
+      "inherited_search_center": {
+        "lat": 41.78563,
+        "lng": 12.66638,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 47,
@@ -594,7 +917,14 @@
       "country": "IT",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.monasterosanbenedettosubiaco.it",
+      "inherited_search_center": {
+        "lat": 41.91688,
+        "lng": 13.118,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 48,
@@ -605,7 +935,14 @@
       "country": "IT",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.essentiaonline.com/basilica/",
+      "inherited_search_center": {
+        "lat": 43.32013,
+        "lng": 11.32625,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 49,
@@ -616,7 +953,14 @@
       "country": "IT",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.collevalenza.org/collevalenza/santuario/",
+      "inherited_search_center": {
+        "lat": 42.74688,
+        "lng": 12.4825,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 50,
@@ -627,7 +971,14 @@
       "country": "IT",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.santuariodioropa.it/",
+      "inherited_search_center": {
+        "lat": 45.62863,
+        "lng": 7.97825,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 51,
@@ -638,7 +989,14 @@
       "country": "IT",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.madonnadicanneto.it",
+      "inherited_search_center": {
+        "lat": 41.67825,
+        "lng": 13.90775,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 52,
@@ -649,7 +1007,14 @@
       "country": "IT",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://rosamisticafontanelle.it/",
+      "inherited_search_center": {
+        "lat": 45.3845,
+        "lng": 10.39725,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 53,
@@ -660,7 +1025,14 @@
       "country": "IT",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.sangabriele.org",
+      "inherited_search_center": {
+        "lat": 42.517,
+        "lng": 13.6575,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 54,
@@ -671,7 +1043,14 @@
       "country": "IT",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://www.sangiuseppedacopertino.net/",
+      "inherited_search_center": {
+        "lat": 43.48638,
+        "lng": 13.48313,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 55,
@@ -682,7 +1061,14 @@
       "country": "IT",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.santuariodicaravaggio.it",
+      "inherited_search_center": {
+        "lat": 45.48138,
+        "lng": 9.63,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 56,
@@ -693,7 +1079,14 @@
       "country": "KR",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.haemi.or.kr",
+      "inherited_search_center": {
+        "lat": 36.7125,
+        "lng": 126.53813,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 57,
@@ -704,7 +1097,14 @@
       "country": "NL",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.martelarenvangorcum.nl",
+      "inherited_search_center": {
+        "lat": 51.89488,
+        "lng": 4.15475,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 58,
@@ -715,7 +1115,14 @@
       "country": "PH",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://aranzazushrine.ph",
+      "inherited_search_center": {
+        "lat": 14.6955,
+        "lng": 121.11738,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 59,
@@ -726,7 +1133,14 @@
       "country": "PH",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://mtcarmelshrine.com.ph",
+      "inherited_search_center": {
+        "lat": 14.61438,
+        "lng": 121.03075,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 60,
@@ -737,7 +1151,14 @@
       "country": "PL",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://bazylika-trzebnica.pl",
+      "inherited_search_center": {
+        "lat": 51.30938,
+        "lng": 17.06625,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 61,
@@ -748,7 +1169,14 @@
       "country": "PL",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.bazylikamariacka.pl",
+      "inherited_search_center": {
+        "lat": 54.34988,
+        "lng": 18.65213,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 62,
@@ -759,7 +1187,14 @@
       "country": "PL",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "https://mbludzm.pl/",
+      "inherited_search_center": {
+        "lat": 49.465,
+        "lng": 19.98275,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 63,
@@ -770,7 +1205,14 @@
       "country": "PL",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.starywielislaw.pl",
+      "inherited_search_center": {
+        "lat": 50.39975,
+        "lng": 16.56463,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 64,
@@ -781,7 +1223,14 @@
       "country": "PR",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.santuariolamonserrate.org",
+      "inherited_search_center": {
+        "lat": 18.1405,
+        "lng": -67.12712,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 65,
@@ -792,7 +1241,14 @@
       "country": "PT",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.sbento.pt",
+      "inherited_search_center": {
+        "lat": 41.69013,
+        "lng": -8.20362,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 66,
@@ -803,7 +1259,14 @@
       "country": "US",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.olcshrine.com",
+      "inherited_search_center": {
+        "lat": 40.951,
+        "lng": -83.38712,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 67,
@@ -814,7 +1277,14 @@
       "country": "US",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://missionandshrine.org",
+      "inherited_search_center": {
+        "lat": 29.90475,
+        "lng": -81.31537,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 68,
@@ -825,7 +1295,14 @@
       "country": "US",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.thegrotto.org",
+      "inherited_search_center": {
+        "lat": 45.553,
+        "lng": -122.57162,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 69,
@@ -836,7 +1313,14 @@
       "country": "US",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.natlshrinestdymphna.org",
+      "inherited_search_center": {
+        "lat": 40.802,
+        "lng": -81.52287,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 70,
@@ -847,7 +1331,14 @@
       "country": "US",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://cabrinishrinechicago.com",
+      "inherited_search_center": {
+        "lat": 41.929,
+        "lng": -87.63987,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 71,
@@ -858,7 +1349,14 @@
       "country": "US",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.stjudeleague.com",
+      "inherited_search_center": {
+        "lat": 41.73013,
+        "lng": -87.54675,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 72,
@@ -869,7 +1367,14 @@
       "country": "US",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.saint-therese.org",
+      "inherited_search_center": {
+        "lat": 41.734,
+        "lng": -87.97637,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 73,
@@ -880,7 +1385,14 @@
       "country": "US",
       "review_lane": "COMPLEX_OR_SINGLE_BUILDING_SCOPE_REVIEW",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://www.amm.org/visit.htm",
+      "inherited_search_center": {
+        "lat": 37.72675,
+        "lng": -89.88962,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     },
     {
       "queue_row": 74,
@@ -891,7 +1403,14 @@
       "country": "VN",
       "review_lane": "NAMED_CHURCH_FOOTPRINT_LOOKUP",
       "publication_state": "NOT_PUBLISHED_FROM_THIS_QUEUE",
-      "exact_building_verification": "NOT_VERIFIED_THIS_PASS"
+      "exact_building_verification": "NOT_VERIFIED_THIS_PASS",
+      "inherited_institutional_source_lead_url": "http://trungtamhanhhuongsokien.org",
+      "inherited_search_center": {
+        "lat": 20.49975,
+        "lng": 105.89638,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "source_lead_review_state": "HISTORIC_UNREVALIDATED_LINK"
     }
   ],
   "research_findings": [
