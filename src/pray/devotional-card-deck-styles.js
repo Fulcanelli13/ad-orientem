@@ -685,6 +685,40 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  color:var(--text,#f4eddf)!important;
 }
 
+
+/* Feast-specific Benediction additions are opt-in and not part of the
+   ordinary seven-stage rite. The option disclosure stays secondary to prayer. */
+#aoPray435930 .aoP435930BenedictionReader .aoP435930BenSpecialOptions{
+ margin:0 0 8px!important;padding:0!important;
+ border:0!important;border-bottom:1px solid var(--border,rgba(255,255,255,.12))!important;
+ background:transparent!important;box-shadow:none!important;border-radius:0!important;
+}
+#aoPray435930 .aoP435930BenSpecialOptions>summary{
+ min-height:44px!important;padding:4px 2px!important;
+ font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)!important;
+ color:var(--muted,#b5ab9d)!important;
+}
+#aoPray435930 .aoP435930BenSpecialOptions>summary>small{
+ font:500 11px/1.35 var(--ao-font-ui,system-ui,sans-serif)!important;
+ color:var(--liturgical,#c5aa7b)!important;
+}
+#aoPray435930 .aoP435930BenSpecialOptions .aoP435930PrayerOptionsBody{
+ padding:8px 4px 15px!important;gap:10px!important;
+}
+#aoPray435930 .aoP435930BenSpecialOptions .aoP435930Toggle{
+ min-height:44px!important;
+}
+#aoPray435930 .aoP435930BenSpecialNote{
+ color:var(--muted,#b5ab9d)!important;
+ font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)!important;
+ margin:5px 0 12px!important;
+}
+#aoPray435930 .aoP435930ChristKingRoyal .aoP435930Text{
+ white-space:pre-line!important;
+ font:400 clamp(20px,5.2vw,25px)/1.65 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f4eddf)!important;
+}
+
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDevoCard{animation:none}#aoPray435930 .aoDevoParagraph{transition:none!important}}
 `;
