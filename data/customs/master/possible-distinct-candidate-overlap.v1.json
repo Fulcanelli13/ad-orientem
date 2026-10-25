@@ -1,0 +1,245 @@
+{
+  "schema": "AO_CUSTOMS_MASTER_42_POSSIBLE_DISTINCT_DUPLICATE_REVIEW_V1",
+  "as_of": "2026-10-21",
+  "status": "RELATED_FAMILY_REVIEW_NOT_IDENTITY_MERGE",
+  "scope": {
+    "potential_distinct_observations": 42,
+    "within_provisional_overlap_review": 19,
+    "unclustered_for_direct_source_review": 23
+  },
+  "rules": [
+    "Never collapse different acts merely because a feast or object is shared.",
+    "Clusters are editorial aids and remain nonpublishing.",
+    "Verify locality and ministerial versus household act before assigning final identity."
+  ],
+  "groups": [
+    {
+      "id": "C-CHRISTKIND-GIFT",
+      "members": [
+        "WEI58-06-008",
+        "WEI58-08-026"
+      ],
+      "relation": "SAME_PRACTICE_POSSIBLE_COMPONENT_VARIANTS",
+      "note": "Gift bearer, bell and prayer are contextual facets of the same broad Christkind Christmas household tradition; verify before collapsing two locators."
+    },
+    {
+      "id": "C-CHRISTMAS-STRAW",
+      "members": [
+        "WEI58-06-010"
+      ],
+      "related_observations": [
+        "WEI58-09-004"
+      ],
+      "relation": "FAMILY_SAME_PRACTICE_REVIEW",
+      "note": "Straw beneath the Christmas tablecloth and Polish grain/straw shrine customs overlap but may have distinct ritualised household settings."
+    },
+    {
+      "id": "C-CHRISTMAS-NATIVITY-VISITS",
+      "members": [
+        "WEI58-05-008",
+        "WEI58-05-010",
+        "WEI58-07-008",
+        "WEI58-07-009",
+        "WEI58-10-004"
+      ],
+      "related_observations": [
+        "WEI58-10-005"
+      ],
+      "relation": "RELATED_BUT_NOT_AUTOMATIC_DUPLICATES",
+      "note": "Alpine Marian processions, inn-search dramas, Polish carollers/szopka and Hungarian Bethlehem play are related dramatic house-visit traditions, not interchangeable rites."
+    },
+    {
+      "id": "C-CHRISTMAS-MEALS",
+      "members": [
+        "WEI58-06-015",
+        "WEI58-09-006"
+      ],
+      "relation": "RELATED_MEAL_AND_FOOD_VARIANTS",
+      "note": "French réveillon meal and Provençal charity loaf share Christmas meal context; they are not the same specific custom."
+    },
+    {
+      "id": "C-TWELVE-HOLY-NIGHTS",
+      "members": [
+        "WEI58-10-002"
+      ],
+      "related_observations": [
+        "WEI58-10-003"
+      ],
+      "relation": "REGIONAL_SUBTYPE_REVIEW",
+      "note": "Generic Twelve Nights devotion and Polish Święte Wieczory are a possible umbrella with local household forms."
+    },
+    {
+      "id": "C-ALLSOULS-CHARITY",
+      "members": [
+        "WEI58-26-020",
+        "WEI58-26-021",
+        "WEI58-26-024",
+        "WEI58-26-028"
+      ],
+      "related_observations": [
+        "WEI58-26-025",
+        "WEI58-26-026"
+      ],
+      "relation": "RELATED_BUT_DISTINCT_DEVOTION_ALMSGIVING",
+      "note": "Family Soul Nights devotion, charitable meals, dry-legume alms and invitations to orphans must retain their separate acts; avoid treating folklore on returning spirits as doctrine."
+    },
+    {
+      "id": "C-MARIAN-HARVEST",
+      "members": [
+        "WEI58-25-020",
+        "WEI58-25-025"
+      ],
+      "relation": "RELATED_OCCASIONS_DIFFERENT_ACTS",
+      "note": "Annunciation picture used with seed grain and Marian grape-harvest meal have different feast anchors and should not merge."
+    },
+    {
+      "id": "C-REGIONAL-MARIAN-PROCESSIONS",
+      "members": [
+        "WEI58-24-006",
+        "WEI58-24-007"
+      ],
+      "relation": "DIFFERENT_REGIONAL_CEREMONIES",
+      "note": "Lazio Inchinata and Sassari Candelieri each require their own dated local witnesses and identity; both are not a generic global Assumption procession."
+    }
+  ],
+  "ungrouped_candidates": [
+    {
+      "weiser_id": "WEI58-05-006",
+      "title": "German Advent picture calendar",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED"
+    },
+    {
+      "weiser_id": "WEI58-06-012",
+      "title": "Extra fodder for livestock and grain for birds at Christmas",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-07-007",
+      "title": "French Canadian La guignolée collection for the poor",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-08-002",
+      "title": "Large Alpine Nativity dioramas constructed in Advent",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-08-019",
+      "title": "St Barbara's December 4 cherry blossom branches",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-09-001",
+      "title": "Ukrainian Christmas wheat sheaf Didukh forefather emblem",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED"
+    },
+    {
+      "weiser_id": "WEI58-11-007",
+      "title": "Father blesses family on Jan 1",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-12-016",
+      "title": "Spanish and Latin American Magi gifts in children's shoes",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED"
+    },
+    {
+      "weiser_id": "WEI58-14-026",
+      "title": "French Canadian Mi-Carême meal and gathering",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-15-002",
+      "title": "Holy Week house-cleaning before Sacred Triduum",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-16-005",
+      "title": "Surrexit Dominus vere Easter greeting",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-16-020",
+      "title": "Maltese running procession of Resurrection image",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-16-024",
+      "title": "Easter open house and family visits",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-18-014",
+      "title": "Ascension mountain climbs and hilltop family picnics",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-19-003",
+      "title": "Pentecost homes and churches decorated with flowering branches",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-19-017",
+      "title": "Wooden dove suspended over household dining table",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-19-018",
+      "title": "Pentecost dawn hilltop prayer",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-21-020",
+      "title": "Blessed floral wreaths hung at home and field margins",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-22-005",
+      "title": "Cross-shaped last sheaf decorated in household",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-22-008",
+      "title": "Martinmas thanksgiving Mass and village harvest feasting",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-24-015",
+      "title": "Our Lady's Thirty Days after Assumption",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED"
+    },
+    {
+      "weiser_id": "WEI58-24-021",
+      "title": "Spanish balcony candles and flowers for 8 December",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD"
+    },
+    {
+      "weiser_id": "WEI58-26-014",
+      "title": "Breton all-night prayer bells and farmhouse visits",
+      "priority": "SOURCE_ADJUDICATION",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD"
+    }
+  ]
+}

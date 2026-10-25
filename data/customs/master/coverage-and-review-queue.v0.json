@@ -1,0 +1,4182 @@
+{
+  "schema": "AO_CUSTOMS_MASTER_COVERAGE_AND_REVIEW_QUEUE_V0",
+  "as_of": "2026-10-21",
+  "status": "MASTER_STILL_INCOMPLETE_NOT_APPLICATION_RELEASE",
+  "summary": {
+    "canonical": 38,
+    "provisional": 4,
+    "identity_rows": 42,
+    "weiser_observations": 568,
+    "direct_identity_links": 50,
+    "unlinked": 518,
+    "existing_other_owner_or_covered": 81,
+    "historical_archive": 117,
+    "excluded_reference": 34,
+    "identity_or_variant_review": 286,
+    "review_priority_counts": {
+      "P2": 172,
+      "P1": 113,
+      "P0": 1
+    },
+    "review_triage_counts": {
+      "REGIONAL": 145,
+      "CANDIDATE": 92,
+      "ENRICH": 49
+    },
+    "p1_source_ledger": {
+      "total": 144,
+      "hold_no_exact": 38,
+      "partial_or_indirect": 46,
+      "editorial_draft": 56,
+      "bounded_other_owner": 4
+    },
+    "reviewed_editorial_drafts": 54,
+    "settled_earlier_new_candidates_existing": 11,
+    "provisional_P2": 4,
+    "publication_added": 0,
+    "previously_decided_other_owner_or_context_within_286": 26,
+    "remaining_without_54_card_owner_decision": 260,
+    "now_provisionally_triaged_all_260": true,
+    "remaining_without_provisional_disposition": 0,
+    "provisional_dispositions": {
+      "REGIONAL_VARIANT_OR_RELATED_PRACTICE": 39,
+      "HISTORICAL_OR_CULTURAL_REFERENCE_ONLY": 59,
+      "SOURCE_OR_RITUAL_HOLD": 23,
+      "LINK_TO_KNOWN_IDENTITY_FOR_REVIEW": 41,
+      "OTHER_MODULE_OWNER_NO_NEW_CUSTOM": 56,
+      "POTENTIALLY_DISTINCT_CUSTOM_REQUIRES_SOURCE_GATE": 42
+    },
+    "possible_distinct_customs_source_gate": 42,
+    "existing_identity_links_pending_provenance_review": 41,
+    "added_publication_decisions": 0
+  },
+  "interpretation": "The 286 source observations requiring identity/variant review are not necessarily 286 new customs. Some will fold into existing customs, stay regional variants, belong to liturgy/saints/prayers or remain unverified.",
+  "review_policy": [
+    "Adjudicate actual practice identity before searching for additional pictures or building interface.",
+    "For each item decide: existing canonical custom, same-practice variant, related-but-distinct custom, regional history only, another app owner, or exclude/hold.",
+    "Retain independent documentary citations and exact local dates; a calendar date does not make a local event universal.",
+    "Do not assign canonical IDs or publish from this queue until owner review and source closure."
+  ],
+  "review_batches": [
+    {
+      "id": "B1_EXISTING_PARITY",
+      "priority": "P0",
+      "population": 81,
+      "description": "Reconcile already covered Mass, Calendar, Pray, Saints and rites to prevent duplicate customs; no new identity implied.",
+      "ids": [
+        "WEI58-01-001",
+        "WEI58-01-002",
+        "WEI58-02-003",
+        "WEI58-02-007",
+        "WEI58-02-008",
+        "WEI58-02-009",
+        "WEI58-03-001",
+        "WEI58-04-001",
+        "WEI58-05-001",
+        "WEI58-05-007",
+        "WEI58-06-003",
+        "WEI58-08-001",
+        "WEI58-10-001",
+        "WEI58-10-016",
+        "WEI58-11-001",
+        "WEI58-12-001",
+        "WEI58-13-001",
+        "WEI58-13-004",
+        "WEI58-14-001",
+        "WEI58-14-006",
+        "WEI58-14-010",
+        "WEI58-14-014",
+        "WEI58-14-017",
+        "WEI58-15-001",
+        "WEI58-15-003",
+        "WEI58-15-012",
+        "WEI58-15-013",
+        "WEI58-15-014",
+        "WEI58-15-018",
+        "WEI58-15-022",
+        "WEI58-15-023",
+        "WEI58-15-027",
+        "WEI58-15-034",
+        "WEI58-16-001",
+        "WEI58-16-002",
+        "WEI58-16-008",
+        "WEI58-16-010",
+        "WEI58-16-017",
+        "WEI58-17-002",
+        "WEI58-18-001",
+        "WEI58-18-004",
+        "WEI58-19-001",
+        "WEI58-19-007",
+        "WEI58-19-008",
+        "WEI58-20-001",
+        "WEI58-20-002",
+        "WEI58-20-003",
+        "WEI58-21-002",
+        "WEI58-21-003",
+        "WEI58-21-005",
+        "WEI58-21-011",
+        "WEI58-21-012",
+        "WEI58-22-001",
+        "WEI58-23-001",
+        "WEI58-23-003",
+        "WEI58-23-014",
+        "WEI58-23-016",
+        "WEI58-23-018",
+        "WEI58-24-001",
+        "WEI58-24-002",
+        "WEI58-25-001",
+        "WEI58-25-002",
+        "WEI58-25-004",
+        "WEI58-25-005",
+        "WEI58-25-013",
+        "WEI58-25-022",
+        "WEI58-26-001",
+        "WEI58-26-004",
+        "WEI58-26-007",
+        "WEI58-27-001",
+        "WEI58-27-009",
+        "WEI58-27-015",
+        "WEI58-27-016",
+        "WEI58-27-022",
+        "WEI58-27-029",
+        "WEI58-28-001",
+        "WEI58-28-008",
+        "WEI58-28-014",
+        "WEI58-28-017",
+        "WEI58-28-019",
+        "WEI58-28-023"
+      ]
+    },
+    {
+      "id": "B2_IDENTITY_VARIANT_TRIAGE",
+      "priority": "P1",
+      "population": 286,
+      "description": "Adjudicate unlinked candidate, enrichment and regional observations against the 42 working identities and 14 same-practice/28 related-family groups.",
+      "ids": [
+        "WEI58-27-026",
+        "WEI58-01-005",
+        "WEI58-02-002",
+        "WEI58-03-003",
+        "WEI58-03-002",
+        "WEI58-03-008",
+        "WEI58-03-004",
+        "WEI58-03-005",
+        "WEI58-04-002",
+        "WEI58-06-001",
+        "WEI58-06-004",
+        "WEI58-06-007",
+        "WEI58-06-011",
+        "WEI58-06-012",
+        "WEI58-06-015",
+        "WEI58-07-007",
+        "WEI58-07-008",
+        "WEI58-08-002",
+        "WEI58-08-005",
+        "WEI58-08-019",
+        "WEI58-08-025",
+        "WEI58-08-026",
+        "WEI58-08-028",
+        "WEI58-09-002",
+        "WEI58-09-006",
+        "WEI58-10-002",
+        "WEI58-10-006",
+        "WEI58-10-010",
+        "WEI58-11-006",
+        "WEI58-11-007",
+        "WEI58-12-005",
+        "WEI58-12-007",
+        "WEI58-12-008",
+        "WEI58-12-009",
+        "WEI58-12-019",
+        "WEI58-13-003",
+        "WEI58-13-017",
+        "WEI58-13-020",
+        "WEI58-14-009",
+        "WEI58-14-012",
+        "WEI58-14-013",
+        "WEI58-14-020",
+        "WEI58-14-022",
+        "WEI58-14-023",
+        "WEI58-14-026",
+        "WEI58-15-002",
+        "WEI58-15-005",
+        "WEI58-15-008",
+        "WEI58-15-025",
+        "WEI58-15-028",
+        "WEI58-15-030",
+        "WEI58-15-032",
+        "WEI58-15-035",
+        "WEI58-16-005",
+        "WEI58-16-014",
+        "WEI58-16-020",
+        "WEI58-16-022",
+        "WEI58-16-024",
+        "WEI58-16-029",
+        "WEI58-16-031",
+        "WEI58-17-006",
+        "WEI58-17-007",
+        "WEI58-17-011",
+        "WEI58-17-021",
+        "WEI58-18-005",
+        "WEI58-18-013",
+        "WEI58-18-014",
+        "WEI58-19-003",
+        "WEI58-19-009",
+        "WEI58-19-017",
+        "WEI58-19-018",
+        "WEI58-19-023",
+        "WEI58-20-007",
+        "WEI58-20-009",
+        "WEI58-20-010",
+        "WEI58-20-012",
+        "WEI58-21-006",
+        "WEI58-21-010",
+        "WEI58-21-018",
+        "WEI58-21-019",
+        "WEI58-21-020",
+        "WEI58-22-005",
+        "WEI58-22-006",
+        "WEI58-22-008",
+        "WEI58-23-017",
+        "WEI58-24-012",
+        "WEI58-24-013",
+        "WEI58-24-021",
+        "WEI58-25-012",
+        "WEI58-25-023",
+        "WEI58-25-024",
+        "WEI58-25-025",
+        "WEI58-26-008",
+        "WEI58-26-012",
+        "WEI58-26-014",
+        "WEI58-26-020",
+        "WEI58-26-021",
+        "WEI58-26-024",
+        "WEI58-26-028",
+        "WEI58-27-002",
+        "WEI58-27-008",
+        "WEI58-27-010",
+        "WEI58-27-014",
+        "WEI58-27-018",
+        "WEI58-27-027",
+        "WEI58-27-031",
+        "WEI58-28-004",
+        "WEI58-28-005",
+        "WEI58-28-006",
+        "WEI58-28-007",
+        "WEI58-28-012",
+        "WEI58-28-015",
+        "WEI58-28-018",
+        "WEI58-28-025",
+        "WEI58-01-006",
+        "WEI58-01-007",
+        "WEI58-01-008",
+        "WEI58-02-004",
+        "WEI58-02-005",
+        "WEI58-02-006",
+        "WEI58-03-006",
+        "WEI58-04-004",
+        "WEI58-04-005",
+        "WEI58-05-003",
+        "WEI58-05-004",
+        "WEI58-05-006",
+        "WEI58-05-008",
+        "WEI58-05-009",
+        "WEI58-05-010",
+        "WEI58-06-006",
+        "WEI58-06-008",
+        "WEI58-06-010",
+        "WEI58-06-013",
+        "WEI58-06-014",
+        "WEI58-06-016",
+        "WEI58-07-003",
+        "WEI58-07-004",
+        "WEI58-07-006",
+        "WEI58-07-009",
+        "WEI58-07-012",
+        "WEI58-07-013",
+        "WEI58-08-006",
+        "WEI58-08-007",
+        "WEI58-08-009",
+        "WEI58-08-011",
+        "WEI58-08-014",
+        "WEI58-08-017",
+        "WEI58-08-021",
+        "WEI58-08-022",
+        "WEI58-08-024",
+        "WEI58-08-027",
+        "WEI58-09-001",
+        "WEI58-09-004",
+        "WEI58-09-005",
+        "WEI58-09-008",
+        "WEI58-09-010",
+        "WEI58-09-011",
+        "WEI58-09-012",
+        "WEI58-09-013",
+        "WEI58-10-003",
+        "WEI58-10-004",
+        "WEI58-10-005",
+        "WEI58-10-011",
+        "WEI58-10-012",
+        "WEI58-10-013",
+        "WEI58-10-015",
+        "WEI58-10-018",
+        "WEI58-11-003",
+        "WEI58-11-004",
+        "WEI58-11-005",
+        "WEI58-11-008",
+        "WEI58-11-011",
+        "WEI58-12-003",
+        "WEI58-12-004",
+        "WEI58-12-012",
+        "WEI58-12-015",
+        "WEI58-12-016",
+        "WEI58-13-002",
+        "WEI58-13-006",
+        "WEI58-13-010",
+        "WEI58-13-015",
+        "WEI58-13-016",
+        "WEI58-13-018",
+        "WEI58-14-007",
+        "WEI58-14-015",
+        "WEI58-14-016",
+        "WEI58-14-021",
+        "WEI58-14-024",
+        "WEI58-14-025",
+        "WEI58-14-027",
+        "WEI58-14-028",
+        "WEI58-14-029",
+        "WEI58-15-009",
+        "WEI58-15-010",
+        "WEI58-15-011",
+        "WEI58-15-016",
+        "WEI58-15-020",
+        "WEI58-15-021",
+        "WEI58-15-024",
+        "WEI58-15-037",
+        "WEI58-15-038",
+        "WEI58-15-039",
+        "WEI58-16-006",
+        "WEI58-16-007",
+        "WEI58-16-009",
+        "WEI58-16-013",
+        "WEI58-16-019",
+        "WEI58-16-021",
+        "WEI58-16-023",
+        "WEI58-16-026",
+        "WEI58-16-027",
+        "WEI58-16-030",
+        "WEI58-16-032",
+        "WEI58-16-033",
+        "WEI58-17-008",
+        "WEI58-17-012",
+        "WEI58-17-013",
+        "WEI58-17-016",
+        "WEI58-17-017",
+        "WEI58-17-019",
+        "WEI58-17-024",
+        "WEI58-17-025",
+        "WEI58-18-012",
+        "WEI58-18-015",
+        "WEI58-19-004",
+        "WEI58-19-005",
+        "WEI58-19-011",
+        "WEI58-19-020",
+        "WEI58-19-021",
+        "WEI58-19-022",
+        "WEI58-20-005",
+        "WEI58-20-006",
+        "WEI58-20-011",
+        "WEI58-21-001",
+        "WEI58-21-004",
+        "WEI58-21-008",
+        "WEI58-21-015",
+        "WEI58-21-016",
+        "WEI58-21-017",
+        "WEI58-22-002",
+        "WEI58-22-004",
+        "WEI58-22-007",
+        "WEI58-22-009",
+        "WEI58-22-010",
+        "WEI58-23-007",
+        "WEI58-23-010",
+        "WEI58-23-011",
+        "WEI58-23-013",
+        "WEI58-23-019",
+        "WEI58-24-004",
+        "WEI58-24-006",
+        "WEI58-24-007",
+        "WEI58-24-011",
+        "WEI58-24-015",
+        "WEI58-24-016",
+        "WEI58-24-020",
+        "WEI58-24-022",
+        "WEI58-24-023",
+        "WEI58-24-024",
+        "WEI58-25-007",
+        "WEI58-25-015",
+        "WEI58-25-020",
+        "WEI58-25-026",
+        "WEI58-25-027",
+        "WEI58-26-005",
+        "WEI58-26-015",
+        "WEI58-26-016",
+        "WEI58-26-017",
+        "WEI58-26-018",
+        "WEI58-26-023",
+        "WEI58-26-025",
+        "WEI58-26-026",
+        "WEI58-26-027",
+        "WEI58-27-004",
+        "WEI58-27-005",
+        "WEI58-27-006",
+        "WEI58-27-011",
+        "WEI58-27-020",
+        "WEI58-27-021",
+        "WEI58-27-024",
+        "WEI58-27-025",
+        "WEI58-27-028",
+        "WEI58-27-032",
+        "WEI58-28-010",
+        "WEI58-28-016",
+        "WEI58-28-024"
+      ]
+    },
+    {
+      "id": "B3_SOURCE_GATED_P1",
+      "priority": "P1/P2",
+      "population": 84,
+      "description": "Specific P1 independent-evidence gaps; 38 no exact matches plus 46 partial/indirect holds. This is a subset of the 568 observations, not additive.",
+      "ids": [
+        "WEI58-01-005",
+        "WEI58-02-002",
+        "WEI58-03-005",
+        "WEI58-03-008",
+        "WEI58-04-002",
+        "WEI58-06-001",
+        "WEI58-06-011",
+        "WEI58-06-012",
+        "WEI58-06-015",
+        "WEI58-07-007",
+        "WEI58-07-008",
+        "WEI58-08-002",
+        "WEI58-08-005",
+        "WEI58-08-019",
+        "WEI58-08-026",
+        "WEI58-08-028",
+        "WEI58-09-006",
+        "WEI58-10-002",
+        "WEI58-10-006",
+        "WEI58-10-010",
+        "WEI58-11-006",
+        "WEI58-11-007",
+        "WEI58-12-009",
+        "WEI58-12-019",
+        "WEI58-13-003",
+        "WEI58-13-020",
+        "WEI58-14-020",
+        "WEI58-14-022",
+        "WEI58-14-023",
+        "WEI58-14-026",
+        "WEI58-15-002",
+        "WEI58-15-005",
+        "WEI58-15-008",
+        "WEI58-15-030",
+        "WEI58-15-035",
+        "WEI58-16-005",
+        "WEI58-16-014",
+        "WEI58-16-020",
+        "WEI58-16-022",
+        "WEI58-16-024",
+        "WEI58-16-029",
+        "WEI58-16-031",
+        "WEI58-17-007",
+        "WEI58-17-011",
+        "WEI58-17-021",
+        "WEI58-18-005",
+        "WEI58-18-013",
+        "WEI58-18-014",
+        "WEI58-19-003",
+        "WEI58-19-017",
+        "WEI58-19-018",
+        "WEI58-19-023",
+        "WEI58-20-007",
+        "WEI58-20-009",
+        "WEI58-20-012",
+        "WEI58-21-018",
+        "WEI58-21-019",
+        "WEI58-21-020",
+        "WEI58-22-005",
+        "WEI58-22-008",
+        "WEI58-23-017",
+        "WEI58-24-012",
+        "WEI58-24-013",
+        "WEI58-24-021",
+        "WEI58-25-024",
+        "WEI58-25-025",
+        "WEI58-26-008",
+        "WEI58-26-012",
+        "WEI58-26-014",
+        "WEI58-26-020",
+        "WEI58-26-021",
+        "WEI58-26-024",
+        "WEI58-26-028",
+        "WEI58-27-002",
+        "WEI58-27-010",
+        "WEI58-27-014",
+        "WEI58-27-031",
+        "WEI58-28-004",
+        "WEI58-28-005",
+        "WEI58-28-006",
+        "WEI58-28-007",
+        "WEI58-28-012",
+        "WEI58-28-015",
+        "WEI58-28-018"
+      ]
+    },
+    {
+      "id": "B4_ARCHIVE_AND_EXCLUSIONS",
+      "priority": "ARCHIVE",
+      "population": 151,
+      "description": "Keep 117 history-only locators and 34 exclusions searchable in research, not live customs.",
+      "ids": [
+        "WEI58-01-003",
+        "WEI58-02-001",
+        "WEI58-02-010",
+        "WEI58-03-007",
+        "WEI58-04-006",
+        "WEI58-06-002",
+        "WEI58-06-005",
+        "WEI58-07-001",
+        "WEI58-07-002",
+        "WEI58-07-005",
+        "WEI58-07-010",
+        "WEI58-07-011",
+        "WEI58-08-003",
+        "WEI58-08-010",
+        "WEI58-08-012",
+        "WEI58-08-015",
+        "WEI58-08-018",
+        "WEI58-08-023",
+        "WEI58-08-029",
+        "WEI58-09-009",
+        "WEI58-09-014",
+        "WEI58-10-008",
+        "WEI58-10-009",
+        "WEI58-10-014",
+        "WEI58-10-017",
+        "WEI58-11-002",
+        "WEI58-11-009",
+        "WEI58-12-002",
+        "WEI58-12-006",
+        "WEI58-12-010",
+        "WEI58-12-011",
+        "WEI58-12-014",
+        "WEI58-13-005",
+        "WEI58-13-007",
+        "WEI58-13-008",
+        "WEI58-13-009",
+        "WEI58-13-014",
+        "WEI58-13-019",
+        "WEI58-14-002",
+        "WEI58-14-003",
+        "WEI58-14-004",
+        "WEI58-14-005",
+        "WEI58-14-008",
+        "WEI58-14-011",
+        "WEI58-14-018",
+        "WEI58-14-019",
+        "WEI58-15-004",
+        "WEI58-15-017",
+        "WEI58-15-019",
+        "WEI58-15-026",
+        "WEI58-15-029",
+        "WEI58-16-003",
+        "WEI58-16-004",
+        "WEI58-16-011",
+        "WEI58-16-012",
+        "WEI58-16-016",
+        "WEI58-16-018",
+        "WEI58-16-025",
+        "WEI58-17-001",
+        "WEI58-17-003",
+        "WEI58-17-004",
+        "WEI58-17-005",
+        "WEI58-17-015",
+        "WEI58-17-020",
+        "WEI58-18-002",
+        "WEI58-18-003",
+        "WEI58-18-006",
+        "WEI58-18-007",
+        "WEI58-18-008",
+        "WEI58-18-009",
+        "WEI58-18-010",
+        "WEI58-18-011",
+        "WEI58-19-002",
+        "WEI58-19-006",
+        "WEI58-19-010",
+        "WEI58-19-012",
+        "WEI58-19-013",
+        "WEI58-19-014",
+        "WEI58-19-015",
+        "WEI58-19-016",
+        "WEI58-20-004",
+        "WEI58-20-008",
+        "WEI58-21-013",
+        "WEI58-21-014",
+        "WEI58-21-021",
+        "WEI58-22-003",
+        "WEI58-22-011",
+        "WEI58-22-012",
+        "WEI58-23-002",
+        "WEI58-23-004",
+        "WEI58-23-012",
+        "WEI58-23-015",
+        "WEI58-23-020",
+        "WEI58-23-022",
+        "WEI58-23-023",
+        "WEI58-24-010",
+        "WEI58-24-019",
+        "WEI58-24-025",
+        "WEI58-25-003",
+        "WEI58-25-006",
+        "WEI58-25-009",
+        "WEI58-25-010",
+        "WEI58-25-014",
+        "WEI58-25-016",
+        "WEI58-25-017",
+        "WEI58-25-018",
+        "WEI58-25-019",
+        "WEI58-26-002",
+        "WEI58-26-003",
+        "WEI58-26-006",
+        "WEI58-26-029",
+        "WEI58-26-031",
+        "WEI58-27-007",
+        "WEI58-27-013",
+        "WEI58-27-017",
+        "WEI58-28-009",
+        "WEI58-28-022",
+        "WEI58-03-009",
+        "WEI58-04-007",
+        "WEI58-08-013",
+        "WEI58-08-016",
+        "WEI58-08-020",
+        "WEI58-09-003",
+        "WEI58-10-007",
+        "WEI58-10-019",
+        "WEI58-10-020",
+        "WEI58-11-010",
+        "WEI58-13-012",
+        "WEI58-13-013",
+        "WEI58-15-031",
+        "WEI58-15-033",
+        "WEI58-16-015",
+        "WEI58-17-009",
+        "WEI58-18-016",
+        "WEI58-18-017",
+        "WEI58-19-019",
+        "WEI58-20-013",
+        "WEI58-20-014",
+        "WEI58-23-021",
+        "WEI58-24-017",
+        "WEI58-24-018",
+        "WEI58-25-011",
+        "WEI58-25-021",
+        "WEI58-26-030",
+        "WEI58-27-033",
+        "WEI58-27-034",
+        "WEI58-28-002",
+        "WEI58-28-003",
+        "WEI58-28-013",
+        "WEI58-28-026",
+        "WEI58-28-027"
+      ]
+    },
+    {
+      "id": "B2A_PREVIOUSLY_REVIEWED_NON_CUSTOM_OR_CONTEXT",
+      "priority": "OWNER_LOCK",
+      "population": 26,
+      "description": "Subset of B2: editorial decisions already assign these to other module content, regional reference or ritual/source hold. Do not mint new customs.",
+      "ids": [
+        "WEI58-03-002",
+        "WEI58-03-003",
+        "WEI58-03-004",
+        "WEI58-06-007",
+        "WEI58-08-025",
+        "WEI58-09-002",
+        "WEI58-12-005",
+        "WEI58-12-007",
+        "WEI58-12-008",
+        "WEI58-13-017",
+        "WEI58-14-009",
+        "WEI58-14-012",
+        "WEI58-14-013",
+        "WEI58-15-025",
+        "WEI58-15-028",
+        "WEI58-15-032",
+        "WEI58-19-009",
+        "WEI58-21-006",
+        "WEI58-21-010",
+        "WEI58-22-006",
+        "WEI58-25-012",
+        "WEI58-25-023",
+        "WEI58-27-018",
+        "WEI58-27-026",
+        "WEI58-27-027",
+        "WEI58-28-025"
+      ],
+      "decisions": [
+        {
+          "id": "WEI58-03-002",
+          "editorial_card_ids": [
+            "W58-P1-B4-EMBER"
+          ],
+          "decisions": [
+            "OWNER_CONTENT_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-03-003",
+          "editorial_card_ids": [
+            "W58-P1-B4-EMBER"
+          ],
+          "decisions": [
+            "OWNER_CONTENT_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-03-004",
+          "editorial_card_ids": [
+            "W58-P1-B4-EMBER"
+          ],
+          "decisions": [
+            "OWNER_CONTENT_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-06-007",
+          "editorial_card_ids": [
+            "W58-P1-B3-NATIVITY-PRAYER"
+          ],
+          "decisions": [
+            "OWNER_CONTENT_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-08-025",
+          "editorial_card_ids": [
+            "W58-P1-B5-STEPHEN_CHARITY"
+          ],
+          "decisions": [
+            "OWNER_CONTENT_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-09-002",
+          "editorial_card_ids": [
+            "W58-P1-B5-KUTIA"
+          ],
+          "decisions": [
+            "REGIONAL_REFERENCE_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-12-005",
+          "editorial_card_ids": [
+            "W58-P1-B3-EPIPHANY-PROCLAMATION"
+          ],
+          "decisions": [
+            "OWNER_CONTENT_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-12-007",
+          "editorial_card_ids": [
+            "W58-P1-B6-EPIPHANY_WATER"
+          ],
+          "decisions": [
+            "SOURCE_OR_RITUAL_HOLD"
+          ]
+        },
+        {
+          "id": "WEI58-12-008",
+          "editorial_card_ids": [
+            "W58-P1-B6-EPIPHANY_WATER"
+          ],
+          "decisions": [
+            "SOURCE_OR_RITUAL_HOLD"
+          ]
+        },
+        {
+          "id": "WEI58-13-017",
+          "editorial_card_ids": [
+            "W58-P1-B4-SHROVE"
+          ],
+          "decisions": [
+            "REGIONAL_REFERENCE_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-14-009",
+          "editorial_card_ids": [
+            "W58-P1-B5-LENTEN_VEIL"
+          ],
+          "decisions": [
+            "REGIONAL_REFERENCE_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-14-012",
+          "editorial_card_ids": [
+            "W58-P1-B5-MOTHERING"
+          ],
+          "decisions": [
+            "REGIONAL_REFERENCE_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-14-013",
+          "editorial_card_ids": [
+            "W58-P1-B5-MOTHERING"
+          ],
+          "decisions": [
+            "REGIONAL_REFERENCE_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-15-025",
+          "editorial_card_ids": [
+            "W58-P1-B3-POPAYAN-HOLYWEEK"
+          ],
+          "decisions": [
+            "REGIONAL_REFERENCE_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-15-028",
+          "editorial_card_ids": [
+            "W58-P1-B3-ANDALUSIAN-PENITENTS"
+          ],
+          "decisions": [
+            "REGIONAL_REFERENCE_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-15-032",
+          "editorial_card_ids": [
+            "W58-P1-B5-HOT_CROSS"
+          ],
+          "decisions": [
+            "REGIONAL_REFERENCE_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-19-009",
+          "editorial_card_ids": [
+            "W58-P1-B3-VENI-CREATOR"
+          ],
+          "decisions": [
+            "OWNER_CONTENT_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-21-006",
+          "editorial_card_ids": [
+            "W58-P1-B4-CORPUS"
+          ],
+          "decisions": [
+            "OWNER_CONTENT_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-21-010",
+          "editorial_card_ids": [
+            "W58-P1-B4-CORPUS"
+          ],
+          "decisions": [
+            "OWNER_CONTENT_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-22-006",
+          "editorial_card_ids": [
+            "W58-P1-B4-HARVEST"
+          ],
+          "decisions": [
+            "REGIONAL_REFERENCE_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-25-012",
+          "editorial_card_ids": [
+            "W58-P1-B4-CANDLEMAS"
+          ],
+          "decisions": [
+            "OWNER_CONTENT_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-25-023",
+          "editorial_card_ids": [
+            "W58-P1-B6-MARY_NATIVITY_SEEDS"
+          ],
+          "decisions": [
+            "SOURCE_OR_RITUAL_HOLD"
+          ]
+        },
+        {
+          "id": "WEI58-27-018",
+          "editorial_card_ids": [
+            "W58-P1-B6-ST_JOSEPH_FRITTERS"
+          ],
+          "decisions": [
+            "REGIONAL_REFERENCE_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-27-026",
+          "editorial_card_ids": [
+            "WEISER-CARD-27-026"
+          ],
+          "decisions": [
+            "OWNER_CONTENT_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-27-027",
+          "editorial_card_ids": [
+            "W58-P1-B4-ANTHONY"
+          ],
+          "decisions": [
+            "OWNER_CONTENT_ONLY"
+          ]
+        },
+        {
+          "id": "WEI58-28-025",
+          "editorial_card_ids": [
+            "W58-P1-B5-ST_LUCIA"
+          ],
+          "decisions": [
+            "REGIONAL_REFERENCE_ONLY"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B2B_NO_54_CARD_OWNER_DECISION",
+      "priority": "NEXT_RESEARCH",
+      "population": 260,
+      "description": "Subset of B2: no explicit 54-card editorial owner reconciliation yet. These 260 observations are the next identity/variant pass; many will resolve without creating a custom.",
+      "ids": [
+        "WEI58-01-005",
+        "WEI58-01-006",
+        "WEI58-01-007",
+        "WEI58-01-008",
+        "WEI58-02-002",
+        "WEI58-02-004",
+        "WEI58-02-005",
+        "WEI58-02-006",
+        "WEI58-03-005",
+        "WEI58-03-006",
+        "WEI58-03-008",
+        "WEI58-04-002",
+        "WEI58-04-004",
+        "WEI58-04-005",
+        "WEI58-05-003",
+        "WEI58-05-004",
+        "WEI58-05-006",
+        "WEI58-05-008",
+        "WEI58-05-009",
+        "WEI58-05-010",
+        "WEI58-06-001",
+        "WEI58-06-004",
+        "WEI58-06-006",
+        "WEI58-06-008",
+        "WEI58-06-010",
+        "WEI58-06-011",
+        "WEI58-06-012",
+        "WEI58-06-013",
+        "WEI58-06-014",
+        "WEI58-06-015",
+        "WEI58-06-016",
+        "WEI58-07-003",
+        "WEI58-07-004",
+        "WEI58-07-006",
+        "WEI58-07-007",
+        "WEI58-07-008",
+        "WEI58-07-009",
+        "WEI58-07-012",
+        "WEI58-07-013",
+        "WEI58-08-002",
+        "WEI58-08-005",
+        "WEI58-08-006",
+        "WEI58-08-007",
+        "WEI58-08-009",
+        "WEI58-08-011",
+        "WEI58-08-014",
+        "WEI58-08-017",
+        "WEI58-08-019",
+        "WEI58-08-021",
+        "WEI58-08-022",
+        "WEI58-08-024",
+        "WEI58-08-026",
+        "WEI58-08-027",
+        "WEI58-08-028",
+        "WEI58-09-001",
+        "WEI58-09-004",
+        "WEI58-09-005",
+        "WEI58-09-006",
+        "WEI58-09-008",
+        "WEI58-09-010",
+        "WEI58-09-011",
+        "WEI58-09-012",
+        "WEI58-09-013",
+        "WEI58-10-002",
+        "WEI58-10-003",
+        "WEI58-10-004",
+        "WEI58-10-005",
+        "WEI58-10-006",
+        "WEI58-10-010",
+        "WEI58-10-011",
+        "WEI58-10-012",
+        "WEI58-10-013",
+        "WEI58-10-015",
+        "WEI58-10-018",
+        "WEI58-11-003",
+        "WEI58-11-004",
+        "WEI58-11-005",
+        "WEI58-11-006",
+        "WEI58-11-007",
+        "WEI58-11-008",
+        "WEI58-11-011",
+        "WEI58-12-003",
+        "WEI58-12-004",
+        "WEI58-12-009",
+        "WEI58-12-012",
+        "WEI58-12-015",
+        "WEI58-12-016",
+        "WEI58-12-019",
+        "WEI58-13-002",
+        "WEI58-13-003",
+        "WEI58-13-006",
+        "WEI58-13-010",
+        "WEI58-13-015",
+        "WEI58-13-016",
+        "WEI58-13-018",
+        "WEI58-13-020",
+        "WEI58-14-007",
+        "WEI58-14-015",
+        "WEI58-14-016",
+        "WEI58-14-020",
+        "WEI58-14-021",
+        "WEI58-14-022",
+        "WEI58-14-023",
+        "WEI58-14-024",
+        "WEI58-14-025",
+        "WEI58-14-026",
+        "WEI58-14-027",
+        "WEI58-14-028",
+        "WEI58-14-029",
+        "WEI58-15-002",
+        "WEI58-15-005",
+        "WEI58-15-008",
+        "WEI58-15-009",
+        "WEI58-15-010",
+        "WEI58-15-011",
+        "WEI58-15-016",
+        "WEI58-15-020",
+        "WEI58-15-021",
+        "WEI58-15-024",
+        "WEI58-15-030",
+        "WEI58-15-035",
+        "WEI58-15-037",
+        "WEI58-15-038",
+        "WEI58-15-039",
+        "WEI58-16-005",
+        "WEI58-16-006",
+        "WEI58-16-007",
+        "WEI58-16-009",
+        "WEI58-16-013",
+        "WEI58-16-014",
+        "WEI58-16-019",
+        "WEI58-16-020",
+        "WEI58-16-021",
+        "WEI58-16-022",
+        "WEI58-16-023",
+        "WEI58-16-024",
+        "WEI58-16-026",
+        "WEI58-16-027",
+        "WEI58-16-029",
+        "WEI58-16-030",
+        "WEI58-16-031",
+        "WEI58-16-032",
+        "WEI58-16-033",
+        "WEI58-17-006",
+        "WEI58-17-007",
+        "WEI58-17-008",
+        "WEI58-17-011",
+        "WEI58-17-012",
+        "WEI58-17-013",
+        "WEI58-17-016",
+        "WEI58-17-017",
+        "WEI58-17-019",
+        "WEI58-17-021",
+        "WEI58-17-024",
+        "WEI58-17-025",
+        "WEI58-18-005",
+        "WEI58-18-012",
+        "WEI58-18-013",
+        "WEI58-18-014",
+        "WEI58-18-015",
+        "WEI58-19-003",
+        "WEI58-19-004",
+        "WEI58-19-005",
+        "WEI58-19-011",
+        "WEI58-19-017",
+        "WEI58-19-018",
+        "WEI58-19-020",
+        "WEI58-19-021",
+        "WEI58-19-022",
+        "WEI58-19-023",
+        "WEI58-20-005",
+        "WEI58-20-006",
+        "WEI58-20-007",
+        "WEI58-20-009",
+        "WEI58-20-010",
+        "WEI58-20-011",
+        "WEI58-20-012",
+        "WEI58-21-001",
+        "WEI58-21-004",
+        "WEI58-21-008",
+        "WEI58-21-015",
+        "WEI58-21-016",
+        "WEI58-21-017",
+        "WEI58-21-018",
+        "WEI58-21-019",
+        "WEI58-21-020",
+        "WEI58-22-002",
+        "WEI58-22-004",
+        "WEI58-22-005",
+        "WEI58-22-007",
+        "WEI58-22-008",
+        "WEI58-22-009",
+        "WEI58-22-010",
+        "WEI58-23-007",
+        "WEI58-23-010",
+        "WEI58-23-011",
+        "WEI58-23-013",
+        "WEI58-23-017",
+        "WEI58-23-019",
+        "WEI58-24-004",
+        "WEI58-24-006",
+        "WEI58-24-007",
+        "WEI58-24-011",
+        "WEI58-24-012",
+        "WEI58-24-013",
+        "WEI58-24-015",
+        "WEI58-24-016",
+        "WEI58-24-020",
+        "WEI58-24-021",
+        "WEI58-24-022",
+        "WEI58-24-023",
+        "WEI58-24-024",
+        "WEI58-25-007",
+        "WEI58-25-015",
+        "WEI58-25-020",
+        "WEI58-25-024",
+        "WEI58-25-025",
+        "WEI58-25-026",
+        "WEI58-25-027",
+        "WEI58-26-005",
+        "WEI58-26-008",
+        "WEI58-26-012",
+        "WEI58-26-014",
+        "WEI58-26-015",
+        "WEI58-26-016",
+        "WEI58-26-017",
+        "WEI58-26-018",
+        "WEI58-26-020",
+        "WEI58-26-021",
+        "WEI58-26-023",
+        "WEI58-26-024",
+        "WEI58-26-025",
+        "WEI58-26-026",
+        "WEI58-26-027",
+        "WEI58-26-028",
+        "WEI58-27-002",
+        "WEI58-27-004",
+        "WEI58-27-005",
+        "WEI58-27-006",
+        "WEI58-27-008",
+        "WEI58-27-010",
+        "WEI58-27-011",
+        "WEI58-27-014",
+        "WEI58-27-020",
+        "WEI58-27-021",
+        "WEI58-27-024",
+        "WEI58-27-025",
+        "WEI58-27-028",
+        "WEI58-27-031",
+        "WEI58-27-032",
+        "WEI58-28-004",
+        "WEI58-28-005",
+        "WEI58-28-006",
+        "WEI58-28-007",
+        "WEI58-28-010",
+        "WEI58-28-012",
+        "WEI58-28-015",
+        "WEI58-28-016",
+        "WEI58-28-018",
+        "WEI58-28-024"
+      ]
+    },
+    {
+      "id": "B2C_FIRST_PASS_FINISHED_NOT_SOURCE_COMPLETE",
+      "priority": "PROVISIONAL",
+      "population": 260,
+      "description": "All 260 have a provisional editorial route in three chapter files. Documentary source closure, identity deduplication and Calendar acceptance remain OPEN.",
+      "ids": [
+        "WEI58-01-005",
+        "WEI58-01-006",
+        "WEI58-01-007",
+        "WEI58-01-008",
+        "WEI58-02-002",
+        "WEI58-02-004",
+        "WEI58-02-005",
+        "WEI58-02-006",
+        "WEI58-03-005",
+        "WEI58-03-006",
+        "WEI58-03-008",
+        "WEI58-04-002",
+        "WEI58-04-004",
+        "WEI58-04-005",
+        "WEI58-05-003",
+        "WEI58-05-004",
+        "WEI58-05-006",
+        "WEI58-05-008",
+        "WEI58-05-009",
+        "WEI58-05-010",
+        "WEI58-06-001",
+        "WEI58-06-004",
+        "WEI58-06-006",
+        "WEI58-06-008",
+        "WEI58-06-010",
+        "WEI58-06-011",
+        "WEI58-06-012",
+        "WEI58-06-013",
+        "WEI58-06-014",
+        "WEI58-06-015",
+        "WEI58-06-016",
+        "WEI58-07-003",
+        "WEI58-07-004",
+        "WEI58-07-006",
+        "WEI58-07-007",
+        "WEI58-07-008",
+        "WEI58-07-009",
+        "WEI58-07-012",
+        "WEI58-07-013",
+        "WEI58-08-002",
+        "WEI58-08-005",
+        "WEI58-08-006",
+        "WEI58-08-007",
+        "WEI58-08-009",
+        "WEI58-08-011",
+        "WEI58-08-014",
+        "WEI58-08-017",
+        "WEI58-08-019",
+        "WEI58-08-021",
+        "WEI58-08-022",
+        "WEI58-08-024",
+        "WEI58-08-026",
+        "WEI58-08-027",
+        "WEI58-08-028",
+        "WEI58-09-001",
+        "WEI58-09-004",
+        "WEI58-09-005",
+        "WEI58-09-006",
+        "WEI58-09-008",
+        "WEI58-09-010",
+        "WEI58-09-011",
+        "WEI58-09-012",
+        "WEI58-09-013",
+        "WEI58-10-002",
+        "WEI58-10-003",
+        "WEI58-10-004",
+        "WEI58-10-005",
+        "WEI58-10-006",
+        "WEI58-10-010",
+        "WEI58-10-011",
+        "WEI58-10-012",
+        "WEI58-10-013",
+        "WEI58-10-015",
+        "WEI58-10-018",
+        "WEI58-11-003",
+        "WEI58-11-004",
+        "WEI58-11-005",
+        "WEI58-11-006",
+        "WEI58-11-007",
+        "WEI58-11-008",
+        "WEI58-11-011",
+        "WEI58-12-003",
+        "WEI58-12-004",
+        "WEI58-12-009",
+        "WEI58-12-012",
+        "WEI58-12-015",
+        "WEI58-12-016",
+        "WEI58-12-019",
+        "WEI58-13-002",
+        "WEI58-13-003",
+        "WEI58-13-006",
+        "WEI58-13-010",
+        "WEI58-13-015",
+        "WEI58-13-016",
+        "WEI58-13-018",
+        "WEI58-13-020",
+        "WEI58-14-007",
+        "WEI58-14-015",
+        "WEI58-14-016",
+        "WEI58-14-020",
+        "WEI58-14-021",
+        "WEI58-14-022",
+        "WEI58-14-023",
+        "WEI58-14-024",
+        "WEI58-14-025",
+        "WEI58-14-026",
+        "WEI58-14-027",
+        "WEI58-14-028",
+        "WEI58-14-029",
+        "WEI58-15-002",
+        "WEI58-15-005",
+        "WEI58-15-008",
+        "WEI58-15-009",
+        "WEI58-15-010",
+        "WEI58-15-011",
+        "WEI58-15-016",
+        "WEI58-15-020",
+        "WEI58-15-021",
+        "WEI58-15-024",
+        "WEI58-15-030",
+        "WEI58-15-035",
+        "WEI58-15-037",
+        "WEI58-15-038",
+        "WEI58-15-039",
+        "WEI58-16-005",
+        "WEI58-16-006",
+        "WEI58-16-007",
+        "WEI58-16-009",
+        "WEI58-16-013",
+        "WEI58-16-014",
+        "WEI58-16-019",
+        "WEI58-16-020",
+        "WEI58-16-021",
+        "WEI58-16-022",
+        "WEI58-16-023",
+        "WEI58-16-024",
+        "WEI58-16-026",
+        "WEI58-16-027",
+        "WEI58-16-029",
+        "WEI58-16-030",
+        "WEI58-16-031",
+        "WEI58-16-032",
+        "WEI58-16-033",
+        "WEI58-17-006",
+        "WEI58-17-007",
+        "WEI58-17-008",
+        "WEI58-17-011",
+        "WEI58-17-012",
+        "WEI58-17-013",
+        "WEI58-17-016",
+        "WEI58-17-017",
+        "WEI58-17-019",
+        "WEI58-17-021",
+        "WEI58-17-024",
+        "WEI58-17-025",
+        "WEI58-18-005",
+        "WEI58-18-012",
+        "WEI58-18-013",
+        "WEI58-18-014",
+        "WEI58-18-015",
+        "WEI58-19-003",
+        "WEI58-19-004",
+        "WEI58-19-005",
+        "WEI58-19-011",
+        "WEI58-19-017",
+        "WEI58-19-018",
+        "WEI58-19-020",
+        "WEI58-19-021",
+        "WEI58-19-022",
+        "WEI58-19-023",
+        "WEI58-20-005",
+        "WEI58-20-006",
+        "WEI58-20-007",
+        "WEI58-20-009",
+        "WEI58-20-010",
+        "WEI58-20-011",
+        "WEI58-20-012",
+        "WEI58-21-001",
+        "WEI58-21-004",
+        "WEI58-21-008",
+        "WEI58-21-015",
+        "WEI58-21-016",
+        "WEI58-21-017",
+        "WEI58-21-018",
+        "WEI58-21-019",
+        "WEI58-21-020",
+        "WEI58-22-002",
+        "WEI58-22-004",
+        "WEI58-22-005",
+        "WEI58-22-007",
+        "WEI58-22-008",
+        "WEI58-22-009",
+        "WEI58-22-010",
+        "WEI58-23-007",
+        "WEI58-23-010",
+        "WEI58-23-011",
+        "WEI58-23-013",
+        "WEI58-23-017",
+        "WEI58-23-019",
+        "WEI58-24-004",
+        "WEI58-24-006",
+        "WEI58-24-007",
+        "WEI58-24-011",
+        "WEI58-24-012",
+        "WEI58-24-013",
+        "WEI58-24-015",
+        "WEI58-24-016",
+        "WEI58-24-020",
+        "WEI58-24-021",
+        "WEI58-24-022",
+        "WEI58-24-023",
+        "WEI58-24-024",
+        "WEI58-25-007",
+        "WEI58-25-015",
+        "WEI58-25-020",
+        "WEI58-25-024",
+        "WEI58-25-025",
+        "WEI58-25-026",
+        "WEI58-25-027",
+        "WEI58-26-005",
+        "WEI58-26-008",
+        "WEI58-26-012",
+        "WEI58-26-014",
+        "WEI58-26-015",
+        "WEI58-26-016",
+        "WEI58-26-017",
+        "WEI58-26-018",
+        "WEI58-26-020",
+        "WEI58-26-021",
+        "WEI58-26-023",
+        "WEI58-26-024",
+        "WEI58-26-025",
+        "WEI58-26-026",
+        "WEI58-26-027",
+        "WEI58-26-028",
+        "WEI58-27-002",
+        "WEI58-27-004",
+        "WEI58-27-005",
+        "WEI58-27-006",
+        "WEI58-27-008",
+        "WEI58-27-010",
+        "WEI58-27-011",
+        "WEI58-27-014",
+        "WEI58-27-020",
+        "WEI58-27-021",
+        "WEI58-27-024",
+        "WEI58-27-025",
+        "WEI58-27-028",
+        "WEI58-27-031",
+        "WEI58-27-032",
+        "WEI58-28-004",
+        "WEI58-28-005",
+        "WEI58-28-006",
+        "WEI58-28-007",
+        "WEI58-28-010",
+        "WEI58-28-012",
+        "WEI58-28-015",
+        "WEI58-28-016",
+        "WEI58-28-018",
+        "WEI58-28-024"
+      ]
+    }
+  ],
+  "chapter_coverage": [
+    {
+      "chapter": 1,
+      "total": 8,
+      "identity_variant_review": 4,
+      "related_family_links": 1,
+      "triage": {
+        "COVERED": 3,
+        "REGIONAL": 3,
+        "HISTORY_ONLY": 1,
+        "CANDIDATE": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-01-005",
+          "title": "Children recount the Sunday sermon",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-01-006",
+          "title": "New garments first worn at Sunday Mass",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-01-007",
+          "title": "Cross marked on new Sunday bread",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-01-008",
+          "title": "Sunday lamp before Trinity icon",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "total": 10,
+      "identity_variant_review": 4,
+      "related_family_links": 0,
+      "triage": {
+        "COVERED": 4,
+        "ENRICH": 3,
+        "HISTORY_ONLY": 2,
+        "CANDIDATE": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-02-002",
+          "title": "Voluntary Wednesday fasting",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-02-004",
+          "title": "Monday prayers for Holy Souls",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-02-005",
+          "title": "Tuesday Angel devotion",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-02-006",
+          "title": "Wednesday Saint Joseph devotion",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "total": 9,
+      "identity_variant_review": 6,
+      "related_family_links": 1,
+      "triage": {
+        "ENRICH": 3,
+        "CANDIDATE": 2,
+        "COVERED": 1,
+        "REGIONAL": 1,
+        "HISTORY_ONLY": 1,
+        "EXCLUDE": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-03-003",
+          "title": "Ember harvest gratitude",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-03-002",
+          "title": "Ember vocational and priestly prayer",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-03-008",
+          "title": "Pentecost Ember joyful character",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-03-004",
+          "title": "Ember charity and alms",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-03-005",
+          "title": "Ember prayer for departed souls",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-03-006",
+          "title": "Expectant mothers' Ember prayers",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "total": 7,
+      "identity_variant_review": 3,
+      "related_family_links": 1,
+      "triage": {
+        "REGIONAL": 2,
+        "COVERED": 1,
+        "ENRICH": 1,
+        "CANDIDATE": 1,
+        "HISTORY_ONLY": 1,
+        "EXCLUDE": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-04-002",
+          "title": "Field sprinkling by priest at Rogations",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-04-004",
+          "title": "Villages converging for Rogation Mass",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-04-005",
+          "title": "Special weather processions",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "total": 11,
+      "identity_variant_review": 6,
+      "related_family_links": 3,
+      "triage": {
+        "REGIONAL": 6,
+        "CANDIDATE": 3,
+        "COVERED": 2
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-05-003",
+          "title": "John or Joan lights Advent candle",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-05-004",
+          "title": "St Nicholas Eve letters to Christ Child",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-05-006",
+          "title": "German Advent picture calendar",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-05-008",
+          "title": "Alpine Marian image house visits",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-05-009",
+          "title": "Nine-night Saint Joseph statue visits",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-05-010",
+          "title": "Herbergsuchen inn-search drama",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "total": 16,
+      "identity_variant_review": 12,
+      "related_family_links": 2,
+      "triage": {
+        "REGIONAL": 6,
+        "CANDIDATE": 5,
+        "HISTORY_ONLY": 2,
+        "ENRICH": 2,
+        "COVERED": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-06-001",
+          "title": "Irish window lights brought into American Christmas observance",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-06-004",
+          "title": "Misa de Gallo Christmas night Mass name",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-06-007",
+          "title": "Christmas Eve family prayer before crib",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-06-011",
+          "title": "Christmas Eve household reconciliation and completion of tasks",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-06-012",
+          "title": "Extra fodder for livestock and grain for birds at Christmas",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-06-015",
+          "title": "French family réveillon after Midnight Mass",
+          "priority": "P1"
+        }
+      ]
+    },
+    {
+      "chapter": 7,
+      "total": 13,
+      "identity_variant_review": 8,
+      "related_family_links": 1,
+      "triage": {
+        "HISTORY_ONLY": 5,
+        "REGIONAL": 5,
+        "CANDIDATE": 2,
+        "ENRICH": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-07-007",
+          "title": "French Canadian La guignolée collection for the poor",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-07-008",
+          "title": "Polish Kolednicy Christmas star and Nativity drama rounds",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-07-003",
+          "title": "St Jean de Brébeuf's Huron Christmas carol Jesous Ahatonnia",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-07-004",
+          "title": "Alpine household carol composition and hearth singing",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-07-006",
+          "title": "Carol singing while travelling to Christmas worship",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-07-009",
+          "title": "Hungarian Bethlehem house-to-house singing",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 8,
+      "total": 29,
+      "identity_variant_review": 16,
+      "related_family_links": 2,
+      "triage": {
+        "REGIONAL": 9,
+        "HISTORY_ONLY": 7,
+        "CANDIDATE": 7,
+        "EXCLUDE": 3,
+        "ENRICH": 2,
+        "COVERED": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-08-002",
+          "title": "Large Alpine Nativity dioramas constructed in Advent",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-08-005",
+          "title": "Priest-blessed Christmas candle displayed at meal",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-08-019",
+          "title": "St Barbara's December 4 cherry blossom branches",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-08-025",
+          "title": "St Stephen Boxing Day alms to poor",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-08-026",
+          "title": "Christ Child gift-bearer and prayer before opening gifts",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-08-028",
+          "title": "St Nicholas Eve visit carried in Dutch diaspora",
+          "priority": "P1"
+        }
+      ]
+    },
+    {
+      "chapter": 9,
+      "total": 14,
+      "identity_variant_review": 10,
+      "related_family_links": 0,
+      "triage": {
+        "REGIONAL": 7,
+        "CANDIDATE": 3,
+        "HISTORY_ONLY": 2,
+        "EXCLUDE": 1,
+        "ENRICH": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-09-002",
+          "title": "Ukrainian kutia wheat and honey Christmas Eve meal",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-09-006",
+          "title": "French Pain calendau Christmas loaf share with poor",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-09-001",
+          "title": "Ukrainian Christmas wheat sheaf Didukh forefather emblem",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-09-004",
+          "title": "Polish grain and straw at Christmas Eve family shrine",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-09-005",
+          "title": "Irish Christmas Eve cakes Night of Cakes",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-09-008",
+          "title": "German Christstollen and regional Christmas breads",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 10,
+      "total": 20,
+      "identity_variant_review": 11,
+      "related_family_links": 1,
+      "triage": {
+        "REGIONAL": 7,
+        "HISTORY_ONLY": 4,
+        "CANDIDATE": 3,
+        "EXCLUDE": 3,
+        "COVERED": 2,
+        "ENRICH": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-10-002",
+          "title": "Twelve Christmas nights as devotional domestic evenings",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-10-006",
+          "title": "Roman Ara Coeli Santo Bambino children's devotions",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-10-010",
+          "title": "St Stephen blessing of horses",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-10-003",
+          "title": "Polish Święte Wieczory Holy Evenings",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-10-004",
+          "title": "Polish szopka and children's nativity dramatizations",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-10-005",
+          "title": "Hungarian Bethlehem house visitation play",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 11,
+      "total": 11,
+      "identity_variant_review": 7,
+      "related_family_links": 0,
+      "triage": {
+        "ENRICH": 3,
+        "HISTORY_ONLY": 2,
+        "CANDIDATE": 2,
+        "REGIONAL": 2,
+        "COVERED": 1,
+        "EXCLUDE": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-11-006",
+          "title": "New Year rosary around midnight",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-11-007",
+          "title": "Father blesses family on Jan 1",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-11-003",
+          "title": "Christmas octave day gathered prayer",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-11-004",
+          "title": "Holy Name devotion associated with Circumcision",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-11-005",
+          "title": "Te Deum and thanksgiving at year end",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-11-008",
+          "title": "Church bells and tower carols for New Year",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 12,
+      "total": 19,
+      "identity_variant_review": 10,
+      "related_family_links": 3,
+      "triage": {
+        "CANDIDATE": 6,
+        "HISTORY_ONLY": 5,
+        "REGIONAL": 4,
+        "ENRICH": 3,
+        "COVERED": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-12-005",
+          "title": "Annual Epiphany announcement of Easter and movable feasts",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-12-007",
+          "title": "Latin Roman Ritual Epiphany water blessing",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-12-008",
+          "title": "Epiphany water taken home by faithful",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-12-009",
+          "title": "Priestly Epiphany home blessing",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-12-019",
+          "title": "French Magi cake donations for education of poor child",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-12-003",
+          "title": "1955 Latin feast Baptism of Christ Jan 13",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 13,
+      "total": 20,
+      "identity_variant_review": 9,
+      "related_family_links": 1,
+      "triage": {
+        "HISTORY_ONLY": 6,
+        "REGIONAL": 5,
+        "CANDIDATE": 4,
+        "COVERED": 2,
+        "EXCLUDE": 2,
+        "ENRICH": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-13-003",
+          "title": "Shrove Tuesday confession before Ash Wednesday",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-13-017",
+          "title": "Shrove Tuesday pancakes and pre-Lenten food usage",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-13-020",
+          "title": "Forty Hours before Lent in carnival regions",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-13-002",
+          "title": "Septuagesima voluntary preparatory fast",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-13-006",
+          "title": "Formal farewell to Alleluia at vespers",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-13-010",
+          "title": "Winter-mask Perchten carnival parades",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 14,
+      "total": 29,
+      "identity_variant_review": 16,
+      "related_family_links": 1,
+      "triage": {
+        "HISTORY_ONLY": 8,
+        "CANDIDATE": 7,
+        "REGIONAL": 7,
+        "COVERED": 5,
+        "ENRICH": 2
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-14-009",
+          "title": "Lenten Hunger Cloth sanctuary veil",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-14-012",
+          "title": "Mothering Sunday journey to mother church",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-14-013",
+          "title": "Mothering Sunday visiting parents with simnel cake",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-14-020",
+          "title": "Lenten parish mission before Easter confession",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-14-022",
+          "title": "Lenten pretzels as folded arms in prayer",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-14-023",
+          "title": "Pretzels distributed to poor in Lent",
+          "priority": "P1"
+        }
+      ]
+    },
+    {
+      "chapter": 15,
+      "total": 39,
+      "identity_variant_review": 18,
+      "related_family_links": 5,
+      "triage": {
+        "COVERED": 10,
+        "CANDIDATE": 9,
+        "REGIONAL": 9,
+        "HISTORY_ONLY": 5,
+        "ENRICH": 4,
+        "EXCLUDE": 2
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-15-002",
+          "title": "Holy Week house-cleaning before Sacred Triduum",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-15-005",
+          "title": "Palm Sunday cemetery visits during procession",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-15-008",
+          "title": "Blessed palms as reconciliation and peace between neighbours",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-15-025",
+          "title": "Spanish and Latin American Calvary and entombment processions",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-15-028",
+          "title": "Hooded Holy Week confraternity processions",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-15-030",
+          "title": "Good Friday voluntary silence and minimal food",
+          "priority": "P1"
+        }
+      ]
+    },
+    {
+      "chapter": 16,
+      "total": 33,
+      "identity_variant_review": 19,
+      "related_family_links": 0,
+      "triage": {
+        "CANDIDATE": 8,
+        "REGIONAL": 8,
+        "HISTORY_ONLY": 7,
+        "COVERED": 5,
+        "ENRICH": 4,
+        "EXCLUDE": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-16-005",
+          "title": "Surrexit Dominus vere Easter greeting",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-16-014",
+          "title": "Bringing home blessed Easter fire by lantern",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-16-020",
+          "title": "Maltese running procession of Resurrection image",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-16-022",
+          "title": "Easter walk with cross and prayer",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-16-024",
+          "title": "Easter open house and family visits",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-16-029",
+          "title": "Easter Monday visit to grandparents",
+          "priority": "P1"
+        }
+      ]
+    },
+    {
+      "chapter": 17,
+      "total": 25,
+      "identity_variant_review": 12,
+      "related_family_links": 1,
+      "triage": {
+        "REGIONAL": 8,
+        "HISTORY_ONLY": 6,
+        "CANDIDATE": 5,
+        "ENRICH": 4,
+        "COVERED": 1,
+        "EXCLUDE": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-17-006",
+          "title": "Lamb as Easter symbol of Christ",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-17-007",
+          "title": "Historical priestly blessing of Easter lamb",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-17-011",
+          "title": "Historical Roman Ritual blessing of Easter eggs",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-17-021",
+          "title": "Historical blessing of Easter ham",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-17-008",
+          "title": "Easter butter sugar pastry lamb tabletop figures",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-17-012",
+          "title": "Egg gifts to children and household staff",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 18,
+      "total": 17,
+      "identity_variant_review": 5,
+      "related_family_links": 0,
+      "triage": {
+        "HISTORY_ONLY": 8,
+        "CANDIDATE": 3,
+        "COVERED": 2,
+        "REGIONAL": 2,
+        "EXCLUDE": 2
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-18-005",
+          "title": "Fields and pastures blessed in Ascension procession",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-18-013",
+          "title": "Bird-shaped Ascension pastries shared with customers",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-18-014",
+          "title": "Ascension mountain climbs and hilltop family picnics",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-18-012",
+          "title": "Eating birds at Ascension feast meal",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-18-015",
+          "title": "Ascension festive games and races",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 19,
+      "total": 23,
+      "identity_variant_review": 11,
+      "related_family_links": 1,
+      "triage": {
+        "HISTORY_ONLY": 8,
+        "REGIONAL": 5,
+        "CANDIDATE": 4,
+        "COVERED": 3,
+        "ENRICH": 2,
+        "EXCLUDE": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-19-003",
+          "title": "Pentecost homes and churches decorated with flowering branches",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-19-009",
+          "title": "Veni Creator sung for retreats councils and important undertakings",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-19-017",
+          "title": "Wooden dove suspended over household dining table",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-19-018",
+          "title": "Pentecost dawn hilltop prayer",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-19-023",
+          "title": "Pentecost Vigil blessing flowers fields and fruit trees",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-19-004",
+          "title": "Green Holyday popular name",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 20,
+      "total": 14,
+      "identity_variant_review": 7,
+      "related_family_links": 1,
+      "triage": {
+        "CANDIDATE": 4,
+        "COVERED": 3,
+        "REGIONAL": 3,
+        "HISTORY_ONLY": 2,
+        "EXCLUDE": 2
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-20-007",
+          "title": "Eye within triangle in household Trinity images and wayside shrines",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-20-009",
+          "title": "Trinity shrines and churches vowed after epidemics",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-20-010",
+          "title": "Trinity plague columns erected in public squares",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-20-012",
+          "title": "Holy Trinity confraternities in seventeenth century",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-20-005",
+          "title": "Shamrock trefoil as symbolic Trinity flower",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-20-006",
+          "title": "Pansy and Trinitaria three-petalled flower symbolism",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "total": 21,
+      "identity_variant_review": 11,
+      "related_family_links": 2,
+      "triage": {
+        "CANDIDATE": 6,
+        "COVERED": 5,
+        "REGIONAL": 4,
+        "ENRICH": 3,
+        "HISTORY_ONLY": 3
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-21-006",
+          "title": "Kneeling to adore Eucharist before home on processional route",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-21-010",
+          "title": "Corpus Christi stations with prayers and Eucharistic Benediction",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-21-018",
+          "title": "Flower wreaths attached to flags banners and homes on Fête-Dieu",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-21-019",
+          "title": "Priestly blessing of Corpus Christi flower wreaths",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-21-020",
+          "title": "Blessed floral wreaths hung at home and field margins",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-21-001",
+          "title": "Corpus Christi established following Liège devotion and Saint Juliana",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "total": 12,
+      "identity_variant_review": 8,
+      "related_family_links": 0,
+      "triage": {
+        "REGIONAL": 4,
+        "HISTORY_ONLY": 3,
+        "CANDIDATE": 3,
+        "COVERED": 1,
+        "ENRICH": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-22-005",
+          "title": "Cross-shaped last sheaf decorated in household",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-22-006",
+          "title": "Polish blessed harvest wreaths",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-22-008",
+          "title": "Martinmas thanksgiving Mass and village harvest feasting",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-22-002",
+          "title": "Te Deum after solemn local thanksgiving Mass or Benediction",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-22-004",
+          "title": "Harvesters sing Kyrie-o-ole with last wagon",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-22-007",
+          "title": "Harvest produce processions near Assumption feast",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "total": 23,
+      "identity_variant_review": 6,
+      "related_family_links": 2,
+      "triage": {
+        "HISTORY_ONLY": 7,
+        "COVERED": 5,
+        "REGIONAL": 4,
+        "ENRICH": 3,
+        "CANDIDATE": 3,
+        "EXCLUDE": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-23-017",
+          "title": "Medieval pilgrimages Compostela Bari Cologne Marseille",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-23-007",
+          "title": "Kirchweih Kirmes and regional patron feasts",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-23-010",
+          "title": "Name-day exemption from everyday chores in some households",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-23-011",
+          "title": "Frankish practice of Christian saint names at baptism",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-23-013",
+          "title": "Marian titles as girls' names",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-23-019",
+          "title": "Ceremonial translations of saints' relics",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "total": 25,
+      "identity_variant_review": 13,
+      "related_family_links": 2,
+      "triage": {
+        "REGIONAL": 9,
+        "CANDIDATE": 6,
+        "ENRICH": 3,
+        "HISTORY_ONLY": 3,
+        "COVERED": 2,
+        "EXCLUDE": 2
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-24-012",
+          "title": "Assumption blessing of countryside and fields",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-24-013",
+          "title": "French Alpine pasture and livestock blessing",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-24-021",
+          "title": "Spanish balcony candles and flowers for 8 December",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-24-004",
+          "title": "Priestly field procession on Assumption",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-24-006",
+          "title": "L'Inchinata symbolic meeting of Christ and Mary images",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-24-007",
+          "title": "Sardinian Candelieri candle offering procession",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "total": 27,
+      "identity_variant_review": 9,
+      "related_family_links": 1,
+      "triage": {
+        "HISTORY_ONLY": 9,
+        "COVERED": 7,
+        "REGIONAL": 5,
+        "CANDIDATE": 4,
+        "EXCLUDE": 2
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-25-012",
+          "title": "Taking down Christmas crib on Candlemas",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-25-023",
+          "title": "Seed and harvest blessing for Nativity of Mary",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-25-024",
+          "title": "French vineyard grapes brought for priestly blessing",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-25-025",
+          "title": "Our Lady of Grape Harvest family festive meal",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-25-007",
+          "title": "Elaborately adorned candles brought for blessing",
+          "priority": "P2"
+        },
+        {
+          "id": "WEI58-25-015",
+          "title": "Annunciation Swallow Day spring folklore",
+          "priority": "P2"
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "total": 31,
+      "identity_variant_review": 16,
+      "related_family_links": 2,
+      "triage": {
+        "CANDIDATE": 10,
+        "REGIONAL": 8,
+        "HISTORY_ONLY": 5,
+        "COVERED": 4,
+        "ENRICH": 3,
+        "EXCLUDE": 1
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-26-008",
+          "title": "Priest blesses graves on All Souls",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-26-012",
+          "title": "Tolling bell at All Saints dusk to summon prayer",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-26-014",
+          "title": "Breton all-night prayer bells and farmhouse visits",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-26-020",
+          "title": "Eight days of family Soul Nights after All Souls",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-26-021",
+          "title": "Daily charitable meal portions during Soul Nights",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-26-024",
+          "title": "Beans peas lentils as food given to poor",
+          "priority": "P1"
+        }
+      ]
+    },
+    {
+      "chapter": 27,
+      "total": 35,
+      "identity_variant_review": 18,
+      "related_family_links": 6,
+      "triage": {
+        "CANDIDATE": 10,
+        "REGIONAL": 10,
+        "COVERED": 7,
+        "HISTORY_ONLY": 3,
+        "ENRICH": 3,
+        "EXCLUDE": 2
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-27-026",
+          "title": "Invocation of St Anthony for lost things",
+          "priority": "P0"
+        },
+        {
+          "id": "WEI58-27-002",
+          "title": "St Blaise pan bendito blessed sticks",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-27-008",
+          "title": "St Patrick March 17 Irish feast",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-27-010",
+          "title": "St Patrick's Day Mass parade and household feast",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-27-014",
+          "title": "Saint Patrick Breastplate Lorica prayer",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-27-018",
+          "title": "St Joseph small breads fritelli shared at feast",
+          "priority": "P1"
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "total": 27,
+      "identity_variant_review": 11,
+      "related_family_links": 3,
+      "triage": {
+        "CANDIDATE": 9,
+        "COVERED": 6,
+        "EXCLUDE": 5,
+        "ENRICH": 3,
+        "HISTORY_ONLY": 2,
+        "REGIONAL": 2
+      },
+      "review_sample": [
+        {
+          "id": "WEI58-28-004",
+          "title": "Priestly grain blessing on feast of Peter and Paul",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-28-005",
+          "title": "Blessed straw crowns hung above dining table",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-28-006",
+          "title": "Special bread blessing for Peter and Paul",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-28-007",
+          "title": "Alpine outdoor Angelus on Peter and Paul feast",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-28-012",
+          "title": "Blessed St Christopher medal carried by drivers",
+          "priority": "P1"
+        },
+        {
+          "id": "WEI58-28-015",
+          "title": "St Anne medieval French devotion and pilgrimage",
+          "priority": "P1"
+        }
+      ]
+    }
+  ],
+  "largest_unresolved_source_families": [
+    {
+      "key": "16:LENT_HOLY_WEEK_EASTER",
+      "chapter": 16,
+      "source_family": "LENT_HOLY_WEEK_EASTER",
+      "number_of_observations": 19,
+      "ids": [
+        "WEI58-16-005",
+        "WEI58-16-014",
+        "WEI58-16-020",
+        "WEI58-16-022",
+        "WEI58-16-024",
+        "WEI58-16-029",
+        "WEI58-16-031",
+        "WEI58-16-006",
+        "WEI58-16-007",
+        "WEI58-16-009",
+        "WEI58-16-013",
+        "WEI58-16-019",
+        "WEI58-16-021",
+        "WEI58-16-023",
+        "WEI58-16-026",
+        "WEI58-16-027",
+        "WEI58-16-030",
+        "WEI58-16-032",
+        "WEI58-16-033"
+      ],
+      "top_titles": [
+        "Surrexit Dominus vere Easter greeting",
+        "Bringing home blessed Easter fire by lantern",
+        "Maltese running procession of Resurrection image",
+        "Easter walk with cross and prayer",
+        "Easter open house and family visits",
+        "Easter Monday visit to grandparents"
+      ]
+    },
+    {
+      "key": "27:SAINTS_AND_PATRONAL",
+      "chapter": 27,
+      "source_family": "SAINTS_AND_PATRONAL",
+      "number_of_observations": 18,
+      "ids": [
+        "WEI58-27-026",
+        "WEI58-27-002",
+        "WEI58-27-008",
+        "WEI58-27-010",
+        "WEI58-27-014",
+        "WEI58-27-018",
+        "WEI58-27-027",
+        "WEI58-27-031",
+        "WEI58-27-004",
+        "WEI58-27-005",
+        "WEI58-27-006",
+        "WEI58-27-011",
+        "WEI58-27-020",
+        "WEI58-27-021",
+        "WEI58-27-024",
+        "WEI58-27-025",
+        "WEI58-27-028",
+        "WEI58-27-032"
+      ],
+      "top_titles": [
+        "Invocation of St Anthony for lost things",
+        "St Blaise pan bendito blessed sticks",
+        "St Patrick March 17 Irish feast",
+        "St Patrick's Day Mass parade and household feast",
+        "Saint Patrick Breastplate Lorica prayer",
+        "St Joseph small breads fritelli shared at feast"
+      ]
+    },
+    {
+      "key": "15:LENT_HOLY_WEEK_EASTER",
+      "chapter": 15,
+      "source_family": "LENT_HOLY_WEEK_EASTER",
+      "number_of_observations": 18,
+      "ids": [
+        "WEI58-15-002",
+        "WEI58-15-005",
+        "WEI58-15-008",
+        "WEI58-15-025",
+        "WEI58-15-028",
+        "WEI58-15-030",
+        "WEI58-15-032",
+        "WEI58-15-035",
+        "WEI58-15-009",
+        "WEI58-15-010",
+        "WEI58-15-011",
+        "WEI58-15-016",
+        "WEI58-15-020",
+        "WEI58-15-021",
+        "WEI58-15-024",
+        "WEI58-15-037",
+        "WEI58-15-038",
+        "WEI58-15-039"
+      ],
+      "top_titles": [
+        "Holy Week house-cleaning before Sacred Triduum",
+        "Palm Sunday cemetery visits during procession",
+        "Blessed palms as reconciliation and peace between neighbours",
+        "Spanish and Latin American Calvary and entombment processions",
+        "Hooded Holy Week confraternity processions",
+        "Good Friday voluntary silence and minimal food"
+      ]
+    },
+    {
+      "key": "8:ADVENT_AND_CHRISTMASTIDE",
+      "chapter": 8,
+      "source_family": "ADVENT_AND_CHRISTMASTIDE",
+      "number_of_observations": 16,
+      "ids": [
+        "WEI58-08-002",
+        "WEI58-08-005",
+        "WEI58-08-019",
+        "WEI58-08-025",
+        "WEI58-08-026",
+        "WEI58-08-028",
+        "WEI58-08-006",
+        "WEI58-08-007",
+        "WEI58-08-009",
+        "WEI58-08-011",
+        "WEI58-08-014",
+        "WEI58-08-017",
+        "WEI58-08-021",
+        "WEI58-08-022",
+        "WEI58-08-024",
+        "WEI58-08-027"
+      ],
+      "top_titles": [
+        "Large Alpine Nativity dioramas constructed in Advent",
+        "Priest-blessed Christmas candle displayed at meal",
+        "St Barbara's December 4 cherry blossom branches",
+        "St Stephen Boxing Day alms to poor",
+        "Christ Child gift-bearer and prayer before opening gifts",
+        "St Nicholas Eve visit carried in Dutch diaspora"
+      ]
+    },
+    {
+      "key": "14:LENT_HOLY_WEEK_EASTER",
+      "chapter": 14,
+      "source_family": "LENT_HOLY_WEEK_EASTER",
+      "number_of_observations": 16,
+      "ids": [
+        "WEI58-14-009",
+        "WEI58-14-012",
+        "WEI58-14-013",
+        "WEI58-14-020",
+        "WEI58-14-022",
+        "WEI58-14-023",
+        "WEI58-14-026",
+        "WEI58-14-007",
+        "WEI58-14-015",
+        "WEI58-14-016",
+        "WEI58-14-021",
+        "WEI58-14-024",
+        "WEI58-14-025",
+        "WEI58-14-027",
+        "WEI58-14-028",
+        "WEI58-14-029"
+      ],
+      "top_titles": [
+        "Lenten Hunger Cloth sanctuary veil",
+        "Mothering Sunday journey to mother church",
+        "Mothering Sunday visiting parents with simnel cake",
+        "Lenten parish mission before Easter confession",
+        "Lenten pretzels as folded arms in prayer",
+        "Pretzels distributed to poor in Lent"
+      ]
+    },
+    {
+      "key": "26:HOLY_SOULS",
+      "chapter": 26,
+      "source_family": "HOLY_SOULS",
+      "number_of_observations": 16,
+      "ids": [
+        "WEI58-26-008",
+        "WEI58-26-012",
+        "WEI58-26-014",
+        "WEI58-26-020",
+        "WEI58-26-021",
+        "WEI58-26-024",
+        "WEI58-26-028",
+        "WEI58-26-005",
+        "WEI58-26-015",
+        "WEI58-26-016",
+        "WEI58-26-017",
+        "WEI58-26-018",
+        "WEI58-26-023",
+        "WEI58-26-025",
+        "WEI58-26-026",
+        "WEI58-26-027"
+      ],
+      "top_titles": [
+        "Priest blesses graves on All Souls",
+        "Tolling bell at All Saints dusk to summon prayer",
+        "Breton all-night prayer bells and farmhouse visits",
+        "Eight days of family Soul Nights after All Souls",
+        "Daily charitable meal portions during Soul Nights",
+        "Beans peas lentils as food given to poor"
+      ]
+    },
+    {
+      "key": "24:MARIAN_FEASTS",
+      "chapter": 24,
+      "source_family": "MARIAN_FEASTS",
+      "number_of_observations": 13,
+      "ids": [
+        "WEI58-24-012",
+        "WEI58-24-013",
+        "WEI58-24-021",
+        "WEI58-24-004",
+        "WEI58-24-006",
+        "WEI58-24-007",
+        "WEI58-24-011",
+        "WEI58-24-015",
+        "WEI58-24-016",
+        "WEI58-24-020",
+        "WEI58-24-022",
+        "WEI58-24-023",
+        "WEI58-24-024"
+      ],
+      "top_titles": [
+        "Assumption blessing of countryside and fields",
+        "French Alpine pasture and livestock blessing",
+        "Spanish balcony candles and flowers for 8 December",
+        "Priestly field procession on Assumption",
+        "L'Inchinata symbolic meeting of Christ and Mary images",
+        "Sardinian Candelieri candle offering procession"
+      ]
+    },
+    {
+      "key": "6:ADVENT_AND_CHRISTMASTIDE",
+      "chapter": 6,
+      "source_family": "ADVENT_AND_CHRISTMASTIDE",
+      "number_of_observations": 12,
+      "ids": [
+        "WEI58-06-001",
+        "WEI58-06-004",
+        "WEI58-06-007",
+        "WEI58-06-011",
+        "WEI58-06-012",
+        "WEI58-06-015",
+        "WEI58-06-006",
+        "WEI58-06-008",
+        "WEI58-06-010",
+        "WEI58-06-013",
+        "WEI58-06-014",
+        "WEI58-06-016"
+      ],
+      "top_titles": [
+        "Irish window lights brought into American Christmas observance",
+        "Misa de Gallo Christmas night Mass name",
+        "Christmas Eve family prayer before crib",
+        "Christmas Eve household reconciliation and completion of tasks",
+        "Extra fodder for livestock and grain for birds at Christmas",
+        "French family réveillon after Midnight Mass"
+      ]
+    },
+    {
+      "key": "17:LENT_HOLY_WEEK_EASTER",
+      "chapter": 17,
+      "source_family": "LENT_HOLY_WEEK_EASTER",
+      "number_of_observations": 12,
+      "ids": [
+        "WEI58-17-006",
+        "WEI58-17-007",
+        "WEI58-17-011",
+        "WEI58-17-021",
+        "WEI58-17-008",
+        "WEI58-17-012",
+        "WEI58-17-013",
+        "WEI58-17-016",
+        "WEI58-17-017",
+        "WEI58-17-019",
+        "WEI58-17-024",
+        "WEI58-17-025"
+      ],
+      "top_titles": [
+        "Lamb as Easter symbol of Christ",
+        "Historical priestly blessing of Easter lamb",
+        "Historical Roman Ritual blessing of Easter eggs",
+        "Historical blessing of Easter ham",
+        "Easter butter sugar pastry lamb tabletop figures",
+        "Egg gifts to children and household staff"
+      ]
+    },
+    {
+      "key": "10:ADVENT_AND_CHRISTMASTIDE",
+      "chapter": 10,
+      "source_family": "ADVENT_AND_CHRISTMASTIDE",
+      "number_of_observations": 11,
+      "ids": [
+        "WEI58-10-002",
+        "WEI58-10-006",
+        "WEI58-10-010",
+        "WEI58-10-003",
+        "WEI58-10-004",
+        "WEI58-10-005",
+        "WEI58-10-011",
+        "WEI58-10-012",
+        "WEI58-10-013",
+        "WEI58-10-015",
+        "WEI58-10-018"
+      ],
+      "top_titles": [
+        "Twelve Christmas nights as devotional domestic evenings",
+        "Roman Ara Coeli Santo Bambino children's devotions",
+        "St Stephen blessing of horses",
+        "Polish Święte Wieczory Holy Evenings",
+        "Polish szopka and children's nativity dramatizations",
+        "Hungarian Bethlehem house visitation play"
+      ]
+    },
+    {
+      "key": "19:EASTERTIDE_TRINITY_HARVEST",
+      "chapter": 19,
+      "source_family": "EASTERTIDE_TRINITY_HARVEST",
+      "number_of_observations": 11,
+      "ids": [
+        "WEI58-19-003",
+        "WEI58-19-009",
+        "WEI58-19-017",
+        "WEI58-19-018",
+        "WEI58-19-023",
+        "WEI58-19-004",
+        "WEI58-19-005",
+        "WEI58-19-011",
+        "WEI58-19-020",
+        "WEI58-19-021",
+        "WEI58-19-022"
+      ],
+      "top_titles": [
+        "Pentecost homes and churches decorated with flowering branches",
+        "Veni Creator sung for retreats councils and important undertakings",
+        "Wooden dove suspended over household dining table",
+        "Pentecost dawn hilltop prayer",
+        "Pentecost Vigil blessing flowers fields and fruit trees",
+        "Green Holyday popular name"
+      ]
+    },
+    {
+      "key": "21:EASTERTIDE_TRINITY_HARVEST",
+      "chapter": 21,
+      "source_family": "EASTERTIDE_TRINITY_HARVEST",
+      "number_of_observations": 11,
+      "ids": [
+        "WEI58-21-006",
+        "WEI58-21-010",
+        "WEI58-21-018",
+        "WEI58-21-019",
+        "WEI58-21-020",
+        "WEI58-21-001",
+        "WEI58-21-004",
+        "WEI58-21-008",
+        "WEI58-21-015",
+        "WEI58-21-016",
+        "WEI58-21-017"
+      ],
+      "top_titles": [
+        "Kneeling to adore Eucharist before home on processional route",
+        "Corpus Christi stations with prayers and Eucharistic Benediction",
+        "Flower wreaths attached to flags banners and homes on Fête-Dieu",
+        "Priestly blessing of Corpus Christi flower wreaths",
+        "Blessed floral wreaths hung at home and field margins",
+        "Corpus Christi established following Liège devotion and Saint Juliana"
+      ]
+    },
+    {
+      "key": "28:SAINTS_AND_PATRONAL",
+      "chapter": 28,
+      "source_family": "SAINTS_AND_PATRONAL",
+      "number_of_observations": 11,
+      "ids": [
+        "WEI58-28-004",
+        "WEI58-28-005",
+        "WEI58-28-006",
+        "WEI58-28-007",
+        "WEI58-28-012",
+        "WEI58-28-015",
+        "WEI58-28-018",
+        "WEI58-28-025",
+        "WEI58-28-010",
+        "WEI58-28-016",
+        "WEI58-28-024"
+      ],
+      "top_titles": [
+        "Priestly grain blessing on feast of Peter and Paul",
+        "Blessed straw crowns hung above dining table",
+        "Special bread blessing for Peter and Paul",
+        "Alpine outdoor Angelus on Peter and Paul feast",
+        "Blessed St Christopher medal carried by drivers",
+        "St Anne medieval French devotion and pilgrimage"
+      ]
+    },
+    {
+      "key": "9:ADVENT_AND_CHRISTMASTIDE",
+      "chapter": 9,
+      "source_family": "ADVENT_AND_CHRISTMASTIDE",
+      "number_of_observations": 10,
+      "ids": [
+        "WEI58-09-002",
+        "WEI58-09-006",
+        "WEI58-09-001",
+        "WEI58-09-004",
+        "WEI58-09-005",
+        "WEI58-09-008",
+        "WEI58-09-010",
+        "WEI58-09-011",
+        "WEI58-09-012",
+        "WEI58-09-013"
+      ],
+      "top_titles": [
+        "Ukrainian kutia wheat and honey Christmas Eve meal",
+        "French Pain calendau Christmas loaf share with poor",
+        "Ukrainian Christmas wheat sheaf Didukh forefather emblem",
+        "Polish grain and straw at Christmas Eve family shrine",
+        "Irish Christmas Eve cakes Night of Cakes",
+        "German Christstollen and regional Christmas breads"
+      ]
+    },
+    {
+      "key": "12:ADVENT_AND_CHRISTMASTIDE",
+      "chapter": 12,
+      "source_family": "ADVENT_AND_CHRISTMASTIDE",
+      "number_of_observations": 10,
+      "ids": [
+        "WEI58-12-005",
+        "WEI58-12-007",
+        "WEI58-12-008",
+        "WEI58-12-009",
+        "WEI58-12-019",
+        "WEI58-12-003",
+        "WEI58-12-004",
+        "WEI58-12-012",
+        "WEI58-12-015",
+        "WEI58-12-016"
+      ],
+      "top_titles": [
+        "Annual Epiphany announcement of Easter and movable feasts",
+        "Latin Roman Ritual Epiphany water blessing",
+        "Epiphany water taken home by faithful",
+        "Priestly Epiphany home blessing",
+        "French Magi cake donations for education of poor child",
+        "1955 Latin feast Baptism of Christ Jan 13"
+      ]
+    },
+    {
+      "key": "13:LENT_HOLY_WEEK_EASTER",
+      "chapter": 13,
+      "source_family": "LENT_HOLY_WEEK_EASTER",
+      "number_of_observations": 9,
+      "ids": [
+        "WEI58-13-003",
+        "WEI58-13-017",
+        "WEI58-13-020",
+        "WEI58-13-002",
+        "WEI58-13-006",
+        "WEI58-13-010",
+        "WEI58-13-015",
+        "WEI58-13-016",
+        "WEI58-13-018"
+      ],
+      "top_titles": [
+        "Shrove Tuesday confession before Ash Wednesday",
+        "Shrove Tuesday pancakes and pre-Lenten food usage",
+        "Forty Hours before Lent in carnival regions",
+        "Septuagesima voluntary preparatory fast",
+        "Formal farewell to Alleluia at vespers",
+        "Winter-mask Perchten carnival parades"
+      ]
+    },
+    {
+      "key": "25:MARIAN_FEASTS",
+      "chapter": 25,
+      "source_family": "MARIAN_FEASTS",
+      "number_of_observations": 9,
+      "ids": [
+        "WEI58-25-012",
+        "WEI58-25-023",
+        "WEI58-25-024",
+        "WEI58-25-025",
+        "WEI58-25-007",
+        "WEI58-25-015",
+        "WEI58-25-020",
+        "WEI58-25-026",
+        "WEI58-25-027"
+      ],
+      "top_titles": [
+        "Taking down Christmas crib on Candlemas",
+        "Seed and harvest blessing for Nativity of Mary",
+        "French vineyard grapes brought for priestly blessing",
+        "Our Lady of Grape Harvest family festive meal",
+        "Elaborately adorned candles brought for blessing",
+        "Annunciation Swallow Day spring folklore"
+      ]
+    },
+    {
+      "key": "7:ADVENT_AND_CHRISTMASTIDE",
+      "chapter": 7,
+      "source_family": "ADVENT_AND_CHRISTMASTIDE",
+      "number_of_observations": 8,
+      "ids": [
+        "WEI58-07-007",
+        "WEI58-07-008",
+        "WEI58-07-003",
+        "WEI58-07-004",
+        "WEI58-07-006",
+        "WEI58-07-009",
+        "WEI58-07-012",
+        "WEI58-07-013"
+      ],
+      "top_titles": [
+        "French Canadian La guignolée collection for the poor",
+        "Polish Kolednicy Christmas star and Nativity drama rounds",
+        "St Jean de Brébeuf's Huron Christmas carol Jesous Ahatonnia",
+        "Alpine household carol composition and hearth singing",
+        "Carol singing while travelling to Christmas worship",
+        "Hungarian Bethlehem house-to-house singing"
+      ]
+    },
+    {
+      "key": "22:EASTERTIDE_TRINITY_HARVEST",
+      "chapter": 22,
+      "source_family": "EASTERTIDE_TRINITY_HARVEST",
+      "number_of_observations": 8,
+      "ids": [
+        "WEI58-22-005",
+        "WEI58-22-006",
+        "WEI58-22-008",
+        "WEI58-22-002",
+        "WEI58-22-004",
+        "WEI58-22-007",
+        "WEI58-22-009",
+        "WEI58-22-010"
+      ],
+      "top_titles": [
+        "Cross-shaped last sheaf decorated in household",
+        "Polish blessed harvest wreaths",
+        "Martinmas thanksgiving Mass and village harvest feasting",
+        "Te Deum after solemn local thanksgiving Mass or Benediction",
+        "Harvesters sing Kyrie-o-ole with last wagon",
+        "Harvest produce processions near Assumption feast"
+      ]
+    },
+    {
+      "key": "11:ADVENT_AND_CHRISTMASTIDE",
+      "chapter": 11,
+      "source_family": "ADVENT_AND_CHRISTMASTIDE",
+      "number_of_observations": 7,
+      "ids": [
+        "WEI58-11-006",
+        "WEI58-11-007",
+        "WEI58-11-003",
+        "WEI58-11-004",
+        "WEI58-11-005",
+        "WEI58-11-008",
+        "WEI58-11-011"
+      ],
+      "top_titles": [
+        "New Year rosary around midnight",
+        "Father blesses family on Jan 1",
+        "Christmas octave day gathered prayer",
+        "Holy Name devotion associated with Circumcision",
+        "Te Deum and thanksgiving at year end",
+        "Church bells and tower carols for New Year"
+      ]
+    },
+    {
+      "key": "20:EASTERTIDE_TRINITY_HARVEST",
+      "chapter": 20,
+      "source_family": "EASTERTIDE_TRINITY_HARVEST",
+      "number_of_observations": 7,
+      "ids": [
+        "WEI58-20-007",
+        "WEI58-20-009",
+        "WEI58-20-010",
+        "WEI58-20-012",
+        "WEI58-20-005",
+        "WEI58-20-006",
+        "WEI58-20-011"
+      ],
+      "top_titles": [
+        "Eye within triangle in household Trinity images and wayside shrines",
+        "Trinity shrines and churches vowed after epidemics",
+        "Trinity plague columns erected in public squares",
+        "Holy Trinity confraternities in seventeenth century",
+        "Shamrock trefoil as symbolic Trinity flower",
+        "Pansy and Trinitaria three-petalled flower symbolism"
+      ]
+    },
+    {
+      "key": "3:WEEKLY_AND_SEASONAL_PRACTICE",
+      "chapter": 3,
+      "source_family": "WEEKLY_AND_SEASONAL_PRACTICE",
+      "number_of_observations": 6,
+      "ids": [
+        "WEI58-03-003",
+        "WEI58-03-002",
+        "WEI58-03-008",
+        "WEI58-03-004",
+        "WEI58-03-005",
+        "WEI58-03-006"
+      ],
+      "top_titles": [
+        "Ember harvest gratitude",
+        "Ember vocational and priestly prayer",
+        "Pentecost Ember joyful character",
+        "Ember charity and alms",
+        "Ember prayer for departed souls",
+        "Expectant mothers' Ember prayers"
+      ]
+    },
+    {
+      "key": "23:SAINTS_AND_PATRONAL",
+      "chapter": 23,
+      "source_family": "SAINTS_AND_PATRONAL",
+      "number_of_observations": 6,
+      "ids": [
+        "WEI58-23-017",
+        "WEI58-23-007",
+        "WEI58-23-010",
+        "WEI58-23-011",
+        "WEI58-23-013",
+        "WEI58-23-019"
+      ],
+      "top_titles": [
+        "Medieval pilgrimages Compostela Bari Cologne Marseille",
+        "Kirchweih Kirmes and regional patron feasts",
+        "Name-day exemption from everyday chores in some households",
+        "Frankish practice of Christian saint names at baptism",
+        "Marian titles as girls' names",
+        "Ceremonial translations of saints' relics"
+      ]
+    },
+    {
+      "key": "5:ADVENT_AND_CHRISTMASTIDE",
+      "chapter": 5,
+      "source_family": "ADVENT_AND_CHRISTMASTIDE",
+      "number_of_observations": 6,
+      "ids": [
+        "WEI58-05-003",
+        "WEI58-05-004",
+        "WEI58-05-006",
+        "WEI58-05-008",
+        "WEI58-05-009",
+        "WEI58-05-010"
+      ],
+      "top_titles": [
+        "John or Joan lights Advent candle",
+        "St Nicholas Eve letters to Christ Child",
+        "German Advent picture calendar",
+        "Alpine Marian image house visits",
+        "Nine-night Saint Joseph statue visits",
+        "Herbergsuchen inn-search drama"
+      ]
+    },
+    {
+      "key": "18:EASTERTIDE_TRINITY_HARVEST",
+      "chapter": 18,
+      "source_family": "EASTERTIDE_TRINITY_HARVEST",
+      "number_of_observations": 5,
+      "ids": [
+        "WEI58-18-005",
+        "WEI58-18-013",
+        "WEI58-18-014",
+        "WEI58-18-012",
+        "WEI58-18-015"
+      ],
+      "top_titles": [
+        "Fields and pastures blessed in Ascension procession",
+        "Bird-shaped Ascension pastries shared with customers",
+        "Ascension mountain climbs and hilltop family picnics",
+        "Eating birds at Ascension feast meal",
+        "Ascension festive games and races"
+      ]
+    }
+  ],
+  "first_review_queue": [
+    {
+      "id": "WEI58-27-026",
+      "chapter": 27,
+      "page": 327,
+      "title": "Invocation of St Anthony for lost things",
+      "triage": "ENRICH",
+      "priority": "P0",
+      "kind": "SAINTS_DEVOTION",
+      "geo": "Catholic world",
+      "p1_source_disposition": null,
+      "regional_group_refs": [
+        "R009"
+      ]
+    },
+    {
+      "id": "WEI58-01-005",
+      "chapter": 1,
+      "page": 16,
+      "title": "Children recount the Sunday sermon",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "HOUSEHOLD",
+      "geo": "Various countries",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-02-002",
+      "chapter": 2,
+      "page": 23,
+      "title": "Voluntary Wednesday fasting",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "PENANCE",
+      "geo": "Local Catholic",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-03-003",
+      "chapter": 3,
+      "page": 32,
+      "title": "Ember harvest gratitude",
+      "triage": "ENRICH",
+      "priority": "P1",
+      "kind": "DEVOTION",
+      "geo": "Roman liturgical tradition",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": [
+        "R015"
+      ]
+    },
+    {
+      "id": "WEI58-03-002",
+      "chapter": 3,
+      "page": 33,
+      "title": "Ember vocational and priestly prayer",
+      "triage": "ENRICH",
+      "priority": "P1",
+      "kind": "DEVOTION",
+      "geo": "Roman Catholic",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": [
+        "R015"
+      ]
+    },
+    {
+      "id": "WEI58-03-008",
+      "chapter": 3,
+      "page": 35,
+      "title": "Pentecost Ember joyful character",
+      "triage": "ENRICH",
+      "priority": "P1",
+      "kind": "LITURGY",
+      "geo": "Roman rite",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": [
+        "R015"
+      ]
+    },
+    {
+      "id": "WEI58-03-004",
+      "chapter": 3,
+      "page": 36,
+      "title": "Ember charity and alms",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "CHARITY",
+      "geo": "Catholic Europe",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": [
+        "R015"
+      ]
+    },
+    {
+      "id": "WEI58-03-005",
+      "chapter": 3,
+      "page": 36,
+      "title": "Ember prayer for departed souls",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "DEVOTION",
+      "geo": "Catholic Europe",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": [
+        "R015"
+      ]
+    },
+    {
+      "id": "WEI58-04-002",
+      "chapter": 4,
+      "page": 44,
+      "title": "Field sprinkling by priest at Rogations",
+      "triage": "ENRICH",
+      "priority": "P1",
+      "kind": "BLESSING",
+      "geo": "Rural Catholic regions",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": [
+        "R015"
+      ]
+    },
+    {
+      "id": "WEI58-06-001",
+      "chapter": 6,
+      "page": 66,
+      "title": "Irish window lights brought into American Christmas observance",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "HOUSEHOLD",
+      "geo": "Ireland and Irish diaspora",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-06-004",
+      "chapter": 6,
+      "page": 71,
+      "title": "Misa de Gallo Christmas night Mass name",
+      "triage": "ENRICH",
+      "priority": "P1",
+      "kind": "LITURGICAL_NAME",
+      "geo": "Spanish-speaking Catholic regions",
+      "p1_source_disposition": "BOUNDED_CONTEXT_EXISTING_OWNER_ONLY",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-06-007",
+      "chapter": 6,
+      "page": 74,
+      "title": "Christmas Eve family prayer before crib",
+      "triage": "ENRICH",
+      "priority": "P1",
+      "kind": "HOUSEHOLD",
+      "geo": "Central and Northern European Catholic homes",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": [
+        "R003"
+      ]
+    },
+    {
+      "id": "WEI58-06-011",
+      "chapter": 6,
+      "page": 74,
+      "title": "Christmas Eve household reconciliation and completion of tasks",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "HOUSEHOLD",
+      "geo": "European households",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-06-012",
+      "chapter": 6,
+      "page": 75,
+      "title": "Extra fodder for livestock and grain for birds at Christmas",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "CHARITY_TO_CREATION",
+      "geo": "Northern and Central Europe/Scandinavia",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-06-015",
+      "chapter": 6,
+      "page": 76,
+      "title": "French family réveillon after Midnight Mass",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "FAMILY_FEAST",
+      "geo": "France",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-07-007",
+      "chapter": 7,
+      "page": 87,
+      "title": "French Canadian La guignolée collection for the poor",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "CHARITY_PROCESSION",
+      "geo": "French Canada",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-07-008",
+      "chapter": 7,
+      "page": 87,
+      "title": "Polish Kolednicy Christmas star and Nativity drama rounds",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "REGIONAL_CUSTOM",
+      "geo": "Poland and Slavic regions",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": [
+        "R027"
+      ]
+    },
+    {
+      "id": "WEI58-08-002",
+      "chapter": 8,
+      "page": 96,
+      "title": "Large Alpine Nativity dioramas constructed in Advent",
+      "triage": "ENRICH",
+      "priority": "P1",
+      "kind": "HOUSEHOLD_ART",
+      "geo": "Alpine central Europe",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": [
+        "R003"
+      ]
+    },
+    {
+      "id": "WEI58-08-005",
+      "chapter": 8,
+      "page": 97,
+      "title": "Priest-blessed Christmas candle displayed at meal",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "BLESSING_CUSTOM",
+      "geo": "Polish/Ukrainian/Russian homes",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-08-019",
+      "chapter": 8,
+      "page": 106,
+      "title": "St Barbara's December 4 cherry blossom branches",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "FEAST_DAY_HOUSEHOLD",
+      "geo": "Czech, Slovak, Austrian homes",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-08-025",
+      "chapter": 8,
+      "page": 111,
+      "title": "St Stephen Boxing Day alms to poor",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "CHARITY_CUSTOM",
+      "geo": "Medieval English Catholic churches",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-08-026",
+      "chapter": 8,
+      "page": 111,
+      "title": "Christ Child gift-bearer and prayer before opening gifts",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "FAMILY_CUSTOM",
+      "geo": "Germany/Austria/France/Canada/Spain/Latin America",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": [
+        "R005"
+      ]
+    },
+    {
+      "id": "WEI58-08-028",
+      "chapter": 8,
+      "page": 113,
+      "title": "St Nicholas Eve visit carried in Dutch diaspora",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "SAINTS_FAMILY_CUSTOM",
+      "geo": "Netherlands / New York",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": [
+        "R005"
+      ]
+    },
+    {
+      "id": "WEI58-09-002",
+      "chapter": 9,
+      "page": 117,
+      "title": "Ukrainian kutia wheat and honey Christmas Eve meal",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "CHRISTMAS_MEAL",
+      "geo": "Ukraine",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-09-006",
+      "chapter": 9,
+      "page": 117,
+      "title": "French Pain calendau Christmas loaf share with poor",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "CHARITY_FOOD",
+      "geo": "Provence/southern France",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-10-002",
+      "chapter": 10,
+      "page": 123,
+      "title": "Twelve Christmas nights as devotional domestic evenings",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "HOUSEHOLD_DEVOTION",
+      "geo": "Central and Eastern Europe",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-10-006",
+      "chapter": 10,
+      "page": 124,
+      "title": "Roman Ara Coeli Santo Bambino children's devotions",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "SHRINE_DEVOTION",
+      "geo": "Rome, Italy",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-10-010",
+      "chapter": 10,
+      "page": 129,
+      "title": "St Stephen blessing of horses",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "MINISTERIAL_BLESSING",
+      "geo": "Rural Catholic Europe, December 26",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-11-006",
+      "chapter": 11,
+      "page": 139,
+      "title": "New Year rosary around midnight",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "FAMILY_DEVOTION",
+      "geo": "Central European Catholic rural households",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-11-007",
+      "chapter": 11,
+      "page": 139,
+      "title": "Father blesses family on Jan 1",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "PARENTAL_BLESSING",
+      "geo": "France and French Canada",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-12-005",
+      "chapter": 12,
+      "page": 148,
+      "title": "Annual Epiphany announcement of Easter and movable feasts",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "CALENDAR_PROCLAMATION",
+      "geo": "Historic cathedrals / Roman tradition",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-12-007",
+      "chapter": 12,
+      "page": 149,
+      "title": "Latin Roman Ritual Epiphany water blessing",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "MINISTERIAL_BLESSING",
+      "geo": "Latin Roman rite, historical",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": [
+        "R004"
+      ]
+    },
+    {
+      "id": "WEI58-12-008",
+      "chapter": 12,
+      "page": 149,
+      "title": "Epiphany water taken home by faithful",
+      "triage": "ENRICH",
+      "priority": "P1",
+      "kind": "HOUSEHOLD_SACRAMENTAL",
+      "geo": "Latin Roman rite, locally practiced",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": [
+        "R004"
+      ]
+    },
+    {
+      "id": "WEI58-12-009",
+      "chapter": 12,
+      "page": 150,
+      "title": "Priestly Epiphany home blessing",
+      "triage": "ENRICH",
+      "priority": "P1",
+      "kind": "MINISTERIAL_BLESSING",
+      "geo": "Latin Roman rite, locally offered",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": [
+        "R004"
+      ]
+    },
+    {
+      "id": "WEI58-12-019",
+      "chapter": 12,
+      "page": 153,
+      "title": "French Magi cake donations for education of poor child",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "CHARITY_FOOD",
+      "geo": "France historic",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": [
+        "R019"
+      ]
+    },
+    {
+      "id": "WEI58-13-003",
+      "chapter": 13,
+      "page": 157,
+      "title": "Shrove Tuesday confession before Ash Wednesday",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "SACRAMENTAL_PREPARATION",
+      "geo": "Medieval western Catholic Europe",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-13-017",
+      "chapter": 13,
+      "page": 166,
+      "title": "Shrove Tuesday pancakes and pre-Lenten food usage",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "FESTIVE_FOOD",
+      "geo": "England",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-13-020",
+      "chapter": 13,
+      "page": 167,
+      "title": "Forty Hours before Lent in carnival regions",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "EUCHARISTIC_DEVOTION",
+      "geo": "Roman Catholic Europe and America",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-14-009",
+      "chapter": 14,
+      "page": 176,
+      "title": "Lenten Hunger Cloth sanctuary veil",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "HISTORICAL_CHURCH_CUSTOM",
+      "geo": "England, France, Germany (medieval)",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-14-012",
+      "chapter": 14,
+      "page": 178,
+      "title": "Mothering Sunday journey to mother church",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "REGIONAL_CHURCH_CUSTOM",
+      "geo": "England, later secularised",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-14-013",
+      "chapter": 14,
+      "page": 178,
+      "title": "Mothering Sunday visiting parents with simnel cake",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "FAMILY_CHARITY",
+      "geo": "England",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-14-020",
+      "chapter": 14,
+      "page": 183,
+      "title": "Lenten parish mission before Easter confession",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "PENITENTIAL_PRACTICE",
+      "geo": "France, Italy, Spain, Europe",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-14-022",
+      "chapter": 14,
+      "page": 184,
+      "title": "Lenten pretzels as folded arms in prayer",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "FOOD_SYMBOL",
+      "geo": "Roman/European historical explanation",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-14-023",
+      "chapter": 14,
+      "page": 184,
+      "title": "Pretzels distributed to poor in Lent",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "ALMSGIVING_CUSTOM",
+      "geo": "Central Europe",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-14-026",
+      "chapter": 14,
+      "page": 185,
+      "title": "French Canadian Mi-Carême meal and gathering",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "REGIONAL_FAMILY_CUSTOM",
+      "geo": "France and French Canada",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-15-002",
+      "chapter": 15,
+      "page": 188,
+      "title": "Holy Week house-cleaning before Sacred Triduum",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "HOUSEHOLD_CUSTOM",
+      "geo": "Poland and other Catholic European countries",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-15-005",
+      "chapter": 15,
+      "page": 190,
+      "title": "Palm Sunday cemetery visits during procession",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "REGIONAL_CEMETERY",
+      "geo": "France and England (reported historical)",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": [
+        "R013"
+      ]
+    },
+    {
+      "id": "WEI58-15-008",
+      "chapter": 15,
+      "page": 192,
+      "title": "Blessed palms as reconciliation and peace between neighbours",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "HOUSEHOLD_PENANCE",
+      "geo": "Traditional Catholic localities",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": [
+        "R013"
+      ]
+    },
+    {
+      "id": "WEI58-15-025",
+      "chapter": 15,
+      "page": 201,
+      "title": "Spanish and Latin American Calvary and entombment processions",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "REGIONAL_PROCESSION",
+      "geo": "Spain Latin America",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-15-028",
+      "chapter": 15,
+      "page": 203,
+      "title": "Hooded Holy Week confraternity processions",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "REGIONAL_PROCESSION",
+      "geo": "Spain Italy Malta Latin America",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-15-030",
+      "chapter": 15,
+      "page": 205,
+      "title": "Good Friday voluntary silence and minimal food",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "REGIONAL_PENANCE",
+      "geo": "Ireland, Central Europe",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": [
+        "R028"
+      ]
+    },
+    {
+      "id": "WEI58-15-032",
+      "chapter": 15,
+      "page": 206,
+      "title": "Good Friday hot cross buns",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "SEASONAL_FOOD",
+      "geo": "England and Ireland",
+      "p1_source_disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-15-035",
+      "chapter": 15,
+      "page": 207,
+      "title": "Holy Saturday family egg dyeing and festive baking",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "HOUSEHOLD_FESTIVE",
+      "geo": "Central Europe",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": [
+        "R012",
+        "R025"
+      ]
+    },
+    {
+      "id": "WEI58-16-005",
+      "chapter": 16,
+      "page": 212,
+      "title": "Surrexit Dominus vere Easter greeting",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "SEASONAL_GREETING",
+      "geo": "Early Latin Christian practice",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-16-014",
+      "chapter": 16,
+      "page": 217,
+      "title": "Bringing home blessed Easter fire by lantern",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "DOMESTIC_SACRAMENTAL",
+      "geo": "Some central European Catholic regions",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-16-020",
+      "chapter": 16,
+      "page": 220,
+      "title": "Maltese running procession of Resurrection image",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "REGIONAL_PROCESSION",
+      "geo": "Malta, Weiser 1958",
+      "p1_source_disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-16-022",
+      "chapter": 16,
+      "page": 221,
+      "title": "Easter walk with cross and prayer",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "FAMILY_OUTING",
+      "geo": "Germany/Austria and rural Europe",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-16-024",
+      "chapter": 16,
+      "page": 221,
+      "title": "Easter open house and family visits",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "FESTIVE_HOUSEHOLD",
+      "geo": "European Catholic and wider Christian homes",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-16-029",
+      "chapter": 16,
+      "page": 223,
+      "title": "Easter Monday visit to grandparents",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "FAMILY_CUSTOM",
+      "geo": "French Canada",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    },
+    {
+      "id": "WEI58-16-031",
+      "chapter": 16,
+      "page": 225,
+      "title": "Easter Friday pilgrimage to nearby shrine",
+      "triage": "CANDIDATE",
+      "priority": "P1",
+      "kind": "REGIONAL_PILGRIMAGE",
+      "geo": "Austria Germany and other Europe",
+      "p1_source_disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "regional_group_refs": []
+    }
+  ],
+  "open_gates": [
+    "The 42-row master is the known identity baseline, not a certified exhaustive customs count.",
+    "The 568 historical observations remain unverified for current local practice unless an independent witness is attached.",
+    "All moving dates, transfers, precedence and regional events must be resolved by authoritative calendar/local sources before user-facing scheduling.",
+    "The 54-draft owner reconciliation is a focused subset; it did not complete all 286 identity/variant reviews.",
+    "No interface decisions or artwork publication in this phase.",
+    "All 260 previously lacking 54-card owner decisions have a first-pass disposition. These are NOT verified final source adjudications; 42 potential distinct customs and 23 source/ritual holds remain subject to documentary review."
+  ],
+  "first_pass_summary_ref": "data/customs/master/first-pass-260-reconciliation.v1.json"
+}
