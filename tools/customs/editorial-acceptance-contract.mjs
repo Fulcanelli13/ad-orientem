@@ -2,7 +2,10 @@ import {createHash} from "node:crypto";
 import {calendarCustomArticle,CALENDAR_CUSTOM_ARTICLE_IDS} from "../../src/calendar/customs-read-model.js";
 const COPY_FIELDS=["title","description","history","meaning","practice","caution","scope","occasion"];
 export {COPY_FIELDS};
-export const publishedIds=()=>[...CALENDAR_CUSTOM_ARTICLE_IDS];
+// Legacy 35-article editorial manifest is not authorization for two new texts.
+// Separate new-release approval must be recorded before expanding this manifest.
+const POST_BASELINE_CANDIDATES=new Set(["EPIP-003","DOM-014"]);
+export const publishedIds=()=>CALENDAR_CUSTOM_ARTICLE_IDS.filter(id=>!POST_BASELINE_CANDIDATES.has(id));
 export function articleFor(id){return calendarCustomArticle(id);}
 export function fingerprint(id,part){
   const article=articleFor(id);
