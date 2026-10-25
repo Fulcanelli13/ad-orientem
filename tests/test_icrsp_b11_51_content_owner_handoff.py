@@ -31,7 +31,7 @@ class ThemeHandoff(unittest.TestCase):
         self.assertEqual(old|new,{r["articleId"] for r in b10})
         self.assertTrue(all(len(r["observedTopic"])>=25 and
                             r["readingCoverage"].startswith("AT_LEAST_ONE_SUBSTANTIVE")
-                            and r["rightsToRepublish"]=="NOT_CLEARED"
+                            and r["translationRightsCleared"] is False
                             and r["publicationApproved"] is False
                             for r in b11))
 
