@@ -64,6 +64,19 @@ try{
          markup:(slot?.innerHTML||"").slice(0,500)};
      });
      console.log("QUIET_TODAY_ART "+width+"px "+JSON.stringify(artwork));
+     // Remote image failure and pending loads must never leave an orphan
+     // attribution panel visible without its reviewed painting.
+     if(!artwork.imageLoaded){
+       assert.equal(artwork.missing,true,
+         "Today retained a non-loaded painting as approved visible art: "+JSON.stringify(artwork));
+       const orphanCredit=await page.evaluate(()=>{
+         const hero=document.querySelector(".homeScreen .aoTodayV2Frontispiece");
+         const caption=hero?.querySelector(".aoProperArt figcaption");
+         return caption?caption.getBoundingClientRect().height:0;
+       });
+       assert.equal(orphanCredit,0,
+         "Today showed an artwork credit without its painting");
+     }
      const visual=await page.evaluate(()=>{
        const date=document.querySelector(".homeScreen .aoTodayEditorialDate");
        const pending=[...document.querySelectorAll(".homeScreen .aoSaintArtPlaceholder")];
