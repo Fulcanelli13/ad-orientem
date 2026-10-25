@@ -252,10 +252,10 @@ try{
     // Walk every liturgical card in source order, not merely selected screenshots.
     // A local second Confiteor is present in source audit, but absent from
     // the default navigation path unless explicitly requested.
-    const walked=await page.evaluate(()=>{
+    const walked=await page.evaluate(expectedByCue=>{
       const api=window.__AO_PHONE_PREVIEW;
       const optionalTitle="Second Confiteor · Optional Local Custom";
-      const skipped=[],visited=[],defects=[];
+      const skipped=[],visited=[],defects=[],rubricSeen=new Set(),rubricPrinted=new Set();
       const optional=api.model.cards.find(c=>c.title===optionalTitle);
       for(const card of api.model.cards){
         const shown=api.showSequence(card.sequence);
@@ -292,6 +292,25 @@ try{
         }
         if(shell && shell.scrollWidth>shell.clientWidth+3)defects.push("overflow "+card.title);
         if(!/^[0-9]+ \/ [0-9]+$/.test(progress??""))defects.push("invalid progress "+card.title+": "+progress);
+        if(width===390&&lang==="en"&&!secondConfiteor){
+          for(const paragraph of card.paragraphs){
+            const ids=[...new Set((paragraph.sourceCueIds??[])
+              .flatMap(cueId=>expectedByCue[cueId]??[])
+              .map(event=>event.id))];
+            if(!ids.length)continue;
+            const row=domRows.find(node=>node.dataset.paragraphId===paragraph.id);
+            for(const id of ids){
+              const held=[...(row?.querySelectorAll("[data-rubric-id],[data-rubric-ids]")??[])]
+                .some(node=>node.dataset.rubricId===id||
+                  node.dataset.rubricIds?.split(" ").includes(id));
+              if(held)rubricSeen.add(id);
+              else if(paragraph.kind==="RUBRIC"||/^\s*\[/.test(String(paragraph.primary??"")))
+                rubricPrinted.add(id);
+              else defects.push("Missing published 1962 rubric "+id+" at "+card.title+
+                " / "+paragraph.id);
+            }
+          }
+        }
         visited.push({title:card.title,progress,sequence:card.sequence});
       }
       const finalProgress=document.querySelector('[data-role="progress"]')?.textContent?.trim();
@@ -305,8 +324,16 @@ try{
           defects.push("next from Communion Confiteor boundary navigates incorrectly");
         }
       }
-      return {visited,skipped,defects,finalProgress,optionalSeq:optional?.sequence??null};
-    });
+      return {visited,skipped,defects,finalProgress,optionalSeq:optional?.sequence??null,rubricSeen:[...rubricSeen],rubricPrinted:[...rubricPrinted]};
+    },publishedByCue);
+    if(width===390&&lang==="en"&&!secondConfiteor){
+      const recovered=[...new Set([...walked.rubricSeen,...walked.rubricPrinted])].sort();
+      assert.deepEqual(recovered,priestRubricIds,
+        "Published 1962 priest rubric source IDs missing in actual 65-card LIVE DOM");
+      console.log("PASS 1962 LIVE rubric DOM: "+walked.rubricSeen.length+
+        " explicit source-linked annotations, "+walked.rubricPrinted.length+
+        " source-printed directions; "+recovered.length+" approved priest IDs accounted for");
+    }
     const expectedVisible=secondConfiteor?65:64;
     assert.equal(walked.visited.length,expectedVisible,
       "The optional local Confiteor must not be shown by default");
