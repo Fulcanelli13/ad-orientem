@@ -4,10 +4,22 @@ import {mkdir,readFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {publishedMissalRubricsForParagraph} from "../src/mass/reader-missal-rubrics.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/curated65-phone");
 await mkdir(out,{recursive:true});
+const rubrics=JSON.parse(await readFile(resolve(root,"data/presentation/reader-rubric-events.v1.json"),"utf8"));
+const priestRubricIds=rubrics.items.filter(x=>x.actor==="PRIEST"&&x.kind!=="BELL")
+  .map(x=>x.id).sort();
+const publishedByCue=Object.fromEntries(
+  [...new Set(rubrics.items.map(x=>x.cueId))].map(cueId=>[
+    cueId,publishedMissalRubricsForParagraph({
+      id:cueId,kind:"TEXT",primary:"",sourceCueIds:[cueId]
+    },rubrics,{form:"MISSA_CANTATA_SIMPLE",language:"en"})
+      .map(row=>({id:row.id,kind:row.kind}))
+  ])
+);
 const mime={
   ".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
   ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
