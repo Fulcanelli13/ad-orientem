@@ -508,7 +508,7 @@ const SHELL_STYLE = `
 .ao-schola-resize{position:absolute;top:0;left:25%;right:25%;height:10px;cursor:ns-resize;touch-action:none}
 .ao-schola-resize:before{content:"";position:absolute;left:50%;top:3px;width:34px;height:2px;border-radius:2px;background:color-mix(in srgb,var(--ao-mass-accent) 28%,transparent);transform:translateX(-50%)}
 .ao-schola-title{display:flex;align-items:center;gap:8px;min-height:21px;padding-right:54px}
-.ao-schola-title .ao-icon-mask{width:32px;height:32px;flex:0 0 32px;color:var(--ao-mass-accent-text)}
+.ao-schola-title .ao-icon-mask{width:36px;height:36px;flex:0 0 36px;color:var(--ao-mass-accent-text);transform:scale(1.06)}
 .ao-schola-kicker{font:700 8.5px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em;text-transform:uppercase;color:var(--ao-mass-accent-text)}
 .ao-schola-page{font:700 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--ao-mass-accent-text)}
 .ao-schola-status{font:600 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.06em;color:#9aa79b}
