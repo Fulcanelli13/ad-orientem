@@ -1,4 +1,4 @@
-import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
+import {LIVE,RELEASES} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
@@ -20,7 +20,8 @@ assert.equal(r93.published_new.length,11);
 assert.equal(r93.country_areas_added.length,11);
 assert.equal(new Set(r93.published_new.map(x=>x.country)).size,11);
 assert.equal(geo.places.length,LIVE.places);
-assert.equal(geo.geoAreas.length,130+r93.country_areas_added.length);
+assert.equal(130+r93.country_areas_added.length,141,"R93 original first-presence area milestone is frozen");
+assert.equal(geo.geoAreas.length,LIVE.areas,"Current geography may grow after R93");
 assert.equal(src.sources.length,LIVE.sources);
 assert.equal(new Set(geo.places.map(x=>x.place_id)).size,geo.places.length);
 assert.equal(new Set(src.sources.map(x=>x.id)).size,src.sources.length);
@@ -33,7 +34,8 @@ assert.equal(assertShrinesPilgrimagesRegistry({...shrines,sources:src.sources,pl
 const byPlace=new Map(geo.places.map(x=>[x.place_id,x]));
 const bySource=new Map(src.sources.map(x=>[x.id,x]));
 const releaseIds=new Set(r93.published_new.map(x=>x.place_id));
-const laterPlaceIds=new Set([...laterP28.published_new,...laterP30.published_new,...laterP31.published_new].map(x=>x.place_id));
+const laterPlaceIds=new Set(RELEASES.flatMap(r=>(r.data.published_new||[]).map(x=>x.place_id)));
+assert.ok(laterPlaceIds.size>=laterP28.published_new.length+laterP30.published_new.length+laterP31.published_new.length);
 const earlier=geo.places.filter(x=>!releaseIds.has(x.place_id)&&!laterPlaceIds.has(x.place_id));
 // R93 first-presence means empty before R93, not empty after subsequent P28 publication.
 const usedCountries=new Set(earlier.map(x=>x.address.country_code));
