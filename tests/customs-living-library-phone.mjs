@@ -46,7 +46,7 @@ try{
     assert.equal(response.research,568);
     const rootLocator=page.locator("#ao-customs-library-root");
     await rootLocator.waitFor({state:"visible"});
-    assert.equal(await page.locator('[data-cust-id]').count(),26,"year partition must include exactly 26 customs");
+    assert.equal(await page.locator('[data-cust-id]').count(),28,"year partition includes the 26 legacy and two new dated customs");
     assert.equal(await page.locator('[data-cust-view="year"][aria-current="page"]').count(),1);
     const geometry=await rootLocator.evaluate(el=>({width:el.clientWidth,scrollWidth:el.scrollWidth,viewport:innerWidth,buttons:[...el.querySelectorAll("button")].filter(b=>b.getBoundingClientRect().height<43).map(b=>b.outerHTML.slice(0,100))}));
     assert.ok(geometry.scrollWidth<=geometry.width+3&&geometry.width<=geometry.viewport+3,"horizontal overflow in "+language+" "+width+": "+JSON.stringify(geometry));
@@ -58,7 +58,7 @@ try{
     assert.match(await rootLocator.textContent(),/CONTEXT|Contexte|contextuel|historiqu/i,"context-only record warning must be visible");
     await page.locator("[data-cust-back]").click();
     await page.locator('[data-cust-view="all"]').click();
-    assert.equal(await page.locator('[data-cust-id]').count(),38,"complete canonical collection available");
+    assert.equal(await page.locator('[data-cust-id]').count(),40,"complete canonical collection contains 40 identities");
     await page.locator('[data-cust-id="BLSS-002"]').click();
     const details=await rootLocator.textContent();
     assert.ok(details.includes(language==="fr"?"Assomption : bénédiction des herbes":"Assumption — blessing of herbs"),"language-specific title missing");
