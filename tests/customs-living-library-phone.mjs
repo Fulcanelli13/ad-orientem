@@ -59,6 +59,30 @@ try{
     await page.locator("[data-cust-back]").click();
     await page.locator('[data-cust-view="all"]').click();
     assert.equal(await page.locator('[data-cust-id]').count(),40,"complete canonical collection contains 40 identities");
+    // Confirm the two release candidates render as actual, source-linked,
+    // bilingual Customs folios, not merely as counts in the source registry.
+    for(const id of ["EPIP-003","CRIB-001"]){
+      const article=calendarCustomArticle(id);
+      assert.ok(article,"Candidate missing from Calendar article owner: "+id);
+      await page.locator('[data-cust-id="'+id+'"]').click();
+      const folio=page.locator(".aoCustArticle");
+      await folio.waitFor({state:"visible"});
+      const copy=await folio.textContent();
+      assert.ok(copy.includes(article.title[language]),id+" missing localized title");
+      assert.ok(copy.includes(article.caution[language]),id+" missing exact approved-boundary caution");
+      assert.ok(copy.includes(article.history[language]),id+" missing complete historical-source attribution");
+      assert.ok(await folio.locator("a[href^='https://']").count()>=2,id+" must have inspectable sources");
+      if(id==="EPIP-003")assert.match(copy,language==="fr"?/prêtre|sacerdotale/i:/priest|Roman Ritual/i,
+        "Epiphany lay/priest distinction missing");
+      if(id==="CRIB-001"){
+        assert.match(copy,/1962/,"Crib custom must not redefine 1962 Christmastide");
+        assert.match(article.history.en,/in churches/,"Church-crib reference misattributed to households");
+      }
+      await page.screenshot({path:resolve(capture,id.toLowerCase()+"-"+language+"-"+width+".png"),fullPage:false});
+      await page.locator("[data-cust-back]").click();
+      assert.equal(await page.locator('[data-cust-id="'+id+'"]').count(),1,"Returning from custom lost catalogue identity");
+    }
+
     await page.locator('[data-cust-id="BLSS-002"]').click();
     const details=await rootLocator.textContent();
     assert.ok(details.includes(language==="fr"?"Assomption : bénédiction des herbes":"Assumption — blessing of herbs"),"language-specific title missing");
