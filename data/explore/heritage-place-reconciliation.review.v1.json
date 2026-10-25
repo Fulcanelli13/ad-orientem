@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 449,
+    "places": 457,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 190,
+    "places_without_direct_claim": 198,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -113,13 +113,18 @@
       "place:IN:st-andrews-basilica-arthunkal",
       "place:IN:st-thomas-mount-shrine-chennai",
       "place:IS:christ-king-cathedral-reykjavik",
+      "place:IT:basilica-maria-consolazione-reggio-calabria",
+      "place:IT:basilica-santa-cristina-bolsena",
       "place:IT:basilica-santa-margherita-cortona",
+      "place:IT:basilica-santa-maria-degli-angeli-assisi",
       "place:IT:basilica-santa-maria-maggiore-bergamo",
+      "place:IT:basilica-santuario-madonna-tindari",
       "place:IT:cattedrale-santa-maria-del-fiore-firenze",
       "place:IT:duomo-siena",
       "place:IT:madonna-neve-rocchetta-bergamo",
       "place:IT:santuario-beata-vergine-neve-foppolo",
       "place:IT:santuario-francescano-la-verna",
+      "place:IT:santuario-madonna-della-corona",
       "place:IT:santuario-madonna-delle-lacrime-siracusa",
       "place:IT:santuario-madonna-san-luca-bologna",
       "place:IT:santuario-monte-berico-vicenza",
@@ -152,6 +157,8 @@
       "place:MN:saints-peter-paul-cathedral-ulaanbaatar",
       "place:MP:our-lady-mount-carmel-cathedral-saipan",
       "place:MQ:cathedrale-saint-louis-fort-de-france",
+      "place:MT:basilica-our-lady-mount-carmel-valletta",
+      "place:MT:basilica-st-paul-rabat",
       "place:MT:santwarju-madonna-mellieha",
       "place:MU:marie-reine-de-la-paix-port-louis",
       "place:MU:saint-louis-cathedral-port-louis",
@@ -209,6 +216,7 @@
       "place:TZ:st-joseph-cathedral-dar-es-salaam",
       "place:UA:mother-god-zarvanytsia-basilica",
       "place:US:baltimore-basilica-assumption",
+      "place:US:our-lady-victory-basilica-lackawanna",
       "place:US:sacred-heart-shrine-hales-corners",
       "place:UY:santuario-nuestra-senora-del-carmen-carmelo",
       "place:UZ:sacred-heart-cathedral-tashkent",
@@ -2904,6 +2912,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IT:basilica-maria-consolazione-reggio-calabria",
+      "display_name": "Basilica di Maria SS.ma della Consolazione, Eremo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IT:basilica-san-domenico-bologna",
       "display_name": "Basilica di San Domenico, Bologna",
       "record_ids": {
@@ -2990,8 +3004,20 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IT:basilica-santa-cristina-bolsena",
+      "display_name": "Basilica di Santa Cristina, Bolsena",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IT:basilica-santa-margherita-cortona",
       "display_name": "Basilica di Santa Margherita da Cortona",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:basilica-santa-maria-degli-angeli-assisi",
+      "display_name": "Basilica Papale di Santa Maria degli Angeli in Porziuncola",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -3015,6 +3041,12 @@
           "relic:IT:rita-cascia"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:basilica-santuario-madonna-tindari",
+      "display_name": "Basilica Santuario Maria SS. del Tindari",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3513,6 +3545,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IT:santuario-madonna-della-corona",
+      "display_name": "Santuario Madonna della Corona",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IT:santuario-madonna-delle-lacrime-siracusa",
       "display_name": "Basilica Santuario della Madonna delle Lacrime, Siracusa",
       "record_ids": {},
@@ -3913,6 +3951,18 @@
     {
       "place_id": "place:MQ:cathedrale-saint-louis-fort-de-france",
       "display_name": "Cathédrale Saint-Louis, Fort-de-France",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MT:basilica-our-lady-mount-carmel-valletta",
+      "display_name": "Basilica of Our Lady of Mount Carmel, Valletta",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MT:basilica-st-paul-rabat",
+      "display_name": "Basilica Collegiate Church of Saint Paul, Rabat",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -5180,6 +5230,12 @@
           "att:DEV-010:MIRACULOUS-MEDAL-PHILADELPHIA"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:our-lady-victory-basilica-lackawanna",
+      "display_name": "Our Lady of Victory National Shrine and Basilica",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
