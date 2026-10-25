@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {SACRED_HEART_DEVOTIONS_V382} from "../src/pray/traditional-pray-data.js";
 import {christKingStages,CHRIST_KING_OPTION_DEFAULTS,CHRIST_KING_CONSECRATION,CHRIST_KING_ROYAL_PRAISES,CHRIST_KING_EXTRA_STAGES,CHRIST_KING_WITNESSES} from "../src/pray/christ-king-benediction.js";
 const canonical=[["exposition"],["adoration"],["hymn"],["prayer"],["blessing"],["praises"],["reposition"]];
 const ids=stages=>stages.map(s=>s[0]);
@@ -28,4 +29,16 @@ assert.match(runtime,/BEN.step===benStages\(\).length-1/);
 assert.match(runtime,/CHRIST_KING_WITNESSES.consecrationFrench/);
 assert.match(runtime,/CHRIST_KING_WITNESSES.consecrationEnglish/);
 assert.match(runtime,/BEN=\{step:0,divinePraises:false,celebration:'ordinary'/);
+
+const existingSacredHeartLitany=SACRED_HEART_DEVOTIONS_V382.litany;
+for(const [lang,term] of [["en","Heart of Jesus,"],["fr","Cœur de Jésus,"],["la","Cor Iesu,"]]){
+ const full=existingSacredHeartLitany[lang];
+ assert.ok(full&&full.split(term).length-1===33,"Existing canonical Sacred Heart litany must contain exactly 33 invocations in "+lang);
+ assert.equal(full.split(String.fromCharCode(10)).filter(Boolean).length,49,"Full litany includes opening, 33 invocations and closing oration");
+}
+assert.match(runtime,/benFeastPrayer\(SACRED_HEART_DEVOTIONS_V382\.litany/);
+assert.match(runtime,/CHRIST_KING_WITNESSES\.christKingOrdo/);
+assert.equal(CHRIST_KING_WITNESSES.sacredHeartLitany,"https://www.icrsp.org/Litanies-Sacre-Coeur");
+assert.equal(CHRIST_KING_WITNESSES.christKingOrdo,"https://icrspfrance.fr/ordo.php?d=2026-10-01");
+
 console.log("PASS Christ King opt-in composition, source-backed three-language consecration and unchanged ordinary Benediction");
