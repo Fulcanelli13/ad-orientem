@@ -1342,6 +1342,20 @@ function paint(){
   const hadDisciplineFocus=Boolean(oldDiscipline?.querySelector("summary")?.contains(globalThis.document?.activeElement));
   const active=globalThis.document?.activeElement,existing=body.querySelector("[data-cal-input]"),editing=active===existing,value=editing?existing.value:null,start=editing?existing.selectionStart:null,end=editing?existing.selectionEnd:null;
   body.innerHTML=bodyMarkup();
+  // Remote Commons previews are not bundled offline: fail closed to the cited
+  // artwork identity and source rather than leaving a broken-image icon.
+  body.querySelectorAll(".aoClassIApprovedHero img").forEach(img=>{
+    img.addEventListener("error",()=>{
+      const figure=img.closest(".aoClassIApprovedHero");
+      if(!figure||!img.isConnected)return;
+      const fallback=globalThis.document.createElement("div");
+      fallback.className="aoClassIHeld";fallback.setAttribute("role","note");
+      fallback.textContent=L("Image unavailable offline — artwork selection preserved",
+        "Image indisponible hors ligne — choix de l’œuvre conservé");
+      img.replaceWith(fallback);
+      figure.dataset.aoImageStatus="REMOTE_PREVIEW_FAILED";
+    },{once:true});
+  });
   if(wasDisciplineOpen){
     const next=body.querySelector(".aoCalPracticeDiscipline");
     if(next){next.open=true;if(hadDisciplineFocus)next.querySelector("summary")?.focus?.({preventScroll:true})}
