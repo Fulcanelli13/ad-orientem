@@ -38,6 +38,30 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
    assert.ok(rows[0].publishedMissalRubrics[0].displayText.startsWith(language==="fr"?"Le prêtre":"The priest"));
  }
 }
+// Exhaustively reconcile the frozen published Ritus registry, not just five
+// illustrative cues. Server-owned bell events must never become priest rubrics.
+const priestRubrics=registry.items.filter(x=>x.actor==="PRIEST"&&x.kind!=="BELL");
+const servers=registry.items.filter(x=>x.actor==="SERVER");
+assert.equal(registry.items.length,57);
+assert.equal(priestRubrics.length,54);
+assert.equal(servers.length,3);
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+ const projected=new Map();
+ for(const cueId of new Set(priestRubrics.map(x=>x.cueId))){
+  for(const row of published(cueId,{form}))projected.set(row.id,row);
+ }
+ const withheld=form==="SOLEMN"
+  ? new Set(["AO.RUB.C0115.03","AO.RUB.C0181.04"])
+  : new Set();
+ const expected=priestRubrics.map(x=>x.id).filter(id=>!withheld.has(id)).sort();
+ assert.deepEqual([...projected.keys()].sort(),expected,
+  form+" must retain every approved priest rubric exactly at its source cue");
+ for(const x of projected.values()){
+  assert.equal(x.sourceCueId,registry.items.find(item=>item.id===x.id).cueId);
+  assert.equal(x.sourceId,"MR62_RITUS");
+  assert.equal(x.observedNow,false);
+ }
+}
 assert.equal(published("AO.SM.C0174",{form:"REQUIEM"}).length,0);
 assert.equal(published("AO.SM.C0190").length,0,"Unverified Canon cross offset must remain withheld");
 assert.equal(published("AO.SM.C9999").length,0);
