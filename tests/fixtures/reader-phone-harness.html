@@ -46,8 +46,13 @@ const readerChantSourceProof=separatelyNamedChants?{
     {kind:altKind,sourceSectionId:altSection,sourceRef:"Sancti/10-07:"+altSection,...altSource},
   ],
 }:null;
+// Test-only source-proof flags for selected Mass days without Gloria/Credo.
+const fixtureGloria=params.get("gloria")==="0"?false:params.get("gloria")==="1"?true:null;
+const fixtureCredo=params.get("credo")==="0"?false:params.get("credo")==="1"?true:null;
 const proper={
   sourcePath:"Sancti/10-07",
+  ...(fixtureGloria!==null?{hasGloria:fixtureGloria,showGloria:fixtureGloria}:{}),
+  ...(fixtureCredo!==null?{hasCredo:fixtureCredo,showCredo:fixtureCredo}:{}),
   ...(separatelyNamedChants?{readerChantSourceProof}:{}),
   introit:t("Gaudeámus omnes in Dómino","Let us all rejoice in the Lord","Réjouissons-nous ensemble dans le Seigneur"),
   collects:[t("Deus, cuius Unigénitus","O God, whose only-begotten Son","Ô Dieu, dont le Fils unique")],
@@ -106,6 +111,8 @@ const resolvedMass={
   followingActions,
   distinctRite:withGoodFriday?"GOOD_FRIDAY":withEasterVigil?"EASTER_VIGIL":null,
   provenance:{seasonalMode:null,
+    ...(fixtureGloria!==null?{gloria:fixtureGloria}:{}),
+    ...(fixtureCredo!==null?{credo:fixtureCredo}:{}),
     ...(following==="requiem"?{requiemAbsolution:{
       bodyPresent:params.get("body")!=="0",
       burialProcession:params.get("burial")==="1"}}:{}),

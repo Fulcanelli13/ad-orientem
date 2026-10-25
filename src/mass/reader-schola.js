@@ -9,6 +9,8 @@ const PRIEST_INTONATION_END_CUES=new Set(["AO.SM.C0054","AO.SM.C0090"]);
 // advance within that track.
 
 const SUPPORTED_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
+const INTERLECTION_TRACKS=new Set(["GRADUAL","ALLELUIA_TRACT_SEQUENCE"]);
+const PRIEST_PRAYERS_BEFORE_COMMUNION=new Set(["AO.SM.B069","AO.SM.B070","AO.SM.B071","AO.SM.B072","AO.SM.B073"]);
 
 const TRACK_SPECS=Object.freeze([
   {id:"INTROIT",kind:"PROPER",slot:"INTROIT",cards:[1],canonicalBlockIds:["AO.SM.B014"]},
@@ -111,6 +113,7 @@ export function createNativeScholaController(args={}){
     if(segment.cueId)cueToTrack.set(segment.cueId,{trackId:track.id,index:track.segments.indexOf(segment)});
   }
   let activeTrackId=null,index=0,complete=false,lastSyncedCueId=null;
+  let lastSelectedSourceCard=null;
   // Choir setting belongs to the actual local performance. It cannot be
   // inferred from the Mass form, date, priest's paragraph or display timer.
   const normalizeStyle=v=>["GREGORIAN","POLYPHONIC"].includes(v)?v:"UNSPECIFIED";
@@ -162,6 +165,7 @@ export function createNativeScholaController(args={}){
     if(!byId.has(trackId)){activeTrackId=null;index=0;complete=false;lastSyncedCueId=null;return state()}
     if(activeTrackId!==trackId || reset){
       activeTrackId=trackId;index=0;complete=false;lastSyncedCueId=null;
+      lastSelectedSourceCard=null;
       if(trackId==="SANCTUS_BENEDICTUS")benedictusReleased=sanctusPerformance==="GREGORIAN";
     }
     return state();
@@ -173,6 +177,13 @@ export function createNativeScholaController(args={}){
     const id=String(cueId??"");
     if(id==="AO.SM.C0135" && activeTrackId==="OFFERTORY")return activate(null);
     if(id==="AO.SM.C0251" && activeTrackId==="COMMUNION")return activate(null);
+    // Gospel introduction closes the interlectional chant opportunity.
+    if(id==="AO.SM.C0082" && INTERLECTION_TRACKS.has(activeTrackId))return activate(null);
+    // The schola's Agnus window may open with the Pax response; neither this
+    // cue nor the priest's scroll advances the sung Agnus syllables.
+    if(id==="AO.SM.C0220" && byId.has("AGNUS_DEI") && activeTrackId!=="AGNUS_DEI")
+      return activate("AGNUS_DEI",{reset:false});
+    if(id==="AO.SM.C0232" && activeTrackId==="AGNUS_DEI")return activate(null);
     return state();
   }
 
@@ -206,17 +217,29 @@ export function createNativeScholaController(args={}){
     const matches=tracksForSourceCard(card);
     const current=activeTrackId?byId.get(activeTrackId):null;
     if(current&&matches.some(t=>t.id===current.id)){
-      // When a verified Alleluia/Tract and Sequence occupy separate
-      // navigable B022 paragraphs, show the exact selected paragraph;
-      // other Schola tracks still keep their independent progression.
-      if(current.id==="ALLELUIA_TRACT_SEQUENCE"){
-        const ids=new Set((card.paragraphs??[]).map(p=>String(p.id)));
-        const at=current.segments.findIndex(segment=>ids.has(segment.id));
-        if(at>=0&&at!==index){index=at;complete=false;lastSyncedCueId=null}
+      // A separately verified, navigable curated Sequence card is a real
+      // editorial *selection*, unlike a paragraph scroll on the same card.
+      // Preserve its original source-owned B022 segment when that specific
+      // card is deliberately opened; never infer segment progress from the
+      // visible paragraph inside an unchanged card or a layout repaint.
+      const selectedCard=String(card.sectionId??"");
+      if(current.id==="ALLELUIA_TRACT_SEQUENCE" &&
+         selectedCard.startsWith("AO.LIVECURATED.") &&
+         selectedCard!==lastSelectedSourceCard &&
+         (card.paragraphs??[]).length===1 &&
+         blockIds.size===1&&blockIds.has("AO.SM.B022")){
+        const paragraphId=String(card.paragraphs[0].id);
+        const at=current.segments.findIndex(segment=>segment.id===paragraphId);
+        if(at>=0){index=at;complete=false;lastSyncedCueId=null;}
       }
+      if(selectedCard)lastSelectedSourceCard=selectedCard;
       return state();
     }
-    if(matches.length)return activate(matches[0].id);
+    if(matches.length){
+      const result=activate(matches[0].id);
+      lastSelectedSourceCard=String(card.sectionId??"")||null;
+      return result;
+    }
 
     // The Introit belongs to the actual entrance, not its later printed
     // Proper (B014). The first ordinary opening prayer cards are the
@@ -243,6 +266,16 @@ export function createNativeScholaController(args={}){
     if(activeTrackId==="OFFERTORY" &&
        ["AO.CARD.010","AO.CARD.011"].includes(sourceSection))return state();
 
+    // Interlectional chant continues while the minister prepares for
+    // the Gospel; the Gospel greeting closes its window.
+    if(INTERLECTION_TRACKS.has(activeTrackId)&&blockIds.has("AO.SM.B023"))return state();
+    // Public Agnus: can begin at the commingling and continue while the
+    // priest privately prays before his own Communion. Do not synchronize.
+    if(blockIds.has("AO.SM.B067") && byId.has("AGNUS_DEI"))
+      return activate("AGNUS_DEI",{reset:false});
+    if(activeTrackId==="AGNUS_DEI"&&blockIds.size &&
+       [...blockIds].every(id=>PRIEST_PRAYERS_BEFORE_COMMUNION.has(id)))return state();
+
     // The Benedictus may continue while the priest prays silently in
     // the Canon. Keep its independent Schola clock across those cards;
     // never advance or rewind it merely because the reader is swiped.
@@ -261,9 +294,13 @@ export function createNativeScholaController(args={}){
       if(isSanctus()&&index<2)index=2;
       return state();
     }
-    // A layout refresh or unchanged cue focus must not rewind a Schola
-    // segment manually advanced within its independent track.
-    if(id===lastSyncedCueId && activeTrackId===hit.trackId)return state();
+    // The reader's prayer focus is not the Schola's sung syllable.
+    // Once a track is selected, only choir controls or independently
+    // observed musical events may move its index forward or backward.
+    if(activeTrackId===hit.trackId){
+      lastSyncedCueId=id;
+      return state();
+    }
     activeTrackId=hit.trackId;index=hit.index;complete=false;
     lastSyncedCueId=id;
     return state();
