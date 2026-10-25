@@ -179,6 +179,57 @@ try{
  assert.ok(safeLine.right<=safeLine.viewport-46,
   "Ritual gesture icon overlaps the 320px prayer text: "+JSON.stringify(safeLine));
  await page.screenshot({path:resolve(captures,"benediction-320-reposition.png"),animations:"disabled"});
+
+ // Feast-day supplements are opt-in. The ordinary 7-stage rite above remains
+ // unchanged for every other day and every other Institute/apostolate.
+ await page.setViewportSize({width:390,height:844});
+ const special=page.locator(rootSel+" [data-ao-ben-special-options]");
+ assert.equal(await special.count(),1,"Optional Christ the King settings are missing");
+ assert.equal(await special.evaluate(x=>x.open),false);
+ assert.equal(await page.locator(rootSel+" [data-p435930-ben-special='enabled']").isChecked(),false);
+ await special.locator(":scope > summary").click();
+ await page.locator(rootSel+" [data-p435930-ben-special='enabled']").check();
+ state=await snapshot();
+ assert.equal(state.stops,10,"Default Christ the King programme should add the three attested stations");
+ assert.equal(state.card,"reposition","Enabling special feast must preserve the active public rite station");
+ assert.equal(state.index,9);
+ assert.deepEqual(await page.locator(timeline+" .aoDevoStop").evaluateAll(
+  es=>es.map(x=>x.getAttribute("data-ao-devo-chapter"))),
+  ["0","1","2","3","4","5","6","7","8","9"]);
+ assert.equal(await page.locator(rootSel+" [data-p435930-ben-special='litany']").count(),0,
+  "An unsupported full Sacred Heart litany must not be advertised as loaded");
+ await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
+ assert.equal((await snapshot()).card,"procession");
+ await page.locator(timeline+" [data-ao-devo-chapter='3']").tap();
+ assert.equal((await snapshot()).card,"royal");
+ assert.match(await page.locator(rootSel+" [data-ao-christ-king-acclamations]").innerText(),/Christus vincit!/);
+ await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
+ assert.equal((await snapshot()).card,"consecration");
+ assert.match(await page.locator(rootSel+" .aoP435930Flip [data-face-v]").first().innerText(),/Most sweet Jesus/);
+ await locale.click();
+ assert.equal((await snapshot()).card,"consecration");
+ assert.match(await page.locator(rootSel+" .aoP435930Flip [data-face-v]").first().innerText(),/Très doux Jésus/);
+ const humanRaceLatin=page.locator(rootSel+" .aoP435930Flip").first();
+ await humanRaceLatin.click();
+ assert.match(await humanRaceLatin.locator("[data-face-la]").innerText(),/Iesu dulcissime, Redemptor humani generis/);
+ assert.equal(await humanRaceLatin.locator("[data-face-la]").evaluate(x=>x.hidden),false);
+ await page.screenshot({path:resolve(captures,"benediction-christ-king-consecration-fr-390.png"),animations:"disabled"});
+ await locale.click();
+ await page.locator(timeline+" [data-ao-devo-chapter='5']").tap();
+ assert.equal((await snapshot()).card,"hymn","Tantum ergo must immediately follow the last selected feast prayer");
+ // Disable only Royal Praises; other parts and the currently active hymn survive.
+ await page.locator(rootSel+" [data-p435930-ben-special='royal']").uncheck();
+ assert.equal((await snapshot()).stops,9);
+ assert.equal((await snapshot()).card,"hymn");
+ await page.locator(rootSel+" [data-p435930-ben-special='enabled']").uncheck();
+ assert.equal((await snapshot()).stops,7);
+ assert.equal((await snapshot()).card,"hymn");
+ assert.equal(await page.locator(rootSel+" [data-ao-christ-king-acclamations]").count(),0);
+ // A fresh launch is ordinary, not an automatic feast or an inherited local rubric.
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.benediction",{returnContext:null}));
+ assert.equal((await snapshot()).stops,7);
+ assert.equal(await page.locator(rootSel+" [data-p435930-ben-special='enabled']").isChecked(),false);
+
  assert.deepEqual(errors,[],"Browser exceptions: "+errors.join(" | "));
  console.log("PASS canonical seven-stage Benediction: timeline, vertical focus, horizontal swipe, conditional Praises and manual ritual pace");
  await page.close();
