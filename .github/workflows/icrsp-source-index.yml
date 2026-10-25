@@ -10,56 +10,116 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: icrsp-index-${{ github.ref }}
+  group: icrsp-readonly-index-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  metadata-only:
+  metadata-slices:
     if: github.repository == 'Fulcanelli13/ad-orientem'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { start: 200, count: 200 }
+          - { start: 400, count: 200 }
+          - { start: 600, count: 200 }
+          - { start: 800, count: 55 }
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref || github.ref_name }}
-          fetch-depth: 1
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check indexer safety tests
+      - name: Verify parser and edition guards
         run: python -m unittest discover -s tests -p 'test_icrsp_index_source_metadata.py' -v
-      - name: Index and inspect first 200 article headings (no full-text storage)
+      - name: Inspect article headings in permitted window
         run: |
           python tools/icrsp/index_source_metadata.py \
-            --inspect 200 \
-            --start 0 \
+            --inspect ${{ matrix.count }} \
+            --start ${{ matrix.start }} \
             --delay 2.5 \
             --out data/source-text/icrsp-france-index-discovery.v1.json
-      - name: Validate non-empty measured inventory
+      - name: Report observed window and errors
         run: |
           python - <<'PY'
           import json
           p = 'data/source-text/icrsp-france-index-discovery.v1.json'
-          data = json.load(open(p, encoding='utf-8'))
-          counts = data['totals']
-          assert counts['indexOccurrences'] > 0, counts
-          assert counts['uniqueArticleUrls'] > 0, counts
-          assert all(x['promotion'] == 'NONE' for x in data['pages'])
-          print('Measured discovery only:', counts)
+          d = json.load(open(p, encoding='utf-8'))
+          print('Measured counts:', d['totals'])
+          print('Scan window:', d['scanWindow'])
+          print('Failures:', d['errors'])
+          assert d['totals']['indexOccurrences'] > 0
+          assert d['totals']['uniqueArticleUrls'] > 0
+          assert all(x['promotion'] == 'NONE' for x in d['pages'])
           PY
-      - name: Persist index audit in research branch
-        env:
-          GH_BRANCH: ${{ github.head_ref || github.ref_name }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: icrsp-window-${{ matrix.start }}
+          path: data/source-text/icrsp-france-index-discovery.v1.json
+          if-no-files-found: warn
+          retention-days: 14
+
+  combine-screening:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    needs: [metadata-slices]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: icrsp-window-*
+          path: /tmp/icrsp-windows
+          merge-multiple: false
+      - name: Combine read-only results with 200 completed baseline
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/source-text/icrsp-france-index-discovery.v1.json
-          if git diff --cached --quiet; then
-            echo "No inventory differences"
-          else
-            git commit -m "research: persist measured ICRSP index discovery metadata (#1665)"
-            git push origin HEAD:"$GH_BRANCH"
-          fi
+          python - <<'PY'
+          import glob, json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          source = Path('data/source-text/icrsp-france-index-discovery.v1.json')
+          master = json.loads(source.read_text(encoding='utf-8'))
+          baseline_hash = master['indexHtmlSha256']
+          by_url = {p['sourceUrl']: p for p in master['pages']}
+          windows = [master.get('scanWindow', {})]
+          conflicts = []
+          paths = sorted(glob.glob('/tmp/icrsp-windows/**/icrsp-france-index-discovery.v1.json', recursive=True))
+          assert len(paths) == 4, f'Expected four screening reports, got {len(paths)}'
+          for path in paths:
+              doc = json.loads(Path(path).read_text(encoding='utf-8'))
+              assert doc['indexHtmlSha256'] == baseline_hash, f'Index changed for {path}'
+              assert len(doc['pages']) == len(master['pages']), f'Page count changed for {path}'
+              windows.append(doc.get('scanWindow', {}))
+              for page in doc['pages']:
+                  u = page['sourceUrl']
+                  previous = by_url[u]
+                  if page['state'] == 'METADATA_INSPECTED':
+                      if previous['state'] == 'METADATA_INSPECTED' and previous['htmlSha256'] != page['htmlSha256']:
+                          conflicts.append({'url': u, 'baseline': previous['htmlSha256'], 'incoming': page['htmlSha256']})
+                      else:
+                          by_url[u] = page
+          master['pages'] = [by_url[x['sourceUrl']] for x in master['pages']]
+          master['totals']['metadataInspected'] = sum(p['state'] == 'METADATA_INSPECTED' for p in master['pages'])
+          master['totals']['inspectionFailed'] = sum(p['state'] == 'INSPECTION_FAILED' for p in master['pages'])
+          master['totals']['indexOnly'] = sum(p['state'] == 'INDEX_ONLY' for p in master['pages'])
+          master['inspectionWindows'] = windows
+          master['shaConflicts'] = conflicts
+          master['inspectedAtUtc'] = datetime.now(timezone.utc).isoformat()
+          master['completionInterpretation'] = 'URL metadata only; no 1962 rubric, authorship, text or republication rights certified'
+          assert not conflicts, f'Conflicting article HTML fingerprints: {conflicts[:10]}'
+          out = Path('icrsp-france-index-screened.v1.json')
+          out.write_text(json.dumps(master, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print('Merged inspected:', master['totals'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-merged-855-screening
+          path: icrsp-france-index-screened.v1.json
+          if-no-files-found: error
+          retention-days: 14
