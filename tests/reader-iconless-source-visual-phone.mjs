@@ -53,12 +53,21 @@ try{
       return found?Boolean(api.showSequence(found.sequence)):false;
     },spec.cue);
     assert.ok(opened,"No canonical card for "+spec.kind+" "+spec.cue);
-    await page.locator(".ao-prayer-card").evaluate((scroller,cue)=>{
+    await page.locator(".ao-prayer-card").evaluate(async(scroller,cue)=>{
       const hit=[...scroller.querySelectorAll(".ao-reader-paragraph")].find(el=>
         el.dataset.cueId===cue || String(el.dataset.sourceCueIds??"").split(/\s+/).includes(cue));
       if(!hit)throw new Error("Source paragraph missing for "+cue);
       const a=scroller.getBoundingClientRect(),b=hit.getBoundingClientRect();
-      scroller.scrollTop=Math.max(0,b.top-a.top+scroller.scrollTop+b.height/2-scroller.clientHeight*.39);
+      const base=b.top-a.top+scroller.scrollTop+b.height/2-scroller.clientHeight*.39;
+      const max=Math.max(0,scroller.scrollHeight-scroller.clientHeight);
+      // The reader's physical 35-40% focus zone is not equivalent to the
+      // paragraph midpoint. Cross the actual source boundary in small,
+      // real scrolling steps instead of assuming one scrollTop is enough.
+      for(const delta of [0,25,50,75,100,125,150,175,200,225,-25,-50]){
+        scroller.scrollTop=Math.max(0,Math.min(max,base+delta));
+        await new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok)));
+        if(window.__AO_PHONE_PREVIEW.getActiveCue()===cue)break;
+      }
     },spec.cue);
     try{
       await page.waitForFunction(cue=>window.__AO_PHONE_PREVIEW.getActiveCue()===cue,
