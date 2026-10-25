@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {SACRED_HEART_DEVOTIONS_V382} from "../src/pray/traditional-pray-data.js";
-import {christKingStages,CHRIST_KING_OPTION_DEFAULTS,CHRIST_KING_CONSECRATION,CHRIST_KING_ROYAL_PRAISES,CHRIST_KING_EXTRA_STAGES,CHRIST_KING_WITNESSES} from "../src/pray/christ-king-benediction.js";
+import {christKingStages,CHRIST_KING_OPTION_DEFAULTS,CHRIST_KING_CONSECRATION,CHRIST_KING_ROYAL_PRAISES,CHRIST_KING_LAUDES_SECTIONS,renderRoyalPraisesWitnessText,CHRIST_KING_EXTRA_STAGES,CHRIST_KING_WITNESSES} from "../src/pray/christ-king-benediction.js";
 const canonical=[["exposition"],["adoration"],["hymn"],["prayer"],["blessing"],["praises"],["reposition"]];
 const ids=stages=>stages.map(s=>s[0]);
 assert.strictEqual(christKingStages(canonical,"ordinary"),canonical,"Ordinary source sequence identity must not change");
@@ -16,7 +16,7 @@ assert.ok(CHRIST_KING_CONSECRATION.la.startsWith("Iesu dulcissime, Redemptor hum
 assert.ok(CHRIST_KING_CONSECRATION.fr.startsWith("Très doux Jésus, Rédempteur du genre humain"));
 assert.ok(CHRIST_KING_CONSECRATION.en.startsWith("Most sweet Jesus, Redeemer of the human race"));
 for(const lang of ["en","fr","la"]){assert.ok(CHRIST_KING_CONSECRATION[lang].length>500);assert.ok(CHRIST_KING_CONSECRATION[lang].endsWith(lang==="fr"?"Ainsi soit-il.":"Amen."));}
-assert.ok(CHRIST_KING_ROYAL_PRAISES.la.includes("Christus vincit!"));
+assert.match(CHRIST_KING_ROYAL_PRAISES.la,/Christus vincit[,!]/);
 assert.ok(CHRIST_KING_WITNESSES.decree.startsWith("https://"));
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
 assert.match(runtime,/function benStages\(\)\{return christKingStages\(BEN_STAGES,BEN.celebration,BEN.feastOptions\)\}/);
@@ -29,6 +29,32 @@ assert.match(runtime,/BEN.step===benStages\(\).length-1/);
 assert.match(runtime,/CHRIST_KING_WITNESSES.consecrationFrench/);
 assert.match(runtime,/CHRIST_KING_WITNESSES.consecrationEnglish/);
 assert.match(runtime,/BEN=\{step:0,divinePraises:false,celebration:'ordinary'/);
+
+
+const royalCalls=CHRIST_KING_LAUDES_SECTIONS.map(section=>section.calls.length);
+assert.deepEqual(royalCalls,[5,3,26,14],
+ "The complete four-section Vatican witness must preserve 48 invocations");
+assert.deepEqual(CHRIST_KING_LAUDES_SECTIONS.map(x=>x.id),["church","pope","bishops","people"]);
+assert.equal(CHRIST_KING_ROYAL_PRAISES.sourceStatus,"ATTESTED_2012_WITNESS_NOT_VERIFIED_LOCAL_2026");
+assert.match(CHRIST_KING_ROYAL_PRAISES.note,/not the exact 2026 Mauritius booklet/);
+for(const locale of ["la","en","fr"]){
+ const full=CHRIST_KING_ROYAL_PRAISES[locale];
+ assert.ok(full.length>2800,"Full four-part Laudes must not collapse to a refrain: "+locale);
+ assert.equal(full,renderRoyalPraisesWitnessText(locale));
+ assert.equal(full.split(CHRIST_KING_LAUDES_SECTIONS[0].heading[locale]).length-1,1);
+ assert.equal(full.split(CHRIST_KING_LAUDES_SECTIONS[3].heading[locale]).length-1,1);
+ assert.equal(full.split("℟.").length-1>=58,true,"Missing invocation responses: "+locale);
+ assert.ok(full.includes(CHRIST_KING_LAUDES_SECTIONS[0].petition[locale]));
+ assert.ok(full.includes(CHRIST_KING_LAUDES_SECTIONS[2].petition[locale]));
+}
+assert.match(CHRIST_KING_ROYAL_PRAISES.la,/Rex regum\. ℟\. Rex noster/);
+assert.match(CHRIST_KING_ROYAL_PRAISES.la,/Tempora bona habeant/);
+assert.match(CHRIST_KING_ROYAL_PRAISES.la,/Pax Christi veniat.*Regnum Christi veniat/);
+assert.match(CHRIST_KING_ROYAL_PRAISES.la,/N\. Summo Pontifici/);
+assert.doesNotMatch(CHRIST_KING_ROYAL_PRAISES.la,/Benedicto Summo Pontifici/);
+assert.match(CHRIST_KING_WITNESSES.royalPraisesICKSPIndex,/icrsp\.org\/Livres/);
+assert.match(CHRIST_KING_WITNESSES.royalPraises,/vatican\.va\/news_services/);
+assert.match(runtime,/benFeastPrayer\(CHRIST_KING_ROYAL_PRAISES/);
 
 const existingSacredHeartLitany=SACRED_HEART_DEVOTIONS_V382.litany;
 for(const [lang,term] of [["en","Heart of Jesus,"],["fr","Cœur de Jésus,"],["la","Cor Iesu,"]]){
