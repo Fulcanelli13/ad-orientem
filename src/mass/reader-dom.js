@@ -393,6 +393,17 @@ const SHELL_STYLE = `
 @keyframes aoCueIn{0%{opacity:0;transform:scale(.78)}55%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
 .ao-rail-copy{display:none!important}
 .ao-rail-item[data-channel="priest-action"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{display:block!important;max-width:54px;font:700 7px/1.12 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;text-transform:uppercase;color:#c8d0c9;text-align:center;overflow-wrap:anywhere}
+/* When an exact LIVE source cue has no approved artwork, its icon node is
+   intentionally hidden. Never leave a lit-up empty square on the reader.
+   Preserve the source's existing cue label as a compact text-only fallback;
+   do not infer or substitute a different visual meaning. */
+.ao-reader-shell[data-mode="LIVE"] .ao-rail-item[data-channel="priest-voice"][data-active="true"]:has(.ao-icon-mask[hidden]) .ao-rail-copy,
+.ao-reader-shell[data-mode="LIVE"] .ao-rail-item[data-channel="gesture"][data-active="true"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{
+  display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:5;
+  max-width:49px;max-height:47px;overflow:hidden;overflow-wrap:anywhere;
+  font:600 8px/1.15 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:0;text-transform:none;text-align:center;color:#dee5db
+}
 /* Fallback for the two elevation tiles found blank in the final-icon capture. */
 .ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-action"][data-action-text-fallback="true"] .ao-icon-mask{display:none!important}
 .ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-action"][data-action-text-fallback="true"] .ao-rail-copy{
