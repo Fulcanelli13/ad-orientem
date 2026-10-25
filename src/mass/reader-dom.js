@@ -10,6 +10,7 @@ import { R17_DONOR_PNG_ICON_KEYS, R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader
 import { exactIconBackedRubric } from "./reader-icon-backed-rubrics.js";
 import { approvedFingerRubricArt } from "./reader-approved-finger-art.js";
 import { approvedPriestRubricGestureArt } from "./reader-approved-priest-gesture-art.js";
+import { approvedPriestHeadBowRubricArt } from "./reader-approved-priest-head-bow.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -1140,7 +1141,8 @@ button.ao-schola-control{cursor:pointer}
    existing 11 Oct approved artwork. Keep the printed rubric readable in
    MISSAL and LIVE; never place these persistent states in the action rail. */
 .ao-reader-shell .ao-approved-finger-rubric-art,
-.ao-reader-shell .ao-approved-priest-gesture-rubric-art{
+.ao-reader-shell .ao-approved-priest-gesture-rubric-art,
+.ao-reader-shell .ao-approved-priest-head-bow-rubric-art{
  display:inline-block;vertical-align:middle;flex:none;
  width:29px;height:29px;margin-inline-end:6px;
  background:var(--ao-warm,#d6caa6);
@@ -1150,6 +1152,7 @@ button.ao-schola-control{cursor:pointer}
 }
 .ao-reader-shell .ao-approved-finger-rubric-art[hidden]{display:none}
 .ao-reader-shell .ao-approved-priest-gesture-rubric-art[hidden]{display:none}
+.ao-reader-shell .ao-approved-priest-head-bow-rubric-art[hidden]{display:none}
 
 
 .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-active="true"]){opacity:.64}
@@ -3820,17 +3823,21 @@ export function createReaderDomAdapter({
                 text.textContent=short;
                 const approvedArt=approvedFingerRubricArt(event);
                 const approvedGestureArt=approvedPriestRubricGestureArt(event);
-                if(approvedArt||approvedGestureArt){
+                const approvedHeadBowArt=approvedPriestHeadBowRubricArt(event);
+                if(approvedArt||approvedGestureArt||approvedHeadBowArt){
                   // Keep each source-owned gesture/state tied to its exact
                   // published 1962 rubric: no action-rail or timing mutation.
-                  const art=approvedArt??approvedGestureArt;
+                  const art=approvedArt??approvedGestureArt??approvedHeadBowArt;
                   const icon=doc.createElement("span");
                   icon.className=approvedArt
                     ?"ao-approved-finger-rubric-art"
-                    :"ao-approved-priest-gesture-rubric-art";
+                    :approvedGestureArt
+                      ?"ao-approved-priest-gesture-rubric-art"
+                      :"ao-approved-priest-head-bow-rubric-art";
                   if(approvedArt)icon.dataset.approvedFingerEvent=event.id;
                   if(approvedGestureArt)icon.dataset.approvedPriestGestureEvent=event.id;
-                  icon.dataset.approvedAsset=art.assetId;
+                  if(approvedHeadBowArt)icon.dataset.approvedPriestHeadBowEvent=event.id;
+                  icon.dataset.approvedAsset=art.assetId??art.assetUserKey;
                   icon.setAttribute("aria-hidden","true");
                   icon.style.webkitMaskImage=`url("${art.imageUrl}")`;
                   icon.style.maskImage=`url("${art.imageUrl}")`;
