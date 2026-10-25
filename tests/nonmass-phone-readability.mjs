@@ -93,10 +93,14 @@ try{
          const c=document.querySelector(".homeScreen .aoTodayV2PrimaryMass");
          const art=document.querySelector(".homeScreen [data-ao-home-art-slot]");
          const nav=document.querySelector("#ao-global-ribbon");
-         const button=c?.getBoundingClientRect(),painting=art?.getBoundingClientRect();
+         const button=c?.getBoundingClientRect();
+         const artBox=art?.getBoundingClientRect();
+         const artVisible=!!art&&!!artBox&&artBox.width>0&&artBox.height>0
+           &&getComputedStyle(art).display!=="none"
+           &&getComputedStyle(art.closest(".aoTodayV2Art")||art).display!=="none";
          const navTop=nav?.getBoundingClientRect().top??innerHeight;
          return {buttonTop:button?.top??null,buttonBottom:button?.bottom??null,
-           paintingTop:painting?.top??null,navTop,viewport:innerHeight,
+           paintingTop:artVisible?artBox.top:null,artVisible,navTop,viewport:innerHeight,
            readable:!!c&&getComputedStyle(c).display!=="none"};
        });
        assert.ok(fold.readable&&fold.buttonTop>=0&&fold.buttonBottom<=fold.navTop-4,
