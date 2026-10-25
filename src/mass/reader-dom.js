@@ -317,17 +317,11 @@ const SHELL_STYLE = `
 .ao-ritual-cross-symbol.ao-ritual-trigger-live{animation:aoRitualCross 1.25s ease-out both}
 @keyframes aoRitualCross{0%{transform:scale(.92);filter:brightness(.8)}35%{transform:scale(1.28);filter:brightness(1.35)}100%{transform:scale(1.08);filter:none}}
 .ao-reader-paragraph[data-translate-toggle="true"]{cursor:pointer}
-/* Gloria/Credo: one source cue, one faithful display row. The mini-icons
-   belong on the faithful side, not beside the priest's transient actions. */
-.ao-reader-paragraph[data-faithful-cues="true"]{position:relative;padding-left:67px}
-.ao-faithful-paragraph-icons{position:absolute;top:2px;left:2px;display:flex;gap:2px;align-items:flex-start}
-.ao-faithful-icon-edit{appearance:none;display:grid;place-items:center;
-  width:32px;height:36px;padding:3px;border:1px solid color-mix(in srgb,var(--ao-mass-accent) 18%,transparent);
-  border-radius:8px;background:color-mix(in srgb,var(--ao-mass-panel) 93%,transparent);
-  color:var(--ao-mass-accent-text);cursor:pointer}
-.ao-faithful-icon-edit .ao-icon-mask{width:24px;height:24px;flex:0 0 24px}
-.ao-faithful-icon-edit[data-active="true"]{border-color:var(--ao-mass-accent);box-shadow:0 0 0 1px color-mix(in srgb,var(--ao-mass-accent) 22%,transparent)}
-.ao-faithful-icon-edit:focus-visible,.ao-state-cell[data-faithful-icon-open]:focus-visible{
+/* Gloria/Credo: keep source cue ownership, but use ordinary Mass
+   paragraph geometry. Posture/gesture art is shown once in the persistent
+   ribbon and exact-cue rails, never as duplicate buttons beside every line. */
+.ao-reader-paragraph[data-faithful-cues="true"]{position:relative}
+.ao-state-cell[data-faithful-icon-open]:focus-visible{
   outline:2px solid var(--ao-mass-accent-text);outline-offset:2px}
 .ao-state-cell[data-faithful-icon-open]{cursor:pointer}
 .ao-faithful-icon-picker{position:absolute;z-index:38;left:50%;bottom:max(8px,env(safe-area-inset-bottom));
@@ -506,7 +500,13 @@ const SHELL_STYLE = `
 .ao-schola-resize{position:absolute;top:0;left:25%;right:25%;height:10px;cursor:ns-resize;touch-action:none}
 .ao-schola-resize:before{content:"";position:absolute;left:50%;top:3px;width:34px;height:2px;border-radius:2px;background:color-mix(in srgb,var(--ao-mass-accent) 28%,transparent);transform:translateX(-50%)}
 .ao-schola-title{display:flex;align-items:center;gap:8px;min-height:21px;padding-right:54px}
-.ao-schola-title .ao-icon-mask{width:22px;height:22px;color:var(--ao-mass-accent-text)}
+/* Schola uses approved sacred-art original. Give the figure the same
+   perceptual area as other reader icons, not a tiny 22px dock stamp. */
+.ao-schola-title .ao-icon-mask{width:34px;height:34px;flex:0 0 34px;color:var(--ao-mass-accent-text)}
+.ao-schola-title{min-height:36px}
+.ao-rail-item[data-channel="schola-shared"] .ao-icon-mask{
+  width:42px;height:42px;flex:0 0 42px
+}
 .ao-schola-kicker{font:700 8.5px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em;text-transform:uppercase;color:var(--ao-mass-accent-text)}
 .ao-schola-page{font:700 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--ao-mass-accent-text)}
 .ao-schola-status{font:600 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.06em;color:#9aa79b}
@@ -3714,24 +3714,12 @@ export function createReaderDomAdapter({
           }
           const own=current.paragraphCues?.[p.id];
           if(own){
+            // Gloria and Credo have the same single, source-owned posture and
+            // gesture surface as every other Mass part: the faithful ribbon
+            // and LIVE gesture rail. The editorial cue remains attached to
+            // this paragraph; no second tiny editable icon per sentence.
             node.dataset.faithfulCues="true";
             node.dataset.faithfulRowId=p.id;
-            const icons=doc.createElement("span");
-            icons.className="ao-faithful-paragraph-icons";
-            for(const field of ["posture","gesture"]){
-              if(field==="gesture" && !own.gestureIconKey)continue;
-              const button=doc.createElement("button");
-              button.type="button";
-              button.className="ao-faithful-icon-edit";
-              button.dataset.faithfulIconOpen=p.id;
-              button.dataset.faithfulField=field;
-              button.setAttribute("aria-label","Customize my "+field+" at "+own.cueId);
-              const art=doc.createElement("span");
-              art.className="ao-icon-mask";
-              art.dataset.faithfulIconField=field;
-              button.append(art);icons.append(button);
-            }
-            node.append(icons);
           }
           // MISSAL never uses tap-to-replace as its primary reading
           // experience. Source-projected Latin and vernacular are rendered
