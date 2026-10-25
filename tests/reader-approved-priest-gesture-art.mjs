@@ -21,7 +21,7 @@ for(const [id,item] of Object.entries(APPROVED_PRIEST_RUBRIC_GESTURE_ART)){
  const event=registry.items.find(x=>x.id===id);
  assert.ok(event,"No exact source rubric "+id);
  assert.equal(event.cueId,item.cueId);
- assert.equal(event.kind,"GESTURE");
+ assert.equal(event.kind,item.sourceKind);
  assert.equal(event.actor,"PRIEST");
  assert.equal(event.label,"JOINS HANDS");
  assert.equal(event.iconKey,"hands_joined");
@@ -35,6 +35,8 @@ for(const [id,item] of Object.entries(APPROVED_PRIEST_RUBRIC_GESTURE_ART)){
  assert.equal(matrixRow.iconKey,"hands_joined");
  assert.equal(matrixRow.iconStatus,"V46_SEMANTIC_BINDING");
  assert.equal(item.assetId,"v46_hands_joined");
+ assert.equal(item.publishedKind,"ACTION");
+ assert.equal(item.sourceKind,"GESTURE");
  const paragraph={sourceCueIds:[item.cueId]};
  for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
    for(const language of ["en","fr"]){
