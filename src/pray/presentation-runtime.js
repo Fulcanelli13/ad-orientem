@@ -307,7 +307,7 @@ function applySettingsPreferences(raw={}){
  };
 }
 let prayTouch=null;
-let suppressPrayerFlipUntil=0;
+let suppressPrayerFlipTarget=null;
 function shell(){
   let r=document.getElementById(ROOT_ID);if(r)return r;
   r=document.createElement('div');r.id=ROOT_ID;r.className='aoP435930Backdrop';r.setAttribute('aria-hidden','true');r.dataset.aoDevotionalUx=DEVOTIONAL_UX_CONTRACT_VERSION;
@@ -1524,7 +1524,17 @@ function exitAdorationQuiet(){
   const m=mount();if(!m)return;
   m.scrollTop=resume.mountScroll;
   const card=m.querySelector('.aoP435930AdorationReader .aoDevoCardScroll');
-  if(card)card.scrollTop=resume.cardScroll;
+  if(card){
+   card.scrollTop=resume.cardScroll;
+   // The shared focus adapter recomputes runway padding on its first frame.
+   // Restore once more after that layout pass so silence cannot reset the passage.
+   requestAnimationFrame(()=>{
+    if(view==='adoration'&&!ADOR.quiet&&ADOR.mode===resume.mode&&card.isConnected){
+     m.scrollTop=resume.mountScroll;
+     card.scrollTop=resume.cardScroll;
+    }
+   });
+  }
   m.querySelector('.aoAdorationQuietLink,.aoAdorationQuietEnter')?.focus?.({preventScroll:true});
  });
 }
@@ -1822,14 +1832,16 @@ function onPrayTouchStart(e){
   prayTouch=null;return;
  }
  const t=e.touches?.[0];if(!t||touchBlocked(e.target)){prayTouch=null;return}
- prayTouch={x:t.clientX,y:t.clientY,at:Date.now()};
+ prayTouch={x:t.clientX,y:t.clientY,at:Date.now(),flipTarget:t.target?.closest?.('[data-p435930-flip],[data-p435930-card-flip]')||null};
 }
 function onPrayTouchEnd(e){
  if(!prayTouch)return;
  const t=e.changedTouches?.[0],start=prayTouch;prayTouch=null;if(!t)return;
  const dx=t.clientX-start.x,dy=t.clientY-start.y,elapsed=Date.now()-start.at;
  if(elapsed>1300||Math.abs(dx)<72||Math.abs(dx)<Math.abs(dy)*1.35)return;
- suppressPrayerFlipUntil=Date.now()+500;
+ // Suppress only a click synthesized on the exact swiped prayer face.
+ // Never block taps on a subsequent card or another devotion.
+ suppressPrayerFlipTarget=start.flipTarget;
  horizontalStep(dx<0?1:-1);
 }
 function captureResume(){return {view,familyId,navStack:[...navStack],prayerReturnView,prayerId}}
@@ -2585,8 +2597,8 @@ function onClick(e){
   void openExternalFamilyRoute(b,b.dataset.p435930External,familyId);
   return;
  }
- if(b.matches('[data-p435930-flip]')){if(Date.now()<suppressPrayerFlipUntil)return;const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
- if(b.matches('[data-p435930-card-flip]')){if(Date.now()<suppressPrayerFlipUntil)return;const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}
+ if(b.matches('[data-p435930-flip]')){if(b===suppressPrayerFlipTarget){suppressPrayerFlipTarget=null;return;}const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
+ if(b.matches('[data-p435930-card-flip]')){if(b===suppressPrayerFlipTarget){suppressPrayerFlipTarget=null;return;}const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}
  const seg=b.dataset.p435930Seg;if(seg){if(view==='angelus'){if(['individual','group'].includes(seg))setRecitationMode(seg);else if(['simple','guided'].includes(seg)){S.angelusGuided=seg==='guided';save()}else if(['auto','angelus','regina'].includes(seg)){S.angelusMode=seg;ANGELUS_CARD_INDEX=0;angelusOptionsOpen=false;save()}}else if(view==='rosary'){if(['standard','devotional'].includes(seg)){S.rosary.form=seg;save()}else if(['simple','guided'].includes(seg)){S.rosary.mode=seg;save()}else if(['individual','group'].includes(seg)){setRecitationMode(seg);try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(seg)}catch{}}}else if(view==='adoration'&&['reserved','exposed'].includes(seg)){setAdorationPresence(seg)}else if(view==='stations'&&['guided','simple'].includes(seg)){S.stations.mode=seg;if(seg==='simple')STATIONS.publicPosture=false;save()}else if(view==='stations'&&['individual','group'].includes(seg)){setRecitationMode(seg);if(seg==='individual')STATIONS.publicPosture=false}else if(view==='litany'&&['individual','group'].includes(seg)){setRecitationMode(seg)}else if(view==='library'&&LIB.open){LIB.language=seg}return render()}
  if(b.matches('[data-p435930-launch-rosary]')){launchRosaryPlayer(captureResume());return}
  if(b.dataset.p435930ConfPath!=null){
