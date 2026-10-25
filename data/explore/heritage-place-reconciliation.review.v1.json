@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 414,
+    "places": 427,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 155,
+    "places_without_direct_claim": 168,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -32,9 +32,11 @@
       "place:AE:st-joseph-cathedral-abu-dhabi",
       "place:AG:holy-family-cathedral-st-johns",
       "place:AR:basilica-nuestra-senora-itati",
+      "place:AR:catedral-basilica-nuestra-senora-rosario",
       "place:AR:santuario-san-cayetano-liniers",
       "place:AS:holy-family-cathedral-tafuna",
       "place:AT:basilika-mariatrost-graz",
+      "place:AT:wallfahrtsbasilika-maria-plain",
       "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
       "place:BB:st-patrick-catholic-cathedral-bridgetown",
       "place:BD:holy-rosary-cathedral-chattogram",
@@ -45,6 +47,7 @@
       "place:BJ:immaculate-conception-basilica-ouidah",
       "place:BM:st-theresa-cathedral-hamilton",
       "place:BR:basilica-santuario-nossa-senhora-penha-rio",
+      "place:CA:basilique-notre-dame-montreal",
       "place:CD:notre-dame-du-congo-cathedral-kinshasa",
       "place:CH:pfarr-wallfahrtskirche-st-theodul-sachseln",
       "place:CH:santuario-madonna-del-sasso-orselina",
@@ -54,16 +57,22 @@
       "place:CM:notre-dame-des-victoires-cathedral-yaounde",
       "place:CO:basilica-senor-milagros-buga",
       "place:CW:queen-holy-rosary-cathedral-willemstad",
+      "place:CZ:bazilika-svaty-hostyn",
       "place:CZ:velehrad-assumption-cyril-methodius-basilica",
+      "place:DE:bamberger-dom",
+      "place:DE:basilika-st-martin-weingarten",
+      "place:DE:basilika-vierzehnheiligen",
       "place:DE:benediktinerabtei-maria-laach",
       "place:DE:kevelaer-kerzenkapelle",
       "place:DE:marienbasilika-kevelaer",
+      "place:DE:wieskirche",
       "place:DK:st-ansgar-cathedral-copenhagen",
       "place:DO:catedral-primada-santo-domingo",
       "place:DZ:basilique-saint-augustin-annaba",
       "place:EC:basilica-voto-nacional-quito",
       "place:EE:saints-peter-paul-cathedral-tallinn",
       "place:ES:basilica-nuestra-senora-atocha-madrid",
+      "place:ES:basilica-virgen-desamparados-valencia",
       "place:ES:capella-santa-cova-montserrat",
       "place:ES:covadonga-basilica",
       "place:ES:covadonga-santa-cueva",
@@ -74,6 +83,7 @@
       "place:FR:abbatiale-sainte-foy-conques",
       "place:FR:basilique-notre-dame-fourviere-lyon",
       "place:FR:basilique-notre-dame-garde-marseille",
+      "place:FR:cathedrale-notre-dame-reims",
       "place:GB:holywell-st-winefride-church",
       "place:GD:immaculate-conception-cathedral-st-georges",
       "place:GE:assumption-catholic-cathedral-tbilisi",
@@ -90,10 +100,13 @@
       "place:IN:basilica-our-lady-ransom-vallarpadam",
       "place:IN:mount-mary-basilica-bandra",
       "place:IN:santhome-cathedral-basilica-chennai",
+      "place:IN:st-andrews-basilica-arthunkal",
       "place:IN:st-thomas-mount-shrine-chennai",
       "place:IS:christ-king-cathedral-reykjavik",
       "place:IT:basilica-santa-margherita-cortona",
       "place:IT:basilica-santa-maria-maggiore-bergamo",
+      "place:IT:cattedrale-santa-maria-del-fiore-firenze",
+      "place:IT:duomo-siena",
       "place:IT:madonna-neve-rocchetta-bergamo",
       "place:IT:santuario-beata-vergine-neve-foppolo",
       "place:IT:santuario-francescano-la-verna",
@@ -338,6 +351,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:AR:catedral-basilica-nuestra-senora-rosario",
+      "display_name": "Basílica Catedral Nuestra Señora del Rosario",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:AR:san-nicolas-virgen-rosario",
       "display_name": "Santuario María del Rosario de San Nicolás",
       "record_ids": {
@@ -398,6 +417,12 @@
           "att:DEV-010:MARIAZELL"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:AT:wallfahrtsbasilika-maria-plain",
+      "display_name": "Wallfahrtsbasilika Maria Plain",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -629,6 +654,12 @@
           "shrine:BZ:belmopan-our-lady-guadalupe-co-cathedral"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CA:basilique-notre-dame-montreal",
+      "display_name": "Basilique Notre-Dame de Montréal",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -930,6 +961,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:CZ:bazilika-svaty-hostyn",
+      "display_name": "Bazilika Nanebevzetí Panny Marie, Svatý Hostýn",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:CZ:stara-boleslav-st-wenceslas",
       "display_name": "Bazilika svatého Václava — Stará Boleslav",
       "record_ids": {
@@ -998,6 +1035,24 @@
           "att:DEV-009:ALTOETTING"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:bamberger-dom",
+      "display_name": "Bamberger Dom St. Peter und St. Georg",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:basilika-st-martin-weingarten",
+      "display_name": "Basilika St. Martin, Weingarten",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:basilika-vierzehnheiligen",
+      "display_name": "Basilika Vierzehnheiligen",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -1178,6 +1233,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:DE:wieskirche",
+      "display_name": "Wallfahrtskirche zum Gegeißelten Heiland auf der Wies",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:DE:wigratzbad-maria-vom-sieg",
       "display_name": "Gebetsstätte Maria vom Sieg Wigratzbad",
       "record_ids": {
@@ -1278,6 +1339,12 @@
     {
       "place_id": "place:ES:basilica-nuestra-senora-atocha-madrid",
       "display_name": "Basílica-Parroquia Nuestra Señora de Atocha",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:basilica-virgen-desamparados-valencia",
+      "display_name": "Basílica de la Virgen de los Desamparados",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -1789,6 +1856,12 @@
           "novena-place:annunciation:le-puy"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-reims",
+      "display_name": "Cathédrale Notre-Dame de Reims",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -2699,6 +2772,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IN:st-andrews-basilica-arthunkal",
+      "display_name": "St Andrew's Basilica, Arthunkal",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IN:st-thomas-mount-shrine-chennai",
       "display_name": "St Thomas Mount National Shrine Basilica — Chennai",
       "record_ids": {},
@@ -2873,6 +2952,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IT:cattedrale-santa-maria-del-fiore-firenze",
+      "display_name": "Cattedrale di Santa Maria del Fiore, Firenze",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IT:chiesa-gesu-rome",
       "display_name": "Chiesa del Gesù, Rome",
       "record_ids": {
@@ -2931,6 +3016,12 @@
           "relic:IT:duomo-sant-eusebio-vercelli"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:duomo-siena",
+      "display_name": "Cattedrale Metropolitana di Santa Maria Assunta, Siena",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {

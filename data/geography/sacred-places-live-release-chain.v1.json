@@ -1,6 +1,6 @@
 {
   "schema": "AO_SACRED_PLACES_LIVE_RELEASE_CHAIN_V1",
-  "as_of": "2026-10-24",
+  "as_of": "2026-10-25",
   "state": "ACTIVE_RELEASE_LEDGER",
   "starting_point": {
     "places": 361,
@@ -31,6 +31,10 @@
     {
       "id": "P31",
       "manifest": "data/geography/research/sacred-places-p31-world-9-exact-map.v1.json"
+    },
+    {
+      "id": "P34",
+      "manifest": "data/geography/research/sacred-places-p34-thirteen-audited-churches.v1.json"
     }
   ],
   "policy": [
