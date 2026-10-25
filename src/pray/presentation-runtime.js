@@ -405,7 +405,7 @@ function close({silent=false,preserve=false}={}){
     praySessionLanguage=null;
     // Privacy-sensitive preparation is memory-only and is cleared on a true close.
     CONF=freshConfessionState();
-    BEN={step:0,divinePraises:false};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};adorationQuietReturn=null;
+    BEN={step:0,divinePraises:false,christKing:{...CHRIST_KING_DEFAULT},specialOptionsOpen:false};BEN_STAGES=BEN_BASE_STAGES;ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};adorationQuietReturn=null;
     if(!silent){FF={step:0,intention:false,communion:false};FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0}}
   }
   const ret=returnContext;returnContext=null;if(!silent&&!preserve){navStack=[];externalResume=null}if(!silent&&ret)queueMicrotask(()=>{if(ret?.surface==='apostolate')void window?.AO_APP_SHELL_V1?.navigate?.('apostolate');else window.AO_NAV_V362?.restore?.(ret)});
@@ -1445,7 +1445,7 @@ function setChristKingBenedictionOption(key,checked){
  BEN_STAGES=christKingBenedictionStages(BEN_BASE_STAGES,BEN.christKing);
  const next=BEN_STAGES.findIndex(x=>x[0]===old);
  BEN.step=next<0?1:next;
- BEN.specialOptionsOpen=true;
+ BEN.specialOptionsOpen=key!=='enabled'&&!!BEN.christKing.enabled;
  render();
 }
 function christKingOptionsMarkup(){
@@ -1900,7 +1900,7 @@ function reopenResume(snapshot){
  const r=shell();r.classList.add('open');r.setAttribute('aria-hidden','false');document.body.classList.add('aoP435930Open');render();
  queueMicrotask(()=>r.querySelector('button,[href],input,[tabindex]:not([tabindex="-1"])')?.focus?.());return true
 }
-function navigationSignature(){return [view,MERCY.step,MERCY.includeClosing,MERCY.guide,TEN.day,TEN.hour,TEN.step,TEN.face,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,CONF.riteStep,CONF.afterStep,BEN.step,BEN.christKing.enabled,...CHRIST_KING_OPTION_IDS.map(k=>BEN.christKing[k]),ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
+function navigationSignature(){return [view,MERCY.step,MERCY.includeClosing,MERCY.guide,TEN.day,TEN.hour,TEN.step,TEN.face,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,CONF.riteStep,CONF.afterStep,BEN.step,BEN.christKing?.enabled||false,...CHRIST_KING_OPTION_IDS.map(k=>BEN.christKing?.[k]||false),ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
 function focusables(){const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return [];return [...r.querySelectorAll('button:not([disabled]),[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null&&!el.hidden)}
 
 
