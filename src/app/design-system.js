@@ -403,6 +403,13 @@ const CSS=`
  width:min(var(--ao-content-max,760px),100%);
  padding-inline:var(--ao-frame-gutter,16px)!important;
 }
+/* Preserve the shared 12px phone reading gutter instead of reapplying the
+   16px tablet/desktop editorial margin on a narrow viewport. */
+@media(max-width:560px){
+ #ao-learn-modular-root .aoLearnModWrap{
+  padding-inline:var(--ao-page-gutter-phone,12px)!important;
+ }
+}
 /* The nine-section table of contents belongs in an opened Formation reader,
  * not above the discovery homepage. Preserve it for each subject/lesson. */
 #ao-learn-modular-root[data-ao-learn-family=""]>.aoFNav{display:none!important}
