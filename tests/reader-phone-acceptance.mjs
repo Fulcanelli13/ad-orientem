@@ -251,7 +251,23 @@ try{
     const absoluteCenter=(tr.top-cr.top+el.scrollTop)+(tr.height/2);
     el.scrollTop=Math.max(0,absoluteCenter-el.clientHeight*.39);
   });
-  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0174",null,{timeout:3000});
+  try{
+    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0174",null,{timeout:5000});
+  }catch(error){
+    const diagnostic=await page.evaluate(()=>{
+      const el=document.querySelector("[data-ao-reader-shell] .ao-reader-card");
+      const cue=el?.querySelector('[data-cue-id="AO.SM.C0174"]');
+      const box=el?.getBoundingClientRect(),cbox=cue?.getBoundingClientRect();
+      return {
+        active:window.__AO_PHONE_PREVIEW?.getActiveCue?.(),
+        scrollTop:el?.scrollTop,scrollHeight:el?.scrollHeight,clientHeight:el?.clientHeight,
+        cueTop:cbox?.top,cardTop:box?.top,cueHeight:cbox?.height,
+        native:window.__AO_PHONE_PREVIEW?.getNativeEventState?.()?.nativeCueId
+      };
+    });
+    throw new Error("Elevation cue activation timed out: "+JSON.stringify(diagnostic)+
+      "; original="+String(error?.message||error));
+  }
   const elevationState=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
   assert.equal(elevationState?.nativeCueId,"AO.SM.C0174");
   assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");

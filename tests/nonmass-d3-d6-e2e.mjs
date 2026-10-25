@@ -73,7 +73,7 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='holy']").count(),1,"Final donor Holy Hour entry is missing from Adoration");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='four']").count(),1,"Final donor Four Ends entry is missing from Adoration");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='treasury']").count(),1);
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-go-ben]").count(),0,"Benediction leaked into the private Adoration landing surface");
+  assert.equal(await page.locator("#aoPray435930 .aoAdorationChooser [data-p435930-go-ben]").count(),0,"A public Benediction action displaced a private Adoration chooser option");
 
   await page.locator("#aoPray435930 [data-p435930-ador-mode='open']").click();
   // This older D3/D6 cross-module smoke test verifies the *presence* of

@@ -123,6 +123,8 @@ export function renderHomeToString(state,win=globalThis){
   const enrichers=buildHomeEnrichers(state,win);
   const homeCalendar=buildTodayV2Sections(state,vm,enrichers);
   const season=vm.language==="fr"?homeCalendar.period.fr:homeCalendar.period.en;
+  const editorialDate=new Intl.DateTimeFormat(vm.language==="fr"?"fr-FR":"en-GB",
+    {weekday:"long",day:"numeric",month:"long"}).format(parseIso(vm.dateIso));
   const coverage=currentProper?.languageCoverage?.[vm.language];
   const translationStatus=coverage&&!coverage.complete?`<div class="statusCard warning contentIntegrity"><strong>${vm.language==="fr"?"Traduction du Propre incomplète":"Proper translation incomplete"}</strong><span>${esc(`${coverage.available}/${coverage.expected} · ${coverage.missing.join(", ")}`)}</span></div>`:"";
   const browsingNotice=!vm.isToday
@@ -143,9 +145,9 @@ export function renderHomeToString(state,win=globalThis){
     resume.stepNumber?String(resume.stepNumber):"",
   ].filter(Boolean).join(" · "):"";
   return `<style data-ao-today-v2-style>${TODAY_V2_CSS}</style><main class="homeScreen aoTodayV2" data-home-language="${vm.language}" data-ao-asset-id="${canonicalAssetIdForSurface("home")||""}" data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}">
-<header class="homeHeader aoTodayV2Header"><div class="brandRow"><div class="brandMark aoBrandEmblem" aria-hidden="true"></div><div class="brandText"><div class="brandName">${esc(t("brand"))}</div><div class="brandSub">${esc(t("subtitle"))}</div></div><button type="button" class="iconButton homeUtilityButton" data-home-settings aria-label="${esc(vm.language==="fr"?"Réglages":"Settings")}">${assetIcon("ao-ui-settings")}</button></div>
-<nav class="aoTodayV2Tabs" aria-label="Calendar views"><button type="button" data-home-calendar-today aria-current="page">${esc(vm.isToday?(vm.language==="fr"?"Aujourd’hui":"Today"):(vm.language==="fr"?"Jour choisi":"Selected day"))}</button><button type="button" data-home-calendar data-home-calendar-view="picker">${esc(vm.language==="fr"?"Mois":"Month")}</button><button type="button" data-home-calendar data-home-calendar-view="year">${esc(vm.language==="fr"?"Année liturgique":"Liturgical Year")}</button></nav><div class="aoTodayV2CalendarInline" data-home-calendar-inline hidden aria-label="${esc(vm.language==="fr"?"Calendrier liturgique":"Liturgical calendar")}"></div>${browsingNotice}<div class="dateNavigator"><button class="iconButton" data-nav="previous" aria-label="${esc(t("previousDay"))}">${assetIcon("ao-ui-previous")}</button><button class="dateTitle" data-nav="today"><span>${esc(vm.weekday)}</span><b>${esc(vm.dateLong)}</b></button><button class="iconButton" data-nav="next" aria-label="${esc(t("nextDay"))}">${assetIcon("ao-ui-next")}</button></div><div class="dateRail" aria-label="Week">${week}</div><div class="aoHomeCalendarAccess"><button type="button" class="aoHomeCalendarAction" data-home-calendar aria-label="${esc(vm.language==="fr"?"Ouvrir le calendrier liturgique complet":"Open full liturgical calendar")}">${assetIcon("ao-nav-calendar")}<span>${esc(vm.language==="fr"?"Calendrier complet":"Full Calendar")}</span>${assetIcon("ao-ui-next")}</button></div></header>
-<section class="celebrationBlock aoEditorialHero aoTodayV2Frontispiece"><div class="aoTodayV2Art"><div class="aoTodayV2ArtSource" data-ao-home-art-slot><div class="aoTodayV2NoArt" aria-label="Artwork awaiting editorial approval"></div></div><div class="aoTodayV2ArtOverlay"><span class="eyebrow aoEditorialKicker">CALENDARIUM ROMANUM · 1962</span><h1 class="aoEditorialTitle">${esc(vm.celebration)}</h1></div></div><div class="aoTodayV2HeroActions"><div class="metaLine aoEditorialMeta">${meta}</div><button type="button" class="aoTodayV2SeasonMicro" data-home-calendar data-home-calendar-view="year" aria-label="${esc(vm.language==="fr"?"Voir le temps liturgique dans l’année":"View the liturgical season in Calendar")}">${esc(season)} <span aria-hidden="true">›</span></button>${chooser}${vm.loading?'<div class="loadingLine"><span></span>'+esc(t("loading"))+"</div>":""}<section class="aoTodayV2Mass">
+<header class="homeHeader aoTodayV2Header"><div class="brandRow"><div class="brandMark aoBrandEmblem" aria-hidden="true"></div><div class="brandText"><div class="brandName">${esc(t("brand"))}</div><div class="brandSub">${esc(t("subtitle"))}</div></div><strong class="aoTodayAppBarTitle">${esc(vm.language==="fr"?"Aujourd’hui":"Today")}</strong><button type="button" class="iconButton homeUtilityButton" data-home-settings aria-label="${esc(vm.language==="fr"?"Réglages":"Settings")}">${assetIcon("ao-ui-settings")}</button></div>
+<nav class="aoTodayV2Tabs" aria-label="Calendar views"><button type="button" data-home-calendar-today aria-current="page">${esc(vm.isToday?(vm.language==="fr"?"Aujourd’hui":"Today"):(vm.language==="fr"?"Jour choisi":"Selected day"))}</button><button type="button" data-home-calendar data-home-calendar-view="picker">${esc(vm.language==="fr"?"Mois":"Month")}</button><button type="button" data-home-calendar data-home-calendar-view="year">${esc(vm.language==="fr"?"Année liturgique":"Liturgical Year")}</button></nav><div class="aoTodayV2CalendarInline" data-home-calendar-inline hidden aria-label="${esc(vm.language==="fr"?"Calendrier liturgique":"Liturgical calendar")}"></div>${browsingNotice}<div class="dateNavigator"><button class="iconButton" data-nav="previous" aria-label="${esc(t("previousDay"))}">${assetIcon("ao-ui-previous")}</button><button class="dateTitle" data-nav="today"><span>${esc(vm.weekday)}</span><b>${esc(vm.dateLong)}</b></button><button class="iconButton" data-nav="next" aria-label="${esc(t("nextDay"))}">${assetIcon("ao-ui-next")}</button></div><div class="dateRail" aria-label="Week">${week}</div></header>
+<section class="celebrationBlock aoEditorialHero aoTodayV2Frontispiece aoTodayEditorialEdition"><div class="aoTodayV2ArtOverlay aoTodayV2Identity"><span class="eyebrow aoEditorialKicker aoTodayEditorialDate">${esc(editorialDate)}</span><h1 class="aoEditorialTitle">${esc(vm.celebration)}</h1><div class="metaLine aoEditorialMeta">${meta}</div><button type="button" class="aoTodayV2SeasonMicro" data-home-calendar data-home-calendar-view="year" aria-label="${esc(vm.language==="fr"?"Voir le temps liturgique dans l’année":"View the liturgical season in Calendar")}">${esc(season)} <span aria-hidden="true">›</span></button></div><div class="aoTodayV2HeroActions">${chooser}${vm.loading?'<div class="loadingLine"><span></span>'+esc(t("loading"))+"</div>":""}<section class="aoTodayV2Mass">
 <div class="sectionLabel">${esc(t("aroundMass"))}</div>
 ${resume?
 `<button type="button" class="aoTodayV2PrimaryMass phaseButton primary aoEditorialPrimary" data-resume-mass data-ao-resume-owner="${resume.source}">
@@ -153,7 +155,8 @@ ${resume?
 `<button type="button" class="aoTodayV2PrimaryMass phaseButton primary aoEditorialPrimary" data-home-mass-entry>
 <b>${esc(vm.isToday?t("openMass"):t("openSelectedMass"))} →</b></button>`}
 <div class="aoTodayV2SecondaryMass"><button type="button" data-action="prepare">${esc(t("prepare"))}</button><button type="button" data-action="thanks">${esc(t("giveThanks"))}</button></div>
-</section></div></section>
+</section></div><div class="aoTodayV2Art"><div class="aoTodayV2ArtSource" data-ao-home-art-slot><div class="aoTodayV2NoArt" aria-label="Artwork awaiting editorial approval"></div></div></div></section>
+<div class="aoHomeCalendarAccess"><button type="button" class="aoHomeCalendarAction" data-home-calendar aria-label="${esc(vm.language==="fr"?"Ouvrir le calendrier liturgique complet":"Open full liturgical calendar")}">${assetIcon("ao-nav-calendar")}<span>${esc(vm.language==="fr"?"Calendrier complet":"Full Calendar")}</span>${assetIcon("ao-ui-next")}</button></div>
 ${status}${translationStatus}
 ${renderTodayV2Sections(homeCalendar,vm)}
 <div class="aoTodayExploreFoot"><button type="button" data-home-find><strong>${esc(vm.language==="fr"?"Explorer les lieux sacrés":"Explore sacred places")}</strong><small>${esc(vm.language==="fr"?"Messes traditionnelles, sanctuaires et pèlerinages":"Traditional Masses, shrines and pilgrimages")}</small></button><button type="button" data-home-calendar data-home-calendar-view="day"><strong>${esc(vm.language==="fr"?"Coutumes au fil de l’année":"Traditions through the year")}</strong><small>${esc(vm.language==="fr"?"Consulter les coutumes et leurs sources dans le calendrier":"Read customs and their sources in Calendar")}</small></button></div>
@@ -187,10 +190,29 @@ export function renderHome(root,state,win=globalThis){
     removeExcludedLegacyHomeArtwork(slot);
     // Donor fallback labels are not approved sacred paintings; retain the
     // devotional typographic hero but do not reserve an empty image column.
-    const hasArt=Boolean(slot.querySelector("img[src],picture source[srcset],video[poster],canvas"));
     const hero=root.querySelector(".aoTodayV2Frontispiece");
-    hero?.classList?.toggle("aoTodayV2ArtMissing",!hasArt);
-    if(!hasArt)slot.innerHTML='<div class="aoTodayV2NoArt" aria-label="No reviewed artwork for this celebration"></div>';
+    const images=[...slot.querySelectorAll("img")];
+    const otherMedia=Boolean(slot.querySelector("video[poster],canvas"));
+    const hasArt=images.length>0||Boolean(slot.querySelector("picture source[srcset]"))||otherMedia;
+    const clearFailedArtwork=()=>{
+      hero?.classList?.add("aoTodayV2ArtMissing");
+      slot.innerHTML='<div class="aoTodayV2NoArt" aria-label="No reviewed artwork for this celebration"></div>';
+    };
+    if(!hasArt)clearFailedArtwork();
+    else if(images.length){
+      // A remote src is not proof that a painting loaded. Never publish its
+      // caption alone or reserve an empty art panel when Wikimedia fails.
+      const syncArtwork=()=>{
+          const loaded=images.some(image=>image.complete&&image.naturalWidth>0);
+        hero?.classList?.toggle("aoTodayV2ArtMissing",!loaded);
+        if(!loaded&&images.every(image=>image.complete))clearFailedArtwork();
+      };
+      for(const image of images){
+        image.addEventListener("load",syncArtwork,{once:true});
+        image.addEventListener("error",syncArtwork,{once:true});
+      }
+      syncArtwork();
+    }else hero?.classList?.remove("aoTodayV2ArtMissing");
   }
   reconcileTodayHero(root);
   return true;

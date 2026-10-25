@@ -23,6 +23,7 @@ function homeReviewedHonours(observed,selected,language,readModel){
 
 export function buildTodayV2Sections(state,vm,enrichers,readModel=getSharedSanctoralReadModel()){
   const selected=vm.dateIso,language=vm.language,year=buildLiturgicalYear(selected),period=year.currentPeriod;
+  const spotlight=homeSeasonalCustomForDate(selected);
   const resolution=state?.resolution;
   // The store's selectedDate is canonical. Some resolver builds omit
   // resolution.date, while others stamp date on the resolution or day.
@@ -46,7 +47,6 @@ export function buildTodayV2Sections(state,vm,enrichers,readModel=getSharedSanct
   }
   const feature=enrichers?.visible?enrichers.comingUp?.rows?.[0]??null:null;
   const daily=enrichers?.visible?enrichers.dailyCatechism??null:null;
-  const spotlight=homeSeasonalCustomForDate(selected);
   const historicalCommemorations=observed?observedCommemorationLabels(observed,{language}):Object.freeze([]);
   const modernHonours=homeReviewedHonours(observed,selected,language,readModel);
   return Object.freeze({selected,language,period,upcoming:unique,feature,daily,spotlight,
@@ -61,7 +61,6 @@ function dateDisplay(date,language){
   return new Intl.DateTimeFormat(language==="fr"?"fr-FR":"en-GB",{day:"numeric",month:"short"})
     .format(new Date(year,month-1,day,12));
 }
-
 function renderSeasonalCustomsSpotlight(selection,language){
  if(!selection)return "";
  const art=selection.article,loc=language==="fr"?"fr":"en";
@@ -143,14 +142,7 @@ export function renderTodayV2Sections(model,vm){
     return `<button type="button" class="aoTodayV2Event" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="${esc(rowData.date)}" aria-label="${esc(dateDisplay(rowData.date,language)+" · "+name)}"><span class="aoTodayV2EventDate">${esc(dateDisplay(rowData.date,language))}</span><strong>${esc(name)}</strong></button>`;
   }).join("");
   const glanceNote=txt("Upcoming calendar dates · confirm actual 1962 observance in Calendar","Dates à venir · vérifier la célébration effective de 1962 dans le calendrier");
-  return `<section class="aoTodayV2CalendarGlance" aria-label="${esc(txt("Calendar at a glance","Aperçu du calendrier"))}">
-    <h2>${esc(txt("Calendar at a glance","Aperçu du calendrier"))}</h2>
-    ${calendarHonours}${calendarLater}
-    <div class="aoTodayV2GlanceEvents">${calendarDates||'<p class="aoTodayV2GlanceEmpty">'+esc(txt("See dates in Calendar","Consulter les dates dans le calendrier"))+'</p>'}</div>
-    <p class="aoTodayV2GlanceNote">${esc(glanceNote)}</p>
-  </section>
-  ${renderSeasonalCustomsSpotlight(spotlight,language)}
-  <div class="aoTodayV2Below" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}">
+  return `  <div class="aoTodayV2Below" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}">
     <section class="aoTodayV2Zone aoTodayV2PrayNow"><div class="aoTodayV2SectionHead"><div><h2>${esc(txt("Pray now","Prier maintenant"))}</h2></div><button type="button" data-home-cu-route="pray.library">${esc(txt("All prayers","Toutes les prières"))} →</button></div>
       <div class="aoTodayV2PrayerFeature"><div class="aoTodayV2PrayerGlyph" aria-hidden="true"></div><div><small>${esc(featureRole)}</small><strong>${esc(featureName)}</strong><span>${esc(featureDetail)}</span></div><button type="button" ${featureAttrs}>${esc(txt("Pray","Prier"))}</button></div>
       <div class="aoTodayV2PrayerShortcuts">
@@ -165,5 +157,12 @@ export function renderTodayV2Sections(model,vm){
       ${row(cateTitle,cateDetail,'data-home-daily-catechism')}
       ${row(txt("Sacred Scripture","Sainte Écriture"),txt("Read the traditional Catholic Bible","Lire la Bible catholique traditionnelle"),'data-home-scripture')}
     </section>
-  </div>`;
+  </div>
+  ${renderSeasonalCustomsSpotlight(spotlight,language)}
+  <section class="aoTodayV2CalendarGlance" aria-label="${esc(txt("Calendar at a glance","Aperçu du calendrier"))}">
+    <h2>${esc(txt("Calendar at a glance","Aperçu du calendrier"))}</h2>
+    ${calendarHonours}${calendarLater}
+    <div class="aoTodayV2GlanceEvents">${calendarDates||'<p class="aoTodayV2GlanceEmpty">'+esc(txt("See dates in Calendar","Consulter les dates dans le calendrier"))+'</p>'}</div>
+    <p class="aoTodayV2GlanceNote">${esc(glanceNote)}</p>
+  </section>`;
 }

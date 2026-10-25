@@ -2,6 +2,7 @@
 // Ceremony FORM and the liturgical CELEBRATION are different axes. The latter
 // remains owned by the 1962 calendar/Proper resolver; NEVER substitute a Proper.
 import {normalizeMassForm,MASS_FORMS} from "./session-engine.js";
+import {resolveCanonicalAssetUrl} from "../assets/asset-registry.js";
 import {availableOptionalMassRites,composeOptionalMassRites} from "./full-mass-optional-rites.js";
 import {specialMassPresentation,renderSpecialMassContext} from "./full-mass-special-presentation.js";
 import {massCalendarPreflightContext,fillMassCalendarPreflight} from "./calendar-preflight-context.js";
@@ -23,6 +24,11 @@ const KIND_LABELS=Object.freeze({
   EASTER_VIGIL:["Easter Vigil","Vigile pascale"]
 });
 const txt=(pair,fr)=>pair?.[fr?1:0]??"";
+function folioAssetIcon(id){
+  const url=resolveCanonicalAssetUrl(id);
+  if(!url)return '';
+  return '<span class="aoMassFolioChoiceIcon" data-ao-asset-id="'+id+'" aria-hidden="true" style="-webkit-mask:url(\''+url+'\') center/contain no-repeat;mask:url(\''+url+'\') center/contain no-repeat"></span>';
+}
 export const FULL_MASS_FORM_OPTIONS=Object.freeze(MASS_FORMS.map(id=>Object.freeze({id,en:LABELS[id][0],fr:LABELS[id][1]})));
 export function massCelebrationKind(legacy={}){
   const exceptional=String(legacy?.exceptionalProfile??"").toLowerCase();
@@ -245,8 +251,13 @@ export function mountFullMassPreflight({
         '<button type="button" data-folio-goto="ceremony">2 · <span data-folio-step-ceremony></span></button>'+
         '<button type="button" data-folio-goto="reader">3 · <span data-folio-step-reader></span></button></nav>'+
         '<section data-folio-panel="overview" class="aoMassFolioPanel">'+
-        '<h3 data-folio-overview-heading></h3><p data-folio-overview-hint></p>'+
+        '<small class="aoMassFolioOverviewDate" data-folio-overview-date></small><h3 data-folio-overview-heading></h3><p data-folio-overview-hint></p>'+
         '<div class="aoMassFolioReadyLine" data-folio-overview-selections></div>'+
+        '<div class="aoMassFolioQuickChoices" role="group" aria-label="Mass setup choices">'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="celebration">'+folioAssetIcon('ao-brand-emblem')+'<span><strong data-folio-quick-mass-label></strong><small data-folio-quick-mass-value></small></span><span aria-hidden="true">›</span></button>'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="ceremony">'+folioAssetIcon('ao-live-priest-foot-altar')+'<span><strong data-folio-quick-ceremony-label></strong><small data-folio-quick-ceremony-value></small></span><span aria-hidden="true">›</span></button>'+
+        '<button type="button" class="aoMassFolioQuickRow" data-folio-goto="reader">'+folioAssetIcon('ao-nav-learn')+'<span><strong data-folio-quick-reader-label></strong><small data-folio-quick-reader-value></small></span><span aria-hidden="true">›</span></button>'+
+        '</div>'+
         '<button type="button" data-folio-goto="celebration" class="aoMassFolioChange" data-folio-guide-start></button></section>'+
         '<section data-folio-panel="celebration" class="aoMassFolioPanel" hidden>'+
         '<h3 data-folio-celebration-heading></h3><p data-folio-celebration-intro></p>'+
@@ -273,6 +284,12 @@ export function mountFullMassPreflight({
         '<button type="button" data-folio-back hidden></button><button type="button" data-folio-next hidden></button></div>'+
         '<div data-folio-host-actions></div></div>';
       root.prepend(folio);
+      // In the simple overview, one concise Mass choice already names the
+      // celebration. Keep exact calendar/Proper details beneath the choices,
+      // not in a duplicate masthead that pushes all actions below the fold.
+      const calendarDetails=folio.querySelector('[data-folio-calendar-details]');
+      const overview=folio.querySelector('[data-folio-panel="overview"]');
+      if(calendarDetails&&overview)overview.append(calendarDetails);
       const move=(selector,slot)=>{
         const source=root.querySelector(selector),destination=folio.querySelector(slot);
         if(source&&destination)destination.append(source);
@@ -407,6 +424,10 @@ export function mountFullMassPreflight({
     };
     const displayTitle=summary.actualTitle||summary.kindLabel;
     word("[data-folio-date]",date,""+date);
+    const dateObject=/^\d{4}-\d{2}-\d{2}$/.test(date)?new Date(date+"T12:00:00"):null;
+    const overviewDate=dateObject&&!Number.isNaN(dateObject.valueOf())?
+      new Intl.DateTimeFormat(french()?"fr-FR":"en-GB",{weekday:"long",day:"numeric",month:"long"}).format(dateObject):date;
+    word("[data-folio-overview-date]",overviewDate,overviewDate);
     word("[data-folio-kind]",summary.kindLabel,summary.kindLabel);
     word("[data-folio-celebration]",displayTitle,displayTitle);
     word("[data-folio-season]",[context.actual?.colour||context.calendar?.colour,context.season].filter(Boolean).join(" · "),
@@ -421,12 +442,19 @@ export function mountFullMassPreflight({
     word("[data-folio-step-celebration]","Mass","Messe");
     word("[data-folio-step-ceremony]","Ceremony","Cérémonie");
     word("[data-folio-step-reader]","Reader","Lecture");
-    word("[data-folio-overview-heading]","Ready to begin","Prêt à commencer");
+    word("[data-folio-quick-mass-label]","Mass","Messe");
+    word("[data-folio-quick-ceremony-label]","How it is celebrated","Type de célébration");
+    word("[data-folio-quick-reader-label]","How to follow","Comment suivre");
+    word("[data-folio-quick-mass-value]",displayTitle,displayTitle);
+    word("[data-folio-quick-ceremony-value]",summary.formLabel,summary.formLabel);
+    word("[data-folio-quick-reader-value]",summary.readerMode,summary.readerMode);
+    folio.dataset.aoFolioView=folioStep;
+    word("[data-folio-overview-heading]","Mass setup","Préparation de la messe");
     word("[data-folio-overview-hint]","Your usual selections are ready. Change only what is different today.",
       "Vos choix habituels sont prêts. Ne modifiez que ce qui change aujourd’hui.");
     word("[data-folio-overview-selections]",summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode,
       summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode);
-    word("[data-folio-guide-start]","Review choices","Revoir les choix");
+    word("[data-folio-guide-start]","More choices","Autres choix");
     word("[data-folio-celebration-heading]","Which Mass are you attending ?","Quelle messe allez-vous suivre ?");
     word("[data-folio-celebration-intro]","Today's Mass is already selected. Change it only when a different Mass is actually celebrated.",
       "La messe du jour est déjà sélectionnée. Changez-la seulement si une autre messe est célébrée.");

@@ -1,0 +1,87 @@
+# Ad Orientem — Quiet Frame UI Consolidation, P0/P1
+**Date:** 24 October 2026  
+**Status:** review branch; not merged or visually accepted  
+**Visual reference:** approved Today, Mass Setup, Pray, Mass Reader and Explore concept mockups from 24 October.
+
+## P0: codebase reconciliation
+This is **not** a new web application or separate stylesheet framework.
+
+- Existing central owner: `src/app/design-system.js` (`ao-design-system-v2`), installed in `src/app/browser-entry.js`.
+- Liturgical accent authority: `src/app/liturgical-theme.js`. The new quiet-frame **neutral surfaces** do not redefine Mass Proper colours, 1962 calendar selection, or app accent provenance.
+- Home/Today presentation: `src/home/presentation.js`, `src/home/today-v2-styles.js`, `src/home/today-v2-sections.js`. Artwork from `data-ao-home-art-slot`; Mass and Calendar actions have existing handlers and must be retained.
+- PRAY root and prayer readers: `src/pray/presentation-runtime.js` and `src/pray/presentation-styles.js`. The page is not a disposable template: prayer stages, registry routes, and source disclosers remain separate from its catalogue shell.
+- Shared navigation: `src/app/shell-controller.js` and `src/app/browser-entry.js`; `#ao-global-ribbon` is adopted from an existing donor. The controller contains LIVE-Mass exit guards.
+- Mass reader: independently governed reader DOM, 48-card LIVE state, Missal/Simple variants, posture/priest/speaker cues and Schola; explicitly **out of scope** for this P1 CSS change.
+- Calendar: independently governed year wheel, day/month views, selections and observance rules; no resolver or navigation ownership changes.
+- Fonts: existing A2 harmonized serif direction in PR #1490 (documentation) is a preceding design reference. The quiet-frame patch does not replace typeface files or impose system sans.
+- Art/icon assets: `src/assets/asset-registry.js`, existing canonical asset IDs and artwork attribution are untouched.
+
+## P1 scope (implemented here)
+1. New tokens for #0B0F13 canvas, #141A20 cards, #1C232B raised surfaces, #ECE8DF primary and #A3ABB4 muted text, plus 8% dividers, 16px gutter/radius and 44/48/52/56px control dimensions.
+2. Reusable `aoQuiet*` class vocabulary (header, card, list row, primary and secondary action) within the **existing** `design-system.js` owner. Feature owners may progressively consume these classes.
+3. Shared 12px bottom tab labels and 24px icon geometry without touching ribbon routing.
+4. Today: on the main mobile Today view, redundant embedded calendar switches are visually hidden, but remain available inside the embedded calendar views; artwork title is moved *visually* above artwork; original artwork slot and credit remain intact; primary and secondary actions adopt restrained spacing.
+5. PRAY: six prominent source-route-backed entries (Rosary, Daily Prayer, Confession, Adoration, Stations, Novenas), three useful library rows, and an expandable complete legacy family catalogue. Illustrations come from existing asset IDs, not generated runtime images. The navigation implementation is in the existing `src/pray/presentation-runtime.js` and the root-only styling in the existing `src/pray/presentation-styles.js`. Immersive prayer readers and devotional stages are excluded.
+6. PRAY phone QA was updated to assert six visible feature entries, three library rows, the ability to expand all historical families, no horizontal overflow and minimum readable text; two unrelated fixture HTTP handlers now read their files before sending headers.
+
+## Deferred to the next integration slices
+- Real navigable Mass setup picker/sheet. The existing owner is `src/mass/full-mass-preflight.js` plus `src/mass/full-mass-preflight-styles.js`. **Do not replace** the existing source-owned guided folio with an unrelated modal. It moves live Mass category, form and reader controls into stage slots and preserves source-date, Votive, Nuptial, Requiem, other Proper, optional rites and before/after prayer selections. The next slice should restyle its overview into three compact choices (Mass, celebration form, reader mode) while reusing the same live controls and launch actions.
+- PRAY phone screenshot review at 320/390/430px and explicit selection tests for each of the six feature entries; the basic six-tile layout is now implemented.
+- Consistent non-Today headers, desktop left rail, Explore draggable sheet, Formation and Settings rows.
+- Art credit placement and responsive art aspect ratios on 320/390/768px viewports.
+- Mass LIVE, Missal and Simple visual adjustments only after separate behaviour-regression suite passes.
+- Calendar month list toggle alongside the existing grid/year wheel, never replacing existing views.
+
+## Acceptance gates
+- `node tests/design-system-coherence.mjs`
+- `node tests/design-system-quiet-frame.mjs`
+- `node tests/nonmass-phone-readability.mjs` (six-feature plus expanded library acceptance)
+- Existing Home, app-shell, PRAY, Calendar and reader suites; the branch has not yet been certified against the entire repository test suite.
+- Real-browser visual checks at 320, 390, 768 and desktop widths (including missing art, French strings, 200% text zoom, light/dark adaptation as supported, and safe-area handling).
+- LIVE 48-card mode and all readers show no content, ritual or navigation regressions.
+- Do **not merge** until visual before/after review and targeted tests are confirmed.
+
+## Known limitation
+This first P1 patch is a **foundation and scoped mobile migration**, not the entire screenshot parity redesign. The dynamic styles injected by the legacy feature owners can still compete with central CSS in some states; review computed styles in a browser before promotion.
+
+## 24 Oct follow-up: P2a visual convergence (review branch only)
+- First cleared three browser-check failures from the previous commit: non-Mass Calendar tests now enter the preserved year wheel through the visible Today seasonal link; Mass preflight tests use the visible three-choice overview rather than a hidden stage tab; Prayer route-owner test helper no longer recursively calls itself.
+- Extended the **existing** central stylesheet, not a new UI owner, to cover scoped everyday chrome: Formation header and family cards, Settings header/64px rows/grouping, and Explore header and search input.
+- These are *visual-only styles*. The Formation subject and text routes, Settings preference controls and persistence, and Explore mapping/geolocation/evidence workflows were not replaced or reordered.
+- Deliberately retained existing five-slot ribbon architecture (Today, Mass, Pray, Formation, Explore), with Settings as a utility overlay, pending separate explicit navigation acceptance. The illustrative five-tab concept would substitute Settings for Mass; do not silently change the approved live navigation contract during palette migration.
+- Acceptance pending: screenshot comparison for Formation/Settings/Explore at phone and desktop widths; map and sheet layout, French string lengths, reader/shell regressions, and baseline contrast.
+
+## 24 Oct continuation: phone/tablet visual-acceptance instrumentation
+- Current latest completed baseline before this continuation: 26/28 active CI checks passed. The other two failed because Mass E2E clicked a now-hidden overview tab, and Pray catalogue tap was intercepted by the persistent five-tab ribbon. These failures were examined from the exact Actions logs.
+- Fixed the Mass test to use the **visible** quick-choice row on overview. Existing stage-to-stage navigation remains independently exercised.
+- Pray expanded catalogue has `scroll-padding-bottom`, per-family `scroll-margin-bottom` and extra end runway relative to the real ribbon height; the route-owner test performs centered scroll before touch activation. No duplicate routes or separate owners are introduced.
+- Extended shared Explore chrome to the real default **sacred-places map** header, without altering geometry, map controls or provenance.
+- Expanded `tests/nonmass-phone-readability.mjs` into a **real-browser visual QA collector**. It captures Today, Formation and Pray at 390/768px, and Settings and primary Explore map at 390/768px, in addition to existing Formation/Pray captures at 320/430. It asserts computed neutral surface palette, row/label dimensions, map header clipping and horizontal overflow.
+- Screenshots are uploaded by the existing `nonmass-phone-readability.yml` workflow to its limited-retention Actions artifact. They are acceptance evidence, not the permanent art archive.
+- **Not yet accepted:** complete current CI, actual visual review of screenshots, 200% text scale, French overflow and desktop screenshot parity. Retain draft status.
+
+## Actual screenshot review — previous passing Formation/Pray run
+Inspected **real Playwright screenshots** from the `nonmass-phone-readability` Actions artifact, run 40110663906, artifact 12566343623 (390px, before the latest convergence fixes):
+- PRAY: six 2-column illustrated tiles, calm charcoal surfaces, legible Garamond titles, separate library rows and persistent bottom navigation. Visual direction is substantially closer to the approved concept.
+- Formation: cards are readable, but the nine-section reader navigator was unnecessarily stacked above the Formation discovery landing title. Scope its removal **only to the Formation landing** (`#ao-learn-modular-root[data-ao-learn-family=""]>.aoFNav`); retain the reader's index and controls.
+- The current visual QA suite adds direct Today, Settings and Explore captures and a 1280px desktop capture. These new images were not available in that earlier artifact and must not be represented as reviewed yet.
+- Never use historical Playwright screenshots as proof of a later commit's complete visual acceptance.
+
+## Visual acceptance continuation — new 19-screen browser captures
+- Evidence from GitHub Actions run **40117683633**, artifact **12569661928**, 19 PNG captures at phone/tablet/desktop sizes. This is **the actual app**, not generated replacement imagery.
+- Visual review of the latest available captures confirms the six illustrated Pray entry points, one-column legible Formation on phone, dark neutral Settings groups and Explore map chrome. The Formation homepage no longer shows the intrusive nine-section navigator.
+- At 390/768px Settings displayed **two stacked × glyphs inside the same Close button**. Actual DOM diagnostic from run **40119162620** showed one `button.aoUiIconOnly` with both injected canonical `svg.aoUiIcon` and original `span.aoSetTopIcon`. Scoped CSS now suppresses the redundant original span **only when the canonical resolver has taken ownership**, preserving one working Close control. QA asserts exactly one visible glyph per header action.
+- Today captures still showed `Resolving artwork…`; the visual-art gate is not certified. Check the source-owned art resolver/loading and no-art fallback before claiming screenshot parity; do not invent substitute paintings.
+- Default Explore map captured a visually empty canvas despite functional controls. Confirm map-tiles/data loading in supported online/offline contexts before calling map design finished; do not fabricate pins or alter approved geo evidence.
+- Mass E2E failure at `[data-folio-overview-button]` was from clicking a button hidden by design while already at Overview; its test now branches on actual overview state. Pray route-owner traversal now idempotently expands the disclosure, avoiding accidental close on re-entry; normal disclosure user interaction stays covered in the separate phone-readability suite.
+- Added 390px real French Settings selection + overflow assertion and PNG capture, alongside existing 320/390/430/768/1280 screens.
+- Remaining: review newest post-fix screenshots, entire current head CI, 200% browser zoom/contrast, source-owned art/map loading, and a deliberate visual approval. No merge.
+
+## Final acceptance: settled screenshots / Prayer navigation / Mass setup
+- Inspected actual `nonmass-phone-readability` browser artifact **12571352060** from run **40120843027**. It contains 20 screenshots covering Today, Formation, Pray, Settings and Explore at 320/390/430/768/1280 as appropriate, including French Settings.
+- **Explore:** settled 390/768/1280 images all show actual dark map tiles, published point/cluster markers and the existing compact list/search/map affordances. Earlier blank-map concern was transient remote-resource readiness, not a reason to rewrite the map.
+- **Settings:** one Close glyph; French text/layout and full navigation retained. **Formation:** 9 visible subjects, no redundant reader-section navigator on the landing. **Pray:** 6 illustrated canonical choices with library items intact.
+- **Today:** liturgical title/action and correct compact `aoTodayV2ArtMissing` fallback for the inspected day, not a painted image invented by the design layer. Separate asynchronous Saints art card retains its own provenance and lifecycle.
+- Historical CI head `70995ac5`: 34 passing checks and one Prayer-route parity failure; the remaining failure is the test's attempted Playwright activation of an internally synchronously replaced/hidden disclosure launcher. Fix in `794c9834` makes owner parity a single DOM event turn, retaining separate full pointer/disclosure tests.
+- Added actual canonical Mass preflight 390/768 screenshot capture inside `tests/full-mass-preflight-phone-e2e.mjs`, retained as `mass-setup-quiet-frame-review` in the R17 browser workflow. Do not claim visual parity until these generated images are inspected.
+- **Still pending:** latest CI after screenshot/test commits; canonical Mass setup screenshot review, focus/200% zoom, cross-surface French long-label and offline-art robustness. Keep PR draft and do not merge.

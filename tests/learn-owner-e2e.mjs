@@ -185,7 +185,8 @@ try{
   // Collapsed section-index buttons are non-rendered; also audit their actual
   // hitboxes when the user opens that menu, rather than counting them as 0px.
   const formationNavToggle=page.locator('#ao-learn-modular-root [data-ao-fnav-action="toggle"]');
-  if(await formationNavToggle.count()){
+  // The section index belongs inside Formation readers, not on the landing hub.
+  if(await formationNavToggle.count()&&await formationNavToggle.isVisible()){
     await formationNavToggle.tap();
     const openIndexTargets=await page.locator('#ao-learn-modular-root .aoFNavMenu:not([hidden]) [data-ao-fnav-go]').evaluateAll(nodes=>
       nodes.map(node=>{const r=node.getBoundingClientRect();return {w:r.width,h:r.height,label:node.textContent?.trim().slice(0,65)}}));
@@ -345,6 +346,14 @@ try{
   );
   await assertNoMass("Glossary -> Formation");
   await assertFocusSafe("Glossary -> Formation");
+  await page.waitForFunction(()=>{
+    const root=document.getElementById("ao-learn-modular-root");
+    const back=root?.querySelector("[data-ao-learn-back]");
+    if(!root||!back)return false;
+    const r=back.getBoundingClientRect(),style=getComputedStyle(back);
+    return !root.hidden&&!root.inert&&r.width>=44&&r.height>=44&&
+      style.display!=="none"&&style.visibility!=="hidden";
+  },null,{timeout:10000});
 
   // Spiritual Life: published 14-lesson phone journey, readable and explicitly non-scored.
   await openFormationFamily("spiritual-moral");
@@ -671,9 +680,9 @@ try{
   await assertNoMass("Learn -> Pray");
   await assertFocusSafe("Learn -> Pray");
 
-  // Calendar is now embedded in Today (PR #1023), not a standalone
-  // sixth app destination. Use the exact Month control, not the nine
-  // context-specific buttons sharing data-home-calendar.
+  // Calendar is embedded in Today, not a standalone sixth destination.
+  // Quiet Frame replaced the permanent Month tab with the visible full-
+  // calendar entrance; the hidden original tab is not a tappable target.
   await openLearn();
   await page.locator("[data-ao-app-surface='home']").tap();
   await page.waitForFunction(()=>
@@ -681,7 +690,9 @@ try{
     !document.getElementById("ao-learn-modular-root"),
     null,{timeout:10000}
   );
-  await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').tap();
+  const visibleCalendarEntrance=page.locator(".aoHomeCalendarAccess .aoHomeCalendarAction");
+  await visibleCalendarEntrance.waitFor({state:"visible",timeout:10000});
+  await visibleCalendarEntrance.tap();
   await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',
     {state:"visible",timeout:15000});
   assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-body]').count(),1,

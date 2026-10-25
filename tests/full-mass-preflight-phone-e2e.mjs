@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {mkdir,readFile} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
@@ -68,7 +68,7 @@ try{
  const picker=page.locator("[data-ao-observed-mass-picker]");
  assert.equal(await page.locator("[data-full-mass-source-slot] [data-ao-observed-mass-picker]").count(),1,
    "Different Proper picker is outside the unified Mass form/celebration module");
- await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
+ await page.locator('.aoMassFolioQuickChoices [data-folio-goto="celebration"]').click();
  await page.locator('[data-full-mass-category="SOURCE_DATE"]').click();
  assert.equal(await picker.locator("details").evaluate(el=>el.open),true,
    "Other Proper category failed to open the source-day selector");
@@ -121,7 +121,137 @@ try{
  assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),3);
  assert.equal(await page.locator('[data-full-mass-reader-mode][value="LIVE"]').isChecked(),true);
  assert.equal(await page.locator(".aoGuidedMassFolio").count(),1,"One Guided Folio");
- await page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]').click();
+ // The quiet three-choice overview is a view of the existing form inputs,
+ // not new shadow state or a second Start Mass action.
+ // The overview button itself is intentionally hidden while already on overview.
+ if((await page.locator(".aoGuidedMassFolio").getAttribute("data-ao-folio-view"))!=="overview")
+   await page.locator("[data-folio-overview-button]").click();
+ assert.equal(await page.locator(".aoGuidedMassFolio").getAttribute("data-ao-folio-view"),"overview");
+ assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioQuickRow").count(),3);
+ assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioChoiceIcon").count(),3);
+ assert.equal(await page.locator(".aoMassFolioQuickChoices .aoMassFolioChoiceIndex").count(),0);
+ // The source-owned choices must read as one open editorial folio, not three
+ // nested bordered app cards. Test the actual computed browser styles.
+ const editorial=await page.evaluate(()=>{
+   const choices=document.querySelector(".aoGuidedMassFolio[data-ao-folio-view='overview'] .aoMassFolioQuickChoices");
+   const rows=[...choices.querySelectorAll(".aoMassFolioQuickRow")];
+   return {gap:getComputedStyle(choices).rowGap,
+     rows:rows.map(row=>{
+       const cs=getComputedStyle(row);
+       const icon=row.querySelector(".aoMassFolioChoiceIcon");
+       return {radius:parseFloat(cs.borderTopLeftRadius),leftBorder:parseFloat(cs.borderLeftWidth),
+         height:row.getBoundingClientRect().height,icon:icon?.getBoundingClientRect().width||0,title:parseFloat(getComputedStyle(row.querySelector("strong")).fontSize)};
+     })};
+ });
+ assert.equal(editorial.gap,"0px","The Mass choices are still three detached tiles");
+ assert.ok(editorial.rows.every(row=>row.radius===0&&row.leftBorder===0),
+   "Mass choices must share open folio rules, not individual card borders: "+JSON.stringify(editorial));
+ assert.ok(editorial.rows.every(row=>row.height>=64)&&editorial.rows[0].icon>=46&&editorial.rows[0].icon>editorial.rows[1].icon&&editorial.rows[0].title>editorial.rows[1].title,
+   "Source-owned Mass identity lost its editorial emphasis: "+JSON.stringify(editorial));
+ // Start action and secondary preferences share one controller. Order them
+ // visually as primary choice then secondary adjustments, without cloning form.
+ const firstChoiceOrder=await page.evaluate(()=>{
+   const folio=document.querySelector(".aoGuidedMassFolio[data-ao-folio-view='overview']");
+   const start=folio?.querySelector("[data-folio-host-actions]");
+   const extra=folio?.querySelector(".aoMassFolioExperience");
+   return {startOrder:getComputedStyle(start).order,extraOrder:getComputedStyle(extra).order};
+ });
+ assert.ok(Number(firstChoiceOrder.startOrder)<Number(firstChoiceOrder.extraOrder),
+   "Start should visually precede secondary preferences on overview");
+ assert.deepEqual(await page.locator(".aoMassFolioQuickChoices .aoMassFolioChoiceIcon").evaluateAll(nodes=>
+  nodes.map(x=>x.getAttribute("data-ao-asset-id"))),
+  ["ao-brand-emblem","ao-live-priest-foot-altar","ao-nav-learn"],
+  "The three source-owned choices must use exact canonical bank icons");
+ const imageCheck=await page.evaluate(async()=>{
+   const {resolveCanonicalAssetUrl}=await import("/src/assets/asset-registry.js");
+   const ids=[...document.querySelectorAll(".aoMassFolioQuickChoices .aoMassFolioChoiceIcon")].map(n=>n.dataset.aoAssetId);
+   return await Promise.all(ids.map(async id=>{
+     const url=resolveCanonicalAssetUrl(id),response=url?await fetch(url):null;
+     const bytes=response?.ok?new Uint8Array(await response.arrayBuffer()):null;
+     return {id,ok:!!response?.ok,png:!!bytes&&bytes[0]===137&&bytes[1]===80&&bytes[2]===78&&bytes[3]===71};
+   }));
+ });
+ assert.ok(imageCheck.every(item=>item.ok&&item.png),
+   "Mass setup icons must resolve to actual PNG assets, not registry-only placeholders: "+JSON.stringify(imageCheck));
+ const layout=await page.evaluate(()=>{
+   const cards=[...document.querySelectorAll(".aoGuidedMassFolio[data-ao-folio-view='overview'] .aoMassFolioQuickRow")];
+   return cards.map(row=>{
+     const icon=row.querySelector(".aoMassFolioChoiceIcon")?.getBoundingClientRect();
+     const text=row.querySelector("span:nth-of-type(2)")?.getBoundingClientRect();
+     const button=row.getBoundingClientRect();
+     const strong=row.querySelector("strong")?.getBoundingClientRect();
+     return {buttonWidth:button.width,textWidth:text?.width||0,titleWidth:strong?.width||0,
+       iconRight:icon?.right||0,textLeft:text?.left||0,textRight:text?.right||0,
+       textColumn:getComputedStyle(row.querySelector("span:nth-of-type(2)")).gridColumnStart};
+   });
+ });
+ assert.ok(layout.length===3&&layout.every(item=>
+   item.textWidth>=item.buttonWidth*.45&&item.iconRight+3<=item.textLeft&&
+   item.textRight<=item.buttonWidth+page.viewportSize().width),
+   "Mass setup text must occupy a full independent column beside its illustration: "+JSON.stringify(layout));
+ const firstFold=await page.evaluate(()=>{
+  const shell=document.querySelector(".aoGuidedMassFolio[data-ao-folio-view='overview']");
+  const duplicate= shell?.querySelector(".aoMassFolioIdentity");
+  const massChoice=shell?.querySelector("[data-folio-quick-mass-value]");
+  const overviewDate=shell?.querySelector("[data-folio-overview-date]");
+  const details=shell?.querySelector('[data-folio-panel="overview"]>[data-folio-calendar-details]');
+  return {duplicateHidden:!!duplicate&&getComputedStyle(duplicate).display==="none",
+   dateVisible:!!overviewDate&&getComputedStyle(overviewDate).display!=="none",
+   massTitle:massChoice?.textContent?.trim()||"",
+   detailsInsideOverview:!!details,
+   firstMassButtonVisible:!!massChoice&&massChoice.getBoundingClientRect().height>0};
+ });
+ assert.ok(firstFold.duplicateHidden&&firstFold.dateVisible&&
+   firstFold.massTitle.length>4&&firstFold.detailsInsideOverview&&firstFold.firstMassButtonVisible,
+  "Mass overview must present one source-owned feast choice, date and About today: "+JSON.stringify(firstFold));
+ assert.match(await page.locator("[data-folio-quick-mass-value]").innerText(),/Mass|Sunday|Rosary/i);
+ assert.match(await page.locator("[data-folio-quick-reader-value]").innerText(),/LIVE/);
+ // Save actual browser visuals of the *canonical* preflight, not a mockup.
+ // These images never alter the rendered Mass preparation or selection owner.
+ const massQaDir=resolve(base,"artifacts/mass-preflight-quiet");
+ await mkdir(massQaDir,{recursive:true});
+ // The previous Proper-picker interaction may have scrolled the test fixture.
+ // Restore the actual first fold before taking its acceptance screenshot.
+ await page.evaluate(()=>{
+   window.scrollTo({top:0,behavior:"instant"});
+   document.querySelector("#ao-mass-flow-v1")?.scrollTo?.({top:0,behavior:"instant"});
+ });
+ const fold=await page.locator("[data-folio-overview-heading]").boundingBox();
+ assert.ok(fold&&fold.y>=-1&&fold.y<230,
+   "Mass overview header must appear within the phone first fold: "+JSON.stringify(fold));
+ const primaryButton=await page.locator("[data-folio-host-actions] [data-ao-start-live]").evaluate(el=>{
+   const probe=document.createElement("span");
+   probe.style.backgroundColor="var(--liturgical,#9a845f)";
+   el.appendChild(probe);
+   const tokenBackground=getComputedStyle(probe).backgroundColor;
+   probe.remove();
+   return {background:getComputedStyle(el).backgroundColor,
+     tokenBackground,color:getComputedStyle(el).color,height:el.getBoundingClientRect().height};
+ });
+ assert.equal(primaryButton.background,primaryButton.tokenBackground,
+   "Start Mass action must follow the liturgical colour token, not a hard-coded gold");
+ assert.ok(primaryButton.height>=52,"Start Mass touch target became undersized");
+ assert.equal(await page.locator("[data-folio-guide-start]").isVisible(),false,
+   "Duplicate More choices route must stay hidden on three-choice overview");
+ await page.screenshot({path:resolve(massQaDir,"mass-overview-390.png"),fullPage:false,animations:"disabled"});
+ await page.setViewportSize({width:768,height:1024});
+ await page.evaluate(()=>{
+   window.scrollTo({top:0,behavior:"instant"});
+   document.querySelector("#ao-mass-flow-v1")?.scrollTo?.({top:0,behavior:"instant"});
+ });
+ await page.screenshot({path:resolve(massQaDir,"mass-overview-768.png"),fullPage:false,animations:"disabled"});
+ await page.setViewportSize({width:390,height:844});
+ for(const stage of ["reader","ceremony","celebration"]){
+  await page.locator('.aoMassFolioQuickChoices [data-folio-goto="'+stage+'"]').click();
+  assert.equal(await page.locator(".aoGuidedMassFolio").getAttribute("data-ao-folio-view"),stage);
+  assert.equal(await page.locator('[data-folio-panel="'+stage+'"]').isVisible(),true);
+  await page.locator("[data-folio-overview-button]").click();
+ }
+ assert.equal(await page.locator("[data-full-mass-form]").count(),4,"Canonical form controls cloned or removed");
+ assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),3,"Canonical reader controls cloned or removed");
+ // The overview hides the old stage nav; its three visible quick rows are the
+ // canonical navigation into the same stage controls.
+ await page.locator('.aoMassFolioQuickChoices [data-folio-goto="reader"]').click();
  for(const mode of ["MISSAL","SIMPLE","LIVE"]){
   await page.locator('[data-full-mass-reader-mode][value="'+mode+'"]').check();
   assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).readerMode,mode);

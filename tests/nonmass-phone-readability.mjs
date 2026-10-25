@@ -29,7 +29,7 @@ const base="http://127.0.0.1:"+server.address().port;
 let browser;
 try{
  browser=await chromium.launch({headless:true});
- for(const width of [320,390,430,768]){
+ for(const width of [320,390,430,768,1280]){
   const height=width===768?1000:width===320?700:width===390?844:932;
   const context=await browser.newContext({viewport:{width,height},hasTouch:true,
     isMobile:width<600,deviceScaleFactor:1,locale:"en-GB",reducedMotion:"reduce"});
@@ -42,6 +42,77 @@ try{
      null,{timeout:35000});
    await page.waitForFunction(()=>!document.getElementById("ao-cinema-boot"),
      null,{timeout:18000});
+   // Artwork can resolve after shell boot. Distinguish approved painting,
+   // a legitimate no-art day, and the remote resolver's transient placeholder.
+   if(width===390||width===768||width===1280){
+     // Resolve optional asynchronous saint art where the external provider
+     // permits it. A source-approved no-art state is allowed to finish first.
+     await page.waitForFunction(()=>{
+       const card=document.querySelector(".homeScreen .aoSaintArtCard");
+       const placeholder=card?.querySelector(".aoSaintArtPlaceholder");
+       return !placeholder||!/Resolving artwork|Résolution de l’œuvre/i.test(placeholder.textContent||"");
+     },null,{timeout:15000}).catch(()=>{});
+     const artwork=await page.evaluate(()=>{
+       const hero=document.querySelector(".homeScreen .aoTodayV2Frontispiece");
+       const slot=hero?.querySelector("[data-ao-home-art-slot]");
+       const image=slot?.querySelector("img");
+       const text=(slot?.innerText||"").trim().slice(0,180);
+       return {missing:hero?.classList.contains("aoTodayV2ArtMissing"),
+         text,imageSrc:image?.getAttribute("src")||null,
+         imageLoaded:Boolean(image?.complete&&image?.naturalWidth>0),
+         media:slot?.querySelectorAll("img,picture source,video[poster],canvas").length||0,
+         markup:(slot?.innerHTML||"").slice(0,500)};
+     });
+     console.log("QUIET_TODAY_ART "+width+"px "+JSON.stringify(artwork));
+     // Remote image failure and pending loads must never leave an orphan
+     // attribution panel visible without its reviewed painting.
+     if(!artwork.imageLoaded){
+       assert.equal(artwork.missing,true,
+         "Today retained a non-loaded painting as approved visible art: "+JSON.stringify(artwork));
+       const orphanCredit=await page.evaluate(()=>{
+         const hero=document.querySelector(".homeScreen .aoTodayV2Frontispiece");
+         const caption=hero?.querySelector(".aoProperArt figcaption");
+         return caption?caption.getBoundingClientRect().height:0;
+       });
+       assert.equal(orphanCredit,0,
+         "Today showed an artwork credit without its painting");
+     }
+     const visual=await page.evaluate(()=>{
+       const date=document.querySelector(".homeScreen .aoTodayEditorialDate");
+       const pending=[...document.querySelectorAll(".homeScreen .aoSaintArtPlaceholder")];
+       const visiblePending=pending.filter(el=>{
+         const holder=el.closest(".aoSaintArtCard")||el;
+         const box=holder.getBoundingClientRect(),style=getComputedStyle(holder);
+         return box.width>10&&box.height>10&&style.display!=="none";
+       }).length;
+       return {dateText:date?.textContent?.trim()||"",visiblePending};
+     });
+     assert.ok(visual.dateText.length>=8,"Editorial Today is missing its source-owned date");
+     if(width===390){
+       const fold=await page.evaluate(()=>{
+         const c=document.querySelector(".homeScreen .aoTodayV2PrimaryMass");
+         const art=document.querySelector(".homeScreen [data-ao-home-art-slot]");
+         const nav=document.querySelector("#ao-global-ribbon");
+         const button=c?.getBoundingClientRect();
+         const artBox=art?.getBoundingClientRect();
+         const artVisible=!!art&&!!artBox&&artBox.width>0&&artBox.height>0
+           &&getComputedStyle(art).display!=="none"
+           &&getComputedStyle(art.closest(".aoTodayV2Art")||art).display!=="none";
+         const navTop=nav?.getBoundingClientRect().top??innerHeight;
+         return {buttonTop:button?.top??null,buttonBottom:button?.bottom??null,
+           paintingTop:artVisible?artBox.top:null,artVisible,navTop,viewport:innerHeight,
+           readable:!!c&&getComputedStyle(c).display!=="none"};
+       });
+       assert.ok(fold.readable&&fold.buttonTop>=0&&fold.buttonBottom<=fold.navTop-4,
+         "Open/Resume Mass must be visible before scrolling at 390px: "+JSON.stringify(fold));
+       assert.ok(fold.paintingTop===null||fold.buttonBottom<fold.paintingTop,
+         "Sacred art must follow the primary Mass action rather than obscuring the entry: "+JSON.stringify(fold));
+       console.log("TODAY_FIRST_FOLD="+JSON.stringify(fold));
+     }
+     assert.equal(visual.visiblePending,0,
+       "Unresolved remote Saints artwork is occupying the premium Today first fold");
+     await page.screenshot({path:resolve(out,"today-"+width+".png"),fullPage:false,animations:"disabled"});
+   }
    await page.locator('[data-ao-app-surface="learn"]').click();
    await page.locator("#ao-learn-modular-root .aoLearnFamilyGrid").waitFor({state:"visible",timeout:18000});
    const formation=await page.evaluate(()=>{
@@ -58,6 +129,13 @@ try{
       clickTargets:buttons.map(b=>b.getBoundingClientRect().height)};
    });
    assert.ok(formation.cards>=8,"Formation subjects missing at "+width+"px");
+   const landingIndex=await page.evaluate(()=>{
+     const root=document.querySelector("#ao-learn-modular-root");
+     const navigator=root.querySelector(":scope > .aoFNav");
+     return {isLanding:root.dataset.aoLearnFamily==="",visible:Boolean(navigator&&getComputedStyle(navigator).display!=="none")};
+   });
+   if(landingIndex.isLanding)assert.equal(landingIndex.visible,false,
+     "Reader-only section navigator is crowding the Formation landing screen");
    if(width<=430){
      const duplicate=await page.evaluate(()=>{
        const root=document.querySelector("#ao-learn-modular-root");
@@ -85,32 +163,175 @@ try{
       "Tablet Formation lost its two-column scannability");
    }
    assert.ok(formation.scrollWidth<=formation.innerWidth+1,"Formation overflow at "+width+"px");
+   const massDoor=page.locator('#ao-learn-modular-root [data-ao-learn-family="liturgy-tradition"] .aoLearnModIcon');
+   assert.equal(await massDoor.count(),1,"Formation Mass & Liturgy icon missing");
+   assert.equal(await massDoor.getAttribute("data-ao-asset-id"),"ao-brand-emblem",
+     "Formation must use its verified canonical Mass icon");
+   const formationAsset=await page.evaluate(async()=>{
+     const response=await fetch("/assets/active/navigation/ao-brand-emblem.png");
+     const bytes=response.ok?new Uint8Array(await response.arrayBuffer()):null;
+     return {ok:response.ok,png:!!bytes&&bytes[0]===137&&bytes[1]===80&&bytes[2]===78&&bytes[3]===71};
+   });
+   assert.ok(formationAsset.ok&&formationAsset.png,
+     "Mass & Liturgy mask points to an absent asset: "+JSON.stringify(formationAsset));
    await page.screenshot({path:resolve(out,"formation-"+width+".png"),fullPage:false,animations:"disabled"});
    await page.locator('[data-ao-app-surface="pray"]').click();
    await page.locator("#aoPray435930.open .aoP435930RootOrganised").waitFor({state:"visible",timeout:18000});
+   // Quiet-frame acceptance: the first fold has six canonical entries and
+   // the entire original catalogue remains reachable after disclosure.
+   const featured=await page.locator("#aoPray435930 .aoP435930QuietTiles>.aoP435930QuietTile").count();
+   assert.equal(featured,6,"Pray should show six featured routes at "+width+"px");
+   const libraryRows=await page.locator("#aoPray435930 .aoP435930QuietLibraryRow").count();
+   assert.equal(libraryRows,4,"Pray library shortcuts or My Customs entry missing at "+width+"px");
+   // Screenshot-independent art-direction gate. The top two source-owned
+   // devotions must read as illustrated folios; the other four as open rows.
+   const visual=await page.evaluate(()=>{
+     const tiles=[...document.querySelectorAll("#aoPray435930 .aoP435930QuietTiles>.aoP435930QuietTile")];
+     return tiles.map(tile=>{
+       const style=getComputedStyle(tile);
+       const asset=tile.querySelector(".aoP435930ModuleAsset,.aoP435930ModuleIcon");
+       const a=asset?getComputedStyle(asset):null;
+       return {route:tile.getAttribute("data-p435930-own")||tile.getAttribute("data-p435930-external")||tile.getAttribute("data-p435930-family"),
+         h:tile.getBoundingClientRect().height,icon:asset?.getBoundingClientRect().width||0,
+         title:parseFloat(getComputedStyle(tile.querySelector("b")).fontSize),
+         topBorder:parseFloat(style.borderTopWidth),background:style.backgroundColor,
+         assetId:asset?.getAttribute("data-ao-asset-id")||null};
+     });
+   });
+   assert.deepEqual(visual.slice(0,2).map(t=>t.route),["pray.rosary","pray.adoration"],
+     "Illustrated Prayer frontispieces must retain their live canonical routes");
+   assert.ok(visual.slice(0,2).every(t=>t.icon>=80&&t.title>=22&&t.topBorder>=1),
+     "The two illustrated folios lost artwork prominence: "+JSON.stringify(visual));
+   assert.ok(visual.slice(2).every(t=>t.icon>=56&&t.title>=16&&t.topBorder===0),
+     "Four quiet Prayer entrances have reverted to boxed app tiles: "+JSON.stringify(visual));
+   assert.ok(visual[0].h>visual[2].h+30,
+     "Sacred illustration hierarchy collapsed to six uniform tiles: "+JSON.stringify(visual));
+   await page.screenshot({path:resolve(out,"pray-"+width+".png"),fullPage:false,animations:"disabled"});
+   await page.locator("#aoPray435930 .aoP435930QuietMore>summary").click();
    const prayer=await page.evaluate(()=>{
     const root=document.querySelector("#aoPray435930.open .aoP435930RootOrganised");
-    const visible=selector=>[...document.querySelectorAll(selector)].filter(el=>{
+    const old=root?.querySelector(".aoP435930QuietMore");
+    const visible=selector=>[...root.querySelectorAll(selector)].filter(el=>{
       const s=getComputedStyle(el),r=el.getBoundingClientRect();
       return s.display!=="none"&&s.visibility!=="hidden"&&r.height>0&&r.width>0;
     });
-    const kind=visible("#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleKind");
-    const descriptions=visible("#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleDescription");
+    const tiles=visible(".aoP435930QuietTile");
+    const descriptions=visible(".aoP435930QuietMoreContent .aoP435930ModuleDescription");
+    const familyDoors=visible(".aoP435930QuietMoreContent [data-p435930-family]");
     const font=el=>parseFloat(getComputedStyle(el).fontSize);
-    return {root:!!root,kind:kind.map(font),descriptions:descriptions.map(font),
-      scrollWidth:document.documentElement.scrollWidth,innerWidth,
-      rootButtons:[...root.querySelectorAll("button")].length};
+    return {root:!!root,expanded:!!old?.open,tiles:tiles.length,
+      tileText:tiles.map(b=>font(b.querySelector("b"))),
+      descriptionFonts:descriptions.map(font),familyDoors:familyDoors.length,
+      scrollWidth:document.documentElement.scrollWidth,innerWidth};
    });
-   assert.ok(prayer.kind.length>=4&&prayer.descriptions.length>=4,
-     "Prayer family list unavailable at "+width+"px");
-   assert.ok(prayer.kind.every(px=>px>=11),"Prayer category microtype still <11px: "+JSON.stringify(prayer));
-   assert.ok(prayer.descriptions.every(px=>px>=13),
-     "Prayer descriptions still below 13px: "+JSON.stringify(prayer));
+   assert.equal(prayer.expanded,true,"Full prayer catalogue disclosure did not open");
+   assert.equal(prayer.tiles,6,"Six canonical Prayer entries not visible");
+   assert.ok(prayer.tileText.every(px=>px>=16),"Featured prayer labels too small: "+JSON.stringify(prayer));
+   assert.ok(prayer.familyDoors>=5&&prayer.descriptionFonts.length>=5,
+     "Original Prayer families unavailable after disclosure at "+width+"px: "+JSON.stringify(prayer));
+   assert.ok(prayer.descriptionFonts.every(px=>px>=13),
+     "Prayer family descriptions below 13px: "+JSON.stringify(prayer));
    assert.ok(prayer.scrollWidth<=prayer.innerWidth+1,"Prayer overflow at "+width+"px");
-   await page.screenshot({path:resolve(out,"pray-"+width+".png"),fullPage:false,animations:"disabled"});
-   assert.equal(errors.length,0,"Browser errors at "+width+"px: "+errors.slice(0,3).join("; "));
    console.log("PASS "+width+"px: "+formation.cards+" formation subjects, "+
-     prayer.kind.length+" Prayer family kinds, no viewport overflow");
+     prayer.tiles+" Prayer features, "+prayer.familyDoors+" retained families, no viewport overflow");
+   // Cross-surface quiet-frame QA. Real browser snapshots and computed style
+   // values, with navigation still owned by AO_APP_SHELL_V1. Skip duplicate
+   // captures at narrow widths (Formation and Pray are covered at all sizes).
+   if(width===390||width===768||width===1280){
+     const openedSettings=await page.evaluate(async()=>await window.AO_APP_SHELL_V1.navigate("settings"));
+     assert.equal(openedSettings?.ok,true,"Settings utility overlay not routable");
+     await page.locator("#ao-settings-modular-root .aoSetRow").first().waitFor({state:"visible",timeout:15000});
+     const settings=await page.evaluate(()=>{
+       const r=document.querySelector("#ao-settings-modular-root");
+       const row=r.querySelector(".aoSetRow"),header=r.querySelector(".aoSetTop");
+       return {bg:getComputedStyle(r).backgroundColor,header:getComputedStyle(header).backgroundColor,
+         rowHeight:row.getBoundingClientRect().height,
+         rowFont:parseFloat(getComputedStyle(row.querySelector(".aoSetRowText b")).fontSize),
+         scroll:document.documentElement.scrollWidth,viewport:innerWidth};
+     });
+     assert.equal(settings.bg,"rgb(11, 15, 19)","Settings missing shared quiet-frame background");
+     assert.equal(settings.header,settings.bg,"Settings header drifted from quiet-frame palette");
+     assert.ok(settings.rowHeight>=64&&settings.rowFont>=16,"Settings touch rows or labels are undersized: "+JSON.stringify(settings));
+     assert.ok(settings.scroll<=settings.viewport+1,"Settings horizontal overflow: "+JSON.stringify(settings));
+     const closeLayers=await page.evaluate(()=>{
+       const near=[];
+       for(const el of document.querySelectorAll("button,[role=button]")){
+         const rect=el.getBoundingClientRect();
+         if(rect.width<=0||rect.height<=0||rect.top>86||rect.right<innerWidth-67)continue;
+         const a=(el.getAttribute("aria-label")||"").toLowerCase();
+         if(!/close|fermer|dismiss|exit/.test(a)&&!el.hasAttribute("data-settings-close"))continue;
+         near.push({selector:el.outerHTML.slice(0,450),root:el.closest("#ao-settings-modular-root")?"settings":"external",
+           box:{x:Math.round(rect.x),y:Math.round(rect.y),w:Math.round(rect.width),h:Math.round(rect.height)},
+           display:getComputedStyle(el).display,visibility:getComputedStyle(el).visibility,
+           z:getComputedStyle(el).zIndex});
+       }
+       return near;
+     });
+     console.log("QUIET_SETTINGS_CLOSE_LAYERS "+width+"px "+JSON.stringify(closeLayers));
+     const headerGlyphs=await page.evaluate(()=>[...document.querySelectorAll("#ao-settings-modular-root .aoSetTop button")].map(btn=>({
+       action:btn.getAttribute("aria-label"),
+       visibleIcons:[...btn.querySelectorAll(".aoUiIcon,.aoSetTopIcon")].filter(icon=>{
+         const css=getComputedStyle(icon),r=icon.getBoundingClientRect();
+         return css.display!=="none"&&css.visibility!=="hidden"&&r.width>0&&r.height>0;
+       }).length
+     })));
+     assert.ok(headerGlyphs.length>=1&&headerGlyphs.every(x=>x.visibleIcons===1),
+       "Settings header must render one canonical icon per action: "+JSON.stringify(headerGlyphs));
+
+     await page.screenshot({path:resolve(out,"settings-"+width+".png"),fullPage:false,animations:"disabled"});
+
+     const openedExplore=await page.evaluate(async()=>await window.AO_APP_SHELL_V1.navigate("find"));
+     assert.equal(openedExplore?.ok,true,"Explore destination not routable");
+     await page.locator("#ao-find-modular-root .aoHeritageSurface>.aoFindHeader").waitFor({state:"visible",timeout:60000});
+     const explore=await page.evaluate(()=>{
+       const header=document.querySelector("#ao-find-modular-root .aoHeritageSurface>.aoFindHeader");
+       const r=header.getBoundingClientRect();
+       return {bg:getComputedStyle(header).backgroundColor,height:r.height,width:r.width,
+         scroll:document.documentElement.scrollWidth,viewport:innerWidth};
+     });
+     assert.equal(explore.bg,"rgb(11, 15, 19)","Explore default map header missing quiet-frame palette");
+     assert.ok(explore.height>=44&&explore.width>=width-4,"Explore map header clipped: "+JSON.stringify(explore));
+     assert.ok(explore.scroll<=explore.viewport+1,"Explore horizontal overflow: "+JSON.stringify(explore));
+     // The third-party MapLibre module/style are independent of directory
+     // data and may fail in CI. Capture the *settled* map, not a blank loader.
+     // Do not capture a premature blank MapLibre canvas at tablet/desktop
+     // sizes. Ready, stalled, and unavailable are meaningful settled states.
+     await page.waitForFunction(()=>{
+       const node=document.querySelector("#ao-find-modular-root .aoHeritageSurface [data-find-map]");
+       return ["ready","stalled","unavailable","empty"].includes(node?.dataset.aoMapState);
+     },null,{timeout:18000}).catch(()=>{});
+     const mapState=await page.evaluate(()=>{
+       const el=document.querySelector("#ao-find-modular-root .aoHeritageSurface [data-find-map]");
+       const canvas=el?.querySelector("canvas.maplibregl-canvas");
+       const fallback=el?.querySelector(".aoExploreMapLoading,.aoFindMapFallback");
+       return {state:el?.dataset.aoMapState||null,
+         canvas:canvas?{width:canvas.width,height:canvas.height}:null,
+         fallback:(fallback?.innerText||"").trim().slice(0,240),
+         feedbackVisible:Boolean(fallback&&getComputedStyle(fallback).display!=="none"),
+         html:(el?.innerHTML||"").slice(0,280)};
+     });
+     console.log("QUIET_EXPLORE_MAP "+width+"px "+JSON.stringify(mapState));
+     assert.notEqual(mapState.state,"loading","Explore map still silently loading after watchdog interval at "+width+"px");
+     await page.screenshot({path:resolve(out,"explore-"+width+".png"),fullPage:false,animations:"disabled"});
+     if(width===390){
+       // The actual French setting, rather than browser-locale emulation.
+       assert.equal((await page.evaluate(async()=>await window.AO_APP_SHELL_V1.navigate("settings")))?.ok,true);
+       await page.locator('#ao-settings-modular-root [data-settings-route="/settings/language-reading"]').click();
+       await page.locator('#ao-settings-modular-root [data-pref-path="general.uiLanguage"][data-pref-value="fr"]').click();
+       await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr",null,{timeout:12000});
+       const french=await page.evaluate(()=>{
+         const root=document.querySelector("#ao-settings-modular-root");
+         const nodes=[...root.querySelectorAll(".aoSetRowText,.aoSetTitle,.aoSetSection>h2")];
+         return {language:document.documentElement.lang,scroll:root.scrollWidth,viewport:root.clientWidth,
+           maxOverflow:nodes.reduce((v,el)=>Math.max(v,el.scrollWidth-el.clientWidth),0)};
+       });
+       assert.ok(french.scroll<=french.viewport+1&&french.maxOverflow<=2,
+         "French Settings text overflow at 390px: "+JSON.stringify(french));
+       await page.screenshot({path:resolve(out,"settings-fr-390.png"),fullPage:false,animations:"disabled"});
+     }
+     console.log("PASS "+width+"px quiet frame Settings/Explore chrome and screenshots");
+   }
+   assert.equal(errors.length,0,"Browser errors at "+width+"px: "+errors.slice(0,3).join("; "));
   }finally{await context.close();}
  }
 }finally{

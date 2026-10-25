@@ -39,6 +39,13 @@ const CSS=`
   --ao-type-prose:18px;
   --ao-type-action-primary:17px;
   --ao-type-action-secondary:16px;
+  /* Editorial hierarchy shared by Today/Pray/Formation/Mass setup.
+   * Sacred reading text retains its separately governed reader scale. */
+  --ao-type-editorial-label:12px;
+  --ao-type-metadata:15px;
+  --ao-type-selection-title:20px;
+  --ao-type-feature-title:25px;
+  --ao-type-hero-title:clamp(33px,6vw,41px);
   --ao-type-speaker-weight:650;
   /* Tab-bar labels. Earlier per-breakpoint rules shrank them to 7.4-9 px. */
   --ao-type-nav:12px;
@@ -273,6 +280,270 @@ const CSS=`
     scroll-behavior:auto!important;
   }
 }
+
+/* AO quiet-frame visual baseline — approved 2026-10-24.
+ * Presentation-only. The 1962 resolver, Mass reader, prayer routing and
+ * source/art provenance remain owned by their existing modules.
+ * Use the established v2 design-system owner; do not install a second skin.
+ */
+:root{
+  --ao-frame-bg:#0B0F13;
+  --ao-frame-card:#141A20;
+  --ao-frame-raised:#1C232B;
+  --ao-frame-text:#ECE8DF;
+  --ao-frame-muted:#A3ABB4;
+  --ao-frame-rule:rgba(255,255,255,.08);
+  --ao-frame-radius:16px;
+  --ao-frame-gutter:16px;
+  --ao-frame-header:56px;
+  --ao-frame-action:52px;
+  --ao-frame-secondary:48px;
+}
+/* Shared primitives for migrations. Ordinary cards contain groups; list
+ * rows keep their own dividers rather than nested decorative borders. */
+.aoQuietFrame{background:var(--ao-frame-bg);color:var(--ao-frame-text);font-family:var(--ao-font-body)}
+.aoQuietHeader{min-height:var(--ao-frame-header);display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:8px;border-bottom:1px solid var(--ao-frame-rule);padding-inline:var(--ao-frame-gutter)}
+.aoQuietHeaderTitle{min-width:0;text-align:center;font:400 19px/1.3 var(--ao-font-display);overflow-wrap:anywhere}
+.aoQuietHeaderAction{display:grid;place-items:center;width:44px;height:44px;border:0;background:none;color:var(--ao-frame-text)}
+.aoQuietCard{padding:16px;border:0;border-radius:var(--ao-frame-radius);background:var(--ao-frame-card)}
+.aoQuietRow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;min-height:64px;padding:10px 16px;background:transparent;color:var(--ao-frame-text);border:0;border-bottom:1px solid var(--ao-frame-rule);text-align:left;font-family:var(--ao-font-ui)}
+.aoQuietRow:last-child{border-bottom:0}
+.aoQuietRowTitle{display:block;font-size:17px;line-height:1.3;font-weight:500}
+.aoQuietRowSubtitle{display:block;font-size:14px;line-height:1.4;color:var(--ao-frame-muted)}
+.aoQuietPrimary{display:flex;align-items:center;justify-content:center;width:100%;min-height:var(--ao-frame-action);border:0;border-radius:12px;background:var(--liturgical,var(--ao-liturgical-accent));color:var(--liturgical-ink,var(--ao-frame-bg));font:500 17px/1.35 var(--ao-font-ui);font-variant-caps:normal;letter-spacing:0}
+.aoQuietSecondary{display:flex;align-items:center;justify-content:center;min-height:var(--ao-frame-secondary);border:1px solid var(--ao-frame-rule);border-radius:12px;background:transparent;color:var(--ao-frame-text);font:400 17px/1.35 var(--ao-font-ui)}
+.aoQuietHeaderAction:focus-visible,.aoQuietRow:focus-visible,.aoQuietPrimary:focus-visible,.aoQuietSecondary:focus-visible{outline:2px solid var(--liturgical,var(--ao-liturgical-accent));outline-offset:2px}
+#ao-global-ribbon .aoGlobalRibbonBtn{font-size:12px!important;font-variant-caps:normal!important;text-transform:none!important;letter-spacing:0!important}
+#ao-global-ribbon .aoGlobalRibbonIcon{width:24px!important;height:24px!important}
+/* Today: keep all existing calendar controls, proper selection, art and
+ * action callbacks. Hide the redundant view switch only in normal Today;
+ * its embedded calendar views retain their tabs. */
+.homeScreen.aoTodayV2{background:var(--ao-frame-bg)!important;color:var(--ao-frame-text)}
+.homeScreen.aoTodayV2 .aoTodayV2Header{background:var(--ao-frame-bg)!important}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoTodayV2Tabs{display:none!important}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoHomeCalendarAccess{display:flex!important;justify-content:flex-end;padding:4px var(--ao-frame-gutter) 8px!important}
+.homeScreen.aoTodayV2:not([data-ao-home-calendar-view]) .aoHomeCalendarAction{border:0!important;background:transparent!important;color:var(--liturgical,var(--ao-liturgical-accent))!important}
+.homeScreen.aoTodayV2 .aoTodayV2PrimaryMass{min-height:var(--ao-frame-action)!important;border-radius:12px!important}
+.homeScreen.aoTodayV2 .aoTodayV2PrimaryMass b{font-variant-caps:normal!important;letter-spacing:0!important;font-size:17px!important}
+.homeScreen.aoTodayV2 .aoTodayV2SecondaryMass{gap:12px!important}
+.homeScreen.aoTodayV2 .aoTodayV2SecondaryMass button{flex:1;min-height:var(--ao-frame-secondary)!important;padding-inline:12px!important;border:1px solid var(--ao-frame-rule)!important;border-radius:12px!important;color:var(--ao-frame-text)!important;background:transparent!important}
+.homeScreen.aoTodayV2 .aoTodayV2HeroActions{background:var(--ao-frame-bg)!important}
+/* Mobile frontispiece: show the feast outside the painting, rather than
+ * overlaying the sacred art. The art credit remains source-owned. */
+@media(max-width:699px){
+ .homeScreen.aoTodayV2 .aoTodayV2Frontispiece{display:flex!important;flex-direction:column!important;margin:0 var(--ao-frame-gutter)!important;border:0!important;border-radius:0!important;background:var(--ao-frame-bg)!important;overflow:visible!important}
+ .homeScreen.aoTodayV2 .aoTodayV2Art{display:flex!important;flex-direction:column!important;height:auto!important;overflow:visible!important;background:transparent!important}
+ .homeScreen.aoTodayV2 .aoTodayV2Art::after{display:none!important}
+ .homeScreen.aoTodayV2 .aoTodayV2ArtOverlay{order:-1!important;position:static!important;inset:auto!important;min-height:0!important;padding:16px 0 12px!important;display:block!important;pointer-events:none!important}
+ .homeScreen.aoTodayV2 .aoTodayV2ArtOverlay .eyebrow{display:none!important}
+ .homeScreen.aoTodayV2 .aoTodayV2ArtOverlay h1{margin:0!important;font:400 28px/1.15 var(--ao-font-display)!important;text-align:left!important;text-shadow:none!important;color:var(--ao-frame-text)!important;overflow-wrap:normal!important}
+ .homeScreen.aoTodayV2 .aoTodayV2ArtSource{display:block;flex:none;width:100%;height:clamp(215px,57vw,355px)!important;overflow:hidden;border-radius:var(--ao-frame-radius)!important;background:var(--ao-frame-card)}
+ .homeScreen.aoTodayV2 .aoTodayV2ArtSource img{object-fit:contain!important;object-position:center!important}
+ .homeScreen.aoTodayV2 .aoTodayV2HeroActions{padding:12px 0 16px!important}
+ .homeScreen.aoTodayV2 .aoTodayV2Mass{padding:12px 0 16px!important}
+ .homeScreen.aoTodayV2 .aoTodayV2ArtMissing .aoTodayV2ArtSource{display:none!important}
+}
+/* Only the Pray catalogue shell; devotional reading and prayer cards retain
+ * their separately audited visual contracts and sequence behaviour. */
+#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleCard{background:var(--ao-frame-card)!important;border:1px solid var(--ao-frame-rule)!important;border-radius:var(--ao-frame-radius)!important;box-shadow:none!important}
+#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleCard b{font-family:var(--ao-font-display)!important;font-size:17px!important;font-variant-caps:normal!important;letter-spacing:0!important}
+#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleKind{display:none!important}
+#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleDescription{color:var(--ao-frame-muted)!important;font-size:14px!important}
+@media(prefers-reduced-motion:reduce){.aoQuietFrame *,#ao-global-ribbon *{scroll-behavior:auto!important}}
+
+
+/* Quiet Frame P2a: ordinary Formation / Settings / Explore chrome.
+ * Visual-only surface adaptation. Keep native controllers, map canvases,
+ * draggable sheets, site provenance and specialized reader views untouched. */
+#ao-learn-modular-root,#ao-settings-modular-root,
+#ao-find-modular-root .aoExploreSurface{
+ background:var(--ao-frame-bg,#0B0F13)!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+}
+#ao-learn-modular-root .aoLearnModTop,
+#ao-settings-modular-root .aoSetTop,
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader,
+#ao-find-modular-root .aoHeritageSurface>.aoFindHeader{
+ background:var(--ao-frame-bg,#0B0F13)!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+ border-bottom:1px solid var(--ao-frame-rule,rgba(255,255,255,.08))!important;
+ box-shadow:none!important;
+}
+/* Hide only redundant mask spans once the approved icon has resolved;
+ * never hide the interactive Formation back/home toolbar buttons. */
+#ao-learn-modular-root .aoLearnModTop button.aoUiIconOnly > .aoLearnControlIcon,
+#ao-settings-modular-root .aoSetTop button.aoUiIconOnly > .aoSetTopIcon{display:none!important}
+#ao-learn-modular-root .aoLearnModTop button,
+#ao-settings-modular-root .aoSetTop button,
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader>button,
+#ao-find-modular-root .aoHeritageSurface>.aoFindHeader>button{
+ min-width:44px!important;min-height:44px!important;
+ background:transparent!important;
+ border:0!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+ box-shadow:none!important;
+}
+#ao-learn-modular-root .aoLearnModTopTitle small,
+#ao-settings-modular-root .aoSetTitle small,
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader>div>small,
+#ao-find-modular-root .aoHeritageSurface>.aoFindHeader>div>small{
+ display:none!important;
+}
+#ao-learn-modular-root .aoLearnModTopTitle strong,
+#ao-settings-modular-root .aoSetTitle strong,
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader h1,
+#ao-find-modular-root .aoHeritageSurface>.aoFindHeader h1{
+ font:400 19px/1.3 var(--ao-font-display,"EB Garamond",Georgia,serif)!important;
+ letter-spacing:0!important;
+ text-transform:none!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+}
+#ao-learn-modular-root .aoLearnModWrap,
+#ao-settings-modular-root .aoSetWrap{
+ width:min(var(--ao-content-max,760px),100%);
+ padding-inline:var(--ao-frame-gutter,16px)!important;
+}
+/* Preserve the shared 12px phone reading gutter instead of reapplying the
+   16px tablet/desktop editorial margin on a narrow viewport. */
+@media(max-width:560px){
+ #ao-learn-modular-root .aoLearnModWrap{
+  padding-inline:var(--ao-page-gutter-phone,12px)!important;
+ }
+}
+/* The nine-section table of contents belongs in an opened Formation reader,
+ * not above the discovery homepage. Preserve it for each subject/lesson. */
+#ao-learn-modular-root[data-ao-learn-family=""]>.aoFNav{display:none!important}
+#ao-learn-modular-root .aoLearnModHero h1{
+ font:400 clamp(28px,5vw,38px)/1.16 var(--ao-font-display,"EB Garamond",Georgia,serif)!important;
+ letter-spacing:0!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+}
+#ao-learn-modular-root .aoLearnFamilyCard{
+ background:var(--ao-frame-card,#141A20)!important;
+ border-color:var(--ao-frame-rule,rgba(255,255,255,.08))!important;
+ box-shadow:none!important;
+}
+#ao-learn-modular-root .aoLearnFamilyDoor p{
+ font-size:14px!important;line-height:1.48!important;
+ color:var(--ao-frame-muted,#A3ABB4)!important;
+}
+#ao-settings-modular-root .aoSetGroup{
+ border:0!important;
+ border-radius:var(--ao-frame-radius,16px)!important;
+ background:var(--ao-frame-card,#141A20)!important;
+ box-shadow:none!important;
+}
+#ao-settings-modular-root .aoSetSection>h2{
+ font:500 13px/1.45 var(--ao-font-ui,"EB Garamond",Georgia,serif)!important;
+ color:var(--ao-frame-muted,#A3ABB4)!important;
+ font-variant-caps:small-caps!important;
+ letter-spacing:.06em!important;
+ text-transform:none!important;
+}
+#ao-settings-modular-root .aoSetRow{
+ min-height:64px!important;
+ border-bottom:1px solid var(--ao-frame-rule,rgba(255,255,255,.08))!important;
+ padding:10px 16px!important;
+ background:transparent!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+}
+#ao-settings-modular-root .aoSetRow:last-child{border-bottom:0!important}
+#ao-settings-modular-root .aoSetRowText b{
+ font:500 17px/1.3 var(--ao-font-ui,"EB Garamond",Georgia,serif)!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+}
+#ao-settings-modular-root .aoSetRowText small{
+ font:400 14px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif)!important;
+ color:var(--ao-frame-muted,#A3ABB4)!important;
+}
+#ao-find-modular-root .aoExploreSurface>.aoFindHeader>span{
+ color:var(--ao-frame-muted,#A3ABB4)!important;
+}
+#ao-find-modular-root .aoExploreSurface .aoFindSearch input{
+ background:var(--ao-frame-raised,#1C232B)!important;
+ border-color:var(--ao-frame-rule,rgba(255,255,255,.08))!important;
+ color:var(--ao-frame-text,#ECE8DF)!important;
+ font:400 16px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif)!important;
+}
+#ao-learn-modular-root :is(.aoLearnModTop button,.aoLearnFamilyDoor):focus-visible,
+#ao-settings-modular-root :is(.aoSetTop button,.aoSetRow):focus-visible,
+#ao-find-modular-root .aoExploreSurface :is(.aoFindHeader button,.aoFindSearch input):focus-visible{
+ outline:2px solid var(--liturgical,#C9AD78)!important;outline-offset:2px;
+}
+
+
+/* Formation discovery as an illustrated reading index rather than a wall of cards. */
+#ao-learn-modular-root .aoLearnFamilyGrid{
+  display:flex!important;flex-direction:column!important;
+  gap:0!important;margin:17px 0 28px!important;
+  background:transparent!important;border:0!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard{
+  width:100%!important;min-width:0!important;margin:0!important;
+  padding:0!important;border:0!important;border-top:1px solid rgba(207,189,153,.18)!important;
+  border-radius:0!important;background:transparent!important;box-shadow:none!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard:last-child{
+  border-bottom:1px solid rgba(207,189,153,.18)!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{
+  display:grid!important;grid-template-columns:54px minmax(0,1fr)!important;
+  grid-template-rows:auto auto!important;column-gap:15px!important;
+  row-gap:4px!important;align-items:center!important;
+  min-height:102px!important;padding:17px 5px!important;width:100%!important;
+  background:transparent!important;border:0!important;text-align:left!important;
+  border-radius:0!important;box-shadow:none!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor .aoLearnModIcon{
+  display:block!important;grid-column:1!important;grid-row:1 / 3!important;
+  align-self:center!important;justify-self:center!important;
+  width:43px!important;height:43px!important;max-width:43px!important;max-height:43px!important;
+  color:#c3b18d!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor strong{
+  display:block!important;grid-column:2!important;grid-row:1!important;
+  margin:0!important;min-width:0!important;
+  font:400 22px/1.15 var(--ao-font-display,Georgia,serif)!important;
+  color:#f0e7d9!important;letter-spacing:0!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor p{
+  display:block!important;grid-column:2!important;grid-row:2!important;
+  margin:0!important;min-width:0!important;
+  font:400 14px/1.43 var(--ao-font-ui,Georgia,serif)!important;
+  color:#a9a9a3!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor:hover{
+  background:rgba(205,178,125,.035)!important;
+}
+#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor:focus-visible{
+  outline:2px solid var(--liturgical,#c6b28b)!important;outline-offset:-2px!important;
+}
+/* Tablet/desktop: two independent open columns of an illustrated reading index.
+ * The phone stays single-column; no repeated card treatment. */
+@media(min-width:700px){
+  #ao-learn-modular-root .aoLearnFamilyGrid{
+    display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    column-gap:22px!important;align-items:stretch!important;
+  }
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard{width:100%!important;}
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{
+    grid-template-columns:48px minmax(0,1fr)!important;
+    min-height:116px!important;padding:17px 4px!important;
+  }
+}
+@media(max-width:360px){
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{
+    grid-template-columns:32px minmax(0,1fr)!important;column-gap:10px!important;
+    min-height:88px!important;
+  }
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor .aoLearnModIcon{
+    width:27px!important;height:27px!important;
+  }
+  #ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor strong{
+    font-size:20px!important;
+  }
+}
+
 `;
 
 export function installAppDesignSystem(win=globalThis){

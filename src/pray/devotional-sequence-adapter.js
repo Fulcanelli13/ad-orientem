@@ -254,7 +254,9 @@ export function installSequentialDevotionalReader({
     });
     observer.observe(body,{childList:true,subtree:true});
   }
-  if(["meals","holyName","sacredHeart","communion","hymns","goodDeath","dyingCompanion"].includes(kind))focus();
+  // The first Confession examination question must be active before the
+  // initial phone frame; subsequent changes continue using scroll/rAF.
+  if(["confession","meals","holyName","sacredHeart","communion","hymns","goodDeath","dyingCompanion"].includes(kind))focus();
   queue();
   return Object.freeze({
     schema:SEQUENTIAL_DEVOTIONAL_SCHEMA,kind,index,

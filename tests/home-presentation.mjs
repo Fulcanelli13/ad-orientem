@@ -80,9 +80,26 @@ assert.doesNotMatch(en,/data-home-mass-entry/,"Active session must not show a se
 assert.doesNotMatch(en,/data-action="follow"/,"Home Follow Mass still depends on the historical Home click controller");
 assert.match(en,/Gospel of the Mass/);
 assert.match(en,/aoTodayV2Frontispiece/);
+// The feast identity must precede the approved image source in actual DOM.
+// No title is painted across a cropped devotional illustration.
+const identityIndex=en.indexOf('class="aoTodayV2ArtOverlay aoTodayV2Identity"');
+const sourceIndex=en.indexOf('data-ao-home-art-slot');
+const actionsIndex=en.indexOf('class="aoTodayV2HeroActions"');
+const calendarAccessIndex=en.indexOf('class="aoHomeCalendarAccess"');
+assert.ok(identityIndex>=0&&actionsIndex>identityIndex&&sourceIndex>actionsIndex
+  &&calendarAccessIndex>sourceIndex,
+  "First-fold Today sequence must be feast → Mass action → reviewed artwork → full Calendar");
+assert.equal((en.match(/data-ao-home-art-slot/g)||[]).length,1,
+  "Editorial composition must preserve one source-owned artwork slot");
+assert.match(en,/class="aoTodayV2SeasonMicro" data-home-calendar data-home-calendar-view="year"/,
+  "Liturgical season remains a Calendar-owned interaction");
 assert.match(en,/aoTodayV2PrayNow/);
 assert.match(en,/aoTodayV2ReadReflect/);
 assert.match(en,/aoTodayV2CalendarGlance/,"Approved C includes one grouped calendar summary");
+assert.ok(en.indexOf('class="aoTodayV2PrayNow"')<en.indexOf('class="aoTodayV2CalendarGlance"')||
+ en.indexOf("aoTodayV2PrayNow")<en.indexOf("aoTodayV2CalendarGlance"),
+ "Premium Today first fold should prioritise prayer before upcoming calendar summary");
+assert.match(en,/aoTodayAppBarTitle/,"A single editorial screen masthead is required");
 assert.doesNotMatch(en,/class="aoTodayV2Approaching"|class="aoTodayV2Context"/,"Retired duplicated calendar panels must not render");
 assert.match(en,/Life &amp; sources|About this celebration|Calendar day &amp; sources/,
   "The Read & reflect entry must explain its destination instead of repeating the hero title");

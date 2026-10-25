@@ -18,9 +18,16 @@ const server=http.createServer(async(req,res)=>{
   const name=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
   const file=resolve(root,"."+name);
   if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);return res.end("Forbidden")}
+  // Read bytes before publishing success headers. Missing files are normal
+  // 404s, not an attempt to send a second set of response headers.
+  const bytes=await readFile(file);
   res.writeHead(200,{"content-type":mime[extname(file)]||"application/octet-stream","cache-control":"no-store"});
-  res.end(await readFile(file));
- }catch(e){res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e?.message||e))}
+  res.end(bytes);
+ }catch(e){
+  if(res.headersSent){res.end();return}
+  res.writeHead(e?.code==="ENOENT"?404:500);
+  res.end(String(e?.message||e));
+ }
 });
 await new Promise((done,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",done)});
 const report={schema:"ao-deep-prayer-day-focus-audit-v1",viewport:"390x844",

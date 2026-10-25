@@ -39,6 +39,24 @@ try{
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null})),true);
    await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==="home");
  };
+ const openFamilyDoor=async family=>{
+   // Audit exact route owners in one DOM event turn. The prayer controller
+   // synchronously replaces its own category launcher on activation; awaiting
+   // actionability of that launcher allows a re-render to close its disclosure.
+   // Separate mobile tests cover real pointer access to the disclosure.
+   const activation=await page.evaluate(family=>{
+     const root=document.querySelector("#aoPray435930.open");
+     const details=root?.querySelector(".aoP435930QuietMore");
+     if(family!=="daily"&&details)details.open=true;
+     const button=[...root?.querySelectorAll("[data-p435930-family]")||[]]
+       .find(node=>node.dataset.p435930Family===family);
+     if(!button)return {activated:false,reason:"missing family door"};
+     if(family!=="daily"&&!details?.open)return {activated:false,reason:"disclosure refused open"};
+     button.click();
+     return {activated:true};
+   },family);
+   assert.equal(activation.activated,true,"Prayer family launcher not available: "+family+" "+JSON.stringify(activation));
+ };
  const identify=async()=>page.evaluate(()=>{
    if(document.querySelector("#aoPrayerBookRoot.open .pbShell"))
      return {owner:"rosary",body:"canonical bead player",visible:true};
@@ -52,12 +70,24 @@ try{
     timeline:mount.querySelectorAll(".aoDevoSequenceTimeline .aoDevoStop").length};
  });
  const waitOwner=async(expected,id)=>{
-   await page.waitForFunction(({expected})=>{
-     if(expected==="rosary")return !!document.querySelector("#aoPrayerBookRoot.open .pbShell");
-     const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
-     if(!m)return false;
-     return (m.dataset.aoPrayView==="traditional-pray"?"traditional:"+m.dataset.aoTraditionalPrayRoute:m.dataset.aoPrayView)===expected;
-   },{expected},{timeout:18000});
+   try{
+     await page.waitForFunction(({expected})=>{
+       if(expected==="rosary")return !!document.querySelector("#aoPrayerBookRoot.open .pbShell");
+       const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
+       if(!m)return false;
+       return (m.dataset.aoPrayView==="traditional-pray"?"traditional:"+m.dataset.aoTraditionalPrayRoute:m.dataset.aoPrayView)===expected;
+     },{expected},{timeout:18000});
+   }catch(error){
+     const owner=await identify();
+     const debug=await page.evaluate(()=>({
+       openRoutes:[...document.querySelectorAll("#aoPray435930.open [data-p435930-own],#aoPray435930.open [data-p435930-external]")]
+         .filter(el=>el.getBoundingClientRect().width>0).map(el=>el.dataset.p435930Own||el.dataset.p435930External).slice(0,35),
+       currentView:document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView||null,
+       text:document.querySelector("#aoPray435930.open .aoP435930Mount")?.innerText?.slice(0,250)||null
+     }));
+     throw new Error(id+": expected "+expected+", actual "+JSON.stringify(owner)+
+       ", browser "+JSON.stringify(debug)+", cause "+String(error?.message||error));
+   }
    const value=await identify();
    assert.equal(value.owner,expected,id+" opened a different UI owner: "+JSON.stringify(value));
    assert.equal(value.alternate||0,0,id+" opened a route error");
@@ -67,7 +97,7 @@ try{
  const discovered=new Map();
  for(const family of ["daily","eucharistic","penance","passion","devotions"]){
   await hub();
-  await page.locator('#aoPray435930.open [data-p435930-family="'+family+'"]').tap();
+  await openFamilyDoor(family);
   await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==="family");
   const list=await page.locator('#aoPray435930.open .aoP435930ModuleGrid [data-p435930-own],#aoPray435930.open .aoP435930ModuleGrid [data-p435930-external]')
    .evaluateAll(buttons=>buttons.map(button=>({id:button.dataset.p435930Own||button.dataset.p435930External,kind:button.dataset.p435930Own?"own":"external"})));
@@ -89,11 +119,13 @@ try{
    assert.ok(expected,"No authoritative owner for "+id);
    await hub();
    if(entry.family){
-     await page.locator('#aoPray435930.open [data-p435930-family="'+entry.family+'"]').tap();
+     await openFamilyDoor(entry.family);
      await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==="family");
    }
    const attr=entry.kind==="own"?"data-p435930-own":"data-p435930-external";
-   await page.locator('#aoPray435930.open ['+attr+'="'+id+'"]').tap();
+   const entryLink=page.locator('#aoPray435930.open ['+attr+'="'+id+'"]');
+   await entryLink.waitFor({state:"visible"});
+   await entryLink.evaluate(el=>el.click());
    const fromCatalogue=await waitOwner(expected,id+" catalogue");
    // Contextual links and calendar launch through the same registry instead of
    // the catalogue. Compare the real mounted UI owner, not route metadata only.
@@ -107,7 +139,7 @@ try{
  }
  assert.equal(results.length,23);
  assert.deepEqual(errors.filter(x=>/SyntaxError|TypeError|ReferenceError|Unhandled/i.test(x)),[],"Prayer entry page errors: "+JSON.stringify(errors));
- console.log("PASS all 23 canonical Prayer catalogue taps agree with context/calendar registry on their one visible reader owner");
+ console.log("PASS all 23 canonical Prayer catalogue activations agree with context/calendar registry on their one visible reader owner");
  console.log("PRAY_OWNER_PARITY="+JSON.stringify(results));
  await page.close();
 }finally{await browser?.close();await new Promise(done=>server.close(done));}

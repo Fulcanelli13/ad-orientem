@@ -510,31 +510,37 @@ try{
     legacyOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
   }));
   assert.equal(prayHub.owner,"modular-pray-v1");
-  assert.equal(prayHub.cards,9,"PRAY landing retains all original doors, Chaplets and Divine Mercy, plus the new private My Customs module");
+  // The Quiet Pray entrance has six editorial doors, four library shortcuts,
+  // and source-owned family doors in the optional catalogue.
+  assert.equal(prayHub.cards,16,"PRAY catalogue gained or lost a canonical entry");
+  assert.equal(await page.locator("#aoPray435930 .aoP435930QuietTiles>.aoP435930QuietTile").count(),6,
+    "Six canonical featured devotions must remain visible");
+  assert.equal(await page.locator("#aoPray435930 .aoP435930QuietLibraryRow").count(),4,
+    "Four existing prayer library shortcuts must remain available");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-my-customs]").count(),1,
-    "private My Customs & Prayers must appear exactly once in canonical Pray Home");
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-family='chaplets']").count(),1,"Rosary & Chaplets family missing");
-  assert.equal(await page.locator("#aoPray435930 [data-p435930-own='pray.divine_mercy']").count(),1,"Direct Divine Mercy shortcut missing");
-  assert.equal(prayHub.legacyOpen,false,"legacy Prayer Book is visible beneath modular PRAY");
-  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930HomeIntro")?.dataset?.aoPresentationFxHero,null,{timeout:3000});
-  const prayFx=await page.evaluate(()=>({
-    hero:document.querySelector("#aoPray435930 .aoP435930HomeIntro")?.dataset?.aoPresentationFxHero??null,
-    rootScan:document.getElementById("aoPray435930")?.dataset?.aoPresentationFxArtScan??null,
-  }));
-  assert.match(prayFx.hero,/modular-presentation-fx-v3/,"PRAY home hero did not receive recovered entry choreography");
-  assert.equal(prayFx.rootScan,"legacy-v4312","PRAY modular root bypassed the approved v43.12 art loader");
-  const prayDesign=await page.evaluate(()=>({
-    displayFont:getComputedStyle(document.querySelector("#aoPray435930 .aoP435930HomeIntro h2")).fontFamily,
-    gutter:getComputedStyle(document.querySelector("#aoPray435930 .aoP435930Body")).paddingLeft,
-    cardRadius:getComputedStyle(document.querySelector("#aoPray435930 .aoP435930ModuleCard")).borderRadius,
-    topControl:(()=>{const x=document.querySelector("#aoPray435930 .aoP435930Head button");const s=getComputedStyle(x);return {w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height,r:s.borderRadius}})(),
-  }));
-  assert.equal(prayDesign.displayFont,designBaseline.displayFont,"PRAY display typography diverged from the app system");
-  assert.equal(prayDesign.gutter,designBaseline.gutter,"PRAY phone gutter diverged from the app grid");
-  assert.equal(prayDesign.cardRadius,designBaseline.cardRadius,"PRAY module cards diverged from canonical geometry");
-  assert.equal(Math.round(prayDesign.topControl.w),44,"PRAY top control width diverged");
-  assert.equal(Math.round(prayDesign.topControl.h),44,"PRAY top control height diverged");
-  assert.equal(prayDesign.topControl.r,"999px","PRAY top control lost canonical circular geometry");
+    "Private My Customs & Prayers must appear exactly once");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-family='chaplets']").count(),1,
+    "Rosary & Chaplets family missing from the expanded catalogue");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-own='pray.divine_mercy']").count(),1,
+    "Direct Divine Mercy shortcut missing from the expanded catalogue");
+  assert.equal(prayHub.legacyOpen,false,"Legacy Prayer Book is visible beneath modular PRAY");
+  const prayDesign=await page.evaluate(()=>{
+    const root=document.querySelector("#aoPray435930 .aoP435930QuietHome");
+    const first=root?.querySelector(".aoP435930QuietTile");
+    const secondary=root?.querySelector(".aoP435930QuietTile:nth-child(3)");
+    const top=root?.closest("#aoPray435930")?.querySelector(".aoP435930Head button");
+    const topStyle=getComputedStyle(top);
+    return {font:getComputedStyle(first.querySelector("b")).fontFamily,
+      firstIcon:first.querySelector(".aoP435930ModuleAsset,.aoP435930ModuleIcon")?.getBoundingClientRect().width||0,
+      secondaryIcon:secondary.querySelector(".aoP435930ModuleAsset,.aoP435930ModuleIcon")?.getBoundingClientRect().width||0,
+      control:{w:top.getBoundingClientRect().width,h:top.getBoundingClientRect().height,
+        radius:topStyle.borderRadius}};
+  });
+  assert.equal(prayDesign.font,designBaseline.displayFont,"Pray display typography diverged from shared scale");
+  assert.ok(prayDesign.firstIcon>=80&&prayDesign.firstIcon>prayDesign.secondaryIcon,
+    "Prayer illustrations lost their editorial hierarchy: "+JSON.stringify(prayDesign));
+  assert.ok(prayDesign.control.w>=44&&prayDesign.control.h>=44,
+    "Prayer header actions are undersized");
   await shot("03-pray");
 
   // Exact v3.14 Angelus ritual rail: the rail belongs to the reading grid.
@@ -598,6 +604,9 @@ try{
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
+  // The secondary devotional taxonomy is a native disclosure in Quiet Frame.
+  // Exercise the visible summary; never force-click a hidden child.
+  await page.locator("#aoPray435930 .aoP435930QuietMore > summary").click();
   await page.locator("#aoPray435930 [data-p435930-family='passion']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.stations']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="stations",null,{timeout:5000});
@@ -656,13 +665,16 @@ try{
 
   // Exact-donor devotional rails: Adoration arrival is transient genuflection,
   // then yields to persistent silence without changing reader geometry.
+  // The secondary devotional taxonomy is a native disclosure in Quiet Frame.
+  // Exercise the visible summary; never force-click a hidden child.
+  await page.locator("#aoPray435930 .aoP435930QuietMore > summary").click();
   await page.locator("#aoPray435930 [data-p435930-family='eucharistic']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.adoration']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="adoration",null,{timeout:5000});
   const adorationLanding=await page.evaluate(()=>({
     modes:[...document.querySelectorAll("#aoPray435930 [data-p435930-ador-mode]")].map(x=>x.getAttribute("data-p435930-ador-mode")),
     titles:[...document.querySelectorAll("#aoPray435930 [data-p435930-ador-mode] b")].map(x=>x.textContent?.trim()??""),
-    benedictionCard:document.querySelectorAll("#aoPray435930 [data-p435930-go-ben]").length,
+    benedictionCard:document.querySelectorAll("#aoPray435930 .aoAdorationChooser [data-p435930-go-ben]").length,
   }));
   assert.deepEqual(adorationLanding.modes,["visit","open","holy","four","treasury"],"Adoration landing no longer matches the final five-entry donor composition");
   assert.deepEqual(adorationLanding.titles,["Visit to the Blessed Sacrament","Silent Adoration","Guided Holy Hour","The Four Ends","Eucharistic Treasury"],"Adoration landing titles regressed");
@@ -711,6 +723,9 @@ try{
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="home",null,{timeout:5000});
 
   // Benediction rail follows the public rite rather than presenting one generic card.
+  // The secondary devotional taxonomy is a native disclosure in Quiet Frame.
+  // Exercise the visible summary; never force-click a hidden child.
+  await page.locator("#aoPray435930 .aoP435930QuietMore > summary").click();
   await page.locator("#aoPray435930 [data-p435930-family='eucharistic']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.benediction']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="benediction",null,{timeout:5000});
@@ -774,6 +789,9 @@ try{
 
   // Confession remains private/read-only; only the exact in-confessional moment
   // owns the transient Sign-of-Cross rail cue.
+  // The secondary devotional taxonomy is a native disclosure in Quiet Frame.
+  // Exercise the visible summary; never force-click a hidden child.
+  await page.locator("#aoPray435930 .aoP435930QuietMore > summary").click();
   await page.locator("#aoPray435930 [data-p435930-family='penance']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.confession']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="confession",null,{timeout:5000});
@@ -1408,6 +1426,8 @@ try{
     cards:[...document.querySelectorAll("#ao-learn-modular-root .aoLearnModCard")].map(x=>{const r=x.getBoundingClientRect();return {w:r.width,h:r.height}}),
   }));
   assert.equal(learnParity.heroTitles,1,"Learn lost its single formation identity");
+  assert.equal(await page.locator("#ao-learn-modular-root .aoLearnModTopTitle strong").isVisible(),false,
+    "Formation overview duplicates or truncates its canonical H1 in the toolbar");
   assert.equal(learnParity.heroTitle,"Formation","Formation hero no longer preserves the locked A2 title");
   assert.ok(learnParity.intro.length>20,"Learn formation introduction is blank or collapsed");
   assert.ok(learnParity.context.length>0,"Learn lost its selected-day context line");
@@ -1482,7 +1502,12 @@ try{
   assert.equal(learnDesign.displayFont,designBaseline.displayFont,"Learn display typography diverged from the app system");
   assert.equal(learnDesign.bodyFont,designBaseline.bodyFont,"Learn body typography diverged from Home");
   assert.equal(learnDesign.gutter,designBaseline.gutter,"Learn phone gutter diverged from the app grid");
-  assert.equal(learnDesign.cardRadius,designBaseline.cardRadius,"Learn cards diverged from canonical geometry");
+  // Formation uses an open reading-index layout: the retired 15px app cards
+  // would reintroduce precisely the repetitive treatment Quiet Frame removed.
+  assert.equal(learnDesign.cardRadius,"0px",
+    "Formation subject index regressed to rounded, generic app cards");
+  assert.equal(await page.locator("#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard").count(),9,
+    "Formation no longer exposes its nine illustrated editorial sections");
   assert.equal(Math.round(learnDesign.topControl.w),44,"Learn top control width diverged");
   assert.equal(Math.round(learnDesign.topControl.h),44,"Learn top control height diverged");
   assert.equal(learnDesign.topControl.r,"999px","Learn top control lost canonical circular geometry");

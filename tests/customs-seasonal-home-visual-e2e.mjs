@@ -48,7 +48,9 @@ try{
    },null,{timeout:45000});
    await page.waitForFunction(()=>Boolean(globalThis.AO_CALENDAR_APP_V1?.openEmbedded&&globalThis.AO_APP_SHELL_V1?.installed),null,{timeout:40000});
    for(const item of cases){
-    await page.locator('.aoTodayV2Tabs [data-home-calendar-view="year"]').click();
+    // The editorial Today removes its duplicated hidden calendar tab in normal
+    // mode. Enter the *same existing year view* through the visible season link.
+    await page.locator('.aoTodayV2SeasonMicro[data-home-calendar-view="year"]').click();
     await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="year"]',{state:"visible",timeout:45000});
     const result=await page.evaluate(date=>globalThis.AO_CALENDAR_APP_V1.select(date),item.date);
     assert.equal(result,true,"Calendar refused source date "+item.date);
