@@ -52,5 +52,15 @@ class CommentaryBlocks(unittest.TestCase):
         d = extractor.inspect_html(html, "https://icrspfrance.fr/textes-liturgiques.php?article=a0665_ancien")
         self.assertEqual(d["commentaryBlocks"][0]["attributionStatus"], "HEADER_TITLE_MISMATCH_REVIEW")
 
+    def test_additional_source_labeled_works_are_candidates_not_1962_authorities(self):
+        html = ("<h2>St Bernard</h2><h3>Commentaires</h3>"
+                + block("Benoît XVI, catéchèses (21 octobre 2009)")
+                + block("Aurelius Clemens Prudentius, Peristephanon"))
+        d = extractor.inspect_html(html, "https://icrspfrance.fr/textes-liturgiques.php?article=a0414_ancien")
+        self.assertEqual([b["workCandidate"] for b in d["commentaryBlocks"]],
+                         ["BENEDICT_XVI_CATECHESES_CANDIDATE",
+                          "PRUDENTIUS_PERISTEPHANON_CANDIDATE"])
+        self.assertEqual(d["sourceTextRights"], "NOT_CLEARED_LINK_AND_METADATA_ONLY")
+
 if __name__ == "__main__":
     unittest.main()
