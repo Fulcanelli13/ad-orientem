@@ -106,7 +106,7 @@ for(const track of crosswalk.ordinary){
     track.trackId+" has an invented presentation card ID");
   for(const blockId of track.sourceBlockIds)assert.ok(actualBlockIds.has(blockId),
     track.trackId+" has an invented source block ID");
-  assert.equal(track.performanceStatus,"EXPECTED_NOT_OBSERVED");
+  assert.equal(track.performanceStatus,"INDEXED_NOT_OBSERVED");
   assert.equal(track.clockOwner,"INDEPENDENT_SCHOLA");
 }
 const sanctusCrosswalk=crosswalk.ordinary.find(x=>x.trackId==="SANCTUS_BENEDICTUS");
