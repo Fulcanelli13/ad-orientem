@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 475,
+    "places": 490,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 216,
+    "places_without_direct_claim": 231,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -244,7 +244,22 @@
       "place:PL:bazylika-mariacka-gdansk",
       "place:PR:basilica-monserrate-hormigueros",
       "place:PT:basilica-sao-bento-porta-aberta",
-      "place:US:historic-chapel-our-lady-la-leche-st-augustine"
+      "place:US:historic-chapel-our-lady-la-leche-st-augustine",
+      "place:ES:p42-sg-inv-0136",
+      "place:ES:p42-sg-inv-0138",
+      "place:FR:p42-sg-inv-0042",
+      "place:FR:p42-sg-inv-0012",
+      "place:PH:p42-sg-inv-0638",
+      "place:ES:p42-sg-inv-0135",
+      "place:FR:p42-sg-inv-0045",
+      "place:ES:p42-sg-inv-0118",
+      "place:FR:p42-sg-inv-0022",
+      "place:PL:p42-sg-inv-0211",
+      "place:IT:p42-sg-inv-0070",
+      "place:GB:p42-sg-inv-0249",
+      "place:FR:p42-sg-inv-0032",
+      "place:DE:p42-sg-inv-0181",
+      "place:US:p42-sg-inv-0378"
     ],
     "customs_without_exact_place": [
       {
@@ -5580,6 +5595,96 @@
     {
       "place_id": "place:US:historic-chapel-our-lady-la-leche-st-augustine",
       "display_name": "Historic Chapel of Our Lady of La Leche",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:p42-sg-inv-0136",
+      "display_name": "Catedral Primada de Santa María de Toledo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:p42-sg-inv-0138",
+      "display_name": "Catedral de Santa María de la Sede de Sevilla",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0042",
+      "display_name": "Cathédrale Notre-Dame de Strasbourg",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0012",
+      "display_name": "Basilique Notre-Dame-de-la-Délivrande",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PH:p42-sg-inv-0638",
+      "display_name": "Basilica and National Shrine of Our Lady of Mount Carmel",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:p42-sg-inv-0135",
+      "display_name": "Basílica de la Sagrada Família",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0045",
+      "display_name": "Basilique Saint-Victor de Marseille",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:p42-sg-inv-0118",
+      "display_name": "Santuario de Nuestra Señora de Regla",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0022",
+      "display_name": "Basilique Notre-Dame du Sacré-Cœur d’Issoudun",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:p42-sg-inv-0211",
+      "display_name": "Kościół św. Katarzyny Aleksandryjskiej, Sanktuarium Matki Bożej Bolesnej",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:p42-sg-inv-0070",
+      "display_name": "Basilica Santuario di Santa Maria del Fonte",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GB:p42-sg-inv-0249",
+      "display_name": "Our Lady of the Taper Catholic Shrine Church",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0032",
+      "display_name": "Basilique Saint-Régis de Lalouvesc",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:p42-sg-inv-0181",
+      "display_name": "Basilika Mariä Himmelfahrt des Klosters Ettal",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:p42-sg-inv-0378",
+      "display_name": "Basilica and National Shrine of Our Lady of Consolation",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }
