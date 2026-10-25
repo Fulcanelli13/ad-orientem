@@ -187,7 +187,10 @@ try{
  await page.locator("#aoPray435930.open [data-p435930-ador-mode='four']").tap();
  await page.waitForSelector(timeline);
  v=await snapshot();assert.equal(v.mode,"four");assert.equal(v.stops,5);
- assert.match(await page.locator(sel+" .aoDevoCard").innerText(),/Adoration/i);
+ assert.match(await page.locator(timeline+" [aria-current='step']").innerText(),/Adoration/i,
+  "The canonical Four Ends chapter title must remain in the stage timeline");
+ assert.match(await page.locator(sel+" .aoDevoCard .aoP435930GuideNow p").innerText(),/Adore Him/i,
+  "The first Four Ends stage must retain its source-owned prayer direction");
  await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
  assert.equal((await snapshot()).final,"true");
  assert.equal(await page.locator(sel+" [data-p435930-four-finish]").count(),1);
