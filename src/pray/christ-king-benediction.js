@@ -6,6 +6,8 @@ export const CHRIST_KING_WITNESSES=Object.freeze({
   "consecrationFrench": "https://www.icrsp.org/Publicationsbis/Revue-2019/01-40.pdf",
   "consecrationEnglish": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=920",
   "royalPraises": "https://www.vatican.va/news_services/liturgy/libretti/2012/20121007.pdf",
+  "royalPraisesICKSPIndex": "https://www.icrsp.org/Livres/pub-livret-de-chant-reactualise-24-fevrier-2009.pdf",
+  "royalPraisesWitness": "https://www.ordo.pallotyni.pl/index.php/naboestwa-i-modlitwy/modlitwy-do-swietych/1451-laudes-regiae",
   "sacredHeartLitany": "https://www.icrsp.org/Litanies-Sacre-Coeur",
   "christKingOrdo": "https://icrspfrance.fr/ordo.php?d=2026-10-01"
 });
@@ -105,9 +107,9 @@ export const CHRIST_KING_LAUDES_SECTIONS=Object.freeze([
    LRC("Sancte Philippe","Saint Philip","Saint Philippe"),
    LRC("Sancte Iacobe","Saint James","Saint Jacques"),
    LRC("Sancte Bartholomaee","Saint Bartholomew","Saint Barthélemy"),
-   LRC("Sancte Matthaeae","Saint Matthew","Saint Matthieu"),
+   LRC("Sancte Matthae","Saint Matthew","Saint Matthieu"),
    LRC("Sancte Simon","Saint Simon","Saint Simon"),
-   LRC("Sancte Thaddaeae","Saint Thaddeus","Saint Thaddée"),
+   LRC("Sancte Thaddae","Saint Thaddeus","Saint Thaddée"),
    LRC("Sancte Matthia","Saint Matthias","Saint Matthias"),
    LRC("Sancta Maria Magdalena","Saint Mary Magdalene","Sainte Marie-Madeleine"),
    LRC("Sancte Stephane","Saint Stephen","Saint Étienne"),
