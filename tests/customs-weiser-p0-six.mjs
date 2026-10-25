@@ -17,16 +17,22 @@ const planned=[
   ["HTHU-001","US","CHICAGO-CATHOLIC-HOLY-THURSDAY-2026"],
   ["ROGA-001","US","NEWLAND-ROGATION-FAMILY-1956"]
 ];
-assert.equal(atlas.customs.length,38);
-assert.equal(atlas.attestations.length,97);
-assert.equal(sources.sources.length,108);
+// Freeze the original 38-record Weiser owner baseline. An optional, complete
+// two-article Calendar candidate adds two customs, two attestations and four
+// source registrations without changing historical Weiser owners.
+const candidateIds=["EPIP-003","CRIB-001"];
+const candidateCount=candidateIds.filter(id=>atlas.customs.some(x=>x.custom_id===id)).length;
+assert.ok(candidateCount===0||candidateCount===2,"Calendar candidate cohort must be complete");
+assert.equal(atlas.customs.length,38+candidateCount);
+assert.equal(atlas.attestations.length,97+candidateCount);
+assert.equal(sources.sources.length,108+candidateCount*2);
 assert.equal(extensions.extensions.length,22);
 assert.equal(negatives.entries.length,7);
 assert.equal(guidance.entries.length,6);
 assert.equal(guidance.publication,"SUPPORTING_COPY_FOR_PUBLISHED_CANONICAL_IDS");
-assert.equal(new Set(atlas.customs.map(x=>x.custom_id)).size,38);
-assert.equal(new Set(atlas.attestations.map(x=>x.attestation_id)).size,97);
-assert.equal(new Set(sources.sources.map(x=>x.id)).size,108);
+assert.equal(new Set(atlas.customs.map(x=>x.custom_id)).size,38+candidateCount);
+assert.equal(new Set(atlas.attestations.map(x=>x.attestation_id)).size,97+candidateCount);
+assert.equal(new Set(sources.sources.map(x=>x.id)).size,108+candidateCount*2);
 assert.equal(new Set(extensions.extensions.map(x=>x.custom_id)).size,22);
 assert.equal(new Set(guidance.entries.map(x=>x.custom_id)).size,6);
 
