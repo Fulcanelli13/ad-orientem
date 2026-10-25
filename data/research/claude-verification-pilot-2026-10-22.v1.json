@@ -1,0 +1,170 @@
+{
+  "schema": "AO_CLAUDE_VERIFICATION_PILOT_V1",
+  "as_of": "2026-10-22",
+  "publication_status": "RESEARCH_ONLY",
+  "purpose": "Pilot evidence pass over two existing backlogs (Explore Europe wave-1 geography identities; SSPX worldwide pending place-detail cases). Demonstrates per-record verification with citations. Grants no publication, canonical name lock, map pin, Mass time or certification by itself; every record remains subject to the repository's human review gates.",
+  "method": {
+    "geography": "For each NEW_PLACE_IDENTITY_CANDIDATE, confirm the canonical name, settlement, country and (where an exact-site source gives it) coordinates, against the sanctuary's own site, Wikipedia infobox and/or GCatholic. Coordinates are recorded as CONFIRMED only when a cited source states them; otherwise COORDINATES_PENDING_EXACT_SITE.",
+    "directory": "For each PENDING_PLACE_DETAIL_ADJUDICATION case, read the official SSPX map page and split the single 'place detail' bucket along two independent axes: (a) is there a usable street address, and (b) is there a predictable recurring Sunday Mass. Record each with the page's own 'last updated' date.",
+    "blocked_sources": "Wikimedia Commons, Archive.org, Gallica and OpenStreetMap are not reachable from this session, so no coordinate was taken from OSM and no photograph was reviewed. Reachable: official sanctuary/diocese sites, Wikipedia, GCatholic, map.fsspx.org."
+  },
+  "geography_pilot": {
+    "source_file": "data/explore/europe-acquisition.wave1.research.v1.json",
+    "reviewed": 8,
+    "of_pending": 76,
+    "records": [
+      {
+        "lead_name": "Brezje — Basilica of Mary Help",
+        "country_code": "SI",
+        "canonical_name_confirmed": "Mary Help of Christians Basilica (Bazilika Marije Pomagaj)",
+        "settlement": "Brezje, Municipality of Radovljica",
+        "coordinates": {"lat": 46.32861, "lng": 14.23528, "status": "CONFIRMED"},
+        "identity_sources": [
+          {"url": "https://en.wikipedia.org/wiki/Brezje,_Radovljica", "retrieved": "2026-10-22", "evidence": "Mary Help of Christians Basilica, settlement of Brezje, Municipality of Radovljica, coordinates 46.32861, 14.23528"},
+          {"url": "https://marija.si/en/", "retrieved": "2026-10-22", "evidence": "Official Slovenian Marian national shrine site (Bazilika Marije Pomagaj)"}
+        ],
+        "disposition": "IDENTITY_VERIFIED_READY_FOR_HUMAN_PLACE_PROMOTION"
+      },
+      {
+        "lead_name": "Marija Bistrica — Marian national shrine",
+        "country_code": "HR",
+        "canonical_name_confirmed": "Croatian National Shrine of Our Lady of Bistrica (Marija Bistrica)",
+        "settlement": "Marija Bistrica, Krapina-Zagorje County",
+        "coordinates": {"lat": 46.00528, "lng": 16.11861, "status": "CONFIRMED"},
+        "identity_sources": [
+          {"url": "https://en.wikipedia.org/wiki/Marija_Bistrica", "retrieved": "2026-10-22", "evidence": "Marian shrine at Marija Bistrica, Krapina-Zagorje County, Croatia; coordinates 46.00528, 16.11861"}
+        ],
+        "note": "Repository already holds place:HR:national-shrine-of-our-lady-of-marija-bistrica (approved media). Confirm whether this candidate is a duplicate of the existing Place before creating a new identity.",
+        "disposition": "POSSIBLE_DUPLICATE_OF_EXISTING_PLACE_HUMAN_CHECK"
+      },
+      {
+        "lead_name": "Montserrat — Monestir de Santa Maria",
+        "country_code": "ES",
+        "canonical_name_confirmed": "Santa Maria de Montserrat Abbey (Abadia de Montserrat)",
+        "settlement": "Monistrol de Montserrat, Catalonia",
+        "coordinates": {"lat": 41.5932, "lng": 1.8371, "status": "CONFIRMED"},
+        "identity_sources": [
+          {"url": "https://en.wikipedia.org/wiki/Santa_Maria_de_Montserrat_Abbey", "retrieved": "2026-10-22", "evidence": "Benedictine abbey, Monistrol de Montserrat, Spain; coordinates 41°35'35.54\"N 1°50'13.70\"E"}
+        ],
+        "disposition": "IDENTITY_VERIFIED_READY_FOR_HUMAN_PLACE_PROMOTION"
+      },
+      {
+        "lead_name": "Oropa — Santuario della Madonna Nera",
+        "country_code": "IT",
+        "canonical_name_confirmed": "Sanctuary of Oropa (Santuario di Oropa)",
+        "settlement": "Oropa, frazione of Biella, Piedmont",
+        "coordinates": {"lat": 45.628333, "lng": 7.978889, "status": "CONFIRMED"},
+        "identity_sources": [
+          {"url": "https://en.wikipedia.org/wiki/Sanctuary_of_Oropa", "retrieved": "2026-10-22", "evidence": "Santuario di Oropa, frazione of Biella, Italy; coordinates 45°37'42\"N 7°58'44\"E"}
+        ],
+        "disposition": "IDENTITY_VERIFIED_READY_FOR_HUMAN_PLACE_PROMOTION"
+      },
+      {
+        "lead_name": "Ta' Pinu — Basilica of the Blessed Virgin, Gozo",
+        "country_code": "MT",
+        "canonical_name_confirmed": "Basilica of the National Shrine of the Blessed Virgin of Ta' Pinu (Santwarju Bażilika tal-Madonna ta' Pinu)",
+        "settlement": "near Għarb, island of Gozo",
+        "coordinates": {"lat": 36.061778, "lng": 14.214833, "status": "CONFIRMED"},
+        "identity_sources": [
+          {"url": "https://en.wikipedia.org/wiki/Ta%27_Pinu", "retrieved": "2026-10-22", "evidence": "National shrine ~700m from Għarb, Gozo, Malta; coordinates 36°3'42.4\"N 14°12'53.4\"E"}
+        ],
+        "disposition": "IDENTITY_VERIFIED_READY_FOR_HUMAN_PLACE_PROMOTION"
+      },
+      {
+        "lead_name": "Velehrad — Basilica of Saints Cyril and Methodius",
+        "country_code": "CZ",
+        "canonical_name_confirmed": "Basilica of the Assumption of Mary and Saints Cyril and Methodius",
+        "settlement": "Velehrad, Uherské Hradiště District, Zlín Region",
+        "coordinates": {"lat": 49.10556, "lng": 17.39417, "status": "CONFIRMED"},
+        "identity_sources": [
+          {"url": "https://en.wikipedia.org/wiki/Velehrad", "retrieved": "2026-10-22", "evidence": "Basilica of the Assumption of Mary and Saints Cyril and Methodius, Velehrad, Czech Republic; coordinates 49°6'20\"N 17°23'39\"E"}
+        ],
+        "disposition": "IDENTITY_VERIFIED_READY_FOR_HUMAN_PLACE_PROMOTION"
+      },
+      {
+        "lead_name": "Scherpenheuvel — Basilica of Our Lady",
+        "country_code": "BE",
+        "canonical_name_confirmed": "Basilica of Our Lady of Scherpenheuvel (basilica minor, 1927)",
+        "settlement": "Scherpenheuvel, municipality of Scherpenheuvel-Zichem, Flemish Brabant",
+        "coordinates": {"lat": null, "lng": null, "status": "COORDINATES_PENDING_EXACT_SITE"},
+        "identity_sources": [
+          {"url": "https://en.wikipedia.org/wiki/Scherpenheuvel", "retrieved": "2026-10-22", "evidence": "Church proclaimed basilica minor in 1927; in Scherpenheuvel, Scherpenheuvel-Zichem, Flemish Brabant, Belgium. Page gives no basilica-specific coordinates."}
+        ],
+        "disposition": "NAME_AND_SETTLEMENT_VERIFIED_COORDINATES_HELD"
+      },
+      {
+        "lead_name": "Šaštín-Stráže — National Basilica of Our Lady of Seven Sorrows",
+        "country_code": "SK",
+        "canonical_name_confirmed": "National Basilica of the Virgin Mary (Národná bazilika Panny Márie); patroness Our Lady of Seven Sorrows, patron of Slovakia",
+        "settlement": "Šaštín part of Šaštín-Stráže",
+        "coordinates": {"lat": null, "lng": null, "status": "COORDINATES_PENDING_EXACT_SITE"},
+        "identity_sources": [
+          {"url": "https://en.wikipedia.org/wiki/%C5%A0a%C5%A1t%C3%ADn-Str%C3%A1%C5%BEe", "retrieved": "2026-10-22", "evidence": "National basilica in the Šaštín part of Šaštín-Stráže, Slovakia; town coordinates 48°38'N 17°09'E given, not basilica-specific."}
+        ],
+        "disposition": "NAME_AND_SETTLEMENT_VERIFIED_COORDINATES_HELD"
+      }
+    ]
+  },
+  "directory_pilot": {
+    "source_file": "data/directory/research/sspx-worldwide-210-case-disposition-20261009.v7.json",
+    "reviewed": 5,
+    "of_pending": 41,
+    "axis_note": "The single PENDING_PLACE_DETAIL_ADJUDICATION bucket resolves along two independent axes: STREET (usable street address y/n) and SUNDAY (predictable recurring Sunday Mass y/n). A case can resolve on one axis and stay held on the other.",
+    "records": [
+      {
+        "source_place_id": "abu-dhabi-or-dubai",
+        "official_map_url": "https://map.fsspx.org/fr/places/abu-dhabi-or-dubai",
+        "retrieved": "2026-10-22",
+        "schedule_last_updated": "2026-10-01",
+        "street": {"status": "NONE", "evidence": "Only 'Abu Dhabi or Dubai, United Arab Emirates'; no street."},
+        "sunday": {"status": "NONE", "evidence": "'Mass: one weekend a month' — no recurring weekly Sunday."},
+        "disposition": "HOLD_CONFIRMED_NO_STREET_NO_WEEKLY_SUNDAY"
+      },
+      {
+        "source_place_id": "angers-noel-pinot",
+        "official_map_url": "https://map.fsspx.org/fr/places/angers-noel-pinot",
+        "retrieved": "2026-10-22",
+        "schedule_last_updated": "2023-12-24",
+        "street": {"status": "CONFIRMED", "value": "Oratoire Bienheureux Noël Pinot, 54 rue Delaâge, 49000 Angers, France"},
+        "sunday": {"status": "UNCONFIRMED", "evidence": "Sunday time shown as 'se renseigner' (inquire); schedule source last updated 2023-12-24."},
+        "disposition": "PLACE_RESOLVED_SCHEDULE_HELD",
+        "recommended": "Promotable as an address-verified venue with publication_state OFFICIAL_LISTED_MASS_TIMES_UNCONFIRMED; do not assert a Sunday time."
+      },
+      {
+        "source_place_id": "chapelle-notre-dame-de-coat-ar-roch",
+        "official_map_url": "https://map.fsspx.org/fr/places/chapelle-notre-dame-de-coat-ar-roch",
+        "retrieved": "2026-10-22",
+        "schedule_last_updated": "2025-09-01",
+        "street": {"status": "CONFIRMED", "value": "Chapelle Notre-Dame de Coat ar Roch, Coat ar Roch, 29190 Lannedern, France"},
+        "sunday": {"status": "OCCASIONAL_ONLY", "evidence": "Only dated pardon/occasional Masses (e.g. 31 Aug 10:30, 14 Sep 11:00); no recurring weekly Sunday."},
+        "disposition": "PLACE_RESOLVED_SUNDAY_HELD_OCCASIONAL_ONLY"
+      },
+      {
+        "source_place_id": "batea",
+        "official_map_url": "https://map.fsspx.org/fr/places/batea",
+        "retrieved": "2026-10-22",
+        "schedule_last_updated": "2024-09-26",
+        "street": {"status": "NONE", "evidence": "Only '43786 Batea', Spain; no street."},
+        "sunday": {"status": "MONTHLY_ONLY", "evidence": "'1º domingo de mes 17:00' — first Sunday of the month only."},
+        "disposition": "HOLD_CONFIRMED_NO_STREET_MONTHLY_ONLY"
+      },
+      {
+        "source_place_id": "capilla-san-jose",
+        "official_map_url": "https://map.fsspx.org/fr/places/capilla-san-jose",
+        "retrieved": "2026-10-22",
+        "schedule_last_updated": "2026-09-25",
+        "street": {"status": "LOCALITY_ONLY", "value": "Capilla San José, Palmar de Ocoa, Azua, Dominican Republic"},
+        "sunday": {"status": "CONFIRMED", "value": "Sunday 08:00 (weekly); also first Friday 18:00, first Saturday 18:30"},
+        "disposition": "SCHEDULE_RESOLVED_STREET_HELD",
+        "recommended": "Weekly Sunday Mass is evidenced; location is locality-level only. Resolve schedule; hold precise coordinates until a street or exact-site source is found."
+      }
+    ]
+  },
+  "corrected_pending_counts": {
+    "sspx_210_file_total_cases": 210,
+    "sspx_already_adjudicated": 163,
+    "sspx_genuinely_pending_place_detail": 41,
+    "sspx_address_conflict_hold": 6,
+    "note": "The headline '210 SSPX cases' overstates open work: 163 are already dispositioned (96 existing physical alias, 37 new verified venue, 30 official CRM link). Genuinely open: 41 place-detail + 6 address-conflict = 47."
+  }
+}
