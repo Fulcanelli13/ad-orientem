@@ -306,6 +306,114 @@ try{
     });
     assert.ok(resolvedIcons.slots.length>=1,
       "Production icon bank did not render a visible icon on any curated source-cued card");
+
+    if(width===390 && lang==="en" && !secondConfiteor){
+      // A premium reading layout shows the same exact-cue faithful gesture
+      // in its rail/ribbon, not miniature buttons on each Gloria/Credo line.
+      const presentation=await page.evaluate(async()=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const states=[];
+        for(const name of ["Gloria · Praise and Supplication",
+          "Gloria · Doxology","Credo · Incarnation, Passion and Resurrection"]){
+          const card=api.model.cards.find(c=>c.title===name);
+          if(!card){states.push({name,missing:true});continue;}
+          api.showSequence(card.sequence);
+          await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+          const shell=document.querySelector("[data-ao-reader-shell]");
+          const rows=[...shell.querySelectorAll('.ao-reader-paragraph[data-faithful-cues="true"]')];
+          states.push({name,count:rows.length,
+            inlineButtons:shell.querySelectorAll(".ao-faithful-paragraph-icons,.ao-faithful-icon-edit").length,
+            stateRibbon:!!shell.querySelector("[data-side='faithful'] [data-icon-slot='posture-top']"),
+            hasSourceIds:rows.every(el=>el.dataset.faithfulRowId&&el.dataset.sourceCueIds)});
+        }
+        const scholaCard=api.model.cards.find(c=>c.title==="Gloria · Praise and Supplication");
+        api.showSequence(scholaCard.sequence);
+        await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+        const root=document.querySelector("#ao-r17-native-reader-preview");
+        const dock=root.querySelector('.ao-schola-dock [data-icon-slot="schola"]');
+        const cs=getComputedStyle(dock),rect=dock.getBoundingClientRect();
+        return {states,schola:{hidden:dock.hidden,width:rect.width,height:rect.height,
+          artwork:cs.maskImage!=="none"||cs.webkitMaskImage!=="none"||cs.backgroundImage!=="none"}};
+      });
+      for(const state of presentation.states){
+        assert.equal(state.missing,undefined,"Missing Gloria/Credo 65-card chapter "+state.name);
+        assert.ok(state.count>0,state.name+" lost canonical faithful cue identities");
+        assert.ok(state.hasSourceIds,state.name+" faithful cue lost paragraph source IDs");
+        assert.equal(state.inlineButtons,0,state.name+" still duplicates icons beside sentences");
+        assert.equal(state.stateRibbon,true,state.name+" lost the common posture control");
+      }
+      assert.equal(presentation.schola.hidden,false,"Active Gloria Schola icon is hidden");
+      assert.equal(presentation.schola.artwork,true,"Schola icon has no painted mask or source asset");
+      assert.ok(presentation.schola.width>=32&&presentation.schola.height>=32,
+        "Schola original still too small in dock: "+JSON.stringify(presentation.schola));
+
+      // No published 1962 rubric may disappear from the actual LIVE paragraph
+      // merely because an unrelated small icon was removed. Source-printed
+      // bracketed rubrics already carry their wording, so don't double-print.
+      const rubricParity=await page.evaluate(async()=>{
+        const {publishedMissalRubricsForParagraph}=await import("/src/mass/reader-missal-rubrics.js");
+        const registry=await (await fetch("/data/presentation/reader-rubric-events.v1.json")).json();
+        const api=window.__AO_PHONE_PREVIEW,expected=new Set(),found=new Set();
+        const missing=[],uncertified=[];
+        for(const card of api.model.cards){
+          if(!api.showSequence(card.sequence))continue;
+          await new Promise(done=>requestAnimationFrame(done));
+          const root=document.querySelector("#ao-r17-native-reader-preview");
+          const rows=[...root.querySelectorAll(".ao-prayer-body .ao-reader-paragraph")];
+          for(const p of card.paragraphs){
+            const events=publishedMissalRubricsForParagraph(p,registry,{
+              form:"MISSA_CANTATA_SIMPLE",language:"en"
+            });
+            const row=rows.find(el=>el.dataset.paragraphId===p.id);
+            const printedSource=p.kind==="RUBRIC"||/^\s*\[/.test(String(p.primary??""));
+            const idNodes=[...row?.querySelectorAll?.("[data-rubric-id]")??[]];
+            const ids=new Set(idNodes.map(el=>el.dataset.rubricId));
+            // A source-printed direction is NOT automatically a visual pass.
+            // Check that its actual row, original cue and legible text survive.
+            // States remain independently printed as exact-ID annotations.
+            const sourceText=row?.querySelector(".ao-line-primary")?.textContent?.trim()??"";
+            const sourceCues=new Set((row?.dataset.sourceCueIds??"").split(/\s+/).filter(Boolean));
+            const rowRendered=!!row && row.getBoundingClientRect().width>0 &&
+              getComputedStyle(row).display!=="none";
+            for(const event of events){
+              expected.add(event.id);
+              const sourceWitness=printedSource && event.kind!=="STATE" &&
+                rowRendered && sourceText.length>0 && sourceCues.has(event.sourceCueId);
+              const annotation=idNodes.find(el=>{
+                if(el.dataset.rubricId!==event.id || !el.textContent.trim())return false;
+                if(el.dataset.iconBacked==="true")return true; // exact approved rail art
+                // No approved/loaded icon: the rubric must remain readable,
+                // not tucked into the 1px icon-backed accessibility clip.
+                const css=getComputedStyle(el),box=el.getBoundingClientRect();
+                return css.display!=="none" && css.visibility!=="hidden" &&
+                  box.width>=18 && el.closest(".ao-live-inline-rubrics")
+                    ?.dataset.fullyIconBacked!=="true";
+              });
+              if(sourceWitness || (rowRendered && annotation))found.add(event.id);
+              else missing.push({card:card.title,paragraph:p.id,rubric:event.id,
+                cue:event.sourceCueId,sourcePrinted:printedSource,
+                hasRow:!!row,sourceText:sourceText.slice(0,60)});
+            }
+            for(const item of idNodes){
+              const id=item.dataset.rubricId;
+              if(!registry.items.some(record=>record.id===id))
+                uncertified.push({card:card.title,id});
+            }
+          }
+        }
+        return {expected:expected.size,found:found.size,missing,uncertified};
+      });
+      assert.ok(rubricParity.expected>=45,
+        "Full ordinary LIVE 1962 rubric source audit lost registry coverage: "+
+        JSON.stringify(rubricParity));
+      assert.deepEqual(rubricParity.missing,[],
+        "Published source-backed rubrics missing from LIVE DOM");
+      assert.deepEqual(rubricParity.uncertified,[],
+        "LIVE displayed a rubric absent from the source registry");
+      console.log("PASS Gloria/Credo source cues, single-icon chrome, 34px Schola and published 1962 rubric parity",{
+        schola:presentation.schola,published:rubricParity
+      });
+    }
     // A visible priest intonation is one paragraph with two source cue
     // records; it still needs a unique active cue for voice, rubric and
     // scroll-focus ownership. Do not drop either canonical source ID.
@@ -692,7 +800,58 @@ try{
           fullPage:false,animations:"disabled"});
       }
     }
-    await page.screenshot({path:resolve(out,lang+"-"+width+(secondConfiteor?"-with-local-confiteor":"")+"-credo.png"),fullPage:false});
+    // Capture the named liturgical scene, never the last card left behind
+    // by an earlier rubric/cue sweep. The former *-credo.png files displayed
+    // the Chalice Consecration and could not certify Gloria/Credo visually.
+    for(const [slug,title] of [
+      ["gloria-praise","Gloria · Praise and Supplication"],
+      ["gloria-doxology","Gloria · Doxology"],
+      ["credo-incarnation","Credo · Incarnation, Passion and Resurrection"],
+    ]){
+      const scene=await page.evaluate(t=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const card=api.model.cards.find(c=>c.title===t);
+        if(!card)return {found:false};
+        api.showSequence(card.sequence);
+        return {found:true,expected:card.sequence,
+          actual:api.getCurrentCard()?.sequence,
+          title:api.getCurrentCard()?.title??null};
+      },title);
+      assert.ok(scene.found&&scene.actual===scene.expected,
+        "Screenshot target is not the requested liturgical card: "+title+
+        " "+JSON.stringify(scene));
+      await page.evaluate(()=>new Promise(done=>
+        requestAnimationFrame(()=>requestAnimationFrame(done))));
+      assert.ok(await page.locator("#ao-r17-native-reader-preview .ao-prayer-body .ao-reader-paragraph").count()>0,
+        "Named screenshot has no real prayer text: "+title);
+      if(width===390 && lang==="en" && !secondConfiteor){
+        const railState=await page.evaluate(()=>{
+          const root=document.querySelector("#ao-r17-native-reader-preview");
+          return [...root.querySelectorAll(".ao-rail-right .ao-rail-item")].map(el=>{
+            const icon=el.querySelector(".ao-icon-mask"),copy=el.querySelector(".ao-rail-copy");
+            const css=icon?getComputedStyle(icon):null;
+            const rc=el.getBoundingClientRect();
+            return {channel:el.dataset.channel,active:el.dataset.active,
+              displayed:getComputedStyle(el).display!=="none"&&rc.width>0,
+              iconHidden:icon?.hidden??true,
+              mask:css?.maskImage??"none",webkitMask:css?.webkitMaskImage??"none",
+              image:css?.backgroundImage??"none",
+              fallbackText:copy?.textContent?.trim()??"",
+              fallbackDisplay:copy?getComputedStyle(copy).display:"none",
+              aria:el.getAttribute("aria-label")};
+          }).filter(x=>x.active==="true"&&x.displayed);
+        });
+        console.log("PR1645 named screenshot active rail",slug,railState);
+        assert.deepEqual(railState.filter(x=>
+          ["priest-voice","priest-action","gesture","response","bell"].includes(x.channel) &&
+          x.iconHidden && x.fallbackDisplay==="none"),[],
+          "LIVE showed an empty rail tile when approved artwork was unavailable: "+
+          JSON.stringify({slug,railState}));
+      }
+      await page.screenshot({path:resolve(out,
+        lang+"-"+width+(secondConfiteor?"-with-local-confiteor":"")+"-"+slug+".png"),
+        fullPage:false,animations:"disabled"});
+    }
     assert.deepEqual(errors,[],"Curated mobile browser JS errors");
     await context.close();
   }
