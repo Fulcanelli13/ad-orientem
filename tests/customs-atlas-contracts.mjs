@@ -34,8 +34,9 @@ for (const entry of negative.entries) {
   assert.equal(auditNegativeKnowledge(entry).length, 0, entry.custom_id);
 }
 
-assert.equal(atlas.customs.length,38);
-assert.equal(atlas.attestations.length,97);
+assert.equal(atlas.customs.length,40);
+assert.deepEqual(new Set(atlas.customs.filter(c=>c.publication_state==="PUBLISHED").map(c=>c.custom_id)).has("EPIP-003"),true);
+assert.equal(atlas.attestations.length,99);
 assert.equal(negative.entries.length, 7);
 
 const result = assertCustomsAtlasRegistry({
@@ -48,9 +49,9 @@ const result = assertCustomsAtlasRegistry({
 });
 assert.equal(result.pass, true);
 assert.deepEqual(result.counts, {
-  customs: 38,
-  attestations: 97,
-  sources: 108,
+  customs: 40,
+  attestations: 99,
+  sources: 112,
   negativeKnowledge: 7,
 });
 assert.deepEqual(
