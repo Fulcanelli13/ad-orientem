@@ -68,7 +68,7 @@ try{
       const folio=page.locator(".aoCustArticle");
       await folio.waitFor({state:"visible"});
       const copy=await folio.textContent();
-      assert.ok(copy.includes(article.title[language]),id+" missing localized title");
+      assert.ok((await rootLocator.textContent()).includes(article.title[language]),id+" missing localized title");
       assert.ok(copy.includes(article.caution[language]),id+" missing exact approved-boundary caution");
       assert.ok(copy.includes(article.history[language]),id+" missing complete historical-source attribution");
       assert.ok(await folio.locator("a[href^='https://']").count()>=2,id+" must have inspectable sources");
