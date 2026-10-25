@@ -88,9 +88,9 @@ try{
     assert.deepEqual(errors,[],"unhandled client-side errors");
     await page.locator("[data-cust-close]").click();
     assert.equal(await rootLocator.count(),0,"closing the module should restore the calling interface");
-    metrics.push({width,language,year:26,life:12,canonical:38,research:568,excluded:34,archivePage:120,overflow:false});
+    metrics.push({width,language,year:28,life:12,canonical:40,research:568,excluded:34,archivePage:120,overflow:false});
     await page.close();
   }
   await writeFile(resolve(capture,"metrics.json"),JSON.stringify(metrics,null,2));
-  console.log("PASS first-class Customs phone EN/FR: 38 canonical, 568 research, 26/12 partition, 34 exclusions, sources, tap targets and no overflow.");
+  console.log("PASS first-class Customs phone EN/FR: 40 canonical, 568 research, 28/12 partition, 34 exclusions, sources, tap targets and no overflow.");
 }finally{await browser?.close();await new Promise(ok=>server.close(ok));}
