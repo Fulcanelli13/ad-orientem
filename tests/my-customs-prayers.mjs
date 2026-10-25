@@ -6,8 +6,8 @@ import { calendarCustomArticleIds } from "../src/calendar/customs-read-model.js"
 import { v384Dates } from "../src/calendar/traditional-year-v384.js";
 
 const ids=calendarCustomArticleIds();
-assert.equal(ids.length,35);
-assert.equal(new Set(ids).size,35);
+assert.equal(ids.length,37);
+assert.equal(new Set(ids).size,37);
 const values=new Map();
 const storage={
   getItem:key=>values.get(key)??null,
