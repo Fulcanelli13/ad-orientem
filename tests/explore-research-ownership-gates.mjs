@@ -60,7 +60,7 @@ const postReviewAdmissions=[
  ["EAST-001","att:EAST-001:DE","NOT_MAPPED"],
  ["MARI-002","att:MARI-002:US","NOT_MAPPED"],
  ["EPIP-003","att:EPIP-003:GENERAL","NOT_MAPPED"],
- ["DOM-014","att:DOM-014:GENERAL","NOT_MAPPED"],
+ ["CRIB-001","att:CRIB-001:GENERAL","NOT_MAPPED"],
 ];
 for(const [id,attId,mapPolicy] of postReviewAdmissions){
  const custom=C.customs.find(c=>c.custom_id===id);
