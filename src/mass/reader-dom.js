@@ -3540,9 +3540,10 @@ export function createReaderDomAdapter({
     const majorCue=new Set(["AO.SM.C0161","AO.SM.C0174","AO.SM.C0181","AO.SM.C0225","AO.SM.C0265","AO.SM.C0273"]);
     const activeCue=current.cinematic?.cueId ?? current.bell?.cueId ?? current.priestAction?.cueId ?? null;
     const missalAction=mode==="MISSAL"?current.missalRubric?.priestAction:null;
+    const badgeKey=missalAction?.iconKey??current.priestActionIconKey;
     const actionActive=Boolean(
-      textValue(missalAction??current.priestAction) &&
-      (missalAction?.iconKey??current.priestActionIconKey)
+      textValue(missalAction??current.priestAction) && badgeKey &&
+      typeof iconResolver==="function"&&iconResolver(badgeKey)
     );
     if(actionBadge){actionBadge.dataset.active=String(actionActive);actionBadge.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));}
     if(actionRail)actionRail.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));
