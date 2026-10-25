@@ -562,3 +562,44 @@ assert.match(runtime,/aoP435930SourceEditionVariant/,"Bilingual historical editi
 assert.ok(prayers.foundations_our_father.fr.includes("ne nous laissez pas succomber"),"Traditional French Our Father must not be silently modernized");
 assert.ok(prayers.marian_memorare.fr.includes("Verbe incarné"),"Traditional French Memorare must not be silently modernized");
 assert.ok(prayers.foundations_eternal_rest.fr.includes("lumière éternelle"),"Traditional Eternal Rest must not be silently modernized");
+
+
+// PRAY #1644: Adoration and Benediction must use the same prayer-first contract.
+// Keep these checks in the canonical PRAY test lane, not a second reader implementation.
+const prayerFirstCSS=readFileSync("src/pray/devotional-card-deck-styles.js","utf8");
+const prayerFirstContract=devotionalUxContract().rules;
+assert.match(prayerFirstContract.mobileAxes,/horizontal swipes/);
+assert.match(prayerFirstContract.prayerHierarchy,/strongest visual element/);
+assert.match(prayerFirstContract.prayerFaceSwipe,/tappable prayer face/);
+assert.match(prayerFirstContract.sessionLanguage,/without changing the global/);
+assert.match(runtime,/let praySessionLanguage=null/);
+assert.match(runtime,/praySessionLanguage\?\?core\(\)\?\.language/);
+assert.match(runtime,/data-p435930-session-language/);
+assert.match(runtime,/praySessionLanguage=isFr\(\)\?'en':'fr'/);
+assert.match(runtime,/innerScroll=current\?\.querySelector\('\.aoDevoCardScroll'\)\?\.scrollTop/);
+assert.match(runtime,/next\.querySelector\('\.aoDevoCardScroll'\)/);
+assert.match(runtime,/card\.scrollTop=resume\.cardScroll/);
+assert.match(runtime,/requestAnimationFrame\(\(\)=>\{/);
+assert.match(runtime,/if\(target\?\.closest\?\.\('\[data-p435930-flip\],\[data-p435930-card-flip\]'\)\)return false/);
+assert.match(runtime,/suppressPrayerFlipTarget=start\.flipTarget/);
+assert.match(runtime,/if\(b===suppressPrayerFlipTarget\)/);
+assert.doesNotMatch(runtime,/suppressPrayerFlipUntil/);
+assert.match(runtime,/view==='benediction'\|\|view==='adoration'&&\['visit','holy','four'\]\.includes\(ADOR\.mode\)/);
+assert.match(prayerFirstCSS,/PRAY #1644/);
+assert.match(prayerFirstCSS,/aoP435930SessionLanguage/);
+assert.match(prayerFirstCSS,/aoP435930BenedictionReader \.aoDevoCardScroll/);
+assert.match(prayerFirstCSS,/aoP435930AdorationReader\[data-ao-adoration-folio="v1"\] \.aoDevoCardScroll/);
+assert.match(prayerFirstCSS,/font:400 clamp\(19px,5\.1vw,24px\)\/1\.65 var\(--ao-font-liturgical/);
+assert.match(prayerFirstCSS,/font:400 clamp\(12px,3\.5vw,14px\)\/1\.55 var\(--ao-font-ui/);
+assert.match(prayerFirstCSS,/order:-2/);
+for(const id of [
+ "benediction_o_salutaris","benediction_tantum_ergo","benediction_divine_praises",
+ "benediction_versicles","benediction_adoremus_ps116","adoration_anima_christi",
+ "adoration_spiritual_communion","adoration_litany_blessed_sacrament"
+]){
+ const prayer=prayers[id];
+ assert.ok(prayer,"Eucharistic prayer must not be replaced by invented UI text: "+id);
+ for(const language of ["en","fr","la"]){
+  assert.ok(prayer[language]?.trim(),"Missing "+language+" prayer in PRAY canonical data: "+id);
+ }
+}

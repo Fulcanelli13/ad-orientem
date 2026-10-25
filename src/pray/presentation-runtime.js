@@ -9,6 +9,7 @@ import {updateDevotionalProgress,devotionalProgressMarkup} from "./devotional-pr
 import {angelusCommunalParts} from "./angelus-folio-recitation.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
+import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
 import {monthlyDevotionalRegister} from "./quiet-devotional-progression.js";
 import "./quiet-devotional-progression-styles.js";
 import {showDevotionalInterlude,showDevotionalParagraphCue,resetDevotionalCinematicSession} from "./devotional-cinematic.js";
@@ -183,7 +184,9 @@ function semanticRails(){
 const nl=v=>esc(v).replace(/\n/g,'<br>');
 const runtime=()=>window.AO_RUNTIME_V8;
 const core=()=>runtime()?.store?.getState?.()||{};
-const isFr=()=>core()?.language==='fr';
+// Prayer locale is session-local; global UI language and Mass state are unchanged.
+let praySessionLanguage=null;
+const isFr=()=>(praySessionLanguage??core()?.language)==='fr';
 const L=(en,fr)=>isFr()?(fr||en):en;
 const lang=()=>isFr()?'fr':'en';
 const P=id=>DATA.prayers?.[id]||null;
@@ -305,6 +308,7 @@ function applySettingsPreferences(raw={}){
  };
 }
 let prayTouch=null;
+let suppressPrayerFlipTarget=null;
 function shell(){
   let r=document.getElementById(ROOT_ID);if(r)return r;
   r=document.createElement('div');r.id=ROOT_ID;r.className='aoP435930Backdrop';r.setAttribute('aria-hidden','true');r.dataset.aoDevotionalUx=DEVOTIONAL_UX_CONTRACT_VERSION;
@@ -397,6 +401,7 @@ function close({silent=false,preserve=false}={}){
   resetDevotionalCinematicSession({mount:mount(),win:window});
   stopTimer();const r=document.getElementById(ROOT_ID);r?.classList.remove('open');r?.setAttribute('aria-hidden','true');document.body.classList.remove('aoP435930Open');
   if(!preserve){
+    praySessionLanguage=null;
     // Privacy-sensitive preparation is memory-only and is cleared on a true close.
     CONF=freshConfessionState();
     BEN={step:0,divinePraises:false};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};adorationQuietReturn=null;
@@ -407,7 +412,10 @@ function close({silent=false,preserve=false}={}){
 }
 function head(title,sub=''){
  const settings=view==='angelus'?`<button type="button" class="aoFolioSettingsTrigger" data-p435930-angelus-settings aria-controls="aoAngelusOptions" aria-expanded="${angelusOptionsOpen?'true':'false'}" aria-label="${esc(L('Prayer parameters','Paramètres de prière'))}">${assetIcon('ao-ui-settings')||'⚙'}</button>`:'';
- const trailing=settings+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
+ const prayerLanguage=(view==='adoration'||view==='benediction')
+  ? `<button type="button" class="aoP435930SessionLanguage" data-p435930-session-language lang="${lang()}" aria-label="${esc(L('Prayer language: English. Switch to French','Langue de prière : français. Passer en anglais'))}" title="${esc(L('Switch to French','Passer en anglais'))}">${lang().toUpperCase()}</button>`
+  :'';
+ const trailing=settings+prayerLanguage+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
  return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-p435930-back aria-label="${esc(L('Back','Retour'))}">${assetIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY','PRIER'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div>${trailing}</header>`;
 }
 function nav(title,items,active){return `<div class="aoP435930Seg" role="group" aria-label="${esc(title)}">${items.map(x=>`<button type="button" class="${x[0]===active?'active':''}" aria-pressed="${x[0]===active?'true':'false'}" data-p435930-seg="${esc(x[0])}">${esc(L(x[1],x[2]))}</button>`).join('')}</div>`}
@@ -1440,7 +1448,7 @@ function renderBenediction(){
  return `${head(L('Benediction','Bénédiction'),L('Live companion · the church determines the pace','Compagnon en direct · l’église détermine le rythme'))}<main class="aoP435930Body aoP435930BenedictionReader" data-ao-benediction-step="${i}">
  <section class="aoDevoCard" data-ao-devo-card="${esc(id)}">
   <header class="aoDevoCardHead"><small class="aoDevoCardNumber">${i+1} / ${BEN_STAGES.length}</small><h2 class="aoDevoCardTitle">${esc(titles[i])}</h2></header>
-  <div class="aoDevoCardScroll" role="region" aria-label="${esc(titles[i])}">${body}</div>
+  <div class="aoDevoCardScroll" role="region" tabindex="0" aria-label="${esc(titles[i])}">${body}</div>
  </section>
  <details class="aoP435930PrayerOptions" data-ao-benediction-guide><summary>${esc(L('Rite guidance and sources','Guide du rite et sources'))}</summary>
  ${callout(esc(L('Advance only when the public rite actually reaches the next moment. Never use the app as a timer or substitute for the clergy.','Avancez seulement lorsque le rite public atteint réellement l’étape suivante. Ne remplacez ni le clergé ni le déroulement de l’office par un minuteur.')),'rubric')}${devotionalGuide('benediction')}</details>
@@ -1517,7 +1525,21 @@ function exitAdorationQuiet(){
   const m=mount();if(!m)return;
   m.scrollTop=resume.mountScroll;
   const card=m.querySelector('.aoP435930AdorationReader .aoDevoCardScroll');
-  if(card)card.scrollTop=resume.cardScroll;
+  if(card){
+   // The shared reader creates the focus runway in a later animation frame.
+   // Establish that same runway synchronously before restoring this scroll.
+   const paragraphs=[...card.querySelectorAll('.aoP435930GuideNow p,.aoP435930GuideCue p,.aoP435930Prayer .aoP435930Flip,.aoP435930Prayer .aoP435930Text')];
+   ensureDevotionalReadingRunway(card,paragraphs,{ratio:.40});
+   card.dataset.aoFocusRunway='1';
+   card.scrollTop=resume.cardScroll;
+   // Guard against a later font/layout pass without changing the stage.
+   requestAnimationFrame(()=>{
+    if(view==='adoration'&&!ADOR.quiet&&ADOR.mode===resume.mode&&card.isConnected){
+     m.scrollTop=resume.mountScroll;
+     card.scrollTop=resume.cardScroll;
+    }
+   });
+  }
   m.querySelector('.aoAdorationQuietLink,.aoAdorationQuietEnter')?.focus?.({preventScroll:true});
  });
 }
@@ -1527,7 +1549,7 @@ function guidedStage(kind,steps,index,lastLabel){
  // presentation is shared with the other dual-axis devotional readers.
  return `<section class="aoDevoCard" data-ao-devo-card="${kind}-${index}">
  <header class="aoDevoCardHead"><small class="aoDevoCardNumber">${index+1} / ${steps.length}</small><h2 class="aoDevoCardTitle">${esc(st.title)}</h2></header>
- <div class="aoDevoCardScroll" role="region" aria-label="${esc(st.title)}">
+ <div class="aoDevoCardScroll" role="region" tabindex="0" aria-label="${esc(st.title)}">
  ${guideNow(st.title,st.now)}${guidePrayers(st.prayers)}${guideCue(L('SILENCE / NOTICE','SILENCE / ATTENTION'),st.silence)}${st.extra||''}<button type="button" class="${st.prayers.length===0?'aoAdorationQuietEnter':'aoAdorationQuietLink'}" data-p435930-ador-quiet-enter>${esc(st.prayers.length===0?L('Remain in silence','Demeurer en silence'):L('Pause in silence','Faire une pause en silence'))}</button>
  </div></section>${guideNav(kind,index,steps.length,lastLabel)}`
 }
@@ -1787,7 +1809,11 @@ async function goGlobalHome(){
  render();
  return false;
 }
-function touchBlocked(target){return !!target?.closest?.('button,a,input,textarea,select,summary,[contenteditable="true"],[data-p435930-flip],[data-p435930-card-flip]')}
+function touchBlocked(target){
+ // Swiping on the large prayer text must work; a tap still flips it to Latin.
+ if(target?.closest?.('[data-p435930-flip],[data-p435930-card-flip]'))return false;
+ return !!target?.closest?.('button,a,input,textarea,select,summary,[contenteditable="true"]');
+}
 function horizontalStep(direction){
  const d=direction>0?1:-1;
  if(view==='stations'){STATIONS.step=Math.max(0,Math.min(13,STATIONS.step+d));render();return true}
@@ -1811,13 +1837,16 @@ function onPrayTouchStart(e){
   prayTouch=null;return;
  }
  const t=e.touches?.[0];if(!t||touchBlocked(e.target)){prayTouch=null;return}
- prayTouch={x:t.clientX,y:t.clientY,at:Date.now()};
+ prayTouch={x:t.clientX,y:t.clientY,at:Date.now(),flipTarget:t.target?.closest?.('[data-p435930-flip],[data-p435930-card-flip]')||null};
 }
 function onPrayTouchEnd(e){
  if(!prayTouch)return;
  const t=e.changedTouches?.[0],start=prayTouch;prayTouch=null;if(!t)return;
  const dx=t.clientX-start.x,dy=t.clientY-start.y,elapsed=Date.now()-start.at;
  if(elapsed>1300||Math.abs(dx)<72||Math.abs(dx)<Math.abs(dy)*1.35)return;
+ // Suppress only a click synthesized on the exact swiped prayer face.
+ // Never block taps on a subsequent card or another devotion.
+ suppressPrayerFlipTarget=start.flipTarget;
  horizontalStep(dx<0?1:-1);
 }
 function captureResume(){return {view,familyId,navStack:[...navStack],prayerReturnView,prayerId}}
@@ -2499,6 +2528,19 @@ function onClick(e){
   return;
  }
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
+ if(b.hasAttribute('data-p435930-session-language')&&(view==='adoration'||view==='benediction')){
+  const current=mount(),outerScroll=current?.scrollTop||0;
+  const innerScroll=current?.querySelector('.aoDevoCardScroll')?.scrollTop||0;
+  praySessionLanguage=isFr()?'en':'fr';
+  render();
+  queueMicrotask(()=>{
+   const next=mount();if(!next)return;
+   next.scrollTop=outerScroll;
+   const card=next.querySelector('.aoDevoCardScroll');if(card)card.scrollTop=innerScroll;
+   next.querySelector('[data-p435930-session-language]')?.focus?.({preventScroll:true});
+  });
+  return;
+ }
  if(b.hasAttribute('data-p435930-angelus-settings')){
   const detail=mount()?.querySelector?.('#aoAngelusOptions');
   if(detail){detail.open=!detail.open;angelusOptionsOpen=detail.open;b.setAttribute('aria-expanded',String(detail.open))}
@@ -2560,8 +2602,8 @@ function onClick(e){
   void openExternalFamilyRoute(b,b.dataset.p435930External,familyId);
   return;
  }
- if(b.matches('[data-p435930-flip]')){const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
- if(b.matches('[data-p435930-card-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}
+ if(b.matches('[data-p435930-flip]')){if(b===suppressPrayerFlipTarget){suppressPrayerFlipTarget=null;return;}const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
+ if(b.matches('[data-p435930-card-flip]')){if(b===suppressPrayerFlipTarget){suppressPrayerFlipTarget=null;return;}const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}
  const seg=b.dataset.p435930Seg;if(seg){if(view==='angelus'){if(['individual','group'].includes(seg))setRecitationMode(seg);else if(['simple','guided'].includes(seg)){S.angelusGuided=seg==='guided';save()}else if(['auto','angelus','regina'].includes(seg)){S.angelusMode=seg;ANGELUS_CARD_INDEX=0;angelusOptionsOpen=false;save()}}else if(view==='rosary'){if(['standard','devotional'].includes(seg)){S.rosary.form=seg;save()}else if(['simple','guided'].includes(seg)){S.rosary.mode=seg;save()}else if(['individual','group'].includes(seg)){setRecitationMode(seg);try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(seg)}catch{}}}else if(view==='adoration'&&['reserved','exposed'].includes(seg)){setAdorationPresence(seg)}else if(view==='stations'&&['guided','simple'].includes(seg)){S.stations.mode=seg;if(seg==='simple')STATIONS.publicPosture=false;save()}else if(view==='stations'&&['individual','group'].includes(seg)){setRecitationMode(seg);if(seg==='individual')STATIONS.publicPosture=false}else if(view==='litany'&&['individual','group'].includes(seg)){setRecitationMode(seg)}else if(view==='library'&&LIB.open){LIB.language=seg}return render()}
  if(b.matches('[data-p435930-launch-rosary]')){launchRosaryPlayer(captureResume());return}
  if(b.dataset.p435930ConfPath!=null){
@@ -2770,6 +2812,16 @@ document.addEventListener('keydown',e=>{
   e.preventDefault();
   horizontalStep(e.key==='ArrowRight'?1:-1);
   queueMicrotask(()=>r.querySelector('.aoTenebReading')?.focus?.({preventScroll:true}));
+  return;
+ }
+ if((view==='benediction'||view==='adoration'&&['visit','holy','four'].includes(ADOR.mode))&&
+   (e.key==='ArrowRight'||e.key==='ArrowLeft')&&
+   !e.altKey&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&
+   r.contains(e.target)&&e.target.closest('.aoDevoCardScroll')&&
+   !e.target.closest('button,a,input,textarea,select,summary,[contenteditable]')){
+  e.preventDefault();
+  horizontalStep(e.key==='ArrowRight'?1:-1);
+  queueMicrotask(()=>r.querySelector('.aoDevoCardScroll')?.focus?.({preventScroll:true}));
   return;
  }
  if(view==='stations'&&

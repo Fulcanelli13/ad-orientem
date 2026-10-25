@@ -87,7 +87,9 @@ try{
  await page.keyboard.press("Escape");
  assert.equal((await snapshot()).index,0,"Escape should return to selected Visit step");
  assert.equal(await page.locator("#aoPray435930.open").count(),1);
- assert.ok(Math.abs(await visitScroll.evaluate(el=>el.scrollTop)-beforePause)<=2,"Scroll position lost on quiet return");
+ const resumedScroll=await visitScroll.evaluate(el=>({top:el.scrollTop,height:el.scrollHeight,client:el.clientHeight,padding:getComputedStyle(el).paddingBottom,runway:el.dataset.aoFocusRunway,first:el.querySelector(".aoDevoParagraph")?.getBoundingClientRect().top}));
+ console.log("SILENCE_RETURN_DIAGNOSTIC",JSON.stringify({beforePause,resumedScroll}));
+ assert.ok(Math.abs(resumedScroll.top-beforePause)<=2,"Scroll position lost on quiet return");
  await page.screenshot({path:resolve(captures,"visit-after-silent-pause-390.png"),animations:"disabled"});
  const swipe=async(dx,dy)=>page.locator(sel+" .aoDevoCardScroll").evaluate((el,{dx,dy})=>{
   const t=(x,y)=>new Touch({identifier:15,target:el,clientX:x,clientY:y});
@@ -185,7 +187,10 @@ try{
  await page.locator("#aoPray435930.open [data-p435930-ador-mode='four']").tap();
  await page.waitForSelector(timeline);
  v=await snapshot();assert.equal(v.mode,"four");assert.equal(v.stops,5);
- assert.match(await page.locator(sel+" .aoDevoCard").innerText(),/Adoration/i);
+ assert.match(await page.locator(timeline+" [aria-current='step']").innerText(),/Adoration/i,
+  "The canonical Four Ends chapter title must remain in the stage timeline");
+ assert.match(await page.locator(sel+" .aoDevoCard .aoP435930GuideNow p").innerText(),/Adore Him/i,
+  "The first Four Ends stage must retain its source-owned prayer direction");
  await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
  assert.equal((await snapshot()).final,"true");
  assert.equal(await page.locator(sel+" [data-p435930-four-finish]").count(),1);
