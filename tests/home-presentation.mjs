@@ -85,8 +85,10 @@ assert.match(en,/aoTodayV2Frontispiece/);
 const identityIndex=en.indexOf('class="aoTodayV2ArtOverlay aoTodayV2Identity"');
 const sourceIndex=en.indexOf('data-ao-home-art-slot');
 const actionsIndex=en.indexOf('class="aoTodayV2HeroActions"');
-assert.ok(identityIndex>=0&&sourceIndex>identityIndex&&actionsIndex>sourceIndex,
-  "Today editorial sequence must be title → reviewed art → Mass action");
+const calendarAccessIndex=en.indexOf('class="aoHomeCalendarAccess"');
+assert.ok(identityIndex>=0&&actionsIndex>identityIndex&&sourceIndex>actionsIndex
+  &&calendarAccessIndex>sourceIndex,
+  "First-fold Today sequence must be feast → Mass action → reviewed artwork → full Calendar");
 assert.equal((en.match(/data-ao-home-art-slot/g)||[]).length,1,
   "Editorial composition must preserve one source-owned artwork slot");
 assert.match(en,/class="aoTodayV2SeasonMicro" data-home-calendar data-home-calendar-view="year"/,
