@@ -8,9 +8,54 @@ const matrix=load("mass/gesture-matrix.v1.json");
 const sung=load("presentation/reader-text-sung.v1.json");
 const corpusById=new Map(sung.blocks.flatMap(b=>b.units.map(u=>[u.cue_id,u])));
 const forms=["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"];
+// Ritus servandus IV.3 and VI.3: priest's quiet continuation does NOT
+// advance with the choir, even if the same words occupy source paragraphs.
+// Keep the priest's audible Gloria/Credo intonation endings (0054/0090)
+// untouched for the separate source-verified intonation adjudication.
+const laterChoirCues=[
+ ...Array.from({length:15},(_,i)=>"AO.SM.C"+String(55+i).padStart(4,"0")),
+ ...Array.from({length:15},(_,i)=>"AO.SM.C"+String(91+i).padStart(4,"0")),
+];
+assert.equal(new Set(laterChoirCues).size,30);
+for(const cue of laterChoirCues)
+ assert.equal(corpusById.get(cue)?.clock,"SCHOLA_PUBLIC",cue+": unexpected donor clock");
+assert.equal(corpusById.get("AO.SM.C0054")?.clock,"SCHOLA_PUBLIC");
+assert.equal(corpusById.get("AO.SM.C0090")?.clock,"SCHOLA_PUBLIC");
 assert.deepEqual(PRIEST_SANCTUS_OBSERVATION_TYPES,
  ["PRIEST_SANCTUS_RECITATION","PRIEST_BENEDICTUS_RECITATION"]);
 for(const form of forms){
+  for(const cue of laterChoirCues){
+    const original={label:"UNOBSERVED PRIEST GESTURE",cueId:cue};
+    const result=resolvePriestChantAction({form,cueId:cue,
+      sourceClock:"SCHOLA_PUBLIC",gestureMatrix:matrix,ordinaryAction:original});
+    assert.equal(result.priestAction,null,
+      form+" "+cue+": Schola phrase forged a contemporaneous priest action");
+    assert.equal(result.owner,"PRIEST_EVENT_UNOBSERVED");
+    const voice=resolvePriestChantVoice({form,cueId:cue,
+      sourceClock:"SCHOLA_PUBLIC",ordinaryVoice:{label:"PRIVATE PRIEST RECITATION"}});
+    assert.equal(voice.priestVoice,null,
+      form+" "+cue+": choir reading inferred private priest voice");
+    assert.equal(voice.owner,"PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED");
+    // Forged unrelated event types must not unlock a priest action here.
+    assert.equal(resolvePriestChantAction({form,cueId:cue,sourceClock:"SCHOLA_PUBLIC",
+      gestureMatrix:matrix,observation:{actor:"PRIEST",observed:true,
+        source:"EXPLICIT_OBSERVATION",eventType:"PRIEST_SANCTUS_RECITATION",
+        atCueId:cue}}).priestAction,null);
+    assert.equal(validatePriestChantObservation({actor:"PRIEST",observed:true,
+      source:"EXPLICIT_OBSERVATION",eventType:"PRIEST_SANCTUS_RECITATION"},
+      cue,form),false);
+  }
+  // The priest intones THROUGH Deo and in unum Deum. Those two ending
+  // cues cannot be suppressed by the later-choir-only guard.
+  for(const cue of ["AO.SM.C0054","AO.SM.C0090"]){
+    const priestIntonation={label:"PRIEST INTONATION END",cueId:cue};
+    assert.equal(resolvePriestChantAction({form,cueId:cue,
+      sourceClock:"SCHOLA_PUBLIC",ordinaryAction:priestIntonation}).priestAction,
+      priestIntonation);
+    const voice={label:"PRIEST INTONES"};
+    assert.equal(resolvePriestChantVoice({form,cueId:cue,sourceClock:"SCHOLA_PUBLIC",
+      ordinaryVoice:voice}).priestVoice,voice);
+  }
   for(const id of ["AO.SM.C0145","AO.SM.C0148"]){
     assert.equal(corpusById.get(id).clock,"SCHOLA_PUBLIC");
     const rogue={label:"SHOULD NOT BE DISPLAYED"};
@@ -116,6 +161,14 @@ for(const form of forms){
     ordinaryAction:otherAction
   }).priestAction,otherAction);
 }
+// No Low Mass/voice or off-clock rule is changed.
+for(const cue of laterChoirCues){
+ const original={label:"LOW MASS PRIEST PRAYER",cueId:cue};
+ assert.equal(resolvePriestChantAction({form:"LOW",cueId:cue,
+   sourceClock:"PUBLIC_TEXT",ordinaryAction:original}).priestAction,original);
+ assert.equal(resolvePriestChantVoice({form:"LOW",cueId:cue,
+   sourceClock:"PUBLIC_TEXT",ordinaryVoice:original}).priestVoice,original);
+}
 const low={label:"PRIEST RECITES SANCTUS"};
 assert.equal(resolvePriestChantAction({
   form:"LOW",cueId:"AO.SM.C0145",sourceClock:"PUBLIC_TEXT",ordinaryAction:low
@@ -128,4 +181,4 @@ assert.equal(resolvePriestChantVoice({
   form:"LOW",cueId:"AO.SM.C0145",sourceClock:"PUBLIC_TEXT",ordinaryVoice:lowVoice
 }).priestVoice,lowVoice,"Low Mass priest voice must never be suppressed");
 // Explicit input is not a claim of automatic sensing, camera, or audio recognition.
-console.log("PASS priest/Schola owner guard: three Sung form variants fail closed; explicit priest observations only; Low, Canon and faithful lanes unchanged.");
+console.log("PASS priest/Schola owner guard: 30 later Gloria/Credo Schola cues x 3 sung forms fail closed; priest intonation ends preserved; Sanctus observations, Low and Canon unchanged.");
