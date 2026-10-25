@@ -51,6 +51,37 @@ try{
  const guide=page.locator(rootSel+" [data-ao-benediction-guide]");
  assert.equal(await guide.evaluate(el=>el.open),false,"Historical guidance must be optional and below the prayer");
  await page.screenshot({path:resolve(captures,"benediction-390-exposition.png"),animations:"disabled"});
+ // Actual phone locale and visual-salience acceptance, not only static selectors.
+ const locale=page.locator("#aoPray435930 .aoP435930SessionLanguage");
+ assert.equal(await locale.count(),1,"In-rite language control is missing");
+ assert.equal((await locale.innerText()).trim(),"EN");
+ const prayerFace=page.locator(rootSel+" .aoP435930Flip").first();
+ const faceFont=await prayerFace.evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
+ const cueFont=await page.locator(rootSel+" .aoP435930GuideNow p").first()
+  .evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
+ assert.ok(faceFont>=cueFont+4,"Prayer text must dominate small instructions: "+JSON.stringify({faceFont,cueFont}));
+ await locale.click();
+ assert.equal((await locale.innerText()).trim(),"FR");
+ assert.equal((await snapshot()).index,0,"Changing French altered the public rite stage");
+ assert.match(await page.locator(rootSel+" .aoP435930Flip [data-face-v]").first().innerText(),/Victime sainte/);
+ await page.screenshot({path:resolve(captures,"benediction-390-exposition-fr.png"),animations:"disabled"});
+ await locale.click();
+ assert.equal((await locale.innerText()).trim(),"EN");
+ const latinFlip=page.locator(rootSel+" .aoP435930Flip").first();
+ await latinFlip.evaluate(el=>el.click());
+ assert.equal(await latinFlip.locator("[data-face-la]").evaluate(el=>el.hidden),false,
+  "Tap on prayer must reveal original Latin");
+ await latinFlip.evaluate(el=>el.click());
+ assert.equal(await latinFlip.locator("[data-face-v]").evaluate(el=>el.hidden),false);
+ // A horizontal swipe beginning on the same prayer-face button MUST navigate.
+ await latinFlip.evaluate(el=>{
+  const t=(x,y)=>new Touch({identifier:18,target:el,clientX:x,clientY:y});
+  el.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[t(215,335)],changedTouches:[t(215,335)]}));
+  el.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[t(60,338)]}));
+ });
+ assert.equal((await snapshot()).card,"adoration","Swiping the prayer text did not advance a card");
+ await page.locator(timeline+" [data-ao-devo-chapter='0']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).card,"exposition");
  const swipe=async(dx,dy)=>page.locator(rootSel+" .aoDevoCardScroll").evaluate((el,{dx,dy})=>{
   const t=(x,y)=>new Touch({identifier:14,target:el,clientX:x,clientY:y});
   el.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[t(230,340)],changedTouches:[t(230,340)]}));
