@@ -43,4 +43,4 @@ Source: https://icrspfrance.fr/textes-liturgiques.php
 - `NOT_CLEARED_INDEX_AND_LINK_ONLY` by default. Guéranger's underlying original and the web-hosted modern French transmission/translation have separate rights questions; Schuster and Parsch translations similarly require checking.
 - Modern historical commentary can be useful *without being normative 1962 rubric*.
 - Do not fabricate author quotations, attribute historic commentary to the Fathers without checking its embedded citations, or import a synthetic paraphrase as published commentary.
-- Preserve the existing 48-card reader and current Calendar visual design.
+- Do not assume any fixed reader card count. Preserve the current deployed reader structure and Calendar visual design; determine the live cardinality from current canonical data.
