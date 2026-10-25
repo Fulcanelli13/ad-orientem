@@ -68,6 +68,40 @@ try{
     assert.ok(summary.headings.includes("Gloria · The Celebrant's Intonation"));
     assert.ok(summary.headings.includes("Words of Consecration and Elevation · Host"));
     assert.ok(summary.headings.includes("Communion Antiphon"));
+    // Musical interludes cannot tell us where the priest actually is.
+    // Recovery must open existing source-backed Mass sections; do not
+    // advance reader or choir automatically when opening the picker.
+    if((width===320||width===390)&&lang==="en"&&!secondConfiteor){
+      await page.evaluate(()=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const kyrie=api.model.cards.find(c=>c.title==="Kyrie");
+        if(!kyrie)throw new Error("SCHOLA_RECOVERY_KYRIE_MISSING");
+        api.showSequence(kyrie.sequence);
+      });
+      await page.waitForFunction(()=>
+        document.querySelector(".ao-schola-dock")?.dataset.active==="true");
+      const before=await page.evaluate(()=>({
+        section:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId,
+        schola:window.__AO_PHONE_PREVIEW.getScholaState()?.schola?.segmentId
+      }));
+      await page.locator("#ao-r17-native-reader-preview [data-schola-find-place]").click();
+      const menu=page.locator("#ao-r17-native-reader-preview [data-role='section-menu']");
+      assert.equal(await menu.isVisible(),true,
+        "Schola find-place did not open existing section navigator");
+      assert.deepEqual(await page.evaluate(()=>({
+        section:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId,
+        schola:window.__AO_PHONE_PREVIEW.getScholaState()?.schola?.segmentId
+      })),before,"Opening find-place falsely advanced a liturgical clock");
+      const target=await menu.locator("button[data-reader-section]").first()
+        .getAttribute("data-reader-section");
+      assert.ok(target&&target!==before.section);
+      await menu.locator("button[data-reader-section]").first().click();
+      await page.waitForFunction(section=>
+        window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId===section,target);
+      assert.equal(await menu.isVisible(),false);
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),
+        false,"Schola find-place introduced horizontal phone overflow");
+    }
     // Production touch contract: finger vertical scrolling must remain within
     // a prayer card; horizontal gestures must move EXACTLY one card each way.
     // Historical 48-card touch coverage cannot certify the new curated model.
