@@ -379,8 +379,16 @@ try{
               expected.add(event.id);
               const sourceWitness=printedSource && event.kind!=="STATE" &&
                 rowRendered && sourceText.length>0 && sourceCues.has(event.sourceCueId);
-              const annotation=idNodes.find(el=>el.dataset.rubricId===event.id &&
-                el.textContent.trim().length>0 && el.getBoundingClientRect().width>0);
+              const annotation=idNodes.find(el=>{
+                if(el.dataset.rubricId!==event.id || !el.textContent.trim())return false;
+                if(el.dataset.iconBacked==="true")return true; // exact approved rail art
+                // No approved/loaded icon: the rubric must remain readable,
+                // not tucked into the 1px icon-backed accessibility clip.
+                const css=getComputedStyle(el),box=el.getBoundingClientRect();
+                return css.display!=="none" && css.visibility!=="hidden" &&
+                  box.width>=18 && el.closest(".ao-live-inline-rubrics")
+                    ?.dataset.fullyIconBacked!=="true";
+              });
               if(sourceWitness || (rowRendered && annotation))found.add(event.id);
               else missing.push({card:card.title,paragraph:p.id,rubric:event.id,
                 cue:event.sourceCueId,sourcePrinted:printedSource,
