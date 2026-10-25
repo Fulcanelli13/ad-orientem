@@ -2665,8 +2665,14 @@ export async function mountNativeReaderPreview({
             language:ready.prepared?.readerPreferences?.language??"en",
           })
         : String(readerModel?.presentationMode??"").toUpperCase()==="LIVE"
-          ? withPublishedMissalParagraphRubrics(
-              visibleCard.paragraphs,ready.data?.rubricEvents??null,{
+          ? withCertifiedSolemnMissalMinisters(
+              withPublishedMissalParagraphRubrics(
+                visibleCard.paragraphs,ready.data?.rubricEvents??null,{
+                  form:ready.prepared?.session?.resolvedMass?.form,
+                  language:ready.prepared?.readerPreferences?.language??"en",
+                }),{
+                formStateData:ready.formState,
+                cueState:ready.cueState,
                 form:ready.prepared?.session?.resolvedMass?.form,
                 language:ready.prepared?.readerPreferences?.language??"en",
               })
