@@ -401,11 +401,11 @@ const SHELL_STYLE = `
   display:none!important;
 }
 .ao-reader-shell[data-mode="LIVE"] .ao-iconless-source-rubric{
-  display:block;max-width:66ch;margin:5px 0 3px;padding:3px 0 3px 9px;
-  border-left:1px solid color-mix(in srgb,var(--ao-mass-accent) 46%,transparent);
-  font:italic 400 clamp(11px,1.04vw,13px)/1.38 var(--ao-missal-face,Georgia,serif);
-  color:color-mix(in srgb,var(--ao-text-primary,#e8e2d5) 76%,transparent);
-  text-align:left;
+  display:block;max-width:66ch;margin:7px 0 5px;padding:4px 0 4px 11px;
+  border-left:2px solid color-mix(in srgb,var(--ao-mass-accent) 46%,transparent);
+  font:italic 400 clamp(13px,1.6vw,15px)/1.5 var(--ao-missal-face,Georgia,serif);
+  color:color-mix(in srgb,var(--ao-text-primary,#e8e2d5) 85%,transparent);
+  text-align:left;letter-spacing:0;overflow-wrap:break-word;
 }
 /* No new artwork/clock: one occasional Solemn minister *rubric*, not a
    claimed observation or a priest-action clone. Only certified existing
@@ -1104,11 +1104,11 @@ button.ao-schola-control{cursor:pointer}
 /* A sourced ceremonial cue belongs directly to its original prayer row.
    The short rubric is legible without becoming a second Guide card. */
 .ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics{
-  display:block;max-width:66ch;margin:5px 0 3px;padding:3px 0 3px 9px;
-  border-left:1px solid color-mix(in srgb,var(--ao-mass-accent) 46%,transparent);
-  color:color-mix(in srgb,var(--ao-text-primary,#e8e2d5) 76%,transparent);
-  font:italic 400 clamp(11px,1.04vw,13px)/1.38 var(--ao-missal-face,Georgia,serif);
-  text-align:left;letter-spacing:0;
+  display:block;max-width:66ch;margin:7px 0 5px;padding:4px 0 4px 11px;
+  border-left:2px solid color-mix(in srgb,var(--ao-mass-accent) 46%,transparent);
+  color:color-mix(in srgb,var(--ao-text-primary,#e8e2d5) 85%,transparent);
+  font:italic 400 clamp(13px,1.6vw,15px)/1.5 var(--ao-missal-face,Georgia,serif);
+  text-align:left;letter-spacing:0;overflow-wrap:break-word;
 }
 .ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action{
   display:block;margin:1px 0;
@@ -1360,10 +1360,11 @@ button.ao-schola-control{cursor:pointer}
    The source, actor and date remain metadata, not repeated reading chrome. */
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics{
   grid-column:1 / -1;grid-row:auto;display:block;
-  margin:5px 0 0;padding:1px 0 0;
+  max-width:66ch;margin:7px auto 4px;padding:2px 8px;
   border:0;background:transparent;text-align:center;
   color:var(--ao-text-muted,#b5b8b4);
-  font:italic 400 clamp(.82rem,1.45vw,.98rem)/1.43 var(--ao-missal-face);
+  font:italic 400 clamp(13px,1.6vw,15px)/1.5 var(--ao-missal-face,Georgia,serif);
+  letter-spacing:0;overflow-wrap:break-word;
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-canon-inline-heading,
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-canon-inline-source{display:none!important}
