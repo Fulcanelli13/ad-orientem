@@ -842,6 +842,11 @@ try{
           }).filter(x=>x.active==="true"&&x.displayed);
         });
         console.log("PR1645 named screenshot active rail",slug,railState);
+        assert.deepEqual(railState.filter(x=>
+          ["priest-voice","priest-action","gesture","response","bell"].includes(x.channel) &&
+          x.iconHidden && x.fallbackDisplay==="none"),[],
+          "LIVE showed an empty rail tile when approved artwork was unavailable: "+
+          JSON.stringify({slug,railState}));
       }
       await page.screenshot({path:resolve(out,
         lang+"-"+width+(secondConfiteor?"-with-local-confiteor":"")+"-"+slug+".png"),
