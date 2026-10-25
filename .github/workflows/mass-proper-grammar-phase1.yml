@@ -1,0 +1,38 @@
+name: Mass Phase 1 Grammar Sample (24 Propers)
+
+on:
+  pull_request:
+    paths:
+      - "tests/mass-phase1-24-random-propers-grammar.mjs"
+      - ".github/workflows/mass-proper-grammar-phase1.yml"
+      - "src/mass/**"
+      - "src/calendar/**"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  collect-review-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Sample 24 distinct source Propers from real 2026 app resolver
+        run: node tests/mass-phase1-24-random-propers-grammar.mjs
+      - name: Check adjudicated excerpts against sampled reader texts
+        run: node tests/mass-phase1-grammar-adjudications.mjs
+      - name: Retain complete bilingual rendered-Propers review corpus
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase1-24-propers-en-fr-audit
+          path: artifacts/proper-grammar/phase1-random24-2026.json
+          if-no-files-found: warn
+          retention-days: 30
