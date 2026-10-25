@@ -1,0 +1,48 @@
+name: Weiser research integrity
+
+on:
+  pull_request:
+    paths:
+      - 'data/customs/research/weiser-*.json'
+      - 'tests/weiser-canonical-reconciliation.mjs'
+      - 'tests/weiser-p1-wave02.mjs'
+      - 'tests/weiser-p1-wave03.mjs'
+      - 'tests/weiser-p1-wave04.mjs'
+      - 'tests/weiser-p1-wave05.mjs'
+      - 'tests/weiser-p1-wave06.mjs'
+      - 'tests/weiser-54-owner-reconciliation.mjs'
+      - '.github/workflows/weiser-research-integrity.yml'
+  push:
+    branches:
+      - 'research/weiser-chapters-01-05-20261020'
+    paths:
+      - 'data/customs/research/weiser-*.json'
+      - 'tests/weiser-canonical-reconciliation.mjs'
+      - 'tests/weiser-p1-wave02.mjs'
+      - 'tests/weiser-p1-wave03.mjs'
+      - 'tests/weiser-p1-wave04.mjs'
+      - 'tests/weiser-p1-wave05.mjs'
+      - 'tests/weiser-p1-wave06.mjs'
+      - 'tests/weiser-54-owner-reconciliation.mjs'
+      - '.github/workflows/weiser-research-integrity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-lock-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Weiser source locators, candidate groups and editorial holds
+        run: |
+          node tests/weiser-canonical-reconciliation.mjs
+          node tests/weiser-p1-wave02.mjs
+          node tests/weiser-p1-wave03.mjs
+          node tests/weiser-p1-wave04.mjs
+          node tests/weiser-p1-wave05.mjs
+          node tests/weiser-p1-wave06.mjs
+          node tests/weiser-54-owner-reconciliation.mjs

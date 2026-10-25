@@ -1,0 +1,393 @@
+{
+  "schema": "AO_WEISER_P1_WAVE05_EVIDENCE_V1",
+  "version": "1.0.0",
+  "as_of": "2026-10-20",
+  "status": "RESEARCH_ONLY_NO_APP_PUBLICATION",
+  "inputs": [
+    "data/customs/research/weiser-p1-wave02-full-reconciliation.v1.json",
+    "data/customs/research/weiser-p1-wave03-source-corroboration.v1.json",
+    "data/customs/research/weiser-p1-wave04-source-corroboration.v1.json"
+  ],
+  "editorial_policy": [
+    "Independently confirm only the exact Weiser claim supported; do not generalise a modern or different-rite witness.",
+    "Same-author Francis X Weiser 1964 reprints are not independent corroboration of Weiser 1958's claims.",
+    "Separate secondary historical and geographical context from devotional how-to guidance.",
+    "Preserve the unmerged Assumption-herb integration in PR #1512; no parallel new custom.",
+    "Preserve the existing 1962 calendar and Mass reader; no action to generate priestly blessings or obligations.",
+    "No source text reproduction except factual names, independent editorial paraphrase, short locators."
+  ],
+  "audit": {
+    "previously_screened_p1": 57,
+    "new_source_screened_p1": 25,
+    "independently_bounded_p1": 14,
+    "partial_or_same_author_p1": 11,
+    "bounded_topic_count": 13,
+    "held_topic_count": 11,
+    "cumulative_reviewed_p1": 82,
+    "remaining_p1_without_source_review": 62,
+    "app_publications": 0
+  },
+  "witnesses": [
+    {
+      "witness_id": "W58B5-ADVENT_STRAW",
+      "observation_ids": [
+        "WEI58-05-005"
+      ],
+      "title": "Advent straw added to an empty manger for good works",
+      "source": {
+        "issuer": "Catholic Culture, independent 2014 essay by Jennifer Gregory Miller",
+        "url": "https://www.catholicculture.org/commentary/straws-in-manger-preparing-our-hearts-for-christs-birth/"
+      },
+      "verified_claim_limit": "Contemporary independent Catholic family firsthand practice, explicitly describes a French-origin custom in which children put straw in the manger after prayers and good deeds. French origin is a traditional attribution, not documented in modern France by this source.",
+      "status": "BOUNDED_INDEPENDENT",
+      "owner_handling": "DOM-010 / Calendar",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-STEPHEN_ALMS",
+      "observation_ids": [
+        "WEI58-08-025"
+      ],
+      "title": "St Stephen feast-day gifts to poor",
+      "source": {
+        "issuer": "Catholic Culture, Mary Reed Newland via Homemade Christians",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=939"
+      },
+      "verified_claim_limit": "Catholic family guide instructs using 26 December as a time to read Acts 6–7 and give useful gifts to the poor. No requirement for money, purchase or novel St Stephen rite.",
+      "status": "BOUNDED_INDEPENDENT",
+      "owner_handling": "Saints / Customs Atlas",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-KUTIA",
+      "observation_ids": [
+        "WEI58-09-002"
+      ],
+      "title": "Ukrainian Christmas Eve kutia",
+      "source": {
+        "issuer": "Smithsonian Folklife, Tetiana Poshyvailo",
+        "url": "https://folklife.si.edu/magazine/foodways-holidays-ukrainian-christmas-kutia-uzvar"
+      },
+      "verified_claim_limit": "First-person Ukrainian cultural account documents wheat-berry, honey and poppy seed dish in Christmas Eve family meal. Pagan divination and dead-spirit beliefs are reported historically only, never recommended.",
+      "status": "BOUNDED_INDEPENDENT",
+      "owner_handling": "Regional family foods / Customs Atlas",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-HUNGERTUCH",
+      "observation_ids": [
+        "WEI58-14-009"
+      ],
+      "title": "Catholic Lenten altar Hunger Cloth",
+      "source": {
+        "issuer": "Archdiocese of Munich and Freising — Lenten custom",
+        "url": "https://www.erzbistum-muenchen.de/glaube-und-spiritualitaet/kirchenjahr/fastenzeit"
+      },
+      "verified_claim_limit": "Official Catholic source describes Fastentuch before altar in some churches, a Lenten visual penitential custom. Liturgical rubrics and placement are not fixed for all parishes.",
+      "status": "BOUNDED_INDEPENDENT",
+      "owner_handling": "Learn / historical church custom",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-MOTHERING_CHURCH",
+      "observation_ids": [
+        "WEI58-14-012"
+      ],
+      "title": "Mothering Sunday visit to a mother church",
+      "source": {
+        "issuer": "English Heritage — Mother's Day",
+        "url": "https://www.english-heritage.org.uk/visit/familydaysout/mothers-day/"
+      },
+      "verified_claim_limit": "Historic UK fourth Sunday of Lent: people visited their mother churches (places of baptism), and families gathered. Cultural historical claim verified, not a universal Roman Catholic 1962 law.",
+      "status": "BOUNDED_INDEPENDENT",
+      "owner_handling": "Calendar / family traditions",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-MOTHERING_SIMNEL",
+      "observation_ids": [
+        "WEI58-14-013"
+      ],
+      "title": "Mothering Sunday family visit with simnel cake",
+      "source": {
+        "issuer": "Catholic Culture — Bury Simnel Cake, account of historical English custom",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/recipes/view.cfm?id=1301"
+      },
+      "verified_claim_limit": "British family custom associates mother-visiting and simnel cake with fourth Lent Sunday. The claim does not establish obligatory observance and overlaps Mothering Sunday mother-church visit without being identical.",
+      "status": "BOUNDED_INDEPENDENT",
+      "owner_handling": "Related variant to Mothering Sunday, not separate feast",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-HOT_CROSS",
+      "observation_ids": [
+        "WEI58-15-032"
+      ],
+      "title": "Good Friday cross-marked buns in England",
+      "source": {
+        "issuer": "English Heritage — Dr Eleanor Barnett, History of Hot Cross Buns",
+        "url": "https://www.english-heritage.org.uk/easter/a-history-of-hot-cross-buns/"
+      },
+      "verified_claim_limit": "Documented English Good Friday eating and selling cross-marked spiced buns by eighteenth century. Ancient pagan origin, miraculous healing and protective charm claims remain unverified or rejected.",
+      "status": "BOUNDED_INDEPENDENT",
+      "owner_handling": "Regional food / historical editorial",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-EMMAUS_WALK",
+      "observation_ids": [
+        "WEI58-16-028"
+      ],
+      "title": "Easter Monday Emmaus spiritual walk",
+      "source": {
+        "issuer": "Archdiocese of Munich-Freising — Emmausgang",
+        "url": "https://www2.erzbistum-muenchen.de/news/STK-Rosenheim/Emmausgang-30834.news"
+      },
+      "verified_claim_limit": "Catholic archdiocesan explanation specifically documents Bavarian/Austrian Easter Monday family or parish walks tied to Luke 24:13–35, sometimes concluding at church or shrine.",
+      "status": "BOUNDED_INDEPENDENT",
+      "owner_handling": "Calendar / Optional Easter practice",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-EASTER_LAMB",
+      "observation_ids": [
+        "WEI58-17-006"
+      ],
+      "title": "Lamb as symbol of the risen Christ and paschal sacrifice",
+      "source": {
+        "issuer": "Benedict XVI — Easter Sunday homily 12 April 2009",
+        "url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2009/documents/hf_ben-xvi_hom_20090412_pasqua.html"
+      },
+      "verified_claim_limit": "Christ as the Paschal lamb grounded in 1 Corinthians 5:7, with Jewish Paschal typology. This witnesses theological meaning, not historical sheep-meat blessing or exact decorative family use.",
+      "status": "BOUNDED_THEOLOGICAL_CONTEXT",
+      "owner_handling": "Learn / existing Easter context",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-PYSANKY",
+      "observation_ids": [
+        "WEI58-17-014"
+      ],
+      "title": "Polish pisanki and Ukrainian pysanky decorated Easter eggs",
+      "source": {
+        "issuer": "Smithsonian Institution — Designing Easter Eggs",
+        "url": "https://www.si.edu/stories/designing-easter-eggs"
+      },
+      "verified_claim_limit": "Museum documents named Polish and Ukrainian decorated eggs and Easter exchange, including wax-resist art. Does not validate symbolic lucky charms or mandatory Holy Saturday rites.",
+      "status": "BOUNDED_INDEPENDENT",
+      "owner_handling": "Regional customs / Easter",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-ASSUMPTION_HERBS",
+      "observation_ids": [
+        "WEI58-24-008",
+        "WEI58-24-009"
+      ],
+      "title": "Assumption herb bouquets prepared and blessed locally",
+      "source": {
+        "issuer": "Diocese of Augsburg — Maria Himmelfahrt Kräuterweihe",
+        "url": "https://bistum-augsburg.de/Pfarreien/St.-Ulrich_Neuburg/Aktuelles/Maria-Himmelfahrt-Kraeuterweihe"
+      },
+      "verified_claim_limit": "Official parish describes herbs tied into bouquets by women before the Assumption Mass and blessed locally; future diocese schedules likewise announce herb blessings. Magical healing or lightning protection claims are historical folklore, not Catholic guarantees.",
+      "status": "BOUNDED_INDEPENDENT",
+      "owner_handling": "PR #1512 overlap / Customs Atlas existing blessing",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-LUCIA",
+      "observation_ids": [
+        "WEI58-28-025"
+      ],
+      "title": "Scandinavian St Lucia white-dressed visits and saffron buns",
+      "source": {
+        "issuer": "Visit Sweden — Lucia 2025",
+        "url": "https://visitsweden.com/what-to-do/culture-history-and-art/swedish-traditions/christmas/lucia/"
+      },
+      "verified_claim_limit": "Tourism authority documents 13 December white robes, Lucia wreath, saffron buns and light symbolism; predominantly Swedish cultural usage, not specifically a Catholic rite nor true hagiographic account. Prefer LED crown.",
+      "status": "BOUNDED_CULTURAL_CONTEXT",
+      "owner_handling": "Saints / regional customs",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-STSTEPHEN_HORSES",
+      "observation_ids": [
+        "WEI58-10-010"
+      ],
+      "title": "St Stephen horse blessing on 26 December historically",
+      "source": {
+        "issuer": "Catholic Culture — The Catholic Cook Book (William Kaufmann ed.)",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=988"
+      },
+      "verified_claim_limit": "Independent Catholic compiled cookbook documents horse blessings in parts of rural Europe, but no named parish, specific 1962 ritual formula or current service is documented.",
+      "status": "HISTORICAL_SECONDARY_ONLY",
+      "owner_handling": "Hold historical regional background",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-PRETZEL_ORIGIN",
+      "observation_ids": [
+        "WEI58-14-022"
+      ],
+      "title": "Pretzel crossed-arm prayer origin claim",
+      "source": {
+        "issuer": "Catholic Culture — Pretzels for God, Francis Weiser (1964)",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=543"
+      },
+      "verified_claim_limit": "Direct derivative of the same author Francis X Weiser rather than an independent witness; ancient Roman crossed-arms, early date, etymology and early manuscript remain unconfirmed.",
+      "status": "NONINDEPENDENT_SAME_AUTHOR",
+      "owner_handling": "Hold historical origin",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-PRETZEL_ALMS",
+      "observation_ids": [
+        "WEI58-14-023"
+      ],
+      "title": "Distribution of Lenten pretzels to poor",
+      "source": {
+        "issuer": "Catholic Culture — Lent and pretzel",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=543"
+      },
+      "verified_claim_limit": "Same-author folk-custom discussion does not independently prove specifically distributing pretzels to poor in particular historical regions.",
+      "status": "NONINDEPENDENT_SAME_AUTHOR",
+      "owner_handling": "Hold specific charity custom",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-HOLYSAT_EGGS",
+      "observation_ids": [
+        "WEI58-15-035"
+      ],
+      "title": "Holy Saturday household dyed eggs and baking",
+      "source": {
+        "issuer": "Smithsonian Institution — Easter decorated eggs",
+        "url": "https://www.si.edu/stories/designing-easter-eggs"
+      },
+      "verified_claim_limit": "Polish/Ukrainian Easter egg decorating attested, but no explicit household practice specifically on Holy Saturday in cited museum witness.",
+      "status": "PARTIAL_SPECIFIC_DAY",
+      "owner_handling": "Hold exact date while Easter egg craft remains documented",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-REVEILLON",
+      "observation_ids": [
+        "WEI58-06-015"
+      ],
+      "title": "French réveillon after Midnight Mass",
+      "source": {
+        "issuer": "Roma Capitale tourism — December customs in Rome",
+        "url": "https://www.turismoroma.it/it/page/dicembre-roma-appuntamento-con-la-tradizione-di-ieri-e-di-oggi"
+      },
+      "verified_claim_limit": "Italian Roman feast and Mass order is documented but does NOT verify French household réveillon specifically after Mass; wrong country and meal timing.",
+      "status": "PARTIAL_WRONG_COUNTRY",
+      "owner_handling": "Hold French sequencing",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-ARACOELI_CHILD",
+      "observation_ids": [
+        "WEI58-10-006"
+      ],
+      "title": "Ara Coeli Santo Bambino children's prayers",
+      "source": {
+        "issuer": "Turismo Roma — Basilica di Santa Maria in Aracoeli",
+        "url": "https://www.turismoroma.it/en/node/741"
+      },
+      "verified_claim_limit": "Rome tourism authority documents longstanding veneration of the Holy Child figure and loss of original sculpture in 1994, but NOT a particular practice of children praying or preaching at Christmas.",
+      "status": "PARTIAL_CHILDREN_DEVOTION",
+      "owner_handling": "Explore sacred place background only",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-VIENNA_COLUMN",
+      "observation_ids": [
+        "WEI58-20-010"
+      ],
+      "title": "Trinity plague column at Vienna's Graben",
+      "source": {
+        "issuer": "Visiting Vienna — Pestsäule",
+        "url": "https://www.visitingvienna.com/sights/plague-column-pestsaule/"
+      },
+      "verified_claim_limit": "Vienna's plague column after 1679 and explicit Trinity iconography documented; supports historical landmark context only, not a replicable domestic custom or a general rule for all Trinity shrines.",
+      "status": "BOUNDED_HISTORICAL_PLACE",
+      "owner_handling": "Explore/History not Customs instruction",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-NICHOLAS_DUTCH",
+      "observation_ids": [
+        "WEI58-08-028"
+      ],
+      "title": "Dutch St Nicholas visits imported via diaspora",
+      "source": {
+        "issuer": "Catholic Culture — St Stephen and holiday customs",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=939"
+      },
+      "verified_claim_limit": "A general saints-day household source is not evidence for Dutch migration of Sinterklaas customs. French St Nicholas is verified elsewhere but not the Dutch diaspora transmission claim.",
+      "status": "PARTIAL_NO_TRANSMISSION_EVIDENCE",
+      "owner_handling": "Keep existing SNIC-001, no duplicate",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-CHRISTKIND_GIFTS",
+      "observation_ids": [
+        "WEI58-08-026"
+      ],
+      "title": "Christ Child gift bringer and prayer before opening gifts",
+      "source": {
+        "issuer": "Archdiocese of Malta — Five family traditions for Advent",
+        "url": "https://church.mt/five-family-traditions-for-advent/"
+      },
+      "verified_claim_limit": "Modern Catholic family gifts and Advent generosity described; specific historical Christkind gift-bringer and household prayer form are not substantiated.",
+      "status": "PARTIAL_CULTURAL_DETAIL",
+      "owner_handling": "Avoid fabricated house-ritual",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-PATRICK_LORICA",
+      "observation_ids": [
+        "WEI58-27-014"
+      ],
+      "title": "St Patrick Lorica prayer attribution",
+      "source": {
+        "issuer": "Catholic Culture — St Patrick's feast overview",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/calendar/day.cfm?date=2026-03-17"
+      },
+      "verified_claim_limit": "Common Catholic devotion may be associated with Patrick; without manuscript/provenance evidence, direct authorship or exact received prayer form is unverified.",
+      "status": "PARTIAL_AUTHORSHIP_TEXT",
+      "owner_handling": "Link existing Pray only",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-EASTER_GREETING",
+      "observation_ids": [
+        "WEI58-16-005"
+      ],
+      "title": "Surrexit Dominus vere greeting",
+      "source": {
+        "issuer": "Holy See — Easter 2025 Urbi et Orbi",
+        "url": "https://www.vatican.va/content/francesco/en/messages/urbi/documents/20250420-urbi-et-orbi-pasqua.html"
+      },
+      "verified_claim_limit": "Catholic Easter acclamation Christ is risen supported; precise traditional Latin exchange 'Surrexit Dominus vere' and local household greeting date not independently established by this modern address.",
+      "status": "PARTIAL_EXACT_FORMULA",
+      "owner_handling": "Historical greeting only",
+      "release_state": "NOT_PUBLISHED"
+    },
+    {
+      "witness_id": "W58B5-EASTER_LAMB_BLESS",
+      "observation_ids": [
+        "WEI58-17-007"
+      ],
+      "title": "Priestly Easter lamb-meat blessing historical",
+      "source": {
+        "issuer": "Archdiocese of Munich-Freising — Easter parish account",
+        "url": "https://www2.erzbistum-muenchen.de/cms-media/media-70989420.pdf"
+      },
+      "verified_claim_limit": "A 2025 parish newsletter describes Easter lamb cake brought for priestly blessing; that is not corroboration of Weiser's historical blessing of actual lamb meat or a particular 1962 formula.",
+      "status": "PARTIAL_DIFFERENT_OBJECT",
+      "owner_handling": "Hold rite",
+      "release_state": "NOT_PUBLISHED"
+    }
+  ]
+}
