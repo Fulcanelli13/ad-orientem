@@ -704,6 +704,11 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 }
 #aoPray435930 .aoP435930BenSpecialOptions .aoP435930PrayerOptionsBody{
  padding:8px 4px 15px!important;gap:10px!important;
+ max-height:min(36dvh,286px)!important;overflow-y:auto!important;
+ overscroll-behavior:contain!important;
+}
+#aoPray435930 .aoP435930BenSpecialOptions .aoP435930SourceLink{
+ color:var(--liturgical,#c5aa7b)!important;text-decoration-color:rgba(206,177,122,.4)!important;
 }
 #aoPray435930 .aoP435930BenSpecialOptions .aoP435930Toggle{
  min-height:44px!important;
