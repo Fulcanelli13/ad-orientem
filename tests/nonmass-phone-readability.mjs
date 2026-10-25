@@ -129,6 +129,17 @@ try{
       "Tablet Formation lost its two-column scannability");
    }
    assert.ok(formation.scrollWidth<=formation.innerWidth+1,"Formation overflow at "+width+"px");
+   const massDoor=page.locator('#ao-learn-modular-root [data-ao-learn-family="liturgy-tradition"] .aoLearnModIcon');
+   assert.equal(await massDoor.count(),1,"Formation Mass & Liturgy icon missing");
+   assert.equal(await massDoor.getAttribute("data-ao-asset-id"),"ao-brand-emblem",
+     "Formation must use its verified canonical Mass icon");
+   const formationAsset=await page.evaluate(async()=>{
+     const response=await fetch("/assets/active/navigation/ao-brand-emblem.png");
+     const bytes=response.ok?new Uint8Array(await response.arrayBuffer()):null;
+     return {ok:response.ok,png:!!bytes&&bytes[0]===137&&bytes[1]===80&&bytes[2]===78&&bytes[3]===71};
+   });
+   assert.ok(formationAsset.ok&&formationAsset.png,
+     "Mass & Liturgy mask points to an absent asset: "+JSON.stringify(formationAsset));
    await page.screenshot({path:resolve(out,"formation-"+width+".png"),fullPage:false,animations:"disabled"});
    await page.locator('[data-ao-app-surface="pray"]').click();
    await page.locator("#aoPray435930.open .aoP435930RootOrganised").waitFor({state:"visible",timeout:18000});
