@@ -5,7 +5,7 @@
 // Exact tables only: no keyword or filename inference. A meaning without
 // approved art resolves to null and the source text stays visible.
 import { CANONICAL_ICON_SET as SET, CANONICAL_ICON_ASSETS } from "./reader-canonical-icon-set.js";
-import { GLORIA_CREDO_FAITHFUL_GESTURES, gloriaCredoPhase } from "./faithful-gesture-cues.js";
+import { GLORIA_CREDO_FAITHFUL_GESTURES } from "./faithful-gesture-cues.js";
 
 export { CANONICAL_ICON_ASSETS };
 export const CANONICAL_KEY_PREFIX = "canon:";
@@ -38,6 +38,15 @@ export function postureMeaning(posture) {
   return SET.postureMap[token(posture?.value ?? posture?.label)] ?? null;
 }
 
+// A source cue family, not a clock. This projection applies only to the
+// two fixed Ordinary prayer spans; no substring scans or invented cues.
+function isGloriaCredoCue(id) {
+  const hit = String(id ?? "").match(/^AO\\.SM\\.C(\\d{4})$/);
+  if (!hit) return false;
+  const n = Number(hit[1]);
+  return n >= 53 && n <= 69 || n >= 89 && n <= 105;
+}
+
 export function gestureMeaning(gesture, state = {}) {
   if (!gesture) return null;
   const cue = cueOf(gesture, state);
@@ -47,7 +56,7 @@ export function gestureMeaning(gesture, state = {}) {
   // Only the independent, profile-aware faithful cue projector owns the
   // standard action; an exact-cue *saved local* choice remains valid.
   // Do not confuse these faithful cues with the priest's private recital.
-  if (state.curated65FinalArt === true && gloriaCredoPhase(state.cueId)) {
+  if (state.curated65FinalArt === true && isGloriaCredoCue(state.cueId)) {
     const focused = String(state.cueId);
     if (cue !== focused) return null;
     if (gesture.owner === "LOCAL_FAITHFUL_CUSTOM") {
