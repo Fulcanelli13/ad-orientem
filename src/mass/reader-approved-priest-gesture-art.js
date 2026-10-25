@@ -6,24 +6,26 @@ const HANDS_JOINED_IMAGE=new URL("../../assets/active/mass-v46/hands_joined.svg"
 export const APPROVED_PRIEST_RUBRIC_GESTURE_ART=Object.freeze({
   "AO.RUB.C0117.02":Object.freeze({
     cueId:"AO.SM.C0117",label:"JOINS HANDS",
-    actor:"PRIEST",kind:"GESTURE",assetId:"v46_hands_joined",
+    actor:"PRIEST",sourceKind:"GESTURE",publishedKind:"ACTION",assetId:"v46_hands_joined",
     gestureMatrixId:"GM.P.C0117.02",imageUrl:HANDS_JOINED_IMAGE,
   }),
   "AO.RUB.C0263.02":Object.freeze({
     cueId:"AO.SM.C0263",label:"JOINS HANDS",
-    actor:"PRIEST",kind:"GESTURE",assetId:"v46_hands_joined",
+    actor:"PRIEST",sourceKind:"GESTURE",publishedKind:"ACTION",assetId:"v46_hands_joined",
     gestureMatrixId:"GM.P.C0263.02",imageUrl:HANDS_JOINED_IMAGE,
   }),
 });
 export function approvedPriestRubricGestureArt(event){
   const match=APPROVED_PRIEST_RUBRIC_GESTURE_ART[String(event?.id??"")];
   if(!match)return null;
-  // A published rubric is an informative text annotation, not a LIVE
-  // observation. Its actor, kind, cue, source, and exact action must agree.
+  // Published non-Canon rubric gestures use the historical ACTION wrapper
+  // (reader-missal-rubrics.js), while the source registry owns GESTURE kind.
+  // Retain both contracts without changing source or presentation engines.
+  // These are informative annotations, not LIVE observations.
   if(event?.sourceCueId!==match.cueId ||
      event?.shortAction!==match.label ||
      event?.actor!==match.actor ||
-     event?.kind!==match.kind ||
+     event?.kind!==match.publishedKind ||
      event?.observedNow!==false ||
      event?.owner!=="PUBLISHED_R17_MISSAL_INLINE" ||
      event?.review!=="EXISTING_PUBLISHED_R17_1962_RUBRIC" ||
