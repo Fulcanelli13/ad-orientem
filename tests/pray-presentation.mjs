@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {CHRIST_KING_CONSECRATION, CHRIST_KING_DEFAULT, CHRIST_KING_OPTION_IDS, christKingBenedictionStages} from "../src/pray/christ-king-benediction.js";
 import { readFileSync } from "node:fs";
 import { PRAY_CANONICAL_DATA_V435930 } from "../src/pray/canonical-data.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "../src/pray/angelus-guide-data.js";
@@ -620,3 +621,25 @@ assert.match(fourFolioCSS,/aoP435930ConfessionReader \.aoDevoCardScroll \.aoP435
 assert.match(runtime,/STATION_DATA\.alphonsus\?\.\[lang\(\)\]/);
 assert.match(runtime,/const ex=isFr\(\)\?DATA\.examFr:DATA\.exam/);
 assert.match(runtime,/CONF\.since/);
+
+/* Optional Christ the King readings use the actual human-race dedication, not
+   the distinct, shorter "I acknowledge Thee as universal King" prayer. */
+const ordinaryBen=[["exposition"],["adoration"],["hymn"],["prayer"],["blessing"],["praises"],["reposition"]];
+const chooseKing={...CHRIST_KING_DEFAULT,enabled:true};
+const solemnBen=christKingBenedictionStages(ordinaryBen,chooseKing);
+assert.equal(christKingBenedictionStages(ordinaryBen,CHRIST_KING_DEFAULT),ordinaryBen);
+assert.deepEqual(solemnBen.map(x=>x[0]),["exposition","adoration","procession","royal","consecration","hymn","prayer","blessing","praises","reposition"]);
+assert.equal(CHRIST_KING_OPTION_IDS.includes("litany"),false,"Unverified litany text must not be offered as if present");
+assert.equal(CHRIST_KING_CONSECRATION.id,"benediction_christ_king_humani_generis");
+assert.match(CHRIST_KING_CONSECRATION.la,/Iesu dulcissime, Redemptor humani generis/);
+assert.match(CHRIST_KING_CONSECRATION.fr,/Très doux Jésus, Rédempteur du genre humain/);
+assert.match(CHRIST_KING_CONSECRATION.en,/Most sweet Jesus, Redeemer of the human race/);
+for(const key of ["en","fr","la"])assert.ok(CHRIST_KING_CONSECRATION[key].length>550);
+assert.notEqual(CHRIST_KING_CONSECRATION.id,"devotion_consecration_christ_king");
+const solemnWithoutProcession=christKingBenedictionStages(ordinaryBen,{...chooseKing,procession:false});
+assert.deepEqual(solemnWithoutProcession.map(x=>x[0]),["exposition","adoration","royal","consecration","hymn","prayer","blessing","praises","reposition"]);
+const benOwner=readFileSync("src/pray/presentation-runtime.js","utf8");
+assert.match(benOwner,/setChristKingBenedictionOption\(x\.dataset\.p435930BenSpecial,x\.checked\)/);
+assert.match(benOwner,/if\(id==='consecration'\)body=/);
+assert.match(benOwner,/prayerBlock\(CHRIST_KING_CONSECRATION\.id/);
+assert.match(benOwner,/BEN_STAGES=BEN_BASE_STAGES/);
