@@ -164,7 +164,7 @@ export function publishedMissalRubricsForParagraph(paragraph,registry,{
      sourceId:"MR62_RITUS",
      sourceUrl:x.sourceUrl??source.url,review:"EXISTING_PUBLISHED_R17_1962_RUBRIC",
      observedNow:false,owner:MISSAL_RUBRIC_OWNER,
-   }))));
+   })));
  // Never use a text match or external preference to activate this direction.
  // Preserve the original published registry and its 414-row icon crosswalk.
  const placeat=RITUS_1962_PLACEAT_ADDENDUM;
