@@ -1690,6 +1690,14 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
           ((event.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC" &&
             event.owner==="PUBLISHED_R17_MISSAL_INLINE" &&
             event.actor==="PRIEST" && event.sourceId==="MR62_RITUS") ||
+           // Source-certified non-observational addition; not part of the
+           // 57 locked icon crosswalk and never a right-rail movement clock.
+           (event.id==="MR62.ADD.C0261.01" &&
+            event.sourceCueId==="AO.SM.C0261" &&
+            event.review==="NEW_1962_RITUS_SOURCE_CERTIFIED_ADDENDUM" &&
+            event.owner==="MR62_1962_MISSAL_ADDITIONS" &&
+            event.actor==="PRIEST" && event.kind==="GESTURE" &&
+            event.sourceId==="MR62_RITUS") ||
            (event.review==="EXISTING_CERTIFIED_R18_SOLEMN_MINISTER" &&
             event.owner==="R18_CERTIFIED_SOLEMN_MISSAL" &&
             typeof event.actor==="string" && event.actor.trim() &&
