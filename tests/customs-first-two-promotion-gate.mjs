@@ -13,7 +13,7 @@ assert.equal(packet.records.length,2);
 assert.equal(packet.hold.length,3);
 assert.equal(packet.summary.actually_published,0);
 assert.equal(packet.summary.ids_proposed_not_allocated,2);
-assert.deepEqual(packet.records.map(x=>x.proposed_canonical_id),["EPIP-003","DOM-014"]);
+assert.deepEqual(packet.records.map(x=>x.proposed_canonical_id),["EPIP-003","CRIB-001"]);
 assert.equal(CUSTOMS_EDITORIAL_PREVIEW_ARTICLES.length,5);
 assert.equal(CUSTOMS_EDITORIAL_PREVIEW_DATE_HOOKS.length,6);
 for(const x of packet.records){
