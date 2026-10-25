@@ -52,8 +52,9 @@ try{
         const root=document.querySelector('[data-ao-reader-shell]');
         const stage=root?.querySelector(".ao-reader-stage");
         const rails=[...root.querySelectorAll(".ao-rail")].map(rail=>{
-          const active=[...rail.querySelectorAll('.ao-rail-item[data-active="true"]')]
+          const active=[...rail.querySelectorAll('.ao-rail-item[data-active="true"][data-icon-visible="true"]')]
             .filter(x=>root.dataset.objectiveContext==="true"||x.dataset.channel!=="posture");
+          const hiddenSource=[...rail.querySelectorAll('.ao-rail-item[data-active="true"][data-icon-visible="false"]')];
           const inactive=[...rail.querySelectorAll('.ao-rail-item[data-active="false"]')];
           return {
             side:rail.classList.contains("ao-rail-left")?"left":"right",
@@ -66,6 +67,12 @@ try{
               title:x.getAttribute("title"),
               role:x.getAttribute("role"),
               ariaHidden:x.getAttribute("aria-hidden")
+            })),
+            hiddenSource:hiddenSource.map(x=>({
+              channel:x.dataset.channel,
+              display:getComputedStyle(x).display,
+              ariaHidden:x.getAttribute("aria-hidden"),
+              role:x.getAttribute("role")
             })),
             inactive:inactive.map(x=>({
               channel:x.dataset.channel,display:getComputedStyle(x).display,
@@ -106,6 +113,11 @@ try{
           assert.equal(cue.title,cue.label,cue.channel+" lost long-press meaning");
           assert.equal(cue.role,"img",cue.channel+" is not labelled as a pictogram");
           assert.notEqual(cue.ariaHidden,"true");
+        }
+        for(const cue of rail.hiddenSource){
+          assert.equal(cue.display,"none",cue.channel+" text-only source appeared inside a rail icon box");
+          assert.equal(cue.ariaHidden,"true",cue.channel+" missing art exposed a false pictogram");
+          assert.equal(cue.role,null,cue.channel+" missing art kept an image role");
         }
         for(const cue of rail.inactive){
           assert.equal(cue.display,"none",cue.channel+" inactive cue painted a ghost square");
