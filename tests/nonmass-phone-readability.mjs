@@ -75,6 +75,23 @@ try{
        return {dateText:date?.textContent?.trim()||"",visiblePending};
      });
      assert.ok(visual.dateText.length>=8,"Editorial Today is missing its source-owned date");
+     if(width===390){
+       const fold=await page.evaluate(()=>{
+         const c=document.querySelector(".homeScreen .aoTodayV2PrimaryMass");
+         const art=document.querySelector(".homeScreen [data-ao-home-art-slot]");
+         const nav=document.querySelector("#ao-global-ribbon");
+         const button=c?.getBoundingClientRect(),painting=art?.getBoundingClientRect();
+         const navTop=nav?.getBoundingClientRect().top??innerHeight;
+         return {buttonTop:button?.top??null,buttonBottom:button?.bottom??null,
+           paintingTop:painting?.top??null,navTop,viewport:innerHeight,
+           readable:!!c&&getComputedStyle(c).display!=="none"};
+       });
+       assert.ok(fold.readable&&fold.buttonTop>=0&&fold.buttonBottom<=fold.navTop-4,
+         "Open/Resume Mass must be visible before scrolling at 390px: "+JSON.stringify(fold));
+       assert.ok(fold.paintingTop===null||fold.buttonBottom<fold.paintingTop,
+         "Sacred art must follow the primary Mass action rather than obscuring the entry: "+JSON.stringify(fold));
+       console.log("TODAY_FIRST_FOLD="+JSON.stringify(fold));
+     }
      assert.equal(visual.visiblePending,0,
        "Unresolved remote Saints artwork is occupying the premium Today first fold");
      await page.screenshot({path:resolve(out,"today-"+width+".png"),fullPage:false,animations:"disabled"});
