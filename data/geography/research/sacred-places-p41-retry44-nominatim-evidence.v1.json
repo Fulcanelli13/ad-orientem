@@ -1,0 +1,1228 @@
+{
+  "schema": "AO_SACRED_PLACES_P41_ONE_TIME_NOMINATIM_RETRY44_V1",
+  "generated_at": "2026-10-25",
+  "status": "DISCOVERY_ONLY_NOT_RELEASE_PERMANENTLY_ARCHIVED",
+  "source": "© OpenStreetMap contributors, ODbL 1.0",
+  "policy": "https://operations.osmfoundation.org/policies/nominatim/",
+  "provenance": {
+    "pr": 1676,
+    "run_id": 40204354906,
+    "job_id": 121201993242,
+    "head_sha": "c9fd78783b6918b523265dda20b93ed1210f0402",
+    "method": "Reconstructed 44 verbatim P41_EVIDENCE_ROW JSON lines in completed one-time GH Actions run"
+  },
+  "prior_manifest": "data/geography/research/sacred-places-p39-open68-osm-evidence.v1.json",
+  "safety": [
+    "The input is EXACTLY 44 P39 transport-failed rows; all 24 P39 successful rows are excluded.",
+    "This is the cached output of one sequential, rate-limited Nominatim lookup, not permission to resubmit the same 44 queries periodically.",
+    "A Nominatim zero text match is not evidence that a Catholic physical site is absent.",
+    "Nominatim OSM feature centers are UNVERIFIED research-only coordinates, never publishable geometry.",
+    "No P40 or other published canonical site is automatically duplicated.",
+    "Named OSM relations may cover complexes and need independent individual-building geometry verification."
+  ],
+  "summary": {
+    "input_failed_rows": 44,
+    "with_search_candidates": 6,
+    "empty_name_search": 38,
+    "remote_failed": 0,
+    "skipped_after_outage": 0,
+    "distinct_candidate_osm_refs": 8,
+    "published_new_places": 0
+  },
+  "rows": [
+    {
+      "queue_row": 1,
+      "candidate_ids": [
+        "SG-INV-0737"
+      ],
+      "site_name": "National Shrine of Our Lady of Mount Carmel, Middle Park",
+      "country": "AU",
+      "query": "National Shrine of Our Lady of Mount Carmel, Middle Park, Australia",
+      "countrycodes": "au",
+      "search_centre": {
+        "lat": -37.8485,
+        "lng": 144.95938,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 2,
+      "candidate_ids": [
+        "SG-INV-0738"
+      ],
+      "site_name": "National Shrine of Our Lady of the Sacred Heart, Randwick",
+      "country": "AU",
+      "query": "National Shrine of Our Lady of the Sacred Heart, Randwick, Australia",
+      "countrycodes": "au",
+      "search_centre": {
+        "lat": -33.91625,
+        "lng": 151.2415,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 4,
+      "candidate_ids": [
+        "SG-INV-0741"
+      ],
+      "site_name": "National Shrine of Saint Thérèse of Lisieux, Kew",
+      "country": "AU",
+      "query": "National Shrine of Saint Thérèse of Lisieux, Kew, Australia",
+      "countrycodes": "au",
+      "search_centre": {
+        "lat": -37.80875,
+        "lng": 145.01638,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 5,
+      "candidate_ids": [
+        "SG-INV-0481"
+      ],
+      "site_name": "Basilica of Our Lady of Conceição da Praia, Salvador",
+      "country": "BR",
+      "query": "Basilica of Our Lady of Conceição da Praia, Salvador, Brazil",
+      "countrycodes": "br",
+      "search_centre": {
+        "lat": -12.97525,
+        "lng": -38.5145,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 6,
+      "candidate_ids": [
+        "SG-INV-0479"
+      ],
+      "site_name": "Sanctuary of Our Lady of Piedade, Caeté",
+      "country": "BR",
+      "query": "Sanctuary of Our Lady of Piedade, Caeté, Brazil",
+      "countrycodes": "br",
+      "search_centre": {
+        "lat": -19.82275,
+        "lng": -43.67575,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 8,
+      "candidate_ids": [
+        "SG-INV-0275"
+      ],
+      "site_name": "Sanctuary of Our Lady of Valère, Sion",
+      "country": "CH",
+      "query": "Sanctuary of Our Lady of Valère, Sion, Switzerland",
+      "countrycodes": "ch",
+      "search_centre": {
+        "lat": 46.23363,
+        "lng": 7.36438,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 9,
+      "candidate_ids": [
+        "SG-INV-0497"
+      ],
+      "site_name": "Sanctuary of Our Lady of Andacollo",
+      "country": "CL",
+      "query": "Sanctuary of Our Lady of Andacollo, Chile",
+      "countrycodes": "cl",
+      "search_centre": {
+        "lat": -30.23175,
+        "lng": -71.08487,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 12,
+      "candidate_ids": [
+        "SG-INV-0181"
+      ],
+      "site_name": "Ettal Abbey",
+      "country": "DE",
+      "query": "Ettal Abbey, Germany",
+      "countrycodes": "de",
+      "search_centre": {
+        "lat": 47.5695,
+        "lng": 11.09425,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 14,
+      "candidate_ids": [
+        "SG-INV-0511",
+        "SG-INV-0515"
+      ],
+      "site_name": "Sanctuary of Our Lady of El Quinche",
+      "country": "EC",
+      "query": "Sanctuary of Our Lady of El Quinche, Ecuador",
+      "countrycodes": "ec",
+      "search_centre": {
+        "lat": -0.111,
+        "lng": -78.2965,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 15,
+      "candidate_ids": [
+        "SG-INV-0135"
+      ],
+      "site_name": "Basilica of the Sagrada Família, Barcelona",
+      "country": "ES",
+      "query": "Basilica of the Sagrada Família, Barcelona, Spain",
+      "countrycodes": "es",
+      "search_centre": {
+        "lat": 41.40313,
+        "lng": 2.17475,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 16,
+      "candidate_ids": [
+        "SG-INV-0130"
+      ],
+      "site_name": "Basilica of the Vera Cruz, Caravaca de la Cruz",
+      "country": "ES",
+      "query": "Basilica of the Vera Cruz, Caravaca de la Cruz, Spain",
+      "countrycodes": "es",
+      "search_centre": {
+        "lat": 38.10763,
+        "lng": -1.85875,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 18,
+      "candidate_ids": [
+        "SG-INV-0136"
+      ],
+      "site_name": "Cathedral of Toledo",
+      "country": "ES",
+      "query": "Cathedral of Toledo, Spain",
+      "countrycodes": "es",
+      "search_centre": {
+        "lat": 39.857,
+        "lng": -4.0245,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "CANDIDATES_FOUND_NOT_VERIFIED",
+      "candidates": [
+        {
+          "osm_ref": "osm:relation:1605452",
+          "osm_url": "https://www.openstreetmap.org/relation/1605452",
+          "display_name": "Toledo Cathedral, Calle del Cardenal Cisneros, Santa Bárbara, Toledo, Castile-La Mancha, 45002, Spain",
+          "namedetails": {
+            "name": "Catedral de Santa María",
+            "name:de": "Kathedrale von Toledo",
+            "name:en": "Toledo Cathedral",
+            "name:es": "Catedral de Santa María",
+            "name:fr": "Cathédrale de Tolède",
+            "name:it": "Cattedrale di Toledo",
+            "name:ko": "톨레도 대성당",
+            "name:ru": "Собор Толедо",
+            "alt_name:en": "Primate Cathedral of Saint Mary of Toledo"
+          },
+          "class": null,
+          "type": "place_of_worship",
+          "addresstype": "amenity",
+          "extratags": {
+            "height": "43",
+            "building": "cathedral",
+            "religion": "christian",
+            "wikidata": "Q1123180",
+            "wikipedia": "es:Catedral de Toledo",
+            "denomination": "catholic",
+            "roof:material": "roof_tiles",
+            "building:levels": "4"
+          },
+          "boundingbox": [
+            "39.8567800",
+            "39.8579450",
+            "-4.0244680",
+            "-4.0227430"
+          ],
+          "geo_candidate": {
+            "lat": 39.857363,
+            "lng": -4.0236384,
+            "meaning": "UNVERIFIED_NOMINATIM_CENTER_DO_NOT_PUBLISH"
+          },
+          "distance_from_unverified_search_centre_m": 84,
+          "within_1800m": true,
+          "canonical_geometry_collision": false,
+          "status": "UNVERIFIED_NOMINATIM_SEARCH_HIT_NOT_EXACT_BUILDING_IDENTITY"
+        }
+      ],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 19,
+      "candidate_ids": [
+        "SG-INV-0142"
+      ],
+      "site_name": "Monastery of Poblet",
+      "country": "ES",
+      "query": "Monastery of Poblet, Spain",
+      "countrycodes": "es",
+      "search_centre": {
+        "lat": 41.38038,
+        "lng": 1.08263,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "CANDIDATES_FOUND_NOT_VERIFIED",
+      "candidates": [
+        {
+          "osm_ref": "osm:way:174179237",
+          "osm_url": "https://www.openstreetmap.org/way/174179237",
+          "display_name": "Royal Monastery of Santa Maria de Poblet, T-700, Poblet, Vimbodí i Poblet, Conca de Barberà, Tarragona, Catalonia, 43430, Spain",
+          "namedetails": {
+            "name": "Reial Monestir de Santa Maria de Poblet",
+            "name:ca": "Reial Monestir de Santa Maria de Poblet",
+            "name:el": "Μονή Πομπλέτ",
+            "name:en": "Royal Monastery of Santa Maria de Poblet",
+            "name:es": "Real Monasterio de Santa María de Poblet"
+          },
+          "class": null,
+          "type": "place_of_worship",
+          "addresstype": "amenity",
+          "extratags": {
+            "landuse": "religious",
+            "ref:whc": "518rev",
+            "website": "https://www.poblet.cat/",
+            "heritage": "1",
+            "operator": "SOC",
+            "religion": "christian",
+            "wikidata": "Q645157",
+            "wikipedia": "ca:Reial Monestir de Santa Maria de Poblet",
+            "wheelchair": "yes",
+            "denomination": "roman_catholic",
+            "whc:criteria": "1;4",
+            "opening_hours": "Mo-Sa 10:00-12:30,15:00-18:00; Su,PH 10:30-12:30,15:00-18:00; Jun 15-Sep 14 Mo-Sa 10:00-12:30,15:00-18:30; Jun 15-Sep 14 Su,PH 10:30-12:30,15:00-18:30",
+            "heritage:operator": "whc",
+            "whc:inscription_date": "1991"
+          },
+          "boundingbox": [
+            "41.3786884",
+            "41.3834664",
+            "1.0795386",
+            "1.0859324"
+          ],
+          "geo_candidate": {
+            "lat": 41.381231,
+            "lng": 1.0824256,
+            "meaning": "UNVERIFIED_NOMINATIM_CENTER_DO_NOT_PUBLISH"
+          },
+          "distance_from_unverified_search_centre_m": 96,
+          "within_1800m": true,
+          "canonical_geometry_collision": false,
+          "status": "UNVERIFIED_NOMINATIM_SEARCH_HIT_NOT_EXACT_BUILDING_IDENTITY"
+        }
+      ],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 20,
+      "candidate_ids": [
+        "SG-INV-0124"
+      ],
+      "site_name": "Monastery of Santo Domingo de Silos",
+      "country": "ES",
+      "query": "Monastery of Santo Domingo de Silos, Spain",
+      "countrycodes": "es",
+      "search_centre": {
+        "lat": 41.962,
+        "lng": -3.41975,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 22,
+      "candidate_ids": [
+        "SG-INV-0118"
+      ],
+      "site_name": "Sanctuary of Our Lady of Regla, Chipiona",
+      "country": "ES",
+      "query": "Sanctuary of Our Lady of Regla, Chipiona, Spain",
+      "countrycodes": "es",
+      "search_centre": {
+        "lat": 36.73013,
+        "lng": -6.43887,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 23,
+      "candidate_ids": [
+        "SG-INV-0120"
+      ],
+      "site_name": "Sanctuary of Our Lady of the Angels, Getafe",
+      "country": "ES",
+      "query": "Sanctuary of Our Lady of the Angels, Getafe, Spain",
+      "countrycodes": "es",
+      "search_centre": {
+        "lat": 40.308,
+        "lng": -3.6845,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 24,
+      "candidate_ids": [
+        "SG-INV-0133"
+      ],
+      "site_name": "Sanctuary of the Great Promise, Valladolid",
+      "country": "ES",
+      "query": "Sanctuary of the Great Promise, Valladolid, Spain",
+      "countrycodes": "es",
+      "search_centre": {
+        "lat": 41.64925,
+        "lng": -4.72087,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 26,
+      "candidate_ids": [
+        "SG-INV-0138"
+      ],
+      "site_name": "Seville Cathedral",
+      "country": "ES",
+      "query": "Seville Cathedral, Spain",
+      "countrycodes": "es",
+      "search_centre": {
+        "lat": 37.38563,
+        "lng": -5.994,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "CANDIDATES_FOUND_NOT_VERIFIED",
+      "candidates": [
+        {
+          "osm_ref": "osm:relation:5641600",
+          "osm_url": "https://www.openstreetmap.org/relation/5641600",
+          "display_name": "Cathedral of Seville, Plaza Virgen de los Reyes, Santa Cruz, Casco Antiguo, Seville, Sevilla, Andalusia, 41004, Spain",
+          "namedetails": {
+            "name": "Catedral de Sevilla",
+            "name:en": "Cathedral of Seville",
+            "name:es": "Catedral de Sevilla",
+            "name:fr": "Cathédrale de Séville",
+            "name:ko": "세비야 대성당",
+            "official_name": "Catedral de Santa María de la Sede"
+          },
+          "class": null,
+          "type": "place_of_worship",
+          "addresstype": "amenity",
+          "extratags": {
+            "fee": "yes",
+            "url": "https://www.youtube.com/watch?v=wwZ5RNJoCcw",
+            "email": "info@catedraldesevilla.es",
+            "image": "https://photos.app.goo.gl/X8FeQKzmgZj7VC2f8",
+            "phone": "+34 902 09 96 92",
+            "height": "49",
+            "building": "cathedral",
+            "heritage": "1",
+            "historic": "heritage",
+            "religion": "christian",
+            "wikidata": "Q231606",
+            "mapillary": "770132673895795",
+            "wikipedia": "es:Catedral de Sevilla",
+            "check_date": "2024-02-25",
+            "wheelchair": "yes",
+            "roof:colour": "#e4d3a6",
+            "denomination": "catholic",
+            "opening_hours": "Mo-Sa 11:00-17:00; Su 14:30-18:00",
+            "building:colour": "#e4d3a6",
+            "contact:website": "https://www.catedraldesevilla.es",
+            "building:material": "sandstone",
+            "heritage:operator": "whc",
+            "opening_hours:description:en": "Opening_hours are the times the cathedral is open for visitors"
+          },
+          "boundingbox": [
+            "37.3851578",
+            "37.3866732",
+            "-5.9939865",
+            "-5.9923198"
+          ],
+          "geo_candidate": {
+            "lat": 37.385915,
+            "lng": -5.9931406,
+            "meaning": "UNVERIFIED_NOMINATIM_CENTER_DO_NOT_PUBLISH"
+          },
+          "distance_from_unverified_search_centre_m": 82,
+          "within_1800m": true,
+          "canonical_geometry_collision": false,
+          "status": "UNVERIFIED_NOMINATIM_SEARCH_HIT_NOT_EXACT_BUILDING_IDENTITY"
+        }
+      ],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 27,
+      "candidate_ids": [
+        "SG-INV-0126"
+      ],
+      "site_name": "Shrine at the Cave of Saint Ignatius, Manresa",
+      "country": "ES",
+      "query": "Shrine at the Cave of Saint Ignatius, Manresa, Spain",
+      "countrycodes": "es",
+      "search_centre": {
+        "lat": 41.72163,
+        "lng": 1.83075,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 28,
+      "candidate_ids": [
+        "SG-INV-0048"
+      ],
+      "site_name": "Abbey of Saint-Michel de Frigolet",
+      "country": "FR",
+      "query": "Abbey of Saint-Michel de Frigolet, France",
+      "countrycodes": "fr",
+      "search_centre": {
+        "lat": 43.85825,
+        "lng": 4.72775,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 30,
+      "candidate_ids": [
+        "SG-INV-0017"
+      ],
+      "site_name": "Basilica of the Sacred Heart, Paray-le-Monial",
+      "country": "FR",
+      "query": "Basilica of the Sacred Heart, Paray-le-Monial, France",
+      "countrycodes": "fr",
+      "search_centre": {
+        "lat": 46.44975,
+        "lng": 4.12138,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 31,
+      "candidate_ids": [
+        "SG-INV-0042"
+      ],
+      "site_name": "Cathedral of Notre-Dame de Strasbourg",
+      "country": "FR",
+      "query": "Cathedral of Notre-Dame de Strasbourg, France",
+      "countrycodes": "fr",
+      "search_centre": {
+        "lat": 48.58163,
+        "lng": 7.75025,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "CANDIDATES_FOUND_NOT_VERIFIED",
+      "candidates": [
+        {
+          "osm_ref": "osm:relation:3541088",
+          "osm_url": "https://www.openstreetmap.org/relation/3541088",
+          "display_name": "Cathedral of Our Lady, Place de la Cathédrale, Centre, Strasbourg, Bas-Rhin, European Collectivity of Alsace, Grand Est, Metropolitan France, 67000, France",
+          "namedetails": {
+            "name": "Cathédrale Notre-Dame",
+            "name:de": "Liebfrauenmünster",
+            "name:en": "Cathedral of Our Lady",
+            "name:fr": "Cathédrale Notre-Dame",
+            "name:ko": "노트르담 대성당(스트라스부르 대성당)",
+            "name:sk": "Katedrála Notre-Dame",
+            "official_name": "Cathédrale Notre-Dame de Strasbourg"
+          },
+          "class": null,
+          "type": "place_of_worship",
+          "addresstype": "amenity",
+          "extratags": {
+            "fee": "no",
+            "image": "http://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Strasbourg.jpg",
+            "height": "142.11",
+            "ref:mhs": "PA00085015",
+            "tourism": "attraction",
+            "website": "https://www.cathedrale-strasbourg.fr/",
+            "building": "cathedral",
+            "heritage": "2",
+            "religion": "christian",
+            "wikidata": "Q745460",
+            "wikipedia": "fr:Cathédrale Notre-Dame de Strasbourg",
+            "check_date": "2022-09-26",
+            "importance": "international",
+            "ref:FR:CEF": "67482_01",
+            "ref:FR:RNB": "45N44B1MA97M;8P9QEEG6WZ3Q;TNWQWYRFR7MN;TT5MS5AC2NP9;W5Q2VNCEPEDW",
+            "wheelchair": "yes",
+            "denomination": "catholic",
+            "opening_hours": "Mo-Sa 08:30-11:15,12:45-17:45; Su 13:30-17:30",
+            "building:colour": "#e9967a",
+            "diff:ref:FR:RNB": "multiple",
+            "place_of_worship": "cathedral",
+            "building:material": "sandstone",
+            "heritage:operator": "mhs",
+            "building:architecture": "gothic"
+          },
+          "boundingbox": [
+            "48.5814238",
+            "48.5823536",
+            "7.7501696",
+            "7.7518991"
+          ],
+          "geo_candidate": {
+            "lat": 48.5818885,
+            "lng": 7.7510521,
+            "meaning": "UNVERIFIED_NOMINATIM_CENTER_DO_NOT_PUBLISH"
+          },
+          "distance_from_unverified_search_centre_m": 66,
+          "within_1800m": true,
+          "canonical_geometry_collision": false,
+          "status": "UNVERIFIED_NOMINATIM_SEARCH_HIT_NOT_EXACT_BUILDING_IDENTITY"
+        }
+      ],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 36,
+      "candidate_ids": [
+        "SG-INV-0012"
+      ],
+      "site_name": "Notre-Dame de la Délivrande, Douvres-la-Délivrande",
+      "country": "FR",
+      "query": "Notre-Dame de la Délivrande, Douvres-la-Délivrande, France",
+      "countrycodes": "fr",
+      "search_centre": {
+        "lat": 49.29875,
+        "lng": -0.3725,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "CANDIDATES_FOUND_NOT_VERIFIED",
+      "candidates": [
+        {
+          "osm_ref": "osm:way:228139262",
+          "osm_url": "https://www.openstreetmap.org/way/228139262",
+          "display_name": "Basilique Notre-Dame de la Délivrande, Place de la Basilique, Résidence Oerlenbach, Douvres-la-Délivrande, Caen, Calvados, Normandy, Metropolitan France, 14440, France",
+          "namedetails": {
+            "name": "Basilique Notre-Dame de la Délivrande"
+          },
+          "class": null,
+          "type": "place_of_worship",
+          "addresstype": "amenity",
+          "extratags": {
+            "height": "12",
+            "ref:mhs": "PA00111287",
+            "basilica": "minor",
+            "building": "church",
+            "heritage": "3",
+            "religion": "christian",
+            "wikidata": "Q2886960",
+            "wikipedia": "fr:Basilique Notre-Dame de la Délivrande",
+            "denomination": "catholic",
+            "opening_hours": "Mo 15:00-17:30; Tu-Su 10:00-12:00,15:00-17:30",
+            "building:colour": "#B8A481",
+            "heritage:operator": "mhs",
+            "mhs:inscription_date": "1975-10-29"
+          },
+          "boundingbox": [
+            "49.2984540",
+            "49.2988830",
+            "-0.3725620",
+            "-0.3720200"
+          ],
+          "geo_candidate": {
+            "lat": 49.298668,
+            "lng": -0.3722701,
+            "meaning": "UNVERIFIED_NOMINATIM_CENTER_DO_NOT_PUBLISH"
+          },
+          "distance_from_unverified_search_centre_m": 19,
+          "within_1800m": true,
+          "canonical_geometry_collision": false,
+          "status": "UNVERIFIED_NOMINATIM_SEARCH_HIT_NOT_EXACT_BUILDING_IDENTITY"
+        },
+        {
+          "osm_ref": "osm:way:1341509962",
+          "osm_url": "https://www.openstreetmap.org/way/1341509962",
+          "display_name": "Couvent Notre-Dame-de-Fidélité, Rue de Bourgogne, Les Sorbiers, Douvres-la-Délivrande, Caen, Calvados, Normandy, Metropolitan France, 14440, France",
+          "namedetails": {
+            "name": "Couvent Notre-Dame-de-Fidélité"
+          },
+          "class": null,
+          "type": "monastery",
+          "addresstype": "amenity",
+          "extratags": {
+            "ref:mhs": "PA00111288",
+            "website": "https://www.congregation-notre-dame-de-fidelite.com",
+            "heritage": "3",
+            "religion": "christian",
+            "wikidata": "Q20479001",
+            "wikipedia": "fr:Couvent Notre-Dame-de-Fidélité",
+            "start_date": "C19",
+            "denomination": "catholic",
+            "monastery:type": "convent",
+            "heritage:operator": "mhs",
+            "mhs:inscription_date": "2007-11-14"
+          },
+          "boundingbox": [
+            "49.2945746",
+            "49.2969670",
+            "-0.3718420",
+            "-0.3688078"
+          ],
+          "geo_candidate": {
+            "lat": 49.2956898,
+            "lng": -0.3702805,
+            "meaning": "UNVERIFIED_NOMINATIM_CENTER_DO_NOT_PUBLISH"
+          },
+          "distance_from_unverified_search_centre_m": 376,
+          "within_1800m": true,
+          "canonical_geometry_collision": false,
+          "status": "UNVERIFIED_NOMINATIM_SEARCH_HIT_NOT_EXACT_BUILDING_IDENTITY"
+        },
+        {
+          "osm_ref": "osm:way:1340700053",
+          "osm_url": "https://www.openstreetmap.org/way/1340700053",
+          "display_name": "Résidence Le Parc Notre-Dame, Douvres-la-Délivrande, Caen, Calvados, Normandy, Metropolitan France, 14440, France",
+          "namedetails": {
+            "name": "Résidence Le Parc Notre-Dame"
+          },
+          "class": null,
+          "type": "residential",
+          "addresstype": "residential",
+          "extratags": {
+            "residential": "apartments"
+          },
+          "boundingbox": [
+            "49.2955982",
+            "49.2972813",
+            "-0.3741210",
+            "-0.3714684"
+          ],
+          "geo_candidate": {
+            "lat": 49.2964643,
+            "lng": -0.3728457,
+            "meaning": "UNVERIFIED_NOMINATIM_CENTER_DO_NOT_PUBLISH"
+          },
+          "distance_from_unverified_search_centre_m": 255,
+          "within_1800m": true,
+          "canonical_geometry_collision": false,
+          "status": "UNVERIFIED_NOMINATIM_SEARCH_HIT_NOT_EXACT_BUILDING_IDENTITY"
+        }
+      ],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 38,
+      "candidate_ids": [
+        "SG-INV-0045"
+      ],
+      "site_name": "Saint-Victor Abbey, Marseille",
+      "country": "FR",
+      "query": "Saint-Victor Abbey, Marseille, France",
+      "countrycodes": "fr",
+      "search_centre": {
+        "lat": 43.29025,
+        "lng": 5.36513,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 39,
+      "candidate_ids": [
+        "SG-INV-0022"
+      ],
+      "site_name": "Sanctuary of Our Lady of the Sacred Heart, Issoudun",
+      "country": "FR",
+      "query": "Sanctuary of Our Lady of the Sacred Heart, Issoudun, France",
+      "countrycodes": "fr",
+      "search_centre": {
+        "lat": 46.95163,
+        "lng": 1.99413,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 40,
+      "candidate_ids": [
+        "SG-INV-0032"
+      ],
+      "site_name": "Shrine of Saint John Francis Regis, Lalouvesc",
+      "country": "FR",
+      "query": "Shrine of Saint John Francis Regis, Lalouvesc, France",
+      "countrycodes": "fr",
+      "search_centre": {
+        "lat": 45.11838,
+        "lng": 4.53588,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 42,
+      "candidate_ids": [
+        "SG-INV-0249"
+      ],
+      "site_name": "National Shrine of Our Lady of the Taper, Cardigan",
+      "country": "GB",
+      "query": "National Shrine of Our Lady of the Taper, Cardigan, United Kingdom",
+      "countrycodes": "gb",
+      "search_centre": {
+        "lat": 52.08725,
+        "lng": -4.65275,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 43,
+      "candidate_ids": [
+        "SG-INV-0322"
+      ],
+      "site_name": "Marian shrine of Máriagyűd",
+      "country": "HU",
+      "query": "Marian shrine of Máriagyűd, Hungary",
+      "countrycodes": "hu",
+      "search_centre": {
+        "lat": 45.87838,
+        "lng": 18.27338,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 44,
+      "candidate_ids": [
+        "SG-INV-0321"
+      ],
+      "site_name": "Shrine of Our Lady of Mátraverebély-Szentkút",
+      "country": "HU",
+      "query": "Shrine of Our Lady of Mátraverebély-Szentkút, Hungary",
+      "countrycodes": "hu",
+      "search_centre": {
+        "lat": 48.00013,
+        "lng": 19.76125,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 46,
+      "candidate_ids": [
+        "SG-INV-0098"
+      ],
+      "site_name": "Abbey of Grottaferrata",
+      "country": "IT",
+      "query": "Abbey of Grottaferrata, Italy",
+      "countrycodes": "it",
+      "search_centre": {
+        "lat": 41.78563,
+        "lng": 12.66638,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 47,
+      "candidate_ids": [
+        "SG-INV-0097"
+      ],
+      "site_name": "Abbey of Subiaco (Sacro Speco)",
+      "country": "IT",
+      "query": "Abbey of Subiaco (Sacro Speco), Italy",
+      "countrycodes": "it",
+      "search_centre": {
+        "lat": 41.91688,
+        "lng": 13.118,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 50,
+      "candidate_ids": [
+        "SG-INV-0065"
+      ],
+      "site_name": "Sanctuary of Oropa",
+      "country": "IT",
+      "query": "Sanctuary of Oropa, Italy",
+      "countrycodes": "it",
+      "search_centre": {
+        "lat": 45.62863,
+        "lng": 7.97825,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 51,
+      "candidate_ids": [
+        "SG-INV-0075"
+      ],
+      "site_name": "Sanctuary of Our Lady of Canneto, Settefrati",
+      "country": "IT",
+      "query": "Sanctuary of Our Lady of Canneto, Settefrati, Italy",
+      "countrycodes": "it",
+      "search_centre": {
+        "lat": 41.67825,
+        "lng": 13.90775,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 54,
+      "candidate_ids": [
+        "SG-INV-0094"
+      ],
+      "site_name": "Sanctuary of Saint Joseph of Cupertino, Osimo",
+      "country": "IT",
+      "query": "Sanctuary of Saint Joseph of Cupertino, Osimo, Italy",
+      "countrycodes": "it",
+      "search_centre": {
+        "lat": 43.48638,
+        "lng": 13.48313,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 55,
+      "candidate_ids": [
+        "SG-INV-0070"
+      ],
+      "site_name": "Sanctuary of the Madonna of Caravaggio, Caravaggio",
+      "country": "IT",
+      "query": "Sanctuary of the Madonna of Caravaggio, Caravaggio, Italy",
+      "countrycodes": "it",
+      "search_centre": {
+        "lat": 45.48138,
+        "lng": 9.63,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 58,
+      "candidate_ids": [
+        "SG-INV-0636"
+      ],
+      "site_name": "National Shrine of Our Lady of Aranzazu, San Mateo",
+      "country": "PH",
+      "query": "National Shrine of Our Lady of Aranzazu, San Mateo, Philippines",
+      "countrycodes": "ph",
+      "search_centre": {
+        "lat": 14.6955,
+        "lng": 121.11738,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 59,
+      "candidate_ids": [
+        "SG-INV-0638"
+      ],
+      "site_name": "National Shrine of Our Lady of Mount Carmel, Quezon City",
+      "country": "PH",
+      "query": "National Shrine of Our Lady of Mount Carmel, Quezon City, Philippines",
+      "countrycodes": "ph",
+      "search_centre": {
+        "lat": 14.61438,
+        "lng": 121.03075,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "CANDIDATES_FOUND_NOT_VERIFIED",
+      "candidates": [
+        {
+          "osm_ref": "osm:way:263474595",
+          "osm_url": "https://www.openstreetmap.org/way/263474595",
+          "display_name": "National Shrine of Our Lady of Mount Carmel, Broadway Avenue, Gilmore, Mariana, New Manila, 4th District, Quezon City, Eastern Manila District, Metro Manila, 1112, Philippines",
+          "namedetails": {
+            "name": "National Shrine of Our Lady of Mount Carmel",
+            "name:fr": "Basilique Notre-Dame du Mont Carmel",
+            "alt_name": "National Shrine of Our Lady of Mount Carmel;Mount Carmel Shrine",
+            "short_name": "Basilica of Our Lady of Mount Carmel"
+          },
+          "class": null,
+          "type": "place_of_worship",
+          "addresstype": "amenity",
+          "extratags": {
+            "basilica": "minor",
+            "building": "church",
+            "religion": "christian",
+            "wikidata": "Q60983588",
+            "wikipedia": "en:Mount Carmel Shrine (Quezon City)",
+            "denomination": "roman_catholic",
+            "addr:street:corner": "4th Street"
+          },
+          "boundingbox": [
+            "14.6140196",
+            "14.6145338",
+            "121.0301496",
+            "121.0308573"
+          ],
+          "geo_candidate": {
+            "lat": 14.6142666,
+            "lng": 121.0305284,
+            "meaning": "UNVERIFIED_NOMINATIM_CENTER_DO_NOT_PUBLISH"
+          },
+          "distance_from_unverified_search_centre_m": 27,
+          "within_1800m": true,
+          "canonical_geometry_collision": false,
+          "status": "UNVERIFIED_NOMINATIM_SEARCH_HIT_NOT_EXACT_BUILDING_IDENTITY"
+        }
+      ],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 62,
+      "candidate_ids": [
+        "SG-INV-0204"
+      ],
+      "site_name": "Sanctuary of Our Lady of Ludźmierz",
+      "country": "PL",
+      "query": "Sanctuary of Our Lady of Ludźmierz, Poland",
+      "countrycodes": "pl",
+      "search_centre": {
+        "lat": 49.465,
+        "lng": 19.98275,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 63,
+      "candidate_ids": [
+        "SG-INV-0211"
+      ],
+      "site_name": "Sanctuary of Our Lady of Sorrows, Stary Wielisław",
+      "country": "PL",
+      "query": "Sanctuary of Our Lady of Sorrows, Stary Wielisław, Poland",
+      "countrycodes": "pl",
+      "search_centre": {
+        "lat": 50.39975,
+        "lng": 16.56463,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 66,
+      "candidate_ids": [
+        "SG-INV-0378"
+      ],
+      "site_name": "National Shrine of Our Lady of Consolation, Carey",
+      "country": "US",
+      "query": "National Shrine of Our Lady of Consolation, Carey, United States",
+      "countrycodes": "us",
+      "search_centre": {
+        "lat": 40.951,
+        "lng": -83.38712,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 68,
+      "candidate_ids": [
+        "SG-INV-0386"
+      ],
+      "site_name": "National Shrine of Our Lady of Sorrows, Portland",
+      "country": "US",
+      "query": "National Shrine of Our Lady of Sorrows, Portland, United States",
+      "countrycodes": "us",
+      "search_centre": {
+        "lat": 45.553,
+        "lng": -122.57162,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 70,
+      "candidate_ids": [
+        "SG-INV-0392"
+      ],
+      "site_name": "National Shrine of Saint Frances Xavier Cabrini, Chicago",
+      "country": "US",
+      "query": "National Shrine of Saint Frances Xavier Cabrini, Chicago, United States",
+      "countrycodes": "us",
+      "search_centre": {
+        "lat": 41.929,
+        "lng": -87.63987,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 72,
+      "candidate_ids": [
+        "SG-INV-0399"
+      ],
+      "site_name": "National Shrine of Saint Thérèse, Darien",
+      "country": "US",
+      "query": "National Shrine of Saint Thérèse, Darien, United States",
+      "countrycodes": "us",
+      "search_centre": {
+        "lat": 41.734,
+        "lng": -87.97637,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    },
+    {
+      "queue_row": 74,
+      "candidate_ids": [
+        "SG-INV-0672"
+      ],
+      "site_name": "Basilica of Our Lady of Sở Kiện",
+      "country": "VN",
+      "query": "Basilica of Our Lady of Sở Kiện, Vietnam",
+      "countrycodes": "vn",
+      "search_centre": {
+        "lat": 20.49975,
+        "lng": 105.89638,
+        "meaning": "RESEARCH_DISCOVERY_ANCHOR_ONLY_NOT_PUBLISHABLE_SITE_GEO"
+      },
+      "status": "NOMINATIM_TEXT_SEARCH_EMPTY_NOT_ABSENCE_OF_SITE",
+      "candidates": [],
+      "remote_error": null,
+      "publication_authorized": false
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+name: Sacred Places P41 44-result evidence regression (read-only)
+on:
+  pull_request:
+    paths:
+      - "tools/geography/sacred-places-p41-retry44-nominatim.mjs"
+      - "tests/sacred-places-p41-retry44-nominatim.mjs"
+      - "data/geography/research/sacred-places-p41-retry44-nominatim-evidence.v1.json"
+      - ".github/workflows/sacred-places-p41-retry44.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cached-research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check complete frozen 44-row evidence without any remote queries
+        run: node tests/sacred-places-p41-retry44-nominatim.mjs
+      - name: Verify reproducible scope dry-run (network disabled)
+        run: node tools/geography/sacred-places-p41-retry44-nominatim.mjs --dry-run
