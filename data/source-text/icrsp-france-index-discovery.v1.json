@@ -2,16 +2,21 @@
   "schema": "AO_ICRSP_INDEX_METADATA_V1",
   "issue": 1665,
   "sourceIndex": "https://icrspfrance.fr/textes-liturgiques.php",
-  "inspectedAtUtc": "2026-10-25T14:00:17.756402+00:00",
-  "indexHtmlSha256": "e37fc6bf97854dc990306b7cd1d95070a372e3a6185c7f4cc0696d7dcc8c9d11",
+  "inspectedAtUtc": "2026-10-25T14:13:54.161004+00:00",
+  "indexHtmlSha256": "d691a8f8daba23457fb05225c98b1a90cc42929a9989d76aee114cf94e6653ef",
   "policy": "RESEARCH_ONLY_NO_REPUBLICATION_OR_CANONICAL_PROMOTION",
   "totals": {
     "indexOccurrences": 855,
     "uniqueArticleUrls": 855,
-    "metadataInspected": 0,
+    "metadataInspected": 200,
     "errors": 0,
     "rawArticleIdCandidates": 855,
     "rawIdsMissingFromAnchors": 0
+  },
+  "scanWindow": {
+    "start": 0,
+    "requested": 200,
+    "actual": 200
   },
   "occurrences": [
     {
@@ -5155,10 +5160,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "6c8951e3db11812d4f621ec5a1b348c89af2bf9666150a1609a247e83117e9de",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "1ᵉʳ dimanche de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0813_ancien",
@@ -5169,10 +5194,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "563cb0eef3751c0c722a90679f2eae1b293a7d7bdb658f336674450dec008e33",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi de la 1ʳᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0814_ancien",
@@ -5183,10 +5228,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "0594a68c08069d506d6149e3b14f2b0e87aa9c4903280c2c94140653dc883da0",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi de la 1ʳᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0815_ancien",
@@ -5197,10 +5262,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "fac2a5c2ea44ffbbf23ba5bcf4655efa52b078ecd4a0ae2c67e7df61ab6ebada",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi de la 1ʳᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0816_ancien",
@@ -5211,10 +5296,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "89e21065c33fd26ae433499d530176eb245ca2547465c944f135381e8ec0c69d",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi de la 1ʳᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0817_ancien",
@@ -5225,10 +5330,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "24a600ab70111152f00f44bc4eadc469fa2fcab9e89b76d0149ab7db2ebd61fe",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi de la 1ʳᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0818_ancien",
@@ -5239,10 +5364,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "f3a900093d0751ffe9a488540ba75c8da28c8c5d0721fc4c6322ddf74cf8ed92",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi de la 1ʳᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0089_ancien",
@@ -5253,10 +5398,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "9a640bf24592a04b1a61241c367805e7c813463b86cffa5041579868981368ec",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "2ᵉ dimanche de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0819_ancien",
@@ -5267,10 +5432,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "979c960935ed522bd519ac9cf8c0dabee6752ec95f1b4648e4969b355f5f6aed",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi de la 2ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0820_ancien",
@@ -5281,10 +5466,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "75c2e4c8213c71c831d6159a5343e0aec01a391524645d3e1f50a5ca630dc627",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi de la 2ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0821_ancien",
@@ -5295,10 +5500,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "12226a9684b1532ec81495a194469c6af4a798e841bae1623336ba3e58e73acc",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi de la 2ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0822_ancien",
@@ -5309,10 +5534,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "f86877cd21df3e82ed0b4f1adfd01ffc0a40027841e6d3ae5b3c8604aedbbda1",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi de la 2ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0823_ancien",
@@ -5323,10 +5568,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "18da0eb7cd644bc59111d170f61d1bf66bd48578383d568960f1b0ff8c368d5d",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi de la 2ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0824_ancien",
@@ -5337,10 +5602,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "ffbd7a2ef5868e08c0ddd66df1cdb1f0d99a9aeda9b32c00018281389dad6e69",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi de la 2ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0090_ancien",
@@ -5351,10 +5636,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "9e68892ce95c74082d2055b8cd280adccc2abc6deb18654c67fa5befbef3af9d",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "3ᵉ dimanche de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0825_ancien",
@@ -5365,10 +5670,26 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "351f9df209a82775d1deebadc0317c21bdf6634c662762ae4018596d9d35a390",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi de la 3ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0826_ancien",
@@ -5379,10 +5700,26 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "545e40de43d75ab61caf16ca9c24e0ba3c8e1ecce5f660787af60caa492c5cd1",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi de la 3ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0093_ancien",
@@ -5393,10 +5730,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "dfdf291b28fe31bb04a53a6526f181012c6d7dd874bf362297237cfd094de775",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi des Quatre-Temps de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0827_ancien",
@@ -5407,10 +5764,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "7173184b6f2f4d9d0be4d2b14370fc28959412009c8da3dacf434e74f28ec28e",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi de la 3ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0094_ancien",
@@ -5421,10 +5798,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "dcbd6aa28c148eab3ac321bb7873c6c97e1c95644570be9baec9affc28a4bfd5",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi des Quatre-Temps de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0095_ancien",
@@ -5435,10 +5832,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "b28636f247e1a654d1717065f27c57ee219b13203a9622823b4dd1f926d837f7",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi des Quatre-Temps de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0833_ancien",
@@ -5449,10 +5866,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "c8140a5a29500f9954ef3487fdac112809ce137ba7b4b3ccc07957db8a4c137a",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "O Sapientia et commentaire général sur les Grandes Antiennes O"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0834_ancien",
@@ -5463,10 +5900,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "81a520e4354494b2226ecf2847d0b43409e544ff4b2d6222a4f0c1a03d683fcb",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "O Adonai"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0835_ancien",
@@ -5477,10 +5934,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "e77072c87e6781bbda0b32d4085d4f49731557276424ca5a5f8b25840cd00263",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "O Radix Iesse"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0836_ancien",
@@ -5491,10 +5968,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "2202d815300f5aecc6c03576a3a4b8d85d8bdcc041f1cea440365db53b2a4a70",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "O Clavis David"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0837_ancien",
@@ -5505,10 +6002,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "ab657f3120c57005cea1ee639ad686cf91e14d26154dbeef342230515cdeba5e",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "O Oriens"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0838_ancien",
@@ -5519,10 +6036,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "4156172e87d97da985da01bc54e399a348b439b7e5a2ccfb1185323760251ac6",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "O Rex Gentium"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0839_ancien",
@@ -5533,10 +6070,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "f3f1fd1120d5bb42f86332e6ad33e0e0dc435bbddddcceab0c2e72cb0191efc7",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "O Emmanuel"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0091_ancien",
@@ -5547,10 +6104,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "79235f9dd555cff3f687417e66af667de5984ceff5200e1bdff6844d25bc995c",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "4ᵉ dimanche de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0828_ancien",
@@ -5561,10 +6138,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "5f8906e7b7e5929d67cec4dc876f91a6948ea86f0c82aa2e27ebb5939eedd969",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi de la 4ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0829_ancien",
@@ -5575,10 +6172,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "1b3b85634cc1b58d2c23604d9a49d872c0860877f225912dd593ece06632ef99",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi de la 4ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0830_ancien",
@@ -5589,10 +6206,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "fdf2f5ac155a7d850713c74a01435faa722d3615088cb68e58e4cddbb0a1aaf3",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi de la 4ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0831_ancien",
@@ -5603,10 +6240,26 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "6ba29f68ea4c2b0c4fc7ffe90685239f89dc451d8ad7dd22d99d83bb13401b51",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi de la 4ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0832_ancien",
@@ -5617,10 +6270,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "b6957097dc74ce5385fc83542c088e1d7b81daaebafe946c14985273adf2c715",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi de la 4ᵉ semaine de l’Avent"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0092_ancien",
@@ -5631,10 +6304,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "694c4b23ea33275619c5c9aa8f59c47528a4ab8e7a014ded5a265e7da390bf0a",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vigile de la Nativité"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0096_ancien",
@@ -5645,10 +6338,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "6976703c45f932deb5831163d00069b74a5e22404d7fef94fb4ab943455798b1",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Nativité du Seigneur (25 décembre)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0097_ancien",
@@ -5659,10 +6372,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "c0e4916b0b26f4c118007691f9d83a7b2e48dffe209d31fc29478128a536d6d7",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "St Etienne (26 décembre, 2ᵉ jour dans l’Octave de la Nativité)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0098_ancien",
@@ -5673,10 +6406,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "3abd678b3b89fc87256988e9db9d7773ffe2a8a02ab75d342418744f528469ca",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "St Jean (27 décembre, 3ᵉ jour dans l’Octave de la Nativité)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0099_ancien",
@@ -5687,10 +6440,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "86dc0a00a3569dcbf1fe88b6990f57c5947f6ed26e31ffd52ba97f31703a328a",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Sts Innocents (28 décembre, 4ᵉ jour dans l’Octave de la Nativité)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0105_ancien",
@@ -5701,10 +6474,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "714321df609fc2149ca4794439ca1167dd4fc7701478fb38221f2c602492a87d",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Dimanche dans l’Octave de la Nativité"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0100_ancien",
@@ -5715,10 +6508,38 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "60987910e5c0ff1ba236c39b5deff2f87e304d06369def79cc5eeb1e16d27ced",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "29 décembre (5ᵉ jour dans l’Octave de la Nativité, St Thomas Becket)"
+        },
+        {
+          "level": "h3",
+          "text": "Textes de la Messe du 5ᵉ jour de l’Octave après 1962"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "Textes de la Messe avant 1962"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0102_ancien",
@@ -5729,10 +6550,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "bf016bbf02b275460b11669381c7e75b165b704da8719e712e68a0ea3e29ceda",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "30 décembre (6ᵉ jour dans l’Octave de la Nativité)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0103_ancien",
@@ -5743,10 +6584,42 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "3b3f514aa852758ff4e7c8958bd657014f58680e06d5c2b51061428de4fb32f8",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "31 décembre (7ᵉ jour dans l’Octave de la Nativité, St Silvestre Iᵉʳ)"
+        },
+        {
+          "level": "h3",
+          "text": "Textes de la Messe après 1960"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "Textes de la Messe entre 1942 et 1960"
+        },
+        {
+          "level": "h3",
+          "text": "Textes de la Messe avant 1942"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0101_ancien",
@@ -5757,10 +6630,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "85205405278024f41d72d021a3316056e51eee17e4e0e726273476b627c59a8e",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Féries dans l’octave de la Nativité"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0107_ancien",
@@ -5771,10 +6664,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "2cef038482e52da679e418b0df6d2df20c2e07146d0e54d17c4f3c45c41d96ba",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Très saint Nom de Jésus (Dimanche du 2 au 5 janvier ou le 2 janvier)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0106_ancien",
@@ -5785,10 +6698,38 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "908f1b2f280540cd107b9025d94ab169c0426b76fb5ee4a97bd50679efae3445",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Féries du Temps de la Nativité (2 au 5 janvier)"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 1"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 2"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0109_ancien",
@@ -5799,10 +6740,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "4f5507aef1fa8543afae3e5b559459ea18978891b47b215b901d256b77a48cd3",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Féries du Temps de l’Epiphanie (du 7 au 12 janvier)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0110_ancien",
@@ -5813,10 +6774,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "9b970381cd06bb551790610fe8589fccff31ee376537bed3785d8f327057a953",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "La Sainte Famille (dimanche après l’Epiphanie)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0113_ancien",
@@ -5827,10 +6808,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "42c7ec3e3d22361fe0539520a55db4fc8765d9fb1a732c3126b12b1d3aced711",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Messe du 1ᵉʳ dimanche après l’Epiphanie"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0116_ancien",
@@ -5841,10 +6842,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "7b14c7f08968515f33f798e33f7b4c720a5f01f215fb8996ffa6964e1ade44c7",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "2ᵉ dimanche après l’Epiphanie"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0620_ancien",
@@ -5855,10 +6876,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "4bc5a9ad4c84a4a05aebe548e29fdb7a7a137cd0bb23d1bf626fddac742ce730",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "3ᵉ Dimanche restant après l’Épiphanie"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0136_ancien",
@@ -5869,10 +6910,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "f913e275f2c07f61edd87a18969a8d35d4b5408c49bfa8842d6779c67a3d854f",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "4ᵉ dimanche après l’Epiphanie"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0622_ancien",
@@ -5883,10 +6944,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "3eab5c7726f0929d43341c857c08feeb00805cd64217a7b323eb8d95473c4f83",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "5ᵉ Dimanche restant après l’Épiphanie"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0623_ancien",
@@ -5897,10 +6978,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "e0ccd824b54b02507cd44051cc596e0b5873b20dddcab3bff7a1928eb4bb6b03",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "6ᵉ Dimanche restant après l’Épiphanie"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0156_ancien",
@@ -5911,10 +7012,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "75e8c30d18c949eb48edb6cfde15ea9f530cda78db99af79bc6c75245c0b3c76",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Le Temps de la Septuagésime"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0130_ancien",
@@ -5925,10 +7046,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "2999057b28a07e9d9158356983b87d4521885b0ac7e6e8615b24ec463e03a7f1",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Dimanche de la Septuagésime"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0133_ancien",
@@ -5939,10 +7080,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "ffabfc9c488d5f26744ea180bd6d9dedda5da871aa31f5d434a412092b43e665",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Dimanche de la Sexagésime"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0134_ancien",
@@ -5953,10 +7114,26 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "d33101b7cd150a58ba0753a096eff48f4b93abb6506ce3c9bf32b39d51c3269d",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Dimanche de la Quinquagésime"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0139_ancien",
@@ -5967,10 +7144,38 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "002e6d280d920adcff9447c7f2db07cd0737129c22414b30d515056bc1a1110e",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi des Cendres"
+        },
+        {
+          "level": "h3",
+          "text": "Bénédiction des Cendres"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "Bénédiction des Cendres"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0140_ancien",
@@ -5981,10 +7186,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "bd1b895b025e203efb1a626180e92fa9add192a05da54e9075c8742a9965b577",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi après les Cendres"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0153_ancien",
@@ -5995,10 +7220,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "c602a965d69f003b2cb3bdc480ff4218e31cbad79f8c23110d2f14aa3b28fe50",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi après les Cendres"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0154_ancien",
@@ -6009,10 +7254,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "cd9f7773010a208480dbfc2ad4cde4593a2a79fed8451b34e917d3f42156ba94",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi après les Cendres"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0155_ancien",
@@ -6023,10 +7288,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "f0ba5c8ac49e238b150ec507820ae5479c4c56513a66bae13f1a1087547ea9bf",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "1ᵉʳ Dimanche de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0172_ancien",
@@ -6037,10 +7322,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "51a96232ba38eef08ed657e26bd8a613cab02b9e9ac41a9a62a4a7ce0dd9936f",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi de la 1ʳᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0174_ancien",
@@ -6051,10 +7356,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "2266fcadd87346f6bc4b807e281d6a639d3de56e01561c5167555b352f3ecdc6",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi de la 1ʳᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0173_ancien",
@@ -6065,10 +7390,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "cd7220b77064a9922cbac0e47ca1360fe6ef79cb33e71c24ee0f8f85e565eb28",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi des Quatre-Temps (1ʳᵉ semaine de Carême)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0175_ancien",
@@ -6079,10 +7424,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "c9eab0cee3921782997d79c0748aaec894cf08208000d70baf3987d58676ac99",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi de la 1ʳᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0176_ancien",
@@ -6093,10 +7458,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "483208478ba9679d01ed89b9cb801497ceb3ed216f13969a3e4b4cfa6af7b3eb",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi des Quatre-Temps (1ʳᵉ semaine)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0177_ancien",
@@ -6107,10 +7492,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "7decb6082bc840b227729046388120ff489579f0d41d897cad03f400a5eb9e21",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi des Quatre-Temps (1ʳᵉ semaine)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0180_ancien",
@@ -6121,10 +7526,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "70060f7d816ff9b96209b1986ac744d9f3ba3e822d49c7811af6ded529365406",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "2ᵉ dimanche de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0181_ancien",
@@ -6135,10 +7560,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "975b1197cce1e3e3b7cc87b98097e6da99e14f7e787fbe165cb1ee8c6bb8fd45",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi de la 2ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0183_ancien",
@@ -6149,10 +7594,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "1b178d506b8e1811f57d48e110b0e14ce7c997cadc708fd9ec48aaea27ecd2f6",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi de la 2ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0184_ancien",
@@ -6163,10 +7628,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "e271cd22662457355e83a894ccdc8d8b4939d427e0701377640efdfbf1a265b3",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi de la 2ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0185_ancien",
@@ -6177,10 +7662,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "eb74b671fef509520c432dd18e88138e6d4f2821edd8d0a78667177135230dfb",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi de la 2ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0186_ancien",
@@ -6191,10 +7696,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "ffe6e995e0be297b4cdc77673f0b195e07a87037bbc4c5458c02533133a30c39",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi de la 2ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0187_ancien",
@@ -6205,10 +7730,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "13e822d87467d643e6351178efc061018b8df2b9e24d6b104f9851a552ec944e",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi de la 2ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0188_ancien",
@@ -6219,10 +7764,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "a16139f215d9ec53bb8690370aa546c6cbd24f0535c91a2ac28791062f5721f6",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "3ᵉ dimanche de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien",
@@ -6233,10 +7798,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "089d3edcde05dff8189ab1a7578b84c1a6176cd6b27bb4c8a84c73eb19f981d2",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi de la 3ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0192_ancien",
@@ -6247,10 +7832,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "7087d9f2d8c70a11ac116d47d1b84c57dcdd361f941b23944d4deb555276de87",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi de la 3ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0193_ancien",
@@ -6261,10 +7866,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "9b03f80f288ade00164a8eca6c234d089f46d0dfc4a70ffbf2fdbf5396b8ed4a",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi de la 3ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0194_ancien",
@@ -6275,10 +7900,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "1fe5c3ca180a13b63f20962e5a2f5ddf26fa9bb99f42303b3967b536213866c5",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi de la 3ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0197_ancien",
@@ -6289,10 +7934,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "046c78cab745f25afa836c42337628858e554d1e0c4fbef2b85156e3f7d2ea76",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi de la 3ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0198_ancien",
@@ -6303,10 +7968,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "a98f1e2b81426ee9c9964bfe1cdc2e73280a857875bb67bf2badd58368232dc4",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi de la 3ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0199_ancien",
@@ -6317,10 +8002,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "55e65aa711c387dfefd403f8ec8a7091fc898035c65356782b0c04b1d7285adb",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "4ᵉ Dimanche de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0202_ancien",
@@ -6331,10 +8036,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "cff0008f28cf5fbdc22d35ddbbdf276445605d060df38de6c8930d1e49182003",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi de la 4ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0203_ancien",
@@ -6345,10 +8070,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "123b99ffec45501f1cc34da7e341b015d04929ea1f744b2a144b97b0a50a1a11",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi de la 4ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0204_ancien",
@@ -6359,10 +8104,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "6f8917e280b4781df58130d31d6ec0fab6bd716e4dfbc6ae80c3c20be032f0d9",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi de la 4ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0205_ancien",
@@ -6373,10 +8138,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "dc8085d644d0511fdddb1d0d175f63d9434b0cfc22eb9adbf17ff4d0a7cb522a",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi de la 4ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0206_ancien",
@@ -6387,10 +8172,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "796e6e2be84dc4d58099e2635760c6aefe87143a979c7f4351595abb45627438",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi de la 4ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0207_ancien",
@@ -6401,10 +8206,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "0e640a577ae015ed5d794d0d8d8bd1dd45d0acef7049a24dd115befb5e5c7257",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi de la 4ᵉ semaine de Carême"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0002_nouveau",
@@ -6415,10 +8240,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "98b6a1526972363144fbf0eb43fbae6c31afec331a980abf8ee7239071838a67",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Premier Dimanche de la Passion"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0004_nouveau",
@@ -6429,10 +8274,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "d2c014da92d1809eba738d0c1c608f0bef48f6eabd920b1b85d10b1afa806f3b",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi de la Passion"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0005_nouveau",
@@ -6443,10 +8308,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "3f3ee3e0d3eab40a23220b222b6ba7e4ad92ae1c8d17e6e0921ad0cd7103965c",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi de la Passion"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0006_nouveau",
@@ -6457,10 +8342,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "3993418153636426f57c8d48376ad1705703a38ccc4d06d79147c3274b3aedc1",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi de la Passion"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0007_nouveau",
@@ -6471,10 +8376,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "2ae274dc89b5e880393d31ac14e4c4b77f744aa79d101bd3c8f001ccd497e8f1",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi de la Passion"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0008_nouveau",
@@ -6485,10 +8410,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "7cbf763c2c24ed29777c92aeb34562754c4ca63c881faa995377e2c996bd9ba7",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi de la Passion"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0009_nouveau",
@@ -6499,10 +8444,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "df5b7669e4e437e47bcde3143c64684b03b4eefaa3de4c1a118f70cc542fb1f0",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi de la Passion"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0010_nouveau",
@@ -6513,10 +8478,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "9cd8e27c11efd8f83b6e8e0cf7e2d1cbb2d3e63b29826225a5d651180eca7282",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Dimanche des Rameaux avant 1955"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0593_ancien",
@@ -6527,10 +8512,46 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "05d1e5f8e869dfab7b7689289440b7f9af70eefe9adc1c822dcdf83c336a4f59",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Dimanche des Rameaux"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 1"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 2"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 3"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 4"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0034_ancien",
@@ -6541,10 +8562,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "38e202616bef4f25dfe54cf9478c65470a505afa3f0ec13d6a4fa773999a867c",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi Saint (avant Pie XII)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0013_nouveau",
@@ -6555,10 +8596,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "0861eed35046bb6ff474eba8a37c0001b7597611fcf40e6eecc28b5f6bb73924",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi Saint"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0035_ancien",
@@ -6569,10 +8630,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "cde23ce46b66092625e49452296be0efcd9809697ad34b4c8a961aa0463a611b",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi Saint (avant Pie XII)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0014_nouveau",
@@ -6583,10 +8664,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "8f6e92c3f3aa167543314fccff7abc9d2f09cc33907bd1b79375fd331b835809",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi Saint"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0036_ancien",
@@ -6597,10 +8698,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "0bc71ca2f71fdbb090b79d916e6dd4f7e788008de0f97c9ab01a35dee488fa19",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi Saint (avant Pie XII)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0015_nouveau",
@@ -6611,10 +8732,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "4e27ede9a25592956a5cb8e16b69d54bf02d34206405b6a9417304938eae26b6",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi Saint"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0221_ancien",
@@ -6625,10 +8766,38 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "46008076b6779d0ba97fccc063c51dd07cc8a5a0b8deb2620b3ce261c620b560",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi Saint (avant Pie XII)"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 1"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 2"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0020_nouveau",
@@ -6639,10 +8808,46 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "8d9e81554c1d2651f94a2cd74440908450b53750d85bc8d328553fe674258c03",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi Saint après 1955"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 1"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 2"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 3"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 4"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_ancien",
@@ -6653,10 +8858,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "af2bc815355ad33165077597f5c550db9d7ffa3d3e55848f2b8d997d99b044fe",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi Saint (avant Pie XII)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0029_nouveau",
@@ -6667,10 +8892,46 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "6cf623ec4faaf65594e06243694868b96aaff83bb13a9cf3ca2169258d9b8e34",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi Saint après 1955"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 1"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 2"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 3"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 4"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_ancien",
@@ -6681,10 +8942,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "789a80892e168f05b5c746f94ef39669f1d3f51999a2286b48b6c65ec534ec1e",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi Saint (avant Pie XII)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0030_nouveau",
@@ -6695,10 +8976,42 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "ff8b894d30dd5434a60d973d4dcba9e660e98e7944a4eccc777bf9c51b1339ab",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi Saint après 1951"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 1"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 2"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 3"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0595_ancien",
@@ -6709,10 +9022,42 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "c43c21bc12b9ba5a713a5c9acf90160b54cffd307a8edf6f5685eafc0b4b246c",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vigile Pascale"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 1"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 2"
+        },
+        {
+          "level": "h3",
+          "text": "Messe 3"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0031_nouveau",
@@ -6723,10 +9068,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "de4ff89375b4777501e44d6383a0d0de9d21a93c0d98ded0b52d7ac281801b95",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Dimanche de la Résurrection (Dimanche de Pâques)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0032_nouveau",
@@ -6737,10 +9102,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "1a48a2716691f8d045aaa6cd1b5690adffec2ef4cec01c6dde3d294aeb769c16",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi dans l’Octave de Pâques"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0033_nouveau",
@@ -6751,10 +9136,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "afcf4a6cdb8d0dd56c48c03e762c389c69edd672fdf0f1bf6827d89ad32e1225",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi dans l’Octave de Pâques"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0034_nouveau",
@@ -6765,10 +9170,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "f87bd6fece13d2b22a59d51b16dbbd09022062af2ba079ae7227932f9f55a832",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi dans l’Octave de Pâques"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0035_nouveau",
@@ -6779,10 +9204,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "71c330a2aef46fca76ac1ae95b2cbdefe334707c07637cc3d50f3a571ceac840",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi dans l’Octave de Pâques"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0036_nouveau",
@@ -6793,10 +9238,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "30aa88cb386a33f8d779f06bc78f50c9b532256830f68f1e820c4f2c1492b796",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi dans l’Octave de Pâques"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0037_nouveau",
@@ -6807,10 +9272,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "a9b948a757ad0cca4c9dbe3037d45687764d9c771bcd9fbab9b5a1d2e6d23cb0",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi in Albis dans l’Octave de Pâques"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0038_nouveau",
@@ -6821,10 +9306,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "941ce1503164b2693c4961e8b9d7103c6f14c93844d76abcbd20af9d1d91e523",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Dimanche in Albis dans l’Octave de Pâques"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0039_nouveau",
@@ -6835,10 +9340,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "bcfcc0ce69ca4c7e01c894d0b79dd18a466ca8c6aee9144e784ca7f8972122d9",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "2ᵉ Dimanche après Pâques"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0040_nouveau",
@@ -6849,10 +9374,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "14e72f2f8aa501c3cb0276140558d262696d22fedcabca511559337686b108ec",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "3ᵉ Dimanche après Pâques"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0041_nouveau",
@@ -6863,10 +9408,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "2d935f4416d944dbf2bcd787d8cd385b21f55b50023504ae4ca929bf58b573ff",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "4ᵉ Dimanche après Pâques"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0042_nouveau",
@@ -6877,10 +9442,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "4215a2e96f36ef37b9a23c1ee4d7e625746f90f1ec704f8af912f76885e5ce29",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "5ᵉ Dimanche après Pâques"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0087_nouveau",
@@ -6891,10 +9476,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "e1f6fcf8679371c079ce32c338eb797bc138f4505f533ae9a49b523a5cd8946b",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Litanies Majeures (25 avril)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0106_nouveau",
@@ -6905,10 +9510,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "c4a7902d27d9d6a51dc478be744e2ab83d74f32a71e9f5c2e4bf3d255f92ba95",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi des Rogations"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0107_nouveau",
@@ -6919,10 +9544,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "6d9f3db90f5ba20cda2db634a6dd5a8c3d3054277c41c3eac2872cb61f8581a9",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi des Rogations"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0108_nouveau",
@@ -6933,10 +9578,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "73c1af4f0605563910d1297eee1930fa2f09ecc3e62c03a066a8d07e5924953a",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi des Rogations"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0109_nouveau",
@@ -6947,10 +9612,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "f154d76f1484aac0481594ddef76aa6f807f530b46753d4b4c029ea24cfe9510",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vigile de l’Ascension"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0111_nouveau",
@@ -6961,10 +9646,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "a138d0f6f409427c1b61376d29235531132ce921ae54b711ec2bed76fcfe30ee",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Ascension du Seigneur"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0279_ancien",
@@ -6975,10 +9680,38 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "69cd3bedaad0a36babac39f34bf4e72133683d62ea2ee50b291f27748410ac4f",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "L’Ascension du Seigneur"
+        },
+        {
+          "level": "h3",
+          "text": "Textes de la Messe"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "AUX 1ʳᵉˢ VÊPRES."
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0156_nouveau",
@@ -6989,10 +9722,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "e04377c6dc42abf113e19c12c577572d2f9cede22212e6522a839b47cdce4ead",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi dans l’Octave de l’Ascension"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0157_nouveau",
@@ -7003,10 +9756,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "fedf6d9f57e75962fbc7c06648b23ca9b64d9367cca31fc5f34768406b6549c4",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi dans l’Octave de l’Ascension"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0939_ancien",
@@ -7017,10 +9790,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "e6f910b5d459a6121bac22e843de110c93523385f144db33b230afa373c185fa",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi dans l’Octave de l’Ascension (avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0280_ancien",
@@ -7031,10 +9824,38 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "e71df7d9d9ff303f98db84227fbbafa005e7a9d2e858dc0027a65332b25ed708",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Dimanche après l’Ascension"
+        },
+        {
+          "level": "h3",
+          "text": "Textes de la Messe"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "A MATINES (avant 1960)"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0159_nouveau",
@@ -7045,10 +9866,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "cc272d78feecf62b249bc8c00fd4e8e465dc863516945359f119009c8a04c23b",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi dans l’Octave de l’Ascension"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0160_nouveau",
@@ -7059,10 +9900,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "b8b8298a1c7747cf13482357ad1b4ab5eaeea0bd029a6393737ed7a94cf8f9e2",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi dans l’Octave de l’Ascension"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0161_nouveau",
@@ -7073,10 +9934,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "e9407471699160ff71172c8524e6432238809df171d260fb1d5e23efaa5901e4",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi dans l’Octave de l’Ascension"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0162_nouveau",
@@ -7087,10 +9968,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "dd35b3178215c63cec35061143fa9224eaf9bd53dc48c16f74697d86ff5182e0",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Octave de l’Ascension"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0163_nouveau",
@@ -7101,10 +10002,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "2f9050211da1afce377f0483803968efc962d6801b024b54360d3eee02aac709",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi après l’Octave de l’Ascension"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0164_nouveau",
@@ -7115,10 +10036,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "a622040f662b3b50030baf187b75ec0c0c45bad5f436b044f66f24e7a0cbb8de",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vigile de la Pentecôte avant 1955"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0281_ancien",
@@ -7129,10 +10070,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "21eef58ae9fb45d3b39b1a8f32859f06bd6fed7373984a9c96fc6a262c4e5e0f",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vigile de la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0165_nouveau",
@@ -7143,10 +10104,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "57bd93377a0ec65d11e0b4341ff415e67c79ce909baea7054837c325b5dc3807",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vigile de la Pentecôte après 1955"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0167_nouveau",
@@ -7157,10 +10138,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "10cd5b020553f88ac549227766d2bb623a4373b4518ed33d8e29337ba9581baf",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Dimanche de la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0168_nouveau",
@@ -7171,10 +10172,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "f4c6f428538ee63c83d461f4668203db9adf19266f8c0166897bbfb181a70c67",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi de la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0169_nouveau",
@@ -7185,10 +10206,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "731a3a415b59c2c1d73b761803a918f9223e5c86f8ed9311a15b9945e35baf0a",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi de la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0170_nouveau",
@@ -7199,10 +10240,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "4388da3be581abd1daf0f1f50736a05d6dcc06a77e336c654c6798ce449111ea",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi des Quatre-Temps de Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0171_nouveau",
@@ -7213,10 +10274,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "5231ccbdc20b87a5831c6f95306a62d2b58e2d355ff489d5eeb0bc0f4990794e",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi de la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0172_nouveau",
@@ -7227,10 +10308,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "b8d351177a81cb9fe94af00107b85598a5c1758095132dfeab69fa121531e6b9",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi des Quatre-Temps de Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0173_nouveau",
@@ -7241,10 +10342,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "aefe9a40cd59d5a8959449a5696b341b98fd76c86c0bcda4ba2be4cc92811a72",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi des Quatre-Temps de Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0294_ancien",
@@ -7255,10 +10376,42 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "254661825e9cac2d710032247d4c98ddea4c6bff1ef3d20bfbe1ba2ef6a96e03",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Fête de la Trinité"
+        },
+        {
+          "level": "h3",
+          "text": "Textes de la Messe"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "A MATINES"
+        },
+        {
+          "level": "h3",
+          "text": "A LAUDES."
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0175_nouveau",
@@ -7269,10 +10422,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "66a41c786b3c752316fcb72e7eb81711ec5efd8bb1bfccbcb17b1a71147c41a2",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "1ᵉʳ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0297_ancien",
@@ -7283,10 +10456,38 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "2d79a8cee5c070ba7ff56d360e3c1238680a6f5bb51c540830bc6979b82de9d5",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Fête-Dieu ou Fête du Très Saint Sacrement"
+        },
+        {
+          "level": "h3",
+          "text": "Textes de la Messe"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "AUX PREMIÈRES VÊPRES."
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0970_ancien",
@@ -7297,10 +10498,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "9e24372c9a7ee844eb79683d770134b7af1dbc4160a34ff58264d0d367b8b614",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi dans l’Octave de la Fête-Dieu (avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0971_ancien",
@@ -7311,10 +10532,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "594a213555a12ac61a420051fd85140a5ba0b52be58894556a38db0e222934a0",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi dans l’Octave de la Fête-Dieu (avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0216_nouveau",
@@ -7325,10 +10566,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "9dd448d12b1d04d2280a7bed6911c138f148e6532fedbcc36062fea0f797eb25",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "2ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0972_ancien",
@@ -7339,10 +10600,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "7c19465b4c9b07330e115dd5ede0dafc93bf17284b27ab3a0f946f593845e0df",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi dans l’Octave de la Fête-Dieu (avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0973_ancien",
@@ -7353,10 +10634,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "6363565caea90bce8cbc1b330bad5e687018bdea1c0e25e366f40f16b2e880b5",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi dans l’Octave de la Fête-Dieu (avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0974_ancien",
@@ -7367,10 +10668,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "896fa894b8efd5983a3a2ceed2067cf1c07b6935d6bcf101f7eb1724cfe67e11",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi dans l’Octave de la Fête-Dieu (avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0975_ancien",
@@ -7381,10 +10702,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "61b6a81f4fab0b11933b912d304ca4ffe2d494ed9671974fe702487627d3563f",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Octave de la Fête-Dieu (avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_nouveau",
@@ -7395,10 +10736,38 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "a080d855e7e40c0fd2da6fd5e5290f31d52683980a7110b742ff6c5a6e3fd4df",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Fête du Sacré-Coeur"
+        },
+        {
+          "level": "h3",
+          "text": "Textes de la Messe avant 1929"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h3",
+          "text": "Textes de la Messe après 1929"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0987_ancien",
@@ -7409,10 +10778,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "207dd3b1414a34c2446ed06c17f51e0710d0b87dc1fa64f97f490e3700474fc7",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi dans l’Octave du Sacré-Cœur (avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0221_nouveau",
@@ -7423,10 +10812,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "30cf91fcdcb6c19b072650377bfe8bcc8c673956b24605155d308ffe3caf2bbe",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "3ᵉ dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0988_ancien",
@@ -7437,10 +10846,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "869538dda31dc37a2438b7722e41008ec240faaebfcade90f7ca868e50fb00d7",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Lundi dans l’Octave du Sacré-Cœur (avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0989_ancien",
@@ -7451,10 +10880,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "50edd51f9b625f9ad478da4a0b52f534ae8ccaa9f0885dfc65ad229989a19e5d",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mardi dans l’Octave du Sacré-Cœur (avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0990_ancien",
@@ -7465,10 +10914,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "c5273bee5b12b42ba038b8b65f4815409ec79d884630c226f6d0e53d2e291f3a",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi dans l’Octave du Sacré-Cœur (avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0991_ancien",
@@ -7479,10 +10948,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "5e698e1cefbfb60f199ae821c8a0d6669aa28a6d496a60a2e56c03904f472f89",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Jeudi dans l’Octave du Sacré-Cœur (avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0992_ancien",
@@ -7493,10 +10982,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "8b3e4dd00f8a4711023efff313ce4a39f25e061f2bc5c1de16e73259de1f0f44",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Octave du Sacré-Cœur (avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_nouveau",
@@ -7507,10 +11016,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "012e75144c67e6c2132fe3bff2846ff8942c4ddeb3ee3d0bb049f041222eaed8",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "4ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0223_nouveau",
@@ -7521,10 +11050,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "3c3f9faf9746360b3045a92ceb5925e1b3f5f6490b0592739d9cf4b619cc8ff8",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "5ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0231_ancien",
@@ -7535,10 +11084,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "563c8ee934ad63b5b05e934b180d5d86af73d1cf33aa70d0588a113165b0f15d",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "6ᵉ dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0241_ancien",
@@ -7549,10 +11118,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "b3b45dcd55f378b3f428d5a0d3efa30786f1d03ab4dccb7a305d4080bd479416",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "7ᵉ dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0242_ancien",
@@ -7563,10 +11152,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "a2e9e6bb009dad8ade31daf64c8ea8cbb19d2797ff1a0f46d57f4785defe86af",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "8ᵉ dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0243_ancien",
@@ -7577,10 +11186,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "9bfa13c34cfa7b279a64fe4a092ba035fdce45421372c86ed0f9d3462c2cba95",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "9ᵉ dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0244_ancien",
@@ -7591,10 +11220,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "71405854c505695ef628f8540bf16d782e68baa33456c61fd0db83fb72c373d5",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "10ᵉ dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0364_ancien",
@@ -7605,10 +11254,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "b97a0046abac0d3303e7486b06a26317a65d99ee8502c59a0679cbad76f474f4",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "11ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0365_ancien",
@@ -7619,10 +11288,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "a059e5d879e1b92fc88daf5e1ec243efaa138081688e305bbb0d45af382c566e",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "12ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0391_ancien",
@@ -7633,10 +11322,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "8827c351da4850c0d1afb12da431f3414f6307fa02aac84823ea1cc77de649e0",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "13ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0430_ancien",
@@ -7647,10 +11356,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "2c650cbafb3c075363934dd03eac41603a9deff16f3669ea1be51321b0a73e4a",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "14ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0431_ancien",
@@ -7661,10 +11390,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "71d359a863e99f74ee9edee6b0ef55ca04c05790f25d896070d455c7e8048637",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "15ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0442_ancien",
@@ -7675,10 +11424,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "16a243f27a38f7c4fcffe4ca8cb836b1244eba7c693489f79090a990df88f4a1",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "16ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0443_ancien",
@@ -7689,10 +11458,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "3e2a52fd5924e264078ea26effa814a9cad4bfbdd90929d19cf5574e14c72808",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "17ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0619_ancien",
@@ -7703,10 +11492,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "29702b7eda8c8b15b0681b22998eaa14251ae02d3535e27e48aa1120a9ab9ae4",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Les Quatre Temps de Septembre"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0452_ancien",
@@ -7717,10 +11526,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "55ce8a390c0eedeeab00a7adeecf100870955a2ea1df33f7c6ef0a7b24fea1f4",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mercredi des Quatre-Temps de Septembre"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0453_ancien",
@@ -7731,10 +11560,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "c5f4a4a236072333a912b4ff5da7145798f567faf34ea132c03db3c073c1ec4c",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vendredi des Quatre-Temps de Septembre"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0454_ancien",
@@ -7745,10 +11594,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "7e1f5ae947bcdd87a4b904c143ef3666ac797b870c99f9d25f2bb7cc39b2d848",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Samedi des Quatre-Temps de Septembre"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0471_ancien",
@@ -7759,10 +11628,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "9a4c7d00ebe8fda1177c49710fa82c9a4d89398a22f53333399b639f7c633b84",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "18ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0478_ancien",
@@ -7773,10 +11662,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "f61a2205400e6fd8d175e69c36f08cbf84afdfc46b6e19fef4fccc033d753d55",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "19ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0486_ancien",
@@ -7787,10 +11696,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "a0c12df0cc3d5e19f1f60b40080d1f5c5fff24e4da499239c1026dc509f6b2aa",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "20ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0487_ancien",
@@ -7801,10 +11730,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "619cac84affa80b65b349bd8ca0db119916297ae6d2662fd3ebaf63ee980640a",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "21ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0488_ancien",
@@ -7815,10 +11764,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "92944102979ccbdc2a17f32ac2670bd6f619b880686bc48504d08ccd96f07254",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "22ᵉ Dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0245_ancien",
@@ -7829,10 +11798,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "d9ba8bcfd52f073cba3c85e71c678a9a96e1e77599a42599b79c7902d385324e",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "23ᵉ dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0246_ancien",
@@ -7843,10 +11832,30 @@
       "sections": [
         "temporal"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "6b1fbefe08cc9b34ee712916a086de6e37475f6ff775d10569b1ace211ee1c52",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "24ᵉ et dernier dimanche après la Pentecôte"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0104_ancien",
@@ -7857,10 +11866,30 @@
       "sections": [
         "sanctoral"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "7c2b7e9c2f937ec038b771bfa61e440930c23114b268e17bfb30316ea73ff231",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Octave de la Nativité (1ᵉʳ janvier, Circoncision du Seigneur)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0655_ancien",
@@ -7871,10 +11900,30 @@
       "sections": [
         "sanctoral"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "0bdea39b8c4eaa6bc18e2f7f7fa13dbd85c630844631c29cc0d8754187b55711",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Octave de St Etienne (2 janvier, avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0656_ancien",
@@ -7885,10 +11934,30 @@
       "sections": [
         "sanctoral"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "ca32611eaefba7538ebe9d2512819c57b0299fed9a0bc0ce8a8882f3115916c8",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Octave de St Jean (3 janvier, avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0584_ancien",
@@ -7899,10 +11968,30 @@
       "sections": [
         "sanctoral"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "22671f8e565b5ebf818f1cf60a9794575b2578f815b3ba10e4cc022ead172235",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Sainte Geneviève, vierge (propre de France)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0315_ancien",
@@ -7913,10 +12002,30 @@
       "sections": [
         "sanctoral"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "3ce4673f3355a1ced6bc25e0d3bb24b3f110d854d0466ee2ba9a0de03b436860",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "St Télesphore, pape et martyr"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0580_ancien",
@@ -7927,10 +12036,30 @@
       "sections": [
         "sanctoral"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "7203ac47ac8fafa6aa51cc3606221627fef451b3a7982ca81549a9e35bacd45d",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vigile de l’Epiphanie (5 janvier, avant 1955)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0108_ancien",
@@ -7941,10 +12070,30 @@
       "sections": [
         "sanctoral"
       ],
-      "state": "INDEX_ONLY",
+      "state": "METADATA_INSPECTED",
       "edition": "UNVERIFIED_DO_NOT_READ_URL_SUFFIX",
       "rights": "NOT_CLEARED_INDEX_AND_LINK_ONLY",
-      "promotion": "NONE"
+      "promotion": "NONE",
+      "htmlSha256": "8ab548b8ba231891188950960e361775225d56e60568616954c3fbd726bae14d",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Epiphanie du Seigneur (6 janvier)"
+        },
+        {
+          "level": "h3",
+          "text": "Commentaires"
+        },
+        {
+          "level": "h4",
+          "text": "ICRSP – Province de France"
+        }
+      ],
+      "authorsMentionedHeuristic": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
     },
     {
       "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0658_ancien",
