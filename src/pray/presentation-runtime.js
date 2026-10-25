@@ -234,8 +234,9 @@ function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,
 let CONF=freshConfessionState();
 let BEN={step:0,divinePraises:false,celebration:"ordinary",feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};
-// A direct return to public Benediction is offered only when Adoration is
-// entered FROM the public-rite reader. Fresh private Adoration stays quiet.
+// Adoration preserves an explicit, secondary handoff to the distinct public
+// Benediction reader. The wording indicates whether this is a first visit or
+// a return from that rite; opening Adoration never starts Benediction.
 let adorationReturnFromBenediction=false;
 let adorationQuietReturn=null;
 let FF={step:0,intention:false,communion:false};
@@ -1633,10 +1634,12 @@ function renderAdoration(){
     </div>
    </details>
    <p class="aoAdorationChooserAfterword">${esc(L('If a public liturgical rite begins, follow the rite rather than a private guide.','Si un rite liturgique public commence, suivez le rite plutôt qu’un guide privé.'))}</p>
-   ${adorationReturnFromBenediction?`<button type="button" class="aoP435930Secondary aoAdorationPublicRiteLink" data-p435930-go-ben>
-     ${esc(L('Return to public Benediction','Revenir à la bénédiction eucharistique'))}
+   <button type="button" class="aoP435930Secondary aoAdorationPublicRiteLink" data-p435930-go-ben>
+     ${esc(adorationReturnFromBenediction
+       ? L('Return to public Benediction','Revenir à la bénédiction eucharistique')
+       : L('Follow public Benediction','Suivre la bénédiction eucharistique'))}
      <small>${esc(L('Includes optional Christ the King procession and prayers','Avec procession et prières facultatives du Christ-Roi'))}</small>
-   </button>`:''}
+   </button>
   </main>`;
  if(ADOR.quiet)return `${head(L('Silent Adoration','Adoration silencieuse'),L('No prescribed duration','Sans durée imposée'))}
  <main class="aoP435930Body aoP435930AdorationReader aoAdorationQuietScreen" role="dialog" aria-modal="true" aria-labelledby="aoAdorationQuietTitle" data-ao-adoration-folio="v1" data-ao-adoration-mode="${esc(ADOR.mode)}" data-ao-adoration-quiet="true">
