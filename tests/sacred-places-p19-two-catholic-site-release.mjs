@@ -16,7 +16,7 @@ assert.deepEqual([geo.places.length,src.sources.length,cross.place_crosswalk.len
 assert.equal(cross.counts.places,LIVE.places);
 assert.equal(cross.counts.places_without_direct_claim,LIVE.unlinked);
 assert.equal(cross.exception_queues.places_without_direct_claim.length,LIVE.unlinked);
-assert.equal(geo.geoAreas.length,141);
+assert.equal(geo.geoAreas.length,LIVE.areas);
 assert.equal(geo.directoryPlaceLinks.length,9);
 assert.equal(new Set(geo.places.map(x=>x.place_id)).size,LIVE.places);
 assert.equal(new Set(src.sources.map(x=>x.id)).size,LIVE.sources);

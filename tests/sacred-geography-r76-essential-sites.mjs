@@ -11,7 +11,7 @@ const r=read("data/geography/research/sacred-geography-coverage-first-r70.v1.jso
 assert.equal(m.schema,"AO_SACRED_GEOGRAPHY_R76_FINAL_ESSENTIAL_AUDIT_V1");
 assert.equal(m.published_new.length,3);
 assert.equal(m.held.length,10);
-assert.deepEqual([g.geoAreas.length,g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[141,LIVE.places,257,240,LIVE.sources]);
+assert.deepEqual([g.geoAreas.length,g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[LIVE.areas,LIVE.places,257,240,LIVE.sources]);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.equal(r.candidates.length,750);

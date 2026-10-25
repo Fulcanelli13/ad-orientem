@@ -1,4 +1,4 @@
-import {LIVE,CURRENT_RELEASE_PLACE_IDS} from "./helpers/sacred-places-live-baseline.mjs";
+import {LIVE,RELEASES,CURRENT_RELEASE_PLACE_IDS} from "./helpers/sacred-places-live-baseline.mjs";
 import fs from "node:fs";
 import assert from "node:assert/strict";
 import {
@@ -32,6 +32,10 @@ const r92 = readJson("../data/geography/research/sacred-geography-r92-verified-s
 const r92NewAreaIds = new Set(r92.country_areas_added);
 const r93 = readJson("../data/geography/research/sacred-geography-r93-first-presence-release.v1.json");
 const r93NewAreaIds = new Set(r93.country_areas_added);
+const subsequentAreaIds = new Set(RELEASES.flatMap(r=>r.data.new_geo_areas||[]));
+const p35Release = RELEASES.find(r=>r.id==="P35");
+assert.ok(p35Release);
+assert.deepEqual(p35Release.data.new_geo_areas,["geo:country:RO","geo:country:PA","geo:country:TW","geo:country:UA"],"P35 country areas are frozen; subsequent releases may add more");
 
 assert.equal(contract.schema, EXPLORE_GEOGRAPHY_SCHEMA);
 assert.equal(contract.version, "1.0.0");
@@ -44,7 +48,7 @@ for (const area of seed.geoAreas) {
   assert.equal(auditGeoArea(area).length, 0, area.geo_area_id);
 }
 assert.deepEqual(
-  seed.geoAreas.filter(area => area.area_type === "country" && !r87NewAreaIds.has(area.geo_area_id) && !r89NewAreaIds.has(area.geo_area_id) && !r90NewAreaIds.has(area.geo_area_id) && !r91NewAreaIds.has(area.geo_area_id) && !r92NewAreaIds.has(area.geo_area_id) && !r93NewAreaIds.has(area.geo_area_id)).map(area => area.codes.iso_alpha2),
+  seed.geoAreas.filter(area => area.area_type === "country" && !r87NewAreaIds.has(area.geo_area_id) && !r89NewAreaIds.has(area.geo_area_id) && !r90NewAreaIds.has(area.geo_area_id) && !r91NewAreaIds.has(area.geo_area_id) && !r92NewAreaIds.has(area.geo_area_id) && !r93NewAreaIds.has(area.geo_area_id) && !subsequentAreaIds.has(area.geo_area_id)).map(area => area.codes.iso_alpha2),
   ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP", "GR", "SV", "LB", "PE", "LU", "HU", "MT", "HR", "LK", "PH", "DZ", "SN", "CI", "CL", "IL", "VN", "SG", "MA", "ZM", "BA", "CN", "GT", "PY", "HN", "CR", "MY", "SK", "DO", "CU", "SI", "LV", "UY", "MZ", "TT", "GH", "BZ", "PK"],
 );
 
