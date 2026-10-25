@@ -71,7 +71,10 @@ assert.match(markup,/data-role="faithful-icon-picker"/);
 assert.match(markup,/data-faithful-picker-gesture/);
 assert.match(markup,/data-faithful-picker-posture/);
 assert.match(markup,/data-faithful-icon-open/);
-assert.match(markup,/ao-faithful-paragraph-icons/);
+assert.doesNotMatch(markup,/icons\.className="ao-faithful-paragraph-icons"/,
+  "Gloria/Credo must not recreate a separate tiny icon next to every prayer paragraph");
+assert.match(markup,/data-faithful-icon-open/,
+  "The persistent faithful ribbon must retain its single customization entry");
 assert.ok(svgInventory.assets.some(row=>String(row.file??row.path??"").includes("cross.svg")) ||
   readFileSync(new URL("../assets/active/mass-v46/cross.svg",import.meta.url)).length>0);
 // 1960 Code of Rubrics §518(b) exception must be selected-Mass-owned,
