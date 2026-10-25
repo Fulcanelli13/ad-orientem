@@ -20,10 +20,10 @@ const art=json("data/customs/customs-approved-art-reuse-review.v1.json");
 assert.equal(art.schema,"AO_CUSTOMS_APPROVED_ART_REUSE_REVIEW_V1");
 assert.equal(art.status,"NON_PUBLISHING_CURATORIAL_CROSSWALK");
 assert.equal(art.candidate_placements.length,19,"19 possible uses of previously approved paintings");
-assert.equal(art.unmatched_customs.length,19,"19 unresolved artwork matches remain visible");
-assert.equal(art.counts.canonical_customs,38);
+assert.equal(art.unmatched_customs.length,21,"19 unresolved artwork matches remain visible");
+assert.equal(art.counts.canonical_customs,40);
 const artIDs=new Set([...art.candidate_placements,...art.unmatched_customs].map(x=>x.custom_id));
-assert.equal(artIDs.size,38,"every custom needs exactly one art review disposition");
+assert.equal(artIDs.size,40,"every custom needs exactly one art review disposition");
 assert.deepEqual(artIDs,new Set(library.items.map(x=>x.id)));
 assert.ok(art.candidate_placements.every(x=>x.cross_module_placement_status==="PROPOSED_NEEDS_CURATOR_APPROVAL" &&
   x.image_release_status==="NOT_VERIFIED" && !x.artwork_display_enabled && x.asset_path==null &&
@@ -32,7 +32,7 @@ assert.ok(art.candidate_placements.every(x=>x.cross_module_placement_status==="P
 assert.ok(art.unmatched_customs.every(x=>x.placement_status==="NO_SUITABLE_APPROVED_ORIGINAL_MATCH_ESTABLISHED" && !x.artwork_display_enabled),
   "no unsuitable visual substitution allowed");
 
-assert.equal(library.stats.canonical,38,"38 current canonical IDs retained");
+assert.equal(library.stats.canonical,40,"38 current canonical IDs retained");
 assert.equal(data.temporal.records.filter(x=>x.calendar_hint).length,26,"exactly 26 dated seasonal notices");
 assert.equal(data.temporal.records.filter(x=>x.calendar_hint).every(x=>x.calendar_hint_fr),true,
   "every dated seasonal notice must be bilingual");
@@ -48,7 +48,7 @@ assert.equal(library.items.filter(c=>c.history).every(c=>
 
 assert.equal(library.items.every(c=>c.title_fr&&c.description_fr&&c.caution_fr),true,"all 38 canonical records have French title, description and pastoral qualification");
 assert.equal(new Set(data.frCopy.entries.map(c=>c.custom_id)).size,27,"exactly 27 supplementary French records");
-assert.equal(library.published,35,"publication boundary preserved");
+assert.equal(library.published,37,"publication boundary preserved");
 assert.equal(library.contextOnly,3,"three contextual customs not promoted into published practices");
 assert.equal(library.stats.research,568,"all Weiser observations accessible in research index");
 assert.equal(library.stats.researchByTriage.EXCLUDE,34,"excluded observations remain classified");
@@ -57,13 +57,13 @@ assert.equal(library.stats.researchByTriage.REGIONAL,145,"regional source rows r
 assert.equal(library.stats.researchByTriage.CANDIDATE,131,"candidate source rows retained");
 assert.equal(library.stats.researchByTriage.COVERED,85,"already covered sources remain accounted for");
 assert.equal(library.stats.researchByTriage.ENRICH,56,"enrichment sources remain accounted for");
-assert.equal(new Set(library.items.map(x=>x.id)).size,38);
+assert.equal(new Set(library.items.map(x=>x.id)).size,40);
 assert.equal(new Set(library.research.map(x=>x.id)).size,568);
 assert.equal(library.items.every(x=>x.temporal&&x.attestations.length>0&&x.sources.length>0),true,"all canonical profiles retain time placement, evidence and sources");
 const throughYear=selectCustoms(library,{view:"year"});
 const life=selectCustoms(library,{view:"life"});
-assert.equal(throughYear.length+life.length,38,"dated and undated views form an exhaustive, non-overlapping partition");
-assert.equal(selectCustoms(library,{view:"all"}).length,38);
+assert.equal(throughYear.length+life.length,40,"dated and undated views form an exhaustive, non-overlapping partition");
+assert.equal(selectCustoms(library,{view:"all"}).length,40);
 assert.equal(selectResearch(library).length,568);
 assert.equal(selectResearch(library,{triage:"EXCLUDE"}).length,34);
 assert.equal(life.some(x=>x.id==="DOM-002"),true,"household holy-water fonts not hidden by absence of a date");
