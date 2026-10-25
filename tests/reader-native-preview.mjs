@@ -89,6 +89,30 @@ assert.equal(curatedReady.presentationModel.totalCards,65,
   "the real native preview must show one combined Sanctus–Benedictus");
 assert.equal(curatedReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.equal(curatedReady.presentationModel.sourceAuthorityModel,curatedReady.model);
+// Source-derived music crosswalk must point to the actual selected LIVE 65
+// presentation cards, not numerical positions on the 30-card model.
+const crosswalk=curatedReady.musicCrosswalk;
+assert.equal(crosswalk.schema,"ao-mass-music-source-crosswalk-v1");
+assert.equal(crosswalk.readerStructureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+assert.equal(crosswalk.ordinary.length,10);
+assert.deepEqual(crosswalk.ordinaryUnmappedTracks,[],
+  "The live music crosswalk has unresolved Ordinary source/card anchors");
+assert.equal(crosswalk.notLivePerformanceEvidence,true);
+const actualCardIds=new Set(curatedReady.presentationModel.cards.map(c=>c.sectionId));
+const actualBlockIds=new Set(data.sungCorpus.blocks.map(b=>b.Block_ID));
+for(const track of crosswalk.ordinary){
+  assert.ok(track.presentationCardIds.length>0,track.trackId+" lacks a real LIVE card");
+  for(const cardId of track.presentationCardIds)assert.ok(actualCardIds.has(cardId),
+    track.trackId+" has an invented presentation card ID");
+  for(const blockId of track.sourceBlockIds)assert.ok(actualBlockIds.has(blockId),
+    track.trackId+" has an invented source block ID");
+  assert.equal(track.performanceStatus,"EXPECTED_NOT_OBSERVED");
+  assert.equal(track.clockOwner,"INDEPENDENT_SCHOLA");
+}
+const sanctusCrosswalk=crosswalk.ordinary.find(x=>x.trackId==="SANCTUS_BENEDICTUS");
+assert.ok(sanctusCrosswalk.sourceBlockIds.includes("AO.SM.B046"));
+assert.ok(sanctusCrosswalk.choirCueIds.includes("AO.SM.C0145"));
+assert.ok(sanctusCrosswalk.sourceSectionIds.includes("AO.CARD.013"));
 const previewIntroit=curatedReady.presentationModel.cards.find(c=>
   c.blocks.some(b=>b.blockId==="AO.SM.B014"));
 assert.equal(previewIntroit?.sequence,5,
@@ -128,6 +152,18 @@ const musicReady=await prepareNativeReaderPreview({
   riteMusicData:musicRegistry,
 });
 assert.equal(musicReady.riteMusicRegistry.schema,"ao-mass-special-rite-music-events-v1");
+assert.equal(musicReady.musicCrosswalk.special.length,47,
+  "Indexed special-rite event inventory changed unexpectedly");
+assert.equal(new Set(musicReady.musicCrosswalk.special.map(x=>x.eventId)).size,47);
+const hold=musicReady.musicCrosswalk.special.find(x=>x.eventId==="AO.MUS.PROC.UNSPECIFIED");
+assert.equal(hold?.performanceStatus,"SOURCE_HOLD",
+  "An unspecified generic procession must not gain a fabricated chant");
+const vidia=musicReady.musicCrosswalk.special.find(x=>x.eventId==="AO.MUS.ASP.VIDI");
+assert.equal(vidia?.riteStageId,"ASP-R02");
+assert.equal(vidia?.condition,"PASCHAL");
+assert.equal(vidia?.clockOwner,"SPECIAL_RITE_NOT_ORDINARY_SCHOLA");
+assert.ok(musicReady.musicCrosswalk.special.some(x=>
+  x.eventId==="AO.MUS.EV.SICUT_BAPTISTERY"&&x.condition==="FONT_MODE=SEPARATE_BAPTISTERY"));
 assert.equal(musicReady.riteMusicSources.ASPERGES.schema,"ao-r20-asperges-payload-v1");
 assert.equal(musicReady.aspergesController.project().formulaState.formula,"ORDINARY");
 assert.equal(musicReady.model.totalCards,39,
