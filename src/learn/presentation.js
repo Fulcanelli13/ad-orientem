@@ -34,7 +34,7 @@ export const LEARN_LAYOUT=Object.freeze({
     }),
     Object.freeze({
       id:"liturgy-tradition",
-      previewAssetId:"ao-module-before-mass",
+      previewAssetId:"ao-brand-emblem",
       title:Object.freeze(["Mass & Liturgy","Messe & liturgie"]),
       description:Object.freeze(["Understand traditional Catholic worship and learn how to take part in it.","Comprendre le culte catholique traditionnel et apprendre à y prendre part."]),
       items:Object.freeze([
