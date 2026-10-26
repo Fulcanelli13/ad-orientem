@@ -1,0 +1,34 @@
+name: Directory CL4 owner-source screening
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'tools/directory/validate-cl3-reconciliation.py'
+      - 'tools/directory/validate-cl4-owner-screening.py'
+      - 'tools/directory/rebuild-cl2-research-snapshot.py'
+      - '.github/workflows/directory-cl4-owner-screening.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'tools/directory/validate-cl3-reconciliation.py'
+      - 'tools/directory/validate-cl4-owner-screening.py'
+      - 'tools/directory/rebuild-cl2-research-snapshot.py'
+      - '.github/workflows/directory-cl4-owner-screening.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild unchanged CL2 research SQLite
+        run: python3 tools/directory/rebuild-cl2-research-snapshot.py --snapshot-dir data/directory/research/cl2-unified-20261026 --output /tmp/ad-orientem-cl2-research.sqlite
+      - name: Verify original frozen CL2 and CL3 lineage / description evidence
+        run: python3 tools/directory/validate-cl3-reconciliation.py
+      - name: Verify 27 CL4 descriptions, 40 held exceptions and release policy
+        run: python3 tools/directory/validate-cl4-owner-screening.py
