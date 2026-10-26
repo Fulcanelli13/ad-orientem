@@ -1,0 +1,24 @@
+name: Processionale GABC read-only research capture
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/processionale-gabc-research.yml
+      - tools/research/processionale-gabc-capture.mjs
+      - data/research/processionale-roman-score-facsimile-handoff-20261026.v1.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  grab-source-scores:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Capture exact CC0 source bytes with SHA256 (no repo write)
+        run: node tools/research/processionale-gabc-capture.mjs
