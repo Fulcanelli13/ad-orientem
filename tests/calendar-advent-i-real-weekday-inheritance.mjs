@@ -37,7 +37,13 @@ try{
         const r=await globalThis.AO_RUNTIME_V8.resolver.resolveDay(date);
         const p=r?.proper?.data||{},str=s=>String(s??"");
         const pick=x=>str(x?.lat??x?.la??"");
-        return {date,status:r?.status,properStatus:r?.proper?.status,
+        const mandatory=[p.introit,p.collects?.[0],p.epistle,p.gospel,p.offertory,
+          p.secrets?.[0],p.communion,p.postcommunions?.[0]];
+        const bilingualPresence={
+          en:mandatory.every(x=>str(x?.en).trim().length>0),
+          fr:mandatory.every(x=>str(x?.fr).trim().length>0)
+        };
+        return {date,status:r?.status,properStatus:r?.proper?.status,bilingualPresence,
           main:r?.day?.main?.id??null,sourcePath:p.sourcePath??null,
           inherited:p.inheritedProper===true,
           introit:pick(p.introit).slice(0,130),
@@ -73,6 +79,8 @@ for(const x of feria){
     x.date+": weekday source identity was overwritten");
   assert.equal(x.inherited,true,x.date+": no explicit inherited Mass source");
   assert.ok(contains(x.introit,"Ad te levavi"),x.date+": Advent Sunday Introit missing");
+  assert.equal(x.bilingualPresence.en,true,x.date+": incomplete English inherited source (do not synthesize translation)");
+  assert.equal(x.bilingualPresence.fr,true,x.date+": incomplete French inherited source (do not synthesize translation)");
   assert.ok(contains(x.collect1,"Excita quaesumus Domine potentiam tuam"),
     x.date+": first Collect must be inherited Advent I, NOT a saint's commemoration");
   for(const part of ["epistle","gospel","offertory","communion","gradual"])
