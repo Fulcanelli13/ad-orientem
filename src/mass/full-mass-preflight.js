@@ -174,6 +174,12 @@ export function mountFullMassPreflight({
       legacy?.celebrationType??"",legacy?.exceptionalProfile??""].join("|");
     if(lastCelebrationKey!==null&&lastCelebrationKey!==celebrationKey){riteOverrides={};chantIdentity=null;chantScoreId=null;}
     lastCelebrationKey=celebrationKey;
+    // A change of form or resolved Proper invalidates user-reported tunes.
+    const nowChantIdentity=massChantProgrammeIdentity(legacy,{
+      form:activeForm(),kind:massCelebrationKind(legacy)});
+    if(chantIdentity!==null&&chantIdentity!==nowChantIdentity){
+      chantIdentity=null;chantScoreId=null;
+    }
     if(root&&!root.isConnected)root=null;
     if(!root){
       root=doc.createElement("section");
