@@ -116,6 +116,33 @@
         "title": "Last Supper",
         "sourceImageSHA256": "5d19d31a2a213a80e81bffe2c195a1e9b3ae810c0b3428a69ae94685fd73c502",
         "candidatePath": "assets/sacred-art/candidates/hero-2026-04-02-5d19d31a2a21.webp"
+      },
+      "newPhotoResearchCandidate": {
+        "source_photographer": "Tangopaso",
+        "commons_original_rights_claim": "PD-self (photographer explicitly dedicated source photo to public domain)",
+        "full_camera_original_sha256": "3fce64afc767c16b803fd250e685f3a64caedb7e474380d3afeca68d84331942",
+        "camera_original_pixel_size": [
+          2816,
+          2112
+        ],
+        "reviewed_research_branch": "research/champaigne-inv1125-photo-review-20261026",
+        "proposed_frame_free_photo": "assets/staged/champaigne-petite-cene-research/C-canvas-interior-clean-ungraded-source-derived.jpg",
+        "proposed_frame_free_photo_sha256": "99e102df2d3644783bce3ac4cb81002337f8eb166583d84f74c630be6a8efc0f",
+        "proposed_pixel_size": [
+          2250,
+          1208
+        ],
+        "artwork_identity": "Louvre INV 1125",
+        "report": "docs/research/CHAMPAIGNE-PETITE-CENE-PHOTO-FIDELITY-20261026.md",
+        "provisional_photo_preference": "YES, quality and visual framing looks better than previous 1112px whole source; not a production master",
+        "pending": [
+          "final painted-boundary signoff",
+          "museum-reference color fidelity",
+          "app image reuse rights in distribution jurisdictions",
+          "320/390 and desktop real app rendering"
+        ],
+        "actual_asset_changed": false,
+        "final_photo_released": false
       }
     },
     {
@@ -263,6 +290,33 @@
         "framelessDerivativeSourceSha256": null,
         "approvedCropBoundsPx": null,
         "frameFreePublicationApproved": false
+      },
+      "newPhotoResearchCandidate": {
+        "source_photographer": "Tangopaso",
+        "commons_original_rights_claim": "PD-self (photographer explicitly dedicated source photo to public domain)",
+        "full_camera_original_sha256": "3fce64afc767c16b803fd250e685f3a64caedb7e474380d3afeca68d84331942",
+        "camera_original_pixel_size": [
+          2816,
+          2112
+        ],
+        "reviewed_research_branch": "research/champaigne-inv1125-photo-review-20261026",
+        "proposed_frame_free_photo": "assets/staged/champaigne-petite-cene-research/C-canvas-interior-clean-ungraded-source-derived.jpg",
+        "proposed_frame_free_photo_sha256": "99e102df2d3644783bce3ac4cb81002337f8eb166583d84f74c630be6a8efc0f",
+        "proposed_pixel_size": [
+          2250,
+          1208
+        ],
+        "artwork_identity": "Louvre INV 1125",
+        "report": "docs/research/CHAMPAIGNE-PETITE-CENE-PHOTO-FIDELITY-20261026.md",
+        "provisional_photo_preference": "YES, quality and visual framing looks better than previous 1112px whole source; not a production master",
+        "pending": [
+          "final painted-boundary signoff",
+          "museum-reference color fidelity",
+          "app image reuse rights in distribution jurisdictions",
+          "320/390 and desktop real app rendering"
+        ],
+        "actual_asset_changed": false,
+        "final_photo_released": false
       }
     },
     {
@@ -515,5 +569,6 @@
   "framelessReleaseApprovals": 0,
   "editorialRevisions": [
     "data/calendar/approved-feast-holy-thursday-20261026-override.v1.json"
-  ]
+  ],
+  "newPhotoProvisionalReferences": 1
 }
