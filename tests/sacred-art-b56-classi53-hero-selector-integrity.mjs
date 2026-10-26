@@ -41,6 +41,43 @@ assert.ok(dm&&bm,"Inline 53-day data or image bank absent");
 const days=JSON.parse(dm[1]),bank=JSON.parse(bm[1]);
 assert.equal(days.length,53);
 assert.deepEqual(days.map(x=>x.date),seed.dates.map(x=>x.date));
+assert.equal(audit.research_exact_source_outside_383_count,7);
+assert.deepEqual(audit.class_i_review_lanes,{LOCKED_10:10,GAP_9:9,EXACT_6:6,SUBJECT_28:28});
+const lanes=Object.fromEntries(["LOCKED_10","GAP_9","EXACT_6","SUBJECT_28"].map(k=>[k,days.filter(d=>d.review_lane===k).length]));
+assert.deepEqual(lanes,audit.class_i_review_lanes);
+assert.match(html,/data-nav-filter="gaps"/);
+assert.match(html,/data-nav-filter="exact"/);
+assert.match(html,/data-nav-filter="subject"/);
+const gap9=["2026-02-18","2026-03-08","2026-03-22","2026-03-30","2026-07-01","2026-12-06","2026-12-13","2026-12-20","2026-12-24"];
+const exact6=["2026-02-22","2026-03-01","2026-03-15","2026-03-31","2026-04-01","2026-09-29"];
+for (const date of gap9) {
+ const x=days.find(d=>d.date===date);
+ assert.equal(x.review_lane,"GAP_9");
+ assert.ok(x.appointed_reading && x.appointed_scene,date+" appointed Gospel missing");
+}
+for (const date of exact6) {
+ const x=days.find(d=>d.date===date);
+ assert.equal(x.review_lane,"EXACT_6");
+ assert.ok(x.appointed_reading,date+" exact research reading missing");
+}
+const b54ids=new Set(fs.readFileSync(root+"sacred-art-b54-383-aesthetic-biblical-review-ledger.csv","utf8")
+ .split(/\r?\n/).slice(1).map(x=>x.split(",")[1]));
+let recoveredExternalLinks=0;
+for (const d of seed.dates) {
+ for (const link of d.exact_research_links||[]) {
+   if(b54ids.has(link.artworkId)) continue;
+   recoveredExternalLinks++;
+   const day=days.find(x=>x.date===d.date);
+   const original=day.options.find(x=>x.choice_id===link.artworkId);
+   if (!day.original_approval) {
+      assert.ok(original,d.date+" missing exact museum source "+link.artworkId);
+      assert.equal(original.grade,"EXACT_SUBJECT_RESEARCH");
+      assert.equal(original.production_image_rights_approved,false);
+      assert.equal(original.source_url,link.museumObjectUrl);
+   }
+ }
+}
+assert.equal(recoveredExternalLinks,7,"all seven outside-383 exact sources must stay traceable");
 let picture_slots=0, protected_count=0,total=0;
 const ids=new Set();
 for(let i=0;i<53;i++){
