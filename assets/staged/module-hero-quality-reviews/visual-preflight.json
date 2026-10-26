@@ -1,0 +1,41 @@
+{
+  "report_type": "TECHNICAL_PREFLIGHT_ONLY",
+  "no_artwork_quality_pass_automatically": true,
+  "reviewed_originals": [
+    {
+      "module_id": "joseph",
+      "file": "/home/runner/work/ad-orientem/ad-orientem/assets/staged/module-hero-masters/joseph.jpg",
+      "sha256": "d632ea2012825ecdccc760f50b7cc9107a30bf4a2349541742ef6f66a4987f9b",
+      "source_bytes": 19749000,
+      "format": "JPEG",
+      "width": 4421,
+      "height": 6000,
+      "embedded_icc": false,
+      "exif_iso": null,
+      "preview_RGB_mean": [
+        76.5,
+        65.9,
+        49.7
+      ],
+      "inspection_sheet": "/home/runner/work/ad-orientem/ad-orientem/assets/staged/module-hero-quality-reviews/joseph-inspection.png",
+      "automated_warnings": [
+        "No embedded ICC profile: colour accuracy cannot be inferred"
+      ],
+      "visual_fidelity_verdict": "UNREVIEWED",
+      "human_checks": {
+        "exact_artwork": "pending",
+        "museum_reference_colour": "pending",
+        "dark_pigment_detail": "pending",
+        "highlight_detail": "pending",
+        "brushwork_not_denoised": "pending",
+        "no_compression_or_halos": "pending",
+        "no_camera_glare_or_perspective": "pending",
+        "full_composition": "pending",
+        "mobile_hero_composition": "pending"
+      },
+      "legal_release": "BLOCKED",
+      "app_release": "BLOCKED"
+    }
+  ],
+  "missing_or_errors": []
+}
