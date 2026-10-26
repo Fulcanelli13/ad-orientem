@@ -115,7 +115,7 @@ try{
    const firstResolvedDate=await cal.locator('.aoCalOrdoEntry[data-ready="1"]').first()
      .getAttribute('data-cal-ordo-date');
    const firstOrdo=cal.locator('[data-cal-ordo-date="'+firstResolvedDate+'"]');
-   await firstOrdo.locator('summary').click();
+   await firstOrdo.locator(':scope > summary').click();
    assert.equal(await firstOrdo.getAttribute('open'),"",
      "Resolved Ordo day must expand without navigating away");
    assert.equal(await firstOrdo.locator('.aoCalOrdoVerified').count(),1,
@@ -136,7 +136,7 @@ try{
        document.querySelector('[data-cal-ordo-date="'+date+'"]')?.dataset.ready==="1",
        dateId,{timeout:45000});
      const feria=cal.locator('[data-cal-ordo-date="'+dateId+'"]');
-     if(await feria.getAttribute("open")===null)await feria.locator("summary").click();
+     if(await feria.getAttribute("open")===null)await feria.locator(':scope > summary').click();
      const facts=await feria.locator('.aoCalOrdoFact').allTextContents();
      assert.ok(facts.some(t=>/Gloria/.test(t)&&/Omitted/.test(t)),
        "Resolved Oct 26 feria must omit Gloria under Breviary 238c");
