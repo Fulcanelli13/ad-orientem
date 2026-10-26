@@ -1,0 +1,19 @@
+name: B99 bulk site data backfill
+
+on:
+  pull_request:
+    paths:
+      - "data/directory/research/b99-20261026-590-applied-site-description-backfills.v1.json"
+      - "tests/directory-b99-590-source-backfills.mjs"
+      - ".github/workflows/directory-b99-bulk-backfill.yml"
+  workflow_dispatch:
+
+jobs:
+  b99-applied-values:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tests/directory-b99-590-source-backfills.mjs
