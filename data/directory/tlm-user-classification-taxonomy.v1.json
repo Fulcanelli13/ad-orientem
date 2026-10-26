@@ -11,19 +11,28 @@
         "MINISTRY"
       ],
       "searchable_source_labels": [
-        "DIOCESAN_UNSPECIFIED",
-        "FSSP",
-        "ICKSP",
-        "IBP",
-        "SSPX",
-        "CMRI",
         "AASJMV",
-        "SSPV",
-        "RCI",
+        "BENEDICTINE",
+        "CISTERCIAN",
+        "CMRI",
         "CSPV",
-        "SMMD",
+        "DIOCESAN_UNSPECIFIED",
+        "DOMINICAN",
+        "FSSP",
         "FSVF",
+        "IBP",
+        "ICKSP",
+        "INDEPENDENT_CLERGY",
+        "LAY_ASSOCIATION",
+        "NORBERTINE",
+        "ORATORIAN",
         "OTHER",
+        "RCI",
+        "RELIGIOUS_COMMUNITY",
+        "SMMD",
+        "SSPV",
+        "SSPX",
+        "SSPX_RESISTANCE",
         "UNKNOWN"
       ],
       "publish_requires": "actual source-scoped association or role, not only web-directory section"
@@ -79,13 +88,20 @@
       ],
       "values": [
         "ROMAN",
+        "LYONESE",
         "DOMINICAN",
         "CARMELITE",
         "PREMONSTRATENSIAN",
+        "BENEDICTINE",
+        "CISTERCIAN",
+        "AMBROSIAN",
+        "MOZARABIC",
         "OTHER_LATIN_USAGE",
+        "EASTERN_CATHOLIC_DIFFERENT_LITURGY",
         "UNKNOWN"
       ],
-      "publish_requires": "source names actual rite/usages for this ministry or celebration"
+      "publish_requires": "source names actual rite/usages for this ministry or celebration",
+      "note": "Detailed usage extensions require corresponding B92 contract expansion before publication. Eastern Catholic liturgies must not be relabeled as the Roman 1962 Missal."
     },
     {
       "key": "missal_edition",
@@ -97,10 +113,14 @@
         "1962",
         "PRE_1955",
         "1955_REFORMED",
+        "1954_TRADITIONAL_AMBROSIAN",
+        "1965_TRANSITIONAL_ROMAN",
+        "1970_OR_2002_ORDINARY_FORM_LATIN",
         "MIXED_OR_LOCAL",
         "UNKNOWN"
       ],
-      "publish_requires": "exact source-scoped liturgical book evidence; not inferred from name or 'Latin'"
+      "publish_requires": "exact source-scoped liturgical book evidence; not inferred from name or 'Latin'",
+      "note": "Detailed values that are not in B92's current constrained enums remain research-only; Roman Latin Ordinary Form is not a TLM. 1962 is the Roman Missal edition, distinct from 1960 rubrical code."
     },
     {
       "key": "rubrical_basis",
@@ -207,5 +227,36 @@
   "filter_rule": "Use source-labelled institute grouping now with qualifier. All doctrinal, canonical, liturgical and Una Cum user filters require vetted source-scoped assertions. Never fill UNKNOWN by affiliation.",
   "base_classification_contract": "data/directory/classification-contract.v1.json (B92 PR #1724; must be reconciled rather than duplicated)",
   "canonical_master": "data/directory/research/cl2-unified-20261026/manifest.json",
-  "public_approvals": 0
+  "public_approvals": 0,
+  "conversation_approved_browse_families": {
+    "heading": "Separate source institute grouping from the celebration's rite, Missal, ecclesial profile and source confidence",
+    "source_reported_institutes": [
+      "DIOCESAN_UNSPECIFIED",
+      "FSSP",
+      "ICKSP",
+      "IBP",
+      "SSPX",
+      "FSVF",
+      "CMRI",
+      "SSPV",
+      "CSPV",
+      "BENEDICTINE",
+      "ORATORIAN",
+      "DOMINICAN",
+      "PREMONSTRATENSIAN",
+      "INDEPENDENT_CLERGY",
+      "OTHER",
+      "UNKNOWN"
+    ],
+    "map_first_principles": [
+      "First keep every accepted physical venue findable with name, pin, source URL, and source-reported community label",
+      "Community labels drive provisional institute grouping, not public canonical or Una Cum approval",
+      "Use separate advanced dimensions for una cum, ecclesial position, exact rite and Missal, Mass type, verifiable schedule, canonical status, and source maturity",
+      "A particular venue can host distinct rites and priests; never force one ecclesial profile onto every Mass there",
+      "Sedevacantist and sedeprivationist cases need explicit authority-grounded classification; do not present as ordinary diocesan Mass candidates",
+      "Distinct institutes may coexist at one building; site/house/office/host building is not interchangeable"
+    ],
+    "first_party_publication": "0 new approved classifications or pins by this taxonomy alone"
+  },
+  "note_on_legacy_b92": "Preserve existing B92 classification-contract.v1 enums and evidence validator unchanged; extension labels added here are NOT valid B92 runtime assertions until a separately tested evidence-contract migration."
 }
