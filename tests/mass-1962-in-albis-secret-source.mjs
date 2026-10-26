@@ -138,6 +138,22 @@ const changedFrenchDonorOrder=fixed([{lat:recovered.lat,en:recovered.en,
 assert.equal(recover1962InAlbisSecretFromPinnedSource(
  changedFrenchDonorOrder,ID,normalizer),null,
  "A superficially similar but textually different complete French prayer is not certified");
+// Even a full matching French reversal cannot authorize an unrelated
+// Latin or English prayer that shares the introductory words.
+for(const [language,damaged] of [
+ ["Latin",recovered.lat.replace("perpétuæ fructum concéde lætítiæ","aliénam precem")],
+ ["English",recovered.en.replace("grant the fruit of perpetual happiness","grant some other fruit")]
+]){
+ assert.notEqual(damaged,language==="Latin"?recovered.lat:recovered.en,
+   "Source negative fixture must really differ");
+ const altered=fixed([{
+   lat:language==="Latin"?damaged:recovered.lat,
+   en:language==="English"?damaged:recovered.en,
+   fr:originalFrenchDonorOrder
+ }]);
+ assert.equal(recover1962InAlbisSecretFromPinnedSource(altered,ID,normalizer),null,
+   language+" conflicting prayer suffix must not be substituted");
+}
 const conclusionOnly=fixed([{lat:recovered.lat,en:recovered.en,fr:PER_DOM.fr}]);
 assert.equal(recover1962InAlbisSecretFromPinnedSource(
  conclusionOnly,ID,normalizer),null,
