@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 500,
+    "places": 504,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 241,
+    "places_without_direct_claim": 245,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -269,7 +269,11 @@
       "place:IT:p43-sg-0075-262801874",
       "place:EC:p43-sg-0511-561028428",
       "place:ES:p44-sg-0115-1051808405",
-      "place:ES:p44-sg-0132-1241117725"
+      "place:ES:p44-sg-0132-1241117725",
+      "place:BE:p46-sg-0225-30163817",
+      "place:PL:p46-sg-0215-229930104",
+      "place:HR:p46-sg-0313-308623424",
+      "place:CH:p46-sg-0272-319525195"
     ],
     "customs_without_exact_place": [
       {
@@ -5755,6 +5759,30 @@
     {
       "place_id": "place:ES:p44-sg-0132-1241117725",
       "display_name": "Basílica del Sant Crist de Balaguer",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BE:p46-sg-0225-30163817",
+      "display_name": "Basilique Nationale du Sacré-Cœur de Koekelberg",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:p46-sg-0215-229930104",
+      "display_name": "Bazylika Niepokalanej Wszechpośredniczki Łask w Niepokalanowie",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:HR:p46-sg-0313-308623424",
+      "display_name": "Svetište Gospe od Utočišta u Aljmašu",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CH:p46-sg-0272-319525195",
+      "display_name": "Chapelle Notre-Dame des Marches",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }
