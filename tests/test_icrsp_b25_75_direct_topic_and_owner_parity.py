@@ -44,7 +44,7 @@ class IcrspB25(unittest.TestCase):
   self.assertFalse(b23&b24 or b23&b25 or b24&b25)
   self.assertEqual(len(old|b23|b24|b25),213)
   self.assertEqual(self.b25["totalDirectReadArticleCountIfNoParallelCollision"],213)
-  self.assertEqual(self.b25["otherPreviouslyScreenedNotDirectRead"],570)
+  self.assertEqual(self.b25["remainingCommentaryArticlesWithoutDirectTopicRead"],570)
   self.assertEqual(self.b25["newPriority100DirectTopicReadCount"],100)
   self.assertIn("not critically collated",self.b25["method"])
  def test_no_publication_or_authorship_or_1962_promotion(self):
