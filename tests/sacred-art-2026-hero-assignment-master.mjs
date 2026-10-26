@@ -22,7 +22,7 @@ for(const row of all){
 }
 const expected=new Map([
 ["2026-03-29","Anthony van Dyck"],
-["2026-04-02","Ugolino da Siena"],
+["2026-04-02","Philippe de Champaigne"],
 ["2026-05-23","Juan Bautista Maíno"],
 ["2026-05-24","Jean II Restout"],
 ["2026-05-27","Philippe de Champaigne"],
@@ -38,5 +38,12 @@ for(const [date,artist] of expected){
   assert.ok(rows.every(x=>x.approvedDateHero.state==="CURATOR_APPROVED_EXACT_DATE" && x.approvedDateHero.artist===artist),date+" must retain approval");
 }
 assert.equal(all.filter(x=>x.approvedDateHero.state==="CURATOR_APPROVED_EXACT_DATE" && !expected.has(x.date)).length,0);
+const holy=all.filter(x=>x.date==="2026-04-02" && x.approvedDateHero.state==="CURATOR_APPROVED_EXACT_DATE");
+assert.ok(holy.length>=1);
+assert.ok(holy.every(x=>x.approvedDateHero.title==="La Petite Cène"
+   && x.approvedDateHero.supersedes?.artist==="Ugolino da Siena"));
+assert.ok(all.some(x=>x.date==="2026-05-27"
+   && x.approvedDateHero.artist==="Philippe de Champaigne"
+   && x.approvedDateHero.title==="La Petite Cène"));
 assert.equal(p.sundays.filter(x=>x.sourceLeadCount===0).length,23);
 console.log("2026 HERO MATRIX PASS: 52 Sundays, 53 Class I, 17 optional, 102 distinct dates, 10 immutable assignments, 40 Class I with historically approved pool leads; zero photo releases or contacts.");
