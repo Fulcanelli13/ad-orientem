@@ -65,12 +65,16 @@ def main():
         m=json.loads(original["original_json"])
         assert m[1]==r["source_id"] and original["group_id"]==r["group_id"]
         assert m[14]==r["schedule_url"] and m[9]==r["mass_type"]
-        assert m[19]=="VERIFIED" and m[18]
+        # The singleton cohort includes some historically UNVERIFIED rows.
+        # Preserve their source status; require VERIFIED only when formally
+        # accepting a directly matched liturgical book witness.
+        assert m[19] in ("VERIFIED","UNVERIFIED","STALE","NOT OFFERED")
         assert db.execute("SELECT COUNT(*) FROM cl10_1962_mass_evidence WHERE row_no=?",(rid,)).fetchone()[0]==0
         assert db.execute("SELECT COUNT(*) FROM cl11_mass_source_scope WHERE row_no=?",(rid,)).fetchone()[0]==0
         witness=owner_accept.get(rid)
         issue=special.get(rid)
         if witness:
+            assert m[19]=="VERIFIED" and m[18],("Accepted source row must have historical verification",rid)
             assert (m[6],m[7])==(witness["day"],witness["time"]),("Day/time mismatch",rid,m[6:8])
             assert witness["scope"] in {
                 "PARISH_DIRECT_SLOT","PARISH_DIRECT_PROGRAMME","CATHEDRAL_DIRECT_SLOT",
