@@ -320,12 +320,12 @@ test('Palm psalm old/new 1961 source editions remain distinct, unselected and no
     assert.equal(ps.stage,'PALM-R02');
     assert.equal(ps.older.edition,'TEXTUS_ANTIQUUS');
     assert.equal(ps.newer.edition,'TEXTUS_NOVUS');
-    assert.equal(ps.newer.archived,false);
-    assert.equal(ps.newer.sha256,null);
+    assert.equal(ps.newer.archived,true);
+    assert.match(ps.newer.sha256,/^[a-f0-9]{64}$/);
   }
   assert.ok(register.acceptance.noFixedSongPlaylist);
   assert.ok(register.acceptance.noMovementInference);
-  assert.equal(register.gates.filter(x=>x.status==='OPEN').length,4);
+  assert.equal(register.gates.filter(x=>x.status==='OPEN').length,3);
   assert.equal(register.gates.filter(x=>x.status==='OPEN_BLOCKING_VISUAL_SOURCE_CONFIRMED').length,1);
   assert.equal(byPsalm.get(46).newer.status,'PRINTED_PAGE_CONFIRMS_OMNES_POPULI_GABC_WRONG_UNDERLAY_BLOCKING');
   assert.match(byPsalm.get(46).newer.exactLatin1962,/Omnes pópuli/);
@@ -374,4 +374,39 @@ test('restored Palm new Latin psalter has exact source-backed verse pairs and no
  assert.match(p.endOfDistribution,/ACTUAL_DISTRIBUTION_COMPLETION/);
  assert.equal(p.localChoirSignal,'MANUAL_OBSERVATION_NO_AUTOTIMER');
  assert.equal(registry.sourceSafety.approvedRuntimeAssignments,0);
+});
+
+test('two new-Psalter source files are hashed and Psalm 46 remains quarantined',()=>{
+ const prefix='data/research/chant-source-archive/1961-graduale-novus-20261026/';
+ const manifest=readJSON(prefix+'sha256-manifest.json');
+ const register=readJSON('data/research/processionale-roman-palm-psalter-editions-20261026.v1.json');
+ assert.equal(manifest.sourceCount,2);
+ assert.equal(manifest.records.length,2);
+ assert.equal(manifest.approvedRoman1962RuntimeScores,0);
+ assert.equal(manifest.completeMelodyCertifications,0);
+ assert.equal(register.sourceSafety.newPsalmTotalBytes,814);
+ assert.equal(register.sourceSafety.newPsalmSourceCount,2);
+ assert.equal(register.sourceSafety.scoreGabcSyntaxNotCertified,true);
+ const expected=new Map([[19315,23],[19316,46]]);
+ let total=0;
+ for(const entry of manifest.records){
+  assert.equal(expected.get(entry.gregobaseId),entry.psalm);
+  assert.match(entry.sha256,/^[a-f0-9]{64}$/);
+  const raw=readFileSync(new URL('../'+prefix+entry.file,import.meta.url));
+  assert.equal(raw.length,entry.bytes);
+  assert.equal(createHash('sha256').update(raw).digest('hex'),entry.sha256);
+  total+=raw.length;
+  const psalm=register.candidates.find(x=>x.psalm===entry.psalm);
+  assert.equal(psalm.newer.sha256,entry.sha256);
+  assert.equal(psalm.newer.archived,true);
+  assert.equal(psalm.newer.archiveStatus,'RAW_BYTES_SHA256_VERIFIED_UNAPPROVED');
+  assert.equal(psalm.newer.hasExtraGabcDelimiter,true);
+  assert.match(raw.toString('utf8'),/%%\r?\n%%/);
+ }
+ assert.equal(total,814);
+ const p46=manifest.records.find(x=>x.gregobaseId===19316);
+ assert.equal(p46.disposition,'QUARANTINED_OMNES_GENTES_VS_ORIGINAL_OMNES_POPULI');
+ const raw46=readFileSync(new URL('../'+prefix+p46.file,import.meta.url),'utf8');
+ assert.match(raw46,/O\(f\)mnes\(gh\) gen\(h\)tes/);
+ assert.equal(register.sourceSafety.approvedRuntimeAssignments,0);
 });
