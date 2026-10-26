@@ -136,10 +136,10 @@
         "report": "docs/research/CHAMPAIGNE-PETITE-CENE-PHOTO-FIDELITY-20261026.md",
         "provisional_photo_preference": "D source-only research crop, closer to strict frame-free than C; check last painted row before promotion",
         "pending": [
-          "actual painted-edge completeness and frame absence",
-          "museum-reference color fidelity",
-          "app image reuse rights in distribution jurisdictions",
-          "320/390/768/1440 actual-browser rendering with new D source"
+          "full-source painted boundary completeness at native resolution (even when frame appears removed)",
+          "authoritative museum-reference colour / lighting fidelity",
+          "jurisdiction-specific lawful redistribution of this independent Commons photograph",
+          "integration in current Ad Orientem Calendar/Home with no regression (standalone responsive browser QA has PASSED)"
         ],
         "actual_asset_changed": false,
         "final_photo_released": false,
@@ -147,6 +147,26 @@
           "sha256": "99e102df2d3644783bce3ac4cb81002337f8eb166583d84f74c630be6a8efc0f",
           "status": "REJECT_FRAME_FREE_RELEASE",
           "reason": "Native-pixel perimeter strips show small gilded frame leak at bottom."
+        },
+        "responsiveLayoutQA": {
+          "run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40357038221",
+          "test_report": "research/champaigne-inv1125-photo-review-20261026:assets/staged/champaigne-petite-cene-research/responsive-test-screenshots/test-results.json",
+          "source_sha256": "f0742b795178e1a600e43694693f880a07039587b74ba6f352ccbf389919cb30",
+          "widths_px": [
+            320,
+            390,
+            768,
+            1440
+          ],
+          "status": "PASS_STANDALONE_RESEARCH_LAYOUT_ONLY",
+          "artwork_fully_contained": true,
+          "horizontal_overflow": false,
+          "full_painting_view_works": true,
+          "actual_existing_Calendar_or_Home_integration_tested": false,
+          "frame_free_source_bounds_final_approved": false,
+          "colour_fidelity_final_approved": false,
+          "copyright_and_reproduction_distribution_cleared": false,
+          "photograph_production_release": false
         }
       }
     },
@@ -315,10 +335,10 @@
         "report": "docs/research/CHAMPAIGNE-PETITE-CENE-PHOTO-FIDELITY-20261026.md",
         "provisional_photo_preference": "D source-only research crop, closer to strict frame-free than C; check last painted row before promotion",
         "pending": [
-          "actual painted-edge completeness and frame absence",
-          "museum-reference color fidelity",
-          "app image reuse rights in distribution jurisdictions",
-          "320/390/768/1440 actual-browser rendering with new D source"
+          "full-source painted boundary completeness at native resolution (even when frame appears removed)",
+          "authoritative museum-reference colour / lighting fidelity",
+          "jurisdiction-specific lawful redistribution of this independent Commons photograph",
+          "integration in current Ad Orientem Calendar/Home with no regression (standalone responsive browser QA has PASSED)"
         ],
         "actual_asset_changed": false,
         "final_photo_released": false,
@@ -326,6 +346,26 @@
           "sha256": "99e102df2d3644783bce3ac4cb81002337f8eb166583d84f74c630be6a8efc0f",
           "status": "REJECT_FRAME_FREE_RELEASE",
           "reason": "Native-pixel perimeter strips show small gilded frame leak at bottom."
+        },
+        "responsiveLayoutQA": {
+          "run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40357038221",
+          "test_report": "research/champaigne-inv1125-photo-review-20261026:assets/staged/champaigne-petite-cene-research/responsive-test-screenshots/test-results.json",
+          "source_sha256": "f0742b795178e1a600e43694693f880a07039587b74ba6f352ccbf389919cb30",
+          "widths_px": [
+            320,
+            390,
+            768,
+            1440
+          ],
+          "status": "PASS_STANDALONE_RESEARCH_LAYOUT_ONLY",
+          "artwork_fully_contained": true,
+          "horizontal_overflow": false,
+          "full_painting_view_works": true,
+          "actual_existing_Calendar_or_Home_integration_tested": false,
+          "frame_free_source_bounds_final_approved": false,
+          "colour_fidelity_final_approved": false,
+          "copyright_and_reproduction_distribution_cleared": false,
+          "photograph_production_release": false
         }
       }
     },
