@@ -28,6 +28,9 @@ on:
       - 'tests/test_icrsp_b13_patristic_handoff.py'
       - 'data/source-text/icrsp-france-b14-gueranger-aphrahat-source-claims.v1.json'
       - 'tests/test_icrsp_b14_source_claims.py'
+      - 'data/source-text/icrsp-france-b14-continued-work-authorship-and-original-loci.v1.json'
+      - 'data/source-text/icrsp-france-commentary-783-verified-summary.v1.json'
+      - 'tests/test_icrsp_b14_fromage_personal_authorship.py'
   workflow_dispatch:
 
 permissions:
@@ -54,3 +57,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b12_liturgical_claim_boundaries.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b13_patristic_handoff.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b14_source_claims.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b14_fromage_personal_authorship.py' -v
