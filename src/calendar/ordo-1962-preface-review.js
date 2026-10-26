@@ -96,12 +96,17 @@ export function classify1962PrefaceHeading(heading){
 }
 export function review1962PrefaceForCalendarDay(resolution){
   const date=text(resolution?.date),main=resolution?.day?.main;
-  if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||resolution?.status!=="ready"||
+  const parsed=/^\d{4}-\d{2}-\d{2}$/.test(date)?new Date(date+"T12:00:00.000Z"):null;
+  if(!parsed||Number.isNaN(parsed.getTime())||parsed.toISOString().slice(0,10)!==date||
+     resolution?.status!=="ready"||
      !main||resolution?.proper?.status!=="ready"||!resolution?.proper?.data)
     return fail("WITHHELD","DAY_OR_PROPER_NOT_READY");
   const id=text(main.id),p=resolution.proper.data;
   if(!sourceId(id)||!text(p.sourcePath))
     return fail("WITHHELD","PRINCIPAL_SOURCE_ID_OR_PROPER_PATH_MISSING");
+  const encodedClass=id.match(/:([1-4]):[a-z]{1,2}$/i);
+  if(!encodedClass||Number(encodedClass[1])!==Number(main.rank))
+    return fail("WITHHELD","PRINCIPAL_SOURCE_CLASS_MISMATCH",{principalId:id,date});
   if(/^tempora:Quad6-5r:/i.test(id))
     return fail("NOT_MASS","GOOD_FRIDAY_NON_MASS",{principalId:id,date});
   if(/(?:requiem|votive|mass_of_dead)/i.test(text(p.riteProfile??p.profile)))
@@ -109,7 +114,9 @@ export function review1962PrefaceForCalendarDay(resolution){
   const rank=Number(main.rank),colour=text(resolution?.colourPlan?.massColor??p.color??main.color).toLowerCase();
   const expectation=expectedFor(id,date,rank,colour);
   const heading=latinHeading(p.preface),actual=classify1962PrefaceHeading(heading);
-  const complete=Boolean(text(p.preface?.lat??p.preface?.la)&&text(p.preface?.en)&&text(p.preface?.fr));
+  const validPassage=value=>Boolean(text(value)&&!/^[$@]/.test(text(value)));
+  const complete=validPassage(p.preface?.lat??p.preface?.la)&&
+    validPassage(p.preface?.en)&&validPassage(p.preface?.fr);
   const common={date,principalId:id,sourcePath:p.sourcePath,actual,heading,
     trilingualTextComplete:complete,expected:expectation?.category??null,
     clause:expectation?.clause??null,basis:expectation?.basis??null};
