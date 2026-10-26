@@ -144,6 +144,13 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   "#ao-mass-flow-v1 [data-folio-host-actions] .aoFlowActions button:not([data-ao-start-live]){flex:1;min-height:44px!important;padding:8px!important;font:500 15px/1.3 var(--ao-font-ui,'EB Garamond',Georgia,serif)!important}",
   "@media(max-width:720px){#ao-mass-flow-v1 .aoGuidedMassFolio{grid-template-columns:minmax(0,1fr)}#ao-mass-flow-v1 .aoMassFolioIdentity{position:static;border-radius:10px 10px 0 0;border-right:0;border-bottom:1px solid rgba(173,168,143,.25);min-height:0;padding:19px 16px}#ao-mass-flow-v1 .aoMassFolioIdentity h2{font-size:clamp(27px,7vw,36px)}#ao-mass-flow-v1 .aoMassFolioSelections{margin:7px 0 0}#ao-mass-flow-v1 .aoMassFolioGuide{padding:17px 15px 12px}#ao-mass-flow-v1 .aoFullMassCategories{grid-template-columns:repeat(2,minmax(0,1fr))}}",
   "@media(max-width:365px){#ao-mass-flow-v1 .aoFullMassForms{grid-template-columns:1fr}#ao-mass-flow-v1 .aoMassFolioStepNav{gap:2px}#ao-mass-flow-v1 .aoMassFolioStepNav button{font-size:12px!important}}",
+  "#ao-mass-flow-v1 .aoMassChantProgramme[hidden]{display:none!important}",
+  "#ao-mass-flow-v1 .aoMassChantProgramme{margin:14px 0 8px;padding:12px 13px 11px;border:1px solid rgba(190,172,130,.22);border-radius:9px;background:rgba(197,175,122,.045)}",
+  "#ao-mass-flow-v1 .aoMassChantProgramme summary{cursor:pointer;min-height:36px;padding:7px 0;color:#d6c49f;font:600 13px/1.4 var(--ao-font-ui,system-ui,sans-serif)}",
+  "#ao-mass-flow-v1 .aoMassChantProgramme p{margin:5px 0 11px;color:#acb5b5;font:400 12px/1.55 var(--ao-font-ui,system-ui,sans-serif)}",
+  "#ao-mass-flow-v1 .aoMassChantProgramme label{display:block;margin:0 0 6px;font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#e0d7c2}",
+  "#ao-mass-flow-v1 .aoMassChantProgramme select{max-width:100%;width:100%;min-height:43px;padding:8px 11px;border-radius:7px;border:1px solid rgba(213,189,148,.34);background:#1a232a;color:#eee9de;font:500 14px/1.4 var(--ao-font-ui,system-ui,sans-serif)}",
+  "#ao-mass-flow-v1 .aoMassChantProgramme select:focus-visible{outline:2px solid #c8a980;outline-offset:2px}",
   ].join("\n");
   document.head.appendChild(el);
 }
