@@ -1,0 +1,54 @@
+name: Directory CL5 physical intake
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'tools/directory/validate-cl3-reconciliation.py'
+      - 'tools/directory/validate-cl4-owner-screening.py'
+      - 'tools/directory/validate-cl5-provisional-intake.py'
+      - 'tools/directory/rebuild-cl2-research-snapshot.py'
+      - 'tools/directory/rebuild-cl5-research-index.py'
+      - '.github/workflows/directory-cl5-provisional-intake.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'tools/directory/validate-cl3-reconciliation.py'
+      - 'tools/directory/validate-cl4-owner-screening.py'
+      - 'tools/directory/validate-cl5-provisional-intake.py'
+      - 'tools/directory/rebuild-cl2-research-snapshot.py'
+      - 'tools/directory/rebuild-cl5-research-index.py'
+      - '.github/workflows/directory-cl5-provisional-intake.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frozen CL2 / CL3 / CL4 inputs
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+      - name: Verify CL5 provenance, counts and public release holds
+        run: python3 tools/directory/validate-cl5-provisional-intake.py
+      - name: Rebuild reproducible CL5 SQLite from committed CL2 and CL5 evidence
+        run: python3 tools/directory/rebuild-cl5-research-index.py --output /tmp/ad-orientem-cl5.sqlite
+      - name: Query CL5 tables and assert historical CL2 population unchanged
+        run: |
+          python3 - <<'PY'
+          import sqlite3
+          conn=sqlite3.connect('/tmp/ad-orientem-cl5.sqlite')
+          counts={t:conn.execute(f'SELECT COUNT(*) FROM {t}').fetchone()[0] for t in (
+              'canonical_site','cl5_provisional_physical_intake','cl5_institutional_evidence',
+              'cl5_address_backfills','cl5_identity_queue')}
+          assert list(counts.values())==[2584,17,4,5,40],counts
+          assert conn.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          print('CL5 queryable master PASS:',counts)
+          PY
