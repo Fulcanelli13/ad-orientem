@@ -77,7 +77,7 @@ for(const path of ["src/mass/reader-chant-score-pilot.js","src/mass/reader-prope
 // Exercise MySQL escape handling and source mapping without network or a 17 MB fixture.
 assert.equal(mysqlField("'d\\\\n'"),"d\\n");
 assert.equal(mysqlField("NULL"),null);
-const gabcJson=JSON.stringify([["gabc","(c4) A(g)men(d) (::)",{}]]);
+const gabcJson=JSON.stringify([["gabc","(c4) A(g)men(d) sem(f)per(g) sa(h)e(i)cu(g)la(f) (::)",{}]]);
 const escapeSql=value=>"'"+value.replace(/\\/g,"\\\\").replace(/'/g,"\\'")+"'";
 const sql=[
 "INSERT INTO "+String.fromCharCode(96)+"gregobase_chant_sources"+String.fromCharCode(96)+" (a,b,c,d,e) VALUES",
@@ -88,7 +88,7 @@ const sql=[
 ].join("\n");
 const synthetic=screenGraduale1961Sql(sql);
 assert.equal(synthetic.accepted.length,1);
-assert.equal(synthetic.accepted[0].gabc,"(c4) A(g)men(d) (::)");
+assert.equal(synthetic.accepted[0].gabc,"(c4) A(g)men(d) sem(f)per(g) sa(h)e(i)cu(g)la(f) (::)");
 assert.equal(synthetic.accepted[0].gradualeRomanum1961Page,"33");
 assert.equal(synthetic.exceptions.length,0);
 const rendered=renderGraduale1961Archive(synthetic);
