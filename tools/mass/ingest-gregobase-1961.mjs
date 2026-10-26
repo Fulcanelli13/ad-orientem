@@ -82,7 +82,7 @@ export function ingest1961(sql){
   groups.get(id).push({page:val(link.page),sequence:Number(link.sequence),extent:Number(link.extent)});
  }
  const records=[...groups].map(([id,pages])=>{
-  const r=chants.get(id),part=val(r.office_part).toLowerCase(),type=PART[part]??null;
+  const r=chants.get(id),part=val(r.office_part??r["office-part"]).toLowerCase(),type=PART[part]??null;
   const copyright=Number(r.copyrighted)===1,duplicateOf=Number(r.duplicateof)||null;
   const hasGabcPayload=Boolean(val(r.gabc));
   pages.sort((a,b)=>a.page.localeCompare(b.page,undefined,{numeric:true})||a.sequence-b.sequence);
