@@ -730,6 +730,17 @@ test('restored Palm psalm opening GABC print evidence stays distinct from verse 
   assert.equal(audit.psalm46.entireFollowingGabcBodyByteIdentical,true);
   assert.deepEqual(audit.psalm23.printedFlexAfterChantLines,[7,8,9]);
   assert.equal(audit.psalm46.humanMusicianAndPrintedNeumeApproval,false);
+  assert.equal(audit.musicalExpansionHandoff.lineCount,16);
+  assert.equal(audit.musicalExpansionHandoff.remainingManualAdaptationLines,14);
+  assert.equal(audit.musicalExpansionHandoff.readOnlyNoRuntimeAssignment,true);
+  const pending=audit.musicalExpansionHandoff.lineReview.filter(x=>x.requiresManualPsalmToneAdaptation);
+  const completeFirst=audit.musicalExpansionHandoff.lineReview.filter(x=>x.firstVerseFullStaffPrinted);
+  assert.deepEqual(completeFirst.map(x=>[x.psalm,x.printedChantLine]),[[23,1],[46,1]]);
+  assert.equal(pending.length,14);
+  assert.deepEqual(pending.filter(x=>x.printedFlexa).map(x=>x.printedChantLine),[7,8,9]);
+  assert.deepEqual(pending.filter(x=>x.psalm===46).slice(-2).map(x=>x.biblicalVerse),[9,9]);
+  assert.ok(pending.every(x=>!x.accentCadenceUnderlaySignedOff));
+  assert.ok(audit.musicalExpansionHandoff.lineReview.every(x=>x.printedMediantAsterisk));
   assert.equal(audit.sharedConstraints.fullPrintedPsalmTextVerses,16);
   assert.equal(audit.sharedConstraints.completeVersesIndividuallyFullyNotated,2);
   assert.equal(audit.sharedConstraints.otherVersesNeedIndependentPsalmTonePointing,14);
