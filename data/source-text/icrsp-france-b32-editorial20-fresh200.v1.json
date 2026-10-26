@@ -4,12 +4,15 @@
   "ownerPR": 1666,
   "sourceScan": "data/source-text/icrsp-france-b29-200-automated-commentary-signals.v1.json",
   "previousLedger": "data/source-text/icrsp-france-b31-eleven-stream-444-unique-topic-ledger.v1.json",
-  "readingScope": "Directly opened 20 exact source webpages and inspected at least one selected presentation/commentary excerpt each; not all author blocks, original print editions or rightscleared output.",
+  "readingScope": "20 exact source pages opened and selected excerpts inspected; 5 already had direct-source coverage in a parallel B32 pass, so 15 articles are newly distinct. Some overlaps add a different commentary-panel angle; neither all-author coverage nor full printed originals certified.",
   "counts": {
-    "previouslyIndividuallyReviewed": 444,
-    "newDistinctFromPreviouslyScanned200": 20,
+    "previouslyIndividuallyReviewedIncludingParallelB32Five": 449,
+    "pagesExaminedThisTranche": 20,
+    "overlapWithParallelB32Five": 5,
+    "newlyDistinctBeyondParallelB32Five": 15,
     "nowIndividuallyReviewed": 464,
     "individualReviewStillNeeded": 319,
+    "fresh200DirectReviewedAcrossB32": 20,
     "fresh200StillToRead": 180,
     "otherNonReviewed139": 139,
     "productionChanges": 0
@@ -34,7 +37,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0093_ancien",
@@ -50,7 +54,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": true
     },
     {
       "articleId": "a0031_nouveau",
@@ -66,7 +71,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": true
     },
     {
       "articleId": "a0180_ancien",
@@ -82,7 +88,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": true
     },
     {
       "articleId": "a0116_ancien",
@@ -98,7 +105,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": true
     },
     {
       "articleId": "a0088_ancien",
@@ -114,7 +122,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0403_ancien",
@@ -130,7 +139,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0352_ancien",
@@ -146,7 +156,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": true
     },
     {
       "articleId": "a0630_ancien",
@@ -162,7 +173,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0422_ancien",
@@ -178,7 +190,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0407_ancien",
@@ -194,7 +207,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0078_nouveau",
@@ -210,7 +224,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0110_ancien",
@@ -226,7 +241,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0127_nouveau",
@@ -242,7 +258,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0192_nouveau",
@@ -258,7 +275,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0521_ancien",
@@ -274,7 +292,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0839_ancien",
@@ -290,7 +309,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0199_ancien",
@@ -306,7 +326,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0420_ancien",
@@ -322,7 +343,8 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     },
     {
       "articleId": "a0438_ancien",
@@ -338,9 +360,37 @@
       "rightsCleared": false,
       "mass1962RubricCertified": false,
       "publicationApproved": false,
-      "hostedProseReproduced": false
+      "hostedProseReproduced": false,
+      "wasAlreadyReviewedInParallelB32Five": false
     }
   ],
   "publicationApproved": false,
-  "sourceProseCopied": false
+  "sourceProseCopied": false,
+  "parallelReviewedLedger": "data/source-text/icrsp-france-b32-449-unique-direct-topic-ledger.v1.json",
+  "crossWorkstreamDedup": {
+    "parallelNewFiveArticleIds": [
+      "a0093_ancien",
+      "a0031_nouveau",
+      "a0180_ancien",
+      "a0116_ancien",
+      "a0352_ancien"
+    ],
+    "onlyNewFifteenArticleIds": [
+      "a0389_ancien",
+      "a0088_ancien",
+      "a0403_ancien",
+      "a0630_ancien",
+      "a0422_ancien",
+      "a0407_ancien",
+      "a0078_nouveau",
+      "a0110_ancien",
+      "a0127_nouveau",
+      "a0192_nouveau",
+      "a0521_ancien",
+      "a0839_ancien",
+      "a0199_ancien",
+      "a0420_ancien",
+      "a0438_ancien"
+    ]
+  }
 }
