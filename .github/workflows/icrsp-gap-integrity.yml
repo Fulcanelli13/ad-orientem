@@ -122,6 +122,13 @@ on:
       - 'data/source-text/icrsp-france-b34-thirty-six-direct-commentary-observations.v1.json'
       - 'data/source-text/icrsp-france-b34-522-unique-direct-topic-ledger.v1.json'
       - 'tests/test_icrsp_b34_522_direct_topics.py'
+      - 'data/source-text/icrsp-france-b34-nineteen-direct-source-article-excerpts.v1.json'
+      - 'data/source-text/icrsp-france-b34-505-unique-topical-ledger.v1.json'
+      - 'tests/test_icrsp_b34_505_direct_and_source_error.py'
+      - 'data/source-text/icrsp-france-b34-541-two-workstream-direct-topic-ledger.v1.json'
+      - 'data/source-text/icrsp-france-b34-remaining278-priority120-owner-triage.v1.json'
+      - 'data/source-text/icrsp-france-b34-242-remaining120-priority-owner-queue.v1.json'
+      - 'tests/test_icrsp_b34_541_union_and_242_priority.py'
   workflow_dispatch:
 
 permissions:
@@ -183,3 +190,5 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b32_editorial20_fresh200.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b33_486_source_review.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b34_522_direct_topics.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b34_505_direct_and_source_error.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b34_541_union_and_242_priority.py' -v
