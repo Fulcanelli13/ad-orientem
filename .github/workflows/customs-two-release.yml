@@ -51,7 +51,7 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
-      - name: Existing Calendar Day: Epiphany and Candlemas candidate folios at 320/390
+      - name: "Existing Calendar Day: Epiphany and Candlemas candidate folios at 320/390"
         run: |
           node --check tests/customs-two-calendar-phone.mjs
           node tests/customs-two-calendar-phone.mjs
