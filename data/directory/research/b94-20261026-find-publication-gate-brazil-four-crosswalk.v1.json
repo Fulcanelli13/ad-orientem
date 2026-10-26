@@ -1,0 +1,104 @@
+{
+  "schema": "AO_TLM_B94_FIND_PUBLICATION_GATE_AND_FOUR_BRAZIL_CROSSWALK_20261026_V1",
+  "checked_on": "2026-10-26",
+  "scope": "NO_NEW_SITES_NO_MASS_TIMES_NO_PUBLIC_PINS",
+  "baseline": {
+    "b91_provisional_distinct_sites": 2576,
+    "b91_historical_group_ids": 2581,
+    "b91_venue_source_records": 2684,
+    "b91_inherited_timetable_rows": 4681,
+    "b91_previous_verified_rows": 3347,
+    "operational_workbook_not_committed_to_repo": true
+  },
+  "app_integration": {
+    "actual_runtime_loader": "src/find/data-service.js",
+    "publish_filter": "publishableDirectoryRecords",
+    "filter_defect": "Valid venue could pass auditVenue despite explicit RESEARCH_ONLY_NOT_PUBLIC state; fixed by universal explicit hold guard before provider-specific logic.",
+    "existing_provider_source": "AASJMV-EXT-001 in data/directory/generated/v19/aasjmv.v1.json",
+    "scanned_v19_provider_json_files": 26,
+    "scanned_provider_source_records": 1019,
+    "scan_scope": "26 JSON files with records; excluded icksp-federated-geocode-report.v1.json auxiliary non-provider report",
+    "scanned_first_party_provider_venues": "IBP 34 total / 7 Brazilian; ICKSP 27 total / 0 Brazilian. FSSP file was oversized for connector JSON scan; not certified reviewed.",
+    "map_snapshot_crosscheck": "R49 research snapshot contains 1,879 older map entries; search of serialized venue text had no exact locality/name strings for four targets; not a full geospatial proximity check",
+    "site_name_or_city_hits": 1,
+    "hit": {
+      "venue_source_id": "CMRI-INT-043",
+      "name": "Capela Nossa Senhora de Lourdes",
+      "city": "Volta Redonda, Rio de Janeiro",
+      "source_address": "RJ-153 Km 7, Bairro Santa Rita do Zarur",
+      "decision": "DISTINCT_FROM_AASJMV_CAPELANIA_RUA_DR_MIGUEL_COUTO_78"
+    }
+  },
+  "candidates": [
+    {
+      "group": "RG-B88-F691777F8D8D",
+      "source": "AO-B88-BR-001",
+      "venue": "Igreja São José Operário",
+      "locality": "Barra Mansa, RJ",
+      "address": "Via Sérgio Braga, Comunidade Terra Nova, Barbará",
+      "v19_source_id_collision": false,
+      "v19_named_locality_collision": false,
+      "publication": "HOLD_EXACT_GEOMETRY_AND_CURRENT_1962_SCHEDULE",
+      "sources": [
+        "https://folhadoaco.com.br/2026/07/10/dom-luiz-henrique-reafirma-unidade-da-igreja-e-orienta-fieis-sobre-celebracao-da-missa-na-forma-antiga-na-diocese/"
+      ]
+    },
+    {
+      "group": "RG-B88-E491FACD85B9",
+      "source": "AO-B88-BR-002",
+      "venue": "Capelania Pessoal Nossa Senhora do Perpétuo Socorro",
+      "locality": "Volta Redonda, RJ",
+      "address": "Rua Doutor Miguel Couto 78, Jardim Amália I",
+      "v19_source_id_collision": false,
+      "v19_named_locality_collision": false,
+      "other_city_record": "CMRI-INT-043 is distinct chapel on RJ-153 Km 7",
+      "publication": "HOLD_EXACT_GEOMETRY_AND_CURRENT_1962_SCHEDULE",
+      "sources": [
+        "https://www.diocesevr.com.br/paroquia/47/capelania-pessoal-nossa-senhora-do-perpetuo-socorro"
+      ]
+    },
+    {
+      "group": "RG-B88-D6480F7F32B7",
+      "source": "AO-B88-BR-003",
+      "venue": "Capela São Sebastião — Bulhões",
+      "locality": "Bulhões, Resende, RJ",
+      "address": "Estrada de Bulhões; street number not independently sourced",
+      "v19_source_id_collision": false,
+      "v19_named_locality_collision": false,
+      "publication": "HOLD_MISSING_PRECISE_SITE_GEOMETRY_AND_CURRENT_MASS_SCHEDULE",
+      "sources": [
+        "https://folhadoaco.com.br/2026/07/10/dom-luiz-henrique-reafirma-unidade-da-igreja-e-orienta-fieis-sobre-celebracao-da-missa-na-forma-antiga-na-diocese/"
+      ]
+    },
+    {
+      "group": "RG-B88-60104C25870A",
+      "source": "AO-B88-BR-004",
+      "venue": "Santuário do Bom Jesus",
+      "locality": "Montes Claros, MG",
+      "address": "Praça do Bom Jesus 116, Centro",
+      "v19_source_id_collision": false,
+      "v19_named_locality_collision": false,
+      "publication": "HOLD_EXACT_GEOMETRY_AND_INDEPENDENT_TIMETABLE_CERTIFICATION",
+      "sources": [
+        "https://ssvm.org.br/missa-tridentina/",
+        "https://ssvm.org.br/artigo3/quinta-visita-ibp-montes-claros/"
+      ]
+    }
+  ],
+  "release_gates": {
+    "automatic_research_admissions": 0,
+    "automatic_public_pins": 0,
+    "automatic_mass_times": 0,
+    "existing_venue_ids_rewritten": 0,
+    "b82_b91_workbook_cells_changed": 0,
+    "required_for_release": [
+      "VERIFY_OWNER_SITE_ADDRESS_AND_PHYSICAL_BUILDING_NOT_JUST_CITY",
+      "SOURCE_BACKED_BUILDING_PRECISE_COORDS_AND_GEOCODING_ATTRIBUTION",
+      "OWNER_OR_PARISH_CONFIRM_1962_MISSAL_MASS_CURRENT_DATED_EVIDENCE",
+      "SCHEDULE_CERTIFICATION_SEPARATE_FROM_VENUE",
+      "APP_WIDE_PHYSICAL_SOURCE_ID_CROSSWALK_BEFORE_PUBLICATION",
+      "MANUAL_REVIEW_AND_SEPARATE_APPROVED_PRODUCTION_DATA_PR"
+    ]
+  },
+  "limitations": "Source-ID scans do not prove no cross-provider duplicates under other names, and no current Mass times are certified. No FSSP mass-venue file exhaustive scan due to response truncation. Built-in research publication filter protects explicit holds only, not a blanket new venue release approval model."
+}
