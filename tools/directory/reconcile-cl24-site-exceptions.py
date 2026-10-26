@@ -81,12 +81,12 @@ def main():
         assert r["source_url"].startswith("https://")
     op = data["high_priority_operational_exception"]
     assert op["source_place_id"] == "CL14-DE-FSSP-007"
-    assert op["status"] == "TEMPORARILY_CLOSED_PER_LOCAL_FSSP"
-    assert op["historical_source_times_retained"] is True
-    assert op["all_future_dates_at_original_church_held"] is True
-    assert op["alternate_site_future_dates_held"] is True
-    assert op["replacement_disposition"] == "PROVISIONAL_SEPARATE_SITE_LEAD_NO_AUTO_CANONICAL_LINK"
-    assert op["operator_source_url"].startswith("https://")
+    assert op["status"] == "CLOSURE_OR_VENUE_TRANSFER_UNVERIFIED_SOURCE_CONFLICT"
+    assert op["historically_recorded_mass_patterns_retained"] is True
+    assert op["no_published_future_dates"] is True
+    assert op["future_venue_requires_positive_operator_dated_confirmation"] is True
+    assert op["office_closure_is_not_church_closure"] is True
+    assert op["primary_operator_timetable_url"].startswith("https://")
     with db:
         db.executescript("""
             CREATE TABLE cl24_research_building_reference (
@@ -176,8 +176,8 @@ def main():
         "research_supported_named_geospatial_references":total_with_georef,
         "existing_spatial_conflicts_held":1,
         "all_with_any_spatial_candidate_including_conflict":32,
-        "one_confirmed_operator_temporary_closure_risk":1,
-        "provisional_alternate_worship_place_leads_without_admission":1,
+        "one_operational_closure_conflict_for_manual_review":1,
+        "provisional_alternate_worship_place_leads_without_admission":0,
         "pilot_historical_mass_row_patterns_unchanged":74,
         "source_1962_book_evidence_supported_unchanged":256,
         "source_1962_book_evidence_held_unchanged":176,
