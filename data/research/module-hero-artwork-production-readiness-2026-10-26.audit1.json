@@ -1,6 +1,6 @@
 {
   "name": "Ad Orientem module heroes — acquisition and publication gates",
-  "version": "2026-10-26.audit4.13-hero-sources-reviewed-preliminarily",
+  "version": "2026-10-26.audit5.13-heroes-15-source-images",
   "editorial_ledger_ref": "data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json",
   "editorial_ledger_sha_at_audit": "afb09129f52e336df64c7f1782446e7cfb6861dc",
   "generated_from_latest_user_confirmed_22_selections": true,
@@ -27,7 +27,7 @@
     "previews_visually_screened_not_master": 11,
     "distinct_approved_heroes_with_archived_source_files": 13,
     "technical_quality_preflight_completed": 12,
-    "original_photo_files_archived": 14
+    "original_photo_files_archived": 15
   },
   "entries": [
     {
@@ -1481,8 +1481,8 @@
         ]
       },
       "physical_master_acquired": true,
-      "sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
-      "local_master_path": "assets/staged/module-hero-comparisons/rosary-lotto-01.jpg",
+      "sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+      "local_master_path": "assets/staged/module-hero-comparisons/rosary-lotto-yorck.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -1521,7 +1521,8 @@
         "quality_verification_notes": [
           "Side-by-side original-derived previews examined: Sailko 01 contains whole altarpiece with fifteen roundels; warm/yellow cast and small mystery scene detail need comparison with institutional reference before release.",
           "Sailko 11 is cropped to central Virgin and Child; REJECT for full-image use, despite 2304×3456 pixels. Keep as MAYBE alternative detail-only photographic source (not a rejection of selected painting).",
-          "Photographer Sailko CC BY 3.0 on both; final app must credit source, licence and edits."
+          "Photographer Sailko CC BY 3.0 on both; final app must credit source, licence and edits.",
+          "Third Yorck Project full-composition photograph acquired (1,880×2,886, 3,259,819B) and compared side-by-side at native samples. Preferred as photographic source on current evidence: complete lunette and 15 mysteries, less intense yellow cast, clearer small medallion iconography. No ICC profile; final museum-calibrated colour and edge-microdetail verification outstanding."
         ],
         "alternative_reference_candidates": [
           {
@@ -1563,20 +1564,43 @@
             "fit_for_full_altarpiece_hero": false,
             "exclusion": "Higher-pixel source is a close-up only; omits most of fifteen mystery medallions; detail image allowed for other layout purposes, not final whole hero",
             "quality_status": "not_production_approved"
+          },
+          {
+            "path": "assets/staged/module-hero-comparisons/rosary-lotto-01.jpg",
+            "sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+            "dimensions": [
+              1772,
+              2652
+            ],
+            "fit_for_full_altarpiece_hero": true,
+            "exclusion": null,
+            "quality_status": "full composition but noticeably warm, provisional alternative"
           }
-        ]
+        ],
+        "provisional_source_preference": {
+          "source": "Yorck Project complete altarpiece",
+          "path": "assets/staged/module-hero-comparisons/rosary-lotto-yorck.jpg",
+          "sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+          "dimensions": [
+            1880,
+            2886
+          ],
+          "reason": "Complete shaped composition, all 15 medallions; compared previews have less orange cast and better iconographic clarity than Sailko 01; independent PD-Art image. No embedded ICC means verify museum colour before approval.",
+          "production_approved": false
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
         "git_branch": "research/lotto-rosary-photo-comparison-20261026",
-        "file_path": "assets/staged/module-hero-comparisons/rosary-lotto-01.jpg",
-        "sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
-        "byte_length": 3355634,
+        "file_path": "assets/staged/module-hero-comparisons/rosary-lotto-yorck.jpg",
+        "sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+        "byte_length": 3259819,
         "verified_pixel_dimensions": [
-          1772,
-          2652
+          1880,
+          2886
         ],
-        "file_is_not_promoted_to_production": true
+        "file_is_not_promoted_to_production": true,
+        "photographic_preference_status": "preliminary_quality_preference_only"
       }
     },
     {
@@ -1734,6 +1758,12 @@
       "action": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40340796108",
       "report": "data/research/lotto-rosary-photo-comparison-20261026.json",
       "source_images_acquired": 2
+    },
+    {
+      "branch": "research/lotto-rosary-photo-comparison-20261026",
+      "action": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40343227960",
+      "report": "data/research/lotto-rosary-yorck-third-witness-20261026.json",
+      "source_images_acquired": 1
     }
   ],
   "verified_acquisition_quality_findings": [
@@ -1774,8 +1804,10 @@
     "full_source_sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
     "cropped_closeup_photo": "rosary-lotto-11.jpg",
     "cropped_source_sha256": "352ec3f397d6f5de89dd824cd0542b157ccea617d2521a83102d84b6adff106d",
-    "result": "The 2304x3456 close-up is NOT an eligible full-composition hero; 1772x2652 full photo remains provisional, subject to colour fidelity and clearer independent reproduction search.",
+    "result": "Yorck PD-Art is preliminarily preferable to Sailko 01 for faithful full altarpiece display; Sailko 11 is only a cropped central detail. Museum colour reference still needed; no final reproduction approved.",
     "licence": "CC BY 3.0 Sailko; credit, licence URL, modification disclosure needed",
-    "final_visual_quality_release": false
+    "final_visual_quality_release": false,
+    "preferred_full_painting_photo": "rosary-lotto-yorck.jpg",
+    "preferred_full_painting_sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca"
   }
 }
