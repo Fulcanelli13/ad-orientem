@@ -1,6 +1,7 @@
 import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { decorateLiturgicalSpeaker } from "../app/liturgical-speakers.js";
 import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
+import { installNativeScholaScorePilot } from "./reader-chant-score-pilot.js";
 import { missalSourceRubricCopy } from "./reader-missal-book-rubrics.js";
 import { conciseMissalSourceRubric, conciseMissalInlineSequence } from "./reader-rubric-presentation.js";
 import { R17_ICON_KEYS } from "./reader-icons.js";
@@ -2349,6 +2350,7 @@ export function createReaderDomAdapter({
   let sectionItems=Array.isArray(sections)?[...sections]:[];
   let selectedFaithfulRowId=null;
   let scholaCollapsed=false;
+  let chantScorePilot=null;
   let scholaManuallyResized=false;
   let scholaHeight=(root.ownerDocument?.defaultView?.matchMedia?.("(max-width:760px)")?.matches ? 166 : 150);
   let scholaExpandedHeight=scholaHeight;
@@ -2684,6 +2686,7 @@ export function createReaderDomAdapter({
     if(!dock)return;
     syncScholaControls();
     const schola=current?.scholaVisible ? current.schola : null;
+    chantScorePilot?.update(schola);
     const identity=schola ? [schola.trackId,schola.segmentId,schola.cueId].filter(Boolean).join("|") : null;
     const changed=identity!==scholaIdentity;
     if(changed){
@@ -3150,9 +3153,11 @@ export function createReaderDomAdapter({
     if(!nextPrepared?.session?.resolvedMass) throw new TypeError("Prepared Mass session required");
     // The root survives innerHTML replacement; old delegated handlers do too unless removed.
     unbind();
+    chantScorePilot?.destroy();chantScorePilot=null;
     prepared=nextPrepared;
     mode=normalizePresentationMode(prepared.readerPreferences?.mode ?? prepared.session.resolvedMass.presentationMode);
     root.innerHTML=buildReaderShellMarkup(prepared);
+    chantScorePilot=installNativeScholaScorePilot(root);
     const shell=root.querySelector("[data-ao-reader-shell]");
     if(shell)shell.dataset.modeSwitchLocked=String(!allowPresentationModeSwitch);
     if(!allowPresentationModeSwitch){
@@ -4027,6 +4032,7 @@ export function createReaderDomAdapter({
 
   function destroy(){
     unbind();
+    chantScorePilot?.destroy();chantScorePilot=null;
     if(bellHoldTimer)clearTimeout(bellHoldTimer);
     cancelScholaTicker({clearIdentity:true});
     bellHoldTimer=0;heldBell=null;bellHoldUntil=0;
