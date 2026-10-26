@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {ingest1961,makeShards,parseSqlInserts,SCHEMA} from "../tools/mass/ingest-gregobase-1961.mjs";
 
-const chant=(id,incipit,office="in",version="Solesmes",gabc="(c4) Puer(f)"){
+const chant=(id,incipit,office="in",version="Solesmes",gabc="(c4) Puer(f)")=>{
  const values=[id,"NULL","'"+version+"'","'"+incipit+"'","1","'"+office+"'","'7'","NULL","'Andrew Hinkley'","NULL",
   "'"+gabc+"'","NULL","NULL","NULL","0","NULL"];
  return "("+values.join(",")+")";
