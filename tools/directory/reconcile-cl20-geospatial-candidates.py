@@ -174,7 +174,7 @@ def main():
         assert conn.execute("SELECT COUNT(*) FROM cl20_building_spatial_candidate WHERE building_reference_supported=0").fetchone()[0]==1
         assert conn.execute("SELECT COUNT(*) FROM cl20_rejected_object_hypothesis").fetchone()[0]==1
         assert conn.execute("SELECT COUNT(*) FROM cl20_building_spatial_candidate WHERE visitor_entrance_geocode_approved=1 OR public_geocoordinate_approved=1 OR published_map_pin=1").fetchone()[0]==0
-        assert conn.execute("SELECT COUNT(*) FROM cl17_owner_site_stage WHERE geocoded_approved=1 OR public_approved=1").fetchone()[0]==0
+        assert conn.execute("SELECT COUNT(*) FROM cl17_owner_site_stage WHERE physical_approved=1 OR public_approved=1").fetchone()[0]==0
         assert conn.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
         assert conn.execute("PRAGMA integrity_check").fetchone()[0]=="ok"
         assert not conn.execute("PRAGMA foreign_key_check").fetchall()
