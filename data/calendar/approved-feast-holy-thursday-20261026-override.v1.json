@@ -30,7 +30,38 @@
       "higherPixelsNotBetter": "2816x2112 Tangopaso photograph includes gilded frame/museum wall and omits some painting; excluded from whole hero",
       "alternateUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg",
       "museumPhotoReuse": "Official RMN photograph usage subject to authorization; €0 only",
-      "fullResolutionQualityRelease": false
+      "fullResolutionQualityRelease": false,
+      "photographedSourceInvestigation": "research/champaigne-inv1125-photo-review-20261026",
+      "originalComparedSources": [
+        {
+          "type": "complete-frame-free",
+          "file": "Champaigne Petite Cène Louvre.jpg",
+          "pixels": [
+            1112,
+            591
+          ],
+          "sha256": "d4d8b3c1ea957c9517a24c62a97ab7143e07cdec2434c77ee05df17a5b29a320",
+          "assessment": "CURRENT_PROVISIONAL; complete painted surface but lower usable detail",
+          "rights": "Commons faithful two-dimensional artwork public-domain marking; independent jurisdiction assessment still required"
+        },
+        {
+          "type": "larger photographer original with physical frame",
+          "file": "Philippe de Champaigne - La Petite Cène (Louvre, INV 1125).jpg",
+          "pixels": [
+            2816,
+            2112
+          ],
+          "sha256": "3fce64afc767c16b803fd250e685f3a64caedb7e474380d3afeca68d84331942",
+          "assessment": "PHOTOGRAPHER PD-SELF; actual photo has full painted surface but gold frame and museum wall; subject-native details sharper, candidate for crop review only",
+          "rights": "Commons photographer Tangopaso publicly dedicated this particular photo to the public domain; exact reuse territories still to check"
+        }
+      ],
+      "newlyIdentifiedHigherResolutionFullPainting": "Gallerix 3528x1881 full-painting reproduction; independent commercial reuse rights unverified; comparison reference ONLY",
+      "doNotUsePaid": "Bridgeman/Erich Lessing 7912x4287 paid or rights restricted; not eligible under €0 requirement",
+      "copyrightConstraint": "Louvre Collection official photo free reuse is limited to listed contexts; cannot assume a paid-app licence",
+      "photoWinnerSelected": false,
+      "cropProposalsAreNotRelease": true,
+      "editorialSelectionRemains": true
     }
   },
   "retained": [
