@@ -235,7 +235,21 @@ try{
        await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
        const root=preview.root;
        const visible=(root?.querySelector(".ao-prayer-card")?.innerText??root?.innerText??"");
-       results.push({date,mode,id,variant,modelCount:cards.length,
+       let inAlbisSecret=null;
+       if(date==="2026-04-12"){
+         const secretCard=cards.find(c=>JSON.stringify(c.paragraphs??[])
+           .includes("Accueillez, Seigneur"));
+         if(secretCard)preview.showSection(secretCard.sectionId);
+         await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+         const renderedSecret=(root?.querySelector(".ao-prayer-card")?.innerText??root?.innerText??"");
+         inAlbisSecret={sectionId:secretCard?.sectionId??null,
+           hasFrench:renderedSecret.includes("Accueillez, Seigneur"),
+           textBeforeConclusion:renderedSecret.indexOf("Accueillez, Seigneur")<
+             renderedSecret.indexOf("Par Notre-Seigneur Jésus-Christ"),
+           hasAuthenticBody:renderedSecret.includes("bonheur sans fin"),
+           sample:renderedSecret.slice(0,340)};
+       }
+       results.push({date,mode,id,variant,modelCount:cards.length,inAlbisSecret,
          slotStatus:original?.status??null,cardSection:card?.sectionId??null,
          renderedPhrase:visible.includes("en ce jour")?"OCTAVE_DAY":
            visible.includes("en ce temps")?"EASTERTIDE":
@@ -259,6 +273,13 @@ try{
    assert.equal(item.renderedPhrase,item.variant,item.date+" wrong seasonal phrase in rendered Preface");
    assert.equal(item.hasFrench,true,item.date+" trilingual source lost in rendered reader");
    assert.equal(item.hasComposite,false,item.date+" unresolved seasonal alternatives visible");
+   if(item.date==="2026-04-12"){
+     assert.ok(item.inAlbisSecret?.sectionId,"In Albis native Secret card missing");
+     assert.equal(item.inAlbisSecret.hasFrench,true,"In Albis Secret not rendered in native LIVE");
+     assert.equal(item.inAlbisSecret.hasAuthenticBody,true,"In Albis Secret source body missing");
+     assert.equal(item.inAlbisSecret.textBeforeConclusion,true,
+       "In Albis Secret conclusion displayed before its prayer");
+   }
  }
  console.log("PASS native R17 rendered Preface in MISSAL, LIVE, SIMPLE on real 2026 Masses.");
  console.log("PASS 14 real 1962 Easter Preface source identities and trilingual variants: 1 Vigil, 7 octave, 6 later.");
