@@ -1,0 +1,2041 @@
+{
+  "schema": "AO_ICRSP_B34_505_UNIQUE_DIRECT_TOPICS_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "priorLedger": "data/source-text/icrsp-france-b34-nineteen-direct-source-article-excerpts.v1.json",
+  "previous": "data/source-text/icrsp-france-b33-486-unique-topical-ledger.v1.json",
+  "newSource": "data/source-text/icrsp-france-b34-nineteen-direct-source-article-excerpts.v1.json",
+  "counts": {
+    "eligibleCommentaryArticles": 783,
+    "previousDirect": 486,
+    "newDistinctDirect": 19,
+    "directReviewUnique": 505,
+    "remainingWithoutDirectReading": 278,
+    "automatedScreened": 783,
+    "editionCollationComplete": 0,
+    "newAppItemsApproved": 0
+  },
+  "uniqueArticles": [
+    {
+      "articleId": "a0002_nouveau",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0004_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0005_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0006_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0007_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0008_nouveau",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0009_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0010_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0013_nouveau",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0014_nouveau",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0015_nouveau",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0021_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0023_nouveau",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0024_nouveau",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0025_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0026_nouveau",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0029_nouveau",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0030_nouveau",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0031_nouveau",
+      "firstReadingCohort": "B32_FIVE_FRESH_B29"
+    },
+    {
+      "articleId": "a0032_nouveau",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0033_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0034_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0034_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0035_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0035_nouveau",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0036_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0036_nouveau",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0037_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0038_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0039_nouveau",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0040_nouveau",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0041_nouveau",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0042_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0043_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0044_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0045_nouveau",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0046_nouveau",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0051_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0052_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0053_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0055_nouveau",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0060_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0069_nouveau",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0076_nouveau",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0077_nouveau",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0078_nouveau",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0079_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0081_nouveau",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0082_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0083_nouveau",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0084_nouveau",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0085_nouveau",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0086_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0087_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0088_ancien",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0089_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0089_nouveau",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0090_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0090_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0091_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0092_ancien",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0092_nouveau",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0093_ancien",
+      "firstReadingCohort": "B32_FIVE_FRESH_B29"
+    },
+    {
+      "articleId": "a0093_nouveau",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0094_ancien",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0094_nouveau",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0095_ancien",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0095_nouveau",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0096_ancien",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0096_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0097_ancien",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0097_nouveau",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0098_ancien",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0098_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0099_ancien",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0100_ancien",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0103_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0104_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0105_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0106_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0107_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0107_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0108_ancien",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0108_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0109_nouveau",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0110_ancien",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0111_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0112_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0113_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0114_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0115_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0116_ancien",
+      "firstReadingCohort": "B32_FIVE_FRESH_B29"
+    },
+    {
+      "articleId": "a0116_nouveau",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0117_nouveau",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0118_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0119_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0120_nouveau",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0121_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0122_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0125_nouveau",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0126_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0127_nouveau",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0128_nouveau",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0129_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0130_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0130_nouveau",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0131_nouveau",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0132_nouveau",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0133_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0133_nouveau",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0135_nouveau",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0136_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0138_nouveau",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0139_ancien",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0140_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0140_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0141_nouveau",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0142_nouveau",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0143_nouveau",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0144_nouveau",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0145_nouveau",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0146_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0146_nouveau",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0147_nouveau",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0149_nouveau",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0150_nouveau",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0151_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0152_nouveau",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0153_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0153_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0154_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0154_nouveau",
+      "firstReadingCohort": "B29_12_EXISTING_WAVE"
+    },
+    {
+      "articleId": "a0155_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0156_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0164_nouveau",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0167_nouveau",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0168_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0169_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0170_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0170_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0171_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0171_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0172_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0172_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0173_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0173_nouveau",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0174_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0175_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0175_nouveau",
+      "firstReadingCohort": "B29_12_EXISTING_WAVE"
+    },
+    {
+      "articleId": "a0176_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0177_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0178_nouveau",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0179_nouveau",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0180_ancien",
+      "firstReadingCohort": "B32_FIVE_FRESH_B29"
+    },
+    {
+      "articleId": "a0180_nouveau",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0181_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0181_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0183_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0183_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0184_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0185_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0185_nouveau",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0186_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0186_nouveau",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0187_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0188_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0189_nouveau",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0190_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0191_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0191_nouveau",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0192_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0192_nouveau",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0193_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0194_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0194_nouveau",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0195_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0196_nouveau",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0197_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0197_nouveau",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0198_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0198_nouveau",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0199_ancien",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0199_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0202_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0202_nouveau",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0203_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0203_nouveau",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0204_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0204_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0205_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0205_nouveau",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0206_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0207_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0208_nouveau",
+      "firstReadingCohort": "B29_12_EXISTING_WAVE"
+    },
+    {
+      "articleId": "a0209_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0210_nouveau",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0211_nouveau",
+      "firstReadingCohort": "B29_12_EXISTING_WAVE"
+    },
+    {
+      "articleId": "a0212_nouveau",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0213_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0215_nouveau",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0216_nouveau",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0220_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0221_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0222_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0222_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0223_nouveau",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0224_ancien",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0225_ancien",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0225_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0227_nouveau",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0228_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0231_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0232_ancien",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0238_ancien",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0239_ancien",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0241_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0242_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0243_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0244_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0245_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0246_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0248_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0248_nouveau",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0250_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0250_nouveau",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0252_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0258_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0259_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0260_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0273_nouveau",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0279_ancien",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0280_ancien",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0281_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0294_ancien",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0297_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0299_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0304_ancien",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0305_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0307_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0309_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0318_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0320_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0325_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0326_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0327_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0329_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0333_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0334_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0335_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0336_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0338_ancien",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0339_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0341_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0343_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0352_ancien",
+      "firstReadingCohort": "B32_FIVE_FRESH_B29"
+    },
+    {
+      "articleId": "a0353_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0355_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0356_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0357_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0358_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0359_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0360_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0361_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0362_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0363_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0364_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0365_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0366_ancien",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0367_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0368_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0370_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0371_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0373_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0374_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0375_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0376_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0377_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0378_ancien",
+      "firstReadingCohort": "B29_12_EXISTING_WAVE"
+    },
+    {
+      "articleId": "a0379_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0380_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0381_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0382_ancien",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0383_ancien",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0384_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0385_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0386_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0387_ancien",
+      "firstReadingCohort": "B29_12_EXISTING_WAVE"
+    },
+    {
+      "articleId": "a0388_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0389_ancien",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0390_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0391_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0392_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0393_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0394_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0396_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0397_ancien",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0399_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0401_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0402_ancien",
+      "firstReadingCohort": "B29_12_EXISTING_WAVE"
+    },
+    {
+      "articleId": "a0403_ancien",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0405_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0406_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0407_ancien",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0408_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0409_ancien",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0411_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0413_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0414_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0416_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0419_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0420_ancien",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0421_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0422_ancien",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0423_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0425_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0426_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0428_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0429_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0430_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0431_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0434_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0435_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0437_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0438_ancien",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0441_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0442_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0443_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0447_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0451_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0452_ancien",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0453_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0454_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0458_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0461_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0464_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0468_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0469_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0471_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0476_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0478_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0480_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0481_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0485_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0486_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0487_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0488_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0495_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0499_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0501_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0503_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0507_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0509_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0510_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0516_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0519_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0521_ancien",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0522_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0524_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0525_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0532_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0533_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0541_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0542_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0543_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0545_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0546_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0549_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0550_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0553_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0554_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0555_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0556_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0558_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0560_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0562_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0563_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0564_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0566_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0568_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0571_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0572_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0573_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0575_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0580_ancien",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0584_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0586_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0587_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0588_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0591_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0593_ancien",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0596_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0597_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0601_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0602_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0603_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0604_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0605_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0607_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0608_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0613_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0616_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0619_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0623_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0624_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0625_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0626_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0627_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0628_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0629_ancien",
+      "firstReadingCohort": "B29_12_EXISTING_WAVE"
+    },
+    {
+      "articleId": "a0630_ancien",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0631_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0633_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0634_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0635_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0636_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0638_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0639_ancien",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0640_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0642_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0643_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0644_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0645_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0655_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0664_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0665_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0667_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0668_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0669_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0671_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0672_ancien",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0673_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0674_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0679_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0680_ancien",
+      "firstReadingCohort": "B29_12_EXISTING_WAVE"
+    },
+    {
+      "articleId": "a0682_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0690_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0691_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0692_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0697_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0698_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0700_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0711_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0712_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0713_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0715_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0716_ancien",
+      "firstReadingCohort": "B29_12_EXISTING_WAVE"
+    },
+    {
+      "articleId": "a0717_ancien",
+      "firstReadingCohort": "B29_12_EXISTING_WAVE"
+    },
+    {
+      "articleId": "a0718_ancien",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0719_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0720_ancien",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0721_ancien",
+      "firstReadingCohort": "B24_25"
+    },
+    {
+      "articleId": "a0722_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0728_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0738_ancien",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0742_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0745_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0748_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0751_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0752_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0754_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0755_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0758_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0761_ancien",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0765_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0773_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0775_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0776_ancien",
+      "firstReadingCohort": "B26_B21_20"
+    },
+    {
+      "articleId": "a0777_ancien",
+      "firstReadingCohort": "B29_12_EXISTING_WAVE"
+    },
+    {
+      "articleId": "a0778_ancien",
+      "firstReadingCohort": "B34_19_DIRECT"
+    },
+    {
+      "articleId": "a0803_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0805_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0807_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0808_ancien",
+      "firstReadingCohort": "B31_FINAL39_OLD_250"
+    },
+    {
+      "articleId": "a0810_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0811_ancien",
+      "firstReadingCohort": "B33_FRESH200_DIRECT22"
+    },
+    {
+      "articleId": "a0814_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0818_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0821_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0828_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0833_ancien",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a0834_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0835_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0836_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0837_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0838_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0839_ancien",
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
+    },
+    {
+      "articleId": "a0890_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0891_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a0923_ancien",
+      "firstReadingCohort": "B22_93"
+    },
+    {
+      "articleId": "a0924_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0970_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0971_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0972_ancien",
+      "firstReadingCohort": "B25_75"
+    },
+    {
+      "articleId": "a0973_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0974_ancien",
+      "firstReadingCohort": "B30_30_OLD_WAVE"
+    },
+    {
+      "articleId": "a0975_ancien",
+      "firstReadingCohort": "B27_B21_47"
+    },
+    {
+      "articleId": "a0992_ancien",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a0993_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a1002_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a1003_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    },
+    {
+      "articleId": "a1008_ancien",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a1019_ancien",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a1021_ancien",
+      "firstReadingCohort": "B23_20"
+    },
+    {
+      "articleId": "a1035_ancien",
+      "firstReadingCohort": "B27_B23_28"
+    },
+    {
+      "articleId": "a1039_ancien",
+      "firstReadingCohort": "B28_B21_LAST62"
+    }
+  ],
+  "publicationApproved": false
+}
