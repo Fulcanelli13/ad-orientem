@@ -1,0 +1,82 @@
+{
+  "schema": "AO_TLM_SOURCE_REPORTED_MAP_ADDITIONS_V1",
+  "version": "2026-10-26",
+  "base_snapshot": "AO_PRELIMINARY_TLM_MAP_R49",
+  "publication_scope": "SOURCE_REPORTED_PHYSICAL_SITE_PROVISIONAL_NO_VERIFIED_SCHEDULE",
+  "generated_by": "Editorial source reconciliation",
+  "record_count": 3,
+  "records": [
+    {
+      "research_group_id": "RG-B85-4DA44A2F403B",
+      "name": "Chapelle Saint-François-de-Paule",
+      "country": "FR",
+      "locality": "Bormes-les-Mimosas",
+      "affiliation": "DIOCESAN",
+      "group": "ROME",
+      "address": "1 place Saint-François, 83230 Bormes-les-Mimosas",
+      "geo": {
+        "lat": 43.151533,
+        "lng": 6.344589,
+        "precision": "address",
+        "geocoding_source": "OTHER",
+        "source_ref": "cirkwi:3780313",
+        "source_url": "https://www.cirkwi.com/fr/point-interet/3780313-chapelle-saint-francois-de-paule",
+        "matched_country_code": "FR",
+        "attribution": "© Cirkwi / tourism place listing; chapel coordinate approximate"
+      },
+      "official_building_url": "https://www.ville-bormes.fr/points-interets/chapelle-st-francois/",
+      "official_mass_url": "https://www.paroissedebormes.fr/horaires-des-offices/",
+      "independent_mass_url": "https://www.bormeslesmimosas.com/patrimoine-culturel/chapelle-saint-francois-de-paule/",
+      "mass_evidence": "Parish publishes a Traditional Mass on Sundays at this chapel; official tourism listing describes an extraordinary-form low Mass during July and August. Seasonal clock-time discrepancy remains.",
+      "time_policy": "SEASONAL_CONFLICT_NO_TIME_DISPLAY"
+    },
+    {
+      "research_group_id": "RG-B89-4FFBC6AB3EC5",
+      "name": "Santuario di Nostra Signora di Pontelungo",
+      "country": "IT",
+      "locality": "Albenga",
+      "affiliation": "DIOCESAN",
+      "group": "ROME",
+      "address": "Viale Pontelungo 89, 17031 Albenga (SV)",
+      "geo": {
+        "lat": 44.05539,
+        "lng": 8.21299,
+        "precision": "building",
+        "geocoding_source": "OTHER",
+        "source_ref": "osm:way:225242224",
+        "source_url": "https://mapcarta.com/es/W225242224",
+        "matched_country_code": "IT",
+        "attribution": "© OpenStreetMap contributors · ODbL 1.0; OSM way 225242224"
+      },
+      "official_building_url": "https://www.diocesidialbengaimperia.it/wd-annuario-enti/albenga-nostra-signora-di-pontelungo-santuario-antico-4263/",
+      "official_mass_url": "https://santuariopontelungo.it/orari",
+      "independent_mass_url": "https://ritoantico.it/domenica",
+      "mass_evidence": "Sanctuary's own website describes Sunday 11:30 as a Latin Tridentine Mass, independently listed by Rito Antico. Time remains owner-reported, not audited as a permanent recurring rule.",
+      "time_policy": "CURRENT_OWNER_LISTING_NO_TIMETABLE_CERTIFICATION"
+    },
+    {
+      "research_group_id": "RG-B89-F7BFDAA8E4BB",
+      "name": "Chiesa della Confraternita dei Santi Rocco e Carlo",
+      "country": "IT",
+      "locality": "Rivarolo Canavese",
+      "affiliation": "DIOCESAN",
+      "group": "ROME",
+      "address": "Piazza Garibaldi 7, 10086 Rivarolo Canavese (TO)",
+      "geo": {
+        "lat": 45.3321944444,
+        "lng": 7.7243055556,
+        "precision": "address",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "municipality:Rivarolo-Canavese:SS-Rocco-Carlo:2026",
+        "source_url": "https://www.comune.rivarolo.to.it/it-it/vivere-il-comune/cosa-vedere/chiesa-della-confraternita-di-san-rocco-e-san-carlo-53676-1-3e66ea35fb19ee82c51e9bb36f178910",
+        "matched_country_code": "IT",
+        "attribution": "Comune di Rivarolo Canavese — municipal place directory"
+      },
+      "official_building_url": "https://www.comune.rivarolo.to.it/it-it/vivere-il-comune/cosa-vedere/chiesa-della-confraternita-di-san-rocco-e-san-carlo-53676-1-3e66ea35fb19ee82c51e9bb36f178910",
+      "official_mass_url": "https://parrocchia.rivarolocanavese.org/ottobre-novembre-2026-foglio-parrocchiale-n-8/",
+      "independent_mass_url": "https://parrocchia.rivarolocanavese.org/settembre-ottobre-2026-foglio-parrocchiale-n-7/",
+      "mass_evidence": "Parish September–November 2026 bulletins name Masses in rito antico at San Rocco, but specifically cancel 7:15 on 22–27 October and vary feast-day time. No permanent recurrence certified.",
+      "time_policy": "DATED_NOTICE_EXCEPTIONS_NO_RECURRING_RULE"
+    }
+  ]
+}
