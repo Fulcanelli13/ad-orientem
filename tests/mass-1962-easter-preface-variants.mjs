@@ -34,6 +34,18 @@ const sourceSamples=Object.fromEntries(Object.values(EASTER_PREFACE_FORMS).map(f
   }
   return [form,row];
 }));
+// The pinned actual production parser removes ~ line-continuation marks.
+// All nine selected source variants must remain byte-identical after the
+// chosen words are reconstructed from either source layout.
+const flattened=JSON.parse(readFileSync(new URL("./fixtures/mass-easter-preface-pasch-host-flat.v1.json",import.meta.url),"utf8"));
+for(const [variant,expected] of Object.entries(sourceSamples)){
+  for(const lang of ["la","en","fr"]){
+    const raw=clean(flattened.languages[lang].lines);
+    const rendered=render1962EasterPrefaceVariant(raw,lang,variant);
+    assert.ok(rendered,"Production flattened "+lang+" "+variant+" wrongly withheld");
+    assert.equal(rendered,expected[lang],"Original and pinned flattened source disagree on "+lang+" "+variant);
+  }
+}
 assert.equal(render1962EasterPrefaceVariant(sourceText.la,"la","wrong"),null);
 assert.equal(render1962EasterPrefaceVariant(sourceText.la,"es","EASTERTIDE"),null);
 assert.equal(render1962EasterPrefaceVariant(sourceText.la.replace("(sed tempore Passionis)",""),"la","EASTERTIDE"),null);
