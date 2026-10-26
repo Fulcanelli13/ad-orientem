@@ -4,6 +4,7 @@ import vm from "node:vm";
 import {createOfflineChantEngraver,engraverWidth,loadOfflineExsurge}
   from "../src/mass/reader-chant-engraver.js";
 import {SCHOLA_SCORE_CATALOGUE} from "../src/mass/reader-chant-score-pilot.js";
+import {ORDINARY_1961_SCORE_SOURCES} from "../src/mass/reader-ordinary-scores-1961.js";
 
 const vendor=readFileSync(new URL("../assets/vendor/exsurge/exsurge.min.js",import.meta.url),"utf8");
 const license=readFileSync(new URL("../assets/vendor/exsurge/LICENSE",import.meta.url),"utf8");
@@ -18,6 +19,7 @@ assert.equal(typeof sandbox.exsurge.Gabc.createMappingsFromSource,"function");
 assert.equal(typeof sandbox.exsurge.ChantScore.prototype.createSvgNode,"function");
 assert.equal(typeof sandbox.exsurge.ChantScore.prototype.layoutChantLines,"function");
 assert.equal(typeof sandbox.exsurge.ChantScore.prototype.performLayoutAsync,"function");
+assert.equal(ORDINARY_1961_SCORE_SOURCES.length,4);
 for(const item of SCHOLA_SCORE_CATALOGUE){
   const api=sandbox.exsurge;
   const context=new api.ChantContext();
