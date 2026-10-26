@@ -1,0 +1,67 @@
+name: Directory CL15 recovery queue for 197 Missal-book holds
+
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl15-1962-recovery-triage-20261026/**'
+      - 'tools/directory/triage-cl15-1962-holds.py'
+      - '.github/workflows/directory-cl15-hold-recovery-triage.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl15-1962-recovery-triage-20261026/**'
+      - 'tools/directory/triage-cl15-1962-holds.py'
+      - '.github/workflows/directory-cl15-hold-recovery-triage.yml'
+  workflow_dispatch:
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frozen CL2 through CL7 chain
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+      - name: Reconstruct complete source-scoped CL2 through CL15 SQLite
+        run: |
+          python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ao-cl15.sqlite
+          python3 tools/directory/audit-cl-completeness.py --db /tmp/ao-cl15.sqlite --output-dir /tmp/ao-cl8
+          python3 tools/directory/audit-cl9-owner-evidence.py --db /tmp/ao-cl15.sqlite --cl8-csv /tmp/ao-cl8/missal_1962_reconciliation.csv --out-dir /tmp/ao-cl9
+          python3 tools/directory/adjudicate-cl10-missal-evidence.py --db /tmp/ao-cl15.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl10
+          python3 tools/directory/reconcile-cl11-owner-sources.py --db /tmp/ao-cl15.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl11
+          python3 tools/directory/reconcile-cl12-singletons.py --db /tmp/ao-cl15.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl12
+          python3 tools/directory/reconcile-cl13-remaining-1962.py --db /tmp/ao-cl15.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl13
+          python3 tools/directory/reconcile-cl14-fssp-owner-site-evidence.py --db /tmp/ao-cl15.sqlite --out-dir /tmp/ao-cl14
+          python3 tools/directory/triage-cl15-1962-holds.py --db /tmp/ao-cl15.sqlite --out-dir /tmp/ao-cl15
+      - name: Assert completeness, disjointness and zero release
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl15/cl15_summary.json').read_text())
+          assert x['unresolved_claims_triaged']==197
+          assert x['distinct_source_urls_for_unresolved_claims']==94
+          assert x['source_scoped_book_evidence_accepted_previously']==235
+          assert sum(x['primary_recovery_lane_counts'].values())==197
+          assert x['new_book_accepted']==x['new_current_recurrence_approvals']==x['new_physical_site_approvals']==x['new_una_cum']==x['new_public_releases']==0
+          db=sqlite3.connect('/tmp/ao-cl15.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl15_1962_hold_triage').fetchone()[0]==197
+          assert db.execute('SELECT COUNT(*) FROM cl15_recovery_source_queue').fetchone()[0]==94
+          assert db.execute('SELECT COUNT(*) FROM cl14_fssp_direct_slot').fetchone()[0]==73
+          assert db.execute('SELECT COUNT(*) FROM classification_source WHERE owner_verified_missal_1962=1').fetchone()[0]==3
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          print('CL15: 197 exception rows and 94 owner-source actions, no publication')
+          PY
+      - name: Export regenerable research queues
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-cl15-197-hold-recovery-triage
+          path: /tmp/ao-cl15/
+          retention-days: 1
