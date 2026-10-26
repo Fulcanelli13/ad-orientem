@@ -34,17 +34,23 @@ jobs:
               assert rows[d]['productionRelease'] is False
           assert rows['2026-04-02']['sourceImageSHA256']==rows['2026-05-27']['sourceImageSHA256']
           PY
-      - name: Fetch both independent Commons original JPGs and 100-percent details
-        run: python3 tools/calendar/audit-champaigne-petite-cene-photos.py
+      - name: Preserve source decoder and switch to existing isolated research branch
+        run: |
+          cp tools/calendar/audit-champaigne-petite-cene-photos.py /tmp/ao-champaigne-petite-qa.py
+          git fetch origin research/champaigne-inv1125-photo-review-20261026
+          git switch -C research/champaigne-inv1125-photo-review-20261026 origin/research/champaigne-inv1125-photo-review-20261026
+      - name: Inspect and verify both Commons original files, including MPO-JPEG
+        run: python3 /tmp/ao-champaigne-petite-qa.py
       - name: Keep source originals permanently on an isolated research branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -c research/champaigne-inv1125-photo-review-20261026
           git add -f data/calendar/champaigne-petite-cene-photo-investigation-20261026.json
           if [ -d assets/staged/champaigne-petite-cene-research ]; then
              git add -f assets/staged/champaigne-petite-cene-research/
           fi
-          git commit -m "research(art): preserve PD source photo candidates, no release approval"
-          git push --set-upstream origin research/champaigne-inv1125-photo-review-20261026
+          if ! git diff --cached --quiet; then
+            git commit -m "research(art): preserve full camera source and revised faithful-photo QA"
+            git push origin research/champaigne-inv1125-photo-review-20261026
+          fi
       - run: echo "Research only; original paintings, publication assets and all app release gates unchanged."
