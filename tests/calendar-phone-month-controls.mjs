@@ -128,6 +128,25 @@ try{
    }
    assert.equal(await firstOrdo.locator('[data-cal-month-index-date]').count(),1,
      "Expanded Ordo day must link to the canonical Day");
+   if(width===390&&lang==="en"){
+     // Independent 365-day audit identifies 26 October 2026 as the
+     // 1962 general-calendar green IV-class feria, with no Gloria/Credo.
+     const dateId="2026-10-26";
+     await page.waitForFunction(date=>
+       document.querySelector('[data-cal-ordo-date="'+date+'"]')?.dataset.ready==="1",
+       dateId,{timeout:45000});
+     const feria=cal.locator('[data-cal-ordo-date="'+dateId+'"]');
+     if(await feria.getAttribute("open")===null)await feria.locator("summary").click();
+     const facts=await feria.locator('.aoCalOrdoFact').allTextContents();
+     assert.ok(facts.some(t=>/Gloria/.test(t)&&/Omitted/.test(t)),
+       "Resolved Oct 26 feria must omit Gloria under Breviary 238c");
+     assert.ok(facts.some(t=>/Credo/.test(t)&&/Omitted/.test(t)),
+       "Resolved Oct 26 feria must omit Credo under RGMR 475-476");
+     const evidence=feria.locator(".aoCalOrdoBasis");
+     assert.equal(await evidence.count(),1,
+       "Displayed source-supported rules need reviewable rubrical provenance");
+     assert.ok(await evidence.locator('a[href^="https://isidore.co/"]').count()>=2);
+   }
    await page.screenshot({path:resolve(output,"calendar-ordo-"+lang+"-"+width+".png"),
      fullPage:false,animations:"disabled"});
    await cal.locator('[data-cal-month-view="temporale"]').click();
