@@ -114,7 +114,7 @@ test('1893 chant/action findings reference existing stage and event owners only'
   const musicEvents = new Map(music.rites.flatMap(rite => rite.events.map(evt => [evt.id, {rite:rite.id, stage:evt.stageId}])));
   for (const item of witness.rows) {
     assert.equal(item.facsimileVerified,false);
-    assert.match(item.ocrLineSpan,/^\\d+-\\d+$/);
+    assert.match(item.ocrLineSpan,/^[0-9]+-[0-9]+$/);
     if (item.existingMusicEventId) {
       const owner=musicEvents.get(item.existingMusicEventId);
       assert.ok(owner,'No existing event owner for '+item.id);
