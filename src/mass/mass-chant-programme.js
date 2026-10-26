@@ -25,7 +25,8 @@ export function chantProgrammeEnabled({form,kind}={}){
   return SUNG.has(String(form??""))&&PILOT_CELEBRATIONS.has(String(kind??""));
 }
 export function massChantOptions(trackId,{form,kind}={}){
-  if(!chantProgrammeEnabled({form,kind}))return Object.freeze([]);
+  if(!chantProgrammeEnabled({form,kind})||!MASS_CHANT_ORDINARY_TRACKS.includes(trackId))
+    return Object.freeze([]);
   return Object.freeze(SCHOLA_SCORE_CATALOGUE.filter(item=>
     item.trackId===trackId &&
     typeof item.gabc==="string"&&item.gabc.includes("%%")&&IDENTIFIER.test(item.id)));
