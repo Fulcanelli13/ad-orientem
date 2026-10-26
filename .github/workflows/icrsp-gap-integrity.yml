@@ -41,6 +41,8 @@ on:
       - 'tests/test_icrsp_b17_fromage_edition_evidence.py'
       - 'data/source-text/icrsp-france-b18-fourth-sunday-original-edition-ocr-witness.v1.json'
       - 'tests/test_icrsp_b18_fourth_sunday_scan_ocr_variant.py'
+      - 'data/source-text/icrsp-france-b19-fromage-continuation-preface-author-witness.v1.json'
+      - 'tests/test_icrsp_b19_signed_preface_edition_boundaries.py'
   workflow_dispatch:
 
 permissions:
@@ -73,3 +75,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b16_fromage_six_sunday_passages.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b17_fromage_edition_evidence.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b18_fourth_sunday_scan_ocr_variant.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b19_signed_preface_edition_boundaries.py' -v
