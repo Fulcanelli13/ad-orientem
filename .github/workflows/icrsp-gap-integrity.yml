@@ -157,6 +157,8 @@ on:
       - 'tests/test_icrsp_b39_eighteen_existing_owner_parity.py'
       - 'data/source-text/icrsp-france-b40-three-commons-and-six-saints-snapshot-owner-check.v1.json'
       - 'tests/test_icrsp_b40_saints_identity_three_commons_holds.py'
+      - 'data/source-text/icrsp-france-b41-1962-vatican-three-commons-print-image-collation.v1.json'
+      - 'tests/test_icrsp_b41_1962_printed_commons_visual_structure.py'
       - 'data/source-text/icrsp-france-b38-783-all-selected-source-passages-ledger.v1.json'
       - 'tests/test_icrsp_b38_all_783_article_passages_and_release_gates.py'
   workflow_dispatch:
@@ -227,6 +229,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b38_all783_passage_coverage.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b39_eighteen_existing_owner_parity.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b40_saints_identity_three_commons_holds.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b41_1962_printed_commons_visual_structure.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b38_all_783_article_passages_and_release_gates.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b34_505_direct_and_source_error.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b34_541_union_and_242_priority.py' -v
