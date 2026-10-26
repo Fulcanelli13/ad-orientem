@@ -1,0 +1,252 @@
+{
+  "schema": "AO_ICRSP_B12_FIVE_THEMES_SEVEN_ATOMIC_CLAIMS_V1",
+  "asOf": "2026-10-26",
+  "issue": 1665,
+  "status": "SOURCE_PAIRED_READING_BOUNDARIES_CHECKED_CROSS_MODULE_CLAIM_PARITY_OPEN",
+  "scope": "Seven atomic reading/interpretation claims in five ICRSP articles plus one historical Roman station contradiction in a sixth; not a completed cross-app textual parity audit or original work collation.",
+  "basis": [
+    "Direct ICRSP Commentaires sections a0191, a0198, a0205, a0206, a0186, a0207, accessed 2026-10-26",
+    "data/source-text/icrsp-france-b11-40-commentary-theme-review.v1.json",
+    "data/mass/scripture-lent-weekday-source-audit.v1.json (existing exact sourcePath and lesson/Gospel ranges)",
+    "data/mass/scripture-segmented-proper.v1.json (Susanna disjoint verse ranges)"
+  ],
+  "ownerReconciliation": [
+    {
+      "owner": "EXISTING_MASS_PROPER",
+      "file": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+      "result": "ALL_FIVE_SELECTED_READING_PAIRS_MATCH_SOURCE_PATH__NO_NEW_LITURGICAL_READING"
+    },
+    {
+      "owner": "EXISTING_MASS_EXPLORER",
+      "file": "data/learn/mass-explorer-approved-studies.v1.json",
+      "result": "ZERO_RELEASED_DEEP_STUDY_ENTRIES_AT_CHECK__NOT_EVIDENCE_OF_NO_OTHER_EDUCATIONAL_TEXT"
+    },
+    {
+      "owner": "EXISTING_MASS_FORMATION",
+      "file": "data/learn/mass-formation-campion.v1.json",
+      "result": "EXISTING_EIGHT_STAGES_RETAINED__ONE_GENERAL_CATECHUMENATE_CLAIM_NOT_A_SUBSTITUTE_FOR_NAAMAN_TYPOLOGY"
+    },
+    {
+      "owner": "EXISTING_SCRIPTURE_NAVIGATION",
+      "file": "src/scripture/related-objects.js",
+      "result": "REVERSE_LOOKUP_OF_CURATED_EXISTING_OBJECTS__NOT_A_CLAIM_VERIFICATION_OR_TYPOLOGY_DATABASE"
+    },
+    {
+      "owner": "PARALLEL_UNMERGED_SCRIPTURE_CORRESPONDENCES",
+      "pr": 1553,
+      "branch": "explore/1552-biblical-correspondences-evidence",
+      "files": [
+        "data/scripture/correspondences/thematic-seed.v1.json",
+        "data/scripture/correspondences/thematic-source-leads.v1.json"
+      ],
+      "result": "56_PROVISIONAL_UBS_THEMES_NONE_NAMED_NAAMAN_SUSANNA_ELIJAH_ELISHA__PASS_AS_ATTRIBUTED_EVIDENCE_NOT_NEW_COMPENDIUM"
+    },
+    {
+      "owner": "GEOGRAPHY_SEED_ONLY",
+      "file": "data/geography/seed-registry.v1.json",
+      "result": "457_PLACE_RECORDS_NO_NAMED_STATION_CHURCH_MATCH_IN_THIS_SEED__OTHER_PLACE_REGISTRIES_UNCHECKED"
+    }
+  ],
+  "readings": [
+    {
+      "id": "ICRSP-B12-CLM-001",
+      "topicCode": "NAAMAN_GOSPEL_PERSON_REFERENCE",
+      "articleId": "a0191_ancien",
+      "icrspUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien",
+      "commentaryLocator": "Commentaires / Dom Guéranger / LEÇON",
+      "sourcePath": "Tempora/Quad3-1",
+      "existing1962ReadingWitness": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+      "currentReadingPair": {
+        "lesson": "2Kings 5:1–15",
+        "gospel": "Luke 4:23–30"
+      },
+      "relationshipClass": "EXPLICIT_GOSPEL_REFERENCE",
+      "sourceSpecificDistinction": "The day's Gospel itself names Naaman; unlike the baptismal parallel, this is a textual person-reference.",
+      "ownerRoute": "SCRIPTURE_CROSS_REFERENCE",
+      "boundaryCheck": "EXACT_EXISTING_LATIN_PROPER_READING_REFERENCE_MATCH",
+      "paragraphClaimParity": "NOT_FULLY_CHECKED_AGAINST_ALL_EXISTING_EDITORIAL_CONTENT",
+      "originalAuthorEditionVerified": false,
+      "originalPatristicPassageVerified": false,
+      "commentaryTranslationRightsCleared": false,
+      "existingAppFeatureAbsentProven": false,
+      "publish": false
+    },
+    {
+      "id": "ICRSP-B12-CLM-002",
+      "topicCode": "NAAMAN_BAPTISMAL_PREFIGURATION",
+      "articleId": "a0191_ancien",
+      "icrspUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien",
+      "commentaryLocator": "Commentaires / Dom Guéranger / LEÇON",
+      "sourcePath": "Tempora/Quad3-1",
+      "existing1962ReadingWitness": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+      "currentReadingPair": {
+        "lesson": "2Kings 5:1–15",
+        "gospel": "Luke 4:23–30"
+      },
+      "relationshipClass": "ICRSP_COMMENTARY_TYPOLOGY",
+      "sourceSpecificDistinction": "Jordan cleansing is interpreted as a figure of baptism; Luke 4 does not itself state that sacramental interpretation.",
+      "ownerRoute": "SCRIPTURE_PARALLELS_RESEARCH",
+      "boundaryCheck": "EXACT_EXISTING_LATIN_PROPER_READING_REFERENCE_MATCH",
+      "paragraphClaimParity": "NOT_FULLY_CHECKED_AGAINST_ALL_EXISTING_EDITORIAL_CONTENT",
+      "originalAuthorEditionVerified": false,
+      "originalPatristicPassageVerified": false,
+      "commentaryTranslationRightsCleared": false,
+      "existingAppFeatureAbsentProven": false,
+      "publish": false
+    },
+    {
+      "id": "ICRSP-B12-CLM-003",
+      "topicCode": "SUSANNA_JOHN8_JUSTICE_MERCY",
+      "articleId": "a0198_ancien",
+      "icrspUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0198_ancien",
+      "commentaryLocator": "Commentaires / Dom Guéranger / LEÇON",
+      "sourcePath": "Tempora/Quad3-6",
+      "existing1962ReadingWitness": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+      "currentReadingPair": {
+        "lesson": "Daniel 13:1–9; 13:15–17; 13:19–30; 13:33–62",
+        "gospel": "John 8:1–11"
+      },
+      "relationshipClass": "COMMENTARY_ON_LITURGICAL_PAIRING",
+      "sourceSpecificDistinction": "Commentary contrasts an innocent woman vindicated and a woman offered mercy; not a biblical cross-quotation.",
+      "ownerRoute": "SCRIPTURE_PARALLELS_RESEARCH",
+      "boundaryCheck": "EXACT_EXISTING_LATIN_PROPER_READING_REFERENCE_MATCH",
+      "paragraphClaimParity": "NOT_FULLY_CHECKED_AGAINST_ALL_EXISTING_EDITORIAL_CONTENT",
+      "originalAuthorEditionVerified": false,
+      "originalPatristicPassageVerified": false,
+      "commentaryTranslationRightsCleared": false,
+      "existingAppFeatureAbsentProven": false,
+      "publish": false
+    },
+    {
+      "id": "ICRSP-B12-CLM-004",
+      "topicCode": "SUSANNA_CHURCH_FIDELITY_HIPPOLYTUS",
+      "articleId": "a0198_ancien",
+      "icrspUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0198_ancien",
+      "commentaryLocator": "Commentaires / Dom Guéranger / LEÇON",
+      "sourcePath": "Tempora/Quad3-6",
+      "existing1962ReadingWitness": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+      "currentReadingPair": {
+        "lesson": "Daniel 13:1–9; 13:15–17; 13:19–30; 13:33–62",
+        "gospel": "John 8:1–11"
+      },
+      "relationshipClass": "PATRISTIC_ATTRIBUTION_HOLD",
+      "sourceSpecificDistinction": "Commentary invokes Hippolytus and early Christian imagery; original Hippolytus passage and archaeological objects have not been inspected.",
+      "ownerRoute": "PATRISTIC_AND_ART_HISTORICAL_RESEARCH",
+      "boundaryCheck": "EXACT_EXISTING_LATIN_PROPER_READING_REFERENCE_MATCH",
+      "paragraphClaimParity": "NOT_FULLY_CHECKED_AGAINST_ALL_EXISTING_EDITORIAL_CONTENT",
+      "originalAuthorEditionVerified": false,
+      "originalPatristicPassageVerified": false,
+      "commentaryTranslationRightsCleared": false,
+      "existingAppFeatureAbsentProven": false,
+      "publish": false
+    },
+    {
+      "id": "ICRSP-B12-CLM-005",
+      "topicCode": "ELISHA_NAIN_LIFE_RESTORED",
+      "articleId": "a0205_ancien",
+      "icrspUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0205_ancien",
+      "commentaryLocator": "Commentaires / Dom Guéranger / LEÇON",
+      "sourcePath": "Tempora/Quad4-4",
+      "existing1962ReadingWitness": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+      "currentReadingPair": {
+        "lesson": "2Kings 4:25–38",
+        "gospel": "Luke 7:11–16"
+      },
+      "relationshipClass": "COMMENTARY_TYPOLOGY",
+      "sourceSpecificDistinction": "Elisha's restoration of the Shunammite's child and Christ raising the son at Nain are paired by the liturgical selection and interpreted typologically.",
+      "ownerRoute": "SCRIPTURE_PARALLELS_RESEARCH",
+      "boundaryCheck": "EXACT_EXISTING_LATIN_PROPER_READING_REFERENCE_MATCH",
+      "paragraphClaimParity": "NOT_FULLY_CHECKED_AGAINST_ALL_EXISTING_EDITORIAL_CONTENT",
+      "originalAuthorEditionVerified": false,
+      "originalPatristicPassageVerified": false,
+      "commentaryTranslationRightsCleared": false,
+      "existingAppFeatureAbsentProven": false,
+      "publish": false
+    },
+    {
+      "id": "ICRSP-B12-CLM-006",
+      "topicCode": "ELIJAH_LAZARUS_LIFE_RESTORED",
+      "articleId": "a0206_ancien",
+      "icrspUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0206_ancien",
+      "commentaryLocator": "Commentaires / Dom Guéranger / LEÇON",
+      "sourcePath": "Tempora/Quad4-5",
+      "existing1962ReadingWitness": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+      "currentReadingPair": {
+        "lesson": "1Kings 17:17–24",
+        "gospel": "John 11:1–45"
+      },
+      "relationshipClass": "COMMENTARY_TYPOLOGY",
+      "sourceSpecificDistinction": "Elijah restores the widow's son and Christ raises Lazarus; independent witnesses, not a duplicate of Elisha/Nain.",
+      "ownerRoute": "SCRIPTURE_PARALLELS_RESEARCH",
+      "boundaryCheck": "EXACT_EXISTING_LATIN_PROPER_READING_REFERENCE_MATCH",
+      "paragraphClaimParity": "NOT_FULLY_CHECKED_AGAINST_ALL_EXISTING_EDITORIAL_CONTENT",
+      "originalAuthorEditionVerified": false,
+      "originalPatristicPassageVerified": false,
+      "commentaryTranslationRightsCleared": false,
+      "existingAppFeatureAbsentProven": false,
+      "publish": false
+    },
+    {
+      "id": "ICRSP-B12-CLM-007",
+      "topicCode": "JOSEPH_TENANTS_PASSION_FIGURE",
+      "articleId": "a0186_ancien",
+      "icrspUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0186_ancien",
+      "commentaryLocator": "Commentaires / Dom Guéranger / LEÇON",
+      "sourcePath": "Tempora/Quad2-5",
+      "existing1962ReadingWitness": "data/mass/scripture-lent-weekday-source-audit.v1.json",
+      "currentReadingPair": {
+        "lesson": "Genesis 37:6–22",
+        "gospel": "Matthew 21:33–46"
+      },
+      "relationshipClass": "EDITORIAL_INTERPRETATION_HOLD",
+      "sourceSpecificDistinction": "Source commentary reads Joseph as a figure of Christ; the selected Genesis lesson stops at 37:22 and does NOT narrate the sale in 37:28. Period-specific anti-Jewish rhetoric is not transferable.",
+      "ownerRoute": "SCRIPTURE_PARALLELS_HOLD",
+      "boundaryCheck": "EXACT_EXISTING_LATIN_PROPER_READING_REFERENCE_MATCH",
+      "paragraphClaimParity": "NOT_FULLY_CHECKED_AGAINST_ALL_EXISTING_EDITORIAL_CONTENT",
+      "originalAuthorEditionVerified": false,
+      "originalPatristicPassageVerified": false,
+      "commentaryTranslationRightsCleared": false,
+      "existingAppFeatureAbsentProven": false,
+      "publish": false
+    }
+  ],
+  "excludedLiturgicalClaims": [
+    {
+      "id": "JOSEPH_SALE_OUTSIDE_LECTION",
+      "articleId": "a0186_ancien",
+      "sourcePath": "Tempora/Quad2-5",
+      "observedLiturgicalLesson": "Genesis 37:6–22",
+      "narrativeEventOutsideLesson": "Genesis 37:28",
+      "disposition": "DO_NOT_CLAIM_SALE_EPISODE_READ_AT_THIS_MASS",
+      "comment": "Author's Christological comparison may refer to the wider Genesis narrative; it is not the complete actual 1962 lesson."
+    }
+  ],
+  "stationDisputes": [
+    {
+      "id": "SITIENTES_EARLIER_STATION_CONFLICT",
+      "articleId": "a0207_ancien",
+      "sourcePath": "Tempora/Quad4-6",
+      "siteIntro": "San Lorenzo in Lucina",
+      "siteGueranger": "San Lorenzo fuori le Mura",
+      "laterStation": "San Nicola in Carcere",
+      "status": "CONFLICT_DOCUMENTED_NO_ARBITRATION",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0207_ancien",
+      "publicationBlocked": true,
+      "stablePlaceId": null,
+      "siteIdentityAndHistoricalChronologyIndependentlyVerified": false
+    }
+  ],
+  "totals": {
+    "atomicClaimRows": 7,
+    "distinctArticleIds": 6,
+    "readingSourcePathsValidated": 5,
+    "conceptualThemesWithReadingPairs": 4,
+    "originalPrintedAuthorEditionsCriticallyCollated": 0,
+    "patristicOriginalLociVerified": 0,
+    "fullyCertifiedParagraphLevelContentParity": 0,
+    "copyrightPermissionApprovals": 0,
+    "newCanonicalPlaceIds": 0,
+    "publishedFeatures": 0
+  },
+  "nextGate": "Pass the seven source-specific interpretations to the existing PR #1553 Scripture correspondences owner for precise verse and edition-safe review, collate original Guéranger/Hippolytus loci, cross-check existing thematic records at claim/paragraph level, and resolve station identity with independent primary Roman station evidence. No mass reader/calendar changes."
+}
