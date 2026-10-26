@@ -114,6 +114,9 @@ function showDetail(){
  for(const [id,label,type] of [['subjectId','Exact subject ID (where known)','text'],['sourceId','Original supporting source ID','text'],['url','Evidence URL','url'],['date','Evidence recorded date','date']]){
  const wrap=el('label',label),input=el('input');input.id='ed-'+id;input.type=type;wrap.append(input);editor.append(wrap);
  }
+ const typeWrap=el('label','Evidence issuing authority'),type=el('select');type.id='ed-sourceType';
+ for(const v of ['PARISH_OFFICIAL','DIOCESE_OFFICIAL','COMMUNITY_OFFICIAL','HOLY_SEE_OFFICIAL','OFFICIAL_BULLETIN','NATIONAL_ASSOCIATION','SECONDARY_DIRECTORY','USER_SUBMISSION'])type.append(new Option(v,v));
+ typeWrap.append(type);editor.append(typeWrap);
  const noteWrap=el('label','Original wording / review notes');noteWrap.className='full';const note=el('textarea');note.id='ed-note';note.rows=3;noteWrap.append(note);editor.append(noteWrap);
  const status=el('p','No draft submitted.','note');status.id='ed-status';
  const button=el('button','Add to review drafts','primary');button.type='button';button.onclick=saveDraft;
@@ -135,13 +138,13 @@ function syncField(){
 }
 function saveDraft(){
  const field=$('ed-field').value,subject=$('ed-subject').value,value=$('ed-value').value;
- const sourceId=$('ed-sourceId').value.trim(),subjectId=$('ed-subjectId').value.trim(),url=$('ed-url').value.trim(),date=$('ed-date').value,note=$('ed-note').value.trim();
+ const sourceType=$('ed-sourceType').value,sourceId=$('ed-sourceId').value.trim(),subjectId=$('ed-subjectId').value.trim(),url=$('ed-url').value.trim(),date=$('ed-date').value,note=$('ed-note').value.trim();
  const definition=data.taxonomy.dimensions.find(x=>x.key===field);
  if(!definition||!definition.subject.includes(subject)){ $('ed-status').textContent='Invalid field or subject.';return}
  if(url&&!allowedUrl(url)){ $('ed-status').textContent='An evidence URL must use HTTPS.';return}
- const complete=Boolean(subjectId&&sourceId&&url&&date&&note);
+ const complete=Boolean(subjectId&&sourceId&&sourceType&&url&&date&&note);
  const reviewed=sourceId&&selected.source_ids.includes(sourceId);
- drafts.push({physical_site_context:selected.physical_anchor_id,field,subject_type:subject,subject_id:subjectId||null,value,source_ids:sourceId?[sourceId]:[],source_url:url||null,recorded_at:date||null,evidence_excerpt:note||null,
+ drafts.push({physical_site_context:selected.physical_anchor_id,field,subject_type:subject,subject_id:subjectId||null,value,source_ids:sourceId?[sourceId]:[],source_type:sourceType,source_url:url||null,recorded_at:date||null,evidence_excerpt:note||null,
  evidence_maturity:'USER_EDITORIAL_DRAFT_NOT_REVIEWED',review_state:complete&&reviewed?'SOURCE_LINKED_PENDING_INDEPENDENT_CHECK':'INCOMPLETE_OR_UNMATCHED_SOURCE',public_approval:false});
  $('ed-status').textContent='Draft recorded locally ('+drafts.length+'). Export to preserve it. No public approval.';
  $('count').textContent=filtered().length+' of '+sites.length+' sites · '+drafts.length+' local draft claims';
