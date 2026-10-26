@@ -49,36 +49,46 @@ function cloneSources(sources) {
 }
 // Advent I ferias retain their weekday identity even if the pinned source
 // contains only an "Oratio Dominica" rubric, not actual Mass-Proper sections.
-async function inheritAdventFirstWeekMass(resolver, sources, path, diagnostic) {
-    const isWeekday = /^Tempora\/Adv1-[1-6]$/.test(String(path || ''));
+async function inheritAdventWeekdayMass(resolver, sources, path, diagnostic) {
+    // DO's weekday "Oratio Dominica" and NO proper sections means the
+    // particular Advent week's Sunday Mass must supply the base formulary.
+    // Keep each weekday calendar identity and all particular weekday text.
+    const match = /^Tempora\/Adv([1-4])-[1-6]$/.exec(String(path || ''));
     const rule = (sources.la?.map.get('Rule') || []).join('\n');
-    if (!isWeekday || !/\bOratio Dominica\b/i.test(rule))
+    if (!match || !/\bOratio Dominica\b/i.test(rule))
         return { sources, inherited: false };
     const mandatory = ['Introitus','Oratio','Lectio','Evangelium','Offertorium','Secreta','Communio','Postcommunio'];
     const sections = [...mandatory, 'Graduale'];
     const hasText = body => Array.isArray(body) && body.some(line => String(line || '').trim());
+    // Never turn Ember Wednesday/Friday/Saturday, or another complete
+    // independently sourced weekday, into a Sunday source.
     if (mandatory.every(section => hasText(sources.la.map.get(section))))
         return { sources, inherited: false };
+    // A PARTIALLY sourced weekday is a separate editorial case; preserve it
+    // and fail closed rather than silently mixing two distinct Masses.
+    if (mandatory.some(section => hasText(sources.la.map.get(section))))
+        throw new Error('Partial Advent weekday Proper needs original-1962 review: '+path);
+    const sundayPath = 'Tempora/Adv'+match[1]+'-0';
     const output = cloneSources(sources);
     for (const language of ['la','en','fr']) {
-        const sunday = await resolver.resolveSource('Tempora/Adv1-0', language, diagnostic);
+        const sunday = await resolver.resolveSource(sundayPath, language, diagnostic);
         for (const section of sections) {
             if (hasText(output[language].map.get(section))) continue;
-            // The 1962 Missal requires the FERIAL gradual alone, without
-            // the Sunday Alleluia and verse; pinned GradualeF is its source.
-            const inherited = sunday.map.get(section === 'Graduale' ? 'GradualeF' : section);
-            if (!hasText(inherited)) continue;
-            output[language].map.set(section, [...inherited]);
+            // GradualeF is the source's weekdays-only Gradual WITHOUT the
+            // Sunday Alleluia or its following verse.
+            const donor = sunday.map.get(section === 'Graduale' ? 'GradualeF' : section);
+            if (!hasText(donor)) continue;
+            output[language].map.set(section, [...donor]);
             if (!output[language].order.includes(section)) output[language].order.push(section);
         }
     }
-    const missing = mandatory.filter(section => !hasText(output.la.map.get(section)));
+    const missing = sections.filter(section => !hasText(output.la.map.get(section)));
     if (missing.length)
-        throw new Error('Missing inherited Advent I Latin Mass sources for '+path+': '+missing.join(', '));
-    diagnostic.structuralInheritances?.push?.({ path, donor:'Tempora/Adv1-0',
-        kind:'FIRST_ADVENT_FERIA_SUNDAY_MASS', weekdayIdentityPreserved:true });
-    diagnostic.warnings.push('Source-pinned Advent I Sunday Mass supplied missing sections for weekday '+path);
-    return { sources: output, inherited: true };
+        throw new Error('Missing inherited Advent Latin Mass sections for '+path+': '+missing.join(', '));
+    diagnostic.structuralInheritances?.push?.({path,donor:sundayPath,
+        kind:'ADVENT_FERIA_SUNDAY_MASS',weekdayIdentityPreserved:true});
+    diagnostic.warnings.push('Source-pinned Advent Sunday Mass supplied rubric-only weekday '+path+' from '+sundayPath);
+    return {sources:output,inherited:true};
 }
 
 async function applyShiftedPostEpiphany(resolver, sources, date, path, diagnostic) {
@@ -411,7 +421,7 @@ class DayResolver {
             for (const language of ['la', 'en', 'fr'])
                 sources[language] = await this.properResolver.resolveSource(path, language, diagnostic);
             sources = await applyShiftedPostEpiphany(this.properResolver, sources, date, path, diagnostic);
-            const adventMass = await inheritAdventFirstWeekMass(this.properResolver, sources, path, diagnostic);
+            const adventMass = await inheritAdventWeekdayMass(this.properResolver, sources, path, diagnostic);
             sources = adventMass.sources;
             if (adventMass.inherited) inherited = true;
             const rules = (0, proper_resolver_1.ruleInfo)(sources);
