@@ -11,7 +11,8 @@ def get(url):
         return r.read(8*1024*1024+1),r.geturl()
 q=urllib.parse.urlencode({"action":"query","format":"json","prop":"imageinfo",
 "iiprop":"url|size|sha1|extmetadata","titles":"File:"+filename})
-data,_=get("https://commons.wikimedia.org/w/api.php?"+q)
+data_bytes,_=get("https://commons.wikimedia.org/w/api.php?"+q)
+data=json.loads(data_bytes.decode("utf-8"))
 info=next(iter(data["query"]["pages"].values()))["imageinfo"][0]
 licence=info["extmetadata"]["LicenseShortName"]["value"]
 if "public domain" not in licence.lower():raise ValueError("PD-Art rights check failed: "+licence)
