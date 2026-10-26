@@ -24,6 +24,13 @@ for(const x of candidate.photographs){
   assert.equal(x.productionRelease,false);
   const c=x.candidateFile;
   assert.equal(c.originalPaintingSurfaceUncroppedByThisScript,true);
+  // Full source resize alone does not prove the source photograph has no frame.
+  assert.equal(x.framingReview?.status,"UNREVIEWED_FOR_RELEASE");
+  assert.equal(x.framingReview?.sourceOriginalPreserved,true);
+  assert.equal(x.framingReview?.physicalFrameAbsentHumanVerified,false);
+  assert.equal(x.framingReview?.gallerySurroundAbsentHumanVerified,false);
+  assert.equal(x.framingReview?.paintingBoundsHumanVerified,false);
+  assert.equal(x.framingReview?.frameFreePublicationApproved,false);
   assert.equal(c.photoHumanVisualAccepted,false);
   assert.equal(c.mobile320VisualAccepted,false);
   assert.equal(c.mobile390VisualAccepted,false);
@@ -38,6 +45,11 @@ for(const x of candidate.photographs){
   assert.equal(x.rightsReview.appDistributionIndependentlyApproved,false);
   assert.equal(x.rightsReview.photographRightsHumanSignedOff,false);
 }
+assert.equal(candidate.photographs.find(x=>x.date==="2026-04-02").framingReview.previewObservation,"GILDED_EXTERNAL_FRAME_VISIBLE");
+assert.equal(candidate.photographs.find(x=>x.date==="2026-10-25").framingReview.previewObservation,"WHITE_PHOTOGRAPHIC_MARGINS_VISIBLE");
+assert.equal(candidate.photographs.find(x=>x.date==="2026-11-01").framingReview.previewObservation,"DARK_PERIMETER_BORDER_REQUIRES_ORIGIN_REVIEW");
+assert.equal(candidate.photographs.find(x=>x.date==="2026-06-12").framingReview.previewObservation,"PAINTED_OVAL_ICONOGRAPHY_MUST_BE_PRESERVED");
+assert.equal(candidate.framelessReleaseApprovals,0);
 assert.equal(candidate.photographs.filter(x=>x.rightsReview.status.startsWith("MET_")).length,2);
 assert.equal(candidate.photographs.filter(x=>x.rightsReview.status.startsWith("COMMONS_")).length,8);
 assert.ok(totalBytes>1_000_000 && totalBytes<6_000_000);
