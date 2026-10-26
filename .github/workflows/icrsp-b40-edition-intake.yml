@@ -8,6 +8,7 @@ on:
       - 'data/source-text/icrsp-france-b40-29-named-salesian-annecy-toc-crosswalk.v1.json'
       - 'data/source-text/icrsp-france-b40-all223-duplicate-groups-edition-triage.v1.json'
       - 'data/source-text/icrsp-france-b40-four-author-edition-and-language-gates.v1.json'
+      - 'data/source-text/icrsp-france-b40-three-salesian-opening-text-concordances.v1.json'
       - 'tests/test_icrsp_b40_223_groups_29_salesian_toc_editions.py'
   workflow_dispatch:
 
