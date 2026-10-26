@@ -17,15 +17,18 @@ const check=(row,g,c)=>{
 check(day("2026-02-01","tempora:Sept1-0:2:v",2,"violet"),false,true);
 check(day("2026-03-22","tempora:Quad5-0:1:v",1,"violet"),false,true);
 check(day("2026-10-11","tempora:Pent20-0:2:g",2,"green"),null,true);
-check(day("2026-10-18","sancti:10-18:1:w",1,"white"),null,true);
+check(day("2026-10-18","sancti:10-18:1:w",1,"white"),true,true);
 // In a first-class *feast*, Credo follows from the feast class; a class-I
 // feria must not be classified as a feast merely because it has rank I.
-check(day("2026-12-08","sancti:12-08:1:w",1,"white"),null,true);
-check(day("2026-10-15","sancti:10-15:3:w",3,"white"),null,false);
-check(day("2026-10-14","sancti:10-14:3:r",3,"red"),null,false);
-check(day("2026-10-07","sancti:10-07:2:w",2,"white"),null,null);
-check(day("2026-10-26","tempora:Pent22-1:4:g",4,"green"),null,null);
+check(day("2026-12-08","sancti:12-08:1:w",1,"white"),true,true);
+check(day("2026-10-15","sancti:10-15:3:w",3,"white"),true,false);
+check(day("2026-10-14","sancti:10-14:3:r",3,"red"),true,false);
+check(day("2026-10-07","sancti:10-07:2:w",2,"white"),true,true);
+check(day("2026-10-26","tempora:Pent22-1:4:g",4,"green"),false,false);
 check(day("2026-02-18","tempora:Quadp3-3:1:v",1,"violet"),false,null);
+check(day("2026-10-22","tempora:Pent22-4:4:g",4,"green"),false,false);
+check(day("2026-12-02","tempora:Adv1-3:3:v",3,"violet"),false,null);
+check(day("2026-10-19","sancti:10-19:2:w",2,"white"),true,null);
 let r=review1962OrdinaryForCalendarDay(day("2026-10-11","tempora:Pent20-0:2:g",2,"violet"));
 assert.equal(r.gloria.clause,"RGMR_432_B");
 assert.equal(r.credo.clause,"RGMR_475_A");
