@@ -1,6 +1,6 @@
 {
   "name": "Ad Orientem module heroes — acquisition and publication gates",
-  "version": "2026-10-26.audit8.20-heroes-25-image-files",
+  "version": "2026-10-26.audit9.shared-frameless-images-gate",
   "editorial_ledger_ref": "data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json",
   "editorial_ledger_sha_at_audit": "afb09129f52e336df64c7f1782446e7cfb6861dc",
   "generated_from_latest_user_confirmed_22_selections": true,
@@ -43,7 +43,8 @@
       "evening",
       "michael"
     ],
-    "additional_rejected_comparison_photographs": 2
+    "additional_rejected_comparison_photographs": 2,
+    "frameless_image_releases": 0
   },
   "entries": [
     {
@@ -117,7 +118,20 @@
             "remarks": "Physical byte original verified; must not be treated as released master. Institutional source; needs colour and painting QA"
           }
         ],
-        "native_pixel_technical_preflight": "source_probe_complete_preliminary"
+        "native_pixel_technical_preflight": "source_probe_complete_preliminary",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "A visible rough painting/perimeter edge may be part of the original panel; do not remove genuine paint."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -200,7 +214,20 @@
             "remarks": "NG6276; high resolution 4421×6000 Commons file distinct from misleading cropped variant"
           }
         ],
-        "native_pixel_technical_preflight": "complete_not_human_passed"
+        "native_pixel_technical_preflight": "complete_not_human_passed",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Verify actual source pixel boundaries: external physical frames and photo mat must not be included in the displayed hero; all original painted content must remain."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -295,7 +322,20 @@
           }
         ],
         "native_pixel_technical_preflight": "source_probe_complete_preliminary",
-        "photo_candidate_verdict": "REJECT_FOR_HERO_REPRODUCTION_NOT_THE_PAINTING"
+        "photo_candidate_verdict": "REJECT_FOR_HERO_REPRODUCTION_NOT_THE_PAINTING",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Current Louvre glare photograph is already rejected, and includes frame in room photo; obtain a clean isolated painting image."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -367,7 +407,20 @@
           "Full-image source preview visually examined; picture retains many oval portraits and iconographic detail. Need alternate gallery reference for colour accuracy; full altarpiece should remain available."
         ],
         "alternative_reference_candidates": [],
-        "native_pixel_technical_preflight": "complete_not_human_passed"
+        "native_pixel_technical_preflight": "complete_not_human_passed",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Verify actual source pixel boundaries: external physical frames and photo mat must not be included in the displayed hero; all original painted content must remain."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -442,7 +495,20 @@
           "Full-image source preview visually examined; companion Morlete painting retains fine multi-figure layout. Check both heart-module reproductions for consistent reference colour, not artificial matching."
         ],
         "alternative_reference_candidates": [],
-        "native_pixel_technical_preflight": "complete_not_human_passed"
+        "native_pixel_technical_preflight": "complete_not_human_passed",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Verify actual source pixel boundaries: external physical frames and photo mat must not be included in the displayed hero; all original painted content must remain."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -553,7 +619,20 @@
             "id": "reni-church",
             "reason": "large church interior / spotlight glare, original work does not fill image; 5152×3864"
           }
-        ]
+        ],
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Verify actual source pixel boundaries: external physical frames and photo mat must not be included in the displayed hero; all original painted content must remain."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -649,7 +728,20 @@
             "rights": "reference_only",
             "remarks": "Explicitly labelled later copy with variants. DO NOT use as image for the approved original."
           }
-        ]
+        ],
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Verify actual source pixel boundaries: external physical frames and photo mat must not be included in the displayed hero; all original painted content must remain."
+        }
       }
     },
     {
@@ -712,7 +804,20 @@
           "Personally reviewed full Rubens central panel and native upper detail: convincing skin/clothing brushwork and age texture; verify central painting exactly and mobile composition."
         ],
         "alternative_reference_candidates": [],
-        "native_pixel_technical_preflight": "complete_not_human_passed"
+        "native_pixel_technical_preflight": "complete_not_human_passed",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Verify actual source pixel boundaries: external physical frames and photo mat must not be included in the displayed hero; all original painted content must remain."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -788,7 +893,20 @@
           "Personally reviewed source-derived whole artwork and two native details: detailed Ingres face/eyelashes, mantle threads and authentic age craquelure preserved, no obvious smoothing in these samples; museum colour reference comparison and complete file QA still open."
         ],
         "alternative_reference_candidates": [],
-        "native_pixel_technical_preflight": "complete_not_human_passed"
+        "native_pixel_technical_preflight": "complete_not_human_passed",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "The Met image includes the original panel edge; distinguish genuine artwork support from removable non-painted border before trimming."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -863,7 +981,20 @@
           "Personally reviewed full composition and generic native upper dark-area tile; full image looks credible and richly dark. Tile selects black background and is insufficient to decide compression/sharpness of painted hands or face; request subject-focused details."
         ],
         "alternative_reference_candidates": [],
-        "native_pixel_technical_preflight": "complete_not_human_passed"
+        "native_pixel_technical_preflight": "complete_not_human_passed",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Verify actual source pixel boundaries: external physical frames and photo mat must not be included in the displayed hero; all original painted content must remain."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -952,7 +1083,20 @@
             "remarks": "Physical byte original verified; must not be treated as released master. verify correct artist/auction image; known previous source URL incorrect"
           }
         ],
-        "native_pixel_technical_preflight": "source_probe_complete_preliminary"
+        "native_pixel_technical_preflight": "source_probe_complete_preliminary",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "A white photo border/mat is visible beyond Benson's actual painting; leave no white margin on hero output."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -1027,7 +1171,20 @@
           "Full Giordano source preview examined; figure placement and warm colours preserved, native garment detail sampled; compare institutional reference to rule out excess warmth."
         ],
         "alternative_reference_candidates": [],
-        "native_pixel_technical_preflight": "complete_not_human_passed"
+        "native_pixel_technical_preflight": "complete_not_human_passed",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Verify actual source pixel boundaries: external physical frames and photo mat must not be included in the displayed hero; all original painted content must remain."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -1124,6 +1281,19 @@
           "width_cm": 1014,
           "height_cm": 620,
           "authority": "https://www.amiens.fr/Vivre-a-Amiens/Culture-Patrimoine/Etablissements-culturels/Musee-de-Picardie/Collections/XIX/Notices/Notice-Jean-Leon-Gerome-Siecle-d-Auguste"
+        },
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Current Gérôme gallery installation including surrounding paintings is rejected, not frame-free artwork."
         }
       },
       "staged_research_file": {
@@ -1207,6 +1377,19 @@
           "sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
           "quality": "promising not approved",
           "note": "Moderate clean source; no ICC embedded"
+        },
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Verify actual source pixel boundaries: external physical frames and photo mat must not be included in the displayed hero; all original painted content must remain."
         }
       },
       "staged_research_file": {
@@ -1280,7 +1463,20 @@
           "Preserve candlelight and natural shadow; do not lift dark regions aggressively."
         ],
         "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "alternative_reference_candidates": [],
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Verify actual source pixel boundaries: external physical frames and photo mat must not be included in the displayed hero; all original painted content must remain."
+        }
       }
     },
     {
@@ -1355,7 +1551,20 @@
           }
         ],
         "native_pixel_technical_preflight": "source_probe_complete_preliminary",
-        "photo_candidate_verdict": "USER_APPROVED_POSTER_SOURCE_BUT_PRINT_FIDELITY_UNCLEARED"
+        "photo_candidate_verdict": "USER_APPROVED_POSTER_SOURCE_BUT_PRINT_FIDELITY_UNCLEARED",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Do not crop iconographic inscriptions at the edges of approved poster; only photographed surroundings are removable."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -1473,6 +1682,19 @@
           "path": "assets/staged/module-hero-wave2/saints-gart.jpg",
           "sha256": "137d3df4dee890524678cbd02b9690130c5550d22ca6778621b24fc6fe6ab5b2",
           "production_approved": false
+        },
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "The framed KHM Landauer Altar photograph documents the carved ensemble; use the verified full *painted panel alone* (saints-gart) for the hero."
         }
       },
       "staged_research_file": {
@@ -1548,7 +1770,20 @@
           "Personally reviewed full Honthorst painting and upper dark detail; image preserves intentional candlelit contrast. Lower-right circular emblem is visible and must be identified as potential historic painted arms, not automatically treated as watermarked image."
         ],
         "alternative_reference_candidates": [],
-        "native_pixel_technical_preflight": "complete_not_human_passed"
+        "native_pixel_technical_preflight": "complete_not_human_passed",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Verify actual source pixel boundaries: external physical frames and photo mat must not be included in the displayed hero; all original painted content must remain."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -1623,7 +1858,20 @@
           "Personally reviewed the full Meirelles wide image; historical narrative all visible, natural-looking colours; hero needs uncropped contain or explicit panorama-aware layout, not centre portrait crop."
         ],
         "alternative_reference_candidates": [],
-        "native_pixel_technical_preflight": "complete_not_human_passed"
+        "native_pixel_technical_preflight": "complete_not_human_passed",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Verify actual source pixel boundaries: external physical frames and photo mat must not be included in the displayed hero; all original painted content must remain."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -1705,7 +1953,20 @@
             "remarks": "Mural-scale original; preserve father-son embrace and side attendants; avoid over-warm colour grade"
           }
         ],
-        "native_pixel_technical_preflight": "complete_not_human_passed"
+        "native_pixel_technical_preflight": "complete_not_human_passed",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Verify actual source pixel boundaries: external physical frames and photo mat must not be included in the displayed hero; all original painted content must remain."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -1846,6 +2107,19 @@
           ],
           "reason": "Complete shaped composition, all 15 medallions; compared previews have less orange cast and better iconographic clarity than Sailko 01; independent PD-Art image. No embedded ICC means verify museum colour before approval.",
           "production_approved": false
+        },
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Keep the entire Lotto painted lunette and all fifteen roundels, do not trim the painted outline."
         }
       },
       "staged_research_file": {
@@ -1931,7 +2205,20 @@
             "remarks": "Full seven sorrow roundels and sword must survive; inspect lower black garment for digital posterization"
           }
         ],
-        "native_pixel_technical_preflight": "complete_not_human_passed"
+        "native_pixel_technical_preflight": "complete_not_human_passed",
+        "framing_review": {
+          "physicalFrameAbsentHumanVerified": false,
+          "gallerySurroundAbsentHumanVerified": false,
+          "paintingBoundsHumanVerified": false,
+          "originalPaintedSurfaceIntactHumanVerified": false,
+          "noSyntheticFillHumanVerified": false,
+          "framelessPublicationDerivativeApproved": false,
+          "cropBoundsPx": null,
+          "sourceOriginalRemainsArchived": true,
+          "decision": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
+          "rule": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
+          "specificConcern": "Keep all seven roundels, sword and original painted panel edges."
+        }
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -1959,7 +2246,8 @@
     "no_unilateral_crop": "Keep a full-frame version; approve phone and desktop focal crops only after original full image has been checked; use letterbox/contain for complex paintings.",
     "quality_not_automated": "Image statistic diagnostics can flag issues only; no automated aesthetic scoring of paintings, because craquelure, impasto, aged varnish and tenebrism are real artwork properties.",
     "inspection_at_real_pixels": "Review 100% crop of faces, detail zones and background with colour-managed sRGB preview; compare to museum reference where possible.",
-    "all_gates": "Exact object identity; faithful source; lens/perspective/glare; texture/noise/compression; colour/tonal fidelity; full composition; mobile layout; rights/provenance; checksummed original."
+    "all_gates": "Exact object identity; faithful source; lens/perspective/glare; texture/noise/compression; colour/tonal fidelity; full composition; mobile layout; rights/provenance; checksummed original.",
+    "physical_frame_policy": "No museum frames, photo mats, gallery room or border margins inside the displayed painting; the whole painted surface, including intrinsic painted frames/borders, must remain. Full original archived; derivative crop only after human verification."
   },
   "source_quality_findings": [
     {
