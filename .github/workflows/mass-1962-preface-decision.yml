@@ -34,8 +34,17 @@ jobs:
       - run: node tests/reader-proper-runtime-recovery.mjs
       - name: Authenticate trilingual Lenten Preface source recovery
         run: node tests/mass-1962-lent-preface-recovery.mjs
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
+      - name: Resolve Chromium for production Mass regression
+        run: |
+          if command -v google-chrome >/dev/null 2>&1; then
+            echo "AO_BROWSER_BIN=$(command -v google-chrome)" >> "$GITHUB_ENV"
+            google-chrome --version
+          elif command -v chromium >/dev/null 2>&1; then
+            echo "AO_BROWSER_BIN=$(command -v chromium)" >> "$GITHUB_ENV"
+            chromium --version
+          else
+            npx playwright install --with-deps chromium
+          fi
       - name: Verify three authentic trilingual Easter Preface variants
         run: node tests/mass-1962-easter-preface-variants.mjs
       - name: Audit all 30 Lent and Pentecost 2026 production Prefaces
