@@ -32,13 +32,13 @@
     },
     {
       "date": "2026-04-02",
-      "artist": "Ugolino da Siena",
-      "title": "Last Supper",
-      "route": "MET",
-      "lookup": "459131",
-      "objectUrl": "https://www.metmuseum.org/art/collection/search/459131",
-      "filePage": "https://www.metmuseum.org/art/collection/search/459131",
-      "notes": "MET_OPEN_ACCESS_CC0_API_CHECK",
+      "artist": "Philippe de Champaigne",
+      "title": "La Petite Cène",
+      "route": "COMMONS",
+      "lookup": "Champaigne Petite Cène Louvre.jpg",
+      "objectUrl": "https://collections.louvre.fr/en/ark:/53355/cl010062076",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
+      "notes": "2026-10-26 user replaces Ugolino with Philippe de Champaigne. Reuse exact May 27 INV1125 photo, not original 2026-04-02 Ugolino source; 1112x591 unframed provisional, seek better master. KEEP May27 unchanged.",
       "state": "RESEARCH_ACQUISITION_NOT_APPROVED",
       "requiredChecks": [
         "EXACT_PAINTING_IDENTITY",
@@ -47,7 +47,15 @@
         "320_390_PHONE_VISUAL",
         "REAL_LOCAL_ASSET_BYTES_SHA",
         "HUMAN_VISUAL_RELEASE_APPROVAL"
-      ]
+      ],
+      "editorialRevision": "data/calendar/approved-feast-holy-thursday-20261026-override.v1.json",
+      "photoSourceEvidenceDate": "2026-05-27",
+      "previousEditionArchived": {
+        "artist": "Ugolino da Siena",
+        "title": "Last Supper",
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/459131",
+        "reviewStatus": "WITHDRAWN_FOR_HOLY_THURSDAY"
+      }
     },
     {
       "date": "2026-05-23",
@@ -206,5 +214,8 @@
   "sourceRule": "Museum owner object pages, and individual exact Commons file pages; downloaded bytes may differ from the human-selected preview; record for review, never silently substitute painting.",
   "qualityRule": "At phone sizes entire painted surface is preserved, regardless of arbitrary 2500 pixel print-size threshold.",
   "rightsRule": "Commons metadata and Met open access statements are evidence to evaluate, not an automatic app distribution approval; distinguish copyright in painting from photograph.",
-  "recoveryNote20261021": "Original framed external-photo source was unsuitable for default phone hero; unframed photograph of identical Louvre INV1125 painting selected as acquisition candidate, not new user artwork selection. Commons Morlete candidate remains same; retry Wikimedia 429 throttled."
+  "recoveryNote20261021": "Original framed external-photo source was unsuitable for default phone hero; unframed photograph of identical Louvre INV1125 painting selected as acquisition candidate, not new user artwork selection. Commons Morlete candidate remains same; retry Wikimedia 429 throttled.",
+  "editorialRevisions": [
+    "data/calendar/approved-feast-holy-thursday-20261026-override.v1.json"
+  ]
 }
