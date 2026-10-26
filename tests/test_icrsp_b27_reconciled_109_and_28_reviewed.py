@@ -16,6 +16,8 @@ class IcrspB27(unittest.TestCase):
   cls.b24=load("icrsp-france-b24-25-direct-commentary-topic-observations.v1.json")
   cls.b25=load("icrsp-france-b25-75-direct-webpage-topic-passages.v1.json")
   cls.b26=load("icrsp-france-b26-twenty-direct-page-content-and-two-source-errors.v1.json")
+  cls.other_b27=load("icrsp-france-b27-47-source-paragraphs-and-owner-holds.v1.json")
+  cls.all=load("icrsp-france-b27-seven-stream-301-unique-direct-topic-ledger.v1.json")
  @classmethod
  def old_ids(cls):
   return set(cls.pre["cohorts"][0]["directReadArticleIds"])|set().union(
@@ -70,6 +72,25 @@ class IcrspB27(unittest.TestCase):
   self.assertEqual(len(base|b26|b27),254)
   self.assertEqual(self.r["combinedUniqueIncludingB26"],254)
   self.assertEqual(set(self.r["release"].values()),{0})
+ def test_301_unique_articles_across_seven_parallel_workstreams(self):
+  old=self.old_ids()
+  b23={x["articleId"] for x in self.b23["rows"]}
+  b24={x["articleId"] for x in self.b24["records"]}
+  b25={x["articleId"] for x in self.b25["records"]}
+  b26={x["articleId"] for x in self.b26["rows"]}
+  b27={x["articleId"] for x in self.r["records"]}
+  other={x["articleId"] for x in self.other_b27["records"]}
+  u=old|b23|b24|b25|b26|b27
+  self.assertEqual(len(u),254)
+  self.assertEqual(len(other),47)
+  self.assertFalse(other&u)
+  self.assertEqual(len(u|other),301)
+  self.assertEqual(len(self.all["uniqueArticles"]),301)
+  self.assertEqual({x["articleId"] for x in self.all["uniqueArticles"]},u|other)
+  self.assertEqual(self.all["counts"]["articlePasses"],308)
+  self.assertEqual(self.all["counts"]["repeatPasses"],7)
+  self.assertEqual(self.all["counts"]["remainingDistinctTopicUnreadArticles"],482)
+  self.assertEqual(self.all["counts"]["newPublicationApproved"],0)
  def test_twelve_scope_checks_and_two_unreleased_bilingual_drafts(self):
   cs=self.p["comparisons"]
   drafts=self.p["editorialDrafts"]
