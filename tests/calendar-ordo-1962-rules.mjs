@@ -22,7 +22,11 @@ check(day("2026-10-18","sancti:10-18:1:w",1,"white"),true,true);
 // feria must not be classified as a feast merely because it has rank I.
 check(day("2026-12-08","sancti:12-08:1:w",1,"white"),true,true);
 check(day("2026-12-26","sancti:12-26:2:r",2,"red"),true,true);
-check(day("2026-12-31","tempora:Nat1-1:2:w",2,"white"),null,true);
+check(day("2026-12-31","tempora:Nat1-1:2:w",2,"white"),true,true);
+check(day("2026-04-06","tempora:Pasc0-1:1:w",1,"white"),true,true);
+check(day("2026-05-27","tempora:Pasc7-3:1:r",1,"red"),true,true);
+check(day("2026-04-02","tempora:Quad6-4r:1:w",1,"white"),true,false);
+check(day("2026-04-04","tempora:Quad6-6r:1:vw",1,"white"),true,false);
 check(day("2026-10-15","sancti:10-15:3:w",3,"white"),true,false);
 check(day("2026-10-14","sancti:10-14:3:r",3,"red"),true,false);
 check(day("2026-10-07","sancti:10-07:2:w",2,"white"),true,true);
