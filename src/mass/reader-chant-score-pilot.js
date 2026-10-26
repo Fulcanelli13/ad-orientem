@@ -1,3 +1,4 @@
+import {createOfflineChantEngraver} from './reader-chant-engraver.js';
 // Native Mass Schola: real Gregorian score selection and continuous manuscript viewing.
 // Research/pilot only: selected preview is NOT the actual choir's musical setting.
 // No playback, priest action, card navigation, audio clock, or liturgical inference.
@@ -117,8 +118,8 @@ const CSS=String.raw`
   scrollbar-color:#8b8575 #eee8d9;overscroll-behavior:contain;touch-action:pan-y;
   flex:1;min-height:0;background:#faf8ee;color:#1c2329;border-radius:7px;
   scroll-behavior:smooth}
-.ao-chant-score-reading img{display:block;width:100%;height:auto;max-width:none}
-.ao-chant-score-reading img[hidden]{display:none!important}
+.ao-chant-score-reading svg{display:block;width:100%;height:auto;max-width:100%}
+.ao-chant-score-reading [data-score-image][hidden],.ao-chant-score-reading [data-score-full-image][hidden]{display:none!important}
 .ao-chant-score-fallback{padding:14px;font:500 13px/1.6 Georgia,serif;color:#444}
 .ao-chant-score-caption{display:flex;justify-content:space-between;gap:12px;
   color:#b6bdc0;font:500 10px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
@@ -172,7 +173,7 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
     </div></div>
     <div class="ao-chant-score-reading" data-score-reading tabindex="0"
       aria-label="Gregorian music manuscript; swipe or scroll manually">
-      <img data-score-image alt="Full Gregorian score of the selected reference Kyrie">
+      <div data-score-image aria-hidden="true"></div>
       <p class="ao-chant-score-fallback" data-score-fallback hidden>Notation unavailable while offline.
       The chant's GABC source remains available from GregoBase.</p>
     </div>
@@ -191,7 +192,7 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
       Follow manually; no recording or microphone is active.</p>
     <div class="ao-chant-score-reading" data-score-full-reading tabindex="0"
        aria-label="Full Gregorian score; scroll manually">
-       <img data-score-full-image alt="Full Gregorian score for the chosen reference setting">
+       <div data-score-full-image aria-hidden="true"></div>
        <p class="ao-chant-score-fallback" data-score-full-fallback hidden>Score unavailable offline.</p>
     </div><div class="ao-chant-score-caption">
       <span data-score-full-progress>MANUAL · 0%</span><a data-score-full-source
@@ -209,7 +210,11 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
   const fullPicture=dialogue.querySelector("[data-score-full-image]");
   let scoreId=SCHOLA_SCORE_PILOT.id;
   let isOpen=false, lastTrack=null, destroyed=false;
-  let imageErrors=new Set();
+  const inlineEngraver=createOfflineChantEngraver({viewport:picture,document:doc});
+  const expandedEngraver=createOfflineChantEngraver({viewport:fullPicture,document:doc});
+  inlineEngraver.observe();expandedEngraver.observe();
+  let renderedScoreId=null;
+  let renderCounter=0;
   function chosen(){return SCHOLA_SCORE_CATALOGUE.find(s=>s.id===scoreId)||SCHOLA_SCORE_PILOT;}
   function updateProgress(){
     for(const [view,selector]of [[viewport,"[data-score-progress]"],[fullViewport,"[data-score-full-progress]"]]){
@@ -220,19 +225,31 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
   }
   function applyScore({reset=true}={}){
     const value=chosen();
+    const request=++renderCounter;
     select.value=value.id;
     panel.querySelector("[data-score-source]").href=value.sourceUrl;
     dialogue.querySelector("[data-score-full-source]").href=value.sourceUrl;
     dialogue.querySelector("[data-score-title]").textContent=value.title;
     if(reset){viewport.scrollTop=0;fullViewport.scrollTop=0;}
-    picture.hidden=false;fullPicture.hidden=false;
-    const failed=imageErrors.has(value.id);
-    picture.hidden=failed;fullPicture.hidden=failed;
-    panel.querySelector("[data-score-fallback]").hidden=!failed;
-    dialogue.querySelector("[data-score-full-fallback]").hidden=!failed;
-    // Images are on the source server until the SVG/renderer is properly bundled.
-    if(picture.getAttribute("src")!==value.svgUrl)picture.setAttribute("src",value.svgUrl);
-    if(fullPicture.getAttribute("src")!==value.svgUrl)fullPicture.setAttribute("src",value.svgUrl);
+    for(const [container,fallBack] of [[picture,panel.querySelector("[data-score-fallback]")],
+      [fullPicture,dialogue.querySelector("[data-score-full-fallback]")]]){
+      container.hidden=false;fallBack.hidden=true;
+    }
+    // Both views render from the verified GABC, never from a remote SVG.
+    // Each view reflows independently as its available width changes.
+    const tasks=[[inlineEngraver,picture,panel.querySelector("[data-score-fallback]")],
+      [expandedEngraver,fullPicture,dialogue.querySelector("[data-score-full-fallback]")]];
+    for(const [renderer,container,fallBack] of tasks){
+      const job=renderedScoreId===value.id ? renderer.reflow():renderer.engrave(value.gabc);
+      Promise.resolve(job).then(()=>{
+        if(destroyed||request!==renderCounter)return;
+        container.hidden=false;fallBack.hidden=true;updateProgress();
+      }).catch(()=>{
+        if(destroyed||request!==renderCounter)return;
+        container.hidden=true;fallBack.hidden=false;
+      });
+    }
+    renderedScoreId=value.id;
     updateProgress();
   }
   function updateVisible(){
@@ -241,6 +258,7 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
     trigger.textContent=isOpen?"CLOSE SCORE":"GREGORIAN SCORE";
     panel.hidden=!isOpen;
     onLayoutChange();
+    if(isOpen)void inlineEngraver.reflow();
   }
   function hideFull({restoreFocus=true}={}){
     if(dialogue.hidden)return;
@@ -285,6 +303,7 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
       const ratio=scoreReadingProgress({scrollTop:viewport.scrollTop,
         scrollHeight:viewport.scrollHeight,clientHeight:viewport.clientHeight});
       dialogue.hidden=false;applyScore({reset:false});
+      void expandedEngraver.reflow();
       fullViewport.scrollTop=ratio*Math.max(0,fullViewport.scrollHeight-fullViewport.clientHeight);
       updateProgress();dialogue.querySelector("[data-score-close]")?.focus?.();
     }
@@ -297,19 +316,10 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
     // Prevent Mass-card arrow navigation while the modal has keyboard focus.
     if(["ArrowLeft","ArrowRight"].includes(event.key)){event.stopPropagation();}
   };
-  const onSelect=()=>{scoreId=select.value;imageErrors.delete(scoreId);applyScore();};
+  const onSelect=()=>{scoreId=select.value;applyScore();};
   const onPanelKey=event=>{
     // Inline score keyboard navigation is independent from Mass card navigation.
     if(["ArrowLeft","ArrowRight"].includes(event.key))event.stopPropagation();
-  };
-  const onImageError=event=>{
-    const failed=SCHOLA_SCORE_CATALOGUE.find(s=>s.svgUrl===event?.target?.getAttribute?.("src"));
-    if(!failed)return;
-    imageErrors.add(failed.id);
-    if(failed.id!==scoreId)return;
-    picture.hidden=true;fullPicture.hidden=true;
-    panel.querySelector("[data-score-fallback]").hidden=false;
-    dialogue.querySelector("[data-score-full-fallback]").hidden=false;
   };
   const onScroll=()=>updateProgress();
   trigger.addEventListener("click",onTrigger);
@@ -318,8 +328,6 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
   select.addEventListener("change",onSelect);
   dialogue.addEventListener("click",onDialogueClick);
   dialogue.addEventListener("keydown",onDialogKey);
-  picture.addEventListener("error",onImageError);
-  fullPicture.addEventListener("error",onImageError);
   viewport.addEventListener("scroll",onScroll);
   fullViewport.addEventListener("scroll",onScroll);
   return Object.freeze({
@@ -339,8 +347,7 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
       select.removeEventListener("change",onSelect);
       dialogue.removeEventListener("click",onDialogueClick);
       dialogue.removeEventListener("keydown",onDialogKey);
-      picture.removeEventListener("error",onImageError);
-      fullPicture.removeEventListener("error",onImageError);
+      inlineEngraver.destroy();expandedEngraver.destroy();
       viewport.removeEventListener("scroll",onScroll);
       fullViewport.removeEventListener("scroll",onScroll);
       trigger.remove?.();panel.remove?.();dialogue.remove?.();style.remove?.();
