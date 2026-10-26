@@ -250,7 +250,7 @@
     "scoresInCurrentRuntimeFromThisResearch": 0,
     "fullNoteByNoteVerified": 0,
     "knownAccessibleGabcEndpoints": true,
-    "downloadedGabcPayloads": false,
+    "downloadedGabcPayloads": true,
     "sourceMatchCriteria": [
       "Exact 1961 Solesmes book and printed page indexed in the score's own Sources",
       "Latin incipit and chant function distinct from same-title Office texts",
@@ -271,7 +271,16 @@
         "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=2897",
         "sourceImage": "https://gregobase.selapa.net/sources/3/1560.png",
         "verification": "PAGE_MATCH_CONFIRMED_MELODY_UNCERTIFIED",
-        "critical": "GregoBase change history removed verses 2/3 from score #2897; distribution Nunc dimittis repetition and verses require source-owned composition, not naive single GABC playback."
+        "critical": "GregoBase change history removed verses 2/3 from score #2897; distribution Nunc dimittis repetition and verses require source-owned composition, not naive single GABC playback.",
+        "archive": [
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-2897-e1.gabc",
+            "element": 1,
+            "sha256": "f85caf4fd69603fb426dd58be09d8b56c896fe76a4da3f68e64043fd17a2e4ea",
+            "bytes": 1064
+          }
+        ],
+        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED"
       },
       {
         "id": "LU61-CND-03",
@@ -285,7 +294,16 @@
         "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=1311",
         "sourceImage": "https://gregobase.selapa.net/sources/3/1562.png",
         "verification": "VISUAL_OPENING_NOTES_AND_TEXT_MATCH_NO_FULL_PITCH_QA",
-        "critical": "Do not substitute similarly entitled responsory 006051 or office antiphon without complete text and melody comparison."
+        "critical": "Do not substitute similarly entitled responsory 006051 or office antiphon without complete text and melody comparison.",
+        "archive": [
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-1311-e1.gabc",
+            "element": 1,
+            "sha256": "bc51d10205bd74de594ab7a74027f582159874c16833693c65fb28d77fc82614",
+            "bytes": 1131
+          }
+        ],
+        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED"
       },
       {
         "id": "LU61-CND-04",
@@ -299,7 +317,16 @@
         "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=46",
         "sourceImage": "https://gregobase.selapa.net/sources/3/1562.png",
         "verification": "VISUAL_OPENING_NOTES_AND_TEXT_MATCH_NO_FULL_PITCH_QA",
-        "critical": "GregoBase #46 antiphon embeds 'et cum inducerent puerum in templum'; the native Roman 1962 CND-R05 has a separate V. Cum inducerent puerum Jesum parentes ejus ... Do not treat the former as the latter or delete the prescribed Roman verse."
+        "critical": "GregoBase #46 antiphon embeds 'et cum inducerent puerum in templum'; the native Roman 1962 CND-R05 has a separate V. Cum inducerent puerum Jesum parentes ejus ... Do not treat the former as the latter or delete the prescribed Roman verse.",
+        "archive": [
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-46-e1.gabc",
+            "element": 1,
+            "sha256": "1e15d85f73a65ff8c7d7137794278908114c19a0f5b1b71eff583ed5c355cb20",
+            "bytes": 994
+          }
+        ],
+        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED"
       },
       {
         "id": "LU61-CND-05",
@@ -313,7 +340,16 @@
         "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=513",
         "sourceImage": "https://gregobase.selapa.net/sources/3/1563.png",
         "verification": "PAGE_MATCH_CONFIRMED_MELODY_UNCERTIFIED",
-        "critical": "Responsory (not generic antiphon). Keep re-entry timing and V. Postquam autem text separate."
+        "critical": "Responsory (not generic antiphon). Keep re-entry timing and V. Postquam autem text separate.",
+        "archive": [
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-513-e1.gabc",
+            "element": 1,
+            "sha256": "bbe8d860e42b5027cd7347a725715ae5ed66c8f0a3093387bb675f5dfc8cca2e",
+            "bytes": 1064
+          }
+        ],
+        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED"
       },
       {
         "id": "LU61-PALM-01",
@@ -327,7 +363,16 @@
         "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=1215",
         "sourceImage": "https://gregobase.selapa.net/sources/3/726.png",
         "verification": "VISUAL_OPENING_NOTES_AND_TEXT_MATCH_NO_FULL_PITCH_QA",
-        "critical": "Antiphon record is NOT Psalm 23; the source itself points to score 288 for verses."
+        "critical": "Antiphon record is NOT Psalm 23; the source itself points to score 288 for verses.",
+        "archive": [
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-1215-e1.gabc",
+            "element": 1,
+            "sha256": "eb6995041befd665f42323d35140696439b521caa168d53392bebab56c51c0ab",
+            "bytes": 510
+          }
+        ],
+        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED"
       },
       {
         "id": "LU61-PALM-01-PS",
@@ -341,7 +386,16 @@
         "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=288",
         "sourceImage": "https://gregobase.selapa.net/sources/3/726.png",
         "verification": "PSALM_TONE_SOURCE_IDENTIFIED_TEXT_1962_OWNER_HOLD",
-        "critical": "Full Psalm 23 setting separate from antiphon. Score also offers first-verse-only variant; do not choose incomplete one for full distribution."
+        "critical": "Full Psalm 23 setting separate from antiphon. Score also offers first-verse-only variant; do not choose incomplete one for full distribution.",
+        "archive": [
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-288-e1.gabc",
+            "element": 1,
+            "sha256": "809e3d2c3bd37d8beb1035d4fd36cd5d4d4170abd56bc85583c493bea1f22e9e",
+            "bytes": 512
+          }
+        ],
+        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED"
       },
       {
         "id": "LU61-PALM-02",
@@ -355,7 +409,16 @@
         "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=1155",
         "sourceImage": "https://gregobase.selapa.net/sources/3/727.png",
         "verification": "VISUAL_OPENING_NOTES_AND_TEXT_MATCH_NO_FULL_PITCH_QA",
-        "critical": "Antiphon record is NOT Psalm 46; source itself points to score 435 for verses."
+        "critical": "Antiphon record is NOT Psalm 46; source itself points to score 435 for verses.",
+        "archive": [
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-1155-e1.gabc",
+            "element": 1,
+            "sha256": "a0c67d27dfa7abd399a3ec616387ffdb3bda0afb3cc183c0693b672ce42f4747",
+            "bytes": 569
+          }
+        ],
+        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED"
       },
       {
         "id": "LU61-PALM-02-PS",
@@ -369,7 +432,16 @@
         "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=435",
         "sourceImage": "https://gregobase.selapa.net/sources/3/727.png",
         "verification": "PSALM_TONE_SOURCE_IDENTIFIED_TEXT_1962_OWNER_HOLD",
-        "critical": "Psalm verses and repeated antiphon belong to separate GABC records; variable distribution duration."
+        "critical": "Psalm verses and repeated antiphon belong to separate GABC records; variable distribution duration.",
+        "archive": [
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-435-e1.gabc",
+            "element": 1,
+            "sha256": "1d0c30188c5d7852b55c98af972342dad00c66652b9deabe7f70094d03420872",
+            "bytes": 411
+          }
+        ],
+        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED"
       },
       {
         "id": "LU61-PALM-03",
@@ -392,7 +464,46 @@
           "https://gregobase.selapa.net/download.php?elem=4&format=gabc&id=259",
           "https://gregobase.selapa.net/download.php?elem=5&format=gabc&id=259",
           "https://gregobase.selapa.net/download.php?elem=6&format=gabc&id=259"
-        ]
+        ],
+        "archive": [
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-259-e1.gabc",
+            "element": 1,
+            "sha256": "b604a574a3da67c685dcb15cc583c50b091293ee5340ddcfb82e6d132eb8ac73",
+            "bytes": 467
+          },
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-259-e2.gabc",
+            "element": 2,
+            "sha256": "eeaee20b783f14eacfe2779683b602e9920f9cbb0fc8d1fa1efc428dd524b956",
+            "bytes": 448
+          },
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-259-e3.gabc",
+            "element": 3,
+            "sha256": "717efd81224cd4f95f5678c97fa28ab74db539d8416e91f0bd0c8a2fedc17b2a",
+            "bytes": 437
+          },
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-259-e4.gabc",
+            "element": 4,
+            "sha256": "5bd017cb003e3e358eeca0153fb883a5e506bbef9edfc6983809b7b694537e9e",
+            "bytes": 438
+          },
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-259-e5.gabc",
+            "element": 5,
+            "sha256": "04f836e8b0935d7d47e78dfa75d5d6fc30c4e7de8969cf1cd9421b789c81da71",
+            "bytes": 428
+          },
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-259-e6.gabc",
+            "element": 6,
+            "sha256": "d979534ea8d37037eed88814e8874226e987f3d2c0595039a327965ef09108c0",
+            "bytes": 444
+          }
+        ],
+        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED"
       },
       {
         "id": "LU61-PALM-04",
@@ -406,7 +517,16 @@
         "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=606",
         "sourceImage": "https://gregobase.selapa.net/sources/3/735.png",
         "verification": "PAGE_MATCH_CONFIRMED_MELODY_UNCERTIFIED",
-        "critical": "Responsorium including V. Cumque audisset and repeated Cum ramis. Current Palm return payload incomplete, handoff to #894."
+        "critical": "Responsorium including V. Cumque audisset and repeated Cum ramis. Current Palm return payload incomplete, handoff to #894.",
+        "archive": [
+          {
+            "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-606-e1.gabc",
+            "element": 1,
+            "sha256": "9defc37b16c697342a5c772bbd8728cc59bf41e939daa58e9b589e7f2ad4104f",
+            "bytes": 924
+          }
+        ],
+        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED"
       }
     ],
     "rejectedSources": [
@@ -440,6 +560,19 @@
       "NOTATION_BUNDLE_REQUIRES_FULL_SOURCE_AND_GABC_ELEMENT_SET",
       "VERIFIED_MELODY_COUNT_REMAINS_ZERO"
     ],
-    "licence": "GregoBase says site transcriptions released CC0; refer to original record, credit transcription per editorial practice, do not assume unrelated scanned book images have that license."
+    "licence": "GregoBase says site transcriptions released CC0; refer to original record, credit transcription per editorial practice, do not assume unrelated scanned book images have that license.",
+    "sha256ArchiveCommitted": true,
+    "archiveCommit": "e450a28d78e8b1f5d34774612a8509e185b698a6",
+    "archiveManifestPath": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/sha256-manifest.json",
+    "archivedGabcElements": 15,
+    "archivedBytes": 9841,
+    "archiveStatus": "15_RAW_UTF8_GABC_FILES_VERIFIED_SHA256_COMMITTED_GIT_NOTATION_QA_OPEN",
+    "gatesAdded": [
+      "Permanent raw GABC source files SHA256 verified and committed to research branch",
+      "All 6 Gloria laus parts present and individually addressed",
+      "Source score GABC bytes have not been collation-certified against printed notation",
+      "Roman 1962 text and optional chant eligibility remain under canonical source owner",
+      "Promotion prohibited until branch is reviewed/merged and notation QA accepted"
+    ]
   }
 }
