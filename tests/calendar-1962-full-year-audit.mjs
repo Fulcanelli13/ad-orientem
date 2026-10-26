@@ -67,12 +67,14 @@ try{
     const response=await page.evaluate(async ids=>{
       const resolver=globalThis.AO_RUNTIME_V8?.resolver;
       const {review1962OrdinaryForCalendarDay}=await import("/src/calendar/ordo-1962-ordinary-rule-review.js");
+      const {review1962PrefaceForCalendarDay}=await import("/src/calendar/ordo-1962-preface-review.js");
       if(!resolver||typeof resolver.resolveDay!=="function")throw Error("Production day resolver unavailable");
       return Promise.all(ids.map(async date=>{
         try{
           const r=await resolver.resolveDay(date);
           const d=r?.day?.main||{},p=r?.proper?.data||{};
           const ordo=review1962OrdinaryForCalendarDay(r);
+          const preface=review1962PrefaceForCalendarDay(r);
           const sourceRule=key=>{
             const decision=ordo[key];
             return {status:decision.status,value:decision.value,
@@ -88,6 +90,11 @@ try{
             rawRank:p.rank??d.rank??null,rawColour:(/^tempora:Quad6-5r:/.test(String(d.id??""))?r?.colourPlan?.primary:r?.colourPlan?.massColor)??p.color??p.colour??d.color??d.colour??r?.colourPlan?.name??null,
             commemorations:comms,properStatus:String(r?.proper?.status||""),
             ordoRuleReview:{gloria:sourceRule("gloria"),credo:sourceRule("credo")},
+            prefaceReview:{status:preface.status,reason:preface.reason,
+              expected:preface.expected,actual:preface.actual,heading:preface.heading,
+              clause:preface.clause,basis:preface.basis,sourceUrl:preface.sourceUrl,
+              trilingualTextComplete:preface.trilingualTextComplete,
+              autoPublish:preface.autoPublish},
             composition:{
               commemorations:(p.calendarCommemorations||[]).map(x=>({name:x.name,path:x.path,prayerSourcePath:x.prayerSourcePath||null,rank:x.rank})),
               collects:(p.collects||[]).length,secrets:(p.secrets||[]).length,
@@ -238,6 +245,16 @@ try{
     resolved:rows.length-unresolved.length,unresolved:unresolved.length,
     missingTitleRankColour:incomplete.length,independentChecks:checks.length,
     independentlyMatched:checks.length-discrepancies.length,independentDiscrepancies:discrepancies.length,
+    prefaceReview:{
+      ruleAndTextAgree:rows.filter(x=>x.prefaceReview?.status==="RULE_TEXT_AGREE").length,
+      sourceConflict:rows.filter(x=>x.prefaceReview?.status==="SOURCE_CONFLICT").length,
+      unmapped:rows.filter(x=>x.prefaceReview?.status==="UNMAPPED").length,
+      missingOrUnrecognized:rows.filter(x=>["UNCLASSIFIED_TEXT","TRANSLATIONS_INCOMPLETE"].includes(x.prefaceReview?.status)).length,
+      specialOrUnavailable:rows.filter(x=>["NOT_MASS","WITHHELD"].includes(x.prefaceReview?.status)).length,
+      editoriallyCertified:0,
+      source:"RGMR_1960_482_499",
+      limitation:"General Roman 1962 selected-day Preface identity and source-heading triage, not verified text or permission to replace Mass source."
+    },
     fullYearIndependentlyCertified:false,
     ordoRules:{
       gloriaSupported:rows.filter(x=>x.ordoRuleReview?.gloria?.status==="RULE_SUPPORTED").length,
@@ -261,6 +278,20 @@ try{
     ],summary,unresolved,incomplete,discrepancies,checks,rows};
   await mkdir(outputDir,{recursive:true});
   await writeFile(resolve(outputDir,"1962-2026-full-year-audit.json"),JSON.stringify(result,null,2)+"\n","utf8");
+  await writeFile(resolve(outputDir,"1962-2026-preface-review.json"),JSON.stringify({
+    schema:"AO_1962_PREFACE_REVIEW_365_V1",year:2026,
+    authority:"https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+    sourceScope:"GENERAL_ROMAN_1962_PRINCIPAL_MASS_ONLY",
+    sourceResolverAuditOnly:true,changesReader:false,editorialCertification:false,
+    counts:summary.prefaceReview,
+    queue:rows.filter(x=>x.prefaceReview?.status!=="RULE_TEXT_AGREE").map(x=>({
+      date:x.date,principalId:x.mainId,title:x.title,
+      sourcePath:x.provenance?.properTitle||null,rank:x.rawRank,
+      ...x.prefaceReview
+    })),
+    rows:rows.map(x=>({date:x.date,principalId:x.mainId,title:x.title,rank:x.rawRank,
+      ...x.prefaceReview}))
+  },null,2)+"\n","utf8");
   console.log("CALENDAR_1962_YEAR_AUDIT_SUMMARY="+JSON.stringify(summary));
   console.log("CALENDAR_1962_YEAR_AUDIT_TOP_FINDINGS="+JSON.stringify(discrepancies.slice(0,30).map(x=>({date:x.date,problems:x.problems,title:x.actual?.title,rank:x.actual?.rawRank,color:x.actual?.rawColour}))));
   assert.equal(rows.length,365,"Production resolver sweep must cover every day of 2026");
@@ -270,6 +301,24 @@ try{
   assert.equal(oct26.mainId,":feria:4:w","Live general Roman feria identity changed");
   assert.equal(oct26.ordoRuleReview.gloria.value,false);
   assert.equal(oct26.ordoRuleReview.credo.value,false);
+  const prefaceDays=new Map([
+    ["2026-01-06","RULE_TEXT_AGREE"],
+    ["2026-02-02","RULE_TEXT_AGREE"],
+    ["2026-04-05","RULE_TEXT_AGREE"],
+    ["2026-05-24","SOURCE_CONFLICT"],
+    ["2026-10-07","SOURCE_CONFLICT"],
+    ["2026-10-11","RULE_TEXT_AGREE"],
+    ["2026-12-08","SOURCE_CONFLICT"]
+  ]);
+  for(const [date,status] of prefaceDays){
+    const row=rows.find(x=>x.date===date);
+    assert.equal(row?.prefaceReview?.status,status,
+      date+" 1962 Preface rule should detect the real source heading without reader recovery");
+  }
+  assert.equal(summary.prefaceReview.ruleAndTextAgree+summary.prefaceReview.sourceConflict+
+    summary.prefaceReview.unmapped+summary.prefaceReview.missingOrUnrecognized+
+    summary.prefaceReview.specialOrUnavailable,365,
+    "All 365 days must receive exactly one audited Preface status");
   const rosary=rows.find(x=>x.date==="2026-10-07");
   assert.equal(rosary.ordoRuleReview.gloria.value,true);
   assert.equal(rosary.ordoRuleReview.credo.value,true);
