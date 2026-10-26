@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'data/customs/customs-r18-six-canonical-release-candidate.v1.json'
+      - 'data/customs/customs-r18-six-canonical-promotion-payload.v1.json'
       - 'tests/customs-r18-six-canonical-release-candidate.mjs'
       - '.github/workflows/customs-r18-six-release-candidate.yml'
   workflow_dispatch:
