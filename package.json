@@ -52,7 +52,7 @@
     "check:reader-release": "node tests/reader-release-certification.mjs",
     "test:reader-rail-ownership": "node tests/reader-rail-ownership.mjs",
     "test:reader-guide": "node tests/reader-guide.mjs",
-    "test:reader-schola": "node tests/reader-schola.mjs && node tests/mass-rite-music-authority.mjs && node tests/reader-rite-music-presentation.mjs && node tests/reader-schola-windows.mjs && node tests/reader-chant-score-pilot.mjs && node tests/reader-chant-engraver.mjs",
+    "test:reader-schola": "node tests/reader-schola.mjs && node tests/mass-rite-music-authority.mjs && node tests/reader-rite-music-presentation.mjs && node tests/reader-schola-windows.mjs && node tests/reader-chant-score-pilot.mjs && node tests/reader-chant-engraver.mjs && node tests/mass-chant-programme.mjs",
     "test:mass-customs-missal": "node tests/mass-customs-missal-presentation.mjs",
     "test:gloria-credo-faithful": "node tests/gloria-credo-faithful.mjs",
     "test:mass-complete-icon-atlas": "node tests/mass-complete-icon-atlas.mjs",
