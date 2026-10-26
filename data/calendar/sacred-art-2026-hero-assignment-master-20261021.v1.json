@@ -1605,14 +1605,19 @@
       "date": "2026-04-02",
       "observedPrincipalId": "tempora:Quad6-4r:1:w",
       "observedTitle": "Holy Thursday",
-      "heroTheme": "holy-thursday",
+      "heroTheme": "holy-thursday-eucharistic-institution",
       "approvedDateHero": {
         "state": "CURATOR_APPROVED_EXACT_DATE",
-        "artist": "Ugolino da Siena",
-        "title": "Last Supper",
-        "artworkId": null,
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "artworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
         "rating": 5,
-        "source": "2026-10-19 explicit user approved artwork"
+        "source": "2026-10-26 explicit user supersedes Ugolino for Holy Thursday; 2026-05-27 retained",
+        "supersedes": {
+          "artist": "Ugolino da Siena",
+          "title": "Last Supper",
+          "status": "WITHDRAWN_FOR_HOLY_THURSDAY"
+        }
       },
       "priorApprovedArtworkIds": [
         "met-459131"
@@ -1625,7 +1630,7 @@
       "exactResearchSourceLinkCount": 0,
       "dateSelectionNeeded": false,
       "productionHeroReleased": false,
-      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse. Approved 2026-10-26 revision: 2026-04-02 uses Champaigne; existing source-pool IDs are not automatically released photos."
     },
     {
       "date": "2026-04-03",
@@ -2753,5 +2758,8 @@
     "second": "Reconcile 43 Class I remaining date assignments against past curator-reviewed pool and seasonally/contextually suitable artwork; avoid re-rating existing selections",
     "third": "Verify non-I spotlights against actual observed 1962 principal and decide only where an exceptional image justifies it",
     "fourth": "Acquire free reusable specific photographic originals for selected candidates, then verify uncropped 320/390px UI. Do not merge until real image-rights release and human approval."
-  }
+  },
+  "editorialRevisions": [
+    "data/calendar/approved-feast-holy-thursday-20261026-override.v1.json"
+  ]
 }
