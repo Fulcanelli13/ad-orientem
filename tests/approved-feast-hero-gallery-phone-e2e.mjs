@@ -9,6 +9,14 @@ const INDEX=path.join(ROOT,"docs/research/APPROVED-FEAST-HERO-PHOTO-REVIEW-20261
 const MANIFEST=path.join(ROOT,"data/calendar/approved-feast-hero-packaged-candidates-20261021.v1.json");
 const report=JSON.parse(fs.readFileSync(MANIFEST,"utf8"));
 assert.equal(report.photographs.length,10);
+const holy=report.photographs.find(x=>x.date==="2026-04-02");
+const ember=report.photographs.find(x=>x.date==="2026-05-27");
+assert.equal(holy.artist,"Philippe de Champaigne");
+assert.equal(holy.title,"La Petite Cène");
+assert.equal(holy.candidateFile.path,ember.candidateFile.path);
+const reviewHtml=fs.readFileSync(INDEX,"utf8");
+assert.ok(!reviewHtml.includes("Ugolino da Siena"),"Old withdrawn Holy Thursday painting must not appear in active gallery");
+assert.ok(reviewHtml.includes("2026-04-02 · Holy Thursday"),"Revised Holy Thursday artwork must be represented");
 assert.equal(report.humanAcceptedImagePhotos,0);
 assert.equal(report.explicitAppRightsReleaseApprovals,0);
 assert.equal(report.liveReleaseManifest,null);
