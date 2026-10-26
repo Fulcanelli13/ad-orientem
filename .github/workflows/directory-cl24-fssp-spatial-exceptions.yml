@@ -193,8 +193,8 @@ jobs:
           assert x['research_supported_named_geospatial_references']==31
           assert x['existing_spatial_conflicts_held']==1
           assert x['all_with_any_spatial_candidate_including_conflict']==32
-          assert x['one_confirmed_operator_temporary_closure_risk']==1
-          assert x['provisional_alternate_worship_place_leads_without_admission']==1
+          assert x['one_operational_closure_conflict_for_manual_review']==1
+          assert x['provisional_alternate_worship_place_leads_without_admission']==0
           assert x['pilot_historical_mass_row_patterns_unchanged']==74
           assert x['source_1962_book_evidence_supported_unchanged']==256
           assert x['source_1962_book_evidence_held_unchanged']==176
@@ -208,7 +208,7 @@ jobs:
           assert db.execute('SELECT COUNT(*) FROM cl24_research_building_reference').fetchone()[0]==8
           assert db.execute('SELECT COUNT(*) FROM cl24_remaining_spatial_hold').fetchone()[0]==7
           assert db.execute('SELECT COUNT(*) FROM cl24_operational_exception').fetchone()[0]==1
-          assert db.execute("SELECT COUNT(*) FROM cl24_operational_exception WHERE operational_status='TEMPORARILY_CLOSED_PER_LOCAL_FSSP'").fetchone()[0]==1
+          assert db.execute("SELECT COUNT(*) FROM cl24_operational_exception WHERE operational_status='CLOSURE_OR_VENUE_TRANSFER_UNVERIFIED_SOURCE_CONFLICT'").fetchone()[0]==1
           assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
           assert db.execute('SELECT COUNT(*) FROM mass_time').fetchone()[0]==4681
           assert db.execute('SELECT COUNT(*) FROM cl17_accepted_mass_gates').fetchone()[0]==256
