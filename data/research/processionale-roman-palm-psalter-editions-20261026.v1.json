@@ -361,7 +361,7 @@
             },
             {
               "verse": 4,
-              "incipit": "Elegit nobis hereditatem nostram",
+              "incipit": "Eligit nobis hereditatem nostram",
               "biblicalVerse": 4
             },
             {
@@ -416,7 +416,22 @@
       "presentationRule": "Psalm 46 chant-line numbers 9 and 10 are halves of biblical verse 9. Show printed liturgical line numbers in Schola; cross-link both to scriptural verse 9. Do not invent a biblical verse 10.",
       "psalm46DualNumberingPath": "data/research/processionale-palm46-dual-numbering-20261026.v1.json",
       "roman1962PrimaryFacsimile": "data/research/processionale-palm-1962-primary-facsimile-20261026.v1.json",
-      "reconciledPsalm46IncipitCheck": "data/research/processionale-palm-1962-incipit-reconciliation-20261026.v1.json"
+      "reconciledPsalm46IncipitCheck": "data/research/processionale-palm-1962-incipit-reconciliation-20261026.v1.json",
+      "textualRepairs": [
+        {
+          "printedLine": 3,
+          "before": "Subicit nobis nationes",
+          "after": "Subicit populos nobis",
+          "changedFile": "processionale-palm-1962-primary-facsimile-20261026.v1.json"
+        },
+        {
+          "printedLine": 4,
+          "before": "Elegit nobis hereditatem nostram",
+          "after": "Eligit nobis hereditatem nostram",
+          "changedFile": "processionale-roman-palm-psalter-editions-20261026.v1.json"
+        }
+      ],
+      "reconciliationStatus": "TEN_OF_TEN_PSALM46_INCIPITS_SOURCE_ALIGNED_WITH_PALM1962_AND_BEA"
     }
   },
   "gates": [
