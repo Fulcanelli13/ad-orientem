@@ -5,8 +5,7 @@
   "baseline": "data/source-text/icrsp-france-b23-next100-human-editorial-priority.v1.json",
   "method": "Viewed actual public ICRSP article Commentaires section, specifically the named passage or opening paragraph, for 25 distinct source URLs. This is human-directed topic extraction from source prose, not an automated category match; not all author panels were read. No text reproduction.",
   "priorDistinctDirectTopicReads": 113,
-  "newDistinctDirectTopicReads": 25,
-  "combinedDistinctDirectTopicReadsIfNoParallelDuplicate": 138,
+  "newDistinctDirectTopicReads": 21,
   "withinNext100Originally": 25,
   "next100StillWithoutThisReview": 75,
   "sectionCounts": {
@@ -445,5 +444,14 @@
       "humanTheologicalApproval": false,
       "readyForApp": false
     }
-  ]
+  ],
+  "sourceArticlePasses": 25,
+  "combinedDistinctDirectTopicReadsAfterIdReconciliation": 134,
+  "alreadyDirectReadBeforeB24": [
+    "a0619_ancien",
+    "a0044_nouveau",
+    "a0156_ancien",
+    "a0546_ancien"
+  ],
+  "reconciliationNote": "Four B24 source article IDs also occur in the B22 cross-workstream 93 direct-read cohort. They were reviewed again here but do not count as unique newly covered articles."
 }
