@@ -1333,6 +1333,13 @@ function paint(){
   const wasDisciplineOpen=oldDiscipline?.open===true;
   const previousSources=isSameDay?[...body.querySelectorAll(".aoCalSecondarySaintCard details")].map(x=>x.open):[];
    const previousRubricSourcesOpen=isSameDay?body.querySelector(".aoCalDaySources")?.open===true:false;
+  // Calendar data/cache updates replace Day markup. Preserve user-expanded
+  // Customs only within the same date and the same context/catalogue surface.
+  // An ID can appear twice (day suggestion + searchable catalogue).
+  const priorCustomsOpen=isSameDay?[...body.querySelectorAll(".aoCalCustomArticle[open]")].map(node=>({
+    id:node.dataset.calCustomId,inCatalogue:Boolean(node.closest(".aoCalCustomCatalogue"))
+  })):[];
+  const priorCustomCatalogueOpen=isSameDay?body.querySelector(".aoCalCustomCatalogue")?.open===true:false;
   // Preserve an intentionally expanded printing control through the same-day
   // background cache/source re-paints, without leaking it to another date.
   const previousMonthToolsOpen=calendarView==="picker"&&body.querySelector(".aoCalV2MonthTools")?.open===true;
@@ -1362,6 +1369,18 @@ function paint(){
   }
   if(isSameDay&&previousSources.length)body.querySelectorAll(".aoCalSecondarySaintCard details").forEach((node,index)=>{node.open=previousSources[index]===true});
    if(previousRubricSourcesOpen){const sources=body.querySelector(".aoCalDaySources");if(sources)sources.open=true}
+  if(isSameDay){
+    if(priorCustomCatalogueOpen){
+      const catalogue=body.querySelector(".aoCalCustomCatalogue");
+      if(catalogue)catalogue.open=true;
+    }
+    for(const prior of priorCustomsOpen){
+      const next=[...body.querySelectorAll(".aoCalCustomArticle[data-cal-custom-id]")].find(node=>
+        node.dataset.calCustomId===prior.id&&
+        Boolean(node.closest(".aoCalCustomCatalogue"))===prior.inCatalogue);
+      if(next)next.open=true;
+    }
+  }
   if(previousPrintOpen){
     const print=body.querySelector(".aoCalV2PrintOptions");
     if(print){print.open=true;if(hadPrintSummaryFocus)print.querySelector("summary")?.focus?.({preventScroll:true})}
