@@ -137,6 +137,8 @@ on:
       - 'data/source-text/icrsp-france-b35-591-unique-direct-topic-ledger.v1.json'
       - 'data/source-text/icrsp-france-b35-after50-priority70-and-rest122.v1.json'
       - 'tests/test_icrsp_b35_first50_exact_priority.py'
+      - 'data/source-text/icrsp-france-b35-parallel-35-50-dedup-and-holds.v1.json'
+      - 'tests/test_icrsp_b35_parallel_35_50_exact_dedup.py'
   workflow_dispatch:
 
 permissions:
@@ -199,6 +201,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b33_486_source_review.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b34_522_direct_topics.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b35_first50_exact_priority.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b35_parallel_35_50_exact_dedup.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b34_505_direct_and_source_error.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b34_541_union_and_242_priority.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b35_576_direct_and_207_queue.py' -v
