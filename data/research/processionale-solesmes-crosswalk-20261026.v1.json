@@ -372,6 +372,10 @@
     {
       "gate": "ICKSP_OLDER_TEXT_EDITION_CONFLICT",
       "status": "FLAGGED_NON1962_ONLINE_WITNESS"
+    },
+    {
+      "gate": "1888_INDIRECT_SCHOLARLY_WITNESSES",
+      "status": "3_SECONDARY_LEADS_UNCOLLATED_PRIMARY_REMAINS_BLOCKED"
     }
   ],
   "sourceAccessAudit": {
@@ -386,7 +390,39 @@
       "scribdPage": "CATALOGUE_METADATA_ONLY_FULL_PAGES_INACCESSIBLE",
       "verifiedFullPageCount": 0,
       "collationState": "NOT_STARTED_BLOCKED_ORIGINAL_SCAN",
-      "policy": "No affirmative claim that any 1893 chant was already present in the 1888 first edition."
+      "policy": "No affirmative claim that any 1893 chant was already present in the 1888 first edition.",
+      "indirectScholarlyAttestations": [
+        {
+          "id": "PM1888-IND-01",
+          "bibliography": "Robert J. Mitchell, Critical commentary for nos. 22–51 (2013), p. 221 PDF page 19",
+          "url": "https://www.diamm.ac.uk/documents/458/Critical_commentary_for_nos_22-51.pdf",
+          "attestation": "Author cites Pothier's 1888 Processionale pp.25–27 for Descendit de caelis",
+          "evidenceType": "SCHOLAR_DIRECT_PAGE_CITATION_NOT_PRIMARY_SCAN",
+          "inspection": "ACADEMIC_TEXT_INDEXED_ORIGINAL_BOOK_NOT_READ",
+          "couldEstablish": "The particular responsory was referenced as present in 1888 edition at pages cited.",
+          "cannotEstablish": "Musical accuracy, presence of all related chants, OCR, historical change from 1893."
+        },
+        {
+          "id": "PM1888-IND-02",
+          "bibliography": "Trinity College Dublin repository dissertation, figure/example 98, p.369",
+          "url": "https://www.tara.tcd.ie/tara8/server/api/core/bitstreams/062a2c6a-4da6-4986-9716-1f34f8b13fe6/content",
+          "attestation": "Index identifies musical example 'Processionale monasticum, Benedicta et venerabilis, 1888'",
+          "evidenceType": "ACADEMIC_EXAMPLE_INDEX_NOT_PRIMARY_SCAN",
+          "inspection": "SEARCH_INDEX_SNIPPET_ONLY_LARGE_PDF_UNREAD",
+          "couldEstablish": "Research lead for a first-edition notated chant quotation in a modern thesis.",
+          "cannotEstablish": "Exact musical notes or any edition delta. Full thesis pages not inspected."
+        },
+        {
+          "id": "PM1888-IND-03",
+          "bibliography": "Amédée Gastoué, Le Graduel et l'Antiphonaire romains (1913)",
+          "url": "https://www.exvibris.com/MBN/2-Stockage/1_PHILOSOPHIE_ET_DISCIPLINES_CONNEXES/18_Philosophie_antique_medievale_orientale/18.1.7_Le_Graduel_et_l_Antiphonaire_romain.pdf",
+          "attestation": "States Processionale was first issued concurrently with Variae Preces (1888), second edition 1893, and distinguishes Pothier's compositions for selected feasts from older pieces.",
+          "evidenceType": "NEAR_CONTEMPORARY_EDITORIAL_HISTORY_SECONDARY",
+          "inspection": "SEARCH_INDEX_TEXT_ONLY",
+          "couldEstablish": "Editorial history and reason to treat original and second edition separately.",
+          "cannotEstablish": "Which specific chants changed between editions."
+        }
+      ]
     },
     "secondEdition1893": {
       "url": "https://ru.scribd.com/document/794245734/1893-Processionale-Monasticum-Solesmes",
