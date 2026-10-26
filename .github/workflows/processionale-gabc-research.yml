@@ -1,15 +1,20 @@
 name: Processionale GABC read-only research capture
 
-# Initial 15-source set archived, SHA256-verified on 2026-10-26.
-# Manual-only for intentional source refresh: avoid re-downloading on each PR edit.
+# The original 15 sources were verified and archived; rerun only manually.
+# New Palm psalter Textus novus comparison is a separate two-source intake.
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - tools/research/processionale-palm-new-psalter-capture.mjs
+      - .github/workflows/processionale-gabc-research.yml
 
 permissions:
   contents: read
 
 jobs:
-  grab-source-scores:
+  capture-original-source-set:
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -17,5 +22,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Capture CC0 GABC source bytes and SHA256 without repository write
-        run: node tools/research/processionale-gabc-capture.mjs
+      - run: node tools/research/processionale-gabc-capture.mjs
+
+  capture-new-palm-psalter:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Capture new Latin psalm tone source bytes and SHA256, no writes
+        run: node tools/research/processionale-palm-new-psalter-capture.mjs
