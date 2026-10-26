@@ -17,7 +17,7 @@ Existing canonical ownership:
 ## Implemented pilot
 `src/mass/reader-chant-score-pilot.js` adds the button **GREGORIAN SCORE**
 to the current Schola dock only while the Schola KYRIE track is eligible.
-It reveals one **continuous, scrollable, original Gregorian SVG score** in
+It renders a **continuous, scrollable Gregorian SVG score from local GABC** in
 the dock, with manual up/down movements and a FULL expanded view. On mobile
 the reader reserves additional vertical space; it does not cover the prayer
 by accident. Finger scroll and keyboard navigation are independent from
@@ -48,8 +48,19 @@ local engraving and facsimile comparison remain future release gates.
 - Scroll position and manual ↑/↓ never infer an actual syllable, heard cue,
   elapsed musical bar, or Benedictus beginning.
 - NO microphone, synthesized singing, playback or auto-scrolling.
-- The external SVG requires internet. The GABC metadata remains inspectable
-  in source and an explicit offline failure message is shown.
+- **The SVG is now engraved locally:** `assets/vendor/exsurge/exsurge.min.js`
+  is a pinned MIT-licensed build of Benjamin Bloomfield’s Exsurge fork at
+  upstream commit `6322cce596b86f9b3d354e7ff3bdcbfe2f3f6ab8` (26 October
+  2026). It runs without network access. Its full licence is checked into
+  `assets/vendor/exsurge/LICENSE`. The three GABCs remain embedded and source-
+  attributed. GregoBase is only an optional outbound source-reference link.
+- Exsurge lays out staff systems for the actual viewport width; resizing
+  reflows the engraving. The app still needs **physical-device visual and
+  facsimile accuracy acceptance** before this can be called production-ready.
+- `reader-chant-engraver.js` loads the local bundle on first use and drops
+  stale asynchronous renders when the user changes the selected sample.
+- Exsurge’s optional Exsurge Characters font is not bundled; specific special
+  characters requiring it must be reviewed. No font asset is redistributed.
 - Other chant tracks remain textual until their actual score choices have
   been verified, specifically SANCTUS_BENEDICTUS.
 - The score is neither a 1962 rubrical directive nor an audio-recording source.
@@ -60,8 +71,10 @@ local engraving and facsimile comparison remain future release gates.
 2. Verify existing Gregorian chant source identity and options for Kyriale,
    seasonal Propers, and permitted local additions separately. Gregorian and
    polyphonic settings are distinct media, not interchangeable titles.
-3. Bundle a pinned Exsurge renderer with verified font rights for **offline**
-   responsive line wrapping, replacing the remotely served full SVG.
+3. **Implemented for the pilot:** pinned Exsurge JS; offline GABC-to-SVG;
+   adaptive width, stale-render protection and independent inline/full views.
+   Remaining: optional special-character font treatment and verified raster/
+   vector line wrapping on real phone sizes.
 4. Build a pre-Mass selection model keyed by the canonical Mass choice; do not
    attach free-form setting choices to liturgical text until admissibility
    and source ownership are proven. Remember customary user preferences
@@ -73,7 +86,8 @@ local engraving and facsimile comparison remain future release gates.
    The existing explicit post-Chalice release must remain authoritative.
 7. Run Schola contracts, regression suite, mobile/desktop browser snapshots,
    offline failure tests and actual liturgical expert score review before
-   promoting this draft.
+   promoting this draft. A mock-renderer test plus vendored API test now ships
+   as `tests/reader-chant-engraver.mjs`; it is not an end-to-end music audit.
 
 The new contract is included in existing `npm run test:reader-schola`. CI
 passing tests do not certify pitch correctness, mobile visual parity or
