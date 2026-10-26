@@ -112,7 +112,9 @@ try{
    await page.waitForFunction(()=>
      document.querySelectorAll('#ao-calendar-modular-root .aoCalOrdoEntry[data-ready="1"]').length>=3,
      null,{timeout:45000});
-   const firstOrdo=cal.locator('.aoCalOrdoEntry[data-ready="1"]').first();
+   const firstResolvedDate=await cal.locator('.aoCalOrdoEntry[data-ready="1"]').first()
+     .getAttribute('data-cal-ordo-date');
+   const firstOrdo=cal.locator('[data-cal-ordo-date="'+firstResolvedDate+'"]');
    await firstOrdo.locator('summary').click();
    assert.equal(await firstOrdo.getAttribute('open'),"",
      "Resolved Ordo day must expand without navigating away");
