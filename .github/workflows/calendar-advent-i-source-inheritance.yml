@@ -5,7 +5,7 @@ on:
       - 'fix/calendar-advent-i-feria-source-inheritance-20261026'
     paths:
       - 'index.html'
-      - 'ao-boot-advent-i-1962-01.js'
+      - 'ao-boot-74ea99bfe3a49436.js'
       - 'tests/calendar-advent-i-real-weekday-inheritance.mjs'
       - '.github/workflows/calendar-advent-i-source-inheritance.yml'
   workflow_dispatch:
@@ -28,7 +28,7 @@ jobs:
           node-version: '22'
       - name: Check exact canonical boot bundle syntax
         run: |
-          node --check ao-boot-advent-i-1962-01.js
+          node --check ao-boot-74ea99bfe3a49436.js
           node --check tests/calendar-advent-i-real-weekday-inheritance.mjs
       - name: Install existing browser dependencies
         run: |
