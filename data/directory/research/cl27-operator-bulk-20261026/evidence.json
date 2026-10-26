@@ -1,0 +1,888 @@
+{
+  "schema": "AO_CL27_DATED_OPERATOR_BATCH_AND_NEGATIVE_FEED_TESTS_V1",
+  "as_of": "2026-10-26",
+  "scope": "Batch all 39 frozen German FSSP site identities for dated evidence-readiness; add nine direct source-listing research events from three previously unprocessed local feeds, five source identity places, and six syndication negative controls. No new public master.",
+  "frozen_pilot_site_sources": [
+    {
+      "source_place_id": "CL14-DE-FSSP-001",
+      "owner_church": "St. Anna",
+      "owner_city": "Heidelberg",
+      "owner_address": "Plöck 4, 69117 Heidelberg",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        18
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-002",
+      "owner_church": "Propsteikirche St. Nikolaus",
+      "owner_city": "Kiel",
+      "owner_address": "Rathausstraße 5, 24103 Kiel",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        21
+      ],
+      "owner_original_exceptions": [
+        "FIRST_SUNDAY_ONLY"
+      ],
+      "exact_future_event_operator_screen_status": "DATED_EVENT_EVIDENCE_IN_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-003",
+      "owner_church": "Propsteikirche St. Clemens",
+      "owner_city": "Hannover",
+      "owner_address": "Platz an der Basilika 1, 30169 Hannover",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        22,
+        3452
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-004",
+      "owner_church": "Pfarrkirche St. Dionysius",
+      "owner_city": "Düsseldorf-Volmerswerth",
+      "owner_address": "Abteihofstr. 25, 40221 Düsseldorf",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        23,
+        3453,
+        3454
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-005",
+      "owner_church": "Pfarrkirche St. Antonius",
+      "owner_city": "Wuppertal-Barmen",
+      "owner_address": "Unterdörnen 137, 42275 Wuppertal-Barmen",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        24
+      ],
+      "owner_original_exceptions": [
+        "EXCEPT_SECOND_MONDAY",
+        "EXCEPT_FEAST_DAY"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-006",
+      "owner_church": "St. Josef",
+      "owner_city": "Remscheid",
+      "owner_address": "Menninghauser Str. 5, 42859 Remscheid",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        25
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-007",
+      "owner_church": "St. Joseph",
+      "owner_city": "Recklinghausen-Grullbad",
+      "owner_address": "Grullbadstr. 94, 45661 Recklinghausen",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        27,
+        3455,
+        3456,
+        3457
+      ],
+      "owner_original_exceptions": [
+        "FIRST_FRIDAY_ONLY",
+        "FIRST_SATURDAY_ONLY",
+        "FEAST_DAYS_ONLY"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-008",
+      "owner_church": "St. Josef",
+      "owner_city": "Oberhausen-Styrum",
+      "owner_address": "Lothringer Str. 154, 46045 Oberhausen",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        29,
+        3458,
+        3459,
+        3460
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-009",
+      "owner_church": "St. Michael",
+      "owner_city": "Recklinghausen",
+      "owner_address": "Michaelstraße 1, 45661 Recklinghausen",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        28
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-010",
+      "owner_church": "Kirche Maria Hilf",
+      "owner_city": "Köln",
+      "owner_address": "Rolandstr. 59, 50677 Köln",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        30,
+        3461,
+        3462
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-011",
+      "owner_church": "St.-Anna-Kapelle",
+      "owner_city": "Leverkusen-Lützenkirchen",
+      "owner_address": "Kapellenstr. 10, 51381 Leverkusen",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        31
+      ],
+      "owner_original_exceptions": [
+        "SECOND_MONDAY_ONLY"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-012",
+      "owner_church": "Heilig-Kreuz-Kapelle",
+      "owner_city": "Odenthal-Klasmühle",
+      "owner_address": "Kapellenweg 3, Odenthal-Klasmühle",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        32
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-013",
+      "owner_church": "St. Apollinaris",
+      "owner_city": "Lindlar-Frielingsdorf",
+      "owner_address": "Jan-Wellem-Straße 12, 51789 Lindlar",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        33
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-014",
+      "owner_church": "St. Martinus",
+      "owner_city": "Nörvenich-Pingsheim",
+      "owner_address": "Alfons-Keever-Straße 5, 52388 Nörvenich",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        34
+      ],
+      "owner_original_exceptions": [
+        "LAST_THURSDAY_IN_ODD_MONTHS_ONLY"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-015",
+      "owner_church": "Canisianum (formerly St. Petrus Canisius)",
+      "owner_city": "Saarlouis",
+      "owner_address": "Stiftstraße 18, 66740 Saarlouis",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        36,
+        3463,
+        3464,
+        3465,
+        3466
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-016",
+      "owner_church": "St. Albert",
+      "owner_city": "Stuttgart-Zuffenhausen",
+      "owner_address": "Wollinstr. 55, 70439 Stuttgart",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        38,
+        3467,
+        3469,
+        3470
+      ],
+      "owner_original_exceptions": [
+        "SOURCE_ALSO_LISTS_FIRST_SUNDAY_1200_ENGLISH_SERMON_OUTSIDE_432_COHORT"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-017",
+      "owner_church": "St. Leonhard",
+      "owner_city": "Schwäbisch Gmünd",
+      "owner_address": "Aalener Str. 2, 73529 Schwäbisch Gmünd",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        39,
+        3471
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-018",
+      "owner_church": "St. Leonhard",
+      "owner_city": "Nußdorf am Inn",
+      "owner_address": "Leonardiweg, 83131 Nußdorf",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        44
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-019",
+      "owner_church": "Frauenkirche",
+      "owner_city": "Neckarsulm",
+      "owner_address": "Spitalstraße, 74172 Neckarsulm",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        40,
+        3472,
+        3473
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-020",
+      "owner_church": "Allerheiligenkirche am Kreuz (Kreuzkirche)",
+      "owner_city": "München",
+      "owner_address": "Kreuzstraße 10, 80331 München",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        42,
+        3474,
+        3475,
+        3476,
+        3477,
+        3478
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-021",
+      "owner_church": "St. Willibald",
+      "owner_city": "Ingolstadt-Oberhaunstadt",
+      "owner_address": "Dorfplatz 4, Oberhaunstadt",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        45
+      ],
+      "owner_original_exceptions": [
+        "13_JUNE_AND_03_OCTOBER_1100_INSTEAD_1000"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-022",
+      "owner_church": "Heilig-Kreuz-Kirche",
+      "owner_city": "Eichstätt",
+      "owner_address": "Kapuzinergasse 2, 85072 Eichstätt",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        46,
+        3479
+      ],
+      "owner_original_exceptions": [
+        "TUESDAY_CONFESSION_ON_REQUEST"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-023",
+      "owner_church": "Marktkirche zur Allerheiligsten Dreifaltigkeit",
+      "owner_city": "Grafing",
+      "owner_address": "Dreifaltigkeitsgasse 3, 85567 Grafing",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        48
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-024",
+      "owner_church": "St. Peter und Paul",
+      "owner_city": "Ried-Hörmannsberg",
+      "owner_address": "Meringer Str. 4, 86510 Ried",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        49
+      ],
+      "owner_original_exceptions": [
+        "FIRST_WEDNESDAY_ONLY"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-025",
+      "owner_church": "Ignatiuskapelle",
+      "owner_city": "Landsberg am Lech",
+      "owner_address": "Malteserstraße, 86899 Landsberg",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        51
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-026",
+      "owner_church": "Schlosskapelle",
+      "owner_city": "Bad Grönenbach",
+      "owner_address": "Pappenheimerstraße, 87730 Bad Grönenbach",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        52
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-027",
+      "owner_church": "Sühnekirche",
+      "owner_city": "Wigratzbad",
+      "owner_address": "Kirchstraße, 88145 Wigratzbad",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        53
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-028",
+      "owner_church": "St. Georg",
+      "owner_city": "Nürnberg",
+      "owner_address": "Bierweg 35, 90411 Nürnberg",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        54
+      ],
+      "owner_original_exceptions": [
+        "SECOND_AND_FOURTH_SUNDAYS_ONLY"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-029",
+      "owner_church": "Wallfahrtskirche Maria Hilf",
+      "owner_city": "Amberg",
+      "owner_address": "Auf dem Mariahilfberg 3, 92224 Amberg",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        55
+      ],
+      "owner_original_exceptions": [
+        "THIRD_SUNDAY_ONLY"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-030",
+      "owner_church": "Schulkirche St. Augustinus",
+      "owner_city": "Amberg",
+      "owner_address": "Deutsche Schulgasse 2, 92224 Amberg",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        56
+      ],
+      "owner_original_exceptions": [
+        "FIRST_SUNDAY_ONLY"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-031",
+      "owner_church": "St. Jobst",
+      "owner_city": "Neumarkt in der Oberpfalz",
+      "owner_address": "Regensburger Straße 16, 92318 Neumarkt",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        57,
+        3480
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-032",
+      "owner_church": "Kapuzinerkirche Maria Unbefleckte Empfängnis",
+      "owner_city": "Türkheim",
+      "owner_address": "Grabenstraße 2, 86842 Türkheim",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        1272,
+        3481,
+        3482,
+        3483
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-033",
+      "owner_church": "Seminarkapelle St. Josef",
+      "owner_city": "Wigratzbad",
+      "owner_address": "Kirchstraße 16, 88145 Wigratzbad",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        1274
+      ],
+      "owner_original_exceptions": [
+        "CHAPEL_AT_SEMINARY_NOT_SUEHNEKIRCHE"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-034",
+      "owner_church": "St. Michael",
+      "owner_city": "Bonn",
+      "owner_address": "Rheinbacher Straße, 53115 Bonn",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        1275,
+        3484
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-035",
+      "owner_church": "St. Margareth am Milchberg",
+      "owner_city": "Augsburg",
+      "owner_address": "Spitalgasse 1, 86150 Augsburg",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        1761,
+        3485,
+        3486
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-036",
+      "owner_church": "Haus St. Stola",
+      "owner_city": "Deining-Mittersthal",
+      "owner_address": "An der Leiten 2, 92364 Deining-Mittersthal",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        1779,
+        3487
+      ],
+      "owner_original_exceptions": [],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-037",
+      "owner_church": "St. Sebastian",
+      "owner_city": "Garmisch-Partenkirchen",
+      "owner_address": "Münchner Str. 1, 82467 Garmisch-Partenkirchen",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        1790
+      ],
+      "owner_original_exceptions": [
+        "FIRST_SUNDAY_ONLY"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-038",
+      "owner_church": "Pfarrkirche St. Elisabeth",
+      "owner_city": "Blaibach",
+      "owner_address": "Kirchplatz 12, 93476 Blaibach",
+      "owner_directory_source": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "owner_historical_row_nos": [
+        1850
+      ],
+      "owner_original_exceptions": [
+        "FIRST_AND_THIRD_SUNDAY_ONLY"
+      ],
+      "exact_future_event_operator_screen_status": "DATED_EVENT_EVIDENCE_IN_CL27",
+      "future_event_approved": false
+    },
+    {
+      "source_place_id": "CL17-DE-FSSP-POTSDAM",
+      "owner_church": "St Josefs-Kapelle (Alexianer)",
+      "owner_city": "Potsdam",
+      "owner_address": "Allee nach Sanssouci 7, Potsdam",
+      "owner_directory_source": "https://www.alexianer-potsdam.de/st-josefs-kapelle",
+      "owner_historical_row_nos": [],
+      "owner_original_exceptions": [
+        "SEPARATE_HOSPITAL_CHAPEL_NOT_RAUEM_DER_STILLE"
+      ],
+      "exact_future_event_operator_screen_status": "NOT_YET_DATE_SCOPED_BY_CL27",
+      "future_event_approved": false
+    }
+  ],
+  "source_feeds_reviewed": [
+    {
+      "id": "NORTH2026",
+      "url": "https://www.alte-messe-im-norden.de/",
+      "kind": "REGIONAL_LOCAL_LATIN_MASS_APOSTOLATE",
+      "listed_future_event_count": 4,
+      "place_count": 3,
+      "rules_also_present": true
+    },
+    {
+      "id": "BLAIBACH2026",
+      "url": "https://www.roemische-messe-regensburg.de/cms/?page_id=22",
+      "kind": "LOCAL_LATIN_MASS_APOSTOLATE",
+      "listed_future_event_count": 1,
+      "place_count": 1,
+      "rules_also_present": true
+    },
+    {
+      "id": "ATKATZELSDORF2026",
+      "url": "https://www.erzdioezese-wien.at/pfarre/14424327",
+      "kind": "DIOCESAN_PARISH_DATE_INDEX",
+      "listed_future_event_count": 4,
+      "place_count": 1,
+      "rules_also_present": true,
+      "mutable_cached_source_conflict": true
+    },
+    {
+      "id": "SAARLOUIS",
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/saarlouis/rundbrief.php",
+      "kind": "FIRST_PARTY_FSSP_MONTHLY_PDF_FEED",
+      "listed_future_event_count": 0,
+      "place_count": 1,
+      "possible_november_pdf": true,
+      "exact_pdf_current_revision_unread": true
+    },
+    {
+      "id": "REINBEK",
+      "url": "https://www.alte-messe-im-norden.de/",
+      "kind": "REGIONAL_LOCAL_POSTED_NOVEMBER_PDF_FEED",
+      "listed_future_event_count": 0,
+      "place_count": 1,
+      "possible_november_pdf": true,
+      "exact_pdf_current_revision_unread": true
+    },
+    {
+      "id": "OBERFLOCKENBACH",
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/oberflockenbach/messordnungtermine.php",
+      "kind": "FSSP_TWO_ALTERNATE_CHURCH_VENUES",
+      "listed_future_event_count": 0,
+      "place_count": 2,
+      "venue_on_specific_date_not_confirmed": true
+    },
+    {
+      "id": "WIGRATZBAD",
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/priesterseminar/gottesdienstordnung.php",
+      "kind": "FSSP_MULTI_CHAPEL_RECURRING_SCHEDULE",
+      "listed_future_event_count": 0,
+      "place_count": 3,
+      "three_chapels_distinct": true
+    },
+    {
+      "id": "ST_CLEMENS_HANNOVER",
+      "url": "https://www.st-clemens-hannover.de/gottesdienste/",
+      "kind": "HOST_PARISH_FSSP_WEEKLY_AND_DOWNLOADS",
+      "listed_future_event_count": 0,
+      "place_count": 1,
+      "weekly_rule_only": true
+    },
+    {
+      "id": "PMT_GENERAL",
+      "url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm",
+      "kind": "SECONDARY_COMPILED_RECURRENCE_DIRECTORY",
+      "listed_future_event_count": 0,
+      "place_count": 0,
+      "independent_future_specific_date_evidence": false
+    },
+    {
+      "id": "GOCATH",
+      "url": "https://gocath.org/de/event/heilige-messe-im-ueberlieferten-ritus-wallduern",
+      "kind": "AUTOGENERATED_SYNDICATION",
+      "listed_future_event_count": 0,
+      "place_count": 0,
+      "calendar_expansion_cannot_confirm_date": true
+    }
+  ],
+  "additional_individually_listed_future_mass_candidates": [
+    {
+      "external_source_record_key": "G26-NORTH-01",
+      "pilot_source_place_id": "CL14-DE-FSSP-002",
+      "external_place_key": null,
+      "church": "St Nikolaus",
+      "city": "Kiel",
+      "address": "Rathausstraße 5, 24103 Kiel",
+      "date": "2026-11-01",
+      "local_time": "16:00",
+      "timezone": "Europe/Berlin",
+      "note": "Sunday Mass",
+      "event_class": "LOCAL_APOSTOLATE_EXPLICIT_DATE_HUMAN_PUBLISHED",
+      "liturgical_class": "TRADITIONAL_LATIN_MASS_SITE_ASSOCIATION",
+      "source_url": "https://www.alte-messe-im-norden.de/",
+      "source_observed_at": "2026-10-26",
+      "original_public_mass_approval": false,
+      "exact_date_venue_independent_human_recheck_pending": true
+    },
+    {
+      "external_source_record_key": "G26-NORTH-02",
+      "pilot_source_place_id": "CL14-DE-FSSP-002",
+      "external_place_key": null,
+      "church": "St Nikolaus",
+      "city": "Kiel",
+      "address": "Rathausstraße 5, 24103 Kiel",
+      "date": "2026-12-06",
+      "local_time": "16:00",
+      "timezone": "Europe/Berlin",
+      "note": "Sunday Mass",
+      "event_class": "LOCAL_APOSTOLATE_EXPLICIT_DATE_HUMAN_PUBLISHED",
+      "liturgical_class": "TRADITIONAL_LATIN_MASS_SITE_ASSOCIATION",
+      "source_url": "https://www.alte-messe-im-norden.de/",
+      "source_observed_at": "2026-10-26",
+      "original_public_mass_approval": false,
+      "exact_date_venue_independent_human_recheck_pending": true
+    },
+    {
+      "external_source_record_key": "G26-NORTH-03",
+      "pilot_source_place_id": null,
+      "external_place_key": "DE-BREMEN-NEUE-VAHR-ST-HEDWIG",
+      "church": "St Hedwig",
+      "city": "Bremen-Neue Vahr",
+      "address": "Kurt-Schumacher-Allee 62, 28327 Bremen",
+      "date": "2026-12-11",
+      "local_time": "19:00",
+      "timezone": "Europe/Berlin",
+      "note": "Advent Rorate Mass",
+      "event_class": "LOCAL_APOSTOLATE_EXPLICIT_DATE_HUMAN_PUBLISHED",
+      "liturgical_class": "TRADITIONAL_LATIN_MASS_SITE_ASSOCIATION",
+      "source_url": "https://www.alte-messe-im-norden.de/",
+      "source_observed_at": "2026-10-26",
+      "original_public_mass_approval": false,
+      "exact_date_venue_independent_human_recheck_pending": true
+    },
+    {
+      "external_source_record_key": "G26-NORTH-04",
+      "pilot_source_place_id": null,
+      "external_place_key": "DE-S-DERBRARUP-CHRIST-K-NIG",
+      "church": "Christ König",
+      "city": "Süderbrarup",
+      "address": "Raiffeisenstraße 27, 24392 Süderbrarup",
+      "date": "2026-11-02",
+      "local_time": "18:30",
+      "timezone": "Europe/Berlin",
+      "note": "All Souls Mass",
+      "event_class": "LOCAL_APOSTOLATE_EXPLICIT_DATE_HUMAN_PUBLISHED",
+      "liturgical_class": "TRADITIONAL_LATIN_MASS_SITE_ASSOCIATION",
+      "source_url": "https://www.alte-messe-im-norden.de/",
+      "source_observed_at": "2026-10-26",
+      "original_public_mass_approval": false,
+      "exact_date_venue_independent_human_recheck_pending": true
+    },
+    {
+      "external_source_record_key": "G26-BLAIBACH-01",
+      "pilot_source_place_id": "CL14-DE-FSSP-038",
+      "external_place_key": null,
+      "church": "St Elisabeth",
+      "city": "Blaibach",
+      "address": "Kirchplatz 12, 93476 Blaibach",
+      "date": "2026-11-01",
+      "local_time": "11:30",
+      "timezone": "Europe/Berlin",
+      "note": "Local organiser explicit calendar line; monthly 1st and 3rd Sunday rule is not by itself a date witness",
+      "event_class": "LOCAL_APOSTOLATE_EXPLICIT_DATE_HUMAN_PUBLISHED",
+      "liturgical_class": "TRADITIONAL_LATIN_MASS_SITE_ASSOCIATION",
+      "source_url": "https://www.roemische-messe-regensburg.de/cms/?page_id=22",
+      "source_observed_at": "2026-10-26",
+      "original_public_mass_approval": false,
+      "exact_date_venue_independent_human_recheck_pending": true
+    },
+    {
+      "external_source_record_key": "A26-KATZELSDORF-01",
+      "pilot_source_place_id": null,
+      "external_place_key": "AT-KATZELSDORF-PFARRKIRCHE",
+      "church": "Pfarrkirche Katzelsdorf an der Leitha",
+      "city": "Katzelsdorf an der Leitha",
+      "address": "Kirchengasse 21, 2801 Katzelsdorf",
+      "date": "2026-11-01",
+      "local_time": "11:00",
+      "timezone": "Europe/Vienna",
+      "note": "Sunday in traditional form",
+      "event_class": "DIOCESAN_PARISH_EXPLICIT_DATE_ON_SEARCH_INDEX_SNAPSHOT",
+      "liturgical_class": "ROMAN_TRADITIONAL_FORM",
+      "source_url": "https://www.erzdioezese-wien.at/pfarre/14424327",
+      "source_observed_at": "2026-10-26",
+      "original_public_mass_approval": false,
+      "exact_date_venue_independent_human_recheck_pending": true,
+      "evidence_limit": "Search-index result contained November 2026 dates; direct opened webpage had earlier September snapshot. Mutable parish feed must be refreshed before approval."
+    },
+    {
+      "external_source_record_key": "A26-KATZELSDORF-02",
+      "pilot_source_place_id": null,
+      "external_place_key": "AT-KATZELSDORF-PFARRKIRCHE",
+      "church": "Pfarrkirche Katzelsdorf an der Leitha",
+      "city": "Katzelsdorf an der Leitha",
+      "address": "Kirchengasse 21, 2801 Katzelsdorf",
+      "date": "2026-11-06",
+      "local_time": "19:00",
+      "timezone": "Europe/Vienna",
+      "note": "Sühnenacht Mass in traditional form",
+      "event_class": "DIOCESAN_PARISH_EXPLICIT_DATE_ON_SEARCH_INDEX_SNAPSHOT",
+      "liturgical_class": "ROMAN_TRADITIONAL_FORM",
+      "source_url": "https://www.erzdioezese-wien.at/pfarre/14424327",
+      "source_observed_at": "2026-10-26",
+      "original_public_mass_approval": false,
+      "exact_date_venue_independent_human_recheck_pending": true,
+      "evidence_limit": "Search-index result contained November 2026 dates; direct opened webpage had earlier September snapshot. Mutable parish feed must be refreshed before approval."
+    },
+    {
+      "external_source_record_key": "A26-KATZELSDORF-03",
+      "pilot_source_place_id": null,
+      "external_place_key": "AT-KATZELSDORF-PFARRKIRCHE",
+      "church": "Pfarrkirche Katzelsdorf an der Leitha",
+      "city": "Katzelsdorf an der Leitha",
+      "address": "Kirchengasse 21, 2801 Katzelsdorf",
+      "date": "2026-11-08",
+      "local_time": "11:00",
+      "timezone": "Europe/Vienna",
+      "note": "Sunday in traditional form",
+      "event_class": "DIOCESAN_PARISH_EXPLICIT_DATE_ON_SEARCH_INDEX_SNAPSHOT",
+      "liturgical_class": "ROMAN_TRADITIONAL_FORM",
+      "source_url": "https://www.erzdioezese-wien.at/pfarre/14424327",
+      "source_observed_at": "2026-10-26",
+      "original_public_mass_approval": false,
+      "exact_date_venue_independent_human_recheck_pending": true,
+      "evidence_limit": "Search-index result contained November 2026 dates; direct opened webpage had earlier September snapshot. Mutable parish feed must be refreshed before approval."
+    },
+    {
+      "external_source_record_key": "A26-KATZELSDORF-04",
+      "pilot_source_place_id": null,
+      "external_place_key": "AT-KATZELSDORF-PFARRKIRCHE",
+      "church": "Pfarrkirche Katzelsdorf an der Leitha",
+      "city": "Katzelsdorf an der Leitha",
+      "address": "Kirchengasse 21, 2801 Katzelsdorf",
+      "date": "2026-11-15",
+      "local_time": "11:00",
+      "timezone": "Europe/Vienna",
+      "note": "Sunday in traditional form",
+      "event_class": "DIOCESAN_PARISH_EXPLICIT_DATE_ON_SEARCH_INDEX_SNAPSHOT",
+      "liturgical_class": "ROMAN_TRADITIONAL_FORM",
+      "source_url": "https://www.erzdioezese-wien.at/pfarre/14424327",
+      "source_observed_at": "2026-10-26",
+      "original_public_mass_approval": false,
+      "exact_date_venue_independent_human_recheck_pending": true,
+      "evidence_limit": "Search-index result contained November 2026 dates; direct opened webpage had earlier September snapshot. Mutable parish feed must be refreshed before approval."
+    }
+  ],
+  "source_feed_quality_exceptions": [
+    {
+      "code": "WALLDUERN_MONTHLY_NOT_WEEKLY",
+      "source_url": "https://gocath.org/de/event/heilige-messe-im-ueberlieferten-ritus-wallduern",
+      "contradiction_url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste_1.htm",
+      "description": "Syndicator emits weekly Saturdays yet underlying compiled source says one Saturday per month. Block dates and flag recurrence-frequency mismatch.",
+      "release": "BLOCK"
+    },
+    {
+      "code": "TANN_EXCLUDED_FIRST_FRIDAY",
+      "source_url": "https://gocath.org/de/event/heilige-messe-im-ueberlieferten-ritus-tann",
+      "contradiction_url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste_1.htm",
+      "description": "Syndicator emits Fri 2026-11-06 although underlying schedule explicitly excludes first Friday. Block date.",
+      "release": "BLOCK"
+    },
+    {
+      "code": "WINTERLINGEN_SEASON_AND_ALTERNATE_VENUE",
+      "source_url": "https://gocath.org/de/event/heilige-messe-im-ueberlieferten-ritus-winterlingen",
+      "contradiction_url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste_1.htm",
+      "description": "Syndicator emits 07:30 throughout November/December; source states winter 08:00 and venue alternates. Block time and location.",
+      "release": "BLOCK"
+    },
+    {
+      "code": "POTSDAM_TRIPLE_SYNDICATED_WORSHIP_LABEL",
+      "source_url": "https://gocath.org/de/messefinder/potsdam",
+      "contradiction_url": "https://www.alexianer-potsdam.de/st-josefs-kapelle",
+      "description": "Potsdam aggregator simultaneously lists three 17:00 traditional-Mass labels for the Alexianer hospital chapel; do not triple-count canonical occurrences.",
+      "release": "BLOCK"
+    },
+    {
+      "code": "RECURRENCE_EXPANSION_NOT_OWNER_DATE_CONFIRMATION",
+      "source_url": "https://gocath.org/de/event/heilige-messe-haus-st-stola",
+      "contradiction_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/mittersthal/messzeiten.php",
+      "description": "Projections from house timetable are not proof of specific future Mass, chapel public access or navigable doorway.",
+      "release": "BLOCK"
+    },
+    {
+      "code": "KATZELSDORF_MUTABLE_PARISH_INDEX_SNAPSHOT",
+      "source_url": "https://www.erzdioezese-wien.at/pfarre/14424327",
+      "description": "Search index shows November dated services while webpage fetch returns earlier September. Preserve exact search observation, require current live direct confirmation before event publication.",
+      "release": "HOLD_FOR_REFRESH"
+    }
+  ],
+  "source_approval_policy": {
+    "date_specific_local_operator": "SOURCE_CANDIDATE_ONLY",
+    "diocesan_search_index": "CANDIDATE_REQUIRES_CURRENT_DIRECT_RECHECK",
+    "recurrence_only": "NOT_AN_EVENT",
+    "syndicated_projection": "NOT_AN_EVENT",
+    "approved_future_occurrences": 0,
+    "worldwide_master_identity_assignments": 0,
+    "new_public_map_pins": 0,
+    "new_una_cum": 0
+  }
+}
