@@ -11,7 +11,7 @@
 
 ## One important queue mistake corrected
 
-The previous [250-article metadata-reading queue](../source-text/icrsp-france-next250-metadata-reading-queue.v1.json) excluded the earlier **160 B20** selected source pages, but it **did not** exclude every B10/B11 direct topic read. A cross-workstream exact article-ID union discovered **17** overlapping pages (14 Lent weekday and 3 post-Pentecost Sundays). Their identities and reasons are retained in [the corrected 233-article reading manifest](../source-text/icrsp-france-b22-233-distinct-source-body-scan-queue.v1.json).
+The previous [250-article metadata-reading queue](../source-text/icrsp-france-next250-metadata-reading-queue.v1.json) excluded the earlier **160 B20** selected source pages, but it **did not** exclude every B10/B11 direct topic read. A cross-workstream exact article-ID union discovered **17** overlapping pages (12 Lent weekdays and 5 post-Pentecost Sundays). Their identities and reasons are retained in [the corrected 233-article reading manifest](../source-text/icrsp-france-b22-233-distinct-source-body-scan-queue.v1.json).
 
 The truly new queue is **233 IDs**: **43 Temporal + 140 Sanctoral + 25 Commons + 18 particular/local propers + 4 Votive/Requiem + 3 Office**. This batch has **directly read 11** of those pages, leaving **222 as metadata-only/unread in this tranche**. A source-body lexical-screening script and a duplicate-gate test are committed, but **the attempted new Actions workflow creation was blocked** in this session. Accordingly **none of the remaining 222 is falsely marked machine-scanned or topic-reviewed**. Never treat the local scanner script alone as execution.
 
