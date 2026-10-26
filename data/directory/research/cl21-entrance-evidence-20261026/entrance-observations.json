@@ -297,5 +297,42 @@
       "approved_public_direction": false,
       "approved_public_map_pin": false
     }
+  ],
+  "excluded_wrong_target_objects": [
+    {
+      "source_place_id": "CL17-DE-FSSP-POTSDAM",
+      "excluded_label": "Raum der Stille / Auferstehungskapelle",
+      "excluded_osm_way_id": 31290074,
+      "evidence_url": "https://www.alexianer-potsdam.de/st-josefs-krankenhaus/unternehmen/seelsorge",
+      "reason": "Hospital explicitly identifies it as the OTHER chapel beside the St Josefs Mass chapel."
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-026",
+      "excluded_label": "Hohes Schloss",
+      "excluded_osm_way_id": 304720796,
+      "evidence_url": "https://www.bad-groenenbach.de/kultur-sehenswertes/sehenswertes/hohesschlossschlosskapelle",
+      "reason": "The active Schlosskapelle occupies the neighbouring Ringeisenhaus front brewery section, not castle."
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-017",
+      "excluded_label": "Herrgottsruhkapelle Aalener Straße 4",
+      "excluded_osm_way_id": null,
+      "evidence_url": "https://de.wikipedia.org/wiki/Liste_der_Kulturdenkmale_in_Schw%C3%A4bisch_Gm%C3%BCnd_%28Kernstadt_au%C3%9Ferhalb_der_Altstadt%29",
+      "reason": "A different chapel from St Leonhard cemetery church."
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-022",
+      "excluded_label": "Three interior Holy Sepulchre doors",
+      "excluded_osm_way_id": null,
+      "evidence_url": "https://www.eichstaett.de/sehenswertes/ehemalige_kapuzinerkirche_heil-1753/",
+      "reason": "The doors lead into the architectural Holy Sepulchre INSIDE the church; they are not its exterior entrance."
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-029",
+      "excluded_label": "Franciscan monastery gate / address 3",
+      "excluded_osm_way_id": null,
+      "evidence_url": "https://www.mariahilfberg-amberg.de/geschichte-428638.html",
+      "reason": "Monastery operator contact does not prove church's operational liturgical entrance."
+    }
   ]
 }
