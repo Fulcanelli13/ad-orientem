@@ -1,0 +1,75 @@
+name: Directory CL10 1962 owner slot adjudication
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'data/directory/research/cl8-completeness-audit-20261026/**'
+      - 'data/directory/research/cl9-missal-source-review-20261026/**'
+      - 'data/directory/research/cl10-1962-slot-adjudication-20261026/**'
+      - 'tools/directory/audit-cl-completeness.py'
+      - 'tools/directory/audit-cl9-owner-evidence.py'
+      - 'tools/directory/adjudicate-cl10-missal-evidence.py'
+      - '.github/workflows/directory-cl10-slot-adjudication.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'data/directory/research/cl8-completeness-audit-20261026/**'
+      - 'data/directory/research/cl9-missal-source-review-20261026/**'
+      - 'data/directory/research/cl10-1962-slot-adjudication-20261026/**'
+      - 'tools/directory/audit-cl-completeness.py'
+      - 'tools/directory/audit-cl9-owner-evidence.py'
+      - 'tools/directory/adjudicate-cl10-missal-evidence.py'
+      - '.github/workflows/directory-cl10-slot-adjudication.yml'
+  workflow_dispatch:
+jobs:
+  adjudicate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate preceding research overlays and frozen master
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+      - name: Rebuild CL2–CL10 evidence and run exception checks
+        run: |
+          python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ao-cl10.sqlite
+          python3 tools/directory/audit-cl-completeness.py --db /tmp/ao-cl10.sqlite --output-dir /tmp/ao-cl8
+          python3 tools/directory/audit-cl9-owner-evidence.py --db /tmp/ao-cl10.sqlite --cl8-csv /tmp/ao-cl8/missal_1962_reconciliation.csv --out-dir /tmp/ao-cl9
+          python3 tools/directory/adjudicate-cl10-missal-evidence.py --db /tmp/ao-cl10.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl10
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl10/cl10_summary.json').read_text())
+          assert x['selected_for_adjudication']==85
+          assert x['accepted_source_scoped_1962_book_evidence_rows']==79
+          assert x['accepted_conditional_1962_rows']==2
+          assert x['held_weekday_shorthand_rows']==6
+          assert x['existing_CL2_owner_accepted_classification_source_rows_unchanged']==3
+          assert x['una_cum_classifications']==x['current_timetable_releases']==x['public_venue_releases']==0
+          db=sqlite3.connect('/tmp/ao-cl10.sqlite')
+          assert db.execute("SELECT COUNT(*) FROM cl10_1962_mass_evidence WHERE adjudication='ACCEPTED_OWNER_BOOK_WITH_DATE_EXCEPTION'").fetchone()[0]==2
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert not db.execute('PRAGMA foreign_key_check').fetchall()
+          print('CL10 source-scoped evidence PASS (never public)')
+          PY
+      - name: Archive short-lived audit views (master sources permanent)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-cl10-1962-slot-adjudication
+          path: /tmp/ao-cl10/
+          retention-days: 1
