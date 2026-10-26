@@ -37,11 +37,6 @@
       "requirement": "Present collective as locally venerated; do not assert martyr status historically proven."
     },
     {
-      "topicId": "BARNABAS_ROMAN_CANON_NOBIS",
-      "reason": "ICRSP links Barnabas to Nobis quoque Roman Canon names; standard Nobis quoque lists Matthias, Barnabas? Exact text required.",
-      "requirement": "Verify exact Latin 1962 Nobis quoque list; block incorrect claim if absent."
-    },
-    {
       "topicId": "BASIL_DOCTOR_GOSPEL_CITATION",
       "reason": "Presentation refers to Luke verses 34-35 without chapter; page appears to omit chapter number.",
       "requirement": "Check actual Gospel reference in Latin Proper; no guessed verse."
@@ -621,10 +616,10 @@
       "sourceTitle": "St Barnabé, Apôtre",
       "corpusSection": "sanctoral",
       "topicId": "BARNABAS_ROMAN_CANON_NOBIS",
-      "contentType": "CANON_AND_SAINT_SOURCE_CHECK",
-      "reportedSourceFinding": "ICRSP claims Barnabas named in Nobis quoque Roman Canon; specific name must be checked against exact Latin Canon before display",
+      "contentType": "CANON_BARNABAS_NAME_CONFIRMED_BY_TRANSCRIPTION",
+      "reportedSourceFinding": "ICRSP says Barnabas is named in the Nobis quoque Roman Canon; the standard transcribed 1962 Latin text explicitly contains Matthia, Barnaba, Ignatio. This is a valid historical crosslink candidate, not an error.",
       "existingDestination": "MASS_EXPLORER_CANON_AND_SAINTS",
-      "releaseGate": "SOURCE_ERROR_HOLD_BARNABAS_NOT_IN_STANDARD_NOBIS_QUOQUE_LIST",
+      "releaseGate": "NOBIS_QUOQUE_NAME_CONFIRMED__REUSE_EXISTING_CANON_AND_SAINT_OWNER_ONLY",
       "readScope": "DIRECT_ICRSP_PAGE_TARGETED_EXCERPT_NOT_COMPLETE_AUTHOR_COLLATATION",
       "originalPrintedWitnessSeen": false,
       "hostedCommentaryReproduced": false,
@@ -824,5 +819,14 @@
       "publicationApproved": false
     }
   ],
-  "publicationApproved": false
+  "publicationApproved": false,
+  "independentChecks": [
+    {
+      "topicId": "BARNABAS_ROMAN_CANON_NOBIS",
+      "finding": "Named Saint Barnabas in Nobis quoque is correct, not a contradiction.",
+      "witnessUrl": "https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon",
+      "scope": "Transcribed 1962 Latin text; printed altar-Missal image not inspected.",
+      "disposition": "VERIFY_CANONICAL_SAINT_PROFILE_AND_SHOW_LINK_ONLY_NOT_NEW_CARD"
+    }
+  ]
 }
