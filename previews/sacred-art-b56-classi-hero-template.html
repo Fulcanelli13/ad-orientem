@@ -123,13 +123,20 @@ function label(d){const c=current(d);if(c.action==="more")return "Needs research
  if(c.action==="select")return "Selected";
  if(d.original_approval)return "Earlier approval retained";
  return "Not reviewed";}
+function visibleDays(){
+ return DAYS.filter(d=>{
+  const st=current(d);
+  if(filter==="pending")return st.action==="undecided"&&!d.original_approval;
+  if(filter==="protected")return Boolean(d.original_approval);
+  if(filter==="gaps")return d.review_lane==="GAP_9";
+  if(filter==="exact")return d.review_lane==="EXACT_6";
+  if(filter==="subject")return d.review_lane==="SUBJECT_28";
+  if(filter==="research")return st.action==="more";
+  return true;
+ });
+}
 function navItems(){const root=$("calendar");root.replaceChildren();let last="";
- for(const d of DAYS){const st=current(d);if(filter==="pending"&&(st.action!=="undecided"||d.original_approval))continue;
- if(filter==="protected"&&!d.original_approval)continue;
- if(filter==="gaps"&&d.review_lane!=="GAP_9")continue;
- if(filter==="exact"&&d.review_lane!=="EXACT_6")continue;
- if(filter==="subject"&&d.review_lane!=="SUBJECT_28")continue;
- if(filter==="research"&&st.action!=="more")continue;
+ for(const d of visibleDays()){const st=current(d);
  const m=month(d.date);if(last!==m){const monthEl=document.createElement("div");monthEl.className="month";monthEl.textContent=m;root.append(monthEl);last=m;}
  const b=document.createElement("button");b.className="navdate"+(DAYS[idx].date===d.date?" active":"");b.type="button";
  const day=document.createElement("span");day.className="day";day.textContent=d.date.slice(-2);
@@ -192,7 +199,8 @@ function render(){
  $("more").setAttribute("aria-pressed",String(v.action==="more"));
  $("state").textContent=label(d);
  $("note").value=v.note||"";
- $("previous").disabled=idx===0;$("next").disabled=idx===52;
+ const visible=visibleDays(),where=visible.findIndex(x=>x.date===d.date);
+ $("previous").disabled=where<=0;$("next").disabled=where<0||where===visible.length-1;
  navItems();
 }
 function preview(x){
@@ -211,14 +219,21 @@ $("note").addEventListener("input",()=>{
  const d=DAYS[idx];state[d.date]={...current(d),note:$("note").value.slice(0,5000)};
  try{localStorage.setItem(CACHE,JSON.stringify(state));}catch(e){}
 });
-$("previous").addEventListener("click",()=>{idx=Math.max(0,idx-1);render()});
-$("next").addEventListener("click",()=>{idx=Math.min(52,idx+1);render()});
+function moveInLane(step){
+ const shown=visibleDays(),position=shown.findIndex(d=>d.date===DAYS[idx].date);
+ const next=shown[position+step];
+ if(next){idx=DAYS.findIndex(d=>d.date===next.date);render();}
+}
+$("previous").addEventListener("click",()=>moveInLane(-1));
+$("next").addEventListener("click",()=>moveInLane(1));
 $("close").addEventListener("click",()=>$("preview").close());
 $("preview").addEventListener("click",e=>{if(e.target===$("preview"))$("preview").close()});
 document.querySelectorAll("[data-nav-filter]").forEach(b=>b.addEventListener("click",()=>{
  filter=b.dataset.navFilter;
+ const shown=visibleDays();
+ if(shown.length&&!shown.some(d=>d.date===DAYS[idx].date))idx=DAYS.findIndex(x=>x.date===shown[0].date);
  document.querySelectorAll("[data-nav-filter]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
- navItems();
+ render();
 }));
 function exportReview(){
  const decisions=DAYS.map(d=>{const value=current(d);
