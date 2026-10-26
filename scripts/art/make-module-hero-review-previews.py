@@ -3,12 +3,12 @@
 Full-view reduced images and detail tiles sampled 1:1, never upscaled.
 These are marked research previews; originals stay in the research branch.
 """
-import hashlib, io, json
+import hashlib, io, json, os
 from pathlib import Path
 from PIL import Image, ImageCms, ImageOps
 
 ROOT=Path.cwd()
-INPUT=ROOT/"assets/staged/module-hero-masters"
+INPUT=ROOT/os.environ.get("AO_HERO_PREVIEW_INPUT","assets/staged/module-hero-masters")
 OUTPUT=ROOT/"assets/staged/module-hero-preview-jpegs"
 OUTPUT.mkdir(parents=True,exist_ok=True)
 rows=[]
