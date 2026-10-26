@@ -59,6 +59,9 @@ for(const row of proposed.records){
 }
 const candle=proposed.records.find(r=>r.working_master_id==="CANDIDATE-IRISH-CHRISTMAS-CANDLE");
 assert.equal(candle.source_review.recheck,"NATIONAL_MUSEUM_DIRECT_WITH_ARCHIVAL_DUCHAS_REOPEN_BLOCKED");
+assert.ok(candle.source_review.principal_source.includes("source.museum.ie"));
+assert.ok(candle.source_review.archival_source_url.includes("duchas.ie"));
+assert.match(candle.source_review.archival_reopen_state,/CHALLENGE_PAGE/);
 assert.ok(candle.sources.some(x=>x.url.includes("duchas.ie")));
 assert.ok(candle.sources.some(x=>x.url.includes("source.museum.ie")));
 assert.ok(candle.article.history.en.includes("1941"));
