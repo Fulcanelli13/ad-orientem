@@ -10,6 +10,7 @@
       "bytes": 2080000,
       "ISO": null,
       "has_icc": false,
+      "container_note": "",
       "file": "assets/staged/module-hero-rescue/morning.jpg",
       "sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
       "licence_claim": "Public domain",
@@ -26,8 +27,12 @@
       "bytes": 7530116,
       "ISO": null,
       "has_icc": false,
-      "status": "FAILED",
-      "error": "Low-resolution/unsupported image: format=MPO dimensions=6000x4000"
+      "container_note": "MPO is a multi-picture JPEG-family encoding; preserve original bytes",
+      "file": "assets/staged/module-hero-rescue/salvation.jpg",
+      "sha256": "c5b8c147a0e75f1fe91279ceedd323fd246030e8bf0750f4a2b39811bac42102",
+      "licence_claim": "CC BY-SA 3.0",
+      "rights_details": "CC BY-SA 3.0 Chatsam, museum photograph, evaluate glare/angle",
+      "status": "ARCHIVED_SOURCE_UNAPPROVED"
     }
   ],
   "selection_changes": 0,
