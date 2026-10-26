@@ -59,6 +59,8 @@ on:
       - 'data/source-text/icrsp-france-b23-233-automated-commentary-signals.v1.json'
       - 'data/source-text/icrsp-france-b23-twenty-additional-direct-commentary-topics.v1.json'
       - 'tests/test_icrsp_b23_233_persisted_signals.py'
+      - 'data/source-text/icrsp-france-b23-next100-human-editorial-priority.v1.json'
+      - 'tests/test_icrsp_b23_next100_editorial_priority.py'
       - 'tests/test_icrsp_b23_twenty_source_topics.py'
       - 'data/source-text/icrsp-france-b22-233-distinct-source-body-scan-queue.v1.json'
       - 'data/source-text/icrsp-france-b22-eleven-direct-commentary-topics.v1.json'
@@ -103,4 +105,5 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b22_direct_11_source_topics.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b22_cross_workstream_93_unique.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b23_233_persisted_signals.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b23_next100_editorial_priority.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b23_twenty_source_topics.py' -v
