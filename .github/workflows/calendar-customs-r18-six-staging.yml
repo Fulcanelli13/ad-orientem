@@ -8,6 +8,7 @@ on:
       - "src/calendar/customs-extra-articles.js"
       - "src/calendar/customs-profile-links.js"
       - "tests/calendar-customs-r18-first-six-staging.mjs"
+      - "tests/calendar-customs-r18-region-preview.mjs"
       - ".github/workflows/calendar-customs-r18-six-staging.yml"
       - "docs/CALENDAR_CUSTOMS_R18_FIRST_SIX_RELEASE_REVIEW_20261026.md"
   workflow_dispatch:
@@ -26,3 +27,5 @@ jobs:
         run: |
           node --check tests/calendar-customs-r18-first-six-staging.mjs
           node tests/calendar-customs-r18-first-six-staging.mjs
+          node --check tests/calendar-customs-r18-region-preview.mjs
+          node tests/calendar-customs-r18-region-preview.mjs
