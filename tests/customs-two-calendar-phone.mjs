@@ -51,6 +51,10 @@ try{
    for(const item of cases){
     assert.equal(await page.evaluate(date=>globalThis.AO_CALENDAR_APP_V1.select(date),item.date),true,
      "Calendar refused "+item.date);
+    await page.waitForFunction(date=>{
+      const state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+      return state?.selectedDate===date&&!state.resolving&&state.resolution?.date===date;
+    },item.date,{timeout:35000});
     await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day"));
     const rootLocator=page.locator('#ao-calendar-modular-root[data-ao-calendar-view="day"]');
     await rootLocator.waitFor({state:"visible",timeout:40000});
@@ -62,6 +66,11 @@ try{
     assert.ok((await article.locator("summary").textContent()).includes(info.title.en));
     await article.locator("summary").click();
     assert.equal(await article.evaluate(node=>node.open),true,"Article cannot expand in Calendar");
+    // Day resolution can repaint the Calendar after opening a disclosure.
+    // A momentary open state is insufficient evidence of usable article UI.
+    await page.waitForTimeout(200);
+    assert.equal(await rootLocator.locator('[data-cal-custom-id="'+item.id+'"]').first()
+      .evaluate(node=>node.open),true,"Candidate Calendar article collapsed on repaint");
     const text=await article.textContent();
     assert.ok(text.includes(info.history.en),"Historical attribution absent from Calendar");
     assert.ok(text.includes(info.caution.en),"Pastoral caution absent from Calendar");
