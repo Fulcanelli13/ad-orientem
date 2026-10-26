@@ -163,4 +163,17 @@ $('load').onchange=async()=>{
  }catch(e){$('loadMessage').textContent='Unable to load classification export: '+e.message}
 };
 for(const id of ['search','country','institute','missal'])$(id).addEventListener('input',()=>{if(data)render()});
+const embedded=document.getElementById('embedded-data');
+if(embedded){
+ try {
+  const parsed=JSON.parse(embedded.textContent);
+  if(parsed.schema!=='AO_CL27_TLM_CLASSIFICATION_PROJECTION_V1'||parsed.counts.distinct_physical_anchors!==2579||parsed.counts.classification_source_rows!==2715)throw Error('Unexpected embedded CL27 classification data');
+  data=parsed;sites=parsed.physical_site_classification_facets;sources=new Map(parsed.source_scoped_classification_assertions.map(x=>[x.source_id,x]));
+  byId.clear();for(const s of sites)byId.set(s.physical_anchor_id,s);
+  selected=null;drafts=[];resetOptions();
+  $('loadMessage').textContent='Ready for offline review · '+sites.length+' physical places · '+sources.size+' source assertions.';
+  render();
+ }catch(e){$('loadMessage').textContent='Embedded source invalid: '+e.message}
+}
+
 </script></body></html>
