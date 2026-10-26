@@ -194,3 +194,50 @@ test('visually checked Roman score-page handoff cannot supersede 1962 text', () 
   assert.equal(handoff.integration.noNewMusicEventIDs,true);
   assert.equal(handoff.integration.noNewAudioRuntime,true);
 });
+
+
+test('1961 source-matched GABC coverage requires complete hymn and psalm components', () => {
+  const handoff=readJSON('data/research/processionale-roman-score-facsimile-handoff-20261026.v1.json');
+  const audit=handoff.gabcAudit;
+  assert.equal(audit.status,'CATALOGUE_SOURCE_AND_VISUAL_INCIPIT_CROSSCHECK_ONLY_NOT_FULL_PITCH_CERTIFIED');
+  assert.equal(audit.scoresInCurrentRuntimeFromThisResearch,0);
+  assert.equal(audit.fullNoteByNoteVerified,0);
+  assert.equal(audit.downloadedGabcPayloads,false);
+  assert.equal(audit.records.length,10);
+  assert.equal(audit.rejectedSources.length,3);
+  assert.equal(new Set(audit.records.map(r=>r.scoreId)).size,audit.records.length);
+  const existing=new Map(handoff.mappedScorePages.map(r=>[r.id,r]));
+  const exceptions=new Set(['LU61-PALM-01-PS','LU61-PALM-02-PS']);
+  const byId=new Map(audit.records.map(r=>[r.id,r]));
+  for(const r of audit.records){
+    assert.equal(r.sourceURL,'https://gregobase.selapa.net/chant.php?id='+r.scoreId);
+    if(!exceptions.has(r.id)){
+      assert.ok(existing.has(r.id),r.id+' does not map an existing 1961 page audit');
+      assert.equal(existing.get(r.id).stage,r.stage);
+    }else{
+      assert.equal(r.stage,'PALM-R02');
+      assert.match(r.component,/Psalm (23|46)/);
+    }
+    assert.match(r.verification, /_NO_FULL_PITCH_QA|_UNCERTIFIED|_HOLD/);
+  }
+  const first=byId.get('LU61-PALM-01');
+  const firstPsalm=byId.get('LU61-PALM-01-PS');
+  const second=byId.get('LU61-PALM-02');
+  const secondPsalm=byId.get('LU61-PALM-02-PS');
+  assert.equal(first.scoreId,1215);
+  assert.equal(firstPsalm.scoreId,288);
+  assert.equal(second.scoreId,1155);
+  assert.equal(secondPsalm.scoreId,435);
+  assert.notEqual(first.scoreId,firstPsalm.scoreId);
+  assert.notEqual(second.scoreId,secondPsalm.scoreId);
+  const gloria=byId.get('LU61-PALM-03');
+  assert.equal(gloria.scoreId,259);
+  assert.equal(gloria.gabcElements,6);
+  assert.equal(gloria.gabcURL,null,'One element is not an entire Gloria laus');
+  assert.deepEqual(gloria.gabcElementURLs,Array.from({length:6},(_,i)=>
+    'https://gregobase.selapa.net/download.php?elem='+(i+1)+'&format=gabc&id=259'));
+  assert.equal(byId.get('LU61-CND-04').scoreId,46);
+  assert.match(byId.get('LU61-CND-04').critical,/separate V\./);
+  assert.ok(audit.rejectedSources.some(x=>x.scoreId===30&&x.policy==='DO_NOT_ASSIGN'));
+  assert.ok(audit.rejectedSources.some(x=>x.scoreId===12531&&x.policy==='DO_NOT_SILENTLY_SUBSTITUTE'));
+});
