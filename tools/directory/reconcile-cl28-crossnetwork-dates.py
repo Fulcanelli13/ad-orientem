@@ -104,8 +104,8 @@ def main():
         source_fingerprints.append({**x,"normalized_site_date_time_sha256":fingerprint})
     assert len(site_time)==18 and len(set(site_time))==18
     assert len(place_counts)==6
-    assert sorted(place_counts.values())==[1,2,2,2,4,7]
-    # 7 new at Our Lady of Ransom, four at Chesham, one at All Saints:
+    assert sorted(place_counts.values())==[1,1,2,2,4,8]
+    # Eight new at Our Lady of Ransom, four at Chesham, one at All Saints:
     # OLOR: four weekdays + one Sat + three All Souls = eight; Chesham 4 (Nov1+three All Souls).
     assert place_counts["UK-BEDFORD-OUR-LADY-OF-RANSOM-KEMPSTON"]==8
     assert place_counts["UK-CHESHAM-BOIS-OUR-LADY-OF-PERPETUAL-SUCCOUR"]==4
