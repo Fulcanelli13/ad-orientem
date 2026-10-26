@@ -38,7 +38,7 @@ class B23DirectSourceTopics(unittest.TestCase):
   by={r["articleId"]:r for r in self.twenty["rows"]}
   old=by["a0045_nouveau"];other=by["a0304_ancien"]
   self.assertIn("1955",old["observedEditorialSubject"])
-  self.assertIn("1955",other["publicationGate"])
+  self.assertIn("obsolete for 1962",other["publicationGate"])
   self.assertIn("duplicate",other["topicCode"].lower())
   self.assertFalse(self.twenty["publicationApproved"])
   self.assertEqual(self.twenty["release"]["theologicalEditorialApprovals"],0)
