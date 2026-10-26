@@ -1,0 +1,117 @@
+{
+  "schema": "ao-palm-restored-1961-gabc-opening-printed-source-review-v1",
+  "batch": 20,
+  "date": "2026-10-26",
+  "stage": "PALM-R02",
+  "status": "TWO_PRINTED_OPENING_STAFFS_COMPARED_WITH_ARCHIVED_GABCS_VERSIFIED_UNDERLAY_UNCERTIFIED",
+  "basis": {
+    "page23": "https://gregobase.selapa.net/sources/2/1179.png",
+    "page46": "https://gregobase.selapa.net/sources/2/1180.png",
+    "originalPrintedPDF": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf",
+    "zeroBasedPages": [
+      142,
+      143
+    ],
+    "visualInspection": "PRINTED_PAGE_143_144_SCREENSHOTS_INSPECTED_2026-10-26",
+    "oldTextScope": "TEXTUS_NOVUS_ONLY",
+    "vatican1962TextApprovalOwner": "#894",
+    "scholaNotationApprovalOwner": "PR #1749"
+  },
+  "psalm23": {
+    "scoreId": 19315,
+    "source": "Graduale Romanum 1961 p143**",
+    "sourceArchivePath": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+    "archiveSha256": "06537463e71d320e5134ac84a7cb0bc70579169cd3c509883caf9eb98cdc9be2",
+    "printedOpening": "Dómini est terra et quae replent eam",
+    "gabcOpening": "DO(f)mi(gh)ni(h) est(h) ter(h)ra,(h)",
+    "firstSyllableMappings": [
+      {
+        "syllable": "DO",
+        "gabc": "f"
+      },
+      {
+        "syllable": "mi",
+        "gabc": "gh"
+      },
+      {
+        "syllable": "ni",
+        "gabc": "h"
+      }
+    ],
+    "scorePrintedExtent": "FULL_FIRST_VERSE_AND_SHORT_SECOND_VERSE_CUE_ONLY",
+    "rawDoubleDelimiter": true,
+    "rawSourceMustStayByteExact": true,
+    "printedFlexAfterChantLines": [
+      7,
+      8,
+      9
+    ],
+    "gabcFlexExampleText": "rex gloriae?",
+    "gabcHasFlexExample": true,
+    "flexaWarning": "Printed flexa marks on Psalm 23 lines 7, 8 and 9 cannot all be implemented by copying the single original rex gloriae? GABC example as syllable-aligned music without independent cadence/last-accent analysis.",
+    "versionStatus": "OPENING_INCIPIT_TONE_SOURCE_CORRELATED_NO_FULL_NOTE_SIGNOFF",
+    "scorePromoted": false
+  },
+  "psalm46": {
+    "scoreId": 19316,
+    "source": "Graduale Romanum 1961 p144**",
+    "sourceArchivePath": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+    "archiveSha256": "eb13e9eadcfeebca7e5fa0617f6cbb6c9823464ff88af2995952ab21ca8717a0",
+    "actualPrinted": "O-mnes pó-pu-li, pláudite mánibus",
+    "archivedBad": "O(f)mnes(gh) gen(h)tes,(h)",
+    "archivedBadSyllableCount": 4,
+    "archivedBadPitchGroups": [
+      "f",
+      "gh",
+      "h",
+      "h"
+    ],
+    "archivedTextMatches1961Print": false,
+    "provisionalPath": "data/research/chant-source-review/palm46-omnes-populi-1961-provisional.gabc",
+    "candidateOpening": "O(f)mnes(gh) pó(h)pu(h)li,(h)",
+    "candidateSyllableCount": 5,
+    "candidatePitchGroups": [
+      "f",
+      "gh",
+      "h",
+      "h",
+      "h"
+    ],
+    "intervention": "Replace 2-syllable gen-tes with 3-syllable pó-pu-li, assigning each a recitation h pitch. Preserve all pitches from pláudite onward unchanged; remove repeated header delimiter in derivative only.",
+    "unchangedFollowingToken": "<b>pláu</b>",
+    "entireFollowingGabcBodyByteIdentical": true,
+    "toneContourEvidence": "Printed first verse shows two opening note-groups then recitation tenor on three pó-pu-li syllables; this supports the local correction hypothesis, not a human certified facsimile-to-GABC engraving.",
+    "printVerification": "FIRST_FIVE_SYLLABLES_VISUALLY_CORRELATED_FULL_PITCH_COUNT_UNCERTIFIED",
+    "scorePrintedExtent": "FULL_FIRST_VERSE_AND_SHORT_SECOND_VERSE_CUE_ONLY",
+    "nativeExsurgeProof": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40378960243",
+    "svgRenderAlreadyPassed": true,
+    "humanMusicianAndPrintedNeumeApproval": false,
+    "sourceRawQuarantined": true,
+    "derivativeResearchOnly": true,
+    "scorePromoted": false
+  },
+  "sharedConstraints": {
+    "fullPrintedPsalmTextVerses": 16,
+    "completeVersesIndividuallyFullyNotated": 2,
+    "otherVersesNeedIndependentPsalmTonePointing": 14,
+    "note": "Count 2 notated first verses / 14 other full printed verses; each original GABC only supplies the melody of the fully notated opening and a partial next-verse cue.",
+    "psalm23FlexPrinted": 3,
+    "noAutomaticVerseToNoteMapping": true,
+    "textualAsteriskNotSufficientForPsalmTone": true,
+    "noFixedDuration": true,
+    "antiphonAfterTwoVerses": true,
+    "psalm46LiturgicalLines9And10AreOneBiblicalVerse": true
+  },
+  "release": {
+    "sourceRawPreserved": true,
+    "canonical1962FullTextHumanApproved": false,
+    "printedFullMusicalUnderlayVerified": false,
+    "pitchNeumeHumanCertification": false,
+    "complete14RemainingPsalmTonesApproved": false,
+    "nativePhoneVisualAcceptance": false,
+    "runtimeTextModified": false,
+    "runtimeMusicModified": false,
+    "approvedRuntimeAssignments": 0,
+    "publicationEligible": false
+  }
+}
