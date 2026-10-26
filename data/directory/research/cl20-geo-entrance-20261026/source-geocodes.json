@@ -1,0 +1,291 @@
+{
+  "schema": "AO_CL20_SOURCE_GEOREFERENCES_CANDIDATE_BUILDINGS_V1",
+  "as_of": "2026-10-26",
+  "policy": "Six named source-mapped building/chapel candidate records, five accepted only at research BUILDING reference level; one spatial conflict held. They are not door or public pin coordinates. Plus one Potsdam wrong-object risk held explicitly.",
+  "spatial_candidates": [
+    {
+      "source_place_id": "CL14-DE-FSSP-024",
+      "church": "St Peter und Paul, Hörmannsberg",
+      "spatial_kind": "CHURCH_BUILDING_REFERENCE_NOT_ENTRANCE",
+      "proposed_latitude": 48.28306,
+      "proposed_longitude": 11.02163,
+      "osm_way_id": 124192379,
+      "building_match_grade": "CHURCH_FOOTPRINT_CORROBORATED",
+      "coordinate_witnesses": [
+        {
+          "url": "https://mapcarta.com/de/W124192379",
+          "latitude": 48.28306,
+          "longitude": 11.02163,
+          "feature_kind": "OSM_CHURCH_BUILDING_WAY_CENTER"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:St._Peter_und_Paul_(H%C3%B6rmannsberg)",
+          "latitude": 48.28305,
+          "longitude": 11.0215917,
+          "feature_kind": "WIKIMEDIA_NAMED_CHURCH_BUILDING_REFERENCE"
+        }
+      ],
+      "independent_identity_references": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+          "purpose": "FSSP_EXACT_VENUE_MERINGER_4"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Category:St._Peter_und_Paul_(H%C3%B6rmannsberg)",
+          "purpose": "NAMED_CHURCH_IDENTIFIED_MERINGER_2"
+        }
+      ],
+      "access_notes": "Roman Catholic church footprint identified; the visitor door/side and correct house number are not known.",
+      "unresolved_conflicts": [
+        "STREET_NUMBER_2_VS_4",
+        "OSM_WAY_CENTER_NOT_PUBLIC_ENTRANCE"
+      ],
+      "direct_church_door_coordinate_verified": false,
+      "research_building_match_eligible": true,
+      "editorial_coordinate_approved_for_public_map": false,
+      "current_mass_recurrence_approved": false,
+      "public_pin_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-030",
+      "church": "St Augustinus Schulkirche, Amberg",
+      "spatial_kind": "CHURCH_BUILDING_REFERENCE_NOT_ENTRANCE",
+      "proposed_latitude": 49.44562,
+      "proposed_longitude": 11.85514,
+      "osm_way_id": 52739490,
+      "building_match_grade": "CHURCH_FOOTPRINT_CORROBORATED",
+      "coordinate_witnesses": [
+        {
+          "url": "https://mapcarta.com/W52739490",
+          "latitude": 49.44562,
+          "longitude": 11.85514,
+          "feature_kind": "OSM_CATHOLIC_SCHULKIRCHE_WAY_CENTER"
+        },
+        {
+          "url": "https://www.outdooractive.com/de/poi/bayerischer-jura/schulkirche/2607904/",
+          "latitude": 49.445608,
+          "longitude": 11.855166,
+          "feature_kind": "NAMED_CHURCH_VISITOR_POI"
+        },
+        {
+          "url": "https://www.hmdb.org/m.asp?m=242442",
+          "latitude": 49.445483333333335,
+          "longitude": 11.854933333333333,
+          "feature_kind": "FIELD_PHOTOGRAPHED_CHURCH_ENTRANCE_MARKER_VICINITY_NOT_DOOR_COORDINATE"
+        }
+      ],
+      "independent_identity_references": [
+        {
+          "url": "https://www.hmdb.org/m.asp?m=242442",
+          "purpose": "DATED_2024_PHOTO_DESCRIBES_SCHOOL_CHURCH_ENTRANCE"
+        },
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+          "purpose": "FSSP_NATIONAL_ADDRESS_DEUTSCHE_SCHULGASSE_2"
+        }
+      ],
+      "access_notes": "A dated photographed historic marker is described as next to the church entrance, at the southwest corner of the church. Its coordinates are the marker vicinity, not a surveyed doorway.",
+      "unresolved_conflicts": [
+        "DEUTSCHE_SCHULGASSE_2_VS_4",
+        "HISTORICAL_MARKER_CORNER_COORDINATES_NOT_DOOR_COORDINATE"
+      ],
+      "direct_church_door_coordinate_verified": false,
+      "research_building_match_eligible": true,
+      "editorial_coordinate_approved_for_public_map": false,
+      "current_mass_recurrence_approved": false,
+      "public_pin_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-029",
+      "church": "Wallfahrtskirche Maria Hilf, Amberg",
+      "spatial_kind": "CHURCH_BUILDING_REFERENCE_NOT_ENTRANCE",
+      "proposed_latitude": 49.4529,
+      "proposed_longitude": 11.871,
+      "osm_way_id": null,
+      "building_match_grade": "CHURCH_BUILDING_POI_CORROBORATED",
+      "coordinate_witnesses": [
+        {
+          "url": "https://mapcarta.com/35839988",
+          "latitude": 49.4529,
+          "longitude": 11.871,
+          "feature_kind": "NAMED_CHURCH_POI"
+        },
+        {
+          "url": "https://www.blutana.de/sehenswuerdigkeiten/Kirche%2BMaria%2BHilf-Amberg-9229.html",
+          "latitude": 49.4528,
+          "longitude": 11.8712,
+          "feature_kind": "NAMED_CHURCH_POI"
+        }
+      ],
+      "independent_identity_references": [
+        {
+          "url": "https://www.mariahilfberg-amberg.de/kontakt-428765.html",
+          "purpose": "SANCTUARY_OPERATOR_MAILING_AT_MARIAHILFBERG_3"
+        },
+        {
+          "url": "https://www.oberpfalzwiki.de/Auf_dem_Mariahilfberg",
+          "purpose": "CHURCH_BUILDING_LISTED_NUMBER_4_NOT_MONASTERY_3"
+        }
+      ],
+      "access_notes": "Sanctuary operator's number 3 is a monastery/contact address, while listed church is number 4. Do not route worshippers automatically to convent gate.",
+      "unresolved_conflicts": [
+        "CHURCH_4_VS_MONASTERY_OPERATOR_MAILING_3",
+        "POI_NOT_CHURCH_VISITOR_DOOR"
+      ],
+      "direct_church_door_coordinate_verified": false,
+      "research_building_match_eligible": true,
+      "editorial_coordinate_approved_for_public_map": false,
+      "current_mass_recurrence_approved": false,
+      "public_pin_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-017",
+      "church": "St Leonhardskirche, Schwäbisch Gmünd",
+      "spatial_kind": "CHURCH_BUILDING_REFERENCE_NOT_ENTRANCE",
+      "proposed_latitude": 48.80303,
+      "proposed_longitude": 9.80474,
+      "osm_way_id": 253934498,
+      "building_match_grade": "CHURCH_FOOTPRINT_IDENTIFIED_SINGLE_MAP_SOURCE",
+      "coordinate_witnesses": [
+        {
+          "url": "https://mapcarta.com/de/W253934498",
+          "latitude": 48.80303,
+          "longitude": 9.80474,
+          "feature_kind": "OSM_ROMAN_CATHOLIC_CHURCH_BUILDING_WAY_CENTER"
+        }
+      ],
+      "independent_identity_references": [
+        {
+          "url": "https://www.schwaebisch-gmuend.de/adressdetails.html?adrId=2078",
+          "purpose": "CITY_ST_LEONHARDSKIRCHE_FRIEDHOFSTRASSE_2"
+        },
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+          "purpose": "FSSP_AALENER_STRASSE_2"
+        }
+      ],
+      "access_notes": "City and FSSP addresses may refer to cemetery approaches from different streets. The nearby Herrgottsruhkapelle is not this church.",
+      "unresolved_conflicts": [
+        "FRIEDHOFSTRASSE_2_VS_AALENER_STRASSE_2",
+        "NEARBY_HERRGOTTSRUHKAPELLE_AALENER_4_IS_DIFFERENT",
+        "OSM_WAY_CENTER_NOT_ENTRANCE"
+      ],
+      "direct_church_door_coordinate_verified": false,
+      "research_building_match_eligible": true,
+      "editorial_coordinate_approved_for_public_map": false,
+      "current_mass_recurrence_approved": false,
+      "public_pin_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-022",
+      "church": "Heilig Kreuz former Kapuzinerkirche, Eichstätt",
+      "spatial_kind": "CHURCH_BUILDING_REFERENCE_NOT_ENTRANCE",
+      "proposed_latitude": 48.88995784685476,
+      "proposed_longitude": 11.1907285451889,
+      "osm_way_id": null,
+      "building_match_grade": "CHURCH_BUILDING_PRIMARY_TOURISM_CORROBORATED",
+      "coordinate_witnesses": [
+        {
+          "url": "https://en.naturpark-altmuehltal.de/sehenswertes/ehemalige_kapuzinerkirche_heil-1753/?setLanguage=en",
+          "latitude": 48.88995784685476,
+          "longitude": 11.1907285451889,
+          "feature_kind": "REGIONAL_TOURISM_EXACT_NAMED_CHURCH_COORDINATE"
+        },
+        {
+          "url": "https://www.outdooractive.com/de/poi/altmuehltal/eichstaett-hl.-kreuz-kirche/64307374/",
+          "latitude": 48.889909,
+          "longitude": 11.190833,
+          "feature_kind": "PILGRIMAGE_WALK_CHURCH_POI"
+        }
+      ],
+      "independent_identity_references": [
+        {
+          "url": "https://www.eichstaett.de/sehenswertes/ehemalige_kapuzinerkirche_heil-1753/",
+          "purpose": "CITY_CHURCH_ADDRESS_KAPUZINERGASSE_2"
+        },
+        {
+          "url": "https://eichstaett.bistum-eichstaett.de/gottesdienste/calendar/location/tx_cal_location/heilig-kreuz-kirche-ehem-kapuzinerkirche-eichstaett/?cHash=e8d892f945bb3dd1fbe9fd375a1dc471&tx_cal_controller%5Bgetdate%5D=20211129",
+          "purpose": "DIOCESAN_CHURCH_SITE_AND_DATE_PROGRAMME"
+        }
+      ],
+      "access_notes": "Regional tourism identifies the church by name, street and precise coordinates. No official point explicitly denotes the door.",
+      "unresolved_conflicts": [
+        "DAYTIME_CHURCH_OPEN_NOT_DOOR_GPS",
+        "REGIONAL_TOURISM_POI_NOT_SATELLITE_ENTRANCE"
+      ],
+      "direct_church_door_coordinate_verified": false,
+      "research_building_match_eligible": true,
+      "editorial_coordinate_approved_for_public_map": false,
+      "current_mass_recurrence_approved": false,
+      "public_pin_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-026",
+      "church": "Schlosskapelle in Ringeisenhaus, Bad Grönenbach",
+      "spatial_kind": "CHURCH_BUILDING_REFERENCE_NOT_ENTRANCE",
+      "proposed_latitude": 47.87579,
+      "proposed_longitude": 10.21727,
+      "osm_way_id": 1036283953,
+      "building_match_grade": "SPATIAL_DISCREPANCY_HOLD",
+      "coordinate_witnesses": [
+        {
+          "url": "https://mapcarta.com/W1036283953",
+          "latitude": 47.87579,
+          "longitude": 10.21727,
+          "feature_kind": "OSM_ROMAN_CATHOLIC_SCHLOSSKAPELLE_WAY_CENTER"
+        },
+        {
+          "url": "https://www.dewiki.de/Lexikon/Liste_der_Kirchen_und_Kapellen_in_der_Verwaltungsgemeinschaft_Bad_Gr%C3%B6nenbach",
+          "latitude": 47.87616,
+          "longitude": 10.217006,
+          "feature_kind": "ENCYCLOPEDIA_REFERENCED_BUILDING_COORDINATE"
+        }
+      ],
+      "independent_identity_references": [
+        {
+          "url": "https://rathaus.bad-groenenbach.de/sport-freizeit-und-kultur/rund-ums-hohe-schloss/hohes-schloss-ringeisenhaus-schlosskapelle.html?cHash=0176e313b9da0b653f459892de3b5b22&fsize=0",
+          "purpose": "MUNICIPALITY_STATES_CHAPEL_IN_RINGEISENHAUS_NOT_HOHE_SCHLOSS"
+        },
+        {
+          "url": "https://mapcarta.com/W304720796",
+          "purpose": "DIFFERENT_OSM_WAY_FOR_ADJACENT_HOHES_SCHLOSS"
+        }
+      ],
+      "access_notes": "The mapped chapel point and separately referenced coordinates differ by tens of metres. Require building outline and interior chapel entry verification before even research-building acceptance.",
+      "unresolved_conflicts": [
+        "RINGEISENHAUS_VS_HOHE_SCHLOSS",
+        "CHURCH_WAY_CENTER_VS_REFERENCED_40_METRE_DIFFERENCE",
+        "ACTUAL_VISITOR_ROOM_INSIDE_RINGEISENHAUS_NOT_IDENTIFIED"
+      ],
+      "direct_church_door_coordinate_verified": false,
+      "research_building_match_eligible": false,
+      "editorial_coordinate_approved_for_public_map": false,
+      "current_mass_recurrence_approved": false,
+      "public_pin_approved": false
+    }
+  ],
+  "blocked_site_hypotheses": [
+    {
+      "source_place_id": "CL17-DE-FSSP-POTSDAM",
+      "church": "St Josefs-Kapelle, Potsdam",
+      "reason": "POTENTIALLY_DIFFERENT_OSM_CHAPEL_NAME_AT_SAME_HOSPITAL_CAMPUS",
+      "candidate_url": "https://mapcarta.com/de/W31290074",
+      "candidate_osm_way_id": 31290074,
+      "candidate_feature_name": "Raum der Stille",
+      "candidate_lat": 52.39953,
+      "candidate_lon": 13.04499,
+      "owner_worship_chapel_source": "https://www.alexianer-potsdam.de/st-josefs-kapelle",
+      "vehicle_access_owner_source": "https://www.alexianer-potsdam.de/orientierung",
+      "owner_worship_site_address": "Allee nach Sanssouci 7, 14471 Potsdam",
+      "owner_verified_vehicle_access": "Zimmerstraße 6, 14471 Potsdam",
+      "owner_access_distinction_verified": true,
+      "osm_named_object_equated_to_actual_mass_chapel": false,
+      "candidate_coordinate_accepted": false,
+      "church_visitor_entrance_coordinate_approved": false,
+      "public_release": false,
+      "next_check": "Verify whether mapped Raum der Stille way 31290074 is the St Josefs worship chapel or a distinct quiet-room facility, from floorplan/onsite operator."
+    }
+  ],
+  "physical_releases": 0,
+  "mass_schedule_releases": 0
+}
