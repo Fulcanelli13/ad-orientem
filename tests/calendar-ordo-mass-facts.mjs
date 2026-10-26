@@ -68,6 +68,12 @@ assert.equal(goodFriday.introitIncipit,null);
 
 assert.equal(latinIntroitIncipit({lat:"Introitus: Si iniquitates observaveris, Domine"}),"Si iniquitates observaveris, Domine");
 assert.equal(latinIntroitIncipit({lat:"℣. Gaudeamus omnes"}),"Gaudeamus omnes");
+assert.equal(latinIntroitIncipit({lat:"Ps 129:3-4\\nSi iniquitates observaveris, Domine, Domine"}),"Si iniquitates observaveris, Domine, Domine",
+  "Missal reference-only heading must not be rendered as the Latin Introit");
+assert.equal(latinIntroitIncipit({lat:"Ps 129:3-4"}),null,
+  "A Scripture reference alone is not an Introit incipit");
+assert.equal(latinIntroitIncipit({lat:"Ps 129:3-4 Si iniquitates observaveris"}),"Si iniquitates observaveris",
+  "Citation prefixes on the same line must be stripped");
 assert.equal(latinIntroitIncipit({lat:"$SourcePlaceholder"}),null);
 
 console.log("PASS Calendar Ordo Mass facts: identity, proper, incipit, preface conflicts, strict rubrical flags, alternative exclusion and Good Friday");
