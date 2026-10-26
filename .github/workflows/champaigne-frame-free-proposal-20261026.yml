@@ -39,3 +39,5 @@ jobs:
             git push origin research/champaigne-inv1125-photo-review-20261026
           fi
       - run: echo "No new app artwork or image-rights release. These are crop proposals only."
+
+# Repeat deliberate manual edge tightening; source bytes and editorial approvals unchanged.
