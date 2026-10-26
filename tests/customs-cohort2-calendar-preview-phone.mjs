@@ -77,6 +77,10 @@ try{
     await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day"));
     const cal=page.locator('#ao-calendar-modular-root[data-ao-calendar-view="day"]');
     await cal.waitFor({state:"visible",timeout:40000});
+    // A Day selection can trigger several background Calendar repaints.
+    // The QA insertion has no production persistence owner, so insert only
+    // once the real Calendar has had time to finish its final Day paint.
+    await page.waitForTimeout(1200);
     // Author a fixture via standard DOM APIs, reusing ONLY existing Calendar
     // CSS classes and existing day date. No runtime import/production change.
     const injected=await page.evaluate(async({date,scope,fr})=>{
@@ -139,7 +143,12 @@ try{
     assert.ok(rect.left>=-1&&rect.right<=width+1&&rect.pageWidth<=width+3,
       "Regional QA article overflows existing Calendar: "+JSON.stringify(rect));
     await qa.evaluate(el=>el.scrollIntoView({block:"start",behavior:"instant"}));
-    await page.screenshot({path:resolve(out,item.unit.toLowerCase()+"-"+item.scope.toLowerCase()+"-"+lang+"-"+width+".png"),fullPage:true});
+    const name=item.unit.toLowerCase()+"-"+item.scope.toLowerCase()+"-"+item.date+"-"+lang+"-"+width;
+    await qa.screenshot({path:resolve(out,name+"-article.png"),timeout:12000});
+    // Capture a real Calendar viewport rather than an old/repainted empty page.
+    assert.equal(await qa.count(),1,"Review article disappeared during real Calendar repaint");
+    await page.screenshot({path:resolve(out,name+"-calendar.png"),fullPage:false});
+    assert.equal(await qa.count(),1,"Review article disappeared during viewport capture");
     report.cases.push({...item,width,lang,rect,sourceCount:injected.sourceCount});
    }
    assert.deepEqual(errors,[],"Uncaught browser errors");
