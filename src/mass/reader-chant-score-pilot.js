@@ -1,5 +1,6 @@
 import {createOfflineChantEngraver} from './reader-chant-engraver.js';
 import {ORDINARY_1961_SCORE_SOURCES} from './reader-ordinary-scores-1961.js';
+import {CHRISTMAS_DAY_PROPER_SCORES_1961} from './reader-christmas-proper-scores-1961.js';
 // Native Mass Schola: real Gregorian score selection and continuous manuscript viewing.
 // Research/pilot only: selected preview is NOT the actual choir's musical setting.
 // No playback, priest action, card navigation, audio clock, or liturgical inference.
@@ -60,6 +61,7 @@ export const SCHOLA_SCORE_CATALOGUE=Object.freeze([
     bookWitnesses:Object.freeze(["Graduale Romanum (Solesmes, 1961), p. 28*",
       "Liber Usualis (Solesmes, 1961), p. 37"])}),
   ...ORDINARY_1961_SCORE_SOURCES,
+  ...CHRISTMAS_DAY_PROPER_SCORES_1961,
 ]);
 export const SCHOLA_SCORE_PILOT=SCHOLA_SCORE_CATALOGUE[0];
 export const SCHOLA_SCORE_TRACK_IDS=Object.freeze([
@@ -151,7 +153,7 @@ const CSS=String.raw`
 `;
 
 // Model never reads the priest's current text to advance the musical score.
-export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},programmeScoreId=null,programmeSelections=null}={}){
+export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},programmeScoreId=null,programmeSelections=null,properScoreMatches=null}={}){
   const dock=root?.querySelector?.(".ao-schola-dock");
   const controls=dock?.querySelector?.(".ao-schola-controls");
   const doc=root?.ownerDocument;
@@ -204,7 +206,7 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},progra
   const select=panel.querySelector("[data-score-choice]");
   function fillChoices(track){
     select.replaceChildren();
-    for(const item of availableNativeScholaScores(track)){
+    for(const item of choicesForTrack(track)){
       const option=doc.createElement("option");option.value=item.id;
       option.textContent=item.title+" · reference";select.appendChild(option);
     }
@@ -216,10 +218,15 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},progra
   const picture=panel.querySelector("[data-score-image]");
   const fullPicture=dialogue.querySelector("[data-score-full-image]");
   const reported=programmeSelections && typeof programmeSelections==="object"?programmeSelections:{};
+  const matchedProper=new Map((properScoreMatches?.candidates??[])
+    .filter(row=>typeof row.trackId==="string"&&typeof row.scoreId==="string")
+    .map(row=>[row.trackId,row.scoreId]));
+  const choicesForTrack=track=>availableNativeScholaScores(track).filter(item=>
+    item.status!=="SOURCE_MATCH_REQUIRED_NOT_DATE_ASSIGNED"||matchedProper.get(track)===item.id);
   const selectedForTrack=track=>{
-    const id=track==="KYRIE"?(reported.KYRIE??programmeScoreId):reported[track];
-    return availableNativeScholaScores(track).find(item=>item.id===id)
-      ??availableNativeScholaScores(track)[0]??null;
+    const id=matchedProper.get(track)??(track==="KYRIE"?(reported.KYRIE??programmeScoreId):reported[track]);
+    return choicesForTrack(track).find(item=>item.id===id)
+      ??choicesForTrack(track)[0]??null;
   };
   let scoreId=selectedForTrack("KYRIE")?.id??SCHOLA_SCORE_PILOT.id;
   let isOpen=false, lastTrack=null, destroyed=false;
@@ -295,7 +302,7 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},progra
   }
   function changeTrack(schola){
     const track=String(schola?.trackId??"");
-    const available=availableNativeScholaScores(track);
+    const available=choicesForTrack(track);
     // A Gregorian manuscript is not the notation of a polyphonic setting.
     const polyphonic=track==="SANCTUS_BENEDICTUS"&&schola?.sanctusPerformance==="POLYPHONIC";
     trigger.hidden=available.length===0||polyphonic;
@@ -348,7 +355,7 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},progra
     if(["ArrowLeft","ArrowRight"].includes(event.key)){event.stopPropagation();}
   };
   const onSelect=()=>{
-    const allowed=availableNativeScholaScores(lastTrack);
+    const allowed=choicesForTrack(lastTrack);
     if(!allowed.some(item=>item.id===select.value))return;
     scoreId=select.value;applyScore();
   };
