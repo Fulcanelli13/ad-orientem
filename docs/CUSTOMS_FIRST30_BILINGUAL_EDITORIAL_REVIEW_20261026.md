@@ -29,19 +29,19 @@ This document renders the source-owned English/French descriptions already resea
 
 **Description (EN)**
 
-Cross wearing is recorded in 1681. Later children's badges used card, ribbon or paper; museum research describes substantial decline by the late 1930s.
+The wearing of crosses for St Patrick is recorded by a traveller in the 1680s. Later children's badges used card, ribbon or paper; museum research describes substantial decline by the late 1930s.
 
 **Description (FR)**
 
-Le port de croix est signalé en 1681. Les insignes d'enfants ultérieurs utilisaient carton, rubans ou papier ; les recherches muséales décrivent un net déclin à la fin des années 1930.
+Le port de croix en l’honneur de saint Patrick est signalé par un voyageur dans les années 1680. Les insignes d'enfants ultérieurs utilisaient carton, rubans ou papier ; les recherches muséales décrivent un net déclin à la fin des années 1930.
 
 **Historical context (EN)**
 
-Cross wearing is recorded in 1681. Later children's badges used card, ribbon or paper; museum research describes substantial decline by the late 1930s.
+The wearing of crosses for St Patrick is recorded by a traveller in the 1680s. Later children's badges used card, ribbon or paper; museum research describes substantial decline by the late 1930s.
 
 **Historical context (FR)**
 
-Le port de croix est signalé en 1681. Les insignes d'enfants ultérieurs utilisaient carton, rubans ou papier ; les recherches muséales décrivent un net déclin à la fin des années 1930.
+Le port de croix en l’honneur de saint Patrick est signalé par un voyageur dans les années 1680. Les insignes d'enfants ultérieurs utilisaient carton, rubans ou papier ; les recherches muséales décrivent un net déclin à la fin des années 1930.
 
 **Spiritual meaning (EN)**
 
