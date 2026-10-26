@@ -1,0 +1,3060 @@
+{
+  "schema": "ao-gr1961-identity-risk-audit-v1",
+  "sourceFileBlobSha": "c43cc2d08488eef0f128933fe10b6bb292fa4f3b",
+  "sourceSnapshotDate": "2024-01-05",
+  "sourceEditionId": 2,
+  "status": "SECONDARY_IDENTITY_AUDIT_NOT_EDITORIAL_APPROVAL",
+  "summary": {
+    "audited": 1195,
+    "distinctScopedIncipits": 1192,
+    "samePartDistinctGabcGroups": 3,
+    "crossOfficePartIncipitGroups": 101,
+    "crossOfficePartRecords": 213,
+    "exactGabcDuplicateGroups": 1,
+    "nonNumericPageTokens": 440,
+    "promotedToReader": 0
+  },
+  "samePartDistinctGabc": [
+    {
+      "normalizedIncipit": "dum venerit paraclitus",
+      "officePart": "co",
+      "items": [
+        {
+          "id": "GREGOBASE-39",
+          "officePart": "co",
+          "incipit": "Dum venerit Paraclitus",
+          "page": "270",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "b5c0c51ead2bec0ec3e38a01dcf00334ff3964f4857b10b7bfc6f0d1e68bdca8"
+        },
+        {
+          "id": "GREGOBASE-17793",
+          "officePart": "co",
+          "incipit": "Dum venerit Paraclitus (2)",
+          "page": "270",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "16059afd5754a1e6c4aab35d98996346a5da42a1dd574827cde926a0d35c08c7"
+        }
+      ],
+      "decision": "KEEP_VARIANTS_SEPARATE_PENDING_PRINT_REVIEW"
+    },
+    {
+      "normalizedIncipit": "inveni david",
+      "officePart": "gr",
+      "items": [
+        {
+          "id": "GREGOBASE-827",
+          "officePart": "gr",
+          "incipit": "Inveni David",
+          "page": "[3]",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "0841660f1d856abb4cbcb9836b2fd9672f86fc81b396955885ef125246cc8108"
+        },
+        {
+          "id": "GREGOBASE-8201",
+          "officePart": "gr",
+          "incipit": "Inveni David",
+          "page": "[3]",
+          "mode": "1",
+          "version": "Solesmes 1961",
+          "sha256": "662a2895af2128c8aa492a2b9c3399e10d8724df3e45d618e3f284ab9a25a210"
+        }
+      ],
+      "decision": "KEEP_VARIANTS_SEPARATE_PENDING_PRINT_REVIEW"
+    },
+    {
+      "normalizedIncipit": "domine deus qui repertus",
+      "officePart": "of",
+      "items": [
+        {
+          "id": "GREGOBASE-200",
+          "officePart": "of",
+          "incipit": "Domine Deus... qui repertus",
+          "page": "[74]",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "9cca67cc9d35bc9bee427953a70879a254284242d5fe1a9d4ceb1a3ca4badd1d"
+        },
+        {
+          "id": "GREGOBASE-4653",
+          "officePart": "of",
+          "incipit": "Domine Deus... qui repertus",
+          "page": "[74]",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "49858334e0d779ef327749bf8ca74663bdd2f4da7971dd35609fde313e569793"
+        }
+      ],
+      "decision": "KEEP_VARIANTS_SEPARATE_PENDING_PRINT_REVIEW"
+    }
+  ],
+  "crossOfficePart": [
+    {
+      "normalizedIncipit": "a summo caelo",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-254",
+          "officePart": "al",
+          "incipit": "A summo caelo",
+          "page": "111**",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "147481c1e05bfbfaa3aa88eb7d29746aa24752bc81c23d0adfb416aab32597fe"
+        },
+        {
+          "id": "GREGOBASE-698",
+          "officePart": "gr",
+          "incipit": "A summo caelo",
+          "page": "13",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "cdde8090deda39cf63b62e5c4217b327b339d99f59417a5d214182361acb8c1f"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "ab occultis meis",
+      "officeParts": [
+        "co",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-1210",
+          "officePart": "gr",
+          "incipit": "Ab occultis meis",
+          "page": "130",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "6eeab6c92691bc03db8a6c64e3d105ce49d7d35ab6b617d3f442ad0e78fb2de9"
+        },
+        {
+          "id": "GREGOBASE-1316",
+          "officePart": "co",
+          "incipit": "Ab occultis meis",
+          "page": "142",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "65e1f1ae1ca021912e128754986f98173c49d5615b31ffd17397a379187ae3de"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "accedite",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-688",
+          "officePart": "gr",
+          "incipit": "Accedite",
+          "page": "63**",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "91ee5d8e01e22e0878bdf92e70be11700c3d7091d31925eb29a0ece12c2cd1a9"
+        },
+        {
+          "id": "GREGOBASE-1365",
+          "officePart": "al",
+          "incipit": "Accedite",
+          "page": "65**",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "1f94f789489a5ce2d93966ddfe076f34a0df5da4ae9e8617c880c917876d2828"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "ad te levavi",
+      "officeParts": [
+        "in",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-132",
+          "officePart": "in",
+          "incipit": "Ad te levavi",
+          "page": "1",
+          "mode": "8",
+          "version": "Solesmes 1961",
+          "sha256": "0f3ba0e9034d2bca4f82d4644fc6cb38782d9d4e9a157256eae07db14be63e87"
+        },
+        {
+          "id": "GREGOBASE-1329",
+          "officePart": "tr",
+          "incipit": "Ad te levavi",
+          "page": "124",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "4c98fabdbd2b430db85560d8abbf0f8bed95b7317b8ca7edaec6fc343bed839c"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "angelis suis",
+      "officeParts": [
+        "gr",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-834",
+          "officePart": "gr",
+          "incipit": "Angelis suis",
+          "page": "94",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "0d247110f3d80ed7d5ff4c09a77f0f621944ce8e959793c7a44db0f220bebee1"
+        },
+        {
+          "id": "GREGOBASE-927",
+          "officePart": "tr",
+          "incipit": "Angelis suis",
+          "page": "[144]",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "62d5778141b13dc33141864cc0897ed46d95285f14a94f200c2ee7bb8ef47a41"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "ascendit deus",
+      "officeParts": [
+        "al",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-17",
+          "officePart": "al",
+          "incipit": "Ascendit Deus",
+          "page": "286",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "e58ce12a3ad66f8e83719564a7dc61fc3ea8b7986436a1008b68e5571c6380b2"
+        },
+        {
+          "id": "GREGOBASE-211",
+          "officePart": "of",
+          "incipit": "Ascendit Deus",
+          "page": "287",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "2ccd8ffd8b6f2866bb1ba64303981a682d6c84b4850114d58c84944cbdac5f0e"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "beatam me dicent",
+      "officeParts": [
+        "al",
+        "co"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-286",
+          "officePart": "co",
+          "incipit": "Beatam me dicent",
+          "page": "584",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "8159fe60348df33f924727e854476eabb5b035a966ac717a44c8421c5e9a2664"
+        },
+        {
+          "id": "GREGOBASE-460",
+          "officePart": "al",
+          "incipit": "Beatam me dicent",
+          "page": "587E",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "8c1f29c5f6474d10d8c36b0657ff3ae4a4755f78629114a0bd7e244d5cf910b7"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "beatus vir cujus",
+      "officeParts": [
+        "gr",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-728",
+          "officePart": "tr",
+          "incipit": "Beatus vir cujus",
+          "page": "450",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "9fdc6d04eab5d7dbf9aff3b741c1f1d18bc9620fdabe76435e4e5f3fd5e99554"
+        },
+        {
+          "id": "GREGOBASE-1327",
+          "officePart": "gr",
+          "incipit": "Beatus vir cujus",
+          "page": "23**",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "37826b2fa652482d483cb4576d96d01573fa474661776b25d1b366072a009fbc"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "benedic anima mea",
+      "officeParts": [
+        "al",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-480",
+          "officePart": "al",
+          "incipit": "Benedic anima mea",
+          "page": "636",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "396865b30715a8ef958a144e293c5b778c39a1fd065f5da2d90c384ac4aa4bb3"
+        },
+        {
+          "id": "GREGOBASE-1359",
+          "officePart": "of",
+          "incipit": "Benedic anima mea",
+          "page": "105",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "c89cd12da637fec3d3bd4c82bb7931579644d3096770e63e400eb8bfdc1aa51d"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "benedicam dominum",
+      "officeParts": [
+        "gr",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-143",
+          "officePart": "of",
+          "incipit": "Benedicam Dominum",
+          "page": "116",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "32ad219940907bd96a421ba459f3e21af85990408f30b3de1d680ff2820a7ecc"
+        },
+        {
+          "id": "GREGOBASE-1182",
+          "officePart": "gr",
+          "incipit": "Benedicam Dominum",
+          "page": "350",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "fdd8b1b8e715bdd89db543136a2f4033d3d63fbc26661447085674221ad4530e"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "benedictus dominus",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-553",
+          "officePart": "gr",
+          "incipit": "Benedictus Dominus",
+          "page": "64",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "c0d642d23e22be4f167874d438abf9e41bac0ccecb84424fc2c035e34bf424c9"
+        },
+        {
+          "id": "GREGOBASE-1048",
+          "officePart": "al",
+          "incipit": "Benedictus Dominus",
+          "page": "465",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "53bef94f99a05ccfeb1b7f88d993b87272ab8a33b41654b2a1b579a625601dac"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "benedictus es",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-965",
+          "officePart": "gr",
+          "incipit": "Benedictus es",
+          "page": "308",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "f4231113501ddbf5317e35774448e3b211fb4fef8db8f718e0b2a034befe961e"
+        },
+        {
+          "id": "GREGOBASE-1289",
+          "officePart": "al",
+          "incipit": "Benedictus es",
+          "page": "306",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "417dcb629fe2c63291f0e359cc3004bcc5114c85eb9243b8592f60fc7df2af77"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "benedictus qui venit",
+      "officeParts": [
+        "gr",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-217",
+          "officePart": "gr",
+          "incipit": "Benedictus qui venit",
+          "page": "31",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "f7c1e3cb381f125f123a1aae5cc069beb5166146842c35d4e925478a04f463e6"
+        },
+        {
+          "id": "GREGOBASE-941",
+          "officePart": "of",
+          "incipit": "Benedictus qui venit",
+          "page": "260",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "66a7664285de093309a84ee2ad701031df56b7dbf895521001609f1b0af7396b"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "bonum est confiteri",
+      "officeParts": [
+        "gr",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-1194",
+          "officePart": "of",
+          "incipit": "Bonum est confiteri",
+          "page": "76",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "14d3dcf26d982ec8b322da336a17f7778fe3e0edf861bddabefceb76f3ba0924"
+        },
+        {
+          "id": "GREGOBASE-1338",
+          "officePart": "gr",
+          "incipit": "Bonum est confiteri",
+          "page": "360",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "5e4d381e98d9a85d0e733b63f4def685041733fae9c5f927ec818f5b9ab1ff89"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "cantate domino",
+      "officeParts": [
+        "al",
+        "co",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-42",
+          "officePart": "in",
+          "incipit": "Cantate Domino",
+          "page": "268",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "82420b712df03e534f6c09cf78c23d7b7ee50cfa13187aebf32c86910e4a0ee0"
+        },
+        {
+          "id": "GREGOBASE-579",
+          "officePart": "co",
+          "incipit": "Cantate Domino",
+          "page": "273",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "91d2d751862209d86b4f153b881afd8e5f55e3b2d88654223d4944bcf8ed6d3a"
+        },
+        {
+          "id": "GREGOBASE-1077",
+          "officePart": "al",
+          "incipit": "Cantate Domino",
+          "page": "364",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "3166370fa170d71ee952351ed94e6e31bd4e1680d353e2512060ee29fa21f0cc"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "caro mea vere",
+      "officeParts": [
+        "al",
+        "co"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-90",
+          "officePart": "co",
+          "incipit": "Caro mea vere",
+          "page": "592F",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "a3dd1ff6a7e62bca7bfdba4adb9e8127e62b18543e120964f5342782c5f03ba5"
+        },
+        {
+          "id": "GREGOBASE-774",
+          "officePart": "al",
+          "incipit": "Caro mea vere",
+          "page": "[96]",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "c13981a6a8632a6bae96e8600d311d52aa42e7dbece80bd4cb2d130ba843b636"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "christo confixus",
+      "officeParts": [
+        "al",
+        "co"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-598",
+          "officePart": "co",
+          "incipit": "Christo confixus",
+          "page": "97**",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "7de2d73f96dcb75f2c0ae788fed138e657835f7a59b142ebb081b4cc6ccf8080"
+        },
+        {
+          "id": "GREGOBASE-1162",
+          "officePart": "al",
+          "incipit": "Christo confixus",
+          "page": "427",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "c2c62de1684a0a75dd7016377e0804a78482801286c64aa528062b2331581660"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "christus resurgens",
+      "officeParts": [
+        "al",
+        "co"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-593",
+          "officePart": "co",
+          "incipit": "Christus resurgens",
+          "page": "252",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "8280523913cb5a5bef137443b09ee65c033a597ce21fbeefffe7308b231b6c2e"
+        },
+        {
+          "id": "GREGOBASE-1348",
+          "officePart": "al",
+          "incipit": "Christus resurgens",
+          "page": "269",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "b21334ddab54ab124e9a22390d668d437ef018032e6fa20b3d8f40247f92a930"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "communicantes",
+      "officeParts": [
+        "co",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-732",
+          "officePart": "co",
+          "incipit": "Communicantes",
+          "page": "484",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "72457c7951d3a255924008a0388b4b032b473ef748022ff7520ff51c310f484f"
+        },
+        {
+          "id": "GREGOBASE-1181",
+          "officePart": "gr",
+          "incipit": "Communicantes",
+          "page": "508",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "82b27f7ae60c062e5267c9d16ea39941029a78e0ad7b9ddf6729b83581180172"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "confiteantur",
+      "officeParts": [
+        "al",
+        "co"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-220",
+          "officePart": "al",
+          "incipit": "Confiteantur",
+          "page": "411",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "d3755d1d643b7a10c6d3da25fbc6a93fd47906c98ccb05e93d5a136d9cb52b23"
+        },
+        {
+          "id": "GREGOBASE-973",
+          "officePart": "co",
+          "incipit": "Confiteantur",
+          "page": "106**",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "3a56aa9583d29f09d2512be1e82e11d9dcccf60f09ddd81d3328922a7b86a947"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "confiteantur tibi",
+      "officeParts": [
+        "gr",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-381",
+          "officePart": "in",
+          "incipit": "Confiteantur tibi",
+          "page": "118**",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "42cd7f7aae44689dd2cbbf1e0020104a73ba95f1f24965575b6562897bb4ef43"
+        },
+        {
+          "id": "GREGOBASE-632",
+          "officePart": "gr",
+          "incipit": "Confiteantur tibi",
+          "page": "[126]",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "31c3c16cbe91b5830663f93ada8a362c3cedc8c0a6d9da55b3b8118aa4283d0c"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "confitebuntur",
+      "officeParts": [
+        "al",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-762",
+          "officePart": "al",
+          "incipit": "Confitebuntur",
+          "page": "[16]",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "175e1c43e77e6a812877d5d4880b203c8abcf6a2ce6afdc8ad76eaf8f341f6e3"
+        },
+        {
+          "id": "GREGOBASE-1382",
+          "officePart": "of",
+          "incipit": "Confitebuntur",
+          "page": "[17]",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "b9c297a2bc6cb991871018d9551cc7b609812d68593be37e653dfaebce6c6ffd"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "constitues eos",
+      "officeParts": [
+        "al",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-548",
+          "officePart": "al",
+          "incipit": "Constitues eos",
+          "page": "[2C]",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "59bc5dcc1d7df2db6040e7f7cce9c5628bcc75d7fbb23f93e638354dda832b8a"
+        },
+        {
+          "id": "GREGOBASE-1319",
+          "officePart": "of",
+          "incipit": "Constitues eos",
+          "page": "534",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "66369bd78e86ea6eb68e5127920ce0d545dc416cf1f63a2a128079637d679b5d"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "consummatus",
+      "officeParts": [
+        "gr",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-12",
+          "officePart": "gr",
+          "incipit": "Consummatus",
+          "page": "77**",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "879bfd2ffbbffedb088ac18c0e45cc7186d411846c655e02c842558bb8e10a42"
+        },
+        {
+          "id": "GREGOBASE-610",
+          "officePart": "in",
+          "incipit": "Consummatus",
+          "page": "107**",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "d5a47f8dad29623bf449f47f32dcfe6d0c65f30ac936ed6c714a26eec915ecb2"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "cor meum",
+      "officeParts": [
+        "co",
+        "in",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-63",
+          "officePart": "tr",
+          "incipit": "Cor meum",
+          "page": "626",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "cbdc3caf82b1935a7c2fe2b3f41e16ed12b3438b3720232db8fd84404db1ad2b"
+        },
+        {
+          "id": "GREGOBASE-1256",
+          "officePart": "in",
+          "incipit": "Cor meum",
+          "page": "11**",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "501bab7e03d3d7ebcad5e519004c93caf59318406a1f104e8f4a36a976acd5f6"
+        },
+        {
+          "id": "GREGOBASE-1367",
+          "officePart": "co",
+          "incipit": "Cor meum",
+          "page": "503",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "33546eeac2c53222d2d75f40222db05a8cd6f0b096d789ffc1f3e17b6e623681"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "corona aurea",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-413",
+          "officePart": "al",
+          "incipit": "Corona aurea",
+          "page": "17**",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "e407d7f9baf8b6143436430f98b543767b7d6d9a17309b610d2b2c97cad17f44"
+        },
+        {
+          "id": "GREGOBASE-771",
+          "officePart": "gr",
+          "incipit": "Corona aurea",
+          "page": "15**",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "47dde3425d7a7946ab2a31109a3863c4d8b976dd591d975ead10a2751acbcb89"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "custodi me",
+      "officeParts": [
+        "gr",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-1088",
+          "officePart": "gr",
+          "incipit": "Custodi me",
+          "page": "345",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "cf601352f6355942dcc5db48ce3aab4c4d0d4f04275c5449fe17777cab693d31"
+        },
+        {
+          "id": "GREGOBASE-1322",
+          "officePart": "of",
+          "incipit": "Custodi me",
+          "page": "189",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "3122b5c951bf43052538d1553e637ff6ee9eb1692f0cad4ad9587d387c2a0f83"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "da nobis deus",
+      "officeParts": [
+        "gr",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-414",
+          "officePart": "gr",
+          "incipit": "Da nobis Deus",
+          "page": "133**",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "60ea9cd7a48be7fa9dead276cbc4b9ed753f959e75cee009e41baaa59f6c38d5"
+        },
+        {
+          "id": "GREGOBASE-526",
+          "officePart": "in",
+          "incipit": "Da nobis Deus",
+          "page": "132**",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "2146017dc888c7046f6834ede22bab777f38201a9a6066ea9e09eef3cde654b7"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "de profundis",
+      "officeParts": [
+        "al",
+        "of",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-331",
+          "officePart": "al",
+          "incipit": "De profundis",
+          "page": "388",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "93bf081ee08040efabc5537940a2cb3b33f380d3930c8aaeb6ee99f724bf3b64"
+        },
+        {
+          "id": "GREGOBASE-926",
+          "officePart": "tr",
+          "incipit": "De profundis",
+          "page": "75",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "b005e5fd3f6293c439188e6c93b02b4c8ec32d949154af02acf854c0b36ac14b"
+        },
+        {
+          "id": "GREGOBASE-986",
+          "officePart": "of",
+          "incipit": "De profundis",
+          "page": "388",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "1eb04419a3d7be733aa25862dd7b5662a139a7fc8126743faee96556d3f53096"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "deus deus meus",
+      "officeParts": [
+        "of",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-372",
+          "officePart": "tr",
+          "incipit": "Deus Deus meus",
+          "page": "180",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "4350d22d132a88cdcf73444a794597c33ab30d9ab3f313e4d23d532ab42ee882"
+        },
+        {
+          "id": "GREGOBASE-924",
+          "officePart": "of",
+          "incipit": "Deus Deus meus",
+          "page": "265",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "7eb21a241e7552494dbb58fcb6a0e0adbb6b0463c37d42b2da3b65f2cde2ef65"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "deus docuisti",
+      "officeParts": [
+        "al",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-682",
+          "officePart": "tr",
+          "incipit": "Deus docuisti",
+          "page": "79**",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "43fbeb0c4ab2db3b18f7c8d3453a575f3b93656aee7cfe25a658ad963392aaec"
+        },
+        {
+          "id": "GREGOBASE-741",
+          "officePart": "al",
+          "incipit": "Deus docuisti",
+          "page": "519",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "af47b3ae2409e2809abacd734ea5526a2d95965b9142ad16d90a4cbb43c8fb1b"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "dilexisti",
+      "officeParts": [
+        "co",
+        "gr",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-394",
+          "officePart": "gr",
+          "incipit": "Dilexisti",
+          "page": "[52]",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "b48a53c1f87a98cf4dcc14d2f21fd28dfd7368945381ad033a66118cce68dc60"
+        },
+        {
+          "id": "GREGOBASE-629",
+          "officePart": "in",
+          "incipit": "Dilexisti",
+          "page": "[60]",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "44507c087235bc6343f2e90983a6dafd6e8909ed38ef96dead118f6e6e40bcb6"
+        },
+        {
+          "id": "GREGOBASE-799",
+          "officePart": "co",
+          "incipit": "Dilexisti",
+          "page": "[71]",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "3c92189bce3699e465495403767513040d371d2ad10cfd7ec6ea056d125384ea"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "dispersit",
+      "officeParts": [
+        "al",
+        "gr",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-544",
+          "officePart": "in",
+          "incipit": "Dispersit",
+          "page": "576",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "02684d43a325a5f471c8298282be2f2862969c29dc4625e303a1438dc74dae4c"
+        },
+        {
+          "id": "GREGOBASE-569",
+          "officePart": "al",
+          "incipit": "Dispersit",
+          "page": "556",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "188d3782dc59b71dcf05199dbe13b88f3755773ab2f87d822fe507688e95a197"
+        },
+        {
+          "id": "GREGOBASE-1212",
+          "officePart": "gr",
+          "incipit": "Dispersit",
+          "page": "576",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "cce8427a7d05fa82326dd6028aefb3d12d3c7e7d18ff8768010e7ca9066867d5"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "domine deus",
+      "officeParts": [
+        "in",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-1167",
+          "officePart": "tr",
+          "incipit": "Domine Deus",
+          "page": "53",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "939ee8be35920cf620e7d66a0217968d6963c43c026f8629929d251785311c6f"
+        },
+        {
+          "id": "GREGOBASE-1172",
+          "officePart": "in",
+          "incipit": "Domine Deus",
+          "page": "137**",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "fcb2759dd22a7a0e891505317655d158e624069f912455f5974513329a59915f"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "domine dominus noster",
+      "officeParts": [
+        "co",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-998",
+          "officePart": "co",
+          "incipit": "Domine Dominus noster",
+          "page": "117",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "467d89231f9c7f1db8b2e9f112686293d99338869bb86b9f5e153e5266948573"
+        },
+        {
+          "id": "GREGOBASE-1205",
+          "officePart": "gr",
+          "incipit": "Domine Dominus noster",
+          "page": "342",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "79c7d89195e2d48efb985137cfa74b16d93ea5e8402fb475648331f2047844e5"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "domine exaudi",
+      "officeParts": [
+        "al",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-595",
+          "officePart": "al",
+          "incipit": "Domine exaudi",
+          "page": "367",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "6cb25d24c05620a7b7f65e8fce01b3baf6d0c9d18fc3ba55de8895b98a538303"
+        },
+        {
+          "id": "GREGOBASE-824",
+          "officePart": "tr",
+          "incipit": "Domine exaudi",
+          "page": "191",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "9d28e7f18a15029891aa5eb51e20be25a06345f6f0434b450db838c244f47805"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "domine refugium",
+      "officeParts": [
+        "al",
+        "gr",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-549",
+          "officePart": "in",
+          "incipit": "Domine refugium",
+          "page": "101",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "b366181fdc198b03c6914a2d309029a1967301c8626bf48fed2c4c534df85cf4"
+        },
+        {
+          "id": "GREGOBASE-820",
+          "officePart": "al",
+          "incipit": "Domine refugium",
+          "page": "355",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "36c5a9ff4d68ed0f1cd3644cbf207030d750220f7b13385560e0b82b931ea2f5"
+        },
+        {
+          "id": "GREGOBASE-1108",
+          "officePart": "gr",
+          "incipit": "Domine refugium",
+          "page": "381",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "9388ce2fd42f808cc779e7cc684fc0804a7f58283b908732d44cddbc53499705"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "dominus dixit",
+      "officeParts": [
+        "al",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-890",
+          "officePart": "al",
+          "incipit": "Dominus dixit",
+          "page": "29",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "27bfbc74c363cba22d9c360593e4ad41315c452882824d9c70e581642ce96aef"
+        },
+        {
+          "id": "GREGOBASE-1175",
+          "officePart": "in",
+          "incipit": "Dominus dixit",
+          "page": "27",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "eb9fb17377f36729792d5c76010dae8a11a5b4008ae96504f5716a23329f945a"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "ecce sic benedicetur",
+      "officeParts": [
+        "co",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-144",
+          "officePart": "tr",
+          "incipit": "Ecce sic benedicetur",
+          "page": "[123]",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "6152943a55f73a7a89e21ce0c036b18b89d3308440221c254d50939c03c22eca"
+        },
+        {
+          "id": "GREGOBASE-490",
+          "officePart": "co",
+          "incipit": "Ecce sic benedicetur",
+          "page": "[125]",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "d29ec2326041ab9420319a9ebc28c10c9b54796d95a504b86e5c4cbb54f4fbdb"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "ecce virgo",
+      "officeParts": [
+        "co",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-1144",
+          "officePart": "co",
+          "incipit": "Ecce virgo",
+          "page": "23",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "4292340d1fb962563167b3154ca501860c0d150efe162ac6d01ad0aa3e2f0be5"
+        },
+        {
+          "id": "GREGOBASE-1372",
+          "officePart": "in",
+          "incipit": "Ecce Virgo",
+          "page": "622F",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "26202206f1944a0a88c0f07836aac4960fea70c78a7e1ede50a11a31f056163d"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "ego autem",
+      "officeParts": [
+        "gr",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-607",
+          "officePart": "of",
+          "incipit": "Ego autem",
+          "page": "604",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "81a750e606c651aa3fe3452b46a87af829f5ea58a6540e703dfb3d7519dbef0c"
+        },
+        {
+          "id": "GREGOBASE-903",
+          "officePart": "gr",
+          "incipit": "Ego autem",
+          "page": "187",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "e65e346c8f36adb7f9b63d8d2707d7ebb9df604568d9021d7ee5b40103e01b1d"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "ego clamavi",
+      "officeParts": [
+        "co",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-464",
+          "officePart": "co",
+          "incipit": "Ego clamavi",
+          "page": "386",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "06331b6515a280bbfd4e1e74eaeedeca380758514fbb0d77cde8d417142d3514"
+        },
+        {
+          "id": "GREGOBASE-558",
+          "officePart": "in",
+          "incipit": "Ego clamavi",
+          "page": "130",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "d88f5b8de7040b3eb3e54d3946bce94a27f3ae62adef79d5e67e26de6d97c839"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "ego dilecto",
+      "officeParts": [
+        "al",
+        "co"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-459",
+          "officePart": "co",
+          "incipit": "Ego dilecto",
+          "page": "629",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "d4a3f5794a7a2eb42cfcd8734454ea7bbfdc1f6aadbf440398cc281edae89bf4"
+        },
+        {
+          "id": "GREGOBASE-1307",
+          "officePart": "al",
+          "incipit": "Ego dilecto",
+          "page": "626",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "e67d98b408bfbf60079183659056fedcfe28cde89eecd893ca6eb2f1c4ca294d"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "ego pascam",
+      "officeParts": [
+        "co",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-491",
+          "officePart": "co",
+          "incipit": "Ego pascam",
+          "page": "93**",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "052f97def7c9e2fd233cfd162c78707d8e0e8c732bd672161f32709f89e2459e"
+        },
+        {
+          "id": "GREGOBASE-769",
+          "officePart": "tr",
+          "incipit": "Ego pascam",
+          "page": "73**",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "de019eaec2ca964118fc5609511c58692ca8304fbcd48b9bfddd0d9d8fb8a9ff"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "ego vos elegi",
+      "officeParts": [
+        "al",
+        "co"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-470",
+          "officePart": "co",
+          "incipit": "Ego vos elegi",
+          "page": "513",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "db338ea75da4724ac93a23f0a1966fa2b17b5ddfc28452b230c84fda628b485c"
+        },
+        {
+          "id": "GREGOBASE-1030",
+          "officePart": "al",
+          "incipit": "Ego vos elegi",
+          "page": "630",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "0560c5efdb1da382f684cbcf3fdd88403038f26d559ea948df496776f0ee427e"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "emitte spiritum",
+      "officeParts": [
+        "al",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-99",
+          "officePart": "al",
+          "incipit": "Emitte Spiritum",
+          "page": "293",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "3cfeae7aa38f541b6f3c8c72ac586af68783bfd4fc1ccb30aea19bb7da1a43fc"
+        },
+        {
+          "id": "GREGOBASE-925",
+          "officePart": "tr",
+          "incipit": "Emitte Spiritum",
+          "page": "[93]",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "25f02063b87c4d67667fed45c85d246d07523e6887199d9c029d388e50431ea9"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "esto mihi",
+      "officeParts": [
+        "gr",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-886",
+          "officePart": "gr",
+          "incipit": "Esto mihi",
+          "page": "339",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "024b29544af53b91bbd672093b9fde9c8d83aae204523f0102e1d810d60f0b33"
+        },
+        {
+          "id": "GREGOBASE-1381",
+          "officePart": "in",
+          "incipit": "Esto mihi",
+          "page": "80",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "44b9847ac1d87618a93d2a48046e3d34344bb8de8a42c85c9eeb0f869a16abf9"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "evangelizare",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-297",
+          "officePart": "al",
+          "incipit": "Evangelizare",
+          "page": "74**",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "eebfb0781b89fa2a917aaecccbb15986356d79616f12d2e49e5fff016f7313a4"
+        },
+        {
+          "id": "GREGOBASE-1273",
+          "officePart": "gr",
+          "incipit": "Evangelizare",
+          "page": "67**",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "2c6d06001db99c9b5bfad212b43523cf4e9508b42cdad69ac03e0b24e3d4972e"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "exaltabo te",
+      "officeParts": [
+        "al",
+        "gr",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-277",
+          "officePart": "gr",
+          "incipit": "Exaltabo te",
+          "page": "160",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "dd0bf3b958a3f8036f252c8f8b188fe9729546a20f1515b396a85e44eaa8ce38"
+        },
+        {
+          "id": "GREGOBASE-648",
+          "officePart": "of",
+          "incipit": "Exaltabo te",
+          "page": "90",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "480b076a45af4f8298e05347c7dc7bdf4bd0eeca6e8dcc9d377774a6c2e8aa0c"
+        },
+        {
+          "id": "GREGOBASE-954",
+          "officePart": "al",
+          "incipit": "Exaltabo te",
+          "page": "54",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "5b6fb904f87e051c2d6ff04946319ca082c6b7050e4b0e7b7904143a4d468b05"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "exaudi deus",
+      "officeParts": [
+        "in",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-842",
+          "officePart": "of",
+          "incipit": "Exaudi Deus",
+          "page": "129",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "4ecda5a1f89c8f993c1bbaef631a28bc3f2bb94f38186cc88ae18a7649793c74"
+        },
+        {
+          "id": "GREGOBASE-904",
+          "officePart": "in",
+          "incipit": "Exaudi Deus",
+          "page": "143",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "744edae9104657682836321e92c6eca8b08f8a79cdcd24947950325f3f5f1c0e"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "excita domine",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-506",
+          "officePart": "gr",
+          "incipit": "Excita Domine",
+          "page": "15",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "f39a285245ea9555222f7dab955c812d3b3c8eb5ebdccd98bca4709b0eb412a1"
+        },
+        {
+          "id": "GREGOBASE-855",
+          "officePart": "al",
+          "incipit": "Excita Domine",
+          "page": "8",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "c17c282f42731a0a3a35234e62b92a26b25b83d17ace30748639d9aa9dbd03d9"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "exsultate deo",
+      "officeParts": [
+        "al",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-580",
+          "officePart": "al",
+          "incipit": "Exsultate Deo",
+          "page": "348",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "20595d58a447e1ca65b4189b6903eed666a89ded9ef8f69dbaa3c6c70da77b2f"
+        },
+        {
+          "id": "GREGOBASE-1323",
+          "officePart": "in",
+          "incipit": "Exsultate Deo",
+          "page": "368",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "f93047cc6d5fc5effaac9ddee8e0dd95db7c3d84827190d83c2b2edad84656d2"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "foderunt",
+      "officeParts": [
+        "co",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-84",
+          "officePart": "co",
+          "incipit": "Foderunt",
+          "page": "[111]",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "82de69d6263ac03e58473474cd93308de5cd03aff614f44d715af68befa8acc6"
+        },
+        {
+          "id": "GREGOBASE-948",
+          "officePart": "in",
+          "incipit": "Foderunt",
+          "page": "19**",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "f077936682b0d3da22b658918dfebab57f5770f3307e2c5d57b2332ffee40e38"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "gloriosus deus",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-274",
+          "officePart": "al",
+          "incipit": "Gloriosus Deus",
+          "page": "99**",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "93ca989ebf2cfd64d87385fac57bfa6438e6d5d747c185b68691a04561bda1e6"
+        },
+        {
+          "id": "GREGOBASE-888",
+          "officePart": "gr",
+          "incipit": "Gloriosus Deus",
+          "page": "[22]",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "5e2242a37f0f35ca144d79a2d0485c978ba09fc0c8cd5787fa7862058dcb01b3"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "hodie scietis",
+      "officeParts": [
+        "gr",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-150",
+          "officePart": "in",
+          "incipit": "Hodie scietis",
+          "page": "24",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "428c0fff2ea1e902338b3a5a1874ea7e8df5cdd228cdf293cb42fb16749f5796"
+        },
+        {
+          "id": "GREGOBASE-202",
+          "officePart": "gr",
+          "incipit": "Hodie scietis",
+          "page": "24",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "a353e32e988c191fe9193ccceb8219b49007e0f26ce967a91856a032bb149401"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "honora dominum",
+      "officeParts": [
+        "co",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-1116",
+          "officePart": "of",
+          "incipit": "Honora Dominum",
+          "page": "569",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "c7348b715a22d10798970153c1633c3c6640de16d0e1ab2c73e0fe0fdab29994"
+        },
+        {
+          "id": "GREGOBASE-1145",
+          "officePart": "co",
+          "incipit": "Honora Dominum",
+          "page": "349",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "e29618aa40beea1d024393a17fff8a2280b6b7302627d88e46c43e1c7ea51f84"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "in deo speravit",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-865",
+          "officePart": "gr",
+          "incipit": "In Deo speravit",
+          "page": "348",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "f340dbade4c9ff630f31222cc0dcadf40851e9c455125edc10bcde2fa56cb39b"
+        },
+        {
+          "id": "GREGOBASE-1285",
+          "officePart": "al",
+          "incipit": "In Deo speravit",
+          "page": "[146]",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "e4e385fadcbf5b1c81b38aafd047f1970a3bf73bb16cbc47a535e75e3b52dd6d"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "in me gratia",
+      "officeParts": [
+        "gr",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-494",
+          "officePart": "of",
+          "incipit": "In me gratia",
+          "page": "621",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "390b53ac2596a13f56931b8ec60d92ef3069452f2c66b318c9392424d0218bec"
+        },
+        {
+          "id": "GREGOBASE-1214",
+          "officePart": "gr",
+          "incipit": "In me gratia",
+          "page": "48**",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "495d255b96ad3b183eb67bd8d225e2a2a941d4cd9acc2d2ea7551f3cc720f68f"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "in virtute tua",
+      "officeParts": [
+        "in",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-316",
+          "officePart": "in",
+          "incipit": "In virtute tua",
+          "page": "[10]",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "47792a6d9f30f2775384b1c536128d5cb2eac3619fc13a6142dee800a14585a8"
+        },
+        {
+          "id": "GREGOBASE-667",
+          "officePart": "of",
+          "incipit": "In virtute tua",
+          "page": "[46]",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "a4078968b41e9f3456e4c3b1c70decdacb82408ff991308833b18c12c7d3a5ab"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "jacta cogitatum",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-423",
+          "officePart": "gr",
+          "incipit": "Jacta cogitatum",
+          "page": "328",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "80022696ee416a409da37769bdf0a140f70382379d5786612fd775afe699336a"
+        },
+        {
+          "id": "GREGOBASE-829",
+          "officePart": "al",
+          "incipit": "Jacta cogitatum",
+          "page": "95**",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "5b071af3b97c656db94a85a324e79350cd54cff37e35de2a7c58af828a439cee"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "jubilate deo",
+      "officeParts": [
+        "al",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-536",
+          "officePart": "in",
+          "incipit": "Jubilate Deo",
+          "page": "265",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "88a6058b92a31a6f632ac92e8ed72b2da05d96e0b1f8013b5b0faa751570df92"
+        },
+        {
+          "id": "GREGOBASE-802",
+          "officePart": "al",
+          "incipit": "Jubilate Deo",
+          "page": "65",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "a86cbdece93173c8bf63bd4fd7735deddc6eac9233567e4e3af516ab77499767"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "juravit dominus",
+      "officeParts": [
+        "al",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-684",
+          "officePart": "in",
+          "incipit": "Juravit Dominus",
+          "page": "[100]",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "ce6a0901b8b5709bd7b5ee8d6fdf04ceae763e83741aa28b67bb32582dec92e9"
+        },
+        {
+          "id": "GREGOBASE-1187",
+          "officePart": "al",
+          "incipit": "Juravit Dominus",
+          "page": "[37]",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "bba316ec64fed01860a893e5ecb810141e14ed501a0759481958f6ef1002db2a"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "laetatus sum",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-292",
+          "officePart": "al",
+          "incipit": "Laetatus sum",
+          "page": "5",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "4bec447f6cb8aa43ad2b2a4d4a8452f09b7215aa498e3b8dff84ea558da914f7"
+        },
+        {
+          "id": "GREGOBASE-1011",
+          "officePart": "gr",
+          "incipit": "Laetatus sum",
+          "page": "139",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "113e434db723abf6b8dff47eaa33c56161a5ff4dba1e94070094023a414b2801"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "lauda jerusalem",
+      "officeParts": [
+        "al",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-641",
+          "officePart": "al",
+          "incipit": "Lauda Jerusalem",
+          "page": "[136]",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "c922378d57cc6d89156cb3f102e504e76a58941f2e33592f68b573e347add95b"
+        },
+        {
+          "id": "GREGOBASE-845",
+          "officePart": "of",
+          "incipit": "Lauda Jerusalem",
+          "page": "[89A]",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "dd5c499bc67db830d10c1dc96119aea7d10997e019d03c3534755ea948ec2227"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "laudate dominum",
+      "officeParts": [
+        "co",
+        "gr",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-322",
+          "officePart": "co",
+          "incipit": "Laudate Dominum",
+          "page": "[130]",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "4cbc84994180448126e3f1cecc8d72038e3b7caf54395a2d01dbe5fc432928d9"
+        },
+        {
+          "id": "GREGOBASE-348",
+          "officePart": "gr",
+          "incipit": "Laudate Dominum",
+          "page": "[86]",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "13807ee7ec64415537bc6c55191bf45a143c36abdc5aee57e17177b50aeaafb4"
+        },
+        {
+          "id": "GREGOBASE-899",
+          "officePart": "of",
+          "incipit": "Laudate Dominum",
+          "page": "[138]",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "9e2d9f64225d2203a20dea3a6baf7ef1e0cbae8afef9b010a72424885bd3110f"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "laudate pueri",
+      "officeParts": [
+        "al",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-87",
+          "officePart": "in",
+          "incipit": "Laudate pueri",
+          "page": "550",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "ebe8aae8058d64f02f6e0d93df12944fe914d502253d7994c3d7b1b66dea8d20"
+        },
+        {
+          "id": "GREGOBASE-661",
+          "officePart": "al",
+          "incipit": "Laudate pueri",
+          "page": "260",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "d0e75c4e50b3ddda9d42b59bcbd3ea9cfcc8c46ddc844fff7fd705964375ef71"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "magnificat",
+      "officeParts": [
+        "al",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-362",
+          "officePart": "of",
+          "incipit": "Magnificat",
+          "page": "617",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "a1a7fee44e844677c8a9fdb265281a239f80502cf2e583bfcaeeba6e93f044e7"
+        },
+        {
+          "id": "GREGOBASE-881",
+          "officePart": "al",
+          "incipit": "Magnificat",
+          "page": "587C",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "d0434cb9eaf716553f7c603c798d203863dfc9fb9ffa4b302bc2511941f040bf"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "manum suam",
+      "officeParts": [
+        "al",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-249",
+          "officePart": "tr",
+          "incipit": "Manum suam",
+          "page": "69**",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "cf793605c99571eb3b501aad77e9b50a9c45e6f5954943d3e57af700b0126755"
+        },
+        {
+          "id": "GREGOBASE-792",
+          "officePart": "al",
+          "incipit": "Manum suam",
+          "page": "632",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "53aecc4c093ebbb32588e8e9c44ab709a8ebdbe20d486f6e4b2d290c5a06c68c"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "minuisti eum",
+      "officeParts": [
+        "al",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-791",
+          "officePart": "al",
+          "incipit": "Minuisti eum",
+          "page": "451",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "bf5232ebdd44e5568a0beb2597044982c611e1c21d7cdba4c7b271c5d98d169d"
+        },
+        {
+          "id": "GREGOBASE-857",
+          "officePart": "in",
+          "incipit": "Minuisti eum",
+          "page": "517",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "4ba8814be80d4700560178699d561a070bc5775380083b6a502fca3465d1569a"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "miserere mihi",
+      "officeParts": [
+        "gr",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-562",
+          "officePart": "gr",
+          "incipit": "Miserere mihi",
+          "page": "133",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "6e2d8a745bbd361b83fcb190fef03ceca91a8302a8336898ddabe35baed8f08f"
+        },
+        {
+          "id": "GREGOBASE-922",
+          "officePart": "of",
+          "incipit": "Miserere mihi",
+          "page": "118",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "3cd3a4ece77b5803852464fed5dd68acc95c174376d4c4a66517cddb59b9617e"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "non vos relinquam",
+      "officeParts": [
+        "al",
+        "co"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-107",
+          "officePart": "al",
+          "incipit": "Non vos relinquam",
+          "page": "289",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "7bd8e913ec2f3ba261d214099a64560b302ce41e7cd20be08153f9753d769783"
+        },
+        {
+          "id": "GREGOBASE-981",
+          "officePart": "co",
+          "incipit": "Non vos relinquam",
+          "page": "303",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "80fbb3fe759f3afadcd00f614e608407310936925cf3a7109230df9e977ae271"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "nunc ergo",
+      "officeParts": [
+        "al",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-489",
+          "officePart": "al",
+          "incipit": "Nunc ergo",
+          "page": "44**",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "5e48e779e11d905641b69e6c6715519cafd55f892d4f8af270c30861a5d4b096"
+        },
+        {
+          "id": "GREGOBASE-793",
+          "officePart": "tr",
+          "incipit": "Nunc ergo",
+          "page": "587C",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "56ae16be6244a037a65b2d7a5fc189d5cdb7687c8d384f30c2682cc951033853"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "oculus dei",
+      "officeParts": [
+        "al",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-473",
+          "officePart": "al",
+          "incipit": "Oculus Dei",
+          "page": "604",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "215d96242e4293bc94c0fe4c0175a183222e707eaf678c8c61487a5dc93c6379"
+        },
+        {
+          "id": "GREGOBASE-1025",
+          "officePart": "in",
+          "incipit": "Oculus Dei",
+          "page": "448",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "58da941e641451d399f276265f55e285f11997f60bcf765f9dc8b7b7d73a7943"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "ostende nobis",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-1055",
+          "officePart": "gr",
+          "incipit": "Ostende nobis",
+          "page": "11",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "858091967df77ee83989780c60350296126fe12db59ea55fc15d4f3a483a7e73"
+        },
+        {
+          "id": "GREGOBASE-1115",
+          "officePart": "al",
+          "incipit": "Ostende nobis",
+          "page": "2",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "237505f794c96c2d5d0388f0f606b94881b6dc8e8f050f7e402914beab9b3337"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "pascha nostrum",
+      "officeParts": [
+        "al",
+        "co"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-761",
+          "officePart": "al",
+          "incipit": "Pascha nostrum",
+          "page": "242",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "d70155b2ab7eac68025ef6760f6a8da6f793e9b40d1cdd777cbfbc77750d7f90"
+        },
+        {
+          "id": "GREGOBASE-952",
+          "officePart": "co",
+          "incipit": "Pascha nostrum",
+          "page": "243",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "5e1b6cbbadf1c709966d3e87426215d067e045d2101a16b2ca79248d32ea3df9"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "protector noster",
+      "officeParts": [
+        "gr",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-1071",
+          "officePart": "in",
+          "incipit": "Protector noster",
+          "page": "357",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "5f612dc892002a0fa54d0b8986b2ec248941ce941156cbb76ff8f9dbbd2e2017"
+        },
+        {
+          "id": "GREGOBASE-1226",
+          "officePart": "gr",
+          "incipit": "Protector noster",
+          "page": "108",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "920c2287602b02bdb7477dfba407f5284a038b30e28d226fe5be1331f7936d60"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "quae est ista quae progreditur",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-468",
+          "officePart": "gr",
+          "incipit": "Quae est ista quae progreditur",
+          "page": "4**",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "2677f0823f6da9a840d014fe4d3e2ae433af9d7f2c14bd9064c486da1160c839"
+        },
+        {
+          "id": "GREGOBASE-527",
+          "officePart": "al",
+          "incipit": "Quae est ista quae progreditur",
+          "page": "101**",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "162898f91c1202cda1b7f8f682679e202dcffc5c8c3b963f147300624fd25f6d"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "quam magna",
+      "officeParts": [
+        "al",
+        "co",
+        "gr",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-6",
+          "officePart": "co",
+          "incipit": "Quam magna",
+          "page": "507",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "1d18c170bc1a519ac9d8d59381859af84f87feba30820cf7bcf91c86eaf93a6f"
+        },
+        {
+          "id": "GREGOBASE-70",
+          "officePart": "al",
+          "incipit": "Quam magna",
+          "page": "628",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "d2b9338b171fc2081426f34743fa5f57dec56a92ac29ece00abdfb63b17cd4a0"
+        },
+        {
+          "id": "GREGOBASE-683",
+          "officePart": "of",
+          "incipit": "Quam magna",
+          "page": "56**",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "53ffd329aa30a99d1cfef1209653dda38fef15ff41c5f58aeaf872441ddaf7b0"
+        },
+        {
+          "id": "GREGOBASE-1291",
+          "officePart": "gr",
+          "incipit": "Quam magna",
+          "page": "449",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "a29b184e5c29d5cdbb5e0771f70411882f3ece7e358d859e7da5e8f4621c4181"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "quam pulchri",
+      "officeParts": [
+        "al",
+        "co"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-193",
+          "officePart": "co",
+          "incipit": "Quam pulchri",
+          "page": "59**",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "787c9dcf86628a5bf512db2872eb960c899b1a17f53e6db1841aeb78435cfd2a"
+        },
+        {
+          "id": "GREGOBASE-1378",
+          "officePart": "al",
+          "incipit": "Quam pulchri",
+          "page": "68**",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "a0306e9cb899348c33d5b170b09c117356dd6006d76f42d02105248b61df9c0b"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "quid bonum",
+      "officeParts": [
+        "al",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-10",
+          "officePart": "al",
+          "incipit": "Quid bonum",
+          "page": "54**",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "550a27406afacee704207c19792f1cc4b5bf720261a23cafcbd0daaa8d354712"
+        },
+        {
+          "id": "GREGOBASE-618",
+          "officePart": "of",
+          "incipit": "Quid bonum",
+          "page": "628",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "c99b9e80555705a9be21520fae1b1805b0eae043600630bbc8273fa7191acd24"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "quis sicut dominus",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-430",
+          "officePart": "al",
+          "incipit": "Quis sicut Dominus",
+          "page": "22**",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "8c38a05a013a95a7d2c86a78532a2fe770750d32cbeee72c84ba3745cb1cdf32"
+        },
+        {
+          "id": "GREGOBASE-472",
+          "officePart": "gr",
+          "incipit": "Quis sicut Dominus",
+          "page": "369",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "0a532c5bb332a7bb9a3ca7c37b34f577c162f3edaba6eac9f8a0e4ec497dc8b9"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "redime me",
+      "officeParts": [
+        "co",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-433",
+          "officePart": "co",
+          "incipit": "Redime me",
+          "page": "159",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "c98a573695c7897b5220de64273ead87a9d19275a0716dbdc6aece7cf33c7a0e"
+        },
+        {
+          "id": "GREGOBASE-1314",
+          "officePart": "in",
+          "incipit": "Redime me",
+          "page": "115",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "919d453bf9dcb37203b6cd260e142b593bcd4ca0a057e8085922089fc67596db"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "respice domine",
+      "officeParts": [
+        "gr",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-691",
+          "officePart": "in",
+          "incipit": "Respice Domine",
+          "page": "354",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "3d34487ae3a363b3623914c14d0a20ca86ce1727973a395afbb1c354b459110e"
+        },
+        {
+          "id": "GREGOBASE-1232",
+          "officePart": "gr",
+          "incipit": "Respice Domine",
+          "page": "354",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "ab9b25de8643ca36111360ddf2654e85db064e0d66d489180001774d92f8001f"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "salus populi",
+      "officeParts": [
+        "in",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-379",
+          "officePart": "of",
+          "incipit": "Salus populi",
+          "page": "105**",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "6840ed12912445eca9528b126ca964d50bd96d97fb97c6510c639ba087e46755"
+        },
+        {
+          "id": "GREGOBASE-389",
+          "officePart": "in",
+          "incipit": "Salus populi",
+          "page": "375",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "79360f76fb80145b0478ca806890ca1eb56d3bf67a8f2748af48401446948f34"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "salvum me fac",
+      "officeParts": [
+        "al",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-134",
+          "officePart": "al",
+          "incipit": "Salvum me fac",
+          "page": "[139]",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "d922d99324b0d4602f825659ef1ccad7aaf62d8132137557f24e3e0d8034335f"
+        },
+        {
+          "id": "GREGOBASE-328",
+          "officePart": "of",
+          "incipit": "Salvum me fac",
+          "page": "13**",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "a67f87d4aff4a5be5efaace8fa8ce892ce53ab4f6b71607698932b763fb1cbd1"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "scapulis suis",
+      "officeParts": [
+        "co",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-294",
+          "officePart": "of",
+          "incipit": "Scapulis suis",
+          "page": "98",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "099ec59e81f07a7139985ef44b7fc197e10071b0f8feffcae6c78f6cfb553216"
+        },
+        {
+          "id": "GREGOBASE-1100",
+          "officePart": "co",
+          "incipit": "Scapulis suis",
+          "page": "99",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "cbe0267e54cdcaee3a413b54a273846806c9fc9d1c2a7cfeee49975551262643"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "si ambulavero",
+      "officeParts": [
+        "co",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-616",
+          "officePart": "of",
+          "incipit": "Si ambulavero",
+          "page": "376",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "056962848b15d52e55ad7b89dcfdde380b394dc967717cdec6ef4d70e1525520"
+        },
+        {
+          "id": "GREGOBASE-1211",
+          "officePart": "co",
+          "incipit": "Si ambulavero",
+          "page": "47**",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "d138e3571979d12f9328f71403ea05b1872ef2473b068fb052e1a15e0aa67f1d"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "sinite parvulos",
+      "officeParts": [
+        "co",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-643",
+          "officePart": "co",
+          "incipit": "Sinite parvulos",
+          "page": "590",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "0888e9c05fffdea4b3eb36678d685f47039a6f31388ede89dad0fcc1f3c31b1f"
+        },
+        {
+          "id": "GREGOBASE-936",
+          "officePart": "in",
+          "incipit": "Sinite parvulos",
+          "page": "31**",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "128594b97769e6be02fa21acc6aaffc51c2ef7e4ebe63bf6c1df40b6c658dcf3"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "sperent in te",
+      "officeParts": [
+        "al",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-841",
+          "officePart": "al",
+          "incipit": "Sperent in te",
+          "page": "120**",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "10305808a5bfa783410da8b58b35c23bc90b9e127c09ecf2df29885bf6592825"
+        },
+        {
+          "id": "GREGOBASE-1328",
+          "officePart": "of",
+          "incipit": "Sperent in te",
+          "page": "329",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "c5245ab04dde18a6ceee6038bc016fbd90ddeeecfe004f606634693472f674e4"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "stabat sancta maria",
+      "officeParts": [
+        "al",
+        "tr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-853",
+          "officePart": "al",
+          "incipit": "Stabat sancta Maria",
+          "page": "596",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "97752baa32867d6ea053577711e0c2f30c7953992973b26affa9e9b12222b46f"
+        },
+        {
+          "id": "GREGOBASE-1156",
+          "officePart": "tr",
+          "incipit": "Stabat sancta Maria",
+          "page": "471",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "db6b9249611ec1541ba40bd426215975b50f262e2475eac543bc63552f95c751"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "tenuisti manum",
+      "officeParts": [
+        "gr",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-49",
+          "officePart": "gr",
+          "incipit": "Tenuisti manum",
+          "page": "179",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "ad1f70d849704aaf6a7646ba48b30fdaa970188ca2d3923b20e3d6d784e95f75"
+        },
+        {
+          "id": "GREGOBASE-656",
+          "officePart": "in",
+          "incipit": "Tenuisti manum",
+          "page": "462",
+          "mode": "7",
+          "version": "Solesmes",
+          "sha256": "9a73ca87a1d27789970cd76665c9db92e0474abd976ac77251b2c19a140a7efa"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "timebunt gentes",
+      "officeParts": [
+        "al",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-1097",
+          "officePart": "al",
+          "incipit": "Timebunt gentes",
+          "page": "373",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "1482fbdeab0b17841a103fc0452bc29724c2cbd99ec9ebdcf1ab8907f959ef2a"
+        },
+        {
+          "id": "GREGOBASE-1173",
+          "officePart": "gr",
+          "incipit": "Timebunt gentes",
+          "page": "71",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "850e16584e44bced59757b7d81fb4da4341d48952922cb1b5c48477885131d4a"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "timete dominum",
+      "officeParts": [
+        "gr",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-371",
+          "officePart": "gr",
+          "incipit": "Timete Dominum",
+          "page": "648",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "512a2ce5d7b545fa33be999d22348756f7c29e846322538bba51cab1762153ac"
+        },
+        {
+          "id": "GREGOBASE-808",
+          "officePart": "in",
+          "incipit": "Timete Dominum",
+          "page": "574",
+          "mode": "3",
+          "version": "Solesmes",
+          "sha256": "43f305a5ebafc71ec2ab854d4870c66688c4c516266627a98e4379418fbeec27"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "tollite hostias",
+      "officeParts": [
+        "co",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-282",
+          "officePart": "gr",
+          "incipit": "Tollite hostias",
+          "page": "162",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "6506ac0f6adb3d8d9bcb132555f85fd4958c60c88e913ef0d462b23884d69a05"
+        },
+        {
+          "id": "GREGOBASE-404",
+          "officePart": "co",
+          "incipit": "Tollite hostias",
+          "page": "374",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "8f6374f7b10ded90afb73e9a9ebd4275984fdf6f9056b5b9d1cb78c99fee1ff4"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "tollite portas",
+      "officeParts": [
+        "gr",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-171",
+          "officePart": "of",
+          "incipit": "Tollite portas",
+          "page": "26",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "078643c035bfeeb06bb3ba1a18f8ea6dea4a6076e30f6c6e70f76782e3f87ad4"
+        },
+        {
+          "id": "GREGOBASE-756",
+          "officePart": "gr",
+          "incipit": "Tollite portas",
+          "page": "9",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "e4bcbfd43c73f65c8d5d9b902337b43f70f9b317ad968ba303ebd5ea145b2fed"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "tu es petrus alleluia",
+      "officeParts": [
+        "al",
+        "co"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-228",
+          "officePart": "al",
+          "incipit": "Tu es Petrus (Alleluia)",
+          "page": "409",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "3a92350f8e1fdd757716d1a640388fa13dadf6e5cb280548234a335986c2e4fc"
+        },
+        {
+          "id": "GREGOBASE-509",
+          "officePart": "co",
+          "incipit": "Tu es Petrus... alleluia",
+          "page": "[2D]",
+          "mode": "6",
+          "version": "Solesmes",
+          "sha256": "e8f6d342d63c6c17b7aa2d2c860c11d5828730861268398f89542e15c955bc40"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "tu puer",
+      "officeParts": [
+        "al",
+        "co"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-133",
+          "officePart": "co",
+          "incipit": "Tu puer",
+          "page": "525",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "651e57bb7229d0aa3ddff825efdce67aa7add7eeb43262a712caa9c426c66b99"
+        },
+        {
+          "id": "GREGOBASE-847",
+          "officePart": "al",
+          "incipit": "Tu puer",
+          "page": "524",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "7f224f882555a96368a825e557939124b060f4c51caa0c772c093696af07a7e4"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "venite filii",
+      "officeParts": [
+        "gr",
+        "in",
+        "of"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-695",
+          "officePart": "in",
+          "incipit": "Venite filii",
+          "page": "589",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "45be1e61420b94bf2dfb9c279116864ff9e2ce20acc345e33c849ee47d4e42c6"
+        },
+        {
+          "id": "GREGOBASE-805",
+          "officePart": "of",
+          "incipit": "Venite filii",
+          "page": "425",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "62bf36361a96b9b906af03c365f0b94a2a16b19fce7d27465706abeee2e0cb4e"
+        },
+        {
+          "id": "GREGOBASE-1022",
+          "officePart": "gr",
+          "incipit": "Venite filii",
+          "page": "336",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "cdb94c97105a526557cdd181df2fc1567cb66fd851941874823f7f739c44633a"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "verba mea",
+      "officeParts": [
+        "al",
+        "in"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-103",
+          "officePart": "al",
+          "incipit": "Verba mea",
+          "page": "312",
+          "mode": "2",
+          "version": "Solesmes",
+          "sha256": "8c9e3a46972b500ed441b2ae86ace1696dbaeae3df648a0cf6ba3f02f432e9a8"
+        },
+        {
+          "id": "GREGOBASE-1248",
+          "officePart": "in",
+          "incipit": "Verba mea",
+          "page": "136",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "12cb19aa56170c99a0051ad530bdcac1557abe8e1b96f2525a740b56fdb4634b"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "viderunt omnes",
+      "officeParts": [
+        "co",
+        "gr"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-1139",
+          "officePart": "co",
+          "incipit": "Viderunt omnes",
+          "page": "35",
+          "mode": "1",
+          "version": "Solesmes",
+          "sha256": "36c314de474861615c2cbac27f92dbcd8a1ebd01535137a9d58aaf96180afce7"
+        },
+        {
+          "id": "GREGOBASE-1163",
+          "officePart": "gr",
+          "incipit": "Viderunt omnes",
+          "page": "33",
+          "mode": "5",
+          "version": "Solesmes",
+          "sha256": "d8b84063f51fcff7b2c3430081dba296e5e6bb2753d614b36da6bc087855c370"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    },
+    {
+      "normalizedIncipit": "vidimus stellam",
+      "officeParts": [
+        "al",
+        "co"
+      ],
+      "items": [
+        {
+          "id": "GREGOBASE-524",
+          "officePart": "al",
+          "incipit": "Vidimus stellam",
+          "page": "58",
+          "mode": "2",
+          "version": "Solesmes 1961",
+          "sha256": "165cfa4cb7774d335d275e775bf2157d6a29358dd84d2b1a44295c39ff0b6134"
+        },
+        {
+          "id": "GREGOBASE-918",
+          "officePart": "co",
+          "incipit": "Vidimus stellam",
+          "page": "59",
+          "mode": "4",
+          "version": "Solesmes",
+          "sha256": "6b47f8933bf18de375d0da3bc620e4349855cb6870d3628377db85745bf32b5a"
+        }
+      ],
+      "decision": "NEVER_MATCH_BY_INCIPIT_WITHOUT_CHANT_ROLE"
+    }
+  ],
+  "exactGabcGroups": [
+    {
+      "gabcSha256": "92f6ac42d7fe3d95a57728630c11b52a13dd82c4d5c49edabd8c37cb30732788",
+      "items": [
+        {
+          "id": "GREGOBASE-861",
+          "officePart": "in",
+          "incipit": "Spiritus Domini cum Alleluia",
+          "page": "292",
+          "mode": "8",
+          "version": "Solesmes",
+          "sha256": "92f6ac42d7fe3d95a57728630c11b52a13dd82c4d5c49edabd8c37cb30732788"
+        },
+        {
+          "id": "GREGOBASE-1644",
+          "officePart": "in",
+          "incipit": "Spiritus... replevit... alleluia",
+          "page": "292",
+          "mode": "8",
+          "version": "Vatican",
+          "sha256": "92f6ac42d7fe3d95a57728630c11b52a13dd82c4d5c49edabd8c37cb30732788"
+        }
+      ],
+      "decision": "PRESERVE_DISTINCT_SOURCE_IDS_PENDING_VARIANT_REVIEW"
+    }
+  ]
+}
