@@ -139,7 +139,7 @@
           "full-source painted boundary completeness at native resolution (even when frame appears removed)",
           "authoritative museum-reference colour / lighting fidelity",
           "jurisdiction-specific lawful redistribution of this independent Commons photograph",
-          "integration in current Ad Orientem Calendar/Home with no regression (standalone responsive browser QA has PASSED)"
+          "strict horizontal viewport overflow retest at 320/390 px (first real app QA passed, new explicit overflow assertions pending)"
         ],
         "actual_asset_changed": false,
         "final_photo_released": false,
@@ -162,11 +162,36 @@
           "artwork_fully_contained": true,
           "horizontal_overflow": false,
           "full_painting_view_works": true,
-          "actual_existing_Calendar_or_Home_integration_tested": false,
+          "actual_existing_Calendar_or_Home_integration_tested": true,
           "frame_free_source_bounds_final_approved": false,
           "colour_fidelity_final_approved": false,
           "copyright_and_reproduction_distribution_cleared": false,
           "photograph_production_release": false
+        },
+        "actualHomeCalendarQA": {
+          "first_real_app_workflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40365746258",
+          "first_real_app_result": "PASS_2_DATES_X_2_PHONE_WIDTHS_X_2_REAL_UI_SURFACES_8_8",
+          "evidence_path": "research/champaigne-inv1125-photo-review-20261026:assets/staged/champaigne-petite-cene-research/real-home-calendar-qa-20261026/home-calendar-preview-evidence.json",
+          "widths_px": [
+            320,
+            390
+          ],
+          "actual_app_ui_rendered": true,
+          "correct_1962_principal_verified": true,
+          "both_images_loaded_sha_locked": true,
+          "object_fit_contain": true,
+          "approval_flags_in_browser_only_simulated": true,
+          "actual_publish_permission": false,
+          "strict_overflow_assertion_retest": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40366833795",
+          "strict_overflow_result_at_review": "PENDING_DO_NOT_CLAIM_PASS",
+          "curator_photo_quality_acceptance": false
+        },
+        "visualQualityReview": {
+          "status": "HOLD_NOT_YET_APPROVED",
+          "concern": "Visible cool haze and upper-left glare/reflection, compared with darker older Commons reproduction and Louvre catalog view; native-pixel painted-edge proof unresolved",
+          "subjective_review_only": true,
+          "image_pixels_not_sufficient_for_release": true,
+          "enhancement_policy": "Do not use AI enhancement, synthetic reconstruction, or uncalibrated color matching"
         }
       }
     },
@@ -338,7 +363,7 @@
           "full-source painted boundary completeness at native resolution (even when frame appears removed)",
           "authoritative museum-reference colour / lighting fidelity",
           "jurisdiction-specific lawful redistribution of this independent Commons photograph",
-          "integration in current Ad Orientem Calendar/Home with no regression (standalone responsive browser QA has PASSED)"
+          "strict horizontal viewport overflow retest at 320/390 px (first real app QA passed, new explicit overflow assertions pending)"
         ],
         "actual_asset_changed": false,
         "final_photo_released": false,
@@ -361,11 +386,36 @@
           "artwork_fully_contained": true,
           "horizontal_overflow": false,
           "full_painting_view_works": true,
-          "actual_existing_Calendar_or_Home_integration_tested": false,
+          "actual_existing_Calendar_or_Home_integration_tested": true,
           "frame_free_source_bounds_final_approved": false,
           "colour_fidelity_final_approved": false,
           "copyright_and_reproduction_distribution_cleared": false,
           "photograph_production_release": false
+        },
+        "actualHomeCalendarQA": {
+          "first_real_app_workflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40365746258",
+          "first_real_app_result": "PASS_2_DATES_X_2_PHONE_WIDTHS_X_2_REAL_UI_SURFACES_8_8",
+          "evidence_path": "research/champaigne-inv1125-photo-review-20261026:assets/staged/champaigne-petite-cene-research/real-home-calendar-qa-20261026/home-calendar-preview-evidence.json",
+          "widths_px": [
+            320,
+            390
+          ],
+          "actual_app_ui_rendered": true,
+          "correct_1962_principal_verified": true,
+          "both_images_loaded_sha_locked": true,
+          "object_fit_contain": true,
+          "approval_flags_in_browser_only_simulated": true,
+          "actual_publish_permission": false,
+          "strict_overflow_assertion_retest": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40366833795",
+          "strict_overflow_result_at_review": "PENDING_DO_NOT_CLAIM_PASS",
+          "curator_photo_quality_acceptance": false
+        },
+        "visualQualityReview": {
+          "status": "HOLD_NOT_YET_APPROVED",
+          "concern": "Visible cool haze and upper-left glare/reflection, compared with darker older Commons reproduction and Louvre catalog view; native-pixel painted-edge proof unresolved",
+          "subjective_review_only": true,
+          "image_pixels_not_sufficient_for_release": true,
+          "enhancement_policy": "Do not use AI enhancement, synthetic reconstruction, or uncalibrated color matching"
         }
       }
     },
