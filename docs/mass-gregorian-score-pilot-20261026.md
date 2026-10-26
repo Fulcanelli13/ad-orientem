@@ -39,8 +39,8 @@ https://gregobase.selapa.net/chant.php?id=1184
 GregoBase explicitly releases its **transcriptions** under CC0:
 https://gregobase.selapa.net/?page_id=2
 The Kyrie XVI GABC is embedded unchanged (transcriber Andrew Hinkley,
-proofread gdweber in 2022). The other two GABCs are available as source links
-and have not yet been bundled or checksum-frozen.
+proofread gdweber in 2022). All three original GABCs have now been embedded verbatim; source checksums,
+local engraving and facsimile comparison remain future release gates.
 
 ## Non-features and necessary distinctions
 - Selecting one of these three scores chooses a **reference example**, not
