@@ -6,7 +6,7 @@ def rd(x):return json.loads((R/x).read_text(encoding="utf8"))
 class Review20(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.old=rd("icrsp-france-b31-eleven-stream-444-unique-topic-ledger.v1.json")
+  cls.old=rd("icrsp-france-b32-449-unique-direct-topic-ledger.v1.json")
   cls.fresh=rd("icrsp-france-b29-200-new-source-metadata.v1.json")
   cls.new=rd("icrsp-france-b32-editorial20-fresh200.v1.json")
   cls.ledger=rd("icrsp-france-b32-464-unique-topical-ledger.v1.json")
@@ -14,11 +14,13 @@ class Review20(unittest.TestCase):
   old={r["articleId"] for r in self.old["uniqueArticles"]}
   fresh={r["articleId"] for r in self.fresh["records"]}
   new={r["articleId"] for r in self.new["records"]}
-  self.assertEqual((len(old),len(fresh),len(new)),(444,200,20))
-  self.assertFalse(old&new)
+  self.assertEqual((len(old),len(fresh),len(new)),(449,200,20))
+  self.assertEqual(len(old&new),5)
+  self.assertEqual(len(new-old),15)
   self.assertTrue(new<=fresh)
   self.assertEqual({r["articleId"] for r in self.ledger["uniqueArticles"]},old|new)
   self.assertEqual(self.ledger["counts"]["reviewedUnique"],464)
+  self.assertEqual(self.new["counts"]["overlapWithParallelB32Five"],5)
   self.assertEqual(self.ledger["counts"]["notYetDirectTopicReviewed"],319)
  def test_rights_identity_and_owner_holds(self):
   byid={r["articleId"]:r for r in self.new["records"]}
