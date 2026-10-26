@@ -33,3 +33,5 @@ jobs:
           git commit -m "research(art): archive third complete Lotto photograph with QA previews"
           git push origin research/lotto-rosary-photo-comparison-20261026
       - run: echo "The Lotto painting remains selected; photographic quality verdict is separate."
+
+# Research retry: corrected JSON decode; same original image identity and rights gates.
