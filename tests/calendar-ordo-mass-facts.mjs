@@ -29,7 +29,7 @@ assert.equal(cold.commemorationsApplyToChosenForm,null,
 assert.equal(cold.sourcePath,"Sancti/10-07");
 
 const repaired=calendarOrdoMassFacts({...base,proper:{status:"ready",data:{
-  ...base.proper.data,preface:{lat:"de Beata Maria Virgine\nVere dignum"}
+  ...base.proper.data,preface:{lat:"de Beata Maria Virgine\nVere dignum",en:"BVM preface",fr:"Préface de la Sainte Vierge"}
 }}});
 assert.equal(repaired.preface.status,"MATCH");
 assert.match(repaired.preface.heading,/de Beata Maria Virgine/);
@@ -75,12 +75,19 @@ const contrary=calendarOrdoMassFacts({...base,proper:{status:"ready",data:{
 assert.equal(contrary.credo,null,"A disagreement with RGMR 475c must be withheld");
 assert.equal(contrary.ordinaryRubricEvidence.credo.status,"SOURCE_CONFLICT");
 
-const unlisted=calendarOrdoMassFacts({...base,date:"2026-10-11",
+const matchedSunday=calendarOrdoMassFacts({...base,date:"2026-10-11",
   day:{main:{id:"tempora:Pent20-0:2:g",title:"XX Sunday after Pentecost",rank:2}},
   proper:{status:"ready",data:{...base.proper.data,
-    preface:{lat:"de sanctissima Trinitate\nVere dignum"}}}});
+    preface:{lat:"de sanctissima Trinitate\\nVere dignum",en:"Holy Trinity",fr:"Sainte Trinité"}}}});
+assert.equal(matchedSunday.preface.status,"MATCH",
+  "A rubric-attested Trinity Preface on a second-class Sunday may be displayed");
+assert.equal(matchedSunday.preface.clause,"494_B");
+const unlisted=calendarOrdoMassFacts({...base,date:"2026-10-15",
+  day:{main:{id:"sancti:10-15:3:w",title:"St Teresa of Avila",rank:3}},
+  proper:{status:"ready",data:{...base.proper.data,
+    preface:{lat:"Communis\\nVere dignum",en:"Common",fr:"Commune"}}}});
 assert.equal(unlisted.preface.status,"WITHHELD",
-  "A plausible heading with no owner certification must not be asserted");
+  "An unreviewed saint's Common Preface is not certified merely by its heading");
 
 assert.equal(calendarOrdoMassFacts({...base,proper:{status:"loading"}}).status,"PROPER_UNAVAILABLE");
 assert.equal(calendarOrdoMassFacts({...base,proper:{status:"ready",data:{
