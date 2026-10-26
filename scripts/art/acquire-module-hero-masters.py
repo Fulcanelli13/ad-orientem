@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / "data/research/module-hero-artwork-production-readiness-2026-10-26.audit1.json"
 STAGE = ROOT / "assets/staged/module-hero-masters"
 USER_AGENT = "AdOrientem-HeroAudit/1.0 (https://github.com/Fulcanelli13/ad-orientem; research-only)"
-MAX_BYTES = 30 * 1024 * 1024
+MAX_BYTES = 12 * 1024 * 1024
 
 
 def fetch_json(url):
@@ -84,6 +84,7 @@ def main():
     args = p.parse_args()
     doc = json.loads(MANIFEST.read_text(encoding="utf-8"))
     results = []
+    total_bytes = 0
     for item in doc["entries"]:
         mid = item["module_id"]
         if args.module and mid not in args.module:
@@ -102,7 +103,7 @@ def main():
             size = info.get("size") or 0
             mime = info.get("mime") or ""
             original_url = info.get("url") or ""
-            if size <= 0 or size > MAX_BYTES or mime not in ("image/jpeg", "image/png"):
+            if size <= 0 or size > MAX_BYTES or size + total_bytes > 60 * 1024 * 1024 or mime not in ("image/jpeg", "image/png"):
                 raise ValueError("Image too big or unsupported: " + str((size, mime)))
             filename = mid + (".png" if mime == "image/png" else ".jpg")
             record = {"module_id": mid, "status": "metadata_checked", "source_page": url,
@@ -112,6 +113,7 @@ def main():
             if args.download:
                 dest = STAGE / filename
                 written, digest = download_verified(original_url, dest, size, info.get("sha1"))
+                total_bytes += written
                 record.update({"status": "staged_not_approved", "path": str(dest.relative_to(ROOT)),
                                "bytes": written, "sha256": digest})
             results.append(record)
