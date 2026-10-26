@@ -1,0 +1,60 @@
+{
+  "schema": "AO_CHAMPAIGNE_INV1125_PHOTO_RESEARCH_20261026",
+  "research_context": "User selected exact Louvre INV1125 for BOTH Holy Thursday and Pentecost Ember Wednesday",
+  "object_reference": "https://collections.louvre.fr/ark:/53355/cl010062076",
+  "sources": [
+    {
+      "id": "whole-commons",
+      "filename": "Champaigne Petite Cène Louvre.jpg",
+      "purpose": "existing complete frame-free candidate",
+      "app_release": false,
+      "human_whole_painting_verified": false,
+      "frameless_crop_approved": false,
+      "status": "SOURCE_BYTES_ARCHIVED_UNAPPROVED",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Champaigne_Petite_C%C3%A8ne_Louvre.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "rights_claim": "Public domain",
+      "commons_sha1": "c13126b36fb8ad5bcf03e4c9e35ba284b0ccfd5b",
+      "sha256": "d4d8b3c1ea957c9517a24c62a97ab7143e07cdec2434c77ee05df17a5b29a320",
+      "width": 1112,
+      "height": 591,
+      "bytes": 185012,
+      "exif_iso": null,
+      "original_file": "assets/staged/champaigne-petite-cene-research/whole-commons-original.jpg",
+      "full_review_preview": "assets/staged/champaigne-petite-cene-research/whole-commons-full-review.jpg",
+      "quality_warnings": [
+        "No embedded ICC profile; compare colours against authoritative museum reference"
+      ],
+      "source_photo_framing_risk": "Potential lower effective detail and origin unclear",
+      "verified_correct_object": "INV 1125 via Commons own file identification",
+      "rights_release": "PENDING APPLICABLE JURISDICTION REVIEW"
+    },
+    {
+      "id": "tangopaso-museum",
+      "filename": "Philippe de Champaigne - La Petite Cène (Louvre, INV 1125).jpg",
+      "purpose": "self-dedicated public-domain museum photograph; frame/perspective completeness unresolved",
+      "app_release": false,
+      "human_whole_painting_verified": false,
+      "frameless_crop_approved": false,
+      "status": "RESEARCH_ACQUISITION_FAILED",
+      "error": "Research JPEG expected"
+    }
+  ],
+  "final_source_promoted": false,
+  "displayed_painting_frame_free_required": true,
+  "new_app_assets": 0,
+  "excluded_restricted_candidates": [
+    {
+      "provider": "Louvre collections/RMN",
+      "reason": "commercial distribution not freely licensed under Louvre Collections CGU"
+    },
+    {
+      "provider": "Gallerix 3528x1881",
+      "reason": "photograph's independent reuse licence not established; research visual lead only"
+    },
+    {
+      "provider": "Bridgeman 7912x4287",
+      "reason": "paid licence violates user €0 rule"
+    }
+  ]
+}
