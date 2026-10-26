@@ -2,7 +2,7 @@
   "schema": "ao-1962-palm-full-verse-research-candidates-v1",
   "batch": 17,
   "date": "2026-10-26",
-  "status": "SIXTEEN_SECONDARY_COMPLETE_VERSE_CANDIDATES_UNAPPROVED_FOR_PRINT_AND_NOTATION",
+  "status": "SIXTEEN_COMPLETE_1961_PRINT_TEXT_PLUS_INDEPENDENT_1962_SCAN_CORROBORATED_OFFICIAL_OWNER_SIGNOFF_PENDING",
   "stage": "PALM-R02",
   "purpose": "Transcribe possible full Textus novus Palm-distribution verses with visible midverse stars without confusing a mediant marker with full Psalm-tone pointing. Not Mass reader or Schola release.",
   "source": {
@@ -321,7 +321,12 @@
       ],
       "candidate": "fores antiquae",
       "otherDigitizedWitness": "portae antique",
-      "disposition": "HOLD_UNTIL_1962_PRINTED_IMAGE_COLLATION"
+      "disposition": "RESOLVED_AGAINST_SECOND_INDEPENDENT_PRINTED_1962_SCAN_PENDING_EXACT_VATICAN_EDITION_AUTHENTICATION",
+      "resolutionEvidence": [
+        "Graduale Romanum 1961 p143**",
+        "1962-labelled colour Missale Romanum printed p134"
+      ],
+      "digitalOCRDisprovedAsLiterallyPrintedInInspectedWitnesses": true
     },
     {
       "psalm": 46,
@@ -362,5 +367,17 @@
     "Keep quarantined #19316 until actual 'Omnes populi' underlay review",
     "Never convert sung-line number 10 into a tenth biblical Psalm 46 verse"
   ],
-  "noNewReaderOrScholaOwner": true
+  "noNewReaderOrScholaOwner": true,
+  "batch19Followup": {
+    "record": "data/research/processionale-palm-1962-independent-print-scan-20261026.v1.json",
+    "inspectedPrinted1962SourcePages": [
+      134,
+      135
+    ],
+    "sixteenWholeVersesPhotographicWitnessSeen": true,
+    "printedLexicalVariantConfirmed": "fores antiquae",
+    "formalVaticanTypicaOwnershipAndPublisher": "NOT_YET_AUTHENTICATED",
+    "official1962SourceOwnerSignoff": false,
+    "doNotConflateOCRWithPrint": true
+  }
 }
