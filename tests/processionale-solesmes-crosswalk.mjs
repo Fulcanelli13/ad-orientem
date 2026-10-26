@@ -632,3 +632,34 @@ test('sixteen complete Latin candidates remain source-only until 1962 image and 
   const palm=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
   assert.ok(!palm.includes('processionale-palm-1962-full-verse-candidates'));
 });
+
+test('1961 Graduale printed Psalm 23 and 46 full text has three flex daggers',()=>{
+  const gr=readJSON('data/research/processionale-palm-1961-graduale-fulltext-collation-20261026.v1.json');
+  const c=readJSON('data/research/processionale-palm-1962-full-verse-candidates-20261026.v1.json');
+  assert.equal(gr.stage,'PALM-R02');
+  assert.deepEqual(gr.source.printedPages,['143**','144**']);
+  assert.deepEqual(gr.source.pdfZeroPages,[142,143]);
+  assert.equal(gr.lines.length,16);
+  assert.deepEqual(gr.lines.filter(x=>x.psalm===23).map(x=>x.liturgicalLine),[1,2,7,8,9,10]);
+  assert.deepEqual(gr.lines.filter(x=>x.psalm===46).map(x=>x.liturgicalLine),[1,2,3,4,5,6,7,8,9,10]);
+  assert.equal(gr.lines.filter(x=>x.medialStar).length,16);
+  assert.deepEqual(gr.lines.filter(x=>x.flexAfter).map(x=>[x.psalm,x.liturgicalLine,x.flexAfter]),[
+    [23,7,'capita vestra'],[23,8,'Quis est iste rex gloriae'],[23,9,'capita vestra']
+  ]);
+  for(const l of gr.lines){
+    const candidate=c.psalms.find(x=>x.psalm===l.psalm)?.lines.find(x=>x.liturgicalLine===l.liturgicalLine);
+    assert.ok(candidate);
+    assert.equal(l.biblicalVerse,candidate.biblicalVerse);
+    assert.equal(l.firstHemistich,candidate.firstHemistich);
+    assert.equal(l.secondHemistich,candidate.secondHemistich);
+  }
+  assert.equal(gr.psalm46Line3PrintedSpelling,'Subjicit populos nobis');
+  assert.equal(gr.psalm23Line7And9PrintedReading,'fores antiquae');
+  assert.equal(gr.counts.full1961PrintTextLinesVerified,16);
+  assert.equal(gr.counts.psalm23FlexDaggers,3);
+  assert.equal(gr.counts.original1962FullVersesVerifiedThisBatch,0);
+  assert.equal(gr.counts.fullPsalmTonePointingApproved,0);
+  assert.equal(gr.counts.pitchNeumesCertified,0);
+  assert.equal(gr.counts.runtimeScoresApproved,0);
+  assert.equal(gr.readOnly,true);
+});
