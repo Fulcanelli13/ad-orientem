@@ -1,0 +1,50 @@
+name: Champaigne Petite Cene source-fidelity comparison
+on:
+  push:
+    branches: [fix/approved-feast-heroes-main-20261021]
+    paths: [.github/workflows/champaigne-petite-cene-original-photo-qa.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: champaigne-inv1125-photo-source-20261026
+  cancel-in-progress: false
+
+jobs:
+  stage-verify-visual-research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Confirm existing editorial source remains Champaigne for both feast dates
+        run: |
+          python3 - <<'PY'
+          import json
+          x=json.load(open('data/calendar/approved-feast-hero-packaged-candidates-20261021.v1.json'))
+          rows={p['date']:p for p in x['photographs']}
+          for d in ['2026-04-02','2026-05-27']:
+              assert rows[d]['artist']=='Philippe de Champaigne'
+              assert rows[d]['title']=='La Petite Cène'
+              assert rows[d]['productionRelease'] is False
+          assert rows['2026-04-02']['sourceImageSHA256']==rows['2026-05-27']['sourceImageSHA256']
+          PY
+      - name: Fetch both independent Commons original JPGs and 100-percent details
+        run: python3 tools/calendar/audit-champaigne-petite-cene-photos.py
+      - name: Keep source originals permanently on an isolated research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c research/champaigne-inv1125-photo-review-20261026
+          git add -f data/calendar/champaigne-petite-cene-photo-investigation-20261026.json
+          if [ -d assets/staged/champaigne-petite-cene-research ]; then
+             git add -f assets/staged/champaigne-petite-cene-research/
+          fi
+          git commit -m "research(art): preserve PD source photo candidates, no release approval"
+          git push --set-upstream origin research/champaigne-inv1125-photo-review-20261026
+      - run: echo "Research only; original paintings, publication assets and all app release gates unchanged."
