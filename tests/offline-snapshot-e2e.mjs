@@ -86,7 +86,8 @@ try{
    const essential=["src/pray/presentation-coherence.js","src/pray/novena-runtime.js",
      "src/pray/traditional-pray-runtime.js","src/pray/focus-installer.js",
      "src/pray/devotional-card-deck.js","src/pray/devotional-cinematic.js",
-     "assets/pray/angelus/tanner-annunciation-1898.webp"];
+     "assets/pray/angelus/tanner-annunciation-1898.webp",
+      "assets/vendor/exsurge/exsurge.min.js"];
    const missing=[];
    for(const path of essential)if(!await cache.match(new URL(path,base)))missing.push(path);
    return {...meta,missing};
