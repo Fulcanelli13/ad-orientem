@@ -1,4 +1,4 @@
-name: Calendar 1962 Advent I real weekday Proper inheritance
+name: Calendar 1962 four-week Advent Proper inheritance
 on:
   push:
     branches:
@@ -20,17 +20,19 @@ concurrency:
 jobs:
   native-resolver-advent-i:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - name: Check exact canonical boot bundle syntax
-        run: node --check ao-boot-advent-i-1962-01.js
+        run: |
+          node --check ao-boot-advent-i-1962-01.js
+          node --check tests/calendar-advent-i-real-weekday-inheritance.mjs
       - name: Install existing browser dependencies
         run: |
           npm install --no-audit --no-fund
           npx playwright install --with-deps chromium
-      - name: Validate real 1962 Advent I weekday Proper inheritance and source identities
+      - name: Validate four Advent weeks in real 1962 resolver, 2026-27 and Ember exclusions
         run: node tests/calendar-advent-i-real-weekday-inheritance.mjs
