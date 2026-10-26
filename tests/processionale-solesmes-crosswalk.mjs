@@ -282,3 +282,20 @@ test('permanent 1961 GABC archive matches all 15 original SHA256 captures', () =
     if(scoreId!==259)assert.deepEqual(elements,[1],'unexpected multi-part score '+scoreId);
   }
 });
+
+
+test('archived Psalm 23 and Psalm 46 files are only first-verse tone exemplars', () => {
+  const directory='data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/';
+  const handoff=readJSON('data/research/processionale-roman-score-facsimile-handoff-20261026.v1.json');
+  const byScore=new Map(handoff.gabcAudit.records.map(r=>[r.scoreId,r]));
+  for(const id of [288,435]){
+    assert.equal(byScore.get(id).fullPsalmTextInArchivedGabc,false);
+    assert.equal(byScore.get(id).scoreBodyClass,'FIRST_VERSE_NOTATION_WITH_NEXT_VERSE_STUB');
+  }
+  const p23=readFileSync(new URL('../'+directory+'gregobase-288-e1.gabc',import.meta.url),'utf8');
+  const p46=readFileSync(new URL('../'+directory+'gregobase-435-e1.gabc',import.meta.url),'utf8');
+  assert.match(p23,/2\. Qui\(h\)a\.\.\./);
+  assert.match(p46,/2\. Quó\(h\)ni\(h\)am\.\.\./);
+  assert.ok(handoff.gabcAudit.archiveCoverageCaveat.includes('do not imply full verse/refrain musical completeness'));
+  assert.equal(handoff.gabcAudit.fullNoteByNoteVerified,0);
+});
