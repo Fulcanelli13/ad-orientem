@@ -25,7 +25,8 @@ if im.size!=(2816,2112):raise ValueError("Unexpected photo orientation or dimens
 # diagnostic comparison, NOT an approved replacement.
 quads={
  "A-complete-edge-approx":{"tl":[251,429],"bl":[245,1688],"br":[2571,1691],"tr":[2560,425]},
- "B-inset-quality-diagnostic":{"tl":[270,450],"bl":[268,1669],"br":[2549,1672],"tr":[2545,446]}
+ "B-inset-quality-diagnostic":{"tl":[270,450],"bl":[268,1669],"br":[2549,1672],"tr":[2545,446]},
+ "C-canvas-interior-clean":{"tl":[272,453],"bl":[270,1654],"br":[2537,1655],"tr":[2536,451]}
 }
 out=[]
 overlay=im.copy();mark=ImageDraw.Draw(overlay)
@@ -58,10 +59,11 @@ MANIFEST.write_text(json.dumps({
  "source":"commons photographer Tangopaso public-domain dedication",
  "photo_has_physical_frame":True,
  "proposal_A":"Likely includes most/all canvas; corner precision still requires manual checking",
- "proposal_B":"Slightly inset diagnostic only; cannot be assumed to preserve entire painting",
+ "proposal_B":"Slightly inset diagnostic, faint frame trace may remain",
+ "proposal_C":"Manual refinement aims to remove physical frame entirely while retaining visible painted surface. Still requires final edge and museum reference review.",
  "camera_geometry_corrected_with_interpolation":True,
  "color_reference_checked":False,
  "app_asset_promotion":False,
  "review_overlay":str(overlay_path.relative_to(ROOT)),
  "candidates":out},indent=2)+"\n")
-print("Created 2 unapproved review proposals; original unchanged.")
+print("Created 3 unapproved review proposals; original unchanged.")
