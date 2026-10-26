@@ -2625,5 +2625,33 @@
     "verified_visitor_entrances": 0,
     "public_map_pins": 0,
     "una_cum_assignments": 0
-  }
+  },
+  "additional_identity_exception_evidence": [
+    {
+      "research_venue_key": "UK-HOLNEST-CL29",
+      "source_url": "https://fsspx.uk/sites/default/files/documents/IME2026-03WEB.pdf",
+      "pdf_page_zero_index": 54,
+      "source_operator": "SSPX Great Britain",
+      "observed_worship_place_label": "HOLNEST — Private Chapel",
+      "spatial_claim": "DISTRICT_DIRECTORY_NO_PUBLIC_ADDRESS",
+      "consequence": "KEEP_PHYSICAL_ID_UNLINKED_NO_PUBLIC_PIN_OR_INFERRED_ACCESS",
+      "current_dated_mass_listing_source": "https://fsspx.uk/sites/default/files/documents/PrioryMassTimes-261025.pdf"
+    },
+    {
+      "research_venue_key": "DE-S-DERBRARUP-CHRIST-K-NIG",
+      "source_url": "https://pfarrei-stella-maris.de/Regulaere-Gottesdienstzeiten__2983",
+      "source_operator": "Katholische Pfarrei Stella Maris Flensburg",
+      "observed_worship_place_label": "Christ König, Süderbrarup",
+      "consequence": "CHURCH_IDENTITY_LOCALLY_SUPPORTED_BUT_STILL_NO_MATCHING_FROZEN_CL2_GROUP",
+      "recurrence_warning": "GOCATH date expansions are weekly although original PMT source says once per month on a weekday; no automatic date generation"
+    },
+    {
+      "research_venue_key": "DE-STEPHANSPOSCHING-LOH-HEILIG-KREUZ",
+      "source_url": "https://www.stephansposching.de/freizeit-und-kultur/wallfahrtskirche-zum-hl-kreuzloh/",
+      "source_operator": "Gemeinde Stephansposching",
+      "observed_worship_place_label": "Wallfahrtskirche zum Hl. Kreuz in Loh",
+      "consequence": "PHYSICAL_CHURCH_EXISTENCE_SUPPORTED_BUT_NO_SUFFICIENT_MATCH_TO_CL2_EXISTING_GROUP; retain distinct provisional evidence without new canonical ID",
+      "supplemental_heritage_url": "https://www.denkmalschutz.de/denkmal/wallfahrtskirche-hl-kreuz.html"
+    }
+  ]
 }
