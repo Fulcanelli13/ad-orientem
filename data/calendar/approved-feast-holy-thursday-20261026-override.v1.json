@@ -71,6 +71,19 @@
         "louvre_web_photo_terms_apply_automatically_to_independent_photo": false,
         "caveat": "Do not infer legal release in every app distribution jurisdiction from Commons license alone; independent photo must be checked against applicable local law. Louvre Collections photo restrictions attach to images obtained from Louvre service, not automatically to the separate Tangopaso photo.",
         "final_app_reuse_approved": false
+      },
+      "frame_free_photo_trials": {
+        "candidate_C": {
+          "sha256": "99e102df2d3644783bce3ac4cb81002337f8eb166583d84f74c630be6a8efc0f",
+          "status": "REJECTED_DUE_VISIBLE_GILDING_ALONG_BOTTOM"
+        },
+        "candidate_D": {
+          "sha256": "f0742b795178e1a600e43694693f880a07039587b74ba6f352ccbf389919cb30",
+          "status": "PREFERRED_RESEARCH_CROP_REQUIRES_NATIVE_EDGE_AND_COLOR_REVIEW",
+          "source_unmodified": true,
+          "publication_approved": false
+        },
+        "original_photo_sha256": "3fce64afc767c16b803fd250e685f3a64caedb7e474380d3afeca68d84331942"
       }
     }
   },
