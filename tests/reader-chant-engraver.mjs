@@ -90,4 +90,7 @@ assert.match(owner,/createOfflineChantEngraver/);
 assert.doesNotMatch(owner,/(?:picture|fullPicture)\.setAttribute\("src"/,
   "Mass viewer must not request remote score images");
 assert.doesNotMatch(owner,/(?:new Audio|SpeechRecognition|getUserMedia|releaseBenedictus)\s*\(/);
+const worker=readFileSync(new URL("../sw.js",import.meta.url),"utf8");
+assert.match(worker,/const OFFLINE_CRITICAL_CHANT_ENGRAVER=new URL\("assets\/vendor\/exsurge\/exsurge\.min\.js",BASE\)\.href;/);
+assert.match(worker,/const queue=\[ROOT,\.\.\.urlsInHtml\(html\),OFFLINE_CRITICAL_ANGELUS_ART,OFFLINE_CRITICAL_CHANT_ENGRAVER\]/);
 console.log("PASS local GABC renderer: pinned MIT bundle, adaptive layout, stale guard, and no audio");
