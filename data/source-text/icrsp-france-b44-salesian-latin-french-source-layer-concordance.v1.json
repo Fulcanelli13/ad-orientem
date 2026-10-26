@@ -1,0 +1,196 @@
+{
+  "schema": "AO_ICRSP_B44_SALESIAN_LATIN_FRENCH_SOURCE_LAYER_CONCORDANCE_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "scope": "Independent human-readable direct side-by-side selected opening, middle and ending comparison of two hosted Saint François de Sales works against the Annecy VIII Latin transcription and the printed edition's contemporary French translation. Not a full word-by-word transcription, page-image verification, rights license or app publication.",
+  "sourceReferences": [
+    {
+      "kind": "ANNECY_VIII_DIGITAL_LATIN_AND_FRENCH",
+      "url": "https://www.donboscosanto.eu/francesco_di_sales/Lexicon/Fontes/08-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20VIII-Vol.2-Sermons.html",
+      "authority": "DIGITAL_TRANSCRIPTION_OF_1897_PRINT_CONTENT_NOT_VISUAL_SCAN",
+      "publisherUseRestrictionsPresent": true
+    },
+    {
+      "kind": "ANNECY_VIII_BNF_CATALOGUE_TWO_SCANS",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb33015558w",
+      "facsimileAccessStatus": "CATALOGUED_BUT_ACCESS_DENIED_AT_REVIEW",
+      "twoBnfVolumeVIIIParts": [
+        "NUMM-9736310",
+        "NUMM-9649887"
+      ]
+    },
+    {
+      "kind": "HARVARD_GOOGLE_BOOKS_1897_VOL8",
+      "url": "https://play.google.com/store/books/details?id=xuDw-51t6roC",
+      "facsimileAccessStatus": "INDEXED_FULL_VIEW_BOOK_BUT_PAGE_IMAGES_NOT_RETRIEVED"
+    },
+    {
+      "kind": "INDEPENDENT_PRINT_CATALOGUE_TOURNAI",
+      "url": "https://bibliotheque.seminaire-tournai.be/index.php?lvl=notice_display&id=43183",
+      "role": "Bibliographic corroboration of Annecy Niérat 1897 19+447 pp"
+    }
+  ],
+  "auditedWorkItems": [
+    {
+      "caseId": "SALES_VOL8_LXXXVIII_1612_CROSS_INDEX_DATE",
+      "annecyItem": "VIII.LXXXVIII",
+      "annecyWorkKind": "SOMMAIRE",
+      "hostArticleIds": [
+        "a0220_ancien",
+        "a0029_nouveau"
+      ],
+      "hostArticleGrouping": "HOST_VENDREDI_SAINT_PRE_1955_4_WORKS_ONE_CONTENT_PANEL",
+      "editionOriginalLanguage": "LATIN_WITH_PERIOD_FRENCH_EDITORIAL_TRANSLATION",
+      "editionLatinTranscription": {
+        "startLine": 1403,
+        "endLine": 1421,
+        "embeddedPageRange": [
+          99,
+          102
+        ]
+      },
+      "editionFrenchTranscription": {
+        "startLine": 1429,
+        "endLine": 1441,
+        "embeddedPageRange": [
+          99,
+          102
+        ]
+      },
+      "hostFrench": {
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_ancien",
+        "selectedSectionStartLine": 92,
+        "selectedSectionEndLine": 103,
+        "subsequentSeparateWorkStartsAtLine": 105
+      },
+      "comparisonAnchors": [
+        {
+          "kind": "OPENING",
+          "source": "Latin PRO OSTENSIONE and its French translation / host POUR L'EXPOSITION"
+        },
+        {
+          "kind": "MIDDLE",
+          "source": "Makrina memorial, Cross symbolism, Virgin at Cross, Jacob's ladder typology"
+        },
+        {
+          "kind": "ENDING",
+          "source": "2 Corinthians 5 charity of Christ and Zechariah 13 wounds at hands"
+        }
+      ],
+      "comparisonConclusion": "SELECTED_OPENING_MIDDLE_END_FRENCH_WITNESSES_SEMANTICALLY_AND_TEXTUALLY_ALIGNED__NOT_FULL_VERBATIM_DIFF",
+      "crucialQualifier": "1612-04-20 is editorial heading and probable Good Friday occasion not certified delivery date; this is a summary, not an intact full delivered sermon",
+      "editorialVariationExamples": [],
+      "printFacsimileImagesInspected": false,
+      "latinAutographManuscriptInspected": false,
+      "fullFrenchVerbatimDiffCompleted": false,
+      "originalLatinToFrenchTranslationExhaustivelyVerified": false,
+      "sourceRightsCleared": false,
+      "appOwnerParityApproved": false,
+      "published": false
+    },
+    {
+      "caseId": "SALES_VOL8_CXXXVII_1617_LENT_THURSDAY",
+      "annecyItem": "VIII.CXXXVII",
+      "annecyWorkKind": "PLAN",
+      "hostArticleIds": [
+        "a0194_ancien"
+      ],
+      "hostArticleGrouping": "HOST_THURSDAY_LENT_3_TWO_DIFFERENT_DATED_ORIGINAL_WORKS_1617_PLAN_AND_1622_SERMON",
+      "editionOriginalLanguage": "LATIN_WITH_PERIOD_FRENCH_EDITORIAL_TRANSLATION",
+      "editionLatinTranscription": {
+        "startLine": 4221,
+        "endLine": 4244,
+        "embeddedPageRange": [
+          324,
+          329
+        ]
+      },
+      "editionFrenchTranscription": {
+        "startLine": 4251,
+        "endLine": 4276,
+        "embeddedPageRange": [
+          324,
+          329
+        ]
+      },
+      "hostFrench": {
+        "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0194_ancien",
+        "selectedSectionStartLine": 181,
+        "selectedSectionEndLine": 204,
+        "subsequentSeparateWorkStartsAtLine": 205
+      },
+      "comparisonAnchors": [
+        {
+          "kind": "OPENING",
+          "source": "Luke 4:38 healing at Simon's house and 'yesterday' as prior Tradition discussion"
+        },
+        {
+          "kind": "MIDDLE",
+          "source": "seven enumerated arguments on Tradition, including sacramental rites, Scripture and Church authority"
+        },
+        {
+          "kind": "ENDING",
+          "source": "Christ healing at Simon's house; canonical punctuation, manuscript scribal sense, ending contrast with unwritten Tradition"
+        }
+      ],
+      "comparisonConclusion": "SELECTED_OPENING_MIDDLE_END_FRENCH_WITNESSES_SEMANTICALLY_AND_TEXTUALLY_ALIGNED__NOT_FULL_VERBATIM_DIFF",
+      "editorialVariationExamples": [
+        {
+          "location": "Laws and historical food prohibitions, item 5",
+          "latinEditionLine": 4234,
+          "frenchEditionLine": 4267,
+          "hostLine": 195,
+          "observation": "The edition's French translation inserts an editorial cross-reference back to the Latin text; ICRSP fills in the corresponding historic-Geneva Bible quotation. Therefore not exact character-for-character copy of the French layer. This is a host editorial intervention, not proved error."
+        }
+      ],
+      "crucialQualifier": "Edition digital heading retains 3 March 1617 whereas weekday title, preceding CXXXVI 1 March 'yesterday' continuity and aggregate index support 2 March; printed and manuscript not certified",
+      "printFacsimileImagesInspected": false,
+      "latinAutographManuscriptInspected": false,
+      "fullFrenchVerbatimDiffCompleted": false,
+      "originalLatinToFrenchTranslationExhaustivelyVerified": false,
+      "sourceRightsCleared": false,
+      "appOwnerParityApproved": false,
+      "published": false
+    }
+  ],
+  "canonicalDataModellingFinding": {
+    "requirement": "WorkItemID nested within sourceArticleId/panel; every work has separate original-language and editorial-translation source layers, distinct from hosted versions",
+    "suggestedKeys": [
+      "sourceArticleId",
+      "sourcePanelSha256",
+      "originalWorkItemId",
+      "annecyVolume",
+      "annecyEntryNumber",
+      "originalLanguage",
+      "editorialTranslationEdition",
+      "hostLanguage",
+      "selectedParagraphAnchors",
+      "pageScanVerification",
+      "rightsLayer"
+    ],
+    "noNewMassCalendarOrReaderModule": true,
+    "noOverwriteOfExistingReaderOwners": true
+  },
+  "counts": {
+    "hostPanelOccurrences": 3,
+    "distinctOriginalWorksBoundaryChecked": 2,
+    "hostPagesContainingExtraWorks": 2,
+    "latinLayerExistenceObserved": 2,
+    "editorialFrenchTranslationLayerExistenceObserved": 2,
+    "selectedOpeningMiddleEndingComparisons": 2,
+    "fullWordByWordCollations": 0,
+    "printedPageImageVisualVerifications": 0,
+    "autographManuscriptVerifications": 0,
+    "rightsApproved": 0,
+    "productionApprovals": 0
+  },
+  "restrictions": {
+    "doNotClaim1897PrintVisuallyCertified": true,
+    "doNotDescribeFrenchEditorialTranslationAsAutograph": true,
+    "doNotMergeAdjacentOriginalWorks": true,
+    "doNotInferRightsFrom1800sEditionDate": true,
+    "doNotPublishSourceText": true,
+    "noOriginalSourceProseCopied": true
+  },
+  "nextGate": "Open independent 1897 print scan and verify original printed headings, footnotes, pp.99-102 and pp.324-329, then perform full passage-level Latin-to-editorial-French collation and independent rights research before app parity."
+}
