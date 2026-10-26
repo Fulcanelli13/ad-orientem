@@ -1,0 +1,157 @@
+{
+  "schema": "AO_TLM_B95_ITALY_117_INDEPENDENT_INDEX_SCREEN_20261026_V1",
+  "checked_on": "2026-10-26",
+  "scope": "RESEARCH_CROSSWALK_ONLY_NO_SITE_ADMISSION_NO_SCHEDULE_CHANGES",
+  "source": {
+    "publisher": "Latin Mass Directory",
+    "url": "https://www.latinmassdir.org/country/it/?view=list",
+    "pages": [
+      "https://www.latinmassdir.org/country/it/?view=list",
+      "https://www.latinmassdir.org/country/it/page/2/?communities=&days=&exclusive=&venue_status=&view=list",
+      "https://www.latinmassdir.org/country/it/page/3/?communities=&days=&exclusive=&venue_status=&view=list",
+      "https://www.latinmassdir.org/country/it/page/4/?communities=&days=&exclusive=&venue_status=&view=list",
+      "https://www.latinmassdir.org/country/it/page/5/?communities=&days=&exclusive=&venue_status=&view=list",
+      "https://www.latinmassdir.org/country/it/page/6/?communities=&days=&exclusive=&venue_status=&view=list"
+    ],
+    "advertised_venues": 117,
+    "screened_page_positions": [
+      20,
+      20,
+      20,
+      20,
+      20,
+      17
+    ],
+    "category": "INDEPENDENT_SECONDARY_DIRECTORY_NOT_PARISH_SOURCE",
+    "limitation": "The directory does not by itself certify first-party ongoing 1962-Missal Masses; locations/recurrence cannot be directly copied."
+  },
+  "baseline": {
+    "master": "B91",
+    "italy_historical_canonical_group_rows": 140,
+    "world_provisional_distinct_physical_site_anchors": 2576,
+    "world_historical_group_ids": 2581,
+    "venue_source_records": 2684,
+    "mass_times_original": 4681,
+    "mass_times_prior_verified": 3347
+  },
+  "qa": {
+    "screened_distinct_source_positions": 117,
+    "b91_name_overlaps_building_unconfirmed": 60,
+    "b91_similar_names_unconfirmed": 14,
+    "no_strong_b91_name_match_priority_queue": 43,
+    "owner_association_diocese_cases_researched": 10,
+    "automatic_source_id_assignments": 0,
+    "new_canonical_site_admissions": 0,
+    "new_mass_schedule_verifications": 0,
+    "new_public_map_pins": 0,
+    "existing_master_mutations": 0
+  },
+  "principles": [
+    "A B91 name-only record cannot prove a new named external worship building is absent.",
+    "A same-name dedication can refer to two churches in different cities.",
+    "An owner-verified parish Mass does not automatically mean 1962 liturgy.",
+    "Association-provided Mass times are leads until current owner date and building review.",
+    "Retain historical research IDs and refrain from assigning a new B91 group ID based on fuzzy name similarity."
+  ],
+  "evidence_cases": [
+    {
+      "id": "B95-IT-025",
+      "name": "Chiesa di Sant'Antonio Abate",
+      "locality": "Arco Felice / Pozzuoli",
+      "organizer_address": "Via Montenuovo Licola Patria 77",
+      "b91_generic_name_id": "RG-5125511C9FE5",
+      "distinct_other_city_group": "RG-5090FBF8C2D5 (SSPX Longare, Via delle Grotte 6)",
+      "evidence_url": "https://www.editorialeilgiglio.it/messe-in-latino/",
+      "decision": "PRIORITY_UNLOCATED_B91_SAME_NAME_IDENTITY_REVIEW; DO_NOT_MINT_NEW_ID",
+      "schedule_gate": "NOT_CURRENT_OWNER_DATE_CONFIRMED"
+    },
+    {
+      "id": "B95-IT-084",
+      "name": "Parrocchia personale Santa Chiara",
+      "locality": "Ferrara",
+      "b91_group_id": "RG-2E1E229E79EC",
+      "evidence_url": "https://www.santachiaraferrara.it/orario-funzioni-2026-2027/",
+      "decision": "EXISTING_CANONICAL_NAME_OWNER_CURRENT_OLD_RITE_2026_27; ENRICH_SOURCE_ONLY",
+      "calendar_note": "Owner lists Sunday 08:30 low Mass and 18:00 sung Mass for Sep 2026–May 2027; this PR does not import times."
+    },
+    {
+      "id": "B95-IT-024",
+      "name": "Chiesa San Magno e Maria Assunta",
+      "locality": "Acigliano / Mercato San Severino",
+      "b91_group_id": "RG-385CB296C95B",
+      "b91_address": "Via delle Puglie 176",
+      "organizer_address": "Via delle Puglie 15",
+      "evidence_url": "https://www.editorialeilgiglio.it/messe-in-latino/",
+      "decision": "LIKELY_SAME_NAME_SITE_NEEDS_STREET_NUMBER_CONFLICT_RESOLVED"
+    },
+    {
+      "id": "B95-IT-015",
+      "name": "Chiesa del Gesù",
+      "locality": "Castellammare di Stabia",
+      "b91_group_id": "RG-4D09923C6B74",
+      "organizer_address": "Via del Gesù 62",
+      "evidence_url": "https://www.editorialeilgiglio.it/messe-in-latino/",
+      "decision": "OWNER_ASSOCIATION_ADDRESS_ENRICHMENT_HOLD_BUILDING_IDENTITY"
+    },
+    {
+      "id": "B95-IT-091",
+      "name": "San Ferdinando di Palazzo",
+      "locality": "Napoli",
+      "b91_group_id": "RG-34FDCB6355B4",
+      "organizer_address": "Piazza Trieste e Trento",
+      "evidence_url": "https://www.editorialeilgiglio.it/messe-in-latino/",
+      "decision": "ASSOCIATION_ADDRESS_FOR_EXISTING_NAMED_B91_CHURCH"
+    },
+    {
+      "id": "B95-IT-034",
+      "name": "Chiesa San Giorgio",
+      "locality": "Salerno",
+      "organizer_address": "Via Duomo 19",
+      "evidence_url": "https://www.editorialeilgiglio.it/messe-in-latino/",
+      "decision": "SAME_NAME_B91_RECORD_MISSING_STREET; RESEARCH_ONLY"
+    },
+    {
+      "id": "B95-IT-044",
+      "name": "San Massimiano",
+      "locality": "Punta Marina Terme",
+      "evidence_url": "https://www.diocesiravennacervia.it/orari-ss-messe/orari-ss-messe-vicariato-di-marina-di-ravenna/",
+      "decision": "DIOCESAN_PHYSICAL_CATHOLIC_CHURCH_EXISTS_BUT_1962_MASS_UNCONFIRMED"
+    },
+    {
+      "id": "B95-IT-042",
+      "name": "Chiesa di San Luca",
+      "locality": "Pavia",
+      "evidence_url": "https://chiesaepostconcilio.blogspot.com/2026/10/avviso-per-la-messa-di-domani-pavia.html",
+      "decision": "DATED_11_OCT_2026_LITURGY_NOTICE; B91_NAMED_RECORD_EXISTS; NO_RECURRING_TIME_INFERENCE"
+    },
+    {
+      "id": "B95-IT-032",
+      "name": "San Francesco d'Assisi",
+      "locality": "Monopoli",
+      "evidence_url": "https://www.comune.monopoli.ba.it/Vivere-il-comune/Eventi/Festa-di-San-Francesco-d-Assisi-a-Monopoli",
+      "decision": "2026_MUNICIPAL_PHYSICAL_BUILDING_CONFIRMATION; CURRENT_OWNER_1962_RITE_NOT_PROVEN"
+    },
+    {
+      "id": "B95-IT-054",
+      "name": "San Siro e Sepolcro",
+      "locality": "Cremona",
+      "evidence_url": "https://www.diocesidicremona.it/parrocchie/orarimesse",
+      "decision": "DIOCESAN_ORDINARY_WORSHIP_BUILDING_EVIDENCE_ONLY; 1962_UNVERIFIED"
+    }
+  ],
+  "workbook": {
+    "filename": "Ad_Orientem_B95_Italy_117_Full_Directory_vs_B91_2026-10-26.xlsx",
+    "sha256": "b39ab9828800ce220d9514f4b11ce7b91381f20827e32e34433ab6892a6aa9cf",
+    "sheet_names": [
+      "B95 CONTROL",
+      "ITALY 117 INDEX",
+      "10 EVIDENCE CASES",
+      "B91 ITALY 140",
+      "SOURCE REGISTER",
+      "RELEASE GATES"
+    ],
+    "stored_in_this_pr": false,
+    "content": "Full 117-index-entry name/locality/secondary-source URL crosswalk and 140 B91 Italian research rows, 10 supporting-source decisions."
+  },
+  "release_boundary": "Research-only JSON manifest, not a production directory/provider JSON. No new public venue, current schedule certification, or map pin."
+}
