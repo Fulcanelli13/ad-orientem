@@ -1,0 +1,26 @@
+name: CL27 pinned 4,681 Mass source and collision review
+
+on:
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl27-bulk-timetable-audit-20261026/**'
+      - 'tools/directory/validate-cl27-bulk-schedule-audit.py'
+      - '.github/workflows/directory-cl27-bulk-schedule-review.yml'
+  push:
+    paths:
+      - 'data/directory/research/cl27-bulk-timetable-audit-20261026/**'
+      - 'tools/directory/validate-cl27-bulk-schedule-audit.py'
+  workflow_dispatch:
+
+jobs:
+  stable-bulk-schedule-source-audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject malformed Python
+        run: python3 -m py_compile tools/directory/validate-cl27-bulk-schedule-audit.py
+      - name: Verify complete source snapshot and all collision/review output
+        run: python3 tools/directory/validate-cl27-bulk-schedule-audit.py
