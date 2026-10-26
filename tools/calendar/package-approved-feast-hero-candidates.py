@@ -29,7 +29,7 @@ Image.MAX_IMAGE_PIXELS = 110_000_000
 # photographed source. Neither whole-image resize nor object-fit proves that
 # the original photo is frame-free.
 FRAME_PREVIEW_OBSERVATIONS = {
-    "2026-04-02": "GILDED_EXTERNAL_FRAME_VISIBLE",
+    "2026-04-02": "REUSES_CHAMPAIGNE_UNFRAMED_FULL_PAINTING_SOURCE; HUMAN_EDGE_CHECK_PENDING",
     "2026-10-25": "WHITE_PHOTOGRAPHIC_MARGINS_VISIBLE",
     "2026-11-01": "DARK_PERIMETER_BORDER_REQUIRES_ORIGIN_REVIEW",
     "2026-06-12": "PAINTED_OVAL_ICONOGRAPHY_MUST_BE_PRESERVED",
@@ -40,8 +40,8 @@ def sha256(blob: bytes) -> str:
     return hashlib.sha256(blob).hexdigest()
 
 
-def assert_safe_row(proof, editorial):
-    assert proof["date"] == editorial["date"]
+def assert_safe_row(proof, editorial, source_date):
+    assert proof["date"] == source_date
     assert proof["artist"] == editorial["artist"]
     assert proof["title"] == editorial["title"]
     assert proof["sourcePage"] == editorial["objectUrl"]
@@ -117,9 +117,15 @@ def main():
     STAGE_DIR.mkdir(parents=True, exist_ok=True)
     by_date = {item["date"]: item for item in report["rows"]}
     rows = []
-    for user_item, item in zip(editorial, proof["photographs"]):
-        assert_safe_row(item, user_item)
-        record = by_date[item["date"]]
+    proof_by_date = {item["date"]: item for item in proof["photographs"]}
+    assert len(proof_by_date) == 10
+    for user_item in editorial:
+        # 2026-04-02 was reselected on 2026-10-26: exact same Champaigne
+        # image as 2026-05-27. Do not rewrite the old Ugolino proof.
+        source_date = "2026-05-27" if user_item["date"] == "2026-04-02" else user_item["date"]
+        item = proof_by_date[source_date]
+        assert_safe_row(item, user_item, source_date)
+        record = by_date[source_date]
         assert record["status"] == "DOWNLOADED_RESEARCH_PHOTO_NOT_RELEASED"
         source_file = SOURCE_DIR / record["files"]["original"]
         raw = source_file.read_bytes()
@@ -133,7 +139,7 @@ def main():
         # painted edge; the exact photo is the sole source of pixel content.
         target = image.copy()
         target.thumbnail((1600, 1600), Image.Resampling.LANCZOS)
-        staged_name = f"hero-{item['date']}-{item['sourceSHA256'][:12]}.webp"
+        staged_name = f"hero-{source_date}-{item['sourceSHA256'][:12]}.webp"
         dest = STAGE_DIR / staged_name
         target.save(dest, "WEBP", quality=88, method=6)
         derivative = dest.read_bytes()
@@ -144,14 +150,17 @@ def main():
             final_dims = [readback.width, readback.height]
         is_met = item["metadataAccess"] == "MET_API_VERIFIED_PD_FLAG"
         row = {
-            "date": item["date"], "artist": item["artist"], "title": item["title"],
+            "date": user_item["date"], "artist": user_item["artist"], "title": user_item["title"],
+            "photoSourceEvidenceDate": source_date,
+            "editorialRevision": ("data/calendar/approved-feast-holy-thursday-20261026-override.v1.json"
+                                  if user_item["date"] == "2026-04-02" else None),
             "occasion": {
                 "2026-03-29":"Palm Sunday","2026-04-02":"Holy Thursday",
                 "2026-05-23":"Pentecost Vigil","2026-05-24":"Pentecost",
                 "2026-05-27":"Pentecost Ember Wednesday","2026-06-12":"Sacred Heart",
                 "2026-10-25":"Christ the King","2026-11-01":"All Saints",
                 "2026-11-02":"All Souls","2026-11-29":"First Sunday of Advent"
-            }[item["date"]],
+            }[user_item["date"]],
             "iconographyRelationship": user_item["notes"],
             "editorialSelectionPreserved": True,
             "sourcePhotoPage": item["photoPage"],
@@ -173,7 +182,7 @@ def main():
             "framingReview": {
                 "status": "UNREVIEWED_FOR_RELEASE",
                 "previewObservation": FRAME_PREVIEW_OBSERVATIONS.get(
-                    item["date"], "NO_OBVIOUS_EXTERNAL_FRAME_AT_PREVIEW_SCALE"
+                    user_item["date"], "NO_OBVIOUS_EXTERNAL_FRAME_AT_PREVIEW_SCALE"
                 ),
                 "physicalFrameAbsentHumanVerified": False,
                 "gallerySurroundAbsentHumanVerified": False,
@@ -197,20 +206,21 @@ def main():
             "productionRelease": False,
         }
         rows.append(row)
-        print(f"HERO_PACKAGED_CANDIDATE {item['date']} {final_dims}"
+        print(f"HERO_PACKAGED_CANDIDATE {user_item['date']} {final_dims}"
               f" {len(derivative)} bytes sha256={row['candidateFile']['sha256']}", flush=True)
     summary = {
         "schema": "AO_APPROVED_FEAST_HERO_PACKAGING_CANDIDATES_20261021_V1",
         "status": "STAGED_LOCAL_PHONE_CANDIDATE_IMAGES_NOT_PRODUCTION_RELEASE",
         "userSelectedPaintingsPreserved": 10,
-        "verifiedOriginalImageSHA": 10,
-        "candidateWebpFilesWritten": 10,
+        "verifiedOriginalImageSHA": len({x["sourceImageSHA256"] for x in rows}),
+        "candidateWebpFilesWritten": len({x["candidateFile"]["path"] for x in rows}),
         "humanAcceptedImagePhotos": 0,
         "explicitAppRightsReleaseApprovals": 0,
         "liveReleaseManifest": None,
         "source": "data/calendar/approved-feast-hero-photo-sha-evidence-20261021.v1.json",
         "sourceWorkflowRun": 39565626625,
-        "packaging": "Exact-source SHA verified, image resized to fit <=1600x1600 preserving painting content, no crop, source copy remains in 30-day Action archive.",
+        "editorialRevisions": ["data/calendar/approved-feast-holy-thursday-20261026-override.v1.json"],
+        "packaging": "Exact-source SHA verified. 10 feast dates use 9 distinct image files: Holy Thursday reuses the exact whole-painting Champaigne source and packaged file already acquired for 2026-05-27. The old Ugolino 2026-04-02 acquisition remains historical evidence only. No extra crops or publication approvals.",
         "rightsPolicy": "Met's OA is explicit CC0 for its particular public-domain images; Commons PD-Art can leave foreign reproduction/jurisdiction rights uncertainty. Do not publish based on Commons label alone.",
         "photographs": rows,
     }
