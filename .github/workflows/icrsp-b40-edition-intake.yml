@@ -22,6 +22,8 @@ on:
       - 'tests/test_icrsp_b45_independent_scanned_print_ocr.py'
       - 'data/source-text/icrsp-france-b46-vol8-14-independent-toc-provenance.v1.json'
       - 'tests/test_icrsp_b46_volume_viii_toc_provenance.py'
+      - 'data/source-text/icrsp-france-b47-annecy-vol7-vol9-eleven-workitem-crosswalk.v1.json'
+      - 'tests/test_icrsp_b47_vol7_vol9_11_workitems.py'
   workflow_dispatch:
 
 permissions:
@@ -55,3 +57,5 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_icrsp_b45_independent_scanned_print_ocr.py' -v
       - name: Check B46 1897 VIII independent TOC and historical manuscript routing
         run: python -m unittest discover -s tests -p 'test_icrsp_b46_volume_viii_toc_provenance.py' -v
+      - name: Verify B47 final eleven Annecy VII/IX work boundaries
+        run: python -m unittest discover -s tests -p 'test_icrsp_b47_vol7_vol9_11_workitems.py' -v
