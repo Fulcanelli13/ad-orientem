@@ -20,7 +20,7 @@ export function parseSqlInserts(sql,onRow){
  const re=/\bINSERT\s+INTO\s+\x60?([A-Za-z_]+)\x60?\s*(?:\(([^)]*)\)\s*)?VALUES\s*/gi;
  let m,rows=0,statements=0;
  while((m=re.exec(sql))){
-  const table=m[1],cols=m[2]?[...m[2].matchAll(/\x60?([A-Za-z_]+)\x60?/g)].map(x=>x[1]):COLS[table];
+  const table=m[1],cols=m[2]?[...m[2].matchAll(/\x60?([A-Za-z_-]+)\x60?/g)].map(x=>x[1]):COLS[table];
   let i=re.lastIndex,quoted=false,escaped=false;
   if(!COLS[table]){
    for(;i<sql.length;i++){const c=sql[i];if(quoted){if(escaped)escaped=false;else if(c==="\\")escaped=true;else if(c==="'")quoted=false}else if(c==="'")quoted=true;else if(c===";"){i++;break}}
