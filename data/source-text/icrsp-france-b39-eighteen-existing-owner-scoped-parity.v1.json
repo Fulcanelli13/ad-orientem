@@ -29,7 +29,9 @@
     "certifiedMissingProductionClaims": 0,
     "rightsCleared": 0,
     "originalPrinted1962FormularyCertifications": 0,
-    "exactSaintOwnerIdMatchesConfirmed": 0
+    "exactSaintOwnerIdMatchesConfirmed": 0,
+    "independentlyVerifiedSourceArticleErrors": 2,
+    "independentlyVerifiedIncorrectFields": 3
   },
   "cases": [
     {
@@ -660,5 +662,41 @@
     "massExplorerUpdated": false,
     "riteReaderUpdated": false,
     "originalSourceTextCopied": false
-  }
+  },
+  "externalIndependentSourceChecks": [
+    {
+      "id": "CHANTAL_YEAR_AND_PONTIFF",
+      "sourceArticleId": "a0415_ancien",
+      "hostSource": "https://icrspfrance.fr/textes-liturgiques.php?article=a0415_ancien",
+      "hostClaims": {
+        "death": "1643-12-13",
+        "canonizer": "Clement XII",
+        "canonizationYear": 1767
+      },
+      "independentAuthority": "https://www.vaticanstate.va/fr/etat-et-gouvernorat/notes-generales/saint-du-jour/2522-sainte-jeanne-francoise-de-chantal.html",
+      "corroborated": {
+        "death": "1641-12-13",
+        "canonizer": "Clement XIII",
+        "canonizationDate": "1767-07-16"
+      },
+      "determination": "SOURCE_HOST_EDITORIAL_ERROR_CONFIRMED__EXISTING_SAINT_RECORD_ID_NOT_FOUND",
+      "applicationUpdated": false
+    },
+    {
+      "id": "CARACCIOLO_FOUNDATION_YEAR",
+      "sourceArticleId": "a0510_ancien",
+      "hostSource": "https://icrspfrance.fr/textes-liturgiques.php?article=a0510_ancien",
+      "hostClaims": {
+        "orderFoundationYear": 1558
+      },
+      "independentAuthority": "https://www.vaticanstate.va/en/state-and-government/general-informations/saint-of-the-day/4249-june-4-saint-francis-caracciolo.html",
+      "corroborated": {
+        "birthYear": 1563,
+        "orderFoundationYear": 1588,
+        "approval": "1588-07-01"
+      },
+      "determination": "SOURCE_HOST_EDITORIAL_ERROR_CONFIRMED__EXISTING_SAINT_RECORD_ID_NOT_FOUND",
+      "applicationUpdated": false
+    }
+  ]
 }
