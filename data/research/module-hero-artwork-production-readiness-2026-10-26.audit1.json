@@ -453,7 +453,8 @@
         },
         "specific_quality_risks": [
           "Current 694×1100 file cannot show reliable pigment and brushwork microdetail; find independent institutional master.",
-          "Verify full garment/child/angel wings are visible, not a square commercial product crop."
+          "Verify full garment/child/angel wings are visible, not a square commercial product crop.",
+          "Important object-identity trap: Fondazione Zeri lists anonymous later copies and follower variants titled Angelo custode; the approved original is Pietro da Cortona 1656, Galleria Nazionale d'Arte Antica, Rome. Never accept a cleaner high-resolution image of a COPY as the original."
         ],
         "quality_verification_notes": [],
         "alternative_reference_candidates": [
@@ -466,6 +467,18 @@
             ],
             "rights": "copyrighted photograph; restricted/fee; not eligible under zero-cost policy",
             "remarks": "Shows better-quality capture exists, but this commercial version is NOT a usable master; hunt for rights-compatible institutional image"
+          },
+          {
+            "source": "https://www.wga.hu/html/c/cortona/4/10gangel.html",
+            "role": "original artwork attribution and collection witness",
+            "rights": "reference_only",
+            "remarks": "Pietro da Cortona's original (1656) in Galleria Nazionale d'Arte Antica, Rome; distinguish copies after Cortona"
+          },
+          {
+            "source": "https://catalogo.fondazionezeri.unibo.it/entry/work/52220/Anonimo%2C%20Angelo%20custode",
+            "role": "exclusion / copy identification reference",
+            "rights": "reference_only",
+            "remarks": "Explicitly labelled later copy with variants. DO NOT use as image for the approved original."
           }
         ]
       }
@@ -1477,6 +1490,11 @@
       "module_id": "sorrows",
       "finding": "Official MNAC image identified; present preview offers iconographic confidence, not yet microdetail assurance",
       "source": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000"
+    },
+    {
+      "module_id": "angel",
+      "finding": "Copy/variant confusion now proven by Fondazione Zeri's original-vs-copy catalogue data. Reject images of copied variants even if technically superior.",
+      "source": "https://catalogo.fondazionezeri.unibo.it/entry/work/52220/Anonimo%2C%20Angelo%20custode"
     }
   ]
 }
