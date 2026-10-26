@@ -20,8 +20,9 @@ assert.deepEqual(cold.commemorations,["St. Mark I"]);
 assert.equal(cold.preface.status,"SOURCE_CONFLICT",
   "Rosary must not display a Common Preface as correct");
 assert.equal(cold.preface.heading,null);
-assert.equal(cold.gloria,null,"Uncertified boolean in Proper cannot claim Gloria");
-assert.equal(cold.credo,null,"Uncertified boolean in Proper cannot claim Credo");
+assert.equal(cold.gloria,true,"A sourced II-class Rosary feast has a festive Office (BR 237c)");
+assert.equal(cold.credo,true,"The Rosary feast requires Credo (RGMR 475c)");
+assert.equal(cold.ordinaryRubricEvidence.gloria.status,"GENERAL_RULE_ATTESTED");
 assert.deepEqual(cold.alternateMasses,[],"An inherited alternative list proves no permission");
 assert.equal(cold.commemorationsApplyToChosenForm,null,
   "Calendar commemoration is not automatic Mass-form oration");
@@ -38,10 +39,11 @@ const certified=calendarOrdoMassFacts({...base,proper:{status:"ready",data:{
   ordoRubricDecision:{status:"CERTIFIED",source:"1962_PROPER_RESOLVER",
     principalCelebrationId:"sancti:10-07:2:w",date:"2026-10-07",
     calendarScope:"GENERAL_ROMAN_1962",evidenceUrl:"https://example.org/1962",
-    gloria:true,credo:false}
+    gloria:true,credo:true}
 }}});
 assert.equal(certified.gloria,true);
-assert.equal(certified.credo,false);
+assert.equal(certified.credo,true);
+assert.equal(certified.ordinaryRubricEvidence.credo.status,"PROPER_CERTIFIED");
 const wrongDate=calendarOrdoMassFacts({...base,proper:{status:"ready",data:{
   ...base.proper.data,
   ordoRubricDecision:{status:"CERTIFIED",source:"1962_PROPER_RESOLVER",
@@ -49,7 +51,8 @@ const wrongDate=calendarOrdoMassFacts({...base,proper:{status:"ready",data:{
     calendarScope:"GENERAL_ROMAN_1962",evidenceUrl:"https://example.org/1962",
     gloria:true,credo:true}
 }}});
-assert.equal(wrongDate.gloria,null,"A certified decision for a different date cannot be reused");
+assert.equal(wrongDate.gloria,true,"Source rules still apply when an unrelated Proper decision is rejected");
+assert.equal(wrongDate.ordinaryRubricEvidence.gloria.status,"GENERAL_RULE_ATTESTED");
 
 const forged=calendarOrdoMassFacts({...base,proper:{status:"ready",data:{
   ...base.proper.data,
@@ -58,8 +61,19 @@ const forged=calendarOrdoMassFacts({...base,proper:{status:"ready",data:{
     calendarScope:"GENERAL_ROMAN_1962",evidenceUrl:"https://example.org/1962",
     gloria:true,credo:true}
 }}});
-assert.equal(forged.gloria,null);
-assert.equal(forged.credo,null);
+assert.equal(forged.gloria,true);
+assert.equal(forged.credo,true);
+assert.equal(forged.ordinaryRubricEvidence.credo.status,"GENERAL_RULE_ATTESTED");
+
+const contrary=calendarOrdoMassFacts({...base,proper:{status:"ready",data:{
+  ...base.proper.data,
+  ordoRubricDecision:{status:"CERTIFIED",source:"1962_PROPER_RESOLVER",
+    principalCelebrationId:"sancti:10-07:2:w",date:"2026-10-07",
+    calendarScope:"GENERAL_ROMAN_1962",evidenceUrl:"https://example.org/1962",
+    gloria:true,credo:false}
+}}});
+assert.equal(contrary.credo,null,"A disagreement with RGMR 475c must be withheld");
+assert.equal(contrary.ordinaryRubricEvidence.credo.status,"SOURCE_CONFLICT");
 
 const unlisted=calendarOrdoMassFacts({...base,date:"2026-10-11",
   day:{main:{id:"tempora:Pent20-0:2:g",title:"XX Sunday after Pentecost",rank:2}},
