@@ -3,6 +3,7 @@ import {readFileSync} from "node:fs";
 import {
   MASS_CHANT_PROGRAMME_SCHEMA,massChantProgrammeIdentity,chantProgrammeEnabled,
   massChantOptions,createMassChantProgramme,selectedChantScoreForReader,
+  MASS_CHANT_ORDINARY_TRACKS,
 } from "../src/mass/mass-chant-programme.js";
 const base={date:"2026-10-26",celebrationId:"mass_of_day",
   requestedCelebrationId:"mass_of_day",celebrationType:"CALENDAR",
@@ -17,7 +18,11 @@ assert.equal(chantProgrammeEnabled({form:"MISSA_CANTATA_INCENSE",kind:"NUPTIAL"}
 assert.equal(chantProgrammeEnabled({form:"MISSA_CANTATA_INCENSE",kind:"SPECIAL_FORMULARY"}),false);
 assert.equal(chantProgrammeEnabled({form:"MISSA_CANTATA_INCENSE",kind:"VOTIVE"}),true);
 assert.equal(massChantOptions("KYRIE",ctx).length,3);
-assert.equal(massChantOptions("SANCTUS_BENEDICTUS",ctx).length,0);
+assert.equal(massChantOptions("SANCTUS_BENEDICTUS",ctx).length,1);
+assert.equal(massChantOptions("GLORIA",ctx).length,1);
+assert.equal(massChantOptions("CREDO",ctx).length,1);
+assert.equal(massChantOptions("AGNUS_DEI",ctx).length,1);
+assert.deepEqual(MASS_CHANT_ORDINARY_TRACKS,["KYRIE","GLORIA","CREDO","SANCTUS_BENEDICTUS","AGNUS_DEI"]);
 assert.equal(massChantOptions("INTROIT",ctx).length,0);
 assert.equal(massChantOptions("KYRIE",{form:"LOW",kind:"CALENDAR"}).length,0);
 assert.equal(massChantProgrammeIdentity({...base,date:"invalid"},ctx),null);
@@ -35,6 +40,23 @@ const resumed=JSON.parse(JSON.stringify({readerPreferences:{chantProgramme:selec
 assert.equal(selectedChantScoreForReader(resumed.readerPreferences.chantProgramme,"KYRIE"),"GREGOBASE-2982",
   "Active Mass resume must preserve only the explicit user-selected Kyrie");
 assert.equal(selectedChantScoreForReader(selected,"SANCTUS_BENEDICTUS"),null);
+const independent=createMassChantProgramme(base,{...ctx,selectedScores:{
+  KYRIE:"GREGOBASE-1184",GLORIA:"GREGOBASE-961",CREDO:"GREGOBASE-749",
+  SANCTUS_BENEDICTUS:"GREGOBASE-1384",AGNUS_DEI:"GREGOBASE-2760",
+  INTROIT:"GREGOBASE-1384"
+}});
+assert.equal(Object.keys(independent.selections).length,5);
+for(const track of MASS_CHANT_ORDINARY_TRACKS)
+  assert.equal(selectedChantScoreForReader(independent,track),independent.selections[track]);
+assert.equal(selectedChantScoreForReader(independent,"INTROIT"),null);
+assert.equal(independent.unresolvedTracks.includes("INTROIT"),true);
+assert.equal(independent.unresolvedTracks.includes("CREDO"),false);
+const nonPropagating=createMassChantProgramme(base,{...ctx,selectedScores:{KYRIE:"GREGOBASE-1184"}});
+assert.equal(selectedChantScoreForReader(nonPropagating,"GLORIA"),null);
+assert.equal(selectedChantScoreForReader(nonPropagating,"CREDO"),null);
+assert.equal(selectedChantScoreForReader(nonPropagating,"SANCTUS_BENEDICTUS"),null);
+assert.equal(selectedChantScoreForReader(nonPropagating,"AGNUS_DEI"),null);
+
 assert.equal(selectedChantScoreForReader({...selected,selections:{KYRIE:"UNKNOWN"}},"KYRIE"),null);
 assert.equal(selectedChantScoreForReader({...selected,sourceType:"SOURCE_CERTIFIED"},"KYRIE"),null);
 assert.equal(createMassChantProgramme(base,{...ctx,kyrieScoreId:"FREE_FORM_FAKE_TUNE"}).kyrieScoreId,null);
@@ -52,13 +74,15 @@ const reader=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"
 const score=readFileSync(new URL("../src/mass/reader-chant-score-pilot.js",import.meta.url),"utf8");
 assert.match(preflight,/data-full-mass-chant-choice/);
 assert.match(preflight,/chantIdentity=massChantProgrammeIdentity/);
-assert.match(preflight,/chantScoreId=options\.some/);
+assert.match(preflight,/chantSelections=\{\.\.\.chantSelections,\[track\]:value\}/);
+assert.match(preflight,/data-full-mass-other-chants/);
 assert.match(preflight,/if\(lastDate!==null&&date!==lastDate\).*chantScoreId=null/);
 assert.match(preflight,/if\(lastCelebrationKey!==null&&lastCelebrationKey!==celebrationKey\).*chantScoreId=null/);
 assert.match(preflight,/chantProgramme=createMassChantProgramme/);
 assert.match(preflight,/move\("\[data-full-mass-chant\]","\[data-folio-reader-controls\]"\)/);
 assert.match(bridge,/chantProgramme:selected\?\.chantProgramme\?\?null/);
 assert.match(reader,/selectedChantScoreForReader\(prepared\.readerPreferences\?\.chantProgramme,"KYRIE"\)/);
+assert.match(reader,/programmeSelections:Object\.fromEntries/);
 assert.match(score,/programmeScoreId=null/);
 assert.match(score,/let scoreId=preselected\?\.id\?\?SCHOLA_SCORE_PILOT\.id/);
 assert.doesNotMatch(preflight,/(?:localStorage|sessionStorage)\.setItem\(/);
