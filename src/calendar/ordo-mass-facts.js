@@ -40,10 +40,11 @@ export function latinIntroitIncipit(introit){
 
 // A future typed rubric decision may be displayed only when produced by the
 // owner of the 1962 Proper and scoped to the identical principal Mass.
-function certifiedOrdinaryFlags(proper,principalId){
+function certifiedOrdinaryFlags(proper,principalId,date){
   const d=proper?.ordoRubricDecision;
   if(d?.status!=="CERTIFIED"||d?.source!=="1962_PROPER_RESOLVER"||
-     d?.principalCelebrationId!==principalId||
+     d?.principalCelebrationId!==principalId||d?.date!==date||
+     d?.calendarScope!=="GENERAL_ROMAN_1962"||
      !str(d?.evidenceUrl).startsWith("https://"))return {gloria:null,credo:null};
   return {gloria:typeof d.gloria==="boolean"?d.gloria:null,
     credo:typeof d.credo==="boolean"?d.credo:null};
@@ -78,7 +79,7 @@ export function calendarOrdoMassFacts(resolution,{language="en"}={}){
       Object.freeze({status:"SOURCE_CONFLICT",heading:null}):
       decision.status==="MISSING_PREFACE"?
         Object.freeze({status:"MISSING",heading:null}):noStatus;
-  const flags=certifiedOrdinaryFlags(proper,principalId);
+  const flags=certifiedOrdinaryFlags(proper,principalId,date);
   const lang=String(language).toLowerCase().startsWith("fr")?"fr":"en";
   const commemorations=observedCommemorationLabels(resolution,{language:lang})
     .map(c=>c.name);
