@@ -1,0 +1,148 @@
+{
+  "schema": "ao-1961-graduale-romanum-palm-psalter-edition-contrast-v1",
+  "date": "2026-10-26",
+  "status": "EDITION_CONFLICT_IDENTIFIED_CANDIDATE_ONLY_NOT_RUNTIME",
+  "scope": "Competing Psalm text traditions for Roman restored Palm Sunday distribution; candidate GABC must match accepted Latin version before full notation.",
+  "owners": {
+    "romanSource": "https://github.com/Fulcanelli13/ad-orientem/issues/894",
+    "nativeSchola": "https://github.com/Fulcanelli13/ad-orientem/pull/1749",
+    "research": "https://github.com/Fulcanelli13/ad-orientem/pull/1752"
+  },
+  "printedEdition": {
+    "title": "Graduale Romanum",
+    "edition": "Solesmes 1961",
+    "oldPages": [
+      "167",
+      "168"
+    ],
+    "newPages": [
+      "143**",
+      "144**"
+    ],
+    "indexEvidence": "1961 printed Index Psalmorum separates Textus antiquus Psalmus 23/46 and Textus novus Psalmus 23/46",
+    "footnoteEvidence": "1961 Palm Sunday score footnote directs to the new psalm translation of the Vatican typical restored Holy Week Ordo, pp.143** ff.",
+    "indexWitness": "https://archive.ccwatershed.org/media/pdfs/13/08/14/13-54-23_0.pdf",
+    "oldTextWitness": "https://archive.ccwatershed.org/media/pdfs/13/08/14/13-43-42_0.pdf"
+  },
+  "candidates": [
+    {
+      "psalm": 23,
+      "stage": "PALM-R02",
+      "antiphonScoreId": 1215,
+      "older": {
+        "id": 288,
+        "incipit": "Domini est terra, et plenitudo eius",
+        "edition": "TEXTUS_ANTIQUUS",
+        "page": "167",
+        "url": "https://gregobase.selapa.net/chant.php?id=288",
+        "archived": true,
+        "sha256": "809e3d2c3bd37d8beb1035d4fd36cd5d4d4170abd56bc85583c493bea1f22e9e"
+      },
+      "newer": {
+        "id": 19315,
+        "incipit": "Domini est terra, et quae replent eam",
+        "edition": "TEXTUS_NOVUS",
+        "page": "143**",
+        "url": "https://gregobase.selapa.net/chant.php?id=19315",
+        "archived": false,
+        "sha256": null,
+        "transcriber": "Simone Sanavio",
+        "proofread": "GregoBase marks proofread Apr 22 2025"
+      },
+      "versePairs": [
+        [
+          1,
+          2
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "repeat": "AFTER_EVERY_TWO_VERSES",
+      "termination": "DOXOLOGY_AND_ANTIPHON"
+    },
+    {
+      "psalm": 46,
+      "stage": "PALM-R02",
+      "antiphonScoreId": 1155,
+      "older": {
+        "id": 435,
+        "incipit": "Omnes gentes, plaudite manibus, iubilate Deo in voce exsultationis",
+        "edition": "TEXTUS_ANTIQUUS",
+        "page": "168",
+        "url": "https://gregobase.selapa.net/chant.php?id=435",
+        "archived": true,
+        "sha256": "1d0c30188c5d7852b55c98af972342dad00c66652b9deabe7f70094d03420872"
+      },
+      "newer": {
+        "id": 19316,
+        "incipit": "Omnes gentes plaudite manibus, exsultate Deo voce laetitiae",
+        "edition": "TEXTUS_NOVUS",
+        "page": "144**",
+        "url": "https://gregobase.selapa.net/chant.php?id=19316",
+        "archived": false,
+        "sha256": null,
+        "transcriber": "Simone Sanavio",
+        "proofread": "No proofread flag on record"
+      },
+      "versePairs": "SEQUENTIAL_PAIRS",
+      "repeat": "AFTER_EVERY_TWO_VERSES",
+      "termination": "DOXOLOGY_AND_ANTIPHON"
+    }
+  ],
+  "romanRule": {
+    "status": "REQUIRES_EXACT_ROMAN_1962_PRIMARY_TEXT_APPROVAL",
+    "evidence": [
+      "1961 printed Graduale distinguishes Vatican restored Holy Week new psalm interpretation from older text",
+      "1956 restored Holy Week choir guide states pair order and flexible duration"
+    ],
+    "doNotPresumeOldTextAllowed": true,
+    "doNotAutoSelectEitherVersion": true
+  },
+  "sourceSafety": {
+    "firstVerseGabcIsNotCompletePsalm": true,
+    "scoreTitleNotAuthority": true,
+    "pitchNeumeCollationComplete": false,
+    "approvedRuntimeAssignments": 0
+  },
+  "acceptance": {
+    "state": "RESEARCH_REQUIREMENTS_ONLY",
+    "existingStage": "PALM-R02",
+    "shortDistribution": "Manually finish using prescribed concluding Gloria Patri and antiphon when distribution completes; never force a timed score",
+    "longDistribution": "Repeat antiphon after appointed verse pairs, adapt to actual duration",
+    "noMovementInference": true,
+    "noFixedSongPlaylist": true
+  },
+  "gates": [
+    {
+      "id": "PSALTER_LATIN_VERSION_1962",
+      "status": "OPEN",
+      "owner": "#894"
+    },
+    {
+      "id": "NOVUS_GABC_RAW_HASH_ARCHIVE",
+      "status": "OPEN",
+      "owner": "#1752"
+    },
+    {
+      "id": "FULL_PSALM_TEXT_AND_POINTING",
+      "status": "OPEN",
+      "owner": "#894"
+    },
+    {
+      "id": "NEW_PSALTER_NEUME_COMPARISON",
+      "status": "OPEN",
+      "owner": "#1749"
+    },
+    {
+      "id": "MANUAL_SCROLL_PHONE_ACCEPTANCE",
+      "status": "OPEN",
+      "owner": "#1749"
+    }
+  ]
+}
