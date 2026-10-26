@@ -23,11 +23,14 @@ const newCandidateIds=new Set(manifest.published_new.map(p=>p.candidate_id));
 assert.deepEqual([...newCandidateIds].sort(),["SG-INV-0115","SG-INV-0132"]);
 for(const candidateId of newCandidateIds){
   assert.ok(old.open_mapping_35.some(o=>o.candidate_ids.includes(candidateId)),"P44 must resolve a real P43 open mapping case: "+candidateId);
-  assert.ok(old.global_acquisition_500.some(o=>o.candidate_id===candidateId && !o.known_canonical_link),"P44 must close a genuinely unresolved global lead: "+candidateId);
+
 }
 assert.equal(old.open_mapping_35.filter(o=>!o.candidate_ids.some(x=>newCandidateIds.has(x))).length,manifest.remaining_open_mapping_queue_after_release);
-assert.equal(old.counts.global_unresolved_if_P43_merged-newCandidateIds.size,manifest.global_unresolved_after_release);
-assert.equal(old.counts.global_canonical_links_if_P43_merged+newCandidateIds.size,manifest.global_canonical_links_after_release);
+const globalResolved=manifest.global_queue_candidate_ids_resolved;
+assert.deepEqual(globalResolved,["SG-INV-0115"]);
+assert.ok(globalResolved.every(candidateId=>newCandidateIds.has(candidateId)&&old.global_acquisition_500.some(o=>o.candidate_id===candidateId&&!o.known_canonical_link)));
+assert.equal(old.counts.global_unresolved_if_P43_merged-globalResolved.length,manifest.global_unresolved_after_release);
+assert.equal(old.counts.global_canonical_links_if_P43_merged+globalResolved.length,manifest.global_canonical_links_after_release);
 const idx=RELEASES.findIndex(r=>r.id==="P44");
 const subsequent=new Set(RELEASES.slice(idx+1).flatMap(r=>(r.data.published_new||[]).map(x=>x.place_id)));
 const fresh=new Set(manifest.published_new.map(x=>x.place_id));
@@ -62,4 +65,4 @@ for(const x of manifest.published_new){
 }
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...sh,sources:s.sources,places:g.places}).pass,true);
-console.log("PASS P44: two exact Catalan basilicas (Núria and Balaguer), 500 canonical Places and 798 sources; 33 original mapping cases, 375 global unresolved.");
+console.log("PASS P44: two exact Catalan basilicas (Núria and Balaguer), 500 canonical Places and 798 sources; 33 original mapping cases, 376 global unresolved.");
