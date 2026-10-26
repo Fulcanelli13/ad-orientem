@@ -31,6 +31,9 @@ assert.ok(unknown.unresolvedTracks.includes("INTROIT"));
 const selected=createMassChantProgramme(base,{...ctx,kyrieScoreId:"GREGOBASE-2982"});
 assert.equal(selected.kyrieScoreId,"GREGOBASE-2982");
 assert.equal(selectedChantScoreForReader(selected,"KYRIE"),"GREGOBASE-2982");
+const resumed=JSON.parse(JSON.stringify({readerPreferences:{chantProgramme:selected}}));
+assert.equal(selectedChantScoreForReader(resumed.readerPreferences.chantProgramme,"KYRIE"),"GREGOBASE-2982",
+  "Active Mass resume must preserve only the explicit user-selected Kyrie");
 assert.equal(selectedChantScoreForReader(selected,"SANCTUS_BENEDICTUS"),null);
 assert.equal(selectedChantScoreForReader({...selected,selections:{KYRIE:"UNKNOWN"}},"KYRIE"),null);
 assert.equal(selectedChantScoreForReader({...selected,sourceType:"SOURCE_CERTIFIED"},"KYRIE"),null);
