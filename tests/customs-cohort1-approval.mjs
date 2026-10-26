@@ -15,6 +15,7 @@ unsigned.records[0].final_en.review_note="Automated release without human review
 unsigned.records[0].final_en.content_sha256="0".repeat(64);
 assert.ok(validateCohortApproval(unsigned).errors.some(x=>x.includes("actual responsible reviewer")));
 assert.ok(validateCohortApproval(unsigned).errors.some(x=>x.includes("not for current content")));
+unsigned.release_decision="AUTHORIZED_FOR_MERGE";
 assert.ok(validateCohortApproval(unsigned).errors.some(x=>x.includes("Release decision")));
 const absent=structuredClone(manifest);
 absent.records.pop();
