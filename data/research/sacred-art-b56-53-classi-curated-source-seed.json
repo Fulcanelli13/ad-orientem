@@ -321,7 +321,26 @@
         }
       ],
       "earlier_curator_selections": [],
-      "protected_approval": null
+      "protected_approval": null,
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T18:55:00Z",
+        "review_round": "CLASS_I_ROUND_2_LENT_2026",
+        "chosen_option_letter": null,
+        "status": "OPEN_UNDECIDED_HOLD",
+        "artwork_id": null,
+        "exact_physical_original": null,
+        "iconographic_relation": "NO_FEAST_ARTWORK_SELECTED",
+        "user_selection_is_authoritative_for_date": false,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": true,
+        "evidence_note": "User has not decided on a Laetare Sunday painting. Do not infer rejection or selection from earlier shortlist."
+      }
     },
     {
       "date": "2026-03-19",
@@ -355,6 +374,25 @@
         "proposed_exact_artwork_id": null,
         "new_user_selection_made": false,
         "photo_release_cleared": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T18:55:00Z",
+        "review_round": "CLASS_I_ROUND_2_LENT_2026",
+        "chosen_option_letter": null,
+        "status": "OPEN_RESEARCH_HOLD",
+        "artwork_id": null,
+        "exact_physical_original": null,
+        "iconographic_relation": "NO_FEAST_ARTWORK_SELECTED",
+        "user_selection_is_authoritative_for_date": false,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": true,
+        "evidence_note": "User approved none of Round 2's three St Joseph proposals; research further, preserving all prior historical candidate records."
       }
     },
     {
@@ -373,7 +411,26 @@
       "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
       "exact_research_links": [],
       "earlier_curator_selections": [],
-      "protected_approval": null
+      "protected_approval": null,
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T18:55:00Z",
+        "review_round": "CLASS_I_ROUND_2_LENT_2026",
+        "chosen_option_letter": null,
+        "status": "OPEN_RESEARCH_HOLD",
+        "artwork_id": null,
+        "exact_physical_original": null,
+        "iconographic_relation": "NO_FEAST_ARTWORK_SELECTED",
+        "user_selection_is_authoritative_for_date": false,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": true,
+        "evidence_note": "User approved none of Round 2's three Passion Sunday proposals; continue searching for a suitable authentic painting."
+      }
     },
     {
       "date": "2026-03-25",
@@ -422,6 +479,32 @@
         "proposed_exact_artwork_id": null,
         "new_user_selection_made": false,
         "photo_release_cleared": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T18:55:00Z",
+        "review_round": "CLASS_I_ROUND_2_LENT_2026",
+        "chosen_option_letter": "B",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:galleria-sabauda:orazio-gentileschi-annunciation-1623",
+        "exact_physical_original": {
+          "title": "The Annunciation",
+          "artist": "Orazio Gentileschi",
+          "year": "1623",
+          "museum": "Galleria Sabauda, Musei Reali, Turin, Italy",
+          "inventory": null,
+          "object_record_url": "https://museireali.beniculturali.it/"
+        },
+        "iconographic_relation": "EXACT_FEAST_EVENT_LUKE_1_26_38",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "Explicit user selection of option B in the Round 2 illustrated review."
       }
     },
     {
@@ -2105,6 +2188,58 @@
       "photo_approved": false,
       "production_image_approved": false,
       "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-03-15",
+      "user_confirmed_utc": "2026-10-26T18:55:00Z",
+      "review_round": "CLASS_I_ROUND_2_LENT_2026",
+      "status": "OPEN_UNDECIDED_HOLD",
+      "chosen_option_letter": null,
+      "artist": null,
+      "title": null,
+      "artwork_id": null,
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-03-19",
+      "user_confirmed_utc": "2026-10-26T18:55:00Z",
+      "review_round": "CLASS_I_ROUND_2_LENT_2026",
+      "status": "OPEN_RESEARCH_HOLD",
+      "chosen_option_letter": null,
+      "artist": null,
+      "title": null,
+      "artwork_id": null,
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-03-22",
+      "user_confirmed_utc": "2026-10-26T18:55:00Z",
+      "review_round": "CLASS_I_ROUND_2_LENT_2026",
+      "status": "OPEN_RESEARCH_HOLD",
+      "chosen_option_letter": null,
+      "artist": null,
+      "title": null,
+      "artwork_id": null,
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-03-25",
+      "user_confirmed_utc": "2026-10-26T18:55:00Z",
+      "review_round": "CLASS_I_ROUND_2_LENT_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "B",
+      "artist": "Orazio Gentileschi",
+      "title": "The Annunciation",
+      "artwork_id": "external:galleria-sabauda:orazio-gentileschi-annunciation-1623",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
     }
   ],
   "editorial_screen_20261026": {
@@ -2128,14 +2263,15 @@
   },
   "editorial_round_summary_20261026": {
     "previous_protected_date_approvals": 10,
-    "new_confirmed_date_painting_choices": 3,
-    "total_confirmed_date_paintings": 13,
+    "new_confirmed_date_painting_choices": 4,
+    "total_confirmed_date_paintings": 14,
     "class_i_dates": 53,
-    "still_open_date_choices": 40,
-    "of_which_explicit_open_hold": 1,
+    "still_open_date_choices": 39,
+    "of_which_explicit_open_hold": 4,
     "photo_release_count": 0,
     "no_contact_or_payments": true,
     "no_automated_candidate_approvals": true,
-    "only_round_1_user_choices_written": true
+    "only_explicit_round_1_and_2_user_choices_written": true,
+    "latest_review_round": "CLASS_I_ROUND_2_LENT_2026"
   }
 }
