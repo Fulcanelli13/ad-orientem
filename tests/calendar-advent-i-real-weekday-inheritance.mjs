@@ -43,6 +43,7 @@ try{
           collect1:pick(p.collects?.[0]).slice(0,130),
           collect2:pick(p.collects?.[1]).slice(0,130),
           epistle:pick(p.epistle).slice(0,130),
+          gradual:pick(p.gradual).slice(0,130),
           gospel:pick(p.gospel).slice(0,130),
           offertory:pick(p.offertory).slice(0,130),
           communion:pick(p.communion).slice(0,130),
@@ -71,8 +72,10 @@ for(const x of feria){
   assert.ok(contains(x.introit,"Ad te levavi"),x.date+": Advent Sunday Introit missing");
   assert.ok(contains(x.collect1,"Excita quaesumus Domine potentiam tuam"),
     x.date+": first Collect must be inherited Advent I, NOT a saint's commemoration");
-  for(const part of ["epistle","gospel","offertory","communion"])
+  for(const part of ["epistle","gospel","offertory","communion","gradual"])
     assert.ok(x[part]?.length>30,x.date+": required inherited "+part+" missing");
+  assert.equal(/allel[uú]ia/i.test(words(x.gradual)),false,
+    x.date+": Sunday Alleluia/verse must be omitted under the printed 1962 Advent feria rubric");
 }
 const dec5=rows.find(x=>x.date==="2026-12-05");
 assert.equal(dec5.main,"tempora:Adv1-6:3:v");
