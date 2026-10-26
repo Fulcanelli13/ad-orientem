@@ -39,7 +39,11 @@ jobs:
           node tools/mass/ingest-gregobase-1961.mjs \
             --sql "$RUNNER_TEMP/gregobase_online.sql" \
             --out "$RUNNER_TEMP/ao-1961-chant-ledger" \
-            --emit-shard-checkpoints 1
+            --emit-shard-checkpoints 1 | tee "$RUNNER_TEMP/ao-1961-checkpoints.log"
+          node tools/mass/replay-gregobase-checkpoints.mjs \
+            --log "$RUNNER_TEMP/ao-1961-checkpoints.log" \
+            --out "$RUNNER_TEMP/ao-1961-replayed"
+          diff -qr "$RUNNER_TEMP/ao-1961-chant-ledger" "$RUNNER_TEMP/ao-1961-replayed"
           echo "Generated files: $(find "$RUNNER_TEMP/ao-1961-chant-ledger" -type f | wc -l)"
       - name: Screen entire batch ledger into editorial and exception queues
         shell: bash
