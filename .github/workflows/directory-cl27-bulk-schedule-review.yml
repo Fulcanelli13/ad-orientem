@@ -5,12 +5,16 @@ on:
     paths:
       - 'data/directory/research/cl2-unified-20261026/**'
       - 'data/directory/research/cl27-bulk-timetable-audit-20261026/**'
+      - 'data/directory/tlm-user-classification-taxonomy.v1.json'
+      - 'tools/directory/build-cl27-tlm-classifications.py'
       - 'tools/directory/validate-cl27-bulk-schedule-audit.py'
       - '.github/workflows/directory-cl27-bulk-schedule-review.yml'
   push:
     paths:
       - 'data/directory/research/cl27-bulk-timetable-audit-20261026/**'
       - 'tools/directory/validate-cl27-bulk-schedule-audit.py'
+      - 'data/directory/tlm-user-classification-taxonomy.v1.json'
+      - 'tools/directory/build-cl27-tlm-classifications.py'
   workflow_dispatch:
 
 jobs:
@@ -24,3 +28,18 @@ jobs:
         run: python3 -m py_compile tools/directory/validate-cl27-bulk-schedule-audit.py
       - name: Verify complete source snapshot and all collision/review output
         run: python3 tools/directory/validate-cl27-bulk-schedule-audit.py
+      - name: Rebuild canonical research SQLite (no app publication)
+        run: python3 tools/directory/rebuild-cl2-research-snapshot.py --snapshot-dir data/directory/research/cl2-unified-20261026 --output /tmp/cl27-mass-registry.sqlite
+      - name: Generate classified directory with exact source joins
+        run: python3 tools/directory/build-cl27-tlm-classifications.py --db /tmp/cl27-mass-registry.sqlite --output /tmp/cl27-tlm-classification-facets.json
+      - name: Verify classification export does not turn source labels into official claims
+        run: |
+          python3 - <<'PY'
+          import json
+          d=json.load(open('/tmp/cl27-tlm-classification-facets.json'))
+          c=d['counts']
+          assert (c['distinct_physical_anchors'],c['classification_source_rows'],c['safe_exact_classification_source_joins'])==(2579,2715,2674)
+          assert c['public_classifications_approved']==0 and c['una_cum_confirmed_per_celebration']==0
+          assert all(r['una_cum']=='UNKNOWN' for r in d['physical_site_classification_facets'])
+          print('CL27 classifications PASS')
+          PY
