@@ -1044,8 +1044,7 @@ function ordoMassEvidenceMarkup(facts){
   if(["MATCH","SOURCE_CONFLICT"].includes(p?.status)&&/^[0-9]{3}_[A-Z]$|^[0-9]{3}$/.test(String(p?.clause||""))&&
      /^https:\/\/isidore\.co\/divinum\//.test(String(p?.sourceUrl||"")))
     rows.push(`<li><b>${esc(L("Preface","Préface"))}</b> · § ${esc(p.clause.replace("_","(")+(/_/.test(p.clause)?")":""))} · <a href="${esc(p.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(L("1960 Missal rubrics","Rubriques du Missel de 1960"))}</a></li>`);
-  return rows.length?`<details class="aoCalOrdoBasis"`;
-><summary>${esc(L("Rubrical basis","Fondement rubrical"))}</summary><ul>${rows.join("")}</ul></details>`:"";
+  return rows.length?`<details class="aoCalOrdoBasis"><summary>${esc(L("Rubrical basis","Fondement rubrical"))}</summary><ul>${rows.join("")}</ul></details>`:"";
 }
 function ordoMassFactMarkup(facts){
   if(facts?.status!=="SOURCE_PROPER")return "";
