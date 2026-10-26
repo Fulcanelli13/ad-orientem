@@ -18,6 +18,27 @@ assert.equal(typeof sandbox.exsurge.Gabc.createMappingsFromSource,"function");
 assert.equal(typeof sandbox.exsurge.ChantScore.prototype.createSvgNode,"function");
 assert.equal(typeof sandbox.exsurge.ChantScore.prototype.layoutChantLines,"function");
 assert.equal(typeof sandbox.exsurge.ChantScore.prototype.performLayoutAsync,"function");
+for(const item of SCHOLA_SCORE_CATALOGUE){
+  const api=sandbox.exsurge;
+  const context=new api.ChantContext();
+  const mappings=api.Gabc.createMappingsFromSource(context,item.gabc);
+  assert.ok(mappings.length>4,"GABC must parse actual notes: "+item.id);
+  const score=new api.ChantScore(context,mappings,true);
+  score.performLayout(context);
+  const lineCounts=[];
+  for(const width of [260,420,800]){
+    await new Promise((resolve,reject)=>{
+      try{score.layoutChantLines(context,width,resolve)}catch(error){reject(error)}
+    });
+    const tree=score.createSvgTree(context);
+    assert.equal(tree.name,"svg",item.id+" needs a genuine SVG");
+    assert.ok(tree.children.length,item.id+" notation SVG must not be empty");
+    lineCounts.push(score.chantLines.length);
+  }
+  assert.ok(lineCounts[0]>=lineCounts[2],
+    item.id+" must reflow and fit fewer chant lines on a wide screen");
+}
+
 
 const widths=[];
 let sourceUsed=null,nodes=0,svgCreated=0;
