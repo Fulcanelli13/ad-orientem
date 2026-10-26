@@ -26,6 +26,20 @@ for(const profile of status.communityProfiles){
 // Community policy is contextual evidence, not a site/celebration Una Cum override.
 assert.equal(audit.counts.una_cum_source_assertions_direct,0);
 assert.equal(new Set(audit.four_literal_missal_leads.map(r=>r.source_id)).size,4);
+const ownerEdition=JSON.parse(readFileSync("data/directory/research/b92-missal1962-four-owner-witness-review-20261026.v1.json","utf8"));
+assert.equal(ownerEdition.cases.length,4);
+assert.equal(ownerEdition.direct_owner_confirmed,3);
+assert.equal(ownerEdition.edition_hold,1);
+assert.deepEqual(new Set(ownerEdition.cases.map(c=>c.source_id)),
+  new Set(audit.four_literal_missal_leads.map(c=>c.source_id)));
+for(const c of ownerEdition.cases){
+ assert.match(c.owner_page,/^https:\/\//);
+ assert.equal(c.una_cum,"UNKNOWN");
+ assert.equal(c.ministry_binding,"PENDING");
+ assert.equal(c.schedule_certification,"NOT_CHANGED");
+ if(c.verification==="OWNER_PAGE_DIRECT_WITNESS")assert.equal(c.missal_edition,"1962");
+ else assert.equal(c.missal_edition,"UNKNOWN");
+}
 
 const unknown=unknownResearchClassification({source_label:"Una Voce / diocesan coetus"});
 assert.equal(unknown.una_cum,"UNKNOWN");
