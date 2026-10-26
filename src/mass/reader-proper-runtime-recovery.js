@@ -142,6 +142,13 @@ export function authenticated1962PrefaceRecoveryOwner(principalCelebrationId,sou
   return null;
 }
 async function recoverContradictoryPreface(data,hostResolver,principalCelebrationId,diagnostic){
+  // This source correction belongs only to the selected calendar Mass.
+  // Never reinterpret an expressly selected votive, Requiem or special
+  // formulary, even when it happens to inherit the day's base source path.
+  const requested=String(data?.requestedCelebrationId??"").trim();
+  if(requested&&requested!=="mass_of_day")return null;
+  if(/(?:votive|requiem|mass_of_dead)/i.test(String(data?.riteProfile??data?.profile??"")))
+    return null;
   const owner=authenticated1962PrefaceRecoveryOwner(principalCelebrationId,data?.sourcePath);
   if(!owner)return null;
   const heading=String(data.preface?.lat??data.preface?.la??"").trim();
