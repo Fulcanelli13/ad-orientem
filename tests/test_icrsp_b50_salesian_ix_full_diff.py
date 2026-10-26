@@ -28,6 +28,10 @@ class TestB50(unittest.TestCase):
         self.assertEqual(b50.normalize("vostre   [123]   cœur"),"vostre cœur")
         self.assertEqual(b50.tokens(["Bonté, et grâce."],True),b50.tokens(["bonté et grâce"],True))
         self.assertNotEqual(b50.tokens(["amour"],True),b50.tokens(["amertume"],True))
+    def test_embedded_printed_page_marker_in_boundary(self):
+        html="<p>Opening [137] begin with enough words now.</p><p>Middle sufficient words to compare with baseline text.</p><p>Last concluding sentence ends with Amen [138].</p>"
+        self.assertEqual(len(b50.extract(html,"Opening begin","Last concluding",21)),3)
+
     def test_diff_stats_and_release_gates(self):
         x=b50.delta(["je","crois"],["je","ne","crois"])
         self.assertEqual(x["insert_blocks"],1)

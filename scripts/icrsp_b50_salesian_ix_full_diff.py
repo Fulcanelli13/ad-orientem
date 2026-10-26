@@ -7,6 +7,7 @@ from difflib import SequenceMatcher
 from hashlib import sha256
 from html.parser import HTMLParser
 import json
+import os
 from pathlib import Path
 import re
 import unicodedata
@@ -121,9 +122,36 @@ def main():
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     summary={"complete":report["machine_collation_complete"],
-      "works":[{"id":w["work_id"],"host_tokens":w["host_tokens"],"edition_tokens":w["edition_tokens"],
-        "lexical_ratio":w["lexical_diff"]["matching_ratio"]} for w in report["works"]],
+      "works":[{
+        "id":w["work_id"], "host_article_id":w["host_article_id"],
+        "host_tokens":w["host_tokens"],"edition_tokens":w["edition_tokens"],
+        "host_paragraphs":w["host_paragraphs"],"edition_paragraphs":w["edition_paragraphs"],
+        "host_sha256":w["host_normalized_sha256"],"edition_sha256":w["edition_normalized_sha256"],
+        "same_lexical_tokens":w["same_lexical_tokens"],
+        "lexical_diff":w["lexical_diff"],"whitespace_diff":w["whitespace_diff"],
+        "machine_compared":w["whole_bounded_work_machine_compared"],
+        "editorially_adjudicated":w["individual_differences_manually_adjudicated"]
+      } for w in report["works"]],
       "errors":report["errors"]}
+    # Persist metadata only in Actions logs and Step Summary, not downloaded text.
     print("B50_MACHINE_RESULT="+json.dumps(summary,ensure_ascii=False))
+    step_summary=os.environ.get("GITHUB_STEP_SUMMARY")
+    if step_summary:
+        lines=["### B50 full-work textual comparison","",
+               "Result: "+("3/3 source works machine-compared" if summary["complete"] else "incomplete — no all-work clearance"),"",
+               "| Work | Host tokens | Edition tokens | Lexical agreement | Changed blocks |",
+               "|---|---:|---:|---:|---:|"]
+        for work in summary["works"]:
+            lines.append("| "+work["id"]+" | "+str(work["host_tokens"])+" | "+
+                         str(work["edition_tokens"])+" | "+
+                         str(work["lexical_diff"]["matching_ratio"])+" | "+
+                         str(work["lexical_diff"].get("changed_blocks",0))+" |")
+        if summary["errors"]:
+            lines.append("")
+            lines.append("Blocked: "+", ".join(x.get("work_id",x.get("scope","unknown"))+
+                                                ":"+x["error_type"] for x in summary["errors"]))
+        lines.extend(["","Photographed-print, editorial adjudication, reuse rights and app publication: **NOT CLEARED**."])
+        with open(step_summary,"a",encoding="utf-8") as out:
+            out.write("\n".join(lines)+"\n")
     return 0 if report["machine_collation_complete"] else 2
 if __name__=="__main__":raise SystemExit(main())
