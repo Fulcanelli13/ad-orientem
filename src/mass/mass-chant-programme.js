@@ -31,16 +31,18 @@ export function massChantOptions(trackId,{form,kind}={}){
     typeof item.gabc==="string"&&item.gabc.includes("%%")&&IDENTIFIER.test(item.id)));
 }
 export function createMassChantProgramme(legacy,{
-  form,kind,kyrieScoreId=null,selectedScores=null,
+  form,kind,kyrieScoreId=null,selectedScores=null,sanctusPerformance="UNSPECIFIED",
 }={}){
   const identity=massChantProgrammeIdentity(legacy,{form,kind});
   if(!identity||!chantProgrammeEnabled({form,kind}))return null;
+  const performance=["GREGORIAN","POLYPHONIC"].includes(sanctusPerformance)?sanctusPerformance:"UNSPECIFIED";
   const requested=selectedScores&&typeof selectedScores==="object"?selectedScores:{};
   const valid={};
   for(const trackId of MASS_CHANT_ORDINARY_TRACKS){
     const candidate=trackId==="KYRIE"
       ?(requested.KYRIE??kyrieScoreId):requested[trackId];
-    if(massChantOptions(trackId,{form,kind}).some(item=>item.id===candidate))
+    if(!(trackId==="SANCTUS_BENEDICTUS"&&performance==="POLYPHONIC") &&
+       massChantOptions(trackId,{form,kind}).some(item=>item.id===candidate))
       valid[trackId]=candidate;
   }
   const selections=Object.freeze(valid);
@@ -50,7 +52,7 @@ export function createMassChantProgramme(legacy,{
     sourceType:"USER_REPORTED_MUSIC_NOT_RUBRICALLY_CERTIFIED",
     sourceOfLiturgicalText:"EXISTING_1962_MASS_HOST",
     // Backward-compatible Kyrie field; all new consumers use selections.
-    kyrieScoreId:selections.KYRIE??null,selections,
+    kyrieScoreId:selections.KYRIE??null,selections,sanctusPerformance:performance,
     unresolvedTracks:Object.freeze(SCHOLA_SCORE_TRACK_IDS.filter(id=>!selections[id])),
     performanceNote:"SCHOLA_TIMING_UNOBSERVED",
   });
@@ -59,6 +61,7 @@ export function selectedChantScoreForReader(programme,trackId){
   if(programme?.schema!==MASS_CHANT_PROGRAMME_SCHEMA||
      programme.sourceType!=="USER_REPORTED_MUSIC_NOT_RUBRICALLY_CERTIFIED"||
      !chantProgrammeEnabled(programme))return null;
+  if(trackId==="SANCTUS_BENEDICTUS"&&programme.sanctusPerformance==="POLYPHONIC")return null;
   const id=programme.selections?.[trackId]??null;
   return massChantOptions(trackId,programme).some(item=>item.id===id)?id:null;
 }
