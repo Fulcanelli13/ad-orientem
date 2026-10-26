@@ -7,6 +7,7 @@ on:
       - 'tests/scripture-biblical-correspondences-registry.mjs'
       - 'tests/scripture-correspondences-bulk-discovery.mjs'
       - 'tests/scripture-icrsp-atomic-editorial-review.mjs'
+      - 'tests/scripture-icrsp-four-source-and-first-preview.mjs'
       - 'docs/research/BIBLICAL-CORRESPONDENCES-SOURCE-RECONCILIATION-20261021.md'
       - '.github/workflows/biblical-correspondences-research.yml'
   push:
@@ -16,6 +17,7 @@ on:
       - 'tests/scripture-biblical-correspondences-registry.mjs'
       - 'tests/scripture-correspondences-bulk-discovery.mjs'
       - 'tests/scripture-icrsp-atomic-editorial-review.mjs'
+      - 'tests/scripture-icrsp-four-source-and-first-preview.mjs'
       - '.github/workflows/biblical-correspondences-research.yml'
   workflow_dispatch:
 
@@ -33,3 +35,4 @@ jobs:
       - run: node tests/scripture-biblical-correspondences-registry.mjs
       - run: node tests/scripture-correspondences-bulk-discovery.mjs
       - run: node tests/scripture-icrsp-atomic-editorial-review.mjs
+      - run: node tests/scripture-icrsp-four-source-and-first-preview.mjs
