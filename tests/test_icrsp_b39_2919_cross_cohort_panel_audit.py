@@ -50,6 +50,13 @@ class B39PanelAudit(unittest.TestCase):
     def test_original_label_is_not_authorship_certification(self):
         self.assertEqual(family("Dom Guéranger, l’Année Liturgique", ""),
                          "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK")
+        self.assertEqual(family("Dom Pius Parsch, le Guide dans l’année liturgique",
+                                "PARSCH_GUIDE_ANNEE_LITURGIQUE"),
+                         "PARSCH_GUIDE_LITURGIQUE_EDITION_CHECK")
+        self.assertEqual(family("Sermon pour la fête de la Présentation de la Sainte Vierge", ""),
+                         "OTHER_HOST_PANEL_PROVENANCE_CHECK")
+        self.assertEqual(self.summary["totals"]["shortSameArticleCrossLabelPlaceholderGroups"],3)
+        self.assertEqual(self.summary["totals"]["substantiveMixedFamilyBodyCollisions"],0)
         self.assertEqual(family("Saint François de Sales, Sermons", ""),
                          "FRANCIS_DE_SALES_HOST_ATTRIBUTION_UNVERIFIED")
         self.assertEqual(family("Office du jour", ""), "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK")
