@@ -1,0 +1,45 @@
+{
+  "schema": "AO_CL17_FSSP_POTSDAM_OWNER_CROSSCHECK_V1",
+  "checked_on": "2026-10-26",
+  "original_mass_row": 20,
+  "original_day": "Sunday",
+  "original_time": "17:00",
+  "book_1962_source_scope": "FSSP directly lists the Potsdam hospital chapel as a Mass venue Sunday 17:00, and its community officially describes following the 1962 rubrics. The hospital directly identifies Sunday 17:00 as a Tridentine Latin-rite Mass. This supports the liturgical-book programme at that celebration without ascribing each priest identity.",
+  "venue_name": "St. Josefs-Kapelle, Alexianer St. Josefs Krankenhaus Potsdam",
+  "owner_address_for_chapel": "Allee nach Sanssouci 7, 14471 Potsdam",
+  "hospital_car_access": "Zimmerstraße 6, 14471 Potsdam",
+  "single_venue_not_two": true,
+  "owner_witnesses": [
+    {
+      "url": "https://www.alexianer-potsdam.de/st-josefs-kapelle",
+      "role": "HOSPITAL_OPERATOR_EXACT_CHAPEL_ADDRESS_TRIDENTINE_SUNDAY_1700"
+    },
+    {
+      "url": "https://www.alexianer-potsdam.de/orientierung",
+      "role": "HOSPITAL_OPERATOR_EXPLAINS_TWO_ACCESS_POINTS"
+    },
+    {
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "role": "DIRECT_FSSP_POTSDAM_MASS_SITE_AND_SUNDAY_1700"
+    },
+    {
+      "url": "https://koeln.petrusbruderschaft.de/wer-sind-wir/",
+      "role": "FSSP_EXPLICIT_INSTITUTIONAL_1962_RUBRICS_POLICY"
+    },
+    {
+      "url": "https://www.erzbistumberlin.de/wir-sind/pfarreien/kirchen-und-gottesdienstsuche/?tx_solr%5Bfilter%5D%5B0%5D=categories%3APotsdam",
+      "role": "BERLIN_DIOCESE_NAMED_CHAPEL_AND_SUNDAY_1700"
+    }
+  ],
+  "exception_codes": [
+    "CHAPEL_ADDRESS_VS_CAMPUS_CAR_ENTRANCE",
+    "NOT_TWO_VENUES",
+    "LIVE_WEEK_OPERATION_UNAPPROVED"
+  ],
+  "physical_entrance_verified_for_public_map": false,
+  "geocode_verified": false,
+  "future_mass_calendar_verified": false,
+  "publication_approved": false,
+  "una_cum_assessed": false,
+  "new_source_scoped_liturgical_book_evidence_accepted": true
+}
