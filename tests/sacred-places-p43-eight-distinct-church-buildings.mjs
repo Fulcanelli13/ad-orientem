@@ -7,7 +7,7 @@ const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const m=read("data/geography/research/sacred-places-p43-eight-distinct-church-buildings.v1.json"),a=read("data/geography/research/sacred-places-p43-open35-global500-reconciliation.v1.json"),g=read("data/geography/seed-registry.v1.json"),s=read("data/shrines/source-registry.v1.json"),h=read("data/explore/heritage-place-reconciliation.review.v1.json"),sh=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 assert.deepEqual(Object.values(m.baseline),[490,788,490,231,146,9]);assert.deepEqual(Object.values(m.proposed),[498,796,498,239,146,9]);assert.ok(RELEASES.some(x=>x.id==="P43"));
 assert.deepEqual([g.places.length,s.sources.length,h.place_crosswalk.length,h.exception_queues.places_without_direct_claim.length,g.geoAreas.length,g.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas,LIVE.links]);
-assert.ok(LIVE.places>=498 && LIVE.sources>=796 && LIVE.unlinked>=239);assert.equal(LIVE.areas,146);assert.equal(LIVE.links,9);
+assert.ok(LIVE.places>=498 && LIVE.sources>=796 && LIVE.unlinked>=239);assert.ok(LIVE.areas>=146, "Future country-area releases cannot invalidate frozen P42/P43 history");assert.equal(LIVE.links,9);
 assert.deepEqual([m.published_new.length,m.new_mapping_rows_resolved,m.new_candidate_ids_resolved],[8,6,7]);
 assert.equal(a.open_mapping_35.length,35);assert.equal(a.global_acquisition_500.length,500);
 assert.equal(a.counts.global_canonical_links_if_P43_merged,123);assert.equal(a.counts.global_unresolved_if_P43_merged,377);
