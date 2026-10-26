@@ -19,6 +19,7 @@ function expectedFor(id,date,rank,colour){
   // vernacular titles, colour, modern observances or commemoration labels.
   const main=id.split(":").slice(0,2).join(":").toLowerCase();
   const exact={
+    "sancti:01-01":rule("NATIVITATE","484_A","OCTAVE_OF_THE_NATIVITY"),
     "sancti:01-06":rule("EPIPHANIA","485_A","EPIPHANY"),
     "sancti:01-13":rule("EPIPHANIA","485_A","BAPTISM_OF_THE_LORD"),
     "sancti:02-02":rule("NATIVITATE","484_A","PURIFICATION"),
@@ -28,17 +29,32 @@ function expectedFor(id,date,rank,colour){
     "sancti:10-07":rule("MARIA","495","OUR_LADY_OF_THE_ROSARY"),
     "sancti:10-du":rule("CHRISTUS_REX","492","CHRIST_THE_KING"),
     "sancti:10-28":rule("APOSTOLI","497","SIMON_JUDE"),
+    "sancti:07-01":rule("CRUX","487_A","PRECIOUS_BLOOD"),
+    "sancti:09-14":rule("CRUX","487_A","EXALTATION_OF_CROSS"),
     "sancti:12-08":rule("MARIA","495","IMMACULATE_CONCEPTION"),
     "tempora:pent02-5":rule("COR_IESU","491","SACRED_HEART"),
     "tempora:pasc5-4":rule("ASCENSIO","490_A","ASCENSION"),
   };
   if(exact[main])return exact[main];
+  // This is a reviewed index of the *named Roman calendar source paths*,
+  // not an inference based on a red vestment or "saint" in the title.
+  const apostleFeasts=new Set([
+    "02-24","04-25","06-11","06-29","06-30","07-25",
+    "08-24","09-21","10-28","11-30","12-21"
+  ]);
+  const apostleKey=main.match(/^sancti:(\d{2}-\d{2})$/);
+  if(apostleKey&&apostleFeasts.has(apostleKey[1]))
+    return rule("APOSTOLI","497","NAMED_APOSTLE_OR_EVANGELIST");
+  if(/^sancti:12-25m[123]:1:w$/i.test(id))
+    return rule("NATIVITATE","484_A","NATIVITY_THREE_MASSES");
   const md=date.slice(5);
   // Christmas octave preface overrides an ordinary saint's proper, but
   // not a Preface proper to one of the divine mysteries or Persons: those
   // need particular source scrutiny. Limit this branch to matched general
   // Christmas octave observances and unambiguous Stephen/John/Innocents.
   if(/^tempora:Nat/i.test(id))return rule("NATIVITATE","484_A_B","CHRISTMAS_TEMPORAL");
+  if(/^tempora:Epi1-0:2:w$/i.test(id)&&md>="01-07"&&md<="01-13")
+    return rule("EPIPHANIA","485_B","EPIPHANY_SEASON_SUNDAY");
   if(["12-26","12-27","12-28"].includes(md)&&/^sancti:12-(?:26|27|28):/i.test(id))
     return rule("NATIVITATE","484_B","CHRISTMAS_OCTAVE_SAINT");
   if(id===":feria:4:w"){
@@ -51,13 +67,16 @@ function expectedFor(id,date,rank,colour){
   // identities can prove seasonal prefatory obligation.
   if(/^tempora:Adv[1-4]-0:[12]:v$/i.test(id))
     return rule("TRINITATE","494_B","ADVENT_SUNDAY");
-  if(/^tempora:Pent\d{1,2}-0r?:2:g$/i.test(id))
+  if(/^tempora:(?:Pent\d{1,2}|Epi[2-6])-0r?:2:g$/i.test(id)||
+     /^tempora:Quadp[1-3]-0:2:v$/i.test(id)||
+     /^tempora:Pent01-0r?:1:w$/i.test(id))
     return rule("TRINITATE","494_B","PER_ANNUM_SUNDAY");
   if(/^tempora:Quadp\d-[3-6]:[123]:v$/i.test(id)||
-     /^tempora:Quad[1-4]-[0-6]:[123]:v$/i.test(id))
+     /^tempora:Quad[1-4]-[0-6]:[123]:[a-z]{1,2}$/i.test(id))
     return rule("QUADRAGESIMA","486_A","LENT_TEMPORAL");
-  if(/^tempora:Quad5-[0-6]:[123]:v$/i.test(id)||
-     /^tempora:Quad6-[0-3]r:[123]:[a-z]+$/i.test(id))
+  if(/^tempora:Quad5-[0-6](?:Feria)?:[123]:v$/i.test(id)||
+     /^tempora:Quad6-[0-3]r?:[123]:[a-z]{1,2}$/i.test(id)||
+     /^tempora:Quad6-4r:1:w$/i.test(id))
     return rule("CRUX","487_A","PASSION_TEMPORAL");
   if(/^tempora:Quad6-6r:1:vw$/i.test(id))
     return rule("PASCHALIS","489_A","EASTER_VIGIL_MASS");
@@ -85,7 +104,7 @@ export function classify1962PrefaceHeading(heading){
     ["MARIA",/^de\s+(?:beata\s+maria\s+virgine|b\.?\s*m\.?\s*v\.?)/],
     ["SPIRITU",/^de\s+(?:spiritu\s+sancto|sancto\s+spiritu)/],
     ["COR_IESU",/^de\s+(?:(?:sacratissimo|sacro)\s+)?(?:corde|cordis)\s+(?:iesu|jesu)/],
-    ["CHRISTUS_REX",/^de\s+(?:domino\s+nostro\s+)?(?:(?:iesu|jesu)\s+christo\s+rege|christo\s+rege)/],
+    ["CHRISTUS_REX",/^de\s+(?:(?:domino\s+nostro\s+)?(?:(?:iesu|jesu)\s+christo\s+rege|christo\s+rege)|d\.n\.\s*(?:iesu|jesu)\s+christi\s+rege)/],
     ["JOSEPH",/^de\s+(?:(?:sancto|s\.)\s+)?(?:ioseph|joseph)\b/],
     ["APOSTOLI",/^de\s+apostol/],
     ["ASCENSIO",/^de\s+ascension/],
