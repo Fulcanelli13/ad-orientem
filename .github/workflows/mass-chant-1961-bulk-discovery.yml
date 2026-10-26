@@ -6,7 +6,9 @@ on:
     paths:
       - '.github/workflows/mass-chant-1961-bulk-discovery.yml'
       - 'tools/mass/ingest-gregobase-1961.mjs'
-      - 'tests/mass-chant-catalogue-ingest.mjs'
+      - 'tools/mass/replay-gregobase-checkpoints.mjs'
+      - 'tools/mass/screen-gregobase-1961.mjs'
+      - 'tests/mass-chant-catalogue-*.mjs'
 permissions:
   contents: read
 jobs:
@@ -20,6 +22,7 @@ jobs:
         run: |
           node tests/mass-chant-catalogue-ingest.mjs
           node tests/mass-chant-catalogue-screen.mjs
+          node tests/mass-chant-catalogue-checkpoint.mjs
       - name: Fetch pinned public GregoBase database
         shell: bash
         run: |
@@ -36,7 +39,7 @@ jobs:
           node tools/mass/ingest-gregobase-1961.mjs \
             --sql "$RUNNER_TEMP/gregobase_online.sql" \
             --out "$RUNNER_TEMP/ao-1961-chant-ledger" \
-            --print-rows 3500
+            --emit-shard-checkpoints 1
           echo "Generated files: $(find "$RUNNER_TEMP/ao-1961-chant-ledger" -type f | wc -l)"
       - name: Screen entire batch ledger into editorial and exception queues
         shell: bash
