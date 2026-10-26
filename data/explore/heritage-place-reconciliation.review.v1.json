@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 504,
+    "places": 512,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 245,
+    "places_without_direct_claim": 253,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -273,7 +273,15 @@
       "place:BE:p46-sg-0225-30163817",
       "place:PL:p46-sg-0215-229930104",
       "place:HR:p46-sg-0313-308623424",
-      "place:CH:p46-sg-0272-319525195"
+      "place:CH:p46-sg-0272-319525195",
+      "place:KR:p48-sg-0628-210335697",
+      "place:US:p48-sg-0400-866036994",
+      "place:ES:p48-sg-0114-122873003",
+      "place:MX:p48-sg-0432-155296070",
+      "place:AT:p48-sg-0197-239345806",
+      "place:AU:p48-sg-0743-155809136",
+      "place:CA:p48-sg-0424-103862161",
+      "place:PT:p48-sg-0156-96319696"
     ],
     "customs_without_exact_place": [
       {
@@ -5783,6 +5791,54 @@
     {
       "place_id": "place:CH:p46-sg-0272-319525195",
       "display_name": "Chapelle Notre-Dame des Marches",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:KR:p48-sg-0628-210335697",
+      "display_name": "Myeongdong Cathedral (Cathedral of the Immaculate Conception)",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:p48-sg-0400-866036994",
+      "display_name": "St. Joseph Shrine, Detroit",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:p48-sg-0114-122873003",
+      "display_name": "Basílica de Nuestra Señora de la Candelaria",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MX:p48-sg-0432-155296070",
+      "display_name": "Basílica de Nuestra Señora de la Soledad",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:AT:p48-sg-0197-239345806",
+      "display_name": "Salzburger Dom (Cathedral of Saints Rupert and Virgil)",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:AU:p48-sg-0743-155809136",
+      "display_name": "St Patrick's Cathedral, Melbourne",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CA:p48-sg-0424-103862161",
+      "display_name": "Basilique-cathédrale Notre-Dame-de-Québec",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PT:p48-sg-0156-96319696",
+      "display_name": "Igreja de Santo António de Lisboa",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }

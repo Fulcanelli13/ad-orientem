@@ -1,0 +1,238 @@
+{
+  "schema": "AO_SACRED_PLACES_P48_EIGHT_GLOBAL_VERIFIED_BUILDINGS_V1",
+  "date": "2026-10-26",
+  "status": "PROPOSED_CANONICAL_RELEASE_PENDING_CI_MERGE",
+  "baseline": {
+    "places": 504,
+    "sources": 802,
+    "crosswalk": 504,
+    "unlinked": 245,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 512,
+    "sources": 810,
+    "crosswalk": 512,
+    "unlinked": 253,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "new_physical_locations": 8,
+  "new_mapping_rows_resolved": 0,
+  "new_global_candidate_ids_resolved": 8,
+  "global_canonical_links_after_release": 136,
+  "global_unresolved_after_release": 364,
+  "remaining_open_mapping_queue_after_release": 33,
+  "new_geo_areas": [],
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0628",
+      "place_id": "place:KR:p48-sg-0628-210335697",
+      "name": "Myeongdong Cathedral (Cathedral of the Immaculate Conception)",
+      "place_type": "cathedral",
+      "country": "KR",
+      "country_name": "South Korea",
+      "city": "Seoul",
+      "lat": 37.56328,
+      "lng": 126.98733,
+      "geo_source_ref": "osm:way:210335697",
+      "geo_source_url": "https://www.openstreetmap.org/way/210335697",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W210335697",
+      "identity_source_url": "https://www.mdsd.or.kr/bbs/content.php?co_id=7040",
+      "identity_source_issuer": "Myeongdong Cathedral / Catholic Archdiocese of Seoul",
+      "source_directness": "OFFICIAL_CHURCH",
+      "scope_limit": "Exact cathedral church at Myeongdong-gil 74; do not include spiritual center, offices, or other parish chapels",
+      "precision": "site",
+      "source_ids": [
+        "AO-P48-SITE-SG-INV-0628-210335697"
+      ],
+      "mapping_method": "P48_OFFICIAL_IDENTITY_INDIVIDUAL_NAMED_OSM_WAY"
+    },
+    {
+      "candidate_id": "SG-INV-0400",
+      "place_id": "place:US:p48-sg-0400-866036994",
+      "name": "St. Joseph Shrine, Detroit",
+      "place_type": "church",
+      "country": "US",
+      "country_name": "United States",
+      "city": "Detroit, Michigan",
+      "lat": 42.34542,
+      "lng": -83.03565,
+      "geo_source_ref": "osm:way:866036994",
+      "geo_source_url": "https://www.openstreetmap.org/way/866036994",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W866036994",
+      "identity_source_url": "https://institute-christ-king.org/detroit",
+      "identity_source_issuer": "Institute of Christ the King Sovereign Priest",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Independent 1828 Jay Street historic Catholic church; distinguish from parish buildings and surrounding historical district",
+      "precision": "site",
+      "source_ids": [
+        "AO-P48-SITE-SG-INV-0400-866036994"
+      ],
+      "mapping_method": "P48_OFFICIAL_IDENTITY_INDIVIDUAL_NAMED_OSM_WAY"
+    },
+    {
+      "candidate_id": "SG-INV-0114",
+      "place_id": "place:ES:p48-sg-0114-122873003",
+      "name": "Basílica de Nuestra Señora de la Candelaria",
+      "place_type": "basilica",
+      "country": "ES",
+      "country_name": "Spain",
+      "city": "Candelaria, Tenerife",
+      "lat": 28.35122,
+      "lng": -16.36991,
+      "geo_source_ref": "osm:way:122873003",
+      "geo_source_url": "https://www.openstreetmap.org/way/122873003",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W122873003",
+      "identity_source_url": "https://www.dominicoshispania.org/donde-estamos/convento-de-ntra-sra-de-candelaria-tenerife/",
+      "identity_source_issuer": "Dominicans, Province of Hispania",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Physical Marian basilica church distinct from attached Dominican convent, coastal square and chapel of San Blas",
+      "precision": "site",
+      "source_ids": [
+        "AO-P48-SITE-SG-INV-0114-122873003"
+      ],
+      "mapping_method": "P48_OFFICIAL_IDENTITY_INDIVIDUAL_NAMED_OSM_WAY"
+    },
+    {
+      "candidate_id": "SG-INV-0432",
+      "place_id": "place:MX:p48-sg-0432-155296070",
+      "name": "Basílica de Nuestra Señora de la Soledad",
+      "place_type": "basilica",
+      "country": "MX",
+      "country_name": "Mexico",
+      "city": "Oaxaca de Juárez",
+      "lat": 17.0635,
+      "lng": -96.73016,
+      "geo_source_ref": "osm:way:155296070",
+      "geo_source_url": "https://www.openstreetmap.org/way/155296070",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W155296070",
+      "identity_source_url": "https://sic.cultura.gob.mx/ficha.php?table=monumento_historico_pf&table_id=2288",
+      "identity_source_issuer": "Mexican Secretaría de Cultura, Sistema de Información Cultural",
+      "source_directness": "PRIMARY_INSTITUTIONAL",
+      "scope_limit": "Government property and public Catholic worship specifically attested; church building distinct from museum and plaza",
+      "precision": "site",
+      "source_ids": [
+        "AO-P48-SITE-SG-INV-0432-155296070"
+      ],
+      "mapping_method": "P48_OFFICIAL_IDENTITY_INDIVIDUAL_NAMED_OSM_WAY"
+    },
+    {
+      "candidate_id": "SG-INV-0197",
+      "place_id": "place:AT:p48-sg-0197-239345806",
+      "name": "Salzburger Dom (Cathedral of Saints Rupert and Virgil)",
+      "place_type": "cathedral",
+      "country": "AT",
+      "country_name": "Austria",
+      "city": "Salzburg",
+      "lat": 47.79785,
+      "lng": 13.04661,
+      "geo_source_ref": "osm:way:239345806",
+      "geo_source_url": "https://www.openstreetmap.org/way/239345806",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W239345806",
+      "identity_source_url": "https://www.salzburger-dom.at/",
+      "identity_source_issuer": "Salzburg Cathedral custodians",
+      "source_directness": "OFFICIAL_CHURCH",
+      "scope_limit": "Roman Catholic cathedral worship building, not Residence Square, courtyard or adjacent chapels",
+      "precision": "site",
+      "source_ids": [
+        "AO-P48-SITE-SG-INV-0197-239345806"
+      ],
+      "mapping_method": "P48_OFFICIAL_IDENTITY_INDIVIDUAL_NAMED_OSM_WAY"
+    },
+    {
+      "candidate_id": "SG-INV-0743",
+      "place_id": "place:AU:p48-sg-0743-155809136",
+      "name": "St Patrick's Cathedral, Melbourne",
+      "place_type": "cathedral",
+      "country": "AU",
+      "country_name": "Australia",
+      "city": "East Melbourne, Victoria",
+      "lat": -37.81016,
+      "lng": 144.97632,
+      "geo_source_ref": "osm:way:155809136",
+      "geo_source_url": "https://www.openstreetmap.org/way/155809136",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W155809136",
+      "identity_source_url": "https://melbournecatholic.org/st-patricks-cathedral",
+      "identity_source_issuer": "Catholic Archdiocese of Melbourne",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Church at 1 Cathedral Place East Melbourne, not the Anglican St Peter church or attached archdiocesan facilities",
+      "precision": "site",
+      "source_ids": [
+        "AO-P48-SITE-SG-INV-0743-155809136"
+      ],
+      "mapping_method": "P48_OFFICIAL_IDENTITY_INDIVIDUAL_NAMED_OSM_WAY"
+    },
+    {
+      "candidate_id": "SG-INV-0424",
+      "place_id": "place:CA:p48-sg-0424-103862161",
+      "name": "Basilique-cathédrale Notre-Dame-de-Québec",
+      "place_type": "cathedral",
+      "country": "CA",
+      "country_name": "Canada",
+      "city": "Québec City, Québec",
+      "lat": 46.8138,
+      "lng": -71.20597,
+      "geo_source_ref": "osm:way:103862161",
+      "geo_source_url": "https://www.openstreetmap.org/way/103862161",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W103862161",
+      "identity_source_url": "https://ecdq.org/basilique-cathedrale-notre-dame-de-quebec/",
+      "identity_source_issuer": "Catholic Archdiocese of Québec",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Church at 16 rue De Buade, not nearby Anglican Holy Trinity cathedral or Seminary of Québec",
+      "precision": "site",
+      "source_ids": [
+        "AO-P48-SITE-SG-INV-0424-103862161"
+      ],
+      "mapping_method": "P48_OFFICIAL_IDENTITY_INDIVIDUAL_NAMED_OSM_WAY"
+    },
+    {
+      "candidate_id": "SG-INV-0156",
+      "place_id": "place:PT:p48-sg-0156-96319696",
+      "name": "Igreja de Santo António de Lisboa",
+      "place_type": "church",
+      "country": "PT",
+      "country_name": "Portugal",
+      "city": "Lisbon",
+      "lat": 38.70998,
+      "lng": -9.13366,
+      "geo_source_ref": "osm:way:96319696",
+      "geo_source_url": "https://www.openstreetmap.org/way/96319696",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W96319696",
+      "identity_source_url": "https://www.visitlisboa.com/en/places/igreja-de-santo-antonio",
+      "identity_source_issuer": "Visit Lisboa / Lisboa tourist authority",
+      "source_directness": "PRIMARY_INSTITUTIONAL",
+      "scope_limit": "Catholic shrine church on Largo Santo António da Sé, not Lisbon Cathedral or adjoining Museum of Saint Anthony",
+      "precision": "site",
+      "source_ids": [
+        "AO-P48-SITE-SG-INV-0156-96319696"
+      ],
+      "mapping_method": "P48_OFFICIAL_IDENTITY_INDIVIDUAL_NAMED_OSM_WAY"
+    }
+  ],
+  "duplicate_candidate_holds": [
+    {
+      "candidate_id": "SG-INV-0170",
+      "reused_existing": "place:DE:aachener-dom-four-textiles",
+      "reason": "Aachen Cathedral already canonical at exact site; do not duplicate monument church under alternative devotional title"
+    },
+    {
+      "candidate_id": "SG-INV-0518",
+      "reused_existing": "place:EC:basilica-voto-nacional-quito",
+      "reason": "Quito National Vow Basilica already canonical with exact same OSM way 107938444"
+    },
+    {
+      "candidate_id": "SG-INV-0245",
+      "reason": "Original candidate country IE but the Catholic Cathedral of Armagh is physically in GB (Northern Ireland); preserve frozen candidate ID pending explicit correction and release"
+    }
+  ],
+  "policy": [
+    "All eight additions are independently named physical Catholic worship buildings with operator/civic identification and exact OSM way location.",
+    "Do not infer 1962 rite/TLM schedules, artworks, shrine recognitions, pilgrimages, optional narration or photography from this Place source.",
+    "Previously canonical Aachen and Quito sites are held as reuse/deduplication leads, not re-published.",
+    "Physical scope and country must match; Armagh stays on hold until frozen source country correction is adjudicated."
+  ]
+}
