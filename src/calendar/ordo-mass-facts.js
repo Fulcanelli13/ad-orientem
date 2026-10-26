@@ -1,6 +1,6 @@
 // Read-only general Roman (1962) Ordo projection for the existing Calendar.
 // This is an evidence-adapter, not an independent celebration picker or rubric engine.
-import {inspect1962PrefaceSelection} from "../mass/1962-preface-decision.js";
+import {review1962PrefaceForCalendarDay} from "./ordo-1962-preface-review.js";
 import {calendarMassColour} from "./colour-projection.js";
 import {observedCommemorationLabels} from "./observed-commemoration-labels.js";
 import {review1962OrdinaryForCalendarDay} from "./ordo-1962-ordinary-rule-review.js";
@@ -68,18 +68,19 @@ export function calendarOrdoMassFacts(resolution,{language="en"}={}){
   if(!path)return empty("PROPER_UNAVAILABLE","PROPER_SOURCE_PATH_MISSING",{principalId});
   // A reusable proper or its text sections are not evidence that another
   // votive or religious formulary is permitted on this civil date.
-  const selectedPreface=proper.preface;
-  const decision=inspect1962PrefaceSelection({
-    principalCelebrationId:principalId,selectedPreface,
-    requestedCelebrationId:"mass_of_day"
-  });
-  const heading=str(selectedPreface?.lat??selectedPreface?.la).split(/\r?\n/)[0]?.trim();
-  const preface=decision.status==="MATCH"&&heading?
-    Object.freeze({status:"MATCH",heading,source:"1962_PREFACE_NARROW_OWNER_REGISTER"}):
-    decision.status==="CONTRADICTION"?
-      Object.freeze({status:"SOURCE_CONFLICT",heading:null}):
-      decision.status==="MISSING_PREFACE"?
-        Object.freeze({status:"MISSING",heading:null}):noStatus;
+  // The displayed Preface is screened against the principal 1962 Mass and
+  // the general 1960 rubrics, not merely against a plausible Latin heading.
+  const review=review1962PrefaceForCalendarDay(resolution);
+  const preface=review.status==="RULE_TEXT_AGREE"?
+    Object.freeze({status:"MATCH",heading:review.heading,
+      source:"1960_ROMAN_MISSAL_PREFACE_REVIEW",clause:review.clause,
+      sourceUrl:review.sourceUrl,autoPublish:false}):
+    review.status==="SOURCE_CONFLICT"?
+      Object.freeze({status:"SOURCE_CONFLICT",heading:null,
+        expected:review.expected,actual:review.actual,
+        clause:review.clause,sourceUrl:review.sourceUrl,autoPublish:false}):
+      Object.freeze({status:review.status==="UNCLASSIFIED_TEXT"?"UNVERIFIED":"WITHHELD",
+        heading:null,autoPublish:false});
   const selectedFlags=certifiedOrdinaryFlags(proper,principalId,date);
   const ruleReview=review1962OrdinaryForCalendarDay(resolution);
   // An explicit Proper-owner certification outranks a general summary, but
