@@ -3,12 +3,16 @@
 import {calendarMassColour} from "./colour-projection.js";
 export const ORDO_1962_RULE_REVIEW_VERSION="ao-1962-ordo-rule-review-v1";
 export const RULES_URL="https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html";
+export const BREVIARY_RULES_URL="https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html";
 const withheld=reason=>Object.freeze({status:"WITHHELD",value:null,reason});
-const result=(value,clause,scope)=>Object.freeze({
-  status:"RULE_SUPPORTED",value,clause,sourceUrl:RULES_URL,scope
+const result=(value,clause,scope,sourceUrl=RULES_URL)=>Object.freeze({
+  status:"RULE_SUPPORTED",value,clause,sourceUrl,scope
 });
-const iso=id=>typeof id==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(id)&&
-  new Date(id+"T12:00:00.000Z").toISOString().slice(0,10)===id;
+const iso=id=>{
+  if(typeof id!=="string"||!/^\d{4}-\d{2}-\d{2}$/.test(id))return false;
+  const d=new Date(id+"T12:00:00.000Z");
+  return !Number.isNaN(d.getTime())&&d.toISOString().slice(0,10)===id;
+};
 const rank=v=>{
   if([1,2,3,4].includes(Number(v)) && /^\d$/.test(String(v)))return Number(v);
   const match=String(v??"").trim().toUpperCase().match(/^(IV|III|II|I)(?:\s|[.\-]|$)/);
@@ -59,10 +63,27 @@ export function review1962OrdinaryForCalendarDay(resolution){
   // do not infer this from purple/black visual day-phase palettes.
   if(violet)gloria=result(false,"RGMR_432_B","MASS_COLOUR_VIOLET");
   if(black)gloria=result(false,"RGMR_432_D","BLACK_MASS_CONTEXT");
+  // The Breviary (237c) explicitly has Te Deum on *all feasts*.
+  // A source-resolved sanctoral I/II/III feast therefore uses Gloria in
+  // nonviolet vestments under the Missal (431a); IV-class commemorations
+  // are not silently promoted into such feasts.
+  if(!violet&&!black&&sourceKind(id)==="SANCTORAL"&&klass<=3)
+    gloria=result(true,"BR_237_C_AND_RGMR_431_A","SANCTORAL_FEAST_TE_DEUM",BREVIARY_RULES_URL);
+  // A IV-class green weekday of the Sundays-after-Pentecost cycle is a
+  // "feria per annum": Office Te Deum is *omitted* (Breviary 238c).
+  // Unlike an ordinary Sunday, it carries neither Gloria nor Credo.
+  // Source-ID/date/class/colour are all required; no calendar-name guess.
+  const ordinaryPentecostFeria=!sunday&&klass===4&&colour==="green"&&
+    /^tempora:Pent\d{1,2}-[1-6]:4:g$/i.test(id);
+  if(ordinaryPentecostFeria)
+    gloria=result(false,"BR_238_C_AND_RGMR_432_A","IV_CLASS_PER_ANNUM_FERIA",BREVIARY_RULES_URL);
   if(sunday)credo=result(true,"RGMR_475_A","SUNDAY");
+  else if(ordinaryPentecostFeria)credo=result(false,"RGMR_475_476","IV_CLASS_PER_ANNUM_FERIA");
   else if(sourceKind(id)==="SANCTORAL"){
     if(klass===1)credo=result(true,"RGMR_475_B","FIRST_CLASS_SANCTORAL_FEAST");
     else if(klass>=3)credo=result(false,"RGMR_476_D","THIRD_OR_FOURTH_CLASS_SANCTORAL_FEAST");
+    else if(klass===2&&/^sancti:10-07:2:/i.test(id))
+      credo=result(true,"RGMR_475_C","OUR_LADY_OF_THE_ROSARY_SOURCE_ID");
     // A second-class Lord/BVM feast needs its *specific identity*, not
     // a vernacular title or the colour white, to invoke §475(c).
   }
