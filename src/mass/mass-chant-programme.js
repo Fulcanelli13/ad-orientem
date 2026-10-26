@@ -1,12 +1,13 @@
 // User-reported musical programme for the currently selected Mass.
-// Presentation metadata only: no changes to liturgical Propers, rubrical
-// permission, source readings, Mass card count, or Schola event timing.
-import {SCHOLA_SCORE_CATALOGUE} from "./reader-chant-score-pilot.js";
+// Presentation metadata only: not liturgical proper, rubric, priest or Schola clock.
+import {SCHOLA_SCORE_CATALOGUE,SCHOLA_SCORE_TRACK_IDS} from "./reader-chant-score-pilot.js";
 
 export const MASS_CHANT_PROGRAMME_SCHEMA="ao-mass-chant-programme-v1";
 export const MASS_CHANT_UNCONFIRMED="UNCONFIRMED";
+export const MASS_CHANT_ORDINARY_TRACKS=Object.freeze([
+  "KYRIE","GLORIA","CREDO","SANCTUS_BENEDICTUS","AGNUS_DEI",
+]);
 const SUNG=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
-// Requiem and Nuptial settings require their own approved chant mapping.
 const PILOT_CELEBRATIONS=new Set(["CALENDAR","VOTIVE"]);
 const IDENTIFIER=/^[A-Za-z0-9_-]+$/;
 export function massChantProgrammeIdentity(legacy,{form,kind}={}){
@@ -14,15 +15,10 @@ export function massChantProgrammeIdentity(legacy,{form,kind}={}){
   const actual=legacy.actualCelebration;
   const source=String(legacy.properSource??legacy.proper?.sourcePath??legacy.proper?.data?.sourcePath??"");
   return JSON.stringify([
-    String(legacy.date),
-    String(legacy.celebrationId??"mass_of_day"),
+    String(legacy.date),String(legacy.celebrationId??"mass_of_day"),
     String(legacy.requestedCelebrationId??"mass_of_day"),
-    String(legacy.celebrationType??"CALENDAR"),
-    String(legacy.exceptionalProfile??""),
-    String(actual?.id??""),
-    source,
-    String(form??""),
-    String(kind??""),
+    String(legacy.celebrationType??"CALENDAR"),String(legacy.exceptionalProfile??""),
+    String(actual?.id??""),source,String(form??""),String(kind??""),
   ]);
 }
 export function chantProgrammeEnabled({form,kind}={}){
@@ -34,25 +30,29 @@ export function massChantOptions(trackId,{form,kind}={}){
     item.trackId===trackId &&
     typeof item.gabc==="string"&&item.gabc.includes("%%")&&IDENTIFIER.test(item.id)));
 }
-export function createMassChantProgramme(legacy,{form,kind,kyrieScoreId=null}={}){
+export function createMassChantProgramme(legacy,{
+  form,kind,kyrieScoreId=null,selectedScores=null,
+}={}){
   const identity=massChantProgrammeIdentity(legacy,{form,kind});
   if(!identity||!chantProgrammeEnabled({form,kind}))return null;
-  const allowed=massChantOptions("KYRIE",{form,kind});
-  const kyrie=allowed.find(item=>item.id===kyrieScoreId)??null;
+  const requested=selectedScores&&typeof selectedScores==="object"?selectedScores:{};
+  const valid={};
+  for(const trackId of MASS_CHANT_ORDINARY_TRACKS){
+    const candidate=trackId==="KYRIE"
+      ?(requested.KYRIE??kyrieScoreId):requested[trackId];
+    if(massChantOptions(trackId,{form,kind}).some(item=>item.id===candidate))
+      valid[trackId]=candidate;
+  }
+  const selections=Object.freeze(valid);
   return Object.freeze({
-    schema:MASS_CHANT_PROGRAMME_SCHEMA,
-    identity,
-    date:String(legacy.date),
-    form:String(form),
-    kind:String(kind),
+    schema:MASS_CHANT_PROGRAMME_SCHEMA,identity,date:String(legacy.date),
+    form:String(form),kind:String(kind),
     sourceType:"USER_REPORTED_MUSIC_NOT_RUBRICALLY_CERTIFIED",
     sourceOfLiturgicalText:"EXISTING_1962_MASS_HOST",
-    kyrieScoreId:kyrie?.id??null,
-    selections:Object.freeze(kyrie?Object.freeze({KYRIE:kyrie.id}):{}),
-    unresolvedTracks:Object.freeze([
-      "INTROIT","GLORIA","GRADUAL","ALLELUIA_TRACT_SEQUENCE",
-      "CREDO","OFFERTORY","SANCTUS_BENEDICTUS","AGNUS_DEI","COMMUNION",
-    ]),
+    // Backward-compatible Kyrie field; all new consumers use selections.
+    kyrieScoreId:selections.KYRIE??null,selections,
+    unresolvedTracks:Object.freeze(SCHOLA_SCORE_TRACK_IDS.filter(id=>!selections[id])),
+    performanceNote:"SCHOLA_TIMING_UNOBSERVED",
   });
 }
 export function selectedChantScoreForReader(programme,trackId){
