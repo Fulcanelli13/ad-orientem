@@ -17,7 +17,7 @@ SOURCE=Path("data/directory/research/cl28-crossnetwork-dated-20261026/evidence.j
 def write_csv(path, rows):
     assert rows
     with path.open("w",newline="",encoding="utf-8") as f:
-        w=csv.DictWriter(f,fieldnames=list(rows[0]))
+        w=csv.DictWriter(f,fieldnames=list(dict.fromkeys(key for item in rows for key in item)))
         w.writeheader()
         w.writerows(rows)
 
