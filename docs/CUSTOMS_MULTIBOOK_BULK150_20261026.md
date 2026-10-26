@@ -27,6 +27,16 @@ This does **not** create 150 additional verified Catholic customs. A source obse
 
 The 150 actions represent separate **intake rows**, not proven distinct customs. Some overlap the 56 working identities, the earlier 54 Weiser editorial drafts, and/or each other.
 
+## First larger editorial review cohort: 30 units
+
+The newly assembled `data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json` supplies **30 concrete review units**, without inventing 30 unique customs:
+
+- **18** master identities: full EN/FR titles, descriptions, histories, meanings, practices and pastoral cautions, copied exactly with their own qualified Calendar contexts and original source URLs. All remain `NOT_APPROVED`.
+- **12** independently witnessed narrow-claim Weiser leads: bilingual title, historical discussion, meaning, practice, qualification and exact supporting links carried from the existing independent-source review. Their **short descriptive introductions remain explicitly missing**, not AI-invented, and identity boundaries must still be compared with the 38 canonical and 18 unpublished working identities.
+- **Three** of these 12 source leads already point to named existing working owners. They may collapse as duplicate accounts or regional variants. Also distinguish Eastern Christian and cross-confessional cultural practices from Roman Catholic liturgical customs.
+
+Thus the immediate actionable work is **18 full articles to check** and **12 rich, partly complete source-backed dossiers to reconcile**, not 30 approvals. After historical/rubrical, duplicate and EN/FR editorial decisions, only genuinely publishable identities should pass into the existing Calendar.
+
 ## Source-of-truth and assets
 
 - `data/customs/master/customs-multibook-bulk150-20261026.v1.json` — **150 structured action dossiers**. Contains original first-hand action descriptions only if the research pipeline explicitly marked the original folio checked. Other records are source-index or secondary digital-witness observations with the exact uncertainty preserved.
