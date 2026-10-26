@@ -1,7 +1,9 @@
 import {createHash} from "node:crypto";
 import {readFileSync} from "node:fs";
 import {fileURLToPath} from "node:url";
-import {calendarCustomArticle} from "../../src/calendar/customs-read-model.js";
+import {calendarCustomArticle,calendarCustomRecommendations} from "../../src/calendar/customs-read-model.js";
+import {calendarPracticeEvents} from "../../src/calendar/intelligence.js";
+import {homeSeasonalCustomForDate} from "../../src/customs/seasonal-home-spotlight.js";
 
 export const COHORT_IDS=Object.freeze(["EPIP-003","CRIB-001"]);
 export const REVIEW_PARTS=Object.freeze(["final_en","final_fr","final_claims","final_identity_calendar"]);
@@ -33,8 +35,26 @@ export function fingerprint(id,part){
    supportingSources:article.supporting_sources,history:folio,attestations,
    guardrail:canonical.guardrail};
  }else{
+  // Bind approval to the behavior visible in the existing Calendar and Home,
+  // not only to canonical record labels. This catches a later ruleset change
+  // moving a custom to an unsanctioned date or replacing a Home suggestion.
+  const days=[];
+  for(const year of [2026,2027,2030]){
+   for(const monthDay of ["01-03","01-05","01-06","01-07","01-08",
+                          "02-01","02-02","02-03","02-04"]){
+    const date=year+"-"+monthDay;
+    const events=calendarPracticeEvents(date,{fr:false});
+    const eventsFr=calendarPracticeEvents(date,{fr:true});
+    const dayIds=calendarCustomRecommendations(date,{events,fr:false}).map(x=>x.id);
+    const frenchIds=calendarCustomRecommendations(date,{events:eventsFr,fr:true}).map(x=>x.id);
+    const home=homeSeasonalCustomForDate(date);
+    days.push({date,dayHasCustom:dayIds.includes(id),frenchHasCustom:frenchIds.includes(id),
+     homeCustomId:home?.id||null,homeContextDate:home?.contextDate||null});
+   }
+  }
   material={canonical,temporal:temporal.records.find(x=>x.custom_id===id),
    occasion:article.occasion,scope:article.scope,releaseSubject:article.sourceResearchUnit,
+   calendarAndHomeProjection:days,
    publicationContext:"DRAFT_BRANCH_ONLY_UNTIL_FORMALLY_AUTHORIZED"};
  }
  return createHash("sha256").update(JSON.stringify(material)).digest("hex");
