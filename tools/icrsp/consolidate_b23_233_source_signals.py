@@ -23,7 +23,7 @@ def consolidate(manifest_path, shard_root):
         raise ValueError("Unrecognized source manifest")
     desired=manifest["rows"]
     expected={r["articleId"]:r for r in desired}
-    if len(expected)!=len(desired)!=233:
+    if len(expected)!=233 or len(desired)!=233:
         raise ValueError("Must have exactly 233 source identities")
 
     paths=sorted(glob.glob(str(Path(shard_root)/"**"/"icrsp-b23-*.json"),recursive=True))
