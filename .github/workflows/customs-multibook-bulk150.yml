@@ -7,6 +7,8 @@ on:
       - "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json"
       - "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json"
       - "data/customs/master/customs-thirty-action-identity-reconciliation-20261026.v1.json"
+      - "data/customs/master/customs-first18-direct-source-scope-audit-20261026.v1.json"
+      - "tests/customs-first18-direct-source-scope-audit.mjs"
       - "tests/customs-thirty-action-identity-reconciliation.mjs"
       - "tests/customs-multibook-bulk150.mjs"
       - ".github/workflows/customs-multibook-bulk150.yml"
@@ -28,3 +30,5 @@ jobs:
           node tests/customs-multibook-bulk150.mjs
           node --check tests/customs-thirty-action-identity-reconciliation.mjs
           node tests/customs-thirty-action-identity-reconciliation.mjs
+          node --check tests/customs-first18-direct-source-scope-audit.mjs
+          node tests/customs-first18-direct-source-scope-audit.mjs
