@@ -1,12 +1,8 @@
 name: Palm Psalm 46 exact Exsurge source review
 
+# Original pull_request run: https://github.com/Fulcanelli13/ad-orientem/actions/runs/40378960243
+# Subsequent notation checks are intentional on-demand, not a PR-wide loop.
 on:
-  pull_request:
-    paths:
-      - .github/workflows/processionale-palm46-engraver-proof.yml
-      - tools/research/palm46-exsurge-facsimile-gate.mjs
-      - data/research/chant-source-review/palm46-omnes-populi-1961-provisional.gabc
-      - data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc
   workflow_dispatch:
 
 permissions:
