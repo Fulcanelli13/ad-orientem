@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - "src/calendar/calendar-runtime.js"
+      - "src/calendar/ordo-mass-facts.js"
+      - "tests/calendar-ordo-mass-facts.mjs"
       - "tests/calendar-phone-month-controls.mjs"
       - ".github/workflows/calendar-phone-month-controls.yml"
   workflow_dispatch:
@@ -21,6 +23,8 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - name: Source-bounded 1962 Mass Ordo contract
+        run: node tests/calendar-ordo-mass-facts.mjs
       - name: Actual Today inline Calendar at 320/390/430
         run: node tests/calendar-phone-month-controls.mjs
       - uses: actions/upload-artifact@v4
