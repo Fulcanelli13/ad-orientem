@@ -26,7 +26,8 @@ if im.size!=(2816,2112):raise ValueError("Unexpected photo orientation or dimens
 quads={
  "A-complete-edge-approx":{"tl":[251,429],"bl":[245,1688],"br":[2571,1691],"tr":[2560,425]},
  "B-inset-quality-diagnostic":{"tl":[270,450],"bl":[268,1669],"br":[2549,1672],"tr":[2545,446]},
- "C-canvas-interior-clean":{"tl":[272,453],"bl":[270,1654],"br":[2537,1655],"tr":[2536,451]}
+ "C-canvas-interior-clean":{"tl":[272,453],"bl":[270,1654],"br":[2537,1655],"tr":[2536,451]},
+ "D-bottom-frame-trim-review":{"tl":[274,456],"bl":[272,1642],"br":[2535,1643],"tr":[2534,454]}
 }
 out=[]
 overlay=im.copy();mark=ImageDraw.Draw(overlay)
@@ -60,10 +61,11 @@ MANIFEST.write_text(json.dumps({
  "photo_has_physical_frame":True,
  "proposal_A":"Likely includes most/all canvas; corner precision still requires manual checking",
  "proposal_B":"Slightly inset diagnostic, faint frame trace may remain",
- "proposal_C":"Manual refinement aims to remove physical frame entirely while retaining visible painted surface. Still requires final edge and museum reference review.",
+ "proposal_C":"Previous candidate still showed 1-8 px gilded physical frame at very bottom in native 100 percent pixel strip; NOT acceptable.",
+ "proposal_D":"Adjust lower boundary inward 12 pixels to remove residual gold physical frame. Human review MUST confirm none of the last row of genuine painted floor is lost.",
  "camera_geometry_corrected_with_interpolation":True,
  "color_reference_checked":False,
  "app_asset_promotion":False,
  "review_overlay":str(overlay_path.relative_to(ROOT)),
  "candidates":out},indent=2)+"\n")
-print("Created 3 unapproved review proposals; original unchanged.")
+print("Created 4 unapproved review proposals; original unchanged.")
