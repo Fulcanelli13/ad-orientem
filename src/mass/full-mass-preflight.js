@@ -6,7 +6,7 @@ import {availableOptionalMassRites,composeOptionalMassRites} from "./full-mass-o
 import {specialMassPresentation,renderSpecialMassContext} from "./full-mass-special-presentation.js";
 import {massCalendarPreflightContext,fillMassCalendarPreflight} from "./calendar-preflight-context.js";
 import {normalizeFolioExperience,experiencePrayerRoute,experiencePrayerDepth,mayOpenFolioPrayer} from "./full-mass-folio-options.js";
-import {massChantProgrammeIdentity,chantProgrammeEnabled,massChantOptions,createMassChantProgramme} from "./mass-chant-programme.js";
+import {massChantProgrammeIdentity,chantProgrammeEnabled,massChantOptions,createMassChantProgramme,MASS_CHANT_ORDINARY_TRACKS} from "./mass-chant-programme.js";
 
 const LABELS=Object.freeze({
   LOW:["Low Mass","Messe basse"],
@@ -74,7 +74,7 @@ export function mountFullMassPreflight({
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
   let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
   let folioStep="overview",experience={before:"none",after:"none",language:null},prayerOpening=false;
-  let chantIdentity=null,chantScoreId=null;
+  let chantIdentity=null,chantScoreId=null,chantSelections={};
   const donorSuppressed=new Map();
   const suppressDonorDuplicates=()=>{
     const panel=root?.parentElement;
@@ -131,7 +131,8 @@ export function mountFullMassPreflight({
     const value=resolvedMassSummary(legacy,{form:activeForm(),language:language()});
     const identity=massChantProgrammeIdentity(legacy,{form:value.form,kind:value.kind});
     const chantProgramme=createMassChantProgramme(legacy,{form:value.form,kind:value.kind,
-      kyrieScoreId:identity===chantIdentity?chantScoreId:null});
+      kyrieScoreId:identity===chantIdentity?chantScoreId:null,
+      selectedScores:identity===chantIdentity?chantSelections:null});
     return Object.freeze({...value,chantProgramme,explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       readerLanguage:selectedExperience().language,
@@ -168,17 +169,17 @@ export function mountFullMassPreflight({
     const date=String(legacy?.date??"");
     // A fresh selected date represents a new preflight: do not silently carry
     // an override into another Mass. In-session changes remain live.
-    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;folioStep="overview";chantIdentity=null;chantScoreId=null;}
+    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;folioStep="overview";chantIdentity=null;chantScoreId=null;chantSelections={};}
     lastDate=date;
     const celebrationKey=[date,legacy?.celebrationId??"",legacy?.requestedCelebrationId??"",
       legacy?.celebrationType??"",legacy?.exceptionalProfile??""].join("|");
-    if(lastCelebrationKey!==null&&lastCelebrationKey!==celebrationKey){riteOverrides={};chantIdentity=null;chantScoreId=null;}
+    if(lastCelebrationKey!==null&&lastCelebrationKey!==celebrationKey){riteOverrides={};chantIdentity=null;chantScoreId=null;chantSelections={};}
     lastCelebrationKey=celebrationKey;
     // A change of form or resolved Proper invalidates user-reported tunes.
     const nowChantIdentity=massChantProgrammeIdentity(legacy,{
       form:activeForm(),kind:massCelebrationKind(legacy)});
     if(chantIdentity!==null&&chantIdentity!==nowChantIdentity){
-      chantIdentity=null;chantScoreId=null;
+      chantIdentity=null;chantScoreId=null;chantSelections={};
     }
     if(root&&!root.isConnected)root=null;
     if(!root){
@@ -234,7 +235,8 @@ export function mountFullMassPreflight({
 
         '<details data-full-mass-chant class="aoMassChantProgramme" hidden><summary data-full-mass-chant-heading></summary>'+
         '<p data-full-mass-chant-note></p><label data-full-mass-chant-label for="ao-full-mass-kyrie"></label>'+
-        '<select id="ao-full-mass-kyrie" data-full-mass-chant-choice></select>'+
+        '<select id="ao-full-mass-kyrie" data-full-mass-chant-choice></select>'+ 
+        '<div data-full-mass-other-chants></div>'+
         '<p data-full-mass-chant-source></p></details>'+
         '<details data-full-mass-rites class="aoFullMassOptional"><summary data-full-mass-rite-summary></summary>'+
         '<p data-full-mass-rite-intro></p><div data-full-mass-rite-list></div></details>'+
@@ -393,12 +395,17 @@ export function mountFullMassPreflight({
           if(["none","thanksgiving","full"].includes(el.value))experience.after=el.value;
           refresh();return;
         }
-        if(el?.matches?.("[data-full-mass-chant-choice]")){
+        if(el?.matches?.("[data-full-mass-chant-choice], [data-full-mass-other-choice]")){
           const actual=getResolvedMass();
           const summary=resolvedMassSummary(actual,{form:activeForm(),language:language()});
-          const options=massChantOptions("KYRIE",{form:summary.form,kind:summary.kind});
+          const track=el.matches("[data-full-mass-chant-choice]")?"KYRIE":el.dataset.fullMassOtherChoice;
+          if(!MASS_CHANT_ORDINARY_TRACKS.includes(track))return;
+          const options=massChantOptions(track,{form:summary.form,kind:summary.kind});
+          const value=options.some(item=>item.id===el.value)?el.value:null;
           chantIdentity=massChantProgrammeIdentity(actual,{form:summary.form,kind:summary.kind});
-          chantScoreId=options.some(item=>item.id===el.value)?el.value:null;
+          if(value)chantSelections={...chantSelections,[track]:value};
+          else{chantSelections={...chantSelections};delete chantSelections[track];}
+          chantScoreId=chantSelections.KYRIE??null;
           refresh();return;
         }
         if(el?.matches?.("[data-full-mass-rite]")){
@@ -561,8 +568,8 @@ export function mountFullMassPreflight({
       chantDetails.hidden=!musicAvailable;
       word("[data-full-mass-chant-heading]","Chants of this Mass","Chants de cette messe");
       word("[data-full-mass-chant-note]",
-        "Optional: choose the Kyrie your choir actually sings. This does not change the Proper or certify your parish’s programme.",
-        "Facultatif : indiquez le Kyrie que chante votre schola. Cela ne modifie pas le propre et ne certifie pas le programme paroissial.");
+        "Optional: report the melodies actually sung by your choir. Leave pieces unknown if uncertain or omitted. Gregorian reference scores do not represent polyphony, and this does not change the Proper.",
+        "Facultatif : indiquez les mélodies réellement chantées. Laissez les pièces inconnues ou omises sans choix. Les exemples grégoriens ne représentent pas la polyphonie et ne modifient pas le propre.");
       word("[data-full-mass-chant-label]","Kyrie · musical setting","Kyrie · mélodie");
       const choice=chantDetails.querySelector("[data-full-mass-chant-choice]");
       if(choice){
@@ -575,12 +582,38 @@ export function mountFullMassPreflight({
         choice.value=summary.chantProgramme?.kyrieScoreId??"";
         choice.disabled=!musicAvailable;
       }
-      const hasSelected=Boolean(summary.chantProgramme?.kyrieScoreId);
+      const extra=chantDetails.querySelector("[data-full-mass-other-chants]");
+      if(extra){
+        extra.replaceChildren();
+        const names={
+          GLORIA:["Gloria","Gloria"],CREDO:["Credo","Credo"],
+          SANCTUS_BENEDICTUS:["Sanctus · Benedictus","Sanctus · Benedictus"],
+          AGNUS_DEI:["Agnus Dei","Agnus Dei"],
+        };
+        for(const track of MASS_CHANT_ORDINARY_TRACKS.filter(id=>id!=="KYRIE")){
+          const row=doc.createElement("div");row.className="aoMassChantRow";
+          const label=doc.createElement("label");
+          const id="ao-full-mass-chant-"+track.toLowerCase();
+          label.htmlFor=id;label.textContent=names[track][fr?1:0];
+          const select=doc.createElement("select");select.id=id;
+          select.dataset.fullMassOtherChoice=track;
+          const choices=[{id:"",title:l("Unknown / not selected","Inconnue / non sélectionnée")},
+            ...massChantOptions(track,{form:summary.form,kind:summary.kind})];
+          for(const item of choices){
+            const option=doc.createElement("option");option.value=item.id;
+            option.textContent=item.title;select.append(option);
+          }
+          select.value=summary.chantProgramme?.selections?.[track]??"";
+          select.disabled=!musicAvailable;
+          row.append(label,select);extra.append(row);
+        }
+      }
+      const hasSelected=Boolean(Object.keys(summary.chantProgramme?.selections??{}).length);
       word("[data-full-mass-chant-source]",
         hasSelected?"GregoBase · Solesmes 1961 · selected by you, not independently verified":
-          "The Proper remains governed by the chosen Mass. Other musical settings are not yet mapped.",
+          "The Proper remains governed by the chosen Mass; its musical settings are not inferred.",
         hasSelected?"GregoBase · Solesmes 1961 · choix personnel non vérifié":
-          "Le propre dépend de la messe choisie. Les autres mélodies restent à vérifier.");
+          "Le propre dépend de la messe choisie ; ses mélodies ne sont pas déduites automatiquement.");
     }
     const rites=availableOptionalMassRites(legacy,{form:summary.form,kind:summary.kind});
     const options=rites.filter(rite=>rite.allowed||rite.fromSource);
