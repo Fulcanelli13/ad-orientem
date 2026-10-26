@@ -64,16 +64,21 @@ def main():
             len(audit["provider_review_cohort_2"]),
             len(source_secondary)) == (200, 71, 25)
 
-    index = {int(original(r, 0)): r for r in mass}
-    assert len(index) == 4681, "Original source row number collision"
+    index = {r['historical_row']: r for r in mass}
+    assert len(index) == 4681, "Original CL2 historical row number collision"
+    assert set(index) == set(range(1, 4682))
     listed = source_owners + source_secondary
-    assert len({r["source_row_number"] for r in listed}) == 296
-    assert {r["source_row_number"] for r in listed} == {int(original(r, 0)) for r in actionable}
+    assert len({r["historical_row"] for r in listed}) == 296
+    assert {r["historical_row"] for r in listed} == {r["historical_row"] for r in actionable}
 
     for row in listed:
-        item = index[row["source_row_number"]]
+        item = index[row["historical_row"]]
         assert original(item, 19) == "UNVERIFIED"
         assert row["source_id"] == original(item, 1)
+        assert row["source_b53_row"] == original(item, 0)
+        if not row["source_id"]:
+            assert "MISSING_FROZEN_SOURCE_ID" in row["precision_holds"]
+            assert row["identity_release_gate"] == "MISSING_SOURCE_ID_DO_NOT_APPROVE"
         assert row["site_group_id"] == original(item, 26)
         assert row["effective_anchor_id"] == anchors.get(original(item, 26))
         assert row["day_pattern"] == original(item, 6)
@@ -89,7 +94,7 @@ def main():
         assert group_id in anchors
         slot_key = "|".join((anchors[group_id],
                              original(row, 6).lower(), original(row, 7)))
-        groups[slot_key].append(int(original(row, 0)))
+        groups[slot_key].append(row["historical_row"])
     duplicates = {key: sorted(numbers) for key, numbers in groups.items() if len(numbers) > 1}
     collision_rows = audit["verified_same_site_day_time_reconciliation_queue"]
     assert len(duplicates) == len(collision_rows) == 106
@@ -98,7 +103,7 @@ def main():
     for group in collision_rows:
         assert group["site_day_time_key"] in duplicates
         assert group["row_count"] == len(group["source_rows"])
-        assert sorted(x["number"] for x in group["source_rows"]) == duplicates[group["site_day_time_key"]]
+        assert sorted(x["historical_row"] for x in group["source_rows"]) == duplicates[group["site_day_time_key"]]
         assert group["disposition"] == "REVIEW_ONLY_NOT_PROOF_OF_DUPLICATE_NO_AUTOMERGE"
 
     expected = {
@@ -119,6 +124,8 @@ def main():
         "same_anchor_day_time_collision_groups": 106,
         "collision_rows": 234,
         "new_public_approvals": 0,
+        "actionable_missing_frozen_venue_source_id": 5,
+        "historically_verified_missing_frozen_venue_source_id": 8,
     }
     assert audit["summary"] == expected, "Audit summary drift"
     assert sum(not original(r, 9) for r in historically_verified) == 2108
@@ -129,7 +136,7 @@ def main():
 
     checked = audit["owner_page_evidence_spot_checks"]
     for page in checked:
-        for number in page["row_numbers"]:
+        for number in page["historical_rows"]:
             assert number in index
             item = index[number]
             assert original(item, 14) == page["url"], (number, page["url"])
