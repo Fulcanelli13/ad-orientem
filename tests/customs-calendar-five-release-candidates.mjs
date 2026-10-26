@@ -107,7 +107,7 @@ assert.match(wreath.article.description.en,/eighth day/);
 assert.match(wreath.article.description.fr,/huitième jour/);
 assert.match(wreath.article.history.en,/245 wreaths and 133 questionnaires/);
 assert.match(wreath.article.history.fr,/245 photographies de couronnes et 133 questionnaires/);
-assert.ok(wreath.article.sources.some(s=>s.id==="POLISH-GOV-CORPUS-CUSTOMS"&&/last day/.test(s.claim_scope)));
+assert.ok(wreath.article.sources.some(s=>s.id==="POLISH-GOV-CORPUS-CUSTOMS"&&/(last|final) day/.test(s.claim_scope)));
 assert.ok(wreath.article.sources.some(s=>s.id==="LUCZAJ-POLISH-CORPUS-WREATHS-2012"&&/245/.test(s.claim_scope)));
 const candlemas=byUnit["CU-REVIEW-004"];
 assert.ok(candlemas.article.caution.en.includes("1962"));
