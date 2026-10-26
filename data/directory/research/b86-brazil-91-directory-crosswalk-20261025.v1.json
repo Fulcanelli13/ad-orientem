@@ -1,0 +1,241 @@
+{
+  "schema": "AO_TLM_B86_BRAZIL_91_DIR_SOURCE_RESEARCH_SCREEN_20261025_V1",
+  "scope": "RESEARCH_ONLY_NOT_IMPORTED",
+  "checked_on": "2026-10-25",
+  "baseline": {
+    "version": "B82",
+    "distinct_provisional_sites": 2573,
+    "canonical_group_ids": 2576,
+    "brazil_canonical_group_rows": 85,
+    "venue_source_rows": 2679,
+    "mass_timetable_rows": 4681,
+    "inherited_verified_timetable_rows": 3347
+  },
+  "directory": {
+    "publisher": "Latin Mass Directory (independent lay directory; not a first-party network directory)",
+    "declared_venues": 91,
+    "source_page_count": 5,
+    "transcribed_index_positions": 91,
+    "distinct_normalized_name_locality_keys": 89,
+    "duplicate_page_positions": [
+      {
+        "source_id": "B86-BR-041",
+        "same_as": "B86-BR-040"
+      },
+      {
+        "source_id": "B86-BR-081",
+        "same_as": "B86-BR-080"
+      }
+    ],
+    "pages": [
+      "https://www.latinmassdir.org/country/br/?view=list",
+      "https://www.latinmassdir.org/country/br/page/2/?communities=&days=&exclusive=&venue_status=&view=list",
+      "https://www.latinmassdir.org/country/br/page/3/?communities=&days=&exclusive=&venue_status=&view=list",
+      "https://www.latinmassdir.org/country/br/page/4/?communities=&days=&exclusive=&venue_status=&view=list",
+      "https://www.latinmassdir.org/country/br/page/5/?communities=&days=&exclusive=&venue_status=&view=list"
+    ],
+    "limitation": "Cached pages variably display 90 or 91, with boundary duplicates. Do not call this 91 independent physical sites or an exhaustive clean census."
+  },
+  "triage": {
+    "source_positions": 91,
+    "detailed_address_or_owner_spotchecks": 19,
+    "supported_existing_B82_building_links": 8,
+    "owner_building_confirmed_but_1962_rite_claim_external": 1,
+    "owner_building_confirmed_tlm_1962_claim_unverified": 1,
+    "additional_external_address_bearing_leads": 7,
+    "occasionally_served_site_date_hold": 1,
+    "historic_source_recovery": 1,
+    "other_index_only_or_name_only_holds": 70,
+    "new_sites_admitted": 0,
+    "new_verified_schedules": 0,
+    "new_public_map_pins": 0
+  },
+  "case_spotchecks": [
+    {
+      "source_id": "B86-BR-002",
+      "venue": "Capela Colégio Santo Tomás de Aquino",
+      "locality": "Uberlândia",
+      "address": "Rua Rafael Rinaldi 1485, Martins",
+      "existing_group_id": "RG-B65-F542148DE182",
+      "disposition": "OWNER_1962_MASS_CONFIRMS_EXISTING",
+      "source_url": "https://irmandadedocarmo.org/"
+    },
+    {
+      "source_id": "B86-BR-003",
+      "venue": "Capela da Casa São Vicente de Paula",
+      "locality": "Juiz de Fora",
+      "address": "Rua São Sebastião, Centro",
+      "existing_group_id": null,
+      "disposition": "DIRECTORY_BUILDING_SAME_NAME_B82_HOLD",
+      "source_url": "https://www.latinmassdir.org/venue/capela-da-casa-sao-vicente-de-paula-chapel-of-the-saint-vincent-de-paul-house-juiz-de-fora-state-of-minas-gerais-brazil/"
+    },
+    {
+      "source_id": "B86-BR-004",
+      "venue": "Capela Congregação Mariana N.S. Fátima",
+      "locality": "Manaus",
+      "address": "Rua Dom Milton Correia Pereira, Parque Dez",
+      "existing_group_id": null,
+      "disposition": "OCCASIONAL_MASS_DATE_HOLD",
+      "source_url": "https://www.latinmassdir.org/venue/capela-da-congregacao-mariana-de-nossa-senhora-de-fatima-manaus-state-of-amazonas-brazil/"
+    },
+    {
+      "source_id": "B86-BR-014",
+      "venue": "Capela do Asilo Irmão Joaquim",
+      "locality": "Florianópolis",
+      "address": "Av. Mauro Ramos 901",
+      "existing_group_id": "RG-B65-F58D1C8B0693",
+      "disposition": "OWNER_MATCH_EXISTING_B81",
+      "source_url": "https://ibpamericalatina.org/casa/florianopolis/"
+    },
+    {
+      "source_id": "B86-BR-019",
+      "venue": "Capela Menino Jesus de Praga",
+      "locality": "São José dos Campos",
+      "address": "Rua Padre Rodolfo 28",
+      "existing_group_id": "RG-B65-596F949E3A13",
+      "disposition": "B82_EXISTING_ADDRESS",
+      "source_url": "https://www.latinmassdir.org/country/br/?view=list"
+    },
+    {
+      "source_id": "B86-BR-029",
+      "venue": "Capela Santa Maria das Vitórias",
+      "locality": "Anápolis",
+      "address": "Rua Espírito Santo, Quadra E, Lotes 26–27",
+      "existing_group_id": "RG-B65-640B6CC90C17",
+      "disposition": "B82_EXISTING_ADDRESS",
+      "source_url": "https://www.latinmassdir.org/country/br/page/2/?view=list"
+    },
+    {
+      "source_id": "B86-BR-038",
+      "venue": "Colégio Santo Afonso",
+      "locality": "Manaus",
+      "address": "Rua Belo Horizonte, Adrianópolis",
+      "existing_group_id": null,
+      "disposition": "DIRECTORY_BUILDING_POSSIBLE_B82_SCHOOL_HOLD",
+      "source_url": "https://www.latinmassdir.org/venue/colegio-santo-afonso-santo-alfonso-college-manaus-state-of-amazonas-brazil/"
+    },
+    {
+      "source_id": "B86-BR-049",
+      "venue": "Igreja do Imaculado Coração de Maria",
+      "locality": "Cardoso Moreira",
+      "address": "Rua Manoel Aguiar, Praça Tiradentes",
+      "existing_group_id": null,
+      "disposition": "DIRECTORY_BUILDING_ONLY",
+      "source_url": "https://www.latinmassdir.org/venue/igreja-do-imaculado-coracao-de-maria-church-of-the-immaculate-heart-of-mary-cardoso-moreira-state-of-rio-de-janeiro-brazil/"
+    },
+    {
+      "source_id": "B86-BR-054",
+      "venue": "Igreja Nossa Senhora do Carmo",
+      "locality": "Divinópolis",
+      "address": "Rua Ouro Preto 589–641",
+      "existing_group_id": "RG-9723082006BB",
+      "disposition": "OWNER_MATCH_EXISTING_B82",
+      "source_url": "https://oratoriosaojosebh.org/comunidades-atendidas/"
+    },
+    {
+      "source_id": "B86-BR-056",
+      "venue": "Igreja Nossa Senhora do Rosário",
+      "locality": "Barbacena",
+      "address": "Praça Dom Silvério",
+      "existing_group_id": "RG-456C824082EF",
+      "disposition": "OWNER_MATCH_EXISTING_B82",
+      "source_url": "https://oratoriosaojosebh.org/comunidades-atendidas/"
+    },
+    {
+      "source_id": "B86-BR-057",
+      "venue": "Igreja Nossa Senhora do Rosário",
+      "locality": "Itaúna",
+      "address": "Alameda Pedreira",
+      "existing_group_id": "RG-BC468A8AF86A",
+      "disposition": "OWNER_MATCH_EXISTING_B82",
+      "source_url": "https://oratoriosaojosebh.org/comunidades-atendidas/"
+    },
+    {
+      "source_id": "B86-BR-061",
+      "venue": "Igreja São José Operário",
+      "locality": "Barra Mansa",
+      "address": "Via Sérgio Braga, Comunidade Terra Nova, Barbará",
+      "existing_group_id": null,
+      "disposition": "DIRECTORY_BUILDING_ONLY",
+      "source_url": "https://www.latinmassdir.org/venue/igreja-sao-jose-operario-saint-joseph-the-worker-church-barra-mansa-state-of-rio-de-janeiro-brazil/"
+    },
+    {
+      "source_id": "B86-BR-063",
+      "venue": "Lar dos Meninos Monsenhor Pitaluga",
+      "locality": "Anápolis",
+      "address": "Institutional venue; building room unspecified",
+      "existing_group_id": "RG-A940F448BC92",
+      "disposition": "B82_EXISTING_NAME_NO_NEW_SITE",
+      "source_url": "https://www.latinmassdir.org/country/br/page/4/?view=list"
+    },
+    {
+      "source_id": "B86-BR-064",
+      "venue": "Mosteiro da Santa Face",
+      "locality": "Formosa",
+      "address": "Rua Trajano Balduíno 312, Centro",
+      "existing_group_id": null,
+      "disposition": "OWNER_BUILDING_CONFIRMED_TLM_DIRECTORY_ONLY",
+      "source_url": "https://www.mosteirodasantaface.org/"
+    },
+    {
+      "source_id": "B86-BR-070",
+      "venue": "Oratório São José",
+      "locality": "Belo Horizonte",
+      "address": "Rua Aiuruoca 148, Fernão Dias",
+      "existing_group_id": null,
+      "disposition": "HISTORICAL_SOURCE_AASJMV-EXT-001_NOT_B82_CANONICAL",
+      "source_url": "https://oratoriosaojosebh.org/comunidades-atendidas/"
+    },
+    {
+      "source_id": "B86-BR-086",
+      "venue": "Reitoria Nossa das Graças",
+      "locality": "Goiânia",
+      "address": "Rua 4, Setor Central",
+      "existing_group_id": null,
+      "disposition": "DIRECTORY_BUILDING_ONLY",
+      "source_url": "https://www.latinmassdir.org/venue/reitoria-nossa-das-gracas-goiania-state-of-goias-brazil/"
+    },
+    {
+      "source_id": "B86-BR-087",
+      "venue": "Santuário Bom Jesus",
+      "locality": "Montes Claros",
+      "address": "Praça Bom Jesus, Centro",
+      "existing_group_id": null,
+      "disposition": "DIRECTORY_BUILDING_ONLY",
+      "source_url": "https://www.latinmassdir.org/venue/santuario-bom-jesus-good-jesus-sanctuary-montes-claros-state-of-minas-gerais-brazil/"
+    },
+    {
+      "source_id": "B86-BR-088",
+      "venue": "Santuário São José",
+      "locality": "Salesópolis",
+      "address": "Praça Padre João Menendes, Centro",
+      "existing_group_id": null,
+      "disposition": "DIRECTORY_BUILDING_ONLY",
+      "source_url": "https://www.latinmassdir.org/venue/santuario-sao-jose-saint-joseph-sanctuary-salesopolis-state-of-sao-paulo-brazil/"
+    },
+    {
+      "source_id": "B86-BR-090",
+      "venue": "Terra Santa — Capela Imaculada Conceição",
+      "locality": "Petrópolis",
+      "address": "Rua Monsenhor Bacelar 590, Valparaíso",
+      "existing_group_id": null,
+      "disposition": "DIOCESAN_BUILDING_CONFIRMED_1962_MASS_NOT_ESTABLISHED",
+      "source_url": "https://diocesepetropolis.com.br/paroquia-sao-pedro-de-alcantara/"
+    }
+  ],
+  "semantic_safeguards": [
+    "An absence of a name in B82 is not an approval to create a distinct site; cross-check building address, operator, locality and old source lineage.",
+    "Do not confuse a school, monastery, parish office, or educational campus with a specific chapel when the chapel name/room is known.",
+    "Do not infer 1962 Mass from an ordinary parish Mass or from a physical church owner's website unless the rite is directly documented.",
+    "Retain the original source directory's named index claim even when current schedule is unconfirmed, but never automatically mark inherited timetable rows verified.",
+    "Reported directory totals are not additive to B82 because operator scope differs, B82 includes SSPX and this independent directory excludes SSPX.",
+    "Research URLs and 91-row crosswalk are also in a separate XLSX deliverable; this repo manifest keeps source summary and 19 primary adjudication anchors only."
+  ],
+  "qa": {
+    "frozen_canonical_ids_mutated": 0,
+    "frozen_venue_source_rows_mutated": 0,
+    "historical_mass_times_rows_mutated": 0,
+    "verified_timetable_states_changed": 0,
+    "new_master_sites": 0
+  }
+}
