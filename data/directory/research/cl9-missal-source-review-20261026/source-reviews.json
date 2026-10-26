@@ -1,0 +1,279 @@
+{
+  "schema": "AO_CL9_DIRECT_OWNER_SOURCE_REVIEW_V1",
+  "reviewed_on": "2026-10-26",
+  "input": "CL8 432 explicit/related 1962 historical research candidates, 129 distinct timetable URLs",
+  "disclaimer": "Documented source scope only; no bulk reassignment of accepted_missal_edition; no new public map pins, Una Cum, celebrant classifications, or schedule promotion.",
+  "reviews": [
+    {
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "scope": "OWNER_SCHEDULE_ONLY_BOOK_NOT_EXPLICIT",
+      "observed_claim": "German FSSP district gives named Mass places and times, in its official directory.",
+      "limitation": "Checked schedule gives sites/times, not an explicit edition attached to each entry; cross-check exact named venue, dates, and FSSP programme before owner-edition acceptance.",
+      "supporting_url": "",
+      "exceptions": [],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://notredamedesarmees.fr/paroisse/presentation/horaires-messes-nda/",
+      "scope": "SITE_LITURGICAL_PROGRAM_1962_EXPLICIT",
+      "observed_claim": "Parish publishes Mass times and separately states diocesan priests use the 1962 liturgical books for Mass and sacraments.",
+      "limitation": "The linked liturgical description supports parish programme; it is not a blanket assertion about named celebrants or Una Cum. Time tables include school-holiday exceptions.",
+      "supporting_url": "https://notredamedesarmees.fr/paroisse/la-forme-extraordinaire-du-rite-romain/",
+      "exceptions": [],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://stlouislatinmass.com/calendar",
+      "scope": "SITE_LITURGICAL_PROGRAM_1962_EXPLICIT",
+      "observed_claim": "Oratory's About Us describes celebration of all sacraments according to the 1962 Missale Romanum; calendar supplies recurring Mass times.",
+      "limitation": "About page is separate owner witness; verify individual calendar schedule before recurrence publication.",
+      "supporting_url": "https://stlouislatinmass.com/about-us/about-us",
+      "exceptions": [],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://ourladyhelpofchristians-al.org/",
+      "scope": "SITE_LITURGICAL_PROGRAM_1962_EXPLICIT",
+      "observed_claim": "Parish explicitly states it celebrates Traditional Latin Mass according to the 1962 liturgical form and gives a weekly timetable.",
+      "limitation": "Feast and Holy Day changes require checking its monthly calendar; no named celebrant or Una Cum inferred.",
+      "supporting_url": "",
+      "exceptions": [],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.ololparish.org/mass-times/",
+      "scope": "OWNER_TRADITIONAL_PROGRAM_BOOK_NOT_EXPLICIT",
+      "observed_claim": "Diocesan Latin Mass parish supplies Sunday and weekday Mass times.",
+      "limitation": "Page does not itself say the precise Missal edition; do not infer 1962 from Latin Mass parish title.",
+      "supporting_url": "",
+      "exceptions": [],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.communicantes.fr/horairescomplets.html",
+      "scope": "MIXED_RITE_LYONESE_EXPLICIT",
+      "observed_claim": "FSSP Lyon site lists Sunday 08:30 Low Mass in Lyonese rite and other Masses at Saint-Just, with holiday variations.",
+      "limitation": "Explicit non-Roman rite at 08:30 and certain diocesan feasts: do not assign a single Roman 1962 rite at venue level. Published page footer says version 4, September 2017; contemporaneity separate.",
+      "supporting_url": "",
+      "exceptions": [
+        "LYONESE_RITE_SUNDAY_0830",
+        "LYONESE_RITE_ON_ARCHDIOCESAN_FEASTS"
+      ],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.materecclesiae.org/",
+      "scope": "OWNER_TRADITIONAL_PROGRAM_BOOK_NOT_EXPLICIT",
+      "observed_claim": "Mater Ecclesiae's owner homepage describes a church celebrating the traditional Latin Mass.",
+      "limitation": "Inspected homepage does not establish the exact Missal edition for each timetable row.",
+      "supporting_url": "",
+      "exceptions": [],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.latinmassarlington.org/find-tlm/parishes",
+      "scope": "LAY_ASSOCIATION_TLM_SCHEDULE_NOT_OWNER",
+      "observed_claim": "Lay society lists multiple traditional Mass venues, times and one-Sunday-per-month Latin Ordinary Form substitution for some parishes.",
+      "limitation": "Not first-party parish/diocesan edition evidence; earlier permission timeline includes a summer 2026 renewal question. No current recurrence or 1962 admission.",
+      "supporting_url": "",
+      "exceptions": [
+        "LATIN_ORDINARY_FORM_SUBSTITUTION",
+        "TIME_LIMITED_PERMISSION_NEEDS_RECHECK"
+      ],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.stmargaretmaryoak.org/",
+      "scope": "SITE_MISSAL_JOHN_XXIII_WITH_MIXED_FORMS",
+      "observed_claim": "Parish defines EF as Mass using the Missal of John XXIII, identifies specific EF Mass times and distinguishes Latin Ordinary Form.",
+      "limitation": "Only EF-listed celebrations, not all Latin Masses at church, support the preconciliar Missal. Avoid extrapolating to 10:30 Latin OF.",
+      "supporting_url": "",
+      "exceptions": [
+        "MIXED_ORDINARY_AND_EXTRAORDINARY_FORM"
+      ],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://stmarykazoo.org/mass-times",
+      "scope": "CELEBRATION_SLOT_1962_EXPLICIT",
+      "observed_claim": "Parish Mass Times identifies Sunday 08:00 Low and 12:00 High Mass as 1962 and a weekday/saturday 08:00 Low Mass programme.",
+      "limitation": "Current page groups weekday slots together; row-wise applicability and exceptions need validation; do not infer from all other parish Masses.",
+      "supporting_url": "",
+      "exceptions": [
+        "ORDINARY_FORM_TIMES_SEPARATE"
+      ],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.latinmassdublin.ie/times",
+      "scope": "OWNER_TRADITIONAL_PROGRAM_BOOK_NOT_EXPLICIT",
+      "observed_claim": "Chaplaincy lists public Masses and refers to its calendar.",
+      "limitation": "No explicit 1962 edition wording on the checked Times page; calendar and liturgical programme require linked-source review.",
+      "supporting_url": "",
+      "exceptions": [],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.poorclaresofjoliet.org/liturgical-schedule",
+      "scope": "OWNER_TRADITIONAL_PROGRAM_BOOK_NOT_EXPLICIT",
+      "observed_claim": "Monastery says Traditional Latin Mass is offered daily, with separate hours for Sunday and weekdays.",
+      "limitation": "Checked page does not explicitly name 1962 edition; cannot infer FSSP celebrant affiliation.",
+      "supporting_url": "",
+      "exceptions": [],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.bromptonoratory.co.uk/regular-mass-service-times",
+      "scope": "CELEBRATION_SLOT_1962_EXPLICIT",
+      "observed_claim": "Owner timetable labels Sunday 09:00, weekdays 08:00 and Saturday 08:00 as Latin Mass using 1962 Missal.",
+      "limitation": "London Oratory separately offers other Latin and non-1962 Masses; do not infer edition for Sunday 11:00 Solemn Latin or every Latin-labelled Mass.",
+      "supporting_url": "",
+      "exceptions": [
+        "MULTIPLE_MISSAL_EDITIONS_AT_SAME_SITE"
+      ],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.olhrhahnville.org/traditional-mass",
+      "scope": "OWNER_TRADITIONAL_PROGRAM_BOOK_NOT_EXPLICIT",
+      "observed_claim": "Parish provides full traditional Mass schedule with express diocesan authorization link.",
+      "limitation": "Checked traditional-Mass page does not itself specify 1962 Missal edition; separate permission scope and future recurrence check needed.",
+      "supporting_url": "",
+      "exceptions": [],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.holytrinitysspmn.org/schedule",
+      "scope": "OWNER_TRADITIONAL_PROGRAM_BOOK_NOT_EXPLICIT",
+      "observed_claim": "Parish distinguishes English and Tridentine celebration hours at Holy Trinity and St Augustine.",
+      "limitation": "Timetable does not itself identify exact edition; distinct building designators HT and SA must be preserved.",
+      "supporting_url": "",
+      "exceptions": [
+        "TWO_PHYSICAL_BUILDINGS"
+      ],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.saintadelaide.com/",
+      "scope": "OWNER_TRADITIONAL_PROGRAM_BOOK_NOT_EXPLICIT",
+      "observed_claim": "Parish homepage distinguishes Traditional Latin Mass times from other Masses.",
+      "limitation": "Exact 1962 edition not explicitly stated in the checked timetable; no automatic acceptance.",
+      "supporting_url": "",
+      "exceptions": [],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.cantius.org/full-liturgy-schedule",
+      "scope": "CELEBRATION_SLOT_1962_WITH_EXCEPTIONS",
+      "observed_claim": "Church explicitly separates 1962 Latin celebrations from 2002-English/Latin liturgies, including first-Sunday replacements.",
+      "limitation": "The two Sunday times otherwise labelled 1962 instead use 2002 Missal on first Sundays. Must model date-specific edition exception.",
+      "supporting_url": "",
+      "exceptions": [
+        "FIRST_SUNDAY_2002_REPLACES_1962",
+        "MIXED_MISSAL_EDITION_PROGRAM"
+      ],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://dioceseparis.fr/messes-celebrees-selon-le-missel.html",
+      "scope": "DIOCESAN_UMBRELLA_1962_NOT_SITE_SCHEDULE",
+      "observed_claim": "Diocese of Paris states some Paris Masses use the 1962 Missal and links elsewhere to a timetable.",
+      "limitation": "The inspected landing page does not name the specific sites and times in the six candidate rows. Requires parish-specific source; no row-level proof.",
+      "supporting_url": "",
+      "exceptions": [],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.downtowncatholic.com/traditional-latin-mass.html",
+      "scope": "CELEBRATION_SLOT_1962_EXPLICIT",
+      "observed_claim": "Downtown Catholic parish page states St Patrick's Sunday, Monday, Wednesday, first-Friday and first-Saturday Masses use 1962 Missale Romanum.",
+      "limitation": "As-announced exceptions remain; the 1962 edition claim is specific to St Patrick programme, not its neighboring churches.",
+      "supporting_url": "",
+      "exceptions": [],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.saint-patern.bzh/horaires",
+      "scope": "CELEBRATION_SLOT_1962_EXPLICIT",
+      "observed_claim": "Saint-Patern parish labels extraordinary-form Masses as 1962 Missal and distinguishes ordinary-form times.",
+      "limitation": "Site displays Sunday 09:15 as a 1962 sung Mass; check that all candidate weekday slots correspond to the same church and that holiday exceptions do not supersede them.",
+      "supporting_url": "",
+      "exceptions": [
+        "MIXED_ORDINARY_AND_EXTRAORDINARY_FORM"
+      ],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    },
+    {
+      "url": "https://www.georgetownoratory.org/",
+      "scope": "OWNER_PRECONCILIAR_MISSAL_NOT_EXACT_EDITION",
+      "observed_claim": "Owner page marks particular times with double asterisks to signify preconciliar Missale Romanum.",
+      "limitation": "1962 exact edition is not directly spelled out by the inspected owner text; first-Friday event wording '1962' is date-specific and does not cover all rows.",
+      "supporting_url": "",
+      "exceptions": [],
+      "reviewed_on": "2026-10-26",
+      "review_method": "DIRECT_WEB_PAGE_TEXT_REVIEW",
+      "new_formal_1962_approvals": 0,
+      "public_release": "HOLD"
+    }
+  ]
+}
