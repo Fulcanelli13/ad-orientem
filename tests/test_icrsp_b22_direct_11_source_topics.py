@@ -45,7 +45,6 @@ class DirectSourceReview(unittest.TestCase):
   r={r["topicId"]:r for r in self.review["rows"]}
   self.assertIn("local jurisdiction",r["ST_MANSUY_TRANSLATION_LOCAL_SCOPE"]["releaseGate"].lower())
   self.assertIn("1962",r["MAJOR_LITANIES_25_APRIL_PROCESSION"]["releaseGate"])
-  self.assertIn("2000","2000") if False else None
   self.assertIn("1962",r["ROMAN_MARRIAGE_MASS_CUSTOM_VARIANTS"]["releaseGate"])
   self.assertEqual(self.review["totals"]["newDirectSourceTopicArticles"],11)
   self.assertEqual(self.review["totals"]["newHumanEditorialArticleApprovals"],0)
