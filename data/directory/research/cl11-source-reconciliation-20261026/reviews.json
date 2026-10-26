@@ -139,13 +139,14 @@
         3941,
         3942
       ],
-      "observation": "Parish defines its TLM as the 1962 Missal and explicitly distinguishes the 2002 Missal; page lists candidate weekday/Sunday Latin slots, with first-Saturday Latin exception.",
+      "observation": "Parish defines its TLM as the 1962 Missal and explicitly distinguishes the 2002 Missal; page lists candidate weekday/Sunday Latin slots, with first-Saturday Latin exception. Parish's 16 January 2026 change notice explicitly says first Saturday 09:00 follows the 1962 Missal; Sunday 07:00 is normally 1962 but may use 2002 if priest coverage fails.",
       "exception_codes": [
         "MIXED_1962_AND_2002_MISSALS",
         "FIRST_SATURDAY_LATIN_ONLY",
-        "BULLETIN_CURRENTNESS_REQUIRED"
+        "BULLETIN_CURRENTNESS_REQUIRED",
+        "SUNDAY_0700_MAY_USE_2002_IF_NO_PRIEST_AVAILABLE"
       ],
-      "supporting_owner_url": "",
+      "supporting_owner_url": "https://www.holyrosaryindy.org/news/new-mass-times",
       "evidence_rechecked_on": "2026-10-26",
       "research_only": true,
       "public_approvals": 0,
@@ -181,7 +182,15 @@
           "day": "1st Saturday",
           "time": "09:00"
         }
-      ]
+      ],
+      "row_specific_exception_codes": {
+        "3937": [
+          "2002_MISSAL_IF_PRIEST_COVERAGE_UNAVAILABLE"
+        ],
+        "3942": [
+          "1962_FIRST_SATURDAY_CONFIRMED_2026_PASTOR_NOTICE"
+        ]
+      }
     },
     {
       "url": "https://latinmasspensacola.org/",
