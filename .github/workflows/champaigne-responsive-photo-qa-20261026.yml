@@ -1,0 +1,54 @@
+name: Champaigne frame-free responsive visual QA
+on:
+  push:
+    branches: [fix/approved-feast-heroes-main-20261021]
+    paths: [.github/workflows/champaigne-responsive-photo-qa-20261026.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: champaigne-responsive-qa-20261026
+  cancel-in-progress: false
+jobs:
+  actual-source-320-390-768-1440:
+    runs-on: ubuntu-latest
+    timeout-minutes: 19
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Keep current test scripts while switching to original-photo research branch
+        run: |
+          cp tools/calendar/make-champaigne-mobile-comparison.py /tmp/make-champaigne-qa.py
+          cp tests/champaigne-mobile-desktop-artwork-e2e.mjs /tmp/champaigne-artwork-e2e.mjs
+          git fetch origin research/champaigne-inv1125-photo-review-20261026
+          git switch -C research/champaigne-inv1125-photo-review-20261026 origin/research/champaigne-inv1125-photo-review-20261026
+      - name: Create offline dark-theme responsive photo-quality comparison and source-edge strips
+        run: |
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python3 /tmp/make-champaigne-qa.py
+          cp /tmp/champaigne-artwork-e2e.mjs tests/champaigne-mobile-desktop-artwork-e2e.mjs
+      - name: Install free browser testing dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Check four actual widths, full painting, full-view access, no scroll clipping
+        run: node tests/champaigne-mobile-desktop-artwork-e2e.mjs
+      - name: Preserve screenshots, painting-boundary evidence and browser measurements permanently
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f assets/staged/champaigne-petite-cene-research/C-frame-free-perimeter-inspection.png
+          git add -f assets/staged/champaigne-petite-cene-research/mobile-desktop-visual-qa.html
+          git add -f assets/staged/champaigne-petite-cene-research/ui-review-manifest.json
+          git add -f assets/staged/champaigne-petite-cene-research/responsive-test-screenshots/
+          if ! git diff --cached --quiet; then
+            git commit -m "research(art): permanently archive 320-1440 source-photo responsive QA, not app release"
+            git push origin research/champaigne-inv1125-photo-review-20261026
+          fi
+      - name: Release restriction
+        run: echo "Research only. No image selection replacement, no user-facing deployment, no inferred photo rights or painted-edge signoff."
