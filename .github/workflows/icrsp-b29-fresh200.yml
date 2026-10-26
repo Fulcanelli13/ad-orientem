@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 concurrency:
   group: icrsp-b29-fresh-source-pass
   cancel-in-progress: false
@@ -78,7 +78,7 @@ jobs:
           retention-days: 30
           if-no-files-found: warn
 
-  persist-validated-screen:
+  validate-and-archive-screen:
     if: github.repository == 'Fulcanelli13/ad-orientem'
     needs: [source-body-scan]
     runs-on: ubuntu-latest
@@ -96,7 +96,7 @@ jobs:
         with:
           pattern: icrsp-b29-source-shard-*
           path: /tmp/icrsp-b29-shards
-      - name: Validate exact 200 source-body IDs, source hashes, no releases
+      - name: Validate exact 200 source-body IDs and SHA-256 metadata; publication blocked
         run: |
           cp /tmp/icrsp-b29-plan/icrsp-b29-200-new-source-metadata.v1.json \
             data/source-text/icrsp-france-b29-200-new-source-metadata.v1.json
@@ -111,12 +111,3 @@ jobs:
             data/source-text/icrsp-france-b29-200-new-source-metadata.v1.json
             data/source-text/icrsp-france-b29-200-automated-commentary-signals.v1.json
           retention-days: 90
-      - name: Persist permanent research provenance in same PR branch
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/source-text/icrsp-france-b29-200-new-source-metadata.v1.json \
-            data/source-text/icrsp-france-b29-200-automated-commentary-signals.v1.json
-          git commit -m "research(icrsp): preserve 200 genuinely unseen source-body lexical scans"
-          git pull --rebase origin governance/icrsp-source-inventory-1665
-          git push origin HEAD:governance/icrsp-source-inventory-1665
