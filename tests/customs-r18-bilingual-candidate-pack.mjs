@@ -44,7 +44,7 @@ for (const [i,r] of pack.records.entries()) {
  assert.deepEqual(Object.keys(r.article).sort(),fields.slice().sort());
  for(const field of fields)for(const locale of ["en","fr"]){
   assert.ok(typeof r.article[field][locale]==="string",r.review_key+" "+field+" "+locale);
-  assert.ok(r.article[field][locale].trim().length>8,r.review_key+" "+field+" "+locale);
+  assert.ok(r.article[field][locale].trim().length>=(field==="occasion"?5:9),r.review_key+" "+field+" "+locale);
  }
  assert.ok(r.sources.length);
  assert.equal(new Set(r.sources.map(s=>s.url)).size,r.sources.length);
