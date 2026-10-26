@@ -1,0 +1,52 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const load=n=>JSON.parse(readFileSync(new URL("../data/customs/master/"+n,import.meta.url),"utf8"));
+const gate=load("customs-r18-final-source-recheck-release-gates-20261026.v1.json");
+const pack=load("customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json");
+const handoff=load("customs-r18-controlled-calendar-handoff-20261026.v1.json");
+assert.equal(gate.schema,"AO_CUSTOMS_R18_SOURCE_RECHECK_AND_CALENDAR_RELEASE_GATES_20261026_V1");
+assert.equal(gate.records.length,18);
+assert.deepEqual(gate.records.map(x=>x.review_key),pack.records.map(x=>x.review_key));
+assert.deepEqual(gate.records.map(x=>x.review_key),handoff.records.map(x=>x.review_key));
+assert.equal(new Set(gate.records.map(x=>x.review_key)).size,18);
+const counts=Object.fromEntries(["A_FIRST_SIX_DRAFTS","B_CONTEXT_AND_VARIANTS","C_LOCAL_EVENTS_NO_AUTO_SCHEDULE","D_COMPANION_ONLY"].map(k=>[k,gate.records.filter(x=>x.release_priority===k).length]));
+assert.deepEqual(counts,{A_FIRST_SIX_DRAFTS:6,B_CONTEXT_AND_VARIANTS:7,C_LOCAL_EVENTS_NO_AUTO_SCHEDULE:4,D_COMPANION_ONLY:1});
+assert.equal(gate.total_counts.source_links_revisited,18);
+assert.equal(gate.total_counts.human_approved,0);
+assert.equal(gate.total_counts.published_additions,0);
+assert.equal(gate.total_counts.canonical_id_assignments,0);
+assert.equal(gate.guardrails.current_calendar_only,true);
+assert.equal(gate.guardrails.no_new_timetable_data,true);
+assert.equal(gate.guardrails.calendar_owns_movables,true);
+for(const [i,r] of gate.records.entries()){
+ const draft=pack.records[i];
+ assert.equal(r.release_key,draft.release_key);
+ assert.equal(r.title_en,draft.article.title.en);
+ assert.equal(r.source_url_reopened_2026_10_26,draft.source_scope.principal_claim_source);
+ assert.equal(r.recheck_scope,"EXACT_NARROW_SOURCE_CLAIM_ONLY");
+ assert.equal(r.source_linked_claim_rechecked,true);
+ assert.equal(r.independent_full_article_source_certification,false);
+ assert.equal(r.human_editorial_approval,false);
+ assert.equal(r.roman_rite_minister_approval,false);
+ assert.equal(r.calendar_publication_approved,false);
+ assert.equal(r.publication_allowed,false);
+ assert.equal(r.canonical_new_id,null);
+ assert.equal(r.proposed_calendar_anchor?.kind?.length>8,true);
+ assert.equal(r.proposed_calendar_anchor?.visibility?.length>8,true);
+ assert.ok(r.specific_claim_cautions.length>0);
+ assert.equal(r.historical_original_copy_unchanged,true);
+ assert.equal(draft.publication_status,"UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_DRAFT");
+ assert.equal(draft.existing_calendar_hint.auto_schedule_enabled,false);
+ assert.equal(draft.acceptance.publish,"PROHIBITED");
+}
+for(const r of gate.records.filter(x=>x.release_priority==="C_LOCAL_EVENTS_NO_AUTO_SCHEDULE")){
+ assert.match(r.proposed_calendar_anchor.visibility,/NO_AUTOMATIC|NO_ASSUMED/);
+ assert.equal(r.proposed_calendar_anchor.kind.includes("FEAST")||r.proposed_calendar_anchor.kind.includes("SUNDAY"),true);
+}
+const irish=gate.records.find(x=>x.review_key==="MASTER:CANDIDATE-IRISH-CHRISTMAS-CANDLE");
+assert.ok(irish.specific_claim_cautions.some(x=>x.includes("TIPPERARY")));
+const companion=gate.records.find(x=>x.review_key==="OBSERVATION:BULK150-018");
+assert.equal(companion.release_priority,"D_COMPANION_ONLY");
+assert.equal(companion.proposed_calendar_anchor.kind,"COMPANION_TEXT_ONLY");
+assert.equal(companion.proposed_calendar_anchor.hint,null);
+console.log("PASS customs 18 source-recheck release gates: 6 date-stable drafts, 7 contextual, 4 locality-specific no-schedule, 1 companion; 0 approvals or publication");
