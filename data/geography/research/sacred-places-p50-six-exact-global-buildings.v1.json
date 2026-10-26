@@ -15,7 +15,7 @@
     "sources": 816,
     "crosswalk": 518,
     "unlinked": 259,
-    "geo_areas": 146,
+    "geo_areas": 148,
     "directory_links": 9
   },
   "new_physical_locations": 6,
@@ -24,7 +24,10 @@
   "global_canonical_links_after_release": 142,
   "global_unresolved_after_release": 358,
   "remaining_open_mapping_queue_after_release": 33,
-  "new_geo_areas": [],
+  "new_geo_areas": [
+    "geo:country:BY",
+    "geo:country:GQ"
+  ],
   "photo_assets_approved": 0,
   "tlm_schedule_links_added": 0,
   "published_new": [
@@ -183,7 +186,7 @@
   "policy": [
     "Six candidate IDs inherited from the P43 unresolved 500; all have first-party Catholic or authoritative institutional identity, and exact named OSM worship-building features.",
     "Map identity and custodial source are separate, both mandatory. No auxiliary monastery, museum, gatehouse, landmark or wrong-city duplicate.",
-    "No invented Mass times, photos, shrine claims, artwork, pilgrimage schedules, TLM directory links or new geo areas.",
+    "Two countries lacking original area nodes require explicit standard CIVIL country geography; no invented Mass times, photos, shrine claims, artwork, pilgrimage schedules, TLM directory links or new geo areas.",
     "Original source evidence remains in P49 without rewriting P49 research queue historical snapshot."
   ]
 }
