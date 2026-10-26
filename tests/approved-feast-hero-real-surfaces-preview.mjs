@@ -18,7 +18,7 @@ const candidates=packaged.photographs;
 assert.equal(candidates.length,10);
 const CHAMPAIGNE_TEST_ONLY=process.env.AO_CHAMPAIGNE_REAL_SURFACE_QA==="1";
 const TEST_ORIGINAL_D_SHA="f0742b795178e1a600e43694693f880a07039587b74ba6f352ccbf389919cb30";
-const PILOT_SOURCE_PATH="artifacts/sacred-art-approved-hero-real-surface-preview/champaigne-D-photo-test-only.jpg";
+const PILOT_SOURCE_PATH="assets/sacred-art/qa-research/champaigne-d-photo-test-only.jpg";
 const decisions=CHAMPAIGNE_TEST_ONLY ?
     APPROVED_FEAST_HERO_DATES.filter(z=>["2026-04-02","2026-05-27"].includes(z.date)) :
     APPROVED_FEAST_HERO_DATES;
