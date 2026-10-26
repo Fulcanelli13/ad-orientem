@@ -89,6 +89,7 @@ try{
             provenance:{dayTitle:d.title??null,dayColour:d.color??d.colour??null,properTitle:p.name??p.title?.en??null,properColour:p.color??p.colour??null,colourPlan:r?.colourPlan??null,dayCommemorations:d.commemorations??null,properCommemorations:p.commemorations??null},
             rawRank:p.rank??d.rank??null,rawColour:(/^tempora:Quad6-5r:/.test(String(d.id??""))?r?.colourPlan?.primary:r?.colourPlan?.massColor)??p.color??p.colour??d.color??d.colour??r?.colourPlan?.name??null,
             commemorations:comms,properStatus:String(r?.proper?.status||""),
+            properSourcePath:p.sourcePath??r?.proper?.sourcePath??null,
             ordoRuleReview:{gloria:sourceRule("gloria"),credo:sourceRule("credo")},
             prefaceReview:{status:preface.status,reason:preface.reason,
               expected:preface.expected,actual:preface.actual,heading:preface.heading,
@@ -286,10 +287,11 @@ try{
     counts:summary.prefaceReview,
     queue:rows.filter(x=>x.prefaceReview?.status!=="RULE_TEXT_AGREE").map(x=>({
       date:x.date,principalId:x.mainId,title:x.title,
-      sourcePath:x.provenance?.properTitle||null,rank:x.rawRank,
+      sourcePath:x.properSourcePath||null,rank:x.rawRank,
       ...x.prefaceReview
     })),
     rows:rows.map(x=>({date:x.date,principalId:x.mainId,title:x.title,rank:x.rawRank,
+      sourcePath:x.properSourcePath||null,
       ...x.prefaceReview}))
   },null,2)+"\n","utf8");
   console.log("CALENDAR_1962_YEAR_AUDIT_SUMMARY="+JSON.stringify(summary));
