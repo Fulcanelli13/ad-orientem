@@ -63,6 +63,7 @@
     "test:reader-form-state": "node tests/reader-form-state-parity.mjs",
     "test:full-mass-preflight": "node tests/full-mass-folio-options.mjs && node tests/full-mass-preflight.mjs && node tests/observed-mass-source.mjs",
     "test:mass-icon-review": "node tests/mass-icon-gap-review.mjs && npm run test:mass-icon-necessity && npm run test:mass-icon-source",
+    "audit:mass-icksp-279-snapshot": "node tests/mass-icksp-full-icon-screening.mjs",
     "test:mass-integration-grid": "node tests/mass-form-special-integration.mjs",
     "test:observed-mass": "node tests/observed-mass-source.mjs",
     "test:full-mass-phone": "node tests/full-mass-preflight-phone-e2e.mjs",
