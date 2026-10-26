@@ -1,0 +1,158 @@
+{
+  "schema": "AO_TLM_B91_LEAN_CORE_CONSOLIDATED_MASTER_INTEGRITY_20261026_V1",
+  "report_date": "2026-10-26",
+  "scope": "RESEARCH_ONLY; PARITY_VERIFIED_CORE; NOT_PRODUCTION_IMPORT",
+  "parent_master": {
+    "name": "Ad_Orientem_TLM_B82_Consolidated_Identity_And_Physical_View_2026-10-25.xlsx",
+    "historical_worksheets": 47,
+    "retain_separately": true,
+    "distinct_sites": 2573,
+    "canonical_historical_groups": 2576,
+    "venue_source_rows": 2679,
+    "mass_timetable_rows": 4681,
+    "previously_verified_rows": 3347
+  },
+  "new_operational_core": {
+    "name": "Ad_Orientem_B91_Lean_Consolidated_Operational_Core_2026-10-26.xlsx",
+    "sha256": "1e52538a341f5e9576d967cf5c58ac9b409808f1b98dace41ff7066285002f57",
+    "included_in_pr": false,
+    "core_sheets": [
+      "CANONICAL SITES",
+      "PHYSICAL SITES",
+      "UNIFIED VENUES",
+      "MASS TIMES"
+    ],
+    "control_sheets": [
+      "B91 DASHBOARD",
+      "B91 EFFECTIVE SITES",
+      "B91 ALIAS LINKS",
+      "B91 SOURCES",
+      "B91 QA"
+    ],
+    "historical_b82_source_sheets_embedded": false,
+    "note": "Lean derived successor contains ALL cell-equivalent inherited rows for the four operational tables, not all 47 B82 research/archive worksheets. The 47-sheet original remains separately preserved."
+  },
+  "admissions_from_b88": {
+    "proposal_pr": 1701,
+    "source_file": "Ad_Orientem_B88_Five_Brazil_Site_Admission_Delta_2026-10-25.xlsx",
+    "count": 5,
+    "new_research_groups": [
+      {
+        "group_id": "RG-B88-F691777F8D8D",
+        "source_id": "AO-B88-BR-001",
+        "name": "Igreja São José Operário",
+        "country": "BR",
+        "locality": "Barra Mansa, RJ"
+      },
+      {
+        "group_id": "RG-B88-E491FACD85B9",
+        "source_id": "AO-B88-BR-002",
+        "name": "Capelania Pessoal Nossa Senhora do Perpétuo Socorro",
+        "country": "BR",
+        "locality": "Volta Redonda, RJ"
+      },
+      {
+        "group_id": "RG-B88-D6480F7F32B7",
+        "source_id": "AO-B88-BR-003",
+        "name": "Capela São Sebastião — Bulhões",
+        "country": "BR",
+        "locality": "Resende, RJ"
+      },
+      {
+        "group_id": "RG-B88-60104C25870A",
+        "source_id": "AO-B88-BR-004",
+        "name": "Santuário do Bom Jesus",
+        "country": "BR",
+        "locality": "Montes Claros, MG"
+      },
+      {
+        "group_id": "RG-B88-B1EB74BB63BD",
+        "source_id": "AASJMV-EXT-001",
+        "name": "Capela do Oratório São José",
+        "country": "BR",
+        "locality": "Belo Horizonte, MG",
+        "lineage": "Historically source-identified; do not mint replacement source ID"
+      }
+    ],
+    "verification": "Source-backed distinct research buildings; none has a new verified timetable, exact map pin or production approval"
+  },
+  "effective_identity": {
+    "historical_group_ids": 2581,
+    "physical_site_anchors": 2576,
+    "alias_groups": 5,
+    "already_in_b82": [
+      {
+        "alias": "RG-E0C932E6CB74",
+        "anchor": "RG-D9490DF575C9",
+        "place": "Manchester St Pius X"
+      },
+      {
+        "alias": "RG-FB8FE21E0732",
+        "anchor": "RG-3EFF2C4A33C0",
+        "place": "Montréal Saint-Irénée"
+      },
+      {
+        "alias": "RG-570BDEDA273D",
+        "anchor": "RG-3EFF2C4A33C0",
+        "place": "Montréal Saint-Irénée"
+      }
+    ],
+    "new_b91_links": [
+      {
+        "alias": "RG-4BC0694A51BE",
+        "anchor": "RG-2E1FB8361143",
+        "place": "Warrington St Mary's Shrine",
+        "evidence_url": "https://fssp.org.uk/warrington/"
+      },
+      {
+        "alias": "RG-CF06C93617A1",
+        "anchor": "RG-BF0D731A3654",
+        "place": "Reading St William of York",
+        "evidence_url": "https://fssp.org.uk/reading/",
+        "note": "Owner /reading/ gives church postcode RG1 5JP, /reading/contact/ shows RG1 5JJ; retain original inherited street/address in frozen rows and resolve inconsistent postcode before any map update"
+      }
+    ],
+    "implementation": "Links materialized in B91 ALIAS LINKS and B91 EFFECTIVE SITES overlay; inherited core rows not rewritten."
+  },
+  "qa": {
+    "original_canonic_row_hash_SHA256": "7be42a68b3b00ea082bf946da6b9ea4fb86389021923f134b35fa10ed28f08b0",
+    "original_physical_row_hash_SHA256": "a9de1fe501028754bf34c6a756e32cad1a5ae21f90226653871ae15e8dec09a8",
+    "original_venue_row_hash_SHA256": "1bbbd965fcd15ed32316e03a5591c5571448f1de2a22814f355d6f8af80b82b7",
+    "original_timetable_row_hash_SHA256": "9114e1fd9c9b5b7fd2fff3805d5338fe6d1721a080273b9e9f3b3a0f94d3ae3c",
+    "readback_mechanism": "Independent XLSX ZIP/XML row-by-row, all cells original source order, retaining original inline-string/numeric value types",
+    "inherited_original_rows_changed": {
+      "canonical": 0,
+      "physical": 0,
+      "venue": 0,
+      "timetable": 0
+    },
+    "final_counts": {
+      "canonical_rows": 2581,
+      "physical_source_rows": 2581,
+      "venue_source_rows": 2684,
+      "timetable_rows": 4681,
+      "verified_timetable_rows": 3347,
+      "distinct_provisional_site_groups": 2576,
+      "aliases": 5
+    },
+    "readback_result": "PASS_FOR_ALL_FOUR_INHERITED_TABLES_AND_DASHBOARD"
+  },
+  "publication_gate": {
+    "new_public_map_pins": 0,
+    "new_verified_timetables": 0,
+    "mass_timings_carried_over_by_identity_alias": "NONE",
+    "original_group_ids_deleted": 0,
+    "production_directory_master_changed": false,
+    "operational_research_successor_only": true
+  },
+  "upstream_prs": [
+    1686,
+    1692,
+    1694,
+    1698,
+    1701,
+    1704,
+    1706
+  ],
+  "next_action": "Keep B82 as archival 47-sheet master, B91 lean core as research successor. Validate/merge dependency PRs in order and define application import adapter explicitly; do not treat this manifest or merging it alone as changing production pins/schedules."
+}
