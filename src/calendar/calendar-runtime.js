@@ -1037,7 +1037,15 @@ function ordoMassEvidenceMarkup(facts){
        !/^https:\/\/isidore\.co\/divinum\//.test(String(data.sourceUrl||"")))return "";
     return `<li><b>${esc(label)}</b> · ${esc(data.clause.replaceAll("_"," "))} · <a href="${esc(data.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(L("1960 rubrics","Rubriques de 1960"))}</a></li>`;
   }).filter(Boolean);
-  return rows.length?`<details class="aoCalOrdoBasis"><summary>${esc(L("Rubrical basis","Fondement rubrical"))}</summary><ul>${rows.join("")}</ul></details>`:"";
+  // Keep Preface evidence distinct from the celebrant's actual Mass
+  // selection. A source conflict is reviewable, not a permission to replace
+  // the native reader's orations or Preface.
+  const p=facts?.preface;
+  if(["MATCH","SOURCE_CONFLICT"].includes(p?.status)&&/^[0-9]{3}_[A-Z]$|^[0-9]{3}$/.test(String(p?.clause||""))&&
+     /^https:\/\/isidore\.co\/divinum\//.test(String(p?.sourceUrl||"")))
+    rows.push(`<li><b>${esc(L("Preface","Préface"))}</b> · § ${esc(p.clause.replace("_","(")+(/_/.test(p.clause)?")":""))} · <a href="${esc(p.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(L("1960 Missal rubrics","Rubriques du Missel de 1960"))}</a></li>`);
+  return rows.length?`<details class="aoCalOrdoBasis"`;
+><summary>${esc(L("Rubrical basis","Fondement rubrical"))}</summary><ul>${rows.join("")}</ul></details>`:"";
 }
 function ordoMassFactMarkup(facts){
   if(facts?.status!=="SOURCE_PROPER")return "";
