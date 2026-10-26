@@ -59,6 +59,10 @@ const fakeReady={
     height:1200,
     fullPaintedSurface:true,
     noGlare:true,
+    physicalFrameAbsent:true,
+    gallerySurroundAbsent:true,
+    paintingBoundsVerified:true,
+    noSyntheticFill:true,
     phone320Pass:true,
     phone390Pass:true,
   },
@@ -98,6 +102,11 @@ assert.equal(bad(w=>{w.title="Another painting"}),"PHOTO_IDENTITY_RIGHTS_OR_MOBI
 assert.equal(bad(w=>{w.artworkId="fake-other-painting"}),"PHOTO_IDENTITY_RIGHTS_OR_MOBILE_HOLD");
 assert.equal(bad(w=>{w.source.exactOriginalVerified=false}),"PHOTO_IDENTITY_RIGHTS_OR_MOBILE_HOLD");
 assert.equal(bad(w=>{w.photo.fullPaintedSurface=false}),"PHOTO_IDENTITY_RIGHTS_OR_MOBILE_HOLD");
+assert.equal(bad(w=>{w.photo.physicalFrameAbsent=false}),"PHOTO_IDENTITY_RIGHTS_OR_MOBILE_HOLD");
+assert.equal(bad(w=>{delete w.photo.physicalFrameAbsent}),"PHOTO_IDENTITY_RIGHTS_OR_MOBILE_HOLD");
+assert.equal(bad(w=>{w.photo.gallerySurroundAbsent=false}),"PHOTO_IDENTITY_RIGHTS_OR_MOBILE_HOLD");
+assert.equal(bad(w=>{w.photo.paintingBoundsVerified=false}),"PHOTO_IDENTITY_RIGHTS_OR_MOBILE_HOLD");
+assert.equal(bad(w=>{w.photo.noSyntheticFill=false}),"PHOTO_IDENTITY_RIGHTS_OR_MOBILE_HOLD");
 assert.equal(bad(w=>{w.photo.phone320Pass=false}),"PHOTO_IDENTITY_RIGHTS_OR_MOBILE_HOLD");
 assert.equal(bad(w=>{w.photo.phone390Pass=false}),"PHOTO_IDENTITY_RIGHTS_OR_MOBILE_HOLD");
 assert.equal(bad(w=>{w.photo.path="https://example.org/other.jpg"}),"PHOTO_IDENTITY_RIGHTS_OR_MOBILE_HOLD");
