@@ -96,7 +96,7 @@ assert.equal(renderCalendarHistoricalContext("2026-05-25"),"");
 assert.equal((visible.match(/<details /g)||[]).length,1);
 assert.equal((visible.match(/<a href=/g)||[]).length,2);
 const runtimeSource=readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
-assert.match(runtimeSource,/renderCalendarHistoricalContext\\(selected,\\{fr:fr\\(\\),observedMainId:r\\?\\.day\\?\\.main\\?\\.id\\}\\)/);
+assert.ok(runtimeSource.includes("renderCalendarHistoricalContext(selected,{fr:fr(),observedMainId:r?.day?.main?.id})"));
 assert.match(runtimeSource,/\.aoCalHistoricalCard summary/);
 assert.ok(runtimeSource.indexOf("${renderCalendarHistoricalContext(selected,{fr:fr(),observedMainId:r?.day?.main?.id})}")<
           runtimeSource.indexOf("${practiceContext(selected,r)}"));
