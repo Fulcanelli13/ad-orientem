@@ -1,0 +1,32 @@
+name: ICRSP B40 edition and duplicate-hash integrity
+on:
+  push:
+    branches:
+      - governance/icrsp-source-inventory-1665
+    paths:
+      - '.github/workflows/icrsp-b40-edition-intake.yml'
+      - 'data/source-text/icrsp-france-b40-29-named-salesian-annecy-toc-crosswalk.v1.json'
+      - 'data/source-text/icrsp-france-b40-all223-duplicate-groups-edition-triage.v1.json'
+      - 'data/source-text/icrsp-france-b40-four-author-edition-and-language-gates.v1.json'
+      - 'tests/test_icrsp_b40_223_groups_29_salesian_toc_editions.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: icrsp-b40-edition-integrity
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Confirm all 223 SHA repeats, Salesian TOC exceptions, edition-rights holds
+        run: python -m unittest discover -s tests -p 'test_icrsp_b40_223_groups_29_salesian_toc_editions.py' -v
