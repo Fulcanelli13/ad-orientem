@@ -1,7 +1,7 @@
 /**
  * Date-specific Sacred Art decisions made by the curator on 19 October 2026.
  *
- * These are EDITORIAL approvals, not source-photograph rights grants. Keep the
+ * Holy Thursday was explicitly revised by the user on 26 October 2026:\n * Philippe de Champaigne replaces Ugolino da Siena ONLY for 2 April 2026.\n * All other date selections, including Champaigne on 27 May, remain unchanged.\n * These are EDITORIAL approvals, not source-photograph rights grants. Keep the
  * old Proper-art paintings in their own illustrated-Gospel context: they must
  * not impersonate the curator's later approved Home hero on these ten dates.
  *
@@ -9,11 +9,11 @@
  * infer observed Masses from feast names. The live 1962 DayResolver principal
  * ID must agree before we even consider a packaged release candidate.
  */
-export const APPROVED_FEAST_HERO_VERSION = "oct19-feast-selection-adapter-v1";
+export const APPROVED_FEAST_HERO_VERSION = "oct19-feast-selection-adapter-v2-oct26-holy-thursday-champaigne";
 
 const records = [
   ["2026-03-29","tempora:Quad6-0r:1:rv","Palm Sunday","Anthony van Dyck","The Entry of Christ into Jerusalem",null,"EXACT_PALM_PROCESSION"],
-  ["2026-04-02","tempora:Quad6-4r:1:w","Holy Thursday","Ugolino da Siena","Last Supper",null,"EXACT_FEAST_SUBJECT"],
+  ["2026-04-02","tempora:Quad6-4r:1:w","Holy Thursday","Philippe de Champaigne","La Petite Cène","ART-hilippe-de-hampaigne-a-etite-ne","EXACT_EUCHARISTIC_INSTITUTION"],
   ["2026-05-23","tempora:Pasc6-6:1:r","Pentecost Vigil","Juan Bautista Maíno","The Pentecost",null,"ANTICIPATORY_PENTECOST_THEME"],
   ["2026-05-24","tempora:Pasc7-0:1:r","Pentecost","Jean Restout","Pentecost","ART-ean-estout-entecost","EXACT_FEAST_SUBJECT"],
   ["2026-05-27","tempora:Pasc7-3:1:r","Pentecost Ember Wednesday","Philippe de Champaigne","La Petite Cène","ART-hilippe-de-hampaigne-a-etite-ne","EUCHARISTIC_THEME_NOT_LITERAL_GOSPEL"],
