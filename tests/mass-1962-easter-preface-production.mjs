@@ -52,7 +52,8 @@ try{
    const out={};
    for(const lang of ["la","en","fr"]){
      try{
-       const parsed=await resolver.resolveSource("Ordo/Prefationes",lang,{});
+       const diagnostic={requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]};
+       const parsed=await resolver.resolveSource("Ordo/Prefationes",lang,diagnostic);
        const lines=parsed?.map?.get?.("Pasch")??[];
        const simplified=lines.map(line=>String(line).trim().replace(/^!\s*/,"")
          .replace(/^[Vv]\.\s*/,"℣. ")).join("\n");
