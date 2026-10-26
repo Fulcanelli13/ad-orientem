@@ -43,7 +43,11 @@ The Yorck file's SHA-256 is `595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08
 
 ## St Joseph
 
-The **complete National Gallery NG6276** photo (Philippe de Champaigne, *The Dream of Saint Joseph*) was acquired with original SHA-256 `d632ea2012825ecdccc760f50b7cc9107a30bf4a2349541742ef6f66a4987f9b`, 4,421×6,000 and 19.75 MB. [Research original](https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-joseph-original-20261026/assets/staged/module-hero-masters/joseph.jpg). Pending actual native-pixel visual review and app-crop testing. We specifically did **not** substitute a small cropped thumbnail.
+The **complete National Gallery NG6276** photo (Philippe de Champaigne, *The Dream of Saint Joseph*) was acquired with original SHA-256 `d632ea2012825ecdccc760f50b7cc9107a30bf4a2349541742ef6f66a4987f9b`, 4,421×6,000 and 19.75 MB. [Research original](https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-joseph-original-20261026/assets/staged/module-hero-masters/joseph.jpg). Actual full-image and native-detail previews from that original were subsequently examined:
+
+![Full Saint Joseph](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-joseph-original-20261026/assets/staged/module-hero-preview-jpegs/joseph-whole-preview.jpg) ![Saint Joseph 420px native detail](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-joseph-original-20261026/assets/staged/module-hero-preview-jpegs/joseph-upper-detail.jpg)
+
+**Promising full-fidelity photograph:** subdued chiaroscuro, delicate flesh and drapery modelling, and surface details are preserved. It is still not released until rights, institution-calibrated colour, and app layout gates pass. We specifically did **not** substitute a small cropped thumbnail.
 
 ## Required sign-off (none currently satisfied in full)
 
