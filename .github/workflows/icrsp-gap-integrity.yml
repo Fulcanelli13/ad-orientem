@@ -114,6 +114,9 @@ on:
       - 'data/source-text/icrsp-france-b32-editorial20-fresh200.v1.json'
       - 'data/source-text/icrsp-france-b32-464-unique-topical-ledger.v1.json'
       - 'tests/test_icrsp_b32_editorial20_fresh200.py'
+      - 'data/source-text/icrsp-france-b33-twenty-two-direct-source-topics.v1.json'
+      - 'data/source-text/icrsp-france-b33-486-unique-topical-ledger.v1.json'
+      - 'tests/test_icrsp_b33_486_source_review.py'
   workflow_dispatch:
 
 permissions:
@@ -172,3 +175,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b31_eight_commons_existing_owner_gate.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b32_five_real_source_topics.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b32_editorial20_fresh200.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b33_486_source_review.py' -v
