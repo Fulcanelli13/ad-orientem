@@ -416,7 +416,7 @@ test('Psalm 46 wrong Latin first word requires underlay review, not automated pu
   const review=readJSON('data/research/processionale-palm46-gabc-underlay-review-20261026.v1.json');
   const base='data/research/chant-source-archive/1961-graduale-novus-20261026/';
   const manifest=readJSON(base+'sha256-manifest.json');
-  assert.equal(review.status,'EDITORIAL_CANDIDATE_ONLY_UNDERLAY_UNVERIFIED_QUARANTINED');
+  assert.equal(review.status,'FACSIMILE_OPENING_RECITING_TONE_CANDIDATE_STAGED_NOT_FULL_SCORE_APPROVED');
   assert.equal(review.source.scoreId,19316);
   const source=manifest.records.find(x=>x.gregobaseId===19316);
   assert.equal(review.source.sha256,source.sha256);
@@ -429,7 +429,7 @@ test('Psalm 46 wrong Latin first word requires underlay review, not automated pu
   assert.equal(review.candidate.openingGabc,'O(f)mnes(gh) pó(h)pu(h)li,(h)');
   assert.equal(review.candidate.openingTokens.length,5);
   assert.equal(review.candidate.pitchAssignmentOfNewExtraSyllable,undefined);
-  assert.equal(review.issue.pitchAssignmentOfNewExtraSyllable,'UNVERIFIED_AGAINST_PRINTED_PAGE');
+  assert.equal(review.issue.pitchAssignmentOfNewExtraSyllable,'VISUALLY_CORRELATED_TO_PRINTED_RECITING_TONE_BUT_NOT_HUMAN_SIGNED_OFF');
   assert.equal(review.candidate.publicationEligible,false);
   assert.equal(review.sourceChecks.productionApproved,false);
   assert.ok(review.candidate.mustBeReviewedAgainstPrint);
@@ -438,4 +438,36 @@ test('Psalm 46 wrong Latin first word requires underlay review, not automated pu
   assert.ok(review.sourceChecks.rawArchivedFileImmutable);
   assert.ok(!raw.includes(review.candidate.openingGabc),
     'Research suggestion must never overwrite immutable original GABC');
+});
+
+
+test('Psalm 46 research score changes only source name, one reciting syllable and delimiter',()=>{
+ const fixture=readJSON('data/research/processionale-palm46-gabc-underlay-review-20261026.v1.json');
+ const raw=readFileSync(new URL('../'+fixture.source.archivedFile,import.meta.url),'utf8');
+ const reviewed=readFileSync(new URL('../'+fixture.candidate.file,import.meta.url),'utf8');
+ const transformations=[
+ ['name:Omnes gentes, plaudite manibus (nova lat.);',
+  'name:Omnes populi, plaudite manibus (Psalmus 46, provisional);'],
+ ['transcriber:Simone Sanavio;\n',
+  'transcriber:Simone Sanavio;\ncommentary: Ad Orientem research-only corrected opening underlay - NOT editorially certified or published;\n'],
+ ['\n%%\n%%\r\n','\n%%\n'],
+ ['O(f)mnes(gh) gen(h)tes,(h)','O(f)mnes(gh) pó(h)pu(h)li,(h)']
+ ];
+ let expected=raw;
+ for(const [before,after] of transformations){
+  assert.equal(expected.split(before).length,2,'unexpected source editing context');
+  expected=expected.replace(before,after);
+ }
+ assert.equal(reviewed,expected,
+  'No silent pitch, accent, other neume or verse text changes permitted');
+ assert.equal(reviewed.split('%%').length,2);
+ assert.match(reviewed,/O\(f\)mnes\(gh\) pó\(h\)pu\(h\)li,\(h\)/);
+ assert.equal(fixture.candidate.openingPitchContourVisuallyCompared,true);
+ assert.equal(fixture.candidate.completeChantPitchAndNeumesCertified,false);
+ assert.equal(fixture.candidate.fileRole,'READ_ONLY_RESEARCH_FIXTURE_NO_RUNTIME_REFERENCE');
+ assert.equal(fixture.candidate.publicationEligible,false);
+ assert.equal(fixture.sourceChecks.productionApproved,false);
+ assert.equal(fixture.review.remainingGates.length,5);
+ const palmReader=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
+ assert.ok(!palmReader.includes('palm46-omnes-populi-1961-provisional.gabc'));
 });
