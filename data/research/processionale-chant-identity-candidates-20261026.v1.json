@@ -1,0 +1,266 @@
+{
+  "schema": "ao-processionale-chant-identity-candidates-v1",
+  "date": "2026-10-26",
+  "status": "RESEARCH_ONLY_UNPUBLISHED",
+  "parent": "data/research/processionale-1893-chant-action-matrix-20261026.v1.json",
+  "method": "Catalogue match requires normalized full Latin text, genre/function, feast, exact manuscript or printed source and separate notation/version verification. An incipit or Cantus ID alone never proves melodic equivalence.",
+  "licensing": "Cantus Database/Index material carries CC BY-NC-SA 4.0. Metadata links are recorded here, not score images or full musical transcriptions. Check derivative/use rights before embedding, especially where monetisation is contemplated.",
+  "editionPolicy": {
+    "solesmes1888ImageInspected": false,
+    "solesmes1893FacsimileInspected": false,
+    "accepted1888Melodies": 0,
+    "accepted1893Melodies": 0,
+    "approvedRoman1962Scores": 0,
+    "cantusIDsAreTextFamilyNotMelodyCertificate": true
+  },
+  "catalogue": {
+    "cantusIndex": "https://cantusindex.org/faq",
+    "gregobase": "https://gregobase.selapa.net/",
+    "historicalScoreWitness": "https://gregobase.selapa.net/chant.php?id=16742"
+  },
+  "candidates": [
+    {
+      "historicalRowId": "PM93.PA01",
+      "cantusID": "004415",
+      "variantID": "004415.1",
+      "genre": "ANTIPHON",
+      "mappingStatus": "TEXT_FAMILY_MATCH",
+      "catalogueURL": "https://cantusdatabase.org/chant/218290/",
+      "comparisonText": "Pueri hebraeorum portantes ramos olivarum",
+      "attestation": "San Pietro B.79 f093r; Plimpton MS 034 f003v variant",
+      "exclusion": "Variant .1 occurs in alternate manuscript; neither proves 1893 or Roman 1962 melody.",
+      "doNotConflate": [
+        "004415.1"
+      ],
+      "melodyVerifiedAgainstSolesmes1888": false,
+      "melodyVerifiedAgainstSolesmes1893": false,
+      "roman1962MelodyApproved": false
+    },
+    {
+      "historicalRowId": "PM93.PA02",
+      "cantusID": "004416",
+      "variantID": null,
+      "genre": "ANTIPHON",
+      "mappingStatus": "TEXT_FAMILY_MATCH",
+      "catalogueURL": "https://cantusdatabase.org/chant/192357/",
+      "comparisonText": "Pueri hebraeorum vestimenta",
+      "attestation": "Budapest lat.118 f219v; manuscript Holy Week",
+      "exclusion": "Same text family; not a melody authorization.",
+      "doNotConflate": [],
+      "melodyVerifiedAgainstSolesmes1888": false,
+      "melodyVerifiedAgainstSolesmes1893": false,
+      "roman1962MelodyApproved": false
+    },
+    {
+      "historicalRowId": "PM93.PA04",
+      "cantusID": "001976",
+      "variantID": null,
+      "genre": "ANTIPHON",
+      "mappingStatus": "INCIPIT_ONLY_PRELIMINARY",
+      "catalogueURL": "https://cantusdatabase.org/chant/311405/",
+      "comparisonText": "Cum appropinquaret dominus",
+      "attestation": "Copenhagen GKS 3449 f117v",
+      "exclusion": "One of two optional processional chants in a compound 1893 row. Whole text not collated.",
+      "doNotConflate": [],
+      "melodyVerifiedAgainstSolesmes1888": false,
+      "melodyVerifiedAgainstSolesmes1893": false,
+      "roman1962MelodyApproved": false
+    },
+    {
+      "historicalRowId": "PM93.CN01",
+      "cantusID": "003645",
+      "variantID": null,
+      "genre": "ANTIPHON",
+      "mappingStatus": "TEXT_FAMILY_MATCH",
+      "catalogueURL": "https://cantusdatabase.org/chant/671017/",
+      "comparisonText": "Lumen ad revelationem gentium",
+      "attestation": "Solesmes 596 Wilton Processional f016v (13th-century English)",
+      "exclusion": "Wilton procession source is not Solesmes 1888 edition, despite current library holding.",
+      "doNotConflate": [],
+      "melodyVerifiedAgainstSolesmes1888": false,
+      "melodyVerifiedAgainstSolesmes1893": false,
+      "roman1962MelodyApproved": false
+    },
+    {
+      "historicalRowId": "PM93.CN04",
+      "cantusID": "g00068",
+      "variantID": null,
+      "genre": "MASS_PROCESSIONAL_ANTIPHON",
+      "mappingStatus": "TEXT_FAMILY_MATCH",
+      "catalogueURL": "https://musmed.eu/chant/180803",
+      "comparisonText": "Adorna thalamum tuum Sion et suscipe regem Christum amplectere Mariam",
+      "attestation": "Laon MS236 f132r MASS A",
+      "exclusion": "Do not mix with responsory 006051, different text 'quem virgo concepit'; distinguish office antiphon 001293 before melody selection.",
+      "doNotConflate": [
+        "006051",
+        "001293"
+      ],
+      "melodyVerifiedAgainstSolesmes1888": false,
+      "melodyVerifiedAgainstSolesmes1893": false,
+      "roman1962MelodyApproved": false
+    },
+    {
+      "historicalRowId": "PM93.CN05",
+      "cantusID": "g00069",
+      "variantID": null,
+      "genre": "PROCESSIONAL_ANTIPHON",
+      "mappingStatus": "TEXT_FAMILY_MATCH",
+      "catalogueURL": "https://cantusdatabase.org/chant/1016848/",
+      "comparisonText": "Responsum accepit Simeon a spiritu sancto non visurum se mortem",
+      "attestation": "Iowa printed source f005v; indexed processional",
+      "exclusion": "The same text incipit in other genre is not automatically this chant; verse Cum inducerent belongs to selected proper context.",
+      "doNotConflate": [
+        "004639",
+        "007666a"
+      ],
+      "melodyVerifiedAgainstSolesmes1888": false,
+      "melodyVerifiedAgainstSolesmes1893": false,
+      "roman1962MelodyApproved": false
+    },
+    {
+      "historicalRowId": "PM93.CN06",
+      "cantusID": "007307",
+      "variantID": null,
+      "genre": "RESPONSORY_CANDIDATE",
+      "mappingStatus": "INCIPIT_AND_TEXT_MATCH_GENRE_PENDING",
+      "catalogueURL": "https://cantusdatabase.org/chant/604053/",
+      "comparisonText": "Obtulerunt pro eo domino par turturum aut duos pullos columbarum sicut scriptum est in lege domini",
+      "attestation": "Plimpton MS 034 f003r; responsory processional manuscript",
+      "exclusion": "Other Cantus 004104 is an office antiphon with shorter text and 007406a is a different responsory verse; 1893 processional genre awaits page score check.",
+      "doNotConflate": [
+        "004104",
+        "007406a"
+      ],
+      "melodyVerifiedAgainstSolesmes1888": false,
+      "melodyVerifiedAgainstSolesmes1893": false,
+      "roman1962MelodyApproved": false
+    },
+    {
+      "historicalRowId": "PM93.CC01",
+      "cantusID": "830393",
+      "variantID": null,
+      "genre": "EUCHARISTIC_HYMN",
+      "mappingStatus": "TEXT_FAMILY_MATCH",
+      "catalogueURL": "https://www.musmed.eu/chant/207816",
+      "comparisonText": "Pange lingua gloriosi Corporis mysterium sanguinisque pretiosi",
+      "attestation": "Paris MS135 f292v; Corpus Christi hymn",
+      "exclusion": "Not interchangeable with other Pange lingua (Crux fidelis/Pange lingua gloriosi proelium) and not a Solesmes 1888 melody proof.",
+      "doNotConflate": [],
+      "melodyVerifiedAgainstSolesmes1888": false,
+      "melodyVerifiedAgainstSolesmes1893": false,
+      "roman1962MelodyApproved": false
+    },
+    {
+      "historicalRowId": "PM93.CC03",
+      "cantusID": null,
+      "variantID": null,
+      "genre": "SEQUENCE",
+      "mappingStatus": "TEXT_ONLY_NO_INDEX_LINK_VERIFIED",
+      "catalogueURL": null,
+      "comparisonText": "Lauda Sion Salvatorem",
+      "attestation": "1893 historical optional insertion",
+      "exclusion": "Optional 'pro locorum consuetudine' language does not authorize chant for any 1962 Roman procession.",
+      "doNotConflate": [],
+      "melodyVerifiedAgainstSolesmes1888": false,
+      "melodyVerifiedAgainstSolesmes1893": false,
+      "roman1962MelodyApproved": false
+    },
+    {
+      "historicalRowId": "PM93.PA03",
+      "cantusID": null,
+      "variantID": null,
+      "genre": "DIALOGUE_COMMON_TONE",
+      "mappingStatus": "SCORED_EXTERNAL_REFERENCE_ONLY",
+      "catalogueURL": "https://gregobase.selapa.net/chant.php?id=10452",
+      "comparisonText": "Procedamus in pace / In nomine Christi Amen",
+      "attestation": "GregoBase Vatican 1908 Graduale p146 (with note 1893 PM p54)",
+      "exclusion": "Score source is Graduale Romanum 1908, not original 1888. No Cantus identifier asserted.",
+      "doNotConflate": [],
+      "melodyVerifiedAgainstSolesmes1888": false,
+      "melodyVerifiedAgainstSolesmes1893": false,
+      "roman1962MelodyApproved": false
+    },
+    {
+      "historicalRowId": "PM93.CN02",
+      "cantusID": null,
+      "variantID": null,
+      "genre": "HISTORICAL_EXCLUDED_CHANT",
+      "mappingStatus": "DO_NOT_IMPORT_TO_ROMAN1962",
+      "catalogueURL": null,
+      "comparisonText": "Exsurge Domine adjuva nos",
+      "attestation": "1893 Candlemas location",
+      "exclusion": "Historical post-distribution placement excluded under Roman 1962; may be a different chant elsewhere (e.g. Rogations).",
+      "doNotConflate": [],
+      "melodyVerifiedAgainstSolesmes1888": false,
+      "melodyVerifiedAgainstSolesmes1893": false,
+      "roman1962MelodyApproved": false
+    }
+  ],
+  "falseFriendCases": [
+    {
+      "id": "ADOTHA",
+      "name": "Adorna thalamum tuum",
+      "correctCandidate": "g00068",
+      "lookalikes": [
+        "006051 responsory has a different short text, especially 'quem virgo concepit'",
+        "001293 Office antiphon has similar long wording but not a certified 1893 processional tune"
+      ],
+      "impact": "Cannot select gregoBase Responsorium 006051 for processional Adorna."
+    },
+    {
+      "id": "INGREDIENTE",
+      "name": "Ingrediente domino in sanctam civitatem",
+      "candidateA": "a03287",
+      "candidateB": "006961",
+      "witnessA": "https://cantusdatabase.org/chant/1016860/",
+      "witnessB": "https://cantusdatabase.org/chant/360395/",
+      "status": "AMBIGUOUS_GENRE_TWO_PLAUSIBLE_TEXT_IDENTITIES",
+      "impact": "A Palm return might be listed as antiphon or responsory; compare 1962 ceremonial source and full text before assigning."
+    },
+    {
+      "id": "OBTULERUNT",
+      "name": "Obtulerunt pro eo Domino",
+      "candidateR": "007307",
+      "candidateA": "004104",
+      "candidateV": "007406a",
+      "witnessR": "https://cantusdatabase.org/chant/604053/",
+      "witnessA": "https://cantusdatabase.org/chant/396437/",
+      "witnessV": "https://cantusdatabase.org/chant/467943/",
+      "impact": "Same opening occurs as responsory, shortened antiphon and responsory verse. Pair the appropriate chant and verse."
+    },
+    {
+      "id": "GLORIA_LAUS",
+      "name": "Gloria laus et honor",
+      "cantusVerseID": "008310:01",
+      "witness": "https://cantusdatabase.org/chant/1016856/",
+      "impact": "Index is one hymn stanza/verse; must not treat it as a complete multi-verse score."
+    },
+    {
+      "id": "RESPONSUM",
+      "name": "Responsum accepit Simeon",
+      "candidate": "g00069",
+      "lookalike": "004639 Solesmes 1934 Office antiphon",
+      "witness": "https://gregobase.selapa.net/chant.php?id=9359",
+      "impact": "The later Office item is not the 1893 processional setting."
+    }
+  ],
+  "externalEditionSpecificNotatedRecord": {
+    "name": "Virgo Dei Genitrix",
+    "sourceEdition": 1893,
+    "printedPage": 272,
+    "gregoBaseId": 16742,
+    "gregoBaseURL": "https://gregobase.selapa.net/chant.php?id=16742",
+    "cantusID": "005448",
+    "description": "An independently indexed score explicitly transcribed from Processionale Monasticum 1893 p272; serves as a model of edition-specific provenance, not evidence for 1888 or Roman 1962 use.",
+    "transcriberVersion": "Solesmes 1893",
+    "runtimeUse": "NONE"
+  },
+  "gates": [
+    "LINKS_AND_CANTUS_IDS_VERIFIED_VIA_CATALOGUE_METADATA",
+    "EXACT_TEXT_COMPARISON_MANUSCRIPT_VERSUS_1893_FACSIMILE_PENDING",
+    "NEUME_NOTE_BY_NOTE_EDITION_COMPARISON_PENDING",
+    "ROMAN_1962_SCORE_VERSION_SIGNOFF_PENDING",
+    "LICENSE_EVALUATION_BEFORE_REDISTRIBUTION",
+    "NO_APP_OR_MUSIC_EVENT_CHANGES"
+  ]
+}
