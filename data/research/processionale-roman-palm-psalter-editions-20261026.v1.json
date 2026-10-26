@@ -172,7 +172,26 @@
         "archivePath": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
         "archiveStatus": "RAW_BYTES_SHA256_VERIFIED_UNAPPROVED",
         "hasExtraGabcDelimiter": true,
-        "extraDelimiterEvidence": "Raw source contains consecutive %% lines, to be assessed by notation renderer owner; archive remains byte-exact."
+        "extraDelimiterEvidence": "Raw source contains consecutive %% lines, to be assessed by notation renderer owner; archive remains byte-exact.",
+        "researchCorrection": {
+          "status": "ISOLATED_RESEARCH_UNDERLAY_CANDIDATE_NOT_FOR_APP",
+          "candidateGabcPath": "data/research/chant-source-review/palm46-omnes-populi-1961-provisional.gabc",
+          "correctionReviewPath": "data/research/processionale-palm46-gabc-underlay-review-20261026.v1.json",
+          "originalSourceId": 19316,
+          "originalSha256": "eb13e9eadcfeebca7e5fa0617f6cbb6c9823464ff88af2995952ab21ca8717a0",
+          "sourcePrint": "Graduale Romanum 1961 p.144**",
+          "changes": "Correct metadata and Omnes populi 5-syllable underlay, remove adjacent duplicate GABC delimiter, add unapproved research commentary; all other neumes and text identical",
+          "exactMatchToOriginalBeyondOpening": "NOT_CERTIFIED",
+          "visualOpeningRecitingTone": true,
+          "publicationAllowed": false,
+          "mustPass": [
+            "Human neume/underlay signoff",
+            "Existing Exsurge rendering test",
+            "Canonical 1962 Latin source approval",
+            "Full psalm verses and pointing",
+            "Explicit #1749 runtime promotion gate"
+          ]
+        }
       },
       "versePairs": "SEQUENTIAL_PAIRS",
       "repeat": "AFTER_EVERY_TWO_VERSES",
@@ -209,7 +228,8 @@
     "newPsalmPreservation": "BOTH_RAW_FILES_SHA256_VERIFIED_19316_QUARANTINED_19315_SOURCE_ONLY",
     "originalSourceByteIntegrityConfirmed": true,
     "hasExtraGabcDelimiter": true,
-    "scoreGabcSyntaxNotCertified": true
+    "scoreGabcSyntaxNotCertified": true,
+    "openingResearchCorrectionExists": true
   },
   "acceptance": {
     "state": "RESEARCH_REQUIREMENTS_ONLY",
