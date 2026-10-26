@@ -1,0 +1,44 @@
+name: Mass 1961 Graduale bulk discovery
+on:
+  workflow_dispatch:
+  push:
+    branches: [feature/chant-score-pilot-20261026]
+    paths:
+      - '.github/workflows/mass-chant-1961-bulk-discovery.yml'
+      - 'tools/mass/ingest-gregobase-1961.mjs'
+      - 'tests/mass-chant-catalogue-ingest.mjs'
+permissions:
+  contents: read
+jobs:
+  index:
+    name: Index pinned 1961 source links (research only)
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify importer contracts
+        run: node tests/mass-chant-catalogue-ingest.mjs
+      - name: Fetch pinned public GregoBase database
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error --retry 3 --connect-timeout 20 --max-time 180 \
+            'https://raw.githubusercontent.com/gregorio-project/GregoBase/8851677efaccf0dccd4eb05ebff28d6f4018584c/gregobase_online.sql' \
+            --output "$RUNNER_TEMP/gregobase_online.sql"
+          test "$(wc -c < "$RUNNER_TEMP/gregobase_online.sql")" -gt 1000000
+          echo "Source bytes: $(wc -c < "$RUNNER_TEMP/gregobase_online.sql")"
+      - name: Generate source-only metadata ledger
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/mass/ingest-gregobase-1961.mjs \
+            --sql "$RUNNER_TEMP/gregobase_online.sql" \
+            --out "$RUNNER_TEMP/ao-1961-chant-ledger" \
+            --print-rows 3500
+          echo "Generated files: $(find "$RUNNER_TEMP/ao-1961-chant-ledger" -type f | wc -l)"
+      - name: Assert no reader data or mass files were changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -z "$(git status --porcelain)"
+          echo "DISCOVERY_ONLY: no automatic approval, Mass Proper or Reader mutation"
