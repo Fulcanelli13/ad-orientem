@@ -331,45 +331,62 @@
           "verseIncipits": [
             {
               "verse": 1,
-              "incipit": "Omnes populi, plaudite manibus"
+              "incipit": "Omnes populi, plaudite manibus",
+              "biblicalVerse": 1
             },
             {
               "verse": 2,
-              "incipit": "Quoniam Dominus excelsus, terribilis"
+              "incipit": "Quoniam Dominus excelsus, terribilis",
+              "biblicalVerse": 2
             },
             {
               "verse": 3,
-              "incipit": "Subicit populos nobis"
+              "incipit": "Subicit populos nobis",
+              "biblicalVerse": 3
             },
             {
               "verse": 4,
-              "incipit": "Elegit nobis hereditatem nostram"
+              "incipit": "Elegit nobis hereditatem nostram",
+              "biblicalVerse": 4
             },
             {
               "verse": 5,
-              "incipit": "Ascendit Deus cum exsultatione"
+              "incipit": "Ascendit Deus cum exsultatione",
+              "biblicalVerse": 5
             },
             {
               "verse": 6,
-              "incipit": "Psallite Deo, psallite"
+              "incipit": "Psallite Deo, psallite",
+              "biblicalVerse": 6
             },
             {
               "verse": 7,
-              "incipit": "Quoniam rex omnis terrae est Deus"
+              "incipit": "Quoniam rex omnis terrae est Deus",
+              "biblicalVerse": 7
             },
             {
               "verse": 8,
-              "incipit": "Deus regnat super nationes"
+              "incipit": "Deus regnat super nationes",
+              "biblicalVerse": 8
             },
             {
               "verse": 9,
-              "incipit": "Principes populorum congregati sunt"
+              "incipit": "Principes populorum congregati sunt",
+              "biblicalVerse": 9,
+              "biblicalHalf": "A"
             },
             {
               "verse": 10,
-              "incipit": "Nam Dei sunt proceres terrae"
+              "incipit": "Nam Dei sunt proceres terrae",
+              "biblicalVerse": 9,
+              "biblicalHalf": "B"
             }
-          ]
+          ],
+          "numberingStatus": "TEN_PRINTED_PSALM_CHANT_LINES_FOR_NINE_BIBLICAL_VERSES",
+          "numberingProofPath": "data/research/processionale-palm46-dual-numbering-20261026.v1.json",
+          "numberingSource": "Graduale Romanum 1961 p.144** (printed 1..10 + Gloria 11/Sicut 12); Bea Latin textual Psalm 46 nine full biblical verses",
+          "printedVerseCount": 10,
+          "biblicalVerseCount": 9
         }
       ],
       "endOfDistribution": "OPTIONAL_REPETITION_WHEN_DISTRIBUTION_CONTINUES; WHEN_SHORT_FINISH_DOXOLOGY_AND_FINAL_ANTIPHON_AT_ACTUAL_DISTRIBUTION_COMPLETION",
@@ -380,7 +397,9 @@
         "Second score must have Omnes populi syllable alignment, not Omnes gentes",
         "Antiphons as repeatable 1962-prescribed chant events in existing PALM-R02",
         "No user icon or posture advance from Schola progress"
-      ]
+      ],
+      "presentationRule": "Psalm 46 chant-line numbers 9 and 10 are halves of biblical verse 9. Show printed liturgical line numbers in Schola; cross-link both to scriptural verse 9. Do not invent a biblical verse 10.",
+      "psalm46DualNumberingPath": "data/research/processionale-palm46-dual-numbering-20261026.v1.json"
     }
   },
   "gates": [
