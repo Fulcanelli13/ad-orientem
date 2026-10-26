@@ -807,6 +807,7 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
         language:selected?.readerLanguage??readerPreferences().language,
         beforeMass:selected?.beforeMass??"none",
         afterMass:selected?.afterMass??"none",
+        chantProgramme:selected?.chantProgramme??null,
       };
     },
     resolveHostOptions: async (resolvedMass) => {
