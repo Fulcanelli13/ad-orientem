@@ -1,0 +1,4138 @@
+{
+  "schema": "AO_TLM_B99_BULK_590_REAL_SITE_FIELDS_V1",
+  "baseline_b98_sha256": "848fb2fcadda58b1c22bc02e83a019bfab6947d8bddf86eb3cdfa4021bf05c77",
+  "patches": [
+    {
+      "g": "RG-00DA4A42BAAD",
+      "src": "ao-research-sspx-four-district-bulk-sspx-de-de-viernheim-kapelle-hl-josef",
+      "text": "Viernheim (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://fsspx.today/viernheim"
+    },
+    {
+      "g": "RG-0117370AD6BF",
+      "src": "LMD:saint-marys-chapel-hamilton-new-zealand",
+      "text": "47 Clyde Street, Hamilton East, New Zealand",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.cdh.org.nz/hamilton-st-marys-chapel/"
+    },
+    {
+      "g": "RG-01BD453A902C",
+      "src": "AO-AMER-R28-US-29-14",
+      "text": "Springfield, MO (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=29"
+    },
+    {
+      "g": "RG-028C2D07EF1C",
+      "src": "AO-AMER-R28-US-30-19",
+      "text": "Hagerstown, MD (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.archbalt.org/parishes/all-parishes/st-mary-hagerstown/"
+    },
+    {
+      "g": "RG-02AEBA830666",
+      "src": "AO-B34-L-GB-D2A6AB6CE828",
+      "text": "Radstock, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-02BA9EEBB29C",
+      "src": "AO-B34-L-GB-2C52DE470558",
+      "text": "North Hinksey, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-02DEF502169C",
+      "src": "AO-AMER-R26-CA-04-05",
+      "text": "St. John's (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=CA&page=4"
+    },
+    {
+      "g": "RG-0320E86C5E56",
+      "src": "AO-AMER-R28-US-19-03",
+      "text": "43775 Deep Canyon Rd, Palm Desert CA",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://church.sacredheartpalmdesert.com/latinmass"
+    },
+    {
+      "g": "RG-039BD5307887",
+      "src": "AO-WORLD-R35-BR-10-14",
+      "text": "354 - Parque Leopoldina (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=10"
+    },
+    {
+      "g": "RG-03A3AE24D334",
+      "src": "AO-AMER-R28-US-19-07",
+      "text": "Savannah, GA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.sacredheartsavannah.org/"
+    },
+    {
+      "g": "RG-03BF18E211FA",
+      "src": "AO-EUR-DE-073",
+      "text": "93047 Regensburg (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.roemische-messe-regensburg.de/cms/?page_id=22"
+    },
+    {
+      "g": "RG-047622393E7A",
+      "src": "AO-AMER-R26-US-01-09",
+      "text": "Silverado, California (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&page=1"
+    },
+    {
+      "g": "RG-0485E961098F",
+      "src": "LMD:our-lady-of-the-nativity-lawson-australia",
+      "text": "Our Lady of the Nativity, 254 Great Western Highway, Lawson NSW",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.fssp.net/locations"
+    },
+    {
+      "g": "RG-048B7CED49E3",
+      "src": "AO-EUR-DE-131",
+      "text": "78052 Villingen-Schwenningen (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+    },
+    {
+      "g": "RG-04C900D93BC2",
+      "src": "AO-EUR-GB-006",
+      "text": "Bournemouth Oratory / Sacred Heart, 1 Albert Road, Bournemouth BH1 1BZ",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.bccatholics.uk/masses"
+    },
+    {
+      "g": "RG-04F62704BC60",
+      "src": "AO-AMER-R28-US-34-01",
+      "text": "Waco, TX (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://baylorcatholic.org/st-gregory-society"
+    },
+    {
+      "g": "RG-053444577833",
+      "src": "AO-AMER-R28-US-37-12",
+      "text": "Binghamton, NY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=37; https://marypaul.org/mass/"
+    },
+    {
+      "g": "RG-05D76CA2151A",
+      "src": "AO-EUR-DE-151",
+      "text": "66386 St. Ingbert (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "g": "RG-05E1D8753555",
+      "src": "AO-AMER-R28-US-24-03",
+      "text": "Laurel, MT (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://saintanthonycatholicchurch.org/traditional-latin-mass"
+    },
+    {
+      "g": "RG-06296505CFF3",
+      "src": "AO-AMER-R28-US-31-09",
+      "text": "Livingston, MT (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=31"
+    },
+    {
+      "g": "RG-065FA00F2B19",
+      "src": "AO-EUR-DE-129",
+      "text": "86825 Bad Wörishofen (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "g": "RG-06B5DD03D3AF",
+      "src": "AO-AMER-R28-US-37-09",
+      "text": "Salem, South Dakota (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=37"
+    },
+    {
+      "g": "RG-0712DCD78856",
+      "src": "AO-WORLD-R35-BR-05-19",
+      "text": "337 - Campina (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=5"
+    },
+    {
+      "g": "RG-0940B7AED4FC",
+      "src": "AO-B34-L-GB-780A2E117C3F",
+      "text": "Birkenhead, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-099155DC9562",
+      "src": "SSPXMAP:OPE-002274",
+      "text": "110 Saint Leonard's Street, Edinburgh EH8 9RD, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-09C236CE4A14",
+      "src": "ao-fssp-maison-saint-lidoire-6-rue-blanqui-f-37000-tours-france",
+      "text": "Tours (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-0A22291A4428",
+      "src": "AO-AMER-R28-US-26-06",
+      "text": "Alexandria, LA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.diocesealex.org/church/st-frances-cabrini-church/"
+    },
+    {
+      "g": "RG-0A6B76396C09",
+      "src": "AO-EUR-DE-002",
+      "text": "Freiburg im Breisgau (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+    },
+    {
+      "g": "RG-0A7D6FB130D8",
+      "src": "AO-B34-L-GB-5FF0510590CE",
+      "text": "London, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-0AFAF04ADE71",
+      "src": "AO-EUR-DE-136",
+      "text": "52134 Herzogenrath (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=7"
+    },
+    {
+      "g": "RG-0B11C840F55E",
+      "src": "AO-B34-L-GB-52D1803A1F95",
+      "text": "Blandford Forum, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-0B4710CCF4A4",
+      "src": "AO-AMER-R28-US-30-06",
+      "text": "Tehachapi, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.saintmalachy.church/latin-mass-schedule.html"
+    },
+    {
+      "g": "RG-0B7DBF338EFB",
+      "src": "AO-WORLD-R35-BR-07-04",
+      "text": "1786 - Passo D'areia (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=7"
+    },
+    {
+      "g": "RG-0B8749A10D66",
+      "src": "AO-AMER-R28-US-27-09",
+      "text": "Montgomery, AL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=27"
+    },
+    {
+      "g": "RG-0BA8006DB9FE",
+      "src": "AO-AMER-R26-US-04-01",
+      "text": "Cullman, AL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&page=4"
+    },
+    {
+      "g": "RG-0CD08643932B",
+      "src": "AO-WORLD-R35-AU-04-01",
+      "text": "Melbourne, Victoria (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=AU&page=4"
+    },
+    {
+      "g": "RG-0CD38937025B",
+      "src": "AO-B43-ICKSP-IT-AAA796FEA14D",
+      "text": "Acceglio, Provincia di Cuneo, Italy (street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://www.icrss.it/"
+    },
+    {
+      "g": "RG-0DAFA26592B1",
+      "src": "V19:DIO-US-TULSA-SSPP",
+      "text": "Tulsa, OK (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://dioceseoftulsa.org/parishfinder"
+    },
+    {
+      "g": "RG-0DD77D15AE00",
+      "src": "AO-B34-L-GB-337D601A8166",
+      "text": "Buckley, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-0DFB357992E7",
+      "src": "SSPXMAP:OPE-002649",
+      "text": "Ness Walk, Inverness IV3 5SF, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-0F97C0B3318A",
+      "src": "AO-WORLD-R35-BR-03-11",
+      "text": "Campos dos Goytacazes - RJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=3"
+    },
+    {
+      "g": "RG-0FEEDA4E996C",
+      "src": "AO-EUR-DE-113",
+      "text": "65618 Selters (Taunus) (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-0FFF2D5B7234",
+      "src": "ao-research-sspx-four-district-bulk-sspx-de-de-hannover-kapelle-hl-ansgar",
+      "text": "Hannover (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://fsspx.today/letter"
+    },
+    {
+      "g": "RG-105297E8CDC0",
+      "src": "AO-AMER-R28-US-19-16",
+      "text": "Pāhoa, HI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.latinmassdir.org/venue/sacred-heart-church-pahoa-united-states/"
+    },
+    {
+      "g": "RG-10BAB9521232",
+      "src": "AO-B34-L-GB-D7DA8CC0BE16",
+      "text": "Strood, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-11071B3095B2",
+      "src": "AO-AMER-R28-US-19-10",
+      "text": "32 Summer St, Yarmouth Port, MA 02675",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.sfxhyannis.org/mass"
+    },
+    {
+      "g": "RG-117970A5E687",
+      "src": "SSPXMAP:OPE-002650",
+      "text": "Lerwick (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-121DED12AC57",
+      "src": "ao-research-icksp-federated-v13-icksp-stg-112",
+      "text": "Altötting (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://institut-christus-koenig.de/altoetting/"
+    },
+    {
+      "g": "RG-1245282D1EAE",
+      "src": "AO-AMER-R28-US-31-04",
+      "text": "Potsdam, NY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stmarystpatrick.net/"
+    },
+    {
+      "g": "RG-126045360426",
+      "src": "AO-B34-L-GB-C9EB4357C73A",
+      "text": "Hereford, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-129AD2FB533B",
+      "src": "AO-EUR-PL-010",
+      "text": "Wołomin (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=PL"
+    },
+    {
+      "g": "RG-12E1E9D493AB",
+      "src": "AO-WORLD-R35-AU-03-06",
+      "text": "Boondall QLD 4034 (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=AU&page=3"
+    },
+    {
+      "g": "RG-13041FAB483E",
+      "src": "AO-AMER-R28-US-24-19",
+      "text": "Duluth, MN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://sbsjjtriparish.org/latin-mass"
+    },
+    {
+      "g": "RG-130C766CB4B6",
+      "src": "AO-EUR-GB-011",
+      "text": "Nottingham (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-136CD7964432",
+      "src": "AO-B34-L-GB-06C183FA5381",
+      "text": "Baldock, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-13979625992D",
+      "src": "AO-WORLD-R35-AR-01-14",
+      "text": "Cno. a S. Benito 4000 (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=AR"
+    },
+    {
+      "g": "RG-1406AE6DA1E7",
+      "src": "AO-B34-L-GB-CF08BF947AD7",
+      "text": "Cambridge, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-142C68DBCDC0",
+      "src": "AO-B34-L-GB-A216E1128479",
+      "text": "Wrexham, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-1484AB15A7A1",
+      "src": "AO-AMER-R27-US-06-18",
+      "text": "Raleigh, NC (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://dioceseofraleigh.org/parish/holy-name-jesus-cathedral-raleigh"
+    },
+    {
+      "g": "RG-1527B6F93EF9",
+      "src": "AO-B34-L-GB-8593454E2D3F",
+      "text": "Bedford, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-15FF29DFD800",
+      "src": "AO-EUR-DE-098",
+      "text": "87730 Bad Grönenbach (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "g": "RG-163599BE4EDF",
+      "src": "AO-B34-L-GB-32E3B6DB5EFA",
+      "text": "Withermarsh Green, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-16E6EA20716E",
+      "src": "AO-AMER-R27-US-06-06",
+      "text": "Little Falls, NY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://holyfamilylittlefalls.org/mass-confession-times"
+    },
+    {
+      "g": "RG-1867E9AFAF15",
+      "src": "AO-AMER-R28-US-23-14",
+      "text": "Baton Rouge, LA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stagnesbr.com/"
+    },
+    {
+      "g": "RG-18B421A46625",
+      "src": "AO-EUR-DE-082",
+      "text": "33098 Paderborn (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+    },
+    {
+      "g": "RG-18F8CA637175",
+      "src": "SSPXMAP:OPE-002276",
+      "text": "202 Renfrew Street, Glasgow G3 6TX, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-191941561D88",
+      "src": "ao-fssp-eglise-saint-georges-rue-de-l-eglise-f-71680-vinzelles-france",
+      "text": "Vinzelles",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://vinzelles71.fr/fr/rb/861005/le-culte-3"
+    },
+    {
+      "g": "RG-1958DCBE707F",
+      "src": "AO-AMER-R27-US-07-15",
+      "text": "Gainesville, VA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.latinmassarlington.org/find-tlm/parishes"
+    },
+    {
+      "g": "RG-19FC3C61905B",
+      "src": "AO-AMER-R28-US-24-13",
+      "text": "South St Paul, MN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.holytrinitysspmn.org/contact"
+    },
+    {
+      "g": "RG-1A015C23D5BA",
+      "src": "AO-AMER-R28-US-25-03",
+      "text": "Sioux City, IA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=25"
+    },
+    {
+      "g": "RG-1AB4B0A20509",
+      "src": "AO-EUR-IT-057",
+      "text": "17100 Savona SV (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=IT&page=3"
+    },
+    {
+      "g": "RG-1ACD23422866",
+      "src": "V19:DIO-US-TOLEDO-STJOSEPH",
+      "text": "Toledo, OH (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stjosephstoledo.com/"
+    },
+    {
+      "g": "RG-1AFBE8EE30F3",
+      "src": "AO-WORLD-R35-BR-03-12",
+      "text": "Rio Branco - AC (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=3"
+    },
+    {
+      "g": "RG-1B0A5CFE5CE2",
+      "src": "AO-B34-L-GB-B74DEEBC582B",
+      "text": "Manchester, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-1B6796BAB48D",
+      "src": "AO-WORLD-R35-BR-05-14",
+      "text": "270 - Centro (Sul) (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=5"
+    },
+    {
+      "g": "RG-1BB4A38657E5",
+      "src": "DIO-GB-BIRMINGHAM-EVESHAM-ST-EGWIN",
+      "text": "Immaculate Conception and St Egwin, High Street, Evesham WR11 4EJ",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.catholiceveshamandbroadway.org/about-us"
+    },
+    {
+      "g": "RG-1BB5EF8AA6C6",
+      "src": "LMD:eglise-des-saints-anges-holy-angels-church-st-thomas-canada",
+      "text": "Holy Angels Church, 502 Talbot St, St Thomas ON",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.londonlatinmass.ca/"
+    },
+    {
+      "g": "RG-1BDFEDD551FE",
+      "src": "ao-fssp-chapelle-saint-michel-d-ingouville-rue-saint-michel-f-76600-le-havre-france",
+      "text": "Le Havre (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-1E8C88FE3586",
+      "src": "AO-EUR-DE-063",
+      "text": "23611 Bad Schwartau (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+    },
+    {
+      "g": "RG-1F732393AC9E",
+      "src": "AO-AMER-R27-US-15-01",
+      "text": "Kenner, LA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.olphla.net/"
+    },
+    {
+      "g": "RG-1FB1C4BCCBF2",
+      "src": "ao-fssp-notre-dame-du-rosaire-place-des-marronniers-f-94100-saint-maur-des-fosses-france",
+      "text": "Saint-Maur-des-Fossés (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-1FD25E6D42FA",
+      "src": "AO-EUR-DE-123",
+      "text": "St Jobst, Regensburger Straße 16, 92318 Neumarkt",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/mittersthal/messzeiten.php"
+    },
+    {
+      "g": "RG-20DDA8C9C2AC",
+      "src": "AO-EUR-IT-003",
+      "text": "Chiesa della Misericordia, Torino, Italy",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://arciconfraternitadellamisericordia.it/orari-delle-celebrazioni/"
+    },
+    {
+      "g": "RG-2109F233C521",
+      "src": "LMD:holy-family-church-auckland-new-zealand",
+      "text": "94 Taikata Road, Te Atatū Peninsula, Auckland",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.teatatucatholic.org.nz/"
+    },
+    {
+      "g": "RG-2116622977D7",
+      "src": "LMD:cathedrale-du-saint-rosaire-cathedral-of-our-lady-of-the-holy-rosary-vancouver-canada",
+      "text": "646 Richards Street, Vancouver BC",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.holyrosarycathedral.org/latin-mass/"
+    },
+    {
+      "g": "RG-21432CC51482",
+      "src": "AO-AMER-R28-US-23-17",
+      "text": "Gladstone, MO (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://sataps.com/mass-confession-times"
+    },
+    {
+      "g": "RG-21C4FC16F4AD",
+      "src": "ao-research-sspx-four-district-bulk-sspx-de-de-memmingen-kirche-st-josef",
+      "text": "Memmingen (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://fsspx.today/memmingen"
+    },
+    {
+      "g": "RG-21EC99F9A0F9",
+      "src": "LMD:notre-dame-de-grace-moncton-canada",
+      "text": "854 Mountain Road, Moncton NB",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://monctontlms.org/"
+    },
+    {
+      "g": "RG-223CDB93F8BD",
+      "src": "AO-B34-L-GB-2C828CAB9C43",
+      "text": "Chideock, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-2298D40EEC2E",
+      "src": "AO-B34-L-GB-191DBE64C9C3",
+      "text": "Salisbury, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-22B3FAF5E5FD",
+      "src": "AO-EUR-DE-084",
+      "text": "63741 Aschaffenburg (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=5"
+    },
+    {
+      "g": "RG-22D58E74DD03",
+      "src": "AO-AMER-R28-US-19-13",
+      "text": "Brownsville, TX (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://immaculateconceptioncathedral.org/sacred-heart-mission"
+    },
+    {
+      "g": "RG-23167A238D74",
+      "src": "AO-EUR-DE-137",
+      "text": "66346 Püttlingen (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-23A785A0A399",
+      "src": "AO-AMER-R26-US-03-20",
+      "text": "Kansas City, KS (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.ctkkcmo.org/liturgy"
+    },
+    {
+      "g": "RG-23B72BE1EF93",
+      "src": "SSPXMAP:OPE-002281",
+      "text": "Gladstone Terrace West, Bensham, Gateshead NE8 4DR, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-257A01CF2311",
+      "src": "ao-research-icksp-federated-v13-icksp-stg-040",
+      "text": "Tucson, AZ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://institute-christ-king.org/tucson-home"
+    },
+    {
+      "g": "RG-257C9B24AEA3",
+      "src": "AO-AMER-R28-US-37-16",
+      "text": "Elm Grove, WI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stmaryeg.org/mass-schedule"
+    },
+    {
+      "g": "RG-25A356ACB95F",
+      "src": "ao-fssp-eglise-paroissiale-f-61400-saint-langis-les-mortagne-france",
+      "text": "Saint-Langis-lès-Mortagne (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-2621D72B5917",
+      "src": "AO-AMER-R27-US-12-15",
+      "text": "Merrillville, IN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=12"
+    },
+    {
+      "g": "RG-2674F3049DD5",
+      "src": "AO-WORLD-R35-AR-01-08",
+      "text": "Buenos Aires, Ciudad Autónoma de Buenos Aires (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=AR"
+    },
+    {
+      "g": "RG-2680C1DA8953",
+      "src": "AO-B34-L-GB-D81DD5E3D3A4",
+      "text": "Eastbourne, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-26B7A119F23C",
+      "src": "AO-WORLD-R35-BR-08-09",
+      "text": "Aracaju - SE (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=8"
+    },
+    {
+      "g": "RG-26E3516DAF49",
+      "src": "AO-AMER-R28-US-36-03",
+      "text": "Wahoo, NE (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stwencwahoo.org/"
+    },
+    {
+      "g": "RG-27005F1C1EF6",
+      "src": "AO-EUR-IT-006",
+      "text": "Beata Vergine del Rosario, Piazza Vecchia, Trieste",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.diocesi.trieste.it/orari-sante-messe/"
+    },
+    {
+      "g": "RG-27811F398592",
+      "src": "AO-AMER-R28-US-38-05",
+      "text": "St Cloud, MN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=38"
+    },
+    {
+      "g": "RG-27BB58850457",
+      "src": "AO-AMER-R28-US-26-19",
+      "text": "Erie, PA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.eriercd.org/Church10217-St-Hedwig.html"
+    },
+    {
+      "g": "RG-27DBA41B403D",
+      "src": "AO-AMER-R28-US-33-07",
+      "text": "Fredericksburg, VA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.latinmassarlington.org/find-tlm/parishes"
+    },
+    {
+      "g": "RG-27FFBE94FEFB",
+      "src": "AO-B34-L-GB-A210767BD4D6",
+      "text": "Bournemouth, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-289458D30EB5",
+      "src": "AO-AMER-R28-US-24-02",
+      "text": "Burlington, VT (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.christandanthony.vermontcatholic.org/mass-times"
+    },
+    {
+      "g": "RG-28AC6F34CF2D",
+      "src": "AO-B34-L-GB-6DD6280B8263",
+      "text": "Lancaster, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-28F0D44655E0",
+      "src": "AO-AMER-R28-US-30-20",
+      "text": "Alexandria, NE (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=30"
+    },
+    {
+      "g": "RG-294D9290FC3B",
+      "src": "ao-research-sspx-four-district-bulk-sspx-de-de-schramberg-kirche-maria-verkundigung",
+      "text": "Schramberg (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://fsspx.today/schramberg"
+    },
+    {
+      "g": "RG-297CCE36BAB2",
+      "src": "AO-WORLD-R35-BR-08-01",
+      "text": "BA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=8"
+    },
+    {
+      "g": "RG-2A983A501C72",
+      "src": "AO-B34-L-GB-80599C606293",
+      "text": "Birmingham, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-2A9EE96CB9D0",
+      "src": "AO-AMER-R27-US-15-03",
+      "text": "Cottage Grove, OR (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://olphcg.net/mass-times"
+    },
+    {
+      "g": "RG-2BA84A97C967",
+      "src": "ao-fssp-chapelle-notre-dame-de-lorette-4-avenue-du-general-de-gaulle-f-89000-auxerre-france",
+      "text": "Auxerre (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-2BAFA5D799B1",
+      "src": "AO-B34-L-GB-374F2382750E",
+      "text": "Hull, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-2C84B50B3667",
+      "src": "AO-B34-L-GB-A8C580DF8A5E",
+      "text": "Bootle, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-2CAD5BB065D4",
+      "src": "AO-B34-L-GB-203D1B7E48FB",
+      "text": "Middlesbrough, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-2D109C0705E3",
+      "src": "AO-EUR-DE-075",
+      "text": "92224 Amberg (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "g": "RG-2EA3A303947B",
+      "src": "AO-EUR-FR-013",
+      "text": "Le Havre (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=FR"
+    },
+    {
+      "g": "RG-2EBB124D849A",
+      "src": "ao-research-sspx-four-district-bulk-sspx-de-de-hamburg-kapelle-hl-theresia-von-avila",
+      "text": "Hamburg (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://fsspx.today/hamburg"
+    },
+    {
+      "g": "RG-2F2990F08561",
+      "src": "AO-AMER-R28-US-29-16",
+      "text": "Pharr, TX (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stjudethaddeus.net/"
+    },
+    {
+      "g": "RG-2F2D3B4C5AAD",
+      "src": "AO-AMER-R28-US-39-13",
+      "text": "Richmond Heights, MO (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stlouislatinmass.com/calendar"
+    },
+    {
+      "g": "RG-2FFE4B7147D4",
+      "src": "AO-EUR-DE-020",
+      "text": "Fulda (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE"
+    },
+    {
+      "g": "RG-325D5F8F2242",
+      "src": "AO-EUR-DE-144",
+      "text": "04416 Markkleeberg (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=8"
+    },
+    {
+      "g": "RG-32B03306458A",
+      "src": "AO-AMER-R28-US-37-13",
+      "text": "Lomira, WI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=37"
+    },
+    {
+      "g": "RG-33046AA6C90B",
+      "src": "AO-EUR-DE-099",
+      "text": "85055 Ingolstadt (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=5"
+    },
+    {
+      "g": "RG-3315DA94EE1D",
+      "src": "AO-B34-L-GB-29141826F311",
+      "text": "Cambridge, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-3390C2A72524",
+      "src": "AO-AMER-R28-US-29-11",
+      "text": "Salem, OR (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stjosephchurch.com/"
+    },
+    {
+      "g": "RG-33DCC4563668",
+      "src": "AO-AMER-R28-US-33-10",
+      "text": "Ripon, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stocktondiocese.org/parishfinder"
+    },
+    {
+      "g": "RG-34F2CA8BE433",
+      "src": "AO-AMER-R27-US-07-07",
+      "text": "Portland, OR (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://holyrosarypdx.org/"
+    },
+    {
+      "g": "RG-352B7084A497",
+      "src": "AO-AMER-R26-US-05-13",
+      "text": "Arlington, Virginia (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&page=5"
+    },
+    {
+      "g": "RG-3540FAB4FC07",
+      "src": "AO-AMER-R26-CA-04-10",
+      "text": "2827 273 Street, Aldergrove, BC V4W 3J9",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://aldergrovecatholic.com/welcome"
+    },
+    {
+      "g": "RG-355A1AC460E2",
+      "src": "AO-WORLD-R35-AR-01-15",
+      "text": "A4400 Salta (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-35E58DA4D687",
+      "src": "AO-AMER-R28-US-32-07",
+      "text": "Ironton, OH (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://masstimes.org/map?SearchQueryTerm=Ironton%2C+Ohio%2C+United+States&lat=38.536&lng=-82.682&sortDistance="
+    },
+    {
+      "g": "RG-35E771C445F0",
+      "src": "AO-AMER-R27-US-09-13",
+      "text": "Lahaina, HI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.marialanakila.org/"
+    },
+    {
+      "g": "RG-35EF98B8D652",
+      "src": "AO-AMER-R28-US-30-16",
+      "text": "Louisville, KY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.shrineofstmartin.org/massschedule"
+    },
+    {
+      "g": "RG-36BC05EBA266",
+      "src": "AO-B34-L-GB-0D4522F88A2D",
+      "text": "Exeter, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-3794BDA9486C",
+      "src": "AO-B34-L-GB-39D703767B72",
+      "text": "St Helens, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-37CCCFDB7771",
+      "src": "AO-AMER-R26-US-02-10",
+      "text": "Birmingham, AL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.myblessedsacrament.org/bulletin/"
+    },
+    {
+      "g": "RG-37D8B62B58AB",
+      "src": "AO-AMER-R28-US-26-03",
+      "text": "Newark, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=26"
+    },
+    {
+      "g": "RG-38B95E9A4396",
+      "src": "AO-EUR-DE-067",
+      "text": "67714 Waldfischbach-Burgalben (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=4"
+    },
+    {
+      "g": "RG-39884D4C0F33",
+      "src": "AO-B34-L-GB-2DC6DD660883",
+      "text": "Plymouth, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-39EAB301A191",
+      "src": "SSPXMAP:OPE-002283",
+      "text": "259 Conway Road, Mochdre, Rhos-on-Sea LL28 5AA, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-39F55D306310",
+      "src": "AO-WORLD-R35-BR-06-04",
+      "text": "Itabaiana - State of Sergipe (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=6"
+    },
+    {
+      "g": "RG-3A79242D8ABF",
+      "src": "AO-AMER-R26-US-05-08",
+      "text": "Louisville, KY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.archlou.org/parishes/guardian-angels-parish/"
+    },
+    {
+      "g": "RG-3A8D6604453A",
+      "src": "AO-EUR-DE-121",
+      "text": "28327 Bremen (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+    },
+    {
+      "g": "RG-3AF61C17A39B",
+      "src": "V19:DIO-US-HOU-ANNUNCIATION-TEXAS",
+      "text": "Houston, TX (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://annunciationcc.org/mass"
+    },
+    {
+      "g": "RG-3B1969F98EB8",
+      "src": "AO-B34-L-GB-3AE96B78FD59",
+      "text": "Hertford, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-3B1C6C5A2417",
+      "src": "AO-B34-L-GB-40B4AEFB57C0",
+      "text": "Marnhull, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-3BCD5C15836D",
+      "src": "AO-AMER-R28-US-28-14",
+      "text": "Troy, NY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.rcda.org/parishes/parish/st-josephs-church-troy-ny"
+    },
+    {
+      "g": "RG-3C136854C9CA",
+      "src": "AO-B34-L-GB-C73386C30A44",
+      "text": "Canvey Island, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-3C3AAA8BD104",
+      "src": "AO-WORLD-R35-BR-01-18",
+      "text": "Capela Nossa Senhora das Dores, Jardim Botânico III, Av. das Paineiras Entrequadra 9/10, Brasília, 71681-505, Brazil",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/brasilia/"
+    },
+    {
+      "g": "RG-3C7923058226",
+      "src": "ao-fssp-maison-sainte-scholastique-3-rue-premartine-f-72000-le-mans-france",
+      "text": "Le Mans (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-3C7C25372AF5",
+      "src": "AO-AMER-R28-MX-01-14",
+      "text": "Mexico City, Ciudad de México (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=MX&page=1"
+    },
+    {
+      "g": "RG-3D1192C38EC2",
+      "src": "AO-AMER-R27-US-10-01",
+      "text": "South San Francisco, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.mdssf.org/"
+    },
+    {
+      "g": "RG-3D282A89CF7B",
+      "src": "AO-EUR-PL-040",
+      "text": "Brusiek (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=PL&page=2"
+    },
+    {
+      "g": "RG-3D57C4A841C8",
+      "src": "LMD:sanctuaire-marie-reine-de-la-paix-mary-queen-of-peace-sanctuary-port-louis-mauritius",
+      "text": "Port Louis (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://icrspmaurice.org/; https://www.latinmassdir.org/venue/sanctuaire-marie-reine-de-la-paix-mary-queen-of-peace-sanctuary-port-louis-mauritius/; https://icrspmaurice.org/index.php/horaires-de-lapostolat/"
+    },
+    {
+      "g": "RG-3D6721887FF1",
+      "src": "AO-B34-L-GB-4D7977829142",
+      "text": "Abergavenny, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-3DE8C063EB0D",
+      "src": "ao-fssp-eglise-saint-sebastien-rue-michelet-f-11100-narbonne-france",
+      "text": "Narbonne (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-3DF1B93BAD69",
+      "src": "AO-WORLD-R35-BR-07-10",
+      "text": "Caruaru - State of Pernambuco (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=7"
+    },
+    {
+      "g": "RG-3E3025127EE0",
+      "src": "AO-AMER-R26-US-03-11",
+      "text": "Los Angeles, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.fssp.la/bulletin-mass-times"
+    },
+    {
+      "g": "RG-3E306FE8054D",
+      "src": "AO-B34-L-GB-A8088AE37E5F",
+      "text": "Nottingham, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-3EB98CF25656",
+      "src": "AO-AMER-R26-US-03-04",
+      "text": "Santa Rosa, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.steugenes.com/holy-mass"
+    },
+    {
+      "g": "RG-3F5DCDA74DDD",
+      "src": "LMD:paroisse-saint-antoine-saint-anthonys-parish-calgary-canada",
+      "text": "5340 4 Street SW, Calgary AB",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://calgarylatinmass.squarespace.com/schedule"
+    },
+    {
+      "g": "RG-3F826E03467B",
+      "src": "AO-EUR-DE-033",
+      "text": "Herz-Jesu-Kirche, Alte Straße 2, 63679 Schotten",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://bistummainz.de/pfarrei/schotten/gemeindeleben/heilige-messe-im-alten-ritus-vetus-ordo/"
+    },
+    {
+      "g": "RG-41C139394A97",
+      "src": "AO-AMER-R27-US-08-11",
+      "text": "Brentwood, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://ihmbrentwood.com/"
+    },
+    {
+      "g": "RG-431D065A1E65",
+      "src": "ao-research-icksp-federated-v13-icksp-stg-119",
+      "text": "Trier (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://institut-christus-koenig.de/trier/"
+    },
+    {
+      "g": "RG-4344324E6005",
+      "src": "ao-research-sspx-global-completion-20261009-sspx-global-20261009-03-priorato-santa-teresita-del-nino-jesus",
+      "text": "Bucaramanga (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-434B4D1DD862",
+      "src": "AO-AMER-R27-US-14-20",
+      "text": "Irvine, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.olpkcc.org/t-ko/"
+    },
+    {
+      "g": "RG-43C77660C303",
+      "src": "AO-B34-L-GB-43BCEF5411CB",
+      "text": "Reading, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-44520B3B9B05",
+      "src": "AO-AMER-R28-US-36-05",
+      "text": "Chicago, Illinois (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=36"
+    },
+    {
+      "g": "RG-44539D308ED2",
+      "src": "AO-B34-L-GB-501792192CF3",
+      "text": "Chesham Bois, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-447C70006F0D",
+      "src": "AO-EUR-IT-054",
+      "text": "16128 Genova GE (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=IT&page=3"
+    },
+    {
+      "g": "RG-44AA907646EA",
+      "src": "AO-AMER-R27-US-06-15",
+      "text": "Burlington, Vermont (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=6"
+    },
+    {
+      "g": "RG-44CCED33F9CB",
+      "src": "AO-B34-L-GB-7724074F6860",
+      "text": "Swynnerton, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-44F315BAD4C8",
+      "src": "AO-B34-L-GB-A89D08505B0E",
+      "text": "Coxhoe, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-45876216E2C3",
+      "src": "AO-AMER-R28-US-24-14",
+      "text": "St Augustine Church, 30 Caputo Road, North Branford CT 06471",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.nbcatholics.org/"
+    },
+    {
+      "g": "RG-45F301673A3C",
+      "src": "AO-AMER-R28-US-31-18",
+      "text": "Jackson, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stmaryjackson.com/mass-times"
+    },
+    {
+      "g": "RG-46B891B2CE6E",
+      "src": "AO-AMER-R26-US-03-08",
+      "text": "Lake Charles, LA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&page=3"
+    },
+    {
+      "g": "RG-46FD259ADB1D",
+      "src": "AO-WORLD-R35-AR-02-05",
+      "text": "B1661DHG Bella Vista (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=AR&page=2"
+    },
+    {
+      "g": "RG-476BA44067AE",
+      "src": "V19:DIO-US-TRENTON-HOLYINNOCENTS-NEPTUNE",
+      "text": "Neptune, NJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://holyinnocentschurch.net/mass-schedule/"
+    },
+    {
+      "g": "RG-48A5CF9C3C73",
+      "src": "AO-AMER-R26-US-03-06",
+      "text": "Sioux City, IA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://sccathedral.org/events/mass-in-latin-low-mass"
+    },
+    {
+      "g": "RG-48C03D0B9B34",
+      "src": "AO-WORLD-R35-BR-09-20",
+      "text": "3940 - Joaquim Távora (Fortaleza) (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=9"
+    },
+    {
+      "g": "RG-48F2F7F2FDBB",
+      "src": "AO-WORLD-R35-BR-09-04",
+      "text": "95 - Jardim Satelite (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=9"
+    },
+    {
+      "g": "RG-4B432F5F8E1D",
+      "src": "AO-AMER-R28-US-27-06",
+      "text": "Lemont, IL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://historicstjames.org/mass-and-confession"
+    },
+    {
+      "g": "RG-4B53C052E721",
+      "src": "AO-AMER-R28-US-38-03",
+      "text": "Akron, OH (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://latinmasscleveland.weebly.com/"
+    },
+    {
+      "g": "RG-4B744A1E267E",
+      "src": "AO-AMER-R27-US-10-13",
+      "text": "San Rafael, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=10"
+    },
+    {
+      "g": "RG-4C1336C6B6D6",
+      "src": "AO-B34-L-GB-69645802D7E3",
+      "text": "Marton, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-4D3748037974",
+      "src": "AO-AMER-R28-MX-02-19",
+      "text": "Linda Vista (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=MX&page=2"
+    },
+    {
+      "g": "RG-4D4D59E994D1",
+      "src": "AO-AMER-R27-US-06-02",
+      "text": "Old Town, ME (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://resurrectionofthelord.org/mass-times"
+    },
+    {
+      "g": "RG-4DE15D43730A",
+      "src": "AO-WORLD-R35-BR-08-12",
+      "text": "Rio de Janeiro - State of Rio de Janeiro (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-4E8EFFC9B95F",
+      "src": "AO-WORLD-R35-BR-02-08",
+      "text": "Brasília - DF (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=2"
+    },
+    {
+      "g": "RG-4EA555D6403F",
+      "src": "AO-AMER-R28-US-17-06",
+      "text": "Snowflake, AZ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=17"
+    },
+    {
+      "g": "RG-4EBF82DFE117",
+      "src": "AO-AMER-R28-US-26-01",
+      "text": "Brick Township, NJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stdominicsparish.com/the-latin-mass"
+    },
+    {
+      "g": "RG-4F4A1A6296FE",
+      "src": "AO-AMER-R28-US-31-14",
+      "text": "Conshohocken, PA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stmarylatinmass.com/"
+    },
+    {
+      "g": "RG-4FC2D3700BBF",
+      "src": "AO-WORLD-R35-BR-04-06",
+      "text": "Capela Santa Luzia, Colônia Agrícola Samambaia, Chácara 143 Lote 13, Brasília DF",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://capeladivinomestre.wordpress.com/sobre/"
+    },
+    {
+      "g": "RG-500278514403",
+      "src": "ao-fssp-maison-bienheureux-louis-edouard-cestac-17bis-boulevard-d-alsace-lorraine-f-64000-pau-france",
+      "text": "Pau (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-504AA71483CB",
+      "src": "V19:DIO-US-DENVER-BOULDER-SHM",
+      "text": "Boulder, CO (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://sacredheartofmary.org/traditional-latin-mass"
+    },
+    {
+      "g": "RG-5054026CB585",
+      "src": "AO-WORLD-R35-BR-03-17",
+      "text": "62 - Icaraí (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=3"
+    },
+    {
+      "g": "RG-50669F2550A4",
+      "src": "AO-AMER-R26-CA-03-13",
+      "text": "Regina (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=CA&page=3"
+    },
+    {
+      "g": "RG-5213B7E923E8",
+      "src": "AO-AMER-R28-US-27-10",
+      "text": "Phoenix, AZ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stcatherinephoenix.org/mass-and-confession"
+    },
+    {
+      "g": "RG-524E16F096DE",
+      "src": "AO-B34-L-GB-08FA5E68232A",
+      "text": "West Grinstead, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-524F58038815",
+      "src": "AO-AMER-R28-US-23-15",
+      "text": "Salt Lake City, UT (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stambrosecatholicchurch.org/"
+    },
+    {
+      "g": "RG-52FF5E7EFAC7",
+      "src": "AO-AMER-R28-US-31-08",
+      "text": "Independence, MO (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stgabrielskc.com/a-note-from-bishop-johnston"
+    },
+    {
+      "g": "RG-53C6E9C7A832",
+      "src": "AO-B34-L-GB-01D065E14EA3",
+      "text": "Cambridge, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-53DB6D35E4CB",
+      "src": "AO-WORLD-R35-BR-01-01",
+      "text": "53a - Jardim Santa Emília (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://rezaremlatim.com/missa_tridentina/onde_tem_missa_tridentina/"
+    },
+    {
+      "g": "RG-53FC463E4D50",
+      "src": "V19:DIO-US-CHARLESTON-SACREDHEART",
+      "text": "Charleston, SC (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.carolinaliturgy.org/mass-times"
+    },
+    {
+      "g": "RG-5447D9A75376",
+      "src": "SSPXMAP:OPE-001796",
+      "text": "Stronsay, Orkney KW17 2AS, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-5457CD3C7FE9",
+      "src": "AO-B34-L-GB-9A0AE5BB2E6C",
+      "text": "Rochdale, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-54BF19C08D62",
+      "src": "AO-AMER-R28-US-36-15",
+      "text": "Yountville, WA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://srdiocese.org/parishfinder"
+    },
+    {
+      "g": "RG-560EE9CCC57A",
+      "src": "ao-fssp-maison-notre-dame-du-rosaire-27-grande-rue-f-89000-perrigny-france",
+      "text": "Perrigny (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-56B7040002F7",
+      "src": "AO-B34-L-GB-EEA9C15AEB08",
+      "text": "Portsmouth, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-56F9693BE7CF",
+      "src": "AO-AMER-R27-US-10-06",
+      "text": "Pala, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.tlmnorthcountysd.com/"
+    },
+    {
+      "g": "RG-57BF8500AC95",
+      "src": "LMD:our-lady-of-the-angels-chapel-armidale-australia",
+      "text": "Corner Barney and Jessie Streets, Armidale NSW",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.armidale.catholic.org.au/our-parishes/armidale-cathedral-parish"
+    },
+    {
+      "g": "RG-58108FA39C1B",
+      "src": "AO-AMER-R26-US-05-01",
+      "text": "Brooklyn, NY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://divinemercy-brooklyn.org/about/mass-times"
+    },
+    {
+      "g": "RG-588149F626A7",
+      "src": "SSPXMAP:OPE-001785",
+      "text": "31 Lanark Road, Carluke ML8 4HE, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-593341DF1646",
+      "src": "AO-AMER-R28-US-34-14",
+      "text": "Minto, ND (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=34"
+    },
+    {
+      "g": "RG-5B65864A842D",
+      "src": "AO-B34-L-GB-5B089A6D5EE8",
+      "text": "Chelmsford, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-5C109319B558",
+      "src": "AO-AMER-R28-US-19-11",
+      "text": "Fountain, MN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=19"
+    },
+    {
+      "g": "RG-5CA9C9CEE119",
+      "src": "AO-B34-L-GB-C2AF862539E0",
+      "text": "Lichfield, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-5DB8924C5BEB",
+      "src": "AO-EUR-IT-023",
+      "text": "Rome, Lazio (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://roma.fssp.it/"
+    },
+    {
+      "g": "RG-5EBA3762336E",
+      "src": "ao-fssp-chapelle-notre-dame-de-la-rose-36-avenue-saint-martin-f-26200-montelimar-france",
+      "text": "Montélimar (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-5F72E87A4806",
+      "src": "AO-WORLD-R35-BR-07-15",
+      "text": "48 - Diamante (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=7"
+    },
+    {
+      "g": "RG-5F96F346B7FF",
+      "src": "AO-WORLD-R35-BR-10-04",
+      "text": "1488 - Centro (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.missatridentina.com.br/sao-paulo/"
+    },
+    {
+      "g": "RG-5FA02206D36C",
+      "src": "AO-AMER-R28-US-30-11",
+      "text": "Road Enfield, CT (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://sjjenfield.org/mass-times/"
+    },
+    {
+      "g": "RG-5FD851DAC280",
+      "src": "AO-AMER-R28-US-26-18",
+      "text": "Lansing, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://gregorythegreat.com/"
+    },
+    {
+      "g": "RG-600AD5A8F9A9",
+      "src": "AO-EUR-DE-016",
+      "text": "Budenheim (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+    },
+    {
+      "g": "RG-602775BAD6D3",
+      "src": "AO-AMER-R28-US-29-18",
+      "text": "Rochester, NY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://ps.dor.org/directory/st-kateri-tekakwitha/"
+    },
+    {
+      "g": "RG-605CC195A1EF",
+      "src": "AO-B34-L-GB-D03817F48CAA",
+      "text": "London, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-6088B5670FF8",
+      "src": "AO-AMER-R28-US-30-14",
+      "text": "Dripping Springs, TX (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stmartindp.org/"
+    },
+    {
+      "g": "RG-60DA7C10907C",
+      "src": "AO-EUR-PL-011",
+      "text": "Płock (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=PL"
+    },
+    {
+      "g": "RG-60F9209B5A26",
+      "src": "V19:DIO-FR-QUIMPER-STMATHIEU",
+      "text": "Quimper (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.quimpersaintcorentin.com/messes/"
+    },
+    {
+      "g": "RG-61400C082CBD",
+      "src": "AO-B34-L-GB-FBEA1CBECB3C",
+      "text": "Swindon, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-6150DB353AAA",
+      "src": "SSPXMAP:OPE-002290",
+      "text": "Market Street, Bingley BD16 2HP, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-61886F9DAFE0",
+      "src": "AO-B34-L-GB-E62FA57312F5",
+      "text": "Thornley, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-61B6405D14DC",
+      "src": "AO-AMER-R28-US-35-03",
+      "text": "Allentown, PA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.lehighvalleylatinmass.org/"
+    },
+    {
+      "g": "RG-61E75B8D31D8",
+      "src": "AO-AMER-R28-US-35-06",
+      "text": "Alhambra, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.sttheresechurchalhambra.org/latinmass"
+    },
+    {
+      "g": "RG-62A7875AE5DB",
+      "src": "ao-research-icksp-federated-v13-icksp-stg-093",
+      "text": "Curepipe (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.latinmassdir.org/venue/eglise-sainte-therese-curepipe-mauritius/; https://www.latinmassdir.org/venue/eglise-sainte-therese-curepipe-mauritius/"
+    },
+    {
+      "g": "RG-62C8D4642439",
+      "src": "AO-EUR-DE-032",
+      "text": "Reinbek (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.alte-messe-im-norden.de/"
+    },
+    {
+      "g": "RG-630BA2B71AD9",
+      "src": "V19:DIO-GB-WEST-WILLESDEN",
+      "text": "London – Willesden (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://parish.rcdow.org.uk/willesden/wp-content/uploads/sites/72/2025/05/UTF-8Newsletter-11.05.2025.pdf"
+    },
+    {
+      "g": "RG-63BC2CF66C4B",
+      "src": "AO-EUR-IT-038",
+      "text": "Piazza del Foro, Brescia, Italy",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.diocesi.brescia.it/orari-s-messe-cattedrale/"
+    },
+    {
+      "g": "RG-641E75E850D8",
+      "src": "AO-AMER-R28-US-17-01",
+      "text": "Hahnville, LA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.olhrhahnville.org/traditional-mass"
+    },
+    {
+      "g": "RG-648D9583A88F",
+      "src": "AO-AMER-R26-US-05-02",
+      "text": "Mt Carmel, PA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.hbgdiocese.org/parishes/divine-redeemer-mount-carmel/"
+    },
+    {
+      "g": "RG-6504A98F8FAF",
+      "src": "AO-B34-L-GB-3731B7872282",
+      "text": "New Brighton, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-65812A357860",
+      "src": "AO-EUR-DE-023",
+      "text": "Heideck (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=2"
+    },
+    {
+      "g": "RG-65E3B77E0F84",
+      "src": "AO-B34-L-GB-1B3A4665CA8E",
+      "text": "Weston-Super-Mare, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-66CB8EEAFB66",
+      "src": "AO-AMER-R28-US-34-08",
+      "text": "New Hope, MN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.archspm.org/location/st-raphael-catholic-church/"
+    },
+    {
+      "g": "RG-66DF13A0704A",
+      "src": "AO-EUR-DE-122",
+      "text": "96049 Bamberg (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+    },
+    {
+      "g": "RG-6763FCB7806B",
+      "src": "AO-WORLD-R35-BR-06-10",
+      "text": "São Luís - MA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://rezaremlatim.com/missa_tridentina/onde_tem_missa_tridentina/"
+    },
+    {
+      "g": "RG-6770405F7CE6",
+      "src": "AO-B34-L-GB-0393E8491CA8",
+      "text": "East Cowes, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-6802ADBDA2EE",
+      "src": "V19:DIO-US-HON-CATHEDRAL",
+      "text": "Honolulu, HI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.catholicchurchtimes.com/church/cathedral-basilica-our-lady-of-peace-honolulu-hi"
+    },
+    {
+      "g": "RG-68EA28AF610D",
+      "src": "AO-EUR-PL-004",
+      "text": "Tychy (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=PL"
+    },
+    {
+      "g": "RG-693919FAF0FF",
+      "src": "AO-AMER-R28-US-38-07",
+      "text": "Columbia Falls, MT (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://strichardsparish.org/mass-times"
+    },
+    {
+      "g": "RG-69620D2A81C9",
+      "src": "AO-AMER-R28-US-33-03",
+      "text": "Findlay, OH (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.findlaystmichael.org/"
+    },
+    {
+      "g": "RG-6A65F7C0E5DB",
+      "src": "AO-AMER-R28-US-35-20",
+      "text": "Aliquippa, PA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://maryqueenofsaints.org/news/from-the-desk-of-bishop-eckman-regarding-the-latin-mass"
+    },
+    {
+      "g": "RG-6ACFB55B9196",
+      "src": "AO-AMER-R28-US-24-20",
+      "text": "Spokane, WA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://spokanecatholic.com/parishes/st-bernadette-spokane"
+    },
+    {
+      "g": "RG-6B7AE34E29F0",
+      "src": "AO-EUR-DE-013",
+      "text": "Frankfurt am Main (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.deutschordenskirche.de/gottesdienste/"
+    },
+    {
+      "g": "RG-6BC6B2350E8D",
+      "src": "ao-fssp-maison-saint-bernard-4-rue-de-l-alma-f-42000-saint-etienne-france",
+      "text": "Saint-Étienne (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-6BF29FF7A96A",
+      "src": "AO-AMER-R28-US-36-07",
+      "text": "Middletown Township, NJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stcathlaboure.org/"
+    },
+    {
+      "g": "RG-6CC764E4B257",
+      "src": "V19:DIO-FR-ANGERS-NDV",
+      "text": "Angers (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://cathedralestmauricenotredame.diocese49.org/la-paroisse/horaires-a-remttre-apres-ete/"
+    },
+    {
+      "g": "RG-6CCD81DF359B",
+      "src": "AO-EUR-DE-100",
+      "text": "84503 Altötting (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=5"
+    },
+    {
+      "g": "RG-6D2A3BC7FD74",
+      "src": "LMD:paroisse-saint-laurent-le-martyr-saint-lawrence-the-martyr-parish-toronto-canada",
+      "text": "2210 Lawrence Avenue East, Scarborough ON",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://stlawrencemartyr.archtoronto.org/en/our-community/mass-times/"
+    },
+    {
+      "g": "RG-6D4BC3733F68",
+      "src": "AO-EUR-DE-101",
+      "text": "10115 Berlin (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.messopfer.de/employees/Hl.Messe_in_St.Adalbert_Ablauf.pdf"
+    },
+    {
+      "g": "RG-6E9199D17F5D",
+      "src": "AO-AMER-R28-US-30-13",
+      "text": "Ashland City, TN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://reverentcatholicmass.com/Map"
+    },
+    {
+      "g": "RG-6EF0B321087A",
+      "src": "AO-AMER-R26-CA-02-03",
+      "text": "Quebec J0B 2E0 (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://fsspx.ca/sites/default/files/documents/2024_may_bulletin.pdf"
+    },
+    {
+      "g": "RG-6F74FEB9175B",
+      "src": "AO-WORLD-R35-BR-06-02",
+      "text": "São Paulo, São Paulo (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=6"
+    },
+    {
+      "g": "RG-703B78BC67E9",
+      "src": "AO-AMER-R28-US-29-07",
+      "text": "Opelousas, LA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=29"
+    },
+    {
+      "g": "RG-70986CE922B9",
+      "src": "ao-research-icksp-federated-v13-icksp-stg-096",
+      "text": "Port-Louis (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.latinmassdir.org/venue/chapelle-saint-jean-de-dieu-de-lhopital-civil-port-louis-mauritius/; https://www.latinmassdir.org/venue/chapelle-saint-jean-de-dieu-de-lhopital-civil-port-louis-mauritius/; https://icrspmaurice.org/index.php/horaires-de-lapostolat/"
+    },
+    {
+      "g": "RG-70B31984AB26",
+      "src": "AO-B34-L-GB-CBFEABD75555",
+      "text": "Kings Lynn, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-70E4E3B6967B",
+      "src": "ao-fssp-maison-sainte-jeanne-d-arc-1-rue-de-l-abbe-claude-f-88000-epinal-france",
+      "text": "Épinal (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-70F930577989",
+      "src": "AO-EUR-DE-119",
+      "text": "04158 Leipzig (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+    },
+    {
+      "g": "RG-711F83579471",
+      "src": "AO-EUR-GB-003",
+      "text": "Little Walsingham (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.walsingham.org.uk/2024/09/16/a-note-on-the-upcoming-shrine-winter-programme/"
+    },
+    {
+      "g": "RG-715B6B4A02EE",
+      "src": "AO-EUR-DE-116",
+      "text": "86681 Fünfstetten (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-715DF2DEF86F",
+      "src": "V19:DIO-FR-PARIS-STEUGENE",
+      "text": "Paris 9e (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://dioceseparis.fr/messes-celebrees-selon-le-missel.html"
+    },
+    {
+      "g": "RG-71AD11ABFD7E",
+      "src": "AO-AMER-R28-US-18-15",
+      "text": "New Brunswick, NJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=18"
+    },
+    {
+      "g": "RG-71C56F0FFB47",
+      "src": "AO-WORLD-R35-BR-06-15",
+      "text": "619 - Parque Turf Club (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=6"
+    },
+    {
+      "g": "RG-72C46DD16705",
+      "src": "ao-fssp-eglise-sainte-mathie-boulevard-maupeou-f-89100-sens-france",
+      "text": "Sens",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-733AE94AF050",
+      "src": "ao-research-icksp-federated-v13-icksp-stg-054",
+      "text": "Detroit, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.institute-christ-king.org/detroit; https://adorientem.church/find?country=US&family=true&page=29"
+    },
+    {
+      "g": "RG-73440403592B",
+      "src": "AO-WORLD-R35-BR-09-06",
+      "text": "152 - Jardim (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=9"
+    },
+    {
+      "g": "RG-7402BF6460DC",
+      "src": "LMD:saint-michael-the-archangel-church-buronga-australia",
+      "text": "Pitman Avenue, Buronga NSW",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.fssp.net/locations"
+    },
+    {
+      "g": "RG-745003B452C3",
+      "src": "AO-B34-L-GB-AC176ED50FBC",
+      "text": "Epping, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-745790847B7B",
+      "src": "LMD:chapelle-du-college-saint-joseph-saint-josephs-college-chapel-curepipe-mauritius",
+      "text": "Curepipe (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://icrspmaurice.org/; https://www.latinmassdir.org/venue/chapelle-du-college-saint-joseph-saint-josephs-college-chapel-curepipe-mauritius/; https://icrspmaurice.org/index.php/horaires-de-lapostolat/"
+    },
+    {
+      "g": "RG-748EDD6A7ACC",
+      "src": "AO-AMER-R28-US-39-19",
+      "text": "St Glen Cove, NY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.glencovecatholic.org/"
+    },
+    {
+      "g": "RG-74913D04E29B",
+      "src": "LMD:paroisse-notre-dame-reine-de-la-paix-our-lady-queen-of-peace-parish-victoria-canada",
+      "text": "849 Old Esquimalt Road, Esquimalt BC",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.queenofpeace.church/"
+    },
+    {
+      "g": "RG-74DC9BD9270B",
+      "src": "AO-EUR-DE-148",
+      "text": "93047 Regensburg (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.roemische-messe-regensburg.de/cms/?page_id=22"
+    },
+    {
+      "g": "RG-750470DE485C",
+      "src": "AO-B34-L-GB-51209A3AA33A",
+      "text": "Leeds, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-755418796920",
+      "src": "AO-AMER-R28-US-34-05",
+      "text": "Pittsburg, KS (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://catholicdioceseofwichita.org/parishes/"
+    },
+    {
+      "g": "RG-75A64256EA60",
+      "src": "LMD:eaglais-nao%e1%b9%81-peadar-%e2%81%8a-pol-saints-peter-pauls-church-cork-ireland",
+      "text": "Ss Peter & Pauls Church, Paul Street, Cork, Ireland",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://corkandross.org/parishes/ss-peter-pauls"
+    },
+    {
+      "g": "RG-777967A0704D",
+      "src": "ao-research-icksp-federated-v13-icksp-stg-116",
+      "text": "Treis-Karden (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://institut-christus-koenig.de/kloster-maria-engelport/; https://adorientem.church/find?country=DE&page=3"
+    },
+    {
+      "g": "RG-7779A23530D1",
+      "src": "AO-AMER-R28-US-35-11",
+      "text": "Memphis, TN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://littleflowermemphis.org/"
+    },
+    {
+      "g": "RG-7795A02FF999",
+      "src": "V19:DIO-GB-LEEDS-BRADFORD-STPATRICK",
+      "text": "Bradford (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.dioceseofleeds.org.uk/new-priest-for-the-st-patricks-mission-sunday-mass-rota/"
+    },
+    {
+      "g": "RG-77A4942AFC37",
+      "src": "AO-AMER-R28-US-36-02",
+      "text": "Milligan, NE (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.emcatholic.com/"
+    },
+    {
+      "g": "RG-77C994F788DD",
+      "src": "AO-WORLD-R35-BR-05-01",
+      "text": "216 - Centro (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=5"
+    },
+    {
+      "g": "RG-7848DCB9D65F",
+      "src": "AO-EUR-DE-154",
+      "text": "Studienkirche St Michael, Schustergasse 14, Passau, Germany",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://pfarrverband-passau-altstadt.bistum-passau.de/aktuelles-termine/gottesdiensttermine/p2?church=6480&endDate=&startDate="
+    },
+    {
+      "g": "RG-78945BD9CADC",
+      "src": "AO-AMER-R28-US-23-16",
+      "text": "Fairbury, IL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.catholicspiritradio.com/weekend-mass-times"
+    },
+    {
+      "g": "RG-7921416B07D2",
+      "src": "LMD:saint-marys-church-the-rock-australia",
+      "text": "96–102 Urana Street, The Rock NSW 2655",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://wagga.catholic.org.au/parish-directory/"
+    },
+    {
+      "g": "RG-7982DD5A2ADE",
+      "src": "ao-fssp-maison-saint-maur-77-avenue-joffre-f-94100-saint-maur-des-fosses-france",
+      "text": "Saint-Maur-des-Fossés (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-799621AC9B47",
+      "src": "AO-EUR-DE-096",
+      "text": "48143 Münster (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.adjutorium.de/"
+    },
+    {
+      "g": "RG-7C7DC29FFFAB",
+      "src": "AO-AMER-R28-US-31-17",
+      "text": "Park City, UT (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stmarysparkcity.com/latin"
+    },
+    {
+      "g": "RG-7D1A7C253CC7",
+      "src": "AO-B34-L-GB-BBF9009D18D0",
+      "text": "Redditch, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-7DBA8945DB00",
+      "src": "AO-AMER-R28-US-38-02",
+      "text": "Boston, Massachusetts (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=38"
+    },
+    {
+      "g": "RG-7E1B84E6441A",
+      "src": "AO-B34-L-GB-CD720D81D5F8",
+      "text": "Skegness, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-7E8F06CEF474",
+      "src": "ao-research-sspx-four-district-bulk-sspx-de-de-neustadt-kapelle-heilige-familie",
+      "text": "Neustadt (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://fsspx.today/neustadt"
+    },
+    {
+      "g": "RG-7EB96CF2033D",
+      "src": "AO-AMER-R28-US-18-01",
+      "text": "Mesa, AZ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.latinmassdir.org/country/us/?area=Phoenix+Arizona+United+States&lat=33.44823&lng=-112.075098&radius=20mi&view=list"
+    },
+    {
+      "g": "RG-7F3EE9900261",
+      "src": "AO-B34-L-GB-6EEF843557D6",
+      "text": "Scunthorpe, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-7F53B55044CC",
+      "src": "AO-AMER-R28-US-32-06",
+      "text": "Salem, ID (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=32"
+    },
+    {
+      "g": "RG-7FA9847DAEFF",
+      "src": "AO-AMER-R28-US-39-03",
+      "text": "Mankato, MN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.dowr.org/parishfinder"
+    },
+    {
+      "g": "RG-8144F4F2DCF9",
+      "src": "AO-WORLD-R35-BR-09-17",
+      "text": "RJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=9"
+    },
+    {
+      "g": "RG-8176AED316A2",
+      "src": "ao-research-icksp-federated-v13-icksp-stg-077",
+      "text": "Preston (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://icksp.org.uk/preston/wp-content/uploads/sites/3/2026/08/233-Dominica-XIV-Post-Pentecosten-.pdf"
+    },
+    {
+      "g": "RG-832F1530B4B3",
+      "src": "ao-fssp-eglise-saint-pierre-2-rue-saint-pierre-f-42600-montbrison-france",
+      "text": "Montbrison",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.fsspsaintetienne.fr/"
+    },
+    {
+      "g": "RG-832FE092A708",
+      "src": "AO-AMER-R28-US-29-04",
+      "text": "Wichita, KS (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://catholicdioceseofwichita.org/parishes/"
+    },
+    {
+      "g": "RG-8371CC9D1785",
+      "src": "AO-AMER-R26-US-02-03",
+      "text": "Ferndale, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://tlmnorthcoast.com/masses/"
+    },
+    {
+      "g": "RG-838AF4281716",
+      "src": "AO-AMER-R28-US-38-12",
+      "text": "Winchester, NH (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.unavocemaine.org/"
+    },
+    {
+      "g": "RG-83B638F05183",
+      "src": "DIO-FR-VANNES-STPATERN",
+      "text": "Vannes (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.saint-patern.bzh/horaires"
+    },
+    {
+      "g": "RG-83DDC2BF6C2C",
+      "src": "AO-EUR-PL-027",
+      "text": "Kłodzko (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=PL&page=2"
+    },
+    {
+      "g": "RG-841858590896",
+      "src": "AO-AMER-R28-US-23-12",
+      "text": "15th Avenue Portland, OR (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stagathaportland.com/calendar"
+    },
+    {
+      "g": "RG-841DA145F940",
+      "src": "AO-AMER-R27-US-14-16",
+      "text": "Blvd Covington, LA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=14"
+    },
+    {
+      "g": "RG-84277A3C62ED",
+      "src": "AO-AMER-R26-US-01-12",
+      "text": "Sanford, FL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.asccsanford.org/mass-times"
+    },
+    {
+      "g": "RG-843570C4C0E0",
+      "src": "SSPXMAP:OPE-002280",
+      "text": "Station Road, Groombridge TN3 9QX, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-84C243EE7674",
+      "src": "AO-AMER-R28-US-36-13",
+      "text": "Lincoln, Nebraska (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.sggs.edu/"
+    },
+    {
+      "g": "RG-85591EC590C0",
+      "src": "AO-WORLD-R35-BR-08-04",
+      "text": "1683 - Santa Clara (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=8"
+    },
+    {
+      "g": "RG-860E820323C9",
+      "src": "AO-EUR-DE-132",
+      "text": "67105 Schifferstadt (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.pfarrei-schifferstadt.de/glaube-seelsorge/gottesdienstvielfalt-bei-uns/heilige-messe/"
+    },
+    {
+      "g": "RG-863CDA4D1447",
+      "src": "AO-EUR-DE-083",
+      "text": "82438 Eschenlohe (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=5"
+    },
+    {
+      "g": "RG-8665A71723CC",
+      "src": "AO-WORLD-R35-BR-07-09",
+      "text": "549 - Monte Carlo (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=7"
+    },
+    {
+      "g": "RG-86A7C04C87B8",
+      "src": "AO-AMER-R28-US-25-19",
+      "text": "Brick, NJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stdominicsparish.com/the-latin-mass"
+    },
+    {
+      "g": "RG-86D6D5C739B6",
+      "src": "AO-AMER-R27-US-06-10",
+      "text": "Denver, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://latinliturgy.com/lmdirectory.html"
+    },
+    {
+      "g": "RG-875AACAE9361",
+      "src": "AO-AMER-R26-US-03-05",
+      "text": "San Francisco, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://smcsf.org/traditional-latin-mass"
+    },
+    {
+      "g": "RG-87A8F3330B8E",
+      "src": "AO-AMER-R28-US-30-04",
+      "text": "Scranton, PA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.dioceseofscranton.org/find-a-parish/saint-michael-the-archangel-parish-scranton/"
+    },
+    {
+      "g": "RG-887C1BB812D8",
+      "src": "AO-AMER-R28-US-33-15",
+      "text": "Nampa, ID (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.nampacatholic.church/copy-of-music-ministry-page-w/drop-downs"
+    },
+    {
+      "g": "RG-88D6B27BED09",
+      "src": "AO-AMER-R28-US-27-19",
+      "text": "Bloomington, IN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=27"
+    },
+    {
+      "g": "RG-89C6B8C6A5FA",
+      "src": "AO-AMER-R26-US-04-16",
+      "text": "Colorado Springs, CO (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://diocs.org/parishfinder"
+    },
+    {
+      "g": "RG-89FC8B37E01B",
+      "src": "AO-B34-L-GB-E50F19F30D6A",
+      "text": "Carlisle, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-8A8A3546E6EA",
+      "src": "AO-AMER-R28-US-38-04",
+      "text": "Warren, MA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=38"
+    },
+    {
+      "g": "RG-8A9B4D32524F",
+      "src": "AO-EUR-PL-035",
+      "text": "Wrocław (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=PL&page=2"
+    },
+    {
+      "g": "RG-8AAE55073DBE",
+      "src": "AO-EUR-DE-036",
+      "text": "Weilheim in Oberbayern (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=2"
+    },
+    {
+      "g": "RG-8BEEBB8E1684",
+      "src": "ao-research-sspx-four-district-bulk-sspx-ch-ch-sion-eglise-de-la-sainte-famille",
+      "text": "Sion (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+    },
+    {
+      "g": "RG-8BFED3075199",
+      "src": "AO-AMER-R26-US-04-08",
+      "text": "Transfiguration Church, Maspeth, Queens, NY",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://transtans.org/4pm-mass-notification/"
+    },
+    {
+      "g": "RG-8C0EAC57708C",
+      "src": "AO-EUR-IT-022",
+      "text": "Chiesa della Santissima Trinità, via San Giuliano, Pordenone",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://liturgiatradizionalefriuli.blogspot.com/p/contatti.html"
+    },
+    {
+      "g": "RG-8C5359AAF7E1",
+      "src": "AO-AMER-R28-US-30-05",
+      "text": "Barefoot Bay, FL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stlukebarefootbay.org/mass-times-2/"
+    },
+    {
+      "g": "RG-8C68FE1D6156",
+      "src": "AO-AMER-R28-US-25-01",
+      "text": "Wharton, NJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=25"
+    },
+    {
+      "g": "RG-8D3B8B5D5194",
+      "src": "AO-AMER-R28-US-26-12",
+      "text": "East Palo Alto, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=26"
+    },
+    {
+      "g": "RG-8DE39E8E9415",
+      "src": "AO-B34-L-GB-93C243AF40AB",
+      "text": "Wells, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-8DF5692516A9",
+      "src": "AO-EUR-GB-005",
+      "text": "Gooding Ave (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=GB"
+    },
+    {
+      "g": "RG-8E635C46643A",
+      "src": "ao-research-sspx-four-district-bulk-sspx-de-de-fulda-mutter-von-der-immerwahrenden-hilfe",
+      "text": "Fulda (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://fsspx.today/fulda"
+    },
+    {
+      "g": "RG-8EBDDE6000F3",
+      "src": "AO-B34-L-GB-23F37768CB33",
+      "text": "Tenterden, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-8FB18D44300C",
+      "src": "AO-AMER-R28-US-19-01",
+      "text": "Clifton, NJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://sacredheartclifton.com/mass-times"
+    },
+    {
+      "g": "RG-8FF20B9B61E9",
+      "src": "AO-WORLD-R35-BR-01-03",
+      "text": "Brasília - DF (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR"
+    },
+    {
+      "g": "RG-913591061179",
+      "src": "AO-AMER-R28-US-28-01",
+      "text": "Allentown, NJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://dioceseoftrenton.org/parishfinder"
+    },
+    {
+      "g": "RG-915F5BC1F858",
+      "src": "AO-AMER-R28-US-25-04",
+      "text": "St Bridget, 3625 West Main Street, Whistler AL 36612",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.mobarch.org/parishfinder"
+    },
+    {
+      "g": "RG-91E8773866C0",
+      "src": "SSPXMAP:OPE-002725",
+      "text": "Kołobrzeg (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-93D5890F013B",
+      "src": "SSPXMAP:OPE-002285",
+      "text": "17 South Street, Taunton TA1 3AA, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-9458287A0415",
+      "src": "AO-EUR-DE-064",
+      "text": "49082 Osnabrück (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.alte-messe-im-norden.de/"
+    },
+    {
+      "g": "RG-950373AA324C",
+      "src": "AO-EUR-IT-034",
+      "text": "95121 Catania CT (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=IT&page=2"
+    },
+    {
+      "g": "RG-9611E52F4DC0",
+      "src": "AO-B34-L-GB-113D617DCFA9",
+      "text": "Swansea, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-9634A8C9D6CB",
+      "src": "LMD:saint-patricks-church-kaiapoi-new-zealand",
+      "text": "61 Fuller Street, Kaiapoi 7630, New Zealand",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://cdoc.nz/news-events/traditional-latin-mass"
+    },
+    {
+      "g": "RG-967D2CCFBFBD",
+      "src": "AO-AMER-R28-US-34-19",
+      "text": "Cleveland, OH (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.dioceseofcleveland.org/directories/parish-directory/st-stephen-parish-cleveland"
+    },
+    {
+      "g": "RG-9698EECF3F9D",
+      "src": "AO-AMER-R28-US-37-08",
+      "text": "Greenwich, CT (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stmarygreenwich.org/"
+    },
+    {
+      "g": "RG-972B7EBF83E2",
+      "src": "ao-fssp-chapelle-de-l-alba-rue-albert-thomas-f-24100-bergerac-france",
+      "text": "Bergerac",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-977F1C573936",
+      "src": "AO-EUR-DE-054",
+      "text": "Cologne, North Rhine-Westphalia (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=3"
+    },
+    {
+      "g": "RG-97E3BC28CBFC",
+      "src": "AO-AMER-R28-US-34-20",
+      "text": "New Orleans, LA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.goodshepherdparishnola.com/"
+    },
+    {
+      "g": "RG-9813F1454D08",
+      "src": "ao-fssp-ecole-sainte-genevieve-1-route-de-versailles-f-78560-le-port-marly-france",
+      "text": "Le Port-Marly (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-99B948DB6C66",
+      "src": "AO-EUR-FR-006",
+      "text": "Musée (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.amdg.asso.fr/lieux_messes_spv.htm"
+    },
+    {
+      "g": "RG-9A22C0A51830",
+      "src": "AO-WORLD-R35-BR-09-12",
+      "text": "250 - Jardim Guarus (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://rezaremlatim.com/missa_tridentina/onde_tem_missa_tridentina/"
+    },
+    {
+      "g": "RG-9B9E96431F88",
+      "src": "ao-research-icksp-federated-v13-icksp-stg-118",
+      "text": "Köllerbach (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://institut-christus-koenig.de/koellerbach/"
+    },
+    {
+      "g": "RG-9C2D750D1D2C",
+      "src": "AO-AMER-R28-US-17-13",
+      "text": "Sun City Center, FL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=17"
+    },
+    {
+      "g": "RG-9C3FB54E51EB",
+      "src": "AO-AMER-R28-US-25-15",
+      "text": "Marquette, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stchristophermqt.org/mass-times"
+    },
+    {
+      "g": "RG-9DF979ECA0E3",
+      "src": "AO-AMER-R27-US-07-13",
+      "text": "Hackensack, NJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.latinmassdir.org/venue/holy-trinity-hackensack-united-states/"
+    },
+    {
+      "g": "RG-9F7550645D32",
+      "src": "V19:DIO-US-HON-BLESSED",
+      "text": "Honolulu, HI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.catholichawaii.org/parish-listing/blessed-sacrament/"
+    },
+    {
+      "g": "RG-9FDA9AD0255F",
+      "src": "AO-B34-L-GB-3A541E722C99",
+      "text": "Market Rasen, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-A12643B87B33",
+      "src": "AO-AMER-R28-US-37-07",
+      "text": "Manchester, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stmarymanchester.com/"
+    },
+    {
+      "g": "RG-A164E7D0C229",
+      "src": "AO-B34-L-GB-949D1186DE89",
+      "text": "Bedford, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-A190739CB594",
+      "src": "AO-AMER-R28-US-32-14",
+      "text": "Craig, CO (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.nwtriparish.com/"
+    },
+    {
+      "g": "RG-A247FACA1C74",
+      "src": "AO-AMER-R26-US-05-07",
+      "text": "Minneapolis, MN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.ecclesiadei.org/masses.cfm"
+    },
+    {
+      "g": "RG-A255889BF272",
+      "src": "AO-AMER-R27-US-15-04",
+      "text": "Sulphur, LA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://olps.church/"
+    },
+    {
+      "g": "RG-A26BB0437CA8",
+      "src": "AO-AMER-R26-US-04-13",
+      "text": "Great Falls, MT (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://catholicindex.ca/churches/us-mt-great-falls-corpus-christi-d71a9924"
+    },
+    {
+      "g": "RG-A3A716030F90",
+      "src": "AO-EUR-IT-030",
+      "text": "Chiesa di San Pietro, Belluno BL, Italy",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://demamah.it/wp-content/uploads/2026/04/DEMAMAH_85_LAICITA_apr-giu2026_WEB.pdf"
+    },
+    {
+      "g": "RG-A412B51D1A76",
+      "src": "AO-AMER-R28-US-28-10",
+      "text": "Modesto, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stjmod.com/"
+    },
+    {
+      "g": "RG-A443CB0118A7",
+      "src": "AO-B34-L-GB-BE8BDA55B1D3",
+      "text": "Saffron Walden, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-A504818C84DC",
+      "src": "AO-B34-L-GB-CDF21516456F",
+      "text": "Reading, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-A5DE95F88268",
+      "src": "AO-AMER-R28-US-29-17",
+      "text": "Seminole, FL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.dosp.org/parishes/st-justin-martyr-seminole/"
+    },
+    {
+      "g": "RG-A6E140158213",
+      "src": "AO-EUR-DE-017",
+      "text": "Würzburg-Altstadt (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+    },
+    {
+      "g": "RG-A6EC5DCB800F",
+      "src": "AO-B34-L-GB-4E261BBBF959",
+      "text": "Southampton, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-A75D8A0E1C53",
+      "src": "AO-EUR-IT-058",
+      "text": "Basilica Santa Croce, Cagliari, Sardinia",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.parrocchiasantacroce.com/liturgia-vetus-ordo/"
+    },
+    {
+      "g": "RG-A769FA9AF2D1",
+      "src": "AO-AMER-R26-CA-01-19",
+      "text": "Kingston (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=CA&page=1"
+    },
+    {
+      "g": "RG-A783135A19CA",
+      "src": "V19:DIO-FR-PARIS-STEODILE",
+      "text": "Paris 17e (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://dioceseparis.fr/messes-celebrees-selon-le-missel.html"
+    },
+    {
+      "g": "RG-A8A1BA4F896E",
+      "src": "AO-AMER-R27-US-07-09",
+      "text": "Plattsmouth, NE (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://catholicindex.org/churches/us-ne-plattsmouth-holy-spirit-691f551a"
+    },
+    {
+      "g": "RG-A915EDDAACCB",
+      "src": "AO-EUR-DE-080",
+      "text": "97070 Würzburg (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=4"
+    },
+    {
+      "g": "RG-A940F448BC92",
+      "src": "AO-WORLD-R35-BR-07-08",
+      "text": "3.639 - St. Sul Jamil Miguel I e II (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=7"
+    },
+    {
+      "g": "RG-A953A3C4E2F1",
+      "src": "AO-AMER-R28-US-19-17",
+      "text": "Burlington, WI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=19"
+    },
+    {
+      "g": "RG-A98899986A57",
+      "src": "AO-AMER-R27-US-15-06",
+      "text": "Triadelphia, VA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://thecatholicherald.com/article/west-virginia-diocese-expands-availability-of-traditional-latin-mass"
+    },
+    {
+      "g": "RG-A98969A48FB4",
+      "src": "ao-research-icksp-federated-v13-icksp-stg-115",
+      "text": "Traunstein (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://institut-christus-koenig.de/traustein/"
+    },
+    {
+      "g": "RG-A9EB57D59ADD",
+      "src": "AO-AMER-R26-US-01-19",
+      "text": "West Bloomfield Township, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&page=1"
+    },
+    {
+      "g": "RG-AAC486015580",
+      "src": "AO-EUR-DE-051",
+      "text": "Neumarkt in der Oberpfalz (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "g": "RG-AAC5FB5F170F",
+      "src": "AO-AMER-R28-US-33-18",
+      "text": "Wilmington, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.wilmingtoncatholic.org/"
+    },
+    {
+      "g": "RG-AAD81ED4082D",
+      "src": "V19:DIO-FR-PARIS-STEJEANNE",
+      "text": "Paris 16e (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.saintejeannedechantal.com/horaire-2/"
+    },
+    {
+      "g": "RG-AAEB19C81AB3",
+      "src": "V19:DIO-US-BOS-HOLYCROSS-CATHEDRAL",
+      "text": "Boston, MA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://bostoncathedral.com/mass-times/"
+    },
+    {
+      "g": "RG-AB344A769D0F",
+      "src": "AO-AMER-R28-US-27-08",
+      "text": "Jamestown, ND (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=27"
+    },
+    {
+      "g": "RG-ABA1B080A64A",
+      "src": "AO-EUR-DE-009",
+      "text": "Paderborn (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+    },
+    {
+      "g": "RG-ABBC659D0388",
+      "src": "AO-B34-L-GB-FDC98808D553",
+      "text": "Stow-on-the-Wold, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-AC024DB8891D",
+      "src": "AO-AMER-R28-US-33-06",
+      "text": "Ann Arbor, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stpatricka2.org/"
+    },
+    {
+      "g": "RG-AC57ED0DBC16",
+      "src": "SSPXMAP:OPE-002294",
+      "text": "10–14 Union Terrace, Aberdeen AB10 1WE, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-AD78D7511BAD",
+      "src": "AO-B34-L-GB-557116EDAE37",
+      "text": "Carlisle, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-ADCE1B6B06FA",
+      "src": "AO-AMER-R27-US-06-07",
+      "text": "Saginaw, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://holyfamilysaginaw.org/extraordinary-form-of-the-mass-resumed-next-date-is-march-15-2026/"
+    },
+    {
+      "g": "RG-ADD46EDCA178",
+      "src": "ao-fssp-chapelle-de-l-institut-croix-des-vents-55-rue-d-argentre-f-61500-sees-france",
+      "text": "Sées (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-ADD797AFD42D",
+      "src": "AO-WORLD-R35-BR-10-08",
+      "text": "Mogi das Cruzes - SP (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=10"
+    },
+    {
+      "g": "RG-ADF9658A16BD",
+      "src": "AO-AMER-R27-US-06-09",
+      "text": "Tiverton, RI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://dioceseofprovidence.org/parishfinder"
+    },
+    {
+      "g": "RG-AE1BDE1BC664",
+      "src": "AO-AMER-R26-US-02-11",
+      "text": "Memphis, TN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://saintandrewcatholicchurch.org/home/catholic-diocese-of-memphis-live-masses/"
+    },
+    {
+      "g": "RG-AEC17D325223",
+      "src": "AO-WORLD-R35-BR-05-07",
+      "text": "743 - Campos Elísios (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://arquidioceserp.org.br/santo-antonio-de-padua-basilica-menor-1947/"
+    },
+    {
+      "g": "RG-AED9398740B0",
+      "src": "AO-AMER-R26-US-05-11",
+      "text": "Aurora, IL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.latinritemass.net/tlm/holy-angels-parish"
+    },
+    {
+      "g": "RG-AF3FF77B11F0",
+      "src": "AO-AMER-R26-US-05-12",
+      "text": "Charlottesville, VA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://holycomforterparish.org/events/2026-10-25/"
+    },
+    {
+      "g": "RG-AF86F448A8DF",
+      "src": "V19:DIO-US-SYR-VERONA-OLGC",
+      "text": "Verona, NY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://olgcc.org/information-for-visitors/"
+    },
+    {
+      "g": "RG-B10011E33125",
+      "src": "AO-B34-L-GB-452620176204",
+      "text": "Leigh-on-Sea, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-B10417F7A69D",
+      "src": "AO-B34-L-GB-89ABBD85057C",
+      "text": "Aylesbury, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-B119D4B2F3CE",
+      "src": "AO-AMER-R27-US-06-12",
+      "text": "Neptune City, NJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://holyinnocentschurch.net/mass-schedule/"
+    },
+    {
+      "g": "RG-B4D94ADB1296",
+      "src": "AO-B34-L-GB-53AFC1A94E86",
+      "text": "Ripon, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-B4FB6ABD3D05",
+      "src": "AO-EUR-DE-161",
+      "text": "94469 Deggendorf (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=9"
+    },
+    {
+      "g": "RG-B5D84D7C82E9",
+      "src": "AO-WORLD-R35-BR-10-09",
+      "text": "Igreja Nossa Senhora da Conceição da Prainha, Fortaleza CE",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.arquidiocesedefortaleza.org.br/confira-os-horarios-de-missa-na-catedral-de-fortaleza/"
+    },
+    {
+      "g": "RG-B68EA1813166",
+      "src": "V19:DIO-US-DENVER-FORTCOLLINS-J23",
+      "text": "Fort Collins, CO (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.saintjohn.church/prayer"
+    },
+    {
+      "g": "RG-B72E09E4AE13",
+      "src": "AO-EUR-DE-050",
+      "text": "92727 Waldthurn (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=3"
+    },
+    {
+      "g": "RG-B7D6EFAFBD25",
+      "src": "SSPXMAP:OPE-002286",
+      "text": "Salterton Road, London N7 6BB, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-B85F7CD296E0",
+      "src": "AO-AMER-R28-US-36-16",
+      "text": "Yountville, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://sjacp.com/mass-schedule/"
+    },
+    {
+      "g": "RG-B862307B0A6C",
+      "src": "AO-AMER-R27-US-11-05",
+      "text": "Silver Spring, MD (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://oldstjohn.latinmassarlington.org/home"
+    },
+    {
+      "g": "RG-B867E8F5EC36",
+      "src": "LMD:eglise-du-sacre-coeur-de-jesus-sacred-heart-of-jesus-church-peterborough-canada",
+      "text": "208 Romaine Street, Peterborough ON K9J 2C4, Canada",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://sacredheartpeterborough.ca/elementor-6384/"
+    },
+    {
+      "g": "RG-B8BED6F585F6",
+      "src": "ao-research-icksp-federated-v13-icksp-stg-117",
+      "text": "Koblenz (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://institut-christus-koenig.de/koblenz/; https://adorientem.church/find?country=DE&page=3"
+    },
+    {
+      "g": "RG-B9D583635ACD",
+      "src": "AO-WORLD-R35-BR-01-11",
+      "text": "590 - Centro (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR"
+    },
+    {
+      "g": "RG-BA3563BBA44D",
+      "src": "AO-AMER-R28-US-19-08",
+      "text": "Evansville, IN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.saintbonifaceparish.org/"
+    },
+    {
+      "g": "RG-BBD7BD44E860",
+      "src": "AO-B34-L-GB-2FCFC18FF841",
+      "text": "Skipton, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-BC7D08F8F429",
+      "src": "AO-AMER-R27-US-13-16",
+      "text": "Castro Valley, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=13"
+    },
+    {
+      "g": "RG-BC8ACD977E86",
+      "src": "AO-AMER-R28-US-34-02",
+      "text": "Battle Creek, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stphilipbc.org/mass-confession-times"
+    },
+    {
+      "g": "RG-BCCD27D6ADDD",
+      "src": "AO-AMER-R28-US-30-10",
+      "text": "San Angelo, TX (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stmargaretsa.com/mass-times"
+    },
+    {
+      "g": "RG-BD7EB34999E3",
+      "src": "LMD:saint-philips-church-blackburn-north-australia",
+      "text": "60 Junction Road, Blackburn North VIC 3130",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://stphilipsblackburnnorth.weebly.com/mass-times.html"
+    },
+    {
+      "g": "RG-BDAD9F3C2BBB",
+      "src": "AO-AMER-R26-US-03-10",
+      "text": "Hyde Park, NY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&page=3"
+    },
+    {
+      "g": "RG-BDDB5A4A3780",
+      "src": "AO-B34-L-GB-DBDF8201C3EC",
+      "text": "Redcar, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-BDFB0609F50E",
+      "src": "AO-AMER-R28-US-23-18",
+      "text": "St Anne, Hamel (Medina), MN",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://saintannehamel.org/events/mass-in-the-extraordinary-form-traditional-latin-mass"
+    },
+    {
+      "g": "RG-BE23723D6B4A",
+      "src": "AO-EUR-IT-032",
+      "text": "Corso Porta Borsari 20, Verona",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.sanremigioverona.org/"
+    },
+    {
+      "g": "RG-BF1B2D85306F",
+      "src": "AO-AMER-R28-US-24-07",
+      "text": "Buffalo, NY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stanthonybuffalo.org/mass-times-%26-bulletins"
+    },
+    {
+      "g": "RG-BFD41A73C64D",
+      "src": "AO-AMER-R27-US-12-01",
+      "text": "Huntsville, AL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://ourladyhelpofchristians-al.org/"
+    },
+    {
+      "g": "RG-BFEB2ED43502",
+      "src": "AO-AMER-R28-US-29-06",
+      "text": "Waite Park, MN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stcdio.org/parishes/"
+    },
+    {
+      "g": "RG-BFFF2D280A46",
+      "src": "AO-AMER-R27-US-15-19",
+      "text": "Harrington Park, NJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://olvhp.org/mass-times"
+    },
+    {
+      "g": "RG-C0450795D2A2",
+      "src": "AO-WORLD-R35-AU-01-03",
+      "text": "Kelmscott WA 6111 (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=AU"
+    },
+    {
+      "g": "RG-C20ADD97644C",
+      "src": "SSPXMAP:OPE-002284",
+      "text": "35 Upper Parliament Street, Liverpool L8 7LA, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-C2123D64ECB1",
+      "src": "AO-WORLD-R35-AR-01-10",
+      "text": "San Rafael (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=AR"
+    },
+    {
+      "g": "RG-C26345290B02",
+      "src": "AO-AMER-R27-US-12-11",
+      "text": "Ocala, FL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://fssp.com/apostolate/fssp-ocala-florida/"
+    },
+    {
+      "g": "RG-C2B98DF5683B",
+      "src": "V19:DIO-US-HOU-THIB-GIBSON-BLESSED-SACRAMENT",
+      "text": "Gibson, LA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://htdiocese.org/blessedsacramentchapel"
+    },
+    {
+      "g": "RG-C2FB0E03F23D",
+      "src": "AO-EUR-PL-030",
+      "text": "Legnica (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=PL&page=2"
+    },
+    {
+      "g": "RG-C3074B70B066",
+      "src": "ao-research-sspx-four-district-bulk-sspx-ch-ch-basel-chapelle-sainte-therese-de-l-enfant-jesus",
+      "text": "Basel (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+    },
+    {
+      "g": "RG-C35C81301418",
+      "src": "AO-B34-L-GB-80587AB12AAF",
+      "text": "Cranham, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-C3ACBA65B47F",
+      "src": "AO-AMER-R28-US-29-05",
+      "text": "Crescent City, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.sjccc.net/"
+    },
+    {
+      "g": "RG-C3C6FBC2EB32",
+      "src": "V19:DIO-US-ADW-FRANCISCAN",
+      "text": "Washington, DC (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://dcfranciscans.latinmassarlington.org/"
+    },
+    {
+      "g": "RG-C3D631CA4F5C",
+      "src": "AO-EUR-DE-120",
+      "text": "89362 Offingen (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=6"
+    },
+    {
+      "g": "RG-C46040E6B3C4",
+      "src": "AO-EUR-IT-027",
+      "text": "33100 Udine UD (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.unavoceitalia.org/wordpress/2022/09/24/udine-la-messa-tridentina-alla-chiesa-di-s-bernardino-dal-25-settembre-2022/"
+    },
+    {
+      "g": "RG-C48204BA877C",
+      "src": "AO-B34-L-GB-59605835D99B",
+      "text": "Uxbridge, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-C4C55798214B",
+      "src": "AO-B34-L-GB-C65B3A265C8E",
+      "text": "Exeter, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-C5D531F7C398",
+      "src": "AO-AMER-R28-US-36-06",
+      "text": "Stowe, Vermont (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=36"
+    },
+    {
+      "g": "RG-C5DA3B951966",
+      "src": "AO-AMER-R27-US-07-05",
+      "text": "Cedar, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.holyrosarycedar.org/"
+    },
+    {
+      "g": "RG-C5E4A4CACBA2",
+      "src": "AO-EUR-GB-019",
+      "text": "Didcot (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=GB"
+    },
+    {
+      "g": "RG-C643C73B048C",
+      "src": "AO-AMER-R28-US-17-02",
+      "text": "Bethany, IL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=17"
+    },
+    {
+      "g": "RG-C64D549D0587",
+      "src": "AO-AMER-R27-US-06-05",
+      "text": "Union, KY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.ololparish.org/mass-times/"
+    },
+    {
+      "g": "RG-C6F386B915BE",
+      "src": "AO-B34-L-GB-C8126EBC7995",
+      "text": "Uckfield, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-C7DE02E84E31",
+      "src": "AO-AMER-R28-US-27-01",
+      "text": "Dundee, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=27"
+    },
+    {
+      "g": "RG-C81167036216",
+      "src": "AO-EUR-PL-002",
+      "text": "Brańszczyk (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=PL"
+    },
+    {
+      "g": "RG-C91A9B0FCA2B",
+      "src": "ao-fssp-maison-saint-michel-16-clos-saint-caprais-f-91770-saint-vrain-france",
+      "text": "Saint-Vrain (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-C94D7E3D48FD",
+      "src": "AO-EUR-GB-013",
+      "text": "Rochford (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=GB"
+    },
+    {
+      "g": "RG-C9E134BD039D",
+      "src": "AO-AMER-R27-US-06-14",
+      "text": "Providence, RI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.holynameprovidence.org/mass-times"
+    },
+    {
+      "g": "RG-C9F800033990",
+      "src": "AO-EUR-DE-015",
+      "text": "Wiesbaden (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+    },
+    {
+      "g": "RG-CAA20D54B69E",
+      "src": "AO-EUR-IT-028",
+      "text": "28852 Craveggia VB (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=IT&page=2"
+    },
+    {
+      "g": "RG-CAA7C75A8386",
+      "src": "LMD-AFR-03",
+      "text": "Denis / Pointe Denis (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.latinmassdir.org/venue/chapelle-notre-dame-de-bonne-delivrance-denis-gabon/"
+    },
+    {
+      "g": "RG-CAC931BBECA7",
+      "src": "AO-AMER-R28-US-31-02",
+      "text": "Evans Mills, NY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=31"
+    },
+    {
+      "g": "RG-CAE51B11CC03",
+      "src": "AO-AMER-R26-US-01-06",
+      "text": "Mishawaka, IN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://diocesefwsb.org/parishes/st-joseph-mishawaka"
+    },
+    {
+      "g": "RG-CB05B3B9B13E",
+      "src": "AO-AMER-R27-US-09-03",
+      "text": "Danbury, CT (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=9"
+    },
+    {
+      "g": "RG-CB1E08DCE05C",
+      "src": "AO-AMER-R27-US-14-14",
+      "text": "Kenosha, WI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://olmckenosha.org/"
+    },
+    {
+      "g": "RG-CB2CE17F80C3",
+      "src": "AO-AMER-R28-US-18-14",
+      "text": "55 East Reno Ave, Las Vegas, NV 89119",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://theshrinelv.org/latin-mass/"
+    },
+    {
+      "g": "RG-CB60A65B531A",
+      "src": "AO-B34-L-GB-5EE70B907728",
+      "text": "Eastbourne, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-CB957E44D292",
+      "src": "AO-AMER-R28-US-32-10",
+      "text": "Staten Island, NY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.latinmassdir.org/venue/saint-michael-ny-united-states/"
+    },
+    {
+      "g": "RG-CCF904BF7057",
+      "src": "LMD:eglise-de-limmaculee-conception-immaculate-conception-church-kelowna-canada",
+      "text": "839 Sutherland Avenue, Kelowna BC",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.nelsondiocese.org/apps/pages/index.jsp?pREC_ID=1358567&type=d&uREC_ID=1069740"
+    },
+    {
+      "g": "RG-CD53610021D2",
+      "src": "AO-B34-L-GB-0EF795839AFA",
+      "text": "Nottingham, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-CDC22A087DFE",
+      "src": "AO-WORLD-R35-BR-08-08",
+      "text": "1171 - Parque Turf Club (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=8"
+    },
+    {
+      "g": "RG-CE1A535B59CD",
+      "src": "AO-B34-L-GB-5125E1F07683",
+      "text": "Hull, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-CE6393918CE2",
+      "src": "AO-AMER-R28-US-19-18",
+      "text": "SW Grand Rapids, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.sacredheartgr.org/sacraments/eucharist/"
+    },
+    {
+      "g": "RG-CEACFF4B8949",
+      "src": "AO-AMER-R28-US-23-11",
+      "text": "Peabody, MA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.saintadelaide.com/"
+    },
+    {
+      "g": "RG-CEC8594B73A6",
+      "src": "AO-EUR-PL-001",
+      "text": "Kaplica Wszystkich Świętych, ul. Żubardzka 28, Łódź",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.tradycjalodz.com/news-and-events"
+    },
+    {
+      "g": "RG-CEE2EF29D4BF",
+      "src": "LMD:saint-michaels-church-north-melbourne-australia",
+      "text": "St Michael's, Dryburgh Street, North Melbourne VIC",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://northmelbourneparish.com/events"
+    },
+    {
+      "g": "RG-CFEA9E0791E1",
+      "src": "AO-AMER-R27-US-08-12",
+      "text": "Belmont, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.ihmbelmont.org/mass-times"
+    },
+    {
+      "g": "RG-D05D0D8C76C8",
+      "src": "AO-WORLD-R35-BR-08-14",
+      "text": "Arapiraca - AL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=8"
+    },
+    {
+      "g": "RG-D108C0D7C168",
+      "src": "AO-AMER-R26-US-03-02",
+      "text": "Traverse City, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.catholicchurchtimes.com/church/carmelite-monastery-traverse-city-mi-d852ab3b-a178-4500-a9d6-2aecea8f9c19"
+    },
+    {
+      "g": "RG-D1771EFF82A4",
+      "src": "ao-fssp-maison-saint-germain-15-rue-petrarque-f-75116-paris-france",
+      "text": "Paris (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-D1963C3C3E66",
+      "src": "AO-EUR-PL-006",
+      "text": "Biała Podlaska (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=PL"
+    },
+    {
+      "g": "RG-D2405506A2A3",
+      "src": "AO-EUR-DE-046",
+      "text": "83278 Traunstein (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=3"
+    },
+    {
+      "g": "RG-D2B7B65DA395",
+      "src": "AO-AMER-R28-US-36-19",
+      "text": "Bellefonte, PA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://bellefontecatholicchurch.org/"
+    },
+    {
+      "g": "RG-D2F62774FE78",
+      "src": "AO-EUR-IT-020",
+      "text": "27100 Pavia PV (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=IT&page=1"
+    },
+    {
+      "g": "RG-D37B2EEA0AE9",
+      "src": "AO-EUR-DE-014",
+      "text": "Paderborn (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm"
+    },
+    {
+      "g": "RG-D3A7AFC3AC5F",
+      "src": "AO-WORLD-R35-BR-08-05",
+      "text": "177 - Boa Vista (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=8"
+    },
+    {
+      "g": "RG-D3D530E99DE0",
+      "src": "AO-AMER-R28-US-18-04",
+      "text": "La Salle, IL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://ivlatinmass.org/"
+    },
+    {
+      "g": "RG-D40583636A89",
+      "src": "AO-EUR-DE-104",
+      "text": "65556 Limburg an der Lahn (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=6"
+    },
+    {
+      "g": "RG-D4B20038EEA4",
+      "src": "AO-AMER-R28-US-27-05",
+      "text": "St Joseph, MO (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stgabrielskc.com/a-note-from-bishop-johnston"
+    },
+    {
+      "g": "RG-D66886B127A4",
+      "src": "ao-fssp-maison-saint-joseph-presbytere-10-rue-saint-julien-f-72440-bouloire-france",
+      "text": "Bouloire (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-D6A3F71113B9",
+      "src": "AO-AMER-R28-US-33-05",
+      "text": "Berwyn, IL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.saintodilo.org/latin-mass.html"
+    },
+    {
+      "g": "RG-D77BE93489D9",
+      "src": "AO-B34-L-GB-42077F8724CA",
+      "text": "Kidderminster, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-D7BA57D27494",
+      "src": "ao-research-icksp-federated-v13-icksp-stg-080-stedward",
+      "text": "Plymouth (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://icksp.org.uk/plymouth/"
+    },
+    {
+      "g": "RG-D7C5A0D8FC8A",
+      "src": "AO-AMER-R28-US-30-15",
+      "text": "St Martinville, LA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://saintmartindetours.org/mass-times"
+    },
+    {
+      "g": "RG-D7C8B7693CEC",
+      "src": "AO-B34-L-GB-DA44176FA42F",
+      "text": "Workington, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-D7F3E77F0006",
+      "src": "ao-fssp-chapelle-du-carmel-112-rue-de-chaage-f-77100-meaux-france",
+      "text": "Meaux (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-D80F9F802A1D",
+      "src": "AO-AMER-R27-US-07-16",
+      "text": "Holy Trinity, 3122 Poinsetta Drive, Colorado Springs, CO 80907",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://diocs.org/parishfinder"
+    },
+    {
+      "g": "RG-D90038D1A83A",
+      "src": "AO-AMER-R27-US-10-02",
+      "text": "Berlin, NJ (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.materecclesiae.org/"
+    },
+    {
+      "g": "RG-D9CFF6CC6D7B",
+      "src": "AO-EUR-DE-049",
+      "text": "47623 Kevelaer (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.wallfahrt-kevelaer.de/gottesdienste/sommer-und-winterordnung"
+    },
+    {
+      "g": "RG-DA58CB88072E",
+      "src": "AO-AMER-R28-US-37-18",
+      "text": "458 Maple Street, Livermore CA",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://stmichaellivermore.com/Worship"
+    },
+    {
+      "g": "RG-DB361AF0FBE5",
+      "src": "AO-AMER-R26-US-05-15",
+      "text": "Davenport, IA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.unavoceqc.com/"
+    },
+    {
+      "g": "RG-DBD3918B9677",
+      "src": "AO-WORLD-R35-AR-02-06",
+      "text": "A4400 Salta (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=AR&page=2"
+    },
+    {
+      "g": "RG-DCA9FF61B20D",
+      "src": "AO-AMER-R26-US-01-10",
+      "text": "8005 NW 316th Street, Gower MO 64454",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://benedictinesofmary.org/schedule/"
+    },
+    {
+      "g": "RG-DCFB2AE99B57",
+      "src": "AO-AMER-R27-US-09-09",
+      "text": "30881 County Road 24, Sleepy Eye, Minnesota 56085, USA",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.divinemercyafc.org/"
+    },
+    {
+      "g": "RG-DCFEA3A008E7",
+      "src": "SSPXMAP:OPE-002292",
+      "text": "Colleton Manor, Chulmleigh EX18 7JS, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-DDB9022B5C28",
+      "src": "AO-B34-L-GB-82562583F671",
+      "text": "Carshalton, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-DE160AA56468",
+      "src": "V19:DIO-US-CHARLESTON-OLL",
+      "text": "Chapin, SC (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.carolinaliturgy.org/mass-times"
+    },
+    {
+      "g": "RG-DE7B41D79DCC",
+      "src": "SSPXMAP:OPE-002275",
+      "text": "East Cliff, Winckley Square, Preston PR1 3JH, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-DF8E3BC6A82A",
+      "src": "AO-AMER-R27-US-08-10",
+      "text": "Lapeer, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.massfinder.org/parishes/129"
+    },
+    {
+      "g": "RG-DFFED2543499",
+      "src": "AO-AMER-R28-US-34-11",
+      "text": "Erie, CO (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://denverlatinmass.com/"
+    },
+    {
+      "g": "RG-E05C01660BD1",
+      "src": "AO-AMER-R28-US-19-02",
+      "text": "4087 West Broadway Ave, Robbinsdale MN 55422",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://shrmn.org/"
+    },
+    {
+      "g": "RG-E07475F5C2C2",
+      "src": "AO-AMER-R26-CA-04-04",
+      "text": "Toronto (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=CA&page=4"
+    },
+    {
+      "g": "RG-E0A4DAD3EB92",
+      "src": "AO-AMER-R27-US-14-12",
+      "text": "Our Lady of Mount Carmel, 454 Fairfield Road, Plymouth Meeting PA",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.holysaviour.org/latin-mass/"
+    },
+    {
+      "g": "RG-E0C932E6CB74",
+      "src": "ao-research-sspx-four-district-bulk-sspx-gb-gb-manchester-church-of-saint-pius-x",
+      "text": "16 Deer Park Road, off Alexandra Road, Manchester M16 8FR, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-E0E0F5DE2889",
+      "src": "AO-AMER-R28-US-27-15",
+      "text": "Morgantown, VA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://thecatholicherald.com/article/west-virginia-diocese-expands-availability-of-traditional-latin-mass"
+    },
+    {
+      "g": "RG-E1AB21F23164",
+      "src": "LMD:saint-josephs-nudgee-college-boondall-australia",
+      "text": "St Joseph's Nudgee College, 2199 Sandgate Road, Boondall QLD",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.fssp.net/locations"
+    },
+    {
+      "g": "RG-E26C95EA7FAE",
+      "src": "AO-AMER-R28-US-28-18",
+      "text": "Escanaba, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://sjspescanaba.org/mass-schedule-and-intentions"
+    },
+    {
+      "g": "RG-E377F201D4AF",
+      "src": "AO-AMER-R26-CA-01-20",
+      "text": "St Michael's Ukrainian Catholic Church, 48 William Avenue, Coniston ON",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://dioceseofsaultstemarie.org/latin-mass-community"
+    },
+    {
+      "g": "RG-E3A8C09B52A8",
+      "src": "LMD:eglise-du-saint-nom-de-marie-holy-name-of-mary-church-windsor-canada",
+      "text": "Holy Name of Mary, 681 McEwan Avenue, Windsor ON",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.wedeanery.ca/church/holy-name-of-mary-windsor/"
+    },
+    {
+      "g": "RG-E46CEAE31FAA",
+      "src": "AO-WORLD-R35-BR-05-18",
+      "text": "Natal - RN (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=5"
+    },
+    {
+      "g": "RG-E47F4822C997",
+      "src": "AO-AMER-R28-US-27-20",
+      "text": "Leesburg, VA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.latinmassarlington.org/find-tlm/parishes"
+    },
+    {
+      "g": "RG-E5035FF00374",
+      "src": "AO-EUR-DE-110",
+      "text": "85051 Ingolstadt (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=6"
+    },
+    {
+      "g": "RG-E538853025E6",
+      "src": "AO-AMER-R28-US-25-16",
+      "text": "Glen Ullin, ND (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=25"
+    },
+    {
+      "g": "RG-E6454A3AE72E",
+      "src": "AO-EUR-PL-003",
+      "text": "Toruń (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=PL"
+    },
+    {
+      "g": "RG-E648289D750C",
+      "src": "AO-AMER-R28-US-32-08",
+      "text": "Dix Hills, NY (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://smrcc.org/liturgical-ministries"
+    },
+    {
+      "g": "RG-E69DF6D8D56C",
+      "src": "AO-AMER-R28-US-35-19",
+      "text": "San Antonio, TX (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.sttimothysa.org/"
+    },
+    {
+      "g": "RG-E74908917FA8",
+      "src": "AO-EUR-DE-072",
+      "text": "76287 Rheinstetten (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=DE&page=4"
+    },
+    {
+      "g": "RG-E768698EDE93",
+      "src": "AO-AMER-R28-US-39-18",
+      "text": "San Francisco, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://visitacionchurch.org/mass-devotion-times"
+    },
+    {
+      "g": "RG-E80DFB32F728",
+      "src": "ao-research-sspx-four-district-bulk-sspx-de-de-uberlingen-rosenkranzkonigin",
+      "text": "Überlingen (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://fsspx.today/überlingen"
+    },
+    {
+      "g": "RG-E867165B8634",
+      "src": "AO-AMER-R28-US-39-06",
+      "text": "New Ulm, TX (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.victoriadiocese.org/parishfinder"
+    },
+    {
+      "g": "RG-E8B55FD158ED",
+      "src": "AO-B34-L-GB-0A6611CB2939",
+      "text": "Oxford, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-E8FF88C66BBF",
+      "src": "AO-B34-L-GB-B16B205AED85",
+      "text": "Stoke on Trent, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-E97297E29FD1",
+      "src": "AO-EUR-DE-153",
+      "text": "67433 Neustadt an der Weinstraße (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://salve-regina.hpage.com/"
+    },
+    {
+      "g": "RG-E99314CB8DBE",
+      "src": "AO-EUR-DE-133",
+      "text": "73525 Schwäbisch Gmünd (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "g": "RG-E9B3382862FB",
+      "src": "V19:DIO-FR-PARIS-STROCH",
+      "text": "Paris 1er (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://dioceseparis.fr/messes-celebrees-selon-le-missel.html"
+    },
+    {
+      "g": "RG-EA4DAEAC86EA",
+      "src": "LMD:saint-martin-de-porres-catholic-aboriginal-community-casuarina-australia",
+      "text": "11 Strele Crescent, Casuarina NT",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.fssp.net/locations"
+    },
+    {
+      "g": "RG-EA8DB7E608E7",
+      "src": "AO-WORLD-R35-BR-10-16",
+      "text": "44 - Centro (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=10"
+    },
+    {
+      "g": "RG-EAB24D312157",
+      "src": "AO-B34-L-GB-C4BF123A6845",
+      "text": "Shrewsbury, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-EAB29B2CF083",
+      "src": "AO-EUR-IT-041",
+      "text": "18038 Sanremo IM (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=IT&page=3"
+    },
+    {
+      "g": "RG-EB3C1F42A9D4",
+      "src": "AO-WORLD-R35-BR-01-12",
+      "text": "10 - Vila Margarida (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://rezaremlatim.com/missa_tridentina/onde_tem_missa_tridentina/"
+    },
+    {
+      "g": "RG-EC1075753FB4",
+      "src": "ao-research-sspx-global-completion-20261009-sspx-global-20261009-02-capilla-sagrados-corazones-de-jyeus-y-de-maria",
+      "text": "Bogotá (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": ""
+    },
+    {
+      "g": "RG-ED9CB5D405C6",
+      "src": "AO-B34-L-GB-B1BC43FF54C6",
+      "text": "Stowmarket, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-EE0E42BB3B2C",
+      "src": "AO-AMER-R28-US-35-12",
+      "text": "Elmira, MI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://gaylord.faithdigital.org/church/st-thomas-aquinas-elmira"
+    },
+    {
+      "g": "RG-EE3398FBCC61",
+      "src": "AO-AMER-R27-US-11-19",
+      "text": "OLHC Chapel, 4125 Union Road, Cheektowaga NY 14225",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.cheektowagacatholicfamily.org/spiritual-life.html"
+    },
+    {
+      "g": "RG-EEA0ED193F4F",
+      "src": "AO-AMER-R27-US-14-03",
+      "text": "Denton, NE (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://fsspolgs.org/horarium/"
+    },
+    {
+      "g": "RG-EEE3F9F61C60",
+      "src": "LMD:eglise-de-la-sainte-famille-holy-family-church-toronto-canada",
+      "text": "1372 King Street West, Toronto ON",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://oratory-toronto.org/holy-family-parish/"
+    },
+    {
+      "g": "RG-EEE45B6A7403",
+      "src": "AO-B34-L-GB-9D55FB39FDF9",
+      "text": "Buckfastleigh, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-EFF78B503ABE",
+      "src": "AO-AMER-R26-CA-02-16",
+      "text": "Peterborough (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://sacredheartpeterborough.ca/elementor-6384/"
+    },
+    {
+      "g": "RG-EFFA8E1EFB3F",
+      "src": "SSPXMAP:OPE-002279",
+      "text": "Herne Street, Herne CT6 7HR, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-F02166B35D50",
+      "src": "AO-EUR-PL-033",
+      "text": "Krasnobród (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=PL&page=2"
+    },
+    {
+      "g": "RG-F025F3C80266",
+      "src": "AO-AMER-R28-MX-02-15",
+      "text": "San Jeronimo (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=MX&page=2"
+    },
+    {
+      "g": "RG-F0BE8192CF32",
+      "src": "AO-AMER-R28-US-24-12",
+      "text": "Des Moines, IA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.catholicchurchtimes.com/church/st-augustin-catholic-church-des-moines-ia-f27411b7-5795-4546-ba94-8d3bf37c2dfc"
+    },
+    {
+      "g": "RG-F0C20C9CB3E3",
+      "src": "AO-AMER-R28-US-33-17",
+      "text": "Steubenville, OH (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stpetersteub.com/"
+    },
+    {
+      "g": "RG-F1D09EB30198",
+      "src": "AO-B34-L-GB-2F2483DD4E49",
+      "text": "Middlesbrough, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-F1ED8101F0B9",
+      "src": "V19:DIO-FR-LUCON-LAROCHE-ND",
+      "text": "La Roche-sur-Yon (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://stlouisdelaroche.fr/lesprit-de-la-liturgie/"
+    },
+    {
+      "g": "RG-F209E0FD7A18",
+      "src": "AO-B34-L-GB-FFEBCD5A1AE1",
+      "text": "Bristol, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-F326512E2E62",
+      "src": "AO-B34-L-GB-C6319D260A0E",
+      "text": "Yarm, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-F3940D915079",
+      "src": "LMD:paroisse-saint-aloysius-saint-aloysius-parish-thorold-canada",
+      "text": "317 Morton St, Thorold ON",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.fsspniagara.com/"
+    },
+    {
+      "g": "RG-F3A58CDB7B13",
+      "src": "AO-AMER-R28-US-34-07",
+      "text": "Fairfield, CT (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.st-pius.org/mass-times/"
+    },
+    {
+      "g": "RG-F3A7D6DFDC1E",
+      "src": "ao-research-icksp-federated-v13-icksp-stg-101",
+      "text": "Brasménil (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf"
+    },
+    {
+      "g": "RG-F4EC659AB228",
+      "src": "AO-AMER-R28-US-25-05",
+      "text": "Prichard, AL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=25"
+    },
+    {
+      "g": "RG-F51C54109AA9",
+      "src": "AO-AMER-R26-CA-04-02",
+      "text": "Toronto, Ontario (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=CA&page=4"
+    },
+    {
+      "g": "RG-F55F3F2C47B6",
+      "src": "LMD:eaglais-naoi%e1%b9%81-padraig-saint-patricks-church-drumkeen-ireland",
+      "text": "St Patricks Church, Drumkeen, Donegal, Ireland",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.raphoediocese.ie/church/drumkeen/st-patricks-drumkeen/"
+    },
+    {
+      "g": "RG-F57C3A6AC852",
+      "src": "AO-EUR-GB-020",
+      "text": "Preston (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stjohnxxiiipreston.com/"
+    },
+    {
+      "g": "RG-F57F6261F635",
+      "src": "ao-research-sspx-global-completion-20261009-sspx-global-20261009-07-church-of-the-holy-cross",
+      "text": "Sandy Lane, Maybury, Woking GU22 8BA, United Kingdom",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION",
+      "url": "https://fsspx.uk/en/chapels-directory"
+    },
+    {
+      "g": "RG-F59A2F00C4E1",
+      "src": "AO-EUR-GB-015",
+      "text": "Stamford (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://catholic-oakham-stamford.org.uk/"
+    },
+    {
+      "g": "RG-F6325D6B52FE",
+      "src": "AO-WORLD-R35-BR-03-10",
+      "text": "25 - Centro (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://rezaremlatim.com/missa_tridentina/onde_tem_missa_tridentina/"
+    },
+    {
+      "g": "RG-F663FB9D3873",
+      "src": "AO-WORLD-R35-BR-09-08",
+      "text": "411 - Centro (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=BR&page=9"
+    },
+    {
+      "g": "RG-F66FAFF15AD9",
+      "src": "AO-AMER-R28-US-25-11",
+      "text": "Wisconsin Dells, WI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stjohnpaul-ii.org/saint-cecilia-wisconsin-dells"
+    },
+    {
+      "g": "RG-F6A26D3ABFF8",
+      "src": "AO-AMER-R26-US-02-04",
+      "text": "Ave Maria, FL (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://avemariacatholics.com/masses-1"
+    },
+    {
+      "g": "RG-F6D464A1BD23",
+      "src": "AO-AMER-R28-US-33-19",
+      "text": "Washington, VA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=33"
+    },
+    {
+      "g": "RG-F6DE2E662CE1",
+      "src": "AO-EUR-DE-031",
+      "text": "Amberg (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "g": "RG-F7A627D496CA",
+      "src": "AO-AMER-R26-US-01-04",
+      "text": "New Hope, VA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "g": "RG-F83BBC7300FD",
+      "src": "V19:DIO-GB-LANCASTER-CARLISLE-ST-MARGARET-MARY",
+      "text": "Carlisle, Cumbria (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://latinmasslancaster.blogspot.com/p/blog-page.html"
+    },
+    {
+      "g": "RG-F8B7A9C964DD",
+      "src": "AO-B34-L-GB-F1077F246080",
+      "text": "Sizergh, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-F94B4B205E5B",
+      "src": "AO-AMER-R28-US-36-20",
+      "text": "Woonsocket, RI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://www.stjosephwoonsocket.com/massconfession-times"
+    },
+    {
+      "g": "RG-FA5E0BF5C258",
+      "src": "LMD:chapelle-de-la-maison-bienheureux-pere-laval-curepipe-mauritius",
+      "text": "Curepipe (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://icrspmaurice.org/; https://www.latinmassdir.org/venue/chapelle-de-la-maison-bienheureux-pere-laval-curepipe-mauritius/; https://icrspmaurice.org/index.php/horaires-de-lapostolat/"
+    },
+    {
+      "g": "RG-FADAE7E3B195",
+      "src": "AO-AMER-R28-US-17-11",
+      "text": "Yorba Linda, CA (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://adorientem.church/find?country=US&family=true&page=17"
+    },
+    {
+      "g": "RG-FAFE0132EA87",
+      "src": "AO-B34-L-GB-C13101315BA2",
+      "text": "London, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-FB8F0348E454",
+      "src": "AO-B34-L-GB-5A9DB2259039",
+      "text": "Hethe, United Kingdom (exact street not established)",
+      "type": "SOURCE_PHYSICAL_DESCRIPTION_APPROXIMATE",
+      "url": "https://lms.org.uk/list-of-churches"
+    },
+    {
+      "g": "RG-FC18299DDF0F",
+      "src": "AO-AMER-R26-US-01-13",
+      "text": "470 Westchester Avenue, Yonkers, NY 10707",
+      "type": "EXISTING_MASS_LOCATION_CLARIFICATION",
+      "url": "https://www.annunciation-fatima.com/mass-devotions/"
+    },
+    {
+      "g": "RG-FCED4E371EEC",
+      "src": "AO-AMER-R28-US-21-20",
+      "text": "Janesville, WI (locality only; street not established — source unverified)",
+      "type": "SOURCE_LOCALITY_ONLY",
+      "url": "https://catholicindex.org/churches/us-wi-janesville-st-patrick-f9f893d3"
+    }
+  ],
+  "default_release": "RESEARCH_ONLY_NOT_PUBLIC",
+  "do_not_overwrite": "any_nonempty_preexisting_description"
+}
