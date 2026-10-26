@@ -70,6 +70,8 @@ on:
       - 'data/source-text/icrsp-france-b22-233-distinct-source-body-scan-queue.v1.json'
       - 'data/source-text/icrsp-france-b22-eleven-direct-commentary-topics.v1.json'
       - 'data/source-text/icrsp-france-b22-cross-workstream-93-direct-read-reconciliation.v1.json'
+      - 'data/source-text/icrsp-france-b26-twenty-direct-page-content-and-two-source-errors.v1.json'
+      - 'tests/test_icrsp_b26_real_page_claims_and_error_quarantine.py'
   workflow_dispatch:
 
 permissions:
@@ -114,3 +116,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b23_twenty_source_topics.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b24_25_direct_topic_notes.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b25_75_direct_topic_and_owner_parity.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b26_real_page_claims_and_error_quarantine.py' -v
