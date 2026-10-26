@@ -7,6 +7,7 @@ on:
       - .github/workflows/approved-feast-frameless-quality-contract.yml
       - src/calendar/approved-feast-heroes.js
       - tests/approved-feast-heroes.mjs
+      - tests/champaigne-petite-cene-quality-contract.mjs
       - tests/approved-feast-hero-candidate-integrity.mjs
       - data/calendar/approved-feast-hero-packaged-candidates-20261021.v1.json
       - tools/calendar/package-approved-feast-hero-candidates.py
@@ -26,6 +27,8 @@ jobs:
         run: node tests/approved-feast-hero-candidate-integrity.mjs
       - name: Class I principal and physical-frame release rejection tests
         run: node tests/approved-feast-heroes.mjs
+      - name: Verify Champaigne shared photo candidate is research-only and frame rights are unresolved
+        run: node tests/champaigne-petite-cene-quality-contract.mjs
       - name: Check packaging code syntax
         run: python3 -m py_compile tools/calendar/package-approved-feast-hero-candidates.py
       - name: Production remains blocked until explicitly verified
