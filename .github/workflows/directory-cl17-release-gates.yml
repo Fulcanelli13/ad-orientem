@@ -1,0 +1,72 @@
+name: Directory CL17 physical and schedule release gates
+
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl17-release-gates-20261026/**'
+      - 'tools/directory/reconcile-cl17-release-gates.py'
+      - '.github/workflows/directory-cl17-release-gates.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl17-release-gates-20261026/**'
+      - 'tools/directory/reconcile-cl17-release-gates.py'
+      - '.github/workflows/directory-cl17-release-gates.yml'
+  workflow_dispatch:
+
+jobs:
+  release-evidence:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate original CL2 through CL7 and source chain
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+      - name: Rebuild complete frozen CL2 through CL17 evidence database
+        run: |
+          python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ao-cl17.sqlite
+          python3 tools/directory/audit-cl-completeness.py --db /tmp/ao-cl17.sqlite --output-dir /tmp/ao-cl8
+          python3 tools/directory/audit-cl9-owner-evidence.py --db /tmp/ao-cl17.sqlite --cl8-csv /tmp/ao-cl8/missal_1962_reconciliation.csv --out-dir /tmp/ao-cl9
+          python3 tools/directory/adjudicate-cl10-missal-evidence.py --db /tmp/ao-cl17.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl10
+          python3 tools/directory/reconcile-cl11-owner-sources.py --db /tmp/ao-cl17.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl11
+          python3 tools/directory/reconcile-cl12-singletons.py --db /tmp/ao-cl17.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl12
+          python3 tools/directory/reconcile-cl13-remaining-1962.py --db /tmp/ao-cl17.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl13
+          python3 tools/directory/reconcile-cl14-fssp-owner-site-evidence.py --db /tmp/ao-cl17.sqlite --out-dir /tmp/ao-cl14
+          python3 tools/directory/triage-cl15-1962-holds.py --db /tmp/ao-cl17.sqlite --out-dir /tmp/ao-cl15
+          python3 tools/directory/reconcile-cl16-priority-one.py --db /tmp/ao-cl17.sqlite --out-dir /tmp/ao-cl16
+          python3 tools/directory/reconcile-cl17-release-gates.py --db /tmp/ao-cl17.sqlite --out-dir /tmp/ao-cl17
+      - name: Check unique 432-cohort partition and independent release holds
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl17/cl17_summary.json').read_text())
+          assert x['accepted_book_evidence_rows']==256
+          assert x['held_book_evidence_rows']==176
+          assert x['fssp_source_named_worship_place_pilot']==39
+          assert x['pilot_frozen_mass_rows_with_named_owner_address']==74
+          assert x['new_accepted_named_owner_programme_row']==20
+          assert sum(x['pilot_owner_address_documentation_grades'].values())==39
+          assert x['public_sites_new']==x['public_mass_times_new']==x['current_dated_recurrence_approvals_new']==x['physical_coordinate_or_entrance_approvals_new']==x['una_cum_approvals_new']==0
+          db=sqlite3.connect('/tmp/ao-cl17.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl17_accepted_mass_gates').fetchone()[0]==256
+          assert db.execute('SELECT COUNT(*) FROM cl17_owner_site_stage').fetchone()[0]==39
+          assert db.execute('SELECT COUNT(*) FROM cl17_accepted_mass_gates WHERE source_place_id IS NOT NULL').fetchone()[0]==74
+          assert db.execute('SELECT COUNT(*) FROM cl17_potsdam_identity WHERE distinct_venues=0').fetchone()[0]==1
+          assert db.execute('SELECT COUNT(*) FROM classification_source WHERE owner_verified_missal_1962=1').fetchone()[0]==3
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          print('CL17 PASS: 39 owner-address venues staged, 256 book-evidenced rows, zero map/time publication')
+          PY
+      - name: Export temporary regenerable reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-cl17-release-readiness-pilot
+          path: /tmp/ao-cl17/
+          retention-days: 1
