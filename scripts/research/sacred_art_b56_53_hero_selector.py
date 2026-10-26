@@ -189,6 +189,10 @@ def main():
         approved=day.get("protected_approval")
         exclude=EXCLUDE.get(day["date"])
         def submit(pid,level,weight,reason,source_url="",is_approved=False):
+            # The user explicitly withdrew Ugolino as Holy Thursday's painting
+            # on 2026-10-26; keep it in immutable prior research but not the
+            # active Class I artwork selection UI.
+            if day["date"]=="2026-04-02" and pid=="met-459131":return
             if pid not in paintings:return
             art_obj=paintings[pid]
             if exclude and exclude.search(art_obj["title"]):return
@@ -297,6 +301,11 @@ def main():
                 "source_sha256":full.get("original_sha256"),
                 "source_photo_research_verified":bool(full["archived_research_source_sha_verified"]),
                 "production_image_rights_approved":False,
+                "physical_museum_frame_absent_verified":False,
+                "gallery_surround_absent_verified":False,
+                "complete_painted_surface_verified":False,
+                "unmodified_source_preserved":True,
+                "no_synthetic_frame_removal":True,
                 "historically_approved_for_date":z["historically_approved"],
                 "image_available":bool(full.get("image_key")),
                 "editorial_placement_confirmed_by_user_this_session":False})
