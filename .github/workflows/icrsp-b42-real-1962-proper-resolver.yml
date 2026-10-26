@@ -13,8 +13,9 @@ permissions:
   contents: read
 
 concurrency:
-  group: icrsp-b42-actual-proper-${{ github.event.pull_request.number || github.run_id }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  # Isolate run revisions: parallel research commits must not cancel a source audit.
+  group: icrsp-b42-actual-proper-${{ github.event.pull_request.number || github.run_id }}-${{ github.sha }}
+  cancel-in-progress: false
 
 jobs:
   resolved-proper-18-date-audit:
