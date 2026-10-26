@@ -46,7 +46,8 @@ try{
        const resolution=await host.resolveDay(date);
        const id=resolution?.day?.main?.id;
        const original=resolution?.proper?.data;
-       const before=String(original?.preface?.lat??original?.preface?.la??"").split("\n")[0];
+       const originalLatin=String(original?.preface?.lat??original?.preface?.la??"");
+       const before=originalLatin.split("\n")[0];
        const owner=authenticated1962PrefaceRecoveryOwner(id,original?.sourcePath);
        const recovered=await recoverReaderProperOmissions(original,{
          hostResolver:host.properResolver,principalCelebrationId:id
@@ -57,7 +58,7 @@ try{
          before,after,source:recovered?.preface?.sourcePath??null,
          enLength:String(recovered?.preface?.en??"").length,
          frLength:String(recovered?.preface?.fr??"").length,
-         originalUnchanged:String(original?.preface?.lat??"").startsWith("Communis"),
+         originalUnchanged:String(original?.preface?.lat??original?.preface?.la??"")===originalLatin,
          slot:slot.status});
      }catch(e){results.push({date,error:String(e?.stack||e)})}
    }
