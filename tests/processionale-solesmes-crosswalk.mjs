@@ -663,3 +663,37 @@ test('1961 Graduale printed Psalm 23 and 46 full text has three flex daggers',()
   assert.equal(gr.counts.runtimeScoresApproved,0);
   assert.equal(gr.readOnly,true);
 });
+
+test('second independent 1962 Missal printed witness resolves Palm lexical OCR discrepancy',()=>{
+  const scan=readJSON('data/research/processionale-palm-1962-independent-print-scan-20261026.v1.json');
+  const candidate=readJSON('data/research/processionale-palm-1962-full-verse-candidates-20261026.v1.json');
+  const gr=readJSON('data/research/processionale-palm-1961-graduale-fulltext-collation-20261026.v1.json');
+  assert.equal(scan.stage,'PALM-R02');
+  assert.deepEqual(scan.source.pages.map(p=>p.printedPage),[134,135]);
+  assert.deepEqual(scan.source.pages.map(p=>p.scanNo),[211,212]);
+  assert.ok(scan.source.pages.every(p=>p.url.includes('/Missale-Romanum-1962-Roman-Missal-color-')));
+  assert.equal(scan.source.imprintStatus,'SCAN_HOST_LABEL_1962_EXACT_EDITION_AND_PUBLISHER_NOT_AUTHENTICATED');
+  assert.deepEqual(scan.coverage.ps23WholeVersesVisible,[1,2,7,8,9,10]);
+  assert.deepEqual(scan.coverage.ps46WholeChantLinesVisible,[1,2,3,4,5,6,7,8,9,10]);
+  assert.equal(scan.coverage.ps46BiblicalVerses,9);
+  assert.equal(scan.coverage.totalWholeVerseTextLinesVisuallyCompared,16);
+  assert.equal(scan.coverage.musicalMediantStarsCompared,16);
+  assert.deepEqual(scan.sourceConclusions[0].liturgicalLines,[7,9]);
+  assert.equal(scan.sourceConclusions[0].reading,'et attollite vos, fores antiquae');
+  assert.equal(scan.sourceConclusions[0].rejectedOCR,'et attollite vos, portae antique');
+  assert.equal(scan.sourceConclusions[1].modernizedOrthography,'Subicit populos nobis');
+  assert.equal(scan.sourceConclusions[2].reading,'Eligit nobis hereditatem nostram');
+  assert.equal(candidate.batch19Followup.printedLexicalVariantConfirmed,'fores antiquae');
+  assert.equal(candidate.batch19Followup.official1962SourceOwnerSignoff,false);
+  assert.ok(candidate.variantHolds[0].disposition.startsWith('RESOLVED_AGAINST_SECOND_INDEPENDENT_PRINTED_1962_SCAN'));
+  assert.ok(gr.hold.startsWith('RESOLVED_PRINTED_1962_INDEPENDENT_PHOTOGRAPH'));
+  assert.equal(scan.timing.repeatUntilPhysicalDistributionEnds,true);
+  assert.equal(scan.timing.whenVersesFinishEarlyConcludeWithGloriaAndAntiphon,true);
+  assert.equal(scan.timing.noFixedDuration,true);
+  assert.equal(scan.promotion.officialVaticanTypicaEditionIdentitySignedOff,false);
+  assert.equal(scan.promotion.canonicalLatinOwnerSignedOff,false);
+  assert.equal(scan.promotion.completeGregorianPointingSignedOff,false);
+  assert.equal(scan.promotion.individualNoteUnderlaySignedOff,false);
+  assert.equal(scan.promotion.approvedRuntimeScores,0);
+  assert.equal(scan.promotion.publicationAllowed,false);
+});
