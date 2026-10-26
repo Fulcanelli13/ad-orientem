@@ -1,0 +1,40 @@
+{
+  "kind": "non-authoritative lower-weight JPEG display previews",
+  "full_painting_scaled_for_screen": true,
+  "detail_tiles_unscaled_native_pixels": true,
+  "no_master_modified": true,
+  "records": [
+    {
+      "module_id": "rosary-lotto-01",
+      "master_sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+      "source_dimensions": [
+        1772,
+        2652
+      ],
+      "icc_to_srgb_preview": true,
+      "preview_paths": [
+        "assets/staged/module-hero-preview-jpegs/rosary-lotto-01-whole-preview.jpg",
+        "assets/staged/module-hero-preview-jpegs/rosary-lotto-01-upper-detail.jpg",
+        "assets/staged/module-hero-preview-jpegs/rosary-lotto-01-centre-detail.jpg"
+      ],
+      "preview_is_not_master": true,
+      "quality_approved": false
+    },
+    {
+      "module_id": "rosary-lotto-11",
+      "master_sha256": "352ec3f397d6f5de89dd824cd0542b157ccea617d2521a83102d84b6adff106d",
+      "source_dimensions": [
+        2304,
+        3456
+      ],
+      "icc_to_srgb_preview": true,
+      "preview_paths": [
+        "assets/staged/module-hero-preview-jpegs/rosary-lotto-11-whole-preview.jpg",
+        "assets/staged/module-hero-preview-jpegs/rosary-lotto-11-upper-detail.jpg",
+        "assets/staged/module-hero-preview-jpegs/rosary-lotto-11-centre-detail.jpg"
+      ],
+      "preview_is_not_master": true,
+      "quality_approved": false
+    }
+  ]
+}
