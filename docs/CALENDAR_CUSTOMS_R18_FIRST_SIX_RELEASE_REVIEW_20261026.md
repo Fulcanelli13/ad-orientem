@@ -72,3 +72,21 @@ The resulting collection preserves the published articles and appends a clearly 
 **Production remains unchanged.** `calendar-runtime.js` does not pass a `r18Review` argument; `src/calendar/customs-read-model.js` does not import the staging JSON; `calendarCustomArticleIds()` continues to expose only 35 approved identifiers. `calendarR18ReviewRecommendations` rejects any candidate with a changed editorial status, claimed canonical ID, signoff, auto date trigger, event recurrence, missing bilingual prose or mismatched review key. The behaviour is verified with [`tests/calendar-customs-r18-region-preview.mjs`](../tests/calendar-customs-r18-region-preview.mjs).
 
 **Still needed for public release:** record distinct-identity approval, inspect English and French final wording, resolve source caveats, approve local/region visibility as a product behaviour, assign canonical IDs, and separately activate those articles in the current live Calendar read model. The programmatic review mode is not a substitute for any of these decisions.
+
+
+## Final source-to-copy and geographic decision pass — 26 October 2026
+
+A second pass re-opened all six principal official/institutional pages and checked the narrow cited actions, English/French wording, civil-day associations, geographic boundaries and historical claims. This confirms particular source statements; it does not certify every source's independence or any priestly rite.
+
+- St Patrick's ribbon cross: specifically historical handmade Irish silk/paper/ribbon practice; subsequent decline, not guaranteed continuity today.
+- Irish Christmas candle: museum-reported 1941 County Kerry folklore and remembrance, no promise of supernatural results; archival Dúchas access caveat remains.
+- Polish Wigilia hay: Nativity and humility are now the actual spiritual-meaning text, differentiated from household-practice instructions.
+- St Barbara branches: Archdiocese of Vienna documents 4 December domestic fruit-tree branches; the saint's biography is historically uncertain, and flowering is not an oracle.
+- Pain calendal: pre-midnight 24 December Provençal Gros Souper, distinct from the later réveillon. The so-called miracle portion is reported folklore, not an actual supernatural guarantee.
+- Three Kings gifts: optional evening 5 January Spanish household shoe practice; Spanish tourism evidence was published December 2023 for 2024, not an upcoming parade schedule.
+
+The [six-case publication decision board](../src/calendar/customs-r18-first-six-release-decision.v1.json) records review-only exact date and region codes (`IE`, `PL`, `AT`, `FR-PROVENCE`, `ES`), bilingual region descriptors, claim limits, and explicit **no geolocation inference**. When eventually accepted, Calendar date recommendations should require a user's explicit regional interest. Browse-all may contain accepted articles with clearly stated regional or historical metadata; do not create country calendars. The 1962 liturgical Calendar remains sole authority for feast dates/precedence. No local event schedules or priestly blessing scripts arise from these household articles.
+
+The existing Calendar article renderer now labels `previewOnly` entries **Editorial preview — not published / Aperçu éditorial — non publié**, with a small localized scope line. The normal Calendar route does not pass any review candidates or import their JSON; there remain 35 public Customs articles.
+
+The dedicated [release-decision regression test](../tests/calendar-customs-r18-release-decision.mjs) checks the six draft entries and source-policy records, bilingual fields, exact region/day tests, no live runtime import, and nonpublishing locks. Human identity, source/rite, EN/FR and region/date acceptance are all still pending. The first six are **copy-ready for editorial decision, not auto-authorized for public release**.
