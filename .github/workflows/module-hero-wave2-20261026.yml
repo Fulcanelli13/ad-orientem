@@ -1,0 +1,44 @@
+name: Hero quality source wave 2 (€0)
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/module-hero-wave2-20261026.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: art-hero-wave2-research-20261026
+  cancel-in-progress: false
+
+jobs:
+  source-acquisition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free artwork decoding library
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Exact source and local archive staging (no publication)
+        run: python3 scripts/art/acquire-hero-wave2.py
+      - name: Build unenhanced full-painting and native-pixel detail previews
+        env:
+          AO_HERO_PREVIEW_INPUT: assets/staged/module-hero-wave2
+        run: python3 scripts/art/make-module-hero-review-previews.py
+      - name: Permanently archive original byte captures on research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c research/module-hero-wave2-20261026
+          git add -f data/research/module-hero-acquisition-wave2-20261026.json
+          if [ -d assets/staged/module-hero-wave2 ]; then git add -f assets/staged/module-hero-wave2; fi
+          if [ -d assets/staged/module-hero-preview-jpegs ]; then git add -f assets/staged/module-hero-preview-jpegs; fi
+          git commit -m "research(art): preserve source-photo originals and quality reference previews, not approved"
+          git push --set-upstream origin research/module-hero-wave2-20261026
+      - name: Guard release boundary
+        run: echo "Photographs are research-only, not approved for app use. No paid service or temporary Actions-artifact storage."
