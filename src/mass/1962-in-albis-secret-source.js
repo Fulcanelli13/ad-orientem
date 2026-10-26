@@ -16,6 +16,15 @@ function resolvedText(v){return anyText(v)&&!/^\s*[$@]/u.test(v)&&
   !/^\s*Tempora\/Pasc1-0:Secreta\.?\s*$/iu.test(String(v))}
 function normalize(v){return String(v??"").normalize("NFD").replace(/[\u0300-\u036f]/gu,"")
  .replace(/[œ]/gu,"oe").replace(/[æ]/gu,"ae").replace(/[^a-z0-9]+/giu," ").trim().toLowerCase()}
+// The pinned French [Secreta] places the conclusion macro before the body.
+// Accept only the exact, source-attested reversal of the two certified lines;
+// never treat an arbitrary conclusion-first or unrelated prayer as equivalent.
+function exactFrenchDonorOrder(existing,canonical){
+ const lines=String(canonical??"").trim().split("\n");
+ if(lines.length!==2||!frenchIntro.test(lines[0])||
+   !/^Par Notre-Seigneur Jésus-Christ, votre Fils/u.test(lines[1]))return false;
+ return normalize(existing)===normalize(lines[1]+"\n"+lines[0]);
+}
 function matchPartial(existing,actual){
  const value=String(existing??"").trim();
  if(!value||/^\s*\$Per Dominum\.?$/u.test(value))return true;
@@ -81,10 +90,15 @@ export function recover1962InAlbisSecretFromPinnedSource(data,principalCelebrati
  const old=existing[0]??{};
  // Do not replace an authentic complete oration; and never overwrite any
  // partial text that disagrees with the certified named Secret.
- if(["lat","en","fr"].every(lang=>resolvedText(old[lang]??(lang==="lat"?old.la:null))))
-   return null;
+ const reversedPinnedFrench=exactFrenchDonorOrder(old.fr,contents.fr);
+ // A complete genuine Secret is never replaced. The single exception is
+ // the attested French macro-first source ordering, with exact source parity.
+ if(["lat","en","fr"].every(lang=>resolvedText(old[lang]??(lang==="lat"?old.la:null)))&&
+   !reversedPinnedFrench)return null;
  for(const lang of ["lat","en","fr"]){
-   if(!matchPartial(old[lang]??(lang==="lat"?old.la:null),contents[lang]))return null;
+   const observed=old[lang]??(lang==="lat"?old.la:null);
+   if(lang==="fr"&&reversedPinnedFrench)continue;
+   if(!matchPartial(observed,contents[lang]))return null;
  }
  return Object.freeze({
    ...contents,sourcePath:"Tempora/Pasc1-0:Secreta",
