@@ -97,6 +97,36 @@ source history/provenance and a canonical source-text matching rule. New
 scores remain unassigned until their owning Proper is resolved. Candidate
 discovery and verified promotion are separate gates.
 
+## Bulk Graduale corpus — existing parallel research pipeline
+
+The existing `tools/mass/import-gregobase-graduale1961.mjs` already
+ingested the **pinned 5 January 2024 GregoBase SQL snapshot** into six
+checksummed, staged JSON batches. Audit figures: **1,254** matching
+1961-edition core rows, **1** excluded duplicate, **58** unusable
+transcriptions quarantined, **1,195** staged text/notation bodies.
+By musical part: 229 Introits, 189 Graduals, 284 Alleluias, 83 Tracts,
+185 Offertories and 225 Communions. Source authority remains limited:
+a linked GR 1961 page does not independently prove local 1962 usage or
+facsimile-correct musical notation. SQL GABCs are raw notation bodies
+without full file header, unlike the 12 hand-curated pilot examples.
+
+**No additional scraper or competing archive was created.** The existing
+archive remains research-only and is not dynamically imported by the reader.
+`tools/mass/gr1961-promotion-gate.mjs` now codifies six required
+review decisions for each future promotion: canonical 1962 Proper slot,
+actual Latin source-text identity, printed edition/page, musical facsimile,
+stable source identity, and separate observed-vs-prescribed programme
+status. Every gate needs PASS + reviewer + evidence reference, together
+with matching GABC SHA-256 and an explicit promotion manifest.
+
+`tests/gr1961-promotion-gate.mjs` checks every one of the **1,195**
+archive rows is withheld by default, a synthetic fully approved item
+can pass, and any omitted approval or corrupted GABC fails. It is
+added to `npm run test:reader-schola`. **0 records actually promoted**
+by this step. Two differently notated same-incipit variant groups and
+one exact-notation duplicate group are preserved for identity review;
+they are not silently collapsed.
+
 ## Validation status and release gates
 1. Parse/source guard tests in `tests/reader-chant-score-pilot.mjs`, `tests/mass-chant-programme.mjs`; real Exsurge engravings at 260/420/800 px in `tests/reader-chant-engraver.mjs`; all part of `npm run test:reader-schola`.
 2. The existing `tests/full-mass-preflight-phone-e2e.mjs` covers 390px independent selections, changes to Gregorian/polyphonic practice, omission, Low Mass and date reset.
