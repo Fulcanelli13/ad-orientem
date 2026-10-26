@@ -7,6 +7,9 @@ import {specialMassPresentation,renderSpecialMassContext} from "./full-mass-spec
 import {massCalendarPreflightContext,fillMassCalendarPreflight} from "./calendar-preflight-context.js";
 import {normalizeFolioExperience,experiencePrayerRoute,experiencePrayerDepth,mayOpenFolioPrayer} from "./full-mass-folio-options.js";
 import {massChantProgrammeIdentity,chantProgrammeEnabled,massChantOptions,createMassChantProgramme,MASS_CHANT_ORDINARY_TRACKS} from "./mass-chant-programme.js";
+import {properToReaderSlots} from "./proper-reader-slots.js";
+import {matchSourceOwnedProperScores} from "./reader-proper-chant-crosswalk.js";
+import {mountMassChantPreparationStudy} from "./mass-chant-preparation-study.js";
 
 const LABELS=Object.freeze({
   LOW:["Low Mass","Messe basse"],
@@ -75,6 +78,7 @@ export function mountFullMassPreflight({
   let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
   let folioStep="overview",experience={before:"none",after:"none",language:null},prayerOpening=false;
   let chantIdentity=null,chantScoreId=null,chantSelections={},sanctusPerformance="UNSPECIFIED";
+  let chantStudy=null;
   const donorSuppressed=new Map();
   const suppressDonorDuplicates=()=>{
     const panel=root?.parentElement;
@@ -241,7 +245,7 @@ export function mountFullMassPreflight({
         '<label data-full-mass-performance-label for="ao-full-mass-sanctus-performance"></label>'+ 
         '<select id="ao-full-mass-sanctus-performance" data-full-mass-sanctus-performance></select>'+ 
         '<p data-full-mass-performance-note></p>'+
-        '<p data-full-mass-chant-source></p></details>'+
+        '<p data-full-mass-chant-source></p><div data-full-mass-chant-study-host></div></details>'+
         '<details data-full-mass-rites class="aoFullMassOptional"><summary data-full-mass-rite-summary></summary>'+
         '<p data-full-mass-rite-intro></p><div data-full-mass-rite-list></div></details>'+
         '<p data-full-mass-note></p>';  
@@ -311,6 +315,10 @@ export function mountFullMassPreflight({
       move("[data-full-mass-form-fieldset]","[data-folio-ceremony-controls]");
       move("[data-full-mass-reader-fieldset]","[data-folio-reader-controls]");
       move("[data-full-mass-chant]","[data-folio-reader-controls]");
+      chantStudy?.destroy?.();
+      chantStudy=mountMassChantPreparationStudy(root.querySelector("[data-full-mass-chant-study-host]"),{
+        document:doc,language:()=>selectedExperience().language,
+      });
       move("[data-full-mass-rites]","[data-folio-rites-slot]");
       move("[data-full-mass-note]","[data-folio-essential-notice]");
 
@@ -641,6 +649,20 @@ export function mountFullMassPreflight({
       word("[data-full-mass-performance-note]",
         "A separate Benedictus begins only when observed. Polyphonic singing does not use this Gregorian reference score.",
         "Un Benedictus séparé commence seulement après observation. La polyphonie n’utilise pas cet exemple grégorien.");
+      let selectedProperChants=null;
+      if(musicAvailable&&summary.canStart&&sourceGate.ready){
+        const source=legacy?.proper?.data??legacy?.proper??null;
+        if(source?.sourcePath){
+          try{
+            const slots=properToReaderSlots(source,{language:summary.readerLanguage});
+            selectedProperChants=matchSourceOwnedProperScores(slots);
+          }catch{selectedProperChants=null}
+        }
+      }
+      chantStudy?.update({
+        programme:musicAvailable?summary.chantProgramme:null,
+        properCrosswalk:selectedProperChants,
+      });
       const hasSelected=Boolean(Object.keys(summary.chantProgramme?.selections??{}).length);
       word("[data-full-mass-chant-source]",
         hasSelected?"GregoBase · Solesmes 1961 · selected by you, not independently verified":
@@ -797,6 +819,6 @@ export function mountFullMassPreflight({
       optionalRiteOverrides:Object.freeze({...riteOverrides}),
       chantProgramme:selectionFor(getResolvedMass()).chantProgramme,
       experience:selectedExperience(),step:folioStep}),
-    dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();restoreDonor();{const actions=root?.querySelector?.(".aoFlowActions");if(actions)root.insertAdjacentElement("afterend",actions)}root?.remove();root=null;}
+    dispose(){disposed=true;chantStudy?.destroy?.();chantStudy=null;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();restoreDonor();{const actions=root?.querySelector?.(".aoFlowActions");if(actions)root.insertAdjacentElement("afterend",actions)}root?.remove();root=null;}
   });
 }
