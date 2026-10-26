@@ -103,7 +103,7 @@ def main():
               "access_status":review["access"],
               "decision":ACCEPTED if admitted else HELD,
               "direct_book_scope_accepted":int(admitted),
-              "exception_codes":";".join(review["exception_codes"]),
+              "exception_codes":";".join(review["exception_codes"] + review.get("row_specific_exception_codes",{}).get(str(id),[])),
               "owner_claim_observation":review["observation"],
               "historical_verified":m[19],
               "original_checked_on":m[18],
