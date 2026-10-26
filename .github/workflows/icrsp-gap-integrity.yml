@@ -43,6 +43,9 @@ on:
       - 'tests/test_icrsp_b18_fourth_sunday_scan_ocr_variant.py'
       - 'data/source-text/icrsp-france-b19-fromage-continuation-preface-author-witness.v1.json'
       - 'tests/test_icrsp_b19_signed_preface_edition_boundaries.py'
+      - 'data/source-text/icrsp-france-b20-sanctoral-temporal-160-content-selection.v1.json'
+      - 'data/source-text/icrsp-france-b20-ten-web-reviewed-claim-leads-and-owner-parity.v1.json'
+      - 'tests/test_icrsp_b20_source_content_selection.py'
   workflow_dispatch:
 
 permissions:
@@ -76,3 +79,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b17_fromage_edition_evidence.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b18_fourth_sunday_scan_ocr_variant.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b19_signed_preface_edition_boundaries.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b20_source_content_selection.py' -v
