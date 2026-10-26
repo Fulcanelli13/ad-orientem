@@ -14,6 +14,9 @@ on:
       - "tests/customs-first18-source-scope-evidence.mjs"
       - "data/customs/master/working-master.v1.json"
       - "data/customs/master/customs-r18-controlled-calendar-handoff-20261026.v1.json"
+      - "data/customs/master/customs-r18-preliminary-editorial-dispositions-20261026.v1.json"
+      - "tests/customs-r18-preliminary-editorial-dispositions.mjs"
+      - "docs/CUSTOMS_R18_EDITORIAL_DISPOSITIONS_20261026.md"
       - "tests/customs-r18-controlled-calendar-handoff.mjs"
       - "docs/CUSTOMS_R18_CONTROLLED_CALENDAR_HANDOFF_20261026.md"
       - "tests/customs-multibook-bulk150.mjs"
@@ -42,3 +45,5 @@ jobs:
           node tests/customs-first18-direct-source-scope-audit.mjs
           node --check tests/customs-r18-controlled-calendar-handoff.mjs
           node tests/customs-r18-controlled-calendar-handoff.mjs
+          node --check tests/customs-r18-preliminary-editorial-dispositions.mjs
+          node tests/customs-r18-preliminary-editorial-dispositions.mjs
