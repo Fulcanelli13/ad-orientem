@@ -82,7 +82,14 @@ const king=days.find(x=>x.date==="2026-10-25");
 assert.equal(king.original_approval.title,"Salvator Mundi");
 assert.equal(king.original_approval.artist,"Ambrosius Benson");
 assert.equal(king.options[0].choice_id,"protected:2026-10-25");
-assert.equal(days.find(x=>x.date==="2026-04-02").options[0].choice_id,"met-459131");
+// Latest explicit 2026-10-26 user decision takes precedence over historical B55 records.
+const holyThursday=days.find(x=>x.date==="2026-04-02");
+const emberWed=days.find(x=>x.date==="2026-05-27");
+assert.equal(holyThursday.options[0].choice_id,"ART-hilippe-de-hampaigne-a-etite-ne");
+assert.equal(holyThursday.original_approval.artist,"Philippe de Champaigne");
+assert.equal(holyThursday.original_approval.title,"La Petite Cène");
+assert.equal(emberWed.original_approval.artist,"Philippe de Champaigne");
+assert.ok(!holyThursday.options.some(x=>x.choice_id==="met-459131"),"Withdrawn Ugolino must not reappear in active Holy Thursday shortlist");
 assert.equal(days.find(x=>x.date==="2026-05-24").options[0].choice_id,"ART-ean-estout-entecost");
 assert.equal(days.find(x=>x.date==="2026-06-12").options[0].choice_id,"commons-morlete-sacred-heart-1759");
 console.log("B56_53_HERO_SELECTOR_PASS 53 Class I dates; "+total+" original artwork candidate slots; "+picture_slots+" actual photos; "+Object.keys(bank).length+" unique SHA-tested images; 10 prior date approvals preserved; zero rights clearance or app changes.");
