@@ -1,7 +1,7 @@
 {
   "schema": "ao-1961-graduale-romanum-palm-psalter-edition-contrast-v1",
   "date": "2026-10-26",
-  "status": "ORIGINAL_1961_SCORES_VISUALLY_CONFIRMED_NOVUS_SOURCE_GABC_P46_WRONG_WORD_HOLD",
+  "status": "ORIGINAL_1962_VATICAN_FACSIMILE_CONFIRMS_RESTORED_PALM_PSALMS_GABC46_QUARANTINED",
   "scope": "Competing Psalm text traditions for Roman restored Palm Sunday distribution; candidate GABC must match accepted Latin version before full notation.",
   "owners": {
     "romanSource": "https://github.com/Fulcanelli13/ad-orientem/issues/894",
@@ -82,7 +82,7 @@
       "Processional delivery and 1962 liturgical permission remain separate from page-image transcription correctness."
     ],
     "oldScoreStatus": "ALTERNATIVE_HISTORICAL_PRINTED_TEXT_NOT_SELECTED_AS_1962_PRIMARY_BY_RESEARCH",
-    "newScoreStatus": "1961_ORIGINAL_HEBDOMADA_SANCTA_TEXT_DIRECT_IMAGE_VERIFIED_PRIMARY_1962_OCR_AGREES"
+    "newScoreStatus": "1961_NEW_PSALTER_DIRECT_IMAGE_AND_1962_VATICAN_MISSAL_PRIMARY_PRINT_AGREE"
   },
   "candidates": [
     {
@@ -115,7 +115,8 @@
         "archivePath": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
         "archiveStatus": "RAW_BYTES_SHA256_VERIFIED_UNAPPROVED",
         "hasExtraGabcDelimiter": true,
-        "extraDelimiterEvidence": "Raw source contains consecutive %% lines, to be assessed by notation renderer owner; archive remains byte-exact."
+        "extraDelimiterEvidence": "Raw source contains consecutive %% lines, to be assessed by notation renderer owner; archive remains byte-exact.",
+        "roman1962PrimaryPageImage": "https://gregobase.selapa.net/sources/42/213.png"
       },
       "versePairs": [
         [
@@ -191,7 +192,11 @@
             "Full psalm verses and pointing",
             "Explicit #1749 runtime promotion gate"
           ]
-        }
+        },
+        "roman1962PrimaryPageImages": [
+          "https://gregobase.selapa.net/sources/42/213.png",
+          "https://gregobase.selapa.net/sources/42/214.png"
+        ]
       },
       "versePairs": "SEQUENTIAL_PAIRS",
       "repeat": "AFTER_EVERY_TWO_VERSES",
@@ -199,7 +204,7 @@
     }
   ],
   "romanRule": {
-    "status": "1962_MISSALE_INDEXED_PRIMARY_TEXT_CONFIRMS_NOVUS_INCIPITS_IMAGE_SIGNOFF_PENDING",
+    "status": "PRIMARY_1962_PRINT_VISUALLY_VERIFIED_TEXT_RUBRIC_OWNER_SIGNOFF_PENDING",
     "evidence": [
       "1961 printed Graduale distinguishes Vatican restored Holy Week new psalm interpretation from older text",
       "1956 restored Holy Week choir guide states pair order and flexible duration"
@@ -207,12 +212,22 @@
     "doNotPresumeOldTextAllowed": true,
     "doNotAutoSelectEitherVersion": true,
     "primary1962Witness": {
-      "source": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
-      "inspection": "SEARCH_INDEX_EXTRACT_ONLY_FULL_PDF_TOO_LARGE_FOR_FACSIMILE_VIEW",
-      "printedLocation": "Palm Sunday, De distributione ramorum",
+      "source": "https://gregobase.selapa.net/source.php?id=42&images=1&index=8",
+      "originalBook": "Vatican Missale Romanum 1962",
+      "inspectedPageImages": [
+        "https://gregobase.selapa.net/sources/42/213.png",
+        "https://gregobase.selapa.net/sources/42/214.png"
+      ],
+      "printedPages": [
+        131,
+        132
+      ],
+      "inspection": "PRIMARY_PRINTED_1962_VATICAN_MISSAL_DIRECT_IMAGE_COLLATED",
       "ps23Expected": "Dómini est terra et quae replent eam",
       "ps46Expected": "Omnes pópuli, pláudite mánibus",
-      "evidenceTier": "ORIGINAL_1962_MISSAL_OCR_TEXT_NOT_VISUAL_IMAGE_CERTIFICATION"
+      "evidenceTier": "PRIMARY_VISUAL_SOURCE",
+      "sourceCollationPath": "data/research/processionale-palm-1962-primary-facsimile-20261026.v1.json",
+      "humanOwnerAccepted": false
     }
   },
   "sourceSafety": {
@@ -399,13 +414,14 @@
         "No user icon or posture advance from Schola progress"
       ],
       "presentationRule": "Psalm 46 chant-line numbers 9 and 10 are halves of biblical verse 9. Show printed liturgical line numbers in Schola; cross-link both to scriptural verse 9. Do not invent a biblical verse 10.",
-      "psalm46DualNumberingPath": "data/research/processionale-palm46-dual-numbering-20261026.v1.json"
+      "psalm46DualNumberingPath": "data/research/processionale-palm46-dual-numbering-20261026.v1.json",
+      "roman1962PrimaryFacsimile": "data/research/processionale-palm-1962-primary-facsimile-20261026.v1.json"
     }
   },
   "gates": [
     {
       "id": "PSALTER_LATIN_VERSION_1962",
-      "status": "PRIMARY_ROMAN1962_OCR_AND_ORIGINAL_1961_VISUAL_AGREE_IMAGE_1962_SIGNOFF_PENDING",
+      "status": "PRIMARY_1962_IMAGE_VERIFIED_ISSUE_894_OWNER_ACCEPTANCE_PENDING",
       "owner": "#894"
     },
     {
