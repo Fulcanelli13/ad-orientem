@@ -44,6 +44,11 @@ assert.throws(()=>reconcileGradualeFirst200({...inputs,
   {...witness.candidateOccurrences[0],officePart:"co"},...witness.candidateOccurrences.slice(1)
  ]}}),/source-misaligned/);
 assert.throws(()=>reconcileGradualeFirst200({...inputs,
+ witness:{...witness,candidateOccurrences:[
+  {...witness.candidateOccurrences[0],latinExcerpt:"Completely unrelated fabricated passage"},
+  ...witness.candidateOccurrences.slice(1)
+ ]}}),/source-misaligned/);
+assert.throws(()=>reconcileGradualeFirst200({...inputs,
  batch:{...batch,items:[{...batch.items[0],gabc:"tampered"},...batch.items.slice(1)]}}),
  /Unverified historical GABC/);
 assert.throws(()=>reconcileGradualeFirst200({...inputs,batchText:batchText+" "}),
