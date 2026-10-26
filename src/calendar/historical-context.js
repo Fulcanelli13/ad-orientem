@@ -63,8 +63,8 @@ const NOTES = freeze({
     id:"history.saint-leo-i-feast-date",
     title:freeze({ en:"Saint Leo the Great: why 11 April?", fr:"Saint Léon le Grand : pourquoi le 11 avril ?" }),
     explanation:freeze({
-      en:"Pope Saint Leo I died on 10 November 461, but the traditional Roman feast is on 11 April, a date associated with his burial at Saint Peter’s. Pope Sergius I transferred his remains further inside the basilica in 688; that historical remembrance is distinct from Pope Saint Leo II.",
-      fr:"Le pape saint Léon Ier mourut le 10 novembre 461, mais sa fête romaine traditionnelle est célébrée le 11 avril, date liée à sa sépulture à Saint-Pierre. Le pape Serge Ier transféra ses restes dans la basilique en 688 ; ce souvenir historique est distinct de la personne du pape saint Léon II."
+      en:"Pope Saint Leo I died on 10 November 461. His traditional Roman feast on 11 April is not the anniversary of his death. An earlier Roman observance of 28 June was associated with a translation of his remains; the later confusion with the feast of Pope Saint Leo II must not obscure their distinct identities.",
+      fr:"Le pape saint Léon Ier mourut le 10 novembre 461. Sa fête romaine traditionnelle du 11 avril n’est pas l’anniversaire de sa mort. Une ancienne célébration romaine du 28 juin était liée à une translation de ses reliques ; la confusion ultérieure avec la fête du pape saint Léon II ne doit pas faire oublier qu’il s’agit de deux papes distincts."
     }),
     sourceArticleId:"a0745_ancien",
     historicalScope:"SAINT_LEO_I_FEAST_HISTORY_DISTINCT_FROM_LEO_II",
