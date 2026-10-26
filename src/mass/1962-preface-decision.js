@@ -22,6 +22,27 @@ const YEAR_CYCLE=Object.freeze({
   "2026-12-08":"sancti:12-08"
 });
 const slotText=(preface)=>String(preface?.lat??preface?.la??"").trim();
+const normalizedLatin=text=>String(text??"").normalize("NFD")
+  .replace(/[\u0300-\u036f]/g,"").replace(/\s+/g," ").toLowerCase();
+export function required1962PaschalPrefaceVariant(id){
+  const value=String(id??"");
+  if(/^tempora:Quad6-6r:1:vw$/i.test(value))return "VIGIL_NIGHT";
+  if(/^tempora:Pasc0-[0-6]:1:w$/i.test(value))return "OCTAVE_DAY";
+  if(/^tempora:(?:Pasc[1-4]-[0-6]r?|Pasc5-[0-3]):[1-3]:w$/i.test(value))
+    return "EASTERTIDE";
+  return null;
+}
+function matches1962PaschalPrefaceVariant(preface,variant){
+  const text=normalizedLatin(slotText(preface));
+  const phrase=variant==="VIGIL_NIGHT"?"sed in hac potissimum nocte":
+    variant==="OCTAVE_DAY"?"sed in hac potissimum die":
+    variant==="EASTERTIDE"?"sed in hoc potissimum":null;
+  return Boolean(phrase&&text.startsWith("paschalis ")&&
+    text.includes(phrase)&&text.includes("cum pascha nostrum immolatus est christus")&&
+    (text.match(/potissimum/g)||[]).length===1&&
+    !/(?:sed tempore passionis|sed octava paschae|sed octava paschæ)/.test(text)&&
+    !text.includes("~"));
+}
 const heading=text=>Object.entries(HEADINGS).find(([,regex])=>regex.test(text))?.[0]??null;
 const ownerKey=id=>String(id??"").toLowerCase().replace(/:[^:]+:[^:]+$/,"");
 export function inspect1962PrefaceSelection({principalCelebrationId,selectedPreface,requestedCelebrationId=null}={}){
@@ -34,12 +55,22 @@ export function inspect1962PrefaceSelection({principalCelebrationId,selectedPref
   // Common Preface must be blocked if source recovery cannot retrieve the
   // authenticated named trilingual section.
   const id=String(principalCelebrationId??"");
-  const requiredId=OWNERS[key]??
+  const paschalVariant=required1962PaschalPrefaceVariant(principalCelebrationId);
+  const requiredId=paschalVariant?"PASCHALIS":OWNERS[key]??
     (/^tempora:Quad[1-4]-[0-6]:[1-3]:v$/i.test(id)?"QUADRAGESIMA":
      /^tempora:Pasc(?:6-6|7-[0-6]):1:r$/i.test(id)?"SPIRITU":null);
   const actualId=heading(slotText(selectedPreface));
   if(!requiredId)return Object.freeze({status:"UNMAPPED_SOURCE",requiredId:null,actualId,
     reason:"No category certified by this narrow source decision register; no inferred Common Preface."});
+  if(paschalVariant){
+    const match=actualId==="PASCHALIS"&&
+      matches1962PaschalPrefaceVariant(selectedPreface,paschalVariant);
+    return Object.freeze({
+      status:!actualId?"MISSING_PREFACE":match?"MATCH":"CONTRADICTION",
+      requiredId:"PASCHALIS",actualId,requiredVariant:paschalVariant,
+      reason:match?null:"The 1962 Easter Preface must contain exactly the required vigil, octave, or season interpolation."
+    });
+  }
   return Object.freeze({status:!actualId?"MISSING_PREFACE":actualId===requiredId?"MATCH":"CONTRADICTION",
     requiredId,actualId,reason:actualId===requiredId?null:"Resolved Latin Preface contradicts 1962 celebration source."});
 }
