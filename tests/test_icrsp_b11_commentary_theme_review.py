@@ -13,6 +13,7 @@ class B11Themes(unittest.TestCase):
         cls.b10=load("data/source-text/icrsp-france-b10-lent-pentecost51-content-screen.v1.json")
         cls.b11=load("data/source-text/icrsp-france-b11-40-commentary-theme-review.v1.json")
         cls.paths=load("data/source-text/icrsp-france-temporal-193-sourcepath-crosswalk.v1.json")
+        cls.clusters=load("data/source-text/icrsp-france-b11-51-topic-clusters.v1.json")
         cls.sourceById={r["articleId"]:r for r in cls.paths["rows"]}
 
     def test_every_unread_b10_source_now_has_one_research_topic(self):
@@ -68,6 +69,22 @@ class B11Themes(unittest.TestCase):
                             for r in rows if r["articleId"]=="a0207_ancien")
                             or any("differ" in r["editorialCaution"].lower()
                             for r in rows if r["articleId"]=="a0207_ancien"))
+
+    def test_conceptual_clusters_do_not_create_duplicate_original_passage_claims(self):
+        groups=self.clusters["groups"]
+        self.assertEqual(len(groups),10)
+        self.assertEqual(sum(len(g["sources"]) for g in groups),39)
+        seen={r["articleId"]:r["sourceUrl"] for r in self.b10["rows"]}
+        for group in groups:
+            self.assertTrue(group["sources"])
+            self.assertFalse(group["originalTextOrEditionCertified"])
+            self.assertFalse(group["provenMissingAppFeature"])
+            self.assertFalse(group["copyrightReproductionApproved"])
+            self.assertFalse(group["productionPublicationApproved"])
+            for item in group["sources"]:
+                self.assertIn(item["articleId"],seen)
+                self.assertEqual(item["url"],seen[item["articleId"]])
+        self.assertEqual(self.clusters["totals"]["approvedEditorialIntegrations"],0)
 
 if __name__=="__main__":
     unittest.main()
