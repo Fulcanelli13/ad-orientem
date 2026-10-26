@@ -1,0 +1,89 @@
+{
+  "schema": "AO_ICRSP_B18_FOURTH_SUNDAY_SCAN_DERIVED_OCR_VARIANT_EVIDENCE_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "priorB17": "data/source-text/icrsp-france-b17-fromage-edition-ledger-and-two-more-text-matches.v1.json",
+  "scope": "Source-critical print-derived OCR evidence for the Fourth Sunday XV/XVI numeral divergence only; no new publication, 1962 rite or authorship credit.",
+  "sourceArticle": {
+    "articleId": "a0222_nouveau",
+    "properPath": "Tempora/Pent04-0",
+    "hostUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_nouveau",
+    "siteAuthorWorkLabel": "Dom Guéranger, l’Année Liturgique",
+    "centuryReading": "XVI",
+    "sourceType": "HOST_WEB_TRANSCRIPTION"
+  },
+  "witnesses": [
+    {
+      "id": "OBLATURESM_SCAN_OCR",
+      "sourceUrl": "https://oblaturesm.ca/pdf/pent2.pdf",
+      "description": "L’Année liturgique, second continuation volume, Le Temps après la Pentecôte tome II",
+      "sourceType": "SEARCH_INDEX_EXCERPT_FROM_HISTORICAL_BOOK_FACSIMILE_PDF",
+      "centuryReading": "XVI",
+      "snippetAnchor": "Le quatrième Dimanche après la Pentecôte ... et ne fut même reçu universellement qu'au xvi« siècle",
+      "indexedTitlePageEvidence": "DEUXIÈME VOLUME DE LA CONTINUATION; LE TEMPS APRÈS LA PENTECÔTE TOME II; Douzième édition; H. Oudin; date OCR truncated, independently catalogued 1911",
+      "pdfOpenedForPageView": false,
+      "printImageVisuallyInspected": false,
+      "originalPrintedPaginationVerified": false,
+      "sourceSnippetMayContainOcrErrors": true,
+      "searchResultSourceRef": "turn336449search51"
+    },
+    {
+      "id": "ICRSP_LIVE_WEB",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_nouveau",
+      "sourceType": "WEB_HOSTED_HISTORICAL_WORK",
+      "centuryReading": "XVI",
+      "printImageVisuallyInspected": false,
+      "originalPrintedPaginationVerified": false
+    },
+    {
+      "id": "ABBE_PIVERT_TRANSCRIPTION",
+      "sourceUrl": "https://abbe-pivert.com/dom-gueranger-annee-liturgique/4e-dimanche-apres-la-pentecote/",
+      "sourceType": "SECONDARY_WEB_TRANSCRIPTION_POSSIBLY_SHARED_TEXT",
+      "centuryReading": "XVI",
+      "printImageVisuallyInspected": false,
+      "originalPrintedPaginationVerified": false,
+      "independenceFromICRSPNotEstablished": true
+    },
+    {
+      "id": "CELIER_SEL_DE_LA_TERRE_STUDY",
+      "sourceUrl": "https://www.seldelaterre.fr/articles/sdt7/le-nouveau-visage-de-la-messe-%28iii%29",
+      "sourceType": "LATER_HISTORICAL_STUDY_QUOTING_FROMAGE",
+      "centuryReading": "XV",
+      "printImageVisuallyInspected": false,
+      "originalPrintedPaginationVerified": false,
+      "unresolvedMisquotationCandidate": true
+    }
+  ],
+  "conclusion": {
+    "supported": "The search-indexed print-facsimile OCR from the historic continuation reads XVI, agreeing with two live transcriptions; later secondary study reads XV.",
+    "likelyExplanation": "The XV reading in the modern study may be a quotation/transcription error. Do not state this as certified until a photographed original printed paragraph is inspected.",
+    "variantEvidenceStatus": "PRINT_DERIVED_OCR_SUPPORTS_XVI_BUT_PHOTOGRAPHIC_CONFIRMATION_PENDING",
+    "originalPhotographicPageVerified": false,
+    "centuryVariantTextualResolutionApproved": false,
+    "originalExactPrintCitationApproved": false
+  },
+  "attribution": {
+    "seriesContinuationAttributedTo": "Dom Lucien Fromage",
+    "seriesHistoryAuthority": "https://www.abbayedesolesmes.fr/produit/introduction-a-lannee-liturgique/",
+    "individualParagraphAuthorPrintedWitnessRead": false,
+    "websiteLabelsRemapped": false,
+    "publicAttributionApproved": false
+  },
+  "provenanceRules": [
+    "Facsimile-derived search result excerpts are secondary machine OCR evidence until page scan is actually inspected; do not call this a photographed-page collation.",
+    "A matching modern web transcription does not establish an independent original edition or a verified printed page number.",
+    "The PDF host has not provided a browsable page view in this batch; the HTML mirror also exceeds web document size threshold.",
+    "Do not reproduce hosted French commentary or facsimile scans without provenance and rights review.",
+    "Historical Gospel transfers are not prescriptive 1962 rubrics and do not modify the canonical calendar or Proper.",
+    "Do not modify the separate Scripture correspondences registry."
+  ],
+  "count": {
+    "facsimilePdfSearchIndexedRelevantPassagesRead": 1,
+    "originalPagePhotosVisuallyVerified": 0,
+    "additionalICRSPArticlesScreened": 0,
+    "additionalIndependentCrossHostedArticleCounts": 0,
+    "originalCriticalEditionCollations": 0,
+    "productionChanges": 0
+  },
+  "publicationApproved": false
+}
