@@ -1,0 +1,389 @@
+{
+  "schema": "AO_TLM_B96_ITALY_43_SOURCE_BUILDING_TRIAGE_V1",
+  "checked_on": "2026-10-26",
+  "source_index": "Latin Mass Directory Italy 117 positions, prior B95 PR #1716",
+  "scope": "EVIDENCE_ONLY_NO_MASTER_IMPORT",
+  "baseline": {
+    "research_master": "B91",
+    "effective_physical_groups": 2576,
+    "historical_group_rows": 2581,
+    "venue_source_rows": 2684,
+    "mass_times_rows": 4681,
+    "previous_verified_times": 3347
+  },
+  "qa": {
+    "screened": 43,
+    "source_specific_evidence_rows": 29,
+    "proposed_distinct_site_research_deltas": 4,
+    "existing_or_probable_alias_decisions": 10,
+    "remaining_holds": 29,
+    "new_actual_master_sites": 0,
+    "new_public_pins": 0,
+    "new_verified_schedules": 0,
+    "b91_rows_changed": 0
+  },
+  "original_sources_recommended_for_review": [
+    "https://www.ordo-militiae-templi.org/militia/santa-messa-tridentina-toscana/",
+    "https://santuariopontelungo.it/orari",
+    "https://icrsslecce.wixsite.com/icrsslecce/orari",
+    "https://www.diocesi.torino.it/site/wd-appuntamenti/il-card-repole-alla-chiesa-della-misericordia-in-torino-per-la-messa-in-rito-antico-e-in-cattedrale-per-la-giornata-interdiocesana-della-vita-consacrata/"
+  ],
+  "important_date_specific": {
+    "effective": "2026-10-25",
+    "city": "Legnano",
+    "historic_site": "Chiesa di Sant'Erasmo",
+    "new_site": "Chiesa di San Pietro, Via Girardi",
+    "liturgical_usage": "OLD_AMBROSIAN_1954_NOT_ROMAN_1962",
+    "decision": "HISTORIC_LOCATION_CLOSED_TO_LATIN_MASS_AND_SEPARATE_NEW_SITE_NEEDS_SOURCE_AND_RITE_MAPPING"
+  },
+  "proposals": [
+    {
+      "id": "RG-B96-6B639D8118FF",
+      "source_id": "AO-B96-IT-031",
+      "b95_id": "B95-IT-031",
+      "name": "Chiesa di San Donato",
+      "locality": "Siena, Toscana",
+      "source": "https://www.ordo-militiae-templi.org/militia/santa-messa-tridentina-toscana/",
+      "gate": "RESEARCH_ONLY_PROPOSED"
+    },
+    {
+      "id": "RG-B96-5F2EB31399CF",
+      "source_id": "AO-B96-IT-088",
+      "b95_id": "B95-IT-088",
+      "name": "Chiesa di San Bernardo",
+      "locality": "Arezzo, Toscana",
+      "address": "Via Margaritone 6, Arezzo, Italy",
+      "source": "https://marcotosatti.com/2026/08/04/arezzo-messa-antica-domenicale-da-ottobre-potenziamento-e-cambio-dorario-alleati-delleucarestia/",
+      "gate": "RESEARCH_ONLY_PROPOSED"
+    },
+    {
+      "id": "RG-B96-9F003A896813",
+      "source_id": "AO-B96-IT-102",
+      "b95_id": "B95-IT-102",
+      "name": "Chiesa di Santa Cristina a Pimonte",
+      "locality": "Prato, Toscana",
+      "address": "Via della Chiesa Santa Cristina 2, Prato, Italy",
+      "source": "https://www.diocesiprato.it/wd-annuario-enti/vicariato-prato-est-313/santa-cristina-a-pimonte-250/",
+      "gate": "RESEARCH_ONLY_PROPOSED"
+    },
+    {
+      "id": "RG-B96-8D5C0E774FAB",
+      "source_id": "AO-B96-IT-113",
+      "b95_id": "B95-IT-113",
+      "name": "Santuario Nostra Signora di Pontelungo",
+      "locality": "Albenga, Liguria",
+      "address": "Viale Pontelungo 89, 17031 Albenga, Italy",
+      "source": "https://santuariopontelungo.it/orari",
+      "gate": "RESEARCH_ONLY_PROPOSED"
+    }
+  ],
+  "source_cases": [
+    {
+      "source_index_id": "B95-IT-019",
+      "decision": "HOLD_B91_UNLOCATED_ALIAS",
+      "potential_b91_id": "RG-699AC7323DA5",
+      "url": null,
+      "reason": "Imperia Annunziata: B91 dedication without street; do not count as novel"
+    },
+    {
+      "source_index_id": "B95-IT-021",
+      "decision": "EXISTING_B91_ALIAS_REVIEW",
+      "potential_b91_id": "RG-20DDA8C9C2AC",
+      "url": "https://www.diocesi.torino.it/site/wd-appuntamenti/il-card-repole-alla-chiesa-della-misericordia-in-torino-per-la-messa-in-rito-antico-e-in-cattedrale-per-la-giornata-interdiocesana-della-vita-consacrata/",
+      "reason": "Turin diocese documents 8 February 2026 old Roman rite Mass; original church likely generic Mercy B91 group"
+    },
+    {
+      "source_index_id": "B95-IT-029",
+      "decision": "HOLD_NO_CURRENT_1962_ATTESTATION",
+      "potential_b91_id": null,
+      "url": "https://www.sancarloborromeo.org/la-chiesa.html",
+      "reason": "Sessa Aurunca San Carlo: operator historic church, no proved current 1962 use"
+    },
+    {
+      "source_index_id": "B95-IT-031",
+      "decision": "PROPOSED_NEW_RESEARCH_SITE",
+      "potential_b91_id": null,
+      "url": "https://www.ordo-militiae-templi.org/militia/santa-messa-tridentina-toscana/",
+      "reason": "Siena San Donato direct organizer old rite Mass; separate from Castello della Magione in Poggibonsi"
+    },
+    {
+      "source_index_id": "B95-IT-032",
+      "decision": "HOLD_BUILDING_ONLY",
+      "potential_b91_id": null,
+      "url": "https://www.comune.monopoli.ba.it/Vivere-il-comune/Luoghi/Chiesa-San-Francesco-D-Assisi",
+      "reason": "Monopoli San Francesco church Largo Plebiscito; 2026 festivities not 1962 Mass proof"
+    },
+    {
+      "source_index_id": "B95-IT-035",
+      "decision": "HOLD_TWO_BUILDINGS_TEMPORARY_HOST",
+      "potential_b91_id": null,
+      "url": "https://summorumpontificumcorreggio.blogspot.com/p/in-diocesi.html",
+      "reason": "Reggio Emilia San Giovannino original and San Filippo Neri temp host for restoration; effective date unknown"
+    },
+    {
+      "source_index_id": "B95-IT-043",
+      "decision": "HOLD_NO_CURRENT_ORIGINAL_1962_SOURCE",
+      "potential_b91_id": null,
+      "url": null,
+      "reason": "Varese San Martino: no current old rite owner source"
+    },
+    {
+      "source_index_id": "B95-IT-044",
+      "decision": "HOLD_ONLY_ORDINARY_RITE",
+      "potential_b91_id": null,
+      "url": "https://orarimesse.it/ravennacervia",
+      "reason": "Punta Marina San Massimiano parish verified, no 1962 notice"
+    },
+    {
+      "source_index_id": "B95-IT-047",
+      "decision": "HOLD_RITE_UNCONFIRMED",
+      "potential_b91_id": null,
+      "url": "https://orarimesse.it/noto",
+      "reason": "Noto San Michele site identifiable, current generic Roman Mass not 1962 attestation"
+    },
+    {
+      "source_index_id": "B95-IT-054",
+      "decision": "HOLD_NO_CURRENT_SOURCE",
+      "potential_b91_id": null,
+      "url": null,
+      "reason": "Cremona San Siro e Sepolcro unconfirmed old rite use"
+    },
+    {
+      "source_index_id": "B95-IT-057",
+      "decision": "EXISTING_B91_BUILDING",
+      "potential_b91_id": "RG-16BAA3A598C2",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "reason": "Piccolino Chiesetta Sant Antonio is B91 historical venue"
+    },
+    {
+      "source_index_id": "B95-IT-058",
+      "decision": "HOLD_HISTORIC_OLD_AMBROSIAN_SITE_CLOSED",
+      "potential_b91_id": null,
+      "url": "https://www.legnanonews.com/aree-geografiche/legnano/2026/10/11/nessun-rito-religioso-sara-piu-celebrato-nella-chiesa-di-santerasmo-a-legnano/1480438/",
+      "reason": "Legnano Sant Erasmo old Ambrosian Mass transferred to San Pietro effective 2026-10-25; not Roman 1962"
+    },
+    {
+      "source_index_id": "B95-IT-059",
+      "decision": "EXISTING_B91_BUILDING",
+      "potential_b91_id": "RG-6FA18F105A71",
+      "url": "https://icrsslecce.wixsite.com/icrsslecce/orari",
+      "reason": "Lecce Sant Anna on Via Libertini 13 already present"
+    },
+    {
+      "source_index_id": "B95-IT-060",
+      "decision": "HOLD_NO_CURRENT_ORIGINAL_1962_SOURCE",
+      "potential_b91_id": null,
+      "url": null,
+      "reason": "Milano Santa Maria della Consolazione old rite not confirmed"
+    },
+    {
+      "source_index_id": "B95-IT-062",
+      "decision": "HOLD_BUILDING_ONLY",
+      "potential_b91_id": null,
+      "url": "https://www.lombardiabeniculturali.it/architetture/schede/LC120-00622/",
+      "reason": "Lecco Santa Marta owner building no old rite"
+    },
+    {
+      "source_index_id": "B95-IT-064",
+      "decision": "HOLD_DISTINCT_BUILDING_NEEDS_CURRENT_OWNER",
+      "potential_b91_id": null,
+      "url": "https://ritoantico.it/domenica",
+      "reason": "Randazzo San Nicolo not equal B91 Santa Maria della Volta; independent rite list no direct current 1962 notice"
+    },
+    {
+      "source_index_id": "B95-IT-067",
+      "decision": "HOLD_NO_CURRENT_ORIGINAL_1962_SOURCE",
+      "potential_b91_id": null,
+      "url": null,
+      "reason": "Valogno historic church only, no rite evidence"
+    },
+    {
+      "source_index_id": "B95-IT-068",
+      "decision": "EXISTING_B91_BUILDING",
+      "potential_b91_id": "RG-265633616566",
+      "url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "reason": "Innichen Franziskanerkirche St Leopold original FSSP site, owner numbering 17A vs municipal 14 require geocode review"
+    },
+    {
+      "source_index_id": "B95-IT-069",
+      "decision": "HOLD_INSTITUTION_NOT_PHYSICAL_PLACE",
+      "potential_b91_id": null,
+      "url": null,
+      "reason": "Fraternita San Filippo Neri Villafranca name institutional, no exact Mass church"
+    },
+    {
+      "source_index_id": "B95-IT-070",
+      "decision": "EXISTING_B91_BUILDING",
+      "potential_b91_id": "RG-BFDE85452DA9",
+      "url": "https://icrsslecce.wixsite.com/icrsslecce/orari",
+      "reason": "Carmiano Li Sala served at Via Novoli 73, existing B91"
+    },
+    {
+      "source_index_id": "B95-IT-071",
+      "decision": "HOLD_BROAD_REGION",
+      "potential_b91_id": null,
+      "url": "https://www.diocesi.ancona.it/orari-s-messe/",
+      "reason": "Ancona province Madonna del Rosario too vague for a building"
+    },
+    {
+      "source_index_id": "B95-IT-072",
+      "decision": "HOLD_NO_CURRENT_ORIGINAL_1962_SOURCE",
+      "potential_b91_id": null,
+      "url": null,
+      "reason": "Rustano Madonna del Rosario unconfirmed"
+    },
+    {
+      "source_index_id": "B95-IT-074",
+      "decision": "HOLD_POTENTIAL_B91_ALIAS",
+      "potential_b91_id": "RG-851C08B3BAD5",
+      "url": null,
+      "reason": "Acquapendente Santa Chiara monastery may match generic unlocated B91 monastery church"
+    },
+    {
+      "source_index_id": "B95-IT-075",
+      "decision": "HOLD_NO_PUBLIC_1962_SOURCE",
+      "potential_b91_id": null,
+      "url": null,
+      "reason": "Regnano-villa monastery no corroborated public 1962 Mass"
+    },
+    {
+      "source_index_id": "B95-IT-077",
+      "decision": "HOLD_ONLY_SECONDARY_RECURRENCE",
+      "potential_b91_id": null,
+      "url": "https://ritoantico.it/lombardia/mello/oratorio-dei-confratelli",
+      "reason": "Mello oratory Via Don Protasio Antonioli 2; 2/4/5 Sundays independently reported but organizer not confirmed"
+    },
+    {
+      "source_index_id": "B95-IT-078",
+      "decision": "EXISTING_B91_ALIAS_REVIEW",
+      "potential_b91_id": "RG-1AB4B0A20509",
+      "url": "https://chiesasavona.it/2026/10/20/le-confraternite-di-savona-pregano-per-i-defunti-con-lottavario/",
+      "reason": "Savona Oratory Ss Pietro e Caterina location Via dei Mille; B91 orphan same name; current local Mass not necessarily 1962"
+    },
+    {
+      "source_index_id": "B95-IT-080",
+      "decision": "HOLD_NO_CURRENT_ORIGINAL_1962_SOURCE",
+      "potential_b91_id": null,
+      "url": null,
+      "reason": "Parma Orsoline oratory unverified"
+    },
+    {
+      "source_index_id": "B95-IT-088",
+      "decision": "PROPOSED_NEW_RESEARCH_SITE",
+      "potential_b91_id": null,
+      "url": "https://marcotosatti.com/2026/08/04/arezzo-messa-antica-domenicale-da-ottobre-potenziamento-e-cambio-dorario-alleati-delleucarestia/",
+      "reason": "Arezzo San Bernardo Via Margaritone 6; 2026 local organizer notice republished, no official parish timetable"
+    },
+    {
+      "source_index_id": "B95-IT-090",
+      "decision": "EXISTING_B91_BUILDING",
+      "potential_b91_id": "RG-FC8495E0E039",
+      "url": "https://liturgiatradizionalefriuli.blogspot.com/2026/09/ss-messe-in-rito-antico-nel-mese-di.html",
+      "reason": "Paluzza San Daniele already B91 with dated Sep and Oct 2026 old rite notices"
+    },
+    {
+      "source_index_id": "B95-IT-095",
+      "decision": "HOLD_CITY_MISMATCH",
+      "potential_b91_id": null,
+      "url": "https://www.latinmassdir.org/venue/san-giuseppe-artigiano-cervaro-italy/",
+      "reason": "Cervaro parish locality/province contradictory in directory; historical link, no 2026 owner attestation"
+    },
+    {
+      "source_index_id": "B95-IT-096",
+      "decision": "HOLD_HISTORIC_MASS_NOT_CURRENT",
+      "potential_b91_id": null,
+      "url": "https://www.diocesiprato.it/wd-annuario-enti/vicariato-prato-sud-est-315/paperino-san-martino-280/",
+      "reason": "Paperino San Martino Piazza della Chiesa 6, historic pre-2020 old rite but no 2026 owner confirmation"
+    },
+    {
+      "source_index_id": "B95-IT-098",
+      "decision": "HOLD_BUILDING_ONLY",
+      "potential_b91_id": null,
+      "url": "https://www.discoverteramo.it/Localita/Torricella-Sicura/Corvacchiano/Attrazioni/Chiesa-di-SantAndrea/6-401-1.html",
+      "reason": "Corvacchiano Sant Andrea identified geographically; no 1962 owner evidence"
+    },
+    {
+      "source_index_id": "B95-IT-099",
+      "decision": "HOLD_BROAD_REGION",
+      "potential_b91_id": null,
+      "url": null,
+      "reason": "Sant Andrea Corsini unspecified Arezzo church site"
+    },
+    {
+      "source_index_id": "B95-IT-102",
+      "decision": "PROPOSED_NEW_RESEARCH_SITE",
+      "potential_b91_id": null,
+      "url": "https://www.diocesiprato.it/wd-annuario-enti/vicariato-prato-est-313/santa-cristina-a-pimonte-250/",
+      "reason": "Prato Santa Cristina diocese building + current independent 1962 list; no fresh owner-certified time"
+    },
+    {
+      "source_index_id": "B95-IT-106",
+      "decision": "EXISTING_B91_BUILDING",
+      "potential_b91_id": "RG-FCF30927E2BA",
+      "url": "https://www.latinmassdir.org/country/it/?view=list",
+      "reason": "Napoli Santa Maria della Sanita Barra already B91 Corso Sirena 68"
+    },
+    {
+      "source_index_id": "B95-IT-107",
+      "decision": "HOLD_MULTI_CHURCH_OPERATOR",
+      "potential_b91_id": null,
+      "url": "https://www.diocesi.terni.it/santa-maria-maggiore-e-san-nicola-in-collescipoli/",
+      "reason": "Terni Collescipoli parish groups Santa Maria Maggiore and San Nicola distinct buildings; Mass building ambiguous"
+    },
+    {
+      "source_index_id": "B95-IT-109",
+      "decision": "HOLD_NO_CURRENT_ORIGINAL_1962_SOURCE",
+      "potential_b91_id": null,
+      "url": null,
+      "reason": "Santissimo Salvatore Silvi no 1962 first party witness"
+    },
+    {
+      "source_index_id": "B95-IT-110",
+      "decision": "HOLD_NO_CURRENT_ORIGINAL_1962_SOURCE",
+      "potential_b91_id": null,
+      "url": null,
+      "reason": "Lucca Madonna del Soccorso sanctuary no 1962 witness"
+    },
+    {
+      "source_index_id": "B95-IT-111",
+      "decision": "HOLD_ONLY_ORDINARY_MASS",
+      "potential_b91_id": null,
+      "url": "https://www.diocesidialbengaimperia.it/wd-annuario-enti/san-bartolomeo-al-mare-san-bartolomeo-apostolo-4224/",
+      "reason": "San Bartolomeo Madonna della Rovere has ordinary parish Mass without 1962 proof"
+    },
+    {
+      "source_index_id": "B95-IT-112",
+      "decision": "HOLD_NO_CURRENT_ORIGINAL_1962_SOURCE",
+      "potential_b91_id": null,
+      "url": null,
+      "reason": "Grandate Nativity sanctuary no owner old rite witness"
+    },
+    {
+      "source_index_id": "B95-IT-113",
+      "decision": "PROPOSED_NEW_RESEARCH_SITE",
+      "potential_b91_id": null,
+      "url": "https://santuariopontelungo.it/orari",
+      "reason": "Albenga Pontelungo sanctuary direct 11:30 traditional Latin Mass and physical address"
+    },
+    {
+      "source_index_id": "B95-IT-114",
+      "decision": "HOLD_OWNER_BUILDING_ONLY",
+      "potential_b91_id": null,
+      "url": "https://parrocchiesondrio.it/chiese/santa-maria-della-sassella",
+      "reason": "Sondrio Madonna Sassella sanctuary identified, no owner 1962 liturgy confirmed"
+    },
+    {
+      "source_index_id": "B95-IT-115",
+      "decision": "HOLD_OWNER_ORDINARY_MASS_ONLY",
+      "potential_b91_id": null,
+      "url": "https://www.reggioemiliawelcome.it/it/scopri-reggio-emilia/arte-e-cultura/chiese-e-luoghi-di-culto/chiese-del-territorio/chiesa-della-madonna-della-rosa",
+      "reason": "Correggio Madonna della Rosa Sunday Mass ordinary, not old rite attested"
+    }
+  ],
+  "companion_xlsx": {
+    "name": "Ad_Orientem_B96_Italy_43_Building_Decisions_4_Research_Deltas_2026-10-26.xlsx",
+    "sha256": "0501eda42e47a19047211a61c20c579e41202ea333726c2ffcaaf9ff85a71c3f",
+    "in_repository": false
+  },
+  "publication_gate": "Every proposed site needs exact original physical address, full B91 historical aliases, current 1962 books, and separately verified schedule. Research proposals are not public pins or new counted B91 sites."
+}
