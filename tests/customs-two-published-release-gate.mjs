@@ -88,6 +88,14 @@ assert.equal(grouped.length,37);
 assert.equal(new Set(grouped).size,37);
 assert.ok(groups.find(g=>g.key==="christmas_epiphany").articles.some(a=>a.id==="EPIP-003"));
 assert.ok(groups.find(g=>g.key==="candlemas_lent").articles.some(a=>a.id==="CRIB-001"));
+// The separate priestly Roman Ritual witness must be a directly inspectable
+// source in the EPIP-003 historical folio, not merely a prose attribution.
+const epiphanyAttestation=seed.attestations.find(x=>x.custom_id==="EPIP-003");
+const historical=read("data/customs/customs-historical-folios.v1.json");
+const epiphanyHistory=historical.entries.find(x=>x.custom_id==="EPIP-003");
+assert.ok(epiphanyAttestation?.source_ids.includes("CATHCULT-HOUSE"));
+assert.ok(epiphanyHistory?.source_ids.includes("CATHCULT-HOUSE"));
+assert.ok(registered.get("CATHCULT-HOUSE")?.url?.startsWith("https://"));
 assert.match(calendarCustomArticle("EPIP-003").caution.en,/priest|Roman Ritual/i);
 assert.match(calendarCustomArticle("CRIB-001").caution.en,/1962/);
 // Fr McNamara's 2015 answer concerns church Nativity scenes. Do not cite
