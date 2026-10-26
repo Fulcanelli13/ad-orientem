@@ -1,5 +1,5 @@
 name: ICRSP source gap register integrity
-# Includes B11 51-article source-subject, historical polemic and publication release guards.
+# Includes B11 and B12 source-subject, exact lection boundaries, historical holds and publication release guards.
 on:
   push:
     branches: [governance/icrsp-source-inventory-1665]
@@ -22,6 +22,8 @@ on:
       - 'data/source-text/icrsp-france-b11-40-content-evidence-topics.v1.json'
       - 'data/source-text/icrsp-france-b11-51-crossdomain-content-handoff.v1.json'
       - 'tests/test_icrsp_b11_51_content_owner_handoff.py'
+      - 'data/source-text/icrsp-france-b12-atomic-claim-and-lection-boundaries.v1.json'
+      - 'tests/test_icrsp_b12_liturgical_claim_boundaries.py'
   workflow_dispatch:
 
 permissions:
@@ -45,3 +47,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b10_lent_pentecost_content_screen.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b11_commentary_theme_review.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b11_51_content_owner_handoff.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b12_liturgical_claim_boundaries.py' -v
