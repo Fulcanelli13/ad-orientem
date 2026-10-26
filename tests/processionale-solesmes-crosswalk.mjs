@@ -303,7 +303,7 @@ test('archived Psalm 23 and Psalm 46 files are only first-verse tone exemplars',
 
 test('Palm psalm old/new 1961 source editions remain distinct, unselected and not silently mixed', () => {
   const register=readJSON('data/research/processionale-roman-palm-psalter-editions-20261026.v1.json');
-  assert.equal(register.status,'ORIGINAL_1961_SCORES_VISUALLY_CONFIRMED_NOVUS_SOURCE_GABC_P46_WRONG_WORD_HOLD');
+  assert.equal(register.status,'ORIGINAL_1962_VATICAN_FACSIMILE_CONFIRMS_RESTORED_PALM_PSALMS_GABC46_QUARANTINED');
   assert.equal(register.candidates.length,2);
   assert.deepEqual(register.printedEdition.oldPages,['167','168']);
   assert.deepEqual(register.printedEdition.newPages,['143**','144**']);
@@ -330,7 +330,7 @@ test('Palm psalm old/new 1961 source editions remain distinct, unselected and no
   assert.equal(byPsalm.get(46).newer.status,'PRINTED_PAGE_CONFIRMS_OMNES_POPULI_GABC_WRONG_UNDERLAY_BLOCKING');
   assert.match(byPsalm.get(46).newer.exactLatin1962,/Omnes pópuli/);
   assert.match(byPsalm.get(46).newer.gabcFirstWords,/Omnes gentes/);
-  assert.equal(register.romanRule.primary1962Witness.inspection,'SEARCH_INDEX_EXTRACT_ONLY_FULL_PDF_TOO_LARGE_FOR_FACSIMILE_VIEW');
+  assert.equal(register.romanRule.primary1962Witness.inspection,'PRIMARY_PRINTED_1962_VATICAN_MISSAL_DIRECT_IMAGE_COLLATED');
 });
 
 test('original 1961 new-Psalter score images establish exact Psalm 46 incipit mismatch',()=>{
@@ -501,4 +501,41 @@ test('Psalm 46 1961 chant-line 9 and 10 are two halves of one biblical verse',()
   assert.deepEqual(ps.verseIncipits.slice(-2).map(x=>x.biblicalVerse),[9,9]);
   assert.deepEqual(ps.verseIncipits.slice(-2).map(x=>x.biblicalHalf),['A','B']);
   assert.equal(edition.sourceSafety.approvedRuntimeAssignments,0);
+});
+
+
+test('original Vatican 1962 Palm printed Missal governs Latin Psalm 23/46 and ceremony',()=>{
+ const source=readJSON('data/research/processionale-palm-1962-primary-facsimile-20261026.v1.json');
+ const edition=readJSON('data/research/processionale-roman-palm-psalter-editions-20261026.v1.json');
+ assert.equal(source.schema,'ao-roman1962-palm-distribution-primary-facsimile-collation-v1');
+ assert.equal(source.status,'PRIMARY_1962_PRINTED_SOURCE_VISUALLY_COLLATED_ROMAN_OWNER_SIGNOFF_PENDING');
+ assert.deepEqual(source.source.facsimiles.map(x=>x.printedPage),[130,131,132]);
+ assert.deepEqual(source.source.facsimiles.map(x=>x.url),[
+   'https://gregobase.selapa.net/sources/42/212.png',
+   'https://gregobase.selapa.net/sources/42/213.png',
+   'https://gregobase.selapa.net/sources/42/214.png'
+ ]);
+ assert.equal(source.ceremony.stageId,'PALM-R02');
+ assert.equal(source.ceremony.paragraph,12);
+ assert.match(source.ceremony.rule,/distribution finishes/);
+ assert.equal(source.ceremony.notAnAutomatedMusicTimer,true);
+ assert.equal(source.psalm23.firstLatin,'Domini est terra et quae replent eam');
+ assert.deepEqual(source.psalm23.printedVersePairs,[[1,2],[7,8],[9,10]]);
+ assert.equal(source.psalm46.firstLatin,'Omnes populi, plaudite manibus');
+ assert.equal(source.psalm46.printedPairs.length,5);
+ assert.deepEqual(source.psalm46.printedPairs.map(x=>x.lines),
+   [[1,2],[3,4],[5,6],[7,8],[9,10]]);
+ assert.equal(source.psalm46.printedPairs.at(-1).biblicalVerseBoth,9);
+ assert.equal(source.psalm46.gabc19316,false);
+ assert.deepEqual(source.psalm46.doxologyLines,
+   ['Gloria Patri, et Filio','Sicut erat in principio']);
+ assert.equal(edition.romanRule.status,'PRIMARY_1962_PRINT_VISUALLY_VERIFIED_TEXT_RUBRIC_OWNER_SIGNOFF_PENDING');
+ assert.equal(edition.romanRule.primary1962Witness.inspection,'PRIMARY_PRINTED_1962_VATICAN_MISSAL_DIRECT_IMAGE_COLLATED');
+ assert.equal(edition.romanRule.primary1962Witness.humanOwnerAccepted,false);
+ assert.equal(source.promotion.sourceTextDirectImageVerified,true);
+ assert.equal(source.promotion.sourceRubricDirectImageVerified,true);
+ assert.equal(source.promotion.ownerSignedOff,false);
+ assert.equal(source.promotion.completePsalmPointingCertified,false);
+ assert.equal(source.promotion.approvedScholaRuntimeScores,0);
+ assert.equal(edition.sourceSafety.approvedRuntimeAssignments,0);
 });
