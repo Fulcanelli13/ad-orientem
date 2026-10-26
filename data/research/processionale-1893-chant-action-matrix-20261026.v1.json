@@ -35,7 +35,8 @@
       "interpretation": "1893 text specifies standing before procession; Roman 1962 action needs its own authority.",
       "status": "HISTORICAL_CONTEXT",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "STAGE_EVENT_CONTEXT_ONLY_MELODY_NOT_CERTIFIED"
     },
     {
       "id": "PM93.RG02",
@@ -51,7 +52,8 @@
       "interpretation": "Two cantors genuflect before the high altar and begin; does not prescribe congregation posture automatically.",
       "status": "HISTORICAL_CONTEXT",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "STAGE_EVENT_CONTEXT_ONLY_MELODY_NOT_CERTIFIED"
     },
     {
       "id": "PM93.RG03",
@@ -67,7 +69,8 @@
       "interpretation": "The historical rubric 'Surgunt omnes et ordinatim procedunt' follows Sancta Maria; exact modern cue remains 1962-owned.",
       "status": "COMPARE_CUE_BOUNDARY",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "STAGE_EVENT_CONTEXT_ONLY_MELODY_NOT_CERTIFIED"
     },
     {
       "id": "PM93.RG04",
@@ -78,12 +81,13 @@
       "movement": "NOT_SPECIFIED",
       "performer": "CANTORS_AND_CHOIR",
       "existingStageId": "ROG-R02",
-      "existingMusicEventId": "AO.MUS.ROG.LITANY_OPEN",
+      "existingMusicEventId": null,
       "ocrLineSpan": "3198-3223",
       "interpretation": "Explicitly labelled longer chant for the Litany. Research candidate for chant choice only, NOT a different text sequence.",
       "status": "HISTORICAL_MELODY_LEAD",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "NO_CURRENT_MUSIC_EVENT_CONTAINS_THIS_HISTORICAL_CHANT_OR_RUBRIC"
     },
     {
       "id": "PM93.PA01",
@@ -99,7 +103,8 @@
       "interpretation": "Two historical distribution antiphons; the 1962 Roman restored rite additionally has psalm verses not reproduced at this spot in 1893.",
       "status": "HISTORICAL_CONTRAST",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "STAGE_EVENT_CONTEXT_ONLY_MELODY_NOT_CERTIFIED"
     },
     {
       "id": "PM93.PA02",
@@ -115,7 +120,8 @@
       "interpretation": "Repetition until palms distributed rather than a timed song.",
       "status": "HISTORICAL_CONTRAST",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "STAGE_EVENT_CONTEXT_ONLY_MELODY_NOT_CERTIFIED"
     },
     {
       "id": "PM93.PA03",
@@ -126,12 +132,13 @@
       "movement": "WALKING_AFTER_DIALOGUE",
       "performer": "DEACON_AND_CHOIR",
       "existingStageId": "PALM-R04",
-      "existingMusicEventId": "AO.MUS.PALM.GLORIA_LAUS",
+      "existingMusicEventId": null,
       "ocrLineSpan": "2292-2302",
       "interpretation": "Historical departure exchange; do not import adjacent pre-1955 action order into the revised 1962 Palm rite.",
       "status": "HISTORICAL_CONTRAST",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "NO_CURRENT_MUSIC_EVENT_CONTAINS_THIS_HISTORICAL_CHANT_OR_RUBRIC"
     },
     {
       "id": "PM93.PA04",
@@ -142,12 +149,13 @@
       "movement": "WALKING",
       "performer": "CHOIR",
       "existingStageId": "PALM-R04",
-      "existingMusicEventId": "AO.MUS.PALM.GLORIA_LAUS",
+      "existingMusicEventId": null,
       "ocrLineSpan": "2303-2400",
       "interpretation": "Book explicitly permits all or a subset until procession ends. Listed historical antiphons not an automatic 1962 playlist.",
       "status": "OPTIONAL_REPERTORY_LEAD",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "NO_CURRENT_MUSIC_EVENT_CONTAINS_THIS_HISTORICAL_CHANT_OR_RUBRIC"
     },
     {
       "id": "PM93.CN01",
@@ -163,7 +171,8 @@
       "interpretation": "Full antiphon repeats after each verse of Nunc dimittis.",
       "status": "COMPARE_1962_WITHIN_SHARED_REPERTORY",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "STAGE_EVENT_CONTEXT_ONLY_MELODY_NOT_CERTIFIED"
     },
     {
       "id": "PM93.CN02",
@@ -174,12 +183,13 @@
       "movement": "AFTER_DISTRIBUTION",
       "performer": "CHOIR",
       "existingStageId": "CND-R04",
-      "existingMusicEventId": "AO.MUS.CND.DISTRIBUTION",
+      "existingMusicEventId": null,
       "ocrLineSpan": "5246-5264",
       "interpretation": "Historical Exsurge omitted at this position in 1962 Roman Missal. Explicit DO NOT ADD status.",
       "status": "PROHIBITED_IN_1962",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "NO_CURRENT_MUSIC_EVENT_CONTAINS_THIS_HISTORICAL_CHANT_OR_RUBRIC"
     },
     {
       "id": "PM93.CN03",
@@ -190,12 +200,13 @@
       "movement": "WALKING_AFTER_DIALOGUE",
       "performer": "DEACON_AND_CHOIR",
       "existingStageId": "CND-R05",
-      "existingMusicEventId": "AO.MUS.CND.PROCESSION",
+      "existingMusicEventId": null,
       "ocrLineSpan": "5265-5275",
       "interpretation": "Historical start exchange.",
       "status": "HISTORICAL_CONTEXT",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "NO_CURRENT_MUSIC_EVENT_CONTAINS_THIS_HISTORICAL_CHANT_OR_RUBRIC"
     },
     {
       "id": "PM93.CN04",
@@ -211,7 +222,8 @@
       "interpretation": "Attested processional antiphon; reader currently includes corresponding text.",
       "status": "SHARED_REPERTORY",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "STAGE_EVENT_CONTEXT_ONLY_MELODY_NOT_CERTIFIED"
     },
     {
       "id": "PM93.CN05",
@@ -227,7 +239,8 @@
       "interpretation": "Chant with verse beginning Cum inducerent puerum.",
       "status": "SHARED_REPERTORY",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "STAGE_EVENT_CONTEXT_ONLY_MELODY_NOT_CERTIFIED"
     },
     {
       "id": "PM93.CN06",
@@ -243,7 +256,8 @@
       "interpretation": "Specific entrance cue ('Et ingrediendo Ecclesiam') distinct from generic motion.",
       "status": "COMPARE_CUE_BOUNDARY",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "STAGE_EVENT_CONTEXT_ONLY_MELODY_NOT_CERTIFIED"
     },
     {
       "id": "PM93.CC01",
@@ -259,7 +273,8 @@
       "interpretation": "Historical Pange opening timed to leaving altar. Current 1962 trigger is independently controlled.",
       "status": "HISTORICAL_CONTEXT",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "STAGE_EVENT_CONTEXT_ONLY_MELODY_NOT_CERTIFIED"
     },
     {
       "id": "PM93.CC02",
@@ -270,12 +285,13 @@
       "movement": "PROCESSIONAL_OR_FEAST_REPERTORY_NOT_TIMED",
       "performer": "CHOIR",
       "existingStageId": "CORPUS-R03",
-      "existingMusicEventId": "AO.MUS.CORPUS.PANGE",
+      "existingMusicEventId": null,
       "ocrLineSpan": "3772-3831",
       "interpretation": "Hymns printed under Corpus Christi, not proof that all are performed in every procession or interchangeable with Pange.",
       "status": "INDEX_LEAD_ONLY",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "NO_CURRENT_MUSIC_EVENT_CONTAINS_THIS_HISTORICAL_CHANT_OR_RUBRIC"
     },
     {
       "id": "PM93.CC03",
@@ -286,12 +302,13 @@
       "movement": "IF_LOCAL_CUSTOM_AND_NEEDED",
       "performer": "CHOIR",
       "existingStageId": "CORPUS-R03",
-      "existingMusicEventId": "AO.MUS.CORPUS.PANGE",
+      "existingMusicEventId": null,
       "ocrLineSpan": "4050-4063",
       "interpretation": "Explicitly qualified 'Pro locorum consuetudine, interseri potest, si opus fuerit' -- local custom and need govern interpolation.",
       "status": "LOCAL_CUSTOM_CONDITIONAL",
       "originalLatinQuoteStatus": "INCIPIT_ONLY",
-      "facsimileVerified": false
+      "facsimileVerified": false,
+      "eventMapping": "NO_CURRENT_MUSIC_EVENT_CONTAINS_THIS_HISTORICAL_CHANT_OR_RUBRIC"
     }
   ],
   "criticalDistinctions": [
@@ -307,5 +324,6 @@
     "Obtain genuine first-edition 1888 facsimile before declaring 1888/1893 differences",
     "Match chant variants with source-specific Cantus IDs and proper melodic versions, not title strings alone",
     "Resolve 1962 Roman chant placement in existing Mass music owner for chants considered for UI"
-  ]
+  ],
+  "mappingPolicy": "An existingMusicEventId denotes contextual stage linkage, never approval of the 1893 musical notation or historical variant. Null explicitly means no current music-event owner for that specific historical text/action. Any new chant choice requires a source-owner decision in existing research, not promotion by this matrix."
 }
