@@ -1,5 +1,7 @@
 // Exact three-form reconstruction of the 1962 Paschal Preface from the
 // historical [Pasch] source, which encodes all three alternatives together.
+// Accept only the two structurally identical versions found in sources:
+// the original ~ line-continuation marks or the pinned flattened host rows.
 // Does not choose the Mass. Never invent a translation on missing source data.
 // Rubric (1962 Missal): Vigil = nocte; Easter day through Saturday in albis
 // = die; later until Ascension vigil = hoc.
@@ -15,7 +17,7 @@ export const EASTER_PREFACE_AUTHORITY=
 const templates=Object.freeze({
   la:Object.freeze({
     title:/^Paschalis(?:\r?\n)/u,
-    alternatives:/sed in~\s*hoc potíssimum~\s*\(sed tempore Passionis\)\s*hac potíssimum nocte~\s*\(sed octava Paschæ\)\s*hac potíssimum die~/u,
+    alternatives:/sed in(?:~\s*|\s+)hoc potíssimum~?\s*\(sed tempore Passionis\)\s*hac potíssimum nocte~?\s*\(sed octava Paschæ\)\s*hac potíssimum die~?/u,
     variants:Object.freeze({
       VIGIL_NIGHT:"sed in hac potíssimum nocte",
       OCTAVE_DAY:"sed in hac potíssimum die",
@@ -26,7 +28,7 @@ const templates=Object.freeze({
   }),
   en:Object.freeze({
     title:/^Easter(?:\r?\n)/u,
-    alternatives:/in this season~\s*\(sed tempore Passionis\)\s*on this night~\s*\(sed octava Paschæ\)\s*on this day~/u,
+    alternatives:/in this season~?\s*\(sed tempore Passionis\)\s*on this night~?\s*\(sed octava Paschæ\)\s*on this day~?/u,
     variants:Object.freeze({
       VIGIL_NIGHT:"on this night",
       OCTAVE_DAY:"on this day",
