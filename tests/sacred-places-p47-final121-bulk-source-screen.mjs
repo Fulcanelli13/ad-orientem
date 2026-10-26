@@ -1,0 +1,50 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const p47=read("data/geography/research/sacred-places-p47-final121-bulk-source-screen.v1.json");
+const p45=read("data/geography/research/sacred-places-p45-first150-source-evidence.v1.json");
+const p43=read("data/geography/research/sacred-places-p43-open35-global500-reconciliation.v1.json");
+const p25=read("data/geography/research/sacred-places-p25-151-source-screen.v1.json");
+const p32=read("data/geography/research/sacred-places-p32-acquisition500-live-reconciled.v1.json");
+const inv=read("data/geography/research/sacred-geography-curated-750-site-crosswalk-2026-10-10.v1.1.json");
+assert.equal(p47.schema,"AO_SACRED_PLACES_P47_FINAL121_BULK_SOURCE_SCREEN_V1");
+assert.equal(p47.status,"RESEARCH_ONLY_ZERO_NEW_CANONICAL_PLACES");
+assert.equal(p47.research_rows.length,121);
+assert.equal(p47.counts.rows_screened,121);
+assert.equal(p47.counts.new_source_pages_individually_reviewed,11);
+assert.equal(p47.counts.new_canonical_places_added,0);
+assert.equal(p47.counts.new_release_links_added,0);
+assert.equal(p47.counts.new_independently_verified_worship_building_geo,0);
+const already=new Set([...p25.all_151_priority_source_screen.map(x=>x.candidate_id),...p45.cohort.map(x=>x.candidate_id),"SG-INV-0115"]);
+const expected=p43.global_acquisition_500.filter(x=>!x.known_canonical_link&&!already.has(x.candidate_id));
+assert.equal(expected.length,121);
+assert.deepEqual(p47.research_rows.map(x=>x.candidate_id),expected.map(x=>x.candidate_id));
+const p45ids=new Set(p45.cohort.map(x=>x.candidate_id)),p47ids=new Set(),original=new Map(inv.places.map(x=>[x.candidate_id,x]));
+const p32ids=new Set(p32.leads.map(x=>x.candidate_id));
+let oldRefs=0,sourceReview=0;const countries=new Set(),lanes={};
+for(const x of p47.research_rows){
+ assert.ok(!p47ids.has(x.candidate_id));p47ids.add(x.candidate_id);
+ assert.ok(p32ids.has(x.candidate_id));assert.ok(!p45ids.has(x.candidate_id));
+ assert.ok(original.has(x.candidate_id));assert.equal(x.site_name,original.get(x.candidate_id).name);
+ assert.equal(x.country,original.get(x.candidate_id).country);
+ assert.equal(x.original_discovery_sources_count,original.get(x.candidate_id).discovery_sources_count);
+ assert.equal(x.publication_state,"RESEARCH_ONLY_NOT_PUBLISHED");
+ assert.equal(x.map_ready,false);
+ if(x.original_discovery_sources_count>0)oldRefs++;
+ countries.add(x.country);lanes[x.verification_lane]=(lanes[x.verification_lane]||0)+1;
+ if(x.custodial_or_civic_source_review){
+  sourceReview++;const s=x.custodial_or_civic_source_review;
+  assert.ok(s.url.startsWith("https://"));assert.ok(s.issuer);assert.ok(s.identity_scope_note);
+  assert.equal(s.exact_new_building_geo_verified,false);
+  assert.equal(s.review_date,"2026-10-26");
+ }
+}
+assert.equal(p47ids.size,121);
+assert.equal(countries.size,21);
+assert.equal(oldRefs,p47.counts.with_inherited_discovery_references);
+assert.equal(sourceReview,11);
+assert.deepEqual(lanes,p47.counts.verification_lanes);
+assert.ok(p47.research_rows.some(x=>x.candidate_id==="SG-INV-0245"&&x.verification_lane==="SAME_TITLE_CATHOLIC_ANGLICAN_DISAMBIGUATION"));
+assert.ok(p47.research_rows.some(x=>x.candidate_id==="SG-INV-0622"&&x.verification_lane==="CLUSTER_OR_MANY_BUILDINGS_NOT_ONE_PLACE"));
+assert.ok(p47.research_rows.some(x=>x.candidate_id==="SG-INV-0259"&&x.verification_lane==="NON_CATHOLIC_OPERATING_SITE_REVIEW"));
+console.log("PASS P47: last 121 unscreened 500-queue leads across 21 countries, 11 accountable institutional source reviews, no new Places or OSM claims");

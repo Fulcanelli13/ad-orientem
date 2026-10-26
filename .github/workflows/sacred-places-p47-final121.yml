@@ -1,0 +1,20 @@
+name: Sacred Places P47 final 121 source review
+on:
+  pull_request:
+    paths:
+      - 'data/geography/research/sacred-places-p47-final121-bulk-source-screen.v1.json'
+      - 'tests/sacred-places-p47-final121-bulk-source-screen.mjs'
+      - '.github/workflows/sacred-places-p47-final121.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate-final121:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate final 121 research-only site records
+        run: node tests/sacred-places-p47-final121-bulk-source-screen.mjs
