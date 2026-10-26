@@ -1,0 +1,82 @@
+{
+  "schema": "AO_TLM_B90_FSSPX_FRANCE_FIRST_PARTY_SCREEN_20261026_V1",
+  "report_date": "2026-10-26",
+  "publication_state": "G0_RESEARCH_EVIDENCE_ONLY_NO_PUBLIC_RELEASE",
+  "baseline": {
+    "B89_distinct_provisional_sites": 2607,
+    "historical_canonical_group_ids": 2610,
+    "venue_source_rows": 2713,
+    "original_timetable_rows": 4681,
+    "previously_verified_timetable_rows": 3347
+  },
+  "source": {
+    "official_directory": "https://laportelatine.org/lieux",
+    "sampled_pages": [
+      "https://laportelatine.org/lieux",
+      "https://laportelatine.org/lieux/page/2",
+      "https://laportelatine.org/lieux/page/3",
+      "https://laportelatine.org/lieux/page/4",
+      "https://laportelatine.org/lieux/page/5"
+    ],
+    "record_granularity": "Mixed SSPX chapel/priory/school/house/institution entries; not one worship building per entry",
+    "reported_owner_directory_all_types": 254
+  },
+  "counts": {
+    "screened_distinct_source_entries": 118,
+    "existing_address_match_review": 76,
+    "existing_same_city_name_review": 5,
+    "excluded_institution_without_distinct_public_mass_site": 30,
+    "name_only_mismatched_city_hold": 3,
+    "unlocated_mission_hold": 1,
+    "institution_mass_use_unconfirmed": 1,
+    "new_owner_supported_G0_research_locations": 2,
+    "new_verified_mass_rows": 0,
+    "new_public_pins": 0
+  },
+  "new_research_site_admissions": [
+    {
+      "source_id": "LPL-B90-P02-11",
+      "research_group_id": "RG-B90-3379DA52FF04",
+      "country": "FR",
+      "name": "Oratoire Saint-Marcel",
+      "city": "Carnoux-en-Provence",
+      "address": "Impasse du Panorama, 13470 Carnoux-en-Provence (rez-de-chaussée côté garage)",
+      "first_party_detail": "https://laportelatine.org/lieux/marseille/carnoux",
+      "owner_mass_wording": "Sunday/feasts: consult priory for schedule",
+      "historic_source_address_conflict": "Older priory bulletin calls it immeuble Le Panorama, avenue du Mail, not established to be a separate site",
+      "status": "G0_RESEARCH_ONLY",
+      "schedule": "NOT_VERIFIED",
+      "geometry": "ENTRANCE_PIN_PENDING"
+    },
+    {
+      "source_id": "LPL-B90-P04-08",
+      "research_group_id": "RG-B90-39D1A3BBF010",
+      "country": "FR",
+      "name": "Sainte-Colombe de Vià",
+      "city": "Font-Romeu-Odeillo-Via",
+      "address": "6 rue des Jonquilles, 66120 Font-Romeu-Odeillo-Via",
+      "first_party_detail": "https://laportelatine.org/lieux/fabregues/font-romeu",
+      "owner_mass_wording": "Certain summer Sundays and feasts; do not infer regular weekly Sunday",
+      "status": "G0_RESEARCH_ONLY",
+      "schedule": "NOT_VERIFIED_SEASONAL_ONLY",
+      "geometry": "BUILDING_VS_CONTACT_ADDRESS_EXACT_PIN_PENDING"
+    }
+  ],
+  "projected_delta_only": {
+    "distinct_provisional_research_sites": 2609,
+    "historical_canonical_ID_records": 2612,
+    "venue_source_rows": 2715,
+    "original_mass_rows_preserved": 4681,
+    "original_verified_mass_rows_preserved": 3347
+  },
+  "methodology": "Owner page lists are primary existence and physical-address leads. Normalized name+address/locality matching gives review candidates, not certified same-building identities; school and ordinary institutional records excluded until public Mass is established. Compare both CANONICAL SITES and UNIFIED VENUES. New research additions were searched against B89 canonical and source text. Maintain all frozen IDs and no schedule row creation.",
+  "publication_gate": "No new public place IDs or exact geocoding; no current weekly/seasonal recurring timetable certification. The prior 44 Polish and 16 Italian holds are separate; do not recycle them into discovery admissions.",
+  "artifacts": {
+    "screening_xlsx": "Ad_Orientem_B90_France_SSPX_118_FirstParty_Entries_2026-10-26.xlsx",
+    "xlsx_sha256": "4bb58b682de0b7c1b12505d703f8a8e6b8006ed9103ebbd08c7275146e83a168",
+    "full_118_row_json_audit": "Ad_Orientem_B90_FirstParty_118_Research_Audit_2026-10-26.json",
+    "full_audit_sha256": "83b97ad9387a70dad5e1da090833e1b8bf15c55b0b9e1df6b9c2854fc94ce79d",
+    "location": "Separate conversation artifacts; not committed to repo",
+    "B89_source_master": "68-sheet-equivalent research ZIP unchanged"
+  }
+}

@@ -157,11 +157,22 @@ try{
   await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-rubric-action")]
     .some(x=>/blesses the offerings|bénit les offrandes/i.test(x.textContent)),
     null,{timeout:5000});
-  const offertory=await page.evaluate(()=>({
-    notes:[...document.querySelectorAll(".ao-missal-rubric-action")].map(x=>x.textContent),
-    link:document.querySelector(".ao-missal-inline-rubrics a")?.getAttribute("href"),
-    width:document.documentElement.scrollWidth-innerWidth,
-  }));
+  const offertory=await page.evaluate(()=>{
+    const block=document.querySelector(".ao-missal-inline-rubrics");
+    const style=block?getComputedStyle(block):null;
+    const bounds=block?.getBoundingClientRect();
+    return {
+      notes:[...document.querySelectorAll(".ao-missal-rubric-action")].map(x=>x.textContent),
+      link:document.querySelector(".ao-missal-inline-rubrics a")?.getAttribute("href"),
+      width:document.documentElement.scrollWidth-innerWidth,
+      type:block?{
+        fontSize:parseFloat(style.fontSize),lineHeight:parseFloat(style.lineHeight),
+        fontStyle:style.fontStyle,textAlign:style.textAlign,
+        border:parseFloat(style.borderLeftWidth)+parseFloat(style.borderRightWidth),
+        left:bounds.left,right:bounds.right,
+      }:null,
+    };
+  });
   assert.ok(offertory.notes.every(x=>lang==="fr"?x.startsWith("Le prêtre "):x.startsWith("The priest ")),
     "In-page priest rubrics must be localized");
   assert.equal(offertory.link,undefined,
@@ -173,6 +184,18 @@ try{
   assert.equal(await page.locator(".ao-canon-inline-source:visible").count(),0,
     "The source URL must not be repeated after every brief gesture");
   assert.ok(offertory.width<=1,"Missal inline Offertory rubric overflows phone width");
+  assert.ok(offertory.type,"Source-owned Missal rubric has vanished");
+  assert.ok(offertory.type.fontSize>=13&&offertory.type.fontSize<=15.1,
+    "Missal inline rubric no longer follows readable shared font scale");
+  assert.ok(offertory.type.lineHeight/offertory.type.fontSize>=1.49,
+    "Missal inline rubric uses compressed line spacing");
+  assert.equal(offertory.type.fontStyle,"italic");
+  assert.equal(offertory.type.textAlign,"center",
+    "Two-column Missal must retain the traditional centred source rubric");
+  assert.equal(offertory.type.border,0,
+    "Missal must not inherit LIVE's side rule");
+  assert.ok(offertory.type.left>=-1&&offertory.type.right<=width+1,
+    "Missal rubric escapes the page frame");
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.014.3"));
   await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-rubric-action")]
     .some(x=>/inclines his head|incline la tête/i.test(x.textContent)),

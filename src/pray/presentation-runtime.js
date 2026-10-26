@@ -234,8 +234,9 @@ function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,
 let CONF=freshConfessionState();
 let BEN={step:0,divinePraises:false,celebration:"ordinary",feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};
-// A direct return to public Benediction is offered only when Adoration is
-// entered FROM the public-rite reader. Fresh private Adoration stays quiet.
+// Adoration preserves an explicit, secondary handoff to the distinct public
+// Benediction reader. The wording indicates whether this is a first visit or
+// a return from that rite; opening Adoration never starts Benediction.
 let adorationReturnFromBenediction=false;
 let adorationQuietReturn=null;
 let FF={step:0,intention:false,communion:false};

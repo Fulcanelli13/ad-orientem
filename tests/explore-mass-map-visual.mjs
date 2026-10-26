@@ -4,6 +4,8 @@ import {mkdir,readFile,writeFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {PRELIMINARY_R49_TOTAL,PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED} from "../src/find/preliminary-directory-r49.js";
+const APPROVED_MASS_MAP_TOTAL=PRELIMINARY_R49_TOTAL+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED;
 
 // This acceptance captures the actual traditional Mass screen, which the
 // general app visual suite does not cover. No fake map data or synthetic UI.
@@ -85,9 +87,9 @@ try{
     await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().lens==="tlm"
       &&document.querySelector('#ao-find-modular-root [data-explore-lens="tlm"][data-find-view="map"]'),
       null,{timeout:30000});
-    await page.waitForFunction(()=>Number(document.querySelector(
-      '#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===1879,
-      null,{timeout:30000});
+    await page.waitForFunction(expected=>Number(document.querySelector(
+      '#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===expected,
+      APPROVED_MASS_MAP_TOTAL,{timeout:30000});
     // Give the external free map engine a bounded opportunity to render.
     await Promise.race([
       page.waitForSelector('.aoFindMap[data-ao-map-state="ready"]',
