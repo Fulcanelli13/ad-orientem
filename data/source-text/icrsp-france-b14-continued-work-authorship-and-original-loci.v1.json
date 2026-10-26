@@ -294,28 +294,7 @@
       }
     ]
   },
-  "directSourceTextCrosschecks": [
-    {
-      "articleId": "a0191_ancien",
-      "workSection": "Le Carême, Monday third week, leçon Naaman",
-      "icrspUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien",
-      "externalWorkUrl": "https://www.domgueranger.net/lannee-liturgique-le-careme-propre-du-temps/",
-      "correspondence": "Same Naaman cleansing as baptismal figure appears in both hosted texts, with very close French wording",
-      "witnessGrade": "TWO_DIGITAL_REPRODUCTIONS_NOT_INDEPENDENT_PRINT_OR_EDITORIAL_RECONSTRUCTION",
-      "originalPrinted1903EditionPageMatched": false,
-      "permissionToRepublish": false
-    },
-    {
-      "articleId": "a0198_ancien",
-      "workSection": "Le Carême, Saturday third week, station Susanna",
-      "icrspUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0198_ancien",
-      "externalWorkUrl": "https://www.domgueranger.net/lannee-liturgique-le-careme-propre-du-temps/",
-      "correspondence": "Same Roman station at Sainte-Susanne and selection of Susanna lection narrative, with very close French wording",
-      "witnessGrade": "TWO_DIGITAL_REPRODUCTIONS_NOT_INDEPENDENT_PRINT_OR_EDITORIAL_RECONSTRUCTION",
-      "originalPrinted1903EditionPageMatched": false,
-      "permissionToRepublish": false
-    }
-  ],
+  "directSourceTextCrosschecks": [],
   "patristicSourceUpgrade": {
     "b13Source": "data/source-text/icrsp-france-b13-patristic-loci-crossbranch-handoff.v1.json",
     "b13OriginalLanguageVerified": 0,
@@ -341,16 +320,20 @@
     "Do not treat online 1903-labelled web transcription as inspected photographed 1903 printed edition.",
     "Do not quote/reproduce post-Pentecost or Guéranger French passages, or modern translations, until rights certified.",
     "The actual 1962 Calendar/reader/ritual authority remains independent of historical commentary.",
-    "Where authorship is uncertain, cite the work with an explicit continuation note, not misattribute words to Guéranger."
+    "Where authorship is uncertain, cite the work with an explicit continuation note, not misattribute words to Guéranger.",
+    "Do not recertify a0191 and a0198 Guéranger hosted-transcription concordance in this file; the existing B14 source-claim owner already covers them."
   ],
   "totals": {
     "b10PostPentecostArticlesWithAuthorshipFlags": 22,
     "originalIndividualVolumeDayLociCriticallyVerified": 0,
-    "guérangerLentHostedPassageConcordances": 2,
+    "guérangerLentHostedPassageConcordances": 0,
     "ambroseLatinTextLocusLocated": 1,
     "modernCriticalLatinEditionCertifications": 0,
     "hippolytusGreekCriticalLociVerified": 0,
     "canonicalAuthorAttributionsChangedInProduction": 0,
-    "publicationApprovals": 0
-  }
+    "publicationApprovals": 0,
+    "existingLentConcordancesOwnedInParallelB14": 2
+  },
+  "preexistingLentCollationOwner": "data/source-text/icrsp-france-b14-gueranger-aphrahat-source-claims.v1.json",
+  "nonDuplicateContribution": "Historical personal-authorship correction for 22 Pentecost pages and original-language Latin Ambrose witness; the two Lent online Guéranger transcription comparisons are already covered by parallel B14 owner."
 }
