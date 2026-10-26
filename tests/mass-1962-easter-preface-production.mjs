@@ -168,6 +168,7 @@ try{
    const resolver=globalThis.AO_RUNTIME_V8.resolver;
    const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
    const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+   const {hasExact1962InAlbisSecretSourceOwner}=await import("/src/mass/1962-in-albis-secret-source.js");
    const d=await resolver.resolveDay("2026-04-12"),id=d.day.main.id;
    const original=d.proper.data;
    const raw=properToReaderSlots({...original,principalCelebrationId:id},{language:"fr"});
@@ -177,6 +178,26 @@ try{
    const corrected=properToReaderSlots({...p,principalCelebrationId:id},{language:"fr"});
    return {
      id,source:p.sourcePath,rawSecret:raw.slots.SECRET_SET.status,
+     sourceOwnerEligible:hasExact1962InAlbisSecretSourceOwner(original,id),
+     rawShape:{
+       path:original.sourcePath,
+       requestedCelebrationId:original.requestedCelebrationId??null,
+       principalCelebrationId:original.principalCelebrationId??null,
+       riteProfile:original.riteProfile??original.profile??null,
+       calendarCommemorations:(original.calendarCommemorations??[]).map(x=>({
+         path:x.path??null,inseparable:x.inseparable??null})),
+       appliedCommemorations:(original.appliedCommemorations??[]).map(x=>({
+         path:x.path??null,inseparable:x.inseparable??null})),
+       sourceSecret:(original.secrets??[]).map(x=>({
+         latin:String(x?.lat??x?.la??"").slice(0,115),
+         english:String(x?.en??"").slice(0,115),
+         french:String(x?.fr??"").slice(0,115),
+         sourcePath:x?.sourcePath??null,oneConclusion:Boolean(x?.oneConclusion)
+       })),
+       singularSecret:original.secret?{
+         lat:String(original.secret.lat??original.secret.la??"").slice(0,100),
+         fr:String(original.secret.fr??"").slice(0,100)}:null
+     },
      secret:corrected.slots.SECRET_SET.status,
      collect:corrected.slots.COLLECT_SET.status,
      postcommunion:corrected.slots.POSTCOMMUNION_SET.status,
