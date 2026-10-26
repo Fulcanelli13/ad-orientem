@@ -3,6 +3,7 @@
 // G0 evidence is not a recurring Mass schedule or permission to create a pin.
 import {auditVenue} from "./contracts.js";
 import {isMapPublishableGeo} from "./geo-provenance.js";
+import {unknownResearchClassification} from "./classification-evidence.js";
 
 const txt=x=>String(x??"").trim();
 const normalize=x=>txt(x).normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
@@ -44,6 +45,7 @@ function canonicalResearchRecord(row){
       authority:"SOURCE_UNCERTIFIED_FOR_CURRENT_MASS",
       fields_supported:["venue","physical_address"]}]),
     research:{group_id:id,batch:txt(row.batch),
+      classification:unknownResearchClassification({source_label:row.source_community_label}),
       building_source_url:txt(row.building_source_url),
       verification_state:"UNVERIFIED",map_state:"NOT_PUBLISHED",
       no_schedule_certification:true},
