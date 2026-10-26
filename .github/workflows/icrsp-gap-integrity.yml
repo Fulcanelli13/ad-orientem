@@ -95,6 +95,9 @@ on:
       - 'tools/icrsp/scan_b29_fresh_200.py'
       - 'tools/icrsp/consolidate_b29_fresh_200.py'
       - 'tests/test_icrsp_b29_363_81_200_nonoverlap.py'
+      - 'data/source-text/icrsp-france-b29-12-new-direct-topic-excerpts.v1.json'
+      - 'data/source-text/icrsp-france-b29-nine-stream-375-unique-topic-ledger.v1.json'
+      - 'tests/test_icrsp_b29_nine_stream_375_unique.py'
   workflow_dispatch:
 
 permissions:
@@ -146,3 +149,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b29_80_direct_source_topics_and_owner_holds.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b28_160_selected_excerpt_completion.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b29_363_81_200_nonoverlap.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b29_nine_stream_375_unique.py' -v
