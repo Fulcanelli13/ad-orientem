@@ -2,12 +2,14 @@
   "schema": "AO_ICRSP_B32_TWELVE_STREAM_464_UNIQUE_TOPICAL_REVIEW_LEDGER_V1",
   "asOf": "2026-10-26",
   "ownerPR": 1666,
-  "previous": "data/source-text/icrsp-france-b31-eleven-stream-444-unique-topic-ledger.v1.json",
+  "previous": "data/source-text/icrsp-france-b32-449-unique-direct-topic-ledger.v1.json",
   "newSource": "data/source-text/icrsp-france-b32-editorial20-fresh200.v1.json",
   "counts": {
     "eligibleCommentaryArticles": 783,
-    "previousDistinctReviewed": 444,
-    "newDirectReviews": 20,
+    "previousDistinctReviewedIncludingParallel": 449,
+    "articlesReadInThisTranche": 20,
+    "alreadyReadInParallel": 5,
+    "newDistinctDirectReviews": 15,
     "reviewedUnique": 464,
     "notYetDirectTopicReviewed": 319,
     "old250MetadataWaveFullyDirectReviewed": true,
@@ -68,7 +70,7 @@
     },
     {
       "articleId": "a0031_nouveau",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_FIVE_FRESH_B29"
     },
     {
       "articleId": "a0032_nouveau",
@@ -168,7 +170,7 @@
     },
     {
       "articleId": "a0078_nouveau",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0079_nouveau",
@@ -204,7 +206,7 @@
     },
     {
       "articleId": "a0088_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0089_nouveau",
@@ -228,7 +230,7 @@
     },
     {
       "articleId": "a0093_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_FIVE_FRESH_B29"
     },
     {
       "articleId": "a0093_nouveau",
@@ -320,7 +322,7 @@
     },
     {
       "articleId": "a0110_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0111_nouveau",
@@ -344,7 +346,7 @@
     },
     {
       "articleId": "a0116_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_FIVE_FRESH_B29"
     },
     {
       "articleId": "a0116_nouveau",
@@ -384,7 +386,7 @@
     },
     {
       "articleId": "a0127_nouveau",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0128_nouveau",
@@ -560,7 +562,7 @@
     },
     {
       "articleId": "a0180_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_FIVE_FRESH_B29"
     },
     {
       "articleId": "a0180_nouveau",
@@ -632,7 +634,7 @@
     },
     {
       "articleId": "a0192_nouveau",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0193_ancien",
@@ -672,7 +674,7 @@
     },
     {
       "articleId": "a0199_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0199_nouveau",
@@ -960,7 +962,7 @@
     },
     {
       "articleId": "a0352_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_FIVE_FRESH_B29"
     },
     {
       "articleId": "a0353_ancien",
@@ -1088,7 +1090,7 @@
     },
     {
       "articleId": "a0389_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0390_ancien",
@@ -1128,7 +1130,7 @@
     },
     {
       "articleId": "a0403_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0406_ancien",
@@ -1136,7 +1138,7 @@
     },
     {
       "articleId": "a0407_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0408_ancien",
@@ -1168,7 +1170,7 @@
     },
     {
       "articleId": "a0420_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0421_ancien",
@@ -1176,7 +1178,7 @@
     },
     {
       "articleId": "a0422_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0423_ancien",
@@ -1216,7 +1218,7 @@
     },
     {
       "articleId": "a0438_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0441_ancien",
@@ -1328,7 +1330,7 @@
     },
     {
       "articleId": "a0521_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0522_ancien",
@@ -1500,7 +1502,7 @@
     },
     {
       "articleId": "a0630_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0631_ancien",
@@ -1796,7 +1798,7 @@
     },
     {
       "articleId": "a0839_ancien",
-      "firstReadingCohort": "B32_FRESH200_EDITORIAL20"
+      "firstReadingCohort": "B32_EDITORIAL15_FRESH200"
     },
     {
       "articleId": "a0890_ancien",
