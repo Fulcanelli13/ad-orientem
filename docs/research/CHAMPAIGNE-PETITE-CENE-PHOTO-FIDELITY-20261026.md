@@ -29,7 +29,24 @@
 
 Native-camera samples make Jesus's facial modelling, blue garment and faces at the edges clearer than the existing small photo. The camera photo, however, is *cooler and more washed out* than the old reproduction, with some visible gallery reflection/photographic haze in its darker painted background. The [official Louvre image reference](https://collections.louvre.fr/ark:/53355/cl010062076) is useful for independent visual comparison of the same accession, but public webpage imagery is not an audited colour-managed master. Do not infer a formal colour pass from subjective screen comparison. Do **not** 'correct' it by matching an uncalibrated Google/Commons JPG. Colour requires cross-checking against a credible institution colour reference.
 
-The [Gallerix 3528×1881 photograph](https://gallerix.org/storeroom/1265835004/N/3648454315/) appears full-frame and may make a useful visual reference, but its independent reuse permission has **not been proven** and it is excluded from our public image archive or live app. Louvre/RMN professional photography has separate restrictions for uses outside its free-listed categories ([Louvre image terms](https://collections.louvre.fr/page/cgu)); the Bridgeman high-resolution master is paid and prohibited by the user's €0 rule.
+The [Gallerix 3528×1881 photograph](https://gallerix.org/storeroom/1265835004/N/3648454315/) appears full-frame and may make a useful visual reference, but its [published Terms of use, clause 7.2](https://gallerix.org/action/offerta/) restrict reproduction, copying, processing and distribution outside its site's offered functionality absent the copyright holder's permission. **Thus Gallerix is explicitly unsuitable for app packaging under the €0/no-outreach rule**, not merely a source with missing metadata. Louvre/RMN professional photography has separate restrictions for uses outside its free-listed categories ([Louvre image terms](https://collections.louvre.fr/page/cgu)); the Bridgeman high-resolution master is paid and prohibited by the user's €0 rule.
+
+### Additional exact-object source-discovery and rejection screen (26 October, round 2)
+
+**Scope:** Louvre *La Petite Cène* INV 1125 / MR 614 / Wikidata Q29863321. This must never be replaced by the visually similar but separate `INV 1124` *La Grande Cène* (158×233cm), a painting after Champaigne, another Last Supper by the artist, a cropped detail, or a digitally reconstructed version.
+
+| Lead examined | Identity / photographic evidence | Unrestricted worldwide app reuse | Decision |
+|---|---|---|---|
+| [Commons INV 1125 category](https://commons.wikimedia.org/wiki/Category:La_C%C3%A8ne%2C_dite_La_Petite_C%C3%A8ne_(Louvre_INV_1125)) | Only two extant file entries at review: 1112×591 and framed 2816×2112 | Distinct rights/provenance for each | **No new unseen candidate**; both already archived |
+| [Tangopaso](https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg) | Same exact INV1125. 2816×2112 camera capture, derivative D 2250×1208 | Photographer explicitly dedicates his OWN photo to public domain worldwide; caveat about independent laws/contracts | **Only independently self-dedicated candidate**; D visual hold remains |
+| [Commons Google-sourced copy](https://commons.wikimedia.org/wiki/File:Champaigne_Petite_C%C3%A8ne_Louvre.jpg) | Same INV1125, 1112×591 full painting, dark coherent appearance | PD-Art statement does not itself prove all cross-border distribution rights | Reference / retained staged fallback **not production approved** |
+| [Gallerix 3528×1881](https://gallerix.org/storeroom/1265835004/N/3648454315/) | Claimed same subject; full image available | [Terms of use §7.2](https://gallerix.org/action/offerta/) forbid copying/distribution outside site functionality without rights-holder permission; no independent grant proved | **BLOCK**, no reuse/download-to-release |
+| [POP Joconde](https://pop.culture.gouv.fr/notice/joconde/000PE000368) | Authoritative object and provenance, photography credited Hervé Lewandowski / RMN | Explicitly says photograph usage subject to authorization | **BLOCK** for asset; retain identity authority |
+| [Bridgeman Erich Lessing](https://www.bridgemanimages.com/en/champaigne/la-cene-dite-la-petite-cene-the-last-supper/painting-on-canvas/asset/9197875) | Explicit INV1125 full image 7912×4287 | Paid licence and proprietary photo credit | **BLOCK (€0 rule)** |
+| [Bridgeman Photo Josse](https://www.bridgemanimages.com/en/champaigne/the-small-last-supper-c-1648-oil-on-canvas/oil-on-canvas/asset/4614297) | Correct 80×149 cm painting, other photograph | Paid or separately controlled service | **BLOCK (€0 rule)** |
+| [Flickr similar Cène](https://www.flickr.com/photos/ceaedivinaluz/7164915275/) | Describes 158×233 cm, not INV1125 (likely Grande Cène); marked All Rights Reserved | Restricted | **REJECT** incorrect object and rights |
+
+**Search conclusion:** No additional demonstrably free, clean, frame-free, high-fidelity, worldwide-reusable photograph found in the sources inspected. Source discovery is exhausted for this targeted round, not asserted complete for the entire internet. Continue only if a genuinely new independently licensed exact-object image appears; do not relabel the same two Commons images as fresh discoveries or repeatedly search general web galleries. Preserve all source citations and release=0.
 
 ### Actual Home/Calendar integration: technical PASS, NOT a photograph release (26 October addendum)
 
@@ -45,8 +62,8 @@ The [Gallerix 3528×1881 photograph](https://gallerix.org/storeroom/1265835004/N
 1. Compare derivative D **at full scale** with original boundaries, ensuring that no genuine painted content has been cut to remove the frame. The crop is **not yet signed off**.
 2. Verify actual tonal and colour fidelity against reliable museum reference. Do not artificially darken, saturate or reconstruct.
 3. Confirm reuse rights in all app distribution jurisdictions, plus whether the Louvre site restrictions apply to the independently dedicated photograph.
-4. **Standalone D layout test passed** at 320/390/768/1440px. Remaining task: test real Calendar/Home surfaces (not just the standalone photo review page) without vertical centre-cropping or navigation regressions.
+4. **Standalone D layout test passed** at 320/390/768/1440px. **Actual Home/Calendar component test passed** for two dates at 320/390px (8 of 8 surfaces, SHA-verified D image, simulated rights only). The strengthened strict horizontal-overflow assertion workflow remains pending at last check; no live production navigation or publication proved.
 5. Only after checks explicitly set photo release statuses to true and use the **same** approved source in Holy Thursday and Pentecost Ember Wednesday; do not duplicate.
 6. Keep old archival Ugolino provenance while removing its framed photo from active Holy Thursday selection.
 
-**Current decision:** `PHOTO_D_PREFERRED_RESEARCH_PENDING_COLOR_BOUNDS_RIGHTS_AND_APP_QA`. Production releases = **0**. Editorial approvals = **2**.
+**Current decision:** `PHOTO_D_PREFERRED_RESEARCH_PENDING_COLOR_BOUNDS_RIGHTS_AND_STRICT_OVERFLOW_RETEST`. Production releases = **0**. Editorial approvals = **2**.
