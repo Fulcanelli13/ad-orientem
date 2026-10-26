@@ -1,0 +1,33 @@
+name: B93 Find research-only staging
+
+on:
+  pull_request:
+    paths:
+      - "tools/directory/stage-b91-research-only.py"
+      - "tools/directory/validate-b91-research-core.py"
+      - "tests/directory-b93-research-staging.py"
+      - "tests/directory-b93-nonpublication.mjs"
+      - "src/find/contracts.js"
+      - "src/find/data-service.js"
+      - ".github/workflows/directory-b93-research-staging.yml"
+  workflow_dispatch:
+
+jobs:
+  b93-nonpublication-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Python staging parser and failure-mode checks
+        run: |
+          python3 -m py_compile tools/directory/stage-b91-research-only.py
+          python3 tests/directory-b93-research-staging.py
+      - name: Actual Find publisher rejects preview-only records
+        run: node tests/directory-b93-nonpublication.mjs
+      # B82/B91 XLSX files are NOT stored in this repository.
+      # This workflow never claims full pinned-binary workbook parity.
