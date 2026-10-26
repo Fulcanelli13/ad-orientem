@@ -1,0 +1,116 @@
+{
+  "schema": "AO_TLM_B98_CONSOLIDATED_RESEARCH_OPERATIONAL_CORE_20261026_V1",
+  "scope": "B91_FULL_OPERATIONAL_CORE_PLUS_B97_APPEND_ONLY_THREE_RESEARCH_SITES_NOT_APP_OR_MAP_PUBLICATION",
+  "predecessor": {
+    "version": "B91",
+    "workbook": "Ad_Orientem_B91_Lean_Consolidated_Operational_Core_2026-10-26.xlsx",
+    "sha256": "1e52538a341f5e9576d967cf5c58ac9b409808f1b98dace41ff7066285002f57",
+    "canonical": 2581,
+    "physical": 2581,
+    "source_venues": 2684,
+    "mass_times": 4681,
+    "previously_verified": 3347,
+    "effective_sites": 2576,
+    "existing_aliases": 5
+  },
+  "successor": {
+    "version": "B98",
+    "workbook": "Ad_Orientem_B98_Consolidated_Research_Operational_Core_2026-10-26.xlsx",
+    "sha256": "848fb2fcadda58b1c22bc02e83a019bfab6947d8bddf86eb3cdfa4021bf05c77",
+    "bytes": 2110954,
+    "worksheets": 13,
+    "canonical": 2584,
+    "physical": 2584,
+    "source_venues": 2687,
+    "mass_times": 4681,
+    "previously_verified": 3347,
+    "effective_sites": 2579,
+    "existing_aliases": 5,
+    "contains_unaltered_full_operational_rows": true,
+    "embedded_b82_historical_47_sheets": false
+  },
+  "inherited_parity": {
+    "exact_all_cell_equality": true,
+    "sheets_unchanged": [
+      "CANONICAL SITES",
+      "PHYSICAL SITES",
+      "UNIFIED VENUES",
+      "MASS TIMES",
+      "B91 EFFECTIVE SITES",
+      "B91 ALIAS LINKS"
+    ],
+    "parent_counts_verified": true,
+    "export_readback_pass": true
+  },
+  "research_admissions": {
+    "new_research_group_count": 3,
+    "new_group_and_source_ids": [
+      {
+        "group_id": "RG-B96-8D5C0E774FAB",
+        "source_id": "AO-B96-IT-113",
+        "place": "Santuario Nostra Signora di Pontelungo",
+        "city": "Albenga",
+        "liturgy_current_status": "OWNER_PAGE_TRIDENTINE_MASS_SCHEDULE_AVAILABLE_NOT_TIMETABLE_VERIFIED"
+      },
+      {
+        "group_id": "RG-B96-5F2EB31399CF",
+        "source_id": "AO-B96-IT-088",
+        "place": "Chiesa di San Bernardo",
+        "city": "Arezzo",
+        "liturgy_current_status": "2026_ORGANIZER_TEXT_REPUBLISHED_NOT_OWNER_CURRENT_SCHEDULE"
+      },
+      {
+        "group_id": "RG-B96-6B639D8118FF",
+        "source_id": "AO-B96-IT-031",
+        "place": "Chiesa di San Donato",
+        "city": "Siena",
+        "liturgy_current_status": "HISTORIC_2025_LITURGY_AND_CHANGE_OF_CUSTODY_OCT_2026_STATUS_UNPROVEN"
+      }
+    ],
+    "release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+    "no_new_verified_schedules": true,
+    "no_new_venue_coordinates": true,
+    "no_new_public_place_ids": true,
+    "no_changed_existing_identity": true
+  },
+  "other_decisions": {
+    "prato": {
+      "place": "Chiesa di Santa Cristina a Pimonte",
+      "candidate_group": "RG-B96-9F003A896813",
+      "status": "HOLD_NOT_ADMITTED_NEEDS_CURRENT_OWNER_1962_MASS_EVIDENCE"
+    },
+    "legnano": {
+      "new_church": "Chiesa di San Pietro, Legnano",
+      "previous_church": "Chiesa di Sant'Erasmo",
+      "effective_date": "2026-10-25",
+      "ritual_books": "AMBROSIAN_1954_NOT_ROMAN_1962",
+      "status": "SEPARATE_RITE_HISTORICAL_AND_MOVED_RECORD_NOT_IN_B98_ROMAN_ADMISSIONS"
+    }
+  },
+  "input_provenance": {
+    "b97_pr": 1719,
+    "b97_workbook": "Ad_Orientem_B97_Three_Italy_Research_Admissions_Ambrosian_Move_2026-10-26.xlsx",
+    "b97_manifest": "data/directory/research/b97-italy-three-append-only-physical-research-sites-and-ambrosian-relocation.v1.json",
+    "b91_pr": 1709
+  },
+  "quality_controls": [
+    "B91 source SHA256 explicitly pinned",
+    "All 6 B91 inherited data/alias sheet rows checked against final XLSX readback",
+    "New 3 research ids/source ids unique",
+    "B91 4,681 MASS TIMES rows all 28 cells unchanged",
+    "3 added physical rows have no public Place IDs",
+    "New 3 venue rows have no coordinates",
+    "New 3 source rows claim zero previously verified Mass times",
+    "No Rome/Italy 1962 inference from Ambrosian transfer",
+    "Keep B82 47-sheet research archive as separate preserved file"
+  ],
+  "production_status": "UNPUBLISHED_RESEARCH_MASTER_ONLY",
+  "next_large_batch": "Poland 117 independent 1962 venue leads vs B98 92 Polish historical canonical rows; do not subtract counts or claim new sites without owner-location identity. Independently source check eight 2026 additions and seek current parish/diocesan confirmations before promoting.",
+  "source_urls": [
+    "https://santuariopontelungo.it/orari",
+    "https://www.arcidiocesi.siena.it/siena-la-chiesa-di-s-donato-assegnata-dallarcidiocesi-allordine-equestre-del-santo-sepolcro-di-gerusalemme/",
+    "https://www.ordo-militiae-templi.org/militia/santa-messa-tridentina-toscana/",
+    "https://www.latinmassdir.org/trends/2026/pl/"
+  ],
+  "notes": "The 13-sheet B98 workbook is a separate generated file delivered in chat; the draft PR contains this manifest and QA scripts only, not the binary itself. Merging a research manifest will not make any public map or Mass-time changes."
+}
