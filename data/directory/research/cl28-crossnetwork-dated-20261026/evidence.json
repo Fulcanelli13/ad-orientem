@@ -1,7 +1,7 @@
 {
   "schema": "AO_CL28_CROSS_NETWORK_DATE_SPECIFIC_OPERATOR_BULK_V1",
   "as_of": "2026-10-26",
-  "method": "19? Count only data rows; do not project generic recurrence or treat PDF-link existence as parsed PDF",
+  "method": "Count exactly 18 individually source-listed future event rows; never project recurring schedules, infer content from PDF link visibility, or treat research source dates as publication approvals.",
   "new_source_listed_candidates": [
     {
       "research_source_event_key": "CL28-001",
