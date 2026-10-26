@@ -49,6 +49,9 @@ for(let i=0;i<index.batches.length;i++){
     assert.equal(item.releaseStatus,"RESEARCH_IMPORT_NOT_EDITORIALLY_APPROVED");
     assert.equal(item.sha256,sha256(item.gabc),"GABC bytes changed for "+item.id);
     assert.ok(item.gabc.includes("("));
+    assert.match(item.gabc,/^\s*\((?:c[1-4]|f[1-4])\)/i,
+      "A staged Gregorian staff must begin with an explicit clef: "+item.id);
+    assert.ok(item.gabc.includes("(::)"),"Missing final double bar: "+item.id);
     const hashes=byHash.get(item.sha256)??[];
     hashes.push(item.id);byHash.set(item.sha256,hashes);
     const key=item.officePart+":"+item.incipit.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
