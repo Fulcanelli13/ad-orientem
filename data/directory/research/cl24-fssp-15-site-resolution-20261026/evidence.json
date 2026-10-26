@@ -198,13 +198,17 @@
   ],
   "high_priority_operational_exception": {
     "source_place_id": "CL14-DE-FSSP-007",
-    "status": "TEMPORARILY_CLOSED_PER_LOCAL_FSSP",
-    "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/recklinghausen/aktuelles.php",
-    "reported_replacement_weekday_church": "St Gertrudis, Heidestraße 21, 45659 Recklinghausen",
-    "replacement_disposition": "PROVISIONAL_SEPARATE_SITE_LEAD_NO_AUTO_CANONICAL_LINK",
-    "historical_source_times_retained": true,
-    "all_future_dates_at_original_church_held": true,
-    "alternate_site_future_dates_held": true
+    "status": "CLOSURE_OR_VENUE_TRANSFER_UNVERIFIED_SOURCE_CONFLICT",
+    "primary_operator_timetable_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/recklinghausen/messzeitentermine.php",
+    "primary_operator_timetable_observation": "FSSP local Messzeiten/Termine page lists St Joseph at Grullbadstraße 94 for Thursday 18:00, first Friday, following Saturday and feasts; it does not say closed.",
+    "parish_office_url": "https://stantonius.katholisch-re.de/seelsorge-kontakte/pfarrbuero",
+    "parish_office_scope": "ST_JOSEPH_PARISH_OFFICE_MOMENTAN_GESCHLOSSEN_ONLY",
+    "office_closure_is_not_church_closure": true,
+    "unverified_previous_claim": "Older research assertion of temporary church closure and weekday relocation to St Gertrudis has no corroborating source on the cited current FSSP local page. Treat as UNVERIFIED and do not publish as fact.",
+    "historically_recorded_mass_patterns_retained": true,
+    "no_published_future_dates": true,
+    "provisional_alternative_venue_automatic_admission": false,
+    "future_venue_requires_positive_operator_dated_confirmation": true
   },
   "release_policy_ref": "publication-standard.md"
 }
