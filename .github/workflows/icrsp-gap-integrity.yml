@@ -149,6 +149,10 @@ on:
       - 'tests/test_icrsp_b36_661_unique_last122.py'
       - 'data/source-text/icrsp-france-b36-50-inside70-crossworkstream-dedup.v1.json'
       - 'tests/test_icrsp_b36_parallel50_inside70.py'
+      - 'data/source-text/icrsp-france-b38-53-nonoffice-source-inspections.v1.json'
+      - 'data/source-text/icrsp-france-b38-nine-office-out-of-scope-reads.v1.json'
+      - 'data/source-text/icrsp-france-b38-783-unique-source-article-passages.v1.json'
+      - 'tests/test_icrsp_b38_all783_passage_coverage.py'
   workflow_dispatch:
 
 permissions:
@@ -214,6 +218,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b35_parallel_35_50_exact_dedup.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b36_661_unique_last122.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b36_parallel50_inside70.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b38_all783_passage_coverage.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b34_505_direct_and_source_error.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b34_541_union_and_242_priority.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b35_576_direct_and_207_queue.py' -v
