@@ -112,6 +112,40 @@ for(const pointer of [
    fixed([{lat:pointer,en:"",fr:""}]),ID,normalizer),null,
    "Foreign named-source pointer improperly accepted: "+pointer);
 }
+// The real host's French [Secreta] is already populated with the correct
+// conclusion and body, but its attested donor row order is macro BEFORE body.
+// This exact source-order reversal must be repaired, even though all three
+// language fields are nonempty. Conflicting complete prayers remain protected.
+const originalFrenchDonorOrder=[PER_DOM.fr,pinned.languages.fr.rows[1]].join("\n");
+const frenchDonorOrdered=fixed([{lat:recovered.lat,en:recovered.en,
+ fr:originalFrenchDonorOrder}]);
+const reordered=recover1962InAlbisSecretFromPinnedSource(
+ frenchDonorOrdered,ID,normalizer);
+assert.ok(reordered,"Exact source-attested French macro-first prayer must be recovered");
+assert.equal(reordered.fr,recovered.fr);
+const reorderedProper=await recoverReaderProperOmissions(frenchDonorOrdered,{
+ hostResolver:mockHost,principalCelebrationId:ID
+});
+assert.equal(reorderedProper.secrets[0].fr,recovered.fr);
+assert.equal(reorderedProper.secrets[0].sourceEvidence.schema,
+ "AO_IN_ALBIS_1962_SECRET_SOURCE_V1");
+assert.equal(properToReaderSlots(reorderedProper,{language:"fr"})
+ .slots.SECRET_SET.status,"READY");
+assert.equal(frenchDonorOrdered.secrets[0].fr,originalFrenchDonorOrder,
+ "Do not mutate the host original");
+const changedFrenchDonorOrder=fixed([{lat:recovered.lat,en:recovered.en,
+ fr:originalFrenchDonorOrder.replace("bonheur sans fin","une joie différente")}]);
+assert.equal(recover1962InAlbisSecretFromPinnedSource(
+ changedFrenchDonorOrder,ID,normalizer),null,
+ "A superficially similar but textually different complete French prayer is not certified");
+const conclusionOnly=fixed([{lat:recovered.lat,en:recovered.en,fr:PER_DOM.fr}]);
+assert.equal(recover1962InAlbisSecretFromPinnedSource(
+ conclusionOnly,ID,normalizer),null,
+ "A conclusion alone is not proof of source-equivalent French text");
+assert.equal(recover1962InAlbisSecretFromPinnedSource(
+ fixed([{lat:"Foreign Latin prayer.",en:recovered.en,fr:originalFrenchDonorOrder}]),
+ ID,normalizer),null,"French donor order must not override unrelated Latin");
+
 const placeholder=fixed([{lat:"",en:"$Per Dominum",fr:""}]);
 assert.ok(recover1962InAlbisSecretFromPinnedSource(placeholder,ID,normalizer),
  "Unresolved source macro is not an authentic conflicting translated Secret");
