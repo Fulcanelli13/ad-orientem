@@ -12,9 +12,9 @@ This is an actual **frozen-ID, row-level audit of every one of the 4,681 histori
 | Historically VERIFIED status | 3,347 | Source audit status, **not** a 26 Oct live-bookable/public certification |
 | Unverified | 1,334 | Includes source-less placeholders |
 | Unverified with source URL **and** exact time/day string | **296** | Existing assertions to adjudicate, not 296 newly discovered or verified Masses |
-| Cohort 1 | **200** | Provider/organizational-source URLs; ranked by explicit time and shared-page efficiency |
-| Cohort 2 | **71** | Further provider/organization URL reviews |
-| Secondary-source replacement holds | **25** | Twenty adorientem.church plus five Latin Mass Directory-type research claims: obtain owner source |
+| Cohort 1 | **200** | Provider/organizational-source rows **with existing frozen source IDs**; ranked for first review |
+| Cohort 2 | **71** | Further provider/organization URL reviews, **including five missing-source-ID Mauritius holds** |
+| Unverified rows with no frozen venue-source ID | **5** | Special B74-labelled Mauritius entries; within Cohort 2; require identity linkage, do not mint duplicates |\n| Historically VERIFIED rows with no venue-source ID | **8** | B74-labelled existing source entries; provenance linkage required before any public use |\n| Secondary-source replacement holds | **25** | Twenty adorientem.church plus five Latin Mass Directory-type research claims: obtain owner source |
 | Unverified missing an actionable source/day/time combination | 1,038 | Of these, 998 lack an official source URL and 40 contain some source but miss day or clock |
 | Verified but Mass-type/rite blank | 2,108 | No inference of 1962 Missal |
 | Verified but timezone blank | 6 | Hold calendar exports requiring local zone |
@@ -25,8 +25,8 @@ This is an actual **frozen-ID, row-level audit of every one of the 4,681 histori
 
 ## What is saved permanently
 
-- `audit.v1.json` — all 296 unverified source/time candidates with frozen Mass row ID, source ID, group ID, effective physical anchor ID, original exact-day pattern, clock, frequency, original source URL/excerpt, review flags, and publication hold. Separately contains all 106 candidate same-anchor/day/time collisions and all 234 contributing original verified rows.
-- `tools/directory/validate-cl27-bulk-schedule-audit.py` — reconstructs original rows from **CL2 checksum-pinned shards**, ensures 200+71+25 exact coverage and 106 collisions, confirms no source IDs/groups lost or new approvals introduced.
+- `audit.v1.json` — all 296 unverified source/time candidates with original B53 source-row label plus immutable CL2 `historical_row` identity, supplied venue source ID (possibly empty), group ID, effective physical anchor ID, original exact-day pattern, clock, frequency, original source URL/excerpt, review flags, and publication hold. Separately contains all 106 candidate same-anchor/day/time collisions and all 234 contributing original verified rows.
+- `tools/directory/validate-cl27-bulk-schedule-audit.py` — reconstructs original rows from **CL2 checksum-pinned shards**, ensures 200+71+25 exact coverage and explicit holds for five unlinked Mauritius rows and 106 collisions, confirms no source IDs/groups lost or new approvals introduced.
 - `.github/workflows/directory-cl27-bulk-schedule-review.yml` — runs the permanent regression, not a short-lived downloader.
 
 **A same-site/same-clock match is not proof of a duplicated Mass**. Different seasons, dates, editions or genuinely distinct parallel rites must be adjudicated before any row is retired.
