@@ -1,0 +1,4271 @@
+{
+  "schema": "AO_HISTORIA_P3_COVENANT_ARC_RECONCILIATION_V1",
+  "status": "RESEARCH_ONLY_NO_APP_OR_PUBLICATION_APPROVAL",
+  "created": "2026-10-21",
+  "sourceOwners": {
+    "p0": {
+      "repo": "Fulcanelli13/ad-orientem",
+      "branch": "research/historia-salutis-p0-matrix-20261016",
+      "path": "data/explore/historia-salutis-p0-master-crosswalk.v1.json",
+      "sha": "704f490ca2af370bbaf4cb418ed787537b662060"
+    },
+    "chapterMatrix": {
+      "fileName": "Ad_Orientem_Historia_Salutis_Master_Matrix_v13.xlsx",
+      "libraryFileId": "libfile_f795853ffd708191ae2146684a5e1028",
+      "sheet": "Chapter Master",
+      "rowCount": 78
+    },
+    "p3": {
+      "repo": "Fulcanelli13/ad-orientem",
+      "branch": "research/historia-p3-esther-span-20261017",
+      "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+      "sha": "cbc5be02da7cd54af5da1f998f9c6c343772bab5"
+    }
+  },
+  "policies": {
+    "narrativeArcsTrackCovenantalPromiseProgression": true,
+    "doNotEquate12ArcsWith12Covenants": true,
+    "firstPromiseNotAFormallyNamedCovenant": true,
+    "propheticNewCovenantNotYetEstablished": true,
+    "noParallelsThisStage": true,
+    "noArtificial78ChapterFullText": true,
+    "retainP3Canonical93ScriptureBeats": true,
+    "retain37P3ResearchMovementsNotFinalChapters": true,
+    "attestedScriptureVerbatimOnly": true,
+    "preventInventedGenealogy": true,
+    "matthewAndLukeSeparate": true,
+    "doNotPromoteUnapprovedBridge": true,
+    "retainedExistingAtlasEventIds": true,
+    "noAppRelease": true
+  },
+  "covenants": [
+    {
+      "id": "cv:first-promise",
+      "title_en": "The First Promise",
+      "kind": "PROMISE_NOT_EXPLICIT_NAMED_COVENANT",
+      "reference": "Genesis 3:15",
+      "anchorEventKey": "biblical:passage:genesis-3-1-24",
+      "anchorStatus": "PASSAGE_WITHIN_EVENT"
+    },
+    {
+      "id": "cv:noah",
+      "title_en": "Noahic Covenant",
+      "kind": "EXPLICIT_SCRIPTURAL_COVENANT",
+      "reference": "Genesis 9:8–17",
+      "anchorEventKey": "biblical:passage:genesis-9-8-17",
+      "anchorStatus": "EXACT_EVENT"
+    },
+    {
+      "id": "cv:abraham",
+      "title_en": "Abrahamic Covenant",
+      "kind": "EXPLICIT_SCRIPTURAL_COVENANT",
+      "reference": "Genesis 15:1–21",
+      "anchorEventKey": "biblical:passage:genesis-15-1-21",
+      "anchorStatus": "EXACT_EVENT"
+    },
+    {
+      "id": "cv:sinai",
+      "title_en": "Sinai Covenant",
+      "kind": "EXPLICIT_SCRIPTURAL_COVENANT",
+      "reference": "Exodus 19–24",
+      "anchorEventKey": "biblical:passage:exodus-19-16-20",
+      "anchorStatus": "PARTIAL_EVENT_ONLY"
+    },
+    {
+      "id": "cv:david",
+      "title_en": "Davidic Royal Promise",
+      "kind": "ROYAL_PROMISE_SCRIPTURALLY_CALLED_COVENANT",
+      "reference": "2 Samuel 7:12–16; Psalm 89:3–4",
+      "anchorEventKey": null,
+      "anchorStatus": "REFERENCE_GAP"
+    },
+    {
+      "id": "cv:new-covenant-promised",
+      "title_en": "Promised New Covenant",
+      "kind": "PROPHETIC_ANNOUNCEMENT_NOT_NEW_INSTITUTION",
+      "reference": "Jeremiah 31:31–34",
+      "anchorEventKey": null,
+      "anchorStatus": "REFERENCE_GAP"
+    },
+    {
+      "id": "cv:new-covenant-christ",
+      "title_en": "New and Eternal Covenant in Christ",
+      "kind": "NEW_COVENANT",
+      "reference": "Luke 22:20",
+      "anchorEventKey": "biblical:event:cenacle-e1",
+      "anchorStatus": "PASSAGE_WITHIN_EVENT"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act-1",
+      "order": 1,
+      "title": "The Promise",
+      "arcIds": [
+        "historia-arc:creation-first-promise",
+        "historia-arc:noah-nations",
+        "historia-arc:abraham-patriarchs"
+      ],
+      "chapterIds": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H09",
+        "H10",
+        "H11",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16"
+      ]
+    },
+    {
+      "id": "act-2",
+      "order": 2,
+      "title": "The People of the Covenant",
+      "arcIds": [
+        "historia-arc:exodus-sinai",
+        "historia-arc:land-first-kings",
+        "historia-arc:davidic-kingdom",
+        "historia-arc:prophets-exile-return"
+      ],
+      "chapterIds": [
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H36",
+        "H37",
+        "H38",
+        "H39",
+        "H40",
+        "H41",
+        "H42",
+        "H43",
+        "H44"
+      ]
+    },
+    {
+      "id": "act-3",
+      "order": 3,
+      "title": "The Fulfilment",
+      "arcIds": [
+        "historia-arc:incarnation",
+        "historia-arc:public-ministry",
+        "historia-arc:paschal-mystery"
+      ],
+      "chapterIds": [
+        "H45",
+        "H46",
+        "H47",
+        "H48",
+        "H49",
+        "H50",
+        "H51",
+        "H52",
+        "H53",
+        "H54",
+        "H55",
+        "H56",
+        "H57",
+        "H58",
+        "H59",
+        "H60",
+        "H61",
+        "H62",
+        "H63",
+        "H64",
+        "H65",
+        "H66"
+      ]
+    },
+    {
+      "id": "act-4",
+      "order": 4,
+      "title": "The Church and Consummation",
+      "arcIds": [
+        "historia-arc:apostolic-church",
+        "historia-arc:consummation"
+      ],
+      "chapterIds": [
+        "H67",
+        "H68",
+        "H69",
+        "H70",
+        "H71",
+        "H72",
+        "H73",
+        "H74",
+        "H75",
+        "H76",
+        "H77",
+        "H78"
+      ]
+    }
+  ],
+  "arcs": [
+    {
+      "id": "historia-arc:creation-first-promise",
+      "order": 1,
+      "title_en": "Creation, Fall and the First Promise",
+      "title_fr": "Création, Chute et première promesse",
+      "act": "The Promise",
+      "covenantContextIds": [
+        "cv:first-promise"
+      ],
+      "chapterIds": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05"
+      ],
+      "sourceOwnerChapterCount": 5
+    },
+    {
+      "id": "historia-arc:noah-nations",
+      "order": 2,
+      "title_en": "Noah, Covenant and Nations",
+      "title_fr": "Noé, Alliance et nations",
+      "act": "The Promise",
+      "covenantContextIds": [
+        "cv:noah"
+      ],
+      "chapterIds": [
+        "H06",
+        "H07",
+        "H08",
+        "H09"
+      ],
+      "sourceOwnerChapterCount": 3
+    },
+    {
+      "id": "historia-arc:abraham-patriarchs",
+      "order": 3,
+      "title_en": "Abraham and the Patriarchs",
+      "title_fr": "Abraham et les patriarches",
+      "act": "The Promise",
+      "covenantContextIds": [
+        "cv:abraham"
+      ],
+      "chapterIds": [
+        "H10",
+        "H11",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16"
+      ],
+      "sourceOwnerChapterCount": 7
+    },
+    {
+      "id": "historia-arc:exodus-sinai",
+      "order": 4,
+      "title_en": "The Exodus and Sinai Covenant",
+      "title_fr": "L'Exode et l'Alliance du Sinaï",
+      "act": "The People of the Covenant",
+      "covenantContextIds": [
+        "cv:sinai"
+      ],
+      "chapterIds": [
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23"
+      ],
+      "sourceOwnerChapterCount": 7
+    },
+    {
+      "id": "historia-arc:land-first-kings",
+      "order": 5,
+      "title_en": "The Promised Land and First Kings",
+      "title_fr": "La Terre promise et les premiers rois",
+      "act": "The People of the Covenant",
+      "covenantContextIds": [
+        "cv:sinai"
+      ],
+      "chapterIds": [
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29"
+      ],
+      "sourceOwnerChapterCount": 5
+    },
+    {
+      "id": "historia-arc:davidic-kingdom",
+      "order": 6,
+      "title_en": "The Davidic Kingdom",
+      "title_fr": "Le royaume de David",
+      "act": "The People of the Covenant",
+      "covenantContextIds": [
+        "cv:david"
+      ],
+      "chapterIds": [
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35"
+      ],
+      "sourceOwnerChapterCount": 6
+    },
+    {
+      "id": "historia-arc:prophets-exile-return",
+      "order": 7,
+      "title_en": "Prophets, Exile and Return",
+      "title_fr": "Prophètes, exil et retour",
+      "act": "The People of the Covenant",
+      "covenantContextIds": [
+        "cv:new-covenant-promised"
+      ],
+      "chapterIds": [
+        "H36",
+        "H37",
+        "H38",
+        "H39",
+        "H40",
+        "H41",
+        "H42",
+        "H43",
+        "H44"
+      ],
+      "sourceOwnerChapterCount": 8
+    },
+    {
+      "id": "historia-arc:incarnation",
+      "order": 8,
+      "title_en": "The Incarnation and Holy Family",
+      "title_fr": "L'Incarnation et la Sainte Famille",
+      "act": "The Fulfilment",
+      "covenantContextIds": [
+        "cv:new-covenant-christ"
+      ],
+      "chapterIds": [
+        "H45",
+        "H46",
+        "H47",
+        "H48",
+        "H49",
+        "H50"
+      ],
+      "sourceOwnerChapterCount": 4
+    },
+    {
+      "id": "historia-arc:public-ministry",
+      "order": 9,
+      "title_en": "The Public Ministry of Christ",
+      "title_fr": "La vie publique du Christ",
+      "act": "The Fulfilment",
+      "covenantContextIds": [
+        "cv:new-covenant-christ"
+      ],
+      "chapterIds": [
+        "H51",
+        "H52",
+        "H53",
+        "H54",
+        "H55",
+        "H56",
+        "H57",
+        "H58"
+      ],
+      "sourceOwnerChapterCount": 7
+    },
+    {
+      "id": "historia-arc:paschal-mystery",
+      "order": 10,
+      "title_en": "The New Covenant: Passion and Resurrection",
+      "title_fr": "La Nouvelle Alliance : Passion et Résurrection",
+      "act": "The Fulfilment",
+      "covenantContextIds": [
+        "cv:new-covenant-christ"
+      ],
+      "chapterIds": [
+        "H59",
+        "H60",
+        "H61",
+        "H62",
+        "H63",
+        "H64",
+        "H65",
+        "H66"
+      ],
+      "sourceOwnerChapterCount": 7
+    },
+    {
+      "id": "historia-arc:apostolic-church",
+      "order": 11,
+      "title_en": "Pentecost and the Apostolic Church",
+      "title_fr": "Pentecôte et l'Église apostolique",
+      "act": "The Church and Consummation",
+      "covenantContextIds": [
+        "cv:new-covenant-christ"
+      ],
+      "chapterIds": [
+        "H67",
+        "H68",
+        "H69",
+        "H70",
+        "H71",
+        "H72",
+        "H73"
+      ],
+      "sourceOwnerChapterCount": 7
+    },
+    {
+      "id": "historia-arc:consummation",
+      "order": 12,
+      "title_en": "Christ's Triumph and the New Jerusalem",
+      "title_fr": "Le triomphe du Christ et la Jérusalem nouvelle",
+      "act": "The Church and Consummation",
+      "covenantContextIds": [
+        "cv:new-covenant-christ"
+      ],
+      "chapterIds": [
+        "H74",
+        "H75",
+        "H76",
+        "H77",
+        "H78"
+      ],
+      "sourceOwnerChapterCount": 4
+    }
+  ],
+  "chapterOutlines": [
+    {
+      "id": "H01",
+      "act": "The Promise",
+      "arcNumber": 1,
+      "arcEditorialLabel": "01 · Creation, Fall and First Promise",
+      "title": "The Creation of the World",
+      "coreReferences": "Genesis 1:1–31",
+      "role": "Main narrative",
+      "covenantStage": null,
+      "description": "Genesis creation of the world",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H01-01",
+        "H01-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H02",
+      "act": "The Promise",
+      "arcNumber": 1,
+      "arcEditorialLabel": "01 · Creation, Fall and First Promise",
+      "title": "Adam and Eve",
+      "coreReferences": "Genesis 2:7–25",
+      "role": "Main narrative",
+      "covenantStage": null,
+      "description": "Human origins, vocation, Eden",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H02-01",
+        "H02-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H03",
+      "act": "The Promise",
+      "arcNumber": 1,
+      "arcEditorialLabel": "01 · Creation, Fall and First Promise",
+      "title": "The Fall",
+      "coreReferences": "Genesis 3:1–24",
+      "role": "Main narrative",
+      "covenantStage": "First Promise",
+      "description": "Temptation, disobedience and consequences",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H03-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H04",
+      "act": "The Promise",
+      "arcNumber": 1,
+      "arcEditorialLabel": "01 · Creation, Fall and First Promise",
+      "title": "The First Promise",
+      "coreReferences": "Genesis 3:15",
+      "role": "Theological hinge",
+      "covenantStage": "First Promise",
+      "description": "Protoevangelium and promised victory",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H04-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H05",
+      "act": "The Promise",
+      "arcNumber": 1,
+      "arcEditorialLabel": "01 · Creation, Fall and First Promise",
+      "title": "The First Generations",
+      "coreReferences": "Genesis 4–5",
+      "role": "Main narrative",
+      "covenantStage": null,
+      "description": "Cain, Abel, Seth and descendants",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H05-02"
+      ],
+      "coverageStatus": "EDITORIAL_OR_HELD_EVIDENCE_ONLY"
+    },
+    {
+      "id": "H06",
+      "act": "The Promise",
+      "arcNumber": 2,
+      "arcEditorialLabel": "02 · Noah and Covenant",
+      "title": "A World Corrupted",
+      "coreReferences": "Genesis 6:1–8",
+      "role": "Main narrative",
+      "covenantStage": null,
+      "description": "Violence and divine judgment",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [],
+      "coverageStatus": "NO_COMPULSORY_P3_BEAT"
+    },
+    {
+      "id": "H07",
+      "act": "The Promise",
+      "arcNumber": 2,
+      "arcEditorialLabel": "02 · Noah and Covenant",
+      "title": "Noah and the Flood",
+      "coreReferences": "Genesis 6–8",
+      "role": "Main narrative",
+      "covenantStage": "Noah",
+      "description": "Ark, Flood and preservation",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 1,
+      "readingSourceOwnerBeats": [
+        "HS-CF-01",
+        "H07-02",
+        "H07-03"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H08",
+      "act": "The Promise",
+      "arcNumber": 2,
+      "arcEditorialLabel": "02 · Noah and Covenant",
+      "title": "The Covenant of the Rainbow",
+      "coreReferences": "Genesis 9:8–17",
+      "role": "Covenant hinge",
+      "covenantStage": "Noah",
+      "description": "Promise to Noah and living creatures",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H08-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H09",
+      "act": "The Promise",
+      "arcNumber": 2,
+      "arcEditorialLabel": "02 · Noah and Covenant",
+      "title": "The Nations and Babel",
+      "coreReferences": "Genesis 10–11",
+      "role": "Main narrative",
+      "covenantStage": null,
+      "description": "Nations and Tower of Babel",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H09-02"
+      ],
+      "coverageStatus": "EDITORIAL_OR_HELD_EVIDENCE_ONLY"
+    },
+    {
+      "id": "H10",
+      "act": "The Promise",
+      "arcNumber": 3,
+      "arcEditorialLabel": "03 · Abraham and Patriarchs",
+      "title": "The Call of Abraham",
+      "coreReferences": "Genesis 11:31; 12:1–9",
+      "role": "Main narrative",
+      "covenantStage": "Abraham",
+      "description": "Departure, faith, promised land",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 1,
+      "readingSourceOwnerBeats": [
+        "HS-CF-02",
+        "H10-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H11",
+      "act": "The Promise",
+      "arcNumber": 3,
+      "arcEditorialLabel": "03 · Abraham and Patriarchs",
+      "title": "Blessing and Covenant",
+      "coreReferences": "Genesis 14:18–20; 15; 17",
+      "role": "Covenant hinge",
+      "covenantStage": "Abraham",
+      "description": "Blessing, promise, Genesis 15 and 17",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H11-02",
+        "H11-03"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H12",
+      "act": "The Promise",
+      "arcNumber": 3,
+      "arcEditorialLabel": "03 · Abraham and Patriarchs",
+      "title": "Sarah and the Promised Son",
+      "coreReferences": "Genesis 18; 21",
+      "role": "Main narrative",
+      "covenantStage": "Abraham",
+      "description": "Mamre and promised son",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H12-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H13",
+      "act": "The Promise",
+      "arcNumber": 3,
+      "arcEditorialLabel": "03 · Abraham and Patriarchs",
+      "title": "The Sacrifice of Isaac",
+      "coreReferences": "Genesis 22:1–19",
+      "role": "Main narrative",
+      "covenantStage": "Abraham",
+      "description": "Binding of Isaac, testing and provision",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H13-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H14",
+      "act": "The Promise",
+      "arcNumber": 3,
+      "arcEditorialLabel": "03 · Abraham and Patriarchs",
+      "title": "Isaac, Rebecca, Jacob and Esau",
+      "coreReferences": "Genesis 24–27",
+      "role": "Main narrative",
+      "covenantStage": "Abraham",
+      "description": "Family, inheritance and conflict",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 2,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H14-02",
+        "H14-03"
+      ],
+      "coverageStatus": "EDITORIAL_OR_HELD_EVIDENCE_ONLY"
+    },
+    {
+      "id": "H15",
+      "act": "The Promise",
+      "arcNumber": 3,
+      "arcEditorialLabel": "03 · Abraham and Patriarchs",
+      "title": "Jacob Becomes Israel",
+      "coreReferences": "Genesis 28; 32–35",
+      "role": "Main narrative",
+      "covenantStage": "Abraham",
+      "description": "Bethel, Jabbok and twelve tribes",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H15-02",
+        "H15-03"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H16",
+      "act": "The Promise",
+      "arcNumber": 3,
+      "arcEditorialLabel": "03 · Abraham and Patriarchs",
+      "title": "Joseph and the Descent into Egypt",
+      "coreReferences": "Genesis 37–50",
+      "role": "Main narrative",
+      "covenantStage": "Abraham",
+      "description": "Joseph in Egypt and family reconciliation",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 4,
+      "contextCount": 0,
+      "sourceBridgeCount": 1,
+      "readingSourceOwnerBeats": [
+        "H16-01",
+        "HS-CF-03",
+        "H16-03",
+        "H16-04",
+        "H16-05"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H17",
+      "act": "The People of the Covenant",
+      "arcNumber": 4,
+      "arcEditorialLabel": "04 · Exodus and Sinai",
+      "title": "Israel in Bondage",
+      "coreReferences": "Exodus 1–2",
+      "role": "Main narrative",
+      "covenantStage": "Sinai",
+      "description": "Egyptian oppression and Moses' birth",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H17-01",
+        "H17-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H18",
+      "act": "The People of the Covenant",
+      "arcNumber": 4,
+      "arcEditorialLabel": "04 · Exodus and Sinai",
+      "title": "God Calls Moses",
+      "coreReferences": "Exodus 3–4",
+      "role": "Main narrative",
+      "covenantStage": "Sinai",
+      "description": "Burning bush and divine name",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H18-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H19",
+      "act": "The People of the Covenant",
+      "arcNumber": 4,
+      "arcEditorialLabel": "04 · Exodus and Sinai",
+      "title": "The Plagues of Egypt",
+      "coreReferences": "Exodus 5–11",
+      "role": "Main narrative",
+      "covenantStage": "Sinai",
+      "description": "Signs before Pharaoh",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H19-01",
+        "H19-03",
+        "H19-05"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H20",
+      "act": "The People of the Covenant",
+      "arcNumber": 4,
+      "arcEditorialLabel": "04 · Exodus and Sinai",
+      "title": "The First Passover",
+      "coreReferences": "Exodus 12:1–28",
+      "role": "Covenant preparation",
+      "covenantStage": "Sinai",
+      "description": "Paschal lamb and redemption",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H20-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H21",
+      "act": "The People of the Covenant",
+      "arcNumber": 4,
+      "arcEditorialLabel": "04 · Exodus and Sinai",
+      "title": "Crossing the Sea",
+      "coreReferences": "Exodus 12:31–17",
+      "role": "Main narrative",
+      "covenantStage": "Sinai",
+      "description": "Exodus, sea crossing, manna",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 2,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H21-01",
+        "H21-02",
+        "H21-03",
+        "H21-04"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H22",
+      "act": "The People of the Covenant",
+      "arcNumber": 4,
+      "arcEditorialLabel": "04 · Exodus and Sinai",
+      "title": "The Covenant at Sinai",
+      "coreReferences": "Exodus 19–24",
+      "role": "Covenant hinge",
+      "covenantStage": "Sinai",
+      "description": "Law, commandments, covenant ratification",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 3,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H22-01",
+        "H22-02",
+        "H22-03"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H23",
+      "act": "The People of the Covenant",
+      "arcNumber": 4,
+      "arcEditorialLabel": "04 · Exodus and Sinai",
+      "title": "Unfaithfulness and God's Presence",
+      "coreReferences": "Exodus 32–40; Numbers",
+      "role": "Main narrative",
+      "covenantStage": "Sinai",
+      "description": "Golden calf, intercession, Tabernacle",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H23-01",
+        "H23-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H24",
+      "act": "The People of the Covenant",
+      "arcNumber": 5,
+      "arcEditorialLabel": "05 · Promised Land and Judges",
+      "title": "Moses' Farewell",
+      "coreReferences": "Deuteronomy 30–34",
+      "role": "Transition",
+      "covenantStage": "Sinai",
+      "description": "The promised land from afar",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H24-02",
+        "H24-03"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H25",
+      "act": "The People of the Covenant",
+      "arcNumber": 5,
+      "arcEditorialLabel": "05 · Promised Land and Judges",
+      "title": "Entering Canaan",
+      "coreReferences": "Joshua 2–6",
+      "role": "Main narrative",
+      "covenantStage": "Sinai",
+      "description": "Jordan crossing and Jericho",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H25-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H26",
+      "act": "The People of the Covenant",
+      "arcNumber": 5,
+      "arcEditorialLabel": "05 · Promised Land and Judges",
+      "title": "The Tribes and the Judges",
+      "coreReferences": "Judges 1–3",
+      "role": "Main narrative",
+      "covenantStage": "Sinai",
+      "description": "Cycle of infidelity and deliverance",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H26-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H27",
+      "act": "The People of the Covenant",
+      "arcNumber": 5,
+      "arcEditorialLabel": "05 · Promised Land and Judges",
+      "title": "The Deliverers of Israel",
+      "coreReferences": "Judges 4–16",
+      "role": "Main narrative",
+      "covenantStage": "Sinai",
+      "description": "Selected lives of judges",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [],
+      "coverageStatus": "NO_COMPULSORY_P3_BEAT"
+    },
+    {
+      "id": "H28",
+      "act": "The People of the Covenant",
+      "arcNumber": 5,
+      "arcEditorialLabel": "05 · Promised Land and Judges",
+      "title": "Ruth and the Family of David",
+      "coreReferences": "Ruth 1–4",
+      "role": "Genealogical hinge",
+      "covenantStage": "David",
+      "description": "Ruth–Boaz–Obed–Jesse–David",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H28-01",
+        "H28-04"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H29",
+      "act": "The People of the Covenant",
+      "arcNumber": 5,
+      "arcEditorialLabel": "05 · Promised Land and Judges",
+      "title": "Samuel and the First King",
+      "coreReferences": "1 Samuel 1–15",
+      "role": "Main narrative",
+      "covenantStage": "David",
+      "description": "Samuel, Saul and kingship",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H29-02",
+        "H29-03",
+        "H29-04"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H30",
+      "act": "The People of the Covenant",
+      "arcNumber": 6,
+      "arcEditorialLabel": "06 · David and Royal Covenant",
+      "title": "David Is Chosen",
+      "coreReferences": "1 Samuel 16–17",
+      "role": "Main narrative",
+      "covenantStage": "David",
+      "description": "David's anointing and Goliath",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H30-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H31",
+      "act": "The People of the Covenant",
+      "arcNumber": 6,
+      "arcEditorialLabel": "06 · David and Royal Covenant",
+      "title": "David, Saul and Jonathan",
+      "coreReferences": "1 Samuel 18–31",
+      "role": "Main narrative",
+      "covenantStage": "David",
+      "description": "Friendship and persecution",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H31-04"
+      ],
+      "coverageStatus": "EDITORIAL_OR_HELD_EVIDENCE_ONLY"
+    },
+    {
+      "id": "H32",
+      "act": "The People of the Covenant",
+      "arcNumber": 6,
+      "arcEditorialLabel": "06 · David and Royal Covenant",
+      "title": "David Becomes King",
+      "coreReferences": "2 Samuel 2–6",
+      "role": "Main narrative",
+      "covenantStage": "David",
+      "description": "Jerusalem, Ark and monarchy",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 3,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H32-01",
+        "H32-02",
+        "H32-03"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H33",
+      "act": "The People of the Covenant",
+      "arcNumber": 6,
+      "arcEditorialLabel": "06 · David and Royal Covenant",
+      "title": "God's Promise to David",
+      "coreReferences": "2 Samuel 7:12–16; Psalm 89:4–5",
+      "role": "Covenant hinge",
+      "covenantStage": "David",
+      "description": "Royal house, throne and messianic promise",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H33-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H34",
+      "act": "The People of the Covenant",
+      "arcNumber": 6,
+      "arcEditorialLabel": "06 · David and Royal Covenant",
+      "title": "David's Sin and Repentance",
+      "coreReferences": "2 Samuel 11–12",
+      "role": "Main narrative",
+      "covenantStage": "David",
+      "description": "Sin, correction, repentance",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H34-01"
+      ],
+      "coverageStatus": "EDITORIAL_OR_HELD_EVIDENCE_ONLY"
+    },
+    {
+      "id": "H35",
+      "act": "The People of the Covenant",
+      "arcNumber": 6,
+      "arcEditorialLabel": "06 · David and Royal Covenant",
+      "title": "Solomon and the Temple",
+      "coreReferences": "1 Kings 3–12",
+      "role": "Main narrative",
+      "covenantStage": "David",
+      "description": "Wisdom, Temple and division",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H35-02",
+        "H35-03",
+        "H35-04"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H36",
+      "act": "The People of the Covenant",
+      "arcNumber": 7,
+      "arcEditorialLabel": "07 · Prophets, Exile and New Covenant Promise",
+      "title": "The Divided Kingdom",
+      "coreReferences": "1 Kings 12–16",
+      "role": "Main narrative",
+      "covenantStage": "David",
+      "description": "Two kingdoms and infidelity",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H36-01",
+        "H36-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H37",
+      "act": "The People of the Covenant",
+      "arcNumber": 7,
+      "arcEditorialLabel": "07 · Prophets, Exile and New Covenant Promise",
+      "title": "Elijah and Elisha",
+      "coreReferences": "1 Kings 17–19; 2 Kings 2–4",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant promised",
+      "description": "Prophetic signs and courage",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H37-02"
+      ],
+      "coverageStatus": "EDITORIAL_OR_HELD_EVIDENCE_ONLY"
+    },
+    {
+      "id": "H38",
+      "act": "The People of the Covenant",
+      "arcNumber": 7,
+      "arcEditorialLabel": "07 · Prophets, Exile and New Covenant Promise",
+      "title": "Isaiah and the Messianic Hope",
+      "coreReferences": "Isaiah 6; 7; 9; 11; 52–53",
+      "role": "Prophetic interlude",
+      "covenantStage": "New Covenant promised",
+      "description": "Messianic hope and suffering servant",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 4,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H38-02",
+        "H38-03",
+        "H38-04",
+        "H38-05"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H39",
+      "act": "The People of the Covenant",
+      "arcNumber": 7,
+      "arcEditorialLabel": "07 · Prophets, Exile and New Covenant Promise",
+      "title": "The Fall of Israel",
+      "coreReferences": "2 Kings 17; 23",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant promised",
+      "description": "Samaria, reforms and judgment",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H39-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H40",
+      "act": "The People of the Covenant",
+      "arcNumber": 7,
+      "arcEditorialLabel": "07 · Prophets, Exile and New Covenant Promise",
+      "title": "Jeremiah and the New Covenant",
+      "coreReferences": "Jeremiah 7; 31:31–34",
+      "role": "Covenant hinge",
+      "covenantStage": "New Covenant promised",
+      "description": "Law written on the heart",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H40-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H41",
+      "act": "The People of the Covenant",
+      "arcNumber": 7,
+      "arcEditorialLabel": "07 · Prophets, Exile and New Covenant Promise",
+      "title": "Jerusalem Falls",
+      "coreReferences": "2 Kings 25",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant promised",
+      "description": "Temple destroyed and exile",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H41-01",
+        "H41-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H42",
+      "act": "The People of the Covenant",
+      "arcNumber": 7,
+      "arcEditorialLabel": "07 · Prophets, Exile and New Covenant Promise",
+      "title": "Faithfulness in Exile",
+      "coreReferences": "Daniel; Ezekiel; Tobit; Judith; Esther",
+      "role": "Main narrative + companion stories",
+      "covenantStage": "New Covenant promised",
+      "description": "Exile testimony and reflective/literary interludes",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [],
+      "coverageStatus": "NO_COMPULSORY_P3_BEAT"
+    },
+    {
+      "id": "H43",
+      "act": "The People of the Covenant",
+      "arcNumber": 7,
+      "arcEditorialLabel": "07 · Prophets, Exile and New Covenant Promise",
+      "title": "Return and Restoration",
+      "coreReferences": "Ezra; Nehemiah",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant promised",
+      "description": "Return and Second Temple",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H43-01",
+        "H43-02",
+        "H43-03"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H44",
+      "act": "The People of the Covenant",
+      "arcNumber": 7,
+      "arcEditorialLabel": "07 · Prophets, Exile and New Covenant Promise",
+      "title": "Awaiting the Messiah",
+      "coreReferences": "Maccabees; Baruch; Sirach; Wisdom",
+      "role": "Main narrative + literary interlude",
+      "covenantStage": "New Covenant promised",
+      "description": "Fidelity under persecution and expectation",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 2,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H44-01",
+        "H44-03"
+      ],
+      "coverageStatus": "EDITORIAL_OR_HELD_EVIDENCE_ONLY"
+    },
+    {
+      "id": "H45",
+      "act": "The Fulfilment",
+      "arcNumber": 8,
+      "arcEditorialLabel": "08 · Incarnation",
+      "title": "The Generations Awaiting Christ",
+      "coreReferences": "Matthew 1:1–17; Luke 3:23–38",
+      "role": "Genealogical hinge",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Two distinct Gospel genealogies",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [],
+      "coverageStatus": "NO_COMPULSORY_P3_BEAT"
+    },
+    {
+      "id": "H46",
+      "act": "The Fulfilment",
+      "arcNumber": 8,
+      "arcEditorialLabel": "08 · Incarnation",
+      "title": "The Annunciation",
+      "coreReferences": "Luke 1:26–38",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "The Incarnation and fiat",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H46-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H47",
+      "act": "The Fulfilment",
+      "arcNumber": 8,
+      "arcEditorialLabel": "08 · Incarnation",
+      "title": "The Visitation and St Joseph",
+      "coreReferences": "Luke 1:39–56; Matthew 1:18–25",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Visitation, Magnificat and Joseph",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H47-01",
+        "H47-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H48",
+      "act": "The Fulfilment",
+      "arcNumber": 8,
+      "arcEditorialLabel": "08 · Incarnation",
+      "title": "The Nativity",
+      "coreReferences": "Luke 2:1–21",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Birth of Jesus, shepherds",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H48-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H49",
+      "act": "The Fulfilment",
+      "arcNumber": 8,
+      "arcEditorialLabel": "08 · Incarnation",
+      "title": "The Presentation, Magi and Flight",
+      "coreReferences": "Luke 2:22–38; Matthew 2",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Presentation, Magi, Innocents, Egypt",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 2,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H49-01",
+        "H49-02",
+        "H49-03"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H50",
+      "act": "The Fulfilment",
+      "arcNumber": 8,
+      "arcEditorialLabel": "08 · Incarnation",
+      "title": "The Hidden Life",
+      "coreReferences": "Luke 2:41–52",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Nazareth and the Child in the Temple",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [],
+      "coverageStatus": "NO_COMPULSORY_P3_BEAT"
+    },
+    {
+      "id": "H51",
+      "act": "The Fulfilment",
+      "arcNumber": 9,
+      "arcEditorialLabel": "09 · Kingdom of God Revealed",
+      "title": "The Forerunner and Baptism",
+      "coreReferences": "Matthew 3–4; Mark 1",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Baptism and temptations",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H51-01",
+        "H51-02",
+        "H51-03"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H52",
+      "act": "The Fulfilment",
+      "arcNumber": 9,
+      "arcEditorialLabel": "09 · Kingdom of God Revealed",
+      "title": "The First Disciples and Cana",
+      "coreReferences": "John 1–2; Mark 1",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Call of disciples and Cana",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 1,
+      "readingSourceOwnerBeats": [
+        "HS-P3-CF-17",
+        "H52-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H53",
+      "act": "The Fulfilment",
+      "arcNumber": 9,
+      "arcEditorialLabel": "09 · Kingdom of God Revealed",
+      "title": "The Teaching of the Kingdom",
+      "coreReferences": "Matthew 5–7; parables",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Sermon, parables and conversion",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H53-01",
+        "H53-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H54",
+      "act": "The Fulfilment",
+      "arcNumber": 9,
+      "arcEditorialLabel": "09 · Kingdom of God Revealed",
+      "title": "The Signs of Christ",
+      "coreReferences": "Gospel miracles",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Healings, nature miracles and resurrections",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H54-02"
+      ],
+      "coverageStatus": "EDITORIAL_OR_HELD_EVIDENCE_ONLY"
+    },
+    {
+      "id": "H55",
+      "act": "The Fulfilment",
+      "arcNumber": 9,
+      "arcEditorialLabel": "09 · Kingdom of God Revealed",
+      "title": "Encounters and Faith",
+      "coreReferences": "John 4; Luke 7",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Faith and conversion",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [],
+      "coverageStatus": "NO_COMPULSORY_P3_BEAT"
+    },
+    {
+      "id": "H56",
+      "act": "The Fulfilment",
+      "arcNumber": 9,
+      "arcEditorialLabel": "09 · Kingdom of God Revealed",
+      "title": "The Bread of Life",
+      "coreReferences": "John 6",
+      "role": "Theological hinge",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Multiplication and Eucharistic discourse",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H56-01",
+        "H56-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H57",
+      "act": "The Fulfilment",
+      "arcNumber": 9,
+      "arcEditorialLabel": "09 · Kingdom of God Revealed",
+      "title": "Peter's Confession and Transfiguration",
+      "coreReferences": "Matthew 16–17",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Confession and revelation",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H57-01",
+        "H57-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H58",
+      "act": "The Fulfilment",
+      "arcNumber": 9,
+      "arcEditorialLabel": "09 · Kingdom of God Revealed",
+      "title": "The Road to Jerusalem",
+      "coreReferences": "John 11–12; Luke 10; 18–19",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Bethany and approach to Passion",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 1,
+      "readingSourceOwnerBeats": [
+        "H58-04",
+        "HS-CF-05"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H59",
+      "act": "The Fulfilment",
+      "arcNumber": 10,
+      "arcEditorialLabel": "10 · New and Eternal Covenant",
+      "title": "Christ Enters Jerusalem",
+      "coreReferences": "Matthew 21; Luke 19",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Triumphal entry",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H59-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H60",
+      "act": "The Fulfilment",
+      "arcNumber": 10,
+      "arcEditorialLabel": "10 · New and Eternal Covenant",
+      "title": "The Last Supper",
+      "coreReferences": "Luke 22; Matthew 26",
+      "role": "Covenant hinge",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Eucharist and New Covenant in Blood",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 1,
+      "readingSourceOwnerBeats": [
+        "H60-01",
+        "HS-CF-09"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H61",
+      "act": "The Fulfilment",
+      "arcNumber": 10,
+      "arcEditorialLabel": "10 · New and Eternal Covenant",
+      "title": "The Farewell Discourses",
+      "coreReferences": "John 13–17",
+      "role": "Theological hinge",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Washing feet and priestly prayer",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [],
+      "coverageStatus": "NO_COMPULSORY_P3_BEAT"
+    },
+    {
+      "id": "H62",
+      "act": "The Fulfilment",
+      "arcNumber": 10,
+      "arcEditorialLabel": "10 · New and Eternal Covenant",
+      "title": "Gethsemane",
+      "coreReferences": "Matthew 26:36–56",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Agony and arrest",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H62-01",
+        "H62-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H63",
+      "act": "The Fulfilment",
+      "arcNumber": 10,
+      "arcEditorialLabel": "10 · New and Eternal Covenant",
+      "title": "The Trials of Jesus",
+      "coreReferences": "Matthew 27; John 18–19",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Trial, scourging and sentence",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H63-01",
+        "H63-02",
+        "H63-04"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H64",
+      "act": "The Fulfilment",
+      "arcNumber": 10,
+      "arcEditorialLabel": "10 · New and Eternal Covenant",
+      "title": "Calvary",
+      "coreReferences": "John 19; Luke 23",
+      "role": "Theological centre",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Crucifixion, death and burial",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 1,
+      "readingSourceOwnerBeats": [
+        "H64-01",
+        "HS-CF-06"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H65",
+      "act": "The Fulfilment",
+      "arcNumber": 10,
+      "arcEditorialLabel": "10 · New and Eternal Covenant",
+      "title": "The Resurrection",
+      "coreReferences": "John 20–21; Luke 24",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Appearances of risen Christ",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H65-01",
+        "H65-03",
+        "H65-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H66",
+      "act": "The Fulfilment",
+      "arcNumber": 10,
+      "arcEditorialLabel": "10 · New and Eternal Covenant",
+      "title": "The Ascension",
+      "coreReferences": "Acts 1:6–12",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Ascension and commission",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 1,
+      "readingSourceOwnerBeats": [
+        "HS-CF-07",
+        "H66-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H67",
+      "act": "The Church and Consummation",
+      "arcNumber": 11,
+      "arcEditorialLabel": "11 · Apostolic Church",
+      "title": "Pentecost",
+      "coreReferences": "Acts 2",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Gift of the Holy Spirit",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H67-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H68",
+      "act": "The Church and Consummation",
+      "arcNumber": 11,
+      "arcEditorialLabel": "11 · Apostolic Church",
+      "title": "The First Christians",
+      "coreReferences": "Acts 2–8",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Early Church and martyrs",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 1,
+      "readingSourceOwnerBeats": [
+        "H68-01",
+        "HS-CF-08",
+        "H68-04"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H69",
+      "act": "The Church and Consummation",
+      "arcNumber": 11,
+      "arcEditorialLabel": "11 · Apostolic Church",
+      "title": "The Conversion of Saul",
+      "coreReferences": "Acts 9",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Encounter with risen Christ",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H69-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H70",
+      "act": "The Church and Consummation",
+      "arcNumber": 11,
+      "arcEditorialLabel": "11 · Apostolic Church",
+      "title": "The Gospel Reaches the Gentiles",
+      "coreReferences": "Acts 10",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Cornelius and Gentile welcome",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H70-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H71",
+      "act": "The Church and Consummation",
+      "arcNumber": 11,
+      "arcEditorialLabel": "11 · Apostolic Church",
+      "title": "Antioch and the Missions",
+      "coreReferences": "Acts 11–14",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Mission journeys",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H71-01",
+        "H71-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H72",
+      "act": "The Church and Consummation",
+      "arcNumber": 11,
+      "arcEditorialLabel": "11 · Apostolic Church",
+      "title": "The Council of Jerusalem",
+      "coreReferences": "Acts 15",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Council and Gentile believers",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 1,
+      "readingSourceOwnerBeats": [
+        "HS-P3-CF-12",
+        "H72-01"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H73",
+      "act": "The Church and Consummation",
+      "arcNumber": 11,
+      "arcEditorialLabel": "11 · Apostolic Church",
+      "title": "Witness to the Nations",
+      "coreReferences": "Acts 16–28; Epistles",
+      "role": "Main narrative",
+      "covenantStage": "New Covenant in Christ",
+      "description": "Mission to Rome and Epistles",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 0,
+      "sourceBridgeCount": 3,
+      "readingSourceOwnerBeats": [
+        "HS-CF-10",
+        "HS-CF-11",
+        "HS-P3-CF-13",
+        "H73-07"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H74",
+      "act": "The Church and Consummation",
+      "arcNumber": 12,
+      "arcEditorialLabel": "12 · Apocalypse and New Creation",
+      "title": "Christ and the Seven Churches",
+      "coreReferences": "Revelation 1–3",
+      "role": "Prophetic vision",
+      "covenantStage": "Consummation",
+      "description": "Messages to the churches",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [],
+      "coverageStatus": "NO_COMPULSORY_P3_BEAT"
+    },
+    {
+      "id": "H75",
+      "act": "The Church and Consummation",
+      "arcNumber": 12,
+      "arcEditorialLabel": "12 · Apocalypse and New Creation",
+      "title": "The Heavenly Throne and the Lamb",
+      "coreReferences": "Revelation 4–5",
+      "role": "Prophetic vision",
+      "covenantStage": "Consummation",
+      "description": "Heavenly worship and the Lamb",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 1,
+      "contextCount": 1,
+      "sourceBridgeCount": 1,
+      "readingSourceOwnerBeats": [
+        "H75-01",
+        "HS-P3-CF-14",
+        "H75-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H76",
+      "act": "The Church and Consummation",
+      "arcNumber": 12,
+      "arcEditorialLabel": "12 · Apocalypse and New Creation",
+      "title": "The Great Conflict",
+      "coreReferences": "Revelation 6–18",
+      "role": "Prophetic vision",
+      "covenantStage": "Consummation",
+      "description": "Victory of God amidst conflict",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 0,
+      "contextCount": 1,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H76-03"
+      ],
+      "coverageStatus": "EDITORIAL_OR_HELD_EVIDENCE_ONLY"
+    },
+    {
+      "id": "H77",
+      "act": "The Church and Consummation",
+      "arcNumber": 12,
+      "arcEditorialLabel": "12 · Apocalypse and New Creation",
+      "title": "Judgment and Final Victory",
+      "coreReferences": "Revelation 19–20",
+      "role": "Prophetic vision",
+      "covenantStage": "Consummation",
+      "description": "Final judgment",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 0,
+      "readingSourceOwnerBeats": [
+        "H77-01",
+        "H77-02"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    },
+    {
+      "id": "H78",
+      "act": "The Church and Consummation",
+      "arcNumber": 12,
+      "arcEditorialLabel": "12 · Apocalypse and New Creation",
+      "title": "The New Heaven and New Earth",
+      "coreReferences": "Revelation 21–22",
+      "role": "Eschatological hinge",
+      "covenantStage": "Consummation",
+      "description": "The New Jerusalem",
+      "status": "PROPOSED_OUTLINE_NOT_APPROVED",
+      "scriptureUnitCount": 2,
+      "contextCount": 0,
+      "sourceBridgeCount": 2,
+      "readingSourceOwnerBeats": [
+        "H78-01",
+        "HS-P3-CF-15",
+        "H78-02",
+        "HS-P3-CF-16"
+      ],
+      "coverageStatus": "EXACT_SOURCE_SELECTION_EXISTS"
+    }
+  ],
+  "sourceBeatMap": [
+    {
+      "movement": "HS-M01",
+      "movementTitle": "Creation and the human vocation",
+      "beatId": "H01-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H01",
+      "arcNumber": 1,
+      "refs": [
+        "Genesis 1:1–31"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M01",
+      "movementTitle": "Creation and the human vocation",
+      "beatId": "H01-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H01",
+      "arcNumber": 1,
+      "refs": [
+        "Genesis 2:1–3"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M01",
+      "movementTitle": "Creation and the human vocation",
+      "beatId": "H02-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H02",
+      "arcNumber": 1,
+      "refs": [
+        "Genesis 2:7–9"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M01",
+      "movementTitle": "Creation and the human vocation",
+      "beatId": "H02-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H02",
+      "arcNumber": 1,
+      "refs": [
+        "Genesis 2:15–18",
+        "Genesis 2:21–25"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M02",
+      "movementTitle": "The Fall and the First Promise",
+      "beatId": "H03-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H03",
+      "arcNumber": 1,
+      "refs": [
+        "Genesis 3:1–13"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M02",
+      "movementTitle": "The Fall and the First Promise",
+      "beatId": "H04-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H04",
+      "arcNumber": 1,
+      "refs": [
+        "Genesis 3:14–24"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M03",
+      "movementTitle": "Noah, the covenant and the peoples",
+      "beatId": "H05-02",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H05",
+      "arcNumber": 1,
+      "refs": [],
+      "editorialSource": "Genesis 4:25–26",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M03",
+      "movementTitle": "Noah, the covenant and the peoples",
+      "beatId": "HS-CF-01",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H07",
+      "arcNumber": 2,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "Genesis 6:9–22",
+      "trialRefs": [
+        "Genesis 6:9–14",
+        "Genesis 6:17–22"
+      ],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M03",
+      "movementTitle": "Noah, the covenant and the peoples",
+      "beatId": "H07-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H07",
+      "arcNumber": 2,
+      "refs": [
+        "Genesis 7:1–5",
+        "Genesis 7:17–23"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M03",
+      "movementTitle": "Noah, the covenant and the peoples",
+      "beatId": "H07-03",
+      "kind": "SCRIPTURE",
+      "chapterId": "H07",
+      "arcNumber": 2,
+      "refs": [
+        "Genesis 8:6–12",
+        "Genesis 8:15–22"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M03",
+      "movementTitle": "Noah, the covenant and the peoples",
+      "beatId": "H08-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H08",
+      "arcNumber": 2,
+      "refs": [
+        "Genesis 9:8–17"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M03",
+      "movementTitle": "Noah, the covenant and the peoples",
+      "beatId": "H09-02",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H09",
+      "arcNumber": 2,
+      "refs": [],
+      "editorialSource": "Genesis 11:1–9",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M04",
+      "movementTitle": "Abraham called into covenant",
+      "beatId": "HS-CF-02",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H10",
+      "arcNumber": 3,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "Genesis 11:26–31",
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M04",
+      "movementTitle": "Abraham called into covenant",
+      "beatId": "H10-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H10",
+      "arcNumber": 3,
+      "refs": [
+        "Genesis 12:1–9"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M04",
+      "movementTitle": "Abraham called into covenant",
+      "beatId": "H11-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H11",
+      "arcNumber": 3,
+      "refs": [
+        "Genesis 15:1–6",
+        "Genesis 15:9–10",
+        "Genesis 15:13–14",
+        "Genesis 15:17–18"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M04",
+      "movementTitle": "Abraham called into covenant",
+      "beatId": "H11-03",
+      "kind": "SCRIPTURE",
+      "chapterId": "H11",
+      "arcNumber": 3,
+      "refs": [
+        "Genesis 17:1–11"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M05",
+      "movementTitle": "Isaac, Jacob and Israel",
+      "beatId": "H12-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H12",
+      "arcNumber": 3,
+      "refs": [
+        "Genesis 21:1–7"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M05",
+      "movementTitle": "Isaac, Jacob and Israel",
+      "beatId": "H13-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H13",
+      "arcNumber": 3,
+      "refs": [
+        "Genesis 22:1–19"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M05",
+      "movementTitle": "Isaac, Jacob and Israel",
+      "beatId": "H14-02",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H14",
+      "arcNumber": 3,
+      "refs": [],
+      "editorialSource": "Genesis 25:19–26, 29–34",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M05",
+      "movementTitle": "Isaac, Jacob and Israel",
+      "beatId": "H14-03",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H14",
+      "arcNumber": 3,
+      "refs": [],
+      "editorialSource": "Genesis 27:18–29, 34–40",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M05",
+      "movementTitle": "Isaac, Jacob and Israel",
+      "beatId": "H15-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H15",
+      "arcNumber": 3,
+      "refs": [
+        "Genesis 32:22–32"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M05",
+      "movementTitle": "Isaac, Jacob and Israel",
+      "beatId": "H15-03",
+      "kind": "SCRIPTURE",
+      "chapterId": "H15",
+      "arcNumber": 3,
+      "refs": [
+        "Genesis 35:9–15"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M06",
+      "movementTitle": "Joseph and the descent into Egypt",
+      "beatId": "H16-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H16",
+      "arcNumber": 3,
+      "refs": [
+        "Genesis 37:3–4",
+        "Genesis 37:12–14",
+        "Genesis 37:18–24",
+        "Genesis 37:26–28"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M06",
+      "movementTitle": "Joseph and the descent into Egypt",
+      "beatId": "HS-CF-03",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H16",
+      "arcNumber": 3,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "Genesis 39:20–21",
+      "trialRefs": [
+        "Genesis 39:19–21"
+      ],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M06",
+      "movementTitle": "Joseph and the descent into Egypt",
+      "beatId": "H16-03",
+      "kind": "SCRIPTURE",
+      "chapterId": "H16",
+      "arcNumber": 3,
+      "refs": [
+        "Genesis 41:14–16",
+        "Genesis 41:25–30",
+        "Genesis 41:33–45"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": [
+        "Genesis 41:33–41",
+        "Genesis 41:45"
+      ]
+    },
+    {
+      "movement": "HS-M06",
+      "movementTitle": "Joseph and the descent into Egypt",
+      "beatId": "H16-04",
+      "kind": "SCRIPTURE",
+      "chapterId": "H16",
+      "arcNumber": 3,
+      "refs": [
+        "Genesis 45:1–11",
+        "Genesis 45:14–15"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M06",
+      "movementTitle": "Joseph and the descent into Egypt",
+      "beatId": "H16-05",
+      "kind": "SCRIPTURE",
+      "chapterId": "H16",
+      "arcNumber": 3,
+      "refs": [
+        "Genesis 46:1–7"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M07",
+      "movementTitle": "Bondage and the calling of Moses",
+      "beatId": "H17-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H17",
+      "arcNumber": 4,
+      "refs": [
+        "Exodus 1:7–14",
+        "Exodus 1:22"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M07",
+      "movementTitle": "Bondage and the calling of Moses",
+      "beatId": "H17-02",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H17",
+      "arcNumber": 4,
+      "refs": [],
+      "editorialSource": "Exodus 2:1–10, 23–25",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M07",
+      "movementTitle": "Bondage and the calling of Moses",
+      "beatId": "H18-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H18",
+      "arcNumber": 4,
+      "refs": [
+        "Exodus 3:1–8",
+        "Exodus 3:10–15"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M08",
+      "movementTitle": "Plagues and the first Passover",
+      "beatId": "H19-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H19",
+      "arcNumber": 4,
+      "refs": [
+        "Exodus 7:14–17",
+        "Exodus 7:20–21"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M08",
+      "movementTitle": "Plagues and the first Passover",
+      "beatId": "H19-03",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H19",
+      "arcNumber": 4,
+      "refs": [],
+      "editorialSource": "Exodus 9:13–16",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M08",
+      "movementTitle": "Plagues and the first Passover",
+      "beatId": "H19-05",
+      "kind": "SCRIPTURE",
+      "chapterId": "H19",
+      "arcNumber": 4,
+      "refs": [
+        "Exodus 11:4–8"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M08",
+      "movementTitle": "Plagues and the first Passover",
+      "beatId": "H20-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H20",
+      "arcNumber": 4,
+      "refs": [
+        "Exodus 12:1–3",
+        "Exodus 12:5–8",
+        "Exodus 12:11–14",
+        "Exodus 12:21–23",
+        "Exodus 12:27–28"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [
+        "Exodus 12:29–30"
+      ],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M09",
+      "movementTitle": "Exodus through the sea",
+      "beatId": "H21-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H21",
+      "arcNumber": 4,
+      "refs": [
+        "Exodus 12:31–33",
+        "Exodus 12:37–42"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M09",
+      "movementTitle": "Exodus through the sea",
+      "beatId": "H21-02",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H21",
+      "arcNumber": 4,
+      "refs": [],
+      "editorialSource": "Exodus 13:17–22",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M09",
+      "movementTitle": "Exodus through the sea",
+      "beatId": "H21-03",
+      "kind": "SCRIPTURE",
+      "chapterId": "H21",
+      "arcNumber": 4,
+      "refs": [
+        "Exodus 14:5–10",
+        "Exodus 14:13–16",
+        "Exodus 14:19–23",
+        "Exodus 14:26–31"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M09",
+      "movementTitle": "Exodus through the sea",
+      "beatId": "H21-04",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H21",
+      "arcNumber": 4,
+      "refs": [],
+      "editorialSource": "Exodus 16:2–4, 12–15",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M10",
+      "movementTitle": "Sinai: covenant and unfaithfulness",
+      "beatId": "H22-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H22",
+      "arcNumber": 4,
+      "refs": [
+        "Exodus 19:1–8"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M10",
+      "movementTitle": "Sinai: covenant and unfaithfulness",
+      "beatId": "H22-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H22",
+      "arcNumber": 4,
+      "refs": [
+        "Exodus 20:1–17"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M10",
+      "movementTitle": "Sinai: covenant and unfaithfulness",
+      "beatId": "H22-03",
+      "kind": "SCRIPTURE",
+      "chapterId": "H22",
+      "arcNumber": 4,
+      "refs": [
+        "Exodus 24:3–8"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M10",
+      "movementTitle": "Sinai: covenant and unfaithfulness",
+      "beatId": "H23-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H23",
+      "arcNumber": 4,
+      "refs": [
+        "Exodus 32:1–4",
+        "Exodus 32:7–14",
+        "Exodus 32:19–20",
+        "Exodus 32:30–34"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M10",
+      "movementTitle": "Sinai: covenant and unfaithfulness",
+      "beatId": "H23-02",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H23",
+      "arcNumber": 4,
+      "refs": [],
+      "editorialSource": "Exodus 40:16–21, 34–38",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M11",
+      "movementTitle": "Israel enters the promised land",
+      "beatId": "H24-02",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H24",
+      "arcNumber": 5,
+      "refs": [],
+      "editorialSource": "Deuteronomy 31:1–8",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M11",
+      "movementTitle": "Israel enters the promised land",
+      "beatId": "H24-03",
+      "kind": "SCRIPTURE",
+      "chapterId": "H24",
+      "arcNumber": 5,
+      "refs": [
+        "Deuteronomy 34:1–7",
+        "Deuteronomy 34:9–12"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M11",
+      "movementTitle": "Israel enters the promised land",
+      "beatId": "H25-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H25",
+      "arcNumber": 5,
+      "refs": [
+        "Joshua 3:7–8",
+        "Joshua 3:13–17"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M11",
+      "movementTitle": "Israel enters the promised land",
+      "beatId": "H26-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H26",
+      "arcNumber": 5,
+      "refs": [
+        "Judges 2:6–12",
+        "Judges 2:16–19"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M12",
+      "movementTitle": "From Ruth to Samuel and Saul",
+      "beatId": "H28-01",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H28",
+      "arcNumber": 5,
+      "refs": [],
+      "editorialSource": "Ruth 1:1–18",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M12",
+      "movementTitle": "From Ruth to Samuel and Saul",
+      "beatId": "H28-04",
+      "kind": "SCRIPTURE",
+      "chapterId": "H28",
+      "arcNumber": 5,
+      "refs": [
+        "Ruth 4:13",
+        "Ruth 4:17–22"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M12",
+      "movementTitle": "From Ruth to Samuel and Saul",
+      "beatId": "H29-02",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H29",
+      "arcNumber": 5,
+      "refs": [],
+      "editorialSource": "1 Samuel 3:1–21",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M12",
+      "movementTitle": "From Ruth to Samuel and Saul",
+      "beatId": "H29-03",
+      "kind": "SCRIPTURE",
+      "chapterId": "H29",
+      "arcNumber": 5,
+      "refs": [
+        "1Samuel 8:4–8",
+        "1Samuel 8:19–22"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M12",
+      "movementTitle": "From Ruth to Samuel and Saul",
+      "beatId": "H29-04",
+      "kind": "SCRIPTURE",
+      "chapterId": "H29",
+      "arcNumber": 5,
+      "refs": [
+        "1Samuel 10:1–8"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M13",
+      "movementTitle": "David and the enduring royal promise",
+      "beatId": "H30-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H30",
+      "arcNumber": 6,
+      "refs": [
+        "1Samuel 16:1–13"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M13",
+      "movementTitle": "David and the enduring royal promise",
+      "beatId": "H31-04",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H31",
+      "arcNumber": 6,
+      "refs": [],
+      "editorialSource": "1 Samuel 31:1–13",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M13",
+      "movementTitle": "David and the enduring royal promise",
+      "beatId": "H32-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H32",
+      "arcNumber": 6,
+      "refs": [
+        "2Samuel 2:1–4"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M13",
+      "movementTitle": "David and the enduring royal promise",
+      "beatId": "H32-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H32",
+      "arcNumber": 6,
+      "refs": [
+        "2Samuel 5:1–10"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": [
+        "2Samuel 5:1–3",
+        "2Samuel 5:6–7",
+        "2Samuel 5:9–10"
+      ]
+    },
+    {
+      "movement": "HS-M13",
+      "movementTitle": "David and the enduring royal promise",
+      "beatId": "H32-03",
+      "kind": "SCRIPTURE",
+      "chapterId": "H32",
+      "arcNumber": 6,
+      "refs": [
+        "2Samuel 6:12–15",
+        "2Samuel 6:17–19"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M13",
+      "movementTitle": "David and the enduring royal promise",
+      "beatId": "H33-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H33",
+      "arcNumber": 6,
+      "refs": [
+        "2Samuel 7:1–16"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M14",
+      "movementTitle": "The Temple and the divided kingdom",
+      "beatId": "H34-01",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H34",
+      "arcNumber": 6,
+      "refs": [],
+      "editorialSource": "2 Samuel 11:1–5, 14–17",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M14",
+      "movementTitle": "The Temple and the divided kingdom",
+      "beatId": "H35-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H35",
+      "arcNumber": 6,
+      "refs": [
+        "1Kings 6:1"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M14",
+      "movementTitle": "The Temple and the divided kingdom",
+      "beatId": "H35-03",
+      "kind": "SCRIPTURE",
+      "chapterId": "H35",
+      "arcNumber": 6,
+      "refs": [
+        "1Kings 8:1–6",
+        "1Kings 8:10–13",
+        "1Kings 8:22–23",
+        "1Kings 8:27–30"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M14",
+      "movementTitle": "The Temple and the divided kingdom",
+      "beatId": "H35-04",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H35",
+      "arcNumber": 6,
+      "refs": [],
+      "editorialSource": "1 Kings 11:1–13",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M14",
+      "movementTitle": "The Temple and the divided kingdom",
+      "beatId": "H36-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H36",
+      "arcNumber": 7,
+      "refs": [
+        "1Kings 11:29–32"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M14",
+      "movementTitle": "The Temple and the divided kingdom",
+      "beatId": "H36-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H36",
+      "arcNumber": 7,
+      "refs": [
+        "1Kings 12:1–5",
+        "1Kings 12:13–20"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M15",
+      "movementTitle": "Prophetic warning and Israel's judgment",
+      "beatId": "H37-02",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H37",
+      "arcNumber": 7,
+      "refs": [],
+      "editorialSource": "1 Kings 18:20–39",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M15",
+      "movementTitle": "Prophetic warning and Israel's judgment",
+      "beatId": "H38-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H38",
+      "arcNumber": 7,
+      "refs": [
+        "Isaiah 7:10–17"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M15",
+      "movementTitle": "Prophetic warning and Israel's judgment",
+      "beatId": "H38-03",
+      "kind": "SCRIPTURE",
+      "chapterId": "H38",
+      "arcNumber": 7,
+      "refs": [
+        "Isaiah 9:1–6"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M15",
+      "movementTitle": "Prophetic warning and Israel's judgment",
+      "beatId": "H38-04",
+      "kind": "SCRIPTURE",
+      "chapterId": "H38",
+      "arcNumber": 7,
+      "refs": [
+        "Isaiah 11:1–10"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M15",
+      "movementTitle": "Prophetic warning and Israel's judgment",
+      "beatId": "H38-05",
+      "kind": "SCRIPTURE",
+      "chapterId": "H38",
+      "arcNumber": 7,
+      "refs": [
+        "Isaiah 52:13–15",
+        "Isaiah 53:1–12"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M15",
+      "movementTitle": "Prophetic warning and Israel's judgment",
+      "beatId": "H39-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H39",
+      "arcNumber": 7,
+      "refs": [
+        "2Kings 17:3–8",
+        "2Kings 17:13–18"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M16",
+      "movementTitle": "Judah's fall and the promise of a New Covenant",
+      "beatId": "H40-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H40",
+      "arcNumber": 7,
+      "refs": [
+        "Jeremiah 31:31–34"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M16",
+      "movementTitle": "Judah's fall and the promise of a New Covenant",
+      "beatId": "H41-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H41",
+      "arcNumber": 7,
+      "refs": [
+        "2Kings 25:1–5",
+        "2Kings 25:8–12"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M16",
+      "movementTitle": "Judah's fall and the promise of a New Covenant",
+      "beatId": "H41-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H41",
+      "arcNumber": 7,
+      "refs": [
+        "2Kings 25:18–21"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M17",
+      "movementTitle": "Restoration and the expectation of Christ",
+      "beatId": "H43-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H43",
+      "arcNumber": 7,
+      "refs": [
+        "Ezra 1:1–6"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M17",
+      "movementTitle": "Restoration and the expectation of Christ",
+      "beatId": "H43-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H43",
+      "arcNumber": 7,
+      "refs": [
+        "Ezra 6:14–16",
+        "Ezra 6:19–22"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M17",
+      "movementTitle": "Restoration and the expectation of Christ",
+      "beatId": "H43-03",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H43",
+      "arcNumber": 7,
+      "refs": [],
+      "editorialSource": "Nehemiah 8:1–12",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M17",
+      "movementTitle": "Restoration and the expectation of Christ",
+      "beatId": "H44-01",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H44",
+      "arcNumber": 7,
+      "refs": [],
+      "editorialSource": "1 Maccabees 2:15–28",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M17",
+      "movementTitle": "Restoration and the expectation of Christ",
+      "beatId": "H44-03",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H44",
+      "arcNumber": 7,
+      "refs": [],
+      "editorialSource": "2 Maccabees 7:1–42",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M18",
+      "movementTitle": "The generations and the Annunciation",
+      "beatId": "H46-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H46",
+      "arcNumber": 8,
+      "refs": [
+        "Luke 1:26–38"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M19",
+      "movementTitle": "The birth of the Saviour",
+      "beatId": "H47-01",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H47",
+      "arcNumber": 8,
+      "refs": [],
+      "editorialSource": "Luke 1:39–56",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M19",
+      "movementTitle": "The birth of the Saviour",
+      "beatId": "H47-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H47",
+      "arcNumber": 8,
+      "refs": [
+        "Matthew 1:18–25"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M19",
+      "movementTitle": "The birth of the Saviour",
+      "beatId": "H48-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H48",
+      "arcNumber": 8,
+      "refs": [
+        "Luke 2:1–20"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M19",
+      "movementTitle": "The birth of the Saviour",
+      "beatId": "H49-01",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H49",
+      "arcNumber": 8,
+      "refs": [],
+      "editorialSource": "Luke 2:22–38",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M19",
+      "movementTitle": "The birth of the Saviour",
+      "beatId": "H49-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H49",
+      "arcNumber": 8,
+      "refs": [
+        "Matthew 2:1–12"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M19",
+      "movementTitle": "The birth of the Saviour",
+      "beatId": "H49-03",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H49",
+      "arcNumber": 8,
+      "refs": [],
+      "editorialSource": "Matthew 2:13–23",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M20",
+      "movementTitle": "The Forerunner and first disciples",
+      "beatId": "H51-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H51",
+      "arcNumber": 9,
+      "refs": [
+        "Matthew 3:1–6",
+        "Matthew 3:11–17"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M20",
+      "movementTitle": "The Forerunner and first disciples",
+      "beatId": "H51-02",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H51",
+      "arcNumber": 9,
+      "refs": [],
+      "editorialSource": "Matthew 4:1–11",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M20",
+      "movementTitle": "The Forerunner and first disciples",
+      "beatId": "HS-P3-CF-17",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H52",
+      "arcNumber": 9,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "John 1:29–34",
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M20",
+      "movementTitle": "The Forerunner and first disciples",
+      "beatId": "H52-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H52",
+      "arcNumber": 9,
+      "refs": [
+        "John 1:35–51"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M20",
+      "movementTitle": "The Forerunner and first disciples",
+      "beatId": "H51-03",
+      "kind": "SCRIPTURE",
+      "chapterId": "H51",
+      "arcNumber": 9,
+      "refs": [
+        "Mark 1:14–15"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M21",
+      "movementTitle": "The Kingdom in Christ's teaching",
+      "beatId": "H53-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H53",
+      "arcNumber": 9,
+      "refs": [
+        "Matthew 5:1–12"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M21",
+      "movementTitle": "The Kingdom in Christ's teaching",
+      "beatId": "H53-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H53",
+      "arcNumber": 9,
+      "refs": [
+        "Matthew 6:9–15"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M21",
+      "movementTitle": "The Kingdom in Christ's teaching",
+      "beatId": "H54-02",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H54",
+      "arcNumber": 9,
+      "refs": [],
+      "editorialSource": "Mark 2:1–12",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M22",
+      "movementTitle": "Christ the Bread of Life",
+      "beatId": "H56-01",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H56",
+      "arcNumber": 9,
+      "refs": [],
+      "editorialSource": "John 6:1–15",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M22",
+      "movementTitle": "Christ the Bread of Life",
+      "beatId": "H56-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H56",
+      "arcNumber": 9,
+      "refs": [
+        "John 6:26–35",
+        "John 6:36–40",
+        "John 6:41–46",
+        "John 6:47–59"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M23",
+      "movementTitle": "Peter's confession and the Transfiguration",
+      "beatId": "H57-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H57",
+      "arcNumber": 9,
+      "refs": [
+        "Matthew 16:13–28"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M23",
+      "movementTitle": "Peter's confession and the Transfiguration",
+      "beatId": "H57-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H57",
+      "arcNumber": 9,
+      "refs": [
+        "Matthew 17:1–9"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M24",
+      "movementTitle": "The approach to Jerusalem",
+      "beatId": "H58-04",
+      "kind": "SCRIPTURE",
+      "chapterId": "H58",
+      "arcNumber": 9,
+      "refs": [
+        "John 11:1–7",
+        "John 11:14–17",
+        "John 11:20–27",
+        "John 11:28–31",
+        "John 11:32–35",
+        "John 11:38–44"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M24",
+      "movementTitle": "The approach to Jerusalem",
+      "beatId": "HS-CF-05",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H58",
+      "arcNumber": 9,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "John 11:45–53",
+      "trialRefs": [
+        "John 11:45–53"
+      ],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M25",
+      "movementTitle": "The King's entry into Jerusalem",
+      "beatId": "H59-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H59",
+      "arcNumber": 10,
+      "refs": [
+        "Matthew 21:1–11"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M26",
+      "movementTitle": "The Last Supper",
+      "beatId": "H60-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H60",
+      "arcNumber": 10,
+      "refs": [
+        "Luke 22:7–20"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M26",
+      "movementTitle": "The Last Supper",
+      "beatId": "HS-CF-09",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H60",
+      "arcNumber": 10,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "John 14:16–17",
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M27",
+      "movementTitle": "Gethsemane, betrayal and trial",
+      "beatId": "H62-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H62",
+      "arcNumber": 10,
+      "refs": [
+        "Matthew 26:36–46"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M27",
+      "movementTitle": "Gethsemane, betrayal and trial",
+      "beatId": "H62-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H62",
+      "arcNumber": 10,
+      "refs": [
+        "Matthew 26:47–56"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M27",
+      "movementTitle": "Gethsemane, betrayal and trial",
+      "beatId": "H63-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H63",
+      "arcNumber": 10,
+      "refs": [
+        "Matthew 26:57–75"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M27",
+      "movementTitle": "Gethsemane, betrayal and trial",
+      "beatId": "H63-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H63",
+      "arcNumber": 10,
+      "refs": [
+        "Matthew 27:1–2",
+        "Matthew 27:11–26"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M27",
+      "movementTitle": "Gethsemane, betrayal and trial",
+      "beatId": "H63-04",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H63",
+      "arcNumber": 10,
+      "refs": [],
+      "editorialSource": "John 19:1–16",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M28",
+      "movementTitle": "The sacrifice on Calvary",
+      "beatId": "H64-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H64",
+      "arcNumber": 10,
+      "refs": [
+        "John 19:17–30"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [
+        "John 19:31–37"
+      ],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M28",
+      "movementTitle": "The sacrifice on Calvary",
+      "beatId": "HS-CF-06",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H64",
+      "arcNumber": 10,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "John 19:38–42",
+      "trialRefs": [
+        "John 19:38–42"
+      ],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M29",
+      "movementTitle": "The risen Lord and his witnesses",
+      "beatId": "H65-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H65",
+      "arcNumber": 10,
+      "refs": [
+        "John 20:1–3",
+        "John 20:4–5",
+        "John 20:6–9",
+        "John 20:10",
+        "John 20:11–18"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M29",
+      "movementTitle": "The risen Lord and his witnesses",
+      "beatId": "H65-03",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H65",
+      "arcNumber": 10,
+      "refs": [],
+      "editorialSource": "Luke 24:13–35",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M29",
+      "movementTitle": "The risen Lord and his witnesses",
+      "beatId": "H65-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H65",
+      "arcNumber": 10,
+      "refs": [
+        "John 20:19–29"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M30",
+      "movementTitle": "The Ascension and promised mission",
+      "beatId": "HS-CF-07",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H66",
+      "arcNumber": 10,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "Acts 1:3–5",
+      "trialRefs": [
+        "Acts 1:3–5"
+      ],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M30",
+      "movementTitle": "The Ascension and promised mission",
+      "beatId": "H66-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H66",
+      "arcNumber": 10,
+      "refs": [
+        "Acts 1:6–12"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M31",
+      "movementTitle": "Pentecost and the first Church",
+      "beatId": "H67-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H67",
+      "arcNumber": 11,
+      "refs": [
+        "Acts 2:1–10",
+        "Acts 2:11–18",
+        "Acts 2:21",
+        "Acts 2:22–24",
+        "Acts 2:32–36",
+        "Acts 2:37–41"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M31",
+      "movementTitle": "Pentecost and the first Church",
+      "beatId": "H68-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H68",
+      "arcNumber": 11,
+      "refs": [
+        "Acts 2:42–47"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M31",
+      "movementTitle": "Pentecost and the first Church",
+      "beatId": "HS-CF-08",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H68",
+      "arcNumber": 11,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "Acts 7:51–53",
+      "trialRefs": [
+        "Acts 7:51–53"
+      ],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M31",
+      "movementTitle": "Pentecost and the first Church",
+      "beatId": "H68-04",
+      "kind": "SCRIPTURE",
+      "chapterId": "H68",
+      "arcNumber": 11,
+      "refs": [
+        "Acts 7:54–59"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M32",
+      "movementTitle": "Saul and the Gospel to the Gentiles",
+      "beatId": "H69-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H69",
+      "arcNumber": 11,
+      "refs": [
+        "Acts 9:1–11",
+        "Acts 9:12–16",
+        "Acts 9:17–22"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M32",
+      "movementTitle": "Saul and the Gospel to the Gentiles",
+      "beatId": "H70-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H70",
+      "arcNumber": 11,
+      "refs": [
+        "Acts 10:1–6",
+        "Acts 10:7–8",
+        "Acts 10:9–16",
+        "Acts 10:19–20",
+        "Acts 10:21–23",
+        "Acts 10:24",
+        "Acts 10:28–29",
+        "Acts 10:30–32",
+        "Acts 10:33–48"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M33",
+      "movementTitle": "Antioch, apostolic missions and the Council",
+      "beatId": "H71-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H71",
+      "arcNumber": 11,
+      "refs": [
+        "Acts 11:19–26"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M33",
+      "movementTitle": "Antioch, apostolic missions and the Council",
+      "beatId": "H71-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H71",
+      "arcNumber": 11,
+      "refs": [
+        "Acts 13:1–5"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M33",
+      "movementTitle": "Antioch, apostolic missions and the Council",
+      "beatId": "HS-P3-CF-12",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H72",
+      "arcNumber": 11,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "Acts 14:26–27",
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M33",
+      "movementTitle": "Antioch, apostolic missions and the Council",
+      "beatId": "H72-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H72",
+      "arcNumber": 11,
+      "refs": [
+        "Acts 15:1–2",
+        "Acts 15:4–11",
+        "Acts 15:12",
+        "Acts 15:13–20",
+        "Acts 15:22–29"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M34",
+      "movementTitle": "The Gospel proclaimed in Rome",
+      "beatId": "HS-CF-10",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H73",
+      "arcNumber": 11,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "Acts 19:21",
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M34",
+      "movementTitle": "The Gospel proclaimed in Rome",
+      "beatId": "HS-CF-11",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H73",
+      "arcNumber": 11,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "Acts 28:16",
+      "trialRefs": [
+        "Acts 28:16"
+      ],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M34",
+      "movementTitle": "The Gospel proclaimed in Rome",
+      "beatId": "HS-P3-CF-13",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H73",
+      "arcNumber": 11,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "Acts 28:17–22",
+      "trialRefs": [
+        "Acts 28:17–22"
+      ],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M34",
+      "movementTitle": "The Gospel proclaimed in Rome",
+      "beatId": "H73-07",
+      "kind": "SCRIPTURE",
+      "chapterId": "H73",
+      "arcNumber": 11,
+      "refs": [
+        "Acts 28:23–31"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M35",
+      "movementTitle": "Christ and the Lamb in heavenly vision",
+      "beatId": "H75-01",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H75",
+      "arcNumber": 12,
+      "refs": [],
+      "editorialSource": "Revelation 4:1–11",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M35",
+      "movementTitle": "Christ and the Lamb in heavenly vision",
+      "beatId": "HS-P3-CF-14",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H75",
+      "arcNumber": 12,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "Revelation 4:1–2",
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M35",
+      "movementTitle": "Christ and the Lamb in heavenly vision",
+      "beatId": "H75-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H75",
+      "arcNumber": 12,
+      "refs": [
+        "Revelation 5:1–14"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M36",
+      "movementTitle": "The final conflict and judgment",
+      "beatId": "H76-03",
+      "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+      "chapterId": "H76",
+      "arcNumber": 12,
+      "refs": [],
+      "editorialSource": "Revelation 12:1–17",
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M36",
+      "movementTitle": "The final conflict and judgment",
+      "beatId": "H77-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H77",
+      "arcNumber": 12,
+      "refs": [
+        "Revelation 19:11–21"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M36",
+      "movementTitle": "The final conflict and judgment",
+      "beatId": "H77-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H77",
+      "arcNumber": 12,
+      "refs": [
+        "Revelation 20:1–15"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M37",
+      "movementTitle": "The New Creation",
+      "beatId": "H78-01",
+      "kind": "SCRIPTURE",
+      "chapterId": "H78",
+      "arcNumber": 12,
+      "refs": [
+        "Revelation 21:1–7"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M37",
+      "movementTitle": "The New Creation",
+      "beatId": "HS-P3-CF-15",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H78",
+      "arcNumber": 12,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "Revelation 21:9–10",
+      "trialRefs": [
+        "Revelation 21:9–11"
+      ],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M37",
+      "movementTitle": "The New Creation",
+      "beatId": "H78-02",
+      "kind": "SCRIPTURE",
+      "chapterId": "H78",
+      "arcNumber": 12,
+      "refs": [
+        "Revelation 22:1–5"
+      ],
+      "editorialSource": null,
+      "bridgeReference": null,
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    },
+    {
+      "movement": "HS-M37",
+      "movementTitle": "The New Creation",
+      "beatId": "HS-P3-CF-16",
+      "kind": "SOURCE_BRIDGE_CANDIDATE",
+      "chapterId": "H78",
+      "arcNumber": 12,
+      "refs": [],
+      "editorialSource": null,
+      "bridgeReference": "Revelation 22:20–21",
+      "trialRefs": [],
+      "afterSourceTrialRefs": [],
+      "provisionalReadingAbridgment": null
+    }
+  ],
+  "unresolved": {
+    "orphanP3Beats": [],
+    "sourceArcRegressions": [],
+    "withoutCompulsoryP3Beats": [
+      "H06",
+      "H27",
+      "H42",
+      "H45",
+      "H50",
+      "H55",
+      "H61",
+      "H74"
+    ],
+    "withNonScriptureOnly": [
+      "H05",
+      "H09",
+      "H14",
+      "H31",
+      "H34",
+      "H37",
+      "H44",
+      "H54",
+      "H76"
+    ]
+  },
+  "totals": {
+    "acts": 4,
+    "arcs": 12,
+    "chapterOutlines": 78,
+    "p3Movements": 37,
+    "sourceBeatAssignments": 138,
+    "kindCounts": {
+      "SCRIPTURE": 93,
+      "EDITORIAL_CONTEXT_NOT_BIBLE": 29,
+      "SOURCE_BRIDGE_CANDIDATE": 16
+    },
+    "withScripture": 61,
+    "withAnyEvidence": 70,
+    "covenantPromiseStages": 7,
+    "orphan": 0,
+    "arcRegressions": 0,
+    "bridgeOwners": 16
+  },
+  "reviewGate": {
+    "arcAndOutlineMappingReviewed": false,
+    "verseEconomyReviewByChapter": false,
+    "fullyAuthoredChapters": 0,
+    "publicationApproved": false
+  }
+}

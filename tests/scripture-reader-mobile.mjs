@@ -471,6 +471,219 @@ try{
   await page.locator("#module").selectOption("historia");
   await page.waitForFunction(()=>document.querySelector("#linkedObject")?.options?.length===151,null,{timeout:18000});
   assert.equal(await page.locator("#linkedObject option").count(),151,"Reuse all 151 Atlas event IDs");
+  await page.locator("#historiaAuditUnit option[value='H42-02']").waitFor({state:"attached",timeout:12000});
+  await page.locator("#historiaAuditUnit").selectOption("H42-02");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent?.includes("8 source fragments loaded"),
+    null,{timeout:20000});
+  assert.equal(await page.locator("#historiaSequence .auditSegment").count(),8);
+  assert.ok(await page.locator("#historiaSequence .gapNote").count()>=2,
+    "Shortened Daniel must label omitted Scripture");
+  assert.match(await page.locator("#historiaSequence").innerText(),/3:92/);
+  await page.locator("#historiaAuditUnit").selectOption("H42-07");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent?.includes("13 source fragments loaded"),
+    null,{timeout:24000});
+  assert.equal(await page.locator("#historiaSequence .auditSegment").count(),13);
+  await page.locator("#historiaReadingDepth").selectOption("expanded");
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent?.includes("19 source fragments loaded"),
+    null,{timeout:24000});
+  assert.equal(await page.locator("#historiaSequence .auditSegment").count(),19,
+    "Earlier expanded research selection is preserved independently");
+  await page.locator("#historiaReadingDepth").selectOption("principal");
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent?.includes("13 source fragments loaded"),
+    null,{timeout:24000});
+
+  assert.match(await page.locator("#historiaSequence").innerText(),/Esther 11:2–10/);
+  const estherAudit=page.locator("#historiaSequence .auditSegment").first();
+  assert.match(await estherAudit.innerText(),/CPDV|Mordecai|Esther/i);
+  await estherAudit.getByRole("button",{name:"Rate / inspect this extract"}).click();
+  await page.waitForFunction(()=>document.querySelector("#resultHeading")?.textContent==="Esther 4:5–7",
+    null,{timeout:12000});
+  await page.locator("#rating").selectOption("4");
+  await page.locator("#saveReview").click();
+  const auditSaved=await page.evaluate(()=>JSON.parse(localStorage.getItem("ao-scripture-mining-review-v1")));
+  assert.ok(auditSaved.some(r=>r.originModule==="historia"&&r.originId==="H42-07"&&
+    r.reference==="Esther 4:5–7"&&r.referenceEdition==="cpdv-2009"));
+  assert.deepEqual(pageErrors,[],"Historia corrected verse-reading audit must not produce browser errors");
+
+  // H76 uses the same source-owned editor, not a competing apocalypse reader.
+  await page.locator("#historiaAuditUnit").selectOption("H76-04");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("4 source fragments loaded (principal abridgment)"),
+    null,{timeout:24000});
+  assert.equal(await page.locator("#historiaSequence .auditSegment").count(),4);
+  assert.match(await page.locator("#historiaSequence").innerText(),/Revelation 13:10–12/);
+  assert.match(await page.locator("#historiaSequence").innerText(),/Revelation 13:15–18/);
+  assert.ok(await page.locator("#historiaSequence .gapNote").count()>=2);
+  await page.locator("#historiaReadingDepth").selectOption("expanded");
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("1 source fragments loaded (expanded selection)"),
+    null,{timeout:24000});
+  assert.equal(await page.locator("#historiaSequence .auditSegment").count(),1);
+  await page.locator("#historiaReadingDepth").selectOption("principal");
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("4 source fragments loaded (principal abridgment)"),
+    null,{timeout:24000});
+  await page.locator("#historiaAuditUnit").selectOption("H76-05");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("5 source fragments loaded (principal abridgment)"),
+    null,{timeout:24000});
+  assert.equal(await page.locator("#historiaSequence .auditSegment").count(),5);
+  assert.match(await page.locator("#historiaSequence").innerText(),/Revelation 18:24/);
+  assert.match(await page.locator("#historiaSequence details").last().textContent(),
+    /LAMB_AND_THE_REDEEMED/);
+  assert.deepEqual(pageErrors,[],"H76 source-owned principal/companion editor must not create browser errors");
+
+  // Six additional v18 chapters reuse the same existing Scripture mining UI.
+  assert.equal(await page.locator("#historiaAuditUnit option").count(),40,
+    "Only one unified eight-chapter, 40-unit research overlay is loaded");
+  await page.locator("#historiaAuditUnit").selectOption("H21-03");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("6 source fragments loaded (principal abridgment)"),
+    null,{timeout:25000});
+  assert.match(await page.locator("#historiaSequence").innerText(),/Exodus 14:5–10/);
+  assert.match(await page.locator("#historiaSequence").innerText(),/Exodus 15:20–21/);
+  await page.locator("#historiaAuditUnit").selectOption("H45-02");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("1 source fragments loaded (principal abridgment)"),
+    null,{timeout:25000});
+  assert.match(await page.locator("#historiaSequence").innerText(),/Luke 3:23–38/);
+  await page.locator("#historiaAuditUnit").selectOption("H54-05");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("6 source fragments loaded (principal abridgment)"),
+    null,{timeout:25000});
+  assert.match(await page.locator("#historiaSequence").innerText(),/John 9:35–38/);
+  assert.ok(await page.locator("#historiaSequence .gapNote").count()>=2);
+  await page.locator("#historiaAuditUnit").selectOption("H73-02");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("4 source fragments loaded (principal abridgment)"),
+    null,{timeout:25000});
+  assert.match(await page.locator("#historiaSequence").innerText(),/Acts 16:16–21/);
+  assert.match(await page.locator("#historiaSequence").innerText(),/Acts 16:27–34/);
+  assert.deepEqual(pageErrors,[],"Eight-chapter original-source editorial workbench cannot raise browser errors");
+
+  await page.locator("#historiaAuditUnit").selectOption("H54-02");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("1 source fragments loaded (principal abridgment)"),null,{timeout:20000});
+  const publisherDisclosure=page.locator("#historiaSequence details.historiaResearch");
+  await publisherDisclosure.locator("summary").click();
+  assert.match(await publisherDisclosure.innerText(),/Mark 2:1-12/);
+  assert.match(await publisherDisclosure.innerText(),/Publisher research/);
+  assert.match(await publisherDisclosure.innerText(),/not verse-level popularity votes/);
+  await page.locator("#historiaAuditUnit").selectOption("H45-01");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("1 source fragments loaded (principal abridgment)"),null,{timeout:24000});
+  assert.match(await page.locator("#historiaSequence details.historiaResearch").textContent(),
+    /No overlapping qualified source record/);
+  assert.deepEqual(pageErrors,[],"Publisher provenance and research-gap disclosures remain readable on mobile");
+
+
+
+
+
+  // The proposed end-to-end reading remains an in-workbench source proof,
+  // not a separate extended Bible mode or a new user-facing app.
+  await page.locator("#historiaProofToggle").click();
+  await page.locator("#historiaProof").waitFor({state:"visible",timeout:20000});
+  await page.waitForFunction(()=>
+    document.querySelectorAll("#historiaProofMovement option").length===37,
+    null,{timeout:20000});
+  assert.equal(await page.locator("#historiaProofMovement option").count(),37);
+  await page.locator("#historiaProofMovement").selectOption("HS-M24");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:30000});
+  assert.match(await page.locator("#historiaProofText").innerText(),/I am the Resurrection and the Life/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/John 11:45–53/);
+  assert.ok(await page.locator("#historiaProofText .proofGap").count()>=1,
+    "Discontinuous source ranges must display omission cues");
+  assert.equal(await page.locator("#historiaProofText .proofSourceBridge").count(),1,
+    "The plot after Lazarus remains a visibly held source proposal, not silently stitched into Scripture");
+  await page.locator("#historiaProofBridges").uncheck();
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("0 held source bridge(s)/trial(s) visible"),null,{timeout:25000});
+  assert.equal(await page.locator("#historiaProofText .proofSourceBridge").count(),0);
+  await page.locator("#historiaProofBridges").check();
+  await page.locator("#historiaProofEdition").selectOption("dr-challoner");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("Douay–Rheims"),null,{timeout:25000});
+  assert.match(await page.locator("#historiaProofText").innerText(),/I am the resurrection and the life/i);
+  await page.locator("#historiaProofMovement").selectOption("HS-M34");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.match(await page.locator("#historiaProofText").innerText(),/Acts 28:16/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/Acts 28:23–31/);
+  assert.doesNotMatch(await page.locator("#historiaProofText").innerText(),/Acts 16:22–40|the jailer baptized/i,
+    "Omitted Philippi cannot reappear as a compulsory Scripture reading; editorial notes may mention why it was excluded");
+  assert.match(await page.locator("#historiaProofText").innerText(),/Acts 28:17–22/);
+  assert.equal(await page.locator("#historiaProofText .proofSourceBridge").count(),3);
+  // The P0 filter is worklist-backed, never inferred from incomplete legacy priority labels.
+  await page.locator("#historiaProofBridgeFilter").selectOption("p0");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofDecisionReview")
+    ?.textContent?.includes("HS-W-SRC-HS-P3-CF-13"),null,{timeout:20000});
+  assert.equal(await page.locator("#historiaProofDecisionReview .proofDecision").count(),2);
+  assert.equal(await page.locator("#historiaProofText .proofSourceBridge").count(),2,
+    "P0 Rome should include the paired arrival and audience but not the non-P0 Acts 19 hold");
+  assert.equal(await page.locator("#historiaProofP0Jump option").count(),7);
+  await page.locator("#historiaProofP0Jump").selectOption("HS-M03");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.equal(await page.locator("#historiaProofText .proofSourceBridge .proofVerse").count(),12,
+    "The P0 Ark trial is the already-held 12-verse version, never full 14 verses");
+  assert.match(await page.locator("#historiaProofText").innerText(),/Genesis 6:9–14/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/Genesis 6:17–22/);
+  assert.equal(await page.locator("#historiaProofDecisionReview .proofDecision").count(),1);
+  await page.locator("#historiaProofP0Jump").selectOption("HS-M28");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.equal(await page.locator("#historiaProofDecisionReview .proofDecision").count(),2);
+  assert.match(await page.locator("#historiaProofText").innerText(),/John 19:31–37/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/John 19:38–42/);
+  await page.locator("#historiaProofP0Jump").selectOption("HS-M37");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.match(await page.locator("#historiaProofText").innerText(),/Revelation 21:9–11/);
+  assert.doesNotMatch(await page.locator("#historiaProofText").innerText(),/Revelation 22:20–21/,
+    "Lower-priority book epilogue remains held, even when P0 angel source is shown");
+  assert.equal(await page.locator("#historiaProofDecisionReview .proofDecision").count(),1);
+  assert.equal(await page.locator("#historiaProofOtherJump option").count(),13,
+    "The lower-priority navigator must have one entry for each of twelve source movements");
+  await page.locator("#historiaProofOtherJump").selectOption("HS-M06");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.equal(await page.locator("#historiaProofBridgeFilter").inputValue(),"all");
+  assert.equal(await page.locator("#historiaProofDecisionReview .proofDecision").count(),1);
+  assert.match(await page.locator("#historiaProofDecisionReview").innerText(),/JOSEPH_PRISON|PRISON_CAUSE/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/Genesis 39:19–21/);
+  assert.equal(await page.locator("#historiaProofText .proofSourceBridge .proofVerse").count(),3,
+    "Joseph's 3-verse proposed native reading is never truncated to the older 2-verse hold");
+  await page.locator("#historiaProofOtherJump").selectOption("HS-M27");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.match(await page.locator("#historiaProofDecisionReview").innerText(),/PREFER_KEEP_HELD_DISTINCT_JUDAS_EPISODE/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/Matthew 27:3–10/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/Source omission remains in the main manuscript/);
+  await page.locator("#historiaProofOtherJump").selectOption("HS-M37");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.equal(await page.locator("#historiaProofDecisionReview .proofDecision").count(),2,
+    "One P0 angel and one P2 canonical-end recommendation must remain separate");
+  assert.match(await page.locator("#historiaProofText").innerText(),/Revelation 22:20–21/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/Revelation 22:6–19/,
+    "Jump to canonical epilogue must explicitly disclose omitted original Scripture");
+    assert.deepEqual(pageErrors,[],"P0 comparisons must not disrupt mobile Scripture workbench");
+  await page.locator("#historiaProofToggle").click();
+  assert.equal(await page.locator("#historiaProof").isVisible(),false);
+  assert.equal(await page.locator("#historiaUnitControls").isVisible(),true);
+
   await page.locator("#module").selectOption("novena");
   await page.locator("#linkedObject option[value='annunciation']").waitFor({state:"attached",timeout:12000});
   await page.locator("#linkedObject").selectOption("annunciation");

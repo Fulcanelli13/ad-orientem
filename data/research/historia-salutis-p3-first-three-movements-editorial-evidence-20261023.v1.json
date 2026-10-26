@@ -1,0 +1,288 @@
+{
+  "schema": "ao.historia.p3.first-slice-editorial-evidence.v1",
+  "date": "2026-10-23",
+  "status": "TEXT_WITNESS_DESK_REVIEW_ONLY_NOT_ORAL_EDITORIAL_OR_PUBLICATION_ACCEPTANCE",
+  "intent": "Source-dependent review overlay on the existing 37-movement P3 master, not a second event registry, reader, manuscript or chapter list.",
+  "sourceOwners": {
+    "movementProof": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+    "chapterCrosswalk": "data/research/historia-salutis-p3-covenant-arc-chapter-reconciliation-20261021.v1.json",
+    "readingChapterProjection": "data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json",
+    "canonicalAtlas": "data/explore/bible-places-compact.v1.json",
+    "canonicalAtlasReadingChapters": "src/find/bible-atlas-reading-chapters.js",
+    "sourceWitnesses": [
+      "data/scripture/witness/dr-challoner/Genesis.json",
+      "data/scripture/witness/cpdv-2009/Genesis.json",
+      "data/scripture/witness/crampon-1923/Genesis.json"
+    ]
+  },
+  "reviewedMovements": [
+    "HS-M01",
+    "HS-M02",
+    "HS-M03"
+  ],
+  "sourceWitnessObservations": {
+    "threeInstalledTranscriptionsContainAllCurrentSelectedVerses": true,
+    "printedEditionCollationComplete": false,
+    "textFaithfulnessCertified": false,
+    "semanticHazards": [
+      {
+        "reference": "Genesis 3:15",
+        "kind": "DOCTRINALLY_SENSITIVE_PRONOUN_TRANSLATION",
+        "observation": "The two installed English witnesses read 'She'/'she'; the French Crampon uses 'celle-ci'. Preserve each text unchanged, keep Marian/Christological interpretations in the separate sourced theological register, and do not assert multilingual word-by-word equivalence.",
+        "decision": "PRESERVE_ORIGINAL_WITNESS_HOLD_PRINT_COLLATION"
+      },
+      {
+        "reference": "Genesis 8:4",
+        "kind": "EDITION_SPECIFIC_CHRONOLOGY_AND_TOPOGRAPHY",
+        "observation": "Installed Douay and CPDV report the 27th day and the mountains of Armenia; Crampon reports the 17th day and the mountains of Ararat. This verse is currently unselected, but an optional Noah continuity expansion must not smuggle in a single date or a modern map coordinate.",
+        "decision": "NO_CANONICAL_LOCATION_DATE_OR_VERSE_IMPORT"
+      }
+    ]
+  },
+  "movementReviews": [
+    {
+      "movementId": "HS-M01",
+      "currentBeatIds": [
+        "H01-01",
+        "H01-02",
+        "H02-01",
+        "H02-02"
+      ],
+      "researchChapterIds": [
+        "R01"
+      ],
+      "sourceOutlineIds": [
+        "H01",
+        "H02"
+      ],
+      "arcIds": [
+        "historia-arc:creation-first-promise"
+      ],
+      "summary": "Complete first creation account and sanctified seventh day followed by selected passages of the distinct Eden-and-human-vocation account; do not harmonize two literary witnesses into synthetic verses.",
+      "literaryDecisions": [
+        {
+          "id": "HS-FIRST-M01-CREATION",
+          "status": "PROVISIONALLY_RETAIN_SELECTED_SCRIPTURE_NOT_ACCEPTED",
+          "sourceRefs": [
+            "Genesis 1:1–31",
+            "Genesis 2:1–3"
+          ],
+          "finding": "Creation days and sanctified seventh day remain complete; no length-only cut justified."
+        },
+        {
+          "id": "HS-FIRST-M01-EVE",
+          "status": "LITERARY_HOLD",
+          "sourceRefs": [
+            "Genesis 2:18–25"
+          ],
+          "finding": "Current selection joins 2:18 directly to 2:21, excluding the naming of living creatures and the lack of a corresponding helper in 2:19–20. Test whether the short omission obscures why the woman is presented; never invent verses or describe an automatic continuity restoration."
+        }
+      ],
+      "atlasLinks": [
+        {
+          "beatId": "H01-01",
+          "atlasEventKey": "biblical:passage:genesis-1-1-31",
+          "relation": "EXACT_SELECTED_REFERENCE",
+          "sourceReference": "Genesis 1:1–31"
+        }
+      ],
+      "originalSourceOnlyBeatIds": [
+        "H01-02",
+        "H02-01",
+        "H02-02"
+      ],
+      "geographicPolicy": "CREATION_AND_EDEN_DO_NOT_REQUIRE_EARTH_PIN",
+      "oralReadthroughAccepted": false,
+      "editorialApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M02",
+      "currentBeatIds": [
+        "H03-01",
+        "H04-01"
+      ],
+      "researchChapterIds": [
+        "R02"
+      ],
+      "sourceOutlineIds": [
+        "H03",
+        "H04"
+      ],
+      "arcIds": [
+        "historia-arc:creation-first-promise"
+      ],
+      "summary": "Genesis 3:1–24 has no omitted interior verse between two original units. The First Promise is a covenant-related theological marker, not a different historical event.",
+      "literaryDecisions": [
+        {
+          "id": "HS-FIRST-M02-EDEN",
+          "status": "PROVISIONALLY_RETAIN_SELECTED_SCRIPTURE_NOT_ACCEPTED",
+          "sourceRefs": [
+            "Genesis 3:1–24"
+          ],
+          "finding": "Preserve temptation, disobedience, questioning, sentence, first promise and exile as one intact biblical source sequence."
+        },
+        {
+          "id": "HS-FIRST-M02-PROTOEVANGELIUM",
+          "status": "THEOLOGICAL_AND_EDITION_REVIEW_HOLD",
+          "sourceRefs": [
+            "Genesis 3:15"
+          ],
+          "finding": "Retain the precise selected edition's pronouns without substituting another edition or publishing an unsourced typological explanation inside the narrative."
+        }
+      ],
+      "atlasLinks": [
+        {
+          "beatId": "H03-01",
+          "atlasEventKey": "biblical:passage:genesis-3-1-24",
+          "relation": "SELECTED_SUBPASSAGE",
+          "sourceReference": "Genesis 3:1–13"
+        },
+        {
+          "beatId": "H04-01",
+          "atlasEventKey": "biblical:passage:genesis-3-1-24",
+          "relation": "SELECTED_SUBPASSAGE",
+          "sourceReference": "Genesis 3:14–24"
+        }
+      ],
+      "covenantIds": [
+        "cv:first-promise"
+      ],
+      "geographicPolicy": "NO_NEW_GARDEN_LOCATION_PIN",
+      "oralReadthroughAccepted": false,
+      "editorialApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M03",
+      "currentBeatIds": [
+        "H05-02",
+        "HS-CF-01",
+        "H07-02",
+        "H07-03",
+        "H08-01",
+        "H09-02"
+      ],
+      "researchChapterIds": [
+        "R02",
+        "R03",
+        "R04"
+      ],
+      "sourceOutlineIds": [
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H09"
+      ],
+      "arcIds": [
+        "historia-arc:creation-first-promise",
+        "historia-arc:noah-nations"
+      ],
+      "summary": "Noah is presented in the Genesis flood readings, with a held but narratively important Ark introduction, a complete rainbow covenant, and a separately attributed contextual note about Babel.",
+      "literaryDecisions": [
+        {
+          "id": "HS-FIRST-M03-ARK",
+          "status": "ESSENTIAL_CAUSAL_SOURCE_BRIDGE_REVIEW_HOLD",
+          "sourceRefs": [
+            "Genesis 6:9–14",
+            "Genesis 6:17–22",
+            "Genesis 7:1–5"
+          ],
+          "sourceBeatId": "HS-CF-01",
+          "finding": "With the held Genesis 6 bridge hidden, the first selected verse is 'And the Lord said to him: Go in ... into the ark'; the reader has not encountered the Ark's commission in selected Scripture. Trial exact Genesis 6:9–14 and 6:17–22 (already in the independent research reading) to establish Noah, command and obedience without compulsory construction measurements. Do not accept/release the held bridge automatically."
+        },
+        {
+          "id": "HS-FIRST-M03-WATERS",
+          "status": "OPTIONAL_LITERARY_REVIEW_HOLD",
+          "sourceRefs": [
+            "Genesis 7:17–23",
+            "Genesis 8:1–6",
+            "Genesis 8:13–15"
+          ],
+          "finding": "Between devastation and release of the dove, selected Scripture omits God's remembering Noah and the initial recession (8:1–5); later it omits the final dry-land confirmation (8:13–14). Compare full exact source sequence with proposed economy. Genesis 8:4 is edition-specific; do not infer a historical date/site."
+        },
+        {
+          "id": "HS-FIRST-M03-COVENANT",
+          "status": "PROVISIONALLY_RETAIN_SELECTED_SCRIPTURE_NOT_ACCEPTED",
+          "sourceRefs": [
+            "Genesis 8:15–22",
+            "Genesis 9:8–17"
+          ],
+          "finding": "Keep God's command to leave the ark, Noah's altar and the entire rainbow covenant as source-owned selected Scripture; do not replace with a summarized covenant."
+        },
+        {
+          "id": "HS-FIRST-M03-BABEL",
+          "status": "EDITORIAL_CONTEXT_OR_DIRECT_READING_CHOICE_HELD",
+          "sourceRefs": [
+            "Genesis 10:1–32",
+            "Genesis 11:1–9"
+          ],
+          "sourceBeatId": "H09-02",
+          "finding": "The current P3 main reading gives Babel as explicitly attributed editorial context only. A canonical Atlas Babel event exists, but that cannot silently promote Babel to compulsory Scripture or invent a city pin. Decide whether a source-only reference or the existing full Genesis 11:1–9 text is needed before Abraham."
+        },
+        {
+          "id": "HS-FIRST-M03-CHAPTER_ALIGNMENT",
+          "status": "STRUCTURAL_INTEGRATION_HOLD",
+          "sourceRefs": [
+            "Genesis 4:25–26",
+            "Genesis 9:8–17"
+          ],
+          "finding": "Movement M03 begins with H05-02, which belongs to outline H05, provisional reading chapter R02 and arc 1, whereas the Noah Flood/covenant units belong to R03/R04 and arc 2. Do not join movement 03 to a same-numbered Atlas reading chapter or silently discard the H05 context when entering arc 2."
+        }
+      ],
+      "atlasLinks": [
+        {
+          "beatId": "H07-02",
+          "atlasEventKey": "biblical:passage:genesis-7-1-24",
+          "relation": "SELECTED_SUBPASSAGE",
+          "sourceReference": "Genesis 7:1–5"
+        },
+        {
+          "beatId": "H07-02",
+          "atlasEventKey": "biblical:passage:genesis-7-1-24",
+          "relation": "SELECTED_SUBPASSAGE",
+          "sourceReference": "Genesis 7:17–23"
+        },
+        {
+          "beatId": "H08-01",
+          "atlasEventKey": "biblical:passage:genesis-9-8-17",
+          "relation": "EXACT_SELECTED_REFERENCE",
+          "sourceReference": "Genesis 9:8–17"
+        },
+        {
+          "beatId": "H09-02",
+          "atlasEventKey": "biblical:passage:genesis-11-1-9",
+          "relation": "EDITORIAL_SOURCE_REFERENCE_ONLY",
+          "sourceReference": "Genesis 11:1–9"
+        }
+      ],
+      "originalSourceOnlyBeatIds": [
+        "H05-02",
+        "HS-CF-01",
+        "H07-03"
+      ],
+      "covenantIds": [
+        "cv:noah"
+      ],
+      "geographicPolicy": "NO_MODERN_ARK_LANDING_SITE_OR_BABEL_PIN_INFERRED_FROM_THESE_PASSAGES",
+      "oralReadthroughAccepted": false,
+      "editorialApproved": false,
+      "publicationApproved": false,
+      "unfilledResearchOutlineIds": [
+        "H06"
+      ]
+    }
+  ],
+  "totals": {
+    "movementsDeskReviewed": 3,
+    "originalP3BeatsReviewed": 12,
+    "sourceOwnedScriptureBeatCount": 9,
+    "heldP3BridgeCount": 1,
+    "editorialBeatCount": 2,
+    "distinctCanonicalAtlasEventKeys": 5,
+    "independentOralReadingsApproved": 0,
+    "releaseReadyMovements": 0
+  },
+  "nextGate": "Editorially decide Genesis 6 introduction, Genesis 8 recession, Genesis 2:19–20 transition, Genesis 11 Babel as context vs native text, and the H05/M03/R02/R03/R04 split; perform full oral readthrough and edition print collation before first app integration."
+}

@@ -1,0 +1,789 @@
+{
+  "schema": "ao.historia.p3.p1-twenty-seam-first-disposition.v1",
+  "date": "2026-10-23",
+  "status": "COMPREHENSIVE_PRIORITY_ONE_RECONCILIATION_DESK_ONLY_NOT_EDITORIALLY_ACCEPTED",
+  "owners": {
+    "p3Proof": {
+      "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+      "sha": "aea3d55dad3c6ca068b6c38ae242602f63b3175d"
+    },
+    "fullSequenceAudit": {
+      "path": "data/research/historia-salutis-p3-continuous-full-story-seam-audit-20261023.v1.json",
+      "sha": "bb767d3a12238dc2fe57fdd0843c6dbd798f60db"
+    },
+    "parallelP4": {
+      "path": "data/research/historia-salutis-p3-p4-m20-m37-reconciliation-20261023.v1.json",
+      "sha": "3751300821c59d600e2eb5855b6e8127c0aa21fe"
+    }
+  },
+  "policies": {
+    "reconcileBeforeMiningMore": true,
+    "preserve93SourceUnits": true,
+    "keep151CanonAtlasAnd37AtlasChapters": true,
+    "referenceCitationAndNarrationSeparate": true,
+    "noNewSpuriousBibleStory": true,
+    "noGospelHarmonizedDialogues": true,
+    "sourceEditionNumberingIsNotInterchangeable": true,
+    "typologicalInterpretationsOutsideNarrative": true,
+    "existingNativeReaderNotReplaced": true,
+    "readAloudAndPrintCollationStillRequired": true,
+    "humanTheologicalSignoffStillRequired": true,
+    "neverConvertDeskDispositionToPublicationApproval": true
+  },
+  "totals": {
+    "totalP1": 20,
+    "alreadySourceBound": 13,
+    "presentationDisclosureNeeded": 4,
+    "originalWitnessTrialUnresolved": 3,
+    "trialChoices": 4,
+    "publicationApprovals": 0,
+    "sourceSelectionEdits": 0
+  },
+  "priorityOneHinges": [
+    {
+      "hingeId": "HS-HINGE-03",
+      "fromMovement": "HS-M03",
+      "toMovement": "HS-M04",
+      "sourceEnd": "Genesis 9:8–17",
+      "sourceStart": "Genesis 12:1–9",
+      "category": "SOURCE_CONNECTOR_ALREADY_PRESENT",
+      "existingP3OwnerBeatIds": [
+        "H09-02",
+        "HS-CF-02",
+        "H10-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "Genesis 9:8–17",
+        "Genesis 10:1–32",
+        "Genesis 11:1–9",
+        "Genesis 11:26–31",
+        "Genesis 12:1–9"
+      ],
+      "sourceCriticalFinding": "Babel and Abram genealogy already have separately marked editorial/held P3 owners. Retain the genealogy handoff and show its sources; no invented Noah→Abraham direct family encounter.",
+      "disposition": "KEEP_EXISTING_SOURCE_LABELED_GENEALOGY_NO_EXTRA_VERSE",
+      "scopeOfRemainingWork": "P3_ALREADY_SOURCE_BOUND_PRESENTATION_ONLY",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-05",
+      "fromMovement": "HS-M05",
+      "toMovement": "HS-M06",
+      "sourceEnd": "Genesis 35:9–15",
+      "sourceStart": "Genesis 37:3–4",
+      "category": "DIRECT_SOURCE_LINK_ALREADY_PRESENT",
+      "existingP3OwnerBeatIds": [
+        "H15-03",
+        "H16-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "Genesis 35:10",
+        "Genesis 37:3"
+      ],
+      "sourceCriticalFinding": "Genesis 35:10 explicitly renames Jacob Israel. Genesis 37:3 identifies Israel as Joseph's father. The identity handoff is already Bible text, not a missing editorial paragraph.",
+      "disposition": "RETAIN_JACOB_ISRAEL_ORIGINAL_TEXT_AND_NO_REDUNDANT_EXPLANATION",
+      "scopeOfRemainingWork": "P3_ALREADY_SOURCE_BOUND_PRESENTATION_ONLY",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-06",
+      "fromMovement": "HS-M06",
+      "toMovement": "HS-M07",
+      "sourceEnd": "Genesis 46:1–7",
+      "sourceStart": "Exodus 1:7–14",
+      "category": "DIRECT_SOURCE_LINK_ALREADY_PRESENT",
+      "existingP3OwnerBeatIds": [
+        "H16-05",
+        "H17-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "Genesis 46:1–7",
+        "Exodus 1:7–14"
+      ],
+      "sourceCriticalFinding": "Genesis shows Jacob's household going into Egypt and Exodus 1 begins with their multiplying descendants and later oppression. The chapter break handles generations without an invented departure date.",
+      "disposition": "DISPLAY_GENERATIONAL_BREAK_NOT_A_SINGLE_DAY",
+      "scopeOfRemainingWork": "P3_ALREADY_SOURCE_BOUND_PRESENTATION_ONLY",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-07",
+      "fromMovement": "HS-M07",
+      "toMovement": "HS-M08",
+      "sourceEnd": "Exodus 3:10–15",
+      "sourceStart": "Exodus 7:14–17",
+      "category": "UNRESOLVED_OPTIONAL_SOURCE_TRIAL",
+      "existingP3OwnerBeatIds": [
+        "H18-01",
+        "H19-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "Exodus 3:10–15",
+        "Exodus 5:1–2",
+        "Exodus 7:1–6",
+        "Exodus 7:14–17"
+      ],
+      "sourceCriticalFinding": "The existing text jumps from Moses' commission at the bush to Pharaoh's hardened heart amid plagues. Exodus 5:1–2 explicitly records Moses and Aaron's first request and Pharaoh's refusal. Exodus 7:1–6 gives the command/response framing, but does not by itself narrate that initial refusal.",
+      "disposition": "COMPARE_EXACT_EXODUS_5_1_2_FIRST_RETAIN_7_1_6_AS_OPTION",
+      "scopeOfRemainingWork": "EXACT_VERBATIM_RESEARCH_COMPARISON_PENDING",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-10",
+      "fromMovement": "HS-M10",
+      "toMovement": "HS-M11",
+      "sourceEnd": "Exodus 32:30–34",
+      "sourceStart": "Deuteronomy 34:1–7",
+      "category": "HISTORICAL_JUMP_REQUIRES_EXPLICIT_PROVENANCE",
+      "existingP3OwnerBeatIds": [
+        "H23-02",
+        "H24-02",
+        "H24-03"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "Exodus 32:30–34",
+        "Deuteronomy 2:14",
+        "Joshua 5:6",
+        "Deuteronomy 31:1–8",
+        "Deuteronomy 34:1–7"
+      ],
+      "sourceCriticalFinding": "The tabernacle cloud and Joshua commissioning sources are already separate. The original selected story does not explicitly tell the wandering years; Deuteronomy 2:14 cites the thirty-eight-year Kadesh-to-Zared leg and Joshua 5:6 describes forty years in the wilderness. If presented, explain which period each witness measures; do not invent one uninterrupted forty-year narrated chapter.",
+      "disposition": "SOURCE_BOUND_WILDERNESS_ELISION_LABEL_REQUIRED",
+      "scopeOfRemainingWork": "SOURCE_LABELLED_TIME_GAP_PENDING",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-12",
+      "fromMovement": "HS-M12",
+      "toMovement": "HS-M13",
+      "sourceEnd": "1Samuel 10:1–8",
+      "sourceStart": "1Samuel 16:1–13",
+      "category": "SOURCE_CONNECTOR_ALREADY_PRESENT",
+      "existingP3OwnerBeatIds": [
+        "H29-04",
+        "H30-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "1Samuel 10:1–8",
+        "1Samuel 15:22–23",
+        "1Samuel 16:1"
+      ],
+      "sourceCriticalFinding": "Saul's anointing, Samuel's rebuke and rejection, and David's call have independently sourced context. Samuel 15:22–23 already gives the obedience reason; no new royal anointing episode needed.",
+      "disposition": "RETAIN_EXISTING_UNAPPROVED_SAMUEL_15_CONNECTOR",
+      "scopeOfRemainingWork": "P3_ALREADY_SOURCE_BOUND_PRESENTATION_ONLY",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-13",
+      "fromMovement": "HS-M13",
+      "toMovement": "HS-M14",
+      "sourceEnd": "2Samuel 7:1–16",
+      "sourceStart": "1Kings 6:1",
+      "category": "SOURCE_CONNECTOR_ALREADY_PRESENT",
+      "existingP3OwnerBeatIds": [
+        "H33-01",
+        "H34-01",
+        "H35-02"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "2Samuel 7:12–16",
+        "2Samuel 11:1–17",
+        "2Samuel 12:1–13",
+        "1Kings 2:10–12"
+      ],
+      "sourceCriticalFinding": "The Davidic royal covenant is followed by David's later sin and Nathan's rebuke, then Solomon's succession. The existing notes have different source books/episodes; never attribute Bathsheba/Nathan rebuke words to the 2 Samuel 7 covenant.",
+      "disposition": "DISTINCTLY_SOURCE_LABEL_SIN_REBUKE_SUCCESSION",
+      "scopeOfRemainingWork": "P3_ALREADY_SOURCE_BOUND_PRESENTATION_ONLY",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-14",
+      "fromMovement": "HS-M14",
+      "toMovement": "HS-M15",
+      "sourceEnd": "1Kings 12:13–20",
+      "sourceStart": "Isaiah 7:10–17",
+      "category": "SOURCE_CONNECTOR_ALREADY_PRESENT",
+      "existingP3OwnerBeatIds": [
+        "H36-02",
+        "H37-02"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "1Kings 12:13–20",
+        "1Kings 18:20–39",
+        "Isaiah 7:10–17"
+      ],
+      "sourceCriticalFinding": "Divided monarchy, Elijah's confrontation under the northern kingdom and later Isaiah's Judah oracle occur across separate periods and witnesses. H37-02 already supplies the context; French Isaiah 9 source pointer now independently resolves 8:23 + 9:1–5.",
+      "disposition": "PRESERVE_MULTIGENERATION_AND_CORRECT_EDITION_PROVENANCE",
+      "scopeOfRemainingWork": "P3_ALREADY_SOURCE_BOUND_PRESENTATION_ONLY",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-15",
+      "fromMovement": "HS-M15",
+      "toMovement": "HS-M16",
+      "sourceEnd": "2Kings 17:13–18",
+      "sourceStart": "Jeremiah 31:31–34",
+      "category": "DIRECT_SOURCE_LINK_ALREADY_PRESENT",
+      "existingP3OwnerBeatIds": [
+        "H39-01",
+        "H40-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "2Kings 17:18",
+        "Jeremiah 31:31–34"
+      ],
+      "sourceCriticalFinding": "2 Kings explicitly says Judah alone remained when the northern kingdom was removed. Jeremiah's promise names both the house of Israel and of Judah, before the separate later description of Judah's fall.",
+      "disposition": "DISTINGUISH_NORTHERN_EXILE_AND_LATER_JUDAH_EVENT",
+      "scopeOfRemainingWork": "P3_ALREADY_SOURCE_BOUND_PRESENTATION_ONLY",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-17",
+      "fromMovement": "HS-M17",
+      "toMovement": "HS-M18",
+      "sourceEnd": "Ezra 6:19–22",
+      "sourceStart": "Luke 1:26–38",
+      "category": "SOURCE_CONNECTOR_ALREADY_PRESENT",
+      "existingP3OwnerBeatIds": [
+        "H44-01",
+        "H44-03",
+        "H46-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "1Maccabees 2:15–28",
+        "2Maccabees 7:1–42",
+        "Luke 1:5–25",
+        "Luke 1:26–38"
+      ],
+      "sourceCriticalFinding": "The historical Maccabean editorial context and first-century Gospel opening are already distinct canonical witnesses, with Zachary/Elizabeth cited in Luke. Do not invent a fixed gap in years or infer events of Joseph's/Mary's families from the prior Old Testament segment.",
+      "disposition": "KEEP_SOURCE_BOOK_AND_HISTORICAL_EPOCH_BREAK",
+      "scopeOfRemainingWork": "P3_ALREADY_SOURCE_BOUND_PRESENTATION_ONLY",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-18",
+      "fromMovement": "HS-M18",
+      "toMovement": "HS-M19",
+      "sourceEnd": "Luke 1:26–38",
+      "sourceStart": "Matthew 1:18–25",
+      "category": "SOURCE_CONNECTOR_ALREADY_PRESENT",
+      "existingP3OwnerBeatIds": [
+        "H46-01",
+        "H47-01",
+        "H47-02"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "Luke 1:26–38",
+        "Luke 1:39–56",
+        "Matthew 1:18–25"
+      ],
+      "sourceCriticalFinding": "Luke's Annunciation is followed by a separately attributed editorial Visitation, then Matthew's unique Joseph account. Original speakers, chronology and Evangelist provenance cannot become a synthesized Gospel conversation.",
+      "disposition": "KEEP_VISITATION_EDITORIAL_AND_MATTHEW_SOURCE_ATTRIBUTION",
+      "scopeOfRemainingWork": "P3_ALREADY_SOURCE_BOUND_PRESENTATION_ONLY",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-19",
+      "fromMovement": "HS-M19",
+      "toMovement": "HS-M20",
+      "sourceEnd": "Matthew 2:1–12",
+      "sourceStart": "Matthew 3:1–6",
+      "category": "SOURCE_CONNECTOR_ALREADY_PRESENT",
+      "existingP3OwnerBeatIds": [
+        "H49-03",
+        "H51-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "Matthew 2:13–23",
+        "Luke 2:51–52",
+        "Matthew 3:1–6"
+      ],
+      "sourceCriticalFinding": "Existing source-labeled flight/return and childhood context bridge the Matthew infancy text to John's public preaching. Mark the unselected hidden years; do not fabricate events of Christ's adolescence.",
+      "disposition": "RETAIN_EXISTING_HIDDEN_YEARS_SOURCE_LABEL",
+      "scopeOfRemainingWork": "P3_ALREADY_SOURCE_BOUND_PRESENTATION_ONLY",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-21",
+      "fromMovement": "HS-M21",
+      "toMovement": "HS-M22",
+      "sourceEnd": "Matthew 6:9–15",
+      "sourceStart": "John 6:26–35",
+      "category": "SOURCE_CONNECTOR_ALREADY_PRESENT",
+      "existingP3OwnerBeatIds": [
+        "H54-02",
+        "H56-01",
+        "H56-02"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "Mark 2:1–12",
+        "John 6:1–15",
+        "John 6:22–25",
+        "John 6:36–46"
+      ],
+      "sourceCriticalFinding": "Mark's healing editorial context and John's loaves/seeking context precede the original Bread of Life discourse; the previously missing John 6:36–46 is already selected in current P3. No repeat of the superseded P4 passage repair.",
+      "disposition": "LEAVE_JOHN_6_ALREADY_RECOVERED_AND_LABEL_GOSPEL_CHANGE",
+      "scopeOfRemainingWork": "P3_ALREADY_SOURCE_BOUND_PRESENTATION_ONLY",
+      "overruledOrDuplicatedP4TextNotReadded": true,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-24",
+      "fromMovement": "HS-M24",
+      "toMovement": "HS-M25",
+      "sourceEnd": "John 11:38–44",
+      "sourceStart": "Matthew 21:1–11",
+      "category": "UNRESOLVED_OPTIONAL_SOURCE_TRIAL",
+      "existingP3OwnerBeatIds": [
+        "H58-04",
+        "HS-CF-05",
+        "H59-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "John 11:38–44",
+        "John 11:45–53",
+        "Matthew 21:1–11"
+      ],
+      "sourceCriticalFinding": "The plot after Lazarus is a real nine-verse held John source in P3. It contains both belief and reporting (45–46), the council/crowd fear, Caiaphas's pronouncement, the Evangelist's explicit prophecy interpretation (51–52), and the resolved plot (53). Reducing to a one-sentence political connector risks losing the Gospel's own theological interpretation.",
+      "disposition": "REVIEW_FULL_EXISTING_JOHN_11_45_53_HELD_TRIAL",
+      "scopeOfRemainingWork": "EXACT_VERBATIM_RESEARCH_COMPARISON_PENDING",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-25",
+      "fromMovement": "HS-M25",
+      "toMovement": "HS-M26",
+      "sourceEnd": "Matthew 21:1–11",
+      "sourceStart": "Luke 22:7–20",
+      "category": "HISTORICAL_JUMP_REQUIRES_EXPLICIT_PROVENANCE",
+      "existingP3OwnerBeatIds": [
+        "H59-01",
+        "H60-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "Matthew 21:1–11",
+        "Matthew 26:2",
+        "Luke 22:7"
+      ],
+      "sourceCriticalFinding": "Matthew's Palm entry does not jump directly to the Passover supper as a historical sequence. Luke 22:7 correctly dates the unleavened-bread preparation, while Matthew 26:2 separately mentions Passover in two days. Use a clearly editorial chapter interval; do not claim the intervening controversies are selected or invent a specific day/date.",
+      "disposition": "SOURCE_BOUND_HOLY_WEEK_INTERVAL_LABEL_REQUIRED",
+      "scopeOfRemainingWork": "SOURCE_LABELLED_TIME_GAP_PENDING",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-26",
+      "fromMovement": "HS-M26",
+      "toMovement": "HS-M27",
+      "sourceEnd": "Luke 22:7–20",
+      "sourceStart": "Matthew 26:36–46",
+      "category": "ATTRIBUTION_BOUNDARY_REQUIRES_DISPLAY",
+      "existingP3OwnerBeatIds": [
+        "H60-01",
+        "H62-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "Luke 22:7–20",
+        "Matthew 26:36–46"
+      ],
+      "sourceCriticalFinding": "The Last Supper account belongs to Luke, while the Gethsemane account begins in Matthew. A visible witness/by-book heading is enough to prevent a synthetic Gospel speech; no need to manufacture a separate Last Supper anecdote.",
+      "disposition": "VISIBLE_LUKE_TO_MATTHEW_ATTRIBUTION_NOT_NEW_SOURCE",
+      "scopeOfRemainingWork": "VISIBLE_CANONICAL_BOOK_OR_GENRE_HEADER_PENDING",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-27",
+      "fromMovement": "HS-M27",
+      "toMovement": "HS-M28",
+      "sourceEnd": "Matthew 27:11–26",
+      "sourceStart": "John 19:17–30",
+      "category": "SOURCE_CONNECTOR_ALREADY_PRESENT",
+      "existingP3OwnerBeatIds": [
+        "H63-04",
+        "H64-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "Matthew 27:11–26",
+        "John 19:1–16",
+        "John 19:17–30"
+      ],
+      "sourceCriticalFinding": "The current beat separately attributes John's crown-of-thorns details following Matthew's Pilate hearing and before John's Crucifixion. Matthew 27:3–10 remains a workbench-only trial, not part of the selected execution sequence.",
+      "disposition": "RETAIN_EXISTING_PILATE_TO_CALVARY_EDITORIAL_ATTRIBUTION",
+      "scopeOfRemainingWork": "P3_ALREADY_SOURCE_BOUND_PRESENTATION_ONLY",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-29",
+      "fromMovement": "HS-M29",
+      "toMovement": "HS-M30",
+      "sourceEnd": "John 20:19–29",
+      "sourceStart": "Acts 1:6–12",
+      "category": "UNRESOLVED_OPTIONAL_SOURCE_TRIAL",
+      "existingP3OwnerBeatIds": [
+        "H65-02",
+        "HS-CF-07",
+        "H66-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "John 20:19–29",
+        "Acts 1:3–5",
+        "Acts 1:6–12"
+      ],
+      "sourceCriticalFinding": "The pre-Ascension sequence already has a held original three-verse Acts 1:3–5 block. Verse 3 states forty days of appearances, verse 4 records remaining in Jerusalem and waiting for the Father's promise, and verse 5 identifies the coming baptism with the Holy Ghost. Do not automatically put these back in the main book.",
+      "disposition": "REVIEW_EXISTING_ACTS_1_3_5_HELD_TRIAL",
+      "scopeOfRemainingWork": "EXACT_VERBATIM_RESEARCH_COMPARISON_PENDING",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-31",
+      "fromMovement": "HS-M31",
+      "toMovement": "HS-M32",
+      "sourceEnd": "Acts 7:54–59",
+      "sourceStart": "Acts 9:1–11",
+      "category": "DIRECT_SOURCE_LINK_ALREADY_PRESENT",
+      "existingP3OwnerBeatIds": [
+        "H68-04",
+        "H69-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "Acts 7:59",
+        "Acts 8:1",
+        "Acts 9:1"
+      ],
+      "sourceCriticalFinding": "Stephen's selected English Acts 7:59 already states Saul was consenting to his death. Crampon moves this material to 7:60; Acts 8:1 remains omitted but Acts 9:1 introduces Saul's active persecution without needing an invented speech by Stephen.",
+      "disposition": "RETAIN_ACTS_EDITIONS_AND_SAUL_PROVENANCE",
+      "scopeOfRemainingWork": "P3_ALREADY_SOURCE_BOUND_PRESENTATION_ONLY",
+      "overruledOrDuplicatedP4TextNotReadded": true,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    },
+    {
+      "hingeId": "HS-HINGE-35",
+      "fromMovement": "HS-M35",
+      "toMovement": "HS-M36",
+      "sourceEnd": "Revelation 5:1–14",
+      "sourceStart": "Revelation 19:11–21",
+      "category": "GENRE_ABRIDGMENT_REQUIRES_DISCLOSURE",
+      "existingP3OwnerBeatIds": [
+        "H75-02",
+        "H76-03",
+        "H77-01"
+      ],
+      "sourceBoundedEvidenceRefs": [
+        "Revelation 5:1–14",
+        "Revelation 12:1–17",
+        "Revelation 19:11–21"
+      ],
+      "sourceCriticalFinding": "The gap from the throne/Lamb to conflict visions passes through numerous unselected apocalyptic sequences. Current P3 H76-03 already marks Revelation 12 as editorial and labels it another vision; the large Rev 5→19 gap must remain explicit, never converted into a literal future chronology.",
+      "disposition": "EXPLICIT_SOURCE_CHAPTER_AND_VISION_OMISSION_LABEL",
+      "scopeOfRemainingWork": "VISIBLE_CANONICAL_BOOK_OR_GENRE_HEADER_PENDING",
+      "overruledOrDuplicatedP4TextNotReadded": false,
+      "originalSelectedPassagesUnmodified": true,
+      "referenceWitnessPrintedCollationPending": true,
+      "sourceDeskEvidenceNotPublicationApproval": true,
+      "oralAndTheologicalApproval": false
+    }
+  ],
+  "optionalSourceComparisons": [
+    {
+      "hinge": "HS-HINGE-07",
+      "choices": [
+        {
+          "id": "MOSES_FIRST_PETITION_REFUSAL",
+          "refs": [
+            "Exodus 5:1–2"
+          ],
+          "researchDisposition": "OPTIONAL_EXACT_SOURCE_TRIAL_PREFERRED_FOR_CAUSAL_CONTEXT",
+          "distinctiveReason": "Two verses establish Moses and Aaron speaking to Pharaoh and Pharaoh's explicit refusal.",
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 2,
+              "sourceWords": 60,
+              "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+              "validatedAgainstExistingCorpus": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 2,
+              "sourceWords": 61,
+              "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+              "validatedAgainstExistingCorpus": true
+            },
+            "crampon-1923": {
+              "verseEntries": 2,
+              "sourceWords": 64,
+              "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+              "validatedAgainstExistingCorpus": true
+            }
+          },
+          "publicationApproved": false,
+          "oralAcceptance": false
+        },
+        {
+          "id": "MOSES_AARON_MISSION_FRAME",
+          "refs": [
+            "Exodus 7:1–6"
+          ],
+          "researchDisposition": "OPTIONAL_SEPARATE_FOLLOWUP_CONTEXT_NOT_SUBSTITUTE_FOR_FIRST_REFUSAL",
+          "distinctiveReason": "Six verses reintroduce the divine commission, expected resistance and Moses/Aaron's obedience before the already selected first plague.",
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 6,
+              "sourceWords": 151,
+              "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+              "validatedAgainstExistingCorpus": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 6,
+              "sourceWords": 153,
+              "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+              "validatedAgainstExistingCorpus": true
+            },
+            "crampon-1923": {
+              "verseEntries": 6,
+              "sourceWords": 133,
+              "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+              "validatedAgainstExistingCorpus": true
+            }
+          },
+          "publicationApproved": false,
+          "oralAcceptance": false
+        }
+      ]
+    },
+    {
+      "hinge": "HS-HINGE-24",
+      "choices": [
+        {
+          "id": "LAZARUS_OPPOSITION_AND_PROPHECY",
+          "refs": [
+            "John 11:45–53"
+          ],
+          "researchDisposition": "EXISTING_P3_HELD_WHOLE_GOSPEL_UNIT",
+          "distinctiveReason": "Includes response, council, Caiaphas's reported words, evangelist's interpretation and the plot; do not discard the internal Scripture theological narration.",
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 9,
+              "sourceWords": 181,
+              "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+              "validatedAgainstExistingCorpus": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 9,
+              "sourceWords": 201,
+              "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+              "validatedAgainstExistingCorpus": true
+            },
+            "crampon-1923": {
+              "verseEntries": 9,
+              "sourceWords": 179,
+              "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+              "validatedAgainstExistingCorpus": true
+            }
+          },
+          "publicationApproved": false,
+          "oralAcceptance": false
+        }
+      ]
+    },
+    {
+      "hinge": "HS-HINGE-29",
+      "choices": [
+        {
+          "id": "ASCENSION_APPEARANCES_AND_PROMISE",
+          "refs": [
+            "Acts 1:3–5"
+          ],
+          "researchDisposition": "EXISTING_P3_HELD_WHOLE_SOURCE_PRELUDE",
+          "distinctiveReason": "Forty days, instruction to remain in Jerusalem, Spirit baptism provide Acts 1:6 context without fabricating chronology.",
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 3,
+              "sourceWords": 78,
+              "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+              "validatedAgainstExistingCorpus": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 3,
+              "sourceWords": 82,
+              "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+              "validatedAgainstExistingCorpus": true
+            },
+            "crampon-1923": {
+              "verseEntries": 3,
+              "sourceWords": 84,
+              "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+              "validatedAgainstExistingCorpus": true
+            }
+          },
+          "publicationApproved": false,
+          "oralAcceptance": false
+        }
+      ]
+    }
+  ],
+  "witnessFileProvenance": [
+    {
+      "edition": "dr-challoner",
+      "book": "Exodus",
+      "path": "data/scripture/witness/dr-challoner/Exodus.json",
+      "sha": "09b43d38baf0889623f0d30c15c01e0fe7b85da8"
+    },
+    {
+      "edition": "dr-challoner",
+      "book": "John",
+      "path": "data/scripture/witness/dr-challoner/John.json",
+      "sha": "a146e78ec89ad15d3df29a49462c8373e9dee3f8"
+    },
+    {
+      "edition": "dr-challoner",
+      "book": "Acts",
+      "path": "data/scripture/witness/dr-challoner/Acts.json",
+      "sha": "790769859646ecd4ca6b45f6b61b9ecaec1da826"
+    },
+    {
+      "edition": "cpdv-2009",
+      "book": "Exodus",
+      "path": "data/scripture/witness/cpdv-2009/Exodus.json",
+      "sha": "fdd0d5685e5be2d32b29f0369dba4c3de47ea120"
+    },
+    {
+      "edition": "cpdv-2009",
+      "book": "John",
+      "path": "data/scripture/witness/cpdv-2009/John.json",
+      "sha": "5c0f7929ec052ae1aa92c583219087bb25c32655"
+    },
+    {
+      "edition": "cpdv-2009",
+      "book": "Acts",
+      "path": "data/scripture/witness/cpdv-2009/Acts.json",
+      "sha": "5eaaa125d14538d00305e49624196b55033da41d"
+    },
+    {
+      "edition": "crampon-1923",
+      "book": "Exodus",
+      "path": "data/scripture/witness/crampon-1923/Exodus.json",
+      "sha": "49a299cc21b04ffcd5729e8df41327fa52c2806b"
+    },
+    {
+      "edition": "crampon-1923",
+      "book": "John",
+      "path": "data/scripture/witness/crampon-1923/John.json",
+      "sha": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790"
+    },
+    {
+      "edition": "crampon-1923",
+      "book": "Acts",
+      "path": "data/scripture/witness/crampon-1923/Acts.json",
+      "sha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244"
+    }
+  ],
+  "crossEditionProtection": {
+    "sourceContextBeat": "H37-02",
+    "selectedOracleBeat": "H38-03",
+    "originalEnglishTextReference": "Isaiah 9:1–6",
+    "catholicFrenchReference": [
+      "Isaiah 8:23",
+      "Isaiah 9:1–5"
+    ],
+    "stephenSourceEndByEdition": {
+      "dr-challoner": "Acts 7:59",
+      "cpdv-2009": "Acts 7:59",
+      "crampon-1923": "Acts 7:60"
+    },
+    "printedEditionCollationPending": true
+  },
+  "additionalGroundedTimeWitnesses": [
+    {
+      "hinge": "HS-HINGE-10",
+      "references": [
+        "Deuteronomy 2:14",
+        "Joshua 5:6"
+      ],
+      "interpretation": "Thirty-eight years is specifically the Kadesh-to-Zared journey (Deut 2:14). Forty years is the broader wilderness period (Jos 5:6). Avoid conflating periods."
+    },
+    {
+      "hinge": "HS-HINGE-25",
+      "references": [
+        "Matthew 26:2",
+        "Luke 22:7"
+      ],
+      "interpretation": "Matthew locates the approach of Pasch, Luke explicitly opens the Supper preparation at unleavened bread; the omitted Holy Week teaching is not a selected episode."
+    }
+  ],
+  "handoffScope": [
+    "Three P1 original-source comparisons remain held: first Pharaoh refusal, Lazarus/Caiaphas, and Acts Ascension prelude.",
+    "Four P1 intervals/attributions/vision-genre boundaries need clear UI or editor-owned source labels, not more story modules.",
+    "Thirteen P1 transitions already have source-grounded original Scripture or explicitly editorial bridge ownership; do not re-mine as fresh omissions.",
+    "None of these is a human oral reading, Catholic doctrinal validation, printed-edition collation or instruction to publish."
+  ]
+}

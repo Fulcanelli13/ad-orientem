@@ -1,0 +1,2137 @@
+{
+  "schema": "ao.historia.v18.essential-verse-economy.v1",
+  "status": "EDITORIAL_PROVISIONAL_VERSE_COORDINATES_ONLY",
+  "date": "2026-10-17",
+  "canonical": {
+    "originalV18Chapters": 78,
+    "originalV18Segments": 217,
+    "essentialSegments": 93,
+    "consolidatedMovements": 37,
+    "originalSourceMasterModified": false,
+    "canonicalBiblePassagesModified": false,
+    "secondExtendedBibleExperience": false
+  },
+  "upstream": {
+    "necessityPath": "data/research/historia-salutis-v18-necessity-audit.v1.json",
+    "necessityBlobSha": "e06db54e347382b7abdb240b76ebc19c0ad3b2e5",
+    "mainSpinePath": "data/research/historia-salutis-v18-main-spine-consolidation.v1.json",
+    "mainSpineBlobSha": "18f73172b814727f835955fd379d751dcf1ba453",
+    "contextPath": "data/research/historia-salutis-v18-continuity-desk-pass.v1.json",
+    "contextBlobSha": "487731c29bdc2345ccf47c77d487c01b6a3298fe"
+  },
+  "counts": {
+    "essential": 93,
+    "edited": 30,
+    "protected": 31,
+    "unchanged": 22,
+    "editionCorrections": 2,
+    "priorContinuityRestorations": 1,
+    "literaryContinuityExpansions": 6,
+    "literaryContextRebalances": 1
+  },
+  "candidateSourceEditions": [
+    "cpdv-2009",
+    "dr-challoner"
+  ],
+  "verification": {
+    "coordinateChecks": "ALL_93_PASS_SCRIPTURE_CONTRACTS_AFTER_M10_M19_CORRECTIONS",
+    "textCollation": false,
+    "fullLiteraryReadAloud": false,
+    "CatholicEditorialApproval": false,
+    "translationRightsApproval": false,
+    "explicitEditionBoundaryExceptions": [
+      {
+        "unitId": "H15-02",
+        "original": "Genesis 32:23–33",
+        "originalCandidateEdition": "crampon-1923",
+        "target": "Genesis 32:22–32",
+        "targetEditions": [
+          "cpdv-2009",
+          "dr-challoner"
+        ],
+        "status": "REFERENCE_BOUNDARY_RECONCILED_NOT_CERTIFIED_PRINTED_EDITIONS"
+      },
+      {
+        "unitId": "H68-04",
+        "original": "Acts 7:54–60",
+        "originalCandidateEdition": "crampon-1923",
+        "target": "Acts 7:54–59",
+        "targetEditions": [
+          "cpdv-2009",
+          "dr-challoner"
+        ],
+        "status": "SPLIT_MERGED_VERSE_ALIGNMENT_NOT_CERTIFIED_PRINTED_EDITIONS"
+      }
+    ],
+    "continuityReconciliation": {
+      "priorHighRiskUnitsOverlappingA": 5,
+      "identicalSelections": 3,
+      "deliberateMoreCompleteEnding": "H73-07",
+      "priorSourceSeamCarried": "H21-03",
+      "reason": "Longer full Acts 28:23–31 avoids detaching verse 28 from Isaiah's preceding explanation; Red Sea pursuit cannot be omitted from Exodus 14 opening.",
+      "priorCorrectionBlobSha": "387eeab46041fd853eccee0fdcd8a89df66e1b97"
+    },
+    "sourceWitnessTest": "tests/historia-essential-economy.mjs",
+    "sourceWitnessTestCommit": "284ea2e4ff6c574903cede70e63115989b94539f",
+    "sourceWitnessTestRunId": 39047169092,
+    "targetCPDVAndDouaySourceCoordinatePresenceVerified": true,
+    "historicalCramponExceptionSourcePresenceVerified": true,
+    "originalPrintedEditionAttested": false,
+    "originalTextAndRightsCollated": false,
+    "batch01_09": {
+      "movementIds": [
+        "HS-M01",
+        "HS-M02",
+        "HS-M03",
+        "HS-M04",
+        "HS-M05",
+        "HS-M06",
+        "HS-M07",
+        "HS-M08",
+        "HS-M09"
+      ],
+      "status": "TEXT_SEAMS_DESK_EXAMINED_PROVISIONAL",
+      "sourceContinuityFixes": [
+        "H11-02",
+        "H13-01",
+        "H16-03",
+        "H21-03"
+      ],
+      "approved": false,
+      "oralReadThrough": false,
+      "reason": "Actual CPDV opening/end verses inspected; incomplete antecedents and broken causal links restored from the same canonical books.",
+      "contractsPassed": true,
+      "phoneGatePassed": true,
+      "mainGatePassed": true
+    },
+    "batch10_19": {
+      "movementIds": [
+        "HS-M10",
+        "HS-M11",
+        "HS-M12",
+        "HS-M13",
+        "HS-M14",
+        "HS-M15",
+        "HS-M16",
+        "HS-M17",
+        "HS-M18",
+        "HS-M19"
+      ],
+      "status": "TEXT_SEAMS_DESK_EXAMINED_PROVISIONAL",
+      "sourceContinuityExpansions": [
+        "H22-01",
+        "H30-01",
+        "H33-01"
+      ],
+      "trims": [
+        "H35-02",
+        "H36-02",
+        "H43-02"
+      ],
+      "editsToCanonicalBible": false,
+      "approved": false,
+      "oralReadThrough": false,
+      "contractsPassed": true,
+      "sourceSpanRebalances": [
+        "H39-01"
+      ]
+    }
+  },
+  "rules": [
+    "Verse order preserved in every excerpt",
+    "No new editorial biblical prose as substitute for exact Scripture",
+    "Omissions shown in reader; never join discontiguous Scripture as one unbroken quote",
+    "All ten Commandments, Beatitudes and the Lord's Prayer are complete",
+    "Book-chapter-verse edition concordance requires witness verification before final approval",
+    "A partial-verse citation such as Exodus 3:8a is not treated as a certified whole verse",
+    "No automatic source selection based on citation frequency",
+    "No public app changes"
+  ],
+  "decisions": [
+    {
+      "unitId": "H01-01",
+      "movementId": "HS-M01",
+      "originalV18SourceReference": "Genesis 1:1–31",
+      "v18ChapterId": "H01",
+      "scene": "The six days of Creation",
+      "proposedSelectedReferences": [
+        "Genesis 1:1–31"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep all six days of Creation instead of an arbitrary sample.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H01-02",
+      "movementId": "HS-M01",
+      "originalV18SourceReference": "2:1–3",
+      "v18ChapterId": "H01",
+      "scene": "The seventh day and divine rest",
+      "proposedSelectedReferences": [
+        "2:1–3"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "The divine rest completes Creation.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H02-01",
+      "movementId": "HS-M01",
+      "originalV18SourceReference": "Genesis 2:7–9",
+      "v18ChapterId": "H02",
+      "scene": "Adam formed and placed in Eden",
+      "proposedSelectedReferences": [
+        "Genesis 2:7–9"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: Adam formed and placed in Eden.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H02-02",
+      "movementId": "HS-M01",
+      "originalV18SourceReference": "2:15–25",
+      "v18ChapterId": "H02",
+      "scene": "Eve and the first human communion",
+      "proposedSelectedReferences": [
+        "Genesis 2:15–18",
+        "Genesis 2:21–25"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of eve and the first human communion; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H03-01",
+      "movementId": "HS-M02",
+      "originalV18SourceReference": "Genesis 3:1–13",
+      "v18ChapterId": "H03",
+      "scene": "The disobedience of the first parents",
+      "proposedSelectedReferences": [
+        "Genesis 3:1–13"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "The entire temptation and Fall must stay causal.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H04-01",
+      "movementId": "HS-M02",
+      "originalV18SourceReference": "Genesis 3:14–24",
+      "v18ChapterId": "H04",
+      "scene": "Judgment and the first promise of victory over evil",
+      "proposedSelectedReferences": [
+        "Genesis 3:14–24"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "The first promise remains in the judgment and expulsion context.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H07-02",
+      "movementId": "HS-M03",
+      "originalV18SourceReference": "7:1–5, 10–12, 17–23",
+      "v18ChapterId": "H07",
+      "scene": "The flood and preservation of Noah's household",
+      "proposedSelectedReferences": [
+        "Genesis 7:1–5",
+        "Genesis 7:17–23"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of the flood and preservation of noah's household; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H07-03",
+      "movementId": "HS-M03",
+      "originalV18SourceReference": "8:6–12, 15–22",
+      "v18ChapterId": "H07",
+      "scene": "The receding waters and renewed life",
+      "proposedSelectedReferences": [
+        "8:6–12, 15–22"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: The receding waters and renewed life.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H08-01",
+      "movementId": "HS-M03",
+      "originalV18SourceReference": "Genesis 9:8–17",
+      "v18ChapterId": "H08",
+      "scene": "The covenant with Noah and every living creature",
+      "proposedSelectedReferences": [
+        "Genesis 9:8–17"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep God's whole covenant with Noah and living creatures.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H10-01",
+      "movementId": "HS-M04",
+      "originalV18SourceReference": "Genesis 12:1–9",
+      "v18ChapterId": "H10",
+      "scene": "Abram called to a land and promise",
+      "proposedSelectedReferences": [
+        "Genesis 12:1–9"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep Abraham's call, promise and response.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H11-02",
+      "movementId": "HS-M04",
+      "originalV18SourceReference": "Genesis 15:1–6, 17–21",
+      "v18ChapterId": "H11",
+      "scene": "Covenant promise and the land",
+      "proposedSelectedReferences": [
+        "Genesis 15:1–6",
+        "Genesis 15:9–10",
+        "Genesis 15:13–14",
+        "Genesis 15:17–18"
+      ],
+      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
+      "reason": "The original split introduced a smoking fire passing between 'those divisions' without showing the animals divided (15:9–10). The prophecy of enslavement and deliverance (15:13–14) is indispensable covenant-to-Exodus foreshadowing.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "PROPOSED_CURATED_TRIM",
+      "literaryBatch": "MOVEMENTS_01_09_DESK_READING"
+    },
+    {
+      "unitId": "H11-03",
+      "movementId": "HS-M04",
+      "originalV18SourceReference": "Genesis 17:1–11",
+      "v18ChapterId": "H11",
+      "scene": "Covenant sign given to Abraham",
+      "proposedSelectedReferences": [
+        "Genesis 17:1–11"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Retain God's covenant with Abraham and its sign.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H12-02",
+      "movementId": "HS-M05",
+      "originalV18SourceReference": "Genesis 21:1–7",
+      "v18ChapterId": "H12",
+      "scene": "The birth of Isaac",
+      "proposedSelectedReferences": [
+        "Genesis 21:1–7"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: The birth of Isaac.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H13-01",
+      "movementId": "HS-M05",
+      "originalV18SourceReference": "Genesis 22:1–2, 6–14, 15–19",
+      "v18ChapterId": "H13",
+      "scene": "Isaac offered and providentially spared",
+      "proposedSelectedReferences": [
+        "Genesis 22:1–19"
+      ],
+      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
+      "reason": "The original 22:1–2 to 22:6 handoff starts 'He also took the wood' without the journey, preparation or servants; preserving 22:1–19 avoids an artificial gap in the covenant's decisive trial.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "literaryBatch": "MOVEMENTS_01_09_DESK_READING"
+    },
+    {
+      "unitId": "H15-02",
+      "movementId": "HS-M05",
+      "originalV18SourceReference": "Genesis 32:23–33",
+      "v18ChapterId": "H15",
+      "scene": "Jacob wrestles and receives his name Israel",
+      "proposedSelectedReferences": [
+        "Genesis 32:22–32"
+      ],
+      "selectionStatus": "EDITION_AWARE_REFERENCE_CORRECTION",
+      "reason": "The original 32:23–33 follows the Crampon (French) 1923 numbering; CPDV and Douay–Rheims have the corresponding Jabbok encounter at Genesis 32:22–32. The CPDV/Douay first verse supplies Jacob crossing Jabbok; their verse 32 is the final dietary-custom explanation. Same source scene, no actual omitted verse. Historical source edition is probable, not certified.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "originalReferenceEditionWorkingHypothesis": "crampon-1923",
+      "targetReferenceEditions": [
+        "cpdv-2009",
+        "dr-challoner"
+      ],
+      "originalEditionIndependentlyCertified": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H15-03",
+      "movementId": "HS-M05",
+      "originalV18SourceReference": "Genesis 35:9–15",
+      "v18ChapterId": "H15",
+      "scene": "God renews the promises to Israel",
+      "proposedSelectedReferences": [
+        "Genesis 35:9–15"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: God renews the promises to Israel.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H16-01",
+      "movementId": "HS-M06",
+      "originalV18SourceReference": "Genesis 37:3–4, 12–28",
+      "v18ChapterId": "H16",
+      "scene": "Joseph sold by his brothers",
+      "proposedSelectedReferences": [
+        "Genesis 37:3–4",
+        "Genesis 37:12–14",
+        "Genesis 37:18–24",
+        "Genesis 37:26–28"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of joseph sold by his brothers; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H16-03",
+      "movementId": "HS-M06",
+      "originalV18SourceReference": "Genesis 41:14–16, 37–45",
+      "v18ChapterId": "H16",
+      "scene": "Joseph raised to authority",
+      "proposedSelectedReferences": [
+        "Genesis 41:14–16",
+        "Genesis 41:25–30",
+        "Genesis 41:33–45"
+      ],
+      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
+      "reason": "Pharaoh's approval at 41:37 called the counsel good without any counsel in the selected verses. Restore Joseph's interpretation of seven years of plenty and famine and his recommendation to store grain (41:25–30,33–36).",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "literaryBatch": "MOVEMENTS_01_09_DESK_READING"
+    },
+    {
+      "unitId": "H16-04",
+      "movementId": "HS-M06",
+      "originalV18SourceReference": "Genesis 45:1–15",
+      "v18ChapterId": "H16",
+      "scene": "Joseph's reconciliation with his brothers",
+      "proposedSelectedReferences": [
+        "Genesis 45:1–11",
+        "Genesis 45:14–15"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of joseph's reconciliation with his brothers; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H16-05",
+      "movementId": "HS-M06",
+      "originalV18SourceReference": "Genesis 46:1–7",
+      "v18ChapterId": "H16",
+      "scene": "Israel's family enters Egypt",
+      "proposedSelectedReferences": [
+        "Genesis 46:1–7"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: Israel's family enters Egypt.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H17-01",
+      "movementId": "HS-M07",
+      "originalV18SourceReference": "Exodus 1:7–14, 22",
+      "v18ChapterId": "H17",
+      "scene": "Israel oppressed in Egypt",
+      "proposedSelectedReferences": [
+        "Exodus 1:7–14, 22"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: Israel oppressed in Egypt.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H18-01",
+      "movementId": "HS-M07",
+      "originalV18SourceReference": "Exodus 3:1–8a, 10–15",
+      "v18ChapterId": "H18",
+      "scene": "Moses meets God and receives the divine name",
+      "proposedSelectedReferences": [
+        "Exodus 3:1–8a, 10–15"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Preserve Moses' mission and the divine name; inherited Exodus 3:8a is a partial-verse review hold.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": true,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H19-01",
+      "movementId": "HS-M08",
+      "originalV18SourceReference": "Exodus 7:14–21",
+      "v18ChapterId": "H19",
+      "scene": "The opening signs against Egypt",
+      "proposedSelectedReferences": [
+        "Exodus 7:14–17",
+        "Exodus 7:20–21"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of the opening signs against egypt; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H19-05",
+      "movementId": "HS-M08",
+      "originalV18SourceReference": "Exodus 11:4–8",
+      "v18ChapterId": "H19",
+      "scene": "Announcement of the final plague",
+      "proposedSelectedReferences": [
+        "Exodus 11:4–8"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: Announcement of the final plague.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H20-01",
+      "movementId": "HS-M08",
+      "originalV18SourceReference": "Exodus 12:1–8, 11–14, 21–28",
+      "v18ChapterId": "H20",
+      "scene": "The paschal lamb and the saving Passover",
+      "proposedSelectedReferences": [
+        "Exodus 12:1–3",
+        "Exodus 12:5–8",
+        "Exodus 12:11–14",
+        "Exodus 12:21–23",
+        "Exodus 12:27–28"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of the paschal lamb and the saving passover; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H21-01",
+      "movementId": "HS-M09",
+      "originalV18SourceReference": "Exodus 12:31–42",
+      "v18ChapterId": "H21",
+      "scene": "Departure from Egypt",
+      "proposedSelectedReferences": [
+        "Exodus 12:31–33",
+        "Exodus 12:37–42"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of departure from egypt; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H21-03",
+      "movementId": "HS-M09",
+      "originalV18SourceReference": "Exodus 14:15–31",
+      "v18ChapterId": "H21",
+      "scene": "Pharaoh pursues and the sea is crossed",
+      "proposedSelectedReferences": [
+        "Exodus 14:5–10",
+        "Exodus 14:13–16",
+        "Exodus 14:19–23",
+        "Exodus 14:26–31"
+      ],
+      "selectionStatus": "PRIOR_SOURCE_CONTINUITY_RESTORED",
+      "reason": "Keep the previously restored pursuit (14:5–10), Moses's reassurance (14:13–14), the sea crossing (14:15–22) AND the Egyptians' entry into the sea (14:23) before the waters return (14:26–31); removing 14:23 breaks causal continuity.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "priorHighRiskResearch": {
+        "sourcePath": "data/research/historia-salutis-v18-part-ii-correction-delta.v1.json",
+        "sourceBlobSha": "387eeab46041fd853eccee0fdcd8a89df66e1b97",
+        "principalReadings": [
+          "Exodus 14:5–10",
+          "Exodus 14:13–16",
+          "Exodus 14:19–23",
+          "Exodus 14:26–31",
+          "Exodus 15:1–2",
+          "Exodus 15:20–21"
+        ],
+        "choice": "SELECTED_SUBSET_OF_PREVIOUS_HIGH_RISK_CONTINUITY_CORRECTION",
+        "noPriorResearchDeleted": true
+      },
+      "selectedCoordinatesAreScriptureOnly": true,
+      "literaryBatch": "MOVEMENTS_01_09_DESK_READING"
+    },
+    {
+      "unitId": "H22-01",
+      "movementId": "HS-M10",
+      "originalV18SourceReference": "Exodus 19:3–8",
+      "v18ChapterId": "H22",
+      "scene": "The covenant invitation to Israel",
+      "proposedSelectedReferences": [
+        "Exodus 19:1–8"
+      ],
+      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
+      "reason": "Israel's arrival at Sinai is necessary before Moses ascends the mountain to receive the covenant summons; Exodus 19:1–2 identifies place and setting.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false
+    },
+    {
+      "unitId": "H22-02",
+      "movementId": "HS-M10",
+      "originalV18SourceReference": "20:1–17",
+      "v18ChapterId": "H22",
+      "scene": "The divine commandments",
+      "proposedSelectedReferences": [
+        "20:1–17"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "All ten Commandments must remain intact, without selecting only popular injunctions.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H22-03",
+      "movementId": "HS-M10",
+      "originalV18SourceReference": "24:3–8",
+      "v18ChapterId": "H22",
+      "scene": "The covenant ratified in blood",
+      "proposedSelectedReferences": [
+        "24:3–8"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Retain ratification, law and blood of the covenant.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H23-01",
+      "movementId": "HS-M10",
+      "originalV18SourceReference": "Exodus 32:1–14, 19–35",
+      "v18ChapterId": "H23",
+      "scene": "The golden calf and Moses' intercession",
+      "proposedSelectedReferences": [
+        "Exodus 32:1–4",
+        "Exodus 32:7–14",
+        "Exodus 32:19–20",
+        "Exodus 32:30–34"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of the golden calf and moses' intercession; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H24-03",
+      "movementId": "HS-M11",
+      "originalV18SourceReference": "Deuteronomy 34:1–12",
+      "v18ChapterId": "H24",
+      "scene": "Moses dies before the promised land",
+      "proposedSelectedReferences": [
+        "Deuteronomy 34:1–7",
+        "Deuteronomy 34:9–12"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of moses dies before the promised land; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H25-01",
+      "movementId": "HS-M11",
+      "originalV18SourceReference": "Joshua 3:7–17",
+      "v18ChapterId": "H25",
+      "scene": "Israel passes the Jordan",
+      "proposedSelectedReferences": [
+        "Joshua 3:7–8",
+        "Joshua 3:13–17"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of israel passes the jordan; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H26-01",
+      "movementId": "HS-M11",
+      "originalV18SourceReference": "Judges 2:6–19",
+      "v18ChapterId": "H26",
+      "scene": "The recurring cycle of apostasy and deliverance",
+      "proposedSelectedReferences": [
+        "Judges 2:6–12",
+        "Judges 2:16–19"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of the recurring cycle of apostasy and deliverance; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H28-04",
+      "movementId": "HS-M12",
+      "originalV18SourceReference": "Ruth 4:1–13, 17–22",
+      "v18ChapterId": "H28",
+      "scene": "Ruth and Boaz's union and descent to David",
+      "proposedSelectedReferences": [
+        "Ruth 4:13",
+        "Ruth 4:17–22"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of ruth and boaz's union and descent to david; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H29-03",
+      "movementId": "HS-M12",
+      "originalV18SourceReference": "1 Samuel 8:4–22",
+      "v18ChapterId": "H29",
+      "scene": "Israel demands a king",
+      "proposedSelectedReferences": [
+        "1Samuel 8:4–8",
+        "1Samuel 8:19–22"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of israel demands a king; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H29-04",
+      "movementId": "HS-M12",
+      "originalV18SourceReference": "1 Samuel 10:1–8",
+      "v18ChapterId": "H29",
+      "scene": "Saul anointed as the first king",
+      "proposedSelectedReferences": [
+        "1 Samuel 10:1–8"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: Saul anointed as the first king.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H30-01",
+      "movementId": "HS-M13",
+      "originalV18SourceReference": "1 Samuel 16:10–13",
+      "v18ChapterId": "H30",
+      "scene": "David anointed by Samuel",
+      "proposedSelectedReferences": [
+        "1Samuel 16:1–13"
+      ],
+      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
+      "reason": "Without verses 4–9 the Lord's instruction to Jesse and Samuel's examination of the elder sons are missing before verse 10. Preserve the complete chosen-king episode, replacing the earlier provisional 1Samuel 16:1–3 source bridge.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false
+    },
+    {
+      "unitId": "H32-01",
+      "movementId": "HS-M13",
+      "originalV18SourceReference": "2 Samuel 2:1–4",
+      "v18ChapterId": "H32",
+      "scene": "David receives the kingdom",
+      "proposedSelectedReferences": [
+        "2 Samuel 2:1–4"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: David receives the kingdom.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H32-02",
+      "movementId": "HS-M13",
+      "originalV18SourceReference": "2 Samuel 5:1–10",
+      "v18ChapterId": "H32",
+      "scene": "Jerusalem becomes David's capital",
+      "proposedSelectedReferences": [
+        "2 Samuel 5:1–10"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: Jerusalem becomes David's capital.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H32-03",
+      "movementId": "HS-M13",
+      "originalV18SourceReference": "2 Samuel 6:12–19",
+      "v18ChapterId": "H32",
+      "scene": "The Ark brought to Jerusalem",
+      "proposedSelectedReferences": [
+        "2Samuel 6:12–15",
+        "2Samuel 6:17–19"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of the ark brought to jerusalem; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H33-01",
+      "movementId": "HS-M13",
+      "originalV18SourceReference": "2 Samuel 7:8–16",
+      "v18ChapterId": "H33",
+      "scene": "God promises David an enduring royal house",
+      "proposedSelectedReferences": [
+        "2Samuel 7:1–16"
+      ],
+      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
+      "reason": "The divine answer in 7:8 begins mid-command to Nathan; verses 1–7 establish David's desire to build God a house and God's response before the covenant promise of an enduring royal dynasty.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false
+    },
+    {
+      "unitId": "H35-02",
+      "movementId": "HS-M14",
+      "originalV18SourceReference": "1 Kings 6:1–2",
+      "v18ChapterId": "H35",
+      "scene": "Solomon builds the Temple",
+      "proposedSelectedReferences": [
+        "1Kings 6:1"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Preserve the Temple-construction event but omit numerical dimensions from this introductory narrative unit; the Temple's consecration is already narrated in the next original passage.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false,
+      "omissionMarkerPolicy": "Display omission after retained 1 Kings 6:1; v18 also contains 6:2 architectural dimensions."
+    },
+    {
+      "unitId": "H35-03",
+      "movementId": "HS-M14",
+      "originalV18SourceReference": "1 Kings 8:1–13, 22–30",
+      "v18ChapterId": "H35",
+      "scene": "The Ark enters the dedicated Temple",
+      "proposedSelectedReferences": [
+        "1Kings 8:1–6",
+        "1Kings 8:10–13",
+        "1Kings 8:22–23",
+        "1Kings 8:27–30"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of the ark enters the dedicated temple; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H36-01",
+      "movementId": "HS-M14",
+      "originalV18SourceReference": "1 Kings 11:29–32",
+      "v18ChapterId": "H36",
+      "scene": "The kingdom is foretold to divide",
+      "proposedSelectedReferences": [
+        "1 Kings 11:29–32"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: The kingdom is foretold to divide.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H36-02",
+      "movementId": "HS-M14",
+      "originalV18SourceReference": "1 Kings 12:1–24",
+      "v18ChapterId": "H36",
+      "scene": "Israel and Judah divide",
+      "proposedSelectedReferences": [
+        "1Kings 12:1–5",
+        "1Kings 12:13–20"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "The final verse 12:24 begins in the middle of Shemaiah's unintroduced quotation. The division is already completed and explained in 12:13–20; do not feature an orphan quotation.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "PROPOSED_CURATED_TRIM",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false
+    },
+    {
+      "unitId": "H38-02",
+      "movementId": "HS-M15",
+      "originalV18SourceReference": "Isaiah 7:10–17",
+      "v18ChapterId": "H38",
+      "scene": "The sign of Emmanuel",
+      "proposedSelectedReferences": [
+        "Isaiah 7:10–17"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Retain Isaiah's historical setting for the Emmanuel prophecy.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H38-03",
+      "movementId": "HS-M15",
+      "originalV18SourceReference": "Isaiah 9:1–6",
+      "v18ChapterId": "H38",
+      "scene": "The promised royal child",
+      "proposedSelectedReferences": [
+        "Isaiah 9:1–6"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep the full promised royal-child oracle.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H38-04",
+      "movementId": "HS-M15",
+      "originalV18SourceReference": "Isaiah 11:1–10",
+      "v18ChapterId": "H38",
+      "scene": "The shoot from Jesse",
+      "proposedSelectedReferences": [
+        "Isaiah 11:1–10"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep the complete shoot of Jesse and his peaceable reign.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H38-05",
+      "movementId": "HS-M15",
+      "originalV18SourceReference": "Isaiah 52:13–53:12",
+      "v18ChapterId": "H38",
+      "scene": "The suffering servant",
+      "proposedSelectedReferences": [
+        "Isaiah 52:13–53:12"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Do not mutilate the Servant Song spanning Isaiah 52–53.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H39-01",
+      "movementId": "HS-M15",
+      "originalV18SourceReference": "2 Kings 17:5–18",
+      "v18ChapterId": "H39",
+      "scene": "The northern kingdom falls under judgment",
+      "proposedSelectedReferences": [
+        "2Kings 17:3–8",
+        "2Kings 17:13–18"
+      ],
+      "selectionStatus": "LITERARY_CONTEXT_REBALANCED",
+      "reason": "Samaria's fall had an unnamed assailant and should begin by identifying Shalmaneser in 2 Kings 17:3–4; verses 9–12 are omitted because 17:13–18 already interprets Israel's apostasy. This is a shorter overall source passage with a small but necessary pre-original antecedent.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "PROPOSED_CURATED_TRIM",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false
+    },
+    {
+      "unitId": "H40-01",
+      "movementId": "HS-M16",
+      "originalV18SourceReference": "Jeremiah 31:31–34",
+      "v18ChapterId": "H40",
+      "scene": "God announces a new covenant through Jeremiah",
+      "proposedSelectedReferences": [
+        "Jeremiah 31:31–34"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep the complete New Covenant oracle.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H41-01",
+      "movementId": "HS-M16",
+      "originalV18SourceReference": "2 Kings 25:1–12",
+      "v18ChapterId": "H41",
+      "scene": "Jerusalem and the Temple fall",
+      "proposedSelectedReferences": [
+        "2Kings 25:1–5",
+        "2Kings 25:8–12"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of jerusalem and the temple fall; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H41-02",
+      "movementId": "HS-M16",
+      "originalV18SourceReference": "2 Kings 25:18–21",
+      "v18ChapterId": "H41",
+      "scene": "The elite are carried into exile",
+      "proposedSelectedReferences": [
+        "2 Kings 25:18–21"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: The elite are carried into exile.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H43-01",
+      "movementId": "HS-M17",
+      "originalV18SourceReference": "Ezra 1:1–6",
+      "v18ChapterId": "H43",
+      "scene": "The decree permitting return from exile",
+      "proposedSelectedReferences": [
+        "Ezra 1:1–6"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: The decree permitting return from exile.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H43-02",
+      "movementId": "HS-M17",
+      "originalV18SourceReference": "Ezra 6:13–22",
+      "v18ChapterId": "H43",
+      "scene": "The Temple rebuilt",
+      "proposedSelectedReferences": [
+        "Ezra 6:14–16",
+        "Ezra 6:19–22"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Ezra 6:13 depends on Darius's otherwise absent administrative instructions and named officials; begin with the elders' actual rebuilding and preserve the Temple dedication and Passover.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "PROPOSED_CURATED_TRIM",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false
+    },
+    {
+      "unitId": "H46-01",
+      "movementId": "HS-M18",
+      "originalV18SourceReference": "Luke 1:26–38",
+      "v18ChapterId": "H46",
+      "scene": "Gabriel announces the Incarnation and Mary's fiat",
+      "proposedSelectedReferences": [
+        "Luke 1:26–38"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Retain Gabriel's message and Mary's fiat.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H47-02",
+      "movementId": "HS-M19",
+      "originalV18SourceReference": "Matthew 1:18–25",
+      "v18ChapterId": "H47",
+      "scene": "The angel reassures Joseph",
+      "proposedSelectedReferences": [
+        "Matthew 1:18–25"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: The angel reassures Joseph.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H48-01",
+      "movementId": "HS-M19",
+      "originalV18SourceReference": "Luke 2:1–20",
+      "v18ChapterId": "H48",
+      "scene": "The birth of Christ in Bethlehem",
+      "proposedSelectedReferences": [
+        "Luke 2:1–20"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "The Nativity and shepherds form one coherent unit.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H49-02",
+      "movementId": "HS-M19",
+      "originalV18SourceReference": "Matthew 2:1–12",
+      "v18ChapterId": "H49",
+      "scene": "Gentiles represented by the Magi",
+      "proposedSelectedReferences": [
+        "Matthew 2:1–12"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Retain the Magi's recognition and departure.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H51-01",
+      "movementId": "HS-M20",
+      "originalV18SourceReference": "Matthew 3:1–17",
+      "v18ChapterId": "H51",
+      "scene": "John prepares Israel and baptizes Jesus",
+      "proposedSelectedReferences": [
+        "Matthew 3:1–6",
+        "Matthew 3:11–17"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of john prepares israel and baptizes jesus; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H51-03",
+      "movementId": "HS-M20",
+      "originalV18SourceReference": "Mark 1:14–15",
+      "v18ChapterId": "H51",
+      "scene": "Christ begins proclaiming the Kingdom",
+      "proposedSelectedReferences": [
+        "Mark 1:14–15"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: Christ begins proclaiming the Kingdom.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H52-01",
+      "movementId": "HS-M20",
+      "originalV18SourceReference": "John 1:35–51",
+      "v18ChapterId": "H52",
+      "scene": "The first disciples recognise and follow Christ",
+      "proposedSelectedReferences": [
+        "John 1:35–51"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: The first disciples recognise and follow Christ.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H53-01",
+      "movementId": "HS-M21",
+      "originalV18SourceReference": "Matthew 5:1–12",
+      "v18ChapterId": "H53",
+      "scene": "The Beatitudes teach the Kingdom's nature",
+      "proposedSelectedReferences": [
+        "Matthew 5:1–12"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep every Beatitude.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H53-02",
+      "movementId": "HS-M21",
+      "originalV18SourceReference": "Matthew 6:9–15",
+      "v18ChapterId": "H53",
+      "scene": "The Lord's Prayer",
+      "proposedSelectedReferences": [
+        "Matthew 6:9–15"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep the complete Lord's Prayer.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H56-02",
+      "movementId": "HS-M22",
+      "originalV18SourceReference": "John 6:24–35, 47–59",
+      "v18ChapterId": "H56",
+      "scene": "The Bread of Life discourse",
+      "proposedSelectedReferences": [
+        "John 6:26–35",
+        "John 6:47–59"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of the bread of life discourse; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H57-01",
+      "movementId": "HS-M23",
+      "originalV18SourceReference": "Matthew 16:13–28",
+      "v18ChapterId": "H57",
+      "scene": "Peter confesses Christ and receives the promise",
+      "proposedSelectedReferences": [
+        "Matthew 16:13–28"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep Peter's confession, keys and the Passion prediction together.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H57-02",
+      "movementId": "HS-M23",
+      "originalV18SourceReference": "Matthew 17:1–13",
+      "v18ChapterId": "H57",
+      "scene": "Christ's Transfiguration",
+      "proposedSelectedReferences": [
+        "Matthew 17:1–9"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of christ's transfiguration; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H58-04",
+      "movementId": "HS-M24",
+      "originalV18SourceReference": "John 11:1–44",
+      "v18ChapterId": "H58",
+      "scene": "Lazarus raised shortly before the Passion",
+      "proposedSelectedReferences": [
+        "John 11:1–7",
+        "John 11:14–17",
+        "John 11:20–27",
+        "John 11:32–35",
+        "John 11:38–44"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of lazarus raised shortly before the passion; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H59-01",
+      "movementId": "HS-M25",
+      "originalV18SourceReference": "Matthew 21:1–11",
+      "v18ChapterId": "H59",
+      "scene": "Christ enters Jerusalem as King",
+      "proposedSelectedReferences": [
+        "Matthew 21:1–11"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: Christ enters Jerusalem as King.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H60-01",
+      "movementId": "HS-M26",
+      "originalV18SourceReference": "Luke 22:7–20",
+      "v18ChapterId": "H60",
+      "scene": "The Last Supper and institution of the Eucharist",
+      "proposedSelectedReferences": [
+        "Luke 22:7–20"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Preserve full Eucharistic and new covenant institution.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H62-01",
+      "movementId": "HS-M27",
+      "originalV18SourceReference": "Matthew 26:36–46",
+      "v18ChapterId": "H62",
+      "scene": "Christ's agony in Gethsemane",
+      "proposedSelectedReferences": [
+        "Matthew 26:36–46"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep Christ's agony and submission.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H62-02",
+      "movementId": "HS-M27",
+      "originalV18SourceReference": "Matthew 26:47–56",
+      "v18ChapterId": "H62",
+      "scene": "Judas betrays Christ and he is arrested",
+      "proposedSelectedReferences": [
+        "Matthew 26:47–56"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: Judas betrays Christ and he is arrested.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H63-01",
+      "movementId": "HS-M27",
+      "originalV18SourceReference": "Matthew 26:57–75",
+      "v18ChapterId": "H63",
+      "scene": "Jesus questioned and denied by Peter",
+      "proposedSelectedReferences": [
+        "Matthew 26:57–75"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: Jesus questioned and denied by Peter.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H63-02",
+      "movementId": "HS-M27",
+      "originalV18SourceReference": "Matthew 27:1–26",
+      "v18ChapterId": "H63",
+      "scene": "Christ before Pilate in Matthew",
+      "proposedSelectedReferences": [
+        "Matthew 27:1–2",
+        "Matthew 27:11–26"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of christ before pilate in matthew; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H64-01",
+      "movementId": "HS-M28",
+      "originalV18SourceReference": "John 19:17–30",
+      "v18ChapterId": "H64",
+      "scene": "The Crucifixion and death of Christ",
+      "proposedSelectedReferences": [
+        "John 19:17–30"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep Christ's words and actions at Calvary through death.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H65-01",
+      "movementId": "HS-M29",
+      "originalV18SourceReference": "John 20:1–18",
+      "v18ChapterId": "H65",
+      "scene": "The empty tomb and encounter with Magdalene",
+      "proposedSelectedReferences": [
+        "John 20:1–3",
+        "John 20:6–9",
+        "John 20:11–18"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of the empty tomb and encounter with magdalene; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H65-02",
+      "movementId": "HS-M29",
+      "originalV18SourceReference": "John 20:19–29",
+      "v18ChapterId": "H65",
+      "scene": "Christ appears to the Apostles and Thomas",
+      "proposedSelectedReferences": [
+        "John 20:19–29"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Retain the sending and forgiveness of sins with Thomas's confession.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H66-01",
+      "movementId": "HS-M30",
+      "originalV18SourceReference": "Acts 1:6–12",
+      "v18ChapterId": "H66",
+      "scene": "The Ascension of Christ",
+      "proposedSelectedReferences": [
+        "Acts 1:6–12"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep Ascension, commission and angelic testimony.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H67-01",
+      "movementId": "HS-M31",
+      "originalV18SourceReference": "Acts 2:1–21, 37–41",
+      "v18ChapterId": "H67",
+      "scene": "The descent of the Holy Ghost and birth of the Church",
+      "proposedSelectedReferences": [
+        "Acts 2:1–8",
+        "Acts 2:11–18",
+        "Acts 2:21",
+        "Acts 2:37–41"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of the descent of the holy ghost and birth of the church; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H68-01",
+      "movementId": "HS-M31",
+      "originalV18SourceReference": "Acts 2:42–47",
+      "v18ChapterId": "H68",
+      "scene": "The earliest community of believers",
+      "proposedSelectedReferences": [
+        "Acts 2:42–47"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: The earliest community of believers.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H68-04",
+      "movementId": "HS-M31",
+      "originalV18SourceReference": "Acts 7:54–60",
+      "v18ChapterId": "H68",
+      "scene": "St Stephen's martyrdom",
+      "proposedSelectedReferences": [
+        "Acts 7:54–59"
+      ],
+      "selectionStatus": "EDITION_AWARE_REFERENCE_CORRECTION",
+      "reason": "Original Acts 7:54–60 follows Crampon's split between the vision and Stephen's words in 7:55–56, with his final prayer in 7:60. CPDV/Douay combine the vision and words in 7:55 and close Stephen's martyrdom at 7:59. Do not misinterpret the shorter target range as omitted martyrdom verses.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "originalReferenceEditionWorkingHypothesis": "crampon-1923",
+      "targetReferenceEditions": [
+        "cpdv-2009",
+        "dr-challoner"
+      ],
+      "originalEditionIndependentlyCertified": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H69-01",
+      "movementId": "HS-M32",
+      "originalV18SourceReference": "Acts 9:1–22",
+      "v18ChapterId": "H69",
+      "scene": "Saul encounters Christ and becomes his witness",
+      "proposedSelectedReferences": [
+        "Acts 9:1–11",
+        "Acts 9:17–22"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of saul encounters christ and becomes his witness; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H70-01",
+      "movementId": "HS-M32",
+      "originalV18SourceReference": "Acts 10:1–48",
+      "v18ChapterId": "H70",
+      "scene": "Cornelius receives the Gospel and the Holy Ghost",
+      "proposedSelectedReferences": [
+        "Acts 10:1–6",
+        "Acts 10:9–16",
+        "Acts 10:19–20",
+        "Acts 10:24",
+        "Acts 10:28–29",
+        "Acts 10:33–48"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of cornelius receives the gospel and the holy ghost; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H71-01",
+      "movementId": "HS-M33",
+      "originalV18SourceReference": "Acts 11:19–26",
+      "v18ChapterId": "H71",
+      "scene": "The Church at Antioch and the Gentile mission",
+      "proposedSelectedReferences": [
+        "Acts 11:19–26"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: The Church at Antioch and the Gentile mission.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H71-02",
+      "movementId": "HS-M33",
+      "originalV18SourceReference": "Acts 13:1–12",
+      "v18ChapterId": "H71",
+      "scene": "Paul and Barnabas sent forth",
+      "proposedSelectedReferences": [
+        "Acts 13:1–5"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of paul and barnabas sent forth; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H72-01",
+      "movementId": "HS-M33",
+      "originalV18SourceReference": "Acts 15:1–29",
+      "v18ChapterId": "H72",
+      "scene": "The apostolic Council of Jerusalem resolves the Gentile question",
+      "proposedSelectedReferences": [
+        "Acts 15:1–2",
+        "Acts 15:5–11",
+        "Acts 15:13–20",
+        "Acts 15:22–29"
+      ],
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Remove incidental or repeated material without losing the necessary content of the apostolic council of jerusalem resolves the gentile question; make every gap visibly non-contiguous.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H73-07",
+      "movementId": "HS-M34",
+      "originalV18SourceReference": "Acts 28:23–31",
+      "v18ChapterId": "H73",
+      "scene": "Paul freely preaches Christ in Rome",
+      "proposedSelectedReferences": [
+        "Acts 28:23–31"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep the end of Acts and the mission to the Gentiles.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H75-02",
+      "movementId": "HS-M35",
+      "originalV18SourceReference": "Revelation 5:1–14",
+      "v18ChapterId": "H75",
+      "scene": "The slain Lamb receives the scroll",
+      "proposedSelectedReferences": [
+        "Revelation 5:1–14"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "The Lamb, scroll and heavenly adoration are one vision.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H77-01",
+      "movementId": "HS-M36",
+      "originalV18SourceReference": "Revelation 19:11–21",
+      "v18ChapterId": "H77",
+      "scene": "The final victory of Christ",
+      "proposedSelectedReferences": [
+        "Revelation 19:11–21"
+      ],
+      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: The final victory of Christ.",
+      "editorReviewedForNarrativeEconomy": false,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H77-02",
+      "movementId": "HS-M36",
+      "originalV18SourceReference": "Revelation 20:1–15",
+      "v18ChapterId": "H77",
+      "scene": "The last judgment",
+      "proposedSelectedReferences": [
+        "Revelation 20:1–15"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep context for the final judgment, resurrection and Book of Life.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H78-01",
+      "movementId": "HS-M37",
+      "originalV18SourceReference": "Revelation 21:1–7",
+      "v18ChapterId": "H78",
+      "scene": "New heaven and new earth",
+      "proposedSelectedReferences": [
+        "Revelation 21:1–7"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep the renewed heaven/earth and God's dwelling.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    },
+    {
+      "unitId": "H78-02",
+      "movementId": "HS-M37",
+      "originalV18SourceReference": "22:1–5",
+      "v18ChapterId": "H78",
+      "scene": "The river and tree of life",
+      "proposedSelectedReferences": [
+        "22:1–5"
+      ],
+      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "reason": "Keep the river and tree of life.",
+      "editorReviewedForNarrativeEconomy": true,
+      "halfVerseNotationInOriginal": false,
+      "omittedVersesMustBeVisible": false,
+      "bothCatholicEditionVersePresenceVerified": true,
+      "sourceTextCollatedAgainstPrintedEditions": false,
+      "reviewApproved": false,
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
+    }
+  ],
+  "comparativeScriptureEconomy": {
+    "originalNominalVerseUnits": 1207,
+    "proposedNominalVerseUnits": 1086,
+    "nominalDifference": 121,
+    "historicalEditionExceptions": 2,
+    "nominalCountingDifferenceNotEditorialCut": 1,
+    "comparableOriginalVerseUnits": 1189,
+    "comparableSelectedVerseUnits": 1069,
+    "comparableActualVerseUnitReductions": 120,
+    "comparableReductionRatePct": 10.1,
+    "countingRule": "Measures only proposed essential A-verse counts. Excludes the two edition-concordance units from like-for-like rate. Excludes 29 distinct editorial context notes and 10 held native-source bridge passages, not a whole-movement manuscript word count.",
+    "readAloudApproved": false
+  }
+}

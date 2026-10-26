@@ -1,0 +1,826 @@
+{
+  "schema": "ao.historia.p3-p4.m20-m37-canonical-reconciliation.v1",
+  "date": "2026-10-23",
+  "status": "CROSS_BRANCH_SOURCE_DESK_RECONCILIATION_NOT_APPLIED_EDITORIAL_ACCEPTANCE",
+  "primaryProof": {
+    "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+    "branch": "research/historia-p3-esther-span-20261017",
+    "sha": "ee75b8bc8a2ffcd6d32723ccf8ace69ad21e3446"
+  },
+  "parallelReviewSources": [
+    {
+      "path": "data/research/historia-p4-late-movement-bridge-verse-budget.v1.json",
+      "branch": "research/historia-p4-continuity-theatre-20261021",
+      "sha": "c872cf2442986fd5a2b11bf8235b8a10f5e201ab"
+    },
+    {
+      "path": "data/research/historia-p4-m20-m24-literary-seam-adjudication.v1.json",
+      "branch": "research/historia-p4-continuity-theatre-20261021",
+      "sha": "ae5eefa573749d9c093b1f351395f8ffe3fe0983"
+    },
+    {
+      "path": "data/research/historia-p4-m25-m37-literary-seam-adjudication.v1.json",
+      "branch": "research/historia-p4-continuity-theatre-20261021",
+      "sha": "a8702a8ec91336b384928c604ca18150d489d29f"
+    }
+  ],
+  "existingPrimaryOwners": {
+    "chapters": "data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json",
+    "covenantCrosswalk": "data/research/historia-salutis-p3-covenant-arc-chapter-reconciliation-20261021.v1.json",
+    "atlas": "data/explore/bible-places-compact.v1.json",
+    "scriptureReader": "src/scripture/historia-assembled-reading.js"
+  },
+  "sourceWitnesses": [
+    "dr-challoner",
+    "cpdv-2009",
+    "crampon-1923"
+  ],
+  "rules": {
+    "neverMergeOldP4FullBranch": true,
+    "p3IsCanonicalDraftSource": true,
+    "all69VersesAreHistoricalP4OptionalCandidatesNotNewProposals": true,
+    "selectedMeansSourceReadingOnlyNotApproved": true,
+    "heldMeansExplicitHoldNotSelected": true,
+    "originalScriptureNeverParaphrased": true,
+    "oldSceneKeysDoNotBecomeAtlasEvents": true,
+    "theologicalTypologyAndCrossReferencesOutsideChronologicalNarration": true,
+    "noNewGeographicCoordinates": true,
+    "noPrintedEditionCollationOrOralApproval": true,
+    "noProductionContentChanged": true,
+    "judasBetweenSelectedTrialDoesNotChangeSourceRefs": true
+  },
+  "totals": {
+    "movements": 18,
+    "sourceOwnedP3Beats": 53,
+    "p4HistoricalCandidateVerses": 69,
+    "alreadyInUnapprovedP3SelectedScripture": 33,
+    "alreadyExistingUnapprovedP3HeldBridge": 28,
+    "existingUnapprovedSourceComparisonTrial": 8,
+    "stillOutsideP3SourceAndHeldText": 0
+  },
+  "reviews": [
+    {
+      "movementId": "HS-M20",
+      "title": "The Forerunner and first disciples",
+      "originalP3BeatIds": [
+        "H51-01",
+        "H51-02",
+        "HS-P3-CF-17",
+        "H52-01",
+        "H51-03"
+      ],
+      "originalP3OutlineIds": [
+        "H51",
+        "H52"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R34"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:public-ministry"
+      ],
+      "parallelP4IssueId": "HS-P4-M20-ORDER",
+      "parallelP4IssuePriority": "P0_HIGH_CHRONOLOGY",
+      "parallelP4CandidateRanges": [],
+      "parallelP4HistoricalAdditionalVerseEntries": 0,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [],
+        "alreadyExistingUnapprovedP3HeldBridge": [],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "P4_CHRONOLOGY_REORDER_ALREADY_PRESENT",
+      "p3GroundedExplanation": "P4's old order placed Mark 1:14 before John 1:35; the current P3 proof already places H52-01 before H51-03, with John 1:29–34 still an unapproved candidate.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M21",
+      "title": "The Kingdom in Christ's teaching",
+      "originalP3BeatIds": [
+        "H53-01",
+        "H53-02",
+        "H54-02"
+      ],
+      "originalP3OutlineIds": [
+        "H53",
+        "H54",
+        "H55"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R35"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:public-ministry"
+      ],
+      "parallelP4IssueId": "HS-P4-M21-TITLE",
+      "parallelP4IssuePriority": "P1_SCOPE_MISMATCH",
+      "parallelP4CandidateRanges": [],
+      "parallelP4HistoricalAdditionalVerseEntries": 0,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [],
+        "alreadyExistingUnapprovedP3HeldBridge": [],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "P4_SCOPE_RETITLE_ALREADY_PRESENT",
+      "p3GroundedExplanation": "The current P3 title is now 'The Kingdom in Christ's teaching'; Mark 2 remains labelled editorial context, not original Gospel narration.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M22",
+      "title": "Christ the Bread of Life",
+      "originalP3BeatIds": [
+        "H56-01",
+        "H56-02"
+      ],
+      "originalP3OutlineIds": [
+        "H56"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R36"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:public-ministry"
+      ],
+      "parallelP4IssueId": "HS-P4-M22-SEAM",
+      "parallelP4IssuePriority": "P0_HIGH_DOCTRINAL_AND_EDITION_SEAM",
+      "parallelP4CandidateRanges": [
+        "John 6:36–46"
+      ],
+      "parallelP4HistoricalAdditionalVerseEntries": 11,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [
+          "John 6:36",
+          "John 6:37",
+          "John 6:38",
+          "John 6:39",
+          "John 6:40",
+          "John 6:41",
+          "John 6:42",
+          "John 6:43",
+          "John 6:44",
+          "John 6:45",
+          "John 6:46"
+        ],
+        "alreadyExistingUnapprovedP3HeldBridge": [],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "P4_SOURCE_GAP_ALREADY_SELECTED_RESEARCH_ONLY",
+      "p3GroundedExplanation": "The complete John 6:36–46 causal passage is already selected in P3; the Capernaum location sentence is already edition-aligned as English 6:60 versus Crampon 6:59.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M23",
+      "title": "Peter's confession and the Transfiguration",
+      "originalP3BeatIds": [
+        "H57-01",
+        "H57-02"
+      ],
+      "originalP3OutlineIds": [
+        "H57"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R37"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:public-ministry"
+      ],
+      "parallelP4IssueId": "HS-P4-M23-PHASES",
+      "parallelP4IssuePriority": "P2_VISUAL_EVENT_SEPARATION",
+      "parallelP4CandidateRanges": [],
+      "parallelP4HistoricalAdditionalVerseEntries": 0,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [],
+        "alreadyExistingUnapprovedP3HeldBridge": [],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "VISUAL_STAGING_HOLD",
+      "p3GroundedExplanation": "The selected Gospel source already contains Peter's confession, first Passion announcement and Transfiguration. Scenic distinctions and traditional geography require later editorial validation.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M24",
+      "title": "The approach to Jerusalem",
+      "originalP3BeatIds": [
+        "H58-04",
+        "HS-CF-05"
+      ],
+      "originalP3OutlineIds": [
+        "H58"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R38"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:public-ministry"
+      ],
+      "parallelP4IssueId": "HS-P4-M24-MARY",
+      "parallelP4IssuePriority": "P0_HIGH_ACTOR_AGENCY_SEAM",
+      "parallelP4CandidateRanges": [
+        "John 11:28–31"
+      ],
+      "parallelP4HistoricalAdditionalVerseEntries": 4,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [
+          "John 11:28",
+          "John 11:29",
+          "John 11:30",
+          "John 11:31"
+        ],
+        "alreadyExistingUnapprovedP3HeldBridge": [],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "P4_MARY_AGENCY_GAP_ALREADY_SELECTED_RESEARCH_ONLY",
+      "p3GroundedExplanation": "John 11:28–31 is already selected between Martha's conversation and Mary's meeting with Christ; the separate 11:45–53 aftermath remains held.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M25",
+      "title": "The King's entry into Jerusalem",
+      "originalP3BeatIds": [
+        "H59-01"
+      ],
+      "originalP3OutlineIds": [
+        "H59"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R39"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:paschal-mystery"
+      ],
+      "parallelP4IssueId": "HS-P4-M25-ENTRY_TO_SUPPER_GAP",
+      "parallelP4IssuePriority": "P2_EDITORIAL_TRANSITION",
+      "parallelP4CandidateRanges": [],
+      "parallelP4HistoricalAdditionalVerseEntries": 0,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [],
+        "alreadyExistingUnapprovedP3HeldBridge": [],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "CROSS_MOVEMENT_OMISSION_HOLD",
+      "p3GroundedExplanation": "The royal entry Matthew 21 is followed by Luke 22's supper preparation without intervening Holy Week events; label a source time and Gospel boundary, never imply these immediately follow.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M26",
+      "title": "The Last Supper",
+      "originalP3BeatIds": [
+        "H60-01",
+        "HS-CF-09"
+      ],
+      "originalP3OutlineIds": [
+        "H60",
+        "H61"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R40"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:paschal-mystery"
+      ],
+      "parallelP4IssueId": "HS-P4-M26-FINAL_TEACHING_TITLE_GOSPEL_BRIDGE",
+      "parallelP4IssuePriority": "P1_SCOPE_AND_GOSPEL_PROVENANCE",
+      "parallelP4CandidateRanges": [
+        "John 14:16–17"
+      ],
+      "parallelP4HistoricalAdditionalVerseEntries": 2,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [],
+        "alreadyExistingUnapprovedP3HeldBridge": [
+          "John 14:16",
+          "John 14:17"
+        ],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "TITLE_FIXED_ORIGINAL_JOHN_BRIDGE_HELD",
+      "p3GroundedExplanation": "P3 has retitled this 'The Last Supper'. Luke 22:7–20 remains the selected Gospel. John 14:16–17 is a different Gospel source and is held as HS-CF-09.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M27",
+      "title": "Gethsemane, betrayal and trial",
+      "originalP3BeatIds": [
+        "H62-01",
+        "H62-02",
+        "H63-01",
+        "H63-02",
+        "H63-04"
+      ],
+      "originalP3OutlineIds": [
+        "H62",
+        "H63"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R41"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:paschal-mystery"
+      ],
+      "parallelP4IssueId": "HS-P4-M27-MATTHEW_TRIAL_JUMP",
+      "parallelP4IssuePriority": "P1_CONTINUITY_AND_GOSPEL_PROVENANCE",
+      "parallelP4CandidateRanges": [
+        "Matthew 27:3–10"
+      ],
+      "parallelP4HistoricalAdditionalVerseEntries": 8,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [],
+        "alreadyExistingUnapprovedP3HeldBridge": [],
+        "existingUnapprovedSourceComparisonTrial": [
+          "Matthew 27:3",
+          "Matthew 27:4",
+          "Matthew 27:5",
+          "Matthew 27:6",
+          "Matthew 27:7",
+          "Matthew 27:8",
+          "Matthew 27:9",
+          "Matthew 27:10"
+        ],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "JUDAS_EIGHT_VERSE_EXACT_TEXT_REVIEW_TRIAL_ADDED_NOT_SELECTED",
+      "p3GroundedExplanation": "Matthew 27:3–10 was the only part of the 69 older P4 suggested verses absent from P3 selection/hold/trial metadata. It is now a separately displayed, unapproved native-text source comparison exactly between Matthew 27:1–2 and 27:11–26 in the original H63-02 beat; original selected refs, omissions, and publication permissions remain unchanged.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M28",
+      "title": "The sacrifice on Calvary",
+      "originalP3BeatIds": [
+        "H64-01",
+        "HS-CF-06"
+      ],
+      "originalP3OutlineIds": [
+        "H64"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R42"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:paschal-mystery"
+      ],
+      "parallelP4IssueId": "HS-P4-M28-DEATH_TO_BURIAL",
+      "parallelP4IssuePriority": "P0_BURIAL_BEFORE_EMPTY_TOMB",
+      "parallelP4CandidateRanges": [
+        "John 19:38–42"
+      ],
+      "parallelP4HistoricalAdditionalVerseEntries": 5,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [],
+        "alreadyExistingUnapprovedP3HeldBridge": [
+          "John 19:38",
+          "John 19:39",
+          "John 19:40",
+          "John 19:41",
+          "John 19:42"
+        ],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "BURIAL_HELD_NOT_APPROVED",
+      "p3GroundedExplanation": "John 19:38–42 is an existing P3 held bridge and optional native-text trial, not accepted reading. P3 separately offers an unapproved John 19:31–37 pierced-side trial.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M29",
+      "title": "The risen Lord and his witnesses",
+      "originalP3BeatIds": [
+        "H65-01",
+        "H65-03",
+        "H65-02"
+      ],
+      "originalP3OutlineIds": [
+        "H65"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R43"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:paschal-mystery"
+      ],
+      "parallelP4IssueId": "HS-P4-M29-JOHN20_TOMB_ACTOR_TRANSITIONS",
+      "parallelP4IssuePriority": "P0_RESURRECTION_ACTOR_CONTINUITY",
+      "parallelP4CandidateRanges": [
+        "John 20:4–5",
+        "John 20:10"
+      ],
+      "parallelP4HistoricalAdditionalVerseEntries": 3,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [
+          "John 20:4",
+          "John 20:5",
+          "John 20:10"
+        ],
+        "alreadyExistingUnapprovedP3HeldBridge": [],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "P4_TOMB_ACTOR_GAPS_ALREADY_SELECTED_RESEARCH_ONLY",
+      "p3GroundedExplanation": "The current P3 text already selects John 20:4–5 and John 20:10, so the tomb actor seams in P4 are superseded; Emmaus remains editorial context with its own Luke source.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M30",
+      "title": "The Ascension and promised mission",
+      "originalP3BeatIds": [
+        "HS-CF-07",
+        "H66-01"
+      ],
+      "originalP3OutlineIds": [
+        "H66"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R44"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:paschal-mystery"
+      ],
+      "parallelP4IssueId": "HS-P4-M30-ASCENSION_SPEECH_CONTEXT",
+      "parallelP4IssuePriority": "P1_OPENING_AGENCY",
+      "parallelP4CandidateRanges": [
+        "Acts 1:3–5"
+      ],
+      "parallelP4HistoricalAdditionalVerseEntries": 3,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [],
+        "alreadyExistingUnapprovedP3HeldBridge": [
+          "Acts 1:3",
+          "Acts 1:4",
+          "Acts 1:5"
+        ],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "ASCENSION_PRELUDE_HELD_NOT_APPROVED",
+      "p3GroundedExplanation": "Acts 1:3–5 remains an unapproved original-source candidate before the selected Acts 1:6–12.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M31",
+      "title": "Pentecost and the first Church",
+      "originalP3BeatIds": [
+        "H67-01",
+        "H68-01",
+        "HS-CF-08",
+        "H68-04"
+      ],
+      "originalP3OutlineIds": [
+        "H67",
+        "H68"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R45",
+        "R46"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:apostolic-church"
+      ],
+      "parallelP4IssueId": "HS-P4-M31-PENTECOST_AND_STEVE_VERSIFICATION",
+      "parallelP4IssuePriority": "P0_PETER_SPEECH_AND_STEVE_EDITIONS",
+      "parallelP4CandidateRanges": [
+        "Acts 2:22–24",
+        "Acts 2:32–36",
+        "Acts 7:51–53"
+      ],
+      "parallelP4HistoricalAdditionalVerseEntries": 11,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [
+          "Acts 2:22",
+          "Acts 2:23",
+          "Acts 2:24",
+          "Acts 2:32",
+          "Acts 2:33",
+          "Acts 2:34",
+          "Acts 2:35",
+          "Acts 2:36"
+        ],
+        "alreadyExistingUnapprovedP3HeldBridge": [
+          "Acts 7:51",
+          "Acts 7:52",
+          "Acts 7:53"
+        ],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "PETER_SCRIPTURE_RESTORED_STEPHEN_EDITION_AWARE",
+      "p3GroundedExplanation": "Acts 2:22–24 and 2:32–36 are now selected P3 text, not missing; Acts 7:51–53 is held, and Stephen's final verse remains English 7:59 vs Crampon 7:60.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M32",
+      "title": "Saul and the Gospel to the Gentiles",
+      "originalP3BeatIds": [
+        "H69-01",
+        "H70-01"
+      ],
+      "originalP3OutlineIds": [
+        "H69",
+        "H70"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R47",
+        "R48"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:apostolic-church"
+      ],
+      "parallelP4IssueId": "HS-P4-M32-SAUL_ANANIAS_CORNELIUS_AGENCY",
+      "parallelP4IssuePriority": "P0_AGENT_IDENTITY_AND_GENTILE_RECEPTION",
+      "parallelP4CandidateRanges": [
+        "Acts 9:15–16",
+        "Acts 10:7–8",
+        "Acts 10:30–32"
+      ],
+      "parallelP4HistoricalAdditionalVerseEntries": 7,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [
+          "Acts 9:15",
+          "Acts 9:16",
+          "Acts 10:7",
+          "Acts 10:8",
+          "Acts 10:30",
+          "Acts 10:31",
+          "Acts 10:32"
+        ],
+        "alreadyExistingUnapprovedP3HeldBridge": [],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "ANANIAS_AND_CORNELIUS_MISSING_AGENCY_VERSES_NOW_SELECTED_RESEARCH_ONLY",
+      "p3GroundedExplanation": "All seven suggested Acts 9:15–16, 10:7–8 and 10:30–32 verses are already part of source-owned P3 reading; no added mission dialogue required.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M33",
+      "title": "Antioch, apostolic missions and the Council",
+      "originalP3BeatIds": [
+        "H71-01",
+        "H71-02",
+        "HS-P3-CF-12",
+        "H72-01"
+      ],
+      "originalP3OutlineIds": [
+        "H71",
+        "H72"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R49",
+        "R50"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:apostolic-church"
+      ],
+      "parallelP4IssueId": "HS-P4-M33-ANTIOCH_TO_COUNCIL_UNSHOWN_MISSION",
+      "parallelP4IssuePriority": "P0_CAUSAL_MISSION_CHAIN",
+      "parallelP4CandidateRanges": [
+        "Acts 14:26–27"
+      ],
+      "parallelP4HistoricalAdditionalVerseEntries": 2,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [],
+        "alreadyExistingUnapprovedP3HeldBridge": [
+          "Acts 14:26",
+          "Acts 14:27"
+        ],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "COUNCIL_MISSION_LINK_HELD_NOT_APPROVED",
+      "p3GroundedExplanation": "Acts 14:26–27 is already HS-P3-CF-12 held between mission departure and the Council. It cannot be published by copying the P4 theatre account.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M34",
+      "title": "The Gospel proclaimed in Rome",
+      "originalP3BeatIds": [
+        "HS-CF-10",
+        "HS-CF-11",
+        "HS-P3-CF-13",
+        "H73-07"
+      ],
+      "originalP3OutlineIds": [
+        "H73"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R51"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:apostolic-church"
+      ],
+      "parallelP4IssueId": "HS-P4-M34-ROME_ARRIVAL_MISSING_AUDIENCE",
+      "parallelP4IssuePriority": "P1_OPENING_ACTOR_LOCATION",
+      "parallelP4CandidateRanges": [
+        "Acts 28:16–22"
+      ],
+      "parallelP4HistoricalAdditionalVerseEntries": 7,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [],
+        "alreadyExistingUnapprovedP3HeldBridge": [
+          "Acts 28:16",
+          "Acts 28:17",
+          "Acts 28:18",
+          "Acts 28:19",
+          "Acts 28:20",
+          "Acts 28:21",
+          "Acts 28:22"
+        ],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "ROME_AUDIENCE_HELD_NOT_APPROVED",
+      "p3GroundedExplanation": "The entire Acts 28:16–22 context is held as two original P3 source bridges; the 17–22 range also has an existing research-only readthrough trial.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M35",
+      "title": "Christ and the Lamb in heavenly vision",
+      "originalP3BeatIds": [
+        "H75-01",
+        "HS-P3-CF-14",
+        "H75-02"
+      ],
+      "originalP3OutlineIds": [
+        "H74",
+        "H75"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R52"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:consummation"
+      ],
+      "parallelP4IssueId": "HS-P4-M35-THRONE_BEFORE_LAMB",
+      "parallelP4IssuePriority": "P1_VISUAL_ANAPHORA",
+      "parallelP4CandidateRanges": [
+        "Revelation 4:1–2"
+      ],
+      "parallelP4HistoricalAdditionalVerseEntries": 2,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [],
+        "alreadyExistingUnapprovedP3HeldBridge": [
+          "Revelation 4:1",
+          "Revelation 4:2"
+        ],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "THRONE_ANAPHORA_HELD_NOT_APPROVED",
+      "p3GroundedExplanation": "Revelation 4:1–2 is an existing held candidate. The preceding Revelation 1/4 overview remains editorial context rather than John the Apostle's forged narration.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M36",
+      "title": "The final conflict and judgment",
+      "originalP3BeatIds": [
+        "H76-03",
+        "H77-01",
+        "H77-02"
+      ],
+      "originalP3OutlineIds": [
+        "H76",
+        "H77"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R53"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:consummation"
+      ],
+      "parallelP4IssueId": "HS-P4-M36-REVELATION_FINAL_VISION_GENRE",
+      "parallelP4IssuePriority": "P2_APOCALYPTIC_VISUAL_INTEGRITY",
+      "parallelP4CandidateRanges": [],
+      "parallelP4HistoricalAdditionalVerseEntries": 0,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [],
+        "alreadyExistingUnapprovedP3HeldBridge": [],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "APOCALYPTIC_GENRE_HOLD",
+      "p3GroundedExplanation": "Revelation 12 is separately attributed editorial context. Revelation 19 and 20 must be treated as visionary sequence, not mapped future historical geography.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    },
+    {
+      "movementId": "HS-M37",
+      "title": "The New Creation",
+      "originalP3BeatIds": [
+        "H78-01",
+        "HS-P3-CF-15",
+        "H78-02",
+        "HS-P3-CF-16"
+      ],
+      "originalP3OutlineIds": [
+        "H78"
+      ],
+      "p3ProvisionalReadingChapterIds": [
+        "R54"
+      ],
+      "p3CovenantArcIds": [
+        "historia-arc:consummation"
+      ],
+      "parallelP4IssueId": "HS-P4-M37-NEW_JERUSALEM_GUIDE_AND_CLOSURE",
+      "parallelP4IssuePriority": "P0_VISION_ANAPHORA_AND_CANON_CLOSURE",
+      "parallelP4CandidateRanges": [
+        "Revelation 21:9–10",
+        "Revelation 22:20–21"
+      ],
+      "parallelP4HistoricalAdditionalVerseEntries": 4,
+      "reconciliation": {
+        "alreadyInUnapprovedP3SelectedScripture": [],
+        "alreadyExistingUnapprovedP3HeldBridge": [
+          "Revelation 21:9",
+          "Revelation 21:10",
+          "Revelation 22:20",
+          "Revelation 22:21"
+        ],
+        "existingUnapprovedSourceComparisonTrial": [],
+        "stillOutsideP3SourceAndHeldText": []
+      },
+      "disposition": "ANGEL_INTRO_AND_CANON_END_HELD_NOT_APPROVED",
+      "p3GroundedExplanation": "Revelation 21:9–10 and 22:20–21 remain two separate held source candidates; text closing at 22:5 is not identified as the canonical book's final verse.",
+      "acceptedForOralReading": false,
+      "publicationApproved": false,
+      "certifiedPrintedCatholicEdition": false,
+      "p4TheatreEventsApproved": false,
+      "approvalTransferForbidden": true
+    }
+  ],
+  "actionableRemaining": [
+    "M27: exact-source Matthew 27:3–10 now available only as an opt-in research comparison between selected trial spans; evaluate literary necessity, theological witness and source omissions before ever accepting.",
+    "M28, M30, M33–M35, M37: evaluate existing held passages against uninterrupted source readthrough, without auto-selection.",
+    "M23, M25, M36: stage genuine Gospel/vision boundaries; never present visual location tradition as validated historical site.",
+    "Ensure all latest P3 adjustments remain covered by original Scripture contracts and published Atlas 151-event scope."
+  ]
+}

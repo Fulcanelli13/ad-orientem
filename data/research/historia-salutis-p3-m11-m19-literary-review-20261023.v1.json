@@ -1,0 +1,916 @@
+{
+  "schema": "ao.historia.p3.m11-m19-source-critical-literary-review.v1",
+  "date": "2026-10-23",
+  "status": "THREE_WITNESS_DESK_EVIDENCE_AND_EDITORIAL_RECOMMENDATIONS_ONLY",
+  "sourceOwners": {
+    "p3Proof": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+    "p0Crosswalk": "data/research/historia-salutis-p3-covenant-arc-chapter-reconciliation-20261021.v1.json",
+    "p3ChapterProjection": "data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json",
+    "canonicalAtlas": "data/explore/bible-places-compact.v1.json",
+    "canonicalAtlasReading": "src/find/bible-atlas-reading-chapters.js",
+    "editions": [
+      "dr-challoner",
+      "cpdv-2009",
+      "crampon-1923"
+    ]
+  },
+  "policies": {
+    "preserveOriginalProofIds": true,
+    "doNotTreatP3AndAtlasChapterNumbersAsIdentical": true,
+    "citationsAreWITNESS_UNCOLLATED": true,
+    "noNewAtlasEventKeys": true,
+    "noNewGeographicPins": true,
+    "noAIAuthoredBibleQuotation": true,
+    "unselectedResearchTopicsNotCompulsory": true,
+    "theologicalTypologyOutsideLinearNarration": true,
+    "finalSequentialOralReadthrough": false,
+    "catholicEditorialSignoff": false
+  },
+  "materialSourceCorrection": {
+    "movement": "HS-M15",
+    "beatId": "H38-03",
+    "status": "APPLIED_TO_P3_RESEARCH_PROOF_NOT_PUBLISHED",
+    "english": "Isaiah 9:1–6",
+    "french": [
+      "Isaiah 8:23",
+      "Isaiah 9:1–5"
+    ],
+    "reason": "Source semantic correspondence: Crampon 8:23 contains Zebulun/Naphtali and 9:5 contains the promised Child. English 9:1–6 covers the same opening and closing; never translate by verse-number identity.",
+    "printedEditionReview": false
+  },
+  "highPriorityUnresolved": [
+    "2 Samuel 7:12–16: direct selected covenant passage with no exact canonical 151 Atlas event — use a non-geographic covenant companion rather than creating a fictitious site",
+    "Jeremiah 31:31–34: promised New Covenant before Judah's destruction; no exact canonical Atlas event, do not map it as one",
+    "Isaiah 9: verify edition-specific cross-chapter segmentation against intended printed bilingual editions",
+    "Ruth and Matthean/Lukan genealogies: retain independent original witnesses and lawful/adoptive fatherhood classification",
+    "M19: Matthew 2 Egypt verses refer to two distinct Atlas events; no one-to-one canonical identity",
+    "Acts and Christ readings are beyond M11–M19; no publication or UI projection accepted in this batch"
+  ],
+  "totals": {
+    "movements": 9,
+    "originalBeats": 42,
+    "scriptureBeats": 29,
+    "editorialBeats": 13,
+    "heldBridgeBeats": 0,
+    "sourceBoundedDecisions": 46,
+    "atlasCrossrefs": 23,
+    "literaryAcceptance": 0,
+    "publicationApprovals": 0
+  },
+  "reviews": [
+    {
+      "movementId": "HS-M11",
+      "title": "Israel enters the promised land",
+      "originalOutlineIds": [
+        "H24",
+        "H25",
+        "H26"
+      ],
+      "sourceBeatIds": [
+        "H24-02",
+        "H24-03",
+        "H25-01",
+        "H26-01"
+      ],
+      "readingChapterIds": [
+        "R16",
+        "R17"
+      ],
+      "arcIds": [
+        "historia-arc:land-first-kings"
+      ],
+      "preliminaryLiteraryFinding": "Land-entry narrative follows Joshua succession and Moses' death in separately attributed texts; do not infer detailed archaeological GPS anchors from the story.",
+      "decisions": [
+        {
+          "id": "HS-M11-SUCCESSION_CONTEXT",
+          "sourceRef": "Deuteronomy 31:1–8",
+          "disposition": "KEEP_DISTINCT_EDITORIAL_CONTEXT",
+          "rationale": "Joshua's commissioning is separately sourced; the source reader may not present this editor's transition as Moses' quotation.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M11-BURIAL_BOUNDARY",
+          "sourceRef": "Deuteronomy 34:8",
+          "disposition": "LITERARY_OMISSION_TO_REVIEW",
+          "rationale": "The selected Moses farewell excludes the immediate mourning episode; assess pacing without inventing verses or historical date.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M11-JORDAN_ENTRY",
+          "sourceRef": "Joshua 3:7–17",
+          "disposition": "RETAIN_SELECTED_MERGED_SOURCE",
+          "rationale": "The chosen Joshua verses describe the command and Jordan crossing; the intervening unselected words must remain visible as an omission.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M11-JUDGES_REPETITION",
+          "sourceRef": "Judges 2:6–19",
+          "disposition": "RETAIN_STRUCTURAL_CYCLE",
+          "rationale": "The compressed history already contains Israel's unfaithfulness and divinely raised judges. Do not treat the period as one named episode or one map pin.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        }
+      ],
+      "atlasLinks": [
+        {
+          "beatId": "H24-03",
+          "atlasEventKey": "biblical:passage:deuteronomy-34-1-6",
+          "ref": "Deuteronomy 34:1–6",
+          "relation": "ATLAS_WITHIN_SELECTED",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H25-01",
+          "atlasEventKey": "biblical:passage:joshua-3-1-17",
+          "ref": "Joshua 3:7–8",
+          "relation": "SELECTED_WITHIN_ATLAS",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        }
+      ],
+      "editorialApproval": false,
+      "oralAcceptance": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M12",
+      "title": "From Ruth to Samuel and Saul",
+      "originalOutlineIds": [
+        "H27",
+        "H28",
+        "H29"
+      ],
+      "sourceBeatIds": [
+        "H28-01",
+        "H28-04",
+        "H29-02",
+        "H29-03",
+        "H29-04"
+      ],
+      "readingChapterIds": [
+        "R17",
+        "R18",
+        "R19"
+      ],
+      "arcIds": [
+        "historia-arc:land-first-kings"
+      ],
+      "preliminaryLiteraryFinding": "Ruth and Samuel/early Saul are complementary, source-linked accounts; Ruth–Boaz–Obed–Jesse–David does not authorize a synthetic family tree or an unsourced one-to-one Atlas event.",
+      "decisions": [
+        {
+          "id": "HS-M12-RUTH_COMPANION",
+          "sourceRef": "Ruth 1:1–22",
+          "disposition": "PROSE_CONTEXT_WITH_ORIGINAL_SCRIPTURE_SOURCE",
+          "rationale": "The reader introduces Ruth's fidelity in separately labelled editorial wording; retain its source citation and distinguish later Naomi and Boaz genealogy.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M12-RUTH_MARRIAGE",
+          "sourceRef": "Ruth 4:1–13",
+          "disposition": "CAUSAL_CONNECTOR_HELD",
+          "rationale": "The existing connector properly places Boaz's nearer-kinsman legal resolution before the marriage; do not present the connector as Ruth's wording.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M12-RUTH_TO_DAVID",
+          "sourceRef": "Ruth 4:17–22",
+          "disposition": "PROTECT_GENEALOGY_DIRECT_SOURCE",
+          "rationale": "Obed–Jesse–David genealogy is directly witnessed; keep Ruth's maternity and distinct subsequent Gospel genealogies genealogically safe.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M12-SAMUEL_CALL",
+          "sourceRef": "1Samuel 3:1–21",
+          "disposition": "CONTEXT_NOT_SELECTED_SCRIPTURE",
+          "rationale": "Samuel's early prophetic vocation is cited but not directly selected in the compulsory narrative.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M12-SAMUEL_SAUL",
+          "sourceRef": "1Samuel 9:15–17",
+          "disposition": "BEFORE_SCRIPTURE_SOURCE_CONNECTOR_HELD",
+          "rationale": "Saul's arrival and the divine commission to Samuel need their cited source context; do not treat the anointing as an isolated meeting.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M12-KINGS_REQUEST",
+          "sourceRef": "1Samuel 8:4–8",
+          "disposition": "RETAIN_DECISIVE_SOURCE",
+          "rationale": "The petition for a king and the divine interpretation are both attested; avoid modernizing the theological conflict.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        }
+      ],
+      "atlasLinks": [
+        {
+          "beatId": "H29-04",
+          "atlasEventKey": "biblical:passage:1samuel-10-1-8",
+          "ref": "1Samuel 10:1–8",
+          "relation": "EXACT_SELECTED",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        }
+      ],
+      "editorialApproval": false,
+      "oralAcceptance": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M13",
+      "title": "David and the enduring royal promise",
+      "originalOutlineIds": [
+        "H30",
+        "H31",
+        "H32",
+        "H33"
+      ],
+      "sourceBeatIds": [
+        "H30-01",
+        "H31-04",
+        "H32-01",
+        "H32-02",
+        "H32-03",
+        "H33-01"
+      ],
+      "readingChapterIds": [
+        "R20",
+        "R21",
+        "R22"
+      ],
+      "arcIds": [
+        "historia-arc:davidic-kingdom"
+      ],
+      "preliminaryLiteraryFinding": "David's calling, reign and enduring royal promise have source-owned passages, but David's covenant in 2 Samuel 7 is not an exact canonical 151-event Atlas object.",
+      "decisions": [
+        {
+          "id": "HS-M13-DAVID_ANOINTING",
+          "sourceRef": "1Samuel 16:1–13",
+          "disposition": "PROTECT_COMPLETE_CAUSAL_SOURCE",
+          "rationale": "The present P3 selection includes Samuel's divine commission and David's anointing; no need to restore already present first verses.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M13-GOLIATH_NOT_SELECTED",
+          "sourceRef": "1Samuel 17:1–54",
+          "disposition": "EXISTING_ATLAS_ONLY_OPTIONAL",
+          "rationale": "The Atlas has the David and Goliath passage, but the current continuous manuscript does not select it. Consider a separate trial, not a fabricated mandatory beat.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M13-SAUL_DEATH",
+          "sourceRef": "1Samuel 31:1–13",
+          "disposition": "CONTEXT_NOT_SCRIPTURE",
+          "rationale": "Saul's death is source-attributed editorial context before David's enthronement; it must remain visibly nonbiblical prose.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M13-ARK_RETURN",
+          "sourceRef": "2Samuel 6:12–19",
+          "disposition": "RETAIN_SOURCE_SEQUENCE",
+          "rationale": "The procession bringing the Ark to David's city must remain independent Scripture before the royal promise; do not use typological commentary in the narration.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M13-DAVIDIC_PROMISE",
+          "sourceRef": "2Samuel 7:1–16",
+          "disposition": "RETAIN_FULL_COVENANT_READ_AND_ATLAS_GAP",
+          "rationale": "The source begins with David's desire for a house and Nathan's reply and preserves verses 12–16. The 151-event Atlas lacks an exact matching anchor; do not invent one.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        }
+      ],
+      "atlasLinks": [
+        {
+          "beatId": "H32-01",
+          "atlasEventKey": "biblical:passage:2samuel-2-1-4",
+          "ref": "2Samuel 2:1–4",
+          "relation": "EXACT_SELECTED",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H32-02",
+          "atlasEventKey": "biblical:passage:2samuel-5-6-10",
+          "ref": "2Samuel 5:6–10",
+          "relation": "ATLAS_WITHIN_SELECTED",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        }
+      ],
+      "editorialApproval": false,
+      "oralAcceptance": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M14",
+      "title": "The Temple and the divided kingdom",
+      "originalOutlineIds": [
+        "H34",
+        "H35",
+        "H36"
+      ],
+      "sourceBeatIds": [
+        "H34-01",
+        "H35-02",
+        "H35-03",
+        "H35-04",
+        "H36-01",
+        "H36-02"
+      ],
+      "readingChapterIds": [
+        "R23",
+        "R24"
+      ],
+      "arcIds": [
+        "historia-arc:davidic-kingdom",
+        "historia-arc:prophets-exile-return"
+      ],
+      "preliminaryLiteraryFinding": "Preserve Solomon's Temple, the royal transition and division as separate biblical sources, while holding any unselected Davidic repentance in independently labelled context.",
+      "decisions": [
+        {
+          "id": "HS-M14-DAVID_REPENTANCE",
+          "sourceRef": "2Samuel 12:1–13",
+          "disposition": "CONTEXT_OR_NATIVE_TEXT_REVIEW",
+          "rationale": "David's sin and confession are source-backed editorial material, not a free-standing Scripture quotation in the main reading.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M14-SOLOMON_TRANSITION",
+          "sourceRef": "1Kings 2:10–12",
+          "disposition": "BEFORE_SCRIPTURE_CONTEXT_HELD",
+          "rationale": "The transition to Solomon is separately sourced. Keep chronological and genealogical identity without supplying missing royal history.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M14-TEMPLE_THEOPHANY",
+          "sourceRef": "1Kings 8:1–30",
+          "disposition": "RETAIN_SELECTED_SEAMS",
+          "rationale": "Selected Temple-dedication subspans preserve the cloud and Solomon's prayer, but the unquoted material between passages must remain signposted.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M14-SOLOMON_FALL",
+          "sourceRef": "1Kings 11:1–13",
+          "disposition": "CONTEXT_WITH_EXACT_WITNESS",
+          "rationale": "The later idolatry is not part of the selected Temple-dedication source. Its compact context must remain visibly separate and sourced.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M14-KINGDOM_DIVISION",
+          "sourceRef": "1Kings 12:1–20",
+          "disposition": "RETAIN_SOURCE_SEQUENCE",
+          "rationale": "Preserve Rehoboam's public answer and the kingdom division; don't assign false causation by rearranging 1 Kings 11 before the Temple.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        }
+      ],
+      "atlasLinks": [
+        {
+          "beatId": "H35-03",
+          "atlasEventKey": "biblical:passage:1kings-8-1-66",
+          "ref": "1Kings 8:10–13",
+          "relation": "SELECTED_WITHIN_ATLAS",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H36-02",
+          "atlasEventKey": "biblical:passage:1kings-12-1-24",
+          "ref": "1Kings 12:13–20",
+          "relation": "SELECTED_WITHIN_ATLAS",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        }
+      ],
+      "editorialApproval": false,
+      "oralAcceptance": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M15",
+      "title": "Prophetic warning and Israel's judgment",
+      "originalOutlineIds": [
+        "H37",
+        "H38",
+        "H39"
+      ],
+      "sourceBeatIds": [
+        "H37-02",
+        "H38-02",
+        "H38-03",
+        "H38-04",
+        "H38-05",
+        "H39-01"
+      ],
+      "readingChapterIds": [
+        "R24",
+        "R25",
+        "R26"
+      ],
+      "arcIds": [
+        "historia-arc:prophets-exile-return"
+      ],
+      "preliminaryLiteraryFinding": "All four separate Isaian witnesses remain individually cited; Crampon's Isaiah 9 oracle crosses into chapter 8 and must not be selected by English verse numbers.",
+      "decisions": [
+        {
+          "id": "HS-M15-ELIJAH_CONTEXT",
+          "sourceRef": "1Kings 18:20–39",
+          "disposition": "SOURCE_ONLY_NO_PROPHECY_HARMONY",
+          "rationale": "The prior Elijah reference is contextual editorial text; the following Isaiah oracles must be treated as separate prophetic witnesses, not one transcript.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M15-VIRGIN_SIGN",
+          "sourceRef": "Isaiah 7:10–17",
+          "disposition": "THEOLOGICAL_AND_EDITION_COLLATION_HOLD",
+          "rationale": "The selected Emmanuel oracle belongs to its own context; preserve 'virgin' terminology as the edition actually records it, without synthetic quotations or an inserted theological paraphrase.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M15-CHILD_ORACLE",
+          "sourceRef": "Isaiah 9:1–6",
+          "disposition": "EDITION_ALIGNMENT_APPLIED_RESEARCH_ONLY",
+          "rationale": "English Douay/CPDV run Isaiah 9:1–6 while French Crampon requires Isaiah 8:23 and 9:1–5. The promised Child is 9:6 English versus 9:5 French. Edition-specific reading pointers added, original source text not changed.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M15-JESSE_ORACLE",
+          "sourceRef": "Isaiah 11:1–10",
+          "disposition": "KEEP_SEPARATE_PROPHECY",
+          "rationale": "The shoot from Jesse is a distinct oracle. Don't collapse it with Isaiah 7 or Isaiah 9 as one lengthy prophetic speech.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M15-SUFFERING_SERVANT",
+          "sourceRef": "Isaiah 53:1–12",
+          "disposition": "RETAIN_SOURCE_AND_PRIOR_52_13_15",
+          "rationale": "The suffering-servant witness begins in the chosen reading at Isaiah 52:13–15; both chapters are distinct selected fragments. Preserve Christological interpretation externally with attested Catholic sources.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M15-SAMARIA_JUDGMENT",
+          "sourceRef": "2Kings 17:3–18",
+          "disposition": "RETAIN_CAUSAL_SOURCE_SEAMS",
+          "rationale": "The selected 2 Kings 17:3–8 identifies the Assyrian ruler and Israel's conduct before the prophetic warnings and exile consequence. No invented chronology or city pin.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        }
+      ],
+      "atlasLinks": [
+        {
+          "beatId": "H37-02",
+          "atlasEventKey": "biblical:passage:1kings-18-19-39",
+          "ref": "1Kings 18:20–39",
+          "relation": "EDITORIAL_SOURCE_WITHIN_ATLAS",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H39-01",
+          "atlasEventKey": "biblical:passage:2kings-17-1-18",
+          "ref": "2Kings 17:13–18",
+          "relation": "SELECTED_WITHIN_ATLAS",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        }
+      ],
+      "editorialApproval": false,
+      "oralAcceptance": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M16",
+      "title": "Judah's fall and the promise of a New Covenant",
+      "originalOutlineIds": [
+        "H40",
+        "H41",
+        "H42"
+      ],
+      "sourceBeatIds": [
+        "H40-01",
+        "H41-01",
+        "H41-02"
+      ],
+      "readingChapterIds": [
+        "R27",
+        "R28"
+      ],
+      "arcIds": [
+        "historia-arc:prophets-exile-return"
+      ],
+      "preliminaryLiteraryFinding": "Keep Jeremiah's promise of the New Covenant prior to the source narrative of Judah's destruction, with the covenant verse linked as a companion rather than a fictitious 151-event Atlas record.",
+      "decisions": [
+        {
+          "id": "HS-M16-NEW_COVENANT_DIRECT",
+          "sourceRef": "Jeremiah 31:31–34",
+          "disposition": "COVENANT_COMPANION_WITHOUT_EXACT_ATLAS_EVENT",
+          "rationale": "The full explicit New Covenant promise remains selected. No exact canonical 151-event anchor exists; a theological covenant link must not masquerade as a mapped historical event.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M16-JERUSALEM_SIEGE",
+          "sourceRef": "2Kings 25:1–5",
+          "disposition": "RETENTION_OF_CAUSAL_ORDER",
+          "rationale": "The siege and flight precede the destruction and subsequent elite deportations; preserve their attested biblical order.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M16-TEMPLE_DESTRUCTION",
+          "sourceRef": "2Kings 25:8–12",
+          "disposition": "RETAIN_SEPARATE_REAL_ATLAS_EVENT",
+          "rationale": "The destruction itself is an actual Atlas Scripture range; don't merge into Jeremiah's earlier prophetic promise.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M16-EXILE_HANDOFF",
+          "sourceRef": "2Kings 25:18–21",
+          "disposition": "RETAIN_DISTINCT_EXILE_WITNESS",
+          "rationale": "The transfer and execution of Temple officials culminate the selected exile episode. H42 has no compulsory source beat; do not manufacture an episode merely to fill the outline.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        }
+      ],
+      "atlasLinks": [
+        {
+          "beatId": "H41-01",
+          "atlasEventKey": "biblical:passage:2kings-25-1-12",
+          "ref": "2Kings 25:1–5",
+          "relation": "SELECTED_WITHIN_ATLAS",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H41-01",
+          "atlasEventKey": "biblical:passage:2kings-25-8-12",
+          "ref": "2Kings 25:8–12",
+          "relation": "EXACT_SELECTED",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        }
+      ],
+      "editorialApproval": false,
+      "oralAcceptance": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M17",
+      "title": "Restoration and the expectation of Christ",
+      "originalOutlineIds": [
+        "H43",
+        "H44"
+      ],
+      "sourceBeatIds": [
+        "H43-01",
+        "H43-02",
+        "H43-03",
+        "H44-01",
+        "H44-03"
+      ],
+      "readingChapterIds": [
+        "R29"
+      ],
+      "arcIds": [
+        "historia-arc:prophets-exile-return"
+      ],
+      "preliminaryLiteraryFinding": "The restoration and Maccabean persecution are separated by generations. Ezra's restoration is attested source text; Nehemiah and Maccabean topics currently are attributed context only, not selected original quotation.",
+      "decisions": [
+        {
+          "id": "HS-M17-PERSIAN_RETURN",
+          "sourceRef": "Ezra 1:1–6",
+          "disposition": "RETAIN_DIRECT_RETURN_SOURCE",
+          "rationale": "Cyrus's decree and the return are selected Scripture. Do not imply Ezra's return and the later Maccabean events took place together.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M17-TEMPLE_RESTORATION",
+          "sourceRef": "Ezra 6:14–22",
+          "disposition": "RETAIN_COHERENT_SOURCE_BEAT",
+          "rationale": "The restored Temple and Passover are within the original exact selected spans; avoid importing an unintroduced official from earlier clipped verses.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M17-LAW_READING",
+          "sourceRef": "Nehemiah 8:1–12",
+          "disposition": "CONTEXT_ONLY_WITH_EXACT_ATLAS",
+          "rationale": "The Atlas contains the complete law-reading event; the manuscript currently summarizes it as labelled, sourced editorial context, not verbatim Scripture.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M17-MATTATHIAS",
+          "sourceRef": "1Maccabees 2:15–28",
+          "disposition": "NONMATCHING_ATLAS_EVENT_CONTEXT",
+          "rationale": "The current context cites refusal of pagan sacrifice in verses 15–28; the canonical Atlas has 1 Maccabees 2:1–5 only. This is not the same selected passage or a valid exact event join.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M17-SEVEN_BROTHERS",
+          "sourceRef": "2Maccabees 7:1–42",
+          "disposition": "DEUTEROCANONICAL_CONTEXT_ONLY",
+          "rationale": "The complete martyrdom text is a genuine Catholic Bible source and appears as an Atlas reading; P3 references it as editorial context only. Preserve their witness to resurrection without inventing speech.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        }
+      ],
+      "atlasLinks": [
+        {
+          "beatId": "H43-01",
+          "atlasEventKey": "biblical:passage:ezra-1-1-11",
+          "ref": "Ezra 1:1–6",
+          "relation": "SELECTED_WITHIN_ATLAS",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H43-02",
+          "atlasEventKey": "biblical:passage:ezra-6-13-22",
+          "ref": "Ezra 6:14–16",
+          "relation": "SELECTED_WITHIN_ATLAS",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H43-03",
+          "atlasEventKey": "biblical:passage:nehemiah-8-1-12",
+          "ref": "Nehemiah 8:1–12",
+          "relation": "EDITORIAL_EXACT_SOURCE",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H44-03",
+          "atlasEventKey": "biblical:passage:2maccabees-7-1-42",
+          "ref": "2Maccabees 7:1–42",
+          "relation": "EDITORIAL_EXACT_SOURCE",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        }
+      ],
+      "editorialApproval": false,
+      "oralAcceptance": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M18",
+      "title": "The generations and the Annunciation",
+      "originalOutlineIds": [
+        "H45",
+        "H46"
+      ],
+      "sourceBeatIds": [
+        "H46-01"
+      ],
+      "readingChapterIds": [
+        "R30"
+      ],
+      "arcIds": [
+        "historia-arc:incarnation"
+      ],
+      "preliminaryLiteraryFinding": "Keep the Annunciation fully in Luke's attributed Gospel, while maintaining Matthew and Luke genealogies as separate companion readings outside the compulsory narrative.",
+      "decisions": [
+        {
+          "id": "HS-M18-GENEALOGY_LUKAN",
+          "sourceRef": "Luke 3:23–38",
+          "disposition": "SOURCE_ONLY_SEPARATE_FROM_MATTHEW",
+          "rationale": "H45 is an outline without a compulsory beat. The Lukan genealogy belongs to Luke 3 and must not be fused into Matthew's distinct testimony.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M18-GENEALOGY_MATTHEW",
+          "sourceRef": "Matthew 1:1–17",
+          "disposition": "SOURCE_ONLY_LEGAL_FATHERHOOD_PROTECTED",
+          "rationale": "Matthew's ancestral register remains a native Scripture companion. Joseph's legal fatherhood cannot be portrayed as a fabricated biological paternity of Christ.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M18-ZECHARIAH_CONTEXT",
+          "sourceRef": "Luke 1:5–25",
+          "disposition": "SOURCE_SUPPORTED_CONNECTOR_HELD",
+          "rationale": "The source-backed introduction to Zachary and Elizabeth ends before Gabriel's visit to Mary. Preserve a visibly marked editorial connector or trial the exact biblical passage without replacing the source.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M18-ANNUNCIATION",
+          "sourceRef": "Luke 1:26–38",
+          "disposition": "RETAIN_COMPLETE_GOSPEL_TEXT",
+          "rationale": "The main selected source preserves the Gabriel–Mary dialogue and Mary's fiat. Avoid conflating with Matthew's separate witness.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        }
+      ],
+      "atlasLinks": [
+        {
+          "beatId": "H46-01",
+          "atlasEventKey": "biblical:event:nazareth-e1",
+          "ref": "Luke 1:26–38",
+          "relation": "EXACT_SELECTED",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        }
+      ],
+      "editorialApproval": false,
+      "oralAcceptance": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M19",
+      "title": "The birth of the Saviour",
+      "originalOutlineIds": [
+        "H47",
+        "H48",
+        "H49",
+        "H50"
+      ],
+      "sourceBeatIds": [
+        "H47-01",
+        "H47-02",
+        "H48-01",
+        "H49-01",
+        "H49-02",
+        "H49-03"
+      ],
+      "readingChapterIds": [
+        "R31",
+        "R32",
+        "R33"
+      ],
+      "arcIds": [
+        "historia-arc:incarnation"
+      ],
+      "preliminaryLiteraryFinding": "The Incarnation and Holy Family chapter juxtaposes distinct Matthean and Lukan sources; the reader must explicitly mark contextual bridges and never merge their speeches into an artificial Gospel harmony.",
+      "decisions": [
+        {
+          "id": "HS-M19-VISITATION",
+          "sourceRef": "Luke 1:39–56",
+          "disposition": "EDITORIAL_ONLY_WITH_EXISTING_ATLAS",
+          "rationale": "The Visitation is currently a source-attributed context note but a real complete Atlas Scripture event. Do not quietly quote a generic synthesized Magnificat.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M19-JOSEPH_GOSPEL",
+          "sourceRef": "Matthew 1:18–25",
+          "disposition": "RETAIN_MATTHEW_AS_OWN_SOURCE",
+          "rationale": "Joseph's dream and the naming of Jesus are directly selected from Matthew and must remain separate from Luke's later Nativity passage.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M19-NATIVITY",
+          "sourceRef": "Luke 2:1–20",
+          "disposition": "RETAIN_LUKE_AS_OWN_SOURCE",
+          "rationale": "The census, Bethlehem birth and shepherds remain Luke's original narrative, not a harmonized speech with the Magi.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M19-PRESENTATION",
+          "sourceRef": "Luke 2:22–38",
+          "disposition": "EDITORIAL_ONLY_WITH_EXISTING_ATLAS",
+          "rationale": "The Temple presentation and Simeon's canticle are cited in the main story as context, even though the full source has its own Atlas event.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M19-MAGI",
+          "sourceRef": "Matthew 2:1–12",
+          "disposition": "RETAIN_MATTHEW_AS_OWN_SOURCE",
+          "rationale": "The Magi witness in Matthew is separate from Luke's shepherds; chronological sequence is editorial, not an attested shared narrative.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M19-FLIGHT_RETURN",
+          "sourceRef": "Matthew 2:13–23",
+          "disposition": "EDITORIAL_SPANS_TWO_DISTINCT_ATLAS_EVENTS",
+          "rationale": "The editorial note spans the flight and return. The Atlas has two independently cited events for Matthew 2:13–15 and 2:19–23; keep both identities distinct and do not invent a single journey site.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        },
+        {
+          "id": "HS-M19-HIDDEN_LIFE",
+          "sourceRef": "Luke 2:51–52",
+          "disposition": "SOURCE_ONLY_NO_M19_BEAT",
+          "rationale": "The selected M19 proof does not include the full hidden-life source, although the broader outline H50 exists and the Atlas has its own related source. Do not imply a completed first-century itinerary or a selected extra event.",
+          "sourceEditionPrintedCollation": false,
+          "publicationApproved": false,
+          "oralReadthroughAccepted": false
+        }
+      ],
+      "atlasLinks": [
+        {
+          "beatId": "H47-01",
+          "atlasEventKey": "biblical:event:ein-karem-e1",
+          "ref": "Luke 1:39–56",
+          "relation": "EDITORIAL_EXACT_SOURCE",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H47-02",
+          "atlasEventKey": "biblical:event:nazareth-additional-001",
+          "ref": "Matthew 1:18–25",
+          "relation": "EXACT_SELECTED",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H48-01",
+          "atlasEventKey": "biblical:event:bethlehem-e1",
+          "ref": "Luke 2:1–20",
+          "relation": "EXACT_SELECTED",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H49-01",
+          "atlasEventKey": "biblical:event:jerusalem-temple-e1",
+          "ref": "Luke 2:22–38",
+          "relation": "EDITORIAL_EXACT_SOURCE",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H49-02",
+          "atlasEventKey": "biblical:event:bethlehem-e2",
+          "ref": "Matthew 2:1–12",
+          "relation": "EXACT_SELECTED",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H49-03",
+          "atlasEventKey": "biblical:event:egypt-e1",
+          "ref": "Matthew 2:13–15",
+          "relation": "EDITORIAL_SOURCE_WITHIN_ATLAS_WIDER",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        },
+        {
+          "beatId": "H49-03",
+          "atlasEventKey": "biblical:event:egypt-e2",
+          "ref": "Matthew 2:19–23",
+          "relation": "EDITORIAL_SOURCE_WITHIN_ATLAS_WIDER",
+          "status": "SOURCE_RESEARCH_LINK_NOT_PUBLICATION_AUTHORIZATION"
+        }
+      ],
+      "editorialApproval": false,
+      "oralAcceptance": false,
+      "publicationApproved": false
+    }
+  ]
+}
