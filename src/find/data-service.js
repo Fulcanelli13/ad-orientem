@@ -284,7 +284,7 @@ export function isHeldDirectoryPublication(record){
   const held=value=>{
     const state=text(value).toUpperCase().replace(/[^A-Z0-9]+/g,"_").replace(/^_+|_+$/g,"");
     return /^(?:RESEARCH|DRAFT|STAGING|HOLD|INTERNAL_ONLY|PROVISIONAL|NEEDS_REVIEW|REVIEW_REQUIRED|UNVERIFIED|SOURCE_ONLY)(?:_|$)/.test(state)
-      || /(?:^|_)(?:NOT_PUBLIC|NO_PUBLIC|DO_NOT_PUBLISH|NOT_FOR_PUBLICATION|PUBLICATION_HOLD|UNCONFIRMED)(?:_|$)/.test(state);
+      || /(?:^|_)(?:RESEARCH_ONLY|SOURCE_ONLY|NOT_PUBLIC|NO_PUBLIC|DO_NOT_PUBLISH|NOT_FOR_PUBLICATION|PUBLICATION_HOLD|UNCONFIRMED)(?:_|$)/.test(state);
   };
   return [venue?.publication_state,record?.publication_state].some(held);
 }
