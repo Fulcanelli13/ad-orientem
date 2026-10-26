@@ -1,0 +1,20 @@
+name: B97 Italy research admission delta
+
+on:
+  pull_request:
+    paths:
+      - "data/directory/research/b97-italy-three-append-only-physical-research-sites-and-ambrosian-relocation.v1.json"
+      - "tests/directory-b97-italy-admission-delta-contract.mjs"
+      - ".github/workflows/directory-b97-italy-admission.yml"
+  workflow_dispatch:
+
+jobs:
+  b97-research-delta-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate source records and nonpublication locks
+        run: node tests/directory-b97-italy-admission-delta-contract.mjs
