@@ -79,6 +79,8 @@ on:
       - 'data/source-text/icrsp-france-b27-12-scoped-owner-parity-and-two-drafts.v1.json'
       - 'data/source-text/icrsp-france-b27-seven-stream-301-unique-direct-topic-ledger.v1.json'
       - 'tests/test_icrsp_b27_reconciled_109_and_28_reviewed.py'
+      - 'data/source-text/icrsp-france-b28-last62-complete-selected-excerpt-review.v1.json'
+      - 'tests/test_icrsp_b28_160_selected_excerpt_completion.py'
   workflow_dispatch:
 
 permissions:
@@ -126,3 +128,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b26_real_page_claims_and_error_quarantine.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b27_47_source_page_reconciliation.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b27_reconciled_109_and_28_reviewed.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b28_160_selected_excerpt_completion.py' -v
