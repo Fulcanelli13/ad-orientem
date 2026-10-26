@@ -123,6 +123,20 @@ export function renderGraduale1961Archive(screen){
   }
   const perType={};
   for(const x of accepted)perType[x.officePart]=(perType[x.officePart]||0)+1;
+  const exactByHash=new Map(), sameIncipit=new Map();
+  for(const record of accepted){
+    const all=exactByHash.get(record.sha256)??[];all.push(record.id);
+    exactByHash.set(record.sha256,all);
+    const normalized=record.incipit.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+    const key=record.officePart+":"+normalized;
+    const group=sameIncipit.get(key)??[];group.push(record);
+    sameIncipit.set(key,group);
+  }
+  const duplicateHashes=[...exactByHash.values()].filter(group=>group.length>1)
+    .map(ids=>({ids,decision:"PRESERVE_BOTH_PENDING_SOURCE_REVIEW"}));
+  const distinctMelodies=[...sameIncipit.values()].filter(group=>group.length>1 &&
+    new Set(group.map(record=>record.sha256)).size>1)
+    .map(group=>({ids:group.map(row=>row.id),decision:"PRESERVE_AS_VARIANTS"}));
   const index={
     schema:INDEX_SCHEMA,snapshotDate:GR1961_SNAPSHOT_DATE,
     sourceRepository:"gregorio-project/GregoBase",
@@ -139,6 +153,12 @@ export function renderGraduale1961Archive(screen){
     batches:batches.map(({content,...meta})=>meta),
     exceptions,
     releaseRule:"Do not import this data in native Schola until source ownership, 1962 slot eligibility, exact Latin identity, edition verification and editorial review are individually passed.",
+    identityFindings:{
+      exactGabcDuplicateGroups:duplicateHashes,
+      samePartAndIncipitDistinctMelodies:distinctMelodies,
+      existingFiveChristmasPilotIds:["GREGOBASE-72","GREGOBASE-1163","GREGOBASE-324","GREGOBASE-1274","GREGOBASE-1139"],
+      rule:"Source IDs stay stable. Equal GABC or matching incipits are review evidence, never grounds for silently rewriting original records.",
+    },
   };
   return {batches,indexContent:JSON.stringify(index,null,2)+"\n",index};
 }
