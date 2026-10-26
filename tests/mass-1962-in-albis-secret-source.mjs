@@ -85,6 +85,14 @@ for(const [reason,changed,id] of [
  const sample=fixed([],changed);
  assert.equal(recover1962InAlbisSecretFromPinnedSource(sample,id,normalizer),null,reason);
 }
+const missingOnlyFrench=fixed([{lat:recovered.lat,en:recovered.en,fr:""}]);
+assert.equal((await recoverReaderProperOmissions(missingOnlyFrench,{
+ hostResolver:mockHost,principalCelebrationId:ID
+})).secrets[0].fr,recovered.fr,
+ "Recover exact missing French even when the Latin Secret already exists");
+const wrongPartial=fixed([{lat:recovered.lat,en:"An unrelated Secret from another Mass",fr:""}]);
+assert.equal(recover1962InAlbisSecretFromPinnedSource(wrongPartial,ID,normalizer),null,
+ "Existing conflicting English must never be overwritten by the pinned source");
 const placeholder=fixed([{lat:"",en:"$Per Dominum",fr:""}]);
 assert.ok(recover1962InAlbisSecretFromPinnedSource(placeholder,ID,normalizer),
  "Unresolved source macro is not an authentic conflicting translated Secret");
