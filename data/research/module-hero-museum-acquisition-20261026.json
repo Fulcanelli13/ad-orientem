@@ -1,0 +1,48 @@
+{
+  "scope": "3 institutional reference photos ONLY",
+  "originals_downloaded": 3,
+  "failures": [],
+  "sources": [
+    {
+      "module": "adoration",
+      "source_url": "https://images.metmuseum.org/CRDImages/ep/original/DP136074.jpg",
+      "path": "assets/staged/module-hero-masters/adoration.jpg",
+      "sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "width": 3122,
+      "height": 3813,
+      "bytes": 2467303,
+      "icc_present": false,
+      "camera_iso": null,
+      "rights_note": "Met open access; QA of exact image outstanding",
+      "status": "RESEARCH SOURCE ONLY; VISUAL/LICENCE QA PENDING"
+    },
+    {
+      "module": "confession",
+      "source_url": "https://api.nga.gov/iiif/676fa96e-ad4e-4209-b985-ae0c15f5d902/full/full/0/default.jpg",
+      "path": "assets/staged/module-hero-masters/confession.jpg",
+      "sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "width": 4096,
+      "height": 3712,
+      "bytes": 3022309,
+      "icc_present": true,
+      "camera_iso": null,
+      "rights_note": "NGA public-domain; QA pending",
+      "status": "RESEARCH SOURCE ONLY; VISUAL/LICENCE QA PENDING"
+    },
+    {
+      "module": "sorrows",
+      "source_url": "https://www.museunacional.cat/sites/default/files/images/art_piece/first_gallery/34950/008327-000.JPG",
+      "path": "assets/staged/module-hero-masters/sorrows.jpg",
+      "sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+      "width": 2220,
+      "height": 3000,
+      "bytes": 1454827,
+      "icc_present": true,
+      "camera_iso": null,
+      "rights_note": "MNAC painting public-domain; exact photo terms unverified",
+      "status": "RESEARCH SOURCE ONLY; VISUAL/LICENCE QA PENDING"
+    }
+  ],
+  "quality_approved": 0,
+  "app_released": 0
+}
