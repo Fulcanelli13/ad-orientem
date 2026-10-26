@@ -12,7 +12,17 @@
   "selection": {
     "method": "Score each surviving P43 unresolved lead using P25/P39/P45/P47 individual prior audit provenance, inherited discovery count, named-building typology, and open mapping OSM hints; subtract scope ambiguity and special reviews. Select highest 150 with stable original-order tiebreak.",
     "p48_dependency": "P48 remains separate PR #1733. Eight P48 proposed candidate IDs excluded from research queue to prevent concurrent duplicate effort; do not describe 364 as current merged count until P48 merges.",
-    "original_candidate_ids_retained": true
+    "original_candidate_ids_retained": true,
+    "p48_reserved_candidate_ids": [
+      "SG-INV-0628",
+      "SG-INV-0400",
+      "SG-INV-0114",
+      "SG-INV-0432",
+      "SG-INV-0197",
+      "SG-INV-0743",
+      "SG-INV-0424",
+      "SG-INV-0156"
+    ]
   },
   "counts": {
     "input_eligible": 364,
