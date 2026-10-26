@@ -228,7 +228,17 @@ export async function recoverReaderProperOmissions(proper,{
       diagnostic?.warnings?.push?.("PRE_GOSPEL_CHANT_SOURCE_UNAVAILABLE:"+String(error?.message??error));
     }
   }
-  const recoveredPreface=await recoverContradictoryPreface(data,hostResolver,principalCelebrationId??data.principalCelebrationId??data.mainId,diagnostic);
+  let recoveredPreface=null;
+  try{
+    recoveredPreface=await recoverContradictoryPreface(data,hostResolver,
+      principalCelebrationId??data.principalCelebrationId??data.mainId,diagnostic);
+  }catch(error){
+    // A missing remote source must not crash the Mass reader. The reader
+    // Preface decision gate independently blocks the inherited Common
+    // Preface for authenticated obligatory seasonal cases.
+    diagnostic?.warnings?.push?.("PREFACE_SOURCE_RECOVERY_UNAVAILABLE:"+
+      String(error?.message??error));
+  }
   const needs={
     epistle:!textUsable(data.epistle),
     secrets:!arrayUsable(data.secrets)&&!textUsable(data.secret),
