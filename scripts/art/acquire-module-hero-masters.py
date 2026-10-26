@@ -8,6 +8,7 @@ are eligible. Other/attribution-licensed works are deliberately gated out.
 """
 import argparse
 import hashlib
+import os
 import json
 import re
 import sys
@@ -22,7 +23,7 @@ ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / "data/research/module-hero-artwork-production-readiness-2026-10-26.audit1.json"
 STAGE = ROOT / "assets/staged/module-hero-masters"
 USER_AGENT = "AdOrientem-HeroAudit/1.0 (https://github.com/Fulcanelli13/ad-orientem; research-only)"
-MAX_BYTES = 12 * 1024 * 1024
+MAX_BYTES = min(int(os.environ.get('AO_MASTER_MAX_BYTES', 12 * 1024 * 1024)), 24 * 1024 * 1024)
 
 
 def fetch_json(url):
