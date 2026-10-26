@@ -713,13 +713,13 @@ export function calendarNovenaEvents(value,{fr=false,upcomingDays=0}={}){
   return Object.freeze(rows.sort((a,b)=>b.priority-a.priority||a.title.localeCompare(b.title)));
 }
 
-export function calendarIntelligenceForDate(value,{fr=false,properTitle="",includeUpcomingNovenas=0}={}){
+export function calendarIntelligenceForDate(value,{fr=false,properTitle="",observedMainId=null,includeUpcomingNovenas=0}={}){
   const date=keyOf(value);
   const practices=calendarPracticeEvents(date,{fr,properTitle});
   const novenas=calendarNovenaEvents(date,{fr,upcomingDays:includeUpcomingNovenas});
   const semantic=calendarSemanticEventsForDate(date,{fr});
   const discipline=calendarDisciplineForDate(date,{fr});
-  const historicalNotes=calendarHistoricalNotes(date,{fr});
+  const historicalNotes=calendarHistoricalNotes(date,{fr,observedMainId});
   return Object.freeze({
     schema:CALENDAR_INTELLIGENCE_VERSION,registryVersion:CALENDAR_DEVOTIONAL_REGISTRY_VERSION,
     semanticRegistryVersion:CALENDAR_SEMANTIC_REGISTRY_VERSION,
