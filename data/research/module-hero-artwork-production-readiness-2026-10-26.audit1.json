@@ -1,6 +1,6 @@
 {
   "name": "Ad Orientem module heroes — acquisition and publication gates",
-  "version": "2026-10-26.audit7.20-physical-sources-18-remaining-photo-leads",
+  "version": "2026-10-26.audit8.20-heroes-25-image-files",
   "editorial_ledger_ref": "data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json",
   "editorial_ledger_sha_at_audit": "afb09129f52e336df64c7f1782446e7cfb6861dc",
   "generated_from_latest_user_confirmed_22_selections": true,
@@ -27,7 +27,7 @@
     "previews_visually_screened_not_master": 20,
     "distinct_approved_heroes_with_archived_source_files": 20,
     "technical_quality_preflight_completed": 19,
-    "original_photo_files_archived": 23,
+    "original_photo_files_archived": 25,
     "remaining_modules_without_source_files": [
       "angel",
       "evening"
@@ -42,7 +42,8 @@
       "angel",
       "evening",
       "michael"
-    ]
+    ],
+    "additional_rejected_comparison_photographs": 2
   },
   "entries": [
     {
@@ -513,10 +514,46 @@
           "High-res museum scan preferable to merely larger digital copy."
         ],
         "quality_verification_notes": [
-          "Personally reviewed source-derived full and upper native-pixel image: colours plausible and composition intact, but shoulder/face transitions appear a little soft; JPEG at 513,396 bytes for 1657×2441 merits independent better master comparison before promotion."
+          "Personally reviewed source-derived full and upper native-pixel image: colours plausible and composition intact, but shoulder/face transitions appear a little soft; JPEG at 513,396 bytes for 1657×2441 merits independent better master comparison before promotion.",
+          "Two chapel originals visually compared: Sailko 2112×2816 image has severe perspectival keystoning/frame view and lower painted sharpness; 5152×3864 church installation image has strong spotlight glare at Michael's feet/head of Satan and large architectural margins. BOTH REJECTED as actual hero photo. Existing unframed 1657×2441 source preferable in composition despite low compression quality, still not approved."
         ],
-        "alternative_reference_candidates": [],
-        "native_pixel_technical_preflight": "complete_not_human_passed"
+        "alternative_reference_candidates": [
+          {
+            "source": "https://commons.wikimedia.org/wiki/File:Cappouccini%2C%20guido%20reni%2C%20san%20michele%20arcangelo%2002.JPG",
+            "role": "real Rome chapel documentary photograph, source original acquired",
+            "dimensions": [
+              2112,
+              2816
+            ],
+            "rights": "CC BY-SA 3.0",
+            "remarks": "REJECT AS PAINTING HERO PHOTO: strong perspective or glazing glare, despite pixels. User-approved Reni original stays selected.",
+            "research_file": "assets/staged/reni-alt-source/reni-sailko.jpg",
+            "sha256": "d376bbf82b9978223eb8968fda988ae7d61ebc84cf50d72bb5f5fd868fbb23ce"
+          },
+          {
+            "source": "https://commons.wikimedia.org/wiki/File:Chiesa%20di%20Santa%20Maria%20Immacolata%20a%20via%20Veneto%2004.jpg",
+            "role": "real Rome chapel documentary photograph, source original acquired",
+            "dimensions": [
+              5152,
+              3864
+            ],
+            "rights": "CC BY-SA 4.0",
+            "remarks": "REJECT AS PAINTING HERO PHOTO: strong perspective or glazing glare, despite pixels. User-approved Reni original stays selected.",
+            "research_file": "assets/staged/reni-alt-source/reni-church.jpg",
+            "sha256": "c16ff8c237812b9d87a33d89b6f53d62b2cb65c088f0010b190c2782b86e5d7f"
+          }
+        ],
+        "native_pixel_technical_preflight": "complete_not_human_passed",
+        "photo_alternatives_rejected": [
+          {
+            "id": "reni-sailko",
+            "reason": "angle/perspective and glare; 2112×2816; exact original painting but poor photographic fidelity"
+          },
+          {
+            "id": "reni-church",
+            "reason": "large church interior / spotlight glare, original work does not fill image; 5152×3864"
+          }
+        ]
       },
       "staged_research_file": {
         "repository": "Fulcanelli13/ad-orientem",
@@ -2000,6 +2037,13 @@
       "report": "data/research/module-hero-rescue-20261026.json",
       "source_images_acquired": 2,
       "source_modules_acquired": 2
+    },
+    {
+      "branch": "research/reni-faithful-photographic-comparison-20261026",
+      "action": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40347443302",
+      "report": "data/research/reni-painting-fidelity-20261026.json",
+      "source_images_acquired": 2,
+      "source_modules_acquired": 0
     }
   ],
   "verified_acquisition_quality_findings": [
