@@ -52,6 +52,20 @@ def verify_prohibited_raw_prose(panel):
 
 def build(directory):
     directory = Path(directory)
+    b29_added = json.loads((directory / "icrsp-france-b30-24-added-francis-de-sales-panel-labels.v1.json").read_text(encoding="utf-8"))
+    b32_added = json.loads((directory / "icrsp-france-b33-b32-last210-salesian-panel-drift.v1.json").read_text(encoding="utf-8"))
+    assert len(b29_added["records"]) == 24 and len(b32_added["records"]) == 39
+    added_salesian = {}
+    for r in b29_added["records"]:
+        k = (r["articleId"], r["extraPanelBodySha256"])
+        assert k not in added_salesian
+        added_salesian[k] = ("B29", r["extraPanelHostLabel"])
+    for r in b32_added["records"]:
+        k = (r["articleId"], r["addedBodyHash"])
+        assert k not in added_salesian
+        added_salesian[k] = ("B32", r["addedLabel"])
+    assert len(added_salesian) == 63
+    observed_additions = set()
     articles = []
     panel_rows = []
     sources = {}
@@ -100,12 +114,19 @@ def build(directory):
                 assert not panel.get("claimApproved", False), ("Unexpected owner approved claim", aid)
                 assert not panel.get("editoriallyReviewed", False), ("Unexpected editorial certification", aid)
                 work = family(label, panel.get("candidateWorkFamily"))
+                addition = added_salesian.get((aid, sha))
+                if addition is not None:
+                    observed_additions.add((aid, sha))
+                    assert label == addition[1], ("Changed label in source metadata", aid)
+                    work = "FRANCIS_DE_SALES_HOST_ATTRIBUTION_UNVERIFIED"
                 panel_rows.append({
                     "panelRef": f"{aid}#{ordinal}", "articleId": aid,
                     "sourceCohort": tag, "section": article["section"],
                     "ordinal": ordinal, "bodySha256": sha, "hostWorkLabel": label,
                     "candidateWorkFamily": work, "normalizedBodyChars": chars,
                     "lexicalSignalFamilies": flags,
+                    "addedSalesianPanelIn63MetadataDrifts": addition is not None,
+                    "addedSalesianProvenanceCohort": addition[0] if addition else None,
                     "originalPrintedEditionVerified": False,
                     "authorshipCertified": False,
                     "rightsCleared": False, "appContentApproved": False
@@ -121,6 +142,7 @@ def build(directory):
     assert len(panel_rows) == 2919
     assert len(mismatches) == 63, ("Expected 63 +1 metadata drifts", len(mismatches))
     assert len(set(mismatches)) == len(mismatches)
+    assert observed_additions == set(added_salesian), "Added Salesian panels not reconciled by exact article ID and body hash"
     assert {r["panelRef"] for r in panel_rows}.__len__() == len(panel_rows), "Duplicate panel references"
     hashes = defaultdict(list)
     family_rows = defaultdict(list)
@@ -185,6 +207,9 @@ def build(directory):
         "newlyObservedPanelOccurrences": len(panel_rows) - 2856,
         "b29AddedSalesianPanels": 24, "b32AddedSalesianPanels": 39,
         "metadataDriftArticleCount": len(mismatches),
+        "salesianDriftPanelsExactHashMatched": len(observed_additions),
+        "salesianDriftLabelsGeneric": sum("francois de sales" in canon_label(v[1]) for v in added_salesian.values()),
+        "salesianDriftLabelsNamedOrPlans": sum("francois de sales" not in canon_label(v[1]) for v in added_salesian.values()),
         "distinctNormalizedBodyHashes": len(hashes),
         "repeatedBodyHashGroups": len(duplicates),
         "repeatedPanelOccurrences": sum(len(g) for g in hashes.values() if len(g)>1),
