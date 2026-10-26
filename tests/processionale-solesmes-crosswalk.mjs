@@ -672,7 +672,14 @@ test('second independent 1962 Missal printed witness resolves Palm lexical OCR d
   assert.deepEqual(scan.source.pages.map(p=>p.printedPage),[134,135]);
   assert.deepEqual(scan.source.pages.map(p=>p.scanNo),[211,212]);
   assert.ok(scan.source.pages.every(p=>p.url.includes('/Missale-Romanum-1962-Roman-Missal-color-')));
-  assert.equal(scan.source.imprintStatus,'SCAN_HOST_LABEL_1962_EXACT_EDITION_AND_PUBLISHER_NOT_AUTHENTICATED');
+  assert.equal(scan.source.imprintStatus,'BENZIGER_BROTHERS_1962_EDITIO_IUXTA_TYPICAM_PRINTED_IMPRINT_AUTHENTICATED');
+  assert.equal(scan.source.bibliography.publisher,'Benziger Brothers, Inc.');
+  assert.equal(scan.source.bibliography.publishingPlace,'Novi Eboraci (New York)');
+  assert.equal(scan.source.bibliography.editionDesignation,'Editio iuxta typicam');
+  assert.equal(scan.source.bibliography.printedApprovalDate,'1962-03-01');
+  assert.ok(scan.source.bibliography.titlePage.endsWith('-0012.jpg'));
+  assert.ok(scan.source.bibliography.archdiocesanApprovalPage.endsWith('-0014.jpg'));
+  assert.equal(scan.promotion.nonVaticanAuthorizedEditionBibliographicallyIdentified,true);
   assert.deepEqual(scan.coverage.ps23WholeVersesVisible,[1,2,7,8,9,10]);
   assert.deepEqual(scan.coverage.ps46WholeChantLinesVisible,[1,2,3,4,5,6,7,8,9,10]);
   assert.equal(scan.coverage.ps46BiblicalVerses,9);
