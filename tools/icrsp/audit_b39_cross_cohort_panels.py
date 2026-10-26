@@ -39,7 +39,7 @@ def family(label, machine_hint):
         return "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
     if "lefevre" in n or "lefebvre" in n:
         return "LEFEBVRE_MISSAL_EDITION_CHECK"
-    if n.strip() == "presentation":
+    if canon_label(label).strip() == "presentation":
         return "WEBSITE_PRESENTATION_UNATTRIBUTED"
     if "office du jour" in n or "matines" in n:
         return "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
