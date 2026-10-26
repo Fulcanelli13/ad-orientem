@@ -6,7 +6,8 @@ import {SCHOLA_SCORE_CATALOGUE} from "./reader-chant-score-pilot.js";
 export const MASS_CHANT_PROGRAMME_SCHEMA="ao-mass-chant-programme-v1";
 export const MASS_CHANT_UNCONFIRMED="UNCONFIRMED";
 const SUNG=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
-const SPECIAL=new Set(["GOOD_FRIDAY","EASTER_VIGIL"]);
+// Requiem and Nuptial settings require their own approved chant mapping.
+const PILOT_CELEBRATIONS=new Set(["CALENDAR","VOTIVE"]);
 const IDENTIFIER=/^[A-Za-z0-9_-]+$/;
 export function massChantProgrammeIdentity(legacy,{form,kind}={}){
   if(!legacy||!/^\d{4}-\d{2}-\d{2}$/.test(String(legacy.date??"")))return null;
@@ -25,7 +26,7 @@ export function massChantProgrammeIdentity(legacy,{form,kind}={}){
   ]);
 }
 export function chantProgrammeEnabled({form,kind}={}){
-  return SUNG.has(String(form??""))&&!SPECIAL.has(String(kind??""));
+  return SUNG.has(String(form??""))&&PILOT_CELEBRATIONS.has(String(kind??""));
 }
 export function massChantOptions(trackId,{form,kind}={}){
   if(!chantProgrammeEnabled({form,kind}))return Object.freeze([]);
