@@ -74,9 +74,9 @@ dialog::backdrop{background:#030407e3;backdrop-filter:blur(4px)}
 <aside>
   <div class="aside-head"><div class="eyebrow">Ad Orientem · Sacred Art</div><h1>Class I · Heroes</h1>
   <p>53 observed dates in the 1962 calendar · 2026</p>
-  <div class="mini-stats"><span><strong id="reviewcount">0</strong> decisions</span><span id="approvedcount">10 choices preserved</span></div>
+  <div class="mini-stats"><span><strong id="reviewcount">0/43</strong> new decisions</span><span id="approvedcount">10 choices preserved</span></div>
   <div class="track"><div id="prog"></div></div></div>
-  <div class="nav-tools"><button data-nav-filter="all" aria-pressed="true">All 53</button><button data-nav-filter="pending" aria-pressed="false">To review</button><button data-nav-filter="protected" aria-pressed="false">Prior choices</button><button data-nav-filter="research" aria-pressed="false">Find more</button></div>
+  <div class="nav-tools"><button data-nav-filter="gaps" aria-pressed="true">9 priorities</button><button data-nav-filter="exact" aria-pressed="false">6 exact-source</button><button data-nav-filter="subject" aria-pressed="false">Other 28</button><button data-nav-filter="pending" aria-pressed="false">Undecided 43</button><button data-nav-filter="protected" aria-pressed="false">10 protected</button><button data-nav-filter="all" aria-pressed="false">All 53</button><button data-nav-filter="research" aria-pressed="false">Find more</button></div>
   <nav class="nav-scroll" id="calendar" aria-label="Class I observed feast days"></nav>
 </aside>
 <section class="content">
@@ -85,8 +85,8 @@ dialog::backdrop{background:#030407e3;backdrop-filter:blur(4px)}
   <button class="action secondary" id="import">Import saved review ↑</button>
   <input type="file" accept=".json,application/json" id="upload" hidden>
   </div></div>
-  <div class="notice">Choose the best painting for each feast, or select <strong>None suitable — research further</strong>. These 3–4 candidates are backed by the existing sacred-art research, but some are only contextual alternatives; they are clearly labelled. <strong>Ten of your previous date-specific choices are protected</strong> and do not require re-approval. Choosing another painting for one of those dates is recorded as an explicit proposed revision, not an automatic replacement in the app.</div>
-  <div class="titlebox"><div class="date" id="date"></div><h2 id="feast"></h2><div class="assoc" id="relation"></div></div>
+  <div class="notice"><strong>Batch review:</strong> begin with 9 genuine gaps, then 6 dates with documented exact-subject artwork, then the other 28 open dates. The ten prior choices are protected. No rankings grant an approval or photo rights. Choose the best painting for each feast, or select <strong>None suitable — research further</strong>. These 3–4 candidates are backed by the existing sacred-art research, but some are only contextual alternatives; they are clearly labelled. <strong>Ten of your previous date-specific choices are protected</strong> and do not require re-approval. Choosing another painting for one of those dates is recorded as an explicit proposed revision, not an automatic replacement in the app.</div>
+  <div class="titlebox"><div class="date" id="date"></div><h2 id="feast"></h2><div class="assoc" id="relation"></div><div class="appointed" id="appointed" style="font:12px/1.65 system-ui,sans-serif;color:#d9c49f;margin-top:10px" hidden></div></div>
   <div class="protected-notice" id="protected" hidden></div>
   <div class="legend"><span><strong>Prior approval:</strong> earlier decision retained</span><span><strong>Exact:</strong> artwork depicts feast/event</span><span><strong>Contextual:</strong> related theme; not exact</span><span><strong>Photo:</strong> research proof, not app rights clearance</span></div>
   <div class="candidates" id="candidates" aria-label="Select among the feast painting candidates"></div>
@@ -107,7 +107,7 @@ const IMAGE_BANK=__B56_IMAGE_BANK__;
 const CACHE="ao-b56-classi-2026-53-hero-selections-v1";
 const byDate=new Map(DAYS.map(d=>[d.date,d]));
 const $=id=>document.getElementById(id);
-let state={},idx=0,filter="all";
+let state={},idx=Math.max(0,DAYS.findIndex(d=>d.review_lane==="GAP_9")),filter="gaps";
 function normalize(v){const out={};if(!v||typeof v!=="object"||Array.isArray(v))return out;
   for(const [date,record] of Object.entries(v)){const d=byDate.get(date);if(!d||!record||typeof record!=="object")continue;
     const selected=typeof record.selected==="string"&&d.options.some(x=>x.choice_id===record.selected)?record.selected:null;
@@ -126,6 +126,9 @@ function label(d){const c=current(d);if(c.action==="more")return "Needs research
 function navItems(){const root=$("calendar");root.replaceChildren();let last="";
  for(const d of DAYS){const st=current(d);if(filter==="pending"&&(st.action!=="undecided"||d.original_approval))continue;
  if(filter==="protected"&&!d.original_approval)continue;
+ if(filter==="gaps"&&d.review_lane!=="GAP_9")continue;
+ if(filter==="exact"&&d.review_lane!=="EXACT_6")continue;
+ if(filter==="subject"&&d.review_lane!=="SUBJECT_28")continue;
  if(filter==="research"&&st.action!=="more")continue;
  const m=month(d.date);if(last!==m){const monthEl=document.createElement("div");monthEl.className="month";monthEl.textContent=m;root.append(monthEl);last=m;}
  const b=document.createElement("button");b.className="navdate"+(DAYS[idx].date===d.date?" active":"");b.type="button";
@@ -138,12 +141,13 @@ function navItems(){const root=$("calendar");root.replaceChildren();let last="";
 }
 function renderNav(){
  const entries=DAYS.map(x=>({d:x,c:current(x)}));
- $("reviewcount").textContent=String(entries.filter(x=>x.c.action!=="undecided").length)+"/53";
- $("prog").style.width=(entries.filter(x=>x.c.action!=="undecided").length/53*100)+"%";
+ const reviewed=entries.filter(x=>!x.d.original_approval&&x.c.action!=="undecided").length;
+ $("reviewcount").textContent=String(reviewed)+"/43";
+ $("prog").style.width=(reviewed/43*100)+"%";
  navItems();
 }
 function gradeLabel(x){
- return ({PRIOR_USER_APPROVED:"Previously approved by you",EXACT_SUBJECT_RESEARCH:"Exact feast subject · researched",
+ return ({PRIOR_USER_APPROVED:"Previously approved by you",EXACT_SUBJECT_RESEARCH:"Documented feast/Gospel source · inspect",
  PRIOR_SUBJECT_SELECTION:"Earlier subject choice",RESEARCHED_THEME:"Existing research candidate",
  EDITORIAL_PROPOSAL:"Editorial alternative",CONTEXTUAL_CANDIDATE:"Contextual alternative"})[x.grade]||x.grade;}
 function card(x,d){
@@ -153,7 +157,7 @@ function card(x,d){
  const image=IMAGE_BANK[x.image_key];
  if(image){const img=document.createElement("img");img.src=image;img.alt=x.title+" — "+x.artist;img.decoding="async";photo.append(img);}
  else{const missing=document.createElement("div");missing.className="blank";missing.textContent="Exact candidate has no preserved photo preview. Source recovery required.";photo.append(missing);}
- const q=document.createElement("span");q.className="quality";q.textContent=x.historically_approved_for_date?"Your earlier choice":x.grade==="EXACT_SUBJECT_RESEARCH"?"Exact subject":"Research candidate";photo.append(q);
+ const q=document.createElement("span");q.className="quality";q.textContent=x.historically_approved_for_date?"Your earlier choice":x.grade==="EXACT_SUBJECT_RESEARCH"?"Source-linked":"Research candidate";photo.append(q);
  const div=document.createElement("div");div.className="detail";
  const ar=document.createElement("div");ar.className="artist";ar.textContent=x.artist;
  const title=document.createElement("h3");title.textContent=x.title;
@@ -179,7 +183,9 @@ function render(){
  const d=DAYS[idx],v=current(d);
  $("date").textContent=new Date(d.date+"T12:00:00Z").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric",timeZone:"UTC"});
  $("feast").textContent=d.title;
- $("relation").textContent="1962 observed principal · Class I · "+(d.relation||d.theme)+" · "+d.options.length+" painting options";
+ $("relation").textContent="1962 observed principal · Class I · "+(d.relation||d.theme)+" · "+d.options.length+" painting options · "+(d.review_lane||"REVIEW");
+ $("appointed").hidden=!d.appointed_reading;
+ $("appointed").textContent=d.appointed_reading?(d.appointed_reading+" · "+d.appointed_scene+" (reference, not an automatic approval)"):"";
  $("protected").hidden=!d.original_approval;
  if(d.original_approval)$("protected").textContent="Protected existing approval: "+d.original_approval.artist+" — "+d.original_approval.title+". This previously approved painting remains your editorial choice unless you explicitly propose to change it. A verified app-ready image file is not implied.";
  $("candidates").replaceChildren(...d.options.map(x=>card(x,d)));
