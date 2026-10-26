@@ -102,6 +102,7 @@ def scan_html(html, source):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--manifest", required=True)
+    p.add_argument("--reviewed", required=True, help="B21 ten already directly reviewed source pages")
     p.add_argument("--shard", type=int, required=True)
     p.add_argument("--shards", type=int, default=4)
     p.add_argument("--delay", type=float, default=3.0)
@@ -110,9 +111,14 @@ def main():
     if args.shards < 1 or not 0 <= args.shard < args.shards or args.delay < 2.5:
         p.error("invalid shard or delay (minimum 2.5 seconds)")
     master = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
+    editorial = json.loads(Path(args.reviewed).read_text(encoding="utf-8"))
+    already_read = {r["articleId"] for r in editorial["reviewedRows"]}
+    if len(already_read) != 10:
+        raise ValueError("Expected exactly ten B21 new editorial-reviewed source articles")
     cohort = [
         r for r in master["records"]
         if r["sourceTextStatus"] == "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ"
+        and r["articleId"] not in already_read
     ]
     if len(cohort) != 140 or len(master["records"]) != 160:
         raise ValueError("Expected B20 140 metadata-only pages after 20 selected editorial leads")
