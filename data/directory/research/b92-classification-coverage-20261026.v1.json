@@ -56,5 +56,24 @@
     "classification_workbook": "Ad_Orientem_B92_Rite_Missal_UnaCum_Organization_Coverage_2026-10-26.xlsx",
     "workbook_sha256": "12d617ac1cd7d24c7bc99f6f7105ff6d8bd3563c9d27e04126a69acf42520c85",
     "caveat": "Full binary and 2715-row data are independent conversation artifacts, not committed to this PR. Do not claim that the whole 2609-site master was merged."
+  },
+  "existing_community_level_registry": {
+    "file": "data/directory/status-assertions.v1.json",
+    "community_profiles_total": 4,
+    "profiles": [
+      "SSPX",
+      "FSSP",
+      "ICKSP",
+      "IBP"
+    ],
+    "community_policy_pope_named_in_canon_yes": [
+      "SSPX"
+    ],
+    "community_policy_pope_named_in_canon_unknown": [
+      "FSSP",
+      "ICKSP",
+      "IBP"
+    ],
+    "note": "Source-linked community policy records are preserved. They must not be counted as 2,715 source-row Una Cum assessments or automatically assigned to hosted Masses with unknown celebrants. Dated ecclesial status assertions stay separate."
   }
 }
