@@ -1,7 +1,7 @@
 {
   "schema": "ao-1961-graduale-romanum-palm-psalter-edition-contrast-v1",
   "date": "2026-10-26",
-  "status": "EDITION_CONFLICT_IDENTIFIED_CANDIDATE_ONLY_NOT_RUNTIME",
+  "status": "PRIMARY_1962_OCR_TEXT_FAVOURS_TEXTUS_NOVUS_GABC_19316_TEXT_MISMATCH_HOLD",
   "scope": "Competing Psalm text traditions for Roman restored Palm Sunday distribution; candidate GABC must match accepted Latin version before full notation.",
   "owners": {
     "romanSource": "https://github.com/Fulcanelli13/ad-orientem/issues/894",
@@ -47,7 +47,9 @@
         "archived": false,
         "sha256": null,
         "transcriber": "Simone Sanavio",
-        "proofread": "GregoBase marks proofread Apr 22 2025"
+        "proofread": "GregoBase marks proofread Apr 22 2025",
+        "exactLatin1962": "Dómini est terra et quae replent eam",
+        "status": "INCIPIT_MATCH_1962_OCR_MELODY_NOT_CERTIFIED"
       },
       "versePairs": [
         [
@@ -88,7 +90,17 @@
         "archived": false,
         "sha256": null,
         "transcriber": "Simone Sanavio",
-        "proofread": "No proofread flag on record"
+        "proofread": "No proofread flag on record",
+        "exactLatin1962": "Omnes pópuli, pláudite mánibus",
+        "gabcFirstWords": "Omnes gentes plaudite",
+        "status": "INCIPIT_TEXT_MISMATCH_DO_NOT_RELEASE",
+        "error": "GregoBase #19316 transcribes 'Omnes gentes' as first words while the 1961 Graduale Romanum printed Textus novus index, the 1956 official restored Holy Week text in Schmidt, and the 1962 printed Missal OCR witness read 'Omnes populi'. Source GABC is not faithful to the required first words.",
+        "evidence": [
+          "https://gregobase.selapa.net/download.php?format=gabc&id=19316",
+          "https://www.virgosacrata.com/wp/wp-content/uploads/2024/02/Graduale-Romanum-Index.pdf",
+          "https://dokumen.pub/hebdomada-sancta-fontes-historici-commen.html",
+          "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf"
+        ]
       },
       "versePairs": "SEQUENTIAL_PAIRS",
       "repeat": "AFTER_EVERY_TWO_VERSES",
@@ -96,19 +108,28 @@
     }
   ],
   "romanRule": {
-    "status": "REQUIRES_EXACT_ROMAN_1962_PRIMARY_TEXT_APPROVAL",
+    "status": "1962_MISSALE_INDEXED_PRIMARY_TEXT_CONFIRMS_NOVUS_INCIPITS_IMAGE_SIGNOFF_PENDING",
     "evidence": [
       "1961 printed Graduale distinguishes Vatican restored Holy Week new psalm interpretation from older text",
       "1956 restored Holy Week choir guide states pair order and flexible duration"
     ],
     "doNotPresumeOldTextAllowed": true,
-    "doNotAutoSelectEitherVersion": true
+    "doNotAutoSelectEitherVersion": true,
+    "primary1962Witness": {
+      "source": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+      "inspection": "SEARCH_INDEX_EXTRACT_ONLY_FULL_PDF_TOO_LARGE_FOR_FACSIMILE_VIEW",
+      "printedLocation": "Palm Sunday, De distributione ramorum",
+      "ps23Expected": "Dómini est terra et quae replent eam",
+      "ps46Expected": "Omnes pópuli, pláudite mánibus",
+      "evidenceTier": "ORIGINAL_1962_MISSAL_OCR_TEXT_NOT_VISUAL_IMAGE_CERTIFICATION"
+    }
   },
   "sourceSafety": {
     "firstVerseGabcIsNotCompletePsalm": true,
     "scoreTitleNotAuthority": true,
     "pitchNeumeCollationComplete": false,
-    "approvedRuntimeAssignments": 0
+    "approvedRuntimeAssignments": 0,
+    "criticalHold": "GregoBase #19316 failed exact first-word match. Score remains research-only even if bytes are successfully captured and hashed."
   },
   "acceptance": {
     "state": "RESEARCH_REQUIREMENTS_ONLY",
@@ -143,6 +164,11 @@
       "id": "MANUAL_SCROLL_PHONE_ACCEPTANCE",
       "status": "OPEN",
       "owner": "#1749"
+    },
+    {
+      "id": "GREGOBASE_19316_OMNES_POPULI_CORRECTION",
+      "status": "OPEN_BLOCKING",
+      "owner": "#1749/#894"
     }
   ]
 }
