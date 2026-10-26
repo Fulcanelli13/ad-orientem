@@ -46,6 +46,25 @@ try{
   {waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",
   null,{timeout:90000});
+ const sourceDiagnostic=await page.evaluate(async()=>{
+   const resolver=globalThis.AO_RUNTIME_V8.resolver.properResolver;
+   const {render1962EasterPrefaceVariant}=await import("/src/mass/1962-easter-preface-form.js");
+   const out={};
+   for(const lang of ["la","en","fr"]){
+     try{
+       const parsed=await resolver.resolveSource("Ordo/Prefationes",lang,{});
+       const lines=parsed?.map?.get?.("Pasch")??[];
+       const simplified=lines.map(line=>String(line).trim().replace(/^!\s*/,"")
+         .replace(/^[Vv]\.\s*/,"℣. ")).join("\n");
+       out[lang]={rawLines:lines.slice(0,15),sourceStart:simplified.slice(0,400),
+         nightly:render1962EasterPrefaceVariant(simplified,lang,"VIGIL_NIGHT")?.slice(0,120)??null,
+         daily:render1962EasterPrefaceVariant(simplified,lang,"OCTAVE_DAY")?.slice(0,120)??null,
+         season:render1962EasterPrefaceVariant(simplified,lang,"EASTERTIDE")?.slice(0,120)??null};
+     }catch(e){out[lang]={error:String(e)}}
+   }
+   return out;
+ });
+ console.log("EASTER_PASCH_SOURCE_DIAGNOSTIC="+JSON.stringify(sourceDiagnostic));
  const rows=await page.evaluate(async cases=>{
   const dayResolver=globalThis.AO_RUNTIME_V8.resolver;
   const {recoverReaderProperOmissions,authenticated1962PrefaceRecoveryOwner}=
