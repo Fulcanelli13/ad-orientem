@@ -1,0 +1,51 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const m=read("data/geography/research/sacred-places-p49-ranked150-geometry-handoff.v1.json");
+const p43=read("data/geography/research/sacred-places-p43-open35-global500-reconciliation.v1.json");
+const p44=read("data/geography/research/sacred-places-p44-two-catalan-basilicas.v1.json");
+const p46=read("data/geography/research/sacred-places-p46-four-exact-catholic-buildings.v1.json");
+const p48Ids=m.selection.p48_reserved_candidate_ids;
+const p27=read("data/geography/research/sacred-places-p27-osm-search-seeds.v1.json");
+const registry=read("data/geography/seed-registry.v1.json");
+assert.equal(m.schema,"AO_SACRED_PLACES_P49_RANKED150_GEOMETRY_HANDOFF_V1");
+assert.equal(m.state,"RESEARCH_HANDOFF_NO_PUBLICATION");
+const excluded=new Set([...p44.published_new.flatMap(x=>x.candidate_ids||[x.candidate_id]),...p46.published_new.map(x=>x.candidate_id),...p48Ids]);
+const remaining=p43.global_acquisition_500.filter(x=>!x.known_canonical_link&&!excluded.has(x.candidate_id));
+assert.equal(p48Ids.length,8);assert.equal(new Set(p48Ids).size,8);
+assert.equal(remaining.length,364);
+assert.equal(m.rows.length,150);
+assert.equal(m.counts.input_eligible,364);assert.equal(m.counts.remainder_not_in_this_batch,214);
+const allowed=new Set(remaining.map(x=>x.candidate_id)),ids=new Set(),lanes={},countries=new Set(),reviewOwners={};
+let source=0,audited=0,osmCandidates=0,reused=0;
+for(const row of m.rows){
+ assert.ok(allowed.has(row.candidate_id),"P49 candidate must remain in unresolved global 500 acquisition queue");
+ assert.ok(!ids.has(row.candidate_id));ids.add(row.candidate_id);
+ assert.equal(row.geometry_review_order,ids.size);
+ assert.equal(row.publication_authorized,false);
+ assert.equal(row.physical_site_geo_status,"NOT_SITE_GEO_VERIFIED");
+ assert.ok(row.site_name&&row.country&&row.original_gate&&row.verification_lane);
+ if(row.source_record_url){source++;assert.ok(/^https?:\/\//.test(row.source_record_url));}
+ if(row.prior_individual_source_review)audited++;
+ if(row.osm_candidate_hints.length)osmCandidates++;
+ if(row.existing_place_reuse){reused++;assert.ok(registry.places.some(p=>p.place_id===row.existing_place_reuse));}
+ lanes[row.verification_lane]=(lanes[row.verification_lane]||0)+1;
+ reviewOwners[row.previous_review_owner]=(reviewOwners[row.previous_review_owner]||0)+1;
+ countries.add(row.country);
+}
+assert.equal(ids.size,150);
+assert.equal(m.counts.source_url_available,source);
+assert.equal(m.counts.previously_individually_source_reviewed,audited);
+assert.equal(m.counts.with_osm_candidate_hints,osmCandidates);
+assert.equal(m.counts.explicit_existing_place_reuses,reused);
+assert.deepEqual(lanes,m.counts.lanes);
+assert.deepEqual(reviewOwners,m.counts.source_review_owners);
+assert.equal(countries.size,m.counts.country_count);
+assert.equal(reused,3);
+for(const id of ["SG-INV-0170","SG-INV-0518","SG-INV-0728"])assert.equal(m.rows.find(x=>x.candidate_id===id).verification_lane,"CONFIRMED_EXISTING_CANONICAL_REUSE_NO_NEW_PLACE");
+const older=p27.existing_canonical_reuses.find(x=>x.candidate_id==="SG-INV-0728");
+assert.ok(older);assert.equal(m.rows.find(x=>x.candidate_id==="SG-INV-0728").existing_place_reuse,older.verified_existing_place_id);
+assert.equal(m.rows.find(x=>x.candidate_id==="SG-INV-0245").verification_lane,"COUNTRY_CONFLICT_IE_VS_GB_HOLD");
+assert.equal(m.counts.new_physically_geoverified_places,0);
+assert.equal(m.counts.new_canonical_places_added,0);
+console.log("PASS P49: 150 ranked research-only exact-geometry cases, three canonical reuses, Armagh country hold, 0 false publication");
