@@ -10,8 +10,16 @@ function providerGroup(affiliation,group){
   if(group==="SSPX")return "SSPX";
   if(group==="UNKNOWN")return "OTHER";
   const x=tidy(affiliation).toUpperCase();
-  if(x==="FSSP"||x==="ICKSP"||x==="IBP")return x;
+  if(x==="FSSP"||x==="ICKSP"||x==="IBP"||x==="AASJMV")return x;
   if(x.startsWith("DIOCESAN"))return "DIOCESAN";
+  if(x==="ORATORIANS")return "ORATORIANS";
+  if(x==="CANONS OF ST JOHN CANTIUS")return "CANONS";
+  if(x==="FRATERNITÉ DE LA TRANSFIGURATION")return "TRANSFIGURATION";
+  if(x==="CAPUCINS DE MORGON")return "CAPUCHINS";
+  // Religious sisters, friars, contemplative communities: source-label category
+  // only. It does not identify a priest, canonical standing or a liturgical book.
+  if(/SŒURS|SOEURS|DOMINICAIN|CARMÉLIT|FRANCISCAIN|BÉNÉDICT|CLARISS|SUORE|SIERVAS|DISCEPOLE|RELIGIOUS\/MONASTIC|PETITES SERVANTES/i.test(x))
+    return "RELIGIOUS";
   return "OTHER";
 }
 function linkList(raw,limit=5){
@@ -48,6 +56,14 @@ export function projectPreliminaryR49(json){
     return Object.freeze({
       item_id:"tlm:r49:"+id,source_id:id,lens:"tlm",kind:"TLM_VENUE",
       community_id,preliminary_group:group,
+      classification_status:"SOURCE_LABEL_ONLY_NOT_FULLY_REVIEWED",
+      classification:Object.freeze({
+        institute_or_community:{value:community_id,source_label:label,evidence:"SOURCE_REPORTED_NOT_CELEBRANT_CERTIFICATION"},
+        una_cum:"UNKNOWN",pontiff_recognition:"UNKNOWN",ecclesial_position:"UNKNOWN",
+        canonical_status:"UNKNOWN",missal_edition:"UNKNOWN",liturgical_use:"UNKNOWN",
+        organizer_role:"UNKNOWN",venue_owner_type:"UNKNOWN",celebrant_relationship:"UNKNOWN",
+        mass_type:"UNKNOWN",
+      }),
       eyebrow:label,
       status:group==="ROME"?"SOURCE-REPORTED":group==="SSPX"?"SSPX · SEPARATE":"UNCLASSIFIED",
       title:name,
@@ -58,7 +74,10 @@ export function projectPreliminaryR49(json){
         approximate:true,attribution:"© OpenStreetMap contributors · ODbL 1.0"},
       map_publishable:true,map_state:"PROVISIONAL",
       facts:Object.freeze([
-        Object.freeze({label:"Affiliation",value:label}),
+        Object.freeze({label:"Community / institute (as listed)",value:label}),
+        Object.freeze({label:"Ecclesial position",value:"Not assessed; source affiliation is not canonical status"}),
+        Object.freeze({label:"Una cum",value:"Unknown for individual celebrations"}),
+        Object.freeze({label:"Missal / rite",value:"Not certified for individual celebrations"}),
         Object.freeze({label:"Location",value:"Provisional source/geocoder map position"}),
         Object.freeze({label:"Mass times",value:"Not verified — consult the listed source"}),
       ]),
