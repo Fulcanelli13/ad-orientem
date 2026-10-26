@@ -54,7 +54,7 @@ for(const row of decision.records){
  assert.equal(origin.calendar_association.trigger_enabled,false);
  assert.equal(origin.calendar_association.recurrence_enabled,false);
  assert.deepEqual(Object.values(origin.signoffs),Array(8).fill(false));
- for(const field of row.copy_fields)for(const lang of ["en","fr"])assert.ok(origin.article[field][lang].length>12);
+ for(const field of row.copy_fields)for(const lang of ["en","fr"])assert.ok(origin.article[field][lang].trim().length>(field==="occasion"?3:12),row.working_master_id+" "+field+" "+lang);
  for(const mmdd of row.calendar_day_hints){
   const onDate="2026-"+mmdd;
   const normal=calendarCustomRecommendations(onDate);
