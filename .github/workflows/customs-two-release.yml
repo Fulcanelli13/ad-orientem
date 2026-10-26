@@ -11,6 +11,7 @@ on:
       - "src/customs/seasonal-home-spotlight.js"
       - "src/customs/year-led-library.js"
       - "tests/customs-two-published-release-gate.mjs"
+      - "tests/customs-two-calendar-phone.mjs"
       - ".github/workflows/customs-two-release.yml"
   workflow_dispatch:
 permissions:
@@ -39,3 +40,25 @@ jobs:
           node tests/customs-seasonal-home-year.mjs
           node tests/customs-35-editorial-first-pass.mjs
           node tests/customs-final-editorial-acceptance.mjs
+
+  calendar-candidate-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Existing Calendar Day: Epiphany and Candlemas candidate folios at 320/390
+        run: |
+          node --check tests/customs-two-calendar-phone.mjs
+          node tests/customs-two-calendar-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: customs-two-calendar-candidate-visual
+          path: artifacts/customs-two-calendar/
+          retention-days: 14
+          if-no-files-found: warn
