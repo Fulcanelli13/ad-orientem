@@ -21,7 +21,7 @@
     "previously_individually_source_reviewed": 84,
     "source_url_available": 85,
     "with_osm_candidate_hints": 2,
-    "explicit_existing_place_reuses": 2,
+    "explicit_existing_place_reuses": 3,
     "new_physically_geoverified_places": 0,
     "new_canonical_places_added": 0,
     "country_count": 75,
@@ -108,9 +108,9 @@
       "P25": 63
     },
     "lanes": {
-      "CONFIRMED_EXISTING_CANONICAL_REUSE_NO_NEW_PLACE": 2,
+      "CONFIRMED_EXISTING_CANONICAL_REUSE_NO_NEW_PLACE": 3,
       "COUNTRY_CONFLICT_IE_VS_GB_HOLD": 1,
-      "SOURCE_BACKED_EXACT_BUILDING_GEOMETRY_REQUIRED": 66,
+      "SOURCE_BACKED_EXACT_BUILDING_GEOMETRY_REQUIRED": 65,
       "CANDIDATE_OSM_BUILDINGS_REQUIRE_IDENTITY_SELECTION": 2,
       "MULTI_BUILDING_SCOPE_REVIEW": 9,
       "CONFESSIONAL_OR_HERITAGE_SCOPE_REVIEW": 6,
@@ -129,6 +129,12 @@
       "canonical_place_id": "place:EC:basilica-voto-nacional-quito",
       "outcome": "REUSE_EXISTING_PLACE_NO_NEW_PIN",
       "basis": "Existing live Place already has exact same OSM way 107938444 as the proposed source lead"
+    },
+    {
+      "candidate_id": "SG-INV-0728",
+      "canonical_place_id": "place:BJ:immaculate-conception-basilica-ouidah",
+      "outcome": "REUSE_EXISTING_PLACE_NO_NEW_PIN",
+      "basis": "P27 immutable crosswalk explicitly verified Basilica of Immaculate Conception Ouidah already canonical as osm:way:402951938"
     }
   ],
   "protected_holds": [
@@ -411,9 +417,9 @@
       "previous_review_owner": "P25",
       "open_mapping_case": null,
       "osm_candidate_hints": [],
-      "existing_place_reuse": null,
-      "verification_lane": "SOURCE_BACKED_EXACT_BUILDING_GEOMETRY_REQUIRED",
-      "ranking_score": 16,
+      "existing_place_reuse": "place:BJ:immaculate-conception-basilica-ouidah",
+      "verification_lane": "CONFIRMED_EXISTING_CANONICAL_REUSE_NO_NEW_PLACE",
+      "ranking_score": 56,
       "publication_authorized": false,
       "physical_site_geo_status": "NOT_SITE_GEO_VERIFIED",
       "geometry_review_order": 13
