@@ -43,6 +43,60 @@ A **separate** Sanctus/Benedictus choir-practice selector reports: Not known, Co
 
 The programme and performance profile pass through the existing `readerPreferences` session and resumable record; no other reader architecture changes. Audio and listening/study belong to Mass preparation, not the live reader.
 
+## Christmas Day source-matched Proper — first systematic template
+
+Five 1961 Solesmes Proper transcriptions now live in
+`src/mass/reader-christmas-proper-scores-1961.js`, keyed by real GregoBase
+ID and source pages, **not by a calendar date**:
+
+| Source-owned track | Christmas Mass in die example | GregoBase | GR 1961 |
+|---|---|---:|---|
+| Introit | Puer natus est | 72 | p. 33 |
+| Gradual | Viderunt omnes | 1163 | p. 33 |
+| Alleluia | Dies sanctificatus | 324 | p. 34 |
+| Offertory | Tui sunt caeli | 1274 | p. 35 |
+| Communion | Viderunt omnes (different chant) | 1139 | p. 35 |
+
+`reader-proper-chant-crosswalk.js` accepts a record **only** when the
+production `properToReaderSlots` projection has a nonempty source path,
+the correct READY slot, and a matching Latin incipit within the source-owned
+text. It never uses December 25, the title of the feast, or a requested
+formulary as sufficient evidence. A different Christmas Mass, a missing
+Proper, an extra independent Alleluia, an ambiguous duplicate candidate
+or mismatched chant type must not trigger a score.
+
+The actual native reader is handed **`ready.model.properSlots`**, not
+an independently reconstructed calendar or a provisional source title.
+Only crosswalk-matched Proper examples appear in the Schola score control;
+their visibility means **source score matching**, not that the local choir
+was observed singing the melody. This pilot is five records, not a claim
+of nationwide Proper repertoire completeness. All five have been directly
+parsed and engraved into SVG at 260 and 800 px. Print-facsimile editorial
+comparison and actual end-to-end device CI remain release gates.
+
+## Score study within the existing pre-Mass Folio
+
+The optional `Chants of this Mass` disclosure now also contains a
+**Study Gregorian notation** area. It lists the user's explicit Ordinary
+melodies and any Proper score whose canonical Latin source actually matches
+the witness. It displays full locally engraved GABC notation with manual
+scrolling and an outbound provenance reference. No second Mass calendar
+or separate autonomous music product is introduced.
+
+A versioned recording-permission gate exists in
+`src/mass/mass-chant-preparation-study.js`: only edition-reviewed,
+copyright-cleared, human-approved audio can be made available. **Zero**
+recordings currently satisfy this gate; therefore no playable audio is
+presented, rather than introducing synthetic chanting, unlicensed recordings
+or a quality-compromised placeholder. The Mass reader imports no audio
+study component and never plays sound.
+
+For scaling, subsequent Proper batches must retain the same schema:
+GregoBase score ID, 1961 edition/page, full GABC, chant type, Latin incipit,
+source history/provenance and a canonical source-text matching rule. New
+scores remain unassigned until their owning Proper is resolved. Candidate
+discovery and verified promotion are separate gates.
+
 ## Validation status and release gates
 1. Parse/source guard tests in `tests/reader-chant-score-pilot.mjs`, `tests/mass-chant-programme.mjs`; real Exsurge engravings at 260/420/800 px in `tests/reader-chant-engraver.mjs`; all part of `npm run test:reader-schola`.
 2. The existing `tests/full-mass-preflight-phone-e2e.mjs` covers 390px independent selections, changes to Gregorian/polyphonic practice, omission, Low Mass and date reset.
