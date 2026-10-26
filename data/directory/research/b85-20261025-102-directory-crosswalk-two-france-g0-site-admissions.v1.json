@@ -1,0 +1,145 @@
+{
+  "schema": "AO_TLM_B85_102_ENTRY_SOURCE_CROSSWALK_AND_TWO_OWNER_SUPPORTED_RESEARCH_SITE_ADMISSIONS_V1",
+  "date": "2026-10-25",
+  "publication_state": "RESEARCH_G0_NOT_PUBLIC",
+  "dependencies": {
+    "B84": "PR #1691",
+    "source_master": "B84 51-sheet-equivalent research snapshot; unchanged"
+  },
+  "b85_screen": {
+    "total_distinct_directory_entries": 102,
+    "countries": {
+      "PL": 86,
+      "GB": 6,
+      "ES": 5,
+      "FR": 5
+    },
+    "sources": [
+      {
+        "url": "https://www.latinmassdir.org/country/pl/?view=list",
+        "count": 20,
+        "claim": "Polish listing page one, historical cache"
+      },
+      {
+        "url": "https://www.latinmassdir.org/country/pl/page/2/?view=list",
+        "count": 20,
+        "claim": "Polish listing page two, historical cache"
+      },
+      {
+        "url": "https://www.latinmassdir.org/country/pl/page/3/?view=list",
+        "count": 38,
+        "claim": "Historical page three, 81-118; intermediate entries inaccessible"
+      },
+      {
+        "url": "https://www.latinmassdir.org/trends/2026/pl/",
+        "count": 8,
+        "claim": "Eight reported Polish 2026 additions"
+      },
+      {
+        "url": "https://www.latinmassdir.org/trends/2026/uk/",
+        "count": 6,
+        "claim": "Five reported UK new entries and one Dundee cancellation; NO automatic new site"
+      },
+      {
+        "url": "https://www.latinmassdir.org/trends/2026/es/",
+        "count": 5,
+        "claim": "Spain 2026 reported new venue entries"
+      },
+      {
+        "url": "https://www.latinmassdir.org/trends/2026/fr/",
+        "count": 5,
+        "claim": "France 2026 reported new venue entries"
+      }
+    ],
+    "screened_classifications": {
+      "EXACT_BUILDING_REVIEW": 9,
+      "NAME_OR_LOCALITY_REVIEW": 34,
+      "WEAK_GEOGRAPHIC_MATCH_REVIEW": 26,
+      "NO_MATCH_REVIEW_ONLY": 32,
+      "DO_NOT_PROMOTE_CANCELLATION": 1
+    },
+    "priority_exception_count": 58,
+    "source_note": "Secondary lay listings with non-synchronized historical cached pages; NOT verified complete first-party inventory. Names and localities are research leads only. All 102 entries in separate XLSX audit not committed."
+  },
+  "owner_adjudicated_new_research_sites": [
+    {
+      "new_research_group_id": "RG-B85-4DA44A2F403B",
+      "source_lead_id": "B85-102",
+      "country": "FR",
+      "name": "Chapelle Saint-François-de-Paule",
+      "locality": "Bormes-les-Mimosas",
+      "physical_worship_address": "1 place Saint-François, 83230 Bormes-les-Mimosas, France",
+      "authoritative_building_url": "https://www.ville-bormes.fr/points-interets/chapelle-st-francois/",
+      "current_mass_owner_url": "https://www.paroissedebormes.fr/horaires-des-offices/",
+      "owner_1962_claim": "Sunday 09:00 Messe Traditionnelle at Chapelle Saint François; no time automatically imported",
+      "contact_address_must_not_be_geocoded": "79 rue Carnot, presbytery, as given by tourism sites",
+      "release": "G0_RESEARCH_ONLY_NOT_PUBLIC",
+      "geometry": "EXACT_PIN_PENDING",
+      "schedule": "NOT_CERTIFIED"
+    },
+    {
+      "new_research_group_id": "RG-B85-F8F6FF65FBDC",
+      "source_lead_id": "B85-099",
+      "country": "FR",
+      "name": "Église Saint-Laurent",
+      "locality": "Ollioules",
+      "physical_worship_address": "1 place Victor-Clément, 83190 Ollioules, France",
+      "authoritative_building_url": "https://ollioules.frejustoulon.fr/lieu/eglise-saint-laurent/",
+      "owner_current_mass_page": "https://ollioules.frejustoulon.fr/la-paroisse/horaires-et-informations-pratiques/",
+      "secondary_current_1962_claim": "https://www.amdg.asso.fr/lieux_messes_spv.htm",
+      "caution": "Parish lists Sunday 09:00 Mass without specifically marking the rite; October 2026 traditional-Mass organization separately identifies that 09:00 celebration as 1962. Research-only until schedule certification.",
+      "release": "G0_RESEARCH_ONLY_NOT_PUBLIC",
+      "geometry": "EXACT_PIN_PENDING",
+      "schedule": "NOT_CERTIFIED"
+    }
+  ],
+  "holds": [
+    {
+      "lead": "B85-084",
+      "locality": "Brwinów PL",
+      "state": "CONFLICTING_OWNER_PUBLISHED_MASS_TIMES",
+      "diocese": "https://archwwa.pl/parafie/brwinow-sw-floriana/",
+      "parish": "https://swflorian.com/",
+      "reason": "Archdiocese reports 15:00 Sunday TLM, parish timetable omits it; 1962 building also disputed chapel vs St Florian main church. Do not mint duplicate."
+    },
+    {
+      "lead": "B85-079",
+      "locality": "Włodzienin PL",
+      "state": "CHURCH_EXISTENCE_ONLY",
+      "owner": "https://parafiawlodzienin-wojnowice.pl/",
+      "reason": "Current 2026 Mass intentions do not independently establish a 1962 Mass"
+    },
+    {
+      "lead": "B85-094",
+      "locality": "Valencia ES",
+      "state": "POSSIBLE_EXISTING_B84_CHURCH_ID",
+      "possible_group": "RG-433FBBC5CA56",
+      "municipal": "https://www.valencia.es/es/-/infociudad-ermita-de-santa-luc%C3%8Da",
+      "reason": "City grounds Ermita Santa Lucia at Hospital 15 but 1962 Mass not verified; do not add duplicate"
+    }
+  ],
+  "research_projection_after_applied_delta": {
+    "distinct_provisional_site_groups": 2586,
+    "historical_canonical_group_id_records": 2589,
+    "venue_source_rows": 2692,
+    "inherited_timetable_rows_preserved": 4681,
+    "inherited_verified_timetable_rows_preserved": 3347,
+    "new_mass_rows": 0,
+    "new_verified_mass_rows": 0,
+    "new_public_map_pins": 0
+  },
+  "important_limitation": "The 2,586 site total is only B84 research snapshot + two owner-adjudicated G0 buildings, not a rewritten B84 Excel workbook, merged GitHub main, or public map. The original 51-sheet B84 ZIP and timetables remain unaltered.",
+  "audit_artifacts": [
+    {
+      "filename": "Ad_Orientem_B85_102_Directory_Change_Crosswalk_2026-10-25.xlsx",
+      "sha256": "4ea1260288c02e1c4aa6e99e8001df329e196645b3937cbaf4068ec6acc2e0e7",
+      "location": "conversation downloadable"
+    },
+    {
+      "filename": "Ad_Orientem_B85_2_Qualified_Research_Admissions_2026-10-25.xlsx",
+      "sha256": "23f62ddd26833a945602deeb39e5040d136c38fc225c72deebadf0c1e738b665",
+      "location": "conversation downloadable"
+    }
+  ],
+  "merge_gate": "No direct production import. Promote only after cross-source site identity QA and separately verified TLM schedule, public access and coordinates; preserve frozen B82/B84 canonical/source identities."
+}
