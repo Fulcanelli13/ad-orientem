@@ -54,3 +54,21 @@ The existing `tests/calendar-phone-month-controls.mjs` verifies both month prese
 The 10-date 2026 runtime Preface audit shows the raw October 7 Rosary Proper can contain `Communis` before source-owned recovery to the Marian Preface. The adapter flags the original mismatch instead of displaying `Communis` as liturgically correct. This is a narrow detection rule, **not** a certificate that the remaining days are correct.
 
 All source-backed instructions for selecting other Masses are intentionally excluded until the date- and jurisdiction-specific rubrics are adjudicated.
+
+## Phase 2C — General Roman 1960 rubric screening (implemented)
+The read-only evaluator `src/calendar/ordo-1962-ordinary-rule-review.js` combines the actual 1962 source-resolved day identity with the relevant Missal and Breviary rubrics, without changing the 1962 Proper, Mass selection, Missal reader, calendar observer, or ceremonies.
+
+The 1960 Missal [§§431–432, 475–476](https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html) prescribe the Gloria and Creed. The 1960 Breviary [§§237–238](https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html) governs when the Office has a Te Deum, a crucial antecedent to Gloria §431(a). The implementation screens specifically:
+- **Sunday**: Credo included under §475(a), including when the Sunday's Office is displaced, provided a principal general-Roman source day is resolved.
+- **Violet/black Mass**: Gloria omitted by §§432(b,d), but colour never independently establishes a Credo decision.
+- **Source-identified Sanctorale feasts of I–III class**: Gloria follows the Office's Te Deum; first-class feasts carry Credo and ordinary third-class feasts omit Credo. The 2nd-class Rosary is treated only under its exact source identity for §475(c); other second-class Lord/BVM/Apostle feasts remain source-review candidates.
+- **IV-class green feria per annum**: Gloria and Credo omitted under the Breviary §238(c) and Missal §§431–432, 475–476. The **real production 26 October 2026** uses the generic source identity `:feria:4:w`, *not* a fabricated seasonal-specific ID; this is explicitly accepted only with same-date resolution, IV class, green Mass colour, weekday, and ready Proper. Other generic ferias remain unresolved pending Office-season mapping.
+
+The UI exposes the supporting section and a link to the original General Rubrics under an optional **Rubrical basis** disclosure. Any certified Proper-owner contradiction with an applicable universal rule is withheld and marked source-conflict, not overwritten.
+
+### Source evidence and bulk coverage
+The archived source-resolved 2026 full-year audit (`1962-2026-full-year-audit.json`, GitHub Actions) contains **365** dated records with no unresolved dates, comprised of **171** source-identified Sanctorale principal days, **123** Temporale principal days, **59** generic `:feria:4:w` days, and **12** Commune principal days. There are **40** green IV-class generic ferias. These counts are **resolver population coverage only**, not independent rubrical verification.
+
+The full-year audit CI now records two independent booleans-with-evidence for each real resolved date: `ordoRuleReview.gloria` and `ordoRuleReview.credo`, as well as counts of supported and withheld day decisions. This is a screening pass over **all 365 records**, not the 72 independently adjudicated checkpoints in the year-audit fixture. A failed rule or missing Proper never becomes an implicit "No". Its status is `WITHHELD`.
+
+Future work: 1962 source classification for all nontrivial feast categories (second-class feasts of the Lord, BVM, and Apostle birthdays), dynamic octaves and movable ceremonial exceptions, Office Te Deum on white seasonal ferias, vetted Preface assignment across the annual calendar, and local/votive permissions.
