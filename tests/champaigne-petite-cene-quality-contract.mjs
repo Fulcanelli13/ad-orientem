@@ -6,7 +6,7 @@ const dates=load("data/calendar/approved-feast-hero-packaged-candidates-20261021
 const editorial=load("data/calendar/approved-feast-holy-thursday-20261026-override.v1.json");
 const holy=dates.photographs.find(x=>x.date==="2026-04-02");
 const ember=dates.photographs.find(x=>x.date==="2026-05-27");
-const expected="99e102df2d3644783bce3ac4cb81002337f8eb166583d84f74c630be6a8efc0f";
+const expected="f0742b795178e1a600e43694693f880a07039587b74ba6f352ccbf389919cb30";
 assert.equal(dates.photographs.length,10);
 assert.equal(new Set(dates.photographs.map(x=>x.candidateFile.path)).size,9);
 assert.equal(holy.artist,"Philippe de Champaigne");
@@ -25,6 +25,6 @@ assert.equal(ember.framingReview.frameFreePublicationApproved,false);
 assert.equal(holy.newPhotoResearchCandidate.final_photo_released,false);
 assert.equal(holy.newPhotoResearchCandidate.actual_asset_changed,false);
 assert.ok(holy.newPhotoResearchCandidate.pending.includes("museum-reference color fidelity"));
-assert.ok(holy.newPhotoResearchCandidate.pending.includes("final painted-boundary signoff"));
+assert.ok(holy.newPhotoResearchCandidate.pending.includes("actual painted-edge completeness and frame absence"));
 assert.ok(holy.newPhotoResearchCandidate.pending.includes("app image reuse rights in distribution jurisdictions"));
 console.log("CHAMPAIGNE PHOTO QA CONTRACT PASS: independent editorial dates, shared original, new unframed research candidate, zero unverified releases.");
