@@ -87,7 +87,10 @@ try{
       hostResolver:dayResolver.properResolver,principalCelebrationId:id});
     const after=inspect1962PrefaceSelection({principalCelebrationId:id,
       selectedPreface:corrected?.preface});
-    const slot=properToReaderSlots(corrected,{language:"fr"}).slots.PREFACE;
+    const originalSlot=properToReaderSlots({...original,principalCelebrationId:id},
+      {language:"fr"}).slots.PREFACE;
+    const slot=properToReaderSlots({...corrected,principalCelebrationId:id},
+      {language:"fr"}).slots.PREFACE;
     const latin=String(corrected?.preface?.lat??corrected?.preface?.la??"");
     const french=String(corrected?.preface?.fr??"");
     const english=String(corrected?.preface?.en??"");
@@ -98,7 +101,7 @@ try{
       appliedVariant:corrected?.preface?.prefaceVariant??null,
       source:corrected?.preface?.sourcePath??null,
       latin,fr:french,en:english,
-      slot:slot.status,
+      originalSlot:originalSlot.status,slot:slot.status,
       originalUnchanged:String(original?.preface?.lat??original?.preface?.la??"")===originalLatin
     });
    }catch(error){results.push({date,expectedVariant,error:String(error?.stack??error)})}
@@ -122,6 +125,7 @@ try{
   assert.equal(row.source,"Ordo/Prefationes",row.date);
   assert.equal(row.afterHead,"Paschalis",row.date);
   assert.equal(row.afterStatus,"MATCH",row.date);
+  assert.equal(row.originalSlot,"MISSING",row.date+" invalid original source should be blocked");
   assert.equal(row.slot,"READY",row.date);
   assert.equal(row.originalUnchanged,true,row.date+" mutated original Proper");
   assert.ok(row.en.length>350&&row.fr.length>350,row.date+" incomplete translation");
