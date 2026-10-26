@@ -24,7 +24,14 @@ const candidates=[
  "2026-03-09","2026-03-10","2026-03-11","2026-03-12","2026-03-13","2026-03-14",
  "2026-03-16","2026-03-17","2026-03-18","2026-03-20","2026-03-21"
 ];
+const pentecostDates=[
+ "2026-05-23","2026-05-24","2026-05-25","2026-05-26",
+ "2026-05-27","2026-05-28","2026-05-29","2026-05-30"
+];
 assert.equal(candidates.length,22);
+assert.equal(pentecostDates.length,8);
+candidates.push(...pentecostDates);
+assert.equal(candidates.length,30);
 await new Promise(done=>server.listen(0,"127.0.0.1",done));
 let browser;
 try{
@@ -64,21 +71,31 @@ try{
    }
    return results;
  },candidates);
- console.log("MASS_1962_LENT_PREFACE_TRIAGE="+JSON.stringify(cases));
+ console.log("MASS_1962_SEASONAL_PREFACE_TRIAGE="+JSON.stringify(cases));
  for(const row of cases){
    assert.ok(!row.error,row.date+": "+row.error);
-   assert.match(row.id,/^tempora:Quad[1-4]-[1-6]:[123]:v$/i,row.date);
-   assert.equal(row.owner,"Quad",row.date+" source-path owner not recognized: "+row.properSourcePath);
-   assert.match(row.before,/^Communis/i,row.date+" baseline is no longer a Common Preface");
-   assert.match(row.after,/^de Quadragesima/i,row.date+" reader did not recover Lenten Preface");
+   const lent=!pentecostDates.includes(row.date);
+   if(lent){
+     assert.match(row.id,/^tempora:Quad[1-4]-[1-6]:[123]:v$/i,row.date);
+     assert.equal(row.owner,"Quad",row.date+" source-path owner not recognized: "+row.properSourcePath);
+     assert.match(row.after,/^de Quadragesima/i,row.date+" reader did not recover Lenten Preface");
+   }else{
+     assert.match(row.id,/^tempora:Pasc(?:6-6|7-[0-6]):1:r$/i,row.date);
+     assert.equal(row.owner,"Spiritu",row.date+" source-path owner not recognized: "+row.properSourcePath);
+     assert.match(row.after,/^de Spiritu Sancto/i,row.date+" reader did not recover Holy Spirit Preface");
+   }
+   assert.match(row.before,/^Communis/i,row.date+" raw source baseline changed; review fixture identity");
    assert.equal(row.source,"Ordo/Prefationes");
    assert.ok(row.enLength>100&&row.frLength>100,row.date+" source translations incomplete");
    assert.equal(row.slot,"READY",row.date+" corrected source unavailable to actual R17 slot");
    assert.equal(row.originalUnchanged,true,row.date+" mutated host source");
  }
- console.log("MASS_1962_LENT_PREFACE_RECOVERY="+JSON.stringify({
-   total:cases.length,recovered:cases.filter(x=>/^de Quadragesima/i.test(x.after)).length,
-   completeFrench:cases.filter(x=>x.frLength>100).length,results:cases
+ console.log("MASS_1962_SEASONAL_PREFACE_RECOVERY="+JSON.stringify({
+   total:cases.length,lent:cases.filter(x=>/^de Quadragesima/i.test(x.after)).length,
+   holySpirit:cases.filter(x=>/^de Spiritu Sancto/i.test(x.after)).length,
+   completeFrench:cases.filter(x=>x.frLength>100).length
  }));
- console.log("PASS all 22 Lenten source-backed Preface corrections reach the real reader.");
+ assert.equal(cases.filter(x=>/^de Quadragesima/i.test(x.after)).length,22);
+ assert.equal(cases.filter(x=>/^de Spiritu Sancto/i.test(x.after)).length,8);
+ console.log("PASS 30 source-owned Lenten and Pentecost Mass Prefaces in actual 1962 reader.");
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
