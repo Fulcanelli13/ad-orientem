@@ -1,0 +1,1818 @@
+{
+  "schema": "AO_CL3_RECONCILIATION_OVERLAY_V1",
+  "date": "2026-10-26",
+  "baseline": "AO_CL2_SINGLE_RESEARCH_MASTER_V1",
+  "baseline_ref": "ef82aa3ecb92856ae57bd792a3275be902f980ae",
+  "status": "RESEARCH_ONLY_NO_PUBLIC_IMPORT",
+  "summary": {
+    "identity_exception_rows_original": 49,
+    "identity_exception_rows_resolved": 9,
+    "identity_exception_rows_remaining": 40,
+    "independent_identity_crosswalk_decisions": 7,
+    "original_description_blanks": 113,
+    "first_party_descriptions_added": 23,
+    "description_blanks_remaining": 90,
+    "public_approved_sites": 0,
+    "new_verified_mass_schedules": 0
+  },
+  "identity_decisions": [
+    {
+      "decision_id": "CL3-B69-AO-RSCH-B69-6415E91BC4A8",
+      "decision": "HISTORICAL_SOURCE_GROUP_ALIAS_RESOLVED",
+      "source_id": "AO-RSCH-B69-6415E91BC4A8",
+      "original_source_group_id": "RG-B69-6415E91BC4A8",
+      "canonical_group_id": "RG-9B9E96431F88",
+      "site_name": "Katholische Kirche St. Martin",
+      "evidence_type": "EXISTING_CL2_CANONICAL_ALIASES_PLUS_IDENTICAL_SOURCE_ID",
+      "evidence_url": "https://institut-christus-koenig.de/koellerbach/",
+      "public_release": "NO",
+      "preserve_frozen_identifiers": true,
+      "reason": "CL2 canonical site already lists B69 source group as historical alias; classification group is existing canonical target. Record a lineage crosswalk, not a new physical site."
+    },
+    {
+      "decision_id": "CL3-B69-AO-RSCH-B69-7B862EC2FE95",
+      "decision": "HISTORICAL_SOURCE_GROUP_ALIAS_RESOLVED",
+      "source_id": "AO-RSCH-B69-7B862EC2FE95",
+      "original_source_group_id": "RG-B69-7B862EC2FE95",
+      "canonical_group_id": "RG-0FEEDA4E996C",
+      "site_name": "St Christophorus",
+      "evidence_type": "EXISTING_CL2_CANONICAL_ALIASES_PLUS_IDENTICAL_SOURCE_ID",
+      "evidence_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1729",
+      "public_release": "NO",
+      "preserve_frozen_identifiers": true,
+      "reason": "CL2 canonical site already lists B69 source group as historical alias; classification group is existing canonical target. Record a lineage crosswalk, not a new physical site."
+    },
+    {
+      "decision_id": "CL3-B69-AO-RSCH-B69-8020AEEEC172",
+      "decision": "HISTORICAL_SOURCE_GROUP_ALIAS_RESOLVED",
+      "source_id": "AO-RSCH-B69-8020AEEEC172",
+      "original_source_group_id": "RG-B69-8020AEEEC172",
+      "canonical_group_id": "RG-27005F1C1EF6",
+      "site_name": "Beata Vergine del Rosario",
+      "evidence_type": "EXISTING_CL2_CANONICAL_ALIASES_PLUS_IDENTICAL_SOURCE_ID",
+      "evidence_url": "https://www.diocesi.trieste.it/orari-sante-messe/",
+      "public_release": "NO",
+      "preserve_frozen_identifiers": true,
+      "reason": "CL2 canonical site already lists B69 source group as historical alias; classification group is existing canonical target. Record a lineage crosswalk, not a new physical site."
+    },
+    {
+      "decision_id": "CL3-B69-AO-RSCH-B69-DE69FB1FBC95",
+      "decision": "HISTORICAL_SOURCE_GROUP_ALIAS_RESOLVED",
+      "source_id": "AO-RSCH-B69-DE69FB1FBC95",
+      "original_source_group_id": "RG-B69-DE69FB1FBC95",
+      "canonical_group_id": "RG-C9F800033990",
+      "site_name": "Dreifaltigkeit (Kirchort) (Untere Kapelle)",
+      "evidence_type": "EXISTING_CL2_CANONICAL_ALIASES_PLUS_IDENTICAL_SOURCE_ID",
+      "evidence_url": "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste.htm",
+      "public_release": "NO",
+      "preserve_frozen_identifiers": true,
+      "reason": "CL2 canonical site already lists B69 source group as historical alias; classification group is existing canonical target. Record a lineage crosswalk, not a new physical site."
+    },
+    {
+      "decision_id": "CL3-B69-AO-RSCH-B69-F55F05975DD6",
+      "decision": "HISTORICAL_SOURCE_GROUP_ALIAS_RESOLVED",
+      "source_id": "AO-RSCH-B69-F55F05975DD6",
+      "original_source_group_id": "RG-B69-F55F05975DD6",
+      "canonical_group_id": "RG-CF40DBEAD235",
+      "site_name": "Kaplica Świętej Barbary przy parafii Świętego Krzyża",
+      "evidence_type": "EXISTING_CL2_CANONICAL_ALIASES_PLUS_IDENTICAL_SOURCE_ID",
+      "evidence_url": "https://tradycja.org/",
+      "public_release": "NO",
+      "preserve_frozen_identifiers": true,
+      "reason": "CL2 canonical site already lists B69 source group as historical alias; classification group is existing canonical target. Record a lineage crosswalk, not a new physical site."
+    },
+    {
+      "decision_id": "CL3-ALIAS-RG-B84-946B8BA59D22",
+      "decision": "CLASSIFICATION_ONLY_SAME_BUILDING_ALIAS_RESOLVED",
+      "source_id": "AO-RSCH-RG-B84-946B8BA59D22",
+      "original_source_group_id": "RG-B84-946B8BA59D22",
+      "canonical_group_id": "RG-B88-B1EB74BB63BD",
+      "site_name": "Capela do Oratório São José",
+      "evidence_type": "FIRST_PARTY_OR_OFFICIAL_HERITAGE_IDENTICAL_NAME_AND_STREET_ADDRESS",
+      "evidence_url": "https://oratoriosaojosebh.org/comunidades-atendidas/",
+      "public_release": "NO",
+      "preserve_frozen_identifiers": true,
+      "reason": "Owner identifies Capela do Oratório São José at Rua Aiuruoca 148, Fernão Dias, Belo Horizonte; same name and address in B98 canonical record."
+    },
+    {
+      "decision_id": "CL3-ALIAS-RG-B89-4FFBC6AB3EC5",
+      "decision": "CLASSIFICATION_ONLY_SAME_BUILDING_ALIAS_RESOLVED",
+      "source_id": "AO-RSCH-RG-B89-4FFBC6AB3EC5",
+      "original_source_group_id": "RG-B89-4FFBC6AB3EC5",
+      "canonical_group_id": "RG-B96-8D5C0E774FAB",
+      "site_name": "Santuario Nostra Signora di Pontelungo",
+      "evidence_type": "FIRST_PARTY_OR_OFFICIAL_HERITAGE_IDENTICAL_NAME_AND_STREET_ADDRESS",
+      "evidence_url": "https://catalogo.beniculturali.it/detail/ArchitecturalOrLandscapeHeritage/0700111135",
+      "public_release": "NO",
+      "preserve_frozen_identifiers": true,
+      "reason": "Italian national heritage catalogue identifies the Santuario di Nostra Signora di Pontelungo at Viale Pontelungo 89, Albenga; same named building/address."
+    }
+  ],
+  "identity_exception_queue": [
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-4A178DCBF5FE",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B84-4A178DCBF5FE",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Paróquia Nossa Senhora do Terço",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-D1F86F038D00",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B84-D1F86F038D00",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Paróquia de Nossa Senhora da Conceição",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-2DBD3DA5FF62",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B84-2DBD3DA5FF62",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Paróquia Senhor Bom Jesus Crucificado e Imaculado Coração de Maria",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-CAFFE92C3CC3",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B84-CAFFE92C3CC3",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Paróquia Nossa Senhora do Rosário de Fátima e São Geraldo",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-96A7E2FCF142",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B84-96A7E2FCF142",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Paróquia de Nossa Senhora das Graças",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-A9F8640B80F4",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B84-A9F8640B80F4",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Paróquia Nossa Senhora Aparecida",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-0AED67A991EE",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B84-0AED67A991EE",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Quase-Paróquia de São Judas Tadeu e Santa Clara",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-50C4AAA33D1C",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B84-50C4AAA33D1C",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Paróquia Nossa Senhora do Rosário de Fátima e Santo Antônio",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-86463D74DCDC",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B84-86463D74DCDC",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Paróquia Nossa Senhora das Graças",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-BEEF1BA5BAD2",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B84-BEEF1BA5BAD2",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Paróquia Nossa Senhora das Graças e São Sebastião",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-946B8BA59D22",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B84-946B8BA59D22",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Capela do Oratório São José",
+      "disposition": "CLASSIFICATION_ONLY_SAME_BUILDING_ALIAS_RESOLVED",
+      "status": "RESOLVED_RESEARCH_ONLY",
+      "target_canonical_group_id": "RG-B88-B1EB74BB63BD"
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B85-4DA44A2F403B",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B85-4DA44A2F403B",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "FR",
+      "site": "Chapelle Saint-François-de-Paule",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B85-F8F6FF65FBDC",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B85-F8F6FF65FBDC",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "FR",
+      "site": "Église Saint-Laurent",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-E6B4C6B92E9C",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B86-E6B4C6B92E9C",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kaplica Matki Bożej Częstochowskiej",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-50F7B85ABDFD",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B86-50F7B85ABDFD",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kościół Bonifratrów Wniebowzięcia NMP",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-A160578F09B7",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B86-A160578F09B7",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kościół św. Jana Kantego",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-EFDAD29E61C4",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B86-EFDAD29E61C4",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kościół św. Marka",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-AA00CC6B1C9A",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B86-AA00CC6B1C9A",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kaplica Matki Bożej Fatimskiej",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-C6DA0CF689A8",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B86-C6DA0CF689A8",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kościół rektoralny św. Katarzyny",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-EF50DD591510",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B86-EF50DD591510",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kościół Akademicki św. Józefa",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-4E1A32EC1D40",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B86-4E1A32EC1D40",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kościół Bożego Ciała / kaplica Matki Bożej",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-6CF846FD0613",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B86-6CF846FD0613",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Sanktuarium Świętej Rodziny",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-8006F0D122CB",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B87-8006F0D122CB",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kościół św. Barbary",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-671B8759FAB0",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B87-671B8759FAB0",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kościół św. Jana Bosko",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-6AD633DE9E00",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B87-6AD633DE9E00",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kościół Niepokalanego Poczęcia NMP",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-9C500220FE42",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B87-9C500220FE42",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kościół Matki Bożej Królowej Korony Polskiej",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-A38E5FD17B3E",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B87-A38E5FD17B3E",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kaplica szkolna św. Stanisława Kostki (Jezuici)",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-607F40333475",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B87-607F40333475",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kościół Podwyższenia Krzyża Świętego",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-209AE1443820",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B87-209AE1443820",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kościół Świętej Trójcy (Jezuici)",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-8B601598DA36",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B87-8B601598DA36",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kościół Matki Bożej Częstochowskiej",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-56B9D31B206D",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B87-56B9D31B206D",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "PL",
+      "site": "Kaplica Wszystkich Świętych",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B88-58C280A6D190",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B88-58C280A6D190",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "AT",
+      "site": "Klosterkirche Werfen",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B89-4FFBC6AB3EC5",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B89-4FFBC6AB3EC5",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "IT",
+      "site": "Santuario di Nostra Signora di Pontelungo",
+      "disposition": "CLASSIFICATION_ONLY_SAME_BUILDING_ALIAS_RESOLVED",
+      "status": "RESOLVED_RESEARCH_ONLY",
+      "target_canonical_group_id": "RG-B96-8D5C0E774FAB"
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B89-F7BFDAA8E4BB",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B89-F7BFDAA8E4BB",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "IT",
+      "site": "Chiesa della Confraternita dei Santi Rocco e Carlo",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B90-3379DA52FF04",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B90-3379DA52FF04",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "FR",
+      "site": "Oratoire Saint-Marcel",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B90-39D1A3BBF010",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B90-39D1A3BBF010",
+      "origin": "B92_CLASSIFICATION_MASTER_ONLY",
+      "country": "FR",
+      "site": "Sainte-Colombe de Vià",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B88-F691777F8D8D",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B88-F691777F8D8D",
+      "origin": "B98_LOCATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Igreja São José Operário",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B88-E491FACD85B9",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B88-E491FACD85B9",
+      "origin": "B98_LOCATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Capelania Pessoal Nossa Senhora do Perpétuo Socorro",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B88-D6480F7F32B7",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B88-D6480F7F32B7",
+      "origin": "B98_LOCATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Capela São Sebastião — Bulhões",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B88-60104C25870A",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B88-60104C25870A",
+      "origin": "B98_LOCATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Santuário do Bom Jesus",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B88-B1EB74BB63BD",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B88-B1EB74BB63BD",
+      "origin": "B98_LOCATION_MASTER_ONLY",
+      "country": "BR",
+      "site": "Capela do Oratório São José",
+      "disposition": "MATCHED_BY_CLASSIFICATION_ONLY_ALIAS",
+      "status": "RESOLVED_RESEARCH_ONLY",
+      "target_canonical_group_id": "RG-B88-B1EB74BB63BD"
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B96-8D5C0E774FAB",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B96-8D5C0E774FAB",
+      "origin": "B98_LOCATION_MASTER_ONLY",
+      "country": "IT",
+      "site": "Santuario Nostra Signora di Pontelungo",
+      "disposition": "MATCHED_BY_CLASSIFICATION_ONLY_ALIAS",
+      "status": "RESOLVED_RESEARCH_ONLY",
+      "target_canonical_group_id": "RG-B96-8D5C0E774FAB"
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B96-5F2EB31399CF",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B96-5F2EB31399CF",
+      "origin": "B98_LOCATION_MASTER_ONLY",
+      "country": "IT",
+      "site": "Chiesa di San Bernardo",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B96-6B639D8118FF",
+      "kind": "GROUP_MEMBERSHIP_DIFFERENCE",
+      "source_id": null,
+      "group_id": "RG-B96-6B639D8118FF",
+      "origin": "B98_LOCATION_MASTER_ONLY",
+      "country": "IT",
+      "site": "Chiesa di San Donato",
+      "disposition": "HOLD_FOR_PHYSICAL_IDENTITY_OR_CLASSIFICATION_REVIEW",
+      "status": "HOLD",
+      "target_canonical_group_id": null
+    },
+    {
+      "exception_key": "SOURCE:AO-RSCH-B69-6415E91BC4A8",
+      "kind": "EXACT_SOURCE_ID_GROUP_CONFLICT",
+      "source_id": "AO-RSCH-B69-6415E91BC4A8",
+      "group_id": null,
+      "origin": null,
+      "country": null,
+      "site": null,
+      "disposition": "HISTORICAL_SOURCE_GROUP_ALIAS_RESOLVED",
+      "status": "RESOLVED_RESEARCH_ONLY",
+      "target_canonical_group_id": "RG-9B9E96431F88"
+    },
+    {
+      "exception_key": "SOURCE:AO-RSCH-B69-7B862EC2FE95",
+      "kind": "EXACT_SOURCE_ID_GROUP_CONFLICT",
+      "source_id": "AO-RSCH-B69-7B862EC2FE95",
+      "group_id": null,
+      "origin": null,
+      "country": null,
+      "site": null,
+      "disposition": "HISTORICAL_SOURCE_GROUP_ALIAS_RESOLVED",
+      "status": "RESOLVED_RESEARCH_ONLY",
+      "target_canonical_group_id": "RG-0FEEDA4E996C"
+    },
+    {
+      "exception_key": "SOURCE:AO-RSCH-B69-8020AEEEC172",
+      "kind": "EXACT_SOURCE_ID_GROUP_CONFLICT",
+      "source_id": "AO-RSCH-B69-8020AEEEC172",
+      "group_id": null,
+      "origin": null,
+      "country": null,
+      "site": null,
+      "disposition": "HISTORICAL_SOURCE_GROUP_ALIAS_RESOLVED",
+      "status": "RESOLVED_RESEARCH_ONLY",
+      "target_canonical_group_id": "RG-27005F1C1EF6"
+    },
+    {
+      "exception_key": "SOURCE:AO-RSCH-B69-DE69FB1FBC95",
+      "kind": "EXACT_SOURCE_ID_GROUP_CONFLICT",
+      "source_id": "AO-RSCH-B69-DE69FB1FBC95",
+      "group_id": null,
+      "origin": null,
+      "country": null,
+      "site": null,
+      "disposition": "HISTORICAL_SOURCE_GROUP_ALIAS_RESOLVED",
+      "status": "RESOLVED_RESEARCH_ONLY",
+      "target_canonical_group_id": "RG-C9F800033990"
+    },
+    {
+      "exception_key": "SOURCE:AO-RSCH-B69-F55F05975DD6",
+      "kind": "EXACT_SOURCE_ID_GROUP_CONFLICT",
+      "source_id": "AO-RSCH-B69-F55F05975DD6",
+      "group_id": null,
+      "origin": null,
+      "country": null,
+      "site": null,
+      "disposition": "HISTORICAL_SOURCE_GROUP_ALIAS_RESOLVED",
+      "status": "RESOLVED_RESEARCH_ONLY",
+      "target_canonical_group_id": "RG-CF40DBEAD235"
+    }
+  ],
+  "description_backfills": [
+    {
+      "group_id": "RG-E59A7858DF40",
+      "site_name": "Maison Saint-Isaac Jogues",
+      "country": "CA",
+      "description": "1273 rue de Savoie, Québec, QC G1G 2C8, Canada",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Address describes an institutional house or seminary, not automatically a publicly accessible Mass site."
+    },
+    {
+      "group_id": "RG-B96320D65CE9",
+      "site_name": "St. Clement Parish",
+      "country": "CA",
+      "description": "528 Old St. Patrick Street, Ottawa, ON K1N 5L5, Canada",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Precise physical description does not independently verify a public Mass schedule."
+    },
+    {
+      "group_id": "RG-51430B7FDF2B",
+      "site_name": "Bruderklausen-Kapelle",
+      "country": "CH",
+      "description": "Kapellenweg, 5275 Etzgen, Switzerland (street number not supplied)",
+      "precision": "STREET_ONLY",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Precise physical description does not independently verify a public Mass schedule."
+    },
+    {
+      "group_id": "RG-C68D78ACCDF1",
+      "site_name": "Chapelle Saint-Augustin",
+      "country": "CH",
+      "description": "78 Avenue de Béthusy, 1012 Lausanne, Switzerland",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Precise physical description does not independently verify a public Mass schedule."
+    },
+    {
+      "group_id": "RG-6E097572B76A",
+      "site_name": "FSSP Genève",
+      "country": "CH",
+      "description": "15 Rue du Grand-Bureau, 1227 Genève, Switzerland",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Precise physical description does not independently verify a public Mass schedule."
+    },
+    {
+      "group_id": "RG-FA93D3CDF5B2",
+      "site_name": "Haus Hl. Bruder Klaus",
+      "country": "CH",
+      "description": "Engelgasse 14, 5647 Oberrüti, Switzerland",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Address describes an institutional house or seminary, not automatically a publicly accessible Mass site."
+    },
+    {
+      "group_id": "RG-581602A3146D",
+      "site_name": "Haus St. Benedikt",
+      "country": "CH",
+      "description": "St. Pelagibergstrasse 7, 9225 St. Pelagiberg, Switzerland",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Address describes an institutional house or seminary, not automatically a publicly accessible Mass site."
+    },
+    {
+      "group_id": "RG-B19837746A7F",
+      "site_name": "Maison Saint-Pierre-Canisius",
+      "country": "CH",
+      "description": "Chemin du Schönberg 8, 1700 Fribourg, Switzerland",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Address describes an institutional house or seminary, not automatically a publicly accessible Mass site."
+    },
+    {
+      "group_id": "RG-D37C6DA64FAB",
+      "site_name": "Pfarrei Hl. Maximilian Kolbe",
+      "country": "CH",
+      "description": "Ludretikonerstrasse 3, 8800 Thalwil, Switzerland",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Precise physical description does not independently verify a public Mass schedule."
+    },
+    {
+      "group_id": "RG-364868DA3C8D",
+      "site_name": "Pfarrkirche St. Anton",
+      "country": "CH",
+      "description": "Kannenfeldstrasse 35, 4056 Basel, Switzerland",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Precise physical description does not independently verify a public Mass schedule."
+    },
+    {
+      "group_id": "RG-1675FCE7FFD2",
+      "site_name": "Distriktsstudienhaus St. Albertus Magnus",
+      "country": "DE",
+      "description": "Forststrasse 12, 85092 Kösching-Bettbrunn, Germany",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Address describes an institutional house or seminary, not automatically a publicly accessible Mass site."
+    },
+    {
+      "group_id": "RG-7F0E52B33E4D",
+      "site_name": "Ehemalige Deutschordenskirche St. Ägidius",
+      "country": "DE",
+      "description": "Ägidienplatz 6, 93047 Regensburg, Germany",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Precise physical description does not independently verify a public Mass schedule."
+    },
+    {
+      "group_id": "RG-798677933C6B",
+      "site_name": "Haus Maria Immaculata",
+      "country": "DE",
+      "description": "Franklinstrasse 40, 70435 Stuttgart-Zuffenhausen, Germany",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Address describes an institutional house or seminary, not automatically a publicly accessible Mass site."
+    },
+    {
+      "group_id": "RG-374EAC6F5BF9",
+      "site_name": "Haus St. Pirmin",
+      "country": "DE",
+      "description": "Steinklingenerstrasse 22, 69469 Weinheim-Oberflockenbach, Germany",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Address describes an institutional house or seminary, not automatically a publicly accessible Mass site."
+    },
+    {
+      "group_id": "RG-CCB3F0B0F55F",
+      "site_name": "Kirche Herz-Jesu",
+      "country": "DE",
+      "description": "Am Hummelberg 2, 69469 Oberflockenbach, Germany",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Precise physical description does not independently verify a public Mass schedule."
+    },
+    {
+      "group_id": "RG-20766566B37D",
+      "site_name": "Pfarrkirche St. Justina / Dominikanerinnenkirche",
+      "country": "DE",
+      "description": "Klosterhof, 86825 Bad Wörishofen, Germany (street number not supplied)",
+      "precision": "STREET_ONLY",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Precise physical description does not independently verify a public Mass schedule."
+    },
+    {
+      "group_id": "RG-91AB1DED0539",
+      "site_name": "Priesterseminar St. Petrus",
+      "country": "DE",
+      "description": "Kirchstrasse 16, 88145 Opfenbach-Wigratzbad, Germany",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Address describes an institutional house or seminary, not automatically a publicly accessible Mass site."
+    },
+    {
+      "group_id": "RG-73B519AAE7E0",
+      "site_name": "Maison Saint-Aignan",
+      "country": "FR",
+      "description": "21 rue de la Couronne, 28000 Chartres, France",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Address describes an institutional house or seminary, not automatically a publicly accessible Mass site."
+    },
+    {
+      "group_id": "RG-44608BA98490",
+      "site_name": "Eglise Saint-Aignan",
+      "country": "FR",
+      "description": "Place Saint-Aignan, 28000 Chartres, France (street number not supplied)",
+      "precision": "STREET_ONLY",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Precise physical description does not independently verify a public Mass schedule."
+    },
+    {
+      "group_id": "RG-59FF3FE9A9C3",
+      "site_name": "Maison Saint-Dominique Savio",
+      "country": "FR",
+      "description": "14 rue des Moines, 78000 Versailles, France",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Address describes an institutional house or seminary, not automatically a publicly accessible Mass site."
+    },
+    {
+      "group_id": "RG-80080AA19F97",
+      "site_name": "Maison Saint-Exupère",
+      "country": "FR",
+      "description": "18 rue du Pont Créon, 14000 Caen, France",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Address describes an institutional house or seminary, not automatically a publicly accessible Mass site."
+    },
+    {
+      "group_id": "RG-AE174687EE47",
+      "site_name": "Chapelle Saint-Bernard",
+      "country": "FR",
+      "description": "9 rue Buisson, 42000 Saint-Étienne, France",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Precise physical description does not independently verify a public Mass schedule."
+    },
+    {
+      "group_id": "RG-B277164EF468",
+      "site_name": "Our Lady of Fatima Chapel",
+      "country": "US",
+      "description": "32 W. Franklin Avenue, Pequannock, NJ 07440, USA",
+      "precision": "POSTAL_ADDRESS",
+      "source_authority": "FSSP_INSTITUTIONAL_DIRECTORY",
+      "source_url": "https://www.fssp.org/en/find-us/where-are-we/",
+      "source_checked_on": "2026-10-26",
+      "disposition": "RESEARCH_DESCRIPTION_BACKFILL",
+      "public_geocode_approved": false,
+      "public_venue_approved": false,
+      "note": "Precise physical description does not independently verify a public Mass schedule."
+    }
+  ],
+  "description_queue": [
+    {
+      "group_id": "RG-FC6FE3F93EA0",
+      "country": "BE",
+      "site_name": "Maison Saint-Joseph",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-E59A7858DF40",
+      "country": "CA",
+      "site_name": "Maison Saint-Isaac Jogues",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "https://www.fssp.org/en/find-us/where-are-we/"
+    },
+    {
+      "group_id": "RG-E692D1C726F0",
+      "country": "CA",
+      "site_name": "Notre-Dame-des-Anges (Our Lady of the Angels) Ontario, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-0B778BCBBCA5",
+      "country": "CA",
+      "site_name": "Paroisse Notre-Dame-de-Fatima (Our Lady of Fatima Parish) Ontario, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-EC296D81D4FE",
+      "country": "CA",
+      "site_name": "Paroisse Sainte-Marie (Saint Mary's Parish) Ontario, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-264AB732747E",
+      "country": "CA",
+      "site_name": "Paroisse Saints-Joachim-et-Anne (Saints Joachim & Anne Parish) British Columbia, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-E0C61F52D090",
+      "country": "CA",
+      "site_name": "Purification de la Bienheureuse Vierge (Purification of the Blessed Virgin) Ontario, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-B8200D3028BA",
+      "country": "CA",
+      "site_name": "Sanctuaire Notre-Dame-du-Cap (Sanctuary of Our Lady of Cape) Québec, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-B96320D65CE9",
+      "country": "CA",
+      "site_name": "St. Clement Parish",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "https://stclement-ottawa.org/mass-times/"
+    },
+    {
+      "group_id": "RG-CAD78C08DCB8",
+      "country": "CA",
+      "site_name": "Église Anglicane Sainte-Marie-la-Vierge (Saint Mary the Virgin Anglican Church) Saskatchewan, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-D7F96C683345",
+      "country": "CA",
+      "site_name": "Église de la Sainte-Famille (Holy Family Church) Ontario, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-60D9D8F8DAA1",
+      "country": "CA",
+      "site_name": "Église Mater Dei (Mater Dei Church) Ontario, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-D9AE63BE9AF8",
+      "country": "CA",
+      "site_name": "Église Notre-Dame-du-Mont-Carmel (Our Lady of Mount Carmel Church) Ontario, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-2C256D75AC91",
+      "country": "CA",
+      "site_name": "Église Saint-Augustin (Saint Augustine's Church) New Brunswick, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-D7E36888FDF3",
+      "country": "CA",
+      "site_name": "Église Saint-François-d'Assise (Saint Francis of Assisi Church) Newfoundland and Labrador, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-91475601ED97",
+      "country": "CA",
+      "site_name": "Église Saint-Jacques (Saint James Church) British Columbia, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-425B0E8891EE",
+      "country": "CA",
+      "site_name": "Église Saint-Jean (Saint John's Church) Ontario, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-866F0FE980DA",
+      "country": "CA",
+      "site_name": "Église Saint-Joseph (Saint Joseph's Church) Ontario, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-8F8BFAF5553B",
+      "country": "CA",
+      "site_name": "Église Saint-Patrice (Saint Patrick Church) Ontario, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-FCF911BD0F54",
+      "country": "CA",
+      "site_name": "Église Saint-Patrice (Saint Patrick Church) Ontario, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-8DAD9EA82195",
+      "country": "CA",
+      "site_name": "Église Saint-Vincent (Saint Vincent Church) St. Paul County No. 19, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-CF9686A2CC46",
+      "country": "CA",
+      "site_name": "Église Sainte-Anne (Saint Ann's Church) Manitoba, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-42B84C1F586E",
+      "country": "CA",
+      "site_name": "Église Sainte-Anne (Saint Ann's Church) Ontario, Canada",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-51430B7FDF2B",
+      "country": "CH",
+      "site_name": "Bruderklausen-Kapelle",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "http://www.etzgen.petrusbruderschaft.ch/"
+    },
+    {
+      "group_id": "RG-C68D78ACCDF1",
+      "country": "CH",
+      "site_name": "Chapelle Saint-Augustin",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "https://fssp-lausanne.ch"
+    },
+    {
+      "group_id": "RG-6E097572B76A",
+      "country": "CH",
+      "site_name": "FSSP Genève",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "https://fssp.ch/apostolats/geneve"
+    },
+    {
+      "group_id": "RG-FA93D3CDF5B2",
+      "country": "CH",
+      "site_name": "Haus Hl. Bruder Klaus",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-581602A3146D",
+      "country": "CH",
+      "site_name": "Haus St. Benedikt",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-893E2B4940F6",
+      "country": "CH",
+      "site_name": "Haus vom Eucharistischen Herzen Jesu",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-B19837746A7F",
+      "country": "CH",
+      "site_name": "Maison Saint-Pierre-Canisius",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "https://fssp.ch/apostolats"
+    },
+    {
+      "group_id": "RG-D37C6DA64FAB",
+      "country": "CH",
+      "site_name": "Pfarrei Hl. Maximilian Kolbe",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "http://www.personalpfarrei.ch/"
+    },
+    {
+      "group_id": "RG-364868DA3C8D",
+      "country": "CH",
+      "site_name": "Pfarrkirche St. Anton",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "http://www.basel.petrusbruderschaft.ch/"
+    },
+    {
+      "group_id": "RG-1675FCE7FFD2",
+      "country": "DE",
+      "site_name": "Distriktsstudienhaus St. Albertus Magnus",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "group_id": "RG-7F0E52B33E4D",
+      "country": "DE",
+      "site_name": "Ehemalige Deutschordenskirche St. Ägidius",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "group_id": "RG-798677933C6B",
+      "country": "DE",
+      "site_name": "Haus Maria Immaculata",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-508D4590E51B",
+      "country": "DE",
+      "site_name": "Haus St. Engelbertus",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-1581BFDCFD5B",
+      "country": "DE",
+      "site_name": "Haus St. Ludgerus",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-AFDE203E79CB",
+      "country": "DE",
+      "site_name": "Haus St. Matthias",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/hannover/home.php"
+    },
+    {
+      "group_id": "RG-374EAC6F5BF9",
+      "country": "DE",
+      "site_name": "Haus St. Pirmin",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "group_id": "RG-CCB3F0B0F55F",
+      "country": "DE",
+      "site_name": "Kirche Herz-Jesu",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "group_id": "RG-1AB48364E335",
+      "country": "DE",
+      "site_name": "Kirche St. Johannes & Franziskus",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "http://fssp.cz/lusatia"
+    },
+    {
+      "group_id": "RG-CD32152CA124",
+      "country": "DE",
+      "site_name": "Kirche St. Michael",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "group_id": "RG-20766566B37D",
+      "country": "DE",
+      "site_name": "Pfarrkirche St. Justina / Dominikanerinnenkirche",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "group_id": "RG-91AB1DED0539",
+      "country": "DE",
+      "site_name": "Priesterseminar St. Petrus",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-7B755BCA04CF",
+      "country": "DE",
+      "site_name": "Sebastianskapelle",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+    },
+    {
+      "group_id": "RG-4177975BE08A",
+      "country": "DE",
+      "site_name": "St Joseph",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-DE8F28D8A0EC",
+      "country": "ES",
+      "site_name": "Iglesia de las Siervas de María",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+    },
+    {
+      "group_id": "RG-7C8BB6333C7F",
+      "country": "ES",
+      "site_name": "Iglesia de San Ildefonso",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+    },
+    {
+      "group_id": "RG-4285190BD8AE",
+      "country": "ES",
+      "site_name": "Iglesia de San Nicolás de Bari",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+    },
+    {
+      "group_id": "RG-2565E7B509ED",
+      "country": "ES",
+      "site_name": "Iglesia del Antiguo Colegio de las Adoratrices",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+    },
+    {
+      "group_id": "RG-1EDB76F4B57B",
+      "country": "ES",
+      "site_name": "Iglesia del Salvador",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+    },
+    {
+      "group_id": "RG-3E135A9E5C09",
+      "country": "ES",
+      "site_name": "Monasterio de Santa María de la Rábida",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.latinmassdir.org/trends/2026/es/"
+    },
+    {
+      "group_id": "RG-7CDEAC5CBBC9",
+      "country": "ES",
+      "site_name": "Oasis de Jesús Sacerdote",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+    },
+    {
+      "group_id": "RG-3FB2F55DB78A",
+      "country": "ES",
+      "site_name": "Parroquia San Bartolomé",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+    },
+    {
+      "group_id": "RG-562C27FA24C2",
+      "country": "ES",
+      "site_name": "Real Monasterio de la Encarnación",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+    },
+    {
+      "group_id": "RG-AADE0DB1F592",
+      "country": "ES",
+      "site_name": "Sant Joan Baptista",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+    },
+    {
+      "group_id": "RG-EE22A08568B9",
+      "country": "ES",
+      "site_name": "Sant Jordi de Vallcarca",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+    },
+    {
+      "group_id": "RG-C19C55301A0B",
+      "country": "ES",
+      "site_name": "Santa María de la Asunción",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+    },
+    {
+      "group_id": "RG-A3F94D9DDAE3",
+      "country": "FR",
+      "site_name": "Chapelle du Saint-Suaire",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://icrspfrance.fr/"
+    },
+    {
+      "group_id": "RG-AE174687EE47",
+      "country": "FR",
+      "site_name": "Chapelle Saint-Bernard",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "http://www.chapelle-saint-bernard.com/"
+    },
+    {
+      "group_id": "RG-D2D19C4C0528",
+      "country": "FR",
+      "site_name": "Collège Sainte Philomène",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "http://www.ecole-saintececile.com/"
+    },
+    {
+      "group_id": "RG-6F0498C98BBB",
+      "country": "FR",
+      "site_name": "Ecole Sainte Cécile",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "http://www.ecole-saintececile.com/"
+    },
+    {
+      "group_id": "RG-44608BA98490",
+      "country": "FR",
+      "site_name": "Eglise Saint-Aignan",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "http://www.fssp-chartres.org/"
+    },
+    {
+      "group_id": "RG-6F4D81B60AF1",
+      "country": "FR",
+      "site_name": "Eglise Saint-Benoît",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "http://www.fssp-sarthe.fr/"
+    },
+    {
+      "group_id": "RG-7AC31469124E",
+      "country": "FR",
+      "site_name": "Eglise Saint-Christophe",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "http://fsspchateauroux.blogspot.com/"
+    },
+    {
+      "group_id": "RG-363FC99954B5",
+      "country": "FR",
+      "site_name": "Eglise Sainte-Gemme",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "http://fsspvendee.blogspot.com/"
+    },
+    {
+      "group_id": "RG-AEDF450BAD90",
+      "country": "FR",
+      "site_name": "Maison Notre-Dame des Victoires",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-73B519AAE7E0",
+      "country": "FR",
+      "site_name": "Maison Saint-Aignan",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-F43AFDE76B78",
+      "country": "FR",
+      "site_name": "Maison Saint-Austremoine",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "http://fsspclermontferrand.fr/"
+    },
+    {
+      "group_id": "RG-59FF3FE9A9C3",
+      "country": "FR",
+      "site_name": "Maison Saint-Dominique Savio",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-80080AA19F97",
+      "country": "FR",
+      "site_name": "Maison Saint-Exupère",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-E53F648234DC",
+      "country": "FR",
+      "site_name": "Maison Saint-Georges",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-281D3DE598FD",
+      "country": "FR",
+      "site_name": "Maison Sainte-Solange",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-55A982EF3A0F",
+      "country": "FR",
+      "site_name": "Église Sainte Bernadette",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://fsspclermontferrand.fr"
+    },
+    {
+      "group_id": "RG-151514308AF0",
+      "country": "GA",
+      "site_name": "Mission St Therese of the Infant Jesus",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.latinmassdir.org/venue/mission-sainte-therese-de-lenfant-jesus-mouila-gabon/"
+    },
+    {
+      "group_id": "RG-53399B2A1CEF",
+      "country": "GA",
+      "site_name": "Paroisse Notre-Dame-de-Lourdes",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-DBBDD4336A85",
+      "country": "GB",
+      "site_name": "St Mary's Catholic Church, Brewood",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://birmingham-lms-rep.blogspot.com/2026/10/"
+    },
+    {
+      "group_id": "RG-99705AFD8B68",
+      "country": "IE",
+      "site_name": "Eaglais na Giniúna Ṁuire gan Smál (Church of the Immaculate Conception) Tralee, Ireland",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://stjohns.ie/wp-content/uploads/2025/09/250928-1.pdf"
+    },
+    {
+      "group_id": "RG-34FDCB6355B4",
+      "country": "IT",
+      "site_name": "Basilica di San Ferdinando a Palazzo",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=1"
+    },
+    {
+      "group_id": "RG-06FF8F6BD4B6",
+      "country": "IT",
+      "site_name": "Chiesa del Sacro Cuore, detta ‘dei Sacconi'",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=2"
+    },
+    {
+      "group_id": "RG-4A061E5815D0",
+      "country": "IT",
+      "site_name": "Chiesa di Gesù e Maria",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=2"
+    },
+    {
+      "group_id": "RG-44B197BD0666",
+      "country": "IT",
+      "site_name": "Chiesa di S. Bernardino",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=2"
+    },
+    {
+      "group_id": "RG-473730143FEF",
+      "country": "IT",
+      "site_name": "Chiesa di S. Giorgio",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=2"
+    },
+    {
+      "group_id": "RG-2339765E0FFC",
+      "country": "IT",
+      "site_name": "Chiesa di San Giorgio",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=2"
+    },
+    {
+      "group_id": "RG-AAFBD16C4CD5",
+      "country": "IT",
+      "site_name": "Chiesa di Santa Maria del Rosario alle Pigne",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=2"
+    },
+    {
+      "group_id": "RG-FC9C1D79B1FC",
+      "country": "IT",
+      "site_name": "Chiesa di Santa Maria della Vittoria",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.unavoceitalia.org/wordpress/messe/napoli/"
+    },
+    {
+      "group_id": "RG-5125511C9FE5",
+      "country": "IT",
+      "site_name": "Chiesa di Sant’Antonio Abate",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=3"
+    },
+    {
+      "group_id": "RG-C10C46A4C0C7",
+      "country": "IT",
+      "site_name": "Chiesa Rettoria di S. Giuseppe",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=1"
+    },
+    {
+      "group_id": "RG-E63D50EF0204",
+      "country": "IT",
+      "site_name": "Chiesa Sacro Cuore",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=1"
+    },
+    {
+      "group_id": "RG-2B17BF197D61",
+      "country": "IT",
+      "site_name": "Christ the King",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=3"
+    },
+    {
+      "group_id": "RG-19429258007E",
+      "country": "IT",
+      "site_name": "Church of Poor Saint Francis",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=3"
+    },
+    {
+      "group_id": "RG-37D25B28AB60",
+      "country": "IT",
+      "site_name": "FSSP Südtirol",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "http://www.suedtirol.petrusbruderschaft.org/"
+    },
+    {
+      "group_id": "RG-4F6045FD2887",
+      "country": "IT",
+      "site_name": "Oratorio dei Bianchi",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=3"
+    },
+    {
+      "group_id": "RG-C2F1E09958E7",
+      "country": "IT",
+      "site_name": "Reale Basilica di San Giacomo degli Spagnoli",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.unavoceitalia.org/wordpress/messe/napoli/"
+    },
+    {
+      "group_id": "RG-64C25445EA3F",
+      "country": "IT",
+      "site_name": "Sacred Heart",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/suedtirol/messorte.php"
+    },
+    {
+      "group_id": "RG-67EB4DB0F334",
+      "country": "IT",
+      "site_name": "Santuario del Sacro Cuore in Sales",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=4"
+    },
+    {
+      "group_id": "RG-69D13D408C90",
+      "country": "IT",
+      "site_name": "Shrine of Our Lady of Pompeii",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=4"
+    },
+    {
+      "group_id": "RG-1EA095B17019",
+      "country": "IT",
+      "site_name": "St Anthony of Padua",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=4"
+    },
+    {
+      "group_id": "RG-63FD1D024A91",
+      "country": "IT",
+      "site_name": "St Erasmus",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=4"
+    },
+    {
+      "group_id": "RG-4D8652F0EE54",
+      "country": "IT",
+      "site_name": "St Martha",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=4"
+    },
+    {
+      "group_id": "RG-7165948281F2",
+      "country": "IT",
+      "site_name": "St Mary of Consolation",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=4"
+    },
+    {
+      "group_id": "RG-640BFDCC9E62",
+      "country": "IT",
+      "site_name": "St Peter",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=4"
+    },
+    {
+      "group_id": "RG-12ECC5D067B6",
+      "country": "IT",
+      "site_name": "St Sebastiano",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=IT&page=5"
+    },
+    {
+      "group_id": "RG-BCC5A5982FB9",
+      "country": "NG",
+      "site_name": "Nne Enyemaka Shrine Umuaka",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.fssp.org/en/find-us/where-are-we/; http://www.fsspnigeria.org/"
+    },
+    {
+      "group_id": "RG-D104C9C93632",
+      "country": "PL",
+      "site_name": "Chapel of Marian Apparition",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-FBA216861DF9",
+      "country": "PL",
+      "site_name": "Chapel of the Order of the Carmelite Sisters",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://adorientem.church/find?country=PL&page=2"
+    },
+    {
+      "group_id": "RG-03CA979A8BD9",
+      "country": "US",
+      "site_name": "FSSP Fresno",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://www.fsspfresno.org/"
+    },
+    {
+      "group_id": "RG-34B652453CC8",
+      "country": "US",
+      "site_name": "Mater Misericordiae Parish",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://phoenixlatinmass.org/"
+    },
+    {
+      "group_id": "RG-B277164EF468",
+      "country": "US",
+      "site_name": "Our Lady of Fatima Chapel",
+      "status": "SOURCE_BACKED_DESCRIPTION_ADDED",
+      "owner_url": "https://olfchapel.org"
+    },
+    {
+      "group_id": "RG-0B17D4E571A5",
+      "country": "US",
+      "site_name": "Sacred Heart Retreat Center",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": null
+    },
+    {
+      "group_id": "RG-6A352025FC8C",
+      "country": "US",
+      "site_name": "St. Edward the Confessor Catholic Church",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "http://phoenixlatinmass.org/"
+    },
+    {
+      "group_id": "RG-20E436473DD9",
+      "country": "US",
+      "site_name": "St. Francis de Sales",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "https://ssfrancisjohn.org/"
+    },
+    {
+      "group_id": "RG-2D00D7487C3D",
+      "country": "US",
+      "site_name": "St. Lawrence Church",
+      "status": "HOLD_DESCRIPTION_BLANK",
+      "owner_url": "http://www.materdeipa.com/"
+    }
+  ]
+}
