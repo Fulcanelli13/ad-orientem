@@ -471,3 +471,34 @@ test('Psalm 46 research score changes only source name, one reciting syllable an
  const palmReader=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
  assert.ok(!palmReader.includes('palm46-omnes-populi-1961-provisional.gabc'));
 });
+
+
+test('Psalm 46 1961 chant-line 9 and 10 are two halves of one biblical verse',()=>{
+  const data=readJSON('data/research/processionale-palm46-dual-numbering-20261026.v1.json');
+  const edition=readJSON('data/research/processionale-roman-palm-psalter-editions-20261026.v1.json');
+  assert.equal(data.stageId,'PALM-R02');
+  assert.equal(data.status,'SOURCE_VERIFIED_NUMBERING_ONLY_NOT_FULL_TEXT_RELEASE');
+  assert.equal(data.printedPage,'144**');
+  assert.equal(data.counts.biblicalPsalmVerses,9);
+  assert.equal(data.counts.printedPsalmChantLines,10);
+  assert.equal(data.counts.printedDoxologyLines,2);
+  assert.equal(data.counts.numberedLinesIncludingDoxology,12);
+  assert.deepEqual(data.crosswalk.slice(0,10).map(x=>x.printedLine),
+    [1,2,3,4,5,6,7,8,9,10]);
+  assert.deepEqual(data.crosswalk.slice(0,10).map(x=>x.biblicalVerse),
+    [1,2,3,4,5,6,7,8,9,9]);
+  assert.equal(data.crosswalk[8].biblicalHalf,'A');
+  assert.equal(data.crosswalk[9].biblicalHalf,'B');
+  assert.equal(data.crosswalk[10].liturgy,'GLORIA_PATRI');
+  assert.equal(data.crosswalk[11].liturgy,'SICUT_ERAT');
+  assert.deepEqual(data.performance.pairOrder,[[1,2],[3,4],[5,6],[7,8],[9,10]]);
+  assert.equal(data.performance.lastPairBothBiblicalVerse,9);
+  assert.equal(data.performance.repeatAntiphonAfterEachPair,true);
+  const ps=edition.acceptance.editorialProgramme.psalms.find(x=>x.psalm===46);
+  assert.equal(ps.numberingProofPath,'data/research/processionale-palm46-dual-numbering-20261026.v1.json');
+  assert.equal(ps.printedVerseCount,10);
+  assert.equal(ps.biblicalVerseCount,9);
+  assert.deepEqual(ps.verseIncipits.slice(-2).map(x=>x.biblicalVerse),[9,9]);
+  assert.deepEqual(ps.verseIncipits.slice(-2).map(x=>x.biblicalHalf),['A','B']);
+  assert.equal(edition.sourceSafety.approvedRuntimeAssignments,0);
+});
