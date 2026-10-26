@@ -1,0 +1,357 @@
+{
+  "schema": "AO_CL13_REMAINING_154_SOURCE_ADJUDICATION_V1",
+  "reviewed_on": "2026-10-26",
+  "input_contract": "CL9 prior 12 reviewed non-adjudicated source URLs; total 154 timetable rows",
+  "policy": "Exact owner/diocesan 1962 evidence + frozen source day/time/venue matches. Site, date and ritual exceptions survive; institutional exclusive-charter evidence is distinct from specific current Mass occurrence.",
+  "sources": [
+    {
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "review": "INSTITUTIONAL_EXCLUSIVE_1962_POLICY_NOT_SLOT_PROOF",
+      "primary_book_url": "https://koeln.petrusbruderschaft.de/wer-sind-wir/",
+      "secondary_book_url": "https://petrusbruderschaft.de/pages/themen/dokumente/dekret.php",
+      "original_source_count": 73,
+      "accepted_slots": [],
+      "observation": "Official Cologne FSSP states its community celebrates exclusively according to the 1962 rubrics, and German FSSP maintains a national Mass-site directory. 2022 papal decree authorizes 1962, but authorization does not prove any particular priest/site/time. The 73 historical rows are not independently reconciled to present exact Mass-site programme and may involve non-FSSP coverage; do not elevate them yet.",
+      "exceptions": [
+        "OWNER_1962_INSTITUTIONAL_POLICY_WITNESS_ONLY",
+        "73_SITE_TIME_LINKS_PENDING_EXACT_OWNER_VALIDATION",
+        "PAPAL_PERMISSION_IS_NOT_CELEBRATION_PROOF"
+      ]
+    },
+    {
+      "url": "https://www.ololparish.org/mass-times/",
+      "review": "HOLD_1962_PROGRAMME_BUT_RELOCATION_PROVENANCE",
+      "primary_book_url": "https://covdio.org/wp-content/uploads/2024/01/20240119LetterToParishioners4.pdf",
+      "original_source_count": 10,
+      "accepted_slots": [],
+      "observation": "Current Park Hills parish gives ten weekday/weekend times and is a Latin Mass parish. Bishop's explicit 1962 decree was attached to a temporary St Ann Mission location in Jan 2024 during a building/minister legal dispute. Evidence still needs to bridge later return to Park Hills programme; no automatic promotion or celebrant/property inference.",
+      "exceptions": [
+        "2024_TEMPORARY_SITE_MOVE_TO_ST_ANN",
+        "PARK_HILLS_SITE_ID_AND_EDITION_SCOPE_NEEDS_CURRENT_OWNER_BRIDGE",
+        "PARISH_BULLETIN_OVERRIDE"
+      ]
+    },
+    {
+      "url": "https://www.communicantes.fr/horairescomplets.html",
+      "review": "HOLD_MIXED_ROMAN_AND_LYONESE_RITE",
+      "primary_book_url": "https://www.communicantes.fr/horairescomplets.html",
+      "original_source_count": 8,
+      "accepted_slots": [],
+      "observation": "FSSP Lyon official source lists site/time/term structure. Sunday 08:30 is explicitly Lyonese rite, and archdiocesan feast weekdays can also use Lyonese rite. Other Masses listed only messe lue/chantée, without exact Roman 1962 edition. 2017 page version in footer demands currency refresh. No venue-wide Roman-1962 classification.",
+      "exceptions": [
+        "SUNDAY_0830_LYONESE_RITE_SEPARATE_NONCANDIDATE_SLOT",
+        "ARCHDIOCESAN_FEAST_WEEKDAY_LYONESE_EXCEPTION",
+        "SCHOOL_HOLIDAY_MODES",
+        "2017_REVISION_CURRENTNESS_ISSUE"
+      ]
+    },
+    {
+      "url": "https://www.materecclesiae.org/",
+      "review": "ACCEPT_DIOCESAN_PROGRAMME_1962_HISTORICAL_SOURCE_MATCH",
+      "primary_book_url": "https://catholicstarherald.org/provisions-for-mass-according-to-the-1962-missal/",
+      "secondary_book_url": "https://www.materecclesiae.org/",
+      "original_source_count": 8,
+      "accepted_slots": [
+        {
+          "row_no": 4179,
+          "day": "Sunday",
+          "time": "08:00",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4180,
+          "day": "Sunday",
+          "time": "10:30",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4181,
+          "day": "Monday",
+          "time": "08:00",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4182,
+          "day": "Tuesday",
+          "time": "08:00",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4183,
+          "day": "Thursday",
+          "time": "08:00",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4184,
+          "day": "Friday",
+          "time": "08:00",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4185,
+          "day": "Saturday",
+          "time": "08:00",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4186,
+          "day": "Wednesday",
+          "time": "19:30",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        }
+      ],
+      "observation": "Camden diocese's Nov 2021 written provisions specifically identifies Mater Ecclesiae as continuing its programme of Mass according to 1962 Missal, while the eight frozen Mass rows are individually named/dated timetable observations checked in Oct 2026. Mater Ecclesiae home timed out on CL13, so this is dated diocesan-programme book evidence against historical scheduled slots, not fresh live-parish recurrence certification.",
+      "exceptions": [
+        "2021_DIOCESAN_PROGRAMME_EVIDENCE",
+        "2026_PARISH_DIRECT_WEBPAGE_TIMEOUT",
+        "RECHECK_CURRENT_WEEKLY_OPERATIONS_BEFORE_PUBLIC_RELEASE"
+      ]
+    },
+    {
+      "url": "https://www.latinmassarlington.org/find-tlm/parishes",
+      "review": "HOLD_LAY_DIRECTORY_WITH_EXPIRED_2026_PERMISSION",
+      "primary_book_url": "https://www.latinmassarlington.org/find-tlm/parishes",
+      "original_source_count": 8,
+      "accepted_slots": [],
+      "observation": "Arlington lay society documents three parish churches and alternate locations; St Rita and St Anthony Mission experience one Sunday/month Latin Ordinary Form substitutions. Its stated permission renewal was due in summer 2026. Lay-directory notices are not authoritative 2026/27 bishop renewals or direct owner 1962 edition statements.",
+      "exceptions": [
+        "SUMMER_2026_INDULT_RENEWAL_RECHECK",
+        "ST_RITA_SECOND_SUNDAY_LATIN_ORDINARY_FORM",
+        "ST_ANTHONY_ONE_SUNDAY_PER_MONTH_LATIN_ORDINARY_FORM",
+        "NO_UNA_CUM_OR_CELEBRANT_OWNER_INFERENCE"
+      ]
+    },
+    {
+      "url": "https://www.latinmassdublin.ie/times",
+      "review": "ACCEPT_OWNER_CHAPLAINCY_1962_PROGRAMME",
+      "primary_book_url": "https://www.latinmassdublin.ie/",
+      "secondary_book_url": "https://www.latinmassdublin.ie/times",
+      "original_source_count": 8,
+      "accepted_slots": [
+        {
+          "row_no": 4394,
+          "day": "Sunday",
+          "time": "09:00",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4395,
+          "day": "Sunday",
+          "time": "10:30",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4396,
+          "day": "Monday",
+          "time": "08:00",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4397,
+          "day": "Tuesday",
+          "time": "08:00",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4398,
+          "day": "Wednesday",
+          "time": "08:00",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4399,
+          "day": "Thursday",
+          "time": "08:00",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4400,
+          "day": "Friday",
+          "time": "08:00",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4401,
+          "day": "Saturday",
+          "time": "09:00",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        }
+      ],
+      "observation": "Official Dublin Latin Mass Chaplaincy homepage unambiguously states it celebrates Sunday and weekday Masses according to the liturgical books of 1962. Its separate first-party Times page lists Sunday 09:00 and 10:30, weekdays Monday–Friday 08:00, Saturday 09:00, matching all eight original rows. Other co-located parish and developing oratory have separate programmes.",
+      "exceptions": [
+        "OWNER_1962_PROGRAMME_NOT_COLOCATED_OTHER_ORATORY",
+        "HOLY_DAY_CALENDAR_OVERRIDES_WEEKLY_TIMES"
+      ]
+    },
+    {
+      "url": "https://www.poorclaresofjoliet.org/liturgical-schedule",
+      "review": "HOLD_MONASTERY_TRADITIONAL_UNSPECIFIED_EDITION",
+      "primary_book_url": "https://www.poorclaresofjoliet.org/liturgical-schedule",
+      "original_source_count": 7,
+      "accepted_slots": [],
+      "observation": "Monastery owner explicitly lists daily Traditional Latin Mass Sun 07:00 and Mon–Sat 08:00, with no named 1962 Missal edition in the schedule; FSSP assistance cannot be presumed. Seven exact days held at edition gate, despite likely traditional liturgical use.",
+      "exceptions": [
+        "TLM_UNSPECIFIED_EXACT_EDITION",
+        "MONASTIC_CHAPEL_NOT_PUBLIC_DIOCESAN_CHURCH"
+      ]
+    },
+    {
+      "url": "https://www.olhrhahnville.org/traditional-mass",
+      "review": "HOLD_OWNER_TLM_WITHOUT_LITERAL_EDITION",
+      "primary_book_url": "https://www.olhrhahnville.org/traditional-mass",
+      "original_source_count": 7,
+      "accepted_slots": [],
+      "observation": "Hahnville parish explains Traditional Latin Mass and preserves Mass times, but owner page does not actually state 1962 edition of the book for the seven historical rows. Researcher '1962' label is not substituted for owner wording.",
+      "exceptions": [
+        "EXACT_MISSAL_BOOK_NOT_STATED",
+        "FIRST_FRIDAY_MONTHLY_EXCEPTION"
+      ]
+    },
+    {
+      "url": "https://www.holytrinitysspmn.org/schedule",
+      "review": "ACCEPT_OWNER_1962_PROGRAMME_TWO_BUILDINGS",
+      "primary_book_url": "https://www.holytrinitysspmn.org/",
+      "secondary_book_url": "https://www.holytrinitysspmn.org/schedule",
+      "original_source_count": 7,
+      "accepted_slots": [
+        {
+          "row_no": 4232,
+          "day": "Sunday",
+          "time": "07:00",
+          "site": "St Augustine Oratory",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4233,
+          "day": "Sunday",
+          "time": "10:00",
+          "site": "St Augustine Oratory",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4234,
+          "day": "Sunday",
+          "time": "12:00",
+          "site": "St Augustine Oratory",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4235,
+          "day": "Saturday",
+          "time": "08:00",
+          "site": "St Augustine Oratory",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4253,
+          "day": "Tuesday",
+          "time": "08:00",
+          "site": "Holy Trinity",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4254,
+          "day": "Thursday",
+          "time": "08:00",
+          "site": "Holy Trinity",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4255,
+          "day": "Friday",
+          "time": "12:00",
+          "site": "Holy Trinity",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        }
+      ],
+      "observation": "Holy Trinity parish official homepage directly distinguishes Masses of Paul VI from 'traditional Tridentine Masses of 1962', while its separate Full Schedule labels exact seven candidate day/time slots as Tridentine at two DIFFERENT church buildings. Individual building IDs and forms remain distinct.",
+      "exceptions": [
+        "TWO_SEPARATE_PHYSICAL_CHURCHES",
+        "ORDINARY_FORM_ENGLISH_AT_BOTH_TIMES_NEVER_1962_BY_LANGUAGE",
+        "HOLY_DAY_EXCEPTION_CHECK"
+      ]
+    },
+    {
+      "url": "https://www.saintadelaide.com/",
+      "review": "HOLD_PARISH_TLM_UNSPECIFIED_BOOK",
+      "primary_book_url": "https://www.saintadelaide.com/",
+      "secondary_book_url": "https://www.saintadelaide.com/liturgy---music",
+      "original_source_count": 7,
+      "accepted_slots": [],
+      "observation": "St Adelaide parish website names Sunday noon and Mon–Fri 07:00, Sat 09:00 Traditional Latin Mass and separates its regular English services. Neither its owner homepage nor linked Liturgy page directly asserts use of 1962 Missal; seven source researcher labels not automatically promoted.",
+      "exceptions": [
+        "SOURCE_TLM_BOOK_UNSPECIFIED",
+        "WEEKLY_PARISH_BULLETINS_OVERRIDE"
+      ]
+    },
+    {
+      "url": "https://dioceseparis.fr/messes-celebrees-selon-le-missel.html",
+      "review": "ACCEPT_DIOCESAN_DATED_EVENT_EDITION_MATCH",
+      "primary_book_url": "https://dioceseparis.fr/messes-celebrees-selon-le-missel.html",
+      "original_source_count": 6,
+      "accepted_slots": [
+        {
+          "row_no": 4013,
+          "day": "Sunday",
+          "time": "08:15",
+          "site": "Saint-Eugène–Sainte-Cécile",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4014,
+          "day": "Sunday",
+          "time": "11:00",
+          "site": "Saint-Eugène–Sainte-Cécile",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4015,
+          "day": "Sunday",
+          "time": "19:00",
+          "site": "Saint-Eugène–Sainte-Cécile",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4016,
+          "day": "Sunday",
+          "time": "09:30",
+          "site": "Saint-Roch",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4017,
+          "day": "Sunday",
+          "time": "20:00",
+          "site": "Saint-Roch",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        },
+        {
+          "row_no": 4018,
+          "day": "Sunday",
+          "time": "09:30",
+          "site": "Sainte-Odile",
+          "decision": "ACCEPTED_1962_SOURCE_SCOPED_ONLY"
+        }
+      ],
+      "observation": "Paris diocesan search-indexed 18 and 25 Oct 2026 celebration entries individually label 1962 Missal at these exact six church/time combinations. Direct webpage also explicitly distinguishes a separate Latin Mass celebrated according to postconciliar Paul VI 1970 Missal. Dynamic event card extraction varies per crawl; dated slots are evidence, not guaranteed indefinite recurrence.",
+      "exceptions": [
+        "SOURCE_IS_DATE_SCOPED_DI0CESAN_EVENT_NOT_UNCONDITIONAL_WEEKLY",
+        "POSTCONCILIAR_LATIN_MASSES_SEPARATELY_CLASSIFIED",
+        "DI0CESAN_DYNAMIC_FEED_MAY_BE_DATE_LIMITED"
+      ]
+    },
+    {
+      "url": "https://www.georgetownoratory.org/",
+      "review": "HOLD_PRECONCILIAR_BOOK_NOT_EXACT_1962",
+      "primary_book_url": "https://www.georgetownoratory.org/",
+      "original_source_count": 5,
+      "accepted_slots": [],
+      "observation": "Georgetown Oratory's Mass times marks Sunday 07:30 and noon, Wednesday 18:00, Fri/Sat 08:30 as 'preconciliar Missale Romanum' without specifying exact edition in general schedule. Its first-Friday October 2 one-off named Holy Mass 1962 at 08:30/19:00, which cannot certify every weekly Friday 08:30 across all dates.",
+      "exceptions": [
+        "PRECONCILIAR_UNSPECIFIED_EXACT_EDITION",
+        "FIRST_FRIDAY_1962_SPECIAL_EVENT_NOT_GENERAL_RECURRING_CERTIFICATION"
+      ]
+    }
+  ]
+}
