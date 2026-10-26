@@ -31,19 +31,19 @@ def family(label, machine_hint):
     n = canon_label(label + " " + (machine_hint or ""))
     if "francois de sales" in n or "salesian" in n:
         return "FRANCIS_DE_SALES_HOST_ATTRIBUTION_UNVERIFIED"
+    if "parsch" in n:
+        return "PARSCH_GUIDE_LITURGIQUE_EDITION_CHECK"
     if "gueranger" in n or "annee liturgique" in n:
         return "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
     if "schuster" in n or "sacramentorum" in n:
         return "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
-    if "parsch" in n:
-        return "PARSCH_GUIDE_LITURGIQUE_EDITION_CHECK"
     if "lefevre" in n or "lefebvre" in n:
         return "LEFEBVRE_MISSAL_EDITION_CHECK"
-    if "presentation" in n:
+    if n.strip() == "presentation":
         return "WEBSITE_PRESENTATION_UNATTRIBUTED"
     if "office du jour" in n or "matines" in n:
         return "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
-    if "la messe" in n or "propre" in n or "ordo" in n:
+    if n.strip() in {"la messe", "a la messe.", "a la messe"} or "propre" in n or "ordo" in n:
         return "LITURGICAL_FORMULARY_UNATTRIBUTED"
     return "OTHER_HOST_PANEL_PROVENANCE_CHECK"
 
@@ -133,6 +133,10 @@ def build(directory):
         ids = sorted({x["articleId"] for x in group})
         labels = sorted({x["hostWorkLabel"] for x in group})
         families = sorted({x["candidateWorkFamily"] for x in group})
+        is_reference_placeholder = (
+            len(ids) == 1 and len(labels) > 1
+            and max(x["normalizedBodyChars"] for x in group) <= 128
+        )
         duplicates.append({
             "bodySha256": sha, "occurrences": len(group),
             "distinctArticleCount": len(ids), "articleIds": ids,
@@ -140,6 +144,8 @@ def build(directory):
             "hostLabels": labels, "candidateFamilies": families,
             "crossArticle": len(ids) > 1,
             "potentialLabelConflict": len(families) > 1,
+            "shortSameArticleCrossLabelPlaceholder": is_reference_placeholder,
+            "substantiveMixedFamilyBodyCollision": len(families) > 1 and not is_reference_placeholder,
             "editorialCertification": False, "contentPublicationApproved": False
         })
     duplicates.sort(key=lambda x: (-x["occurrences"], x["bodySha256"]))
@@ -185,6 +191,8 @@ def build(directory):
         "extraOccurrencesBeyondUniqueHashes": len(panel_rows)-len(hashes),
         "crossArticleRepeatedBodyGroups": sum(x["crossArticle"] for x in duplicates),
         "mixedCandidateWorkFamilyHashGroups": sum(x["potentialLabelConflict"] for x in duplicates),
+        "shortSameArticleCrossLabelPlaceholderGroups": sum(x["shortSameArticleCrossLabelPlaceholder"] for x in duplicates),
+        "substantiveMixedFamilyBodyCollisions": sum(x["substantiveMixedFamilyBodyCollision"] for x in duplicates),
         "sourceEditionVerified": 0, "rightsCleared": 0,
         "appContentPublished": 0
     }
