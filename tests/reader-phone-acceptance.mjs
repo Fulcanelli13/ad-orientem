@@ -264,6 +264,31 @@ try{
     return shell?.dataset.objectiveContext==="true" &&
       explanation&&!explanation.hidden&&explanation.dataset.blockId==="AO.SM.B052";
   },null,{timeout:5000});
+  // B052 covers both C0173 (consecration words) and C0174 (elevation).
+  // Wait for the *same exact source cue* and rendered rail state together:
+  // touch momentum can move focus back to C0173 after the earlier check.
+  const elevationPainted=await page.waitForFunction(()=>{
+    const source=window.__AO_PHONE_PREVIEW?.getNativeEventState();
+    const context=document.querySelector('[data-role="objective-context"]');
+    const rail=document.querySelector('.ao-rail-right [data-channel="priest-action"]');
+    return source?.nativeCueId==="AO.SM.C0174" &&
+      context?.dataset.blockId==="AO.SM.B052" &&
+      rail?.dataset.actionTextFallback==="true";
+  },null,{timeout:3500}).then(()=>true,()=>false);
+  if(!elevationPainted){
+    const diagnostic=await page.evaluate(()=>{
+      const source=window.__AO_PHONE_PREVIEW?.getNativeEventState();
+      const rail=document.querySelector('.ao-rail-right [data-channel="priest-action"]');
+      return {activeCue:window.__AO_PHONE_PREVIEW?.getActiveCue(),
+        nativeCueId:source?.nativeCueId,priestAction:source?.priestAction,
+        priestActionOwner:source?.ownership?.priestAction,
+        actionTextFallback:rail?.dataset.actionTextFallback,
+        label:rail?.querySelector('[data-role="priest-action"]')?.textContent,
+        contextBlock:document.querySelector('[data-role="objective-context"]')?.dataset.blockId,
+        scrollTop:document.querySelector('.ao-prayer-card')?.scrollTop};
+    });
+    assert.fail("Elevation cue and rail did not stabilize together: "+JSON.stringify(diagnostic));
+  }
   const objectiveVisual=await page.evaluate(()=>{
     const box=document.querySelector('[data-role="objective-context"]');
     const parent=document.querySelector(".ao-reader-stage");
