@@ -1,6 +1,6 @@
 {
   "name": "Ad Orientem module heroes — acquisition and publication gates",
-  "version": "2026-10-26.audit5.13-heroes-15-source-images",
+  "version": "2026-10-26.audit6.18-module-source-coverage",
   "editorial_ledger_ref": "data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json",
   "editorial_ledger_sha_at_audit": "afb09129f52e336df64c7f1782446e7cfb6861dc",
   "generated_from_latest_user_confirmed_22_selections": true,
@@ -18,16 +18,22 @@
   ],
   "counts": {
     "selected": 22,
-    "produced_physical_masters": 13,
+    "produced_physical_masters": 18,
     "candidate_image_pages_identified": 21,
     "candidates_with_page_listed_dimensions": 18,
     "museum_or_commons_reuse_terms_explicitly_documented": 14,
     "release_cleared": 0,
     "master_quality_passed": 0,
-    "previews_visually_screened_not_master": 13,
-    "distinct_approved_heroes_with_archived_source_files": 13,
-    "technical_quality_preflight_completed": 12,
-    "original_photo_files_archived": 15
+    "previews_visually_screened_not_master": 18,
+    "distinct_approved_heroes_with_archived_source_files": 18,
+    "technical_quality_preflight_completed": 17,
+    "original_photo_files_archived": 21,
+    "remaining_modules_without_source_files": [
+      "angel",
+      "salvation",
+      "morning",
+      "evening"
+    ]
   },
   "entries": [
     {
@@ -49,9 +55,9 @@
           "https://www.metmuseum.org/art/collection/search/438724"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "local_master_path": "assets/staged/module-hero-wave2/angelus-met.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -67,7 +73,7 @@
         "Museum confirms CC0/public domain downloadable image; retrieve actual master via Met API and verify checksum."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -86,8 +92,34 @@
           "Museum photograph preferred; compare source coloration to Met's official colour-managed record.",
           "Check that Mary's face, lily and hovering angel survive mobile framing."
         ],
-        "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "quality_verification_notes": [
+          "Met official artwork 2004.31, 3741×3658, full square scene includes Mary, Gabriel, dove and putti. True painting visible including rough outer panel boundaries; native sample of sky and Mary blue are subtly grainy but no obvious artificial halos or gross flare. Strong candidate, pending colour comparison and focal QA."
+        ],
+        "alternative_reference_candidates": [
+          {
+            "source": "https://images.metmuseum.org/CRDImages/ep/original/DT5656.jpg",
+            "role": "actual unmodified research source original",
+            "dimensions": [
+              3741,
+              3658
+            ],
+            "rights": "Met CC0, object 2004.31, Philippe de Champaigne Annunciation",
+            "remarks": "Physical byte original verified; must not be treated as released master. Institutional source; needs colour and painting QA"
+          }
+        ],
+        "native_pixel_technical_preflight": "source_probe_complete_preliminary"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-wave2-20261026",
+        "file_path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+        "sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+        "byte_length": 3055151,
+        "verified_pixel_dimensions": [
+          3741,
+          3658
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -193,9 +225,9 @@
           "https://commons.wikimedia.org/wiki/File:Restout_-_La_Pentecôte_01.jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "c32547f474f4908331c9e7a013809076a65bbbcdc2f8cec6c5b6af2f7e6a1b09",
+      "local_master_path": "assets/staged/module-hero-wave2/holy-spirit.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -211,7 +243,7 @@
         "Existing approved WGA upload only 1240×730. Higher-resolution same Louvre INV20303 located; image metadata has photographer copyright notice."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -228,17 +260,44 @@
         },
         "specific_quality_risks": [
           "Compare Restout's subtle cloud transitions and small flame details; block before resolving contradictory rights metadata.",
-          "High ISO/compression and hypercontrast can compromise the painted atmosphere."
+          "High ISO/compression and hypercontrast can compromise the painted atmosphere.",
+          "Confirmed actual photo has broad glare/reflections and capture noise, not merely theoretical risk. Seek a new professional original without paying."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "UNSUITABLE as hero reproduction: 4037×2444 of Louvre Restout original exhibits conspicuous white patches of glass/lighting glare and noisy/flattened colour in upper Mary region. Actual high pixel dimensions do not compensate. Wikimedia claims PD-Art but embedded copyright says CC-BY-SA; both image quality and licensing remain blocked. Retain as research evidence ONLY."
+        ],
         "alternative_reference_candidates": [
           {
             "source": "https://commons.wikimedia.org/wiki/Category:La_Pentecôte,_Restout_(Louvre_INV20303)",
             "role": "same painting image-family comparison",
             "rights": "file-specific reuse pending",
             "remarks": "Compare WGA moderate size to newer 4037×2444 and any museum master for colour and architectural edges"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Restout_-_La_Pentec%C3%B4te_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "role": "actual unmodified research source original",
+            "dimensions": [
+              4037,
+              2444
+            ],
+            "rights": "Public domain",
+            "remarks": "Physical byte original verified; must not be treated as released master. PHOTO RIGHTS CONFLICT: Wikimedia PD-Art tag but photographer EXIF mentions CC-BY-SA; candidate research only"
           }
-        ]
+        ],
+        "native_pixel_technical_preflight": "source_probe_complete_preliminary",
+        "photo_candidate_verdict": "REJECT_FOR_HERO_REPRODUCTION_NOT_THE_PAINTING"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-wave2-20261026",
+        "file_path": "assets/staged/module-hero-wave2/holy-spirit.jpg",
+        "sha256": "c32547f474f4908331c9e7a013809076a65bbbcdc2f8cec6c5b6af2f7e6a1b09",
+        "byte_length": 4430258,
+        "verified_pixel_dimensions": [
+          4037,
+          2444
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -794,9 +853,9 @@
           "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "2a25ed08f0fc21825eb084e0f5a09de63e8bdcf13c42d8b008d1d3bc805d3cd5",
+      "local_master_path": "assets/staged/module-hero-wave2/king.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -813,7 +872,7 @@
         "Auction analysis notes figure's identity may be deliberately ambiguous between Father and Son; iconographic display review required without changing selection."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -832,8 +891,34 @@
           "Correct the unrelated auction lot reference before editorial data is reused.",
           "Check painting identity, surrounding arch and halo crop; a high-res copy of a wrong Christ is unacceptable."
         ],
-        "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "quality_verification_notes": [
+          "Correct Benson Salvator Mundi photograph 2987×3200, 7.77MB. Face/embroidered garment native 420-pixel details retain brushwork and fine iconographic decoration; white border visible outside painted field requires precise boundary handling with unmodified original retained. Exact depiction iconography should be interpreted carefully; no selected painting changes."
+        ],
+        "alternative_reference_candidates": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Ambrosius_Benson_-_Salvator_Mundi.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "role": "actual unmodified research source original",
+            "dimensions": [
+              2987,
+              3200
+            ],
+            "rights": "Public domain",
+            "remarks": "Physical byte original verified; must not be treated as released master. verify correct artist/auction image; known previous source URL incorrect"
+          }
+        ],
+        "native_pixel_technical_preflight": "source_probe_complete_preliminary"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-wave2-20261026",
+        "file_path": "assets/staged/module-hero-wave2/king.jpg",
+        "sha256": "2a25ed08f0fc21825eb084e0f5a09de63e8bdcf13c42d8b008d1d3bc805d3cd5",
+        "byte_length": 7773073,
+        "verified_pixel_dimensions": [
+          2987,
+          3200
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -1112,9 +1197,9 @@
           "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "c6d06a9458658a6de9164895ca784e17ea70548ed090ae27987f28351694d077",
+      "local_master_path": "assets/staged/module-hero-wave2/perpetual.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -1130,7 +1215,7 @@
         "Retain explicit user approval of poster, distinguish from original Roman icon."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -1149,8 +1234,35 @@
           "Check that photographic capture faithfully represents *approved poster* (not original Roman icon), including symbols, faces and typography.",
           "Reject inkjet halftone, moiré, glossy glare, uneven hue even with 3000×3688 dimensions."
         ],
-        "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "quality_verification_notes": [
+          "Approved Baclaran devotional poster scan 3000×3688. Full view shows the selected poster, but native face and hand closeups have clear print/scan texture with aliasing at contour transitions, unlike high-quality original icon photograph. User approval remains; no falsely repainting or upscaling. Fidelity and print rights require further verification."
+        ],
+        "alternative_reference_candidates": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/0/04/Our_Holy_Mother_Of_Perpetual_Succour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "role": "actual unmodified research source original",
+            "dimensions": [
+              3000,
+              3688
+            ],
+            "rights": "Public domain",
+            "remarks": "Physical byte original verified; must not be treated as released master. APPROVED POSTER SCAN, not historical icon; publication rights undecided"
+          }
+        ],
+        "native_pixel_technical_preflight": "source_probe_complete_preliminary",
+        "photo_candidate_verdict": "USER_APPROVED_POSTER_SOURCE_BUT_PRINT_FIDELITY_UNCLEARED"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-wave2-20261026",
+        "file_path": "assets/staged/module-hero-wave2/perpetual.jpg",
+        "sha256": "c6d06a9458658a6de9164895ca784e17ea70548ed090ae27987f28351694d077",
+        "byte_length": 2764032,
+        "verified_pixel_dimensions": [
+          3000,
+          3688
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -1172,9 +1284,9 @@
           "https://artsandculture.google.com/asset/adoration-of-the-trinity-landauer-altar-albrecht-d%C3%BCrer/_wGp9zTkz0OVqQ?hl=en"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "137d3df4dee890524678cbd02b9690130c5550d22ca6778621b24fc6fe6ab5b2",
+      "local_master_path": "assets/staged/module-hero-wave2/saints-gart.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -1190,7 +1302,7 @@
         "KHM GG 838; find exact faithful museum/Commons master; Google Arts & Culture web preview is not an image master."
       ],
       "visual_quality": {
-        "preview_review_status": "reference_preview_examined_not_master",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -1209,7 +1321,9 @@
           "Compare full KHM ensemble photo including sculptural frame to painting-only file. Hero must feature actual painted panel.",
           "Museum full-object shot is a fidelity reference, not necessarily an approved mobile crop."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Two exact GG838 sources archived. KHM 2245×3000 shows entire sculptural frame; valuable context but not appropriate primary painting hero. Google Arts & Culture 4969×5434 shows painting alone, all upper saint groupings and Trinity; native details show plausible clean flesh and textile transitions. Preliminarily PREFERRED image, not art re-selection."
+        ],
         "alternative_reference_candidates": [
           {
             "source": "https://www.khm.at/kunstwerke/allerheiligenbild-landauer-altar-615",
@@ -1226,8 +1340,47 @@
             ],
             "rights": "Commons exact file licence pending",
             "remarks": "Check exact GG838, source capture flatness and fine details, prefer painting-only hero if image correct"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Albrecht_D%C3%BCrer%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Allerheiligenbild_%28%22Landauer_Altar%22%29_-_GG_838_-_Kunsthistorisches_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "role": "actual unmodified research source original",
+            "dimensions": [
+              2245,
+              3000
+            ],
+            "rights": "Public domain",
+            "remarks": "Physical byte original verified; must not be treated as released master. museum_object_photo; may contain frame"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/6/61/Albrecht_D%C3%BCrer_-_Adoration_of_the_Trinity_%28Landauer_Altar%29_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "role": "actual unmodified research source original",
+            "dimensions": [
+              4969,
+              5434
+            ],
+            "rights": "Public domain",
+            "remarks": "Physical byte original verified; must not be treated as released master. possible painting-only image; independently check painting bounds"
           }
-        ]
+        ],
+        "native_pixel_technical_preflight": "source_probe_complete_preliminary",
+        "provisional_source_preference": {
+          "source": "Google Art Project painting-only full composition",
+          "path": "assets/staged/module-hero-wave2/saints-gart.jpg",
+          "sha256": "137d3df4dee890524678cbd02b9690130c5550d22ca6778621b24fc6fe6ab5b2",
+          "production_approved": false
+        }
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-wave2-20261026",
+        "file_path": "assets/staged/module-hero-wave2/saints-gart.jpg",
+        "sha256": "137d3df4dee890524678cbd02b9690130c5550d22ca6778621b24fc6fe6ab5b2",
+        "byte_length": 5931350,
+        "verified_pixel_dimensions": [
+          4969,
+          5434
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -1765,6 +1918,13 @@
       "action": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40343227960",
       "report": "data/research/lotto-rosary-yorck-third-witness-20261026.json",
       "source_images_acquired": 1
+    },
+    {
+      "branch": "research/module-hero-wave2-20261026",
+      "action": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40345453458",
+      "report": "data/research/module-hero-acquisition-wave2-20261026.json",
+      "source_images_acquired": 6,
+      "source_modules_acquired": 5
     }
   ],
   "verified_acquisition_quality_findings": [
