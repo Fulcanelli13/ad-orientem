@@ -76,7 +76,13 @@ try{
     assert.equal(await rootLocator.locator('[data-cal-custom-id="'+item.id+'"]').count(),2,
      "Expected exactly one date-context and one browse-catalogue copy for "+item.id);
     // The hidden catalogue provides discovery, not a duplicate visible date card.
-    await article.screenshot({path:resolve(target,item.id.toLowerCase()+"-"+width+".png")});
+    // Calendar repaints asynchronously as day data resolves: capture the
+    // browser viewport, not a transient DOM node which may be replaced.
+    await page.evaluate(id=>{
+      const node=document.querySelector('#ao-calendar-modular-root[data-ao-calendar-view="day"] [data-cal-custom-id="'+id+'"]');
+      node?.scrollIntoView({block:"start",behavior:"instant"});
+    },item.id);
+    await page.screenshot({path:resolve(target,item.id.toLowerCase()+"-"+width+".png")});
     report.cases.push({...item,width,geometry,sourceLinks:await article.locator('a[href^="https://"]').count()});
    }
    assert.deepEqual(errors,[],"Uncaught Calendar runtime errors: "+errors.join(" | "));
