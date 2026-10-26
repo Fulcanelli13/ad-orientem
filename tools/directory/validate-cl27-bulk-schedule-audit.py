@@ -60,6 +60,7 @@ def main():
     source_owners = audit["provider_review_cohort_1"] + audit["provider_review_cohort_2"]
     source_secondary = audit["secondary_source_replacement_queue"]
     assert len(actionable) == 296
+    assert all(row["source_id"] for row in audit["provider_review_cohort_1"])
     assert (len(audit["provider_review_cohort_1"]),
             len(audit["provider_review_cohort_2"]),
             len(source_secondary)) == (200, 71, 25)
@@ -126,6 +127,7 @@ def main():
         "new_public_approvals": 0,
         "actionable_missing_frozen_venue_source_id": 5,
         "historically_verified_missing_frozen_venue_source_id": 8,
+        "provider_review_cohort_1_all_have_frozen_source_id": True,
     }
     assert audit["summary"] == expected, "Audit summary drift"
     assert sum(not original(r, 9) for r in historically_verified) == 2108
