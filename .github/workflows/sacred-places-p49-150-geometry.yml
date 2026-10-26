@@ -1,0 +1,19 @@
+name: Sacred Places P49 150 geometry handoff
+on:
+  pull_request:
+    paths:
+      - 'data/geography/research/sacred-places-p49-ranked150-geometry-handoff.v1.json'
+      - 'tests/sacred-places-p49-150-geometry-handoff.mjs'
+      - '.github/workflows/sacred-places-p49-150-geometry.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-ranked150:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/sacred-places-p49-150-geometry-handoff.mjs
