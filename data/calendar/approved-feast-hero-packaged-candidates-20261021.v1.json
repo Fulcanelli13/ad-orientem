@@ -126,23 +126,28 @@
           2112
         ],
         "reviewed_research_branch": "research/champaigne-inv1125-photo-review-20261026",
-        "proposed_frame_free_photo": "assets/staged/champaigne-petite-cene-research/C-canvas-interior-clean-ungraded-source-derived.jpg",
-        "proposed_frame_free_photo_sha256": "99e102df2d3644783bce3ac4cb81002337f8eb166583d84f74c630be6a8efc0f",
+        "proposed_frame_free_photo": "assets/staged/champaigne-petite-cene-research/D-bottom-frame-trim-review-ungraded-source-derived.jpg",
+        "proposed_frame_free_photo_sha256": "f0742b795178e1a600e43694693f880a07039587b74ba6f352ccbf389919cb30",
         "proposed_pixel_size": [
           2250,
           1208
         ],
         "artwork_identity": "Louvre INV 1125",
         "report": "docs/research/CHAMPAIGNE-PETITE-CENE-PHOTO-FIDELITY-20261026.md",
-        "provisional_photo_preference": "YES, quality and visual framing looks better than previous 1112px whole source; not a production master",
+        "provisional_photo_preference": "D source-only research crop, closer to strict frame-free than C; check last painted row before promotion",
         "pending": [
-          "final painted-boundary signoff",
+          "actual painted-edge completeness and frame absence",
           "museum-reference color fidelity",
           "app image reuse rights in distribution jurisdictions",
-          "320/390 and desktop real app rendering"
+          "320/390/768/1440 actual-browser rendering with new D source"
         ],
         "actual_asset_changed": false,
-        "final_photo_released": false
+        "final_photo_released": false,
+        "previous_crop_C": {
+          "sha256": "99e102df2d3644783bce3ac4cb81002337f8eb166583d84f74c630be6a8efc0f",
+          "status": "REJECT_FRAME_FREE_RELEASE",
+          "reason": "Native-pixel perimeter strips show small gilded frame leak at bottom."
+        }
       }
     },
     {
@@ -300,23 +305,28 @@
           2112
         ],
         "reviewed_research_branch": "research/champaigne-inv1125-photo-review-20261026",
-        "proposed_frame_free_photo": "assets/staged/champaigne-petite-cene-research/C-canvas-interior-clean-ungraded-source-derived.jpg",
-        "proposed_frame_free_photo_sha256": "99e102df2d3644783bce3ac4cb81002337f8eb166583d84f74c630be6a8efc0f",
+        "proposed_frame_free_photo": "assets/staged/champaigne-petite-cene-research/D-bottom-frame-trim-review-ungraded-source-derived.jpg",
+        "proposed_frame_free_photo_sha256": "f0742b795178e1a600e43694693f880a07039587b74ba6f352ccbf389919cb30",
         "proposed_pixel_size": [
           2250,
           1208
         ],
         "artwork_identity": "Louvre INV 1125",
         "report": "docs/research/CHAMPAIGNE-PETITE-CENE-PHOTO-FIDELITY-20261026.md",
-        "provisional_photo_preference": "YES, quality and visual framing looks better than previous 1112px whole source; not a production master",
+        "provisional_photo_preference": "D source-only research crop, closer to strict frame-free than C; check last painted row before promotion",
         "pending": [
-          "final painted-boundary signoff",
+          "actual painted-edge completeness and frame absence",
           "museum-reference color fidelity",
           "app image reuse rights in distribution jurisdictions",
-          "320/390 and desktop real app rendering"
+          "320/390/768/1440 actual-browser rendering with new D source"
         ],
         "actual_asset_changed": false,
-        "final_photo_released": false
+        "final_photo_released": false,
+        "previous_crop_C": {
+          "sha256": "99e102df2d3644783bce3ac4cb81002337f8eb166583d84f74c630be6a8efc0f",
+          "status": "REJECT_FRAME_FREE_RELEASE",
+          "reason": "Native-pixel perimeter strips show small gilded frame leak at bottom."
+        }
       }
     },
     {
