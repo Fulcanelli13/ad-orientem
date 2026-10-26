@@ -18,13 +18,13 @@ const rank=v=>{
   const match=String(v??"").trim().toUpperCase().match(/^(IV|III|II|I)(?:\s|[.\-]|$)/);
   return match?({I:1,II:2,III:3,IV:4})[match[1]]:null;
 };
-const principalId=id=>/^(?:sancti|tempora|commune):[A-Za-z0-9:-]+$/.test(id);
+const principalId=id=>/^(?:sancti|tempora|commune):[A-Za-z0-9:-]+$/.test(id)||id===":feria:4:w";
 const principalClass=id=>{
   const match=id.match(/:([1-4]):[a-z]$/i);
   return match?Number(match[1]):null;
 };
 const sourceKind=id=>id.startsWith("sancti:")?"SANCTORAL":
-  id.startsWith("tempora:")?"TEMPORAL":"OTHER";
+  id.startsWith("tempora:")?"TEMPORAL":id===":feria:4:w"?"GENERIC_FERIA":"OTHER";
 const hasVotiveOrRequiemProfile=p=>/(?:votive|requiem|dead)/i.test(String(p?.riteProfile??p?.profile??""));
 const absent=(reason)=>Object.freeze({gloria:withheld(reason),credo:withheld(reason),
   scope:"GENERAL_ROMAN_1962",authority:RULES_URL,nonInstructional:true});
@@ -74,7 +74,7 @@ export function review1962OrdinaryForCalendarDay(resolution){
   // Unlike an ordinary Sunday, it carries neither Gloria nor Credo.
   // Source-ID/date/class/colour are all required; no calendar-name guess.
   const ordinaryPentecostFeria=!sunday&&klass===4&&colour==="green"&&
-    /^tempora:Pent\d{1,2}-[1-6]:4:g$/i.test(id);
+    (/^tempora:Pent\d{1,2}-[1-6]:4:g$/i.test(id)||sourceKind(id)==="GENERIC_FERIA");
   if(ordinaryPentecostFeria)
     gloria=result(false,"BR_238_C_AND_RGMR_432_A","IV_CLASS_PER_ANNUM_FERIA",BREVIARY_RULES_URL);
   if(sunday)credo=result(true,"RGMR_475_A","SUNDAY");
