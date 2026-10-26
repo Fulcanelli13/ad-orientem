@@ -1,0 +1,62 @@
+name: Directory CL6 research evidence and SQLite
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'tools/directory/validate-cl*-*.py'
+      - 'tools/directory/rebuild-cl*-*.py'
+      - '.github/workflows/directory-cl6-source-reconciliation.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'tools/directory/validate-cl*-*.py'
+      - 'tools/directory/rebuild-cl*-*.py'
+      - '.github/workflows/directory-cl6-source-reconciliation.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate CL2/3/4/5 frozen research provenance
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+      - name: Validate CL6 source evidence, 9 addresses, 40 identity holds
+        run: python3 tools/directory/validate-cl6-source-reconciliation.py
+      - name: Rebuild queryable original CL2 plus CL5/CL6 SQL research tables
+        run: python3 tools/directory/rebuild-cl6-research-index.py --output /tmp/ad-orientem-cl6.sqlite
+      - name: Inspect rebuilt counts and no-fault integrity
+        run: |
+          python3 - <<'PY'
+          import sqlite3
+          db=sqlite3.connect('/tmp/ad-orientem-cl6.sqlite')
+          expected={
+            "canonical_site":2584,
+            "cl5_provisional_physical_intake":17,
+            "cl5_institutional_evidence":4,
+            "cl5_address_backfills":5,
+            "cl5_identity_queue":40,
+            "cl6_source_review":17,
+            "cl6_address_backfill":9,
+            "cl6_identity_holds":40,
+            "cl6_safeguards":6
+          }
+          actual={k:db.execute('SELECT COUNT(*) FROM '+k).fetchone()[0] for k in expected}
+          assert actual==expected,(actual,expected)
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert not db.execute('PRAGMA foreign_key_check').fetchall()
+          assert db.execute('SELECT COUNT(*) FROM cl6_identity_holds WHERE canonical_join_approved<>0').fetchone()[0]==0
+          print('CL6 reconstruction PASS:',actual)
+          PY
