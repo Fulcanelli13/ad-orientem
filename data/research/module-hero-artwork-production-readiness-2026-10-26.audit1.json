@@ -1,6 +1,6 @@
 {
   "name": "Ad Orientem module heroes — acquisition and publication gates",
-  "version": "2026-10-26.audit2.visual-fidelity-gate",
+  "version": "2026-10-26.audit3.11-files-checksummed",
   "editorial_ledger_ref": "data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json",
   "editorial_ledger_sha_at_audit": "afb09129f52e336df64c7f1782446e7cfb6861dc",
   "generated_from_latest_user_confirmed_22_selections": true,
@@ -18,13 +18,15 @@
   ],
   "counts": {
     "selected": 22,
-    "produced_physical_masters": 0,
+    "produced_physical_masters": 11,
     "candidate_image_pages_identified": 21,
     "candidates_with_page_listed_dimensions": 18,
     "museum_or_commons_reuse_terms_explicitly_documented": 14,
     "release_cleared": 0,
     "master_quality_passed": 0,
-    "previews_visually_screened_not_master": 4
+    "previews_visually_screened_not_master": 4,
+    "distinct_approved_heroes_with_archived_source_files": 11,
+    "technical_quality_preflight_completed": 11
   },
   "entries": [
     {
@@ -241,9 +243,9 @@
           "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "local_master_path": "assets/staged/module-hero-masters/heart-jesus.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -276,7 +278,20 @@
           "Inspect red heart, radiance, dark contours, gold tones and glazing for false oversaturation or edge halos."
         ],
         "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "alternative_reference_candidates": [],
+        "native_pixel_technical_preflight": "complete_not_human_passed"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-pd-masters-20261026",
+        "file_path": "assets/staged/module-hero-masters/heart-jesus.jpg",
+        "sha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+        "byte_length": 2012474,
+        "verified_pixel_dimensions": [
+          2345,
+          3045
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -298,9 +313,9 @@
           "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+      "local_master_path": "assets/staged/module-hero-masters/heart-mary.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -336,7 +351,20 @@
           "Artwork metadata dating anomaly is not photo evidence."
         ],
         "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "alternative_reference_candidates": [],
+        "native_pixel_technical_preflight": "complete_not_human_passed"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-pd-masters-20261026",
+        "file_path": "assets/staged/module-hero-masters/heart-mary.jpg",
+        "sha256": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+        "byte_length": 1951966,
+        "verified_pixel_dimensions": [
+          2277,
+          2960
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -358,9 +386,9 @@
           "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
+      "local_master_path": "assets/staged/module-hero-masters/michael.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -396,7 +424,20 @@
           "High-res museum scan preferable to merely larger digital copy."
         ],
         "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "alternative_reference_candidates": [],
+        "native_pixel_technical_preflight": "complete_not_human_passed"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-pd-masters-20261026",
+        "file_path": "assets/staged/module-hero-masters/michael.jpg",
+        "sha256": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
+        "byte_length": 513396,
+        "verified_pixel_dimensions": [
+          1657,
+          2441
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -502,9 +543,9 @@
           "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+      "local_master_path": "assets/staged/module-hero-masters/regina.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -540,7 +581,20 @@
           "Check topmost banner and lower foot/sepulchre not clipped."
         ],
         "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "alternative_reference_candidates": [],
+        "native_pixel_technical_preflight": "complete_not_human_passed"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-pd-masters-20261026",
+        "file_path": "assets/staged/module-hero-masters/regina.jpg",
+        "sha256": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+        "byte_length": 4593377,
+        "verified_pixel_dimensions": [
+          2144,
+          3000
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -554,8 +608,8 @@
       "verified_source_object": true,
       "master_candidate": {
         "source_page": "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg",
-        "width_px": 4964,
-        "height_px": 6060,
+        "width_px": 3122,
+        "height_px": 3813,
         "rights_review": "The Met official public domain; Commons PD-Art",
         "source_status": "museum_public_domain",
         "evidence_pages": [
@@ -563,9 +617,9 @@
           "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "local_master_path": "assets/staged/module-hero-masters/adoration.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -601,7 +655,20 @@
           "Check face/host/halo whites retain tonal detail."
         ],
         "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "alternative_reference_candidates": [],
+        "native_pixel_technical_preflight": "complete_not_human_passed"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-museum-photos-20261026",
+        "file_path": "assets/staged/module-hero-masters/adoration.jpg",
+        "sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+        "byte_length": 2467303,
+        "verified_pixel_dimensions": [
+          3122,
+          3813
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -623,9 +690,9 @@
           "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(1605-6).jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+      "local_master_path": "assets/staged/module-hero-masters/scripture.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -661,7 +728,20 @@
           "Preserve dark pigments and illumination; do not brighten tenebrism artificially."
         ],
         "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "alternative_reference_candidates": [],
+        "native_pixel_technical_preflight": "complete_not_human_passed"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-pd-masters-20261026",
+        "file_path": "assets/staged/module-hero-masters/scripture.jpg",
+        "sha256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+        "byte_length": 7423474,
+        "verified_pixel_dimensions": [
+          8708,
+          6212
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -746,9 +826,9 @@
           "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "a2c3a6eda78b412da44d50197d853f01e1cd3ded5ebd5996816db451f11606b6",
+      "local_master_path": "assets/staged/module-hero-masters/souls.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -784,7 +864,20 @@
           "Review tonal detail of darker souls without synthetic shadow enhancement."
         ],
         "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "alternative_reference_candidates": [],
+        "native_pixel_technical_preflight": "complete_not_human_passed"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-pd-masters-20261026",
+        "file_path": "assets/staged/module-hero-masters/souls.jpg",
+        "sha256": "a2c3a6eda78b412da44d50197d853f01e1cd3ded5ebd5996816db451f11606b6",
+        "byte_length": 1789923,
+        "verified_pixel_dimensions": [
+          2393,
+          3200
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -1125,9 +1218,9 @@
           "https://commons.wikimedia.org/wiki/File:Adoration_of_the_shepherds,_by_Gerard_van_Honthorst.jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "347cf5d74cc575bcb082250a90dc64c54dc673e94fbc4e48efcd27fa2a3b09c1",
+      "local_master_path": "assets/staged/module-hero-masters/visit.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -1163,7 +1256,20 @@
           "Inspect candle/child radiance, excessive overexposure and black clipping."
         ],
         "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "alternative_reference_candidates": [],
+        "native_pixel_technical_preflight": "complete_not_human_passed"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-pd-masters-20261026",
+        "file_path": "assets/staged/module-hero-masters/visit.jpg",
+        "sha256": "347cf5d74cc575bcb082250a90dc64c54dc673e94fbc4e48efcd27fa2a3b09c1",
+        "byte_length": 9588163,
+        "verified_pixel_dimensions": [
+          3948,
+          3328
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -1185,9 +1291,9 @@
           "https://commons.wikimedia.org/wiki/File:Meirelles-primeiramissa2.jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "909302874ecb137b75c3b97974e9a4b42ec3c4d10a6d3e83bc98c130057b760f",
+      "local_master_path": "assets/staged/module-hero-masters/mass.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -1223,7 +1329,20 @@
           "Texture and faces across scene must remain coherent, not upscaled."
         ],
         "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "alternative_reference_candidates": [],
+        "native_pixel_technical_preflight": "complete_not_human_passed"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-pd-masters-20261026",
+        "file_path": "assets/staged/module-hero-masters/mass.jpg",
+        "sha256": "909302874ecb137b75c3b97974e9a4b42ec3c4d10a6d3e83bc98c130057b760f",
+        "byte_length": 3421164,
+        "verified_pixel_dimensions": [
+          4424,
+          3399
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -1237,17 +1356,17 @@
       "verified_source_object": true,
       "master_candidate": {
         "source_page": "https://www.nga.gov/artworks/34956-return-prodigal-son",
-        "width_px": null,
-        "height_px": null,
+        "width_px": 4096,
+        "height_px": 3712,
         "rights_review": "NGA explicit public domain open access",
         "source_status": "museum_public_domain",
         "evidence_pages": [
           "https://www.nga.gov/artworks/34956-return-prodigal-son"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "local_master_path": "assets/staged/module-hero-masters/confession.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -1290,7 +1409,20 @@
             "rights": "NGA official open access; verify exact response and bytes",
             "remarks": "Mural-scale original; preserve father-son embrace and side attendants; avoid over-warm colour grade"
           }
-        ]
+        ],
+        "native_pixel_technical_preflight": "complete_not_human_passed"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-museum-photos-20261026",
+        "file_path": "assets/staged/module-hero-masters/confession.jpg",
+        "sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+        "byte_length": 3022309,
+        "verified_pixel_dimensions": [
+          4096,
+          3712
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -1392,8 +1524,8 @@
       "verified_source_object": true,
       "master_candidate": {
         "source_page": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000",
-        "width_px": null,
-        "height_px": null,
+        "width_px": 2220,
+        "height_px": 3000,
         "rights_review": "MNAC lists artwork as Domini públic; direct downloadable image terms/master bytes not yet checked",
         "source_status": "museum_public_domain_object",
         "evidence_pages": [
@@ -1401,9 +1533,9 @@
           "https://www.museunacional.cat/sites/default/files/images/art_piece/first_gallery/34950/008327-000.JPG"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+      "local_master_path": "assets/staged/module-hero-masters/sorrows.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -1447,7 +1579,20 @@
             "rights": "MNAC object public-domain; separate image terms/master inspection pending",
             "remarks": "Full seven sorrow roundels and sword must survive; inspect lower black garment for digital posterization"
           }
-        ]
+        ],
+        "native_pixel_technical_preflight": "complete_not_human_passed"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-museum-photos-20261026",
+        "file_path": "assets/staged/module-hero-masters/sorrows.jpg",
+        "sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+        "byte_length": 1454827,
+        "verified_pixel_dimensions": [
+          2220,
+          3000
+        ],
+        "file_is_not_promoted_to_production": true
       }
     }
   ],
@@ -1495,6 +1640,52 @@
       "module_id": "angel",
       "finding": "Copy/variant confusion now proven by Fondazione Zeri's original-vs-copy catalogue data. Reject images of copied variants even if technically superior.",
       "source": "https://catalogo.fondazionezeri.unibo.it/entry/work/52220/Anonimo%2C%20Angelo%20custode"
+    }
+  ],
+  "acquisition_provenance": [
+    {
+      "branch": "research/module-hero-pd-masters-20261026",
+      "action": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40340133756",
+      "report": "data/research/module-hero-pd-acquisition-20261026.run.json",
+      "source_images_acquired": 8
+    },
+    {
+      "branch": "research/module-hero-museum-photos-20261026",
+      "action": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40340510955",
+      "report": "data/research/module-hero-museum-acquisition-20261026.json",
+      "source_images_acquired": 3
+    }
+  ],
+  "verified_acquisition_quality_findings": [
+    {
+      "module_id": "michael",
+      "finding": "1657×2441 JPEG is only 513396 bytes (approximately 0.13 bytes per pixel); native JPEG compression/ringing detail must be checked before approval.",
+      "status": "technical_review_required"
+    },
+    {
+      "module_id": "scripture",
+      "finding": "8708×6212 JPEG is 7423474 bytes (approximately 0.14 bytes per pixel); suspiciously low detail per pixel for art reproduction, regardless of huge dimensions.",
+      "status": "technical_review_required"
+    },
+    {
+      "module_id": "joseph",
+      "finding": "Original source size 19749000 bytes exceeded conservative 12-MiB cap; never substitute smaller cropped derivative without comparing fidelity. Not yet archived.",
+      "status": "source_not_acquired"
+    },
+    {
+      "module_id": "confession",
+      "finding": "NGA open-access native download 4096×3712, ICC profile present, 3022309 bytes, SHA256 recorded. Technical quality preflight did not flag metadata issues; painterly quality not yet reviewed.",
+      "status": "technical_review_complete_not_approved"
+    },
+    {
+      "module_id": "sorrows",
+      "finding": "MNAC original 2220×3000, ICC profile present, 1454827 bytes, SHA256 recorded. Photograph rights and full-resolution visual QA remain open.",
+      "status": "technical_review_complete_not_approved"
+    },
+    {
+      "module_id": "adoration",
+      "finding": "Met issued original 3122×3813, no embedded ICC profile, SHA256 recorded. Compare colour against museum display/reference prior to release.",
+      "status": "technical_review_complete_not_approved"
     }
   ]
 }
