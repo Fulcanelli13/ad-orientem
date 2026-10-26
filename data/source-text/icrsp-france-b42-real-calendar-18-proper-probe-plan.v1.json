@@ -14,7 +14,9 @@
       "kind": "POSITIVE_PRINTED_STATUIT",
       "independentSources": [
         "https://ordo.fsspx.org/day/2026-11-11?lang=en",
-        "https://missale.online/proprium/en/sancti/s_martini_episcopi_et_confessoris"
+        "https://missale.online/proprium/en/sancti/s_martini_episcopi_et_confessoris",
+        "https://www.introibo.fr/11-11-St-Martin-eveque-et",
+        "https://extraordinaryform.org/masses/1111StMartinConfessorBishopM20.pdf"
       ]
     },
     {
@@ -22,7 +24,8 @@
       "caseId": "ST_REMIGIUS_COMMEMORATION",
       "kind": "NEGATIVE_DO_NOT_SUBSTITUTE_MAIN_STATUIT",
       "independentSources": [
-        "https://www.missalemeum.com/en/widgets/propers/2026-10-01"
+        "https://www.missalemeum.com/en/widgets/propers/2026-10-01",
+        "https://ordo.fsspx.org/day/2026-10-01?lang=en&mode=liturgical"
       ]
     },
     {
@@ -126,12 +129,12 @@
     {
       "date": "2026-11-11",
       "rule": "MAIN_ST_MARTIN_AND_STATUIT_LATIN_INTROIT",
-      "rationale": "FSSPX 2026-11-11 and Missale Online St Martin name the principal saint and first Confessor Pontiff Common. Presence of St Menas commemoration does not independently authorize its insertion in a nonconventual Sung Mass."
+      "rationale": "FSSPX 2026-11-11 and Missale Online St Martin name the principal saint and first Confessor Pontiff Common. Presence of St Menas commemoration does not independently authorize its insertion in a nonconventual Sung Mass. The feast-specific first Collect is Deus qui conspicis, not the generic Confessor Pontiff Da quaesumus. See dedicated St Martin sources; this must not be silently substituted."
     },
     {
       "date": "2026-10-01",
       "rule": "ST_REMI_IS_NOT_PRINCIPAL_STATUIT_MASS",
-      "rationale": "Missale Meum 2026-10-01 marks Feria as the principal, with St Remigius only commemorated."
+      "rationale": "Missale Meum 2026-10-01 marks Feria as the principal, with St Remigius only commemorated. The actual 1962 ferial Introit begins Da pacem, Domine as separately confirmed by SSPX liturgical Ordo."
     }
   ],
   "outputPolicy": "Permanent plan committed to repository; browser test reports observed resolved day ID, sourcePath, safe short Latin incipits and selection/bilingual readiness, never full copyrighted source text or live modification. Runtime evidence must be separately reviewed and permanently committed before 7-day artifact expiration.",
