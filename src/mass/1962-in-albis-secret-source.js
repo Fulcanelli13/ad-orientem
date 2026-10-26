@@ -25,6 +25,12 @@ function exactFrenchDonorOrder(existing,canonical){
    !/^Par Notre-Seigneur Jésus-Christ, votre Fils/u.test(lines[1]))return false;
  return normalize(existing)===normalize(lines[1]+"\n"+lines[0]);
 }
+function sameCertifiedPrayerBody(existing,certified){
+ const observed=String(existing??"").trim().split("\n");
+ const expected=String(certified??"").trim().split("\n");
+ return observed.length===2&&expected.length===2&&
+   normalize(observed[0])===normalize(expected[0]);
+}
 function matchPartial(existing,actual){
  const value=String(existing??"").trim();
  if(!value||/^\s*\$Per Dominum\.?$/u.test(value))return true;
@@ -91,6 +97,12 @@ export function recover1962InAlbisSecretFromPinnedSource(data,principalCelebrati
  // Do not replace an authentic complete oration; and never overwrite any
  // partial text that disagrees with the certified named Secret.
  const reversedPinnedFrench=exactFrenchDonorOrder(old.fr,contents.fr);
+ // With a fully populated French donor reversal, require *full prayer-body*
+ // agreement in both other languages, not merely the shared first 32 words.
+ // The canonical conclusion may have equivalent typographical differences.
+ if(reversedPinnedFrench&&
+   (!sameCertifiedPrayerBody(old.lat??old.la,contents.lat)||
+    !sameCertifiedPrayerBody(old.en,contents.en)))return null;
  // A complete genuine Secret is never replaced. The single exception is
  // the attested French macro-first source ordering, with exact source parity.
  if(["lat","en","fr"].every(lang=>resolvedText(old[lang]??(lang==="lat"?old.la:null)))&&
