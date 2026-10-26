@@ -14,6 +14,7 @@ class B40EditionTriage(unittest.TestCase):
         cls.hashes=read("icrsp-france-b40-all223-duplicate-groups-edition-triage.v1.json")
         cls.sales=read("icrsp-france-b40-29-named-salesian-annecy-toc-crosswalk.v1.json")
         cls.families=read("icrsp-france-b40-four-author-edition-and-language-gates.v1.json")
+        cls.concordances=read("icrsp-france-b40-three-salesian-opening-text-concordances.v1.json")
         cls.old=read("icrsp-france-b39-2919-panel-duplicates-and-edition-intake.v1.json")
 
     def test_all_duplicate_sha_groups_exactly_once(self):
@@ -71,5 +72,23 @@ class B40EditionTriage(unittest.TestCase):
             self.assertFalse(doc["publicationApproved"])
         self.assertTrue(self.families["releaseRestrictions"]["noProductionMassCalendarModification"])
         self.assertTrue(self.families["releaseRestrictions"]["noOfficeModule"])
+
+    def test_three_opening_concordances_are_not_full_print_or_rights_certification(self):
+        c=self.concordances
+        self.assertEqual(c["counts"]["distinctICRSPArticlePagesCompared"],3)
+        self.assertEqual(c["counts"]["totalIndividualHistoricalPiecesSignalled"],7)
+        self.assertEqual({r["articleId"] for r in c["cases"]},
+                         {"a0389_ancien","a0130_ancien","a0562_ancien"})
+        for r in c["cases"]:
+            self.assertTrue(r["openingMatch"].endswith("EDITORIAL_PAGE_MARKERS") or
+                            r["openingMatch"].endswith("EDITORIAL_MARKERS"))
+            self.assertFalse(r["entireSourceItemChecked"])
+            self.assertFalse(r["fullTextMachineDiffPerformed"])
+            self.assertFalse(r["originalPrintedFacsimileVisualCertification"])
+            self.assertFalse(r["sourceTranslationOrModernEditorialRightsCleared"])
+            self.assertFalse(r["appContentOwnerParityDone"])
+            self.assertFalse(r["appPublicationApproved"])
+        self.assertFalse(c["publicationApproved"])
+        self.assertFalse(c["rightsCleared"])
 if __name__=="__main__":
     unittest.main()
