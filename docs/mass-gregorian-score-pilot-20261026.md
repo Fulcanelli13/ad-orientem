@@ -45,7 +45,9 @@ local engraving and facsimile comparison remain future release gates.
 ## Pre-Mass musical programme — first working handoff
 
 The **existing** unified Mass preparation Folio now contains an optional
-`Chants of this Mass` disclosure in its reader step (only Sung/Solemn Mass).
+`Chants of this Mass` disclosure in its reader step (sung/solemn calendar or
+votive Masses only). Requiem, Nuptial and distinct rites are excluded until
+specific musical mappings are validated.
 It offers **Unknown** by default and the three verified transcribed Kyrie
 examples. All other musical opportunities remain unresolved, including
 the Proper, Sanctus/Benedictus and Communion; no generic settings are applied
