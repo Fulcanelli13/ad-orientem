@@ -149,7 +149,7 @@ const CSS=String.raw`
 `;
 
 // Model never reads the priest's current text to advance the musical score.
-export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
+export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},programmeScoreId=null}={}){
   const dock=root?.querySelector?.(".ao-schola-dock");
   const controls=dock?.querySelector?.(".ao-schola-controls");
   const doc=root?.ownerDocument;
@@ -188,7 +188,7 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
   dialogue.innerHTML=`<div class="ao-chant-score-sheet">
     <div class="ao-chant-score-head"><span class="ao-chant-score-title" data-score-title>Gregorian chant</span>
       <button class="ao-chant-score-close" type="button" data-score-close>Close</button></div>
-    <p class="ao-chant-score-warning">Reference score — not confirmation of what the choir sings.
+    <p class="ao-chant-score-warning">User-reported or reference score — not independent confirmation of what the choir sings.
       Follow manually; no recording or microphone is active.</p>
     <div class="ao-chant-score-reading" data-score-full-reading tabindex="0"
        aria-label="Full Gregorian score; scroll manually">
@@ -208,7 +208,8 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
   const fullViewport=dialogue.querySelector("[data-score-full-reading]");
   const picture=panel.querySelector("[data-score-image]");
   const fullPicture=dialogue.querySelector("[data-score-full-image]");
-  let scoreId=SCHOLA_SCORE_PILOT.id;
+  const preselected=availableNativeScholaScores("KYRIE").find(item=>item.id===programmeScoreId);
+  let scoreId=preselected?.id??SCHOLA_SCORE_PILOT.id;
   let isOpen=false, lastTrack=null, destroyed=false;
   const inlineEngraver=createOfflineChantEngraver({viewport:picture,document:doc});
   const expandedEngraver=createOfflineChantEngraver({viewport:fullPicture,document:doc});
