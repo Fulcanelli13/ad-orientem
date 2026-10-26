@@ -66,11 +66,18 @@ try{
     const chunk=dates.slice(offset,offset+12);
     const response=await page.evaluate(async ids=>{
       const resolver=globalThis.AO_RUNTIME_V8?.resolver;
+      const {review1962OrdinaryForCalendarDay}=await import("/src/calendar/ordo-1962-ordinary-rule-review.js");
       if(!resolver||typeof resolver.resolveDay!=="function")throw Error("Production day resolver unavailable");
       return Promise.all(ids.map(async date=>{
         try{
           const r=await resolver.resolveDay(date);
           const d=r?.day?.main||{},p=r?.proper?.data||{};
+          const ordo=review1962OrdinaryForCalendarDay(r);
+          const sourceRule=key=>{
+            const decision=ordo[key];
+            return {status:decision.status,value:decision.value,
+              clause:decision.clause||null,sourceUrl:decision.sourceUrl||null};
+          };
           const commRaw=r?.day?.commemorations||d.commemorations||r?.commemorations||[];
           const comms=(Array.isArray(commRaw)?commRaw:[commRaw]).map(x=>
             typeof x==="string"?x:String(x?.title||x?.name||x?.titleFr||x?.id||"")).filter(Boolean);
@@ -80,6 +87,7 @@ try{
             provenance:{dayTitle:d.title??null,dayColour:d.color??d.colour??null,properTitle:p.name??p.title?.en??null,properColour:p.color??p.colour??null,colourPlan:r?.colourPlan??null,dayCommemorations:d.commemorations??null,properCommemorations:p.commemorations??null},
             rawRank:p.rank??d.rank??null,rawColour:(/^tempora:Quad6-5r:/.test(String(d.id??""))?r?.colourPlan?.primary:r?.colourPlan?.massColor)??p.color??p.colour??d.color??d.colour??r?.colourPlan?.name??null,
             commemorations:comms,properStatus:String(r?.proper?.status||""),
+            ordoRuleReview:{gloria:sourceRule("gloria"),credo:sourceRule("credo")},
             composition:{
               commemorations:(p.calendarCommemorations||[]).map(x=>({name:x.name,path:x.path,prayerSourcePath:x.prayerSourcePath||null,rank:x.rank})),
               collects:(p.collects||[]).length,secrets:(p.secrets||[]).length,
@@ -231,6 +239,16 @@ try{
     missingTitleRankColour:incomplete.length,independentChecks:checks.length,
     independentlyMatched:checks.length-discrepancies.length,independentDiscrepancies:discrepancies.length,
     fullYearIndependentlyCertified:false,
+    ordoRules:{
+      gloriaSupported:rows.filter(x=>x.ordoRuleReview?.gloria?.status==="RULE_SUPPORTED").length,
+      credoSupported:rows.filter(x=>x.ordoRuleReview?.credo?.status==="RULE_SUPPORTED").length,
+      bothSupported:rows.filter(x=>x.ordoRuleReview?.gloria?.status==="RULE_SUPPORTED"&&
+        x.ordoRuleReview?.credo?.status==="RULE_SUPPORTED").length,
+      withheldDates:rows.filter(x=>x.ordoRuleReview?.gloria?.status!=="RULE_SUPPORTED"||
+        x.ordoRuleReview?.credo?.status!=="RULE_SUPPORTED").length,
+      authority:"RGMR_1960_AND_ROMAN_BREVIARY_1960",
+      limitation:"General Roman calendar rubric-match only; source-specific Mass selections and particular ordi not certified."
+    },
     status:"EVIDENCE_AUDIT_NOT_CERTIFICATION",
   };
   result={schema:"ao-1962-year-runtime-audit-v1",createdAt:new Date().toISOString(),sources:fixture.sources,
@@ -246,6 +264,16 @@ try{
   console.log("CALENDAR_1962_YEAR_AUDIT_SUMMARY="+JSON.stringify(summary));
   console.log("CALENDAR_1962_YEAR_AUDIT_TOP_FINDINGS="+JSON.stringify(discrepancies.slice(0,30).map(x=>({date:x.date,problems:x.problems,title:x.actual?.title,rank:x.actual?.rawRank,color:x.actual?.rawColour}))));
   assert.equal(rows.length,365,"Production resolver sweep must cover every day of 2026");
+  // Full year *screening* does not confer independent certification, but
+  // it must not misreport the living 2026 IV feria as a votive Mass.
+  const oct26=rows.find(x=>x.date==="2026-10-26");
+  assert.equal(oct26.mainId,":feria:4:w","Live general Roman feria identity changed");
+  assert.equal(oct26.ordoRuleReview.gloria.value,false);
+  assert.equal(oct26.ordoRuleReview.credo.value,false);
+  const rosary=rows.find(x=>x.date==="2026-10-07");
+  assert.equal(rosary.ordoRuleReview.gloria.value,true);
+  assert.equal(rosary.ordoRuleReview.credo.value,true);
+  assert.ok(summary.ordoRules.bothSupported>60,"Ordo bulk rubric review unexpectedly lost coverage");
   assert.equal(new Set(rows.map(x=>x.date)).size,365,"Production resolver sweep must not repeat dates");
   if(process.env.AO_CALENDAR_AUDIT_STRICT==="1")
     assert.equal(unresolved.length+incomplete.length+discrepancies.length,0,"Full-year source audit has unresolved/discrepant data");
