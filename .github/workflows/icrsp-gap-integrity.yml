@@ -46,6 +46,11 @@ on:
       - 'data/source-text/icrsp-france-b20-sanctoral-temporal-160-content-selection.v1.json'
       - 'data/source-text/icrsp-france-b20-ten-web-reviewed-claim-leads-and-owner-parity.v1.json'
       - 'tests/test_icrsp_b20_source_content_selection.py'
+      - 'data/source-text/icrsp-france-855-verified-metadata.v1.json'
+      - 'data/source-text/icrsp-france-783-verified-commentary-labels.v1.json'
+      - 'data/source-text/icrsp-france-corpus-coverage-20261026.v1.json'
+      - 'data/source-text/icrsp-france-next250-metadata-reading-queue.v1.json'
+      - 'tests/test_icrsp_durable_855_783_250_coverage.py'
   workflow_dispatch:
 
 permissions:
@@ -80,3 +85,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b18_fourth_sunday_scan_ocr_variant.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b19_signed_preface_edition_boundaries.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b20_source_content_selection.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_durable_855_783_250_coverage.py' -v
