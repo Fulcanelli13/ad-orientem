@@ -10,6 +10,8 @@ on:
       - "src/calendar/ordo-1962-ordinary-rule-review.js"
       - "tests/calendar-ordo-1962-rules.mjs"
       - "tests/calendar-ordo-mass-facts.mjs"
+      - "src/calendar/ordo-1962-preface-review.js"
+      - "tests/calendar-ordo-1962-preface-review.mjs"
       - "tests/calendar-phone-month-controls.mjs"
       - ".github/workflows/calendar-phone-month-controls.yml"
   workflow_dispatch:
@@ -27,6 +29,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Source-bounded 1962 Mass Ordo contract
         run: node tests/calendar-ordo-mass-facts.mjs
+      - name: Source-bounded 1962 Preface rubric selection
+        run: node tests/calendar-ordo-1962-preface-review.mjs
       - name: Source-bounded 1962 universal rubrics
         run: node tests/calendar-ordo-1962-rules.mjs
       - name: Actual Today inline Calendar at 320/390/430
