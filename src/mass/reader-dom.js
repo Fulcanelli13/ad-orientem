@@ -2766,7 +2766,10 @@ export function createReaderDomAdapter({
     const shell=root.querySelector("[data-ao-reader-shell]");
     const scholaActive=dock.dataset.active==="true";
     const scholaRelevant=Boolean(textValue(current?.schola)) && current?.scholaShared!==true;
-    const reserve=(scholaActive||scholaRelevant||scholaCollapsed)
+    const notationOpen=dock.dataset.notation==="true" && !scholaCollapsed;
+    const viewportHeight=root.ownerDocument?.defaultView?.innerHeight||700;
+    const scoreReserve=Math.max(260,Math.min(430,Math.round(viewportHeight*.42)));
+    const reserve=notationOpen ? scoreReserve : (scholaActive||scholaRelevant||scholaCollapsed)
       ? (scholaCollapsed ? 44 :
           dock.dataset.shared==="true" && !scholaManuallyResized ? 132 : scholaHeight) : 0;
     if(shell){
@@ -2943,6 +2946,7 @@ export function createReaderDomAdapter({
       const scholaToggle=event.target?.closest?.("[data-schola-toggle]");
       if(scholaToggle){
         scholaCollapsed=!scholaCollapsed;
+        if(scholaCollapsed)chantScorePilot?.hide?.();
         if(!scholaCollapsed)scholaHeight=scholaExpandedHeight;
         syncScholaChrome();
         ensureShortCardCueTravel();
@@ -3157,7 +3161,7 @@ export function createReaderDomAdapter({
     prepared=nextPrepared;
     mode=normalizePresentationMode(prepared.readerPreferences?.mode ?? prepared.session.resolvedMass.presentationMode);
     root.innerHTML=buildReaderShellMarkup(prepared);
-    chantScorePilot=installNativeScholaScorePilot(root);
+    chantScorePilot=installNativeScholaScorePilot(root,{onLayoutChange:()=>syncScholaChrome()});
     const shell=root.querySelector("[data-ao-reader-shell]");
     if(shell)shell.dataset.modeSwitchLocked=String(!allowPresentationModeSwitch);
     if(!allowPresentationModeSwitch){
