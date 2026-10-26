@@ -157,5 +157,71 @@ try{
  assert.equal(rows.filter(x=>x.appliedVariant==="VIGIL_NIGHT").length,1);
  assert.equal(rows.filter(x=>x.appliedVariant==="OCTAVE_DAY").length,7);
  assert.equal(rows.filter(x=>x.appliedVariant==="EASTERTIDE").length,6);
+ // Render the repaired SOURCE PROPER through the same native presentation
+ // used by the production Mass. This is not a unit projection or fabricated
+ // 48-card surrogate: the real R17 UI must visibly show the selected text.
+ const rendered=await page.evaluate(async()=>{
+   const dayResolver=globalThis.AO_RUNTIME_V8.resolver;
+   const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
+   const {prepareMassSessionFromV346}=await import("/src/mass/host-adapter.js");
+   const {mountR17Preview}=await import("/src/mass/browser-entry.js");
+   const results=[];
+   for(const [date,variant,mode] of [
+     ["2026-04-05","OCTAVE_DAY","MISSAL"],
+     ["2026-04-12","EASTERTIDE","LIVE"],
+     ["2026-05-10","EASTERTIDE","SIMPLE"]
+   ]){
+     let mounted=null;
+     try{
+       const day=await dayResolver.resolveDay(date);
+       const id=day.day.main.id;
+       const recovered=await recoverReaderProperOmissions(day.proper.data,{
+         hostResolver:dayResolver.properResolver,principalCelebrationId:id
+       });
+       const legacy={date,canStart:true,calendarDay:{id,title:day.day.main.title},
+         celebrationId:"mass_of_day",requestedCelebrationId:"mass_of_day",
+         celebrationType:"CALENDAR",properSource:recovered.sourcePath};
+       const session=prepareMassSessionFromV346(legacy,{
+         form:"low",presentationMode:mode,proper:recovered
+       });
+       const prepared={schema:"ao-mass-entry-prepared-v1",session,
+         readerPreferences:{mode,language:"fr",secondConfiteor:false,
+           postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962",localPostures:{}}};
+       mounted=await mountR17Preview({doc:document,prepared});
+       const preview=mounted.preview;
+       const original=preview.model?.properSlots?.slots?.PREFACE;
+       const cards=preview.model?.cards??[];
+       const card=cards.find(c=>JSON.stringify(c.paragraphs??[]).includes("le Christ, notre pâque"))||
+         cards.find(c=>/pr[ée]face/i.test(String(c.title??"")));
+       if(card)preview.showSection(card.sectionId);
+       await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+       const root=preview.root;
+       const visible=(root?.querySelector(".ao-prayer-card")?.innerText??root?.innerText??"");
+       results.push({date,mode,id,variant,modelCount:cards.length,
+         slotStatus:original?.status??null,cardSection:card?.sectionId??null,
+         renderedPhrase:visible.includes("en ce jour")?"OCTAVE_DAY":
+           visible.includes("en ce temps")?"EASTERTIDE":
+           visible.includes("en cette nuit")?"VIGIL_NIGHT":null,
+         hasFrench:visible.includes("le Christ, notre pâque"),
+         hasComposite:/sed tempore Passionis|sed octava Paschæ|à la Messe de la Vigile pascale/.test(visible),
+         sample:visible.slice(0,450),
+         shellMounted:Boolean(root?.isConnected)});
+     }catch(err){results.push({date,mode,variant,error:String(err?.stack??err)})}
+     finally{try{mounted?.preview?.destroy?.()}catch{}}
+   }
+   return results;
+ });
+ console.log("MASS_1962_EASTER_PREFACE_NATIVE_DOM="+JSON.stringify(rendered));
+ for(const item of rendered){
+   assert.ok(!item.error,item.date+" "+item.error);
+   assert.equal(item.slotStatus,"READY",item.date+" native reader lost source-ready Preface");
+   assert.ok(item.modelCount>=30,item.date+" source reader did not build canonical cards");
+   assert.ok(item.cardSection,item.date+" native reader Preface card absent");
+   assert.equal(item.shellMounted,true,item.date+" native reader never mounted");
+   assert.equal(item.renderedPhrase,item.variant,item.date+" wrong seasonal phrase in rendered Preface");
+   assert.equal(item.hasFrench,true,item.date+" trilingual source lost in rendered reader");
+   assert.equal(item.hasComposite,false,item.date+" unresolved seasonal alternatives visible");
+ }
+ console.log("PASS native R17 rendered Preface in MISSAL, LIVE, SIMPLE on real 2026 Masses.");
  console.log("PASS 14 real 1962 Easter Preface source identities and trilingual variants: 1 Vigil, 7 octave, 6 later.");
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
