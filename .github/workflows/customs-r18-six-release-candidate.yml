@@ -4,6 +4,8 @@ on:
     paths:
       - 'data/customs/customs-r18-six-canonical-release-candidate.v1.json'
       - 'data/customs/customs-r18-six-canonical-promotion-payload.v1.json'
+      - 'data/customs/customs-r18-six-identity-comparator-review.v1.json'
+      - 'tools/customs/simulate-r18-six-canonical-release.mjs'
       - 'tests/customs-r18-six-canonical-release-candidate.mjs'
       - '.github/workflows/customs-r18-six-release-candidate.yml'
   workflow_dispatch:
@@ -18,4 +20,6 @@ jobs:
         with:
           node-version: '22'
       - name: Prevent unsigned R18 publication and canonical ID collisions
-        run: node tests/customs-r18-six-canonical-release-candidate.mjs
+        run: |
+          node tests/customs-r18-six-canonical-release-candidate.mjs
+          node tools/customs/simulate-r18-six-canonical-release.mjs
