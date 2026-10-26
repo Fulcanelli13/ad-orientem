@@ -1,0 +1,68 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {LIVE,RELEASES} from "./helpers/sacred-places-live-baseline.mjs";
+import {assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
+import {auditShrineSource,assertShrinesPilgrimagesRegistry} from "../src/find/shrines-contracts.js";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const manifest=read("data/geography/research/sacred-places-p44-two-catalan-basilicas.v1.json");
+const old=read("data/geography/research/sacred-places-p43-open35-global500-reconciliation.v1.json");
+const g=read("data/geography/seed-registry.v1.json"),s=read("data/shrines/source-registry.v1.json");
+const h=read("data/explore/heritage-place-reconciliation.review.v1.json"),sh=read("data/shrines/shrines-pilgrimages-seed.v1.json");
+assert.equal(manifest.schema,"AO_SACRED_PLACES_P44_TWO_CATALAN_BASILICAS_V1");
+assert.deepEqual(Object.values(manifest.baseline),[498,796,498,239,146,9]);
+assert.deepEqual(Object.values(manifest.proposed),[500,798,500,241,146,9]);
+assert.ok(RELEASES.some(r=>r.id==="P44"),"P44 release must be in the live release chain");
+assert.deepEqual([g.places.length,s.sources.length,h.place_crosswalk.length,h.exception_queues.places_without_direct_claim.length,g.geoAreas.length,g.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas,LIVE.links]);
+assert.equal(manifest.new_physical_locations,2);
+assert.equal(manifest.photo_assets_approved,0);
+assert.equal(manifest.tlm_schedule_links_added,0);
+assert.equal(old.open_mapping_35.length,35);
+assert.equal(old.counts.global_unresolved_if_P43_merged,377);
+assert.equal(old.counts.global_canonical_links_if_P43_merged,123);
+const newCandidateIds=new Set(manifest.published_new.map(p=>p.candidate_id));
+assert.deepEqual([...newCandidateIds].sort(),["SG-INV-0115","SG-INV-0132"]);
+for(const candidateId of newCandidateIds){
+  assert.ok(old.open_mapping_35.some(o=>o.candidate_ids.includes(candidateId)),"P44 must resolve a real P43 open mapping case: "+candidateId);
+
+}
+assert.equal(old.open_mapping_35.filter(o=>!o.candidate_ids.some(x=>newCandidateIds.has(x))).length,manifest.remaining_open_mapping_queue_after_release);
+const globalResolved=manifest.global_queue_candidate_ids_resolved;
+assert.deepEqual(globalResolved,["SG-INV-0115"]);
+assert.ok(globalResolved.every(candidateId=>newCandidateIds.has(candidateId)&&old.global_acquisition_500.some(o=>o.candidate_id===candidateId&&!o.known_canonical_link)));
+assert.equal(old.counts.global_unresolved_if_P43_merged-globalResolved.length,manifest.global_unresolved_after_release);
+assert.equal(old.counts.global_canonical_links_if_P43_merged+globalResolved.length,manifest.global_canonical_links_after_release);
+const idx=RELEASES.findIndex(r=>r.id==="P44");
+const subsequent=new Set(RELEASES.slice(idx+1).flatMap(r=>(r.data.published_new||[]).map(x=>x.place_id)));
+const fresh=new Set(manifest.published_new.map(x=>x.place_id));
+const original=g.places.filter(p=>!fresh.has(p.place_id)&&!subsequent.has(p.place_id));
+assert.equal(original.length,498);
+const geoRefs=new Set(original.map(p=>p.geo?.source_ref).filter(Boolean));
+for(const x of manifest.published_new){
+ assert.ok(!geoRefs.has(x.geo_source_ref),"OSM duplicate "+x.geo_source_ref);
+ geoRefs.add(x.geo_source_ref);
+ assert.match(x.geo_source_ref,/^osm:way:\d+$/);
+ assert.equal(x.geo_source_url,"https://www.openstreetmap.org/way/"+x.geo_source_ref.split(":")[2]);
+ const place=g.places.find(p=>p.place_id===x.place_id);
+ assert.ok(place);
+ assert.equal(place.name.official,x.name);
+ assert.equal(place.place_type,"basilica");
+ assert.deepEqual(place.geo_area_ids,["geo:country:ES"]);
+ assert.equal(place.address.country_code,"ES");
+ assert.deepEqual([place.geo.lat,place.geo.lng],[x.lat,x.lng]);
+ assert.equal(place.geo.source_ref,x.geo_source_ref);
+ assert.equal(place.geo.precision,"site");
+ assert.ok(isMapPublishablePlaceGeo(place.geo,"ES"));
+ assert.deepEqual(place.source_ids,x.source_ids);
+ const source=s.sources.find(z=>z.id===x.source_ids[0]);
+ assert.ok(source);
+ assert.deepEqual(auditShrineSource(source),[]);
+ assert.equal(source.url,x.identity_source_url);
+ assert.equal(source.issuer,x.identity_source_issuer);
+ assert.ok(h.exception_queues.places_without_direct_claim.includes(x.place_id));
+ assert.deepEqual(h.place_crosswalk.filter(z=>z.place_id===x.place_id).map(z=>z.record_ids),[{}]);
+ assert.ok(!sh.shrines.some(z=>z.place_id===x.place_id));
+ assert.ok(!g.directoryPlaceLinks.some(z=>z.place_id===x.place_id));
+}
+assert.equal(assertExploreGeographyRegistry(g).pass,true);
+assert.equal(assertShrinesPilgrimagesRegistry({...sh,sources:s.sources,places:g.places}).pass,true);
+console.log("PASS P44: two exact Catalan basilicas (Núria and Balaguer), 500 canonical Places and 798 sources; 33 original mapping cases, 376 global unresolved.");
