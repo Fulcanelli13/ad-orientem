@@ -1,0 +1,56 @@
+{
+  "kind": "non-authoritative lower-weight JPEG display previews",
+  "full_painting_scaled_for_screen": true,
+  "detail_tiles_unscaled_native_pixels": true,
+  "no_master_modified": true,
+  "records": [
+    {
+      "module_id": "adoration",
+      "master_sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "source_dimensions": [
+        3122,
+        3813
+      ],
+      "icc_to_srgb_preview": false,
+      "preview_paths": [
+        "assets/staged/module-hero-preview-jpegs/adoration-whole-preview.jpg",
+        "assets/staged/module-hero-preview-jpegs/adoration-upper-detail.jpg",
+        "assets/staged/module-hero-preview-jpegs/adoration-centre-detail.jpg"
+      ],
+      "preview_is_not_master": true,
+      "quality_approved": false
+    },
+    {
+      "module_id": "confession",
+      "master_sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "source_dimensions": [
+        4096,
+        3712
+      ],
+      "icc_to_srgb_preview": true,
+      "preview_paths": [
+        "assets/staged/module-hero-preview-jpegs/confession-whole-preview.jpg",
+        "assets/staged/module-hero-preview-jpegs/confession-upper-detail.jpg",
+        "assets/staged/module-hero-preview-jpegs/confession-centre-detail.jpg"
+      ],
+      "preview_is_not_master": true,
+      "quality_approved": false
+    },
+    {
+      "module_id": "sorrows",
+      "master_sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+      "source_dimensions": [
+        2220,
+        3000
+      ],
+      "icc_to_srgb_preview": true,
+      "preview_paths": [
+        "assets/staged/module-hero-preview-jpegs/sorrows-whole-preview.jpg",
+        "assets/staged/module-hero-preview-jpegs/sorrows-upper-detail.jpg",
+        "assets/staged/module-hero-preview-jpegs/sorrows-centre-detail.jpg"
+      ],
+      "preview_is_not_master": true,
+      "quality_approved": false
+    }
+  ]
+}
