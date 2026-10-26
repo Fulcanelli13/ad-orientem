@@ -9,6 +9,9 @@ on:
       - "src/calendar/customs-profile-links.js"
       - "tests/calendar-customs-r18-first-six-staging.mjs"
       - "tests/calendar-customs-r18-region-preview.mjs"
+      - "tests/calendar-customs-r18-release-decision.mjs"
+      - "src/calendar/customs-r18-first-six-release-decision.v1.json"
+      - "src/calendar/calendar-runtime.js"
       - ".github/workflows/calendar-customs-r18-six-staging.yml"
       - "docs/CALENDAR_CUSTOMS_R18_FIRST_SIX_RELEASE_REVIEW_20261026.md"
   workflow_dispatch:
@@ -29,3 +32,5 @@ jobs:
           node tests/calendar-customs-r18-first-six-staging.mjs
           node --check tests/calendar-customs-r18-region-preview.mjs
           node tests/calendar-customs-r18-region-preview.mjs
+          node --check tests/calendar-customs-r18-release-decision.mjs
+          node tests/calendar-customs-r18-release-decision.mjs
