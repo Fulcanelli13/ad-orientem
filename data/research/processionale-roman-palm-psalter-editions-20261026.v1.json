@@ -80,7 +80,9 @@
       "Textus novus Psalm 46 visibly opens 'Omnes populi' at p144**, not GregoBase #19316 'Omnes gentes'.",
       "Full source page images still do not prove 19316's individual pitch-by-pitch equivalence or correct word-to-neume alignment.",
       "Processional delivery and 1962 liturgical permission remain separate from page-image transcription correctness."
-    ]
+    ],
+    "oldScoreStatus": "ALTERNATIVE_HISTORICAL_PRINTED_TEXT_NOT_SELECTED_AS_1962_PRIMARY_BY_RESEARCH",
+    "newScoreStatus": "1961_ORIGINAL_HEBDOMADA_SANCTA_TEXT_DIRECT_IMAGE_VERIFIED_PRIMARY_1962_OCR_AGREES"
   },
   "candidates": [
     {
@@ -199,12 +201,156 @@
     "shortDistribution": "Manually finish using prescribed concluding Gloria Patri and antiphon when distribution completes; never force a timed score",
     "longDistribution": "Repeat antiphon after appointed verse pairs, adapt to actual duration",
     "noMovementInference": true,
-    "noFixedSongPlaylist": true
+    "noFixedSongPlaylist": true,
+    "editorialProgramme": {
+      "sourceAuthority": "Printed 1961 Graduale Romanum restored-Holy-Week appendix pp143**–144**, corroborated by 1962 Roman Missal OCR.",
+      "status": "APPROVED_STRUCTURE_FOR_RESEARCH_NO_RUNTIME_SCORE_AUTHORIZATION",
+      "form": "PALM_SUNDAY_RESTORED_ROMAN_RITE_DISTRIBUTION",
+      "psalms": [
+        {
+          "psalm": 23,
+          "antiphonScoreId": 1215,
+          "preferredLatin": "TEXTUS_NOVUS_1961_APPENDIX",
+          "sourcePage": "143**",
+          "versePairs": [
+            [
+              1,
+              2
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          "doXology": [
+            11,
+            12
+          ],
+          "antiphonAfterEachPair": true,
+          "doXologyThenAntiphon": true,
+          "verseIncipits": [
+            {
+              "verse": 1,
+              "incipit": "Domini est terra et quae replent eam"
+            },
+            {
+              "verse": 2,
+              "incipit": "Nam ipse super maria fundavit eum"
+            },
+            {
+              "verse": 7,
+              "incipit": "Attollite, portae, capita vestra"
+            },
+            {
+              "verse": 8,
+              "incipit": "Quis est iste rex gloriae?"
+            },
+            {
+              "verse": 9,
+              "incipit": "Attollite, portae, capita vestra"
+            },
+            {
+              "verse": 10,
+              "incipit": "Quis est iste rex gloriae?"
+            }
+          ]
+        },
+        {
+          "psalm": 46,
+          "antiphonScoreId": 1155,
+          "preferredLatin": "TEXTUS_NOVUS_1961_APPENDIX",
+          "sourcePage": "144**",
+          "versePairs": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          "doXology": [
+            11,
+            12
+          ],
+          "antiphonAfterEachPair": true,
+          "doXologyThenAntiphon": true,
+          "verseIncipits": [
+            {
+              "verse": 1,
+              "incipit": "Omnes populi, plaudite manibus"
+            },
+            {
+              "verse": 2,
+              "incipit": "Quoniam Dominus excelsus, terribilis"
+            },
+            {
+              "verse": 3,
+              "incipit": "Subicit populos nobis"
+            },
+            {
+              "verse": 4,
+              "incipit": "Elegit nobis hereditatem nostram"
+            },
+            {
+              "verse": 5,
+              "incipit": "Ascendit Deus cum exsultatione"
+            },
+            {
+              "verse": 6,
+              "incipit": "Psallite Deo, psallite"
+            },
+            {
+              "verse": 7,
+              "incipit": "Quoniam rex omnis terrae est Deus"
+            },
+            {
+              "verse": 8,
+              "incipit": "Deus regnat super nationes"
+            },
+            {
+              "verse": 9,
+              "incipit": "Principes populorum congregati sunt"
+            },
+            {
+              "verse": 10,
+              "incipit": "Nam Dei sunt proceres terrae"
+            }
+          ]
+        }
+      ],
+      "endOfDistribution": "OPTIONAL_REPETITION_WHEN_DISTRIBUTION_CONTINUES; WHEN_SHORT_FINISH_DOXOLOGY_AND_FINAL_ANTIPHON_AT_ACTUAL_DISTRIBUTION_COMPLETION",
+      "localChoirSignal": "MANUAL_OBSERVATION_NO_AUTOTIMER",
+      "requirements": [
+        "Source-owned complete Latin full verses with correct pointing",
+        "Approved reciting tone against 1961 score",
+        "Second score must have Omnes populi syllable alignment, not Omnes gentes",
+        "Antiphons as repeatable 1962-prescribed chant events in existing PALM-R02",
+        "No user icon or posture advance from Schola progress"
+      ]
+    }
   },
   "gates": [
     {
       "id": "PSALTER_LATIN_VERSION_1962",
-      "status": "OPEN",
+      "status": "PRIMARY_ROMAN1962_OCR_AND_ORIGINAL_1961_VISUAL_AGREE_IMAGE_1962_SIGNOFF_PENDING",
       "owner": "#894"
     },
     {
