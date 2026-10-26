@@ -17,6 +17,25 @@ assert.ok(byKey.get("ecclesial_position").values.includes("SEDEPRIVATIONIST"));
 assert.ok(byKey.get("missal_edition").values.includes("1962"));
 assert.ok(byKey.get("liturgical_use").values.includes("DOMINICAN"));
 assert.equal(taxonomy.public_approvals,0);
+for(const institution of ["FSSP","ICKSP","IBP","SSPX","CMRI","AASJMV","FSVF","SSPV","CSPV",
+  "BENEDICTINE","ORATORIAN","DOMINICAN","PREMONSTRATENSIAN","INDEPENDENT_CLERGY"]) {
+  assert.ok(byKey.get("institute_or_community").searchable_source_labels.includes(institution),
+    "Missing user institute category "+institution);
+}
+for(const traditionalUsage of ["ROMAN","LYONESE","DOMINICAN","CARMELITE","PREMONSTRATENSIAN",
+  "CISTERCIAN","AMBROSIAN","MOZARABIC","EASTERN_CATHOLIC_DIFFERENT_LITURGY"]) {
+  assert.ok(byKey.get("liturgical_use").values.includes(traditionalUsage),
+    "Missing distinct liturgical usage "+traditionalUsage);
+}
+for(const distinctMissal of ["1962","PRE_1955","1955_REFORMED","1954_TRADITIONAL_AMBROSIAN",
+  "1965_TRANSITIONAL_ROMAN","1970_OR_2002_ORDINARY_FORM_LATIN","MIXED_OR_LOCAL"]) {
+  assert.ok(byKey.get("missal_edition").values.includes(distinctMissal),
+    "Do not falsely collapse different books into Roman 1962 "+distinctMissal);
+}
+assert.equal(byKey.get("canonical_status").subject.includes("VENUE"),false);
+assert.equal(byKey.get("organizer_role").subject.includes("VENUE"),false);
+assert.ok(taxonomy.conversation_approved_browse_families.map_first_principles.some(x=>x.includes("Sedevacantist")));
+assert.ok(taxonomy.note_on_legacy_b92.includes("NOT valid B92 runtime assertions"));
 
 const raw=JSON.parse(readFileSync("data/directory/preliminary-map-r49.v1.json","utf8"));
 const items=projectPreliminaryR49(raw);
