@@ -78,3 +78,16 @@ The images below were actually captured as original unmodified source bytes (SHA
 **Critical identity exclusion:** Getty's *The Age of Augustus, the Birth of Christ*, Getty 85.PA.226 (1852–54), is a **smaller preparatory study**, not the full finished **1855** Gérôme painting at the Musée de Picardie (RF 1983 92, 620×1014 cm). A higher-quality Getty scan must **never replace** the user-approved finished original.
 
 **Strict quality status:** no amount of added pixels rescues the Holy Spirit glare photo or the Gérôme installation panorama. Neither has been promoted. Complete 22-module editorial selections remain untouched. The remaining photographic acquisitions/clearances still prioritize Rome's original *Guardian Angel*, Frère's Wolverhampton *The Prayer*, a better Restout source, and the complete Gérôme painting.
+
+## Additional Saint Michael source test — two worse higher-pixel photographs
+
+The exact Guido Reni original was checked using two more actually acquired Commons originals, each with source hash and attribution terms recorded.
+
+| Candidate | Photo evidence | Decision |
+|---|---|---|
+| Sailko, 2,112×2,816, CC BY-SA 3.0 | ![Reni altarpiece angled](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/reni-faithful-photographic-comparison-20261026/assets/staged/module-hero-preview-jpegs/reni-sailko-whole-preview.jpg) | **REJECT PHOTO** for hero. Perspective/keystone skew, reflected light and reduced subject clarity. |
+| Church documentation, 5,152×3,864, CC BY-SA 4.0 | ![Reni painting within ornate chapel](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/reni-faithful-photographic-comparison-20261026/assets/staged/module-hero-preview-jpegs/reni-church-whole-preview.jpg) | **REJECT PHOTO** for hero. Huge decorative enclosure and concentrated spotlight glare on the artwork despite larger original size. |
+
+The existing modest 1,657×2,441 image is **still better as a complete flat-looking representation** than either of these newly found larger photos. It remains provisional because its compressed painted detail may be poor. Do not substitute any other copy after Reni.
+
+**Museum-quality access exceptions:** [source-by-source €0 acquisition request dossier](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/research/module-hero-free-image-access-exceptions-20261026.md). Messages are prepared as research briefs only; they have not been sent.
