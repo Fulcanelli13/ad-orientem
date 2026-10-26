@@ -2,7 +2,7 @@ import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { decorateLiturgicalSpeaker } from "../app/liturgical-speakers.js";
 import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
 import { installNativeScholaScorePilot } from "./reader-chant-score-pilot.js";
-import {selectedChantScoreForReader} from "./mass-chant-programme.js";
+import {selectedChantScoreForReader,MASS_CHANT_ORDINARY_TRACKS} from "./mass-chant-programme.js";
 import { missalSourceRubricCopy } from "./reader-missal-book-rubrics.js";
 import { conciseMissalSourceRubric, conciseMissalInlineSequence } from "./reader-rubric-presentation.js";
 import { R17_ICON_KEYS } from "./reader-icons.js";
@@ -3165,6 +3165,9 @@ export function createReaderDomAdapter({
     chantScorePilot=installNativeScholaScorePilot(root,{
       onLayoutChange:()=>syncScholaChrome(),
       programmeScoreId:selectedChantScoreForReader(prepared.readerPreferences?.chantProgramme,"KYRIE"),
+      programmeSelections:Object.fromEntries(MASS_CHANT_ORDINARY_TRACKS
+        .map(id=>[id,selectedChantScoreForReader(prepared.readerPreferences?.chantProgramme,id)])
+        .filter(([,value])=>Boolean(value))),
     });
     const shell=root.querySelector("[data-ao-reader-shell]");
     if(shell)shell.dataset.modeSwitchLocked=String(!allowPresentationModeSwitch);
