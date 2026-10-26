@@ -1,0 +1,39 @@
+name: Palm Psalm 46 exact Exsurge source review
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/processionale-palm46-engraver-proof.yml
+      - tools/research/palm46-exsurge-facsimile-gate.mjs
+      - data/research/chant-source-review/palm46-omnes-populi-1961-provisional.gabc
+      - data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-isolated-candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Research branch, read-only
+        uses: actions/checkout@v4
+        with:
+          path: processionale
+          persist-credentials: false
+      - name: Pinned existing Mass Schola source and Exsurge vendor
+        uses: actions/checkout@v4
+        with:
+          ref: 8a75c2cbb6ea2bc6ba26da30ec923b3dc8c827e1
+          path: schola-owner
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Render candidate and reference at phone/tablet/desktop widths
+        run: >
+          node processionale/tools/research/palm46-exsurge-facsimile-gate.mjs
+          schola-owner/assets/vendor/exsurge/exsurge.min.js
+          processionale/data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc
+          processionale/data/research/chant-source-review/palm46-omnes-populi-1961-provisional.gabc
