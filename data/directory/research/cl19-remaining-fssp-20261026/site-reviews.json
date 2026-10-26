@@ -1,0 +1,622 @@
+{
+  "schema": "AO_CL19_REMAINING_27_FSSP_SOURCE_IDENTITY_REVIEW_V1",
+  "as_of": "2026-10-26",
+  "scope": "The 27 CL18 pilot places without second-source review. Grade independent primary source separately from local FSSP-only witness and secondary heritage; none implies an approved entrance or public Mass date.",
+  "entries": [
+    {
+      "source_place_id": "CL14-DE-FSSP-001",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.summorum-pontificum-heidelberg.de/links/2-uncategorised",
+          "role": "LOCAL_TLM_COMMUNITY_OWNER_RECURRENT_CHANGE"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "St Anna Plöck 4. Community states Sunday 18:00 became every Sunday/feast from 1 December 2024; older first-and-third wording remains lower on page. Current status supersedes older restriction.",
+      "blocking_exceptions": [
+        "HISTORICAL_1ST_3RD_REPLACED_BY_WEEKLY_2024_12_01",
+        "ENTRANCE_NOT_GEO_VERIFIED"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-002",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://katholisch-in-kiel.de/kirchenmusik/kirchenmusik-in-st-nikolaus/",
+          "role": "HOST_CATHOLIC_PARISH_CHURCH_AND_ADDRESS"
+        },
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/hannover/messzeiten-kiel.php",
+          "role": "DIRECT_LOCAL_FSSP_FIRST_SUNDAY_1600"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Catholic St Nikolaus Rathausstraße 5 is the exact FSSP Kiel first-Sunday 16:00 location; distinguish on-campus Kita and parish office as separate points.",
+      "blocking_exceptions": [
+        "CAMPUS_KITA_AND_CHURCH_SAME_STREET_ADDRESS",
+        "FIRST_SUNDAY_ONLY"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-003",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://denkmalatlas.niedersachsen.de/viewer/metadata/30760119/3/",
+          "role": "STATE_HERITAGE_ST_CLEMENS_BUILDING_ADDRESS"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "St Clemens church at Platz an der Basilika 1 independently indexed as a church monument; FSSP national source supplies Sun 13:30/Fri 15:30. Monument location is not a door-level visitor coordinate.",
+      "blocking_exceptions": [
+        "HERITAGE_SITE_POINT_NOT_ENTRANCE"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-004",
+      "secondary_source_grade": "LOCAL_FSSP_ONLY",
+      "sources": [
+        {
+          "url": "https://koeln.petrusbruderschaft.de/termine/termine-duesseldorf/",
+          "role": "FSSP_BRANCH_OCTOBER_2026_DATED_CALENDAR"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "St Dionysius Düsseldorf at Abteihofstr 25 has current dated FSSP October timetable. Sunday 11 Oct 2026 shifted from standing 10:30 to 08:00; protect against automatic daily release.",
+      "blocking_exceptions": [
+        "DATE_2026_10_11_0800_OVERRIDE",
+        "BRANCH_SAME_INSTITUTION_NOT_INDEPENDENT_SITE_IDENTITY"
+      ],
+      "physical_church_identity_research_confirmed": false,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-005",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.antonius-wuppertal.de/start/index.html",
+          "role": "HOST_PARISH_OFFICE_ST_ANTONIUS_UNTERDORNEN_137"
+        },
+        {
+          "url": "https://www.katholische-citykirche-wuppertal.de/informationen/offene-kirchen/Kalender/2026/07/",
+          "role": "LOCAL_CHURCH_ACCESS_LIST"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "St Antonius Wuppertal-Barmen host parish and city-church register show Unterdörnen 137 as church/parish-office precinct. Monday FSSP 18:30 except second Monday and feasts; entrance may differ from office mailing point.",
+      "blocking_exceptions": [
+        "CHURCH_VS_PASTORAL_OFFICE_ENTRANCE_UNKNOWN",
+        "SKIP_SECOND_MONDAY_AND_FEAST_DAYS"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-006",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.erzbistum-koeln.de/news/Unerlaubte-Bischofsweihen-kirchliche-Strafen-fuer-die-Piusbruderschaft-St.-Pius-X./?facet_instancedate=2026-08-31T22%3A00%3A00Z",
+          "role": "ARCHDIOCESE_COLOGNE_FSSP_CHURCH_REM_SCHEID_0800"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Cologne archdiocese official FSSP Old Rite site list explicitly identifies Remscheid St Josef Menninghauser Str 5 Sunday 08:00. Distinguish from other churches of same patron.",
+      "blocking_exceptions": [
+        "OTHER_ST_JOSEF_NAME_COLLISIONS"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-008",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.stadtpfarrei-oberhausen.de/kirche-st-joseph-styrum",
+          "role": "HOST_PARISH_ST_JOSEPH_LOTHRINGER_154"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "St Joseph Oberhausen-Styrum Lothringer Str 154 independently confirmed by host Catholic parish, distinct from FSSP residence Lothringer 13 and Oberhausen's other St Josef churches.",
+      "blocking_exceptions": [
+        "FSSP_HOUSE_LOTHRINGER_13_NOT_CHURCH",
+        "OTHER_ST_JOSEF_CHURCHES_IN_OBERHAUSEN"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-009",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.st-peter-recklinghausen.de/kirchen-orte/st-michael",
+          "role": "HOST_CATHOLIC_PARISH_ST_MICHAEL_1"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Recklinghausen-Hochlarmark St Michael Michaelstr 1 confirmed by parish. Host weekday/ordinary schedule is distinct from FSSP Sunday 10:00; don't infer owner celebrates all modes.",
+      "blocking_exceptions": [
+        "ORDINARY_FORM_HOST_SCHEDULE_DIFFERENT_FROM_FSSP_1000"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-010",
+      "secondary_source_grade": "LOCAL_FSSP_ONLY",
+      "sources": [
+        {
+          "url": "https://www.maria-hilf-koeln.de/kontakt/",
+          "role": "FSSP_LOCAL_MARIA_HILF_ROLAND_59"
+        },
+        {
+          "url": "https://koeln.petrusbruderschaft.de/termine/messordnung/",
+          "role": "FSSP_OCTOBER_2026_DATED_ORDO"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Maria Hilf Catholic church at Rolandstr 59 confirmed by local FSSP and date-specific October 2026 order, including the 2026-10-27/28/29/30 evenings. Precise church doorway not externally verified; separate FSSP residence Johann-Heinrich-Platz 12.",
+      "blocking_exceptions": [
+        "CHURCH_VS_FSSP_RESIDENCE_ADDRESS",
+        "LOCAL_PROGRAMME_SAME_INSTITUTION"
+      ],
+      "physical_church_identity_research_confirmed": false,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-011",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.erzbistum-koeln.de/news/Unerlaubte-Bischofsweihen-kirchliche-Strafen-fuer-die-Piusbruderschaft-St.-Pius-X./?facet_instancedate=2026-08-31T22%3A00%3A00Z",
+          "role": "COLOGNE_ARCHDIOCESE_ST_ANNA_KAPELLE_2ND_MONDAY"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Leverkusen Lützenkirchen St Anna Kapelle Kapellenstr 10 is named by Cologne archdiocese as second Monday 18:30. Distinguish from Heidelberg's St Anna.",
+      "blocking_exceptions": [
+        "SECOND_MONDAY_ONLY"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-012",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.odenthal.de/rathaus/verwaltungsvorstand/heilig-kreuz-kapelle",
+          "role": "MUNICIPAL_CHAPEL_ADDRESS"
+        },
+        {
+          "url": "https://zumfriedengottes.de/wp-content/uploads/2025/11/Homepage-Datei_10-29_1033117.pdf",
+          "role": "PROTESTANT_CONGREGATION_SAME_CHAPEL_VENUE"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Heilig-Kreuz-Kapelle, Kapellenweg 3, Odenthal-Klasmühle independently listed by municipality; another Christian congregation also names the chapel as worship site. Shared-use possibility; neither source establishes chapel legal ownership. FSSP Friday 18:00 source separately.",
+      "blocking_exceptions": [
+        "OTHER_CONFESSION_ALSO_LISTS_CHAPEL",
+        "DO_NOT_ASSUME_PROPERTY_OWNER_FROM_FSSP_MASS"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-013",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.lindlar.de/fileadmin/gemeinde/Senioren/Lindlar_80.pdf",
+          "role": "MUNICIPAL_DIRECTORY_ST_APOLLINARIS_CHURCH_ADDRESS"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "St Apollinaris Frielingsdorf at Jan-Wellem Str 12 confirmed by municipality and archdiocesan Old Rite list; Sunday 17:30 in FSSP register.",
+      "blocking_exceptions": [
+        "FSSP_OLDER_TIMES_DIFFER",
+        "NO_DOOR_GEO"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-014",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.erzbistum-koeln.de/news/Unerlaubte-Bischofsweihen-kirchliche-Strafen-fuer-die-Piusbruderschaft-St.-Pius-X./?facet_instancedate=2026-08-31T22%3A00%3A00Z",
+          "role": "COLOGNE_ARCHDIOCESE_ST_MARTINUS_PINGSHEIM"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Archdiocese confirms St Martinus Pingsheim, Alfons-Keever Str 5, last Thursday in odd-numbered months 19:00. Older lay directory also lists St Martinus in Erftstadt-Borr at Vonnestr 27; avoid conflating separate village/building or assuming the historic Borr slot persists.",
+      "blocking_exceptions": [
+        "OLDER_BORR_VONNESTR_27_ALTERNATE_VENUE",
+        "ODD_MONTH_LAST_THURSDAY_ONLY"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-016",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.kath-kirche-stuttgart.de/service/kirchen-kitafinder/",
+          "role": "STUTTGART_CATHOLIC_DIRECTORY_BUILDING_AND_RITE"
+        },
+        {
+          "url": "https://www.stuttgart-nordstern.de/pages/zur-heiligsten-dreifaltigkeit/gottesdienste-und-spiritualitaet/spirituelle-angebote/begehbares-labyrinth/lageplan-und-anfahrt.php?showexternal=1",
+          "role": "HOST_PARISH_BUILDING_APPROACH_NOT_MASS_DOOR"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "St Albert Wollinstr 55 hosted Tridentine rite explicitly by Stuttgart Catholic church; FSSP gives postcode 70439, Stuttgart city Catholic listing 70439 in directory but dated events sometimes 70435. Same building and street, postal-code conflict should be resolved from postal/municipal data; approach information identifies church, not precise entrance.",
+      "blocking_exceptions": [
+        "POSTCODE_70439_VS_70435_IN_CATHOLIC_SOURCES",
+        "ACCESSIBLE_CHURCH_NOT_PRECISE_GEOCODE"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-017",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.schwaebisch-gmuend.de/glaubensgemeinschaften.html",
+          "role": "CITY_INDEPENDENT_ST_LEONHARDSKIRCHE_FRIEDHOFSTR_2"
+        },
+        {
+          "url": "https://de.wikipedia.org/wiki/Liste_der_Kulturdenkmale_in_Schw%C3%A4bisch_Gm%C3%BCnd_%28Kernstadt_au%C3%9Ferhalb_der_Altstadt%29",
+          "role": "HERITAGE_CEMETERY_CHAPEL_AALENER_2"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Schwäbisch Gmünd city list St Leonhardskirche at Friedhofstraße 2, while FSSP and heritage describe Catholic cemetery chapel St Leonhard at Aalener Str 2. Likely cemetery access vs monument address but do not claim same exact door without a map. Crucially Aalener Str 4 is nearby Herrgottsruhkapelle, different worship building.",
+      "blocking_exceptions": [
+        "FRIEDHOFSTRASSE_2_VS_AALENER_STRASSE_2_ACCESS",
+        "HERRGOTTSRUHKAPELLE_AALENER_4_DIFFERENT_CHAPEL"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-018",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.nussdorf.de/leben-in-nussdorf/soziales/kirchen-und-pfarraemter",
+          "role": "MUNICIPAL_PFARRBUREAU_AND_DISTINCT_FILIAL_CHURCH"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Nußdorf municipal listing says parish-office Leonhardiweg 5 and that St Leonhard is filial church outside village, while FSSP gives Leonardiweg without number for Monday 19:00. Do not assign office #5 to actual chapel entrance.",
+      "blocking_exceptions": [
+        "PARISH_OFFICE_5_NOT_CHURCH_DOOR",
+        "ST_LEONHARD_DISTINCT_FROM_ST_VITUS"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-019",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://se-nsu.de/se/st-dionysius",
+          "role": "HOST_CATHOLIC_PARISH_FRAUENKIRCHE_ADDRESS"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Neckarsulm host Catholic parish confirms Frauenkirche Spitalstr 1 separately from St Dionysius Pfarrgasse 6 and Klosterkirche Klostergasse 2. The FSSP Masses are at Frauenkirche; other site identities must not merge.",
+      "blocking_exceptions": [
+        "THREE_DISTINCT_NECKARSULM_CHURCHES"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-022",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.eichstaett.de/sehenswertes/ehemalige_kapuzinerkirche_heil-1753/barrierefrei/",
+          "role": "CITY_CHURCH_EXACT_KAPUZINERGASSE_2"
+        },
+        {
+          "url": "https://eichstaett.bistum-eichstaett.de/gottesdienste/calendar/location/tx_cal_location/heilig-kreuz-kirche-ehem-kapuzinerkirche-eichstaett/?cHash=e8d892f945bb3dd1fbe9fd375a1dc471&tx_cal_controller%5Bgetdate%5D=20211129",
+          "role": "DIOCESE_DATED_2026_10_27_EXTRAORDINARY_RITE"
+        },
+        {
+          "url": "https://en.naturpark-altmuehltal.de/sehenswertes/ehemalige_kapuzinerkirche_heil-1753/?setLanguage=en",
+          "role": "REGIONAL_TOURISM_PUBLISHED_CHURCH_GEO_POINT"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Heilig Kreuz former Capuchin church Kapuzinergasse 2 documented by city, diocese and Passionists. Diocesan dated 2026-10-27 extraordinary rite event is evidence of a celebration, but start time must be checked independently. Regional tourism publishes building coordinate; it is a **candidate building point, not verified liturgical entrance**.",
+      "blocking_exceptions": [
+        "OPERATOR_IS_PASSIONIST_NOT_FSSP_PROPERTY_OWNER",
+        "EVENT_TIME_NOT_ATTESTED_BY_DIOCESE_SNIPPET"
+      ],
+      "published_building_coordinate_candidate": {
+        "lat": 48.88995784685476,
+        "lon": 11.1907285451889,
+        "kind": "SOURCE_PUBLISHED_CHURCH_BUILDING_REFERENCE_ONLY",
+        "public_approved": false
+      },
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-025",
+      "secondary_source_grade": "LOCAL_FSSP_ONLY",
+      "sources": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/tuerkheim/gottesdienstzeiten.php",
+          "role": "FSSP_BRANCH_CLARIFIES_CHAPEL_ABOVE_SACRISTY"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Landsberg Ignatiuskapelle is on first floor over sacristy of Heilig Kreuz Kirche, accessible from Epfenhauserstr and Malteserstr; FSSP local branch says parking in kindergarten courtyard with barrier opened for Mass. Historic venue address street only insufficient for a simple map pin at road center.",
+      "blocking_exceptions": [
+        "UPSTAIRS_CHAPEL_WITHIN_CHURCH_NOT_GENERIC_HEILIG_KREUZ_ALTAR",
+        "COURTYARD_PARKING_GATE_ACCESS",
+        "NO_INDEPENDENT_VISITOR_DOOR"
+      ],
+      "physical_church_identity_research_confirmed": false,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-026",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://rathaus.bad-groenenbach.de/sport-freizeit-und-kultur/rund-ums-hohe-schloss/hohes-schloss-ringeisenhaus-schlosskapelle.html?cHash=0176e313b9da0b653f459892de3b5b22&fsize=0",
+          "role": "MUNICIPAL_CHAPEL_IN_RINGEISENHAUS_NOT_HIGH_CASTLE"
+        },
+        {
+          "url": "https://bad-groenenbach.1kcloud.com/ep164993b736c538/epaper/ausgabe.pdf",
+          "role": "MUNICIPAL_MAY_2026_SUNDAY_1000_CALENDAR"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Municipality says Schlosskapelle is inside Ringeisenhaus next to castle, not castle itself. May 2026 municipal timetable confirms Sunday 10:00. Older local building listings give Pappenheimerstr 2, while original FSSP gives no street number.",
+      "blocking_exceptions": [
+        "RINGEISENHAUS_NOT_HOHE_SCHLOSS",
+        "HISTORICAL_2026_MAY_NOT_FUTURE_SCHEDULE"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-028",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://lateinische-messe-nuernberg.de/termine/",
+          "role": "LOCAL_TLM_ORGANIZER_DATED_2026_2ND_4TH_SUNDAY_EVENTS"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Nürnberg St Georg Bierweg 35 independent local organiser has actual future-dated 8 and 22 November 2026 18:00 celebrations; other monthly dates listed. Venue identity confirmed, but no separate church-door geocode. Date-corroboration supports those advertised events, not arbitrary recurring extrapolations.",
+      "blocking_exceptions": [
+        "DATES_NOV_08_NOV_22_2026_OWNER_ANNOUNCED_NOT_PUBLIC_GATE",
+        "FIRST_SUNDAY_NOT_THE_SAME_AS_SECOND_FOURTH"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-029",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.mariahilfberg-amberg.de/kontakt-428765.html",
+          "role": "SANCTUARY_OPERATOR_MARIAHILFBERG_3"
+        },
+        {
+          "url": "https://amberg.de/fileadmin/ISEK/200416_AMB_Abschlussbericht_online_komp_Teil_I.pdf",
+          "role": "CITY_MONUMENT_INVENTORY_CHURCH_HOUSE_NUMBER_4_VS_MONASTERY_3"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Amberg Maria Hilf sanctuary owner gives postal Auf dem Mariahilfberg 3, but city monument inventory identifies church at number 4 and monastery at 3. Freeze distinct church identity and hold actual entrance/coordinate until site map proves worship doorway.",
+      "blocking_exceptions": [
+        "SANTUARY_POSTAL_3_VS_MONUMENT_CHURCH_4",
+        "ADJACENT_MONASTERY_NOT_CHURCH_ENTRANCE"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-034",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.erzbistum-koeln.de/news/Unerlaubte-Bischofsweihen-kirchliche-Strafen-fuer-die-Piusbruderschaft-St.-Pius-X./?facet_instancedate=2026-08-31T22%3A00%3A00Z",
+          "role": "ARCHDIOCESE_ST_MICHAEL_RHEINBACHER_STR_MASS_TIME"
+        },
+        {
+          "url": "https://www.fssp.org/en/find-us/where-are-we/",
+          "role": "FSSP_INTERNATIONAL_ST_MICHAEL_NUMBER_13"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Bonn St Michael Rheinbacher Straße Sunday 18:00 and Tue 19:00 identified by archdiocese; international FSSP list adds number 13 while German national page omits number, so church doorway at #13 must be independently confirmed.",
+      "blocking_exceptions": [
+        "NUMBER_13_FSSP_INT_ONLY_NO_INDEPENDENT_CHURCH_DOOR"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-035",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://ulrich-afra-anton.de/st-margareth_id689",
+          "role": "HOST_PARISH_ST_MARGARETH_SPITALGASSE_1"
+        },
+        {
+          "url": "https://ulrich-afra-anton.de/st-ulrich-und-afra/basilika/st-margareth",
+          "role": "HOST_PARISH_CHURCH_HISTORY_LOCATION"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Augsburg host Catholic St Margareth is Spitalgasse 1; the historic Dominican convent church and other St Anna chapels are separate buildings. CL14 FSSP times source matched to correct site; still needs direct entrance geocode.",
+      "blocking_exceptions": [
+        "DISTINCT_FROM_AUGSBURG_BASILICA_AND_OTHER_SITES"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-036",
+      "secondary_source_grade": "LOCAL_FSSP_ONLY",
+      "sources": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/mittersthal/messzeiten.php",
+          "role": "FSSP_LOCAL_HOUSE_MITTERSTHAL_SOURCE"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Deining-Mittersthal Haus St Stola An der Leiten 2 and Tuesday–Thursday 18:00/Saturday 08:00 remain local FSSP institutional-only within available sources. This is a named house/chapel programme, not a public parish church or independently confirmed visitor entrance.",
+      "blocking_exceptions": [
+        "HOUSE_CHAPEL_ACCESS_UNKNOWN",
+        "SECOND_INSTITUTIONAL_WITNESS_NOT_OBTAINED"
+      ],
+      "physical_church_identity_research_confirmed": false,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-037",
+      "secondary_source_grade": "SECONDARY_HERITAGE",
+      "sources": [
+        {
+          "url": "https://www.dewiki.de/Lexikon/Liste_der_Baudenkm%C3%A4ler_in_Garmisch-Partenkirchen",
+          "role": "SECONDARY_REPRINT_MONUMENT_ST_SEBASTIAN_MUNCHNER_1"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "Garmisch Partenkirchen Kapelle St Sebastian Münchner Str 1 matches a reprinted Bavarian monument inventory; no direct host-parish/current calendar source independently inspected. FSSP first Sunday 18:00 still research-only.",
+      "blocking_exceptions": [
+        "HERITAGE_SECONDARY_ONLY",
+        "FIRST_SUNDAY_OWNER_EVENT_NOT_DIRECTLY_CONFIRMED"
+      ],
+      "physical_church_identity_research_confirmed": false,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-038",
+      "secondary_source_grade": "INDEPENDENT_PRIMARY",
+      "sources": [
+        {
+          "url": "https://www.pfarrei-blaibach.de/seite/368845/anfahrt.html",
+          "role": "PARISH_EXPLICIT_CHURCH_KIRCHPLATZ_12_VS_PFARRHOF_BENEFIZIATENGASSE_9"
+        }
+      ],
+      "review_date": "2026-10-26",
+      "observation": "St Elisabeth Blaibach host parish explicitly distinguishes church Kirchplatz 12 from presbytery Benefiziatengasse 9. FSSP first/third Sunday 11:30 belongs at church, not presbytery.",
+      "blocking_exceptions": [
+        "PFARRHOF_NOT_CHURCH",
+        "FIRST_THIRD_SUNDAY_ONLY"
+      ],
+      "physical_church_identity_research_confirmed": true,
+      "independently_verified_worship_entrance": false,
+      "independently_approved_public_coordinates": false,
+      "date_specific_mass_recurrence_approved": false,
+      "public_release": false
+    }
+  ]
+}
