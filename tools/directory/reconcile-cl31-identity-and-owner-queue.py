@@ -54,7 +54,7 @@ def main():
  assert Counter(y["queue"] for y in q)==Counter({"COHORT_200":200,"COHORT_71":71,"SECONDARY_25":25})
  anchors={y["effective_anchor_id"] for y in q}
  assert len(anchors)==143
- assert all(y["source_url"].startswith("https://") for y in q)
+ assert all(y["source_url"].startswith(("https://","http://")) for y in q)\n # Preserve the eight original unencrypted historical URLs as evidence. They are not publication links.\n assert sum(y["source_url"].startswith("http://") for y in q)==8
  assert overlap["source_rows_total"]==296
  assert overlap["distinct_effective_anchor_ids"]==143
  assert overlap["event_rows_on_any_296_review_queue_anchor"]==0
