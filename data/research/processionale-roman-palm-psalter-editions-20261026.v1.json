@@ -104,14 +104,18 @@
         "edition": "TEXTUS_NOVUS",
         "page": "143**",
         "url": "https://gregobase.selapa.net/chant.php?id=19315",
-        "archived": false,
-        "sha256": null,
+        "archived": true,
+        "sha256": "06537463e71d320e5134ac84a7cb0bc70579169cd3c509883caf9eb98cdc9be2",
         "transcriber": "Simone Sanavio",
         "proofread": "GregoBase marks proofread Apr 22 2025",
         "exactLatin1962": "Dómini est terra et quae replent eam",
         "status": "INCIPIT_MATCH_1962_OCR_MELODY_NOT_CERTIFIED",
         "imageWitnessURL": "https://gregobase.selapa.net/sources/2/1179.png",
-        "originalPrintedIncipitVisuallyChecked": true
+        "originalPrintedIncipitVisuallyChecked": true,
+        "archivePath": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+        "archiveStatus": "RAW_BYTES_SHA256_VERIFIED_UNAPPROVED",
+        "hasExtraGabcDelimiter": true,
+        "extraDelimiterEvidence": "Raw source contains consecutive %% lines, to be assessed by notation renderer owner; archive remains byte-exact."
       },
       "versePairs": [
         [
@@ -149,8 +153,8 @@
         "edition": "TEXTUS_NOVUS",
         "page": "144**",
         "url": "https://gregobase.selapa.net/chant.php?id=19316",
-        "archived": false,
-        "sha256": null,
+        "archived": true,
+        "sha256": "eb13e9eadcfeebca7e5fa0617f6cbb6c9823464ff88af2995952ab21ca8717a0",
         "transcriber": "Simone Sanavio",
         "proofread": "No proofread flag on record",
         "exactLatin1962": "Omnes pópuli, pláudite mánibus",
@@ -164,7 +168,11 @@
           "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf"
         ],
         "imageWitnessURL": "https://gregobase.selapa.net/sources/2/1180.png",
-        "originalPrintedIncipitVisuallyChecked": true
+        "originalPrintedIncipitVisuallyChecked": true,
+        "archivePath": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+        "archiveStatus": "RAW_BYTES_SHA256_VERIFIED_UNAPPROVED",
+        "hasExtraGabcDelimiter": true,
+        "extraDelimiterEvidence": "Raw source contains consecutive %% lines, to be assessed by notation renderer owner; archive remains byte-exact."
       },
       "versePairs": "SEQUENTIAL_PAIRS",
       "repeat": "AFTER_EVERY_TWO_VERSES",
@@ -193,7 +201,15 @@
     "scoreTitleNotAuthority": true,
     "pitchNeumeCollationComplete": false,
     "approvedRuntimeAssignments": 0,
-    "criticalHold": "Original 1961 printed Psalm 46 p.144** has 'Omnes populi' while catalogued GABC 19316 begins 'Omnes gentes'. Two-versus-three-syllable underlay may require reassignment of neumes, not an automatic text replace."
+    "criticalHold": "Original 1961 printed Psalm 46 p.144** has 'Omnes populi' while catalogued GABC 19316 begins 'Omnes gentes'. Two-versus-three-syllable underlay may require reassignment of neumes, not an automatic text replace.",
+    "newPsalmGabcArchiveCommit": "d8af7728daf94936266afe31071d0096c05a6a02",
+    "newPsalmGabcArchiveManifest": "data/research/chant-source-archive/1961-graduale-novus-20261026/sha256-manifest.json",
+    "newPsalmSourceCount": 2,
+    "newPsalmTotalBytes": 814,
+    "newPsalmPreservation": "BOTH_RAW_FILES_SHA256_VERIFIED_19316_QUARANTINED_19315_SOURCE_ONLY",
+    "originalSourceByteIntegrityConfirmed": true,
+    "hasExtraGabcDelimiter": true,
+    "scoreGabcSyntaxNotCertified": true
   },
   "acceptance": {
     "state": "RESEARCH_REQUIREMENTS_ONLY",
@@ -355,7 +371,7 @@
     },
     {
       "id": "NOVUS_GABC_RAW_HASH_ARCHIVE",
-      "status": "OPEN",
+      "status": "COMPLETE_TWO_RAW_FILES_QUARANTINED_19316",
       "owner": "#1752"
     },
     {
