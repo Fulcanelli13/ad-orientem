@@ -17,7 +17,8 @@
     "onlyAutomatedLexicalScreenedRemaining": 109,
     "clearSourceDataErrors": 2,
     "publishedFeatures": 0,
-    "newProductionChanges": 0
+    "newProductionChanges": 0,
+    "originalBilingualContextDraftsPendingReview": 3
   },
   "externalCorroboration": [
     {
@@ -350,5 +351,31 @@
       "publicationApproved": false
     }
   ],
-  "publicationApproved": false
+  "publicationApproved": false,
+  "editorialPilots": [
+    {
+      "id": "history.advent-ember-saturday-ordination-vigil",
+      "owner": "EXISTING_CALENDAR_HISTORICAL_CONTEXT",
+      "sourceArticleId": "a0095_ancien",
+      "status": "ORIGINAL_EDITORIAL_DRAFT_NEEDS_SOURCE_AND_RECORD_PARITY",
+      "en": "Why does Advent Ember Saturday share its Gospel with the following Sunday? In early Roman practice, the Ember ordinations could begin late on Saturday and continue into Sunday. Later changes to the timetable left a trace of this relationship in the appointed readings. This is an explanation of liturgical history, not an instruction to restore the former ordination vigil.",
+      "fr": "Pourquoi le samedi des Quatre-Temps de l’Avent partage-t-il son Évangile avec le dimanche suivant ? Dans l’ancienne pratique romaine, les ordinations pouvaient commencer tard le samedi et se prolonger jusqu’au dimanche. Les modifications ultérieures de l’horaire ont laissé une trace de ce lien dans les lectures prescrites. Il s’agit d’une explication historique, et non d’une invitation à rétablir l’ancienne vigile des ordinations."
+    },
+    {
+      "id": "history.september-ember-wednesday-station",
+      "owner": "EXISTING_CALENDAR_STATIONS_AND_MASS_EXPLORER",
+      "sourceArticleId": "a0452_ancien",
+      "status": "ORIGINAL_EDITORIAL_DRAFT_NEEDS_1962_READINGS_COMPARISON",
+      "en": "The traditional Roman station for the September Ember Wednesday was Saint Mary Major. Cardinal Schuster connects the day's readings with the ancient Roman pattern of several scriptural lessons and recalls the September Ember Days' historical associations with the harvest and penitential prayer. These are historical explanations; the actual readings must always come from the selected 1962 Mass.",
+      "fr": "La station romaine traditionnelle du mercredi des Quatre-Temps de septembre était Sainte-Marie-Majeure. Le cardinal Schuster rapproche les lectures de ce jour de l’ancien usage romain de plusieurs leçons scripturaires et rappelle les liens historiques de ces Quatre-Temps avec les récoltes et la prière pénitentielle. Il s’agit d’explications historiques : les lectures effectives doivent toujours provenir de la messe de 1962 choisie."
+    },
+    {
+      "id": "history.holy-innocents-former-violet-vestments",
+      "owner": "EXISTING_CALENDAR_HISTORICAL_CONTEXT",
+      "sourceArticleId": "a0099_ancien",
+      "status": "ORIGINAL_EDITORIAL_DRAFT_NEEDS_1962_COLOR_OWNER_MATCH",
+      "en": "Older Roman missals marked the feast of the Holy Innocents with violet vestments and generally omitted the Gloria and Alleluia, expressing the mourning associated with the martyrdom of the children. The 1960 revisions removed these particular signs of mourning. In the 1962 Missal the feast is celebrated in red, with the Gloria and Alleluia.",
+      "fr": "Les anciens missels romains marquaient la fête des Saints Innocents par les ornements violets et omettaient habituellement le Gloria et l’Alléluia, en signe de deuil pour le martyre des enfants. Les réformes de 1960 supprimèrent ces particularités. Selon le missel de 1962, la fête est célébrée en rouge, avec le Gloria et l’Alléluia."
+    }
+  ]
 }
