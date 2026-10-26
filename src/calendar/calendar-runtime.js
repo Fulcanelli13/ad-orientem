@@ -11,6 +11,7 @@ import { normaliseCustomSearch, calendarCustomSearchIndex, calendarCustomSearchM
 import { groupCalendarCustomsByYear } from "../customs/year-led-library.js";
 import { personalCustomsForDate } from "../customs/personal-store.js";
 import { calendarMassColour } from "./colour-projection.js";
+import { calendarOrdoMassFacts } from "./ordo-mass-facts.js";
 import { calendarPaletteColour, yearDailyProjection, yearSeasonGradient } from "./year-colour-wheel.js";
 import { serialize1962CalendarMonth, calendarMonthIcsFilename } from "./export-ics.js";
 import { assessPrintableProper, renderPrintableProperHtml } from "./print-proper.js";
@@ -899,6 +900,7 @@ function daySurface(selected,r){
       <h2>${esc(titleOf(r))}</h2>
       ${approvedClassIHeroMarkup(selected, r?.day?.main?.id, fr())}
       <div class="aoCalIdentityMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}${profileOf(r)?`<span>${esc(profileOf(r))}</span>`:""}</div>
+      ${dayMassOrdoMarkup(r)}
       ${cm.length?`<section class="aoCalV2Commemorations" aria-label="${esc(L("Observed 1962 Mass commemorations","Commémorations à la messe de 1962"))}"><small>${esc(L("1962 MASS · ALSO COMMEMORATED","MESSE DE 1962 · COMMÉMORATIONS"))}</small><h3>${esc(L("Commemorations","Commémorations"))}</h3>${cm.map(x=>`<p><i aria-hidden="true"></i><span>${esc(x)}</span></p>`).join("")}</section>`:""}
       ${calendarScriptureControls(selected,r)}
       ${properReady?`<button class="aoCalV2Primary" type="button" data-cal-mass>${esc(isGoodFridayLiturgy(r)?L("Open the Good Friday liturgy","Ouvrir la liturgie du Vendredi saint"):L("Open this Mass","Ouvrir cette messe"))} <span aria-hidden="true">→</span></button>`:""}
@@ -1026,6 +1028,29 @@ function yearSurface(selected,r){
     ${embedded&&!embeddedHomeYear?renderYearJourney({year:y,selectedDate:selected,focusedPeriodId:focusedYearPeriodId,fr:fr(),formatDate:displayDate,dailyColours:daily}):""}
   `;
 }
+function ordoMassFactMarkup(facts){
+  if(facts?.status!=="SOURCE_PROPER")return "";
+  const rows=[];
+  const row=(label,value,lang="")=>`<div class="aoCalOrdoFact"><dt>${esc(label)}</dt><dd${lang?' lang="'+lang+'"':""}>${esc(value)}</dd></div>`;
+  if(facts.introitIncipit)rows.push(row(L("Introit","Introït"),facts.introitIncipit,"la"));
+  if(facts.preface?.status==="MATCH")rows.push(row(L("Preface · source-matched","Préface · source concordante"),facts.preface.heading,"la"));
+  if(facts.preface?.status==="SOURCE_CONFLICT")
+    rows.push(row(L("Preface","Préface"),L("Source conflict · under review","Conflit de sources · à vérifier")));
+  if(facts.gloria!==null)rows.push(row("Gloria",facts.gloria?L("Included","Chanté ou récité"):L("Omitted","Omis")));
+  if(facts.credo!==null)rows.push(row("Credo",facts.credo?L("Included","Chanté ou récité"):L("Omitted","Omis")));
+  return rows.length?`<dl class="aoCalOrdoFacts">${rows.join("")}</dl>`:"";
+}
+function dayMassOrdoMarkup(r){
+  const facts=calendarOrdoMassFacts(r,{language:fr()?"fr":"en"});
+  if(facts.status!=="SOURCE_PROPER")return "";
+  const rows=ordoMassFactMarkup(facts);
+  if(!rows)return "";
+  return `<section class="aoCalDayMassOrdo" aria-label="${esc(L("Mass proper Ordo","Ordo du propre de la messe"))}">
+    <small>${esc(L("ORDO MISSÆ · RESOLVED PROPER","ORDO MISSÆ · PROPRE RÉSOLU"))}</small>
+    ${rows}
+    <p>${esc(L("Text evidence, not a choice of votive Mass or a certification of all rubrics.","Témoin textuel, non un choix de messe votive ni une certification de toutes les rubriques."))}</p>
+  </section>`;
+}
 function monthOrdoEntry(id){
   const d=dateOf(id),data=monthCellData(id),ready=data.ready;
   const loc=fr()?"fr-FR":"en-GB",abbr=d.toLocaleDateString(loc,{weekday:"short"});
@@ -1036,9 +1061,11 @@ function monthOrdoEntry(id){
     data.preview?L("Saved preview · confirming date","Aperçu enregistré · vérification du jour"):
       L("Resolving day…","Résolution du jour…");
   const comm=ready?commemorations(data.r):[];
+  const facts=ready?calendarOrdoMassFacts(data.r,{language:fr()?"fr":"en"}):null;
   const info=ready?`<div class="aoCalOrdoVerified">
     <p><strong>${esc(L("Mass of the day","Messe du jour"))}</strong> · ${esc(properOf(data.r)?L("Proper text available","Texte propre disponible"):L("Proper text unavailable","Texte propre indisponible"))}</p>
     ${comm.length?`<div class="aoCalOrdoCommemorations"><small>${esc(L("Commemorations","Commémorations"))}</small><ul>${comm.map(item=>`<li>${esc(item)}</li>`).join("")}</ul></div>`:""}
+    ${ordoMassFactMarkup(facts)}
   </div>`:`<p class="aoCalOrdoPending">${esc(weekCache.get(id)?.status==="failed"?L("The day's source could not be resolved. Use the month retry control.","La source du jour est indisponible. Utilisez la commande de nouvel essai du mois."):L("Details are withheld until the day's 1962 source resolves.","Les détails restent masqués jusqu'à la résolution de la source de 1962."))}</p>`;
   return `<details class="aoCalOrdoEntry${d.getDay()===0?" sunday":""}" data-cal-ordo-date="${esc(id)}" data-cycle="${esc(ready?data.cycle:"unknown")}" data-ready="${ready?"1":"0"}" style="--month-accent:${esc(accent)}">
     <summary><span class="aoCalOrdoDate"><small>${esc(abbr)}</small><b>${d.getDate()}</b></span>
@@ -1251,6 +1278,14 @@ function monthOrdoCss(){
 .aoCalOrdoCommemorations ul{margin:5px 0 12px;padding-left:17px}
 #ao-calendar-modular-root .aoCalOrdoExpanded button{border:0!important;border-radius:0!important;background:transparent!important;color:#c6b38b!important;min-height:44px!important;padding:8px 0!important;text-align:left!important}
 #ao-calendar-modular-root .aoCalOrdoList[data-cal-month-filter="temporale"] .aoCalOrdoEntry[data-cycle="sanctorale"],#ao-calendar-modular-root .aoCalOrdoList[data-cal-month-filter="sanctorale"] .aoCalOrdoEntry[data-cycle="temporale"]{display:none}
+.aoCalOrdoFacts{display:grid;gap:7px;margin:11px 0 4px;padding:0}
+.aoCalOrdoFact{display:grid;grid-template-columns:110px minmax(0,1fr);gap:8px;align-items:baseline}
+.aoCalOrdoFact dt{font:600 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.015em;color:var(--ao-text-muted,#a6a198)}
+.aoCalOrdoFact dd{margin:0;font:400 15px/1.4 var(--ao-font-body,Georgia,serif);color:var(--ao-text-primary,#e9e4d9);overflow-wrap:anywhere}
+.aoCalDayMassOrdo{max-width:650px;margin:17px auto 4px;padding:15px 16px;text-align:left;border-top:1px solid var(--ao-rule,rgba(226,214,190,.16));border-bottom:1px solid var(--ao-rule,rgba(226,214,190,.12))}
+.aoCalDayMassOrdo>small{color:#bfae8c;font:650 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.09em}
+.aoCalDayMassOrdo>p{margin:10px 0 0;color:var(--ao-text-muted,#a6a198);font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+@media(max-width:430px){.aoCalOrdoFact{grid-template-columns:85px minmax(0,1fr);gap:7px}.aoCalOrdoFact dd{font-size:14px}}
 @media(max-width:430px){.aoCalOrdoEntry>summary{gap:9px;grid-template-columns:46px minmax(0,1fr) 8px;padding-left:8px}.aoCalOrdoIdentity strong{font-size:17px}.aoCalOrdoExpanded{padding-left:63px}}`;
 }
 function css(){
