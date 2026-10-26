@@ -451,8 +451,7 @@
       "theme": "calendar.holy-thursday",
       "subject_relation": "COMPLEX_RITE_SUBJECT",
       "existing_artwork_candidates": [
-        "nga-12130",
-        "met-459131"
+        "nga-12130"
       ],
       "historical_selected_artwork_id": "met-459131",
       "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
@@ -468,6 +467,21 @@
         }
       ],
       "protected_approval": {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "user_choice_approved": true,
+        "relation": "EXACT_EUCHARISTIC_INSTITUTION",
+        "catalogue_id": "ART-hilippe-de-hampaigne-a-etite-ne",
+        "original_found_in_383": true,
+        "approved_date": "2026-04-02",
+        "evidence": "User explicitly replaced Holy Thursday Ugolino with Philippe de Champaigne La Petite Cène on 2026-10-26; independent 2026-05-27 approval unchanged",
+        "external_research_photo": null,
+        "supersedes": "2026-10-19 Ugolino da Siena Last Supper selection; archived above",
+        "image_master_approved": false,
+        "frame_free_master_photo_candidate": "research/champaigne-inv1125-photo-review-20261026",
+        "primary_research_photo_sha256": "99e102df2d3644783bce3ac4cb81002337f8eb166583d84f74c630be6a8efc0f"
+      },
+      "superseded_date_approval_20261019": {
         "artist": "Ugolino da Siena",
         "title": "Last Supper",
         "user_choice_approved": true,
@@ -477,7 +491,11 @@
         "approved_date": "2026-04-02",
         "evidence": "Explicit 2026-10-19 date-specific five-star approval",
         "external_research_photo": null
-      }
+      },
+      "user_decision_revision_record": "data/calendar/approved-feast-holy-thursday-20261026-override.v1.json",
+      "excluded_artwork_candidates_by_user": [
+        "met-459131"
+      ]
     },
     {
       "date": "2026-04-03",
@@ -1706,6 +1724,17 @@
         }
       ],
       "protected_approval": null
+    }
+  ],
+  "user_decision_updates": [
+    {
+      "date": "2026-04-02",
+      "superseded": "Ugolino da Siena — Last Supper",
+      "new_hero": "Philippe de Champaigne — La Petite Cène",
+      "date_of_user_decision": "2026-10-26",
+      "status": "effective_protected_artwork_selection",
+      "shared_painting_with": "2026-05-27",
+      "production_image_approved": false
     }
   ]
 }
