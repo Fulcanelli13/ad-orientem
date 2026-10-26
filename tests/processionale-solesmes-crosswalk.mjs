@@ -101,3 +101,41 @@ test('Palm Sunday liturgical music handoff stays in existing 1962 owners', () =>
   assert.equal(handoff.findings[1].stageId,'PALM-R04');
   assert.equal(handoff.findings[2].stageId,'PALM-R05');
 });
+
+
+test('1893 chant/action findings reference existing stage and event owners only', () => {
+  const witness = readJSON('data/research/processionale-1893-chant-action-matrix-20261026.v1.json');
+  assert.equal(witness.edition, 'PM1893_ONLY');
+  assert.equal(witness.witness.status, 'TEXTUAL_OCR_VERIFIED_NOT_FACSIMILE_CERTIFIED');
+  assert.equal(witness.editionSafety.original1888Read, false);
+  assert.equal(witness.editionSafety.doNotPromoteMelodyFrom1893, true);
+  assert.equal(witness.rows.length, 17);
+  assert.equal(new Set(witness.rows.map(x => x.id)).size, witness.rows.length);
+  const musicEvents = new Map(music.rites.flatMap(rite => rite.events.map(evt => [evt.id, {rite:rite.id, stage:evt.stageId}])));
+  for (const item of witness.rows) {
+    assert.equal(item.facsimileVerified,false);
+    assert.match(item.ocrLineSpan,/^\\d+-\\d+$/);
+    if (item.existingMusicEventId) {
+      const owner=musicEvents.get(item.existingMusicEventId);
+      assert.ok(owner,'No existing event owner for '+item.id);
+      assert.equal(owner.rite,item.rite);
+      assert.equal(owner.stage,item.existingStageId);
+    } else {
+      assert.equal(item.eventMapping,'NO_CURRENT_MUSIC_EVENT_CONTAINS_THIS_HISTORICAL_CHANT_OR_RUBRIC');
+    }
+  }
+  const cndExsurge = witness.rows.find(x => x.id === 'PM93.CN02');
+  assert.equal(cndExsurge.status,'PROHIBITED_IN_1962');
+  assert.equal(cndExsurge.existingMusicEventId,null);
+  const corpusLauda = witness.rows.find(x => x.id === 'PM93.CC03');
+  assert.equal(corpusLauda.status,'LOCAL_CUSTOM_CONDITIONAL');
+  assert.equal(corpusLauda.existingMusicEventId,null);
+});
+
+test('indirect 1888 scholarly citations do not masquerade as facsimile inspection', () => {
+  assert.equal(crosswalk.sourceAccessAudit.firstEdition1888.verifiedFullPageCount,0);
+  const attestations=crosswalk.sourceAccessAudit.firstEdition1888.indirectScholarlyAttestations;
+  assert.equal(attestations.length,3);
+  assert.ok(attestations.every(x => x.evidenceType && x.cannotEstablish));
+  assert.ok(attestations.every(x => x.inspection !== 'PRIMARY_PAGE_CHECKED'));
+});
