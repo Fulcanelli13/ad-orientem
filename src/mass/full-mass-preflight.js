@@ -74,7 +74,7 @@ export function mountFullMassPreflight({
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
   let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
   let folioStep="overview",experience={before:"none",after:"none",language:null},prayerOpening=false;
-  let chantIdentity=null,chantScoreId=null,chantSelections={};
+  let chantIdentity=null,chantScoreId=null,chantSelections={},sanctusPerformance="UNSPECIFIED";
   const donorSuppressed=new Map();
   const suppressDonorDuplicates=()=>{
     const panel=root?.parentElement;
@@ -132,8 +132,9 @@ export function mountFullMassPreflight({
     const identity=massChantProgrammeIdentity(legacy,{form:value.form,kind:value.kind});
     const chantProgramme=createMassChantProgramme(legacy,{form:value.form,kind:value.kind,
       kyrieScoreId:identity===chantIdentity?chantScoreId:null,
-      selectedScores:identity===chantIdentity?chantSelections:null});
-    return Object.freeze({...value,chantProgramme,explicitlyChosenForm:explicit,
+      selectedScores:identity===chantIdentity?chantSelections:null,
+      sanctusPerformance});
+    return Object.freeze({...value,chantProgramme,sanctusPerformance,explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       readerLanguage:selectedExperience().language,
       beforeMass:selectedExperience().before,afterMass:selectedExperience().after});
@@ -169,17 +170,17 @@ export function mountFullMassPreflight({
     const date=String(legacy?.date??"");
     // A fresh selected date represents a new preflight: do not silently carry
     // an override into another Mass. In-session changes remain live.
-    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;folioStep="overview";chantIdentity=null;chantScoreId=null;chantSelections={};}
+    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;folioStep="overview";chantIdentity=null;chantScoreId=null;chantSelections={};sanctusPerformance="UNSPECIFIED";}
     lastDate=date;
     const celebrationKey=[date,legacy?.celebrationId??"",legacy?.requestedCelebrationId??"",
       legacy?.celebrationType??"",legacy?.exceptionalProfile??""].join("|");
-    if(lastCelebrationKey!==null&&lastCelebrationKey!==celebrationKey){riteOverrides={};chantIdentity=null;chantScoreId=null;chantSelections={};}
+    if(lastCelebrationKey!==null&&lastCelebrationKey!==celebrationKey){riteOverrides={};chantIdentity=null;chantScoreId=null;chantSelections={};sanctusPerformance="UNSPECIFIED";}
     lastCelebrationKey=celebrationKey;
     // A change of form or resolved Proper invalidates user-reported tunes.
     const nowChantIdentity=massChantProgrammeIdentity(legacy,{
       form:activeForm(),kind:massCelebrationKind(legacy)});
     if(chantIdentity!==null&&chantIdentity!==nowChantIdentity){
-      chantIdentity=null;chantScoreId=null;chantSelections={};
+      chantIdentity=null;chantScoreId=null;chantSelections={};sanctusPerformance="UNSPECIFIED";
     }
     if(root&&!root.isConnected)root=null;
     if(!root){
@@ -236,7 +237,10 @@ export function mountFullMassPreflight({
         '<details data-full-mass-chant class="aoMassChantProgramme" hidden><summary data-full-mass-chant-heading></summary>'+
         '<p data-full-mass-chant-note></p><label data-full-mass-chant-label for="ao-full-mass-kyrie"></label>'+
         '<select id="ao-full-mass-kyrie" data-full-mass-chant-choice></select>'+ 
-        '<div data-full-mass-other-chants></div>'+
+        '<div data-full-mass-other-chants></div>'+ 
+        '<label data-full-mass-performance-label for="ao-full-mass-sanctus-performance"></label>'+ 
+        '<select id="ao-full-mass-sanctus-performance" data-full-mass-sanctus-performance></select>'+ 
+        '<p data-full-mass-performance-note></p>'+
         '<p data-full-mass-chant-source></p></details>'+
         '<details data-full-mass-rites class="aoFullMassOptional"><summary data-full-mass-rite-summary></summary>'+
         '<p data-full-mass-rite-intro></p><div data-full-mass-rite-list></div></details>'+
@@ -395,13 +399,22 @@ export function mountFullMassPreflight({
           if(["none","thanksgiving","full"].includes(el.value))experience.after=el.value;
           refresh();return;
         }
+        if(el?.matches?.("[data-full-mass-sanctus-performance]")){
+          const style=String(el.value);
+          sanctusPerformance=["GREGORIAN","POLYPHONIC"].includes(style)?style:"UNSPECIFIED";
+          if(sanctusPerformance==="POLYPHONIC"){
+            chantSelections={...chantSelections};delete chantSelections.SANCTUS_BENEDICTUS;
+          }
+          refresh();return;
+        }
         if(el?.matches?.("[data-full-mass-chant-choice], [data-full-mass-other-choice]")){
           const actual=getResolvedMass();
           const summary=resolvedMassSummary(actual,{form:activeForm(),language:language()});
           const track=el.matches("[data-full-mass-chant-choice]")?"KYRIE":el.dataset.fullMassOtherChoice;
           if(!MASS_CHANT_ORDINARY_TRACKS.includes(track))return;
           const options=massChantOptions(track,{form:summary.form,kind:summary.kind});
-          const value=options.some(item=>item.id===el.value)?el.value:null;
+          const value=(track==="SANCTUS_BENEDICTUS"&&sanctusPerformance==="POLYPHONIC")?
+            null:options.some(item=>item.id===el.value)?el.value:null;
           chantIdentity=massChantProgrammeIdentity(actual,{form:summary.form,kind:summary.kind});
           if(value)chantSelections={...chantSelections,[track]:value};
           else{chantSelections={...chantSelections};delete chantSelections[track];}
@@ -604,10 +617,30 @@ export function mountFullMassPreflight({
             option.textContent=item.title;select.append(option);
           }
           select.value=summary.chantProgramme?.selections?.[track]??"";
-          select.disabled=!musicAvailable;
+          select.disabled=!musicAvailable||track==="SANCTUS_BENEDICTUS"&&sanctusPerformance==="POLYPHONIC";
           row.append(label,select);extra.append(row);
         }
       }
+      const performanceControl=chantDetails.querySelector("[data-full-mass-sanctus-performance]");
+      if(performanceControl){
+        performanceControl.replaceChildren();
+        const choices=[
+          ["UNSPECIFIED",l("Not known / not yet observed","Inconnu / non encore observé")],
+          ["GREGORIAN",l("Continuous Gregorian chant","Chant grégorien continu")],
+          ["POLYPHONIC",l("Polyphonic · Benedictus separately","Polyphonie · Benedictus séparé")],
+        ];
+        for(const [id,title] of choices){
+          const node=doc.createElement("option");node.value=id;node.textContent=title;
+          performanceControl.append(node);
+        }
+        performanceControl.value=sanctusPerformance;
+        performanceControl.disabled=!musicAvailable;
+      }
+      word("[data-full-mass-performance-label]","Sanctus / Benedictus · actual choir practice",
+        "Sanctus / Benedictus · pratique réelle de la schola");
+      word("[data-full-mass-performance-note]",
+        "A separate Benedictus begins only when observed. Polyphonic singing does not use this Gregorian reference score.",
+        "Un Benedictus séparé commence seulement après observation. La polyphonie n’utilise pas cet exemple grégorien.");
       const hasSelected=Boolean(Object.keys(summary.chantProgramme?.selections??{}).length);
       word("[data-full-mass-chant-source]",
         hasSelected?"GregoBase · Solesmes 1961 · selected by you, not independently verified":
