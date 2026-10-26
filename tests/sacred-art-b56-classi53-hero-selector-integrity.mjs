@@ -45,6 +45,23 @@ assert.equal(audit.research_exact_source_outside_383_count,7);
 assert.deepEqual(audit.class_i_review_lanes,{LOCKED_10:10,GAP_9:9,EXACT_6:6,SUBJECT_28:28});
 const lanes=Object.fromEntries(["LOCKED_10","GAP_9","EXACT_6","SUBJECT_28"].map(k=>[k,days.filter(d=>d.review_lane===k).length]));
 assert.deepEqual(lanes,audit.class_i_review_lanes);
+assert.equal(seed.editorial_screen_20261026.reviewed_date_rows,28);
+assert.equal(audit.prior_subject_date_rows_iconographically_screened,28);
+assert.equal(days.filter(d=>d.editorial_screen).length,28);
+assert.equal(days.filter(d=>d.editorial_screen&&d.original_approval).length,0);
+for(const day of days.filter(d=>d.editorial_screen)){
+ const original=seed.dates.find(x=>x.date===day.date);
+ assert.deepEqual(day.editorial_screen,original.editorial_screen_20261026);
+ assert.equal(day.editorial_screen.new_user_selection_made,false);
+ assert.equal(day.editorial_screen.photo_release_cleared,false);
+}
+assert.equal(days.find(d=>d.date==="2026-06-24").editorial_screen.proposed_exact_artwork_id,"met-458984");
+assert.equal(days.find(d=>d.date==="2026-06-29").editorial_screen.proposed_exact_artwork_id,"met-442491");
+assert.equal(days.find(d=>d.date==="2026-04-12").editorial_screen.proposed_exact_artwork_id,"B02-THOMAS-CARAVAGGIO");
+assert.equal(days.find(d=>d.date==="2026-04-10").editorial_screen.status,"GOSPEL_DIFFERENT");
+assert.match(html,/function visibleDays\(\)/);
+assert.match(html,/function moveInLane\(step\)/);
+assert.match(html,/id="screen"/);
 assert.match(html,/data-nav-filter="gaps"/);
 assert.match(html,/data-nav-filter="exact"/);
 assert.match(html,/data-nav-filter="subject"/);
