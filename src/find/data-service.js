@@ -365,7 +365,11 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
   // before independent same-building, Mass-use and geometry certification.
   const g0Corpus=await fetchJson(moduleUrl("../../data/directory/research/canonical-g0-site-admissions-b84-b90-20261026.v1.json"),
     {fetchImpl,optional:true});
-  const g0Research=g0Corpus?stageG0ResearchVenues(g0Corpus,{existingRecords:other.records}):null;
+  // Optional research source must never interrupt an otherwise available
+  // public directory. An unavailable/empty fixture is not an import failure;
+  // a schema-valid, malformed G0 payload still fails the G0 validation gate.
+  const g0Research=g0Corpus?.schema==="AO_DIRECTORY_CANONICAL_G0_RESEARCH_VENUE_ADMISSIONS_V1"
+    ?stageG0ResearchVenues(g0Corpus,{existingRecords:other.records}):null;
   return Object.freeze({
     records:other.records,
     privateResearchVenues:g0Research?.records??Object.freeze([]),
