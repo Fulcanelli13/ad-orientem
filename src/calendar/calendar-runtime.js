@@ -763,7 +763,7 @@ function calendarPersonalContext(selected){
 
 function practiceContext(selected,r){
   let intel=null;
-  try{intel=calendarIntelligenceForDate(selected,{fr:fr(),properTitle:titleOf(r)})}catch(error){console.error("Calendar intelligence failed",error)}
+  try{intel=calendarIntelligenceForDate(selected,{fr:fr(),properTitle:titleOf(r),observedMainId:r?.day?.main?.id})}catch(error){console.error("Calendar intelligence failed",error)}
   if(!intel)return "";
   const events=(intel.events||[]).filter(event=>event?.key!=="sunday-mass");
   const tags=new Set(events.flatMap(event=>event?.tags||[]));
@@ -909,7 +909,7 @@ function daySurface(selected,r){
       ${next?`<button class="aoCalV2NextMajor" type="button" data-cal-date="${next.date}"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><strong>${esc(celebrationName(next))}</strong><span>${esc(longDate(next.date))} · ${dayCount(selected,next.date)} ${esc(L("days","jours"))}</span></button>`:nextMajorStatusMarkup(selected,"day")}
       <button class="aoCalV2TextLink" type="button" data-cal-view="year">${esc(L("View the liturgical year","Voir l’année liturgique"))} →</button>
     </section>
-    ${renderCalendarHistoricalContext(selected,{fr:fr()})}
+    ${renderCalendarHistoricalContext(selected,{fr:fr(),observedMainId:r?.day?.main?.id})}
     ${practiceContext(selected,r)}
     ${calendarPersonalContext(selected)}
     ${calendarCustomCatalogueMarkup()}
