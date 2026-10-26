@@ -37,7 +37,18 @@ APPOINTED_REFS={
 "2026-03-15":("John 6:1–15","Multiplication of loaves and fishes"),
 "2026-03-31":("Mark 14:1–15:46","Passion of Christ according to St Mark"),
 "2026-04-01":("Luke 22:1–23:53","Passion of Christ according to St Luke"),
-"2026-09-29":("Feast of St Michael","St Michael the Archangel; exact feast subject")}
+"2026-09-29":("Feast of St Michael","St Michael the Archangel; exact feast subject"),
+"2026-04-05":("Mark 16:1–7","Women discover the empty tomb"),
+"2026-04-06":("Luke 24:13–35","Christ and the two disciples on the road to Emmaus"),
+"2026-04-07":("Luke 24:36–47","Christ appears among the disciples"),
+"2026-04-08":("John 21:1–14","The risen Christ and the miraculous catch of fish"),
+"2026-04-09":("John 20:11–18","Mary Magdalene encounters the risen Christ"),
+"2026-04-10":("Matthew 28:16–20","The risen Christ commissions the Apostles"),
+"2026-04-11":("John 20:1–9","Peter and John find the empty tomb"),
+"2026-04-12":("John 20:19–31","The risen Christ and Saint Thomas"),
+"2026-05-01":("Matthew 13:54–58","Christ the carpenter's son"),
+"2026-06-24":("Luke 1:57–68","Birth and naming of Saint John the Baptist"),
+"2026-06-29":("Feast of Saints Peter and Paul","Both Apostles, not Peter alone")}
 OUT=PREV/"sacred-art-b56-classi-53-hero-selection-offline.html"
 REPORT=ROOT/"sacred-art-b56-53-hero-selection-verified-summary.json"
 LEDGER=ROOT/"sacred-art-b56-53-hero-candidate-list.json"
@@ -403,11 +414,14 @@ def main():
             "relation":day["subject_relation"],"original_approval":approved,
             "review_lane":lane,"appointed_reading":ref,
             "appointed_scene":scene,
+            "editorial_screen":day.get("editorial_screen_20261026"),
             "options":clean,"release_ready":False,
             "selection":None,"need_more_research":False
         })
     assert len(selected)==53 and sum(bool(x["original_approval"]) for x in selected)==10
     from collections import Counter
+    assert sum(bool(x["editorial_screen"]) for x in selected)==28
+    assert all(not x["editorial_screen"] for x in selected if x["original_approval"])
     assert dict(Counter(x["review_lane"] for x in selected))=={
       "LOCKED_10":10,"GAP_9":9,"EXACT_6":6,"SUBJECT_28":28}
     assert all(any(c["choice_id"]==z["artworkId"] for c in
@@ -439,6 +453,7 @@ def main():
      "previously_approved_absent_from_383":6,
      "external_prior_approved_images_resolved":sum(bool(external.get(x["date"],{}).get("actual_image_confirmed")) for x in selected if x["date"] in external),
      "research_exact_source_outside_383_count":len(exact_links),
+     "prior_subject_date_rows_iconographically_screened":28,
      "research_exact_source_preview_available":sum(bool(z.get("actual_image_confirmed")) for z in extra_exact.values()),
      "class_i_review_lanes":{"LOCKED_10":10,"GAP_9":9,"EXACT_6":6,"SUBJECT_28":28},
      "zero_app_publication_rights_approved":True,
