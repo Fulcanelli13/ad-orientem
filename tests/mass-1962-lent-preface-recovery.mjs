@@ -87,6 +87,21 @@ for(const value of [
     "Already selected non-Common Preface must be left untouched");
   assert.equal(calls.length,n);
 }
+// An explicit alternate selected-Mass context is stronger than the
+// base Proper's reused source identity; no Lenten projection is licensed.
+for(const changed of [
+  {requestedCelebrationId:"special_votive_mass"},
+  {riteProfile:"votive_mass"},
+  {riteProfile:"requiem"},
+  {riteProfile:"mass_of_dead"}
+]){
+  const altered={...input("tempora:Quad2-1:3:v"),...changed};
+  const count=calls.length;
+  assert.equal(await recoverReaderProperOmissions(altered,{
+    hostResolver:resolver,principalCelebrationId:"tempora:Quad2-1:3:v"
+  }),altered,"Must not replace an explicit alternative selected Mass");
+  assert.equal(calls.length,count);
+}
 const missingFrench={...languages,fr:null};
 const partialResolver={async resolveSource(path,lang){
   return {map:new Map(lang==="fr"?[]:[["Quad",missingFrench[lang]]])};
