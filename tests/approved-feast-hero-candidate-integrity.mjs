@@ -9,13 +9,15 @@ const candidate=JSON.parse(get("data/calendar/approved-feast-hero-packaged-candi
 const source=JSON.parse(get("data/calendar/approved-feast-hero-photo-sha-evidence-20261021.v1.json").toString());
 assert.equal(candidate.schema,"AO_APPROVED_FEAST_HERO_PACKAGING_CANDIDATES_20261021_V1");
 assert.equal(candidate.photographs.length,10);
+assert.equal(candidate.candidateWebpFilesWritten,9);
+assert.equal(candidate.verifiedOriginalImageSHA,9);
 assert.equal(source.photographs.length,10);
 assert.equal(candidate.liveReleaseManifest,null);
 assert.equal(candidate.humanAcceptedImagePhotos,0);
 assert.equal(candidate.explicitAppRightsReleaseApprovals,0);
 let totalBytes=0;
 for(const x of candidate.photographs){
-  const original=source.photographs.find(y=>y.date===x.date);
+  const original=source.photographs.find(y=>y.date===(x.photoSourceEvidenceDate||x.date));
   assert.ok(original,x.date+" cannot find permanent source");
   assert.equal(x.artist,original.artist);
   assert.equal(x.title,original.title);
@@ -45,12 +47,24 @@ for(const x of candidate.photographs){
   assert.equal(x.rightsReview.appDistributionIndependentlyApproved,false);
   assert.equal(x.rightsReview.photographRightsHumanSignedOff,false);
 }
-assert.equal(candidate.photographs.find(x=>x.date==="2026-04-02").framingReview.previewObservation,"GILDED_EXTERNAL_FRAME_VISIBLE");
+assert.equal(candidate.photographs.find(x=>x.date==="2026-04-02").framingReview.previewObservation,"REUSES_CHAMPAIGNE_UNFRAMED_FULL_PAINTING_SOURCE; HUMAN_EDGE_CHECK_PENDING");
 assert.equal(candidate.photographs.find(x=>x.date==="2026-10-25").framingReview.previewObservation,"WHITE_PHOTOGRAPHIC_MARGINS_VISIBLE");
 assert.equal(candidate.photographs.find(x=>x.date==="2026-11-01").framingReview.previewObservation,"DARK_PERIMETER_BORDER_REQUIRES_ORIGIN_REVIEW");
 assert.equal(candidate.photographs.find(x=>x.date==="2026-06-12").framingReview.previewObservation,"PAINTED_OVAL_ICONOGRAPHY_MUST_BE_PRESERVED");
 assert.equal(candidate.framelessReleaseApprovals,0);
-assert.equal(candidate.photographs.filter(x=>x.rightsReview.status.startsWith("MET_")).length,2);
-assert.equal(candidate.photographs.filter(x=>x.rightsReview.status.startsWith("COMMONS_")).length,8);
+const holyThursday=candidate.photographs.find(x=>x.date==="2026-04-02");
+const emberWednesday=candidate.photographs.find(x=>x.date==="2026-05-27");
+assert.equal(holyThursday.artist,"Philippe de Champaigne");
+assert.equal(holyThursday.title,"La Petite Cène");
+assert.equal(holyThursday.photoSourceEvidenceDate,"2026-05-27");
+assert.equal(holyThursday.editorialRevision,"data/calendar/approved-feast-holy-thursday-20261026-override.v1.json");
+assert.equal(holyThursday.sourceImageSHA256,emberWednesday.sourceImageSHA256);
+assert.equal(holyThursday.candidateFile.path,emberWednesday.candidateFile.path);
+assert.equal(holyThursday.candidateFile.sha256,emberWednesday.candidateFile.sha256);
+assert.ok(!candidate.photographs.some(x=>x.artist==="Ugolino da Siena"));
+assert.equal(new Set(candidate.photographs.map(x=>x.candidateFile.path)).size,9);
+assert.equal(new Set(candidate.photographs.map(x=>x.sourceImageSHA256)).size,9);
+assert.equal(candidate.photographs.filter(x=>x.rightsReview.status.startsWith("MET_")).length,1);
+assert.equal(candidate.photographs.filter(x=>x.rightsReview.status.startsWith("COMMONS_")).length,9);
 assert.ok(totalBytes>1_000_000 && totalBytes<6_000_000);
-console.log("HERO_CANDIDATE_ASSET_INTEGRITY PASS: 10/10 local WEBP hashes matched; source SHA identities preserved; 0 production approvals");
+console.log("HERO_CANDIDATE_ASSET_INTEGRITY PASS: 10 feast dates reuse 9 verified image files; Champaigne replaces Ugolino without changing historical proof; 0 production approvals");
