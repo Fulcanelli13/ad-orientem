@@ -356,6 +356,103 @@
     {
       "gate": "NO_RUNTIME_CHANGE",
       "status": "PASS"
+    },
+    {
+      "gate": "1962_CANDLEMAS_EXSURGE_EXCLUSION",
+      "status": "PASS_PRINTED_1962_MISSAL_AND_GUIDE"
+    },
+    {
+      "gate": "1962_PALM_GOSPEL_BOUNDARY",
+      "status": "PASS_SECONDARY_RUBRIC_CHECK"
+    },
+    {
+      "gate": "1962_PALM_DISTRIBUTION_PSALM_COMPLETENESS",
+      "status": "GAP_RECORDED_REFERRED_TO_EXISTING_OWNER"
+    },
+    {
+      "gate": "ICKSP_OLDER_TEXT_EDITION_CONFLICT",
+      "status": "FLAGGED_NON1962_ONLINE_WITNESS"
+    }
+  ],
+  "sourceAccessAudit": {
+    "date": "2026-10-26",
+    "firstEdition1888": {
+      "bibliographicWitnesses": [
+        "https://books.google.com/books?id=ECHZVF9EYREC",
+        "https://www.scribd.com/document/794245799/1888-Processionale-Monasticum-Solesmis",
+        "https://polskabibliotekamuzyczna.pl/encyklopedia/pothier-joseph/"
+      ],
+      "googleBooksPdf": "LINK_EXISTS_BUT_DOWNLOAD_HTTP_403",
+      "scribdPage": "CATALOGUE_METADATA_ONLY_FULL_PAGES_INACCESSIBLE",
+      "verifiedFullPageCount": 0,
+      "collationState": "NOT_STARTED_BLOCKED_ORIGINAL_SCAN",
+      "policy": "No affirmative claim that any 1893 chant was already present in the 1888 first edition."
+    },
+    "secondEdition1893": {
+      "url": "https://ru.scribd.com/document/794245734/1893-Processionale-Monasticum-Solesmes",
+      "state": "SELECTED_OCR_PAGES_READ_NOT_IMAGE_COLLATED",
+      "selectedPrintedPageLocators": [
+        "53-56",
+        "93-94",
+        "133-136"
+      ],
+      "note": "OCR printed-page headers occasionally read incorrectly (notably 135 as 185); page references still require facsimile QA."
+    },
+    "externalCataloguing": {
+      "gregoBaseProcedamus": "https://gregobase.selapa.net/chant.php?id=10452",
+      "editionSpecificNote": "GregoBase lists Processionale Monasticum 1893 p.54 and historical Roman Ritual 1925/1927 witnesses; not the 1888 edition and not 1962 validation."
+    }
+  },
+  "roman1962Contrasts": [
+    {
+      "id": "PM-R1962-CND-EXSURGE",
+      "rite": "CANDLEMAS",
+      "outcome": "CONFIRMED_EXCLUSION_PRESERVE_CURRENT",
+      "olderWitness": "PM1893 printed pp.133-134 sings Exsurge Domine after Lumen",
+      "roman1962Primary": "https://www.ccwatershed.org/wp-content/uploads/2020/02/80020-PURIFICATION-2-February-1962-Rubrics-official.pdf#page=3",
+      "roman1962PrintedPages": "465-466",
+      "controlWitness": "https://media.churchmusicassociation.org/books/7848318-Psallite-Sapienter-A-Musicians-Guide-to-the-Extraordinary-Form.pdf#page=35",
+      "finding": "1962 Missal moves from Lumen/Nunc dimittis to concluding prayer and procession without Exsurge; §90 of 1962-specific guide explicitly excludes it.",
+      "onlineConflict": "https://icrspfrance.fr/textes-liturgiques.php?article=a0146_ancien",
+      "onlineConflictNote": "ICRSP France page a0146_ancien displays Exsurge and pre-1962 Flectamus genua; do not assign it undifferentiated 1962 authority.",
+      "actualMainline": "data/presentation/reader-candlemas.v1.json has distribution/refrain and processional antiphons without Exsurge; correct as currently implemented.",
+      "recommendedAction": "NO_RUNTIME_CHANGE"
+    },
+    {
+      "id": "PM-R1962-PALM-GOSPEL",
+      "rite": "PALM",
+      "outcome": "CONFIRMED_EDITION_REFORM_DIFFERENCE",
+      "olderWitness": "PM1893 printed p.54 places procession immediately after two distribution antiphons.",
+      "roman1962Reference": "https://www.missalemeum.com/en/calendar/1962-04-15",
+      "controlWitness": "https://media.churchmusicassociation.org/books/7848318-Psallite-Sapienter-A-Musicians-Guide-to-the-Extraordinary-Form.pdf#page=39",
+      "actualMainline": "src/mass/reader-palm.js PALM-R02 distribution, PALM-R03 Gospel, PALM-R04 procession.",
+      "finding": "1962 Gospel comes after distribution and before proceeding; native reader already preserves that order.",
+      "recommendedAction": "NO_RUNTIME_CHANGE"
+    },
+    {
+      "id": "PM-R1962-PALM-PSALMS",
+      "rite": "PALM",
+      "outcome": "CONFIRMED_READER_TEXT_COVERAGE_GAP_REVIEW",
+      "roman1962Reference": "https://www.missalemeum.com/en/calendar/1962-04-15",
+      "controlWitness": "https://media.churchmusicassociation.org/books/7848318-Psallite-Sapienter-A-Musicians-Guide-to-the-Extraordinary-Form.pdf#page=39",
+      "documentedCorpus": [
+        "Psalm 23 vv.1-2 and 7-10 paired with first Pueri Hebraeorum",
+        "Psalm 46 paired with second Pueri Hebraeorum",
+        "repetition of antiphon after each two verses and doxology at completion"
+      ],
+      "currentReader": "data/presentation/reader-palm.v1.json texts.puerI and texts.puerII; src/mass/reader-palm.js PALM-R02 paragraphs list only these two antiphons, no Psalm verses.",
+      "finding": "The 1962 chanted distribution includes Psalm verses/refrains not present in the native reader's PALM-R02 text payload. This is a scoped coverage finding from a 1962 source, not an instruction to import the 1893 Psalms.",
+      "integrationBoundary": "Defer to ongoing 1962 printed-Missal collation (#894) and existing Mass text owner, no new chant-event identity.",
+      "recommendedAction": "FOLLOWUP_EXISTING_1962_SOURCE_OWNER"
+    },
+    {
+      "id": "PM-R1962-CORPUS-PANGE",
+      "rite": "CORPUS_CHRISTI",
+      "outcome": "HISTORICAL_TRIGGER_NOT_ENOUGH_FOR_1962",
+      "olderWitness": "PM1893 printed p.93 gives Dum Sacerdos discedit ab Altari for Pange lingua.",
+      "currentReader": "src/mass/reader-corpus-christi.js CORPUS-R02 trigger MONSTRANCE_PLACED_IN_CELEBRANT_HANDS.",
+      "finding": "Historical incipit timed to leaving altar; movement and monstrance placement may differ. Do not change the current stage trigger on historical evidence alone.",
+      "recommendedAction": "AWAIT_INDEPENDENT_1962_PROCESSIONAL_RUBRIC"
     }
   ]
 }
