@@ -1,0 +1,61 @@
+name: Directory CL8 completeness audit
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'data/directory/research/cl8-completeness-audit-20261026/**'
+      - 'tools/directory/audit-cl-completeness.py'
+      - '.github/workflows/directory-cl8-completeness.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'data/directory/research/cl8-completeness-audit-20261026/**'
+      - 'tools/directory/audit-cl-completeness.py'
+      - '.github/workflows/directory-cl8-completeness.yml'
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate CL2–CL7 evidence and provenance
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+      - name: Rebuild research master and calculate all field denominators
+        run: |
+          python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ao-cl8-master.sqlite
+          python3 tools/directory/audit-cl-completeness.py --db /tmp/ao-cl8-master.sqlite --output-dir /tmp/ao-cl8-audit
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl8-audit/cl_completeness_summary.json').read_text())
+          assert x['new_missal_acceptances']==0
+          assert x['new_public_site_releases']==0
+          assert x['new_current_timetable_releases']==0
+          assert x['effective_CL7_description_blanks']==36
+          assert x['institutional_urls_not_directly_reviewed']==195
+          assert x['per_field']
+          print('CL8 audit PASS; reproducible per-field report:',len(x['per_field']))
+          PY
+      - name: Upload ephemeral report exports (source/code remain committed)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-cl8-completeness-review
+          path: /tmp/ao-cl8-audit/
+          retention-days: 1
