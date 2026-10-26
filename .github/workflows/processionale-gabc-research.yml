@@ -1,11 +1,8 @@
 name: Processionale GABC read-only research capture
 
+# Initial 15-source set archived, SHA256-verified on 2026-10-26.
+# Manual-only for intentional source refresh: avoid re-downloading on each PR edit.
 on:
-  pull_request:
-    paths:
-      - .github/workflows/processionale-gabc-research.yml
-      - tools/research/processionale-gabc-capture.mjs
-      - data/research/processionale-roman-score-facsimile-handoff-20261026.v1.json
   workflow_dispatch:
 
 permissions:
@@ -20,5 +17,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Capture exact CC0 source bytes with SHA256 (no repo write)
+      - name: Capture CC0 GABC source bytes and SHA256 without repository write
         run: node tools/research/processionale-gabc-capture.mjs
