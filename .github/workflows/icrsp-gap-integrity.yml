@@ -17,6 +17,8 @@ on:
       - 'tests/test_icrsp_temporal_sourcepath_witnesses.py'
       - 'data/source-text/icrsp-france-b10-lent-pentecost51-content-screen.v1.json'
       - 'tests/test_icrsp_b10_lent_pentecost_content_screen.py'
+      - 'data/source-text/icrsp-france-b11-40-commentary-theme-review.v1.json'
+      - 'tests/test_icrsp_b11_commentary_theme_review.py'
       - 'data/source-text/icrsp-france-b11-40-content-evidence-topics.v1.json'
       - 'data/source-text/icrsp-france-b11-51-crossdomain-content-handoff.v1.json'
       - 'tests/test_icrsp_b11_51_content_owner_handoff.py'
@@ -41,4 +43,5 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_mass_explorer_owner_parity.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_temporal_sourcepath_witnesses.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b10_lent_pentecost_content_screen.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b11_commentary_theme_review.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b11_51_content_owner_handoff.py' -v
