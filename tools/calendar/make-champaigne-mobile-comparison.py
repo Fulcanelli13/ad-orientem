@@ -8,11 +8,11 @@ import hashlib, json, html
 
 ROOT=Path.cwd()
 DIR=ROOT/"assets/staged/champaigne-petite-cene-research"
-SOURCE=DIR/"C-canvas-interior-clean-ungraded-source-derived.jpg"
+SOURCE=DIR/"D-bottom-frame-trim-review-ungraded-source-derived.jpg"
 ORIGINAL=DIR/"tangopaso-museum-original.jpg"
 FALLBACK=DIR/"whole-commons-original.jpg"
 EXPECTED={
-  SOURCE:"99e102df2d3644783bce3ac4cb81002337f8eb166583d84f74c630be6a8efc0f",
+  SOURCE:"f0742b795178e1a600e43694693f880a07039587b74ba6f352ccbf389919cb30",
   ORIGINAL:"3fce64afc767c16b803fd250e685f3a64caedb7e474380d3afeca68d84331942",
   FALLBACK:"d4d8b3c1ea957c9517a24c62a97ab7143e07cdec2434c77ee05df17a5b29a320"
 }
@@ -23,7 +23,7 @@ with Image.open(SOURCE) as im:
     painting=im.convert("RGB")
 
 # Actual source-native pixels near each outside edge; no visual smoothing.
-edge=DIR/"C-frame-free-perimeter-inspection.png"
+edge=DIR/"D-frame-free-perimeter-inspection.png"
 thickness=85
 samples={
   "top":(0,0,2250,thickness),
@@ -77,24 +77,24 @@ button{background:transparent;color:#ddd3bd;border:1px solid #736954;font:12px G
 <h1>La Petite Cène</h1>
 <p>Philippe de Champaigne · Louvre INV 1125 · Shared Holy Thursday and Pentecost Ember Wednesday painting.
 This is a research-only responsive test, not the live Ad Orientem Calendar.</p></header>
-<figure class="artwork" id="hero"><img src="C-canvas-interior-clean-ungraded-source-derived.jpg"
+<figure class="artwork" id="hero"><img src="D-bottom-frame-trim-review-ungraded-source-derived.jpg"
 alt="Philippe de Champaigne, La Petite Cène — complete unframed painting candidate" width="2250" height="1208"></figure>
 <div class="caption">Entire painted composition. Source-based, not AI restored. Colour and boundary fidelity pending.</div>
 <p><button id="openfull" type="button">Inspect full painting</button></p>
 <section><h2>Source comparison</h2><div class="comparison">
 <figure><img src="whole-commons-original.jpg" alt="Existing 1112 pixel full-painting photograph" width="1112" height="591">
 <figcaption>Existing small frame-free source, 1112 × 591</figcaption></figure>
-<figure><img src="C-canvas-interior-clean-ungraded-source-derived.jpg"
+<figure><img src="D-bottom-frame-trim-review-ungraded-source-derived.jpg"
 alt="New 2250 pixel frame-free candidate" width="2250" height="1208">
 <figcaption>New source-based frame-free candidate, 2250 × 1208</figcaption></figure>
 </div></section>
 <section><h2>Actual outer boundary review</h2>
-<img src="C-frame-free-perimeter-inspection.png" style="display:block;width:100%;height:auto;object-fit:contain" alt="Native-pixel perimeter inspection strips" width="2320" height="710">
+<img src="D-frame-free-perimeter-inspection.png" style="display:block;width:100%;height:auto;object-fit:contain" alt="Native-pixel perimeter inspection strips" width="2320" height="710">
 <p>Native-pixel perimeter details. This screen does not certify painted boundaries or colour.</p></section>
 </main>
 <div id="fullview" role="dialog" aria-modal="true" aria-label="Full painting inspection">
 <button type="button" id="closefull">Close</button>
-<img src="C-canvas-interior-clean-ungraded-source-derived.jpg" alt="Entire unframed La Petite Cène photograph" width="2250" height="1208"></div>
+<img src="D-bottom-frame-trim-review-ungraded-source-derived.jpg" alt="Entire unframed La Petite Cène photograph" width="2250" height="1208"></div>
 <script>
 const view=document.getElementById("fullview"), open=document.getElementById("openfull");
 open.addEventListener("click",()=>{view.classList.add("active");document.getElementById("closefull").focus()});
