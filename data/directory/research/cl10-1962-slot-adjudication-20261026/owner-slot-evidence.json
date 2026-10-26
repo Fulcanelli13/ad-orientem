@@ -1,0 +1,629 @@
+{
+  "schema": "AO_CL10_OWNER_MISSAL_SLOT_ADJUDICATION_V1",
+  "source_review_date": "2026-10-26",
+  "validation_policy": "Owner word-level and slot-level scoped research evidence; not site-wide unconditional filter nor recurrent/public schedule approval.",
+  "source_pages": [
+    {
+      "url": "https://notredamedesarmees.fr/paroisse/presentation/horaires-messes-nda/",
+      "site": "Notre-Dame des Armées, Versailles",
+      "owner_edition_url": "https://notredamedesarmees.fr/paroisse/la-forme-extraordinaire-du-rite-romain/",
+      "owner_edition_claim": "The parish states its diocesan priests celebrate Mass according to the liturgical books of 1962.",
+      "owner_schedule_claim": "Mass timetable expressly applies outside school holidays; school-holiday/current-week calendar may differ.",
+      "book": "1962_ROMAN",
+      "evidence_scope": "OWNER_PROGRAMME_MATCHED_TIMETABLE_SLOT",
+      "exception_model": "SCHOOL_HOLIDAYS_CHECK_CURRENT_WEEK",
+      "slots": [
+        {
+          "day": "Sunday",
+          "time": "08:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Sunday",
+          "time": "09:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Sunday",
+          "time": "10:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Sunday",
+          "time": "12:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Sunday",
+          "time": "19:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Monday",
+          "time": "19:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Tuesday",
+          "time": "09:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Tuesday",
+          "time": "19:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Wednesday",
+          "time": "07:25",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Wednesday",
+          "time": "09:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Wednesday",
+          "time": "19:15",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Thursday",
+          "time": "09:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Thursday",
+          "time": "19:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Friday",
+          "time": "07:25",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Friday",
+          "time": "09:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Friday",
+          "time": "19:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Saturday",
+          "time": "07:25",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Saturday",
+          "time": "11:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Saturday",
+          "time": "19:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        }
+      ]
+    },
+    {
+      "url": "https://ourladyhelpofchristians-al.org/",
+      "site": "Our Lady Help of Christians, Huntsville",
+      "owner_edition_url": "https://ourladyhelpofchristians-al.org/",
+      "owner_edition_claim": "Personal parish explicitly identifies the traditional Mass as celebrated according to the 1962 liturgical form.",
+      "owner_schedule_claim": "Regular weekly Mass schedule with a first-Friday additional Mass; monthly calendar may override feast times.",
+      "book": "1962_ROMAN",
+      "evidence_scope": "OWNER_PROGRAMME_MATCHED_TIMETABLE_SLOT",
+      "exception_model": "HOLY_DAYS_AND_MONTHLY_CALENDAR",
+      "slots": [
+        {
+          "day": "Sunday",
+          "time": "07:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Sunday",
+          "time": "08:45",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Sunday",
+          "time": "10:45",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Sunday",
+          "time": "12:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Monday",
+          "time": "06:45",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Tuesday",
+          "time": "06:45",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Wednesday",
+          "time": "06:45",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Thursday",
+          "time": "06:45",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Friday",
+          "time": "09:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "1st Friday",
+          "time": "06:45",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Saturday",
+          "time": "08:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        }
+      ]
+    },
+    {
+      "url": "https://stlouislatinmass.com/calendar",
+      "site": "Oratory of Saints Gregory and Augustine, Richmond Heights",
+      "owner_edition_url": "https://stlouislatinmass.com/about-us/about-us",
+      "owner_edition_claim": "Oratory states all sacraments are celebrated according to the 1962 Missale Romanum.",
+      "owner_schedule_claim": "Regular weekly timetable with first-Friday addition; exception schedule describes 2027 summer deviations, not automatic present-day normal recurrence.",
+      "book": "1962_ROMAN",
+      "evidence_scope": "OWNER_PROGRAMME_MATCHED_TIMETABLE_SLOT",
+      "exception_model": "FUTURE_SUMMER_AND_DATE_SPECIFIC_CALENDAR",
+      "slots": [
+        {
+          "day": "Sunday",
+          "time": "06:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Sunday",
+          "time": "08:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Sunday",
+          "time": "10:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Monday",
+          "time": "06:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Monday",
+          "time": "12:15",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Tuesday",
+          "time": "06:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Tuesday",
+          "time": "12:15",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Wednesday",
+          "time": "06:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Wednesday",
+          "time": "12:15",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Thursday",
+          "time": "06:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Thursday",
+          "time": "12:15",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Friday",
+          "time": "06:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Friday",
+          "time": "12:15",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Saturday",
+          "time": "08:15",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "1st Friday",
+          "time": "18:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        }
+      ]
+    },
+    {
+      "url": "https://stmarykazoo.org/mass-times",
+      "site": "St Mary, Kalamazoo",
+      "owner_edition_url": "https://stmarykazoo.org/mass-times",
+      "owner_edition_claim": "Owner explicitly labels Sunday Low and High Mass as 1962; weekday line is compacted as M S a and requires a separate weekday source check.",
+      "owner_schedule_claim": "Sunday 08:00 and 12:00 1962 Masses are legible; Mon–Sat 08:00 is not independently legible day-by-day on primary page.",
+      "book": "1962_ROMAN",
+      "evidence_scope": "OWNER_SLOT_1962",
+      "exception_model": "WEEKDAY_SHORTHAND_REQUIRES_EXPANSION_CHECK",
+      "slots": [
+        {
+          "day": "Sunday",
+          "time": "08:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Sunday",
+          "time": "12:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Monday",
+          "time": "08:00",
+          "decision": "HOLD_WEEKDAY_SHORTHAND",
+          "exceptions": []
+        },
+        {
+          "day": "Tuesday",
+          "time": "08:00",
+          "decision": "HOLD_WEEKDAY_SHORTHAND",
+          "exceptions": []
+        },
+        {
+          "day": "Wednesday",
+          "time": "08:00",
+          "decision": "HOLD_WEEKDAY_SHORTHAND",
+          "exceptions": []
+        },
+        {
+          "day": "Thursday",
+          "time": "08:00",
+          "decision": "HOLD_WEEKDAY_SHORTHAND",
+          "exceptions": []
+        },
+        {
+          "day": "Friday",
+          "time": "08:00",
+          "decision": "HOLD_WEEKDAY_SHORTHAND",
+          "exceptions": []
+        },
+        {
+          "day": "Saturday",
+          "time": "08:00",
+          "decision": "HOLD_WEEKDAY_SHORTHAND",
+          "exceptions": []
+        }
+      ]
+    },
+    {
+      "url": "https://www.bromptonoratory.co.uk/regular-mass-service-times",
+      "site": "London Oratory",
+      "owner_edition_url": "https://www.bromptonoratory.co.uk/regular-mass-service-times",
+      "owner_edition_claim": "Owner directly marks Sunday 09:00 and Monday–Saturday 08:00 as Latin, 1962 Missal, but has other Latin Masses not so labelled.",
+      "owner_schedule_claim": "Regular schedule may have holy-day and date-specific changes; other Latin Mass times excluded.",
+      "book": "1962_ROMAN",
+      "evidence_scope": "OWNER_SLOT_1962",
+      "exception_model": "MIXED_MISSAL_PROGRAMME_HOLY_DAY_OVERRIDE",
+      "slots": [
+        {
+          "day": "Sunday",
+          "time": "09:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Monday",
+          "time": "08:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Tuesday",
+          "time": "08:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Wednesday",
+          "time": "08:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Thursday",
+          "time": "08:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Friday",
+          "time": "08:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Saturday",
+          "time": "08:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        }
+      ]
+    },
+    {
+      "url": "https://www.cantius.org/full-liturgy-schedule",
+      "site": "St John Cantius, Chicago",
+      "owner_edition_url": "https://www.cantius.org/full-liturgy-schedule",
+      "owner_edition_claim": "Owner distinguishes 1962 and 2002 Missal Masses; the Sunday 7:30 and 12:30 slots switch to 2002 on first Sundays.",
+      "owner_schedule_claim": "Normal schedule, subject to parish calendar and solemnities.",
+      "book": "1962_ROMAN",
+      "evidence_scope": "OWNER_SLOT_1962",
+      "exception_model": "FIRST_SUNDAY_2002_REPLACEMENT",
+      "slots": [
+        {
+          "day": "Sunday",
+          "time": "07:30",
+          "decision": "ACCEPTED",
+          "exceptions": [
+            "FIRST_SUNDAY_2002_NOT_1962"
+          ]
+        },
+        {
+          "day": "Sunday",
+          "time": "12:30",
+          "decision": "ACCEPTED",
+          "exceptions": [
+            "FIRST_SUNDAY_2002_NOT_1962"
+          ]
+        },
+        {
+          "day": "Monday, Tuesday, Thursday, Friday",
+          "time": "06:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Wednesday",
+          "time": "06:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Wednesday",
+          "time": "19:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Saturday",
+          "time": "08:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        }
+      ]
+    },
+    {
+      "url": "https://www.downtowncatholic.com/traditional-latin-mass.html",
+      "site": "St Patrick, Wilmington",
+      "owner_edition_url": "https://www.downtowncatholic.com/traditional-latin-mass.html",
+      "owner_edition_claim": "Owner lists exact Sunday, Monday/Wednesday and first-Friday/first-Saturday celebrations according to the 1962 Missale Romanum.",
+      "owner_schedule_claim": "Additional Masses as announced; only listed slots are included.",
+      "book": "1962_ROMAN",
+      "evidence_scope": "OWNER_SLOT_1962",
+      "exception_model": "SPECIAL_FEASTS_AND_AD_HOC_MASSES",
+      "slots": [
+        {
+          "day": "Sunday",
+          "time": "08:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Sunday",
+          "time": "11:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Monday",
+          "time": "17:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Wednesday",
+          "time": "17:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "1st Friday",
+          "time": "18:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "1st Saturday",
+          "time": "09:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        }
+      ]
+    },
+    {
+      "url": "https://www.saint-patern.bzh/horaires",
+      "site": "Saint-Patern, Vannes",
+      "owner_edition_url": "https://www.saint-patern.bzh/horaires",
+      "owner_edition_claim": "Parish explicitly groups Tuesday–Friday 18:30 and first-Saturday 12:00 Masses under the 1962 Missal extraordinary-form heading.",
+      "owner_schedule_claim": "Ordinary-form chapels and Sunday times are separate; Sunday sources previously conflicted and are not part of this five-row adjudication.",
+      "book": "1962_ROMAN",
+      "evidence_scope": "OWNER_SLOT_1962",
+      "exception_model": "PARISH_CALENDAR_AND_CONFLICTING_SUNDAY_SOURCES",
+      "slots": [
+        {
+          "day": "Tuesday",
+          "time": "18:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Wednesday",
+          "time": "18:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Thursday",
+          "time": "18:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Friday",
+          "time": "18:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "1st Saturday",
+          "time": "12:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        }
+      ]
+    },
+    {
+      "url": "https://www.stmargaretmaryoak.org/",
+      "site": "St Margaret Mary, Oakland",
+      "owner_edition_url": "https://www.stmargaretmaryoak.org/",
+      "owner_edition_claim": "Parish defines extraordinary form as using the Missal of Pope John XXIII, and identifies EF times separately from ordinary-form Latin/English Masses.",
+      "owner_schedule_claim": "EF times Sunday 07:00 and 12:30; weekdays 18:00 except Thu 12:00; Saturday 10:00.",
+      "book": "MISSAL_JOHN_XXIII_1962_ROMAN",
+      "evidence_scope": "OWNER_SLOT_EF_JOHN_XXIII",
+      "exception_model": "MIXED_ORDINARY_FORM_AND_OLD_MISSAL",
+      "slots": [
+        {
+          "day": "Sunday",
+          "time": "07:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Sunday",
+          "time": "12:30",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Monday",
+          "time": "18:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Tuesday",
+          "time": "18:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Wednesday",
+          "time": "18:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Friday",
+          "time": "18:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Thursday",
+          "time": "12:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        },
+        {
+          "day": "Saturday",
+          "time": "10:00",
+          "decision": "ACCEPTED",
+          "exceptions": []
+        }
+      ]
+    }
+  ]
+}
