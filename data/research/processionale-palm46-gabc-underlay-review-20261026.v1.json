@@ -61,7 +61,9 @@
     "openingContourReview": "Printed 1961 p.144** directly inspected; printed O-mnes pó-pu-li notation shows the repeated reciting pitch on pó, pu, li. This supports using h on the three replacement syllables only.",
     "openingPitchContourVisuallyCompared": true,
     "completeChantPitchAndNeumesCertified": false,
-    "fileRole": "READ_ONLY_RESEARCH_FIXTURE_NO_RUNTIME_REFERENCE"
+    "fileRole": "READ_ONLY_RESEARCH_FIXTURE_NO_RUNTIME_REFERENCE",
+    "renderingProofPassed": true,
+    "humanMusicalReviewPassed": false
   },
   "header": {
     "rawContainsDoubleDelimiter": true,
@@ -105,5 +107,73 @@
       "Complete Psalm 46 pointed verse text and repeats sourced",
       "Existing PR #1749 signs off explicit score-version approval"
     ]
+  },
+  "nativeExsurgeProof": {
+    "status": "COMPLETE_3_VIEWPORTS_SVG_PARSE_RENDER_PROOF_ONLY",
+    "runId": 40378960243,
+    "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40378960243",
+    "jobId": 121769655876,
+    "conclusion": "success",
+    "pinnedExistingScholaSourceCommit": "8a75c2cbb6ea2bc6ba26da30ec923b3dc8c827e1",
+    "engine": "existing assets/vendor/exsurge/exsurge.min.js",
+    "rawSourceSha256": "eb13e9eadcfeebca7e5fa0617f6cbb6c9823464ff88af2995952ab21ca8717a0",
+    "compared": [
+      {
+        "item": "raw_incorrect_text_reference",
+        "parsedMappings": 12,
+        "viewports": [
+          {
+            "widthPx": 260,
+            "staffSystems": 2,
+            "svgChildren": 1
+          },
+          {
+            "widthPx": 420,
+            "staffSystems": 1,
+            "svgChildren": 1
+          },
+          {
+            "widthPx": 800,
+            "staffSystems": 1,
+            "svgChildren": 1
+          }
+        ]
+      },
+      {
+        "item": "provisional_omnes_populi_derivative",
+        "parsedMappings": 12,
+        "viewports": [
+          {
+            "widthPx": 260,
+            "staffSystems": 2,
+            "svgChildren": 1
+          },
+          {
+            "widthPx": 420,
+            "staffSystems": 1,
+            "svgChildren": 1
+          },
+          {
+            "widthPx": 800,
+            "staffSystems": 1,
+            "svgChildren": 1
+          }
+        ]
+      }
+    ],
+    "trueClaims": [
+      "actual existing Schola renderer loaded from pinned code",
+      "score GABC parsed and nonempty SVG rendered",
+      "responsive layout completed at three sizes",
+      "archived source hash and only-four-transformations validated"
+    ],
+    "falseClaims": [
+      "full printed neume/pitch certification",
+      "1962 complete verse/pointing transcription",
+      "human chorister audible-performed identity",
+      "native device pixel-level QA",
+      "production selection or Mass assignment"
+    ],
+    "releaseEligible": false
   }
 }
