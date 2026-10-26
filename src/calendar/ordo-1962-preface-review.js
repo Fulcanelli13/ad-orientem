@@ -67,9 +67,10 @@ function expectedFor(id,date,rank,colour){
   // identities can prove seasonal prefatory obligation.
   if(/^tempora:Adv[1-4]-0:[12]:v$/i.test(id))
     return rule("TRINITATE","494_B","ADVENT_SUNDAY");
+  if(/^tempora:Pent01-0r?:1:w$/i.test(id))
+    return rule("TRINITATE","494_A","HOLY_TRINITY_FEAST");
   if(/^tempora:(?:Pent\d{1,2}|Epi[2-6])-0r?:2:g$/i.test(id)||
-     /^tempora:Quadp[1-3]-0:2:v$/i.test(id)||
-     /^tempora:Pent01-0r?:1:w$/i.test(id))
+     /^tempora:Quadp[1-3]-0:2:v$/i.test(id))
     return rule("TRINITATE","494_B","PER_ANNUM_SUNDAY");
   if(/^tempora:Quadp\d-[3-6]:[123]:v$/i.test(id)||
      /^tempora:Quad[1-4]-[0-6]:[123]:[a-z]{1,2}$/i.test(id))
