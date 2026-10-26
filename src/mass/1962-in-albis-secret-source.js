@@ -12,7 +12,8 @@ const englishIntro=/^Receive, we beseech Thee, O Lord, the gifts of Thine exulta
 const frenchIntro=/^Accueillez, Seigneur, les présents de votre Église transportée d'allégresse,/u;
 const sha=/^[0-9a-f]{40}$/u;
 function anyText(v){return typeof v==="string"&&v.trim().length>0}
-function resolvedText(v){return anyText(v)&&!/^\s*[$@]/u.test(v)}
+function resolvedText(v){return anyText(v)&&!/^\s*[$@]/u.test(v)&&
+  !/^\s*Tempora\/Pasc1-0:Secreta\.?\s*$/iu.test(String(v))}
 function normalize(v){return String(v??"").normalize("NFD").replace(/[\u0300-\u036f]/gu,"")
  .replace(/[œ]/gu,"oe").replace(/[æ]/gu,"ae").replace(/[^a-z0-9]+/giu," ").trim().toLowerCase()}
 function matchPartial(existing,actual){
