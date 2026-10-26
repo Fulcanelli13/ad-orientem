@@ -34,17 +34,24 @@ class IcrspB25(unittest.TestCase):
                    self.b25["sectionCounts"])
   self.assertEqual(self.b25["sectionCounts"],dict(
    temporal=10,sanctoral=50,commons=8,local_propers=5,votives_requiem=1,office=1))
- def test_unique_213_not_keyword_screens(self):
+ def test_reconciled_unique_206_not_keyword_screens(self):
   old={id for cohort in self.pre["cohorts"] for id in cohort["directReadArticleIds"]}
   b23={x["articleId"] for x in self.b23["rows"]}
   b24={x["articleId"] for x in self.b24["records"]}
   b25={x["articleId"] for x in self.b25["records"]}
   self.assertEqual(len(old),93)
-  self.assertFalse(old&b23 or old&b24 or old&b25)
+  self.assertFalse(old&b23)
   self.assertFalse(b23&b24 or b23&b25 or b24&b25)
-  self.assertEqual(len(old|b23|b24|b25),213)
-  self.assertEqual(self.b25["totalDirectReadArticleCountIfNoParallelCollision"],213)
-  self.assertEqual(self.b25["remainingCommentaryArticlesWithoutDirectTopicRead"],570)
+  self.assertEqual(old&b24,set(self.b24["alreadyDirectReadBeforeB24"]))
+  self.assertEqual(old&b25,set(self.b25["alreadyDirectReadBeforeB25"]))
+  self.assertEqual((old&b24)|(old&b25),set(self.b25["allSevenEarlierCohortRepeatArticleIds"]))
+  self.assertEqual(len(old|b23|b24|b25),206)
+  self.assertEqual(self.b25["previousDistinctDirectReadArticleCount"],134)
+  self.assertEqual(self.b25["sourceArticlePasses"],75)
+  self.assertEqual(self.b25["newDistinctDirectTopicReads"],72)
+  self.assertEqual(self.b25["newPreviouslyUnreadAcrossB24B25"],93)
+  self.assertEqual(self.b25["totalDistinctDirectReadArticleCountAfterReconciliation"],206)
+  self.assertEqual(self.b25["remainingCommentaryArticlesWithoutDirectTopicRead"],577)
   self.assertEqual(self.b25["newPriority100DirectTopicReadCount"],100)
   self.assertIn("not critically collated",self.b25["method"])
  def test_no_publication_or_authorship_or_1962_promotion(self):
