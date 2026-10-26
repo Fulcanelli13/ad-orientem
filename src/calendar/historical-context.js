@@ -13,7 +13,7 @@ const SOURCES = freeze({
   pentecostVigilICRSP: freeze({ label:"ICRSP · Vigile de la Pentecôte", url:"https://icrspfrance.fr/textes-liturgiques.php?article=a0281_ancien", role:"HISTORICAL_COMMENTARY" }),
   pentecostVigilReform: freeze({ label:"New Liturgical Movement · Pius XII 1955 Pentecost Vigil changes", url:"https://www.newliturgicalmovement.org/2009/04/2009-compendium-of-1955-holy-week.html", role:"SECONDARY_HISTORICAL_CHECK" }),
   pentecostEmberICRSP: freeze({ label:"ICRSP · Mercredi des Quatre-Temps de Pentecôte", url:"https://icrspfrance.fr/textes-liturgiques.php?article=a0170_nouveau", role:"HISTORICAL_COMMENTARY" }),
-  pentecostEmberMissal: freeze({ label:"Schuster · Ember Wednesday in Pentecost Week", url:"https://www.romanmissal.org/ecclesiastical-year", role:"HISTORICAL_LITURGICAL_EXPLANATION" }),
+  pentecostEmberMissal: freeze({ label:"Rev. F. X. Lasance · The New Roman Missal (1936), Ember Wednesday in Pentecost Week", url:"https://www.romanmissal.org/ecclesiastical-year", role:"HISTORICAL_LITURGICAL_EXPLANATION" }),
   immaculateICRSP: freeze({ label:"ICRSP · Immaculée Conception", url:"https://icrspfrance.fr/textes-liturgiques.php?article=a0605_ancien", role:"HISTORICAL_COMMENTARY" }),
   immaculateRubricWitness: freeze({ label:"Saint Lawrence Press · 1962 Immaculate Conception feast", url:"https://ordorecitandi.blogspot.com/2019/12/immaculate-conception-of-bvm.html", role:"INDEPENDENT_CALENDAR_CROSSCHECK" }),
 });
