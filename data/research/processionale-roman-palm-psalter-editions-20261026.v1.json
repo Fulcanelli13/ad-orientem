@@ -1,7 +1,7 @@
 {
   "schema": "ao-1961-graduale-romanum-palm-psalter-edition-contrast-v1",
   "date": "2026-10-26",
-  "status": "PRIMARY_1962_OCR_TEXT_FAVOURS_TEXTUS_NOVUS_GABC_19316_TEXT_MISMATCH_HOLD",
+  "status": "ORIGINAL_1961_SCORES_VISUALLY_CONFIRMED_NOVUS_SOURCE_GABC_P46_WRONG_WORD_HOLD",
   "scope": "Competing Psalm text traditions for Roman restored Palm Sunday distribution; candidate GABC must match accepted Latin version before full notation.",
   "owners": {
     "romanSource": "https://github.com/Fulcanelli13/ad-orientem/issues/894",
@@ -22,7 +22,65 @@
     "indexEvidence": "1961 printed Index Psalmorum separates Textus antiquus Psalmus 23/46 and Textus novus Psalmus 23/46",
     "footnoteEvidence": "1961 Palm Sunday score footnote directs to the new psalm translation of the Vatican typical restored Holy Week Ordo, pp.143** ff.",
     "indexWitness": "https://archive.ccwatershed.org/media/pdfs/13/08/14/13-54-23_0.pdf",
-    "oldTextWitness": "https://archive.ccwatershed.org/media/pdfs/13/08/14/13-43-42_0.pdf"
+    "oldTextWitness": "https://archive.ccwatershed.org/media/pdfs/13/08/14/13-43-42_0.pdf",
+    "originalScoreImagesVisuallyInspected": true,
+    "originalScoreImages": [
+      {
+        "page": "143**",
+        "url": "https://gregobase.selapa.net/sources/2/1179.png",
+        "verification": "DIRECT_IMAGE_INSPECTED",
+        "heading": "PSALMI USITATI PER HEBDOMADAM SANCTAM SECUNDUM NOVAM INTERPRETATIONEM LATINAM",
+        "component": "Psalmus 23, 1–2 et 7–10",
+        "firstWords": "Domini est terra et quae replent eam",
+        "notationCoverage": "FULLY_NOTATED_FIRST_VERSE_PLUS_CUED_SECOND_VERSE",
+        "fullVersesPrinted": true,
+        "psalmVerseNumbers": [
+          1,
+          2,
+          7,
+          8,
+          9,
+          10
+        ],
+        "doxologyNumbers": [
+          11,
+          12
+        ]
+      },
+      {
+        "page": "144**",
+        "url": "https://gregobase.selapa.net/sources/2/1180.png",
+        "verification": "DIRECT_IMAGE_INSPECTED",
+        "heading": "Psalmi usitati per Hebdomadam Sanctam",
+        "component": "Psalmus 46",
+        "firstWords": "Omnes populi, plaudite manibus",
+        "notationCoverage": "FULLY_NOTATED_FIRST_VERSE_PLUS_CUED_SECOND_VERSE",
+        "fullVersesPrinted": true,
+        "psalmVerseNumbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "doxologyNumbers": [
+          11,
+          12
+        ]
+      }
+    ],
+    "imageReviewConclusions": [
+      "P143** and p144** are ORIGINAL 1961 printed score images, not online OCR or secondary index.",
+      "1961 appendix prints complete prescribed Psalm words but only fully notates initial Psalm tone and abbreviated cue at next verse.",
+      "Textus novus Psalm 46 visibly opens 'Omnes populi' at p144**, not GregoBase #19316 'Omnes gentes'.",
+      "Full source page images still do not prove 19316's individual pitch-by-pitch equivalence or correct word-to-neume alignment.",
+      "Processional delivery and 1962 liturgical permission remain separate from page-image transcription correctness."
+    ]
   },
   "candidates": [
     {
@@ -49,7 +107,9 @@
         "transcriber": "Simone Sanavio",
         "proofread": "GregoBase marks proofread Apr 22 2025",
         "exactLatin1962": "Dómini est terra et quae replent eam",
-        "status": "INCIPIT_MATCH_1962_OCR_MELODY_NOT_CERTIFIED"
+        "status": "INCIPIT_MATCH_1962_OCR_MELODY_NOT_CERTIFIED",
+        "imageWitnessURL": "https://gregobase.selapa.net/sources/2/1179.png",
+        "originalPrintedIncipitVisuallyChecked": true
       },
       "versePairs": [
         [
@@ -93,14 +153,16 @@
         "proofread": "No proofread flag on record",
         "exactLatin1962": "Omnes pópuli, pláudite mánibus",
         "gabcFirstWords": "Omnes gentes plaudite",
-        "status": "INCIPIT_TEXT_MISMATCH_DO_NOT_RELEASE",
+        "status": "PRINTED_PAGE_CONFIRMS_OMNES_POPULI_GABC_WRONG_UNDERLAY_BLOCKING",
         "error": "GregoBase #19316 transcribes 'Omnes gentes' as first words while the 1961 Graduale Romanum printed Textus novus index, the 1956 official restored Holy Week text in Schmidt, and the 1962 printed Missal OCR witness read 'Omnes populi'. Source GABC is not faithful to the required first words.",
         "evidence": [
           "https://gregobase.selapa.net/download.php?format=gabc&id=19316",
           "https://www.virgosacrata.com/wp/wp-content/uploads/2024/02/Graduale-Romanum-Index.pdf",
           "https://dokumen.pub/hebdomada-sancta-fontes-historici-commen.html",
           "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf"
-        ]
+        ],
+        "imageWitnessURL": "https://gregobase.selapa.net/sources/2/1180.png",
+        "originalPrintedIncipitVisuallyChecked": true
       },
       "versePairs": "SEQUENTIAL_PAIRS",
       "repeat": "AFTER_EVERY_TWO_VERSES",
@@ -129,7 +191,7 @@
     "scoreTitleNotAuthority": true,
     "pitchNeumeCollationComplete": false,
     "approvedRuntimeAssignments": 0,
-    "criticalHold": "GregoBase #19316 failed exact first-word match. Score remains research-only even if bytes are successfully captured and hashed."
+    "criticalHold": "Original 1961 printed Psalm 46 p.144** has 'Omnes populi' while catalogued GABC 19316 begins 'Omnes gentes'. Two-versus-three-syllable underlay may require reassignment of neumes, not an automatic text replace."
   },
   "acceptance": {
     "state": "RESEARCH_REQUIREMENTS_ONLY",
@@ -167,7 +229,7 @@
     },
     {
       "id": "GREGOBASE_19316_OMNES_POPULI_CORRECTION",
-      "status": "OPEN_BLOCKING",
+      "status": "OPEN_BLOCKING_VISUAL_SOURCE_CONFIRMED",
       "owner": "#1749/#894"
     }
   ]
