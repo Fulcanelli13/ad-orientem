@@ -74,8 +74,9 @@ def main():
             with Image.open(io.BytesIO(raw)) as im:im.verify()
             warnings=[]
             with Image.open(io.BytesIO(raw)) as im:
-                if im.format!="JPEG":raise ValueError("Research JPEG expected")
+                if im.format not in ("JPEG","MPO"):raise ValueError("Research JPEG-family original expected: "+str(im.format))
                 width,height=im.size;iso=im.getexif().get(34855)
+                image_container_format=im.format
                 rgb=to_preview(im,warnings)
             path=BASE/(key+"-original.jpg")
             path.write_bytes(raw)
@@ -93,7 +94,7 @@ def main():
                 "commons_page":"https://commons.wikimedia.org/wiki/File:"+urllib.parse.quote(name.replace(" ","_")),
                 "source_url":url,"rights_claim":license_short,"commons_sha1":info["sha1"],
                 "sha256":sha256,"width":width,"height":height,"bytes":len(raw),
-                "exif_iso":iso,"original_file":str(path.relative_to(ROOT)),
+                "exif_iso":iso,"original_file_format":image_container_format,"original_file":str(path.relative_to(ROOT)),
                 "full_review_preview":str(preview.relative_to(ROOT)),
                 "quality_warnings":warnings,
                 "source_photo_framing_risk":("Physical museum frame visible; cannot pass without verified full painted boundary"
