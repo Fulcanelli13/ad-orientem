@@ -1,6 +1,11 @@
-name: Original-subject research details — permanent research-branch archive
+name: Original-subject research details — branch-scoped permanent archive
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - research/module-hero-pd-masters-20261026
+    paths:
+      - .github/workflows/hero-subject-quality-20261026.yml
+      - assets/staged/module-hero-masters/**
 permissions:
   contents: write
 jobs:
