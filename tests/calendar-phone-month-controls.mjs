@@ -100,6 +100,31 @@ try{
      "Calendar horizontal month rail has invalid scroll geometry");
    await page.screenshot({path:resolve(output,"calendar-month-"+lang+"-"+width+".png"),
      fullPage:false,animations:"disabled"});
+   // The Ordo uses the same resolved month, without replacing the 42-date grid.
+   await cal.locator('[data-cal-month-layout="ordo"]').click();
+   const ordoPanel=cal.locator('[data-cal-month-presentation="ordo"]');
+   assert.equal(await ordoPanel.isVisible(),true,"Ordo presentation must be visible");
+   assert.equal(await cal.locator('[data-cal-month-presentation="grid"]').isHidden(),true,
+     "Grid remains mounted but is hidden in Ordo mode");
+   const ordoCount=await cal.locator('.aoCalOrdoEntry').count();
+   assert.ok(ordoCount>=28&&ordoCount<=31,"Ordo must list every in-month day: "+ordoCount);
+   const firstOrdo=cal.locator('.aoCalOrdoEntry').first();
+   await firstOrdo.locator('summary').click();
+   assert.equal(await firstOrdo.getAttribute('open'),"",
+     "Ordo day must expand without navigating away");
+   assert.equal(await firstOrdo.locator('[data-cal-month-index-date]').count(),1,
+     "Expanded Ordo day must link to the canonical Day");
+   await page.screenshot({path:resolve(output,"calendar-ordo-"+lang+"-"+width+".png"),
+     fullPage:false,animations:"disabled"});
+   await cal.locator('[data-cal-month-view="temporale"]').click();
+   assert.equal(await cal.locator('.aoCalOrdoList').getAttribute("data-cal-month-filter"),"temporale",
+     "Existing source-cycle filter must apply to Ordo too");
+   await cal.locator('[data-cal-month-view="calendar"]').click();
+   await cal.locator('[data-cal-month-layout="grid"]').click();
+   assert.equal(await cal.locator('[data-cal-month-presentation="grid"]').isVisible(),true,
+     "Switching back must restore the original grid");
+   assert.equal(await cal.locator('[data-cal-pick-date]').count(),42,
+     "Grid switch must retain 42 cells");
    await cal.locator('[data-cal-month-view="temporale"]').click();
    assert.equal(await cal.locator(".aoCalV2MonthGrid").getAttribute("data-cal-month-filter"),"temporale",
      "Temporale should filter the existing grid, not open a second page");
