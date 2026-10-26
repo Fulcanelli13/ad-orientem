@@ -14,6 +14,8 @@ on:
       - 'tests/mass-1962-lent-preface-production.mjs'
       - 'tests/mass-1962-easter-preface-variants.mjs'
       - 'tests/mass-1962-easter-preface-production.mjs'
+      - 'tests/mass-1962-preface-reader-handoff.mjs'
+      - 'src/mass/host-adapter.js'
       - 'tests/fixtures/mass-easter-preface-pasch-source.v1.json'
       - 'tests/mass-1962-preface-decision.mjs'
       - '.github/workflows/mass-1962-preface-decision.yml'
@@ -47,6 +49,8 @@ jobs:
           fi
       - name: Verify three authentic trilingual Easter Preface variants
         run: node tests/mass-1962-easter-preface-variants.mjs
+      - name: Verify source-bound Preface in native R17 reader output
+        run: node tests/mass-1962-preface-reader-handoff.mjs
       - name: Audit all 30 Lent and Pentecost 2026 production Prefaces
         run: node tests/mass-1962-lent-preface-production.mjs
       - name: Audit all 14 2026 Easter Vigil, octave and seasonal Prefaces
