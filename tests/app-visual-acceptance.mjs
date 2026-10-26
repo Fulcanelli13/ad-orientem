@@ -667,9 +667,10 @@ try{
   }));
   assert.deepEqual(adorationLanding.modes,["visit","open","holy","four","treasury"],"Adoration landing no longer matches the final five-entry donor composition");
   assert.deepEqual(adorationLanding.titles,["Visit to the Blessed Sacrament","Silent Adoration","Guided Holy Hour","The Four Ends","Eucharistic Treasury"],"Adoration landing titles regressed");
-  // A secondary public-rite handoff is intentional and must remain outside
-  // the five private Adoration entries. It must not mount the public reader.
-  assert.equal(adorationLanding.publicRiteLink,1,"Explicit public Benediction handoff missing from private Adoration chooser");
+  // Fresh private Adoration must not invent a return to Benediction.
+  // The explicit rite-to-prayer return and exposed-mode handoff are covered
+  // by nonmass-d3-d6-e2e.mjs; retain those behavioral regressions.
+  assert.equal(adorationLanding.publicRiteLink,0,"Fresh private Adoration incorrectly shows a public-rite return");
   assert.equal(adorationLanding.mountedBenediction,0,"Public Benediction ritual mounted inside private Adoration");
   await page.locator("#aoPray435930 [data-p435930-ador-mode='visit']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-genuflect",null,{timeout:3000});
