@@ -428,5 +428,40 @@
       "reason": "No usable structured GABC transcription"
     }
   ],
-  "releaseRule": "Do not import this data in native Schola until source ownership, 1962 slot eligibility, exact Latin identity, edition verification and editorial review are individually passed."
+  "releaseRule": "Do not import this data in native Schola until source ownership, 1962 slot eligibility, exact Latin identity, edition verification and editorial review are individually passed.",
+  "identityFindings": {
+    "exactGabcDuplicateGroups": [
+      {
+        "ids": [
+          "GREGOBASE-861",
+          "GREGOBASE-1644"
+        ],
+        "decision": "PRESERVE_BOTH_PENDING_SOURCE_REVIEW"
+      }
+    ],
+    "samePartAndIncipitDistinctMelodies": [
+      {
+        "ids": [
+          "GREGOBASE-200",
+          "GREGOBASE-4653"
+        ],
+        "decision": "PRESERVE_AS_VARIANTS"
+      },
+      {
+        "ids": [
+          "GREGOBASE-827",
+          "GREGOBASE-8201"
+        ],
+        "decision": "PRESERVE_AS_VARIANTS"
+      }
+    ],
+    "existingFiveChristmasPilotIds": [
+      "GREGOBASE-72",
+      "GREGOBASE-1163",
+      "GREGOBASE-324",
+      "GREGOBASE-1274",
+      "GREGOBASE-1139"
+    ],
+    "rule": "Source IDs stay stable. Equal GABC or matching incipits are review evidence, never grounds for silently rewriting original records."
+  }
 }
