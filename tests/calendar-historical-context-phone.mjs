@@ -41,20 +41,34 @@ try{
   const day=async date=>{
    const success=await page.evaluate(async target=>{
     const cache=globalThis.AO_CALENDAR_WEEK_CACHE_V4345;
-    const calendar=globalThis.AO_CALENDAR_APP_V1;
-    if(typeof cache?.revealDate!=="function"||typeof calendar?.setView!=="function")
-      throw Error("Canonical Calendar runtime unavailable");
-    const result=await cache.revealDate(target,{prefetch:false});
-    calendar.setView("day");
-    return result;
+    if(typeof cache?.revealDate!=="function") throw Error("Canonical Calendar cache unavailable");
+    return cache.revealDate(target,{prefetch:false});
    },date);
    assert.equal(success,true,"Cannot resolve actual 1962 day "+date);
-   await page.waitForFunction(target=>{
-    const root=document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root");
-    return root?.dataset.aoCalendarView==="day"
-      &&globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date===target;
-   },date,{timeout:25000});
-   return page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root");
+   // The Home shell owns the embedded Calendar. Navigate via its actual
+   // visible controls; setting an internal view imperatively can be undone
+   // by Home's subsequent render, leaving the instance in picker mode.
+   await page.locator('.aoTodayV2Tabs [data-home-calendar-today]').click();
+   await page.locator('[data-home-calendar-view="day"]').first().click();
+   try{
+    await page.waitForFunction(target=>{
+     const root=document.querySelector("#ao-calendar-modular-root");
+     const store=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+     return root?.dataset.aoCalendarView==="day"&&store?.resolution?.date===target;
+    },date,{timeout:20000});
+   }catch(error){
+    console.log("HISTORICAL_DAY_DIAGNOSTIC",JSON.stringify(await page.evaluate(()=>{
+     const root=document.querySelector("#ao-calendar-modular-root");
+     const store=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+     return {selectedDate:store?.selectedDate,resolutionDate:store?.resolution?.date,
+      resolving:store?.resolving,dayId:store?.resolution?.day?.main?.id,
+      owner:root?.dataset.aoCalendarOwner,view:root?.dataset.aoCalendarView,
+      embedded:root?.dataset.aoCalendarEmbedded,roots:document.querySelectorAll("#ao-calendar-modular-root").length,
+      homeView:[...document.querySelectorAll("[data-home-calendar-view]")].map(x=>({v:x.dataset.homeCalendarView,visible:!!x.getClientRects().length}))};
+    })));
+    throw error;
+   }
+   return page.locator("#ao-calendar-modular-root");
   };
   const cases=[
    ["2026-05-23","history.pentecost-vigil-pre1955"],
