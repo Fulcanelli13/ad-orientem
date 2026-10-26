@@ -4,6 +4,7 @@
 import {createHash} from "node:crypto";
 import {readFileSync,writeFileSync} from "node:fs";
 import {fileURLToPath} from "node:url";
+import {resolve} from "node:path";
 
 export const FIRST200_RECONCILIATION_SCHEMA="ao-gr1961-first200-latin-source-review-v1";
 const SOURCE_WITNESS_SCHEMA="ao-gr1961-first200-latin-witness-screen-v1";
