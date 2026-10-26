@@ -51,6 +51,17 @@ for(const track of MASS_CHANT_ORDINARY_TRACKS)
 assert.equal(selectedChantScoreForReader(independent,"INTROIT"),null);
 assert.equal(independent.unresolvedTracks.includes("INTROIT"),true);
 assert.equal(independent.unresolvedTracks.includes("CREDO"),false);
+const polyphonic=createMassChantProgramme(base,{...ctx,sanctusPerformance:"POLYPHONIC",
+  selectedScores:{KYRIE:"GREGOBASE-1184",SANCTUS_BENEDICTUS:"GREGOBASE-1384"}});
+assert.equal(polyphonic.sanctusPerformance,"POLYPHONIC");
+assert.equal(selectedChantScoreForReader(polyphonic,"SANCTUS_BENEDICTUS"),null,
+  "Gregorian Sanctus cannot represent polyphonic performance");
+assert.equal(polyphonic.selections.SANCTUS_BENEDICTUS,undefined);
+assert.equal(selectedChantScoreForReader(polyphonic,"KYRIE"),"GREGOBASE-1184");
+const gregorian=createMassChantProgramme(base,{...ctx,sanctusPerformance:"GREGORIAN",
+  selectedScores:{SANCTUS_BENEDICTUS:"GREGOBASE-1384"}});
+assert.equal(selectedChantScoreForReader(gregorian,"SANCTUS_BENEDICTUS"),"GREGOBASE-1384");
+assert.equal(createMassChantProgramme(base,{...ctx,sanctusPerformance:"INVALID"}).sanctusPerformance,"UNSPECIFIED");
 const nonPropagating=createMassChantProgramme(base,{...ctx,selectedScores:{KYRIE:"GREGOBASE-1184"}});
 assert.equal(selectedChantScoreForReader(nonPropagating,"GLORIA"),null);
 assert.equal(selectedChantScoreForReader(nonPropagating,"CREDO"),null);
@@ -81,6 +92,8 @@ assert.match(preflight,/if\(lastCelebrationKey!==null&&lastCelebrationKey!==cele
 assert.match(preflight,/chantProgramme=createMassChantProgramme/);
 assert.match(preflight,/move\("\[data-full-mass-chant\]","\[data-folio-reader-controls\]"\)/);
 assert.match(bridge,/chantProgramme:selected\?\.chantProgramme\?\?null/);
+assert.match(bridge,/sanctusPerformance:selected\?\.sanctusPerformance\?\?"UNSPECIFIED"/);
+assert.match(preflight,/data-full-mass-sanctus-performance/);
 assert.match(reader,/selectedChantScoreForReader\(prepared\.readerPreferences\?\.chantProgramme,"KYRIE"\)/);
 assert.match(reader,/programmeSelections:Object\.fromEntries/);
 assert.match(score,/programmeScoreId=null/);
