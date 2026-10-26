@@ -1,6 +1,6 @@
 {
   "name": "Ad Orientem module heroes — acquisition and publication gates",
-  "version": "2026-10-26.audit3.11-files-checksummed",
+  "version": "2026-10-26.audit4.13-hero-sources-reviewed-preliminarily",
   "editorial_ledger_ref": "data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json",
   "editorial_ledger_sha_at_audit": "afb09129f52e336df64c7f1782446e7cfb6861dc",
   "generated_from_latest_user_confirmed_22_selections": true,
@@ -18,15 +18,16 @@
   ],
   "counts": {
     "selected": 22,
-    "produced_physical_masters": 11,
+    "produced_physical_masters": 13,
     "candidate_image_pages_identified": 21,
     "candidates_with_page_listed_dimensions": 18,
     "museum_or_commons_reuse_terms_explicitly_documented": 14,
     "release_cleared": 0,
     "master_quality_passed": 0,
-    "previews_visually_screened_not_master": 4,
-    "distinct_approved_heroes_with_archived_source_files": 11,
-    "technical_quality_preflight_completed": 11
+    "previews_visually_screened_not_master": 11,
+    "distinct_approved_heroes_with_archived_source_files": 13,
+    "technical_quality_preflight_completed": 12,
+    "original_photo_files_archived": 14
   },
   "entries": [
     {
@@ -108,9 +109,9 @@
           "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "d632ea2012825ecdccc760f50b7cc9107a30bf4a2349541742ef6f66a4987f9b",
+      "local_master_path": "assets/staged/module-hero-masters/joseph.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -145,7 +146,9 @@
           "Do not substitute the cropped 2,605×997 Commons derivative for the complete 4,421×6,000 master.",
           "Check Joseph's sleeping face and Mary's figure; no shadow lifting of the intentionally dark areas."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Full original National Gallery NG6276 acquired; 19,749,000 bytes, 4,421×6,000, SHA256 verified. Prefer this uncut source over any thumbnail or cropped variant."
+        ],
         "alternative_reference_candidates": [
           {
             "source": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph",
@@ -153,7 +156,20 @@
             "rights": "reference_only",
             "remarks": "NG6276; high resolution 4421×6000 Commons file distinct from misleading cropped variant"
           }
-        ]
+        ],
+        "native_pixel_technical_preflight": "complete_not_human_passed"
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-joseph-original-20261026",
+        "file_path": "assets/staged/module-hero-masters/joseph.jpg",
+        "sha256": "d632ea2012825ecdccc760f50b7cc9107a30bf4a2349541742ef6f66a4987f9b",
+        "byte_length": 19749000,
+        "verified_pixel_dimensions": [
+          4421,
+          6000
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -259,7 +275,7 @@
       ],
       "notes": [],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -277,7 +293,9 @@
         "specific_quality_risks": [
           "Inspect red heart, radiance, dark contours, gold tones and glazing for false oversaturation or edge halos."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Full-image source preview visually examined; picture retains many oval portraits and iconographic detail. Need alternate gallery reference for colour accuracy; full altarpiece should remain available."
+        ],
         "alternative_reference_candidates": [],
         "native_pixel_technical_preflight": "complete_not_human_passed"
       },
@@ -331,7 +349,7 @@
         "Commons artwork date field says 1000, an obvious metadata anomaly; ignore and seek authoritative dating."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -350,7 +368,9 @@
           "Match this reproduction to its companion Sacred Heart source; check if editing introduced artificial colour differences.",
           "Artwork metadata dating anomaly is not photo evidence."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Full-image source preview visually examined; companion Morlete painting retains fine multi-figure layout. Check both heart-module reproductions for consistent reference colour, not artificial matching."
+        ],
         "alternative_reference_candidates": [],
         "native_pixel_technical_preflight": "complete_not_human_passed"
       },
@@ -404,7 +424,7 @@
         "Adequate provisional dimensions; compare with higher-resolution museum reproduction."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -423,7 +443,9 @@
           "Examine sword/wing feather microdetails, fabric highlights, deep brown shadows, and signs of sharpening halos.",
           "High-res museum scan preferable to merely larger digital copy."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Personally reviewed source-derived full and upper native-pixel image: colours plausible and composition intact, but shoulder/face transitions appear a little soft; JPEG at 513,396 bytes for 1657×2441 merits independent better master comparison before promotion."
+        ],
         "alternative_reference_candidates": [],
         "native_pixel_technical_preflight": "complete_not_human_passed"
       },
@@ -561,7 +583,7 @@
         "Do not confuse central panel, triptych assembly and reverse; inspect visually."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -580,7 +602,9 @@
           "Distinguish historical central Resurrection panel from triptych assembly, overframed museum photograph, or panels reversed.",
           "Check topmost banner and lower foot/sepulchre not clipped."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Personally reviewed full Rubens central panel and native upper detail: convincing skin/clothing brushwork and age texture; verify central painting exactly and mobile composition."
+        ],
         "alternative_reference_candidates": [],
         "native_pixel_technical_preflight": "complete_not_human_passed"
       },
@@ -635,7 +659,7 @@
         "The Met item 2005.186 confirms open access."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -654,7 +678,9 @@
           "Use the official Met open access original preferentially; a museum-approved scan can be better than an enormous third-party upscaled copy.",
           "Check face/host/halo whites retain tonal detail."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Personally reviewed source-derived whole artwork and two native details: detailed Ingres face/eyelashes, mantle threads and authentic age craquelure preserved, no obvious smoothing in these samples; museum colour reference comparison and complete file QA still open."
+        ],
         "alternative_reference_candidates": [],
         "native_pixel_technical_preflight": "complete_not_human_passed"
       },
@@ -708,7 +734,7 @@
         "Keep Borghese original distinct from the separate Saint Jerome variants by Caravaggio."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -727,7 +753,9 @@
           "Caravaggio has several St Jerome versions; confirm Borghese original and painting state before comparing photographic sharpness.",
           "Preserve dark pigments and illumination; do not brighten tenebrism artificially."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Personally reviewed full composition and generic native upper dark-area tile; full image looks credible and richly dark. Tile selects black background and is insufficient to decide compression/sharpness of painted hands or face; request subject-focused details."
+        ],
         "alternative_reference_candidates": [],
         "native_pixel_technical_preflight": "complete_not_human_passed"
       },
@@ -844,7 +872,7 @@
         "Inventory BF.2004.1 matches MFAH approved artwork."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -863,7 +891,9 @@
           "Verify inventory BF.2004.1 and full lower-zone figures; avoid saturation of blue/red garments.",
           "Review tonal detail of darker souls without synthetic shadow enhancement."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Full Giordano source preview examined; figure placement and warm colours preserved, native garment detail sampled; compare institutional reference to rule out excess warmth."
+        ],
         "alternative_reference_candidates": [],
         "native_pixel_technical_preflight": "complete_not_human_passed"
       },
@@ -1236,7 +1266,7 @@
         "Exact Wallraf WRM 2122, 1622 confirmed. Avoid similarly titled Honthorst works in Greifswald, Nantes, and elsewhere."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -1255,7 +1285,9 @@
           "Check Wallraf-specific Honthorst painting identity; several similar Adoration of Shepherds compositions exist.",
           "Inspect candle/child radiance, excessive overexposure and black clipping."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Personally reviewed full Honthorst painting and upper dark detail; image preserves intentional candlelit contrast. Lower-right circular emblem is visible and must be identified as potential historic painted arms, not automatically treated as watermarked image."
+        ],
         "alternative_reference_candidates": [],
         "native_pixel_technical_preflight": "complete_not_human_passed"
       },
@@ -1309,7 +1341,7 @@
         "Wide group composition must not be blindly cropped to central figure; full image may require alternate adaptive layout."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -1328,7 +1360,9 @@
           "Wide densely populated original cannot be blindly cut to portrait; review mobile layout using letterbox or controlled focal crop.",
           "Texture and faces across scene must remain coherent, not upscaled."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Personally reviewed the full Meirelles wide image; historical narrative all visible, natural-looking colours; hero needs uncropped contain or explicit panorama-aware layout, not centre portrait crop."
+        ],
         "alternative_reference_candidates": [],
         "native_pixel_technical_preflight": "complete_not_human_passed"
       },
@@ -1382,7 +1416,7 @@
         "NGA accession 1948.12.1; actual downloadable file and pixel dimensions not yet checked."
       ],
       "visual_quality": {
-        "preview_review_status": "reference_preview_examined_not_master",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -1401,7 +1435,9 @@
           "Prefer NGA official IIIF original; preview demonstrates muted palette and whole scene, but still inspect source bytes.",
           "Preserve father/son embrace plus surrounding figures; do not isolate figures into false composition."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Personally reviewed full-composition 720-px preview and two 420-px native details: restrained muted modelling, authentic fine craquelure and fabric texture, no obvious glare or digital-edge artefact in inspected regions. Favourable preliminary quality, not proof of full-frame sharpness/faithful museum colour."
+        ],
         "alternative_reference_candidates": [
           {
             "source": "https://api.nga.gov/iiif/676fa96e-ad4e-4209-b985-ae0c15f5d902/full/full/0/default.jpg?attachment_filename=the_return_of_the_prodigal_son_1948.12.1.jpg",
@@ -1444,9 +1480,9 @@
           "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+      "local_master_path": "assets/staged/module-hero-comparisons/rosary-lotto-01.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -1462,7 +1498,7 @@
         "Exact Cingoli altarpiece. Keep full painting and fifteen surrounding mysteries visible; image cropping must be deliberate."
       ],
       "visual_quality": {
-        "preview_review_status": "reference_preview_examined_not_master",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -1482,7 +1518,11 @@
           "Inspect ISO6400 Sailko photo for chroma noise and loss of fine details in 15 mystery medallions.",
           "Test full altarpiece and detail-legibility at phone width; museum reference takes precedence for colour."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Side-by-side original-derived previews examined: Sailko 01 contains whole altarpiece with fifteen roundels; warm/yellow cast and small mystery scene detail need comparison with institutional reference before release.",
+          "Sailko 11 is cropped to central Virgin and Child; REJECT for full-image use, despite 2304×3456 pixels. Keep as MAYBE alternative detail-only photographic source (not a rejection of selected painting).",
+          "Photographer Sailko CC BY 3.0 on both; final app must credit source, licence and edits."
+        ],
         "alternative_reference_candidates": [
           {
             "source": "https://lorenzolottomarche.it/en/itinerary/cingoli-1/madonna-of-the-rosary-1539",
@@ -1510,7 +1550,33 @@
             "rights": "Commons page licensing requires confirmation",
             "remarks": "Compare microdetail and colours to source 01, 11 and regional gallery reference; do not auto-promote"
           }
+        ],
+        "full_composition_candidate": "assets/staged/module-hero-comparisons/rosary-lotto-01.jpg",
+        "alternative_details": [
+          {
+            "path": "assets/staged/module-hero-comparisons/rosary-lotto-11.jpg",
+            "sha256": "352ec3f397d6f5de89dd824cd0542b157ccea617d2521a83102d84b6adff106d",
+            "dimensions": [
+              2304,
+              3456
+            ],
+            "fit_for_full_altarpiece_hero": false,
+            "exclusion": "Higher-pixel source is a close-up only; omits most of fifteen mystery medallions; detail image allowed for other layout purposes, not final whole hero",
+            "quality_status": "not_production_approved"
+          }
         ]
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/lotto-rosary-photo-comparison-20261026",
+        "file_path": "assets/staged/module-hero-comparisons/rosary-lotto-01.jpg",
+        "sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+        "byte_length": 3355634,
+        "verified_pixel_dimensions": [
+          1772,
+          2652
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -1552,7 +1618,7 @@
         "Official MNAC image path surfaced by museum-backed image lookup: https://www.museunacional.cat/sites/default/files/images/art_piece/first_gallery/34950/008327-000.JPG; download and actual pixel dimensions not verified. Do NOT treat as a captured source master."
       ],
       "visual_quality": {
-        "preview_review_status": "reference_preview_examined_not_master",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -1571,7 +1637,9 @@
           "Museum preview identifies seven roundels, sword and sorrowful Virgin; exact MNAC master bytes and camera fidelity unverified.",
           "Preserve all seven roundels and sword; do not crop to Madonna alone."
         ],
-        "quality_verification_notes": [],
+        "quality_verification_notes": [
+          "Personally reviewed source-derived full MNAC image and two native details: authentic fine craquelure in halo and dark robe, all seven medallions and sword visible, no obvious cropping; colour-reference and digital-photo rights still unverified."
+        ],
         "alternative_reference_candidates": [
           {
             "source": "https://www.museunacional.cat/sites/default/files/images/art_piece/first_gallery/34950/008327-000.JPG",
@@ -1654,6 +1722,18 @@
       "action": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40340510955",
       "report": "data/research/module-hero-museum-acquisition-20261026.json",
       "source_images_acquired": 3
+    },
+    {
+      "branch": "research/module-hero-joseph-original-20261026",
+      "action": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40341715058",
+      "report": "data/research/module-hero-joseph-acquisition-20261026.json",
+      "source_images_acquired": 1
+    },
+    {
+      "branch": "research/lotto-rosary-photo-comparison-20261026",
+      "action": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40340796108",
+      "report": "data/research/lotto-rosary-photo-comparison-20261026.json",
+      "source_images_acquired": 2
     }
   ],
   "verified_acquisition_quality_findings": [
@@ -1687,5 +1767,15 @@
       "finding": "Met issued original 3122×3813, no embedded ICC profile, SHA256 recorded. Compare colour against museum display/reference prior to release.",
       "status": "technical_review_complete_not_approved"
     }
-  ]
+  ],
+  "rosary_image_quality_triage": {
+    "artwork": "Lorenzo Lotto Madonna del Rosario remains permanently approved; the photograph is under technical selection",
+    "full_altar_photo": "rosary-lotto-01.jpg",
+    "full_source_sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+    "cropped_closeup_photo": "rosary-lotto-11.jpg",
+    "cropped_source_sha256": "352ec3f397d6f5de89dd824cd0542b157ccea617d2521a83102d84b6adff106d",
+    "result": "The 2304x3456 close-up is NOT an eligible full-composition hero; 1772x2652 full photo remains provisional, subject to colour fidelity and clearer independent reproduction search.",
+    "licence": "CC BY 3.0 Sailko; credit, licence URL, modification disclosure needed",
+    "final_visual_quality_release": false
+  }
 }
