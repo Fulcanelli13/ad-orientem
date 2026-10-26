@@ -108,10 +108,16 @@ try{
      "Grid remains mounted but is hidden in Ordo mode");
    const ordoCount=await cal.locator('.aoCalOrdoEntry').count();
    assert.ok(ordoCount>=28&&ordoCount<=31,"Ordo must list every in-month day: "+ordoCount);
-   const firstOrdo=cal.locator('.aoCalOrdoEntry').first();
+   // Capture actual resolved liturgical content, not a frame of loading skeletons.
+   await page.waitForFunction(()=>
+     document.querySelectorAll('#ao-calendar-modular-root .aoCalOrdoEntry[data-ready="1"]').length>=3,
+     null,{timeout:45000});
+   const firstOrdo=cal.locator('.aoCalOrdoEntry[data-ready="1"]').first();
    await firstOrdo.locator('summary').click();
    assert.equal(await firstOrdo.getAttribute('open'),"",
-     "Ordo day must expand without navigating away");
+     "Resolved Ordo day must expand without navigating away");
+   assert.equal(await firstOrdo.locator('.aoCalOrdoVerified').count(),1,
+     "Resolved Ordo must show only source-backed Mass availability");
    assert.equal(await firstOrdo.locator('[data-cal-month-index-date]').count(),1,
      "Expanded Ordo day must link to the canonical Day");
    await page.screenshot({path:resolve(output,"calendar-ordo-"+lang+"-"+width+".png"),
