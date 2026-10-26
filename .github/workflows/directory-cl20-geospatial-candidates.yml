@@ -1,0 +1,128 @@
+name: Directory CL20 sourced church building georeference candidates
+
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl17-release-gates-20261026/**'
+      - 'tools/directory/reconcile-cl17-release-gates.py'
+      - 'data/directory/research/cl18-fssp-calendar-address-20261026/**'
+      - 'tools/directory/reconcile-cl18-calendar-address.py'
+      - 'data/directory/research/cl19-remaining-fssp-20261026/**'
+      - 'tools/directory/reconcile-cl19-remaining-site-sources.py'
+      - 'data/directory/research/cl20-geo-entrance-20261026/**'
+      - 'tools/directory/reconcile-cl20-geospatial-candidates.py'
+      - '.github/workflows/directory-cl20-geospatial-candidates.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl17-release-gates-20261026/**'
+      - 'tools/directory/reconcile-cl17-release-gates.py'
+      - 'data/directory/research/cl18-fssp-calendar-address-20261026/**'
+      - 'tools/directory/reconcile-cl18-calendar-address.py'
+      - 'data/directory/research/cl19-remaining-fssp-20261026/**'
+      - 'tools/directory/reconcile-cl19-remaining-site-sources.py'
+      - 'data/directory/research/cl20-geo-entrance-20261026/**'
+      - 'tools/directory/reconcile-cl20-geospatial-candidates.py'
+      - '.github/workflows/directory-cl20-geospatial-candidates.yml'
+  workflow_dispatch:
+
+jobs:
+  spatial-gates:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate original CL2 through CL7 and source chain
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+      - name: Rebuild source-evidence database from CL2 through CL20
+        run: |
+          python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ao-cl20.sqlite
+          python3 tools/directory/audit-cl-completeness.py --db /tmp/ao-cl20.sqlite --output-dir /tmp/ao-cl8
+          python3 tools/directory/audit-cl9-owner-evidence.py --db /tmp/ao-cl20.sqlite --cl8-csv /tmp/ao-cl8/missal_1962_reconciliation.csv --out-dir /tmp/ao-cl9
+          python3 tools/directory/adjudicate-cl10-missal-evidence.py --db /tmp/ao-cl20.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl10
+          python3 tools/directory/reconcile-cl11-owner-sources.py --db /tmp/ao-cl20.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl11
+          python3 tools/directory/reconcile-cl12-singletons.py --db /tmp/ao-cl20.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl12
+          python3 tools/directory/reconcile-cl13-remaining-1962.py --db /tmp/ao-cl20.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl13
+          python3 tools/directory/reconcile-cl14-fssp-owner-site-evidence.py --db /tmp/ao-cl20.sqlite --out-dir /tmp/ao-cl14
+          python3 tools/directory/triage-cl15-1962-holds.py --db /tmp/ao-cl20.sqlite --out-dir /tmp/ao-cl15
+          python3 tools/directory/reconcile-cl16-priority-one.py --db /tmp/ao-cl20.sqlite --out-dir /tmp/ao-cl16
+          python3 tools/directory/reconcile-cl17-release-gates.py --db /tmp/ao-cl20.sqlite --out-dir /tmp/ao-cl17
+          python3 tools/directory/reconcile-cl18-calendar-address.py --db /tmp/ao-cl20.sqlite --out-dir /tmp/ao-cl18
+          python3 tools/directory/reconcile-cl19-remaining-site-sources.py --db /tmp/ao-cl20.sqlite --out-dir /tmp/ao-cl19
+          python3 tools/directory/reconcile-cl20-geospatial-candidates.py --db /tmp/ao-cl20.sqlite --out-dir /tmp/ao-cl20
+      - name: Verify spatial candidates, rejected objects and zero public geocodes
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl17/cl17_summary.json').read_text())
+          assert x['accepted_book_evidence_rows']==256
+          assert x['held_book_evidence_rows']==176
+          assert x['fssp_source_named_worship_place_pilot']==39
+          assert x['pilot_frozen_mass_rows_with_named_owner_address']==74
+          assert x['new_accepted_named_owner_programme_row']==20
+          assert sum(x['pilot_owner_address_documentation_grades'].values())==39
+          assert x['public_sites_new']==x['public_mass_times_new']==x['current_dated_recurrence_approvals_new']==x['physical_coordinate_or_entrance_approvals_new']==x['una_cum_approvals_new']==0
+          db=sqlite3.connect('/tmp/ao-cl20.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl17_accepted_mass_gates').fetchone()[0]==256
+          assert db.execute('SELECT COUNT(*) FROM cl17_owner_site_stage').fetchone()[0]==39
+          assert db.execute('SELECT COUNT(*) FROM cl17_accepted_mass_gates WHERE source_place_id IS NOT NULL').fetchone()[0]==74
+          assert db.execute('SELECT COUNT(*) FROM cl17_potsdam_identity WHERE distinct_venues=0').fetchone()[0]==1
+          assert db.execute('SELECT COUNT(*) FROM classification_source WHERE owner_verified_missal_1962=1').fetchone()[0]==3
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          y=json.loads(Path('/tmp/ao-cl18/cl18_summary.json').read_text())
+          assert y['named_pilot_places']==39
+          assert y['pilot_mass_rows_with_parsed_source_calendar_rules']==74
+          assert y['auto_expandable_rule_expressions']==73
+          assert y['manual_feast_only_rule_expressions']==1
+          assert y['distinct_place_local_owner_second_source_reviews']==12
+          assert y['pilot_sites_not_independently_crosschecked']==27
+          assert y['unverified_projected_candidate_dates']>200
+          assert y['public_pin_approvals_new']==y['church_entrance_geocode_approvals_new']==y['future_date_schedule_approvals_new']==y['public_mass_events_new']==y['una_cum_new']==0
+          assert db.execute('SELECT COUNT(*) FROM cl18_recurrence_rules').fetchone()[0]==74
+          assert db.execute('SELECT COUNT(*) FROM cl18_site_verification').fetchone()[0]==39
+          assert db.execute('SELECT COUNT(*) FROM cl18_site_verification WHERE independent_crosscheck=1').fetchone()[0]==12
+          assert db.execute('SELECT COUNT(*) FROM cl18_unverified_projection WHERE released=1 OR owner_calendar_verified=1').fetchone()[0]==0
+          z=json.loads(Path('/tmp/ao-cl19/cl19_summary.json').read_text())
+          assert z['owner_named_pilot_sites']==39
+          assert z['already_crosschecked_in_CL18']==12
+          assert z['new_sites_screened_against_another_source']==27
+          assert z['pilot_sites_with_some_second_source_screen']==39
+          assert z['new_independent_primary_church_identity_sources']==22
+          assert z['new_same_institution_local_FSSP_sources']==4
+          assert z['new_secondary_only_heritage_references']==1
+          assert z['new_source_published_building_coord_candidates']==1
+          assert z['all_new_sites_public_entrances_approved']==z['all_new_sites_geocodes_approved']==0
+          assert z['new_current_mass_occurrence_public_approvals']==z['new_public_map_pins']==z['new_una_cum']==0
+          assert db.execute('SELECT COUNT(*) FROM cl19_second_source_review').fetchone()[0]==27
+          assert db.execute('SELECT COUNT(*) FROM cl19_second_source_review WHERE independent_primary=1').fetchone()[0]==22
+          assert db.execute('SELECT COUNT(*) FROM cl19_dated_source_event').fetchone()[0]==3
+          assert db.execute('SELECT COUNT(*) FROM cl19_dated_source_event WHERE public_approval=1').fetchone()[0]==0
+          geo=json.loads(Path('/tmp/ao-cl20/cl20_summary.json').read_text())
+          assert geo['pilot_owner_named_sites']==39
+          assert geo['new_source_georeferenced_church_building_candidates']==6
+          assert geo['building_reference_eligible_at_research_level']==5
+          assert geo['spatial_disagreement_held_at_research_building_level']==1
+          assert geo['potentially_wrong_Potsdam_OSM_chapel_object_excluded']==1
+          assert geo['building_points_independently_entrance_confirmed']==0
+          assert geo['Potsdam_operator_vehicle_access_route_documented']==1
+          assert geo['new_approved_church_entrance_coordinates']==geo['new_approved_public_church_map_points']==geo['new_approved_future_mass_occurrences']==geo['new_public_mass_schedules']==geo['new_una_cum']==0
+          assert db.execute('SELECT COUNT(*) FROM cl20_building_spatial_candidate').fetchone()[0]==6
+          assert db.execute('SELECT COUNT(*) FROM cl20_building_spatial_candidate WHERE building_reference_supported=1').fetchone()[0]==5
+          assert db.execute('SELECT COUNT(*) FROM cl20_rejected_object_hypothesis').fetchone()[0]==1
+          assert db.execute('SELECT COUNT(*) FROM cl20_building_spatial_candidate WHERE public_geocoordinate_approved=1 OR published_map_pin=1 OR visitor_entrance_geocode_approved=1').fetchone()[0]==0
+          print('CL20 PASS: six sourced georeference records, five research building references, no public pins')
+          PY
+      - name: Export temporary regenerable reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-cl20-spatial-church-building-candidates
+          path: /tmp/ao-cl20/
+          retention-days: 1
