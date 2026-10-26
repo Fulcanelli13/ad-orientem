@@ -7,6 +7,7 @@ on:
       - 'data/directory/research/cl27-bulk-timetable-audit-20261026/**'
       - 'data/directory/tlm-user-classification-taxonomy.v1.json'
       - 'tools/directory/build-cl27-tlm-classifications.py'
+      - 'tools/directory/review-cl27-tlm-classifications.html'
       - 'src/find/preliminary-directory-r49.js'
       - 'src/find/explore-presentation.js'
       - 'tests/directory-cl27-user-classification-facets.mjs'
@@ -40,6 +41,23 @@ jobs:
         run: python3 tools/directory/rebuild-cl2-research-snapshot.py --snapshot-dir data/directory/research/cl2-unified-20261026 --output /tmp/cl27-mass-registry.sqlite
       - name: Generate classified directory with exact source joins
         run: python3 tools/directory/build-cl27-tlm-classifications.py --db /tmp/cl27-mass-registry.sqlite --output /tmp/cl27-tlm-classification-facets.json
+      - name: Check offline classification editor generated with whole approved research source
+        run: |
+          python3 - <<'PY'
+          import json
+          from html.parser import HTMLParser
+          from pathlib import Path
+          html=Path('/tmp/cl27-tlm-classification-review.html').read_text()
+          data=json.loads(Path('/tmp/cl27-tlm-classification-facets.json').read_text())
+          assert html.count('id="embedded-data"') == 1
+          assert 'ad-orientem-tlm-classification-drafts.json' in html
+          assert 'public_approval:false' in html
+          assert data['counts']['classification_source_rows'] == 2715
+          assert data['counts']['organization_labels_at_source_only'] == 2008
+          assert html.find('id="embedded-data"') < html.find("const embedded=document.getElementById('embedded-data')")
+          assert '\\u003c' in html, 'Expected script-safe escaped angle bracket in serialized sources'
+          print('Offline CL27 editor PASS; full 2,579 sites and 2,715 source claims embedded')
+          PY
       - name: Verify classification export does not turn source labels into official claims
         run: |
           python3 - <<'PY'
