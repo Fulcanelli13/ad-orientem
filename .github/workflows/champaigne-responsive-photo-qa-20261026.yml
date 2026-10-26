@@ -42,7 +42,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f assets/staged/champaigne-petite-cene-research/C-frame-free-perimeter-inspection.png
+          git add -f assets/staged/champaigne-petite-cene-research/D-frame-free-perimeter-inspection.png
           git add -f assets/staged/champaigne-petite-cene-research/mobile-desktop-visual-qa.html
           git add -f assets/staged/champaigne-petite-cene-research/ui-review-manifest.json
           git add -f assets/staged/champaigne-petite-cene-research/responsive-test-screenshots/
@@ -52,3 +52,5 @@ jobs:
           fi
       - name: Release restriction
         run: echo "Research only. No image selection replacement, no user-facing deployment, no inferred photo rights or painted-edge signoff."
+
+# 26 Oct D retest: updated source removes gold bottom band discovered by C perimeter inspection.
