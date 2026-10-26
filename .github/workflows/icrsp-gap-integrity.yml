@@ -53,6 +53,12 @@ on:
       - 'tests/test_icrsp_durable_855_783_250_coverage.py'
       - 'data/source-text/icrsp-france-b22-relevance-exceptions-and-existing-owner-editorial-drafts.v1.json'
       - 'tests/test_icrsp_b22_relevance_and_quarantine.py'
+      - 'tests/test_icrsp_b22_233_distinct_source_scan.py'
+      - 'tests/test_icrsp_b22_direct_11_source_topics.py'
+      - 'tests/test_icrsp_b22_cross_workstream_93_unique.py'
+      - 'data/source-text/icrsp-france-b22-233-distinct-source-body-scan-queue.v1.json'
+      - 'data/source-text/icrsp-france-b22-eleven-direct-commentary-topics.v1.json'
+      - 'data/source-text/icrsp-france-b22-cross-workstream-93-direct-read-reconciliation.v1.json'
   workflow_dispatch:
 
 permissions:
@@ -89,3 +95,6 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b20_source_content_selection.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_durable_855_783_250_coverage.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b22_relevance_and_quarantine.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b22_233_distinct_source_scan.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b22_direct_11_source_topics.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b22_cross_workstream_93_unique.py' -v
