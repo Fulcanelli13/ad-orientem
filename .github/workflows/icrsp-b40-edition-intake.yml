@@ -10,6 +10,8 @@ on:
       - 'data/source-text/icrsp-france-b40-four-author-edition-and-language-gates.v1.json'
       - 'data/source-text/icrsp-france-b40-three-salesian-opening-text-concordances.v1.json'
       - 'tests/test_icrsp_b40_223_groups_29_salesian_toc_editions.py'
+      - 'data/source-text/icrsp-france-b41-two-salesian-dating-source-witness-reconciliation.v1.json'
+      - 'tests/test_icrsp_b41_salesian_two_date_witness_conflicts.py'
   workflow_dispatch:
 
 permissions:
@@ -31,3 +33,5 @@ jobs:
           python-version: '3.12'
       - name: Confirm all 223 SHA repeats, Salesian TOC exceptions, edition-rights holds
         run: python -m unittest discover -s tests -p 'test_icrsp_b40_223_groups_29_salesian_toc_editions.py' -v
+      - name: Independently validate B41 Annecy date and weekday conflicts
+        run: python -m unittest discover -s tests -p 'test_icrsp_b41_salesian_two_date_witness_conflicts.py' -v
