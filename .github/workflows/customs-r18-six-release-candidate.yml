@@ -6,6 +6,8 @@ on:
       - 'data/customs/customs-r18-six-canonical-promotion-payload.v1.json'
       - 'data/customs/customs-r18-six-identity-comparator-review.v1.json'
       - 'tools/customs/simulate-r18-six-canonical-release.mjs'
+      - 'docs/CUSTOMS_R18_SIX_FULL_BILINGUAL_EDITORIAL_ACCEPTANCE_20261026.md'
+      - 'tests/customs-r18-six-editorial-dossier-parity.mjs'
       - 'tests/customs-r18-six-canonical-release-candidate.mjs'
       - '.github/workflows/customs-r18-six-release-candidate.yml'
   workflow_dispatch:
@@ -23,3 +25,4 @@ jobs:
         run: |
           node tests/customs-r18-six-canonical-release-candidate.mjs
           node tools/customs/simulate-r18-six-canonical-release.mjs
+          node tests/customs-r18-six-editorial-dossier-parity.mjs
