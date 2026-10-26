@@ -1,6 +1,6 @@
 {
   "name": "Ad Orientem module heroes — acquisition and publication gates",
-  "version": "2026-10-26.audit6.18-module-source-coverage",
+  "version": "2026-10-26.audit7.20-physical-sources-18-remaining-photo-leads",
   "editorial_ledger_ref": "data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json",
   "editorial_ledger_sha_at_audit": "afb09129f52e336df64c7f1782446e7cfb6861dc",
   "generated_from_latest_user_confirmed_22_selections": true,
@@ -18,21 +18,30 @@
   ],
   "counts": {
     "selected": 22,
-    "produced_physical_masters": 18,
+    "produced_physical_masters": 20,
     "candidate_image_pages_identified": 21,
     "candidates_with_page_listed_dimensions": 18,
     "museum_or_commons_reuse_terms_explicitly_documented": 14,
     "release_cleared": 0,
     "master_quality_passed": 0,
-    "previews_visually_screened_not_master": 18,
-    "distinct_approved_heroes_with_archived_source_files": 18,
-    "technical_quality_preflight_completed": 17,
-    "original_photo_files_archived": 21,
+    "previews_visually_screened_not_master": 20,
+    "distinct_approved_heroes_with_archived_source_files": 20,
+    "technical_quality_preflight_completed": 19,
+    "original_photo_files_archived": 23,
     "remaining_modules_without_source_files": [
       "angel",
-      "salvation",
-      "morning",
       "evening"
+    ],
+    "source_reproduction_rejected_for_hero": [
+      "holy-spirit",
+      "salvation"
+    ],
+    "modules_needing_better_faithful_photographs": [
+      "holy-spirit",
+      "salvation",
+      "angel",
+      "evening",
+      "michael"
     ]
   },
   "entries": [
@@ -1015,9 +1024,9 @@
           "https://commons.wikimedia.org/wiki/File:Le_Siècle_d'Auguste_-_naissance_de_N.S._Jésus-Christ_par_Gérôme.jpg"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "c5b8c147a0e75f1fe91279ceedd323fd246030e8bf0750f4a2b39811bac42102",
+      "local_master_path": "assets/staged/module-hero-rescue/salvation.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -1033,7 +1042,7 @@
         "Exact huge Musée de Picardie painting located; reproduction too small for a confident master of densely detailed composition."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -1050,10 +1059,47 @@
         },
         "specific_quality_risks": [
           "Wide dense composition needs more effective spatial detail than 1600×990 can provide.",
-          "Do not crop away the architectural panorama or Christ's birth scene."
+          "Do not crop away the architectural panorama or Christ's birth scene.",
+          "The 6000×4000 shot is gallery installation scene, not flat capture of selected painting. No arbitrary perspective restoration as a substitute for authentic master."
         ],
-        "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "quality_verification_notes": [
+          "Actual 6000×4000 source is a WIDE PHOTO OF MUSEUM GALLERY including surrounding paintings, ceiling lights, people and skewed GEROME canvas. Explicitly unsuitable full-artwork hero despite large 6000×4000 pixels. Photographer Chatsam CC BY-SA 3.0. The raw Nikon MPO/JPEG is preserved unmodified as a contextual reference, not valid painting master."
+        ],
+        "alternative_reference_candidates": [],
+        "native_pixel_technical_preflight": "source_probe_complete_preliminary",
+        "photo_candidate_verdict": "REJECT_FOR_HERO_REPRODUCTION_NOT_THE_PAINTING",
+        "source_alternatives_rejected_as_different_artwork": [
+          {
+            "title": "The Age of Augustus, the Birth of Christ",
+            "collection": "J. Paul Getty Museum",
+            "accession": "85.PA.226",
+            "date": "1852–1854",
+            "size": "38.1 × 55.2 cm",
+            "reason": "Getty holds a PREPARATORY STUDY, not the 1855 Musée de Picardie monumental completed painting selected by user",
+            "source_url": "https://artsandculture.google.com/asset/the-age-of-augustus-the-birth-of-christ-0050/rQGwooq_SRJleA"
+          }
+        ],
+        "original_object_identity": {
+          "artist": "Jean-Léon Gérôme",
+          "selected_work": "Siècle d’Auguste : naissance de N.-S. Jésus-Christ (1855)",
+          "museum": "Musée de Picardie, Amiens",
+          "inventory": "RF 1983 92 / M.P.D.998.5.1",
+          "width_cm": 1014,
+          "height_cm": 620,
+          "authority": "https://www.amiens.fr/Vivre-a-Amiens/Culture-Patrimoine/Etablissements-culturels/Musee-de-Picardie/Collections/XIX/Notices/Notice-Jean-Leon-Gerome-Siecle-d-Auguste"
+        }
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-rescue-20261026",
+        "file_path": "assets/staged/module-hero-rescue/salvation.jpg",
+        "sha256": "c5b8c147a0e75f1fe91279ceedd323fd246030e8bf0750f4a2b39811bac42102",
+        "byte_length": 7530116,
+        "verified_pixel_dimensions": [
+          6000,
+          4000
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -1076,9 +1122,9 @@
           "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png"
         ]
       },
-      "physical_master_acquired": false,
-      "sha256": null,
-      "local_master_path": null,
+      "physical_master_acquired": true,
+      "sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+      "local_master_path": "assets/staged/module-hero-rescue/morning.jpg",
       "app_ready_crop_verified": false,
       "crop_spec": null,
       "app_released": false,
@@ -1094,7 +1140,7 @@
         "Seek original Art Institute of Chicago IIIF master, artwork 94841, instead of this modest Commons PNG."
       ],
       "visual_quality": {
-        "preview_review_status": "not_examined_at_master_resolution",
+        "preview_review_status": "whole_image_and_native_detail_previews_examined",
         "master_review_status": "pending_download_and_100_percent_visual_inspection",
         "verdict": "NOT_RELEASED",
         "reproduction_checks": {
@@ -1113,8 +1159,30 @@
           "Look for Art Institute of Chicago's authoritative colour-managed master rather than 1019×1534 PNG.",
           "Check sky dusk tonal gradation versus posterized or boosted orange lighting."
         ],
-        "quality_verification_notes": [],
-        "alternative_reference_candidates": []
+        "quality_verification_notes": [
+          "Actual museum-linked Jules Breton full image 2548×3300 acquired from Commons; 720px complete and 420px native samples examined: muted dawn tones, natural original painting texture, no digital fluorescent saturation. Colour reference against Art Institute still required; official AIC IIIF returned 403."
+        ],
+        "alternative_reference_candidates": [],
+        "native_pixel_technical_preflight": "source_probe_complete_preliminary",
+        "provisional_source_preference": {
+          "source": "Museum-linked faithful Commons JPEG",
+          "path": "assets/staged/module-hero-rescue/morning.jpg",
+          "sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+          "quality": "promising not approved",
+          "note": "Moderate clean source; no ICC embedded"
+        }
+      },
+      "staged_research_file": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "git_branch": "research/module-hero-rescue-20261026",
+        "file_path": "assets/staged/module-hero-rescue/morning.jpg",
+        "sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+        "byte_length": 2080000,
+        "verified_pixel_dimensions": [
+          2548,
+          3300
+        ],
+        "file_is_not_promoted_to_production": true
       }
     },
     {
@@ -1925,6 +1993,13 @@
       "report": "data/research/module-hero-acquisition-wave2-20261026.json",
       "source_images_acquired": 6,
       "source_modules_acquired": 5
+    },
+    {
+      "branch": "research/module-hero-rescue-20261026",
+      "action": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40346888584",
+      "report": "data/research/module-hero-rescue-20261026.json",
+      "source_images_acquired": 2,
+      "source_modules_acquired": 2
     }
   ],
   "verified_acquisition_quality_findings": [
