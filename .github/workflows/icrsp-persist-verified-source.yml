@@ -1,0 +1,140 @@
+name: ICRSP persist verified 855-article and 783-commentary source metadata
+on:
+  push:
+    branches: [governance/icrsp-source-inventory-1665]
+    paths: ['.github/workflows/icrsp-persist-verified-source.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  archive-source-metadata:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: governance/icrsp-source-inventory-1665
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Retrieve the already-verified 855 article metadata artifact
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 40202997017
+          github-token: ${{ github.token }}
+          repository: Fulcanelli13/ad-orientem
+          name: icrsp-855-metadata-verified
+          path: /tmp/icrsp/index
+      - name: Retrieve the already-verified 783 commentary-panel metadata artifact
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 40204497782
+          github-token: ${{ github.token }}
+          repository: Fulcanelli13/ad-orientem
+          name: icrsp-commentary-783-merged
+          path: /tmp/icrsp/commentary
+      - name: Assert identities, avoid B20 duplicates, stage next 250 from existing sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, hashlib, shutil
+          from collections import Counter
+          from pathlib import Path
+          def load(p): return json.loads(Path(p).read_text(encoding='utf8'))
+          base=Path('data/source-text')
+          index_path=Path('/tmp/icrsp/index/icrsp-france-index-screened.v1.json')
+          comments_path=Path('/tmp/icrsp/commentary/icrsp-commentary-783.v1.json')
+          index=load(index_path); commentary=load(comments_path)
+          b20=load(base/'icrsp-france-b20-sanctoral-temporal-160-content-selection.v1.json')
+          pages=index['pages']; panels=commentary['records']; b20rows=b20['records']
+          assert len(pages)==855 and len(panels)==783 and len(b20rows)==160
+          assert index['totals']['fetchFailures']==0 and commentary['summary']['errors']==0
+          assert index['indexSignatureEquivalentAcrossSnapshots']
+          assert sum(len(r['commentaryBlocks']) for r in panels)==2856
+          assert all(p['authorAttributionCertification']=='NOT_CERTIFIED' and p['promotion']=='NONE' for p in pages)
+          assert all(r['editionCertification']=='NOT_CERTIFIED_1962' for r in panels)
+          assert all(b['rights']=='NOT_CLEARED_LINK_AND_METADATA_ONLY' for r in panels for b in r['commentaryBlocks'])
+          pid={p['articleId']:p for p in pages}
+          mid={r['articleId']:r for r in panels}
+          chosen={r['articleId']:r for r in b20rows}
+          assert len(pid)==855 and len(mid)==783 and len(chosen)==160
+          assert set(chosen).issubset(mid)
+          assert all(pid[k]['sourceUrl']==r['sourceUrl'] for k,r in mid.items())
+          assert sum(1 for p in pages if any(h['level']=='h3' and h['text']=='Commentaires' for h in p['headings']))==783
+          assert all((p['articleId'] in mid)==any(h['level']=='h3' and h['text']=='Commentaires' for h in p['headings']) for p in pages)
+          counts=Counter(); sections={}; statuses={}
+          routes={'temporal':'CALENDAR_AND_MASS_EXPLORER','sanctoral':'SAINTS_AND_CALENDAR',
+           'commons':'MASS_FORM_REGISTRY','local_propers':'PARTICULAR_CALENDAR_REVIEW',
+           'votives_requiem':'VOTIVE_REQUIEM_FORM_REVIEW','ritual':'CALENDAR_CUSTOMS_RITUAL_REVIEW',
+           'office':'OFFICE_HISTORY_REVIEW','documents':'SOURCE_REFERENCE_REVIEW'}
+          for i,p in enumerate(pages):
+            aid=p['articleId']; sec=p['sections'][0]; counts[sec]+=1
+            b=mid.get(aid); q=chosen.get(aid)
+            status=('B20_TOPIC_EXCERPT_READ' if q and q['sourceTextStatus'].startswith('WEB_PAGE_DIRECTLY')
+                    else 'B20_METADATA_ONLY' if q else 'UNSELECTED_COMMENTARY' if b else 'NO_COMMENTARY')
+            statuses[aid]=status
+            ss=sections.setdefault(sec,{'indexed':0,'withCommentary':0,'panels':0,'b20TopicRead':0,'b20MetadataOnly':0,'unselectedCommentary':0,'nextMetadataWaveStaged':0})
+            ss['indexed']+=1;ss['withCommentary']+=bool(b);ss['panels']+=len(b['commentaryBlocks']) if b else 0
+            if status=='B20_TOPIC_EXCERPT_READ':ss['b20TopicRead']+=1
+            if status=='B20_METADATA_ONLY':ss['b20MetadataOnly']+=1
+            if status=='UNSELECTED_COMMENTARY':ss['unselectedCommentary']+=1
+          statusCount=Counter(statuses.values())
+          assert statusCount=={'B20_TOPIC_EXCERPT_READ':10,'B20_METADATA_ONLY':150,'UNSELECTED_COMMENTARY':623,'NO_COMMENTARY':72}
+          quotas={'temporal':60,'sanctoral':140,'commons':25,'local_propers':18,'votives_requiem':4,'office':3}
+          wave=[]
+          for sec,limit in quotas.items():
+            eligible=[(i,p,mid[p['articleId']]) for i,p in enumerate(pages)
+               if p['sections'][0]==sec and statuses[p['articleId']]=='UNSELECTED_COMMENTARY']
+            eligible.sort(key=lambda row:(-sum(b['bodyCharacterCount']>120 for b in row[2]['commentaryBlocks']),
+                       -len(row[2]['commentaryBlocks']),row[0]))
+            assert len(eligible)>=limit
+            for i,p,r in eligible[:limit]:
+              title=next((h['text'] for h in p['headings'] if h['level']=='h2'),p['labels'][0])
+              wave.append({'indexPosition':i,'articleId':p['articleId'],'sourceUrl':p['sourceUrl'],
+               'title':title,'section':sec,'candidateExistingOwner':routes[sec],
+               'panelCount':len(r['commentaryBlocks']),
+               'panelSourceLocators':[{'anchor':b['sourceAnchor'],'label':b['blockLabel'],
+                  'workLabelCandidate':b['workCandidate']} for b in r['commentaryBlocks']],
+               'newSourceProseRead':False,'canonicalOwnerMatchVerified':False,
+               'rightsCleared':False,'publicationApproved':False})
+              sections[sec]['nextMetadataWaveStaged']+=1
+          assert len(wave)==250 and len({x['articleId'] for x in wave})==250
+          assert set(x['articleId'] for x in wave).isdisjoint(chosen)
+          audit={'schema':'AO_ICRSP_CORPUS_PERSISTED_COVERAGE_AUDIT_V1','date':'2026-10-26',
+            'status':'METADATA_AND_PANEL_LABELS_ONLY_NOT_CONTENT_REVIEW_OR_PUBLICATION',
+            'verifiedSourceRuns':{'index':40202997017,'commentary':40204497782},
+            'artifactSha256':{'index':hashlib.sha256(index_path.read_bytes()).hexdigest(),
+                             'commentary':hashlib.sha256(comments_path.read_bytes()).hexdigest()},
+            'counts':{'indexedArticles':855,'commentaryArticles':783,'commentaryPanels':2856,
+               'alreadySelectedB20':160,'alreadyReadAtLeastOneTopicB20':10,
+               'B20MetadataOnly':150,'outsideB20Commentary':623,'noCommentary':72,
+               'newlyStagedMetadataOnly':250,'outsideB20NotStaged':373,
+               'fullAuthorParagraphReviews':0,'newContentApproved':0,'appChanges':0},
+            'bySection':sections,'websiteWorkLabels':commentary['summary']['workLabels'],
+            'methods':'Exact article ID+URL and commentary heading join; preexisting B20 selection excluded; rank remaining by panel count and long-panel presence within per-section quotas.',
+            'caution':'Do not call 783 panels content-reviewed, 250 staged metadata paragraphs-read, or historic work labels certified original authors. No source paragraphs imported or approved for republication.'}
+          (base/'icrsp-france-855-verified-metadata.v1.json').write_bytes(index_path.read_bytes())
+          (base/'icrsp-france-783-verified-commentary-labels.v1.json').write_bytes(comments_path.read_bytes())
+          (base/'icrsp-france-corpus-coverage-20261026.v1.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+          (base/'icrsp-france-next250-metadata-reading-queue.v1.json').write_text(
+             json.dumps({'schema':'AO_ICRSP_250_SOURCE_LABEL_READING_QUEUE_V1','status':'METADATA_STAGED_NOT_PROSE_READ','rows':wave},ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+          print(json.dumps(audit['counts']))
+          PY
+      - name: Permanently retain bounded source-only evidence on existing research branch
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/source-text/icrsp-france-855-verified-metadata.v1.json
+          git add data/source-text/icrsp-france-783-verified-commentary-labels.v1.json
+          git add data/source-text/icrsp-france-corpus-coverage-20261026.v1.json
+          git add data/source-text/icrsp-france-next250-metadata-reading-queue.v1.json
+          if git diff --cached --quiet; then echo 'Source evidence already permanently retained'; exit 0; fi
+          git commit -m 'research(icrsp): permanently preserve 855/783 verified metadata and 250 next-stage locators'
+          git pull --rebase origin governance/icrsp-source-inventory-1665
+          git push origin HEAD:refs/heads/governance/icrsp-source-inventory-1665
