@@ -1,0 +1,25 @@
+name: Customs multibook 150 action-dossier audit
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "data/customs/master/customs-multibook-bulk150-20261026.v1.json"
+      - "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json"
+      - "tests/customs-multibook-bulk150.mjs"
+      - ".github/workflows/customs-multibook-bulk150.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evidence-and-ownership:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Preserve 150 original-action links and unpublished status
+        run: |
+          node --check tests/customs-multibook-bulk150.mjs
+          node tests/customs-multibook-bulk150.mjs
