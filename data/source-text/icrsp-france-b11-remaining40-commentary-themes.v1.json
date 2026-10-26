@@ -1,0 +1,1188 @@
+{
+  "schema": "AO_ICRSP_B11_REMAINING40_COMMENTARY_OPENINGS_V1",
+  "date": "2026-10-26",
+  "status": "COMMENTARY_OPENING_THEME_REVIEW_DONE_NOT_FULL_PASSAGE_EDITION_COLLATION",
+  "issue": 1665,
+  "baseline": "data/source-text/icrsp-france-b10-lent-pentecost51-content-screen.v1.json",
+  "methods": [
+    "Opened each of 40 original ICRSP France article URLs and inspected Commentaires text opening beyond title labels.",
+    "Retained one grounded editorial topic per article, not every passage or every author.",
+    "Topics are authored descriptions of what site commentary discusses; not verbatim historical quotations.",
+    "Selected sourcePath and panel occurrence count inherited from independently checked B10 owners.",
+    "Exact edition, translation rights, day-specific app coverage and 1962 rubrics are still blocked.",
+    "Polemical historical interpretations and disputed station stories held for further review."
+  ],
+  "totals": {
+    "remainingPagesReviewed": 40,
+    "sourcePanelOccurrences": 179,
+    "lentPages": 23,
+    "postPentecostPages": 17,
+    "fullOriginalAuthorPrintEditionCollations": 0,
+    "concreteTopicCandidates": 40,
+    "actualModuleMissingGapsCertified": 0,
+    "sourceTextReproductionApprovals": 0,
+    "publishedChanges": 0
+  },
+  "rows": [
+    {
+      "articleId": "a0174_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0174_ancien",
+      "indexPosition": 64,
+      "sourceIndexLabel": "Mar.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad1-2",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0174_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Sainte-Anastasie station; Isaiah and the urgency of repentance",
+        "category": "STATION_PROPHETIC_REPENTANCE",
+        "caution": "Verify historic station.",
+        "proposedDestination": "EXISTING_CALENDAR_AND_SACRED_PLACES"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0173_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0173_ancien",
+      "indexPosition": 65,
+      "sourceIndexLabel": "Mer. Q.-T.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad1-3",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0173_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Lent Ember Wednesday; fast, ancient ordination and Moses and Elijah typology",
+        "category": "EMBER_HISTORY_TYPOLOGY",
+        "caution": "Ancient ordination practice is not automatically 1962 ceremony.",
+        "proposedDestination": "EXISTING_SCRIPTURE_PARALLELS"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0175_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0175_ancien",
+      "indexPosition": 66,
+      "sourceIndexLabel": "Jeu.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad1-4",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0175_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "San Lorenzo in Panisperna; Ezekiel on personal responsibility and baptism",
+        "category": "STATION_BAPTISMAL_PROPHET",
+        "caution": "Original station source and 1962 Proper check.",
+        "proposedDestination": "EXISTING_CALENDAR_AND_SACRED_PLACES"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0176_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0176_ancien",
+      "indexPosition": 67,
+      "sourceIndexLabel": "Ven. Q.-T.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad1-5",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0176_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Twelve Apostles station; Ezekiel and reconciliation of historic public penitents",
+        "category": "STATION_PUBLIC_PENANCE",
+        "caution": "Historical penitential practice only.",
+        "proposedDestination": "EXISTING_CALENDAR_AND_SACRED_PLACES"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0181_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0181_ancien",
+      "indexPosition": 70,
+      "sourceIndexLabel": "Lun.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad2-1",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0181_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "San Clemente station; Daniel confessing during Babylonian exile",
+        "category": "STATION_DANIEL_PENANCE",
+        "caution": "Anti-Jewish polemics in hosted commentary must not be reproduced.",
+        "proposedDestination": "EXISTING_CALENDAR_AND_SACRED_PLACES"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0183_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0183_ancien",
+      "indexPosition": 71,
+      "sourceIndexLabel": "Mar.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad2-2",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0183_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Santa Balbina station; Elijah and the widow of Zarephath interpreted typologically",
+        "category": "STATION_ELIJAH_TYPOLOGY",
+        "caution": "Some inherited supersessionist rhetoric requires context.",
+        "proposedDestination": "EXISTING_CALENDAR_AND_SACRED_PLACES"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0185_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0185_ancien",
+      "indexPosition": 73,
+      "sourceIndexLabel": "Jeu.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad2-4",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0185_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Santa Maria in Trastevere; Jeremiah contrasts trust in God and dependence on man",
+        "category": "STATION_JEREMIAH",
+        "caution": "Architectural and historical superlatives require corroboration.",
+        "proposedDestination": "EXISTING_CALENDAR_AND_SACRED_PLACES"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0186_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0186_ancien",
+      "indexPosition": 74,
+      "sourceIndexLabel": "Ven.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad2-5",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0186_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "San Vitale station; Joseph rejected by his brothers as a figure of Christ",
+        "category": "JOSEPH_CHRIST_TYPOLOGY",
+        "caution": "Retain biblical source precision and avoid collective blame.",
+        "proposedDestination": "EXISTING_SCRIPTURE_PARALLELS"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0187_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0187_ancien",
+      "indexPosition": 75,
+      "sourceIndexLabel": "Sam.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad2-6",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0187_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Saints Marcellinus and Peter station; Jacob and Esau in catechumenal interpretation",
+        "category": "JACOB_ESAU_TYPOLOGY",
+        "caution": "Anti-Jewish rhetoric requires source criticism.",
+        "proposedDestination": "EXISTING_SCRIPTURE_PARALLELS"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0191_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien",
+      "indexPosition": 77,
+      "sourceIndexLabel": "Lun.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad3-1",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "San Marco station; Naaman cleansed in the Jordan as baptismal figure",
+        "category": "NAAMAN_BAPTISM_TYPOLOGY",
+        "caution": "Ancient station rationale must be checked separately.",
+        "proposedDestination": "EXISTING_SCRIPTURE_PARALLELS"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0192_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0192_ancien",
+      "indexPosition": 78,
+      "sourceIndexLabel": "Mar.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad3-2",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0192_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Santa Pudenziana station; widow oil and divine mercy",
+        "category": "WIDOW_OIL_MERCY",
+        "caution": "Verify allegorical source and historic saint narratives.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0193_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0193_ancien",
+      "indexPosition": 79,
+      "sourceIndexLabel": "Mer.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad3-3",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0193_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "San Sisto Vecchio station; neighbour justice and restitution under commandments",
+        "category": "LEVITICUS_NEIGHBOUR_LAW",
+        "caution": "Separate history from 1962 ceremonial rubrics.",
+        "proposedDestination": "EXISTING_SCRIPTURE_PARALLELS"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0194_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0194_ancien",
+      "indexPosition": 80,
+      "sourceIndexLabel": "Jeu.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad3-4",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0194_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Saints Cosmas and Damian station; biblical healing and healing of the soul",
+        "category": "STATION_GOSPEL_HEALING",
+        "caution": "Historic dedication association not a rubric.",
+        "proposedDestination": "EXISTING_CALENDAR_AND_SACRED_PLACES"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0198_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0198_ancien",
+      "indexPosition": 82,
+      "sourceIndexLabel": "Sam.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad3-6",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0198_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Santa Susanna station and the chaste Susanna reading in Daniel",
+        "category": "STATION_SUSANNA_BIBLE",
+        "caution": "Check lectionary edition and station attribution.",
+        "proposedDestination": "EXISTING_CALENDAR_AND_SACRED_PLACES"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0202_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0202_ancien",
+      "indexPosition": 84,
+      "sourceIndexLabel": "Lun.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad4-1",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0202_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Santi Quattro Coronati station; judgment of Solomon and two mothers",
+        "category": "SOLOMON_MOTHERS_TYPOLOGY",
+        "caution": "Hosted group-replacement rhetoric should not be repeated.",
+        "proposedDestination": "EXISTING_SCRIPTURE_PARALLELS"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0203_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0203_ancien",
+      "indexPosition": 85,
+      "sourceIndexLabel": "Mar.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad4-2",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0203_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "San Lorenzo in Damaso station; golden calf and false worship",
+        "category": "GOLDEN_CALF_CATECHUMENS",
+        "caution": "Passage location and period context to be checked.",
+        "proposedDestination": "EXISTING_SCRIPTURE_PARALLELS"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0205_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0205_ancien",
+      "indexPosition": 87,
+      "sourceIndexLabel": "Jeu.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad4-4",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0205_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "San Martino ai Monti; resurrection readings and baptismal new life",
+        "category": "RESURRECTION_BAPTISMAL",
+        "caution": "Martinian miracle and station rationale unverified.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0206_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0206_ancien",
+      "indexPosition": 88,
+      "sourceIndexLabel": "Ven.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad4-5",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0206_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Sant Eusebio station; widow son raised by Elijah and baptismal imagery",
+        "category": "ELIJAH_RESURRECTION_TYPE",
+        "caution": "Historic immersion not current Mass gesture.",
+        "proposedDestination": "EXISTING_SCRIPTURE_PARALLELS"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0207_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0207_ancien",
+      "indexPosition": 89,
+      "sourceIndexLabel": "Sam.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad4-6",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0207_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Sitientes Saturday; baptismal thirst and changing station churches",
+        "category": "SITIENTES_STATION_HISTORY",
+        "caution": "CONFLICT: earlier station presented as San Lorenzo in Lucina versus San Lorenzo fuori le Mura in different hosted segments.",
+        "proposedDestination": "EXISTING_CALENDAR_AND_SACRED_PLACES"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0004_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0004_nouveau",
+      "indexPosition": 91,
+      "sourceIndexLabel": "Lun.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad5-1",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0004_nouveau",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "San Crisogono station; repentance of Nineveh before judgment",
+        "category": "NINEVEH_PENANCE",
+        "caution": "Original book and selected Propers uncollated.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0005_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0005_nouveau",
+      "indexPosition": 92,
+      "sourceIndexLabel": "Mar.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad5-2",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0005_nouveau",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Old San Ciriaco station and Maria in Via Lata; Daniel in lions den and catacomb imagery",
+        "category": "DANIEL_CATACOMB_ICONOGRAPHY",
+        "caution": "Dating of paintings and station relocation unverified.",
+        "proposedDestination": "EXISTING_SCRIPTURE_PARALLELS"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0006_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0006_nouveau",
+      "indexPosition": 93,
+      "sourceIndexLabel": "Mer.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad5-3",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0006_nouveau",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "San Marcello station; Leviticus and neighbourly justice",
+        "category": "LEVITICUS_CHARITY",
+        "caution": "Historical catechumen teaching not current ceremony.",
+        "proposedDestination": "EXISTING_SCRIPTURE_PARALLELS"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0009_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0009_nouveau",
+      "indexPosition": 96,
+      "sourceIndexLabel": "Sam.",
+      "cohort": "LENT_FERIA_EMBER",
+      "existingSourcePath": "Tempora/Quad5-6",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0009_nouveau",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Passion Saturday Bethany anointing in John 12 and old station interruption",
+        "category": "BETHANY_PASSION_CHRONOLOGY",
+        "caution": "Unwitnessed assertion that Mary mother of Jesus attended must not be asserted.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0222_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_nouveau",
+      "indexPosition": 168,
+      "sourceIndexLabel": "4ᵉ Dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent04-0",
+      "sourcePanelCount": 6,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_nouveau",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Fourth Sunday; older Gospel transposition and trust in God",
+        "category": "OLDER_LECTIONARY_TRANSPOSITION",
+        "caution": "Do not replace the 1962 Gospel with older one.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0223_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0223_nouveau",
+      "indexPosition": 169,
+      "sourceIndexLabel": "5ᵉ Dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent05-0",
+      "sourcePanelCount": 6,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0223_nouveau",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Fifth Sunday; old fishing Sunday moved and Davidic Office typology",
+        "category": "OLDER_GOSPEL_DAVID_OFFICE",
+        "caution": "Historical breviary order varies with Easter.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0231_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0231_ancien",
+      "indexPosition": 170,
+      "sourceIndexLabel": "6ᵉ dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent06-0",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0231_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Sixth Sunday; David penitence in historic Sunday Office context",
+        "category": "DAVID_PENANCE_OFFICE",
+        "caution": "Office is not a Mass reading source.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0241_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0241_ancien",
+      "indexPosition": 171,
+      "sourceIndexLabel": "7ᵉ dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent07-0",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0241_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Seventh Sunday; old seven loaves Gospel and Solomon wisdom reading",
+        "category": "SEVEN_LOAVES_HISTORY",
+        "caution": "Prior lectionary not a 1962 Mass Gospel.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0242_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0242_ancien",
+      "indexPosition": 172,
+      "sourceIndexLabel": "8ᵉ dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent08-0",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0242_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Eighth Sunday; variable post-Pentecost Office series and temple imagery",
+        "category": "TEMPLE_OFFICE_CYCLE",
+        "caution": "Source dates and old Office series need independent witness.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0243_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0243_ancien",
+      "indexPosition": 173,
+      "sourceIndexLabel": "9ᵉ dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent09-0",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0243_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Ninth Sunday; lament over Jerusalem and history of destruction",
+        "category": "JERUSALEM_LAMENT",
+        "caution": "STRONG anti-Jewish polemic, collective blame not acceptable as explanation.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0364_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0364_ancien",
+      "indexPosition": 175,
+      "sourceIndexLabel": "11ᵉ Dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent11-0",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0364_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Eleventh Sunday; deaf-mute cure and remnants of earlier publican Gospel order",
+        "category": "DEAF_MUTE_OLD_GOSPEL",
+        "caution": "No transfer of older Gospel into current rite.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0365_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0365_ancien",
+      "indexPosition": 176,
+      "sourceIndexLabel": "12ᵉ Dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent12-0",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0365_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Twelfth Sunday; Good Samaritan and Cassian on Psalm 69 invocation",
+        "category": "SAMARITAN_CASSIAN_PRAYER",
+        "caution": "Cassian Conference 10 precise witness not yet collated.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0430_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0430_ancien",
+      "indexPosition": 178,
+      "sourceIndexLabel": "14ᵉ Dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent14-0",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0430_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Fourteenth Sunday; two masters and church-bride dependence on grace",
+        "category": "TWO_MASTERS_CHURCH_BRIDE",
+        "caution": "Historical theological phrasing needs contextual verification.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0431_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0431_ancien",
+      "indexPosition": 179,
+      "sourceIndexLabel": "15ᵉ Dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent15-0",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0431_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Fifteenth Sunday; widow of Nain, spiritual life and prayer",
+        "category": "WIDOW_NAIN_PRAYER",
+        "caution": "Do not confuse commentary with proper text.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0442_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0442_ancien",
+      "indexPosition": 180,
+      "sourceIndexLabel": "16ᵉ Dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent16-0",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0442_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Sixteenth Sunday; prior and accompanying grace in Collect and Epistle",
+        "category": "GRACE_COLLECT_EPISTLE",
+        "caution": "Intertext source wording not yet verified.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0443_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0443_ancien",
+      "indexPosition": 181,
+      "sourceIndexLabel": "17ᵉ Dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent17-0",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0443_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Seventeenth Sunday; love God and neighbour and earlier Gospel arrangements",
+        "category": "LOVE_GOD_NEIGHBOUR",
+        "caution": "Old Sadducee reading is not present Mass Gospel.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0478_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0478_ancien",
+      "indexPosition": 187,
+      "sourceIndexLabel": "19ᵉ Dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent19-0",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0478_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Nineteenth Sunday; paralytic and change in wedding feast Gospel sequence",
+        "category": "PARALYTIC_PREVIOUS_GOSPEL",
+        "caution": "Current Sunday and previous Sunday must retain exact own Propers.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0486_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0486_ancien",
+      "indexPosition": 188,
+      "sourceIndexLabel": "20ᵉ Dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent20-0",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0486_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Twentieth Sunday; Israel and nations in ecclesial and eschatological interpretation",
+        "category": "ISRAEL_NATIONS_ECCLESIOLOGY",
+        "caution": "Old anti-Jewish polemic cannot be reused.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0487_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0487_ancien",
+      "indexPosition": 189,
+      "sourceIndexLabel": "21ᵉ Dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent21-0",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0487_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Twenty-first Sunday; spiritual armour and end-year Maccabees Office series",
+        "category": "ARMOUR_END_OF_YEAR",
+        "caution": "Historic Office cycle is not a fixed 1962 Mass lesson.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0488_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0488_ancien",
+      "indexPosition": 190,
+      "sourceIndexLabel": "22ᵉ Dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent22-0",
+      "sourcePanelCount": 4,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0488_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Twenty-second Sunday; Psalm 129, forgiveness and older Antichrist interpretation",
+        "category": "PSALM129_FORGIVENESS",
+        "caution": "Apocalyptic reading belongs to author opinion not normative Catholic teaching.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    },
+    {
+      "articleId": "a0245_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0245_ancien",
+      "indexPosition": 191,
+      "sourceIndexLabel": "23ᵉ dimanche après la Pentecôte",
+      "cohort": "POST_PENTECOST_SUNDAY",
+      "existingSourcePath": "Tempora/Pent23-0",
+      "sourcePanelCount": 5,
+      "passageReview": {
+        "status": "OPENING_SUBSTANTIVE_COMMENTARY_PASSAGE_INSPECTED",
+        "articleUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0245_ancien",
+        "allPanelsCriticallyCollated": false,
+        "originalWorkEditionVerified": false,
+        "sourceTextStored": false
+      },
+      "topic": {
+        "theme": "Twenty-third Sunday; variable end-year sequence and retained Mass chants",
+        "category": "PENTECOST_FINAL_SUNDAY",
+        "caution": "Older feast ranking and date logic not automatically 1962.",
+        "proposedDestination": "EXISTING_CALENDAR_OR_MASS_EXPLORER"
+      },
+      "comparisons": {
+        "actualDaySpecificContentChecked": false,
+        "originalFrenchTranslationRightsCleared": false,
+        "canonicalLiturgicalIdResolved": false,
+        "publicationApproved": false,
+        "verifiedMissingFeature": false
+      }
+    }
+  ]
+}
