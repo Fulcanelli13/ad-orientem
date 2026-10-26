@@ -386,7 +386,7 @@
         "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=288",
         "sourceImage": "https://gregobase.selapa.net/sources/3/726.png",
         "verification": "PSALM_TONE_SOURCE_IDENTIFIED_TEXT_1962_OWNER_HOLD",
-        "critical": "Full Psalm 23 setting separate from antiphon. Score also offers first-verse-only variant; do not choose incomplete one for full distribution.",
+        "critical": "RAW GABC #288 includes the Psalm 23 first-verse notation and an abbreviated next-verse cue '2. Quia...', NOT the complete 1962-appointed Psalm 23 verses. Must supply full canonical 1962 text and independently source the recitation formula/refrain cycle before Schola display.",
         "archive": [
           {
             "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-288-e1.gabc",
@@ -395,7 +395,9 @@
             "bytes": 512
           }
         ],
-        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED"
+        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED",
+        "fullPsalmTextInArchivedGabc": false,
+        "scoreBodyClass": "FIRST_VERSE_NOTATION_WITH_NEXT_VERSE_STUB"
       },
       {
         "id": "LU61-PALM-02",
@@ -432,7 +434,7 @@
         "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=435",
         "sourceImage": "https://gregobase.selapa.net/sources/3/727.png",
         "verification": "PSALM_TONE_SOURCE_IDENTIFIED_TEXT_1962_OWNER_HOLD",
-        "critical": "Psalm verses and repeated antiphon belong to separate GABC records; variable distribution duration.",
+        "critical": "RAW GABC #435 includes Psalm 46 first-verse notation and abbreviated next-verse cue '2. Quoniam...', NOT the complete appointed psalm verses. Full 1962 Roman rite psalmody/refrain construction must be independently sourced.",
         "archive": [
           {
             "path": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-435-e1.gabc",
@@ -441,7 +443,9 @@
             "bytes": 411
           }
         ],
-        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED"
+        "captureVerification": "RAW_BYTE_AND_SHA256_VERIFIED_NOT_MELODY_COLLATED",
+        "fullPsalmTextInArchivedGabc": false,
+        "scoreBodyClass": "FIRST_VERSE_NOTATION_WITH_NEXT_VERSE_STUB"
       },
       {
         "id": "LU61-PALM-03",
@@ -573,6 +577,37 @@
       "Source score GABC bytes have not been collation-certified against printed notation",
       "Roman 1962 text and optional chant eligibility remain under canonical source owner",
       "Promotion prohibited until branch is reviewed/merged and notation QA accepted"
+    ],
+    "archiveCoverageCaveat": "15 GABC component files preserved, but component count does not imply full verse/refrain musical completeness. In particular raw psalm 23/46 GABCs only notate first verse and next-verse cue; this is a psalm tone reference, not a complete performable distribution score.",
+    "postArchiveTextInspections": [
+      {
+        "scoreId": 288,
+        "source": "gregobase-288-e1.gabc",
+        "observedNextVerseStub": "2. Qui(h)a...(h)",
+        "conclusion": "ONLY_FIRST_PSALM_VERSE_NOTATED_SECOND_VERSE_CUED",
+        "release": "BLOCK_FULL_PSALM_RENDERING"
+      },
+      {
+        "scoreId": 435,
+        "source": "gregobase-435-e1.gabc",
+        "observedNextVerseStub": "2. Quó(h)ni(h)am...(h)",
+        "conclusion": "ONLY_FIRST_PSALM_VERSE_NOTATED_SECOND_VERSE_CUED",
+        "release": "BLOCK_FULL_PSALM_RENDERING"
+      },
+      {
+        "scoreId": 606,
+        "source": "gregobase-606-e1.gabc",
+        "observed": "V. Cumque audisset... + * Cum ramis",
+        "conclusion": "RESPONSORY_VERSE_AND_REPEAT_NOTATED",
+        "release": "ROMAN_1962_TEXT_OWNER_SIGNOFF_PENDING"
+      },
+      {
+        "scoreId": 46,
+        "source": "gregobase-46-e1.gabc",
+        "observed": "et cum inducerent inside antiphon",
+        "conclusion": "1962_RITE_SEPARATE_CUM_INDUCERENT_VERSE_NOT_PRESENT_AS_DISTINCT_GABC_ELEMENT",
+        "release": "BLOCK_INCOMPLETE_CANDLEMAS_RESPONSORY_SCORE"
+      }
     ]
   }
 }
