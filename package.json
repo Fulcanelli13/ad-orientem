@@ -309,7 +309,7 @@
     "test:sacred-places-p44": "node tests/sacred-places-p44-two-catalan-basilicas.mjs",
     "test:sacred-places-p46": "node tests/sacred-places-p46-four-exact-catholic-buildings.mjs",
     "test:sacred-places-p48": "node tests/sacred-places-p48-eight-global-buildings.mjs",
-    "test:processionale-solesmes": "node tests/processionale-solesmes-crosswalk.mjs"
+    "test:processionale-solesmes": "node tests/processionale-solesmes-crosswalk.mjs && node tests/processionale-gabc-import.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
