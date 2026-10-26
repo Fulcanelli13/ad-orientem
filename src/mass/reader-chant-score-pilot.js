@@ -1,8 +1,7 @@
-// Gregorian notation pilot for the native Schola dock.
-// This file never selects a melody from the Mass date, card, or priest's action.
-// One CC0 GregoBase sample is exposed only after an explicit user action.
-// Release gate: it is NOT a canonical 1962 Kyriale assignment.
-const KYRIE_XVI_GABC=`name:Kyrie XVI;
+// Native Mass Schola: real Gregorian score selection and continuous manuscript viewing.
+// Research/pilot only: selected preview is NOT the actual choir's musical setting.
+// No playback, priest action, card navigation, audio clock, or liturgical inference.
+const KYRIE_XVI_GABC=\`name:Kyrie XVI;
 office-part:Kyriale;
 mode:3;
 book:Graduale Romanum, 1961, p. 54* & The Liber Usualis, 1961, p. 59 & Chants of the Church, 1956, p. 40;
@@ -12,161 +11,304 @@ commentary:XI-XIII. s.;
 (c4) KY(g)ri(hi)e(ii) *() e(g)lé(h_)i(i)son.(i.) <i>iij.</i>(::)
 Chri(k)ste(ij) e(h)lé(h_)i(i)son.(i.) <i>iij.</i>(::)
 Ký(g)ri(hi)e(ii) e(g)lé(h_)i(i)son.(i.) <i>ij.</i>(::)
-Ký(g)ri(hi)e(ii) *() e(g)lé(hj)i(h)son.(ighvGFE.) (::)`;
+Ký(g)ri(hi)e(ii) *() e(g)lé(hj)i(h)son.(ighvGFE.) (::)\`;
 
-export const SCHOLA_SCORE_PILOT=Object.freeze({
-  id:"GREGOBASE-545",trackId:"KYRIE",title:"Kyrie XVI",
-  status:"EXAMPLE_ONLY_NOT_SELECTED_FOR_MASS",
-  provenance:"GREGOBASE_CC0_TRANSCRIPTION",
-  transcriptionAuthor:"Andrew Hinkley",
-  sourceUrl:"https://gregobase.selapa.net/chant.php?id=545",
-  gabcUrl:"https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=545",
-  svgUrl:"https://gregobase.selapa.net/download.php?format=svg&id=545",
-  bookWitnesses:Object.freeze([
-    "Graduale Romanum (Solesmes, 1961), p. 54*",
-    "Liber Usualis (Solesmes, 1961), p. 59",
-    "Chants of the Church (Solesmes, 1956), p. 40",
-  ]),
-  gabc:KYRIE_XVI_GABC,
-});
-
+const source=(id)=>"https://gregobase.selapa.net/chant.php?id="+id;
+const svg=(id)=>"https://gregobase.selapa.net/download.php?format=svg&id="+id;
+const gabc=(id)=>"https://gregobase.selapa.net/download.php?elem=1&format=gabc&id="+id;
+export const SCHOLA_SCORE_CATALOGUE=Object.freeze([
+  Object.freeze({id:"GREGOBASE-545",trackId:"KYRIE",title:"Kyrie XVI",version:"Solesmes",
+    status:"RESEARCH_EXAMPLE_NOT_MASS_SETTING",mode:3,
+    provenance:"GREGOBASE_CC0_TRANSCRIPTION",transcriptionAuthor:"Andrew Hinkley",
+    sourceUrl:source(545),svgUrl:svg(545),gabcUrl:gabc(545),
+    bookWitnesses:Object.freeze(["Graduale Romanum (Solesmes, 1961), p. 54*",
+      "Liber Usualis (Solesmes, 1961), p. 59"]),
+    gabc:KYRIE_XVI_GABC}),
+  Object.freeze({id:"GREGOBASE-2982",trackId:"KYRIE",title:"Kyrie XI",version:"Solesmes",
+    status:"RESEARCH_EXAMPLE_NOT_MASS_SETTING",
+    provenance:"GREGOBASE_CC0_TRANSCRIPTION",
+    sourceUrl:source(2982),svgUrl:svg(2982),gabcUrl:gabc(2982),
+    bookWitnesses:Object.freeze(["Graduale Romanum (Solesmes, 1961), p. 38*",
+      "Liber Usualis (Solesmes, 1961), p. 46"])}),
+  Object.freeze({id:"GREGOBASE-1184",trackId:"KYRIE",title:"Kyrie VIII",version:"Solesmes",
+    status:"RESEARCH_EXAMPLE_NOT_MASS_SETTING",
+    provenance:"GREGOBASE_CC0_TRANSCRIPTION",
+    sourceUrl:source(1184),svgUrl:svg(1184),gabcUrl:gabc(1184),
+    bookWitnesses:Object.freeze(["Graduale Romanum (Solesmes, 1961), p. 28*",
+      "Liber Usualis (Solesmes, 1961), p. 37"])}),
+]);
+export const SCHOLA_SCORE_PILOT=SCHOLA_SCORE_CATALOGUE[0];
 export const SCHOLA_SCORE_TRACK_IDS=Object.freeze([
   "INTROIT","KYRIE","GLORIA","GRADUAL","ALLELUIA_TRACT_SEQUENCE",
   "CREDO","OFFERTORY","SANCTUS_BENEDICTUS","AGNUS_DEI","COMMUNION",
 ]);
-
-// No Gregorian tune follows automatically from a text match. The
-// selectedScoreId is deliberately required before a score can be considered
-// associated with a Mass. This pilot always fails closed as an example.
+export function availableNativeScholaScores(trackId){
+  return Object.freeze(SCHOLA_SCORE_CATALOGUE.filter(score=>score.trackId===String(trackId??"")));
+}
+// Explicit research-preview selection only. No date/feast/form default and no
+// claim about the tune being performed in the building.
 export function resolveNativeScholaScore({trackId,selectedScoreId=null}={}){
   const id=String(trackId??"");
   if(!SCHOLA_SCORE_TRACK_IDS.includes(id))
     return Object.freeze({status:"NO_SUPPORTED_SCHOLA_TRACK",score:null});
-  if(id!=="KYRIE")
+  const candidates=availableNativeScholaScores(id);
+  if(!candidates.length)
     return Object.freeze({status:"NO_VERIFIED_SCORE_SELECTION",score:null});
-  if(selectedScoreId!==SCHOLA_SCORE_PILOT.id)
-    return Object.freeze({status:"OPTIONAL_EXAMPLE_AVAILABLE",score:null,
-      exampleId:SCHOLA_SCORE_PILOT.id});
+  const selected=candidates.find(score=>score.id===selectedScoreId);
+  if(!selected)return Object.freeze({status:"OPTIONAL_EXAMPLE_AVAILABLE",score:null,
+    exampleId:candidates[0].id,availableIds:Object.freeze(candidates.map(s=>s.id))});
   return Object.freeze({status:"EXAMPLE_ONLY_NOT_SELECTED_FOR_MASS",
-    score:SCHOLA_SCORE_PILOT,actualChoirMelody:"UNKNOWN"});
+    score:selected,actualChoirMelody:"UNKNOWN"});
+}
+export function scoreReadingProgress({scrollTop=0,scrollHeight=0,clientHeight=0}={}){
+  const max=Math.max(0,Number(scrollHeight||0)-Number(clientHeight||0));
+  return max>0?Math.min(1,Math.max(0,Number(scrollTop||0)/max)):0;
+}
+export function scoreReadingStep(clientHeight){
+  // Overlap staves rather than jump blind; still manual, not music timing.
+  return Math.max(80,Math.round(Math.max(0,Number(clientHeight)||0)*.72));
 }
 
-const CSS=`
-.ao-chant-score-launch[hidden],.ao-chant-score-dialog[hidden]{display:none!important}
-.ao-chant-score-launch{font-size:10px!important;letter-spacing:.08em!important}
+const CSS=String.raw\`
+.ao-chant-score-launch[hidden],.ao-chant-score-panel[hidden],.ao-chant-score-dialog[hidden]{display:none!important}
+.ao-chant-score-launch{font-size:9px!important;letter-spacing:.065em!important;grid-column:1/-1}
+.ao-schola-dock[data-notation="true"]:not([data-collapsed="true"]),
+.ao-schola-dock[data-shared="true"][data-notation="true"]:not([data-collapsed="true"]){
+  height:min(430px,42dvh)!important;max-height:min(430px,42dvh)!important;min-height:260px!important
+}
+.ao-schola-dock[data-notation="true"] .ao-schola-main,
+.ao-schola-dock[data-notation="true"] .ao-schola-meta{display:none!important}
+.ao-schola-dock[data-notation="true"]{display:flex!important;flex-direction:column}
+.ao-chant-score-panel{min-height:0;flex:1;display:flex;flex-direction:column;gap:7px;margin-top:4px}
+.ao-chant-score-tools{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.ao-chant-score-choices{min-width:120px;max-width:55%;min-height:28px;padding:4px 8px;
+  color:#f1ede4;background:#202a35;border:1px solid #5b636c;border-radius:6px;
+  font:500 11px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-chant-score-commands{display:flex;gap:5px;align-items:center}
+.ao-chant-score-commands button{color:#eee9db;background:#252f39;border:1px solid #56606b;
+  border-radius:5px;min-height:30px;min-width:34px;padding:4px 8px;cursor:pointer}
+.ao-chant-score-commands button:disabled{opacity:.38;cursor:default}
+.ao-chant-score-reading{overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;
+  scrollbar-color:#8b8575 #eee8d9;overscroll-behavior:contain;touch-action:pan-y;
+  flex:1;min-height:0;background:#faf8ee;color:#1c2329;border-radius:7px;
+  scroll-behavior:smooth}
+.ao-chant-score-reading img{display:block;width:100%;height:auto;max-width:none}
+.ao-chant-score-reading img[hidden]{display:none!important}
+.ao-chant-score-fallback{padding:14px;font:500 13px/1.6 Georgia,serif;color:#444}
+.ao-chant-score-caption{display:flex;justify-content:space-between;gap:12px;
+  color:#b6bdc0;font:500 10px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-chant-score-caption a{color:#d7c7a5}
 .ao-chant-score-dialog{position:fixed;inset:0;z-index:100;display:flex;
-  justify-content:center;align-items:center;padding:16px;
-  background:rgba(3,6,11,.88);color:#edf0e8;font-family:var(--ao-font-ui,system-ui,sans-serif)}
-.ao-chant-score-sheet{width:min(820px,100%);max-height:min(90dvh,900px);
-  overflow:auto;background:#111923;border:1px solid #46515a;border-radius:14px;
-  padding:clamp(18px,3vw,30px);box-shadow:0 28px 90px rgba(0,0,0,.55)}
-.ao-chant-score-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
-.ao-chant-score-overline{color:#aab4c0;font-size:10px;letter-spacing:.15em;text-transform:uppercase}
-.ao-chant-score-title{margin:8px 0 0;font:normal clamp(26px,4vw,37px)/1.15 Georgia,serif}
-.ao-chant-score-close{background:transparent;color:#edf0e8;border:1px solid #52606b;
-  padding:8px 12px;border-radius:7px;cursor:pointer;font-size:14px}
-.ao-chant-score-warning{font-size:13px;line-height:1.55;color:#c5cbd0;
-  margin:20px 0;border-left:2px solid #ae9169;padding-left:12px}
-.ao-chant-score-frame{padding:14px;min-height:145px;border-radius:8px;
-  background:#faf8ee;color:#242424;overflow:auto}
-.ao-chant-score-frame img{width:100%;height:auto;display:block}
-.ao-chant-score-source{font-size:12px;line-height:1.65;color:#adb5bc;margin-top:15px}
-.ao-chant-score-source a{color:#d0c1a2;text-decoration:underline;text-underline-offset:3px}
-.ao-chant-score-fallback{color:#383838;font-size:12px}
-@media(max-width:560px){.ao-chant-score-dialog{padding:7px}
- .ao-chant-score-sheet{max-height:96dvh;padding:16px;border-radius:10px}
- .ao-chant-score-frame{padding:8px}}
-@media(prefers-reduced-motion:reduce){.ao-chant-score-dialog *{animation:none!important}}
-`;
+  justify-content:center;align-items:center;padding:12px;background:rgba(4,7,12,.94);
+  color:#eef0e8;font-family:var(--ao-font-ui,system-ui,sans-serif)}
+.ao-chant-score-sheet{width:min(950px,100%);height:min(94dvh,1020px);display:flex;
+  flex-direction:column;gap:10px;background:#121b24;border:1px solid #53616d;
+  border-radius:12px;padding:clamp(12px,2vw,22px)}
+.ao-chant-score-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ao-chant-score-title{font:normal 27px/1.15 Georgia,serif}
+.ao-chant-score-close{border:1px solid #65717b;border-radius:6px;background:transparent;
+  color:#f3efe5;padding:8px 12px;cursor:pointer}
+.ao-chant-score-sheet .ao-chant-score-reading{flex:1}
+.ao-chant-score-warning{font:500 11px/1.5 var(--ao-font-ui,system-ui,sans-serif);
+  color:#c8cbd0;border-left:2px solid #be9a61;padding-left:8px;margin:0}
+.ao-chant-score-panel button:focus-visible,
+.ao-chant-score-dialog button:focus-visible,
+.ao-chant-score-panel select:focus-visible{outline:2px solid #d3c29d;outline-offset:2px}
+@media(max-width:760px){
+ .ao-schola-dock[data-notation="true"]:not([data-collapsed="true"]){width:calc(100% - 24px)!important}
+ .ao-chant-score-dialog{padding:4px}.ao-chant-score-sheet{height:98dvh;padding:10px;border-radius:8px}
+ .ao-chant-score-choices{max-width:48%}
+}
+@media(prefers-reduced-motion:reduce){.ao-chant-score-reading{scroll-behavior:auto}}
+\`;
 
-// Browser DOM adapter; caller owns the reader and the Schola clock.
-// No global listeners, no polling, no DOM injection of untrusted GABC.
-export function installNativeScholaScorePilot(root){
+// Model never reads the priest's current text to advance the musical score.
+export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
   const dock=root?.querySelector?.(".ao-schola-dock");
   const controls=dock?.querySelector?.(".ao-schola-controls");
-  const document=root?.ownerDocument;
-  if(!controls||!document?.createElement)
-    return Object.freeze({update:()=>{},destroy:()=>{}});
-  const style=document.createElement("style");
-  style.textContent=CSS;
-  root.appendChild(style);
-  const trigger=document.createElement("button");
-  trigger.type="button";trigger.hidden=true;
+  const doc=root?.ownerDocument;
+  if(!controls||!doc?.createElement)return Object.freeze({update:()=>{},destroy:()=>{}});
+  const style=doc.createElement("style");style.textContent=CSS;root.appendChild(style);
+  const trigger=doc.createElement("button");trigger.type="button";trigger.hidden=true;
   trigger.className="ao-schola-control ao-chant-score-launch";
-  trigger.dataset.scholaScoreExample="true";
-  trigger.textContent="SCORE";
-  trigger.setAttribute("aria-label","Open an illustrative Kyrie XVI score; not the choir's selected melody");
+  trigger.dataset.scholaScoreExample="true";trigger.textContent="GREGORIAN SCORE";
+  trigger.setAttribute("aria-pressed","false");
+  trigger.setAttribute("aria-label","Show Gregorian notation in Schola panel (reference selection only)");
   controls.appendChild(trigger);
-  const dialog=document.createElement("section");
-  dialog.className="ao-chant-score-dialog";
-  dialog.hidden=true;
-  dialog.setAttribute("role","dialog");
-  dialog.setAttribute("aria-modal","true");
-  dialog.setAttribute("aria-label","Gregorian notation example");
-  dialog.innerHTML=`<div class="ao-chant-score-sheet">
-    <div class="ao-chant-score-head"><div><div class="ao-chant-score-overline">Gregorian notation · source example</div>
-      <h2 class="ao-chant-score-title">Kyrie XVI</h2></div>
-      <button class="ao-chant-score-close" type="button" data-score-close aria-label="Close chant score">×</button></div>
-    <p class="ao-chant-score-warning">Illustrative score only. This melody has <strong>not</strong> been
-      verified as the setting sung at this Mass. Opening the score does not change the Schola track,
-      the priest's actions, or the liturgical selection.</p>
-    <div class="ao-chant-score-frame">
-      <img alt="Kyrie XVI in Gregorian square-note notation; externally sourced from GregoBase"
-        data-score-image loading="lazy">
-      <p class="ao-chant-score-fallback" data-score-fallback hidden>
-        The notation image is unavailable offline.
-        Use the linked source when connected.</p>
+  const panel=doc.createElement("section");panel.className="ao-chant-score-panel";panel.hidden=true;
+  panel.setAttribute("aria-label","Continuous Gregorian notation, manually followed");
+  panel.innerHTML=\`<div class="ao-chant-score-tools">
+    <select class="ao-chant-score-choices" data-score-choice aria-label="Reference Kyrie melody">
+    </select><div class="ao-chant-score-commands">
+      <button type="button" data-score-prev aria-label="Scroll notation upwards">↑</button>
+      <button type="button" data-score-next aria-label="Advance notation downwards">↓</button>
+      <button type="button" data-score-full aria-label="Expand Gregorian notation">FULL</button>
+      <button type="button" data-score-hide aria-label="Return to Schola text">TEXT</button>
+    </div></div>
+    <div class="ao-chant-score-reading" data-score-reading tabindex="0"
+      aria-label="Gregorian music manuscript; swipe or scroll manually">
+      <img data-score-image alt="Full Gregorian score of the selected reference Kyrie">
+      <p class="ao-chant-score-fallback" data-score-fallback hidden>Notation unavailable while offline.
+      The chant's GABC source remains available from GregoBase.</p>
     </div>
-    <p class="ao-chant-score-source">CC0 GABC transcription: Andrew Hinkley ·
-      <a href="https://gregobase.selapa.net/chant.php?id=545" target="_blank" rel="noopener noreferrer">GregoBase #545</a> ·
-      <a href="https://gregobase.selapa.net/download.php?elem=1&amp;format=gabc&amp;id=545"
-      target="_blank" rel="noopener noreferrer">Source GABC</a>.
-      Witnesses: Graduale Romanum (1961), p. 54*; Liber Usualis (1961), p. 59.</p>
-  </div>`;
-  root.appendChild(dialog);
-  const image=dialog.querySelector("[data-score-image]");
-  const fallback=dialog.querySelector("[data-score-fallback]");
-  const close=()=>{
-    dialog.hidden=true;
-    trigger.setAttribute("aria-expanded","false");
+    <div class="ao-chant-score-caption"><span data-score-progress>MANUAL · 0%</span>
+      <a data-score-source href="https://gregobase.selapa.net/chant.php?id=545"
+        target="_blank" rel="noopener noreferrer">Source · GregoBase</a></div>\`;
+  dock.appendChild(panel);
+  const dialogue=doc.createElement("section");
+  dialogue.hidden=true;dialogue.className="ao-chant-score-dialog";
+  dialogue.setAttribute("role","dialog");dialogue.setAttribute("aria-modal","true");
+  dialogue.setAttribute("aria-label","Expanded Gregorian chant score");
+  dialogue.innerHTML=\`<div class="ao-chant-score-sheet">
+    <div class="ao-chant-score-head"><span class="ao-chant-score-title" data-score-title>Gregorian chant</span>
+      <button class="ao-chant-score-close" type="button" data-score-close>Close</button></div>
+    <p class="ao-chant-score-warning">Reference score — not confirmation of what the choir sings.
+      Follow manually; no recording or microphone is active.</p>
+    <div class="ao-chant-score-reading" data-score-full-reading tabindex="0"
+       aria-label="Full Gregorian score; scroll manually">
+       <img data-score-full-image alt="Full Gregorian score for the chosen reference setting">
+       <p class="ao-chant-score-fallback" data-score-full-fallback hidden>Score unavailable offline.</p>
+    </div><div class="ao-chant-score-caption">
+      <span data-score-full-progress>MANUAL · 0%</span><a data-score-full-source
+        href="https://gregobase.selapa.net/chant.php?id=545" target="_blank"
+        rel="noopener noreferrer">Source · GregoBase</a></div></div>\`;
+  root.appendChild(dialogue);
+  const select=panel.querySelector("[data-score-choice]");
+  for(const item of availableNativeScholaScores("KYRIE")){
+    const option=doc.createElement("option");option.value=item.id;
+    option.textContent=item.title+" · reference";select.appendChild(option);
+  }
+  const viewport=panel.querySelector("[data-score-reading]");
+  const fullViewport=dialogue.querySelector("[data-score-full-reading]");
+  const picture=panel.querySelector("[data-score-image]");
+  const fullPicture=dialogue.querySelector("[data-score-full-image]");
+  let scoreId=SCHOLA_SCORE_PILOT.id;
+  let isOpen=false, lastTrack=null, destroyed=false;
+  let imageErrors=new Set();
+  function chosen(){return SCHOLA_SCORE_CATALOGUE.find(s=>s.id===scoreId)||SCHOLA_SCORE_PILOT;}
+  function updateProgress(){
+    for(const [view,selector]of [[viewport,"[data-score-progress]"],[fullViewport,"[data-score-full-progress]"]]){
+      const node=(view===viewport?panel:dialogue).querySelector(selector);
+      if(node)node.textContent="MANUAL · "+Math.round(scoreReadingProgress({
+        scrollTop:view.scrollTop,scrollHeight:view.scrollHeight,clientHeight:view.clientHeight})*100)+"%";
+    }
+  }
+  function applyScore({reset=true}={}){
+    const value=chosen();
+    select.value=value.id;
+    panel.querySelector("[data-score-source]").href=value.sourceUrl;
+    dialogue.querySelector("[data-score-full-source]").href=value.sourceUrl;
+    dialogue.querySelector("[data-score-title]").textContent=value.title;
+    if(reset){viewport.scrollTop=0;fullViewport.scrollTop=0;}
+    picture.hidden=false;fullPicture.hidden=false;
+    const failed=imageErrors.has(value.id);
+    picture.hidden=failed;fullPicture.hidden=failed;
+    panel.querySelector("[data-score-fallback]").hidden=!failed;
+    dialogue.querySelector("[data-score-full-fallback]").hidden=!failed;
+    // Images are on the source server until the SVG/renderer is properly bundled.
+    if(picture.getAttribute("src")!==value.svgUrl)picture.setAttribute("src",value.svgUrl);
+    if(fullPicture.getAttribute("src")!==value.svgUrl)fullPicture.setAttribute("src",value.svgUrl);
+    updateProgress();
+  }
+  function updateVisible(){
+    dock.dataset.notation=String(isOpen);
+    trigger.setAttribute("aria-pressed",String(isOpen));
+    trigger.textContent=isOpen?"CLOSE SCORE":"GREGORIAN SCORE";
+    panel.hidden=!isOpen;
+    onLayoutChange();
+  }
+  function hideFull({restoreFocus=true}={}){
+    if(dialogue.hidden)return;
+    // Carry back the relative reading position, never assign a liturgical cue.
+    const ratio=scoreReadingProgress({scrollTop:fullViewport.scrollTop,
+      scrollHeight:fullViewport.scrollHeight,clientHeight:fullViewport.clientHeight});
+    dialogue.hidden=true;
+    viewport.scrollTop=ratio*Math.max(0,viewport.scrollHeight-viewport.clientHeight);
+    updateProgress();
+    if(restoreFocus)panel.querySelector("[data-score-full]")?.focus?.();
+  }
+  function close(){
+    hideFull({restoreFocus:false});isOpen=false;updateVisible();
     if(!trigger.hidden)trigger.focus?.();
-  };
-  const open=()=>{
-    // A demonstrative score is never a user-selected Mass melody.
+  }
+  function open(){
     if(trigger.hidden)return;
-    dialog.hidden=false;
-    trigger.setAttribute("aria-expanded","true");
-    if(image&&!image.getAttribute("src"))
-      image.setAttribute("src",SCHOLA_SCORE_PILOT.svgUrl);
-    dialog.querySelector("[data-score-close]")?.focus?.();
+    isOpen=true;updateVisible();applyScore({reset:false});
+    panel.querySelector("[data-score-choice]")?.focus?.();
+  }
+  function changeTrack(schola){
+    const track=String(schola?.trackId??"");
+    trigger.hidden=track!=="KYRIE";
+    if(track!=="KYRIE"&&isOpen){isOpen=false;hideFull({restoreFocus:false});updateVisible();}
+    lastTrack=track;
+  }
+  function scroll(view,dir){
+    const increment=scoreReadingStep(view.clientHeight);
+    view.scrollBy?.({top:increment*dir,behavior:"smooth"});
+    if(!view.scrollBy)view.scrollTop=Math.max(0,view.scrollTop+increment*dir);
+    updateProgress();
+  }
+  const onTrigger=()=>isOpen?close():open();
+  const onPanelClick=event=>{
+    const control=event.target?.closest?.("button");
+    if(!control)return;
+    if(control.hasAttribute("data-score-hide")){close();return;}
+    if(control.hasAttribute("data-score-prev")){scroll(viewport,-1);return;}
+    if(control.hasAttribute("data-score-next")){scroll(viewport,1);return;}
+    if(control.hasAttribute("data-score-full")){
+      const ratio=scoreReadingProgress({scrollTop:viewport.scrollTop,
+        scrollHeight:viewport.scrollHeight,clientHeight:viewport.clientHeight});
+      dialogue.hidden=false;applyScore({reset:false});
+      fullViewport.scrollTop=ratio*Math.max(0,fullViewport.scrollHeight-fullViewport.clientHeight);
+      updateProgress();dialogue.querySelector("[data-score-close]")?.focus?.();
+    }
   };
-  const onTrigger=()=>open();
-  const onDialogClick=event=>{
-    if(event.target===dialog || event.target?.closest?.("[data-score-close]"))close();
+  const onDialogueClick=event=>{
+    if(event.target===dialogue||event.target?.closest?.("[data-score-close]"))hideFull();
   };
   const onDialogKey=event=>{
-    if(event.key==="Escape"&&!dialog.hidden){event.stopPropagation();close();}
+    if(event.key==="Escape"&&!dialogue.hidden){event.stopPropagation();hideFull();}
+    // Prevent Mass-card arrow navigation while the modal has keyboard focus.
+    if(["ArrowLeft","ArrowRight"].includes(event.key)){event.stopPropagation();}
   };
-  const onError=()=>{
-    if(image)image.hidden=true;
-    if(fallback)fallback.hidden=false;
+  const onSelect=()=>{scoreId=select.value;applyScore();};
+  const onImageError=()=>{
+    imageErrors.add(scoreId);picture.hidden=true;fullPicture.hidden=true;
+    panel.querySelector("[data-score-fallback]").hidden=false;
+    dialogue.querySelector("[data-score-full-fallback]").hidden=false;
   };
+  const onScroll=()=>updateProgress();
   trigger.addEventListener("click",onTrigger);
-  dialog.addEventListener("click",onDialogClick);
-  dialog.addEventListener("keydown",onDialogKey);
-  image?.addEventListener("error",onError);
+  panel.addEventListener("click",onPanelClick);
+  select.addEventListener("change",onSelect);
+  dialogue.addEventListener("click",onDialogueClick);
+  dialogue.addEventListener("keydown",onDialogKey);
+  picture.addEventListener("error",onImageError);
+  fullPicture.addEventListener("error",onImageError);
+  viewport.addEventListener("scroll",onScroll);
+  fullViewport.addEventListener("scroll",onScroll);
   return Object.freeze({
     update(schola){
-      const available=resolveNativeScholaScore({trackId:schola?.trackId}).status==="OPTIONAL_EXAMPLE_AVAILABLE";
-      trigger.hidden=!available;
-      if(!available && !dialog.hidden){dialog.hidden=true;trigger.setAttribute("aria-expanded","false");}
+      if(destroyed)return;
+      changeTrack(schola);
+      // Never use schola.index/segmentId as a score-position clock.
     },
+    getState:()=>Object.freeze({open:isOpen,referenceScoreId:scoreId,
+      actualChoirMelody:"UNKNOWN",lastTrack}),
     destroy(){
+      destroyed=true;
       trigger.removeEventListener("click",onTrigger);
-      dialog.removeEventListener("click",onDialogClick);
-      dialog.removeEventListener("keydown",onDialogKey);
-      image?.removeEventListener("error",onError);
-      style.remove?.();trigger.remove?.();dialog.remove?.();
+      panel.removeEventListener("click",onPanelClick);
+      select.removeEventListener("change",onSelect);
+      dialogue.removeEventListener("click",onDialogueClick);
+      dialogue.removeEventListener("keydown",onDialogKey);
+      picture.removeEventListener("error",onImageError);
+      fullPicture.removeEventListener("error",onImageError);
+      viewport.removeEventListener("scroll",onScroll);
+      fullViewport.removeEventListener("scroll",onScroll);
+      trigger.remove?.();panel.remove?.();dialogue.remove?.();style.remove?.();
+      delete dock.dataset.notation;
+      onLayoutChange();
     },
   });
 }
