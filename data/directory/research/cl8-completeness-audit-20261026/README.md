@@ -20,7 +20,7 @@ Outputs: (1) `cl_completeness_summary.json`, with source population and every fi
 
 ## Three independent progress gates
 
-* **Presence / collected:** the field is actually populated; a copied source label is collected but NOT an established institution or rite.
+* **Presence / collected:** the field is actually populated; a copied source label is collected but NOT an established institution or rite. `MISSING` means a source value is absent/unknown; `NOT_ASSESSED` means the existing research has not certified that property (not proof that it is absent); `NOT_APPLICABLE` applies to release controls disabled for this research snapshot.
 * **Evidence state:** separates raw labels and transcribed timetable descriptions from directly reviewed owner evidence and formal accepted Missal witnesses. Different claim scopes cannot be promoted through joins.
 * **Release:** all CL8 rows remain `HOLD_NOT_PUBLIC`, including good-looking sites and historical timetable rows labelled VERIFIED. No public pin, live schedule, Una Cum filter, canon-law assessment or celebrant claim is generated.
 
