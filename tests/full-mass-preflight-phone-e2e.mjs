@@ -141,6 +141,14 @@ try{
  assert.equal(selectedMusic.kyrieScoreId,"GREGOBASE-2982");
  assert.equal(selectedMusic.sourceType,"USER_REPORTED_MUSIC_NOT_RUBRICALLY_CERTIFIED");
  assert.equal(selectedMusic.selections.KYRIE,"GREGOBASE-2982");
+ const study=programmeUi.locator(".aoMassChantStudy");
+ await study.locator("summary").click();
+ await study.locator("[data-study-score-choice]").selectOption("GREGOBASE-2982");
+ await page.waitForSelector(".aoMassChantStudyWindow svg",{timeout:15000});
+ assert.equal(await study.locator("[data-study-audio]").isVisible(),true);
+ assert.match(await study.locator("[data-study-audio]").innerText(),/no recording has passed/i,
+   "No unverified choir recording may be promoted by the study pilot");
+
  const additional=[
    ["GLORIA","GREGOBASE-961"],["CREDO","GREGOBASE-749"],
    ["SANCTUS_BENEDICTUS","GREGOBASE-1384"],["AGNUS_DEI","GREGOBASE-2760"],
