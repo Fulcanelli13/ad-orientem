@@ -2,6 +2,7 @@ import { formatDisplayDate } from "../app/date-format.js";
 import { NOVENA_CORPUS_V4, NOVENA_START_KIND } from "../pray/novena-corpus-v4.js";
 import { addDaysIso, dateFromIso, isoDate } from "./liturgical-year.js";
 import { v384Events, v384Dates } from "./traditional-year-v384.js";
+import { calendarHistoricalNotes, CALENDAR_HISTORICAL_CONTEXT_VERSION } from "./historical-context.js";
 import { calendarCustomProfileActions } from "./customs-profile-links.js";
 import { CALENDAR_DEVOTIONAL_REGISTRY_VERSION, DEVOTIONAL_PRACTICE_REGISTRY, NOVENA_TARGET_IDS, NOVENA_SOURCE_HOLDS, devotionalPracticeDefinition } from "./devotional-registry.js";
 
@@ -718,10 +719,12 @@ export function calendarIntelligenceForDate(value,{fr=false,properTitle="",inclu
   const novenas=calendarNovenaEvents(date,{fr,upcomingDays:includeUpcomingNovenas});
   const semantic=calendarSemanticEventsForDate(date,{fr});
   const discipline=calendarDisciplineForDate(date,{fr});
+  const historicalNotes=calendarHistoricalNotes(date,{fr});
   return Object.freeze({
     schema:CALENDAR_INTELLIGENCE_VERSION,registryVersion:CALENDAR_DEVOTIONAL_REGISTRY_VERSION,
-    semanticRegistryVersion:CALENDAR_SEMANTIC_REGISTRY_VERSION,date,
-    practices,novenas,semantic,discipline,
+    semanticRegistryVersion:CALENDAR_SEMANTIC_REGISTRY_VERSION,
+    historicalContextVersion:CALENDAR_HISTORICAL_CONTEXT_VERSION,date,
+    practices,novenas,semantic,discipline,historicalNotes,
     events:Object.freeze([...practices,...novenas,...semantic].sort((a,b)=>b.priority-a.priority||a.id.localeCompare(b.id))),
   });
 }
