@@ -2,14 +2,14 @@
   "schema": "AO_APPROVED_FEAST_HERO_PACKAGING_CANDIDATES_20261021_V1",
   "status": "STAGED_LOCAL_PHONE_CANDIDATE_IMAGES_NOT_PRODUCTION_RELEASE",
   "userSelectedPaintingsPreserved": 10,
-  "verifiedOriginalImageSHA": 10,
-  "candidateWebpFilesWritten": 10,
+  "verifiedOriginalImageSHA": 9,
+  "candidateWebpFilesWritten": 9,
   "humanAcceptedImagePhotos": 0,
   "explicitAppRightsReleaseApprovals": 0,
   "liveReleaseManifest": null,
   "source": "data/calendar/approved-feast-hero-photo-sha-evidence-20261021.v1.json",
   "sourceWorkflowRun": 39565626625,
-  "packaging": "Exact-source SHA verified, image resized to fit <=1600x1600 preserving painting content, no crop, source copy remains in 30-day Action archive.",
+  "packaging": "10 approved date assignments use 9 distinct existing packaged image files; Holy Thursday uses the identical Champaigne file as Pentecost Ember Wednesday. Historical Ugolino photo bytes/evidence remain archival, not active.",
   "rightsPolicy": "Met's OA is explicit CC0 for its particular public-domain images; Commons PD-Art can leave foreign reproduction/jurisdiction rights uncertainty. Do not publish based on Commons label alone.",
   "photographs": [
     {
@@ -63,24 +63,24 @@
     },
     {
       "date": "2026-04-02",
-      "artist": "Ugolino da Siena",
-      "title": "Last Supper",
+      "artist": "Philippe de Champaigne",
+      "title": "La Petite Cène",
       "occasion": "Holy Thursday",
-      "iconographyRelationship": "MET_OPEN_ACCESS_CC0_API_CHECK",
+      "iconographyRelationship": "EXACT_EUCHARISTIC_INSTITUTION; user selected Champaigne over Ugolino on 2026-10-26; same exact Louvre INV1125 photograph reused from 2026-05-27, full original painting only",
       "editorialSelectionPreserved": true,
-      "sourcePhotoPage": "https://www.metmuseum.org/art/collection/search/459131",
-      "sourceObjectPage": "https://www.metmuseum.org/art/collection/search/459131",
-      "sourceImageSHA256": "5d19d31a2a213a80e81bffe2c195a1e9b3ae810c0b3428a69ae94685fd73c502",
+      "sourcePhotoPage": "https://commons.wikimedia.org/wiki/File:Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
+      "sourceObjectPage": "https://collections.louvre.fr/en/ark:/53355/cl010062076",
+      "sourceImageSHA256": "d4d8b3c1ea957c9517a24c62a97ab7143e07cdec2434c77ee05df17a5b29a320",
       "sourceOriginalDimensions": [
-        3811,
-        2499
+        1112,
+        591
       ],
       "candidateFile": {
-        "path": "assets/sacred-art/candidates/hero-2026-04-02-5d19d31a2a21.webp",
-        "sha256": "12ffe0d36e5378762b4e3f400fea43a790e53becfa6e747db199b0886a4951ef",
-        "byteCount": 464274,
-        "width": 1600,
-        "height": 1049,
+        "path": "assets/sacred-art/candidates/hero-2026-05-27-d4d8b3c1ea95.webp",
+        "sha256": "64d631d58256a4e479a05b799af5956240e90c945b6e0418c0c4f3d7ac7af83a",
+        "byteCount": 81592,
+        "width": 1112,
+        "height": 591,
         "derivation": "EXIF_ORIENT_AND_WHOLE_IMAGE_RESIZE_ONLY",
         "originalPaintingSurfaceUncroppedByThisScript": true,
         "photoHumanVisualAccepted": false,
@@ -89,16 +89,16 @@
         "anyAdditionalCrop": false
       },
       "rightsReview": {
-        "status": "MET_CC0_POLICY_CONFIRMED_PER_OBJECT",
-        "sourceLicenseLabel": "MET_OPEN_ACCESS_PUBLIC_DOMAIN_REPORTED",
-        "sourcePolicyUrl": "https://www.metmuseum.org/policies/image-resources",
+        "status": "COMMONS_PUBLIC_DOMAIN_REPRODUCTION_JURISDICTION_REVIEW",
+        "sourceLicenseLabel": "Public domain",
+        "sourcePolicyUrl": "https://commons.wikimedia.org/wiki/Commons:PD-Art",
         "appDistributionIndependentlyApproved": false,
         "photographRightsHumanSignedOff": false
       },
       "productionRelease": false,
       "framingReview": {
         "status": "UNREVIEWED_FOR_RELEASE",
-        "previewObservation": "GILDED_EXTERNAL_FRAME_VISIBLE",
+        "previewObservation": "REUSES_CHAMPAIGNE_UNFRAMED_FULL_PAINTING_SOURCE; HUMAN_EDGE_CHECK_PENDING",
         "physicalFrameAbsentHumanVerified": false,
         "gallerySurroundAbsentHumanVerified": false,
         "paintingBoundsHumanVerified": false,
@@ -108,6 +108,14 @@
         "framelessDerivativeSourceSha256": null,
         "approvedCropBoundsPx": null,
         "frameFreePublicationApproved": false
+      },
+      "photoSourceEvidenceDate": "2026-05-27",
+      "editorialRevision": "data/calendar/approved-feast-holy-thursday-20261026-override.v1.json",
+      "previouslyApprovedForDate": {
+        "artist": "Ugolino da Siena",
+        "title": "Last Supper",
+        "sourceImageSHA256": "5d19d31a2a213a80e81bffe2c195a1e9b3ae810c0b3428a69ae94685fd73c502",
+        "candidatePath": "assets/sacred-art/candidates/hero-2026-04-02-5d19d31a2a21.webp"
       }
     },
     {
@@ -504,5 +512,8 @@
     }
   ],
   "framelessPaintingPolicy": "docs/sacred-art-frameless-reproduction-policy-20261026.md",
-  "framelessReleaseApprovals": 0
+  "framelessReleaseApprovals": 0,
+  "editorialRevisions": [
+    "data/calendar/approved-feast-holy-thursday-20261026-override.v1.json"
+  ]
 }
