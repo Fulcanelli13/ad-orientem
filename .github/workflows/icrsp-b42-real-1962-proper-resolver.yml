@@ -1,0 +1,41 @@
+name: ICRSP B42 real 1962 source-Proper resolver check
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/source-text/icrsp-france-b42-real-calendar-18-proper-probe-plan.v1.json'
+      - 'data/source-text/icrsp-france-b41-1962-vatican-three-commons-print-image-collation.v1.json'
+      - 'tests/icrsp-b42-real-1962-selected-proper-browser.mjs'
+      - '.github/workflows/icrsp-b42-real-1962-proper-resolver.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: icrsp-b42-actual-proper-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  resolved-proper-18-date-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install existing browser test dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Query real production DayResolver for 18 calendar dates
+        run: node tests/icrsp-b42-real-1962-selected-proper-browser.mjs --strict
+      - name: Transient inspection artifact (record must be permanently committed after review)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-b42-18-real-proper-observations
+          path: artifacts/icrsp/b42-actual-1962-calendar-proper.json
+          retention-days: 7
+          if-no-files-found: warn
