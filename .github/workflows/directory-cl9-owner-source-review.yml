@@ -1,0 +1,67 @@
+name: Directory CL9 owner-evidence reconciliation
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'data/directory/research/cl8-completeness-audit-20261026/**'
+      - 'data/directory/research/cl9-missal-source-review-20261026/**'
+      - 'tools/directory/audit-cl-completeness.py'
+      - 'tools/directory/audit-cl9-owner-evidence.py'
+      - '.github/workflows/directory-cl9-owner-source-review.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'data/directory/research/cl8-completeness-audit-20261026/**'
+      - 'data/directory/research/cl9-missal-source-review-20261026/**'
+      - 'tools/directory/audit-cl-completeness.py'
+      - 'tools/directory/audit-cl9-owner-evidence.py'
+      - '.github/workflows/directory-cl9-owner-source-review.yml'
+  workflow_dispatch:
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild frozen research and CL8 reproducible candidate pool
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+          python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ao-cl9.sqlite
+          python3 tools/directory/audit-cl-completeness.py --db /tmp/ao-cl9.sqlite --output-dir /tmp/ao-cl8
+      - name: Check 21 owner sources against all 432 candidates
+        run: |
+          python3 tools/directory/audit-cl9-owner-evidence.py --db /tmp/ao-cl9.sqlite --cl8-csv /tmp/ao-cl8/missal_1962_reconciliation.csv --out-dir /tmp/ao-cl9-review
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          d=json.loads(Path('/tmp/ao-cl9-review/cl9_summary.json').read_text())
+          assert (d['candidate_rows'],d['source_urls'])==(432,129)
+          assert (d['source_urls_directly_reviewed'],d['candidate_rows_at_reviewed_urls'])==(21,239)
+          assert d['candidate_rows_owner_site_or_slot_1962_wording']==85
+          assert d['new_owner_accepted_1962']==d['new_una_cum_accepted']==d['new_public_releases']==0
+          c=sqlite3.connect('/tmp/ao-cl9.sqlite')
+          assert c.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert c.execute('PRAGMA foreign_key_check').fetchall()==[]
+          print('CL9 verified, all classifications and releases still held')
+          PY
+      - name: Upload regenerable CSV/JSON audit views
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-cl9-owner-evidence-audit
+          path: /tmp/ao-cl9-review/
+          retention-days: 1
