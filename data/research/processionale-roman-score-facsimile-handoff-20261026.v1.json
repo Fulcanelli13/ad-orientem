@@ -1,0 +1,246 @@
+{
+  "schema": "ao-processionale-roman-score-facsimile-handoff-v1",
+  "date": "2026-10-26",
+  "status": "RESEARCH_ONLY_NOT_RUNTIME",
+  "scope": "Candlemas and Palm Sunday score-page pointers for existing Mass Schola continuous notation PR #1749 and 1962 native rite source-integrity issue #894; no second score renderer or music-event registry.",
+  "sourceEditionRule": "1961 Solesmes Liber Usualis/Graduale printed music is an available near-contemporary music witness; liturgical permission/omission comes from original 1962 Roman Missal and 1961 Liber Usualis LXXXVI correction section. Historical 1888/1893 monastic Processionale does not supply automatic 1962 authority.",
+  "sourceWitnesses": [
+    {
+      "id": "LU1961-IMAGES",
+      "edition": "Liber Usualis 1961 (Solesmes)",
+      "url": "https://gregobase.selapa.net/source.php?id=3&images=1",
+      "kind": "PRINTED_CHANT_PAGE_IMAGES",
+      "authority": "CHROMATIC_NOTATION_WITNESS_PENDING_NEUME_TRANSCRIPTION_QA"
+    },
+    {
+      "id": "LU1961-CORRECTIONS",
+      "edition": "Liber Usualis 1961 (introductory corrections to printed repertoire)",
+      "printedPage": "LXXXVI",
+      "imageWitness": "https://s9.imslp.org/files/imglnks/usimg/8/8c/IMSLP52072-PMLP29410-LU1_Introduction%2C_Preface%2C_et_alia.pdf",
+      "pdfPageIndexZeroBased": 85,
+      "kind": "PUBLISHED_EXCEPTION_RULE",
+      "authority": "OMIT_EXSURGE_CANDLEMAS"
+    },
+    {
+      "id": "MR1962-CANDLEMAS",
+      "edition": "Missale Romanum 1962",
+      "printedPages": "465–466",
+      "url": "https://www.ccwatershed.org/wp-content/uploads/2020/02/80020-PURIFICATION-2-February-1962-Rubrics-official.pdf",
+      "pdfPageIndexZeroBased": [
+        1,
+        2
+      ],
+      "kind": "ROMAN_RUBRICAL_TEXT_WITNESS",
+      "authority": "PRIMARY_1962_CEREMONIAL"
+    },
+    {
+      "id": "MR1962-PALM",
+      "edition": "Missale Romanum 1962 — Palm Sunday",
+      "kind": "ROMAN_RUBRICAL_TEXT_WITNESS",
+      "authority": "PRIMARY_REQUIRED_FOR_PALM_BEFORE_SCORE_PROMOTION",
+      "status": "REQUIRES_SOURCE_OWNER_ORIGINAL_PRINTED_PAGE_COLLATION"
+    }
+  ],
+  "mappedScorePages": [
+    {
+      "id": "LU61-CND-01",
+      "rite": "CANDLEMAS",
+      "stage": "CND-R03",
+      "incipit": "Lumen ad revelationem gentium",
+      "printedPages": [
+        1357,
+        1358
+      ],
+      "imageURLs": [
+        "https://gregobase.selapa.net/sources/3/1560.png",
+        "https://gregobase.selapa.net/sources/3/1561.png"
+      ],
+      "imageRead": true,
+      "roman1962Status": "PRESCRIBED_WITH_VERSE_AND_ANTIPHON_REPEATS",
+      "gregobaseRecord": null,
+      "editorialNote": "Antiphon and Nunc dimittis verses on p1357, final verse on p1358; 1962 Missal repeats antiphon after each canticle verse, and the concluding doxology. Duration remains responsive to actual candle distribution."
+    },
+    {
+      "id": "LU61-CND-02",
+      "rite": "CANDLEMAS",
+      "stage": "CND-R04",
+      "incipit": "Exsurge Domine adjuva nos",
+      "printedPages": [
+        1358
+      ],
+      "imageURLs": [
+        "https://gregobase.selapa.net/sources/3/1561.png"
+      ],
+      "imageRead": true,
+      "gregobaseRecord": "https://gregobase.selapa.net/chant.php?id=30",
+      "roman1962Status": "OMITTED_EXPLICITLY",
+      "editorialNote": "Score survives in bound 1961 page, but its own corrections p.LXXXVI and the 1962 printed Missal omit it. Do not use its GABC for this Candlemas moment."
+    },
+    {
+      "id": "LU61-CND-03",
+      "rite": "CANDLEMAS",
+      "stage": "CND-R05",
+      "incipit": "Adorna thalamum tuum Sion",
+      "printedPages": [
+        1359
+      ],
+      "imageURLs": [
+        "https://gregobase.selapa.net/sources/3/1562.png"
+      ],
+      "imageRead": true,
+      "gregobaseRecord": null,
+      "roman1962Status": "PRESCRIBED_IN_ROMAN1962",
+      "editorialNote": "Full processional chant printed and Latin text found in 1962 Roman Missal p466. Avoid similar-titled office/responsory settings."
+    },
+    {
+      "id": "LU61-CND-04",
+      "rite": "CANDLEMAS",
+      "stage": "CND-R05",
+      "incipit": "Responsum accepit Simeon",
+      "printedPages": [
+        1359,
+        1360
+      ],
+      "imageURLs": [
+        "https://gregobase.selapa.net/sources/3/1562.png",
+        "https://gregobase.selapa.net/sources/3/1563.png"
+      ],
+      "imageRead": true,
+      "gregobaseRecord": "https://gregobase.selapa.net/chant.php?id=46",
+      "roman1962Status": "PRESCRIBED_WITH_CUM_INDUCERENT_VERSE",
+      "editorialNote": "CRITICAL: 1962 printed Missale Romanum p466 explicitly retains V. Cum inducerent puerum Iesum parentes eius... despite a modern explanatory pamphlet note saying it was removed. Current reader-candlemas.v1.json has responsumVerse and it must NOT be deleted without another true primary witness."
+    },
+    {
+      "id": "LU61-CND-05",
+      "rite": "CANDLEMAS",
+      "stage": "CND-R06",
+      "incipit": "Obtulerunt pro eo Domino",
+      "printedPages": [
+        1360
+      ],
+      "imageURLs": [
+        "https://gregobase.selapa.net/sources/3/1563.png"
+      ],
+      "imageRead": true,
+      "gregobaseRecord": null,
+      "roman1962Status": "PRESCRIBED_AT_REENTRY",
+      "editorialNote": "Printed score says On re-entering the church; 1962 Missal p466 gives responsory, verse, Gloria Patri and refrain. Its exact entrance timing depends on observed physical procession, not a fixed runtime timer."
+    },
+    {
+      "id": "LU61-PALM-01",
+      "rite": "PALM",
+      "stage": "PALM-R02",
+      "incipit": "Pueri Hebraeorum portantes / Domini est terra",
+      "printedPages": [
+        581,
+        582
+      ],
+      "imageURLs": [
+        "https://gregobase.selapa.net/sources/3/726.png",
+        "https://gregobase.selapa.net/sources/3/727.png"
+      ],
+      "imageRead": true,
+      "gregobaseRecord": "https://gregobase.selapa.net/chant.php?id=1215",
+      "roman1962Status": "CHORAL_SOURCE_AVAILABLE_BUT_1962_PRIMARY_CROSSCHECK_PENDING",
+      "editorialNote": "Notation page 581 visually inspected: first antiphon and Vulgate Psalm 23:1–2,7–10; page 582 repeats antiphon with doxology. Existing PALM-R02 currently renders only the antiphon."
+    },
+    {
+      "id": "LU61-PALM-02",
+      "rite": "PALM",
+      "stage": "PALM-R02",
+      "incipit": "Pueri Hebraeorum vestimenta / Omnes gentes",
+      "printedPages": [
+        582
+      ],
+      "imageURLs": [
+        "https://gregobase.selapa.net/sources/3/727.png"
+      ],
+      "imageRead": true,
+      "gregobaseRecord": null,
+      "roman1962Status": "CHORAL_SOURCE_AVAILABLE_BUT_1962_PRIMARY_CROSSCHECK_PENDING",
+      "editorialNote": "Page 582 shows second antiphon and Vulgate Psalm 46 incipit, with repeated antiphon after appointed verses."
+    },
+    {
+      "id": "LU61-PALM-03",
+      "rite": "PALM",
+      "stage": "PALM-R04",
+      "incipit": "Gloria laus et honor",
+      "printedPages": [
+        586,
+        587
+      ],
+      "imageURLs": [
+        "https://gregobase.selapa.net/sources/3/731.png",
+        "https://gregobase.selapa.net/sources/3/732.png"
+      ],
+      "imageRead": true,
+      "gregobaseRecord": "https://gregobase.selapa.net/chant.php?id=259",
+      "roman1962Status": "CHORAL_SOURCE_AVAILABLE_BUT_1962_PRIMARY_CROSSCHECK_PENDING",
+      "editorialNote": "Printed scores show first three lines as refrain and multiple additional alternating verses. GregoBase score #259 exports six GABC elements; do not equate one refrain to entire hymn."
+    },
+    {
+      "id": "LU61-PALM-04",
+      "rite": "PALM",
+      "stage": "PALM-R05",
+      "incipit": "Ingrediente Domino / Cumque audisset",
+      "printedPages": [
+        590,
+        591
+      ],
+      "imageURLs": [
+        "https://gregobase.selapa.net/sources/3/735.png",
+        "https://gregobase.selapa.net/sources/3/736.png"
+      ],
+      "imageRead": true,
+      "gregobaseRecord": null,
+      "roman1962Status": "CHORAL_SOURCE_AVAILABLE_BUT_1962_PRIMARY_CROSSCHECK_PENDING",
+      "editorialNote": "Page 591 prints V. Cumque audisset populus... and repetition * Cum ramis. Current PALM-R05 only carries Ingrediente body. Unlike older music fragments, this is a clearly identified return responsory with verse."
+    }
+  ],
+  "sourceContradictions": [
+    {
+      "id": "CND-1961-OLD_PRINTED_EXSURGE",
+      "claim": "A still-printed 1961 score must be sung in 1962.",
+      "correct": false,
+      "primarySources": [
+        "LU1961-CORRECTIONS",
+        "MR1962-CANDLEMAS"
+      ],
+      "resolution": "OMIT_CANDLEMAS_EXSURGE"
+    },
+    {
+      "id": "CND-1962-CUM_VERSE",
+      "claim": "The Responsum accepit verse Cum inducerent... was removed in 1962.",
+      "correct": false,
+      "primarySources": [
+        "MR1962-CANDLEMAS"
+      ],
+      "resolution": "KEEP_VERSE_IN_EXISTING_CND_R05",
+      "contradictingSecondaryURL": "https://www.ccwatershed.org/wp-content/uploads/2020/02/80009-CANDLEMAS-Procession-800.pdf",
+      "note": "A modern document editorial footnote at PDF p6 inaccurately claims its deletion. Direct 1962 printed Missal p466 contains the verse."
+    }
+  ],
+  "integration": {
+    "existingScholaPR": "https://github.com/Fulcanelli13/ad-orientem/pull/1749",
+    "existingRomanTextOwner": "https://github.com/Fulcanelli13/ad-orientem/issues/894",
+    "existingStageOwnerPaths": [
+      "src/mass/reader-candlemas.js",
+      "data/presentation/reader-candlemas.v1.json",
+      "src/mass/reader-palm.js",
+      "data/presentation/reader-palm.v1.json"
+    ],
+    "noNewAudioRuntime": true,
+    "noNewScholaDock": true,
+    "noNewMusicEventIDs": true,
+    "rendererRule": "Only use verified source-specific GABC when a music score is included; page image links identify a musical witness, NOT musical-note transcription accuracy.",
+    "status": "HANDOFF_NOT_IMPLEMENTED"
+  },
+  "integrityGates": [
+    "Original 1888 Solesmes Processionale facsimile still unavailable and NO direct 1888→1893 melodic comparison has been made.",
+    "1961 printed source scores visually inspected on selected pages, but note-by-note GABC accuracy NOT signed off.",
+    "Roman 1962 Palm printed primary needs editorial text/rubrics acceptance before assigning scores to compulsory versus optional actions.",
+    "Preserve 1962 Candlemas omitted Exsurge and included Cum inducerent; source precedence governs.",
+    "Only metadata and public reference image URLs stored; no scan bytes committed and no licence implicitly granted.",
+    "No change to current production reader or Schola runtime in this PR."
+  ]
+}
