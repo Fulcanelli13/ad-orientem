@@ -16,7 +16,7 @@ assert.ok(APPROVED_FEAST_HERO_DATES.every(x => x.photoApprovedForRelease === fal
 
 const expected = [
   ["2026-03-29","Anthony van Dyck","The Entry of Christ into Jerusalem"],
-  ["2026-04-02","Ugolino da Siena","Last Supper"],
+  ["2026-04-02","Philippe de Champaigne","La Petite Cène"],
   ["2026-05-23","Juan Bautista Maíno","The Pentecost"],
   ["2026-05-24","Jean Restout","Pentecost"],
   ["2026-05-27","Philippe de Champaigne","La Petite Cène"],
@@ -26,6 +26,10 @@ const expected = [
   ["2026-11-02","Ludovico Carracci","An Angel Frees the Souls of Purgatory"],
   ["2026-11-29","John Martin","The Great Day of His Wrath"],
 ];
+// 26 October 2026: same Champaigne painting approved for Holy Thursday and
+// already separately approved for Pentecost Ember Wednesday.
+assert.equal(expected.filter(x=>x[1]==="Philippe de Champaigne").length,2);
+assert.ok(!expected.some(x=>x[1]==="Ugolino da Siena"));
 for (const [date,artist,title] of expected) {
   const record = APPROVED_FEAST_HERO_DATES.find(x => x.date === date);
   assert.ok(record, date + " date mapping missing");
