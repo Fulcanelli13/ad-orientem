@@ -41,7 +41,7 @@ An editor must verify **all** of:
 - Potsdam Alexianer actual Mass chapel != hospital “Raum der Stille” lookalike.
 - Nürnberg church Bierweg 35 != parish office Bierweg 33; Remscheid St Josef != office 5b or nursery 5c; Blaibach Kirchplatz church != Benefiziatengasse rectory.
 - Landsberg indoor upstairs Ignatiuskapelle != exterior Heilig Kreuz church polygon. It may be documented as a **host building** but must not be published as the exact liturgical room or entrance.
-- Recklinghausen-Grullbad temporarily closed St Joseph != weekday replacement St Gertrudis. *Local FSSP confirms this exception* (https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/recklinghausen/aktuelles.php). Do not assume Sunday or feast-day transfer details from the weekday notice, and never convert historic St Joseph rows to validated future occurrences.
+- Recklinghausen-Grullbad St Joseph local FSSP [Messzeiten/Termine](https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/recklinghausen/messzeitentermine.php) lists recurring Masses. The [parish office page](https://stantonius.katholisch-re.de/seelsorge-kontakte/pfarrbuero) says the **parish office** is currently closed; this is **not** church closure proof. Previous research closure and St Gertrudis transfer assertion is uncorroborated and withdrawn. Positive date-specific FSSP confirmation is needed before release; neither a cancellation nor a transfer is inferred.
 
 ## CI and release invariants
 
