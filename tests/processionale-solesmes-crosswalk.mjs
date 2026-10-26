@@ -410,3 +410,32 @@ test('two new-Psalter source files are hashed and Psalm 46 remains quarantined',
  assert.match(raw46,/O\(f\)mnes\(gh\) gen\(h\)tes/);
  assert.equal(register.sourceSafety.approvedRuntimeAssignments,0);
 });
+
+
+test('Psalm 46 wrong Latin first word requires underlay review, not automated publication',()=>{
+  const review=readJSON('data/research/processionale-palm46-gabc-underlay-review-20261026.v1.json');
+  const base='data/research/chant-source-archive/1961-graduale-novus-20261026/';
+  const manifest=readJSON(base+'sha256-manifest.json');
+  assert.equal(review.status,'EDITORIAL_CANDIDATE_ONLY_UNDERLAY_UNVERIFIED_QUARANTINED');
+  assert.equal(review.source.scoreId,19316);
+  const source=manifest.records.find(x=>x.gregobaseId===19316);
+  assert.equal(review.source.sha256,source.sha256);
+  assert.match(review.source.archivedFile,/gregobase-19316\.gabc$/);
+  const raw=readFileSync(new URL('../'+review.source.archivedFile,import.meta.url),'utf8');
+  assert.equal(raw.split(review.issue.existingGabcText).length,2);
+  assert.equal(review.issue.badSyllableCount,4);
+  assert.equal(review.issue.requiredSyllableCount,5);
+  assert.equal(review.issue.existingGabcText,'O(f)mnes(gh) gen(h)tes,(h)');
+  assert.equal(review.candidate.openingGabc,'O(f)mnes(gh) pó(h)pu(h)li,(h)');
+  assert.equal(review.candidate.openingTokens.length,5);
+  assert.equal(review.candidate.pitchAssignmentOfNewExtraSyllable,undefined);
+  assert.equal(review.issue.pitchAssignmentOfNewExtraSyllable,'UNVERIFIED_AGAINST_PRINTED_PAGE');
+  assert.equal(review.candidate.publicationEligible,false);
+  assert.equal(review.sourceChecks.productionApproved,false);
+  assert.ok(review.candidate.mustBeReviewedAgainstPrint);
+  assert.ok(review.header.rawContainsDoubleDelimiter);
+  assert.ok(raw.includes('\n%%\n%%\r\n'));
+  assert.ok(review.sourceChecks.rawArchivedFileImmutable);
+  assert.ok(!raw.includes(review.candidate.openingGabc),
+    'Research suggestion must never overwrite immutable original GABC');
+});
