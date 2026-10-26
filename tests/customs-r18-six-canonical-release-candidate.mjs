@@ -46,4 +46,20 @@ for (let i=0;i<expected.length;i++){
  assert.match(r.article.caution.en,/not |no |without |neither|neither|voluntary|belie|future|supernatural|folklore|historical|no obligatory/i);
 }
 assert.equal(rows.some(r=>r.proposed_id==="EPIP-003"||r.proposed_id==="CRIB-001"),false);
+const patch=load("data/customs/customs-r18-six-canonical-promotion-payload.v1.json");
+assert.equal(patch.release_gate,"AWAIT_HUMAN_8x6_SIGNOFF_AND_MAIN_CI");
+assert.equal(patch.actual_catalogue_change,0);
+assert.equal(patch.counts.customs,6);
+assert.equal(patch.counts.articles,6);
+assert.equal(patch.counts.attestations,6);
+assert.equal(patch.counts.source_entries,12);
+assert.deepEqual(patch.canonical_seed_customs.map(x=>x.custom_id),rows.map(x=>x.proposed_id));
+assert.deepEqual(patch.calendar_bilingual_articles.map(x=>x.id),rows.map(x=>x.proposed_id));
+assert.deepEqual(patch.canonical_seed_attestations.map(x=>x.custom_id),rows.map(x=>x.proposed_id));
+assert.ok(patch.canonical_seed_customs.every(x=>x.publication_state==="NOT_APPROVED"));
+assert.ok(patch.canonical_seed_customs.every(x=>x.decision==="RELEASE_PROPOSAL_AWAITING_EDITORIAL_SIGNOFF"));
+assert.ok(patch.calendar_region_interest.every(x=>x.default_global_calendar_recommendation===false));
+assert.ok(patch.source_registry_entries.every(x=>!src.has(x.id)&&/^https:\/\//.test(x.url)));
+assert.equal(new Set(patch.source_registry_entries.map(x=>x.id)).size,12);
+assert.ok(patch.canonical_seed_attestations.every(x=>x.source_ids.length>=1));
 console.log("PASS R18 canonical publication candidate: 6 collision-free proposed IDs; complete bilingual source copy; 35 live remain; all 8 gates per identity blocked");
