@@ -93,7 +93,7 @@ def main():
     assert [(e["date"],e["local_time"]) for e in dates if e["pilot_source_place_id"]=="CL14-DE-FSSP-038"]==[
       ("2026-11-01","11:30")]
     vienna=[e for e in dates if e["external_place_key"]=="AT-KATZELSDORF-PFARRKIRCHE"]
-    assert len(vienna)==4 and all("source" in e["evidence_limit"].lower() for e in vienna)
+    assert len(vienna)==4 and all("search-index" in e["evidence_limit"].lower() for e in vienna)
     assert set(e["date"] for e in vienna)=={"2026-11-01","2026-11-06","2026-11-08","2026-11-15"}
     # Not every Sunday is independently listed by that source; DO NOT manufacture Nov 22.
     assert "2026-11-22" not in [e["date"] for e in vienna]
