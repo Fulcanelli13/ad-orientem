@@ -141,6 +141,22 @@ try{
  assert.equal(selectedMusic.kyrieScoreId,"GREGOBASE-2982");
  assert.equal(selectedMusic.sourceType,"USER_REPORTED_MUSIC_NOT_RUBRICALLY_CERTIFIED");
  assert.equal(selectedMusic.selections.KYRIE,"GREGOBASE-2982");
+ const additional=[
+   ["GLORIA","GREGOBASE-961"],["CREDO","GREGOBASE-749"],
+   ["SANCTUS_BENEDICTUS","GREGOBASE-1384"],["AGNUS_DEI","GREGOBASE-2760"],
+ ];
+ assert.equal(await programmeUi.locator("[data-full-mass-other-choice]").count(),4,
+   "The ordinary programme must expose the four additional settings independently");
+ for(const [track,id] of additional){
+   await programmeUi.locator('[data-full-mass-other-choice="'+track+'"]').selectOption(id);
+   assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.selections[track],id);
+ }
+ assert.deepEqual(await page.evaluate(()=>Object.keys(__full.selectionFor(__legacyMass()).chantProgramme.selections).sort()),
+   ["AGNUS_DEI","CREDO","GLORIA","KYRIE","SANCTUS_BENEDICTUS"].sort());
+ await programmeUi.locator('[data-full-mass-other-choice="CREDO"]').selectOption("");
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.selections.CREDO,undefined,
+   "Unknown Credo must not be filled in from the Kyrie");
+
  // Selecting a reader mode cannot alter this independent musical setting.
  await page.locator('[data-full-mass-reader-mode][value="SIMPLE"]').check();
  assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,"GREGOBASE-2982");
@@ -151,6 +167,8 @@ try{
  await page.locator('[data-full-mass-form][value="MISSA_CANTATA_INCENSE"]').check();
  assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,null,
    "Low Mass must invalidate prior audible choir programme, even after returning to Sung");
+ assert.equal(Object.keys((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.selections).length,0,
+   "Low Mass must also clear Gloria, Sanctus and Agnus choices");
  await page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]').click();
  if(!(await programmeUi.evaluate(el=>el.open)))await programmeUi.locator("summary").click();
  await programmeUi.locator("[data-full-mass-chant-choice]").selectOption("GREGOBASE-1184");
