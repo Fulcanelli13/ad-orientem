@@ -31,7 +31,7 @@
       "candidate_id": "SG-INV-0341",
       "place_id": "place:LV:p50-sg-0341-196704436",
       "name": "Skaistkalnes Vissvētākās Jaunavas Marijas Debesīs Uzņemšanas baznīca",
-      "place_type": "basilica",
+      "place_type": "church",
       "country": "LV",
       "country_name": "Latvia",
       "city": "Skaistkalne, Bauska Municipality",
@@ -78,6 +78,7 @@
   "policy": [
     "Only exact Catholic church buildings matched to named OSM geometries are eligible.",
     "Never infer a Mass timetable, shrine story or approved photograph.",
-    "Preserve frozen global inventory IDs without reassignment."
+    "Preserve frozen global inventory IDs without reassignment.",
+    "Skaistkalne's documented status is a Catholic parish/pilgrimage church; no formal minor-basilica dignity asserted without a primary decree."
   ]
 }
