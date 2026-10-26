@@ -26,6 +26,8 @@ on:
       - 'tests/test_icrsp_b12_liturgical_claim_boundaries.py'
       - 'data/source-text/icrsp-france-b13-patristic-loci-crossbranch-handoff.v1.json'
       - 'tests/test_icrsp_b13_patristic_handoff.py'
+      - 'data/source-text/icrsp-france-b14-gueranger-aphrahat-source-claims.v1.json'
+      - 'tests/test_icrsp_b14_source_claims.py'
   workflow_dispatch:
 
 permissions:
@@ -51,3 +53,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b11_51_content_owner_handoff.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b12_liturgical_claim_boundaries.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b13_patristic_handoff.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b14_source_claims.py' -v
