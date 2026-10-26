@@ -63,5 +63,13 @@ assert.equal(review1962PrefaceForCalendarDay(sample("2026-04-03","tempora:Quad6-
 assert.equal(review1962PrefaceForCalendarDay(sample("2026-10-26",":feria:4:w",4,"Green","Communis",{riteProfile:"votive_mass"})).status,"WITHHELD");
 assert.equal(review1962PrefaceForCalendarDay(sample("2026-01-08",":feria:4:w",4,"White","Communis")).status,"UNMAPPED",
   "Generic feria in another season cannot inherit October's Common Preface");
+assert.equal(review1962PrefaceForCalendarDay(sample("2026-10-07","sancti:10-07:2:w",1,"White","de Beata Maria Virgine")).status,
+ "WITHHELD","Principal rank must match canonical source identity");
+assert.equal(review1962PrefaceForCalendarDay(sample("2026-02-31","sancti:02-02:2:w",2,"White","de Nativitate Domini")).status,
+ "WITHHELD","Impossible civil date must not be accepted");
+const placeholder=sample("2026-10-07","sancti:10-07:2:w",2,"White","de Beata Maria Virgine");
+placeholder.proper.data.preface.fr="@unresolved";
+assert.equal(review1962PrefaceForCalendarDay(placeholder).status,"TRANSLATIONS_INCOMPLETE",
+ "Unresolved source marker must not count as a translated Preface");
 assert.equal(classify1962PrefaceHeading("de sacratíssimo Cordis Jesu"),"COR_IESU");
 console.log("PASS 1962 Preface source audit: owner, principal Mass, category, trilingual, regional exclusion, conflict, exceptions");
