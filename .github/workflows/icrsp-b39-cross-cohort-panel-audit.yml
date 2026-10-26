@@ -5,6 +5,8 @@ on:
       - governance/icrsp-source-inventory-1665
     paths:
       - '.github/workflows/icrsp-b39-cross-cohort-panel-audit.yml'
+      - 'tools/icrsp/audit_b39_cross_cohort_panels.py'
+      - 'tests/test_icrsp_b39_2919_cross_cohort_panel_audit.py'
   workflow_dispatch:
 
 permissions:
