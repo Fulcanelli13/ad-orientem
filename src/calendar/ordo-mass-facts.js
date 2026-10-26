@@ -3,6 +3,7 @@
 import {inspect1962PrefaceSelection} from "../mass/1962-preface-decision.js";
 import {calendarMassColour} from "./colour-projection.js";
 import {observedCommemorationLabels} from "./observed-commemoration-labels.js";
+import {review1962OrdinaryForCalendarDay} from "./ordo-1962-ordinary-rule-review.js";
 
 export const ORDO_MASS_FACTS_VERSION="ao-calendar-ordo-mass-facts-v1";
 const str=value=>typeof value==="string"?value.trim():"";
@@ -79,7 +80,24 @@ export function calendarOrdoMassFacts(resolution,{language="en"}={}){
       Object.freeze({status:"SOURCE_CONFLICT",heading:null}):
       decision.status==="MISSING_PREFACE"?
         Object.freeze({status:"MISSING",heading:null}):noStatus;
-  const flags=certifiedOrdinaryFlags(proper,principalId,date);
+  const selectedFlags=certifiedOrdinaryFlags(proper,principalId,date);
+  const ruleReview=review1962OrdinaryForCalendarDay(resolution);
+  // An explicit Proper-owner certification outranks a general summary, but
+  // an authentic universal *contradiction* (e.g. violet + Gloria) blocks
+  // publishing either flag until source owners reconcile the evidence.
+  const choose=(rubric,selected)=>{
+    const rule=ruleReview[rubric];
+    if(rule?.status==="RULE_SUPPORTED"&&typeof selected==="boolean"&&
+       selected!==rule.value)return Object.freeze({value:null,status:"SOURCE_CONFLICT",
+         sourceUrl:rule.sourceUrl,clause:rule.clause});
+    if(typeof selected==="boolean")return Object.freeze({value:selected,status:"PROPER_CERTIFIED"});
+    if(rule?.status==="RULE_SUPPORTED")return Object.freeze({
+      value:rule.value,status:"GENERAL_RULE_ATTESTED",sourceUrl:rule.sourceUrl,clause:rule.clause
+    });
+    return Object.freeze({value:null,status:"WITHHELD"});
+  };
+  const gloria=choose("gloria",selectedFlags.gloria);
+  const credo=choose("credo",selectedFlags.credo);
   const lang=String(language).toLowerCase().startsWith("fr")?"fr":"en";
   const commemorations=observedCommemorationLabels(resolution,{language:lang})
     .map(c=>c.name);
@@ -88,7 +106,8 @@ export function calendarOrdoMassFacts(resolution,{language="en"}={}){
     date,principalId,sourcePath:path,
     // No unreviewed inherited Sunday or alternative labels.
     introitIncipit:latinIntroitIncipit(proper.introit),
-    preface,gloria:flags.gloria,credo:flags.credo,
+    preface,gloria:gloria.value,credo:credo.value,
+    ordinaryRubricEvidence:Object.freeze({gloria,credo}),
     massColour:str(calendarMassColour(resolution))||null,
     commemorations:Object.freeze(commemorations),
     commemorationsApplyToChosenForm:null,
