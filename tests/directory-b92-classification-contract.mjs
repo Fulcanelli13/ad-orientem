@@ -13,6 +13,18 @@ assert.equal(audit.counts.una_cum_source_assertions_direct,0);
 assert.equal(audit.counts.mapped_source_alias_ids,5);
 assert.equal(audit.counts.timetable_rows_unchanged,4681);
 assert.equal(audit.four_literal_missal_leads.length,4);
+const status=JSON.parse(readFileSync("data/directory/status-assertions.v1.json","utf8"));
+assert.equal(status.communityProfiles.length,4);
+assert.deepEqual(new Set(status.communityProfiles.map(x=>x.communityId)),
+  new Set(["SSPX","FSSP","ICKSP","IBP"]));
+assert.equal(audit.existing_community_level_registry.community_profiles_total,4);
+for(const profile of status.communityProfiles){
+  assert.ok(profile.communionProfile.evidence_source_ids.length>0);
+  if(profile.communityId==="SSPX")assert.equal(profile.communionProfile.pope_named_in_canon,"YES");
+  else assert.equal(profile.communionProfile.pope_named_in_canon,"UNKNOWN");
+}
+// Community policy is contextual evidence, not a site/celebration Una Cum override.
+assert.equal(audit.counts.una_cum_source_assertions_direct,0);
 assert.equal(new Set(audit.four_literal_missal_leads.map(r=>r.source_id)).size,4);
 
 const unknown=unknownResearchClassification({source_label:"Una Voce / diocesan coetus"});
