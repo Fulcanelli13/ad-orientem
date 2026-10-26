@@ -12,6 +12,8 @@ on:
       - "tests/calendar-living-traditional-future-years.mjs"
       - "data/calendar/1962-year-independent-checks-*.json"
       - "tests/calendar-1962-full-year-audit.mjs"
+      - "src/calendar/ordo-1962-preface-review.js"
+      - "tests/calendar-ordo-1962-preface-review.mjs"
       - ".github/workflows/calendar-1962-year-audit.yml"
   workflow_dispatch:
 
@@ -31,6 +33,8 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm run test:calendar
       - run: npx playwright install --with-deps chromium
+      - name: Strict source-bound 1962 Preface category review
+        run: node tests/calendar-ordo-1962-preface-review.mjs
       - name: Exhaustive 2026 production resolver sweep and independent checkpoints
         run: node tests/calendar-1962-full-year-audit.mjs
       - name: Reconcile living saints against every 2026 production day
@@ -44,6 +48,7 @@ jobs:
           name: calendar-1962-2026-audit
           path: |
             artifacts/calendar-oracle/1962-2026-full-year-audit.json
+            artifacts/calendar-oracle/1962-2026-preface-review.json
             artifacts/calendar-oracle/living-traditional-2026-reconciliation.json
             artifacts/calendar-oracle/living-traditional-future-year-audit.json
           if-no-files-found: warn
