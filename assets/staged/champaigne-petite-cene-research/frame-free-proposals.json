@@ -4,7 +4,8 @@
   "photo_has_physical_frame": true,
   "proposal_A": "Likely includes most/all canvas; corner precision still requires manual checking",
   "proposal_B": "Slightly inset diagnostic, faint frame trace may remain",
-  "proposal_C": "Manual refinement aims to remove physical frame entirely while retaining visible painted surface. Still requires final edge and museum reference review.",
+  "proposal_C": "Previous candidate still showed 1-8 px gilded physical frame at very bottom in native 100 percent pixel strip; NOT acceptable.",
+  "proposal_D": "Adjust lower boundary inward 12 pixels to remove residual gold physical frame. Human review MUST confirm none of the last row of genuine painted floor is lost.",
   "camera_geometry_corrected_with_interpolation": true,
   "color_reference_checked": false,
   "app_asset_promotion": false,
@@ -113,6 +114,43 @@
       "original_saved": "assets/staged/champaigne-petite-cene-research/tangopaso-museum-original.jpg",
       "derivative_research_only": "assets/staged/champaigne-petite-cene-research/C-canvas-interior-clean-ungraded-source-derived.jpg",
       "preview_path": "assets/staged/champaigne-petite-cene-research/C-canvas-interior-clean-full-preview.jpg",
+      "untouched_painting_source_retained": true,
+      "perspective_only_sampling": true,
+      "colour_tone_grading": false,
+      "synthetic_fill": false,
+      "ai_detail_enhancement": false,
+      "human_painted_bounds_and_full_composition_verified": false,
+      "production_release_approved": false
+    },
+    {
+      "candidate": "D-bottom-frame-trim-review",
+      "quad_source_pixels": {
+        "tl": [
+          274,
+          456
+        ],
+        "bl": [
+          272,
+          1642
+        ],
+        "br": [
+          2535,
+          1643
+        ],
+        "tr": [
+          2534,
+          454
+        ]
+      },
+      "target_size": [
+        2250,
+        1208
+      ],
+      "master_original_sha256": "3fce64afc767c16b803fd250e685f3a64caedb7e474380d3afeca68d84331942",
+      "derivative_sha256": "f0742b795178e1a600e43694693f880a07039587b74ba6f352ccbf389919cb30",
+      "original_saved": "assets/staged/champaigne-petite-cene-research/tangopaso-museum-original.jpg",
+      "derivative_research_only": "assets/staged/champaigne-petite-cene-research/D-bottom-frame-trim-review-ungraded-source-derived.jpg",
+      "preview_path": "assets/staged/champaigne-petite-cene-research/D-bottom-frame-trim-review-full-preview.jpg",
       "untouched_painting_source_retained": true,
       "perspective_only_sampling": true,
       "colour_tone_grading": false,
