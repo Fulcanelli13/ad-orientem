@@ -1,0 +1,366 @@
+{
+  "schema": "ao-1962-palm-full-verse-research-candidates-v1",
+  "batch": 17,
+  "date": "2026-10-26",
+  "status": "SIXTEEN_SECONDARY_COMPLETE_VERSE_CANDIDATES_UNAPPROVED_FOR_PRINT_AND_NOTATION",
+  "stage": "PALM-R02",
+  "purpose": "Transcribe possible full Textus novus Palm-distribution verses with visible midverse stars without confusing a mediant marker with full Psalm-tone pointing. Not Mass reader or Schola release.",
+  "source": {
+    "digitalCandidate": {
+      "name": "Rímsky misál latinsko-slovenský Palm Sunday Latin text",
+      "url": "https://misal.tradi.sk/omsovy-poriadok/menlive-casti/zaznam-zobrazenie/176",
+      "tier": "SECONDARY_TEXT_CANDIDATES_ONLY",
+      "excludedErrors": [
+        "Digital header says Psalm 22 rather than Psalm 23",
+        "Stray semicolon after omnis in Psalm 46 line 7"
+      ]
+    },
+    "primaryRoman1962": {
+      "name": "Missale Romanum 1962",
+      "printedPages": [
+        131,
+        132
+      ],
+      "images": [
+        "https://gregobase.selapa.net/sources/42/213.png",
+        "https://gregobase.selapa.net/sources/42/214.png"
+      ],
+      "existingResearchRecord": "data/research/processionale-palm-1962-primary-facsimile-20261026.v1.json",
+      "thisBatch": "UNABLE_TO_REOPEN_PRIMARY_PAGE_IMAGES_FOR_COMPLETE_VERSE_CHECK",
+      "owner": "#894"
+    },
+    "restoredRoman1961": {
+      "name": "Graduale Romanum 1961 Textus novus appendix",
+      "pageLabels": [
+        "143**",
+        "144**"
+      ],
+      "images": [
+        "https://gregobase.selapa.net/sources/2/1179.png",
+        "https://gregobase.selapa.net/sources/2/1180.png"
+      ],
+      "role": "PSALM_TONE_AND_NEUME_COMPARISON_PENDING",
+      "owner": "PR #1749"
+    },
+    "excludedAncient": {
+      "name": "ICRSP France Palm Sunday online old-text display",
+      "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0593_ancien",
+      "explicitLabel": "Textus antiquus",
+      "readings": [
+        "Omnes gentes",
+        "Elegit nobis hereditatem suam",
+        "Domini est terra, et plenitudo eius"
+      ],
+      "policy": "NOT_A_WITNESS_TO_RESTORED_TEXTUS_NOVUS_WORDING"
+    }
+  },
+  "psalms": [
+    {
+      "psalm": 23,
+      "antiphon": "PUERI_HEBRAEORUM_PORTANTES",
+      "liturgicalNumbers": [
+        1,
+        2,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "lines": [
+        {
+          "liturgicalLine": 1,
+          "biblicalVerse": 1,
+          "firstHemistich": "Domini est terra et quae replent eam",
+          "secondHemistich": "orbis terrarum et qui habitant in eo.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 2,
+          "biblicalVerse": 2,
+          "firstHemistich": "Nam ipse super maria fundavit eum",
+          "secondHemistich": "et super flumina firmavit eum.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 7,
+          "biblicalVerse": 7,
+          "firstHemistich": "Attollite, portae, capita vestra, et attollite vos, fores antiquae",
+          "secondHemistich": "ut ingrediatur rex gloriae!",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 8,
+          "biblicalVerse": 8,
+          "firstHemistich": "Quis est iste rex gloriae?",
+          "secondHemistich": "Dominus fortis et potens, Dominus potens in proelio.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 9,
+          "biblicalVerse": 9,
+          "firstHemistich": "Attollite, portae, capita vestra, et attollite vos, fores antiquae",
+          "secondHemistich": "ut ingrediatur rex gloriae!",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 10,
+          "biblicalVerse": 10,
+          "firstHemistich": "Quis est iste rex gloriae?",
+          "secondHemistich": "Dominus exercituum: ipse est rex gloriae.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        }
+      ]
+    },
+    {
+      "psalm": 46,
+      "antiphon": "PUERI_HEBRAEORUM_VESTIMENTA",
+      "liturgicalNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "biblicalNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        9
+      ],
+      "pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "lines": [
+        {
+          "liturgicalLine": 1,
+          "biblicalVerse": 1,
+          "firstHemistich": "Omnes populi plaudite manibus",
+          "secondHemistich": "exsultate Deo voce laetitiae.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 2,
+          "biblicalVerse": 2,
+          "firstHemistich": "Quoniam Dominus excelsus, terribilis",
+          "secondHemistich": "rex magnus super omnem terram.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 3,
+          "biblicalVerse": 3,
+          "firstHemistich": "Subicit populos nobis",
+          "secondHemistich": "et nationes pedibus nostris.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 4,
+          "biblicalVerse": 4,
+          "firstHemistich": "Eligit nobis hereditatem nostram",
+          "secondHemistich": "gloriam Jacob, quem diligit.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 5,
+          "biblicalVerse": 5,
+          "firstHemistich": "Ascendit Deus cum exsultatione",
+          "secondHemistich": "Dominus cum voce tubae.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 6,
+          "biblicalVerse": 6,
+          "firstHemistich": "Psallite Deo, psallite",
+          "secondHemistich": "psallite regi nostro, psallite.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 7,
+          "biblicalVerse": 7,
+          "firstHemistich": "Quoniam rex omnis terrae est Deus",
+          "secondHemistich": "psallite hymnum.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 8,
+          "biblicalVerse": 8,
+          "firstHemistich": "Deus regnat super nationes",
+          "secondHemistich": "Deus sedet super solium sanctum suum.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 9,
+          "biblicalVerse": 9,
+          "firstHemistich": "Principes populorum congregati sunt",
+          "secondHemistich": "cum populo Dei Abraham.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        },
+        {
+          "liturgicalLine": 10,
+          "biblicalVerse": 9,
+          "firstHemistich": "Nam Dei sunt proceres terrae:",
+          "secondHemistich": "excelsus est valde.",
+          "mediantSeparator": "*",
+          "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
+          "completeVerseCandidate": true,
+          "facsimileConfirmedInThisBatch": false,
+          "pointedPsalmToneCertified": false
+        }
+      ]
+    }
+  ],
+  "variantHolds": [
+    {
+      "psalm": 23,
+      "lines": [
+        7,
+        9
+      ],
+      "candidate": "fores antiquae",
+      "otherDigitizedWitness": "portae antique",
+      "disposition": "HOLD_UNTIL_1962_PRINTED_IMAGE_COLLATION"
+    },
+    {
+      "psalm": 46,
+      "line": 3,
+      "candidate": "Subicit populos nobis",
+      "disposition": "BATCH16_INCIPIT_CORRECTION_RETAINED"
+    },
+    {
+      "psalm": 46,
+      "line": 4,
+      "candidate": "Eligit nobis hereditatem nostram",
+      "disposition": "BATCH16_INCIPIT_CORRECTION_RETAINED"
+    }
+  ],
+  "repeatRules": {
+    "antiphonAfterEachPair": true,
+    "distributionLengthFlexible": true,
+    "finishWithGloriaPatriAndAntiphon": true,
+    "noFixedAudioClock": true,
+    "doxologyCompleteUnderlay": "NOT_APPROVED"
+  },
+  "terminology": {
+    "mediantSeparator": "Candidate textual half-verse asterisk only; not a complete psalm-tone recitation, accent, termination or neume-to-syllable setting."
+  },
+  "promotion": {
+    "candidateWholeVerses": 16,
+    "verifiedLatinFullVersesBy1962Owner": 0,
+    "primaryAsteriskPositionsIndependentlyCheckedThisBatch": 0,
+    "completeMusicalPointingVerified": 0,
+    "neumeUnderlayCertified": 0,
+    "productionScoresAssigned": 0,
+    "publicationAllowed": false
+  },
+  "remaining": [
+    "#894 compare all 16 complete texts, asterisks and punctuation against Vatican 1962 pp131–132",
+    "Resolve Psalm 23 fores/portae and accent issues against printed source, not secondary OCR",
+    "#1749 compare Psalm tones and individual neumes against Graduale 1961 pp143**–144**",
+    "Keep quarantined #19316 until actual 'Omnes populi' underlay review",
+    "Never convert sung-line number 10 into a tenth biblical Psalm 46 verse"
+  ],
+  "noNewReaderOrScholaOwner": true
+}
