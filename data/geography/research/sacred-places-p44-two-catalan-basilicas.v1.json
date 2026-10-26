@@ -1,0 +1,88 @@
+{
+  "schema": "AO_SACRED_PLACES_P44_TWO_CATALAN_BASILICAS_V1",
+  "date": "2026-10-26",
+  "status": "PROPOSED_CANONICAL_RELEASE_PENDING_CI_MERGE",
+  "baseline": {
+    "places": 498,
+    "sources": 796,
+    "crosswalk": 498,
+    "unlinked": 239,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 500,
+    "sources": 798,
+    "crosswalk": 500,
+    "unlinked": 241,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "new_physical_locations": 2,
+  "new_mapping_rows_resolved": 2,
+  "new_candidate_ids_resolved": 2,
+  "remaining_open_mapping_queue_after_release": 33,
+  "global_canonical_links_after_release": 125,
+  "global_unresolved_after_release": 375,
+  "new_geo_areas": [],
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "source_owners": [
+    "Official Núria sanctuary service and Basilica Santuari del Sant Crist custodial website",
+    "Independently named Catholic church OSM ways as displayed by Mapcarta",
+    "P43 mapping queue with candidate IDs SG-INV-0115 and SG-INV-0132"
+  ],
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0115",
+      "place_id": "place:ES:p44-sg-0115-1051808405",
+      "name": "Basílica de la Mare de Déu de Núria",
+      "place_type": "basilica",
+      "country": "ES",
+      "country_name": "Spain",
+      "city": "Queralbs, Girona",
+      "lat": 42.39722,
+      "lng": 2.15344,
+      "geo_source_ref": "osm:way:1051808405",
+      "geo_source_url": "https://www.openstreetmap.org/way/1051808405",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W1051808405",
+      "identity_source_url": "https://pirineu365.cat/en/valldenuria/resort/sanctuary/",
+      "identity_source_issuer": "Vall de Núria official sanctuary visitor service",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Only the named Catholic basilica, not the separate Ermita de Sant Gil, resort accommodation or the whole valley",
+      "precision": "site",
+      "source_ids": [
+        "AO-P44-SITE-SG-INV-0115-1051808405"
+      ],
+      "mapping_method": "P44_CUSTODIAN_AND_NAMED_OSM_WAY"
+    },
+    {
+      "candidate_id": "SG-INV-0132",
+      "place_id": "place:ES:p44-sg-0132-1241117725",
+      "name": "Basílica del Sant Crist de Balaguer",
+      "place_type": "basilica",
+      "country": "ES",
+      "country_name": "Spain",
+      "city": "Balaguer, Lleida",
+      "lat": 41.79568,
+      "lng": 0.80608,
+      "geo_source_ref": "osm:way:1241117725",
+      "geo_source_url": "https://www.openstreetmap.org/way/1241117725",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W1241117725",
+      "identity_source_url": "https://www.santcristbalaguer.com/el-santuari/",
+      "identity_source_issuer": "Basílica Santuari del Sant Crist de Balaguer Catholic custodian",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "The named minor basilica building, not adjacent Santa Maria d’Almatà or the Poor Clares convent",
+      "precision": "site",
+      "source_ids": [
+        "AO-P44-SITE-SG-INV-0132-1241117725"
+      ],
+      "mapping_method": "P44_CUSTODIAN_AND_NAMED_OSM_WAY"
+    }
+  ],
+  "policy": [
+    "No inferred TLM schedules, pilgrimage dates, new shrine recognition, gallery or calendar bindings.",
+    "Pin basilica buildings rather than surrounding complex or adjacent churches.",
+    "Older P43 global-500 reconciliation remains immutable; current counts are derived from frozen P43 plus the two new candidate IDs."
+  ]
+}
