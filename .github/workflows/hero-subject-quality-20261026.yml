@@ -1,0 +1,48 @@
+name: Original-subject research details — branch-scoped permanent archive
+on:
+  push:
+    branches:
+      - research/module-hero-pd-masters-20261026
+    paths:
+      - .github/workflows/hero-subject-quality-20261026.yml
+      - assets/staged/module-hero-masters/**
+permissions:
+  contents: write
+jobs:
+  preserve-source-details:
+    if: github.ref == 'refs/heads/research/module-hero-pd-masters-20261026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/module-hero-pd-masters-20261026
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Generate original-resolution detail crops on the existing permanent research branch
+        run: |
+          git fetch --depth=1 origin main
+          git show FETCH_HEAD:scripts/art/make-subject-specific-hero-details.py >/tmp/subject-details.py
+          python /tmp/subject-details.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("assets/staged/module-hero-subject-details/subject-detail-manifest.json")
+          rows=json.loads(p.read_text())
+          if not rows or not all(r.get("native_pixels_no_rescaling") is True for r in rows):
+              raise SystemExit("Original-source native pixel extraction failed")
+          if not all(Path(r["preview"]).is_file() for r in rows):
+              raise SystemExit("Expected native-pixel crop not present")
+          print("Generated research detail crops for permanent archive:",len(rows))
+          PY
+          git add -f assets/staged/module-hero-subject-details/
+          if git diff --cached --quiet; then
+            echo "Permanent research branch already contains these checked details."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "research(art): preserve source-pixel subject details"
+          git push origin HEAD:refs/heads/research/module-hero-pd-masters-20261026
