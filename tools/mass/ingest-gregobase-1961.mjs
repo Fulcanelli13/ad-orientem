@@ -137,6 +137,29 @@ function main(){
  console.log("AO_GREGORIAN_MANIFEST="+JSON.stringify(manifest));
  const limit=Math.min(index.records.length,Math.max(0,Number(get("--print-rows")||0)));
  for(const row of index.records.slice(0,limit))console.log("AO_GREGORIAN_ROW="+JSON.stringify(row));
+ // Transport-only fallback when Github Actions cannot push generated files.
+ // Emit short checksum-addressed chunks for a client-side, independently
+ // verified replay into the permanent research branch via the GitHub App.
+ // Do not mistake the ephemeral runner log for permanent storage.
+ if(get("--emit-shard-checkpoints")==="1"){
+  for(const shard of shards){
+   const json=JSON.stringify(shard)+"\\n";
+   const bytes=Buffer.from(json,"utf8");
+   const sha256=createHash("sha256").update(bytes).digest("hex");
+   const encoded=bytes.toString("base64");
+   const width=3000,total=Math.ceil(encoded.length/width);
+   console.log("AO_CHANT_CHECKPOINT_META="+JSON.stringify({
+    shard:shard.index,total:shards.length,sha256,bytes:bytes.length,parts:total,
+    file:manifest.shards[shard.index-1].file,
+   }));
+   for(let k=0;k<total;k++){
+    console.log("AO_CHANT_CHECKPOINT_PART="+JSON.stringify({
+     shard:shard.index,part:k+1,total,data:encoded.slice(k*width,(k+1)*width),
+    }));
+   }
+  }
+ }
+
  console.log("AO_GREGORIAN_RESULT="+JSON.stringify({discovered:index.records.length,shards:shards.length,approved:0}));
 }
 if(process.argv[1]&&fileURLToPath(import.meta.url)===resolve(process.argv[1]))main();
