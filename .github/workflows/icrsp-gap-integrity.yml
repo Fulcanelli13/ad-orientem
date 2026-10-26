@@ -84,6 +84,11 @@ on:
       - 'tests/test_icrsp_b28_eight_stream_363_unique_and_b21_160.py'
       - 'data/source-text/icrsp-france-b28-last62-complete-selected-excerpt-review.v1.json'
       - 'tests/test_icrsp_b28_160_selected_excerpt_completion.py'
+      - 'data/source-text/icrsp-france-b29-unread81-and-fresh200-handoff.v1.json'
+      - 'tools/icrsp/plan_b29_fresh_200.py'
+      - 'tools/icrsp/scan_b29_fresh_200.py'
+      - 'tools/icrsp/consolidate_b29_fresh_200.py'
+      - 'tests/test_icrsp_b29_363_81_200_nonoverlap.py'
   workflow_dispatch:
 
 permissions:
@@ -133,3 +138,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b27_reconciled_109_and_28_reviewed.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b28_eight_stream_363_unique_and_b21_160.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b28_160_selected_excerpt_completion.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b29_363_81_200_nonoverlap.py' -v
