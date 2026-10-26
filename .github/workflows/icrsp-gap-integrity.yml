@@ -33,6 +33,8 @@ on:
       - 'tests/test_icrsp_b14_fromage_personal_authorship.py'
       - 'data/source-text/icrsp-france-b15-original-language-and-print-evidence.v1.json'
       - 'tests/test_icrsp_b15_original_language_evidence.py'
+      - 'data/source-text/icrsp-france-b16-fromage-six-sunday-passage-crosscheck.v1.json'
+      - 'tests/test_icrsp_b16_fromage_six_sunday_passages.py'
   workflow_dispatch:
 
 permissions:
@@ -61,3 +63,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b14_source_claims.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b14_fromage_personal_authorship.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b15_original_language_evidence.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b16_fromage_six_sunday_passages.py' -v
