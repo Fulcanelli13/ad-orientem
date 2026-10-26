@@ -8,7 +8,6 @@ const tidy=s=>String(s??"").trim();
 const searchKey=s=>tidy(s).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 function providerGroup(affiliation,group){
   if(group==="SSPX")return "SSPX";
-  if(group==="UNKNOWN")return "OTHER";
   const x=tidy(affiliation).toUpperCase();
   if(x==="FSSP"||x==="ICKSP"||x==="IBP"||x==="AASJMV")return x;
   if(x.startsWith("DIOCESAN"))return "DIOCESAN";
