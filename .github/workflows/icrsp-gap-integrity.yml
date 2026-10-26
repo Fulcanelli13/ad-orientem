@@ -51,6 +51,8 @@ on:
       - 'data/source-text/icrsp-france-corpus-coverage-20261026.v1.json'
       - 'data/source-text/icrsp-france-next250-metadata-reading-queue.v1.json'
       - 'tests/test_icrsp_durable_855_783_250_coverage.py'
+      - 'data/source-text/icrsp-france-b22-relevance-exceptions-and-existing-owner-editorial-drafts.v1.json'
+      - 'tests/test_icrsp_b22_relevance_and_quarantine.py'
   workflow_dispatch:
 
 permissions:
@@ -86,3 +88,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b19_signed_preface_edition_boundaries.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b20_source_content_selection.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_durable_855_783_250_coverage.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b22_relevance_and_quarantine.py' -v
