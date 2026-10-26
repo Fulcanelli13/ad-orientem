@@ -46,3 +46,29 @@ The source/research approvals and Calendar releases of [#1642](https://github.co
 The [six-item staging test](../tests/calendar-customs-r18-first-six-staging.mjs) enforces: exactly six keyed working identities, 35 existing published cards unchanged, complete eight-field EN/FR text pairs, no release signoffs, no runtime staging import, no calendar triggers/recurrences, no canonical IDs, distinct description/history, and continued preservation of the inaccessible Dúchas witness plus the accessible National Museum source.
 
 All six have `publication_allowed=false`; the PR must remain draft until specifically reviewed. No merge or Calendar publication is authorized by merely completing these preparation tasks.
+
+
+## Implemented in the canonical Calendar recommendation API (review-only)
+
+The actual `src/calendar/customs-read-model.js` now exposes `calendarR18ReviewRecommendations`, and its existing `calendarCustomRecommendations` accepts an **explicitly supplied** optional `r18Review` object. This does **not** change default Calendar behaviour, the canonical article map, the all-traditions catalogue or the yearly customs view.
+
+For development/reviewer inspection (Node 22 or browsers supporting JSON import attributes), call:
+
+```js
+import pack from "./src/calendar/customs-r18-first-six-staging.v1.json" with { type: "json" };
+import {calendarCustomRecommendations} from "./src/calendar/customs-read-model.js";
+
+const dayCards = calendarCustomRecommendations("2026-12-24", {
+  r18Review: {
+    enabled: true,
+    regionCode: "PL", // explicit editorial selection, not geolocation
+    candidates: pack.records
+  }
+});
+```
+
+The resulting collection preserves the published articles and appends a clearly flagged **`previewOnly:true`** article for the Polish hay custom. Its ID is `REVIEW:CUST-XMAS-POLISH-HAY`: an ephemeral review ID, **not** an assigned canonical ID. A reviewer may pass `PL`, `IE`, `AT`, `FR-PROVENCE` or `ES`. Dates are matched to explicit mm-dd hints, and night spans require exact calendar days (5/6 January, 24/25 December). Unselected, missing and unrelated regions return **no** research suggestions. No location is guessed from the user's IP or device, and no local event time is generated.
+
+**Production remains unchanged.** `calendar-runtime.js` does not pass a `r18Review` argument; `src/calendar/customs-read-model.js` does not import the staging JSON; `calendarCustomArticleIds()` continues to expose only 35 approved identifiers. `calendarR18ReviewRecommendations` rejects any candidate with a changed editorial status, claimed canonical ID, signoff, auto date trigger, event recurrence, missing bilingual prose or mismatched review key. The behaviour is verified with [`tests/calendar-customs-r18-region-preview.mjs`](../tests/calendar-customs-r18-region-preview.mjs).
+
+**Still needed for public release:** record distinct-identity approval, inspect English and French final wording, resolve source caveats, approve local/region visibility as a product behaviour, assign canonical IDs, and separately activate those articles in the current live Calendar read model. The programmatic review mode is not a substitute for any of these decisions.
