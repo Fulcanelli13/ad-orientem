@@ -153,6 +153,7 @@ try{
       if(CHAMPAIGNE_TEST_ONLY)assert.deepEqual(actual.natural,[2250,1208],
         "Real Home component must load actual frame-free D photograph");
       assert.ok(actual.parentWidth<=width+2,date+" Home hero must fit viewport");
+      assert.ok(actual.pageWidth<=width+2,date+" Home horizontal page overflow: "+actual.pageWidth+"px at "+width+"px");
       await home.screenshot({path:resolve(out,"home-hero-"+date+"-"+width+".png")});
       // Real Calendar surface, but ephemeral simulated rights approval only.
       const calReady=await page.evaluate(async({date})=>{
@@ -180,6 +181,7 @@ try{
       assert.ok(calActual.alt.includes(decision.artist)&&calActual.alt.includes(decision.title));
       assert.deepEqual(calActual.natural,actual.natural);
       assert.equal(calActual.fit,"contain");
+      assert.ok(calActual.pageWidth<=width+2,date+" Calendar horizontal page overflow: "+calActual.pageWidth+"px at "+width+"px");
       if(CHAMPAIGNE_TEST_ONLY)assert.deepEqual(calActual.natural,[2250,1208],
         "Real Calendar component must load actual frame-free D photograph");
       // Calendar can independently repaint while resolving next-week context.
