@@ -11,6 +11,7 @@ on:
       - 'src/find/preliminary-directory-r49.js'
       - 'src/find/explore-presentation.js'
       - 'tests/directory-cl27-user-classification-facets.mjs'
+      - 'tests/directory-cl27-offline-editor.mjs'
       - 'tools/directory/validate-cl27-bulk-schedule-audit.py'
       - '.github/workflows/directory-cl27-bulk-schedule-review.yml'
   push:
@@ -23,6 +24,7 @@ on:
       - 'src/find/preliminary-directory-r49.js'
       - 'src/find/explore-presentation.js'
       - 'tests/directory-cl27-user-classification-facets.mjs'
+      - 'tests/directory-cl27-offline-editor.mjs'
   workflow_dispatch:
 
 jobs:
@@ -38,6 +40,8 @@ jobs:
         run: python3 tools/directory/validate-cl27-bulk-schedule-audit.py
       - name: Test user-facing source-labelled classification selectors
         run: node tests/directory-cl27-user-classification-facets.mjs
+      - name: Test offline classification editor syntax and release guards
+        run: node tests/directory-cl27-offline-editor.mjs
       - name: Rebuild canonical research SQLite (no app publication)
         run: python3 tools/directory/rebuild-cl2-research-snapshot.py --snapshot-dir data/directory/research/cl2-unified-20261026 --output /tmp/cl27-mass-registry.sqlite
       - name: Generate classified directory with exact source joins
@@ -63,6 +67,12 @@ jobs:
           assert embedded['physical_site_classification_facets'][0]['physical_anchor_id']==data['physical_site_classification_facets'][0]['physical_anchor_id']
           print('Offline CL27 editor PASS; full 2,579 sites and 2,715 source claims embedded')
           PY
+      - name: Offer reproducible one-file review build
+        uses: actions/upload-artifact@v4
+        with:
+          name: cl27-offline-classification-review
+          path: /tmp/cl27-tlm-classification-review.html
+          retention-days: 7
       - name: Verify classification export does not turn source labels into official claims
         run: |
           python3 - <<'PY'
