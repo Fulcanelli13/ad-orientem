@@ -14,6 +14,8 @@ on:
       - 'tests/test_icrsp_b41_salesian_two_date_witness_conflicts.py'
       - 'data/source-text/icrsp-france-b42-salesian-print-source-authentication-queue.v1.json'
       - 'tests/test_icrsp_b42_salesian_print_source_queue.py'
+      - 'data/source-text/icrsp-france-b43-salesian-contextual-date-witnesses.v1.json'
+      - 'tests/test_icrsp_b43_salesian_contextual_date_witnesses.py'
   workflow_dispatch:
 
 permissions:
@@ -39,3 +41,5 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_icrsp_b41_salesian_two_date_witness_conflicts.py' -v
       - name: Check B42 printed-edition witness queue and release holds
         run: python -m unittest discover -s tests -p 'test_icrsp_b42_salesian_print_source_queue.py' -v
+      - name: Check B43 contextual chronology and editorial uncertainty
+        run: python -m unittest discover -s tests -p 'test_icrsp_b43_salesian_contextual_date_witnesses.py' -v
