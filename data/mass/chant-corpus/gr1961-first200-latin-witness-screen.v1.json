@@ -1,0 +1,205 @@
+{
+  "schema": "ao-gr1961-first200-latin-witness-screen-v1",
+  "researchOnly": true,
+  "stagedCount": 200,
+  "archiveFile": "data/mass/chant-corpus/gr1961-proper-001.json",
+  "archiveBlobSha": "6fc5b02be876f693935d9dddf549ae86e32ce8aa",
+  "latinWitnessRepository": "DivinumOfficium/divinum-officium",
+  "latinWitnessCommit": "ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+  "sourceFiles": [
+    {
+      "path": "Tempora/Adv1-0.txt",
+      "blobSha": "75b533254548cf9f93636ea3d44dca059c6896d1",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Adv2-0.txt",
+      "blobSha": "97130ff3f8e9e8471bc0b51f74558e49b93facf4",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Adv3-0.txt",
+      "blobSha": "de744967d1d6e9ae6a3ccdff81360c8b5565e873",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Adv4-0.txt",
+      "blobSha": "2b9698e67af701d12e12609e64f1d68dc52b6700",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc0-0.txt",
+      "blobSha": "1a60124f36969cce967c154ec66a6ac7f43b15e4",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc1-0.txt",
+      "blobSha": "92c5d80537dcb09b97ed567f57b47383fc3aa090",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc2-0.txt",
+      "blobSha": "56c6c4c1fb80ab7d69c5a87579533a17cf891ffb",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc3-0.txt",
+      "blobSha": "582aeed4735ae91a7ecc849392db52eef34c577a",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc4-0.txt",
+      "blobSha": "673e27a85c3b7fe2db84ef7dcf34928ec687a993",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc5-0.txt",
+      "blobSha": "fed2ed67936384674d024caa2d3c8e31193ede83",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc7-0.txt",
+      "blobSha": "64876cd8fa68f29bc86926b60bcc50e4fffa76fe",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Quad1-0.txt",
+      "blobSha": "8c1bfcc7a7ccb926f810c1d3ca41ac84f8573599",
+      "status": "READ"
+    }
+  ],
+  "candidateOccurrences": [
+    {
+      "gregobaseId": 132,
+      "officePart": "in",
+      "incipit": "Ad te levavi",
+      "properSourcePath": "Tempora/Adv1-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "75b533254548cf9f93636ea3d44dca059c6896d1",
+      "latinExcerpt": "v. Ad te levávi ánimam meam: Deus meus, in te confído, non erubéscam: neque irrídeant me inimíci mei: étenim univérsi, qui te exspéctant, non confundé",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 113,
+      "officePart": "of",
+      "incipit": "Benedixisti Domine",
+      "properSourcePath": "Tempora/Adv3-0",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "de744967d1d6e9ae6a3ccdff81360c8b5565e873",
+      "latinExcerpt": "Benedixísti, Dómine, terram tuam: avertísti captivitátem Jacob: remisísti iniquitatem plebis tuæ.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 1,
+      "officePart": "al",
+      "incipit": "Laudem Domini",
+      "properSourcePath": "Tempora/Adv4-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "2b9698e67af701d12e12609e64f1d68dc52b6700",
+      "latinExcerpt": "V. Laudem Dómini loquétur os meum: et benedícat omnis caro nomen sanctum ejus. Allelúja, allelúja,",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 210,
+      "officePart": "of",
+      "incipit": "Ave Maria (Offertorium)",
+      "properSourcePath": "Tempora/Adv4-0",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "2b9698e67af701d12e12609e64f1d68dc52b6700",
+      "latinExcerpt": "Ave, María, gratia plena; Dóminus tecum: benedícta tu in muliéribus, et benedíctus fructus ventris tui.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 25,
+      "officePart": "in",
+      "incipit": "Quasi modo",
+      "properSourcePath": "Tempora/Pasc1-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "92c5d80537dcb09b97ed567f57b47383fc3aa090",
+      "latinExcerpt": "v. Quasi modo géniti infántes, allelúja: rationábiles, sine dolo lac concupíscite, allelúja, allelúja, allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 135,
+      "officePart": "in",
+      "incipit": "Misericordia Domini",
+      "properSourcePath": "Tempora/Pasc2-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "56c6c4c1fb80ab7d69c5a87579533a17cf891ffb",
+      "latinExcerpt": "v. Misericórdia Dómini plena est terra, allelúja: verbo Dómini cœli firmáti sunt, allelúja, allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 56,
+      "officePart": "tr",
+      "incipit": "Ego sum",
+      "properSourcePath": "Tempora/Pasc2-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "56c6c4c1fb80ab7d69c5a87579533a17cf891ffb",
+      "latinExcerpt": "Ego sum pastor bonus: et cognósco oves meas, et cognóscunt me meæ. Allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 95,
+      "officePart": "co",
+      "incipit": "Ego sum pastor (cum Alleluia)",
+      "properSourcePath": "Tempora/Pasc2-0",
+      "sourceSection": "Communio",
+      "sourceBlobSha": "56c6c4c1fb80ab7d69c5a87579533a17cf891ffb",
+      "latinExcerpt": "Ego sum pastor bonus, allelúja: et cognósco oves meas, et cognóscunt me meæ, allelúja, allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 13,
+      "officePart": "in",
+      "incipit": "Omnis terra",
+      "properSourcePath": "Tempora/Pasc3-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "582aeed4735ae91a7ecc849392db52eef34c577a",
+      "latinExcerpt": "v. Jubiláte Deo, omnis terra, allelúja: psalmum dícite nómini ejus, allelúja: date glóriam laudi ejus, allelúja, allelúja, allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 42,
+      "officePart": "in",
+      "incipit": "Cantate Domino",
+      "properSourcePath": "Tempora/Pasc4-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "673e27a85c3b7fe2db84ef7dcf34928ec687a993",
+      "latinExcerpt": "v. Cantáte Dómino cánticum novum, allelúja: quia mirabília fecit Dóminus, allelúja: ante conspéctum géntium revelávit justítiam suam, allelúja, allelú",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 13,
+      "officePart": "in",
+      "incipit": "Omnis terra",
+      "properSourcePath": "Tempora/Pasc5-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "fed2ed67936384674d024caa2d3c8e31193ede83",
+      "latinExcerpt": "Jubiláte Deo, omnis terra, psalmum dícite nómini ejus: date glóriam laudi ejus.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 99,
+      "officePart": "al",
+      "incipit": "Emitte Spiritum",
+      "properSourcePath": "Tempora/Pasc7-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "64876cd8fa68f29bc86926b60bcc50e4fffa76fe",
+      "latinExcerpt": "Emítte Spíritum tuum, et creabúntur, et renovábis fáciem terræ. Allelúja. (Hic genuflectitur)",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 181,
+      "officePart": "al",
+      "incipit": "Veni Sancte Spiritus",
+      "properSourcePath": "Tempora/Pasc7-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "64876cd8fa68f29bc86926b60bcc50e4fffa76fe",
+      "latinExcerpt": "V. Veni, Sancte Spíritus, reple tuórum corda fidélium: et tui amóris in eis ignem accénde.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    }
+  ],
+  "productionApproved": 0,
+  "note": "All remaining records are unassessed against other 1962 Proper sources. An occurrence is not a verified liturgical match."
+}
