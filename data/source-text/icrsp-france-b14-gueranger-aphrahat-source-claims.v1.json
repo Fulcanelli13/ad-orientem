@@ -1,0 +1,183 @@
+{
+  "schema": "AO_ICRSP_B14_GUERANGER_APHRAHAT_SOURCE_TEXT_PAIRING_V1",
+  "asOf": "2026-10-26",
+  "issue": 1665,
+  "productionChanged": false,
+  "sourceB13": "data/source-text/icrsp-france-b13-patristic-loci-crossbranch-handoff.v1.json",
+  "witnessedGuerangerEdition": {
+    "work": "L'Année liturgique — Le Carême",
+    "edition": "16e, H. Oudin, 1903",
+    "titlePageUrl": "https://www.domgueranger.net/lannee-liturgique-le-careme-historique-mystique-pratique-prieres/",
+    "crossSiteTextUrl": "https://www.domgueranger.net/lannee-liturgique-le-careme-propre-du-temps/?lang=en",
+    "icrspHost": "https://icrspfrance.fr/textes-liturgiques.php",
+    "printedOriginalImagesInspected": false,
+    "sharedTranscriptionDonorCannotBeExcluded": true
+  },
+  "scannedEditionCaution": {
+    "url": "https://archive.org/details/lanneliturgiqu05gu",
+    "listedYear": 1911,
+    "not1903": true,
+    "originalPdfPageInspectSucceeded": false
+  },
+  "rows": [
+    {
+      "id": "B14-NAA",
+      "article": "a0191_ancien",
+      "b12": [
+        "ICRSP-B12-CLM-001",
+        "ICRSP-B12-CLM-002"
+      ],
+      "path": "Tempora/Quad3-1",
+      "interpretation": "Guéranger reads Naaman's Jordan washing as a figure of baptism",
+      "gu": "LE LUNDI DE LA TROISIÈME SEMAINE DE CARÊME / LEÇON / paragraph after lesson",
+      "patristic": "Ambrose De mysteriis III.16–17 (previous B13)",
+      "relationship": "COMMENTARY_BAPTISMAL_TYPOLOGY_NOT_DIRECT_LUKE4_QUOTE",
+      "icrspUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien",
+      "guerangerWebUrl": "https://www.domgueranger.net/lannee-liturgique-le-careme-propre-du-temps/?lang=en",
+      "correspondingFrenchCommentaryWordingLocatedOnBothWebpages": true,
+      "original1903PrintedParagraphCollated": false,
+      "approvedPublication": false,
+      "rightsCleared": false,
+      "fullyReconciledToExistingCompendium": false
+    },
+    {
+      "id": "B14-SUS",
+      "article": "a0198_ancien",
+      "b12": [
+        "ICRSP-B12-CLM-003",
+        "ICRSP-B12-CLM-004"
+      ],
+      "path": "Tempora/Quad3-6",
+      "interpretation": "Guéranger contrasts justice toward innocent Susanna and mercy to the woman in John 8, then calls Susanna a type of the Church",
+      "gu": "LE SAMEDI DE LA TROISIÈME SEMAINE DE CARÊME / LEÇON / footnote 56",
+      "patristic": "Traditionally Hippolytus In Danielem I.15.5–6 (B13)",
+      "historicalCitation": "In Danielem, pag. 27. Edit. Fabricii.",
+      "relationship": "AUTHORIAL_CHURCH_TYPOLOGY_DISTINCT_FROM_JOHN8_PAIRING",
+      "icrspUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0198_ancien",
+      "guerangerWebUrl": "https://www.domgueranger.net/lannee-liturgique-le-careme-propre-du-temps/?lang=en",
+      "correspondingFrenchCommentaryWordingLocatedOnBothWebpages": true,
+      "original1903PrintedParagraphCollated": false,
+      "approvedPublication": false,
+      "rightsCleared": false,
+      "fullyReconciledToExistingCompendium": false
+    },
+    {
+      "id": "B14-ELI",
+      "article": "a0205_ancien",
+      "b12": [
+        "ICRSP-B12-CLM-005"
+      ],
+      "path": "Tempora/Quad4-4",
+      "interpretation": "Guéranger explicitly calls Elisha a figure of the Redeemer beside the selected Nain Gospel",
+      "patristic": "Aphrahat VIII.11 and XXI.15 do not assert exact Elisha–Nain correspondence",
+      "relationship": "GUERANGER_CHRISTOLOGICAL_PAIR_PATRISTIC_PARTIAL_SUPPORT",
+      "icrspUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0205_ancien",
+      "guerangerWebUrl": "https://www.domgueranger.net/lannee-liturgique-le-careme-propre-du-temps/?lang=en",
+      "correspondingFrenchCommentaryWordingLocatedOnBothWebpages": false,
+      "original1903PrintedParagraphCollated": false,
+      "approvedPublication": false,
+      "rightsCleared": false,
+      "fullyReconciledToExistingCompendium": false
+    },
+    {
+      "id": "B14-ELJ",
+      "article": "a0206_ancien",
+      "b12": [
+        "ICRSP-B12-CLM-006"
+      ],
+      "path": "Tempora/Quad4-5",
+      "interpretation": "Guéranger compares Elijah's widow-son restoration and Christ's power next to Lazarus Gospel",
+      "patristic": "Aphrahat XXI.14 explicitly compares Elijah raising widow's son with Jesus raising widow's son and Lazarus",
+      "relationship": "GUERANGER_LITURGICAL_PAIR_EARLY_CHRISTIAN_ELIJAH_CHRIST_ANALOGY",
+      "icrspUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0206_ancien",
+      "guerangerWebUrl": "https://www.domgueranger.net/lannee-liturgique-le-careme-propre-du-temps/?lang=en",
+      "correspondingFrenchCommentaryWordingLocatedOnBothWebpages": false,
+      "original1903PrintedParagraphCollated": false,
+      "approvedPublication": false,
+      "rightsCleared": false,
+      "fullyReconciledToExistingCompendium": false
+    }
+  ],
+  "patristicLoci": [
+    {
+      "id": "APHRAHAT_DEM8_11",
+      "author": "Aphrahat",
+      "work": "Demonstrations",
+      "locus": "VIII.11",
+      "url": "https://www.newadvent.org/fathers/370108.htm",
+      "meaning": "Elijah and Elisha widow/Shunammite restorations are distinct signs supporting resurrection",
+      "type": "GENERAL_RESURRECTION_TESTIMONY",
+      "selectedLessonOnlyPairVerified": false,
+      "translation": "John Gwynn, NPNF2 volume 13 (1898), based on Parisot 1894",
+      "language": "Syriac",
+      "syriacEditionIndex": "https://syri.ac/aphrahat",
+      "englishSectionObserved": true,
+      "originalSyriacTextCollated": false,
+      "sourceCopyrightPermissionReviewed": false
+    },
+    {
+      "id": "APHRAHAT_DEM21_14",
+      "author": "Aphrahat",
+      "work": "Demonstrations",
+      "locus": "XXI.14",
+      "url": "https://www.newadvent.org/fathers/370121.htm",
+      "meaning": "Explicit Elijah/Christ parallel: widow son, Lazarus and ruler daughter raised",
+      "type": "EXPLICIT_ELIJAH_CHRIST_COMPARISON",
+      "directJohn11Quotation": false,
+      "translation": "John Gwynn, NPNF2 volume 13 (1898), based on Parisot 1894",
+      "language": "Syriac",
+      "syriacEditionIndex": "https://syri.ac/aphrahat",
+      "englishSectionObserved": true,
+      "originalSyriacTextCollated": false,
+      "sourceCopyrightPermissionReviewed": false
+    },
+    {
+      "id": "APHRAHAT_DEM21_15",
+      "author": "Aphrahat",
+      "work": "Demonstrations",
+      "locus": "XXI.15",
+      "url": "https://www.newadvent.org/fathers/370121.htm",
+      "meaning": "Explicit Elisha/Christ comparisons include revivification through Elisha bones (2 Kings 13:20–21), NOT the Shunammite child",
+      "type": "ELISHA_CHRIST_DIFFERENT_EPISODE",
+      "shunammiteNainPairAttestedInThisLocus": false,
+      "translation": "John Gwynn, NPNF2 volume 13 (1898), based on Parisot 1894",
+      "language": "Syriac",
+      "syriacEditionIndex": "https://syri.ac/aphrahat",
+      "englishSectionObserved": true,
+      "originalSyriacTextCollated": false,
+      "sourceCopyrightPermissionReviewed": false
+    }
+  ],
+  "historicalHippolytusFootnote": {
+    "source": "Guéranger, Le Carême / Saturday Lent III, footnote 56",
+    "literalBibliographicLocator": "In Danielem, pag. 27. Edit. Fabricii.",
+    "editionIdentity": "Johann Albert Fabricius, S. Hippolyti episcopi et mart. opera (Hamburg, 1716–1718)",
+    "bibliographyUrl": "https://www.catholic.com/encyclopedia/hippolytus-saints",
+    "page27FacsimileInspected": false,
+    "distinctFromSchmidt2010PrintedPage25": true
+  },
+  "historicalHolds": [
+    "No 1903 printed page inspected",
+    "Do not treat 1911 scan as 1903",
+    "Fabricius page 27 not visually checked",
+    "Aphrahat Syriac original not collated",
+    "No archaeological proof for Susanna sarcophagus/catacomb objects",
+    "Preserve historical Jewish–Christian rhetoric in authorial context",
+    "No transfer of Modern translation copyright",
+    "No mass action / rubrical changes"
+  ],
+  "counts": {
+    "distinctIcrspSourcePages": 4,
+    "affectedB12AtomicClaims": 6,
+    "distinctGuerangerCrossHostedDaySections": 2,
+    "individuallyLocatedAphrahatLoci": 3,
+    "GuérangerHistoricFabriciusCitationLocated": 1,
+    "actualOriginalPrintOrSyriacPassagesCollated": 0,
+    "publicationApprovals": 0
+  },
+  "handoff": {
+    "ownerPr": 1553,
+    "mode": "REFERENCE_ONLY_NOT_PARALLEL_MASTER",
+    "remoteBranchUpdated": false
+  }
+}
