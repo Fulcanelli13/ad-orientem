@@ -1,4 +1,5 @@
 import {createOfflineChantEngraver} from './reader-chant-engraver.js';
+import {ORDINARY_1961_SCORE_SOURCES} from './reader-ordinary-scores-1961.js';
 // Native Mass Schola: real Gregorian score selection and continuous manuscript viewing.
 // Research/pilot only: selected preview is NOT the actual choir's musical setting.
 // No playback, priest action, card navigation, audio clock, or liturgical inference.
@@ -58,6 +59,7 @@ export const SCHOLA_SCORE_CATALOGUE=Object.freeze([
     sourceUrl:source(1184),svgUrl:svg(1184),gabcUrl:gabc(1184),gabc:KYRIE_VIII_GABC,
     bookWitnesses:Object.freeze(["Graduale Romanum (Solesmes, 1961), p. 28*",
       "Liber Usualis (Solesmes, 1961), p. 37"])}),
+  ...ORDINARY_1961_SCORE_SOURCES,
 ]);
 export const SCHOLA_SCORE_PILOT=SCHOLA_SCORE_CATALOGUE[0];
 export const SCHOLA_SCORE_TRACK_IDS=Object.freeze([
@@ -149,7 +151,7 @@ const CSS=String.raw`
 `;
 
 // Model never reads the priest's current text to advance the musical score.
-export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},programmeScoreId=null}={}){
+export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},programmeScoreId=null,programmeSelections=null}={}){
   const dock=root?.querySelector?.(".ao-schola-dock");
   const controls=dock?.querySelector?.(".ao-schola-controls");
   const doc=root?.ownerDocument;
@@ -200,16 +202,26 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},progra
         rel="noopener noreferrer">Source · GregoBase</a></div></div>`;
   root.appendChild(dialogue);
   const select=panel.querySelector("[data-score-choice]");
-  for(const item of availableNativeScholaScores("KYRIE")){
-    const option=doc.createElement("option");option.value=item.id;
-    option.textContent=item.title+" · reference";select.appendChild(option);
+  function fillChoices(track){
+    select.replaceChildren();
+    for(const item of availableNativeScholaScores(track)){
+      const option=doc.createElement("option");option.value=item.id;
+      option.textContent=item.title+" · reference";select.appendChild(option);
+    }
+    select.setAttribute("aria-label","Reference "+track.replaceAll("_"," ").toLowerCase()+" melody");
   }
+  fillChoices("KYRIE");
   const viewport=panel.querySelector("[data-score-reading]");
   const fullViewport=dialogue.querySelector("[data-score-full-reading]");
   const picture=panel.querySelector("[data-score-image]");
   const fullPicture=dialogue.querySelector("[data-score-full-image]");
-  const preselected=availableNativeScholaScores("KYRIE").find(item=>item.id===programmeScoreId);
-  let scoreId=preselected?.id??SCHOLA_SCORE_PILOT.id;
+  const reported=programmeSelections && typeof programmeSelections==="object"?programmeSelections:{};
+  const selectedForTrack=track=>{
+    const id=track==="KYRIE"?(reported.KYRIE??programmeScoreId):reported[track];
+    return availableNativeScholaScores(track).find(item=>item.id===id)
+      ??availableNativeScholaScores(track)[0]??null;
+  };
+  let scoreId=selectedForTrack("KYRIE")?.id??SCHOLA_SCORE_PILOT.id;
   let isOpen=false, lastTrack=null, destroyed=false;
   const inlineEngraver=createOfflineChantEngraver({viewport:picture,document:doc});
   const expandedEngraver=createOfflineChantEngraver({viewport:fullPicture,document:doc});
@@ -283,10 +295,24 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},progra
   }
   function changeTrack(schola){
     const track=String(schola?.trackId??"");
-    trigger.hidden=track!=="KYRIE";
-    dock.dataset.scoreAvailable=String(track==="KYRIE");
-    if(track!=="KYRIE"&&isOpen){isOpen=false;hideFull({restoreFocus:false});updateVisible();}
-    lastTrack=track;
+    const available=availableNativeScholaScores(track);
+    trigger.hidden=available.length===0;
+    dock.dataset.scoreAvailable=String(available.length>0);
+    if(track!==lastTrack){
+      // Each chant is independently selected. No Kyrie-to-Ordinary inference.
+      if(isOpen){isOpen=false;hideFull({restoreFocus:false});updateVisible();}
+      if(available.length){fillChoices(track);scoreId=selectedForTrack(track).id;renderedScoreId=null;}
+      lastTrack=track;
+    }
+    if(track==="SANCTUS_BENEDICTUS"){
+      dock.dataset.benedictusHold=String(schola?.benedictusHold===true);
+      // Presentation never calls releaseBenedictus or advances a music clock.
+      // A polyphonic setting is not represented by this Gregorian reference.
+      dock.dataset.performance=String(schola?.sanctusPerformance??"UNKNOWN");
+    }else{
+      delete dock.dataset.benedictusHold;
+      delete dock.dataset.performance;
+    }
   }
   function scroll(view,dir){
     const increment=scoreReadingStep(view.clientHeight);
@@ -318,7 +344,11 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},progra
     // Prevent Mass-card arrow navigation while the modal has keyboard focus.
     if(["ArrowLeft","ArrowRight"].includes(event.key)){event.stopPropagation();}
   };
-  const onSelect=()=>{scoreId=select.value;applyScore();};
+  const onSelect=()=>{
+    const allowed=availableNativeScholaScores(lastTrack);
+    if(!allowed.some(item=>item.id===select.value))return;
+    scoreId=select.value;applyScore();
+  };
   const onPanelKey=event=>{
     // Inline score keyboard navigation is independent from Mass card navigation.
     if(["ArrowLeft","ArrowRight"].includes(event.key))event.stopPropagation();
