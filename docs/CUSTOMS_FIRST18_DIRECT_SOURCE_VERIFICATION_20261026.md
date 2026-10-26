@@ -17,7 +17,7 @@ Source research owner remains the [multi-book 150 action intake](../data/customs
 
 ### Priority corrections and safety boundaries
 
-**Irish Christmas candle.** The originally registered Dúchas page challenged automated access. A distinct accessible UCD Schools Collection account [from Kilkenny/Tipperary](https://www.duchas.ie/en/cbes/4758582/4756445/4934128) independently recounts a lit candle in the window for Mary and Joseph on Christmas night. Add this witness to source provenance; do not turn folkloric spirit or guaranteed blessing beliefs into doctrine. Recheck original record before final signing.
+**Irish Christmas candle.** The originally registered Dúchas page challenged automated access. A distinct accessible UCD Schools Collection account [from Graine school, County Kilkenny (informant's residence not established)](https://www.duchas.ie/en/cbes/4758582/4756445/4934128) independently recounts a lit candle in the window for Mary and Joseph on Christmas night. Add this witness to source provenance; do not turn folkloric spirit or guaranteed blessing beliefs into doctrine. Recheck original record before final signing.
 
 **St John bonfire.** The [Bayonne diocesan announcement](https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/) is specifically **20 June 2026**, although the Nativity of the Baptist is 24 June. A Calendar suggestion may describe the cultural association but must not imply a perennial parish service on the feast itself.
 
