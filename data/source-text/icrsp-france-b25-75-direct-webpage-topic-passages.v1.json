@@ -7,10 +7,8 @@
     "data/source-text/icrsp-france-b24-25-direct-commentary-topic-observations.v1.json"
   ],
   "method": "Inspected accessible original ICRSP webpage introduction or named commentary opening (25 source pages in first web group, 15+15+20 in subsequent groups), captured individual topic observations without retaining source paragraphs. This is an initial direct topic reading for each page; remaining panels and original printed editions are not critically collated.",
-  "previouslyDirectReadArticleCount": 138,
   "newDirectTopicArticleCount": 75,
   "newPriority100DirectTopicReadCount": 100,
-  "totalDirectReadArticleCountIfNoParallelCollision": 213,
   "sectionCounts": {
     "temporal": 10,
     "sanctoral": 50,
@@ -1303,5 +1301,25 @@
       "approvedPublication": false
     }
   ],
-  "remainingCommentaryArticlesWithoutDirectTopicRead": 570
+  "remainingCommentaryArticlesWithoutDirectTopicRead": 577,
+  "previousDistinctDirectReadArticleCount": 134,
+  "sourceArticlePasses": 75,
+  "newDistinctDirectTopicReads": 72,
+  "totalDistinctDirectReadArticleCountAfterReconciliation": 206,
+  "newPreviouslyUnreadAcrossB24B25": 93,
+  "alreadyDirectReadBeforeB25": [
+    "a0664_ancien",
+    "a0213_nouveau",
+    "a0596_ancien"
+  ],
+  "allSevenEarlierCohortRepeatArticleIds": [
+    "a0619_ancien",
+    "a0044_nouveau",
+    "a0156_ancien",
+    "a0546_ancien",
+    "a0664_ancien",
+    "a0213_nouveau",
+    "a0596_ancien"
+  ],
+  "reconciliationNote": "The frozen B23 next100 queue overlooked seven topics already directly read in the B22 93-article cohort: four reviewed again in B24 and three reviewed again in B25. The priority queue has 100 source article passes, not 100 distinct new topics. Counts recomputed by exact ID union."
 }
