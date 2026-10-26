@@ -16,7 +16,7 @@ class B24DirectTopicNotes(unittest.TestCase):
         cls.prev=load("icrsp-france-b23-twenty-additional-direct-commentary-topics.v1.json")
         cls.preprev=load("icrsp-france-b22-cross-workstream-93-direct-read-reconciliation.v1.json")
 
-    def test_exact_nonoverlapping_new_sources(self):
+    def test_exact_source_ids_and_four_cross_cohort_repeats(self):
         rows=self.d["records"]
         ids=[r["articleId"] for r in rows]
         q={r["id"]:r for r in self.queue["records"]}
@@ -26,9 +26,12 @@ class B24DirectTopicNotes(unittest.TestCase):
         self.assertEqual(len(ids),len(set(ids)))
         self.assertTrue(set(ids).issubset(q))
         self.assertFalse(set(ids)&past)
-        self.assertFalse(set(ids)&old)
-        self.assertEqual(len(old|past|set(ids)),138)
-        self.assertEqual(self.d["combinedDistinctDirectTopicReadsIfNoParallelDuplicate"],138)
+        self.assertEqual(set(ids)&old,set(self.d["alreadyDirectReadBeforeB24"]))
+        self.assertEqual(len(set(ids)&old),4)
+        self.assertEqual(len(old|past|set(ids)),134)
+        self.assertEqual(self.d["newDistinctDirectTopicReads"],21)
+        self.assertEqual(self.d["sourceArticlePasses"],25)
+        self.assertEqual(self.d["combinedDistinctDirectTopicReadsAfterIdReconciliation"],134)
         self.assertEqual(self.d["next100StillWithoutThisReview"],75)
         for r in rows:
             original=q[r["articleId"]]
