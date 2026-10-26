@@ -103,7 +103,7 @@ def main():
         assert r["source_url"]==external["programme_pdf_url"]
         assert r["source_level"]=="LOCAL_ORGANIZER_EXPLICIT_DATE_AND_TIME"
         assert r["source_pub_date_not_live_time_confirmation"] is True
-        assert r["liturgical_form"]=="ROMAN_1962_ORDO_VETUS"
+        assert r["liturgical_form"]=="ROMAN_ORDO_VETUS_MISSAL_EDITION_NOT_SEPARATELY_VERIFIED"
         assert r["timezone"]=="Europe/Berlin"
         assert r["worldwide_master_dedup_pending"] is True
         assert r["future_occurrence_public_approved"] is False
@@ -233,8 +233,8 @@ def main():
         "pilot_frozen_sites":39,"inherited_research_supported_sites":37,
         "CL20_spatial_conflict_correctly_resolved_host_level":1,
         "research_supported_named_worship_or_host_places":38,
-        "research_worship_or_named_church_sites_excluding_interior_host_only":36,
-        "host_only_interior_chapel_references":2,
+        "research_worship_or_named_church_sites_excluding_interior_host_only":37,
+        "host_only_interior_chapel_references":1,
         "remaining_unlocated_religious_house":1,
         "new_freiburg_external_to_pilot_individually_listed_ordo_dates":14,
         "new_freiburg_FSSP_celebrant_dates":6,
