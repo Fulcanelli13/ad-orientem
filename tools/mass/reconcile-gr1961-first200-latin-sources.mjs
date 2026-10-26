@@ -14,6 +14,14 @@ const ROLE=Object.freeze({
   gr:["Graduale"],al:["Graduale","Alleluia"],tr:["Graduale","Tractus"],
 });
 const ALLOWED_PRESENCE=new Set(["Tempora","Sancti"]);
+const normalizePhrase=value=>String(value??"").replace(/æ/gi,"ae").replace(/œ/gi,"oe")
+ .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+ .toLowerCase().replace(/[^a-z]+/g," ").trim().replace(/\s+/g," ");
+const sourceExcerptContainsIncipit=(incipit,excerpt)=>{
+ const needle=normalizePhrase(String(incipit).replace(/\s*\([^)]*\)\s*$/,"").replace(/\.\.\./g," "));
+ const subject=normalizePhrase(excerpt);
+ return needle.split(" ").length>=2&&(" "+subject+" ").includes(" "+needle+" ");
+};
 export function reconcileGradualeFirst200({index,batch,batchText,witness}){
  if(index?.schema!=="ao-gregobase-graduale1961-research-index-v1"||
     index?.status!=="RESEARCH_ONLY_NOT_MASS_READER"||
@@ -53,7 +61,7 @@ export function reconcileGradualeFirst200({index,batch,batchText,witness}){
   if(!entry||!file||!ROLE[entry.officePart]?.includes(hit.sourceSection)||
      entry.officePart!==hit.officePart||hit.sourceBlobSha!==file.blobSha||
      hit.evidenceLevel!=="LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"||
-     !String(hit.latinExcerpt??"").trim())
+     !sourceExcerptContainsIncipit(entry.incipit,hit.latinExcerpt))
    throw Error("Unsupported or source-misaligned Latin hit: "+hit.gregobaseId);
   const group=evidence.get(hit.gregobaseId)??[];
   if(group.some(x=>x.properSourcePath===hit.properSourcePath&&
