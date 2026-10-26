@@ -273,9 +273,14 @@ export async function recoverReaderProperOmissions(proper,{
     diagnostic?.warnings?.push?.("PREFACE_SOURCE_RECOVERY_UNAVAILABLE:"+
       String(error?.message??error));
   }
+  // A Secret may have a source-owned Latin body but be incomplete in one
+  // vernacular. Check the exact pinned repair independently of whether a
+  // Latin string alone would make the older recovery logic skip the slot.
+  const sourceOwnedSecret=recover1962InAlbisSecretFromPinnedSource(
+    data,principalCelebrationId??data.principalCelebrationId??data.mainId,cleanLines);
   const needs={
     epistle:!textUsable(data.epistle),
-    secrets:!arrayUsable(data.secrets)&&!textUsable(data.secret),
+    secrets:Boolean(sourceOwnedSecret)||(!arrayUsable(data.secrets)&&!textUsable(data.secret)),
     postcommunions:!arrayUsable(data.postcommunions)&&!textUsable(data.postcommunion),
   };
   const orationGroups=[
@@ -304,9 +309,7 @@ export async function recoverReaderProperOmissions(proper,{
     // cannot resolve this circular reference. Use the independently
     // pinned three-language Divinum Officium section only on that owner,
     // retaining all normal completeness and source identity checks.
-    const owner=principalCelebrationId??data.principalCelebrationId??data.mainId;
-    const exact=recover1962InAlbisSecretFromPinnedSource(data,owner,cleanLines);
-    const value=exact??await recoverText(hostResolver,path,["Secreta"],diagnostic);
+    const value=sourceOwnedSecret??await recoverText(hostResolver,path,["Secreta"],diagnostic);
     if(hasThreeLanguages(value)&&["lat","en","fr"].every(
       lang=>sourceTextComplete(value[lang]))){
       next.secrets=Object.freeze([value]);next.secret=value;
