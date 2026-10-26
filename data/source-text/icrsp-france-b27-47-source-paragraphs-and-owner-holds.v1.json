@@ -28,8 +28,8 @@
   "significantHolds": [
     {
       "topicId": "YVES_UNCERTIFIED_MASS_FORMULARY",
-      "reason": "ICRSP expressly reports not locating an official liturgical book for the offered St Yves Mass.",
-      "requirement": "Do not admit to Roman proper corpus without an authentic edition."
+      "reason": "The site's a0150_nouveau initially reports no official text, whereas a0993_ancien adds a later note claiming a 1913 approved Vannes Proper reprinted in 1933.",
+      "requirement": "Inspect a scan or physical pages of 1913/1933 Vannes Proper and competent diocesan approval before admitting that formulary. Do not declare the text definitively unauthorised."
     },
     {
       "topicId": "PIENT_AGENT_COLOMBE_MARTYR_DISPUTE",
@@ -89,9 +89,9 @@
       "corpusSection": "local_propers",
       "topicId": "YVES_UNCERTIFIED_MASS_FORMULARY",
       "contentType": "SOURCE_TEXT_WARN",
-      "reportedSourceFinding": "Web editor explicitly says no official liturgical book located for proposed St Yves Mass",
+      "reportedSourceFinding": "One ICRSP St Yves page initially reports no official liturgical book; a separate St Yves page (a0993_ancien) adds an editorial note pointing to an allegedly approved Vannes Proper (1913; reprinted 1933). Contradiction held pending inspection of printed edition.",
       "existingDestination": "PARTICULAR_MASS_SOURCE_HOLD",
-      "releaseGate": "BLOCK_UNCERTIFIED_FORMULARY",
+      "releaseGate": "PRINTED_1913_VANNES_PROPER_CLAIM_ON_A0993_NOT_YET_EXAMINED",
       "readScope": "DIRECT_ICRSP_PAGE_TARGETED_EXCERPT_NOT_COMPLETE_AUTHOR_COLLATATION",
       "originalPrintedWitnessSeen": false,
       "hostedCommentaryReproduced": false,
