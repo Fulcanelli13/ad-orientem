@@ -1,0 +1,182 @@
+{
+  "schema": "AO_CL12_SINGLETON_SOURCE_WITNESSES_V1",
+  "review_date": "2026-10-26",
+  "policy": "75 source URLs have undergone first-pass page screening; only source-scoped exact edition+weekday/time matches are accepted, others held. Screened != fully verified institutional evidence or current recurrence.",
+  "accepted": [
+    {
+      "row_no": 3943,
+      "day": "Sunday",
+      "time": "13:00",
+      "scope": "PARISH_DIRECT_SLOT",
+      "observation": "Parish states 1:00 pm Sunday Tridentine Mass according to 1962 Roman Missal.",
+      "evidence_url": "",
+      "status": "ACCEPTED_SOURCE_SCOPED_EDITION_NOT_CURRENT_RECURRENCE"
+    },
+    {
+      "row_no": 4046,
+      "day": "Sunday",
+      "time": "10:30",
+      "scope": "PARISH_DIRECT_SLOT",
+      "observation": "Parish Mass timetable explicitly marks Saint-Mathieu Sunday 10h30 selon le Missel 1962.",
+      "evidence_url": "",
+      "status": "ACCEPTED_SOURCE_SCOPED_EDITION_NOT_CURRENT_RECURRENCE"
+    },
+    {
+      "row_no": 4047,
+      "day": "Sunday",
+      "time": "10:00",
+      "scope": "PARISH_DIRECT_PROGRAMME",
+      "observation": "Parish article identifies Notre-Dame Latin Sunday 10h as according to 1962 Missal.",
+      "evidence_url": "",
+      "status": "ACCEPTED_SOURCE_SCOPED_EDITION_NOT_CURRENT_RECURRENCE"
+    },
+    {
+      "row_no": 4049,
+      "day": "1st Sunday",
+      "time": "15:00",
+      "scope": "CATHEDRAL_DIRECT_SLOT",
+      "observation": "Cathedral schedule explicitly calls first Sunday 3pm '1962 Rite Latin Mass'; verify current newsletter for cancellations.",
+      "evidence_url": "",
+      "status": "ACCEPTED_SOURCE_SCOPED_EDITION_NOT_CURRENT_RECURRENCE"
+    },
+    {
+      "row_no": 4051,
+      "day": "Sunday",
+      "time": "12:00",
+      "scope": "SHRINE_DIRECT_SLOT",
+      "observation": "Shrine first-party Visit page explicitly calls Sunday noon Traditional Latin Mass 1962 Sung; Friday Ordinariate liturgy is distinct.",
+      "evidence_url": "",
+      "status": "ACCEPTED_SOURCE_SCOPED_EDITION_NOT_CURRENT_RECURRENCE"
+    },
+    {
+      "row_no": 4217,
+      "day": "Sunday",
+      "time": "13:00",
+      "scope": "PARISH_DIRECT_PROGRAMME",
+      "observation": "Parish Sunday 1pm Latin Mass and its explanatory section identify that ongoing programme as 1962 Latin Mass.",
+      "evidence_url": "",
+      "status": "ACCEPTED_SOURCE_SCOPED_EDITION_NOT_CURRENT_RECURRENCE"
+    },
+    {
+      "row_no": 4433,
+      "day": "Sunday",
+      "time": "14:30",
+      "scope": "PARISH_DIRECT_SLOT",
+      "observation": "Parish Latin Mass resources explicitly says 1962 Extraordinary form every Sunday at 2:30pm.",
+      "evidence_url": "",
+      "status": "ACCEPTED_SOURCE_SCOPED_EDITION_NOT_CURRENT_RECURRENCE"
+    },
+    {
+      "row_no": 4480,
+      "day": "Sunday",
+      "time": "09:00",
+      "scope": "CELEBRATION_ORGANIZER_DIRECT_PROGRAMME",
+      "observation": "CFRV organizer says its programme follows Messale del 1962 and lists San Giovanni in Foro Sunday/festivals 09:00; organization ≠ church property owner.",
+      "evidence_url": "",
+      "status": "ACCEPTED_SOURCE_SCOPED_EDITION_NOT_CURRENT_RECURRENCE"
+    },
+    {
+      "row_no": 4485,
+      "day": "Saturday",
+      "time": "08:00",
+      "scope": "DIOCESE_DIRECT_SLOT",
+      "observation": "Armidale diocesan parish webpage explicitly says 8am Traditional Mass (1962 Missal) at Our Lady of the Angels Chapel, not cathedral.",
+      "evidence_url": "",
+      "status": "ACCEPTED_SOURCE_SCOPED_EDITION_NOT_CURRENT_RECURRENCE"
+    },
+    {
+      "row_no": 4494,
+      "day": "Sunday",
+      "time": "17:00",
+      "scope": "PARISH_CALENDAR_DIRECT_SLOT",
+      "observation": "Parish 2026–2027 event calendar repeatedly lists Sundays 5pm 'Latin Mass (1962 Missal)'.",
+      "evidence_url": "",
+      "status": "ACCEPTED_SOURCE_SCOPED_EDITION_NOT_CURRENT_RECURRENCE"
+    },
+    {
+      "row_no": 4495,
+      "day": "Saturday",
+      "time": "09:00",
+      "scope": "PARISH_DIRECT_SLOT",
+      "observation": "Parish Mass times explicitly say Saturday 9am Latin Mass 1962 Missal; do not classify other regular Masses.",
+      "evidence_url": "",
+      "status": "ACCEPTED_SOURCE_SCOPED_EDITION_NOT_CURRENT_RECURRENCE"
+    },
+    {
+      "row_no": 4496,
+      "day": "Tuesday",
+      "time": "18:30",
+      "scope": "PARISH_DIRECT_SLOT",
+      "observation": "Evesham parish lists Tue 6:30pm directly beneath 1962 Missal Latin Rite; newsletter governs exceptions.",
+      "evidence_url": "",
+      "status": "ACCEPTED_SOURCE_SCOPED_EDITION_NOT_CURRENT_RECURRENCE"
+    }
+  ],
+  "exception_holds": [
+    {
+      "row_no": 4522,
+      "decision": "HOLD_TIME_MISMATCH",
+      "observation": "Passau parish calendar explicitly calls 17:00 Sunday Mass the Latin rite of 1962; frozen timetable records 19:00. Do not certify an exact 19:00 slot; store 17:00 as contemporary dated observation, never silently edit frozen row.",
+      "verified_edition": true,
+      "current_observed_time": "17:00",
+      "frozen_expected_time": "19:00"
+    },
+    {
+      "row_no": 1835,
+      "decision": "HOLD_THIRD_PARTY_AGGREGATOR",
+      "observation": "Self-hosted Ad Orientem directory page cites external third-party post, notes low confidence, no official celebration-owner claim."
+    },
+    {
+      "row_no": 1765,
+      "decision": "HOLD_LINK_NOT_RETRIEVABLE",
+      "observation": "User-facing aggregator page not accessible to source review; historical researcher description is not proof."
+    },
+    {
+      "row_no": 1833,
+      "decision": "HOLD_LINK_NOT_RETRIEVABLE",
+      "observation": "User-facing aggregator page not accessible to source review; historical researcher description is not proof."
+    },
+    {
+      "row_no": 1839,
+      "decision": "HOLD_LINK_NOT_RETRIEVABLE",
+      "observation": "User-facing aggregator page not accessible to source review; historical researcher description is not proof."
+    },
+    {
+      "row_no": 4317,
+      "decision": "HOLD_LINK_NOT_RETRIEVABLE",
+      "observation": "2026 schedule posted by lay group; original Blogspot URL was not accessible on this review; owner Missal edition remains unestablished."
+    },
+    {
+      "row_no": 4050,
+      "decision": "HOLD_EF_NOT_EXACT_EDITION",
+      "observation": "Parish Saturday noon labeled Extraordinary Form, but no explicit specific 1962 edition wording at slot."
+    },
+    {
+      "row_no": 4052,
+      "decision": "HOLD_EF_NOT_EXACT_EDITION",
+      "observation": "Spanish Place Sunday 9am labeled Extraordinary Form; separately lists Sung Latin 10:30, which is not automatically same liturgical book."
+    },
+    {
+      "row_no": 4138,
+      "decision": "HOLD_INSTITUTIONAL_EXPLANATION_NOT_DIRECT_BOOK",
+      "observation": "St Martin owner lists Sunday noon EF, but narrative broadly discusses Missal editions 1570–1962, not a direct claim of book used at that Sunday celebration."
+    },
+    {
+      "row_no": 4442,
+      "decision": "HOLD_TLM_NOT_EXACT_EDITION",
+      "observation": "London Ontario apostolate identifies Sunday 12:30 TLM at Holy Angels but does not explicitly specify 1962 book."
+    },
+    {
+      "row_no": 4666,
+      "decision": "HOLD_LATIN_NOT_EXACT_EDITION",
+      "observation": "Annunciation parish lists Sunday 2pm Latin Mass lower church, not exact Missal edition."
+    }
+  ],
+  "unreachable_row_ids": [
+    1765,
+    1833,
+    1839,
+    4317
+  ],
+  "review_coverage_note": "No broad promotion based on generic Latin Mass, Tridentine, Extraordinary Form, rite history text, unrelated 1962 dates, affiliation or a third-party aggregator."
+}
