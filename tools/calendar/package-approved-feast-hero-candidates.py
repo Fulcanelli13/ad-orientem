@@ -25,6 +25,16 @@ OUT_FILE = ROOT / "data/calendar/approved-feast-hero-packaged-candidates-2026102
 GALLERY_FILE = ROOT / "docs/research/APPROVED-FEAST-HERO-PHOTO-REVIEW-20261021.html"
 Image.MAX_IMAGE_PIXELS = 110_000_000
 
+# Physical frame / gallery surround review is separate from preserving the
+# photographed source. Neither whole-image resize nor object-fit proves that
+# the original photo is frame-free.
+FRAME_PREVIEW_OBSERVATIONS = {
+    "2026-04-02": "GILDED_EXTERNAL_FRAME_VISIBLE",
+    "2026-10-25": "WHITE_PHOTOGRAPHIC_MARGINS_VISIBLE",
+    "2026-11-01": "DARK_PERIMETER_BORDER_REQUIRES_ORIGIN_REVIEW",
+    "2026-06-12": "PAINTED_OVAL_ICONOGRAPHY_MUST_BE_PRESERVED",
+}
+
 
 def sha256(blob: bytes) -> str:
     return hashlib.sha256(blob).hexdigest()
@@ -159,6 +169,21 @@ def main():
                 "mobile320VisualAccepted": False,
                 "mobile390VisualAccepted": False,
                 "anyAdditionalCrop": False,
+            },
+            "framingReview": {
+                "status": "UNREVIEWED_FOR_RELEASE",
+                "previewObservation": FRAME_PREVIEW_OBSERVATIONS.get(
+                    item["date"], "NO_OBVIOUS_EXTERNAL_FRAME_AT_PREVIEW_SCALE"
+                ),
+                "physicalFrameAbsentHumanVerified": False,
+                "gallerySurroundAbsentHumanVerified": False,
+                "paintingBoundsHumanVerified": False,
+                "wholePaintedSurfaceIntactHumanVerified": False,
+                "syntheticFillAbsentHumanVerified": False,
+                "sourceOriginalPreserved": True,
+                "framelessDerivativeSourceSha256": None,
+                "approvedCropBoundsPx": None,
+                "frameFreePublicationApproved": False,
             },
             "rightsReview": {
                 "status": ("MET_CC0_POLICY_CONFIRMED_PER_OBJECT" if is_met
