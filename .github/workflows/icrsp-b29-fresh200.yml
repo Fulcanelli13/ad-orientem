@@ -1,13 +1,5 @@
 name: ICRSP B29 next 200 genuinely unseen articles — source-body research
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
-    paths:
-      - '.github/workflows/icrsp-b29-fresh200.yml'
-      - 'tools/icrsp/plan_b29_fresh_200.py'
-      - 'tools/icrsp/scan_b29_fresh_200.py'
-      - 'tools/icrsp/consolidate_b29_fresh_200.py'
   workflow_dispatch:
 
 permissions:
