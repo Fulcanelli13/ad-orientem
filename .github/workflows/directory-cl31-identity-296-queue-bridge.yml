@@ -33,6 +33,7 @@ on:
       - 'tools/directory/reconcile-cl29-uk-dated-owner-pdf.py'
       - 'tools/directory/reconcile-cl30-global-104-dated.py'
       - 'tools/directory/reconcile-cl31-identity-and-owner-queue.py'
+      - 'tools/directory/acquire-original-operator-pdf.py'
       - '.github/workflows/directory-cl23-bulk-spatial-screen.yml'
       - '.github/workflows/directory-cl24-fssp-spatial-exceptions.yml'
       - '.github/workflows/directory-cl25-fssp-final-spatial-exceptions.yml'
@@ -74,6 +75,7 @@ on:
       - 'tools/directory/reconcile-cl29-uk-dated-owner-pdf.py'
       - 'tools/directory/reconcile-cl30-global-104-dated.py'
       - 'tools/directory/reconcile-cl31-identity-and-owner-queue.py'
+      - 'tools/directory/acquire-original-operator-pdf.py'
       - '.github/workflows/directory-cl23-bulk-spatial-screen.yml'
       - '.github/workflows/directory-cl24-fssp-spatial-exceptions.yml'
       - '.github/workflows/directory-cl25-fssp-final-spatial-exceptions.yml'
@@ -126,6 +128,7 @@ jobs:
           python3 tools/directory/reconcile-cl29-uk-dated-owner-pdf.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl29
           python3 tools/directory/reconcile-cl30-global-104-dated.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl30
           python3 tools/directory/reconcile-cl31-identity-and-owner-queue.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl31
+          python3 tools/directory/acquire-original-operator-pdf.py --help >/dev/null
       - name: Assert complete 39-site spatial screen, 17 sourced points and 15 holds
         run: |
           python3 - <<'PY'
