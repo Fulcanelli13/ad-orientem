@@ -87,6 +87,28 @@ assert.equal(wreath.related_local_following_days.automatic_1962_OCTAVE_EVENT,fal
 assert.equal(wreath.related_local_following_days.local_day_offset_policy,"NO_SYNTHETIC_DATE_TRIGGER_WITHOUT_EXPLICIT_COMMUNITY_EVIDENCE");
 const easter=byUnit["CU-REVIEW-002"];
 assert.ok(easter.article.caution.en.includes("permission"));
+
+const crosswalk=load("customs-five-research-to-release-handoff.20261026.v1.json");
+assert.equal(crosswalk.summary.research_dossiers,5);
+assert.equal(crosswalk.summary.already_handled_in_separate_draft_release,2);
+assert.equal(crosswalk.summary.next_distinct_subjects,3);
+assert.equal(crosswalk.summary.new_runtime_articles_from_this_research_pr,0);
+assert.equal(crosswalk.summary.new_approved_publications,0);
+assert.equal(crosswalk.publication_policy.existing_release_branch_not_merged,true);
+assert.deepEqual(new Set(crosswalk.units.map(x=>x.release_unit)),new Set(packet.records.map(x=>x.release_unit)));
+assert.deepEqual(crosswalk.units.filter(x=>x.destination.pr===1642).map(x=>x.destination.proposed_custom_id),["EPIP-003","CRIB-001"]);
+assert.ok(crosswalk.units.filter(x=>x.destination.status==="RESEARCH_ONLY_NEXT_COHORT").every(x=>x.destination.proposed_custom_id===null));
+for(const link of crosswalk.units){
+ const draft=byUnit[link.release_unit];
+ assert.deepEqual(link.source_group_ids,draft.source_group_ids);
+ assert.ok(!link.destination.proposed_custom_id||!canonical.has(link.destination.proposed_custom_id));
+}
+assert.match(wreath.article.description.en,/eighth day/);
+assert.match(wreath.article.description.fr,/huitième jour/);
+assert.match(wreath.article.history.en,/245 wreaths and 133 questionnaires/);
+assert.match(wreath.article.history.fr,/245 photographies de couronnes et 133 questionnaires/);
+assert.ok(wreath.article.sources.some(s=>s.id==="POLISH-GOV-CORPUS-CUSTOMS"&&/last day/.test(s.claim_scope)));
+assert.ok(wreath.article.sources.some(s=>s.id==="LUCZAJ-POLISH-CORPUS-WREATHS-2012"&&/245/.test(s.claim_scope)));
 const candlemas=byUnit["CU-REVIEW-004"];
 assert.ok(candlemas.article.caution.en.includes("1962"));
 const triggered=(rec,date)=>rec.calendar_associations.some(x=>x.kind==="FIXED_FEAST_CONTEXT"?date.slice(5)===x.month_day:date===v384Dates(Number(date.slice(0,4)))[x.calendar_accessor.split(".")[1]]);

@@ -44,3 +44,20 @@ When each subject passes the gate:
 `tests/customs-calendar-five-release-candidates.mjs` validates all five full bilingual article shapes, source URLs, research-group preservation, existing Calendar-accessor names, one Seises identity/two feast associations, the clergy/household Epiphany distinction, and the absence of approvals or publication. The dedicated `Customs Master Identity and Source Audit` workflow runs it. This research branch predates the current Calendar read-model modules; it cannot yet execute that newer runtime's UI smoke tests, so a green research CI is **not** evidence of a production screen change.
 
 **Current release position:** 5 prepared, 0 canonical identities allocated, 0 newly published. The bottleneck is final canonical identity, bilingual claim and Calendar owner/ritual signoff—not more historical book observations.
+
+
+## 26 October handoff — eliminate parallel-release duplication
+
+The five research units are now split into **two already drafted elsewhere** and **three distinct next subjects**. Neither the 408 screened provisional groups nor the five research units are new publication approvals.
+
+- `CU-REVIEW-001` → proposed `EPIP-003` in **draft PR #1642**, not merged or human-signed.
+- `CU-REVIEW-004` → proposed `CRIB-001` in **draft PR #1642**, not merged or human-signed.
+- `CU-REVIEW-002`, `CU-REVIEW-003`, `CU-REVIEW-005` → **next research-only cohort**, with no new canonical IDs allocated.
+
+The authoritative crosswalk is `data/customs/master/customs-five-research-to-release-handoff.20261026.v1.json`. Use it to prevent an independent duplicate release of the first two items.
+
+**Primary-source scope correction for Polish wreaths.** The Polish Ministry's *Oktawa Bożego Ciała* section says wreaths were historically left at church throughout the customary week, and today are often blessed on its final day. Łuczaj's 2012 Krosno-area field study documented **245 wreath photographs and 133 questionnaires** connected with the eighth-day practice. The EN/FR article was revised accordingly. This does **not** recreate a universal liturgical Corpus Christi octave in the 1962 Calendar; actual local blessing times require current local evidence.
+
+The Vienna Archdiocese currently describes bringing Easter Vigil light home in **many regions of Austria**, not a universal parish obligation. Seville Cathedral explicitly documents **one** local Seises dance tradition associated with **Corpus Christi and the Immaculate Conception**, and its dated 2025 December notice must not be reused as a perpetual schedule.
+
+All five `RESEARCH-` IDs and human approvals remain unchanged. Only the already-existing Ad Orientem Calendar can eventually consume explicitly accepted candidates.
