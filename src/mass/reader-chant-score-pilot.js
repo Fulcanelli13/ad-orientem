@@ -73,11 +73,15 @@ export function availableNativeScholaScores(trackId){
 }
 // Explicit research-preview selection only. No date/feast/form default and no
 // claim about the tune being performed in the building.
-export function resolveNativeScholaScore({trackId,selectedScoreId=null}={}){
+export function resolveNativeScholaScore({trackId,selectedScoreId=null,properCrosswalk=null}={}){
   const id=String(trackId??"");
   if(!SCHOLA_SCORE_TRACK_IDS.includes(id))
     return Object.freeze({status:"NO_SUPPORTED_SCHOLA_TRACK",score:null});
-  const candidates=availableNativeScholaScores(id);
+  const candidates=availableNativeScholaScores(id).filter(item=>
+    item.status!=="SOURCE_MATCH_REQUIRED_NOT_DATE_ASSIGNED"||
+    properCrosswalk?.schema==="ao-reader-proper-chant-crosswalk-v1"&&
+    properCrosswalk?.status==="PARTIALLY_MATCHED"&&
+    properCrosswalk?.candidates?.some(row=>row.trackId===id&&row.scoreId===item.id));
   if(!candidates.length)
     return Object.freeze({status:"NO_VERIFIED_SCORE_SELECTION",score:null});
   const selected=candidates.find(score=>score.id===selectedScoreId);
