@@ -1,0 +1,49 @@
+name: Customs three-subject Calendar preview (nonpublishing)
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "src/calendar/customs-cohort2-review.js"
+      - "tests/customs-cohort2-review.mjs"
+      - "tests/customs-cohort2-calendar-preview-phone.mjs"
+      - ".github/workflows/customs-cohort2-review.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preview-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Compile staged read projection, but do not publish it
+        run: |
+          node --check src/calendar/customs-cohort2-review.js
+          node --check tests/customs-cohort2-review.mjs
+      - name: Verify research-only scope, date projection and no production leak
+        run: node tests/customs-cohort2-review.mjs
+
+  phone-visual-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: "Review-only articles in real Calendar Day (FR 320, EN 390)"
+        run: |
+          node --check tests/customs-cohort2-calendar-preview-phone.mjs
+          node tests/customs-cohort2-calendar-preview-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: customs-three-calendar-preview-screenshots
+          path: artifacts/customs-cohort2-calendar-preview/
+          retention-days: 14
+          if-no-files-found: warn
