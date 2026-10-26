@@ -34,6 +34,19 @@ class IcrspBatch26(unittest.TestCase):
    self.assertTrue(any(e["topicId"]==topic for e in self.x["externalCorroboration"]))
   self.assertIn("OVERLAPS",byid["EASTER_FRIDAY_NOAH_MOSES_BAPTISM"]["releaseGate"])
   self.assertIn("DUPLICATE",byid["LEO_II_LEO_I_TRANSLATION_CONFUSION"]["releaseGate"])
+ def test_three_original_bilingual_drafts_with_review_holds(self):
+  drafts=self.x["editorialPilots"]
+  self.assertEqual(len(drafts),3)
+  self.assertEqual(self.x["totals"]["originalBilingualContextDraftsPendingReview"],3)
+  ids={r["articleId"] for r in self.x["rows"]}
+  self.assertEqual(len({x["id"] for x in drafts}),3)
+  for d in drafts:
+   self.assertIn(d["sourceArticleId"],ids)
+   self.assertIn("NEEDS",d["status"])
+   self.assertGreater(len(d["en"]),170)
+   self.assertGreater(len(d["fr"]),170)
+   self.assertIn("EXISTING_",d["owner"])
+  self.assertFalse(self.x["publicationApproved"])
  def test_never_promote_historic_rubrics_without_verification(self):
   self.assertEqual(self.x["totals"]["publishedFeatures"],0)
   self.assertEqual(self.x["totals"]["newProductionChanges"],0)
