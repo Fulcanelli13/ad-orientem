@@ -42,6 +42,33 @@ The Kyrie XVI GABC is embedded unchanged (transcriber Andrew Hinkley,
 proofread gdweber in 2022). All three original GABCs have now been embedded verbatim; source checksums,
 local engraving and facsimile comparison remain future release gates.
 
+## Pre-Mass musical programme — first working handoff
+
+The **existing** unified Mass preparation Folio now contains an optional
+`Chants of this Mass` disclosure in its reader step (only Sung/Solemn Mass).
+It offers **Unknown** by default and the three verified transcribed Kyrie
+examples. All other musical opportunities remain unresolved, including
+the Proper, Sanctus/Benedictus and Communion; no generic settings are applied
+to them merely because the Mass date is known.
+
+`src/mass/mass-chant-programme.js` builds a single identity for the session
+(date, actual celebration, host Proper source and selected form). The user's
+musical choice is discarded on changes to the identity, including switching
+to Low Mass; these choices never mutate the source Proper or 1962 Calendar.
+No parish-specific preference is silently stored or generalized to future
+Masses. All IDs are validated against locally bundled GABC records.
+
+The existing `createBrowserMassController` handoff includes the optional
+programme in `readerPreferences` (and therefore the existing resumable
+session record). The native Schola dock initializes its notation selector from
+that programme, retaining the label **user-reported, not independently
+verified**. The reader remains silent and uses no artificial Schola timing.
+
+Contract tests: `tests/mass-chant-programme.mjs`, invoked from the
+existing `test:reader-schola` chain. The 390px unified preflight acceptance
+also exercises selection, reader-mode independence, Low Mass removal and
+date reset.
+
 ## Non-features and necessary distinctions
 - Selecting one of these three scores chooses a **reference example**, not
   the Mass's musical setting. `actualChoirMelody` remains `UNKNOWN`.
@@ -75,10 +102,11 @@ local engraving and facsimile comparison remain future release gates.
    adaptive width, stale-render protection and independent inline/full views.
    Remaining: optional special-character font treatment and verified raster/
    vector line wrapping on real phone sizes.
-4. Build a pre-Mass selection model keyed by the canonical Mass choice; do not
-   attach free-form setting choices to liturgical text until admissibility
-   and source ownership are proven. Remember customary user preferences
-   separately from a verified local programme.
+4. **Implemented for pilot Kyrie:** pre-Mass user-reported selection tied
+   to the canonical Mass identity and reader session, without assigning the
+   liturgical Proper. Remaining: real 1962 musical eligibility, wider
+   Kyriale/Proper catalogues, scoped remembered local settings, and verified
+   parish programmes before adding further selectable tracks.
 5. Build a **separate listening experience** inside Mass preparation, only
    after recording provenance/permissions and score-to-recording sync are
    verified. Audio must never leak into Mass-following mode.
