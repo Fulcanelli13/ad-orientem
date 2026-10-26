@@ -325,7 +325,7 @@ test('Palm psalm old/new 1961 source editions remain distinct, unselected and no
   }
   assert.ok(register.acceptance.noFixedSongPlaylist);
   assert.ok(register.acceptance.noMovementInference);
-  assert.equal(register.gates.filter(x=>x.status==='OPEN').length,5);
+  assert.equal(register.gates.filter(x=>x.status==='OPEN').length,4);
   assert.equal(register.gates.filter(x=>x.status==='OPEN_BLOCKING_VISUAL_SOURCE_CONFIRMED').length,1);
   assert.equal(byPsalm.get(46).newer.status,'PRINTED_PAGE_CONFIRMS_OMNES_POPULI_GABC_WRONG_UNDERLAY_BLOCKING');
   assert.match(byPsalm.get(46).newer.exactLatin1962,/Omnes pópuli/);
