@@ -2,6 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 
 const readJSON = p => JSON.parse(readFileSync(new URL('../'+p, import.meta.url), 'utf8'));
 const crosswalk = readJSON('data/research/processionale-solesmes-crosswalk-20261026.v1.json');
@@ -240,4 +241,40 @@ test('1961 source-matched GABC coverage requires complete hymn and psalm compone
   assert.match(byId.get('LU61-CND-04').critical,/separate V\./);
   assert.ok(audit.rejectedSources.some(x=>x.scoreId===30&&x.policy==='DO_NOT_ASSIGN'));
   assert.ok(audit.rejectedSources.some(x=>x.scoreId===12531&&x.policy==='DO_NOT_SILENTLY_SUBSTITUTE'));
+});
+
+
+test('permanent 1961 GABC archive matches all 15 original SHA256 captures', () => {
+  const directory='data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/';
+  const archive=readJSON(directory+'sha256-manifest.json');
+  assert.equal(archive.schema,'ao-gabc-source-archive-v1');
+  assert.equal(archive.sourceCount,15);
+  assert.equal(archive.sourceRows.length,15);
+  assert.equal(archive.releaseEligible,0);
+  assert.equal(archive.state,'RAW_SOURCE_BYTES_VERIFIED_NOT_MUSICAL_NOTATION_CERTIFIED_NOT_APPROVED_FOR_1962_RUNTIME');
+  assert.equal(archive.originJobId,121725448255);
+  assert.ok(archive.licence.includes('CC0'));
+  const scoreElements=new Map();
+  let totalBytes=0;
+  for(const row of archive.sourceRows){
+    assert.match(row.path,/^gregobase-[0-9]+-e[1-6]\.gabc$/);
+    assert.match(row.sha256,/^[a-f0-9]{64}$/);
+    assert.equal(row.sourceUrl,
+      'https://gregobase.selapa.net/download.php?id='+row.scoreId+'&elem='+row.element+'&format=gabc');
+    const bytes=readFileSync(new URL('../'+directory+row.path,import.meta.url));
+    totalBytes+=bytes.length;
+    assert.equal(bytes.length,row.bytes,'GABC byte length mismatch: '+row.path);
+    assert.equal(createHash('sha256').update(bytes).digest('hex'),row.sha256,
+      'GABC content has changed: '+row.path);
+    const gabc=bytes.toString('utf8');
+    assert.ok(gabc.includes('%%') && gabc.includes('Liber Usualis') && gabc.includes('1961'));
+    scoreElements.set(row.scoreId,[...(scoreElements.get(row.scoreId)||[]),row.element]);
+  }
+  assert.equal(totalBytes,9841);
+  assert.equal(scoreElements.size,10);
+  assert.deepEqual(scoreElements.get(259).sort((a,b)=>a-b),[1,2,3,4,5,6],
+    'Gloria laus must keep all six source files');
+  for(const [scoreId,elements] of scoreElements){
+    if(scoreId!==259)assert.deepEqual(elements,[1],'unexpected multi-part score '+scoreId);
+  }
 });
