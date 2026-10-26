@@ -78,7 +78,7 @@ def tokens(paras,lexical=False):
     s=normalize(" ".join(paras))
     return re.findall(r"[^\W_]+(?:['’][^\W_]+)?",s.casefold(),re.UNICODE) if lexical else s.split()
 def delta(a,b):
-    matcher=SequenceMatcher(None,a,b,autojunk=True)
+    matcher=SequenceMatcher(None,a,b,autojunk=False)
     stats=Counter()
     for kind,i,j,k,l in matcher.get_opcodes():
         if kind!="equal":

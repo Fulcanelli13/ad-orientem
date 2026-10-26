@@ -37,6 +37,18 @@ class TestB50(unittest.TestCase):
         html="<p>Opening [137] begin with enough words now.</p><p>Middle sufficient words to compare with baseline text.</p><p>Last concluding sentence ends with Amen [138].</p>"
         self.assertEqual(len(b50.extract(html,"Opening begin","Last concluding",21)),3)
 
+    def test_repeated_sermon_vocabulary_no_false_massive_change(self):
+        # A one-word substitution in 5,000 mostly repeated words must not
+        # appear to change half the sermon: difflib autojunk=True does that.
+        old=["de","Dieu","et","la","grâce"]*1000
+        new=old.copy()
+        new[len(new)//2]="charité"
+        measurements=b50.delta(old,new)
+        self.assertAlmostEqual(measurements["matching_ratio"],0.9998,places=4)
+        self.assertEqual(measurements["replace_blocks"],1)
+        self.assertEqual(measurements["host_changed_tokens"],1)
+        self.assertEqual(measurements["edition_changed_tokens"],1)
+
     def test_diff_stats_and_release_gates(self):
         x=b50.delta(["je","crois"],["je","ne","crois"])
         self.assertEqual(x["insert_blocks"],1)
