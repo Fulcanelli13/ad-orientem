@@ -241,9 +241,27 @@
       "en": "The Sunday after Easter is traditionally called in albis, recalling the white garments of those newly baptised at Easter. The Roman station at Saint Pancras, a young martyr, places their new life beside the witness of a Christian who remained faithful even at the cost of his life. The day's readings turn this image into a question for every baptised person: how is the faith received at baptism lived and defended?",
       "fr": "Le dimanche après Pâques est appelé in albis, en souvenir des vêtements blancs que portaient les nouveaux baptisés. La station romaine à Saint-Pancrace, jeune martyr, rapproche leur vie nouvelle du témoignage d'un chrétien demeuré fidèle jusqu'à la mort. Les lectures de ce dimanche donnent à cette image une portée durable : comment vivre et garder la foi reçue au baptême ?",
       "status": "RESEARCH_DRAFT_NOT_APPROVED",
-      "verification": "Check actual 1962 station and day's Proper Scripture passages against canonical resolver; verify history of vestment removal and wording, do not quote ICRSP translation.",
+      "verification": "Independent Vatican stational witness and traditional Missal summary corroborate the station, neophyte white-robes meaning and day title. Still require the canonical 1962 Proper record ID, exact day verses, owner comparison and final bilingual editorial review before displaying.",
       "canonicalOwnerRecordId": null,
-      "rightsToUseSourceWording": false
+      "rightsToUseSourceWording": false,
+      "independentEvidence": [
+        {
+          "source": "https://press.vatican.va/roman_curia/pontifical_academies/cult-martyrum/stazioni/descrizioni/vc_pa_martyrum_20030125_pancrazio_it.html",
+          "finding": "Pontifical Academy Cultorum Martyrum identifies San Pancrazio as the Dominica in Albis stational church and describes the historic deposition of white baptismal garments.",
+          "scope": "ROMAN_STATION_AND_HISTORICAL_BAPTISMAL_CUSTOM"
+        },
+        {
+          "source": "https://airmaria.com/Liturgy/htmlmasses/lowsunday.html",
+          "finding": "Traditional Missal-form summary identifies Dominica in Albis as a first-class Sunday with station at St Pancras and Quasi modo as the Introit; this is a secondary witness, not canonical resolver certification.",
+          "scope": "MISSAL_SUMMARY_SECONDARY"
+        },
+        {
+          "source": "https://icrspfrance.fr/textes-liturgiques.php?article=a0038_nouveau",
+          "finding": "Original source page contains commentary on Dominica in Albis, neophyte white garments and the St Pancras station, but its hosted translation is not adopted.",
+          "scope": "SOURCE_EDITORIAL_LEAD"
+        }
+      ],
+      "evidenceStage": "STATION_AND_HISTORICAL_CLAIMS_CROSSCHECKED_NOT_RELEASED"
     },
     {
       "id": "ICRSP_B27_SACRED_HEART_FORMULARY_HISTORY",
@@ -252,9 +270,27 @@
       "en": "The Mass of the Sacred Heart has not always used the same formulary. The devotion entered the universal Roman calendar in the nineteenth century, while a substantially revised Mass and Office were introduced under Pius XI in 1929. Earlier commentaries therefore sometimes explain prayers that are not those of the 1962 Missal. For the Mass actually celebrated, the approved Proper of the selected date remains the reference.",
       "fr": "La fête du Sacré-Cœur n'a pas toujours possédé le même formulaire. Son inscription au calendrier romain universel remonte au XIXᵉ siècle, tandis qu'une Messe et un Office largement remaniés furent introduits sous Pie XI en 1929. Les commentaires anciens expliquent donc parfois des prières différentes de celles du Missel de 1962. Pour la célébration effective, il faut se référer au propre approuvé du jour choisi.",
       "status": "RESEARCH_DRAFT_NOT_APPROVED",
-      "verification": "Verify 1856 and 1929 decrees, original site authorship and exact 1962 Proper name and calendar binding; submit human liturgical and translation review.",
+      "verification": "Pius XI 1928 document and independent historical study corroborate chronological distinction. Still require 1929 SCR decree or verified print witness, canonical 1962 Proper ID, owner comparison and editorial sign-off; no historic alternate Proper import.",
       "canonicalOwnerRecordId": null,
-      "rightsToUseSourceWording": false
+      "rightsToUseSourceWording": false,
+      "independentEvidence": [
+        {
+          "source": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280508_miserentissimus-redemptor.html",
+          "finding": "Pius XI explicitly orders the feast raised to first class with octave and annual reparation prayer, in his 8 May 1928 encyclical.",
+          "scope": "PRIMARY_PAPAL_1928_REPARATION_AND_RANK"
+        },
+        {
+          "source": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_nouveau",
+          "finding": "ICRSP states an earlier 1856 universal feast formulary was superseded by a second Mass and Office promulgated under Pius XI in 1929; original decree not yet collated.",
+          "scope": "HOSTED_SOURCE_1856_VS_1929"
+        },
+        {
+          "source": "https://www.catholicculture.org/culture/library/view.cfm?recnum=7146",
+          "finding": "Independent liturgical-historical study dates the new Mass/Office to the Sacred Congregation of Rites of 29 January 1929 and earlier universal recognition to 23 August 1856.",
+          "scope": "SECONDARY_LITURGICAL_CHRONOLOGY"
+        }
+      ],
+      "evidenceStage": "1856_1928_1929_CHRONOLOGY_CROSSCHECKED_DEGREE_OF_EVIDENCE_LIMITED_NOT_RELEASED"
     }
   ],
   "counts": {
@@ -263,5 +299,11 @@
     "draftsPending": 2,
     "approvedAppAdditions": 0,
     "globalGapsCertified": 0
+  },
+  "editionVerificationSummary": {
+    "draftsWithNewIndependentSourceCrosschecks": 2,
+    "canonicalRecordIDsConfirmed": 0,
+    "originalHostedCommentaryReprinted": 0,
+    "publishedCalendarContextArticles": 0
   }
 }
