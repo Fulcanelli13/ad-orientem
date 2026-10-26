@@ -1,7 +1,11 @@
 name: ICRSP B42 real 1962 source-Proper resolver check
+# On a large shared research PR, pull_request.paths matches the WHOLE PR diff,
+# so unrelated synchronize commits re-enqueue this expensive browser audit.
+# A scoped push two-dot diff runs it only when its actual inputs change.
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches:
+      - 'governance/icrsp-source-inventory-1665'
     paths:
       - 'data/source-text/icrsp-france-b42-real-calendar-18-proper-probe-plan.v1.json'
       - 'data/source-text/icrsp-france-b41-1962-vatican-three-commons-print-image-collation.v1.json'
@@ -13,7 +17,7 @@ permissions:
   contents: read
 
 concurrency:
-  # Isolate run revisions: parallel research commits must not cancel a source audit.
+  # Isolate every run revision even when other research commits arrive.
   group: icrsp-b42-actual-proper-${{ github.event.pull_request.number || github.run_id }}-${{ github.sha }}
   cancel-in-progress: false
 
