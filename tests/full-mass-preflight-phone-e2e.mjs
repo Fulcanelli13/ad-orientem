@@ -153,6 +153,19 @@ try{
  }
  assert.deepEqual(await page.evaluate(()=>Object.keys(__full.selectionFor(__legacyMass()).chantProgramme.selections).sort()),
    ["AGNUS_DEI","CREDO","GLORIA","KYRIE","SANCTUS_BENEDICTUS"].sort());
+ const perf=programmeUi.locator("[data-full-mass-sanctus-performance]");
+ assert.equal(await perf.inputValue(),"UNSPECIFIED");
+ await perf.selectOption("POLYPHONIC");
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).sanctusPerformance,"POLYPHONIC");
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.selections.SANCTUS_BENEDICTUS,undefined);
+ assert.equal(await programmeUi.locator('[data-full-mass-other-choice="SANCTUS_BENEDICTUS"]').isDisabled(),true,
+   "A Gregorian score must not masquerade as a polyphonic Sanctus");
+ await perf.selectOption("GREGORIAN");
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).sanctusPerformance,"GREGORIAN");
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.selections.SANCTUS_BENEDICTUS,undefined,
+   "Changing to Gregorian must not silently select a Sanctus melody");
+ await programmeUi.locator('[data-full-mass-other-choice="SANCTUS_BENEDICTUS"]').selectOption("GREGOBASE-1384");
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.selections.SANCTUS_BENEDICTUS,"GREGOBASE-1384");
  await programmeUi.locator('[data-full-mass-other-choice="CREDO"]').selectOption("");
  assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.selections.CREDO,undefined,
    "Unknown Credo must not be filled in from the Kyrie");
