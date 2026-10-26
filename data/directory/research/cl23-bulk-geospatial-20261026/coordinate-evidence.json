@@ -1,0 +1,337 @@
+{
+  "schema": "AO_CL23_FULL_REMAINDER_32_SITES_SOURCE_GEO_TRIAGE_V1",
+  "as_of": "2026-10-26",
+  "source_review_policy": "Enumerate exactly the 32 CL17 owner-named pilot locations absent from CL20 six building-coordinate candidates and CL22 one Potsdam chapel candidate. For every one, either record a directly named, sourced worship-place spatial object or leave as evidence-blocked. This is NOT an automatic geocoder and none is a public door or current mass release.",
+  "accepted_named_georeferences": [
+    {
+      "source_place_id": "CL14-DE-FSSP-001",
+      "candidate_latitude": 49.4088,
+      "candidate_longitude": 8.6956,
+      "candidate_feature_type": "NAMED_CHURCH_SITE_COORDINATE",
+      "geospatial_source_url": "https://commons.wikimedia.org/wiki/Category:St._Anna_(Heidelberg)",
+      "mapped_feature_identifier": "Wikimedia St Anna Heidelberg Plöck 4 mapped object",
+      "independent_identity_url": "https://www.summorum-pontificum-heidelberg.de/links/2-uncategorised",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "NOT_HOSPITAL_GEOPOINT",
+        "CHURCH_DOOR_NOT_SURVEYED"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-002",
+      "candidate_latitude": 54.3225,
+      "candidate_longitude": 10.1314,
+      "candidate_feature_type": "NAMED_CHURCH_POI",
+      "geospatial_source_url": "https://aroundus.com/p/6566929-propsteikirche-st.-nikolaus",
+      "mapped_feature_identifier": "St Nikolaus Kiel church GPS point",
+      "independent_identity_url": "https://katholisch-in-kiel.de/kirchenmusik/kirchenmusik-in-st-nikolaus/",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "ST_NIKOLAUS_CAMPUS_KITA_AT_SAME_RATHAUSSTRASSE_5",
+        "POI_NOT_DOOR"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-003",
+      "candidate_latitude": 52.373,
+      "candidate_longitude": 9.72683,
+      "candidate_feature_type": "OSM_NAMED_CHURCH_WAY",
+      "geospatial_source_url": "https://mapcarta.com/de/W357786647",
+      "mapped_feature_identifier": "OpenStreetMap way 357786647",
+      "independent_identity_url": "https://denkmalatlas.niedersachsen.de/viewer/metadata/30760119/3/",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "BUILDING_CENTRE_NOT_CHURCH_DOOR"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-004",
+      "candidate_latitude": 51.185138889,
+      "candidate_longitude": 6.764916667,
+      "candidate_feature_type": "NAMED_CHURCH_SITE_COORDINATE",
+      "geospatial_source_url": "https://de.wikipedia.org/wiki/St._Dionysius_(D%C3%BCsseldorf)",
+      "mapped_feature_identifier": "Wikimedia St Dionysius Düsseldorf-Volmerswerth site coordinate",
+      "independent_identity_url": "https://koeln.petrusbruderschaft.de/termine/termine-duesseldorf/",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "2026_10_11_SUNDAY_0800_SPECIAL_TIME",
+        "CHURCH_DOOR_NOT_SURVEYED"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-005",
+      "candidate_latitude": 51.2706,
+      "candidate_longitude": 7.195561111,
+      "candidate_feature_type": "NAMED_CHURCH_SITE_COORDINATE",
+      "geospatial_source_url": "https://commons.wikimedia.org/wiki/Category:St._Antonius_(Wuppertal)",
+      "mapped_feature_identifier": "Wikimedia St Antonius Wuppertal church GPS point",
+      "independent_identity_url": "https://www.wuppertal.de/kultur-bildung/stadtarchiv/110_Stadtarchiv_Archive_in_Wuppertal.php",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "WIKIMEDIA_UNTERDORNEN_139_VS_OFFICIAL_137",
+        "NEARBY_TURMKAPELLE_DISTINCT",
+        "SKIP_2ND_MONDAYS_AND_FEASTS"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-010",
+      "candidate_latitude": 50.91865,
+      "candidate_longitude": 6.95686,
+      "candidate_feature_type": "OSM_NAMED_CHURCH_WAY",
+      "geospatial_source_url": "https://mapcarta.com/W225722089",
+      "mapped_feature_identifier": "OpenStreetMap way 225722089",
+      "independent_identity_url": "https://www.maria-hilf-koeln.de/kontakt/",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "CHURCH_ROLANDSTR_59_NOT_FSSP_PARISH_RESIDENCE"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-012",
+      "candidate_latitude": 51.033944,
+      "candidate_longitude": 7.161611,
+      "candidate_feature_type": "NAMED_CHURCH_SITE_COORDINATE",
+      "geospatial_source_url": "https://commons.wikimedia.org/wiki/Category:Heilig-Kreuz-Kirche_(Odenthal)",
+      "mapped_feature_identifier": "Wikimedia object location St Kreuz Klasmühle",
+      "independent_identity_url": "https://www.odenthal.de/suche/heilig-kreuz-kapelle",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "WORSHIP_CHAPEL_SHARED_USE_NOT_PROPERTY_OWNERSHIP"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-013",
+      "candidate_latitude": 51.04548,
+      "candidate_longitude": 7.42666,
+      "candidate_feature_type": "NAMED_CHURCH_SITE_COORDINATE",
+      "geospatial_source_url": "https://www.kuladig.de/Objektansicht/KLD-261991",
+      "mapped_feature_identifier": "Kuladig cultural landscape WGS84 St Apollinaris church",
+      "independent_identity_url": "https://www.lindlar.de/fileadmin/gemeinde/Senioren/Lindlar_80.pdf",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "FSSP_SOURCE_JAN_WELLEMSTR_12_VS_HIKER_PARKING_ST_APOLLINARIS_WEG_3",
+        "OUTDOORACTIVE_PARKING_COORD_NOT_CHURCH_POINT",
+        "LOCAL_2025_MONTHLY_EXCEPTION_MAY_DIFFER"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-015",
+      "candidate_latitude": 49.3156,
+      "candidate_longitude": 6.75388,
+      "candidate_feature_type": "OSM_NAMED_CHURCH_WAY",
+      "geospatial_source_url": "https://mapcarta.com/de/W733991343",
+      "mapped_feature_identifier": "OpenStreetMap way 733991343",
+      "independent_identity_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/saarlouis/messzeiten.php",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "OSM_STIFTSTRASSE_20_VS_FSSP_SOURCE_18",
+        "CANISIANUM_ALIAS_ST_PETRUS_CANISIUS"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-016",
+      "candidate_latitude": 48.839722222,
+      "candidate_longitude": 9.146388889,
+      "candidate_feature_type": "SECONDARY_NAMED_CHURCH_COORDINATE",
+      "geospatial_source_url": "https://dewiki.de/Lexikon/Liste_von_Sakralbauten_in_Stuttgart",
+      "mapped_feature_identifier": "Listed Catholic St Albert Zuffenhausen DMS coordinate",
+      "independent_identity_url": "https://www.kath-kirche-stuttgart.de/service/kirchen-kitafinder/",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "WOLLINSTR_55_POSTCODE_70439_VS_70435",
+        "SECONDARY_COORDINATE_NOT_OSM_CHURCH_WAY_VERIFIED"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-019",
+      "candidate_latitude": 49.19502,
+      "candidate_longitude": 9.22604,
+      "candidate_feature_type": "OSM_NAMED_CHURCH_WAY",
+      "geospatial_source_url": "https://mapcarta.com/W43376158",
+      "mapped_feature_identifier": "OpenStreetMap way 43376158",
+      "independent_identity_url": "https://se-nsu.de/se/st-dionysius",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "FRAUENKIRCHE_SPITALSTR_1_NOT_OTHER_ST_DIONYSIUS_PFARRKIRCHE"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-020",
+      "candidate_latitude": 48.13568,
+      "candidate_longitude": 11.56784,
+      "candidate_feature_type": "OSM_NAMED_CHURCH_WAY",
+      "geospatial_source_url": "https://mapcarta.com/de/W48605346",
+      "mapped_feature_identifier": "OpenStreetMap way 48605346",
+      "independent_identity_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/muenchen/gottesdienstordnung.php",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "CATHOLIC_KREUZKIRCHE_KREUZSTR_10_NOT_PROTESTANT_KREUZKIRCHE"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-021",
+      "candidate_latitude": 48.795508889,
+      "candidate_longitude": 11.439963056,
+      "candidate_feature_type": "NAMED_CHURCH_SITE_COORDINATE",
+      "geospatial_source_url": "https://commons.wikimedia.org/wiki/Category:St._Willibald_(Oberhaunstadt)",
+      "mapped_feature_identifier": "Wikimedia St Willibald Oberhaunstadt mapped object + OSM way 112979104",
+      "independent_identity_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/bettbrunn/messzeiten.php",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "FSSP_DORFPLATZ_4_VS_WIKIMEDIA_DORFPLATZ_5",
+        "PHOTO_CAMERA_LOCATION_NOT_OBJECT_LOCATION"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-027",
+      "candidate_latitude": 47.64262,
+      "candidate_longitude": 9.83458,
+      "candidate_feature_type": "OSM_NAMED_CHURCH_WAY",
+      "geospatial_source_url": "https://mapcarta.com/W87807590",
+      "mapped_feature_identifier": "OpenStreetMap way 87807590",
+      "independent_identity_url": "https://www.gebetsstaette.de/gebetsstaette-wigratzbad/suehnekirche/",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "SUEHNEKIRCHE_DISTINCT_FROM_SEMINARKAPELLE_AND_GNADENKAPELLE",
+        "HOST_SITE_ORDINARY_MASS_CLOCKS_NOT_FSSP_CLOCKS"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-031",
+      "candidate_latitude": 49.273932,
+      "candidate_longitude": 11.462553,
+      "candidate_feature_type": "NAMED_CHURCH_POI",
+      "geospatial_source_url": "https://www.outdooractive.com/de/poi/bayerischer-jura/st.-jobst/2603398/",
+      "mapped_feature_identifier": "Named St Jobst church tourism POI",
+      "independent_identity_url": "https://www.st-johannes-neumarkt.de/filialkirchen/st-jobst",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "PARISH_SUNDAY_1000_1115_VS_NATIONAL_FSSP_1015",
+        "CEMETERY_CHURCH_NOT_MAIN_ST_JOHANNES_PFARRKIRCHE"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-032",
+      "candidate_latitude": 48.059474,
+      "candidate_longitude": 10.640398,
+      "candidate_feature_type": "NAMED_CHURCH_POI",
+      "geospatial_source_url": "https://www.outdooractive.com/en/poi/allgaeu/kapuzinerkirche-maria-unbefleckte-empfaengnis-tuerkheim/1701617/",
+      "mapped_feature_identifier": "Kneippland Unterallgäu verified partner Kapuzinerkirche church POI",
+      "independent_identity_url": "https://www.tuerkheim.de/gemeinde/kirchen/",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "LOCAL_FSSP_MAY_MOVE_WEEKDAY_EVENINGS_TO_OTHER_CHURCH",
+        "TOURISM_MAXIMILIAN_PHILIPP_STR_VS_FSSP_GRABENSTRASSE_SOURCE"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-033",
+      "candidate_latitude": 47.64288,
+      "candidate_longitude": 9.8363,
+      "candidate_feature_type": "OSM_NAMED_CHAPEL_NODE",
+      "geospatial_source_url": "https://mapcarta.com/N2789544934",
+      "mapped_feature_identifier": "OpenStreetMap node 2789544934 Seminarkapelle",
+      "independent_identity_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/priesterseminar/gottesdienstordnung.php",
+      "research_point_disposition": "ACCEPT_NAMED_WORSHIP_BUILDING_OR_CHURCH_POI_ONLY",
+      "independence_limitations": [
+        "SEMINARKAPELLE_SEPARATE_FROM_SUEHNEKIRCHE",
+        "NODE_POI_NOT_CHAPEL_BUILDING_POLYGON"
+      ],
+      "direct_exterior_door_verified": false,
+      "future_Mass_time_verified": false,
+      "canonical_site_modified": false,
+      "public_map_approved": false
+    }
+  ],
+  "special_holds": [
+    {
+      "source_place_id": "CL14-DE-FSSP-028",
+      "risk": "St Georg Nürnberg parish office Bierweg 33 versus FSSP St Georg church Bierweg 35; Protestant St Georg elsewhere in city must not match."
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-034",
+      "risk": "Bonn St Michael Rheinbacher Straße numbering 1 or 13 may reference different church/mission address conventions; do not guess coordinates."
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-018",
+      "risk": "Nußdorf St Leonhard outlying chapel, not parish office Leonhardiweg 5."
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-025",
+      "risk": "Landsberg Ignatiuskapelle is an upstairs liturgical room over the sacristy of Heilig Kreuz, not a generic church centroid."
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-036",
+      "risk": "Deining Haus St Stola is a house chapel, not an independently mapped general public parish church."
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-014",
+      "risk": "Nörvenich Pingsheim St Martinus is distinct from old Erftstadt-Borr St Martinus alternative address."
+    }
+  ],
+  "new_public_approvals": 0
+}
