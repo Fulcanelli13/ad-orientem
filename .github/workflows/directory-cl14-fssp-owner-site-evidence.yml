@@ -1,0 +1,68 @@
+name: Directory CL14 FSSP Germany exact owner site and book evidence
+
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl14-fssp-owner-site-match-20261026/**'
+      - 'tools/directory/reconcile-cl14-fssp-owner-site-evidence.py'
+      - '.github/workflows/directory-cl14-fssp-owner-site-evidence.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl14-fssp-owner-site-match-20261026/**'
+      - 'tools/directory/reconcile-cl14-fssp-owner-site-evidence.py'
+      - '.github/workflows/directory-cl14-fssp-owner-site-evidence.yml'
+  workflow_dispatch:
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate immutable CL2 through CL7 source chain
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+      - name: Rebuild every CL2 through CL14 research layer
+        run: |
+          python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ao-cl14.sqlite
+          python3 tools/directory/audit-cl-completeness.py --db /tmp/ao-cl14.sqlite --output-dir /tmp/ao-cl8
+          python3 tools/directory/audit-cl9-owner-evidence.py --db /tmp/ao-cl14.sqlite --cl8-csv /tmp/ao-cl8/missal_1962_reconciliation.csv --out-dir /tmp/ao-cl9
+          python3 tools/directory/adjudicate-cl10-missal-evidence.py --db /tmp/ao-cl14.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl10
+          python3 tools/directory/reconcile-cl11-owner-sources.py --db /tmp/ao-cl14.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl11
+          python3 tools/directory/reconcile-cl12-singletons.py --db /tmp/ao-cl14.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl12
+          python3 tools/directory/reconcile-cl13-remaining-1962.py --db /tmp/ao-cl14.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl13
+          python3 tools/directory/reconcile-cl14-fssp-owner-site-evidence.py --db /tmp/ao-cl14.sqlite --out-dir /tmp/ao-cl14
+      - name: Assert 73 owner matches and immutable release gates
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl14/cl14_summary.json').read_text())
+          assert x['input_prior_CL13_held_FSSP_rows']==73
+          assert x['fssp_de_owner_site_addresses_source_matched']==38
+          assert x['exact_venue_day_time_1962_book_evidence_accepted']==73
+          assert x['in_source_owner_time_mismatches']==0
+          assert x['cumulative_source_scoped_book_evidence_accepted_after_CL14']==235
+          assert x['cumulative_book_claims_still_held_after_CL14']==197
+          assert x['preexisting_original_CL2_source_owner_witnesses_unchanged']==3
+          assert x['new_public_approved_sites']==x['new_public_approved_timetables']==x['new_una_cum']==x['new_approved_geocodes']==0
+          db=sqlite3.connect('/tmp/ao-cl14.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl14_fssp_direct_slot').fetchone()[0]==73
+          assert db.execute('SELECT COUNT(*) FROM cl14_fssp_owner_site').fetchone()[0]==38
+          assert db.execute('SELECT COUNT(*) FROM classification_source WHERE owner_verified_missal_1962=1').fetchone()[0]==3
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          print('CL14 PASS: direct 73 FSSP Germany site/slot owner evidence, no public release')
+          PY
+      - name: Upload regenerable research audit views
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-cl14-fssp-de-owner-site-slots
+          path: /tmp/ao-cl14/
+          retention-days: 1
