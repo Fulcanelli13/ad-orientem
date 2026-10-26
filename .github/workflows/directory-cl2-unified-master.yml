@@ -1,0 +1,52 @@
+name: CL2 complete unified research master
+
+on:
+  pull_request:
+    paths:
+      - "data/directory/research/cl2-unified-20261026/**"
+      - "tools/directory/rebuild-cl2-research-snapshot.py"
+      - "tools/directory/build-cl2-unified-research-master.py"
+      - ".github/workflows/directory-cl2-unified-master.yml"
+  workflow_dispatch:
+
+jobs:
+  full-exact-source-reconstruction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Syntax check the two independent stdlib importers
+        run: |
+          python3 -m py_compile tools/directory/build-cl2-unified-research-master.py
+          python3 -m py_compile tools/directory/rebuild-cl2-research-snapshot.py
+      - name: Rebuild whole master from committed research JSON alone
+        run: |
+          python3 tools/directory/rebuild-cl2-research-snapshot.py --snapshot-dir data/directory/research/cl2-unified-20261026 --output /tmp/cl2-research.sqlite
+      - name: Verify SQLite data scope and no runtime publication
+        run: |
+          python3 - <<'PY'
+          import sqlite3
+          from pathlib import Path
+          db=sqlite3.connect('/tmp/cl2-research.sqlite')
+          for table,n in [('canonical_site',2584),('venue_source',2687),('classification_source',2715),('mass_time',4681),('existing_alias',5),('identity_exception',49)]:
+              assert db.execute('SELECT COUNT(*) FROM '+table).fetchone()[0]==n
+          assert db.execute("SELECT COUNT(*) FROM venue_source WHERE classification_merge_state='GROUP_CONFLICT_HOLD'").fetchone()[0]==5
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          print("CL2 full SQLite data reconstruction and integrity PASS")
+          PY
+      - name: Tamper a source shard and require checksum rejection
+        run: |
+          cp -a data/directory/research/cl2-unified-20261026 /tmp/cl2-tampered
+          python3 - <<'PY'
+          from pathlib import Path
+          path=next(Path('/tmp/cl2-tampered').glob('site-*.json'))
+          data=path.read_text()
+          path.write_text(data.replace('RESEARCH_ONLY_NOT_PUBLIC','PUBLIC',1))
+          PY
+          if python3 tools/directory/rebuild-cl2-research-snapshot.py --snapshot-dir /tmp/cl2-tampered --output /tmp/cl2-invalid.sqlite; then
+            echo "Tampered shard incorrectly accepted"
+            exit 1
+          fi
