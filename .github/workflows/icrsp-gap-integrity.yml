@@ -129,6 +129,10 @@ on:
       - 'data/source-text/icrsp-france-b34-remaining278-priority120-owner-triage.v1.json'
       - 'data/source-text/icrsp-france-b34-242-remaining120-priority-owner-queue.v1.json'
       - 'tests/test_icrsp_b34_541_union_and_242_priority.py'
+      - 'data/source-text/icrsp-france-b35-first50-priority-direct-topic-excerpts.v1.json'
+      - 'data/source-text/icrsp-france-b35-591-unique-direct-topic-ledger.v1.json'
+      - 'data/source-text/icrsp-france-b35-after50-priority70-and-rest122.v1.json'
+      - 'tests/test_icrsp_b35_first50_exact_priority.py'
   workflow_dispatch:
 
 permissions:
@@ -190,5 +194,6 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b32_editorial20_fresh200.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b33_486_source_review.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b34_522_direct_topics.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b35_first50_exact_priority.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b34_505_direct_and_source_error.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b34_541_union_and_242_priority.py' -v
