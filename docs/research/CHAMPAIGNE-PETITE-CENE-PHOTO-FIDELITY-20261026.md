@@ -14,7 +14,7 @@
 
 [Mobile and desktop QA research page](https://github.com/Fulcanelli13/ad-orientem/blob/research/champaigne-inv1125-photo-review-20261026/assets/staged/champaigne-petite-cene-research/mobile-desktop-visual-qa.html), [native-pixel perimeter strips](https://github.com/Fulcanelli13/ad-orientem/blob/research/champaigne-inv1125-photo-review-20261026/assets/staged/champaigne-petite-cene-research/D-frame-free-perimeter-inspection.png).
 
-An earlier full-responsive automated browser test used **C** and passed four widths (320/390/768/1440) for layout, not image quality. A separate rerun targets **D**. Never use the previous C browser success as a D artwork or release certification.
+**D-specific browser QA passed** on [run 40357038221](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40357038221): 320, 390, 768, and 1440 px; `object-fit: contain`, source proportions preserved, no horizontal overflow, full-image viewer usable and closable. The [stored test measurements](https://github.com/Fulcanelli13/ad-orientem/blob/research/champaigne-inv1125-photo-review-20261026/assets/staged/champaigne-petite-cene-research/responsive-test-screenshots/test-results.json) explicitly identify this as a **standalone research layout**. This does NOT prove full original painted-boundary fidelity, museum-accurate colour, licence clearance or real Ad Orientem Calendar/Home integration. The earlier C-specific browser success is not relevant to D.
 
 ### Source and image integrity
 
@@ -27,7 +27,7 @@ An earlier full-responsive automated browser test used **C** and passed four wid
 
 ### Quality before pixels
 
-Native-camera samples make Jesus's facial modelling, blue garment and faces at the edges clearer than the existing small photo. The camera photo, however, is *cooler and more washed out* than the old reproduction, with some visible gallery reflection/photographic haze in its darker painted background. Do **not** 'correct' it by matching an uncalibrated Google/Commons JPG. Colour requires cross-checking against a credible institution colour reference.
+Native-camera samples make Jesus's facial modelling, blue garment and faces at the edges clearer than the existing small photo. The camera photo, however, is *cooler and more washed out* than the old reproduction, with some visible gallery reflection/photographic haze in its darker painted background. The [official Louvre image reference](https://collections.louvre.fr/ark:/53355/cl010062076) is useful for independent visual comparison of the same accession, but public webpage imagery is not an audited colour-managed master. Do not infer a formal colour pass from subjective screen comparison. Do **not** 'correct' it by matching an uncalibrated Google/Commons JPG. Colour requires cross-checking against a credible institution colour reference.
 
 The [Gallerix 3528×1881 photograph](https://gallerix.org/storeroom/1265835004/N/3648454315/) appears full-frame and may make a useful visual reference, but its independent reuse permission has **not been proven** and it is excluded from our public image archive or live app. Louvre/RMN professional photography has separate restrictions for uses outside its free-listed categories ([Louvre image terms](https://collections.louvre.fr/page/cgu)); the Bridgeman high-resolution master is paid and prohibited by the user's €0 rule.
 
@@ -36,7 +36,7 @@ The [Gallerix 3528×1881 photograph](https://gallerix.org/storeroom/1265835004/N
 1. Compare derivative D **at full scale** with original boundaries, ensuring that no genuine painted content has been cut to remove the frame. The crop is **not yet signed off**.
 2. Verify actual tonal and colour fidelity against reliable museum reference. Do not artificially darken, saturate or reconstruct.
 3. Confirm reuse rights in all app distribution jurisdictions, plus whether the Louvre site restrictions apply to the independently dedicated photograph.
-4. Test mobile 320/390 px, desktop and tap-to-view-full layouts in actual Ad Orientem. A 2250×1208 horizontal composition should normally be `contain`, not vertical centre-cropped.
+4. **Standalone D layout test passed** at 320/390/768/1440px. Remaining task: test real Calendar/Home surfaces (not just the standalone photo review page) without vertical centre-cropping or navigation regressions.
 5. Only after checks explicitly set photo release statuses to true and use the **same** approved source in Holy Thursday and Pentecost Ember Wednesday; do not duplicate.
 6. Keep old archival Ugolino provenance while removing its framed photo from active Holy Thursday selection.
 
