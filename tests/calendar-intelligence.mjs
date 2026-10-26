@@ -307,3 +307,6 @@ assert.equal(Object.keys(DEVOTIONAL_PRACTICE_REGISTRY).filter(x=>["corpus","chri
 assert.doesNotMatch(novenaRuntime,/function easter\(/,"Novena runtime reintroduced a private Easter calculator");
 
 console.log("PASS shared Calendar intelligence: practices, programmes and novena date semantics");
+
+// Include sourced historical-context contract in the canonical Calendar suite.
+await import("./calendar-historical-context.mjs");
