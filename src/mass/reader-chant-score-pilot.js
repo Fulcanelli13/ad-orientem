@@ -240,7 +240,8 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
     const tasks=[[inlineEngraver,picture,panel.querySelector("[data-score-fallback]")],
       [expandedEngraver,fullPicture,dialogue.querySelector("[data-score-full-fallback]")]];
     for(const [renderer,container,fallBack] of tasks){
-      const job=renderedScoreId===value.id ? renderer.reflow():renderer.engrave(value.gabc);
+      const job=renderedScoreId===value.id && renderer.getState().rendered
+        ? renderer.reflow():renderer.engrave(value.gabc);
       Promise.resolve(job).then(()=>{
         if(destroyed||request!==renderCounter)return;
         container.hidden=false;fallBack.hidden=true;updateProgress();
