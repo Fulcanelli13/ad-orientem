@@ -34,3 +34,14 @@ Do not silently replace paintings, merge editorial approval with rights approval
 - No automatic resizing, editing, publication, app integration, or status promotion.
 - No GitHub Actions artifacts as primary storage. No claim that a *candidate* is a *master*.
 - Production gate remains **0/22** until actual byte acquisition, visual QA, reuse/credit, and crop/app tests occur.
+
+## Painting fidelity inspection (mandatory)
+
+[Painting visual-fidelity policy](../../docs/module-hero-painting-visual-fidelity-policy-20261026.md) sets the real-world standard. Do not infer painterly quality from file size or pixels. After acquiring real source files:
+
+```bash
+python3 scripts/art/review-module-hero-quality.py
+python3 scripts/art/assert-module-hero-release.py rosary
+```
+
+The quality script produces *unedited* source-colour previews plus 100%-scale detail crops and a machine-readable checklist. The second script blocks production promotion while **any** master, verified museum identity, SHA-256, visual-review item, rights approval or responsive crop is outstanding. Do not run the second test as an unrelated app-wide release gate: it evaluates one module hero's attempted promotion and all 22 heroes are still rightly pending master review.
