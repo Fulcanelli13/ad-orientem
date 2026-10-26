@@ -1,0 +1,137 @@
+{
+  "schema": "AO_SACRED_PLACES_P46_FOUR_SOURCE_VERIFIED_CHURCH_BUILDINGS_V1",
+  "date": "2026-10-26",
+  "status": "PROPOSED_CANONICAL_RELEASE_PENDING_CI_MERGE",
+  "baseline": {
+    "places": 500,
+    "sources": 798,
+    "crosswalk": 500,
+    "unlinked": 241,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 504,
+    "sources": 802,
+    "crosswalk": 504,
+    "unlinked": 245,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "new_physical_locations": 4,
+  "new_mapping_rows_resolved": 0,
+  "new_global_candidate_ids_resolved": 4,
+  "global_canonical_links_after_release": 128,
+  "global_unresolved_after_release": 372,
+  "remaining_open_mapping_queue_after_release": 33,
+  "new_geo_areas": [],
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "source_owners": [
+    "data/geography/research/sacred-places-p45-first150-source-evidence.v1.json",
+    "Official Belgian Basilica and Polish Franciscan custodian websites",
+    "Đakovo-Osijek Archdiocese on the Aljmaš pilgrimage church",
+    "Notre-Dame des Marches rectorate official website",
+    "Mapcarta OSM-backed named individual church building features"
+  ],
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0225",
+      "place_id": "place:BE:p46-sg-0225-30163817",
+      "name": "Basilique Nationale du Sacré-Cœur de Koekelberg",
+      "place_type": "basilica",
+      "country": "BE",
+      "country_name": "Belgium",
+      "city": "Koekelberg, Brussels",
+      "lat": 50.86708,
+      "lng": 4.31705,
+      "geo_source_ref": "osm:way:30163817",
+      "geo_source_url": "https://www.openstreetmap.org/way/30163817",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/26242940",
+      "identity_source_url": "https://www.basilicakoekelberg.be/?lang=en",
+      "identity_source_issuer": "National Basilica of the Sacred Heart, Koekelberg",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Catholic minor basilica worship building; distinguish the separately managed panorama, museums and surrounding public park",
+      "precision": "site",
+      "source_ids": [
+        "AO-P46-SITE-SG-INV-0225-30163817"
+      ],
+      "mapping_method": "P46_CUSTODIAN_AND_INDIVIDUAL_NAMED_OSM_BUILDING"
+    },
+    {
+      "candidate_id": "SG-INV-0215",
+      "place_id": "place:PL:p46-sg-0215-229930104",
+      "name": "Bazylika Niepokalanej Wszechpośredniczki Łask w Niepokalanowie",
+      "place_type": "basilica",
+      "country": "PL",
+      "country_name": "Poland",
+      "city": "Niepokalanów, Teresin",
+      "lat": 52.20375,
+      "lng": 20.42029,
+      "geo_source_ref": "osm:way:229930104",
+      "geo_source_url": "https://www.openstreetmap.org/way/229930104",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W229930104",
+      "identity_source_url": "https://niepokalanow.pl/sanktuarium/bazylika-nmp",
+      "identity_source_issuer": "Niepokalanów Conventual Franciscan sanctuary",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Minor basilica of the Immaculate Mediatrix of All Graces; separate from Saint Maximilian memorial chapel and perpetual adoration chapel",
+      "precision": "site",
+      "source_ids": [
+        "AO-P46-SITE-SG-INV-0215-229930104"
+      ],
+      "mapping_method": "P46_CUSTODIAN_AND_INDIVIDUAL_NAMED_OSM_BUILDING"
+    },
+    {
+      "candidate_id": "SG-INV-0313",
+      "place_id": "place:HR:p46-sg-0313-308623424",
+      "name": "Svetište Gospe od Utočišta u Aljmašu",
+      "place_type": "shrine",
+      "country": "HR",
+      "country_name": "Croatia",
+      "city": "Aljmaš, Osijek-Baranja",
+      "lat": 45.53016,
+      "lng": 18.94989,
+      "geo_source_ref": "osm:way:308623424",
+      "geo_source_url": "https://www.openstreetmap.org/way/308623424",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W308623424",
+      "identity_source_url": "https://djos.hr/duhovna-obnova-u-aljmasu-okupila-vjernike-osjeckoga-istocnog-dekanata/",
+      "identity_source_issuer": "Archdiocese of Đakovo-Osijek",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Current Marian pilgrimage church in Aljmaš; exclude separate Gospa pod lipom chapel, war memorial centre and the demolished historical church",
+      "precision": "site",
+      "source_ids": [
+        "AO-P46-SITE-SG-INV-0313-308623424"
+      ],
+      "mapping_method": "P46_ARCHDIOCESAN_AND_INDIVIDUAL_NAMED_OSM_BUILDING"
+    },
+    {
+      "candidate_id": "SG-INV-0272",
+      "place_id": "place:CH:p46-sg-0272-319525195",
+      "name": "Chapelle Notre-Dame des Marches",
+      "place_type": "chapel",
+      "country": "CH",
+      "country_name": "Switzerland",
+      "city": "Broc, Fribourg",
+      "lat": 46.59275,
+      "lng": 7.10162,
+      "geo_source_ref": "osm:way:319525195",
+      "geo_source_url": "https://www.openstreetmap.org/way/319525195",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W319525195",
+      "identity_source_url": "https://lesmarches.ch/",
+      "identity_source_issuer": "Rectorat de Notre-Dame des Marches",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Exact Marian pilgrimage chapel at Broc; not surrounding pilgrimage esplanade, hostel, or other neighbourhood chapels",
+      "precision": "site",
+      "source_ids": [
+        "AO-P46-SITE-SG-INV-0272-319525195"
+      ],
+      "mapping_method": "P46_CUSTODIAN_AND_INDIVIDUAL_NAMED_OSM_BUILDING"
+    }
+  ],
+  "policy": [
+    "No campus-only or nearby-chapel substitutions; one named church building per Place.",
+    "All 4 frozen candidate IDs appear in P43 global 500 unresolved queue, none in the separate 35-case mapping queue.",
+    "No inferred TLM schedule, media, pilgrimages, Calendar bindings, personal shrine stories, recognition or devotional authenticity.",
+    "The P45 research manifest is immutable and remains a source, not a substitute for this canonical release."
+  ]
+}
