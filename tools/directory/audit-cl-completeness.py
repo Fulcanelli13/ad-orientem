@@ -99,7 +99,11 @@ def main():
             }
     fields = []
     def add(scope, identity, group_id, field, raw, evidence, url="", note=""):
-        state = "PRESENT" if present(raw) else "MISSING"
+        state = ("PRESENT" if present(raw) else
+                 "NOT_ASSESSED" if evidence == "NOT_INDEPENDENTLY_ASSESSED" else
+                 "NOT_APPLICABLE" if evidence in ("NO_RELEASE_APPROVAL",
+                      "NO_SITE_CELEBRATION_RELEASE", "NO_CURRENT_TIMETABLE_RELEASE")
+                 else "MISSING")
         fields.append((scope,identity,group_id,field,state,evidence,
                        str(raw) if raw is not None else "",url or "",note,RELEASE))
     site_gaps = []
@@ -254,7 +258,10 @@ def main():
     counts = [dict(row) for row in db.execute("""
         SELECT scope,field_key,COUNT(*) AS denominator,
           SUM(presence='PRESENT') AS collected,SUM(presence='MISSING') AS missing,
-          SUM(evidence_state IN ('OWNER_WITNESS_ACCEPTED','DIRECT_OWNER_PAGE_REVIEWED')) AS direct_accepted,
+          SUM(presence='NOT_ASSESSED') AS not_assessed,
+          SUM(presence='NOT_APPLICABLE') AS not_applicable,
+          SUM(evidence_state IN ('OWNER_WITNESS_ACCEPTED','DIRECT_OWNER_PAGE_REVIEWED',
+              'OWNER_1962_DIRECT_WITNESS_REVIEWED')) AS direct_accepted,
           SUM(release_state!='HOLD_NOT_PUBLIC') AS released
         FROM cl_audit_field GROUP BY scope,field_key ORDER BY scope,field_key""")]
     per_type = dict(Counter(r["wording_category"] for r in reconciliation))
@@ -268,7 +275,8 @@ def main():
     assert not db.execute("SELECT 1 FROM cl_audit_field WHERE release_state!='HOLD_NOT_PUBLIC'").fetchone()
 
     write_csv(a.output_dir/"field_metrics.csv",
-              ["scope","field_key","denominator","collected","missing","direct_accepted","released"],counts)
+              ["scope","field_key","denominator","collected","missing","not_assessed",
+               "not_applicable","direct_accepted","released"],counts)
     write_csv(a.output_dir/"missal_1962_reconciliation.csv",
               ["row_no","source_id","group_id","name","wording_category","mass_type",
                "evidence_excerpt","research_notes","schedule_url","schedule_checked",
@@ -295,6 +303,9 @@ def main():
           sum(r["priority"]=="REVIEW_URL" for r in institutional_queue),
       "timetable_reconciliation_candidates":len(reconciliation),
       "timetable_wording_breakdown":per_type,
+      "distinct_candidate_group_ids":len({r["group_id"] for r in reconciliation}),
+      "candidate_historical_verified_labels":sum(r["historical_status"]=="VERIFIED" for r in reconciliation),
+      "original_historical_verified_timetable_labels":3347,
       "previously_reported_1962_candidates":396,
       "comparison_warning":"396 is a historical research count, not asserted identical to the explicit reproducible extraction here.",
       "new_missal_acceptances":0,"new_public_site_releases":0,
