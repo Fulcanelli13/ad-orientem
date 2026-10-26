@@ -71,7 +71,11 @@ export function scoreReadingStep(clientHeight){
 
 const CSS=String.raw`
 .ao-chant-score-launch[hidden],.ao-chant-score-panel[hidden],.ao-chant-score-dialog[hidden]{display:none!important}
-.ao-chant-score-launch{font-size:9px!important;letter-spacing:.065em!important;grid-column:1/-1}
+.ao-chant-score-launch{position:absolute;right:62px;top:7px;z-index:11;
+  min-height:26px;padding:4px 7px;font-size:8px!important;letter-spacing:.04em!important}
+.ao-schola-dock[data-score-available="true"] .ao-schola-title{padding-right:165px}
+@media(max-width:760px){.ao-chant-score-launch{right:61px;top:3px}
+ .ao-schola-dock[data-score-available="true"] .ao-schola-title{padding-right:159px}}
 .ao-schola-dock[data-notation="true"]:not([data-collapsed="true"]),
 .ao-schola-dock[data-shared="true"][data-notation="true"]:not([data-collapsed="true"]){
   height:min(430px,42dvh)!important;max-height:min(430px,42dvh)!important;min-height:260px!important
@@ -239,6 +243,7 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
   function changeTrack(schola){
     const track=String(schola?.trackId??"");
     trigger.hidden=track!=="KYRIE";
+    dock.dataset.scoreAvailable=String(track==="KYRIE");
     if(track!=="KYRIE"&&isOpen){isOpen=false;hideFull({restoreFocus:false});updateVisible();}
     lastTrack=track;
   }
@@ -271,15 +276,24 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
     // Prevent Mass-card arrow navigation while the modal has keyboard focus.
     if(["ArrowLeft","ArrowRight"].includes(event.key)){event.stopPropagation();}
   };
-  const onSelect=()=>{scoreId=select.value;applyScore();};
-  const onImageError=()=>{
-    imageErrors.add(scoreId);picture.hidden=true;fullPicture.hidden=true;
+  const onSelect=()=>{scoreId=select.value;imageErrors.delete(scoreId);applyScore();};
+  const onPanelKey=event=>{
+    // Inline score keyboard navigation is independent from Mass card navigation.
+    if(["ArrowLeft","ArrowRight"].includes(event.key))event.stopPropagation();
+  };
+  const onImageError=event=>{
+    const failed=SCHOLA_SCORE_CATALOGUE.find(s=>s.svgUrl===event?.target?.getAttribute?.("src"));
+    if(!failed)return;
+    imageErrors.add(failed.id);
+    if(failed.id!==scoreId)return;
+    picture.hidden=true;fullPicture.hidden=true;
     panel.querySelector("[data-score-fallback]").hidden=false;
     dialogue.querySelector("[data-score-full-fallback]").hidden=false;
   };
   const onScroll=()=>updateProgress();
   trigger.addEventListener("click",onTrigger);
   panel.addEventListener("click",onPanelClick);
+  panel.addEventListener("keydown",onPanelKey);
   select.addEventListener("change",onSelect);
   dialogue.addEventListener("click",onDialogueClick);
   dialogue.addEventListener("keydown",onDialogKey);
@@ -293,12 +307,14 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
       changeTrack(schola);
       // Never use schola.index/segmentId as a score-position clock.
     },
+    hide:close,
     getState:()=>Object.freeze({open:isOpen,referenceScoreId:scoreId,
       actualChoirMelody:"UNKNOWN",lastTrack}),
     destroy(){
       destroyed=true;
       trigger.removeEventListener("click",onTrigger);
       panel.removeEventListener("click",onPanelClick);
+      panel.removeEventListener("keydown",onPanelKey);
       select.removeEventListener("change",onSelect);
       dialogue.removeEventListener("click",onDialogueClick);
       dialogue.removeEventListener("keydown",onDialogKey);
