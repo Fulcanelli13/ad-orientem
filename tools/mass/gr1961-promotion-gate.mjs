@@ -24,7 +24,9 @@ export function assessGraduale1961Promotion(item,{
     item.id!=="GREGOBASE-"+item.gregobaseId||
     item.releaseStatus!=="RESEARCH_IMPORT_NOT_EDITORIALLY_APPROVED")
     failures.push("SOURCE_RECORD_NOT_STAGED");
-  if(!item?.gabc?.includes("%%")||sha256(item.gabc)!==item?.sha256)
+  // The pinned SQL stores raw GABC notation bodies, without a metadata header.
+  if(typeof item?.gabc!=="string"||!/\([cf][1-4]\)/.test(item.gabc)||
+    sha256(item.gabc)!==item?.sha256)
     failures.push("GABC_INTEGRITY");
   if(!item?.gradualeRomanum1961Page||item?.sourceEditionId!==2)
     failures.push("1961_EDITION_WITNESS");
