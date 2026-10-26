@@ -143,7 +143,7 @@ function main(){
  // Do not mistake the ephemeral runner log for permanent storage.
  if(get("--emit-shard-checkpoints")==="1"){
   for(const shard of shards){
-   const json=JSON.stringify(shard)+"\\n";
+   const json=JSON.stringify(shard)+"\n";
    const bytes=Buffer.from(json,"utf8");
    const sha256=createHash("sha256").update(bytes).digest("hex");
    const encoded=bytes.toString("base64");
