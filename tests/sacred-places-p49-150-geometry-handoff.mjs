@@ -5,13 +5,14 @@ const m=read("data/geography/research/sacred-places-p49-ranked150-geometry-hando
 const p43=read("data/geography/research/sacred-places-p43-open35-global500-reconciliation.v1.json");
 const p44=read("data/geography/research/sacred-places-p44-two-catalan-basilicas.v1.json");
 const p46=read("data/geography/research/sacred-places-p46-four-exact-catholic-buildings.v1.json");
-const p48=read("data/geography/research/sacred-places-p48-eight-global-buildings.v1.json");
+const p48Ids=m.selection.p48_reserved_candidate_ids;
 const p27=read("data/geography/research/sacred-places-p27-osm-search-seeds.v1.json");
 const registry=read("data/geography/seed-registry.v1.json");
 assert.equal(m.schema,"AO_SACRED_PLACES_P49_RANKED150_GEOMETRY_HANDOFF_V1");
 assert.equal(m.state,"RESEARCH_HANDOFF_NO_PUBLICATION");
-const excluded=new Set([...p44.published_new.flatMap(x=>x.candidate_ids||[x.candidate_id]),...p46.published_new.map(x=>x.candidate_id),...p48.published_new.map(x=>x.candidate_id)]);
+const excluded=new Set([...p44.published_new.flatMap(x=>x.candidate_ids||[x.candidate_id]),...p46.published_new.map(x=>x.candidate_id),...p48Ids]);
 const remaining=p43.global_acquisition_500.filter(x=>!x.known_canonical_link&&!excluded.has(x.candidate_id));
+assert.equal(p48Ids.length,8);assert.equal(new Set(p48Ids).size,8);
 assert.equal(remaining.length,364);
 assert.equal(m.rows.length,150);
 assert.equal(m.counts.input_eligible,364);assert.equal(m.counts.remainder_not_in_this_batch,214);
