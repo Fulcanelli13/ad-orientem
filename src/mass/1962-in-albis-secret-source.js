@@ -17,7 +17,12 @@ function normalize(v){return String(v??"").normalize("NFD").replace(/[\u0300-\u0
  .replace(/[œ]/gu,"oe").replace(/[æ]/gu,"ae").replace(/[^a-z0-9]+/giu," ").trim().toLowerCase()}
 function matchPartial(existing,actual){
  const value=String(existing??"").trim();
- if(!value||/^\s*[$@]/u.test(value))return true;
+ if(!value||/^\s*\$Per Dominum\.?$/u.test(value))return true;
+ // Source-donor evidence: [Secreta] literally contains
+ // @Tempora/Pasc1-0:Secreta. The normalizer may retain the pointer
+ // with or without "@". This *specific* circular marker is not a prayer.
+ // Never accept a different @source identity or a generic unresolved text.
+ if(/^@?Tempora\/Pasc1-0:Secreta\.?$/iu.test(value))return true;
  const current=normalize(value),expected=normalize(actual);
  return current.length>=32&&(current.startsWith(expected.slice(0,Math.min(32,expected.length)))||
    expected.startsWith(current.slice(0,Math.min(32,current.length))));
