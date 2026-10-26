@@ -1,6 +1,6 @@
 {
   "name": "Ad Orientem module heroes — acquisition and publication gates",
-  "version": "2026-10-26.audit1",
+  "version": "2026-10-26.audit2.visual-fidelity-gate",
   "editorial_ledger_ref": "data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json",
   "editorial_ledger_sha_at_audit": "afb09129f52e336df64c7f1782446e7cfb6861dc",
   "generated_from_latest_user_confirmed_22_selections": true,
@@ -22,7 +22,9 @@
     "candidate_image_pages_identified": 21,
     "candidates_with_page_listed_dimensions": 18,
     "museum_or_commons_reuse_terms_explicitly_documented": 14,
-    "release_cleared": 0
+    "release_cleared": 0,
+    "master_quality_passed": 0,
+    "previews_visually_screened_not_master": 4
   },
   "entries": [
     {
@@ -60,7 +62,29 @@
       ],
       "notes": [
         "Museum confirms CC0/public domain downloadable image; retrieve actual master via Met API and verify checksum."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Museum photograph preferred; compare source coloration to Met's official colour-managed record.",
+          "Check that Mary's face, lily and hovering angel survive mobile framing."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "joseph",
@@ -97,7 +121,29 @@
       ],
       "notes": [
         "Large faithful reproduction located; 2025 Commons revision."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Do not substitute the cropped 2,605×997 Commons derivative for the complete 4,421×6,000 master.",
+          "Check Joseph's sleeping face and Mary's figure; no shadow lifting of the intentionally dark areas."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "holy-spirit",
@@ -135,7 +181,29 @@
       ],
       "notes": [
         "Existing approved WGA upload only 1240×730. Higher-resolution same Louvre INV20303 located; image metadata has photographer copyright notice."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Compare Restout's subtle cloud transitions and small flame details; block before resolving contradictory rights metadata.",
+          "High ISO/compression and hypercontrast can compromise the painted atmosphere."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "heart-jesus",
@@ -170,7 +238,28 @@
         "Approve responsive crop with full-uncropped option",
         "Integrate into app with release tests"
       ],
-      "notes": []
+      "notes": [],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Inspect red heart, radiance, dark contours, gold tones and glazing for false oversaturation or edge halos."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "heart-mary",
@@ -207,7 +296,29 @@
       ],
       "notes": [
         "Commons artwork date field says 1000, an obvious metadata anomaly; ignore and seek authoritative dating."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Match this reproduction to its companion Sacred Heart source; check if editing introduced artificial colour differences.",
+          "Artwork metadata dating anomaly is not photo evidence."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "michael",
@@ -244,7 +355,29 @@
       ],
       "notes": [
         "Adequate provisional dimensions; compare with higher-resolution museum reproduction."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Examine sword/wing feather microdetails, fabric highlights, deep brown shadows, and signs of sharpening halos.",
+          "High-res museum scan preferable to merely larger digital copy."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "angel",
@@ -281,7 +414,29 @@
       ],
       "notes": [
         "Low-resolution source unsuitable as archival master; do not upscale via AI."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Current 694×1100 file cannot show reliable pigment and brushwork microdetail; find independent institutional master.",
+          "Verify full garment/child/angel wings are visible, not a square commercial product crop."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "regina",
@@ -318,7 +473,29 @@
       ],
       "notes": [
         "Do not confuse central panel, triptych assembly and reverse; inspect visually."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Distinguish historical central Resurrection panel from triptych assembly, overframed museum photograph, or panels reversed.",
+          "Check topmost banner and lower foot/sepulchre not clipped."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "adoration",
@@ -356,7 +533,29 @@
       ],
       "notes": [
         "The Met item 2005.186 confirms open access."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Use the official Met open access original preferentially; a museum-approved scan can be better than an enormous third-party upscaled copy.",
+          "Check face/host/halo whites retain tonal detail."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "scripture",
@@ -393,7 +592,29 @@
       ],
       "notes": [
         "Keep Borghese original distinct from the separate Saint Jerome variants by Caravaggio."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Caravaggio has several St Jerome versions; confirm Borghese original and painting state before comparing photographic sharpness.",
+          "Preserve dark pigments and illumination; do not brighten tenebrism artificially."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "king",
@@ -433,7 +654,29 @@
       "notes": [
         "Editorial source https://www.christies.com/en/lot/lot-6223948 is WRONG: ceiling decoration by Italian School. Correct Benson lot https://www.christies.com/en/lot/lot-6238407; Commons photo references correct lot.",
         "Auction analysis notes figure's identity may be deliberately ambiguous between Father and Son; iconographic display review required without changing selection."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Correct the unrelated auction lot reference before editorial data is reused.",
+          "Check painting identity, surrounding arch and halo crop; a high-res copy of a wrong Christ is unacceptable."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "souls",
@@ -470,7 +713,29 @@
       ],
       "notes": [
         "Inventory BF.2004.1 matches MFAH approved artwork."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Verify inventory BF.2004.1 and full lower-zone figures; avoid saturation of blue/red garments.",
+          "Review tonal detail of darker souls without synthetic shadow enhancement."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "salvation",
@@ -507,7 +772,29 @@
       ],
       "notes": [
         "Exact huge Musée de Picardie painting located; reproduction too small for a confident master of densely detailed composition."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Wide dense composition needs more effective spatial detail than 1600×990 can provide.",
+          "Do not crop away the architectural panorama or Christ's birth scene."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "morning",
@@ -545,7 +832,29 @@
       ],
       "notes": [
         "Seek original Art Institute of Chicago IIIF master, artwork 94841, instead of this modest Commons PNG."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Look for Art Institute of Chicago's authoritative colour-managed master rather than 1019×1534 PNG.",
+          "Check sky dusk tonal gradation versus posterized or boosted orange lighting."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "evening",
@@ -583,7 +892,29 @@
       ],
       "notes": [
         "Exact inventory OP6, 1857 confirmed by Art UK. Existing Art UK image is NOT publication-cleared by Art UK terms. Commons alternate is low resolution."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Prefer gallery-quality acquisition when rights allow; 898×1200 online image may look soft/processed.",
+          "Preserve candlelight and natural shadow; do not lift dark regions aggressively."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "perpetual",
@@ -620,7 +951,29 @@
       ],
       "notes": [
         "Retain explicit user approval of poster, distinguish from original Roman icon."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Check that photographic capture faithfully represents *approved poster* (not original Roman icon), including symbols, faces and typography.",
+          "Reject inkjet halftone, moiré, glossy glare, uneven hue even with 3000×3688 dimensions."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "saints",
@@ -657,7 +1010,29 @@
       ],
       "notes": [
         "KHM GG 838; find exact faithful museum/Commons master; Google Arts & Culture web preview is not an image master."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "reference_preview_examined_not_master",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Compare full KHM ensemble photo including sculptural frame to painting-only file. Hero must feature actual painted panel.",
+          "Museum full-object shot is a fidelity reference, not necessarily an approved mobile crop."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "visit",
@@ -694,7 +1069,29 @@
       ],
       "notes": [
         "Exact Wallraf WRM 2122, 1622 confirmed. Avoid similarly titled Honthorst works in Greifswald, Nantes, and elsewhere."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Check Wallraf-specific Honthorst painting identity; several similar Adoration of Shepherds compositions exist.",
+          "Inspect candle/child radiance, excessive overexposure and black clipping."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "mass",
@@ -731,7 +1128,29 @@
       ],
       "notes": [
         "Wide group composition must not be blindly cropped to central figure; full image may require alternate adaptive layout."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "not_examined_at_master_resolution",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Wide densely populated original cannot be blindly cut to portrait; review mobile layout using letterbox or controlled focal crop.",
+          "Texture and faces across scene must remain coherent, not upscaled."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "confession",
@@ -768,7 +1187,29 @@
       ],
       "notes": [
         "NGA accession 1948.12.1; actual downloadable file and pixel dimensions not yet checked."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "reference_preview_examined_not_master",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Prefer NGA official IIIF original; preview demonstrates muted palette and whole scene, but still inspect source bytes.",
+          "Preserve father/son embrace plus surrounding figures; do not isolate figures into false composition."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "rosary",
@@ -805,7 +1246,30 @@
       ],
       "notes": [
         "Exact Cingoli altarpiece. Keep full painting and fifteen surrounding mysteries visible; image cropping must be deliberate."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "reference_preview_examined_not_master",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Cross-source preview comparison shows different blue/green/gold saturation; do not approve a favourite by aesthetic brightness alone.",
+          "Inspect ISO6400 Sailko photo for chroma noise and loss of fine details in 15 mystery medallions.",
+          "Test full altarpiece and detail-legibility at phone width; museum reference takes precedence for colour."
+        ],
+        "quality_verification_notes": []
+      }
     },
     {
       "module_id": "sorrows",
@@ -844,7 +1308,43 @@
       "notes": [
         "Inventory 008327-000 confirmed, currently not displayed; request/retrieve exact file and check photographic credit.",
         "Official MNAC image path surfaced by museum-backed image lookup: https://www.museunacional.cat/sites/default/files/images/art_piece/first_gallery/34950/008327-000.JPG; download and actual pixel dimensions not verified. Do NOT treat as a captured source master."
-      ]
+      ],
+      "visual_quality": {
+        "preview_review_status": "reference_preview_examined_not_master",
+        "master_review_status": "pending_download_and_100_percent_visual_inspection",
+        "verdict": "NOT_RELEASED",
+        "reproduction_checks": {
+          "object_match": "pending",
+          "artwork_state_preserved": "pending",
+          "colour_white_balance": "pending",
+          "tonal_intent": "pending",
+          "texture_vs_noise": "pending",
+          "focus_sharpness": "pending",
+          "no_glare_or_perspective": "pending",
+          "no_jpeg_damage_or_halation": "pending",
+          "uncropped_whole_work": "pending",
+          "mobile_focal_layout": "pending"
+        },
+        "specific_quality_risks": [
+          "Museum preview identifies seven roundels, sword and sorrowful Virgin; exact MNAC master bytes and camera fidelity unverified.",
+          "Preserve all seven roundels and sword; do not crop to Madonna alone."
+        ],
+        "quality_verification_notes": []
+      }
     }
-  ]
+  ],
+  "quality_policy": {
+    "preferred_hierarchy": [
+      "Verified museum/institution scan of exact accession, with appropriate reuse rights",
+      "Professional reproduction documented as faithful to museum colour reference",
+      "Competent photographic reproduction with manual noise/glare/crop inspection",
+      "Website thumbnails only as visual leads, never as authoritative originals"
+    ],
+    "no_fake_approval": "A high pixel count, metadata observation or visual check of 512-pixel preview is not a passing result.",
+    "no_aesthetic_falsification": "Do not colourise, brighten, smooth, reconstruct, relight or paint over genuine original details to flatter app style; preserve artist's tonal values and conservation state.",
+    "no_unilateral_crop": "Keep a full-frame version; approve phone and desktop focal crops only after original full image has been checked; use letterbox/contain for complex paintings.",
+    "quality_not_automated": "Image statistic diagnostics can flag issues only; no automated aesthetic scoring of paintings, because craquelure, impasto, aged varnish and tenebrism are real artwork properties.",
+    "inspection_at_real_pixels": "Review 100% crop of faces, detail zones and background with colour-managed sRGB preview; compare to museum reference where possible.",
+    "all_gates": "Exact object identity; faithful source; lens/perspective/glare; texture/noise/compression; colour/tonal fidelity; full composition; mobile layout; rights/provenance; checksummed original."
+  }
 }
