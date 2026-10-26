@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
-import {readFileSync} from "node:fs";
+import {readFileSync,existsSync} from "node:fs";
 import {stageG0ResearchVenues} from "../src/find/g0-research-venues.js";
-import {loadDirectoryDataset} from "../src/find/data-service.js";
+import {loadDirectoryDataset,RESEARCH_PROVIDERS,expandResearchProviderSnapshot} from "../src/find/data-service.js";
 import {directoryMapFeatures} from "../src/find/map-runtime.js";
 
 const path="data/directory/research/canonical-g0-site-admissions-b84-b90-20261026.v1.json";
@@ -43,4 +43,28 @@ assert.equal(loaded.privateResearchLinkedIds.length,2);
 assert.equal(loaded.privateResearchHolds.length,0);
 assert.equal(loaded.g0ResearchSummary.public_pins,0);
 assert.equal(directoryMapFeatures(loaded.privateResearchVenues).length,0);
-console.log("PASS directory G0 runtime intake: 36 source identities; 34 privately staged, 2 existing, zero public pins and no schedules");
+// Check ALL committed provider snapshots, not merely the two known duplicate IDs.
+const existingProviders=[];
+for(const provider of ["fssp","icksp","ibp","sspx"]){
+  const filename="data/directory/generated/"+provider+"/venues.v1.json";
+  if(!existsSync(filename))continue;
+  const file=JSON.parse(readFileSync(filename,"utf8"));
+  for(const venue of file.records??[])existingProviders.push({venue});
+}
+for(const descriptor of RESEARCH_PROVIDERS){
+  const filename="data/directory/generated/v19/"+descriptor.file;
+  if(!existsSync(filename))continue;
+  const json=JSON.parse(readFileSync(filename,"utf8"));
+  for(const venue of expandResearchProviderSnapshot(json).venues)existingProviders.push({venue});
+}
+const full=stageG0ResearchVenues(input,{existingRecords:existingProviders});
+assert.equal(full.summary.total,36);
+assert.equal(full.summary.staged+full.summary.held+full.summary.linked,36);
+assert.ok(full.summary.linked>=2);
+assert.equal(directoryMapFeatures(full.records).length,0);
+assert.ok(full.records.every(r=>r.ministries.length===0));
+console.log("PASS directory G0 runtime intake: 36 frozen groups; "+
+  full.summary.staged+" unique provisional private records; "+
+  full.summary.linked+" linked existing providers; "+
+  full.summary.held+" further duplicate/evidence holds; "+
+  existingProviders.length+" actual provider venues compared; 0 pins/schedules");
