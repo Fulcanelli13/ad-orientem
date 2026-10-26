@@ -3,6 +3,10 @@ on:
   push:
     branches: [governance/icrsp-source-inventory-1665]
     paths: ['.github/workflows/icrsp-b29-save-validated.yml']
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+    paths: ['.github/workflows/icrsp-b29-save-validated.yml']
   workflow_dispatch:
 permissions:
   actions: read
