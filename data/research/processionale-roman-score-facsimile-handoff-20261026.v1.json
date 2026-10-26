@@ -242,5 +242,196 @@
     "Preserve 1962 Candlemas omitted Exsurge and included Cum inducerent; source precedence governs.",
     "Only metadata and public reference image URLs stored; no scan bytes committed and no licence implicitly granted.",
     "No change to current production reader or Schola runtime in this PR."
-  ]
+  ],
+  "gabcAudit": {
+    "status": "CATALOGUE_SOURCE_AND_VISUAL_INCIPIT_CROSSCHECK_ONLY_NOT_FULL_PITCH_CERTIFIED",
+    "reportDate": "2026-10-26",
+    "masterOwner": "Existing native Schola pilot PR #1749 and liturgical source issue #894",
+    "scoresInCurrentRuntimeFromThisResearch": 0,
+    "fullNoteByNoteVerified": 0,
+    "knownAccessibleGabcEndpoints": true,
+    "downloadedGabcPayloads": false,
+    "sourceMatchCriteria": [
+      "Exact 1961 Solesmes book and printed page indexed in the score's own Sources",
+      "Latin incipit and chant function distinct from same-title Office texts",
+      "1962 Roman rite text permission separately checked",
+      "Each psalm or hymn component represented independently; no implied combined file",
+      "GABC original bytes and any differences with score facsimile must be captured and validated by score owner before use"
+    ],
+    "records": [
+      {
+        "id": "LU61-CND-01",
+        "stage": "CND-R03",
+        "component": "Lumen ad revelationem gentium",
+        "scoreId": 2897,
+        "scoreTitle": "Lumen ad revelationem",
+        "printedLU": "1357",
+        "printedGR": "428",
+        "sourceURL": "https://gregobase.selapa.net/chant.php?id=2897",
+        "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=2897",
+        "sourceImage": "https://gregobase.selapa.net/sources/3/1560.png",
+        "verification": "PAGE_MATCH_CONFIRMED_MELODY_UNCERTIFIED",
+        "critical": "GregoBase change history removed verses 2/3 from score #2897; distribution Nunc dimittis repetition and verses require source-owned composition, not naive single GABC playback."
+      },
+      {
+        "id": "LU61-CND-03",
+        "stage": "CND-R05",
+        "component": "Adorna thalamum tuum Sion",
+        "scoreId": 1311,
+        "scoreTitle": "Adorna thalamum",
+        "printedLU": "1359",
+        "printedGR": "430",
+        "sourceURL": "https://gregobase.selapa.net/chant.php?id=1311",
+        "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=1311",
+        "sourceImage": "https://gregobase.selapa.net/sources/3/1562.png",
+        "verification": "VISUAL_OPENING_NOTES_AND_TEXT_MATCH_NO_FULL_PITCH_QA",
+        "critical": "Do not substitute similarly entitled responsory 006051 or office antiphon without complete text and melody comparison."
+      },
+      {
+        "id": "LU61-CND-04",
+        "stage": "CND-R05",
+        "component": "Responsum accepit Simeon (processional antiphon)",
+        "scoreId": 46,
+        "scoreTitle": "Responsum... et cum (Ant.)",
+        "printedLU": "1359–1360",
+        "printedGR": "430",
+        "sourceURL": "https://gregobase.selapa.net/chant.php?id=46",
+        "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=46",
+        "sourceImage": "https://gregobase.selapa.net/sources/3/1562.png",
+        "verification": "VISUAL_OPENING_NOTES_AND_TEXT_MATCH_NO_FULL_PITCH_QA",
+        "critical": "GregoBase #46 antiphon embeds 'et cum inducerent puerum in templum'; the native Roman 1962 CND-R05 has a separate V. Cum inducerent puerum Jesum parentes ejus ... Do not treat the former as the latter or delete the prescribed Roman verse."
+      },
+      {
+        "id": "LU61-CND-05",
+        "stage": "CND-R06",
+        "component": "Obtulerunt pro eo Domino (entrance responsory)",
+        "scoreId": 513,
+        "scoreTitle": "Obtulerunt",
+        "printedLU": "1360",
+        "printedGR": "431",
+        "sourceURL": "https://gregobase.selapa.net/chant.php?id=513",
+        "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=513",
+        "sourceImage": "https://gregobase.selapa.net/sources/3/1563.png",
+        "verification": "PAGE_MATCH_CONFIRMED_MELODY_UNCERTIFIED",
+        "critical": "Responsory (not generic antiphon). Keep re-entry timing and V. Postquam autem text separate."
+      },
+      {
+        "id": "LU61-PALM-01",
+        "stage": "PALM-R02",
+        "component": "Pueri Hebraeorum portantes ramos",
+        "scoreId": 1215,
+        "scoreTitle": "Pueri Hebraeorum portantes",
+        "printedLU": "581",
+        "printedGR": "167",
+        "sourceURL": "https://gregobase.selapa.net/chant.php?id=1215",
+        "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=1215",
+        "sourceImage": "https://gregobase.selapa.net/sources/3/726.png",
+        "verification": "VISUAL_OPENING_NOTES_AND_TEXT_MATCH_NO_FULL_PITCH_QA",
+        "critical": "Antiphon record is NOT Psalm 23; the source itself points to score 288 for verses."
+      },
+      {
+        "id": "LU61-PALM-01-PS",
+        "stage": "PALM-R02",
+        "component": "Domini est terra (Vulgate Psalm 23)",
+        "scoreId": 288,
+        "scoreTitle": "Domini est terra (Ps.23 - Textus antiquus)",
+        "printedLU": "581–582",
+        "printedGR": "167–168",
+        "sourceURL": "https://gregobase.selapa.net/chant.php?id=288",
+        "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=288",
+        "sourceImage": "https://gregobase.selapa.net/sources/3/726.png",
+        "verification": "PSALM_TONE_SOURCE_IDENTIFIED_TEXT_1962_OWNER_HOLD",
+        "critical": "Full Psalm 23 setting separate from antiphon. Score also offers first-verse-only variant; do not choose incomplete one for full distribution."
+      },
+      {
+        "id": "LU61-PALM-02",
+        "stage": "PALM-R02",
+        "component": "Pueri Hebraeorum vestimenta",
+        "scoreId": 1155,
+        "scoreTitle": "Pueri Hebraeorum vestimenta",
+        "printedLU": "582",
+        "printedGR": "168",
+        "sourceURL": "https://gregobase.selapa.net/chant.php?id=1155",
+        "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=1155",
+        "sourceImage": "https://gregobase.selapa.net/sources/3/727.png",
+        "verification": "VISUAL_OPENING_NOTES_AND_TEXT_MATCH_NO_FULL_PITCH_QA",
+        "critical": "Antiphon record is NOT Psalm 46; source itself points to score 435 for verses."
+      },
+      {
+        "id": "LU61-PALM-02-PS",
+        "stage": "PALM-R02",
+        "component": "Omnes gentes (Vulgate Psalm 46)",
+        "scoreId": 435,
+        "scoreTitle": "Omnes gentes (Ps.46 - Textus antiquus)",
+        "printedLU": "582–583",
+        "printedGR": "168–169",
+        "sourceURL": "https://gregobase.selapa.net/chant.php?id=435",
+        "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=435",
+        "sourceImage": "https://gregobase.selapa.net/sources/3/727.png",
+        "verification": "PSALM_TONE_SOURCE_IDENTIFIED_TEXT_1962_OWNER_HOLD",
+        "critical": "Psalm verses and repeated antiphon belong to separate GABC records; variable distribution duration."
+      },
+      {
+        "id": "LU61-PALM-03",
+        "stage": "PALM-R04",
+        "component": "Gloria laus et honor (refrain and five stanzas)",
+        "scoreId": 259,
+        "scoreTitle": "Gloria laus",
+        "printedLU": "586–587",
+        "printedGR": "172–173",
+        "sourceURL": "https://gregobase.selapa.net/chant.php?id=259",
+        "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=259",
+        "gabcElements": 6,
+        "sourceImage": "https://gregobase.selapa.net/sources/3/731.png",
+        "verification": "VISUAL_OPENING_NOTES_AND_TEXT_MATCH_NO_FULL_PITCH_QA",
+        "critical": "Hymn spread across SIX distinct GABC elements, not one incipit or the first stanza. Alternate GregoBase #8748 exists; select exact source-component semantics before import."
+      },
+      {
+        "id": "LU61-PALM-04",
+        "stage": "PALM-R05",
+        "component": "Ingrediente Domino with Cumque audisset",
+        "scoreId": 606,
+        "scoreTitle": "Ingrediente Domino",
+        "printedLU": "590–591",
+        "printedGR": "177–178",
+        "sourceURL": "https://gregobase.selapa.net/chant.php?id=606",
+        "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=606",
+        "sourceImage": "https://gregobase.selapa.net/sources/3/735.png",
+        "verification": "PAGE_MATCH_CONFIRMED_MELODY_UNCERTIFIED",
+        "critical": "Responsorium including V. Cumque audisset and repeated Cum ramis. Current Palm return payload incomplete, handoff to #894."
+      }
+    ],
+    "rejectedSources": [
+      {
+        "scoreId": 30,
+        "title": "Exsurge Domine",
+        "reason": "1961 bound score page not Roman 1962 Candlemas eligible",
+        "stage": "CND-R04",
+        "policy": "DO_NOT_ASSIGN"
+      },
+      {
+        "scoreId": 8748,
+        "title": "Gloria Laus alternate score page with separate first-verse option",
+        "reason": "Not chosen because #259 explicitly exposes all six hymn GABC elements and matches the 1961 p586–587 hymn structure; no pitch equivalence assumed",
+        "stage": "PALM-R04",
+        "policy": "ALTERNATIVE_NOT_SELECTED"
+      },
+      {
+        "scoreId": 12531,
+        "title": "Pueri Hebraeorum portantes, Liber antiphonarius 1960",
+        "reason": "Different source and role from 1961 Liber Usualis 581 despite identical incipit",
+        "stage": "PALM-R02",
+        "policy": "DO_NOT_SILENTLY_SUBSTITUTE"
+      }
+    ],
+    "rules": [
+      "NO_AUTOPLAY",
+      "NO_FIXED_DURATION_FOR_PROCESSION",
+      "NO_AUTOCOMPLETION_FROM_READER_CARD",
+      "NO_AUTO_SCORE_PUBLICATION",
+      "NOTATION_BUNDLE_REQUIRES_FULL_SOURCE_AND_GABC_ELEMENT_SET",
+      "VERIFIED_MELODY_COUNT_REMAINS_ZERO"
+    ],
+    "licence": "GregoBase says site transcriptions released CC0; refer to original record, credit transcription per editorial practice, do not assume unrelated scanned book images have that license."
+  }
 }
