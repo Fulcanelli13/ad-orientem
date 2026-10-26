@@ -22,6 +22,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--db", type=Path, required=True, help="CL2 checksum-rebuilt SQLite")
     parser.add_argument("--output", type=Path, required=True, help="Classification research JSON export")
+    parser.add_argument("--html-output", type=Path, help="Optional self-contained offline source/evidence reviewer")
     args = parser.parse_args()
     tax = json.loads(TAXONOMY.read_text())
     manifest = json.loads(COLUMNS.read_text())
@@ -173,7 +174,20 @@ def main():
         "release_note": "The institute facet is a qualified research label, not a verified celebrant, status or Una Cum filter."
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(result, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+    serialized = json.dumps(result, ensure_ascii=False, separators=(",", ":"))
+    args.output.write_text(serialized + "\n", encoding="utf-8")
+    if args.html_output:
+        assert not args.html_output.exists(), "Never overwrite an existing offline review export"
+        template = Path("tools/directory/review-cl27-tlm-classifications.html").read_text(encoding="utf-8")
+        slot = "<script>\n'use strict';"
+        assert template.count(slot) == 1, "Missing safe offline-embed insertion point"
+        # The JSON script is inert. Escape HTML parser-sensitive characters before insertion.
+        inert_json = serialized.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
+        html = template.replace(slot, '<script id="embedded-data" type="application/json">' + inert_json + '</script>\n' + slot, 1)
+        args.html_output.parent.mkdir(parents=True, exist_ok=True)
+        args.html_output.write_text(html, encoding="utf-8")
+        assert html.count('id="embedded-data"') == 1 and 'AO_CL27_TLM_CLASSIFICATION_PROJECTION_V1' in html
+        print(f"Self-contained offline reviewer: {args.html_output}")
     print("Classification projection PASS: 2,579 physical anchors / 2,715 source claims / "
           "2,008 organization label hints / three exact source-scoped 1962 witnesses / "
           "zero venue-level Una Cum or public approvals")
