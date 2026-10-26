@@ -8,6 +8,7 @@ import {calendarCustomArticle} from "../src/calendar/customs-read-model.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const capture=resolve(root,"artifacts/customs-living-library");
+const canonicalSeed=JSON.parse(await readFile(resolve(root,"data/customs/customs-atlas-seed.v1.json"),"utf8"));
 await mkdir(capture,{recursive:true});
 const mime={".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".html":"text/html; charset=utf-8",".css":"text/css; charset=utf-8"};
 const server=http.createServer(async(req,res)=>{
@@ -42,11 +43,11 @@ try{
       return {opened,...api.status};
     },language);
     assert.equal(response.opened,true,"Customs owner must open from standalone route");
-    assert.equal(response.canonical,38);
+    assert.equal(response.canonical,40);
     assert.equal(response.research,568);
     const rootLocator=page.locator("#ao-customs-library-root");
     await rootLocator.waitFor({state:"visible"});
-    assert.equal(await page.locator('[data-cust-id]').count(),26,"year partition must include exactly 26 customs");
+    assert.equal(await page.locator('[data-cust-id]').count(),28,"year partition includes the 26 legacy and two new dated customs");
     assert.equal(await page.locator('[data-cust-view="year"][aria-current="page"]').count(),1);
     const geometry=await rootLocator.evaluate(el=>({width:el.clientWidth,scrollWidth:el.scrollWidth,viewport:innerWidth,buttons:[...el.querySelectorAll("button")].filter(b=>b.getBoundingClientRect().height<43).map(b=>b.outerHTML.slice(0,100))}));
     assert.ok(geometry.scrollWidth<=geometry.width+3&&geometry.width<=geometry.viewport+3,"horizontal overflow in "+language+" "+width+": "+JSON.stringify(geometry));
@@ -58,7 +59,40 @@ try{
     assert.match(await rootLocator.textContent(),/CONTEXT|Contexte|contextuel|historiqu/i,"context-only record warning must be visible");
     await page.locator("[data-cust-back]").click();
     await page.locator('[data-cust-view="all"]').click();
-    assert.equal(await page.locator('[data-cust-id]').count(),38,"complete canonical collection available");
+    assert.equal(await page.locator('[data-cust-id]').count(),40,"complete canonical collection contains 40 identities");
+    // Confirm the two release candidates render as actual, source-linked,
+    // bilingual Customs folios, not merely as counts in the source registry.
+    for(const id of ["EPIP-003","CRIB-001"]){
+      const article=calendarCustomArticle(id);
+      assert.ok(article,"Candidate missing from Calendar article owner: "+id);
+      await page.locator('[data-cust-id="'+id+'"]').click();
+      const folio=page.locator(".aoCustArticle");
+      await folio.waitFor({state:"visible"});
+      const copy=await folio.textContent();
+      // The independent Customs browser uses the canonical seed's concise EN
+      // label and the accepted French display title; Calendar has a fuller EN heading.
+      const libraryTitle=language==="fr"?article.title.fr:canonicalSeed.customs.find(x=>x.custom_id===id)?.name;
+      assert.ok(libraryTitle&&(await rootLocator.textContent()).includes(libraryTitle),id+" missing localized library title");
+      assert.ok(copy.includes(article.caution[language]),id+" missing exact approved-boundary caution");
+      assert.ok(copy.includes(article.history[language]),id+" missing complete historical-source attribution");
+      assert.ok(await folio.locator("a[href^='https://']").count()>=2,id+" must have inspectable sources");
+      if(id==="EPIP-003"){
+        assert.match(copy,language==="fr"?/prêtre|sacerdotale/i:/priest|Roman Ritual/i,
+          "Epiphany lay/priest distinction missing");
+        if(language==="fr"){
+          const familyLabel=await rootLocator.locator("p.aoCustEyebrow").textContent();
+          assert.match(familyLabel,/Prière familiale de l’Épiphanie/,"Epiphany category retained English label");
+        }
+      }
+      if(id==="CRIB-001"){
+        assert.match(copy,/1962/,"Crib custom must not redefine 1962 Christmastide");
+        assert.match(article.history.en,/in churches/,"Church-crib reference misattributed to households");
+      }
+      await page.screenshot({path:resolve(capture,id.toLowerCase()+"-"+language+"-"+width+".png"),fullPage:false});
+      await page.locator("[data-cust-back]").click();
+      assert.equal(await page.locator('[data-cust-id="'+id+'"]').count(),1,"Returning from custom lost catalogue identity");
+    }
+
     await page.locator('[data-cust-id="BLSS-002"]').click();
     const details=await rootLocator.textContent();
     assert.ok(details.includes(language==="fr"?"Assomption : bénédiction des herbes":"Assumption — blessing of herbs"),"language-specific title missing");
@@ -88,9 +122,9 @@ try{
     assert.deepEqual(errors,[],"unhandled client-side errors");
     await page.locator("[data-cust-close]").click();
     assert.equal(await rootLocator.count(),0,"closing the module should restore the calling interface");
-    metrics.push({width,language,year:26,life:12,canonical:38,research:568,excluded:34,archivePage:120,overflow:false});
+    metrics.push({width,language,year:28,life:12,canonical:40,research:568,excluded:34,archivePage:120,overflow:false});
     await page.close();
   }
   await writeFile(resolve(capture,"metrics.json"),JSON.stringify(metrics,null,2));
-  console.log("PASS first-class Customs phone EN/FR: 38 canonical, 568 research, 26/12 partition, 34 exclusions, sources, tap targets and no overflow.");
+  console.log("PASS first-class Customs phone EN/FR: 40 canonical, 568 research, 28/12 partition, 34 exclusions, sources, tap targets and no overflow.");
 }finally{await browser?.close();await new Promise(ok=>server.close(ok));}

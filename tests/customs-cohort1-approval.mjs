@@ -1,0 +1,23 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {COHORT_IDS,REVIEW_PARTS,fingerprint,validateCohortApproval} from "../tools/customs/cohort1-approval-contract.mjs";
+const manifest=JSON.parse(readFileSync(new URL("../data/customs/cohort1-final-approval.v1.json",import.meta.url),"utf8"));
+const result=validateCohortApproval(manifest);
+assert.deepEqual(result.errors,[],"Malformed or stale two-customs editorial approval record");
+assert.deepEqual(new Set(manifest.records.map(x=>x.custom_id)),new Set(COHORT_IDS));
+for(const id of COHORT_IDS)for(const part of REVIEW_PARTS)
+ assert.match(fingerprint(id,part),/^[a-f0-9]{64}$/,"Review dimensions must be content-addressed");
+const unsigned=structuredClone(manifest);
+unsigned.records[0].final_en.decision="APPROVED";
+unsigned.records[0].final_en.reviewer="AI";
+unsigned.records[0].final_en.reviewed_on="2026-10-26";
+unsigned.records[0].final_en.review_note="Automated release without human review";
+unsigned.records[0].final_en.content_sha256="0".repeat(64);
+assert.ok(validateCohortApproval(unsigned).errors.some(x=>x.includes("actual responsible reviewer")));
+assert.ok(validateCohortApproval(unsigned).errors.some(x=>x.includes("not for current content")));
+unsigned.release_decision="AUTHORIZED_FOR_MERGE";
+assert.ok(validateCohortApproval(unsigned).errors.some(x=>x.includes("Release decision")));
+const absent=structuredClone(manifest);
+absent.records.pop();
+assert.ok(validateCohortApproval(absent).errors.some(x=>x.includes("exactly two")));
+console.log("PASS two-customs independent approval register; all copy/source/identity digests valid; fake/stale signoffs rejected; state="+(result.authorized?"AUTHORIZED":"PENDING"));

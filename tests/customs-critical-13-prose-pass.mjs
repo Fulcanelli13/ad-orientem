@@ -6,7 +6,7 @@ const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const manifest=read("data/customs/editorial-final-acceptance.v1.json");
 const ids=manifest.records.filter(x=>x.priority==="CRITICAL_SCOPE").map(x=>x.custom_id);
 assert.equal(ids.length,13);
-assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,35);
+assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,37);
 assert.deepEqual(validationErrors(manifest),[]);
 const expectations={
 "LIFE-002":[/not ritually impure/i,/n'est pas rituellement impure/],

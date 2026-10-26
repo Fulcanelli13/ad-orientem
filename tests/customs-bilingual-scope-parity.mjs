@@ -4,8 +4,8 @@ import {calendarCustomArticle,CALENDAR_CUSTOM_ARTICLE_IDS} from "../src/calendar
 const seed=JSON.parse(readFileSync(new URL("../data/customs/customs-atlas-seed.v1.json",import.meta.url),"utf8"));
 const folios=JSON.parse(readFileSync(new URL("../data/customs/customs-historical-folios.v1.json",import.meta.url),"utf8"));
 const published=seed.customs.filter(c=>c.publication_state==="PUBLISHED");
-assert.equal(published.length,35);
-assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,35);
+assert.equal(published.length,37);
+assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,37);
 assert.deepEqual(new Set(CALENDAR_CUSTOM_ARTICLE_IDS),new Set(published.map(c=>c.custom_id)));
 for(const id of CALENDAR_CUSTOM_ARTICLE_IDS){
   const card=calendarCustomArticle(id);
@@ -42,7 +42,7 @@ assert.equal(f.history_en,card("PATR-001").history.en);
 assert.equal(f.history_fr,card("PATR-001").history.fr);
 assert.equal(seed.customs.filter(c=>c.publication_state==="CONTEXT_ONLY").length,3);
 const acceptedFrench=JSON.parse(readFileSync(new URL("../data/customs/customs-fr-canonical-copy.v1.json",import.meta.url),"utf8"));
-assert.equal(acceptedFrench.entries.length,27);
+assert.equal(acceptedFrench.entries.length,29);
 assert.deepEqual(new Set(acceptedFrench.entries.filter(x=>!CALENDAR_CUSTOM_ARTICLE_IDS.includes(x.custom_id)).map(x=>x.custom_id)),new Set(["DEV-007","BELL-004","FOOD-001"]));
 const equivalent=(card,path)=>path.split(".").reduce((obj,key)=>obj?.[key],card);
 for(const row of acceptedFrench.entries){
@@ -71,4 +71,4 @@ for(const path of ["data/customs/customs-p0-guidance-en-fr.v1.json","data/custom
 }
 assert.equal(guidanceTotal,11);
 assert.equal(card("XMAS-001").description.fr.includes("hostie de pain"),false);
-console.log("PASS: 35 approved customs retain bilingual copy; regional and sacramental claims have precise scope, Chantelle historical copy is synchronized");
+console.log("PASS: canonical 37 customs retain bilingual copy; regional and sacramental claims have precise scope, Chantelle historical copy is synchronized");

@@ -19,9 +19,18 @@ const added=[
  ["SNIC-001","FR","STRASBOURG-SAINT-NICOLAS-2022"],
 ];
 assert.equal(added.length,7);
-assert.equal(atlas.customs.length,38);
-assert.equal(atlas.attestations.length,97);
-assert.equal(sources.sources.length,108);
+// The frozen Weiser seven-identity release has 38 customs, 97 attestations,
+// and 108 sources. The independent draft Calendar cohort adds exactly two
+// candidate identities, two attestations and four source entries; these must
+// not break tests for the earlier seven identities or for published main.
+const calendarCohortIds=["EPIP-003","CRIB-001"];
+const calendarCohortPresent=calendarCohortIds.filter(id=>atlas.customs.some(c=>c.custom_id===id));
+assert.ok(calendarCohortPresent.length===0||calendarCohortPresent.length===2,
+ "Calendar customs cohort cannot be partly present");
+const calendarCohortSize=calendarCohortPresent.length;
+assert.equal(atlas.customs.length,38+calendarCohortSize);
+assert.equal(atlas.attestations.length,97+calendarCohortSize);
+assert.equal(sources.sources.length,108+calendarCohortSize*2);
 assert.equal(negative.entries.length,7);
 const srcIds=new Set(sources.sources.map(s=>s.id));
 const blocked=new Set(negative.entries.map(e=>e.custom_id));

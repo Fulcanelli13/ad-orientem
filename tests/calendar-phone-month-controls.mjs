@@ -9,6 +9,14 @@ import {chromium} from "@playwright/test";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const output=resolve(root,"artifacts/calendar-phone-month-controls");
 await mkdir(output,{recursive:true});
+const customsSeed=JSON.parse(await readFile(resolve(root,"data/customs/customs-atlas-seed.v1.json"),"utf8"));
+const candidateIds=["EPIP-003","CRIB-001"];
+const candidateCount=candidateIds.filter(id=>customsSeed.customs.some(row=>
+  row.custom_id===id&&row.publication_state==="PUBLISHED")).length;
+assert.ok(candidateCount===0||candidateCount===2,"A partial Customs candidate cohort must not pass");
+const expectedCustoms=35+candidateCount;
+assert.equal(customsSeed.customs.filter(row=>row.publication_state==="PUBLISHED").length,expectedCustoms,
+  "The frozen 35 published customs must remain intact and only the complete candidate cohort may be added");
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
  ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
  ".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",
@@ -159,8 +167,8 @@ try{
        "Day article must show the actual attributed sources");
      const catalogue=cal.locator(".aoCalCustomCatalogue");
      await catalogue.locator(":scope > summary").click();
-     assert.equal(await catalogue.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]").count(),35,
-       "The existing Day catalogue must expose 35 published canonical customs");
+     assert.equal(await catalogue.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]").count(),expectedCustoms,
+       "The existing Day catalogue must reflect the 35 frozen Customs plus the complete candidate cohort");
      const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
      assert.ok(overflow<=1,"Customs Calendar introduces phone horizontal overflow: "+overflow);
      await page.screenshot({path:resolve(output,"calendar-custom-day-"+lang+"-"+width+".png"),

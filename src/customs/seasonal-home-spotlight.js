@@ -57,6 +57,16 @@ export const SEASONAL_CUSTOMS_PILOT = Object.freeze([
     "scope": "MINISTERIAL_CAUTION"
   },
   {
+    "id": "EPIP-003",
+    "rule": "FIXED",
+    "anchor": "01-06",
+    "score": 88,
+    "before": 4,
+    "after": 0,
+    "home": true,
+    "scope": "HOUSEHOLD_PRAYER_NOT_PRIESTLY_RITE"
+  },
+  {
     "id": "EPIP-002",
     "rule": "FIXED",
     "anchor": "01-06",

@@ -1,0 +1,83 @@
+{
+  "schema": "AO_CUSTOMS_COHORT1_FINAL_APPROVAL_V1",
+  "scope": "EPIP-003 + CRIB-001 as a single source-bound cohort; draft branch only until all four reviews for both records are affirmative",
+  "as_of": "2026-10-26",
+  "source_owner": "src/calendar/customs-read-model.js; src/calendar/customs-extra-articles.js",
+  "separate_from": "data/customs/editorial-final-acceptance.v1.json (frozen existing 35)",
+  "policy": {
+    "no_ai_generated_approval": true,
+    "changes_in_source_copy_invalidate_approved_fingerprint": true,
+    "three_separate_subject_boundaries": [
+      "household_vs_priestly_rite",
+      "1962_vs_popular_devotion",
+      "no_automatic_local_schedule"
+    ],
+    "approval_not_equivalent_to_merged": true,
+    "require_all_four_human_decisions_for_both_customs": true
+  },
+  "records": [
+    {
+      "custom_id": "EPIP-003",
+      "final_en": {
+        "decision": "PENDING",
+        "reviewer": null,
+        "reviewed_on": null,
+        "content_sha256": null,
+        "review_note": null
+      },
+      "final_fr": {
+        "decision": "PENDING",
+        "reviewer": null,
+        "reviewed_on": null,
+        "content_sha256": null,
+        "review_note": null
+      },
+      "final_claims": {
+        "decision": "PENDING",
+        "reviewer": null,
+        "reviewed_on": null,
+        "content_sha256": null,
+        "review_note": null
+      },
+      "final_identity_calendar": {
+        "decision": "PENDING",
+        "reviewer": null,
+        "reviewed_on": null,
+        "content_sha256": null,
+        "review_note": null
+      }
+    },
+    {
+      "custom_id": "CRIB-001",
+      "final_en": {
+        "decision": "PENDING",
+        "reviewer": null,
+        "reviewed_on": null,
+        "content_sha256": null,
+        "review_note": null
+      },
+      "final_fr": {
+        "decision": "PENDING",
+        "reviewer": null,
+        "reviewed_on": null,
+        "content_sha256": null,
+        "review_note": null
+      },
+      "final_claims": {
+        "decision": "PENDING",
+        "reviewer": null,
+        "reviewed_on": null,
+        "content_sha256": null,
+        "review_note": null
+      },
+      "final_identity_calendar": {
+        "decision": "PENDING",
+        "reviewer": null,
+        "reviewed_on": null,
+        "content_sha256": null,
+        "review_note": null
+      }
+    }
+  ],
+  "release_decision": "BLOCKED_PENDING_HUMAN_REVIEW"
+}

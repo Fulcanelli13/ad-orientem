@@ -1,4 +1,4 @@
-/* Editor-reviewed Calendar prose for 24 identities already PUBLISHED in canonical SOT-07.
+/* Editor-reviewed Calendar prose for the extended set of identities PUBLISHED in canonical SOT-07.
  * This is a source-bounded read-model projection. No new customs, Mass
  * rites, local ceremonies, bookings or geography are published.
  * Acceptance register: data/customs/calendar-copy-acceptance.v1.json
@@ -1220,5 +1220,134 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
         "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
       }
     ]
+  },
+  {
+    "id": "EPIP-003",
+    "title": {
+      "en": "Epiphany: blessing the home and marking the doorway",
+      "fr": "Épiphanie : bénir la maison et marquer la porte"
+    },
+    "description": {
+      "en": "At Epiphany some Catholic families mark their doorway with the Cross, the new year and the letters C+M+B. A priest may also be invited to bless the house; that ministerial blessing is distinct from the family's devotional marking.",
+      "fr": "À l'Épiphanie, certaines familles catholiques inscrivent sur leur porte la croix, la nouvelle année et les lettres C+M+B. Un prêtre peut aussi être invité à bénir la maison : cette bénédiction sacerdotale reste distincte du geste familial."
+    },
+    "history": {
+      "en": "Francis X. Weiser (1958, p. 149) describes the priestly Epiphany house blessing with the Magnificat, holy water and incense, followed by a chalk inscription on the doorway. Philip Weller's 1952 Roman Ritual translation preserves the priestly formulary. Separately, the Holy See's Directory on Popular Piety (2002, §118) and Irish episcopal household guidance (2022) describe popular or family chalking. The family inscription is not the priest's ritual blessing, and none of these sources makes either practice compulsory.",
+      "fr": "Francis X. Weiser (1958, p. 149) décrit la bénédiction sacerdotale de la maison à l'Épiphanie, avec le Magnificat, l'aspersion d'eau bénite et l'encensement, suivie d'une inscription à la craie sur la porte. La traduction du Rituel romain publiée par Philip Weller en 1952 conserve la formule sacerdotale. Distinctement, le Directoire sur la piété populaire (2002, §118) et les indications des évêques irlandais pour les familles (2022) évoquent l'inscription populaire ou familiale. Celle-ci ne remplace pas la bénédiction rituelle du prêtre, et aucune de ces sources ne rend ces pratiques obligatoires."
+    },
+    "meaning": {
+      "en": "The doorway recalls that Christ is welcomed into the home. The initials can refer to Caspar, Melchior and Balthasar and are also read as Christus mansionem benedicat—may Christ bless this house.",
+      "fr": "La porte rappelle l'accueil du Christ dans le foyer. Les lettres évoquent Gaspard, Melchior et Balthazar ; on les interprète également comme Christus mansionem benedicat : que le Christ bénisse cette maison."
+    },
+    "practice": {
+      "en": "Where customary, the household may mark the door with a small cross, the year and C+M+B, and pray together at Epiphany. Chalk already blessed by a priest can be used. If a priestly blessing is desired, arrange it with a priest and follow the rite he is authorized to use.",
+      "fr": "Là où existe cette coutume, la famille peut inscrire une petite croix, l'année et C+M+B au-dessus de la porte, puis prier ensemble à l'Épiphanie. Elle peut employer de la craie déjà bénite par un prêtre. Pour une bénédiction sacerdotale, prendre rendez-vous avec un prêtre et suivre le rite qu'il est habilité à célébrer."
+    },
+    "caution": {
+      "en": "The family's chalk marking is not the priest's Roman Ritual blessing. Do not present priestly formulas as instructions for lay imitation, assume a parish offers this rite, or claim the inscription automatically protects the house.",
+      "fr": "L'inscription familiale ne remplace pas la bénédiction sacerdotale du Rituel romain. Ne pas proposer les formules réservées au prêtre comme rite à imiter, présumer qu'une paroisse offre cette bénédiction ni attribuer à l'inscription une protection automatique."
+    },
+    "occasion": {
+      "en": "Epiphany, 6 January in the 1962 Calendar",
+      "fr": "Épiphanie, le 6 janvier dans le calendrier de 1962"
+    },
+    "scope": {
+      "en": "Optional Catholic household custom; regionally variable, with a distinct historical priestly rite",
+      "fr": "Coutume domestique catholique facultative, variable selon les régions, distincte de l'ancien rite sacerdotal"
+    },
+    "sources": [
+      {
+        "id": "DPP-2001",
+        "title": "Directory on Popular Piety and the Liturgy, §118",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "role": "OFFICIAL_PASTORAL_DIRECTORY",
+        "claim_scope": "Door chalk, Magi, charity, C+M+B and household context; document dated 2002, not a 1962 rubric"
+      },
+      {
+        "id": "CATHCULT-HOUSE",
+        "title": "Roman Ritual: Blessing of Homes on Epiphany (Weller, 1952)",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1336",
+        "role": "HISTORICAL_RITE_TEXT",
+        "claim_scope": "Specific priestly formulary with Magnificat, aspersion and incense; final 1962 rubrical applicability still to be checked"
+      },
+      {
+        "id": "WEISER-1958-CHRISTIAN-FEASTS",
+        "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958), p.149",
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "role": "HISTORICAL_1958_ORIGINAL_FOLIO",
+        "claim_scope": "Epiphany house blessing account, first 1958 author witness"
+      },
+      {
+        "id": "IE-BISHOPS-EPIPHANY-CHALK-2022",
+        "title": "Irish Catholic Bishops' Conference: Epiphany house blessing for 2022",
+        "url": "https://www.catholicbishops.ie/2022/01/04/epiphany-house-blessing-for-2022/",
+        "role": "OFFICIAL_MODERN_EPISCOPAL",
+        "claim_scope": "Example of Catholic family Epiphany devotion, modern practice, not a 1962 rubric"
+      }
+    ],
+    "editorialCopyStatus": "COHORT1_SOURCE_BOUNDED_RELEASE_CANDIDATE_NO_HUMAN_SIGNOFF",
+    "newCanonicalReleaseCohort": "CUSTOMS_20261024_TWO",
+    "sourceResearchUnit": "CU-REVIEW-001"
+  },
+  {
+    "id": "CRIB-001",
+    "title": {
+      "en": "Keeping the Christmas crib until Candlemas",
+      "fr": "Garder la crèche jusqu'à la Chandeleur"
+    },
+    "description": {
+      "en": "In some Catholic households, the Nativity crib remains in place until 2 February, the Presentation of the Lord, often called Candlemas. The family then puts it away, marking the close of a cherished cycle of Christmas devotion.",
+      "fr": "Dans certains foyers catholiques, la crèche reste installée jusqu'au 2 février, fête de la Présentation du Seigneur, dite Chandeleur. La famille la range alors, marquant la fin d'une période de dévotion autour de Noël."
+    },
+    "history": {
+      "en": "Weiser (1958, p. 300) records Candlemas as the end of the popular Christmas season in many countries and explicitly describes cribs and decorations being stored for the following Christmas. Fr Edward McNamara (2015), discussing Nativity scenes in churches, documents differing local removal dates: after Epiphany, after the Baptism of the Lord, or on 2 February. Historical popular usage and present-day church arrangements are distinct evidence; neither imposes a household rule or changes the 1962 liturgical season.",
+      "fr": "Weiser (1958, p. 300) présente la Chandeleur comme la fin de la période populaire de Noël dans de nombreux pays et précise que crèches et décorations sont rangées pour le Noël suivant. À propos des crèches installées dans les églises, le P. Edward McNamara (2015) relève plusieurs dates locales de retrait : après l'Épiphanie, après le Baptême du Seigneur ou le 2 février. L'usage populaire historique et l'organisation actuelle des églises constituent des témoignages distincts : ni l'un ni l'autre n'impose une règle aux foyers ni ne modifie la période liturgique de 1962."
+    },
+    "meaning": {
+      "en": "The custom prolongs contemplation of the Incarnation until the feast when Mary and Joseph present Jesus in the Temple, and Simeon welcomes him as light for the nations.",
+      "fr": "Cet usage prolonge la contemplation de l'Incarnation jusqu'à la fête où Marie et Joseph présentent Jésus au Temple, et où Syméon le reconnaît comme lumière des nations."
+    },
+    "practice": {
+      "en": "If the family follows this custom, pray briefly before putting the crib away on Candlemas. Another customary removal date is equally legitimate; no household is required to keep decorations until February.",
+      "fr": "Si la famille suit cette coutume, elle peut prier brièvement avant de ranger la crèche à la Chandeleur. Une autre date conforme aux usages locaux est tout aussi légitime ; aucune famille n'est tenue de garder les décorations jusqu'en février."
+    },
+    "caution": {
+      "en": "Candlemas does not become the formal end of the 1962 Christmas liturgical season because the household crib stays up. This voluntary practice is neither a Mass rubric nor a rule about parish decoration.",
+      "fr": "Le maintien de la crèche jusqu'à la Chandeleur ne fait pas du 2 février la fin officielle du temps liturgique de Noël dans le calendrier de 1962. Il s'agit d'une coutume libre, non d'une rubrique de la messe ni d'une règle pour les décorations paroissiales."
+    },
+    "occasion": {
+      "en": "Candlemas, 2 February; optional household tradition",
+      "fr": "Chandeleur, le 2 février ; coutume familiale facultative"
+    },
+    "scope": {
+      "en": "Attested in some European and Catholic household traditions; not universal",
+      "fr": "Attestée dans certains usages familiaux catholiques, notamment européens ; non universelle"
+    },
+    "sources": [
+      {
+        "id": "WEISER-1958-CHRISTIAN-FEASTS",
+        "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958), p.300",
+        "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "role": "HISTORICAL_1958_ORIGINAL_FOLIO",
+        "claim_scope": "Crib removal on Candlemas in historical custom"
+      },
+      {
+        "id": "EWTN-CHRISTMAS-CRIB-2015",
+        "title": "Fr Edward McNamara, When to Remove the Christmas Crib (2015)",
+        "url": "https://www.ewtn.com/catholicism/library/when-to-remove-the-christmas-crib-4793",
+        "role": "CATHOLIC_LITURGICAL_EXPLANATION",
+        "claim_scope": "Customs vary, no absolute rule; Candlemas is a documented optional date"
+      },
+      {
+        "id": "CATHCULT-CHRISTMAS-CANDLEMAS-1962",
+        "title": "Catholic Culture: Christmas to Candlemas",
+        "url": "https://www.catholicculture.org/commentary/christmas-to-candlemas-when-is-real-end-christmas-season/",
+        "role": "LITURGICAL_EDITORIAL_DISTINCTION",
+        "claim_scope": "1962 Christmastide endpoint is not changed by household crib practice"
+      }
+    ],
+    "editorialCopyStatus": "COHORT1_SOURCE_BOUNDED_RELEASE_CANDIDATE_NO_HUMAN_SIGNOFF",
+    "newCanonicalReleaseCohort": "CUSTOMS_20261024_TWO",
+    "sourceResearchUnit": "CU-REVIEW-004"
   }
 ];
