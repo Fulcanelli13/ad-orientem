@@ -98,6 +98,9 @@ on:
       - 'data/source-text/icrsp-france-b29-12-new-direct-topic-excerpts.v1.json'
       - 'data/source-text/icrsp-france-b29-nine-stream-375-unique-topic-ledger.v1.json'
       - 'tests/test_icrsp_b29_nine_stream_375_unique.py'
+      - 'data/source-text/icrsp-france-b30-30-direct-page-claims-and-source-duplication.v1.json'
+      - 'data/source-text/icrsp-france-b30-ten-stream-405-unique-topic-ledger.v1.json'
+      - 'tests/test_icrsp_b30_405_unique_source_and_fidelis_error.py'
   workflow_dispatch:
 
 permissions:
@@ -150,3 +153,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b28_160_selected_excerpt_completion.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b29_363_81_200_nonoverlap.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b29_nine_stream_375_unique.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b30_405_unique_source_and_fidelis_error.py' -v
