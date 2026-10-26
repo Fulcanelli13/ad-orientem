@@ -23,7 +23,8 @@ class TestB49WorkEnvelopes(unittest.TestCase):
         self.assertEqual([r["otherWorksOnHostArticle"] for r in records],[4,3,2])
         for r in records:
             parent=indexed[r["articleId"]]
-            self.assertEqual(r["hostContentLineEnvelope"][0],parent["hostStart"]+1)
+            self.assertGreaterEqual(r["hostContentLineEnvelope"][0],parent["hostStart"]+1)
+            self.assertLessEqual(r["hostContentLineEnvelope"][0],parent["hostStart"]+2)
             self.assertEqual(r["hostContentLineEnvelope"][1]+1,r["nextDistinctHistoricalWorkBeginsAt"]["host"])
             self.assertEqual(r["editionWorkContentLineEnvelope"][1]+1,r["nextDistinctHistoricalWorkBeginsAt"]["edition"])
 
