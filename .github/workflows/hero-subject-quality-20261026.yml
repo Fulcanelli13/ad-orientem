@@ -1,0 +1,30 @@
+name: Original-subject pixel quality checks
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/hero-subject-quality-20261026.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  subject-details:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - run: cp scripts/art/make-subject-specific-hero-details.py /tmp/subject-details.py
+      - name: Check Caravaggio face, Reni armour, Honthorst coat of arms and Meirelles altar
+        run: |
+          git fetch origin research/module-hero-pd-masters-20261026
+          git switch -C research/module-hero-pd-masters-20261026 origin/research/module-hero-pd-masters-20261026
+          python /tmp/subject-details.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f assets/staged/module-hero-subject-details/
+          git commit -m "research(art): archive 100%-pixel painterly subject detail tiles"
+          git push origin research/module-hero-pd-masters-20261026
+      - run: echo "Research photo details only. No automatic source image quality verdict."
