@@ -1,124 +1,54 @@
-# Gregorian score in native Mass Schola — draft integration
-Updated 26 October 2026. **Draft only; not merged.**
+# Mass Gregorian score — implementation and release decisions
 
-## Source of truth
-This change extends existing `reader-schola.js` and the ordinary production Schola
-dock. It does not establish an Office module, a second Mass calendar, a new
-liturgical event engine or a replacement reader/card count.
+Updated 26 October 2026. Draft PR #1749; **not merged**.
 
-Existing canonical ownership:
-- Mass Calendar and the resolved Proper determine **liturgical text**.
-- `reader-schola.js` owns the Schola's ten musical **opportunities** and its
-  independent phrase controls. It cannot know what the choir actually sings.
-- `reader-native-preview.js` retains the independently observed restriction
-  during the Consecration and the explicit post-Chalice Benedictus release.
-- `reader-dom.js` owns the presentation and the resizable Schola dock.
+## Existing architectural ownership
+- `full-mass-preflight.js`: one unified Mass preparation Folio; no second calendar, music app or replacement Mass reader.
+- 1962 calendar + selected Proper: authoritative **liturgical texts**. This research feature never changes these.
+- `reader-schola.js`: ten Schola tracks, its own phrase progression and **observed** post-Consecration Benedictus release; no synchronization from priest scroll.
+- `reader-dom.js`: existing resizable Schola surface, now able to display continuously scrolling offline Gregorian notation.
+- `mass-chant-programme.js`: optional *user-reported musical metadata* tied to current Mass identity, not normative proof of what is permitted or sung.
 
-## Implemented pilot
-`src/mass/reader-chant-score-pilot.js` adds the button **GREGORIAN SCORE**
-to the current Schola dock only while the Schola KYRIE track is eligible.
-It renders a **continuous, scrollable Gregorian SVG score from local GABC** in
-the dock, with manual up/down movements and a FULL expanded view. On mobile
-the reader reserves additional vertical space; it does not cover the prayer
-by accident. Finger scroll and keyboard navigation are independent from
-the priest's reader and the Schola's phrase clock.
+## Source-controlled Gregorian pilot
+Seven CC0 GABC transcriptions, all explicitly labelled research reference examples:
 
-Three 1961-Solesmes-sourced reference choices (NOT assigned automatically):
-- Kyrie XVI — GregoBase **545** — Graduale Romanum (1961) p. 54*;
-  Liber Usualis (1961) p. 59
-- Kyrie XI — GregoBase **2982** — Graduale Romanum (1961) p. 38*;
-  Liber Usualis (1961) p. 46
-- Kyrie VIII — GregoBase **1184** — Graduale Romanum (1961) p. 28*;
-  Liber Usualis (1961) p. 37
+| Track | Example | GregoBase ID | 1961 Graduale | 1961 Liber Usualis |
+|---|---|---:|---|---|
+| Kyrie | Kyrie XVI | 545 | 54* | 59 |
+| Kyrie | Kyrie XI | 2982 | 38* | 46 |
+| Kyrie | Kyrie VIII | 1184 | 28* | 37 |
+| Gloria | Gloria VIII | 961 | 29* | 37 |
+| Credo | Credo III | 749 | 64* | 68 |
+| Sanctus/Benedictus | Sanctus VIII | 1384 | 30* | 38 |
+| Agnus Dei | Agnus Dei VIII | 2760 | 31* | 39 |
 
-Source pages:
-https://gregobase.selapa.net/chant.php?id=545
-https://gregobase.selapa.net/chant.php?id=2982
-https://gregobase.selapa.net/chant.php?id=1184
+All four newly added sources are in `reader-ordinary-scores-1961.js` with the complete Latin GABC body as retrieved from GregoBase on 26 October 2026. Original transcriber for those examples: Andrew Hinkley. **Do not describe any of these as applied to the local Mass unless the user explicitly reports their use.** Variants are independent choices: a Kyrie choice does not infer its matching Gloria/Sanctus/Agnus or a Credo.
 
-GregoBase explicitly releases its **transcriptions** under CC0:
-https://gregobase.selapa.net/?page_id=2
-The Kyrie XVI GABC is embedded unchanged (transcriber Andrew Hinkley,
-proofread gdweber in 2022). All three original GABCs have now been embedded verbatim; source checksums,
-local engraving and facsimile comparison remain future release gates.
+GregoBase transcriptions: CC0, https://gregobase.selapa.net/?page_id=2.
+Each source page is `https://gregobase.selapa.net/chant.php?id=ID`.
+The GABC files need editorial comparison to printed Solesmes witnesses before pitch/repetition acceptance; record individual hashes as part of that process.
 
-## Pre-Mass musical programme — first working handoff
+## What actually runs
+- `assets/vendor/exsurge/exsurge.min.js`: pinned MIT Exsurge from `bbloomf/exsurge` commit `6322cce596b86f9b3d354e7ff3bdcbfe2f3f6ab8`, with LICENSE included.
+- `reader-chant-engraver.js` converts bundled GABC to real local SVG, reflowing at viewport width; no remote SVG fetch, third-party script, paid runtime or musical audio. Two independent viewport renderers for inline and expanded score; stale-render suppression.
+- App's transactional `sw.js` bootstrap snapshot includes the local Exsurge bundle, even though the script is loaded only when notation is first opened.
+- The existing Schola dock offers SCORE for a track only when that track has an example source and when the current performance is not explicitly polyphonic Sanctus. Scores scroll manually, independent of all Mass cards, priest actions and observed Schola progress.
 
-The **existing** unified Mass preparation Folio now contains an optional
-`Chants of this Mass` disclosure in its reader step (sung/solemn calendar or
-votive Masses only). Requiem, Nuptial and distinct rites are excluded until
-specific musical mappings are validated.
-It offers **Unknown** by default and the three verified transcribed Kyrie
-examples. All other musical opportunities remain unresolved, including
-the Proper, Sanctus/Benedictus and Communion; no generic settings are applied
-to them merely because the Mass date is known.
+## Pre-Mass selection
+In the **existing** Folio reader step, `Chants of this Mass` is optional for sung/solemn **calendar or votive** Masses only. Requiem, Nuptial, Good Friday and Easter Vigil are excluded pending their separate source rules. Five independent slots are available: Kyrie, Gloria, Credo, Sanctus/Benedictus, Agnus Dei. The selection for each defaults to Unknown; no matching Ordinary is assembled automatically.
 
-`src/mass/mass-chant-programme.js` builds a single identity for the session
-(date, actual celebration, host Proper source and selected form). The user's
-musical choice is discarded on changes to the identity, including switching
-to Low Mass; these choices never mutate the source Proper or 1962 Calendar.
-No parish-specific preference is silently stored or generalized to future
-Masses. All IDs are validated against locally bundled GABC records.
+`createMassChantProgramme` validates each score ID against the local source catalogue, records each choice under one session identity (date, actual Mass, Proper source, form), and leaves all other tracks unknown. Identity changes and Low Mass clear these selections, and no persistent parish-wide defaults are invented.
 
-The existing `createBrowserMassController` handoff includes the optional
-programme in `readerPreferences` (and therefore the existing resumable
-session record). The native Schola dock initializes its notation selector from
-that programme, retaining the label **user-reported, not independently
-verified**. The reader remains silent and uses no artificial Schola timing.
+A **separate** Sanctus/Benedictus choir-practice selector reports: Not known, Continuous Gregorian, or Polyphonic with delayed Benedictus. This is handed to the already-existing Schola performance engine. Selecting a Gregorian score by itself never releases Benedictus or asserts whether the choir sings continuously; declaring polyphonic prevents the Gregorian Sanctus score from being mislabelled as its notation. A later Benedictus is released only by the existing *observed* Schola control.
 
-Contract tests: `tests/mass-chant-programme.mjs`, invoked from the
-existing `test:reader-schola` chain. The 390px unified preflight acceptance
-also exercises selection, reader-mode independence, Low Mass removal and
-date reset.
+The programme and performance profile pass through the existing `readerPreferences` session and resumable record; no other reader architecture changes. Audio and listening/study belong to Mass preparation, not the live reader.
 
-## Non-features and necessary distinctions
-- Selecting one of these three scores chooses a **reference example**, not
-  the Mass's musical setting. `actualChoirMelody` remains `UNKNOWN`.
-- Scroll position and manual ↑/↓ never infer an actual syllable, heard cue,
-  elapsed musical bar, or Benedictus beginning.
-- NO microphone, synthesized singing, playback or auto-scrolling.
-- **The SVG is now engraved locally:** `assets/vendor/exsurge/exsurge.min.js`
-  is a pinned MIT-licensed build of Benjamin Bloomfield’s Exsurge fork at
-  upstream commit `6322cce596b86f9b3d354e7ff3bdcbfe2f3f6ab8` (26 October
-  2026). It runs without network access. Its full licence is checked into
-  `assets/vendor/exsurge/LICENSE`. The three GABCs remain embedded and source-
-  attributed. GregoBase is only an optional outbound source-reference link.
-- Exsurge lays out staff systems for the actual viewport width; resizing
-  reflows the engraving. The app still needs **physical-device visual and
-  facsimile accuracy acceptance** before this can be called production-ready.
-- `reader-chant-engraver.js` loads the local bundle on first use and drops
-  stale asynchronous renders when the user changes the selected sample.
-- Exsurge’s optional Exsurge Characters font is not bundled; specific special
-  characters requiring it must be reviewed. No font asset is redistributed.
-- Other chant tracks remain textual until their actual score choices have
-  been verified, specifically SANCTUS_BENEDICTUS.
-- The score is neither a 1962 rubrical directive nor an audio-recording source.
+## Validation status and release gates
+1. Parse/source guard tests in `tests/reader-chant-score-pilot.mjs`, `tests/mass-chant-programme.mjs`; real Exsurge engravings at 260/420/800 px in `tests/reader-chant-engraver.mjs`; all part of `npm run test:reader-schola`.
+2. The existing `tests/full-mass-preflight-phone-e2e.mjs` covers 390px independent selections, changes to Gregorian/polyphonic practice, omission, Low Mass and date reset.
+3. The existing `tests/offline-snapshot-e2e.mjs` checks the package and real offline first-use engraving/reflow.
+4. **Pending acceptance:** successful latest CI for full Schola and native reader; physical-device glyph/typography review, facsimile comparison, editorial pitches/episemata/repeats; verified Gregorian/other Ordinary repertoire beyond these samples; rubrical presence/omission rules; source-backed Propers mapping.
+5. Main production gate also has an **unrelated** hygiene failure because `.github/workflows/hero-subject-quality-20261026.yml` requests `contents: write`. Do not relax this guard in the music PR.
+6. Do not merge this draft until these checks and source-identity constraints pass.
 
-## Release gates
-1. Verify score glyphs/staff clefs/episemata/repeats against original printed
-   page images, and record checksum and exact preferred edition per variant.
-2. Verify existing Gregorian chant source identity and options for Kyriale,
-   seasonal Propers, and permitted local additions separately. Gregorian and
-   polyphonic settings are distinct media, not interchangeable titles.
-3. **Implemented for the pilot:** pinned Exsurge JS; offline GABC-to-SVG;
-   adaptive width, stale-render protection and independent inline/full views.
-   Remaining: optional special-character font treatment and verified raster/
-   vector line wrapping on real phone sizes.
-4. **Implemented for pilot Kyrie:** pre-Mass user-reported selection tied
-   to the canonical Mass identity and reader session, without assigning the
-   liturgical Proper. Remaining: real 1962 musical eligibility, wider
-   Kyriale/Proper catalogues, scoped remembered local settings, and verified
-   parish programmes before adding further selectable tracks.
-5. Build a **separate listening experience** inside Mass preparation, only
-   after recording provenance/permissions and score-to-recording sync are
-   verified. Audio must never leak into Mass-following mode.
-6. Keep Sanctus/Benedictus as separate *performance timing* decisions.
-   The existing explicit post-Chalice release must remain authoritative.
-7. Run Schola contracts, regression suite, mobile/desktop browser snapshots,
-   offline failure tests and actual liturgical expert score review before
-   promoting this draft. A mock-renderer test plus vendored API test now ships
-   as `tests/reader-chant-engraver.mjs`; it is not an end-to-end music audit.
-
-The new contract is included in existing `npm run test:reader-schola`. CI
-passing tests do not certify pitch correctness, mobile visual parity or
-network/offline resilience.
+The user has committed to a free (€0) infrastructure strategy. No paid storage, metered external notation/audio service, speculative recordings or additional module has been introduced.
