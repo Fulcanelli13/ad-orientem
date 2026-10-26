@@ -205,6 +205,7 @@ try{
    const results=[];
    for(const [date,variant,mode] of [
      ["2026-04-05","OCTAVE_DAY","MISSAL"],
+     ["2026-04-12","EASTERTIDE","MISSAL"],
      ["2026-04-12","EASTERTIDE","LIVE"],
      ["2026-05-10","EASTERTIDE","LIVE"],
      ["2026-05-10","EASTERTIDE","SIMPLE"]
