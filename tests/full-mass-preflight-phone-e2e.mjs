@@ -128,6 +128,38 @@ try{
   assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-chosen-reader-mode"),mode);
  }
 
+
+ // Music is an optional fourth dimension of the established guided Folio:
+ // no alternate Mass, second preflight or silent Gregorian default.
+ const programmeUi=page.locator("[data-full-mass-chant]");
+ assert.equal(await programmeUi.isVisible(),true);
+ await programmeUi.locator("summary").click();
+ assert.equal(await programmeUi.locator("[data-full-mass-chant-choice] option").count(),4);
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,null);
+ await programmeUi.locator("[data-full-mass-chant-choice]").selectOption("GREGOBASE-2982");
+ const selectedMusic=await page.evaluate(()=>__full.selectionFor(__legacyMass()).chantProgramme);
+ assert.equal(selectedMusic.kyrieScoreId,"GREGOBASE-2982");
+ assert.equal(selectedMusic.sourceType,"USER_REPORTED_MUSIC_NOT_RUBRICALLY_CERTIFIED");
+ assert.equal(selectedMusic.selections.KYRIE,"GREGOBASE-2982");
+ // Selecting a reader mode cannot alter this independent musical setting.
+ await page.locator('[data-full-mass-reader-mode][value="SIMPLE"]').check();
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,"GREGOBASE-2982");
+ await page.locator('.aoMassFolioStepNav [data-folio-goto="ceremony"]').click();
+ await page.locator('[data-full-mass-form][value="LOW"]').check();
+ assert.equal(await programmeUi.isVisible(),false);
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme,null);
+ await page.locator('[data-full-mass-form][value="MISSA_CANTATA_INCENSE"]').check();
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,null,
+   "Low Mass must invalidate prior audible choir programme, even after returning to Sung");
+ await page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]').click();
+ await programmeUi.locator("summary").click();
+ await programmeUi.locator("[data-full-mass-chant-choice]").selectOption("GREGOBASE-1184");
+ await page.evaluate(()=>{__formDate="2026-10-11";__full.refresh()});
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,null,
+   "Kyrie cannot carry automatically to a new Mass date");
+ await page.evaluate(()=>{__formDate="2026-10-04";__full.refresh()});
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,null);
+
  assert.equal(await page.locator('[data-full-mass-form][value="MISSA_CANTATA_INCENSE"]').isChecked(),true);
  assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-celebration-kind"),"CALENDAR");
  await page.locator('.aoMassFolioStepNav [data-folio-goto="ceremony"]').click();
