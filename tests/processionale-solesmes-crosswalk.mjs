@@ -139,3 +139,34 @@ test('indirect 1888 scholarly citations do not masquerade as facsimile inspectio
   assert.ok(attestations.every(x => x.evidenceType && x.cannotEstablish));
   assert.ok(attestations.every(x => x.inspection !== 'PRIMARY_PAGE_CHECKED'));
 });
+
+
+test('Cantus IDs identify candidate text families, never authorize editions or melodies', () => {
+  const identity = readJSON('data/research/processionale-chant-identity-candidates-20261026.v1.json');
+  const matrix = readJSON('data/research/processionale-1893-chant-action-matrix-20261026.v1.json');
+  const ids = new Set(matrix.rows.map(x => x.id));
+  assert.equal(identity.status,'RESEARCH_ONLY_UNPUBLISHED');
+  assert.equal(identity.editionPolicy.solesmes1888ImageInspected,false);
+  assert.equal(identity.editionPolicy.solesmes1893FacsimileInspected,false);
+  assert.equal(identity.editionPolicy.approvedRoman1962Scores,0);
+  assert.equal(identity.editionPolicy.accepted1888Melodies,0);
+  assert.equal(identity.editionPolicy.accepted1893Melodies,0);
+  assert.equal(identity.editionPolicy.cantusIDsAreTextFamilyNotMelodyCertificate,true);
+  assert.equal(identity.candidates.length,11);
+  assert.equal(identity.falseFriendCases.length,5);
+  for (const candidate of identity.candidates) {
+    assert.ok(ids.has(candidate.historicalRowId),'Unknown chant-action row '+candidate.historicalRowId);
+    assert.equal(candidate.melodyVerifiedAgainstSolesmes1888,false);
+    assert.equal(candidate.melodyVerifiedAgainstSolesmes1893,false);
+    assert.equal(candidate.roman1962MelodyApproved,false);
+    if (candidate.catalogueURL) assert.ok(/^https:\/\//.test(candidate.catalogueURL));
+  }
+  const adorna=identity.candidates.find(x=>x.historicalRowId==='PM93.CN04');
+  assert.equal(adorna.cantusID,'g00068');
+  assert.ok(adorna.doNotConflate.includes('006051'));
+  const excluded=identity.candidates.find(x=>x.historicalRowId==='PM93.CN02');
+  assert.equal(excluded.cantusID,null);
+  assert.equal(excluded.mappingStatus,'DO_NOT_IMPORT_TO_ROMAN1962');
+  assert.equal(identity.externalEditionSpecificNotatedRecord.printedPage,272);
+  assert.equal(identity.externalEditionSpecificNotatedRecord.runtimeUse,'NONE');
+});
