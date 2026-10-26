@@ -5,6 +5,7 @@ on:
     paths:
       - "data/customs/master/customs-multibook-bulk150-20261026.v1.json"
       - "data/customs/master/customs-18-unpublished-bilingual-editorial-review-20261026.v1.json"
+      - "data/customs/master/customs-editorial-thirty-review-units-20261026.v1.json"
       - "tests/customs-multibook-bulk150.mjs"
       - ".github/workflows/customs-multibook-bulk150.yml"
   workflow_dispatch:
