@@ -37,7 +37,7 @@ const geoRefs=new Set(original.map(p=>p.geo?.source_ref).filter(Boolean));
 for(const x of manifest.published_new){
  assert.ok(!geoRefs.has(x.geo_source_ref),"OSM duplicate "+x.geo_source_ref);
  geoRefs.add(x.geo_source_ref);
- assert.match(x.geo_source_ref,/^osm:way:\\d+$/);
+ assert.match(x.geo_source_ref,/^osm:way:\d+$/);
  assert.equal(x.geo_source_url,"https://www.openstreetmap.org/way/"+x.geo_source_ref.split(":")[2]);
  const place=g.places.find(p=>p.place_id===x.place_id);
  assert.ok(place);
