@@ -35,7 +35,7 @@ for(const item of SCHOLA_SCORE_CATALOGUE){
     const tree=score.createSvgTree(context);
     assert.equal(tree.name,"svg",item.id+" needs a genuine SVG");
     assert.ok(tree.children.length,item.id+" notation SVG must not be empty");
-    lineCounts.push(score.chantLines.length);
+    lineCounts.push(score.lines.length);
   }
   assert.ok(lineCounts[0]>=lineCounts[2],
     item.id+" must reflow and fit fewer chant lines on a wide screen");
