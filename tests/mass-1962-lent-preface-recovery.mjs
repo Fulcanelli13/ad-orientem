@@ -103,4 +103,52 @@ assert.equal(await recoverReaderProperOmissions(incomplete,{
   hostResolver:wrongHeader,principalCelebrationId:"tempora:Quad2-1:3:v"
 }),incomplete,"Mismatched Latin Preface heading must fail closed");
 
-console.log("PASS Mass 1962 Lent: authenticated source, proper-path parity, trilingual named section, reader slot, no leak to votives/feasts or existing authentic text.");
+
+// Pentecost Sunday was independently supported; the same authenticated
+// Holy Spirit section applies to the vigil and six subsequent octave days.
+const pentTexts={
+  la:["!de Spiritu Sancto","v. Qui promíssum Spíritum Sanctum effúdit."],
+  en:["!Holy Spirit","v. Who poured forth the promised Holy Ghost."],
+  fr:["!de Spiritu Sancto","v. Il a répandu le Saint-Esprit promis."],
+};
+const pentCalls=[];
+const pentResolver={async resolveSource(path,lang){
+  pentCalls.push([path,lang]);
+  assert.equal(path,"Ordo/Prefationes");
+  return {map:new Map([["Spiritu",pentTexts[lang]]])};
+}};
+for(const [id,path] of [
+  ["tempora:Pasc6-6:1:r","Tempora/Pasc6-6"],
+  ["tempora:Pasc7-1:1:r","Tempora/Pasc7-1"],
+  ["tempora:Pasc7-2:1:r","Tempora/Pasc7-2"],
+  ["tempora:Pasc7-3:1:r","Tempora/Pasc7-3"],
+  ["tempora:Pasc7-4:1:r","Tempora/Pasc7-4"],
+  ["tempora:Pasc7-5:1:r","Tempora/Pasc7-5"],
+  ["tempora:Pasc7-6:1:r","Tempora/Pasc7-6"],
+]){
+ const owner=authenticated1962PrefaceRecoveryOwner(id,path);
+ assert.equal(owner?.section,"Spiritu",id);
+ assert.equal(owner?.rubric,"RGMR_493_A",id);
+ const inputProper=input(id,path);
+ const corrected=await recoverReaderProperOmissions(inputProper,{
+   hostResolver:pentResolver,principalCelebrationId:id
+ });
+ assert.equal(corrected.preface.prefaceSection,"Spiritu");
+ assert.equal(corrected.preface.recoveryScope,"PENTECOST_OCTAVE_1962");
+ assert.match(corrected.preface.lat,/^de Spiritu Sancto\n/);
+ assert.match(corrected.preface.en,/promised Holy Ghost/);
+ assert.match(corrected.preface.fr,/Saint-Esprit promis/);
+ assert.equal(properToReaderSlots(corrected,{language:"fr"}).slots.PREFACE.status,"READY");
+ assert.equal(inputProper.preface.lat,"Communis\nVere dignum");
+}
+for(const [id,path] of [
+ ["tempora:Pasc7-3:1:r","Tempora/Pasc7-4"],
+ ["tempora:Pasc7-3:1:r","Votive/HolyGhost"],
+ ["sancti:05-27:2:r","Tempora/Pasc7-3"],
+ ["tempora:Pasc6-5:2:w","Tempora/Pasc6-5"]
+]){
+ assert.equal(authenticated1962PrefaceRecoveryOwner(id,path),null,id);
+}
+assert.equal(pentCalls.length,21,"One named Holy Spirit section in all three languages for each newly owned date");
+
+console.log("PASS Mass 1962 Lent & Pentecost: authenticated source, proper-path parity, trilingual named section, reader slot, no leak to votives/feasts or existing authentic text.");
