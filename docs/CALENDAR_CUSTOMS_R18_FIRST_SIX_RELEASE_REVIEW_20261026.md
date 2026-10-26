@@ -90,3 +90,14 @@ The [six-case publication decision board](../src/calendar/customs-r18-first-six-
 The existing Calendar article renderer now labels `previewOnly` entries **Editorial preview — not published / Aperçu éditorial — non publié**, with a small localized scope line. The normal Calendar route does not pass any review candidates or import their JSON; there remain 35 public Customs articles.
 
 The dedicated [release-decision regression test](../tests/calendar-customs-r18-release-decision.mjs) checks the six draft entries and source-policy records, bilingual fields, exact region/day tests, no live runtime import, and nonpublishing locks. Human identity, source/rite, EN/FR and region/date acceptance are all still pending. The first six are **copy-ready for editorial decision, not auto-authorized for public release**.
+
+
+## Interactive existing-Calendar review (26 October, later pass)
+
+The Calendar day page now contains a compact **Regional customs — editorial preview / Coutumes régionales — aperçu éditorial** selector, inside its existing Customs catalogue area. Its default is **None — published customs only**. This is **not** a new Calendar, country pack or publication route. The user may explicitly select Ireland, Poland, Austria, Provence or Spain. The preference is remembered locally (`ao.calendar.customs-r18-review-region.v1`) and can be cleared at any time; there is no user-location, IP, timezone or nationality inference.
+
+On matching days the existing **Customs of this day & season** article component appends region-matched `REVIEW:` entries after accepted articles, clearly headed **Editorial preview — not published** and showing their EN/FR regional or historical scope. The source links and detailed devotional/historical sections use the same existing renderer. Unmatched dates show no extra research card. The 1962 feast resolver, Mass, local event schedule, all-year accepted catalogue, and public custom ID count remain unchanged.
+
+The app reads a JS review-only projection `src/calendar/customs-r18-review-pack.js` generated exactly from the six-item JSON staging source, without importing or modifying the canonical 35-article master. It is **not a second master**: `tests/calendar-customs-r18-editorial-preview-ui.mjs` checks exact source-byte-equivalent record content, 12 date/region cases and publication blockers, and is part of dedicated CI. If editorial copy changes, regenerate the source-equivalent projection before making a PR.
+
+**Merge sequencing:** PR #1642 separately edits the same core Calendar read-model/runtime and the official Customs Atlas seed. Rebase this review PR onto updated main if that cohort merges first. PR #1720 covers different unpublished candidates, not these six. Approval for this preview mode does not record six canonical identity/copy signoffs or authorize adding six public articles; that requires a separately checked publication diff, including the canonical seed and full tests.
