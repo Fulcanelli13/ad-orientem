@@ -1,0 +1,118 @@
+// Live 2026 audit of 1962 Paschal Preface forms in the native source reader.
+import assert from "node:assert/strict";
+import http from "node:http";
+import {readFile} from "node:fs/promises";
+import {resolve,sep,extname} from "node:path";
+import {fileURLToPath} from "node:url";
+import {chromium} from "@playwright/test";
+
+const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
+ ".json":"application/json",".css":"text/css; charset=utf-8",
+ ".svg":"image/svg+xml",".png":"image/png",".woff2":"font/woff2"};
+const server=http.createServer(async(req,res)=>{
+ try{
+  const file=resolve(root,"."+decodeURIComponent(new URL(req.url,"http://localhost").pathname));
+  if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);return res.end("Forbidden")}
+  const body=await readFile(file);
+  res.writeHead(200,{"content-type":mime[extname(file)]||"application/octet-stream",
+    "cache-control":"no-store"});res.end(body);
+ }catch(e){res.writeHead(e.code==="ENOENT"?404:500);res.end(String(e.message||e))}
+});
+const dates=[
+ ["2026-04-04","VIGIL_NIGHT"],
+ ["2026-04-05","OCTAVE_DAY"],
+ ["2026-04-06","OCTAVE_DAY"],
+ ["2026-04-07","OCTAVE_DAY"],
+ ["2026-04-08","OCTAVE_DAY"],
+ ["2026-04-09","OCTAVE_DAY"],
+ ["2026-04-10","OCTAVE_DAY"],
+ ["2026-04-11","OCTAVE_DAY"],
+ ["2026-04-12","EASTERTIDE"],
+ ["2026-04-19","EASTERTIDE"],
+ ["2026-04-26","EASTERTIDE"],
+ ["2026-05-03","EASTERTIDE"],
+ ["2026-05-10","EASTERTIDE"],
+ ["2026-05-13","EASTERTIDE"]
+];
+assert.equal(dates.length,14);
+await new Promise(done=>server.listen(0,"127.0.0.1",done));
+let browser;
+try{
+ browser=await chromium.launch({headless:true});
+ const page=await browser.newPage({serviceWorkers:"block"});
+ page.setDefaultTimeout(90000);
+ await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",
+  {waitUntil:"domcontentloaded",timeout:90000});
+ await page.waitForFunction(()=>typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",
+  null,{timeout:90000});
+ const rows=await page.evaluate(async cases=>{
+  const dayResolver=globalThis.AO_RUNTIME_V8.resolver;
+  const {recoverReaderProperOmissions,authenticated1962PrefaceRecoveryOwner}=
+    await import("/src/mass/reader-proper-runtime-recovery.js");
+  const {inspect1962PrefaceSelection}=
+    await import("/src/mass/1962-preface-decision.js");
+  const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+  const results=[];
+  for(const [date,expectedVariant] of cases){
+   try{
+    const d=await dayResolver.resolveDay(date);
+    const original=d?.proper?.data;
+    const id=d?.day?.main?.id;
+    const originalLatin=String(original?.preface?.lat??original?.preface?.la??"");
+    const owner=authenticated1962PrefaceRecoveryOwner(id,original?.sourcePath);
+    const before=inspect1962PrefaceSelection({principalCelebrationId:id,
+      selectedPreface:original?.preface});
+    const corrected=await recoverReaderProperOmissions(original,{
+      hostResolver:dayResolver.properResolver,principalCelebrationId:id});
+    const after=inspect1962PrefaceSelection({principalCelebrationId:id,
+      selectedPreface:corrected?.preface});
+    const slot=properToReaderSlots(corrected,{language:"fr"}).slots.PREFACE;
+    const latin=String(corrected?.preface?.lat??corrected?.preface?.la??"");
+    const french=String(corrected?.preface?.fr??"");
+    const english=String(corrected?.preface?.en??"");
+    results.push({date,id,expectedVariant,sourcePath:original?.sourcePath??null,
+      originalHead:originalLatin.split("\n")[0],originalStatus:before.status,
+      afterHead:latin.split("\n")[0],afterStatus:after.status,
+      ownerSection:owner?.section??null,ownerVariant:owner?.variant??null,
+      appliedVariant:corrected?.preface?.prefaceVariant??null,
+      source:corrected?.preface?.sourcePath??null,
+      latin,fr:french,en:english,
+      slot:slot.status,
+      originalUnchanged:String(original?.preface?.lat??original?.preface?.la??"")===originalLatin
+    });
+   }catch(error){results.push({date,expectedVariant,error:String(error?.stack??error)})}
+  }
+  return results;
+ },dates);
+ const patterns={
+  VIGIL_NIGHT:/sed in hac potíssimum nocte/iu,
+  OCTAVE_DAY:/sed in hac potíssimum die/iu,
+  EASTERTIDE:/sed in hoc potíssimum/iu
+ };
+ console.log("MASS_1962_EASTER_PREFACE_TRIAGE="+JSON.stringify(rows.map(x=>({
+  date:x.date,id:x.id,source:x.sourcePath,from:x.originalHead,to:x.afterHead,
+  before:x.originalStatus,after:x.afterStatus,variant:x.appliedVariant,
+  slot:x.slot,error:x.error}))));
+ for(const row of rows){
+  assert.ok(!row.error,row.date+" "+row.error);
+  assert.equal(row.ownerSection,"Pasch",row.date+" non-Paschal source");
+  assert.equal(row.ownerVariant,row.expectedVariant,row.date);
+  assert.equal(row.appliedVariant,row.expectedVariant,row.date);
+  assert.equal(row.source,"Ordo/Prefationes",row.date);
+  assert.equal(row.afterHead,"Paschalis",row.date);
+  assert.equal(row.afterStatus,"MATCH",row.date);
+  assert.equal(row.slot,"READY",row.date);
+  assert.equal(row.originalUnchanged,true,row.date+" mutated original Proper");
+  assert.ok(row.en.length>350&&row.fr.length>350,row.date+" incomplete translation");
+  assert.match(row.latin,patterns[row.expectedVariant],row.date);
+  assert.equal((row.latin.match(/potíssimum/gu)||[]).length,1,row.date);
+  assert.doesNotMatch(row.latin,/(?:sed tempore Passionis|sed octava Paschæ)/iu,row.date);
+  assert.doesNotMatch(row.en,/(?:sed tempore Passionis|sed octava Paschæ)/iu,row.date);
+  assert.doesNotMatch(row.fr,/(?:Messe de la Vigile pascale|pendant l’octave de Pâques|après l’octave de Pâques)/iu,row.date);
+ }
+ assert.equal(rows.filter(x=>x.appliedVariant==="VIGIL_NIGHT").length,1);
+ assert.equal(rows.filter(x=>x.appliedVariant==="OCTAVE_DAY").length,7);
+ assert.equal(rows.filter(x=>x.appliedVariant==="EASTERTIDE").length,6);
+ console.log("PASS 14 real 1962 Easter Preface source identities and trilingual variants: 1 Vigil, 7 octave, 6 later.");
+}finally{await browser?.close();await new Promise(done=>server.close(done))}
