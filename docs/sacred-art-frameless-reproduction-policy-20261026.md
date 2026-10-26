@@ -30,12 +30,12 @@ Unknown/null is NOT approval. Any missing true gate blocks promotion. Dimensions
 
 ## Existing Class I candidate review (2026-10-26)
 
-Ten currently selected date-specific Class I feast source-derived WEBPs on `fix/approved-feast-heroes-main-20261021` were inspected visually. **None has production photo approval yet.** Artist and title approvals remain fixed.
+Ten currently selected date-specific Class I feast slots on `fix/approved-feast-heroes-main-20261021` were inspected visually. As of 2026-10-26 these ten slots reuse nine source-derived WEBP files, because Holy Thursday now uses the same Champaigne reproduction as Pentecost Ember Wednesday. **None has production photo approval yet.** Nine previously approved date choices remain fixed; the Holy Thursday choice was explicitly revised to Champaigne on 2026-10-26.
 
 | Date | Selected feast painting | Existing candidate frame assessment | Action |
 |---|---|---|---|
 | Mar 29 | Anthony van Dyck, *Entry of Christ into Jerusalem* | No obvious external physical frame at preview scale | Human bounds verification pending |
-| Apr 02 | Ugolino da Siena, *Last Supper* | **Prominent gilded external physical frame visible** | **BLOCK** this derivative until a complete frame-free photo or verified non-painted trim exists |
+| Apr 02 | Philippe de Champaigne, *La Petite Cène* (Louvre INV 1125) | **New 2026-10-26 editorial choice** supersedes framed Ugolino image; shares existing unframed whole-painting May 27 source | Human painting-boundary, photo rights, resolution and phone visual checks pending; old Ugolino framed candidate is archival only |
 | May 23 | Juan Bautista Maíno, *Pentecost* | No obvious external physical frame | Human bounds verification pending |
 | May 24 | Jean Restout, *Pentecost* | No obvious physical frame on previously staged low-resolution painting view; separate newer higher-resolution reproduction has glare | Find clean faithful frame-free source; retain original selection |
 | May 27 | Philippe de Champaigne, *La Petite Cène* | No obvious external frame | Human bounds verification pending |
