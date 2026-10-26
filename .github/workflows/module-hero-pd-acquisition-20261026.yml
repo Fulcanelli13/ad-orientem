@@ -1,0 +1,74 @@
+name: Module hero PD source-master trial (€0)
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/module-hero-pd-acquisition-20261026.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: module-hero-pd-acquisition-20261026
+  cancel-in-progress: false
+
+jobs:
+  acquire-review-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free image decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Verify frozen editorial source and research-only gate
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json'))
+          y=json.load(open('data/research/module-hero-artwork-production-readiness-2026-10-26.audit1.json'))
+          assert len(x['final_approved_heroes']) == 22 and len(y['entries']) == 22
+          assert all(z['editorial_approved'] for z in y['entries'])
+          assert all(z['app_released'] is False for z in y['entries'])
+          PY
+      - name: Acquire Commons PD candidates to physical research staging
+        run: |
+          mkdir -p data/research
+          set +e
+          python3 scripts/art/acquire-module-hero-masters.py --download > data/research/module-hero-pd-acquisition-20261026.run.json
+          exit_code=$?
+          set -e
+          echo "acquisition_exit_code=$exit_code" >> "$GITHUB_ENV"
+          python3 - <<'PY'
+          import json
+          p='data/research/module-hero-pd-acquisition-20261026.run.json'
+          d=json.load(open(p))
+          from collections import Counter
+          print('Acquisition:',dict(Counter(x['status'] for x in d['results'])))
+          PY
+      - name: Make unenhanced full-composition and native-detail sheets
+        run: |
+          python3 scripts/art/review-module-hero-quality.py
+      - name: Save original files, metadata, and visual-review sheets PERMANENTLY on research branch
+        env:
+          REVIEW_BRANCH: research/module-hero-pd-masters-20261026
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$REVIEW_BRANCH"
+          git add -f assets/staged/module-hero-masters/ assets/staged/module-hero-quality-reviews/ data/research/module-hero-pd-acquisition-20261026.run.json
+          if ! git diff --cached --quiet; then
+            git commit -m "research(art): archive Commons source bytes and QA previews, not approved for app"
+            git push --set-upstream origin "$REVIEW_BRANCH"
+          else
+            echo "No image files or report available to preserve."
+          fi
+      - name: Report strict release boundary
+        run: |
+          echo "RESEARCH ONLY. Editorial selection unchanged; 0/22 masters have passed rights/visual/crop/app approval."
+          echo "Source archive branch: research/module-hero-pd-masters-20261026"
