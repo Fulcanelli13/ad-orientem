@@ -102,7 +102,8 @@ def triage(row,source,lead):
         if u=="https://latinmasspensacola.org/": flags+=["THIRD_PARTY_1962_DESCRIPTION_NO_CURRENT_DIRECT_OWNER_CERTIFICATION","THIRD_PARTY_TIME_VARIATIONS"]
         if "preconciliar" in data: flags+=["PRECONCILIAR_NOT_PRECISE_BOOK_YEAR"]
     if lead is not None:
-        assert u==SOURCE_ANGERS
+        assert u in {SOURCE_ANGERS, "https://latinmasspensacola.org/", "https://www.stmarynorwalk.net/liturgy/"}
+        assert lead["source_url"]==u and lead["approved_slot_evidence"]==0
     # Risk-adjusted priority is a *research queue rank*, not probability of approval.
     priority=1 if lane in ("A_RETRIEVE_PRIMARY_PAGE_OR_BULLETIN","B_RECONCILE_TIME_OR_WEEKDAY","D_RECONCILE_SITE_OR_PERMISSION") else (
              2 if lane=="C_RECONCILE_MIXED_RITE_OR_EDITION" else 3)
