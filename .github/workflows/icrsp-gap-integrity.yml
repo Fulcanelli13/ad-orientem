@@ -103,6 +103,9 @@ on:
       - 'tests/test_icrsp_b30_405_unique_source_and_fidelis_error.py'
       - 'data/source-text/icrsp-france-b30-24-added-francis-de-sales-panel-labels.v1.json'
       - 'tests/test_icrsp_b30_24_francis_de_sales_panel_drift.py'
+      - 'data/source-text/icrsp-france-b31-39-final-existing-queue-topical-review.v1.json'
+      - 'data/source-text/icrsp-france-b31-eleven-stream-444-unique-topic-ledger.v1.json'
+      - 'tests/test_icrsp_b31_444_unique_and_original_250_closed.py'
   workflow_dispatch:
 
 permissions:
@@ -157,3 +160,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b29_nine_stream_375_unique.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b30_405_unique_source_and_fidelis_error.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b30_24_francis_de_sales_panel_drift.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b31_444_unique_and_original_250_closed.py' -v
