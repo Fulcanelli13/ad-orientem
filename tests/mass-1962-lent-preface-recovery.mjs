@@ -151,4 +151,14 @@ for(const [id,path] of [
 }
 assert.equal(pentCalls.length,21,"One named Holy Spirit section in all three languages for each newly owned date");
 
+const offlineWarnings=[];
+const offlineProper=input("tempora:Quad2-1:3:v","Tempora/Quad2-1");
+const offline=await recoverReaderProperOmissions(offlineProper,{
+ hostResolver:{async resolveSource(){throw new Error("remote source offline")}},
+ principalCelebrationId:"tempora:Quad2-1:3:v",diagnostic:{warnings:offlineWarnings}
+});
+assert.equal(offline,offlineProper,"Unavailable source must preserve existing Proper without an exception");
+assert.ok(offlineWarnings.some(x=>x.startsWith("PREFACE_SOURCE_RECOVERY_UNAVAILABLE:")));
+assert.equal(properToReaderSlots(offline,{language:"fr"}).slots.PREFACE.status,"MISSING",
+ "An unavailable mandatory seasonal Preface must never display Common instead");
 console.log("PASS Mass 1962 Lent & Pentecost: authenticated source, proper-path parity, trilingual named section, reader slot, no leak to votives/feasts or existing authentic text.");
