@@ -30,7 +30,8 @@ try{
   const page=await browser.newPage({serviceWorkers:"block"});
   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",null,{timeout:90000});
-  rows=await page.evaluate(async ds=>{
+  for(let i=0;i<dates.length;i+=4){
+    const batch=await page.evaluate(async ds=>{
     return await Promise.all(ds.map(async date=>{
       try {
         const r=await globalThis.AO_RUNTIME_V8.resolver.resolveDay(date);
@@ -50,7 +51,9 @@ try{
           commemorations:(p.calendarCommemorations||[]).map(x=>({path:x.path,name:x.name}))};
       }catch(e){return {date,error:String(e?.message||e)};}
     }));
-  },dates);
+    },dates.slice(i,i+4));
+    rows.push(...batch);
+  }
 }finally{
   await browser?.close();
   await new Promise(ok=>server.close(ok));
