@@ -383,5 +383,49 @@
       "sourceRightsCleared": false,
       "publicContentApproved": false
     }
-  ]
+  ],
+  "independentWebSpotCheck": {
+    "date": "2026-10-26",
+    "count": 6,
+    "verifiedObservedSection": "Saint François de Sales, Sermons",
+    "sourceArticleIds": [
+      "a0088_ancien",
+      "a0130_ancien",
+      "a0029_nouveau",
+      "a0352_ancien",
+      "a0584_ancien",
+      "a0420_ancien"
+    ],
+    "sourceURLs": [
+      "https://icrspfrance.fr/textes-liturgiques.php?article=a0088_ancien",
+      "https://icrspfrance.fr/textes-liturgiques.php?article=a0130_ancien",
+      "https://icrspfrance.fr/textes-liturgiques.php?article=a0029_nouveau",
+      "https://icrspfrance.fr/textes-liturgiques.php?article=a0352_ancien",
+      "https://icrspfrance.fr/textes-liturgiques.php?article=a0584_ancien",
+      "https://icrspfrance.fr/textes-liturgiques.php?article=a0420_ancien"
+    ],
+    "outcome": "The site's Saint François de Sales, Sermons section appears independently on all six pages. Example pages explicitly distinguish incomplete plans which the saint did not fully write, or show more than one item in a single panel.",
+    "qualification": "Six live page checks; other 18 panel labels are reconciled against the existing validated B29 machine-retrieved record. This is not print-edition certification or copyright clearance."
+  },
+  "repeatedAddedPanelBodyHashes": {
+    "totalAddedPanelOccurrences": 24,
+    "distinctNormalizedPanelBodySha256": 22,
+    "repeatedNormalizedPanelBodyHashPairs": [
+      {
+        "bodySha256": "6b3c536edd9dd003029c336ecfa50014ed51d0393b2cad95de0e856666885f18",
+        "articleIds": [
+          "a0220_ancien",
+          "a0029_nouveau"
+        ]
+      },
+      {
+        "bodySha256": "40ca331ee7fd6acc4927f9c9cbbe055207e90dfeda610b0df91324ddf04436ba",
+        "articleIds": [
+          "a0535_ancien",
+          "a0420_ancien"
+        ]
+      }
+    ],
+    "accountingRule": "Retain all 24 article-panel occurrences and historic-rite variants; do not count the two repeat hashes as independent textual witnesses."
+  }
 }
