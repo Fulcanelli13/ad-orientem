@@ -34,8 +34,8 @@ class TestB50(unittest.TestCase):
         self.assertEqual(b50.tokens(["Bonté, et grâce."],True),b50.tokens(["bonté et grâce"],True))
         self.assertNotEqual(b50.tokens(["amour"],True),b50.tokens(["amertume"],True))
     def test_embedded_printed_page_marker_in_boundary(self):
-        html="<p>Opening [137] begin with enough words now.</p><p>Middle sufficient words to compare with baseline text.</p><p>Last concluding sentence ends with Amen [138].</p>"
-        self.assertEqual(len(b50.extract(html,"Opening begin","Last concluding",21)),3)
+        html="<p>Opening [137] begin with enough words now.</p><p>Middle sufficient words to compare with baseline text.</p><p>A separate third body paragraph confirms a complete four-block sample.</p><p>Last concluding sentence ends with Amen [138].</p>"
+        self.assertEqual(len(b50.extract(html,"Opening begin","Last concluding",21)),4)
 
     def test_repeated_sermon_vocabulary_no_false_massive_change(self):
         # A one-word substitution in 5,000 mostly repeated words must not
