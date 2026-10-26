@@ -65,7 +65,17 @@
       "releaseApproved": false,
       "sourcePhotoNeedsJurisdictionRightsReview": false,
       "releasePhase": "PENDING_VISUAL_RIGHTS_AND_PACKAGED_FILE",
-      "notes": "Exact approved artist and painting title; source file match must be visually checked"
+      "notes": "Exact approved artist and painting title; source file match must be visually checked",
+      "editorialSupersession": {
+        "date": "2026-10-26",
+        "status": "HISTORICAL_PHOTOGRAPH_ACQUISITION_ONLY_NOT_ACTIVE_HOLY_THURSDAY_CANDIDATE",
+        "activeArtist": "Philippe de Champaigne",
+        "activeTitle": "La Petite Cène",
+        "replacementPhotoSourceEvidenceDate": "2026-05-27",
+        "decision": "data/calendar/approved-feast-holy-thursday-20261026-override.v1.json",
+        "preservedOriginalSourceHash": true,
+        "publicationBlocked": true
+      }
     },
     {
       "date": "2026-05-23",
@@ -286,5 +296,9 @@
     "Verify photo asset rights and attribution per exact file across relevant jurisdictions",
     "Publish approved photo bytes under assets/sacred-art with SHA check, preserving selected artwork ID",
     "Create signed release manifest bound to DayResolver principal and correct Home/Calendar date; run device screenshots"
+  ],
+  "editorialSupersessionNotes": [
+    "Historical 2026-04-02 Ugolino source evidence and original checksum remain unchanged; current class I hero choice is Champaigne La Petite Cène, reusing original 2026-05-27 source photo.",
+    "Source download count in this historical 2026-10-21 run is not the number of distinct active feast hero images in the 2026-10-26 revised candidate register."
   ]
 }
