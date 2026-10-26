@@ -97,6 +97,6 @@ assert.match(preflight,/data-full-mass-sanctus-performance/);
 assert.match(reader,/selectedChantScoreForReader\(prepared\.readerPreferences\?\.chantProgramme,"KYRIE"\)/);
 assert.match(reader,/programmeSelections:Object\.fromEntries/);
 assert.match(score,/programmeScoreId=null/);
-assert.match(score,/let scoreId=preselected\?\.id\?\?SCHOLA_SCORE_PILOT\.id/);
+assert.match(score,/let scoreId=selectedForTrack\("KYRIE"\)\?\.id\?\?SCHOLA_SCORE_PILOT\.id/);
 assert.doesNotMatch(preflight,/(?:localStorage|sessionStorage)\.setItem\(/);
 console.log("PASS Mass musical programme: limited user-confirmed source data, preflight/read handoff, identity isolation");
