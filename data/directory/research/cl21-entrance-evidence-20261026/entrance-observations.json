@@ -1,0 +1,338 @@
+{
+  "schema": "AO_CL21_ENTRANCE_EVIDENCE_GRADES_V1",
+  "as_of": "2026-10-26",
+  "rules": "Physical side/portal descriptions are separate from door GPS, current liturgical access, campus routing and public venue approval; expressly exclude unrelated internal sepulchre doors and different hospital quiet chapel.",
+  "reviews": [
+    {
+      "source_place_id": "CL14-DE-FSSP-030",
+      "entrance_evidence_grade": "ARCHITECTURAL_PORTAL_SIDE_DOCUMENTED_NOT_GPS",
+      "evidence": [
+        {
+          "url": "https://de.dehio.org/ausstattungsobjekt/amberg-sog-deutsche-schulkirche-st-augustinus-kanzel",
+          "evidence_type": "ARCHITECTURAL_INVENTORY",
+          "attested_fact": "Striking richly ornamented historical church portal is on southwest side.",
+          "checked_on": "2026-10-26"
+        },
+        {
+          "url": "https://www.hmdb.org/m.asp?m=242442",
+          "evidence_type": "DATED_HISTORIC_MARKER_PHOTO",
+          "attested_fact": "Photographed historic plaque stands near southwest corner of church and nearby entrance; plaque coordinates are not a door survey.",
+          "checked_on": "2026-10-26"
+        },
+        {
+          "url": "https://mapcarta.com/W52739490",
+          "evidence_type": "NAMED_CHURCH_BUILDING_MAP",
+          "attested_fact": "Church building polygon center is known, not which polygon vertex contains public access.",
+          "checked_on": "2026-10-26"
+        }
+      ],
+      "operator_access_description": "",
+      "architectural_entry_description": "Southwest church portal: richly carved double doors with figures of Saints Augustine and Francis de Sales.",
+      "narrative_routing_instruction": "Use the photographed ornate southwest portal as a *visual identification clue* at St Augustinus Schulkirche, not the adjacent school access.",
+      "identifying_landmarks": [
+        "SOUTHWEST_PORTAL",
+        "ROCOCO_CARVED_DOOR",
+        "TWO_FACADE_SAINT_STATUES"
+      ],
+      "unresolved_risks": [
+        "DEUTSCHE_SCHULGASSE_2_VS_4",
+        "HISTORIC_MARKER_24M_VICINITY_NOT_ENTRY_POINT",
+        "MASS_DAY_DOOR_OPEN_STATUS_UNKNOWN"
+      ],
+      "next_editorial_gate": "Obtain geolocated door point or operator floorplan for southwest portal and confirm it is open for FSSP Mass.",
+      "entrance_coordinate_latitude": null,
+      "entrance_coordinate_longitude": null,
+      "actual_worship_door_gps_verified": false,
+      "door_usable_during_future_mass_verified": false,
+      "approved_public_direction": false,
+      "approved_public_map_pin": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-029",
+      "entrance_evidence_grade": "OWNER_ARCHITECTURAL_MAIN_PORTAL_AND_HISTORIC_ALTERNATE",
+      "evidence": [
+        {
+          "url": "https://www.mariahilfberg-amberg.de/geschichte-428638.html",
+          "evidence_type": "DIRECT_SANCTUARY_HISTORY",
+          "attested_fact": "Monumental staircase ascends to main façade with central main portal.",
+          "checked_on": "2026-10-26"
+        },
+        {
+          "url": "https://www.mariahilfberg-amberg.de/eh-content/pages/14450/files/autoupload/dokumente/4_GDO_v-_18-05-_bis_12-07-2020.pdf",
+          "evidence_type": "DATED_SANCTUARY_ACCESS_EXCEPTION_2020",
+          "attested_fact": "During pandemic measures in May-July 2020, main portal was closed and side portal used exclusively.",
+          "checked_on": "2026-10-26"
+        },
+        {
+          "url": "https://www.br.de/radio/br-heimat/sendungen/zwoelfuhrlaeuten/oberpfalz/zwoelfuhrlaeuten-amberg-oberpfalz-106.html",
+          "evidence_type": "REGIONAL_PUBLIC_BROADCAST",
+          "attested_fact": "Broad staircase leads to main church portal.",
+          "checked_on": "2026-10-26"
+        }
+      ],
+      "operator_access_description": "Historic main façade/central portal accessed by monumental exterior staircase. Side portal explicitly used during a time-limited 2020 rule.",
+      "architectural_entry_description": "Central main portal occupies stair-facing façade. Operational Mass door is not independently confirmed for 2026.",
+      "narrative_routing_instruction": "Approach the church's main façade, not the monastery contact address; confirm current accessible door from sanctuary before issuing pedestrian routing.",
+      "identifying_landmarks": [
+        "MONUMENTAL_STAIRS",
+        "MAIN_FACADE_PORTAL",
+        "POSSIBLE_SIDE_ENTRANCE"
+      ],
+      "unresolved_risks": [
+        "MAIN_PORTAL_VS_SIDE_PORTAL_OPERATIONAL_CHOICE_NOT_CURRENTLY_CERTIFIED",
+        "CHURCH_4_VS_MONASTERY_3",
+        "DOOR_NOT_COORDINATE"
+      ],
+      "next_editorial_gate": "Find 2026 sanctuary instructions or plan identifying which church door is in use on recurring traditional-Mass dates.",
+      "entrance_coordinate_latitude": null,
+      "entrance_coordinate_longitude": null,
+      "actual_worship_door_gps_verified": false,
+      "door_usable_during_future_mass_verified": false,
+      "approved_public_direction": false,
+      "approved_public_map_pin": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-024",
+      "entrance_evidence_grade": "PORTAL_EXISTS_FACE_NOT_IDENTIFIED",
+      "evidence": [
+        {
+          "url": "https://www.br.de/radio/br-heimat/sendungen/zwoelfuhrlaeuten/schwaben/12uhr-hoermannsberg-schwaben100.html",
+          "evidence_type": "REGIONAL_PUBLIC_BROADCAST",
+          "attested_fact": "Visitors enter St Peter and Paul through a Gothic portal, but no cardinal façade side or geographic point is provided.",
+          "checked_on": "2026-10-26"
+        },
+        {
+          "url": "https://de.wikipedia.org/wiki/Liste_der_Baudenkm%C3%A4ler_in_Ried_%28bei_Mering%29",
+          "evidence_type": "HERITAGE_CHURCH_BUILDING_NAME",
+          "attested_fact": "Church object listed at Meringer Straße 2; FSSP had number 4.",
+          "checked_on": "2026-10-26"
+        }
+      ],
+      "operator_access_description": "",
+      "architectural_entry_description": "Historic Gothic portal mentioned by broadcaster. No reliable bearing or surveyed doorway.",
+      "narrative_routing_instruction": "Do not treat Meringer Street 2 or 4 building centroid as a walk-to-door waypoint.",
+      "identifying_landmarks": [
+        "GOTHIC_CHURCH_PORTAL"
+      ],
+      "unresolved_risks": [
+        "MERINGER_STRASSE_2_VS_4",
+        "ENTRANCE_FACADE_DIRECTION_UNKNOWN"
+      ],
+      "next_editorial_gate": "Obtain sourced church-floorplan, geotagged frontal church façade, or operator visitor instructions.",
+      "entrance_coordinate_latitude": null,
+      "entrance_coordinate_longitude": null,
+      "actual_worship_door_gps_verified": false,
+      "door_usable_during_future_mass_verified": false,
+      "approved_public_direction": false,
+      "approved_public_map_pin": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-022",
+      "entrance_evidence_grade": "STREET_APPROACH_DOCUMENTED_EXTERIOR_DOOR_UNLOCATED",
+      "evidence": [
+        {
+          "url": "https://www.eichstaett.de/sehenswertes/ehemalige_kapuzinerkirche_heil-1753/",
+          "evidence_type": "MUNICIPAL_OFFICIAL_CHURCH_ADDRESS_AND_APPROACH",
+          "attested_fact": "The site is on Kapuzinergasse, a lane branching from Ostenstraße opposite the university.",
+          "checked_on": "2026-10-26"
+        },
+        {
+          "url": "https://www.eichstaett.de/sehenswertes/ehemalige_kapuzinerkirche_heil-1753/barrierefrei/",
+          "evidence_type": "OFFICIAL_ACCESSIBILITY_DESCRIPTION",
+          "attested_fact": "Church daytime access is stated, no exterior entrance GPS or exact door orientation.",
+          "checked_on": "2026-10-26"
+        },
+        {
+          "url": "https://en.naturpark-altmuehltal.de/sehenswertes/ehemalige_kapuzinerkirche_heil-1753/?setLanguage=en",
+          "evidence_type": "TOURISM_NAMED_CHURCH_POI",
+          "attested_fact": "The regional tourism point locates the worship building, not its exterior entrance.",
+          "checked_on": "2026-10-26"
+        }
+      ],
+      "operator_access_description": "Approach via Kapuzinergasse from Ostenstraße; the site is at Kapuzinergasse 2.",
+      "architectural_entry_description": "No source in this pass locates the exterior church portal.",
+      "narrative_routing_instruction": "Approach the Kapuzinergasse church building, then follow on-site signage to its entry; don't turn regional POI into exact door coordinates.",
+      "identifying_landmarks": [
+        "KAPUZINERGASSE_LANE",
+        "OSTENSTRASSE_APPROACH"
+      ],
+      "unresolved_risks": [
+        "THREE_INTERIOR_HOLY_SEPULCHRE_ENTRANCES_ARE_NOT_CHURCH_EXTERIOR_DOORS",
+        "PRECISE_ENTRANCE_LOCATION_UNVERIFIED"
+      ],
+      "next_editorial_gate": "Find a floorplan/photo of the outside church portal with a known street-facing orientation, or owner entrance instructions.",
+      "entrance_coordinate_latitude": null,
+      "entrance_coordinate_longitude": null,
+      "actual_worship_door_gps_verified": false,
+      "door_usable_during_future_mass_verified": false,
+      "approved_public_direction": false,
+      "approved_public_map_pin": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-017",
+      "entrance_evidence_grade": "CEMETERY_ACCESS_AND_CHURCH_ADDRESS_UNRESOLVED",
+      "evidence": [
+        {
+          "url": "https://www.schwaebisch-gmuend.de/adressdetails.html?adrId=2078",
+          "evidence_type": "CITY_CHURCH_ENTITY_AND_ALTERNATE_ACCESS",
+          "attested_fact": "City lists St Leonhardskirche at Friedhofstraße 2.",
+          "checked_on": "2026-10-26"
+        },
+        {
+          "url": "https://de.wikipedia.org/wiki/Liste_der_Kulturdenkmale_in_Schw%C3%A4bisch_Gm%C3%BCnd_%28Kernstadt_au%C3%9Ferhalb_der_Altstadt%29",
+          "evidence_type": "HERITAGE_CEMETERY_AND_CHAPEL_DISTINCTION",
+          "attested_fact": "Monument entry records cemetery chapel at Aalener Straße 2 within cemetery, with Friedhofstraße street reference.",
+          "checked_on": "2026-10-26"
+        }
+      ],
+      "operator_access_description": "",
+      "architectural_entry_description": "St Leonhard is within cemetery precinct; Friedhofstraße and Aalener Straße refer to distinct access/accounting conventions.",
+      "narrative_routing_instruction": "Do not route to Aalener Straße 4, which is the different Herrgottsruhkapelle.",
+      "identifying_landmarks": [
+        "CEMETERY_CHAPEL",
+        "DIFFERENT_HERRGOTTSRUHKAPELLE_NEARBY"
+      ],
+      "unresolved_risks": [
+        "FRIEDHOFSTRASSE_2_VS_AALENER_STRASSE_2",
+        "CEMETERY_VEHICLE_VS_PEDESTRIAN_ACCESS_UNKNOWN"
+      ],
+      "next_editorial_gate": "Find city cemetery visitor access map and actual chapel door access.",
+      "entrance_coordinate_latitude": null,
+      "entrance_coordinate_longitude": null,
+      "actual_worship_door_gps_verified": false,
+      "door_usable_during_future_mass_verified": false,
+      "approved_public_direction": false,
+      "approved_public_map_pin": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-026",
+      "entrance_evidence_grade": "SAME_TOWN_TWO_BUILDINGS_EXACT_ROOM_UNLOCATED",
+      "evidence": [
+        {
+          "url": "https://www.bad-groenenbach.de/kultur-sehenswertes/sehenswertes/hohesschlossschlosskapelle",
+          "evidence_type": "MUNICIPAL_OFFICIAL_RINGSENHAUS_IDENTITY",
+          "attested_fact": "Schlosskapelle is in former brewery in front part of Ringeisenhaus adjoining the Hohe Schloss, not within castle itself.",
+          "checked_on": "2026-10-26"
+        },
+        {
+          "url": "https://rathaus.bad-groenenbach.de/sport-freizeit-und-kultur/rund-ums-hohe-schloss/hohes-schloss-ringeisenhaus-schlosskapelle.html?cHash=0176e313b9da0b653f459892de3b5b22&fsize=0",
+          "evidence_type": "MUNICIPAL_OPERATOR_STATED_BUILDING_SEPARATION",
+          "attested_fact": "Ringeisenhaus former front brewery made into chapel in 1939 and consecrated in 1941.",
+          "checked_on": "2026-10-26"
+        },
+        {
+          "url": "https://mapcarta.com/W1036283953",
+          "evidence_type": "CANDIDATE_OSM_CHAPEL_WAY",
+          "attested_fact": "OSM chapel location disagrees with alternate referenced positions by dozens of metres.",
+          "checked_on": "2026-10-26"
+        }
+      ],
+      "operator_access_description": "",
+      "architectural_entry_description": "Chapel occupies front former-brewery section of Ringeisenhaus, a separate building beside the Hohes Schloss.",
+      "narrative_routing_instruction": "Do not route a Mass attendee to castle entrance or presumed OSM chapel door.",
+      "identifying_landmarks": [
+        "RINGEISENHAUS",
+        "FORMER_BREWERY_FRONT_SECTION",
+        "HOHE_SCHLOSS_ADJACENT_BUT_NOT_CHAPEL"
+      ],
+      "unresolved_risks": [
+        "CHAPEL_WAY_SPATIAL_CONFLICT",
+        "NO_INDEPENDENT_PRECISE_CHAPEL_DOOR"
+      ],
+      "next_editorial_gate": "Obtain municipality / chapel operator plan showing Ringeisenhaus front section and actual liturgical entrance; resolve map feature discrepancy.",
+      "entrance_coordinate_latitude": null,
+      "entrance_coordinate_longitude": null,
+      "actual_worship_door_gps_verified": false,
+      "door_usable_during_future_mass_verified": false,
+      "approved_public_direction": false,
+      "approved_public_map_pin": false
+    },
+    {
+      "source_place_id": "CL17-DE-FSSP-POTSDAM",
+      "entrance_evidence_grade": "SEPARATE_HISTORIC_CHAPEL_DOOR_VISUALLY_DESCRIBED",
+      "evidence": [
+        {
+          "url": "https://www.alexianer-potsdam.de/st-josefs-kapelle",
+          "evidence_type": "DIRECT_HOSPITAL_CHAPEL_OWNER",
+          "attested_fact": "St Josefs chapel has double-leaf historic entrance beneath gilded 'St Josephs Capelle' inscription and St Joseph statue with inscription.",
+          "checked_on": "2026-10-26"
+        },
+        {
+          "url": "https://www.alexianer-potsdam.de/st-josefs-krankenhaus/unternehmen/seelsorge",
+          "evidence_type": "DIRECT_HOSPITAL_DISTINGUISHES_CHAPELS",
+          "attested_fact": "Auferstehungskapelle or Raum der Stille is next to, not identical with, St Josefs Mass chapel.",
+          "checked_on": "2026-10-26"
+        },
+        {
+          "url": "https://www.alexianer-potsdam.de/st-josefs-krankenhaus/informationen-zu-aufenthalt-und-besuch/besondere-angebote/raum-der-stille",
+          "evidence_type": "DIRECT_HOSPITAL_SECOND_CHAPEL_ROUTING",
+          "attested_fact": "Raum der Stille is a small chapel in hospital patient garden reached from cafeteria exit.",
+          "checked_on": "2026-10-26"
+        },
+        {
+          "url": "https://www.alexianer-potsdam.de/orientierung",
+          "evidence_type": "DIRECT_HOSPITAL_ACCESS",
+          "attested_fact": "Vehicle campus entrance is Zimmerstraße 6; Allee nach Sanssouci 7 is drop-off to Haus St Josef and not campus through-route.",
+          "checked_on": "2026-10-26"
+        }
+      ],
+      "operator_access_description": "Historic St Josef chapel address Allee nach Sanssouci 7; for campus/parking vehicles use Zimmerstraße 6. This is not the entrance to the distinct patient-garden Auferstehungskapelle.",
+      "architectural_entry_description": "Historic two-leaf entrance under St Josephs Capelle gilded lettering and an arched St Joseph niche.",
+      "narrative_routing_instruction": "Locate the historic chapel door using operator photograph or site plan; do not route Sunday Mass visitors to patient garden's Raum der Stille.",
+      "identifying_landmarks": [
+        "GILDED_ST_JOSEPHS_CAPELLE_SIGN",
+        "DOUBLE_LEAF_HISTORIC_DOOR",
+        "ST_JOSEPH_STATUE_ABOVE_ARCH"
+      ],
+      "unresolved_risks": [
+        "SAME_CAMPUS_HAS_SEPARATE_AUFERSTEHUNGSKAPELLE",
+        "RAUM_DER_STILLE_OSM_WAY_31290074_WRONG_FOR_ST_JOSEF",
+        "CHAPEL_DOOR_COORDINATES_UNVERIFIED"
+      ],
+      "next_editorial_gate": "Find true historic chapel building footprint/photographic georeference; retain verified alternative car access only.",
+      "entrance_coordinate_latitude": null,
+      "entrance_coordinate_longitude": null,
+      "actual_worship_door_gps_verified": false,
+      "door_usable_during_future_mass_verified": false,
+      "approved_public_direction": false,
+      "approved_public_map_pin": false
+    }
+  ],
+  "excluded_wrong_target_objects": [
+    {
+      "source_place_id": "CL17-DE-FSSP-POTSDAM",
+      "excluded_label": "Raum der Stille / Auferstehungskapelle",
+      "excluded_osm_way_id": 31290074,
+      "evidence_url": "https://www.alexianer-potsdam.de/st-josefs-krankenhaus/unternehmen/seelsorge",
+      "reason": "Hospital explicitly identifies it as the OTHER chapel beside the St Josefs Mass chapel."
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-026",
+      "excluded_label": "Hohes Schloss",
+      "excluded_osm_way_id": 304720796,
+      "evidence_url": "https://www.bad-groenenbach.de/kultur-sehenswertes/sehenswertes/hohesschlossschlosskapelle",
+      "reason": "The active Schlosskapelle occupies the neighbouring Ringeisenhaus front brewery section, not castle."
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-017",
+      "excluded_label": "Herrgottsruhkapelle Aalener Straße 4",
+      "excluded_osm_way_id": null,
+      "evidence_url": "https://de.wikipedia.org/wiki/Liste_der_Kulturdenkmale_in_Schw%C3%A4bisch_Gm%C3%BCnd_%28Kernstadt_au%C3%9Ferhalb_der_Altstadt%29",
+      "reason": "A different chapel from St Leonhard cemetery church."
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-022",
+      "excluded_label": "Three interior Holy Sepulchre doors",
+      "excluded_osm_way_id": null,
+      "evidence_url": "https://www.eichstaett.de/sehenswertes/ehemalige_kapuzinerkirche_heil-1753/",
+      "reason": "The doors lead into the architectural Holy Sepulchre INSIDE the church; they are not its exterior entrance."
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-029",
+      "excluded_label": "Franciscan monastery gate / address 3",
+      "excluded_osm_way_id": null,
+      "evidence_url": "https://www.mariahilfberg-amberg.de/geschichte-428638.html",
+      "reason": "Monastery operator contact does not prove church's operational liturgical entrance."
+    }
+  ]
+}
