@@ -16,6 +16,9 @@ on:
       - "data/customs/master/customs-r18-controlled-calendar-handoff-20261026.v1.json"
       - "data/customs/master/customs-r18-preliminary-editorial-dispositions-20261026.v1.json"
       - "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json"
+      - "data/customs/master/customs-r18-final-source-recheck-release-gates-20261026.v1.json"
+      - "tests/customs-r18-final-source-release-gates.mjs"
+      - "docs/CUSTOMS_R18_SOURCE_RECHECK_AND_RELEASE_ORDER_20261026.md"
       - "tests/customs-r18-bilingual-candidate-pack.mjs"
       - "docs/CUSTOMS_R18_BILINGUAL_RELEASE_REVIEW_20261026.md"
       - "tests/customs-r18-preliminary-editorial-dispositions.mjs"
@@ -52,3 +55,5 @@ jobs:
           node tests/customs-r18-preliminary-editorial-dispositions.mjs
           node --check tests/customs-r18-bilingual-candidate-pack.mjs
           node tests/customs-r18-bilingual-candidate-pack.mjs
+          node --check tests/customs-r18-final-source-release-gates.mjs
+          node tests/customs-r18-final-source-release-gates.mjs
