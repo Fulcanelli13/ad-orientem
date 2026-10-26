@@ -46,7 +46,7 @@ class B11Themes(unittest.TestCase):
             self.assertFalse(row["originalAuthorQuoteAuthorized"])
             self.assertFalse(row["translatedFrenchTextCopied"])
             self.assertFalse(row["sourceReproductionRightsCleared"])
-            self.assertFalse(row["sourceTextUniqueAgainstOtherIcrspArticlesCertified"])
+            self.assertFalse(row["textUniqueAgainstOtherIcrspArticlesCertified"])
             self.assertFalse(row["paragraphLevelProofAgainstAllAppExistingDayNarrative"])
             self.assertFalse(row["userFacingFeatureGapProven"])
             self.assertFalse(row["productionImportApproved"])
