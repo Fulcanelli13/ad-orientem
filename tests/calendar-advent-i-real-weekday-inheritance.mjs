@@ -72,8 +72,13 @@ try{
   await browser?.close();
   await new Promise(ok=>server.close(ok));
 }
+// Latin typographic æ/ǽ and œ/œ́ are ligatures, not ASCII ae/oe under NFD.
+// Fold them before word matching without changing any user-facing liturgical text.
 const words=x=>String(x??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+ .replace(/æ/gi,"ae").replace(/œ/gi,"oe")
  .replace(/[^a-zA-Z]+/g," ").replace(/\s+/g," ").toLowerCase().trim();
+assert.equal(words("Roráte, cæli"),words("Rorate caeli"));
+assert.equal(words("Excita, quǽsumus, Dómine"),words("Excita quaesumus Domine"));
 const contains=(hay,needle)=>(" "+words(hay)+" ").includes(" "+words(needle)+" ");
 for(const row of rows)console.log("ADVENT_WEEKDAY_SOURCE_OBSERVATION="+JSON.stringify(row));
 assert.equal(rows.length,dates.length);
