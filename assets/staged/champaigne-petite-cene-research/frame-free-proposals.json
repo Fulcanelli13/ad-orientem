@@ -1,0 +1,87 @@
+{
+  "schema": "AO_CHAMPAIGNE_INV1125_CROP_PROPOSAL_NOT_PUBLICATION",
+  "source": "commons photographer Tangopaso public-domain dedication",
+  "photo_has_physical_frame": true,
+  "proposal_A": "Likely includes most/all canvas; corner precision still requires manual checking",
+  "proposal_B": "Slightly inset diagnostic only; cannot be assumed to preserve entire painting",
+  "camera_geometry_corrected_with_interpolation": true,
+  "color_reference_checked": false,
+  "app_asset_promotion": false,
+  "review_overlay": "assets/staged/champaigne-petite-cene-research/quad-boundary-visual-review.jpg",
+  "candidates": [
+    {
+      "candidate": "A-complete-edge-approx",
+      "quad_source_pixels": {
+        "tl": [
+          251,
+          429
+        ],
+        "bl": [
+          245,
+          1688
+        ],
+        "br": [
+          2571,
+          1691
+        ],
+        "tr": [
+          2560,
+          425
+        ]
+      },
+      "target_size": [
+        2250,
+        1208
+      ],
+      "master_original_sha256": "3fce64afc767c16b803fd250e685f3a64caedb7e474380d3afeca68d84331942",
+      "derivative_sha256": "7df0eba17fda211abb870198bb4d5096c0738ff79d2835d56541e07883862b11",
+      "original_saved": "assets/staged/champaigne-petite-cene-research/tangopaso-museum-original.jpg",
+      "derivative_research_only": "assets/staged/champaigne-petite-cene-research/A-complete-edge-approx-ungraded-source-derived.jpg",
+      "preview_path": "assets/staged/champaigne-petite-cene-research/A-complete-edge-approx-full-preview.jpg",
+      "untouched_painting_source_retained": true,
+      "perspective_only_sampling": true,
+      "colour_tone_grading": false,
+      "synthetic_fill": false,
+      "ai_detail_enhancement": false,
+      "human_painted_bounds_and_full_composition_verified": false,
+      "production_release_approved": false
+    },
+    {
+      "candidate": "B-inset-quality-diagnostic",
+      "quad_source_pixels": {
+        "tl": [
+          270,
+          450
+        ],
+        "bl": [
+          268,
+          1669
+        ],
+        "br": [
+          2549,
+          1672
+        ],
+        "tr": [
+          2545,
+          446
+        ]
+      },
+      "target_size": [
+        2250,
+        1208
+      ],
+      "master_original_sha256": "3fce64afc767c16b803fd250e685f3a64caedb7e474380d3afeca68d84331942",
+      "derivative_sha256": "50df56c5f80c75ab8a7e4428e34fa2a4771e8da9368b3df2682bb62978ea3179",
+      "original_saved": "assets/staged/champaigne-petite-cene-research/tangopaso-museum-original.jpg",
+      "derivative_research_only": "assets/staged/champaigne-petite-cene-research/B-inset-quality-diagnostic-ungraded-source-derived.jpg",
+      "preview_path": "assets/staged/champaigne-petite-cene-research/B-inset-quality-diagnostic-full-preview.jpg",
+      "untouched_painting_source_retained": true,
+      "perspective_only_sampling": true,
+      "colour_tone_grading": false,
+      "synthetic_fill": false,
+      "ai_detail_enhancement": false,
+      "human_painted_bounds_and_full_composition_verified": false,
+      "production_release_approved": false
+    }
+  ]
+}
