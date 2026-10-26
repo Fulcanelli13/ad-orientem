@@ -20,6 +20,12 @@
       "upstream_source_id": "AASJMV-EXT-001",
       "provider_path": "data/directory/generated/v19/aasjmv.v1.json",
       "relationship": "SAME_PHYSICAL_WORSHIP_SITE_ALREADY_IN_GENERATED_PROVIDER"
+    },
+    {
+      "research_group_id": "RG-B87-56B9D31B206D",
+      "upstream_source_id": "VG19-PL-LODZ-ALL-SAINTS",
+      "provider_path": "data/directory/generated/v19/verified-global-round19-20261010.v1.json",
+      "relationship": "SAME_PHYSICAL_WORSHIP_SITE_ALREADY_IN_VERIFIED_GLOBAL_PROVIDER"
     }
   ],
   "inherited_original_mass_timetable_rows": 4681,
@@ -442,7 +448,8 @@
       "batch": "B87",
       "admission_status": "G0_RESEARCH_ONLY",
       "scheduled_mass_status": "UNVERIFIED_NOT_IMPORTED",
-      "map_publication": "NOT_PUBLISHED"
+      "map_publication": "NOT_PUBLISHED",
+      "related_existing_provider_id": "VG19-PL-LODZ-ALL-SAINTS"
     },
     {
       "research_group_id": "RG-B88-58C280A6D190",

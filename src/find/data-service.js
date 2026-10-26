@@ -1,4 +1,5 @@
 import { auditVenue } from "./contracts.js";
+import {stageG0ResearchVenues} from "./g0-research-venues.js";
 import { expandLicensedDirectoryFeed } from "./licensed-source-bridge.js";
 import { expandOfficialSspxMassPlaces } from "./official-sspx-discovery.js";
 import { isMapPublishableGeo } from "./geo-provenance.js";
@@ -358,8 +359,23 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
   if(officialDiscovery.records.length)loaded.push("SSPX-official-global-Mass-list");
   const indicated=applyIndicativeSspxLocations(allRecords,{officialPlaces:mapIndex});
   const other=applyIndicativeOtherCommunities(indicated.records);
+  // B84–B90 research sites are now consumed by the operational loader, not
+  // detached spreadsheets. Retain these records in the PRIVATE G0 review lane.
+  // They must never enter public Find, indicative geocoding or the R49 pin map
+  // before independent same-building, Mass-use and geometry certification.
+  const g0Corpus=await fetchJson(moduleUrl("../../data/directory/research/canonical-g0-site-admissions-b84-b90-20261026.v1.json"),
+    {fetchImpl,optional:true});
+  // Optional research source must never interrupt an otherwise available
+  // public directory. An unavailable/empty fixture is not an import failure;
+  // a schema-valid, malformed G0 payload still fails the G0 validation gate.
+  const g0Research=g0Corpus?.schema==="AO_DIRECTORY_CANONICAL_G0_RESEARCH_VENUE_ADMISSIONS_V1"
+    ?stageG0ResearchVenues(g0Corpus,{existingRecords:other.records}):null;
   return Object.freeze({
     records:other.records,
+    privateResearchVenues:g0Research?.records??Object.freeze([]),
+    privateResearchLinkedIds:g0Research?.linked??Object.freeze([]),
+    privateResearchHolds:g0Research?.held??Object.freeze([]),
+    g0ResearchSummary:g0Research?.summary??Object.freeze({total:0,staged:0,linked:0,held:0,public_pins:0,verified_mass_rows:0}),
     indicativeGeoSummary:indicated.summary,
     officialSspxDiscoverySummary:officialDiscovery.summary,
     officialSspxIdentityReviewCount:officialDiscovery.held.length,
