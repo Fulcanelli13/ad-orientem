@@ -1,7 +1,7 @@
 // Native Mass Schola: real Gregorian score selection and continuous manuscript viewing.
 // Research/pilot only: selected preview is NOT the actual choir's musical setting.
 // No playback, priest action, card navigation, audio clock, or liturgical inference.
-const KYRIE_XVI_GABC=\`name:Kyrie XVI;
+const KYRIE_XVI_GABC=`name:Kyrie XVI;
 office-part:Kyriale;
 mode:3;
 book:Graduale Romanum, 1961, p. 54* & The Liber Usualis, 1961, p. 59 & Chants of the Church, 1956, p. 40;
@@ -11,7 +11,7 @@ commentary:XI-XIII. s.;
 (c4) KY(g)ri(hi)e(ii) *() e(g)lé(h_)i(i)son.(i.) <i>iij.</i>(::)
 Chri(k)ste(ij) e(h)lé(h_)i(i)son.(i.) <i>iij.</i>(::)
 Ký(g)ri(hi)e(ii) e(g)lé(h_)i(i)son.(i.) <i>ij.</i>(::)
-Ký(g)ri(hi)e(ii) *() e(g)lé(hj)i(h)son.(ighvGFE.) (::)\`;
+Ký(g)ri(hi)e(ii) *() e(g)lé(hj)i(h)son.(ighvGFE.) (::)`;
 
 const source=(id)=>"https://gregobase.selapa.net/chant.php?id="+id;
 const svg=(id)=>"https://gregobase.selapa.net/download.php?format=svg&id="+id;
@@ -69,7 +69,7 @@ export function scoreReadingStep(clientHeight){
   return Math.max(80,Math.round(Math.max(0,Number(clientHeight)||0)*.72));
 }
 
-const CSS=String.raw\`
+const CSS=String.raw`
 .ao-chant-score-launch[hidden],.ao-chant-score-panel[hidden],.ao-chant-score-dialog[hidden]{display:none!important}
 .ao-chant-score-launch{font-size:9px!important;letter-spacing:.065em!important;grid-column:1/-1}
 .ao-schola-dock[data-notation="true"]:not([data-collapsed="true"]),
@@ -120,7 +120,7 @@ const CSS=String.raw\`
  .ao-chant-score-choices{max-width:48%}
 }
 @media(prefers-reduced-motion:reduce){.ao-chant-score-reading{scroll-behavior:auto}}
-\`;
+`;
 
 // Model never reads the priest's current text to advance the musical score.
 export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
@@ -137,7 +137,7 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
   controls.appendChild(trigger);
   const panel=doc.createElement("section");panel.className="ao-chant-score-panel";panel.hidden=true;
   panel.setAttribute("aria-label","Continuous Gregorian notation, manually followed");
-  panel.innerHTML=\`<div class="ao-chant-score-tools">
+  panel.innerHTML=`<div class="ao-chant-score-tools">
     <select class="ao-chant-score-choices" data-score-choice aria-label="Reference Kyrie melody">
     </select><div class="ao-chant-score-commands">
       <button type="button" data-score-prev aria-label="Scroll notation upwards">↑</button>
@@ -153,13 +153,13 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
     </div>
     <div class="ao-chant-score-caption"><span data-score-progress>MANUAL · 0%</span>
       <a data-score-source href="https://gregobase.selapa.net/chant.php?id=545"
-        target="_blank" rel="noopener noreferrer">Source · GregoBase</a></div>\`;
+        target="_blank" rel="noopener noreferrer">Source · GregoBase</a></div>`;
   dock.appendChild(panel);
   const dialogue=doc.createElement("section");
   dialogue.hidden=true;dialogue.className="ao-chant-score-dialog";
   dialogue.setAttribute("role","dialog");dialogue.setAttribute("aria-modal","true");
   dialogue.setAttribute("aria-label","Expanded Gregorian chant score");
-  dialogue.innerHTML=\`<div class="ao-chant-score-sheet">
+  dialogue.innerHTML=`<div class="ao-chant-score-sheet">
     <div class="ao-chant-score-head"><span class="ao-chant-score-title" data-score-title>Gregorian chant</span>
       <button class="ao-chant-score-close" type="button" data-score-close>Close</button></div>
     <p class="ao-chant-score-warning">Reference score — not confirmation of what the choir sings.
@@ -171,7 +171,7 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{}}={}){
     </div><div class="ao-chant-score-caption">
       <span data-score-full-progress>MANUAL · 0%</span><a data-score-full-source
         href="https://gregobase.selapa.net/chant.php?id=545" target="_blank"
-        rel="noopener noreferrer">Source · GregoBase</a></div></div>\`;
+        rel="noopener noreferrer">Source · GregoBase</a></div></div>`;
   root.appendChild(dialogue);
   const select=panel.querySelector("[data-score-choice]");
   for(const item of availableNativeScholaScores("KYRIE")){
