@@ -203,7 +203,11 @@ test('1961 source-matched GABC coverage requires complete hymn and psalm compone
   assert.equal(audit.status,'CATALOGUE_SOURCE_AND_VISUAL_INCIPIT_CROSSCHECK_ONLY_NOT_FULL_PITCH_CERTIFIED');
   assert.equal(audit.scoresInCurrentRuntimeFromThisResearch,0);
   assert.equal(audit.fullNoteByNoteVerified,0);
-  assert.equal(audit.downloadedGabcPayloads,false);
+  assert.equal(audit.downloadedGabcPayloads,true);
+  assert.equal(audit.sha256ArchiveCommitted,true);
+  assert.equal(audit.archivedGabcElements,15);
+  assert.equal(audit.archivedBytes,9841);
+  assert.equal(audit.archiveStatus,'15_RAW_UTF8_GABC_FILES_VERIFIED_SHA256_COMMITTED_GIT_NOTATION_QA_OPEN');
   assert.equal(audit.records.length,10);
   assert.equal(audit.rejectedSources.length,3);
   assert.equal(new Set(audit.records.map(r=>r.scoreId)).size,audit.records.length);
