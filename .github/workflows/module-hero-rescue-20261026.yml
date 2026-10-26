@@ -1,0 +1,36 @@
+name: Remaining heroes image fidelity rescue
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/module-hero-rescue-20261026.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  original-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Acquire and diagnose two exact original files
+        run: python3 scripts/art/acquire-hero-rescue.py
+      - name: Make full and 1:1 detail previews
+        env:
+          AO_HERO_PREVIEW_INPUT: assets/staged/module-hero-rescue
+        run: python scripts/art/make-module-hero-review-previews.py
+      - name: Permanently preserve source bytes and report on research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c research/module-hero-rescue-20261026
+          git add -f data/research/module-hero-rescue-20261026.json
+          if [ -d assets/staged/module-hero-rescue ]; then git add -f assets/staged/module-hero-rescue; fi
+          if [ -d assets/staged/module-hero-preview-jpegs ]; then git add -f assets/staged/module-hero-preview-jpegs; fi
+          git commit -m "research(art): archive faithful secondary hero master candidates and QA evidence"
+          git push --set-upstream origin research/module-hero-rescue-20261026
+      - name: Publication boundary
+        run: echo "No artwork approvals or app changes. Strictly a €0 research archive."
