@@ -18,14 +18,24 @@ const noStatus=Object.freeze({status:"WITHHELD",heading:null});
 // Short quotation from the Latin source, not a generated/intuited formulary title.
 export function latinIntroitIncipit(introit){
   const latin=str(introit?.lat??introit?.la);
-  if(!latin||/[\u0000-\u001f]/.test(latin.slice(0,2)))return null;
-  const first=latin.split(/\r?\n/).map(x=>x.trim()).find(Boolean);
-  if(!first||/[\$@]/.test(first.slice(0,2)))return null;
-  const cleaned=first.replace(/^(?:introitus|introit|intro[iï]t)\s*[:.·]?\s*/iu,"")
-    .replace(/^(?:[℣℟]\.|[VR]\.)\s*/iu,"").trim();
-  if(!cleaned||cleaned.length>600||!/\p{L}/u.test(cleaned))return null;
-  const words=cleaned.split(/\s+/u).slice(0,5).join(" ");
-  return words.length>75?words.slice(0,75).trimEnd():words;
+  if(!latin)return null;
+  const lines=latin.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+  for(const line of lines){
+    let words=line
+      .replace(/^(?:introitus|introit|intro[iï]t)\s*[:.·]?\s*/iu,"")
+      .replace(/^(?:[℣℟]\.|[VR]\.)\s*/iu,"")
+      // Roman Missal transcriptions often print a Psalm/chapter citation
+      // *before* the Introit proper. This is provenance, not the incipit.
+      .replace(/^(?:[1-3]\s*)?[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ. ]{0,18}\s+\d{1,3}[:.,]\d{1,3}(?:[-–]\d{1,3})?\s*[.:]?\s*/u,"")
+      .trim();
+    if(!words||/^[\\$@]/.test(words)||!/(?:\p{L}[^\p{L}]+){0,}\p{L}/u.test(words))continue;
+    if((words.match(/\p{L}+/gu)||[]).length<2)continue;
+    // Do not treat headings such as 'Psalm 129' as Latin Introit texts.
+    if(/^(?:ps(?:almus|alm|al)?\.?|psalm)\s+\d+$/iu.test(words))continue;
+    const snippet=words.split(/\s+/u).slice(0,5).join(" ");
+    return snippet.length>75?snippet.slice(0,75).trimEnd():snippet;
+  }
+  return null;
 }
 
 // A future typed rubric decision may be displayed only when produced by the
