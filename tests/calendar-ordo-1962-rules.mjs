@@ -21,6 +21,8 @@ check(day("2026-10-18","sancti:10-18:1:w",1,"white"),true,true);
 // In a first-class *feast*, Credo follows from the feast class; a class-I
 // feria must not be classified as a feast merely because it has rank I.
 check(day("2026-12-08","sancti:12-08:1:w",1,"white"),true,true);
+check(day("2026-12-26","sancti:12-26:2:r",2,"red"),true,true);
+check(day("2026-12-31","tempora:Nat1-1:2:w",2,"white"),null,true);
 check(day("2026-10-15","sancti:10-15:3:w",3,"white"),true,false);
 check(day("2026-10-14","sancti:10-14:3:r",3,"red"),true,false);
 check(day("2026-10-07","sancti:10-07:2:w",2,"white"),true,true);
