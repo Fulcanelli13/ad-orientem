@@ -1,0 +1,129 @@
+name: ICRSP B32 exact last 210 — source-body screening and durable archive
+on:
+  push:
+    branches:
+      - governance/icrsp-source-inventory-1665
+    paths:
+      - '.github/workflows/icrsp-b32-final210.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: icrsp-b32-final210
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enforce 573-screened and exact unscreened 210 source IDs
+        run: python -m unittest discover -s tests -p 'test_icrsp_b32_exact_remaining.py' -v
+      - name: Generate exact 210-item metadata manifest
+        run: |
+          python tools/icrsp/plan_b32_final210.py \
+            --corpus data/source-text/icrsp-france-783-verified-commentary-labels.v1.json \
+            --b21 data/source-text/icrsp-france-b21-140-automated-commentary-signals.v1.json \
+            --b23 data/source-text/icrsp-france-b23-233-automated-commentary-signals.v1.json \
+            --b22 data/source-text/icrsp-france-b22-233-distinct-source-body-scan-queue.v1.json \
+            --b29 data/source-text/icrsp-france-b29-200-automated-commentary-signals.v1.json \
+            --out icrsp-b32-final210-manifest.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-b32-final210-plan
+          path: icrsp-b32-final210-manifest.json
+          retention-days: 90
+
+  scan:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0, 1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: icrsp-b32-final210-plan
+          path: /tmp/icrsp-b32
+      - name: Screen exactly 42 original source pages; never retain prose
+        run: |
+          python tools/icrsp/scan_b32_final210.py \
+            --manifest /tmp/icrsp-b32/icrsp-b32-final210-manifest.json \
+            --shard ${{ matrix.shard }} --shards 5 --delay 3.5 \
+            --out b32-source-${{ matrix.shard }}.json
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-b32-source-shard-${{ matrix.shard }}
+          path: b32-source-${{ matrix.shard }}.json
+          retention-days: 90
+          if-no-files-found: warn
+
+  validate-and-preserve:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    needs: scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: icrsp-b32-final210-plan
+          path: /tmp/icrsp-b32-plan
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: icrsp-b32-source-shard-*
+          path: /tmp/icrsp-b32-shards
+      - name: Validate complete 210-source metadata and rank research leads
+        run: |
+          mkdir -p /tmp/icrsp-b32-preserved
+          python tools/icrsp/consolidate_b32_final210.py \
+            --manifest /tmp/icrsp-b32-plan/icrsp-b32-final210-manifest.json \
+            --shard-dir /tmp/icrsp-b32-shards \
+            --out /tmp/icrsp-b32-preserved/icrsp-france-b32-final210-automated-signals.v1.json \
+            --ranked-out /tmp/icrsp-b32-preserved/icrsp-france-b32-final210-topic-priority.v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-b32-validated-all210-results
+          path: /tmp/icrsp-b32-preserved/*.json
+          retention-days: 90
+      - name: Permanently commit validated metadata to existing research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin governance/icrsp-source-inventory-1665
+          git checkout -B icrsp-b32-preserve origin/governance/icrsp-source-inventory-1665
+          cp /tmp/icrsp-b32-preserved/*.json data/source-text/
+          git add data/source-text/icrsp-france-b32-final210-automated-signals.v1.json \
+                  data/source-text/icrsp-france-b32-final210-topic-priority.v1.json
+          git diff --cached --quiet && exit 0
+          git commit -m "research(icrsp): permanently preserve final 210 source-body screens"
+          git pull --rebase origin governance/icrsp-source-inventory-1665
+          git push origin HEAD:governance/icrsp-source-inventory-1665
