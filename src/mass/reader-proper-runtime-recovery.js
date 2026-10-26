@@ -132,6 +132,13 @@ export function authenticated1962PrefaceRecoveryOwner(principalCelebrationId,sou
   if(lent&&path.toLowerCase()==="tempora/"+lent[1].toLowerCase())
     return Object.freeze({section:"Quad",scope:"LENT_TEMPORAL_1962",
       rubric:"RGMR_486_A",sourcePath:path});
+  // RGMR §493(a): the Vigil and octave of Pentecost have the Holy
+  // Spirit Preface. Pentecost Sunday (Pasc7-0) was already independently
+  // certified above. Only extend to *identical source paths* below.
+  const pentecost=/^tempora:(Pasc(?:6-6|7-[1-6])):1:r$/i.exec(id);
+  if(pentecost&&path.toLowerCase()==="tempora/"+pentecost[1].toLowerCase())
+    return Object.freeze({section:"Spiritu",scope:"PENTECOST_OCTAVE_1962",
+      rubric:"RGMR_493_A",sourcePath:path});
   return null;
 }
 async function recoverContradictoryPreface(data,hostResolver,principalCelebrationId,diagnostic){
@@ -151,6 +158,8 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
     // Verify the returned Latin section is the Lenten Preface itself.
     if(language==="la"&&owner.section==="Quad"&&!/^de Quadragesima(?:\s|$)/i.test(text))
       return null;
+    if(language==="la"&&owner.section==="Spiritu"&&
+       !/^de (?:Spiritu Sancto|Sancto Spiritu)(?:\s|$)/i.test(text))return null;
     result[language==="la"?"lat":language]=text;
   }
   if(!hasThreeLanguages(result))return null;
