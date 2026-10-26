@@ -39,6 +39,8 @@ on:
       - 'tests/test_icrsp_b16_fromage_six_sunday_passages.py'
       - 'data/source-text/icrsp-france-b17-fromage-edition-ledger-and-two-more-text-matches.v1.json'
       - 'tests/test_icrsp_b17_fromage_edition_evidence.py'
+      - 'data/source-text/icrsp-france-b18-fourth-sunday-original-edition-ocr-witness.v1.json'
+      - 'tests/test_icrsp_b18_fourth_sunday_scan_ocr_variant.py'
   workflow_dispatch:
 
 permissions:
@@ -70,3 +72,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b16_edition_claim_reconciliation.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b16_fromage_six_sunday_passages.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b17_fromage_edition_evidence.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b18_fourth_sunday_scan_ocr_variant.py' -v
