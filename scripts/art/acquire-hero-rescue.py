@@ -44,10 +44,10 @@ for mod,name,why in CASES:
             fmt,w,h=im.format,im.width,im.height
             exif=im.getexif();iso=exif.get(34855)
             has_icc=bool(im.info.get("icc_profile"))
-        base.update({"PIL_format":fmt,"width":w,"height":h,"bytes":len(raw),"ISO":iso,"has_icc":has_icc})
-        if fmt not in ("JPEG","PNG","TIFF","WEBP") or min(w,h)<700:
+        base.update({"PIL_format":fmt,"width":w,"height":h,"bytes":len(raw),"ISO":iso,"has_icc":has_icc,"container_note":"MPO is a multi-picture JPEG-family encoding; preserve original bytes" if fmt=="MPO" else ""})
+        if fmt not in ("JPEG","MPO","PNG","TIFF","WEBP") or min(w,h)<700:
             raise ValueError(f"Low-resolution/unsupported image: format={fmt} dimensions={w}x{h}")
-        ext={"JPEG":".jpg","PNG":".png","TIFF":".tif","WEBP":".webp"}[fmt]
+        ext={"JPEG":".jpg","MPO":".jpg","PNG":".png","TIFF":".tif","WEBP":".webp"}[fmt]
         out=OUT/(mod+ext);out.parent.mkdir(parents=True,exist_ok=True);out.write_bytes(raw)
         base.update({"file":str(out.relative_to(ROOT)),"sha256":hashlib.sha256(raw).hexdigest(),
           "licence_claim":lic,"rights_details":why,"status":"ARCHIVED_SOURCE_UNAPPROVED"})
