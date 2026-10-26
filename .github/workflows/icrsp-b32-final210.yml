@@ -1,4 +1,4 @@
-name: ICRSP B32 exact last 210 — source-body screening and durable archive
+name: ICRSP B32 exact last 210 — read-only source screening
 on:
   push:
     branches:
@@ -78,13 +78,11 @@ jobs:
           retention-days: 90
           if-no-files-found: warn
 
-  validate-and-preserve:
+  validate-and-package:
     if: github.repository == 'Fulcanelli13/ad-orientem'
     needs: scan
     runs-on: ubuntu-latest
     timeout-minutes: 12
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -114,16 +112,6 @@ jobs:
           name: icrsp-b32-validated-all210-results
           path: /tmp/icrsp-b32-preserved/*.json
           retention-days: 90
-      - name: Permanently commit validated metadata to existing research branch
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin governance/icrsp-source-inventory-1665
-          git checkout -B icrsp-b32-preserve origin/governance/icrsp-source-inventory-1665
-          cp /tmp/icrsp-b32-preserved/*.json data/source-text/
-          git add data/source-text/icrsp-france-b32-final210-automated-signals.v1.json \
-                  data/source-text/icrsp-france-b32-final210-topic-priority.v1.json
-          git diff --cached --quiet && exit 0
-          git commit -m "research(icrsp): permanently preserve final 210 source-body screens"
-          git pull --rebase origin governance/icrsp-source-inventory-1665
-          git push origin HEAD:governance/icrsp-source-inventory-1665
+      # Release safeguard: this workflow does not write to GitHub.
+      # The validated 90-day artifact must be archived separately in the
+      # existing research branch after its source IDs and checks are verified.
