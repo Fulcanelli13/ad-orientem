@@ -78,14 +78,14 @@ assert.equal(contrary.ordinaryRubricEvidence.credo.status,"SOURCE_CONFLICT");
 const matchedSunday=calendarOrdoMassFacts({...base,date:"2026-10-11",
   day:{main:{id:"tempora:Pent20-0:2:g",title:"XX Sunday after Pentecost",rank:2}},
   proper:{status:"ready",data:{...base.proper.data,
-    preface:{lat:"de sanctissima Trinitate\\nVere dignum",en:"Holy Trinity",fr:"Sainte Trinité"}}}});
+    preface:{lat:"de sanctissima Trinitate\nVere dignum",en:"Holy Trinity",fr:"Sainte Trinité"}}}});
 assert.equal(matchedSunday.preface.status,"MATCH",
   "A rubric-attested Trinity Preface on a second-class Sunday may be displayed");
 assert.equal(matchedSunday.preface.clause,"494_B");
 const unlisted=calendarOrdoMassFacts({...base,date:"2026-10-15",
   day:{main:{id:"sancti:10-15:3:w",title:"St Teresa of Avila",rank:3}},
   proper:{status:"ready",data:{...base.proper.data,
-    preface:{lat:"Communis\\nVere dignum",en:"Common",fr:"Commune"}}}});
+    preface:{lat:"Communis\nVere dignum",en:"Common",fr:"Commune"}}}});
 assert.equal(unlisted.preface.status,"WITHHELD",
   "An unreviewed saint's Common Preface is not certified merely by its heading");
 
