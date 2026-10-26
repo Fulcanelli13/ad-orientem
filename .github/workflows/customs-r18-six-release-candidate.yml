@@ -1,0 +1,20 @@
+name: Customs R18 six canonical release candidate
+on:
+  pull_request:
+    paths:
+      - 'data/customs/customs-r18-six-canonical-release-candidate.v1.json'
+      - 'tests/customs-r18-six-canonical-release-candidate.mjs'
+      - '.github/workflows/customs-r18-six-release-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  six-source-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prevent unsigned R18 publication and canonical ID collisions
+        run: node tests/customs-r18-six-canonical-release-candidate.mjs
