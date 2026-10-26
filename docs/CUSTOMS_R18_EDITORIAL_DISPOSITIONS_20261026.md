@@ -20,7 +20,7 @@ The machine-readable decision board is [`customs-r18-preliminary-editorial-dispo
 | # | Action | Recommended presentation after approval | Final specific gate |
 |---:|---|---|---|
 | 1 | St Patrick's ribbon cross | Historical only | Document historic rather than current use |
-| 2 | The Irish Christmas candle | Regional household | Resolve witness and informant provenance |
+| 2 | The Irish Christmas candle | Regional household | Keep school locality and informant address distinct from tradition origin |
 | 3 | St John Baptist's community bonfire | Dated local gathering | Require current dated local parish confirmation |
 | 4 | Decorating Easter eggs: pisanki and pysanky | Cross-confessional heritage | Separate regional craftsmanship and Catholic liturgical claims |
 | 5 | Herbergsuche — Advent Marian-image visits between households | Parish-linked household | Limit to documented relay and parish availability |
@@ -42,7 +42,7 @@ The machine-readable decision board is [`customs-r18-preliminary-editorial-dispo
 
 **St Patrick's crosses — source precision resolved, not an approval.** The National Museum of Ireland directly dates Dineley's observation to **1681**. Galway City Museum identifies it broadly as being in the **1680s**. Both can be true. Keep cautious 1680s EN/FR article wording, attach an attributed 1681 source annotation if useful, and make no claim about when the tradition began or its unbroken modern usage.
 
-**Irish Christmas candle — collection county established, informant origin unresolved.** The alternate Dúchas record identifies **Graine school, County Kilkenny**. Earlier text labelled its informant **Tipperary** without corroborating informant residence. The direct audit has been revised to use the school as the exact provenance; this does not establish the author's or informant's home county. The previously linked Dúchas primary record is intermittently blocked by a security challenge and stays preserved as a separate lead.
+**Irish Christmas candle — school and informant address separately verified.** The alternate Dúchas record identifies **Graine school, County Kilkenny**, and informant **Mr M. Delahunty**, with an address in **Graigaheesha, County Tipperary**. The former is the collecting-school locality; the latter is the informant's recorded address. Neither alone establishes the custom's first geographical origin. The previously linked Adare record remains a separate witness.
 
 **St John bonfire — no recurring event permission.** An Oloron parish celebration was explicitly announced for **20 June 2026**, while St John Baptist's liturgical feast is on **24 June**. The latter may contextualize the tradition. It does not create a repeatable 24 June event in a locality, nor change the 1962 rite or authorize a fire blessing.
 
