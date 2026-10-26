@@ -12,7 +12,7 @@ permissions:
   contents: write
 concurrency:
   group: ao-art-b56-53-classi-hero-selection
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   private-class-i-hero-selector:
     runs-on: ubuntu-latest
@@ -45,17 +45,30 @@ jobs:
           path: previews/sacred-art-b56-classi-53-hero-selection-offline.html
           retention-days: 7
           if-no-files-found: error
-      - name: Preserve all photo derivatives only in UNPUBLISHED draft Release, remote byte-for-byte SHA proof
+      - name: Try archival transport in UNPUBLISHED draft Release
+        id: draft_release
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
         run: python scripts/research/sacred_art_b56_publish_private_hero_selector.py
+      - name: Clarify temporary transport if draft Release write not permitted
+        if: steps.draft_release.outcome == 'failure'
+        run: |
+          echo 'Draft Release asset unavailable due to repository token permissions.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Verified HTML is available only through the 7-day Actions artifact; this is not the permanent source archive.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'No additional privileges, paid services, or rights-holder outreach will be requested.' >> "$GITHUB_STEP_SUMMARY"
       - name: Commit research indexes only, never embed unapproved art in public Git
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/research/sacred-art-b56-53-hero-selection-verified-summary.json data/research/sacred-art-b56-53-hero-candidate-list.json
-          git commit -m 'research: B56 53 Class I 3–4 artwork candidates each, original image/photo status and prior approval preservation'
+          if ! git diff --cached --quiet; then
+            git commit -m 'research: B56 53 Class I date candidates and protected approvals, non-release evidence'
+          else
+            echo 'Research indexes unchanged' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
           for attempt in 1 2 3; do
             git fetch origin research/sacred-art-b56-classi-53-hero-selector-20261024
             git rebase origin/research/sacred-art-b56-classi-53-hero-selector-20261024
