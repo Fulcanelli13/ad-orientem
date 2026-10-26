@@ -1,0 +1,848 @@
+{
+  "name": "Ad Orientem module heroes — acquisition and publication gates",
+  "version": "2026-10-26.audit1",
+  "editorial_ledger_ref": "data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json",
+  "editorial_ledger_sha_at_audit": "afb09129f52e336df64c7f1782446e7cfb6861dc",
+  "generated_from_latest_user_confirmed_22_selections": true,
+  "cost_policy": "EUR 0; use open access/attribution-compliant files only; never paid API or billed storage",
+  "scope": "Asset acquisition candidates and readiness, not changes to artwork selection or production assets",
+  "status_semantics": "catalogue_verified and image-page dimensions are webpage evidence; never imply downloaded image/verified master or final clearance",
+  "minimum_release_gates": [
+    "exact object and donor attribution reconciled",
+    "reuse terms specific to actual file and target jurisdictions recorded",
+    "unmodified original file acquired and SHA-256 recorded",
+    "file format and pixel size read from downloaded bytes",
+    "color/orientation and subject composition visually QA'd",
+    "mobile and desktop crops user approved",
+    "app integration verified"
+  ],
+  "counts": {
+    "selected": 22,
+    "produced_physical_masters": 0,
+    "candidate_image_pages_identified": 21,
+    "candidates_with_page_listed_dimensions": 18,
+    "museum_or_commons_reuse_terms_explicitly_documented": 14,
+    "release_cleared": 0
+  },
+  "entries": [
+    {
+      "module_id": "angelus",
+      "module": "Angelus",
+      "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "artist": "Philippe de Champaigne",
+      "title": "The Annunciation",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://www.metmuseum.org/art/collection/search/438724",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://www.metmuseum.org/art/collection/search/438724",
+        "width_px": null,
+        "height_px": null,
+        "rights_review": "Met Open Access, public domain / CC0",
+        "source_status": "museum_public_domain",
+        "evidence_pages": [
+          "https://www.metmuseum.org/art/collection/search/438724"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Museum confirms CC0/public domain downloadable image; retrieve actual master via Met API and verify checksum."
+      ]
+    },
+    {
+      "module_id": "joseph",
+      "module": "Saint Joseph",
+      "artwork_id": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "artist": "Philippe de Champaigne",
+      "title": "The Dream of Saint Joseph",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+        "width_px": 4421,
+        "height_px": 6000,
+        "rights_review": "Commons PD-Art marking; local laws still to consider",
+        "source_status": "commons_pd_art",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Large faithful reproduction located; 2025 Commons revision."
+      ]
+    },
+    {
+      "module_id": "holy-spirit",
+      "module": "Holy Spirit",
+      "artwork_id": "ART-ean-estout-entecost",
+      "artist": "Jean Restout",
+      "title": "Pentecost",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Restout_-_La_Pentecôte_01.jpg",
+        "width_px": 4037,
+        "height_px": 2444,
+        "rights_review": "Commons PD-Art marking; photographer EXIF says CC-BY-SA—resolve attribution/licensing conflict or source different master",
+        "source_status": "licence_conflict_manual",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/Category:La_Pentecôte,_Restout_(Louvre_INV20303)",
+          "https://commons.wikimedia.org/wiki/File:Restout_-_La_Pentecôte_01.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Existing approved WGA upload only 1240×730. Higher-resolution same Louvre INV20303 located; image metadata has photographer copyright notice."
+      ]
+    },
+    {
+      "module_id": "heart-jesus",
+      "module": "Sacred Heart",
+      "artwork_id": "commons-morlete-sacred-heart-1759",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "title": "The Heart of Jesus",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+        "width_px": 2345,
+        "height_px": 3045,
+        "rights_review": "Commons PD-Art marking; image terms require local check",
+        "source_status": "commons_pd_art",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": []
+    },
+    {
+      "module_id": "heart-mary",
+      "module": "Immaculate Heart",
+      "artwork_id": "B02-HEART-MARY-MORLETE",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "title": "The Heart of Mary",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+        "width_px": 2277,
+        "height_px": 2960,
+        "rights_review": "Commons PD-Art marking; image terms require local check",
+        "source_status": "commons_pd_art",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Commons artwork date field says 1000, an obvious metadata anomaly; ignore and seek authoritative dating."
+      ]
+    },
+    {
+      "module_id": "michael",
+      "module": "Saint Michael",
+      "artwork_id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "artist": "Guido Reni",
+      "title": "Archangel Michael Defeating Satan",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+        "width_px": 1657,
+        "height_px": 2441,
+        "rights_review": "Commons PD-Art marking; image terms require local check",
+        "source_status": "commons_pd_art",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Adequate provisional dimensions; compare with higher-resolution museum reproduction."
+      ]
+    },
+    {
+      "module_id": "angel",
+      "module": "Guardian Angel",
+      "artwork_id": "ART-ietro-da-ortona-he-uardian-ngel",
+      "artist": "Pietro da Cortona",
+      "title": "The Guardian Angel",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg",
+        "width_px": 694,
+        "height_px": 1100,
+        "rights_review": "Commons PD-Art marking",
+        "source_status": "resolution_shortfall",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Low-resolution source unsuitable as archival master; do not upscale via AI."
+      ]
+    },
+    {
+      "module_id": "regina",
+      "module": "Regina Cæli",
+      "artwork_id": "ART-eter-aul-ubens-esurrection-of-hrist",
+      "artist": "Peter Paul Rubens",
+      "title": "Resurrection of Christ",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+        "width_px": 2144,
+        "height_px": 3000,
+        "rights_review": "Commons PD-Art marking; verify image is intended face of central panel",
+        "source_status": "commons_pd_art",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Do not confuse central panel, triptych assembly and reverse; inspect visually."
+      ]
+    },
+    {
+      "module_id": "adoration",
+      "module": "Adoration & Benediction",
+      "artwork_id": "met-438434",
+      "artist": "Jean Auguste Dominique Ingres",
+      "title": "The Virgin Adoring the Host",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg",
+        "width_px": 4964,
+        "height_px": 6060,
+        "rights_review": "The Met official public domain; Commons PD-Art",
+        "source_status": "museum_public_domain",
+        "evidence_pages": [
+          "https://www.metmuseum.org/art/collection/search/438434",
+          "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "The Met item 2005.186 confirms open access."
+      ]
+    },
+    {
+      "module_id": "scripture",
+      "module": "Sacred Scripture",
+      "artwork_id": "W07-007",
+      "artist": "Caravaggio",
+      "title": "Saint Jerome Writing (Borghese original)",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
+        "width_px": 8708,
+        "height_px": 6212,
+        "rights_review": "Commons PD-Art marking",
+        "source_status": "commons_pd_art",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(1605-6).jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Keep Borghese original distinct from the separate Saint Jerome variants by Caravaggio."
+      ]
+    },
+    {
+      "module_id": "king",
+      "module": "Christ the King",
+      "artwork_id": "LOCAL-BENSON-SALVATOR",
+      "artist": "Ambrosius Benson",
+      "title": "Salvator Mundi",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://www.christies.com/en/lot/lot-6223948",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+        "width_px": 2987,
+        "height_px": 3200,
+        "rights_review": "Commons PD-Art marking; auction reproduction and geographic reuse rights review",
+        "source_status": "source_link_wrong_fixed_candidate",
+        "evidence_pages": [
+          "https://www.christies.com/en/lot/lot-6223948",
+          "https://www.christies.com/en/lot/lot-6238407",
+          "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Editorial source https://www.christies.com/en/lot/lot-6223948 is WRONG: ceiling decoration by Italian School. Correct Benson lot https://www.christies.com/en/lot/lot-6238407; Commons photo references correct lot.",
+        "Auction analysis notes figure's identity may be deliberately ambiguous between Father and Son; iconographic display review required without changing selection."
+      ]
+    },
+    {
+      "module_id": "souls",
+      "module": "Holy Souls",
+      "artwork_id": "souls::1",
+      "artist": "Luca Giordano",
+      "title": "Madonna and Child with Souls in Purgatory",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://emuseum.mfah.org/objects/64360/madonna-and-child-with-souls-in-purgatory",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg",
+        "width_px": 2393,
+        "height_px": 3200,
+        "rights_review": "Commons PD-Art marking; verify rights in app jurisdictions",
+        "source_status": "commons_pd_art",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Inventory BF.2004.1 matches MFAH approved artwork."
+      ]
+    },
+    {
+      "module_id": "salvation",
+      "module": "Historia Salutis",
+      "artwork_id": "salvation::1",
+      "artist": "Jean-Léon Gérôme",
+      "title": "The Age of Augustus: The Birth of Christ",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://www.museedepicardie.fr/",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Le_Siècle_d'Auguste_-_naissance_de_N.S._Jésus-Christ_par_Gérôme.jpg",
+        "width_px": 1600,
+        "height_px": 990,
+        "rights_review": "Commons PD-Art candidate pending file-by-file confirmation",
+        "source_status": "resolution_shortfall",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/File:Le_Siècle_d'Auguste_-_naissance_de_N.S._Jésus-Christ_par_Gérôme.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Exact huge Musée de Picardie painting located; reproduction too small for a confident master of densely detailed composition."
+      ]
+    },
+    {
+      "module_id": "morning",
+      "module": "Morning Prayer",
+      "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+      "artist": "Jules Breton",
+      "title": "The Song of the Lark",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+      "verified_source_object": false,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png",
+        "width_px": 1019,
+        "height_px": 1534,
+        "rights_review": "Commons file terms to verify; AIC official artwork is public domain",
+        "source_status": "master_rights_pending",
+        "evidence_pages": [
+          "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+          "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Seek original Art Institute of Chicago IIIF master, artwork 94841, instead of this modest Commons PNG."
+      ]
+    },
+    {
+      "module_id": "evening",
+      "module": "Evening Prayer",
+      "artwork_id": "artuk:op6-prayer-frere",
+      "artist": "Pierre-Édouard Frère",
+      "title": "The Prayer",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://artuk.org/discover/artworks/the-prayer-19241",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Pierre_Edouard_Frère_(1819-1886)_-_The_Prayer_-_OP6_-_Wolverhampton_Art_Gallery.jpg",
+        "width_px": 898,
+        "height_px": 1200,
+        "rights_review": "Art UK display is restricted to private/research without separate licence; Commons file PD-Art review required",
+        "source_status": "rights_conflict_manual",
+        "evidence_pages": [
+          "https://artuk.org/discover/artworks/the-prayer-19241",
+          "https://commons.wikimedia.org/wiki/File:Pierre_Edouard_Frère_(1819-1886)_-_The_Prayer_-_OP6_-_Wolverhampton_Art_Gallery.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Exact inventory OP6, 1857 confirmed by Art UK. Existing Art UK image is NOT publication-cleared by Art UK terms. Commons alternate is low resolution."
+      ]
+    },
+    {
+      "module_id": "perpetual",
+      "module": "Our Lady of Perpetual Help",
+      "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+      "artist": "Traditional iconography of Our Lady of Perpetual Help; photograph of Redemptorist Baclaran poster",
+      "title": "Our Holy Mother of Perpetual Succour — clean full-length devotional reproduction",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+        "width_px": 3000,
+        "height_px": 3688,
+        "rights_review": "Commons marks as PD-Art; photographed/scanned contemporary devotional poster requires independent rights/fidelity review",
+        "source_status": "poster_reproduction_review",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Retain explicit user approval of poster, distinguish from original Roman icon."
+      ]
+    },
+    {
+      "module_id": "saints",
+      "module": "Saints",
+      "artwork_id": "khm:GG-838",
+      "artist": "Albrecht Dürer",
+      "title": "Adoration of the Trinity (Landauer Altarpiece)",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://artsandculture.google.com/asset/adoration-of-the-trinity-landauer-altar-albrecht-d%C3%BCrer/_wGp9zTkz0OVqQ?hl=en",
+      "verified_source_object": false,
+      "master_candidate": {
+        "source_page": null,
+        "width_px": null,
+        "height_px": null,
+        "rights_review": "Unverified",
+        "source_status": "master_rights_pending",
+        "evidence_pages": [
+          "https://artsandculture.google.com/asset/adoration-of-the-trinity-landauer-altar-albrecht-d%C3%BCrer/_wGp9zTkz0OVqQ?hl=en"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "KHM GG 838; find exact faithful museum/Commons master; Google Arts & Culture web preview is not an image master."
+      ]
+    },
+    {
+      "module_id": "visit",
+      "module": "Visit to the Blessed Sacrament",
+      "artwork_id": "wallraf:honthorst-adoration-shepherds-1622",
+      "artist": "Gerrit van Honthorst",
+      "title": "The Adoration of the Shepherds",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://www.wallraf.museum/2017-11-17-honthorst/",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_shepherds,_by_Gerard_van_Honthorst.jpg",
+        "width_px": 3948,
+        "height_px": 3328,
+        "rights_review": "Commons PD-Art; original EXIF explicitly lists Public Domain Mark",
+        "source_status": "commons_pd_art",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/File:Adoration_of_the_shepherds,_by_Gerard_van_Honthorst.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Exact Wallraf WRM 2122, 1622 confirmed. Avoid similarly titled Honthorst works in Greifswald, Nantes, and elsewhere."
+      ]
+    },
+    {
+      "module_id": "mass",
+      "module": "Mass Explorer",
+      "artwork_id": "museu-nacional-belas-artes:meirelles-first-mass-brazil-1860",
+      "artist": "Victor Meirelles",
+      "title": "The First Mass in Brazil",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://artsandculture.google.com/asset/first-mass-in-brazil-0027/IQFUWbm_Wu1XaA",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Meirelles-primeiramissa2.jpg",
+        "width_px": 4424,
+        "height_px": 3399,
+        "rights_review": "Commons PD-Art marking; verify photographic quality",
+        "source_status": "commons_pd_art",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/File:Meirelles-primeiramissa2.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Wide group composition must not be blindly cropped to central figure; full image may require alternate adaptive layout."
+      ]
+    },
+    {
+      "module_id": "confession",
+      "module": "Confession",
+      "artwork_id": "nga:34956",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "The Return of the Prodigal Son",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+        "width_px": null,
+        "height_px": null,
+        "rights_review": "NGA explicit public domain open access",
+        "source_status": "museum_public_domain",
+        "evidence_pages": [
+          "https://www.nga.gov/artworks/34956-return-prodigal-son"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "NGA accession 1948.12.1; actual downloadable file and pixel dimensions not yet checked."
+      ]
+    },
+    {
+      "module_id": "rosary",
+      "module": "The Holy Rosary",
+      "artwork_id": "fondazione-zeri:47818",
+      "artist": "Lorenzo Lotto",
+      "title": "Madonna del Rosario",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/47818/Lotto%20Lorenzo%2C%20Madonna%20del%20Rosario",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+        "width_px": 1772,
+        "height_px": 2652,
+        "rights_review": "Sailko photograph CC BY 3.0 Unported—requires attribution and licence link, disclose crop/transform",
+        "source_status": "attribution_required",
+        "evidence_pages": [
+          "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Exact Cingoli altarpiece. Keep full painting and fifteen surrounding mysteries visible; image cropping must be deliberate."
+      ]
+    },
+    {
+      "module_id": "sorrows",
+      "module": "Seven Sorrows",
+      "artwork_id": "mnac:008327-000",
+      "artist": "Attributed to the Master of the Female Half-Lengths",
+      "title": "Virgin of the Seven Sorrows (Mare de Déu dels Set Dolors)",
+      "editorial_approved": true,
+      "original_editorial_source_url": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000",
+      "verified_source_object": true,
+      "master_candidate": {
+        "source_page": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000",
+        "width_px": null,
+        "height_px": null,
+        "rights_review": "MNAC lists artwork as Domini públic; direct downloadable image terms/master bytes not yet checked",
+        "source_status": "museum_public_domain_object",
+        "evidence_pages": [
+          "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000"
+        ]
+      },
+      "physical_master_acquired": false,
+      "sha256": null,
+      "local_master_path": null,
+      "app_ready_crop_verified": false,
+      "crop_spec": null,
+      "app_released": false,
+      "production_release": "BLOCKED",
+      "outstanding": [
+        "Fetch and checksum actual bytes",
+        "Verify reproduction and applicable jurisdiction rights/attribution",
+        "Identity and visual QA of master",
+        "Approve responsive crop with full-uncropped option",
+        "Integrate into app with release tests"
+      ],
+      "notes": [
+        "Inventory 008327-000 confirmed, currently not displayed; request/retrieve exact file and check photographic credit."
+      ]
+    }
+  ]
+}
