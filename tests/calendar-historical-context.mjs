@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { renderCalendarHistoricalContext } from "../src/calendar/historical-context-ui.js";
+import { readFileSync } from "node:fs";
 import { calendarHistoricalNotes, CALENDAR_HISTORICAL_CONTEXT_VERSION, CALENDAR_HISTORICAL_SOURCE_ARTICLE_IDS } from "../src/calendar/historical-context.js";
 import { calendarIntelligenceForDate } from "../src/calendar/intelligence.js";
 import { calendarPracticeEvents } from "../src/calendar/intelligence.js";
@@ -58,5 +60,19 @@ assert.equal(calendarPracticeEvents("2026-05-23").some(e=>e.key==="pentecost-vig
 const celebrations=buildMajorCelebrations("2026-12-08");
 assert.equal(celebrations.some(e=>e.key==="history.immaculate-conception-older-vigil-octave"),false);
 assert.equal(celebrations.some(e=>e.key==="history.pentecost-vigil-pre1955"),false);
+
+const visible=renderCalendarHistoricalContext("2026-05-27",{fr:true});
+assert.match(visible,/data-cal-historical-id="history.pentecost-ember-wednesday"/);
+assert.match(visible,/Sainte-Marie-Majeure/);
+assert.match(visible,/HISTOIRE LITURGIQUE/);
+assert.match(visible,/rel="noopener noreferrer"/);
+assert.equal(renderCalendarHistoricalContext("2026-05-25"),"");
+assert.equal((visible.match(/<details /g)||[]).length,1);
+assert.equal((visible.match(/<a href=/g)||[]).length,2);
+const runtimeSource=readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
+assert.match(runtimeSource,/renderCalendarHistoricalContext\(selected,\{fr:fr\(\)\}\)/);
+assert.match(runtimeSource,/\.aoCalHistoricalCard summary/);
+assert.ok(runtimeSource.indexOf("${renderCalendarHistoricalContext(selected,{fr:fr()})}")<
+          runtimeSource.indexOf("${practiceContext(selected,r)}"));
 
 console.log("Calendar historical context: 3 sourced notes, dynamic dates, bilingual output and non-normative boundaries OK.");
