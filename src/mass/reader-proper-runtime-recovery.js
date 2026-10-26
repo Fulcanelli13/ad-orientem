@@ -114,13 +114,28 @@ function applyMarianPrefaceForm(text,language,form){
   }
   return text;
 }
-function authenticatedPrefaceOwner(value){
-  const id=String(value??"");
+// The 1960 Missal §§482, 486(a) require the Lenten Preface for a
+// *principal Mass of the Lenten temporal cycle*. An inherited Common
+// heading in these specifically matched host source files is a known
+// normalizer defect, not a liturgical option.
+// https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html
+export function authenticated1962PrefaceRecoveryOwner(principalCelebrationId,sourcePath){
+  const id=String(principalCelebrationId??"");
+  const path=String(sourcePath??"").trim();
   const parts=id.split(":");
-  return VERIFIED_PREFACE_OWNERS[parts.slice(0,2).join(":")]??null;
+  const exact=VERIFIED_PREFACE_OWNERS[parts.slice(0,2).join(":")]??null;
+  if(exact)return exact;
+  // Exclude selected votives, proper feast formularies, unrelated path
+  // aliases and Office variants. Source ID *and* canonical source path must
+  // agree before we are allowed to replace a populated Common Preface.
+  const lent=/^tempora:(Quad[1-4]-[0-6]):([1-3]):v$/i.exec(id);
+  if(lent&&path.toLowerCase()==="tempora/"+lent[1].toLowerCase())
+    return Object.freeze({section:"Quad",scope:"LENT_TEMPORAL_1962",
+      rubric:"RGMR_486_A",sourcePath:path});
+  return null;
 }
 async function recoverContradictoryPreface(data,hostResolver,principalCelebrationId,diagnostic){
-  const owner=authenticatedPrefaceOwner(principalCelebrationId);
+  const owner=authenticated1962PrefaceRecoveryOwner(principalCelebrationId,data?.sourcePath);
   if(!owner)return null;
   const heading=String(data.preface?.lat??data.preface?.la??"").trim();
   const currentlyCommon=/^Communis(?:\s|$)/i.test(heading);
@@ -133,10 +148,15 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
     let text=cleanLines(section,language);
     text=applyMarianPrefaceForm(text,language,owner.form);
     if(!sourceTextComplete(text)||/\*Festivitáte\*|\*Feast\*/.test(text))return null;
+    // Verify the returned Latin section is the Lenten Preface itself.
+    if(language==="la"&&owner.section==="Quad"&&!/^de Quadragesima(?:\s|$)/i.test(text))
+      return null;
     result[language==="la"?"lat":language]=text;
   }
   if(!hasThreeLanguages(result))return null;
-  return Object.freeze({...result,sourcePath:"Ordo/Prefationes",prefaceSection:owner.section});
+  return Object.freeze({...result,sourcePath:"Ordo/Prefationes",prefaceSection:owner.section,
+    recoveryScope:owner.scope??"CERTIFIED_EXACT_FEAST",rubric:owner.rubric??null,
+    originalProperSourcePath:String(data.sourcePath??"")});
 }
 
 function sourceOrationOwners(data,path){
