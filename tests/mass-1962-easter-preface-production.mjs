@@ -160,6 +160,29 @@ try{
  // Render the repaired SOURCE PROPER through the same native presentation
  // used by the production Mass. This is not a unit projection or fabricated
  // 48-card surrogate: the real R17 UI must visibly show the selected text.
+ // The 12 April (Dominica in albis) source is independently incomplete:
+ // the production Secret has a self-referential source row. Explicitly
+ // retain the native reader's rejection rather than patching it with
+ // another day's Secret merely to pass a Preface presentation smoke test.
+ const missingSecret=await page.evaluate(async()=>{
+   const resolver=globalThis.AO_RUNTIME_V8.resolver;
+   const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
+   const {prepareMassSessionFromV346}=await import("/src/mass/host-adapter.js");
+   const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+   const d=await resolver.resolveDay("2026-04-12");
+   const id=d.day.main.id;
+   const p=await recoverReaderProperOmissions(d.proper.data,{
+     hostResolver:resolver.properResolver,principalCelebrationId:id
+   });
+   const status=properToReaderSlots({...p,principalCelebrationId:id},{language:"fr"});
+   return {id,source:p.sourcePath,preface:status.slots.PREFACE.status,
+     secret:status.slots.SECRET_SET.status,
+     secretReason:status.slots.SECRET_SET.reason??null};
+ });
+ console.log("MASS_1962_IN_ALBIS_SECRET_UNRESOLVED="+JSON.stringify(missingSecret));
+ assert.equal(missingSecret.id,"tempora:Pasc1-0:1:w");
+ assert.equal(missingSecret.preface,"READY","12 April source Preface must be corrected separately");
+ assert.equal(missingSecret.secret,"MISSING","12 April missing Secret must not be bypassed");
  const rendered=await page.evaluate(async()=>{
    const dayResolver=globalThis.AO_RUNTIME_V8.resolver;
    const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
@@ -168,7 +191,7 @@ try{
    const results=[];
    for(const [date,variant,mode] of [
      ["2026-04-05","OCTAVE_DAY","MISSAL"],
-     ["2026-04-12","EASTERTIDE","LIVE"],
+     ["2026-05-10","EASTERTIDE","LIVE"],
      ["2026-05-10","EASTERTIDE","SIMPLE"]
    ]){
      let mounted=null;
