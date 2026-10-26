@@ -153,6 +153,8 @@ on:
       - 'data/source-text/icrsp-france-b38-nine-office-out-of-scope-reads.v1.json'
       - 'data/source-text/icrsp-france-b38-783-unique-source-article-passages.v1.json'
       - 'tests/test_icrsp_b38_all783_passage_coverage.py'
+      - 'data/source-text/icrsp-france-b39-eighteen-existing-owner-scoped-parity.v1.json'
+      - 'tests/test_icrsp_b39_eighteen_existing_owner_parity.py'
       - 'data/source-text/icrsp-france-b38-783-all-selected-source-passages-ledger.v1.json'
       - 'tests/test_icrsp_b38_all_783_article_passages_and_release_gates.py'
   workflow_dispatch:
@@ -221,6 +223,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b36_661_unique_last122.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b36_parallel50_inside70.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b38_all783_passage_coverage.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b39_eighteen_existing_owner_parity.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b38_all_783_article_passages_and_release_gates.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b34_505_direct_and_source_error.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b34_541_union_and_242_priority.py' -v
