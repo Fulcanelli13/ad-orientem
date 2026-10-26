@@ -35,3 +35,45 @@ test('crosswalk references existing source-owned music events, not new ones', ()
     for (const id of mapping.currentMusicEventIds) assert.ok(events.has(id), 'Unknown native event: ' + id);
   }
 });
+
+
+test('1888 original remains unavailable for actual page comparison', () => {
+  const first = crosswalk.sourceAccessAudit.firstEdition1888;
+  assert.equal(first.verifiedFullPageCount, 0);
+  assert.equal(first.collationState, 'NOT_STARTED_BLOCKED_ORIGINAL_SCAN');
+  assert.equal(crosswalk.sourceAccessAudit.secondEdition1893.state, 'SELECTED_OCR_PAGES_READ_NOT_IMAGE_COLLATED');
+  assert.equal(crosswalk.roman1962Contrasts.length, 4);
+});
+
+test('1893 printed index is research only and not mistaken for 1888 contents', () => {
+  const index = readJSON('data/research/processionale-solesmes-index-1893-20261026.v1.json');
+  assert.equal(index.edition, '1893_SECOND_EDITION_ONLY');
+  assert.equal(index.original1888Compared, false);
+  assert.equal(index.publicationEligibleCount, 0);
+  assert.equal(index.runtimePromotionAllowed, false);
+  assert.ok(index.items.length >= 40);
+  assert.equal(new Set(index.items.map(item => item.id)).size, index.items.length);
+  assert.ok(index.items.every(item => item.review === 'INDEX_SCREEN_ONLY'));
+  assert.ok(index.items.every(item => item.readablePageImageVerified === false));
+  assert.ok(index.items.every(item => item.sourceTextExtracted === false));
+});
+
+test('1962 Candlemas exclusion and Palm psalm text gap are properly recorded', () => {
+  const candlemas = readJSON('data/presentation/reader-candlemas.v1.json');
+  const palm = readJSON('data/presentation/reader-palm.v1.json');
+  const contrasts = new Map(crosswalk.roman1962Contrasts.map(x => [x.id, x]));
+  assert.equal(contrasts.get('PM-R1962-CND-EXSURGE')?.outcome, 'CONFIRMED_EXCLUSION_PRESERVE_CURRENT');
+  assert.equal(contrasts.get('PM-R1962-PALM-PSALMS')?.outcome, 'CONFIRMED_READER_TEXT_COVERAGE_GAP_REVIEW');
+  // The 1962 Candlemas payload does NOT have the older Exsurge.
+  assert.ok(!JSON.stringify(candlemas.distribution).toLowerCase().includes('exsurge'));
+  assert.ok(!JSON.stringify(candlemas.procession).toLowerCase().includes('exsurge'));
+  // The two antiphons are present, but the 1962 distribution Psalm verses are absent.
+  assert.equal(typeof palm.texts.puerI, 'string');
+  assert.equal(typeof palm.texts.puerII, 'string');
+  assert.equal(Object.keys(palm.texts).filter(k => /psalm|ps23|ps46|verses/i.test(k)).length, 0);
+  const palmReader = readFileSync(new URL('../src/mass/reader-palm.js', import.meta.url),'utf8');
+  const distribution = palmReader.split('id:"PALM-R02"')[1]?.split('id:"PALM-R03"')[0] || '';
+  assert.ok(distribution.includes('t.puerI'));
+  assert.ok(distribution.includes('t.puerII'));
+  assert.ok(!distribution.includes('psalm'));
+});
