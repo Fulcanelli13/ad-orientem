@@ -1,0 +1,48 @@
+name: Champaigne D real Home Calendar simulated QA
+on:
+  push:
+    branches: [fix/approved-feast-heroes-main-20261021]
+    paths: [.github/workflows/champaigne-real-home-calendar-preview-qa.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: champaigne-real-app-preview-20261026
+  cancel-in-progress: false
+jobs:
+  frame-free-in-actual-app-components:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install standard free browser testing dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Stage only the SHA-verified D photograph from isolated research branch
+        run: |
+          mkdir -p assets/sacred-art/qa-research
+          git fetch origin research/champaigne-inv1125-photo-review-20261026
+          git show origin/research/champaigne-inv1125-photo-review-20261026:assets/staged/champaigne-petite-cene-research/D-bottom-frame-trim-review-ungraded-source-derived.jpg > assets/sacred-art/qa-research/champaigne-d-photo-test-only.jpg
+      - name: Exercise actual Home and Calendar components for two dates at 320 and 390 px
+        env:
+          AO_CHAMPAIGNE_REAL_SURFACE_QA: '1'
+        run: node tests/approved-feast-hero-real-surfaces-preview.mjs
+      - name: Archive QA screenshots & runtime measurements on isolated research branch
+        run: |
+          cp -a artifacts/sacred-art-approved-hero-real-surface-preview /tmp/champaigne-real-surface-evidence
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C research/champaigne-inv1125-photo-review-20261026 origin/research/champaigne-inv1125-photo-review-20261026
+          mkdir -p assets/staged/champaigne-petite-cene-research/real-home-calendar-qa-20261026
+          cp -a /tmp/champaigne-real-surface-evidence/. assets/staged/champaigne-petite-cene-research/real-home-calendar-qa-20261026/
+          git add -f assets/staged/champaigne-petite-cene-research/real-home-calendar-qa-20261026
+          if ! git diff --cached --quiet; then
+            git commit -m "research(art): preserve test-only real Home and Calendar D-photo screenshots; zero releases"
+            git push origin research/champaigne-inv1125-photo-review-20261026
+          fi
+      - name: Keep real publication blocked
+        run: echo "The simulated grant is strictly inside browser memory. No production photo, approval or asset was changed."
