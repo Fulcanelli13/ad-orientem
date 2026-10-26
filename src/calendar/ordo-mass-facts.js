@@ -22,7 +22,7 @@ export function latinIntroitIncipit(introit){
   const first=latin.split(/\r?\n/).map(x=>x.trim()).find(Boolean);
   if(!first||/[\$@]/.test(first.slice(0,2)))return null;
   const cleaned=first.replace(/^(?:introitus|introit|intro[iï]t)\s*[:.·]?\s*/iu,"")
-    .replace(/^(?:[℣℟]\.|[VR]\\.)\s*/iu,"").trim();
+    .replace(/^(?:[℣℟]\.|[VR]\.)\s*/iu,"").trim();
   if(!cleaned||cleaned.length>600||!/\p{L}/u.test(cleaned))return null;
   const words=cleaned.split(/\s+/u).slice(0,5).join(" ");
   return words.length>75?words.slice(0,75).trimEnd():words;
