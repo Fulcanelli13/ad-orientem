@@ -17,7 +17,7 @@ Source research owner remains the [multi-book 150 action intake](../data/customs
 
 ### Priority corrections and safety boundaries
 
-**Irish Christmas candle.** The originally registered Dúchas page challenged automated access. A distinct accessible UCD Schools Collection account [from Graine school, County Kilkenny (informant's residence not established)](https://www.duchas.ie/en/cbes/4758582/4756445/4934128) independently recounts a lit candle in the window for Mary and Joseph on Christmas night. Add this witness to source provenance; do not turn folkloric spirit or guaranteed blessing beliefs into doctrine. Recheck original record before final signing.
+**Irish Christmas candle.** The originally registered Dúchas page challenged automated access. A distinct accessible UCD Schools Collection account [collected at Graine school, County Kilkenny, with informant M. Delahunty's address recorded as Graigaheesha, County Tipperary](https://www.duchas.ie/en/cbes/4758582/4756445/4934128) independently recounts a lit candle in the window for Mary and Joseph on Christmas night. Add this witness to source provenance; do not turn folkloric spirit or guaranteed blessing beliefs into doctrine. Recheck original record before final signing.
 
 **St John bonfire.** The [Bayonne diocesan announcement](https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/) is specifically **20 June 2026**, although the Nativity of the Baptist is 24 June. A Calendar suggestion may describe the cultural association but must not imply a perennial parish service on the feast itself.
 
@@ -36,7 +36,7 @@ Source research owner remains the [multi-book 150 action intake](../data/customs
 | # | Proposed identity | Direct witness / scope |
 |---:|---|---|
 | 1 | St Patrick's ribbon cross | [Witness](https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/St-Patrick): Museum confirms Dinely observed wearing St Patrick crosses in 1681 and later children wore paper/ribbon badge crosses. |
-| 2 | The Irish Christmas candle | [Witness](https://www.duchas.ie/en/cbes/4758582/4756445/4934128): UCD National Folklore Schools Collection transcribes a Tipperary informant describing the Christmas night household window candle to welcome the Holy Family. |
+| 2 | The Irish Christmas candle | [Witness](https://www.duchas.ie/en/cbes/4758582/4756445/4934128): UCD National Folklore Schools Collection names Graine school in County Kilkenny and informant M. Delahunty, who gave an address at Graigaheesha, County Tipperary; the account describes a Christmas-night window candle welcoming the Holy Family. |
 | 3 | St John Baptist's community bonfire | [Witness](https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/): Diocese announced the Trinity parish Saint John bonfire near Oloron for 20 June 2026 with Mass, shared meal, prayers, games, songs and a lit fire. |
 | 4 | Decorating Easter eggs: pisanki and pysanky | [Witness](https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134): UNESCO confirms wax-and-dye Ukrainian pysanka decoration and its Easter use, transmitted through families regardless of religion. |
 | 5 | Herbergsuche — Advent Marian-image visits between households | [Witness](https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html): Catholic parish (9 December 2023) directly says Marian picture or statue visits a new home every evening in Advent, with a short devotion at handover and departure. |
