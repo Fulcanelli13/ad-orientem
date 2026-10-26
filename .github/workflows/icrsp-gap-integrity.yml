@@ -111,6 +111,8 @@ on:
       - 'data/source-text/icrsp-france-b32-five-selected-b29-direct-source-topics.v1.json'
       - 'data/source-text/icrsp-france-b32-449-unique-direct-topic-ledger.v1.json'
       - 'tests/test_icrsp_b32_five_real_source_topics.py'
+      - 'data/source-text/icrsp-france-b33-b32-last210-salesian-panel-drift.v1.json'
+      - 'tests/test_icrsp_b33_last210_salesian_drift.py'
       - 'data/source-text/icrsp-france-b32-editorial20-fresh200.v1.json'
       - 'data/source-text/icrsp-france-b32-464-unique-topical-ledger.v1.json'
       - 'tests/test_icrsp_b32_editorial20_fresh200.py'
@@ -174,5 +176,6 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b31_444_unique_and_original_250_closed.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b31_eight_commons_existing_owner_gate.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b32_five_real_source_topics.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b33_last210_salesian_drift.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b32_editorial20_fresh200.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b33_486_source_review.py' -v
