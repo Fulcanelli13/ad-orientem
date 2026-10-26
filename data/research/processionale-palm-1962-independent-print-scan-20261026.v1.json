@@ -1,0 +1,126 @@
+{
+  "schema": "ao-palm-1962-independent-printed-missal-images-v1",
+  "batch": 19,
+  "date": "2026-10-26",
+  "status": "SECOND_INDEPENDENT_1962_PRINTED_MISSAL_IMAGE_CORROBORATION_PRIMARY_VATICAN_IMPRINT_NOT_PROVEN",
+  "stage": "PALM-R02",
+  "source": {
+    "description": "Scanned colour pages of a physical Missale Romanum described by its archive host as a 1962 missal",
+    "imprintStatus": "SCAN_HOST_LABEL_1962_EXACT_EDITION_AND_PUBLISHER_NOT_AUTHENTICATED",
+    "pages": [
+      {
+        "printedPage": 134,
+        "scanNo": 211,
+        "url": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0211.jpg",
+        "psalm23Lines": [
+          1,
+          2,
+          7,
+          8,
+          9,
+          10
+        ],
+        "psalm46Lines": [
+          1,
+          2
+        ]
+      },
+      {
+        "printedPage": 135,
+        "scanNo": 212,
+        "url": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0212.jpg",
+        "psalm46Lines": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "rubric": "Quae si non sufficiant, repetantur quousque distributio finiatur; si autem finiantur prius, claudatur cum Gloria Patri et repetitur antiphona."
+      }
+    ],
+    "repositoryPath": "research/processionale-solesmes-20261026",
+    "scanNotOCR": true,
+    "hostingDisclaimer": "Host's unrelated editorial and religious claims are not evidence for liturgical authority; use only direct photographic page images."
+  },
+  "sourceConclusions": [
+    {
+      "psalm": 23,
+      "liturgicalLines": [
+        7,
+        9
+      ],
+      "reading": "et attollite vos, fores antiquae",
+      "status": "DIRECT_PRINTED_1962_SCAN_SUPPORTS_FORES_NOT_PORTAE",
+      "otherIndependentPrint": "Graduale Romanum 1961 p143**",
+      "rejectedOCR": "et attollite vos, portae antique",
+      "disposition": "DIGITIZED_OCR_READING_UNSUPPORTED_BY_INSPECTED_PRINT_WITNESSES"
+    },
+    {
+      "psalm": 46,
+      "liturgicalLine": 3,
+      "reading": "Subjicit populos nobis",
+      "modernizedOrthography": "Subicit populos nobis",
+      "status": "BATCH16_WORD_ORDER_CORRECT_PRINT_CORROBORATED"
+    },
+    {
+      "psalm": 46,
+      "liturgicalLine": 4,
+      "reading": "Eligit nobis hereditatem nostram",
+      "status": "BATCH16_ELIGIT_CORRECT_PRINT_CORROBORATED"
+    }
+  ],
+  "coverage": {
+    "ps23WholeVersesVisible": [
+      1,
+      2,
+      7,
+      8,
+      9,
+      10
+    ],
+    "ps46WholeChantLinesVisible": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "ps46BiblicalVerses": 9,
+    "totalWholeVerseTextLinesVisuallyCompared": 16,
+    "musicalMediantStarsCompared": 16,
+    "ps23ExtraFlexDaggersInMissalScan": 0,
+    "ps23ExtraFlexDaggersIn1961Graduale": 3
+  },
+  "timing": {
+    "anthemRepeatsRequired": true,
+    "repeatUntilPhysicalDistributionEnds": true,
+    "whenVersesFinishEarlyConcludeWithGloriaAndAntiphon": true,
+    "noFixedDuration": true,
+    "printedPage": 135
+  },
+  "editionWarning": "Do not conflate these photographed 1962-labelled pages 134–135 with previously cited Vatican edition pages 131–132. A distinct pagination and publisher imprint require separate authentication; direct printed Latin is independently corroborated, but formal canonical owner signoff remains #894.",
+  "owner": {
+    "canonicalRoman": "#894",
+    "schola": "#1749",
+    "research": "#1752"
+  },
+  "promotion": {
+    "printedTextCorroboratedAsSecondaryIndependent1962Scan": true,
+    "officialVaticanTypicaEditionIdentitySignedOff": false,
+    "canonicalLatinOwnerSignedOff": false,
+    "completeGregorianPointingSignedOff": false,
+    "individualNoteUnderlaySignedOff": false,
+    "approvedRuntimeScores": 0,
+    "publicationAllowed": false
+  }
+}
