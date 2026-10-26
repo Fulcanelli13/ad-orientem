@@ -1,0 +1,93 @@
+name: Directory CL13 432-row Missal evidence disposition
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'data/directory/research/cl8-completeness-audit-20261026/**'
+      - 'data/directory/research/cl9-missal-source-review-20261026/**'
+      - 'data/directory/research/cl10-1962-slot-adjudication-20261026/**'
+      - 'data/directory/research/cl11-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl12-singleton-source-screen-20261026/**'
+      - 'data/directory/research/cl13-final-1962-reconciliation-20261026/**'
+      - 'tools/directory/reconcile-cl13-remaining-1962.py'
+      - '.github/workflows/directory-cl13-final-1962-reconciliation.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'data/directory/research/cl8-completeness-audit-20261026/**'
+      - 'data/directory/research/cl9-missal-source-review-20261026/**'
+      - 'data/directory/research/cl10-1962-slot-adjudication-20261026/**'
+      - 'data/directory/research/cl11-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl12-singleton-source-screen-20261026/**'
+      - 'data/directory/research/cl13-final-1962-reconciliation-20261026/**'
+      - 'tools/directory/reconcile-cl13-remaining-1962.py'
+      - '.github/workflows/directory-cl13-final-1962-reconciliation.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frozen original chain and overlay exceptions
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+      - name: Rebuild CL2–CL13 source and evidence tables
+        run: |
+          python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ao-cl13.sqlite
+          python3 tools/directory/audit-cl-completeness.py --db /tmp/ao-cl13.sqlite --output-dir /tmp/ao-cl8
+          python3 tools/directory/audit-cl9-owner-evidence.py --db /tmp/ao-cl13.sqlite --cl8-csv /tmp/ao-cl8/missal_1962_reconciliation.csv --out-dir /tmp/ao-cl9
+          python3 tools/directory/adjudicate-cl10-missal-evidence.py --db /tmp/ao-cl13.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl10
+          python3 tools/directory/reconcile-cl11-owner-sources.py --db /tmp/ao-cl13.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl11
+          python3 tools/directory/reconcile-cl12-singletons.py --db /tmp/ao-cl13.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl12
+          python3 tools/directory/reconcile-cl13-remaining-1962.py --db /tmp/ao-cl13.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl13
+      - name: Enforce exact population and no-release contract
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl13/cl13_summary.json').read_text())
+          assert x['cumulative_slot_rows_adjudicated']==432
+          assert x['cumulative_1962_book_evidence_accepted']==162
+          assert x['cumulative_book_evidence_held']==270
+          assert x['cl13_institutional_only_1962_policy_witness_rows']==73
+          assert x['new_research_accepted_1962_book_claim_rows']==29
+          assert x['new_held_exact_1962_book_claim_rows']==125
+          assert x['una_cum_new']==x['public_venue_releases']==x['current_schedule_releases']==0
+          db=sqlite3.connect('/tmp/ao-cl13.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM classification_source WHERE owner_verified_missal_1962=1').fetchone()[0]==3
+          # No overlap and no missing CL9 original row; 85+118+75+154=432
+          actual=db.execute('''
+          SELECT COUNT(DISTINCT row_no), COUNT(*) FROM (
+           SELECT row_no FROM cl10_1962_mass_evidence
+           UNION ALL SELECT row_no FROM cl11_mass_source_scope
+           UNION ALL SELECT row_no FROM cl12_singleton_evidence
+           UNION ALL SELECT row_no FROM cl13_remaining_1962_evidence
+          )''').fetchone()
+          assert actual==(432,432),actual
+          assert db.execute('SELECT COUNT(*) FROM canonical_site WHERE release!="RESEARCH_ONLY_NOT_PUBLIC"').fetchone()[0]==0
+          print('CL13: all 432 candidate rows have a non-public evidence disposition')
+          PY
+      - name: Export regenerable research result
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-cl13-full-432-row-1962-evidence-disposition
+          path: /tmp/ao-cl13/
+          retention-days: 1
