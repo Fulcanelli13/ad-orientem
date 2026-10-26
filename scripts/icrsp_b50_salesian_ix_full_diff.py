@@ -17,7 +17,7 @@ HOST_ROOT="https://icrspfrance.fr/textes-liturgiques.php?article="
 WORKS={
  "IX.IV":("a0180_ancien","L'Eglise au premier Dimanche de Caresme nous fait voir la tentation de Jesus Christ","Les ames qui sont parvenues à ce degré de perfection ont un soin tout particulier",850),
  "IX.XVI":("a0562_ancien","La sainte Eglise celebre aujourd'huy la feste de la Presentation de Nostre Dame au Temple","Puis vous adjousterez",1600),
- "IX.XIX":("a0352_ancien","Exurgens Maria, abiit in montana cum festinatione","Que si vous le faites fidellement et humblement en ce monde",1400)
+ "IX.XIX":("a0352_ancien","Exurgens Maria, abiit in montana cum","Que si vous le faites fidellement et humblement en ce monde",1400)
 }
 class Blocks(HTMLParser):
     LINE={"p","br","div","h1","h2","h3","h4","h5","h6","li","tr","section","article"}
@@ -44,7 +44,7 @@ def fetch(url):
         encoding=r.headers.get_content_charset() or "utf-8"
         return data.decode(encoding,errors="replace"),sha256(data).hexdigest()
 def fold(s):
-    return " ".join(unicodedata.normalize("NFKC",s).lower().replace("’","'").split())
+    return " ".join(re.sub(r"\[(?:\d{1,4})\]"," ",unicodedata.normalize("NFKC",s).lower().replace("’","'")).split())
 def extract(html,begin,end,minwords):
     p=Blocks()
     p.feed(html)
