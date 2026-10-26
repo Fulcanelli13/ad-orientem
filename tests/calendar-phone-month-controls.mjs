@@ -120,6 +120,12 @@ try{
      "Resolved Ordo day must expand without navigating away");
    assert.equal(await firstOrdo.locator('.aoCalOrdoVerified').count(),1,
      "Resolved Ordo must show only source-backed Mass availability");
+   const latinFacts=firstOrdo.locator('.aoCalOrdoFact dd[lang="la"]');
+   if(await latinFacts.count()){
+     const firstLatin=await latinFacts.first().innerText();
+     assert.doesNotMatch(firstLatin,/^(?:Ps|Psalm)\\.?\\s*\\d+/i,
+       "An Introit source reference is not its Latin incipit: "+firstLatin);
+   }
    assert.equal(await firstOrdo.locator('[data-cal-month-index-date]').count(),1,
      "Expanded Ordo day must link to the canonical Day");
    await page.screenshot({path:resolve(output,"calendar-ordo-"+lang+"-"+width+".png"),
