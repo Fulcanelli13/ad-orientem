@@ -93,6 +93,25 @@ assert.equal((await recoverReaderProperOmissions(missingOnlyFrench,{
 const wrongPartial=fixed([{lat:recovered.lat,en:"An unrelated Secret from another Mass",fr:""}]);
 assert.equal(recover1962InAlbisSecretFromPinnedSource(wrongPartial,ID,normalizer),null,
  "Existing conflicting English must never be overwritten by the pinned source");
+// The donor [Secreta] is an exact circular pointer; its original
+// @ marker may be stripped by the normalizer. Only this named marker
+// can be regarded as missing, never a different referenced prayer.
+for(const pointer of [
+ "@Tempora/Pasc1-0:Secreta","Tempora/Pasc1-0:Secreta"
+]){
+ const circular=fixed([{lat:pointer,en:pointer,fr:pointer}]);
+ const replaced=recover1962InAlbisSecretFromPinnedSource(circular,ID,normalizer);
+ assert.ok(replaced,"Pinned donor circular pointer not recognized: "+pointer);
+ assert.equal(replaced.lat,recovered.lat);
+}
+for(const pointer of [
+ "@Tempora/Pasc1-1:Secreta","Tempora/Pasc1-1:Secreta",
+ "@Sancti/04-12:Secreta","@Tempora/Pasc1-0:Postcommunio"
+]){
+ assert.equal(recover1962InAlbisSecretFromPinnedSource(
+   fixed([{lat:pointer,en:"",fr:""}]),ID,normalizer),null,
+   "Foreign named-source pointer improperly accepted: "+pointer);
+}
 const placeholder=fixed([{lat:"",en:"$Per Dominum",fr:""}]);
 assert.ok(recover1962InAlbisSecretFromPinnedSource(placeholder,ID,normalizer),
  "Unresolved source macro is not an authentic conflicting translated Secret");
