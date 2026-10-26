@@ -1,0 +1,539 @@
+{
+  "schema": "AO_CUSTOMS_R18_SOURCE_RECHECK_AND_CALENDAR_RELEASE_GATES_20261026_V1",
+  "as_of": "2026-10-26",
+  "evidence_method": "Each of 18 explicitly cited first-hand/institutional/narrow source URLs directly revisited during release review. Checks confirm only the described action/date/locality claim, not full textual authority, source independence or the approved original 1962 ritual.",
+  "total_counts": {
+    "source_links_revisited": 18,
+    "tier_a_date_stable": 6,
+    "tier_b_context_and_variants": 7,
+    "tier_c_local_event_no_auto_schedule": 4,
+    "tier_d_companion_only": 1,
+    "all_fielded_bilingual_drafts": 18,
+    "human_approved": 0,
+    "canonical_id_assignments": 0,
+    "published_additions": 0
+  },
+  "strategic_sequence": [
+    "Tier A first: fixed-day household or historical-only cards, with exact geographic and pastoral caveats",
+    "Tier B second: contextual, organization-dependent, cross-confessional or variant displays",
+    "Tier C third: separate historical description from contemporary dates; never infer live parish events or open registrations",
+    "Tier D: incorporate post-midnight regional meal as companion after ownership acceptance; no new identity or duplicate Calendar trigger"
+  ],
+  "guardrails": {
+    "current_calendar_only": true,
+    "no_customs_atlas": true,
+    "per_candidate_acceptance_required": true,
+    "main_branch_runtime_must_be_reexamined_before_merge": true,
+    "no_new_1962_rubrics": true,
+    "no_new_timetable_data": true,
+    "no_future_local_event_from_historical_dates": true,
+    "calendar_owns_movables": true,
+    "no_assumed_user_location": true
+  },
+  "records": [
+    {
+      "release_key": "CUSTOMS-R18-01",
+      "review_key": "MASTER:CANDIDATE-STPATRICK-RIBBON",
+      "title_en": "St Patrick's ribbon cross",
+      "release_priority": "A_FIRST_SIX_DRAFTS",
+      "source_url_reopened_2026_10_26": "https://galwaycitymuseum.ie/blog/1-reviving-an-old-tradition-st-patricks-crosses/",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "FIXED_HISTORICAL_CONTEXT",
+        "hint": "03-17",
+        "visibility": "HISTORICAL_ONLY"
+      },
+      "specific_claim_cautions": [
+        "HISTORICAL_USE_NOT_GENERAL_PRESENT_RECOMMENDATION",
+        "1681_NMI_AND_1680S_GALWAY_ARE_COMPATIBLE"
+      ],
+      "remaining_non_automatable_gate": "Document historic rather than current use",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-02",
+      "review_key": "MASTER:CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "title_en": "The Irish Christmas candle",
+      "release_priority": "A_FIRST_SIX_DRAFTS",
+      "source_url_reopened_2026_10_26": "https://www.duchas.ie/en/cbes/4758582/4756445/4934128",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "FIXED_NIGHT_CONTEXT",
+        "hint": "12-24/12-25",
+        "visibility": "IRISH_CONTEXT_ONLY"
+      },
+      "specific_claim_cautions": [
+        "SCHOOL_KILKENNY_ADDRESS_TIPPERARY_NO_ORIGIN_INFERENCE",
+        "DO_NOT_SUGGEST_UNATTENDED_FLAME"
+      ],
+      "remaining_non_automatable_gate": "Keep Kilkenny school and Tipperary informant address separate from claims of custom origin",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-03",
+      "review_key": "MASTER:CANDIDATE-STJOHN-BONFIRE",
+      "title_en": "St John Baptist's community bonfire",
+      "release_priority": "C_LOCAL_EVENTS_NO_AUTO_SCHEDULE",
+      "source_url_reopened_2026_10_26": "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "FIXED_FEAST_LINK_ONLY",
+        "hint": "06-24",
+        "visibility": "NO_AUTOMATIC_LOCAL_EVENT"
+      },
+      "specific_claim_cautions": [
+        "2026_06_20_OLORON_NOT_ANNUAL_06_24_EVENT",
+        "NO_FIRE_BLESSING_AUTHORITY"
+      ],
+      "remaining_non_automatable_gate": "Require current dated local parish confirmation",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-04",
+      "review_key": "MASTER:CANDIDATE-EASTER-EGG-CRAFT",
+      "title_en": "Decorating Easter eggs: pisanki and pysanky",
+      "release_priority": "B_CONTEXT_AND_VARIANTS",
+      "source_url_reopened_2026_10_26": "https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "MOVABLE_EASTER_SEASON_CONTEXT",
+        "hint": null,
+        "visibility": "REGIONAL_CROSS_CONFESSIONAL_HERITAGE"
+      },
+      "specific_claim_cautions": [
+        "UNESCO_CROSS_RELIGION_UKRAINIAN_TRADITION",
+        "SEPARATE_POLISH_PISANKI_AND_FOOD_BLESSING"
+      ],
+      "remaining_non_automatable_gate": "Separate regional craftsmanship and Catholic liturgical claims",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-05",
+      "review_key": "MASTER:CUST-ADVT-HERBERGSUCHE",
+      "title_en": "Herbergsuche — Advent Marian-image visits between households",
+      "release_priority": "B_CONTEXT_AND_VARIANTS",
+      "source_url_reopened_2026_10_26": "https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "ADVENT_SEASON_CONTEXT",
+        "hint": null,
+        "visibility": "DOCUMENTED_PARISH_RELAY_ONLY"
+      },
+      "specific_claim_cautions": [
+        "IMAGE_RELAY_DISTINCT_FROM_DRAMATIC_PLAY",
+        "NO_PARISH_ITINERARY_INFERRED"
+      ],
+      "remaining_non_automatable_gate": "Limit to documented relay and parish availability",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-06",
+      "review_key": "MASTER:CUST-XMAS-POLISH-HAY",
+      "title_en": "Christmas Eve hay beneath the tablecloth",
+      "release_priority": "A_FIRST_SIX_DRAFTS",
+      "source_url_reopened_2026_10_26": "https://www.gov.pl/web/kultura/nowy-wpis-na-krajowej-liscie-niematerialnego-dziedzictwa-kulturowego",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "FIXED_HOUSEHOLD_CONTEXT",
+        "hint": "12-24",
+        "visibility": "POLISH_REGION_ONLY"
+      },
+      "specific_claim_cautions": [
+        "DISTINCT_FROM_ADVENT_MANGER_STRAW",
+        "NO_STRAW_FORTUNE_TELLING"
+      ],
+      "remaining_non_automatable_gate": "Check bilingual caution against straw divination",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-07",
+      "review_key": "MASTER:CUST-XMAS-QUEBEC-GUIGNOLEE",
+      "title_en": "La guignolée — French Canadian Christmas alms collection",
+      "release_priority": "B_CONTEXT_AND_VARIANTS",
+      "source_url_reopened_2026_10_26": "https://ssvp-mtl.org/fr/guignolee",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "CHRISTMAS_CHARITY_SEASON",
+        "hint": null,
+        "visibility": "QC_CONTEXT_NO_ASSUMED_EVENT_DATE"
+      },
+      "specific_claim_cautions": [
+        "CHARITY_ORGANIZER_CAMPAIGN_NOT_PARISH_RITE",
+        "DATED_COLLECTION_ANNOUNCEMENTS_ONLY"
+      ],
+      "remaining_non_automatable_gate": "Do not assume parish sponsorship or annual dates",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-08",
+      "review_key": "MASTER:CUST-XMAS-POLISH-KOLEDNICI",
+      "title_en": "Polish kolędnicy — Christmas visiting carollers",
+      "release_priority": "B_CONTEXT_AND_VARIANTS",
+      "source_url_reopened_2026_10_26": "https://zpe.gov.pl/a/polskie-obyczaje-bozonarodzeniowe-koleda-pastoralka-kolednicy-i-koledowanie/DWQhHa9xN",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "CHRISTMASTIDE_CONTEXT",
+        "hint": null,
+        "visibility": "POLISH_CULTURAL_CONTEXT"
+      },
+      "specific_claim_cautions": [
+        "FOLK_TROUPES_NOT_UNIFORM_CATHOLIC_PRAYER",
+        "SZOPKA_AS_VARIANT_NOT_NEW_CUSTOM"
+      ],
+      "remaining_non_automatable_gate": "Keep subtype variants under existing working identity",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-09",
+      "review_key": "MASTER:CUST-XMAS-HUNGARIAN-BETLEHEMEZES",
+      "title_en": "Hungarian betlehemezés Nativity visiting plays",
+      "release_priority": "B_CONTEXT_AND_VARIANTS",
+      "source_url_reopened_2026_10_26": "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "CHRISTMASTIDE_CONTEXT",
+        "hint": null,
+        "visibility": "HUNGARIAN_CULTURAL_CONTEXT"
+      },
+      "specific_claim_cautions": [
+        "CATHOLIC_LEXICON_DESCRIBES_MULTIPLE_FAITH_HISTORY",
+        "NO_SCRIPT_OR_SCHEDULE_INFERRED"
+      ],
+      "remaining_non_automatable_gate": "Retain source-specific actor and puppet distinctions",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-10",
+      "review_key": "MASTER:CUST-BARBARA-BRANCHES",
+      "title_en": "St Barbara branches — Barbarazweige",
+      "release_priority": "A_FIRST_SIX_DRAFTS",
+      "source_url_reopened_2026_10_26": "https://www.erzdioezese-wien.at/heilige-barbara",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "FIXED_HOUSEHOLD_CONTEXT",
+        "hint": "12-04",
+        "visibility": "CENTRAL_EUROPEAN_CONTEXT"
+      },
+      "specific_claim_cautions": [
+        "BLOSSOM_IS_NATURAL_NOT_ORACLE",
+        "SAINT_BIOGRAPHY_LEGEND_DISTINCT_FROM_ATTESTED_CUSTOM"
+      ],
+      "remaining_non_automatable_gate": "Avoid predictive/divinatory and uncertain hagiographic claims",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-11",
+      "review_key": "MASTER:CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
+      "title_en": "Provençal Christmas pain calendal and the poor person's portion",
+      "release_priority": "A_FIRST_SIX_DRAFTS",
+      "source_url_reopened_2026_10_26": "https://www.visitvar.fr/agenda/evenements-incontournables/noel-provence/traditions-de-noel-provence",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "FIXED_HOUSEHOLD_CONTEXT",
+        "hint": "12-24",
+        "visibility": "PROVENCE_ONLY"
+      },
+      "specific_claim_cautions": [
+        "MIRACLES_PORTION_IS_REPORTED_FOLKLORE",
+        "REVEILLON_AFTER_MIDNIGHT_IS_SEPARATE_MEAL"
+      ],
+      "remaining_non_automatable_gate": "Attach distinct later réveillon as companion section",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-12",
+      "review_key": "MASTER:CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
+      "title_en": "Three Kings gifts left in children's shoes",
+      "release_priority": "A_FIRST_SIX_DRAFTS",
+      "source_url_reopened_2026_10_26": "https://socialnewsroom.spain.info/three-kings-day-in-spain-2024/",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "FIXED_NIGHT_CONTEXT",
+        "hint": "01-05/01-06",
+        "visibility": "SPAIN_FAMILY_CONTEXT_ONLY"
+      },
+      "specific_claim_cautions": [
+        "REPRESENTATION_NOT_LITERAL_BIBLICAL_GIFT_DELIVERY",
+        "NO_CURRENT_TOWN_PARADE_TIMES"
+      ],
+      "remaining_non_automatable_gate": "Do not invent parade schedule or biblical claim",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-13",
+      "review_key": "MASTER:CUST-EASTER-MALTESE-IRXOXT",
+      "title_en": "L-Irxoxt — Maltese running procession with the Risen Christ",
+      "release_priority": "C_LOCAL_EVENTS_NO_AUTO_SCHEDULE",
+      "source_url_reopened_2026_10_26": "https://timesofmalta.com/article/running-risen-unique-easter-tradition-draws-crowds-and-devotion.1108477",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "MOVABLE_EASTER_SUNDAY_LINK_ONLY",
+        "hint": null,
+        "visibility": "NO_ASSUMED_LOCAL_PROCESSION"
+      },
+      "specific_claim_cautions": [
+        "RUNNING_ONLY_IN_SOME_LOCALITIES",
+        "NOT_MASS_GESTURE_OR_EASTER_FOOD_BLESSING"
+      ],
+      "remaining_non_automatable_gate": "Require local parish scope and current date",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-14",
+      "review_key": "MASTER:CUST-PENTECOST-POLISH-GREENERY",
+      "title_en": "Pentecost greenery decorating Polish homes",
+      "release_priority": "B_CONTEXT_AND_VARIANTS",
+      "source_url_reopened_2026_10_26": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "MOVABLE_PENTECOST_CONTEXT",
+        "hint": null,
+        "visibility": "POLISH_CULTURAL_CONTEXT"
+      },
+      "specific_claim_cautions": [
+        "STATE_FORESTRY_TESTIMONY_NOT_ROMAN_RUBRIC",
+        "1930_PHOTO_CAPTION_NOT_RECHECKED"
+      ],
+      "remaining_non_automatable_gate": "Strengthen regional witness and archive photo caption",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-15",
+      "review_key": "MASTER:CUST-ASSUMPTION-TIVOLI-INCHINATA",
+      "title_en": "Tivoli's Inchinata procession",
+      "release_priority": "C_LOCAL_EVENTS_NO_AUTO_SCHEDULE",
+      "source_url_reopened_2026_10_26": "https://diocesitivoliepalestrina.it/festa-dellinchinata-2026/",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "FIXED_FEAST_LINK_ONLY",
+        "hint": "08-14/08-15",
+        "visibility": "NO_AUTOMATIC_TIVOLI_EVENT"
+      },
+      "specific_claim_cautions": [
+        "2026_DIOCESAN_PROGRAMME_NOT_2027",
+        "FIFTH_CENTURY_FOUNDATION_UNPROVED"
+      ],
+      "remaining_non_automatable_gate": "Fresh diocesan date and provenance for future events",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-16",
+      "review_key": "MASTER:CUST-ASSUMPTION-SASSARI-CANDELIERI",
+      "title_en": "Faradda di li Candareri — Sassari's Marian offering procession",
+      "release_priority": "C_LOCAL_EVENTS_NO_AUTO_SCHEDULE",
+      "source_url_reopened_2026_10_26": "https://www.comune.sassari.it/it/novita/notizia/Candelieri-2026-segui-tutti-gli-aggiornamenti/",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "FIXED_FEAST_LINK_ONLY",
+        "hint": "08-14",
+        "visibility": "NO_AUTOMATIC_SASSARI_EVENT"
+      },
+      "specific_claim_cautions": [
+        "2026_CITY_PROGRAMME_NOT_2027",
+        "WOODEN_GUILD_CANDLE_STRUCTURES_NOT_LITURGICAL_BLESSING"
+      ],
+      "remaining_non_automatable_gate": "Verify city-only programme and wooden-object role",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-17",
+      "review_key": "MASTER:CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER",
+      "title_en": "Frauendreißiger — thirty days of Marian devotion",
+      "release_priority": "B_CONTEXT_AND_VARIANTS",
+      "source_url_reopened_2026_10_26": "https://www.mariathalkirchen.de/index.php?id=164",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "FIXED_SHRINE_PERIOD_CONTEXT",
+        "hint": "08-15/09-14",
+        "visibility": "NAMED_BAVARIAN_SHRINES"
+      },
+      "specific_claim_cautions": [
+        "SHRINE_DOCUMENTS_TIME_SPAN_NOT_ROMAN_SEASON",
+        "MODERN_INDULGENCE_AND_MASS_PROPERS_NOT_1962"
+      ],
+      "remaining_non_automatable_gate": "Never copy modern shrine propers into 1962",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    },
+    {
+      "release_key": "CUSTOMS-R18-18",
+      "review_key": "OBSERVATION:BULK150-018",
+      "title_en": "Provençal Christmas réveillon after midnight",
+      "release_priority": "D_COMPANION_ONLY",
+      "source_url_reopened_2026_10_26": "https://www.culture.gouv.fr/Media/Thematiques/Patrimoine-culturel-immateriel/Files/Fiches-inventaire-du-PCI/Les-fetes-de-Noel-en-Provence",
+      "recheck_scope": "EXACT_NARROW_SOURCE_CLAIM_ONLY",
+      "source_linked_claim_rechecked": true,
+      "independent_full_article_source_certification": false,
+      "human_editorial_approval": false,
+      "roman_rite_minister_approval": false,
+      "calendar_publication_approved": false,
+      "release_gate_status": "DRAFT_READY_FOR_HUMAN_SOURCE_AND_COPY_SIGNOFF",
+      "proposed_calendar_anchor": {
+        "kind": "COMPANION_TEXT_ONLY",
+        "hint": null,
+        "visibility": "NO_SEPARATE_DATE_CARD"
+      },
+      "specific_claim_cautions": [
+        "MINISTRY_PDF_PRINTED_PAGE_4_CONTRASTS_TWO_MEALS",
+        "COMPANION_OWNER_APPROVAL_STILL_NEEDED"
+      ],
+      "remaining_non_automatable_gate": "Write missing EN/FR introductions and approve companion ownership",
+      "publication_allowed": false,
+      "canonical_new_id": null,
+      "editorial_packet_ref": "data/customs/master/customs-r18-bilingual-calendar-candidate-pack-20261026.v1.json",
+      "historical_original_copy_unchanged": true
+    }
+  ]
+}
