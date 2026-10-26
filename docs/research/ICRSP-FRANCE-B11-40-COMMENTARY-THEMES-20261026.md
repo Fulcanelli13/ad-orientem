@@ -63,3 +63,14 @@ The first-pass theme detection queue for the original 51-page sample is **51/51*
 Research artifact: `data/source-text/icrsp-france-b11-40-commentary-theme-review.v1.json`. Dedicated regression: `tests/test_icrsp_b11_commentary_theme_review.py` included in the read-only `icrsp-gap-integrity.yml` workflow.
 
 Next research priority: classify **unique conceptual topic clusters** across the 51 sources, verify source-original bibliographic loci for the top biblical/early Roman history candidates, then check current app explanations at paragraph/claim level. Do **not** propose 51 newly-authored article pages, 51 calendar replacements or new reader sections.
+
+
+## Supplemental consolidation — 10 conceptual editorial queues
+
+B11 now groups the 51 article-level themes into **10 conceptual research clusters** in `data/source-text/icrsp-france-b11-51-topic-clusters.v1.json`. These hold **39 source-article references covering 33 distinct article pages**; one page may occur in more than one thematic cluster, and **18/51 sampled pages are not among the initial high-priority clusters**. This is a triage shortlist, not a declaration that any source text is identical, historically authenticated or legally reproducible.
+
+Six high-priority clusters cover baptismal and resurrection typology, Susanna and early Christian visual witness, Joseph and Christ, Roman station place identities, ancient catechumenal rites and the `fermentum`, and historic post-Pentecost Gospel/chant redistribution. Three secondary clusters cover Good Samaritan/Cassian prayer, Job/Esther Offertory themes and penitential moral instruction. One **HOLD** group quarantines period-specific Jewish–Christian polemics.
+
+The groups retain concrete source URLs and existing app-domain owners and expressly approve **zero** quotations, original-book editions, modern French translations, new Place IDs, Calendar text or priest rubrics. Regression tests require all group sources to be actual members of the 51-article sample.
+
+The next substantive gate is a **claim-by-claim comparison**, beginning with the baptismal/typology clusters, against already published Calendar, Scripture parallels, Mass Explorer and shared Place-owner claims. This must establish an actual new contribution rather than simply another link to the same theme.
