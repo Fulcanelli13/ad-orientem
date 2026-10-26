@@ -35,7 +35,7 @@ assert.equal(candidates.length,30);
 await new Promise(done=>server.listen(0,"127.0.0.1",done));
 let browser;
 try{
- browser=await chromium.launch({headless:true});
+ browser=await chromium.launch({headless:true,executablePath:process.env.AO_BROWSER_BIN||undefined});
  const page=await browser.newPage({serviceWorkers:"block"});
  page.setDefaultTimeout(90000);
  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",
