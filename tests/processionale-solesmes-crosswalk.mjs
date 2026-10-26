@@ -170,3 +170,27 @@ test('Cantus IDs identify candidate text families, never authorize editions or m
   assert.equal(identity.externalEditionSpecificNotatedRecord.printedPage,272);
   assert.equal(identity.externalEditionSpecificNotatedRecord.runtimeUse,'NONE');
 });
+
+
+test('visually checked Roman score-page handoff cannot supersede 1962 text', () => {
+  const handoff=readJSON('data/research/processionale-roman-score-facsimile-handoff-20261026.v1.json');
+  const candlemas=readJSON('data/presentation/reader-candlemas.v1.json');
+  const palm=readJSON('data/presentation/reader-palm.v1.json');
+  assert.equal(handoff.status,'RESEARCH_ONLY_NOT_RUNTIME');
+  assert.equal(handoff.mappedScorePages.length,9);
+  assert.equal(handoff.sourceContradictions.length,2);
+  assert.ok(handoff.mappedScorePages.every(x=>x.imageRead===true));
+  assert.ok(handoff.mappedScorePages.every(x=>x.imageURLs.every(url=>url.startsWith('https://gregobase.selapa.net/sources/3/'))));
+  const byId=new Map(handoff.mappedScorePages.map(x=>[x.id,x]));
+  assert.equal(byId.get('LU61-CND-02').roman1962Status,'OMITTED_EXPLICITLY');
+  assert.equal(byId.get('LU61-CND-04').roman1962Status,'PRESCRIBED_WITH_CUM_INDUCERENT_VERSE');
+  assert.ok(!JSON.stringify(candlemas.distribution).toLowerCase().includes('exsurge'));
+  assert.ok(!JSON.stringify(candlemas.procession).toLowerCase().includes('exsurge'));
+  assert.ok(candlemas.procession.responsumVerse.toLowerCase().includes('cum indúcerent'));
+  assert.ok(candlemas.procession.responsumVerse.toLowerCase().includes('púerum jesum'));
+  assert.ok(palm.texts.gloriaLaus.toLowerCase().startsWith('glória, laus'));
+  assert.equal(handoff.integration.status,'HANDOFF_NOT_IMPLEMENTED');
+  assert.equal(handoff.integration.noNewScholaDock,true);
+  assert.equal(handoff.integration.noNewMusicEventIDs,true);
+  assert.equal(handoff.integration.noNewAudioRuntime,true);
+});
