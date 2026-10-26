@@ -1,0 +1,840 @@
+{
+  "schema": "AO_CL11_REVIEWED_SOURCE_TRANCHE_V1",
+  "reviewed_on": "2026-10-26",
+  "policy": "All 33 multi-candidate URLs disposed in review. Accepted rows require exact first-party 1962/John XXIII edition wording or explicit site-scoped official statement, matching historical day/time and venue. All evidence is research-only and cannot approve public schedules, Una Cum, or institutional celebrant roles.",
+  "urls": [
+    {
+      "url": "https://archdpdx.org/parishfinder",
+      "access": "DIRECT_PAGE",
+      "claim_category": "EXPLICIT_SECOND_OWNER_MISSAL",
+      "accepted_row_nos": [
+        3995,
+        3996,
+        3997,
+        3998,
+        3999,
+        4000,
+        4001,
+        4002,
+        4003,
+        4004,
+        4005,
+        4006
+      ],
+      "observation": "Archdiocese lists St Stephen Portland Latin times matching 12 frozen rows; parish FAQ explicitly says all Masses other than its Saturday Mass of Paul VI use the 1962 Missale Romanum.",
+      "exception_codes": [
+        "ORDINARY_FORM_SATURDAY_1700",
+        "PARISH_BULLETIN_OVERRIDES_HISTORICAL_WEEKLY_TIMES"
+      ],
+      "supporting_owner_url": "https://www.saintstephenpdx.com/mass-schedule",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": [
+        {
+          "row_no": 3995,
+          "day": "Sunday",
+          "time": "08:00"
+        },
+        {
+          "row_no": 3996,
+          "day": "Sunday",
+          "time": "10:30"
+        },
+        {
+          "row_no": 3997,
+          "day": "Monday",
+          "time": "08:00"
+        },
+        {
+          "row_no": 3998,
+          "day": "Tuesday",
+          "time": "08:00"
+        },
+        {
+          "row_no": 3999,
+          "day": "Tuesday",
+          "time": "12:00"
+        },
+        {
+          "row_no": 4000,
+          "day": "Wednesday",
+          "time": "08:00"
+        },
+        {
+          "row_no": 4001,
+          "day": "Wednesday",
+          "time": "18:45"
+        },
+        {
+          "row_no": 4002,
+          "day": "Thursday",
+          "time": "08:00"
+        },
+        {
+          "row_no": 4003,
+          "day": "Thursday",
+          "time": "18:45"
+        },
+        {
+          "row_no": 4004,
+          "day": "Friday",
+          "time": "08:00"
+        },
+        {
+          "row_no": 4005,
+          "day": "Friday",
+          "time": "12:00"
+        },
+        {
+          "row_no": 4006,
+          "day": "Saturday",
+          "time": "09:00"
+        }
+      ]
+    },
+    {
+      "url": "https://cathedralestmauricenotredame.diocese49.org/la-paroisse/horaires-a-remttre-apres-ete/",
+      "access": "INDEXED_OWNER_CONTENT_403_DIRECT",
+      "claim_category": "OWNER_INDEXED_403_UNCONFIRMED_DIRECT",
+      "accepted_row_nos": [],
+      "observation": "Angers parish search-indexed current timetable and 2026 bulletin clearly attach John XXIII Missal to Notre-Dame des Victoires slots matching eight frozen candidates, but direct page/PDF fetch returned 403 in this pass; hold pending independently retrievable owner artifact.",
+      "exception_codes": [
+        "OWNER_PAGE_DIRECT_FETCH_403",
+        "TERM_TIME_TUESDAY_0830"
+      ],
+      "supporting_owner_url": "https://cathedralestmauricenotredame.diocese49.org/wp-content/uploads/sites/30/2026/01/2026-01-18-2e-dimanche-du-temps-ordinaire-a-infos-adb.pdf",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://htdiocese.org/blessedsacramentchapel",
+      "access": "HTTP_404",
+      "claim_category": "OWNER_URL_404",
+      "accepted_row_nos": [],
+      "observation": "Houma–Thibodaux Blessed Sacrament Chapel legacy URL returned 404 during direct source check; no current owner statement or timetable witnessed.",
+      "exception_codes": [
+        "URL_404_NEEDS_REPLACEMENT"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://holyrosaryindy.org/mass-at-holy-rosary",
+      "access": "DIRECT_PAGE",
+      "claim_category": "EXPLICIT_OWNER_PROGRAMME_MISSAL",
+      "accepted_row_nos": [
+        3937,
+        3938,
+        3939,
+        3940,
+        3941,
+        3942
+      ],
+      "observation": "Parish defines its TLM as the 1962 Missal and explicitly distinguishes the 2002 Missal; page lists candidate weekday/Sunday Latin slots, with first-Saturday Latin exception. Parish's 16 January 2026 change notice explicitly says first Saturday 09:00 follows the 1962 Missal; Sunday 07:00 is normally 1962 but may use 2002 if priest coverage fails.",
+      "exception_codes": [
+        "MIXED_1962_AND_2002_MISSALS",
+        "FIRST_SATURDAY_LATIN_ONLY",
+        "BULLETIN_CURRENTNESS_REQUIRED",
+        "SUNDAY_0700_MAY_USE_2002_IF_NO_PRIEST_AVAILABLE"
+      ],
+      "supporting_owner_url": "https://www.holyrosaryindy.org/news/new-mass-times",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": [
+        {
+          "row_no": 3937,
+          "day": "Sunday",
+          "time": "07:00"
+        },
+        {
+          "row_no": 3938,
+          "day": "Sunday",
+          "time": "11:00"
+        },
+        {
+          "row_no": 3939,
+          "day": "Monday",
+          "time": "07:20"
+        },
+        {
+          "row_no": 3940,
+          "day": "Wednesday",
+          "time": "12:00"
+        },
+        {
+          "row_no": 3941,
+          "day": "Friday",
+          "time": "17:45"
+        },
+        {
+          "row_no": 3942,
+          "day": "1st Saturday",
+          "time": "09:00"
+        }
+      ],
+      "row_specific_exception_codes": {
+        "3937": [
+          "2002_MISSAL_IF_PRIEST_COVERAGE_UNAVAILABLE"
+        ],
+        "3942": [
+          "1962_FIRST_SATURDAY_CONFIRMED_2026_PASTOR_NOTICE"
+        ]
+      }
+    },
+    {
+      "url": "https://latinmasspensacola.org/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "OWNER_TLM_NOT_EDITION",
+      "accepted_row_nos": [],
+      "observation": "St Stephen Pensacola owner homepage identifies its traditional Latin apostolate and lists times; exact Missal edition is not explicitly stated in the checked owner material.",
+      "exception_codes": [
+        "OWNER_MISSAL_EDITION_NOT_EXPLICIT"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://oratory-toronto.org/holy-family-parish/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "LATIN_PROGRAMME_WITH_NOVUS_ORDO_EXCEPTIONS",
+      "accepted_row_nos": [],
+      "observation": "Toronto Oratory Holy Family parish lists weekday Latin Masses and Sunday solemn Latin Mass, but Sunday 11:00 uses Latin Novus Ordo once monthly; no exact 1962 edition explicitly documented for six candidate weekday slots.",
+      "exception_codes": [
+        "LATIN_NOVUS_ORDO_SUNDAY_ONCE_MONTHLY",
+        "BOOK_UNESTABLISHED"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://www.myblessedsacrament.org/bulletin/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "OWNER_BULLETIN_TLM_NOT_EDITION",
+      "accepted_row_nos": [],
+      "observation": "September 2026 parish bulletin lists 1962-research-candidate times as traditional Latin Sunday and Latin weekday/first Friday/first Saturday; checked bulletin does not explicitly identify book edition.",
+      "exception_codes": [
+        "BULLETIN_SEPTEMBER_2026_NOT_LIVE",
+        "MIXED_ENGLISH_AND_LATIN_PROGRAMME"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://saintanthonycatholicchurch.org/traditional-latin-mass",
+      "access": "DIRECT_PAGE",
+      "claim_category": "EXPLICIT_OWNER_1962_SLOT",
+      "accepted_row_nos": [
+        4125,
+        4126,
+        4127,
+        4128,
+        4129
+      ],
+      "observation": "St Anthony Laurel parish expressly identifies its daily traditional Mass as according to Missale Romanum 1962, and owner lists Tuesday 17:30 and Wednesday–Saturday 09:00.",
+      "exception_codes": [
+        "WEEKLY_CALENDAR_EXCEPTIONS"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": [
+        {
+          "row_no": 4125,
+          "day": "Tuesday",
+          "time": "17:30"
+        },
+        {
+          "row_no": 4126,
+          "day": "Wednesday",
+          "time": "09:00"
+        },
+        {
+          "row_no": 4127,
+          "day": "Thursday",
+          "time": "09:00"
+        },
+        {
+          "row_no": 4128,
+          "day": "Friday",
+          "time": "09:00"
+        },
+        {
+          "row_no": 4129,
+          "day": "Saturday",
+          "time": "09:00"
+        }
+      ]
+    },
+    {
+      "url": "https://jp2kankakee.org/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "OWNER_TLM_NOT_EDITION",
+      "accepted_row_nos": [],
+      "observation": "St John Paul II Kankakee owner lists Wednesday/Friday noon TLM, Sunday 15:00 TLM and first Saturday Latin 09:00, without explicit Missal 1962 wording.",
+      "exception_codes": [
+        "FIRST_SATURDAY_LATIN_NOT_EXACT_BOOK",
+        "CHURCH_VS_OFFICE_ADDRESSES"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://www.ssgregoryandaugustine.org/mass-in-the-extraordinary-form",
+      "access": "DIRECT_PAGE",
+      "claim_category": "EXPLICIT_OWNER_1962_SLOT",
+      "accepted_row_nos": [
+        4009,
+        4010,
+        4011,
+        4012
+      ],
+      "observation": "Oxford parish explicitly defines its traditional Mass as 1962 Roman Missal and lists Wed/Fri 18:00, first Thu noon and third Sunday noon.",
+      "exception_codes": [
+        "THIRD_SUNDAY_ONLY",
+        "FIRST_THURSDAY_ONLY",
+        "NEWSLETTER_OVERRIDE"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": [
+        {
+          "row_no": 4009,
+          "day": "Wednesday",
+          "time": "18:00"
+        },
+        {
+          "row_no": 4010,
+          "day": "Friday",
+          "time": "18:00"
+        },
+        {
+          "row_no": 4011,
+          "day": "1st Thursday",
+          "time": "12:00"
+        },
+        {
+          "row_no": 4012,
+          "day": "3rd Sunday",
+          "time": "12:00"
+        }
+      ]
+    },
+    {
+      "url": "https://www.stjosephstoledo.com/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "EXPLICIT_OWNER_1962_SLOT",
+      "accepted_row_nos": [
+        4077,
+        4078,
+        4079,
+        4080
+      ],
+      "observation": "St Joseph Toledo owner explicitly prints 1962 Missal for Sunday 07:00/09:00, Wednesday 18:00 and first Saturday 08:00.",
+      "exception_codes": [
+        "FIRST_SATURDAY_ONLY",
+        "BULLETIN_OVERRIDE"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": [
+        {
+          "row_no": 4077,
+          "day": "Sunday",
+          "time": "07:00"
+        },
+        {
+          "row_no": 4078,
+          "day": "Sunday",
+          "time": "09:00"
+        },
+        {
+          "row_no": 4079,
+          "day": "Wednesday",
+          "time": "18:00"
+        },
+        {
+          "row_no": 4080,
+          "day": "1st Saturday",
+          "time": "08:00"
+        }
+      ]
+    },
+    {
+      "url": "https://www.stmarynorwalk.net/liturgy/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "OWNER_EXTRAORDINARY_FORM_NOT_EDITION",
+      "accepted_row_nos": [],
+      "observation": "Norwalk parish distinguishes Extraordinary Form Sunday 10:00 and Tue–Fri noon Latin Low Mass, but Thursday noon becomes sung English during much of school year; checked page does not independently name edition 1962.",
+      "exception_codes": [
+        "THURSDAY_SCHOOL_TERM_ORDINARY_FORM_EXCEPTION",
+        "MISSAL_1962_NOT_LITERAL"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/mittersthal/messzeiten.php",
+      "access": "DIRECT_PAGE",
+      "claim_category": "OWNER_FSSP_SCHEDULE_BOOK_NOT_EXPLICIT",
+      "accepted_row_nos": [],
+      "observation": "German FSSP Mittersthal page lists St Jobst Neumarkt Sunday 10:15 and Mon/Fri 18:00. Affiliation and traditional setting alone do not document precise book for individual times.",
+      "exception_codes": [
+        "FSSP_AFFILIATION_NOT_EDITION"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://portland.faithdigital.org/prayer-faith-resources/latin-mass",
+      "access": "DIRECT_PAGE",
+      "claim_category": "EXPLICIT_DIOCESE_1962_SLOT",
+      "accepted_row_nos": [
+        3974,
+        3985,
+        3986
+      ],
+      "observation": "Diocese of Portland, Maine explicitly introduces Mass according to Missal 1962, then names Basilica Ss Peter & Paul Sunday 08:00, St Joseph Oratory Sunday 10:30, Holy Redeemer first Saturday 10:00.",
+      "exception_codes": [
+        "MULTIPLE_DISTINCT_BUILDINGS",
+        "FIRST_SATURDAY_ONLY"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": [
+        {
+          "row_no": 3974,
+          "day": "Sunday",
+          "time": "08:00"
+        },
+        {
+          "row_no": 3985,
+          "day": "Sunday",
+          "time": "10:30"
+        },
+        {
+          "row_no": 3986,
+          "day": "1st Saturday",
+          "time": "10:00"
+        }
+      ]
+    },
+    {
+      "url": "https://www.fsspniagara.com/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "OWNER_FSSP_BOOK_NOT_EXPLICIT",
+      "accepted_row_nos": [],
+      "observation": "St Aloysius Thorold FSSP parish lists Sunday 09:00, 11:00 and Saturday 09:00 but 2026 construction changes chapel capacity and Mass operation; explicit book edition not on checked homepage.",
+      "exception_codes": [
+        "MAJOR_2026_BUILDING_WORKS",
+        "SCHEDULE_CHANGE_BULLETIN",
+        "FSSP_AFFILIATION_NOT_EDITION"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://www.massfinder.org/parishes/129",
+      "access": "DIRECT_PAGE",
+      "claim_category": "DIOCESAN_FINDER_BOOK_NOT_EXPLICIT",
+      "accepted_row_nos": [],
+      "observation": "Detroit diocesan Mass Finder listing identifies Immaculate Conception parish and Mass schedule; source has not provided direct 1962 edition evidence at the three research candidate slots.",
+      "exception_codes": [
+        "FINDER_MAY_NOT_DISTINGUISH_1962_FROM_LATIN"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://arciconfraternitadellamisericordia.it/orari-delle-celebrazioni/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "OWNER_OLD_RITE_EDITION_UNSPECIFIED",
+      "accepted_row_nos": [],
+      "observation": "Confraternity owner lists diocesan-authorized Rito Antico Sunday/obligatory feast 11:00 and Wednesday 18:30. Exact 1962 Missal edition is not stated.",
+      "exception_codes": [
+        "VETUS_ORDO_NOT_EXACT_1962",
+        "MONTHLY_DEVIATIONS_BY_DAY_20"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://bistummainz.de/pfarrei/schotten/gemeindeleben/heilige-messe-im-alten-ritus-vetus-ordo/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "DIOCESE_OLD_FORM_EDITION_UNSPECIFIED",
+      "accepted_row_nos": [],
+      "observation": "Schotten diocesan parish explains bishop-supported alte Messe in Schotten; precise edition and candidate first-Saturday/fourth-Sunday times require separate direct link review.",
+      "exception_codes": [
+        "ALTE_MESSE_NOT_EXACT_1962"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://charlottediocese.org/tlmchapel/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "DIOCESE_TLM_EDITION_UNSPECIFIED",
+      "accepted_row_nos": [],
+      "observation": "Diocese of Charlotte explicitly identifies Little Flower chapel Traditional Latin Mass at Sunday 10:00 and 12:00; checked diocesan page does not name 1962 edition.",
+      "exception_codes": [
+        "MISSAL_1962_NOT_LITERAL",
+        "HOLY_DAYS_AS_ANNOUNCED"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://olphcg.net/mass-times",
+      "access": "DIRECT_PAGE",
+      "claim_category": "EXPLICIT_DIOCESE_1962_SLOT",
+      "accepted_row_nos": [
+        4115,
+        4116
+      ],
+      "observation": "Oregon Archdiocese parish finder independently identifies this Cottage Grove parish Monday 18:45 and Saturday 09:00 as Latin, 1962 Missal; parish own schedule also lists same slots but not edition.",
+      "exception_codes": [
+        "CURRENT_BULLETIN_OVERRIDES_WEEKLY"
+      ],
+      "supporting_owner_url": "https://archdpdx.org/parishfinder",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": [
+        {
+          "row_no": 4115,
+          "day": "Monday",
+          "time": "18:45"
+        },
+        {
+          "row_no": 4116,
+          "day": "Saturday",
+          "time": "09:00"
+        }
+      ]
+    },
+    {
+      "url": "https://sacredheartofmary.org/traditional-latin-mass",
+      "access": "DIRECT_PAGE",
+      "claim_category": "EXPLICIT_OWNER_1962_SLOT",
+      "accepted_row_nos": [
+        4074,
+        4075
+      ],
+      "observation": "Sacred Heart of Mary Boulder parish directly says traditional Latin Mass according to 1962 Missal Sundays 12:30 and Tuesdays noon.",
+      "exception_codes": [
+        "HOLY_DAYS_AND_OTHER_OCCASIONS_UNSPECIFIED"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": [
+        {
+          "row_no": 4074,
+          "day": "Sunday",
+          "time": "12:30"
+        },
+        {
+          "row_no": 4075,
+          "day": "Tuesday",
+          "time": "12:00"
+        }
+      ]
+    },
+    {
+      "url": "https://stcathlaboure.org/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "OWNER_TLM_NOT_EDITION",
+      "accepted_row_nos": [],
+      "observation": "St Catherine Labouré owner identifies Sunday 09:00 and Friday noon as Latin/TLM but checked page gives no explicit edition claim.",
+      "exception_codes": [
+        "LATIN_TLM_NOT_PRECISE_1962"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://stjohnbeloved.latinmassarlington.org/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "LAY_DIRECTORY_TLM_WITH_EXCEPTIONS",
+      "accepted_row_nos": [],
+      "observation": "Arlington Latin Mass Society site gives St John the Beloved Sunday noon TLM but fourth Sundays change to Latin Novus Ordo; checked site does not support old 1962 claims for Monday 20:00.",
+      "exception_codes": [
+        "FOURTH_SUNDAY_LATIN_NOVUS_ORDO_SUBSTITUTION",
+        "MONDAY_2000_NOT_ESTABLISHED",
+        "LAY_OWNER_ROLE_NOT_ESTABLISHED"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://tlmjax.com/mass-schedule",
+      "access": "DIRECT_PAGE",
+      "claim_category": "LOCAL_TLM_TIMES_BOOK_UNSPECIFIED",
+      "accepted_row_nos": [],
+      "observation": "Jacksonville traditional Mass group posts St Joseph Historic Sunday 07:30 Low and 12:30 High; linked page does not expressly give precise 1962 liturgical book.",
+      "exception_codes": [
+        "EXACT_MISSAL_UNSPECIFIED"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://www.deutschordenskirche.de/gottesdienste/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "OWNER_EXTRAORDINARY_FORM_NOT_EDITION",
+      "accepted_row_nos": [],
+      "observation": "Deutschordenskirche Frankfurt site labels Sunday and Thursday 18:00 as extraordinary form of Roman rite; edition is not spelled out.",
+      "exception_codes": [
+        "EXTRAORDINARY_FORM_NOT_DIRECT_1962_EVIDENCE"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://www.diocesi.brescia.it/orari-s-messe-cattedrale/",
+      "access": "DIRECT_OWNER_PDF_VISUALLY_CHECKED",
+      "claim_category": "DIOCESE_VETUS_ORDO_NOT_EXACT_EDITION",
+      "accepted_row_nos": [],
+      "observation": "Brescia diocesan PDF has San Zeno al Foro Saturday 18:00 and Sunday 10:00 under Vetus Ordo, while explicitly marking a separate Latin Vatican II Mass at Duomo Vecchio; exact edition of Vetus Ordo not specified.",
+      "exception_codes": [
+        "LATIN_VATICAN_II_NOT_1962",
+        "TWO_BUILDINGS_BOOK_SCOPE"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://www.diocesi.trieste.it/orari-sante-messe/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "DIOCESE_OLD_ROMAN_RITE_NOT_EXACT_EDITION",
+      "accepted_row_nos": [],
+      "observation": "Trieste diocese lists Beata Vergine del Rosario Sunday festive 10:30 and first Friday 19:00 as old Roman rite, under 2024 Roman dicastery authorization; exact 1962 Missal edition not stated.",
+      "exception_codes": [
+        "DEGREE_2024_NOT_EDITION_PROOF",
+        "FIRST_FRIDAY_ONLY"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://www.holynameprovidence.org/mass-times",
+      "access": "DIRECT_PAGE",
+      "claim_category": "OWNER_LATIN_MASS_BOOK_UNSPECIFIED",
+      "accepted_row_nos": [],
+      "observation": "Holy Name Providence Mass page gives Latin Mass identifiers; 'Missa Recitata' Sunday slot research statement does not prove 1962 edition from owner wording checked.",
+      "exception_codes": [
+        "TWO_HISTORICAL_RECORDS_DIFFERENT_GROUPS"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://www.holyrosarycathedral.org/latin-mass/",
+      "access": "HTTP_403",
+      "claim_category": "OWNER_PAGE_DIRECT_RETRIEVAL_403",
+      "accepted_row_nos": [],
+      "observation": "Vancouver cathedral Latin Mass URL returned 403 in subsequent direct fetch; no current source-scoped 1962 wording independently inspected.",
+      "exception_codes": [
+        "DIRECT_ACCESS_403"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://www.parrocchiasantacroce.com/liturgia-vetus-ordo/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "EXPLICIT_OWNER_1962_PROGRAMME",
+      "accepted_row_nos": [
+        4511,
+        4512
+      ],
+      "observation": "Santa Croce Cagliari owner explicitly equates Vetus Ordo with 1962 Roman Missal and gives Sunday 11:00 plus ferial 19:00, subject to weekly Eco della Basilica; this parish already has a CL2 owner witness.",
+      "exception_codes": [
+        "CL2_EXISTING_OWNER_SOURCE_WITNESS",
+        "FERIAL_RULE_NOT_EVERY_DAY_GUARANTEED",
+        "WEEKLY_BULLETIN_OVERRIDES"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": [
+        {
+          "row_no": 4511,
+          "day": "Sunday",
+          "time": "11:00"
+        },
+        {
+          "row_no": 4512,
+          "day": "Giorni feriali (non-Sunday days; check weekly bulletin)",
+          "time": "19:00"
+        }
+      ]
+    },
+    {
+      "url": "https://www.stmarthas.org/",
+      "access": "DIRECT_PAGE",
+      "claim_category": "OWNER_TLM_NOT_EDITION",
+      "accepted_row_nos": [],
+      "observation": "St Martha Ashland City owner confirms Sunday 11:30 and Friday 11:00 TLM but does not print precise Missal edition on owner home.",
+      "exception_codes": [
+        "TLM_NOT_PRECISE_1962"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://www.stmatthewflint.org/masstimes",
+      "access": "DIRECT_PAGE",
+      "claim_category": "OWNER_EXTRAORDINARY_FORM_NOT_EDITION",
+      "accepted_row_nos": [],
+      "observation": "St Matthew Flint owner schedule Sunday 12:00 and first Saturday 09:00 EF, but no explicit 1962 edition on this timetable.",
+      "exception_codes": [
+        "ORDINARY_FORM_TIMES_SEPARATE",
+        "FIRST_SATURDAY_ONLY"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": []
+    },
+    {
+      "url": "https://www.wallfahrt-kevelaer.de/gottesdienste/sommer-und-winterordnung",
+      "access": "DIRECT_PAGE",
+      "claim_category": "EXPLICIT_OWNER_1962_SEASONAL_SLOTS",
+      "accepted_row_nos": [
+        4417,
+        4418
+      ],
+      "observation": "Kevelaer official sanctuary gives Sunday 08:00 May–Nov 1 and 09:00 Nov 2–April 30 in Kerzenkapelle explicitly by 1962 Missal; no blanket year-round clock time.",
+      "exception_codes": [
+        "SEASONAL_MAY_1_TO_NOV_1_0800",
+        "SEASONAL_NOV_2_TO_APR_30_0900"
+      ],
+      "supporting_owner_url": "",
+      "evidence_rechecked_on": "2026-10-26",
+      "research_only": true,
+      "public_approvals": 0,
+      "una_cum_accepted": 0,
+      "accepted_slot_expectations": [
+        {
+          "row_no": 4417,
+          "day": "Sunday",
+          "time": "08:00"
+        },
+        {
+          "row_no": 4418,
+          "day": "Sunday",
+          "time": "09:00"
+        }
+      ]
+    }
+  ]
+}

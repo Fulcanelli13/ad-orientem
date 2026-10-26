@@ -1,0 +1,74 @@
+name: Directory CL11 multi-row owner source evidence
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'data/directory/research/cl8-completeness-audit-20261026/**'
+      - 'data/directory/research/cl9-missal-source-review-20261026/**'
+      - 'data/directory/research/cl10-1962-slot-adjudication-20261026/**'
+      - 'data/directory/research/cl11-source-reconciliation-20261026/**'
+      - 'tools/directory/reconcile-cl11-owner-sources.py'
+      - '.github/workflows/directory-cl11-source-reconciliation.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'data/directory/research/cl8-completeness-audit-20261026/**'
+      - 'data/directory/research/cl9-missal-source-review-20261026/**'
+      - 'data/directory/research/cl10-1962-slot-adjudication-20261026/**'
+      - 'data/directory/research/cl11-source-reconciliation-20261026/**'
+      - 'tools/directory/reconcile-cl11-owner-sources.py'
+      - '.github/workflows/directory-cl11-source-reconciliation.yml'
+  workflow_dispatch:
+jobs:
+  source-reconciliation:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate original CL2–CL7 immutable source chain
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+      - name: Rebuild CL2–CL11 master and source/slot dispositions
+        run: |
+          python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ao-cl11.sqlite
+          python3 tools/directory/audit-cl-completeness.py --db /tmp/ao-cl11.sqlite --output-dir /tmp/ao-cl8
+          python3 tools/directory/audit-cl9-owner-evidence.py --db /tmp/ao-cl11.sqlite --cl8-csv /tmp/ao-cl8/missal_1962_reconciliation.csv --out-dir /tmp/ao-cl9
+          python3 tools/directory/adjudicate-cl10-missal-evidence.py --db /tmp/ao-cl11.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl10
+          python3 tools/directory/reconcile-cl11-owner-sources.py --db /tmp/ao-cl11.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl11
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl11/cl11_summary.json').read_text())
+          assert x['source_urls_newly_dispositioned']==33
+          assert x['candidate_rows_newly_dispositioned']==118
+          assert x['new_accepted_exact_owner_1962_evidence_rows']==42
+          assert x['additional_rows_held_after_source_review']==76
+          assert x['cumulative_CL10_CL11_accepted_evidence_rows']==121
+          assert x['unaltered_CL2_classification_1962_owner_witnesses']==3
+          assert x['una_cum_new']==x['public_pin_new']==x['current_timetable_new']==0
+          db=sqlite3.connect('/tmp/ao-cl11.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          print('CL11 exact-source owner review PASS')
+          PY
+      - name: Export reproducible CL11 JSON/CSV
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-cl11-source-reconciliation
+          path: /tmp/ao-cl11/
+          retention-days: 1
