@@ -1,0 +1,21 @@
+name: B100 216-gap research location batch
+
+on:
+  pull_request:
+    paths:
+      - "data/directory/research/b100-20261026-103-materialized-location-corrections.v1.json"
+      - "tests/directory-b100-bulk-location-patch.mjs"
+      - ".github/workflows/directory-b100-location-bulk.yml"
+  workflow_dispatch:
+
+jobs:
+  b100-applied-source-patches:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tests/directory-b100-bulk-location-patch.mjs
+      # B99/B100 binary workbook parity was checked outside CI.
+      # Neither XLSX is kept in this research branch.
