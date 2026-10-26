@@ -46,12 +46,12 @@ try{
        const resolution=await host.resolveDay(date);
        const id=resolution?.day?.main?.id;
        const original=resolution?.proper?.data;
-       const before=String(original?.preface?.lat??"").split("\n")[0];
+       const before=String(original?.preface?.lat??original?.preface?.la??"").split("\n")[0];
        const owner=authenticated1962PrefaceRecoveryOwner(id,original?.sourcePath);
        const recovered=await recoverReaderProperOmissions(original,{
          hostResolver:host.properResolver,principalCelebrationId:id
        });
-       const after=String(recovered?.preface?.lat??"").split("\n")[0];
+       const after=String(recovered?.preface?.lat??recovered?.preface?.la??"").split("\n")[0];
        const slot=properToReaderSlots(recovered,{language:"fr"}).slots.PREFACE;
        results.push({date,id,properSourcePath:original?.sourcePath??null,owner:owner?.section??null,
          before,after,source:recovered?.preface?.sourcePath??null,
@@ -63,6 +63,7 @@ try{
    }
    return results;
  },candidates);
+ console.log("MASS_1962_LENT_PREFACE_TRIAGE="+JSON.stringify(cases));
  for(const row of cases){
    assert.ok(!row.error,row.date+": "+row.error);
    assert.match(row.id,/^tempora:Quad[1-4]-[1-6]:[123]:v$/i,row.date);
