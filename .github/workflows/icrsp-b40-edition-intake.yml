@@ -26,6 +26,8 @@ on:
       - 'tests/test_icrsp_b47_vol7_vol9_11_workitems.py'
       - 'data/source-text/icrsp-france-b48-annecy-vii-ix-institutional-opening-date-gates.v1.json'
       - 'tests/test_icrsp_b48_annecy_vii_ix_institutional_witnesses.py'
+      - 'data/source-text/icrsp-france-b49-vol9-three-whole-work-boundary-three-zone-concordance.v1.json'
+      - 'tests/test_icrsp_b49_salesian_ix_three_zone_work_boundary.py'
   workflow_dispatch:
 
 permissions:
@@ -63,3 +65,5 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_icrsp_b47_vol7_vol9_11_workitems.py' -v
       - name: Verify B48 source page anchors, secondary witnesses and conjectural 1602 dates
         run: python -m unittest discover -s tests -p 'test_icrsp_b48_annecy_vii_ix_institutional_witnesses.py' -v
+      - name: Verify B49 Salesian volume IX three-zone work boundaries and nonpublication
+        run: python -m unittest discover -s tests -p 'test_icrsp_b49_salesian_ix_three_zone_work_boundary.py' -v
