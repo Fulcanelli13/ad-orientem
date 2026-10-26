@@ -77,3 +77,27 @@ test('1962 Candlemas exclusion and Palm psalm text gap are properly recorded', (
   assert.ok(distribution.includes('t.puerII'));
   assert.ok(!distribution.includes('psalm'));
 });
+
+
+test('Palm Sunday liturgical music handoff stays in existing 1962 owners', () => {
+  const handoff = readJSON('data/research/processionale-roman1962-palm-music-handoff-20261026.v1.json');
+  const palmPayload = readJSON('data/presentation/reader-palm.v1.json');
+  const palmReader = readFileSync(new URL('../src/mass/reader-palm.js', import.meta.url), 'utf8');
+  assert.equal(handoff.scope, 'RESEARCH_HANDOFF_ONLY_TO_EXISTING_1962_MISSAL_OWNER');
+  assert.equal(handoff.relatedHistoricalPR, '#1752');
+  assert.equal(handoff.findings.length, 5);
+  assert.ok(handoff.prohibitions.includes('DO_NOT_TOUCH_RUNTIME_IN_THIS_RESEARCH_PR'));
+  assert.ok(handoff.prohibitions.includes('DO_NOT_CREATE_PARALLEL_CHANT_EVENT_REGISTRY'));
+  assert.ok(handoff.prohibitions.includes('DO_NOT_ASSUME_ALL_OPTIONAL_PROCESSION_ANTIPHONS_ARE_ALWAYS_SUNG'));
+  for (const finding of handoff.findings) {
+    assert.match(finding.stageId,/^PALM-R0[2-7]$/);
+    assert.ok(palmReader.includes('id:"' + finding.stageId + '"'));
+    for (const sourcePath of (finding.existingSourcePaths || [])) {
+      const key=sourcePath.split('.').at(-1);
+      assert.ok(key in palmPayload.texts,'Existing PALM text key missing: ' + sourcePath);
+    }
+  }
+  assert.equal(handoff.findings[0].stageId,'PALM-R02');
+  assert.equal(handoff.findings[1].stageId,'PALM-R04');
+  assert.equal(handoff.findings[2].stageId,'PALM-R05');
+});
