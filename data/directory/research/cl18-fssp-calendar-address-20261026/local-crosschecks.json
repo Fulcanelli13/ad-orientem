@@ -1,0 +1,389 @@
+{
+  "schema": "AO_CL18_FSSP_LOCAL_CROSSCHECK_V1",
+  "reviewed_on": "2026-10-26",
+  "registry_authority": "First-party chapel, local FSSP, diocesan/parish and other distinct location-source crosschecks; 12 research items for 11 unique places; no automatic promotion.",
+  "crosschecks": [
+    {
+      "source_place_id": "CL14-DE-FSSP-024",
+      "city": "Ried-Hörmannsberg",
+      "focus": "St Peter und Paul church address",
+      "issue_class": "CHURCH_STREET_NUMBER_CONFLICT",
+      "affected_mass_row_ids": [
+        49
+      ],
+      "sources": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+          "role": "GERMAN_FSSP_MERINGER_STR_4"
+        },
+        {
+          "url": "https://www.fssp.org/en/find-us/where-are-we/",
+          "role": "INTERNATIONAL_FSSP_MERINGER_STR_2"
+        },
+        {
+          "url": "https://de.wikipedia.org/wiki/Liste_der_Baudenkm%C3%A4ler_in_Ried_%28bei_Mering%29",
+          "role": "HERITAGE_ENTRY_CHURCH_MERINGER_STR_2"
+        }
+      ],
+      "evidence_note": "German FSSP register gives Meringer Str. 4; FSSP international and state-listed heritage entry indicate the church is at Meringer Str. 2. Do not silently overwrite 4 with 2 or pin a guessed number.",
+      "blockers": [
+        "STREET_NUMBER_2_VS_4",
+        "REQUIRES_DOOR_LEVEL_COORDINATE"
+      ],
+      "required_followup": "Confirm church's precise visitor entrance from owner or state geo-parcel map; retain both source spellings meanwhile.",
+      "verified_at_source_on": "2026-10-26",
+      "site_coordinate_approved": false,
+      "visitor_entrance_approved": false,
+      "date_specific_mass_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-030",
+      "city": "Amberg",
+      "focus": "St Augustinus Schulkirche address",
+      "issue_class": "SCHOOL_COMPLEX_VS_CHURCH_NUMBER",
+      "affected_mass_row_ids": [
+        56
+      ],
+      "sources": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+          "role": "FSSP_NATIONAL_DEUTSCHE_SCHULGASSE_2"
+        },
+        {
+          "url": "https://www.fssp.org/en/find-us/where-are-we/",
+          "role": "FSSP_INTERNATIONAL_DEUTSCHE_SCHULGASSE_4"
+        },
+        {
+          "url": "https://www.bbkult.net/barock-addresses/deutsche-schulkirche-st-augustinus-amberg/",
+          "role": "HERITAGE_GUIDE_CHURCH_AS_SCHULGASSE_2"
+        },
+        {
+          "url": "https://de.wikipedia.org/wiki/Liste_der_Baudenkm%C3%A4ler_in_Amberg",
+          "role": "HERITAGE_MONUMENT_CHURCH_OBJECT_AS_SCHULGASSE_4"
+        }
+      ],
+      "evidence_note": "German FSSP and city heritage guide reference Deutsche Schulgasse 2, while FSSP international and Bavarian monument listing identify the church object at 4. These may denote adjoining school and chapel parcels; do not assume either street number identifies the liturgical entrance.",
+      "blockers": [
+        "STREET_NUMBER_2_VS_4",
+        "ADJACENT_SCHOOL_BUILDINGS",
+        "REQUIRES_CHURCH_DOOR_CONFIRMATION"
+      ],
+      "required_followup": "Confirm church doorway/courtyard routing separately from Dr-Johanna-Decker school postal address.",
+      "verified_at_source_on": "2026-10-26",
+      "site_coordinate_approved": false,
+      "visitor_entrance_approved": false,
+      "date_specific_mass_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-007",
+      "city": "Recklinghausen-Grullbad",
+      "focus": "St Joseph correct worship-site address and Saturday definition",
+      "issue_class": "ADDRESS_CORROBORATED_MASS_MONTH_RULE_CONFLICT",
+      "affected_mass_row_ids": [
+        27,
+        3455,
+        3456,
+        3457
+      ],
+      "sources": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+          "role": "GERMAN_FSSP_GRULLBADSTR_94_FIRST_SATURDAY"
+        },
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/recklinghausen/messzeitentermine.php",
+          "role": "LOCAL_FSSP_SATURDAY_AFTER_FIRST_FRIDAY"
+        },
+        {
+          "url": "https://www.katholisch-re.de/aktuelles-termine/gottesdienst",
+          "role": "PARISH_CHURCH_LIST_GRULLBADSTR_94"
+        },
+        {
+          "url": "https://www.fssp.org/en/find-us/where-are-we/",
+          "role": "INTERNATIONAL_FSSP_93_OLDER_LISTING"
+        }
+      ],
+      "evidence_note": "The church owner and German FSSP both identify Grullbadstraße 94, not the adjacent kindergarten at 94b or an international listing's 93. Local FSSP says the Saturday after the first Friday, which can differ from first Saturday of month. Exact event cadence for row 3456 is not settled by simply marking every first Saturday.",
+      "blockers": [
+        "FIRST_SATURDAY_VS_SATURDAY_AFTER_FIRST_FRIDAY",
+        "CHURCH_VS_KINDERGARTEN_ADDRESS",
+        "MONTHLY_EXCEPTION_BLOCKS_3456"
+      ],
+      "required_followup": "Use a date-scoped local FSSP calendar to establish row 3456's monthly logic before approving recurring dates.",
+      "verified_at_source_on": "2026-10-26",
+      "site_coordinate_approved": false,
+      "visitor_entrance_approved": false,
+      "date_specific_mass_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-031",
+      "city": "Neumarkt in der Oberpfalz",
+      "focus": "St Jobst Sunday Mass clock conflict",
+      "issue_class": "PRIMARY_PARISH_VS_FSSP_TIME_CONFLICT",
+      "affected_mass_row_ids": [
+        57,
+        3480
+      ],
+      "sources": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+          "role": "GERMAN_FSSP_SUNDAY_1015"
+        },
+        {
+          "url": "https://www.st-johannes-neumarkt.de/filialkirchen/st-jobst",
+          "role": "PARISH_SUNDAY_1000_AND_1115"
+        },
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/mittersthal/messzeiten.php",
+          "role": "FSSP_LOCAL_BRANCH_TIMES"
+        }
+      ],
+      "evidence_note": "The official German FSSP Mass-site directory gives Sun 10:15, but host parish St Johannes lists Sun 10:00 and 11:15. Monday and Friday 18:00 are corroborated. The 10:15 frozen row is book-scope supported, but exact ongoing Sunday clock is unresolved.",
+      "blockers": [
+        "SUNDAY_1015_VS_1000_AND_1115",
+        "NO_AUTOMATIC_1015_OCCURRENCES"
+      ],
+      "required_followup": "Inspect dated branch calendar for coming Sundays and determine whether two distinct liturgies are involved.",
+      "verified_at_source_on": "2026-10-26",
+      "site_coordinate_approved": false,
+      "visitor_entrance_approved": false,
+      "date_specific_mass_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-032",
+      "city": "Türkheim",
+      "focus": "Kapuzinerkirche alternate weekday church",
+      "issue_class": "OCCASIONAL_WORSHIP_SITE_RELOCATION",
+      "affected_mass_row_ids": [
+        1272,
+        3481,
+        3482,
+        3483
+      ],
+      "sources": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/tuerkheim/gottesdienstzeiten.php",
+          "role": "LOCAL_FSSP_WEEKDAY_1830_AND_MOVED_MASS_WARNING"
+        },
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+          "role": "GERMAN_FSSP_KAPUZINERKIRCHE_GENERAL_SCHEDULE"
+        }
+      ],
+      "evidence_note": "Local FSSP confirms the evening 18:30 Mass but states some weekday evenings move to the parish church of Türkheim. Consequently, row 3482 has a conditional *physical venue* even when the book and time are unchanged.",
+      "blockers": [
+        "WEEKDAY_EVENING_SITE_MAY_CHANGE",
+        "WEEKLY_BULLETIN_REQUIRED"
+      ],
+      "required_followup": "Attach dated alternate-worship-site records when local bulletin announces the displacement; never keep a false Kapuzinerkirche pin for an offsite event.",
+      "verified_at_source_on": "2026-10-26",
+      "site_coordinate_approved": false,
+      "visitor_entrance_approved": false,
+      "date_specific_mass_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-020",
+      "city": "München",
+      "focus": "Catholic Allerheiligenkirche am Kreuz, not unrelated evangelical Kreuzkirche",
+      "issue_class": "CHURCH_IDENTITY_LOCAL_OWNER_CONFIRMED",
+      "affected_mass_row_ids": [
+        42,
+        3474,
+        3475,
+        3476,
+        3477,
+        3478
+      ],
+      "sources": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/muenchen/gottesdienstordnung.php",
+          "role": "FSSP_MUENCHEN_KREUZSTRASSE_10_LOCAL_SCHEDULE"
+        }
+      ],
+      "evidence_note": "Local FSSP confirms Kreuzstraße 10 and all six frozen Mass slots. Its former Damenstiftskirche is presently closed due to structural damage; do not redirect these Masses there. The separate Protestant Kreuzkirche in Munich must never be selected by name-only geocoding.",
+      "blockers": [
+        "NAME_COLLISION_EVANGELICAL_KREUZKIRCHE",
+        "DAMENSTIFTSKIRCHE_CLOSED",
+        "CHECK_MONTHLY_NEWSLETTER"
+      ],
+      "required_followup": "Require Catholic church identity + precise Kreuzstraße 10 before geocoding.",
+      "verified_at_source_on": "2026-10-26",
+      "site_coordinate_approved": false,
+      "visitor_entrance_approved": false,
+      "date_specific_mass_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-027",
+      "city": "Wigratzbad",
+      "focus": "Sühnekirche Sunday 07:55",
+      "issue_class": "MULTI_CHAPEL_COMPLEX_DISTINCTION",
+      "affected_mass_row_ids": [
+        53
+      ],
+      "sources": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/priesterseminar/gottesdienstordnung.php",
+          "role": "SEMINARY_LOCAL_GIVES_SUHNEKIRCHE_0755_AND_OTHER_CHAPELS"
+        }
+      ],
+      "evidence_note": "Seminary confirms 07:55 Mass in Sühnekirche. This is a distinct chapel from 10:15 Seminarkapelle and 17:15 Gnadenkapelle, all at Wigratzbad. Do not use one shared church pin or infer wrong building from common address.",
+      "blockers": [
+        "MULTIPLE_CHAPELS_SAME_TOWN",
+        "DOORWAY_NOT_GEO_VERIFIED"
+      ],
+      "required_followup": "Geolocate Sühnekirche worship room separately from Seminarkapelle and Gnadenkapelle.",
+      "verified_at_source_on": "2026-10-26",
+      "site_coordinate_approved": false,
+      "visitor_entrance_approved": false,
+      "date_specific_mass_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-033",
+      "city": "Wigratzbad",
+      "focus": "Seminarkapelle Sunday 10:15",
+      "issue_class": "MULTI_CHAPEL_COMPLEX_DISTINCTION",
+      "affected_mass_row_ids": [
+        1274
+      ],
+      "sources": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/priesterseminar/gottesdienstordnung.php",
+          "role": "SEMINARY_LOCAL_SUNDAY_1015_SEMINARKAPELLE"
+        }
+      ],
+      "evidence_note": "Seminary independently lists Sunday 10:15 in Seminarkapelle; the Sühnekirche Sunday 07:55 and Gnadenkapelle Sunday 17:15 are separate spaces. Distinct historical research groups are to remain.",
+      "blockers": [
+        "MULTIPLE_CHAPELS_SAME_TOWN",
+        "DOORWAY_NOT_GEO_VERIFIED"
+      ],
+      "required_followup": "Record the seminary chapel's actual visitor entrance separate from the larger Sühnekirche.",
+      "verified_at_source_on": "2026-10-26",
+      "site_coordinate_approved": false,
+      "visitor_entrance_approved": false,
+      "date_specific_mass_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-023",
+      "city": "Grafing",
+      "focus": "Marktkirche weekday Monday Mass exception",
+      "issue_class": "FEAST_DAY_EXCLUSION_ADDED",
+      "affected_mass_row_ids": [
+        48
+      ],
+      "sources": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/muenchen/gottesdienstordnung.php",
+          "role": "LOCAL_MUENCHEN_FSSP_MONDAYS_1900_EXCEPT_HOLIDAYS"
+        }
+      ],
+      "evidence_note": "The same local FSSP community confirms Monday 19:00 in Dreifaltigkeitskirche, but expressly excludes feast days. Historical row 48's blanket Monday needs a calendar-dependent suppression gate.",
+      "blockers": [
+        "MONDAY_EXCEPT_FEAST_DAY",
+        "1962_FESTIVITIES_MUST_BE_MAPPED"
+      ],
+      "required_followup": "Exclude or require current newsletter confirmation for feast-day Mondays rather than generating unconditional dates.",
+      "verified_at_source_on": "2026-10-26",
+      "site_coordinate_approved": false,
+      "visitor_entrance_approved": false,
+      "date_specific_mass_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-015",
+      "city": "Saarlouis",
+      "focus": "Canisianum church current naming and same schedule",
+      "issue_class": "LOCAL_OWNER_NAME_AND_TIMES_CONFIRMED",
+      "affected_mass_row_ids": [
+        36,
+        3463,
+        3464,
+        3465,
+        3466
+      ],
+      "sources": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/saarlouis/messzeiten.php",
+          "role": "LOCAL_FSSP_SAARLOUIS_STIFTSTRASSE_18_TIMES"
+        }
+      ],
+      "evidence_note": "Local owner uses Canisiuskirche at Stiftstraße 18 and all five frozen day/time patterns, corroborating national Canisianum label and old name St Petrus Canisius. Retain aliases instead of inventing multiple locations.",
+      "blockers": [
+        "ALIAS_CANISIANUM_ST_PETRUS_CANISIUS"
+      ],
+      "required_followup": "Inspect door access independently before releasing its coordinates.",
+      "verified_at_source_on": "2026-10-26",
+      "site_coordinate_approved": false,
+      "visitor_entrance_approved": false,
+      "date_specific_mass_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL17-DE-FSSP-POTSDAM",
+      "city": "Potsdam",
+      "focus": "Hospital St Josefs Chapel address and campus access",
+      "issue_class": "SINGLE_CHAPEL_TWO_ACCESS_ADDRESSES",
+      "affected_mass_row_ids": [
+        20
+      ],
+      "sources": [
+        {
+          "url": "https://www.alexianer-potsdam.de/st-josefs-kapelle",
+          "role": "HOSPITAL_CHAPEL_SUNDAY_1700_OFFICIAL_ADDRESS"
+        },
+        {
+          "url": "https://www.alexianer-potsdam.de/orientierung",
+          "role": "HOSPITAL_ZIMMERSTRASSE_VEHICLE_ACCESS"
+        },
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+          "role": "FSSP_SUNDAY_1700_ALTERNATE_CAMPUS_ADDRESS"
+        }
+      ],
+      "evidence_note": "Already evidenced in CL17: Allee nach Sanssouci 7 is the chapel/hospital address and Zimmerstraße 6 the campus vehicle access; one worship chapel, not two venues.",
+      "blockers": [
+        "TWO_ACCESS_ADDRESSES_SAME_HOSPITAL"
+      ],
+      "required_followup": "Do not release coordinate until worship-room entry and correct transport access are verified.",
+      "verified_at_source_on": "2026-10-26",
+      "site_coordinate_approved": false,
+      "visitor_entrance_approved": false,
+      "date_specific_mass_approved": false,
+      "public_release": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-021",
+      "city": "Ingolstadt-Oberhaunstadt",
+      "focus": "St Willibald 10:00 with historical feast-time warning",
+      "issue_class": "OWNER_TIMETABLE_WITH_UNRESOLVED_FEAST_OVERRIDE",
+      "affected_mass_row_ids": [
+        45
+      ],
+      "sources": [
+        {
+          "url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/bettbrunn/messzeiten.php",
+          "role": "LOCAL_FSSP_SUNDAY_1000_AND_UNSPECIFIED_EXCEPTIONS"
+        }
+      ],
+      "evidence_note": "Local FSSP owner agrees Sunday 10:00 and mentions exceptions without a complete date/time list; an earlier source records June 13 and October 3 at 11:00 rather than 10:00. Keep these conditional dates as unverified exception rules, not unconditional 10:00 Mass times.",
+      "blockers": [
+        "FEAST_TIME_CHANGE_1100_SOME_DATES",
+        "DATE_EFFECTIVITY_UNVERIFIED"
+      ],
+      "required_followup": "Check dated monthly bulletin for any special-time override before publishing 10:00.",
+      "verified_at_source_on": "2026-10-26",
+      "site_coordinate_approved": false,
+      "visitor_entrance_approved": false,
+      "date_specific_mass_approved": false,
+      "public_release": false
+    }
+  ],
+  "public_release": false
+}
