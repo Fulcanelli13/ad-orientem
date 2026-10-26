@@ -96,6 +96,11 @@ const epiphanyHistory=historical.entries.find(x=>x.custom_id==="EPIP-003");
 assert.ok(epiphanyAttestation?.source_ids.includes("CATHCULT-HOUSE"));
 assert.ok(epiphanyHistory?.source_ids.includes("CATHCULT-HOUSE"));
 assert.ok(registered.get("CATHCULT-HOUSE")?.url?.startsWith("https://"));
+assert.ok(calendarCustomArticle("EPIP-003").history.en.includes("Weiser (1958, p. 149)"));
+assert.ok(calendarCustomArticle("CRIB-001").history.en.includes("Weiser (1958, p. 300)"));
+assert.ok(calendarCustomArticle("CRIB-001").history.fr.includes("crèches et décorations"));
+assert.ok(epiphanyAttestation.source_ids.includes("WEISER-1958-CHRISTIAN-FEASTS"));
+assert.ok(epiphanyHistory.source_ids.includes("WEISER-1958-CHRISTIAN-FEASTS"));
 assert.match(calendarCustomArticle("EPIP-003").caution.en,/priest|Roman Ritual/i);
 assert.match(calendarCustomArticle("CRIB-001").caution.en,/1962/);
 // Fr McNamara's 2015 answer concerns church Nativity scenes. Do not cite

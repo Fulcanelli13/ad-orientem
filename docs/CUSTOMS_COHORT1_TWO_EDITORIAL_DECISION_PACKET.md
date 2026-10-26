@@ -32,7 +32,7 @@ At Epiphany some Catholic families mark their doorway with the Cross, the new ye
 
 **Historical evidence**
 
-The older Roman Ritual, published in Philip Weller's 1952 translation, includes a particular blessing of a home at Epiphany with the Magnificat, holy water and incense. The Holy See's Directory on Popular Piety (2002, §118) separately records doorway inscriptions in blessed chalk, linking them to the Magi and charity. These sources describe related actions, not an obligation or a universal parish service.
+Francis X. Weiser (1958, p. 149) describes the priestly Epiphany house blessing with the Magnificat, holy water and incense, followed by a chalk inscription on the doorway. Philip Weller's 1952 Roman Ritual translation preserves the priestly formulary. Separately, the Holy See's Directory on Popular Piety (2002, §118) and Irish episcopal household guidance (2022) describe popular or family chalking. The family inscription is not the priest's ritual blessing, and none of these sources makes either practice compulsory.
 
 **Spiritual meaning**
 
@@ -66,7 +66,7 @@ Epiphany, 6 January in the 1962 Calendar
 
 **Historical evidence**
 
-L'ancien Rituel romain, dans la traduction publiée par Philip Weller en 1952, comprend une bénédiction particulière des maisons à l'Épiphanie avec le Magnificat, l'eau bénite et l'encens. Le Directoire du Saint-Siège sur la piété populaire (2002, §118) mentionne aussi les inscriptions à la craie bénite, en lien avec les Mages et la charité. Il s'agit de gestes associés, non d'une obligation ni d'un service paroissial universel.
+Francis X. Weiser (1958, p. 149) décrit la bénédiction sacerdotale de la maison à l'Épiphanie, avec le Magnificat, l'aspersion d'eau bénite et l'encensement, suivie d'une inscription à la craie sur la porte. La traduction du Rituel romain publiée par Philip Weller en 1952 conserve la formule sacerdotale. Distinctement, le Directoire sur la piété populaire (2002, §118) et les indications des évêques irlandais pour les familles (2022) évoquent l'inscription populaire ou familiale. Celle-ci ne remplace pas la bénédiction rituelle du prêtre, et aucune de ces sources ne rend ces pratiques obligatoires.
 
 **Spiritual meaning**
 
@@ -92,9 +92,9 @@ Coutume domestique catholique facultative, variable selon les régions, distinct
 
 **Historical folio owner**: `data/customs/customs-historical-folios.v1.json` · COHORT1_SOURCE_BOUNDED_CANDIDATE_NOT_HUMAN_SIGNED
 
-EN: The older Roman Ritual, published in Philip Weller's 1952 translation, includes a particular blessing of a home at Epiphany with the Magnificat, holy water and incense. The Holy See's Directory on Popular Piety (2002, §118) separately records doorway inscriptions in blessed chalk, linking them to the Magi and charity. These sources describe related actions, not an obligation or a universal parish service.
+EN: Francis X. Weiser (1958, p. 149) describes the priestly Epiphany house blessing with the Magnificat, holy water and incense, followed by a chalk inscription on the doorway. Philip Weller's 1952 Roman Ritual translation preserves the priestly formulary. Separately, the Holy See's Directory on Popular Piety (2002, §118) and Irish episcopal household guidance (2022) describe popular or family chalking. The family inscription is not the priest's ritual blessing, and none of these sources makes either practice compulsory.
 
-FR: L'ancien Rituel romain, dans la traduction publiée par Philip Weller en 1952, comprend une bénédiction particulière des maisons à l'Épiphanie avec le Magnificat, l'eau bénite et l'encens. Le Directoire du Saint-Siège sur la piété populaire (2002, §118) mentionne aussi les inscriptions à la craie bénite, en lien avec les Mages et la charité. Il s'agit de gestes associés, non d'une obligation ni d'un service paroissial universel.
+FR: Francis X. Weiser (1958, p. 149) décrit la bénédiction sacerdotale de la maison à l'Épiphanie, avec le Magnificat, l'aspersion d'eau bénite et l'encensement, suivie d'une inscription à la craie sur la porte. La traduction du Rituel romain publiée par Philip Weller en 1952 conserve la formule sacerdotale. Distinctement, le Directoire sur la piété populaire (2002, §118) et les indications des évêques irlandais pour les familles (2022) évoquent l'inscription populaire ou familiale. Celle-ci ne remplace pas la bénédiction rituelle du prêtre, et aucune de ces sources ne rend ces pratiques obligatoires.
 
 **Source citations present in the Calendar article**
 
@@ -131,7 +131,7 @@ In some Catholic households, the Nativity crib remains in place until 2 February
 
 **Historical evidence**
 
-Weiser records Candlemas as a traditional occasion for taking down Christmas decorations. Fr Edward McNamara (2015), discussing Nativity scenes in churches, records different local dates for taking them down: after Epiphany, after the Baptism of the Lord, or on 2 February. This documents diversity of local dates, not the household practice in every locality. No universal liturgical norm prescribes when families must put away their crib.
+Weiser (1958, p. 300) records Candlemas as the end of the popular Christmas season in many countries and explicitly describes cribs and decorations being stored for the following Christmas. Fr Edward McNamara (2015), discussing Nativity scenes in churches, documents differing local removal dates: after Epiphany, after the Baptism of the Lord, or on 2 February. Historical popular usage and present-day church arrangements are distinct evidence; neither imposes a household rule or changes the 1962 liturgical season.
 
 **Spiritual meaning**
 
@@ -165,7 +165,7 @@ Dans certains foyers catholiques, la crèche reste installée jusqu'au 2 févrie
 
 **Historical evidence**
 
-Weiser signale la Chandeleur comme date traditionnelle pour retirer les décorations de Noël. À propos des crèches installées dans les églises, le P. Edward McNamara (2015) constate plusieurs dates locales de retrait : après l'Épiphanie, après le Baptême du Seigneur ou le 2 février. Cela atteste la diversité des dates, sans établir que les familles suivent partout le même usage. Aucune norme liturgique universelle n'impose aux foyers une date pour ranger leur crèche.
+Weiser (1958, p. 300) présente la Chandeleur comme la fin de la période populaire de Noël dans de nombreux pays et précise que crèches et décorations sont rangées pour le Noël suivant. À propos des crèches installées dans les églises, le P. Edward McNamara (2015) relève plusieurs dates locales de retrait : après l'Épiphanie, après le Baptême du Seigneur ou le 2 février. L'usage populaire historique et l'organisation actuelle des églises constituent des témoignages distincts : ni l'un ni l'autre n'impose une règle aux foyers ni ne modifie la période liturgique de 1962.
 
 **Spiritual meaning**
 
@@ -191,9 +191,9 @@ Chandeleur, le 2 février ; coutume familiale facultative
 
 **Historical folio owner**: `data/customs/customs-historical-folios.v1.json` · COHORT1_SOURCE_BOUNDED_CANDIDATE_NOT_HUMAN_SIGNED
 
-EN: Weiser records Candlemas as a traditional occasion for taking down Christmas decorations. Fr Edward McNamara (2015), discussing Nativity scenes in churches, records different local dates for taking them down: after Epiphany, after the Baptism of the Lord, or on 2 February. This documents diversity of local dates, not the household practice in every locality. No universal liturgical norm prescribes when families must put away their crib.
+EN: Weiser (1958, p. 300) records Candlemas as the end of the popular Christmas season in many countries and explicitly describes cribs and decorations being stored for the following Christmas. Fr Edward McNamara (2015), discussing Nativity scenes in churches, documents differing local removal dates: after Epiphany, after the Baptism of the Lord, or on 2 February. Historical popular usage and present-day church arrangements are distinct evidence; neither imposes a household rule or changes the 1962 liturgical season.
 
-FR: Weiser signale la Chandeleur comme date traditionnelle pour retirer les décorations de Noël. À propos des crèches installées dans les églises, le P. Edward McNamara (2015) constate plusieurs dates locales de retrait : après l'Épiphanie, après le Baptême du Seigneur ou le 2 février. Cela atteste la diversité des dates, sans établir que les familles suivent partout le même usage. Aucune norme liturgique universelle n'impose aux foyers une date pour ranger leur crèche.
+FR: Weiser (1958, p. 300) présente la Chandeleur comme la fin de la période populaire de Noël dans de nombreux pays et précise que crèches et décorations sont rangées pour le Noël suivant. À propos des crèches installées dans les églises, le P. Edward McNamara (2015) relève plusieurs dates locales de retrait : après l'Épiphanie, après le Baptême du Seigneur ou le 2 février. L'usage populaire historique et l'organisation actuelle des églises constituent des témoignages distincts : ni l'un ni l'autre n'impose une règle aux foyers ni ne modifie la période liturgique de 1962.
 
 **Source citations present in the Calendar article**
 
