@@ -1,0 +1,1093 @@
+{
+  "schema": "AO_CL7_FINAL_GAPS_RESEARCH_OVERLAY_V1",
+  "created_on": "2026-10-26",
+  "extends": "AO_CL6_CONTINUATION_RESEARCH_OVERLAY_V1",
+  "baseline_commit": "4d909d34c30dd77c3a181500dd75db25f012f9bd",
+  "release_state": "RESEARCH_ONLY_NOT_PUBLIC_NO_CANONICAL_CHANGE",
+  "summary": {
+    "cl6_remaining_description_blanks": 49,
+    "cl7_description_backfills": 13,
+    "description_blanks_after_cl7": 36,
+    "initial_missing_descriptions_806_documented": 770,
+    "original_CL2_physical_site_anchors_unchanged": 2579,
+    "original_identity_exception_flags_open": 40,
+    "original_unverified_independent_B92_cases_still_held": 10,
+    "current_mass_timetables_promoted": 0,
+    "public_places_promoted": 0
+  },
+  "description_backfills": [
+    {
+      "historical_group_id": "RG-EC296D81D4FE",
+      "original_anchor_id": "RG-EC296D81D4FE",
+      "country": "CA",
+      "site_name": "Paroisse Sainte-Marie (Saint Mary's Parish) Ontario, Canada",
+      "physical_description": "St Mary's Church, 1043 Isabella Street, Linwood, ON N0B 2A0, Canada",
+      "source_url": "https://commons.wikimedia.org/wiki/Category:Saint_Mary_Church_(Linwood,_Ontario)",
+      "evidence_class": "SECONDARY_GEOLOCATED_BUILDING_REGISTRY",
+      "physical_site_type": "CATHOLIC_CHURCH",
+      "precision": "POSTAL_NUMBER",
+      "evidence_limit": "Church itself 1043 Isabella; St Mary's community chaplain office is separately recorded as 1039 Isabella, not the Mass entrance.",
+      "verified_2026_schedule": false,
+      "geocode_public_approved": false,
+      "identity_public_admitted": false
+    },
+    {
+      "historical_group_id": "RG-D7F96C683345",
+      "original_anchor_id": "RG-D7F96C683345",
+      "country": "CA",
+      "site_name": "Église de la Sainte-Famille (Holy Family Church) Ontario, Canada",
+      "physical_description": "Holy Family Church, Riverside Drive, Britt, Ontario, Canada (number disputed: 949)",
+      "source_url": "https://www.latinmassdir.org/venue/eglise-de-la-sainte-famille-holy-family-church-britt-canada/",
+      "evidence_class": "SPECIALIST_VENUE_LOCATION",
+      "physical_site_type": "CATHOLIC_CHURCH",
+      "precision": "STREET_NAME_ONLY",
+      "evidence_limit": "The specialist directory names Riverside Drive; other sources disagree between 949 Riverside and 949 Highway 526. Do not approve a street-number pin.",
+      "verified_2026_schedule": false,
+      "geocode_public_approved": false,
+      "identity_public_admitted": false
+    },
+    {
+      "historical_group_id": "RG-D9AE63BE9AF8",
+      "original_anchor_id": "RG-D9AE63BE9AF8",
+      "country": "CA",
+      "site_name": "Église Notre-Dame-du-Mont-Carmel (Our Lady of Mount Carmel Church) Ontario, Canada",
+      "physical_description": "Our Lady of Mount Carmel Church, 51 Albert Street East, Hastings, ON, Canada",
+      "source_url": "https://mapcarta.com/W332456242",
+      "evidence_class": "OPENSTREETMAP_BUILDING_GEOMETRY",
+      "physical_site_type": "CATHOLIC_CHURCH",
+      "precision": "POSTAL_NUMBER",
+      "evidence_limit": "OSM-linked building location matches frozen lat 44.3124 long -77.9567; verify first-party operating Mass schedule separately.",
+      "verified_2026_schedule": false,
+      "geocode_public_approved": false,
+      "identity_public_admitted": false
+    },
+    {
+      "historical_group_id": "RG-D7E36888FDF3",
+      "original_anchor_id": "RG-D7E36888FDF3",
+      "country": "CA",
+      "site_name": "Église Saint-François-d'Assise (Saint Francis of Assisi Church) Newfoundland and Labrador, Canada",
+      "physical_description": "St Francis of Assisi Church, Outer Cove Road, Outer Cove, Newfoundland and Labrador, Canada (number disputed)",
+      "source_url": "https://queenscollegenl.ca/wp-content/uploads/2021/08/ChurchDirectoryStJohnsNL.pdf",
+      "evidence_class": "HISTORICAL_DIOCESAN_DIRECTORY",
+      "physical_site_type": "CATHOLIC_CHURCH",
+      "precision": "STREET_NAME_ONLY",
+      "evidence_limit": "Historic diocesan directory says 49 Outer Cove Road, contemporary secondary address 36 Outer Cove Road; hold house number and exact door.",
+      "verified_2026_schedule": false,
+      "geocode_public_approved": false,
+      "identity_public_admitted": false
+    },
+    {
+      "historical_group_id": "RG-866F0FE980DA",
+      "original_anchor_id": "RG-866F0FE980DA",
+      "country": "CA",
+      "site_name": "Église Saint-Joseph (Saint Joseph's Church) Ontario, Canada",
+      "physical_description": "St Joseph Church, 293 Stuart Street, Sarnia, ON, Canada",
+      "source_url": "https://www.doorsopenontario.on.ca/lambton-county-1/st-joseph-church",
+      "evidence_class": "ONTARIO_HERITAGE_TRUST",
+      "physical_site_type": "CATHOLIC_CHURCH",
+      "precision": "POSTAL_NUMBER",
+      "evidence_limit": "Province's heritage agency lists exact church address; no new current old-rite timetable certified.",
+      "verified_2026_schedule": false,
+      "geocode_public_approved": false,
+      "identity_public_admitted": false
+    },
+    {
+      "historical_group_id": "RG-FCF911BD0F54",
+      "original_anchor_id": "RG-FCF911BD0F54",
+      "country": "CA",
+      "site_name": "Église Saint-Patrice (Saint Patrick Church) Ontario, Canada",
+      "physical_description": "St Patrick Church, 1600 Flos Road Four West, Phelpston (Springwater), Ontario, Canada",
+      "source_url": "https://commons.wikimedia.org/wiki/Category:St._Patrick_Church_(Phelpston,_Ontario)",
+      "evidence_class": "SECONDARY_GEOLOCATED_BUILDING_REGISTRY",
+      "physical_site_type": "CATHOLIC_CHURCH",
+      "precision": "POSTAL_NUMBER",
+      "evidence_limit": "Phelpston Springwater explicit, unlike Schomberg same-name St Patrick site in CL5.",
+      "verified_2026_schedule": false,
+      "geocode_public_approved": false,
+      "identity_public_admitted": false
+    },
+    {
+      "historical_group_id": "RG-42B84C1F586E",
+      "original_anchor_id": "RG-42B84C1F586E",
+      "country": "CA",
+      "site_name": "Église Sainte-Anne (Saint Ann's Church) Ontario, Canada",
+      "physical_description": "St Ann Church, 120 Sherman Avenue North, Hamilton, ON L8L 6M6, Canada",
+      "source_url": "https://stah.hwcdsb.ca/our_faith/parish_information",
+      "evidence_class": "CATHOLIC_SCHOOL_BOARD_PARISH_DIRECTORY",
+      "physical_site_type": "CATHOLIC_CHURCH",
+      "precision": "POSTAL_NUMBER",
+      "evidence_limit": "Local Catholic school board gives exact church address; older Extraordinary Form times are not imported.",
+      "verified_2026_schedule": false,
+      "geocode_public_approved": false,
+      "identity_public_admitted": false
+    },
+    {
+      "historical_group_id": "RG-3E135A9E5C09",
+      "original_anchor_id": "RG-3E135A9E5C09",
+      "country": "ES",
+      "site_name": "Monasterio de Santa María de la Rábida",
+      "physical_description": "Monasterio de Santa María de La Rábida, Diseminado de la Rábida s/n, 21819 Palos de la Frontera, Huelva, Spain",
+      "source_url": "https://turismoenpalos.es/page/39/monasterio-rabida",
+      "evidence_class": "MUNICIPAL_TOURISM_OFFICIAL",
+      "physical_site_type": "FRANCISCAN_MONASTERY_AND_CHURCH",
+      "precision": "NAMED_CAMPUS_NO_NUMBER",
+      "evidence_limit": "Municipality gives monastery complex; active Franciscan community with worship but no current 1962 Missal assertion.",
+      "verified_2026_schedule": false,
+      "geocode_public_approved": false,
+      "identity_public_admitted": false
+    },
+    {
+      "historical_group_id": "RG-EE22A08568B9",
+      "original_anchor_id": "RG-EE22A08568B9",
+      "country": "ES",
+      "site_name": "Sant Jordi de Vallcarca",
+      "physical_description": "Parròquia de Sant Jordi de Vallcarca, Viaducte de Vallcarca 7–13, 08023 Barcelona, Spain",
+      "source_url": "https://esglesia.barcelona/transparencia/",
+      "evidence_class": "ARCHDIOCESE_PROPERTY_REGISTER",
+      "physical_site_type": "CATHOLIC_CHURCH",
+      "precision": "POSTAL_RANGE",
+      "evidence_limit": "Barcelona Archdiocese transparency register lists Temple Sant Jordi de Vallcarca at 7–13; entrance number requires local check.",
+      "verified_2026_schedule": false,
+      "geocode_public_approved": false,
+      "identity_public_admitted": false
+    },
+    {
+      "historical_group_id": "RG-06FF8F6BD4B6",
+      "original_anchor_id": "RG-06FF8F6BD4B6",
+      "country": "IT",
+      "site_name": "Chiesa del Sacro Cuore, detta ‘dei Sacconi'",
+      "physical_description": "Chiesa del Sacro Cuore dei Sacconi, Via Corridoni 16, Tolentino (MC), Italy",
+      "source_url": "https://ritoantico.it/marche/tolentino",
+      "evidence_class": "SPECIALIST_TRADITIONAL_MASS_DIRECTORY",
+      "physical_site_type": "CONFRATERNITY_CHURCH",
+      "precision": "POSTAL_NUMBER",
+      "evidence_limit": "The site matches Tolentino on frozen coordinates; owner access and schedule should be verified before public release.",
+      "verified_2026_schedule": false,
+      "geocode_public_approved": false,
+      "identity_public_admitted": false
+    },
+    {
+      "historical_group_id": "RG-44B197BD0666",
+      "original_anchor_id": "RG-44B197BD0666",
+      "country": "IT",
+      "site_name": "Chiesa di S. Bernardino",
+      "physical_description": "Chiesa di San Bernardino, Via Pignolo 57, 24121 Bergamo, Italy",
+      "source_url": "https://www.visitbergamo.net/oggetto/chiesa-di-san-bernardino/",
+      "evidence_class": "BERGAMO_TOURISM_OFFICIAL",
+      "physical_site_type": "CATHOLIC_CHURCH_CLOSED_FOR_WORKS",
+      "precision": "POSTAL_NUMBER",
+      "evidence_limit": "Tourism authority says CLOSED since 5 March 2024 for structural assessments; treat as not presently an accessible Mass location despite legacy dates.",
+      "verified_2026_schedule": false,
+      "geocode_public_approved": false,
+      "identity_public_admitted": false
+    },
+    {
+      "historical_group_id": "RG-4F6045FD2887",
+      "original_anchor_id": "RG-4F6045FD2887",
+      "country": "IT",
+      "site_name": "Oratorio dei Bianchi",
+      "physical_description": "Oratorio della Santissima Trinità (Oratorio dei Bianchi), Vico della Rosa, Rapallo (GE), Italy",
+      "source_url": "https://fuorigenova.cittametropolitana.genova.it/node/4817",
+      "evidence_class": "GENOA_METROPOLITAN_GOVERNMENT",
+      "physical_site_type": "ORATORY",
+      "precision": "STREET_NAME_ONLY",
+      "evidence_limit": "Government cultural register lists the chapel and matching frozen coordinates; opening by request is not evidence of recurring Mass.",
+      "verified_2026_schedule": false,
+      "geocode_public_approved": false,
+      "identity_public_admitted": false
+    },
+    {
+      "historical_group_id": "RG-12ECC5D067B6",
+      "original_anchor_id": "RG-12ECC5D067B6",
+      "country": "IT",
+      "site_name": "St Sebastiano",
+      "physical_description": "Chiesa di San Sebastiano, Via San Francesco 26, 57123 Livorno, Italy",
+      "source_url": "https://www.icrss.it/livorno/",
+      "evidence_class": "ICKSP_FIRST_PARTY",
+      "physical_site_type": "CATHOLIC_CHURCH",
+      "precision": "POSTAL_NUMBER",
+      "evidence_limit": "ICKSP Livorno names this church and street number explicitly. 1962 liturgical services sourced independently of physical identity.",
+      "verified_2026_schedule": false,
+      "geocode_public_approved": false,
+      "identity_public_admitted": false
+    }
+  ],
+  "description_queue": [
+    {
+      "group_id": "RG-FC6FE3F93EA0",
+      "country": "BE",
+      "site_name": "Maison Saint-Joseph",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "OTHER_COUNTRY"
+    },
+    {
+      "group_id": "RG-E692D1C726F0",
+      "country": "CA",
+      "site_name": "Notre-Dame-des-Anges (Our Lady of the Angels) Ontario, Canada",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_CANADA"
+    },
+    {
+      "group_id": "RG-EC296D81D4FE",
+      "country": "CA",
+      "site_name": "Paroisse Sainte-Marie (Saint Mary's Parish) Ontario, Canada",
+      "review_disposition": "CL7_SOURCE_BACKED_DESCRIPTION",
+      "priority": "COUNTRY_CANADA"
+    },
+    {
+      "group_id": "RG-D7F96C683345",
+      "country": "CA",
+      "site_name": "Église de la Sainte-Famille (Holy Family Church) Ontario, Canada",
+      "review_disposition": "CL7_SOURCE_BACKED_DESCRIPTION",
+      "priority": "COUNTRY_CANADA"
+    },
+    {
+      "group_id": "RG-D9AE63BE9AF8",
+      "country": "CA",
+      "site_name": "Église Notre-Dame-du-Mont-Carmel (Our Lady of Mount Carmel Church) Ontario, Canada",
+      "review_disposition": "CL7_SOURCE_BACKED_DESCRIPTION",
+      "priority": "COUNTRY_CANADA"
+    },
+    {
+      "group_id": "RG-D7E36888FDF3",
+      "country": "CA",
+      "site_name": "Église Saint-François-d'Assise (Saint Francis of Assisi Church) Newfoundland and Labrador, Canada",
+      "review_disposition": "CL7_SOURCE_BACKED_DESCRIPTION",
+      "priority": "COUNTRY_CANADA"
+    },
+    {
+      "group_id": "RG-425B0E8891EE",
+      "country": "CA",
+      "site_name": "Église Saint-Jean (Saint John's Church) Ontario, Canada",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_CANADA"
+    },
+    {
+      "group_id": "RG-866F0FE980DA",
+      "country": "CA",
+      "site_name": "Église Saint-Joseph (Saint Joseph's Church) Ontario, Canada",
+      "review_disposition": "CL7_SOURCE_BACKED_DESCRIPTION",
+      "priority": "COUNTRY_CANADA"
+    },
+    {
+      "group_id": "RG-FCF911BD0F54",
+      "country": "CA",
+      "site_name": "Église Saint-Patrice (Saint Patrick Church) Ontario, Canada",
+      "review_disposition": "CL7_SOURCE_BACKED_DESCRIPTION",
+      "priority": "COUNTRY_CANADA"
+    },
+    {
+      "group_id": "RG-8DAD9EA82195",
+      "country": "CA",
+      "site_name": "Église Saint-Vincent (Saint Vincent Church) St. Paul County No. 19, Canada",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_CANADA"
+    },
+    {
+      "group_id": "RG-CF9686A2CC46",
+      "country": "CA",
+      "site_name": "Église Sainte-Anne (Saint Ann's Church) Manitoba, Canada",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_CANADA"
+    },
+    {
+      "group_id": "RG-42B84C1F586E",
+      "country": "CA",
+      "site_name": "Église Sainte-Anne (Saint Ann's Church) Ontario, Canada",
+      "review_disposition": "CL7_SOURCE_BACKED_DESCRIPTION",
+      "priority": "COUNTRY_CANADA"
+    },
+    {
+      "group_id": "RG-4177975BE08A",
+      "country": "DE",
+      "site_name": "St Joseph",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "OTHER_COUNTRY"
+    },
+    {
+      "group_id": "RG-DE8F28D8A0EC",
+      "country": "ES",
+      "site_name": "Iglesia de las Siervas de María",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_SPAIN"
+    },
+    {
+      "group_id": "RG-7C8BB6333C7F",
+      "country": "ES",
+      "site_name": "Iglesia de San Ildefonso",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_SPAIN"
+    },
+    {
+      "group_id": "RG-4285190BD8AE",
+      "country": "ES",
+      "site_name": "Iglesia de San Nicolás de Bari",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_SPAIN"
+    },
+    {
+      "group_id": "RG-2565E7B509ED",
+      "country": "ES",
+      "site_name": "Iglesia del Antiguo Colegio de las Adoratrices",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_SPAIN"
+    },
+    {
+      "group_id": "RG-1EDB76F4B57B",
+      "country": "ES",
+      "site_name": "Iglesia del Salvador",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_SPAIN"
+    },
+    {
+      "group_id": "RG-3E135A9E5C09",
+      "country": "ES",
+      "site_name": "Monasterio de Santa María de la Rábida",
+      "review_disposition": "CL7_SOURCE_BACKED_DESCRIPTION",
+      "priority": "COUNTRY_SPAIN"
+    },
+    {
+      "group_id": "RG-7CDEAC5CBBC9",
+      "country": "ES",
+      "site_name": "Oasis de Jesús Sacerdote",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_SPAIN"
+    },
+    {
+      "group_id": "RG-3FB2F55DB78A",
+      "country": "ES",
+      "site_name": "Parroquia San Bartolomé",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_SPAIN"
+    },
+    {
+      "group_id": "RG-562C27FA24C2",
+      "country": "ES",
+      "site_name": "Real Monasterio de la Encarnación",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_SPAIN"
+    },
+    {
+      "group_id": "RG-AADE0DB1F592",
+      "country": "ES",
+      "site_name": "Sant Joan Baptista",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_SPAIN"
+    },
+    {
+      "group_id": "RG-EE22A08568B9",
+      "country": "ES",
+      "site_name": "Sant Jordi de Vallcarca",
+      "review_disposition": "CL7_SOURCE_BACKED_DESCRIPTION",
+      "priority": "COUNTRY_SPAIN"
+    },
+    {
+      "group_id": "RG-C19C55301A0B",
+      "country": "ES",
+      "site_name": "Santa María de la Asunción",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_SPAIN"
+    },
+    {
+      "group_id": "RG-A3F94D9DDAE3",
+      "country": "FR",
+      "site_name": "Chapelle du Saint-Suaire",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "OTHER_COUNTRY"
+    },
+    {
+      "group_id": "RG-151514308AF0",
+      "country": "GA",
+      "site_name": "Mission St Therese of the Infant Jesus",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "OTHER_COUNTRY"
+    },
+    {
+      "group_id": "RG-53399B2A1CEF",
+      "country": "GA",
+      "site_name": "Paroisse Notre-Dame-de-Lourdes",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "OTHER_COUNTRY"
+    },
+    {
+      "group_id": "RG-06FF8F6BD4B6",
+      "country": "IT",
+      "site_name": "Chiesa del Sacro Cuore, detta ‘dei Sacconi'",
+      "review_disposition": "CL7_SOURCE_BACKED_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-44B197BD0666",
+      "country": "IT",
+      "site_name": "Chiesa di S. Bernardino",
+      "review_disposition": "CL7_SOURCE_BACKED_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-473730143FEF",
+      "country": "IT",
+      "site_name": "Chiesa di S. Giorgio",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-2339765E0FFC",
+      "country": "IT",
+      "site_name": "Chiesa di San Giorgio",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-C10C46A4C0C7",
+      "country": "IT",
+      "site_name": "Chiesa Rettoria di S. Giuseppe",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-E63D50EF0204",
+      "country": "IT",
+      "site_name": "Chiesa Sacro Cuore",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-2B17BF197D61",
+      "country": "IT",
+      "site_name": "Christ the King",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-19429258007E",
+      "country": "IT",
+      "site_name": "Church of Poor Saint Francis",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-4F6045FD2887",
+      "country": "IT",
+      "site_name": "Oratorio dei Bianchi",
+      "review_disposition": "CL7_SOURCE_BACKED_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-67EB4DB0F334",
+      "country": "IT",
+      "site_name": "Santuario del Sacro Cuore in Sales",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-69D13D408C90",
+      "country": "IT",
+      "site_name": "Shrine of Our Lady of Pompeii",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-1EA095B17019",
+      "country": "IT",
+      "site_name": "St Anthony of Padua",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-63FD1D024A91",
+      "country": "IT",
+      "site_name": "St Erasmus",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-4D8652F0EE54",
+      "country": "IT",
+      "site_name": "St Martha",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-7165948281F2",
+      "country": "IT",
+      "site_name": "St Mary of Consolation",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-640BFDCC9E62",
+      "country": "IT",
+      "site_name": "St Peter",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-12ECC5D067B6",
+      "country": "IT",
+      "site_name": "St Sebastiano",
+      "review_disposition": "CL7_SOURCE_BACKED_DESCRIPTION",
+      "priority": "COUNTRY_ITALY"
+    },
+    {
+      "group_id": "RG-BCC5A5982FB9",
+      "country": "NG",
+      "site_name": "Nne Enyemaka Shrine Umuaka",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "OTHER_COUNTRY"
+    },
+    {
+      "group_id": "RG-D104C9C93632",
+      "country": "PL",
+      "site_name": "Chapel of Marian Apparition",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "OTHER_COUNTRY"
+    },
+    {
+      "group_id": "RG-FBA216861DF9",
+      "country": "PL",
+      "site_name": "Chapel of the Order of the Carmelite Sisters",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "OTHER_COUNTRY"
+    },
+    {
+      "group_id": "RG-03CA979A8BD9",
+      "country": "US",
+      "site_name": "FSSP Fresno",
+      "review_disposition": "HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION",
+      "priority": "OTHER_COUNTRY"
+    }
+  ],
+  "identity_exception_queue": [
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-4A178DCBF5FE",
+      "historical_group_id": "RG-B84-4A178DCBF5FE",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "PARISH_IDENTIFIED_AT_SOURCE_STREET",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-D1F86F038D00",
+      "historical_group_id": "RG-B84-D1F86F038D00",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "HOLD_SOURCE_ONLY_AWAITING_INDEPENDENT_BUILDING_EVIDENCE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-2DBD3DA5FF62",
+      "historical_group_id": "RG-B84-2DBD3DA5FF62",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "HOLD_SOURCE_ONLY_AWAITING_INDEPENDENT_BUILDING_EVIDENCE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-CAFFE92C3CC3",
+      "historical_group_id": "RG-B84-CAFFE92C3CC3",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "HOLD_SOURCE_ONLY_AWAITING_INDEPENDENT_BUILDING_EVIDENCE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-96A7E2FCF142",
+      "historical_group_id": "RG-B84-96A7E2FCF142",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "HOLD_SOURCE_ONLY_AWAITING_INDEPENDENT_BUILDING_EVIDENCE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-A9F8640B80F4",
+      "historical_group_id": "RG-B84-A9F8640B80F4",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "HOLD_SOURCE_ONLY_AWAITING_INDEPENDENT_BUILDING_EVIDENCE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-0AED67A991EE",
+      "historical_group_id": "RG-B84-0AED67A991EE",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "HOLD_SOURCE_ONLY_AWAITING_INDEPENDENT_BUILDING_EVIDENCE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-50C4AAA33D1C",
+      "historical_group_id": "RG-B84-50C4AAA33D1C",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "HOLD_SOURCE_ONLY_AWAITING_INDEPENDENT_BUILDING_EVIDENCE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-86463D74DCDC",
+      "historical_group_id": "RG-B84-86463D74DCDC",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "HOLD_SOURCE_ONLY_AWAITING_INDEPENDENT_BUILDING_EVIDENCE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B84-BEEF1BA5BAD2",
+      "historical_group_id": "RG-B84-BEEF1BA5BAD2",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "HOLD_SOURCE_ONLY_AWAITING_INDEPENDENT_BUILDING_EVIDENCE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B85-4DA44A2F403B",
+      "historical_group_id": "RG-B85-4DA44A2F403B",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B85-F8F6FF65FBDC",
+      "historical_group_id": "RG-B85-F8F6FF65FBDC",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-E6B4C6B92E9C",
+      "historical_group_id": "RG-B86-E6B4C6B92E9C",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-50F7B85ABDFD",
+      "historical_group_id": "RG-B86-50F7B85ABDFD",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-A160578F09B7",
+      "historical_group_id": "RG-B86-A160578F09B7",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-EFDAD29E61C4",
+      "historical_group_id": "RG-B86-EFDAD29E61C4",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-AA00CC6B1C9A",
+      "historical_group_id": "RG-B86-AA00CC6B1C9A",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "EXACT_2026_MASS_CHAPEL",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-C6DA0CF689A8",
+      "historical_group_id": "RG-B86-C6DA0CF689A8",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-EF50DD591510",
+      "historical_group_id": "RG-B86-EF50DD591510",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "EXACT_ORGANIZER_ADDRESS_AND_1962_CONTEXT",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-4E1A32EC1D40",
+      "historical_group_id": "RG-B86-4E1A32EC1D40",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "PARISH_2026_TRADITIONAL_MASS_ON_SITE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B86-6CF846FD0613",
+      "historical_group_id": "RG-B86-6CF846FD0613",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-8006F0D122CB",
+      "historical_group_id": "RG-B87-8006F0D122CB",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-671B8759FAB0",
+      "historical_group_id": "RG-B87-671B8759FAB0",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-6AD633DE9E00",
+      "historical_group_id": "RG-B87-6AD633DE9E00",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-9C500220FE42",
+      "historical_group_id": "RG-B87-9C500220FE42",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-A38E5FD17B3E",
+      "historical_group_id": "RG-B87-A38E5FD17B3E",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-607F40333475",
+      "historical_group_id": "RG-B87-607F40333475",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-209AE1443820",
+      "historical_group_id": "RG-B87-209AE1443820",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-8B601598DA36",
+      "historical_group_id": "RG-B87-8B601598DA36",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "DATED_2026_TRIDENTINE_MASS",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B87-56B9D31B206D",
+      "historical_group_id": "RG-B87-56B9D31B206D",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B88-58C280A6D190",
+      "historical_group_id": "RG-B88-58C280A6D190",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "HOLD_SOURCE_ONLY_AWAITING_INDEPENDENT_BUILDING_EVIDENCE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B89-F7BFDAA8E4BB",
+      "historical_group_id": "RG-B89-F7BFDAA8E4BB",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "SAN_ROCCO_RITE_ANTICO_ALIAS_NEEDS_BUILDING_LINK",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B90-3379DA52FF04",
+      "historical_group_id": "RG-B90-3379DA52FF04",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "CARNOUX_BUILDING_SITE_EVIDENCED_CURRENT_UNCERTAIN",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B92_CLASSIFICATION_MASTER_ONLY:RG-B90-39D1A3BBF010",
+      "historical_group_id": "RG-B90-39D1A3BBF010",
+      "cl5_category": "PROVISIONAL_BUILDING_INTAKE_SOURCE_CONFIRMED",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B88-F691777F8D8D",
+      "historical_group_id": "RG-B88-F691777F8D8D",
+      "cl5_category": "FIRST_PARTY_INSTITUTIONAL_EVIDENCE_CAPTURED_NO_CL2_JOIN",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B88-E491FACD85B9",
+      "historical_group_id": "RG-B88-E491FACD85B9",
+      "cl5_category": "FIRST_PARTY_INSTITUTIONAL_EVIDENCE_CAPTURED_NO_CL2_JOIN",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B88-D6480F7F32B7",
+      "historical_group_id": "RG-B88-D6480F7F32B7",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B88-60104C25870A",
+      "historical_group_id": "RG-B88-60104C25870A",
+      "cl5_category": "FIRST_PARTY_INSTITUTIONAL_EVIDENCE_CAPTURED_NO_CL2_JOIN",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B96-5F2EB31399CF",
+      "historical_group_id": "RG-B96-5F2EB31399CF",
+      "cl5_category": "HELD_FOR_SOURCE_OR_IDENTITY",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    },
+    {
+      "exception_key": "GROUP:B98_LOCATION_MASTER_ONLY:RG-B96-6B639D8118FF",
+      "historical_group_id": "RG-B96-6B639D8118FF",
+      "cl5_category": "FIRST_PARTY_INSTITUTIONAL_EVIDENCE_CAPTURED_NO_CL2_JOIN",
+      "cl6_category": "NO_NEW_CL6_CHANGE",
+      "status": "OPEN_RESEARCH_ONLY",
+      "canonical_join_approved": false,
+      "cl7_review_state": "OPEN_NO_NEW_GROUP_JOIN",
+      "promote_to_canonical": false
+    }
+  ],
+  "ten_b92_source_only_review_holds": [
+    {
+      "historical_group_id": "RG-B84-D1F86F038D00",
+      "frozen_source_id": "AO-RSCH-RG-B84-D1F86F038D00",
+      "site_name": "Paróquia de Nossa Senhora da Conceição",
+      "country": "BR",
+      "source_url": "https://adapostolica.org/paroquias/",
+      "current_state": "ORIGINAL_B92_DOCUMENTED_NO_CL7_INDEPENDENT_FIRST_PARTY_VERIFICATION",
+      "canonical_admission": "HOLD"
+    },
+    {
+      "historical_group_id": "RG-B84-2DBD3DA5FF62",
+      "frozen_source_id": "AO-RSCH-RG-B84-2DBD3DA5FF62",
+      "site_name": "Paróquia Senhor Bom Jesus Crucificado e Imaculado Coração de Maria",
+      "country": "BR",
+      "source_url": "https://adapostolica.org/paroquias/",
+      "current_state": "ORIGINAL_B92_DOCUMENTED_NO_CL7_INDEPENDENT_FIRST_PARTY_VERIFICATION",
+      "canonical_admission": "HOLD"
+    },
+    {
+      "historical_group_id": "RG-B84-CAFFE92C3CC3",
+      "frozen_source_id": "AO-RSCH-RG-B84-CAFFE92C3CC3",
+      "site_name": "Paróquia Nossa Senhora do Rosário de Fátima e São Geraldo",
+      "country": "BR",
+      "source_url": "https://adapostolica.org/paroquias/",
+      "current_state": "ORIGINAL_B92_DOCUMENTED_NO_CL7_INDEPENDENT_FIRST_PARTY_VERIFICATION",
+      "canonical_admission": "HOLD"
+    },
+    {
+      "historical_group_id": "RG-B84-96A7E2FCF142",
+      "frozen_source_id": "AO-RSCH-RG-B84-96A7E2FCF142",
+      "site_name": "Paróquia de Nossa Senhora das Graças",
+      "country": "BR",
+      "source_url": "https://adapostolica.org/paroquias/",
+      "current_state": "ORIGINAL_B92_DOCUMENTED_NO_CL7_INDEPENDENT_FIRST_PARTY_VERIFICATION",
+      "canonical_admission": "HOLD"
+    },
+    {
+      "historical_group_id": "RG-B84-A9F8640B80F4",
+      "frozen_source_id": "AO-RSCH-RG-B84-A9F8640B80F4",
+      "site_name": "Paróquia Nossa Senhora Aparecida",
+      "country": "BR",
+      "source_url": "https://adapostolica.org/paroquias/",
+      "current_state": "ORIGINAL_B92_DOCUMENTED_NO_CL7_INDEPENDENT_FIRST_PARTY_VERIFICATION",
+      "canonical_admission": "HOLD"
+    },
+    {
+      "historical_group_id": "RG-B84-0AED67A991EE",
+      "frozen_source_id": "AO-RSCH-RG-B84-0AED67A991EE",
+      "site_name": "Quase-Paróquia de São Judas Tadeu e Santa Clara",
+      "country": "BR",
+      "source_url": "https://adapostolica.org/paroquias/",
+      "current_state": "ORIGINAL_B92_DOCUMENTED_NO_CL7_INDEPENDENT_FIRST_PARTY_VERIFICATION",
+      "canonical_admission": "HOLD"
+    },
+    {
+      "historical_group_id": "RG-B84-50C4AAA33D1C",
+      "frozen_source_id": "AO-RSCH-RG-B84-50C4AAA33D1C",
+      "site_name": "Paróquia Nossa Senhora do Rosário de Fátima e Santo Antônio",
+      "country": "BR",
+      "source_url": "https://adapostolica.org/paroquias/",
+      "current_state": "ORIGINAL_B92_DOCUMENTED_NO_CL7_INDEPENDENT_FIRST_PARTY_VERIFICATION",
+      "canonical_admission": "HOLD"
+    },
+    {
+      "historical_group_id": "RG-B84-86463D74DCDC",
+      "frozen_source_id": "AO-RSCH-RG-B84-86463D74DCDC",
+      "site_name": "Paróquia Nossa Senhora das Graças",
+      "country": "BR",
+      "source_url": "https://adapostolica.org/paroquias/",
+      "current_state": "ORIGINAL_B92_DOCUMENTED_NO_CL7_INDEPENDENT_FIRST_PARTY_VERIFICATION",
+      "canonical_admission": "HOLD"
+    },
+    {
+      "historical_group_id": "RG-B84-BEEF1BA5BAD2",
+      "frozen_source_id": "AO-RSCH-RG-B84-BEEF1BA5BAD2",
+      "site_name": "Paróquia Nossa Senhora das Graças e São Sebastião",
+      "country": "BR",
+      "source_url": "https://adapostolica.org/paroquias/",
+      "current_state": "ORIGINAL_B92_DOCUMENTED_NO_CL7_INDEPENDENT_FIRST_PARTY_VERIFICATION",
+      "canonical_admission": "HOLD"
+    },
+    {
+      "historical_group_id": "RG-B88-58C280A6D190",
+      "frozen_source_id": "FSSP-B88-AT-WERFEN-KLOSTER-20261025",
+      "site_name": "Klosterkirche Werfen",
+      "country": "AT",
+      "source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/oesterreich/messorte.php",
+      "current_state": "ORIGINAL_B92_DOCUMENTED_NO_CL7_INDEPENDENT_FIRST_PARTY_VERIFICATION",
+      "canonical_admission": "HOLD"
+    }
+  ],
+  "release_hazards": [
+    {
+      "group_id": "RG-44B197BD0666",
+      "issue": "BUILDING_CLOSED_FOR_WORKS_SINCE_2024",
+      "evidence_url": "https://www.visitbergamo.net/oggetto/chiesa-di-san-bernardino/",
+      "public_state": "HOLD_ACCESS"
+    },
+    {
+      "group_id": "RG-EC296D81D4FE",
+      "issue": "CHURCH_1043_ISABELLA_VS_OFFICE_1039_ISABELLA",
+      "evidence_url": "https://stmaryslmc.ca/our-chaplain/",
+      "public_state": "HOLD_DOOR_PIN_UNTIL_CURRENT_VERIFY"
+    },
+    {
+      "group_id": "RG-D7F96C683345",
+      "issue": "RIVERSIDE_DR_VS_HIGHWAY_526_ADDRESS_ALIAS",
+      "evidence_url": "https://commons.wikimedia.org/wiki/Category:Holy_Family_Church_(Britt,_Ontario)",
+      "public_state": "HOLD_STREET_NUMBER"
+    },
+    {
+      "group_id": "RG-D7E36888FDF3",
+      "issue": "OUTER_COVE_ROAD_STREET_NUMBER_36_VS_49",
+      "evidence_url": "https://queenscollegenl.ca/wp-content/uploads/2021/08/ChurchDirectoryStJohnsNL.pdf",
+      "public_state": "HOLD_STREET_NUMBER"
+    },
+    {
+      "group_id": "RG-3E135A9E5C09",
+      "issue": "ACTIVE_MONASTERY_DOES_NOT_PROVE_1962_MASS",
+      "evidence_url": "https://www.monasteriodelarabida.com/contacto.php",
+      "public_state": "HOLD_LITURGICAL_FILTER"
+    },
+    {
+      "group_id": "RG-06FF8F6BD4B6",
+      "issue": "SPECIALIST_LISTING_NOT_OWNER_RECURRENCE_CERTIFICATION",
+      "evidence_url": "https://ritoantico.it/marche/tolentino",
+      "public_state": "HOLD_SCHEDULE"
+    }
+  ],
+  "policy": "Never treat a physical building address, an institutional address, a dated old-rite event, a secondary directory listing or a closed church as proof of an accessible current public 1962 Mass. All original site IDs, 40 identity exceptions and timetables retain their CL2 identities."
+}
