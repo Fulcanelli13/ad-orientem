@@ -1,0 +1,128 @@
+{
+  "schema": "ao-palm46-1961-dual-verse-numbering-v1",
+  "date": "2026-10-26",
+  "status": "SOURCE_VERIFIED_NUMBERING_ONLY_NOT_FULL_TEXT_RELEASE",
+  "purpose": "Prevent confusing ten numbered liturgical psalm lines with the nine biblical psalm verses in the Pius-XII/Bea translation, and prevent an artificial extra biblical verse or omitted antiphon return.",
+  "rite": "ROMAN_1962_PALM_DISTRIBUTION",
+  "stageId": "PALM-R02",
+  "sourceEdition": "Solesmes Graduale Romanum 1961",
+  "printedPage": "144**",
+  "primaryPageImage": "https://gregobase.selapa.net/sources/2/1180.png",
+  "primaryPageFullOCR": "https://fliphtml5.com/tlnkj/pybi/Graduale_Romanum_1961/",
+  "primaryTextLocation": "Flipbook P:1180; printed page 144**; Psalmus 46 beneath Psalmi usitati per Hebdomadam Sanctam",
+  "independentPsalmTextWitness": "https://texts.livemass.net/cgi-bin/horas/Pofficium.pl?command=prayLaudes&date1=11-17-2025&lang2=Latin-Bea&version=Rubrics+1960+-+1960&votive=Hodie",
+  "evidenceLevel": {
+    "printedPsalmNumbering": "PRINTED_SOURCE_TEXT_OCR_CROSSCHECKED_WITH_ORIGINAL_PAGE_IMAGE",
+    "biblicalVerseDivision": "INDEPENDENT_LATIN_BEA_TEXT_CONFIRMS_NINE_PSALM_VERSES",
+    "fullGabc": "OPEN",
+    "permission": "OPEN"
+  },
+  "counts": {
+    "biblicalPsalmVerses": 9,
+    "printedPsalmChantLines": 10,
+    "printedDoxologyLines": 2,
+    "numberedLinesIncludingDoxology": 12,
+    "antiphonPsalmPairs": 5
+  },
+  "crosswalk": [
+    {
+      "printedLine": 1,
+      "biblicalVerse": 1
+    },
+    {
+      "printedLine": 2,
+      "biblicalVerse": 2
+    },
+    {
+      "printedLine": 3,
+      "biblicalVerse": 3
+    },
+    {
+      "printedLine": 4,
+      "biblicalVerse": 4
+    },
+    {
+      "printedLine": 5,
+      "biblicalVerse": 5
+    },
+    {
+      "printedLine": 6,
+      "biblicalVerse": 6
+    },
+    {
+      "printedLine": 7,
+      "biblicalVerse": 7
+    },
+    {
+      "printedLine": 8,
+      "biblicalVerse": 8
+    },
+    {
+      "printedLine": 9,
+      "biblicalVerse": 9,
+      "biblicalHalf": "A",
+      "printedIncipit": "Principes populorum congregati sunt"
+    },
+    {
+      "printedLine": 10,
+      "biblicalVerse": 9,
+      "biblicalHalf": "B",
+      "printedIncipit": "Nam Dei sunt proceres terrae"
+    },
+    {
+      "printedLine": 11,
+      "liturgy": "GLORIA_PATRI"
+    },
+    {
+      "printedLine": 12,
+      "liturgy": "SICUT_ERAT"
+    }
+  ],
+  "performance": {
+    "antiphon": "PUERI_HEBRAEORUM_VESTIMENTA",
+    "pairOrder": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        9,
+        10
+      ]
+    ],
+    "versePairsAre": "PRINTED_CHANT_LINE_NUMBERS_NOT_BIBLICAL_VERSE_PAIRS",
+    "lastPair": [
+      9,
+      10
+    ],
+    "lastPairBothBiblicalVerse": 9,
+    "repeatAntiphonAfterEachPair": true,
+    "closing": [
+      "DOXOLOGY_11_12",
+      "FINAL_ANTIPHON_REPEAT"
+    ],
+    "distributionEnd": "Actual candle/palm distribution completion determines shortened or extended sequence; manual Schola observation. No artificial timer or auto priest-movement events.",
+    "note": "No text or melody of this source is currently assigned to the app. Existing owner controls tempo, repeats, mobile presentation and actual performed-vs-prescribed selection."
+  },
+  "negativeTests": [
+    "DO_NOT_INTERPRET_PRINTED_LINE_10_AS_BIBLICAL_PSALM_46_10",
+    "DO_NOT_INSERT_EXTRA_SCRIPTURAL_VERSE",
+    "DO_NOT_DROP_SECOND_HALF_OF_PRINTED_FINAL_PAIR",
+    "DO_NOT_CONFUSE_OLD_VULGATE_VERSE_NUMBERING_OR_TEXT_WITH_NOVUS",
+    "DO_NOT_TREAT_LAST_PAIR_OR_DOXOLOGY_AS_SEPARATE_MASS_CARDS",
+    "DO_NOT_AUTO_PROGRESS_SCHOLA_FROM_READER_TIMING"
+  ],
+  "dataOwner": "Issue #894 Roman 1962 text; PR #1749 Schola UI/score; draft PR #1752 historical corroboration"
+}
