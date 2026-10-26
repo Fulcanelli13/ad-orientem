@@ -10,17 +10,17 @@
 | Commentary-bearing article pages | 783 | Structural author/panel census of 2,856 instances |
 | B21+B23 unique original webpage body screens | 373 / 783 | Automated topic / source-hash evidence, not approved prose |
 | Direct topic passage reading before B24 | 113 / 783 | At least one original source passage per article |
-| B24 direct article-topic pass | 25 | Source-specific notes and publication holds |
-| **B25 direct article-topic pass** | **75** | Original webpage introductory or named commentary opening inspected |
-| **B23 next100 prioritized pass completed** | **100 / 100** | Direct article-topic reading, not exhaustively all commentary panels |
-| **Unique directly examined topic articles** | **213 / 783 (27.2%)** | Distinct union of 93 B22 reconciliation + 20 B23 + 25 B24 + 75 B25 |
-| **Remaining commentary articles without direct topic-reading in this programme** | **570** | Not necessarily outside other research projects; reconciliation scope only |
+| B24 direct article-topic pass | 25 article passes / 21 previously unread | Source-specific notes and publication holds; four earlier source IDs revisited |
+| **B25 direct article-topic pass** | **75 article passes / 72 previously unread** | Original webpage introductory or named commentary opening inspected; three earlier source IDs revisited |
+| **B23 next100 prioritized pass completed** | **100 / 100** | 93 new unique topic articles and seven useful repeated source reviews, not full-panel critical collation |
+| **Unique directly examined topic articles** | **206 / 783 (26.3%)** | Exact ID union of 93 B22 + 20 B23 + 25 B24 + 75 B25, minus 7 duplicated article IDs |
+| **Remaining commentary articles without direct topic-reading in this programme** | **577** | Not necessarily outside other research projects; reconciliation scope only |
 | Focused content-owner comparisons in B25 | **14 comparisons / 23 source IDs** | Narrow actual file-level parity; not repo-global gap certification |
 | Publication rights, printed-edition authorship, domain owner approval | **0** | No new content approved or released |
 
-**B25 breakdown:** 10 Temporal; 50 Sanctoral; 8 Commons; 5 particular propers; 1 votive; 1 poetry/reference.
+**Correction to the B23 queue:** A fresh exact ID reconciliation exposed **seven articles** in the ranked next100 that had already received earlier B22 topic reading. Four reappear in B24 (`a0619_ancien`, `a0044_nouveau`, `a0156_ancien`, `a0546_ancien`); three in B25 (`a0664_ancien`, `a0213_nouveau`, `a0596_ancien`). All 100 source pages were inspected in B24+B25, but only **93** were newly covered. This correction supersedes preliminary **213/783** and **570 left** figures. Preserve original source IDs and all observations; do not pretend repeats were new.\n\n**B25 breakdown:** 10 Temporal; 50 Sanctoral; 8 Commons; 5 particular propers; 1 votive; 1 poetry/reference.
 
-The 75 individually anchored descriptions live in [the direct-read record](../../data/source-text/icrsp-france-b25-75-direct-webpage-topic-passages.v1.json); the 14 real-owner comparisons are in [scoped parity](../../data/source-text/icrsp-france-b25-scoped-owner-content-parity.v1.json). The immutable input remains B23's [next100](../../data/source-text/icrsp-france-b23-next100-human-editorial-priority.v1.json); no existing research cohorts were overwritten.
+The 75 individually anchored descriptions live in [the direct-read record](../../data/source-text/icrsp-france-b25-75-direct-webpage-topic-passages.v1.json); the 14 real-owner comparisons are in [scoped parity](../../data/source-text/icrsp-france-b25-scoped-owner-content-parity.v1.json). The unaltered but imperfect input remains B23's [next100](../../data/source-text/icrsp-france-b23-next100-human-editorial-priority.v1.json); no existing research cohorts were overwritten.
 
 ## Specific nonduplication and publication decisions
 
@@ -40,4 +40,4 @@ No contents of a hosted Guéranger, Schuster, Parsch, Prudentius or modern papal
 
 The next high-volume pass should use the 113 remaining unreviewed article IDs in B23's 233 group and then the untouched remainder of the 783-page catalogue, after checking all parallel workflow manifests. For genuinely valuable topics, use the existing owner and its exact canonical day/form/saint ID to compare current explanation paragraphs, not just source title keyword absence. Publication can begin only after that actual differential review plus original-work and rights checks.
 
-**Validation:** `tests/test_icrsp_b25_75_direct_topic_and_owner_parity.py` asserts the disjoint 93 + 20 + 25 + 75 source-ID union, exact source-title/URL matching against the frozen next100, all release booleans false, and the 14 scoped parity cases. It is wired into the existing ICRSP source-integrity workflow. Do not mistake passing the test for theological or legal approval.
+**Validation:** `tests/test_icrsp_b25_75_direct_topic_and_owner_parity.py` asserts the reconciled 93 + 20 + 25 + 75 source-ID union with seven documented overlaps, exact source-title/URL matching against the frozen next100, all release booleans false, and the 14 scoped parity cases. It is wired into the existing ICRSP source-integrity workflow. Do not mistake passing the test for theological or legal approval.
