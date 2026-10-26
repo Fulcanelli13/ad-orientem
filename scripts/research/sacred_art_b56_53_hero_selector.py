@@ -16,6 +16,28 @@ ROOT=Path("data/research")
 PREV=Path("previews")
 B54=ROOT/"sacred-art-b54-383-aesthetic-biblical-review-summary.json"
 SEED=ROOT/"sacred-art-b56-53-classi-curated-source-seed.json"
+# The Class I programme is one existing 53-day reviewer; priority work is scoped
+# by true 2026 DayResolver dates, never a second painting-selection registry.
+GAP_9={
+"2026-02-18","2026-03-08","2026-03-22","2026-03-30","2026-07-01",
+"2026-12-06","2026-12-13","2026-12-20","2026-12-24"}
+EXACT_6={"2026-02-22","2026-03-01","2026-03-15","2026-03-31","2026-04-01","2026-09-29"}
+APPOINTED_REFS={
+"2026-02-18":("Matthew 6:16–21","Fasting, prayerful penance, treasures in heaven"),
+"2026-03-08":("Luke 11:14–28","Christ expels a demon from a mute man"),
+"2026-03-22":("John 8:46–59","Before Abraham was, I am"),
+"2026-03-30":("John 12:1–9","Mary anoints Christ at Bethany"),
+"2026-07-01":("John 19:30–35","Blood and water from the pierced side"),
+"2026-12-06":("Matthew 11:2–10","John sends disciples from prison to Jesus"),
+"2026-12-13":("John 1:19–28","John's testimony to priests and Levites"),
+"2026-12-20":("Luke 3:1–6","John prepares the way of the Lord"),
+"2026-12-24":("Matthew 1:18–21","Angel announces Christ's conception to Joseph"),
+"2026-02-22":("Matthew 4:1–11","Christ's temptation in the wilderness"),
+"2026-03-01":("Matthew 17:1–9","Transfiguration of Christ"),
+"2026-03-15":("John 6:1–15","Multiplication of loaves and fishes"),
+"2026-03-31":("Mark 14:1–15:46","Passion of Christ according to St Mark"),
+"2026-04-01":("Luke 22:1–23:53","Passion of Christ according to St Luke"),
+"2026-09-29":("Feast of St Michael","St Michael the Archangel; exact feast subject")}
 OUT=PREV/"sacred-art-b56-classi-53-hero-selection-offline.html"
 REPORT=ROOT/"sacred-art-b56-53-hero-selection-verified-summary.json"
 LEDGER=ROOT/"sacred-art-b56-53-hero-candidate-list.json"
@@ -125,6 +147,35 @@ def met(object_id):
         "thumb_sha256":sha(result),"source_photo_bytes":len(b),"source_url":obj["objectURL"],
         "source_license_claim":"Met Public Domain / OA (research metadata)",
         "actual_image_confirmed":True,"original_file_source":url,"pixel_size":size}
+def exact_research_photo(link):
+    """Rescue an exact cited original omitted by B54's generic 383-gallery.
+    Failure returns source-linked NO-IMAGE rather than a generic substitute.
+    Never marks photograph rights or artwork approval as production-ready.
+    """
+    id_=link["artworkId"]
+    url=link.get("museumObjectUrl","")
+    if id_.startswith("met-") and url.startswith("https://www.metmuseum.org/art/collection/search/"):
+        n=int(id_.split("-",1)[1])
+        obj=req_json(f"https://collectionapi.metmuseum.org/public/collection/v1/objects/{n}")
+        assert obj["objectID"]==n and obj.get("isPublicDomain") is True
+        expected=re.sub(r"[^a-z0-9]+","",link["artworkTitle"].lower())
+        actual=re.sub(r"[^a-z0-9]+","",obj["title"].lower())
+        assert expected==actual or expected in actual or actual in expected, ("TITLE_MISMATCH",id_)
+        assert "paint" in (obj.get("classification","").lower()) or obj.get("medium")
+        source=obj.get("primaryImageSmall") or obj.get("primaryImage")
+        if not source:raise RuntimeError("MET_EXACT_SOURCE_NO_IMAGE")
+        original=req_bytes(source)
+        thumb_bytes,size=thumb(original)
+        return {"image":"data:image/webp;base64,"+base64.b64encode(thumb_bytes).decode(),
+                "source_url":obj.get("objectURL") or url,
+                "thumb_sha256":sha(thumb_bytes),"pixel_size":size,
+                "source_license_claim":"Met Public Domain / Open Access research evidence",
+                "actual_image_confirmed":True}
+    if url.startswith("https://commons.wikimedia.org/wiki/File:"):
+        name=urllib.parse.unquote(url.split("File:",1)[1]).replace("_"," ")
+        return commons(name)
+    raise RuntimeError("NO_VERIFIABLE_EXACT_IMAGE_SOURCE")
+
 def select_rating(a):
     affinity=a.get("aestheticAffinity")
     return {"baroque_reference_circle":12,"related_classical_tradition":6,
@@ -183,6 +234,34 @@ def main():
             "archived_research_source_sha_verified":a["sourceSHAReverified"],
             "release_rights_cleared":False,"style_affinity":a.get("aestheticAffinity","requires_visual_assessment"),
             "previously_selected":a.get("previouslySelected",False)}
+    # Previously the exact-source links to museum paintings absent from B54
+    # were silently discarded in submit(). Preserve every one, even when the
+    # image cannot be retrieved: explicit visible source/QA hold, no substitute.
+    extra_exact={}
+    exact_links={}
+    for day in seed["dates"]:
+        for link in day.get("exact_research_links",[]):
+            pid=link["artworkId"]
+            if pid in paintings or pid in exact_links:continue
+            exact_links[pid]=link
+            try:extra_exact[pid]=exact_research_photo(link)
+            except Exception as err:
+                extra_exact[pid]={"actual_image_confirmed":False,
+                    "image_error":str(err)[:200],
+                    "source_url":link.get("museumObjectUrl","")}
+            photo=extra_exact[pid]
+            key="source-exact:"+pid if photo.get("image") else None
+            if key:image_assets[key]=photo["image"]
+            paintings[pid]={"id":pid,"title":link["artworkTitle"],"artist":link["artist"],
+                "source_url":photo.get("source_url") or link.get("museumObjectUrl",""),
+                "original_sha256":link.get("originalSha256"),
+                "image_key":key,"archived_research_source_sha_verified":False,
+                "release_rights_cleared":False,
+                "style_affinity":"requires_visual_assessment",
+                "source_license_claim":photo.get("source_license_claim","UNVERIFIED"),
+                "previously_selected":False,"image_provenance_hold":not bool(key)}
+            print("B56_EXACT_OUTSIDE_383",pid,photo.get("actual_image_confirmed"),flush=True)
+    assert len(exact_links)==7, "B56 source change: review all external exact originals"
     selected=[]
     for day in seed["dates"]:
         candidates={}
@@ -282,9 +361,13 @@ def main():
         # Protected first; other selections prioritize visible source images.
         protected_options=[z for z in ranked if z["historically_approved"]]
         other=[z for z in ranked if not z["historically_approved"]]
-        visible=[z for z in other if paintings[z["artwork_id"]]["image_key"]]
-        invisible=[z for z in other if not paintings[z["artwork_id"]]["image_key"]]
-        shortlist=(protected_options+visible+invisible)[:4]
+        # Show the actual museum-object research even if its picture is still
+        # missing. Otherwise four generic B54 photos crowd out the correct art.
+        exact_options=[z for z in other if z["grade"]=="EXACT_SUBJECT_RESEARCH"]
+        rest=[z for z in other if z["grade"]!="EXACT_SUBJECT_RESEARCH"]
+        visible=[z for z in rest if paintings[z["artwork_id"]]["image_key"]]
+        invisible=[z for z in rest if not paintings[z["artwork_id"]]["image_key"]]
+        shortlist=(protected_options+exact_options+visible+invisible)[:4]
         # Some observances genuinely lack 4 viable distinct works. Do not
         # fabricate a 4th image or confuse St Peter's martyrdom with Calvary.
         if len(shortlist)<3:
@@ -310,14 +393,27 @@ def main():
                 "image_available":bool(full.get("image_key")),
                 "editorial_placement_confirmed_by_user_this_session":False})
         assert len({x["choice_id"] for x in clean})==len(clean)
+        lane=("LOCKED_10" if approved else
+            "GAP_9" if day["date"] in GAP_9 else
+            "EXACT_6" if day["date"] in EXACT_6 else "SUBJECT_28")
+        ref,scene=APPOINTED_REFS.get(day["date"],("",""))
         selected.append({
             "date":day["date"],"observed_principal":day["principal_id"],
             "title":day["title"],"theme":day["theme"],
             "relation":day["subject_relation"],"original_approval":approved,
+            "review_lane":lane,"appointed_reading":ref,
+            "appointed_scene":scene,
             "options":clean,"release_ready":False,
             "selection":None,"need_more_research":False
         })
     assert len(selected)==53 and sum(bool(x["original_approval"]) for x in selected)==10
+    from collections import Counter
+    assert dict(Counter(x["review_lane"] for x in selected))=={
+      "LOCKED_10":10,"GAP_9":9,"EXACT_6":6,"SUBJECT_28":28}
+    assert all(any(c["choice_id"]==z["artworkId"] for c in
+        next(d for d in selected if d["date"]==day["date"])["options"])
+        for day in seed["dates"] for z in day.get("exact_research_links",[])
+        if z["artworkId"] in exact_links and not day.get("protected_approval")), "Exact source hidden from open date"
     assert all(3<=len(x["options"])<=4 for x in selected),"At least 3 sourced real painting options required; do not invent."
     used={x["image_key"] for d in selected for x in d["options"] if x["image_key"]}
     ordered_images={k:image_assets[k] for k in sorted(used)}
@@ -342,6 +438,9 @@ def main():
      "unique_reused_picture_previews":len(ordered_images),
      "previously_approved_absent_from_383":6,
      "external_prior_approved_images_resolved":sum(bool(external.get(x["date"],{}).get("actual_image_confirmed")) for x in selected if x["date"] in external),
+     "research_exact_source_outside_383_count":len(exact_links),
+     "research_exact_source_preview_available":sum(bool(z.get("actual_image_confirmed")) for z in extra_exact.values()),
+     "class_i_review_lanes":{"LOCKED_10":10,"GAP_9":9,"EXACT_6":6,"SUBJECT_28":28},
      "zero_app_publication_rights_approved":True,
      "user_approval_export_controls_not_mutating_app":True,
      "source_B54_gallery_sha_verified":True,
