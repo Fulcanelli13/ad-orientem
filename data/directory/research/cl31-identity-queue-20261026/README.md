@@ -55,4 +55,15 @@ python3 tools/directory/reconcile-cl31-identity-and-owner-queue.py \
 
 The dedicated full research-chain CI workflow runs the validator; the previous CL27 test's literal-token bug has been corrected in every stacked descendant, but CI results must still be checked. Original research work remains **strictly €0**, and no external source, internal saved ID or staged date is automatically promoted to Ad Orientem public Mass Times or Find.
 
+A new **on-demand**, standard-library original-file acquisition helper has been committed at `tools/directory/acquire-original-operator-pdf.py`. It requires real 200/HTTPS/PDF binary bytes, rejects unexpectedly large files or invalid PDF signatures, enforces an approved operator hostlist, calculates a real SHA-256 from the downloaded file, and creates a sidecar manifest *only on successful download*. Example:
+
+```sh
+python3 tools/directory/acquire-original-operator-pdf.py \
+ --url https://fsspx.uk/sites/default/files/documents/PrioryMassTimes-261025.pdf \
+ --output local-originals/PrioryMassTimes-261025.pdf \
+ --manifest local-originals/PrioryMassTimes-261025.json
+```
+
+The command has **not succeeded inside the assistant runtime**, where external HTTPS binary retrieval is restricted. It requires execution where the source URL is actually downloadable, a durable €0 storage location, and a review of redistribution permission **before uploading the original third-party PDF to any public GitHub repository**. The utility neither schedules any charge-bearing task nor pretends that these files are already archived.
+
 **Next work:** site-level canonical duplicate adjudication for Freiburg and Chesham preserving the master IDs and parallel reviewer consent; focused physical source matching for Süderbrarup and Stephansposching; original-PDF preservation only when bytes are actually obtainable; and bulk owner-page verification of the 296 separate timetable rows under the other PR, not by redoing this dated-source lane.
