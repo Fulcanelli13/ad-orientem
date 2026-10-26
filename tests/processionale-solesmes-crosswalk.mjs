@@ -296,6 +296,6 @@ test('archived Psalm 23 and Psalm 46 files are only first-verse tone exemplars',
   const p46=readFileSync(new URL('../'+directory+'gregobase-435-e1.gabc',import.meta.url),'utf8');
   assert.match(p23,/2\. Qui\(h\)a\.\.\./);
   assert.match(p46,/2\. Quó\(h\)ni\(h\)am\.\.\./);
-  assert.ok(handoff.gabcAudit.archiveCoverageCaveat.includes('do not imply full verse/refrain musical completeness'));
+  assert.ok(handoff.gabcAudit.archiveCoverageCaveat.includes('does not imply full verse/refrain musical completeness'));
   assert.equal(handoff.gabcAudit.fullNoteByNoteVerified,0);
 });
