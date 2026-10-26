@@ -59,7 +59,7 @@ def plan(metadata, topic_ledger, earlier_wave, handoff):
                 selected.add(row["articleId"])
     assert len(chosen)==200 and len(selected)==200
     assert not selected & read and not selected & old_wave and not selected & pending
-    known_sections=Counter(r["section"] for r in original)
+    known_sections=Counter(r.get("section") or r["indexSection"] for r in original)
     assert sum(known_sections.values())==783
     rows=[]
     for r in chosen:
@@ -72,7 +72,7 @@ def plan(metadata, topic_ledger, earlier_wave, handoff):
           "sourceUrl":r["sourceUrl"],
           "articleTitle":title,
           "section":r.get("section") or r["indexSection"],
-          "candidateExistingOwner":OWNERS.get(r["section"],"SOURCE_REFERENCE_ONLY"),
+          "candidateExistingOwner":OWNERS.get(r.get("section") or r["indexSection"],"SOURCE_REFERENCE_ONLY"),
           "priorCommentaryPanelCount":len(blocks),
           "commentaryPanelLabels":[b.get("blockLabel") or b.get("label") or "" for b in blocks],
           "sourceProseAlreadyInspectedForThisWave":False,
@@ -93,7 +93,7 @@ def plan(metadata, topic_ledger, earlier_wave, handoff):
         "oldMetadataWave":250,"reviewedWithinOldWave":169,
         "unreadOldWave":81,"unstagedAndUnreadPriorToB29":339,
         "newPreviouslyUnstagedBatch":200,"remainingUnstagedAfterThisSelection":139,
-        "freshSelectedSections":dict(Counter(r["section"] for r in rows)),
+        "freshSelectedSections":dict(Counter(r.get("section") or r["indexSection"] for r in rows)),
         "directTopicReviewsAdded":0,"publicationApprovals":0,
       },
       "records":rows,"hostedTextStored":False,"publicationApproved":False,
