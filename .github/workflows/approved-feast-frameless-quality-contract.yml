@@ -1,0 +1,32 @@
+name: Class I feast image frame-free release contract
+on:
+  push:
+    branches:
+      - fix/approved-feast-heroes-main-20261021
+    paths:
+      - .github/workflows/approved-feast-frameless-quality-contract.yml
+      - src/calendar/approved-feast-heroes.js
+      - tests/approved-feast-heroes.mjs
+      - tests/approved-feast-hero-candidate-integrity.mjs
+      - data/calendar/approved-feast-hero-packaged-candidates-20261021.v1.json
+      - tools/calendar/package-approved-feast-hero-candidates.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-no-physical-frames:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: All ten original candidate SHA checks and no-frame review holds
+        run: node tests/approved-feast-hero-candidate-integrity.mjs
+      - name: Class I principal and physical-frame release rejection tests
+        run: node tests/approved-feast-heroes.mjs
+      - name: Check packaging code syntax
+        run: python3 -m py_compile tools/calendar/package-approved-feast-hero-candidates.py
+      - name: Production remains blocked until explicitly verified
+        run: echo "All feast artwork editorial choices preserved, all frame-free photo release flags still pending."
