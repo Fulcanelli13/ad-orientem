@@ -152,7 +152,7 @@ try{
  assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,null,
    "Low Mass must invalidate prior audible choir programme, even after returning to Sung");
  await page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]').click();
- await programmeUi.locator("summary").click();
+ if(!(await programmeUi.evaluate(el=>el.open)))await programmeUi.locator("summary").click();
  await programmeUi.locator("[data-full-mass-chant-choice]").selectOption("GREGOBASE-1184");
  await page.evaluate(()=>{__formDate="2026-10-11";__full.refresh()});
  assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,null,
