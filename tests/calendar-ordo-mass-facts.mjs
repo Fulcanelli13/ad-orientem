@@ -36,15 +36,26 @@ assert.match(repaired.preface.heading,/de Beata Maria Virgine/);
 const certified=calendarOrdoMassFacts({...base,proper:{status:"ready",data:{
   ...base.proper.data,
   ordoRubricDecision:{status:"CERTIFIED",source:"1962_PROPER_RESOLVER",
-    principalCelebrationId:"sancti:10-07:2:w",evidenceUrl:"https://example.org/1962",
+    principalCelebrationId:"sancti:10-07:2:w",date:"2026-10-07",
+    calendarScope:"GENERAL_ROMAN_1962",evidenceUrl:"https://example.org/1962",
     gloria:true,credo:false}
 }}});
 assert.equal(certified.gloria,true);
 assert.equal(certified.credo,false);
+const wrongDate=calendarOrdoMassFacts({...base,proper:{status:"ready",data:{
+  ...base.proper.data,
+  ordoRubricDecision:{status:"CERTIFIED",source:"1962_PROPER_RESOLVER",
+    principalCelebrationId:"sancti:10-07:2:w",date:"2026-10-08",
+    calendarScope:"GENERAL_ROMAN_1962",evidenceUrl:"https://example.org/1962",
+    gloria:true,credo:true}
+}}});
+assert.equal(wrongDate.gloria,null,"A certified decision for a different date cannot be reused");
+
 const forged=calendarOrdoMassFacts({...base,proper:{status:"ready",data:{
   ...base.proper.data,
   ordoRubricDecision:{status:"CERTIFIED",source:"UNVERIFIED_OTHER_ENGINE",
-    principalCelebrationId:"sancti:10-07:2:w",evidenceUrl:"https://example.org/1962",
+    principalCelebrationId:"sancti:10-07:2:w",date:"2026-10-07",
+    calendarScope:"GENERAL_ROMAN_1962",evidenceUrl:"https://example.org/1962",
     gloria:true,credo:true}
 }}});
 assert.equal(forged.gloria,null);
