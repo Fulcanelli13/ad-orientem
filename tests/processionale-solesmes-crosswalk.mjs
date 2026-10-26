@@ -539,3 +539,30 @@ test('original Vatican 1962 Palm printed Missal governs Latin Psalm 23/46 and ce
  assert.equal(source.promotion.approvedScholaRuntimeScores,0);
  assert.equal(edition.sourceSafety.approvedRuntimeAssignments,0);
 });
+
+
+test('actual native Exsurge success closes only SVG render gate, not editorial approval',()=>{
+ const review=readJSON('data/research/processionale-palm46-gabc-underlay-review-20261026.v1.json');
+ const report=review.nativeExsurgeProof;
+ assert.equal(report.conclusion,'success');
+ assert.equal(report.status,'COMPLETE_3_VIEWPORTS_SVG_PARSE_RENDER_PROOF_ONLY');
+ assert.equal(report.runId,40378960243);
+ assert.equal(report.jobId,121769655876);
+ assert.equal(report.rawSourceSha256,review.source.sha256);
+ assert.equal(report.pinnedExistingScholaSourceCommit,'8a75c2cbb6ea2bc6ba26da30ec923b3dc8c827e1');
+ assert.equal(report.compared.length,2);
+ for(const item of report.compared){
+   assert.equal(item.parsedMappings,12);
+   assert.deepEqual(item.viewports.map(x=>x.widthPx),[260,420,800]);
+   assert.deepEqual(item.viewports.map(x=>x.staffSystems),[2,1,1]);
+   assert.ok(item.viewports.every(x=>x.svgChildren>=1));
+ }
+ assert.equal(report.releaseEligible,false);
+ assert.equal(review.candidate.renderingProofPassed,true);
+ assert.equal(review.candidate.humanMusicalReviewPassed,false);
+ assert.equal(review.candidate.publicationEligible,false);
+ assert.equal(review.sourceChecks.productionApproved,false);
+ assert.ok(report.falseClaims.includes('full printed neume/pitch certification'));
+ const registry=readJSON('data/research/processionale-roman-palm-psalter-editions-20261026.v1.json');
+ assert.equal(registry.sourceSafety.approvedRuntimeAssignments,0);
+});
