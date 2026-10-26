@@ -1,0 +1,27 @@
+name: Customs first-two promotion boundaries
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "data/customs/review/calendar-first-two-promotion-packet.20261024.v1.json"
+      - "tests/customs-first-two-promotion-gate.mjs"
+      - ".github/workflows/customs-first-two-promotion-gate.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  first-two:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Explicit publication and priest/lay boundaries
+        run: |
+          node --check tests/customs-first-two-promotion-gate.mjs
+          node tests/customs-first-two-promotion-gate.mjs
+          node tests/calendar-customs-editorial-preview.mjs
+          node tests/calendar-customs-context.mjs
+          node tests/calendar-customs-search.mjs

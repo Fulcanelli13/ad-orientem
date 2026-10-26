@@ -35,6 +35,8 @@ const state=()=>runtime()?.store?.getState?.()??null;
 const cache=()=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345??null;
 const dateController=()=>runtime()?.controller?.home??null;
 const fr=()=>state()?.language==="fr";
+// Internal reviewer opt-in only; no production user or Calendar state enables drafts.
+const customsEditorialReview=()=>globalThis.AO_CUSTOMS_EDITORIAL_REVIEW==="five-20261024";
 const L=(en,frText)=>fr()?frText:en;
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const assetIcon=(assetId,className="aoCalAssetIcon")=>{
@@ -711,13 +713,15 @@ function disciplineReference(discipline){
 function calendarCustomArticleMarkup(article){
   const isFr=fr(),lang=isFr?"fr":"en",Lcopy=(en,frText)=>isFr?frText:en;
   const sources=article.sources||[],historySources=article.history_sources||[],supportingSources=article.supporting_sources||[];
-  return `<details class="aoCalCustomArticle" data-cal-custom-id="${esc(article.id)}">
-    <summary><span><strong>${esc(article.title[lang])}</strong><small>${esc(article.occasion[lang]||"")}</small></span><span aria-hidden="true">›</span></summary>
+  const draft=article.editorialPreview===true;
+  return `<details class="aoCalCustomArticle" data-cal-custom-id="${esc(article.id)}"${draft?' data-cal-custom-editorial-review="true"':""}>
+    <summary><span><strong>${esc(article.title[lang])}</strong><small>${esc(article.occasion[lang]||"")}${draft?" · "+esc(Lcopy("DRAFT","BROUILLON")):""}</small></span><span aria-hidden="true">›</span></summary>
     <div class="aoCalCustomArticleContent">
+      ${draft?`<p role="status" class="aoCalCustomReviewStatus">${esc(Lcopy("Editorial review · draft, not published","Relecture éditoriale · brouillon, non publié"))}</p>`:""}
       <p>${esc(article.description[lang])}</p>
       ${article.history[lang]!==article.description[lang]?`<h5>${esc(Lcopy("Historical context","Contexte historique"))}</h5><p>${esc(article.history[lang])}</p>`:""}
       <h5>${esc(Lcopy("Spiritual meaning","Sens spirituel"))}</h5><p>${esc(article.meaning[lang])}</p>
-      <h5>${esc(Lcopy("Traditional household practice","Pratique traditionnelle"))}</h5><p>${esc(article.practice[lang])}</p>
+      <h5>${esc(draft?Lcopy("How this custom is observed","Comment cette coutume est observée"):Lcopy("Traditional household practice","Pratique traditionnelle"))}</h5><p>${esc(article.practice[lang])}</p>
       <h5>${esc(Lcopy("Scope and cautions","Portée et précautions"))}</h5><p>${esc(article.scope[lang])}</p><p>${esc(article.caution[lang])}</p>
       ${sources.length?`<h5>${esc(Lcopy("Sources","Sources"))}</h5><ul>${sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join("")}</ul>`:""}
       ${historySources.length?`<h5>${esc(Lcopy("Historical sources","Sources historiques"))}</h5><ul>${historySources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join("")}</ul>`:""}
@@ -728,7 +732,8 @@ function calendarCustomArticleMarkup(article){
 
 
 function calendarCustomCatalogueMarkup(){
-  const articles=calendarCustomArticleIds().map(calendarCustomArticle).filter(Boolean);
+  const preview=customsEditorialReview();
+  const articles=calendarCustomArticleIds({editorialPreview:preview}).map(id=>calendarCustomArticle(id,{editorialPreview:preview})).filter(Boolean);
   const isFr=fr();
   const groups=groupCalendarCustomsByYear(articles);
   const item=article=>{
@@ -768,7 +773,7 @@ function practiceContext(selected,r){
   const tags=new Set(events.flatMap(event=>event?.tags||[]));
   const linkedPlaces=pilgrimagePlacesForCalendarKeys(intel.semantic?.map(event=>event.key),pilgrimageCorpus??{});
   const disciplineRelevant=intel.discipline?.today?.key!=="none"||[...tags].some(tag=>/DISCIPLINE|PENITENTIAL/.test(tag));
-  const seasonalCustoms=calendarCustomRecommendations(selected,{events,fr:fr()});
+  const seasonalCustoms=calendarCustomRecommendations(selected,{events,fr:fr(),editorialPreview:customsEditorialReview()});
   if(!events.length&&!disciplineRelevant&&!seasonalCustoms.length)return "";
   return `<section class="aoCalPracticeContext" data-cal-intelligence-date="${esc(selected)}">
     <div class="aoCalV2SectionTitle"><div><small>${esc(L("PRACTICES & DISCIPLINE","PRATIQUES & DISCIPLINE"))}</small><h3>${esc(L("For this date","Pour cette date"))}</h3></div></div>

@@ -4,6 +4,9 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "src/calendar/customs-read-model.js"
+      - "src/calendar/customs-editorial-preview.js"
+      - "data/customs/review/calendar-five-candidate-articles.v1.json"
+      - "tests/calendar-customs-editorial-preview.mjs"
       - "src/calendar/customs-search.js"
       - "tests/calendar-customs-search.mjs"
       - "src/calendar/calendar-runtime.js"
@@ -44,6 +47,7 @@ jobs:
           node tests/customs-standard-22-prose-pass.mjs
           node tests/calendar-customs-context.mjs
           node tests/calendar-customs-search.mjs
+          node tests/calendar-customs-editorial-preview.mjs
           node tests/customs-living-library.mjs
       - name: Build full bilingual editor review packet
         run: node tools/customs/export-final-editorial-review.mjs > customs-final-editorial-review.md
