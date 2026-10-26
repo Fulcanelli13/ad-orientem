@@ -380,11 +380,19 @@
         "printedLU": "586–587",
         "printedGR": "172–173",
         "sourceURL": "https://gregobase.selapa.net/chant.php?id=259",
-        "gabcURL": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=259",
+        "gabcURL": null,
         "gabcElements": 6,
         "sourceImage": "https://gregobase.selapa.net/sources/3/731.png",
         "verification": "VISUAL_OPENING_NOTES_AND_TEXT_MATCH_NO_FULL_PITCH_QA",
-        "critical": "Hymn spread across SIX distinct GABC elements, not one incipit or the first stanza. Alternate GregoBase #8748 exists; select exact source-component semantics before import."
+        "critical": "Hymn spread across SIX distinct GABC elements, not one incipit or the first stanza. Alternate GregoBase #8748 exists; select exact source-component semantics before import. Source publishing six elements must be bundled in source order; fetching elem=1 alone is NOT complete.",
+        "gabcElementURLs": [
+          "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=259",
+          "https://gregobase.selapa.net/download.php?elem=2&format=gabc&id=259",
+          "https://gregobase.selapa.net/download.php?elem=3&format=gabc&id=259",
+          "https://gregobase.selapa.net/download.php?elem=4&format=gabc&id=259",
+          "https://gregobase.selapa.net/download.php?elem=5&format=gabc&id=259",
+          "https://gregobase.selapa.net/download.php?elem=6&format=gabc&id=259"
+        ]
       },
       {
         "id": "LU61-PALM-04",
