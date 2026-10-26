@@ -1,0 +1,36 @@
+name: Calendar 1962 Advent I real weekday Proper inheritance
+on:
+  push:
+    branches:
+      - 'fix/calendar-advent-i-feria-source-inheritance-20261026'
+    paths:
+      - 'index.html'
+      - 'ao-boot-advent-i-1962-01.js'
+      - 'tests/calendar-advent-i-real-weekday-inheritance.mjs'
+      - '.github/workflows/calendar-advent-i-source-inheritance.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: calendar-advent-i-real-${{ github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  native-resolver-advent-i:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check exact canonical boot bundle syntax
+        run: node --check ao-boot-advent-i-1962-01.js
+      - name: Install existing browser dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Validate real 1962 Advent I weekday Proper inheritance and source identities
+        run: node tests/calendar-advent-i-real-weekday-inheritance.mjs
