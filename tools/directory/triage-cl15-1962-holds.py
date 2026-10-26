@@ -156,9 +156,16 @@ def main():
             assert m[1]==row["source_id"] and orig["group_id"]==row["group_id"]
             assert m[14]==row["source_url"]
             table,_field=original_src[phase]
-            stored=db.execute(f"SELECT evidence_json FROM {table} WHERE row_no=?",(id,)).fetchone()
-            prior_doc=json.loads(stored["evidence_json"])
-            reason=prior_doc.get("reason_if_held") or prior_doc.get("owner_claim_observation") or prior_doc.get("reason") or prior_doc.get("observation") or ""
+            if phase=="CL10":
+                # CL10's slot table intentionally retains only exception_json,
+                # while the unresolved weekday reason is in the reviewed owner
+                # programme; it does not have an evidence_json column.
+                reason="Kalamazoo owner weekday lettering M S a is not an independently readable Monday-to-Saturday six-day schedule."
+            else:
+                stored=db.execute(f"SELECT evidence_json FROM {table} WHERE row_no=?",(id,)).fetchone()
+                assert stored is not None,(phase,id)
+                prior_doc=json.loads(stored["evidence_json"])
+                reason=prior_doc.get("owner_claim_observation") or prior_doc.get("reason") or prior_doc.get("observation") or ""
             row["original_research_label"]=m[9]
             row["prior_observation"]=reason
             lane,rank,proof,flags,access,conf=triage(row,orig,lead_by_url.get(row["source_url"]))
