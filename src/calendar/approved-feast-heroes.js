@@ -82,6 +82,12 @@ export function resolveApprovedFeastHero(date, observedPrincipalId, releaseRegis
     && Number.isInteger(photo.height) && photo.height >= 400
     && typeof photo.sha256 === "string" && IS_SHA.test(photo.sha256)
     && photo.fullPaintedSurface === true && photo.noGlare === true
+    // Artist-painted architecture or oval portraits are NOT museum frames.
+    // The final bundled photograph must show the whole painting alone.
+    && photo.physicalFrameAbsent === true
+    && photo.gallerySurroundAbsent === true
+    && photo.paintingBoundsVerified === true
+    && photo.noSyntheticFill === true
     && photo.phone320Pass === true && photo.phone390Pass === true;
   const rightsVerified = approvedLicense.has(rights.license)
     && rights.exactPhotoRightsVerified === true
