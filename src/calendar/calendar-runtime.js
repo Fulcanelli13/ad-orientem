@@ -712,7 +712,7 @@ function calendarCustomArticleMarkup(article){
   const isFr=fr(),lang=isFr?"fr":"en",Lcopy=(en,frText)=>isFr?frText:en;
   const sources=article.sources||[],historySources=article.history_sources||[],supportingSources=article.supporting_sources||[];
   return `<details class="aoCalCustomArticle" data-cal-custom-id="${esc(article.id)}">
-    <summary><span><strong>${esc(article.title[lang])}</strong><small>${esc(article.occasion[lang]||"")}</small></span><span aria-hidden="true">›</span></summary>
+    <summary><span><strong>${esc(article.title[lang])}</strong><small>${esc(article.occasion[lang]||"")}</small>${article.previewOnly?`<small class="aoCalCustomDraftScope">${esc(Lcopy("Editorial preview — not published","Aperçu éditorial — non publié"))} · ${esc(article.scope[lang]||"")}</small>`:""}</span><span aria-hidden="true">›</span></summary>
     <div class="aoCalCustomArticleContent">
       <p>${esc(article.description[lang])}</p>
       ${article.history[lang]!==article.description[lang]?`<h5>${esc(Lcopy("Historical context","Contexte historique"))}</h5><p>${esc(article.history[lang])}</p>`:""}
