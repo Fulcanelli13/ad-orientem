@@ -1,0 +1,83 @@
+{
+  "schema": "AO_SACRED_PLACES_P50_TWO_BASILICA_BUILDINGS_V1",
+  "date": "2026-10-26",
+  "status": "PROPOSED_CANONICAL_RELEASE_PENDING_CI_MERGE",
+  "baseline": {
+    "places": 512,
+    "sources": 810,
+    "crosswalk": 512,
+    "unlinked": 253,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 514,
+    "sources": 812,
+    "crosswalk": 514,
+    "unlinked": 255,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "new_physical_locations": 2,
+  "new_mapping_rows_resolved": 0,
+  "new_global_candidate_ids_resolved": 2,
+  "global_canonical_links_after_release": 138,
+  "global_unresolved_after_release": 362,
+  "remaining_open_mapping_queue_after_release": 33,
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0341",
+      "place_id": "place:LV:p50-sg-0341-196704436",
+      "name": "Skaistkalnes Vissvētākās Jaunavas Marijas Debesīs Uzņemšanas baznīca",
+      "place_type": "basilica",
+      "country": "LV",
+      "country_name": "Latvia",
+      "city": "Skaistkalne, Bauska Municipality",
+      "lat": 56.38032,
+      "lng": 24.64323,
+      "geo_source_ref": "osm:way:196704436",
+      "geo_source_url": "https://www.openstreetmap.org/way/196704436",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W196704436",
+      "identity_source_url": "https://www.bauskasnovads.lv/lv/iestades/skaistkalnes-katolu-baznica",
+      "identity_source_issuer": "Bauska Municipality Catholic church listing",
+      "source_directness": "PRIMARY_INSTITUTIONAL",
+      "scope_limit": "Individual Roman Catholic Assumption church building. Do not substitute Skaistkalne manor, parish offices or monastery.",
+      "precision": "site",
+      "source_ids": [
+        "AO-P50-SITE-SG-INV-0341-196704436"
+      ],
+      "mapping_method": "P50_LOCAL_AUTHORITY_AND_NAMED_CATHOLIC_OSM_CHURCH"
+    },
+    {
+      "candidate_id": "SG-INV-0330",
+      "place_id": "place:RO:p50-sg-0330-231691229",
+      "name": "Bazilica Maria Radna — Sanctuarul Marian Maica Harurilor",
+      "place_type": "basilica",
+      "country": "RO",
+      "country_name": "Romania",
+      "city": "Radna, Lipova, Arad",
+      "lat": 46.09919,
+      "lng": 21.68631,
+      "geo_source_ref": "osm:way:231691229",
+      "geo_source_url": "https://www.openstreetmap.org/way/231691229",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W231691229",
+      "identity_source_url": "https://www.basilicamariaradna.info/",
+      "identity_source_issuer": "Basilica Maria Radna shrine custodians",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Separate Catholic Marian basilica church feature osm:way:231691229, distinct from adjacent Franciscan monastery residential building osm:way:231691224.",
+      "precision": "site",
+      "source_ids": [
+        "AO-P50-SITE-SG-INV-0330-231691229"
+      ],
+      "mapping_method": "P50_CUSTODIAN_AND_NAMED_CATHOLIC_OSM_CHURCH"
+    }
+  ],
+  "site_scope_note": "Romanian Maria Radna adjacent Franciscan residential monastery way 231691224 explicitly excluded. Lithuanian Gate of Dawn gatehouse way 112746030 excluded pending scope adjudication.",
+  "policy": [
+    "Only exact Catholic church buildings matched to named OSM geometries are eligible.",
+    "Never infer a Mass timetable, shrine story or approved photograph.",
+    "Preserve frozen global inventory IDs without reassignment."
+  ]
+}
