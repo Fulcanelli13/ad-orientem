@@ -23,7 +23,8 @@
     "collision_rows": 234,
     "new_public_approvals": 0,
     "actionable_missing_frozen_venue_source_id": 5,
-    "historically_verified_missing_frozen_venue_source_id": 8
+    "historically_verified_missing_frozen_venue_source_id": 8,
+    "provider_review_cohort_1_all_have_frozen_source_id": true
   },
   "provider_review_cohort_1": [
     {
@@ -2043,136 +2044,6 @@
       "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
       "historical_row": 2429,
       "source_b53_row": "2430"
-    },
-    {
-      "source_id": "",
-      "site_group_id": "RG-62A7875AE5DB",
-      "effective_anchor_id": "RG-62A7875AE5DB",
-      "country": "MU",
-      "venue": "Église Sainte-Thérèse — Curepipe",
-      "locality": "",
-      "day_pattern": "Tuesday, Wednesday, Thursday",
-      "local_time": "08:30",
-      "frequency": "weekly",
-      "seasonal_rule": "First-party page accessible but publication/update date unclear. Confirm upcoming calendar before publishing.",
-      "feast_exception": "",
-      "original_source_owner": "ICKSP first-party website / 2026 printed directory",
-      "url": "https://icrspmaurice.org/index.php/horaires-de-lapostolat/",
-      "original_evidence_excerpt": "Mardi, Mercredi, Jeudi: 8h30; church named in 2026 printed annuaire",
-      "same_page_rows": 5,
-      "source_class": "SOURCE_PAGE_TO_RECHECK",
-      "precision_holds": [
-        "VARIABLE_CLOCK_CONFIRM_LOCALLY",
-        "MISSING_FROZEN_SOURCE_ID"
-      ],
-      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
-      "historical_row": 4676,
-      "source_b53_row": "B74-ICKSP-010",
-      "identity_release_gate": "MISSING_SOURCE_ID_DO_NOT_APPROVE"
-    },
-    {
-      "source_id": "",
-      "site_group_id": "RG-70986CE922B9",
-      "effective_anchor_id": "RG-70986CE922B9",
-      "country": "MU",
-      "venue": "Chapelle Saint-Jean-de-Dieu — Hôpital Jeetoo",
-      "locality": "",
-      "day_pattern": "Last Sunday of month",
-      "local_time": "08:00",
-      "frequency": "monthly (last Sunday)",
-      "seasonal_rule": "First-party page accessible but publication/update date unclear. Confirm upcoming calendar before publishing.",
-      "feast_exception": "",
-      "original_source_owner": "ICKSP first-party website / 2026 printed directory",
-      "url": "https://icrspmaurice.org/index.php/horaires-de-lapostolat/",
-      "original_evidence_excerpt": "Une fois par mois (le dernier dimanche du mois) 8h à la chapelle de l’Hôpital de Jeetoo",
-      "same_page_rows": 5,
-      "source_class": "SOURCE_PAGE_TO_RECHECK",
-      "precision_holds": [
-        "VARIABLE_CLOCK_CONFIRM_LOCALLY",
-        "MISSING_FROZEN_SOURCE_ID"
-      ],
-      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
-      "historical_row": 4679,
-      "source_b53_row": "B74-ICKSP-013",
-      "identity_release_gate": "MISSING_SOURCE_ID_DO_NOT_APPROVE"
-    },
-    {
-      "source_id": "",
-      "site_group_id": "RG-745790847B7B",
-      "effective_anchor_id": "RG-745790847B7B",
-      "country": "MU",
-      "venue": "Chapelle du Collège Saint-Joseph — Curepipe",
-      "locality": "",
-      "day_pattern": "Sunday",
-      "local_time": "09:45",
-      "frequency": "weekly",
-      "seasonal_rule": "First-party page accessible but publication/update date unclear. Confirm upcoming calendar before publishing.",
-      "feast_exception": "",
-      "original_source_owner": "ICKSP first-party website / 2026 printed directory",
-      "url": "https://icrspmaurice.org/index.php/horaires-de-lapostolat/",
-      "original_evidence_excerpt": "Sunday sung Mass 9h45 at Collège Saint-Joseph de Curepipe",
-      "same_page_rows": 5,
-      "source_class": "SOURCE_PAGE_TO_RECHECK",
-      "precision_holds": [
-        "VARIABLE_CLOCK_CONFIRM_LOCALLY",
-        "MISSING_FROZEN_SOURCE_ID"
-      ],
-      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
-      "historical_row": 4675,
-      "source_b53_row": "B74-ICKSP-009",
-      "identity_release_gate": "MISSING_SOURCE_ID_DO_NOT_APPROVE"
-    },
-    {
-      "source_id": "",
-      "site_group_id": "RG-FA5E0BF5C258",
-      "effective_anchor_id": "RG-FA5E0BF5C258",
-      "country": "MU",
-      "venue": "Maison Bienheureux-Père-Laval — Curepipe",
-      "locality": "",
-      "day_pattern": "Monday, Friday",
-      "local_time": "18:00",
-      "frequency": "weekly",
-      "seasonal_rule": "First-party page accessible but publication/update date unclear. Confirm upcoming calendar before publishing.",
-      "feast_exception": "",
-      "original_source_owner": "ICKSP first-party website / 2026 printed directory",
-      "url": "https://icrspmaurice.org/index.php/horaires-de-lapostolat/",
-      "original_evidence_excerpt": "Lundi, Vendredi: 18h à la Maison Bx Père Laval",
-      "same_page_rows": 5,
-      "source_class": "SOURCE_PAGE_TO_RECHECK",
-      "precision_holds": [
-        "VARIABLE_CLOCK_CONFIRM_LOCALLY",
-        "MISSING_FROZEN_SOURCE_ID"
-      ],
-      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
-      "historical_row": 4677,
-      "source_b53_row": "B74-ICKSP-011",
-      "identity_release_gate": "MISSING_SOURCE_ID_DO_NOT_APPROVE"
-    },
-    {
-      "source_id": "",
-      "site_group_id": "RG-FA5E0BF5C258",
-      "effective_anchor_id": "RG-FA5E0BF5C258",
-      "country": "MU",
-      "venue": "Maison Bienheureux-Père-Laval — Curepipe",
-      "locality": "",
-      "day_pattern": "Saturday",
-      "local_time": "09:00",
-      "frequency": "weekly",
-      "seasonal_rule": "First-party page accessible but publication/update date unclear. Confirm upcoming calendar before publishing.",
-      "feast_exception": "",
-      "original_source_owner": "ICKSP first-party website / 2026 printed directory",
-      "url": "https://icrspmaurice.org/index.php/horaires-de-lapostolat/",
-      "original_evidence_excerpt": "Samedi: 9h à la Maison Bx Père Laval",
-      "same_page_rows": 5,
-      "source_class": "SOURCE_PAGE_TO_RECHECK",
-      "precision_holds": [
-        "VARIABLE_CLOCK_CONFIRM_LOCALLY",
-        "MISSING_FROZEN_SOURCE_ID"
-      ],
-      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
-      "historical_row": 4678,
-      "source_b53_row": "B74-ICKSP-012",
-      "identity_release_gate": "MISSING_SOURCE_ID_DO_NOT_APPROVE"
     },
     {
       "source_id": "SSPXMAP:OPE-002676",
@@ -4765,9 +4636,7 @@
       "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
       "historical_row": 592,
       "source_b53_row": "593"
-    }
-  ],
-  "provider_review_cohort_2": [
+    },
     {
       "source_id": "SSPXMAP:OPE-002613",
       "site_group_id": "RG-B88C49244D2E",
@@ -4887,7 +4756,9 @@
       "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
       "historical_row": 743,
       "source_b53_row": "744"
-    },
+    }
+  ],
+  "provider_review_cohort_2": [
     {
       "source_id": "SSPXMAP:OPE-002369",
       "site_group_id": "RG-6FEB08A4B66F",
@@ -6488,6 +6359,136 @@
       "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
       "historical_row": 2331,
       "source_b53_row": "2332"
+    },
+    {
+      "source_id": "",
+      "site_group_id": "RG-62A7875AE5DB",
+      "effective_anchor_id": "RG-62A7875AE5DB",
+      "country": "MU",
+      "venue": "Église Sainte-Thérèse — Curepipe",
+      "locality": "",
+      "day_pattern": "Tuesday, Wednesday, Thursday",
+      "local_time": "08:30",
+      "frequency": "weekly",
+      "seasonal_rule": "First-party page accessible but publication/update date unclear. Confirm upcoming calendar before publishing.",
+      "feast_exception": "",
+      "original_source_owner": "ICKSP first-party website / 2026 printed directory",
+      "url": "https://icrspmaurice.org/index.php/horaires-de-lapostolat/",
+      "original_evidence_excerpt": "Mardi, Mercredi, Jeudi: 8h30; church named in 2026 printed annuaire",
+      "same_page_rows": 5,
+      "source_class": "SOURCE_PAGE_TO_RECHECK",
+      "precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY",
+        "MISSING_FROZEN_SOURCE_ID"
+      ],
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
+      "historical_row": 4676,
+      "source_b53_row": "B74-ICKSP-010",
+      "identity_release_gate": "MISSING_SOURCE_ID_DO_NOT_APPROVE"
+    },
+    {
+      "source_id": "",
+      "site_group_id": "RG-70986CE922B9",
+      "effective_anchor_id": "RG-70986CE922B9",
+      "country": "MU",
+      "venue": "Chapelle Saint-Jean-de-Dieu — Hôpital Jeetoo",
+      "locality": "",
+      "day_pattern": "Last Sunday of month",
+      "local_time": "08:00",
+      "frequency": "monthly (last Sunday)",
+      "seasonal_rule": "First-party page accessible but publication/update date unclear. Confirm upcoming calendar before publishing.",
+      "feast_exception": "",
+      "original_source_owner": "ICKSP first-party website / 2026 printed directory",
+      "url": "https://icrspmaurice.org/index.php/horaires-de-lapostolat/",
+      "original_evidence_excerpt": "Une fois par mois (le dernier dimanche du mois) 8h à la chapelle de l’Hôpital de Jeetoo",
+      "same_page_rows": 5,
+      "source_class": "SOURCE_PAGE_TO_RECHECK",
+      "precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY",
+        "MISSING_FROZEN_SOURCE_ID"
+      ],
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
+      "historical_row": 4679,
+      "source_b53_row": "B74-ICKSP-013",
+      "identity_release_gate": "MISSING_SOURCE_ID_DO_NOT_APPROVE"
+    },
+    {
+      "source_id": "",
+      "site_group_id": "RG-745790847B7B",
+      "effective_anchor_id": "RG-745790847B7B",
+      "country": "MU",
+      "venue": "Chapelle du Collège Saint-Joseph — Curepipe",
+      "locality": "",
+      "day_pattern": "Sunday",
+      "local_time": "09:45",
+      "frequency": "weekly",
+      "seasonal_rule": "First-party page accessible but publication/update date unclear. Confirm upcoming calendar before publishing.",
+      "feast_exception": "",
+      "original_source_owner": "ICKSP first-party website / 2026 printed directory",
+      "url": "https://icrspmaurice.org/index.php/horaires-de-lapostolat/",
+      "original_evidence_excerpt": "Sunday sung Mass 9h45 at Collège Saint-Joseph de Curepipe",
+      "same_page_rows": 5,
+      "source_class": "SOURCE_PAGE_TO_RECHECK",
+      "precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY",
+        "MISSING_FROZEN_SOURCE_ID"
+      ],
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
+      "historical_row": 4675,
+      "source_b53_row": "B74-ICKSP-009",
+      "identity_release_gate": "MISSING_SOURCE_ID_DO_NOT_APPROVE"
+    },
+    {
+      "source_id": "",
+      "site_group_id": "RG-FA5E0BF5C258",
+      "effective_anchor_id": "RG-FA5E0BF5C258",
+      "country": "MU",
+      "venue": "Maison Bienheureux-Père-Laval — Curepipe",
+      "locality": "",
+      "day_pattern": "Monday, Friday",
+      "local_time": "18:00",
+      "frequency": "weekly",
+      "seasonal_rule": "First-party page accessible but publication/update date unclear. Confirm upcoming calendar before publishing.",
+      "feast_exception": "",
+      "original_source_owner": "ICKSP first-party website / 2026 printed directory",
+      "url": "https://icrspmaurice.org/index.php/horaires-de-lapostolat/",
+      "original_evidence_excerpt": "Lundi, Vendredi: 18h à la Maison Bx Père Laval",
+      "same_page_rows": 5,
+      "source_class": "SOURCE_PAGE_TO_RECHECK",
+      "precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY",
+        "MISSING_FROZEN_SOURCE_ID"
+      ],
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
+      "historical_row": 4677,
+      "source_b53_row": "B74-ICKSP-011",
+      "identity_release_gate": "MISSING_SOURCE_ID_DO_NOT_APPROVE"
+    },
+    {
+      "source_id": "",
+      "site_group_id": "RG-FA5E0BF5C258",
+      "effective_anchor_id": "RG-FA5E0BF5C258",
+      "country": "MU",
+      "venue": "Maison Bienheureux-Père-Laval — Curepipe",
+      "locality": "",
+      "day_pattern": "Saturday",
+      "local_time": "09:00",
+      "frequency": "weekly",
+      "seasonal_rule": "First-party page accessible but publication/update date unclear. Confirm upcoming calendar before publishing.",
+      "feast_exception": "",
+      "original_source_owner": "ICKSP first-party website / 2026 printed directory",
+      "url": "https://icrspmaurice.org/index.php/horaires-de-lapostolat/",
+      "original_evidence_excerpt": "Samedi: 9h à la Maison Bx Père Laval",
+      "same_page_rows": 5,
+      "source_class": "SOURCE_PAGE_TO_RECHECK",
+      "precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY",
+        "MISSING_FROZEN_SOURCE_ID"
+      ],
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL",
+      "historical_row": 4678,
+      "source_b53_row": "B74-ICKSP-012",
+      "identity_release_gate": "MISSING_SOURCE_ID_DO_NOT_APPROVE"
     }
   ],
   "secondary_source_replacement_queue": [
@@ -11663,7 +11664,8 @@
         2046,
         2047,
         2048
-      ]
+      ],
+      "note": "Owner page observed, no current recurrence/public-release approval made."
     },
     {
       "url": "https://icrspfrance.fr/?org=27",
@@ -11675,7 +11677,8 @@
       "historical_rows": [
         242,
         243
-      ]
+      ],
+      "note": "Owner page observed, no current recurrence/public-release approval made."
     },
     {
       "url": "https://sspx.au/en/list-sspx-chapels-0",
@@ -11695,7 +11698,8 @@
         2137,
         820,
         2131
-      ]
+      ],
+      "note": "Owner page observed, no current recurrence/public-release approval made."
     },
     {
       "url": "https://fsspx.mx/es/capillas-2",
@@ -11727,7 +11731,8 @@
         2312,
         2316,
         2317
-      ]
+      ],
+      "note": "Owner page observed, no current recurrence/public-release approval made."
     }
   ],
   "original_row_identity_policy": "Use CL2 mass.historical_row as immutable SQLite primary key (1–4681); B53 source row is a literal label, not necessarily a number. Missing venue source ID is an explicit hold, never fabricated."
