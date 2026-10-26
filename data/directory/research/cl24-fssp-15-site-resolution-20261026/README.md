@@ -12,7 +12,7 @@
 | CL14 source ID | Named worship place | Research result |
 |---|---|---|
 | 006 | St Josef, Remscheid | KuLaDig Catholic church WGS84 at 51.17199/7.20953; not office 5b or nursery 5c |
-| 007 | St Joseph, Recklinghausen-Grullbad | Published church location 51.57955556/7.20147222, **temporarily closed**; weekday FSSP moved to St Gertrudis |
+| 007 | St Joseph, Recklinghausen-Grullbad | Published church location 51.57955556/7.20147222, **operational status requiring direct verification**; weekday FSSP moved to St Gertrudis |
 | 008 | St Joseph, Oberhausen-Styrum | OSM way 29047159, Catholic church building not another city St Josef |
 | 009 | St Michael, Recklinghausen-Hochlarmark | Published church point 51.56191667/7.18641667; office/Care home not church |
 | 011 | Annakapelle, Leverkusen-Lützenkirchen | OSM chapel building way 94701638; not St Maurinus or Kreuzkapelle |
@@ -27,11 +27,11 @@
 | 037 | Garmisch Sebastianskapelle | **HELD:** FSSP local Münchner Str 1 vs international Ludwigstr 81; exact footprint pending |
 | 038 | Blaibach St Elisabeth | **HELD:** church Kirchplatz 12 vs rectory Benefiziatengasse 9, no admitted geometry |
 
-### High-priority operational warning
+### Correction — unresolved Recklinghausen operational claim
 
-The FSSP Recklinghausen local office currently states *“Keine Hl. Messen in St. Joseph”* due to structural issues; weekday services take place at **St Gertrudis, Heidestraße 21, 45659 Recklinghausen**. Source: https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/recklinghausen/aktuelles.php
+The local FSSP [Mass-times page](https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/recklinghausen/messzeitentermine.php) **still lists St Joseph** for recurring Thursday, first Friday, subsequent Saturday and feast Masses. The [local parish office listing](https://stantonius.katholisch-re.de/seelsorge-kontakte/pfarrbuero) says **the St Joseph parish office** is currently closed, **not that the church is closed**. Earlier CL24 language claiming structural closure and an FSSP weekday relocation to St Gertrudis was **not corroborated by the cited FSSP page**, so that claim is withdrawn and logged as a source conflict. Neither closure nor specific future-date Mass events are approved.
 
-This is a **separate provisional alternate venue lead** to research, not a silent reassignment of the historical Grullbad physical site, Sunday Mass dates, or public calendar entries. The FSSP national directory retains historical St Joseph patterns and may be stale. Defer all future occurrences until the operator confirms the actual date and venue.
+St Gertrudis is a distinct legitimate Catholic church; it must not be attached to St Joseph historical slots without direct positive dated FSSP evidence. The database stores a research-only caution and no alternative venue admission.
 
 ### Source and output contracts
 
