@@ -1,0 +1,26 @@
+name: B94 research-only Directory publication gate
+
+on:
+  pull_request:
+    paths:
+      - "src/find/data-service.js"
+      - "tests/directory-b94-research-publication-gate.mjs"
+      - ".github/workflows/directory-b94-publication-gate.yml"
+  workflow_dispatch:
+
+jobs:
+  directory-publication-holds:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: JavaScript syntax checks
+        run: |
+          node --check src/find/data-service.js
+          node --check tests/directory-b94-research-publication-gate.mjs
+      - name: Research-only and existing-provider regression tests
+        run: node tests/directory-b94-research-publication-gate.mjs
+      - name: Existing Directory contract regression
+        run: node tests/directory-contracts.mjs
