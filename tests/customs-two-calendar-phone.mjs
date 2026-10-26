@@ -82,7 +82,7 @@ try{
       const node=document.querySelector('#ao-calendar-modular-root[data-ao-calendar-view="day"] [data-cal-custom-id="'+id+'"]');
       node?.scrollIntoView({block:"start",behavior:"instant"});
     },item.id);
-    await page.screenshot({path:resolve(target,item.id.toLowerCase()+"-"+width+".png")});
+    await page.screenshot({path:resolve(target,item.id.toLowerCase()+"-"+width+".png"),fullPage:true});
     report.cases.push({...item,width,geometry,sourceLinks:await article.locator('a[href^="https://"]').count()});
    }
    assert.deepEqual(errors,[],"Uncaught Calendar runtime errors: "+errors.join(" | "));
