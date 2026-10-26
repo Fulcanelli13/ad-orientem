@@ -72,6 +72,8 @@ on:
       - 'data/source-text/icrsp-france-b22-cross-workstream-93-direct-read-reconciliation.v1.json'
       - 'data/source-text/icrsp-france-b26-twenty-direct-page-content-and-two-source-errors.v1.json'
       - 'tests/test_icrsp_b26_real_page_claims_and_error_quarantine.py'
+      - 'data/source-text/icrsp-france-b27-47-source-paragraphs-and-owner-holds.v1.json'
+      - 'tests/test_icrsp_b27_47_source_page_reconciliation.py'
   workflow_dispatch:
 
 permissions:
@@ -117,3 +119,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b24_25_direct_topic_notes.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b25_75_direct_topic_and_owner_parity.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b26_real_page_claims_and_error_quarantine.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b27_47_source_page_reconciliation.py' -v
