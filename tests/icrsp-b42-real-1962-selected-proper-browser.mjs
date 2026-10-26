@@ -87,6 +87,18 @@ try {
  await browser?.close();
  await new Promise(ok=>server.close(ok));
 }
+// The 1962 source strings include references, punctuation and accent marks.
+ // Compare lexical words, not editorial comma placement (e.g. "Deus, qui"
+ // and "Da pacem, Dómine"). Preserve the displayed text unchanged.
+const latinWords=value=>String(value??"").normalize("NFD")
+ .replace(/[\u0300-\u036f]/g,"").replace(/[^a-zA-Z]+/g," ")
+ .trim().replace(/\s+/g," ").toLowerCase();
+const hasLatinWords=(value,phrase)=>(" "+latinWords(value)+" ").includes(" "+latinWords(phrase)+" ");
+assert.equal(hasLatinWords("Deus, qui cónspicis","Deus qui conspicis"),true);
+assert.equal(hasLatinWords("Eccli 36:18 ℣. Da pacem, Dómine","Da pacem Domine"),true);
+assert.equal(hasLatinWords("Eccli 45:30 ℣. Státuit ei Dóminus","Statuit ei Dominus"),true);
+assert.equal(hasLatinWords("Da, quǽsumus","Deus qui conspicis"),false);
+
 const checks=[];
 const byDate=new Map(observations.map(x=>[x.date,x]));
 for(const spec of plan.expectedHardAssertions){
@@ -94,16 +106,16 @@ for(const spec of plan.expectedHardAssertions){
  if(!a||a.status!=="ready"||a.resolvedDate!==spec.date)issues.push("DAY_RESOLVER_NOT_READY_FOR_EXACT_DATE");
  if(a?.proper?.status!=="ready"||!a?.proper?.sourcePath)issues.push("CANONICAL_SELECTED_PROPER_UNAVAILABLE");
  const main=String(a?.main?.id??"").toLowerCase();
- const introit=String(a?.proper?.introit?.latin??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+ const introit=String(a?.proper?.introit?.latin??"");
  if(spec.rule==="MAIN_ST_MARTIN_AND_STATUIT_LATIN_INTROIT"){
   if(!main.includes("sancti:11-11"))issues.push("ST_MARTIN_NOT_PRINCIPAL_SOURCE_ID");
-  if(!/statuit\s+ei\s+dominus/.test(introit))issues.push("STATUIT_NOT_SELECTED_LATIN_INTROIT");
-  const collect=String(a?.proper?.collect?.latin??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
-  if(!/deus\s+qui\s+conspicis/.test(collect))issues.push("SAINT_MARTIN_FEAST_SPECIFIC_COLLECT_MISSING_OR_REPLACED_BY_GENERIC_COMMON");
+  if(!hasLatinWords(introit,"Statuit ei Dominus"))issues.push("STATUIT_NOT_SELECTED_LATIN_INTROIT");
+  const collect=String(a?.proper?.collect?.latin??"");
+  if(!hasLatinWords(collect,"Deus qui conspicis"))issues.push("SAINT_MARTIN_FEAST_SPECIFIC_COLLECT_MISSING_OR_REPLACED_BY_GENERIC_COMMON");
  }else if(spec.rule==="ST_REMI_IS_NOT_PRINCIPAL_STATUIT_MASS"){
   if(/sancti:10-01/.test(main))issues.push("REMI_WRONGLY_PRINCIPAL");
-  if(/statuit\s+ei\s+dominus/.test(introit))issues.push("REMI_COMMON_WRONGLY_REPLACES_FERIA");
-  if(!/da\s+pacem\s+domine/.test(introit))issues.push("REMI_FERIAL_DA_PACEM_INTROIT_MISSING");
+  if(hasLatinWords(introit,"Statuit ei Dominus"))issues.push("REMI_COMMON_WRONGLY_REPLACES_FERIA");
+  if(!hasLatinWords(introit,"Da pacem Domine"))issues.push("REMI_FERIAL_DA_PACEM_INTROIT_MISSING");
  }else issues.push("UNKNOWN_HARD_RULE");
  checks.push({date:spec.date,rule:spec.rule,observedMainId:a?.main?.id??null,
   observedSourcePath:a?.proper?.sourcePath??null,observedIntroit:a?.proper?.introit?.latin??null,
