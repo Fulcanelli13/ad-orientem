@@ -20,7 +20,7 @@ const rank=v=>{
 };
 const principalId=id=>/^(?:sancti|tempora|commune):[A-Za-z0-9:-]+$/.test(id)||id===":feria:4:w";
 const principalClass=id=>{
-  const match=id.match(/:([1-4]):[a-z]$/i);
+  const match=id.match(/:([1-4]):[a-z]{1,2}$/i);
   return match?Number(match[1]):null;
 };
 const sourceKind=id=>id.startsWith("sancti:")?"SANCTORAL":
@@ -77,7 +77,22 @@ export function review1962OrdinaryForCalendarDay(resolution){
     (/^tempora:Pent\d{1,2}-[1-6]:4:g$/i.test(id)||sourceKind(id)==="GENERIC_FERIA");
   if(ordinaryPentecostFeria)
     gloria=result(false,"BR_238_C_AND_RGMR_432_A","IV_CLASS_PER_ANNUM_FERIA",BREVIARY_RULES_URL);
-  if(date.slice(5)>="12-25"||date.slice(5)==="01-01")credo=result(true,"RGMR_475_D","CHRISTMAS_OCTAVE");
+  const christmasOctave=date.slice(5)>="12-25"||date.slice(5)==="01-01";
+  // These exact source identities identify the principal octave Masses;
+  // no new computation of a liturgical calendar is introduced here.
+  const paschalOrPentecostOctave=/^tempora:Pasc(?:0|7)-[0-6]:1:[wr]$/i.test(id);
+  const holyThursday=id==="tempora:Quad6-4r:1:w";
+  const easterVigil=id==="tempora:Quad6-6r:1:vw";
+  if(!violet&&!black&&(christmasOctave||paschalOrPentecostOctave))
+    gloria=result(true,"BR_237_D_AND_RGMR_431_A","ROMAN_OCTAVE_TE_DEUM",BREVIARY_RULES_URL);
+  // §431(c) explicitly includes Holy Thursday and the Easter Vigil;
+  // §476(a) explicitly omits their Credo, despite their I-class status.
+  if((holyThursday||easterVigil)&&!violet&&!black)
+    gloria=result(true,"RGMR_431_C","TRIDUUM_EXCEPTION");
+  if(holyThursday||easterVigil)
+    credo=result(false,"RGMR_476_A","TRIDUUM_EXCEPTION");
+  else if(christmasOctave||paschalOrPentecostOctave)
+    credo=result(true,"RGMR_475_D","OCTAVE");
   else if(sunday)credo=result(true,"RGMR_475_A","SUNDAY");
   else if(ordinaryPentecostFeria)credo=result(false,"RGMR_475_476","IV_CLASS_PER_ANNUM_FERIA");
   else if(sourceKind(id)==="SANCTORAL"){
