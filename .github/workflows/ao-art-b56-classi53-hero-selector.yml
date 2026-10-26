@@ -2,7 +2,11 @@ name: B56 Class I feast heroes — 53 dates 3-4 verified painting options privat
 on:
   push:
     branches: [research/sacred-art-b56-classi-53-hero-selector-20261024]
-    paths: [.github/workflows/ao-art-b56-classi53-hero-selector.yml]
+    paths:
+      - .github/workflows/ao-art-b56-classi53-hero-selector.yml
+      - scripts/research/sacred_art_b56_53_hero_selector.py
+      - previews/sacred-art-b56-classi-hero-template.html
+      - tests/sacred-art-b56-classi53-hero-selector-integrity.mjs
   workflow_dispatch:
 permissions:
   contents: write
@@ -34,6 +38,13 @@ jobs:
         run: python scripts/research/sacred_art_b56_53_hero_selector.py
       - name: Independently validate 53 dates, 10 protected prior approvals, all available imagery, selections and SHA checks
         run: node tests/sacred-art-b56-classi53-hero-selector-integrity.mjs
+      - name: Temporary private review transport (7-day artifact, NOT permanent archive)
+        uses: actions/upload-artifact@v4
+        with:
+          name: class-i-53-bulk-editorial-review-${{ github.run_id }}
+          path: previews/sacred-art-b56-classi-53-hero-selection-offline.html
+          retention-days: 7
+          if-no-files-found: error
       - name: Preserve all photo derivatives only in UNPUBLISHED draft Release, remote byte-for-byte SHA proof
         env:
           GH_TOKEN: ${{ github.token }}
