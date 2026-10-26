@@ -10,6 +10,9 @@ on:
       - "data/customs/master/customs-first18-direct-source-scope-audit-20261026.v1.json"
       - "tests/customs-first18-direct-source-scope-audit.mjs"
       - "tests/customs-thirty-action-identity-reconciliation.mjs"
+      - "data/customs/master/customs-first18-source-scope-evidence-review-20261026.v1.json"
+      - "tests/customs-first18-source-scope-evidence.mjs"
+      - "data/customs/master/working-master.v1.json"
       - "tests/customs-multibook-bulk150.mjs"
       - ".github/workflows/customs-multibook-bulk150.yml"
   workflow_dispatch:
@@ -30,5 +33,7 @@ jobs:
           node tests/customs-multibook-bulk150.mjs
           node --check tests/customs-thirty-action-identity-reconciliation.mjs
           node tests/customs-thirty-action-identity-reconciliation.mjs
+          node --check tests/customs-first18-source-scope-evidence.mjs
+          node tests/customs-first18-source-scope-evidence.mjs
           node --check tests/customs-first18-direct-source-scope-audit.mjs
           node tests/customs-first18-direct-source-scope-audit.mjs
