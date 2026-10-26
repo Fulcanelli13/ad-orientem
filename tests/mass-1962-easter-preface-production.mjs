@@ -164,25 +164,39 @@ try{
  // the production Secret has a self-referential source row. Explicitly
  // retain the native reader's rejection rather than patching it with
  // another day's Secret merely to pass a Preface presentation smoke test.
- const missingSecret=await page.evaluate(async()=>{
+ const inAlbis=await page.evaluate(async()=>{
    const resolver=globalThis.AO_RUNTIME_V8.resolver;
    const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
-   const {prepareMassSessionFromV346}=await import("/src/mass/host-adapter.js");
    const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
-   const d=await resolver.resolveDay("2026-04-12");
-   const id=d.day.main.id;
-   const p=await recoverReaderProperOmissions(d.proper.data,{
+   const d=await resolver.resolveDay("2026-04-12"),id=d.day.main.id;
+   const original=d.proper.data;
+   const raw=properToReaderSlots({...original,principalCelebrationId:id},{language:"fr"});
+   const p=await recoverReaderProperOmissions(original,{
      hostResolver:resolver.properResolver,principalCelebrationId:id
    });
-   const status=properToReaderSlots({...p,principalCelebrationId:id},{language:"fr"});
-   return {id,source:p.sourcePath,preface:status.slots.PREFACE.status,
-     secret:status.slots.SECRET_SET.status,
-     secretReason:status.slots.SECRET_SET.reason??null};
+   const corrected=properToReaderSlots({...p,principalCelebrationId:id},{language:"fr"});
+   return {
+     id,source:p.sourcePath,rawSecret:raw.slots.SECRET_SET.status,
+     secret:corrected.slots.SECRET_SET.status,
+     collect:corrected.slots.COLLECT_SET.status,
+     postcommunion:corrected.slots.POSTCOMMUNION_SET.status,
+     preface:corrected.slots.PREFACE.status,
+     secretText:corrected.slots.SECRET_SET.data?.paragraphs?.[0]?.vernacular??null,
+     sourceEvidence:p.secrets?.[0]?.sourceEvidence??null,
+     untouched:String(original.secrets?.[0]?.fr??"")===
+       String(d.proper.data.secrets?.[0]?.fr??"")
+   };
  });
- console.log("MASS_1962_IN_ALBIS_SECRET_UNRESOLVED="+JSON.stringify(missingSecret));
- assert.equal(missingSecret.id,"tempora:Pasc1-0:1:w");
- assert.equal(missingSecret.preface,"READY","12 April source Preface must be corrected separately");
- assert.equal(missingSecret.secret,"MISSING","12 April missing Secret must not be bypassed");
+ console.log("MASS_1962_IN_ALBIS_SECRET_RECOVERED="+JSON.stringify(inAlbis));
+ assert.equal(inAlbis.id,"tempora:Pasc1-0:1:w");
+ assert.equal(inAlbis.rawSecret,"MISSING","Known donor self-reference must never be treated as Secret text");
+ assert.equal(inAlbis.secret,"READY","Authenticated source must recover named 12 April Secret");
+ assert.equal(inAlbis.preface,"READY");
+ assert.equal(inAlbis.collect,"READY");
+ assert.equal(inAlbis.postcommunion,"READY");
+ assert.ok(inAlbis.secretText?.startsWith("Accueillez, Seigneur"));
+ assert.equal(inAlbis.sourceEvidence?.schema,"AO_IN_ALBIS_1962_SECRET_SOURCE_V1");
+ assert.equal(inAlbis.untouched,true);
  const rendered=await page.evaluate(async()=>{
    const dayResolver=globalThis.AO_RUNTIME_V8.resolver;
    const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
@@ -191,6 +205,7 @@ try{
    const results=[];
    for(const [date,variant,mode] of [
      ["2026-04-05","OCTAVE_DAY","MISSAL"],
+     ["2026-04-12","EASTERTIDE","LIVE"],
      ["2026-05-10","EASTERTIDE","LIVE"],
      ["2026-05-10","EASTERTIDE","SIMPLE"]
    ]){
