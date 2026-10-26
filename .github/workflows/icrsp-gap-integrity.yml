@@ -74,6 +74,11 @@ on:
       - 'tests/test_icrsp_b26_real_page_claims_and_error_quarantine.py'
       - 'data/source-text/icrsp-france-b27-47-source-paragraphs-and-owner-holds.v1.json'
       - 'tests/test_icrsp_b27_47_source_page_reconciliation.py'
+      - 'data/source-text/icrsp-france-b27-reconciled-109-unread-article-queue.v1.json'
+      - 'data/source-text/icrsp-france-b27-28-direct-source-topic-readings.v1.json'
+      - 'data/source-text/icrsp-france-b27-12-scoped-owner-parity-and-two-drafts.v1.json'
+      - 'data/source-text/icrsp-france-b27-seven-stream-301-unique-direct-topic-ledger.v1.json'
+      - 'tests/test_icrsp_b27_reconciled_109_and_28_reviewed.py'
   workflow_dispatch:
 
 permissions:
@@ -120,3 +125,4 @@ jobs:
           python -m unittest discover -s tests -p 'test_icrsp_b25_75_direct_topic_and_owner_parity.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b26_real_page_claims_and_error_quarantine.py' -v
           python -m unittest discover -s tests -p 'test_icrsp_b27_47_source_page_reconciliation.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b27_reconciled_109_and_28_reviewed.py' -v
