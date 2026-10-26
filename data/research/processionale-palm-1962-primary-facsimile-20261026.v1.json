@@ -109,7 +109,7 @@
           4
         ],
         "starts": [
-          "Subicit nobis nationes",
+          "Subicit populos nobis",
           "Eligit nobis hereditatem nostram"
         ],
         "page": 131
@@ -177,5 +177,38 @@
     "completePsalmPointingCertified": false,
     "scoreMelodyNoteByNoteCertified": false,
     "approvedScholaRuntimeScores": 0
+  },
+  "editorialCorrections": [
+    {
+      "path": "psalm46.printedPairs[1].starts[0]",
+      "previous": "Subicit nobis nationes",
+      "corrected": "Subicit populos nobis",
+      "scope": "Research metadata; not production Mass text",
+      "sourceCheck": [
+        "https://misal.tradi.sk/omsovy-poriadok/menlive-casti/zaznam-zobrazenie/176",
+        "https://texts.livemass.net/cgi-bin/horas/Pofficium.pl?command=prayOmnes&date1=11-17-2025&lang2=Latin-Bea&version=Rubrics+1960+-+1960&votive=Hodie"
+      ],
+      "status": "CONFIRMED_BY_TWO_INDEPENDENT_DIGITAL_LATIN_WITNESSES"
+    },
+    {
+      "path": "External secondary HTML rubric label",
+      "previous": "Ant. I.: Ps 22, 1-2; 7-10",
+      "corrected": "Psalmus 23 (Domini est terra) as original 1962 research source",
+      "scope": "Third-party web transcription index typo, not a correction to source Missal",
+      "status": "REJECT_BAD_EXTERNAL_NUMBERING"
+    },
+    {
+      "path": "External secondary HTML Psalm 46 line 7",
+      "previous": "Quoniam rex omnis; terrae est Deus",
+      "corrected": "Quoniam rex omnis terrae est Deus",
+      "status": "REJECT_STRAY_SEMICOLON_IN_WEB_TRANSCRIPTION"
+    }
+  ],
+  "editorialCompleteness": {
+    "scope": "SOURCE_INICIPITS_AND_VERSE_PAIRS_RECONCILED_NOT_FULL_PROPER_TEXT_CERTIFIED",
+    "psalm23VerseIncipits": 6,
+    "psalm46ChantLineIncipits": 10,
+    "psalm46BiblicalVerseCount": 9,
+    "original1962PrintHumanReviewOwner": "#894"
   }
 }

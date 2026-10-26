@@ -566,3 +566,29 @@ test('actual native Exsurge success closes only SVG render gate, not editorial a
  const registry=readJSON('data/research/processionale-roman-palm-psalter-editions-20261026.v1.json');
  assert.equal(registry.sourceSafety.approvedRuntimeAssignments,0);
 });
+
+
+test('Palm distribution 16 Latin psalm incipits agree across the research registers',()=>{
+  const audit=readJSON('data/research/processionale-palm-1962-incipit-reconciliation-20261026.v1.json');
+  const printed=readJSON('data/research/processionale-palm-1962-primary-facsimile-20261026.v1.json');
+  const edition=readJSON('data/research/processionale-roman-palm-psalter-editions-20261026.v1.json');
+  const dual=readJSON('data/research/processionale-palm46-dual-numbering-20261026.v1.json');
+  assert.equal(audit.completeness.incipits,16);
+  assert.equal(audit.completeness.completePsalmVersesCertified,0);
+  assert.equal(audit.completeness.musicalMelodiesCertified,0);
+  assert.equal(audit.completeness.approvedRuntimeAssignments,0);
+  assert.deepEqual(audit.psalms.map(p=>p.incipits.length),[6,10]);
+  assert.deepEqual(audit.psalms[1].biblicalVerseNumbers,[1,2,3,4,5,6,7,8,9,9]);
+  assert.equal(audit.psalms[1].incipits[2],'Subicit populos nobis');
+  assert.equal(printed.psalm46.printedPairs[1].starts[0],'Subicit populos nobis');
+  assert.notEqual(printed.psalm46.printedPairs[1].starts[0],'Subicit nobis nationes');
+  const actual=edition.acceptance.editorialProgramme.psalms.find(x=>x.psalm===46).verseIncipits;
+  const normalized=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^\p{L} ]/gu,'').replace(/\s+/g,' ').trim().toLowerCase();
+  assert.deepEqual(actual.map(x=>normalized(x.incipit)),audit.psalms[1].incipits.map(normalized));
+  assert.equal(dual.reconciliationPath,
+    'data/research/processionale-palm-1962-incipit-reconciliation-20261026.v1.json');
+  assert.equal(edition.sourceSafety.approvedRuntimeAssignments,0);
+  assert.equal(audit.psalms[1].incipits[0],'Omnes populi plaudite manibus');
+  assert.ok(audit.corrections.resolved.some(x=>x.includes('wrong Psalm 22 heading')));
+});
