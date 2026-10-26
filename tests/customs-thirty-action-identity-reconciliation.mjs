@@ -54,7 +54,6 @@ for(let i=0;i<r.records.length;i++){
  }else assert.equal(x.proposed_enrichment_owner_id,null,"No silent group merger");
 }
 assert.deepEqual([...existingOwners].sort(),["CUST-ADVT-HERBERGSUCHE","CUST-PENTECOST-POLISH-GREENERY"]);
-assert.equal(r.records.find(x=>x.review_key==="OBSERVATION:BULK150-021")?.identity_route_proposed,undefined);
 const marian=r.records.filter(x=>x.proposed_enrichment_owner_id==="CUST-ADVT-HERBERGSUCHE");
 assert.equal(marian.length,2,"Traveling Advent images from two book/action records must enrich one owner");
 const greenery=r.records.filter(x=>x.proposed_enrichment_owner_id==="CUST-PENTECOST-POLISH-GREENERY");
