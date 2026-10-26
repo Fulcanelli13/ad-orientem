@@ -37,13 +37,22 @@ class Blocks(HTMLParser):
         if not sum(self.skip.values()):self.parts.append(s)
     def blocks(self):
         return [re.sub(r"\s+"," ",s).strip() for s in "".join(self.parts).replace("\xa0"," ").splitlines() if s.strip()]
+def decode_html(data, header_charset=None):
+    # Legacy book transcriptions may declare encoding only in their HTML meta tag.
+    lead=data[:8192].decode("ascii",errors="ignore")
+    found=re.search(r'<meta[^>]*charset\\s*=\\s*["\\']?([a-z0-9._-]+)',lead,re.IGNORECASE)
+    charset=header_charset or (found.group(1) if found else "utf-8")
+    try:
+        return data.decode(charset,errors="strict")
+    except (LookupError,UnicodeDecodeError):
+        return data.decode("utf-8",errors="replace")
+
 def fetch(url):
     req=Request(url,headers={"User-Agent":"AdOrientem-SourceCollation/1.0","Accept":"text/html"})
     with urlopen(req,timeout=30) as r:
         data=r.read(5000001)
         if len(data)>5000000:raise ValueError("source_exceeds_cap")
-        encoding=r.headers.get_content_charset() or "utf-8"
-        return data.decode(encoding,errors="replace"),sha256(data).hexdigest()
+        return decode_html(data,r.headers.get_content_charset()),sha256(data).hexdigest()
 def fold(s):
     return " ".join(re.sub(r"\[(?:\d{1,4})\]"," ",unicodedata.normalize("NFKC",s).lower().replace("’","'")).split())
 def extract(html,begin,end,minwords):

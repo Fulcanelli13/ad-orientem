@@ -24,6 +24,11 @@ class TestB50(unittest.TestCase):
             b50.extract(self.html+"<p>Opening start repeated</p>","Opening start","Final ending",20)
         with self.assertRaisesRegex(ValueError,"ending_anchor_hits_0"):
             b50.extract(self.html,"Opening start","Unavailable ending",20)
+    def test_meta_charset_fallback_decodes_legacy_french(self):
+        body='<meta charset="windows-1252"><p>à l’église</p>'.encode("cp1252")
+        self.assertIn("à l’église",b50.decode_html(body))
+        self.assertIn("à l’église",b50.decode_html("à l’église".encode("utf-8"),"utf-8"))
+
     def test_normalization_keeps_word_changes(self):
         self.assertEqual(b50.normalize("vostre   [123]   cœur"),"vostre cœur")
         self.assertEqual(b50.tokens(["Bonté, et grâce."],True),b50.tokens(["bonté et grâce"],True))
