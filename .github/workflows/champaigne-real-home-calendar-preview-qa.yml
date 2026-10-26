@@ -2,7 +2,7 @@ name: Champaigne D real Home Calendar simulated QA
 on:
   push:
     branches: [fix/approved-feast-heroes-main-20261021]
-    paths: [.github/workflows/champaigne-real-home-calendar-preview-qa.yml]
+    paths: [.github/workflows/champaigne-real-home-calendar-preview-qa.yml, tests/approved-feast-hero-real-surfaces-preview.mjs]
   workflow_dispatch:
 permissions:
   contents: write
