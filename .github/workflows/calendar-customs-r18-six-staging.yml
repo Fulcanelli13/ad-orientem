@@ -1,0 +1,40 @@
+name: Calendar Customs six-item release-staging guard
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "src/calendar/customs-r18-first-six-staging.v1.json"
+      - "src/calendar/customs-read-model.js"
+      - "src/calendar/customs-extra-articles.js"
+      - "src/calendar/customs-profile-links.js"
+      - "tests/calendar-customs-r18-first-six-staging.mjs"
+      - "tests/calendar-customs-r18-region-preview.mjs"
+      - "tests/calendar-customs-r18-release-decision.mjs"
+      - "src/calendar/customs-r18-first-six-release-decision.v1.json"
+      - "src/calendar/customs-r18-review-pack.js"
+      - "tests/calendar-customs-r18-editorial-preview-ui.mjs"
+      - "src/calendar/calendar-runtime.js"
+      - ".github/workflows/calendar-customs-r18-six-staging.yml"
+      - "docs/CALENDAR_CUSTOMS_R18_FIRST_SIX_RELEASE_REVIEW_20261026.md"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  stage-without-publishing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify all six are editorial drafts, and 35 published identities stay unchanged
+        run: |
+          node --check tests/calendar-customs-r18-first-six-staging.mjs
+          node tests/calendar-customs-r18-first-six-staging.mjs
+          node --check tests/calendar-customs-r18-region-preview.mjs
+          node tests/calendar-customs-r18-region-preview.mjs
+          node --check tests/calendar-customs-r18-release-decision.mjs
+          node tests/calendar-customs-r18-release-decision.mjs
+          node --check tests/calendar-customs-r18-editorial-preview-ui.mjs
+          node tests/calendar-customs-r18-editorial-preview-ui.mjs

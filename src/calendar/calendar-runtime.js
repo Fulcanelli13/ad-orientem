@@ -7,6 +7,7 @@ import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./int
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
 import { calendarCustomRecommendations, calendarCustomSeasonalMonthEntries, calendarCustomArticleIds, calendarCustomArticle } from "./customs-read-model.js";
+import { CALENDAR_R18_REVIEW_CANDIDATES } from "./customs-r18-review-pack.js";
 import { normaliseCustomSearch, calendarCustomSearchIndex, calendarCustomSearchMatches } from "./customs-search.js";
 import { groupCalendarCustomsByYear } from "../customs/year-led-library.js";
 import { personalCustomsForDate } from "../customs/personal-store.js";
@@ -54,6 +55,38 @@ let yearColourLoad=null,clockSelection=null;
 const MONTH_PREVIEW_REVISION="2026-10-20-canonical-resolver-r1";
 const monthPreviewMemory=new Map();
 const previewStorage=()=>{try{return globalThis.localStorage??null}catch{return null}};
+
+const R18_REVIEW_REGION_STORAGE_KEY="ao.calendar.customs-r18-review-region.v1";
+const R18_REVIEW_REGION_OPTIONS=Object.freeze([
+  ["IE","Ireland","Irlande"],["PL","Poland","Pologne"],
+  ["AT","Austria","Autriche"],["FR-PROVENCE","Provence","Provence"],
+  ["ES","Spain","Espagne"]
+]);
+let r18ReviewRegionCached=null; // null means not yet read; empty string means opt-out
+function r18ReviewRegion(){
+  if(r18ReviewRegionCached!==null)return r18ReviewRegionCached;
+  let saved="";try{saved=previewStorage()?.getItem(R18_REVIEW_REGION_STORAGE_KEY)||""}catch{}
+  r18ReviewRegionCached=R18_REVIEW_REGION_OPTIONS.some(item=>item[0]===saved)?saved:"";
+  return r18ReviewRegionCached;
+}
+function setR18ReviewRegion(next){
+  const valid=R18_REVIEW_REGION_OPTIONS.some(item=>item[0]===next)?next:"";
+  r18ReviewRegionCached=valid;
+  try{const storage=previewStorage();if(valid)storage?.setItem(R18_REVIEW_REGION_STORAGE_KEY,valid);
+      else storage?.removeItem(R18_REVIEW_REGION_STORAGE_KEY)}catch{}
+}
+function r18ReviewSelectorMarkup(){
+  const selected=r18ReviewRegion();
+  const options=[["",L("None — published customs only","Aucune — coutumes publiées uniquement"),L("None — published customs only","Aucune — coutumes publiées uniquement")],...R18_REVIEW_REGION_OPTIONS];
+  return '<div class="aoCalR18ReviewChoice">'
+    +'<label for="aoCalR18ReviewRegion">'+esc(L("Regional customs — editorial preview","Coutumes régionales — aperçu éditorial"))+'</label>'
+    +'<select id="aoCalR18ReviewRegion" data-cal-r18-review-region aria-label="'+esc(L("Choose a regional customs preview","Choisir une région à prévisualiser"))+'">'
+    +options.map(([value,en,frText])=>'<option value="'+esc(value)+'"'+(selected===value?' selected':'')+'>'+esc(fr()?frText:en)+'</option>').join("")
+    +'</select>'
+    +'<small>'+esc(L("Optional unpublished drafts, not new feast days or local event schedules.","Projets non publiés, facultatifs, sans nouvelles fêtes ni horaires locaux."))+'</small>'
+    +'</div>';
+}
+
 function monthPreviewFor(monthId){
   const lang=fr()?"fr":"en",key=monthId+"|"+lang;
   if(!monthPreviewMemory.has(key))monthPreviewMemory.set(key,readMonthPreview(previewStorage(),monthId,lang,MONTH_PREVIEW_REVISION)||new Map());
@@ -712,7 +745,7 @@ function calendarCustomArticleMarkup(article){
   const isFr=fr(),lang=isFr?"fr":"en",Lcopy=(en,frText)=>isFr?frText:en;
   const sources=article.sources||[],historySources=article.history_sources||[],supportingSources=article.supporting_sources||[];
   return `<details class="aoCalCustomArticle" data-cal-custom-id="${esc(article.id)}">
-    <summary><span><strong>${esc(article.title[lang])}</strong><small>${esc(article.occasion[lang]||"")}</small></span><span aria-hidden="true">›</span></summary>
+    <summary><span><strong>${esc(article.title[lang])}</strong><small>${esc(article.occasion[lang]||"")}</small>${article.previewOnly?`<small class="aoCalCustomDraftScope">${esc(Lcopy("Editorial preview — not published","Aperçu éditorial — non publié"))} · ${esc(article.scope[lang]||"")}</small>`:""}</span><span aria-hidden="true">›</span></summary>
     <div class="aoCalCustomArticleContent">
       <p>${esc(article.description[lang])}</p>
       ${article.history[lang]!==article.description[lang]?`<h5>${esc(Lcopy("Historical context","Contexte historique"))}</h5><p>${esc(article.history[lang])}</p>`:""}
@@ -735,7 +768,7 @@ function calendarCustomCatalogueMarkup(){
     const searchable=calendarCustomSearchIndex(article);
     return '<div data-cal-custom-item data-cal-custom-terms="'+esc(searchable)+'">'+calendarCustomArticleMarkup(article)+'</div>';
   };
-  return '<section class="aoCalCustomCatalogueSection"><details class="aoCalCustomCatalogue">'
+  return '<section class="aoCalCustomCatalogueSection">'+r18ReviewSelectorMarkup()+'<details class="aoCalCustomCatalogue">'
     +'<summary>'+esc(L("Browse all customs","Parcourir toutes les coutumes"))+' <small>('+articles.length+')</small></summary>'
     +'<label class="aoCalCustomCatalogueLabel" for="ao-cal-custom-search">'+esc(L("Search customs","Rechercher une coutume"))+'</label>'
     +'<input id="ao-cal-custom-search" type="search" data-cal-custom-search autocomplete="off" placeholder="'+esc(L("Name or subject","Nom ou sujet"))+'">'
@@ -763,12 +796,13 @@ function calendarPersonalContext(selected){
 function practiceContext(selected,r){
   let intel=null;
   try{intel=calendarIntelligenceForDate(selected,{fr:fr(),properTitle:titleOf(r)})}catch(error){console.error("Calendar intelligence failed",error)}
-  if(!intel)return "";
-  const events=(intel.events||[]).filter(event=>event?.key!=="sunday-mass");
+  const events=(intel?.events||[]).filter(event=>event?.key!=="sunday-mass");
   const tags=new Set(events.flatMap(event=>event?.tags||[]));
-  const linkedPlaces=pilgrimagePlacesForCalendarKeys(intel.semantic?.map(event=>event.key),pilgrimageCorpus??{});
-  const disciplineRelevant=intel.discipline?.today?.key!=="none"||[...tags].some(tag=>/DISCIPLINE|PENITENTIAL/.test(tag));
-  const seasonalCustoms=calendarCustomRecommendations(selected,{events,fr:fr()});
+  const linkedPlaces=intel?pilgrimagePlacesForCalendarKeys(intel.semantic?.map(event=>event.key),pilgrimageCorpus??{}):[];
+  const disciplineRelevant=Boolean(intel?.discipline?.today?.key&&intel.discipline.today.key!=="none")||[...tags].some(tag=>/DISCIPLINE|PENITENTIAL/.test(tag));
+  const regionCode=r18ReviewRegion();
+  const seasonalCustoms=calendarCustomRecommendations(selected,{events,fr:fr(),
+    r18Review:{enabled:Boolean(regionCode),regionCode,candidates:CALENDAR_R18_REVIEW_CANDIDATES}});
   if(!events.length&&!disciplineRelevant&&!seasonalCustoms.length)return "";
   return `<section class="aoCalPracticeContext" data-cal-intelligence-date="${esc(selected)}">
     <div class="aoCalV2SectionTitle"><div><small>${esc(L("PRACTICES & DISCIPLINE","PRATIQUES & DISCIPLINE"))}</small><h3>${esc(L("For this date","Pour cette date"))}</h3></div></div>
@@ -1115,6 +1149,11 @@ function hybridMonthCss(){return `
 .aoCalCustomArticleContent a{color:#d8c5a4;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 .aoCalCustomCatalogueSection{margin:18px 0 14px}
 .aoCalCustomCatalogue{border-top:1px solid rgba(227,212,187,.15);border-bottom:1px solid rgba(227,212,187,.12);padding:3px 0}
+.aoCalR18ReviewChoice{margin:12px 0;padding:10px 12px;border-left:2px solid rgba(195,170,131,.48);background:rgba(207,183,139,.045);display:grid;gap:6px}
+.aoCalR18ReviewChoice label{font-size:13px;color:#dcc49c}
+.aoCalR18ReviewChoice select{width:100%;max-width:340px;min-height:42px;padding:7px 10px;background:#121b26;border:1px solid rgba(207,183,139,.32);border-radius:5px;color:#e7dbca;font:inherit}
+.aoCalR18ReviewChoice small{color:#a9a399;font-size:11px}
+.aoCalCustomDraftScope{display:block;font-size:11px;max-width:42rem;color:#d2ae79}
 .aoCalCustomCatalogue>summary{list-style:none;cursor:pointer;padding:13px 2px;font-size:15px;color:#d2c6b2}
 .aoCalCustomCatalogue>summary::-webkit-details-marker{display:none}
 .aoCalCustomCatalogue>summary small{opacity:.7;font-size:12px;margin-left:5px}
@@ -1488,6 +1527,12 @@ function bind(r){
     if((event.key==="Enter"||event.key===" ")&&event.target.closest?.("g[data-cal-clock-season],g[data-cal-clock-feast],g[data-cal-clock-cluster]")){
       event.preventDefault();event.target.dispatchEvent(new MouseEvent("click",{bubbles:true}));
     }
+  });
+  r.addEventListener("change",event=>{
+    const picker=event.target.closest?.("[data-cal-r18-review-region]");
+    if(!picker)return;
+    setR18ReviewRegion(picker.value);
+    paint();
   });
   r.addEventListener("input",event=>{
     const input=event.target.closest?.("[data-cal-custom-search]");

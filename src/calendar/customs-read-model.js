@@ -545,12 +545,56 @@ function additionalDateBoundIds(date){
   ...(date===x.palm?["DOM-013"]:[]),
   ...(date===x.holySaturday?["BLSS-004"]:[])];
 }
-export function calendarCustomRecommendations(date,{events=[],fr=false}={}){
+// R18 source-reviewed drafts are never loaded or published automatically.
+// A review tool must explicitly provide the staged records and an exact region;
+// normal Calendar callers do neither. Preview identifiers are not canonical IDs.
+const R18_REVIEW_REGIONS=Object.freeze({
+  "CANDIDATE-STPATRICK-RIBBON":"IE",
+  "CANDIDATE-IRISH-CHRISTMAS-CANDLE":"IE",
+  "CUST-XMAS-POLISH-HAY":"PL",
+  "CUST-BARBARA-BRANCHES":"AT",
+  "CUST-XMAS-PROVENCAL-PAIN-CALENDAL":"FR-PROVENCE",
+  "CUST-EPIPHANY-SPANISH-MAGI-GIFTS":"ES"
+});
+export const CALENDAR_R18_REVIEW_REGION_CODES=Object.freeze([...new Set(Object.values(R18_REVIEW_REGIONS))]);
+export function calendarR18ReviewRecommendations(date,{enabled=false,regionCode="",candidates=[]}={}){
+  if(enabled!==true||!validDate(date)||!Array.isArray(candidates))return Object.freeze([]);
+  const explicitRegion=String(regionCode||"").trim().toUpperCase();
+  if(!CALENDAR_R18_REVIEW_REGION_CODES.includes(explicitRegion))return Object.freeze([]);
+  const mmdd=date.slice(5);
+  const found=[];
+  const visited=new Set();
+  for(const row of candidates){
+    if(!row||!R18_REVIEW_REGIONS[row.working_master_id]||R18_REVIEW_REGIONS[row.working_master_id]!==explicitRegion)continue;
+    if(row.publication_allowed!==false||row.release_state!=="EDITORIAL_REVIEW_ONLY"||row.canonical_article_id!==null)continue;
+    if(!row.calendar_association||row.calendar_association.trigger_enabled!==false||row.calendar_association.recurrence_enabled!==false)continue;
+    if(!Object.values(row.signoffs||{}).length||Object.values(row.signoffs).some(value=>value!==false))continue;
+    if(row.review_key!=="MASTER:"+row.working_master_id||visited.has(row.review_key))continue;
+    const dates=String(row.calendar_association.month_day_hint||"").split("/");
+    if(!dates.includes(mmdd))continue;
+    const article=row.article;
+    if(!article||!["title","description","history","meaning","practice","caution","occasion","scope"].every(field=>["en","fr"].every(lang=>typeof article[field]?.[lang]==="string"&&article[field][lang].trim())))continue;
+    visited.add(row.review_key);
+    found.push(Object.freeze({
+      id:"REVIEW:"+row.working_master_id,
+      ...article,
+      sources:Array.isArray(row.sources)?row.sources:[],
+      previewOnly:true,
+      publication_state:"RESEARCH_DRAFT_NOT_PUBLISHED",
+      regionCode:explicitRegion,
+      historicalOnly:row.working_master_id==="CANDIDATE-STPATRICK-RIBBON"
+    }));
+  }
+  return Object.freeze(found);
+}
+export function calendarCustomRecommendations(date,{events=[],fr=false,r18Review=null}={}){
   if(!validDate(date))return Object.freeze([]);
   const keys=Array.isArray(events)?events.map(event=>event?.key).filter(Boolean):[];
   const eventIds=keys.flatMap(key=>calendarCustomProfileActions(key,{fr}).map(row=>row[0].split(":").at(-1)));
   const ids=[...new Set([...eventIds,...additionalDateBoundIds(date),...seasonalIds(date)])];
-  return Object.freeze(ids.filter(id=>ARTICLES.has(id)).map(id=>ARTICLES.get(id)));
+  const canonical=ids.filter(id=>ARTICLES.has(id)).map(id=>ARTICLES.get(id));
+  if(!r18Review?.enabled)return Object.freeze(canonical);
+  return Object.freeze([...canonical,...calendarR18ReviewRecommendations(date,r18Review)]);
 }
 export function calendarCustomSeasonalMonthEntries(monthId,{fr=false}={}){
   if(!/^\d{4}-\d{2}$/.test(String(monthId||"")))return Object.freeze([]);

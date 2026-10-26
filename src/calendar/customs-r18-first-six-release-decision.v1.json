@@ -1,0 +1,311 @@
+{
+  "schema": "AO_CUSTOMS_SIX_PUBLICATION_DECISION_BOARD_V1",
+  "date": "2026-10-26",
+  "owner_branch": "feature/customs-r18-first-six-calendar-staging-20261026",
+  "research_pr": 1723,
+  "calendar_pr": 1736,
+  "source_file": "src/calendar/customs-r18-first-six-staging.v1.json",
+  "current_published_baseline": 35,
+  "six_copy_ready_for_human_acceptance": 6,
+  "six_narrow_source_claims_rechecked": 6,
+  "editorially_accepted": 0,
+  "new_live_articles": 0,
+  "policy": {
+    "active_calendar_is_only_publication_surface": true,
+    "no_new_calendar_or_atlas": true,
+    "default_region_interest": null,
+    "no_geolocation_inference": true,
+    "on_calendar_date_suggestion": "EXACT_DATE_AND_EXPLICIT_INTEREST_CODE_REQUIRED",
+    "on_catalogue_browse_after_acceptance": "GLOBAL_BROWSE_WITH_EN_FR_GEOGRAPHIC_SCOPE_LABEL",
+    "leave_1962_feast_solver_unchanged": true,
+    "no_assumed_local_procession_or_ritual": true
+  },
+  "release_criteria": [
+    "Identity distinctness and parent-variant decision accepted against current canonical corpus",
+    "Final English and French wording accepted, with history/folklore cautions retained",
+    "Regional interest and catalogue visibility policy accepted",
+    "Any priestly blessings and Mass actions verified separately; no unverified rite imported",
+    "Canonical IDs checked against main and other active PRs immediately before publication",
+    "Calendar regression suite and dated page QA pass on activation change"
+  ],
+  "records": [
+    {
+      "working_master_id": "CANDIDATE-STPATRICK-RIBBON",
+      "review_key": "MASTER:CANDIDATE-STPATRICK-RIBBON",
+      "review_item_kind": "HISTORICAL_LOCAL_PRACTICE",
+      "regional_interpretation": {
+        "en": "Ireland · historical",
+        "fr": "Irlande · historique"
+      },
+      "region_interest_code": "IE",
+      "requested_production_visibility": "EXPLICIT_REGIONAL_INTEREST_ONLY",
+      "catalogue_visibility_on_publication": "BROWSE_ALL_WITH_LOCALITY_LABEL",
+      "source_claim_check": "NARROW_PRIMARY_OR_INSTITUTIONAL_PASSAGE_CONFIRMED",
+      "primary_source": "https://galwaycitymuseum.ie/blog/1-reviving-an-old-tradition-st-patricks-crosses/",
+      "claim_limit": "Galway City Museum 2022: Dineley 1680s + later children badges; present continuity not established.",
+      "calendar_day_hints": [
+        "03-17"
+      ],
+      "date_semantics": "CIVIL_CUSTOM_CONTEXT_NOT_AUTOMATIC_1962_FEAST_TRANSFER",
+      "regional_scope_status": "RESTRICTED_TO_DIRECTLY_SUPPORTED_AREA",
+      "recommended_release_class": "HISTORICAL_CONTEXT_ONLY",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "occasion",
+        "scope"
+      ],
+      "en_fr_release_copy_complete": true,
+      "translation_human_signed_off": false,
+      "identity_human_signed_off": false,
+      "calendar_scope_human_signed_off": false,
+      "source_independence_certified": false,
+      "1962_ritual_human_signed_off": false,
+      "canonical_article_id": null,
+      "publication_allowed": false,
+      "active_calendar": false,
+      "prohibited": [
+        "INFERRED_UNIVERSAL_CATHOLIC_OBLIGATION",
+        "PRIESTLY_RITE_FROM_HOUSEHOLD_TRADITION",
+        "FUTURE_PARADE_OR_PARISH_EVENT_SCHEDULE",
+        "FOLK_DIVINATION_AS_DOCTRINE"
+      ]
+    },
+    {
+      "working_master_id": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "review_key": "MASTER:CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "review_item_kind": "RECORDED_HOUSEHOLD_FOLKLORE",
+      "regional_interpretation": {
+        "en": "Ireland · recorded folklore",
+        "fr": "Irlande · folklore attesté"
+      },
+      "region_interest_code": "IE",
+      "requested_production_visibility": "EXPLICIT_REGIONAL_INTEREST_ONLY",
+      "catalogue_visibility_on_publication": "BROWSE_ALL_WITH_LOCALITY_LABEL",
+      "source_claim_check": "NARROW_PRIMARY_OR_INSTITUTIONAL_PASSAGE_CONFIRMED",
+      "primary_source": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/Generations-past-how-Christmas-was-celebrated-in-y",
+      "claim_limit": "National Museum of Ireland: Kerry 1941 testimony and past family remembrance; no spiritual guarantees.",
+      "calendar_day_hints": [
+        "12-24",
+        "12-25"
+      ],
+      "date_semantics": "CIVIL_CUSTOM_CONTEXT_NOT_AUTOMATIC_1962_FEAST_TRANSFER",
+      "regional_scope_status": "RESTRICTED_TO_DIRECTLY_SUPPORTED_AREA",
+      "recommended_release_class": "OPTIONAL_DOCUMENTED_HOUSEHOLD_CONTEXT",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "occasion",
+        "scope"
+      ],
+      "en_fr_release_copy_complete": true,
+      "translation_human_signed_off": false,
+      "identity_human_signed_off": false,
+      "calendar_scope_human_signed_off": false,
+      "source_independence_certified": false,
+      "1962_ritual_human_signed_off": false,
+      "canonical_article_id": null,
+      "publication_allowed": false,
+      "active_calendar": false,
+      "prohibited": [
+        "INFERRED_UNIVERSAL_CATHOLIC_OBLIGATION",
+        "PRIESTLY_RITE_FROM_HOUSEHOLD_TRADITION",
+        "FUTURE_PARADE_OR_PARISH_EVENT_SCHEDULE",
+        "FOLK_DIVINATION_AS_DOCTRINE"
+      ]
+    },
+    {
+      "working_master_id": "CUST-XMAS-POLISH-HAY",
+      "review_key": "MASTER:CUST-XMAS-POLISH-HAY",
+      "review_item_kind": "REGIONAL_HOUSEHOLD_CUSTOM",
+      "regional_interpretation": {
+        "en": "Poland · Wigilia",
+        "fr": "Pologne · Wigilia"
+      },
+      "region_interest_code": "PL",
+      "requested_production_visibility": "EXPLICIT_REGIONAL_INTEREST_ONLY",
+      "catalogue_visibility_on_publication": "BROWSE_ALL_WITH_LOCALITY_LABEL",
+      "source_claim_check": "NARROW_PRIMARY_OR_INSTITUTIONAL_PASSAGE_CONFIRMED",
+      "primary_source": "https://www.gov.pl/web/kultura/nowy-wpis-na-krajowej-liscie-niematerialnego-dziedzictwa-kulturowego",
+      "claim_limit": "Polish Ministry of Culture 2025 national heritage listing, hay under white tablecloth.",
+      "calendar_day_hints": [
+        "12-24"
+      ],
+      "date_semantics": "CIVIL_CUSTOM_CONTEXT_NOT_AUTOMATIC_1962_FEAST_TRANSFER",
+      "regional_scope_status": "RESTRICTED_TO_DIRECTLY_SUPPORTED_AREA",
+      "recommended_release_class": "OPTIONAL_DOCUMENTED_HOUSEHOLD_CONTEXT",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "occasion",
+        "scope"
+      ],
+      "en_fr_release_copy_complete": true,
+      "translation_human_signed_off": false,
+      "identity_human_signed_off": false,
+      "calendar_scope_human_signed_off": false,
+      "source_independence_certified": false,
+      "1962_ritual_human_signed_off": false,
+      "canonical_article_id": null,
+      "publication_allowed": false,
+      "active_calendar": false,
+      "prohibited": [
+        "INFERRED_UNIVERSAL_CATHOLIC_OBLIGATION",
+        "PRIESTLY_RITE_FROM_HOUSEHOLD_TRADITION",
+        "FUTURE_PARADE_OR_PARISH_EVENT_SCHEDULE",
+        "FOLK_DIVINATION_AS_DOCTRINE"
+      ]
+    },
+    {
+      "working_master_id": "CUST-BARBARA-BRANCHES",
+      "review_key": "MASTER:CUST-BARBARA-BRANCHES",
+      "review_item_kind": "REGIONAL_HOUSEHOLD_CUSTOM",
+      "regional_interpretation": {
+        "en": "Austria · Central European custom",
+        "fr": "Autriche · coutume d’Europe centrale"
+      },
+      "region_interest_code": "AT",
+      "requested_production_visibility": "EXPLICIT_REGIONAL_INTEREST_ONLY",
+      "catalogue_visibility_on_publication": "BROWSE_ALL_WITH_LOCALITY_LABEL",
+      "source_claim_check": "NARROW_PRIMARY_OR_INSTITUTIONAL_PASSAGE_CONFIRMED",
+      "primary_source": "https://www.erzdioezese-wien.at/heilige-barbara",
+      "claim_limit": "Archdiocese of Vienna account, Dec 4 branches; broader central European distribution not enough to expand present region whitelist.",
+      "calendar_day_hints": [
+        "12-04"
+      ],
+      "date_semantics": "CIVIL_CUSTOM_CONTEXT_NOT_AUTOMATIC_1962_FEAST_TRANSFER",
+      "regional_scope_status": "RESTRICTED_TO_DIRECTLY_SUPPORTED_AREA",
+      "recommended_release_class": "OPTIONAL_DOCUMENTED_HOUSEHOLD_CONTEXT",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "occasion",
+        "scope"
+      ],
+      "en_fr_release_copy_complete": true,
+      "translation_human_signed_off": false,
+      "identity_human_signed_off": false,
+      "calendar_scope_human_signed_off": false,
+      "source_independence_certified": false,
+      "1962_ritual_human_signed_off": false,
+      "canonical_article_id": null,
+      "publication_allowed": false,
+      "active_calendar": false,
+      "prohibited": [
+        "INFERRED_UNIVERSAL_CATHOLIC_OBLIGATION",
+        "PRIESTLY_RITE_FROM_HOUSEHOLD_TRADITION",
+        "FUTURE_PARADE_OR_PARISH_EVENT_SCHEDULE",
+        "FOLK_DIVINATION_AS_DOCTRINE"
+      ]
+    },
+    {
+      "working_master_id": "CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
+      "review_key": "MASTER:CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
+      "review_item_kind": "REGIONAL_HOUSEHOLD_CUSTOM",
+      "regional_interpretation": {
+        "en": "Provence · Christmas Eve",
+        "fr": "Provence · veille de Noël"
+      },
+      "region_interest_code": "FR-PROVENCE",
+      "requested_production_visibility": "EXPLICIT_REGIONAL_INTEREST_ONLY",
+      "catalogue_visibility_on_publication": "BROWSE_ALL_WITH_LOCALITY_LABEL",
+      "source_claim_check": "NARROW_PRIMARY_OR_INSTITUTIONAL_PASSAGE_CONFIRMED",
+      "primary_source": "https://www.visitvar.fr/agenda/evenements-incontournables/noel-provence/traditions-de-noel-provence",
+      "claim_limit": "Var regional heritage: 24 Dec Gros Souper, bread divided into three, local folklore section separated.",
+      "calendar_day_hints": [
+        "12-24"
+      ],
+      "date_semantics": "CIVIL_CUSTOM_CONTEXT_NOT_AUTOMATIC_1962_FEAST_TRANSFER",
+      "regional_scope_status": "RESTRICTED_TO_DIRECTLY_SUPPORTED_AREA",
+      "recommended_release_class": "OPTIONAL_DOCUMENTED_HOUSEHOLD_CONTEXT",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "occasion",
+        "scope"
+      ],
+      "en_fr_release_copy_complete": true,
+      "translation_human_signed_off": false,
+      "identity_human_signed_off": false,
+      "calendar_scope_human_signed_off": false,
+      "source_independence_certified": false,
+      "1962_ritual_human_signed_off": false,
+      "canonical_article_id": null,
+      "publication_allowed": false,
+      "active_calendar": false,
+      "prohibited": [
+        "INFERRED_UNIVERSAL_CATHOLIC_OBLIGATION",
+        "PRIESTLY_RITE_FROM_HOUSEHOLD_TRADITION",
+        "FUTURE_PARADE_OR_PARISH_EVENT_SCHEDULE",
+        "FOLK_DIVINATION_AS_DOCTRINE"
+      ]
+    },
+    {
+      "working_master_id": "CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
+      "review_key": "MASTER:CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
+      "review_item_kind": "REGIONAL_FAMILY_GIFT_CUSTOM",
+      "regional_interpretation": {
+        "en": "Spain · Epiphany gifts",
+        "fr": "Espagne · cadeaux de l’Épiphanie"
+      },
+      "region_interest_code": "ES",
+      "requested_production_visibility": "EXPLICIT_REGIONAL_INTEREST_ONLY",
+      "catalogue_visibility_on_publication": "BROWSE_ALL_WITH_LOCALITY_LABEL",
+      "source_claim_check": "NARROW_PRIMARY_OR_INSTITUTIONAL_PASSAGE_CONFIRMED",
+      "primary_source": "https://socialnewsroom.spain.info/three-kings-day-in-spain-2024/",
+      "claim_limit": "Spain Tourism guide published Dec 2023 for 2024; 5–6 Jan household shoes only, no future parade dates.",
+      "calendar_day_hints": [
+        "01-05",
+        "01-06"
+      ],
+      "date_semantics": "CIVIL_CUSTOM_CONTEXT_NOT_AUTOMATIC_1962_FEAST_TRANSFER",
+      "regional_scope_status": "RESTRICTED_TO_DIRECTLY_SUPPORTED_AREA",
+      "recommended_release_class": "OPTIONAL_DOCUMENTED_HOUSEHOLD_CONTEXT",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "occasion",
+        "scope"
+      ],
+      "en_fr_release_copy_complete": true,
+      "translation_human_signed_off": false,
+      "identity_human_signed_off": false,
+      "calendar_scope_human_signed_off": false,
+      "source_independence_certified": false,
+      "1962_ritual_human_signed_off": false,
+      "canonical_article_id": null,
+      "publication_allowed": false,
+      "active_calendar": false,
+      "prohibited": [
+        "INFERRED_UNIVERSAL_CATHOLIC_OBLIGATION",
+        "PRIESTLY_RITE_FROM_HOUSEHOLD_TRADITION",
+        "FUTURE_PARADE_OR_PARISH_EVENT_SCHEDULE",
+        "FOLK_DIVINATION_AS_DOCTRINE"
+      ]
+    }
+  ]
+}
