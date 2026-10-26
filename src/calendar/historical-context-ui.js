@@ -4,8 +4,8 @@
  */
 import { calendarHistoricalNotes } from "./historical-context.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
-export function renderCalendarHistoricalContext(date,{fr=false}={}){
-  const notes=calendarHistoricalNotes(date,{fr});
+export function renderCalendarHistoricalContext(date,{fr=false,observedMainId=null}={}){
+  const notes=calendarHistoricalNotes(date,{fr,observedMainId});
   if(!notes.length)return "";
   const L=(en,frText)=>fr?frText:en;
   return `<section class="aoCalHistoricalContext" data-cal-historical-date="${esc(date)}">
