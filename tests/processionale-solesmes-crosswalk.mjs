@@ -597,8 +597,8 @@ test('Palm distribution 16 Latin psalm incipits agree across the research regist
 test('sixteen complete Latin candidates remain source-only until 1962 image and chant pointing reviews',()=>{
   const c=readJSON('data/research/processionale-palm-1962-full-verse-candidates-20261026.v1.json');
   const inc=readJSON('data/research/processionale-palm-1962-incipit-reconciliation-20261026.v1.json');
-  const clean=s=>s.normalize('NFD').replace(/[\\u0300-\\u036f]/g,'')
-    .replace(/[^\\p{L} ]/gu,'').replace(/\\s+/g,' ').trim().toLowerCase();
+  const clean=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^\p{L} ]/gu,'').replace(/\s+/g,' ').trim().toLowerCase();
   assert.equal(c.stage,'PALM-R02');
   assert.equal(c.batch,17);
   assert.equal(c.source.excludedAncient.explicitLabel,'Textus antiquus');
