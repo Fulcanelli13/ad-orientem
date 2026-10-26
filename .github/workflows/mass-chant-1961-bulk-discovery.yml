@@ -16,8 +16,10 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
-      - name: Verify importer contracts
-        run: node tests/mass-chant-catalogue-ingest.mjs
+      - name: Verify importer and screening contracts
+        run: |
+          node tests/mass-chant-catalogue-ingest.mjs
+          node tests/mass-chant-catalogue-screen.mjs
       - name: Fetch pinned public GregoBase database
         shell: bash
         run: |
@@ -36,6 +38,14 @@ jobs:
             --out "$RUNNER_TEMP/ao-1961-chant-ledger" \
             --print-rows 3500
           echo "Generated files: $(find "$RUNNER_TEMP/ao-1961-chant-ledger" -type f | wc -l)"
+      - name: Screen entire batch ledger into editorial and exception queues
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/mass/screen-gregobase-1961.mjs \
+            --index "$RUNNER_TEMP/ao-1961-chant-ledger" \
+            --out "$RUNNER_TEMP/ao-1961-chant-review"
+          cat "$RUNNER_TEMP/ao-1961-chant-review/screening-summary.json"
       - name: Assert no reader data or mass files were changed
         shell: bash
         run: |
