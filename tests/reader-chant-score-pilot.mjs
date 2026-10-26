@@ -17,7 +17,7 @@ assert.equal(resolveNativeScholaScore({trackId:"KYRIE",selectedScoreId:"UNKNOWN"
 assert.equal(resolveNativeScholaScore({trackId:"UNKNOWN",selectedScoreId:SCHOLA_SCORE_PILOT.id}).score,null);
 assert.equal(availableNativeScholaScores("KYRIE").length,3);
 assert.equal(availableNativeScholaScores("SANCTUS_BENEDICTUS").length,1);
-assert.equal(SCHOLA_SCORE_CATALOGUE.length,7);
+assert.equal(SCHOLA_SCORE_CATALOGUE.length,12);
 assert.equal(availableNativeScholaScores("GLORIA")[0].id,"GREGOBASE-961");
 assert.equal(availableNativeScholaScores("CREDO")[0].id,"GREGOBASE-749");
 assert.equal(availableNativeScholaScores("SANCTUS_BENEDICTUS")[0].id,"GREGOBASE-1384");
@@ -35,7 +35,7 @@ for(const record of SCHOLA_SCORE_CATALOGUE.filter(s=>s.trackId==="KYRIE")){
   assert.equal(selected.score.bookWitnesses.length,2);
   assert.match(selected.score.bookWitnesses[0],/1961/);
 }
-for(const record of SCHOLA_SCORE_CATALOGUE.filter(s=>s.trackId!=="KYRIE")){
+for(const record of SCHOLA_SCORE_CATALOGUE.filter(s=>s.status==="RESEARCH_EXAMPLE_NOT_MASS_SETTING"&&s.trackId!=="KYRIE")){
   assert.equal(record.status,"RESEARCH_EXAMPLE_NOT_MASS_SETTING");
   assert.ok(record.gabc.includes("%%"));
   assert.ok(record.sourceUrl.endsWith(record.id.slice(10)));
@@ -44,6 +44,14 @@ for(const record of SCHOLA_SCORE_CATALOGUE.filter(s=>s.trackId!=="KYRIE")){
   const explicitlySelected=resolveNativeScholaScore({trackId:record.trackId,selectedScoreId:record.id});
   assert.equal(explicitlySelected.status,"EXAMPLE_ONLY_NOT_SELECTED_FOR_MASS");
   assert.equal(explicitlySelected.score.id,record.id);
+}
+for(const record of SCHOLA_SCORE_CATALOGUE.filter(s=>s.status==="SOURCE_MATCH_REQUIRED_NOT_DATE_ASSIGNED")){
+  assert.equal(resolveNativeScholaScore({trackId:record.trackId,selectedScoreId:record.id}).score,null,
+    "Cannot unlock a Proper from a known ID or feast date alone");
+  const crosswalk={schema:"ao-reader-proper-chant-crosswalk-v1",status:"PARTIALLY_MATCHED",
+    candidates:[{trackId:record.trackId,scoreId:record.id}]};
+  assert.equal(resolveNativeScholaScore({trackId:record.trackId,selectedScoreId:record.id,
+    properCrosswalk:crosswalk}).score?.id,record.id);
 }
 const selected=resolveNativeScholaScore({trackId:"KYRIE",selectedScoreId:SCHOLA_SCORE_PILOT.id});
 assert.match(selected.score.gabc,/mode:3;/);
