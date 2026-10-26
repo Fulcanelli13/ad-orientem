@@ -6,6 +6,7 @@ on:
       - "data/directory/research/b97-italy-three-append-only-physical-research-sites-and-ambrosian-relocation.v1.json"
       - "data/directory/research/b98-20261026-consolidated-core-readback-manifest.v1.json"
       - "tests/directory-b98-consolidated-core-contract.mjs"
+      - "tools/directory/validate-b98-research-core.py"
       - ".github/workflows/directory-b98-research-core.yml"
   workflow_dispatch:
 
@@ -17,6 +18,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate B98 workbook parity-verifier syntax
+        run: python3 -m py_compile tools/directory/validate-b98-research-core.py
       - name: B98 manifest invariants and B97 provenance
         run: node tests/directory-b98-consolidated-core-contract.mjs
       # The 2.1MB binary B98 successor is delivered separately, not
