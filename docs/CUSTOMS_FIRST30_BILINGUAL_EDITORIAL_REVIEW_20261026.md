@@ -1129,7 +1129,7 @@ Ne pas transposer automatiquement les formulaires des messes ou conditions d’i
 
 **Description (FR)**
 
-*Non encore rédigé ou vérifié.**
+*Non encore rédigé ou vérifié.*
 
 **Historical context (EN)**
 
@@ -1188,7 +1188,7 @@ Ne pas imposer une date grégorienne universelle aux familles relevant d’un au
 
 **Description (FR)**
 
-*Non encore rédigé ou vérifié.**
+*Non encore rédigé ou vérifié.*
 
 **Historical context (EN)**
 
@@ -1249,7 +1249,7 @@ Les origines et les formes commerciales dépassent le seul catholicisme ; cet us
 
 **Description (FR)**
 
-*Non encore rédigé ou vérifié.**
+*Non encore rédigé ou vérifié.*
 
 **Historical context (EN)**
 
@@ -1309,7 +1309,7 @@ Cet usage est lié à la famille des Herbergsuche, sans être nécessairement le
 
 **Description (FR)**
 
-*Non encore rédigé ou vérifié.**
+*Non encore rédigé ou vérifié.*
 
 **Historical context (EN)**
 
@@ -1367,7 +1367,7 @@ Ne pas confondre avec les Posadas mexicaines : la circulation d’une image mari
 
 **Description (FR)**
 
-*Non encore rédigé ou vérifié.**
+*Non encore rédigé ou vérifié.*
 
 **Historical context (EN)**
 
@@ -1426,7 +1426,7 @@ Cette clochette familiale n’est ni un geste de la messe ni une affirmation sel
 
 **Description (FR)**
 
-*Non encore rédigé ou vérifié.**
+*Non encore rédigé ou vérifié.*
 
 **Historical context (EN)**
 
@@ -1485,7 +1485,7 @@ Ne pas confondre les crèches du Tyrol avec le théâtre ambulant polonais de la
 
 **Description (FR)**
 
-*Non encore rédigé ou vérifié.**
+*Non encore rédigé ou vérifié.*
 
 **Historical context (EN)**
 
@@ -1544,7 +1544,7 @@ La source UNESCO sur la szopka de Cracovie concerne un artisanat architectural d
 
 **Description (FR)**
 
-*Non encore rédigé ou vérifié.**
+*Non encore rédigé ou vérifié.*
 
 **Historical context (EN)**
 
@@ -1602,7 +1602,7 @@ Mascarades, superstitions et fêtes actuelles ne définissent pas les règles du
 
 **Description (FR)**
 
-*Non encore rédigé ou vérifié.**
+*Non encore rédigé ou vérifié.*
 
 **Historical context (EN)**
 
@@ -1663,7 +1663,7 @@ Coutume historique régionale ; aucun malheur surnaturel n’est promis à ceux 
 
 **Description (FR)**
 
-*Non encore rédigé ou vérifié.**
+*Non encore rédigé ou vérifié.*
 
 **Historical context (EN)**
 
@@ -1721,7 +1721,7 @@ Une coutume polonaise locale n’est ni une décoration liturgique romaine unive
 
 **Description (FR)**
 
-*Non encore rédigé ou vérifié.**
+*Non encore rédigé ou vérifié.*
 
 **Historical context (EN)**
 
@@ -1780,7 +1780,7 @@ La source patrimoniale concerne la Provence, sans prouver une pratique français
 
 **Description (FR)**
 
-*Non encore rédigé ou vérifié.**
+*Non encore rédigé ou vérifié.*
 
 **Historical context (EN)**
 
