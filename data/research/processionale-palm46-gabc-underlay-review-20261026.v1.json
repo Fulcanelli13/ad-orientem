@@ -1,0 +1,85 @@
+{
+  "schema": "ao-palm46-1961-new-psalm-underlay-review-v1",
+  "updated": "2026-10-26",
+  "status": "EDITORIAL_CANDIDATE_ONLY_UNDERLAY_UNVERIFIED_QUARANTINED",
+  "owner": "Existing Schola score-owner PR #1749; source-integrity issue #894",
+  "source": {
+    "url": "https://gregobase.selapa.net/chant.php?id=19316",
+    "scoreId": 19316,
+    "archivedFile": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+    "sha256": "eb13e9eadcfeebca7e5fa0617f6cbb6c9823464ff88af2995952ab21ca8717a0",
+    "originalPrintedPage": "Graduale Romanum 1961 p.144**",
+    "pageWitness": "https://gregobase.selapa.net/sources/2/1180.png",
+    "sourceOldWord": "gentes",
+    "printedRequiredWord": "populi"
+  },
+  "issue": {
+    "location": "First Psalm 46 verse, opening five sung syllables",
+    "badReading": "O-mnes gen-tes",
+    "requiredReading": "O-mnes pó-pu-li",
+    "badSyllableCount": 4,
+    "requiredSyllableCount": 5,
+    "existingGabcText": "O(f)mnes(gh) gen(h)tes,(h)",
+    "notesBefore": [
+      "f",
+      "gh",
+      "h",
+      "h"
+    ],
+    "pitchAssignmentOfNewExtraSyllable": "UNVERIFIED_AGAINST_PRINTED_PAGE",
+    "actualError": "GregoBase metadata and body retain Omnes gentes although original textus novus and 1962 Roman source use Omnes populi"
+  },
+  "candidate": {
+    "status": "SUGGESTED_TENOR_DISTRIBUTION_DO_NOT_PUBLISH",
+    "openingGabc": "O(f)mnes(gh) pó(h)pu(h)li,(h)",
+    "openingTokens": [
+      {
+        "syllable": "O",
+        "gabc": "f"
+      },
+      {
+        "syllable": "mnes",
+        "gabc": "gh"
+      },
+      {
+        "syllable": "pó",
+        "gabc": "h"
+      },
+      {
+        "syllable": "pu",
+        "gabc": "h"
+      },
+      {
+        "syllable": "li,",
+        "gabc": "h"
+      }
+    ],
+    "mechanism": "A proposed additional h reciting-tone slot for the fifth syllable; contour of O-mnes and the following Plaudite remains unchanged. Exact underlay is not visually certified at the neume-to-syllable level.",
+    "mustBeReviewedAgainstPrint": true,
+    "publicationEligible": false
+  },
+  "header": {
+    "rawContainsDoubleDelimiter": true,
+    "rawPattern": "\\n%%\\n%%\\r\\n",
+    "proposedResearchParsingNormalization": "Replace the adjacent two delimiters with one GABC header/body delimiter, without modifying syllable pitches or the archived original",
+    "notAnApprovalOfExsurgeRendering": true
+  },
+  "requiredComparisons": [
+    "See actual staff note alignment for O-mnes pó-pu-li on the 1961 p144** original image",
+    "Verify number and position of h tenor note(s) against printed source",
+    "Check exact accent, pitch, flexa, source-body and next verse 2. Quoniam cue",
+    "Confirm published 1962 Psalm 46 full Latin words and permitted psalm-tone formula",
+    "Render corrected candidate through existing local Exsurge pilot in PR #1749 only after source owner's signoff"
+  ],
+  "sourceChecks": {
+    "rawArchivedFileImmutable": true,
+    "sha256CorrectedDerivativeNotYetComputed": true,
+    "additionalPitchClaimForbidden": true,
+    "productionApproved": false
+  },
+  "testability": {
+    "rawSnippetOccursExactlyOnce": true,
+    "requiredFirstSyllables": "O-mnes pó-pu-li",
+    "singleSourceScore": true
+  }
+}
