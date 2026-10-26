@@ -352,3 +352,26 @@ test('original 1961 new-Psalter score images establish exact Psalm 46 incipit mi
   assert.equal(gb46.status,'PRINTED_PAGE_CONFIRMS_OMNES_POPULI_GABC_WRONG_UNDERLAY_BLOCKING');
   assert.equal(source.sourceSafety.approvedRuntimeAssignments,0);
 });
+
+
+test('restored Palm new Latin psalter has exact source-backed verse pairs and no fixed song clock',()=>{
+ const registry=readJSON('data/research/processionale-roman-palm-psalter-editions-20261026.v1.json');
+ const p=registry.acceptance.editorialProgramme;
+ assert.equal(p.status,'APPROVED_STRUCTURE_FOR_RESEARCH_NO_RUNTIME_SCORE_AUTHORIZATION');
+ assert.equal(p.form,'PALM_SUNDAY_RESTORED_ROMAN_RITE_DISTRIBUTION');
+ assert.equal(p.psalms.length,2);
+ const [p23,p46]=p.psalms;
+ assert.equal(p23.preferredLatin,'TEXTUS_NOVUS_1961_APPENDIX');
+ assert.equal(p46.preferredLatin,'TEXTUS_NOVUS_1961_APPENDIX');
+ assert.deepEqual(p23.versePairs,[[1,2],[7,8],[9,10]]);
+ assert.deepEqual(p46.versePairs,[[1,2],[3,4],[5,6],[7,8],[9,10]]);
+ assert.equal(p23.verseIncipits.length,6);
+ assert.equal(p46.verseIncipits.length,10);
+ assert.equal(p23.verseIncipits[0].incipit,'Domini est terra et quae replent eam');
+ assert.equal(p46.verseIncipits[0].incipit,'Omnes populi, plaudite manibus');
+ assert.ok(p23.antiphonAfterEachPair && p46.antiphonAfterEachPair);
+ assert.ok(p23.doXologyThenAntiphon && p46.doXologyThenAntiphon);
+ assert.match(p.endOfDistribution,/ACTUAL_DISTRIBUTION_COMPLETION/);
+ assert.equal(p.localChoirSignal,'MANUAL_OBSERVATION_NO_AUTOTIMER');
+ assert.equal(registry.sourceSafety.approvedRuntimeAssignments,0);
+});
