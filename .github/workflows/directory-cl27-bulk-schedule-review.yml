@@ -12,6 +12,7 @@ on:
       - 'src/find/explore-presentation.js'
       - 'tests/directory-cl27-user-classification-facets.mjs'
       - 'tests/directory-cl27-offline-editor.mjs'
+      - 'tools/directory/validate-cl27-editorial-classification-drafts.py'
       - 'tools/directory/validate-cl27-bulk-schedule-audit.py'
       - '.github/workflows/directory-cl27-bulk-schedule-review.yml'
   push:
@@ -25,6 +26,7 @@ on:
       - 'src/find/explore-presentation.js'
       - 'tests/directory-cl27-user-classification-facets.mjs'
       - 'tests/directory-cl27-offline-editor.mjs'
+      - 'tools/directory/validate-cl27-editorial-classification-drafts.py'
   workflow_dispatch:
 
 jobs:
@@ -66,6 +68,29 @@ jobs:
           assert embedded['counts']==data['counts']
           assert embedded['physical_site_classification_facets'][0]['physical_anchor_id']==data['physical_site_classification_facets'][0]['physical_anchor_id']
           print('Offline CL27 editor PASS; full 2,579 sites and 2,715 source claims embedded')
+          PY
+      - name: Verify research-only draft intake without publication or identity invention
+        run: |
+          python3 - <<'PY'
+          import json, sqlite3
+          db=sqlite3.connect('/tmp/cl27-mass-registry.sqlite')
+          source,group=db.execute("SELECT source_id,joined_canonical_group_id FROM venue_source WHERE joined_canonical_group_id IS NOT NULL LIMIT 1").fetchone()
+          anchor=db.execute("SELECT effective_anchor_id FROM canonical_site WHERE group_id=?",(group,)).fetchone()[0]
+          draft={"schema":"AO_TLM_USER_CLASSIFICATION_DRAFTS_V1","source_baseline":"CL27","status":"RESEARCH_ONLY_UNREVIEWED",
+            "records":[{"physical_site_context":anchor,"field":"venue_owner_type","subject_type":"VENUE",
+              "subject_id":anchor,"value":"UNKNOWN","source_ids":[source],
+              "source_type":"USER_SUBMISSION","source_url":"https://example.org/","recorded_at":"2026-10-26",
+              "evidence_excerpt":"Synthetic fixture only, not a verified statement","public_approval":False}]}
+          open('/tmp/cl27-draft-test.json','w').write(json.dumps(draft))
+          PY
+          python3 tools/directory/validate-cl27-editorial-classification-drafts.py --db /tmp/cl27-mass-registry.sqlite --input /tmp/cl27-draft-test.json --report /tmp/cl27-draft-report.json
+          python3 - <<'PY'
+          import json
+          r=json.load(open('/tmp/cl27-draft-report.json'))
+          assert r['summary']['submitted_drafts']==1
+          assert r['summary']['source_linked_pending_review']==1
+          assert r['summary']['new_public_classifications']==0
+          assert r['summary']['new_public_mass_times']==0
           PY
       - name: Offer reproducible one-file review build
         uses: actions/upload-artifact@v4
