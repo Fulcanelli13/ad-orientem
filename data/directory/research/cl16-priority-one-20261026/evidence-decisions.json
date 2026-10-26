@@ -1,0 +1,531 @@
+{
+  "schema": "AO_CL16_PRIORITY_ONE_51_ROW_OWNER_EVIDENCE_V1",
+  "review_date": "2026-10-26",
+  "policy": "Research-only: exact source/venue/weekday/clock liturgical book evidence; no independently approved future operational timetable, venue coordinates, celebrant status or Una Cum. All 51 priority-one CL15 held rows examined against first-party/diocesan source alternatives; only source-scoped acceptance rows are explicitly listed.",
+  "sources": [
+    {
+      "original_source_url": "https://www.ololparish.org/mass-times/",
+      "expected_frozen_rows": [
+        4285,
+        4286,
+        4287,
+        4288,
+        4289,
+        4290,
+        4291,
+        4292,
+        4293,
+        4294
+      ],
+      "accepted_source_scoped_rows": [],
+      "disposition": "SITE_RETURN_CONFIRMED_BOOK_EDITION_FURTHER_SCOPE_REVIEW",
+      "primary_evidence": [
+        {
+          "url": "https://www.ololparish.org/location/",
+          "role": "FIRST_PARTY_PHYSICAL_PARK_HILLS_ADDRESS"
+        },
+        {
+          "url": "https://www.ololparish.org/mass-times/",
+          "role": "OWNER_2026_TIMES_MATCH_FROZEN"
+        },
+        {
+          "url": "https://www.ololparish.org/bulletins/",
+          "role": "DATED_2026_BULLETIN_INDEX"
+        },
+        {
+          "url": "https://covdio.org/wp-content/uploads/2024/01/20240119LetterToParishioners4.pdf",
+          "role": "DATED_DIOCESAN_1962_BUT_TEMPORARY_ST_ANN_SITE"
+        }
+      ],
+      "observation": "The parish has returned to 1101 Amsterdam Rd in Park Hills and official daily/sunday times match 10 historical slots. January 2024 explicit 1962 document refers to temporary St Ann Mission, a different location. A 2024 parish archived letter says the parish remains dedicated to 1962 books, but this historical bulletin was not directly inspected in this run. Do not silently promote all current slots until an inspectable 1962 edition bridge covers the restored physical programme.",
+      "exception_codes": [
+        "2024_TEMPORARY_ST_ANN_SITE_VS_2026_PARK_HILLS",
+        "FIRST_THIRD_FIFTH_SATURDAY_ONLY",
+        "SITE_RESTORATION_VERIFIED_BOOK_BRIDGE_HELD"
+      ],
+      "slot_specific_exceptions": {},
+      "retrieved_on": "2026-10-26",
+      "current_schedule_publication": "HOLD",
+      "canonical_site_publication": "HOLD",
+      "una_cum": "NOT_ASSESSED",
+      "accepted_original_slot_locks": []
+    },
+    {
+      "original_source_url": "https://cathedralestmauricenotredame.diocese49.org/la-paroisse/horaires-a-remttre-apres-ete/",
+      "expected_frozen_rows": [
+        4038,
+        4039,
+        4040,
+        4041,
+        4042,
+        4043,
+        4044,
+        4045
+      ],
+      "accepted_source_scoped_rows": [
+        4038,
+        4039,
+        4040,
+        4041,
+        4042,
+        4043,
+        4044,
+        4045
+      ],
+      "disposition": "EXPLICIT_FIRST_PARTY_OWNER_JOHN_XXIII_BOOK_PER_SLOT",
+      "primary_evidence": [
+        {
+          "url": "https://cathedralestmauricenotredame.diocese49.org/la-paroisse/horaires-a-remttre-apres-ete/",
+          "role": "OWNER_EXACT_VENUE_DAY_TIME_BOOK_2026"
+        },
+        {
+          "url": "https://www.messes.info/horaires/47.4871567%3A-0.5249163",
+          "role": "CORROBORATING_DATED_SUNDAY_EVENT_2026"
+        }
+      ],
+      "observation": "The actual parish HTML is directly retrievable; all eight original Notre-Dame des Victoires entries specify Missel St Jean XXIII and exact day/clock. Sunday 10:30, weekdays Monday–Friday 18:30, Tue 08:30 during school terms, Sat 09:00. A different Sunday 09:00 and Saturday anticipatory 18:30 are ordinary/current Missal and excluded. School-holiday timetable may differ.",
+      "exception_codes": [
+        "TUESDAY_0830_SCHOOL_TERM_ONLY",
+        "MONTHLY_BULLETIN_CAN_OVERRIDE",
+        "SUNDAY_0900_NOT_1962",
+        "SATURDAY_1830_NOT_1962"
+      ],
+      "slot_specific_exceptions": {
+        "4044": [
+          "SCHOOL_TERM_ONLY"
+        ]
+      },
+      "retrieved_on": "2026-10-26",
+      "current_schedule_publication": "HOLD",
+      "canonical_site_publication": "HOLD",
+      "una_cum": "NOT_ASSESSED",
+      "accepted_original_slot_locks": [
+        {
+          "row_no": 4038,
+          "day": "Sunday",
+          "time": "10:30"
+        },
+        {
+          "row_no": 4039,
+          "day": "Monday",
+          "time": "18:30"
+        },
+        {
+          "row_no": 4040,
+          "day": "Tuesday",
+          "time": "18:30"
+        },
+        {
+          "row_no": 4041,
+          "day": "Wednesday",
+          "time": "18:30"
+        },
+        {
+          "row_no": 4042,
+          "day": "Thursday",
+          "time": "18:30"
+        },
+        {
+          "row_no": 4043,
+          "day": "Friday",
+          "time": "18:30"
+        },
+        {
+          "row_no": 4044,
+          "day": "Tuesday",
+          "time": "08:30"
+        },
+        {
+          "row_no": 4045,
+          "day": "Saturday",
+          "time": "09:00"
+        }
+      ]
+    },
+    {
+      "original_source_url": "https://www.latinmassarlington.org/find-tlm/parishes",
+      "expected_frozen_rows": [
+        4222,
+        4223,
+        4224,
+        4227,
+        4228,
+        4229,
+        4230,
+        4231
+      ],
+      "accepted_source_scoped_rows": [],
+      "disposition": "LAY_DIRECTORY_2026_PERMISSION_RENEWAL_UNKNOWN",
+      "primary_evidence": [
+        {
+          "url": "https://www.arlingtondiocese.org/2024/07/19/vatican-renews-permission-for-celebration-of-traditional-latin-mass-in-the-diocese-of-arlington-in-accordance-with-traditionis-custodes/",
+          "role": "DIOCESAN_DATED_2024_TWO_YEAR_PERMISSION"
+        },
+        {
+          "url": "https://www.latinmassarlington.org/find-tlm/parishes",
+          "role": "LAY_2026_TIMES_AND_LATIN_ORDINARY_FORM_REPLACEMENTS"
+        }
+      ],
+      "observation": "2024 diocese release granted two-year on-site dispensation. The deadline in summer 2026 has passed; no subsequent first-party permission renewal was located during CL16. Lay schedule still lists weekly slots; not adequate new institutional-edition and current authorization evidence. Off-Sunday one per month ordinary Latin Missal 2008 substitution for each of three parish sites.",
+      "exception_codes": [
+        "SUMMER_2026_PERMISSION_RECHECK",
+        "MONTHLY_LATIN_2008_SUBSTITUTION",
+        "LAY_NOT_DIOCESE"
+      ],
+      "slot_specific_exceptions": {},
+      "retrieved_on": "2026-10-26",
+      "current_schedule_publication": "HOLD",
+      "canonical_site_publication": "HOLD",
+      "una_cum": "NOT_ASSESSED",
+      "accepted_original_slot_locks": []
+    },
+    {
+      "original_source_url": "https://htdiocese.org/blessedsacramentchapel",
+      "expected_frozen_rows": [
+        4084,
+        4085,
+        4086,
+        4087,
+        4088,
+        4089,
+        4090
+      ],
+      "accepted_source_scoped_rows": [],
+      "disposition": "PRIMARY_PAGE_RESTORED_EXACT_EXTRAORDINARY_FORM_UNSPECIFIED_YEAR",
+      "primary_evidence": [
+        {
+          "url": "https://htdiocese.org/blessedsacramentchapel",
+          "role": "OFFICIAL_DIOCESE_SITE_TIMES_ADDRESS_CHAPLAIN"
+        }
+      ],
+      "observation": "The previously reported 404 now resolves to a diocese-maintained Chapel of the Blessed Sacrament, Gibson LA, 138 Carroll St; all seven source day/time rows match. Page expressly identifies Extraordinary Form but does not give literal Missal 1962 edition; remain book-evidence held pending direct exact edition statement.",
+      "exception_codes": [
+        "ACCESS_REPAIRED_2026",
+        "EXTRAORDINARY_FORM_NOT_LITERAL_MISSAL_1962"
+      ],
+      "slot_specific_exceptions": {},
+      "retrieved_on": "2026-10-26",
+      "current_schedule_publication": "HOLD",
+      "canonical_site_publication": "HOLD",
+      "una_cum": "NOT_ASSESSED",
+      "accepted_original_slot_locks": []
+    },
+    {
+      "original_source_url": "https://stmarykazoo.org/mass-times",
+      "expected_frozen_rows": [
+        4332,
+        4333,
+        4334,
+        4335,
+        4336,
+        4337
+      ],
+      "accepted_source_scoped_rows": [
+        4332,
+        4333,
+        4334,
+        4335,
+        4336,
+        4337
+      ],
+      "disposition": "EXPLICIT_OWNER_2026_DATE_LISTED_1962_BOOK_PER_WEEKDAY",
+      "primary_evidence": [
+        {
+          "url": "https://stmarykazoo.org/calendar",
+          "role": "PARISH_CALENDAR_OCTOBER_2026_EXACT_DAY_DATE_0800_1962"
+        },
+        {
+          "url": "https://stmarykazoo.org/mass-times",
+          "role": "OWNER_WEEKDAY_SHORTHAND"
+        }
+      ],
+      "observation": "The owner October 2026 calendar explicitly lists each Monday through Saturday 08:00 as (1962) Low Mass, independently resolving abbreviated M S a weekdays of owner summary. Does not guarantee cancellations outside October.",
+      "exception_codes": [
+        "OWNER_CALENDAR_DATED_OCTOBER_2026_NOT_INDEFINITE"
+      ],
+      "slot_specific_exceptions": {},
+      "retrieved_on": "2026-10-26",
+      "current_schedule_publication": "HOLD",
+      "canonical_site_publication": "HOLD",
+      "una_cum": "NOT_ASSESSED",
+      "accepted_original_slot_locks": [
+        {
+          "row_no": 4332,
+          "day": "Monday",
+          "time": "08:00"
+        },
+        {
+          "row_no": 4333,
+          "day": "Tuesday",
+          "time": "08:00"
+        },
+        {
+          "row_no": 4334,
+          "day": "Wednesday",
+          "time": "08:00"
+        },
+        {
+          "row_no": 4335,
+          "day": "Thursday",
+          "time": "08:00"
+        },
+        {
+          "row_no": 4336,
+          "day": "Friday",
+          "time": "08:00"
+        },
+        {
+          "row_no": 4337,
+          "day": "Saturday",
+          "time": "08:00"
+        }
+      ]
+    },
+    {
+      "original_source_url": "https://www.fsspniagara.com/",
+      "expected_frozen_rows": [
+        4459,
+        4460,
+        4461
+      ],
+      "accepted_source_scoped_rows": [
+        4459,
+        4460,
+        4461
+      ],
+      "disposition": "FSSP_OWNER_EXTRAORDINARY_PROGRAMME_MATCHED_EXACT_RENOVATION_SITE",
+      "primary_evidence": [
+        {
+          "url": "https://www.fsspniagara.com/",
+          "role": "LOCAL_FSSP_APOSTOLATE_OWNER_EXACT_SITE_RENOVATIONS_TIMES"
+        },
+        {
+          "url": "https://www.fssp.ca/apostolates/14-st-aloysius-parish",
+          "role": "FSSP_CANADA_OFFICIAL_NAMED_APOSTOLATE_ADDRESS"
+        },
+        {
+          "url": "https://www.fssp.org/en/decree-of-pope-francis-confirming-the-use-of-the-1962-liturgical-books/",
+          "role": "FSSP_MEMBER_1962_BOOK_INSTITUTIONAL_POLICY"
+        }
+      ],
+      "observation": "St Aloysius Thorold first-party homepage explicitly identifies the Extraordinary Form served by FSSP, the same building at 317 Morton St, Sunday 09:00 and 11:00, and Saturday 09:00 during church renovations behind partition. Official FSSP Canada identifies same house/address. Classified as programme book evidence with second institutional FSSP 1962 scope, not independently verified priest identity or every future Sunday during construction.",
+      "exception_codes": [
+        "RENOVATION_TEMPORARY_WALL",
+        "BUILDING_REMAINS_SAME",
+        "BULLETIN_MUST_OVERRIDE_TIMETABLE"
+      ],
+      "slot_specific_exceptions": {},
+      "retrieved_on": "2026-10-26",
+      "current_schedule_publication": "HOLD",
+      "canonical_site_publication": "HOLD",
+      "una_cum": "NOT_ASSESSED",
+      "accepted_original_slot_locks": [
+        {
+          "row_no": 4459,
+          "day": "Sunday",
+          "time": "09:00"
+        },
+        {
+          "row_no": 4460,
+          "day": "Sunday",
+          "time": "11:00"
+        },
+        {
+          "row_no": 4461,
+          "day": "Saturday",
+          "time": "09:00"
+        }
+      ]
+    },
+    {
+      "original_source_url": "https://stjohnbeloved.latinmassarlington.org/",
+      "expected_frozen_rows": [
+        4225,
+        4226
+      ],
+      "accepted_source_scoped_rows": [],
+      "disposition": "LAY_TLM_PROGRAMME_2026_WITH_2008_MONTHLY_SUBSTITUTION",
+      "primary_evidence": [
+        {
+          "url": "https://stjohnbeloved.latinmassarlington.org/",
+          "role": "LAY_SUNDAY_NOON_TLM_WITH_FOURTH_SUNDAY_LATIN_OF"
+        },
+        {
+          "url": "https://www.arlingtondiocese.org/2024/07/19/vatican-renews-permission-for-celebration-of-traditional-latin-mass-in-the-diocese-of-arlington-in-accordance-with-traditionis-custodes/",
+          "role": "2024_DIOCESAN_APPROVAL_EXPIRES_2026"
+        }
+      ],
+      "observation": "Lay website confirms Sunday noon TLM replaced fourth Sunday by Latin Novus Ordo and the broader Arlington lay schedule lists Mon 20:00. No post-summer-2026 official approval/precise missal edition independently confirmed; leave both held.",
+      "exception_codes": [
+        "FOURTH_SUNDAY_LATIN_2008",
+        "2026_PERMISSION_RECHECK"
+      ],
+      "slot_specific_exceptions": {},
+      "retrieved_on": "2026-10-26",
+      "current_schedule_publication": "HOLD",
+      "canonical_site_publication": "HOLD",
+      "una_cum": "NOT_ASSESSED",
+      "accepted_original_slot_locks": []
+    },
+    {
+      "original_source_url": "https://www.holyrosarycathedral.org/latin-mass/",
+      "expected_frozen_rows": [
+        4481,
+        4482
+      ],
+      "accepted_source_scoped_rows": [
+        4481,
+        4482
+      ],
+      "disposition": "EXPLICIT_CATHEDRAL_OWNER_1962_BOOK_PER_SLOT",
+      "primary_evidence": [
+        {
+          "url": "https://www.holyrosarycathedral.org/latin-mass/",
+          "role": "CATHEDRAL_OWNER_EXPLICIT_1962_SUN_1600_FRI_1830"
+        },
+        {
+          "url": "https://www.holyrosarycathedral.org/mass-times/",
+          "role": "CATHEDRAL_TIMETABLE_CORROBORATION"
+        }
+      ],
+      "observation": "Previously inaccessible URL directly serves a first-party description explicitly saying the 1962 Missal twice weekly, Sunday sung 16:00 and Friday low 18:30. Separate other parish Latin/ordinary times excluded.",
+      "exception_codes": [
+        "FEAST_DAY_EXTRA_SERVICES_NOT_IN_FROZEN_TWO_ROWS"
+      ],
+      "slot_specific_exceptions": {},
+      "retrieved_on": "2026-10-26",
+      "current_schedule_publication": "HOLD",
+      "canonical_site_publication": "HOLD",
+      "una_cum": "NOT_ASSESSED",
+      "accepted_original_slot_locks": [
+        {
+          "row_no": 4481,
+          "day": "Sunday",
+          "time": "16:00"
+        },
+        {
+          "row_no": 4482,
+          "day": "Friday",
+          "time": "18:30"
+        }
+      ]
+    },
+    {
+      "original_source_url": "https://adorientem.church/find/our-lady-of-dolours-mumbai",
+      "expected_frozen_rows": [
+        1765
+      ],
+      "accepted_source_scoped_rows": [],
+      "disposition": "INACCESSIBLE_SELF_REFERENCE_NO_INDEPENDENT_OWNER",
+      "primary_evidence": [],
+      "observation": "Self-referential Ad Orientem venue URL is not independent primary liturgical evidence; no owner site/time 1962 claim witnessed.",
+      "exception_codes": [
+        "NO_SELF_VALIDATION"
+      ],
+      "slot_specific_exceptions": {},
+      "retrieved_on": "2026-10-26",
+      "current_schedule_publication": "HOLD",
+      "canonical_site_publication": "HOLD",
+      "una_cum": "NOT_ASSESSED",
+      "accepted_original_slot_locks": []
+    },
+    {
+      "original_source_url": "https://adorientem.church/find/our-lady-of-songshan-nanjing-e-rd-9c345207",
+      "expected_frozen_rows": [
+        1839
+      ],
+      "accepted_source_scoped_rows": [],
+      "disposition": "INACCESSIBLE_SELF_REFERENCE_NO_INDEPENDENT_OWNER",
+      "primary_evidence": [],
+      "observation": "Self-referential Ad Orientem venue URL is not independent primary liturgical evidence; no owner site/time 1962 claim witnessed.",
+      "exception_codes": [
+        "NO_SELF_VALIDATION"
+      ],
+      "slot_specific_exceptions": {},
+      "retrieved_on": "2026-10-26",
+      "current_schedule_publication": "HOLD",
+      "canonical_site_publication": "HOLD",
+      "una_cum": "NOT_ASSESSED",
+      "accepted_original_slot_locks": []
+    },
+    {
+      "original_source_url": "https://adorientem.church/find/st-francis-xavier-tokyo",
+      "expected_frozen_rows": [
+        1833
+      ],
+      "accepted_source_scoped_rows": [],
+      "disposition": "INACCESSIBLE_SELF_REFERENCE_NO_INDEPENDENT_OWNER",
+      "primary_evidence": [],
+      "observation": "Self-referential Ad Orientem venue URL is not independent primary liturgical evidence; no owner site/time 1962 claim witnessed.",
+      "exception_codes": [
+        "NO_SELF_VALIDATION"
+      ],
+      "slot_specific_exceptions": {},
+      "retrieved_on": "2026-10-26",
+      "current_schedule_publication": "HOLD",
+      "canonical_site_publication": "HOLD",
+      "una_cum": "NOT_ASSESSED",
+      "accepted_original_slot_locks": []
+    },
+    {
+      "original_source_url": "https://pfarrverband-passau-altstadt.bistum-passau.de/aktuelles-termine/gottesdiensttermine/p2?church=6480&endDate=&startDate=",
+      "expected_frozen_rows": [
+        4522
+      ],
+      "accepted_source_scoped_rows": [
+        4522
+      ],
+      "disposition": "DIOCESAN_1962_NORMAL_WEEKLY_TIME_WITH_DATED_OVERRIDE",
+      "primary_evidence": [
+        {
+          "url": "https://pfarrverband-passau-altstadt.bistum-passau.de/aktuelles-termine/gottesdienstzeiten-studienkirche-sankt-michael",
+          "role": "PARISH_STANDING_SUNDAY_1900_1962"
+        },
+        {
+          "url": "https://pfarrverband-passau-altstadt.bistum-passau.de/aktuelles-termine/gottesdiensttermine/p2",
+          "role": "DIOCESE_DATED_2026_10_25_1700_OVERRIDE"
+        }
+      ],
+      "observation": "Passau parish standing schedule unequivocally gives Sunday 19:00 old 1962 rite, matching frozen recurring row; dated calendar gives 25 October 2026 17:00 at same church, not permanent change. Preserve 19:00 recurring source book evidence and dated 17:00 override. Current operational attendance still requires calendar check.",
+      "exception_codes": [
+        "2026-10-25_EXCEPTION_1700_INSTEAD_1900"
+      ],
+      "slot_specific_exceptions": {
+        "4522": [
+          "DATE_2026_10_25_1700_NOT_1900"
+        ]
+      },
+      "retrieved_on": "2026-10-26",
+      "current_schedule_publication": "HOLD",
+      "canonical_site_publication": "HOLD",
+      "una_cum": "NOT_ASSESSED",
+      "accepted_original_slot_locks": [
+        {
+          "row_no": 4522,
+          "day": "Sunday",
+          "time": "19:00"
+        }
+      ]
+    },
+    {
+      "original_source_url": "https://unavoceofga.blogspot.com/2025/12/2026-mass-schedule-augusta.html",
+      "expected_frozen_rows": [
+        4317
+      ],
+      "accepted_source_scoped_rows": [],
+      "disposition": "UNRETRIEVABLE_LAY_BLOG_OWNER_UNKNOWN",
+      "primary_evidence": [],
+      "observation": "Original Una Voce Georgia lay blog schedule not accessible in CL16; no church/diocese celebrant literal 1962 statement for original frozen row independently witnessed.",
+      "exception_codes": [
+        "BLOG_INACCESSIBLE",
+        "LAY_GROUP_NOT_SITE_OWNER"
+      ],
+      "slot_specific_exceptions": {},
+      "retrieved_on": "2026-10-26",
+      "current_schedule_publication": "HOLD",
+      "canonical_site_publication": "HOLD",
+      "una_cum": "NOT_ASSESSED",
+      "accepted_original_slot_locks": []
+    }
+  ]
+}

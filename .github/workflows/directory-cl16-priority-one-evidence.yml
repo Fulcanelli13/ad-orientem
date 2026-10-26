@@ -1,0 +1,71 @@
+name: Directory CL16 51 priority-one owner evidence decisions
+
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl16-priority-one-20261026/**'
+      - 'tools/directory/reconcile-cl16-priority-one.py'
+      - '.github/workflows/directory-cl16-priority-one-evidence.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl16-priority-one-20261026/**'
+      - 'tools/directory/reconcile-cl16-priority-one.py'
+      - '.github/workflows/directory-cl16-priority-one-evidence.yml'
+  workflow_dispatch:
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate original immutable chain
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+      - name: Reconstruct CL2–CL16 source evidence and exact 51-row recovery
+        run: |
+          python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ao-cl16.sqlite
+          python3 tools/directory/audit-cl-completeness.py --db /tmp/ao-cl16.sqlite --output-dir /tmp/ao-cl8
+          python3 tools/directory/audit-cl9-owner-evidence.py --db /tmp/ao-cl16.sqlite --cl8-csv /tmp/ao-cl8/missal_1962_reconciliation.csv --out-dir /tmp/ao-cl9
+          python3 tools/directory/adjudicate-cl10-missal-evidence.py --db /tmp/ao-cl16.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl10
+          python3 tools/directory/reconcile-cl11-owner-sources.py --db /tmp/ao-cl16.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl11
+          python3 tools/directory/reconcile-cl12-singletons.py --db /tmp/ao-cl16.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl12
+          python3 tools/directory/reconcile-cl13-remaining-1962.py --db /tmp/ao-cl16.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl13
+          python3 tools/directory/reconcile-cl14-fssp-owner-site-evidence.py --db /tmp/ao-cl16.sqlite --out-dir /tmp/ao-cl14
+          python3 tools/directory/triage-cl15-1962-holds.py --db /tmp/ao-cl16.sqlite --out-dir /tmp/ao-cl15
+          python3 tools/directory/reconcile-cl16-priority-one.py --db /tmp/ao-cl16.sqlite --out-dir /tmp/ao-cl16
+      - name: Assert independent frozen source clock proof and no release
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          j=json.loads(Path('/tmp/ao-cl16/cl16_summary.json').read_text())
+          assert j['original_CL15_priority_rows']==51
+          assert j['priority_source_urls_examined']==13
+          assert j['new_research_accepted_1962_book_claims']==20
+          assert j['remaining_held_within_priority_one']==31
+          assert j['cumulative_1962_book_evidence_accepted']==255
+          assert j['cumulative_still_held_1962_candidates']==177
+          assert j['passed_exact_original_day_clock_assertions']==20
+          assert j['new_1962_canonical_site_classifications']==j['new_current_recurrence_approvals']==j['new_public_schedule_releases']==j['new_public_venue_releases']==j['new_geocodes_approved']==j['new_una_cum']==0
+          db=sqlite3.connect('/tmp/ao-cl16.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl16_source_review').fetchone()[0]==13
+          assert db.execute('SELECT COUNT(*) FROM cl16_priority_one_slot').fetchone()[0]==51
+          assert db.execute('SELECT COUNT(*) FROM cl16_priority_one_slot WHERE accepted_research_book_evidence=1').fetchone()[0]==20
+          assert db.execute('SELECT COUNT(*) FROM classification_source WHERE owner_verified_missal_1962=1').fetchone()[0]==3
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          print('CL16 verified 51 research slot dispositions (20 accepted, 31 held), zero publication')
+          PY
+      - name: Publish short-lived rebuildable audit results
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-cl16-priority-one-exact-owner-evidence
+          path: /tmp/ao-cl16/
+          retention-days: 1
