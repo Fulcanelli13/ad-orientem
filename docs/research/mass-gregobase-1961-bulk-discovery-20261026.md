@@ -53,6 +53,40 @@ catalogue shards must subsequently be committed and checksum-verified in
 the Ad Orientem repository. GitHub Actions logs/artifacts must **never**
 be treated as durable storage for unique editorial decisions.
 
+## Deterministic checkout-free checkpoint recovery
+
+The read-only Actions job now emits bounded, SHA-256-addressed Base64 chunks
+(`AO_CHANT_CHECKPOINT_META` / `AO_CHANT_CHECKPOINT_PART`) in the completed
+job log. They contain **metadata only**, never redistributable score GABC.
+Each shard's source-dump hash, number of records, first/last chant IDs and
+full payload checksum must match the manifest. The workflow reconstructs its
+own emitted chunks and byte-compares them against the original generated
+files before success, so a truncated checkpoint fails the job rather than
+silently losing records.
+
+Recovery of a completed job's log, for permanent source-control promotion
+on the same research branch:
+
+~~~sh
+node tests/mass-chant-catalogue-checkpoint.mjs
+node tools/mass/replay-gregobase-checkpoints.mjs \
+  --log /tmp/ao-completed-workflow-job.log \
+  --out /tmp/ao-1961-permanent-ledger
+~~~
+
+The resulting verified JSON **must** be committed to GitHub under
+`data/research/chant-graduale-1961-discovery/` via the authorized GitHub
+file editor. Include the manifest and every shard together. A GitHub log
+is solely a transient transfer mechanism, not the archive. Never claim
+G0 ingestion is complete before the actual job has run and its files
+are present in the repository. There is no workflow token with repository
+write permission, and the production hygiene guard remains intact.
+
+Current obstacle (26 October 2026): the pinned full-source GitHub Actions
+runner is still queued, so no exact full-dump counts or permanent shards
+have yet been verified. The importer, screening and checkpoint-replay
+synthetic contracts pass; these tests are not a substitute for the run.
+
 ## Data stages (do not conflate)
 
 | Gate | Status | Meaning |
