@@ -1,7 +1,7 @@
 {
   "schema": "ao-palm46-1961-new-psalm-underlay-review-v1",
   "updated": "2026-10-26",
-  "status": "EDITORIAL_CANDIDATE_ONLY_UNDERLAY_UNVERIFIED_QUARANTINED",
+  "status": "FACSIMILE_OPENING_RECITING_TONE_CANDIDATE_STAGED_NOT_FULL_SCORE_APPROVED",
   "owner": "Existing Schola score-owner PR #1749; source-integrity issue #894",
   "source": {
     "url": "https://gregobase.selapa.net/chant.php?id=19316",
@@ -56,13 +56,20 @@
     ],
     "mechanism": "A proposed additional h reciting-tone slot for the fifth syllable; contour of O-mnes and the following Plaudite remains unchanged. Exact underlay is not visually certified at the neume-to-syllable level.",
     "mustBeReviewedAgainstPrint": true,
-    "publicationEligible": false
+    "publicationEligible": false,
+    "file": "data/research/chant-source-review/palm46-omnes-populi-1961-provisional.gabc",
+    "openingContourReview": "Printed 1961 p.144** directly inspected; printed O-mnes pó-pu-li notation shows the repeated reciting pitch on pó, pu, li. This supports using h on the three replacement syllables only.",
+    "openingPitchContourVisuallyCompared": true,
+    "completeChantPitchAndNeumesCertified": false,
+    "fileRole": "READ_ONLY_RESEARCH_FIXTURE_NO_RUNTIME_REFERENCE"
   },
   "header": {
     "rawContainsDoubleDelimiter": true,
     "rawPattern": "\\n%%\\n%%\\r\\n",
     "proposedResearchParsingNormalization": "Replace the adjacent two delimiters with one GABC header/body delimiter, without modifying syllable pitches or the archived original",
-    "notAnApprovalOfExsurgeRendering": true
+    "notAnApprovalOfExsurgeRendering": true,
+    "provisionalFileSingleDelimiter": true,
+    "originalFilePreservedWithDoubleDelimiter": true
   },
   "requiredComparisons": [
     "See actual staff note alignment for O-mnes pó-pu-li on the 1961 p144** original image",
@@ -81,5 +88,22 @@
     "rawSnippetOccursExactlyOnce": true,
     "requiredFirstSyllables": "O-mnes pó-pu-li",
     "singleSourceScore": true
+  },
+  "review": {
+    "originalPage": "https://gregobase.selapa.net/sources/2/1180.png",
+    "pageView": "WEB_IMAGE_RENDERED_ORIGINAL_SOURCE",
+    "reviewerFindings": [
+      "Printed staff and text show Omnes pó-pu-li",
+      "Compared with raw source: source provides one h pitch each for gen and tes",
+      "Third recitation syllable on h is a localized proposed text-underlay correction",
+      "Following Plaudite/second half remains byte-identical to original except GABC delimiter and header metadata"
+    ],
+    "remainingGates": [
+      "Human chant-editor verifies printed neume-to-syllable alignment",
+      "Exsurge produces acceptable score from candidate at mobile/desktop widths",
+      "Original 1962 ceremonial Latin verified against printed page",
+      "Complete Psalm 46 pointed verse text and repeats sourced",
+      "Existing PR #1749 signs off explicit score-version approval"
+    ]
   }
 }
