@@ -1,0 +1,92 @@
+{
+  "schema": "AO_CL22_CORRECT_CHAPEL_BUILDING_AND_PORTAL_VICINITY_V1",
+  "as_of": "2026-10-26",
+  "scope": "Two original CL21 worship-place IDs. Potsdam's distinct correctly named Mass chapel gains a research building reference; Amberg's southwest portal receives only a historical-marker vicinity clue, never a door coordinate.",
+  "records": [
+    {
+      "source_place_id": "CL17-DE-FSSP-POTSDAM",
+      "church": "St. Josefskapelle, Alexianer Krankenhaus Potsdam",
+      "outcome": "CORRECT_MASS_CHAPEL_BUILDING_REFERENCE_SUPPORTED",
+      "research_building": {
+        "lat": 52.39966,
+        "lon": 13.04481,
+        "source_map_feature": "OpenStreetMap way 301020129",
+        "source_url": "https://mapcarta.com/W301020129",
+        "source_characterisation": "building=chapel; amenity=place_of_worship; denomination=roman_catholic; historic=chapel; Inception 1877; Allee nach Sanssouci 7",
+        "status": "BUILDING_REFERENCE_RESEARCH_ONLY"
+      },
+      "wrong_nearby_target": {
+        "lat": 52.39953,
+        "lon": 13.04499,
+        "source_map_feature": "OpenStreetMap way 31290074",
+        "label": "Raum der Stille / Auferstehungskapelle",
+        "source_url": "https://mapcarta.com/de/W31290074",
+        "status": "BLOCKED_NOT_THE_MASS_CHAPEL"
+      },
+      "independent_owner_witnesses": [
+        {
+          "url": "https://www.alexianer-potsdam.de/st-josefs-kapelle",
+          "claim": "Historic St Josefs chapel at Allee nach Sanssouci 7, gilded historic double-leaf portal and Sunday 17:00 Tridentine Mass."
+        },
+        {
+          "url": "https://www.alexianer-potsdam.de/st-josefs-krankenhaus/unternehmen/seelsorge",
+          "claim": "Raum der Stille / Auferstehungskapelle separately located next to St Josefs-Kapelle."
+        },
+        {
+          "url": "https://www.alexianer-potsdam.de/orientierung",
+          "claim": "Campus motor-vehicle access via Zimmerstraße 6; Allee nach Sanssouci 7 serves drop-off at Haus St Josef."
+        }
+      ],
+      "visitor_approach_note": "Correct Roman Catholic historic St Josefs Mass chapel, not the nearby Raum der Stille. Hospital driving access from Zimmerstraße 6; worship chapel address Allee nach Sanssouci 7.",
+      "actual_door_point": null,
+      "door_coordinate_surveyed": false,
+      "operational_door_verified": false,
+      "site_publication_approved": false,
+      "current_mass_approved": false
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-030",
+      "church": "St Augustinus Deutsche Schulkirche, Amberg",
+      "outcome": "SOUTHWEST_PORTAL_PHOTO_MARKER_VICINITY_NOT_DOOR",
+      "research_building": {
+        "lat": 49.44562,
+        "lon": 11.85514,
+        "source_map_feature": "OpenStreetMap way 52739490",
+        "source_url": "https://mapcarta.com/W52739490",
+        "source_characterisation": "Mapped Catholic Schulkirche building reference retained from CL20",
+        "status": "EXISTING_CL20_BUILDING_REFERENCE"
+      },
+      "historical_marker_vicinity": {
+        "lat": 49.44548333333333,
+        "lon": 11.854933333333333,
+        "source_url": "https://www.hmdb.org/m.asp?m=242442",
+        "source_characterisation": "Photo-documented 2024 Schulkirche historic marker at southwest corner by entrance; the coordinates locate marker/intersection rather than portal.",
+        "status": "NEAR_ENTRANCE_HISTORIC_MARKER_NOT_DOOR"
+      },
+      "independent_owner_witnesses": [
+        {
+          "url": "https://de.dehio.org/ausstattungsobjekt/amberg-sog-deutsche-schulkirche-st-augustinus-kanzel",
+          "claim": "Architectural inventory identifies ornate portal on southwest side with saints Augustinus and Franz von Sales."
+        },
+        {
+          "url": "https://www.hmdb.org/m.asp?m=242442",
+          "claim": "Photo of main Schulkirche portal and historic marker at southwest church corner; marker GPS lies at Deutsche Schulgasse / Löwenwirtsgäßchen intersection."
+        }
+      ],
+      "visitor_approach_note": "Ornate southwest main portal visually identifiable from photograph, but marker coordinates must not be assigned to church doorway.",
+      "actual_door_point": null,
+      "door_coordinate_surveyed": false,
+      "operational_door_verified": false,
+      "site_publication_approved": false,
+      "current_mass_approved": false
+    }
+  ],
+  "overall_policy": {
+    "research_building_points_new": 1,
+    "portal_vicinity_markers_new": 1,
+    "public_doors_new": 0,
+    "public_pins_new": 0,
+    "verified_future_events_new": 0,
+    "una_cum_new": 0
+  }
+}
