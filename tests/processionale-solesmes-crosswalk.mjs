@@ -299,3 +299,31 @@ test('archived Psalm 23 and Psalm 46 files are only first-verse tone exemplars',
   assert.ok(handoff.gabcAudit.archiveCoverageCaveat.includes('does not imply full verse/refrain musical completeness'));
   assert.equal(handoff.gabcAudit.fullNoteByNoteVerified,0);
 });
+
+
+test('Palm psalm old/new 1961 source editions remain distinct, unselected and not silently mixed', () => {
+  const register=readJSON('data/research/processionale-roman-palm-psalter-editions-20261026.v1.json');
+  assert.equal(register.status,'EDITION_CONFLICT_IDENTIFIED_CANDIDATE_ONLY_NOT_RUNTIME');
+  assert.equal(register.candidates.length,2);
+  assert.deepEqual(register.printedEdition.oldPages,['167','168']);
+  assert.deepEqual(register.printedEdition.newPages,['143**','144**']);
+  assert.equal(register.sourceSafety.approvedRuntimeAssignments,0);
+  assert.equal(register.romanRule.doNotAutoSelectEitherVersion,true);
+  const byPsalm=new Map(register.candidates.map(x=>[x.psalm,x]));
+  assert.equal(byPsalm.get(23).older.id,288);
+  assert.equal(byPsalm.get(23).newer.id,19315);
+  assert.equal(byPsalm.get(46).older.id,435);
+  assert.equal(byPsalm.get(46).newer.id,19316);
+  assert.notEqual(byPsalm.get(23).older.incipit,byPsalm.get(23).newer.incipit);
+  assert.notEqual(byPsalm.get(46).older.incipit,byPsalm.get(46).newer.incipit);
+  for(const ps of register.candidates){
+    assert.equal(ps.stage,'PALM-R02');
+    assert.equal(ps.older.edition,'TEXTUS_ANTIQUUS');
+    assert.equal(ps.newer.edition,'TEXTUS_NOVUS');
+    assert.equal(ps.newer.archived,false);
+    assert.equal(ps.newer.sha256,null);
+  }
+  assert.ok(register.acceptance.noFixedSongPlaylist);
+  assert.ok(register.acceptance.noMovementInference);
+  assert.equal(register.gates.filter(x=>x.status==='OPEN').length,5);
+});
