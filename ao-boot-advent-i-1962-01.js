@@ -55,7 +55,7 @@ async function inheritAdventFirstWeekMass(resolver, sources, path, diagnostic) {
     if (!isWeekday || !/\bOratio Dominica\b/i.test(rule))
         return { sources, inherited: false };
     const mandatory = ['Introitus','Oratio','Lectio','Evangelium','Offertorium','Secreta','Communio','Postcommunio'];
-    const sections = [...mandatory, 'Graduale', 'GradualeF'];
+    const sections = [...mandatory, 'Graduale'];
     const hasText = body => Array.isArray(body) && body.some(line => String(line || '').trim());
     if (mandatory.every(section => hasText(sources.la.map.get(section))))
         return { sources, inherited: false };
@@ -64,7 +64,9 @@ async function inheritAdventFirstWeekMass(resolver, sources, path, diagnostic) {
         const sunday = await resolver.resolveSource('Tempora/Adv1-0', language, diagnostic);
         for (const section of sections) {
             if (hasText(output[language].map.get(section))) continue;
-            const inherited = sunday.map.get(section);
+            // The 1962 Missal requires the FERIAL gradual alone, without
+            // the Sunday Alleluia and verse; pinned GradualeF is its source.
+            const inherited = sunday.map.get(section === 'Graduale' ? 'GradualeF' : section);
             if (!hasText(inherited)) continue;
             output[language].map.set(section, [...inherited]);
             if (!output[language].order.includes(section)) output[language].order.push(section);
