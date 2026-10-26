@@ -1,0 +1,90 @@
+name: Directory CL18 local source checks and unverified recurrence normalization
+
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl17-release-gates-20261026/**'
+      - 'tools/directory/reconcile-cl17-release-gates.py'
+      - 'data/directory/research/cl18-fssp-calendar-address-20261026/**'
+      - 'tools/directory/reconcile-cl18-calendar-address.py'
+      - '.github/workflows/directory-cl18-calendar-address.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl17-release-gates-20261026/**'
+      - 'tools/directory/reconcile-cl17-release-gates.py'
+      - 'data/directory/research/cl18-fssp-calendar-address-20261026/**'
+      - 'tools/directory/reconcile-cl18-calendar-address.py'
+      - '.github/workflows/directory-cl18-calendar-address.yml'
+  workflow_dispatch:
+
+jobs:
+  reconcile-calendar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate original CL2 through CL7 and source chain
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+      - name: Rebuild full frozen CL2 through CL18 evidence database
+        run: |
+          python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ao-cl18.sqlite
+          python3 tools/directory/audit-cl-completeness.py --db /tmp/ao-cl18.sqlite --output-dir /tmp/ao-cl8
+          python3 tools/directory/audit-cl9-owner-evidence.py --db /tmp/ao-cl18.sqlite --cl8-csv /tmp/ao-cl8/missal_1962_reconciliation.csv --out-dir /tmp/ao-cl9
+          python3 tools/directory/adjudicate-cl10-missal-evidence.py --db /tmp/ao-cl18.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl10
+          python3 tools/directory/reconcile-cl11-owner-sources.py --db /tmp/ao-cl18.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl11
+          python3 tools/directory/reconcile-cl12-singletons.py --db /tmp/ao-cl18.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl12
+          python3 tools/directory/reconcile-cl13-remaining-1962.py --db /tmp/ao-cl18.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl13
+          python3 tools/directory/reconcile-cl14-fssp-owner-site-evidence.py --db /tmp/ao-cl18.sqlite --out-dir /tmp/ao-cl14
+          python3 tools/directory/triage-cl15-1962-holds.py --db /tmp/ao-cl18.sqlite --out-dir /tmp/ao-cl15
+          python3 tools/directory/reconcile-cl16-priority-one.py --db /tmp/ao-cl18.sqlite --out-dir /tmp/ao-cl16
+          python3 tools/directory/reconcile-cl17-release-gates.py --db /tmp/ao-cl18.sqlite --out-dir /tmp/ao-cl17
+          python3 tools/directory/reconcile-cl18-calendar-address.py --db /tmp/ao-cl18.sqlite --out-dir /tmp/ao-cl18
+      - name: Assert all 74 recurrence rules, 39 sites, and zero approved dates
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl17/cl17_summary.json').read_text())
+          assert x['accepted_book_evidence_rows']==256
+          assert x['held_book_evidence_rows']==176
+          assert x['fssp_source_named_worship_place_pilot']==39
+          assert x['pilot_frozen_mass_rows_with_named_owner_address']==74
+          assert x['new_accepted_named_owner_programme_row']==20
+          assert sum(x['pilot_owner_address_documentation_grades'].values())==39
+          assert x['public_sites_new']==x['public_mass_times_new']==x['current_dated_recurrence_approvals_new']==x['physical_coordinate_or_entrance_approvals_new']==x['una_cum_approvals_new']==0
+          db=sqlite3.connect('/tmp/ao-cl18.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl17_accepted_mass_gates').fetchone()[0]==256
+          assert db.execute('SELECT COUNT(*) FROM cl17_owner_site_stage').fetchone()[0]==39
+          assert db.execute('SELECT COUNT(*) FROM cl17_accepted_mass_gates WHERE source_place_id IS NOT NULL').fetchone()[0]==74
+          assert db.execute('SELECT COUNT(*) FROM cl17_potsdam_identity WHERE distinct_venues=0').fetchone()[0]==1
+          assert db.execute('SELECT COUNT(*) FROM classification_source WHERE owner_verified_missal_1962=1').fetchone()[0]==3
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          y=json.loads(Path('/tmp/ao-cl18/cl18_summary.json').read_text())
+          assert y['named_pilot_places']==39
+          assert y['pilot_mass_rows_with_parsed_source_calendar_rules']==74
+          assert y['auto_expandable_rule_expressions']==73
+          assert y['manual_feast_only_rule_expressions']==1
+          assert y['distinct_place_local_owner_second_source_reviews']==12
+          assert y['pilot_sites_not_independently_crosschecked']==27
+          assert y['unverified_projected_candidate_dates']>200
+          assert y['public_pin_approvals_new']==y['church_entrance_geocode_approvals_new']==y['future_date_schedule_approvals_new']==y['public_mass_events_new']==y['una_cum_new']==0
+          assert db.execute('SELECT COUNT(*) FROM cl18_recurrence_rules').fetchone()[0]==74
+          assert db.execute('SELECT COUNT(*) FROM cl18_site_verification').fetchone()[0]==39
+          assert db.execute('SELECT COUNT(*) FROM cl18_site_verification WHERE independent_crosscheck=1').fetchone()[0]==12
+          assert db.execute('SELECT COUNT(*) FROM cl18_unverified_projection WHERE released=1 OR owner_calendar_verified=1').fetchone()[0]==0
+          print('CL18 PASS: 39 source places, 74 parsed patterns, unverified previews ONLY')
+          PY
+      - name: Export temporary regenerable reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-cl18-local-recurring-source-audit
+          path: /tmp/ao-cl18/
+          retention-days: 1
