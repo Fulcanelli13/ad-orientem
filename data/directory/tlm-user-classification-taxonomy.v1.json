@@ -1,0 +1,211 @@
+{
+  "schema": "AO_TLM_USER_CLASSIFICATION_TAXONOMY_V1",
+  "effective_date": "2026-10-26",
+  "applies_to": "Ad Orientem existing worldwide Directory physical-site/source/ministry/celebration master",
+  "notice": "Administrative source labels are searchable research tags; they do not establish ecclesiastical standing, una cum, liturgical edition, Mass occurrence, or celebrant",
+  "dimensions": [
+    {
+      "key": "institute_or_community",
+      "subject": [
+        "COMMUNITY",
+        "MINISTRY"
+      ],
+      "searchable_source_labels": [
+        "DIOCESAN_UNSPECIFIED",
+        "FSSP",
+        "ICKSP",
+        "IBP",
+        "SSPX",
+        "CMRI",
+        "AASJMV",
+        "SSPV",
+        "RCI",
+        "CSPV",
+        "SMMD",
+        "FSVF",
+        "OTHER",
+        "UNKNOWN"
+      ],
+      "publish_requires": "actual source-scoped association or role, not only web-directory section"
+    },
+    {
+      "key": "ecclesial_position",
+      "subject": [
+        "COMMUNITY",
+        "MINISTRY"
+      ],
+      "values": [
+        "ROMAN_PONTIFF_RECOGNISED",
+        "SEDEVACANTIST",
+        "SEDEPRIVATIONIST",
+        "OTHER_POSITION",
+        "UNKNOWN"
+      ],
+      "publish_requires": "express first-party statement with timestamp and entity scope"
+    },
+    {
+      "key": "una_cum",
+      "subject": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "YES",
+        "NO",
+        "VARIES_BY_CELEBRANT",
+        "VARIES_BY_OCCASION",
+        "DISPUTED",
+        "UNKNOWN"
+      ],
+      "publish_requires": "express source about the individual celebration/priest, NEVER venue or broad institute-only inference"
+    },
+    {
+      "key": "canonical_status",
+      "subject": [
+        "COMMUNITY",
+        "MINISTRY"
+      ],
+      "values": [
+        "DATED_AUTHORITY_ASSERTION",
+        "UNKNOWN"
+      ],
+      "publish_requires": "dated and sourced ecclesiastical-authority statement, distinct from self-description"
+    },
+    {
+      "key": "liturgical_use",
+      "subject": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "ROMAN",
+        "DOMINICAN",
+        "CARMELITE",
+        "PREMONSTRATENSIAN",
+        "OTHER_LATIN_USAGE",
+        "UNKNOWN"
+      ],
+      "publish_requires": "source names actual rite/usages for this ministry or celebration"
+    },
+    {
+      "key": "missal_edition",
+      "subject": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "1962",
+        "PRE_1955",
+        "1955_REFORMED",
+        "MIXED_OR_LOCAL",
+        "UNKNOWN"
+      ],
+      "publish_requires": "exact source-scoped liturgical book evidence; not inferred from name or 'Latin'"
+    },
+    {
+      "key": "rubrical_basis",
+      "subject": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "1960",
+        "PRE_1955",
+        "1955",
+        "MIXED_OR_LOCAL",
+        "UNKNOWN"
+      ],
+      "publish_requires": "rubrical book/source for actual observance, 1960 is not a Missal edition"
+    },
+    {
+      "key": "organizer_role",
+      "subject": [
+        "ORGANIZER",
+        "MINISTRY"
+      ],
+      "values": [
+        "LAY_ASSOCIATION",
+        "DIOCESAN_MINISTRY",
+        "PRIESTLY_INSTITUTE",
+        "PRIESTLY_SOCIETY",
+        "RELIGIOUS_COMMUNITY",
+        "INDEPENDENT_CLERGY",
+        "SHARED",
+        "UNKNOWN"
+      ],
+      "publish_requires": "explicit provider/organizer evidence"
+    },
+    {
+      "key": "venue_owner_type",
+      "subject": [
+        "VENUE"
+      ],
+      "values": [
+        "DIOCESE_PARISH",
+        "RELIGIOUS_INSTITUTE",
+        "LAY_ASSOCIATION",
+        "PRIVATE_PERSON",
+        "OTHER",
+        "UNKNOWN"
+      ],
+      "publish_requires": "physical ownership rather than Mass organizer"
+    },
+    {
+      "key": "celebrant_relationship",
+      "subject": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "OPERATED_BY",
+        "SERVED_BY",
+        "HOSTED_BY",
+        "OCCASIONAL_VISIT",
+        "SHARED_USE",
+        "UNKNOWN"
+      ],
+      "publish_requires": "named relationship and effective time"
+    },
+    {
+      "key": "mass_type",
+      "subject": [
+        "CELEBRATION"
+      ],
+      "values": [
+        "LOW",
+        "SUNG",
+        "SOLEMN",
+        "PONTIFICAL",
+        "REQUIEM",
+        "UNKNOWN"
+      ],
+      "publish_requires": "slot-specific official text"
+    },
+    {
+      "key": "schedule_and_location",
+      "subject": [
+        "VENUE",
+        "CELEBRATION"
+      ],
+      "values": [
+        "CURRENT",
+        "CONDITIONAL",
+        "HISTORIC",
+        "UNVERIFIED",
+        "NOT_OFFERED"
+      ],
+      "publish_requires": "independently authenticated exact worship structure, source, recurrence, exceptions and season"
+    }
+  ],
+  "source_evidence_states": [
+    "SOURCE_LABEL_ONLY",
+    "SOURCE_REPORTED_UNREVIEWED",
+    "DIRECT_WITNESS_REVIEWED",
+    "DISPUTED",
+    "UNKNOWN"
+  ],
+  "filter_rule": "Use source-labelled institute grouping now with qualifier. All doctrinal, canonical, liturgical and Una Cum user filters require vetted source-scoped assertions. Never fill UNKNOWN by affiliation.",
+  "base_classification_contract": "data/directory/classification-contract.v1.json (B92 PR #1724; must be reconciled rather than duplicated)",
+  "canonical_master": "data/directory/research/cl2-unified-20261026/manifest.json",
+  "public_approvals": 0
+}
