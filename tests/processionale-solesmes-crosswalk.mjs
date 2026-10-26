@@ -303,7 +303,7 @@ test('archived Psalm 23 and Psalm 46 files are only first-verse tone exemplars',
 
 test('Palm psalm old/new 1961 source editions remain distinct, unselected and not silently mixed', () => {
   const register=readJSON('data/research/processionale-roman-palm-psalter-editions-20261026.v1.json');
-  assert.equal(register.status,'PRIMARY_1962_OCR_TEXT_FAVOURS_TEXTUS_NOVUS_GABC_19316_TEXT_MISMATCH_HOLD');
+  assert.equal(register.status,'ORIGINAL_1961_SCORES_VISUALLY_CONFIRMED_NOVUS_SOURCE_GABC_P46_WRONG_WORD_HOLD');
   assert.equal(register.candidates.length,2);
   assert.deepEqual(register.printedEdition.oldPages,['167','168']);
   assert.deepEqual(register.printedEdition.newPages,['143**','144**']);
@@ -326,9 +326,29 @@ test('Palm psalm old/new 1961 source editions remain distinct, unselected and no
   assert.ok(register.acceptance.noFixedSongPlaylist);
   assert.ok(register.acceptance.noMovementInference);
   assert.equal(register.gates.filter(x=>x.status==='OPEN').length,5);
-  assert.equal(register.gates.filter(x=>x.status==='OPEN_BLOCKING').length,1);
-  assert.equal(byPsalm.get(46).newer.status,'INCIPIT_TEXT_MISMATCH_DO_NOT_RELEASE');
+  assert.equal(register.gates.filter(x=>x.status==='OPEN_BLOCKING_VISUAL_SOURCE_CONFIRMED').length,1);
+  assert.equal(byPsalm.get(46).newer.status,'PRINTED_PAGE_CONFIRMS_OMNES_POPULI_GABC_WRONG_UNDERLAY_BLOCKING');
   assert.match(byPsalm.get(46).newer.exactLatin1962,/Omnes pópuli/);
   assert.match(byPsalm.get(46).newer.gabcFirstWords,/Omnes gentes/);
   assert.equal(register.romanRule.primary1962Witness.inspection,'SEARCH_INDEX_EXTRACT_ONLY_FULL_PDF_TOO_LARGE_FOR_FACSIMILE_VIEW');
+});
+
+test('original 1961 new-Psalter score images establish exact Psalm 46 incipit mismatch',()=>{
+  const source=readJSON('data/research/processionale-roman-palm-psalter-editions-20261026.v1.json');
+  assert.equal(source.printedEdition.originalScoreImagesVisuallyInspected,true);
+  assert.equal(source.printedEdition.originalScoreImages.length,2);
+  const byPage=new Map(source.printedEdition.originalScoreImages.map(x=>[x.page,x]));
+  const p23=byPage.get('143**'),p46=byPage.get('144**');
+  assert.equal(p23.url,'https://gregobase.selapa.net/sources/2/1179.png');
+  assert.equal(p46.url,'https://gregobase.selapa.net/sources/2/1180.png');
+  assert.equal(p23.verification,'DIRECT_IMAGE_INSPECTED');
+  assert.equal(p46.verification,'DIRECT_IMAGE_INSPECTED');
+  assert.deepEqual(p23.psalmVerseNumbers,[1,2,7,8,9,10]);
+  assert.deepEqual(p46.psalmVerseNumbers,[1,2,3,4,5,6,7,8,9,10]);
+  assert.equal(p46.firstWords,'Omnes populi, plaudite manibus');
+  const gb46=source.candidates.find(x=>x.psalm===46).newer;
+  assert.match(gb46.gabcFirstWords,/Omnes gentes/);
+  assert.equal(gb46.originalPrintedIncipitVisuallyChecked,true);
+  assert.equal(gb46.status,'PRINTED_PAGE_CONFIRMS_OMNES_POPULI_GABC_WRONG_UNDERLAY_BLOCKING');
+  assert.equal(source.sourceSafety.approvedRuntimeAssignments,0);
 });
