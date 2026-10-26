@@ -16,9 +16,13 @@ assert.equal(resolveNativeScholaScore({trackId:"OFFERTORY"}).status,"NO_VERIFIED
 assert.equal(resolveNativeScholaScore({trackId:"KYRIE",selectedScoreId:"UNKNOWN"}).score,null);
 assert.equal(resolveNativeScholaScore({trackId:"UNKNOWN",selectedScoreId:SCHOLA_SCORE_PILOT.id}).score,null);
 assert.equal(availableNativeScholaScores("KYRIE").length,3);
-assert.deepEqual(availableNativeScholaScores("SANCTUS_BENEDICTUS"),[]);
-assert.equal(SCHOLA_SCORE_CATALOGUE.length,3);
-for(const record of SCHOLA_SCORE_CATALOGUE){
+assert.equal(availableNativeScholaScores("SANCTUS_BENEDICTUS").length,1);
+assert.equal(SCHOLA_SCORE_CATALOGUE.length,7);
+assert.equal(availableNativeScholaScores("GLORIA")[0].id,"GREGOBASE-961");
+assert.equal(availableNativeScholaScores("CREDO")[0].id,"GREGOBASE-749");
+assert.equal(availableNativeScholaScores("SANCTUS_BENEDICTUS")[0].id,"GREGOBASE-1384");
+assert.equal(availableNativeScholaScores("AGNUS_DEI")[0].id,"GREGOBASE-2760");
+for(const record of SCHOLA_SCORE_CATALOGUE.filter(s=>s.trackId==="KYRIE")){
   const selected=resolveNativeScholaScore({trackId:"KYRIE",selectedScoreId:record.id});
   assert.equal(selected.status,"EXAMPLE_ONLY_NOT_SELECTED_FOR_MASS");
   assert.equal(selected.actualChoirMelody,"UNKNOWN");
@@ -30,6 +34,16 @@ for(const record of SCHOLA_SCORE_CATALOGUE){
   assert.match(selected.score.gabc,/transcriber:Andrew Hinkley;/);
   assert.equal(selected.score.bookWitnesses.length,2);
   assert.match(selected.score.bookWitnesses[0],/1961/);
+}
+for(const record of SCHOLA_SCORE_CATALOGUE.filter(s=>s.trackId!=="KYRIE")){
+  assert.equal(record.status,"RESEARCH_EXAMPLE_NOT_MASS_SETTING");
+  assert.ok(record.gabc.includes("%%"));
+  assert.ok(record.sourceUrl.endsWith(record.id.slice(10)));
+  assert.equal(resolveNativeScholaScore({trackId:record.trackId}).score,null,
+    "Ordinary melodic reference must not be implied by the Kyrie choice");
+  const explicitlySelected=resolveNativeScholaScore({trackId:record.trackId,selectedScoreId:record.id});
+  assert.equal(explicitlySelected.status,"EXAMPLE_ONLY_NOT_SELECTED_FOR_MASS");
+  assert.equal(explicitlySelected.score.id,record.id);
 }
 const selected=resolveNativeScholaScore({trackId:"KYRIE",selectedScoreId:SCHOLA_SCORE_PILOT.id});
 assert.match(selected.score.gabc,/mode:3;/);
@@ -57,6 +71,8 @@ assert.match(dom,/chantScorePilot\?\.hide\?\.\(\)/);
 assert.match(dom,/const notationOpen=dock\.dataset\.notation==="true"/);
 assert.match(scoreModule,/const onPanelKey=event=>/);
 assert.match(scoreModule,/lastTrack=track/);
+assert.match(scoreModule,/selectedForTrack\(track\)/);
+assert.match(scoreModule,/data\.benedictusHold|dataset\.benedictusHold/);
 assert.match(scoreModule,/Reference score|Reference Kyrie|reference score/i);
 assert.doesNotMatch(scoreModule,/\.next\(\)|\.releaseBenedictus\(\)|onScholaAdvance\(/);
 assert.doesNotMatch(scoreModule,/new Audio\(|getUserMedia\(|SpeechRecognition/);
