@@ -20,6 +20,8 @@ on:
       - 'tests/test_icrsp_b44_salesian_language_layer_concordance.py'
       - 'data/source-text/icrsp-france-b45-independent-1897-scan-ocr-salesian-date-reconciliation.v1.json'
       - 'tests/test_icrsp_b45_independent_scanned_print_ocr.py'
+      - 'data/source-text/icrsp-france-b46-vol8-14-independent-toc-provenance.v1.json'
+      - 'tests/test_icrsp_b46_volume_viii_toc_provenance.py'
   workflow_dispatch:
 
 permissions:
@@ -51,3 +53,5 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_icrsp_b44_salesian_language_layer_concordance.py' -v
       - name: Verify B45 independent scanned-print OCR discrepancies, page locators and holds
         run: python -m unittest discover -s tests -p 'test_icrsp_b45_independent_scanned_print_ocr.py' -v
+      - name: Check B46 1897 VIII independent TOC and historical manuscript routing
+        run: python -m unittest discover -s tests -p 'test_icrsp_b46_volume_viii_toc_provenance.py' -v
