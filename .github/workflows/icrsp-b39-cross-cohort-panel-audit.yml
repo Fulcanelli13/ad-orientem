@@ -1,0 +1,72 @@
+name: ICRSP B39 complete 2919 commentary-panel audit
+on:
+  push:
+    branches:
+      - governance/icrsp-source-inventory-1665
+    paths:
+      - '.github/workflows/icrsp-b39-cross-cohort-panel-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: icrsp-b39-panel-master
+  cancel-in-progress: false
+
+jobs:
+  audit-and-preserve:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test cross-cohort panel IDs, 63 metadata changes and publication safeguards
+        run: python -m unittest discover -s tests -p 'test_icrsp_b39_2919_cross_cohort_panel_audit.py' -v
+      - name: Produce full source-panel reference index and hash-duplicate audit
+        run: |
+          mkdir -p /tmp/icrsp-b39-archive
+          python tools/icrsp/audit_b39_cross_cohort_panels.py \
+            --source-dir data/source-text \
+            --summary-out /tmp/icrsp-b39-archive/icrsp-france-b39-2919-panel-duplicates-and-edition-intake.v1.json \
+            --index-out /tmp/icrsp-b39-archive/icrsp-france-b39-2919-panel-reference-index.v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-b39-2919-validated-metadata
+          path: /tmp/icrsp-b39-archive/*.json
+          retention-days: 90
+      - name: Archive validated metadata permanently to continuing research PR
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          branch='governance/icrsp-source-inventory-1665'
+          for attempt in $(seq 1 18); do
+            git fetch origin "$branch"
+            git checkout -B b39-archive "origin/$branch"
+            cp /tmp/icrsp-b39-archive/*.json data/source-text/
+            git add data/source-text/icrsp-france-b39-2919-panel-duplicates-and-edition-intake.v1.json
+            git add data/source-text/icrsp-france-b39-2919-panel-reference-index.v1.json
+            if git diff --cached --quiet; then
+              echo 'Validated B39 metadata already archived.'
+              exit 0
+            fi
+            git commit -m 'research(icrsp): permanently preserve 2919-panel hash and edition provenance audit'
+            if git push origin "HEAD:$branch"; then
+              echo 'B39 archive successfully preserved in GitHub repository.'
+              exit 0
+            fi
+            echo "Research branch moved during push (attempt $attempt); rebasing from latest tip."
+            sleep 3
+          done
+          echo 'Could not preserve archive after concurrency retries; validated artifact remains available.'
+          exit 1
