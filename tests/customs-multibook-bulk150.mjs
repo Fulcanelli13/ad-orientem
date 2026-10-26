@@ -85,4 +85,45 @@ for(const [i,p] of pending.profiles.entries()){
  assert.deepEqual(p.source_ids,m.source_ids);
  assert.deepEqual(p.calendar,m.calendar);
 }
+
+const thirty=read("customs-editorial-thirty-review-units-20261026.v1.json");
+assert.equal(thirty.schema,"AO_CUSTOMS_EDITORIAL_CO3_THIRTY_REVIEW_UNITS_V1");
+assert.equal(thirty.counts.review_units,30);
+assert.equal(thirty.rows.length,30);
+assert.equal(new Set(thirty.rows.map(x=>x.review_key)).size,30);
+assert.equal(thirty.counts.full_bilingual_descriptions,18);
+assert.equal(thirty.counts.source_draft_descriptions_missing,12);
+assert.equal(thirty.counts.approved_new_identity_ids,0);
+assert.equal(thirty.counts.approved_publications,0);
+for(let i=0;i<30;i++){
+ const row=thirty.rows[i];
+ assert.equal(row.final_en_approved,false);
+ assert.equal(row.final_fr_approved,false);
+ assert.equal(row.identity_approved,false);
+ assert.equal(row.calendar_approved,false);
+ assert.equal(row.new_canonical_id,null);
+ assert.ok(row.source_urls.length>0);
+ assert.ok(row.source_urls.every(x=>/^https:\/\//.test(x)));
+ assert.ok(row.titles.en&&row.titles.fr);
+ if(i<18){
+  const original=pending.profiles[i];
+  assert.equal(row.review_key,"MASTER:"+original.working_master_id);
+  assert.deepEqual(row.copy,original.bilingual);
+  assert.equal(row.needs_description,false);
+ }else{
+  const source=bulk.rows.filter(x=>x.source_bounded_bilingual_draft)[i-18];
+  const copied=source.source_bounded_bilingual_draft;
+  assert.equal(row.review_key,"OBSERVATION:"+source.intake_id);
+  assert.equal(row.copy.history.en,copied.history_en);
+  assert.equal(row.copy.history.fr,copied.history_fr);
+  assert.equal(row.copy.meaning.en,copied.meaning_en);
+  assert.equal(row.copy.practice.fr,copied.practice_fr);
+  assert.equal(row.copy.caution.en,copied.caution_en);
+  assert.equal(row.needs_description,true);
+  assert.equal(row.copy.description.en,null);
+  assert.equal(row.copy.description.fr,null);
+ }
+}
+console.log("PASS 30 ready-to-review editorial units: 18 exact full bilingual identities + 12 source-bounded bilingual action dossiers; no manufactured descriptions, signatures or new canonical IDs");
+
 console.log("PASS multibook customs batch: 150 source dossiers across six source families; "+witnessed+" independently witnessed narrow claims, "+folio+" earlier original-folio action checks, "+bilingual+" reusable EN/FR source-bounded drafts, 18 full EN/FR unpublished master profiles; 0 invented distinct IDs or publications");
