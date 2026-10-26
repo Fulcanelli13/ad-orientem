@@ -303,7 +303,7 @@ test('archived Psalm 23 and Psalm 46 files are only first-verse tone exemplars',
 
 test('Palm psalm old/new 1961 source editions remain distinct, unselected and not silently mixed', () => {
   const register=readJSON('data/research/processionale-roman-palm-psalter-editions-20261026.v1.json');
-  assert.equal(register.status,'EDITION_CONFLICT_IDENTIFIED_CANDIDATE_ONLY_NOT_RUNTIME');
+  assert.equal(register.status,'PRIMARY_1962_OCR_TEXT_FAVOURS_TEXTUS_NOVUS_GABC_19316_TEXT_MISMATCH_HOLD');
   assert.equal(register.candidates.length,2);
   assert.deepEqual(register.printedEdition.oldPages,['167','168']);
   assert.deepEqual(register.printedEdition.newPages,['143**','144**']);
@@ -326,4 +326,9 @@ test('Palm psalm old/new 1961 source editions remain distinct, unselected and no
   assert.ok(register.acceptance.noFixedSongPlaylist);
   assert.ok(register.acceptance.noMovementInference);
   assert.equal(register.gates.filter(x=>x.status==='OPEN').length,5);
+  assert.equal(register.gates.filter(x=>x.status==='OPEN_BLOCKING').length,1);
+  assert.equal(byPsalm.get(46).newer.status,'INCIPIT_TEXT_MISMATCH_DO_NOT_RELEASE');
+  assert.match(byPsalm.get(46).newer.exactLatin1962,/Omnes pópuli/);
+  assert.match(byPsalm.get(46).newer.gabcFirstWords,/Omnes gentes/);
+  assert.equal(register.romanRule.primary1962Witness.inspection,'SEARCH_INDEX_EXTRACT_ONLY_FULL_PDF_TOO_LARGE_FOR_FACSIMILE_VIEW');
 });
