@@ -1,0 +1,378 @@
+{
+  "schema": "AO_ICRSP_B11_FIFTYONE_TOPIC_CLUSTER_PRIORITIES_V1",
+  "asOf": "2026-10-26",
+  "sourceRegister": "data/source-text/icrsp-france-b11-40-commentary-theme-review.v1.json",
+  "sourceB10": "data/source-text/icrsp-france-b10-lent-pentecost51-content-screen.v1.json",
+  "scope": "Editorial topic clusters across 51 selected source articles; different articles may appear in multiple conceptual clusters. NOT identical text hashes or canonical entities.",
+  "totals": {
+    "sourcesInCombinedSample": 51,
+    "topicClusters": 10,
+    "clusterSourceOccurrences": 39,
+    "distinctSourceArticlesInClusters": 33,
+    "approvedEditorialIntegrations": 0
+  },
+  "guardrails": [
+    "One conceptual cluster may involve several different scriptural passages; do not merge citations, dates, source blocks or liturgical editions.",
+    "The source text-body SHA256 dedup is a separate 28-group register and does not establish conceptual author-work equivalence.",
+    "All listed place names await current shared geography owner stable IDs; do not invent place geometry.",
+    "Page-level thematic screening must not be mistaken for original edition scholarly collation or rights clearance.",
+    "Any original future bilingual explanation must pass domain-owner editorial review rather than copying third-party French commentary."
+  ],
+  "groups": [
+    {
+      "id": "ICRSP-B11-C01",
+      "priority": "P1",
+      "theme": "Old Testament healings and life restored as figures of baptism and Christ",
+      "sourceIds": [
+        "a0191_ancien",
+        "a0205_ancien",
+        "a0206_ancien"
+      ],
+      "suggestedOwner": "SCRIPTURE_PARALLELS_COMPENDIUM",
+      "role": "DIRECT_PATRISTIC_OR_LITURGICAL_INTERPRETATION_CANDIDATE",
+      "remaining": "Verify exact Vulgate passages, original authors' volume/section, and present typology records. Preserve distinct Naaman/Elisha/Elijah witnesses.",
+      "sources": [
+        {
+          "articleId": "a0191_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien"
+        },
+        {
+          "articleId": "a0205_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0205_ancien"
+        },
+        {
+          "articleId": "a0206_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0206_ancien"
+        }
+      ],
+      "originalTextOrEditionCertified": false,
+      "provenMissingAppFeature": false,
+      "copyrightReproductionApproved": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "id": "ICRSP-B11-C02",
+      "priority": "P1",
+      "theme": "Susanna's integrity, martyr fidelity and the Church",
+      "sourceIds": [
+        "a0198_ancien"
+      ],
+      "suggestedOwner": "SCRIPTURE_PARALLELS_COMPENDIUM_AND_SACRED_ART_PROVENANCE",
+      "role": "EARLY_CHRISTIAN_ICONOGRAPHY_HISTORICAL_LEAD",
+      "remaining": "Verify authentic Hippolytus interpretation and actual Roman catacomb imagery; not AI-generated patristic testimony.",
+      "sources": [
+        {
+          "articleId": "a0198_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0198_ancien"
+        }
+      ],
+      "originalTextOrEditionCertified": false,
+      "provenMissingAppFeature": false,
+      "copyrightReproductionApproved": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "id": "ICRSP-B11-C03",
+      "priority": "P1",
+      "theme": "Joseph sold by his brothers and the vineyard tenants",
+      "sourceIds": [
+        "a0186_ancien"
+      ],
+      "suggestedOwner": "SCRIPTURE_PARALLELS_COMPENDIUM",
+      "role": "CHRISTOLOGICAL_TYPOLOGY_WITH_HIGH_POLEMIC_RISK",
+      "remaining": "Verify exact passages, historical work original and non-polemical contextualization; do not generalize antisemitic historic rhetoric.",
+      "sources": [
+        {
+          "articleId": "a0186_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0186_ancien"
+        }
+      ],
+      "originalTextOrEditionCertified": false,
+      "provenMissingAppFeature": false,
+      "copyrightReproductionApproved": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "id": "ICRSP-B11-C04",
+      "priority": "P1",
+      "theme": "Roman station churches and weekday/Ember contextual interpretation",
+      "sourceIds": [
+        "a0174_ancien",
+        "a0175_ancien",
+        "a0176_ancien",
+        "a0181_ancien",
+        "a0183_ancien",
+        "a0191_ancien",
+        "a0192_ancien",
+        "a0193_ancien",
+        "a0194_ancien",
+        "a0198_ancien",
+        "a0202_ancien",
+        "a0203_ancien",
+        "a0205_ancien",
+        "a0207_ancien"
+      ],
+      "suggestedOwner": "EXISTING_CALENDAR_AND_SHARED_GEOGRAPHY_CANONICAL_PLACE_OWNER",
+      "role": "HISTORICAL_STATION_DAY_CONTEXT_WITH_SITE_ID_GATE",
+      "remaining": "Cross-check station by date, independent Roman station list and stable Place ID; site mapping disagreement especially Sitientes; no new atlas.",
+      "sources": [
+        {
+          "articleId": "a0174_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0174_ancien"
+        },
+        {
+          "articleId": "a0175_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0175_ancien"
+        },
+        {
+          "articleId": "a0176_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0176_ancien"
+        },
+        {
+          "articleId": "a0181_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0181_ancien"
+        },
+        {
+          "articleId": "a0183_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0183_ancien"
+        },
+        {
+          "articleId": "a0191_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien"
+        },
+        {
+          "articleId": "a0192_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0192_ancien"
+        },
+        {
+          "articleId": "a0193_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0193_ancien"
+        },
+        {
+          "articleId": "a0194_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0194_ancien"
+        },
+        {
+          "articleId": "a0198_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0198_ancien"
+        },
+        {
+          "articleId": "a0202_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0202_ancien"
+        },
+        {
+          "articleId": "a0203_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0203_ancien"
+        },
+        {
+          "articleId": "a0205_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0205_ancien"
+        },
+        {
+          "articleId": "a0207_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0207_ancien"
+        }
+      ],
+      "originalTextOrEditionCertified": false,
+      "provenMissingAppFeature": false,
+      "copyrightReproductionApproved": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "id": "ICRSP-B11-C05",
+      "priority": "P1",
+      "theme": "Ancient catechumenal scrutinies, Ember ordinations, public penance and the Roman fermentum",
+      "sourceIds": [
+        "a0173_ancien",
+        "a0176_ancien",
+        "a0204_ancien",
+        "a0009_nouveau"
+      ],
+      "suggestedOwner": "MASS_EXPLORER_HISTORICAL_RESEARCH",
+      "role": "HISTORICAL_LITURGICAL_ONLY",
+      "remaining": "Separate patristic/medieval rites from the 1962 missal, avoid cue/posture changes and seek primary ritual witnesses.",
+      "sources": [
+        {
+          "articleId": "a0173_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0173_ancien"
+        },
+        {
+          "articleId": "a0176_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0176_ancien"
+        },
+        {
+          "articleId": "a0204_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0204_ancien"
+        },
+        {
+          "articleId": "a0009_nouveau",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0009_nouveau"
+        }
+      ],
+      "originalTextOrEditionCertified": false,
+      "provenMissingAppFeature": false,
+      "copyrightReproductionApproved": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "id": "ICRSP-B11-C06",
+      "priority": "P1",
+      "theme": "Historical reassignment of Gospel readings and chants among post-Pentecost Sundays",
+      "sourceIds": [
+        "a0222_nouveau",
+        "a0364_ancien",
+        "a0443_ancien",
+        "a0245_ancien",
+        "a0246_ancien"
+      ],
+      "suggestedOwner": "MASS_EXPLORER_AND_EXISTING_PROPER_SOURCE_REFERENCE",
+      "role": "HISTORICAL_FORMULARY_EXPLANATION_ONLY",
+      "remaining": "Compare with current 1962 lectionary and Proper source-owner data; resist automatic transfers from earlier missal editions.",
+      "sources": [
+        {
+          "articleId": "a0222_nouveau",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_nouveau"
+        },
+        {
+          "articleId": "a0364_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0364_ancien"
+        },
+        {
+          "articleId": "a0443_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0443_ancien"
+        },
+        {
+          "articleId": "a0245_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0245_ancien"
+        },
+        {
+          "articleId": "a0246_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0246_ancien"
+        }
+      ],
+      "originalTextOrEditionCertified": false,
+      "provenMissingAppFeature": false,
+      "copyrightReproductionApproved": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "id": "ICRSP-B11-C07",
+      "priority": "P2",
+      "theme": "Good Samaritan, Psalm of assistance, and Christian prayer tradition",
+      "sourceIds": [
+        "a0365_ancien"
+      ],
+      "suggestedOwner": "MASS_EXPLORER_AND_SCRIPTURE_CROSS_REFERENCES",
+      "role": "SOURCE_INTERPRETATION_WITH_CASSIAN_LOCUS_POSSIBLE",
+      "remaining": "Confirm Cassian Conference 10 original passage and exact Proper; exclude invented patristic summaries.",
+      "sources": [
+        {
+          "articleId": "a0365_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0365_ancien"
+        }
+      ],
+      "originalTextOrEditionCertified": false,
+      "provenMissingAppFeature": false,
+      "copyrightReproductionApproved": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "id": "ICRSP-B11-C08",
+      "priority": "P2",
+      "theme": "Job, Esther/Mordecai and penitential supplication in late Pentecost chants",
+      "sourceIds": [
+        "a0487_ancien"
+      ],
+      "suggestedOwner": "EXISTING_SCRIPTURE_CONTEXT_AND_MASS_EXPLORER",
+      "role": "ORIGINAL_MISSAL_CHANT_TO_SCRIPTURE_LINK",
+      "remaining": "Verify Vulgate Esther location and the actual 1962 Offertory text and psalm/lesson order.",
+      "sources": [
+        {
+          "articleId": "a0487_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0487_ancien"
+        }
+      ],
+      "originalTextOrEditionCertified": false,
+      "provenMissingAppFeature": false,
+      "copyrightReproductionApproved": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "id": "ICRSP-B11-C09",
+      "priority": "HOLD",
+      "theme": "Historically polemical interpretations of Jerusalem and Israel–Gentile relations",
+      "sourceIds": [
+        "a0242_ancien",
+        "a0243_ancien",
+        "a0486_ancien",
+        "a0187_ancien",
+        "a0202_ancien"
+      ],
+      "suggestedOwner": "HISTORICAL_SOURCE_CRITICAL_RESEARCH_ONLY",
+      "role": "CONTEXT_SENSITIVE_NOT_FOR_DIRECT_TEACHING",
+      "remaining": "Preserve exact historical attribution, compare critical histories and Catholic doctrine; no automatic user-facing paraphrase.",
+      "sources": [
+        {
+          "articleId": "a0242_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0242_ancien"
+        },
+        {
+          "articleId": "a0243_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0243_ancien"
+        },
+        {
+          "articleId": "a0486_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0486_ancien"
+        },
+        {
+          "articleId": "a0187_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0187_ancien"
+        },
+        {
+          "articleId": "a0202_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0202_ancien"
+        }
+      ],
+      "originalTextOrEditionCertified": false,
+      "provenMissingAppFeature": false,
+      "copyrightReproductionApproved": false,
+      "productionPublicationApproved": false
+    },
+    {
+      "id": "ICRSP-B11-C10",
+      "priority": "P2",
+      "theme": "Weekday Lent penitence, mercy and charity themes",
+      "sourceIds": [
+        "a0185_ancien",
+        "a0192_ancien",
+        "a0004_nouveau",
+        "a0006_nouveau"
+      ],
+      "suggestedOwner": "EXISTING_CALENDAR_DAY_SPIRITUAL_CONTEXT",
+      "role": "POTENTIALLY_GENERIC_MORAL_FORMATION_DUPLICATE",
+      "remaining": "Compare actual already-published Calendar and Formation paragraphs; discard generic overlap rather than add redundant lessons.",
+      "sources": [
+        {
+          "articleId": "a0185_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0185_ancien"
+        },
+        {
+          "articleId": "a0192_ancien",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0192_ancien"
+        },
+        {
+          "articleId": "a0004_nouveau",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0004_nouveau"
+        },
+        {
+          "articleId": "a0006_nouveau",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0006_nouveau"
+        }
+      ],
+      "originalTextOrEditionCertified": false,
+      "provenMissingAppFeature": false,
+      "copyrightReproductionApproved": false,
+      "productionPublicationApproved": false
+    }
+  ]
+}
