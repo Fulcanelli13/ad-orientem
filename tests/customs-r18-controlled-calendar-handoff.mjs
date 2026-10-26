@@ -82,8 +82,8 @@ assert.equal(handoff.counts.source_observation_not_in_bilingual_profile_snapshot
 const patrick=handoff.records.find(r=>r.review_key==="MASTER:CANDIDATE-STPATRICK-RIBBON");
 const candle=handoff.records.find(r=>r.review_key==="MASTER:CANDIDATE-IRISH-CHRISTMAS-CANDLE");
 const bonfire=handoff.records.find(r=>r.review_key==="MASTER:CANDIDATE-STJOHN-BONFIRE");
-assert.ok(patrick.blockers.includes("INHERITED_1681_PRECISION_REQUIRES_SOURCE_RECONCILIATION_BEFORE_COPY"));
-assert.ok(candle.blockers.includes("SAME_ALTERNATE_DUCHAS_URL_HAS_CONFLICTING_KILKENNY_TIPPERARY_LOCALITY_LABELS"));
+assert.ok(patrick.blockers.includes("HISTORICAL_DATE_PRECISION_RECONCILED_NMI_1681_GALWAY_1680S"));
+assert.ok(candle.blockers.includes("KILKENNY_SCHOOL_CONFIRMED_INFORMANT_COUNTY_NOT_ESTABLISHED"));
 assert.ok(bonfire.blockers.includes("MASTER_CALENDAR_AUDIT_LOCAL_EVENT_REQUIRED_FALSE_NEEDS_CORRECTION"));
 assert.equal(master.records.filter(r=>r.publication_state==="PUBLISHED").length,35);
 console.log("PASS Customs R18 controlled handoff: 18 exact-key source routes, 17 full profiles, 1 incomplete observation, conflicting witness/date notes held; no approvals or Calendar publication");
