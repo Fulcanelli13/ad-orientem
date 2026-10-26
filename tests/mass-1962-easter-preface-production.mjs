@@ -73,6 +73,7 @@ try{
   const {inspect1962PrefaceSelection}=
     await import("/src/mass/1962-preface-decision.js");
   const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+  const {adaptV346ResolvedMass}=await import("/src/mass/host-adapter.js");
   const results=[];
   for(const [date,expectedVariant] of cases){
    try{
@@ -91,6 +92,18 @@ try{
       {language:"fr"}).slots.PREFACE;
     const slot=properToReaderSlots({...corrected,principalCelebrationId:id},
       {language:"fr"}).slots.PREFACE;
+    // Exercise the real host-to-native reader adapter rather than passing
+    // the principal ID manually to a standalone slot test.
+    const legacy={
+      canStart:true,date,calendarDay:{id,title:d?.day?.main?.title??null},
+      celebrationId:"mass_of_day",requestedCelebrationId:"mass_of_day",
+      celebrationType:"CALENDAR",properSource:original.sourcePath,
+      ...(date==="2026-04-04"?{exceptionalProfile:"easter-vigil-1962"}:{})
+    };
+    const rawReaderMass=adaptV346ResolvedMass(legacy,{form:"low",proper:original});
+    const resolvedReaderMass=adaptV346ResolvedMass(legacy,{form:"low",proper:corrected});
+    const adapterRawSlot=properToReaderSlots(rawReaderMass.proper.data,{language:"fr"}).slots.PREFACE;
+    const adapterSelectedSlot=properToReaderSlots(resolvedReaderMass.proper.data,{language:"fr"}).slots.PREFACE;
     const latin=String(corrected?.preface?.lat??corrected?.preface?.la??"");
     const french=String(corrected?.preface?.fr??"");
     const english=String(corrected?.preface?.en??"");
@@ -102,6 +115,9 @@ try{
       source:corrected?.preface?.sourcePath??null,
       latin,fr:french,en:english,
       originalSlot:originalSlot.status,slot:slot.status,
+      adaptedPrincipalId:resolvedReaderMass.proper.data.principalCelebrationId??null,
+      adapterRawSlot:adapterRawSlot.status,adapterSelectedSlot:adapterSelectedSlot.status,
+      adaptedDistinctRite:resolvedReaderMass.distinctRite??null,
       originalUnchanged:String(original?.preface?.lat??original?.preface?.la??"")===originalLatin
     });
    }catch(error){results.push({date,expectedVariant,error:String(error?.stack??error)})}
@@ -126,6 +142,9 @@ try{
   assert.equal(row.afterHead,"Paschalis",row.date);
   assert.equal(row.afterStatus,"MATCH",row.date);
   assert.equal(row.originalSlot,"MISSING",row.date+" invalid original source should be blocked");
+  assert.equal(row.adaptedPrincipalId,row.id,row.date+" actual reader handoff dropped Mass owner");
+  assert.equal(row.adapterRawSlot,"MISSING",row.date+" actual reader accepted unselected Preface");
+  assert.equal(row.adapterSelectedSlot,"READY",row.date+" actual reader rejected selected source Preface");
   assert.equal(row.slot,"READY",row.date);
   assert.equal(row.originalUnchanged,true,row.date+" mutated original Proper");
   assert.ok(row.en.length>350&&row.fr.length>350,row.date+" incomplete translation");
