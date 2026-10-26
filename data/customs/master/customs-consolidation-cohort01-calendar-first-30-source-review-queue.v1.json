@@ -1,0 +1,819 @@
+{
+  "schema": "AO_CUSTOMS_CONSOLIDATION_COHORT01_30_CALENDAR_FIRST_SOURCE_VERIFICATION_QUEUE_V1",
+  "date": "2026-10-24",
+  "purpose": "Create a manageable next evidentiary release-gate queue out of the 150 ownerless groups. This is not a second Calendar or a source-text summary; these are labels/page pointers needing original passage verification.",
+  "input": "data/customs/master/customs-unified-identity-consolidation-cohort01-150.v1.json",
+  "summary": {
+    "priority_page_specific_existing_groups": 30,
+    "sourced_master_identities_automatically_merged": 0,
+    "source_passages_fully_reviewed_in_this_pass": 0,
+    "new_unique_catholic_customs_verified": 0,
+    "new_calendar_publications": 0,
+    "priority_calendar_topic_signal_counts": {
+      "CHRISTMAS": 7,
+      "ST_NICHOLAS": 1,
+      "ST_JOSEPH": 1,
+      "EPIPHANY": 1,
+      "HOLY_WEEK": 1,
+      "EASTER": 5,
+      "PENTECOST": 1,
+      "CORPUS_CHRISTI": 1,
+      "ASSUMPTION": 1,
+      "CANDLEMAS": 2,
+      "NATIVITY_OF_MARY": 1,
+      "ALL_SOULS": 2,
+      "ADVENT": 1
+    }
+  },
+  "records": [
+    {
+      "priority_rank": 1,
+      "provisional_group_id": "CAT-WEISER-A-002",
+      "working_label": "Children recounting the Sunday sermon at home",
+      "source_observation_ids": [
+        "WEI58-01-005"
+      ],
+      "source_page": 16,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Various countries",
+      "calendar_topic_hints": [],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 16",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 2,
+      "provisional_group_id": "CAT-WEISER-A-004",
+      "working_label": "Making a cross on newly baked Sunday bread",
+      "source_observation_ids": [
+        "WEI58-01-007"
+      ],
+      "source_page": 16,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Unspecified regions",
+      "calendar_topic_hints": [],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 16",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 3,
+      "provisional_group_id": "CAT-WEISER-A-024",
+      "working_label": "Children's letters to Christ Child on Saint Nicholas Eve",
+      "source_observation_ids": [
+        "WEI58-05-004"
+      ],
+      "source_page": 56,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Europe/Americas; varies",
+      "calendar_topic_hints": [
+        "CHRISTMAS",
+        "ST_NICHOLAS"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 56",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 4,
+      "provisional_group_id": "CAT-WEISER-A-028",
+      "working_label": "Nine-night visits of an image of Saint Joseph",
+      "source_observation_ids": [
+        "WEI58-05-009"
+      ],
+      "source_page": 57,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Alpine Europe",
+      "calendar_topic_hints": [
+        "ST_JOSEPH"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [
+        "CUST-ADVT-HERBERGSUCHE"
+      ],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 57",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 5,
+      "provisional_group_id": "CAT-WEISER-A-031",
+      "working_label": "Meatless Christmas Eve family meal",
+      "source_observation_ids": [
+        "WEI58-06-006"
+      ],
+      "source_page": 73,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Central and Northern Europe",
+      "calendar_topic_hints": [
+        "CHRISTMAS"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 73",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 6,
+      "provisional_group_id": "CAT-WEISER-A-034",
+      "working_label": "Christmas Eve household reconciliation and completion of tasks",
+      "source_observation_ids": [
+        "WEI58-06-011"
+      ],
+      "source_page": 74,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "European households",
+      "calendar_topic_hints": [
+        "CHRISTMAS"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 74",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 7,
+      "provisional_group_id": "CAT-WEISER-A-043",
+      "working_label": "Kindelwiegen rocking a cradle with Christ Child figure",
+      "source_observation_ids": [
+        "WEI58-07-012"
+      ],
+      "source_page": 92,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Germany/Austria and Tyrol",
+      "calendar_topic_hints": [
+        "CHRISTMAS"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 92",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 8,
+      "provisional_group_id": "CAT-WEISER-A-057",
+      "working_label": "Children's Nativity gifts for poor at parish crib",
+      "source_observation_ids": [
+        "WEI58-08-024"
+      ],
+      "source_page": 110,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Holy Trinity Catholic parish, Boston (1851)",
+      "calendar_topic_hints": [
+        "CHRISTMAS"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 110",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 9,
+      "provisional_group_id": "CAT-WEISER-A-061",
+      "working_label": "Ukrainian didukh Christmas sheaf",
+      "source_observation_ids": [
+        "WEI58-09-001"
+      ],
+      "source_page": 116,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Ukraine",
+      "calendar_topic_hints": [
+        "CHRISTMAS"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [
+        "CUST-XMAS-POLISH-HAY"
+      ],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 116",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 10,
+      "provisional_group_id": "CAT-WEISER-A-089",
+      "working_label": "Epiphany house blessing by a priest",
+      "source_observation_ids": [
+        "WEI58-12-009"
+      ],
+      "source_page": 150,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Latin Roman rite, locally offered",
+      "calendar_topic_hints": [
+        "EPIPHANY"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 150",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 11,
+      "provisional_group_id": "CAT-WEISER-A-104",
+      "working_label": "Mothering Sunday family visit and simnel cake",
+      "source_observation_ids": [
+        "WEI58-14-013"
+      ],
+      "source_page": 178,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "England",
+      "calendar_topic_hints": [],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 178",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 12,
+      "provisional_group_id": "CAT-WEISER-A-108",
+      "working_label": "Lenten pretzels distributed as alms",
+      "source_observation_ids": [
+        "WEI58-14-023"
+      ],
+      "source_page": 184,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Central Europe",
+      "calendar_topic_hints": [],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 184",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 13,
+      "provisional_group_id": "CAT-WEISER-B-016",
+      "working_label": "Good Friday hot cross buns",
+      "source_observation_ids": [
+        "WEI58-15-032"
+      ],
+      "source_page": 206,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "England and Ireland",
+      "calendar_topic_hints": [
+        "HOLY_WEEK"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 206",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 14,
+      "provisional_group_id": "CAT-WEISER-B-021",
+      "working_label": "Surrexit Dominus vere Easter greeting",
+      "source_observation_ids": [
+        "WEI58-16-005"
+      ],
+      "source_page": 212,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Early Latin Christian practice",
+      "calendar_topic_hints": [
+        "EASTER"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 212",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 15,
+      "provisional_group_id": "CAT-WEISER-B-025",
+      "working_label": "Taking home Easter Vigil blessed fire by lantern",
+      "source_observation_ids": [
+        "WEI58-16-014"
+      ],
+      "source_page": 217,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Some central European Catholic regions",
+      "calendar_topic_hints": [
+        "EASTER"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [
+        "BLSS-004"
+      ],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 217",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 16,
+      "provisional_group_id": "CAT-WEISER-B-029",
+      "working_label": "Osterritt Easter mounted procession",
+      "source_observation_ids": [
+        "WEI58-16-023"
+      ],
+      "source_page": 221,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Rural Germany and Austria",
+      "calendar_topic_hints": [
+        "EASTER"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [
+        "EAST-001"
+      ],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 221",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 17,
+      "provisional_group_id": "CAT-WEISER-B-040",
+      "working_label": "Easter egg rolling and associated games",
+      "source_observation_ids": [
+        "WEI58-17-016"
+      ],
+      "source_page": 235,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "European families",
+      "calendar_topic_hints": [
+        "EASTER"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [
+        "CANDIDATE-EASTER-EGG-CRAFT"
+      ],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 235",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 18,
+      "provisional_group_id": "CAT-WEISER-B-043",
+      "working_label": "Easter lily in church and household decoration",
+      "source_observation_ids": [
+        "WEI58-17-019"
+      ],
+      "source_page": 236,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "US; horticultural origin outside Europe",
+      "calendar_topic_hints": [
+        "EASTER"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 236",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 19,
+      "provisional_group_id": "CAT-WEISER-B-062",
+      "working_label": "Pentecost dawn hilltop prayer",
+      "source_observation_ids": [
+        "WEI58-19-018"
+      ],
+      "source_page": 253,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Several European Christian regions",
+      "calendar_topic_hints": [
+        "PENTECOST"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 253",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 20,
+      "provisional_group_id": "CAT-WEISER-B-083",
+      "working_label": "Seville boys' Corpus Christi dance",
+      "source_observation_ids": [
+        "WEI58-21-017"
+      ],
+      "source_page": 265,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Seville Cathedral Spain",
+      "calendar_topic_hints": [
+        "CORPUS_CHRISTI"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [
+        "CORP-001"
+      ],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 265",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 21,
+      "provisional_group_id": "CAT-WEISER-B-091",
+      "working_label": "Harvest produce processions near the Assumption",
+      "source_observation_ids": [
+        "WEI58-22-007"
+      ],
+      "source_page": 270,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Hungary and Poland historical",
+      "calendar_topic_hints": [
+        "ASSUMPTION"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [
+        "BLSS-002",
+        "MARI-001"
+      ],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 270",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 22,
+      "provisional_group_id": "CAT-WEISER-B-113",
+      "working_label": "Adorned candles brought for Candlemas blessing",
+      "source_observation_ids": [
+        "WEI58-25-007"
+      ],
+      "source_page": 299,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Eastern and Central European Catholic communities",
+      "calendar_topic_hints": [
+        "CANDLEMAS"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [
+        "DOM-011"
+      ],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 299",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 23,
+      "provisional_group_id": "CAT-WEISER-B-116",
+      "working_label": "Taking down Christmas crib on Candlemas",
+      "source_observation_ids": [
+        "WEI58-25-012"
+      ],
+      "source_page": 300,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "European Catholic and other households",
+      "calendar_topic_hints": [
+        "CHRISTMAS",
+        "CANDLEMAS"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 300",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 24,
+      "provisional_group_id": "CAT-WEISER-B-123",
+      "working_label": "Seed blessing at Nativity of Mary",
+      "source_observation_ids": [
+        "WEI58-25-023"
+      ],
+      "source_page": 305,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Northern and Central European churches",
+      "calendar_topic_hints": [
+        "NATIVITY_OF_MARY"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 305",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 25,
+      "provisional_group_id": "CAT-WEISER-B-144",
+      "working_label": "Polish empty chair and food charity for All Souls",
+      "source_observation_ids": [
+        "WEI58-26-025"
+      ],
+      "source_page": 313,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Poland",
+      "calendar_topic_hints": [
+        "ALL_SOULS"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [
+        "DEAD-003"
+      ],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 313",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 26,
+      "provisional_group_id": "CAT-WEISER-B-146",
+      "working_label": "Huesos de Santo and panellets on All Souls",
+      "source_observation_ids": [
+        "WEI58-26-027"
+      ],
+      "source_page": 314,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Spain Catalonia",
+      "calendar_topic_hints": [
+        "ALL_SOULS"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 314",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 27,
+      "provisional_group_id": "CAT-WEISER-B-178",
+      "working_label": "Saint Lucy Advent candlelight observances",
+      "source_observation_ids": [
+        "WEI58-28-024"
+      ],
+      "source_page": 341,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Sweden Norway pre-Reformation and later",
+      "calendar_topic_hints": [
+        "ADVENT"
+      ],
+      "existing_master_subjects_to_compare_not_merge": [
+        "CUST-BARBARA-BRANCHES"
+      ],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 341",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 28,
+      "provisional_group_id": "CAT-WEISER-B-081",
+      "working_label": "Children dressed as angels and strewing petals",
+      "source_observation_ids": [
+        "WEI58-21-015"
+      ],
+      "source_page": 265,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Italy Germany and wider Europe history",
+      "calendar_topic_hints": [],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 265",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 29,
+      "provisional_group_id": "CAT-WEISER-B-089",
+      "working_label": "Decorating a cross-shaped last sheaf of grain",
+      "source_observation_ids": [
+        "WEI58-22-005"
+      ],
+      "source_page": 269,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Southern France",
+      "calendar_topic_hints": [],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 269",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "priority_rank": 30,
+      "provisional_group_id": "CAT-WEISER-B-108",
+      "working_label": "Spanish Immaculate Conception balcony candles and flowers",
+      "source_observation_ids": [
+        "WEI58-24-021"
+      ],
+      "source_page": 294,
+      "source_work": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+      "geographic_label_as_recorded": "Northern Spanish provinces",
+      "calendar_topic_hints": [],
+      "existing_master_subjects_to_compare_not_merge": [],
+      "practical_priority_class": "POTENTIAL_CALENDAR_CONTEXT_SUGGESTION_SOURCE_REVIEW",
+      "next_steps": [
+        "Read complete original printed source passage around page 294",
+        "Compare same-action descriptions against current 56 master identities and relevant regional evidence",
+        "Check geographic/historical validity and whether any 1962 rite text is relevant; only then propose the Calendar link"
+      ],
+      "source_passage_review_complete": false,
+      "distinct_practice_id_approved": false,
+      "live_1962_calendar_mapping_approved": false,
+      "public_card_copy_approved": false,
+      "publication_state": "RESEARCH_ONLY"
+    }
+  ]
+}

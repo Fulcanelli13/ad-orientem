@@ -1,0 +1,134 @@
+{
+  "schema": "AO_CUSTOMS_COHORT02_TWO_SOURCE_SUPPORTED_CALENDAR_SUBJECTS_V1",
+  "date": "2026-10-24",
+  "input": "data/customs/master/customs-unified-identity-consolidation-cohort02-211.v1.json",
+  "existing_calendar_target_only": true,
+  "method": "External Catholic institutional/cultural/documentary evidence is consulted; direct Weiser passages for these cohort02 groups were not newly image-checked in this pass. Stronger subject-level evidence does not confer canonical approval or rite permission.",
+  "summary": {
+    "subjects_prepared": 2,
+    "source_group_ids_used": 4,
+    "explicit_current_main_overlaps_considered": 5,
+    "initial_en_fr_drafts": 2,
+    "new_approved_canonical_ids": 0,
+    "new_publications": 0
+  },
+  "records": [
+    {
+      "research_subject_key": "RESEARCH-EPIPHANY-HOUSE-COMPONENTS",
+      "source_group_ids": [
+        "CAT-WEISER-A-089",
+        "CAT-WEISER-A-090"
+      ],
+      "recommended_identity_structure": "ONE_CALENDAR_SUBJECT_WITH_TWO_DISTINGUISHABLE_ACTIONS",
+      "proposed_calendar_anchor": "EPIPHANY_JAN_6_1962_RESOLVER",
+      "geographical_scope": "Western Catholic and variable regional household practice; availability of ministerial blessing is local",
+      "actions": [
+        {
+          "group_id": "CAT-WEISER-A-089",
+          "role": "MINISTERIAL_RITE",
+          "description": "Priest performs a blessing of the home using authorized ritual text; requires priest and local arrangement",
+          "source_status": "1958_WEISER_ORIGINAL_PRINT_149_AND_WELLER_RITUAL"
+        },
+        {
+          "group_id": "CAT-WEISER-A-090",
+          "role": "ASSOCIATED_HOUSEHOLD_CUSTOM",
+          "description": "Family inscribes a cross, year and C+M+B on door lintel in blessed chalk",
+          "source_status": "OFFICIAL_2002_VATICAN_DIRECTORY_POPULAR_PIETY"
+        }
+      ],
+      "canonical_main_comparisons": [
+        {
+          "id": "DOM-003",
+          "reason": "Generic use of holy water at home does not own Epiphany-specific blessing or chalking"
+        },
+        {
+          "id": "EPIP-001",
+          "reason": "Star singers are a different regional Epiphany household practice"
+        },
+        {
+          "id": "EPIP-002",
+          "reason": "King's cake is a different Epiphany food custom"
+        }
+      ],
+      "independent_sources": [
+        {
+          "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+          "type": "VATICAN_PASTORAL_DIRECTORY_2002",
+          "scope": "Documents C+M+B inscription in blessed chalk in popular piety; not itself the priest's rite"
+        },
+        {
+          "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1336",
+          "type": "1952_WELLER_ROMAN_RITUAL_TRANSLATION",
+          "scope": "Historic specified priestly house blessing; does not automatically authorize household performance of its formulas"
+        }
+      ],
+      "draft_en": "At Epiphany, some Catholic families write the year's number and a cross with C+M+B over the doorway using blessed chalk. These initials recall the Magi and may also signify 'May Christ bless this house.' In some places a priest gives the separate Epiphany house blessing according to the Roman Ritual. Both are optional customs, and the priestly rite requires appropriate clergy.",
+      "draft_fr": "À l'Épiphanie, certaines familles catholiques inscrivent au-dessus de la porte l'année, une croix et les lettres C+M+B à la craie bénite. Ces lettres évoquent les Mages et peuvent aussi signifier « Que le Christ bénisse cette maison ». Une bénédiction sacerdotale particulière de la maison existe également dans le Rituel romain. Ces usages sont facultatifs, et le rite sacerdotal exige un prêtre.",
+      "ritual_limit": "Never substitute a vernacular chalk phrase for the authorized Roman Ritual priestly formula; separate popular devotion from ordained ministry.",
+      "reader_card_release_state": "UNAPPROVED_DRAFT",
+      "first_weiser_original_folio_checked_in_this_cohort02": false,
+      "canonical_id": null,
+      "calendar_link_approved": false,
+      "final_text_approved": false
+    },
+    {
+      "research_subject_key": "RESEARCH-POLAND-CORPUS-WREATHS",
+      "source_group_ids": [
+        "CAT-WEISER-B-085",
+        "CAT-WEISER-B-086"
+      ],
+      "recommended_identity_structure": "ONE_REGIONAL_CUSTOM_WITH_BLESSING_AND_DOMESTIC_AFTER_USE",
+      "proposed_calendar_anchor": "CORPUS_CHRISTI_OR_REGIONAL_OCTAVE_OBSERVANCE_EXISTING_CALENDAR",
+      "geographical_scope": "Poland, with related historical Central European reports; Polish octave-specific timing must not imply universal 1962 octave",
+      "actions": [
+        {
+          "group_id": "CAT-WEISER-B-085",
+          "role": "PRIESTLY_BLESSING_CONTEXT",
+          "description": "Herbal and flower wreaths brought for blessing in Polish Corpus Christi octave practice",
+          "source_status": "GOV_PL_AND_ACADEMIC_ETHNOBOTANICAL_WITNESSES"
+        },
+        {
+          "group_id": "CAT-WEISER-B-086",
+          "role": "HOUSEHOLD_AFTER_USE",
+          "description": "Blessed wreaths brought back from church and hung at home or near sacred images",
+          "source_status": "GOV_PL_HISTORICAL_AND_TRADITIONAL_RECORD"
+        }
+      ],
+      "canonical_main_comparisons": [
+        {
+          "id": "CORP-001",
+          "reason": "Current CORP-001 focuses on flower carpets and decorated processional route, not Polish blessing-and-hanging wreaths"
+        },
+        {
+          "id": "BLSS-002",
+          "reason": "Assumption herbs and fruits use a different Marian feast and botanical custom; cannot be merged"
+        }
+      ],
+      "independent_sources": [
+        {
+          "url": "https://www.gov.pl/web/sport/uroczystosc-bozego-ciala--tradycje-i-obyczaje",
+          "type": "POLISH_GOVERNMENT_CULTURAL_CONTEXT",
+          "scope": "Wreaths woven, brought to church, blessed at end of local Corpus Christi octave and hung in domestic spaces; supernatural protection tales recorded as folklore only"
+        },
+        {
+          "url": "https://www.gov.pl/web/rolnictwo/herbatki-z-ziolowych-wiankow",
+          "type": "POLISH_GOVERNMENT_TRADITIONAL_FOOD_REGISTER",
+          "scope": "Herb wreaths tied to conclusion of Corpus Christi octave and household suspension"
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0378874112002760",
+          "type": "2012_ETHNOBOTANICAL_FIELD_STUDY",
+          "scope": "Original contemporary field-study documentation of herbal wreaths near Krosno and historical comparison; discusses Polish episcopal octave practice"
+        }
+      ],
+      "draft_en": "In parts of Poland, families prepare small wreaths of herbs and flowers for the celebrations following Corpus Christi. The wreaths may be blessed at church and later hung at home, often near a sacred image. The custom expresses thanksgiving for God's gifts and devotion to the Blessed Sacrament. Older folk claims that wreaths cure illness or magically repel storms should be understood as historical beliefs, not promises of the Church.",
+      "draft_fr": "Dans certaines régions de Pologne, les familles composent de petites couronnes d'herbes et de fleurs pour les célébrations qui suivent la Fête-Dieu. Elles peuvent être bénites à l'église, puis suspendues à la maison, parfois près d'une image pieuse. Cette coutume exprime la reconnaissance pour les dons de Dieu et la dévotion envers le Saint-Sacrement. Les anciennes croyances attribuant à ces couronnes des guérisons ou une protection magique ne sont pas des promesses de l'Église.",
+      "ritual_limit": "Do not assume present availability, universal 1962 liturgical octave or magic efficacy. Blessing requires actual authorized local clergy/rite.",
+      "reader_card_release_state": "UNAPPROVED_DRAFT",
+      "first_weiser_original_folio_checked_in_this_cohort02": false,
+      "canonical_id": null,
+      "calendar_link_approved": false,
+      "final_text_approved": false
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "schema": "AO_CUSTOMS_EXISTING_CALENDAR_FIVE_DOSSIER_HANDOFF_20261026_V1",
+  "as_of": "2026-10-26",
+  "research_owner": "Draft PR #1610, data/customs/master/customs-calendar-five-final-copy-release-candidates.v1.json",
+  "calendar_owner": "Existing Ad Orientem 1962 Calendar only; no standalone Atlas",
+  "publication_policy": {
+    "source_screening_not_publication": true,
+    "never_create_second_calendar": true,
+    "research_ids_not_canonical_ids": true,
+    "existing_release_branch_not_merged": true,
+    "future_subjects_no_new_canonical_ids": true,
+    "editorial_approval_requires_named_human": true,
+    "customary_local_dates_not_universal_1962_rubrics": true,
+    "no_invented_parish_events": true
+  },
+  "summary": {
+    "research_dossiers": 5,
+    "already_handled_in_separate_draft_release": 2,
+    "next_distinct_subjects": 3,
+    "new_runtime_articles_from_this_research_pr": 0,
+    "new_approved_publications": 0,
+    "provisional_group_references": 8
+  },
+  "units": [
+    {
+      "release_unit": "CU-REVIEW-001",
+      "source_subject": "Epiphany household chalk and distinct priestly house blessing",
+      "destination": {
+        "pr": 1642,
+        "proposed_custom_id": "EPIP-003",
+        "status": "UNMERGED_DRAFT_AWAITING_EIGHT_SIGNOFFS"
+      },
+      "source_group_ids": [
+        "CAT-WEISER-A-089",
+        "CAT-WEISER-A-090"
+      ],
+      "ownership": "Do not draft again in research PR"
+    },
+    {
+      "release_unit": "CU-REVIEW-004",
+      "source_subject": "Christmas crib kept until Candlemas",
+      "destination": {
+        "pr": 1642,
+        "proposed_custom_id": "CRIB-001",
+        "status": "UNMERGED_DRAFT_AWAITING_EIGHT_SIGNOFFS"
+      },
+      "source_group_ids": [
+        "CAT-WEISER-B-116"
+      ],
+      "ownership": "Do not draft again in research PR"
+    },
+    {
+      "release_unit": "CU-REVIEW-002",
+      "source_subject": "Easter light brought home",
+      "destination": {
+        "pr": null,
+        "proposed_custom_id": null,
+        "status": "RESEARCH_ONLY_NEXT_COHORT"
+      },
+      "source_group_ids": [
+        "CAT-WEISER-B-025"
+      ],
+      "reviewed_sources": [
+        {
+          "url": "https://www.erzdioezese-wien.at/pages/inst/21452566/service/kirchenjahr/osterfestkreis/osterlicht",
+          "role": "CURRENT_ARCHDIOCESAN_ATTESTATION",
+          "bounded_claim": "Many Austrian regions carry Easter Vigil light home; does not authorize a new 1962 rite or all-parish fire distribution"
+        }
+      ],
+      "release_guard": "Parish permission, fire safety, optional household custom, distinct from Easter foods"
+    },
+    {
+      "release_unit": "CU-REVIEW-003",
+      "source_subject": "Seville Cathedral Seises",
+      "destination": {
+        "pr": null,
+        "proposed_custom_id": null,
+        "status": "RESEARCH_ONLY_NEXT_COHORT"
+      },
+      "source_group_ids": [
+        "CAT-WEISER-B-083",
+        "CAT-WEISER-B-109"
+      ],
+      "reviewed_sources": [
+        {
+          "url": "https://www.catedraldesevilla.es/la-danza-de-los-seises-un-tesoro-vivo-en-la-catedral-de-sevilla/",
+          "role": "OFFICIAL_CATHEDRAL_INSTITUTIONAL_ATTESTATION",
+          "bounded_claim": "One named cathedral tradition explicitly associated with Corpus Christi and Immaculate Conception; 2025 December performance notice does not imply a 2026/2027 schedule"
+        }
+      ],
+      "release_guard": "One identity/two Calendar associations; strictly Cathedral-specific; no universal Mass gesture or event-time prediction"
+    },
+    {
+      "release_unit": "CU-REVIEW-005",
+      "source_subject": "Polish Corpus Christi herb wreaths",
+      "destination": {
+        "pr": null,
+        "proposed_custom_id": null,
+        "status": "RESEARCH_ONLY_NEXT_COHORT"
+      },
+      "source_group_ids": [
+        "CAT-WEISER-B-085",
+        "CAT-WEISER-B-086"
+      ],
+      "reviewed_sources": [
+        {
+          "url": "https://www.gov.pl/web/kultura/uroczystosc-bozego-ciala--tradycje-i-obyczaje",
+          "role": "MINISTRY_HISTORICAL_CUSTOMS",
+          "bounded_claim": "Section Oktawa Bożego Ciała: wreaths kept during customary following days and nowadays blessed on last day; attached folklore is not a promise of protection"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22575705/",
+          "role": "PEER_REVIEWED_ETHNOBOTANICAL_2012",
+          "bounded_claim": "Krosno-area survey: 245 wreath photos and 133 questionnaires, plants and local eighth-day blessing; not evidence of 1962 universal liturgical octave"
+        }
+      ],
+      "release_guard": "Only existing Corpus Christi date association; no synthesized octave services; optional locally arranged blessing; distinct from Assumption herbs and Corpus flower carpets"
+    }
+  ]
+}
