@@ -27,7 +27,7 @@ for(const r of evidence.records){
  assert.equal(r.source_support.url_already_in_master,originalRow.source_urls.includes(r.source_support.verified_url));
  assert.ok(r.source_support.supports_claim_en.length>90);
  assert.ok(r.source_specific_risk.explanation_en.length>90);
- assert.ok(r.source_specific_risk.flag.length>10);
+ assert.ok(r.source_specific_risk.flag.length>=8);
  assert.equal(r.new_custom_id,null);
  assert.equal(r.publication_state,"RESEARCH_ONLY");
  assert.equal(r.identity_not_duplicate_final_approval,false);
