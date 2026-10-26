@@ -86,7 +86,7 @@ dialog::backdrop{background:#030407e3;backdrop-filter:blur(4px)}
   <input type="file" accept=".json,application/json" id="upload" hidden>
   </div></div>
   <div class="notice"><strong>Batch review:</strong> begin with 9 genuine gaps, then 6 dates with documented exact-subject artwork, then the other 28 open dates. The ten prior choices are protected. No rankings grant an approval or photo rights. Choose the best painting for each feast, or select <strong>None suitable — research further</strong>. These 3–4 candidates are backed by the existing sacred-art research, but some are only contextual alternatives; they are clearly labelled. <strong>Ten of your previous date-specific choices are protected</strong> and do not require re-approval. Choosing another painting for one of those dates is recorded as an explicit proposed revision, not an automatic replacement in the app.</div>
-  <div class="titlebox"><div class="date" id="date"></div><h2 id="feast"></h2><div class="assoc" id="relation"></div><div class="appointed" id="appointed" style="font:12px/1.65 system-ui,sans-serif;color:#d9c49f;margin-top:10px" hidden></div></div>
+  <div class="titlebox"><div class="date" id="date"></div><h2 id="feast"></h2><div class="assoc" id="relation"></div><div class="appointed" id="appointed" style="font:12px/1.65 system-ui,sans-serif;color:#d9c49f;margin-top:10px" hidden></div><div id="screen" class="notice" hidden></div></div>
   <div class="protected-notice" id="protected" hidden></div>
   <div class="legend"><span><strong>Prior approval:</strong> earlier decision retained</span><span><strong>Exact:</strong> artwork depicts feast/event</span><span><strong>Contextual:</strong> related theme; not exact</span><span><strong>Photo:</strong> research proof, not app rights clearance</span></div>
   <div class="candidates" id="candidates" aria-label="Select among the feast painting candidates"></div>
@@ -117,7 +117,17 @@ function normalize(v){const out={};if(!v||typeof v!=="object"||Array.isArray(v))
   }return out;}
 try{state=normalize(JSON.parse(localStorage.getItem(CACHE)||"{}"));}catch(e){}
 function current(d){return state[d.date]||{action:"undecided",selected:null,note:""}}
-function store(d,update){state[d.date]={...current(d),...update};try{localStorage.setItem(CACHE,JSON.stringify(state));}catch(e){}renderNav();render()}
+function store(d,update){
+ const oldShown=visibleDays(),oldIndex=oldShown.findIndex(x=>x.date===d.date);
+ state[d.date]={...current(d),...update};
+ try{localStorage.setItem(CACHE,JSON.stringify(state));}catch(e){}
+ const shown=visibleDays();
+ if(shown.length&&!shown.some(x=>x.date===DAYS[idx].date)){
+  const next=shown[Math.min(Math.max(oldIndex,0),shown.length-1)];
+  idx=DAYS.findIndex(x=>x.date===next.date);
+ }
+ renderNav();render();
+}
 function month(n){return new Date(n+"T12:00:00Z").toLocaleString("en-GB",{month:"long",timeZone:"UTC"})}
 function label(d){const c=current(d);if(c.action==="more")return "Needs research";
  if(c.action==="select")return "Selected";
@@ -193,6 +203,10 @@ function render(){
  $("relation").textContent="1962 observed principal · Class I · "+(d.relation||d.theme)+" · "+d.options.length+" painting options · "+(d.review_lane||"REVIEW");
  $("appointed").hidden=!d.appointed_reading;
  $("appointed").textContent=d.appointed_reading?(d.appointed_reading+" · "+d.appointed_scene+" (reference, not an automatic approval)"):"";
+ $("screen").hidden=!d.editorial_screen;
+ $("screen").textContent=d.editorial_screen?
+  ("Source-matching check · "+d.editorial_screen.status.replaceAll("_"," ")+": "+
+   d.editorial_screen.assessment+" This review does not change your prior artwork choices or release photographs."):"";
  $("protected").hidden=!d.original_approval;
  if(d.original_approval)$("protected").textContent="Protected existing approval: "+d.original_approval.artist+" — "+d.original_approval.title+". This previously approved painting remains your editorial choice unless you explicitly propose to change it. A verified app-ready image file is not implied.";
  $("candidates").replaceChildren(...d.options.map(x=>card(x,d)));
