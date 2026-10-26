@@ -1,0 +1,76 @@
+name: Directory CL12 singleton owner evidence
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'data/directory/research/cl8-completeness-audit-20261026/**'
+      - 'data/directory/research/cl9-missal-source-review-20261026/**'
+      - 'data/directory/research/cl10-1962-slot-adjudication-20261026/**'
+      - 'data/directory/research/cl11-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl12-singleton-source-screen-20261026/**'
+      - 'tools/directory/reconcile-cl12-singletons.py'
+      - '.github/workflows/directory-cl12-singleton-review.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'data/directory/research/cl8-completeness-audit-20261026/**'
+      - 'data/directory/research/cl9-missal-source-review-20261026/**'
+      - 'data/directory/research/cl10-1962-slot-adjudication-20261026/**'
+      - 'data/directory/research/cl11-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl12-singleton-source-screen-20261026/**'
+      - 'tools/directory/reconcile-cl12-singletons.py'
+      - '.github/workflows/directory-cl12-singleton-review.yml'
+  workflow_dispatch:
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate original source integrity and prior evidence
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+      - name: Rebuild CL2–CL12 evidence and check all 75 singleton URLs
+        run: |
+          python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ao-cl12.sqlite
+          python3 tools/directory/audit-cl-completeness.py --db /tmp/ao-cl12.sqlite --output-dir /tmp/ao-cl8
+          python3 tools/directory/audit-cl9-owner-evidence.py --db /tmp/ao-cl12.sqlite --cl8-csv /tmp/ao-cl8/missal_1962_reconciliation.csv --out-dir /tmp/ao-cl9
+          python3 tools/directory/adjudicate-cl10-missal-evidence.py --db /tmp/ao-cl12.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl10
+          python3 tools/directory/reconcile-cl11-owner-sources.py --db /tmp/ao-cl12.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl11
+          python3 tools/directory/reconcile-cl12-singletons.py --db /tmp/ao-cl12.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl12
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl12/cl12_summary.json').read_text())
+          assert x['singleton_urls_screened']==75
+          assert x['exact_owner_or_organizer_edition_claims_accepted']==12
+          assert x['singleton_rows_held']==63
+          assert x['specific_1962_edition_but_wrong_historical_time']==1
+          assert x['cumulative_slot_claims_accepted']==133
+          assert x['new_public_approvals']==x['new_current_timetable_approvals']==x['new_una_cum']==0
+          db=sqlite3.connect('/tmp/ao-cl12.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert not db.execute('PRAGMA foreign_key_check').fetchall()
+          print('CL12 confirmed research-only')
+          PY
+      - name: Export reproducible CL12 decisions
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-cl12-singleton-source-evidence
+          path: /tmp/ao-cl12/
+          retention-days: 1
