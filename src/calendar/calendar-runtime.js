@@ -1028,6 +1028,17 @@ function yearSurface(selected,r){
     ${embedded&&!embeddedHomeYear?renderYearJourney({year:y,selectedDate:selected,focusedPeriodId:focusedYearPeriodId,fr:fr(),formatDate:displayDate,dailyColours:daily}):""}
   `;
 }
+function ordoMassEvidenceMarkup(facts){
+  const evidence=facts?.ordinaryRubricEvidence;
+  const labels=[["gloria","Gloria"],["credo","Credo"]];
+  const rows=labels.map(([key,label])=>{
+    const data=evidence?.[key];
+    if(data?.status!=="GENERAL_RULE_ATTESTED"||!data?.clause||
+       !/^https:\/\/isidore\.co\/divinum\//.test(String(data.sourceUrl||"")))return "";
+    return `<li><b>${esc(label)}</b> · ${esc(data.clause.replaceAll("_"," "))} · <a href="${esc(data.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(L("1960 rubrics","Rubriques de 1960"))}</a></li>`;
+  }).filter(Boolean);
+  return rows.length?`<details class="aoCalOrdoBasis"><summary>${esc(L("Rubrical basis","Fondement rubrical"))}</summary><ul>${rows.join("")}</ul></details>`:"";
+}
 function ordoMassFactMarkup(facts){
   if(facts?.status!=="SOURCE_PROPER")return "";
   const rows=[];
@@ -1038,7 +1049,7 @@ function ordoMassFactMarkup(facts){
     rows.push(row(L("Preface","Préface"),L("Source conflict · under review","Conflit de sources · à vérifier")));
   if(facts.gloria!==null)rows.push(row("Gloria",facts.gloria?L("Included","Chanté ou récité"):L("Omitted","Omis")));
   if(facts.credo!==null)rows.push(row("Credo",facts.credo?L("Included","Chanté ou récité"):L("Omitted","Omis")));
-  return rows.length?`<dl class="aoCalOrdoFacts">${rows.join("")}</dl>`:"";
+  return rows.length?`<dl class="aoCalOrdoFacts">${rows.join("")}</dl>${ordoMassEvidenceMarkup(facts)}`:"";
 }
 function dayMassOrdoMarkup(r){
   const facts=calendarOrdoMassFacts(r,{language:fr()?"fr":"en"});
@@ -1278,6 +1289,10 @@ function monthOrdoCss(){
 .aoCalOrdoCommemorations ul{margin:5px 0 12px;padding-left:17px}
 #ao-calendar-modular-root .aoCalOrdoExpanded button{border:0!important;border-radius:0!important;background:transparent!important;color:#c6b38b!important;min-height:44px!important;padding:8px 0!important;text-align:left!important}
 #ao-calendar-modular-root .aoCalOrdoList[data-cal-month-filter="temporale"] .aoCalOrdoEntry[data-cycle="sanctorale"],#ao-calendar-modular-root .aoCalOrdoList[data-cal-month-filter="sanctorale"] .aoCalOrdoEntry[data-cycle="temporale"]{display:none}
+.aoCalOrdoBasis{margin:12px 0;color:var(--ao-text-muted,#a6a198);font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+.aoCalOrdoBasis summary{cursor:pointer;min-height:34px;color:#b9a884;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoCalOrdoBasis li{padding:2px 0;overflow-wrap:anywhere}
+.aoCalOrdoBasis a{color:#c3ae85;text-decoration:underline;text-underline-offset:2px}
 .aoCalOrdoFacts{display:grid;gap:7px;margin:11px 0 4px;padding:0}
 .aoCalOrdoFact{display:grid;grid-template-columns:110px minmax(0,1fr);gap:8px;align-items:baseline}
 .aoCalOrdoFact dt{font:600 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.015em;color:var(--ao-text-muted,#a6a198)}
