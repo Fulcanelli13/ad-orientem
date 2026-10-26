@@ -216,7 +216,6 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},progra
     }
     select.setAttribute("aria-label","Reference "+track.replaceAll("_"," ").toLowerCase()+" melody");
   }
-  fillChoices("KYRIE");
   const viewport=panel.querySelector("[data-score-reading]");
   const fullViewport=dialogue.querySelector("[data-score-full-reading]");
   const picture=panel.querySelector("[data-score-image]");
@@ -227,6 +226,8 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},progra
     .map(row=>[row.trackId,row.scoreId]));
   const choicesForTrack=track=>availableNativeScholaScores(track).filter(item=>
     item.status!=="SOURCE_MATCH_REQUIRED_NOT_DATE_ASSIGNED"||matchedProper.get(track)===item.id);
+  // Initialization order: choicesForTrack must exist before first selector fill.
+  fillChoices("KYRIE");
   const selectedForTrack=track=>{
     const id=matchedProper.get(track)??(track==="KYRIE"?(reported.KYRIE??programmeScoreId):reported[track]);
     return choicesForTrack(track).find(item=>item.id===id)

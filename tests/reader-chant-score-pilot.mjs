@@ -72,11 +72,13 @@ assert.equal(scoreReadingStep(0),80);
 const dom=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
 const scoreModule=readFileSync(new URL("../src/mass/reader-chant-score-pilot.js",import.meta.url),"utf8");
 assert.match(dom,/import \{ installNativeScholaScorePilot \} from "\.\/reader-chant-score-pilot\.js";/);
-assert.match(dom,/chantScorePilot=installNativeScholaScorePilot\(root,\{onLayoutChange/);
+assert.match(dom,/chantScorePilot=installNativeScholaScorePilot\(root,\{\s*onLayoutChange/);
 assert.match(dom,/chantScorePilot\?\.update\(schola\)/);
 assert.match(dom,/chantScorePilot\?\.destroy\(\)/);
 assert.match(dom,/chantScorePilot\?\.hide\?\.\(\)/);
 assert.match(dom,/const notationOpen=dock\.dataset\.notation==="true"/);
+assert.ok(scoreModule.indexOf("const choicesForTrack=")<scoreModule.indexOf('fillChoices("KYRIE")'),
+  "Chant choices must be declared before filling selector at mount");
 assert.match(scoreModule,/const onPanelKey=event=>/);
 assert.match(scoreModule,/lastTrack=track/);
 assert.match(scoreModule,/selectedForTrack\(track\)/);
