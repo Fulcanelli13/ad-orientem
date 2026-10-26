@@ -13,6 +13,27 @@ Chri(k)ste(ij) e(h)lé(h_)i(i)son.(i.) <i>iij.</i>(::)
 Ký(g)ri(hi)e(ii) e(g)lé(h_)i(i)son.(i.) <i>ij.</i>(::)
 Ký(g)ri(hi)e(ii) *() e(g)lé(hj)i(h)son.(ighvGFE.) (::)`;
 
+const KYRIE_XI_GABC=`name:Kyrie XI;
+office-part:Kyriale;
+mode:1;
+book:Graduale Romanum, 1961, p. 38* & The Liber Usualis, 1961, p. 46 & Chants of the Church, 1956, p. 30;
+transcriber:Andrew Hinkley;
+%%
+(c4) KY(ixhi)ri(hg)e(hd..) *(,) e(ixfgh!ivHGfvED)lé(c')i(d)son.(d.) <i>iij.</i>(::)
+Chri(hg)ste(kv.jkJH'Gh.) (,) e(ixfgh!ivHGfvED)lé(c')i(d)son.(d.) <i>iij.</i>(::)
+Ký(ixhi)ri(hg)e(hd..) (,) e(ixfgh!ivHGfvED)lé(c')i(d)son.(d.) <i>ij.</i>(::)
+Ký(dfd)ri(cd)e(d.gv.fgFD'Cd.) <clear>*(,) e(ixfgh!ivHGfvED)lé(c')i(d)son.(d.) (::)`;
+const KYRIE_VIII_GABC=`name:Kyrie VIII;
+office-part:Kyriale;
+mode:5;
+book:Graduale Romanum, 1961, p. 28* & The Liber Usualis, 1961, p. 37 & Chants of the Church, 1956, p. 19;
+transcriber:Andrew Hinkley;
+commentary:XV-XVI. s.;
+%%
+(c3) KY(d)ri(gxfgh)e(h.ivHGh.) *~{~}(/[-2]kvIH'Ghih.) (,) e(gxhvFE'Dgf)lé(e')i(e)son.(d.) <i>iij.</i>(::)
+Chri(f)ste(fvED'Cd.gxd!fg!hv.ivHGh.) (,) e(gxhvFE'Dgf)lé(e')i(e)son.(d.) <i>iij.</i>(::)
+Ký(k')ri(j)e(kvJI'jkh.1gxkhiv./[-0.5]fg!hv.) (,) e(gxhvFE'Dgf)lé(e')i(e)son.(d.) <i>ij.</i>(::)
+Ký(k')ri(j)e(kvJI'jkh.1) <clear>*(,) (kjkvJI'jkh.1gxkhiv./[-0.5]fg!hv.) <clear>**(,) e(gxhvFE'Dgf)lé(e')i(e)son.(d.) (::)`;
 const source=(id)=>"https://gregobase.selapa.net/chant.php?id="+id;
 const svg=(id)=>"https://gregobase.selapa.net/download.php?format=svg&id="+id;
 const gabc=(id)=>"https://gregobase.selapa.net/download.php?elem=1&format=gabc&id="+id;
@@ -27,13 +48,13 @@ export const SCHOLA_SCORE_CATALOGUE=Object.freeze([
   Object.freeze({id:"GREGOBASE-2982",trackId:"KYRIE",title:"Kyrie XI",version:"Solesmes",
     status:"RESEARCH_EXAMPLE_NOT_MASS_SETTING",
     provenance:"GREGOBASE_CC0_TRANSCRIPTION",
-    sourceUrl:source(2982),svgUrl:svg(2982),gabcUrl:gabc(2982),
+    sourceUrl:source(2982),svgUrl:svg(2982),gabcUrl:gabc(2982),gabc:KYRIE_XI_GABC,
     bookWitnesses:Object.freeze(["Graduale Romanum (Solesmes, 1961), p. 38*",
       "Liber Usualis (Solesmes, 1961), p. 46"])}),
   Object.freeze({id:"GREGOBASE-1184",trackId:"KYRIE",title:"Kyrie VIII",version:"Solesmes",
     status:"RESEARCH_EXAMPLE_NOT_MASS_SETTING",
     provenance:"GREGOBASE_CC0_TRANSCRIPTION",
-    sourceUrl:source(1184),svgUrl:svg(1184),gabcUrl:gabc(1184),
+    sourceUrl:source(1184),svgUrl:svg(1184),gabcUrl:gabc(1184),gabc:KYRIE_VIII_GABC,
     bookWitnesses:Object.freeze(["Graduale Romanum (Solesmes, 1961), p. 28*",
       "Liber Usualis (Solesmes, 1961), p. 37"])}),
 ]);
