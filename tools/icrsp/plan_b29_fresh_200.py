@@ -41,7 +41,7 @@ def plan(metadata, topic_ledger, earlier_wave, handoff):
     assert len(fresh)==339, "Expected 339 genuinely unstaged pages outside first 250"
     available={}
     for row in fresh:
-        key=row["section"]
+        key=row.get("section") or row["indexSection"]
         available.setdefault(key,[]).append(row)
     chosen=[]
     selected=set()
@@ -71,7 +71,7 @@ def plan(metadata, topic_ledger, earlier_wave, handoff):
           "articleId":r["articleId"],
           "sourceUrl":r["sourceUrl"],
           "articleTitle":title,
-          "section":r["section"],
+          "section":r.get("section") or r["indexSection"],
           "candidateExistingOwner":OWNERS.get(r["section"],"SOURCE_REFERENCE_ONLY"),
           "priorCommentaryPanelCount":len(blocks),
           "commentaryPanelLabels":[b.get("blockLabel") or b.get("label") or "" for b in blocks],
