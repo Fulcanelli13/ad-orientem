@@ -296,8 +296,11 @@ export function installNativeScholaScorePilot(root,{onLayoutChange=()=>{},progra
   function changeTrack(schola){
     const track=String(schola?.trackId??"");
     const available=availableNativeScholaScores(track);
-    trigger.hidden=available.length===0;
-    dock.dataset.scoreAvailable=String(available.length>0);
+    // A Gregorian manuscript is not the notation of a polyphonic setting.
+    const polyphonic=track==="SANCTUS_BENEDICTUS"&&schola?.sanctusPerformance==="POLYPHONIC";
+    trigger.hidden=available.length===0||polyphonic;
+    dock.dataset.scoreAvailable=String(available.length>0&&!polyphonic);
+    if(polyphonic&&isOpen){isOpen=false;hideFull({restoreFocus:false});updateVisible();}
     if(track!==lastTrack){
       // Each chant is independently selected. No Kyrie-to-Ordinary inference.
       if(isOpen){isOpen=false;hideFull({restoreFocus:false});updateVisible();}
