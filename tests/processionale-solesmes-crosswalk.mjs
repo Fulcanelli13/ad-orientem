@@ -592,3 +592,43 @@ test('Palm distribution 16 Latin psalm incipits agree across the research regist
   assert.equal(audit.psalms[1].incipits[0],'Omnes populi plaudite manibus');
   assert.ok(audit.corrections.resolved.some(x=>x.includes('wrong Psalm 22 heading')));
 });
+
+
+test('sixteen complete Latin candidates remain source-only until 1962 image and chant pointing reviews',()=>{
+  const c=readJSON('data/research/processionale-palm-1962-full-verse-candidates-20261026.v1.json');
+  const inc=readJSON('data/research/processionale-palm-1962-incipit-reconciliation-20261026.v1.json');
+  const clean=s=>s.normalize('NFD').replace(/[\\u0300-\\u036f]/g,'')
+    .replace(/[^\\p{L} ]/gu,'').replace(/\\s+/g,' ').trim().toLowerCase();
+  assert.equal(c.stage,'PALM-R02');
+  assert.equal(c.batch,17);
+  assert.equal(c.source.excludedAncient.explicitLabel,'Textus antiquus');
+  assert.deepEqual(c.psalms.map(x=>x.lines.length),[6,10]);
+  assert.deepEqual(c.psalms[1].biblicalNumbers,[1,2,3,4,5,6,7,8,9,9]);
+  for(let i=0;i<2;i++){
+    const p=c.psalms[i], old=inc.psalms[i];
+    assert.deepEqual(p.lines.map(x=>x.liturgicalLine),p.liturgicalNumbers);
+    for(let j=0;j<p.lines.length;j++){
+      const l=p.lines[j];
+      assert.ok(clean(l.firstHemistich).startsWith(clean(old.incipits[j])));
+      assert.ok(l.secondHemistich.length>=8);
+      assert.equal(l.mediantSeparator,'*');
+      assert.equal(l.completeVerseCandidate,true);
+      assert.equal(l.facsimileConfirmedInThisBatch,false);
+      assert.equal(l.pointedPsalmToneCertified,false);
+    }
+  }
+  assert.equal(c.psalms[1].lines.at(-1).biblicalVerse,9);
+  assert.equal(c.psalms[1].lines[2].firstHemistich,'Subicit populos nobis');
+  assert.equal(c.psalms[1].lines[3].firstHemistich,'Eligit nobis hereditatem nostram');
+  assert.ok(c.variantHolds.some(x=>x.psalm===23 && x.candidate==='fores antiquae'));
+  assert.equal(c.repeatRules.noFixedAudioClock,true);
+  assert.equal(c.promotion.candidateWholeVerses,16);
+  assert.equal(c.promotion.verifiedLatinFullVersesBy1962Owner,0);
+  assert.equal(c.promotion.primaryAsteriskPositionsIndependentlyCheckedThisBatch,0);
+  assert.equal(c.promotion.completeMusicalPointingVerified,0);
+  assert.equal(c.promotion.neumeUnderlayCertified,0);
+  assert.equal(c.promotion.productionScoresAssigned,0);
+  assert.equal(c.promotion.publicationAllowed,false);
+  const palm=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
+  assert.ok(!palm.includes('processionale-palm-1962-full-verse-candidates'));
+});
