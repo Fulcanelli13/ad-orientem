@@ -1,0 +1,361 @@
+{
+  "schema": "ao-processionale-monasticum-source-crosswalk-v1",
+  "date": "2026-10-26",
+  "status": "RESEARCH_ONLY_NOT_RUNTIME",
+  "purpose": "Supplement existing native Ad Orientem 1962 processional readers with historically labelled Solesmes chant/movement witnesses. No new reader, calendar, chant authority or release eligibility is created.",
+  "sourceEditions": [
+    {
+      "id": "PM1888",
+      "title": "Processionale monasticum ad usum congregationis Gallicae Ordinis S. Benedicti",
+      "year": 1888,
+      "tradition": "BENEDICTINE_CONGREGATION_GALLICAE",
+      "authorityRole": "HISTORICAL_MONASTIC_WITNESS",
+      "access": [
+        "https://www.scribd.com/document/794245799/1888-Processionale-Monasticum-Solesmis",
+        "https://books.google.com/books?id=ECHZVF9EYREC"
+      ],
+      "inspection": "BIBLIOGRAPHIC_IDENTITY_CONFIRMED_CONTENT_NOT_EXTRACTED",
+      "pageCountInScribdViewer": 413,
+      "warning": "Do not assign 1893 page references, chants or movements to this 1888 edition without an image/page collation."
+    },
+    {
+      "id": "PM1893",
+      "title": "Processionale monasticum ad usum congregationis Gallicae Ordinis sancti Benedicti",
+      "year": 1893,
+      "tradition": "BENEDICTINE_CONGREGATION_GALLICAE",
+      "authorityRole": "SECOND_EDITION_HISTORICAL_WITNESS",
+      "access": [
+        "https://ru.scribd.com/document/794245734/1893-Processionale-Monasticum-Solesmes",
+        "https://books.google.com/books?id=_h46AQAAIAAJ"
+      ],
+      "inspection": "PARTIAL_OCR_TEXT_AND_PRINTED_INDEX_REVIEWED",
+      "warning": "OCR syllabification and characters are unreliable; printed facsimile must be checked before text/notation export."
+    },
+    {
+      "id": "PM1985",
+      "title": "Solesmes facsimile reprint of 1893 with omissions",
+      "year": 1985,
+      "authorityRole": "BIBLIOGRAPHIC_AND_EDITORIAL_CONTEXT",
+      "access": [
+        "https://catalogue.bnf.fr/ark:/12148/cb39593787w",
+        "https://www.abbayedesolesmes.fr/produit/processionale-monasticum/"
+      ],
+      "inspection": "PUBLISHER_AND_BNF_METADATA",
+      "warning": "Partly abridged; Solesmes states 364 to 288 pages, while BnF records facsimile pagination of 362 including gaps; not a complete stand-in for 1893."
+    }
+  ],
+  "guardrails": {
+    "live1962AuthoritiesUnchanged": true,
+    "neverAutoTriggerByFeastDate": true,
+    "followingActionRequired": true,
+    "noLocalMonasticStationToUniversalRoman": true,
+    "no1888To1893SilentConflation": true,
+    "noHistoricalChantOverrideOfExistingRite": true,
+    "noOCRTextIntoPublishedPrayer": true,
+    "noMusicEventDuplication": true,
+    "noNewCalendarOrMusicModule": true,
+    "rights": "Original 1888/1893 texts may be old enough for public domain, but modern editions and scan-file redistribution must be assessed independently.",
+    "classification": [
+      "HISTORICAL_CORROBORATION",
+      "MONASTIC_ONLY",
+      "INDEX_LEAD",
+      "MAY_COMPARE_WITH_ROMAN1962"
+    ]
+  },
+  "existingOwners": {
+    "palm": "data/research/mass-special-rite-music-events-20261019.v1.json#PALM",
+    "candlemas": "data/research/mass-special-rite-music-events-20261019.v1.json#CANDLEMAS",
+    "corpus": "data/presentation/reader-corpus-christi.v1.json",
+    "rogations": "data/presentation/reader-rogations.v1.json",
+    "generic": "data/presentation/reader-generic-procession.v1.json",
+    "specialRiteMusic": "data/research/mass-special-rite-music-events-20261019.v1.json"
+  },
+  "evidence": [
+    {
+      "id": "PM93-001",
+      "edition": "PM1893",
+      "printedPages": "5-8",
+      "attestation": "INDEX_ONLY",
+      "heading": "De ritu Processionum",
+      "classification": "HISTORICAL_CORROBORATION",
+      "finding": "Processional ceremonial rubrics have a distinct section.",
+      "followup": "Facsimile review for participants, pauses and spatial actions."
+    },
+    {
+      "id": "PM93-002",
+      "edition": "PM1893",
+      "printedPages": "9-11",
+      "attestation": "INDEX_ONLY",
+      "heading": "Ad Aspersionem aquae benedictae; Preces in locis regularibus aspergendis",
+      "classification": "MONASTIC_ONLY",
+      "finding": "Aspersion and blessing of monastic regular places are indexed separately.",
+      "followup": "Do not merge monastic regular-place aspersion into the Roman Asperges reader."
+    },
+    {
+      "id": "PM93-003",
+      "edition": "PM1893",
+      "printedPages": "53-54",
+      "attestation": "OCR_TEXT_VISIBLE",
+      "heading": "Dominica in Palmis",
+      "incipits": [
+        "Pueri Hebraeorum portantes ramos olivarum",
+        "Pueri Hebraeorum vestimenta prosternebant"
+      ],
+      "classification": "MAY_COMPARE_WITH_ROMAN1962",
+      "finding": "Antiphons accompany distribution of palms before the procession.",
+      "followup": "Compare order, variants and 1955/1962 reform with current Roman Palm source before any runtime change."
+    },
+    {
+      "id": "PM93-004",
+      "edition": "PM1893",
+      "printedPages": "54-56",
+      "attestation": "OCR_TEXT_VISIBLE",
+      "heading": "Dominica in Palmis — processio",
+      "incipits": [
+        "Procedamus in pace",
+        "In nomine Christi. Amen"
+      ],
+      "classification": "MAY_COMPARE_WITH_ROMAN1962",
+      "finding": "A dialogue separates distribution from the outgoing procession; further antiphons continue while the procession lasts.",
+      "followup": "Compare stage boundaries and ending with 1962 Palm Sunday; never assume pre-1955 ceremonial identity."
+    },
+    {
+      "id": "PM93-005",
+      "edition": "PM1893",
+      "printedPages": "69-83",
+      "attestation": "INDEX_ONLY",
+      "heading": "Litaniae majores et minores",
+      "classification": "MAY_COMPARE_WITH_ROMAN1962",
+      "finding": "Major/minor litany section indexed.",
+      "followup": "Collate petitions, repetitions and procession/Mass handoff against 1962 Rogations source; preserve nonduplicated 1962 petitions."
+    },
+    {
+      "id": "PM93-006",
+      "edition": "PM1893",
+      "printedPages": "93-94",
+      "attestation": "OCR_TEXT_VISIBLE",
+      "heading": "In festo Corporis Christi",
+      "incipits": [
+        "Pange lingua gloriosi Corporis mysterium",
+        "Tantum ergo Sacramentum"
+      ],
+      "classification": "MAY_COMPARE_WITH_ROMAN1962",
+      "finding": "The historical book starts Pange lingua at the priest's departure from the altar; full six-stanza hymn is printed.",
+      "followup": "Compare with existing 1962 source and current trigger MONSTRANCE_PLACED_IN_CELEBRANT_HANDS; this historical text does not settle that trigger."
+    },
+    {
+      "id": "PM93-007",
+      "edition": "PM1893",
+      "printedPages": "18-51,107",
+      "attestation": "INDEX_ONLY",
+      "heading": "Dominical processional seasonal repertoire",
+      "classification": "MONASTIC_ONLY",
+      "finding": "Sunday/seasonal procession chants indexed for Advent, Septuagesima, Lent and Sundays per annum.",
+      "followup": "Catalog as Benedictine history only; do not make weekly processions automatic in calendar."
+    },
+    {
+      "id": "PM93-008",
+      "edition": "PM1893",
+      "printedPages": "133-134",
+      "attestation": "OCR_TEXT_VISIBLE",
+      "heading": "In Purificatione B. Mariae Virginis",
+      "incipits": [
+        "Lumen ad revelationem gentium",
+        "Nunc dimittis"
+      ],
+      "classification": "MAY_COMPARE_WITH_ROMAN1962",
+      "finding": "Lumen ad revelationem with repeated antiphon is used during candle distribution.",
+      "followup": "Compare with CND-R03 distribution refrain/verses and current authoritative 1962 source."
+    },
+    {
+      "id": "PM93-009",
+      "edition": "PM1893",
+      "printedPages": "134-136",
+      "attestation": "OCR_TEXT_VISIBLE",
+      "heading": "In Purificatione — processio",
+      "incipits": [
+        "Procedamus in pace",
+        "Adorna thalamum tuum Sion",
+        "Responsum accepit Simeon"
+      ],
+      "classification": "MAY_COMPARE_WITH_ROMAN1962",
+      "finding": "Departure dialogue and procession follow candle distribution; printed chants mark movement and return.",
+      "followup": "Review existing CND-R05 and CND-R06 stage cues against authoritative Roman books."
+    },
+    {
+      "id": "PM93-010",
+      "edition": "PM1893",
+      "printedPages": "289-302",
+      "attestation": "INDEX_ONLY",
+      "heading": "Processiones pro variis necessitatibus",
+      "classification": "INDEX_LEAD",
+      "finding": "Special processions indexed for rain, fair weather, storm, famine, pestilence, war and thanksgiving.",
+      "followup": "Historical classification only; no automatic civil/weather/calendar triggers."
+    },
+    {
+      "id": "PM93-011",
+      "edition": "PM1893",
+      "printedPages": "335-337",
+      "attestation": "OCR_TEXT_VISIBLE",
+      "heading": "Appendix pro monasterio S. Petri de Solesmis",
+      "incipits": [
+        "Regina caeli",
+        "Domine Jesu Christe, seminator casti consilii",
+        "Tu es pastor ovium"
+      ],
+      "classification": "MONASTIC_ONLY",
+      "finding": "Station antiphons for St Mary, St Cecilia, St Aquilinus and St Peter are attached to particular Solesmes Rogation destinations, including directions through its grounds.",
+      "followup": "Do not import these local stations or specific routes into the universal Rogations or generic procession readers."
+    }
+  ],
+  "crosswalk": [
+    {
+      "id": "PM-X01",
+      "evidenceIds": [
+        "PM93-003",
+        "PM93-004"
+      ],
+      "rite": "PALM",
+      "currentStageIds": [
+        "PALM-R02",
+        "PALM-R04",
+        "PALM-R05"
+      ],
+      "currentMusicEventIds": [
+        "AO.MUS.PALM.PUERI",
+        "AO.MUS.PALM.GLORIA_LAUS",
+        "AO.MUS.PALM.INGREDIENTE"
+      ],
+      "action": "REVIEW_ONLY",
+      "gap": "Distribution-to-procession transition and order; 1893 monastic vs 1962 Roman differences unresolved."
+    },
+    {
+      "id": "PM-X02",
+      "evidenceIds": [
+        "PM93-008",
+        "PM93-009"
+      ],
+      "rite": "CANDLEMAS",
+      "currentStageIds": [
+        "CND-R03",
+        "CND-R05",
+        "CND-R06"
+      ],
+      "currentMusicEventIds": [
+        "AO.MUS.CND.DISTRIBUTION",
+        "AO.MUS.CND.PROCESSION",
+        "AO.MUS.CND.RETURN"
+      ],
+      "action": "REVIEW_ONLY",
+      "gap": "Chant/text change points during distribution, outgoing procession and return."
+    },
+    {
+      "id": "PM-X03",
+      "evidenceIds": [
+        "PM93-006"
+      ],
+      "rite": "CORPUS_CHRISTI",
+      "currentStageIds": [
+        "CORPUS-R02",
+        "CORPUS-R04"
+      ],
+      "currentMusicEventIds": [
+        "AO.MUS.CORPUS.PANGE",
+        "AO.MUS.CORPUS.TANTUM"
+      ],
+      "action": "REVIEW_ONLY",
+      "gap": "Pange opening trigger requires contemporary authoritative confirmation; no change to the native controller."
+    },
+    {
+      "id": "PM-X04",
+      "evidenceIds": [
+        "PM93-005",
+        "PM93-011"
+      ],
+      "rite": "ROGATIONS",
+      "currentStageIds": [
+        "ROG-R01",
+        "ROG-R02",
+        "ROG-R03",
+        "ROG-R04",
+        "ROG-R05",
+        "ROG-R06"
+      ],
+      "currentMusicEventIds": [
+        "AO.MUS.ROG.EXSURGE",
+        "AO.MUS.ROG.LITANY_OPEN",
+        "AO.MUS.ROG.PROCESSION_LITANY",
+        "AO.MUS.ROG.POST_LITANY"
+      ],
+      "action": "HISTORICAL_COMPARISON_ONLY",
+      "gap": "Solesmes station-specific materials explicitly excluded from universal text; 1962 single-petition behavior remains."
+    },
+    {
+      "id": "PM-X05",
+      "evidenceIds": [
+        "PM93-007",
+        "PM93-010"
+      ],
+      "rite": "GENERIC_PROCESSION",
+      "currentStageIds": [
+        "PROC-R02"
+      ],
+      "currentMusicEventIds": [
+        "AO.MUS.PROC.UNSPECIFIED"
+      ],
+      "action": "INDEX_CANDIDATES_ONLY",
+      "gap": "Existing generic reader is structural and has a SOURCE_HOLD; no feast or need-specific text until a dedicated verified proper exists."
+    },
+    {
+      "id": "PM-X06",
+      "evidenceIds": [
+        "PM93-002"
+      ],
+      "rite": "ASPERGES",
+      "currentStageIds": [
+        "ASP-R02"
+      ],
+      "currentMusicEventIds": [
+        "AO.MUS.ASP.ME",
+        "AO.MUS.ASP.VIDI"
+      ],
+      "action": "REVIEW_ONLY",
+      "gap": "Do not equate asperges in monastery rooms with pre-Mass Asperges/Vidi aquam."
+    }
+  ],
+  "editionComparison": {
+    "established": [
+      "1888 edition existence and bibliographic identity",
+      "1893 second-edition contents and selected OCR text",
+      "modern Solesmes abridgment fact"
+    ],
+    "unestablished": [
+      "1888-to-1893 chant additions/deletions and page-level matches",
+      "musical neume variants and accurate reconstructed melody",
+      "which historical ceremonies can be published in a specific 1962 form",
+      "digitization distribution license for Scribd uploads"
+    ]
+  },
+  "qa": [
+    {
+      "gate": "1888_PRIMARY_FACSIMILE",
+      "status": "BLOCKED_SCAN_NOT_INSPECTED"
+    },
+    {
+      "gate": "1893_PRINTED_PAGE_COLLATION",
+      "status": "PARTIAL_OCR_REVIEW"
+    },
+    {
+      "gate": "1962_ROMAN_RUBRIC_AUTHORITY",
+      "status": "REQUIRES_OWNER_VERIFICATION"
+    },
+    {
+      "gate": "CURRENT_READER_STAGE_LINKAGE",
+      "status": "STAGE_IDS_AND_MUSIC_IDS_REPOSITORY_CHECKED"
+    },
+    {
+      "gate": "NO_RUNTIME_CHANGE",
+      "status": "PASS"
+    }
+  ]
+}
