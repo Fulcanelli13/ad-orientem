@@ -798,7 +798,7 @@ function practiceContext(selected,r){
   try{intel=calendarIntelligenceForDate(selected,{fr:fr(),properTitle:titleOf(r)})}catch(error){console.error("Calendar intelligence failed",error)}
   const events=(intel?.events||[]).filter(event=>event?.key!=="sunday-mass");
   const tags=new Set(events.flatMap(event=>event?.tags||[]));
-  const linkedPlaces=pilgrimagePlacesForCalendarKeys(intel?.semantic?.map(event=>event.key),pilgrimageCorpus??{});
+  const linkedPlaces=intel?pilgrimagePlacesForCalendarKeys(intel.semantic?.map(event=>event.key),pilgrimageCorpus??{}):[];
   const disciplineRelevant=Boolean(intel?.discipline?.today?.key&&intel.discipline.today.key!=="none")||[...tags].some(tag=>/DISCIPLINE|PENITENTIAL/.test(tag));
   const regionCode=r18ReviewRegion();
   const seasonalCustoms=calendarCustomRecommendations(selected,{events,fr:fr(),
