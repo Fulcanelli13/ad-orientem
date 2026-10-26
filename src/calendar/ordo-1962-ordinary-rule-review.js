@@ -77,7 +77,8 @@ export function review1962OrdinaryForCalendarDay(resolution){
     (/^tempora:Pent\d{1,2}-[1-6]:4:g$/i.test(id)||sourceKind(id)==="GENERIC_FERIA");
   if(ordinaryPentecostFeria)
     gloria=result(false,"BR_238_C_AND_RGMR_432_A","IV_CLASS_PER_ANNUM_FERIA",BREVIARY_RULES_URL);
-  if(sunday)credo=result(true,"RGMR_475_A","SUNDAY");
+  if(date.slice(5)>="12-25"||date.slice(5)==="01-01")credo=result(true,"RGMR_475_D","CHRISTMAS_OCTAVE");
+  else if(sunday)credo=result(true,"RGMR_475_A","SUNDAY");
   else if(ordinaryPentecostFeria)credo=result(false,"RGMR_475_476","IV_CLASS_PER_ANNUM_FERIA");
   else if(sourceKind(id)==="SANCTORAL"){
     if(klass===1)credo=result(true,"RGMR_475_B","FIRST_CLASS_SANCTORAL_FEAST");
