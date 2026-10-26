@@ -1,0 +1,28 @@
+name: Directory CL3 reconciliation
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'tools/directory/validate-cl3-reconciliation.py'
+      - 'tools/directory/rebuild-cl2-research-snapshot.py'
+      - '.github/workflows/directory-cl3-reconciliation.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'tools/directory/validate-cl3-reconciliation.py'
+      - 'tools/directory/rebuild-cl2-research-snapshot.py'
+      - '.github/workflows/directory-cl3-reconciliation.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild original CL2 SQLite from committed source shards
+        run: python3 tools/directory/rebuild-cl2-research-snapshot.py --snapshot-dir data/directory/research/cl2-unified-20261026 --output /tmp/ad-orientem-cl2-research.sqlite
+      - name: Verify all CL2 digests and CL3 evidence, no public promotion
+        run: python3 tools/directory/validate-cl3-reconciliation.py
