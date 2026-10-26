@@ -808,6 +808,7 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
         beforeMass:selected?.beforeMass??"none",
         afterMass:selected?.afterMass??"none",
         chantProgramme:selected?.chantProgramme??null,
+        sanctusPerformance:selected?.sanctusPerformance??"UNSPECIFIED",
       };
     },
     resolveHostOptions: async (resolvedMass) => {
