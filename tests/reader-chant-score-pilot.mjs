@@ -26,6 +26,8 @@ for(const record of SCHOLA_SCORE_CATALOGUE){
   assert.equal(selected.score.trackId,"KYRIE");
   assert.match(selected.score.sourceUrl,/gregobase\.selapa\.net\/chant\.php\?id=\d+/);
   assert.match(selected.score.svgUrl,/gregobase\.selapa\.net\/download\.php\?format=svg&id=\d+/);
+  assert.match(selected.score.gabc,/name:Kyrie (?:XVI|XI|VIII);/);
+  assert.match(selected.score.gabc,/transcriber:Andrew Hinkley;/);
   assert.equal(selected.score.bookWitnesses.length,2);
   assert.match(selected.score.bookWitnesses[0],/1961/);
 }
