@@ -40,7 +40,7 @@ class Blocks(HTMLParser):
 def decode_html(data, header_charset=None):
     # Legacy book transcriptions may declare encoding only in their HTML meta tag.
     lead=data[:8192].decode("ascii",errors="ignore")
-    found=re.search(r'<meta[^>]*charset\\s*=\\s*["\\']?([a-z0-9._-]+)',lead,re.IGNORECASE)
+    found=re.search(r"charset\s*=\s*[^a-z0-9]*([a-z0-9._-]+)",lead,re.IGNORECASE)
     charset=header_charset or (found.group(1) if found else "utf-8")
     try:
         return data.decode(charset,errors="strict")
