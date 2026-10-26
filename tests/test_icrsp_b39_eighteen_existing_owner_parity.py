@@ -43,6 +43,20 @@ class B39ExistingOwnerComparison(unittest.TestCase):
   self.assertIn("EXISTING_RITE",rows["RESTORED_HOLY_THURSDAY"]["disposition"])
   self.assertIn("OUT_OF_SCOPE",rows["DIVINE_OFFICE_NINE_SOURCES"]["disposition"])
   self.assertIn("EMPTY",rows["EXPLANATORY_STUDIES_PUBLICATION"]["disposition"])
+ def test_independent_historical_corrections_are_evidence_only(self):
+  checks={x["id"]:x for x in self.doc["externalIndependentSourceChecks"]}
+  self.assertEqual(len(checks),2)
+  self.assertEqual(self.doc["counts"]["independentlyVerifiedIncorrectFields"],3)
+  ch=checks["CHANTAL_YEAR_AND_PONTIFF"]
+  self.assertEqual(ch["hostClaims"]["death"],"1643-12-13")
+  self.assertEqual(ch["corroborated"]["death"],"1641-12-13")
+  self.assertEqual(ch["corroborated"]["canonizer"],"Clement XIII")
+  car=checks["CARACCIOLO_FOUNDATION_YEAR"]
+  self.assertEqual(car["hostClaims"]["orderFoundationYear"],1558)
+  self.assertEqual(car["corroborated"]["orderFoundationYear"],1588)
+  for row in checks.values():
+   self.assertTrue(row["independentAuthority"].startswith("https://www.vaticanstate.va/"))
+   self.assertFalse(row["applicationUpdated"])
  def test_no_rights_release_or_app_migration(self):
   self.assertEqual({self.doc["counts"][k] for k in (
     "newProductionFeaturesApproved","certifiedMissingProductionClaims","rightsCleared",
