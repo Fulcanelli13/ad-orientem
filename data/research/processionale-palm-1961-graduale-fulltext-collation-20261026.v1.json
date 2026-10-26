@@ -164,7 +164,7 @@
   ],
   "psalm46Line3PrintedSpelling": "Subjicit populos nobis",
   "psalm23Line7And9PrintedReading": "fores antiquae",
-  "hold": "1962 Missale OCR appears to read portae antique; original 1962 page glyph still requires direct inspection",
+  "hold": "RESOLVED_PRINTED_1962_INDEPENDENT_PHOTOGRAPH_FORES_ANTIQUAE; EXACT_VATICAN_TYPICA_IMPRINT_STILL_AWAITED",
   "notation": "Only opening Psalm tone fully notated; verse 2 cue; full other verses printed text; no full GABC approval",
   "counts": {
     "full1961PrintTextLinesVerified": 16,
@@ -175,5 +175,16 @@
     "pitchNeumesCertified": 0,
     "runtimeScoresApproved": 0
   },
-  "readOnly": true
+  "readOnly": true,
+  "new1962PrintCrosswalk": {
+    "file": "data/research/processionale-palm-1962-independent-print-scan-20261026.v1.json",
+    "printedPages": [
+      134,
+      135
+    ],
+    "ps23Words": "fores antiquae",
+    "ps46Line3": "Subjicit populos nobis",
+    "ps46Line4": "Eligit nobis hereditatem nostram",
+    "scope": "Direct colour photography of 1962-labelled Missal; identity of imprint not verified; original Batch18 1961-only metrics unchanged"
+  }
 }
