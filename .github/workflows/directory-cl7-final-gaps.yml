@@ -1,0 +1,58 @@
+name: Directory CL7 research descriptions
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'tools/directory/validate-cl*-*.py'
+      - 'tools/directory/rebuild-cl*-*.py'
+      - '.github/workflows/directory-cl7-final-gaps.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl3-reconciliation-20261026/**'
+      - 'data/directory/research/cl4-owner-screening-20261026/**'
+      - 'data/directory/research/cl5-provisional-intake-20261026/**'
+      - 'data/directory/research/cl6-source-reconciliation-20261026/**'
+      - 'data/directory/research/cl7-final-description-screen-20261026/**'
+      - 'tools/directory/validate-cl*-*.py'
+      - 'tools/directory/rebuild-cl*-*.py'
+      - '.github/workflows/directory-cl7-final-gaps.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate CL3 through CL7, including original CL2 data hashes
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+      - name: Rebuild complete queryable CL2–CL7 research master
+        run: python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ad-orientem-cl7.sqlite
+      - name: Verify queryable research tables and no public promotion
+        run: |
+          python3 - <<'PY'
+          import sqlite3
+          db=sqlite3.connect('/tmp/ad-orientem-cl7.sqlite')
+          expected={'canonical_site':2584,'cl5_provisional_physical_intake':17,
+                    'cl6_source_review':17,'cl7_description':13,
+                    'cl7_remaining_description_queue':49,
+                    'cl7_residual_b92_hold':10,'cl7_release_hazard':6}
+          actual={table:db.execute('SELECT COUNT(*) FROM '+table).fetchone()[0] for table in expected}
+          assert actual==expected,(actual,expected)
+          assert db.execute('SELECT COUNT(*) FROM cl7_description WHERE published<>0 OR recurrent_1962_mass_approved<>0').fetchone()[0]==0
+          assert db.execute("SELECT COUNT(*) FROM cl7_remaining_description_queue WHERE disposition='HOLD_MISSING_SUFFICIENT_PHYSICAL_DESCRIPTION'").fetchone()[0]==36
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert not db.execute('PRAGMA foreign_key_check').fetchall()
+          print('CL7 end-to-end research verification PASS',actual)
+          PY
