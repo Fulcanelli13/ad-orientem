@@ -2,15 +2,19 @@ name: Mass 1962 Preface source decision gate
 on:
   workflow_dispatch:
   pull_request:
-    branches: [main]
+    branches: [main, fix/mass-1962-lent-preface-source-recovery-20261026]
   push:
     paths:
       - 'src/mass/1962-preface-decision.js'
+      - 'src/mass/1962-easter-preface-form.js'
       - 'src/mass/reader-proper-runtime-recovery.js'
       - 'src/mass/proper-reader-slots.js'
       - 'tests/reader-proper-runtime-recovery.mjs'
       - 'tests/mass-1962-lent-preface-recovery.mjs'
       - 'tests/mass-1962-lent-preface-production.mjs'
+      - 'tests/mass-1962-easter-preface-variants.mjs'
+      - 'tests/mass-1962-easter-preface-production.mjs'
+      - 'tests/fixtures/mass-easter-preface-pasch-source.v1.json'
       - 'tests/mass-1962-preface-decision.mjs'
       - '.github/workflows/mass-1962-preface-decision.yml'
 jobs:
@@ -32,5 +36,9 @@ jobs:
         run: node tests/mass-1962-lent-preface-recovery.mjs
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
+      - name: Verify three authentic trilingual Easter Preface variants
+        run: node tests/mass-1962-easter-preface-variants.mjs
       - name: Audit all 30 Lent and Pentecost 2026 production Prefaces
         run: node tests/mass-1962-lent-preface-production.mjs
+      - name: Audit all 14 2026 Easter Vigil, octave and seasonal Prefaces
+        run: node tests/mass-1962-easter-preface-production.mjs
