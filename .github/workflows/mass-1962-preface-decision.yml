@@ -32,5 +32,5 @@ jobs:
         run: node tests/mass-1962-lent-preface-recovery.mjs
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
-      - name: Audit all 22 2026 Lenten production reader Prefaces
+      - name: Audit all 30 Lent and Pentecost 2026 production Prefaces
         run: node tests/mass-1962-lent-preface-production.mjs
