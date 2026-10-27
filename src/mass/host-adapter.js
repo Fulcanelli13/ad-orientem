@@ -186,6 +186,8 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       rubricSources:[...(legacy.rubricSources??[])],
       languageCoverage:legacy.languageCoverage??null,
       sourceDiagnostics:legacy.sourceDiagnostics??null,
+      // Descriptive/conditional priest succession, never a fabricated event.
+      allSoulsSuccession:options.allSoulsSuccession??null,
       rogationSelection:rogationSelection ? {
         selection:rogationSelection.selection,
         observance:options.rogationSelection?.observance??null,

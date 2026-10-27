@@ -28,6 +28,7 @@ import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
 import { installPentecostSunday1960PrefaceSource } from "./1962-pentecost-sunday-prefatio1960-source.js";
 import {select1962CommemorationsForMassForm} from "./1962-commemoration-form-source.js";
+import {resolve1962AllSoulsSuccession} from "./1962-all-souls-consecutive-rites.js";
 import {allSouls1962RequiemOverlay,is1962AllSoulsCalendarMass,
   resolve1962AllSoulsAdditionalProper} from "./1962-all-souls-source.js";
 import {selectedPreflightStudyProper} from "./preflight-study-proper.js";
@@ -882,8 +883,25 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
           throw new Error("LOCAL_ADDITIONAL_ORATIONS_"+result.reason);
         presentedProper=result.proper;
       }
+      let allSoulsSuccession=null;
+      if(chosen?.allSoulsSuccession){
+        const canonical=calendarResolution?.date===resolvedMass.date
+          ?calendarResolution:await runtime()?.resolver?.resolveDay?.(resolvedMass.date);
+        if(!is1962AllSoulsCalendarMass({
+          ...resolvedMass,calendarDay:resolvedMass.calendarDay?.raw?.main??
+            resolvedMass.calendarDay??canonical?.day?.main
+        },canonical?.proper))
+          throw Error("RITUS_XIV_NON_AUTHENTIC_CALENDAR_SOURCE");
+        if(chosen.allSoulsSuccession.massNumber!==allSoulsMassNumber||
+           chosen.allSoulsSuccession.date!==resolvedMass.date)
+          throw Error("RITUS_XIV_STALE_FOLIO_CIRCUMSTANCE");
+        allSoulsSuccession=resolve1962AllSoulsSuccession({
+          ...chosen.allSoulsSuccession,
+          sourcePath:presentedProper?.data?.sourcePath??presentedProper?.sourcePath,
+        });
+      }
       const optional=fullMassPreflight?.composeRitesFor?.(resolvedMass,options)??null;
-      return Object.freeze({...options,proper:presentedProper,rogationSelection,
+      return Object.freeze({...options,proper:presentedProper,rogationSelection,allSoulsSuccession,
         ...(optional?{
           precedingRites:optional.precedingRites,
           followingActions:optional.followingActions,

@@ -50,6 +50,7 @@ jobs:
           node --check src/mass/full-mass-preflight.js
           node --check src/mass/browser-entry.js
           node tests/mass-1962-all-souls-source.mjs
+          node tests/mass-1962-all-souls-consecutive-rites.mjs
       - run: npm test
 
   phone-browser:
