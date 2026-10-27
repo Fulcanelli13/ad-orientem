@@ -5,7 +5,6 @@ import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabe
 import {installSequentialDevotionalReader} from "./devotional-sequence-adapter.js";
 import {dailyHorizonState} from "./quiet-devotional-progression.js";
 import {createDailySessionTimer,sessionClockLabel} from "./daily-session-timer.js";
-import {availableFormulations} from "./daily-formulation-engine.js";
 import {createDailyFormulationPreferenceStore} from "./daily-formulation-preferences.js";
 import {APPROVED_DAILY_FORMULATION_MANIFEST_V1,DAILY_APPROVED_SEQUENCE_RELEASE_V1} from "./daily-approved-formulations.js";
 import {resolveDailyReaderSequence,approvedDailySlotOptions} from "./daily-source-sequence-adapter.js";
