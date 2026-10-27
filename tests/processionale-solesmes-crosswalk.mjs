@@ -1021,11 +1021,89 @@ test('Psalm23 printed first-verse terminal rule holds both speculative 3-syllabl
  assert.equal(review.renderProofOnly.actualMusicalApproval,false);
  assert.equal(review.other12PatternsMustNotInheritEitherUnapprovedModel,true);
  const row=w.work.find(x=>x.id==='PALM-R02-PS23-L02');
- assert.equal(row.provisionalGabcResearch.cadenceDecision,review.decision);
+ assert.equal(row.provisionalGabcResearch.earlierPostAccentFiveVsThreeReasoningSuperseded,true);
+ assert.equal(row.provisionalGabcResearch.cadenceDecision,'A_SOURCE_SHAPE_PLAUSIBLE_B_UNATTESTED_BOTH_UNAPPROVED');
+ assert.equal(h.batch26CadenceAudit.supersededBy,'batch27CadentialAccentCorrection');
+ assert.equal(h.batch26CadenceAudit.previousReasoningInvalid,true);
+ assert.equal(h.batch27CadentialAccentCorrection.Aapproved,false);
+ assert.equal(h.batch27CadentialAccentCorrection.Bapproved,false);
+ assert.equal(h.batch27CadentialAccentCorrection.originalP23Terminal.identifiedTerminalGroups===undefined,true);
+ assert.deepEqual(h.batch27CadentialAccentCorrection.originalP23Terminal.preparatory,['tant(g)','in(f)']);
+ assert.deepEqual(h.batch27CadentialAccentCorrection.verse2VariantA.preparatory,['má(g)','vit(f)']);
+ assert.equal(h.batch27CadentialAccentCorrection.verse2VariantB.sourceMelodicGroupsPreserved,false);
  assert.equal(row.provisionalGabcResearch.postAccentReference,5);
  assert.equal(row.provisionalGabcResearch.postAccentTarget,3);
  assert.equal(row.provisionalGabcResearch.noInheritanceToOtherPatterns,true);
  assert.equal(w.currentCandidatePipeline.noAutomatedExpansionFromV2Hypotheses,true);
  assert.equal(w.currentCandidatePipeline.approved,0);
  assert.equal(h.release.scorePublicationAllowed,false);
+});
+
+
+test('Palm two source tone models classify seventeen editorial applications and correct cadence accents',()=>{
+ const bulk=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const w=readJSON('data/research/processionale-palm-14verse-pointing-worklist-20261027.v1.json');
+ const accent=readJSON('data/research/processionale-palm-1961-accent-doxology-review-20261027.v1.json');
+ const motif=readJSON('data/research/processionale-palm-1961-cadence-motif-source-20261027.v1.json');
+ const h=readJSON('data/research/processionale-palm23-verse2-tone-hypothesis-20261027.v1.json');
+ const raw23=readFileSync(new URL('../data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc',import.meta.url),'utf8');
+ const raw46=readFileSync(new URL('../data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc',import.meta.url),'utf8');
+ const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/æ/g,'ae').replace(/[^a-z]/g,'');
+ assert.equal(bulk.stage,'PALM-R02');
+ assert.equal(bulk.batch,27);
+ assert.equal(bulk.models.length,2);
+ assert.equal(bulk.cases.length,17);
+ assert.deepEqual(bulk.models.map(x=>x.psalm),[23,46]);
+ assert.deepEqual(bulk.models.map(x=>x.subsequentVerseRecitation),['h','h']);
+ assert.equal(bulk.models.every(x=>x.clef==='c4'&&x.fullNotatedVerseScope==='FIRST_VERSE_ONLY'),true);
+ assert.equal(bulk.models.every(x=>x.completeFormulaMusicianSignedOff===false),true);
+ assert.equal(bulk.cases.filter(x=>x.type==='VERSE').length,13);
+ assert.equal(bulk.cases.filter(x=>x.type==='DOXOLOGY').length,4);
+ assert.equal(bulk.cases.flatMap(x=>x.occurrenceIds).length,18);
+ assert.equal(bulk.cases.filter(x=>x.type==='VERSE').flatMap(x=>x.occurrenceIds).length,14);
+ assert.equal(bulk.cases.filter(x=>x.type==='VERSE'&&x.occurrenceIds.length===2).length,1);
+ assert.equal(bulk.counts.terminalWordsPreclassified,17);
+ assert.equal(bulk.counts.terminalStressClassesWithUnresolvedLexicalAccent,1);
+ assert.equal(bulk.cases.find(x=>x.id==='PALM-R02-PS46-L09').terminalLexicalStressHypothesis.class,
+  'FOREIGN_PROPER_NAME_ACCENT_NOT_ATTESTED_IN_PRINT');
+ assert.equal(bulk.cases.every(x=>x.hasHumanApprovedMelody===false&&x.readOnlyNoReaderIntegration===true),true);
+ assert.equal(bulk.cases.every(x=>x.hasHumanVerifiedSyllableDivision===false),true);
+ for(const m of bulk.models){
+   const old=m.psalm===23?raw23:raw46;
+   const src=motif.psalms.find(x=>x.psalm===m.psalm);
+   assert.equal(old.includes(m.medialSourceExcerpt),true);
+   assert.equal(old.includes(m.terminalSourceExcerpt),true);
+   assert.equal(m.medialSourceExcerpt,src.mediantCadenceExcerpt);
+   assert.equal(m.terminalSourceExcerpt,src.terminationCadenceExcerpt);
+   assert.equal(m.identifiedTerminalGroups.preparatory.length,2);
+   for(const segment of m.identifiedTerminalGroups.preparatory)
+     assert.equal(old.includes(segment),true);
+   assert.equal(m.completeFormulaMusicianSignedOff,false);
+ }
+ assert.deepEqual(bulk.models[0].identifiedTerminalGroups.preparatory,['tant(g)','in(f)']);
+ assert.deepEqual(bulk.models[1].identifiedTerminalGroups.preparatory,['ce(g)','læ(f)']);
+ assert.equal(bulk.models[0].identifiedTerminalGroups.cadentialAccent,'e(gh gr)');
+ assert.equal(bulk.models[1].identifiedTerminalGroups.cadentialAccent,'ti(gh)');
+ const lines=new Map([...accent.patterns.map(p=>[p.patternId,p]),...accent.doxology.map(p=>[p.id,p])]);
+ assert.equal(lines.size,17);
+ for(const row of bulk.cases){
+  const original=lines.get(row.id);
+  assert.ok(original,row.id);
+  assert.deepEqual(row.sourceSegments,original.sourceSectionAccents??original.printedAccentText);
+  const finalWord=row.sourceSegments.termination.trim().split(/\s+/).at(-1);
+  assert.equal(norm(finalWord),norm(row.terminalLexicalStressHypothesis.word),row.id);
+  assert.equal(row.modelId,'GR1961_PALM_NOVUS_PS'+row.psalm);
+ }
+ assert.equal(bulk.batch26Correction.supersededAsMusicalReasoning,true);
+ assert.equal(bulk.batch26Correction.psalm23Verse2VariantA,
+  'SOURCE_SHAPE_PLAUSIBLE_TWO_PREPARATORY_GROUPS_NOT_EDITOR_APPROVED');
+ assert.equal(h.batch26CadenceAudit.previousReasoningInvalid,true);
+ assert.equal(h.batch27CadentialAccentCorrection.verse2VariantA.sourceMelodicGroupsPreserved,true);
+ assert.equal(h.batch27CadentialAccentCorrection.verse2VariantB.sourceMelodicGroupsPreserved,false);
+ assert.equal(w.batch27ConsolidatedToneModel.distinctReviewCases,17);
+ assert.equal(w.batch27ConsolidatedToneModel.classifiedPendingCases,17);
+ assert.equal(w.batch27ConsolidatedToneModel.editoriallyAcceptedToneModels,0);
+ assert.equal(bulk.counts.additionalMusicallyApproved,0);
+ assert.equal(bulk.counts.scoreAssignedToProduction,0);
+ assert.equal(bulk.controls.publicationAllowed,false);
 });
