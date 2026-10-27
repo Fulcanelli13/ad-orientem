@@ -1833,12 +1833,30 @@
       "production_released": false,
       "latest_hero_iconography_20261027": {
         "timestamp": "2026-10-27T16:38:36Z",
-        "status": "FORMER_SALVATOR_MUNDI_HERO_REJECTED_REPLACEMENT_SEARCH_OPEN",
+        "status": "PAUSED_NO_CURRENT_ACCEPTED_PAINTING_FOR_CHRIST_THE_KING",
         "historical_choice_kept_for_provenance": "Ambrosius Benson — Salvator Mundi",
         "rejected_scope": "Christ the King hero (not global art bank)",
         "user_preference": "Regal Christ as King / Judge / Christ in Glory, not half-length blessing orb Salvator Mundi",
         "new_painting_final": null,
-        "photo_release": false
+        "photo_release": false,
+        "updated_at": "2026-10-27T16:43:59Z",
+        "rejected_round1": [
+          "K1",
+          "K2",
+          "K3",
+          "K4",
+          "K5"
+        ],
+        "rejected_round2": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5"
+        ],
+        "current_historic_artwork": "Ambrosius Benson Salvator Mundi (historical; user rejected Salvator Mundi type for module)",
+        "user_direction": "Distinctly Christ the King; no standard Salvator Mundi portrait, no crowded generic judgment paintings; avoid over-researching; proceed with others",
+        "next_action": "Defer curated king replacement to a later higher-quality research batch; do not use rejected work, do not release existing file"
       }
     },
     {
@@ -2476,5 +2494,6 @@
   "current_missing_three_research_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40527341367",
   "current_missing_three_reference_fallback_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40528275735",
   "module_hero_selection_supersession_policy": "Read user_oct27_choice first when present; old approved_painting remains historical record. No app photo release until separate exact-file gate. Guardian reuses Michael module original.",
-  "latest_user_direction_summary": "Christ the King rejects all Salvator Mundi type paintings; Holy Spirit Morazzone favored over Van Dyck; neither new choice production-released"
+  "latest_user_direction_summary": "Christ the King rejects all Salvator Mundi type paintings; Holy Spirit Morazzone favored over Van Dyck; neither new choice production-released",
+  "next_module_hero_priority_after_rejected_king": "Continue remaining module hero release exceptions and 53 Class I rights-first/quality selection; leave King unresolved instead of forcing mediocre imagery."
 }
