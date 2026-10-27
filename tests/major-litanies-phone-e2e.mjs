@@ -232,6 +232,18 @@ try{
       let reached=false;
       for(let tries=0;tries<10;tries++){
         const box=await next.boundingBox();assert.ok(box&&box.height>=44);
+        // Actual Rogations -> Mass transition regression: the optional
+        // Schola editor must never sit above the live Next Card hit target.
+        const touchHit=await next.evaluate(button=>{
+          const rect=button.getBoundingClientRect();
+          const point=document.elementFromPoint(rect.left+rect.width/2,rect.top+rect.height/2);
+          const panel=button.closest('[data-ao-reader-shell]')?.querySelector('[data-schola-local-panel]');
+          return {navIsTop:point===button||button.contains(point),
+            blockingTag:point?.tagName??null,blockingClass:point?.className??null,
+            musicPanelOpen:panel?.open??false};
+        });
+        assert.equal(touchHit.navIsTop,true,
+          "Mass Next Card is obstructed after Rogations handoff: "+JSON.stringify(touchHit));
         await next.tap({timeout:5000});
         await page.waitForTimeout(120);
         const card=await page.evaluate(()=>{
