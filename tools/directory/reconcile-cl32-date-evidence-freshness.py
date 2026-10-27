@@ -104,13 +104,13 @@ def main():
  assert hasanchor==100 and directMass==98
  u=[r for r in rows if r["phase"]=="CL28" and
      r["source_quality"]=="DIRECT_HOST_PARISH_DATE_SPECIFIC_MASS" and
-     r["research_venue_key"]=="DE-STEPHANSPOSCHING-LOH-HEILIG-KREUZ"]
+     r["venue_key"]=="DE-STEPHANSPOSCHING-LOH-HEILIG-KREUZ"]
  assert {(x["source_event_key"],x["local_date"],x["local_time"]) for x in u}=={
    ("CL28-017","2026-11-13","19:00"),("CL28-018","2026-12-04","19:00")}
  assert all(x["working_existing_cl2_anchor"] is None for x in u)
  assert {(x["source_event_key"],x["local_date"],x["local_time"]) for x in rows if
-    x["research_venue_key"]=="DE-S-DERBRARUP-CHRIST-K-NIG"}=={("G26-NORTH-04","2026-11-02","18:30")}
- assert all(x["working_existing_cl2_anchor"] is None for x in rows if x["research_venue_key"]=="UK-HOLNEST-CL29")
+    x["venue_key"]=="DE-S-DERBRARUP-CHRIST-K-NIG"}=={("G26-NORTH-04","2026-11-02","18:30")}
+ assert all(x["working_existing_cl2_anchor"] is None for x in rows if x["venue_key"]=="UK-HOLNEST-CL29")
  summary=j["counts"]
  assert summary["source_date_rows"]==104
  assert summary["direct_operator_or_host_date_specific_unambiguous_mass_evidence"]==98
