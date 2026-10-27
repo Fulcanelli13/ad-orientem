@@ -1,0 +1,725 @@
+{
+  "schema": "ao-palm-1961-two-source-tone-models-17-case-bulk-review-v1",
+  "batch": 27,
+  "date": "2026-10-27",
+  "stage": "PALM-R02",
+  "status": "TWO_PRINTED_SOURCE_MODELS_17_DISTINCT_EDITORIAL_CASES_CLASSIFIED_0_MUSICAL_SETTINGS_CERTIFIED",
+  "editorialPrinciple": "Classify all verses in bulk by source-owned melodic model and last-word cadential accent class; editorial verification of exact syllables and melodic formula precedes any generated score. Do not infer that an accent in the penultimate word must be the cadence's terminal melodic accent.",
+  "sourceHierarchy": [
+    {
+      "rank": 1,
+      "label": "Solesmes 1961 printed restored Palm Psalm23 and Psalm46",
+      "urls": [
+        "https://gregobase.selapa.net/sources/2/1179.png",
+        "https://gregobase.selapa.net/sources/2/1180.png"
+      ],
+      "pdf": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf",
+      "screenshotIndices": [
+        142,
+        143
+      ],
+      "governs": "Exact score families, pitch contours, source text, flex location"
+    },
+    {
+      "rank": 2,
+      "label": "1961 Liber Usualis Office psalm-tone grammar p113",
+      "url": "https://longbeachchant.com/wp-content/uploads/2019/11/liber-1961-eight-psalm-tones.pdf#page=2",
+      "governs": "Comparative grammar; no substitution of Office tune variant for Palm printed score"
+    },
+    {
+      "rank": 3,
+      "label": "Rules for Text Underlay of Psalm Text at Cadence Formulas",
+      "url": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf#page=1",
+      "governs": "Accentual underlay and preparatory-syllable handling; secondary rules cannot override actual staff"
+    }
+  ],
+  "models": [
+    {
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "psalm": 23,
+      "printedGradualePage": "143**",
+      "scoreSourceGregoBaseId": 19315,
+      "clef": "c4",
+      "openingIntonation": "DO(f)mi(gh)ni(h)",
+      "subsequentVerseOpening": "Nam(h) ip(h)se...(h)",
+      "subsequentVerseRecitation": "h",
+      "fullNotatedVerseScope": "FIRST_VERSE_ONLY",
+      "medialSourceExcerpt": "quæ(h) <b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "terminalSourceExcerpt": "há(h)bi(h)<i>tant</i>(g) <i>in</i>(f) <b>e</b>(gh gr)o.(gf..)",
+      "sourceFlexExample": "rex(h) glo(h)ri(gr)æ?(g.) +(h)",
+      "identifiedTerminalGroups": {
+        "preparatory": [
+          "tant(g)",
+          "in(f)"
+        ],
+        "cadentialAccent": "e(gh gr)",
+        "postAccent": "o(gf..)"
+      },
+      "modelType": "FIRST_TONE_STYLE_STRUCTURE_FROM_PRINTED_ORIGINAL__EXACT_LOCAL_VARIANT_UNCERTIFIED",
+      "modeIdVerified": false,
+      "completeFormulaMusicianSignedOff": false
+    },
+    {
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "psalm": 46,
+      "printedGradualePage": "144**",
+      "scoreSourceGregoBaseId": 19316,
+      "clef": "c4",
+      "openingIntonation": "O(f)mnes(gh) pó(h)pu(h)li,(h)",
+      "subsequentVerseOpening": "Quó(h)ni(h)am...(h)",
+      "subsequentVerseRecitation": "h",
+      "fullNotatedVerseScope": "FIRST_VERSE_ONLY",
+      "medialSourceExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "terminalSourceExcerpt": "vo(h)<i>ce</i>(g) <i>læ</i>(f)<b>ti</b>(gh)ti(gr)æ :(gf..)",
+      "sourceFlexExample": null,
+      "identifiedTerminalGroups": {
+        "preparatory": [
+          "ce(g)",
+          "læ(f)"
+        ],
+        "cadentialAccent": "ti(gh)",
+        "postAccent": [
+          "ti(gr)",
+          "æ(gf..)"
+        ]
+      },
+      "modelType": "FIRST_TONE_STYLE_STRUCTURE_FROM_PRINTED_ORIGINAL__EXACT_LOCAL_VARIANT_UNCERTIFIED",
+      "rawGregoBaseTextQuarantined": "Omnes gentes",
+      "correctedSourceLatin": "Omnes populi",
+      "modeIdVerified": false,
+      "completeFormulaMusicianSignedOff": false
+    }
+  ],
+  "cases": [
+    {
+      "id": "PALM-R02-PS23-L02",
+      "type": "VERSE",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-L02"
+      ],
+      "printedChantLines": [
+        2
+      ],
+      "printedPage": "143**",
+      "sourceSegments": {
+        "medial": "Nam ipse super mária fundávit eum",
+        "termination": "et super flúmina firmávit eum."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "terminalLexicalStressHypothesis": {
+        "word": "eum",
+        "syllables": [
+          "e",
+          "um"
+        ],
+        "accent": "e",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [
+        "PROVISIONAL_A",
+        "PROVISIONAL_B"
+      ],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS23-L07",
+      "type": "VERSE",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-L07",
+        "PALM-R02-PS23-L09"
+      ],
+      "printedChantLines": [
+        7,
+        9
+      ],
+      "printedPage": "143**",
+      "sourceSegments": {
+        "flex": "Attóllite, portae, cápita vestra,",
+        "medial": "et attóllite vos, fores antíquae,",
+        "termination": "ut ingrediátur rex glóriae!"
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "terminalLexicalStressHypothesis": {
+        "word": "glóriae",
+        "syllables": [
+          "gló",
+          "ri",
+          "ae"
+        ],
+        "accent": "gló",
+        "class": "three-syllable_proparoxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "OPEN_FLEX_SOURCE_PRINTED_MARKER",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS23-L08",
+      "type": "VERSE",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-L08"
+      ],
+      "printedChantLines": [
+        8
+      ],
+      "printedPage": "143**",
+      "sourceSegments": {
+        "flex": "Quis est iste rex glóriae?",
+        "medial": "Dóminus fortis et potens,",
+        "termination": "Dóminus potens in praélio."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "terminalLexicalStressHypothesis": {
+        "word": "praélio",
+        "syllables": [
+          "prae",
+          "li",
+          "o"
+        ],
+        "accent": "prae",
+        "class": "three-syllable_proparoxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "OPEN_FLEX_SOURCE_PRINTED_MARKER",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS23-L10",
+      "type": "VERSE",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-L10"
+      ],
+      "printedChantLines": [
+        10
+      ],
+      "printedPage": "143**",
+      "sourceSegments": {
+        "medial": "Quis est iste rex glóriae?",
+        "termination": "Dóminus exercítuum: ipse est rex glóriae."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "terminalLexicalStressHypothesis": {
+        "word": "glóriae",
+        "syllables": [
+          "gló",
+          "ri",
+          "ae"
+        ],
+        "accent": "gló",
+        "class": "three-syllable_proparoxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L02",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L02"
+      ],
+      "printedChantLines": [
+        2
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Quóniam Dóminus excélsus, terríbilis,",
+        "termination": "Rex magnus super omnem terram."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "terram",
+        "syllables": [
+          "ter",
+          "ram"
+        ],
+        "accent": "ter",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L03",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L03"
+      ],
+      "printedChantLines": [
+        3
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Súbjicit pópulos nóbis",
+        "termination": "et natiónes pédibus nostris."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "nostris",
+        "syllables": [
+          "nos",
+          "tris"
+        ],
+        "accent": "nos",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L04",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L04"
+      ],
+      "printedChantLines": [
+        4
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Eligit nobis hereditátem nostram",
+        "termination": "glóriam Jacob, quem díligit."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "díligit",
+        "syllables": [
+          "dí",
+          "li",
+          "git"
+        ],
+        "accent": "dí",
+        "class": "three-syllable_proparoxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L05",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L05"
+      ],
+      "printedChantLines": [
+        5
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Ascéndit Deus cum exsultatióne,",
+        "termination": "Dóminus cum voce tubae."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "tubae",
+        "syllables": [
+          "tu",
+          "bae"
+        ],
+        "accent": "tu",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L06",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L06"
+      ],
+      "printedChantLines": [
+        6
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Psállite Deo, psállite;",
+        "termination": "psállite Regi nostro, psállite."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "psállite",
+        "syllables": [
+          "psál",
+          "li",
+          "te"
+        ],
+        "accent": "psál",
+        "class": "three-syllable_proparoxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L07",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L07"
+      ],
+      "printedChantLines": [
+        7
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Quóniam Rex omnis terrae est Deus,",
+        "termination": "psállite hymnum."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "hymnum",
+        "syllables": [
+          "hym",
+          "num"
+        ],
+        "accent": "hym",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L08",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L08"
+      ],
+      "printedChantLines": [
+        8
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Deus regnat super natiónes,",
+        "termination": "Deus sedet super sólium sanctum suum."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "suum",
+        "syllables": [
+          "su",
+          "um"
+        ],
+        "accent": "su",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L09",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L09"
+      ],
+      "printedChantLines": [
+        9
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Príncipes populórum congregáti sunt",
+        "termination": "cum pópulo Dei Abraham."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "Abraham",
+        "syllables": null,
+        "accent": null,
+        "class": "FOREIGN_PROPER_NAME_ACCENT_NOT_ATTESTED_IN_PRINT"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L10",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L10"
+      ],
+      "printedChantLines": [
+        10
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Nam Dei sunt próceres terrae:",
+        "termination": "excelsus est valde."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "valde",
+        "syllables": [
+          "val",
+          "de"
+        ],
+        "accent": "val",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS23-DOXO-L11",
+      "type": "DOXOLOGY",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-DOXO-L11"
+      ],
+      "printedChantLines": [
+        11
+      ],
+      "printedPage": "143**",
+      "sourceSegments": {
+        "medial": "Glória Patri, et Fílio,",
+        "termination": "et Spirítui Sancto."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "terminalLexicalStressHypothesis": {
+        "word": "Sancto",
+        "syllables": [
+          "Sanc",
+          "to"
+        ],
+        "accent": "Sanc",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS23-DOXO-L12",
+      "type": "DOXOLOGY",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-DOXO-L12"
+      ],
+      "printedChantLines": [
+        12
+      ],
+      "printedPage": "143**",
+      "sourceSegments": {
+        "medial": "Sicut erat in princípio, et nunc, et semper,",
+        "termination": "et in saécula saeculórum. Amen."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "terminalLexicalStressHypothesis": {
+        "word": "Amen",
+        "syllables": [
+          "A",
+          "men"
+        ],
+        "accent": "A",
+        "class": "two-syllable_paroxytonon_DOXOLOGY_EXCEPTION"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L11",
+      "type": "DOXOLOGY",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-DOXO-L11"
+      ],
+      "printedChantLines": [
+        11
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Glória Patri, et Fílio,",
+        "termination": "et Spirítui Sancto."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "Sancto",
+        "syllables": [
+          "Sanc",
+          "to"
+        ],
+        "accent": "Sanc",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L12",
+      "type": "DOXOLOGY",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-DOXO-L12"
+      ],
+      "printedChantLines": [
+        12
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Sicut erat in princípio, et nunc, et semper,",
+        "termination": "et in saécula saeculórum. Amen."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "Amen",
+        "syllables": [
+          "A",
+          "men"
+        ],
+        "accent": "A",
+        "class": "two-syllable_paroxytonon_DOXOLOGY_EXCEPTION"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    }
+  ],
+  "batch26Correction": {
+    "priorId": "batch26CadenceAudit",
+    "supersededAsMusicalReasoning": true,
+    "reason": "It wrongly counted post-accent syllables after hábitant/firmávit instead of identifying the terminal cadential accent at eo/eum. Two preparatory pitch groups g and f immediately precede the accented terminal cadence cell. Their word stresses are not independently the terminal melodic accent.",
+    "psalm23Verse2VariantA": "SOURCE_SHAPE_PLAUSIBLE_TWO_PREPARATORY_GROUPS_NOT_EDITOR_APPROVED",
+    "psalm23Verse2VariantB": "UNATTESTED_GF_COMPRESSION_HOLD",
+    "unreviewedOtherVersesMustNotInheritEither": true
+  },
+  "processingPlan": {
+    "step1": "Human review two printed source models; authenticate exact tone/termination variants and full formula",
+    "step2": "Verify Latin syllable/stress, especially Abraham and both doxology Amen special endings, in one 17-case pass",
+    "step3": "One bulk source-aware candidate generation pass after model approval; never generate a second independent score engine",
+    "step4": "Automatic GABC parsing/Exsurge 260/420/800 and source-identity fail-closed checks for every candidate",
+    "step5": "Human note-level facsimile and device acceptance, then existing Schola owner promotion only"
+  },
+  "counts": {
+    "originalPsalmTextLines": 16,
+    "sourceFirstVersesFullyNotated": 2,
+    "remainingVerseOccurrences": 14,
+    "distinctVersePatterns": 13,
+    "doxologyApplications": 4,
+    "distinctEditorialCases": 17,
+    "terminalWordsPreclassified": 17,
+    "terminalStressClassesWithUnresolvedLexicalAccent": 1,
+    "sourceToneModels": 2,
+    "sourceToneModelsMusicallyApproved": 0,
+    "actualAdditionalGabcVariantsDrafted": 2,
+    "additionalMusicallyApproved": 0,
+    "scoreAssignedToProduction": 0
+  },
+  "controls": {
+    "originalRawGabcUntouched": true,
+    "canonSourceOwner": "#894",
+    "existingScholaOwner": "PR #1749",
+    "researchOwner": "PR #1752",
+    "noCrossRiteToneAssumption": true,
+    "noInferenceFromLocalScholaPractice": true,
+    "noSecondEngine": true,
+    "noAutoTriggerByLiturgicalDate": true,
+    "noPricing": true,
+    "noRuntimeChange": true,
+    "publicationAllowed": false
+  }
+}
