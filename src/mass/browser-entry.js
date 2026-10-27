@@ -857,6 +857,7 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
       }
       const optional=fullMassPreflight?.composeRitesFor?.(resolvedMass,options)??null;
       return Object.freeze({...options,proper:presentedProper,rogationSelection,
+        calendarResolution,
         ...(optional?{
           precedingRites:optional.precedingRites,
           followingActions:optional.followingActions,
