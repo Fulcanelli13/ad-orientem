@@ -101,6 +101,25 @@ async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={})
       cinematicCaptionBottom:cinema.querySelector(".ao-cinematic-sub")?.getBoundingClientRect().bottom??null,
       navTop:shell.querySelector(".ao-reader-progress")?.getBoundingClientRect().top??null,
       priestDisplay:priest ? getComputedStyle(priest).display : null,
+      // Some elevations intentionally suppress a blank donor icon and keep
+      // the exact 1962 source action as a readable in-paragraph rubric.
+      // A rail fallback is acceptable only when that exact cue remains
+      // visibly sourced, never merely because the prayer text is on screen.
+      sourceActionRubric:[...scroller.querySelectorAll(".ao-reader-paragraph")]
+        .filter(el=>el.dataset.cueId===window.__AO_PHONE_PREVIEW.getActiveCue() ||
+          el.dataset.sourceCueIds?.split(/\\s+/).includes(window.__AO_PHONE_PREVIEW.getActiveCue()))
+        .some(el=>[...el.querySelectorAll(
+          ".ao-iconless-source-rubric[data-source-cue-id],"+
+          ".ao-live-inline-rubrics [data-source-cue-id]"
+        )].some(note=>{
+          if(note.dataset.sourceCueId!==window.__AO_PHONE_PREVIEW.getActiveCue())return false;
+          const rect=note.getBoundingClientRect();
+          const bounds=scroller.getBoundingClientRect();
+          const css=getComputedStyle(note);
+          return rect.height>0 && rect.bottom>bounds.top+2 && rect.top<bounds.bottom-2 &&
+            css.display!=="none" && css.visibility!=="hidden" && Number(css.opacity)>0 &&
+            note.textContent.trim().length>0;
+        })),
       priestActive:priest?.dataset.active??"false",
       priestIcon:icon?.dataset.iconKey??null,
       gestureActive:gesture?.dataset.active??"false",
@@ -133,8 +152,8 @@ async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={})
     }else{
       assert.equal(actual.fullScreenVisible,false,
         "No spare room but a cinematic overlay covered source prayers");
-      assert.notEqual(actual.priestDisplay,"none",
-        "No spare room and main priest icon disappeared");
+      assert.ok(actual.priestDisplay!=="none" || actual.sourceActionRubric,
+        "No spare room: neither priest icon nor exact visible source action rubric: "+JSON.stringify(actual));
     }
   }
   if(expected==="INCARNATUS_GESTURE"){
