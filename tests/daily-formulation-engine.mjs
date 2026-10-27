@@ -8,6 +8,7 @@ import {
   MORNING_PRAYER_SEQUENCE_V381,EVENING_PRAYER_SEQUENCE_V381
 } from "../src/pray/traditional-pray-data.js";
 import {createDailySessionTimer,sessionClockLabel} from "../src/pray/daily-session-timer.js";
+import {createDailyFormulationPreferenceStore} from "../src/pray/daily-formulation-preferences.js";
 
 const witness=(id,language,text,options={})=>({
   id,language,text,kind:"historical",releaseStatus:"cleared",
@@ -147,6 +148,51 @@ assert.equal(timer.snapshot().targetMs,300000,"Reset preserves selected gentle t
 assert.throws(()=>timer.setTarget(3),/Unsupported prayer session duration/);
 const badClock=createDailySessionTimer({clock:()=>-1});
 assert.throws(()=>badClock.start(),/Invalid monotonic time/);
+
+// Remember ONLY source IDs for the currently released language/profile.
+// Withdrawn, missing and uncleared forms must not revive from saved settings.
+const entries=new Map();
+const storage={
+ getItem:key=>entries.get(key)??null,
+ setItem:(key,value)=>{entries.set(key,value)},
+ removeItem:key=>{entries.delete(key)}
+};
+const preferences=createDailyFormulationPreferenceStore({storage});
+assert.equal(preferences.save(manifest,{
+ language:"en",daypart:"morning",length:"short",
+ selection:{offering:"alternative"}
+}).saved,true);
+assert.deepEqual(preferences.load(manifest,{
+ language:"en",daypart:"morning",length:"short"
+}),{offering:"alternative"});
+const persisted=JSON.stringify([...entries.values()]);
+assert.ok(persisted.includes("alternative"));
+assert.ok(!persisted.includes(manifest.witnesses.alternative.text),"Prayers must not be saved");
+assert.ok(!persisted.includes("examen"),"Do not store spiritual/reflection entries");
+assert.deepEqual(preferences.load(manifest,{
+ language:"fr",daypart:"morning",length:"short"
+}),{},"Source choices must not leak into other languages");
+assert.deepEqual(preferences.load(manifest,{
+ language:"en",daypart:"morning",length:"complete"
+}),{},"Short/Complete stored independently");
+const reject=preferences.save(manifest,{selection:{offering:"pending"}});
+assert.equal(reject.saved,false);
+assert.deepEqual(preferences.load(manifest),{offering:"alternative"},"Rejected choice preserves existing preference");
+const noRelease={...manifest,witnesses:{
+ ...manifest.witnesses,
+ alternative:{...manifest.witnesses.alternative,releaseStatus:"research"}
+}};
+assert.deepEqual(preferences.load(noRelease),{},"Withdrawn source must not be loaded");
+assert.equal(preferences.save(noRelease,{selection:{offering:"alternative"}}).saved,false);
+assert.deepEqual(preferences.load(manifest),{offering:"alternative"});
+assert.equal(preferences.clear({language:"en",daypart:"morning",length:"short"}),true);
+assert.deepEqual(preferences.load(manifest),{});
+assert.equal(preferences.save(manifest,{selection:{offering:"offering"}}).saved,true);
+assert.equal(preferences.clear(),true);
+assert.equal(entries.size,0);
+const unavailable=createDailyFormulationPreferenceStore();
+assert.equal(unavailable.save(manifest,{selection:{offering:"alternative"}}).saved,false);
+assert.deepEqual(unavailable.load(manifest),{});
 
 assert.equal(MORNING_PRAYER_SEQUENCE_V381.length,11,"Canonical morning reader is unchanged");
 assert.equal(EVENING_PRAYER_SEQUENCE_V381.length,13,"Canonical evening reader is unchanged");
