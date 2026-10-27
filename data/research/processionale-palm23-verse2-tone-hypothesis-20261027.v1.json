@@ -1,0 +1,180 @@
+{
+  "schema": "ao-palm23-v2-provisional-gabc-source-transfer-review-v1",
+  "date": "2026-10-27",
+  "batch": 24,
+  "stage": "PALM-R02",
+  "status": "ONE_COMPLETE_VERSE2_GABC_MECHANICAL_UNDERLAY_HYPOTHESIS_NEEDS_MUSIC_EDITOR_AND_EXSURGE_RENDER_VALIDATION",
+  "target": {
+    "psalm": 23,
+    "liturgicalLine": 2,
+    "biblicalVerse": 2,
+    "printedLatin": "Nam ipse super mária fundávit eum * et super flúmina firmávit eum.",
+    "editorialSource": "Graduale Romanum 1961 p.143** Textus novus",
+    "printedPageUrl": "https://gregobase.selapa.net/sources/2/1179.png",
+    "rawArchivedSource": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+    "scoreHypothesis": "data/research/chant-source-review/palm23-verse2-tone-application-20261027-PROVISIONAL.gabc"
+  },
+  "method": {
+    "sourceAvailable": "Printed Psalm23 first verse fully notated; only opening of verse2 noted",
+    "printedSecondVerseCue": "Nam(h) ip(h)se...(h)",
+    "introductionRule": "Begin verse 2 on h recitation as attested in printed abbreviated cue; do not repeat first-verse f/gh intonation",
+    "cadenceMethod": "Mechanical comparison/hypothetical reassignment of exact first-verse note groups; not authoritative Gregorian accent pointing",
+    "sourceFirstVerseMediantSnippet": "quæ(h) <b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+    "candidateMediantSnippet": "fun(h)dá(ixi hr)vit(h) e(g hr)um :(h.)",
+    "sourceFirstVerseEndingSnippet": "et(h)  qui(h) há(h)bi(h)<i>tant</i>(g) <i>in</i>(f) <b>e</b>(gh gr)o.(gf..)",
+    "candidateEndingSnippet": "flú(h)mi(h)na(h) fir(h)má(g)vit(f) e(gh gr)um.(gf..)",
+    "risk": "First-verse terminal pitch positions depend on stress and syllabic length. Candidate má(g) aligns mechanically to source tant(g), not demonstrably to the proper melodic accent; editor must correct or reject.",
+    "mismatchHold": [
+      "Accent position for candidate final firmávit differs from printed first-verse habitant contour",
+      "Precise medial preparatory syllable spacing requires checking manual rubrics and original musical score",
+      "Exsurge render not yet performed on candidate; no claims of valid mobile/desktop glyph layout",
+      "Original Vatican 1962 print owner must approve orthography, text and punctuation before release"
+    ]
+  },
+  "cadenceMappings": {
+    "medial": [
+      [
+        "Nam",
+        "h",
+        "1961 printed abbreviated second-verse cue"
+      ],
+      [
+        "ip",
+        "h",
+        "1961 printed abbreviated second-verse cue"
+      ],
+      [
+        "se",
+        "h",
+        "1961 printed abbreviated second-verse cue"
+      ],
+      [
+        "su",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "per",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "má",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "ri",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "a",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "fun",
+        "h",
+        "source quæ(h)"
+      ],
+      [
+        "dá",
+        "ixi hr",
+        "source re(ixi hr)"
+      ],
+      [
+        "vit",
+        "h",
+        "source plent(h)"
+      ],
+      [
+        "e",
+        "g hr",
+        "source e(g hr)"
+      ],
+      [
+        "um",
+        "h.",
+        "source ám :(h.)"
+      ]
+    ],
+    "termination": [
+      [
+        "et",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "su",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "per",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "flú",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "mi",
+        "h",
+        "source qui(h), shifted recitation"
+      ],
+      [
+        "na",
+        "h",
+        "source há(h), shifted recitation"
+      ],
+      [
+        "fir",
+        "h",
+        "source bi(h), shifted recitation"
+      ],
+      [
+        "má",
+        "g",
+        "source tant(g); accent conflict unresolved"
+      ],
+      [
+        "vit",
+        "f",
+        "source in(f)"
+      ],
+      [
+        "e",
+        "gh gr",
+        "source e(gh gr)"
+      ],
+      [
+        "um",
+        "gf..",
+        "source o(gf..)"
+      ]
+    ]
+  },
+  "tests": {
+    "targetSourceTextMatchesNormalizedPsalm23Verse2": true,
+    "noteBearingSyllables": 24,
+    "openingCueOnH": true,
+    "medialAsteriskPresent": true,
+    "doxologyNotIncluded": true,
+    "antiphonReturnNotIncluded": true,
+    "productionReadOnly": true
+  },
+  "release": {
+    "musicEditorReviewed": false,
+    "printedNoteByNoteProven": false,
+    "accentCorrectnessCertified": false,
+    "exsurgeParsed": false,
+    "exsurgeRendered": false,
+    "sourceOwnerApproved": false,
+    "scholaOwnerApproved": false,
+    "scorePublicationAllowed": false,
+    "productionMassReaderChanges": 0
+  }
+}
