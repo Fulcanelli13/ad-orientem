@@ -7,7 +7,7 @@
       "primary_favorite": {
         "id": "E9",
         "artwork": "Jean-François Millet — The Angelus",
-        "status": "LEADING_USER_PREFERENCE_PUBLISHING_PENDING"
+        "status": "PREFERRED_NOT_YET_EXPLICITLY_FINAL_2026_10_27"
       },
       "positive_reserve": {
         "id": "E6",
@@ -20,7 +20,15 @@
       "direction": "Consider Saint Michael the Archangel as Guardian Angel module hero imagery",
       "status": "USER_SUGGESTED_NOT_LOCKED",
       "theology": "St Michael is a protector/intercessor but not automatically each person's personal guardian angel; prayer copy and feast labels must remain distinct.",
-      "avoid_duplication": "Existing distinct Saint Michael hero is Guido Reni, so prefer a different painting if needed unless user approves reuse."
+      "avoid_duplication": "Existing distinct Saint Michael hero is Guido Reni, so prefer a different painting if needed unless user approves reuse.",
+      "choice_code": "M4",
+      "artist": "Guido Reni",
+      "title": "Archangel Michael Defeating Satan",
+      "user_response": "M4 ... good",
+      "editorial_status": "USER_APPROVED_FOR_GUARDIAN_HERO_2026_10_27",
+      "existing_reuse_source_module": "michael",
+      "quality_legal_release": "UNVERIFIED",
+      "reuse_same_photo_and_source_id": true
     },
     "joseph": {
       "portrayal": "YOUTHFUL_OR_MATURE_ACTIVE_JOSEPH_NOT_ELDERLY_WHITE_BEARD",
@@ -32,7 +40,14 @@
         "Carpentry/workshop"
       ],
       "not_restricted_to_dream": true,
-      "older_user_approved": "Philippe de Champaigne Dream of Saint Joseph retained pending replacement"
+      "older_user_approved": "Philippe de Champaigne Dream of Saint Joseph retained pending replacement",
+      "choice_code": "S4",
+      "artist": "Claudio Coello",
+      "title": "St Joseph and the Christ Child",
+      "source_object": "https://emuseum.toledomuseum.org/objects/55088/st-joseph-and-the-christ-child",
+      "user_response": "S4 ... good",
+      "editorial_status": "USER_APPROVED_FOR_JOSEPH_HERO_2026_10_27",
+      "photo_rights": "NOT_VERIFIED"
     }
   },
   "refreshed_unapproved_saint_joseph_candidates": [
@@ -133,5 +148,11 @@
     "No extrapolation that Saint Michael is the user's personal guardian angel",
     "Strict zero euro, no contacts, no rushed rights claims",
     "No artistic re-selection of Evening Prayer without respecting E9 preference"
-  ]
+  ],
+  "last_user_selection": {
+    "timestamp": "2026-10-27T16:28:13Z",
+    "verbatim": "M4 and S4 are good.... ok lets move on to other modules",
+    "interpretation": "M4 and S4 accepted as module hero painting choices; E9 prior favourite retained; do not reopen these three in next round"
+  },
+  "editorial_update_applied_to_production": false
 }
