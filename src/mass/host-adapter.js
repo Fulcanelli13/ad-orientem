@@ -6,6 +6,7 @@ import { inspect1962PrefaceSelection } from "./1962-preface-decision.js";
 // This file intentionally does not depend on window/globalThis or DOM.
 
 import { makeResolvedMass, compileMassPlan } from "./session-engine.js";
+import {required1962ResidualPrefaceOwner} from "./1962-residual-preface-source.js";
 
 const LEGACY_EXCEPTIONAL = Object.freeze({
   "good-friday-1962": "GOOD_FRIDAY",
@@ -64,11 +65,17 @@ export function bind1962PrincipalPrefaceIdentity(proper,legacy){
   const id=String(legacy.calendarDay?.id??"");
   const match=/^(tempora|sancti):([A-Za-z0-9-]+):[1-4]:[a-z]{1,2}$/i.exec(id)||
     /^(commune):(C10(?:b|c|Pasc|t)):4:w$/i.exec(id);
-  if(!match)return proper;
   const data=proper.data??proper;
   if(!data||typeof data!=="object")return proper;
   const path=String(data.sourcePath??proper.sourcePath??"");
-  if(path.toLowerCase()!==(match[1]+"/"+match[2]).toLowerCase())return proper;
+  // A generic IV-class feria has no unique feast source in its ID. Bind it
+  // only for one of the six source-, ID- and date-authenticated 2026
+  // Nativity/Epiphany records. Never authorize arbitrary generic ferias.
+  const exactGenericFeria=id===":feria:4:w"&&
+    Boolean(required1962ResidualPrefaceOwner(id,path,legacy.date));
+  if(!exactGenericFeria&&
+     (!match||path.toLowerCase()!==(match[1]+"/"+match[2]).toLowerCase()))
+    return proper;
   if(data.requestedCelebrationId&&data.requestedCelebrationId!=="mass_of_day"||
      /(?:votive|requiem|mass_of_dead)/i.test(String(data.riteProfile??data.profile??"")))
     return proper;
