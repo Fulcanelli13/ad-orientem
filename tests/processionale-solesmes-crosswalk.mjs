@@ -2153,3 +2153,38 @@ test('Batch44 Palm1961 gr is archived white-note evidence but not authenticated 
  assert.equal(b.originalSourceArchiveModified,false);
  assert.equal(b.readerRuntimeChanged,false);
 });
+
+
+test('Batch45 optional epenthetic gr cannot be treated as a mandatory Palm Amen note',()=>{
+ const d=readJSON('data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json');
+ const b=d.batch45EpentheticWhiteNoteCorrection;
+ assert.equal(b.batch,45);
+ assert.equal(b.sourceValidation.length,4);
+ assert.equal(b.sourceValidation[0].facsimileInspected,true);
+ assert.equal(b.sourceValidation[0].pageNumberPdfZeroBased,8);
+ const p23=readFileSync(new URL('../'+b.sourceFacsimileReference.psalm23Gabc,import.meta.url),'utf8');
+ const p46=readFileSync(new URL('../'+b.sourceFacsimileReference.psalm46Gabc,import.meta.url),'utf8');
+ assert.ok(p23.includes(b.sourceFacsimileReference.psalm23TwoSyllableLastWord));
+ assert.ok(p46.includes(b.sourceFacsimileReference.psalm46ThreeSyllableLastWord));
+ assert.equal(b.sourceFacsimileReference.contradictsEarlierMandatoryNoteInference,true);
+ assert.equal(b.twoHypotheticalDoxologies.A_ghgr_isSourceAuthenticatedRequiredPerformance,false);
+ assert.equal(b.twoHypotheticalDoxologies.A_gh_hasBeenIndependentlyEditoriallyApproved,false);
+ assert.equal(b.twoHypotheticalDoxologies.originalGabcBytesUnchanged,true);
+ assert.equal(b.parallelMediantIssue.bothDoxologyResearchBodiesIdentical,true);
+ assert.deepEqual(b.parallelMediantIssue.firstPsalmModelAccentedCells,['ixi hr','g hr']);
+ assert.deepEqual(b.parallelMediantIssue.secondPsalmModelAccentedCells,['ixi','g']);
+ assert.equal(b.parallelMediantIssue.sourceHasAuthorizedSecondPsalmSameMediant,false);
+ assert.deepEqual(d.fullHypotheticalGabcCases.map(x=>x.id),b.twoHypotheticalDoxologies.ids);
+ const bodies=d.fullHypotheticalGabcCases.map(x=>x.gabcHypothesisOnly.split('%%')[1]);
+ assert.equal(bodies[0],bodies[1]);
+ for(const x of d.fullHypotheticalGabcCases){
+  assert.ok(x.gabcHypothesisOnly.includes(b.twoHypotheticalDoxologies.retainedPrintedGabcPhrase));
+  assert.equal(x.editorScoreApproved,false);
+  assert.equal(x.productionEligible,false);
+ }
+ assert.equal(b.release.humanMusicalApprovalCount,0);
+ assert.equal(b.release.scorePromotions,0);
+ assert.equal(b.release.changedGabcCount,0);
+ assert.equal(b.release.massReaderChanged,false);
+ assert.equal(b.release.productionAllowed,false);
+});
