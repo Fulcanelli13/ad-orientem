@@ -655,7 +655,9 @@
     "endingOnlySnippetHypotheses": 19,
     "fullyNotatedAdditionalVersesApproved": 0,
     "productionScoreAssignments": 0,
-    "realExsurgeProofsPassed": 0
+    "realExsurgeProofsPassed": 19,
+    "totalCadenceAndMedialFlexFragmentsRendered": 34,
+    "totalViewportSvgChecksPassed": 102
   },
   "guards": {
     "sourceAccentGroupReassignmentNotCertified": true,
@@ -677,5 +679,29 @@
       "change": "Retained original <b>re</b> formatting in primary-source excerpt; avoids false exact-source comparisons.",
       "sourceOriginalUnchanged": true
     }
-  ]
+  ],
+  "nativeExsurgeProof": {
+    "runId": 40465647938,
+    "jobId": 122060271393,
+    "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40465647938",
+    "conclusion": "success",
+    "pinnedExistingScholaVendor": true,
+    "sourceArchiveImmutable": true,
+    "newMedialsRendered": 17,
+    "flexesRendered": 2,
+    "olderFinalCadenceSnippetsRendered": 15,
+    "fragmentCount": 34,
+    "viewportWidths": [
+      260,
+      420,
+      800
+    ],
+    "allSvgChecksPassed": 102,
+    "medialFlexMappingCountPerFragment": 4,
+    "allMedialFlexSvgNonempty": true,
+    "manualDevicePixelReviewPassed": false,
+    "historicalMusicalFormulaApproved": false,
+    "productionScorePromoted": 0,
+    "note": "Proof run refers to same 19 musical fragment bodies, before addition of record crosslinks. No source GABC fragment was changed after this run."
+  }
 }
