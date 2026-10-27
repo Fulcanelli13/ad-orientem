@@ -79,7 +79,12 @@ export function mountFullMassPreflight({
   const successionFor=legacy=>{
     const massNumber=getAllSoulsMassChoice(legacy);
     if(!/^\d{4}-11-02$/.test(String(legacy?.date??""))||
-       ![1,2,3].includes(massNumber))return null;
+       ![1,2,3].includes(massNumber)||
+       ![null,"","mass_of_day"].includes(legacy?.requestedCelebrationId??null)||
+       ![null,"","mass_of_day"].includes(legacy?.celebrationId??null)||
+       legacy?.properSource!=="Sancti/11-02m1"||
+       (legacy?.calendarDay?.raw?.main?.id??legacy?.calendarDay?.id)!==
+         "sancti:11-02m1:1:b")return null;
     const current=allSoulsSuccession?.date===legacy.date&&
       allSoulsSuccession.massNumber===massNumber?allSoulsSuccession:null;
     return Object.freeze({
