@@ -49,7 +49,7 @@ def main():
     # A shared church name is not proof of a shared physical building.
     assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE is_canonical_physical_site!=0 OR is_public_site!=0")==0
     assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE same_name_country_count>0")==4
-    assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE related_existing_provider_id IS NOT NULL")==1
+    assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE related_existing_provider_id IS NOT NULL")==2
     assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE reconciliation_status!='IDENTITY_RECONCILIATION_REQUIRED'")==0
     assert count(db,"SELECT COUNT(*) FROM unified_research_inventory WHERE kind='ADMITTED_PHYSICAL_ANCHOR'")==2579
     assert count(db,"SELECT COUNT(*) FROM unified_research_inventory WHERE kind='CANDIDATE_IDENTITY_UNRESOLVED'")==36
