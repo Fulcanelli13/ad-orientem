@@ -24,7 +24,7 @@ def main():
       "source_ministry":2723,"mass_time":4681,
       "timetable_ministry_link":4681,"institute_norm":8,
       "existing_alias":5,"identity_exception":49,
-      "classification_exception":0
+      "classification_exception":0,"unified_site_candidate":36,"unified_research_inventory":2615
     }
     for table,n in expected.items():
         assert count(db,f'SELECT COUNT(*) FROM {table} ')==n,(table,n)
@@ -44,6 +44,16 @@ def main():
     assert count(db,"SELECT COUNT(*) FROM timetable_ministry_link WHERE join_state='MISSING_SOURCE_ID_HOLD'")==13
     assert count(db,"SELECT COUNT(*) FROM source_ministry WHERE institute_id IS NOT NULL AND physical_anchor_id IS NULL")>=3
     assert count(db,"SELECT COUNT(*) FROM source_ministry WHERE institute_id IS NULL AND inherited_missal!='UNKNOWN'")==0
+
+    # Stage already committed candidate venues in the ONE CL2 research master.
+    # A shared church name is not proof of a shared physical building.
+    assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE is_canonical_physical_site!=0 OR is_public_site!=0")==0
+    assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE same_name_country_count>0")==4
+    assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE related_existing_provider_id IS NOT NULL")==1
+    assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE reconciliation_status!='IDENTITY_RECONCILIATION_REQUIRED'")==0
+    assert count(db,"SELECT COUNT(*) FROM unified_research_inventory WHERE kind='ADMITTED_PHYSICAL_ANCHOR'")==2579
+    assert count(db,"SELECT COUNT(*) FROM unified_research_inventory WHERE kind='CANDIDATE_IDENTITY_UNRESOLVED'")==36
+    assert not db.execute("SELECT candidate_research_id FROM unified_site_candidate INTERSECT SELECT group_id FROM canonical_site").fetchall()
 
     # All 5 alias site IDs resolve to precisely one physical anchor.
     assert count(db,"SELECT SUM(history_site_count-1) FROM unified_physical_site")==5
@@ -80,6 +90,7 @@ def main():
     db.close()
     print("UNIFIED MASTER PASS: 2,579 physical sites, 2,723 source ministries, "
           "4,681 Mass rows, 1,389 rule-inheriting institute labels, "
+          "36 existing G0 leads staged without automatic venue admission, "
           "13 held source-less timetables, source/celebration overrides tested, zero published.")
 
 if __name__=='__main__': main()
