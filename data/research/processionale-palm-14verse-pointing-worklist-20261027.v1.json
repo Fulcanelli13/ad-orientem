@@ -98,12 +98,14 @@
         "comparisonProofRunId": 40455234551,
         "actualDeviceAccepted": false,
         "noteUnderlayCertified": false,
-        "cadenceDecision": "HOLD_BOTH_NO_DEFAULT_NO_APPROVED_VERSION",
+        "cadenceDecision": "A_SOURCE_SHAPE_PLAUSIBLE_B_UNATTESTED_BOTH_UNAPPROVED",
         "postAccentReference": 5,
         "postAccentTarget": 3,
         "accentAdjudicationStatus": "NOT_YET_PASSED",
         "manualMusicalEditorRequired": true,
-        "noInheritanceToOtherPatterns": true
+        "noInheritanceToOtherPatterns": true,
+        "earlierPostAccentFiveVsThreeReasoningSuperseded": true,
+        "newCadentialAnalysis": "Both source and A-candidate have g then f as 2 immediately preceding preparatory notes before last main cadential accent e in eo/eum. Preliminary source-supported shape, NOT musical-editor acceptance. B merges g/f and remains unsupported."
       }
     },
     {
@@ -550,8 +552,20 @@
     "doNotAdvanceReader": true,
     "gabcVariantsPrepared": 2,
     "editorApprovedVariants": 0,
-    "aBSourceBasedDecision": "BOTH_A_AND_B_REMAIN_UNCERTIFIED",
+    "aBSourceBasedDecision": "A_HAS_PLAUSIBLE_SOURCE_TERM_2PREP__B_GF_COMPRESSION_UNSUPPORTED__NEITHER_APPROVED",
     "cadenceRuleVerifiedForOtherTwelve": false,
     "noAutomatedExpansionFromV2Hypotheses": true
+  },
+  "batch27ConsolidatedToneModel": {
+    "path": "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json",
+    "sourceToneModels": 2,
+    "uniqueVersePatterns": 13,
+    "doxologyApplications": 4,
+    "distinctReviewCases": 17,
+    "classifiedPendingCases": 17,
+    "editoriallyAcceptedToneModels": 0,
+    "correctedEarlierCadenceReasoning": true,
+    "sourceAuthority": "#894",
+    "ScholaOwner": "#1749"
   }
 }
