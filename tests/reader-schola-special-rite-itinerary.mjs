@@ -47,7 +47,7 @@ for(const rite of registry.rites){
    willReceiveCommunion:true});
   const native=built.cards??built.steps??built.surfaces;
   assert.ok(Array.isArray(native)&&native.length,rite.id+" has no native stages");
-  const order=native.map(x=>x.recordId??x.id);
+  const order=native.map(x=>built.surfaces?x.id:(x.recordId??x.id));
   assert.equal(new Set(order).size,order.length,rite.id+" has ambiguous native stages");
   const eligible=rite.events.filter(e=>e.condition==="ANY"||
     (condition!=null&&e.condition===condition));
