@@ -41,10 +41,15 @@
         "(sed rubrica 1960)",
         "Prefatio=Sacramento"
       ],
-      "sourceFinding": "Source has two historical selectors divided by a version condition; do not infer original mandatory 1962 sacramental Preface or 2020 optional permission.",
+      "sourceFinding": "ICRSP France identifies post-1960 Corpus Christi Preface as Communis, pre-1960 as Nativitate. Main donor contains two historical selectors; this is a version-aware Common-Preface source agreement for the 1962 universal baseline. 2020 optional Eucharistic Preface may not be silently authorized.",
       "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
       "autoPublish": false,
-      "changesReader": false
+      "changesReader": false,
+      "post1960ICRSP": "https://icrspfrance.fr/textes-liturgiques.php?article=a0297_ancien",
+      "rubricRule": "RGMR_1960_498",
+      "classification": "RULE_TEXT_AGREE",
+      "basis": "ICRSP_POST_1960_CORPUS_CHRISTI_COMMON",
+      "localOptionalLaterPermission": "UNASSESSED_NOT_APPLIED"
     },
     {
       "date": "2026-09-23",
@@ -235,11 +240,18 @@
     }
   ],
   "sourceDefectHolds": [
-    "Corpus Christi double source selector requires source-version arbitration",
-    "Advent Sunday proper/trinity obligation requires named-source and weekday gate"
+    "Corpus Christi original donor embeds historical alternatives: preserve them as provenance; post-1960 selected Common verified by ICRSP; later optional Preface unapproved"
   ],
   "editorialCertification": 0,
   "autoPublish": false,
   "changesReader": false,
-  "upstreamSourceCommit": "ad8783641455bae38a8eb5782b34241a7b3ff2ef"
+  "upstreamSourceCommit": "ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+  "correctedAfterScreen": {
+    "date": "2026-06-04",
+    "originallyHeld": true,
+    "post1960RuleVerified": true,
+    "originalLatinTextChanged": false,
+    "readerChanged": false,
+    "originalSourceFileChanged": false
+  }
 }
