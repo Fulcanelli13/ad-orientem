@@ -1229,3 +1229,55 @@ test('printed Psalm23 and Psalm46 alternate cadence accents generate fifteen con
  const reader=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
  assert.ok(!reader.includes('processionale-palm-attested-cadence-windows'));
 });
+
+
+test('Psalm 17 mediants and two flex-source windows remain strictly experimental',()=>{
+ const doc=readJSON('data/research/processionale-palm-medial-flex-bulk-hypotheses-20261027.v1.json');
+ const sources=readJSON('data/research/processionale-palm-1961-accent-doxology-review-20261027.v1.json');
+ const p23=readFileSync(new URL('../data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc',import.meta.url),'utf8');
+ const p46=readFileSync(new URL('../data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc',import.meta.url),'utf8');
+ const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/æ/g,'ae').replace(/[^a-z]/gi,'').toLowerCase();
+ assert.equal(doc.batch,30);
+ assert.equal(doc.medials.length,17);
+ assert.equal(doc.flex.length,2);
+ assert.equal(doc.counting.endingOnlySnippetHypotheses,19);
+ assert.equal(doc.counting.flexOccurrences,3);
+ assert.equal(doc.counting.fullyNotatedAdditionalVersesApproved,0);
+ assert.equal(doc.counting.productionScoreAssignments,0);
+ assert.ok(p23.includes(doc.sources.ps23MedialSource));
+ assert.ok(p46.includes(doc.sources.ps46MedialSource));
+ assert.ok(p23.includes(doc.sources.ps23FlexSource));
+ const register=new Map([...sources.patterns.map(p=>[p.patternId,p.sourceSectionAccents]),
+   ...sources.doxology.map(d=>[d.id,d.printedAccentText])]);
+ assert.equal(register.size,17);
+ for(const row of doc.medials){
+  const old=register.get(row.id);assert.ok(old,row.id);
+  assert.equal(row.sourceMedialLatin,old.medial);
+  assert.ok(norm(old.medial).endsWith(norm(row.endingSyllables.join(''))),row.id);
+  assert.deepEqual(row.sourceNoteGroups,row.psalm===23?['ixi hr','h','g hr','h.']:['ixi','hr','h','g','hr','h.']);
+  assert.equal(row.provisionalGabcEndingOnly.split('%%').length,2);
+  const elements=[...row.provisionalGabcEndingOnly.matchAll(/([\p{L}]+)\(([^)]+)\)/gu)]
+    .filter(x=>x[1].toLowerCase()!=='c4').map(x=>[x[1],x[2]]);
+  assert.deepEqual(elements,row.endingSyllables.map((v,i)=>[v,row.sourceNoteGroups[i]]),row.id);
+  assert.equal(row.fullVerseMusicCreated,false);
+  assert.equal(row.sameTwoAccentMediantPatternVerified,false);
+  assert.equal(row.editorApproved,false);
+  assert.equal(row.productionAllowed,false);
+ }
+ assert.deepEqual(doc.flex.map(x=>x.occurrenceIds.length),[2,1]);
+ for(const item of doc.flex){
+  const original=register.get(item.occurrenceIds[0]);
+  assert.ok(original?.flex);
+  assert.equal(item.printedPhrase,original.flex);
+  assert.ok(norm(item.printedPhrase).endsWith(norm(item.endingSyllables.join(''))));
+  assert.equal(item.provisionalGabcEndingOnly.split('%%').length,2);
+  const pitch=[...item.provisionalGabcEndingOnly.matchAll(/([\p{L}]+)\(([^)]+)\)/gu)]
+    .map(m=>[m[1],m[2]]);
+  assert.deepEqual(pitch,item.endingSyllables.map((s,i)=>[s,item.sourceGroupHypothesis[i]]));
+  assert.equal(item.pitchEditorApproved,false);
+  assert.equal(item.publicationAllowed,false);
+ }
+ assert.equal(doc.guards.doxologyAmenSeparateTerminationHold,true);
+ assert.equal(doc.guards.sourceArchiveUnmodified,true);
+ assert.equal(doc.guards.releaseAllowed,false);
+});
