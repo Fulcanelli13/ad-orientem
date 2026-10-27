@@ -52,3 +52,29 @@ The **50 Common-heading conflicts** above exclude the two June incorrectly named
 5. Keep current Ordo release status **DRAFT** until Required Main, R17 and App CI pass (currently blocked by unrelated Sacred Art GitHub Actions write-permission hygiene issue [#1756](https://github.com/Fulcanelli13/ad-orientem/issues/1756)), plus manual EN/FR mobile visual acceptance. No bypass of `test:tree-hygiene`.
 
 **Primary rubric:** [1960 General Rubrics of the Roman Missal, §§482–499](https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html). `RULE_TEXT_AGREE` is an evidence signal, **not** independent certification of a source edition, particular calendar, valid current permissions or reader completeness.
+
+
+## B02 — production source correction reconciled (27 October 2026)
+
+**This section supersedes B01's operational counts while retaining B01's original findings as an audit trail.**
+
+Mass source [PR #1783](https://github.com/Fulcanelli13/ad-orientem/pull/1783) MERGED as 5564ecd5fbcab7c6d1558d6142f217eeefdffb14 after source-authenticated 1960 tests and all Required Main, App, Calendar and R17 checks passed. The narrow source-owner fix selects the authenticated Trinity Preface for **7 June 2026** (Tempora/Pent02-0r) and **14 June 2026** (Tempora/Pent03-0r); all 50 other Sundays are outside its intervention scope.
+
+The [fresh full-year Calendar audit #40459791585](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40459791585) PASSED on Ordo head e2a312775c3fed25998b34f74875f36ff83ad39a. It resolves 365/365 dates with 0 missing titles/ranks/colours and 72/72 independent Calendar checks matched. Full-year independent source certification is **not complete**.
+
+| Preface audit status | B01 before | B02 after | Change |
+|---|---:|---:|---:|
+| Rule/text agreement (not certified) | 117 | **119** | +2 |
+| Raw source conflict | 52 | **50** | -2 |
+| Unmapped source rule | 194 | **194** | 0 |
+| Good Friday non-Mass + All Souls held | 2 | **2** | 0 |
+| Total audited dates | 365 | **365** | 0 |
+| Fully editorially certified Prefaces | 0 | **0** | 0 |
+
+Remaining **50 source conflict owners**: 22 Lenten weekdays plus 8 Pentecost Vigil/octave = 30 in unmerged PR #1747; 12 Easter/Ascension cases in stacked PR #1751 or separate source-owner investigation; 5 named sanctoral cases; 3 Advent Sundays. Historical B01 entries for the two June wrong-named Sunday Prefaces are now resolved, **not outstanding**.
+
+Remaining **194 unmapped cases** retain all their separate source/permission/particular-Ordo holds, including later 2020 optional Prefaces. Gloria/Credo screen remains 295 Gloria supported, 256 Credo supported, 220 both supported, 145 dates with at least one withheld. Screening is not local/votive permission.
+
+**Production sequencing:** source PR #1747 before dependent #1751 then #1761, rerun this actual 365-date audit after each source merge, and never introduce a Calendar-only fake Preface correction. Unmergeable historical broad PR #1083 remains research rather than a second live global resolver. The €0 art security issue #1756 was resolved in merged #1765; permanent art originals remain in guarded research branches and production workflow permissions remain read-only.
+
+**Release hold:** Ordo PR #1739 remains DRAFT and unmerged pending supported source gates, EN/FR mobile visual acceptance and explicit approval. No art/photo, local custom, 2020 Preface or Office entitlement approval is implied.
