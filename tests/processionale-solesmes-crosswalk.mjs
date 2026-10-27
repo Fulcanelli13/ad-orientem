@@ -1512,6 +1512,9 @@ test('two flexed Psalm23 full-GABC hypotheses cover three verses but retain exac
  assert.equal(summary.completeExperimentalGabcCases,11);
  assert.equal(summary.unscoredCases,6);
  assert.equal(summary.completelyApprovedCases,0);
+ assert.equal(summary.completeExperimentalGabcRendered,11);
+ assert.equal(summary.allExistingResearchViewports,168);
+ assert.equal(summary.musicEditorCertified,0);
  assert.equal(summary.unscoredIds.length,6);
  assert.equal(section.publisherAllowed,false);
  const refs=new Map(master.cases.map(x=>[x.id,x]));
@@ -1545,7 +1548,13 @@ test('two flexed Psalm23 full-GABC hypotheses cover three verses but retain exac
   assert.equal(row.actualSourcePrintedFullVerseWithPitches,false);
   assert.equal(row.editorialAccentCertified,false);
   assert.equal(row.noteGroupsHumanReviewed,false);
-  assert.equal(row.parseAndRenderSuccessful,false);
+  assert.equal(row.parseAndRenderSuccessful,true);
+  assert.equal(row.nativeExsurgeProof.result,'PINNED_EXSURGE_JOB_SUCCEEDED_SOURCE_ONLY');
+  assert.equal(row.nativeExsurgeProof.runId,40516761771);
+  assert.equal(row.nativeExsurgeProof.jobId,122232484479);
+  assert.deepEqual(row.nativeExsurgeProof.views.map(v=>v.width),[260,420,800]);
+  assert.equal(row.nativeExsurgeProof.scoreMusicEditoriallyAccepted,false);
+  assert.equal(row.nativeExsurgeProof.manualDevicePixelVisualApproved,false);
   assert.equal(row.productionScoreApproved,false);
  }
  const repeated=section.candidates.find(x=>x.id==='PALM-R02-PS23-L07');
