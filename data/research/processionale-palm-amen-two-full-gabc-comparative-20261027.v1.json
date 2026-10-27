@@ -665,5 +665,124 @@
       "promoteAllowed": false
     },
     "priority": "BOTH_1960_PRINTED_OFFICE_1F_EUOUAE_IDENTICAL_1961_PROCESSIONAL_TONE_MODE_CONFIRMED__HUMAN_MUSICAL_ADJUDICATION_REMAINS_FOR_NOVUS_PSALMS"
+  },
+  "batch44Palm1961WhiteNoteTerminationProof": {
+    "batch": 44,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "SOURCE_ANCHORED_WHY_GR_IS_NOT_INVENTED_BUT_DOXOLOGY_AMEN_UNDERLAY_STILL_NOT_ATTESTED",
+    "conclusion": "The extra white g note encoded gr is a literal part of both independently archived restored 1961 Palm Psalm first-verse terminations. Its musical existence and two-vs-three-syllable placement are printed; application to A-men in either complete, unnotated Sicut erat remains an unapproved editorial extrapolation.",
+    "originalPrintedSources": [
+      {
+        "psalm": 23,
+        "sourceUrl": "https://gregobase.selapa.net/sources/2/1179.png",
+        "printedPage": "143**",
+        "archive": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+        "verifiedSourceGabcSnippet": "<i>tant</i>(g) <i>in</i>(f) <b>e</b>(gh gr)o.(gf..)",
+        "cadenceUnderlay": [
+          {
+            "syllable": "tant",
+            "notes": "g"
+          },
+          {
+            "syllable": "in",
+            "notes": "f"
+          },
+          {
+            "syllable": "e",
+            "notes": "gh gr"
+          },
+          {
+            "syllable": "o",
+            "notes": "gf.."
+          }
+        ],
+        "accentualShape": "two-syllable final word e-o: white g note lies on e with gh; this is the closest same-rite notated comparison to draft two-syllable A-men"
+      },
+      {
+        "psalm": 46,
+        "sourceUrl": "https://gregobase.selapa.net/sources/2/1180.png",
+        "printedPage": "144**",
+        "archive": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+        "verifiedSourceGabcSnippet": "<i>ce</i>(g) <i>læ</i>(f)<b>ti</b>(gh)ti(gr)æ :(gf..)",
+        "cadenceUnderlay": [
+          {
+            "syllable": "ce",
+            "notes": "g"
+          },
+          {
+            "syllable": "læ",
+            "notes": "f"
+          },
+          {
+            "syllable": "ti",
+            "notes": "gh"
+          },
+          {
+            "syllable": "ti",
+            "notes": "gr"
+          },
+          {
+            "syllable": "æ",
+            "notes": "gf.."
+          }
+        ],
+        "accentualShape": "three-syllable final word ti-ti-æ: white g note is assigned to middle unaccented syllable, rather than both gh and gr on stressed ti"
+      }
+    ],
+    "notationMeaning": {
+      "gabcRMeaning": "In GABC 'gr' denotes a white/hollow note at pitch g, not an independent pitch called gr; a valid extra note within the original processional tone.",
+      "gabcReferenceUrl": "https://gregobase.selapa.net/?page_id=53",
+      "primaryRuleReferenceUrl": "https://longbeachchant.com/wp-content/uploads/2019/11/liber-1961-eight-psalm-tones.pdf#page=2",
+      "underlayTeachingUrl": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf#page=2",
+      "whiteEpentheticNote": "The supporting pedagogy discusses white notes as psalm-tone epenthetic syllable indications. Do not equate that blanket explanation with proof of the exact Psalm23 two-syllable assignment; the scanned Palm first verse, not this generic rule, is the direct evidence."
+    },
+    "officeComparator": {
+      "edition": "Liber antiphonarius 1960, pp.423–424",
+      "usage": "Prime and Terce Office Pueri antiphons",
+      "sourceUrls": [
+        "https://gregobase.selapa.net/sources/48/512.png",
+        "https://gregobase.selapa.net/sources/48/513.png"
+      ],
+      "sixVowelCadence": [
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh",
+        "gf.."
+      ],
+      "hasWhiteGAfterGhOnA": false,
+      "authorityForPalmDistributionAmen": false
+    },
+    "existingDraft": {
+      "ids": [
+        "PALM-R02-PS23-DOXO-L12",
+        "PALM-R02-PS46-DOXO-L12"
+      ],
+      "tail": "ló(g)rum.(f) A(gh gr)men.(gf..)",
+      "sameLastTwoSyllableGroupAsPsalm23Opening": true,
+      "sameFlattenedPitchOrderAsBothPrinted1961PsalmOpenings": true,
+      "sourceHasFullyNotatedPalmSicutErat": false,
+      "editorMusicalSignoff": false,
+      "notAutomaticallyProvenFromSharedTone": true
+    },
+    "specificMusicalDecision": {
+      "question": "Does the restored 1961 processional 1f termination for the Sicut erat doxology treat two-syllable A-men analogously to the Psalm23 two-syllable e-o ending (retaining white gr), or follow the 1960 Office EUOUAE which omits gr? Underlay should be vetted independently for both Psalm23 and Psalm46.",
+      "proposedNonDecision": "Retain both original hypotheses unchanged, including gh gr; do not silently delete gr or mark it approved. Source-matched musical editor to make the choice.",
+      "maximalVerifiedConclusions": [
+        "P23 two-syllable Palm exemplar does include gr",
+        "P46 three-syllable Palm exemplar does include gr on the subsequent syllable",
+        "1960 Office Pueri EUOUAE has no gr",
+        "No staff-notated full Palm Sicut erat has been established"
+      ],
+      "cannotInferAbsentSource": "It is not established that all Palm doxologies necessarily use the same 5-pitch-group distribution as exemplary verse endings."
+    },
+    "publicationAllowed": false,
+    "humanMusicianApproved": 0,
+    "productionScoresAdded": 0,
+    "newGabcCreated": false,
+    "originalSourceArchiveModified": false,
+    "readerRuntimeChanged": false
   }
 }
