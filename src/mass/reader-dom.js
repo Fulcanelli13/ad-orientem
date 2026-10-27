@@ -2276,12 +2276,12 @@ function syncIconlessSourceRubric(root,current,mode,iconResolver,form,language){
       tile.getBoundingClientRect().height===0 ||
       globalThis.getComputedStyle?.(tile)?.display==="none")
   );
-  const visibleExactRubric=[...owner.querySelectorAll(
+  const visibleExactRubric=elevationRailFallback && [...owner.querySelectorAll(
     '.ao-live-inline-rubrics [data-source-cue-id="'+cueId+'"],'+
     '.ao-iconless-source-rubric[data-source-cue-id="'+cueId+'"]'
   )].some(node=>{
     const style=globalThis.getComputedStyle?.(node);
-    return node.getBoundingClientRect().height>0 && node.textContent?.trim() &&
+    return node.getBoundingClientRect?.().height>0 && node.textContent?.trim() &&
       style?.display!=="none" && style?.visibility!=="hidden" &&
       Number(style?.opacity??1)>0;
   });
