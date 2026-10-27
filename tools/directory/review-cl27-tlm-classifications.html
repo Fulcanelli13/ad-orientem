@@ -215,7 +215,7 @@ $('load').onchange=async()=>{
  if(parsed.schema!=='AO_CL27_TLM_CLASSIFICATION_PROJECTION_V1'||parsed.counts.distinct_physical_anchors!==2579||parsed.counts.classification_source_rows!==2715)throw Error('Not the required CL27 classified research export');
  data=parsed;sites=parsed.physical_site_classification_facets;sources=new Map(parsed.source_scoped_classification_assertions.map(x=>[x.source_id,x]));
  byId.clear();for(const s of sites)byId.set(s.physical_anchor_id,s);
- selected=null;drafts=[];resetOptions();$('loadMessage').textContent='Loaded +sites.length+' physical sites, '+sources.size+' source assertions. All positions remain research-only.';render();
+ selected=null;drafts=[];resetOptions();$('loadMessage').textContent='Loaded '+sites.length+' physical sites, '+sources.size+' source assertions. All positions remain research-only.';render();
  }catch(e){$('loadMessage').textContent='Unable to load classification export: '+e.message}
 };
 for(const id of ['search','country','institute','missal'])$(id).addEventListener('input',()=>{if(data)render()});
