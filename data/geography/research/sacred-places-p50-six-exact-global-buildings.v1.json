@@ -1,0 +1,192 @@
+{
+  "schema": "AO_SACRED_PLACES_P50_SIX_EXACT_GLOBAL_CATHOLIC_BUILDINGS_V1",
+  "date": "2026-10-26",
+  "status": "PROPOSED_CANONICAL_RELEASE_PENDING_CI_MERGE",
+  "baseline": {
+    "places": 512,
+    "sources": 810,
+    "crosswalk": 512,
+    "unlinked": 253,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 518,
+    "sources": 816,
+    "crosswalk": 518,
+    "unlinked": 259,
+    "geo_areas": 148,
+    "directory_links": 9
+  },
+  "new_physical_locations": 6,
+  "new_mapping_rows_resolved": 0,
+  "new_global_candidate_ids_resolved": 6,
+  "global_canonical_links_after_release": 142,
+  "global_unresolved_after_release": 358,
+  "remaining_open_mapping_queue_after_release": 33,
+  "new_geo_areas": [
+    "geo:country:BY",
+    "geo:country:GQ"
+  ],
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0341",
+      "place_id": "place:LV:p50-sg-0341-196704436",
+      "name": "Skaistkalnes Vissvētākās Jaunavas Marijas Debesīs Uzņemšanas Romas katoļu baznīca",
+      "place_type": "church",
+      "country": "LV",
+      "country_name": "Latvia",
+      "city": "Skaistkalne, Bauska Municipality",
+      "lat": 56.38032,
+      "lng": 24.64323,
+      "geo_source_ref": "osm:way:196704436",
+      "geo_source_url": "https://www.openstreetmap.org/way/196704436",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W196704436",
+      "identity_source_url": "https://www.bauskasnovads.lv/lv/iestades/skaistkalnes-katolu-baznica",
+      "identity_source_issuer": "Bauska Municipality — Catholic Church and Parish Register",
+      "source_directness": "PRIMARY_INSTITUTIONAL",
+      "scope_limit": "Church of the Assumption, named Catholic church at Baznīcas iela; exclude adjacent monastery, a different church at Kurmene and the historic old wooden church. Minor-basilica dignity is not asserted.",
+      "precision": "site",
+      "source_ids": [
+        "AO-P50-SITE-SG-INV-0341-196704436"
+      ],
+      "mapping_method": "P50_CATHOLIC_INSTITUTIONAL_SOURCE_AND_INDIVIDUAL_NAMED_OSM_CHURCH"
+    },
+    {
+      "candidate_id": "SG-INV-0330",
+      "place_id": "place:RO:p50-sg-0330-231691229",
+      "name": "Basilica Maria Radna — Sanctuarul Marian Maica Harurilor",
+      "place_type": "basilica",
+      "country": "RO",
+      "country_name": "Romania",
+      "city": "Radna, Lipova, Arad County",
+      "lat": 46.09919,
+      "lng": 21.68631,
+      "geo_source_ref": "osm:way:231691229",
+      "geo_source_url": "https://www.openstreetmap.org/way/231691229",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W231691229",
+      "identity_source_url": "https://www.basilicamariaradna.info/",
+      "identity_source_issuer": "Parohia Romano-Catolică Radna / Maria Radna Basilica",
+      "source_directness": "OFFICIAL_CHURCH",
+      "scope_limit": "Named 18th-century basilica church in Lipova, distinct from adjacent Franciscan monastery OSM way 231691224 (building=residential).",
+      "precision": "site",
+      "source_ids": [
+        "AO-P50-SITE-SG-INV-0330-231691229"
+      ],
+      "mapping_method": "P50_CATHOLIC_INSTITUTIONAL_SOURCE_AND_INDIVIDUAL_NAMED_OSM_CHURCH"
+    },
+    {
+      "candidate_id": "SG-INV-0342",
+      "place_id": "place:BY:p50-sg-0342-242562393",
+      "name": "Basilica of the Assumption of the Blessed Virgin Mary, Budslau",
+      "place_type": "basilica",
+      "country": "BY",
+      "country_name": "Belarus",
+      "city": "Budslaŭ, Myadzyel District, Minsk Region",
+      "lat": 54.78701,
+      "lng": 27.45121,
+      "geo_source_ref": "osm:way:242562393",
+      "geo_source_url": "https://www.openstreetmap.org/way/242562393",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W242562393",
+      "identity_source_url": "https://budslau.by/",
+      "identity_source_issuer": "National Shrine of Our Lady of Budslau / Roman Catholic Parish of the Assumption",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Exactly named Roman Catholic parish and basilica church at Чырвоная плошча 8, separate from the miraculous icon inside and historic monastery; custodial website notes fire-recovery efforts but church identity persists.",
+      "precision": "site",
+      "source_ids": [
+        "AO-P50-SITE-SG-INV-0342-242562393"
+      ],
+      "mapping_method": "P50_CATHOLIC_INSTITUTIONAL_SOURCE_AND_INDIVIDUAL_NAMED_OSM_CHURCH"
+    },
+    {
+      "candidate_id": "SG-INV-0731",
+      "place_id": "place:GQ:p50-sg-0731-496238151",
+      "name": "Catedral Basílica de la Inmaculada Concepción, Mongomo",
+      "place_type": "cathedral",
+      "country": "GQ",
+      "country_name": "Equatorial Guinea",
+      "city": "Mongomo, Wele-Nzas Province",
+      "lat": 1.62257,
+      "lng": 11.29871,
+      "geo_source_ref": "osm:way:496238151",
+      "geo_source_url": "https://www.openstreetmap.org/way/496238151",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W496238151",
+      "identity_source_url": "https://www.guineaecuatorialpress.com/noticias/conmemoracion_del_vii_aniversario_de_la_iglesia_basilica_inmaculada_concepcion_de_mongomo",
+      "identity_source_issuer": "Official Government of Equatorial Guinea — Mongomo Cathedral Basilica reportage",
+      "source_directness": "PRIMARY_INSTITUTIONAL",
+      "scope_limit": "Distinct Catholic Immaculate Conception church in Mongomo consecrated 2011 and cathedral of Diocese of Mongomo after 2017; do not publish surrounding government plaza or bishopric under church footprint.",
+      "precision": "site",
+      "source_ids": [
+        "AO-P50-SITE-SG-INV-0731-496238151"
+      ],
+      "mapping_method": "P50_CATHOLIC_INSTITUTIONAL_SOURCE_AND_INDIVIDUAL_NAMED_OSM_CHURCH"
+    },
+    {
+      "candidate_id": "SG-INV-0365",
+      "place_id": "place:LU:p50-sg-0365-37728017",
+      "name": "Cathédrale Notre-Dame de Luxembourg",
+      "place_type": "cathedral",
+      "country": "LU",
+      "country_name": "Luxembourg",
+      "city": "Luxembourg City, Ville Haute",
+      "lat": 49.6096,
+      "lng": 6.13159,
+      "geo_source_ref": "osm:way:37728017",
+      "geo_source_url": "https://www.openstreetmap.org/way/37728017",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/de/W37728017",
+      "identity_source_url": "https://www.visitluxembourg.com/place/cathedrale-notre-dame",
+      "identity_source_issuer": "Visit Luxembourg — National Tourism Office Catholic Cathedral entry",
+      "source_directness": "PRIMARY_INSTITUTIONAL",
+      "scope_limit": "Catholic archdiocesan Notre-Dame Cathedral footprint identified with OSM way 37728017, separate from the similarly named building at Rue Notre-Dame 15 (way 170976871).",
+      "precision": "site",
+      "source_ids": [
+        "AO-P50-SITE-SG-INV-0365-37728017"
+      ],
+      "mapping_method": "P50_CATHOLIC_INSTITUTIONAL_SOURCE_AND_INDIVIDUAL_NAMED_OSM_CHURCH"
+    },
+    {
+      "candidate_id": "SG-INV-0283",
+      "place_id": "place:CZ:p50-sg-0283-50031381",
+      "name": "Bazilika Nanebevzetí Panny Marie, Stará Boleslav",
+      "place_type": "basilica",
+      "country": "CZ",
+      "country_name": "Czechia",
+      "city": "Stará Boleslav, Brandýs nad Labem",
+      "lat": 50.19603,
+      "lng": 14.67659,
+      "geo_source_ref": "osm:way:50031381",
+      "geo_source_url": "https://www.openstreetmap.org/way/50031381",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W50031381",
+      "identity_source_url": "https://katalog.apha.cz/web/chramy/786",
+      "identity_source_issuer": "Catholic Archdiocese of Prague — Parish Church Inventory",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Separate Assumption Marian pilgrimage church at Mariánské náměstí, 190+ metres from distinct St Wenceslas basilica already canonical as place:CZ:stara-boleslav-st-wenceslas; no reusing adjacent church geometry.",
+      "precision": "site",
+      "source_ids": [
+        "AO-P50-SITE-SG-INV-0283-50031381"
+      ],
+      "mapping_method": "P50_CATHOLIC_INSTITUTIONAL_SOURCE_AND_INDIVIDUAL_NAMED_OSM_CHURCH"
+    }
+  ],
+  "source_accounting": {
+    "new_first_party_catholic_source_count": 3,
+    "new_institutional_civic_source_count": 3,
+    "exact_osm_church_building_count": 6
+  },
+  "protected_identity_holds": [
+    "SG-INV-0333 Gate of Dawn chapel lies inside an OSM gatehouse; treat separate chapel/urban gate physical scope before publication.",
+    "SG-INV-0322 Máriagyűd name collisions with same-dedication church in Kópháza; require exact Máriagyűd-specific OSM way.",
+    "SG-INV-0130 Basilica Vera Cruz shares a castle complex and OSM mapped castle; do not publish fort/castle point as independently certified basilica geometry.",
+    "SG-INV-0321 Mátraverebély village church way 330540560 is not the Szentkút basilica 3km to the north.",
+    "SG-INV-0049 Saint John Lateran point sources vary and standalone baptistery/Scala Sancta must not be substituted for the Papal cathedral church.",
+    "SG-INV-0365 Luxembourg similarly named building OSM way 170976871 is NOT the Cathedral, which is way 37728017."
+  ],
+  "policy": [
+    "Six candidate IDs inherited from the P43 unresolved 500; all have first-party Catholic or authoritative institutional identity, and exact named OSM worship-building features.",
+    "Map identity and custodial source are separate, both mandatory. No auxiliary monastery, museum, gatehouse, landmark or wrong-city duplicate.",
+    "Two countries lacking original area nodes require explicit standard CIVIL country geography; no invented Mass times, photos, shrine claims, artwork, pilgrimage schedules, TLM directory links or new geo areas.",
+    "Original source evidence remains in P49 without rewriting P49 research queue historical snapshot."
+  ]
+}
