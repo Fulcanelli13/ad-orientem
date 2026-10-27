@@ -1699,3 +1699,46 @@ test('two final Palm doxology Amen settings remain source-conflicted and not app
  assert.ok(!reader.includes('processionale-palm-amen-two-full-gabc-comparative'));
 });
 
+
+
+test('unified seventeen-case Palm score editor signoff ledger is fail closed',()=>{
+ const master=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const amen=readJSON('data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json');
+ const sheet=master.batch35MusicalEditorialAcceptance;
+ assert.equal(sheet.scoreCaseCount,17);
+ assert.equal(sheet.physicalApplications,18);
+ assert.equal(sheet.statusPerCase.length,17);
+ assert.deepEqual(Object.values(sheet.categoryCounts).sort((a,b)=>a-b),[2,2,4,9]);
+ assert.equal(sheet.CIProof.exsurgeRun,40523935267);
+ assert.equal(sheet.CIProof.renderedWholeGabc,17);
+ assert.equal(sheet.CIProof.totalViewportPasses,186);
+ assert.equal(sheet.zeroReleaseMustRemainTrue,true);
+ assert.equal(sheet.scoreReaderChanges,0);
+ const masterIds=new Set(master.cases.map(x=>x.id));
+ const sheetIds=new Set(sheet.statusPerCase.map(x=>x.id));
+ assert.equal(sheetIds.size,17);
+ for(const id of sheetIds)assert.ok(masterIds.has(id),id);
+ assert.equal(sheet.signoffGates.readerIntegration,false);
+ assert.ok(Object.values(sheet.signoffGates).every(x=>x===false));
+ assert.equal(amen.release.publishAllowed,false);
+ const total={LATIN_ALIGNED_PROVISIONAL:0,PS23_FLEXED_PROVISIONAL:0,
+ SPECIAL_MEDIANT_PROVISIONAL:0,AMEN_EDITION_CONFLICT_PROVISIONAL:0};
+ for(const entry of sheet.statusPerCase){
+   assert.ok(entry.pointer.startsWith('data/research/'),entry.id);
+   total[entry.scoreNature]++;
+   assert.equal(entry.printed1961CompleteLaterVerseScore,false);
+   assert.equal(entry.canonical1962LatinOwnerSignedOff,false);
+   assert.equal(entry.local1961ToneSourceCertified,false);
+   assert.equal(entry.LatinWordAccentMusicallyVerified,false);
+   assert.equal(entry.neumeByNeumeFacsimileVerified,false);
+   assert.equal(entry.humanChantEditorAccepted,false);
+   assert.equal(entry.mobileStaffLayoutHumanApproved,false);
+   assert.equal(entry.productionScoreWired,false);
+   assert.equal(entry.readyToMerge,false);
+ }
+ assert.deepEqual(total,{LATIN_ALIGNED_PROVISIONAL:9,PS23_FLEXED_PROVISIONAL:2,
+  SPECIAL_MEDIANT_PROVISIONAL:4,AMEN_EDITION_CONFLICT_PROVISIONAL:2});
+ const reader=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
+ assert.equal(reader.includes('processionale-palm-amen-two-full-gabc-comparative'),false);
+});
+
