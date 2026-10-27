@@ -3,7 +3,7 @@
   "date": "2026-10-27",
   "batch": 24,
   "stage": "PALM-R02",
-  "status": "ONE_COMPLETE_VERSE2_GABC_MECHANICAL_UNDERLAY_HYPOTHESIS_NEEDS_MUSIC_EDITOR_AND_EXSURGE_RENDER_VALIDATION",
+  "status": "PROVISIONAL_GABC_NATIVE_EXSURGE_SVG_RENDERED_THREE_WIDTHS_MUSICAL_CADENCE_STILL_UNAPPROVED",
   "target": {
     "psalm": 23,
     "liturgicalLine": 2,
@@ -27,7 +27,7 @@
     "mismatchHold": [
       "Accent position for candidate final firmávit differs from printed first-verse habitant contour",
       "Precise medial preparatory syllable spacing requires checking manual rubrics and original musical score",
-      "Exsurge render not yet performed on candidate; no claims of valid mobile/desktop glyph layout",
+      "Native Exsurge parsed and produced SVG at 260/420/800px; physical-device visual/pixel review and editorial cadence approval still pending.",
       "Original Vatican 1962 print owner must approve orthography, text and punctuation before release",
       "Raw archival GABC ám :(h.) to candidate um(h.) punctuation/note attach normalization changes encoding; chant editor must verify audible equivalence."
     ],
@@ -174,11 +174,62 @@
     "musicEditorReviewed": false,
     "printedNoteByNoteProven": false,
     "accentCorrectnessCertified": false,
-    "exsurgeParsed": false,
-    "exsurgeRendered": false,
+    "exsurgeParsed": true,
+    "exsurgeRendered": true,
     "sourceOwnerApproved": false,
     "scholaOwnerApproved": false,
     "scorePublicationAllowed": false,
-    "productionMassReaderChanges": 0
+    "productionMassReaderChanges": 0,
+    "nativePhoneDeviceAccepted": false
+  },
+  "nativeRenderProof": {
+    "runId": 40454771798,
+    "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40454771798",
+    "jobId": 122025419732,
+    "conclusion": "success",
+    "ownerVendorCommit": "8a75c2cbb6ea2bc6ba26da30ec923b3dc8c827e1",
+    "candidateSha256": "871b48676c1c942630406d651b4cd8b6b1e2783fb6ddbb8e5895544483e57b91",
+    "sourceSha256": "06537463e71d320e5134ac84a7cb0bc70579169cd3c509883caf9eb98cdc9be2",
+    "candidate": {
+      "parsedMappings": 14,
+      "viewports": [
+        {
+          "width": 260,
+          "systems": 2,
+          "svgChildren": 1
+        },
+        {
+          "width": 420,
+          "systems": 1,
+          "svgChildren": 1
+        },
+        {
+          "width": 800,
+          "systems": 1,
+          "svgChildren": 1
+        }
+      ]
+    },
+    "original": {
+      "parsedMappings": 25,
+      "viewports": [
+        {
+          "width": 260,
+          "systems": 3,
+          "svgChildren": 1
+        },
+        {
+          "width": 420,
+          "systems": 3,
+          "svgChildren": 1
+        },
+        {
+          "width": 800,
+          "systems": 2,
+          "svgChildren": 1
+        }
+      ]
+    },
+    "meaning": "Real Exsurge parser/layout/nonempty SVG validation on pinned Schola source, not score/music/editorial approval or physical device pixel QA."
   }
 }
