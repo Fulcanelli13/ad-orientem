@@ -123,6 +123,21 @@ def build(db, pins):
             "release": "HOLD_NO_AUTOMATIC_MARKER_CONSOLIDATION",
         })
 
+    # Preserve the rest of the canonical master as a separate release-gated
+    # physical-site backlog, not a collection of invented R49 map records.
+    source_counts_by_anchor = Counter(x["physical_anchor_id"] for x in ministry.values()
+                                     if x["physical_anchor_id"] is not None)
+    unrepresented = [
+        {
+            "physical_anchor_id": anchor, "country": x["country"],
+            "name": x["name"], "description": x["physical_description"],
+            "known_frozen_ministry_source_count":source_counts_by_anchor.get(anchor,0),
+            "r49_public_pin_id":None,
+            "publication_state":"RESEARCH_ONLY_NOT_IN_R49"
+        }
+        for anchor,x in sorted(physical.items()) if anchor not in by_anchor
+    ]
+    assert len(unrepresented)==735
     duplicates = [g for g in physical_groups if g["multiple_pin_sources"]]
     inherited = Counter(x["institute_id_with_CL2_inherited_norm"] for x in result
                         if x["institute_id_with_CL2_inherited_norm"])
@@ -131,6 +146,7 @@ def build(db, pins):
         "exact_source_and_group_id_links":len(result),
         "unlinked_pins":0,
         "physical_anchors_represented":len(by_anchor),
+        "physical_anchors_not_in_R49":len(unrepresented),
         "multiple_pin_physical_anchor_groups":len(duplicates),
         "additional_pins_above_unique_physical_anchors":sum(g["pin_count"]-1 for g in duplicates),
         "multiple_pin_groups_with_coordinate_differences":sum(not g["coordinates_identical"] for g in duplicates),
@@ -159,6 +175,7 @@ def build(db, pins):
         "institute_norm_evidence_single_canonical_catalogue":dict(sorted(norms.items())),
         "r49_to_cl2_source_scope":result,
         "represented_physical_anchors":physical_groups,
+        "canonical_physical_sites_not_in_R49":unrepresented,
         "public_use":"RESEARCH_ONLY_NOT_AN_APP_IMPORT",
         "next_gate":"Review duplicate markers and exceptional coordinate/source issues before an explicit runtime projection."
     }
