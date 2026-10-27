@@ -260,8 +260,10 @@ const secondBatch=[
     "TRINITATE","494_B","SOURCE_CONFLICT","SOURCE_MATCHED_GAUDETE_ADVENT_SUNDAY"],
   ["04-26","tempora:Pasc3-0r:2:w",2,"White","Tempora/Pasc3-0r",
     "PASCHALIS","489_A","SOURCE_CONFLICT","SOURCE_MATCHED_THIRD_POST_EASTER_SUNDAY"],
+  ["06-04","tempora:Pent01-4:1:w",1,"White","Tempora/Pent01-4",
+    "COMMUNIS","498","RULE_TEXT_AGREE","ICRSP_POST_1960_CORPUS_CHRISTI_COMMON"],
 ];
-assert.equal(secondBatch.length,40);
+assert.equal(secondBatch.length,41);
 for(const [md,id,rank,colour,path,expected,clause,status,basis] of secondBatch){
   const res=sample("2026-"+md,id,rank,colour,"Communis");
   res.proper.data.sourcePath=path;
@@ -280,12 +282,18 @@ for(const [md,id,rank,colour,path,expected,clause,status,basis] of secondBatch){
   const votive={...res,proper:{...res.proper,data:{...res.proper.data,riteProfile:"votive_mass"}}};
   assert.equal(review1962PrefaceForCalendarDay(votive).status,"WITHHELD",md);
 }
-for(const [md,rank,colour] of [["06-04",1,"White"]]){
-  const c=sample("2026-"+md,"tempora:Pent01-4:"+rank+":w",rank,colour,"Communis");
-  c.proper.data.sourcePath="Tempora/Pent01-4";
-  assert.equal(review1962PrefaceForCalendarDay(c).status,"UNMAPPED",
-    "The version-dependent Corpus Christi Preface may not be invented");
-}
-console.log("PASS 40 exact-source 1960 ordinary Preface classifications: Christmas/Epiphany ferias, pre-Lent, BVM Saturday, Advent, September Ember, Sundays; no publication");
+const corpus=sample("2026-06-04","tempora:Pent01-4:1:w",1,"White",
+  "de Nativitate Domini");
+corpus.proper.data.sourcePath="Tempora/Pent01-4";
+assert.equal(review1962PrefaceForCalendarDay(corpus).status,"SOURCE_CONFLICT",
+  "The older Nativity formula must not replace the post-1960 Common");
+assert.equal(review1962PrefaceForCalendarDay(corpus).expected,"COMMUNIS");
+assert.equal(review1962PrefaceForCalendarDay(corpus).autoPublish,false);
+const eucharist=sample("2026-06-04","tempora:Pent01-4:1:w",1,"White",
+  "de sanctissimo Sacramento");
+eucharist.proper.data.sourcePath="Tempora/Pent01-4";
+assert.notEqual(review1962PrefaceForCalendarDay(eucharist).status,"RULE_TEXT_AGREE",
+  "Later optional 2020 Sacrament Preface cannot be conferred automatically");
+console.log("PASS 41 exact-source 1960 ordinary Preface classifications: Christmas/Epiphany ferias, pre-Lent, BVM Saturday, Advent, September Ember, Sundays; no publication");
 
 console.log("PASS 1962 Preface source audit: owner, principal Mass, category, trilingual, regional exclusion, conflict, exceptions");
