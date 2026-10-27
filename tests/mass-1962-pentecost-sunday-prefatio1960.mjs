@@ -88,7 +88,7 @@ for(const id of ["tempora:Pent03-0r:1:g","tempora:Pent20-0:2:g",
  resolution.day.commemorations=[{title:"Sacred Heart"}];
  assert.equal(inspectPentecostSunday1960Source(resolution).status,"NOT_THIS_PRINCIPAL_MASS");
 }
-const resolver=host();
+const resolver={properResolver:host()};
 resolver.resolveDay=async date=>original(cases.find(c=>c.date===date));
 const windowMock={AO_RUNTIME_V8:{resolver}};
 assert.equal(installPentecostSunday1960PrefaceSource(windowMock).installed,true);
