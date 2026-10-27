@@ -161,9 +161,18 @@ export function adaptV346ResolvedMass(legacy, options={}) {
   // activate the funeral Mass rules from authenticated identity and donor,
   // not from the black liturgical colour, feast title or civil date.
   const selectedSource=String(proper?.data?.sourcePath??proper?.sourcePath??"");
+  // Host legacy calendarDay may contain its historical display identity;
+  // the actual native Calendar day is the signed source of its principal
+  // 1962 celebration. It must match this Mass date before it may authorize
+  // the exact first Mass of All Souls.
+  const actualCalendar=options.calendarResolution??null;
+  const selectedCalendarId=actualCalendar
+    ?(actualCalendar.date===legacy.date&&actualCalendar.status==="ready"
+      ?actualCalendar.day?.main?.id:null)
+    :legacy.calendarDay?.id;
   const calendarAllSouls=type==="CALENDAR"&&
     resultId==="mass_of_day"&&requestedId==="mass_of_day"&&
-    String(legacy.calendarDay?.id??"")==="sancti:11-02m1:1:b"&&
+    selectedCalendarId==="sancti:11-02m1:1:b"&&
     selectedSource==="Sancti/11-02m1";
   if(calendarAllSouls&&!overlays.includes("REQUIEM"))overlays.push("REQUIEM");
   const precedingRites=[...new Set([
