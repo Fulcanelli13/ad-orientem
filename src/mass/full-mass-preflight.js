@@ -9,6 +9,7 @@ import {normalizeFolioExperience,experiencePrayerRoute,experiencePrayerDepth,may
 import {massChantProgrammeIdentity,chantProgrammeEnabled,massChantOptions,createMassChantProgramme,MASS_CHANT_ORDINARY_TRACKS} from "./mass-chant-programme.js";
 import {properToReaderSlots} from "./proper-reader-slots.js";
 import {matchSourceOwnedProperScores} from "./reader-proper-chant-crosswalk.js";
+import {composeGregorianProgrammeLayers} from "./mass-gregorian-programme-layers.js";
 import {mountMassChantPreparationStudy} from "./mass-chant-preparation-study.js";
 
 const LABELS=Object.freeze({
@@ -245,7 +246,7 @@ export function mountFullMassPreflight({
         '<label data-full-mass-performance-label for="ao-full-mass-sanctus-performance"></label>'+ 
         '<select id="ao-full-mass-sanctus-performance" data-full-mass-sanctus-performance></select>'+ 
         '<p data-full-mass-performance-note></p>'+
-        '<p data-full-mass-chant-source></p><div data-full-mass-chant-study-host></div></details>'+
+        '<p data-full-mass-gregorian-reference></p><p data-full-mass-chant-source></p><div data-full-mass-chant-study-host></div></details>'+
         '<details data-full-mass-rites class="aoFullMassOptional"><summary data-full-mass-rite-summary></summary>'+
         '<p data-full-mass-rite-intro></p><div data-full-mass-rite-list></div></details>'+
         '<p data-full-mass-note></p>';  
@@ -589,8 +590,8 @@ export function mountFullMassPreflight({
       chantDetails.hidden=!musicAvailable;
       word("[data-full-mass-chant-heading]","Chants of this Mass","Chants de cette messe");
       word("[data-full-mass-chant-note]",
-        "Optional: report the melodies actually sung by your choir. Leave pieces unknown if uncertain or omitted. Gregorian reference scores do not represent polyphony, and this does not change the Proper.",
-        "Facultatif : indiquez les mélodies réellement chantées. Laissez les pièces inconnues ou omises sans choix. Les exemples grégoriens ne représentent pas la polyphonie et ne modifient pas le propre.");
+        "The standard Gregorian Proper reference is shared across churches using the same resolved Roman formulary. The local choir programme remains unknown unless separately documented. Report Ordinary melodies only when known; this never changes the Proper.",
+        "La référence du propre grégorien est commune aux églises suivant le même formulaire romain. Le programme de la schola locale reste inconnu sans preuve distincte. N’indiquez les mélodies de l’ordinaire que si elles sont connues ; le propre reste inchangé.");
       word("[data-full-mass-chant-label]","Kyrie · musical setting","Kyrie · mélodie");
       const choice=chantDetails.querySelector("[data-full-mass-chant-choice]");
       if(choice){
@@ -659,6 +660,17 @@ export function mountFullMassPreflight({
           }catch{selectedProperChants=null}
         }
       }
+      const gregorianLayers=composeGregorianProgrammeLayers({
+        properCrosswalk:selectedProperChants,
+        chantProgramme:musicAvailable?summary.chantProgramme:null,
+        date:summary.date,
+      });
+      const referenceCount=gregorianLayers.standard.references.length;
+      word("[data-full-mass-gregorian-reference]",
+        referenceCount?"Gregorian Proper reference: "+referenceCount+"/5 source-matched scores · not yet musically approved · no local performance assumed.":
+          "Gregorian Proper reference: not source-matched in the current notation pilot; no local performance assumed.",
+        referenceCount?"Référence du propre grégorien : "+referenceCount+"/5 partitions liées aux sources · validation musicale en attente · aucun chant local présumé.":
+          "Référence du propre grégorien : aucune correspondance dans ce projet pilote ; aucun chant local présumé.");
       chantStudy?.update({
         programme:musicAvailable?summary.chantProgramme:null,
         properCrosswalk:selectedProperChants,
