@@ -875,5 +875,130 @@
       "massReaderChanged": false,
       "productionAllowed": false
     }
+  },
+  "batch46SicutEratMediantCellCrosswalk": {
+    "batch": 46,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "PS23_EXACT_FOUR_SYLLABLE_SOURCE_CELL_MATCH_PS46_SIX_TO_FOUR_SYLLABLE_UNATTESTED_CONTRACTION_BOTH_UNAPPROVED",
+    "finding": "The two 1961 restored Palm Psalm first-verse mediants have the same six flattened melodic pitch symbols, but their distribution over Latin syllables differs. The common draft Sicut erat mediant reproduces Psalm23's four-syllable pattern exactly, whereas Psalm46's six-syllable source-specific pattern would need a documented contraction to work with the doxology's four-syllable final phrase.",
+    "sources": [
+      {
+        "id": "GR1961_PS23_143STARSTAR",
+        "book": "Graduale Romanum 1961 p.143**",
+        "sourceUrl": "https://gregobase.selapa.net/sources/2/1179.png",
+        "archivedGabc": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+        "sourceCadence": "<b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+        "syllables": [
+          "re",
+          "plent",
+          "e",
+          "am"
+        ],
+        "noteGroups": [
+          "ixi hr",
+          "h",
+          "g hr",
+          "h."
+        ],
+        "musicallyAccentedSyllableIndices": [
+          0,
+          2
+        ],
+        "independentCompleteDoxologyWitness": false
+      },
+      {
+        "id": "GR1961_PS46_144STARSTAR",
+        "book": "Graduale Romanum 1961 p.144**",
+        "sourceUrl": "https://gregobase.selapa.net/sources/2/1180.png",
+        "archivedGabc": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+        "sourceCadence": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+        "syllables": [
+          "pláu",
+          "di",
+          "te",
+          "má",
+          "ni",
+          "bus"
+        ],
+        "noteGroups": [
+          "ixi",
+          "hr",
+          "h",
+          "g",
+          "hr",
+          "h."
+        ],
+        "musicallyAccentedSyllableIndices": [
+          0,
+          3
+        ],
+        "independentCompleteDoxologyWitness": false
+      }
+    ],
+    "sharedFlattenedPitchSymbols": [
+      "ixi",
+      "hr",
+      "h",
+      "g",
+      "hr",
+      "h."
+    ],
+    "sameSourceMelodicToneFamily": true,
+    "sameSourceSyllableToGroupAssignment": false,
+    "latinDoxologyMediant": {
+      "full": "Sicut erat in princípio, et nunc, et semper,",
+      "cadentialLastFourSyllables": [
+        "nunc",
+        "et",
+        "sem",
+        "per"
+      ],
+      "naturalCadentialAccents": [
+        "nunc",
+        "sem"
+      ],
+      "indicesInFour": [
+        0,
+        2
+      ],
+      "draftLastFourUnderlay": "nunc,(ixi hr) et(h) sem(g hr)per,(h.)",
+      "noteGroups": [
+        "ixi hr",
+        "h",
+        "g hr",
+        "h."
+      ],
+      "wordPunctuationFromSourceRetained": true,
+      "musicalAccentRuling": "nunc and sem are lexically usable accented syllables with one unaccented et between, but tonic accent and comma timing require singer/editor review; evidence of cell match is not full musical acceptance."
+    },
+    "psalm23Case": {
+      "id": "PALM-R02-PS23-DOXO-L12",
+      "exactSameAccentGroupAndInterveningSyllableAllocationAsOwnPrintedExample": true,
+      "sourceFourSyllables": true,
+      "candidateFourSyllables": true,
+      "samePrintedGroupAssignment": true,
+      "sourceAuthenticFullDoxology": false,
+      "provisionalStatus": "SOURCE_CELL_PATTERNS_MATCH_MUSIC_EDITOR_REQUIRED"
+    },
+    "psalm46Case": {
+      "id": "PALM-R02-PS46-DOXO-L12",
+      "sourceSixSyllables": true,
+      "candidateFourSyllables": true,
+      "samePrintedGroupAssignment": false,
+      "usesPsalm23Grouping": true,
+      "sameFlattenedPitchSymbols": true,
+      "publishedOriginal1961DoxologyFourSyllableContractionFound": false,
+      "hasIndependent1961PalmPsalm46EditorAuthorizedMediant": false,
+      "provisionalStatus": "FOUR_SYLLABLE_CONTRACTION_NOT_SOURCE_CERTIFIED_HARD_HOLD"
+    },
+    "unresolvedTail": "Even the Psalm23 mediant group match does NOT approve its six-syllable EUOUAE/Amen cadence, nor certify punctuation, sung hollow notes, full source text or antiphon return.",
+    "reviewInstruction": "Music editor: first assess Psalm23 nunc / et / sem / per against its authenticated four-syllable exemplar, then explicitly rule on the four-syllable contraction of Psalm46's six-syllable exemplar (possibly legitimate shared two-accent Tone I grammar, but do not declare it an exact match). Independently inspect each shorter two-syllable Amen differentia, and release neither score before whole-verse musical review.",
+    "noNewGabcCreated": true,
+    "noExistingGabcModified": true,
+    "distinctApprovedDoxologyCount": 0,
+    "humanMusicalApprovals": 0,
+    "readerRuntimeChanged": false,
+    "productionEligible": false
   }
 }
