@@ -5,12 +5,13 @@ import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import vm from 'node:vm';
 
-const [vendorPath,sourcePath,candidatePath,manifestPath]=process.argv.slice(2);
-if(!vendorPath||!sourcePath||!candidatePath||!manifestPath)
-  throw new Error('Usage: node tools/research/palm23-verse2-exsurge-proof.mjs VENDOR SOURCE CANDIDATE MANIFEST');
+const [vendorPath,sourcePath,candidatePath,manifestPath,alternatePath]=process.argv.slice(2);
+if(!vendorPath||!sourcePath||!candidatePath||!manifestPath||!alternatePath)
+  throw new Error('Usage: node tools/research/palm23-verse2-exsurge-proof.mjs VENDOR SOURCE CANDIDATE MANIFEST ACCENT_ALTERNATIVE');
 const raw=readFileSync(sourcePath,'utf8');
 const candidate=readFileSync(candidatePath,'utf8');
 const manifest=JSON.parse(readFileSync(manifestPath,'utf8'));
+const alternate=readFileSync(alternatePath,'utf8');
 assert.equal(manifest.schema,'ao-palm23-v2-provisional-gabc-source-transfer-review-v1');
 assert.equal(manifest.target.psalm,23);
 assert.equal(manifest.target.liturgicalLine,2);
@@ -47,6 +48,20 @@ assert.equal(manifest.nativeRenderProof.candidateSha256,createHash('sha256').upd
 assert.equal(manifest.nativeRenderProof.sourceSha256,createHash('sha256').update(raw,'utf8').digest('hex'));
 assert.equal(manifest.release.nativePhoneDeviceAccepted,false);
 assert.equal(manifest.release.scorePublicationAllowed,false);
+assert.equal(manifest.alternativeAccentAlignment.alternativeApproved,false);
+assert.equal(manifest.alternativeAccentAlignment.originalApproved,false);
+assert.equal(manifest.alternativeAccentAlignment.file.endsWith('-ALTERNATE.gabc'),true);
+assert.ok(candidate.includes(manifest.alternativeAccentAlignment.terminalOriginal));
+assert.ok(alternate.includes(manifest.alternativeAccentAlignment.terminalAlternative));
+assert.ok(alternate.includes('fir(h)má(h)vit(gf)'),'Alternative must retain stressed má at reciting pitch');
+const scoreText=gabc=>gabc.slice(gabc.indexOf('(c4)'))
+  .replace(/\([^)]*\)/g,'').replace(/[:*]/g,'').replace(/\s+/g,' ').trim();
+const originalLatin=normalize(scoreText(candidate));
+const alternativeLatin=normalize(scoreText(alternate));
+assert.equal(originalLatin,alternativeLatin,'Changing note groups must not change Latin text');
+assert.equal(alternate.split('%%').length,2);
+assert.equal(alternate.split('*(:)').length,2);
+assert.ok(!alternate.includes('DO(f)mi(gh)'));
 
 const bundle=readFileSync(vendorPath,'utf8');
 assert.ok(bundle.length>200000,'Must use existing pinned local Exsurge bundle');
@@ -80,6 +95,7 @@ async function inspect(gabc,label){
 }
 const originalResult=await inspect(originalForParsing,'original_Psalm23_first_verse_and_cue');
 const candidateResult=await inspect(candidateForParsing,'provisional_Psalm23_verse2_reconstructed_not_approved');
+const alternativeResult=await inspect(alternate,'alternate_accent_aligned_v2_not_musically_approved');
 const report={
   schema:'ao-palm23-v2-real-exsurge-proof-v1',
   status:'NATIVE_EXSURGE_SVG_RENDER_PROOF_ONLY_NOT_MUSICAL_APPROVAL',
@@ -87,11 +103,12 @@ const report={
   engine:'existing Schola pinned Exsurge bundle',
   sourceOriginalSHA256:createHash('sha256').update(raw,'utf8').digest('hex'),
   candidateSHA256:createHash('sha256').update(candidate,'utf8').digest('hex'),
+  alternativeSHA256:createHash('sha256').update(alternate,'utf8').digest('hex'),
   musicalUnderlayCertified:false,
   editorialAccentCorrectnessCertified:false,
   sourceOwnerApproved:false,
   scholaOwnerApproved:false,
   productionScoreAssignments:0,
-  originalResult,candidateResult
+  originalResult,candidateResult,alternativeResult
 };
 console.log('AO_PALM23_V2_RENDER_RESULT:'+JSON.stringify(report));
