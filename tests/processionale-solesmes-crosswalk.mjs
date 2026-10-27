@@ -1819,3 +1819,66 @@ test('seventeen full GABC mediants retain traceable accent cells and reject unve
  }
 });
 
+
+
+test('Palm two-accent underlay rule detects 5 and 3 syllable spacing defects',()=>{
+ const master=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const nine=readJSON('data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json');
+ const four=readJSON('data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json');
+ const two=readJSON('data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json');
+ const audit=master.batch37StrictTwoAccentSpacingCheck;
+ assert.equal(audit.batch,37);
+ assert.equal(audit.cases.length,17);
+ assert.deepEqual(audit.countsByInterveningSyllables,{'0':1,'1':6,'2':8,'3':1,'5':1});
+ assert.deepEqual(audit.failingTwoAccentRuleIds,['PALM-R02-PS46-L08','PALM-R02-PS46-L09']);
+ assert.equal(audit.positionalSourceDefects.length,4);
+ assert.equal(audit.positionalSourceDefects.every(x=>x.canReleaseWithoutRewrite===false),true);
+ assert.equal(audit.humanApprovedCount,0);
+ assert.equal(audit.productionScoreCount,0);
+ assert.equal(audit.rejectAsSourceAuthenticUntilEdited,true);
+ const scores=new Map([
+  ...nine.scoreCases.map(x=>[x.id,x.gabcResearchOnly]),
+  ...master.batch33RemainingEightReview.twoPsalm23FlexGabcCandidates.candidates.map(x=>[x.id,x.gabcResearchOnly]),
+  ...four.cases.map(x=>[x.id,x.gabcResearchOnly]),
+  ...two.fullHypotheticalGabcCases.map(x=>[x.id,x.gabcHypothesisOnly])
+ ]);
+ assert.equal(scores.size,17);
+ let total=0,passes=0,large=0;
+ for(const row of audit.cases){
+  const source=scores.get(row.id);assert.ok(source,row.id);
+  let medial=source.slice(source.indexOf('(c4)')+4).split('*(:)')[0];
+  if(medial.includes('+(h)'))medial=medial.split('+(h)').at(-1);
+  const syllables=[...medial.matchAll(/([\p{L}]+[.,;!?]?)\(([^)]+)\)/gu)]
+   .map(x=>({syll:x[1],group:x[2]}));
+  const first=syllables.findIndex(x=>x.group.startsWith('ixi'));
+  const last=syllables.findIndex(x=>x.group==='g'||x.group==='g hr');
+  assert.ok(first>=0&&last>first,row.id);
+  const span=last-first-1;total++;
+  assert.equal(span,row.interveningUnaccentedSyllableCount,row.id);
+  assert.equal(span<=2,row.satisfiesMaxTwoBetweenUnderComparativeRule,row.id);
+  assert.equal(row.sourceWordAccents.first.syllable,syllables[first].syll,row.id);
+  assert.equal(row.sourceWordAccents.second.syllable,syllables[last].syll,row.id);
+  assert.equal(row.sourceWordAccents.first.noteGroup,syllables[first].group,row.id);
+  assert.equal(row.sourceWordAccents.second.noteGroup,syllables[last].group,row.id);
+  assert.equal(row.GregorianEditorSignedOff,false);
+  assert.equal(row.mayCopyIntoProduction,false);
+  if(span>2){large++;assert.ok(row.flagCodes.includes('TWO_ACCENT_MAX_TWO_UNACCENTED_RULE_VIOLATED'));}
+  else passes++;
+  const ledger=master.batch35MusicalEditorialAcceptance.statusPerCase.find(x=>x.id===row.id);
+  assert.equal(ledger.batch37InterveningUnaccentedSyllables,span,row.id);
+  assert.deepEqual(ledger.batch37SourceRuleFlags,row.flagCodes,row.id);
+  assert.equal(ledger.readyToMerge,false);
+ }
+ assert.deepEqual([total,passes,large],[17,15,2]);
+ const stress=audit.cases.find(x=>x.id==='PALM-R02-PS46-L05');
+ assert.equal(stress.interveningUnaccentedSyllableCount,1);
+ assert.ok(stress.flagCodes.includes('NONLEXICAL_ARTIFICIAL_ACCENT_NOT_YET_GROUNDED_IN_1961_PALM'));
+ assert.equal(master.batch35MusicalEditorialAcceptance.statusPerCase.find(x=>x.id===stress.id)
+  .batch37RequiresMusicalRewriteBeforePromotion,true);
+ const odd=audit.cases.find(x=>x.id==='PALM-R02-PS23-L10');
+ assert.equal(odd.interveningUnaccentedSyllableCount,0);
+ assert.ok(odd.flagCodes.includes('TWO_ADJACENT_ACCENTS_AND_MONOSYLLABIC_REX_REQUIRE_RULE_CHOICE'));
+ const reader=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
+ assert.equal(reader.includes('batch37StrictTwoAccentSpacingCheck'),false);
+});
+
