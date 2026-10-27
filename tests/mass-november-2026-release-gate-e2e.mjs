@@ -284,6 +284,22 @@ try{
        }
        if(massNumber!==3)await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
      }
+     // Ritus XIV is a separate, explicitly observed SAME-PRIEST
+     // circumstance; the choice of Mass II alone proves none of it.
+     await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
+     await container.locator('[data-ao-all-souls-mass][value="2"]').check();
+     await container.locator('[data-ao-all-souls-succession="previous"]').selectOption("IMMEDIATE");
+     await container.locator('[data-ao-all-souls-succession="next"]').selectOption("INTERRUPTED_LT3");
+     out.succession=await page.evaluate(async()=>{
+       const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
+       const decision=prepared?.session?.resolvedMass?.provenance?.allSoulsSuccession;
+       const {ritusXIVRubricsForCue}=await import("/src/mass/1962-all-souls-consecutive-rites.js");
+       return {decision,
+         offertory:ritusXIVRubricsForCue(decision,"AO.SM.C0112","fr"),
+         purification:ritusXIVRubricsForCue(decision,"AO.SM.C0247","en"),
+         nextPurification:ritusXIVRubricsForCue(decision,"AO.SM.C0248","en"),
+       };
+     });
    }catch(error){out.error=String(error?.message??error)}
    return out;
  })();
@@ -300,6 +316,13 @@ try{
        "NOV02_NATIVE_ALTERNATE_SOURCE_PROOF_MISSING:"+row.massNumber);
  }
  check(massUi.cases.length===9,"NOV02_NATIVE_NINE_FORMULARY_MODE_COMBINATIONS_INCOMPLETE");
+ check(massUi.succession?.decision?.contextualStatus==="EXPLICIT_CIRCUMSTANCES" &&
+   massUi.succession?.decision?.massNumber===2,
+   "NOV02_RITUS_XIV_PREPARED_PROVENANCE_MISSING");
+ check(massUi.succession?.offertory?.length===1 &&
+       massUi.succession?.purification?.length===1 &&
+       massUi.succession?.nextPurification?.length===0,
+   "NOV02_RITUS_XIV_EXPLICIT_CONDITIONAL_CUES_NOT_MATCHED");
  const c=evaluated.ceremonial;
  check(c.req.omittedPeace.includes("AO.SM.C0225"),"REQUIEM_PEACE_PRAYER_NOT_OMITTED");
  check(c.req.omittedFinalBlessing.includes("AO.SM.C0263"),"REQUIEM_FINAL_BLESSING_NOT_OMITTED");
