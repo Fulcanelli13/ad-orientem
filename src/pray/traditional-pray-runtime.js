@@ -761,7 +761,15 @@ function handleClick(e){
   }
   if(b.hasAttribute("data-tp381-timer-toggle")){
     if(S.route!=="pray.morning_evening")return;
-    S.dailyTimerOpen=!S.dailyTimerOpen;return render();
+    S.dailyTimerOpen=!S.dailyTimerOpen;
+    // Timer disclosure lives after the prayer: replace only this little
+    // panel. A full render() would reset card scroll/focus to the heading.
+    const shell=mount()?.querySelector(".aoDailyClockShell");
+    if(!shell)return render();
+    shell.outerHTML=dailyTimerControls();
+    syncDailyTimerView();
+    mount()?.querySelector("[data-tp381-timer-toggle]")?.focus?.({preventScroll:true});
+    return;
   }
   if(b.hasAttribute("data-tp381-timer-control")){
     if(S.route!=="pray.morning_evening")return;
