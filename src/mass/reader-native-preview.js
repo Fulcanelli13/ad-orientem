@@ -13,6 +13,7 @@ import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reade
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
 import { buildScholaMusicItinerary } from "./reader-schola-event-timeline.js";
+import {projectNativeRiteMusicItinerary} from "./reader-schola-special-rite-itinerary.js";
 import {readScholaLocalProgramme, updateScholaLocalProgramme, applyScholaLocalProgramme} from "./reader-schola-local-programme.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
 import { GLORIA_CREDO_FAITHFUL_GESTURES, isGloriaCredoGestureSourceCue, resolveFaithfulGestureForCue } from "./faithful-gesture-cues.js";
@@ -1024,6 +1025,10 @@ export async function mountNativeReaderPreview({
       root:host,
       iconResolver,
       allowPresentationModeSwitch:false,
+      specialRiteMusicItinerary:()=>projectNativeRiteMusicItinerary({
+        registry:ready.riteMusicRegistry,riteId:"GOOD_FRIDAY",
+        controller,sourcePayload:ready.riteMusicSource,
+      }),
       onPrevious:()=>moveGoodFriday("previous"),
       onNext:()=>moveGoodFriday("next"),
     });
@@ -1212,6 +1217,11 @@ export async function mountNativeReaderPreview({
       root:host,
       iconResolver,
       allowPresentationModeSwitch:false,
+      specialRiteMusicItinerary:()=>projectNativeRiteMusicItinerary({
+        registry:ready.riteMusicRegistry,riteId:"EASTER_VIGIL",
+        controller,sourcePayload:ready.riteMusicSource,
+        condition:ready.riteMusicCondition,
+      }),
       onPrevious:()=>moveEasterVigil("previous"),
       onNext:()=>moveEasterVigil("next"),
     });
@@ -2837,6 +2847,29 @@ export async function mountNativeReaderPreview({
     sections:sectionItems(),
     // Resolve against the CURRENT sourced presentation model after mode or
     // local-custom changes; the timeline never drives chant advancement.
+    // The current native rite owns its stage order and branch condition.
+    // This ONLY predicts music and never mutates those controllers.
+    specialRiteMusicItinerary:()=>{
+      const active=inAsperges?["ASPERGES",ready.aspergesController,
+        ready.riteMusicSources?.ASPERGES,
+        ready.aspergesController?.project?.()?.formulaState?.formula]:
+        inPalm?["PALM",ready.palmController,ready.riteMusicSources?.PALM,null]:
+        inCandlemas?["CANDLEMAS",ready.candlemasController,ready.riteMusicSources?.CANDLEMAS,null]:
+        inRogations?["ROGATIONS",ready.rogationsController,ready.riteMusicSources?.ROGATIONS,null]:
+        inRequiemAbsolution?["REQUIEM_ABSOLUTION",ready.requiemAbsolutionController,
+          ready.riteMusicSources?.REQUIEM_ABSOLUTION,
+          ready.prepared?.session?.resolvedMass?.provenance?.requiemAbsolution?.burialProcession===true
+            ?"OPTIONAL_BURIAL_FOLLOWING_ACTION":null]:
+        inCorpusChristi?["CORPUS_CHRISTI",ready.corpusChristiController,
+          ready.riteMusicSources?.CORPUS_CHRISTI,null]:
+        inHolyThursdayPost?["HOLY_THURSDAY_POST",ready.holyThursdayPostController,
+          ready.riteMusicSources?.HOLY_THURSDAY_POST,null]:
+        null;
+      return active?projectNativeRiteMusicItinerary({
+        registry:ready.riteMusicRegistry,riteId:active[0],
+        controller:active[1],sourcePayload:active[2],condition:active[3],
+      }):null;
+    },
     scholaLocalProgramme:()=>scholaLocalProgramme,
     onScholaLocalProgrammeChange:change=>{
       scholaLocalProgramme=updateScholaLocalProgramme(scholaLocalProgramme,change,customStorage);

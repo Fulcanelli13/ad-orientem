@@ -562,6 +562,32 @@ const SHELL_STYLE = `
 .ao-schola-dock[data-upcoming-only="true"] .ao-schola-meta,
 .ao-schola-dock[data-upcoming-only="true"] .ao-schola-toggle{display:none!important}
 .ao-schola-dock[data-upcoming-only="true"] .ao-schola-upcoming{max-width:75%;font-size:10px}
+/* Identical bottom-dock owner, but distinct liturgical event source.
+ * This is a static stage forecast, never the independent Schola ticker. */
+.ao-schola-dock[data-special-only="true"]{
+  display:block!important;height:56px!important;min-height:56px!important;
+  max-height:56px!important;padding:9px 12px!important;
+}
+.ao-schola-dock[data-special-only="true"] .ao-schola-title{
+  display:flex;align-items:center;gap:8px;min-width:0;white-space:nowrap;
+}
+.ao-schola-dock[data-special-only="true"] .ao-schola-main,
+.ao-schola-dock[data-special-only="true"] .ao-schola-meta,
+.ao-schola-dock[data-special-only="true"] .ao-schola-toggle,
+.ao-schola-dock[data-special-only="true"] .ao-schola-programme,
+.ao-schola-dock[data-special-only="true"] .ao-schola-page,
+.ao-schola-dock[data-special-only="true"] .ao-schola-status{
+ display:none!important
+}
+.ao-schola-special-current,.ao-schola-special-next{min-width:0;overflow:hidden;
+ text-overflow:ellipsis;white-space:nowrap;font:600 10px/1.2 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-schola-special-current{color:var(--ao-text)}
+.ao-schola-special-next{color:var(--ao-mass-accent-text);opacity:.83}
+.ao-schola-special-current[hidden],.ao-schola-special-next[hidden]{display:none!important}
+@media(max-width:760px){
+ .ao-schola-special-current,.ao-schola-special-next{font-size:9px;max-width:36vw}
+ .ao-schola-dock[data-special-only="true"] .ao-schola-title{gap:5px}
+}
 
 @media(max-width:760px){.ao-schola-upcoming{max-width:95px;font-size:8px}}
 .ao-schola-main{
@@ -2076,7 +2102,7 @@ export function buildReaderShellMarkup(prepared = {}) {
 
   <div class="ao-schola-dock" data-channel="schola" data-active="false" data-collapsed="false" data-show-translation="false">
     <span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span>
-    <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-status" data-role="schola-status" hidden></span><span class="ao-schola-page" data-role="schola-page"></span><span class="ao-schola-upcoming" data-role="schola-upcoming" hidden></span></div>
+    <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-status" data-role="schola-status" hidden></span><span class="ao-schola-page" data-role="schola-page"></span><span class="ao-schola-upcoming" data-role="schola-upcoming" hidden></span><span class="ao-schola-special-current" data-role="schola-special-current" hidden></span><span class="ao-schola-special-next" data-role="schola-special-next" hidden></span></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
     <details class="ao-schola-programme" data-schola-local-panel><summary aria-label="Edit your local Schola music plan">MUSIC PLAN</summary><div class="ao-schola-programme-fields"><p>Local programme only · not an observation or an approved score</p><label>Parish / chapel <input type="text" maxlength="80" data-schola-local-parish placeholder="Optional local name"></label><label>Sanctus and Benedictus <select data-schola-local-sanctus><option value="UNSPECIFIED">Not specified</option><option value="GREGORIAN">Gregorian · together</option><option value="POLYPHONIC">Polyphonic · Benedictus after Chalice</option></select></label><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="ENTRANCE_ORGAN_OPTION"><span>Entrance organ</span></label><small class="ao-schola-organ-rule" data-schola-organ-rule="ENTRANCE_ORGAN_OPTION" aria-live="polite">Permission not verified</small><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="OFFERTORY_LOCAL_MOTET"><span>Offertory motet</span></label><input type="text" maxlength="80" data-schola-local-title="OFFERTORY_LOCAL_MOTET" placeholder="Optional title (unverified)" aria-label="Offertory motet title"><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="OFFERTORY_ORGAN_OPTION"><span>Offertory organ</span></label><small class="ao-schola-organ-rule" data-schola-organ-rule="OFFERTORY_ORGAN_OPTION" aria-live="polite">Permission not verified</small><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="COMMUNION_LOCAL_MOTET"><span>Communion motet</span></label><input type="text" maxlength="80" data-schola-local-title="COMMUNION_LOCAL_MOTET" placeholder="Optional title (unverified)" aria-label="Communion motet title"><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="RECESSIONAL_ORGAN_OPTION"><span>Recessional organ</span></label><small class="ao-schola-organ-rule" data-schola-organ-rule="RECESSIONAL_ORGAN_OPTION" aria-live="polite">Permission not verified</small><small>Solo organ use requires the verified 1958 permission rules; planning music never overrides them.</small></div></details>
     <div class="ao-schola-main" data-schola-translate title="Tap to translate" role="button" tabindex="-1" aria-label="Translate Schola text in place" aria-pressed="false" aria-disabled="true"><span data-role="schola" aria-live="polite">—</span></div>
@@ -2381,6 +2407,7 @@ export function createReaderDomAdapter({
   onScholaRelease = null,
   sections = [],
   scholaMusicItinerary = null,
+  specialRiteMusicItinerary = null,
   scholaLocalProgramme = null,
   onScholaLocalProgrammeChange = null,
   onSectionSelect = null,
@@ -2833,6 +2860,35 @@ export function createReaderDomAdapter({
       if(dock.dataset.upcomingOnly==="true" && title)title.textContent="COMING UP";
       syncScholaChrome();
     }
+    const special=typeof specialRiteMusicItinerary==="function"
+      ?specialRiteMusicItinerary():specialRiteMusicItinerary;
+    // A rite boundary is authoritative. Never keep the Palm/Asperges
+    // forecast once the native controller hands back to ordinary Mass.
+    const specialActive=Boolean(!schola && special?.supported===true &&
+      special.stageId===current?.id && special.silentStage!==true && mode==="LIVE");
+    const riteCurrent=specialActive?special.current??[]:[];
+    const riteNext=specialActive?special.upcoming:null;
+    const currentNode=root.querySelector('[data-role="schola-special-current"]');
+    const nextNode=root.querySelector('[data-role="schola-special-next"]');
+    if(currentNode){
+      currentNode.hidden=!riteCurrent.length;
+      currentNode.textContent=riteCurrent.map(e=>e.label).join(" · ");
+      currentNode.title=riteCurrent.length?"Expected from "+special.riteId+
+        " source; singing has not been observed.":"";
+    }
+    if(nextNode){
+      nextNode.hidden=!riteNext;
+      nextNode.textContent=riteNext?"NEXT · "+riteNext.label:"";
+      nextNode.title=riteNext?"Later in the rite; not heard or timed.":"";
+    }
+    dock.dataset.specialOnly=String(Boolean(specialActive &&
+      (riteCurrent.length||riteNext)));
+    if(dock.dataset.specialOnly==="true"){
+      if(title)title.textContent=riteCurrent.length?"EXPECTED · RITE MUSIC":"COMING UP";
+      if(upcomingNode)upcomingNode.hidden=true;
+      dock.dataset.upcomingOnly="false";
+    }
+    syncScholaChrome();
     dock.dataset.musicStatus=schola?.musicStatus??"NOT_ACTIVE";
     const page=root.querySelector('[data-role="schola-page"]');
     if(page)page.textContent=schola?.total ? String((Number(schola.index)||0)+1)+" / "+String(schola.total) : "";
@@ -2870,13 +2926,15 @@ export function createReaderDomAdapter({
     const scholaActive=dock.dataset.active==="true";
     const scholaRelevant=Boolean(textValue(current?.schola)) && current?.scholaShared!==true;
     const forthcoming=dock.dataset.upcomingOnly==="true";
-    const reserve=(scholaActive||scholaRelevant||scholaCollapsed||forthcoming)
-      ? (scholaCollapsed||forthcoming ? 44 :
+    const special=dock.dataset.specialOnly==="true";
+    const reserve=(scholaActive||scholaRelevant||scholaCollapsed||forthcoming||special)
+      ? (special?56:scholaCollapsed||forthcoming ? 44 :
           dock.dataset.shared==="true" && !scholaManuallyResized ? 132 : scholaHeight) : 0;
     if(shell){
       shell.dataset.scholaVisible=String(scholaActive);
       shell.dataset.scholaRelevant=String(scholaRelevant);
       shell.dataset.scholaUpcoming=String(forthcoming);
+      shell.dataset.scholaSpecial=String(special);
       shell.style.setProperty?.("--ao-schola-reserve",reserve+"px");
     }
     const toggle=dock.querySelector?.("[data-schola-toggle]");
