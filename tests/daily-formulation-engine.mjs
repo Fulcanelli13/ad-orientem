@@ -9,6 +9,7 @@ import {
 } from "../src/pray/traditional-pray-data.js";
 import {createDailySessionTimer,sessionClockLabel} from "../src/pray/daily-session-timer.js";
 import {createDailyFormulationPreferenceStore} from "../src/pray/daily-formulation-preferences.js";
+import {APPROVED_DAILY_FORMULATION_MANIFEST_V1} from "../src/pray/daily-approved-formulations.js";
 
 const witness=(id,language,text,options={})=>({
   id,language,text,kind:"historical",releaseStatus:"cleared",
@@ -200,7 +201,19 @@ assert.equal(MORNING_PRAYER_SEQUENCE_V381.length,11,"Canonical morning reader is
 assert.equal(EVENING_PRAYER_SEQUENCE_V381.length,13,"Canonical evening reader is unchanged");
 const runtime=readFileSync("src/pray/traditional-pray-runtime.js","utf8");
 assert.ok(runtime.includes("guidedDailyCards(S.daypart)"),"Existing guided daily reader must remain the source owner");
-assert.ok(!runtime.includes("daily-formulation-engine.js"),"Unapproved historical content must not enter the public reader by accident");
+assert.equal(Object.keys(APPROVED_DAILY_FORMULATION_MANIFEST_V1.witnesses).length,0,
+ "No historical texts are cleared for public reader in this draft");
+assert.equal(Object.keys(APPROVED_DAILY_FORMULATION_MANIFEST_V1.profiles).length,0,
+ "No historical profile is approved in this draft");
+assert.ok(runtime.includes("dailyReleasedFormOptions(prayerId,S.daypart,lang)"),
+ "Future formulation tabs must be routed through explicit source gate");
+assert.ok(runtime.includes('data-tp381-daily-form'),
+ "Release-gated choice buttons must be wired");
+assert.ok(runtime.includes("dailyFormPreferenceStore()"),
+ "Only validated local formulation IDs should be persisted");
+const dailyMarkup=runtime.slice(runtime.indexOf("function renderMorningEvening()"),runtime.indexOf("const HYMN_KEYS"));
+assert.ok(dailyMarkup.indexOf("renderDailyGuided(rows)")<dailyMarkup.indexOf("dailyTimerControls()"),
+ "Prayer must remain visually before optional timer controls on phones");
 assert.ok(runtime.includes('data-tp381-timer-toggle'),"Reader should expose the opt-in timer disclosure");
 assert.ok(runtime.includes('data-tp381-timer-control'),"Reader should wire timer controls");
 assert.ok(runtime.includes('data-tp381-timer-target'),"Reader should wire gentle target choices");
@@ -220,4 +233,4 @@ assert.ok(timerStyle.includes(".aoDailyClockPanel"),"Session timer controls requ
 
 assert.ok(!runtime.includes('compileDailyFormulation('),"Unapproved historical text compiler must not alter the live prayer reader");
 
-console.log("PASS daily formulation engine: source-language protection, approvals, composite dedup, alternatives, nightly complementary prayers, 11/13 baseline and inert timer");
+console.log("PASS daily formulation engine: source gate, preference IDs, no released texts, nightly combinations, 11/13 baseline, opt-in timer");
