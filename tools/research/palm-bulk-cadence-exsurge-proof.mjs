@@ -4,13 +4,14 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import {createHash} from 'node:crypto';
-const [vendorPath,registryPath,ps23Path,ps46Path,medialPath]=process.argv.slice(2);
-if(!vendorPath||!registryPath||!ps23Path||!ps46Path||!medialPath)
- throw new Error('Usage: node palm-bulk-cadence-exsurge-proof.mjs VENDOR REGISTRY SOURCE23 SOURCE46 MEDIAL_FLEX_REGISTRY');
+const [vendorPath,registryPath,ps23Path,ps46Path,medialPath,lexicalAuditPath]=process.argv.slice(2);
+if(!vendorPath||!registryPath||!ps23Path||!ps46Path||!medialPath||!lexicalAuditPath)
+ throw new Error('Usage: node palm-bulk-cadence-exsurge-proof.mjs VENDOR REGISTRY SOURCE23 SOURCE46 MEDIAL_FLEX_REGISTRY ACCENT_AUDIT');
 const bundle=fs.readFileSync(vendorPath,'utf8');
 const v=JSON.parse(fs.readFileSync(registryPath,'utf8'));
 const raw23=fs.readFileSync(ps23Path,'utf8'),raw46=fs.readFileSync(ps46Path,'utf8');
 const medial=JSON.parse(fs.readFileSync(medialPath,'utf8'));
+const audit=JSON.parse(fs.readFileSync(lexicalAuditPath,'utf8'));
 const sha=s=>createHash('sha256').update(s).digest('hex');
 assert.ok(bundle.length>200000,'Existing pinned local Exsurge required');
 assert.equal(sha(raw23),v.evidence.ps23.originalSha256);
@@ -75,6 +76,32 @@ for(const row of [...medial.medials,...medial.flex]){
 }
 assert.equal(medialViews.length,19);
 assert.equal(v.cases.filter(x=>!x.gabcEndingExcerpt).length,2);
+assert.equal(audit.counts.obviousLexicalMismatch,13);
+assert.equal(audit.batch31CorrectiveUnderlayReview.proposals.length,11);
+assert.equal(audit.batch31CorrectiveUnderlayReview.excluded.length,6);
+const correctedViews=[];
+for(const proposal of audit.batch31CorrectiveUnderlayReview.proposals){
+ assert.equal(proposal.automaticPublicationAllowed,false);
+ assert.equal(proposal.musicalEditorApproved,false);
+ assert.equal(proposal.sourceToneVariantIndependentlyConfirmed,false);
+ assert.equal(proposal.proposedGabcEndingOnly.split('%%').length,2);
+ const ctx=new api.ChantContext();
+ const mapped=api.Gabc.createMappingsFromSource(ctx,proposal.proposedGabcEndingOnly);
+ assert.ok(mapped.length>=2,proposal.id+' lacks notation');
+ const score=new api.ChantScore(ctx,mapped,true);
+ score.performLayout(ctx);
+ const views=[];
+ for(const width of [260,420,800]){
+  await new Promise((resolve,reject)=>{try{score.layoutChantLines(ctx,width,resolve)}catch(error){reject(error)}});
+  const svg=score.createSvgTree(ctx);
+  assert.equal(svg.name,'svg',proposal.id);
+  assert.ok(svg.children.length>0&&score.lines.length>0,proposal.id+' empty corrected SVG');
+  views.push({width,systems:score.lines.length,svgChildren:svg.children.length});
+ }
+ assert.ok(views[0].systems>=views[2].systems,proposal.id+' layout regression');
+ correctedViews.push({id:proposal.id,parsedMappings:mapped.length,views});
+}
+assert.equal(correctedViews.length,11);
 console.log('AO_PALM_15_CADENCE_RENDER_RESULT:'+JSON.stringify({
  schema:'ao-palm-bulk-source-cadence-real-exsurge-v1',
  conclusion:'15_PARTIAL_CADENCE_SNIPPETS_SVG_RENDERED_NOT_FULL_PSALM_SCORES_OR_MUSICALLY_APPROVED',
@@ -82,6 +109,7 @@ console.log('AO_PALM_15_CADENCE_RENDER_RESULT:'+JSON.stringify({
  sourceApproval:false,fullVerseGabcScoresCreated:0,
  printedPsalm46OpeningTextStillQuarantined:true,editoriallyAccepted:0,runtimeScoreAssignments:0,
  snippetCount:results.length,medialAndFlexSnippetCount:medialViews.length,
- totalViewportChecks:3*(results.length+medialViews.length),viewportsTested:[260,420,800],
- individualResults:results,medialAndFlexResults:medialViews
+ totalViewportChecks:3*(results.length+medialViews.length+correctedViews.length),
+ repairedMedialCount:correctedViews.length,viewportsTested:[260,420,800],
+ individualResults:results,medialAndFlexResults:medialViews,correctedMedialResults:correctedViews
 }));
