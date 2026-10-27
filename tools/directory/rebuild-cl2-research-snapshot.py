@@ -19,6 +19,193 @@ EXPECTED={
 def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
+
+
+def install_unified_physical_ministry_and_group_defaults(db, rows, manifest, root):
+    """Extend the SAME source-of-truth SQLite: physical sites → source ministries → Mass rows.
+    
+    Institute-wide 1962/Roman norms apply once to every exact source linked to
+    that institute. They do NOT create a claim about a host building, una cum,
+    canonical standing, or any particular celebration.
+    """
+    norms=json.loads((root/'institution-norms.v1.json').read_text(encoding='utf-8'))
+    assert norms['schema']=='AO_CL2_UNIFIED_INSTITUTION_NORMAL_FORMS_V1'
+    institutes=norms['institutions']
+    assert {i['id'] for i in institutes}=={'FSSP','ICKSP','IBP','SSPX'}
+    assert all(len(i['default_assertions'])==2 for i in institutes)
+    db.executescript("""
+CREATE TABLE unified_physical_site (
+  anchor_id TEXT PRIMARY KEY, country TEXT NOT NULL, name TEXT NOT NULL,
+  physical_description TEXT NOT NULL, history_site_count INTEGER NOT NULL,
+  release_state TEXT NOT NULL CHECK(release_state='RESEARCH_ONLY_NOT_PUBLIC')
+);
+CREATE TABLE institute_norm (
+  institute_id TEXT NOT NULL, field TEXT NOT NULL, value TEXT NOT NULL,
+  subject_scope TEXT NOT NULL CHECK(subject_scope='MINISTRY'),
+  evidence_url TEXT NOT NULL, evidence_kind TEXT NOT NULL,
+  evidence_basis TEXT NOT NULL,
+  PRIMARY KEY(institute_id,field)
+);
+CREATE TABLE source_ministry (
+  source_id TEXT PRIMARY KEY, recorded_group_id TEXT, physical_anchor_id TEXT,
+  institute_id TEXT, institute_label_grade TEXT NOT NULL,
+  original_join_state TEXT NOT NULL,
+  inherited_rite TEXT NOT NULL DEFAULT 'UNKNOWN',
+  inherited_missal TEXT NOT NULL DEFAULT 'UNKNOWN',
+  inherited_scope TEXT NOT NULL,
+  approval_state TEXT NOT NULL CHECK(approval_state='RESEARCH_ONLY_NOT_PUBLIC'),
+  FOREIGN KEY(physical_anchor_id) REFERENCES unified_physical_site(anchor_id),
+  FOREIGN KEY(source_id) REFERENCES classification_source(source_id)
+);
+CREATE TABLE timetable_ministry_link (
+  historical_row INTEGER PRIMARY KEY,source_id TEXT,group_id TEXT,
+  physical_anchor_id TEXT,ministry_source_id TEXT,
+  join_state TEXT NOT NULL,current_schedule_approved INTEGER NOT NULL DEFAULT 0
+    CHECK(current_schedule_approved=0),
+  FOREIGN KEY(historical_row) REFERENCES mass_time(row_no),
+  FOREIGN KEY(physical_anchor_id) REFERENCES unified_physical_site(anchor_id),
+  FOREIGN KEY(ministry_source_id) REFERENCES source_ministry(source_id)
+);
+CREATE TABLE classification_exception (
+  subject_type TEXT NOT NULL CHECK(subject_type IN ('MINISTRY','CELEBRATION')),
+  subject_key TEXT NOT NULL,
+  field TEXT NOT NULL CHECK(field IN ('liturgical_use','missal_edition')),
+  value TEXT NOT NULL,evidence_url TEXT NOT NULL,recorded_at TEXT NOT NULL,
+  approved INTEGER NOT NULL DEFAULT 0 CHECK(approved IN (0,1)),
+  PRIMARY KEY(subject_type,subject_key,field,recorded_at)
+);
+CREATE VIEW effective_source_liturgy AS
+SELECT sm.source_id,sm.physical_anchor_id,sm.institute_id,
+       COALESCE((SELECT e.value FROM classification_exception e
+         WHERE e.subject_type='MINISTRY' AND e.subject_key=sm.source_id
+           AND e.field='liturgical_use' AND e.approved=1
+         ORDER BY e.recorded_at DESC LIMIT 1),sm.inherited_rite) AS liturgical_use,
+       COALESCE((SELECT e.value FROM classification_exception e
+         WHERE e.subject_type='MINISTRY' AND e.subject_key=sm.source_id
+           AND e.field='missal_edition' AND e.approved=1
+         ORDER BY e.recorded_at DESC LIMIT 1),sm.inherited_missal) AS missal_edition,
+       sm.inherited_scope,sm.institute_label_grade,sm.original_join_state,sm.approval_state
+  FROM source_ministry sm;
+CREATE VIEW effective_mass_liturgy AS
+SELECT t.historical_row,t.physical_anchor_id,t.ministry_source_id,t.join_state,
+       COALESCE((SELECT e.value FROM classification_exception e
+         WHERE e.subject_type='CELEBRATION' AND e.subject_key=CAST(t.historical_row AS TEXT)
+           AND e.field='liturgical_use' AND e.approved=1
+         ORDER BY e.recorded_at DESC LIMIT 1),
+         s.liturgical_use,'UNKNOWN') AS liturgical_use,
+       COALESCE((SELECT e.value FROM classification_exception e
+         WHERE e.subject_type='CELEBRATION' AND e.subject_key=CAST(t.historical_row AS TEXT)
+           AND e.field='missal_edition' AND e.approved=1
+         ORDER BY e.recorded_at DESC LIMIT 1),
+         s.missal_edition,'UNKNOWN') AS missal_edition,
+       CASE WHEN t.ministry_source_id IS NULL THEN 'UNKNOWN'
+            ELSE 'INHERITED_INSTITUTE_NORM_SOURCE_LINKED_NOT_MASS_VERIFIED'
+       END AS edition_provenance,
+       t.current_schedule_approved
+ FROM timetable_ministry_link t
+ LEFT JOIN effective_source_liturgy s ON s.source_id=t.ministry_source_id;
+CREATE INDEX idx_ministry_institute ON source_ministry(institute_id);
+CREATE INDEX idx_ministry_anchor ON source_ministry(physical_anchor_id);
+CREATE INDEX idx_mass_anchor ON timetable_ministry_link(physical_anchor_id);
+""")
+    grouped={}
+    by_site={s['group_id']:s for s in rows['site']}
+    for s in rows['site']:
+        anchor=s['effective_anchor_id']
+        grouped.setdefault(anchor,[]).append(s)
+    assert len(grouped)==2579
+    for anchor, members in sorted(grouped.items()):
+        lead=next((x for x in members if x['group_id']==anchor),members[0])
+        canonical=lead['canonical']
+        db.execute('INSERT INTO unified_physical_site VALUES (?,?,?,?,?,?)',
+                   (anchor,canonical[1],canonical[2],canonical[3],
+                    len(members),'RESEARCH_ONLY_NOT_PUBLIC'))
+    by_institute={i['id']:i for i in institutes}
+    for i in institutes:
+        for rule in i['default_assertions']:
+            assert rule['field'] in ('liturgical_use','missal_edition')
+            assert rule['subject_scope']=='MINISTRY' and rule['evidence_url'].startswith('https://')
+            db.execute('INSERT INTO institute_norm VALUES (?,?,?,?,?,?,?)',
+                       (i['id'],rule['field'],rule['value'],rule['subject_scope'],
+                        rule['evidence_url'],rule['evidence_kind'],rule['basis']))
+    cols=manifest['classification_columns']
+    label_idx=cols.index('organization_hint')
+    grade_idx=cols.index('organization_hint_status')
+    sid_idx=cols.index('source_id')
+    group_idx=cols.index('historical_group_id')
+    classified={r['source_id']:r['classification_source_record']
+                for r in rows['venue'] if r['classification_source_record']}
+    classified.update({r['source_id']:r['classification_source_record']
+                       for r in rows['classification_orphan']})
+    venues={r['source_id']:r for r in rows['venue']}
+    assert len(classified)==2715 and len(venues)==2687
+    labels_count=0
+    inherited_count=0
+    exact_links=0
+    for sid in sorted(set(classified)|set(venues)):
+        cls=classified.get(sid)
+        venue=venues.get(sid)
+        normlabel=(str(cls[label_idx]).strip() if cls else '')
+        grade=(str(cls[grade_idx]).strip() if cls else 'UNKNOWN')
+        norm_id=normlabel if normlabel in by_institute and grade=='SOURCE_LABEL_ONLY' else None
+        if grade=='SOURCE_LABEL_ONLY': labels_count+=1
+        state=('NO_PHYSICAL_SOURCE_HOLD' if venue is None else
+               'NO_CLASSIFICATION_HOLD' if cls is None else
+               venue['classification_merge_state'])
+        group=(venue['research_group_id'] if venue else cls[group_idx])
+        safe=(venue is not None and cls is not None and
+              state=='JOINED_EXACT_SOURCE_AND_GROUP' and
+              group==cls[group_idx] and group in by_site)
+        anchor=by_site[group]['effective_anchor_id'] if safe else None
+        if safe: exact_links+=1
+        rite=('ROMAN' if norm_id else 'UNKNOWN')
+        missal=('1962' if norm_id else 'UNKNOWN')
+        if norm_id: inherited_count+=1
+        scope=('GROUP_NORM_INHERITED_TO_SOURCE_MINISTRY_LABEL_NOT_CONFIRMED_CELEBRANT'
+               if norm_id else 'NO_GROUP_NORM')
+        db.execute('INSERT INTO source_ministry VALUES (?,?,?,?,?,?,?,?,?,?)',
+                   (sid,group,anchor,norm_id,
+                    'SOURCE_LABEL_ONLY' if norm_id else grade,
+                    state,rite,missal,scope,'RESEARCH_ONLY_NOT_PUBLIC'))
+    assert labels_count==2008
+    assert inherited_count==1386
+    assert exact_links==2674
+    for entry in rows['mass']:
+        m=entry['original_row']
+        sid=m[1].strip()
+        group=m[26].strip()
+        site=by_site.get(group)
+        anchor=site['effective_anchor_id'] if site else None
+        ministry=None
+        state='NO_SITE_ID_HOLD'
+        v=venues.get(sid)
+        if anchor:
+            state='SITE_ONLY_SOURCE_NOT_CONFIRMED'
+            if not sid: state='MISSING_SOURCE_ID_HOLD'
+            elif v and v['classification_merge_state']!='GROUP_CONFLICT_HOLD':
+                source_group=v['research_group_id']
+                if source_group==group:
+                    ministry=sid;state='EXACT_SOURCE_AND_GROUP'
+                elif source_group in by_site and by_site[source_group]['effective_anchor_id']==anchor:
+                    state='SHARED_BUILDING_ALIAS_SOURCE_REVIEW'
+                else:
+                    state='SOURCE_GROUP_DISAGREEMENT_HOLD'
+            elif v: state='SOURCE_GROUP_CONFLICT_HOLD'
+        db.execute('INSERT INTO timetable_ministry_link VALUES (?,?,?,?,?,?,0)',
+                   (entry['historical_row'],sid or None,group or None,
+                    anchor,ministry,state))
+    assert db.execute('SELECT COUNT(*) FROM source_ministry').fetchone()[0]==2723
+    assert db.execute('SELECT COUNT(*) FROM timetable_ministry_link').fetchone()[0]==4681
+    assert db.execute('SELECT COUNT(*) FROM unified_physical_site').fetchone()[0]==2579
+    assert db.execute('SELECT COUNT(*) FROM institute_norm').fetchone()[0]==8
+    assert db.execute("SELECT COUNT(*) FROM source_ministry WHERE institute_id IS NOT NULL").fetchone()[0]==1386
+    assert db.execute("SELECT COUNT(*) FROM classification_exception").fetchone()[0]==0
+    assert db.execute("SELECT COUNT(*) FROM timetable_ministry_link WHERE current_schedule_approved=1").fetchone()[0]==0
+    return {'physical_sites':2579,'source_ministry_rows':2723,
+            'institution_inherited_source_labels':inherited_count,
+            'group_norm_assertions':8,'historical_timetables':4681,
+            'current_public_schedule_approvals':0}
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument('--snapshot-dir',type=Path,required=True)
@@ -103,11 +290,13 @@ CREATE VIEW venue_with_classification AS SELECT v.source_id,v.recorded_group_id,
     for i,r in enumerate(rows['identity_issue'],1):
         x=r.get('item') or r
         db.execute('INSERT INTO identity_exception VALUES (?,?,?,?,?)',(i,r['kind'],x.get('source_id'),x.get('group_id'),json_text(r)))
+    unified_stats=install_unified_physical_ministry_and_group_defaults(db,rows,manifest,root)
     db.commit()
     assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
     for table,expected in [('canonical_site',2584),('venue_source',2687),('classification_source',2715),('mass_time',4681),('existing_alias',5),('identity_exception',49)]:
         assert db.execute('SELECT COUNT(*) FROM '+table).fetchone()[0]==expected
+    assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
     db.close()
-    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0}))
+    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0,'unified_master':unified_stats}))
 
 if __name__=='__main__': main()
