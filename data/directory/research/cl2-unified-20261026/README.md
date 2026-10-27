@@ -158,3 +158,24 @@ WHERE source_listing_complete=0 ORDER BY country;
 ```
 
 **Next census gate:** extend the same provider/source coverage register to any other previously researched feeds, then resolve candidates by stable source IDs, source ownership and physical-building evidence *in bulk*; avoid blind name matches and do not equate the sum of unresolved leads with newly found churches. Completing exact worldwide site coverage remains an **open** milestone.
+
+
+### Eighteen further institute/provider source feeds (27 October 2026)
+
+The CL2 reconstructor now additionally ingests **18 previously committed institute and community source feeds with 791 venue/source records**, without altering physical IDs, classifications, current timetables, or public pins. The feeds include multiple SSPX regional/district snapshots plus CMRI, CSPV, RCI, Una Voce Czech, IBP and ICKSP legacy venue files. These are source-record identities, **not** 791 distinct worship buildings.
+
+The independently passing GitHub rebuild and inheritance validation reported the following:
+
+| Additional provider feed result | Source records |
+|---|---:|
+| Exact frozen CL2 venue-source ID found | 38 |
+| Same frozen ID as an earlier unresolved lead | 0 |
+| Unmatched worship/mission/church source lead staged | 669 |
+| Ambiguous, temporary, residential, or other non-worship facility held | 84 |
+| **Total screened** | **791** |
+
+**Cumulative provider feeds**: 554 + 791 = **1,345** original source entries. **Cumulative unresolved source-lead identities**: 36 prior G0, 159 earlier provider, 669 additional provider, 1,444 third-party = **2,308 candidate records**; these may refer to the same physical locations under separate provider and third-party IDs. Thus the working `unified_research_inventory` contains 2,579 physical anchors + 2,308 unresolved identities = **4,887 differently scoped entries, emphatically not 4,887 confirmed venues**. There are **12 large review cohorts**: 11 × 200 and one of 108. Physical admissions remain **zero** from these intakes.
+
+The latest follow-on CL2 pass also stages a **non-authoritative same-building review hint table**. It compares normalized original source addresses and names against the existing venue source/anchor registry and compares equal reported addresses among candidates. Matching strings are *review pointers only* and explicitly cannot merge physical sites or publish a map pin. Same-country name matches without corroborated address are particularly weak; neither type is a substitute for canonical building evidence. All historical source records are preserved.
+
+This completes **a substantial existing-repository provider source import**, not the ultimate worldwide site list. Immediate next stages are (1) source-feed coverage and identity reconciliation across countries and institutes, including the 11 incompletely fetched third-party country listings, (2) evidential deduplication and acceptance of real missing physical sites in bulk, and (3) grouped category/detail enrichment. Geometry/timetables remain deferred.
