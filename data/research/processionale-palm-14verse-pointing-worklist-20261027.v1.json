@@ -496,5 +496,24 @@
     "allToneCadencesApproved": false,
     "sourceTextCanonOwner": "#894",
     "scholaMusicOwner": "#1749"
+  },
+  "firstVerseCadenceAnchorLink": {
+    "path": "data/research/processionale-palm-1961-cadence-motif-source-20261027.v1.json",
+    "psalm23": {
+      "sourceScoreId": 19315,
+      "printedPage": "143**",
+      "firstVerseOnly": true,
+      "flexExampleAvailable": true
+    },
+    "psalm46": {
+      "sourceScoreId": 19316,
+      "printedPage": "144**",
+      "rawTextQuarantined": true,
+      "provisionalOmnesPopuliUnderlayEditorCertified": false
+    },
+    "scope": "GABC byte-exact source fragments show first verse medial/final pitch groups only; never automatically transpose or expand onto 13 remaining patterns",
+    "firstVersePitchTemplateCertification": false,
+    "otherVerseToneApprovalCount": 0,
+    "releaseEligible": false
   }
 }
