@@ -2052,3 +2052,31 @@ test('Palm Amen 1961 introital comparison does not transfer a same-edition but w
  assert.equal(b.readerRuntimeChanged,false);
  assert.equal(b.newGabcCreated,false);
 });
+
+
+test('Batch42 Palm doxologies require office 1f formula underlay and independent musical acceptance',()=>{
+ const d=readJSON('data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json');
+ const b=d.batch42OfficeTone1fDoxologyMethod;
+ assert.equal(b.batch,42);
+ assert.equal(b.toneModel.commonFamily,'PRIMA_TONUS_TERMINATIO_F__OFFICE_STYLE_ANTIPHONAL_PSALMODY');
+ assert.equal(b.toneModel.sourceFirstToneTermination,'ONE_ACCENT_TWO_PREPARATORY_SYLLABLES');
+ assert.deepEqual(b.toneModel.sharedFirstVerseCadentialPitchGroups,['g','f','gh','gr','gf']);
+ assert.equal(b.toneModel.firstVerseIntonationRepeatedAtEveryVerse,false);
+ assert.equal(b.toneModel.amenIsSeparateResponsorialEvent,false);
+ assert.equal(b.toneModel.fullPalmDoxologyPrintedScoreFound,false);
+ assert.equal(b.toneModel.fullIndependentMelodyProof,false);
+ assert.deepEqual(b.twoExistingAmenResearchSettings.ids,d.fullHypotheticalGabcCases.map(x=>x.id));
+ assert.deepEqual(b.twoExistingAmenResearchSettings.sourceSyllablesLastSix,['sæ','cu','ló','rum','A','men']);
+ assert.equal(b.twoExistingAmenResearchSettings.structuralOneAccentTwoPreparationFit,true);
+ assert.equal(b.twoExistingAmenResearchSettings.sourceActuallyWritesFourLastGroupsForPalmAmen,false);
+ assert.equal(b.twoExistingAmenResearchSettings.lexicalAmenStressAndPunctuationMusicianCertified,false);
+ assert.equal(b.correctedAcceptancePath.requireImpossibleFullSourceScore,false);
+ assert.equal(b.correctedAcceptancePath.requireHumanEditorMusicalCheck,true);
+ assert.equal(b.correctedAcceptancePath.existingProvisionalGabcIsAutomaticReleaseCandidate,false);
+ assert.equal(d.fullHypotheticalGabcCases.every(x=>x.editorScoreApproved===false&&x.productionEligible===false),true);
+ assert.equal(b.noSeparateAmenEvent,true);
+ assert.equal(b.independentMusicalApprovals,0);
+ assert.equal(b.scorePromotions,0);
+ assert.equal(b.readerRuntimeChanged,false);
+ assert.equal(b.releasePermitted,false);
+});
