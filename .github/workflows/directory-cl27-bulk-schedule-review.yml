@@ -46,7 +46,9 @@ jobs:
         run: node tests/directory-cl27-offline-editor.mjs
       - name: Rebuild canonical research SQLite (no app publication)
         run: python3 tools/directory/rebuild-cl2-research-snapshot.py --snapshot-dir data/directory/research/cl2-unified-20261026 --output /tmp/cl27-mass-registry.sqlite
-      - name: Generate classified directory with exact source joins
+      - name: Validate CL2 canonical institution inheritance and exception precedence
+        run: python3 tools/directory/validate-cl2-unified-master-inheritance.py --db /tmp/cl27-mass-registry.sqlite
+      - name: Generate classified directory from CL2 effective scoped views
         run: python3 tools/directory/build-cl27-tlm-classifications.py --db /tmp/cl27-mass-registry.sqlite --output /tmp/cl27-tlm-classification-facets.json --html-output /tmp/cl27-tlm-classification-review.html
       - name: Check offline classification editor generated from pinned research source
         run: |
