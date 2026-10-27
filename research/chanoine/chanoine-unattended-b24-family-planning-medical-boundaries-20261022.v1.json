@@ -1,0 +1,551 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B24_FAMILY_PLANNING_SOURCE_PRECISION_V1",
+  "asOf": "2026-10-22",
+  "status": "RESEARCH_ONLY_NOT_HUMAN_CERTIFIED",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "ownerCompositeBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+  "counts": {
+    "distinctVisitorFamilies": 11,
+    "proposedAnswerUnits": 22,
+    "uniqueDoctrinalClaimsNotCounted": true,
+    "certified": 0,
+    "published": 0
+  },
+  "sourceRegistry": {
+    "HV10": {
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "primarySource": true,
+      "verifiedSection": "§10"
+    },
+    "HV11": {
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "primarySource": true,
+      "verifiedSection": "§11"
+    },
+    "HV12": {
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "primarySource": true,
+      "verifiedSection": "§12"
+    },
+    "HV13": {
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "primarySource": true,
+      "verifiedSection": "§13"
+    },
+    "HV14": {
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "primarySource": true,
+      "verifiedSection": "§14"
+    },
+    "HV15": {
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "primarySource": true,
+      "verifiedSection": "§15"
+    },
+    "HV16": {
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "primarySource": true,
+      "verifiedSection": "§16"
+    },
+    "CC54-56": {
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "primarySource": true,
+      "verifiedSection": "CC54-56"
+    },
+    "CC59": {
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "primarySource": true,
+      "verifiedSection": "CC59"
+    },
+    "P12-1951": {
+      "url": "https://www.vatican.va/content/pius-xii/it/speeches/1951/documents/hf_p-xii_spe_19511029_ostetriche.html",
+      "primarySource": true,
+      "verifiedSection": "P12-1951"
+    },
+    "P12-1958": {
+      "url": "https://www.vatican.va/content/pius-xii/fr/speeches/1958/documents/hf_p-xii_spe_19580912_ematologia.html",
+      "primarySource": true,
+      "verifiedSection": "P12-1958"
+    },
+    "CDF1975": {
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19750313_quaecumque-sterilizatio_lt.html",
+      "primarySource": true,
+      "verifiedSection": "CDF1975"
+    },
+    "CIC1084": {
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+      "primarySource": true,
+      "verifiedSection": "CIC1084"
+    },
+    "GS48-49": {
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_cons_19651207_gaudium-et-spes_en.html",
+      "primarySource": true,
+      "verifiedSection": "GS48-49"
+    }
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE059",
+      "sourceQuestionId": "CSE059",
+      "canonicalTopicOwner": "SEX-CORE-15",
+      "originalQuestion": {
+        "en": "How do illness, disability or age affect marital obligations?",
+        "fr": "Comment la maladie, le handicap ou l’âge affectent-ils les obligations conjugales ?"
+      },
+      "proposedOpening": {
+        "en": "Illness or incapacity calls for patience, mutual care and attention to the other spouse's condition. Marriage is no licence to impose intercourse against reasonable wishes or in disregard of suffering.",
+        "fr": "La maladie ou l’incapacité appellent patience, soin mutuel et respect de l’état de l’autre époux. Le mariage n’autorise pas à imposer l’union sans égard aux souhaits raisonnables ni à la souffrance."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does sickness cancel all the duties of marriage?",
+          "fr": "La maladie supprime-t-elle tous les devoirs conjugaux ?"
+        },
+        "response": {
+          "en": "Illness does not dissolve the bond or the duties of fidelity and care; it may change what is possible and reasonable. A disputed individual situation requires pastoral and, where appropriate, medical assessment.",
+          "fr": "La maladie ne dissout ni le lien ni les devoirs de fidélité et de soin ; elle peut modifier ce qui est possible et raisonnable. Un cas particulier litigieux demande un discernement pastoral et, au besoin, médical."
+        }
+      },
+      "sourceRefs": [
+        "HV13",
+        "GS48-49"
+      ],
+      "claimClass": "FAITHFUL_PARAPHRASE_WITH_EDITORIAL_APPLICATION",
+      "sourcePrecisionDelta": "Do not derive an unconditional enforceable sexual claim from the historical marital-debt label. Distinguish mutual care from a claimed entitlement; do not adjudicate coercion or incapacity in automated dialogue.",
+      "reviewGate": "SPECIALIST_PASTORAL_SAFEGUARD",
+      "sourceOwnerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "sourceMatched": true,
+        "claimCertified": false,
+        "personaApproved": false,
+        "englishFrenchApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE060",
+      "sourceQuestionId": "CSE060",
+      "canonicalTopicOwner": "SEX-CORE-13",
+      "originalQuestion": {
+        "en": "Does permanent infertility change marital sexual ethics?",
+        "fr": "L’infertilité permanente change-t-elle la morale sexuelle conjugale ?"
+      },
+      "proposedOpening": {
+        "en": "Natural or permanent infertility does not by itself invalidate marriage or make otherwise rightful conjugal relations immoral. The Church distinguishes infertility from the separate impediment of antecedent and perpetual impotence.",
+        "fr": "L’infertilité naturelle ou permanente ne rend pas en soi le mariage invalide ni l’union conjugale par ailleurs légitime immorale. L’Église distingue la stérilité de l’empêchement distinct d’impuissance antécédente et perpétuelle."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Would permanent infertility make contraception morally irrelevant?",
+          "fr": "L’infertilité permanente rendrait-elle la contraception moralement indifférente ?"
+        },
+        "response": {
+          "en": "Infertility does not make deliberately contraceptive acts morally irrelevant: the sources distinguish a condition not chosen from a choice made against procreation.",
+          "fr": "La stérilité ne rend pas la contraception volontaire moralement indifférente : les textes distinguent une condition non choisie d’un choix dirigé contre la procréation."
+        }
+      },
+      "sourceRefs": [
+        "CIC1084",
+        "CC59",
+        "HV11",
+        "HV14"
+      ],
+      "claimClass": "FAITHFUL_PARAPHRASE_WITH_EDITORIAL_APPLICATION",
+      "sourcePrecisionDelta": "Can.1084§3 concerns validity and has a can.1098 qualification; it is not by itself a moral judgment on every act. Do not confuse infertility with impotence or infer permission for contraception.",
+      "reviewGate": "GENERAL_THEOLOGICAL_REVIEW",
+      "sourceOwnerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "sourceMatched": true,
+        "claimCertified": false,
+        "personaApproved": false,
+        "englishFrenchApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE061",
+      "sourceQuestionId": "CSE061",
+      "canonicalTopicOwner": "SEX-CORE-17",
+      "originalQuestion": {
+        "en": "Why is contraception wrong?",
+        "fr": "Pourquoi la contraception est-elle mauvaise ?"
+      },
+      "proposedOpening": {
+        "en": "The Church's stated objection concerns a deliberate act intended to prevent procreation in the marital act, not simply the fact that a technique is artificial. The unitive and procreative meanings must be considered together.",
+        "fr": "L’objection formulée par l’Église concerne un acte délibérément destiné à empêcher la procréation dans l’union conjugale, et non le seul caractère artificiel d’une technique. Les significations unitive et procréatrice doivent être considérées ensemble."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "But why should the biological structure of an act determine morality?",
+          "fr": "Pourquoi la structure biologique d’un acte devrait-elle déterminer la morale ?"
+        },
+        "response": {
+          "en": "The teaching judges the chosen act and its intention, not biology alone. A serious reason to avoid pregnancy does not make every means morally equivalent; necessary treatment of disease is a distinct case.",
+          "fr": "L’enseignement juge l’acte choisi et son intention, non la biologie seule. Une raison grave d’éviter une grossesse ne rend pas tous les moyens équivalents ; le traitement nécessaire d’une maladie est un cas distinct."
+        }
+      },
+      "sourceRefs": [
+        "HV12",
+        "HV14",
+        "HV15",
+        "CC54-56"
+      ],
+      "claimClass": "FAITHFUL_PARAPHRASE_WITH_EDITORIAL_APPLICATION",
+      "sourcePrecisionDelta": "Remove MIDWIVES as the primary locator for a general definition of contraception: HV14 and CC54–56 are more direct. Preserve HV15's directly therapeutic distinction.",
+      "reviewGate": "GENERAL_THEOLOGICAL_REVIEW",
+      "sourceOwnerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "sourceMatched": true,
+        "claimCertified": false,
+        "personaApproved": false,
+        "englishFrenchApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE062",
+      "sourceQuestionId": "CSE062",
+      "canonicalTopicOwner": "SEX-CORE-18",
+      "originalQuestion": {
+        "en": "May spouses have serious reasons to avoid pregnancy?",
+        "fr": "Des époux peuvent-ils avoir de sérieuses raisons d’éviter une grossesse ?"
+      },
+      "proposedOpening": {
+        "en": "The Church recognises that physical, economic, psychological and social circumstances may give spouses serious reasons to postpone another birth. Such a judgment still concerns both the reasons and the means chosen.",
+        "fr": "L’Église reconnaît que des circonstances physiques, économiques, psychologiques et sociales peuvent donner aux époux de sérieuses raisons de différer une nouvelle naissance. Le discernement porte néanmoins sur les motifs et sur les moyens choisis."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Isn't avoiding pregnancy always a sign of selfishness?",
+          "fr": "Éviter une grossesse est-il toujours égoïste ?"
+        },
+        "response": {
+          "en": "Postponement is not automatically selfish. The sources recognise serious responsibilities toward health and family, without establishing a universal numeric threshold for what counts as sufficient.",
+          "fr": "Différer une naissance n’est pas automatiquement égoïste. Les textes reconnaissent de graves responsabilités envers la santé et la famille, sans fixer un seuil numérique universel de gravité."
+        }
+      },
+      "sourceRefs": [
+        "HV10",
+        "HV16",
+        "P12-1951"
+      ],
+      "claimClass": "FAITHFUL_PARAPHRASE_WITH_EDITORIAL_APPLICATION",
+      "sourcePrecisionDelta": "Use 'serious reasons' from HV10 and 'well-grounded reasons' from HV16; avoid an automatic moral approval based on one isolated example.",
+      "reviewGate": "GENERAL_THEOLOGICAL_REVIEW",
+      "sourceOwnerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "sourceMatched": true,
+        "claimCertified": false,
+        "personaApproved": false,
+        "englishFrenchApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE063",
+      "sourceQuestionId": "CSE063",
+      "canonicalTopicOwner": "SEX-CORE-18",
+      "originalQuestion": {
+        "en": "Why is NFP morally different from contraception?",
+        "fr": "Pourquoi la PFN est-elle moralement différente de la contraception ?"
+      },
+      "proposedOpening": {
+        "en": "A couple may intend to avoid pregnancy in either case, but the Church distinguishes abstaining at fertile times from intercourse deliberately altered to prevent procreation. The difference is in the chosen means, not merely a label.",
+        "fr": "Un couple peut vouloir éviter une grossesse dans les deux cas, mais l’Église distingue la continence pendant les jours féconds de l’union volontairement modifiée pour empêcher la procréation. La différence tient au moyen choisi, non à une étiquette."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "But abstaining only because conception might occur is still a deliberate anti-conception strategy. Isn’t that contraception by omission?",
+          "fr": "Mais s’abstenir uniquement parce qu’une conception pourrait survenir reste une stratégie délibérément anti-conception. N’est-ce pas une contraception par omission ?"
+        },
+        "response": {
+          "en": "Abstaining is not itself an act of contraception by omission. Nevertheless, the decision to postpone births also calls for sufficiently grounded reasons and responsible judgment.",
+          "fr": "S’abstenir n’est pas en soi une contraception par omission. Cependant, la décision de différer les naissances demande aussi des motifs suffisamment fondés et un discernement responsable."
+        }
+      },
+      "sourceRefs": [
+        "HV10",
+        "HV14",
+        "HV16"
+      ],
+      "claimClass": "FAITHFUL_PARAPHRASE_WITH_EDITORIAL_APPLICATION",
+      "sourcePrecisionDelta": "HV16 explicitly acknowledges a shared intention to avoid children and contrasts the acts. Do not pretend intention is always different; compare chosen means.",
+      "reviewGate": "GENERAL_THEOLOGICAL_REVIEW",
+      "sourceOwnerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "sourceMatched": true,
+        "claimCertified": false,
+        "personaApproved": false,
+        "englishFrenchApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE064",
+      "sourceQuestionId": "CSE064",
+      "canonicalTopicOwner": "SEX-CORE-18",
+      "originalQuestion": {
+        "en": "Is NFP simply “Catholic contraception”?",
+        "fr": "La PFN est-elle simplement une « contraception catholique » ?"
+      },
+      "proposedOpening": {
+        "en": "Calling periodic abstinence 'Catholic contraception' obscures the distinction made in Humanae vitae §16. Both the reason for postponement and the nature of the means remain morally relevant.",
+        "fr": "Qualifier la continence périodique de « contraception catholique » masque la distinction de Humanae vitae §16. Les motifs du report et la nature des moyens restent moralement pertinents."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Isn’t this still overly focused on the physical act?",
+          "fr": "Cela ne reste-t-il pas excessivement centré sur l’acte physique ?"
+        },
+        "response": {
+          "en": "The distinction concerns what spouses choose to do, not merely anatomy. It is also not a guarantee that every use of periodic abstinence has upright motives.",
+          "fr": "La distinction concerne ce que les époux choisissent de faire, et non la seule anatomie. Elle ne garantit pas non plus que tout recours à la continence périodique ait des motifs droits."
+        }
+      },
+      "sourceRefs": [
+        "HV10",
+        "HV16"
+      ],
+      "claimClass": "FAITHFUL_PARAPHRASE_WITH_EDITORIAL_APPLICATION",
+      "sourcePrecisionDelta": "Overlap with CSE063 is deliberate alternate question framing under same SEX-CORE-18 owner; reuse one evidence claim and do not count a new doctrine.",
+      "reviewGate": "GENERAL_THEOLOGICAL_REVIEW",
+      "sourceOwnerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "sourceMatched": true,
+        "claimCertified": false,
+        "personaApproved": false,
+        "englishFrenchApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE065",
+      "sourceQuestionId": "CSE065",
+      "canonicalTopicOwner": "SEX-CORE-18",
+      "originalQuestion": {
+        "en": "What counts as a sufficiently serious reason to postpone pregnancy?",
+        "fr": "Qu’est-ce qu’une raison suffisamment sérieuse pour différer une grossesse ?"
+      },
+      "proposedOpening": {
+        "en": "No document supplies a universal checklist or monetary threshold. Humanae vitae names physical, economic, psychological and social circumstances and calls for serious, prudent and generous discernment.",
+        "fr": "Aucun document ne donne une liste universelle ni un seuil financier. Humanae vitae mentionne les circonstances physiques, économiques, psychologiques et sociales et demande un discernement sérieux, prudent et généreux."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Who decides whether our reason is sufficiently serious?",
+          "fr": "Qui décide si notre raison est suffisamment grave ?"
+        },
+        "response": {
+          "en": "The spouses must examine their responsibilities before God, to each other, their children and society. An automated guide should not issue a personal verdict about whether one couple's reasons suffice.",
+          "fr": "Les époux doivent examiner leurs responsabilités envers Dieu, l’un envers l’autre, leurs enfants et la société. Un guide automatisé ne doit pas décider si les motifs d’un couple particulier suffisent."
+        }
+      },
+      "sourceRefs": [
+        "HV10",
+        "HV16",
+        "P12-1951"
+      ],
+      "claimClass": "FAITHFUL_PARAPHRASE_WITH_EDITORIAL_APPLICATION",
+      "sourcePrecisionDelta": "Pius XII 1951 describes serious motives and potential prolonged recourse; HV10–16 are more directly accessible for contemporary explanation. Individual cases remain for qualified pastoral discernment.",
+      "reviewGate": "GENERAL_THEOLOGICAL_REVIEW",
+      "sourceOwnerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "sourceMatched": true,
+        "claimCertified": false,
+        "personaApproved": false,
+        "englishFrenchApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE066",
+      "sourceQuestionId": "CSE066",
+      "canonicalTopicOwner": "SEX-CORE-18",
+      "originalQuestion": {
+        "en": "Must spouses try to conceive every time they have relations?",
+        "fr": "Les époux doivent-ils chercher à concevoir à chaque relation ?"
+      },
+      "proposedOpening": {
+        "en": "No. The Church explicitly recognises that not every marital act results in conception, and that intercourse may remain legitimate when it is naturally infertile for reasons independent of the spouses' will.",
+        "fr": "Non. L’Église reconnaît explicitement que toute union conjugale ne conduit pas à une conception et qu’elle peut demeurer légitime lorsqu’elle est naturellement inféconde pour des raisons indépendantes de la volonté des époux."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Then why does the Church insist on an openness to life?",
+          "fr": "Pourquoi l’Église insiste-t-elle alors sur l’ouverture à la vie ?"
+        },
+        "response": {
+          "en": "The teaching is not a command to achieve conception each time; it asks that each marital act retain its intrinsic ordering to the generation of life.",
+          "fr": "L’enseignement n’ordonne pas de concevoir à chaque union ; il demande que chaque acte conjugal conserve son ordination intrinsèque à la transmission de la vie."
+        }
+      },
+      "sourceRefs": [
+        "HV11",
+        "HV12",
+        "CC59"
+      ],
+      "claimClass": "FAITHFUL_PARAPHRASE_WITH_EDITORIAL_APPLICATION",
+      "sourcePrecisionDelta": "Do not equate 'open to life' with a measurable probability of conception or a subjective wish for pregnancy on each occasion.",
+      "reviewGate": "GENERAL_THEOLOGICAL_REVIEW",
+      "sourceOwnerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "sourceMatched": true,
+        "claimCertified": false,
+        "personaApproved": false,
+        "englishFrenchApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE067",
+      "sourceQuestionId": "CSE067",
+      "canonicalTopicOwner": "SEX-CORE-18",
+      "originalQuestion": {
+        "en": "May spouses deliberately use infertile periods?",
+        "fr": "Les époux peuvent-ils utiliser délibérément les périodes infécondes ?"
+      },
+      "proposedOpening": {
+        "en": "Yes, where there are well-grounded reasons for spacing births, Humanae vitae §16 permits spouses to make use of naturally infertile periods.",
+        "fr": "Oui. Lorsqu’il existe des raisons fondées d’espacer les naissances, Humanae vitae §16 permet aux époux de recourir aux périodes naturellement infécondes."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Would relying on infertile periods for many years still be permissible?",
+          "fr": "Le recours aux périodes infertiles pendant de longues années serait-il licite ?"
+        },
+        "response": {
+          "en": "Pius XII's 1951 address explicitly envisaged serious reasons extending over a long period, even potentially the duration of marriage. It did not grant an unconditional permission independent of the reasons.",
+          "fr": "Le discours de Pie XII de 1951 envisage explicitement des raisons graves pendant une longue période, éventuellement toute la durée du mariage. Il n’accorde pas une permission inconditionnelle sans égard aux motifs."
+        }
+      },
+      "sourceRefs": [
+        "HV16",
+        "P12-1951"
+      ],
+      "claimClass": "FAITHFUL_PARAPHRASE_WITH_EDITORIAL_APPLICATION",
+      "sourcePrecisionDelta": "Differentiate duration from justification. Pius XII's original Italian address is historical evidence, not a statement by St Pius X or Chanoine.",
+      "reviewGate": "GENERAL_THEOLOGICAL_REVIEW",
+      "sourceOwnerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "sourceMatched": true,
+        "claimCertified": false,
+        "personaApproved": false,
+        "englishFrenchApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE068",
+      "sourceQuestionId": "CSE068",
+      "canonicalTopicOwner": "SEX-CORE-19",
+      "originalQuestion": {
+        "en": "Why is direct sterilization wrong?",
+        "fr": "Pourquoi la stérilisation directe est-elle mauvaise ?"
+      },
+      "proposedOpening": {
+        "en": "The Church distinguishes direct sterilisation, chosen as an end or means to prevent procreation, from infertility resulting indirectly from necessary treatment of disease.",
+        "fr": "L’Église distingue la stérilisation directe, choisie comme fin ou moyen d’empêcher la procréation, de l’infertilité qui résulte indirectement du traitement nécessaire d’une maladie."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "What if a procedure both treats disease and causes infertility?",
+          "fr": "Et si une intervention soigne une maladie tout en causant l’infertilité ?"
+        },
+        "response": {
+          "en": "The same physical outcome can have a different moral object. Medical procedures require precise factual assessment; the automated dialogue cannot classify an individual operation from its name alone.",
+          "fr": "Un même résultat physique peut relever d’un objet moral différent. Les interventions médicales exigent une analyse factuelle précise ; un dialogue automatisé ne peut qualifier un acte particulier à partir de son seul nom."
+        }
+      },
+      "sourceRefs": [
+        "HV14",
+        "HV15",
+        "P12-1958",
+        "CDF1975"
+      ],
+      "claimClass": "FAITHFUL_PARAPHRASE_WITH_EDITORIAL_APPLICATION",
+      "sourcePrecisionDelta": "The 1975 CDF response concerns direct sterilisation in Catholic hospitals and must not be expanded into an automatic clinical decision rule. Preserve distinction of direct/indirect and the intention-as-end-or-means condition.",
+      "reviewGate": "SPECIALIST_MEDICAL_MORAL_REVIEW",
+      "sourceOwnerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "sourceMatched": true,
+        "claimCertified": false,
+        "personaApproved": false,
+        "englishFrenchApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE069",
+      "sourceQuestionId": "CSE069",
+      "canonicalTopicOwner": "SEX-CORE-19",
+      "originalQuestion": {
+        "en": "May medical treatment be used when infertility is a side effect?",
+        "fr": "Un traitement médical peut-il être utilisé lorsque l’infertilité est un effet secondaire ?"
+      },
+      "proposedOpening": {
+        "en": "Humanae vitae §15 permits necessary treatment of bodily disease even when infertility is a foreseen side effect, provided that infertility is not directly intended.",
+        "fr": "Humanae vitae §15 permet le traitement nécessaire d’une maladie corporelle même lorsque l’infertilité en est un effet prévu, pourvu qu’elle ne soit pas directement voulue."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Is it hypocritical to accept infertility from surgery but reject direct sterilisation?",
+          "fr": "N’est-il pas hypocrite d’accepter l’infertilité après chirurgie mais de refuser la stérilisation directe ?"
+        },
+        "response": {
+          "en": "Foreseeing infertility is not the same as choosing it as a goal or means. A particular operation or medication still requires medical facts and qualified moral assessment.",
+          "fr": "Prévoir une infertilité n’équivaut pas à la choisir comme fin ou comme moyen. Une intervention ou un médicament particulier exige encore les faits médicaux et un jugement moral compétent."
+        }
+      },
+      "sourceRefs": [
+        "HV15",
+        "P12-1958",
+        "CDF1975"
+      ],
+      "claimClass": "FAITHFUL_PARAPHRASE_WITH_EDITORIAL_APPLICATION",
+      "sourcePrecisionDelta": "Do not describe every fertility-affecting treatment as automatically licit; 'necessary to cure bodily diseases' and 'not directly intended' are explicit source conditions.",
+      "reviewGate": "SPECIALIST_MEDICAL_MORAL_REVIEW",
+      "sourceOwnerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "sourceMatched": true,
+        "claimCertified": false,
+        "personaApproved": false,
+        "englishFrenchApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "editorialGuardrails": [
+    "These are source-bounded editorial Chanoine drafts, not words spoken by St Pius X, Pius XI, Pius XII or any historical Chanoine.",
+    "No clinical or individual moral adjudication; coercion and medical cases remain specialist holds.",
+    "Modern 1968, 1975 and 1983 sources must not be retroactively put into historical character's mouth.",
+    "CSE060 overlaps earlier CSE047 on infertility; CSE063/064/065/067 share one evidence family; CSE068/069 share one direct-versus-indirect distinction.",
+    "The original English Chanoine source blocker reported in prior consolidated work remains blocked; no text fabricated."
+  ],
+  "nextQueue": [
+    "CSE070 disputed-spouse contraceptive cooperation: specialist review before draft",
+    "CSE071–080: compare existing canonical owner and prior packet IDs before researching",
+    "Preserve all pending human approval gates"
+  ]
+}

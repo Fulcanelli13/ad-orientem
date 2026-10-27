@@ -1,0 +1,737 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B17_CHASTITY_VOCATION_EVIDENCE_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "ownerComposite": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+  "ownerCompositeBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+  "status": "RESEARCH_ONLY_PRELIMINARY_CLAIM_COLLATION",
+  "counts": {
+    "families": 5,
+    "answerUnits": 10,
+    "certified": 0,
+    "published": 0
+  },
+  "priorReview": {
+    "specialistBrief": "research/chanoine/chanoine-cse-specialist-39-review-briefs.v1.json",
+    "finding": "These five IDs have no individual record in the 39-brief file; do not infer approval from absence. Composite review flags remain authoritative.",
+    "completedIdsExcluded": true
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE020",
+      "sourceQuestionId": "CSE020",
+      "canonicalOwner": "SEX-CORE-04",
+      "originalRecord": {
+        "source_question_id": "CSE020",
+        "conversation_id": "CHA-CSE-CSE020",
+        "canonical_topic_owner": "SEX-CORE-04",
+        "title": "Does habit or addiction reduce responsibility?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Does habit or addiction reduce responsibility?",
+          "fr": "L’habitude ou l’addiction diminuent-elles la responsabilité ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Sometimes, but not automatically. Compulsion or psychological disorder can diminish present freedom, while a freely cultivated bad habit can also make an act more deeply rooted in the will.",
+          "fr": "Parfois, mais pas automatiquement. La compulsion ou un trouble psychologique peuvent diminuer la liberté actuelle, tandis qu’une mauvaise habitude librement cultivée peut aussi rendre l’acte plus profondément enraciné dans la volonté."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "A habit may weigh on freedom, especially where there is genuine compulsion. It does not follow that responsibility is always absent; some habits have also been freely strengthened over time. The right response is neither to excuse everything nor to condemn blindly, but to seek truthful counsel and practical help suited to the person.",
+          "fr": "Une habitude peut peser sur la liberté, surtout lorsqu’il existe une véritable contrainte intérieure. Il ne s’ensuit pas que toute responsabilité disparaisse ; certaines habitudes ont aussi été librement renforcées. Il ne faut ni tout excuser ni condamner à l’aveugle, mais chercher un conseil juste et une aide pratique adaptée à la personne."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Isn’t that impossible to measure reliably?",
+          "fr": "N’est-ce pas impossible à mesurer avec fiabilité ?"
+        },
+        "original_source_followup_reply": {
+          "en": "Often it is difficult, which is why categorical judgments about another person’s mortal guilt are unsafe. Difficulty of measuring culpability, however, does not change the objective moral character of the act.",
+          "fr": "C’est souvent difficile, raison pour laquelle les jugements catégoriques sur la culpabilité mortelle d’autrui sont imprudents. Mais la difficulté de mesurer la culpabilité ne change pas le caractère moral objectif de l’acte."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "We often cannot measure another person’s interior freedom with confidence. That should make us restrained in judging souls. But our uncertainty about culpability must not be mistaken for proof that every act is objectively good.",
+          "fr": "Souvent nous ne pouvons mesurer avec certitude la liberté intérieure d’autrui. Cela doit nous rendre réservés dans le jugement des âmes. Mais notre incertitude sur la culpabilité ne prouve pas que tout acte soit objectivement bon."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-001-031.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "ST77",
+              "locator": "aa.6–8"
+            },
+            {
+              "registry_key": "ST78",
+              "locator": "a.2"
+            },
+            {
+              "registry_key": "CCC",
+              "locator": "§2352"
+            },
+            {
+              "registry_key": "LBM",
+              "locator": "conscience and pastoral application chapters"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "DOCTRINAL_SOURCE_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Habit can diminish responsibility, but it does not settle every case. Aquinas distinguishes having a bad habit from choosing to act from it. That moral distinction is not a diagnosis of addiction.",
+          "fr": "L’habitude peut diminuer la responsabilité, sans régler tous les cas. Saint Thomas distingue le fait d’avoir une mauvaise habitude du choix d’agir selon elle. Cette distinction morale n’est pas un diagnostic d’addiction.",
+          "claims": [
+            {
+              "text": "Mitigation possible",
+              "refs": [
+                "CCC1735"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Having versus using habit",
+              "refs": [
+                "ST78a2"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Not a clinical diagnosis",
+              "refs": [
+                "ST78a2"
+              ],
+              "type": "SOURCE_SCOPE_BOUNDARY"
+            }
+          ]
+        },
+        {
+          "en": "We should distinguish the act’s moral character from the person’s responsibility. The latter requires attention to actual knowledge, freedom and relevant circumstances.",
+          "fr": "Distinguons le caractère moral de l’acte de la responsabilité de la personne. Celle-ci demande de considérer sa connaissance, sa liberté et les circonstances pertinentes.",
+          "claims": [
+            {
+              "text": "Individual responsibility",
+              "refs": [
+                "CCC1734-1737",
+                "CCC2352"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_AND_METHOD_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Add general CCC1735 instead of generalizing a specific CCC2352 treatment to every behavior",
+        "Aquinas habitus is not interchangeable with a psychiatric category; remove any automatic inference from repetition to malice or absence of guilt"
+      ],
+      "editorialHolds": [
+        "Moral theologian reviews terminology; any actual addiction assessment belongs to a qualified clinician"
+      ],
+      "classification": "CHANOINE_EXPLANATORY_PARAPHRASE_WITH_MARKED_APPLICATION",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE021",
+      "sourceQuestionId": "CSE021",
+      "canonicalOwner": "SEX-CORE-05",
+      "originalRecord": {
+        "source_question_id": "CSE021",
+        "conversation_id": "CHA-CSE-CSE021",
+        "canonical_topic_owner": "SEX-CORE-05",
+        "title": "Is chastity just sexual repression?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Is chastity just sexual repression?",
+          "fr": "La chasteté n’est-elle qu’une répression sexuelle ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "No. Chastity is the virtue by which sexual desire is ordered according to reason and one’s state of life. It aims at governing sexuality, not eliminating it.",
+          "fr": "Non. La chasteté est la vertu par laquelle le désir sexuel est ordonné selon la raison et l’état de vie. Elle vise à gouverner la sexualité, non à la supprimer."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Chastity is not contempt for the body. It is the virtue that teaches us to govern our desires so that they serve love, fidelity and our state of life. An appetite is not made holy simply by being indulged, nor evil simply because it exists. The Christian task is its right ordering.",
+          "fr": "La chasteté n’est pas le mépris du corps. C’est la vertu qui nous apprend à gouverner nos désirs pour qu’ils servent l’amour, la fidélité et notre état de vie. Un appétit n’est pas sanctifié parce qu’on lui cède, ni mauvais du seul fait qu’il existe. La tâche chrétienne est de l’ordonner justement."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "But suppression of desire can still cause psychological harm.",
+          "fr": "Mais la suppression du désir peut tout de même causer un dommage psychologique."
+        },
+        "original_source_followup_reply": {
+          "en": "An education based on panic, shame or repression can aggravate suffering, which must be taken seriously. But Freud's 1908 causal theory is not a contemporary clinical demonstration that Catholic chastity itself causes illness. Chastity in Aquinas (II–II q.151 a.1) is a virtue ordering desire through reason, not contempt for the body; psychological care remains appropriate where distress is real.",
+          "fr": "Une éducation fondée sur la panique, la honte ou le refoulement peut aggraver la souffrance, qu’il faut prendre au sérieux. Mais la théorie causale de Freud en 1908 n’est pas une démonstration clinique contemporaine selon laquelle la chasteté catholique cause elle-même des maladies. Chez saint Thomas (II–II, q.151, a.1), la chasteté ordonne le désir par la raison, sans mépris du corps ; un accompagnement psychologique reste approprié lorsque la souffrance est réelle."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "Poor teaching that feeds panic or shame can do harm; it should be corrected. But chastity, rightly understood, orders desire by reason rather than despising the body. We must not mistake a historical psychological theory for a modern clinical demonstration, nor deny care to someone who is suffering.",
+          "fr": "Un enseignement qui nourrit panique ou honte peut faire du mal ; il faut le corriger. Mais la chasteté bien comprise ordonne le désir par la raison sans mépriser le corps. Ne prenons pas une théorie psychologique ancienne pour une preuve clinique actuelle, et n’écartons pas les soins nécessaires à celui qui souffre."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-001-031.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "ST151",
+              "locator": "a.1"
+            },
+            {
+              "registry_key": "SACRA",
+              "locator": "§§34–36"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "DOCTRINAL_SOURCE_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Chastity orders sexual desire by reason and the will; it does not require the absence of every sexual feeling.",
+          "fr": "La chasteté ordonne le désir sexuel par la raison et la volonté ; elle n’exige pas l’absence de tout sentiment sexuel.",
+          "claims": [
+            {
+              "text": "Virtue as rational ordering",
+              "refs": [
+                "ST151a1"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Feeling not eliminated",
+              "refs": [
+                "SV35"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "Freud argued that stringent sexual restrictions could produce neurosis. That historical argument is distinct from the Church’s definition of chastity and does not itself settle a present clinical question. If you are distressed, that deserves attentive help.",
+          "fr": "Freud soutenait que des restrictions sexuelles sévères pouvaient produire des névroses. Cet argument historique se distingue de la définition ecclésiale de la chasteté et ne tranche pas à lui seul une question clinique actuelle. Votre souffrance, si vous en éprouvez, mérite une aide attentive.",
+          "claims": [
+            {
+              "text": "Fair rival position",
+              "refs": [
+                "FREUD1908"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Different kind of evidence",
+              "refs": [
+                "FREUD1908",
+                "ST151a1"
+              ],
+              "type": "EVIDENCE_SCOPE_BOUNDARY"
+            },
+            {
+              "text": "Attentive help",
+              "refs": [
+                "FREUD1908"
+              ],
+              "type": "EDITORIAL_PASTORAL_COUNSEL_NOT_CLINICAL_FINDING"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Retain the rival historical argument without treating it as contemporary causal proof",
+        "Replace unsupported clinical causal sentence poor teaching feeds panic/shame and causes harm with conditional attention to the visitor's distress"
+      ],
+      "editorialHolds": [
+        "No claim to have disproved all clinical hypotheses about repression; definition of virtue is not an empirical trial"
+      ],
+      "classification": "CHANOINE_EXPLANATORY_PARAPHRASE_WITH_MARKED_APPLICATION",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE022",
+      "sourceQuestionId": "CSE022",
+      "canonicalOwner": "SEX-CORE-05",
+      "originalRecord": {
+        "source_question_id": "CSE022",
+        "conversation_id": "CHA-CSE-CSE022",
+        "canonical_topic_owner": "SEX-CORE-05",
+        "title": "Is sexual desire itself sinful?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Is sexual desire itself sinful?",
+          "fr": "Le désir sexuel est-il en lui-même pécheur ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "No. Sexual appetite belongs to human nature. The moral question concerns its object and what the will deliberately does with it; an attraction can arise without being chosen.",
+          "fr": "Non. L’appétit sexuel appartient à la nature humaine. La question morale concerne son objet et ce que la volonté en fait délibérément ; une attirance peut surgir sans être choisie."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "No: to feel desire is not already to commit a sin. An attraction may arise without our choosing it. The moral question begins with what the will knowingly embraces or does. This distinction matters greatly, especially for anyone inclined to accuse himself of every passing feeling.",
+          "fr": "Non : éprouver un désir n’est pas déjà commettre un péché. Une attirance peut naître sans qu’on l’ait choisie. La question morale porte sur ce que la volonté accueille ou accomplit en connaissance de cause. Cette distinction est essentielle, surtout pour qui se reproche le moindre sentiment passager."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "But if a desire appears before I can stop it, have I already offended God?",
+          "fr": "Mais si le désir apparaît avant que je puisse l’arrêter, ai-je déjà offensé Dieu ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Not merely by the desire's appearance. First movements and unchosen attractions are not the same as a deliberate embrace of them. If you are troubled by recurring doubts of this sort, do not repeatedly reopen an already settled examination.",
+          "fr": "Non, du seul fait de son apparition. Les premiers mouvements et les attirances non choisies ne sont pas un consentement délibéré. Si de tels doutes reviennent sans cesse, ne recommencez pas indéfiniment un examen déjà achevé."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST151",
+              "locator": "a.1"
+            },
+            {
+              "registry_key": "ST77",
+              "locator": "aa.1–7"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "The mere occurrence of an attraction is not a deliberate sinful choice. Passions receive moral qualification through their relation to reason and will; their object and voluntariness matter.",
+          "fr": "La simple apparition d’une attirance n’est pas un choix coupable délibéré. Les passions reçoivent leur qualification morale dans leur rapport à la raison et à la volonté ; leur objet et leur caractère volontaire comptent.",
+          "claims": [
+            {
+              "text": "Passions and moral qualification",
+              "refs": [
+                "CCC1767-1768"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "Its appearance alone does not prove consent. But moral responsibility can also involve what we voluntarily encourage or culpably fail to resist; a short description cannot settle every case.",
+          "fr": "Son apparition seule ne prouve pas le consentement. Mais la responsabilité peut aussi concerner ce que nous favorisons volontairement ou omettons coupablement de repousser ; une brève description ne règle pas tous les cas.",
+          "claims": [
+            {
+              "text": "Direct and indirect voluntariness",
+              "refs": [
+                "CCC1767-1768",
+                "CCC1734-1737"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_AND_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Avoid absolute moral question begins only with deliberate embrace wording, which can omit indirect voluntariness",
+        "Remove unsupported blanket instruction never to reopen an examination; reuse B15 first-movement boundaries"
+      ],
+      "editorialHolds": [
+        "Theologian reviews treatment of first movements and imperfect voluntariness; no individualized verdict"
+      ],
+      "classification": "CHANOINE_EXPLANATORY_PARAPHRASE_WITH_MARKED_APPLICATION",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE028",
+      "sourceQuestionId": "CSE028",
+      "canonicalOwner": "SEX-CORE-06",
+      "originalRecord": {
+        "source_question_id": "CSE028",
+        "conversation_id": "CHA-CSE-CSE028",
+        "canonical_topic_owner": "SEX-CORE-06",
+        "title": "If virginity is higher, does that devalue marriage?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "If virginity is higher, does that devalue marriage?",
+          "fr": "Si la virginité est supérieure, cela dévalorise-t-il le mariage ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "No. Catholic tradition simultaneously teaches that marriage is holy and sacramental and that consecrated virginity for God is a higher counsel. A higher state does not make the lower good evil.",
+          "fr": "Non. La tradition catholique enseigne simultanément que le mariage est saint et sacramentel et que la virginité consacrée à Dieu est un conseil supérieur. Un état supérieur ne rend pas mauvais le bien inférieur."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "The Church honours marriage as a true good and, for the baptised, a sacrament. She also esteems consecrated virginity for the sake of the Kingdom as a higher counsel. To say that one vocation has a particular excellence is not to despise the other. Holiness is required in both.",
+          "fr": "L’Église honore le mariage comme un véritable bien et, entre baptisés, comme un sacrement. Elle estime aussi la virginité consacrée pour le Royaume comme un conseil supérieur. Reconnaître une excellence particulière à une vocation n’est pas mépriser l’autre. La sainteté est demandée dans les deux états."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Does someone who marries choose a second-class Christian life?",
+          "fr": "Celui qui se marie choisit-il une vie chrétienne de second rang ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Certainly not. Marriage is a sacrament and a path of holiness, with grave and beautiful responsibilities. The traditional comparison concerns the special value of a state freely offered to God, not the worth of a husband, wife or family.",
+          "fr": "Certainement pas. Le mariage est un sacrement et un chemin de sainteté, avec des devoirs graves et beaux. La comparaison traditionnelle porte sur la valeur particulière d’un état librement offert à Dieu, non sur la dignité d’un époux, d’une épouse ou d’une famille."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "SCR",
+              "locator": "Mt 19:10–12; 1 Cor 7:32–38"
+            },
+            {
+              "registry_key": "ST152",
+              "locator": "a.4"
+            },
+            {
+              "registry_key": "SACRA",
+              "locator": "§§10–24"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Consecrated virginity for God has a traditional excellence over marriage. This does not make marriage evil or prevent married people from attaining holiness.",
+          "fr": "La virginité consacrée à Dieu possède une excellence traditionnelle sur le mariage. Cela ne rend pas le mariage mauvais et n’empêche pas les personnes mariées d’atteindre la sainteté.",
+          "claims": [
+            {
+              "text": "Excellence of virginity",
+              "refs": [
+                "ST152a4"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Married holiness",
+              "refs": [
+                "SV45-47"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "The comparison of states is not a ranking of every individual. Aquinas explicitly allows that a married person may be more virtuous than a virgin.",
+          "fr": "La comparaison des états ne classe pas chaque personne individuellement. Saint Thomas admet explicitement qu’une personne mariée puisse être plus vertueuse qu’une personne vierge.",
+          "claims": [
+            {
+              "text": "State versus individual virtue",
+              "refs": [
+                "ST152a4ad2"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Replace vague particular esteem alone with explicit traditional comparison; do not attenuate doctrinal claim",
+        "Add exact ST152a4 ad2 and Sacra45–47, missing from original broad10–24 range"
+      ],
+      "editorialHolds": [
+        "Human doctrinal reviewer checks excellence-of-state wording and distinction between mere unmarried status and consecration for God"
+      ],
+      "classification": "CHANOINE_EXPLANATORY_PARAPHRASE_WITH_MARKED_APPLICATION",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE029",
+      "sourceQuestionId": "CSE029",
+      "canonicalOwner": "SEX-CORE-06",
+      "originalRecord": {
+        "source_question_id": "CSE029",
+        "conversation_id": "CHA-CSE-CSE029",
+        "canonical_topic_owner": "SEX-CORE-06",
+        "title": "Is lifelong celibacy psychologically unhealthy?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Is lifelong celibacy psychologically unhealthy?",
+          "fr": "Le célibat perpétuel est-il psychologiquement malsain ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Not by definition. The claim that celibacy is necessarily unhealthy would require showing that sexual activity is a psychological necessity. Catholic teaching denies that premise and treats lifelong continence as a genuinely livable vocation. It does not claim that every celibate life is automatically healthy: immaturity, isolation or poor formation can still cause real problems in a particular person.",
+          "fr": "Pas par définition. Affirmer que le célibat est nécessairement malsain supposerait de montrer que l’activité sexuelle est une nécessité psychologique. L’enseignement catholique rejette cette prémisse et considère la continence perpétuelle comme une vocation réellement vivable. Il ne prétend pas que toute vie célibataire soit automatiquement saine : l’immaturité, l’isolement ou une mauvaise formation peuvent causer de véritables difficultés chez une personne particulière."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Celibacy is not, by its nature, a psychological illness. But a person living it needs maturity, friendship, prayer and an ordered life; loneliness or inadequate formation can cause real harm. We should defend the possibility and dignity of this vocation without pretending that every difficulty disappears by making a promise.",
+          "fr": "Le célibat n’est pas, par nature, une maladie psychologique. Mais celui qui le vit a besoin de maturité, d’amitié, de prière et d’une vie réglée ; la solitude ou une formation insuffisante peuvent causer un mal réel. Défendons la possibilité et la dignité de cette vocation sans prétendre qu’une promesse supprime toute difficulté."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "But even if possible, why call it a higher vocation?",
+          "fr": "Mais même si c’est possible, pourquoi l’appeler une vocation supérieure ?"
+        },
+        "original_source_followup_reply": {
+          "en": "That is a theological question distinct from psychological health. Catholicism values consecrated virginity because of its undivided dedication to God, not because marriage or sexuality are dirty.",
+          "fr": "C’est une question théologique distincte de la santé psychologique. Le catholicisme valorise la virginité consacrée en raison de son dévouement sans partage à Dieu, non parce que le mariage ou la sexualité seraient impurs."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "Because that ranking concerns a vocation’s dedication to God, not a claim that marriage is unclean or that a celibate person is automatically healthy. These are distinct questions. The Church honours marriage while giving a particular esteem to virginity consecrated to God.",
+          "fr": "Parce que ce rang concerne le don de soi à Dieu, non l’idée que le mariage serait impur ou que tout célibataire serait psychologiquement sain. Ce sont deux questions distinctes. L’Église honore le mariage tout en estimant particulièrement la virginité consacrée."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-001-031.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "SACRA",
+              "locator": "§§34–36, 53–62"
+            },
+            {
+              "registry_key": "PRIEST_WELLBEING2016",
+              "locator": "qualitative 15-priest study; no population inference"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "DOCTRINAL_SOURCE_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Catholic teaching affirms lifelong continence as a possible vocation; that is not a guarantee about every person’s mental health. The cited study of fifteen priests records both positive and negative experiences and cannot establish a universal clinical conclusion.",
+          "fr": "L’enseignement catholique affirme que la continence perpétuelle est une vocation possible ; cela ne garantit pas la santé psychique de chaque personne. L’étude citée de quinze prêtres rapporte des expériences positives et négatives sans établir de conclusion clinique universelle.",
+          "claims": [
+            {
+              "text": "Vocation possible",
+              "refs": [
+                "SV48-51"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Study scope and results",
+              "refs": [
+                "ISACCO2016"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "Its theological excellence concerns dedication to God, rather than a promise of psychological health. It neither devalues marriage nor makes every celibate person holier.",
+          "fr": "Son excellence théologique concerne le don à Dieu, et non une promesse de santé psychologique. Elle ne dévalorise pas le mariage et ne rend pas chaque célibataire plus saint.",
+          "claims": [
+            {
+              "text": "Dedication and married holiness",
+              "refs": [
+                "ST152a4",
+                "SV45-47"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Individual distinction",
+              "refs": [
+                "ST152a4ad2"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Keep empirical and theological claims separately sourced",
+        "Remove unsourced universal causal claims loneliness or inadequate formation cause real harm; retain the actual small-study findings with sampling limitations",
+        "Do not describe all celibacy as consecrated virginity or diagnose an individual from a vocation label"
+      ],
+      "editorialHolds": [
+        "Qualified clinician reviews any future general clinical claim; historian/theologian evaluates use of 1954 document in present explanation"
+      ],
+      "classification": "CHANOINE_EXPLANATORY_PARAPHRASE_WITH_MARKED_APPLICATION",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ST78a2",
+      "work": "Aquinas, Summa theologiae I–II q.78 a.2 corpus and replies",
+      "url": "https://www.newadvent.org/summa/2078.htm#article2",
+      "language": "English Dominican translation, second revised edition1920",
+      "exactEnglishExcerpt": "a sin committed by one who has the habit, and a sin committed by habit",
+      "supports": "Having a habit differs from choosing from it; no clinical taxonomy supplied"
+    },
+    {
+      "id": "CCC1735",
+      "work": "Catechism of the Catholic Church §1735",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_3/i_freedom_and_responsibility.html",
+      "supports": "Habit and other factors may diminish or nullify imputability"
+    },
+    {
+      "id": "CCC1734-1737",
+      "work": "Same §§1734–1737",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_3/i_freedom_and_responsibility.html",
+      "supports": "Responsibility proportionate to voluntariness; negligence and foreseeable avoidable effects"
+    },
+    {
+      "id": "CCC2352",
+      "work": "Same §2352, final moral-responsibility paragraph",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_6/ii_the_vocation_to_chastity.html",
+      "supports": "Case-specific mitigation in its actual context, not blanket absolution from all habitual acts"
+    },
+    {
+      "id": "ST151a1",
+      "work": "Aquinas, Summa theologiae II–II q.151 a.1 corpus and ad1",
+      "url": "https://www.newadvent.org/summa/3151.htm#article1",
+      "language": "English Dominican translation",
+      "supports": "Chastity as moderation by reason and choice of will"
+    },
+    {
+      "id": "CCC1767-1768",
+      "work": "CCC §§1767–1768",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_5/ii_passions_and_moral_life.html",
+      "supports": "Passions and reason/will; commanded or culpably unresisted movement"
+    },
+    {
+      "id": "SV35",
+      "work": "Pius XII, Sacra virginitas (25 March1954), English §35",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-xii/la/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html",
+      "originalLocator": "Castitatis virtus non a nobis postulat",
+      "exactLatinExcerpt": "ut concupiscentiae stimulum ne sentiamus",
+      "supports": "Virtue is not insensibility to desire"
+    },
+    {
+      "id": "SV45-47",
+      "work": "Same, English §§45–47",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-xii/la/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html",
+      "originalLocator": "Hoc imprimis aperte declarandum; Vitae sanctimonia; Animadvertendum praeterea",
+      "supports": "Holiness possible in marriage; counsel not universal command"
+    },
+    {
+      "id": "SV48-51",
+      "work": "Same, English §§48–51",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-xii/la/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html",
+      "originalLocator": "Hac de causa perfecta castitas; Antequam igitur arctissimum; Verumtamen, etsi Deo dicata",
+      "supports": "Free choice, discernment, grace and possibility; no health guarantee"
+    },
+    {
+      "id": "ST152a4",
+      "work": "Aquinas II–II q.152 a.4 corpus",
+      "url": "https://www.newadvent.org/summa/3152.htm#article4",
+      "supports": "Excellence of virginity consecrated to God"
+    },
+    {
+      "id": "ST152a4ad2",
+      "work": "Same a.4 ad2, with ad1",
+      "url": "https://www.newadvent.org/summa/3152.htm#article4",
+      "supports": "Individual married person can excel in virtue"
+    },
+    {
+      "id": "FREUD1908",
+      "work": "Freud, Sexual morality and modern nervousness (1908), collected English translation1924, pp88–89",
+      "url": "https://www.freudedition.net/werke/sexual-morality-and-modern-nervousness/druckschrift",
+      "kind": "OPPOSING_HISTORICAL_AUTHOR_PRIMARY_TEXT_IN_TRANSLATION",
+      "supports": "Causal argument about restrictive morality and neurosis; not adopted as contemporary clinical proof"
+    },
+    {
+      "id": "ISACCO2016",
+      "work": "Isacco, Sahker, Krinock, Sim and Hamilton, How Religious Beliefs and Practices Influence the Psychological Health of Catholic Priests, American Journal of Men's Health10(4),2016,325–337; online23January2015; DOI10.1177/1557988314567325",
+      "url": "https://journals.sagepub.com/doi/10.1177/1557988314567325",
+      "locator": "Abstract; Method/Participants; Discussion/Limitations",
+      "kind": "PRIMARY_QUALITATIVE_EMPIRICAL",
+      "supports": "Fifteen mid-Atlantic US priests; mixed reported experiences; snowball recruitment, homogeneous sample and possible selection bias; no representative population or universal causal inference"
+    }
+  ],
+  "sourceNotes": [
+    "Sacra virginitas English §34 has apparent conversation typo where Latin ad sui ipsius conservationem concerns self-preservation; do not quote English typo as doctrine. No new answer claim relies on this wording.",
+    "Original-language Sacra sections are unnumbered: use incipits, not imaginary identical paragraph labels.",
+    "Aquinas Latin not independently collated; no original-language certification asserted."
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "CSE020",
+        "CSE023",
+        "CSE026"
+      ],
+      "decision": "Shared voluntariness principles with B15; preserve distinct habit/temptation/consent questions. No B15 answer rewritten here."
+    },
+    {
+      "ids": [
+        "CSE021",
+        "CSE022"
+      ],
+      "decision": "Definition and moral responsibility are different intents; share source map, retain both."
+    },
+    {
+      "ids": [
+        "CSE028",
+        "CSE029"
+      ],
+      "decision": "Share theological distinction; keep empirical-health discussion specific to029."
+    }
+  ],
+  "newSubstantiveGaps": [],
+  "humanDecisions": [
+    "Independent theology, French/English, pastoral and persona review pending for all records",
+    "CSE020/029 need specialist review before expanding clinical language"
+  ],
+  "approvalsChanged": 0,
+  "continue": true
+}

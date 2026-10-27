@@ -1,0 +1,341 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B35_PRIMARY_SCOPE_V1",
+  "asOf": "2026-10-26",
+  "status": "RESEARCH_ONLY_NOT_HUMAN_CERTIFIED",
+  "continuity": {
+    "baseline": "21 Oct consolidated 68 examined / 65 improved / 64 complete pending human certification / one original English source blocked",
+    "previous": "B33 CSE091–110; latest branch listing checked 2026-10-26",
+    "sourceOwnership": "Existing CSE111–130; no new canonical IDs; CSE111–120 specialist triage, CSE123/127/129 proposed precision",
+    "originalEnglishChanoineBlocked": true,
+    "originalEnglishReconstructed": false,
+    "persona": "Fictional Chanoine; never attribute 1995/2023 or other post-1991 documents to Archbishop Lefebvre"
+  },
+  "sources": {
+    "CCC2356": {
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_6/ii_the_vocation_to_chastity.html",
+      "loci": "2351,2354,2356"
+    },
+    "CCC2380": {
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_6/iv_offenses_against_the_dignity_of_marriage.index.html",
+      "loci": "2380–2381,2388–2389"
+    },
+    "CCC1735": {
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_3/i_freedom_and_responsibility.html",
+      "loci": "1735–1737"
+    },
+    "CCC1857": {
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_8/iv_the_gravity_of_sin_mortal_and_venial_sin.html",
+      "loci": "1857–1860"
+    },
+    "CCC2270": {
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_5/i_respect_for_human_life.html",
+      "loci": "2270–2271"
+    },
+    "EV1995": {
+      "en": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25031995_evangelium-vitae.html",
+      "fr": "https://www.vatican.va/content/john-paul-ii/fr/encyclicals/documents/hf_jp-ii_enc_25031995_evangelium-vitae.html",
+      "loci": "58–60"
+    },
+    "CCC1455": {
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.index.html",
+      "loci": "1455–1456"
+    },
+    "VELM2023": {
+      "url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20230325-motu-proprio-vos-estis-lux-mundi-aggiornato.html",
+      "loci": "Arts 1–5; 2023 norms, not historical Chanoine testimony"
+    }
+  },
+  "proposals": [
+    {
+      "existingFamilyId": "CHA-CSE-CSE123",
+      "sourceQuestionId": "CSE123",
+      "proposedOpening": {
+        "en": "The Church protects human life from conception. Its teaching against directly ending that life does not depend on identifying a measurable sensation, a stage of viability, or a scientifically demonstrable instant when a spiritual soul is present.",
+        "fr": "L'Église protège la vie humaine dès la conception. Son enseignement contre la suppression directe de cette vie ne dépend ni d'une sensation mesurable, ni du seuil de viabilité, ni de la démonstration scientifique de l'instant où l'âme spirituelle est présente."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Has the Church claimed to settle the philosophical question of ensoulment by laboratory evidence?",
+          "fr": "L'Église prétend-elle trancher la question philosophique de l'animation par une preuve de laboratoire ?"
+        },
+        "answer": {
+          "en": "No. Evangelium vitae §60 expressly distinguishes the moral obligation to protect the embryo from philosophical assertions on which the Magisterium has not expressly committed itself.",
+          "fr": "Non. Evangelium vitae, §60, distingue expressément l'obligation morale de protéger l'embryon des affirmations philosophiques sur lesquelles le Magistère ne s'est pas expressément engagé."
+        }
+      },
+      "sourceRefs": [
+        "CCC §§2270–2271",
+        "EV1995 §60"
+      ],
+      "sourcePrecisionDelta": "Original CSE123 opening already sound; this is an optional precision expansion, not a replacement of an approved answer.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_WITH_EXPLICIT_SOURCE_VS_APPLICATION_BOUNDARY_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "CHA-CSE-CSE127",
+      "sourceQuestionId": "CSE127",
+      "proposedOpening": {
+        "en": "Consent to an exchange does not settle its moral character. Intentionally cultivating sexual display or lust outside marriage raises questions of chastity; coercion, privacy and the possibility of distribution introduce further wrongs. The Catechism's precise definition of pornography must not be extended automatically to every private exchange.",
+        "fr": "Le consentement à un échange n'en détermine pas à lui seul la valeur morale. Cultiver volontairement l'exhibition sexuelle ou la luxure hors du mariage soulève des questions de chasteté ; la contrainte, la vie privée et la diffusion possible ajoutent d'autres torts. La définition précise de la pornographie dans le Catéchisme ne doit pas être étendue automatiquement à tout échange privé."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does calling an act objectively grave prove that every participant committed a mortal sin?",
+          "fr": "Qualifier un acte de grave prouve-t-il que chaque participant a commis un péché mortel ?"
+        },
+        "answer": {
+          "en": "No. Mortal sin also requires full knowledge and deliberate consent; coercion, fear and other circumstances must not be ignored. No source here gives a universal judgment for every digital scenario.",
+          "fr": "Non. Le péché mortel suppose aussi pleine connaissance et consentement délibéré ; on ne doit ignorer ni la contrainte, ni la peur, ni les autres circonstances. Aucun des textes cités ne tranche universellement tous les scénarios numériques."
+        }
+      },
+      "sourceRefs": [
+        "CCC §§2351,2354",
+        "CCC §§1857–1860",
+        "CCC §1735"
+      ],
+      "sourcePrecisionDelta": "Do not misquote CCC2354 as a blanket definition covering all private two-person exchanges; digital-specific application is editorial inference.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_WITH_EXPLICIT_SOURCE_VS_APPLICATION_BOUNDARY_NOT_VERBATIM",
+      "reviewGate": "HUMAN_SOURCE_SCOPE_AND_VOICE_REVIEW_REQUIRED_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "CHA-CSE-CSE129",
+      "sourceQuestionId": "CSE129",
+      "proposedOpening": {
+        "en": "Fidelity concerns more than physical contact. Deliberately cultivating an intimate sexual attachment outside marriage can betray a spouse's trust even through a screen. Yet the Catechism's specific definition of adultery should not be silently rewritten as though every online exchange were a physical sexual relation.",
+        "fr": "La fidélité ne se réduit pas au contact physique. Cultiver volontairement un attachement sexuel intime hors du mariage peut trahir la confiance du conjoint, même par écran interposé. Cependant, la définition précise de l'adultère dans le Catéchisme ne doit pas être réécrite comme si tout échange en ligne était une relation sexuelle corporelle."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Is every online betrayal formally identical to physical adultery?",
+          "fr": "Toute trahison en ligne est-elle formellement identique à l'adultère physique ?"
+        },
+        "answer": {
+          "en": "No. CCC §2380 defines adultery by sexual relations involving someone married to another; applying principles of fidelity and the morality of desire to virtual acts requires an explicitly labelled analogy.",
+          "fr": "Non. Le §2380 définit l'adultère par des relations sexuelles impliquant une personne mariée à une autre ; appliquer les principes de fidélité et de moralité du désir aux actes virtuels demande une analogie explicitement signalée."
+        }
+      },
+      "sourceRefs": [
+        "CCC §§2380–2381",
+        "CCC §2351"
+      ],
+      "sourcePrecisionDelta": "Separate defined category of adultery from pastoral inference concerning digital betrayal; preserve existing CSE129 core answer.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_WITH_EXPLICIT_SOURCE_VS_APPLICATION_BOUNDARY_NOT_VERBATIM",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_VOICE_CERTIFICATION_NOT_CERTIFIED",
+      "release": {
+        "claimCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "heldSpecialist": [
+    {
+      "existingFamilyId": "CHA-CSE-CSE111",
+      "sourceQuestionId": "CSE111",
+      "reviewGate": "SPECIALIST_HOLD_NOT_CERTIFIED",
+      "sourceScopeFinding": "CCC §2356 supports grave injustice and victim dignity; survivor response must receive safeguarding review.",
+      "release": {
+        "claimCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "CHA-CSE-CSE112",
+      "sourceQuestionId": "CSE112",
+      "reviewGate": "SPECIALIST_HOLD_NOT_CERTIFIED",
+      "sourceScopeFinding": "CCC §§1735,1857 support voluntariness distinction but do NOT establish physiological response science; retain prior voice-parity edit, specialist clinical evidence outstanding.",
+      "release": {
+        "claimCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "CHA-CSE-CSE113",
+      "sourceQuestionId": "CSE113",
+      "reviewGate": "SPECIALIST_HOLD_NOT_CERTIFIED",
+      "sourceScopeFinding": "Do not infer consent or sin from involuntary bodily sensation; source-bound moral principle available, trauma/physiology claim requires specialist.",
+      "release": {
+        "claimCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "CHA-CSE-CSE114",
+      "sourceQuestionId": "CSE114",
+      "reviewGate": "SPECIALIST_HOLD_NOT_CERTIFIED",
+      "sourceScopeFinding": "CCC §1735 explicitly lists fear and duress; no formula for individual culpability.",
+      "release": {
+        "claimCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "CHA-CSE-CSE115",
+      "sourceQuestionId": "CSE115",
+      "reviewGate": "SPECIALIST_HOLD_NOT_CERTIFIED",
+      "sourceScopeFinding": "Vos estis lux mundi 2023 Arts 1,2,3,5 supports Church-specific abuse of authority and response; do not extend its procedural scope to every lay case or attribute to historical Lefebvre.",
+      "release": {
+        "claimCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "CHA-CSE-CSE116",
+      "sourceQuestionId": "CSE116",
+      "reviewGate": "SPECIALIST_HOLD_NOT_CERTIFIED",
+      "sourceScopeFinding": "CCC §§2388–2389 distinguish incest and abuse of children; case-specific safeguarding and criminal-law obligations require separate review.",
+      "release": {
+        "claimCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "CHA-CSE-CSE117",
+      "sourceQuestionId": "CSE117",
+      "reviewGate": "SPECIALIST_HOLD_NOT_CERTIFIED",
+      "sourceScopeFinding": "CCC §§1735,1857 support free-consent principle; no intoxication threshold or clinical assessment derived from catechism.",
+      "release": {
+        "claimCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "CHA-CSE-CSE118",
+      "sourceQuestionId": "CSE118",
+      "reviewGate": "SPECIALIST_HOLD_NOT_CERTIFIED",
+      "sourceScopeFinding": "Manipulation and abuse-of-authority source mapping is possible, but the 2023 ecclesiastical law does not define all grooming conduct; specialist review.",
+      "release": {
+        "claimCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "CHA-CSE-CSE119",
+      "sourceQuestionId": "CSE119",
+      "reviewGate": "SPECIALIST_HOLD_NOT_CERTIFIED",
+      "sourceScopeFinding": "CCC §§1455–1456 concern confession of one's own sins, not an obligation to confess harm inflicted by another; protect confessional seal and safeguarding distinctions, specialist.",
+      "release": {
+        "claimCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "existingFamilyId": "CHA-CSE-CSE120",
+      "sourceQuestionId": "CSE120",
+      "reviewGate": "SPECIALIST_HOLD_NOT_CERTIFIED",
+      "sourceScopeFinding": "CCC §1735 covers fear and duress, but trauma freeze response evidence is not verified here; specialist hold.",
+      "release": {
+        "claimCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "additionalScopeResults": [
+    {
+      "sourceQuestionId": "CSE128",
+      "reviewGate": "CROSS_FAMILY_SCOPE_HOLD",
+      "reason": "Overlaps earlier CSE076–077 private-spousal-imagery scope; no new categorical rule or duplicate answer."
+    },
+    {
+      "sourceQuestionId": "CSE130",
+      "reviewGate": "EXISTING_DRAFT_SOURCE_CONSISTENT_NO_REWRITE",
+      "reason": "Existing answer already labels AI interaction as an analogy from chastity/fidelity, not an explicit historical magisterial ruling; retain and human-review."
+    },
+    {
+      "sourceQuestionId": "CSE124",
+      "reviewGate": "SPECIALIST_HOLD",
+      "reason": "Pregnancy following assault; avoid case-specific counsel without survivor-safeguarding review."
+    },
+    {
+      "sourceQuestionId": "CSE125",
+      "reviewGate": "SPECIALIST_HOLD",
+      "reason": "Maternal health emergencies require precise clinical/moral classification; not generalized from CCC2271."
+    },
+    {
+      "sourceQuestionId": "CSE126",
+      "reviewGate": "SPECIALIST_HOLD",
+      "reason": "Child protection and online exposure; requires age-appropriate safeguarding."
+    }
+  ],
+  "counts": {
+    "newFamilyIds": 0,
+    "proposedDistinctFamilies": 3,
+    "bilingualAnswerUnitsProposed": 6,
+    "specialistHoldsFromCSE111to120": 10,
+    "additionalScopeItems": 5,
+    "humanCertified": 0
+  },
+  "nextQueue": [
+    "CSE131–140: source-first triage, skip specialist and duplicated family ownership",
+    "CSE111–120: safeguarding review with clinical/civil-law experts, no automated publication",
+    "CSE127/CSE129: certify distinctions between direct source and digital analogy",
+    "Original English Chanoine source: keep blocked until authentic witness recovered"
+  ],
+  "release": {
+    "claimCertified": false,
+    "translationApproved": false,
+    "personaVoiceApproved": false,
+    "safeguardingApproved": false,
+    "publicationApproved": false,
+    "routingEnabled": false
+  }
+}

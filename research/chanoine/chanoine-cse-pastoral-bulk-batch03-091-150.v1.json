@@ -1,0 +1,932 @@
+{
+  "schema": "AO_CHANOINE_CSE_PASTORAL_BULK_ADAPTATIONS_V1",
+  "batch": "BATCH03_CSE091_150",
+  "status": "RESEARCH_ONLY_NOT_DEPLOYABLE",
+  "source": "research/chanoine/chanoine-cse-source-conversation-seeds.v1.json",
+  "governing_visibility": "data/learn/formation-qa-recovery-visibility.v1.json",
+  "description": "First-pass individual bilingual priest-voice adaptations for CSE091–CSE150. No synthetic source attributions, dialogue approvals or public routing.",
+  "record_count": 60,
+  "original_source_answers_never_modified": true,
+  "records": [
+    {
+      "source_question_id": "CSE091",
+      "source_seed_conversation_id": "CHA-CSE-CSE091",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "The Catholic tradition sees bodily sexual difference as a real feature of the human person, not a mere title imposed by society. Man and woman have equal dignity, while the difference between them bears upon marriage and generation. We should speak of that truth without reducing anyone to anatomy alone.",
+        "fr": "La tradition catholique reconnaît la différence sexuelle corporelle comme une dimension réelle de la personne humaine, non comme un titre imposé par la société. L’homme et la femme ont une égale dignité, tandis que leur différence concerne le mariage et la génération. Il faut l’exposer sans réduire quiconque à sa seule anatomie."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE092",
+      "source_seed_conversation_id": "CHA-CSE-CSE092",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Many expectations placed upon men and women belong to history and custom; some may even be unjust. We must not turn every fashion of an age into divine law. Yet the variability of social roles does not prove that bodily sex itself is invented by society.",
+        "fr": "Bien des attentes envers les hommes et les femmes relèvent de l’histoire et des coutumes ; certaines peuvent même être injustes. N’érigeons pas chaque usage d’une époque en loi divine. Mais la diversité des rôles sociaux ne prouve pas que le sexe corporel soit lui-même inventé par la société."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE093",
+      "source_seed_conversation_id": "CHA-CSE-CSE093",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "If by 'constructed' you mean that societies attach different meanings and duties to sex, there is something to examine. But the Church distinguishes those variable conventions from the bodily difference of man and woman. We should identify which claim is being made rather than argue past one another.",
+        "fr": "Si vous entendez par « construit » que les sociétés attribuent des significations et des devoirs différents au sexe, la question mérite examen. Mais l’Église distingue ces conventions variables de la différence corporelle entre homme et femme. Précisons l’affirmation en cause plutôt que de discuter sans nous entendre."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE094",
+      "source_seed_conversation_id": "CHA-CSE-CSE094",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "The distress involved in gender dysphoria can be profound; it must never be ridiculed or dismissed. A Catholic account of the body's significance does not substitute for diagnosis, nor does a diagnosis settle every moral question about intervention. The person deserves competent, respectful and noncoercive care.",
+        "fr": "La souffrance liée à la dysphorie de genre peut être profonde ; on ne doit jamais la tourner en dérision ni la nier. Une conception catholique de la signification du corps ne remplace pas le diagnostic, et un diagnostic ne résout pas toute question morale sur les interventions. La personne mérite des soins compétents, respectueux et sans contrainte."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE095",
+      "source_seed_conversation_id": "CHA-CSE-CSE095",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Compassion first requires that we listen, speak respectfully and attend seriously to suffering. It does not require assent to every philosophical claim about the relation between identity and bodily sex. The challenge for a Christian is to hold conviction and charity together without turning disagreement into humiliation.",
+        "fr": "La compassion demande d’abord d’écouter, de parler avec respect et de prendre au sérieux la souffrance. Elle n’impose pas d’approuver toute affirmation philosophique sur le rapport entre identité et sexe corporel. Le chrétien doit unir conviction et charité sans transformer le désaccord en humiliation."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE096",
+      "source_seed_conversation_id": "CHA-CSE-CSE096",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "We must distinguish the moral principle from the clinical judgment in each case. Dignitas Infinita §60 teaches that interventions intended to change bodily sex, as understood there, as a rule risk threatening the person's unique dignity. It distinguishes appropriate treatment of genital abnormalities present at birth or developed later. We must neither apply this passage indiscriminately to every medical change of sexual characteristics nor improvise medical directions. Actual diagnosis, clinical risks and benefits, informed consent and competent ethical assessment remain necessary.",
+        "fr": "Il faut distinguer le principe moral du jugement clinique dans chaque cas. Dignitas Infinita, au §60, enseigne que les interventions visant à changer le sexe corporel, au sens précisé par ce texte, risquent en règle générale de menacer la dignité unique de la personne. Elle distingue le traitement approprié d'anomalies génitales présentes dès la naissance ou apparues plus tard. N'appliquons pas indistinctement ce passage à toute modification médicale des caractères sexuels et n'improvisons aucune prescription médicale. Le diagnostic réel, les risques et bénéfices cliniques, le consentement éclairé et une évaluation éthique compétente demeurent nécessaires."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "editorial_status": "SEMANTIC_CORRECTION_APPLIED_UNREVIEWED",
+      "semantic_repair_trace": "chanoine-cse-semantic-repair-proposals-12.v1.json#CSE096"
+    },
+    {
+      "source_question_id": "CSE097",
+      "source_seed_conversation_id": "CHA-CSE-CSE097",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A person with atypical sexual development deserves full dignity, competent medicine and careful attention to individual circumstances. Dignitas Infinita §60 distinguishes the sex-change interventions it discusses from appropriate medical treatment of genital abnormalities present at birth or developed later. It does not give a licence to perform any operation simply because a diagnosis exists. The actual clinical condition, benefits, risks, consent and ethical considerations must be assessed by qualified professionals, without pressure or ridicule.",
+        "fr": "Une personne présentant un développement sexuel atypique mérite une entière dignité, des soins compétents et une attention aux circonstances particulières. Dignitas Infinita, au §60, distingue les interventions de changement de sexe dont elle traite du soin médical approprié d'anomalies génitales présentes à la naissance ou apparues plus tard. Elle n'autorise pas n'importe quelle opération du seul fait d'un diagnostic. L'état clinique réel, les bénéfices, les risques, le consentement et les questions éthiques doivent être examinés par des professionnels qualifiés, sans pression ni moquerie."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "semantic_repair_trace": "research/chanoine/chanoine-cse-specialist-precision-repairs-3.v1.json#CSE097",
+      "editorial_status": "SPECIALIST_PRECISION_REPAIR_APPLIED_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE098",
+      "source_seed_conversation_id": "CHA-CSE-CSE098",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Truthfulness does not grant permission to mock or degrade. We may disagree about the nature of the person, the body or the morality of an act while still protecting another's dignity and freedom from violence. The Christian who loses charity has already damaged his own witness.",
+        "fr": "La vérité n’autorise ni la moquerie ni le mépris. On peut être en désaccord sur la personne, le corps ou la moralité d’un acte tout en protégeant la dignité d’autrui et sa liberté contre la violence. Le chrétien qui perd la charité a déjà blessé son propre témoignage."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE099",
+      "source_seed_conversation_id": "CHA-CSE-CSE099",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "No label expresses the whole of a human life. Attraction, personal history and social identity may matter deeply, but the person is called to truth, friendship, responsibility and holiness beyond any single category. We should never speak as though one aspect of someone's experience exhausted who that person is.",
+        "fr": "Aucune étiquette n’exprime la totalité d’une vie humaine. L’attirance, l’histoire personnelle et l’identité sociale peuvent compter profondément, mais la personne est appelée à la vérité, à l’amitié, à la responsabilité et à la sainteté au-delà d’une seule catégorie. Ne parlons jamais comme si un aspect de son expérience résumait tout son être."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE100",
+      "source_seed_conversation_id": "CHA-CSE-CSE100",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A child who raises such questions needs a parent who listens before judging. Ask what the child means, refuse ridicule or public confrontation, and offer steady affection. If distress is persistent or serious, obtain qualified age-appropriate assessment; theological statements do not replace sound paediatric care.",
+        "fr": "L’enfant qui pose de telles questions a besoin d’un parent qui écoute avant de juger. Cherchez ce qu’il veut dire, refusez la moquerie et les confrontations publiques, et demeurez affectueux. Si la souffrance persiste ou devient grave, demandez une évaluation compétente adaptée à son âge ; la théologie ne remplace pas de bons soins pédiatriques."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE101",
+      "source_seed_conversation_id": "CHA-CSE-CSE101",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "The longing for a child can cause profound sorrow, and that deserves compassion. Yet the Church teaches that even when only the spouses' own gametes are used and no embryos are destroyed, laboratory fertilisation substitutes a technical act for the spouses' conjugal union rather than assisting that union (Donum Vitae II.B.5). We must explain the moral objection without ever reproaching a child: every person conceived by IVF has full dignity and deserves love and welcome.",
+        "fr": "Le désir d'un enfant peut s'accompagner d'une douleur profonde, digne de compassion. Pourtant, l'Église enseigne que même lorsqu'on emploie seulement les gamètes des époux et qu'aucun embryon n'est détruit, la fécondation en laboratoire substitue un acte technique à leur union conjugale au lieu de l'aider (Donum Vitae II.B.5). Expliquons l'objection morale sans jamais faire de reproche à l'enfant : toute personne conçue par FIV possède sa pleine dignité et mérite amour et accueil."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "editorial_status": "SEMANTIC_CORRECTION_APPLIED_UNREVIEWED",
+      "semantic_repair_trace": "chanoine-cse-semantic-repair-proposals-12.v1.json#CSE101"
+    },
+    {
+      "source_question_id": "CSE102",
+      "source_seed_conversation_id": "CHA-CSE-CSE102",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Treating a cause of infertility can assist spouses in conceiving through their own conjugal union. Producing conception by a technical procedure in place of that union is a different moral act. We need the actual medical mechanism before assigning a method to either category.",
+        "fr": "Traiter une cause d’infertilité peut aider les époux à concevoir par leur propre union conjugale. Produire la conception par une technique qui se substitue à cette union est un autre acte moral. Il faut connaître le mécanisme médical réel avant de classer une méthode."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE103",
+      "source_seed_conversation_id": "CHA-CSE-CSE103",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A child must never be blamed for the manner of conception. The Church's concern about donated gametes is that a third party is deliberately brought into the origin of a child, separating genetic parenthood from the spouses' exclusive union. That is a judgment upon a chosen arrangement, not upon the worth of those born from it.",
+        "fr": "Un enfant ne doit jamais être blâmé pour les circonstances de sa conception. L’objection de l’Église au don de gamètes vise l’introduction délibérée d’un tiers dans l’origine de l’enfant, qui sépare la parenté génétique de l’union exclusive des époux. C’est un jugement sur un procédé choisi, non sur la valeur des enfants qui en naissent."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE104",
+      "source_seed_conversation_id": "CHA-CSE-CSE104",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "The generosity of someone offering to carry a child may be genuine, and avoiding coercion is essential. Professional ethics guidance, including the ASRM's 2023 position, argues that informed consent and independent safeguards can make such arrangements acceptable. The Church's distinct objection does not depend only on payment or exploitation; it concerns the deliberate contractual separation of gestation, parenthood and the child's origin (Donum Vitae II.A.3). We should engage the rival argument fairly, without impugning the dignity or motives of anyone involved.",
+        "fr": "La générosité d'une femme proposant de porter un enfant peut être réelle, et il est essentiel d'éviter toute contrainte. Des recommandations professionnelles, notamment la position de l'ASRM en 2023, soutiennent que le consentement éclairé et des garanties indépendantes peuvent rendre ces arrangements acceptables. L'objection propre de l'Église ne dépend pas seulement de la rémunération ou de l'exploitation ; elle porte sur la séparation contractuelle voulue de la gestation, de la parentalité et de l'origine de l'enfant (Donum Vitae II.A.3). Examinons loyalement l'argument opposé sans dénigrer la dignité ni les motifs des personnes concernées."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "editorial_status": "SEMANTIC_CORRECTION_APPLIED_UNREVIEWED",
+      "semantic_repair_trace": "chanoine-cse-semantic-repair-proposals-12.v1.json#CSE104"
+    },
+    {
+      "source_question_id": "CSE105",
+      "source_seed_conversation_id": "CHA-CSE-CSE105",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A medical test offered to heal is not the same as choosing which embryonic human lives may continue. The Church objects when diagnosis becomes a means of excluding, abandoning or destroying embryos judged undesirable. Concern for illness must not make the weak appear disposable.",
+        "fr": "Un examen médical destiné à soigner n’est pas la même chose que choisir quelles vies humaines embryonnaires pourront continuer. L’Église s’oppose au diagnostic lorsqu’il sert à éliminer, abandonner ou détruire des embryons jugés indésirables. Le souci de la maladie ne doit pas rendre les plus faibles disponibles."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE106",
+      "source_seed_conversation_id": "CHA-CSE-CSE106",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Yes, treatment can be permitted when it restores or supports the spouses' reproductive health so that conception follows their own conjugal act. The distinction is between healing a difficulty and replacing the act itself with a procedure. The details must be examined rather than accepting or condemning a method merely because it is modern.",
+        "fr": "Oui, un traitement peut être licite lorsqu’il restaure ou soutient la santé reproductive des époux pour que la conception procède de leur acte conjugal. La distinction est entre guérir une difficulté et remplacer cet acte par un procédé. Il faut examiner les détails plutôt qu’approuver ou condamner une méthode du seul fait qu’elle est moderne."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE107",
+      "source_seed_conversation_id": "CHA-CSE-CSE107",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Begin by asking the physician exactly what happens. Does the treatment heal a disorder or substitute for the spouses' act? Are third-party gametes involved? Are embryos created, selected, frozen or destroyed? Moral analysis begins with true facts and established principles, not with a guess based on the word 'technology'.",
+        "fr": "Commencez par demander au médecin ce qui se passe exactement. Le traitement guérit-il un trouble ou remplace-t-il l’acte des époux ? Fait-il intervenir des gamètes de tiers ? Crée-t-il, sélectionne-t-il, congèle-t-il ou détruit-il des embryons ? L’analyse morale commence par des faits vrais et des principes établis, non par un jugement sur le mot « technologie »."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE108",
+      "source_seed_conversation_id": "CHA-CSE-CSE108",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A legitimate medical diagnosis does not make every means of collecting a reproductive specimen morally equivalent. Persona Humana §9 states the general Church teaching on deliberate masturbation, but neither it nor Donum Vitae provides a full approval list for modern laboratory collection techniques. We must first establish what the clinician proposes and, where necessary, seek competent Catholic ethical advice. I cannot responsibly prescribe a clinical procedure or invent an approval the Church has not given.",
+        "fr": "Une fin médicale légitime ne rend pas moralement équivalents tous les moyens d'obtenir un prélèvement reproductif. Persona Humana, au §9, expose l'enseignement général de l'Église sur la masturbation volontaire, mais ni ce texte ni Donum Vitae ne fournissent une liste exhaustive de techniques modernes de prélèvement approuvées. Il faut d'abord établir ce que propose le clinicien et, si nécessaire, rechercher un avis éthique catholique compétent. Je ne saurais prescrire de manière responsable un procédé clinique ni inventer une permission que l'Église n'a pas donnée."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "semantic_repair_trace": "research/chanoine/chanoine-cse-specialist-precision-repairs-3.v1.json#CSE108",
+      "editorial_status": "VOICE_PARITY_DRAFT_APPLIED_STILL_UNREVIEWED",
+      "voice_parity_trace": "research/chanoine/chanoine-cse-six-voice-parity-proposals.v1.json#CSE108"
+    },
+    {
+      "source_question_id": "CSE109",
+      "source_seed_conversation_id": "CHA-CSE-CSE109",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "The embryo is not inventory to be kept in storage until others decide its fate. Freezing involves arresting development and exposing that developing human life to uncertain transfer, abandonment or destruction. This is why the Church considers the practice gravely problematic.",
+        "fr": "L’embryon n’est pas une marchandise que l’on conserve jusqu’à ce que d’autres décident de son sort. La congélation arrête son développement et expose cette vie humaine en formation à un transfert incertain, à l’abandon ou à la destruction. Voilà pourquoi l’Église juge cette pratique gravement problématique."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE110",
+      "source_seed_conversation_id": "CHA-CSE-CSE110",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "The injustice of embryos already frozen does not admit an easy solution. Dignitas Personae §19 rejects their destruction for research and their transfer to other couples as an infertility treatment. It calls proposals for prenatal adoption intended to save life praiseworthy in purpose, but beset by grave unresolved difficulties. The Church has not supplied a universal approved solution; let us not pretend otherwise, and seek competent ethical advice.",
+        "fr": "L'injustice faite aux embryons déjà congelés n'admet pas de solution facile. Dignitas Personae, au §19, rejette leur destruction pour la recherche et leur transfert à d'autres couples comme traitement de l'infertilité. Elle juge louable l'intention de propositions d'adoption prénatale destinées à sauver leur vie, tout en relevant de graves difficultés non résolues. L'Église n'a pas fourni de solution universelle approuvée ; ne prétendons pas le contraire et cherchons un conseil éthique compétent."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "editorial_status": "SEMANTIC_CORRECTION_APPLIED_UNREVIEWED",
+      "semantic_repair_trace": "chanoine-cse-semantic-repair-proposals-12.v1.json#CSE110"
+    },
+    {
+      "source_question_id": "CSE111",
+      "source_seed_conversation_id": "CHA-CSE-CSE111",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Sexual assault is a grave injustice against a person, violating bodily integrity and freedom through force or coercion. Its wrong is not merely a breach of chastity. The victim's safety and dignity must come first, and responsibility for the assault rests with the aggressor.",
+        "fr": "L’agression sexuelle est une grave injustice contre la personne ; elle viole l’intégrité corporelle et la liberté par la force ou la contrainte. Son mal ne se limite pas à une atteinte à la chasteté. La sécurité et la dignité de la victime doivent passer avant tout, et la responsabilité de l’agression incombe à son auteur."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE112",
+      "source_seed_conversation_id": "CHA-CSE-CSE112",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "No. An involuntary bodily response during an assault does not constitute consent and does not make the person assaulted responsible. The body can react under coercion. Such a reaction must never be used to discredit the account of an assault. The survivor deserves safety, support and respectful care.",
+        "fr": "Non. Une réaction corporelle involontaire pendant une agression ne constitue pas un consentement et ne rend pas responsable la personne agressée. Le corps peut réagir sous la contrainte. Une telle réaction ne doit jamais servir à mettre en doute le récit d'une agression. La personne survivante mérite sécurité, soutien et soins respectueux."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "voice_parity_trace": "research/chanoine/chanoine-cse-six-voice-parity-proposals.v1.json#CSE112",
+      "editorial_status": "VOICE_PARITY_DRAFT_APPLIED_STILL_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE113",
+      "source_seed_conversation_id": "CHA-CSE-CSE113",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Pleasure or a reflexive physical response during an assault is not a freely chosen sin. The victim must not be burdened with guilt for what the body did involuntarily. Protecting and supporting the person harmed is more important than speculating about sensations.",
+        "fr": "Le plaisir ressenti ou une réaction physique réflexe pendant une agression ne constitue pas un péché librement choisi. Il ne faut pas charger la victime de culpabilité pour ce que le corps a fait involontairement. La protéger et la soutenir importe davantage que de spéculer sur ses sensations."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE114",
+      "source_seed_conversation_id": "CHA-CSE-CSE114",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Threats and fear can weigh heavily upon freedom, sometimes removing genuine consent altogether. We cannot calculate responsibility from a formula without knowing the circumstances. Above all, coerced compliance must not be mistaken for a freely willed choice.",
+        "fr": "Les menaces et la peur peuvent peser lourdement sur la liberté, parfois jusqu’à supprimer tout véritable consentement. On ne saurait calculer la responsabilité par une formule sans connaître les circonstances. Surtout, il ne faut pas confondre une soumission imposée avec un choix libre."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE115",
+      "source_seed_conversation_id": "CHA-CSE-CSE115",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "To use spiritual authority or a position of trust for sexual access compounds the wrong with betrayal, manipulation and abuse of dependence. The offender's office does not lessen the gravity; it aggravates it. Safeguarding and accountability must never be postponed to protect an institution's reputation.",
+        "fr": "Employer l’autorité spirituelle ou une position de confiance pour obtenir un accès sexuel ajoute à la faute la trahison, la manipulation et l’abus de dépendance. La fonction de l’auteur n’atténue pas la gravité ; elle l’aggrave. La protection des personnes et la responsabilité ne doivent jamais être sacrifiées à la réputation d’une institution."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE116",
+      "source_seed_conversation_id": "CHA-CSE-CSE116",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Incest violates the duties and trust proper to family relationships, and may involve a grave imbalance of power or dependence. We must never romanticise or trivialise it. Where abuse has occurred, the priority is protection and truthful assistance for the person harmed.",
+        "fr": "L’inceste viole les devoirs et la confiance propres aux relations familiales et peut comporter un grave déséquilibre de pouvoir ou de dépendance. Il ne faut jamais le romantiser ni le banaliser. Lorsqu’il y a eu abus, la priorité est la protection et l’aide véridique à la personne lésée."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE117",
+      "source_seed_conversation_id": "CHA-CSE-CSE117",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Someone who is unconscious or seriously incapacitated cannot give the free and meaningful consent required for sexual activity. Silence and absence of resistance are not consent. The moral duty is to respect the person's freedom, not to exploit an impaired state.",
+        "fr": "Une personne inconsciente ou gravement incapable ne peut donner le consentement libre et réel requis pour une activité sexuelle. Le silence et l’absence de résistance ne sont pas un consentement. Le devoir moral est de respecter sa liberté, non de profiter de son état diminué."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE118",
+      "source_seed_conversation_id": "CHA-CSE-CSE118",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Grooming works by weakening another's boundaries, judgment or freedom, often through deception, trust or dependence. It can be gravely wrong before any later assault occurs. The proper response is to recognise warning signs, protect those at risk and hold manipulators accountable.",
+        "fr": "L’emprise préparatoire affaiblit les limites, le jugement ou la liberté d’autrui, souvent par la tromperie, la confiance ou la dépendance. Elle peut être gravement mauvaise avant même toute agression ultérieure. Il convient de reconnaître les signes, de protéger les personnes vulnérables et de demander des comptes aux manipulateurs."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE119",
+      "source_seed_conversation_id": "CHA-CSE-CSE119",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "If you suffered abuse against your will, you are not obliged to confess the wrong committed against you as though you had committed it. Confession concerns your own freely chosen sins. A good confessor will listen without demanding unnecessary details or assuming guilt from fear, paralysis or bodily reactions.",
+        "fr": "Si vous avez subi un abus contre votre volonté, vous n’avez pas à confesser comme votre péché le mal qu’on vous a fait. La confession porte sur vos propres fautes librement choisies. Un bon confesseur écoute sans demander de détails inutiles ni présumer une faute à partir de la peur, de la paralysie ou d’une réaction corporelle."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE120",
+      "source_seed_conversation_id": "CHA-CSE-CSE120",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Freezing in terror, failing to resist or obeying a threat is not proof of consent. People sometimes survive immediate danger by becoming still or complying under fear. The guilt of coercion belongs to the one who coerces; survivors deserve to be believed, protected and helped.",
+        "fr": "Rester figé de terreur, ne pas résister ou obéir sous la menace ne prouve pas le consentement. Il arrive que l’on survive à un danger immédiat en demeurant immobile ou en cédant sous la peur. La faute de la contrainte appartient à celui qui l’exerce ; les personnes survivantes méritent d’être entendues, protégées et aidées."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE121",
+      "source_seed_conversation_id": "CHA-CSE-CSE121",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Yes, children should receive truthful instruction suited to their age and maturity, with modesty and prudence. Silence is not protection when a child needs to understand bodily development, boundaries and danger. But instruction should neither overwhelm the young nor turn intimate matters into a spectacle.",
+        "fr": "Oui, les enfants doivent recevoir une instruction vraie, adaptée à leur âge et à leur maturité, avec pudeur et prudence. Le silence ne protège pas l’enfant qui doit comprendre son développement corporel, ses limites et les dangers. Mais l’enseignement ne doit ni accabler les jeunes ni transformer l’intimité en spectacle."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE122",
+      "source_seed_conversation_id": "CHA-CSE-CSE122",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Parents bear the primary responsibility for the moral and sexual education of their children. Teachers, clergy and clinicians can help, but should not displace the parents or ignore a child's age and needs. Good formation depends upon trust, truth and discretion.",
+        "fr": "Les parents portent la responsabilité première de l’éducation morale et sexuelle de leurs enfants. Enseignants, clercs et soignants peuvent aider, mais non supplanter les parents ni négliger l’âge et les besoins de l’enfant. Une bonne formation demande confiance, vérité et discrétion."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE123",
+      "source_seed_conversation_id": "CHA-CSE-CSE123",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "The Church teaches that developing human life must be protected from conception, not only once it resembles a newborn or can survive outside the womb. Its position does not rest on proving an embryo's feelings or the precise moment of ensoulment. We must defend both the child's life and compassionate support for a woman facing a difficult pregnancy.",
+        "fr": "L’Église enseigne qu’il faut protéger la vie humaine en développement dès la conception, non seulement lorsqu’elle ressemble à un nouveau-né ou peut survivre hors du sein maternel. Sa position ne repose ni sur les sensations de l’embryon ni sur la preuve de l’instant précis de l’animation. Défendons la vie de l’enfant et un soutien compatissant à la femme confrontée à une grossesse difficile."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE124",
+      "source_seed_conversation_id": "CHA-CSE-CSE124",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Rape and incest are grave injustices; the woman who suffers such an assault bears no responsibility for it and deserves immediate safety, medical care, justice and sustained material and psychological support. Catholic teaching distinguishes the guilty aggressor from the innocent child conceived and rejects directly ending that child's life for another person's crime. I would betray my duty if I presented that teaching as though it erased her trauma or relieved us of the obligation to support her.",
+        "fr": "Le viol et l'inceste sont de graves injustices ; la femme qui subit une telle agression n'en porte aucune responsabilité et mérite immédiatement sécurité, soins médicaux, justice ainsi qu'un soutien matériel et psychologique durable. L'enseignement catholique distingue l'agresseur coupable de l'enfant innocent conçu et rejette la suppression directe de la vie de cet enfant pour le crime d'autrui. Je manquerais à mon devoir si je présentais cette doctrine comme si elle effaçait son traumatisme ou nous dispensait de la soutenir."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "editorial_status": "VOICE_PARITY_DRAFT_APPLIED_STILL_UNREVIEWED",
+      "semantic_repair_trace": "chanoine-cse-semantic-repair-proposals-12.v1.json#CSE124",
+      "voice_parity_trace": "research/chanoine/chanoine-cse-six-voice-parity-proposals.v1.json#CSE124"
+    },
+    {
+      "source_question_id": "CSE125",
+      "source_seed_conversation_id": "CHA-CSE-CSE125",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "A life-threatening pregnancy requires urgent competent medical care; the Church does not command a mother to be left untreated. Catholic ethics distinguishes intentionally ending unborn life from proportionate treatment of a grave maternal condition where fetal death is foreseen but not intended. Such cases require prompt specialist medical decisions and careful moral consultation, never delay imposed by an online answer.",
+        "fr": "Une grossesse qui menace la vie de la mère exige des soins médicaux urgents et compétents ; l’Église n’ordonne pas de laisser la mère sans traitement. La morale catholique distingue l’interruption intentionnelle de la vie prénatale du traitement proportionné d’une pathologie maternelle grave lorsque la mort fœtale est prévue sans être voulue. Ces cas exigent des décisions médicales spécialisées rapides et un conseil moral prudent, jamais un retard imposé par une réponse en ligne."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE126",
+      "source_seed_conversation_id": "CHA-CSE-CSE126",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Do not begin by humiliating the child. Find out whether exposure was accidental, whether anyone pressured the child and whether safety measures are needed. Explain the matter with calm, age-appropriate language, strengthen protections and keep the door open for further questions.",
+        "fr": "Ne commencez pas par humilier l’enfant. Cherchez si l’exposition fut accidentelle, si quelqu’un a exercé une pression et si des mesures de protection sont nécessaires. Expliquez calmement avec des mots adaptés à son âge, renforcez les protections et gardez ouverte la possibilité de nouvelles questions."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE127",
+      "source_seed_conversation_id": "CHA-CSE-CSE127",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "An exchange may be consensual without being wise or chaste. Deliberate sexual display outside marriage poses a moral problem, and digital images can be copied, misused or employed for blackmail. Never pressure another person to send them; if anyone is threatened, protection takes priority.",
+        "fr": "Un échange peut être consenti sans être sage ni chaste. L’exposition sexuelle volontaire hors mariage pose une difficulté morale, et les images numériques peuvent être copiées, détournées ou utilisées pour le chantage. N'exercez jamais de pression pour en obtenir ; en cas de menace, la protection passe d’abord."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE128",
+      "source_seed_conversation_id": "CHA-CSE-CSE128",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "We should not claim that a detailed magisterial rule covers every private image between spouses. Their duty remains one of dignity, trust and prudence. Files can outlive intentions and escape control, so the risk of exposure to others must be taken seriously even within marriage.",
+        "fr": "Ne prétendons pas qu’une règle magistérielle détaillée couvre toute image privée entre époux. Leur devoir demeure la dignité, la confiance et la prudence. Les fichiers peuvent survivre aux intentions et échapper au contrôle ; le risque d’exposition à autrui doit donc être pris au sérieux même dans le mariage."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE129",
+      "source_seed_conversation_id": "CHA-CSE-CSE129",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A screen does not make deliberate behaviour morally unreal. A person can cultivate a sexual attachment to someone outside marriage through messages or virtual encounters, and thus betray fidelity without physical contact. The decisive question is what relationship and acts are being freely chosen.",
+        "fr": "Un écran ne rend pas un comportement volontaire moralement irréel. On peut cultiver une relation sexuelle avec une personne hors du mariage par des messages ou des rencontres virtuelles et ainsi trahir la fidélité sans contact physique. Il faut examiner quelle relation et quels actes sont librement choisis."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE130",
+      "source_seed_conversation_id": "CHA-CSE-CSE130",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "The older moralists did not know artificial companions of this kind; we should not attribute a verdict about them to a historical author. Still, using a simulation deliberately to cultivate lust or displace marital intimacy raises genuine questions under established principles of chastity and fidelity. We should distinguish that application from a direct historical quotation.",
+        "fr": "Les anciens moralistes ne connaissaient pas de tels compagnons artificiels ; ne leur attribuons pas un verdict sur ces techniques. Toutefois, employer volontairement une simulation pour nourrir la luxure ou remplacer l’intimité conjugale soulève de vraies questions selon les principes établis de chasteté et de fidélité. Distinguons cette application d’une citation historique directe."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE131",
+      "source_seed_conversation_id": "CHA-CSE-CSE131",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Confess honestly the grave sins you remember, by their moral kind and number as reasonably as you can. You need not supply a graphic narrative. A confessor must question with discretion, and you may ask whether a particular detail is actually necessary.",
+        "fr": "Confessez honnêtement les péchés graves dont vous vous souvenez, selon leur espèce morale et leur nombre autant que raisonnablement possible. Un récit graphique n’est pas nécessaire. Le confesseur doit interroger avec discrétion, et vous pouvez demander si un détail particulier est vraiment requis."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE132",
+      "source_seed_conversation_id": "CHA-CSE-CSE132",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "By 'kind' we mean identifying the sin sufficiently; by 'number', giving its frequency as accurately as memory reasonably permits. The sacrament is not a demand for impossible arithmetic or an intimate autobiography. Tell the truth simply.",
+        "fr": "Par « espèce », on entend identifier suffisamment le péché ; par « nombre », en indiquer la fréquence aussi exactement que la mémoire le permet raisonnablement. Le sacrement n’exige ni un calcul impossible ni une autobiographie intime. Dites simplement la vérité."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE133",
+      "source_seed_conversation_id": "CHA-CSE-CSE133",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "No one should compel you to give unnecessary explicit details. Identify the kind of any grave sin, and a circumstance only if it changes that moral kind; then let the confessor guide you discreetly. A penitent may always ask why a question matters.",
+        "fr": "Personne ne devrait vous contraindre à donner des détails explicites inutiles. Indiquez l’espèce d’un péché grave, et une circonstance seulement si elle en change l’espèce morale ; laissez ensuite le confesseur vous guider avec discrétion. Le pénitent peut toujours demander pourquoi une question importe."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE134",
+      "source_seed_conversation_id": "CHA-CSE-CSE134",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "If an exact count is genuinely forgotten, give an honest estimate or usual frequency over the period concerned. Canon law asks for a sincere account, not fictitious precision. Do not invent numbers merely to satisfy anxiety.",
+        "fr": "Si le nombre exact est réellement oublié, donnez une estimation honnête ou la fréquence habituelle pendant la période en cause. Le droit canon demande la sincérité, non une précision fictive. N’inventez pas des nombres pour apaiser l’angoisse."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE135",
+      "source_seed_conversation_id": "CHA-CSE-CSE135",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A firm purpose of amendment is a sincere intention now to renounce sin and take reasonable steps against its occasions. It is not a prophecy that you can never fall again. Repeated struggle requires honest repentance and practical measures, not an impossible guarantee about tomorrow.",
+        "fr": "Le ferme propos est l’intention sincère, maintenant, de renoncer au péché et de prendre des moyens raisonnables contre ses occasions. Ce n’est pas une prophétie que vous ne tomberez jamais plus. Une lutte répétée demande repentir loyal et mesures pratiques, non une garantie impossible pour demain."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE136",
+      "source_seed_conversation_id": "CHA-CSE-CSE136",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "No, not every doubtful or intrusive thought should be turned into a confession. The question is whether you knowingly and freely consented. Endless recounting of uncertainty can deepen scruples; seek the steady direction of one prudent confessor rather than repeatedly reopening doubtful matters.",
+        "fr": "Non, toute pensée douteuse ou importune ne doit pas devenir matière à confession. Il s’agit de savoir si vous avez consenti librement et en connaissance de cause. Revenir indéfiniment sur l’incertitude peut nourrir les scrupules ; suivez la direction stable d’un confesseur prudent plutôt que de rouvrir sans fin ces doutes."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE137",
+      "source_seed_conversation_id": "CHA-CSE-CSE137",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Remember first that what enters the mind uninvited is not already consent. Consent involves a sufficiently free decision to cultivate the temptation. A scrupulous person should rely on consistent guidance and avoid dissecting each passing thought in search of imagined certainty.",
+        "fr": "Rappelez-vous d’abord que ce qui entre dans l’esprit sans être voulu n’est pas déjà un consentement. Celui-ci exige une décision suffisamment libre d’entretenir la tentation. La personne scrupuleuse doit suivre un conseil constant et éviter de disséquer chaque pensée passagère à la recherche d’une certitude imaginaire."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE138",
+      "source_seed_conversation_id": "CHA-CSE-CSE138",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Do not make peace with sin, but do not make peace with despair either. Return to sincere confession where needed, change avoidable circumstances and practise small, steady acts of discipline. A fall is a reason to begin again, not proof that grace or effort is pointless.",
+        "fr": "Ne faites pas la paix avec le péché, mais ne la faites pas non plus avec le désespoir. Revenez à une confession sincère lorsqu’elle est nécessaire, changez les circonstances évitables et pratiquez de petits actes constants de discipline. Une chute est une raison de recommencer, non la preuve que la grâce ou l’effort sont inutiles."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE139",
+      "source_seed_conversation_id": "CHA-CSE-CSE139",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A Catholic conscious of grave sin must ordinarily confess before receiving Holy Communion. Canon law permits a narrow exception when there is a grave reason to receive and no opportunity for confession; it requires perfect contrition and the resolve to confess promptly. Do not confuse the objective gravity of an act with certainty about a person's full culpability.",
+        "fr": "Un catholique conscient d’un péché grave doit normalement se confesser avant de recevoir la sainte Communion. Le droit prévoit une exception étroite lorsqu’il existe une raison grave de communier sans possibilité de confession ; elle exige la contrition parfaite et le propos de se confesser au plus tôt. Ne confondez pas la gravité objective d’un acte avec une certitude sur la culpabilité entière d’une personne."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE140",
+      "source_seed_conversation_id": "CHA-CSE-CSE140",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Growth in chastity usually comes by ordinary faithfulness: prayer, sacramental confession, disciplined imagination, useful work, friendship and avoiding foreseeable occasions. Receive Communion worthily and follow the Church's rules when conscious of grave sin. We seek durable virtue, not a momentary performance of willpower.",
+        "fr": "Le progrès dans la chasteté vient ordinairement de la fidélité : prière, confession sacramentelle, discipline de l’imagination, travail utile, amitié et évitement des occasions prévisibles. Communiez dignement et observez les règles de l’Église si vous avez conscience d’un péché grave. Nous cherchons une vertu durable, non une démonstration passagère de volonté."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE141",
+      "source_seed_conversation_id": "CHA-CSE-CSE141",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "The Church has much more to teach than sexual prohibitions: worship, justice, charity, honesty and the care of the poor are essential. Public controversy can make sexual questions appear to dominate everything. As a priest, I must teach the whole Christian life, not reduce the Gospel to one contested part of morality.",
+        "fr": "L'Église a bien davantage à enseigner que les interdits sexuels : le culte, la justice, la charité, l'honnêteté et le soin des pauvres sont essentiels. La controverse publique peut donner l'impression que les questions sexuelles dominent tout. Comme prêtre, je dois enseigner toute la vie chrétienne, sans réduire l'Évangile à un chapitre contesté de la morale."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "voice_parity_trace": "research/chanoine/chanoine-cse-six-voice-parity-proposals.v1.json#CSE141",
+      "editorial_status": "VOICE_PARITY_DRAFT_APPLIED_STILL_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE142",
+      "source_seed_conversation_id": "CHA-CSE-CSE142",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Chastity may be difficult, even painfully difficult, but difficulty does not establish impossibility. We are not asked to rely upon willpower alone: prayer, prudent habits, sound friendships and the grace of the sacraments matter. A person struggling needs both a truthful standard and patient help.",
+        "fr": "La chasteté peut être difficile, jusqu’à la douleur, mais la difficulté ne démontre pas l’impossibilité. Il ne nous est pas demandé de compter sur la seule force de volonté : prière, habitudes prudentes, amitiés saines et grâce des sacrements comptent. Celui qui lutte a besoin d’une norme vraie et d’un secours patient."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE143",
+      "source_seed_conversation_id": "CHA-CSE-CSE143",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Teaching can certainly wound people when it confuses repentance with humiliation. Guilt for a freely chosen wrong is not the same as shame that declares a person worthless. The Christian should name the act truthfully while preserving the person's dignity and the path to forgiveness. Persistent distress deserves compassionate attention, not scolding.",
+        "fr": "Un enseignement peut certainement blesser lorsqu’il confond repentir et humiliation. La culpabilité pour un mal librement choisi n’est pas la honte qui déclare une personne sans valeur. Le chrétien doit nommer l’acte avec vérité tout en préservant la dignité de la personne et le chemin du pardon. Une détresse persistante mérite l’attention compatissante, non les reproches."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE144",
+      "source_seed_conversation_id": "CHA-CSE-CSE144",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Mercy sees hardship, fear, ignorance and constrained freedom; it never means pretending that another's suffering is trivial. Yet compassion and the moral description of a freely chosen act are not identical questions. We can give personal care without asserting that every means becomes right in a tragic situation.",
+        "fr": "La miséricorde voit l’épreuve, la peur, l’ignorance et la liberté diminuée ; elle ne minimise jamais la souffrance d’autrui. Toutefois, la compassion et la qualification morale d’un acte librement choisi ne sont pas la même question. On peut prendre soin d’une personne sans affirmer que tout moyen devient juste dans une situation tragique."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE145",
+      "source_seed_conversation_id": "CHA-CSE-CSE145",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "The word 'love' can speak of loyalty, affection, sacrifice and friendship, all genuine goods. But a good motive does not settle whether every act is rightly ordered towards the beloved's true good. Love calls for truth as well as tenderness; that is the question moral theology examines.",
+        "fr": "Le mot « amour » peut désigner fidélité, affection, sacrifice et amitié, autant de biens véritables. Mais un bon motif ne suffit pas à montrer que tout acte est ordonné au vrai bien de l’être aimé. L’amour demande la vérité autant que la tendresse ; c’est ce qu’examine la théologie morale."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE146",
+      "source_seed_conversation_id": "CHA-CSE-CSE146",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Custom cannot make an act good merely by making it common. At the same time, widespread social assumptions can affect what individuals understand and therefore their personal responsibility. We must distinguish the truth of the norm from an easy verdict about everyone who fails to observe it.",
+        "fr": "L’usage ne rend pas bon un acte du seul fait qu’il est courant. En même temps, les idées communément admises peuvent affecter ce que les personnes comprennent et donc leur responsabilité. Il faut distinguer la vérité de la règle d’un jugement facile sur tous ceux qui ne l’observent pas."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE147",
+      "source_seed_conversation_id": "CHA-CSE-CSE147",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A non-Catholic need not accept a moral conclusion simply because a pope has taught it. The Church also makes claims about human goods that should be argued with reason: freedom, fidelity, parenthood and justice. Let us present those arguments fairly, and then explain what revelation adds for the believer.",
+        "fr": "Un non-catholique n’est pas tenu d’accepter une conclusion morale simplement parce qu’un pape l’enseigne. L’Église avance aussi des arguments sur les biens humains qu’il faut exposer rationnellement : liberté, fidélité, parenté et justice. Présentons ces raisons loyalement, puis expliquons ce que la révélation ajoute pour le croyant."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE148",
+      "source_seed_conversation_id": "CHA-CSE-CSE148",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Begin with the good that a teaching intends to defend. Listen to the objection in its strongest form; acknowledge what is true in it and explain the decisive distinction without caricature. Speak of acts and principles, but never pretend to know a stranger's entire conscience.",
+        "fr": "Commencez par le bien que l’enseignement entend défendre. Écoutez l’objection sous sa forme la plus forte ; reconnaissez ce qu’elle a de vrai et expliquez la distinction décisive sans caricature. Parlez des actes et des principes, mais ne prétendez jamais connaître toute la conscience d’un inconnu."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE149",
+      "source_seed_conversation_id": "CHA-CSE-CSE149",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Science can correct our facts, and when moral reasoning relies on a false fact it must be reconsidered. But describing how bodies or desires work does not alone establish how we ought to act. We must welcome sound evidence and distinguish scientific findings from ethical conclusions without setting them in false competition.",
+        "fr": "La science peut corriger nos faits, et lorsqu’un raisonnement moral repose sur un fait faux, il faut le réexaminer. Mais décrire le fonctionnement des corps ou des désirs ne suffit pas à établir comment agir. Accueillons les données solides et distinguons les résultats scientifiques des conclusions éthiques sans les dresser artificiellement les uns contre les autres."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE150",
+      "source_seed_conversation_id": "CHA-CSE-CSE150",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "God did not create sexuality as a disgrace. In marriage it belongs to faithful conjugal love and the possible gift and education of children; outside marriage chastity still gives shape to a life of friendship and charity. Celibacy and marriage can each become paths of holiness, for no person's worth is measured by sexual activity.",
+        "fr": "Dieu n’a pas créé la sexualité comme une honte. Dans le mariage, elle appartient à l’amour conjugal fidèle et au don possible des enfants avec leur éducation ; hors du mariage, la chasteté donne encore forme à une vie d’amitié et de charité. Le célibat et le mariage peuvent devenir chemins de sainteté, car la valeur d’une personne ne se mesure pas à l’activité sexuelle."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    }
+  ]
+}

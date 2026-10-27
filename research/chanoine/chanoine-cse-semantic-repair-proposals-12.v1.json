@@ -1,0 +1,191 @@
+{
+  "schema": "AO_CHANOINE_CSE_SEMANTIC_REPAIR_PROPOSALS_V1",
+  "date": "2026-10-20",
+  "status": "APPLIED_AS_UNREVIEWED_EDITORIAL_DRAFTS_NOT_CERTIFIED_OR_DEPLOYABLE",
+  "base_composite": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+  "source": "research/chanoine/chanoine-cse-source-conversation-seeds.v1.json",
+  "scope": "Only suggested main-answer replacements; source verbatim, source objections, responses and all approval flags remain unchanged until reviewed.",
+  "reviewed_fields": [
+    "source_main_answer_verbatim.en",
+    "source_main_answer_verbatim.fr",
+    "pastoral_main_answer_draft.en",
+    "pastoral_main_answer_draft.fr"
+  ],
+  "records": [
+    {
+      "source_question_id": "CSE014",
+      "severity": "P2",
+      "identified_issue": "The pastoral answer omits all concrete historical anchors given by the source; restore examples to substantiate continuity rather than asserting it.",
+      "proposed_main_answer": {
+        "en": "Yes, some things have changed: language, canonical penalties, pastoral discipline and how new situations are addressed. But we must not mistake every development for a reversal of moral teaching. Our Lord speaks against adultery and lust and upholds marriage; Saint Paul condemns fornication; the Roman Catechism teaches on the Sixth Commandment; and Pius XI explicitly rejects adultery, divorce and deliberate contraception. Let us compare particular propositions and their authority rather than judge by slogans.",
+        "fr": "Oui, certaines choses ont changé : le langage, les peines canoniques, la discipline pastorale et la manière d'aborder des situations nouvelles. Mais ne prenons pas tout développement pour un renversement de la doctrine morale. Notre-Seigneur condamne l'adultère et la luxure et défend le mariage ; saint Paul condamne la fornication ; le Catéchisme romain enseigne le sixième commandement ; et Pie XI rejette explicitement l'adultère, le divorce et la contraception volontaire. Comparons les propositions particulières et leur autorité plutôt que de juger par slogans."
+      },
+      "editorial_state": "APPLIED_TO_UPSTREAM_AND_COMPOSITE_UNREVIEWED",
+      "claim_level_certified": false,
+      "english_french_reviewed": false,
+      "persona_voice_approved": false,
+      "publication_approved": false
+    },
+    {
+      "source_question_id": "CSE032",
+      "severity": "P3",
+      "identified_issue": "Source explicitly advises addressing contraception and openness to children during engagement; pastoral answer makes these subjects generic.",
+      "proposed_main_answer": {
+        "en": "Engagement is a serious promise and preparation, but it is not yet marriage. The intention to marry does not confer conjugal rights in advance. Use this time to speak plainly about fidelity, contraception, openness to children, the duties of marriage and any serious disagreement before you exchange matrimonial consent.",
+        "fr": "Les fiançailles sont une promesse sérieuse et une préparation, mais elles ne sont pas encore le mariage. Le projet de se marier ne donne pas d'avance les droits conjugaux. Profitez de ce temps pour parler franchement de la fidélité, de la contraception, de l'accueil des enfants, des devoirs du mariage et de tout désaccord grave avant l'échange des consentements."
+      },
+      "editorial_state": "APPLIED_TO_UPSTREAM_AND_COMPOSITE_UNREVIEWED",
+      "claim_level_certified": false,
+      "english_french_reviewed": false,
+      "persona_voice_approved": false,
+      "publication_approved": false
+    },
+    {
+      "source_question_id": "CSE035",
+      "severity": "P2",
+      "identified_issue": "Opening sentence suggests a factual verdict about compatibility testing, whereas canonical source explicitly avoids relying on effectiveness claims.",
+      "proposed_main_answer": {
+        "en": "It is prudent to learn whether you can build a life together; we need not claim that cohabitation is an ineffective test to make the moral distinction. If the couple has sexual relations, those acts take place outside marriage. If both live continently, sharing an address is not itself fornication, but it still calls for judgment about serious temptation, scandal, dependence and genuine freedom to discern.",
+        "fr": "Il est prudent de chercher à savoir si l'on peut construire une vie commune ; nul besoin d'affirmer que la cohabitation est un test inefficace pour faire la distinction morale. Si le couple a des relations sexuelles, ces actes ont lieu hors mariage. Si les deux vivent dans la continence, partager une adresse n'est pas en soi une fornication, mais il faut encore considérer les tentations sérieuses, le scandale, la dépendance et la liberté réelle de discerner."
+      },
+      "editorial_state": "APPLIED_TO_UPSTREAM_AND_COMPOSITE_UNREVIEWED",
+      "claim_level_certified": false,
+      "english_french_reviewed": false,
+      "persona_voice_approved": false,
+      "publication_approved": false
+    },
+    {
+      "source_question_id": "CSE045",
+      "severity": "P1",
+      "identified_issue": "Major historical-theological distinction collapsed: Pius XI's domestic primacy and John Paul II's mutual submission must both be presented accurately, not silently harmonised.",
+      "proposed_main_answer": {
+        "en": "Christian marriage includes fidelity, mutual help, the procreation and education of children, and the duties Saint Paul teaches in Ephesians 5. Pius XI speaks of the husband's domestic primacy and the wife's willing submission while affirming her dignity and freedom; John Paul II stresses mutual subjection out of reverence for Christ. Their formulations do not simply say the same thing, and genuine theological work is needed to explain their relationship. Neither text allows a husband to dominate, coerce or humiliate his wife; his love must follow Christ's sacrificial example.",
+        "fr": "Le mariage chrétien comporte la fidélité, l'entraide, la procréation et l'éducation des enfants, ainsi que les devoirs enseignés par saint Paul en Éphésiens 5. Pie XI parle de la primauté domestique du mari et de la soumission volontaire de l'épouse tout en affirmant sa dignité et sa liberté ; Jean-Paul II souligne la soumission réciproque dans la crainte du Christ. Leurs formulations ne disent pas simplement la même chose, et leur articulation exige un véritable travail théologique. Aucun de ces textes ne permet au mari de dominer, de contraindre ou d'humilier son épouse ; il doit aimer à l'exemple du sacrifice du Christ."
+      },
+      "editorial_state": "APPLIED_TO_UPSTREAM_AND_COMPOSITE_UNREVIEWED",
+      "claim_level_certified": false,
+      "english_french_reviewed": false,
+      "persona_voice_approved": false,
+      "publication_approved": false
+    },
+    {
+      "source_question_id": "CSE049",
+      "severity": "P2",
+      "identified_issue": "Source's juridical qualifier 'sacramental' is absent from the English draft and the French has an intrusive comma.",
+      "proposed_main_answer": {
+        "en": "Our Lord taught that marriage is a permanent bond. A valid, ratified and consummated sacramental marriage cannot be dissolved by any human power (canon 1141), even when common life has failed. Serious danger may justify separation, and canon law treats some other kinds of bonds differently. The permanence of the bond must never be used to demand that someone remain in an abusive home.",
+        "fr": "Notre-Seigneur a enseigné la permanence du lien conjugal. Un mariage sacramentel valide, ratifié et consommé ne peut être dissous par aucune puissance humaine (canon 1141), même lorsque la vie commune a échoué. Un danger grave peut justifier une séparation, et le droit canon traite différemment certains autres liens. La permanence du lien ne saurait jamais servir à imposer à quelqu'un de demeurer dans un foyer violent."
+      },
+      "editorial_state": "APPLIED_TO_UPSTREAM_AND_COMPOSITE_UNREVIEWED",
+      "claim_level_certified": false,
+      "english_french_reviewed": false,
+      "persona_voice_approved": false,
+      "publication_approved": false
+    },
+    {
+      "source_question_id": "CSE070",
+      "severity": "P1",
+      "identified_issue": "The source distinguishes the reluctant non-choosing spouse from the contracepting spouse and includes absence of approval, grave reason, and an effort to dissuade; current main answer is too vague.",
+      "proposed_main_answer": {
+        "en": "If one spouse insists on contraception, we must not automatically attribute the same responsibility to both. Pius XI distinguished the spouse who chooses contraception from one who, for a grave reason, reluctantly tolerates what he or she does not approve. This does not make contraception good, nor does it remove the need to avoid freely intending that choice and, where safe and practicable, to seek to dissuade the other spouse. Such cases need prudent, private counsel, never blame imposed without understanding the circumstances.",
+        "fr": "Lorsqu'un époux insiste pour pratiquer la contraception, n'attribuons pas automatiquement la même responsabilité aux deux. Pie XI distingue l'époux qui choisit la contraception de celui qui, pour une raison grave, tolère à regret ce qu'il n'approuve pas. Cela ne rend pas la contraception bonne ; il faut aussi ne pas vouloir librement ce choix et, lorsque cela peut se faire sans danger et avec prudence, chercher à en détourner l'autre conjoint. Ces cas demandent un conseil discret et prudent, non un blâme porté sans connaître les circonstances."
+      },
+      "editorial_state": "APPLIED_TO_UPSTREAM_AND_COMPOSITE_UNREVIEWED",
+      "claim_level_certified": false,
+      "english_french_reviewed": false,
+      "persona_voice_approved": false,
+      "publication_approved": false
+    },
+    {
+      "source_question_id": "CSE089",
+      "severity": "P1",
+      "identified_issue": "Source's decisive CDF 2003 rationale concerning sex difference and procreative ordering disappears from main and debate rewrite; public-law claim is left unspecified.",
+      "proposed_main_answer": {
+        "en": "The Church does not claim that the mere existence of a civil same-sex marriage directly injures each existing heterosexual marriage. The argument made by the CDF in 2003 concerns how civil law defines the institution: removing sexual difference and the reference to generation changes what the state recognises as marriage. This institutional claim must be argued openly and distinguished from questions about individual civil protections. No moral disagreement can justify contempt, violence or unjust treatment, and empirical claims about children require evidence rather than mere invocation of authority.",
+        "fr": "L'Église ne prétend pas que la simple existence d'un mariage civil entre personnes du même sexe blesse directement chaque mariage hétérosexuel déjà existant. L'argument avancé par la Congrégation pour la doctrine de la foi en 2003 concerne la définition publique de l'institution : supprimer la différence sexuelle et la référence à la génération change ce que l'État reconnaît comme mariage. Il faut exposer cet argument institutionnel et le distinguer des protections civiles des personnes. Aucun désaccord moral ne justifie le mépris, la violence ou un traitement injuste ; les affirmations empiriques concernant les enfants demandent des preuves, non une simple invocation de l'autorité."
+      },
+      "editorial_state": "APPLIED_TO_UPSTREAM_AND_COMPOSITE_UNREVIEWED",
+      "claim_level_certified": false,
+      "english_french_reviewed": false,
+      "persona_voice_approved": false,
+      "publication_approved": false
+    },
+    {
+      "source_question_id": "CSE096",
+      "severity": "P1",
+      "identified_issue": "The draft broadens the doctrinal category from sex-changing interventions to alterations of bodily sexual characteristics generally, and softens the source's stated norm. Restore precise scope while maintaining medical uncertainty.",
+      "proposed_main_answer": {
+        "en": "We must distinguish the moral principle from the clinical judgment in each case. Dignitas Infinita §60 teaches that interventions intended to change bodily sex, as understood there, as a rule risk threatening the person's unique dignity. It distinguishes appropriate treatment of genital abnormalities present at birth or developed later. We must neither apply this passage indiscriminately to every medical change of sexual characteristics nor improvise medical directions. Actual diagnosis, clinical risks and benefits, informed consent and competent ethical assessment remain necessary.",
+        "fr": "Il faut distinguer le principe moral du jugement clinique dans chaque cas. Dignitas Infinita, au §60, enseigne que les interventions visant à changer le sexe corporel, au sens précisé par ce texte, risquent en règle générale de menacer la dignité unique de la personne. Elle distingue le traitement approprié d'anomalies génitales présentes dès la naissance ou apparues plus tard. N'appliquons pas indistinctement ce passage à toute modification médicale des caractères sexuels et n'improvisons aucune prescription médicale. Le diagnostic réel, les risques et bénéfices cliniques, le consentement éclairé et une évaluation éthique compétente demeurent nécessaires."
+      },
+      "editorial_state": "APPLIED_TO_UPSTREAM_AND_COMPOSITE_UNREVIEWED",
+      "claim_level_certified": false,
+      "english_french_reviewed": false,
+      "persona_voice_approved": false,
+      "publication_approved": false
+    },
+    {
+      "source_question_id": "CSE101",
+      "severity": "P2",
+      "identified_issue": "The formula 'whatever one judges about the technique' adopts a detached commentator's register and weakens the distinct Catholic teaching on even non-destructive homologous IVF.",
+      "proposed_main_answer": {
+        "en": "The longing for a child can cause profound sorrow, and that deserves compassion. Yet the Church teaches that even when only the spouses' own gametes are used and no embryos are destroyed, laboratory fertilisation substitutes a technical act for the spouses' conjugal union rather than assisting that union (Donum Vitae II.B.5). We must explain the moral objection without ever reproaching a child: every person conceived by IVF has full dignity and deserves love and welcome.",
+        "fr": "Le désir d'un enfant peut s'accompagner d'une douleur profonde, digne de compassion. Pourtant, l'Église enseigne que même lorsqu'on emploie seulement les gamètes des époux et qu'aucun embryon n'est détruit, la fécondation en laboratoire substitue un acte technique à leur union conjugale au lieu de l'aider (Donum Vitae II.B.5). Expliquons l'objection morale sans jamais faire de reproche à l'enfant : toute personne conçue par FIV possède sa pleine dignité et mérite amour et accueil."
+      },
+      "editorial_state": "APPLIED_TO_UPSTREAM_AND_COMPOSITE_UNREVIEWED",
+      "claim_level_certified": false,
+      "english_french_reviewed": false,
+      "persona_voice_approved": false,
+      "publication_approved": false
+    },
+    {
+      "source_question_id": "CSE104",
+      "severity": "P2",
+      "identified_issue": "Main draft removes the source's acknowledgement of the opposing 2023 professional ethics position; restoring it gives the debate fair treatment without converting it into magisterial teaching.",
+      "proposed_main_answer": {
+        "en": "The generosity of someone offering to carry a child may be genuine, and avoiding coercion is essential. Professional ethics guidance, including the ASRM's 2023 position, argues that informed consent and independent safeguards can make such arrangements acceptable. The Church's distinct objection does not depend only on payment or exploitation; it concerns the deliberate contractual separation of gestation, parenthood and the child's origin (Donum Vitae II.A.3). We should engage the rival argument fairly, without impugning the dignity or motives of anyone involved.",
+        "fr": "La générosité d'une femme proposant de porter un enfant peut être réelle, et il est essentiel d'éviter toute contrainte. Des recommandations professionnelles, notamment la position de l'ASRM en 2023, soutiennent que le consentement éclairé et des garanties indépendantes peuvent rendre ces arrangements acceptables. L'objection propre de l'Église ne dépend pas seulement de la rémunération ou de l'exploitation ; elle porte sur la séparation contractuelle voulue de la gestation, de la parentalité et de l'origine de l'enfant (Donum Vitae II.A.3). Examinons loyalement l'argument opposé sans dénigrer la dignité ni les motifs des personnes concernées."
+      },
+      "editorial_state": "APPLIED_TO_UPSTREAM_AND_COMPOSITE_UNREVIEWED",
+      "claim_level_certified": false,
+      "english_french_reviewed": false,
+      "persona_voice_approved": false,
+      "publication_approved": false
+    },
+    {
+      "source_question_id": "CSE110",
+      "severity": "P2",
+      "identified_issue": "The source expressly says proposed prenatal adoption is praiseworthy in intention yet beset by serious difficulties, not simply 'not every arrangement morally licit'.",
+      "proposed_main_answer": {
+        "en": "The injustice of embryos already frozen does not admit an easy solution. Dignitas Personae §19 rejects their destruction for research and their transfer to other couples as an infertility treatment. It calls proposals for prenatal adoption intended to save life praiseworthy in purpose, but beset by grave unresolved difficulties. The Church has not supplied a universal approved solution; let us not pretend otherwise, and seek competent ethical advice.",
+        "fr": "L'injustice faite aux embryons déjà congelés n'admet pas de solution facile. Dignitas Personae, au §19, rejette leur destruction pour la recherche et leur transfert à d'autres couples comme traitement de l'infertilité. Elle juge louable l'intention de propositions d'adoption prénatale destinées à sauver leur vie, tout en relevant de graves difficultés non résolues. L'Église n'a pas fourni de solution universelle approuvée ; ne prétendons pas le contraire et cherchons un conseil éthique compétent."
+      },
+      "editorial_state": "APPLIED_TO_UPSTREAM_AND_COMPOSITE_UNREVIEWED",
+      "claim_level_certified": false,
+      "english_french_reviewed": false,
+      "persona_voice_approved": false,
+      "publication_approved": false
+    },
+    {
+      "source_question_id": "CSE124",
+      "severity": "P2",
+      "identified_issue": "The source's actual prohibition of direct abortion is left implicit in the draft; restore the distinction without minimising assault-related trauma.",
+      "proposed_main_answer": {
+        "en": "Rape and incest are grave injustices; the woman who has suffered them bears no responsibility for the assault and deserves immediate safety, medical care, justice and sustained practical and psychological support. Catholic teaching nevertheless distinguishes the guilty aggressor from the child conceived and does not permit directly ending that child's life as punishment for another's crime. This is a serious moral disagreement in public debate, and no priest should speak as though the teaching erased the mother's suffering or excused abandoning her.",
+        "fr": "Le viol et l'inceste sont de graves injustices ; la femme qui les a subis n'est pas responsable de l'agression et mérite immédiatement sécurité, soins médicaux, justice et soutien matériel et psychologique durable. L'enseignement catholique distingue néanmoins l'agresseur coupable de l'enfant conçu et ne permet pas de mettre directement fin à la vie de cet enfant pour le crime d'autrui. C'est un désaccord moral sérieux dans le débat public, et aucun prêtre ne doit parler comme si la doctrine effaçait la souffrance de la mère ou autorisait à l'abandonner."
+      },
+      "editorial_state": "APPLIED_TO_UPSTREAM_AND_COMPOSITE_UNREVIEWED",
+      "claim_level_certified": false,
+      "english_french_reviewed": false,
+      "persona_voice_approved": false,
+      "publication_approved": false
+    }
+  ],
+  "application_trace": {
+    "branch": "research/chanoine-cse-source-dialogue-20261019",
+    "applied_date": "2026-10-20",
+    "source_verbatim_unchanged": true,
+    "all_approvals_still_false": true,
+    "description": "Editorial text corrections applied to upstream batch JSON and compiled 147-record research composite; publication, doctrinal and translation certifications remain disabled."
+  }
+}

@@ -1,0 +1,502 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B21_MARRIAGE_DEFINITION_PRECISION_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "ownerComposite": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+  "ownerCompositeBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+  "status": "RESEARCH_ONLY_PRELIMINARY_CLAIM_COLLATION",
+  "counts": {
+    "families": 4,
+    "answerUnits": 8,
+    "certified": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE041",
+      "sourceQuestionId": "CSE041",
+      "canonicalOwner": "SEX-CORE-12",
+      "originalRecord": {
+        "source_question_id": "CSE041",
+        "conversation_id": "CHA-CSE-CSE041",
+        "canonical_topic_owner": "SEX-CORE-12",
+        "title": "What is marriage?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What is marriage?",
+          "fr": "Qu’est-ce que le mariage ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Marriage is the stable covenantal union of one man and one woman ordered by its nature to the good of the spouses and to the generation and education of children; between baptized persons it is also a sacrament.",
+          "fr": "Le mariage est l’union stable d’alliance entre un homme et une femme, ordonnée par sa nature au bien des époux ainsi qu’à la génération et à l’éducation des enfants ; entre baptisés, il est aussi un sacrement."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Marriage is not simply a feeling that lasts while it pleases us. It is a stable covenant of a man and a woman, ordered to their good and to the generation and education of children. Between the baptised, Our Lord has raised this union to a sacrament.",
+          "fr": "Le mariage n’est pas un sentiment qui dure tant qu’il plaît. C’est l’alliance stable d’un homme et d’une femme, ordonnée à leur bien et à la génération et à l’éducation des enfants. Entre baptisés, Notre-Seigneur a élevé cette union à la dignité de sacrement."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Why does the Church speak of marriage as a covenant rather than just a contract?",
+          "fr": "Pourquoi l’Église parle-t-elle d’alliance plutôt que de simple contrat ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Consent truly establishes obligations, but marriage also concerns a lasting communion of persons and responsibilities towards children. Calling it a covenant highlights that it cannot be reduced to a temporary exchange of benefits.",
+          "fr": "Le consentement établit bien des obligations, mais le mariage concerne aussi une communion durable des personnes et des devoirs envers les enfants. Le mot « alliance » rappelle qu’il ne se réduit pas à un échange provisoire d’avantages."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "CASTI",
+              "locator": "§§5–24"
+            },
+            {
+              "registry_key": "CIC",
+              "locator": "can. 1055"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Marriage is the lifelong covenant of a man and a woman, ordered to the spouses’ good and the generation and education of children; between the baptized it is a sacrament.",
+          "fr": "Le mariage est l’alliance pour toute la vie d’un homme et d’une femme, ordonnée au bien des époux et à la génération et à l’éducation des enfants ; entre baptisés, il est un sacrement.",
+          "claims": [
+            {
+              "text": "Bounded doctrinal or canonical claim",
+              "refs": [
+                "CIC1055"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "Covenant and contract are not opposites here. Canon 1055 uses both; matrimonial consent concerns an irrevocable mutual gift.",
+          "fr": "Alliance et contrat ne s’opposent pas ici. Le canon 1055 emploie les deux ; le consentement matrimonial concerne un don mutuel irrévocable.",
+          "claims": [
+            {
+              "text": "Bounded doctrinal or canonical claim",
+              "refs": [
+                "CIC1055",
+                "CIC1057"
+              ],
+              "type": "EXPLANATORY_PARAPHRASE"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Covenant versus contract framing must not imply canonlaw rejects marriage ascontract",
+        "Precise1055§§1–2 and1057§2 replace vague broadpapalrange"
+      ],
+      "classification": "CHANOINE_EXPLANATION_NOT_PIUS_X_HISTORICAL_VOICE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE042",
+      "sourceQuestionId": "CSE042",
+      "canonicalOwner": "SEX-CORE-12",
+      "originalRecord": {
+        "source_question_id": "CSE042",
+        "conversation_id": "CHA-CSE-CSE042",
+        "canonical_topic_owner": "SEX-CORE-12",
+        "title": "Is marriage just a social construct?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Is marriage just a social construct?",
+          "fr": "Le mariage n’est-il qu’une construction sociale ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Cultures regulate marriage differently, but Catholic teaching holds that society does not invent its basic nature. Human consent establishes a particular marriage; the institution’s essential structure and ends are not created at will by the spouses or state.",
+          "fr": "Les cultures réglementent le mariage différemment, mais l’enseignement catholique affirme que la société n’en invente pas la nature fondamentale. Le consentement humain établit un mariage particulier ; la structure et les fins essentielles de l’institution ne sont pas créées à volonté par les époux ou l’État."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Civil customs differ greatly, but the Church holds that society does not invent the essence of marriage. The spouses freely enter a particular union; they do not create its fundamental goods and obligations at will. The question is what marriage is, not merely what a law happens to call it.",
+          "fr": "Les coutumes civiles varient beaucoup, mais l’Église tient que la société n’invente pas l’essence du mariage. Les époux contractent librement une union particulière ; ils n’en créent pas à volonté les biens et obligations essentiels. Il s’agit de savoir ce qu’est le mariage, non seulement ce que la loi appelle ainsi."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "If every culture regulates marriage differently, how can its essence be universal?",
+          "fr": "Si chaque culture règle le mariage autrement, comment son essence serait-elle universelle ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Different ceremonies, property rules and customs do not prove that the institution has no enduring goods. The Church distinguishes these changing arrangements from fidelity, permanence and the natural relation to family life.",
+          "fr": "Des cérémonies, règles patrimoniales et coutumes différentes ne prouvent pas l’absence de biens permanents. L’Église distingue ces arrangements variables de la fidélité, de la permanence et du rapport naturel à la vie familiale."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "CASTI",
+              "locator": "§§5–10"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "The Church distinguishes the divine institution of marriage from the spouses’ free choice to enter a particular marriage.",
+          "fr": "L’Église distingue l’institution divine du mariage du libre choix des époux de contracter un mariage particulier.",
+          "claims": [
+            {
+              "text": "Bounded doctrinal or canonical claim",
+              "refs": [
+                "CC5-6"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "Different ceremonies do not by themselves refute that distinction. Nor does consent give the spouses power to redefine marriage’s essential properties.",
+          "fr": "Des cérémonies différentes ne réfutent pas à elles seules cette distinction. Le consentement ne donne pas non plus aux époux le pouvoir de redéfinir les propriétés essentielles du mariage.",
+          "claims": [
+            {
+              "text": "Bounded doctrinal or canonical claim",
+              "refs": [
+                "CC5-7"
+              ],
+              "type": "APOLOGETICAL_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Do not equate divine institution with the absence of realhumanconsent",
+        "Variation-of-customs argument is explanatory application, not a crosscultural empiricalsurvey"
+      ],
+      "classification": "CHANOINE_EXPLANATION_NOT_PIUS_X_HISTORICAL_VOICE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE043",
+      "sourceQuestionId": "CSE043",
+      "canonicalOwner": "SEX-CORE-12",
+      "originalRecord": {
+        "source_question_id": "CSE043",
+        "conversation_id": "CHA-CSE-CSE043",
+        "canonical_topic_owner": "SEX-CORE-12",
+        "title": "Why must marriage be between a man and a woman?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Why must marriage be between a man and a woman?",
+          "fr": "Pourquoi le mariage doit-il être entre un homme et une femme ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Because Catholic teaching understands marriage as a sexual union whose bodily form is male-female, naturally ordered to generation and the stable parenthood of children. Affection and fidelity are real goods, but they do not by themselves define marriage.",
+          "fr": "Parce que l’enseignement catholique comprend le mariage comme une union sexuelle dont la forme corporelle est homme-femme, naturellement ordonnée à la génération et à la parentalité stable des enfants. L’affection et la fidélité sont de vrais biens, mais elles ne définissent pas à elles seules le mariage."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "The Catholic understanding rests upon more than affection, which can exist in many worthy relationships. It regards marriage as the union of man and woman, whose bodily form is naturally ordered to generation and parenthood. We should explain that claim without ever diminishing the dignity of anyone who disagrees.",
+          "fr": "La conception catholique repose sur plus que l’affection, présente dans bien des relations estimables. Elle voit dans le mariage l’union de l’homme et de la femme, dont la forme corporelle est naturellement ordonnée à la génération et à la paternité et maternité. Il faut l’exposer sans jamais diminuer la dignité de celui qui n’est pas d’accord."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "But many heterosexual marriages never have children.",
+          "fr": "Mais beaucoup de mariages hétérosexuels n’ont jamais d’enfants."
+        },
+        "original_source_followup_reply": {
+          "en": "Catholic law does not require a couple to conceive a child: canon 1084 §3 states that sterility does not impede marriage. Canon 1084 §1 separately treats antecedent and perpetual inability to accomplish the conjugal act. Marriage is a bodily and faithful union of man and woman naturally ordered to family life, even if conception never occurs.",
+          "fr": "Le droit catholique n'exige pas que les époux conçoivent un enfant : selon le canon 1084 §3, la stérilité n'empêche pas le mariage. Le canon 1084 §1 traite séparément de l'incapacité antécédente et perpétuelle d'accomplir l'acte conjugal. Le mariage est une union corporelle et fidèle de l'homme et de la femme naturellement ordonnée à la vie familiale, même sans conception effective."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "The Church does not require an actual child for a valid marriage: sterility is not an impediment. She distinguishes the bodily kind of conjugal union from whether conception results in a given case. That is the distinction under discussion, not the worth of childless couples.",
+          "fr": "L’Église n’exige pas la naissance effective d’un enfant pour un mariage valide : la stérilité n’est pas un empêchement. Elle distingue la nature corporelle de l’union conjugale du résultat d’une conception particulière. Voilà la distinction en débat, non la dignité des couples sans enfants."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-035-064.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "CASTI",
+              "locator": "§§17–20"
+            },
+            {
+              "registry_key": "CIC",
+              "locator": "can. 1084"
+            },
+            {
+              "registry_key": "CDF2003",
+              "locator": "§§2–4, 7"
+            },
+            {
+              "registry_key": "LBM",
+              "locator": "marriage chapters"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "DOCTRINAL_SOURCE_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Catholic teaching understands marriage as the exclusive mutual gift of man and woman, ordered to their communion and to procreation and upbringing.",
+          "fr": "L’enseignement catholique comprend le mariage comme le don mutuel exclusif de l’homme et de la femme, ordonné à leur communion et à la procréation et à l’éducation.",
+          "claims": [
+            {
+              "text": "Bounded doctrinal or canonical claim",
+              "refs": [
+                "CDF2003-2-3"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "An actual birth is not a condition of validity. Sterility alone does not invalidate marriage.",
+          "fr": "Une naissance effective n’est pas une condition de validité. La stérilité seule n’invalide pas le mariage.",
+          "claims": [
+            {
+              "text": "Bounded doctrinal or canonical claim",
+              "refs": [
+                "CIC1084"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_WITH_QUALIFICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Canon1084§3 does not license blanket validity conclusions; preserve its1098fraudreservation",
+        "Do not import unsupported empiricalclaims about all relationships or ability to parent"
+      ],
+      "classification": "CHANOINE_EXPLANATION_NOT_PIUS_X_HISTORICAL_VOICE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE044",
+      "sourceQuestionId": "CSE044",
+      "canonicalOwner": "SEX-CORE-12",
+      "originalRecord": {
+        "source_question_id": "CSE044",
+        "conversation_id": "CHA-CSE-CSE044",
+        "canonical_topic_owner": "SEX-CORE-12",
+        "title": "If infertile couples can marry, why is procreation essential?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "If infertile couples can marry, why is procreation essential?",
+          "fr": "Si les couples stériles peuvent se marier, pourquoi la procréation est-elle essentielle ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Because being ordered to procreation is not the same as actually conceiving. Sterility concerns the result; the marital union remains the kind of male-female bodily union naturally apt for generation even when age or pathology prevents conception.",
+          "fr": "Parce qu’être ordonné à la procréation n’est pas la même chose que concevoir effectivement. La stérilité concerne le résultat ; l’union conjugale demeure le type d’union corporelle homme-femme naturellement apte à la génération, même lorsque l’âge ou une pathologie empêche la conception."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "To be ordered towards children is not the same as guaranteeing conception. Age or illness can prevent a husband and wife from conceiving without changing the kind of conjugal union they enter. The Church must therefore honour infertile marriages without abandoning her account of marriage's nature.",
+          "fr": "Être ordonné aux enfants ne signifie pas garantir une conception. L’âge ou la maladie peuvent empêcher les époux de concevoir sans changer la nature de leur union conjugale. L’Église honore donc les mariages infertiles sans renoncer à sa conception de la nature du mariage."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Isn’t “kind of union” just a way of defining the conclusion into the premise?",
+          "fr": "Le « type d’union » n’est-il pas simplement une manière de placer la conclusion dans la prémisse ?"
+        },
+        "original_source_followup_reply": {
+          "en": "Only if no account is given of why the distinction matters. The Catholic account points to the bodily complementarity of the act and its natural relation to generation, independent of whether that relation succeeds in each instance.",
+          "fr": "Seulement si aucune raison n’est donnée pour expliquer pourquoi la distinction compte. L’explication catholique invoque la complémentarité corporelle de l’acte et son rapport naturel à la génération, indépendamment du fait que ce rapport aboutisse dans chaque cas."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "You are right to demand an argument, not a label. The Catholic explanation appeals to the form of male-female bodily union and its natural relation to generation, even where age or illness prevent conception. We may examine that reasoning without disparaging infertile spouses.",
+          "fr": "Vous avez raison d’exiger un argument et non une étiquette. L’explication catholique se réfère à la forme corporelle de l’union homme-femme et à son rapport naturel à la génération, même si l’âge ou la maladie empêchent la conception. Examinons ce raisonnement sans déprécier les époux infertiles."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-035-064.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "CASTI",
+              "locator": "§§17, 36"
+            },
+            {
+              "registry_key": "CIC",
+              "locator": "can. 1084 §3"
+            },
+            {
+              "registry_key": "LBM",
+              "locator": "marriage chapters"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "DOCTRINAL_SOURCE_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Being ordered to procreation is different from guaranteeing conception. Sterility is distinct from the antecedent, permanent inability to have intercourse addressed by canon 1084.",
+          "fr": "Être ordonné à la procréation diffère de garantir une conception. La stérilité se distingue de l’impuissance antérieure et perpétuelle à accomplir l’acte conjugal visée au canon 1084.",
+          "claims": [
+            {
+              "text": "Bounded doctrinal or canonical claim",
+              "refs": [
+                "CIC1055",
+                "CIC1084"
+              ],
+              "type": "EXPLANATORY_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "That distinction needs an argument, not a label. We can examine the Catholic account of bodily union and its ends without treating childlessness as personal failure.",
+          "fr": "Cette distinction demande un argument, non une étiquette. Examinons la conception catholique de l’union corporelle et de ses fins sans traiter l’absence d’enfant comme un échec personnel.",
+          "claims": [
+            {
+              "text": "Bounded doctrinal or canonical claim",
+              "refs": [
+                "CDF2003-2-3"
+              ],
+              "type": "APOLOGETICAL_METHOD_AND_PASTORAL_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Distinguishsterility from antecedentperpetualimpotence; ageorillness is not a blanketcanonicalclassification",
+        "Casti36 contains an attributedAugustinequotation aboutnotabandoningasterilewife; do not present it as a comprehensive modernimpedimentdefinition"
+      ],
+      "classification": "CHANOINE_EXPLANATION_NOT_PIUS_X_HISTORICAL_VOICE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "CIC1055",
+      "work": "CIC can.1055 §§1–2",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "language": "Latin",
+      "exactLatinExcerpt": "Matrimoniale foedus",
+      "supports": "Covenant, lifelong partnership, ends, sacrament; §2 valid matrimonial contract betweenbaptized"
+    },
+    {
+      "id": "CIC1057",
+      "work": "Same can.1057 §§1–2",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "language": "Latin",
+      "supports": "Qualifiedpersons, consentlegitimatelymanifested; irrevocablegift. No blanketformorimpedimentwaiver."
+    },
+    {
+      "id": "CIC1084",
+      "work": "Same can.1084 §§1–3, crossreference1098",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "language": "Latin",
+      "exactLatinExcerpt": "Sterilitas matrimonium nec prohibet nec dirimit",
+      "supports": "Sterilityalone versus antecedentperpetualimpotence; §2doubt rule; §3preserves1098"
+    },
+    {
+      "id": "CIC1098",
+      "work": "Same can.1098",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "language": "Latin",
+      "supports": "Fraudtoobtainconsent concerningqualitythatbynaturecangravelydisturblife; not everyundisclosedfact automaticallyinvalidates"
+    },
+    {
+      "id": "CC5-6",
+      "work": "PiusXI, Casti connubii (31December1930), English §§5–6",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLocator": "Atque ut ab his ipsis Litteris initium; At, quamquam matrimonium; Haec tamen libertas",
+      "exactLatinExcerpt": "non oritur nisi ex libero utriusque sponsi consensu",
+      "supports": "Divineinstitution and freeparticularconsent"
+    },
+    {
+      "id": "CC5-7",
+      "work": "Same English §§5–7",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLocator": "Haec tamen libertas; Coniugio igitur animi iunguntur",
+      "supports": "Consentdoesnotredefinenature; firmwill ratherthanpassingaffection"
+    },
+    {
+      "id": "CDF2003-2-3",
+      "work": "CDF, Considerations regarding proposals to give legal recognition to unions between homosexual persons (2003), §§2–3",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20030731_homosexual-unions_en.html",
+      "language": "OfficialEnglishtext",
+      "supports": "Catholicmarriageaccount, complementarity, procreativeandpersonalends; no newempiricalparentingconclusions"
+    }
+  ],
+  "sourcePrecisionDeltas": [
+    "Claimsaboutsterilityretainpreciselimits; humanreviewmustnotconverttheseintoanindividualnullityassessment",
+    "CastiandcurrentCode are separatelyidentifiedauthorities; no silentlyflattenedtranslationorera"
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "CSE043-T2",
+        "CSE044-T1"
+      ],
+      "decision": "Sharedsterilityprinciple; retain43objectionand44reasoning asdifferentcontexts. Oneevidencemap, no newfamily."
+    }
+  ],
+  "humanDecisions": [
+    "Canonistchecksfraud/impotencedistinctionsbeforeexpandingintocaseadvice",
+    "Theologianchecksreasoningand EN/FR clarity; explanations donotproveallpremisesmerelybycitingthem",
+    "Pastoralreviewmustpreservedignityofchildlesscouplesandallvisitors"
+  ],
+  "newSubstantiveGaps": [],
+  "originalLanguageLimit": "CDF2003originalLatinnotcollated; originalLatinCastiandCodepassagesread. Noindependenttranslationcertification.",
+  "approvalsChanged": 0,
+  "continue": true
+}
