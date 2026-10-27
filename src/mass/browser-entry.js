@@ -26,6 +26,7 @@ import { R17_FINAL_APPROVED_MASS_ASSETS } from "./reader-final-approved-assets.j
 import { CANONICAL_ICON_ASSETS } from "./reader-canonical-icons.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
+import { installPentecostSunday1960PrefaceSource } from "./1962-pentecost-sunday-prefatio1960-source.js";
 import {select1962CommemorationsForMassForm} from "./1962-commemoration-form-source.js";
 import {selectedPreflightStudyProper} from "./preflight-study-proper.js";
 import {massScriptureContextForCard} from "./scripture-reading-context.js";
@@ -929,6 +930,12 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       return;
     }
     try {
+      // Shared resolver owns the 1960-specific Prefatio rule. Do this before
+      // preflight, Calendar/Mass source subscriptions and optional forms.
+      // A missed source bootstrap must not be silently labeled repaired.
+      state.pentecostSundaySource=installPentecostSunday1960PrefaceSource(window);
+      if(!state.pentecostSundaySource.installed)
+        console.warn("Two 1960 Sunday Preface source decisions unavailable",state.pentecostSundaySource.reason);
       state.rogationPreflight=mountRogationPreflight({
         doc:document,
         getResolvedMass:()=>celebrationApi().getResolvedMass(),
