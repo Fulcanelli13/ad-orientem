@@ -90,11 +90,22 @@ def main():
                 ids_checked.append("SOURCE_MATCHES_ANCHOR" if other and other["effective_anchor_id"]==siteid else "SOURCE_LINKS_DIFFERENT_ANCHOR")
         complete=bool(subjectid and sources and url and recorded_at and comment)
         matching=bool(ids_checked) and all(x=="SOURCE_MATCHES_ANCHOR" for x in ids_checked)
-        decision="SOURCE_LINKED_PENDING_INDEPENDENT_EVIDENCE_REVIEW" if complete and matching else "HOLD_INCOMPLETE_OR_SOURCE_CROSSWALK"
+        # The CL2 master certifies physical anchors; it does NOT establish
+        # named Ministry, Celebration, Community or Organizer primary keys.
+        # A free-form ID supplied by an editor must never be mistaken for a
+        # validated identity or a verified liturgical/canonical assertion.
+        subject_matched=(subject=="VENUE" and subjectid==siteid)
+        if not complete or not matching:
+            decision="HOLD_INCOMPLETE_OR_SOURCE_CROSSWALK"
+        elif not subject_matched:
+            decision="HOLD_SUBJECT_ID_NEEDS_CANONICAL_ENTITY_CROSSWALK"
+        else:
+            decision="SOURCE_LINKED_PENDING_INDEPENDENT_EVIDENCE_REVIEW"
         result.append({
             "draft_index":rowno,"field":field,"value":value,"scope":subject,
             "physical_site_anchor":siteid,
             "frozen_source_checks":ids_checked,
+            "subject_id_linkage":"MATCHED_EXACT_PHYSICAL_ANCHOR" if subject_matched else "NOT_CROSSWALKED_TO_MINISTRY_CELEBRATION_COMMUNITY_OR_ORGANIZER",
             "review_gate":decision,"public_approved":False
         })
 
@@ -102,6 +113,7 @@ def main():
         "submitted_drafts":len(result),
         "source_linked_pending_review":sum(x["review_gate"]=="SOURCE_LINKED_PENDING_INDEPENDENT_EVIDENCE_REVIEW" for x in result),
         "identity_or_evidence_holds":sum(x["review_gate"]!="SOURCE_LINKED_PENDING_INDEPENDENT_EVIDENCE_REVIEW" for x in result),
+        "unregistered_ministry_celebration_community_subjects":sum(x["review_gate"]=="HOLD_SUBJECT_ID_NEEDS_CANONICAL_ENTITY_CROSSWALK" for x in result),
         "new_public_classifications":0,
         "new_public_mass_times":0
     }
