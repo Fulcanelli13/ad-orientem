@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
 import {SEASONAL_SANCTORAL_2026_COUNTS,
  required1962SeasonalSanctoralPrefaceOwner,originalSanctoralLacksOwnPreface,
- matches1962SeasonalSanctoralSelection} from "../src/mass/1962-seasonal-sanctoral-preface-source.js";
+ matches1962SeasonalSanctoralSelection,
+ required1962May11ApostlesPrefaceOwner,authenticMay11ApostolicOriginal,
+ matches1962May11ApostlesSelection} from "../src/mass/1962-seasonal-sanctoral-preface-source.js";
 const list={
  PASCHALIS:["04-13:3:r","04-14:3:r","04-21:3:w","04-22:3:r","04-24:3:r",
   "04-27:3:w","04-28:3:w","04-29:3:r","04-30:3:w","05-02:3:w",
@@ -58,4 +60,30 @@ assert.equal(checked,20);
 assert.equal(required1962SeasonalSanctoralPrefaceOwner(
   "sancti:05-11r:2:r","Sancti/05-11r","2026-05-11"),null,
   "Saints Philip and James own the Apostles Preface, not seasonal Paschal");
-console.log("PASS 20 exact-source 1962 Easter/Ascension Sanctoral Prefaces; strict 2026 date, donor and variant rejects; Apostles exception excluded");
+const apostle=required1962May11ApostlesPrefaceOwner(
+  "sancti:05-11r:2:r","Sancti/05-11r","2026-05-11");
+assert.equal(apostle?.section,"Apostolis");
+assert.equal(apostle?.rubric,"RGMR_497");
+assert.equal(required1962May11ApostlesPrefaceOwner(
+ "sancti:05-11r:3:r","Sancti/05-11r","2026-05-11"),null);
+assert.equal(required1962May11ApostlesPrefaceOwner(
+ "sancti:05-11r:2:r","Sancti/05-11r","2027-05-11"),null);
+assert.equal(required1962May11ApostlesPrefaceOwner(
+ "sancti:05-11r:2:r","Sancti/05-01","2026-05-11"),null);
+const witness={map:new Map([["Officium",["Ss. Philippi et Jacobi Apostolorum"]]])};
+assert.equal(authenticMay11ApostolicOriginal(witness),true);
+assert.equal(authenticMay11ApostolicOriginal({map:new Map([
+ ["Officium",["S. Joseph Opificis"]]])}),false);
+const selected={
+ lat:"de Apostolis\nVere dignum et justum est: Te, Dómine, supplíciter exoráre, ut gregem tuum, Pastor ætérne, non déseras.",
+ en:"of Apostles\nIt is truly meet and just, O Lord.",
+ fr:"des Apôtres\nIl est vraiment juste et nécessaire.",
+ prefaceSection:"Apostolis",prefaceVariant:null,
+ recoveryScope:apostle.scope,sanctoralSourceDate:apostle.date
+};
+assert.equal(matches1962May11ApostlesSelection(selected,apostle),true);
+assert.equal(matches1962May11ApostlesSelection({...selected,lat:"Communis"},apostle),false);
+assert.equal(matches1962May11ApostlesSelection({...selected,sanctoralSourceDate:"2027-05-11"},apostle),false);
+assert.equal(matches1962May11ApostlesSelection({...selected,fr:""},apostle),false);
+
+console.log("PASS 20 seasonal + 1 apostolic exact-source 1962 Easter/Ascension Sanctoral Prefaces; strict 2026 date, donor and variant rejects; Apostles exception excluded");
