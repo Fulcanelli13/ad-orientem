@@ -104,7 +104,7 @@ try{
     assert.equal(await frenchPage.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
     assert.equal(await frenchPage.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.morning_evening",{returnContext:null})),true);
     await frenchPage.waitForSelector("#aoPray435930[data-ao-contemplative-daily='guided'] .aoDevoSequenceTimeline");
-    assert.match(await frenchPage.locator("#aoPray435930 .aoTP381DaypartStrip").innerText(),/Matin\\s+Soir/);
+    assert.match(await frenchPage.locator("#aoPray435930 .aoTP381DaypartStrip").innerText(),/Matin\s+Soir/);
     await frenchPage.locator("#aoPray435930 .aoDevoStop[data-ao-devo-chapter='2']").click();
     const frenchFlip=frenchPage.locator("#aoPray435930 [data-tp381-flip]").first();
     const vernacular=await frenchFlip.innerText();
