@@ -83,5 +83,58 @@ try{
   assert.equal(r.prefacio1960Status,null,date+" changed an unrelated Mass");
   assert.equal(r.properStatus,"ready");
  }
+
+ // Exhaustive 2026 Sunday *scope* test. This is not a certificate for
+ // every Sunday's Preface: it proves the narrow 1960 rule owner does not
+ // claim any other Sunday, while preserving all 52 production source IDs.
+ const sundays=[];
+ for(let millis=Date.UTC(2026,0,1);millis<Date.UTC(2027,0,1);millis+=86400000){
+  const date=new Date(millis);
+  if(date.getUTCDay()===0)sundays.push(date.toISOString().slice(0,10));
+ }
+ assert.equal(sundays.length,52,"2026 has exactly 52 Sundays");
+ const sundayRows=[];
+ // Small source-resolver chunks avoid overloading the canonical host source.
+ for(let offset=0;offset<sundays.length;offset+=5){
+  const dates=sundays.slice(offset,offset+5);
+  const chunk=await page.evaluate(async dates=>{
+   const {inspectPentecostSunday1960Source}=await import(
+    "/src/mass/1962-pentecost-sunday-prefatio1960-source.js");
+   const resolver=globalThis.AO_RUNTIME_V8?.resolver;
+   return Promise.all(dates.map(async date=>{
+    try{
+     const r=await resolver.resolveDay(date);
+     return {date,id:r?.day?.main?.id??null,dayStatus:r?.status,
+      properStatus:r?.proper?.status,
+      decision:r?.preface1960SourceDecision?.status??null,
+      scope:inspectPentecostSunday1960Source(r)?.status,
+      actualHeading:String(r?.proper?.data?.preface?.lat??"").split("\n")[0]};
+    }catch(error){return {date,error:String(error?.message??error)}}
+   }));
+  },dates);
+  sundayRows.push(...chunk);
+ }
+ assert.equal(sundayRows.length,52);
+ const certified=sundayRows.filter(r=>r.decision==="SOURCE_VERIFIED").map(r=>r.date).sort();
+ assert.deepEqual(certified,["2026-06-07","2026-06-14"],
+  "The shared Sunday fix must affect precisely its two source-owned identities");
+ for(const r of sundayRows){
+  assert.ok(!r.error,r.date+": "+r.error);
+  assert.equal(r.dayStatus,"ready",r.date+": date resolver failure");
+  assert.equal(r.properStatus,"ready",r.date+": source Proper failure");
+  if(certified.includes(r.date)){
+   assert.equal(r.scope,"ALREADY_CORRECT",r.date);
+   assert.match(r.actualHeading,/^de sanctissima Trinitate/i,r.date);
+  }else {
+   assert.equal(r.decision,null,r.date+": unauthorized 1960 override");
+   assert.equal(r.scope,"NOT_THIS_PRINCIPAL_MASS",r.date+": unrelated source identity");
+  }
+ }
+ console.log("MASS_1960_2026_SUNDAY_SCOPE="+JSON.stringify({
+  scanned:52,sourceVerified:certified,unchanged:50,unresolved:0,
+  limitation:"Intervention scope only: not universal Preface/Proper certification"
+ }));
+ console.log("PASS 2026 Sunday source scope: exactly 2 verified corrections and 50 untouched");
+
  console.log("PASS source-authenticated 1960 Trinity Preface, two actual Sunday Masses, native reader and unchanged controls");
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
