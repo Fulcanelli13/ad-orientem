@@ -1,0 +1,189 @@
+name: CL27 pinned 4,681 Mass source and collision review
+
+on:
+  pull_request:
+    paths:
+      - 'data/directory/research/cl2-unified-20261026/**'
+      - 'data/directory/research/cl27-bulk-timetable-audit-20261026/**'
+      - 'data/directory/tlm-user-classification-taxonomy.v1.json'
+      - 'tools/directory/build-cl27-tlm-classifications.py'
+      - 'tools/directory/build-cl27-r49-unified-crosswalk.py'
+      - 'tools/directory/build-cl27-735-unmapped-site-intake.py'
+      - 'tools/directory/validate-cl27-eight-spatial-dispositions.py'
+      - 'data/directory/research/cl27-classification-review-20261026/**'
+      - 'tools/directory/review-cl27-tlm-classifications.html'
+      - 'src/find/preliminary-directory-r49.js'
+      - 'tests/directory-cl27-r49-unified-adapter.mjs'
+      - 'src/find/cl2-research-crosswalk-adapter.js'
+      - 'src/find/explore-presentation.js'
+      - 'tests/directory-cl27-user-classification-facets.mjs'
+      - 'tests/directory-cl27-offline-editor.mjs'
+      - 'tools/directory/validate-cl27-editorial-classification-drafts.py'
+      - 'tools/directory/validate-cl27-bulk-schedule-audit.py'
+      - '.github/workflows/directory-cl27-bulk-schedule-review.yml'
+  push:
+    paths:
+      - 'data/directory/research/cl27-bulk-timetable-audit-20261026/**'
+      - 'tools/directory/validate-cl27-bulk-schedule-audit.py'
+      - 'data/directory/tlm-user-classification-taxonomy.v1.json'
+      - 'tools/directory/build-cl27-tlm-classifications.py'
+      - 'tools/directory/build-cl27-r49-unified-crosswalk.py'
+      - 'tools/directory/build-cl27-735-unmapped-site-intake.py'
+      - 'tools/directory/validate-cl27-eight-spatial-dispositions.py'
+      - 'data/directory/research/cl27-classification-review-20261026/**'
+      - 'tools/directory/review-cl27-tlm-classifications.html'
+      - 'src/find/preliminary-directory-r49.js'
+      - 'tests/directory-cl27-r49-unified-adapter.mjs'
+      - 'src/find/cl2-research-crosswalk-adapter.js'
+      - 'src/find/explore-presentation.js'
+      - 'tests/directory-cl27-user-classification-facets.mjs'
+      - 'tests/directory-cl27-offline-editor.mjs'
+      - 'tools/directory/validate-cl27-editorial-classification-drafts.py'
+  workflow_dispatch:
+
+jobs:
+  stable-bulk-schedule-source-audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject malformed Python
+        run: python3 -m py_compile tools/directory/validate-cl27-bulk-schedule-audit.py
+      - name: Verify complete source snapshot and all collision/review output
+        run: python3 tools/directory/validate-cl27-bulk-schedule-audit.py
+      - name: Test user-facing source-labelled classification selectors
+        run: node tests/directory-cl27-user-classification-facets.mjs
+      - name: Test offline classification editor syntax and release guards
+        run: node tests/directory-cl27-offline-editor.mjs
+      - name: Rebuild canonical research SQLite (no app publication)
+        run: python3 tools/directory/rebuild-cl2-research-snapshot.py --snapshot-dir data/directory/research/cl2-unified-20261026 --output /tmp/cl27-mass-registry.sqlite
+      - name: Validate CL2 canonical institution inheritance and exception precedence
+        run: python3 tools/directory/validate-cl2-unified-master-inheritance.py --db /tmp/cl27-mass-registry.sqlite
+      - name: Generate classified directory from CL2 effective scoped views
+        run: python3 tools/directory/build-cl27-tlm-classifications.py --db /tmp/cl27-mass-registry.sqlite --output /tmp/cl27-tlm-classification-facets.json --html-output /tmp/cl27-tlm-classification-review.html
+      - name: Crosswalk all 1,879 existing R49 pins by frozen source ID to CL2
+        run: python3 tools/directory/build-cl27-r49-unified-crosswalk.py --db /tmp/cl27-mass-registry.sqlite --output /tmp/cl27-r49-cl2-crosswalk.json
+      - name: Require zero invented identities and no duplicate-source marker promotion
+        run: |
+          python3 - <<'PY'
+          import json
+          x=json.load(open('/tmp/cl27-r49-cl2-crosswalk.json'))
+          c=x['counts']
+          assert (c['r49_original_pins'],c['exact_source_and_group_id_links'],c['unlinked_pins'])==(1879,1879,0)
+          assert (c['physical_anchors_represented'],c['multiple_pin_physical_anchor_groups'])==(1844,35)
+          assert c['newly_published_pins']==c['newly_published_classifications']==c['newly_published_mass_times']==0
+          assert len({r['r49_pin_id'] for r in x['r49_to_cl2_source_scope']})==1879
+          assert all(r['identity_join']=='EXACT_FROZEN_SOURCE_ID_AND_GROUP' and
+                     r['scope']=='SOURCE_MINISTRY_ONLY_NOT_SITE_OR_CELEBRATION' and
+                     not r['classification_public_approval'] and not r['mass_schedule_public_approval']
+                     for r in x['r49_to_cl2_source_scope'])
+          assert all(g['physical_site_rite']=='UNKNOWN' and g['physical_site_missal']=='UNKNOWN'
+                     and not g['representative_pin_selected']
+                     for g in x['represented_physical_anchors'])
+          print('Exact 1,879-record crosswalk PASS; 1,844 physical anchors; 35 duplicate pin groups held')
+          PY
+      - name: Validate eight specific disputed source geometries against independent evidence
+        run: python3 tools/directory/validate-cl27-eight-spatial-dispositions.py --crosswalk /tmp/cl27-r49-cl2-crosswalk.json --output /tmp/cl27-eight-spatial-QA.json
+      - name: Bulk-screen all 735 unrepresented CL2 physical sites for geocoding intake
+        run: python3 tools/directory/build-cl27-735-unmapped-site-intake.py --db /tmp/cl27-mass-registry.sqlite --crosswalk /tmp/cl27-r49-cl2-crosswalk.json --output /tmp/cl27-735-geocode-intake.json
+      - name: Verify zero geometry promotion and independent source identities for 735-site intake
+        run: |
+          python3 - <<'PY'
+          import json
+          d=json.load(open('/tmp/cl27-735-geocode-intake.json'))
+          c=d['counts']
+          assert c['CL2_locations_not_in_R49']==735
+          assert c['source_memberships_by_site']=={'0':8,'1':691,'2':36}
+          assert c['sites_with_existing_source_coordinates']==0 and c['geocoded_and_approved']==0
+          assert c['new_public_pins']==0 and sum(c['descriptive_text_triage'].values())==735
+          assert len({x['physical_anchor_id'] for x in d['intake']})==735
+          assert all(x['geometry'] is None and x['public_release_approved'] is False for x in d['intake'])
+          assert [x['count'] for x in d['geocode_batches_max_150']]==[150,150,150,150,135]
+          assert all(x['research_state']=='RESEARCH_NOT_GEOCODE_VERIFIED' for x in d['geocode_batches_max_150'])
+          print('735-site geography intake PASS; all physical IDs preserved, zero geocoded/public sites')
+          PY
+      - name: Test read-only CL2 Find projection without a public map mutation
+        run: node tests/directory-cl27-r49-unified-adapter.mjs /tmp/cl27-r49-cl2-crosswalk.json
+      - name: Check offline classification editor generated from pinned research source
+        run: |
+          python3 - <<'PY'
+          import json
+          from html.parser import HTMLParser
+          from pathlib import Path
+          html=Path('/tmp/cl27-tlm-classification-review.html').read_text()
+          data=json.loads(Path('/tmp/cl27-tlm-classification-facets.json').read_text())
+          assert html.count('id="embedded-data"') == 1
+          assert 'ad-orientem-tlm-classification-drafts.json' in html
+          assert 'public_approval:false' in html
+          assert data['counts']['classification_source_rows'] == 2715
+          assert data['counts']['organization_labels_at_source_only'] == 2008
+          assert data['counts']['institute_norm_assertions_from_CL2'] == 8
+          assert data['counts']['inherited_institute_source_labels'] == 1389
+          assert data['counts']['inherited_source_labels_by_institute'] == {'FSSP':381,'ICKSP':158,'IBP':31,'SSPX':819}
+          inherited=[x for x in data['source_scoped_classification_assertions'] if x['inherited_institute_id']]
+          assert len(inherited)==1389
+          assert all(x['liturgical_use']=='ROMAN' and x['effective_missal_edition']=='1962' and
+                     len(x['inherited_institute_policy'])==2 and
+                     x['liturgical_claim_grade']=='INHERITED_INSTITUTE_NORM_SOURCE_LABEL_NOT_MASS_VERIFIED'
+                     for x in inherited)
+          assert sum(bool(x['missal_edition_at_source_scope']=='1962') for x in data['source_scoped_classification_assertions'])==3
+          assert all(x['rite_of_all_celebrations']=='UNKNOWN' and
+                     x['missal_for_all_celebrations']=='UNKNOWN' and not x['public_classification_approved']
+                     for x in data['physical_site_classification_facets'])
+          assert html.find('id="embedded-data"') < html.find("const embedded=document.getElementById('embedded-data')")
+          token='<script id="embedded-data" type="application/json">'
+          payload=html.split(token,1)[1].split('</script>',1)[0]
+          embedded=json.loads(payload)
+          assert embedded['counts']==data['counts']
+          assert embedded['physical_site_classification_facets'][0]['physical_anchor_id']==data['physical_site_classification_facets'][0]['physical_anchor_id']
+          print('Offline CL27 editor PASS; full 2,579 sites and 2,715 source claims embedded')
+          PY
+      - name: Verify research-only draft intake without publication or identity invention
+        run: |
+          python3 - <<'PY'
+          import json, sqlite3
+          db=sqlite3.connect('/tmp/cl27-mass-registry.sqlite')
+          source,group=db.execute("SELECT source_id,joined_canonical_group_id FROM venue_source WHERE joined_canonical_group_id IS NOT NULL LIMIT 1").fetchone()
+          anchor=db.execute("SELECT effective_anchor_id FROM canonical_site WHERE group_id=?",(group,)).fetchone()[0]
+          draft={"schema":"AO_TLM_USER_CLASSIFICATION_DRAFTS_V1","source_baseline":"CL27","status":"RESEARCH_ONLY_UNREVIEWED",
+            "records":[{"physical_site_context":anchor,"field":"venue_owner_type","subject_type":"VENUE",
+              "subject_id":anchor,"value":"UNKNOWN","source_ids":[source],
+              "source_type":"USER_SUBMISSION","source_url":"https://example.org/","recorded_at":"2026-10-26",
+              "evidence_excerpt":"Synthetic fixture only, not a verified statement","public_approval":False},
+              {"physical_site_context":anchor,"field":"una_cum","subject_type":"MINISTRY",
+               "subject_id":"invented-ministry-id-must-remain-held","value":"NO","source_ids":[source],
+               "source_type":"USER_SUBMISSION","source_url":"https://example.org/","recorded_at":"2026-10-26",
+               "evidence_excerpt":"Synthetic fake ministry ID; must NOT satisfy a canonical identity gate","public_approval":False}]}
+          open('/tmp/cl27-draft-test.json','w').write(json.dumps(draft))
+          PY
+          python3 tools/directory/validate-cl27-editorial-classification-drafts.py --db /tmp/cl27-mass-registry.sqlite --input /tmp/cl27-draft-test.json --report /tmp/cl27-draft-report.json
+          python3 - <<'PY'
+          import json
+          r=json.load(open('/tmp/cl27-draft-report.json'))
+          assert r['summary']['submitted_drafts']==2
+          assert r['summary']['source_linked_pending_review']==1
+          assert r['summary']['unregistered_ministry_celebration_community_subjects']==1
+          assert r['records'][1]['review_gate']=='HOLD_SUBJECT_ID_NEEDS_CANONICAL_ENTITY_CROSSWALK'
+          assert r['summary']['new_public_classifications']==0
+          assert r['summary']['new_public_mass_times']==0
+          PY
+      - name: Offer reproducible one-file review build
+        uses: actions/upload-artifact@v4
+        with:
+          name: cl27-offline-classification-review
+          path: /tmp/cl27-tlm-classification-review.html
+          retention-days: 7
+      - name: Verify classification export does not turn source labels into official claims
+        run: |
+          python3 - <<'PY'
+          import json
+          d=json.load(open('/tmp/cl27-tlm-classification-facets.json'))
+          c=d['counts']
+          assert (c['distinct_physical_anchors'],c['classification_source_rows'],c['safe_exact_classification_source_joins'])==(2579,2715,2674)
+          assert c['public_classifications_approved']==0 and c['una_cum_confirmed_per_celebration']==0
+          assert c['institute_norm_assertions_from_CL2']==8 and c['inherited_institute_source_labels']==1389
+          assert c['inherited_exact_joined_source_labels']<=1389
+          assert all(r['una_cum']=='UNKNOWN' for r in d['physical_site_classification_facets'])
+          print('CL27 classifications PASS')
+          PY

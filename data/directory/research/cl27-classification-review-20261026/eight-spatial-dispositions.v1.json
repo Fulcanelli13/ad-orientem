@@ -1,0 +1,215 @@
+{
+  "schema": "AO_CL27_R49_CL2_EIGHT_SPATIAL_DISPOSITIONS_V1",
+  "reviewed_on": "2026-10-27",
+  "parent_crosswalk_schema": "AO_CL27_R49_EXACT_CL2_CROSSWALK_RESEARCH_V1",
+  "purpose": "Source-evidence annotations for eight duplicated R49 points with different coordinates under one CL2 physical anchor. No new site identities, public pins, timetables or Mass claims.",
+  "statuses": {
+    "COORDINATE_REFERENCE_FOUND_REQUIRES_RELEASE_REVIEW": 5,
+    "SAME_POINT_FLOAT_PRECISION": 1,
+    "HOLD_PRECISE_CHAPEL_OR_ENTRANCE_POSITION": 1,
+    "HOLD_INDEPENDENT_BUILDING_COORDINATES": 1
+  },
+  "records": [
+    {
+      "anchor_id": "RG-76D2AEF365FE",
+      "name": "Church of the Holy Name, Stepney",
+      "country": "AU",
+      "status": "COORDINATE_REFERENCE_FOUND_REQUIRES_RELEASE_REVIEW",
+      "source_pin_ids": [
+        "ao-fssp-church-of-the-holy-name-80-payneham-rd-stepney-sa-5069-australia",
+        "LMD:church-of-the-holy-name-stepney-australia"
+      ],
+      "independent_reference": {
+        "lat": -34.91141,
+        "lng": 138.6272,
+        "source_type": "OSM_NAMED_CHURCH_POLYGON_APPROX_CENTRE",
+        "url": "https://mapcarta.com/W1090553872",
+        "osm_way_id": "1090553872"
+      },
+      "owner_or_government_evidence": [
+        {
+          "url": "https://www.fssp.net/locations",
+          "supports": "FSSP identifies Church of the Holy Name at 80 Payneham Road"
+        },
+        {
+          "url": "https://maps.sa.gov.au/heritagesearch/HeritageItem.aspx?p_heritageno=28120",
+          "supports": "Government heritage register confirms church/address"
+        }
+      ],
+      "caution": "First R49 FSSP pin is ~564 m from OSM church; LMD marker ~56 m. Use independent church geometry as review candidate, not either stored source marker automatically.",
+      "no_coordinate_publication": true
+    },
+    {
+      "anchor_id": "RG-647B8D5A6339",
+      "name": "Church of the Assumption of the Virgin Mary and St Charles the Great, Prague-Karlov",
+      "country": "CZ",
+      "status": "COORDINATE_REFERENCE_FOUND_REQUIRES_RELEASE_REVIEW",
+      "source_pin_ids": [
+        "ao-fssp-kostel-nanebevzeti-panny-marie-a-sv-karla-velikeho-ke-karlovu-453-1-cz-12000-praha-ceska-republika",
+        "ao-research-una-voce-cz-current-20261010-uvcz-r20-praha-karlov"
+      ],
+      "independent_reference": {
+        "lat": 50.068689,
+        "lng": 14.42842,
+        "source_type": "PRAGUE_2_MUNICIPAL_BUILDING_COORDINATE",
+        "url": "https://encyklopedie.praha2.cz/stavba/707-kostel-nanebevzeti-panny-marie-karla-velikeho-na-karlove-klaster-augustinianu-kanovniku"
+      },
+      "owner_or_government_evidence": [
+        {
+          "url": "https://kostelnakarlove.com/about/",
+          "supports": "Church itself identifies Ke Karlovu 453/1, Praha 2"
+        }
+      ],
+      "caution": "Approximately 11 m between R49 source pins; municipal position is closest to the first. Exact public pin/entrance remains a separate release decision.",
+      "no_coordinate_publication": true
+    },
+    {
+      "anchor_id": "RG-9DE31147B6ED",
+      "name": "St Mary's College Chapel, Galway",
+      "country": "IE",
+      "status": "HOLD_PRECISE_CHAPEL_OR_ENTRANCE_POSITION",
+      "source_pin_ids": [
+        "ao-research-icksp-federated-v13-icksp-stg-125",
+        "LMD:seipeal-colaiste-naoi%e1%b9%81-muire-saint-marys-college-chapel-galway-ireland"
+      ],
+      "independent_reference": null,
+      "owner_or_government_evidence": [
+        {
+          "url": "https://galway.icksp.ie/contact",
+          "supports": "Institute identifies St Mary's College Chapel, Galway"
+        },
+        {
+          "url": "https://mapcarta.com/W26134168",
+          "supports": "OSM maps St Mary's College school campus; NOT a proof of chapel building or doorway"
+        }
+      ],
+      "caution": "Pins differ by ~234 m. The source near the college campus is plausible but the school's mapped centroid is not proof of chapel geometry. Need chapel or entrance-level evidence.",
+      "no_coordinate_publication": true
+    },
+    {
+      "anchor_id": "RG-32D17317FC55",
+      "name": "Chapelle Notre-Dame du Rosaire, Le Laus",
+      "country": "FR",
+      "status": "SAME_POINT_FLOAT_PRECISION",
+      "source_pin_ids": [
+        "ao-research-sspx-france-first-party-sspx-lpl-montgardin-le-laus",
+        "SSPX-LPL-MONTGARDIN-LE-LAUS"
+      ],
+      "independent_reference": null,
+      "owner_or_government_evidence": [
+        {
+          "url": "https://laportelatine.org/lieux/montgardin/le-laus",
+          "supports": "Official chapel name and 388 Grande Rue, Notre-Dame du Laus"
+        }
+      ],
+      "caution": "Identical latitude 44.521546 and longitude values 6.1537492 versus 6.153749, a difference ~0.02 m. Treat as source-coordinate rounding, not distinct spatial sites. Retain both frozen sources.",
+      "no_coordinate_publication": true
+    },
+    {
+      "anchor_id": "RG-4279040C75AD",
+      "name": "St Francis Xavier Cathedral Crypt, Geraldton",
+      "country": "AU",
+      "status": "COORDINATE_REFERENCE_FOUND_REQUIRES_RELEASE_REVIEW",
+      "source_pin_ids": [
+        "AO-WORLD-R35-AU-02-20",
+        "LMD:crypt-chapel-of-our-lady-of-sorrows-geraldton-australia"
+      ],
+      "independent_reference": {
+        "lat": -28.77733,
+        "lng": 114.61179,
+        "source_type": "OSM_NAMED_CATHEDRAL_BUILDING_POLYGON_APPROX_CENTRE",
+        "url": "https://mapcarta.com/fr/W272648016",
+        "osm_way_id": "272648016"
+      },
+      "owner_or_government_evidence": [
+        {
+          "url": "https://www.geraldtondiocese.org.au/parishes/geraldton-parishes",
+          "supports": "Diocese confirms cathedral at 56 Cathedral Avenue; crypt position inside building not separately certified"
+        }
+      ],
+      "caution": "OSM church location is ~4 m from LMD and ~295 m from AO-WORLD source. This is a cathedral-building candidate, NOT an independent crypt chapel/entrance survey.",
+      "no_coordinate_publication": true
+    },
+    {
+      "anchor_id": "RG-D9A874AE4487",
+      "name": "Mary Immaculate Church, Annerley",
+      "country": "AU",
+      "status": "COORDINATE_REFERENCE_FOUND_REQUIRES_RELEASE_REVIEW",
+      "source_pin_ids": [
+        "AO-WORLD-R35-AU-01-17",
+        "LMD:mary-immaculate-church-annerley-australia"
+      ],
+      "independent_reference": {
+        "lat": -27.51686111,
+        "lng": 153.03025,
+        "source_type": "HISTORIC_CHURCH_SITE_MAPPING_POINT",
+        "url": "https://mappingbrisbanehistory.com.au/location/mary-immaculate-church-21/"
+      },
+      "owner_or_government_evidence": [
+        {
+          "url": "https://brisbaneoratory.org.au/parish/liturgy-times/",
+          "supports": "Brisbane Oratory identifies Mary Immaculate at 616 Ipswich Road"
+        },
+        {
+          "url": "https://heritage.brisbane.qld.gov.au/heritage-places/130",
+          "supports": "Brisbane City Council independently identifies church at same address"
+        }
+      ],
+      "caution": "Independent historic church mapping is ~11 m from LMD and ~68 m from AO-WORLD. The school and church share a parish complex; never substitute a school coordinate for church point.",
+      "no_coordinate_publication": true
+    },
+    {
+      "anchor_id": "RG-956BB24E14EA",
+      "name": "Maternal Heart of Mary Church, Lewisham",
+      "country": "AU",
+      "status": "COORDINATE_REFERENCE_FOUND_REQUIRES_RELEASE_REVIEW",
+      "source_pin_ids": [
+        "AO-WORLD-R35-AU-01-06",
+        "LMD:maternal-heart-of-mary-church-lewisham-australia"
+      ],
+      "independent_reference": {
+        "lat": -33.89193,
+        "lng": 151.14867,
+        "source_type": "OSM_NAMED_CHURCH_BUILDING_POLYGON_APPROX_CENTRE",
+        "url": "https://mapcarta.com/W1072172027",
+        "osm_way_id": "1072172027"
+      },
+      "owner_or_government_evidence": [
+        {
+          "url": "https://maternalheart.org/contact-us/",
+          "supports": "FSSP parish confirms Charles O'Neill Way; presbytery at separate 44 West Street must never be used as church position"
+        }
+      ],
+      "caution": "OSM church is ~9 m from LMD but ~491 m from AO-WORLD source. Church vs presbytery/other site must remain distinct.",
+      "no_coordinate_publication": true
+    },
+    {
+      "anchor_id": "RG-0952E5611381",
+      "name": "St Joseph's Church, Rochester",
+      "country": "AU",
+      "status": "HOLD_INDEPENDENT_BUILDING_COORDINATES",
+      "source_pin_ids": [
+        "AO-WORLD-R35-AU-03-03",
+        "LMD:saint-josephs-church-rochester-australia"
+      ],
+      "independent_reference": null,
+      "owner_or_government_evidence": [
+        {
+          "url": "https://www.tripadvisor.ie/Attraction_Review-g3902997-d23755211-Reviews-St_Joseph_s_Catholic_Church-Rochester_Victoria.html",
+          "supports": "Secondary source identifies church on Fraser Street and Campaspe Street corner; not coordinate-grade or owner verification"
+        }
+      ],
+      "caution": "About 40 m between two unassessed source markers. Require independently mapped church footprint or official entrance/address confirmation before selecting a candidate.",
+      "no_coordinate_publication": true
+    }
+  ],
+  "constraints": {
+    "historical_R49_rows_unchanged": true,
+    "CL2_group_ids_unchanged": true,
+    "CL2_source_ids_unchanged": true,
+    "no_new_mass_times": true,
+    "no_new_site_classifications": true,
+    "no_new_public_pins": true,
+    "candidate_not_geocode_certification": true
+  }
+}

@@ -485,13 +485,18 @@ function tlmFilters(vm){
     if(vm.view==="map")html+='</details>';
     html+='<div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
     html+='<span class="aoExploreFilterLabel">'+esc(L(vm.language,"Institute","Institut"))+'</span><div class="aoFindAffiliations">';
-    for(const id of ["DIOCESAN","FSSP","ICKSP","IBP","SSPX","OTHER"]){
+    for(const id of ["DIOCESAN","FSSP","ICKSP","IBP","SSPX","AASJMV","CANONS","ORATORIANS","TRANSFIGURATION","CAPUCHINS","RELIGIOUS","OTHER"]){
       const emblem=massInstitutionEmblem(id);
       html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'
         +(emblem?'<img src="'+esc(emblem.image)+'" loading="lazy" decoding="async" alt="" />':'')
-        +esc(id==="DIOCESAN"?L(vm.language,"Diocesan","Diocésain"):id==="OTHER"?L(vm.language,"Other","Autres"):id)+'</button>';
+        +esc(id==="DIOCESAN"?L(vm.language,"Diocesan","Diocésain"):id==="OTHER"?L(vm.language,"Other / unclassified","Autres / non classés"):id==="RELIGIOUS"?L(vm.language,"Religious communities","Communautés religieuses"):id==="CANONS"?"Canons of St John Cantius":id==="TRANSFIGURATION"?"Transfiguration":id==="CAPUCHINS"?L(vm.language,"Capuchins of Morgon","Capucins de Morgon"):id==="ORATORIANS"?L(vm.language,"Oratorians","Oratoriens"):id)+'</button>';
     }
     html+='</div></div>';
+    html+='<details class="aoPreliminaryDirectoryNotice"><summary>'+esc(L(vm.language,
+      "Classification · institute, Una cum, rite & status",
+      "Classements · institut, Una cum, rite et statut"))+'</summary><p>'+esc(L(vm.language,
+      "The institute filter uses source-reported labels, not independently verified celebrants. Una cum, sedevacantist position, pontiff recognition, canonical status, 1962/pre-1955 Missal and exact rite are UNKNOWN on these provisional venue pins unless each specific ministry or celebration is evidenced. Unsupported affirmative filters are deliberately withheld.",
+      "Le filtre Institut utilise les appellations déclarées par les sources, sans attester les célébrants. Una cum, position sédévacantiste, reconnaissance du Pontife, statut canonique, missel 1962/antérieur à 1955 et rite précis restent INCONNUS sur ces fiches provisoires, jusqu'à preuve pour chaque ministère ou célébration. Les filtres affirmatifs sans preuves ne sont pas affichés."))+'</p></details>';
     html+='<details class="aoPreliminaryDirectoryNotice"><summary>'+esc(L(vm.language,
       "Provisional pins · Check the original source before travelling",
       "Repères provisoires · Vérifiez la source avant de partir"))+'</summary><p>'+esc(L(vm.language,

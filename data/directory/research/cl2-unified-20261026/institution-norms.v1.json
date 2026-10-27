@@ -1,0 +1,126 @@
+{
+  "schema": "AO_CL2_UNIFIED_INSTITUTION_NORMAL_FORMS_V1",
+  "version": "2026-10-27",
+  "master": "data/directory/research/cl2-unified-20261026/manifest.json",
+  "purpose": "Inherited institution-level liturgical defaults for joined ministries; never reclassify buildings or make una-cum, ecclesial or canonical claims by association.",
+  "institutions": [
+    {
+      "id": "FSSP",
+      "name": "Priestly Fraternity of St. Peter",
+      "alias": [
+        "FSSP"
+      ],
+      "default_assertions": [
+        {
+          "field": "liturgical_use",
+          "value": "ROMAN",
+          "subject_scope": "MINISTRY",
+          "evidence_url": "https://www.fssp.org/en/decree-of-pope-francis-confirming-the-use-of-the-1962-liturgical-books/",
+          "basis": "2022 papal decree as published by FSSP: liturgical books in force in 1962",
+          "evidence_kind": "PUBLISHED_PAPAL_DECREE"
+        },
+        {
+          "field": "missal_edition",
+          "value": "1962",
+          "subject_scope": "MINISTRY",
+          "evidence_url": "https://www.fssp.org/en/decree-of-pope-francis-confirming-the-use-of-the-1962-liturgical-books/",
+          "basis": "2022 decree explicitly includes the 1962 Roman Missal",
+          "evidence_kind": "PUBLISHED_PAPAL_DECREE"
+        }
+      ]
+    },
+    {
+      "id": "ICKSP",
+      "name": "Institute of Christ the King Sovereign Priest",
+      "alias": [
+        "ICKSP",
+        "ICRSP"
+      ],
+      "default_assertions": [
+        {
+          "field": "liturgical_use",
+          "value": "ROMAN",
+          "subject_scope": "MINISTRY",
+          "evidence_url": "https://institute-christ-king.org/institute/traditional-latin-mass",
+          "basis": "Institute states it celebrates the classical Roman liturgy",
+          "evidence_kind": "INSTITUTE_OFFICIAL"
+        },
+        {
+          "field": "missal_edition",
+          "value": "1962",
+          "subject_scope": "MINISTRY",
+          "evidence_url": "https://institute-christ-king.org/institute/traditional-latin-mass",
+          "basis": "Institute explicitly names 1962 liturgical books",
+          "evidence_kind": "INSTITUTE_OFFICIAL"
+        }
+      ]
+    },
+    {
+      "id": "IBP",
+      "name": "Institute of the Good Shepherd",
+      "alias": [
+        "IBP"
+      ],
+      "default_assertions": [
+        {
+          "field": "liturgical_use",
+          "value": "ROMAN",
+          "subject_scope": "MINISTRY",
+          "evidence_url": "https://www.institutdubonpasteur.org/my-blog/articles-et-etudes/le-charisme-liturgique-de-linstitut-du-bon-pasteur-dans-le-droit-de-leglise/",
+          "basis": "Institute explains its exclusive Gregorian Roman liturgical use",
+          "evidence_kind": "INSTITUTE_OFFICIAL"
+        },
+        {
+          "field": "missal_edition",
+          "value": "1962",
+          "subject_scope": "MINISTRY",
+          "evidence_url": "https://www.institutdubonpasteur.org/my-blog/articles-et-etudes/le-charisme-liturgique-de-linstitut-du-bon-pasteur-dans-le-droit-de-leglise/",
+          "basis": "Institute statutes cited on official site explicitly identify 1962 liturgical books",
+          "evidence_kind": "INSTITUTE_OFFICIAL"
+        }
+      ]
+    },
+    {
+      "id": "SSPX",
+      "name": "Society of St. Pius X",
+      "alias": [
+        "SSPX",
+        "FSSPX"
+      ],
+      "default_assertions": [
+        {
+          "field": "liturgical_use",
+          "value": "ROMAN",
+          "subject_scope": "MINISTRY",
+          "evidence_url": "https://sspx.org/en/why-sspx-uses-1962-missal-30158",
+          "basis": "Official Society article on the Roman liturgical books followed by the Society",
+          "evidence_kind": "SOCIETY_OFFICIAL"
+        },
+        {
+          "field": "missal_edition",
+          "value": "1962",
+          "subject_scope": "MINISTRY",
+          "evidence_url": "https://sspx.org/en/why-sspx-uses-1962-missal-30158",
+          "basis": "Official Society article explicitly identifying the 1962 Missal",
+          "evidence_kind": "SOCIETY_OFFICIAL"
+        }
+      ]
+    }
+  ],
+  "override_precedence": [
+    "EXPLICIT_CELEBRATION_EXCEPTION",
+    "DIRECT_MINISTRY_EVIDENCE",
+    "INHERITED_INSTITUTION_NORM",
+    "UNKNOWN"
+  ],
+  "restrictions": [
+    "Only exact classification source IDs and frozen site IDs are joined. Conflicts and orphans remain held.",
+    "A source-only organization label yields INHERITED_GROUP_NORM_SOURCE_LABEL, not DIRECT_CELEBRATION_VERIFIED.",
+    "A shared physical church hosting multiple institutes retains separate source/ministry relationships.",
+    "Do not infer that any venue or historical timetable has a verified 1962 Mass solely because its source has the institute label.",
+    "Never infer Una Cum, recognition of the current Roman Pontiff, canonical status, ownership, or organizer from the liturgical norm.",
+    "Dated exceptions and specific rite variations override a normative group label without rewriting the institute default.",
+    "Other institutes, diocesan and unverified categories remain UNKNOWN until their group norms are sourced."
+  ],
+  "new_public_classifications": 0
+}
