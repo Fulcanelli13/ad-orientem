@@ -142,7 +142,7 @@ for(const [date,path,heading,category,clause] of [
   assert.equal(d.changesReader,false,date);
   const falseCases=[
     {...resolution,date:"2026-02-10"},
-    {...resolution,day:{main:{id:":feria:4:w",rank:4,color:"Violet"}}},
+    {...resolution,proper:{...resolution.proper,data:{...resolution.proper.data,color:"Violet"}}},
     {...resolution,proper:{...resolution.proper,data:{...resolution.proper.data,sourcePath:"Tempora/Pasc3-0"}}},
     {...resolution,day:{main:{id:"sancti:04-15:3:w",rank:3,color:"White"}}},
     {...resolution,day:{main:{id:":feria:4:w",rank:4,color:"White"},selectedMassOption:{path:"Sancti/04-15"}}},
