@@ -134,6 +134,65 @@ function sourceOwned1962FeriaAndSaturday(id,date,rank,colour,sourcePath){
   return null;
 }
 
+
+// Immutable 2026 *source-file screen*, not a claim about every Sanctoral Mass.
+// Each entry was matched against its original Latin Sancti/ source file in
+// upstream DO commit ad878364...; there is NO explicit Prefatio selector in
+// these screened Rule blocks. Proper and season precedence: RGMR §§482-498.
+// Six exceptional identities stay in UNMAPPED until separate original-book
+// corroboration; later 2020 optional Prefaces are never inferred.
+const screened2026CommonSanctoral=new Set(
+  ("01-14 01-15 01-16 01-17 01-20 01-21 01-22 01-23 01-24 "+
+   "01-26 01-27 01-28 01-29 01-30 01-31 02-04 02-05 02-06 "+
+   "02-07 02-09 02-10 02-12 06-01 06-05 06-06 06-10 "+
+   "06-13 06-17r 06-18 06-19 06-22 06-25 06-26 07-03r "+
+   "07-07 07-08 07-10 07-14 07-15 07-18 07-20 07-21r "+
+   "07-22 07-23 07-28 07-29 07-31 08-04 08-07 08-08 "+
+   "08-10 08-12 08-17 08-19 08-20 08-21 08-25 "+
+   "08-27 08-28 08-31 09-02 09-03 09-05 09-10 "+
+   "09-16 09-18 09-19 09-22 09-28 09-30 10-02 "+
+   "10-03 10-06 10-08 10-09 10-10 10-13 10-14 "+
+   "10-15 10-16 10-17 10-19 10-20 10-23r 10-24 "+
+   "11-04 11-10 11-11 11-12 11-13 11-14 11-16 "+
+   "11-17 11-19 11-20 11-23 11-24 11-25 11-26 "+
+   "12-02 12-03 12-04 12-07 12-11").split(" "));
+const screened2026SeasonalSanctoral=new Set(
+  ("04-13 04-14 04-21 04-22 04-24 04-27 04-28 04-29 "+
+   "04-30 05-02 05-04 05-05 05-07 05-09 05-12 "+
+   "05-15 05-16 05-18 05-19 05-20").split(" "));
+const screened2026ExceptionalSanctoral=new Set(
+  "06-23 08-29 09-29 11-01 11-18r 12-24".split(" "));
+function screenedSanctoral2026Preface(id,date,rank,sourcePath){
+  if(!date.startsWith("2026-"))return null;
+  const found=/^sancti:(\d{2}-\d{2}r?):([1-4]):[a-z]{1,2}$/i.exec(id);
+  if(!found||Number(found[2])!==rank||
+     found[1].slice(0,5)!==date.slice(5)||
+     sourcePath!=="Sancti/"+found[1])return null;
+  const sourceKey=found[1];
+  if(screened2026ExceptionalSanctoral.has(sourceKey))return null;
+  // May 11 in the 1962 file redirects to original Sancti/05-01
+  // (Ss Philippi et Jacobi, Apostoli), which takes its own §497 Preface
+  // even during Eastertide. Avoid misclassifying it as seasonal.
+  if(sourceKey==="05-11r"&&rank===2)
+    return rule("APOSTOLI","497","SOURCE_WITNESSED_MAY11_APOSTLE_REDIRECT");
+  const d=utcDate(date),easter=romanEasterUtc(2026);
+  if(!Number.isFinite(d))return null;
+  if(screened2026SeasonalSanctoral.has(sourceKey)){
+    if(withinDays(d,easter,0,38))
+      return rule("PASCHALIS","489_B","SOURCE_SCREENED_PASCHAL_SANCTORAL_NO_PROPER");
+    if(withinDays(d,easter,40,47))
+      return rule("ASCENSIO","490_B","SOURCE_SCREENED_ASCENSION_SANCTORAL_NO_PROPER");
+    return null;
+  }
+  // §498 only after all positive special feast / Christmas / Paschal /
+  // Ascension / Pentecost and Apostles/Mary/Joseph source owners are excluded.
+  if(screened2026CommonSanctoral.has(sourceKey)&&
+     !withinDays(d,easter,0,55)&&
+     !(date.slice(5)>="12-25"||date.slice(5)<="01-13"))
+    return rule("COMMUNIS","498","ORIGINAL_SCREENED_NON_SEASONAL_SANCTORAL_COMMON");
+  return null;
+}
+
 function expectedFor(id,date,rank,colour,sourcePath){
   // Explicit feast/source IDs; do not infer Lord/Mary/Apostle solely from
   // vernacular titles, colour, modern observances or commemoration labels.
@@ -156,6 +215,8 @@ function expectedFor(id,date,rank,colour,sourcePath){
     "tempora:pasc5-4":rule("ASCENSIO","490_A","ASCENSION"),
   };
   if(exact[main])return exact[main];
+  const screenedSanctoral=screenedSanctoral2026Preface(id,date,rank,sourcePath);
+  if(screenedSanctoral)return screenedSanctoral;
   // The first full 142-file Sanctoral source screen establishes nine
   // precise Marian original-source selectors (Rubrics §495) plus two exact
   // Common selectors (Rubrics §498). Never infer them merely from colour,
