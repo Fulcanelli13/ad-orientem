@@ -206,6 +206,122 @@ CREATE VIEW unified_provider_census_by_family AS
 
 
 
+
+def install_third_party_worldwide_source_leads(db):
+    """Consolidate 1,531 third-party directory leads, never 1,531 new churches.
+
+    The prior third-party name-similarity classifications are retained as
+    source metadata, never used to merge two physical anchors.
+    """
+    crosswalk_path=Path('data/directory/research/approved-mass-worldwide-crosswalk-20261009.v1.json')
+    census_path=Path('data/directory/research/approved-mass-worldwide-candidates-20261009.v1.json')
+    c=json.loads(crosswalk_path.read_text(encoding='utf-8'))
+    d=json.loads(census_path.read_text(encoding='utf-8'))
+    assert c['schema']=='AO_APPROVED_MASS_CROSSWALK_V1'
+    assert d['schema']=='AO_APPROVED_MASS_RESEARCH_DISCOVERY_V1'
+    assert len(c['candidates'])==1531 and len(d['records'])==1531
+    assert c['summary']['third_party_source_records']==1531
+    assert c['summary']['published']==0
+    assert len(d['country_coverage'])==65
+    assert d['summary']['full_countries']==54
+    assert d['summary']['requested_countries']==65
+    existing={r[0] for r in db.execute('SELECT source_id FROM venue_source')}
+    assert len(existing)==2687
+    by_discovery={r['source_id']:r for r in d['records']}
+    assert len(by_discovery)==1531
+    db.executescript("""
+CREATE TABLE unified_third_party_source_lead (
+ source_id TEXT PRIMARY KEY, country TEXT NOT NULL, venue_label TEXT NOT NULL,
+ directory_url TEXT NOT NULL, previous_similarity_disposition TEXT NOT NULL,
+ original_source_url_count INTEGER NOT NULL,
+ exact_cl2_frozen_source_id TEXT,
+ new_candidate_research_id TEXT,
+ source_claim_json TEXT NOT NULL,
+ record_scope TEXT NOT NULL CHECK(record_scope='THIRD_PARTY_VENUE_LEAD_NOT_VERIFIED_SITE'),
+ FOREIGN KEY(exact_cl2_frozen_source_id) REFERENCES venue_source(source_id),
+ FOREIGN KEY(new_candidate_research_id) REFERENCES unified_site_candidate(candidate_research_id)
+);
+CREATE INDEX third_party_country ON unified_third_party_source_lead(country);
+CREATE TABLE unified_directory_country_census (
+ country TEXT PRIMARY KEY, listed_source_count INTEGER NOT NULL,
+ discovered_source_count INTEGER NOT NULL,
+ source_pages_read INTEGER NOT NULL,
+ source_listing_complete INTEGER NOT NULL CHECK(source_listing_complete IN (0,1)),
+ source_type TEXT NOT NULL CHECK(source_type='THIRD_PARTY_DIRECTORY'),
+ NOT_A_COUNTRY_CATHOLIC_COMPLETENESS_CLAIM INTEGER NOT NULL CHECK(NOT_A_COUNTRY_CATHOLIC_COMPLETENESS_CLAIM=1)
+);
+""")
+    disposition={}
+    exact=0
+    novel=0
+    for x in c['candidates']:
+        sid=x['source_id']
+        assert sid in by_discovery
+        original=by_discovery[sid]
+        assert original['country_code']==x['country_code']
+        assert original['directory_url']==x['directory_url']
+        assert original['name']==x['name']
+        state=x['duplicate_state']
+        assert state in ('UNMATCHED_RESEARCH_LEAD','NAME_ONLY_CANDIDATE_MATCH','AMBIGUOUS_NAME_MATCH')
+        disposition[state]=disposition.get(state,0)+1
+        is_exact=sid in existing
+        new_candidate_id=None
+        if is_exact:
+            exact+=1
+        else:
+            novel+=1
+            assert not db.execute('SELECT 1 FROM unified_site_candidate WHERE candidate_research_id=?',(sid,)).fetchone()
+            # Not a verified or unique physical site. A source listing can
+            # name a chapel, residence, monastery or obsolete location.
+            first_party=next((u for u in x.get('original_sources',[]) if isinstance(u,str) and
+                              u.startswith(('https://','http://'))),None)
+            db.execute('INSERT INTO unified_site_candidate VALUES (?,?,?,?,?,?,?,?,?,?,?,0,0,?)',
+             (sid,'THIRD_PARTY_LMD',x['country_code'],'',x['name'],'',
+              first_party or x['directory_url'],x['directory_url'],
+              None,0,'IDENTITY_RECONCILIATION_REQUIRED',
+              json.dumps({'crosswalk_candidate':x,'detail_discovery':original,
+                          'evidence_type':'THIRD_PARTY_DIRECTORY_NOT_OWNER_VERIFIED',
+                          'original_crosswalk_path':str(crosswalk_path)},
+                          ensure_ascii=False,separators=(',',':'))))
+            new_candidate_id=sid
+        db.execute('INSERT INTO unified_third_party_source_lead VALUES (?,?,?,?,?,?,?,?,?,?)',
+           (sid,x['country_code'],x['name'],x['directory_url'],state,
+            len(x.get('original_sources') or []),
+            sid if is_exact else None,new_candidate_id,
+            json.dumps({'crosswalk_candidate':x,'detail_discovery':original},
+                       ensure_ascii=False,separators=(',',':')),
+            'THIRD_PARTY_VENUE_LEAD_NOT_VERIFIED_SITE'))
+    assert disposition=={'UNMATCHED_RESEARCH_LEAD':1303,
+                        'NAME_ONLY_CANDIDATE_MATCH':148,'AMBIGUOUS_NAME_MATCH':80}
+    assert exact==87 and novel==1444
+    complete=0
+    for a in d['country_coverage']:
+        assert a['discovered_unique']>=0
+        assert a['listed_total']>=a['discovered_unique']
+        db.execute('INSERT INTO unified_directory_country_census VALUES (?,?,?,?,?,"THIRD_PARTY_DIRECTORY",1)',
+           (a['country_code'],a['listed_total'],a['discovered_unique'],
+            a['pages_fetched'],int(a['complete'])))
+        complete+=bool(a['complete'])
+    assert complete==54
+    assert db.execute('SELECT COUNT(*) FROM unified_third_party_source_lead').fetchone()[0]==1531
+    assert db.execute('SELECT COUNT(*) FROM unified_directory_country_census').fetchone()[0]==65
+    assert db.execute('SELECT COUNT(*) FROM unified_site_candidate').fetchone()[0]==1497
+    assert db.execute('SELECT COUNT(*) FROM unified_research_inventory').fetchone()[0]==4076
+    assert db.execute('SELECT COUNT(*) FROM unified_site_candidate WHERE is_canonical_physical_site!=0 OR is_public_site!=0').fetchone()[0]==0
+    return {'third_party_leads_ingested':1531,'exact_CL2_source_ids':87,
+            'identity_unresolved_source_leads':1444,
+            'historical_name_match_suggestions_not_confirmed':228,
+            'source_country_listings_checked':65,
+            'source_country_listings_incomplete':11,
+            'census_country_listings_complete':54,
+            'total_provisional_physical_anchors_unchanged':2579,
+            'combined_candidate_lead_records_G0_feeds_third_party':1497,
+            'total_differently_scoped_inventory_rows_not_unique_sites':4076,
+            'new_admitted_sites':0}
+
+
+
+
 def install_unified_physical_ministry_and_group_defaults(db, rows, manifest, root):
     """Extend the SAME source-of-truth SQLite: physical sites → source ministries → Mass rows.
     
@@ -479,12 +595,13 @@ CREATE VIEW venue_with_classification AS SELECT v.source_id,v.recorded_group_id,
     unified_stats=install_unified_physical_ministry_and_group_defaults(db,rows,manifest,root)
     candidate_stats=install_existing_g0_candidates_into_single_master(db)
     provider_stats=install_known_provider_feed_census(db)
+    worldwide_stats=install_third_party_worldwide_source_leads(db)
     db.commit()
     assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
     for table,expected in [('canonical_site',2584),('venue_source',2687),('classification_source',2715),('mass_time',4681),('existing_alias',5),('identity_exception',49)]:
         assert db.execute('SELECT COUNT(*) FROM '+table).fetchone()[0]==expected
     assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
     db.close()
-    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0,'unified_master':unified_stats,'unresolved_venue_candidate_intake':candidate_stats,'provider_source_coverage':provider_stats}))
+    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0,'unified_master':unified_stats,'unresolved_venue_candidate_intake':candidate_stats,'provider_source_coverage':provider_stats,'third_party_source_census':worldwide_stats}))
 
 if __name__=='__main__': main()
