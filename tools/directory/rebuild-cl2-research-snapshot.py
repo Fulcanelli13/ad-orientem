@@ -436,6 +436,96 @@ CREATE VIEW unified_additional_feed_coverage AS
 
 
 
+
+def install_bulk_same_building_review_hints(db):
+    """Automated deterministic source-text triage, no physical IDs merged.
+
+    Address equality is not a sufficient release/identity criterion where a
+    church shares a campus or building; name equality is even weaker.
+    All possible joins require editorial corroboration from site witnesses.
+    """
+    normalize=lambda v:re.sub(r'[^a-z0-9]','',
+        unicodedata.normalize('NFKD',str(v or '')).encode('ascii','ignore').decode().lower())
+    addr_key=lambda v:(n if (n:=normalize(v)) and len(n)>=12 and
+                any(z.isdigit() for z in n) and any(z.isalpha() for z in n) else '')
+    db.executescript("""
+CREATE TABLE unified_same_building_review_hint (
+ candidate_id TEXT NOT NULL, possible_anchor_id TEXT NOT NULL,
+ source_id TEXT NOT NULL,
+ hint_kind TEXT NOT NULL CHECK(hint_kind IN (
+   'EXACT_NORMALIZED_REPORTED_ADDRESS_REVIEW',
+   'SAME_NAME_COUNTRY_ONLY_NOT_IDENTITY_PROOF')),
+ auto_join_allowed INTEGER NOT NULL CHECK(auto_join_allowed=0),
+ public_release_allowed INTEGER NOT NULL CHECK(public_release_allowed=0),
+ PRIMARY KEY(candidate_id,possible_anchor_id,source_id,hint_kind),
+ FOREIGN KEY(candidate_id) REFERENCES unified_site_candidate(candidate_research_id),
+ FOREIGN KEY(possible_anchor_id) REFERENCES unified_physical_site(anchor_id),
+ FOREIGN KEY(source_id) REFERENCES venue_source(source_id)
+);
+CREATE TABLE unified_candidate_same_address_hint (
+ first_candidate_id TEXT NOT NULL, second_candidate_id TEXT NOT NULL,
+ shared_country TEXT NOT NULL,
+ reason TEXT NOT NULL CHECK(reason='IDENTICAL_NORMALIZED_REPORTED_ADDRESS_NOT_BUILDING_PROOF'),
+ approved_duplicate_merge INTEGER NOT NULL CHECK(approved_duplicate_merge=0),
+ PRIMARY KEY(first_candidate_id,second_candidate_id),
+ FOREIGN KEY(first_candidate_id) REFERENCES unified_site_candidate(candidate_research_id),
+ FOREIGN KEY(second_candidate_id) REFERENCES unified_site_candidate(candidate_research_id)
+);
+CREATE INDEX same_building_hint_candidate ON unified_same_building_review_hint(candidate_id);
+""")
+    addr_sites={}
+    name_sites={}
+    # Original 37-column venue-source addresses and names already belong to CL2.
+    for v in db.execute('SELECT v.source_id,v.source_json,m.physical_anchor_id FROM venue_source v JOIN source_ministry m ON m.source_id=v.source_id WHERE m.physical_anchor_id IS NOT NULL'):
+        source_id, raw, anchor=v
+        info=json.loads(raw)
+        assert info[0]==source_id
+        cc=info[5]
+        a=addr_key(info[7])
+        n=normalize(info[4])
+        if a: addr_sites.setdefault((cc,a),[]).append((anchor,source_id))
+        if n and len(n)>=8:name_sites.setdefault((cc,n),[]).append((anchor,source_id))
+    candidates=[tuple(r) for r in db.execute(
+        'SELECT candidate_research_id,country,name,source_physical_description FROM unified_site_candidate')]
+    addr_cand={}
+    matched_candidates=set();name_only_candidates=set()
+    stats={'exact_address':0,'name_country_only':0,'candidate_address_pairs':0}
+    for sid,cc,name,desc in candidates:
+        a=addr_key(desc)
+        n=normalize(name)
+        if a:addr_cand.setdefault((cc,a),[]).append(sid)
+        address_matches=set(addr_sites.get((cc,a),[])) if a else set()
+        name_matches=set(name_sites.get((cc,n),[])) if len(n)>=8 else set()
+        for anchor,source_id in sorted(address_matches):
+            db.execute('INSERT INTO unified_same_building_review_hint VALUES (?,?,?,? ,0,0)',
+              (sid,anchor,source_id,'EXACT_NORMALIZED_REPORTED_ADDRESS_REVIEW'))
+            stats['exact_address']+=1;matched_candidates.add(sid)
+        for anchor,source_id in sorted(name_matches-address_matches):
+            db.execute('INSERT INTO unified_same_building_review_hint VALUES (?,?,?,? ,0,0)',
+              (sid,anchor,source_id,'SAME_NAME_COUNTRY_ONLY_NOT_IDENTITY_PROOF'))
+            stats['name_country_only']+=1
+            if sid not in matched_candidates:name_only_candidates.add(sid)
+    for (cc,adr),ids in addr_cand.items():
+        ids=sorted(set(ids))
+        if len(ids)>100:
+            raise AssertionError('Unbounded same-address candidate cluster: '+cc)
+        for i in range(len(ids)):
+            for j in range(i+1,len(ids)):
+                db.execute('INSERT INTO unified_candidate_same_address_hint VALUES (?,?,?,0)',
+                  (ids[i],ids[j],cc,
+                   'IDENTICAL_NORMALIZED_REPORTED_ADDRESS_NOT_BUILDING_PROOF'))
+                stats['candidate_address_pairs']+=1
+    assert db.execute('SELECT COUNT(*) FROM unified_same_building_review_hint WHERE auto_join_allowed!=0 OR public_release_allowed!=0').fetchone()[0]==0
+    assert db.execute('SELECT COUNT(*) FROM unified_candidate_same_address_hint WHERE approved_duplicate_merge!=0').fetchone()[0]==0
+    stats['unique_candidates_with_admitted_address_hint']=len(matched_candidates)
+    stats['unique_candidates_with_name_hint_but_no_address_hint']=len(name_only_candidates-matched_candidates)
+    stats['candidates_without_address_or_name_match']=len(candidates)-len(matched_candidates|name_only_candidates)
+    stats['candidate_count']=len(candidates)
+    stats['automatically_merged_sites']=0
+    return stats
+
+
+
 def install_bulk_identity_review_cohorts(db):
     """Make the existing unadmitted leads reviewable in large fixed cohorts.
 
@@ -767,6 +857,7 @@ CREATE VIEW venue_with_classification AS SELECT v.source_id,v.recorded_group_id,
     provider_stats=install_known_provider_feed_census(db)
     worldwide_stats=install_third_party_worldwide_source_leads(db)
     additional_stats=install_remaining_committed_provider_feeds(db)
+    hint_stats=install_bulk_same_building_review_hints(db)
     cohort_stats=install_bulk_identity_review_cohorts(db)
     db.commit()
     assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
@@ -774,6 +865,6 @@ CREATE VIEW venue_with_classification AS SELECT v.source_id,v.recorded_group_id,
         assert db.execute('SELECT COUNT(*) FROM '+table).fetchone()[0]==expected
     assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
     db.close()
-    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0,'unified_master':unified_stats,'unresolved_venue_candidate_intake':candidate_stats,'provider_source_coverage':provider_stats,'third_party_source_census':worldwide_stats,'additional_provider_source_census':additional_stats,'census_identity_review_cohorts':cohort_stats}))
+    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0,'unified_master':unified_stats,'unresolved_venue_candidate_intake':candidate_stats,'provider_source_coverage':provider_stats,'third_party_source_census':worldwide_stats,'additional_provider_source_census':additional_stats,'bulk_identity_hint_audit':hint_stats,'census_identity_review_cohorts':cohort_stats}))
 
 if __name__=='__main__': main()
