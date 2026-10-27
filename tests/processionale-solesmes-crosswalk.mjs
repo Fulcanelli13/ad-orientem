@@ -1298,3 +1298,60 @@ test('Psalm 17 mediants and two flex-source windows remain strictly experimental
  assert.equal(doc.guards.sourceArchiveUnmodified,true);
  assert.equal(doc.guards.releaseAllowed,false);
 });
+
+
+test('source-accent audit blocks 13 invalid mediants despite valid Exsurge SVG',()=>{
+ const audit=readJSON('data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json');
+ const experiments=readJSON('data/research/processionale-palm-medial-flex-bulk-hypotheses-20261027.v1.json');
+ assert.equal(audit.batch,31);
+ assert.equal(audit.cases.length,17);
+ assert.deepEqual(audit.borrowedSourceAccentGroups.psalm23.indices,[0,2]);
+ assert.deepEqual(audit.borrowedSourceAccentGroups.psalm46.indices,[0,3]);
+ assert.equal(audit.counts.obviousLexicalMismatch,13);
+ assert.equal(audit.counts.lexicalPlacementPlausibleButNotApproved,3);
+ assert.equal(audit.counts.oneSyllableRuleUnresolved,1);
+ assert.equal(audit.failClosedPolicy.blockBulkGabcAssemblyFromTheseFragments,true);
+ assert.equal(audit.failClosedPolicy.manualMedialCertifiedCount,0);
+ const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/æ/g,'ae').replace(/[^a-z]/gi,'').toLowerCase();
+ const sourceById=new Map(experiments.medials.map(x=>[x.id,x]));
+ assert.equal(sourceById.size,17);
+ let lexicalErrors=0,unresolved=0,plausible=0;
+ for(const row of audit.cases){
+   const p=sourceById.get(row.id);
+   assert.ok(p,row.id);
+   assert.equal(row.sourceWordedLatin,p.sourceMedialLatin);
+   assert.equal(row.originalPartialSnippet,p.provisionalGabcEndingOnly);
+   const index=p.psalm===23?[0,2]:[0,3];
+   assert.deepEqual(row.borrowedFirstVerseAccentedNoteIndices,index);
+   assert.deepEqual(row.borrowedMelodicAccentOnSyllables,index.map(i=>p.endingSyllables[i]));
+   for(let i=0;i<2;i++){
+     const expected=row.expectedTextAccentsHypothesis[i];
+     const same=expected!==null&&norm(expected)===norm(p.endingSyllables[index[i]]);
+     assert.equal(row.copiedPositionMatchesLexicalAnchor[i],same,row.id);
+   }
+   assert.equal(row.wordStressHumanCertified,false);
+   assert.equal(row.pitchWordFitMusicianApproved,false);
+   assert.equal(row.musicalUseAllowed,false);
+   assert.equal(row.doNotAssembleWithOtherFragments,true);
+   assert.equal(p.autoWholeVerseAssemblyAllowed,false);
+   assert.equal(p.batch31ReviewVerdict,row.underlayAuditVerdict);
+   if(row.underlayAuditVerdict.startsWith('WRONG_')){
+      lexicalErrors++;
+      assert.equal(row.copiedPositionMatchesLexicalAnchor.every(Boolean),false);
+      assert.equal(p.musicEditorRejectOrRewriteNeeded,true);
+      assert.equal(p.gabcRendersButNotMusicallyFit,true);
+   }else if(row.underlayAuditVerdict==='MONOSYLLABLE_SECONDARY_ACCENT_REVIEW'){
+      unresolved++;
+   }else{
+      assert.equal(row.underlayAuditVerdict,'LEXICAL_ANCHORS_CONSISTENT_NEEDS_MUSIC_EDITOR');
+      assert.equal(row.copiedPositionMatchesLexicalAnchor.every(Boolean),true);
+      plausible++;
+   }
+ }
+ assert.deepEqual([lexicalErrors,unresolved,plausible],[13,1,3]);
+ assert.equal(experiments.batch31AccentConflictAudit.observedLexicalConflicts,13);
+ assert.equal(experiments.guards.fullVerseStitchingForbiddenUntilAccentFixes,true);
+ assert.equal(experiments.nativeExsurgeProof.renderingIsNotMelodicCorrectness,true);
+ assert.equal(audit.doxologyObservation.EUOUAE.includes('saeculorum Amen'),true);
+ assert.equal(audit.failClosedPolicy.productionPromotionAllowed,false);
+});
