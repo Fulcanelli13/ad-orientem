@@ -10,7 +10,7 @@
     "url": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf",
     "ps23GabcArchive": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
     "ps46GabcArchive": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
-    "ps23MedialSource": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+    "ps23MedialSource": "<b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
     "ps46MedialSource": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
     "ps23FlexSource": "rex(h) glo(h)ri(gr)æ?(g.)",
     "firstVerseOnlyFullyNotated": true
@@ -23,7 +23,7 @@
         "PALM-R02-PS23-L02"
       ],
       "sourceMedialLatin": "Nam ipse super mária fundávit eum",
-      "sourceFirstVerseExcerpt": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "sourceFirstVerseExcerpt": "<b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
       "sourceFirstVerseWordModel": "re-plent e-ám",
       "endingSyllables": [
         "dá",
@@ -55,7 +55,7 @@
         "PALM-R02-PS23-L09"
       ],
       "sourceMedialLatin": "et attóllite vos, fores antíquae,",
-      "sourceFirstVerseExcerpt": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "sourceFirstVerseExcerpt": "<b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
       "sourceFirstVerseWordModel": "re-plent e-ám",
       "endingSyllables": [
         "res",
@@ -86,7 +86,7 @@
         "PALM-R02-PS23-L08"
       ],
       "sourceMedialLatin": "Dóminus fortis et potens,",
-      "sourceFirstVerseExcerpt": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "sourceFirstVerseExcerpt": "<b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
       "sourceFirstVerseWordModel": "re-plent e-ám",
       "endingSyllables": [
         "tis",
@@ -117,7 +117,7 @@
         "PALM-R02-PS23-L10"
       ],
       "sourceMedialLatin": "Quis est iste rex glóriae?",
-      "sourceFirstVerseExcerpt": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "sourceFirstVerseExcerpt": "<b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
       "sourceFirstVerseWordModel": "re-plent e-ám",
       "endingSyllables": [
         "rex",
@@ -463,7 +463,7 @@
         "PALM-R02-PS23-DOXO-L11"
       ],
       "sourceMedialLatin": "Glória Patri, et Fílio,",
-      "sourceFirstVerseExcerpt": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "sourceFirstVerseExcerpt": "<b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
       "sourceFirstVerseWordModel": "re-plent e-ám",
       "endingSyllables": [
         "et",
@@ -494,7 +494,7 @@
         "PALM-R02-PS23-DOXO-L12"
       ],
       "sourceMedialLatin": "Sicut erat in princípio, et nunc, et semper,",
-      "sourceFirstVerseExcerpt": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "sourceFirstVerseExcerpt": "<b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
       "sourceFirstVerseWordModel": "re-plent e-ám",
       "endingSyllables": [
         "nunc",
@@ -669,5 +669,13 @@
     "LatinOwner": "#894",
     "readerUnmodified": true,
     "releaseAllowed": false
-  }
+  },
+  "sourceCorrections": [
+    {
+      "scope": "Psalm23 archived first-verse mediant GABC source",
+      "field": "literal source note bytes",
+      "change": "Retained original <b>re</b> formatting in primary-source excerpt; avoids false exact-source comparisons.",
+      "sourceOriginalUnchanged": true
+    }
+  ]
 }
