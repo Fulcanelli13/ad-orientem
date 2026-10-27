@@ -75,6 +75,16 @@ try{
       const after=await flip.innerText();
       assert.notEqual(after,before,"Latin flip did not change prayer text");
       assert.match(after,/Pater noster/i,"Latin prayer text has changed or disappeared");
+      // Reading remains fully legible after the Latin face switch; the
+      // default paragraph-focus algorithm must not dim this prayer to 30%.
+      await page.waitForFunction(()=>{
+        const mount=document.querySelector("#aoPray435930[data-ao-contemplative-daily='guided']");
+        if(!mount)return false;
+        const verses=[...mount.querySelectorAll(".aoDevoCardScroll .aoDevoParagraph")]
+          .filter(el=>el.getClientRects().length && el.textContent?.trim());
+        return verses.length>0&&verses.every(el=>Number.parseFloat(getComputedStyle(el).opacity)>=0.98);
+      },null,{timeout:6000});
+
       await page.screenshot({path:resolve(captures,"our-father-"+width+".png"),animations:"disabled"});
       await page.locator(target+" [data-tp381-daypart='evening']").click();
       await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoDevoSequenceTimeline")?.querySelectorAll(".aoDevoStop").length===14);
@@ -111,6 +121,9 @@ try{
     assert.match(vernacular,/Notre Père/i,"Approved French canonical Our Father missing");
     await frenchFlip.click();
     assert.match(await frenchFlip.innerText(),/Pater noster/i,"French-to-Latin face missing");
+    assert.ok(await frenchPage.locator("#aoPray435930 .aoDevoCardScroll .aoDevoParagraph")
+      .evaluateAll(nodes=>nodes.filter(el=>el.getClientRects().length).every(el=>Number.parseFloat(getComputedStyle(el).opacity)>=0.98)),
+      "French-to-Latin prayer text cannot be muted in contemplative mode");
     await frenchPage.screenshot({path:resolve(captures,"french-latin-390.png"),animations:"disabled"});
     console.log("PASS 390px French UI and French-to-Latin Prayer text");
   } finally { await frenchPage.close(); }
