@@ -74,7 +74,17 @@
     "production_release_authorized_by_this_index": 0,
     "class_i_provisional_met_cc0_exact_photo_lead": 1,
     "module_institutional_open_access_exact_source_leads": 3,
-    "module_museum_object_pd_but_photo_unknown": 1
+    "module_museum_object_pd_but_photo_unknown": 1,
+    "module_staged_original_variants_all_four_branches": 19,
+    "module_staged_distinct_module_ids_all_four_branches": 18,
+    "module_staged_missing_module_ids": [
+      "joseph",
+      "angel",
+      "evening",
+      "rosary"
+    ],
+    "module_technical_preflight_scored_not_human_approved": 8,
+    "module_full_pixel_quality_certified": 0
   },
   "exception_flags": [
     {
@@ -1223,7 +1233,19 @@
       },
       "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
       "source_rights_notes": "Commons PD-Art marking; image terms require local check",
-      "staged_photo_variants": [],
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/heart-jesus.jpg",
+          "sha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+          "width": 2345,
+          "height": 3045,
+          "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+          "warnings": [
+            "No embedded ICC profile: colour accuracy cannot be inferred"
+          ]
+        }
+      ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
       "production_released": false
@@ -1239,7 +1261,19 @@
       },
       "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
       "source_rights_notes": "Commons PD-Art marking; image terms require local check",
-      "staged_photo_variants": [],
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/heart-mary.jpg",
+          "sha256": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+          "width": 2277,
+          "height": 2960,
+          "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+          "warnings": [
+            "No embedded ICC profile: colour accuracy cannot be inferred"
+          ]
+        }
+      ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
       "production_released": false
@@ -1255,7 +1289,20 @@
       },
       "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
       "source_rights_notes": "Commons PD-Art marking; image terms require local check",
-      "staged_photo_variants": [],
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/michael.jpg",
+          "sha256": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
+          "width": 1657,
+          "height": 2441,
+          "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+          "warnings": [
+            "Low bytes per pixel: investigate possible JPEG detail loss (not definitive)",
+            "No embedded ICC profile: colour accuracy cannot be inferred"
+          ]
+        }
+      ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
       "production_released": false
@@ -1287,7 +1334,17 @@
       },
       "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
       "source_rights_notes": "Commons PD-Art marking; verify image is intended face of central panel",
-      "staged_photo_variants": [],
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/regina.jpg",
+          "sha256": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+          "width": 2144,
+          "height": 3000,
+          "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+          "warnings": []
+        }
+      ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
       "production_released": false
@@ -1327,7 +1384,20 @@
       },
       "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
       "source_rights_notes": "Commons PD-Art marking",
-      "staged_photo_variants": [],
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/scripture.jpg",
+          "sha256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+          "width": 8708,
+          "height": 6212,
+          "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+          "warnings": [
+            "Low bytes per pixel: investigate possible JPEG detail loss (not definitive)",
+            "No embedded ICC profile: colour accuracy cannot be inferred"
+          ]
+        }
+      ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
       "production_released": false
@@ -1367,7 +1437,17 @@
       },
       "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
       "source_rights_notes": "Commons PD-Art marking; verify rights in app jurisdictions",
-      "staged_photo_variants": [],
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/souls.jpg",
+          "sha256": "a2c3a6eda78b412da44d50197d853f01e1cd3ded5ebd5996816db451f11606b6",
+          "width": 2393,
+          "height": 3200,
+          "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+          "warnings": []
+        }
+      ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
       "production_released": false
@@ -1502,7 +1582,17 @@
       },
       "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
       "source_rights_notes": "Commons PD-Art; original EXIF explicitly lists Public Domain Mark",
-      "staged_photo_variants": [],
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/visit.jpg",
+          "sha256": "347cf5d74cc575bcb082250a90dc64c54dc673e94fbc4e48efcd27fa2a3b09c1",
+          "width": 3948,
+          "height": 3328,
+          "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+          "warnings": []
+        }
+      ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
       "production_released": false
@@ -1518,7 +1608,19 @@
       },
       "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
       "source_rights_notes": "Commons PD-Art marking; verify photographic quality",
-      "staged_photo_variants": [],
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/mass.jpg",
+          "sha256": "909302874ecb137b75c3b97974e9a4b42ec3c4d10a6d3e83bc98c130057b760f",
+          "width": 4424,
+          "height": 3399,
+          "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+          "warnings": [
+            "No embedded ICC profile: colour accuracy cannot be inferred"
+          ]
+        }
+      ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
       "production_released": false
@@ -1588,7 +1690,7 @@
       "production_released": false
     }
   ],
-  "photo_archive_note": "The 11 staged files across three source branches are candidate variants, not 11 copyright-cleared masters. The old 22-hero readiness audit's zero physical masters predates these new staged acquisitions. Original source hashes still require pixel QA, rights certification and durable final release.",
+  "photo_archive_note": "CORRECTED: 19 staged original-file candidates across four research branches, covering 18 of 22 modules (one duplicate for Saints), not the former 11/10 preliminary count. All are present in GitHub research branch paths. Master-quality/release certification remains zero.",
   "rights_source_policy_links": [
     "https://www.metmuseum.org/de/policies/frequently-asked-questions-image-and-data-resources",
     "https://www.nga.gov/terms-and-notices",
@@ -1596,5 +1698,156 @@
     "https://commons.wikimedia.org/wiki/Commons:Reuse_of_PD-Art_photographs",
     "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0790",
     "https://www.christies.com/about/terms-and-conditions/terms-and-conditions-for-website-use"
-  ]
+  ],
+  "staged_asset_inventory_revision": {
+    "date": "2026-10-27",
+    "reason": "Earlier cross-branch staging scan counted 11 across three branches, missing eight actual staged originals under research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters.",
+    "archive_recovered": [
+      {
+        "module_id": "heart-jesus",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/heart-jesus.jpg",
+        "source_sha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+        "reported_dimensions": [
+          2345,
+          3045
+        ],
+        "reported_bytes": 2012474,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [
+          "No embedded ICC profile: colour accuracy cannot be inferred"
+        ],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "heart-mary",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/heart-mary.jpg",
+        "source_sha256": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+        "reported_dimensions": [
+          2277,
+          2960
+        ],
+        "reported_bytes": 1951966,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [
+          "No embedded ICC profile: colour accuracy cannot be inferred"
+        ],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "michael",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/michael.jpg",
+        "source_sha256": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
+        "reported_dimensions": [
+          1657,
+          2441
+        ],
+        "reported_bytes": 513396,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [
+          "Low bytes per pixel: investigate possible JPEG detail loss (not definitive)",
+          "No embedded ICC profile: colour accuracy cannot be inferred"
+        ],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "regina",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/regina.jpg",
+        "source_sha256": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+        "reported_dimensions": [
+          2144,
+          3000
+        ],
+        "reported_bytes": 4593377,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "scripture",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/scripture.jpg",
+        "source_sha256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+        "reported_dimensions": [
+          8708,
+          6212
+        ],
+        "reported_bytes": 7423474,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [
+          "Low bytes per pixel: investigate possible JPEG detail loss (not definitive)",
+          "No embedded ICC profile: colour accuracy cannot be inferred"
+        ],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "souls",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/souls.jpg",
+        "source_sha256": "a2c3a6eda78b412da44d50197d853f01e1cd3ded5ebd5996816db451f11606b6",
+        "reported_dimensions": [
+          2393,
+          3200
+        ],
+        "reported_bytes": 1789923,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "visit",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/visit.jpg",
+        "source_sha256": "347cf5d74cc575bcb082250a90dc64c54dc673e94fbc4e48efcd27fa2a3b09c1",
+        "reported_dimensions": [
+          3948,
+          3328
+        ],
+        "reported_bytes": 9588163,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "mass",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/mass.jpg",
+        "source_sha256": "909302874ecb137b75c3b97974e9a4b42ec3c4d10a6d3e83bc98c130057b760f",
+        "reported_dimensions": [
+          4424,
+          3399
+        ],
+        "reported_bytes": 3421164,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [
+          "No embedded ICC profile: colour accuracy cannot be inferred"
+        ],
+        "master_quality_approved": false
+      }
+    ],
+    "missing_module_identities": [
+      {
+        "module_id": "joseph",
+        "selected_painting": "The Dream of Saint Joseph"
+      },
+      {
+        "module_id": "angel",
+        "selected_painting": "The Guardian Angel"
+      },
+      {
+        "module_id": "evening",
+        "selected_painting": "The Prayer"
+      },
+      {
+        "module_id": "rosary",
+        "selected_painting": "Madonna del Rosario"
+      }
+    ],
+    "git_directory_listing_verified": true,
+    "quality_review_files": "assets/staged/module-hero-quality-reviews/visual-preflight.json",
+    "quality_note": "All eight contain technical-only diagnostics; human visual and photo-rights review remain pending."
+  }
 }
