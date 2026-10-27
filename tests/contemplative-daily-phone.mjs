@@ -66,6 +66,18 @@ try{
       assert.ok(initial.heading&&initial.text.length>25,"Opening prayer missing");
       assert.ok(initial.background.includes("gradient"),"Contemplative background missing");
       await page.screenshot({path:resolve(captures,"morning-"+width+".png"),animations:"disabled"});
+      // The approved cinematic mood follows the source-owned stage progression.
+      const startingLight=await page.locator("#aoPray435930").evaluate(el=>el.style.getPropertyValue("--ao-contemplative-light"));
+      assert.ok(startingLight,"Opening morning phase did not reach contemplative horizon");
+      await page.locator(target+" .aoDevoStop[data-ao-devo-chapter='9']").click();
+      await page.waitForFunction(previous=>{
+        const root=document.querySelector("#aoPray435930");
+        return root?.style.getPropertyValue("--ao-contemplative-light")!==previous;
+      },startingLight,{timeout:6000});
+      const advancedLight=await page.locator("#aoPray435930").evaluate(el=>el.style.getPropertyValue("--ao-contemplative-light"));
+      assert.notEqual(advancedLight,startingLight,"Morning light must progress across the sequence");
+      await page.locator(target+" .aoDevoStop[data-ao-devo-chapter='0']").click();
+
       await page.locator(target+" .aoDevoStop[data-ao-devo-chapter='2']").click();
       await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoDevoCard")?.dataset.aoDevoIndex==="2");
       const flip=page.locator(target+" [data-tp381-flip]").first();
