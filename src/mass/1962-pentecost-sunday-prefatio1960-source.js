@@ -68,6 +68,8 @@ function sourceUnavailable(resolved,reason){
 }
 export async function resolvePentecostSunday1960Preface(resolved,properResolver){
   const decision=inspectPentecostSunday1960Source(resolved);
+  if(decision.status==="UNRECOGNIZED_SOURCE")
+    return sourceUnavailable(resolved,"UNRECOGNIZED_RAW_PREFACE_HEADING");
   if(decision.status!=="WRONG_LEGACY_PREFACE")return resolved;
   try{
     if(typeof properResolver?.resolveSource!=="function"||
