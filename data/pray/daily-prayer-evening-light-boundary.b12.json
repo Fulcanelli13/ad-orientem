@@ -1,0 +1,57 @@
+{
+  "schema": "ad-orientem.daily-prayer-boundary-certified-witness.v1",
+  "batch": "B12",
+  "date": "2026-10-27",
+  "status": "RESEARCH_ONLY_NO_PRODUCTION_CHANGE",
+  "witness": {
+    "id": "b12-baltimore-evening-examination-light",
+    "occurrence_id": "AO.DAILY.B01.038",
+    "source": "BAL1888",
+    "work": "A Manual of Prayers for the Use of the Catholic Laity",
+    "edition": "New York, The Catholic Publication Society, 1888",
+    "language": "en",
+    "period": "evening",
+    "stage": "examination-prayer",
+    "title": "Prayer for Light Before Examination of Conscience",
+    "printed_page": 82,
+    "scan_page_index": 94,
+    "page_url": "https://en.wikisource.org/wiki/Page:Manualofprayersf00cath.djvu/94",
+    "chapter_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers",
+    "full_text": "O my God, sovereign Judge of men, who desirest not the death of a sinner, but that he should be converted and saved, enlighten my mind, that I may know the sins which I have this day committed in thought, word, or deed, and give me the grace of true contrition.",
+    "preceding_rubric": "Ask of God light to discover the sins committed this day.",
+    "subsequent_rubric": "Here examine your Conscience; then say:",
+    "next_prayer_incipit": "O my God, I heartily repent, and am grieved that I have offended Thee",
+    "text_boundary": {
+      "opens_after": "Our Father. Hail Mary. I believe in God.",
+      "ends_before": "Here examine your Conscience; then say:",
+      "examen_guide_is_prayer_text": false,
+      "contrition_is_separate_prayer": true
+    },
+    "verification": "COMPLETE_BODY_CROSSCHECKED_AGAINST_PROOFREAD_WIKISOURCE_ORIGINAL_PAGE_TRANSCRIPTION_AND_ADDITIONAL_EDITION_EXTRACT",
+    "original_image_review": "PENDING_DIRECT_VISUAL_CHECK",
+    "source_role": "LAY_ANOTHER_FORM_OF_EVENING_PRAYERS_NOT_THE_OFFICE_OF_COMPLINE",
+    "release": "NOT_PUBLISHED_NO_USER_DEFAULT_APPROVAL",
+    "reuse_review": "1888 work marked public domain by Commons as an underlying scan; distribution and transcribed-text provenance to be checked for target territory"
+  },
+  "census": {
+    "prior_full_body_original_image_checked": 42,
+    "new_full_body_proofread_page_text_only": 1,
+    "combined_full_body_witness_records": 43,
+    "original_image_checked_total_unchanged": 42,
+    "english_full_body_records": 28,
+    "french_full_body_records": 15,
+    "production_preset_updates_approved": 0
+  },
+  "identity_review": {
+    "prayer_family": "prayer-for-light-before-evening-examen",
+    "companion_stage": "guided-examination",
+    "distinction": "A prayer asking divine light is recited; a separate editorial examination guide is silent/reflection content; evening contrition follows. They must not be fused in one alleged 1888 prayer.",
+    "existing_alternative": "b11-lasance-evening-adoration-thanksgiving-light",
+    "note": "Lasance prayer already petitions for light but simultaneously performs evening adoration and thanksgiving, so it is a different complete text, not a translation of Baltimore's short independent prayer."
+  },
+  "nonrelease_gates": [
+    "Original printed page image not successfully retrieved in this pass; do not report B12 as scan-image certified.",
+    "Editorial default/preset composition still requires user approval.",
+    "Historical source-body rights review distinct from obtaining a free reproduction."
+  ]
+}
