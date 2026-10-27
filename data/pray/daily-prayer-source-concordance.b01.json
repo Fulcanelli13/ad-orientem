@@ -16,7 +16,7 @@
       "edition": "Callan & McHugh, 1925; printed scan may contain later inserts",
       "morning": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Morning_Prayers",
       "evening": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Evening_Prayers",
-      "caveat": "Morning Wikisource chapter stops after Morning Offering; book-level October 20 survey covers pp. 1-2 but full-text collation is incomplete."
+      "caveat": "The entire Morning Prayers section is printed on pages 1–2; its offering concludes the chapter on p. 2. Earlier claim that the Wikisource Morning section was truncated was incorrect. p.3 begins separate Prayers to be Said Every Day. B10 print images verified."
     },
     "BAL1888": {
       "work": "A Manual of Prayers for the Use of the Catholic Laity",
@@ -86,8 +86,10 @@
       "incipit": "O Jesus, through the Immaculate Heart of Mary",
       "comparison": "distinct-offering",
       "witness_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Morning_Prayers",
-      "verification": "WEB_CHAPTER_INSPECTED_FACSIMILE_PENDING",
-      "editorial_status": "CANDIDATE_NOT_APPROVED"
+      "verification": "FULL_BODY_AND_SOURCE_CHAPTER_BOUNDARY_CHECKED_AGAINST_PRINTED_IMAGE",
+      "editorial_status": "HISTORIC_SOURCE_VERIFIED_NOT_APPROVED_FOR_PRODUCTION",
+      "print_verified_witness_ref": "b10-bbg-1925-apostleship-morning-offering",
+      "source_page_url": "https://en.wikisource.org/wiki/Page:Blessedbegodcomp00call.pdf/48"
     },
     {
       "id": "AO.DAILY.B01.005",
@@ -1178,7 +1180,8 @@
     "Do not overwrite canonical prayer IDs.",
     "Do not import historical ministers' liturgical acts into lay evening prayer.",
     "Do not import prayer texts until exact facsimile, reuse status, and language are certified.",
-    "Blessed Be God morning Wikisource page is incomplete; do not mark the full chapter text-collated."
+    "Blessed Be God Morning Prayers ends on p.2; Prayers to be Said Every Day begins p.3. Earlier incomplete-source warning withdrawn by B10 original print check."
   ],
-  "b09_note": "With God 1911 p127 contains two alternative Apostleship Morning Offerings separated by 'or'; B09 registers both distinct bodies, though B01 source occurrence .087 describes the latter."
+  "b09_note": "With God 1911 p127 contains two alternative Apostleship Morning Offerings separated by 'or'; B09 registers both distinct bodies, though B01 source occurrence .087 describes the latter.",
+  "b10_update": "1925 page 2 Offering and whole Morning Prayers section boundary verified from 1925 scan; B10 source-witness attached; earlier truncation warning false."
 }
