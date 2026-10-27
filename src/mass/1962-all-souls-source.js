@@ -11,8 +11,13 @@ export function is1962AllSoulsCalendarMass(resolvedMass,proper=null){
  const r=resolvedMass??{};
  const p=proper?.data??proper??r.proper?.data??r.proper??{};
  const date=String(r.date??"");
- const id=String(r.calendarDay?.id??"");
- const path=String(p.sourcePath??proper?.sourcePath??"");
+ const id=String(r.calendarDay?.id??
+   r.calendarDay?.raw?.main?.id??"");
+ // The actual host preflight only exposes properSource, not the populated
+ // trilingual Proper. Use it ONLY when no explicit Proper was supplied;
+ // a contradictory explicit source must never pass on a fallback.
+ const path=String(p.sourcePath??proper?.sourcePath??
+   (proper==null?r.properSource:null)??"");
  return /^\d{4}-11-02$/.test(date)&&id==="sancti:11-02m1:1:b"&&
    path==="Sancti/11-02m1"&&
    [null,"","mass_of_day"].includes(r.requestedCelebrationId??null)&&

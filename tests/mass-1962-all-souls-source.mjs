@@ -14,6 +14,19 @@ const mass=Object.freeze({
  calendarDay:{id:"sancti:11-02m1:1:b"},proper,
 });
 assert.equal(is1962AllSoulsCalendarMass(mass),true);
+const wrapped=Object.freeze({...mass,
+  proper:undefined,properSource:"Sancti/11-02m1",
+  calendarDay:{title:"Commemoration of All Souls",
+    raw:{main:{id:"sancti:11-02m1:1:b"}}}});
+assert.equal(is1962AllSoulsCalendarMass(wrapped),true,
+ "The host Calendar wrapper is a source-authoritative owner");
+assert.deepEqual(deriveHostOptions({resolvedMass:wrapped}).overlays,["REQUIEM"],
+ "The actual preflight without .proper still activates the Requiem rite");
+assert.deepEqual(deriveHostOptions({resolvedMass:wrapped,
+  runtimeState:{resolution:{date:"2026-11-02",proper}}}).overlays,["REQUIEM"]);
+assert.deepEqual(deriveHostOptions({resolvedMass:wrapped,
+  assemblyStatus:{proper:{data:{sourcePath:"Tempora/Pent23-0"}}}}).overlays,[],
+ "An explicit conflicting Proper blocks Requiem even with a valid host source path");
 const options=deriveHostOptions({resolvedMass:mass});
 assert.deepEqual(options.overlays,["REQUIEM"]);
 assert.equal(isExplicitRequiemMass({session:{resolvedMass:{overlays:options.overlays}}}),true);

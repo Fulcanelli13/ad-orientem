@@ -83,10 +83,15 @@ export function deriveHostOptions({ resolvedMass, assemblyStatus, arch, runtimeS
   }
   const rites = mapInsertedRites(resolvedMass.insertedRites ?? []);
   const selectedProper=assemblyStatus?.proper ?? resolvedMass?.proper ?? null;
-  const calendarResolution=runtimeState?.resolution?.date===resolvedMass.date
+  // Host getResolvedMass() uses a Calendar-day wrapper; live resolver
+  // retains the authenticated Proper. Both forms are valid inputs, but
+  // never compare two missing dates and dereference an absent state.
+  const calendarResolution=runtimeState?.resolution?.date &&
+    runtimeState.resolution.date===resolvedMass.date
     ?runtimeState.resolution:null;
   const sourceIdentity=selectedProper??calendarResolution?.proper??null;
-  const calendarOwner=resolvedMass.calendarDay??calendarResolution?.day?.main??null;
+  const calendarOwner=resolvedMass.calendarDay?.raw?.main??
+    resolvedMass.calendarDay??calendarResolution?.day?.main??null;
   const allSoulsRequiem=allSouls1962RequiemOverlay(
     {...resolvedMass,calendarDay:calendarOwner},sourceIdentity);
   return Object.freeze({
@@ -918,7 +923,8 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     const day=runtimeState()?.resolution;
     if(!legacy||day?.date!==legacy.date)return false;
     return is1962AllSoulsCalendarMass(
-      {...legacy,calendarDay:legacy.calendarDay??day.day?.main},day.proper);
+      {...legacy,calendarDay:legacy.calendarDay?.raw?.main??
+        legacy.calendarDay??day.day?.main},day.proper);
   }
   function selectedAllSoulsMass(legacy){
     return authenticAllSoulsMass(legacy)
