@@ -5,6 +5,9 @@ import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabe
 import {installSequentialDevotionalReader} from "./devotional-sequence-adapter.js";
 import {dailyHorizonState} from "./quiet-devotional-progression.js";
 import {createDailySessionTimer,sessionClockLabel} from "./daily-session-timer.js";
+import {availableFormulations} from "./daily-formulation-engine.js";
+import {createDailyFormulationPreferenceStore} from "./daily-formulation-preferences.js";
+import {APPROVED_DAILY_FORMULATION_MANIFEST_V1} from "./daily-approved-formulations.js";
 import "./quiet-devotional-progression-styles.js";
 import {
   SACRED_HYMNS_V381,
@@ -103,6 +106,47 @@ let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={},OPEN_RECEIPT=null,MASS_HANDOFF_B
 let S={dailyTimerOpen:false,litanyMode:"full",litanyStep:0,mealStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,goodDeathStep:0,dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false,massStep:0,massDepth:"brief"};
 
 
+
+const DAILY_APPROVED_FORMS=APPROVED_DAILY_FORMULATION_MANIFEST_V1;
+let DAILY_FORM_PREFERENCES=null;
+function dailyFormPreferenceStore(){
+ if(DAILY_FORM_PREFERENCES)return DAILY_FORM_PREFERENCES;
+ let storage=null;
+ try{storage=globalThis.localStorage||null}catch{}
+ DAILY_FORM_PREFERENCES=createDailyFormulationPreferenceStore({storage});
+ return DAILY_FORM_PREFERENCES;
+}
+function dailyReleasedFormOptions(prayerId,daypart,language){
+ if(!DAILY_APPROVED_FORMS.profiles?.[[language,daypart,"complete"].join(":")])
+   return [];
+ try{
+   return availableFormulations(DAILY_APPROVED_FORMS,{
+     language,daypart,length:"complete",stepId:prayerId
+   });
+ }catch{return []}
+}
+function dailyFormulationPrayerCard(prayerId){
+ const lang=isFr()?"fr":"en";
+ const options=dailyReleasedFormOptions(prayerId,S.daypart,lang);
+ if(!options.length)return prayerCard(prayerId,{focusParagraphs:true});
+ const profile={language:lang,daypart:S.daypart,length:"complete"};
+ const saved=dailyFormPreferenceStore().load(DAILY_APPROVED_FORMS,profile);
+ const active=options.find(x=>x.id===saved[prayerId]);
+ const choiceButtons=[
+   `<button type="button" data-tp381-daily-form="${esc(prayerId)}::" aria-pressed="${!active}">${esc(L("Standard","Habituel"))}</button>`,
+   ...options.map(x=>`<button type="button" data-tp381-daily-form="${esc(prayerId)}::${esc(x.id)}" aria-pressed="${active?.id===x.id}">${esc(x.title)}</button>`)
+ ].join("");
+ const chooser=`<nav class="aoDailyFormulationChoices" role="group" aria-label="${esc(L("Prayer formulation","Formulation de la prière"))}">${choiceButtons}</nav>`;
+ if(!active)return chooser+prayerCard(prayerId,{focusParagraphs:true});
+ const w=DAILY_APPROVED_FORMS.witnesses[active.id];
+ // availableFormulations above already rejects every unapproved, missing
+ // source, cross-language or partial body. This is the single rendering gate.
+ return chooser+`<article class="aoTP381PrayerCard" data-ao-daily-formulation="${esc(active.id)}">
+ <h3>${esc(w.displayTitle||w.sourceLabel)}</h3>
+ <div class="aoTP381Reader">${prayerParagraphs(w.text)}</div>
+ ${source(w.sourceLabel,w.sourceUrl)}</article>`;
+}
+
 const DAILY_SESSION_CLOCK=createDailySessionTimer();
 let DAILY_TIMER_TICK=null;
 function stopDailyTimerTick(){
@@ -173,7 +217,7 @@ function renderDailyGuided(rows){
  const row=rows[step];
  const body=step===total?"":row.kind==="examination"
    ?`<p>${esc(L("Review the day before God: your duties towards Him, your neighbour, and yourself. This is a brief daily examen, not sacramental Confession.","Revoyez la journée devant Dieu : vos devoirs envers Lui, le prochain et vous-même. Il s’agit d’un bref examen quotidien, non d’une Confession sacramentelle."))}</p><button type="button" class="aoTP381GuideSubroute" data-tp381-daily-examen>${esc(L("Open guided nightly examination","Ouvrir l’examen du soir guidé"))}</button>`
-   :prayerCard(row.id,{focusParagraphs:true});
+   :dailyFormulationPrayerCard(row.id);
  const id=step===total?"daily-finished":row.id;
  const content=guidedCardFrame({id,title:step===total?"":(row.kind==="examination"?L("Nightly Examination","Examen du soir"):prayerTitle(data().prayers?.[row.id],row.id)),
    step,total,body,onStep:"daily"});
@@ -665,7 +709,7 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-daily-form],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
@@ -699,6 +743,22 @@ function handleClick(e){
     return;
   }
   if(b.dataset.tp381Open)return open(b.dataset.tp381Open,{trigger:b});
+  if(b.hasAttribute("data-tp381-daily-form")){
+    if(S.route!=="pray.morning_evening"||S.dailyMode!=="guided")return;
+    const parts=String(b.dataset.tp381DailyForm||"").split("::");
+    if(parts.length!==2)return;
+    const [id,variant]=parts,lang=isFr()?"fr":"en";
+    if(!guidedDailyCards(S.daypart).some(x=>x.id===id))return;
+    const allowed=dailyReleasedFormOptions(id,S.daypart,lang);
+    if(!allowed.length || (variant&&!allowed.some(x=>x.id===variant)))return;
+    const profile={language:lang,daypart:S.daypart,length:"complete"};
+    const store=dailyFormPreferenceStore();
+    const next={...store.load(DAILY_APPROVED_FORMS,profile)};
+    if(variant)next[id]=variant;else delete next[id];
+    const result=store.save(DAILY_APPROVED_FORMS,{...profile,selection:next});
+    if(result.saved)render();
+    return;
+  }
   if(b.hasAttribute("data-tp381-timer-toggle")){
     if(S.route!=="pray.morning_evening")return;
     S.dailyTimerOpen=!S.dailyTimerOpen;return render();
