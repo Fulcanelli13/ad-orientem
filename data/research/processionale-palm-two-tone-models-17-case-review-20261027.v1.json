@@ -3299,5 +3299,85 @@
       "sourceApprovedScores": 0,
       "note": "Both Psalm46 L08 and L09 alternate GABCs rendered at 260/420/800. Does not certify text underlay, artificial accents, original 1961 melody, or publication."
     }
+  },
+  "batch39L05BoundedFeasibility": {
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "sourceCase": "PALM-R02-PS46-L05",
+    "canonicalText": "Ascéndit Deus cum exsultatióne",
+    "printedSyllableModel": "As-cén-dit De-us cum ex-sul-ta-ti-ó-ne",
+    "sourceVerifiedLexicalAccents": [
+      {
+        "word": "Ascéndit",
+        "syllable": "cén",
+        "index": 1
+      },
+      {
+        "word": "Deus",
+        "syllable": "De",
+        "index": 3
+      },
+      {
+        "word": "exsultatióne",
+        "syllable": "ó",
+        "index": 10
+      }
+    ],
+    "optionalWeakMonosyllable": {
+      "word": "cum",
+      "index": 5,
+      "lexicallyStressedByDefault": false,
+      "sourcePermitsAccentingItInThisPalmTone": false
+    },
+    "lastMelodicAccentOnPrintedStressIndex": 10,
+    "candidateFirstAccentWindowByMaxTwoInterveningSyllables": [
+      7,
+      8,
+      9
+    ],
+    "candidateEvaluation": [
+      {
+        "firstMelodicAccentSyllableIndex": 7,
+        "sourceSyllable": "sul",
+        "interveningBeforeLast": 2,
+        "distanceFromNearestPriorNaturallyAccentedSyllable": 4,
+        "couldBeArtificialTwoAfterNearestNatural": false,
+        "validOnlyIfNewlyAccentedCumAsMonosyllable": true,
+        "textUnderlayStatus": "REQUIRES_INDEPENDENTLY_JUSTIFIED_ACCENT_ON_CUM"
+      },
+      {
+        "firstMelodicAccentSyllableIndex": 8,
+        "sourceSyllable": "ta",
+        "interveningBeforeLast": 1,
+        "distanceFromNearestPriorNaturallyAccentedSyllable": 5,
+        "couldBeArtificialTwoAfterNearestNatural": false,
+        "validOnlyIfNewlyAccentedCumAsMonosyllable": false,
+        "textUnderlayStatus": "NOT_TWO_AFTER_KNOWN_NATURAL_WORD_ACCENT"
+      },
+      {
+        "firstMelodicAccentSyllableIndex": 9,
+        "sourceSyllable": "ti",
+        "interveningBeforeLast": 0,
+        "distanceFromNearestPriorNaturallyAccentedSyllable": 6,
+        "couldBeArtificialTwoAfterNearestNatural": false,
+        "validOnlyIfNewlyAccentedCumAsMonosyllable": false,
+        "textUnderlayStatus": "NOT_TWO_AFTER_KNOWN_NATURAL_WORD_ACCENT"
+      }
+    ],
+    "candidatesWithSourceSupportedTwoAfterNaturalBeforeLast": 0,
+    "existingCandidateFirstAccent": {
+      "syllable": "ta",
+      "index": 8,
+      "nearestNaturalSyllable": "De",
+      "nearestNaturalIndex": 3,
+      "distanceFromTrueAccent": 5,
+      "passesTwoAfterRule": false
+    },
+    "conditionalAnalysis": "If a qualified Gregorian editor establishes that cum (index 5) can be treated as a stressed monosyllable in this Psalm and cadence, sul (index 7) would be precisely two syllables after it and two syllables before the final ó (index 10). Neither that monosyllable decision nor the source-specific melodic note allocation is attested in the available witness.",
+    "conclusion": "There is no source-supported first-melodic-accent solution under a single artificial-secondary-accent two-after rule using the explicit natural word stresses listed above. This is a bounded constraint result, not a claim that no valid Gregorian musical solution exists.",
+    "nextEvidenceNeeded": "An actual underlay for exsultatióne in this source tone, or editor-attested treatment of the weak monosyllable cum plus justified first-tone pitch groups.",
+    "noNewGabcGenerated": true,
+    "explicitReviewerSignoffNeeded": true,
+    "releasePermitted": false
   }
 }
