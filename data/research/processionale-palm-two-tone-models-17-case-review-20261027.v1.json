@@ -1317,6 +1317,15 @@
     "actualAdditionalScoreApprovedCount": 0,
     "productionScoreAssignmentCount": 0,
     "approvalRule": "Only Schola PR #1749 can source-review and accept exact melodic underlay. 1962 source owner issue #894 accepts the Latin. This file is not a second score registry.",
-    "publishAllowed": false
+    "publishAllowed": false,
+    "officeDifferentiaScopeWarning": {
+      "primaryType": "Palm processional psalms, Graduale Romanum 1961 restored Holy Week appendices",
+      "officeEuouaeReference": "The Office differentia concept is a useful analogy but does not alone license an Office doxology cadence or an antiphon return in these Palm processional psalms.",
+      "visualFacsimileFinding": "Primary Palm Psalm23/46 pages print full Gloria Patri and Sicut erat text but do not provide fully notated music on those subsequent doxology lines, nor a separately notated Amen formula.",
+      "sourcePriority": "1961 printed Palm processional Psalm score and actual local rite/chant sequence, then general Liber Usualis rules only as secondary grammar.",
+      "explicitHoldBothAmen": true,
+      "mustCheckWhetherFinalAntiphonReturnsByActualPalmRite": false,
+      "note": "The return-to-antiphon decision belongs to the Palm procession source-specific event master, not generic Office psalmody."
+    }
   }
 }
