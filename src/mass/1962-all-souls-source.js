@@ -24,3 +24,90 @@ export function allSouls1962RequiemOverlay(resolvedMass,proper=null){
  return is1962AllSoulsCalendarMass(resolvedMass,proper)
    ?Object.freeze(["REQUIEM"]):Object.freeze([]);
 }
+
+// Authoritative second/third Masses use the SAME source parser as the
+// existing Calendar Proper, not hand-translated text or copied first-Mass
+// orations. The 1960 §402 three Masses share Common ex C9, Requiem Preface
+// and Sequence; each has its own appointed orations and readings.
+// These three source files are present in the pinned host for la/en/fr.
+// Never substitute the first Mass when a second/third source fails.
+import {trilingualParsedProperSection} from "./reader-proper-runtime-recovery.js";
+import {properToReaderSlots} from "./proper-reader-slots.js";
+
+const REQUIRED_SECTIONS=Object.freeze({
+ introit:"Introitus",collect:"Oratio",epistle:"Lectio",
+ gradual:"Graduale",sequence:"Sequentia",gospel:"Evangelium",
+ offertory:"Offertorium",secret:"Secreta",communion:"Communio",
+ postcommunion:"Postcommunio",
+});
+const LABELS=Object.freeze({
+ 2:Object.freeze({en:"All Souls — Second Mass",fr:"Commémoration des fidèles défunts — deuxième messe"}),
+ 3:Object.freeze({en:"All Souls — Third Mass",fr:"Commémoration des fidèles défunts — troisième messe"}),
+});
+const required=x=>String(x??"").trim()!=="";
+export async function resolve1962AllSoulsAdditionalProper({
+  calendarResolution,properResolver,massNumber
+}={}){
+ const number=Number(massNumber);
+ if(![2,3].includes(number))throw Error("ALL_SOULS_MASS_NUMBER_UNSUPPORTED");
+ const first=calendarResolution?.proper?.data;
+ if(calendarResolution?.status!=="ready"||
+    !/^\d{4}-11-02$/.test(String(calendarResolution.date??""))||
+    calendarResolution.day?.main?.id!=="sancti:11-02m1:1:b"||
+    first?.sourcePath!=="Sancti/11-02m1")
+   throw Error("ALL_SOULS_CALENDAR_SOURCE_MISMATCH");
+ if(typeof properResolver?.resolveSource!=="function")
+   throw Error("ALL_SOULS_CANONICAL_SOURCE_RESOLVER_MISSING");
+ const sourcePath=ALL_SOULS_1962_FORMULARIES[number-1];
+ const parsed={};
+ for(const lang of ["la","en","fr"]){
+   parsed[lang]=await properResolver.resolveSource(sourcePath,lang,{
+     requestedFiles:[],cacheHits:[],referencesResolved:[],
+     languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],
+     warnings:[],errors:[],
+   });
+   const rule=parsed[lang]?.map?.get?.("Rule");
+   const text=Array.isArray(rule)?rule.join(" "):"";
+   for(const marker of ["ex C9","no Gloria","no Credo","Prefatio=Defunctorum","Sequentia"]){
+     if(!text.includes(marker))throw Error("ALL_SOULS_SOURCE_RULE_MISSING:"+sourcePath+":"+lang+":"+marker);
+   }
+ }
+ if(!["lat","en","fr"].every(lang=>required(first.preface?.[lang]))){
+   throw Error("ALL_SOULS_REQUIEM_PREFACE_SOURCE_MISSING");
+ }
+ const text=Object.fromEntries(Object.entries(REQUIRED_SECTIONS).map(([name,section])=>
+    [name,trilingualParsedProperSection(parsed,section)]));
+ const next=Object.freeze({
+   ...first,
+   sourcePath,
+   name:LABELS[number].en,
+   nameFr:LABELS[number].fr,
+   introit:text.introit,
+   collect:text.collect,collects:Object.freeze([text.collect]),
+   epistle:text.epistle,gradual:text.gradual,
+   sequence:text.sequence,gospel:text.gospel,
+   offertory:text.offertory,
+   secret:text.secret,secrets:Object.freeze([text.secret]),
+   communion:text.communion,
+   postcommunion:text.postcommunion,postcommunions:Object.freeze([text.postcommunion]),
+   // Preserve the actual authenticated Common/1960 Requiem Preface from m1.
+   preface:first.preface,
+   calendarCommemorations:Object.freeze([]),
+   appliedCommemorations:Object.freeze([]),
+   omittedCommemorations:Object.freeze([]),
+   hasGloria:false,hasCredo:false,
+   principalCelebrationId:calendarResolution.day.main.id,
+   allSoulsSourceProof:Object.freeze({
+     status:"SOURCE_VERIFIED",date:calendarResolution.date,
+     sourcePath,massNumber:number,common:"Commune/C9",
+     inheritedRequiemPrefaceFrom:"Sancti/11-02m1",
+     sourceSections:Object.freeze(Object.values(REQUIRED_SECTIONS)),
+     sourceLanguages:Object.freeze(["la","en","fr"]),
+   }),
+ });
+ for(const language of ["en","fr"]){
+   const map=properToReaderSlots(next,{language});
+   if(!map.ready)throw Error("ALL_SOULS_READER_SOURCE_INCOMPLETE:"+number+":"+language+":"+map.missing.join(","));
+ }
+ return Object.freeze({status:"ready",sourcePath,data:next});
+}
