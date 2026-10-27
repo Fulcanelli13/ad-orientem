@@ -4,6 +4,7 @@ on:
     branches: [research/module-hero-pd-masters-20261026]
     paths:
       - '.github/workflows/research-coello-pixel-review-20261027.yml'
+      - 'scripts/art/prepare-coello-original-pixel-review.py'
   workflow_dispatch:
 permissions:
   contents: write
