@@ -8,6 +8,8 @@ on:
       - 'data/directory/tlm-user-classification-taxonomy.v1.json'
       - 'tools/directory/build-cl27-tlm-classifications.py'
       - 'tools/directory/build-cl27-r49-unified-crosswalk.py'
+      - 'tools/directory/validate-cl27-eight-spatial-dispositions.py'
+      - 'data/directory/research/cl27-classification-review-20261026/**'
       - 'tools/directory/review-cl27-tlm-classifications.html'
       - 'src/find/preliminary-directory-r49.js'
       - 'tests/directory-cl27-r49-unified-adapter.mjs'
@@ -25,6 +27,8 @@ on:
       - 'data/directory/tlm-user-classification-taxonomy.v1.json'
       - 'tools/directory/build-cl27-tlm-classifications.py'
       - 'tools/directory/build-cl27-r49-unified-crosswalk.py'
+      - 'tools/directory/validate-cl27-eight-spatial-dispositions.py'
+      - 'data/directory/research/cl27-classification-review-20261026/**'
       - 'tools/directory/review-cl27-tlm-classifications.html'
       - 'src/find/preliminary-directory-r49.js'
       - 'tests/directory-cl27-r49-unified-adapter.mjs'
@@ -77,6 +81,8 @@ jobs:
                      for g in x['represented_physical_anchors'])
           print('Exact 1,879-record crosswalk PASS; 1,844 physical anchors; 35 duplicate pin groups held')
           PY
+      - name: Validate eight specific disputed source geometries against independent evidence
+        run: python3 tools/directory/validate-cl27-eight-spatial-dispositions.py --crosswalk /tmp/cl27-r49-cl2-crosswalk.json --output /tmp/cl27-eight-spatial-QA.json
       - name: Test read-only CL2 Find projection without a public map mutation
         run: node tests/directory-cl27-r49-unified-adapter.mjs /tmp/cl27-r49-cl2-crosswalk.json
       - name: Check offline classification editor generated from pinned research source
