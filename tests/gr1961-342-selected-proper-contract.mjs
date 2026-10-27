@@ -51,4 +51,23 @@ assert.equal(summary.daysSourceReady,2);
 assert.equal(summary.musicalFacsimileApprovals,0);
 assert.equal(summary.editorialPromotions,0);
 assert.ok(summary.observations.some(x=>x.id===strong.id));
+const ciSnapshot=JSON.parse(readFileSync(new URL(
+ "../data/mass/chant-corpus/gr1961-342-selected-proper-2026-ci-observations.v1.json",import.meta.url),"utf8"));
+assert.equal(ciSnapshot.schema,"ao-gr1961-342-2026-verified-run-observation-v1");
+assert.equal(ciSnapshot.source.jobConclusion,"success");
+assert.match(ciSnapshot.source.commitSha,/^[0-9a-f]{40}$/);
+assert.equal(ciSnapshot.scope.datesChecked,365);
+assert.equal(ciSnapshot.scope.dayResolverFailures,0);
+assert.equal(ciSnapshot.scope.distinctTextMatchedCandidateIds,3);
+assert.equal(ciSnapshot.scope.sourceMatchOccurrences,4);
+assert.equal(ciSnapshot.scope.musicalFacsimileApprovals,0);
+assert.equal(ciSnapshot.scope.editorialPromotions,0);
+assert.equal(ciSnapshot.observations.length,4);
+for(const observation of ciSnapshot.observations){
+ const score=ledger.records.find(x=>x.id===observation.id);
+ assert.ok(score,observation.id+" no longer exists in frozen research archive");
+ assert.equal(observation.status,"SELECTED_1962_TEXT_EVIDENCE");
+ assert.ok(score.evidence.some(e=>e.path===observation.properSource&&
+   e.sourceBlobSha===observation.sourceBlobSha),"CI source identity drift for "+observation.id);
+}
 console.log("PASS actual selected 1962 Proper contract, wrong-text hold, pre-Gospel proof gate, no musical releases");
