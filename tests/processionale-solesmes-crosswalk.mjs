@@ -949,6 +949,12 @@ test('Psalm23 verse2 GABC prototype retains 24 note-bearing syllables and is nev
  }
  const row=w.work.find(x=>x.psalm===23&&x.printedChantLine===2);
  assert.ok(row);
+ assert.equal(row.provisionalGabcResearch.candidatePath,'data/research/chant-source-review/palm23-verse2-tone-application-20261027-PROVISIONAL.gabc');
+ assert.equal(row.provisionalGabcResearch.evidencePath,'data/research/processionale-palm23-verse2-tone-hypothesis-20261027.v1.json');
+ assert.equal(row.provisionalGabcResearch.musicEditorApproved,false);
+ assert.equal(row.provisionalGabcResearch.exsurgeRendered,false);
+ assert.equal(w.currentCandidatePipeline.candidateCreated,1);
+ assert.equal(w.currentCandidatePipeline.approved,0);
  assert.equal(normalized(plain(halves[0])),normalized(row.sourceSections.medial));
  assert.equal(normalized(plain(halves[1])),normalized(row.sourceSections.termination));
  assert.equal(h.tests.sourceArchiveCadenceColonNormalizationRequired,true);
