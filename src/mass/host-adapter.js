@@ -62,7 +62,8 @@ export function bind1962PrincipalPrefaceIdentity(proper,legacy){
      normalizedType(legacy.celebrationType??"CALENDAR")!=="CALENDAR")
     return proper;
   const id=String(legacy.calendarDay?.id??"");
-  const match=/^(tempora|sancti):([A-Za-z0-9-]+):[1-4]:[a-z]{1,2}$/i.exec(id);
+  const match=/^(tempora|sancti):([A-Za-z0-9-]+):[1-4]:[a-z]{1,2}$/i.exec(id)||
+    /^(commune):(C10(?:b|c|Pasc|t)):4:w$/i.exec(id);
   if(!match)return proper;
   const data=proper.data??proper;
   if(!data||typeof data!=="object")return proper;
@@ -73,7 +74,7 @@ export function bind1962PrincipalPrefaceIdentity(proper,legacy){
     return proper;
   const verdict=inspect1962PrefaceSelection({
     principalCelebrationId:id,selectedPreface:data.preface,
-    requestedCelebrationId:"mass_of_day"
+    requestedCelebrationId:"mass_of_day",sourcePath:path
   });
   if(verdict.status==="UNMAPPED_SOURCE")return proper;
   // A conflicting pre-existing owner must not silently suppress the
