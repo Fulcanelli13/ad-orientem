@@ -1,0 +1,347 @@
+{
+  "schema": "AO_CL2_SINGLE_RESEARCH_MASTER_V1",
+  "created_on": "2026-10-26",
+  "status": "RESEARCH_ONLY_NOT_PUBLIC_NO_RUNTIME_IMPORT",
+  "source_digests": {
+    "b98_full_operational_xlsx": "848fb2fcadda58b1c22bc02e83a019bfab6947d8bddf86eb3cdfa4021bf05c77",
+    "b100_updated_site_tables_xlsx": "a1cff3569dcb4b449dd7f4f8f694a3328a1266d26fdf5b8b0f59f71f4e83bdb0",
+    "cl1_complete_classification_json": "b8a1b6250fc624a032244b64fa1726615ef3de33ec627e1454298fe8a9f4995a",
+    "b99_location_patch": "dae8677a34d8eede565ab33861d224f45f3482116fe34fa74756058c5c8c4f73",
+    "b100_location_patch": "87acf52f4f64190165771d70d8a6ddb55f905b8b233cbfbcf5975cc393af7dce"
+  },
+  "count": {
+    "historical_site_ids": 2584,
+    "effective_physical_sites": 2579,
+    "historical_same_building_aliases": 5,
+    "venue_sources": 2687,
+    "mass_times_unchanged": 4681,
+    "historical_verified_schedule_states_unchanged": 3347,
+    "classification_source_rows": 2715,
+    "joined_by_exact_source_id": 2679,
+    "joined_exact_source_and_group_id": 2674,
+    "same_source_conflicting_group_id": 5,
+    "venue_sources_with_unanchored_original_group_id": 5,
+    "classification_only_unadmitted_source_rows": 36,
+    "location_only_without_classification_source": 8,
+    "cross_master_site_id_exceptions": 44,
+    "full_lineage_exception_queue_including_group_conflicts": 49,
+    "physical_descriptions_filled_since_b98": 693,
+    "physical_descriptions_still_blank": 113,
+    "institutional_provenance_urls": 200,
+    "direct_owner_1962_witnesses": 3,
+    "una_cum_venue_or_celebration_assertions_imported": 0,
+    "new_public_pins": 0,
+    "new_verified_mass_schedules": 0
+  },
+  "source_columns": {
+    "CANONICAL SITES": [
+      "Canonical research group ID",
+      "Country",
+      "Preferred site name",
+      "Preferred physical description",
+      "Source group aliases",
+      "Alias row count",
+      "Owner label as supplied",
+      "Release state",
+      "Verified schedule row count",
+      "Source official URL"
+    ],
+    "PHYSICAL SITES": [
+      "Research grouping ID (not public Place ID)",
+      "Anchor source ID (frozen)",
+      "Source IDs linked",
+      "Country",
+      "Display candidate name",
+      "Physical site text",
+      "Operator labels (source, not classification)",
+      "Verified Mass timetable rows",
+      "Unverified timetable rows",
+      "Research link state",
+      "Official recurring source URL",
+      "Source IDs / aliases",
+      "Public Place ID",
+      "Release status",
+      "Research action"
+    ],
+    "UNIFIED VENUES": [
+      "Registry source ID",
+      "Source branch",
+      "Frozen location ID",
+      "Frozen schedule ID",
+      "Venue name",
+      "Country ISO",
+      "Locality (schedule)",
+      "Address / location (location)",
+      "Affiliation as listed",
+      "Organization verified independently",
+      "Una cum / ecclesial category",
+      "Una cum explicit evidence",
+      "Missal edition documented",
+      "Rite documented (venue level)",
+      "Physical identity status",
+      "Original map status",
+      "Latitude (schedule)",
+      "Longitude (schedule)",
+      "Geocode precision (schedule)",
+      "Canonical Place ID",
+      "Related source schedule ID(s)",
+      "Cross-branch status",
+      "Verified timetable row count",
+      "Unverified timetable row count",
+      "Last source-verified timetable date",
+      "Official recurring timetable URL",
+      "Provider / directory URL",
+      "Physical identity evidence URL",
+      "Required identity / source action",
+      "Cautions / notes",
+      "Location identity review date",
+      "Possible exact-address cluster size",
+      "Release gate",
+      "Data lineage",
+      "Dedup research group ID (not public place ID)",
+      "Research identity disposition",
+      "Research anchor source ID"
+    ],
+    "MASS TIMES": [
+      "Source B53 row",
+      "Frozen venue source ID",
+      "Venue name",
+      "Country ISO",
+      "Locality",
+      "Mass day class (Sunday/weekday/feast)",
+      "Exact day(s)",
+      "Local time (HH:MM, 24h)",
+      "Frequency (weekly/monthly/etc)",
+      "Liturgical rite / Mass type",
+      "Validity / seasonal exception",
+      "Effective from",
+      "Effective until",
+      "Local timezone if known",
+      "Official recurring schedule webpage",
+      "Official timetable PDF (if any)",
+      "Public evidence excerpt",
+      "Source ownership (parish/chapel/diocese etc)",
+      "Date verified YYYY-MM-DD",
+      "Status (UNVERIFIED/VERIFIED/STALE/NOT OFFERED)",
+      "Mass location/address clarification",
+      "Special feast/holiday schedule",
+      "Additional source URL",
+      "Claude notes",
+      "Unified crosswalk flag",
+      "Candidate location source ID(s)",
+      "Research site grouping ID (not public Place ID)",
+      "Anchor venue source ID (frozen)"
+    ],
+    "B91 EFFECTIVE SITES": [
+      "Historical canonical group ID",
+      "Physical-site anchor ID",
+      "Identity role",
+      "Source cohort",
+      "Public map status"
+    ],
+    "B91 ALIAS LINKS": [
+      "Historical alias group ID",
+      "Anchor physical group ID",
+      "Physical building",
+      "Evidence phase",
+      "First-party source",
+      "Decision",
+      "Timetable instruction"
+    ]
+  },
+  "classification_columns": [
+    "source_id",
+    "historical_group_id",
+    "country",
+    "name_as_listed",
+    "affiliation_as_listed",
+    "organization_hint",
+    "organization_hint_status",
+    "lay_association_mention",
+    "organizing_role",
+    "rite_source_claim",
+    "rite_original_wording",
+    "missal_original_literal",
+    "una_cum_original",
+    "mass_source_url",
+    "provider_source_url",
+    "original_evidence_status",
+    "institutional_evidence_url",
+    "institutional_evidence_kind",
+    "institutional_evidence_maturity",
+    "institutional_relationship_as_listed",
+    "institution_family_type",
+    "owner_missal_evidence_url",
+    "owner_missal_review_state",
+    "accepted_missal_edition",
+    "evidence_scope",
+    "new_as_of_2026_10_26",
+    "operational_site_ID_mapping"
+  ],
+  "shards": {
+    "site": [
+      {
+        "path": "site-01-of-06.json",
+        "rows": 469,
+        "sha256": "81aa22ad9e7afc582f167f617054b823a621c9f9e5995b5d744ac448700a5e32",
+        "bytes": 444110
+      },
+      {
+        "path": "site-02-of-06.json",
+        "rows": 464,
+        "sha256": "08621e20c567179e40795c2c780fde7511776db18f8e6715f0aae1b315c8cf22",
+        "bytes": 442937
+      },
+      {
+        "path": "site-03-of-06.json",
+        "rows": 470,
+        "sha256": "4108468f8e12a46223863a28d0f2d5c37ffcf3df36f036c8af597d75ae10211c",
+        "bytes": 444311
+      },
+      {
+        "path": "site-04-of-06.json",
+        "rows": 484,
+        "sha256": "90ca0f0e772c71c146689b815247004ba9848426d27ed2c728192e067f594bd8",
+        "bytes": 443587
+      },
+      {
+        "path": "site-05-of-06.json",
+        "rows": 465,
+        "sha256": "ccdf5d131fd7f5bd8946560c35aa706bd17f039371fa36d37a6de31057638e7e",
+        "bytes": 443632
+      },
+      {
+        "path": "site-06-of-06.json",
+        "rows": 232,
+        "sha256": "757691f0a4eee0c8a604efa12abe4e3cdff2b22c8b3c31e8d82dc476af73f55c",
+        "bytes": 220736
+      }
+    ],
+    "venue": [
+      {
+        "path": "venue-01-of-10.json",
+        "rows": 209,
+        "sha256": "7cc321ccc8d1586370ead13aada04b33c99df177238d7e158e25c4bfaf34ccd7",
+        "bytes": 444472
+      },
+      {
+        "path": "venue-02-of-10.json",
+        "rows": 241,
+        "sha256": "83f71eafe676852af6268fbb7b2368dbd329e150bccf5160d5198453d7649f2f",
+        "bytes": 444704
+      },
+      {
+        "path": "venue-03-of-10.json",
+        "rows": 280,
+        "sha256": "eeee3639003101af5bee55be031fe7d7547724022f2b24a601c7165a6e91d2ab",
+        "bytes": 443849
+      },
+      {
+        "path": "venue-04-of-10.json",
+        "rows": 284,
+        "sha256": "08e3599d2bf1391181f379dd6112c269b0bb4d624070903e4ba58e742efdac2b",
+        "bytes": 443589
+      },
+      {
+        "path": "venue-05-of-10.json",
+        "rows": 261,
+        "sha256": "1697b7cb1d5744cf41518aa324513fd4103922e4afb3cbb90a29e11c96381cc0",
+        "bytes": 442902
+      },
+      {
+        "path": "venue-06-of-10.json",
+        "rows": 271,
+        "sha256": "983d280a750f6a4c80e759a117388bef273c9f10d55b091f17ce8972e5c33ad3",
+        "bytes": 443784
+      },
+      {
+        "path": "venue-07-of-10.json",
+        "rows": 284,
+        "sha256": "1c766a0baf083b11f7071127d3d42ed6736f6c053a9705b06779cba45c215966",
+        "bytes": 443422
+      },
+      {
+        "path": "venue-08-of-10.json",
+        "rows": 318,
+        "sha256": "5015b00c94be3952389d0b13ca627c01ee8e2e4c3d7416a21388b6b5038ac179",
+        "bytes": 444761
+      },
+      {
+        "path": "venue-09-of-10.json",
+        "rows": 315,
+        "sha256": "c981706bbb2a8c8e476ba2222d296f00c1a5a3aab0b1574720d21027304febca",
+        "bytes": 444378
+      },
+      {
+        "path": "venue-10-of-10.json",
+        "rows": 224,
+        "sha256": "49e7b533bb7fa6966259a1b09b81ab4d740db8f0100c303965736a6457ddf160",
+        "bytes": 386821
+      }
+    ],
+    "mass": [
+      {
+        "path": "mass-01-of-07.json",
+        "rows": 696,
+        "sha256": "168459a9d432aa2f1691b8df598ea6a3361d9f45f2a374b378acc073d4acf27a",
+        "bytes": 444303
+      },
+      {
+        "path": "mass-02-of-07.json",
+        "rows": 1064,
+        "sha256": "f7b0572589356d8541a6dc662f5d7903fddcb1611f6bc4b4c4b975d8d573cd33",
+        "bytes": 443960
+      },
+      {
+        "path": "mass-03-of-07.json",
+        "rows": 722,
+        "sha256": "220f7111ff1c25b38915d155e76fe9e14a3671573b06f230af75a1823f05bea1",
+        "bytes": 443643
+      },
+      {
+        "path": "mass-04-of-07.json",
+        "rows": 610,
+        "sha256": "a225b4615cd140d218dfc5c99c00fbfb38b11719eab83bf93ba79cae3a32cfbc",
+        "bytes": 443919
+      },
+      {
+        "path": "mass-05-of-07.json",
+        "rows": 648,
+        "sha256": "46aaa957401e183878e43ede500f6319bac60425b81d0da6a01350cd159118ce",
+        "bytes": 444157
+      },
+      {
+        "path": "mass-06-of-07.json",
+        "rows": 574,
+        "sha256": "cd81ab570484ae669aee198cf4f1ba13acf65aceea13eb21a34346a80edfd433",
+        "bytes": 443972
+      },
+      {
+        "path": "mass-07-of-07.json",
+        "rows": 367,
+        "sha256": "428252c0b6417e22e8ba19e2fcf6282a3bdee1361d36f842e7010cb7967e83b1",
+        "bytes": 305589
+      }
+    ],
+    "classification_orphan": [
+      {
+        "path": "classification_orphan-01-of-01.json",
+        "rows": 36,
+        "sha256": "6e1dc89f2988efe396cc3e7939498ef0a292d3d06e100f106427c58441070118",
+        "bytes": 22190
+      }
+    ],
+    "identity_issue": [
+      {
+        "path": "identity_issue-01-of-01.json",
+        "rows": 49,
+        "sha256": "11d5c9d3d592727d75aeba17187f5f62984fe9a1504d93e37c2a649741fbf55f",
+        "bytes": 22965
+      }
+    ]
+  },
+  "source_of_truth_policy": "All rows are preserved by exact source/group ID. Five classification/venue group conflicts are held, not overwritten. 36 classification-only source records remain unadmitted and eight location-only sources retain UNKNOWN classification. No Mass schedules imported into the public Directory.",
+  "build_command": "python3 tools/directory/build-cl2-unified-research-master.py --b98 <B98.xlsx> --b100 <B100.xlsx> --classification <CL1.json> --classification-patch <CL1_patch.json> --b99-patch <B99_patch.json> --b100-patch <B100_patch.json> --outdir <output>",
+  "sqlite_sha256": "fa428ec5ab72a3848805171e49f57709b4322f10dfb54f8a4df2979309ad7649",
+  "sqlite_bytes": 12005376
+}
