@@ -3,7 +3,7 @@
   "date": "2026-10-27",
   "batch": 35,
   "stage": "PALM-R02",
-  "status": "TWO_FULL_AMEN_HYPOTHESES_CREATED_WITH_EXPLICIT_LITURGICAL_MUSICAL_SOURCE_CONFLICT",
+  "status": "TWO_FULL_AMEN_RESEARCH_SCORES_SVG_RENDERED_BUT_SOURCE_CONFLICT_BLOCKS_LITURGICAL_ACCEPTANCE",
   "sources": [
     {
       "id": "S1961-P23",
@@ -69,7 +69,9 @@
     "noteGroupContradiction": "Final Amen in fully-notated 1974 I Tone doxology is different from extrapolating ordinary Palm 1961 Psalm23 1f terminal onto A-men. Thus neither source transfer can be source-certified without closer edition/usage check.",
     "unambiguousPrintedPsalmTone": "The two 1961 Palm Psalm exemplars have first-tone-type reciting h and f-gh-h initial intonation; performance-source secondary table calls both 1f, but the 1974 first-tone doxology is for Introit and Communion usage, not automatically Palm procession.",
     "doxologyAmenHasPrintedTextButNoNotesIn1961": true,
-    "doxologyAntiphonReturn": "Separate Palm blessing/distribution rubric review; office EUOUAE rules are a comparison only."
+    "doxologyAntiphonReturn": "Separate Palm blessing/distribution rubric review; office EUOUAE rules are a comparison only.",
+    "sameProvisionalGabcUnderlayAppliedToBothPsalmDooxologies": true,
+    "sharedUnderlayCaveat": "Both 1961 Psalm verses have same general first-tone 1f family but the same generated Amen melodic body is a model assumption, not independently notated in both Psalm entries."
   },
   "fullHypotheticalGabcCases": [
     {
@@ -138,7 +140,19 @@
       "actualPsalmToneDoxologyEditorConfirmed": false,
       "editorScoreApproved": false,
       "productionEligible": false,
-      "rendered": false
+      "rendered": true,
+      "nativeExsurgeTechnicalProof": {
+        "runId": 40523935267,
+        "jobId": 122258204325,
+        "widths": [
+          260,
+          420,
+          800
+        ],
+        "outputSvgNonempty": true,
+        "humanMusicAcceptance": false,
+        "humanPixelReview": false
+      }
     },
     {
       "id": "PALM-R02-PS46-DOXO-L12",
@@ -206,7 +220,19 @@
       "actualPsalmToneDoxologyEditorConfirmed": false,
       "editorScoreApproved": false,
       "productionEligible": false,
-      "rendered": false
+      "rendered": true,
+      "nativeExsurgeTechnicalProof": {
+        "runId": 40523935267,
+        "jobId": 122258204325,
+        "widths": [
+          260,
+          420,
+          800
+        ],
+        "outputSvgNonempty": true,
+        "humanMusicAcceptance": false,
+        "humanPixelReview": false
+      }
     }
   ],
   "counts": {
@@ -240,5 +266,22 @@
     "musicOwner": "PR #1749",
     "textOwner": "issue #894",
     "researchOwner": "draft PR #1752"
+  },
+  "technicalProof": {
+    "runId": 40523935267,
+    "jobId": 122258204325,
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40523935267",
+    "renderedAmenCandidates": 2,
+    "viewportWidths": [
+      260,
+      420,
+      800
+    ],
+    "amenViews": 6,
+    "allPartialAndCompleteGabcViewportChecks": 186,
+    "allFullResearchCandidatesRendered": 17,
+    "status": "PINNED_EXSURGE_JOB_SUCCEEDED_TECHNICAL_RENDER_ONLY",
+    "musicianApproved": 0,
+    "productionAssigned": 0
   }
 }
