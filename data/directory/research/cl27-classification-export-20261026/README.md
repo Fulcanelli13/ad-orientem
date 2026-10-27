@@ -98,3 +98,37 @@ node tests/directory-cl27-r49-unified-adapter.mjs \
 \`\`\`
 
 **Next runtime gate:** resolve eight conflicting-coordinate duplicate groups; establish explicit physical anchor-to-pin selection and preservation of multiple institute source memberships; review release rules for the 735 unpublished sites; and only then activate the read-only projection in the existing Find UI. Do not indiscriminately mark shared churches as Roman 1962 or merge scheduled Mass records by proximity.
+
+
+## Eight disputed pin coordinates — reviewed without rewriting the map (27 October)
+
+The exact R49/CL2 crosswalk exposed eight already-deduplicated physical anchors whose two source-pins carried different latitude/longitude. Evidence is now stored **as scoped exception annotations**, not a second place registry:
+
+- **Five independent church/building-coordinate candidates**: Holy Name Stepney (government address + OSM church polygon), Prague–Karlov (Prague 2 municipal coordinates), Geraldton Cathedral Crypt (diocesan building name/address + OSM cathedral polygon), Mary Immaculate Annerley (parish/council plus church-location history), and Maternal Heart Lewisham (FSSP parish + OSM named church polygon). These are source-backed points for human/geospatial release review; neither pin coordinates nor the church entrances have yet been published or certified.
+- **One false spatial conflict from numeric precision**: Notre-Dame du Rosaire at Le Laus has source longitudes differing by only 0.0000002 degrees (roughly 2 cm). Both historical source IDs remain.
+- **Two precise-site holds**: St Mary's College Chapel in Galway needs chapel-specific location rather than a school centroid; St Joseph Rochester needs an independently supported church footprint or entrance.
+
+The eight are annotated under \`data/directory/research/cl27-classification-review-20261026/eight-spatial-dispositions.v1.json\`; \`tools/directory/validate-cl27-eight-spatial-dispositions.py\` requires exactly those eight CL2 anchors, all original two-source memberships, plausible evidence proximity for each of the five external candidates, and **zero public marker changes**. All 27 other duplicate-pin groups with identical source coordinates retain their original source memberships and a separate release gate.
+
+To reproduce:
+
+\`\`\`bash
+python3 tools/directory/validate-cl27-eight-spatial-dispositions.py \
+  --crosswalk /tmp/ao-r49-cl2-crosswalk.json \
+  --output /tmp/ao-r49-eight-spatial-QA.json
+\`\`\`
+
+## High-volume 735-site geocode intake — no new registry
+
+The remaining **735 CL2 physical anchors are absent from R49**; the exhaustive SQL/research scan found **no usable source coordinates for any of the 735**, so they must not be released as pins. The existing physical master and source IDs are preserved, including **691 anchors with one safely joined source, 36 with two, and eight without a safely joined source**. The descriptive text screening yields **395 text descriptions containing digits, 325 locality/name descriptions without digits, and 15 blank descriptions**. The digits are NOT verified street numbers, and no postal/locality text should be treated as valid geo-coordinates.
+
+The committed standard-library builder \`tools/directory/build-cl27-735-unmapped-site-intake.py\` produces the complete list, source memberships and original provider links, grouped into **five evidence-processing cohorts of 150, 150, 150, 150 and 135**. Geographical/country distribution is preserved in the JSON. No new site or source IDs are minted; the result has **zero public locations and zero current Mass-time approvals**.
+
+\`\`\`bash
+python3 tools/directory/build-cl27-735-unmapped-site-intake.py \
+  --db /tmp/ao-tlm-registry.sqlite \
+  --crosswalk /tmp/ao-r49-cl2-crosswalk.json \
+  --output /tmp/ao-cl2-735-geocode-intake.json
+\`\`\`
+
+**Next promotion barrier:** check provider/church address against first-party sources in the large cohorts; locate the actual worship-building footprint (not an office, monastery compound, school or parish hall by assumption); resolve conflicts at the physical anchor; and pass existing publication and timetable evidence gates before adding to R49/Find. Other active physical-location research workflows should ingest these exact CL2 anchors rather than reconstructing their own site queues.
