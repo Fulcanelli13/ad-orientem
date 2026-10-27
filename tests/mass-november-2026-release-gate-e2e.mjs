@@ -149,6 +149,31 @@ try{
    }
   };
  });
+ const chooser=await page.evaluate(async()=>{
+  const api=globalThis.AO_CELEBRATION_API;
+  const snapshot=()=>[...document.querySelectorAll(
+    "[data-ao-requiem],[data-ao-celebration],[data-ao-open]")]
+    .slice(0,50).map(el=>({id:el.dataset.aoRequiem??null,
+      celebration:el.dataset.aoCelebration??null,open:el.dataset.aoOpen??null,
+      title:String(el.textContent??"").trim().slice(0,100)}));
+  const result={opening:null,initial:[],requiem:[],hostMass:null};
+  try{
+   api.openChangeMass?.();
+   await new Promise(done=>setTimeout(done,350));
+   result.initial=snapshot();
+   const category=document.querySelector('[data-ao-open="requiem"]');
+   if(category){
+    category.click();
+    await new Promise(done=>setTimeout(done,450));
+   }
+   result.requiem=snapshot();
+   const selected=api.getResolvedMass?.();
+   result.hostMass={date:selected?.date,celebration:selected?.celebrationId,
+     type:selected?.celebrationType,source:selected?.proper?.data?.sourcePath??null};
+  }catch(e){result.opening=String(e?.message??e)}
+  return result;
+ });
+ evaluated.souls.discovery.hostChooser=chooser;
  record.allSaints=evaluated.saints;record.allSouls=evaluated.souls;
  record.ceremonial=evaluated.ceremonial;
  const a=evaluated.saints,b=evaluated.souls;
