@@ -208,6 +208,35 @@ try{
    .map(node=>({index:node.dataset.formulary,title:node.textContent?.trim(),
      visible:Boolean(node.getClientRects().length)&&getComputedStyle(node).visibility!=="hidden"})));
  console.log("ALL_SOULS_HOME_FORMULARY_VISIBILITY="+JSON.stringify(selector));
+ // Exercise the CURRENT modular Today screen, not only the old Home
+ // rendering or the resolver's direct formularyIndex API. Selecting a
+ // formulary must change the actual live Calendar day AND Mass host donor.
+ const chooser=page.locator(".homeScreen.aoTodayV2 [data-formulary]");
+ await chooser.first().waitFor({state:"visible",timeout:15000});
+ assert.equal(await chooser.count(),3,
+   "Modular Home must expose the three existing source-owned All Souls Mass buttons");
+ for(const index of [1,2,0]){
+   const source="Sancti/11-02m"+(index+1);
+   await chooser.nth(index).click();
+   await page.waitForFunction(path=>{
+     const current=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+     const host=globalThis.AO_CELEBRATION_API?.getResolvedMass?.();
+     return current?.selectedDate==="2026-11-02"&&
+       current?.resolution?.date==="2026-11-02"&&!current?.resolving&&
+       current?.resolution?.day?.selectedMassOption?.path===path&&
+       current?.resolution?.proper?.data?.sourcePath===path&&
+       host?.properSource===path;
+   },source,{timeout:45000});
+   const active=await page.evaluate(()=>({
+     calendarPath:globalThis.AO_RUNTIME_V8.store.getState().resolution.day.main.path,
+     hostPath:globalThis.AO_CELEBRATION_API.getResolvedMass().properSource,
+     selected:globalThis.AO_RUNTIME_V8.store.getState().resolution.day.formularyIndex
+   }));
+   assert.equal(active.calendarPath,source);
+   assert.equal(active.hostPath,source);
+   assert.equal(active.selected,index);
+   console.log("ALL_SOULS_CURRENT_HOME_SELECTION="+JSON.stringify({index,source,active}));
+ }
  console.log("PASS three real imminent Roman-1962 Mass host/reader journeys");
 }finally{
  await browser?.close();
