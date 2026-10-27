@@ -1,41 +1,47 @@
-name: Generate painting quality visual previews
+name: Preserved module painting visual previews (read-only)
+# Original images and previews already live in two permanent research branches.
+# Reconstruct new previews only in a separately reviewed research workflow.
 on:
-  push:
-    branches: [main]
-    paths: [.github/workflows/module-hero-preview-comparison-20261026.yml]
   workflow_dispatch:
 permissions:
-  contents: write
-concurrency:
-  group: module-hero-preview-comparison
-  cancel-in-progress: false
+  contents: read
 jobs:
-  lightweight-review:
+  compare-archived-originals:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - name: Read museum-original research archive
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          ref: research/module-hero-museum-photos-20261026
+          path: museum-research
+          persist-credentials: false
+      - name: Read public-domain-original research archive
+        uses: actions/checkout@v4
+        with:
+          ref: research/module-hero-pd-masters-20261026
+          path: pd-research
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
-      - name: Preserve script before switching into archived research branches
-        run: cp scripts/art/make-module-hero-review-previews.py /tmp/module-hero-preview.py
-      - name: Produce visual references on both archived source branches
+      - name: Check original museum photo SHA-256 and human-unapproved previews
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for BR in research/module-hero-museum-photos-20261026 research/module-hero-pd-masters-20261026; do
-            git fetch origin "$BR"
-            git switch -C "$BR" "origin/$BR"
-            python /tmp/module-hero-preview.py
-            git add -f assets/staged/module-hero-preview-jpegs/
-            if ! git diff --cached --quiet; then
-              git commit -m "research(art): add painting fidelity review JPGs, unapproved"
-              git push origin "$BR"
-            fi
-          done
-      - name: Do not promote art
-        run: echo "Preview rendering is not painting fidelity approval."
+          python scripts/art/verify-research-archive-readonly.py \
+            --archive-root museum-research \
+            --source-prefix assets/staged/module-hero-masters \
+            --min-originals 3 \
+            --report data/research/module-hero-museum-acquisition-20261026.json \
+            --check-previews
+      - name: Check original Commons photo SHA-256 and human-unapproved previews
+        run: |
+          python scripts/art/verify-research-archive-readonly.py \
+            --archive-root pd-research \
+            --source-prefix assets/staged/module-hero-masters \
+            --min-originals 8 \
+            --report data/research/module-hero-pd-acquisition-20261026.run.json \
+            --check-previews
+      - name: No automatic painting selection
+        run: echo "Research-original quality still awaits human art, attribution, photograph rights, frame/crop and publication review."

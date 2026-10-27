@@ -1,37 +1,35 @@
-name: Lotto third faithful full-artwork comparison
+name: Lotto third full-artwork original integrity (read-only)
+# Archived source bytes live permanently on their named research branch.
+# Default-branch CI is deliberately read-only; new acquisition belongs to
+# separate reviewed research commits, never to this production workflow.
 on:
-  push:
-    branches: [main]
-    paths: [.github/workflows/lotto-third-photo-20261026.yml]
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 jobs:
-  compare-original:
+  verify-existing-source-archive:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - name: Read permanently preserved, unapproved research originals
+        uses: actions/checkout@v4
+        with:
+          ref: research/lotto-rosary-photo-comparison-20261026
+          path: art-research
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
-      - run: |
-          cp scripts/art/acquire-lotto-yorck-third-photo.py /tmp/lotto-third.py
-          cp scripts/art/make-module-hero-review-previews.py /tmp/lotto-previews.py
-      - name: Download third full altarpiece on existing isolated Rosary branch
-        env:
-          AO_HERO_PREVIEW_INPUT: assets/staged/module-hero-comparisons
+      - name: Verify original image bytes, source SHA-256 and existing preview evidence
         run: |
-          git fetch origin research/lotto-rosary-photo-comparison-20261026
-          git switch -C research/lotto-rosary-photo-comparison-20261026 origin/research/lotto-rosary-photo-comparison-20261026
-          python /tmp/lotto-third.py
-          python /tmp/lotto-previews.py
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f assets/staged/module-hero-comparisons/rosary-lotto-yorck.jpg assets/staged/module-hero-preview-jpegs/ data/research/lotto-rosary-yorck-third-witness-20261026.json
-          git commit -m "research(art): archive third complete Lotto photograph with QA previews"
-          git push origin research/lotto-rosary-photo-comparison-20261026
-      - run: echo "The Lotto painting remains selected; photographic quality verdict is separate."
-
-# Research retry: corrected JSON decode; same original image identity and rights gates.
+          python scripts/art/verify-research-archive-readonly.py \
+            --archive-root art-research \
+            --source-prefix assets/staged/module-hero-comparisons \
+            --min-originals 3 \
+            --report data/research/lotto-rosary-photo-comparison-20261026.json \
+            --report data/research/lotto-rosary-yorck-third-witness-20261026.json \
+            --check-previews
+      - name: Never treat source research as publication permission
+        run: echo "Original photographs preserved at no added storage cost; all visual, licence, frame/crop and app release approvals remain on hold."
