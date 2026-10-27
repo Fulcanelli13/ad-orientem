@@ -2080,3 +2080,36 @@ test('Batch42 Palm doxologies require office 1f formula underlay and independent
  assert.equal(b.readerRuntimeChanged,false);
  assert.equal(b.releasePermitted,false);
 });
+
+
+test('Batch43 Pueri portantes EUOUAE comparison isolates exact A-syllable difference without promoting Palm Amen',()=>{
+ const d=readJSON('data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json');
+ const b=d.batch43PueriPortantesEuouaeCrosscheck;
+ assert.equal(b.batch,43);
+ assert.equal(b.witness.gregobaseId,12531);
+ assert.equal(b.witness.primaryEditionCitation,'Liber antiphonarius, Solesmes 1960 p. 423');
+ assert.equal(b.witness.officeUse,'PALM_SUNDAY_OFFICE_ANTIPHON_NOT_PROCESSION_MISSAL_SCORE');
+ assert.equal(b.witness.fullEuouaeGabc,'<eu>E(h) u(h) o(g) u(f) a(gh) e.</eu>(gf..)');
+ assert.deepEqual(b.witness.melodyLastSix,['h','h','g','f','gh','gf..']);
+ assert.deepEqual(b.existingResearchGabc.lastSixPitchGroups,['h','h','g','f','gh gr','gf..']);
+ assert.equal(b.comparison.differentFifthPitchGroup.syllable,'A');
+ assert.equal(b.comparison.differentFifthPitchGroup.office1960,'gh');
+ assert.equal(b.comparison.differentFifthPitchGroup.palmDraft,'gh gr');
+ assert.equal(b.comparison.equalFirstFourPitchGroups,true);
+ assert.equal(b.comparison.equalSixthPitchGroup,true);
+ assert.equal(b.witness.editionOriginal1960PageInspected,false);
+ assert.equal(b.matchedProcessionalAntiphon.hasAttestedProcessionalEuouaeInItsGabc,false);
+ assert.equal(b.otherAntiphon.source1960EuouaeNotesChecked,false);
+ assert.equal(b.comparison.canChooseOfficeAsProductionScore,false);
+ assert.equal(b.existingResearchGabc.ids.length,2);
+ for(const x of d.fullHypotheticalGabcCases){
+   assert.ok(x.gabcHypothesisOnly.includes(b.existingResearchGabc.reproducedEnding));
+   assert.equal(x.editorScoreApproved,false);
+   assert.equal(x.productionEligible,false);
+ }
+ assert.equal(b.publishing.editorialScoreApproved,0);
+ assert.equal(b.publishing.numberOfDraftScoresChanged,0);
+ assert.equal(b.publishing.numberOfAdditionalGabcCreated,0);
+ assert.equal(b.publishing.readerChanged,false);
+ assert.equal(b.publishing.promoteAllowed,false);
+});
