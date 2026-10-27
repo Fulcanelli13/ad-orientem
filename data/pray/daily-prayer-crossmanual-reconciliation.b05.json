@@ -12,7 +12,9 @@
     "source_instruction_rows": 6,
     "distinct_form_candidates_manually_identified": 13,
     "unique_prayers_certified": 3,
-    "scan_checked_source_occurrences": 3
+    "scan_checked_source_occurrences": 3,
+    "print_checked_complete_bodies_b07_and_b08": 14,
+    "new_b08_print_checked_complete_bodies": 5
   },
   "manual_adjudication_ids": [
     "AO.DAILY.B04.004",
@@ -95,7 +97,10 @@
       "shared_opening_with_added_ids": [],
       "note": "1899 Sacred Heart offering addresses Christ's Eucharistic praise and today's thoughts/desires; unlike the Apostleship 'O Jesus through the Immaculate Heart' offering. Independently selectable if complete copy clears.",
       "promotable": false,
-      "manuscript_status": "CHAPTER_TEXT_WITNESSED_PRINT_FACSIMILE_PENDING"
+      "manuscript_status": "FULL_BODY_PRINT_IMAGE_CHECKED",
+      "full_text_certificate_ref": "pocket-1899-morning-sacred-heart-offering",
+      "full_text_certification_source": "data/pray/daily-prayer-print-witnesses.b08.json",
+      "verification": "FULL_BODY_PRINT_IMAGE_CHECKED"
     },
     {
       "occurrence_id": "AO.DAILY.B04.005",
@@ -110,7 +115,10 @@
       "shared_opening_with_added_ids": [],
       "note": "Pocket 1899 Act of Faith is brief: firm belief in all Church teaching, unlike Baltimore's developed Trinity/Incarnation/Judgment formula.",
       "promotable": false,
-      "manuscript_status": "CHAPTER_TEXT_WITNESSED_PRINT_FACSIMILE_PENDING"
+      "manuscript_status": "FULL_BODY_PRINT_IMAGE_CHECKED",
+      "full_text_certificate_ref": "pocket-1899-morning-short-faith",
+      "full_text_certification_source": "data/pray/daily-prayer-print-witnesses.b08.json",
+      "verification": "FULL_BODY_PRINT_IMAGE_CHECKED"
     },
     {
       "occurrence_id": "AO.DAILY.B04.006",
@@ -955,12 +963,15 @@
       "source_title": "Prayer for the Faithful Departed",
       "prayer_family": "fidelium-deus",
       "source_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Night_Prayer",
-      "primary_disposition": "SHARED_PRAYER_FAMILY",
+      "primary_disposition": "SHARED_HISTORICAL_COLLECT_FIDELIUM_DEUS",
       "shared_opening_with_original_ids": [],
       "shared_opening_with_added_ids": [],
-      "note": "Latin collect independently witnessed in canonical register",
+      "note": "Moran 1883 p15 full prayer body print-checked; compare with Key 1901 and existing dead_fidelium_deus text; one historical collect identity.",
       "promotable": false,
-      "manuscript_status": "WEB_CHAPTER_VERIFIED_PRINT_PAGE_12_PARTLY_CHECKED_FULL_PAGES_PENDING"
+      "manuscript_status": "FULL_BODY_PRINT_IMAGE_CHECKED",
+      "full_text_certificate_ref": "moran-1883-evening-for-faithful-departed",
+      "full_text_certification_source": "data/pray/daily-prayer-print-witnesses.b08.json",
+      "verification": "FULL_BODY_PRINT_IMAGE_CHECKED"
     },
     {
       "occurrence_id": "AO.DAILY.B04.060",
@@ -970,12 +981,15 @@
       "source_title": "Salva nos and protecting aspirations",
       "prayer_family": "salva-nos",
       "source_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Night_Prayer",
-      "primary_disposition": "SHARED_PRAYER_FAMILY",
+      "primary_disposition": "SHARED_HISTORICAL_ANTIPHON_SALVA_NOS",
       "shared_opening_with_original_ids": [],
       "shared_opening_with_added_ids": [],
-      "note": "Night antiphon, not prayer book-specific identity",
+      "note": "Moran 1883 p16 complete antiphon print-checked, also reproduced by Key 1901; one antiphon, no extra tab.",
       "promotable": false,
-      "manuscript_status": "WEB_CHAPTER_VERIFIED_PRINT_PAGE_12_PARTLY_CHECKED_FULL_PAGES_PENDING"
+      "manuscript_status": "FULL_BODY_PRINT_IMAGE_CHECKED",
+      "full_text_certificate_ref": "moran-1883-evening-salva-nos",
+      "full_text_certification_source": "data/pray/daily-prayer-print-witnesses.b08.json",
+      "verification": "FULL_BODY_PRINT_IMAGE_CHECKED"
     },
     {
       "occurrence_id": "AO.DAILY.B04.061",
@@ -985,12 +999,15 @@
       "source_title": "Visita quaesumus bedtime collect",
       "prayer_family": "visita-quaesumus",
       "source_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Night_Prayer",
-      "primary_disposition": "SHARED_PRAYER_FAMILY",
+      "primary_disposition": "SHARED_HISTORICAL_COLLECT_VISITA_QUAESUMUS",
       "shared_opening_with_original_ids": [],
       "shared_opening_with_added_ids": [],
-      "note": "Collect text closely tracks Key1901",
+      "note": "Moran 1883 p16 full collect print-checked, same prayer family as Key 1901 with slight English editorial wording differences; not distinct devotional content.",
       "promotable": false,
-      "manuscript_status": "WEB_CHAPTER_VERIFIED_PRINT_PAGE_12_PARTLY_CHECKED_FULL_PAGES_PENDING"
+      "manuscript_status": "FULL_BODY_PRINT_IMAGE_CHECKED",
+      "full_text_certificate_ref": "moran-1883-evening-visita-quaesumus",
+      "full_text_certification_source": "data/pray/daily-prayer-print-witnesses.b08.json",
+      "verification": "FULL_BODY_PRINT_IMAGE_CHECKED"
     },
     {
       "occurrence_id": "AO.DAILY.B04.062",
@@ -1010,5 +1027,5 @@
   ],
   "nonrelease_policy": "No distinct-version total can be stated until full wording, facsimile, edition and copyright review.",
   "recovery_note": "B07 historical correction: Moran 1883 Night Prayer explicitly printed from p.12; nine registers/components added. A source component does not necessarily equal a distinct full prayer.",
-  "print_scan_qualification": "3 Moran Morning printed-p2 complete texts are visibly checked; term 'unique_prayers_certified' means body verified to scan only, not text-uniqueness among all manuals or publication approval."
+  "print_scan_qualification": "14 source-specific complete text bodies now image-checked in B07/B08 (9+5). The prior count 'unique_prayers_certified' is legacy and NOT evidence of uniqueness across all historical editions. No publication or rights permission is implied."
 }
