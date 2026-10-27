@@ -300,51 +300,14 @@
           "productionEligible": false
         }
       },
-      "batch38ArtificialAccentAlternative": {
-        "sourceCaseId": "PALM-R02-PS46-L08",
-        "underlyingTrueWordAccent": {
-          "word": "super",
-          "accentedSyllable": "sú",
-          "sourceTextUnmarkedAccent": "su",
-          "syllableIndex": 4,
-          "lexicalStressProposedNotIndependentlyVerified": true
-        },
-        "artificialSecondaryAccent": {
-          "word": "natiónes",
-          "syllable": "na",
-          "syllableIndex": 6
-        },
-        "followingTrueAccent": {
-          "word": "natiónes",
-          "syllable": "ó",
-          "syllableIndex": 8
-        },
-        "separationFromSuperNaturalAccent": 2,
-        "syllablesBetweenArtificialAndFollowingTrueAccent": 1,
-        "counterexampleExcluded": "Old first melodic accent on reg idx2 left five unaccented syllables before o idx8, violating generic two-accent cadence rule.",
-        "ruleSource": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf",
-        "ruleScope": "Secondary accent two syllables after true accent; must validate stress of super as a preposition and use of alternate two-accent melodic cells in this specific Palm processional 1f context.",
-        "fullResearchGabcAlternative": "name:PALM-R02-PS46-L08 rule-guided accent alternative RESEARCH ONLY;\noffice-part:Psalmus;\ncommentary: Proposed secondary accent na after lexical super stress su; not printed as complete verse in Graduale. No publication;\n%%\n(c4) De(h)us(h) reg(h)nat(h) su(h)per(h) na(ixi hr)ti(h)ó(g hr)nes,(h.) *(:) De(h)us(h) se(h)det(h) su(h)per(h) só(h)li(h)um(h) sanc(g)tum(f) su(gh gr)um.(gf..) (::)\n",
-        "alternativeMediantNoteGroups": [
-          "h",
-          "h",
-          "h",
-          "h",
-          "h",
-          "h",
-          "ixi hr",
-          "h",
-          "g hr",
-          "h."
-        ],
-        "legacyDefectiveGabcRetained": true,
-        "gabcFullPrintedSourceAvailable": false,
-        "sourceVariantMusicalEditorApproved": false,
-        "artificialAccentRuleAppliedPositionally": true,
-        "sourceSpecificCadenceVerified": false,
-        "manualLatinPronunciationVerified": false,
-        "exsurgeTechnicalPass": false,
-        "productionScoreEligible": false
+      "batch38Reconciliation": {
+        "date": "2026-10-27",
+        "reason": "A concurrent ChatGPT workflow proposed the same Latin and music-note underlay while an existing source-tested and pinned Exsurge proof already documented it. Duplicate field consolidated to the tested authoritative entry.",
+        "canonicalField": "batch38SecondaryAccentAlternative",
+        "duplicateCandidateMusicIdentical": true,
+        "existingPinnedExsurgeRunId": 40539921610,
+        "musicianApproved": false,
+        "productionEligible": false
       }
     },
     {
