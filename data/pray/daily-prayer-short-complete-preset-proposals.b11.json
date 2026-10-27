@@ -244,11 +244,11 @@
         {
           "stage": "prayer-for-light",
           "witness": {
-            "type": "historical-occurrence-id",
-            "id": "AO.DAILY.B01.038"
+            "type": "historical-form-id",
+            "id": "b12-baltimore-evening-examination-light"
           },
           "required": true,
-          "notes": "Baltimore separate prayer for examen light; exact print-body check pending. HOLD."
+          "notes": "Baltimore Manual printed p.82 full text/recitation boundary checked against proofread period-page transcription; original print image remains pending, so B12 witness is provisional."
         },
         {
           "stage": "guided-examination",
@@ -315,8 +315,8 @@
         }
       ],
       "editorial_status": "PROPOSAL_NOT_USER_APPROVED",
-      "release_status": "HELD_NEEDS_PRINT_VERIFIED_STAGES",
-      "hold_notes": "English separate examination-light text requires printed-body check; optional prayer selection and rights review."
+      "release_status": "REQUIRES_ORIGINAL_IMAGE_EDITION_AND_RIGHTS_REVIEW",
+      "hold_notes": "No missing text/incipit now: all historical form references resolve to complete bodies. The Baltimore B12 separate prayer for light still needs original-page image inspection, source publication review and user editorial approval."
     },
     {
       "id": "morning-short-fr",
@@ -612,5 +612,6 @@
     "combined_forms": "one form can satisfy several stages but only renders once per recitation",
     "complementary_night_prayers": "Salva nos, Visita and St Alphonsus may be selected together, not exclusive textual variants"
   },
-  "b11_update": "B11 image-checked 14 complete original English texts from 8 print-page images (including full Lasance morning Hope and Charity); proposed Morning Complete EN no longer held for those forms."
+  "b11_update": "B11 image-checked 14 complete original English texts from 8 print-page images (including full Lasance morning Hope and Charity); proposed Morning Complete EN no longer held for those forms.",
+  "b12_update": "The English Complete Evening prayer-for-light hold now has a complete 1888 historical text from a proofread period-page transcription, not original-image-certified. All draft presets now have source-form IDs (besides existing shared canonicals/editorial examen)."
 }
