@@ -1620,3 +1620,67 @@ test('four higher-risk whole-verse GABCs keep exact Latin but withhold musical a
  assert.ok(!reader.includes('processionale-palm-four-exception-full-verse-schematics'));
 });
 
+
+
+test('two final Palm doxology Amen settings remain source-conflicted and not approved',()=>{
+ const compare=readJSON('data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json');
+ const all=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const existing=readJSON('data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json');
+ const four=readJSON('data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json');
+ const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/æ/g,'ae').replace(/[^a-z]/gi,'').toLowerCase();
+ assert.equal(compare.batch,35);
+ assert.equal(compare.fullHypotheticalGabcCases.length,2);
+ assert.deepEqual(compare.fullHypotheticalGabcCases.map(x=>x.id),
+   ['PALM-R02-PS23-DOXO-L12','PALM-R02-PS46-DOXO-L12']);
+ assert.equal(compare.sources.length,3);
+ assert.equal(compare.sources[0].type,'PRIMARY_PALM_PROCESSIONAL_FIRST_VERSE_ONLY');
+ assert.equal(compare.sources[1].type,'PRIMARY_PALM_PROCESSIONAL_FIRST_VERSE_ONLY');
+ assert.equal(compare.sources[2].type,'COMPARATIVE_EXPLICITLY_NOT_SAME_EDITION_OR_USE');
+ assert.deepEqual(compare.comparativeEvidence.fullFirstTone1974LastFourLyricPitchGroups.map(x=>x.note),
+   ["g'","f","fff","d."]);
+ assert.deepEqual(compare.comparativeEvidence.hypotheticalPalmSourceTransferredLastFour.map(x=>x.note),
+   ['g','f','gh gr','gf..']);
+ assert.equal(compare.comparativeEvidence.doxologyAmenHasPrintedTextButNoNotesIn1961,true);
+ assert.equal(compare.release.publishAllowed,false);
+ assert.equal(compare.release.sourceSpecificAmenHandlingStillHeld,true);
+ assert.equal(compare.counts.allDistinctCasesWithResearchGabc,17);
+ assert.equal(compare.counts.productionScoreAssignments,0);
+ assert.equal(compare.counts.humanMusicalApprovals,0);
+ const sourceMap=new Map(all.cases.map(x=>[x.id,x]));
+ const existingIds=new Set([...existing.scoreCases.map(x=>x.id),
+ ...all.batch33RemainingEightReview.twoPsalm23FlexGabcCandidates.candidates.map(x=>x.id),
+ ...four.cases.map(x=>x.id)]);
+ assert.equal(existingIds.size,15);
+ for(const item of compare.fullHypotheticalGabcCases){
+  assert.equal(existingIds.has(item.id),false);
+  existingIds.add(item.id);
+  const printed=sourceMap.get(item.id);
+  assert.ok(printed,item.id);
+  assert.deepEqual(item.printedLatinSections,[printed.sourceSegments.medial,printed.sourceSegments.termination]);
+  const gabc=item.gabcHypothesisOnly;
+  assert.equal(gabc.split('%%').length,2);
+  assert.equal(gabc.split('*(:)').length,2);
+  const chunks=gabc.slice(gabc.indexOf('(c4)')+4).split('*(:)');
+  for(let k=0;k<2;k++){
+   const words=item.exactSyllabificationSections[k].split(/\s+/);
+   const syllables=words.flatMap(w=>w.split('-'));
+   const parsed=[...chunks[k].matchAll(/([\p{L}]+[.,;!?]?)\(([^)]+)\)/gu)];
+   assert.equal(parsed.length,item.syllableCounts[k]);
+   assert.deepEqual(parsed.map(x=>norm(x[1])),syllables.map(norm));
+   assert.deepEqual(parsed.map(x=>x[2]),item.suppliedNoteGroups[k]);
+   const lyricWords=chunks[k].replace(/\([^)]*\)/g,'').trim().split(/\s+/);
+   assert.deepEqual(lyricWords.map(norm),words.map(norm));
+   assert.equal(norm(parsed.map(x=>x[1]).join('')),norm(item.printedLatinSections[k]));
+  }
+  assert.equal(item.sourceFirstVerseOnlyFullyNotated,true);
+  assert.equal(item.hasAmenSourceSpecialCadence,false);
+  assert.equal(item.actualPsalmToneDoxologyEditorConfirmed,false);
+  assert.equal(item.authenticPalmMelodyCertified,false);
+  assert.equal(item.editorScoreApproved,false);
+  assert.equal(item.productionEligible,false);
+ }
+ assert.equal(existingIds.size,17);
+ const reader=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
+ assert.ok(!reader.includes('processionale-palm-amen-two-full-gabc-comparative'));
+});
+
