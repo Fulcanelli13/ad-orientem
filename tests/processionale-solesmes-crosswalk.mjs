@@ -1765,6 +1765,8 @@ test('seventeen full GABC mediants retain traceable accent cells and reject unve
  assert.equal(review.counts.totalScoreDrafts,17);
  assert.equal(review.counts.lexicalMediantAccentAlignmentPassed,16);
  assert.equal(review.counts.artificialSecondaryAccentUnresolved,1);
+ assert.equal(review.counts.ownPsalmPrintedOpeningAccentGroupPairReused,5);
+ assert.equal(review.counts.accentCellVariantsNotPrintedIdenticallyInOwnPsalmOpening,12);
  assert.equal(review.counts.historicalSyllableMetadataErrata,1);
  assert.equal(review.counts.humanEditorialAcceptances,0);
  assert.equal(review.counts.productionAssignments,0);
