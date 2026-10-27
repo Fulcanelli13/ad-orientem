@@ -2188,3 +2188,42 @@ test('Batch45 optional epenthetic gr cannot be treated as a mandatory Palm Amen 
  assert.equal(b.release.massReaderChanged,false);
  assert.equal(b.release.productionAllowed,false);
 });
+
+
+test('Batch46 Palm Sicut erat compressed mediant preserves psalm-specific source allocation and blocks promotion',()=>{
+ const d=readJSON('data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json');
+ const b=d.batch46SicutEratMediantCellCrosswalk;
+ assert.equal(b.batch,46);
+ assert.equal(b.sources.length,2);
+ assert.equal(b.sources[0].syllables.length,4);
+ assert.equal(b.sources[1].syllables.length,6);
+ assert.deepEqual(b.sources[0].noteGroups,['ixi hr','h','g hr','h.']);
+ assert.deepEqual(b.sources[1].noteGroups,['ixi','hr','h','g','hr','h.']);
+ assert.deepEqual(b.sources[0].noteGroups.flatMap(x=>x.split(' ')),b.sharedFlattenedPitchSymbols);
+ assert.deepEqual(b.sources[1].noteGroups.flatMap(x=>x.split(' ')),b.sharedFlattenedPitchSymbols);
+ for(const s of b.sources){
+   const actual=readFileSync(new URL('../'+s.archivedGabc,import.meta.url),'utf8');
+   assert.ok(actual.includes(s.sourceCadence));
+ }
+ assert.deepEqual(b.latinDoxologyMediant.cadentialLastFourSyllables,['nunc','et','sem','per']);
+ assert.deepEqual(b.latinDoxologyMediant.indicesInFour,[0,2]);
+ assert.deepEqual(b.latinDoxologyMediant.noteGroups,b.sources[0].noteGroups);
+ assert.equal(b.psalm23Case.exactSameAccentGroupAndInterveningSyllableAllocationAsOwnPrintedExample,true);
+ assert.equal(b.psalm23Case.sourceAuthenticFullDoxology,false);
+ assert.equal(b.psalm46Case.samePrintedGroupAssignment,false);
+ assert.equal(b.psalm46Case.usesPsalm23Grouping,true);
+ assert.equal(b.psalm46Case.publishedOriginal1961DoxologyFourSyllableContractionFound,false);
+ assert.equal(b.psalm46Case.hasIndependent1961PalmPsalm46EditorAuthorizedMediant,false);
+ const cases=d.fullHypotheticalGabcCases;
+ assert.deepEqual(cases.map(x=>x.id),[b.psalm23Case.id,b.psalm46Case.id]);
+ for(const x of cases){
+   assert.ok(x.gabcHypothesisOnly.includes(b.latinDoxologyMediant.draftLastFourUnderlay));
+   assert.equal(x.editorScoreApproved,false);
+   assert.equal(x.productionEligible,false);
+ }
+ assert.equal(b.noNewGabcCreated,true);
+ assert.equal(b.noExistingGabcModified,true);
+ assert.equal(b.distinctApprovedDoxologyCount,0);
+ assert.equal(b.readerRuntimeChanged,false);
+ assert.equal(b.productionEligible,false);
+});
