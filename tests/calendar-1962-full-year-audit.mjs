@@ -90,6 +90,9 @@ try{
             rawRank:p.rank??d.rank??null,rawColour:(/^tempora:Quad6-5r:/.test(String(d.id??""))?r?.colourPlan?.primary:r?.colourPlan?.massColor)??p.color??p.colour??d.color??d.colour??r?.colourPlan?.name??null,
             commemorations:comms,properStatus:String(r?.proper?.status||""),
             properSourcePath:p.sourcePath??r?.proper?.sourcePath??null,
+            source1960Preface:{status:r?.preface1960SourceDecision?.status??null,
+              selected:r?.preface1960SourceDecision?.selected??null,
+              rubric:r?.preface1960SourceDecision?.rubric??null},
             ordoRuleReview:{gloria:sourceRule("gloria"),credo:sourceRule("credo")},
             prefaceReview:{status:preface.status,reason:preface.reason,
               expected:preface.expected,actual:preface.actual,heading:preface.heading,
@@ -308,6 +311,8 @@ try{
     ["2026-02-02","RULE_TEXT_AGREE"],
     ["2026-04-05","RULE_TEXT_AGREE"],
     ["2026-05-24","SOURCE_CONFLICT"],
+    ["2026-06-07","RULE_TEXT_AGREE"],
+    ["2026-06-14","RULE_TEXT_AGREE"],
     ["2026-10-07","SOURCE_CONFLICT"],
     ["2026-10-11","RULE_TEXT_AGREE"],
     ["2026-12-08","SOURCE_CONFLICT"]
@@ -316,6 +321,24 @@ try{
     const row=rows.find(x=>x.date===date);
     assert.equal(row?.prefaceReview?.status,status,
       date+" 1962 Preface rule should detect the real source heading without reader recovery");
+  }
+  // Regression: the already merged shared Mass source fix must remain
+  // effective in the actual 2026 Calendar resolver, not merely the R17
+  // reader. Compare against original 1960 source-rule credentials.
+  for(const [date,principal,sourcePath] of [
+    ["2026-06-07","tempora:Pent02-0r:2:g","Tempora/Pent02-0r"],
+    ["2026-06-14","tempora:Pent03-0r:2:g","Tempora/Pent03-0r"]
+  ]){
+    const row=rows.find(x=>x.date===date);
+    assert.equal(row?.mainId,principal,date+": protected 1962 Sunday changed");
+    assert.equal(row?.properSourcePath,sourcePath,date+": underlying source changed");
+    assert.equal(row?.source1960Preface?.status,"SOURCE_VERIFIED",
+      date+": expected actual production Prefatio1960 override was not installed");
+    assert.equal(row?.source1960Preface?.selected,"Trinitate");
+    assert.equal(row?.source1960Preface?.rubric,"RGMR_494_B");
+    assert.equal(row?.prefaceReview?.status,"RULE_TEXT_AGREE",
+      date+": the Calendar audit does not see the repaired source");
+    assert.match(row?.prefaceReview?.heading??"",/^de sanctissima Trinitate/i);
   }
   assert.equal(summary.prefaceReview.ruleAndTextAgree+summary.prefaceReview.sourceConflict+
     summary.prefaceReview.unmapped+summary.prefaceReview.missingOrUnrecognized+
