@@ -543,6 +543,143 @@ try{
     editoriallyCertified:0,
   }));
 
+
+  // Reconcile every raw source mismatch against the SAME native reader
+  // recovery, source identity binding and Preface card slot used in R17.
+  // Do not equate an audit-source mismatch to a visible reader defect, or
+  // assume source-owner existence proves that its text was recovered.
+  // This is read-only, emits provenance, and never repairs Mass sources.
+  const rawConflictCases=rows.filter(x=>x.prefaceReview?.status==="SOURCE_CONFLICT")
+    .map(x=>({date:x.date,id:x.mainId,path:x.properSourcePath,
+      sourceExpected:x.prefaceReview.expected,
+      sourceActual:x.prefaceReview.actual,sourceBasis:x.prefaceReview.basis}));
+  assert.equal(rawConflictCases.length,100,"Reader/source reconciliation must inspect every raw conflict");
+  const readerAuditRows=[];
+  for(let offset=0;offset<rawConflictCases.length;offset+=8){
+    const sample=rawConflictCases.slice(offset,offset+8);
+    const inspected=await page.evaluate(async cases=>{
+      const resolver=globalThis.AO_RUNTIME_V8?.resolver;
+      const {recoverReaderProperOmissions,authenticated1962PrefaceRecoveryOwner}=
+        await import("/src/mass/reader-proper-runtime-recovery.js");
+      const {adaptV346ResolvedMass}=await import("/src/mass/host-adapter.js");
+      const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+      const {inspect1962PrefaceSelection}=await import("/src/mass/1962-preface-decision.js");
+      const {classify1962PrefaceHeading}=await import("/src/calendar/ordo-1962-preface-review.js");
+      const head=source=>String(source?.lat??source?.la??"").trim().split(/\r?\n/)[0]??"";
+      const report=[];
+      for(const entry of cases){
+        const record={...entry};
+        try{
+          const day=await resolver.resolveDay(entry.date);
+          const original=day?.proper?.data;
+          const id=day?.day?.main?.id;
+          const path=original?.sourcePath;
+          record.selectedSourcePath=path??null;
+          record.selectedPrincipalId=id??null;
+          record.originalHeading=head(original?.preface);
+          const initial=classify1962PrefaceHeading(record.originalHeading);
+          record.originalActual=initial;
+          if(day?.status!=="ready"||day?.proper?.status!=="ready"||
+             !original||id!==entry.id||path!==entry.path||initial!==entry.sourceActual){
+            record.result="SOURCE_IDENTITY_OR_RAW_HEADING_CHANGED";
+            report.push(record);
+            continue;
+          }
+          const owner=authenticated1962PrefaceRecoveryOwner(id,path);
+          record.recoveryOwnerSection=owner?.section??null;
+          record.recoveryOwnerScope=owner?.scope??null;
+          record.recoveryOwnerVariant=owner?.variant??null;
+          // Exactly the native source recovery that browser-entry uses.
+          const corrected=await recoverReaderProperOmissions(original,{
+            hostResolver:resolver.properResolver,principalCelebrationId:id
+          });
+          const correctedLatin=head(corrected?.preface);
+          const category=classify1962PrefaceHeading(correctedLatin);
+          const legacy={canStart:true,date:entry.date,
+            calendarDay:{id,title:day?.day?.main?.title??null},
+            celebrationId:"mass_of_day",requestedCelebrationId:"mass_of_day",
+            celebrationType:"CALENDAR",properSource:path};
+          const adapted=adaptV346ResolvedMass(legacy,{form:"low",proper:corrected});
+          const adaptedId=adapted?.proper?.data?.principalCelebrationId??null;
+          const selectedPreface=adapted?.proper?.data?.preface;
+          const slot=properToReaderSlots(adapted?.proper?.data,{language:"fr"})?.slots?.PREFACE;
+          record.selectedHeading=head(selectedPreface);
+          record.selectedCategory=classify1962PrefaceHeading(record.selectedHeading);
+          record.recoveredHeading=correctedLatin;
+          record.recoveredCategory=category;
+          record.finalReaderSlot=slot?.status??"UNKNOWN";
+          record.sourceOwnerValidation=inspect1962PrefaceSelection({
+            principalCelebrationId:id,selectedPreface
+          })?.status??"UNKNOWN";
+          record.nativeAdapterPrincipalId=adaptedId;
+          record.selectedPrefaceSource=selectedPreface?.sourcePath??null;
+          record.selectedPrefaceSection=selectedPreface?.prefaceSection??null;
+          record.selectedPrefaceVariant=selectedPreface?.prefaceVariant??null;
+          record.sourceRecoveryChangedHeading=record.originalHeading!==record.selectedHeading;
+          record.trilingualSelected=Boolean(
+            String(selectedPreface?.lat??selectedPreface?.la??"").trim()&&
+            String(selectedPreface?.en??"").trim()&&String(selectedPreface?.fr??"").trim());
+          if(adaptedId!==id){
+            record.result="NATIVE_READER_SOURCE_IDENTITY_UNBOUND";
+          }else if(record.selectedCategory===entry.sourceExpected&&
+                  slot?.status==="READY"&&record.trilingualSelected){
+            record.result="READER_SELECTED_CATEGORY_MATCH";
+          }else if(slot?.status==="READY"){
+            record.result="READER_WRONG_OR_UNVERIFIED_PREFACE_READY";
+          }else if(record.selectedCategory===entry.sourceExpected){
+            record.result="READER_CORRECT_CATEGORY_BUT_SLOT_NOT_READY";
+          }else{
+            record.result="READER_PREFACE_BLOCKED_OR_MISSING";
+          }
+        }catch(error){
+          record.result="READER_RECONCILIATION_ERROR";
+          record.error=String(error?.stack??error).slice(0,900);
+        }
+        report.push(record);
+      }
+      return report;
+    },sample);
+    readerAuditRows.push(...inspected);
+  }
+  assert.equal(readerAuditRows.length,100);
+  assert.deepEqual(readerAuditRows.map(x=>x.date),rawConflictCases.map(x=>x.date),
+    "Native reader comparisons missing or reordered a raw conflict");
+  const readerResultCounts=Object.fromEntries(
+    [...new Set(readerAuditRows.map(x=>x.result))].sort()
+      .map(key=>[key,readerAuditRows.filter(x=>x.result===key).length]));
+  const sourceOwnerCount=readerAuditRows.filter(x=>x.recoveryOwnerSection).length;
+  const matchedNativeReady=readerResultCounts.READER_SELECTED_CATEGORY_MATCH??0;
+  // Zero global clearance is claimed when actual native slot status or
+  // source ownership is unavailable. A matching heading alone is NOT enough.
+  assert.equal(Object.values(readerResultCounts).reduce((a,b)=>a+b,0),100);
+  await writeFile(resolve(outputDir,"1962-2026-preface-reader-disposition.json"),
+    JSON.stringify({
+      schema:"AO_1962_2026_READER_PREFACE_SOURCE_DISPOSITION_V1",
+      sourceAuthority:"Existing 2026 production resolver and RGMR §§482–499 Preface audit",
+      readerBoundary:"R17 recoverReaderProperOmissions -> adaptV346ResolvedMass -> properToReaderSlots",
+      sourceScope:"GENERAL_ROMAN_1962_SELECTED_MASS_OF_DAY",
+      totalRawCanonicalConflicts:100,
+      authenticatedRecoveryOwnerCases:sourceOwnerCount,
+      readerSelectedCategoryMatches:matchedNativeReady,
+      unresolvedOrWrongReaderCases:100-matchedNativeReady,
+      readerResultCounts,
+      limitations:[
+        "READY native source slot and Latin category match do not certify the complete Preface text or physical phone rendering",
+        "A source recovery owner alone is not proof its selected trilingual text is ready",
+        "Votive, particular Ordo and optional 2020 Prefaces have not been authorized",
+        "No Mass source, permanent donor text or 65-card reader code has been mutated",
+        "Check separate R17 native-phone regressions before production publication"
+      ],
+      autoPublish:false,changesReader:false,editoriallyCertified:0,
+      rows:readerAuditRows
+    },null,2)+"\n","utf8");
+  console.log("CALENDAR_1962_READER_PREFACE_DISPOSITION="+JSON.stringify({
+    rawConflicts:100,withReaderRecoveryOwners:sourceOwnerCount,
+    readerNativeReadyAndCategoryMatched:matchedNativeReady,
+    readerNotConfirmedCorrect:100-matchedNativeReady,
+    categories:readerResultCounts,editoriallyCertified:0
+  }));
+
   console.log("CALENDAR_1962_YEAR_AUDIT_SUMMARY="+JSON.stringify(summary));
   console.log("CALENDAR_1962_YEAR_AUDIT_TOP_FINDINGS="+JSON.stringify(discrepancies.slice(0,30).map(x=>({date:x.date,problems:x.problems,title:x.actual?.title,rank:x.actual?.rawRank,color:x.actual?.rawColour}))));
   assert.equal(rows.length,365,"Production resolver sweep must cover every day of 2026");
