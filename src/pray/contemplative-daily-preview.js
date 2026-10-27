@@ -24,7 +24,7 @@ export const CONTEMPLATIVE_DAILY_PREVIEW_CSS = [
   // It is decorative, does not block touch input, and never requires art assets.
   '#aoPray435930[data-ao-contemplative-daily] .aoP435930Sheet{position:relative!important;isolation:isolate!important}',
   '#aoPray435930[data-ao-contemplative-daily] .aoP435930Sheet::before{content:"";position:absolute;inset:auto 0 0;height:clamp(48px,10dvh,100px);z-index:0;pointer-events:none;background:rgba(5,13,21,.4);clip-path:polygon(0% 65%,14% 57%,29% 68%,48% 49%,63% 62%,81% 53%,100% 66%,100% 100%,0 100%)}',
-  '#aoPray435930[data-ao-contemplative-daily] .aoP435930Mount{position:relative!important;z-index:1!important}',,
+  '#aoPray435930[data-ao-contemplative-daily] .aoP435930Mount{position:relative!important;z-index:1!important}',
   '#aoPray435930[data-ao-contemplative-daily] .aoP435930Mount{background:transparent!important;color:#eee9df!important}',
   '#aoPray435930[data-ao-contemplative-daily] .aoP435930Head{background:rgba(8,15,23,.88)!important;border-bottom:1px solid rgba(239,224,198,.08)!important;padding-block:8px!important;align-items:center!important}',
   '#aoPray435930[data-ao-contemplative-daily] .aoP435930Head small{display:none!important}',
