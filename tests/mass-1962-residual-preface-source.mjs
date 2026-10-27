@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {RESIDUAL_1962_PREFACE_CASES,required1962ResidualPrefaceOwner,
   authentic1962ResidualOriginal,render1962ResidualPreface,matches1962ResidualSelected}
   from "../src/mass/1962-residual-preface-source.js";
+import {bind1962PrincipalPrefaceIdentity} from "../src/mass/host-adapter.js";
 
 assert.equal(RESIDUAL_1962_PREFACE_CASES.length,13);
 assert.deepEqual(Object.fromEntries(
@@ -55,6 +56,34 @@ for(const owner of RESIDUAL_1962_PREFACE_CASES){
    assert.ok(selected.lat.includes(expected),owner.date+" Latin original form");
    assert.ok(!selected.lat.includes("*Veneratióne*"));
  }
+}
+// Verify the real session-to-reader handoff, not only the source owner.
+for(const owner of RESIDUAL_1962_PREFACE_CASES){
+ const legacy={date:owner.date,calendarDay:{id:owner.principalId},
+   requestedCelebrationId:"mass_of_day",celebrationId:"mass_of_day",
+   celebrationType:"CALENDAR"};
+ const data={sourcePath:owner.originalPath,preface:{lat:"Communis",en:"Common",fr:"Commune"}};
+ const bound=bind1962PrincipalPrefaceIdentity(data,legacy);
+ assert.equal(bound.principalCelebrationId,owner.principalId,
+   owner.date+": native reader principal ID not bound");
+ assert.equal(bound.selectedMassDate,owner.date,owner.date+": reader date not bound");
+ assert.equal(bound.requestedCelebrationId,"mass_of_day");
+ assert.equal(bind1962PrincipalPrefaceIdentity(data,{
+   ...legacy,date:"2027"+owner.date.slice(4)}),data,
+   owner.date+": source identity leaked to another year");
+ assert.equal(bind1962PrincipalPrefaceIdentity({...data,sourcePath:"Tempora/Pent00-0"},legacy).principalCelebrationId,
+   undefined,owner.date+": unrelated donor falsely bound");
+ assert.equal(bind1962PrincipalPrefaceIdentity(data,{
+   ...legacy,requestedCelebrationId:"other-votive",celebrationId:"other-votive",
+   celebrationType:"VOTIVE"}),data,owner.date+": votive Mass inherited day Preface identity");
+}
+for(const date of ["2026-10-26","2026-01-10","2026-01-13"]){
+ const data={sourcePath:"Sancti/01-06",preface:{lat:"Communis",en:"Common",fr:"Commune"}};
+ const legacy={date,calendarDay:{id:":feria:4:w"},
+   requestedCelebrationId:"mass_of_day",celebrationId:"mass_of_day",
+   celebrationType:"CALENDAR"};
+ assert.equal(bind1962PrincipalPrefaceIdentity(data,legacy),data,
+   date+": generic feria should remain unbound");
 }
 assert.equal(new Set(RESIDUAL_1962_PREFACE_CASES.map(x=>x.date)).size,13);
 console.log("PASS 13 exact 2026 residual 1962 Prefaces: 2 Nativity, 4 Epiphany, 2 Joseph, 1 Ascension, 4 Advent Trinity, poisoned sources/dates/variants rejected");
