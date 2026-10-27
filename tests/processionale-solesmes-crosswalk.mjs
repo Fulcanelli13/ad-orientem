@@ -816,6 +816,9 @@ test('printed Psalm accents and doxologies remain tone-specific research',()=>{
   assert.equal(a.stage,'PALM-R02');
   assert.equal(a.batch,22);
   assert.equal(a.patterns.length,13);
+  assert.equal(w.accentReviewLink.path,'data/research/processionale-palm-1961-accent-doxology-review-20261027.v1.json');
+  assert.equal(w.accentReviewLink.totalPendingToneApplications,18);
+  assert.equal(w.accentReviewLink.allToneCadencesApproved,false);
   assert.equal(a.patterns.flatMap(x=>x.occurrenceIds).length,14);
   assert.equal(a.counts.printedAccentedWordsTranscribed,45);
   const all=new Map(w.work.map(x=>[x.id,x]));
