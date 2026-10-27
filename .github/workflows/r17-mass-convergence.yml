@@ -88,6 +88,16 @@ jobs:
       - name: Verify selected Gloria/Credo omissions and independent chant windows
         run: node tests/reader-gloria-credo-omission-phone.mjs
       - run: node tests/reader-phone-production-card-default.mjs
+      - name: Gate 1–2 November 2026 source-owned Mass reader readiness
+        run: node tests/mass-november-2026-release-gate-e2e.mjs
+      - name: Retain November 1–2 evidence even on a failing release gate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: november-2026-mass-readiness
+          path: artifacts/mass-november-readiness/report.json
+          if-no-files-found: warn
+          retention-days: 7
       - uses: actions/upload-artifact@v4
         if: always()
         with:
