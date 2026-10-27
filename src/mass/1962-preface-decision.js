@@ -3,6 +3,8 @@ import {required1962MarianPrefaceOwner,isSelected1962MarianPrefaceForm}
   from "./1962-marian-preface-source.js";
 import {required1962SeasonalSanctoralPrefaceOwner,matches1962SeasonalSanctoralSelection,required1962May11ApostlesPrefaceOwner,matches1962May11ApostlesSelection}
   from "./1962-seasonal-sanctoral-preface-source.js";
+import {required1962ResidualPrefaceOwner,matches1962ResidualSelected}
+  from "./1962-residual-preface-source.js";
 // When source metadata is incomplete, return UNRESOLVED rather than Common.
 // The actual calendar/proper source owner must supply an authenticated identity.
 const OWNERS=Object.freeze({
@@ -18,6 +20,8 @@ const HEADINGS=Object.freeze({
   APOSTOLI:/^de\s+apostolis/i,
   MARIA:/^(?:de\s+beata\s+maria\s+virgine|de\s+b\.?\s*m\.?\s*v\.?)/i,
   NATIVITATE:/^de\s+nativitate\s+domini/i,
+  EPIPHANIA:/^de\s+epiphania\s+domini/i,
+  JOSEPH:/^de\s+(?:s\.?|sancto)\s+(?:joseph|ioseph)/i,
   TRINITATE:/^de\s+sanctissima\s+trinitate/i,
   COMMUNIS:/^communis/i,
   PASCHALIS:/^paschalis/i
@@ -89,6 +93,18 @@ export function inspect1962PrefaceSelection({principalCelebrationId,selectedPref
       requiredVariant:seasonalSaint.variant,scope:seasonalSaint.scope,
       reason:valid?null:"Seasonal saint's Mass must have the exact authenticated "+
         "1962 trilingual Easter/Ascension Preface for its selected Mass date."});
+  }
+  const residual=required1962ResidualPrefaceOwner(
+    principalCelebrationId,sourcePath,calendarDate);
+  if(residual){
+    const actualId=heading(slotText(selectedPreface));
+    const valid=actualId===residual.category&&
+      matches1962ResidualSelected(selectedPreface,residual);
+    return Object.freeze({status:valid?"MATCH":actualId?"CONTRADICTION":"MISSING_PREFACE",
+      requiredId:residual.category,actualId,
+      requiredVariant:residual.variant,scope:residual.scope,
+      reason:valid?null:"The exact 2026 principal Mass requires its authenticated "+
+        "1962 named or seasonal Preface in all three source languages."});
   }
   // Required Prefaces for the source-owned Lenten Temporale and for the
   // Pentecost Vigil/octave: 1960 Missal §§486(a), 493(a). An inherited
