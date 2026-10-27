@@ -70,4 +70,22 @@ for(const observation of ciSnapshot.observations){
  assert.ok(score.evidence.some(e=>e.path===observation.properSource&&
    e.sourceBlobSha===observation.sourceBlobSha),"CI source identity drift for "+observation.id);
 }
+const ciDiagnostics=JSON.parse(readFileSync(new URL(
+ "../data/mass/chant-corpus/gr1961-342-selected-proper-2026-ci-diagnostics.v1.json",import.meta.url),"utf8"));
+assert.equal(ciDiagnostics.schema,"ao-gr1961-342-2026-ci-disposition-audit-v1");
+assert.equal(ciDiagnostics.provenance.conclusion,"success");
+assert.equal(ciDiagnostics.summary.daysChecked,365);
+assert.equal(ciDiagnostics.summary.daysSourceReady,365);
+assert.equal(ciDiagnostics.summary.candidateDatePairsInspected,677);
+assert.equal(ciDiagnostics.summary.unresolvedCandidateDatePairs,673);
+assert.deepEqual(ciDiagnostics.summary.unverifiedByStatus,{
+ SEGMENT_UNVERIFIED:294,TEXT_NOT_SELECTED:236,TEXT_QUALITY_REVIEW:143});
+assert.equal(Object.values(ciDiagnostics.summary.unverifiedByStatus).reduce((a,b)=>a+b,0),
+ ciDiagnostics.summary.unresolvedCandidateDatePairs);
+assert.equal(ciDiagnostics.summary.candidateDatePairsInspected,
+ ciDiagnostics.summary.unresolvedCandidateDatePairs+ciDiagnostics.summary.sourceMatchOccurrences);
+assert.equal(ciDiagnostics.summary.distinctTextMatchedCandidateIds,ciSnapshot.scope.distinctTextMatchedCandidateIds);
+assert.equal(ciDiagnostics.summary.sourceMatchOccurrences,ciSnapshot.scope.sourceMatchOccurrences);
+assert.equal(ciDiagnostics.summary.musicalFacsimileApprovals,0);
+assert.equal(ciDiagnostics.summary.editorialPromotions,0);
 console.log("PASS actual selected 1962 Proper contract, wrong-text hold, pre-Gospel proof gate, no musical releases");
