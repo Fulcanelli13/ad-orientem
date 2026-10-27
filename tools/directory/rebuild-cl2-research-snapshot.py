@@ -91,6 +91,121 @@ CREATE VIEW unified_research_inventory AS
 
 
 
+
+def install_known_provider_feed_census(db):
+    """Audit all entries in four committed venue feeds against ONE CL2 master.
+
+    Feed records may be residences or administrative sites; no candidate is
+    promoted to a physical church solely because its source ID is unlinked.
+    Original provider IDs are preserved, never renumbered.
+    """
+    feeds=(
+        ('FSSP','data/directory/generated/fssp/geo.v1.geojson','GEOJSON'),
+        ('ICKSP','data/directory/generated/v19/icksp-federated.geojson','GEOJSON'),
+        ('AASJMV','data/directory/generated/v19/aasjmv.v1.json','PROVIDER_JSON'),
+        ('VG19','data/directory/generated/v19/verified-global-round19-20261010.v1.json','PROVIDER_JSON'),
+    )
+    eligible={'church','chapel','school_chapel','private_chapel','basilica','oratory','monastery'}
+    db.executescript("""
+CREATE TABLE unified_provider_coverage (
+ source_family TEXT NOT NULL,
+ provider_record_id TEXT NOT NULL,
+ country TEXT NOT NULL, name TEXT NOT NULL, venue_type TEXT NOT NULL,
+ source_repository_path TEXT NOT NULL,
+ identity_disposition TEXT NOT NULL CHECK(identity_disposition IN (
+   'EXACT_FROZEN_CL2_SOURCE_ID',
+   'EXPLICIT_EXISTING_G0_PROVIDER_LINK_NOT_NEW_SITE',
+   'WORSHIP_SOURCE_ID_UNMATCHED_CANDIDATE',
+   'NON_WORSHIP_OR_AMBIGUOUS_SOURCE_ID_UNMATCHED'
+ )),
+ frozen_cl2_source_id TEXT, existing_g0_candidate_id TEXT,
+ new_candidate_id TEXT,
+ full_original_record_json TEXT NOT NULL,
+ PRIMARY KEY(source_family,provider_record_id),
+ FOREIGN KEY(frozen_cl2_source_id) REFERENCES venue_source(source_id),
+ FOREIGN KEY(existing_g0_candidate_id) REFERENCES unified_site_candidate(candidate_research_id),
+ FOREIGN KEY(new_candidate_id) REFERENCES unified_site_candidate(candidate_research_id)
+);
+CREATE INDEX unified_provider_census_disposition ON unified_provider_coverage(identity_disposition);
+CREATE VIEW unified_provider_census_by_family AS
+ SELECT source_family,COUNT(*) AS entries,
+        SUM(identity_disposition='EXACT_FROZEN_CL2_SOURCE_ID') AS exact_CL2_ids,
+        SUM(identity_disposition='EXPLICIT_EXISTING_G0_PROVIDER_LINK_NOT_NEW_SITE') AS prior_g0_links,
+        SUM(identity_disposition='WORSHIP_SOURCE_ID_UNMATCHED_CANDIDATE') AS new_unresolved_worship_leads,
+        SUM(identity_disposition='NON_WORSHIP_OR_AMBIGUOUS_SOURCE_ID_UNMATCHED') AS non_worship_or_ambiguous
+ FROM unified_provider_coverage GROUP BY source_family;
+""")
+    existing={r[0] for r in db.execute('SELECT source_id FROM venue_source')}
+    g0_provider_links={r[0]:r[1] for r in db.execute(
+        'SELECT related_existing_provider_id,candidate_research_id FROM unified_site_candidate WHERE related_existing_provider_id IS NOT NULL')}
+    assert len(g0_provider_links)==2
+    stats={}
+    for family,path,fmt in feeds:
+        d=json.loads(Path(path).read_text(encoding='utf-8'))
+        entries=d['features'] if fmt=='GEOJSON' else d['records']
+        expected={'FSSP':286,'ICKSP':94,'AASJMV':6,'VG19':6}[family]
+        assert len(entries)==expected
+        seen=set()
+        family_counts={'exact':0,'g0_link':0,'new_candidate':0,'not_worship_or_ambiguous':0}
+        for entry in entries:
+            properties=entry['properties'] if fmt=='GEOJSON' else entry
+            rid=properties.get('venue_id') if fmt=='GEOJSON' else properties.get('u')
+            kind=properties.get('venue_type') if fmt=='GEOJSON' else properties.get('vt')
+            cc=properties.get('country_code') if fmt=='GEOJSON' else properties.get('cc')
+            name=properties.get('name') if fmt=='GEOJSON' else properties.get('n')
+            assert rid and rid not in seen and cc and name and kind
+            seen.add(rid)
+            already=rid in existing
+            older=g0_provider_links.get(rid)
+            if already:
+                disposition='EXACT_FROZEN_CL2_SOURCE_ID'
+                g0_id=None;candidate_id=None
+                family_counts['exact']+=1
+            elif older:
+                disposition='EXPLICIT_EXISTING_G0_PROVIDER_LINK_NOT_NEW_SITE'
+                g0_id=older;candidate_id=None
+                family_counts['g0_link']+=1
+            elif kind in eligible:
+                disposition='WORSHIP_SOURCE_ID_UNMATCHED_CANDIDATE'
+                g0_id=None;candidate_id=rid
+                family_counts['new_candidate']+=1
+                assert not db.execute('SELECT 1 FROM unified_site_candidate WHERE candidate_research_id=?',(rid,)).fetchone()
+                # Provider listing alone establishes a site lead, not a newly
+                # proven building or official rite/ownership statement.
+                db.execute('INSERT INTO unified_site_candidate VALUES (?,?,?,?,?,?,?,?,?,?,?,0,0,?)',
+                  (rid,'PROVIDER_'+family,cc,str(properties.get('city') or properties.get('l') or ''),
+                   name,str(properties.get('a') or ''),
+                   path,path,None,0,'IDENTITY_RECONCILIATION_REQUIRED',
+                   json.dumps({'provider_family':family,'provider_original_record':entry,
+                     'original_repository_path':path},ensure_ascii=False,separators=(',',':'))))
+            else:
+                disposition='NON_WORSHIP_OR_AMBIGUOUS_SOURCE_ID_UNMATCHED'
+                g0_id=None;candidate_id=None
+                family_counts['not_worship_or_ambiguous']+=1
+            db.execute('INSERT INTO unified_provider_coverage VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
+                       (family,rid,cc,name,kind,path,disposition,
+                        rid if already else None,g0_id,candidate_id,
+                        json.dumps(entry,ensure_ascii=False,separators=(',',':'))))
+        stats[family]=family_counts
+    assert stats=={
+        'FSSP':{'exact':225,'g0_link':0,'new_candidate':3,'not_worship_or_ambiguous':58},
+        'ICKSP':{'exact':74,'g0_link':0,'new_candidate':9,'not_worship_or_ambiguous':11},
+        'AASJMV':{'exact':6,'g0_link':0,'new_candidate':0,'not_worship_or_ambiguous':0},
+        'VG19':{'exact':0,'g0_link':1,'new_candidate':5,'not_worship_or_ambiguous':0},
+    },stats
+    assert db.execute('SELECT COUNT(*) FROM unified_provider_coverage').fetchone()[0]==392
+    assert db.execute('SELECT COUNT(*) FROM unified_site_candidate').fetchone()[0]==53
+    assert db.execute('SELECT COUNT(*) FROM unified_research_inventory').fetchone()[0]==2632
+    assert db.execute('SELECT COUNT(*) FROM unified_site_candidate WHERE is_canonical_physical_site!=0 OR is_public_site!=0').fetchone()[0]==0
+    return {'source_feed_entries_screened':392,'exact_CL2_source_ID_matches':305,
+            'prior_G0_provider_links':1,'new_unresolved_worship_leads':17,
+            'non_worship_or_ambiguous_held':69,
+            'candidate_ids_total_G0_and_feeds':53,
+            'not_unique_venue_count_inventory_rows':2632,
+            'feed_counts':stats,'new_physically_admitted_sites':0}
+
+
+
 def install_unified_physical_ministry_and_group_defaults(db, rows, manifest, root):
     """Extend the SAME source-of-truth SQLite: physical sites → source ministries → Mass rows.
     
@@ -363,12 +478,13 @@ CREATE VIEW venue_with_classification AS SELECT v.source_id,v.recorded_group_id,
         db.execute('INSERT INTO identity_exception VALUES (?,?,?,?,?)',(i,r['kind'],x.get('source_id'),x.get('group_id'),json_text(r)))
     unified_stats=install_unified_physical_ministry_and_group_defaults(db,rows,manifest,root)
     candidate_stats=install_existing_g0_candidates_into_single_master(db)
+    provider_stats=install_known_provider_feed_census(db)
     db.commit()
     assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
     for table,expected in [('canonical_site',2584),('venue_source',2687),('classification_source',2715),('mass_time',4681),('existing_alias',5),('identity_exception',49)]:
         assert db.execute('SELECT COUNT(*) FROM '+table).fetchone()[0]==expected
     assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
     db.close()
-    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0,'unified_master':unified_stats,'unresolved_venue_candidate_intake':candidate_stats}))
+    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0,'unified_master':unified_stats,'unresolved_venue_candidate_intake':candidate_stats,'provider_source_coverage':provider_stats}))
 
 if __name__=='__main__': main()
