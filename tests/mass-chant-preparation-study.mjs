@@ -8,12 +8,12 @@ import {createMassChantProgramme} from "../src/mass/mass-chant-programme.js";
 import {matchSourceOwnedProperScores} from "../src/mass/reader-proper-chant-crosswalk.js";
 assert.equal(MASS_CHANT_PREPARATION_AUDIO_SCHEMA,"ao-mass-chant-preparation-audio-v1");
 assert.equal(VERIFIED_PREPARATION_RECORDINGS.length,0,"Never invent or stream unreviewed recordings");
-const mass={date:"2026-12-25",celebrationId:"mass_of_day",properSource:"Tempora/12-25-3"};
+const mass={date:"2026-12-25",celebrationId:"mass_of_day",properSource:"Sancti/12-25m3"};
 const programme=createMassChantProgramme(mass,{form:"MISSA_CANTATA_INCENSE",kind:"CALENDAR",
   selectedScores:{KYRIE:"GREGOBASE-1184",CREDO:"GREGOBASE-749"}});
 assert.deepEqual(preparableChantScores(programme,null).map(x=>x.id),
   ["GREGOBASE-1184","GREGOBASE-749"]);
-const candidate={schema:"ao-reader-proper-slots-v1",sourcePath:"Tempora/12-25-3",
+const candidate={schema:"ao-reader-proper-slots-v1",sourcePath:"Sancti/12-25m3",
   slots:{INTROIT:{status:"READY",data:{paragraphs:[{latin:"Puer natus est nobis."}]}},
     COMMUNION:{status:"READY",data:{paragraphs:[{latin:"Viderunt omnes fines terrae salutare Dei nostri."}]}}}};
 const crosswalk=matchSourceOwnedProperScores(candidate);
