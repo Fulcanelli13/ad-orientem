@@ -92,19 +92,21 @@ def main():
     assert sum(geography.values())==735
     assert all(not t["location_approved"] and not t["public_release_approved"] for t in targets)
     batches=[]
-    # Throughput target: <=150 physical anchors per evidence batch,
-    # country-concentrated; no 8-20 church manual loop.
-    for country in sorted(geography,key=lambda c:(-geography[c],c)):
-        candidates=[s["physical_anchor_id"] for s in targets if s["country"]==country]
-        for start in range(0,len(candidates),150):
-            batches.append({
-              "country":country,"batch":len(batches)+1,
-              "anchor_ids":candidates[start:start+150],
-              "count":len(candidates[start:start+150]),
-              "research_state":"RESEARCH_NOT_GEOCODE_VERIFIED"
-            })
+    # High-volume throughput: group by country order but fill complete
+    # 150-anchor cohorts across country boundaries (never 1-20-site batches).
+    ordered=sorted(targets,key=lambda s:(-geography[s["country"]],
+                                       s["country"],s["physical_anchor_id"]))
+    for start in range(0,len(ordered),150):
+        cohort=ordered[start:start+150]
+        batches.append({
+            "batch":len(batches)+1,
+            "anchor_ids":[s["physical_anchor_id"] for s in cohort],
+            "country_distribution":dict(sorted(Counter(s["country"] for s in cohort).items())),
+            "count":len(cohort),
+            "research_state":"RESEARCH_NOT_GEOCODE_VERIFIED"
+        })
     assert sum(b["count"] for b in batches)==735
-    assert max(b["count"] for b in batches)<=150
+    assert [b["count"] for b in batches]==[150,150,150,150,135]
     stats={
        "CL2_locations_not_in_R49":735,
        "source_memberships_by_site":dict(sorted((str(k),v) for k,v in bysource.items())),
@@ -120,7 +122,7 @@ def main():
       "derived_from":"CL2 canonical physical anchor and source ministry master, via exact R49 crosswalk",
       "counts":stats,
       "intake":targets,
-      "country_batches_max_150":batches,
+      "geocode_batches_max_150":batches,
       "publish_state":"ZERO_APPROVALS_ALL_HELD"
     }
     db.close()
