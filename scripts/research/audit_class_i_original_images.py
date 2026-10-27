@@ -13,6 +13,11 @@ from PIL import Image, ImageFile
 Image.MAX_IMAGE_PIXELS = 220_000_000
 ImageFile.LOAD_TRUNCATED_IMAGES = False
 ROOT = "https://upload.wikimedia.org/wikipedia/commons/"
+# Commons structured-data hashes independently ground these exact uploaded bytes.
+COMMONS_SHA1 = {
+    "koenig-resurrection": "de5c983c0f4df218573836d0099e495b7084ec27",
+    "beuckelaer-easter-wednesday": "8bf8dfbedd099daf6892b4570964d1b5e07d6df2",
+}
 SOURCES = [
  ("stom-epiphany","8/8a/The_Adoration_of_the_Magi_%28Matthias_Stom%29_-_Nationalmuseum_-_18796.jpg",3650,3747,"Nationalmuseum NM 1792","Nationalmuseum PD"),
  ("koenig-resurrection","f/f6/Clevelandart_2017.192.jpg",2561,3400,"Cleveland 2017.192","Cleveland CC0"),
@@ -29,6 +34,7 @@ def audit(row, directory, cap=25*1024*1024):
     try:
         req=Request(url,headers={"User-Agent":"AdOrientem-SourceVerification/1.0", "Accept":"image/jpeg"})
         h=hashlib.sha256()
+        sha1=hashlib.sha1()
         n=0
         with urlopen(req,timeout=45) as resp,open(path,"wb") as out:
             redirected=urlparse(resp.geturl())
@@ -40,6 +46,7 @@ def audit(row, directory, cap=25*1024*1024):
                 n+=len(chunk)
                 if n>cap: raise ValueError("Source exceeds 25MiB cap")
                 h.update(chunk)
+                sha1.update(chunk)
                 out.write(chunk)
         with Image.open(path) as im:
             f=im.format
@@ -49,7 +56,10 @@ def audit(row, directory, cap=25*1024*1024):
             im.load()
         if f!="JPEG" or actual != [width,height]:
             raise ValueError("Unexpected image format or dimensions")
-        report.update(source_byte_status="SHA256_AND_PIXELS_VERIFIED", sha256=h.hexdigest(),bytes=n,pixels=actual)
+        known=COMMONS_SHA1.get(slug)
+        if known and sha1.hexdigest()!=known:
+            raise ValueError("SHA1 DIFFERENT FROM COMMONS SOURCE VERSION")
+        report.update(source_byte_status="SHA256_AND_PIXELS_VERIFIED", sha256=h.hexdigest(),commons_sha1=sha1.hexdigest(),bytes=n,pixels=actual)
     except Exception as e:
         report["error"]=type(e).__name__+": "+str(e)[:180]
     finally:
