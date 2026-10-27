@@ -10,6 +10,8 @@ on:
       - 'tools/directory/build-cl27-r49-unified-crosswalk.py'
       - 'tools/directory/review-cl27-tlm-classifications.html'
       - 'src/find/preliminary-directory-r49.js'
+      - 'tests/directory-cl27-r49-unified-adapter.mjs'
+      - 'src/find/cl2-research-crosswalk-adapter.js'
       - 'src/find/explore-presentation.js'
       - 'tests/directory-cl27-user-classification-facets.mjs'
       - 'tests/directory-cl27-offline-editor.mjs'
@@ -25,6 +27,8 @@ on:
       - 'tools/directory/build-cl27-r49-unified-crosswalk.py'
       - 'tools/directory/review-cl27-tlm-classifications.html'
       - 'src/find/preliminary-directory-r49.js'
+      - 'tests/directory-cl27-r49-unified-adapter.mjs'
+      - 'src/find/cl2-research-crosswalk-adapter.js'
       - 'src/find/explore-presentation.js'
       - 'tests/directory-cl27-user-classification-facets.mjs'
       - 'tests/directory-cl27-offline-editor.mjs'
@@ -73,6 +77,8 @@ jobs:
                      for g in x['represented_physical_anchors'])
           print('Exact 1,879-record crosswalk PASS; 1,844 physical anchors; 35 duplicate pin groups held')
           PY
+      - name: Test read-only CL2 Find projection without a public map mutation
+        run: node tests/directory-cl27-r49-unified-adapter.mjs /tmp/cl27-r49-cl2-crosswalk.json
       - name: Check offline classification editor generated from pinned research source
         run: |
           python3 - <<'PY'
