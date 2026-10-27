@@ -1083,7 +1083,11 @@
       "comparison": "related-BBG1925-YMG1910",
       "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
       "verification": "WEB_CHAPTER_INSPECTED_FACSIMILE_PENDING",
-      "editorial_status": "CANDIDATE_NOT_APPROVED"
+      "editorial_status": "CANDIDATE_NOT_APPROVED",
+      "b09_print_verified_form_ids": [
+        "b09-lasance-apostleship-o-jesus"
+      ],
+      "b09_full_text_status": "PRINTED_PAGE_IMAGE_CHECKED_FORM_BODY"
     },
     {
       "id": "AO.DAILY.B01.088",
@@ -1095,7 +1099,11 @@
       "comparison": "related-BBG1925-not-identical",
       "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
       "verification": "WEB_CHAPTER_INSPECTED_FACSIMILE_PENDING",
-      "editorial_status": "CANDIDATE_NOT_APPROVED"
+      "editorial_status": "CANDIDATE_NOT_APPROVED",
+      "b09_print_verified_form_ids": [
+        "b09-lasance-alphonsus-night"
+      ],
+      "b09_full_text_status": "PRINTED_PAGE_IMAGE_CHECKED_FORM_BODY"
     },
     {
       "id": "AO.DAILY.B01.089",
@@ -1171,5 +1179,6 @@
     "Do not import historical ministers' liturgical acts into lay evening prayer.",
     "Do not import prayer texts until exact facsimile, reuse status, and language are certified.",
     "Blessed Be God morning Wikisource page is incomplete; do not mark the full chapter text-collated."
-  ]
+  ],
+  "b09_note": "With God 1911 p127 contains two alternative Apostleship Morning Offerings separated by 'or'; B09 registers both distinct bodies, though B01 source occurrence .087 describes the latter."
 }
