@@ -1218,7 +1218,7 @@ test('printed Psalm23 and Psalm46 alternate cadence accents generate fifteen con
  }
  const ab=b.cases.find(x=>x.id==='PALM-R02-PS46-L09');
  assert.equal(ab.properNameAccentEvidence.hypothesizedSyllables,'Á-bra-ham');
- assert.equal(ab.properNameAccentEvidence.pinnedCommitSha,'5a35693414bd9b2864415e62cd463ca52da771b4');
+ assert.equal(ab.properNameAccentEvidence.sourceGitBlobSha,'5a35693414bd9b2864415e62cd463ca52da771b4');
  assert.equal(ab.properNameAccentEvidence.stillNeedsChantEditor,true);
  assert.equal(b.counts.endingGabcFragmentsDrafted,15);
  assert.equal(b.counts.actualMusicalOccurrencesCoveredBy15Fragments,16);
