@@ -51,7 +51,11 @@ export function projectSpecialRiteMusicItinerary({
   return empty("NATIVE_STAGE_ORDER_OR_PAYLOAD_REQUIRED",riteId,stageId);
  const stageIndex=stageOrder.indexOf(String(stageId??""));
  if(stageIndex<0)return empty("CURRENT_RITE_STAGE_UNRESOLVED",riteId,stageId);
- const catalogueStages=new Set((rite.events??[]).map(x=>x.stageId));
+ // Conditional liturgical alternatives (ordinary/paschal Asperges, font
+ // branches, optional burial action) are NOT all present in one native graph.
+ const catalogueStages=new Set((rite.events??[])
+  .filter(e=>e.condition==="ANY"||(condition!=null&&e.condition===condition))
+  .map(x=>x.stageId));
  if([...catalogueStages].some(id=>!stageOrder.includes(id)))
    return empty("REGISTRY_STAGE_NOT_IN_NATIVE_RITE",riteId,stageId);
  const events=[];
