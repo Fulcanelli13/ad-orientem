@@ -89,8 +89,24 @@
       "rights": "Cleveland CC0 confirmed",
       "approved": true,
       "acquisition_state": "SOURCE_IDENTIFIED_MUSEUM_QA_RUN_CONFIGURED_NO_BINARY_REPORT_YET",
-      "frame_status": "UNVERIFIED_ORIGINAL_FULL_RESOLUTION",
-      "photo_approved": false
+      "frame_status": "FRAMED_ALTERNATE_SOURCE_REJECTED; PRIMARY_UNVERIFIED",
+      "photo_approved": false,
+      "verified_source_exclusion": {
+        "file_url": "https://openaccess-cdn.clevelandart.org/alternate/1959.189/1959.189_alt0_print.jpg",
+        "problem": "Museum alternate 0 image clearly shows ornate physical gold frame, confirmed from image-source visual preview.",
+        "result": "REJECT_PHOTO_SOURCE_PERMANENTLY; ORIGINAL_MURILLO_PAINTING_APPROVAL_UNCHANGED",
+        "scope": "Do not use this URL in galleries, Calendar, heroes, thumbnails, offline caches, selector previews, mosaics or restoration.",
+        "date": "2026-10-28"
+      },
+      "preferred_primary_candidate": {
+        "url": "https://openaccess-cdn.clevelandart.org/1959.189/1959.189_print.jpg",
+        "status": "PREFERRED_API_PRIMARY_FILE; FRAME_FREE_AT_FULL_RESOLUTION_NOT_YET_CERTIFIED",
+        "physical_canvas_width_height_cm": [
+          127.5,
+          220.5
+        ],
+        "aspect_check": "Source JPEG width/height must approximate 0.5782 and undergo human 4-edge inspection"
+      }
     },
     {
       "date": "2026-12-25",
@@ -105,8 +121,17 @@
       "rights": "Cleveland CC0 confirmed",
       "approved": true,
       "acquisition_state": "SOURCE_IDENTIFIED_MUSEUM_QA_RUN_CONFIGURED_NO_BINARY_REPORT_YET",
-      "frame_status": "UNVERIFIED_ORIGINAL_FULL_RESOLUTION",
-      "photo_approved": false
+      "frame_status": "PRIMARY_PREVIEW_UNFRAMED; ORIGINAL_UNVERIFIED",
+      "photo_approved": false,
+      "preferred_primary_candidate": {
+        "url": "https://openaccess-cdn.clevelandart.org/1968.100/1968.100_print.jpg",
+        "status": "PRIMARY_IMAGE_MUSEUM_PREVIEW_HAS_NO_VISIBLE_PHYSICAL_FRAME; FULL_RESOLUTION_NOT_YET_CERTIFIED",
+        "physical_canvas_width_height_cm": [
+          148.3,
+          126.8
+        ],
+        "aspect_check": "Source JPEG width/height must approximate 1.1696 and undergo human 4-edge inspection"
+      }
     }
   ],
   "workflow": "scripts/research/audit_class_i_museum_images.py",
@@ -117,5 +142,6 @@
     "Additional high-pixel Rome in-situ photographs discovered but image-quality/frame acceptance not demonstrated; not equivalent to pristine museum artwork reproduction.",
     "Museum catalogue unframed dimensions refer to object measurement and say nothing about whether actual photograph includes a frame.",
     "Global no-visible-frame policy remains absolute; preserve painting approval and reject unsuitable PHOTO source only."
-  ]
+  ],
+  "acquisition_safety_note": "Only images.print canonical paths from exact Cleveland API record accepted. NEVER images.alternate_images, automatically chosen search results, framed photographs or museum room snapshots. Global zero frame directive applies even for approved paintings."
 }
