@@ -88,10 +88,16 @@
         "printedSecondVerseCueUsed": true,
         "allSyllablesHaveGabcNoteGroups": true,
         "sourceArchivedGabcUnmodified": true,
-        "musicalAccentHold": "Candidate final firmávit stress location does not demonstrably fit first-verse cadence mapping; reject or rewrite after chant-editor inspection.",
+        "musicalAccentHold": "Both GABC variants render natively, but original má(g) is misaligned with stress and alternative vit(gf) merges source syllabic g/f pitches without editor authority.",
         "musicEditorApproved": false,
-        "exsurgeRendered": false,
-        "publicationAllowed": false
+        "exsurgeRendered": true,
+        "publicationAllowed": false,
+        "exsurgeProofRunId": 40454771798,
+        "alternativeFile": "data/research/chant-source-review/palm23-verse2-accent-alignment-20261027-ALTERNATE.gabc",
+        "alternativeExsurgeRendered": true,
+        "comparisonProofRunId": 40455234551,
+        "actualDeviceAccepted": false,
+        "noteUnderlayCertified": false
       }
     },
     {
@@ -533,8 +539,10 @@
     "candidateCreated": 1,
     "distinctPatterns": 13,
     "approved": 0,
-    "exsurgeCandidateRendered": 0,
+    "exsurgeCandidateRendered": 2,
     "otherTwelvePatternsNoCandidateYet": true,
-    "doNotAdvanceReader": true
+    "doNotAdvanceReader": true,
+    "gabcVariantsPrepared": 2,
+    "editorApprovedVariants": 0
   }
 }
