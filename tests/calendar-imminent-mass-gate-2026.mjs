@@ -124,10 +124,90 @@ try{
      "All Souls wrongly offers Ite missa est");
    assert.equal(result.plan.normalLastGospel,true,
      "Requiem without a selected Absolution must retain the Last Gospel");
-   assert.match(result.sourcePreface||"",/defunct|mortu|depart/i,
-     "All Souls has no attested proper Preface of the Dead");
+   assert.match(result.slots.fr.prefaceText||"",/^Defunctorum\b/i,
+     "All Souls did not select the proper Latin Preface of the Dead");
   }
  }
+ // The existing production Calendar engine already resolves and labels all
+ // three 1962 All Souls formularies. Test each *original* donor, not a
+ // reconstruction of Masses II–III from the first Mass's text.
+ const variants=await page.evaluate(async()=>{
+   const resolver=globalThis.AO_RUNTIME_V8?.resolver;
+   const host=globalThis.AO_CELEBRATION_API?.getResolvedMass?.();
+   const {adaptV346ResolvedMass}=await import("/src/mass/host-adapter.js");
+   const {compileMassPlan}=await import("/src/mass/session-engine.js");
+   const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+   const rows=[];
+   try{
+     for(let index=0;index<3;index++){
+       const resolved=await resolver.resolveDay("2026-11-02",{formularyIndex:index});
+       const proper=resolved?.proper?.data;
+       const selectedPath=proper?.sourcePath??null;
+       const legacy={...host,date:"2026-11-02",
+         calendarDay:resolved?.day?.main,
+         celebrationId:"mass_of_day",requestedCelebrationId:"mass_of_day",
+         celebrationType:"CALENDAR",properSource:selectedPath,canStart:true};
+       const prepared=adaptV346ResolvedMass(legacy,{
+         form:"solemn",presentationMode:"MISSAL",proper:resolved?.proper,
+         calendarResolution:resolved});
+       const plan=compileMassPlan(prepared);
+       const selected=prepared?.proper?.data??prepared?.proper;
+       const languages={};
+       for(const language of ["en","fr"]){
+         const slots=properToReaderSlots(selected,{language}).slots;
+         languages[language]={
+           preface:slots.PREFACE.status,
+           heading:slots.PREFACE.data?.paragraphs?.[0]?.latin?.slice(0,70)??null,
+           collect:slots.COLLECT_SET.status,
+           epistle:slots.EPISTLE_OR_LESSON.status,
+           gospel:slots.GOSPEL.status,
+           postcommunion:slots.POSTCOMMUNION_SET.status
+         };
+       }
+       rows.push({index,date:resolved?.date,status:resolved?.status,
+         principalId:resolved?.day?.main?.id,selectedPath,
+         selectedMassOption:resolved?.day?.selectedMassOption?.path,
+         availableOptions:resolved?.day?.massOptions?.map(x=>({id:x.id,path:x.path,label:x.label})),
+         overlays:prepared.overlays,
+         plan:{blessingAllowed:plan.blessingAllowed,dismissal:plan.dismissal,
+           normalLastGospel:plan.normalLastGospel},
+         languages,
+         firstCollectLatin:String(proper?.collects?.[0]?.lat??
+           proper?.collects?.[0]?.la??"").slice(0,90)});
+     }
+   }finally{await resolver.resolveDay("2026-11-02",{formularyIndex:0});}
+   return rows;
+ });
+ for(let index=0;index<3;index++){
+   const item=variants[index],source="Sancti/11-02m"+(index+1);
+   assert.equal(item.status,"ready","Mass "+(index+1)+" source failed");
+   assert.equal(item.date,"2026-11-02");
+   assert.equal(item.selectedPath,source,"Wrong Mass "+(index+1)+" original Proper");
+   assert.equal(item.selectedMassOption,source,"Mass option not selected");
+   assert.equal(item.principalId,"sancti:11-02m"+(index+1)+":1:b",
+     "Wrong canonical principal Mass identity");
+   assert.deepEqual(item.availableOptions.map(x=>x.path),
+     ["Sancti/11-02m1","Sancti/11-02m2","Sancti/11-02m3"],
+     "The three source-resolved Mass options are not present");
+   assert.ok(item.overlays.includes("REQUIEM"),
+     "Mass "+(index+1)+" lacks the required Requiem overlay");
+   assert.equal(item.plan.blessingAllowed,false);
+   assert.equal(item.plan.dismissal,"REQUIESCANT_IN_PACE");
+   for(const language of ["en","fr"]){
+     for(const slot of ["preface","collect","epistle","gospel","postcommunion"])
+       assert.equal(item.languages[language][slot],"READY",
+         "All Souls Mass "+(index+1)+" "+language+" "+slot+" not ready");
+     assert.match(item.languages[language].heading||"",/^Defunctorum\b/i);
+   }
+ }
+ console.log("ALL_SOULS_THREE_REAL_MASS_OPTIONS="+JSON.stringify(variants));
+ // Inspect whether the original Home formulary buttons are currently
+ // visible beneath the modular Home; do not infer UI accessibility merely
+ // from existing source/runtime support.
+ const selector=await page.evaluate(()=>[...document.querySelectorAll("[data-formulary]")]
+   .map(node=>({index:node.dataset.formulary,title:node.textContent?.trim(),
+     visible:Boolean(node.getClientRects().length)&&getComputedStyle(node).visibility!=="hidden"})));
+ console.log("ALL_SOULS_HOME_FORMULARY_VISIBILITY="+JSON.stringify(selector));
  console.log("PASS three real imminent Roman-1962 Mass host/reader journeys");
 }finally{
  await browser?.close();
