@@ -1,7 +1,7 @@
 {
   "schema": "AO_B56_FAST_ALTERNATIVE_ARTWORK_CHOICES_V1",
   "created": "2026-10-27",
-  "status": "USER_CHOICES_PENDING_ALL_ORIGINAL_APPROVALS_RETAINED",
+  "status": "ALL_15_ALTERNATIVES_REJECTED_BY_USER_2026_10_27",
   "policy": "Stop on complex/no-free/no-quality original photo, offer 4-5 picture choices, choose photo rights-evidenced first, never ask for money/contact, no silent replacements.",
   "group_count": 3,
   "alternative_count": 15,
@@ -20,7 +20,8 @@
           "dimensions": [
             2887,
             3223
-          ]
+          ],
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         },
         {
           "id": "J2",
@@ -29,7 +30,8 @@
           "subject": "Angel warns Joseph to flee; dark chiaroscuro",
           "source": "https://search.smb.museum/object/obj-866734",
           "source_license": "Berlin museum image marked Public Domain Mark 1.0",
-          "dimensions": null
+          "dimensions": null,
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         },
         {
           "id": "J3",
@@ -41,7 +43,8 @@
           "dimensions": [
             1879,
             2668
-          ]
+          ],
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         },
         {
           "id": "J4",
@@ -53,7 +56,8 @@
           "dimensions": [
             2202,
             3348
-          ]
+          ],
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         },
         {
           "id": "J5",
@@ -65,7 +69,8 @@
           "dimensions": [
             2191,
             2898
-          ]
+          ],
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         }
       ]
     },
@@ -83,7 +88,8 @@
           "dimensions": [
             3434,
             4579
-          ]
+          ],
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         },
         {
           "id": "G2",
@@ -95,7 +101,8 @@
           "dimensions": [
             3859,
             4908
-          ]
+          ],
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         },
         {
           "id": "G3",
@@ -107,7 +114,8 @@
           "dimensions": [
             1407,
             1900
-          ]
+          ],
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         },
         {
           "id": "G4",
@@ -116,7 +124,8 @@
           "subject": "Raphael protecting Tobias (thematically related, not literal guardian angel)",
           "source": "https://blanton.emuseum.com/objects/15957/landscape-with-tobias-and-the-angel",
           "source_license": "Blanton artwork media marked no-copyright / public domain; exact download to verify",
-          "dimensions": null
+          "dimensions": null,
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         },
         {
           "id": "G5",
@@ -125,7 +134,8 @@
           "subject": "Raphael aiding Tobias, alternate biblical theme",
           "source": "https://www.clevelandart.org/art/1952.235.2",
           "source_license": "Cleveland Museum of Art Open Access, free reuse",
-          "dimensions": null
+          "dimensions": null,
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         }
       ]
     },
@@ -143,7 +153,8 @@
           "dimensions": [
             2086,
             2500
-          ]
+          ],
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         },
         {
           "id": "E2",
@@ -155,7 +166,8 @@
           "dimensions": [
             3483,
             3981
-          ]
+          ],
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         },
         {
           "id": "E3",
@@ -167,7 +179,8 @@
           "dimensions": [
             3151,
             2350
-          ]
+          ],
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         },
         {
           "id": "E4",
@@ -179,7 +192,8 @@
           "dimensions": [
             1200,
             1465
-          ]
+          ],
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         },
         {
           "id": "E5",
@@ -191,9 +205,15 @@
           "dimensions": [
             889,
             1024
-          ]
+          ],
+          "editorial_status": "USER_REJECTED_ALTERNATIVE_ROUND_1"
         }
       ]
     }
-  ]
+  ],
+  "user_feedback": {
+    "at": "2026-10-27T15:28:53Z",
+    "words": "lets research more, i didnt like any of them",
+    "effect": "Do not surface or cycle back these choices as active proposals without user request; preserve prior approved module paintings until user chooses"
+  }
 }
