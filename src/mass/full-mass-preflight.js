@@ -63,6 +63,8 @@ export function mountFullMassPreflight({
   onBeforeCategoryChange=()=>{},
   onOpenSourceProper=()=>{},
   getSourceGate=()=>({ready:true,reason:null}),
+  getAllSoulsMassChoice=()=>1,
+  onAllSoulsMassChange=()=>{},
   getLocalOrationSummary=()=>null,
   getCalendarState=()=>null,
   subscribeCalendarState=null,
@@ -205,7 +207,14 @@ export function mountFullMassPreflight({
          ["REQUIEM","Requiem","Requiem"],["NUPTIAL","Nuptial","Nuptiale"],
          ["OTHER","Other","Autre"],["SOURCE_DATE","Other Proper","Autre propre"]].map(([id,en,fr])=>
          '<button type="button" data-full-mass-category="'+id+'" data-label-en="'+en+'" data-label-fr="'+fr+'">'+en+'</button>').join("")+
-        '</div><div data-full-mass-source-slot></div><p data-full-mass-category-error role="alert" hidden></p>'+
+        '</div><div data-full-mass-source-slot></div>'+ 
+        '<fieldset data-ao-all-souls-choices hidden class="aoFullMassOptional">'+
+        '<legend data-ao-all-souls-heading></legend><div class="aoFullMassForms">'+
+        [1,2,3].map(n=>'<label class="aoFullMassChoice"><input type="radio"'+
+          ' name="ao-all-souls-formulary" value="'+n+'" data-ao-all-souls-mass>'+ 
+          '<span data-ao-all-souls-mass-label="'+n+'"></span></label>').join('')+
+        '</div><p data-ao-all-souls-note></p></fieldset>'+ 
+        '<p data-full-mass-category-error role="alert" hidden></p>'+
         '<details data-full-mass-review><summary data-full-mass-review-summary></summary>'+
         '<div data-full-mass-review-body></div></details>'+
         '<p data-full-mass-resolver></p><fieldset data-full-mass-form-fieldset>'+
@@ -284,6 +293,7 @@ export function mountFullMassPreflight({
       move("[data-full-mass-special]","[data-folio-celebration-controls]");
       move("[data-full-mass-categories]","[data-folio-celebration-controls]");
       move("[data-full-mass-source-slot]","[data-folio-celebration-controls]");
+      move("[data-ao-all-souls-choices]","[data-folio-celebration-controls]");
       move("[data-full-mass-category-error]","[data-folio-celebration-controls]");
       move("[data-full-mass-review]","[data-folio-celebration-controls]");
       move("[data-full-mass-resolver]","[data-folio-celebration-controls]");
@@ -365,6 +375,9 @@ export function mountFullMassPreflight({
       });
       root.addEventListener("change",e=>{
         const el=e.target;
+        if(el?.matches?.("[data-ao-all-souls-mass]")){
+          onAllSoulsMassChange(Number(el.value));refresh();return;
+        }
         if(el?.matches?.("[data-folio-language]")){
           if(["en","fr"].includes(el.value))experience.language=el.value;
           refresh();return;
@@ -400,6 +413,30 @@ export function mountFullMassPreflight({
       folio.querySelector("[data-folio-host-actions]").append(target);
     }
     const fr=french(),summary=selectionFor(legacy),l=(en,frText)=>fr?frText:en;
+    const properPath=String(legacy?.proper?.data?.sourcePath??
+       legacy?.proper?.sourcePath??"");
+    const allSoulsDay=/^\\d{4}-11-02$/.test(date)&&
+       legacy?.calendarDay?.id==="sancti:11-02m1:1:b"&&
+       properPath==="Sancti/11-02m1"&&
+       ["","mass_of_day"].includes(String(legacy?.requestedCelebrationId??""))&&
+       ["","mass_of_day"].includes(String(legacy?.celebrationId??""));
+    const selector=root.querySelector("[data-ao-all-souls-choices]");
+    selector.hidden=!allSoulsDay;
+    if(allSoulsDay){
+      const massNumber=getAllSoulsMassChoice(legacy);
+      selector.querySelector("[data-ao-all-souls-heading]").textContent=l(
+        "All Souls — Mass formulary","Commémoration des fidèles défunts — formulaire");
+      selector.querySelector("[data-ao-all-souls-note]").textContent=l(
+        "Choose the Mass actually celebrated. The Second and Third have distinct readings and prayers.",
+        "Choisissez la messe réellement célébrée. Les deuxième et troisième ont des lectures et prières distinctes.");
+      for(const [index,en,frText] of [
+        [1,"First Mass","Première messe"],
+        [2,"Second Mass","Deuxième messe"],
+        [3,"Third Mass","Troisième messe"]]){
+        selector.querySelector('[data-ao-all-souls-mass-label="'+index+'"]').textContent=l(en,frText);
+        selector.querySelector('[data-ao-all-souls-mass][value="'+index+'"]').checked=massNumber===index;
+      }
+    }
     const context=massCalendarPreflightContext(legacy,getCalendarState?.()??{},summary.readerLanguage,{form:summary.form});
     const folio=root.querySelector(".aoGuidedMassFolio");
     const word=(selector,en,frText)=>{
