@@ -45,6 +45,11 @@ jobs:
         with:
           node-version: 22
       - run: node tests/required-main-gate-contract.mjs
+      - name: Validate source-owned All Souls selection and native module syntax
+        run: |
+          node --check src/mass/full-mass-preflight.js
+          node --check src/mass/browser-entry.js
+          node tests/mass-1962-all-souls-source.mjs
       - run: npm test
 
   phone-browser:
