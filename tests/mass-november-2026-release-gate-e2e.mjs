@@ -110,10 +110,12 @@ try{
       languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],
       warnings:[],errors:[]
      });
-     const sections=raw?.sections??raw?.data?.sections??raw?.rawSections??null;
+     const sections=raw?.sections??raw?.data?.sections??raw?.rawSections??raw?.map??null;
      langs.push({language,status:"RETURNED",type:typeof raw,
       keys:Object.keys(raw??{}).slice(0,18),
-      sectionKeys:sections&&typeof sections==="object"?Object.keys(sections).slice(0,22):null,
+      sectionKeys:sections instanceof Map?[...sections.keys()].slice(0,25):
+       sections&&typeof sections==="object"?Object.keys(sections).slice(0,25):null,
+      sourceOrder:Array.isArray(raw?.order)?raw.order.slice(0,20):null,
       valueType:typeof raw?.text,
       sample:String(raw?.text??"").slice(0,85)});
     }catch(error){
@@ -124,6 +126,12 @@ try{
   }
   const discovery={resolverKeys:Object.keys(req??{}).slice(0,40),
    celebrationApiKeys:Object.keys(selectors).slice(0,35),
+   selectionSignature:typeof selectors.select==="function"?
+    Function.prototype.toString.call(selectors.select).slice(0,850):null,
+   massFlowOptions:[...document.querySelectorAll("[data-ao-requiem],[data-ao-celebration]")]
+    .slice(0,22).map(node=>({requiem:node.dataset.aoRequiem??null,
+     celebration:node.dataset.aoCelebration??null,
+     title:String(node.textContent??"").trim().slice(0,70)})),
    rawSources};
   const requiem={overlays:["REQUIEM"]};
   const ordinary={overlays:[]};
