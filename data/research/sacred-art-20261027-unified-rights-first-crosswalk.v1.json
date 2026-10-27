@@ -75,13 +75,12 @@
     "class_i_provisional_met_cc0_exact_photo_lead": 1,
     "module_institutional_open_access_exact_source_leads": 3,
     "module_museum_object_pd_but_photo_unknown": 1,
-    "module_staged_original_variants_all_four_branches": 19,
-    "module_staged_distinct_module_ids_all_four_branches": 18,
+    "module_staged_original_variants_all_four_branches": 20,
+    "module_staged_distinct_module_ids_all_four_branches": 19,
     "module_staged_missing_module_ids": [
       "joseph",
       "angel",
-      "evening",
-      "rosary"
+      "evening"
     ],
     "module_technical_preflight_scored_not_human_approved": 8,
     "module_full_pixel_quality_certified": 0,
@@ -93,7 +92,11 @@
     "three_official_originals_sha_verified_against_current_url": 3,
     "native_source_pixel_sample_groups_archived": 3,
     "full_width_uncropped_official_view_proxies_archived": 3,
-    "whole_contain_review_derivatives_archived": 1
+    "whole_contain_review_derivatives_archived": 1,
+    "current_6_unique_exact_designated_open_photo_sources_preserved": 6,
+    "classi_met_2026_selected_images_newly_SHA_archived": 2,
+    "rosary_exact_cc_by_file_original_newly_SHA_archived": 1,
+    "new_open_source_acquisition_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40465741444"
   },
   "exception_flags": [
     {
@@ -192,6 +195,23 @@
         "photo_version_match_current_museum_NOT_CONFIRMED": true,
         "production_release_authorized": false,
         "source_witness": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
+      },
+      "new_acquired_open_access_image": {
+        "original_repo_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-open-photo-candidates-20261027/classi-ashwed-2026-original.jpg",
+        "original_sha256": "408b6ed786d8a1bb24a9f407c0a0fa8bf6f4211c2d30dd0f4d14b9bea9047d18",
+        "dimensions": [
+          2947,
+          4000
+        ],
+        "bytes": 3255733,
+        "institution_or_author_source": "https://images.metmuseum.org/CRDImages/ep/original/DP-27910-001.jpg",
+        "source_rights": "MET_OPEN_ACCESS_CC0",
+        "source_record": "https://www.metmuseum.org/art/collection/search/436839",
+        "photo_frame_quality_status": "BLACK_BACKING_AND_PHYSICAL_OBJECT_PERIMETER_VISIBLE_NO_CROP_AUTHORIZED",
+        "true_original_bytes_frozen": true,
+        "master_visual_signoff": false,
+        "release": false
       }
     },
     {
@@ -1028,6 +1048,23 @@
         "photo_version_match_current_museum_NOT_CONFIRMED": true,
         "production_release_authorized": false,
         "source_witness": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
+      },
+      "new_acquired_open_access_image": {
+        "original_repo_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-open-photo-candidates-20261027/classi-allsaints-2026-original.jpg",
+        "original_sha256": "dd8a69a0c86c0855b7836a63439d7978205ae37fa108db05e7d18035f2a54e78",
+        "dimensions": [
+          3548,
+          4000
+        ],
+        "bytes": 4659156,
+        "institution_or_author_source": "https://images.metmuseum.org/CRDImages/ep/original/DP-24115-001.jpg",
+        "source_rights": "MET_OPEN_ACCESS_CC0",
+        "source_record": "https://www.metmuseum.org/art/collection/search/437607",
+        "photo_frame_quality_status": "BLACK_BACKING_AND_PHYSICAL_OBJECT_PERIMETER_VISIBLE_NO_CROP_AUTHORIZED",
+        "true_original_bytes_frozen": true,
+        "master_visual_signoff": false,
+        "release": false
       }
     },
     {
@@ -1980,7 +2017,16 @@
       },
       "rights_first_bucket": "OPEN_LICENSE_CONDITIONS_UNVERIFIED",
       "source_rights_notes": "Sailko photograph CC BY 3.0 Unported—requires attribution and licence link, disclose crop/transform",
-      "staged_photo_variants": [],
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-open-photo-candidates-20261027/module-rosary-lotto-original.jpg",
+          "sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+          "width": 1772,
+          "height": 2652,
+          "status": "ORIGINAL_CC_BY_3_0_LICENSED_HUMAN_QA_PENDING"
+        }
+      ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
       "production_released": false,
@@ -1993,6 +2039,23 @@
         "photo_version_match_current_museum_NOT_CONFIRMED": true,
         "production_release_authorized": false,
         "source_witness": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
+      },
+      "new_acquired_open_access_image": {
+        "original_repo_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-open-photo-candidates-20261027/module-rosary-lotto-original.jpg",
+        "original_sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+        "dimensions": [
+          1772,
+          2652
+        ],
+        "bytes": 3355634,
+        "institution_or_author_source": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Lorenzo_lotto%2C_madonna_del_rosario%2C_1539%2C_01.jpg",
+        "source_rights": "CC_BY_3_0_UNPORTED_PHOTOGRAPHER_SAILKO",
+        "source_record": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+        "photo_frame_quality_status": "PALE_WALL_BORDER_AND_MOUNTING_PINS_VISIBLE_NO_CROP_AUTHORIZED",
+        "true_original_bytes_frozen": true,
+        "master_visual_signoff": false,
+        "release": false
       }
     },
     {
